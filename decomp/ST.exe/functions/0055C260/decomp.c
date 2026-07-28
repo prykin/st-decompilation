@@ -1,4 +1,7 @@
 
+/* [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 0055C260 -> 0055BEB0 @ 0055C272 */
+
 void __thiscall FUN_0055c260(void *this,DWORD param_1)
 
 {

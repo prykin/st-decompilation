@@ -1,9 +1,24 @@
 #include "../../pseudocode_runtime.h"
 
 
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 004B8C80 -> 0062B830 @ 004B95E3; MOVSX at 004B95DC establishes signed source width 2 |
+   004B9FA0 -> 0062B830 @ 004BBD81; MOVSX at 004BBD7A establishes signed source width 2 | 004D32C0
+   -> 0062B830 @ 004D4CD9; MOVSX at 004D4CD2 establishes signed source width 2
+
+   [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 004B8C80 -> 0062B830 @ 004B95E3; MOVSX at 004B95C6 establishes signed source width 2 |
+   004B9FA0 -> 0062B830 @ 004BBD81; MOVSX at 004BBD64 establishes signed source width 2 | 004D32C0
+   -> 0062B830 @ 004D4CD9; MOVSX at 004D4CBC establishes signed source width 2
+
+   [STPrototypeApplier] Propagated parameter 2.
+   Evidence: 004B8C80 -> 0062B830 @ 004B95E3; MOVSX at 004B95C2 establishes signed source width 2 |
+   004B9FA0 -> 0062B830 @ 004BBD81; MOVSX at 004BBD60 establishes signed source width 2 | 004D32C0
+   -> 0062B830 @ 004D4CD9; MOVSX at 004D4CB8 establishes signed source width 2 */
+
 void __cdecl
-FUN_0062b830(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
-            int *param_5,undefined4 param_6,undefined4 param_7,int param_8,int param_9)
+FUN_0062b830(int param_1,int param_2,int param_3,undefined4 param_4,int *param_5,undefined4 param_6,
+            undefined4 param_7,int param_8,int param_9)
 
 {
   int *this;
@@ -11,9 +26,9 @@ FUN_0062b830(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
   undefined4 local_44 [5];
   uint local_30;
   undefined4 local_2c;
-  undefined4 local_28;
-  undefined4 local_24;
-  undefined4 local_20;
+  int local_28;
+  int local_24;
+  int local_20;
   undefined4 local_1c;
   int local_18;
   int local_14;
@@ -38,9 +53,9 @@ FUN_0062b830(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
   local_8 = param_7;
   local_30 = (uint)(*(int *)(&DAT_00791d68 + iVar1 * 4) == 1);
   local_c = param_6;
-  (*g_playSystem_00802A38->vtable->vfunc_08)(g_playSystem_00802A38,0x124,0,0,local_44,0);
+  g_playSystem_00802A38->vfunc_08(0x124,0,0,local_44,0);
   STFishC::sub_004162B0
-            ((STFishC *)this,(undefined2 *)((int)&param_3 + 2),(undefined2 *)((int)&param_2 + 2),
+            ((STFishC *)this,(short *)((int)&param_3 + 2),(undefined2 *)((int)&param_2 + 2),
              (undefined2 *)((int)&param_1 + 2));
   iVar1 = param_8;
   if ((param_9 == 0) && (g_manRuin_008117B0 != (STManRuinC *)0x0)) {

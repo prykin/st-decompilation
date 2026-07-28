@@ -1,5 +1,8 @@
 
-uint FUN_00755560(AnonShape_00755560_6DE97093 *param_1,ushort *param_2,undefined4 param_3,
+/* [STPrototypeApplier] Propagated parameter 2.
+   Evidence: 0075575A CMP EAX,ESI classifies dword parameter loaded at 00755757 */
+
+uint FUN_00755560(AnonShape_00755560_6DE97093 *param_1,ushort *param_2,int param_3,
                  undefined4 param_4)
 
 {
@@ -40,7 +43,7 @@ uint FUN_00755560(AnonShape_00755560_6DE97093 *param_1,ushort *param_2,undefined
     param_1->field_0024 = pAVar1;
   }
   *(undefined4 *)param_1->field_001C = param_4;
-  *(undefined4 *)(param_1->field_001C + 4) = param_3;
+  *(int *)(param_1->field_001C + 4) = param_3;
   puVar10 = param_2;
   puVar12 = (undefined4 *)(param_1->field_001C + 8);
   for (uVar9 = uVar11 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
@@ -55,6 +58,7 @@ uint FUN_00755560(AnonShape_00755560_6DE97093 *param_1,ushort *param_2,undefined
   }
   puVar8 = (uint *)(param_1->field_0008 + 8);
   *puVar8 = *puVar8 | 0x10;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = pAVar1;
   while( true ) {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -93,23 +97,27 @@ uint FUN_00755560(AnonShape_00755560_6DE97093 *param_1,ushort *param_2,undefined
     iVar5 = *(int *)(pAVar4->field_000C + 0x44 + *(int *)(pAVar4->field_000C + 0x1c) * 8);
     iVar6 = FUN_00753c80((AnonShape_00753C80_4C8E695D *)pAVar4,(*(short *)(iVar13 + 8) >> 1) + 4);
     if (iVar5 == iVar6) {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (AnonShape_00755560_6DE97093 *)
                 FUN_00757530((AnonShape_00757530_EEED7D69 *)pAVar4,0,
                              (undefined4 *)pAVar4->field_001C);
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       if (param_1 == (AnonShape_00755560_6DE97093 *)0x0) {
         return 0xfffffffe;
       }
     }
     else {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (AnonShape_00755560_6DE97093 *)
                 FUN_00757530((AnonShape_00757530_EEED7D69 *)pAVar4,0,
                              (undefined4 *)(iVar6 + 0x10 + iVar13));
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       if (param_1 == (AnonShape_00755560_6DE97093 *)0x0) {
         return 0xfffffffe;
       }
       Library::MSVCRT::FUN_0072da70
                 ((undefined4 *)(iVar6 + 0x10 + iVar13),
-                 (undefined4 *)(&param_1->field_0x10 + iVar13 + iVar6),
+                 (AnonPointee_TLOBaseTy_0607 *)(&param_1->field_0x10 + iVar13 + iVar6),
                  ((int)*(short *)(iVar13 + 8) - (int)param_1) - iVar6);
       *(short *)(iVar13 + 8) = *(short *)(iVar13 + 8) - (short)param_1;
     }
@@ -128,7 +136,8 @@ uint FUN_00755560(AnonShape_00755560_6DE97093 *param_1,ushort *param_2,undefined
     iVar14 = *(int *)&pAVar4->field_0x10 + iVar13;
     puVar8 = (uint *)(iVar13 + uVar11);
     Library::MSVCRT::FUN_0072da70
-              (puVar8 + 4,(undefined4 *)(iVar6 + 0x10 + iVar14),*(short *)(iVar14 + 8) - iVar6);
+              (puVar8 + 4,(AnonPointee_TLOBaseTy_0607 *)(iVar6 + 0x10 + iVar14),
+               *(short *)(iVar14 + 8) - iVar6);
     *puVar8 = uVar11;
     *(short *)(puVar8 + 2) = *(short *)(iVar14 + 8) - (short)iVar6;
     puVar8[1] = **(uint **)&pAVar4->field_0x18;
@@ -146,9 +155,11 @@ uint FUN_00755560(AnonShape_00755560_6DE97093 *param_1,ushort *param_2,undefined
       *(int *)(iVar5 + 0x44 + *(int *)(iVar5 + 0x1c) * 8) =
            *(int *)(iVar5 + 0x44 + *(int *)(iVar5 + 0x1c) * 8) - iVar6;
     }
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = (AnonShape_00755560_6DE97093 *)
               FUN_00757530((AnonShape_00757530_EEED7D69 *)pAVar4,1,
                            *(undefined4 **)&pAVar4->field_0x18);
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_1 == (AnonShape_00755560_6DE97093 *)0x0) {
       return 0xfffffffe;
     }

@@ -12,7 +12,7 @@ undefined4 __thiscall FUN_00423c70(void *this,short param_1)
   undefined2 local_14;
   short local_12;
   undefined4 local_10;
-  uint local_8;
+  undefined4 local_8;
 
   uVar1 = *(uint *)(*(int *)((int)this + 0x29) + 0xc);
   uVar2 = 0xffffffff;
@@ -20,7 +20,7 @@ undefined4 __thiscall FUN_00423c70(void *this,short param_1)
     index = 0;
     while( true ) {
       DArrayGetElement(*(DArrayTy **)((int)this + 0x29),index,&local_8);
-      if ((short)local_8 == param_1) break;
+      if ((ushort)local_8 == param_1) break;
       uVar3 = uVar3 + 1;
       index = uVar3 & 0xffff;
       if (uVar1 <= index) {
@@ -28,7 +28,7 @@ undefined4 __thiscall FUN_00423c70(void *this,short param_1)
       }
     }
     this_00 = STAllPlayersC::GetObjPtr
-                        (g_allPlayers_007FA174,*(char *)((int)this + 0x24),local_8,CASE_1);
+                        (g_allPlayers_007FA174,*(char *)((int)this + 0x24),(ushort)local_8,CASE_1);
     thunk_FUN_00419c30(this_00,0xffff);
     local_8 = 0xffff;
     Library::DKW::TBL::FUN_006ae140(*(uint **)((int)this + 0x29),uVar3 & 0xffff,&local_8);

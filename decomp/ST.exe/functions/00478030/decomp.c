@@ -68,7 +68,7 @@ int __thiscall STBoatC::BackCapture(STBoatC *this,int *param_1)
       if (uVar4 == 0) {
         this->field_0615 = 5;
 LAB_00478373:
-        iVar5 = (*this->vtable->vfunc_D8)(this);
+        iVar5 = this->vfunc_D8();
         return (-(uint)(iVar5 != 0) & 0xfffffffd) + 2;
       }
     }
@@ -94,23 +94,21 @@ LAB_0047848a:
         return 0xffff;
       }
       if (iVar5 == 0) {
-        iVar5 = (*this->vtable->vfunc_D8)(this);
+        iVar5 = this->vfunc_D8();
         return -(uint)(iVar5 != 0);
       }
     }
     break;
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   case CASE_3:
     pSVar3 = STAllPlayersC::GetObjPtr
-                       (g_allPlayers_007FA174,this->field_05FC,
-                        CONCAT22((short)(this->field_0611 >> 0x10),this->field_05FD),CASE_1);
+                       (g_allPlayers_007FA174,this->field_05FC,this->field_05FD,CASE_1);
     if (((pSVar3 != (STGameObjC *)0x0) && (pSVar3->field_0018 == this->field_05FF)) &&
        (iVar5 = (*pSVar3->vtable->vfunc_108)(this->field_0024), iVar5 != 0)) {
       thunk_FUN_004cd450((AnonShape_004CC900_31EE9CAA *)pSVar3);
     }
     if (((int)this->field_0041 != (this->field_0609 + 1) * 0xc9) ||
        ((int)this->field_0043 != (this->field_060B + 1) * 0xc9)) {
-      iVar5 = (*this->vtable->vfunc_D8)(this);
+      iVar5 = this->vfunc_D8();
       return -(uint)(iVar5 != 0);
     }
     this->field_0611 = CASE_4;
@@ -163,7 +161,7 @@ LAB_0047848a:
         goto LAB_0047848a;
       }
       if (iVar5 == 0) {
-        iVar5 = (*this->vtable->vfunc_D8)(this);
+        iVar5 = this->vfunc_D8();
         return -(uint)(iVar5 != 0);
       }
     }
@@ -176,7 +174,7 @@ LAB_0047848a:
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  iVar5 = (*this->vtable->vfunc_D8)(this);
+  iVar5 = this->vfunc_D8();
   return (-(uint)(iVar5 != 0) & 0xfffffffd) + 2;
 }
 

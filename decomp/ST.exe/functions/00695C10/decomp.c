@@ -4,17 +4,20 @@
 /* [STMethodOwnerApplier] Structural method owner recovered as CGenerate.
    Evidence: this_call_owners=[CGenerate]; agreed_this_calls=2; incoming_this_accesses=3;
    incoming_edx_uses=0; incoming_stack_parameter_uses=5; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=2; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=2; owner_evidence_coverage=adequate
+
+   [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 00696810 -> 00695C10 @ 006968C4; zero-filled partial register load at 00696853 */
 
 uint __thiscall
 CGenerate::sub_00695C10
-          (CGenerate *this,undefined4 param_1,undefined4 param_2,int param_3,undefined4 param_4,
+          (CGenerate *this,uint param_1,undefined4 param_2,int param_3,undefined4 param_4,
           undefined4 param_5)
 
 {
   DArrayTy *pDVar1;
   uint uVar2;
-  undefined4 local_24;
+  uint local_24;
   undefined1 local_20;
   undefined4 local_1f;
   undefined4 local_1b;

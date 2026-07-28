@@ -1,7 +1,8 @@
 #include "../../pseudocode_runtime.h"
 
 
-bool FUN_006b06a0(undefined4 *param_1,LOGPALETTE *param_2,int param_3,UINT param_4,int param_5)
+bool FUN_006b06a0(AnonShape_GLOBAL_0080759C_9638EF10 *param_1,LOGPALETTE *param_2,int param_3,
+                 UINT param_4,int param_5)
 
 {
   UINT iStart;
@@ -19,13 +20,13 @@ bool FUN_006b06a0(undefined4 *param_1,LOGPALETTE *param_2,int param_3,UINT param
   tagLOGPALETTE *local_408;
   tagPALETTEENTRY *local_404;
 
-  if ((HGDIOBJ)*param_1 != (HGDIOBJ)0x0) {
-    DeleteObject((HGDIOBJ)*param_1);
-    *param_1 = 0;
+  if (*(HGDIOBJ *)param_1 != (HGDIOBJ)0x0) {
+    DeleteObject(*(HGDIOBJ *)param_1);
+    *(undefined4 *)param_1 = 0;
   }
-  if ((HGDIOBJ)param_1[0x12d] != (HGDIOBJ)0x0) {
-    DeleteObject((HGDIOBJ)param_1[0x12d]);
-    param_1[0x12d] = 0;
+  if (param_1->field_04B4 != (HPALETTE)0x0) {
+    DeleteObject(param_1->field_04B4);
+    param_1->field_04B4 = (HPALETTE)0x0;
   }
   pLVar8 = param_2;
   for (iVar7 = 0x101; iVar7 != 0; iVar7 = iVar7 + -1) {
@@ -35,7 +36,7 @@ bool FUN_006b06a0(undefined4 *param_1,LOGPALETTE *param_2,int param_3,UINT param
   }
   param_2->palVersion = 0x300;
   param_2->palNumEntries = 0x100;
-  piVar1 = (int *)param_1[0xf];
+  piVar1 = (int *)param_1->field_003C;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   if ((piVar1 == (int *)0x0) ||
      (iVar7 = (**(code **)(*piVar1 + 0x10))(piVar1,0,0,0x100,param_2->palPalEntry), iVar7 != 0)) {
@@ -43,7 +44,7 @@ bool FUN_006b06a0(undefined4 *param_1,LOGPALETTE *param_2,int param_3,UINT param
     GetSystemPaletteEntries(pHVar2,0,0x100,param_2->palPalEntry);
     ReleaseDC((HWND)0x0,pHVar2);
   }
-  if (((*(byte *)(param_1 + 2) & 1) == 0) && ((int)param_1[8] < 9)) {
+  if (((param_1->field_0x8 & 1) == 0) && (param_1->field_0020 < 9)) {
     iVar7 = 0;
     pBVar3 = &param_2->palPalEntry[0].peGreen;
     pWVar9 = &param_2[0x80].palNumEntries;
@@ -78,20 +79,20 @@ bool FUN_006b06a0(undefined4 *param_1,LOGPALETTE *param_2,int param_3,UINT param
       pBVar4 = pBVar4 + 4;
     } while (iVar7 != 0);
   }
-  if ((param_1[2] & 0x20000000) == 0) {
+  if ((*(uint *)&param_1->field_0x8 & 0x20000000) == 0) {
     *(undefined1 *)((int)&param_2[0x80].palNumEntries + 1) = 4;
     *(undefined1 *)&param_2[0x80].palVersion = 0xff;
     *(undefined1 *)((int)&param_2[0x80].palVersion + 1) = 0xff;
     *(undefined1 *)&param_2[0x80].palNumEntries = 0xff;
   }
   pHVar5 = CreatePalette(param_2);
-  *param_1 = pHVar5;
+  *(HPALETTE *)param_1 = pHVar5;
   if (pHVar5 != (HPALETTE)0x0) {
     pHVar5 = CreatePalette(param_2);
-    param_1[0x12d] = pHVar5;
+    param_1->field_04B4 = pHVar5;
     if (pHVar5 == (HPALETTE)0x0) {
-      DeleteObject((HGDIOBJ)*param_1);
-      *param_1 = 0;
+      DeleteObject(*(HGDIOBJ *)param_1);
+      *(undefined4 *)param_1 = 0;
       return false;
     }
     pptVar10 = &local_408;
@@ -110,20 +111,20 @@ bool FUN_006b06a0(undefined4 *param_1,LOGPALETTE *param_2,int param_3,UINT param
                 (pHVar2,iStart,(0x100 - param_4) - param_5,(LPPALETTEENTRY)(&local_404 + iStart));
     }
     ReleaseDC((HWND)0x0,pHVar2);
-    if ((undefined4 *)param_1[0x137] != (undefined4 *)0x0) {
-      puVar11 = (undefined4 *)param_1[0x137];
+    if (*(undefined4 **)&param_1[1].field_0x24 != (undefined4 *)0x0) {
+      puVar11 = *(undefined4 **)&param_1[1].field_0x24;
       for (iVar7 = 0x2000; iVar7 != 0; iVar7 = iVar7 + -1) {
         *puVar11 = 0xffffffff;
         puVar11 = puVar11 + 1;
       }
-      memset((void *)(param_1[0x137] + 0x8000), 0, 0x8000); /* compiler bulk-zero initialization */
+      memset((void *)(*(int *)&param_1[1].field_0x24 + 0x8000), 0, 0x8000); /* compiler bulk-zero initialization */
       pHVar5 = CreatePalette((LOGPALETTE *)&local_408);
-      param_1[0x138] = pHVar5;
+      *(HPALETTE *)&param_1[1].field_0x28 = pHVar5;
       if (pHVar5 == (HPALETTE)0x0) {
         return false;
       }
     }
-    iVar7 = FUN_006b0520((int)param_1,(int)&local_404,0,0x100);
+    iVar7 = FUN_006b0520(param_1,(int)&local_404,0,0x100);
     return (bool)('\x01' - (iVar7 != 0));
   }
   return false;

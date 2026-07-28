@@ -15,12 +15,14 @@ void FUN_006c3340(int param_1)
   GetClientRect(*(HWND *)(*(int *)(param_1 + 4) + 4),&local_18);
   piVar1 = (int *)(param_1 + 4);
   iVar6 = *(int *)(*piVar1 + 0x18);
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = local_18.bottom;
   if (iVar6 < local_18.right) {
     local_18.right = iVar6;
   }
   iVar6 = *(int *)(*piVar1 + 0x1c);
   if (iVar6 < local_18.bottom) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = iVar6;
   }
   iVar3 = *(int *)(iVar2 + 0x40);

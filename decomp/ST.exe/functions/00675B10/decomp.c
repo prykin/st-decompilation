@@ -1,7 +1,10 @@
 
+/* [STPrototypeApplier] Propagated parameter 6.
+   Evidence: 0064D270 -> 00675B10 @ 0064D376; MOVSX at 0064D35A establishes signed source width 2 */
+
 undefined4 __cdecl
 FUN_00675b10(int param_1,int param_2,short param_3,short *param_4,short *param_5,short *param_6,
-            undefined4 param_7)
+            int param_7)
 
 {
   short sVar1;

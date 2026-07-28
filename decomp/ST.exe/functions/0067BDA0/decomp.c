@@ -1,6 +1,10 @@
 
 /* [STPrototypeRepairApplier] Propagated parameter 1.
-   Evidence: 0067BDA0 parameter used as this of STFishC::sub_004162B0 @ 0067BDB6 */
+   Evidence: 0067BDA0 parameter used as this of STFishC::sub_004162B0 @ 0067BDB6
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=3, used=0), and
+   decompilation contains no value return */
 
 void __cdecl FUN_0067bda0(short *param_1,STFishC *objPtr)
 

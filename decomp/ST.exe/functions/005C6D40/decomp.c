@@ -17,7 +17,7 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
   DArrayTy *pDVar6;
   uint *puVar7;
   int iVar8;
-  uint uVar9;
+  byte bVar9;
   char cVar10;
   uint uVar11;
   InternalExceptionFrame local_54;
@@ -100,17 +100,17 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
   if (pHVar5 != (HoloTy *)0x0) {
     uVar11 = 0;
     cVar10 = '\x01';
-    uVar9 = 0x10;
+    bVar9 = 0x10;
     iVar8 = 1;
     iVar4 = Library::DKW::DDX::FUN_006bf9f0((int *)PTR_008075a8,0x112,0x38,0x205,0x104);
-    uVar9 = HoloTy::Init(this_00->field_21E8,CASE_2,0x112,0x38,iVar4,iVar8,uVar9,cVar10,uVar11);
-    if (uVar9 != 0) {
+    uVar11 = HoloTy::Init(this_00->field_21E8,CASE_2,0x112,0x38,iVar4,iVar8,bVar9,cVar10,uVar11);
+    if (uVar11 != 0) {
       pHVar5 = this_00->field_21E8;
       pHVar5->field_0002 = 0;
       pHVar5->field_0017 = -1;
-      uVar9 = this_00->field_21E8->field_0003;
-      if (-1 < (int)uVar9) {
-        Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,uVar9);
+      uVar11 = this_00->field_21E8->field_0003;
+      if (-1 < (int)uVar11) {
+        Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,uVar11);
       }
       HoloTy::NextFas(this_00->field_21E8);
     }
@@ -127,14 +127,14 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
   if (this_00->field_1D91 != 0xffffffff) {
     FUN_006b3af0((int *)this_00->field_1DD5,this_00->field_1D91);
   }
-  puVar7 = &this_00->field_20CC;
+  puVar7 = this_00->field_20CC;
   local_c = 10;
   do {
     FUN_006b3af0((int *)PTR_008075a8,*puVar7);
     puVar7 = puVar7 + 1;
     local_c = local_c + -1;
   } while (local_c != 0);
-  puVar7 = &this_00->field_2125;
+  puVar7 = this_00->field_2125;
   local_c = 0xe;
   do {
     if (*puVar7 != 0) {
@@ -173,17 +173,17 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
   if (pHVar5 != (HoloTy *)0x0) {
     uVar11 = 0;
     cVar10 = '\x01';
-    uVar9 = 0x10;
+    bVar9 = 0x10;
     iVar8 = 1;
     iVar4 = Library::DKW::DDX::FUN_006bf9f0((int *)PTR_008075a8,0x112,0x149,0x205,0x8c);
-    uVar9 = HoloTy::Init(this_00->field_21F4,CASE_2,0x112,0x149,iVar4,iVar8,uVar9,cVar10,uVar11);
-    if (uVar9 != 0) {
+    uVar11 = HoloTy::Init(this_00->field_21F4,CASE_2,0x112,0x149,iVar4,iVar8,bVar9,cVar10,uVar11);
+    if (uVar11 != 0) {
       pHVar5 = this_00->field_21F4;
       pHVar5->field_0002 = 0;
       pHVar5->field_0017 = -1;
-      uVar9 = this_00->field_21F4->field_0003;
-      if (-1 < (int)uVar9) {
-        Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,uVar9);
+      uVar11 = this_00->field_21F4->field_0003;
+      if (-1 < (int)uVar11) {
+        Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,uVar11);
       }
       HoloTy::NextFas(this_00->field_21F4);
     }
@@ -239,17 +239,17 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
     if (pHVar5 != (HoloTy *)0x0) {
       uVar11 = 0;
       cVar10 = '\x01';
-      uVar9 = 0x10;
+      bVar9 = 0x10;
       iVar8 = 1;
       iVar4 = Library::DKW::DDX::FUN_006bf9f0((int *)PTR_008075a8,10,0xb4,0xf9,0x121);
-      uVar9 = HoloTy::Init(this_00->field_21EC,CASE_4,10,0xb4,iVar4,iVar8,uVar9,cVar10,uVar11);
-      if (uVar9 != 0) {
+      uVar11 = HoloTy::Init(this_00->field_21EC,CASE_4,10,0xb4,iVar4,iVar8,bVar9,cVar10,uVar11);
+      if (uVar11 != 0) {
         pHVar5 = this_00->field_21EC;
         pHVar5->field_0002 = 0;
         pHVar5->field_0017 = -1;
-        uVar9 = this_00->field_21EC->field_0003;
-        if (-1 < (int)uVar9) {
-          Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,uVar9);
+        uVar11 = this_00->field_21EC->field_0003;
+        if (-1 < (int)uVar11) {
+          Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,uVar11);
         }
         HoloTy::NextFas(this_00->field_21EC);
       }
@@ -270,7 +270,7 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
   }
   if ((this_00->field_0x21e3 != '\0') &&
      (((SVar1 = this_00->field_1E26, SVar1 == CASE_6 || (SVar1 == CASE_7)) || (SVar1 == CASE_E)))) {
-    puVar7 = &this_00->field_1F60;
+    puVar7 = this_00->field_1F60;
     local_c = 7;
     do {
       if (*puVar7 != 0) {
@@ -309,17 +309,17 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
     if (pHVar5 != (HoloTy *)0x0) {
       uVar11 = 0;
       cVar10 = '\x01';
-      uVar9 = 0x10;
+      bVar9 = 0x10;
       iVar8 = 1;
       iVar4 = Library::DKW::DDX::FUN_006bf9f0((int *)PTR_008075a8,10,0xb4,0xf9,0x123);
-      uVar9 = HoloTy::Init(this_00->field_21F0,CASE_4,10,0xb4,iVar4,iVar8,uVar9,cVar10,uVar11);
-      if (uVar9 != 0) {
+      uVar11 = HoloTy::Init(this_00->field_21F0,CASE_4,10,0xb4,iVar4,iVar8,bVar9,cVar10,uVar11);
+      if (uVar11 != 0) {
         pHVar5 = this_00->field_21F0;
         pHVar5->field_0002 = 0;
         pHVar5->field_0017 = -1;
-        uVar9 = this_00->field_21F0->field_0003;
-        if (-1 < (int)uVar9) {
-          Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,uVar9);
+        uVar11 = this_00->field_21F0->field_0003;
+        if (-1 < (int)uVar11) {
+          Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,uVar11);
         }
         HoloTy::NextFas(this_00->field_21F0);
       }

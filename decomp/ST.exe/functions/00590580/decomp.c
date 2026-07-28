@@ -3,7 +3,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\adv_obj.cpp
-   MAdvTy::PaintMAdv */
+   MAdvTy::PaintMAdv
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall MAdvTy::PaintMAdv(MAdvTy *this)
 
@@ -26,7 +30,7 @@ void __thiscall MAdvTy::PaintMAdv(MAdvTy *this)
   uint uVar8;
   uint uVar9;
   ccFntTy *pcVar10;
-  undefined4 uVar11;
+  uint uVar11;
   InternalExceptionFrame local_4c;
   MAdvTy *local_8;
 
@@ -46,8 +50,8 @@ void __thiscall MAdvTy::PaintMAdv(MAdvTy *this)
       puVar4 = (uint *)LoadResourceString(0x25e4,g_module_00807618);
       StartServTy::WrTextDDX(this_02,0,0,0x1b8,800,0x14,puVar4,uVar8,uVar9,pcVar10,uVar11);
       pcVar10 = g_startSystem_0081176C->field_0030;
-      uVar11 = 1;
-      uVar8 = 0xffffffff;
+      uVar8 = 1;
+      uVar11 = 0xffffffff;
       uVar9 = 0xffffffff;
       puVar4 = (uint *)LoadResourceString(0x25e8,g_module_00807618);
       iVar7 = 0x8c;
@@ -62,14 +66,14 @@ void __thiscall MAdvTy::PaintMAdv(MAdvTy *this)
       puVar4 = (uint *)LoadResourceString(0x25e5,g_module_00807618);
       StartServTy::WrTextDDX(this_00,0,10,10,0x30c,0x32,puVar4,uVar8,uVar9,pcVar10,uVar11);
       pcVar10 = g_startSystem_0081176C->field_0030;
-      uVar11 = 1;
-      uVar8 = 0xffffffff;
+      uVar8 = 1;
+      uVar11 = 0xffffffff;
       uVar9 = 0;
       puVar4 = (uint *)LoadResourceString(0x25e6,g_module_00807618);
-      StartServTy::WrTextDDX(this_01,0,0x10e,0x3c,0x20d,0xfa,puVar4,uVar9,uVar8,pcVar10,uVar11);
+      StartServTy::WrTextDDX(this_01,0,0x10e,0x3c,0x20d,0xfa,puVar4,uVar9,uVar11,pcVar10,uVar8);
       pcVar10 = g_startSystem_0081176C->field_0030;
-      uVar11 = 1;
-      uVar8 = 0xffffffff;
+      uVar8 = 1;
+      uVar11 = 0xffffffff;
       uVar9 = 0;
       puVar4 = (uint *)LoadResourceString(0x25e7,g_module_00807618);
       iVar7 = 0xe6;
@@ -79,7 +83,7 @@ void __thiscall MAdvTy::PaintMAdv(MAdvTy *this)
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       this_03 = extraout_ECX;
     }
-    StartServTy::WrTextDDX(this_03,0,iVar3,iVar5,iVar6,iVar7,puVar4,uVar9,uVar8,pcVar10,uVar11);
+    StartServTy::WrTextDDX(this_03,0,iVar3,iVar5,iVar6,iVar7,puVar4,uVar9,uVar11,pcVar10,uVar8);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }

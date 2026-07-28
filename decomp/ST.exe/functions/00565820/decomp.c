@@ -420,6 +420,7 @@ LAB_00565c6c:
             iVar5 = iVar5 + 1;
           } while (iVar5 < (int)dVar16);
         }
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_7 = param_7 - dVar16;
         if ((int)param_7 < 1) goto cf_common_exit_0056623F;
         local_94[(int)((int)&local_58->iteratorIndex + 1)] = 0;
@@ -433,6 +434,7 @@ LAB_00565c6c:
           if (-1 < iVar14) {
             Library::DKW::TBL::FUN_006ae1c0(&local_1c->flags,(undefined4 *)&local_40);
           }
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_7 = param_7 - 1;
         } while (param_7 != 0);
       }

@@ -29,125 +29,126 @@ void __thiscall STBoatC::ChangeActivity(STBoatC *this,int param_1)
     this_00 = local_8;
     if (iVar2 == 0) {
       if ((param_1 == 1) && (local_8->field_0024 == (uint)DAT_0080874d)) {
-        switch(local_8->field_06F7) {
-        case CASE_1:
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+        switch(*(undefined4 *)((int)local_8->field_06CB + 0x2c)) {
+        case 1:
           arg_2 = 0xc9;
           break;
-        case CASE_2:
+        case 2:
           arg_2 = 0xcf;
           break;
-        case CASE_3:
+        case 3:
           arg_2 = 0xd5;
           break;
-        case CASE_4:
+        case 4:
           arg_2 = 0xdb;
           break;
-        case CASE_5:
+        case 5:
           arg_2 = 0xe1;
           break;
-        case CASE_6:
+        case 6:
           arg_2 = 0xe8;
           break;
-        case CASE_7:
+        case 7:
           arg_2 = 0xef;
           break;
-        case CASE_8:
+        case 8:
           arg_2 = 0xf6;
           break;
-        case CASE_9:
+        case 9:
           arg_2 = 0xfe;
           break;
-        case CASE_A:
+        case 10:
           arg_2 = 0x103;
           break;
-        case CASE_B:
+        case 0xb:
           arg_2 = 0x109;
           break;
-        case CASE_C:
+        case 0xc:
           arg_2 = 0x10f;
           break;
-        case CASE_D:
+        case 0xd:
           arg_2 = 0x12d;
           break;
-        case CASE_E:
+        case 0xe:
           arg_2 = 0x133;
           break;
-        case CASE_F:
+        case 0xf:
           arg_2 = 0x139;
           break;
-        case CASE_10:
+        case 0x10:
           arg_2 = 0x13f;
           break;
-        case CASE_11:
+        case 0x11:
           arg_2 = 0x145;
           break;
-        case CASE_12:
+        case 0x12:
           arg_2 = 0x14c;
           break;
-        case CASE_13:
+        case 0x13:
           arg_2 = 0x153;
           break;
-        case CASE_14:
+        case 0x14:
           arg_2 = 0x15a;
           break;
-        case CASE_15:
+        case 0x15:
           arg_2 = 0x162;
           break;
-        case CASE_16:
+        case 0x16:
           arg_2 = 0x167;
           break;
-        case CASE_17:
+        case 0x17:
           arg_2 = 0x16f;
           break;
-        case CASE_18:
+        case 0x18:
           arg_2 = 0x175;
           break;
-        case CASE_19:
+        case 0x19:
           arg_2 = 0x191;
           break;
-        case CASE_1A:
+        case 0x1a:
           arg_2 = 0x199;
           break;
-        case CASE_1B:
+        case 0x1b:
           arg_2 = 0x1a1;
           break;
-        case CASE_1C:
+        case 0x1c:
           arg_2 = 0x1a7;
           break;
-        case CASE_1D:
+        case 0x1d:
           arg_2 = 0x1ad;
           break;
-        case CASE_1E:
+        case 0x1e:
           arg_2 = 0x1b4;
           break;
-        case CASE_1F:
+        case 0x1f:
           arg_2 = 0x1ba;
           break;
-        case CASE_20:
+        case 0x20:
           arg_2 = 0x1c0;
           break;
-        case CASE_21:
+        case 0x21:
           arg_2 = 0x1c6;
           break;
-        case CASE_22:
+        case 0x22:
           arg_2 = 0x1cd;
           break;
-        case CASE_23:
+        case 0x23:
           arg_2 = 0x1d4;
           break;
-        case CASE_24:
+        case 0x24:
           arg_2 = 0x1da;
           break;
-        case CASE_25:
+        case 0x25:
           arg_2 = 0x17b;
           break;
-        case CASE_26:
+        case 0x26:
           arg_2 = 0x115;
           break;
-        case CASE_27:
+        case 0x27:
           arg_2 = 0x181;
           break;
-        case CASE_28:
+        case 0x28:
           arg_2 = 0x1e0;
           break;
         default:
@@ -155,7 +156,7 @@ void __thiscall STBoatC::ChangeActivity(STBoatC *this,int param_1)
         }
         iVar2 = thunk_FUN_00493cd0((STGameObjC *)local_8);
         if (iVar2 == 0) {
-          (*this_00->vtable->vfunc_90)(this_00,4,arg_2);
+          this_00->vfunc_90(4,arg_2);
         }
       }
       thunk_FUN_0041dd00(this_00,param_1);

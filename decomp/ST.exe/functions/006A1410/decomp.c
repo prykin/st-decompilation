@@ -1,4 +1,8 @@
 
+/* [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=5, used=0), and
+   decompilation contains no value return */
+
 void __cdecl
 FUN_006a1410(int *param_1,int param_2,int param_3,int param_4,int param_5,undefined *param_6,
             undefined4 param_7)
@@ -19,7 +23,7 @@ FUN_006a1410(int *param_1,int param_2,int param_3,int param_4,int param_5,undefi
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (*(code *)param_6)(param_2,param_3,param_4,param_7);
   }
-  iVar3 = thunk_FUN_006a1370(param_1,param_2,param_3,param_4,&local_14);
+  iVar3 = thunk_FUN_006a1370(param_1,param_2,param_3,param_4,(int)&local_14);
   if (param_5 == 0xff) {
     iVar4 = (int)(short)iVar3;
     iVar3 = iVar4;

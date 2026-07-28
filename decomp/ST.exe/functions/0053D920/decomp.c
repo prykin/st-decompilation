@@ -17,11 +17,10 @@ UPanelTy::PaintTxtBut
 {
   code *pcVar1;
   UPanelTy *pUVar2;
-  uint uVar3;
-  int iVar4;
-  undefined4 uVar5;
+  int iVar3;
+  uint uVar4;
   uint *resourceString;
-  int iVar6;
+  int iVar5;
   InternalExceptionFrame local_5c;
   AnonNested_0053D920_0018_8DE8F5C2 *local_18;
   int local_14;
@@ -42,23 +41,23 @@ UPanelTy::PaintTxtBut
     local_5c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_5c;
     local_10 = this;
-    iVar4 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
-    if (iVar4 == 0) {
+    iVar3 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
+    if (iVar3 == 0) {
       local_8 = cMf32::RecGet(g_cMf32_00806790,param_2,param_3,(int *)0x0,1);
-      uVar3 = local_c;
+      uVar4 = local_c;
       pUVar2 = local_10;
-      iVar4 = local_14;
+      iVar3 = local_14;
       DibPut((AnonShape_006B5B10_E0D06CF1 *)local_10->field_0068,local_14,local_c,param_2,
              (byte *)local_8);
       cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);
-      ccFntTy::SetSurf(param_4,pUVar2->field_0068,0,iVar4,uVar3,local_18->field_0008,
+      ccFntTy::SetSurf(param_4,pUVar2->field_0068,0,iVar3,uVar4,local_18->field_0008,
                        local_18->field_000C);
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      uVar5 = (*(code *)param_6)(param_1);
-      iVar6 = -1;
-      iVar4 = -2;
+      uVar4 = (*(code *)param_6)(param_1);
+      iVar5 = -1;
+      iVar3 = -2;
       resourceString = (uint *)LoadResourceString(param_5,g_module_00807618);
-      ccFntTy::WrStr(param_4,resourceString,iVar4,iVar6,uVar5);
+      ccFntTy::WrStr(param_4,resourceString,iVar3,iVar5,uVar4);
       Library::DKW::DDX::FUN_006b3640
                 ((int *)PTR_008075a8,pUVar2->field_0060,0xffffffff,pUVar2->field_003C,
                  pUVar2->field_0044);
@@ -66,12 +65,12 @@ UPanelTy::PaintTxtBut
       return;
     }
     g_currentExceptionFrame = local_5c.previous;
-    iVar6 = ReportDebugMessage("E:\\__titans\\Andrey\\specpan.cpp",0x3e,0,iVar4,"%s",
+    iVar5 = ReportDebugMessage("E:\\__titans\\Andrey\\specpan.cpp",0x3e,0,iVar3,"%s",
                                "UPanelTy::PaintTxtBut");
-    if (iVar6 != 0) {
+    if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar4,0,"E:\\__titans\\Andrey\\specpan.cpp",0x3e);
+    RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\specpan.cpp",0x3e);
   }
   return;
 }

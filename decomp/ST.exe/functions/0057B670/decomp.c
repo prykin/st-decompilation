@@ -1,7 +1,14 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 __cdecl FUN_0057b670(int *param_1,uint param_2,uint param_3,int param_4,int param_5)
+/* [STPrototypeApplier] Propagated parameter 3.
+   Evidence: 0057B670 -> 00416270 @ 0057B716 | 0057B670 -> 0057A2C0 @ 0057B6F7
+
+   [STPrototypeApplier] Propagated parameter 4.
+   Evidence: 0057B670 -> 00416270 @ 0057B716 | 0057B670 -> 0057A2C0 @ 0057B6F7 */
+
+undefined4 __cdecl
+FUN_0057b670(int *param_1,uint param_2,uint param_3,short *param_4,short *param_5)
 
 {
   undefined2 uVar1;
@@ -29,6 +36,7 @@ undefined4 __cdecl FUN_0057b670(int *param_1,uint param_2,uint param_3,int param
   this = param_1;
   uVar4 = 0;
   local_8 = (void *)0x0;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_1 == (int *)0x0) {
     return 1;
   }
@@ -42,6 +50,7 @@ undefined4 __cdecl FUN_0057b670(int *param_1,uint param_2,uint param_3,int param
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (*(int *)((int)param_1 + 0x259) == 0x99) {
     iVar3 = 0x15e;
+/* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
 LAB_0057b6da:
     param_1 = (int *)0x3fc00000;
   }
@@ -52,20 +61,24 @@ LAB_0057b6da:
       goto LAB_0057b6da;
     }
     iVar3 = 0xfa;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = (int *)0x3f000000;
   }
   thunk_FUN_0057a2c0((AnonShape_0057A2C0_A829D396 *)this,param_3,(int *)&local_8,param_4,iVar3,
                      param_1,param_5);
 LAB_0057b6ff:
   if (local_8 != (void *)0x0) {
-    thunk_FUN_00416270(this,(undefined2 *)&param_2,&param_5,&param_4);
+    thunk_FUN_00416270(this,(undefined2 *)&param_2,(int *)&param_5,(int *)&param_4);
     if (*(int *)((int)this + 0x259) == 0x99) {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (int *)0xb4;
     }
     else if (*(int *)((int)this + 0x259) == 0xb7) {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (int *)0xb9;
     }
     else {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (int *)0x96;
     }
     if (0 < (int)(param_3 + 1)) {
@@ -83,8 +96,10 @@ LAB_0057b6ff:
         local_34 = *(undefined1 *)((int)this + 0x25d);
         local_60[0] = 0x28;
         local_46 = (undefined2)param_2;
-        local_44 = (undefined2)param_5;
-        local_42 = (undefined2)param_4;
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+        local_44 = param_5._0_2_;
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+        local_42 = param_4._0_2_;
         local_4a = uVar1;
         if (uVar4 == param_3) {
           iVar3 = FUN_006acf0d((int)*(short *)((int)this + 0x3a),(int)(short)this[0xf],
@@ -111,7 +126,7 @@ LAB_0057b6ff:
         }
         local_38 = param_1;
         local_3a = *(undefined2 *)((int)local_8 + uVar4 * 8 + 6);
-        (*g_playSystem_00802A38->vtable->vfunc_08)(g_playSystem_00802A38,0x106,0,0,local_60,0);
+        g_playSystem_00802A38->vfunc_08(0x106,0,0,local_60,0);
         uVar4 = uVar4 + 1;
       } while ((int)uVar4 < (int)(uVar2 + 1));
     }

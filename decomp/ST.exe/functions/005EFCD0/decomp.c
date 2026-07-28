@@ -18,7 +18,8 @@ void __fastcall FUN_005efcd0(AnonShape_005EFCD0_3603EDD8 *param_1)
        (g_worldGrid.cells
         [(int)g_worldGrid.planeStride * (int)sVar3 + (int)g_worldGrid.sizeX * (int)sVar2 +
          (int)sVar1].objects[0] == (STWorldObject *)0x0)))) &&
-     (iVar5 = DumpClassC::WritePtr(sVar1,sVar2,sVar3,0,(AnonShape_00495EC0_95A268C6 *)param_1),
+     (iVar5 = DumpClassC::WritePtr
+                        (sVar1,sVar2,sVar3,0,(RecoveredRecord_DumpClassC_00495EC0 *)param_1),
      iVar5 == 0)) {
     param_1->field_0252 = param_1->field_0252 + '\x01';
     thunk_FUN_005f06e0((AnonShape_005F0620_60AA17CE *)param_1);

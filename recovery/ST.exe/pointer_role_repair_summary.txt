@@ -1,6 +1,6 @@
 program=ST.exe
-candidate_functions=274
-unsettled_type_propagation_functions=4
+candidate_functions=273
+unsettled_type_propagation_functions=3
 proposals=1
 auto_apply=0
 review_only=1

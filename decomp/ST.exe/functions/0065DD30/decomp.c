@@ -7,7 +7,7 @@ FUN_0065dd30(AiFltClassTy *param_1,undefined4 param_2,uint param_3,uint param_4,
 {
   byte bVar1;
   char cVar2;
-  undefined2 *puVar3;
+  ushort *puVar3;
   STGameObjC *this;
   uint uVar4;
   uint uVar5;
@@ -35,9 +35,11 @@ FUN_0065dd30(AiFltClassTy *param_1,undefined4 param_2,uint param_3,uint param_4,
       cVar2 = (char)param_1->field_0024;
     }
     if ((param_5 != '\b') && ((param_5 < '\0' || (cVar2 = param_5, '\b' < param_5)))) {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_5 = -1;
       cVar2 = param_5;
     }
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_5 = cVar2;
     uVar4 = local_1c->count;
     local_14 = 0;
@@ -45,16 +47,14 @@ FUN_0065dd30(AiFltClassTy *param_1,undefined4 param_2,uint param_3,uint param_4,
       do {
         if (local_14 < uVar4) {
           /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(local_1c, local_14) (runtime stride) */
-          puVar3 = (undefined2 *)(local_1c->elementSize * local_14 + (int)local_1c->data);
+          puVar3 = (ushort *)(local_1c->elementSize * local_14 + (int)local_1c->data);
         }
         else {
-          puVar3 = (undefined2 *)0x0;
+          puVar3 = (ushort *)0x0;
         }
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         this = STAllPlayersC::GetObjPtr
-                         (g_allPlayers_007FA174,*(char *)&param_1->field_0024,
-                          CONCAT22((short)((uint)puVar3 >> 0x10),*puVar3),CASE_1);
-        if ((this == (STGameObjC *)0x0) || (iVar9 = (*this->vtable->vfunc_F8)(this), iVar9 == 0))
+                         (g_allPlayers_007FA174,*(char *)&param_1->field_0024,*puVar3,CASE_1);
+        if ((this == (STGameObjC *)0x0) || (iVar9 = this->vfunc_F8(), iVar9 == 0))
         goto cf_common_join_0065DF91;
         uVar4 = (*this->vtable->vfunc_2C)();
         if (param_4 != 0) {
@@ -104,7 +104,8 @@ LAB_0065deea:
 LAB_0065deef:
             if (iVar9 != 0) goto cf_common_join_0065DF91;
           }
-          if (((param_5 == -1) || (iVar9 = (*this->vtable->vfunc_6C)(this), param_5 == iVar9)) &&
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+          if (((param_5 == -1) || (iVar9 = this->vfunc_6C(), param_5 == iVar9)) &&
              (((param_10 < 1 || ((param_11 < 1 || (param_12 < 1)))) ||
               ((STFishC::sub_004162B0((STFishC *)this,&local_6,&local_8,&local_a),
                param_7 <= local_6 &&

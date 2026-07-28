@@ -3,12 +3,18 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cp_sup.cpp
-   CPanelTy::PaintCostsXY */
+   CPanelTy::PaintCostsXY
+   [STAbiConsistencyApplier] stack_parameter_width target=parameter:6: parameter=/ushort Evidence:
+   entry-use width=/ushort; unmasked_dword_reads=0; evidence=004F2202 MOV ECX,dword ptr [EBP +
+   0x1c]; first-use mask
+   [STAbiConsistencyApplier] stack_parameter_width target=parameter:7: parameter=/ushort Evidence:
+   entry-use width=/ushort; unmasked_dword_reads=0; evidence=004F2269 MOV EDX,dword ptr [EBP +
+   0x20]; first-use mask */
 
 void __thiscall
 CPanelTy::PaintCostsXY
           (CPanelTy *this,int param_1,int param_2,int param_3,ushort param_4,ushort param_5,
-          uint param_6,uint param_7)
+          ushort param_6,ushort param_7)
 
 {
   code *pcVar1;
@@ -41,12 +47,12 @@ CPanelTy::PaintCostsXY
     if (param_4 != 0xffff) {
       wsprintfA(&pCVar2->field_0x1e1,"%d",param_4);
       ccFntTy::SetSurf(pCVar2->field_01B8,param_1,0,param_2 + 0x30,param_3,0x11,10);
-      ccFntTy::WrTxt(pCVar2->field_01B8,(uint *)&pCVar2->field_0x1e1,-3,-1,param_6 & 0xffff,-1,-1);
+      ccFntTy::WrTxt(pCVar2->field_01B8,(uint *)&pCVar2->field_0x1e1,-3,-1,(uint)param_6,-1,-1);
     }
     if (param_5 != 0xffff) {
       wsprintfA(&pCVar2->field_0x1e1,"%d",param_5);
       ccFntTy::SetSurf(pCVar2->field_01B8,param_1,0,param_2 + 0x30,param_3 + 0xb,0x11,10);
-      ccFntTy::WrTxt(pCVar2->field_01B8,(uint *)&pCVar2->field_0x1e1,-3,-1,param_7 & 0xffff,-1,-1);
+      ccFntTy::WrTxt(pCVar2->field_01B8,(uint *)&pCVar2->field_0x1e1,-3,-1,(uint)param_7,-1,-1);
     }
     g_currentExceptionFrame = local_4c.previous;
     return;

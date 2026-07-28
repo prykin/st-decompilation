@@ -26,7 +26,7 @@ undefined4 __fastcall FUN_005edc20(AnonShape_005EDC20_3D37DB9E *param_1)
         (this = g_worldGrid.cells
                 [(int)g_worldGrid.planeStride * (int)sVar1 + (int)g_worldGrid.sizeX * (int)sVar2 +
                  (int)sVar3].objects[0], this != (STWorldObject *)0x0)))) {
-      iVar4 = (*this->vtable->GetObjectTypeId)(this);
+      iVar4 = this->GetObjectTypeId();
       if ((iVar4 == 0x52) || (iVar4 == 0x5f)) {
         if ((*(int *)&this[0x23].field_0x1c == *(int *)&param_1->field_0x18) &&
            ((*(int *)&this[0x22].field_0x8 == 3 &&
@@ -40,19 +40,19 @@ undefined4 __fastcall FUN_005edc20(AnonShape_005EDC20_3D37DB9E *param_1)
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           iVar6 = (**(code **)(*(int *)param_1 + 0x130))();
           thunk_FUN_004ebda0(this,*(int *)&param_1->field_0x18,iVar6,iVar4,uVar8,uVar10,uVar12);
-          thunk_FUN_005f05a0(param_1,(short)this[1].vtable,*(undefined2 *)&this[1].field_0xe);
+          thunk_FUN_005f05a0(param_1,(ushort)this[1].vtable,*(undefined2 *)&this[1].field_0xe);
           return 1;
         }
         return 0;
       }
-      iVar4 = (*this->vtable->GetObjectTypeId)(this);
+      iVar4 = this->GetObjectTypeId();
       if ((iVar4 == 99) && (*(int *)&this[0x22].field_0x8 == 2)) {
         uVar11 = 0;
         iVar9 = -100;
         iVar7 = -100;
         iVar6 = -100;
         iVar4 = 1;
-        uVar5 = thunk_FUN_004ad650((int)&param_1->field_0x1d5);
+        uVar5 = thunk_FUN_004ad650((STT3DSprC *)&param_1->field_0x1d5);
         thunk_FUN_006377b0(uVar5,iVar4,iVar6,iVar7,iVar9,uVar11);
         return 2;
       }

@@ -1,5 +1,8 @@
 
-undefined2 * FUN_006bc3e0(int param_1,undefined2 *param_2,undefined4 *param_3)
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 006BC3E0 -> 006BC360 @ 006BC40C */
+
+undefined2 * FUN_006bc3e0(ushort *param_1,undefined2 *param_2,undefined4 *param_3)
 
 {
   undefined2 *puVar1;
@@ -11,7 +14,7 @@ undefined2 * FUN_006bc3e0(int param_1,undefined2 *param_2,undefined4 *param_3)
       return (undefined2 *)0x0;
     }
   }
-  FUN_006bc360((ushort *)param_1,(undefined4 *)(puVar1 + 2),(int *)&param_2);
+  FUN_006bc360(param_1,(undefined4 *)(puVar1 + 2),(int *)&param_2);
   *puVar1 = 0x300;
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   puVar1[1] = param_2._0_2_;

@@ -39,7 +39,7 @@ undefined4 * __thiscall STDcResourcC::Init(STDcResourcC *this,uint param_1)
       this->field_026D = puVar3;
       puVar3[this->field_0265] = this_00;
       this->field_0265 = this->field_0265 + 1;
-      iVar4 = STT3DSprC::Init(this_00,DAT_008073cc,0x5a,0x45,(uint)this,0xb4,0x8c,0x11);
+      iVar4 = STT3DSprC::Init(this_00,DAT_008073cc,0x5a,0x45,this,0xb4,0x8c,0x11);
       if (iVar4 != 0) {
         iVar4 = ReportDebugMessage("E:\\__titans\\Igor\\To_gold.cpp",0x203,0,0,"%s",
                                    "STDcResourcC::Init Sprite Error");

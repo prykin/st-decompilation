@@ -7,7 +7,11 @@
 
    [STPrototypeApplier] Propagated parameter 2.
    Evidence: 00543600 -> 00543AD0 @ 00543680 | 0054BF40 -> 00543AD0 @ 0054C073 | 0054BF40 ->
-   00543AD0 @ 0054C358 | 0054BF40 -> 00543AD0 @ 0054C397 | 0054BF40 -> 00543AD0 @ 0054C3D6 */
+   00543AD0 @ 0054C358 | 0054BF40 -> 00543AD0 @ 0054C397 | 0054BF40 -> 00543AD0 @ 0054C3D6
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=6, used=0), and
+   decompilation contains no value return */
 
 void __thiscall
 CursorClassTy::SetImages

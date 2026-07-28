@@ -74,8 +74,10 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00727C80::FUN_00727da0
   }
   uVar5 = 0;
   pAVar10 = (AnonShape_00727DA0_C4265AA0 *)0x80000000;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_2 = 0;
   pAVar8 = (AnonShape_00727DA0_C4265AA0 *)0x7fff0000;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = (AnonShape_00727DA0_C4265AA0 *)0x80000000;
   piVar13 = &DAT_008570ac;
   do {
@@ -83,11 +85,13 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00727C80::FUN_00727da0
     if ((int)pAVar1 < (int)pAVar8) {
       pAVar8 = pAVar1;
       pAVar10 = param_1;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = uVar5;
     }
     if ((int)pAVar10 < (int)pAVar1) {
       pAVar10 = pAVar1;
       DAT_00857070 = uVar5;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = pAVar1;
     }
     piVar13 = piVar13 + 4;
@@ -106,7 +110,9 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00727C80::FUN_00727da0
       if (iVar4 != 0) {
         if (*(int *)&this->field_0x124 == 6) {
           iVar4 = *(int *)&this->field_0x28 * DAT_00857098;
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_1 = (AnonShape_00727DA0_C4265AA0 *)(*(int *)&this->field_0xc + iVar4);
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_2 = *(int *)&this->field_0x14 + iVar4 * 2;
           if (DAT_00857098 < *(int *)&this->field_0x3c) {
             do {
@@ -195,8 +201,10 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00727C80::FUN_00727da0
                 local_60.field_001C = local_60.field_001C + local_60._32_4_;
               }
               DAT_00857098 = DAT_00857098 + 1;
+              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_1 = (AnonShape_00727DA0_C4265AA0 *)
                         (&param_1->field_0x0 + *(int *)&this->field_0x28);
+              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_2 = param_2 + *(int *)&this->field_0x28 * 2;
             } while (DAT_00857098 < *(int *)&this->field_0x3c);
             return;

@@ -7,6 +7,7 @@ void FUN_006c6850(int param_1,int param_2,int param_3,int param_4,int param_5,un
   int iVar3;
 
   if (param_4 < 0) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = param_2 + 1 + param_4;
     param_4 = -param_4;
   }

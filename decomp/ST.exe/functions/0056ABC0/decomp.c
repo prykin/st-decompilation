@@ -10,6 +10,7 @@ void __thiscall FUN_0056abc0(void *this,char *param_1)
   char *pcVar6;
   bool bVar7;
 
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_1 == (char *)0x0) {
     if (*(char *)((int)this + 0x1474) != '\0') {
       if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
@@ -31,6 +32,7 @@ void __thiscall FUN_0056abc0(void *this,char *param_1)
   else if ((*(char *)((int)this + 0x1474) == '\0') &&
           (*(undefined1 *)((int)this + 0x1474) = 1, g_visibleClass_00802A88 != (VisibleClassTy *)0x0
           )) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = (char *)((int)this + 0x11c9);
     bVar3 = 0;
     puVar5 = (undefined *)0x0;
@@ -73,6 +75,7 @@ LAB_0056acb1:
       }
       bVar3 = bVar3 + 1;
       puVar5 = puVar5 + 1;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = param_1 + 0x51;
       pcVar6 = pcVar6 + 0x51;
       if (7 < bVar3) {

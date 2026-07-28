@@ -33,7 +33,7 @@ undefined4 __thiscall STJumpMineC::LoadImagJMine(STJumpMineC *this,int param_1)
       piVar6 = &local_8->field_0097;
       FUN_006e8660(PTR_00807598,piVar6,1,0,*(uint *)((int)puVar3 + 9),*(uint *)((int)puVar3 + 0xd),
                    0x5a,0x45,0);
-      FUN_006e98e0(PTR_00807598,*piVar6,0,*(undefined4 *)puVar3,*(int *)((int)puVar3 + 0x21),1);
+      FUN_006e98e0(PTR_00807598,*piVar6,0,*(int *)puVar3,*(int *)((int)puVar3 + 0x21),1);
       FUN_006ea270(PTR_00807598,*piVar6,0,pSVar7->field_00AB);
       iVar2 = *(int *)puVar3;
       pSVar7->field_009B = puVar3;
@@ -56,13 +56,13 @@ undefined4 __thiscall STJumpMineC::LoadImagJMine(STJumpMineC *this,int param_1)
       ;
       FUN_006e8660(PTR_00807598,piVar6,3,0,*(uint *)((int)puVar3 + 9),*(uint *)((int)puVar3 + 0xd),
                    0x5a,0x45,0);
-      FUN_006e98e0(PTR_00807598,*piVar6,0,*(undefined4 *)puVar3,*(int *)((int)puVar3 + 0x21),1);
+      FUN_006e98e0(PTR_00807598,*piVar6,0,*(int *)puVar3,*(int *)((int)puVar3 + 0x21),1);
       FUN_006ea270(PTR_00807598,*piVar6,0,pSVar7->field_00AB);
       pSVar7->field_00AF = *(int *)puVar3;
       puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
                          (DAT_00806774,CASE_1D,"expmask2",0xffffffff,0,1,0,
                           (undefined4 *)0x0);
-      FUN_006e98e0(PTR_00807598,*piVar6,1,*(undefined4 *)puVar3,*(int *)((int)puVar3 + 0x21),1);
+      FUN_006e98e0(PTR_00807598,*piVar6,1,*(int *)puVar3,*(int *)((int)puVar3 + 0x21),1);
       FUN_006ea270(PTR_00807598,*piVar6,1,pSVar7->field_00BC);
       FUN_006ea800(PTR_00807598,*piVar6,1,1);
       FUN_006ea790(PTR_00807598,*piVar6,DAT_008032b8,0x10);
@@ -71,7 +71,7 @@ undefined4 __thiscall STJumpMineC::LoadImagJMine(STJumpMineC *this,int param_1)
       puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
                          (DAT_00806764,CASE_1D,"bulb_n4",0xffffffff,0,1,0,(undefined4 *)0x0
                          );
-      FUN_006e98e0(PTR_00807598,*piVar6,2,*(undefined4 *)puVar3,*(int *)((int)puVar3 + 0x21),1);
+      FUN_006e98e0(PTR_00807598,*piVar6,2,*(int *)puVar3,*(int *)((int)puVar3 + 0x21),1);
       FUN_006ea270(PTR_00807598,*piVar6,2,pSVar7->field_00B7);
       FUN_006e9d40(PTR_00807598,(uint *)*piVar6,2);
       pSVar7->field_00B3 = *(int *)puVar3;

@@ -42,8 +42,10 @@ undefined4 __thiscall FUN_0063d660(void *this,char param_1)
     return 0;
   }
   iVar5 = *(int *)(*(int *)((int)this + 0x336) + 0xc);
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_1 == '\n') {
     fVar3 = _DAT_007d2044 + _DAT_007d2044;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     _param_1 = 0;
     *(undefined4 *)((int)this + 0x2b8) = *(undefined4 *)((int)this + 0x2b4);
     iVar1 = *(int *)((int)this + 700);
@@ -64,6 +66,7 @@ undefined4 __thiscall FUN_0063d660(void *this,char param_1)
           fsin(extraout_ST0_06);
           puVar6[2] = (int)lVar9 + *(int *)((int)this + 0x2a4);
           lVar9 = Library::MSVCRT::__ftol();
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           _param_1 = uVar4 + 1;
           puVar6[3] = (int)lVar9 + *(int *)((int)this + 0x2a8);
           puVar6[4] = (float)*(int *)((int)this + 0x2ac) * _DAT_007904f8 * _DAT_007904f0;
@@ -78,6 +81,7 @@ undefined4 __thiscall FUN_0063d660(void *this,char param_1)
           puVar6[0xb] = (float)iVar2;
           uVar4 = _param_1;
           if (0x31 < (int)_param_1) {
+            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             _param_1 = 0;
             uVar4 = _param_1;
           }
@@ -87,8 +91,10 @@ undefined4 __thiscall FUN_0063d660(void *this,char param_1)
     }
   }
   else {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_1 == '\v') {
       fVar8 = (float10)_DAT_007d2044 * (float10)_DAT_0079d4a4;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       _param_1 = 0;
       *(undefined4 *)((int)this + 0x2b8) = *(undefined4 *)((int)this + 0x2b4);
       *(undefined4 *)((int)this + 0x29a) = 1;
@@ -115,6 +121,7 @@ undefined4 __thiscall FUN_0063d660(void *this,char param_1)
           puVar6[9] = 1;
           *puVar6 = 1;
           puVar6[0xb] = (float)iVar5;
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           _param_1 = _param_1 + 1;
           puVar6[8] = 0;
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -125,6 +132,7 @@ undefined4 __thiscall FUN_0063d660(void *this,char param_1)
         uVar4 = uVar4 + 1;
       } while ((int)uVar4 < 0x32);
       fVar7 = (float10)_DAT_007d2044 * (float10)_DAT_0079d4a0;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       _param_1 = 0;
       uVar4 = 0x32;
       do {
@@ -150,6 +158,7 @@ undefined4 __thiscall FUN_0063d660(void *this,char param_1)
           puVar6[9] = 1;
           puVar6[8] = 0;
           puVar6[0xb] = (float)iVar5;
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           _param_1 = _param_1 + 1;
           *puVar6 = 2;
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -162,6 +171,7 @@ undefined4 __thiscall FUN_0063d660(void *this,char param_1)
       } while (iVar5 < 10);
       fVar7 = (float10)_DAT_007d2044 * (float10)_DAT_0079d4a0;
       iVar5 = 0;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       _param_1 = 0;
       local_8 = 0x3c;
       do {
@@ -178,6 +188,7 @@ undefined4 __thiscall FUN_0063d660(void *this,char param_1)
           fsin(extraout_ST0_04);
           puVar6[2] = (int)lVar9 + *(int *)((int)this + 0x2a4);
           lVar9 = Library::MSVCRT::__ftol();
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           _param_1 = iVar5 + 1;
           puVar6[3] = (int)lVar9 + *(int *)((int)this + 0x2a8);
           puVar6[4] = (float)*(int *)((int)this + 0x2ac) * _DAT_007904f8 * _DAT_007904f0;
@@ -196,6 +207,7 @@ undefined4 __thiscall FUN_0063d660(void *this,char param_1)
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           fVar8 = extraout_ST1_01;
           if (9 < (int)_param_1) {
+            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             _param_1 = 0;
             iVar5 = _param_1;
           }
@@ -220,9 +232,11 @@ undefined4 __thiscall FUN_0063d660(void *this,char param_1)
       *(float *)((int)this + 0x332) = (float)(fVar7 + (float10)_DAT_00790500);
       return 0;
     }
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if ((param_1 == '\f') && (iVar1 = *(int *)((int)this + 700), iVar1 != 0)) {
       fVar3 = _DAT_007d2044 + _DAT_007d2044;
       *(undefined4 *)((int)this + 0x2b8) = *(undefined4 *)((int)this + 0x2b4);
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       _param_1 = 0;
       *(undefined4 *)((int)this + 0x29a) = 1;
       local_8 = 0;
@@ -241,6 +255,7 @@ undefined4 __thiscall FUN_0063d660(void *this,char param_1)
             fsin(extraout_ST0);
             puVar6[2] = (int)lVar9 + *(int *)((int)this + 0x2a4);
             lVar9 = Library::MSVCRT::__ftol();
+            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             _param_1 = uVar4 + 1;
             puVar6[3] = (int)lVar9 + *(int *)((int)this + 0x2a8);
             puVar6[4] = (float)*(int *)((int)this + 0x2ac) * _DAT_007904f8 * _DAT_007904f0;
@@ -255,6 +270,7 @@ undefined4 __thiscall FUN_0063d660(void *this,char param_1)
             puVar6[0xb] = (float)iVar2;
             uVar4 = _param_1;
             if (*(int *)((int)this + 700) <= (int)_param_1) {
+              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               _param_1 = 0;
               uVar4 = _param_1;
             }

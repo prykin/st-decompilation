@@ -71,7 +71,7 @@ void __thiscall AiPlrClassTy::ExecTech(AiPlrClassTy *this,void *param_1)
                 iVar4 = thunk_FUN_004e5910(this_00->field_05D7,(uint)pSVar11);
                 /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
                 if ((iVar4 == 0) ||
-                   (bVar13 = thunk_FUN_004e5c40(this_00->field_05D7,(uint)pSVar11),
+                   (bVar13 = thunk_FUN_004e5c40((byte *)this_00->field_05D7,(uint)pSVar11),
                    CONCAT31(extraout_var,bVar13) == 0)) {
 LAB_0067b6db:
                   bVar13 = false;
@@ -152,11 +152,9 @@ LAB_0067b724:
               local_8 = (STGameObjC *)0x0;
             }
             else {
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               local_8 = STAllPlayersC::GetObjPtr
                                   (g_allPlayers_007FA174,*(char *)&this_00->field_05D7,
-                                   CONCAT22((short)((uint)pDVar5 >> 0x10),
-                                            *(undefined2 *)((int)pvVar10 + 8)),CASE_1);
+                                   *(ushort *)((int)pvVar10 + 8),CASE_1);
             }
             if (local_8 == (STGameObjC *)0x0) {
               *(undefined1 *)((int)pvVar10 + 7) = 0;

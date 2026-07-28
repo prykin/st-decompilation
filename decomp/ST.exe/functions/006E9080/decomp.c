@@ -5,7 +5,7 @@ undefined4 * __thiscall FUN_006e9080(void *this,uint param_1,uint param_2,uint p
   uint *puVar1;
   uint uVar2;
   int iVar3;
-  undefined4 *puVar4;
+  ushort *puVar4;
   undefined4 uVar5;
 
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -26,10 +26,10 @@ undefined4 * __thiscall FUN_006e9080(void *this,uint param_1,uint param_2,uint p
     else {
       uVar5 = **(undefined4 **)(uVar2 + 4 + param_3 * 8);
     }
-    puVar4 = FUN_006e9000(this,iVar3,(short)puVar1[0x21],(short)puVar1[0x22],puVar1[0x1d],
+    puVar4 = FUN_006e9000(this,iVar3,(ushort)puVar1[0x21],(ushort)puVar1[0x22],puVar1[0x1d],
                           puVar1[0x1e],puVar1[0x1f],uVar5);
     FUN_006e8ba0(this,param_1);
-    return puVar4;
+    return (undefined4 *)puVar4;
   }
   FUN_006e91a0();
   FUN_006e8ba0(this,param_1);

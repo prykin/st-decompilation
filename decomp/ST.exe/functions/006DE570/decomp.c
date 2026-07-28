@@ -29,10 +29,12 @@ int __thiscall FUN_006de570(void *this,int param_1,int param_2)
   int local_8;
 
   local_1c = (float)(param_1 * 2) * (float)*(double *)((int)this + 200);
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = -30000;
   local_8 = -30000;
   local_18 = (float)(param_2 * 2) * (float)*(double *)((int)this + 200);
   local_14 = 0;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_2 = 30000;
   FUN_006e25d0(this,&local_2c);
   iVar1 = local_2c >> 0x10;
@@ -41,10 +43,12 @@ int __thiscall FUN_006de570(void *this,int param_1,int param_2)
     iVar4 = iVar1;
   }
   if (-30000 < iVar1) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = iVar1;
   }
   iVar2 = local_28 >> 0x10;
   if (iVar2 < 30000) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = iVar2;
   }
   if (-30000 < iVar2) {
@@ -60,10 +64,12 @@ int __thiscall FUN_006de570(void *this,int param_1,int param_2)
     iVar4 = iVar1;
   }
   if (param_1 < iVar1) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = iVar1;
   }
   iVar2 = local_28 >> 0x10;
   if (iVar2 < param_2) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = iVar2;
   }
   if (local_8 < iVar2) {
@@ -80,10 +86,12 @@ int __thiscall FUN_006de570(void *this,int param_1,int param_2)
     iVar4 = iVar1;
   }
   if (param_1 < iVar1) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = iVar1;
   }
   iVar2 = local_28 >> 0x10;
   if (iVar2 < param_2) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = iVar2;
   }
   if (local_8 < iVar2) {
@@ -100,10 +108,12 @@ int __thiscall FUN_006de570(void *this,int param_1,int param_2)
     iVar4 = iVar1;
   }
   if (param_1 < iVar1) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = iVar1;
   }
   iVar2 = local_28 >> 0x10;
   if (iVar2 < param_2) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = iVar2;
   }
   if (local_8 < iVar2) {
@@ -119,10 +129,12 @@ int __thiscall FUN_006de570(void *this,int param_1,int param_2)
     iVar4 = iVar1;
   }
   if (param_1 < iVar1) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = iVar1;
   }
   iVar2 = local_28 >> 0x10;
   if (iVar2 < param_2) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = iVar2;
   }
   if (local_8 < iVar2) {
@@ -138,10 +150,12 @@ int __thiscall FUN_006de570(void *this,int param_1,int param_2)
     iVar4 = iVar1;
   }
   if (param_1 < iVar1) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = iVar1;
   }
   iVar2 = local_28 >> 0x10;
   if (iVar2 < param_2) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = iVar2;
   }
   if (local_8 < iVar2) {
@@ -157,10 +171,12 @@ int __thiscall FUN_006de570(void *this,int param_1,int param_2)
     iVar4 = iVar1;
   }
   if (param_1 < iVar1) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = iVar1;
   }
   iVar2 = local_28 >> 0x10;
   if (iVar2 < param_2) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = iVar2;
   }
   iVar3 = local_8;
@@ -177,10 +193,12 @@ int __thiscall FUN_006de570(void *this,int param_1,int param_2)
     iVar4 = local_2c;
   }
   if (param_1 < local_2c) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = local_2c;
   }
   local_28 = local_28 >> 0x10;
   if (local_28 < param_2) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = local_28;
   }
   if (iVar3 < local_28) {

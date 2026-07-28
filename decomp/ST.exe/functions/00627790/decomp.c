@@ -1,7 +1,10 @@
 #include "../../pseudocode_runtime.h"
 
 
-void __fastcall FUN_00627790(AnonShape_00627790_BD208A1C *param_1)
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 006239A0 -> 00627790 @ 00623B42; STMineSetC::sub_006239A0 this; stable alias ESI */
+
+void __fastcall FUN_00627790(STMineSetC *param_1)
 
 {
   int iVar1;
@@ -16,11 +19,13 @@ void __fastcall FUN_00627790(AnonShape_00627790_BD208A1C *param_1)
   if (DAT_008117bc != (undefined4 *)0x0) {
     memset(local_28, 0, 0x20); /* compiler bulk-zero initialization */
     iVar1 = 0;
-    local_14 = param_1->field_0024;
+    local_14 = *(undefined2 *)&param_1->field_0024;
     local_12 = param_1->field_0032;
-    if (((param_1->field_0241 == 0) ||
-        (iVar1 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,param_1->field_0241,&local_8),
-        iVar1 == -4)) || (local_8 == 0)) {
+    if ((((AnonShape_005EFAE0_B406B78B *)param_1->field_0241 == (AnonShape_005EFAE0_B406B78B *)0x0)
+        || (iVar1 = STPlaySystemC::sub_006E62D0
+                              (g_playSystem_00802A38,
+                               (AnonShape_005EFAE0_B406B78B *)param_1->field_0241,&local_8),
+           iVar1 == -4)) || (local_8 == 0)) {
       local_10 = 0xff;
       local_e = 0xffff;
     }

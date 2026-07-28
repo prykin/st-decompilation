@@ -1,6 +1,10 @@
 #include "../../pseudocode_runtime.h"
 
 
+/* [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=9, used=0, unknown=0),
+   and decompilation contains no value return */
+
 void __cdecl FUN_00645880(AnonShape_00645880_0D5933D4 *param_1)
 
 {
@@ -95,7 +99,7 @@ void __cdecl FUN_00645880(AnonShape_00645880_0D5933D4 *param_1)
     local_bc = 1;
     local_a4 = 5;
     local_a0 = 0x32;
-    (*g_playSystem_00802A38->vtable->vfunc_08)(g_playSystem_00802A38,0x10a,0,0,&local_c4,0);
+    g_playSystem_00802A38->vfunc_08(0x10a,0,0,&local_c4,0);
     return;
   case 0xb0:
   case 0xbb:
@@ -115,7 +119,7 @@ void __cdecl FUN_00645880(AnonShape_00645880_0D5933D4 *param_1)
     local_5c[0] = 0x15e;
     local_5c[3] = 1;
     local_5c[2] = 1;
-    (*g_playSystem_00802A38->vtable->vfunc_08)(g_playSystem_00802A38,0x147,0,0,local_5c,0);
+    g_playSystem_00802A38->vfunc_08(0x147,0,0,local_5c,0);
     return;
   case 0xb5:
     uVar1 = *(undefined2 *)&param_1->field_0x20;
@@ -138,7 +142,7 @@ void __cdecl FUN_00645880(AnonShape_00645880_0D5933D4 *param_1)
     local_6c = 4;
     local_64 = uVar4;
     local_60 = uVar1;
-    (*g_playSystem_00802A38->vtable->vfunc_08)(g_playSystem_00802A38,0x150,0,0,local_98,0);
+    g_playSystem_00802A38->vfunc_08(0x150,0,0,local_98,0);
     return;
   }
   uVar2 = GetPlayerRaceId(*(char *)param_1);
@@ -203,7 +207,7 @@ LAB_006459df:
   local_29 = param_1->field_0022;
   local_34 = *(uint *)&param_1->field_0x4;
   local_36 = param_1->field_001A;
-  (*g_playSystem_00802A38->vtable->vfunc_08)(g_playSystem_00802A38,0x106,0,0,local_5c,0);
+  g_playSystem_00802A38->vfunc_08(0x106,0,0,local_5c,0);
   return;
 }
 

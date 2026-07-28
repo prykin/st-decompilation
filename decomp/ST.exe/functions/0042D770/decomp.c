@@ -20,10 +20,10 @@ uint FUN_0042d770(char param_1,int *param_2)
   STAllPlayersC *local_24;
   int local_20;
   int local_1c;
-  uint local_18;
+  undefined4 local_18;
   uint local_14;
   DArrayTy *local_10;
-  uint local_c;
+  undefined4 local_c;
   short local_8;
   short local_6;
 
@@ -44,8 +44,8 @@ uint FUN_0042d770(char param_1,int *param_2)
   if (0 < (int)dVar1) {
     do {
       DArrayGetElement(array,local_14,&local_c);
-      if ((short)local_c != -1) {
-        objPtr = STAllPlayersC::GetObjPtr(local_24,param_1,local_c,CASE_1);
+      if ((ushort)local_c != 0xffff) {
+        objPtr = STAllPlayersC::GetObjPtr(local_24,param_1,(ushort)local_c,CASE_1);
         iVar5 = thunk_FUN_00493cd0(objPtr);
         pDVar4 = local_10;
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -79,8 +79,8 @@ uint FUN_0042d770(char param_1,int *param_2)
       local_18 = 0x7fff;
       if (local_20 == 1) {
         DArrayGetElement(pDVar4,0,&local_c);
-        pSVar6 = thunk_FUN_0042b760(param_1,local_c);
-        uVar3 = thunk_FUN_004233c0((int)pSVar6);
+        pSVar6 = thunk_FUN_0042b760(param_1,(ushort)local_c);
+        uVar3 = thunk_FUN_004233c0(pSVar6);
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         if ((uint)uVar3 == *(uint *)(*param_2 + 0xc)) {
           local_18 = local_c;

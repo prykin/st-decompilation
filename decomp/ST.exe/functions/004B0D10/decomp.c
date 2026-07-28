@@ -4,11 +4,16 @@
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Artem\TLO_ai.cpp
    Diagnostic line evidence: 787 | 788 (metadata/report site, not the function definition)
-   [STSourceProvenanceApplier end] */
+   [STSourceProvenanceApplier end]
+
+   [STPrototypeApplier] Propagated parameter 7.
+   Evidence: 00660F70 -> 004B0D10 @ 0066126D; MOVSX at 00661231 establishes signed source width 2 |
+   00662240 -> 004B0D10 @ 00662583; MOVSX at 00662549 establishes signed source width 2 | 00662240
+   -> 004B0D10 @ 006628EC; MOVSX at 006628B3 establishes signed source width 2 */
 
 undefined4 __cdecl
 FUN_004b0d10(uint param_1,int param_2,int *param_3,int *param_4,int *param_5,int param_6,int param_7
-            ,undefined4 param_8,int param_9)
+            ,int param_8,int param_9)
 
 {
   icall_004A0EE0_FUN_004a0ee0_for_STGroupBoatC *piVar1;

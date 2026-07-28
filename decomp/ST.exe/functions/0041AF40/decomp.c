@@ -90,14 +90,14 @@ int __thiscall STGameObjC::GetMessage(STGameObjC *this,STMessage *message)
     uVar13 = iVar12 * 0x41c64e6d + 0x3039;
     this_00->field_001C = uVar13;
     this_00->field_00F8 = (short)((ulonglong)(uVar13 >> 0x10) % 0x1f) + 0x1e;
-    (*this_00->vtable->vfunc_CC)(this_00);
+    this_00->vfunc_CC();
     g_currentExceptionFrame = local_58.previous;
     return 0;
   }
   if (-1 < this_00->field_008F) {
     this_00->field_008F = this_00->field_008F + 1;
   }
-  (*this_00->vtable->vfunc_D0)(this_00);
+  this_00->vfunc_D0();
   if (this_00->field_01CD != 1) {
     g_currentExceptionFrame = local_58.previous;
     return 0;

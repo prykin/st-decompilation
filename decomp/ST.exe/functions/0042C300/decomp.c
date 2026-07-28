@@ -29,6 +29,7 @@ undefined4 FUN_0042c300(char param_1,uint param_2,int param_3,char param_4,uint 
 
   iVar1 = param_3;
   iVar3 = 0;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_2 == 0) {
     /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
     iVar3 = param_1 * 0xa62 + 0x7f4f83;
@@ -63,14 +64,15 @@ LAB_0042c3a0:
   if (((*piVar2 == 0x3c) || (*piVar2 == 0x19a)) && (piVar2[1] == (int)param_4)) {
     array = *(DArrayTy **)((int)piVar2 + 10);
     index = 0;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = array->count;
     if (0 < (int)param_2) {
       do {
         DArrayGetElement(array,index,&param_1);
-        if (_param_1 == (short)param_5) {
+        if (_param_1 == (ushort)param_5) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          this = STAllPlayersC::GetObjPtr(in_ECX,(char)_param_4,param_5,CASE_1);
-          (*this->vtable->vfunc_E8)(this,0);
+          this = STAllPlayersC::GetObjPtr(in_ECX,(char)_param_4,(ushort)param_5,CASE_1);
+          this->vfunc_E8(0);
           _param_1 = 0xffff;
           Library::DKW::TBL::FUN_006ae140(&array->flags,index,(undefined4 *)&param_1);
           *(short *)((int)piVar2 + 0xe) = *(short *)((int)piVar2 + 0xe) + -1;

@@ -11,9 +11,11 @@ undefined4 __thiscall FUN_004ce250(void *this,int param_1)
   void *local_8;
 
   local_8 = (void *)0x0;
-  if ((*(int *)((int)this + 0x5d3) != 0) && (*(int *)((int)this + 0x4d4) == 0)) {
+  if ((*(AnonShape_005EFAE0_B406B78B **)((int)this + 0x5d3) != (AnonShape_005EFAE0_B406B78B *)0x0)
+     && (*(int *)((int)this + 0x4d4) == 0)) {
     iVar4 = STPlaySystemC::sub_006E62D0
-                      (g_playSystem_00802A38,*(int *)((int)this + 0x5d3),(int *)&local_8);
+                      (g_playSystem_00802A38,*(AnonShape_005EFAE0_B406B78B **)((int)this + 0x5d3),
+                       (int *)&local_8);
     if (iVar4 == 0) {
       thunk_FUN_004cdeb0(local_8,*(undefined4 *)((int)this + 0x18));
       uVar5 = thunk_FUN_004cdf80(local_8,*(int *)((int)this + 0x18));
@@ -30,9 +32,9 @@ undefined4 __thiscall FUN_004ce250(void *this,int param_1)
                        [(int)g_worldGrid.planeStride * (int)sVar1 +
                         (int)g_worldGrid.sizeX * (int)sVar3 + (int)sVar6].objects[0],
              pSVar2 != (STWorldObject *)0x0)))))) {
-          iVar4 = (*pSVar2->vtable->GetObjectTypeId)(pSVar2);
+          iVar4 = pSVar2->GetObjectTypeId();
           if (0x53 < iVar4) {
-            iVar4 = (*pSVar2->vtable->GetObjectTypeId)(pSVar2);
+            iVar4 = pSVar2->GetObjectTypeId();
             if ((iVar4 < 0x5b) && (*(int *)&pSVar2[0x29].field_0xf == 0)) {
               *(undefined4 *)&pSVar2[0x29].field_0xf = *(undefined4 *)((int)this + 0x5d3);
               thunk_FUN_004ce250(pSVar2,1);
@@ -49,9 +51,9 @@ undefined4 __thiscall FUN_004ce250(void *this,int param_1)
                         [(int)g_worldGrid.planeStride * (int)sVar1 +
                          (int)g_worldGrid.sizeX * (int)sVar3 + (int)sVar6].objects[0],
               pSVar2 != (STWorldObject *)0x0)))))))) {
-          iVar4 = (*pSVar2->vtable->GetObjectTypeId)(pSVar2);
+          iVar4 = pSVar2->GetObjectTypeId();
           if (0x53 < iVar4) {
-            iVar4 = (*pSVar2->vtable->GetObjectTypeId)(pSVar2);
+            iVar4 = pSVar2->GetObjectTypeId();
             if ((iVar4 < 0x5b) && (*(int *)&pSVar2[0x29].field_0xf == 0)) {
               *(undefined4 *)&pSVar2[0x29].field_0xf = *(undefined4 *)((int)this + 0x5d3);
               thunk_FUN_004ce250(pSVar2,1);
@@ -70,9 +72,9 @@ undefined4 __thiscall FUN_004ce250(void *this,int param_1)
                          [(int)g_worldGrid.planeStride * (int)sVar1 +
                           (int)g_worldGrid.sizeX * (int)sVar6 + (int)sVar3].objects[0],
                pSVar2 != (STWorldObject *)0x0)))))) {
-            iVar4 = (*pSVar2->vtable->GetObjectTypeId)(pSVar2);
+            iVar4 = pSVar2->GetObjectTypeId();
             if (0x53 < iVar4) {
-              iVar4 = (*pSVar2->vtable->GetObjectTypeId)(pSVar2);
+              iVar4 = pSVar2->GetObjectTypeId();
               if ((iVar4 < 0x5b) && (*(int *)&pSVar2[0x29].field_0xf == 0)) {
                 *(undefined4 *)&pSVar2[0x29].field_0xf = *(undefined4 *)((int)this + 0x5d3);
                 thunk_FUN_004ce250(pSVar2,1);
@@ -91,9 +93,9 @@ undefined4 __thiscall FUN_004ce250(void *this,int param_1)
                         [(int)g_worldGrid.planeStride * (int)sVar1 +
                          (int)sVar6 * (int)g_worldGrid.sizeX + (int)sVar3].objects[0],
               pSVar2 != (STWorldObject *)0x0)))) {
-            iVar4 = (*pSVar2->vtable->GetObjectTypeId)(pSVar2);
+            iVar4 = pSVar2->GetObjectTypeId();
             if (0x53 < iVar4) {
-              iVar4 = (*pSVar2->vtable->GetObjectTypeId)(pSVar2);
+              iVar4 = pSVar2->GetObjectTypeId();
               if ((iVar4 < 0x5b) && (*(int *)&pSVar2[0x29].field_0xf == 0)) {
                 *(undefined4 *)&pSVar2[0x29].field_0xf = *(undefined4 *)((int)this + 0x5d3);
                 thunk_FUN_004ce250(pSVar2,1);

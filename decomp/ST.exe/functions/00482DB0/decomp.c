@@ -1,14 +1,18 @@
 
 /* [STAbiConsistencyApplier] full_eax_return: return=/int Evidence: all observed callers consume
    full EAX (1), none consume AL/AX, and every RET path defines full EAX; sites=00462180 @ 00462366
-   -> CMP CMP EAX,EBX */
+   -> CMP CMP EAX,EBX
+
+   [STTypeFamilyApplier] CONTEXTUAL_GENERATED_RECORD.
+   Evidence: one script-owned pointer shape is used only by functions with one unique class-owner
+   context; promote its stable machine layout to a generated owner-qualified record name */
 
 int __fastcall FUN_00482db0(int *param_1,undefined4 param_2)
 
 {
   short sVar1;
   undefined4 uVar2;
-  AnonShape_00482DB0_070D50BF *this;
+  RecoveredRecord_STBoatC_00482DB0 *this;
   short sVar3;
   STWorldObject *pSVar4;
   uint uVar5;
@@ -30,7 +34,7 @@ int __fastcall FUN_00482db0(int *param_1,undefined4 param_2)
   STFishC *local_14;
   ushort *local_10;
   short local_c [2];
-  AnonShape_00482DB0_070D50BF *local_8;
+  RecoveredRecord_STBoatC_00482DB0 *local_8;
 
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (((char)param_1[0x10] != '\0') || (*(char *)((int)param_1 + 0x4d) != '\0')) {
@@ -68,12 +72,12 @@ int __fastcall FUN_00482db0(int *param_1,undefined4 param_2)
     if ((((-1 < sVar7) && (sVar7 < g_worldGrid.sizeX)) &&
         ((-1 < sVar3 && ((sVar3 < g_worldGrid.sizeY && (-1 < sVar1)))))) &&
        (sVar1 < g_worldGrid.sizeZ)) {
-      local_8 = (AnonShape_00482DB0_070D50BF *)
+      local_8 = (RecoveredRecord_STBoatC_00482DB0 *)
                 g_worldGrid.cells
                 [(int)g_worldGrid.planeStride * (int)sVar1 + (int)g_worldGrid.sizeX * (int)sVar3 +
                  (int)sVar7].objects[1];
 LAB_00482f52:
-      if ((local_8 != (AnonShape_00482DB0_070D50BF *)0x0) &&
+      if ((local_8 != (RecoveredRecord_STBoatC_00482DB0 *)0x0) &&
          (*(int *)&local_8->field_0x18 == param_1[0x1fd])) goto LAB_00482fa9;
     }
   }
@@ -82,21 +86,23 @@ LAB_00482f52:
     if (((-1 < sVar7) && (sVar7 < g_worldGrid.sizeX)) &&
        ((-1 < sVar3 &&
         (((sVar3 < g_worldGrid.sizeY && (-1 < sVar1)) && (sVar1 < g_worldGrid.sizeZ)))))) {
-      local_8 = (AnonShape_00482DB0_070D50BF *)
+      local_8 = (RecoveredRecord_STBoatC_00482DB0 *)
                 g_worldGrid.cells
                 [(int)g_worldGrid.planeStride * (int)sVar1 + (int)g_worldGrid.sizeX * (int)sVar3 +
                  (int)sVar7].objects[0];
       goto LAB_00482f52;
     }
   }
-  iVar12 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,param_1[0x1fd],(int *)&local_14);
+  iVar12 = STPlaySystemC::sub_006E62D0
+                     (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)param_1[0x1fd],
+                      (int *)&local_14);
   if (iVar12 == -4) {
     return 4;
   }
   STFishC::sub_004162F0
             (local_14,(undefined2 *)(param_1 + 0x200),(undefined2 *)((int)param_1 + 0x802),
              (undefined2 *)(param_1 + 0x201));
-  local_8 = (AnonShape_00482DB0_070D50BF *)local_14;
+  local_8 = (RecoveredRecord_STBoatC_00482DB0 *)local_14;
 LAB_00482fa9:
   this = local_8;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */

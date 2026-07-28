@@ -1,7 +1,11 @@
 
+/* [STPrototypeApplier] Propagated parameter 4.
+   Evidence: 00479600 -> 004B2520 @ 0047B46E; /STBoatC+0x647; MOVSX at 0047B452 establishes signed
+   source width 2 | 004B2520 -> 004B2390 @ 004B25DA */
+
 undefined4 __cdecl
-FUN_004b2520(uint param_1,int param_2,int param_3,int param_4,undefined4 param_5,undefined4 *param_6
-            ,undefined4 *param_7,undefined4 *param_8,int param_9,int *param_10)
+FUN_004b2520(uint param_1,int param_2,int param_3,int param_4,int param_5,undefined4 *param_6,
+            undefined4 *param_7,undefined4 *param_8,int param_9,int *param_10)
 
 {
   undefined1 *puVar1;
@@ -89,7 +93,7 @@ LAB_004b266b:
               if (((this != (STWorldObject *)0x0) && (this[1].vtable < (STWorldObjectVTable *)0x8))
                  && (((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
                       ((byte)(&DAT_008087e9)[(int)this[1].vtable * 0x51] < 8)) &&
-                     (iVar8 = (*this->vtable->GetObjectTypeId)(this), uVar11 = g_worldGrid._0_4_,
+                     (iVar8 = this->GetObjectTypeId(), uVar11 = g_worldGrid._0_4_,
                      iVar8 == 0x6f)))) {
                 bVar2 = *(byte *)&this[1].vtable;
                 if (DAT_00808a8f == '\0') {

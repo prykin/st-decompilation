@@ -36,11 +36,11 @@ undefined4 __fastcall FUN_005f0ba0(AnonShape_005F0BA0_C8D654C5 *param_1)
       param_1->field_02D2 = iVar4;
       if (*(short *)(DAT_00806724 + 0x23) <= iVar4) {
         param_1->field_02D2 = iVar3;
-        thunk_FUN_004ad430((int)this);
+        thunk_FUN_004ad430((STT3DSprC *)this);
         return 1;
       }
       if (iVar4 == (int)*(short *)(DAT_00806724 + 0x23) / 2) {
-        thunk_FUN_004ad5e0((int)this);
+        thunk_FUN_004ad5e0((STT3DSprC *)this);
       }
     }
   }

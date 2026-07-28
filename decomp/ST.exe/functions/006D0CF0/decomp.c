@@ -1,19 +1,21 @@
 
 /* [STTypeFamilyApplier] EXACT_ANONYMOUS_LAYOUT.
-   Evidence: exact anonymous structure fingerprint shared across functions */
+   Evidence: exact anonymous structure fingerprint shared across functions
+
+   [STPrototypeApplier] Propagated parameter 4.
+   Evidence: 006D0CF0 -> 006CEBE0 @ 006D0E8F | 006D0CF0 -> 006D13C0 @ 006D0ECE */
 
 undefined4
 FUN_006d0cf0(AnonShape_006D0CF0_F5F86399 *param_1,int param_2,int param_3,
-            AnonShape_006B5B10_E0D06CF1 *param_4,int param_5,int param_6,int param_7,int param_8,
+            AnonShape_006B5B10_E0D06CF1 *param_4,char *param_5,int param_6,int param_7,int param_8,
             int param_9,byte param_10)
 
 {
   undefined1 *puVar1;
   int iVar2;
-  byte *pbVar3;
-  uint *puVar4;
+  uint *puVar3;
+  int iVar4;
   int iVar5;
-  int iVar6;
   int local_4c;
   int local_48;
   int local_44;
@@ -44,26 +46,28 @@ FUN_006d0cf0(AnonShape_006D0CF0_F5F86399 *param_1,int param_2,int param_3,
   }
   ExceptionList = &local_14;
   puVar1 = &stack0xffffffa8;
-  if (param_5 == 0) {
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+  if (param_5 == (char *)0x0) {
     ExceptionList = &local_14;
-    param_5 = FUN_006b4fa0((int)param_4);
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+    param_5 = (char *)FUN_006b4fa0((int *)param_4);
     puVar1 = local_1c;
   }
   local_1c = puVar1;
   local_24 = 0;
-  iVar6 = param_2 + param_1->field_0010;
-  iVar5 = param_3 + param_1->field_0014;
+  iVar5 = param_2 + param_1->field_0010;
+  iVar4 = param_3 + param_1->field_0014;
   local_2c = param_8;
   local_28 = param_9;
-  local_34 = iVar6;
-  local_30 = iVar5;
+  local_34 = iVar5;
+  local_30 = iVar4;
   iVar2 = FUN_006cfeb0(&local_34,&local_34,(int *)&param_1->field_0x484);
   if (iVar2 != 0) {
     param_1->field_0050 =
          param_1->field_0478 /
          ((int)(param_1->field_0020 + (param_1->field_0020 >> 0x1f & 7U)) >> 3);
-    local_4c = param_6 + (local_34 - iVar6);
-    local_48 = param_7 + (local_30 - iVar5);
+    local_4c = param_6 + (local_34 - iVar5);
+    local_48 = param_7 + (local_30 - iVar4);
     local_44 = local_2c;
     local_40 = local_28;
     iVar2 = FUN_006d0680((AnonShape_006B5B10_E0D06CF1 *)&param_1->field_0x4c,&local_34,&local_20,
@@ -75,18 +79,18 @@ FUN_006d0cf0(AnonShape_006D0CF0_F5F86399 *param_1,int param_2,int param_3,
       else {
         iVar2 = ((param_4->field_0008 - local_40) - local_48) * local_3c[0];
       }
-      pbVar3 = (byte *)(param_5 + local_4c + iVar2);
-      iVar2 = param_1->field_0020 * local_34;
-      puVar4 = (uint *)((((int)(iVar2 + (iVar2 >> 0x1f & 7U)) >> 3) -
+      iVar4 = param_1->field_0020 * local_34;
+      puVar3 = (uint *)((((int)(iVar4 + (iVar4 >> 0x1f & 7U)) >> 3) -
                         (local_28 + -1 + local_30) * local_20) + param_1->field_0474);
       local_8 = 0;
       if (param_1->field_0020 == 8) {
-        FUN_006cebe0((char *)puVar4,local_20,(char *)pbVar3,local_3c[0],local_2c,local_28,param_10);
+        FUN_006cebe0((char *)puVar3,local_20,param_5 + local_4c + iVar2,local_3c[0],local_2c,
+                     local_28,param_10);
         ExceptionList = local_14;
         return local_24;
       }
-      FUN_006d13c0(puVar4,local_20,pbVar3,local_3c[0],local_2c,local_28,param_1->field_04C0,param_10
-                  );
+      FUN_006d13c0(puVar3,local_20,(byte *)(param_5 + local_4c + iVar2),local_3c[0],local_2c,
+                   local_28,param_1->field_04C0,param_10);
       ExceptionList = local_14;
       return local_24;
     }

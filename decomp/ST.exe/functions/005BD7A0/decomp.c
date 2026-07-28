@@ -32,7 +32,8 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,undefined1 param_1)
   undefined4 *puVar19;
   char *pcVar20;
   int iVar21;
-  char cVar22;
+  byte bVar22;
+  char cVar23;
   undefined4 local_6a4 [256];
   undefined1 local_2a4 [516];
   InternalExceptionFrame local_a0;
@@ -178,9 +179,9 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,undefined1 param_1)
         if (uVar8 == 0) break;
         uVar8 = uVar8 - 1;
         pcVar20 = pcVar12 + 1;
-        cVar22 = *pcVar12;
+        cVar23 = *pcVar12;
         pcVar12 = pcVar20;
-      } while (cVar22 != '\0');
+      } while (cVar23 != '\0');
       uVar8 = ~uVar8;
       pcVar12 = pcVar20 + -uVar8;
       ppDVar17 = (DArrayTy **)(local_2a4 + 1);
@@ -270,7 +271,7 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,undefined1 param_1)
   PutDDX(0,0,'\x01',(BITMAPINFO *)this_01->field_005D);
   local_8 = 0xffffffff;
   FUN_006b2330(PTR_008075a8,&local_8,0x32,0x403099,0x2bd,0x15e,
-               (uint)&g_startSystem_0081176C->field_0140);
+               (ushort *)&g_startSystem_0081176C->field_0140);
   Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,local_8,0xffffffff,0x47,0x46);
   pHVar13 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
   if (pHVar13 == (HoloTy *)0x0) {
@@ -294,12 +295,12 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,undefined1 param_1)
   }
   this_01->field_0453 = pHVar13;
   if (pHVar13 != (HoloTy *)0x0) {
-    uVar14 = 0;
-    cVar22 = '\x01';
-    uVar8 = 0x10;
+    uVar8 = 0;
+    cVar23 = '\x01';
+    bVar22 = 0x10;
     iVar21 = 1;
     iVar3 = Library::DKW::DDX::FUN_006bf9f0((int *)PTR_008075a8,0x47,0x46,0x2bd,0x15e);
-    uVar8 = HoloTy::Init(this_01->field_0453,CASE_2,0x47,0x46,iVar3,iVar21,uVar8,cVar22,uVar14);
+    uVar8 = HoloTy::Init(this_01->field_0453,CASE_2,0x47,0x46,iVar3,iVar21,bVar22,cVar23,uVar8);
     if (uVar8 != 0) {
       pHVar13 = this_01->field_0453;
       pHVar13->field_0002 = 1;
@@ -314,7 +315,7 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,undefined1 param_1)
     FUN_006b3bb0((int *)PTR_008075a8,local_8);
     local_8 = 0xffffffff;
   }
-  FUN_006b2330(PTR_008075a8,&local_8,0x32,0x401217,0x2e9,0x32,(uint)this_01);
+  FUN_006b2330(PTR_008075a8,&local_8,0x32,0x401217,0x2e9,0x32,(ushort *)this_01);
   Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,local_8,0xffffffff,0x1a,10);
   pHVar13 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
   if (pHVar13 == (HoloTy *)0x0) {
@@ -338,12 +339,12 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,undefined1 param_1)
   }
   this_01->field_0457 = pHVar13;
   if (pHVar13 != (HoloTy *)0x0) {
-    uVar14 = 0;
-    cVar22 = '\x01';
-    uVar8 = 0x10;
+    uVar8 = 0;
+    cVar23 = '\x01';
+    bVar22 = 0x10;
     iVar21 = 1;
     iVar3 = Library::DKW::DDX::FUN_006bf9f0((int *)PTR_008075a8,0x1a,10,0x2e9,0x32);
-    uVar8 = HoloTy::Init(this_01->field_0457,CASE_3,0x1a,10,iVar3,iVar21,uVar8,cVar22,uVar14);
+    uVar8 = HoloTy::Init(this_01->field_0457,CASE_3,0x1a,10,iVar3,iVar21,bVar22,cVar23,uVar8);
     if (uVar8 != 0) {
       pHVar13 = this_01->field_0457;
       pHVar13->field_0002 = 1;
@@ -359,7 +360,7 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,undefined1 param_1)
   }
   this_01->field_0065 = 3;
   thunk_FUN_0055ddf0((undefined4 *)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,(int *)PTR_008075a8
-                     ,this_01->field_005D,10,2);
+                     ,(ushort *)this_01->field_005D,10,2);
   pHVar13 = this_01->field_0457;
   if (((pHVar13 != (HoloTy *)0x0) && (pHVar13->field_0000 != '\0')) && (-1 < pHVar13->field_0003)) {
     Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,pHVar13->field_0003);

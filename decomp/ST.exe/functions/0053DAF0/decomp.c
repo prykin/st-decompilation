@@ -55,11 +55,11 @@ UPanelTy::PaintIBut(UPanelTy *this,AnonShape_0053DAF0_3BDC2979 *param_1,char *pa
     DibPut((AnonShape_006B5B10_E0D06CF1 *)pUVar2->field_0068,local_c,local_8,'\x01',(byte *)puVar4);
     ccFntTy::SetSurf(*(ccFntTy **)&PTR_00802a28->field_0x24,pUVar2->field_0068,0,local_c,uVar5,
                      local_14->field_0008,local_14->field_000C);
-    uVar3 = thunk_FUN_00529fe0((int)param_1);
+    uVar5 = thunk_FUN_00529fe0((int)param_1);
     iVar9 = -1;
     iVar7 = -2;
     resourceString = (uint *)LoadResourceString(param_3,g_module_00807618);
-    ccFntTy::WrStr(*(ccFntTy **)&PTR_00802a28->field_0x24,resourceString,iVar7,iVar9,uVar3);
+    ccFntTy::WrStr(*(ccFntTy **)&PTR_00802a28->field_0x24,resourceString,iVar7,iVar9,uVar5);
     Library::DKW::DDX::FUN_006b3640
               ((int *)PTR_008075a8,pUVar2->field_0060,0xffffffff,pUVar2->field_003C,
                pUVar2->field_0044);

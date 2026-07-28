@@ -81,7 +81,7 @@ Only one mode is selected; no file or directory dialogs follow:
 | `core` | Baseline/debug/message recovery followed by bounded unclaimed-code and factory/vtable/constructor/class fixpoint loops. This is the default. |
 | `deep` | Slower ownership, ABI, prototype, global, pointer-shape, enum, provenance, control-flow, and library propagation. Requires current core outputs. |
 | `full` | Run `core` and then `deep`; does not start the expensive corpus export. |
-| `export` | Synchronize the final indirect/vtable ABI layer, record and verify the current Program plus recovery artifacts, snapshot the prior corpus, export into `<repo>/decomp`, and run the regression gate. |
+| `export` | Repair stale script-owned return rollbacks, stabilize the final indirect/vtable ABI layer, record and verify the current Program plus recovery artifacts, snapshot the last accepted corpus, export into `<repo>/decomp`, and run the regression gate. |
 | `full-export` | Run the complete recovery pipeline, perform the same final ABI synchronization/evidence checkpoint, export, and run the regression gate. |
 
 The pipeline invokes ordinary Ghidra scripts through `runScript`; it does not
@@ -171,7 +171,22 @@ regressions, critical ABI/decompiler-quality regressions, and any generated
 `CASE_*|CASE_*` enum expression. This invariant also catches the known
 message-slot regression when the immediately prior corpus already contains it.
 Expected changes between layout and semantic-naming stages are warnings. It writes
-`export_regression_report.tsv` and an atomic `export_receipt.json`.
+`export_regression_report.tsv` and an atomic `export_receipt.json`. The baseline
+also retains `pseudocode_idioms.jsonl`, so every changed quality row includes a
+sample of the function addresses and signed per-function deltas instead of only
+the corpus-wide total.
+
+A failed gate does not promote the just-written corpus to the next baseline.
+The pipeline retains that failed run's `pre_export/` snapshot (even when ordinary
+run-history pruning would remove it) and reuses the snapshot on the next export.
+If the failed receipt survives but its accepted snapshot does not, export stops
+instead of silently blessing the rejected corpus.
+
+The export safety pass does not perform ordinary return-semantic discovery.
+It only repairs a stale mutation carrying the analyzer's exact rollback marker;
+new `leaf_void`, `ignored_eax_void`, pointer-return, and boolean candidates remain
+the responsibility of `deep` mode. This prevents export from opening a
+transitive `void`-inference fixed point immediately before decompilation.
 
 The first export after introducing an inferred dispatch interface may report a
 `stage_transition` warning for raw indirect calls: removing a wrapped
@@ -525,17 +540,24 @@ structural until independent evidence names it.
    made its owner ambiguous.
 4. Repeat the constructor/vtable/virtual-method cycle until the physical table
    count, enabled table set, and constructor apply counts no longer change.
-5. Run `STClassLayoutAnalyzer`.
+5. Run `STClassArrayAnalyzer`.
    - Directory: `<repo>/recovery`
-6. Optionally review field-name suggestions in
+   - It proves fixed member-array extents from bounded
+     `this + index * stride` accesses and exact decrementing pointer walks.
+     Structural names remain address-based; no semantic field name is guessed.
+6. Run `STClassLayoutAnalyzer`.
+   - Directory: `<repo>/recovery`
+   - It automatically consumes the sibling `class_array_proposals.tsv` and
+     replaces covered generated scalar fields with one native Ghidra array.
+7. Optionally review field-name suggestions in
    `class_field_proposals.tsv`.
-7. Run `STClassLayoutApplier`.
+8. Run `STClassLayoutApplier`.
    - File: `<repo>/recovery/ST.exe/class_layout_proposals.tsv`
    - The sibling `class_field_proposals.tsv` and, when present,
      `class_nested_{type,field}_proposals.tsv` files are loaded automatically.
-8. Rerun the class-layout pair once. New constructor ownership can expose
+9. Rerun the class-array/class-layout sequence once. New constructor ownership can expose
    additional `this + offset` accesses even when no new class is created.
-9. Rerun `STObjectFactoryAnalyzer` and `STObjectFactoryApplier`. The completed
+10. Rerun `STObjectFactoryAnalyzer` and `STObjectFactoryApplier`. The completed
    class layouts can turn additional generic `void *` factories into exact
    `Owner *` results and stable `CreateOwner` names.
 
@@ -720,6 +742,13 @@ migration instead of happening as a side effect of one decompiler run.
    - File: `<repo>/recovery/ST.exe/abi_consistency_proposals.tsv`
 5. Run `STReturnSemanticsAnalyzer`.
    - Directory: `<repo>/recovery`
+   - Non-leaf `void` recovery is CFG-conservative: every direct callsite must
+     reach an EAX overwrite/call without first explicitly reading EAX.
+     Branches, loops, and scan limits are counted as `unknown`, not silently
+     discarded. A caller `RET` counts as forwarding only when that caller
+     already has a protected non-void return ABI; generic return types cannot
+     recursively validate one another. Contradictory EAX reads on an existing
+     script-owned `void` are review-only, not an automatic rollback.
 6. Run `STReturnSemanticsApplier`.
    - File: `<repo>/recovery/ST.exe/return_semantics_proposals.tsv`
 7. Run `STPrototypeAnalyzer`.
@@ -793,12 +822,22 @@ migration instead of happening as a side effect of one decompiler run.
      split back into target-local shapes when the current target has enough
      consistent fixed-offset evidence. This repairs the former geometry-only
      family heuristic without touching manual or named types.
+   - A decompiler-only stack aggregate which is assembled through
+     `local._offset_width_ = value` contributes field evidence to its existing
+     generated pointer shape. This recovers narrow members which are visible in
+     machine stores but absent from Listing locals.
 26. Run `STTypeFamilyAnalyzer`.
     - Directory: `<repo>/recovery`
     - Inspect `<repo>/recovery/ST.exe/anon_named_type_matches.tsv`. Exact full-layout
       matches are automatic only when there is one unique named type with at least
       two concrete, meaningfully named fields. Partial or ambiguous matches remain
       `apply=0`; anonymous-to-anonymous geometry is never merged automatically.
+    - Inspect `contextual_record_promotions.tsv`. A small, complete,
+      script-owned `AnonShape` used only in one unique class-owner context may
+      receive a deterministic generated name such as
+      `RecoveredRecord_VisibleClassTy_0055B9F0`. This neither merges layouts nor
+      claims an original source noun; it preserves one shape as one record and
+      keeps it eligible for later PointerShape refinement.
 27. Run `STTypeFamilyApplier`.
     - File: `<repo>/recovery/ST.exe/type_family_proposals.tsv`
 28. Run `STManualTypeAuditAnalyzer`.
@@ -906,11 +945,27 @@ the decompiler can infer its SSA lifetimes independently. Manual/imported
 locals are preserved. The current pointer-shape analyzer will not auto-type
 locals in such unsettled functions again.
 
+`STAbiConsistencyAnalyzer` separately repairs polluted incoming parameter roles.
+A generic `undefined *` parameter becomes `int`/`uint` only when its machine
+lifetime before the first write to the physical argument slot contains multiple
+scalar operations, a signed/range comparison, and no pointer dereference. The
+first write is a hard lifetime boundary: later pointer use of the same stack word
+belongs to a compiler scratch local and is not evidence about the source
+parameter. Generic pointer returns similarly gain only a byte/word/dword element
+width after at least two caller dereferences agree; the pass does not invent a
+semantic table type. `abi_consistency_scalar_audit.tsv` records every attempted
+physical frame offset, its evidence counters, score, and final selection so a
+missed repair can be diagnosed without modifying the analyzer or relying on
+console output.
+
 Pointer-shape analysis follows one-level nested dereferences, pointer values
 temporarily represented by `int`/`uint`/`undefined4`, and simple SSA-style
 copies. Child layouts are emitted as dependent anonymous types and applied
 before their parents. Inlined `DArrayTy` element addressing is recognized as
-the known recovered type. Overlapping child observations are kept as evidence;
+the known recovered type. Field-by-field construction of a decompiler
+HighVariable is also joined back to the same generated pointer shape, including
+byte/word pieces not represented by a persistent Listing local. Overlapping
+child observations are kept as evidence;
 only a strongest non-overlapping ordinary-structure view is eligible for
 automatic application. A later fixed-point pass may grow or enrich an unchanged
 hashed anonymous shape when the new observation still covers every previously
@@ -935,6 +990,42 @@ register evidence. `exact_address_match` is the only stack form used for automat
 propagation. `address_match_with_prefix_pushes` separates callee-saved/temporary
 prefix pushes from a true `stack_argument_underflow`; varargs have their own
 status. This is the primary check for same-name overload propagation.
+
+The propagation is not tied to a class or method-name family. It follows exact
+fixed-offset fields through any typed structure pointer and preserves a proven
+callee-saved `this` alias across distant switch/CFG blocks. `MOVSX`/`MOVZX`
+record signedness independently of the source width: when the callee has already
+established an `undefined1` or `undefined2` ABI width, repeated sign/zero-extended
+call sites can refine it to `char`/`byte` or `short`/`ushort`. Generated primitive
+fields require agreement from at least two independent call sites; generic
+`field_XXXX` names are never propagated. `prototype_undefined_boundary_audit.tsv`
+lists every still-undefined parameter and return, including targets with no
+evidence, conflicting evidence, a width mismatch, or too few independent sites.
+
+One analyzer invocation now computes a bounded fixed point over parameter
+forwarding. A machine-qualified type may therefore pass through several wrappers
+before proposals are written; script-owned types are not blindly reused as
+seeds. Integer evidence is normalized to the callee's retained ABI width, so an
+`int` source copied into an `undefined2` formal contributes `short`, not a
+permanent width mismatch. Explicit sign/zero extension is strong evidence from
+one site. If signedness of a one- or two-byte parameter is genuinely
+unobservable and its incoming lifetime consists only of exact-width raw copies,
+the representation falls back to `byte`/`ushort`. There is intentionally no
+equivalent fallback for `undefined4`: local comparisons, shifts, FPU use, pointer
+dereferences, or typed callees must distinguish integer, float, pointer, enum,
+handle, and record roles first. When exactly one conflicting type has strong
+machine evidence, it may override primitive weak callsite guesses; two strong
+types remain a conflict.
+
+Return-semantics recovery also resolves non-leaf `void` functions when at least
+two observed callers ignore EAX, none consumes or forwards it, and decompilation
+contains no value-return statement. Reaching a caller `RET` without redefining
+EAX counts as return forwarding only if the caller already has a protected
+non-void return ABI. A generic `undefined4` caller is `unknown`: otherwise a
+cluster of default signatures can recursively “prove” a return value which no
+callee actually defines. An explicit instruction read of EAX remains use
+evidence, but by itself cannot roll a previously proven `void` back to
+`undefined4`; optimized register carry and SSA joins make that unsafe.
 
 The analyzer also follows the producer of `EAX` until its first local use. A
 returned value used as a typed call argument, as the receiver of a known
@@ -1130,7 +1221,9 @@ indirect call becomes the standalone noreturn `STDebugBreak()` helper defined in
 `pseudocode_runtime.h`. Exact decrementing zero loops produced from
 `REP STOSD` plus an optional tail store become byte-counted `memset` calls; the
 transfer-only `undefined4 *`/`undefined1` artifacts are removed without replacing
-the recovered class fields with an overlapping integer array. Forms that cannot
+the recovered class fields with an overlapping integer array. Exact typed
+`(*object->vtable->slot)(object, ...)` calls become C++ member-call syntax, while
+adjusted, cast, missing, and secondary-base receivers remain explicit. Forms that cannot
 be safely rewritten from text alone
 are grouped by function in `pseudocode_idioms.jsonl`, with line excerpts,
 machine/address hints, and the intended structured form. See
@@ -1162,6 +1255,7 @@ accesses, not on every field of every structure mentioned by its signature. A
 change to an unused field therefore does not invalidate all methods of that
 class, while a type/name/comment change at an accessed offset still does. The
 access walk follows typed registers and EBP stack spills over the complete CFG,
+including a constant member displacement combined with a scaled array index,
 so fields used only after calls, switch arms, or reloaded saved `this` pointers
 are not incorrectly reused from an older export. Unions
 are the exception: their complete ordered member layout is part of the fingerprint
@@ -1220,13 +1314,14 @@ a new conflict is what requires another iteration.
 | `STVirtualMethodAnalyzer/Applier` | Propagate reviewed virtual slot names, conventions, and compatible signatures. |
 | `STConstructorAnalyzer/Applier` | Recover constructors, allocation sizes, direct hierarchy evidence, receiver-only signatures, and ABI `Owner *` returns when EAX is proven to return `this`. |
 | `STClassLayoutAnalyzer/Applier` | Build and revalidate conservative class layouts, including fields reached after stable prologue `this` spills, dynamic byte/word buffers, nested class-field pointee layouts, and semantic field-type/name proposals. |
+| `STClassArrayAnalyzer` | Prove fixed arrays embedded in generated class layouts from bounded indexed accesses and exact pointer-walk loops, and recover a selected pointer element's pointee width from its subsequent dereference; `STClassLayoutAnalyzer/Applier` consumes the proposals. |
 | `STMethodOwnerAnalyzer/Applier` | Assign structural class ownership to non-virtual methods, use typed global-singleton values passed in ECX as owner evidence, and repair weak script-owned assignments to high-fanout shared helpers; it participates in the deep fixed point after global typing. |
 | `STHiddenThisAnalyzer/Applier` | Recover anonymous `__thiscall` receivers from ECX/RET/call-site evidence with neutral structural owners required by Ghidra. |
 | `STDestructorAnalyzer/Applier` | Recover conservative destructor and scalar-deleting-destructor candidates. |
 | `STSwitchEnumAnalyzer/Applier` | Turn repeated switch/state domains into enums, decode exact OR-composed cases, and retain an evidence-generated monotonic domain state. |
 | `STUtilityFunctionAnalyzer/Applier` | Verify and name high-fanout runtime helpers and install their exact prototypes. |
 | `STAbiConsistencyAnalyzer/Applier` | Repair machine-proven x86 calling/return widths, `_setjmp3` varargs, and other ABI details that otherwise create `unaff_*`/`extraout_*` artifacts. |
-| `STReturnSemanticsAnalyzer/Applier` | Recover conservative `void`, boolean, terminal `noreturn`, and unanimous evidence-backed structure-pointer returns. |
+| `STReturnSemanticsAnalyzer/Applier` | Recover conservative leaf and CFG-proven non-leaf `void`, boolean, terminal `noreturn`, and unanimous evidence-backed structure-pointer returns; retain contradictory EAX reads for review and repair the short-lived unsafe automatic `void` rollback. |
 | `STPrototypeAnalyzer/Applier` | Propagate compatible parameter/return types and reviewed parameter names across direct calls. |
 | `STPrototypeRepairAnalyzer/Applier` | Isolate and safely correct stale types/names previously written by prototype propagation. |
 | `STManualTypeAuditAnalyzer` | Consolidate strong evidence that a protected/manual prototype or field type is stale; read-only by design. |
@@ -1237,15 +1332,15 @@ a new conflict is what requires another iteration.
 | `STGlobalDataAnalyzer/Applier` | Type generic globals from receiver/argument use and named-constructor stores, promote script-owned anonymous singleton pointers to named classes, assign address-stable structural names, and audit every `PTR_*` symbol by pointer role. |
 | `STIndirectCallAnalyzer/Applier` | Audit raw indirect calls; refine trusted slots semantically and otherwise install machine-proven neutral thiscall/stdcall definitions with per-slot stack-access and accumulator-return widths. |
 | `STPointerRoleRepairAnalyzer/Applier` | Remove prior script-owned pointer constraints from stack slots with proven scalar lifetimes in unsettled functions. |
-| `STPointerShapeAnalyzer/Applier` | Recover and fixed-point-refine known or anonymous pointer-backed structures from fixed, nested, alias-mediated dereferences and typed calls; merge non-conflicting generated partial views only when their identity is proven by one global singleton value; for an untyped singleton, materialize a target-local superset instead of widening helper-local views; apply auto-`this` types through the owning class namespace. |
-| `STTypeFamilyAnalyzer/Applier` | Promote anonymous layouts only to one explicit semantic anchor and propagate named aggregate return types into script-owned anonymous locals; geometry-only matches remain review-only. |
+| `STPointerShapeAnalyzer/Applier` | Recover and fixed-point-refine known or anonymous pointer-backed structures from fixed, nested, alias-mediated dereferences, typed calls, and field-by-field stack aggregate construction; merge non-conflicting generated partial views only when their identity is proven by one global singleton value; for an untyped singleton, materialize a target-local superset instead of widening helper-local views; apply auto-`this` types through the owning class namespace. |
+| `STTypeFamilyAnalyzer/Applier` | Promote anonymous layouts to one explicit semantic anchor, propagate named aggregate returns, and give complete one-owner generated records deterministic contextual names without geometry merging; ambiguous layouts remain review-only. |
 | `STTypeLifecycleAnalyzer/Applier` | Replace legacy views with one equivalent semantic anchor and remove unreferenced, hash-owned anonymous PointerShape/ClassPointee/HiddenThis types after zero-parent/signature/Listing-use revalidation. |
 | `STEvidenceLedger` | Record/verify a deterministic semantic Program fingerprint and hashes of every proposal/apply artifact plus monotonic enum state before export; retain the volatile modification counter for diagnostics only. |
 | `STSourceProvenanceAnalyzer/Applier` | Attach original source files and strict free-function names. |
 | `STControlFlowLabelAnalyzer/Applier` | Give structural names to real decompiler goto targets. |
 | `STLibraryAnalyzer/Applier` | Classify linked CRT, DKW, and internal Ourlib implementations. |
-| `STExportRegressionGate` | Compare a fresh corpus with the prior central-index snapshot, reject exact structural/critical quality regressions, and write a reproducible export receipt. |
-| `STDecompExport` | Export the address-stable, dependency-fingerprinted LLM corpus, resolved thunk/call relations, and executable coverage gaps; inline proven immutable strings, normalize terminal traps and compiler bulk-zero loops, and catalogue stage-aware pseudocode and quality debt. |
+| `STExportRegressionGate` | Compare a fresh corpus with the prior central-index snapshot, report per-function quality deltas, reject exact structural/critical regressions, and write a reproducible export receipt. |
+| `STDecompExport` | Export the address-stable, dependency-fingerprinted LLM corpus, resolved thunk/call relations, and executable coverage gaps; inline proven immutable strings, normalize terminal traps, compiler bulk-zero loops, and exact C++ virtual-call sugar, and catalogue stage-aware pseudocode and quality debt. |
 
 ## Git and Ghidra database hygiene
 

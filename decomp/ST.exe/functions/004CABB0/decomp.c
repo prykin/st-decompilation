@@ -65,13 +65,13 @@ int __thiscall TLOBaseTy::RotateSpr(TLOBaseTy *this,int param_1)
     return 0;
   }
   if (this_00->field_05EF != 0) {
-    sub_004CA7B0(this_00,0xe,param_1);
+    sub_004CA7B0(this_00,(uint *)0xe,param_1);
   }
   if (*(int *)(&DAT_00791a10 + this_00->field_0235 * 4) != 0) {
-    sub_004CA7B0(this_00,9,param_1);
-    sub_004CA7B0(this_00,8,param_1);
+    sub_004CA7B0(this_00,(uint *)0x9,param_1);
+    sub_004CA7B0(this_00,(uint *)0x8,param_1);
     if (this_00->field_05AC == CASE_4E) {
-      sub_004CA7B0(this_00,7,param_1);
+      sub_004CA7B0(this_00,(uint *)0x7,param_1);
       if (this_00->field_04D0 == CASE_1) {
         thunk_FUN_004ac660(&this_00->field_01D5,'\a');
       }
@@ -80,7 +80,7 @@ int __thiscall TLOBaseTy::RotateSpr(TLOBaseTy *this,int param_1)
       }
     }
     if (this_00->field_05AC == CASE_72) {
-      sub_004CA7B0(this_00,7,param_1);
+      sub_004CA7B0(this_00,(uint *)0x7,param_1);
       if (this_00->field_04D0 == CASE_1) {
         thunk_FUN_004ac660(&this_00->field_01D5,'\a');
       }
@@ -89,7 +89,7 @@ int __thiscall TLOBaseTy::RotateSpr(TLOBaseTy *this,int param_1)
       }
     }
     if (this_00->field_05AC == CASE_70) {
-      sub_004CA7B0(this_00,7,param_1);
+      sub_004CA7B0(this_00,(uint *)0x7,param_1);
       if (this_00->field_04D0 == CASE_1) {
         thunk_FUN_004ac660(&this_00->field_01D5,'\a');
       }
@@ -117,11 +117,11 @@ int __thiscall TLOBaseTy::RotateSpr(TLOBaseTy *this,int param_1)
       if ((iVar4 < (local_c - iVar5) + -1) || ((this_00->field_01F1 & 0x2000) != 0))
       goto LAB_004cadb1;
     }
-    sub_004CA7B0(this_00,0xd,param_1);
+    sub_004CA7B0(this_00,(uint *)0xd,param_1);
   }
 LAB_004cadb1:
   if (this_00->field_05F7 != 0) {
-    sub_004CA7B0(this_00,0xc,param_1);
+    sub_004CA7B0(this_00,(uint *)&DAT_0000000c,param_1);
   }
   if (this_00->field_05FF != (STT3DSprC *)0x0) {
     thunk_FUN_004cbfb0((int)this_00);

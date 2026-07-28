@@ -1,6 +1,11 @@
 
 /* [STPrototypeApplier] Propagated parameter 0.
-   Evidence: 006C5A10 -> 006CE6C0 @ 006C5A60 */
+   Evidence: 006C5A10 -> 006CE6C0 @ 006C5A60
+
+   [STPrototypeApplier] Propagated parameter 2.
+   Evidence: 006C5A10 -> 006CE6C0 @ 006C5A60; FUN_006c5a10 parameter param_6 | 006DDBE0 -> 006CE6C0
+   @ 006DDCFC; literal 30000 at 006DDCF2 | 006E1050 -> 006CE6C0 @ 006E11E2; literal 30000 at
+   006E11DB | 006E1460 -> 006CE6C0 @ 006E1B25; literal 30000 at 006E1B1E */
 
 undefined4 * FUN_006ce6c0(ushort *param_1,uint param_2,ushort param_3)
 

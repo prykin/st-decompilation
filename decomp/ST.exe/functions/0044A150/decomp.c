@@ -3,11 +3,13 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
-   STAllPlayersC::UnRegisterMine */
+   STAllPlayersC::UnRegisterMine
+
+   [STPrototypeApplier] Propagated parameter 3.
+   Evidence: 006239A0 -> 0044A150 @ 00623B83; STMineSetC::sub_006239A0 this; stable alias ESI */
 
 undefined4 __thiscall
-STAllPlayersC::UnRegisterMine
-          (STAllPlayersC *this,uint param_1,uint param_2,AnonShape_0044A150_E4FE1661 *param_3)
+STAllPlayersC::UnRegisterMine(STAllPlayersC *this,uint param_1,uint param_2,STMineSetC *param_3)
 
 {
   code *pcVar1;
@@ -27,14 +29,14 @@ STAllPlayersC::UnRegisterMine
   errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   this_00 = local_c;
   if (errorCode == 0) {
-    pSVar2 = GetObjPtr(local_c,(char)param_1,param_2,CASE_3);
+    pSVar2 = GetObjPtr(local_c,(char)param_1,(ushort)param_2,CASE_3);
     if (pSVar2 != (STGameObjC *)param_3) {
       RaiseInternalException
                 (-0x5001fff9,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                  0x2f1d);
     }
-    DelObjFromTmps(this_00,DAT_0080874d,param_3->field_0020,param_3->field_0024,param_2);
-    DelObjFromSaveTmps(this_00,param_3->field_0020,(char)param_1,(short)param_2);
+    DelObjFromTmps(this_00,DAT_0080874d,param_3->field_0020,*(char *)&param_3->field_0024,param_2);
+    DelObjFromSaveTmps(this_00,param_3->field_0020,(char)param_1,(ushort)param_2);
     Library::DKW::TBL::FUN_006ae140(&PTR_007fa158->flags,param_2 & 0xffff,&local_8);
     g_currentExceptionFrame = local_50.previous;
   }

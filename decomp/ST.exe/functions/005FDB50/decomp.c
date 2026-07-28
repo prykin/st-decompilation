@@ -54,7 +54,8 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005FDB50::FUN_005fdb50
           this_00 != (STT3DSprC *)0x0)) && (-1 < param_2 || iVar5 != 2)) {
         local_8 = iVar8;
         if ((iVar5 == 1) || (iVar5 == 2)) {
-          iVar5 = STT3DSprC::Init(this_00,DAT_008073cc,0x5a,0x45,0,0xb4,0x8c,0x11);
+          iVar5 = STT3DSprC::Init(this_00,DAT_008073cc,0x5a,0x45,(STDcResourcC *)0x0,0xb4,0x8c,0x11)
+          ;
           if (iVar5 != 0) {
             RaiseInternalException
                       (-1,g_overwriteContext_007ED77C,"E:\\__titans\\nick\\to_DcBom.cpp",0x13d
@@ -119,7 +120,7 @@ joined_r0x005fe09b:
               iVar8 = local_8;
               this = local_c;
               if (bVar1 == 0) {
-                thunk_FUN_004ad430((int)this_00);
+                thunk_FUN_004ad430(this_00);
                 *(undefined1 *)(local_8 + 0x41 + *(int *)&local_c->field_0x233) = 0;
                 iVar8 = local_8;
                 this = local_c;
@@ -132,7 +133,7 @@ joined_r0x005fe09b:
             return 0;
           }
           STT3DSprC::StopShow(this_00,0xd);
-          thunk_FUN_004ad5e0((int)this_00);
+          thunk_FUN_004ad5e0(this_00);
           if (param_1 == 0) {
             thunk_FUN_004ad310(this_00);
           }

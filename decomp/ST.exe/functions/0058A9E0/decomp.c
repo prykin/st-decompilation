@@ -46,7 +46,7 @@ void __fastcall FUN_0058a9e0(AnonShape_0058A9E0_DB5690D0 *param_1)
   puVar1 = &param_1->field_0x1d5;
   if (iVar2 == 0) {
     iVar2 = 0;
-    uVar3 = thunk_FUN_004ad650((int)puVar1);
+    uVar3 = thunk_FUN_004ad650((STT3DSprC *)puVar1);
     FUN_006eabf0(param_1->field_0211,uVar3,iVar2);
     iVar2 = thunk_FUN_0041caf0((AnonShape_0041CAF0_1630B9E0 *)param_1);
     if (iVar2 == 1) {
@@ -58,11 +58,11 @@ void __fastcall FUN_0058a9e0(AnonShape_0058A9E0_DB5690D0 *param_1)
   }
   else {
     iVar2 = 1;
-    uVar3 = thunk_FUN_004ad650((int)puVar1);
+    uVar3 = thunk_FUN_004ad650((STT3DSprC *)puVar1);
     FUN_006eabf0(param_1->field_0211,uVar3,iVar2);
     iVar2 = 1;
   }
-  iVar4 = thunk_FUN_004ad650((int)puVar1);
+  iVar4 = thunk_FUN_004ad650((STT3DSprC *)puVar1);
   FUN_006e6870(param_1->field_0211,iVar4,iVar2);
   iVar2 = param_1->field_02A5;
   if ((iVar2 == 0xf8) || (iVar2 == 0xf9)) {

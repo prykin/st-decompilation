@@ -41,7 +41,7 @@ void __thiscall CPanelTy::PaintInfoObj(CPanelTy *this)
   if (this_00->field_0C51 == '\0') {
     if (DAT_0080874e == '\x03') {
       DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,0x73,0,'\x06',
-             (byte *)this_00->field_09F9);
+             (byte *)this_00->field_09D9[8]);
       goto LAB_004fef26;
     }
     pbVar4 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_029E,1);
@@ -50,7 +50,7 @@ void __thiscall CPanelTy::PaintInfoObj(CPanelTy *this)
   else {
     if (DAT_0080874e == '\x03') {
       DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,0x73,0,'\x06',
-             (byte *)this_00->field_0A01);
+             (byte *)this_00->field_09D9[10]);
       goto LAB_004fef26;
     }
     pbVar4 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_029E,0);
@@ -74,19 +74,19 @@ LAB_004fef26:
       PaintEnergy(this_00,0);
     }
   }
-  if (-1 < this_00->field_0168) {
+  if (-1 < (int)this_00->field_0148[8]) {
     Library::DKW::DDX::FUN_006b3640
-              ((int *)PTR_008075a8,this_00->field_0168,0xffffffff,this_00->field_005C,
+              ((int *)PTR_008075a8,(uint)this_00->field_0148[8],0xffffffff,this_00->field_005C,
                this_00->field_00B4);
   }
-  if (-1 < this_00->field_0164) {
+  if (-1 < (int)this_00->field_0148[7]) {
     Library::DKW::DDX::FUN_006b3640
-              ((int *)PTR_008075a8,this_00->field_0164,0xffffffff,this_00->field_0058,
+              ((int *)PTR_008075a8,(uint)this_00->field_0148[7],0xffffffff,this_00->field_0058,
                this_00->field_00B0);
   }
-  if ((DAT_0080874e != '\x03') && (-1 < this_00->field_0160)) {
+  if ((DAT_0080874e != '\x03') && (-1 < (int)this_00->field_0148[6])) {
     Library::DKW::DDX::FUN_006b3640
-              ((int *)PTR_008075a8,this_00->field_0160,0xffffffff,this_00->field_0054,
+              ((int *)PTR_008075a8,(uint)this_00->field_0148[6],0xffffffff,this_00->field_0054,
                this_00->field_00AC);
   }
   g_currentExceptionFrame = local_4c.previous;

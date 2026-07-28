@@ -41,7 +41,7 @@ undefined4 STAllPlayersC::_SubMDObject(undefined4 *param_1,uint param_2)
   local_2c[3] = 0x5e;
   objPtr = (char)param_1;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  this = GetObjPtr(in_ECX,objPtr,param_2,CASE_1);
+  this = GetObjPtr(in_ECX,objPtr,(ushort)param_2,CASE_1);
   local_14 = this;
   uVar4 = (*this->vtable->vfunc_2C)();
   local_c = 0;
@@ -64,8 +64,7 @@ undefined4 STAllPlayersC::_SubMDObject(undefined4 *param_1,uint param_2)
         pDVar2 = *(DArrayTy **)(local_10 + 0x7f4e2f + objPtr * 0xa62);
         uVar1 = (ushort)pDVar2->count;
         if (uVar1 != 0) {
-          STFishC::sub_004162B0((STFishC *)this,(undefined2 *)((int)&param_2 + 2),&local_6,&local_8)
-          ;
+          STFishC::sub_004162B0((STFishC *)this,(short *)((int)&param_2 + 2),&local_6,&local_8);
           uVar4 = 0;
           local_1c = this->field_0032;
           this = local_14;
@@ -91,9 +90,10 @@ undefined4 STAllPlayersC::_SubMDObject(undefined4 *param_1,uint param_2)
     } while (local_10 < 0x10);
     return local_c;
   }
-  STFishC::sub_004162B0((STFishC *)this,(undefined2 *)((int)&param_2 + 2),&local_6,&local_8);
+  STFishC::sub_004162B0((STFishC *)this,(short *)((int)&param_2 + 2),&local_6,&local_8);
   local_1c = this->field_0032;
   local_14 = (STGameObjC *)0x4;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = &g_playerRuntime[objPtr].field6_0xf;
   do {
     pDVar2 = (DArrayTy *)*param_1;
@@ -115,6 +115,7 @@ undefined4 STAllPlayersC::_SubMDObject(undefined4 *param_1,uint param_2)
         } while ((int)uVar4 < (int)local_18);
       }
     }
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = param_1 + 1;
     local_14 = (STGameObjC *)((int)local_14 + -1);
   } while (local_14 != (STGameObjC *)0x0);

@@ -28,8 +28,7 @@ void __thiscall CampaignTy::LightPalette(CampaignTy *this)
                         (g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,(undefined4 *)puVar1,0,0x100,
                          10,&local_8->field_1BF4,2,local_8->field_0061,&local_8->field_1BF0);
       if (iVar4 == -4) {
-        FUN_006b0a20((undefined4 *)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,(int)puVar1,0,0x100
-                     ,0);
+        FUN_006b0a20(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,(int)puVar1,0,0x100,0);
         pCVar3->field_1BEC = 0;
       }
     }

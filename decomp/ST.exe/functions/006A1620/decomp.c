@@ -43,6 +43,7 @@ FUN_006a1620(int *param_1,int param_2,int param_3,int param_4,int param_5,ushort
     *puVar1 = (byte)(bVar7 ^ (byte)uVar4) & 0xf0 ^ uVar4;
   }
   iVar6 = param_4 - ((uVar3 & 0xf00) >> 8);
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   while (param_4 = param_4 + -1, iVar6 < param_4) {
     if (param_7 != (undefined *)0x0) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */

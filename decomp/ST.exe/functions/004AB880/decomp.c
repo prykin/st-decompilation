@@ -151,9 +151,9 @@ STT3DSprC::LoadSequence(STT3DSprC *this,byte param_1,int *param_2,char *text,byt
   puVar13 = (undefined4 *)(&this_00->field_0020->field_0x0 + local_8);
   puVar13[5] = *(int *)*puVar13 + -1;
   *(undefined4 *)(&this_00->field_0020->field_0x20 + local_8) = 0;
-  puVar13 = *(undefined4 **)(&this_00->field_0020->field_0x0 + local_8);
-  FUN_006e98e0(this_00->field_003C,this_00->field_0018,local_14,*puVar13,
-               *(int *)((int)puVar13 + 0x21),0);
+  piVar9 = *(int **)(&this_00->field_0020->field_0x0 + local_8);
+  FUN_006e98e0(this_00->field_003C,this_00->field_0018,local_14,*piVar9,*(int *)((int)piVar9 + 0x21)
+               ,0);
   puVar6 = (ushort *)(&this_00->field_0020->field_0xe + local_8);
   *puVar6 = *puVar6 & 0xfe37;
   pbVar1 = &this_00->field_0020->field_0xe + local_8;

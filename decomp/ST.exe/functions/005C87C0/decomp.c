@@ -3,14 +3,18 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\sett_obj.cpp
-   SettMapTy::PaintSC */
+   SettMapTy::PaintSC
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=8, used=0), and
+   decompilation contains no value return */
 
 void __thiscall SettMapTy::PaintSC(SettMapTy *this)
 
 {
   code *pcVar1;
   SettMapTy *pSVar2;
-  undefined1 uVar3;
+  byte bVar3;
   int errorCode;
   DArrayTy *pDVar4;
   int iVar5;
@@ -28,7 +32,7 @@ void __thiscall SettMapTy::PaintSC(SettMapTy *this)
     if ((DAT_008087b6 != 0) && (g_startSystem_0081176C->field_02F4 != (ushort *)0x0)) {
       FUN_006e83f0((AnonShape_006B5B10_E0D06CF1 *)g_startSystem_0081176C->field_02F0,0x14,0x14,0x8b,
                    (uint)DAT_008087c2);
-      FUN_006b5440((int)g_startSystem_0081176C->field_02F0,0,0x14,0x14,
+      FUN_006b5440(g_startSystem_0081176C->field_02F0,0,0x14,0x14,
                    (uint)g_startSystem_0081176C->field_02F4,0,0);
       pSVar2 = local_8;
       if ((DAT_0080734b != '\0') &&
@@ -47,33 +51,33 @@ void __thiscall SettMapTy::PaintSC(SettMapTy *this)
              (pcVar6[2] != -1)) {
             switch(pcVar6[2]) {
             case '\0':
-              uVar3 = 0xfc;
+              bVar3 = 0xfc;
               break;
             case '\x01':
-              uVar3 = 0xfa;
+              bVar3 = 0xfa;
               break;
             case '\x02':
-              uVar3 = 0xfb;
+              bVar3 = 0xfb;
               break;
             case '\x03':
-              uVar3 = 0xf9;
+              bVar3 = 0xf9;
               break;
             case '\x04':
-              uVar3 = 0xfd;
+              bVar3 = 0xfd;
               break;
             case '\x05':
-              uVar3 = 0xfe;
+              bVar3 = 0xfe;
               break;
             case '\x06':
-              uVar3 = 0xf3;
+              bVar3 = 0xf3;
               break;
             case '\a':
-              uVar3 = 7;
+              bVar3 = 7;
               break;
             default:
-              uVar3 = 0xff;
+              bVar3 = 0xff;
             }
-            FUN_006e8460(*(undefined4 *)(pcVar6 + 0x54),*(undefined4 *)(pcVar6 + 0x58),4,uVar3);
+            FUN_006e8460(*(undefined4 *)(pcVar6 + 0x54),*(undefined4 *)(pcVar6 + 0x58),4,bVar3);
           }
           pDVar4 = pSVar2->field_1F84;
           uVar7 = uVar7 + 1;

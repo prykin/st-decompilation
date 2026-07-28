@@ -54,6 +54,7 @@ LAB_006362c5:
     *(int *)&this->field_0x8 = param_6;
     memset(local_50, 0, 0x32); /* compiler bulk-zero initialization */
     Library::DKW::TBL::FUN_006ae140(&pDVar2->flags,param_5 * param_6 - 1,local_50);
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = 0;
     local_c = _DAT_0079c5a4 / (float)param_5;
     if (0 < param_5) {
@@ -69,6 +70,7 @@ LAB_006362c5:
         lVar7 = Library::MSVCRT::__ftol();
         local_14 = (undefined4)lVar7;
         if (0 < param_6) {
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_4 = param_6;
           uVar6 = param_1;
           do {
@@ -93,6 +95,7 @@ LAB_006362c5:
             *(int *)((int)piVar4 + 0x22) = param_6;
             *(int *)((int)piVar4 + 0x16) = param_3;
             uVar6 = uVar6 + param_5;
+            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_4 = param_4 + -1;
             piVar4[2] = 0;
             *(undefined1 *)((int)piVar4 + 0xd) = 0;
@@ -103,6 +106,7 @@ LAB_006362c5:
             this = local_8;
           } while (param_4 != 0);
         }
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = param_1 + 1;
       } while ((int)param_1 < param_5);
     }

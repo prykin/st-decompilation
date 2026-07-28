@@ -25,7 +25,7 @@ void __thiscall WaitTy::PaintWait(WaitTy *this,char param_1)
   uint uVar4;
   uint uVar5;
   ccFntTy *pcVar6;
-  undefined4 uVar7;
+  uint uVar7;
   InternalExceptionFrame local_4c;
   WaitTy *local_8;
 
@@ -42,8 +42,8 @@ void __thiscall WaitTy::PaintWait(WaitTy *this,char param_1)
     if ((pWVar2->field_1AF8 == (HoloTy *)0x0) && (param_1 == '\0')) {
       this_00 = &pWVar2->field_1A5B->field_0140;
       MMMObjTy::OutRGlProc
-                ((MMMObjTy *)this_00,(int)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0,0,0x112,
-                 0x38,0x204,0x19d,this_00);
+                ((MMMObjTy *)this_00,(int)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,
+                 (MMMObjTy *)0x0,(MMMObjTy *)0x0,0x112,0x38,0x204,0x19d,this_00);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       this_01 = extraout_ECX_00;
     }
@@ -51,8 +51,8 @@ void __thiscall WaitTy::PaintWait(WaitTy *this,char param_1)
        ((param_1 != '\0' && ((pWVar2->field_1A64 != 0 && (pWVar2->field_1A68 == 0)))))) {
       MMMObjTy::OutBSlProc
                 ((MMMObjTy *)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,
-                 (int)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,(MMMObjTy *)0x0,0,10,0xb4,0xf9,
-                 0x121,&pWVar2->field_1A5B->field_0140);
+                 (int)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,(MMMObjTy *)0x0,(MMMObjTy *)0x0,
+                 10,0xb4,0xf9,0x121,&pWVar2->field_1A5B->field_0140);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       this_01 = extraout_ECX_01;
     }

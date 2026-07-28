@@ -6,7 +6,7 @@ FUN_006a23a0(int *param_1,uint param_2,int param_3,int param_4,short *param_5,un
 {
   int iVar1;
   int iVar2;
-  undefined4 local_10 [2];
+  undefined1 local_10 [8];
   int local_8;
 
   local_8 = 0xff;
@@ -27,7 +27,7 @@ FUN_006a23a0(int *param_1,uint param_2,int param_3,int param_4,short *param_5,un
       iVar1 = thunk_FUN_006a20e0(param_1,param_2,param_3,iVar2,0xff);
       if ((((iVar1 != 0) && (-1 < (int)param_2)) && ((int)param_2 < *param_1)) &&
          (((-1 < param_3 && (param_3 < param_1[1])) && ((-1 < iVar2 && (iVar2 < 6)))))) {
-        iVar1 = thunk_FUN_006a1370(param_1,param_2,param_3,iVar2,local_10);
+        iVar1 = thunk_FUN_006a1370(param_1,param_2,param_3,iVar2,(int)local_10);
         if ((short)iVar1 != 0) {
           local_8 = 0xff;
         }

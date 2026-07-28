@@ -31,8 +31,8 @@ void __fastcall FUN_0061dfe0(STLightC *param_1)
                        *(undefined4 *)((int)pvVar5 + 8),*(undefined4 *)((int)pvVar5 + 0xc),
                        *(undefined4 *)((int)pvVar5 + 0x10),*(undefined4 *)((int)pvVar5 + 0x14),
                        *(undefined4 *)((int)pvVar5 + 0x18),*(undefined4 *)((int)pvVar5 + 0x1c),
-                       *(undefined1 *)((int)pvVar5 + 0x20),*(undefined4 *)((int)pvVar5 + 0x21),iVar4
-                       ,0xffffffff);
+                       *(byte *)((int)pvVar5 + 0x20),*(undefined4 *)((int)pvVar5 + 0x21),iVar4,
+                       0xffffffff);
           if (*(char *)((int)pvVar5 + 0x2f) == '\0') {
             FUN_006eab60(PTR_00807598,*puVar1);
           }

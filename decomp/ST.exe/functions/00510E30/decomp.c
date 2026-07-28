@@ -32,7 +32,7 @@ void __thiscall HelpPanelTy::InitHelpPanel(HelpPanelTy *this)
   undefined4 uVar20;
   int iVar21;
   short sVar22;
-  undefined2 uVar23;
+  ushort uVar23;
   byte bVar24;
   undefined4 uVar25;
   int iVar26;
@@ -273,7 +273,7 @@ LAB_00510fa9:
     uVar17 = ((uint)(ushort)pAVar1->field_000E * pAVar1->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
              pAVar1->field_0008;
   }
-  puVar14 = (undefined4 *)FUN_006b4fa0((int)pAVar1);
+  puVar14 = (undefined4 *)FUN_006b4fa0((int *)pAVar1);
   for (uVar16 = uVar17 >> 2; uVar16 != 0; uVar16 = uVar16 - 1) {
     *puVar14 = 0xffffffff;
     puVar14 = puVar14 + 1;
@@ -284,11 +284,11 @@ LAB_00510fa9:
   }
   DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0,0,'\x01',(byte *)this_00->field_01DC);
   ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0068,0,0x6c,2,0x117,0xc);
-  uVar11 = 0;
+  uVar17 = 0;
   iVar26 = -1;
   iVar4 = -2;
   resourceString = (uint *)LoadResourceString(0x2734,g_module_00807618);
-  ccFntTy::WrStr(this_00->field_01E0,resourceString,iVar4,iVar26,uVar11);
+  ccFntTy::WrStr(this_00->field_01E0,resourceString,iVar4,iVar26,uVar17);
   uVar28 = 0;
   uVar27 = 0;
   pcVar7 = (char *)0x0;

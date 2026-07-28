@@ -16,6 +16,7 @@ void FUN_0075cb40(undefined4 *param_1)
   iVar4 = 0;
   if (0 < (int)param_1[7]) {
     local_8 = (undefined4 *)(param_1[0x34] + 0x50);
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = puVar2 + 0xb;
     do {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -28,6 +29,7 @@ void FUN_0075cb40(undefined4 *param_1)
       }
       local_8 = local_8 + 0x15;
       *param_1 = 0xffffffff;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = param_1 + 1;
     } while (iVar4 < (int)puVar1[7]);
   }

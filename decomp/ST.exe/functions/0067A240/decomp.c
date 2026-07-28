@@ -5,7 +5,11 @@
    incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate
 
    [STPrototypeRepairApplier] Propagated parameter 2.
-   Evidence: 0067C180 -> 0067A240 @ 0067C248 | 0067C180 -> 0067A240 @ 0067C4CC */
+   Evidence: 0067C180 -> 0067A240 @ 0067C248 | 0067C180 -> 0067A240 @ 0067C4CC
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0), and
+   decompilation contains no value return */
 
 void __thiscall AiPlrClassTy::sub_0067A240(AiPlrClassTy *this,undefined *param_1,DArrayTy *param_2)
 

@@ -14,6 +14,7 @@ undefined4 __thiscall STGroupBoatC::GrpLoadRC(STGroupBoatC *this,int param_1)
   DArrayTy *pDVar3;
   STGameObjC *pSVar4;
   DArrayTy *pDVar5;
+  STBoatC *objPtr;
   short *psVar6;
   undefined4 uVar7;
   int iVar8;
@@ -49,7 +50,7 @@ undefined4 __thiscall STGroupBoatC::GrpLoadRC(STGroupBoatC *this,int param_1)
   int local_14;
   uint local_10;
   dword local_c;
-  uint local_8;
+  undefined4 local_8;
 
   local_14 = 4;
   local_34[0] = 0x38;
@@ -122,9 +123,9 @@ undefined4 __thiscall STGroupBoatC::GrpLoadRC(STGroupBoatC *this,int param_1)
       if (0 < (int)local_c) {
         do {
           DArrayGetElement(this_00->field_010F,uVar13,&local_8);
-          if (((short)local_8 != -1) &&
+          if (((ushort)local_8 != 0xffff) &&
              (pSVar4 = STAllPlayersC::GetObjPtr
-                                 (g_allPlayers_007FA174,this_00->field_0024,local_8,CASE_1),
+                                 (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_8,CASE_1),
              pSVar4 != (STGameObjC *)0x0)) {
             iVar2 = (*pSVar4->vtable->vfunc_2C)();
             iVar8 = 0;
@@ -172,7 +173,7 @@ undefined4 __thiscall STGroupBoatC::GrpLoadRC(STGroupBoatC *this,int param_1)
           do {
             DArrayGetElement(pDVar3,uVar13,&local_8);
             pSVar4 = STAllPlayersC::GetObjPtr
-                               (g_allPlayers_007FA174,this_00->field_0024,local_8,CASE_1);
+                               (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_8,CASE_1);
             if ((pSVar4 != (STGameObjC *)0x0) &&
                (iVar2 = (*pSVar4->vtable->vfunc_88)(local_18), 0 < iVar2)) {
               Library::DKW::TBL::FUN_006ae1c0(&this_00->field_024E->flags,&local_8);
@@ -201,10 +202,10 @@ undefined4 __thiscall STGroupBoatC::GrpLoadRC(STGroupBoatC *this,int param_1)
       if (0 < (int)dVar14) {
         do {
           DArrayGetElement(this_00->field_0127,uVar13,&local_8);
-          if ((((short)local_8 != -1) &&
+          if ((((ushort)local_8 != 0xffff) &&
               (pSVar4 = STAllPlayersC::GetObjPtr
-                                  (g_allPlayers_007FA174,this_00->field_0024,local_8,CASE_1),
-              pSVar4 != (STGameObjC *)0x0)) &&
+                                  (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_8,CASE_1)
+              , pSVar4 != (STGameObjC *)0x0)) &&
              ((iVar2 = (*pSVar4->vtable->vfunc_2C)(), iVar2 == 0x3b || (iVar2 == 0x60)))) {
             Library::DKW::TBL::FUN_006ae1c0(&this_00->field_0266->flags,&local_8);
           }
@@ -258,7 +259,7 @@ undefined4 __thiscall STGroupBoatC::GrpLoadRC(STGroupBoatC *this,int param_1)
           do {
             DArrayGetElement(pDVar3,uVar13,&local_8);
             pSVar4 = STAllPlayersC::GetObjPtr
-                               (g_allPlayers_007FA174,this_00->field_0024,local_8,CASE_1);
+                               (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_8,CASE_1);
             if (pSVar4 != (STGameObjC *)0x0) {
               Library::DKW::TBL::FUN_006ae1c0(&this_00->field_0266->flags,&local_8);
             }
@@ -294,7 +295,7 @@ undefined4 __thiscall STGroupBoatC::GrpLoadRC(STGroupBoatC *this,int param_1)
           do {
             DArrayGetElement(pDVar3,uVar13,&local_8);
             pSVar4 = STAllPlayersC::GetObjPtr
-                               (g_allPlayers_007FA174,this_00->field_0024,local_8,CASE_1);
+                               (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_8,CASE_1);
             if (pSVar4 != (STGameObjC *)0x0) {
               Library::DKW::TBL::FUN_006ae1c0(&this_00->field_0266->flags,&local_8);
             }
@@ -315,10 +316,13 @@ undefined4 __thiscall STGroupBoatC::GrpLoadRC(STGroupBoatC *this,int param_1)
     if (0 < (int)local_c) {
       do {
         DArrayGetElement((DArrayTy *)this_00->field_0029,local_10,&local_8);
-        pSVar4 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,this_00->field_0024,local_8,CASE_1);
-        if (((pSVar4 != (STGameObjC *)0x0) && (iVar2 = thunk_FUN_0045ff10(pSVar4), iVar2 == 0xc)) &&
-           (local_1c = thunk_FUN_0048d440((AnonShape_0048D440_9DC42AE7 *)pSVar4), local_1c != 0)) {
-          psVar6 = (short *)thunk_FUN_0048dc90(pSVar4,local_100);
+        objPtr = (STBoatC *)
+                 STAllPlayersC::GetObjPtr
+                           (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_8,CASE_1);
+        if (((objPtr != (STBoatC *)0x0) &&
+            (iVar2 = thunk_FUN_0045ff10((STGameObjC *)objPtr), iVar2 == 0xc)) &&
+           (local_1c = thunk_FUN_0048d440(objPtr), local_1c != 0)) {
+          psVar6 = (short *)thunk_FUN_0048dc90(objPtr,local_100);
           psVar15 = local_78;
           for (iVar2 = 0x10; iVar2 != 0; iVar2 = iVar2 + -1) {
             *(undefined4 *)psVar15 = *(undefined4 *)psVar6;

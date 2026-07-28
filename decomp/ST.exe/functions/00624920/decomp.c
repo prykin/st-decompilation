@@ -108,7 +108,7 @@ STMineSetC::sub_00624920
     iVar9 = (this->field_02FA * iVar10) / 10000 + (int)this->field_0034;
     iVar5 = (this->field_02FE * iVar10) / 10000 + (int)this->field_0036;
     iVar7 = (this->field_0302 * iVar10) / 10000 + (int)this->field_0038;
-    iVar6 = thunk_FUN_00627670((int)this);
+    iVar6 = thunk_FUN_00627670(this);
     if ((1 < iVar8) &&
        (uVar4 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::thunk_FUN_00601500
                           ((AnonReceiver_00601500 *)&this->field_0x231,iVar9,iVar5,iVar7,
@@ -165,7 +165,7 @@ STMineSetC::sub_00624920
             (g_worldGrid.cells
              [(int)g_worldGrid.sizeX * (int)sVar3 + (int)g_worldGrid.planeStride * (int)sVar12 +
               (int)sVar2].objects[(byte)this->field_008E] == (STWorldObject *)0x0)))) {
-          iVar5 = thunk_FUN_00495ff0(sVar2,sVar3,this->field_004B,(uint)(byte)this->field_008E,
+          iVar5 = thunk_FUN_00495ff0(sVar2,sVar3,this->field_004B,this->field_008E,
                                      (AnonShape_00495FF0_59081BDD *)this);
           if (iVar5 == 0) {
             this->field_0314 = this->field_0314 + -1;
@@ -179,8 +179,8 @@ STMineSetC::sub_00624920
                   [(int)sVar3 * (int)g_worldGrid.sizeX + (int)g_worldGrid.planeStride * (int)sVar12
                    + (int)sVar2].objects[(byte)this->field_008E] == (STWorldObject *)0x0)) &&
              (iVar5 = DumpClassC::WritePtr
-                                (sVar2,sVar3,sVar12,(uint)(byte)this->field_008E,
-                                 (AnonShape_00495EC0_95A268C6 *)this), iVar5 == 0)) {
+                                (sVar2,sVar3,sVar12,this->field_008E,
+                                 (RecoveredRecord_DumpClassC_00495EC0 *)this), iVar5 == 0)) {
             SVar1 = this->field_02AD;
             this->field_0314 = this->field_0314 + '\x01';
             if (SVar1 < CASE_3) {
@@ -204,8 +204,7 @@ STMineSetC::sub_00624920
               VisibleClassTy::sub_00559D60
                         (g_visibleClass_00802A88,(int)this->field_0047,(int)this->field_0049,
                          (char)this->field_004B,this->field_0024,
-                         *(undefined **)(&DAT_007d02b4 + (uint)this->field_02AD * 4),
-                         this->field_0018);
+                         *(int *)(&DAT_007d02b4 + (uint)this->field_02AD * 4),this->field_0018);
               VisibleClassTy::sub_00558DC0
                         (g_visibleClass_00802A88,(int)this->field_0047,(int)this->field_0049,puVar11
                          ,(int *)this->field_0024,

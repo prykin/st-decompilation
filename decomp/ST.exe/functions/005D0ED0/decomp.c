@@ -3,7 +3,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\settmobj.cpp
-   SettMapMTy::ChangePlayerList */
+   SettMapMTy::ChangePlayerList
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0), and
+   decompilation contains no value return */
 
 void __thiscall
 SettMapMTy::ChangePlayerList

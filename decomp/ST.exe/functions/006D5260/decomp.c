@@ -73,6 +73,7 @@ undefined4 __thiscall FUN_006d5260(void *this,undefined4 *param_1)
   }
   if (local_8 != (undefined4 *)0x0) {
     iVar4 = FUN_00749a79(pAVar1);
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = *(undefined4 **)&pAVar1[1].field_0xc;
     local_8 = param_1;
     if (param_1 != (undefined4 *)0x0) {
@@ -85,6 +86,7 @@ undefined4 __thiscall FUN_006d5260(void *this,undefined4 *param_1)
         puVar11[(int)(&stack0xfffffbe9 + -iVar4)] = puVar10[-1];
         puVar11[(int)(&stack0xfffffbea + -iVar4)] = 0;
         pptVar7 = pptVar7 + 1;
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = (undefined4 *)((int)param_1 + -1);
         puVar10 = puVar11;
       } while (param_1 != (undefined4 *)0x0);
@@ -125,7 +127,7 @@ undefined4 __thiscall FUN_006d5260(void *this,undefined4 *param_1)
     ReleaseDC((HWND)0x0,hdc);
     this = local_c;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    FUN_006b0a20(*(undefined4 **)(*(int *)((int)local_c + 0x288) + 0x28),
+    FUN_006b0a20(*(AnonShape_GLOBAL_0080759C_9638EF10 **)(*(int *)((int)local_c + 0x288) + 0x28),
                  (int)(&local_414 + iStart_00),iStart_00,(int)iStart - iStart_00,0);
     FUN_00747406(this,9,(int *)0x0,0);
   }

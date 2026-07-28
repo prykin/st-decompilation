@@ -16,7 +16,7 @@ undefined4 __fastcall FUN_00580dc0(STJellyGunC *param_1)
   if (iVar5 != 0) {
     iVar5 = STAllPlayersC::RegisterDeposit(g_allPlayers_007FA174,0xffff,param_1);
     if (iVar5 != 0) {
-      thunk_FUN_00580380(param_1);
+      thunk_FUN_00580380((STResourceC *)param_1);
       return 0;
     }
     *(undefined4 *)&param_1->field_0x25d = 0;

@@ -5,7 +5,7 @@
 void FUN_006ad270(AnonShape_GLOBAL_0080759C_9638EF10 *param_1)
 
 {
-  DAT_00854eb8 = param_1;
+  g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8 = param_1;
   return;
 }
 

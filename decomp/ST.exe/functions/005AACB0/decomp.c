@@ -11,11 +11,14 @@
 
    [STSwitchEnumApplier] Switch target field_0001 uses
    /SubmarineTitans/Recovered/Enums/HoloTy_field_0001State. Cases:
-   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4 */
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4
+   [STAbiConsistencyApplier] stack_parameter_width target=parameter:6: parameter=/byte Evidence:
+   entry-use width=/byte; unmasked_dword_reads=0; evidence=005AAD6A MOV ECX,dword ptr [EBP + 0x1c];
+   first-use mask */
 
 uint __thiscall
 HoloTy::Init(HoloTy *this,HoloTy_Init_param_1Enum param_1,int param_2,int param_3,int param_4,
-            int param_5,uint param_6,char param_7,uint param_8)
+            int param_5,byte param_6,char param_7,uint param_8)
 
 {
   int *piVar1;
@@ -72,14 +75,14 @@ HoloTy::Init(HoloTy *this,HoloTy_Init_param_1Enum param_1,int param_2,int param_
       local_8 = local_14->field_002B + param_2;
       local_c = iVar3;
     }
-    local_14->field_0013 = param_6 & 0xff;
+    local_14->field_0013 = (uint)param_6;
     local_14->field_001F = local_8;
-    puVar4 = CalcHologram(local_14,(uint *)&local_14->field_0xf,local_8,local_c,param_5,
-                          param_6 & 0xff,param_8);
+    puVar4 = CalcHologram(local_14,(uint *)&local_14->field_0xf,local_8,local_c,param_5,param_6,
+                          (byte)param_8);
     this_00->field_000B = puVar4;
     if (puVar4 != (undefined4 *)0x0) {
       piVar1 = &this_00->field_0003;
-      FUN_006b2330(PTR_008075a8,(uint *)piVar1,10,0x402842,0,0,(uint)this_00);
+      FUN_006b2330(PTR_008075a8,(uint *)piVar1,10,0x402842,0,0,(ushort *)this_00);
       uVar5 = *piVar1;
       if (-1 < (int)uVar5) {
         switch(this_00->field_0001) {

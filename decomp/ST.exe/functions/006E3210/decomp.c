@@ -21,6 +21,7 @@ float10 __thiscall FUN_006e3210(AnonShape_GLOBAL_00807598_0C6808FB *param_1,int 
       iVar4 = param_3 / iVar2;
       iVar6 = param_3 % iVar2;
       if ((-1 < iVar4) && (iVar4 < iVar1)) {
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_3 = 5;
         piVar7 = (int *)(*(int *)&param_1->field_0x280 + 0x459 +
                         (*(int *)&param_1->field_0x288 * 5 + iVar3 + iVar1 * iVar4) * 4);
@@ -34,6 +35,7 @@ float10 __thiscall FUN_006e3210(AnonShape_GLOBAL_00807598_0C6808FB *param_1,int 
                    (float10)*(double *)&param_1->field_0x394;
           }
           piVar7 = piVar7 + -*(int *)&param_1->field_0x288;
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_3 = param_3 + -1;
         } while (0 < param_3);
       }

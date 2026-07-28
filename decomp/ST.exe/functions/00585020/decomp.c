@@ -48,7 +48,7 @@ void __fastcall FUN_00585020(AnonShape_00585020_1C9B1418 *param_1)
   this = &param_1->field_0x1d5;
   if (iVar3 == 0) {
     iVar3 = 0;
-    uVar4 = thunk_FUN_004ad650((int)this);
+    uVar4 = thunk_FUN_004ad650((STT3DSprC *)this);
     FUN_006eabf0(param_1->field_0211,uVar4,iVar3);
     iVar3 = thunk_FUN_0041caf0((AnonShape_0041CAF0_1630B9E0 *)param_1);
     if (iVar3 == 1) {
@@ -60,11 +60,11 @@ void __fastcall FUN_00585020(AnonShape_00585020_1C9B1418 *param_1)
   }
   else {
     iVar3 = 1;
-    uVar4 = thunk_FUN_004ad650((int)this);
+    uVar4 = thunk_FUN_004ad650((STT3DSprC *)this);
     FUN_006eabf0(param_1->field_0211,uVar4,iVar3);
     iVar3 = 1;
   }
-  iVar5 = thunk_FUN_004ad650((int)this);
+  iVar5 = thunk_FUN_004ad650((STT3DSprC *)this);
   FUN_006e6870(param_1->field_0211,iVar5,iVar3);
   sVar6 = param_1->field_0041;
   iVar3 = (int)sVar6;
@@ -131,8 +131,8 @@ void __fastcall FUN_00585020(AnonShape_00585020_1C9B1418 *param_1)
     }
     sVar6 = (short)iVar3;
     if (iVar3 + 0x28 < 0) {
-      sub_00416240(param_1,*(undefined2 *)&param_1->field_0x278,*(undefined2 *)&param_1->field_0x27c
-                   ,sVar6 + param_1->field_0045 + 0x28);
+      sub_00416240(param_1,*(ushort *)&param_1->field_0x278,*(short *)&param_1->field_0x27c,
+                   sVar6 + param_1->field_0045 + 0x28);
       param_1->field_0251 = 0x168;
       param_1->field_0235 = (int)param_1->field_0045;
       *(int *)&param_1->field_0x274 = *(int *)&param_1->field_0x274 + 1;
@@ -240,7 +240,7 @@ void __fastcall FUN_00585020(AnonShape_00585020_1C9B1418 *param_1)
       thunk_FUN_00584b10((AnonShape_00584B10_33997544 *)param_1);
     }
   }
-  sub_00416240(param_1,param_1->field_0041,param_1->field_0043,(short)uVar4);
+  sub_00416240(param_1,param_1->field_0041,param_1->field_0043,(ushort)uVar4);
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (**(code **)(*(int *)param_1 + 0xd8))();
   return;

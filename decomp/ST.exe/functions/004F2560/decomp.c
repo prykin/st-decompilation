@@ -3,7 +3,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cp_sup.cpp
-   CPanelTy::PaintWeap */
+   CPanelTy::PaintWeap
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0), and
+   decompilation contains no value return */
 
 void __thiscall CPanelTy::PaintWeap(CPanelTy *this,int param_1)
 

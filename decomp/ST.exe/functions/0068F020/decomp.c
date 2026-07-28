@@ -6,7 +6,11 @@
    AiTactClassTy::GiveObjByClaim
 
    [STPrototypeApplier] Propagated parameter 1.
-   Evidence: 0068F7E0 -> 0068F020 @ 0068F82E */
+   Evidence: 0068F7E0 -> 0068F020 @ 0068F82E
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0), and
+   decompilation contains no value return */
 
 void __thiscall AiTactClassTy::GiveObjByClaim(AiTactClassTy *this,uint *param_1)
 
@@ -17,7 +21,7 @@ void __thiscall AiTactClassTy::GiveObjByClaim(AiTactClassTy *this,uint *param_1)
   AiTactClassTy *this_00;
   int iVar4;
   void *pvVar5;
-  undefined2 *puVar6;
+  ushort *puVar6;
   STGameObjC *objPtr;
   int iVar7;
   DArrayTy *pDVar8;
@@ -62,19 +66,17 @@ void __thiscall AiTactClassTy::GiveObjByClaim(AiTactClassTy *this,uint *param_1)
       local_c = param_1[3];
       while (local_c = local_c - 1, -1 < (int)local_c) {
         if (local_c < param_1[3]) {
-          puVar6 = (undefined2 *)(param_1[2] * local_c + param_1[7]);
+          puVar6 = (ushort *)(param_1[2] * local_c + param_1[7]);
         }
         else {
-          puVar6 = (undefined2 *)0x0;
+          puVar6 = (ushort *)0x0;
         }
         if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
           objPtr = (STGameObjC *)0x0;
         }
         else {
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           objPtr = STAllPlayersC::GetObjPtr
-                             (g_allPlayers_007FA174,*(char *)&this_00->field_0024,
-                              CONCAT22((short)((uint)puVar6 >> 0x10),*puVar6),CASE_1);
+                             (g_allPlayers_007FA174,*(char *)&this_00->field_0024,*puVar6,CASE_1);
         }
         if (objPtr != (STGameObjC *)0x0) {
           iVar4 = (*objPtr->vtable->vfunc_2C)();

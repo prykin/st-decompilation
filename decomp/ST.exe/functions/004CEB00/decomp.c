@@ -11,9 +11,12 @@
    [STSwitchEnumApplier] Switch target field_05AC uses
    /SubmarineTitans/Recovered/Enums/TLOBaseTy_field_05ACState. Cases:
    CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_32=50;CASE_33=51;CASE_34=52;CASE_35=53;CASE_36=54;CASE_37=55;CASE_38=56;CASE_39=57;CASE_3A=58;CASE_3B=59;CASE_3C=60;CASE_3D=61;CASE_3E=62;CASE_3F=63;CASE_40=64;CASE_41=65;CASE_42=66;CASE_43=67;CASE_44=68;CASE_45=69;CASE_46=70;CASE_47=71;CASE_48=72;CASE_49=73;CASE_4A=74;CASE_4B=75;CASE_4C=76;CASE_4D=77;CASE_4E=78;CASE_4F=79;CASE_50=80;CASE_51=81;CASE_52=82;CASE_53=83;CASE_54=84;CASE_55=85;CASE_56=86;CASE_57=87;CASE_58=88;CASE_59=89;CASE_5A=90;CASE_5B=91;CASE_5C=92;CASE_5D=93;CASE_5E=94;CASE_5F=95;CASE_60=96;CASE_61=97;CASE_62=98;CASE_63=99;CASE_64=100;CASE_65=101;CASE_66=102;CASE_67=103;CASE_68=104;CASE_69=105;CASE_6A=106;CASE_6B=107;CASE_6C=108;CASE_6D=109;CASE_6E=110;CASE_6F=111;CASE_70=112;CASE_71=113;CASE_72=114;CASE_73=115;CASE_96=150;CASE_97=151;CASE_98=152;CASE_99=153;CASE_9A=154;CASE_A6=166;CASE_A7=167;CASE_A9=169;CASE_AB=171;CASE_AC=172;CASE_AD=173;CASE_AE=174;CASE_B3=179;CASE_B5=181;CASE_B8=184;CASE_BC=188;CASE_BD=189;CASE_BE=190
-    */
 
-undefined4 __thiscall TLOBaseTy::sub_004CEB00(TLOBaseTy *this,undefined4 param_1)
+   [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 004CEC35 TEST DX,DX classifies dword parameter loaded at 004CEC1A | 004CEC3A CMP
+   DX,word ptr [0x007fb244] classifies dword parameter loaded at 004CEC1A */
+
+undefined4 __thiscall TLOBaseTy::sub_004CEB00(TLOBaseTy *this,int param_1)
 
 {
   char cVar1;
@@ -32,7 +35,7 @@ undefined4 __thiscall TLOBaseTy::sub_004CEB00(TLOBaseTy *this,undefined4 param_1
   undefined4 arg_2;
   byte *local_6c [5];
   byte *local_58;
-  undefined4 local_54;
+  int local_54;
   undefined2 local_50;
   undefined2 local_4e;
   undefined2 local_4c;
@@ -49,11 +52,11 @@ undefined4 __thiscall TLOBaseTy::sub_004CEB00(TLOBaseTy *this,undefined4 param_1
   int local_24;
   undefined2 local_20 [2];
   int local_1c;
-  int local_18;
+  uint local_18;
   int local_14;
   undefined4 local_10;
-  int local_c;
-  int local_8;
+  uint local_c;
+  uint local_8;
 
   local_10 = 0;
   if (g_playSystem_00802A38->field_00E4 < this->field_03CC + this->field_03D0) {
@@ -85,7 +88,7 @@ switchD_004ceb68_caseD_32:
       if (DAT_00811798 == (void *)0x0) {
         return local_10;
       }
-      thunk_FUN_00621580(DAT_00811798,(uint)this->field_0024,8);
+      thunk_FUN_00621580(DAT_00811798,this->field_0024,8);
       return local_10;
     }
     if ((this->field_05AC == CASE_32) || (local_14 = 1, this->field_05AC == CASE_5C)) {
@@ -93,13 +96,13 @@ switchD_004ceb68_caseD_32:
     }
     local_c = this->field_05B4;
     local_1c = local_c + local_14;
-    if (local_1c <= local_c) {
+    if (local_1c <= (int)local_c) {
       return local_10;
     }
     local_18 = this->field_05B0;
     local_14 = local_14 + local_18;
     do {
-      if (local_18 < local_14) {
+      if ((int)local_18 < local_14) {
         sVar9 = *(short *)&this->field_05B8 + 1;
         local_8 = local_18;
         do {
@@ -110,46 +113,48 @@ switchD_004ceb68_caseD_32:
                   (g_worldGrid.cells
                    [(int)sVar9 * (int)g_worldGrid.planeStride + (int)g_worldGrid.sizeX * (int)sVar6
                     + (int)sVar3].objects[0] == (STWorldObject *)0x0)))))) {
-            this->field_04E0 = local_8;
+            this->field_04E0[0] = local_8;
+            iVar5 = this->field_05B8;
             this->field_04DC = 1;
-            this->field_04E4 = local_c;
-            this->field_04E8 = this->field_05B8 + 1;
+            this->field_04E0[1] = local_c;
+            this->field_04E0[2] = iVar5 + 1;
             if (DAT_00800bcc == (void *)0x0) {
               thunk_FUN_004cf430();
             }
-            thunk_FUN_004d0970(DAT_00800bcc,this->field_04E0,this->field_04E4,this->field_04E8);
+            thunk_FUN_004d0970(DAT_00800bcc,this->field_04E0[0],this->field_04E0[1],
+                               this->field_04E0[2]);
             this->field_04D0 = CASE_3;
             this->field_03D0 = 1;
             RotateSpr(this,0);
             TVar2 = this->field_05AC;
             if (TVar2 == CASE_5C) {
-              (*this->vtable->vfunc_90)(this,3,0x39b);
+              this->vfunc_90(3,0x39b);
               return local_10;
             }
             if (TVar2 == CASE_32) {
               iVar5 = GetPlayerRaceId(*(char *)&this->field_023D);
               if ((char)iVar5 != '\x02') {
-                (*this->vtable->vfunc_90)(this,3,0x1f9);
+                this->vfunc_90(3,0x1f9);
                 return local_10;
               }
-              (*this->vtable->vfunc_90)(this,3,0x2c1);
+              this->vfunc_90(3,0x2c1);
               return local_10;
             }
             if (TVar2 != CASE_40) {
               if (TVar2 != CASE_49) {
                 return local_10;
               }
-              (*this->vtable->vfunc_90)(this,3,800);
+              this->vfunc_90(3,800);
               return local_10;
             }
-            (*this->vtable->vfunc_90)(this,3,0x254);
+            this->vfunc_90(3,0x254);
             return local_10;
           }
           local_8 = local_8 + 1;
-        } while (local_8 < local_14);
+        } while ((int)local_8 < local_14);
       }
       local_c = local_c + 1;
-      if (local_1c <= local_c) {
+      if (local_1c <= (int)local_c) {
         return local_10;
       }
     } while( true );
@@ -160,13 +165,13 @@ switchD_004ceb68_caseD_32:
     iVar4 = thunk_FUN_004ac910(&this->field_01D5,'\t');
     if ((*(int *)&this->field_01F5->field_0x154 + iVar5 <= iVar4) &&
        ((this->field_05FF->field_001C & 0x4000) == 0)) {
-      thunk_FUN_004d0310((AnonShape_004D0310_B8EE97FF *)this);
+      thunk_FUN_004d0310(this);
     }
     iVar5 = thunk_FUN_004ac910(&this->field_01D5,'\x0e');
     if (iVar5 != this->field_01F5->field_020C) {
       return local_10;
     }
-    thunk_FUN_004d0a80(DAT_00800bcc,this->field_04E0,this->field_04E4,this->field_04E8);
+    thunk_FUN_004d0a80(DAT_00800bcc,this->field_04E0[0],this->field_04E0[1],this->field_04E0[2]);
     iVar5 = 0x11;
     ppbVar12 = local_6c;
     while( true ) {
@@ -177,14 +182,14 @@ switchD_004ceb68_caseD_32:
     }
     *(undefined1 *)ppbVar12 = 0;
     this->field_04DC = 0;
-    thunk_FUN_004ce9e0(this,&local_8,&local_c,(int *)local_20);
-    local_50 = (undefined2)this->field_04E0;
+    thunk_FUN_004ce9e0(this,(int *)&local_8,(int *)&local_c,(int *)local_20);
+    local_50 = (undefined2)this->field_04E0[0];
     local_6c[3] = (byte *)0x1;
     local_6c[2] = (byte *)0x1;
     local_6c[1] = this->field_0024;
     local_54 = param_1;
-    local_4e = *(undefined2 *)&this->field_04E4;
-    local_4c = *(undefined2 *)&this->field_04E8;
+    local_4e = (undefined2)this->field_04E0[1];
+    local_4c = (undefined2)this->field_04E0[2];
     local_4a = (undefined2)local_8;
     local_46 = local_20[0];
     local_48 = (undefined2)local_c;
@@ -247,7 +252,7 @@ switchD_004ceb68_caseD_32:
     }
     else {
       if (uVar7 == 2) {
-        (*this->vtable->vfunc_90)(this,6,0x66);
+        this->vfunc_90(6,0x66);
         goto cf_common_exit_004CF029;
       }
       if (uVar7 != 3) goto cf_common_exit_004CF029;
@@ -259,7 +264,7 @@ cf_common_exit_004CF029:
     this->field_04D0 = CASE_4;
     this->field_03D0 = 5;
     RotateSpr(this,1);
-    thunk_FUN_004cbf70((int)this);
+    thunk_FUN_004cbf70(this);
     return local_10;
   case CASE_4:
     if (this->field_04D8 == 0) {
@@ -272,22 +277,22 @@ cf_common_exit_004CF029:
       this->field_04D0 = CASE_5;
       this->field_03D0 = 1;
       if (TVar2 == CASE_5C) {
-        (*this->vtable->vfunc_90)(this,3,0x39c);
+        this->vfunc_90(3,0x39c);
       }
       else if (TVar2 == CASE_32) {
         iVar5 = GetPlayerRaceId(*(char *)&this->field_023D);
         if ((char)iVar5 == '\x02') {
-          (*this->vtable->vfunc_90)(this,3,0x2c2);
+          this->vfunc_90(3,0x2c2);
         }
         else {
-          (*this->vtable->vfunc_90)(this,3,0x1fa);
+          this->vfunc_90(3,0x1fa);
         }
       }
       else if (TVar2 == CASE_40) {
-        (*this->vtable->vfunc_90)(this,3,0x255);
+        this->vfunc_90(3,0x255);
       }
       else if (TVar2 == CASE_49) {
-        (*this->vtable->vfunc_90)(this,3,0x321);
+        this->vfunc_90(3,0x321);
       }
       break;
     case CASE_40:

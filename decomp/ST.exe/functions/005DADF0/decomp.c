@@ -3,7 +3,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\startsys.cpp
-   StartSystemTy::InitChat */
+   StartSystemTy::InitChat
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0), and
+   decompilation contains no value return */
 
 void __thiscall StartSystemTy::InitChat(StartSystemTy *this)
 
@@ -34,7 +38,7 @@ void __thiscall StartSystemTy::InitChat(StartSystemTy *this)
         uVar6 = ((uint)puVar1[7] * *(int *)(puVar1 + 2) + 0x1f >> 3 & 0x1ffffffc) *
                 *(int *)(puVar1 + 4);
       }
-      puVar3 = (undefined4 *)FUN_006b4fa0((int)puVar1);
+      puVar3 = (undefined4 *)FUN_006b4fa0((int *)puVar1);
       for (uVar5 = uVar6 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
         *puVar3 = 0xffffffff;
         puVar3 = puVar3 + 1;

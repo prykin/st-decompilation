@@ -1,4 +1,8 @@
 
+/* [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=4, used=0), and
+   decompilation contains no value return */
+
 void __thiscall FUN_006ea8a0(void *this,uint param_1,int param_2,uint param_3,uint param_4)
 
 {

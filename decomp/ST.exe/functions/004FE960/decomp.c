@@ -46,7 +46,7 @@ void __thiscall CPanelTy::PaintInfoBoat(CPanelTy *this)
   if (this_00->field_0B63 == '\0') {
     if (DAT_0080874e == '\x03') {
       DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_018C,0,0,'\x06',
-             (byte *)this_00->field_0978);
+             (byte *)this_00->field_0974[1]);
       goto LAB_004fea77;
     }
     pbVar6 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_029E,1);
@@ -55,7 +55,7 @@ void __thiscall CPanelTy::PaintInfoBoat(CPanelTy *this)
   else {
     if (DAT_0080874e == '\x03') {
       DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_018C,0,0,'\x06',
-             (byte *)this_00->field_0980);
+             (byte *)this_00->field_0974[3]);
       goto LAB_004fea77;
     }
     pbVar6 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_029E,0);
@@ -115,19 +115,19 @@ LAB_004fea77:
       PaintEnergy(this_00,1);
     }
   }
-  if (-1 < this_00->field_0148) {
+  if (-1 < (int)this_00->field_0148[0]) {
     Library::DKW::DDX::FUN_006b3640
-              ((int *)PTR_008075a8,this_00->field_0148,0xffffffff,this_00->field_003C,
+              ((int *)PTR_008075a8,(uint)this_00->field_0148[0],0xffffffff,this_00->field_003C,
                this_00->field_0094);
   }
-  if (-1 < this_00->field_014C) {
+  if (-1 < (int)this_00->field_0148[1]) {
     Library::DKW::DDX::FUN_006b3640
-              ((int *)PTR_008075a8,this_00->field_014C,0xffffffff,this_00->field_0040,
+              ((int *)PTR_008075a8,(uint)this_00->field_0148[1],0xffffffff,this_00->field_0040,
                this_00->field_0098);
   }
-  if ((DAT_0080874e != '\x03') && (-1 < this_00->field_0150)) {
+  if ((DAT_0080874e != '\x03') && (-1 < (int)this_00->field_0148[2])) {
     Library::DKW::DDX::FUN_006b3640
-              ((int *)PTR_008075a8,this_00->field_0150,0xffffffff,this_00->field_0044,
+              ((int *)PTR_008075a8,(uint)this_00->field_0148[2],0xffffffff,this_00->field_0044,
                this_00->field_009C);
   }
   g_currentExceptionFrame = local_50.previous;

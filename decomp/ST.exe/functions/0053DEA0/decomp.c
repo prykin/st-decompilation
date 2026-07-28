@@ -12,12 +12,23 @@
    00530725 | 0052FB00 -> 0053DEA0 @ 0053077F | 0052FB00 -> 0053DEA0 @ 0053098D | 0052FB00 ->
    0053DEA0 @ 005309D5 | 0052FB00 -> 0053DEA0 @ 00530B35 | 0052FB00 -> 0053DEA0 @ 00530C60 |
    0052FB00 -> 0053DEA0 @ 005318BD | 00539B90 -> 0053DEA0 @ 00539E01 | 00539B90 -> 0053DEA0 @
-   0053A020 */
+   0053A020
+
+   [STPrototypeApplier] Propagated parameter 10.
+   Evidence: 00510E30 -> 0053DEA0 @ 00511440; literal 0 at 00511410 | 00510E30 -> 0053DEA0 @
+   005114D9; literal 0 at 005114B2 | 0052FB00 -> 0053DEA0 @ 00530650; literal 0 at 0053061D |
+   0052FB00 -> 0053DEA0 @ 005306A3; literal 0 at 00530679 | 0052FB00 -> 0053DEA0 @ 005306E3; literal
+   0 at 005306B0 | 0052FB00 -> 0053DEA0 @ 00530725; literal 0 at 005306FB | 0052FB00 -> 0053DEA0 @
+   0053077F; literal 0 at 0053075B | 0052FB00 -> 0053DEA0 @ 0053098D; literal 0 at 00530965 |
+   0052FB00 -> 0053DEA0 @ 005309D5; literal 0 at 0053099A | 0052FB00 -> 0053DEA0 @ 00530B35; literal
+   0 at 00530B12 | 0052FB00 -> 0053DEA0 @ 00530C60; literal 0 at 00530C28 | 0052FB00 -> 0053DEA0 @
+   005318BD; literal 0 at 0053188A | 00539B90 -> 0053DEA0 @ 00539FB1; literal 0 at 00539F99 |
+   00539B90 -> 0053DEA0 @ 0053A020; literal 0 at 00539FE7 */
 
 undefined4 __thiscall
 UPanelTy::CreateBut(UPanelTy *this,undefined4 param_1,int param_2,int param_3,int param_4,
                    byte param_5,LPSTR param_6,undefined4 param_7,undefined4 param_8,short param_9,
-                   undefined2 param_10,undefined4 param_11,char *param_12,undefined4 param_13,
+                   ushort param_10,undefined4 param_11,char *param_12,undefined4 param_13,
                    undefined4 param_14)
 
 {
@@ -40,14 +51,14 @@ UPanelTy::CreateBut(UPanelTy *this,undefined4 param_1,int param_2,int param_3,in
   undefined4 local_150;
   undefined4 local_14c;
   undefined4 local_148;
-  undefined2 local_144;
+  ushort local_144;
   short local_142;
   undefined4 local_140;
   undefined4 local_138;
   undefined4 local_12c;
   undefined4 local_128;
   undefined4 local_124;
-  undefined2 local_120;
+  ushort local_120;
   short local_11e;
   undefined4 local_11c;
   undefined4 local_114;

@@ -1,9 +1,16 @@
 #include "../../pseudocode_runtime.h"
 
 
+/* [STPrototypeApplier] Propagated parameter 5.
+   Evidence: raw retained-width parameter lifetime: width=2, reads=1, sites=00637461 MOV AX,word ptr
+   [EBP + 0x1c]
+
+   [STPrototypeApplier] Propagated parameter 6.
+   Evidence: 0044EE30 -> 00637350 @ 00450FD8; zero-filled partial register load at 00450FBE */
+
 int __cdecl
-FUN_00637350(int param_1,int param_2,int param_3,int param_4,uint param_5,undefined2 param_6,
-            undefined2 param_7,undefined4 param_8,uint param_9)
+FUN_00637350(int param_1,int param_2,int param_3,int param_4,uint param_5,ushort param_6,
+            ushort param_7,undefined4 param_8,uint param_9)
 
 {
   byte bVar1;
@@ -23,8 +30,8 @@ FUN_00637350(int param_1,int param_2,int param_3,int param_4,uint param_5,undefi
   int local_58 [5];
   uint *local_44;
   uint local_38 [3];
-  undefined2 local_2c;
-  undefined2 local_2a;
+  ushort local_2c;
+  ushort local_2a;
   int local_1c;
   int local_18;
   int local_14;
@@ -97,10 +104,12 @@ FUN_00637350(int param_1,int param_2,int param_3,int param_4,uint param_5,undefi
     do {
       iVar8 = iVar4;
       iVar14 = local_1c;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_9 = uVar7;
       if (local_1c < local_14) {
         do {
           iVar4 = iVar8;
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           _param_6 = iVar14;
           if (iVar8 < iVar10) {
             do {
@@ -116,7 +125,7 @@ FUN_00637350(int param_1,int param_2,int param_3,int param_4,uint param_5,undefi
                  ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
                   ((byte)(&DAT_008087e9)[(int)this[1].vtable * 0x51] < 8)))) {
                 bVar1 = *(byte *)&this[1].vtable;
-                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
                 param_8 = CONCAT31(param_8._1_3_,bVar1);
                 if (DAT_00808a8f == '\0') {
                   if (bVar1 == (byte)param_5) {

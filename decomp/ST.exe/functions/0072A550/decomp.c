@@ -1,9 +1,17 @@
 
 /* [STPrototypeApplier] Propagated parameter 0.
-   Evidence: 007297E0 -> 0072A550 @ 00729BCA | 007297E0 -> 0072A550 @ 00729F36 */
+   Evidence: 007297E0 -> 0072A550 @ 00729BCA | 007297E0 -> 0072A550 @ 00729F36
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0), and
+   decompilation contains no value return
+
+   [STPrototypeApplier] Propagated parameter 5.
+   Evidence: 007297E0 -> 0072A550 @ 00729BCA; FUN_007297e0 parameter param_7 | 007297E0 -> 0072A550
+   @ 00729F36; FUN_007297e0 parameter param_7 */
 
 void __cdecl
-FUN_0072a550(uint *param_1,int param_2,ushort *param_3,int param_4,int *param_5,undefined1 param_6)
+FUN_0072a550(uint *param_1,int param_2,ushort *param_3,int param_4,int *param_5,byte param_6)
 
 {
   int iVar1;
@@ -41,7 +49,7 @@ FUN_0072a550(uint *param_1,int param_2,ushort *param_3,int param_4,int *param_5,
     *param_5 = iVar2;
     while (-1 < iVar2) {
       if (((param_5[9] & param_5[8]) != 0) && (param_5[6] >> 0x10 < (int)(uint)*param_3)) {
-        *(undefined1 *)param_1 = param_6;
+        *(byte *)param_1 = param_6;
       }
       uVar3 = param_5[8];
       param_5[8] = uVar3 >> 1;

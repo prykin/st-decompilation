@@ -19,8 +19,6 @@ int __thiscall STFishC::GetMessage(STFishC *this,STMessage *message)
   STSprGameObjC *this_00;
   int iVar4;
   int iVar5;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  undefined4 extraout_ECX;
   uint uVar6;
   short sVar7;
   undefined4 *puVar8;
@@ -69,7 +67,7 @@ int __thiscall STFishC::GetMessage(STFishC *this,STMessage *message)
   if (MESS_TORPHIT < SVar2) {
     switch(SVar2) {
     case MESS_STOCTOPUSC_0112:
-      thunk_FUN_004ad5e0((int)&this_00->field_01D5);
+      thunk_FUN_004ad5e0((STT3DSprC *)&this_00->field_01D5);
       g_currentExceptionFrame = local_80.previous;
       return 0;
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -87,7 +85,7 @@ int __thiscall STFishC::GetMessage(STFishC *this,STMessage *message)
         g_currentExceptionFrame = local_80.previous;
         return 0;
       }
-      uVar6 = thunk_FUN_004ad650((int)&this_00->field_01D5);
+      uVar6 = thunk_FUN_004ad650((STT3DSprC *)&this_00->field_01D5);
       FUN_006eab60((void *)this_00->field_0211,uVar6);
       sub_0057BF20((STFishC *)this_00);
       *(undefined4 *)&this_00->field_0x23b = 3;
@@ -103,7 +101,7 @@ int __thiscall STFishC::GetMessage(STFishC *this,STMessage *message)
     puVar8 = &this_00->field_01D5;
     *(undefined4 *)&this_00->field_0x23b = 5;
     STT3DSprC::StopShow((STT3DSprC *)puVar8,0xe);
-    thunk_FUN_004ad5e0((int)puVar8);
+    thunk_FUN_004ad5e0((STT3DSprC *)puVar8);
     STT3DSprC::LoadSequence((STT3DSprC *)puVar8,8,DAT_00806774,"explsna",0x1d);
     STT3DSprC::StartShow((STT3DSprC *)puVar8,8,g_playSystem_00802A38->field_00E4);
     g_currentExceptionFrame = local_80.previous;
@@ -178,10 +176,8 @@ int __thiscall STFishC::GetMessage(STFishC *this,STMessage *message)
   }
   if (SVar2 == MESS_SHARED_0003) {
     sub_004167A0(this_00);
-    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     thunk_FUN_00495ff0(*(short *)&this_00->field_0x5b,*(short *)&this_00->field_0x5d,
-                       *(short *)&this_00->field_0x5f,
-                       CONCAT31((int3)((uint)extraout_ECX >> 8),this_00->field_0x8e),
+                       *(short *)&this_00->field_0x5f,this_00->field_0x8e,
                        (AnonShape_00495FF0_59081BDD *)this_00);
     thunk_FUN_0058d080(this_00->field_0018);
     thunk_FUN_004ad310((STT3DSprC *)&this_00->field_01D5);
@@ -247,7 +243,7 @@ int __thiscall STFishC::GetMessage(STFishC *this,STMessage *message)
         FreeAndNull(&local_3c);
         DumpClassC::WritePtr
                   (*(short *)&this_00->field_0x5b,*(short *)&this_00->field_0x5d,
-                   *(short *)&this_00->field_0x5f,1,(AnonShape_00495EC0_95A268C6 *)this_00);
+                   *(short *)&this_00->field_0x5f,1,(RecoveredRecord_DumpClassC_00495EC0 *)this_00);
         STT3DSprC::SetCurFase((STT3DSprC *)&this_00->field_01D5,'\x0e',0);
       }
     }

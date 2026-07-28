@@ -27,7 +27,7 @@ STBoatC::GetExplosionInfo
   uint local_3c;
   int local_38;
   undefined4 local_34;
-  short local_30;
+  ushort local_30;
   uint local_2c;
   uint local_28;
   STBoatC *local_24;
@@ -71,7 +71,7 @@ STBoatC::GetExplosionInfo
   }
   puVar4 = (undefined4 *)thunk_FUN_0041dc40(&local_3c,(short)local_34,local_30,pSVar2->field_006C);
   uVar9 = *puVar4;
-  local_30 = *(short *)(puVar4 + 1);
+  local_30 = *(ushort *)(puVar4 + 1);
   *param_2 = pSVar2->field_0041 + (short)uVar9;
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   local_34._2_2_ = (short)((uint)uVar9 >> 0x10);
@@ -117,7 +117,7 @@ STBoatC::GetExplosionInfo
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   if ((longlong)(lVar12 + CONCAT44((int)((ulonglong)lVar11 >> 0x20),local_3c) + local_20) <=
       CONCAT44(local_c,local_28)) {
-    *param_5 = (uint)(local_30 + 0x46 < 0x15);
+    *param_5 = (uint)((short)local_30 + 0x46 < 0x15);
     *param_5 = 1;
     g_currentExceptionFrame = local_80.previous;
     return 0;

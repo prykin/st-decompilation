@@ -20,7 +20,9 @@ int __thiscall STAllPlayersC::_ChangeMD(STAllPlayersC *this,int param_1,int *par
   uVar6 = param_3;
   piVar3 = param_2;
   objPtr = (char)param_2;
-  param_2 = (int *)GetObjPtr(this,objPtr,param_3,CASE_1);
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+  param_2 = (int *)GetObjPtr(this,objPtr,(ushort)param_3,CASE_1);
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if ((STGameObjC *)param_2 == (STGameObjC *)0x0) {
     iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x21d0,0,0,"%s",
                                "STAllPlayersC::_ChangeMD");

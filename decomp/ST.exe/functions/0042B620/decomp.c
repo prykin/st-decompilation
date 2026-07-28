@@ -59,11 +59,15 @@
    0068F360 -> 0042B620 @ 0068F415 | 0068F660 -> 0042B620 @ 0068F6E1
    [STAbiConsistencyApplier] stack_parameter_width: parameter=/char Evidence: entry-use width=/char;
    unmasked_dword_reads=0; evidence=0042B637 MOVSX EAX,byte ptr [EBP + 0x8] | 0042B6C9 MOVSX
-   ECX,byte ptr [EBP + 0x8] */
+   ECX,byte ptr [EBP + 0x8]
+   [STAbiConsistencyApplier] stack_parameter_width target=parameter:2: parameter=/ushort Evidence:
+   entry-use width=/ushort; unmasked_dword_reads=0; evidence=0042B6A8 MOV EDX,dword ptr [EBP + 0xc];
+   first-use mask | 0042B6C6 MOV EAX,dword ptr [EBP + 0xc]; first-use mask */
 
 STGameObjC * __thiscall
 STAllPlayersC::GetObjPtr
-          (STAllPlayersC *this,char objPtr,uint param_2,STAllPlayersC_GetObjPtr_param_3Enum param_3)
+          (STAllPlayersC *this,char objPtr,ushort param_2,
+          STAllPlayersC_GetObjPtr_param_3Enum param_3)
 
 {
   code *pcVar1;
@@ -72,6 +76,8 @@ STAllPlayersC::GetObjPtr
   DArrayTy *array;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined3 in_stack_00000005;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+  undefined2 in_stack_0000000a;
 
   switch(param_3) {
   case CASE_1:
@@ -112,14 +118,13 @@ STAllPlayersC::GetObjPtr
     break;
   default:
     iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x17a,0,0,
-                               "STAllPlayersC::GetObjPtr player=%d num=%d",(int)objPtr,
-                               param_2 & 0xffff);
+                               "STAllPlayersC::GetObjPtr player=%d num=%d",(int)objPtr,param_2);
     if (iVar2 == 0) {
       return (STGameObjC *)0x0;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  iVar2 = DArrayGetElement(array,param_2 & 0xffff,&objPtr);
+  iVar2 = DArrayGetElement(array,(uint)param_2,&objPtr);
   return (STGameObjC *)(-(uint)(iVar2 != -4) & _objPtr);
 }
 

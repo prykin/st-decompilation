@@ -136,9 +136,9 @@ void __thiscall CPanelTy::Update5Panel(CPanelTy *this)
                 ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_019C,0,1,0,
                  (byte *)this_00->field_0B47,0,1,0,0x4e,0x20);
       PaintName(this_00,0);
-      if (-1 < this_00->field_0164) {
+      if (-1 < (int)this_00->field_0148[7]) {
         Library::DKW::DDX::FUN_006b3640
-                  ((int *)PTR_008075a8,this_00->field_0164,0xffffffff,this_00->field_0058,
+                  ((int *)PTR_008075a8,(uint)this_00->field_0148[7],0xffffffff,this_00->field_0058,
                    this_00->field_00B0);
       }
     }
@@ -166,9 +166,9 @@ LAB_00500126:
                 ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_019C,0,1,0,
                  (byte *)this_00->field_0B47,0,1,0,0x4e,0x20);
       PaintName(this_00,0);
-      if (-1 < this_00->field_0164) {
+      if (-1 < (int)this_00->field_0148[7]) {
         Library::DKW::DDX::FUN_006b3640
-                  ((int *)PTR_008075a8,this_00->field_0164,0xffffffff,this_00->field_0058,
+                  ((int *)PTR_008075a8,(uint)this_00->field_0148[7],0xffffffff,this_00->field_0058,
                    this_00->field_00B0);
       }
     }
@@ -178,9 +178,9 @@ LAB_00500126:
                 ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_019C,0,1,0x1f,
                  (byte *)this_00->field_0B47,0,1,0x1f,0x4e,0x11);
       PaintLife(this_00,0);
-      if (-1 < this_00->field_0164) {
+      if (-1 < (int)this_00->field_0148[7]) {
         Library::DKW::DDX::FUN_006b3640
-                  ((int *)PTR_008075a8,this_00->field_0164,0xffffffff,this_00->field_0058,
+                  ((int *)PTR_008075a8,(uint)this_00->field_0148[7],0xffffffff,this_00->field_0058,
                    this_00->field_00B0);
       }
     }
@@ -198,9 +198,9 @@ LAB_00500126:
                 ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_019C,0,1,0x2f,
                  (byte *)this_00->field_0B47,0,1,0x2f,0x4e,0x24);
       PaintWeap(this_00,0);
-      if (-1 < this_00->field_0164) {
+      if (-1 < (int)this_00->field_0148[7]) {
         Library::DKW::DDX::FUN_006b3640
-                  ((int *)PTR_008075a8,this_00->field_0164,0xffffffff,this_00->field_0058,
+                  ((int *)PTR_008075a8,(uint)this_00->field_0148[7],0xffffffff,this_00->field_0058,
                    this_00->field_00B0);
       }
     }
@@ -221,9 +221,9 @@ LAB_00500126:
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       _local_8 = CONCAT31(uStack_7,bVar4);
       if (bVar4 < 0xb) {
-        if (-1 < (&this_00->field_0148)[bVar4]) {
+        if (-1 < (int)this_00->field_0148[bVar4]) {
           Library::DKW::DDX::FUN_006b3640
-                    ((int *)PTR_008075a8,(&this_00->field_0148)[bVar4],0xffffffff,
+                    ((int *)PTR_008075a8,(uint)this_00->field_0148[bVar4],0xffffffff,
                      (&this_00->field_003C)[bVar4],(&this_00->field_0094)[bVar4]);
         }
       }

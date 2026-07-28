@@ -14,9 +14,11 @@ void __thiscall FUN_00494160(void *this,int param_1)
   iVar5 = *(int *)((int)this + 0x6f7);
   if (iVar5 != 0x16) {
     if (iVar5 == 0x23) {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       if (param_1 == *(int *)((int)this + 0x72e)) {
         return;
       }
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       if (param_1 == 1) {
         if (*(int *)((int)this + 0x722) < 1) {
           return;
@@ -35,6 +37,7 @@ void __thiscall FUN_00494160(void *this,int param_1)
       return;
     }
   }
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_1 == *(int *)((int)this + 0x732)) {
     return;
   }

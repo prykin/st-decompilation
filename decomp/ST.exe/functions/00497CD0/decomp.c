@@ -18,7 +18,7 @@ STGroupBoatC::InitWay(STGroupBoatC *this,DArrayTy *param_1,int param_2,int param
   uint index;
   InternalExceptionFrame local_50;
   STGroupBoatC *local_c;
-  uint local_8;
+  undefined1 local_8 [4];
 
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
@@ -29,8 +29,10 @@ STGroupBoatC::InitWay(STGroupBoatC *this,DArrayTy *param_1,int param_2,int param
     index = 0;
     if (param_1->count != 0) {
       do {
-        DArrayGetElement(param_1,index,&local_8);
-        pSVar3 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,pSVar2->field_0024,local_8,CASE_1);
+        DArrayGetElement(param_1,index,local_8);
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+        pSVar3 = STAllPlayersC::GetObjPtr
+                           (g_allPlayers_007FA174,pSVar2->field_0024,local_8._0_2_,CASE_1);
         pSVar3->field_00FD = 0;
         index = index + 1;
       } while (index < param_1->count);

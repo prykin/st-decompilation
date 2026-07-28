@@ -33,8 +33,8 @@ undefined4 __thiscall STTmMineC::LoadImagNuclear(STTmMineC *this,int param_1)
                           (undefined4 *)0x0);
       FUN_006e8660((void *)pSVar2->field_0211,(int *)&local_8,1,0,*(uint *)((int)puVar3 + 9),
                    *(uint *)((int)puVar3 + 0xd),0x6f,0xf0,0);
-      FUN_006e98e0((void *)pSVar2->field_0211,local_8,0,*(undefined4 *)puVar3,
-                   *(int *)((int)puVar3 + 0x21),1);
+      FUN_006e98e0((void *)pSVar2->field_0211,local_8,0,*(int *)puVar3,*(int *)((int)puVar3 + 0x21),
+                   1);
       FUN_006ea270((void *)pSVar2->field_0211,local_8,0,pSVar2->field_033E);
       FUN_006ea960((void *)pSVar2->field_0211,local_8,
                    (float)pSVar2->field_0266 * _DAT_007904f8 * _DAT_007904f0,

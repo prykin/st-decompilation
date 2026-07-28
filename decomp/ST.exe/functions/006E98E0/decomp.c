@@ -1,4 +1,8 @@
 
+/* [STPrototypeApplier] Propagated parameter 3.
+   Evidence: 00556170 -> 006E98E0 @ 00556296; MOVSX at 00556284 establishes signed source width 2 |
+   00556760 -> 006E98E0 @ 00556AD6; MOVSX at 00556AC1 establishes signed source width 2 */
+
 undefined4 __thiscall
 FUN_006e98e0(void *this,uint param_1,uint param_2,int param_3,int param_4,int param_5)
 

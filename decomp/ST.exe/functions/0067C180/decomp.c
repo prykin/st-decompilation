@@ -136,11 +136,11 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this,void *param_1)
                     memset(&local_3c, 0, 0x1c); /* compiler bulk-zero initialization */
                     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                     local_3c._0_2_ = (undefined2)local_8;
-                    dVar10 = (*pSVar1->vtable->slot_2C)(pSVar1);
+                    dVar10 = pSVar1->slot_2C();
                     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                     local_3c._2_2_ = (short)dVar10;
                     thunk_FUN_0067bda0(local_38,pSVar1);
-                    local_2c = (*pSVar1->vtable->vfunc_D4)(pSVar1);
+                    local_2c = pSVar1->vfunc_D4();
                     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                     local_28 = thunk_FUN_00674fb0((int)local_3c._2_2_);
                     uVar11 = thunk_FUN_00675430((Global_sub_00675430_param_1Enum)local_28);
@@ -212,11 +212,11 @@ LAB_0067c61b:
                         memset(&local_3c, 0, 0x1c); /* compiler bulk-zero initialization */
                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                         local_3c._0_2_ = uVar3;
-                        dVar10 = (*pSVar1->vtable->slot_2C)(pSVar1);
+                        dVar10 = pSVar1->slot_2C();
                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                         local_3c._2_2_ = (short)dVar10;
                         thunk_FUN_0067bda0(local_38,pSVar1);
-                        local_2c = (*pSVar1->vtable->vfunc_D4)(pSVar1);
+                        local_2c = pSVar1->vfunc_D4();
                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                         local_28 = thunk_FUN_00674fb0((int)local_3c._2_2_);
                         uVar11 = thunk_FUN_00675430((Global_sub_00675430_param_1Enum)local_28);

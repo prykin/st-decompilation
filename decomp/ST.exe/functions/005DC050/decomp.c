@@ -3,7 +3,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\startsys.cpp
-   StartSystemTy::LoadMapData */
+   StartSystemTy::LoadMapData
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=3, used=0), and
+   decompilation contains no value return */
 
 void __thiscall StartSystemTy::LoadMapData(StartSystemTy *this,cMf32 *param_1,char param_2)
 
@@ -59,7 +63,7 @@ void __thiscall StartSystemTy::LoadMapData(StartSystemTy *this,cMf32 *param_1,ch
     *value = puVar4;
     if (puVar4 != (ushort *)0x0) {
       FUN_006c7f90(puVar4,(byte *)0x0,g_anonShape_GLOBAL_0080759C_9638EF10_0080759C->field_04B4,0);
-      FUN_006b5440((int)this_01->field_02F0,0,0x14,0x14,(uint)*value,0,0);
+      FUN_006b5440(this_01->field_02F0,0,0x14,0x14,(uint)*value,0,0);
     }
     if (g_dArray_0080C4C7 != (DArrayTy *)0x0) {
       FUN_006b5570(g_dArray_0080C4C7);

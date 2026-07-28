@@ -21,6 +21,7 @@ LAB_006d25f2:
     param_1 = param_1 + param_2;
     iVar7 = param_5 + -1;
     bVar1 = param_5 < 1;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_5 = iVar7;
     if (iVar7 == 0 || bVar1) {
       return;
@@ -118,6 +119,7 @@ cf_continue_loop_006D26AD:
   param_1 = param_1 + (param_2 - param_4);
   iVar7 = param_5 + -1;
   bVar1 = param_5 < 1;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_5 = iVar7;
   if (iVar7 == 0 || bVar1) {
     return;

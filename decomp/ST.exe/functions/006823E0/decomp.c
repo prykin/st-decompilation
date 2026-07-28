@@ -24,7 +24,7 @@ void __cdecl FUN_006823e0(int param_1,float *param_2)
   if (g_int_00848A14 != (int *)0x0) {
     thunk_FUN_006823a0((short)param_1,(short)param_2);
     iVar7 = (g_int_00848A14[1] - (int)pfVar8) + -1;
-    pcVar2 = thunk_FUN_0064a910((int)g_int_00848A14,iVar7);
+    pcVar2 = thunk_FUN_0064a910(g_int_00848A14,iVar7);
     if (pcVar2 == (char *)0x0) {
       RaiseInternalException
                 (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x19c);
@@ -41,12 +41,16 @@ void __cdecl FUN_006823e0(int param_1,float *param_2)
         local_8 = (short *)(pcVar2 + (int)pfVar8 * 5 + 1);
         iVar4 = thunk_FUN_006686f0((int)*(short *)(pcVar2 + (int)pfVar8 * 5 + 1));
         if ((iVar4 < 0) || (iVar4 = thunk_FUN_00668a70((int)*local_8), iVar4 != 0)) {
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_1 = 0;
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_2 = thunk_FUN_0064a970(pcVar2,(int)pfVar8,&param_1);
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           if (param_2 == (float *)0x0) {
             thunk_FUN_006802a0(param_1,&DAT_00847824);
             return;
           }
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           if (param_1 == 1) {
             iVar7 = thunk_FUN_0064a940(g_int_00848A14,iVar7);
             if (iVar7 == 0) {
@@ -57,6 +61,7 @@ void __cdecl FUN_006823e0(int param_1,float *param_2)
             local_10 = 1;
             local_f = *param_2;
           }
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           else if (param_1 == 2) {
             iVar7 = thunk_FUN_0064a940(g_int_00848A14,iVar7);
             if (iVar7 == 0) {

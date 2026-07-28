@@ -35,9 +35,9 @@ void __thiscall CPanelTy::PaintMap(CPanelTy *this)
     iVar3 = -2;
     resourceString = (uint *)LoadResourceString(0x2712,g_module_00807618);
     ccFntTy::WrTxt(pCVar2->field_01B8,resourceString,iVar3,iVar5,uVar4,iVar6,iVar7);
-    if (-1 < pCVar2->field_0158) {
+    if (-1 < (int)pCVar2->field_0148[4]) {
       Library::DKW::DDX::FUN_006b3640
-                ((int *)PTR_008075a8,pCVar2->field_0158,0xffffffff,pCVar2->field_004C,
+                ((int *)PTR_008075a8,(uint)pCVar2->field_0148[4],0xffffffff,pCVar2->field_004C,
                  pCVar2->field_00A4);
     }
     g_currentExceptionFrame = local_4c.previous;

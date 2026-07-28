@@ -15,11 +15,11 @@ undefined4 __thiscall TLOBaseTy::sub_004C56B0(TLOBaseTy *this,void *param_1)
   short sVar6;
   short sVar7;
   short sVar8;
-  int local_1c;
+  uint local_1c;
   undefined4 local_18;
-  int local_14;
+  uint local_14;
   int local_10;
-  int local_c;
+  uint local_c;
   uint local_8;
 
   pvVar2 = param_1;
@@ -37,21 +37,24 @@ undefined4 __thiscall TLOBaseTy::sub_004C56B0(TLOBaseTy *this,void *param_1)
   if (*(int *)((int)&this->field_02CC + iVar5 + 1) < *(int *)((int)&this->field_02D0 + iVar5 + 1)) {
     pvVar1 = (void *)((int)param_1 + this->field_0235 * 2);
     if ((&DAT_00792ca0)[(int)pvVar1 * 3] == 0xb3) {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (void *)0x0;
-      if ((this->field_04EC != 0) &&
-         (iVar3 = STPlaySystemC::sub_006E62D0
-                            (g_playSystem_00802A38,this->field_04EC,(int *)&param_1), iVar3 == 0)) {
+      if (((AnonShape_005EFAE0_B406B78B *)this->field_04E0[3] != (AnonShape_005EFAE0_B406B78B *)0x0)
+         && (iVar3 = STPlaySystemC::sub_006E62D0
+                               (g_playSystem_00802A38,
+                                (AnonShape_005EFAE0_B406B78B *)this->field_04E0[3],(int *)&param_1),
+            iVar3 == 0)) {
         uVar4 = this->field_001C * 0x41c64e6d + 0x3039;
         this->field_001C = uVar4;
-        iVar3 = thunk_FUN_00617ca0(param_1,(int *)&local_8,&local_10,&local_18,&local_c,&local_14,
-                                   &local_1c,uVar4 >> 0x10);
+        iVar3 = thunk_FUN_00617ca0(param_1,(int *)&local_8,&local_10,&local_18,(int *)&local_c,
+                                   (int *)&local_14,(int *)&local_1c,uVar4 >> 0x10);
         if (iVar3 != 0) {
           *(uint *)(&this->field_0x2a5 + iVar5) = local_8;
-          this->field_04F4 = local_c;
+          this->field_04E0[5] = local_c;
           (&this->field_02A9)[(int)pvVar2 * 0x20] = local_10;
-          this->field_04F8 = local_14;
+          this->field_04E0[6] = local_14;
           *(undefined4 *)(&this->field_0x2ad + iVar5) = local_18;
-          this->field_04FC = local_1c;
+          this->field_04E0[7] = local_1c;
           return 1;
         }
       }

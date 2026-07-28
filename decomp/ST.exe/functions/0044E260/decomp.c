@@ -19,7 +19,7 @@ void FUN_0044e260(uint param_1,uint param_2,uint param_3,int *param_4)
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   int unaff_EDI;
   STGameObjC *pSVar13;
-  uint local_2c;
+  undefined1 local_2c [4];
   int local_28;
   int local_24;
   int local_20;
@@ -31,22 +31,24 @@ void FUN_0044e260(uint param_1,uint param_2,uint param_3,int *param_4)
   int local_8;
 
   piVar4 = param_4;
-  local_14 = (STGameObjC *)thunk_FUN_0042b760((char)param_1,param_2);
+  local_14 = (STGameObjC *)thunk_FUN_0042b760((char)param_1,(ushort)param_2);
   if (local_14 != (STGameObjC *)0x0) {
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     pDVar5 = (DArrayTy *)STGroupC::GetGroupContent((STGroupC *)local_14,unaff_EDI);
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = pDVar5->count;
     if (param_2 != 0) {
       local_18 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,param_2,4,1);
       uVar12 = 0;
       if (0 < (int)param_2) {
         do {
-          DArrayGetElement(pDVar5,uVar12,&local_2c);
-          /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          local_14 = STAllPlayersC::GetObjPtr(in_ECX,(char)param_1,local_2c,CASE_1);
+          DArrayGetElement(pDVar5,uVar12,local_2c);
+          /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
+          local_14 = STAllPlayersC::GetObjPtr(in_ECX,(char)param_1,local_2c._0_2_,CASE_1);
           if ((local_14 == (STGameObjC *)0x0) ||
-             (iVar6 = (*local_14->vtable->vfunc_F8)(local_14), iVar6 == 0)) {
+             (iVar6 = local_14->vfunc_F8(), iVar6 == 0)) {
             FUN_006b0c70(pDVar5,uVar12);
+            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_2 = param_2 - 1;
             uVar12 = uVar12 - 1;
           }
@@ -61,6 +63,7 @@ void FUN_0044e260(uint param_1,uint param_2,uint param_3,int *param_4)
         local_8 = 10000;
         local_c = 0;
         local_14 = local_18->data;
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = 10000;
         local_10 = 0;
         uVar12 = param_2;
@@ -81,6 +84,7 @@ void FUN_0044e260(uint param_1,uint param_2,uint param_3,int *param_4)
             iVar6 = (int)*(short *)((int)&pSVar1->vfunc_5C + 1);
             uVar8 = iVar6 - iVar9;
             if ((int)uVar8 < (int)param_1) {
+              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_1 = uVar8;
             }
             iVar6 = iVar6 + iVar9;
@@ -99,6 +103,7 @@ void FUN_0044e260(uint param_1,uint param_2,uint param_3,int *param_4)
           local_c = iVar6;
         }
         if ((int)param_1 < 0) {
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_1 = 0;
         }
         if (g_worldGrid.sizeY + -1 < local_10) {
@@ -126,6 +131,7 @@ void FUN_0044e260(uint param_1,uint param_2,uint param_3,int *param_4)
                      && ((((param_3 & 1 << ((byte)piVar2[9] & 0x1f)) != 0 &&
                           (iVar9 = (**(code **)(*piVar2 + 0xf8))(), iVar9 != 0)) &&
                          (local_1c = 0, 0 < (int)param_2)))) {
+                    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                     param_4 = (int *)local_14;
                     do {
                       iVar9 = *param_4;
@@ -155,6 +161,7 @@ LAB_0044e4d5:
                       if (iVar9 <= iVar3) goto LAB_0044e508;
 LAB_0044e4ef:
                       local_1c = local_1c + 1;
+                      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                       param_4 = param_4 + 1;
                     } while (local_1c < (int)param_2);
                   }

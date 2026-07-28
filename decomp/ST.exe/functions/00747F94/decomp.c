@@ -10,7 +10,9 @@ int * FUN_00747f94(LPCRITICAL_SECTION lpCriticalSection,int *param_2,int param_3
   LPCRITICAL_SECTION lpCriticalSection_00;
   int *piVar2;
 
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if ((param_2 == (int *)0x0) || (param_3 == 0)) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = (int *)0x80004003;
   }
   else {
@@ -24,6 +26,7 @@ int * FUN_00747f94(LPCRITICAL_SECTION lpCriticalSection,int *param_2,int param_3
         if ((int)piVar2 < 0) {
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (**(code **)((int)*ppvVar1 + 0x2c))();
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_2 = piVar2;
         }
         else {
@@ -52,8 +55,10 @@ int * FUN_00747f94(LPCRITICAL_SECTION lpCriticalSection,int *param_2,int param_3
           }
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (**(code **)((int)*ppvVar1 + 0x2c))();
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           if (((-1 < (int)piVar2) || (piVar2 == (int *)0x80004005)) ||
              (param_2 = piVar2, piVar2 == (int *)0x80070057)) {
+            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_2 = (int *)0x8004022a;
           }
         }
@@ -61,11 +66,13 @@ int * FUN_00747f94(LPCRITICAL_SECTION lpCriticalSection,int *param_2,int param_3
       }
       else {
         LeaveCriticalSection(lpCriticalSection_00);
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_2 = (int *)0x80040224;
       }
     }
     else {
       LeaveCriticalSection(lpCriticalSection_00);
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = (int *)0x80040204;
     }
   }

@@ -1,10 +1,20 @@
 #include "../../pseudocode_runtime.h"
 
 
+/* [STAbiConsistencyApplier] stack_parameter_width target=parameter:9: parameter=/ushort Evidence:
+   entry-use width=/ushort; unmasked_dword_reads=0; evidence=005FD00D MOV ECX,dword ptr [EBP +
+   0x2c]; first-use mask
+
+   [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 0064D890 -> 005FCFF0 @ 0064D9D1; zero-filled partial register load at 0064D91D
+
+   [STPrototypeApplier] Propagated parameter 2.
+   Evidence: 0064D890 -> 005FCFF0 @ 0064D9D1; AiEventClassTy::_CreateRCCont parameter param_2; MOVSX
+   at 0064D9C6 establishes signed source width 2 */
+
 void __cdecl
-FUN_005fcff0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
-            undefined4 param_5,undefined4 param_6,undefined4 param_7,char *param_8,
-            undefined4 param_9,int param_10)
+FUN_005fcff0(undefined4 param_1,uint param_2,int param_3,undefined4 param_4,undefined4 param_5,
+            undefined4 param_6,undefined4 param_7,char *param_8,undefined4 param_9,ushort param_10)
 
 {
   char cVar1;
@@ -12,9 +22,9 @@ FUN_005fcff0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
   uint uVar4;
   char *pcVar5;
   char *pcVar7;
-  undefined4 local_15c [7];
+  uint local_15c [7];
   int local_140;
-  undefined4 local_13c;
+  int local_13c;
   undefined4 local_138;
   short local_134;
   short local_132;
@@ -27,13 +37,14 @@ FUN_005fcff0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
   undefined4 local_f;
   undefined4 local_b;
 
+  _param_10 = (uint)param_10;
   memset(local_15c, 0, 0x155); /* compiler bulk-zero initialization */
   local_15c[1] = param_1;
   local_15c[2] = 1;
   local_15c[3] = 1;
   local_13c = param_3;
   local_138 = param_4;
-  local_140 = param_10 << 0x10;
+  local_140 = _param_10 << 0x10;
   local_13 = param_5;
   local_15c[0] = 0x1a4;
   local_15c[4] = 0;
@@ -84,7 +95,7 @@ FUN_005fcff0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
       local_118 = 0;
     }
   }
-  (*g_playSystem_00802A38->vtable->vfunc_08)(g_playSystem_00802A38,0x157,0,0,local_15c,0);
+  g_playSystem_00802A38->vfunc_08(0x157,0,0,local_15c,0);
   return;
 }
 

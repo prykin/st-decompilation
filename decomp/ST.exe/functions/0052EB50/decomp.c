@@ -3,12 +3,15 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\optpanel.cpp
-   OptPanelTy::CreateSlider */
+   OptPanelTy::CreateSlider
+
+   [STPrototypeApplier] Propagated parameter 7.
+   Evidence: 0052FB00 -> 0052EB50 @ 00530A59; zero-filled partial register load at 00530A30 */
 
 undefined4 __thiscall
 OptPanelTy::CreateSlider
           (OptPanelTy *this,int param_1,int param_2,int param_3,int param_4,undefined4 param_5,
-          undefined4 param_6,undefined4 param_7,int param_8)
+          undefined4 param_6,uint param_7,int param_8)
 
 {
   code *pcVar1;
@@ -38,7 +41,7 @@ OptPanelTy::CreateSlider
   undefined4 local_80;
   undefined4 local_7c;
   undefined4 local_6c;
-  undefined4 local_68;
+  uint local_68;
   InternalExceptionFrame local_54;
   OptPanelTy *local_10;
   ushort *local_c;

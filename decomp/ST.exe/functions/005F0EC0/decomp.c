@@ -1,9 +1,17 @@
 #include "../../pseudocode_runtime.h"
 
 
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 0064DB00 -> 005F0EC0 @ 0064DC41; AiEventClassTy::_CreateArt parameter param_1; MOVSX at
+   0064DC3A establishes signed source width 2
+
+   [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 0064DB00 -> 005F0EC0 @ 0064DC41; AiEventClassTy::_CreateArt parameter param_2; MOVSX at
+   0064DC36 establishes signed source width 2 */
+
 void __cdecl
-FUN_005f0ec0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
-            undefined4 param_5,char *param_6,char *param_7,undefined4 param_8,undefined4 param_9)
+FUN_005f0ec0(int param_1,int param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,
+            char *param_6,char *param_7,undefined4 param_8,undefined4 param_9)
 
 {
   char cVar1;
@@ -11,8 +19,8 @@ FUN_005f0ec0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
   uint uVar4;
   char *pcVar5;
   char *pcVar7;
-  undefined4 local_158 [7];
-  undefined4 local_13c;
+  int local_158 [7];
+  int local_13c;
   undefined4 local_138;
   short local_134;
   short local_132;
@@ -121,7 +129,7 @@ FUN_005f0ec0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
       local_14 = 0;
     }
   }
-  (*g_playSystem_00802A38->vtable->vfunc_08)(g_playSystem_00802A38,0x14f,0,0,local_158,0);
+  g_playSystem_00802A38->vfunc_08(0x14f,0,0,local_158,0);
   return;
 }
 

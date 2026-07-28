@@ -2,23 +2,23 @@
 void FUN_00753050(int param_1,int param_2,char param_3)
 
 {
-  char cVar1;
+  undefined4 *puVar1;
   uint uVar2;
-  char *pcVar3;
-  char *pcVar4;
+  AnonPointee_TLOBaseTy_0607 *pAVar3;
+  AnonPointee_TLOBaseTy_0607 *pAVar4;
 
   if (param_1 != 0) {
-    pcVar3 = (char *)(param_1 + param_2);
+    pAVar3 = (AnonPointee_TLOBaseTy_0607 *)(param_1 + param_2);
     uVar2 = 0xffffffff;
-    pcVar4 = pcVar3;
+    pAVar4 = pAVar3;
     do {
       if (uVar2 == 0) break;
       uVar2 = uVar2 - 1;
-      cVar1 = *pcVar4;
-      pcVar4 = pcVar4 + 1;
-    } while (cVar1 != '\0');
-    Library::MSVCRT::FUN_0072da70((undefined4 *)(pcVar3 + 1),(undefined4 *)pcVar3,~uVar2);
-    *pcVar3 = param_3;
+      puVar1 = &pAVar4->field_0000;
+      pAVar4 = (AnonPointee_TLOBaseTy_0607 *)((int)&pAVar4->field_0000 + 1);
+    } while (*(char *)puVar1 != '\0');
+    Library::MSVCRT::FUN_0072da70((undefined4 *)((int)&pAVar3->field_0000 + 1),pAVar3,~uVar2);
+    *(char *)&pAVar3->field_0000 = param_3;
   }
   return;
 }

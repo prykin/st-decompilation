@@ -218,6 +218,7 @@ public class STRecoveryPipeline extends GhidraScript {
                 "pointer_shape_target_proposals.tsv", "pointer_shape_apply_report.tsv");
             changed += pair("STTypeFamilyAnalyzer.java", "STTypeFamilyApplier.java",
                 "type_family_proposals.tsv", "type_family_apply_report.tsv");
+            analyzer("STClassArrayAnalyzer.java");
             changed += pair("STClassLayoutAnalyzer.java", "STClassLayoutApplier.java",
                 "class_layout_proposals.tsv", "class_layout_apply_report.tsv");
             changed += pair("STSwitchEnumAnalyzer.java", "STSwitchEnumApplier.java",
@@ -275,26 +276,38 @@ public class STRecoveryPipeline extends GhidraScript {
      * subsystem-specific export modes.
      */
     private void finalizeAndExport() throws Exception {
-        runIndirectRepair();
+        runExportAbiRepair();
         recordEvidence();
         runExport();
     }
 
     /**
-     * Short fixed-point repair for the indirect/vtable ABI layer which is an invariant of
-     * every exported corpus.  finalizeAndExport() checkpoints its stabilized artifacts.
+     * Short fixed-point repair for ABI layers whose mistakes directly create blocking
+     * decompiler artifacts.  This is part of the ordinary export contract, not a one-off
+     * migration mode: return semantics and indirect/vtable call types must agree before the
+     * evidence checkpoint and corpus fingerprint are recorded.
      */
-    private void runIndirectRepair() throws Exception {
-        section("targeted indirect-call repair");
+    private void runExportAbiRepair() throws Exception {
+        section("critical export ABI stabilization");
+        step("STReturnSemanticsAnalyzer.java", recoveryRoot.toString(), "repair-only");
+        Path returnProposals = requireFile("return_semantics_proposals.tsv", null);
+        step("STReturnSemanticsApplier.java", returnProposals.toString());
+        int repairedReturns = convergenceMutationCount(
+            "STReturnSemanticsApplier.java", returnProposals,
+            recoveryProgram.resolve("return_semantics_apply_report.tsv"),
+            MUTATING_STATUSES);
+        println("Export return rollback repairs: mutating rows=" + repairedReturns);
+
         for (int pass = 1; pass <= 4; pass++) {
             int changed = pair("STIndirectCallAnalyzer.java", "STIndirectCallApplier.java",
                 "indirect_call_proposals.tsv", "indirect_call_apply_report.tsv");
-            println("Indirect-call repair pass " + pass + ": mutating rows=" + changed);
+            println("Export indirect ABI stabilization pass " + pass +
+                ": mutating rows=" + changed);
             if (changed == 0) return;
         }
-        throw new IllegalStateException("Indirect-call repair did not reach a fixed point in " +
-            "4 passes; inspect " +
-            recoveryProgram.resolve("indirect_call_apply_report.tsv"));
+        throw new IllegalStateException("Export indirect ABI stabilization did not reach a " +
+            "fixed point in 4 passes; inspect indirect_call_apply_report.tsv under " +
+            recoveryProgram);
     }
 
     private void recordEvidence() throws Exception {
@@ -370,6 +383,7 @@ public class STRecoveryPipeline extends GhidraScript {
             changed += pair("STConstructorAnalyzer.java", "STConstructorApplier.java",
                 "constructor_proposals.tsv", "constructor_apply_report.tsv",
                 MUTATING_STATUSES, recoveryProgram.resolve("vtable_proposals.tsv"));
+            analyzer("STClassArrayAnalyzer.java");
             changed += pair("STClassLayoutAnalyzer.java", "STClassLayoutApplier.java",
                 "class_layout_proposals.tsv", "class_layout_apply_report.tsv");
             println("Structural pass " + pass + ": mutating report rows=" + changed);
@@ -1083,7 +1097,13 @@ public class STRecoveryPipeline extends GhidraScript {
                 .sorted(Comparator.comparingLong(this::modifiedTime).reversed())
                 .toList();
         }
-        for (int index = MAX_RUN_HISTORY; index < runs.size(); index++) deleteTree(runs.get(index));
+        Path rejectedBaseline = lastRejectedBaseline();
+        Path protectedRun = rejectedBaseline == null ? null : rejectedBaseline.getParent();
+        int ordinaryKept = 0;
+        for (Path run : runs) {
+            if (run.equals(protectedRun) || ordinaryKept++ < MAX_RUN_HISTORY) continue;
+            deleteTree(run);
+        }
     }
 
     private long modifiedTime(Path path) {
@@ -1107,17 +1127,79 @@ public class STRecoveryPipeline extends GhidraScript {
         if (activeRun == null) return null;
         Path current = decompRoot.resolve(currentProgram.getName());
         if (!Files.isRegularFile(current.resolve("manifest.json"))) return null;
+        Path sourceDirectory = current;
+        Path rejectedBaseline = lastRejectedBaseline();
+        if (rejectedBaseline != null) {
+            sourceDirectory = rejectedBaseline;
+            println("Preserving the last accepted export baseline after a failed gate: " +
+                rejectedBaseline);
+            logLine("export_baseline_recovered_from_failed_run path=" +
+                portableArgument(rejectedBaseline.toString()));
+        }
+        else if (lastReceiptFailed()) {
+            throw new IllegalStateException("The preceding export failed its regression gate, " +
+                "but its accepted pre-export baseline is no longer available under " +
+                runsRoot + "; refusing to promote the rejected corpus as a new baseline");
+        }
         Path baseline = activeRun.resolve("pre_export");
         if (Files.exists(baseline)) deleteTree(baseline);
         Files.createDirectories(baseline);
         for (String name : List.of("manifest.json", "functions.json", "types.jsonl",
-                "decomp_quality_summary.json")) {
-            Path source = current.resolve(name);
+                "decomp_quality_summary.json", "pseudocode_idioms.jsonl")) {
+            Path source = sourceDirectory.resolve(name);
             if (Files.isRegularFile(source))
                 Files.copy(source, baseline.resolve(name), StandardCopyOption.REPLACE_EXISTING);
         }
         logLine("export_baseline_snapshot path=" + portableArgument(baseline.toString()));
         return baseline;
+    }
+
+    /**
+     * A failed gate has already overwritten decomp/ with the rejected corpus.  Recover the
+     * pre-export snapshot from that failed run instead of allowing the next invocation to make
+     * the regression its own baseline.
+     */
+    private Path lastRejectedBaseline() throws Exception {
+        Path receipt = recoveryProgram == null ? null :
+            recoveryProgram.resolve("export_receipt.json");
+        if (receipt == null || !Files.isRegularFile(receipt) ||
+                runsRoot == null || !Files.isDirectory(runsRoot)) return null;
+        String rootReceipt = Files.readString(receipt, StandardCharsets.UTF_8);
+        if (!"failed".equals(jsonStringField(rootReceipt, "status"))) return null;
+        String expectedManifest = jsonStringField(rootReceipt,
+            "previous_manifest_sha256");
+        if (!expectedManifest.matches("[0-9a-f]{64}")) return null;
+        List<Path> runs;
+        try (java.util.stream.Stream<Path> stream = Files.list(runsRoot)) {
+            runs = stream.filter(Files::isDirectory)
+                .filter(path -> path.getFileName().toString().matches("[0-9a-f]{64}"))
+                .sorted(Comparator.comparingLong(this::modifiedTime).reversed())
+                .toList();
+        }
+        for (Path run : runs) {
+            Path candidate = run.resolve("pre_export");
+            Path manifest = candidate.resolve("manifest.json");
+            if (Files.isRegularFile(manifest) &&
+                    expectedManifest.equals(sha256(manifest))) return candidate;
+        }
+        return null;
+    }
+
+    private boolean lastReceiptFailed() throws Exception {
+        Path receipt = recoveryProgram == null ? null :
+            recoveryProgram.resolve("export_receipt.json");
+        return receipt != null && Files.isRegularFile(receipt) &&
+            "failed".equals(jsonStringField(
+                Files.readString(receipt, StandardCharsets.UTF_8), "status"));
+    }
+
+    private String jsonStringField(String json, String field) {
+        String prefix = "\"" + field + "\":\"";
+        int start = json.indexOf(prefix);
+        if (start < 0) return "";
+        start += prefix.length();
+        int end = json.indexOf('"', start);
+        return end < 0 ? "" : json.substring(start, end);
     }
 
     private void snapshotPassArtifacts(String script, Path proposals, Path applyReport)
@@ -1317,9 +1399,12 @@ public class STRecoveryPipeline extends GhidraScript {
         Files.createDirectories(reportPath.getParent());
         try (BufferedWriter out = Files.newBufferedWriter(reportPath, StandardCharsets.UTF_8)) {
             out.write("sequence\tscript\tstatus\tduration_ms\targument\tdetail\n");
-            for (PipelineRow row : report) out.write(row.sequence + "\t" + tsv(row.script) +
-                "\t" + row.status + "\t" + row.durationMilliseconds + "\t" +
-                tsv(row.argument) + "\t" + tsv(row.detail) + "\n");
+            for (PipelineRow row : report) {
+                String detail = tsv(row.detail);
+                out.write(row.sequence + "\t" + tsv(row.script) +
+                    "\t" + row.status + "\t" + row.durationMilliseconds + "\t" +
+                    tsv(row.argument) + "\t" + (detail.isBlank() ? "-" : detail) + "\n");
+            }
         }
         if (activeRun != null && Files.isDirectory(activeRun))
             Files.copy(reportPath, activeRun.resolve("pipeline_report.tsv"),

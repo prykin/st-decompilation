@@ -21,10 +21,14 @@
    005DFF5B | 005DFA30 -> 006B2330 @ 005E00A3 | 005E1330 -> 006B2330 @ 005E2C84 | 005E1330 ->
    006B2330 @ 005E2E5B | 005E5FB0 -> 006B2330 @ 005E6246 | 005E6770 -> 006B2330 @ 005E6A1F |
    005E6770 -> 006B2330 @ 005E6A86 | 005E6770 -> 006B2330 @ 005E6C5D | 005E6770 -> 006B2330 @
-   005E6DEF */
+   005E6DEF
+
+   [STPrototypeApplier] Propagated parameter 6.
+   Evidence: 00543600 -> 006B2330 @ 00543741; /CursorClassTy+0x4d2 | 00597E70 -> 006B2330 @
+   00598695; zeroed full register at 0059867C */
 
 void FUN_006b2330(AnonShape_006B1B10_121F236C *param_1,uint *param_2,uint param_3,uint param_4,
-                 uint param_5,uint param_6,uint param_7)
+                 uint param_5,uint param_6,ushort *param_7)
 
 {
   uint *puVar1;
@@ -44,7 +48,7 @@ void FUN_006b2330(AnonShape_006B1B10_121F236C *param_1,uint *param_2,uint param_
     puVar1[4] = param_6;
     puVar1[0x33] = param_4;
     *puVar1 = *puVar1 | 0x4000;
-    puVar1[0x30] = param_7;
+    puVar1[0x30] = (uint)param_7;
   }
   return;
 }

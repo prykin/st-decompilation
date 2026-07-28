@@ -1,5 +1,5 @@
 
-void __fastcall FUN_0062f150(AnonShape_0062F150_AF81DB77 *param_1)
+void __fastcall FUN_0062f150(RecoveredRecord_STRubbishC_0062F150 *param_1)
 
 {
   int iVar1;
@@ -58,7 +58,7 @@ LAB_0062f208:
       iVar1 = *piVar3;
       if (local_c == 0) {
         if (((iVar1 != 0) && (*(char *)(iVar1 + 0x3d) != '\0')) && (this != (STT3DSprC *)0x0)) {
-          thunk_FUN_004ad430((int)this);
+          thunk_FUN_004ad430(this);
           *(undefined1 *)(*piVar3 + 0x3d) = 0;
         }
       }

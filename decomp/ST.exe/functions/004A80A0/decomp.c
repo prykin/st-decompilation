@@ -15,7 +15,7 @@ void __thiscall STGroupBoatC::SetPatrolCmdToBoat(STGroupBoatC *this,int param_1)
   uint index;
   dword dVar4;
   undefined4 local_34;
-  uint local_30 [3];
+  short local_30 [7];
   undefined4 local_22;
   short local_1c;
   short local_1a;
@@ -30,12 +30,13 @@ void __thiscall STGroupBoatC::SetPatrolCmdToBoat(STGroupBoatC *this,int param_1)
   if (0 < (int)dVar4) {
     do {
       DArrayGetElement(this->field_022E,index,&local_34);
-      if ((short)local_30[0] != -1) {
+      if (local_30[0] != -1) {
         local_34 = 0;
         local_22 = 0;
         Library::DKW::TBL::FUN_006ae140(&this->field_022E->flags,index,&local_34);
-        pSVar2 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,this->field_0024,local_30[0],CASE_1)
-        ;
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+        pSVar2 = STAllPlayersC::GetObjPtr
+                           (g_allPlayers_007FA174,this->field_0024,(ushort)local_30._0_4_,CASE_1);
         if (pSVar2 == (STGameObjC *)0x0) {
           iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x16c9,0,0,
                                      "%s","STGroupBoatC::SetPatrolCmdToBoat");
@@ -46,7 +47,7 @@ void __thiscall STGroupBoatC::SetPatrolCmdToBoat(STGroupBoatC *this,int param_1)
                     (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp"
                      ,0x16ca);
         }
-        Library::DKW::TBL::FUN_006ae1c0(&local_8->flags,local_30);
+        Library::DKW::TBL::FUN_006ae1c0(&local_8->flags,(undefined4 *)local_30);
         pSVar2->field_0493 = 1;
         dVar4 = local_c;
       }

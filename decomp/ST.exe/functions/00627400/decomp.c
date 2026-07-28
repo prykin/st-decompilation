@@ -31,8 +31,8 @@ undefined4 __thiscall STMineSetC::sub_00627400(STMineSetC *this,undefined4 param
           [(int)g_worldGrid.planeStride * (int)sVar3 + (int)g_worldGrid.sizeX * (int)sVar2 +
            (int)sVar1].objects[(byte)this->field_008E] == (STWorldObject *)0x0)))) &&
        (iVar4 = DumpClassC::WritePtr
-                          (sVar1,sVar2,sVar3,(uint)(byte)this->field_008E,
-                           (AnonShape_00495EC0_95A268C6 *)this), iVar4 == 0)) {
+                          (sVar1,sVar2,sVar3,this->field_008E,
+                           (RecoveredRecord_DumpClassC_00495EC0 *)this), iVar4 == 0)) {
       this->field_0314 = this->field_0314 + '\x01';
       return param_1;
     }
@@ -43,7 +43,7 @@ undefined4 __thiscall STMineSetC::sub_00627400(STMineSetC *this,undefined4 param
       return this->field_02AE;
     }
     if ((int)(((ulonglong)(this->field_0315 - g_playSystem_00802A38->field_00E4) % 200) / 3) != 0) {
-      dVar5 = (*this_00->vtable->slot_2C)(this_00);
+      dVar5 = this_00->slot_2C();
       if (dVar5 == 0xe6) {
         thunk_FUN_0058f1e0(this_00,0);
       }

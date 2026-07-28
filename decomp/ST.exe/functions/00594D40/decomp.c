@@ -9,7 +9,11 @@
    Evidence: 00594D40 parameter used as this of MMMObjTy::OutRGlProc @ 00594DAA
 
    [STPrototypeApplier] Propagated parameter 3.
-   Evidence: 00594D40 parameter used as this of MMMObjTy::OutRGlProc @ 00594DCB */
+   Evidence: 00594D40 parameter used as this of MMMObjTy::OutRGlProc @ 00594DCB
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall
 FSGSTy::OutTRGlProc(FSGSTy *this,int param_1,MMMObjTy *param_2,MMMObjTy *param_3,int param_4,
@@ -24,7 +28,7 @@ FSGSTy::OutTRGlProc(FSGSTy *this,int param_1,MMMObjTy *param_2,MMMObjTy *param_3
   uint uVar3;
   uint uVar4;
   ccFntTy *pcVar5;
-  undefined4 uVar6;
+  uint uVar6;
   InternalExceptionFrame local_48;
 
   if (param_8 != 0) {

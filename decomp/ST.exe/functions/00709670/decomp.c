@@ -1,5 +1,9 @@
 
-void __thiscall FUN_00709670(void *this,uint param_1,int param_2,int param_3,undefined1 param_4)
+/* [STPrototypeApplier] Propagated parameter 4.
+   Evidence: 004AE080 -> 00709670 @ 004AE096; FUN_004ae080 parameter param_3 | 00709670 -> 00709470
+   @ 0070976B */
+
+void __thiscall FUN_00709670(void *this,uint param_1,int param_2,int param_3,byte param_4)
 
 {
   uint *puVar1;

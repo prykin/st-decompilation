@@ -42,7 +42,7 @@ void __thiscall PopUpTy::ChangeState(PopUpTy *this)
   local_5 = 0;
   local_14 = 0;
   local_c = 0x1e;
-  puVar7 = &local_18->field_0018;
+  puVar7 = local_18->field_0018;
   do {
     iVar4 = local_14;
     if ((DAT_00807342 == 0) || ((byte)pPVar3->field_009C <= local_5)) {

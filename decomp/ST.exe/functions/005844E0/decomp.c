@@ -4,7 +4,11 @@
    incoming_edx_uses=0; incoming_stack_parameter_uses=3
 
    [STPrototypeApplier] Propagated parameter 3.
-   Evidence: 005844E0 -> 00568DD0 @ 00584566 */
+   Evidence: 005844E0 -> 00568DD0 @ 00584566
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=3, used=0), and
+   decompilation contains no value return */
 
 void __thiscall STJellyGunC::sub_005844E0(STJellyGunC *this,int param_1,int param_2,int soundId)
 

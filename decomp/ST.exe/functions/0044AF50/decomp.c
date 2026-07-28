@@ -3,7 +3,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
-   STAllPlayersC::PushTV */
+   STAllPlayersC::PushTV
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=55, used=0), and
+   decompilation contains no value return */
 
 void STAllPlayersC::PushTV(char param_1,int param_2)
 
@@ -11,12 +15,12 @@ void STAllPlayersC::PushTV(char param_1,int param_2)
   DArrayTy *array;
   code *pcVar1;
   int iVar2;
-  STPlayerTempSlot (*paSVar3) [5];
+  AnonPointee_TLOBaseTy_0607 *pAVar3;
   Global_sub_0043FC50_param_1Enum GVar4;
 
   if (param_2 == 0) {
     GVar4 = CASE_E;
-    paSVar3 = g_playerRuntime[param_1].tempSlots;
+    pAVar3 = (AnonPointee_TLOBaseTy_0607 *)g_playerRuntime[param_1].tempSlots;
   }
   else {
     if (param_2 != 1) {
@@ -28,20 +32,20 @@ void STAllPlayersC::PushTV(char param_1,int param_2)
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     GVar4 = CASE_F;
-    paSVar3 = g_playerRuntime[param_1].tempSlots + 1;
+    pAVar3 = (AnonPointee_TLOBaseTy_0607 *)(g_playerRuntime[param_1].tempSlots + 1);
   }
   thunk_FUN_0043fc50(GVar4,0);
-  array = (*paSVar3)[4].objectIds;
+  array = *(DArrayTy **)((int)&pAVar3[3].field_0000 + 2);
   if (array != (DArrayTy *)0x0) {
     DArrayDestroy(array);
-    (*paSVar3)[4].objectIds = (DArrayTy *)0x0;
-    (*paSVar3)[4].activityCount = 0;
+    *(undefined4 *)((int)&pAVar3[3].field_0000 + 2) = 0;
+    *(undefined2 *)((int)&pAVar3[3].field_0004 + 2) = 0;
   }
-  (*paSVar3)[4].objectType = 0;
-  Library::MSVCRT::FUN_0072da70(&(*paSVar3)[1].objectType,(undefined4 *)paSVar3,0x40);
-  (*paSVar3)[0].objectType = 0;
-  (*paSVar3)[0].objectIds = (DArrayTy *)0x0;
-  (*paSVar3)[0].activityCount = 0;
+  pAVar3[2].field_0010 = 0;
+  Library::MSVCRT::FUN_0072da70(&pAVar3->field_0010,pAVar3,0x40);
+  pAVar3->field_0000 = 0;
+  *(undefined4 *)((int)&pAVar3->field_0008 + 2) = 0;
+  *(undefined2 *)((int)&pAVar3->field_000C + 2) = 0;
   return;
 }
 

@@ -27,7 +27,7 @@ undefined4 __thiscall FUN_004ebab0(void *this,int param_1,int param_2)
       }
       iVar1 = GetPlayerRaceId(*(char *)((int)this + 0x24));
       if ((char)iVar1 == '\x03') {
-        iVar1 = thunk_FUN_004e4410(*(int *)((int)this + 0x24));
+        iVar1 = thunk_FUN_004e4410(*(byte **)((int)this + 0x24));
         if (iVar1 < param_2) {
           return 0;
         }

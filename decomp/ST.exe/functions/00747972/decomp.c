@@ -12,7 +12,7 @@ undefined4 FUN_00747972(AnonShape_00747F3B_C97131D7 *param_1,undefined4 *param_2
   }
   else {
     uVar1 = 0;
-    iVar2 = FUN_00747f3b(param_1);
+    iVar2 = FUN_00747f3b((AnonShape_00747AA5_87CB4B56 *)param_1);
     if (iVar2 == 1) {
       *param_2 = 0;
       uVar1 = 0x80040203;

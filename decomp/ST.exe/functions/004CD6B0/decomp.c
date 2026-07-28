@@ -1,5 +1,8 @@
 
-undefined4 __fastcall FUN_004cd6b0(AnonShape_004CD6B0_318BEA19 *param_1)
+/* [STPrototypeApplier] Propagated return.
+   Evidence: 004CD6B0 returns zeroed full register at 004CD6CF @ 004CD6D1 */
+
+uint __fastcall FUN_004cd6b0(AnonShape_004CD6B0_318BEA19 *param_1)
 
 {
   param_1->field_0524 = 0;

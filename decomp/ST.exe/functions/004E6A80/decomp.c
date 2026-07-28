@@ -1,5 +1,8 @@
 
-int FUN_004e6a80(int param_1,int param_2)
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 004C7860 -> 004E6A80 @ 004C7894; /TLOBaseTy+0x24 */
+
+int FUN_004e6a80(byte *param_1,int param_2)
 
 {
   byte *pbVar1;
@@ -7,7 +10,7 @@ int FUN_004e6a80(int param_1,int param_2)
   int iVar3;
   int iVar4;
 
-  if ((((param_1 < 0) || (7 < param_1)) || (param_2 < 1)) || (0x28 < param_2)) {
+  if (((((int)param_1 < 0) || (7 < (int)param_1)) || (param_2 < 1)) || (0x28 < param_2)) {
     return 0;
   }
   pbVar1 = &DAT_007c0dd1 + param_2 * 3;
@@ -16,10 +19,10 @@ int FUN_004e6a80(int param_1,int param_2)
   if (*pbVar1 != 0) {
     while (iVar4 < 3) {
       if (iVar4 == 0) {
-        iVar3 = thunk_FUN_004e6010(param_1,(uint)*pbVar1);
+        iVar3 = thunk_FUN_004e6010((int)param_1,(uint)*pbVar1);
       }
       else {
-        iVar3 = thunk_FUN_004e60d0(param_1,(uint)pbVar1[iVar4]);
+        iVar3 = thunk_FUN_004e60d0((int)param_1,(uint)pbVar1[iVar4]);
       }
       if (iVar3 == 0) {
         return 0;

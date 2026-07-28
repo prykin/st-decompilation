@@ -145,7 +145,7 @@ LAB_0041f793:
     Library::Ourlib::ST3DSMAP::FUN_006e6630
               ((void *)param_1->field_0211,param_1->field_01ED,local_c,local_8,0);
     iVar7 = 0;
-    iVar4 = thunk_FUN_004ad650((int)&param_1->field_0x1d5);
+    iVar4 = thunk_FUN_004ad650((STT3DSprC *)&param_1->field_0x1d5);
     FUN_006e6870((void *)param_1->field_0211,iVar4,iVar7);
     param_1->field_0229 = 1;
   }

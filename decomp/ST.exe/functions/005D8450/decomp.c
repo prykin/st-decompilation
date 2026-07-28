@@ -14,14 +14,13 @@ void __thiscall SIDTy::CreateCtrls(SIDTy *this)
   SIDTy *this_00;
   int iVar3;
   HANDLE pvVar4;
-  undefined4 uVar5;
-  int iVar6;
+  int iVar5;
+  uint uVar6;
   uint uVar7;
-  uint uVar8;
+  char *pcVar8;
   char *pcVar9;
   char *pcVar10;
-  char *pcVar11;
-  ccFntTy **ppcVar13;
+  ccFntTy **ppcVar12;
   ccFntTy *local_db0 [8];
   DArrayTy *local_d90;
   undefined4 local_d64;
@@ -95,9 +94,9 @@ void __thiscall SIDTy::CreateCtrls(SIDTy *this)
   this_00 = local_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar6 = ReportDebugMessage("E:\\__titans\\Start\\sid_obj.cpp",0x104,0,iVar3,"%s",
+    iVar5 = ReportDebugMessage("E:\\__titans\\Start\\sid_obj.cpp",0x104,0,iVar3,"%s",
                                "SIDTy::CreateCtrls");
-    if (iVar6 != 0) {
+    if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar3,0,"E:\\__titans\\Start\\sid_obj.cpp",0x104);
@@ -107,61 +106,61 @@ void __thiscall SIDTy::CreateCtrls(SIDTy *this)
     FindCloseChangeNotification(local_8->field_1CC4);
     this_00->field_1CC4 = (HANDLE)0x0;
   }
-  uVar7 = 0xffffffff;
-  pcVar9 = &DAT_00807680;
+  uVar6 = 0xffffffff;
+  pcVar8 = &DAT_00807680;
   do {
-    pcVar11 = pcVar9;
-    if (uVar7 == 0) break;
-    uVar7 = uVar7 - 1;
-    pcVar11 = pcVar9 + 1;
-    cVar1 = *pcVar9;
-    pcVar9 = pcVar11;
+    pcVar10 = pcVar8;
+    if (uVar6 == 0) break;
+    uVar6 = uVar6 - 1;
+    pcVar10 = pcVar8 + 1;
+    cVar1 = *pcVar8;
+    pcVar8 = pcVar10;
   } while (cVar1 != '\0');
-  uVar7 = ~uVar7;
-  pcVar9 = pcVar11 + -uVar7;
-  pcVar11 = &this_00->field_1CD4;
-  for (uVar8 = uVar7 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
-    *(undefined4 *)pcVar11 = *(undefined4 *)pcVar9;
-    pcVar9 = pcVar9 + 4;
-    pcVar11 = pcVar11 + 4;
+  uVar6 = ~uVar6;
+  pcVar8 = pcVar10 + -uVar6;
+  pcVar10 = &this_00->field_1CD4;
+  for (uVar7 = uVar6 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
+    *(undefined4 *)pcVar10 = *(undefined4 *)pcVar8;
+    pcVar8 = pcVar8 + 4;
+    pcVar10 = pcVar10 + 4;
   }
-  for (uVar7 = uVar7 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-    *pcVar11 = *pcVar9;
-    pcVar9 = pcVar9 + 1;
-    pcVar11 = pcVar11 + 1;
+  for (uVar6 = uVar6 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
+    *pcVar10 = *pcVar8;
+    pcVar8 = pcVar8 + 1;
+    pcVar10 = pcVar10 + 1;
   }
-  uVar7 = 0xffffffff;
-  pcVar9 = PTR_s_SAVEGAME__0079c19c;
+  uVar6 = 0xffffffff;
+  pcVar8 = PTR_s_SAVEGAME__0079c19c;
   do {
-    pcVar11 = pcVar9;
-    if (uVar7 == 0) break;
-    uVar7 = uVar7 - 1;
-    pcVar11 = pcVar9 + 1;
-    cVar1 = *pcVar9;
-    pcVar9 = pcVar11;
+    pcVar10 = pcVar8;
+    if (uVar6 == 0) break;
+    uVar6 = uVar6 - 1;
+    pcVar10 = pcVar8 + 1;
+    cVar1 = *pcVar8;
+    pcVar8 = pcVar10;
   } while (cVar1 != '\0');
-  uVar7 = ~uVar7;
+  uVar6 = ~uVar6;
   iVar3 = -1;
-  pcVar9 = &this_00->field_1CD4;
+  pcVar8 = &this_00->field_1CD4;
   do {
-    pcVar10 = pcVar9;
+    pcVar9 = pcVar8;
     if (iVar3 == 0) break;
     iVar3 = iVar3 + -1;
-    pcVar10 = pcVar9 + 1;
-    cVar1 = *pcVar9;
-    pcVar9 = pcVar10;
+    pcVar9 = pcVar8 + 1;
+    cVar1 = *pcVar8;
+    pcVar8 = pcVar9;
   } while (cVar1 != '\0');
-  pcVar9 = pcVar11 + -uVar7;
-  pcVar11 = pcVar10 + -1;
-  for (uVar8 = uVar7 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
-    *(undefined4 *)pcVar11 = *(undefined4 *)pcVar9;
-    pcVar9 = pcVar9 + 4;
-    pcVar11 = pcVar11 + 4;
+  pcVar8 = pcVar10 + -uVar6;
+  pcVar10 = pcVar9 + -1;
+  for (uVar7 = uVar6 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
+    *(undefined4 *)pcVar10 = *(undefined4 *)pcVar8;
+    pcVar8 = pcVar8 + 4;
+    pcVar10 = pcVar10 + 4;
   }
-  for (uVar7 = uVar7 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-    *pcVar11 = *pcVar9;
-    pcVar9 = pcVar9 + 1;
-    pcVar11 = pcVar11 + 1;
+  for (uVar6 = uVar6 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
+    *pcVar10 = *pcVar8;
+    pcVar8 = pcVar8 + 1;
+    pcVar10 = pcVar10 + 1;
   }
   lpPathName = &this_00->field_1CD4;
   FUN_006b78c0(lpPathName,lpPathName);
@@ -234,11 +233,11 @@ void __thiscall SIDTy::CreateCtrls(SIDTy *this)
   local_214 = local_4fc;
   local_a4 = local_4fc;
   (*this_00->field_000C->vtable->CreateObject)
-            ((SystemClassTy *)this_00->field_000C,7,&this_00->field_1AF1,(int *)0x0,local_524,0);
-  ppcVar13 = local_db0;
+            ((SystemClassTy *)this_00->field_000C,7,this_00->field_1AF1,(int *)0x0,local_524,0);
+  ppcVar12 = local_db0;
   for (iVar3 = 0x223; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *ppcVar13 = (ccFntTy *)0x0;
-    ppcVar13 = ppcVar13 + 1;
+    *ppcVar12 = (ccFntTy *)0x0;
+    ppcVar12 = ppcVar12 + 1;
   }
   local_db0[0] = (ccFntTy *)0x0;
   local_db0[1] = (ccFntTy *)0x9;
@@ -258,11 +257,11 @@ void __thiscall SIDTy::CreateCtrls(SIDTy *this)
   local_d1c = 0x68ff;
   local_d24 = local_d64;
   (*this_00->field_000C->vtable->CreateObject)
-            ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1AF5,(int *)0x0,local_db0,1);
-  uVar5 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,0x1e8,0x228,0x55,0x12,0x6900,0x6980);
-  this_00->field_1AF9 = uVar5;
-  uVar5 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,0x1e8,0x23b,0x55,0x12,0x6901,0x6981);
-  this_00->field_1AFD = uVar5;
+            ((SystemClassTy *)this_00->field_000C,6,this_00->field_1AF1 + 1,(int *)0x0,local_db0,1);
+  uVar6 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,0x1e8,0x228,0x55,0x12,0x6900,0x6980);
+  this_00->field_1AF9[0] = uVar6;
+  uVar6 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,0x1e8,0x23b,0x55,0x12,0x6901,0x6981);
+  this_00->field_1AF9[1] = uVar6;
   PrepFiles(this_00);
   Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,this_00->field_1CB4);
   if (this_00->field_1B05 != 0xffffffff) {

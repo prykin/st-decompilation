@@ -16,7 +16,10 @@
    [STSwitchEnumApplier] Switch target field_0B99 uses
    /SubmarineTitans/Recovered/Enums/CPanelTy_field_0B99State. Cases:
    CASE_8=8;CASE_9=9;CASE_14=20;CASE_15=21;CASE_16=22;CASE_17=23;CASE_1A=26;CASE_1B=27;CASE_1D=29;CASE_23=35;CASE_24=36;CASE_25=37;CASE_A6=166;CASE_A7=167;CASE_AF=175;CASE_BD=189
-    */
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0), and
+   decompilation contains no value return */
 
 void __thiscall CPanelTy::PaintCtrlBoat(CPanelTy *this)
 
@@ -26,7 +29,7 @@ void __thiscall CPanelTy::PaintCtrlBoat(CPanelTy *this)
   int iVar2;
   int iVar3;
   AnonShape_006B5B10_E0D06CF1 *pAVar4;
-  ushort *puVar5;
+  byte *pbVar5;
   InternalExceptionFrame local_4c;
   CPanelTy *local_8;
 
@@ -48,51 +51,54 @@ void __thiscall CPanelTy::PaintCtrlBoat(CPanelTy *this)
   switch(local_8->field_0B9E) {
   case CASE_0:
   case CASE_4:
-    puVar5 = local_8->field_0974;
+    pbVar5 = (byte *)local_8->field_0974[0];
     pAVar4 = (AnonShape_006B5B10_E0D06CF1 *)local_8->field_018C;
     iVar3 = 0;
     iVar2 = 0;
     goto LAB_00501758;
   case CASE_1:
     if ((local_8->field_0B99 == CASE_9) || (local_8->field_0B99 == CASE_15)) {
-      puVar5 = local_8->field_0978;
+      pbVar5 = (byte *)local_8->field_0974[1];
       pAVar4 = (AnonShape_006B5B10_E0D06CF1 *)local_8->field_018C;
       iVar3 = 0;
       iVar2 = 0;
       goto LAB_00501758;
     }
-    DibPut((AnonShape_006B5B10_E0D06CF1 *)local_8->field_018C,0,0,'\x01',(byte *)local_8->field_097C
-          );
+    DibPut((AnonShape_006B5B10_E0D06CF1 *)local_8->field_018C,0,0,'\x01',
+           (byte *)local_8->field_0974[2]);
     DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_018C,
            (((AnonShape_006B5B10_E0D06CF1 *)this_00->field_018C)->field_0004 -
-           *(int *)(this_00->field_0984 + 2)) / 2,0x61,'\x01',(byte *)this_00->field_0984);
+           *(int *)((byte *)this_00->field_0974[4] + 4)) / 2,0x61,'\x01',
+           (byte *)this_00->field_0974[4]);
     DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_018C,
            (((AnonShape_006B5B10_E0D06CF1 *)this_00->field_018C)->field_0004 -
-           *(int *)(this_00->field_0988 + 2)) / 2,0x7c,'\x01',(byte *)this_00->field_0988);
+           *(int *)((byte *)this_00->field_0974[5] + 4)) / 2,0x7c,'\x01',
+           (byte *)this_00->field_0974[5]);
     break;
   case CASE_2:
     if ((local_8->field_0B99 == CASE_9) || (local_8->field_0B99 == CASE_15)) {
       DibPut((AnonShape_006B5B10_E0D06CF1 *)local_8->field_018C,0,0,'\x01',
-             (byte *)local_8->field_0978);
+             (byte *)local_8->field_0974[1]);
     }
     else {
       DibPut((AnonShape_006B5B10_E0D06CF1 *)local_8->field_018C,0,0,'\x01',
-             (byte *)local_8->field_097C);
+             (byte *)local_8->field_0974[2]);
       DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_018C,
              (((AnonShape_006B5B10_E0D06CF1 *)this_00->field_018C)->field_0004 -
-             *(int *)(this_00->field_0988 + 2)) / 2,0x7c,'\x01',(byte *)this_00->field_0988);
+             *(int *)((byte *)this_00->field_0974[5] + 4)) / 2,0x7c,'\x01',
+             (byte *)this_00->field_0974[5]);
     }
 switchD_0050162e_caseD_a:
-    puVar5 = this_00->field_0984;
+    pbVar5 = (byte *)this_00->field_0974[4];
     pAVar4 = (AnonShape_006B5B10_E0D06CF1 *)this_00->field_018C;
     iVar3 = 0x61;
-    iVar2 = (pAVar4->field_0004 - *(int *)(puVar5 + 2)) / 2;
+    iVar2 = (pAVar4->field_0004 - *(int *)(pbVar5 + 4)) / 2;
 LAB_00501758:
-    DibPut(pAVar4,iVar2,iVar3,'\x01',(byte *)puVar5);
+    DibPut(pAVar4,iVar2,iVar3,'\x01',pbVar5);
     break;
   case CASE_3:
-    DibPut((AnonShape_006B5B10_E0D06CF1 *)local_8->field_018C,0,0,'\x01',(byte *)local_8->field_0974
-          );
+    DibPut((AnonShape_006B5B10_E0D06CF1 *)local_8->field_018C,0,0,'\x01',
+           (byte *)local_8->field_0974[0]);
     switch(this_00->field_0B99) {
     case CASE_9:
     case CASE_15:
@@ -124,9 +130,9 @@ switchD_0050179b_caseD_16:
     PaintBEnergy(this_00);
   }
 switchD_0050179b_caseD_9:
-  if (-1 < this_00->field_0154) {
+  if (-1 < (int)this_00->field_0148[3]) {
     Library::DKW::DDX::FUN_006b3640
-              ((int *)PTR_008075a8,this_00->field_0154,0xffffffff,this_00->field_0048,
+              ((int *)PTR_008075a8,(uint)this_00->field_0148[3],0xffffffff,this_00->field_0048,
                this_00->field_00A0);
   }
   g_currentExceptionFrame = local_4c.previous;

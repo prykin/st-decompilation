@@ -1,15 +1,23 @@
-#include "../../pseudocode_runtime.h"
 
+/* [STPrototypeApplier] Propagated parameter 1.
+   Evidence: raw retained-width parameter lifetime: width=2, reads=1, sites=005F162F MOV AX,word ptr
+   [EBP + 0x8]
+
+   [STPrototypeApplier] Propagated parameter 2.
+   Evidence: 005F23D0 -> 005F15F0 @ 005F26C1; FUN_005f23d0 parameter param_2 */
 
 int __thiscall
-FUN_005f15f0(void *this,undefined2 param_1,undefined2 param_2,undefined2 param_3,undefined1 param_4,
+FUN_005f15f0(void *this,ushort param_1,short param_2,undefined2 param_3,undefined1 param_4,
             undefined2 param_5,char param_6)
 
 {
   uint *puVar1;
   DArrayTy *pDVar2;
   uint uVar3;
-  undefined4 local_24;
+  int iVar4;
+  ushort *puVar5;
+  ushort local_24;
+  short local_22;
   undefined2 local_20;
   undefined1 local_1e;
   undefined2 local_1d;
@@ -28,11 +36,14 @@ FUN_005f15f0(void *this,undefined2 param_1,undefined2 param_2,undefined2 param_3
   if (puVar1 == (uint *)0x0) {
     return -1;
   }
-  memset(&local_24, 0, 0x20); /* compiler bulk-zero initialization */
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  local_24._0_2_ = param_1;
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  local_24._2_2_ = param_2;
+  puVar5 = &local_24;
+  for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
+    puVar5[0] = 0;
+    puVar5[1] = 0;
+    puVar5 = puVar5 + 2;
+  }
+  local_24 = param_1;
+  local_22 = param_2;
   local_20 = param_3;
   local_1e = param_4;
   local_1d = param_5;
@@ -43,11 +54,11 @@ FUN_005f15f0(void *this,undefined2 param_1,undefined2 param_2,undefined2 param_3
   local_c = 0xffffffff;
   if (-1 < param_6) {
     local_e = 0;
-    uVar3 = Library::DKW::TBL::FUN_006ae1c0(puVar1,&local_24);
+    uVar3 = Library::DKW::TBL::FUN_006ae1c0(puVar1,(undefined4 *)&local_24);
     return uVar3 + 1;
   }
   local_e = *(undefined1 *)(DAT_00806724 + 0x23);
-  uVar3 = Library::DKW::TBL::FUN_006ae1c0(puVar1,&local_24);
+  uVar3 = Library::DKW::TBL::FUN_006ae1c0(puVar1,(undefined4 *)&local_24);
   return uVar3 + 1;
 }
 

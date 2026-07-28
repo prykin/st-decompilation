@@ -47,6 +47,7 @@ int __thiscall STBoatC::WaitLoad(STBoatC *this,STBoatC *param_1)
   int local_c;
   undefined4 *local_8;
 
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if ((param_1 == (STBoatC *)0x0) || (pSVar11 = this, param_1 == (STBoatC *)0x1)) {
     memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
     iVar10 = 0;
@@ -76,8 +77,8 @@ LAB_00475068:
       }
       if ((this->field_05A6 == (ushort *)0x0) &&
          (iVar10 = STPlaySystemC::sub_006E62D0
-                             (g_playSystem_00802A38,this->field_05A2,(int *)&this->field_05A6),
-         iVar10 == -4)) {
+                             (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)this->field_05A2,
+                              (int *)&this->field_05A6), iVar10 == -4)) {
         RaiseInternalException
                   (0xffff,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",0x2fea
                   );
@@ -85,9 +86,10 @@ LAB_00475068:
       if ((*(int *)(this->field_05A6 + 999) != 0) && (this->field_0716 < this->field_0712)) {
         uVar3 = (ulonglong)g_playSystem_00802A38->field_00E4 % 0x19;
         if ((int)uVar3 == 0) {
-          iVar10 = this->field_06F7 - CASE_1;
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+          iVar10 = *(int *)((int)this->field_06CB + 0x2c) + -1;
           if ((int)((uVar3 << 0x20 | (ulonglong)g_playSystem_00802A38->field_00E4) % 100) == 0) {
-            (*this->vtable->vfunc_90)(this,3,0x363);
+            this->vfunc_90(3,0x363);
             thunk_FUN_00637930(this->field_01ED,1,-100,-100,-100,0,0);
           }
           iVar20 = this->field_0712;
@@ -126,13 +128,10 @@ switchD_00474a47_caseD_2:
       case 1:
         sub_004602B0(this);
         iVar10 = this->field_05BC;
-        iVar20 = iVar10 + 1;
-        this->field_05BC = iVar20;
+        this->field_05BC = iVar10 + 1;
         if ((&this->field_05B4)[iVar10] != -1) {
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          param_1 = (STBoatC *)
-                    thunk_FUN_0042b760(*(char *)&this->field_0024,
-                                       CONCAT22((short)((uint)iVar20 >> 0x10),this->field_0030));
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+          param_1 = (STBoatC *)thunk_FUN_0042b760(*(char *)&this->field_0024,this->field_0030);
           sub_00481520(this,(int)this->field_005B,(int)this->field_005D,
                        (int)(short)(&this->field_05B2)[this->field_05BC]);
           sub_00460260(this,0);
@@ -153,8 +152,9 @@ switchD_00474a47_caseD_2:
         goto switchD_00474a47_caseD_2;
       case 3:
         this->field_05C0 = 0;
-        iVar10 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,this->field_05A2,(int *)&param_1)
-        ;
+        iVar10 = STPlaySystemC::sub_006E62D0
+                           (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)this->field_05A2,
+                            (int *)&param_1);
         if (iVar10 != -4) {
           NotReadyForLoading(param_1,this->field_0018);
           return 2;
@@ -195,7 +195,7 @@ switchD_00474a47_caseD_2:
         if (uVar6 == 0) {
           this->field_05C4 = 3;
         }
-        iVar10 = (*this->vtable->vfunc_D8)(this);
+        iVar10 = this->vfunc_D8();
         return (-(uint)(iVar10 != 0) & 0xfffffffd) + 2;
       }
       iVar10 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2f8f,0,0,"%s",
@@ -227,7 +227,7 @@ switchD_00474a47_caseD_2:
         local_8 = (undefined4 *)&this->field_0x2b3;
         do {
           puVar7 = (undefined4 *)
-                   thunk_FUN_0041dc40(local_2c,(short)*local_8,*(undefined2 *)(local_8 + 1),
+                   thunk_FUN_0041dc40(local_2c,(short)*local_8,*(ushort *)(local_8 + 1),
                                       this->field_006C);
           uVar2 = *puVar7;
           bVar22 = 0;
@@ -284,7 +284,7 @@ switchD_00474a47_caseD_2:
       if (local_1c == 0) {
         this->field_05C4 = 6 - (uint)(this->field_006C != this->field_05B0);
       }
-      iVar10 = (*this->vtable->vfunc_D8)(this);
+      iVar10 = this->vfunc_D8();
       return (-(uint)(iVar10 != 0) & 0xfffffffd) + 2;
     }
     if (iVar10 == 5) {
@@ -307,7 +307,8 @@ switchD_00474a47_caseD_2:
         if (this->field_006E == 0x2f) {
           this->field_0076 = 0;
           iVar10 = STPlaySystemC::sub_006E62D0
-                             (g_playSystem_00802A38,this->field_05A2,(int *)&param_1);
+                             (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)this->field_05A2,
+                              (int *)&param_1);
           if (iVar10 == -4) {
             iVar10 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2fd1,0,0,
                                         "%s","STBoatC::WaitLoad WAITLOAD_PREPARE ptr=NULL 2");
@@ -316,16 +317,16 @@ switchD_00474a47_caseD_2:
             }
             STDebugBreak(); /* noreturn in standalone pseudocode */
           }
-          ReadyForLoading(param_1,(void *)this->field_0018);
+          ReadyForLoading(param_1,(STFishC *)this->field_0018);
           this->field_05C4 = 7;
         }
-        iVar10 = (*this->vtable->vfunc_D8)(this);
+        iVar10 = this->vfunc_D8();
         return (-(uint)(iVar10 != 0) & 0xfffffffd) + 2;
       }
       if (iVar10 != 7) goto LAB_00475068;
     }
   }
-  iVar10 = (*this->vtable->vfunc_D8)(this);
+  iVar10 = this->vfunc_D8();
   return (-(uint)(iVar10 != 0) & 0xfffffffd) + 2;
 }
 

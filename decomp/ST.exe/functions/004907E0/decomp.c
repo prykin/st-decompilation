@@ -10,8 +10,8 @@ void __thiscall FUN_004907e0(void *this,short *param_1,short *param_2,short *par
 
   local_c = (uint)*(ushort *)((int)this + 0x2a6);
   puVar3 = (undefined4 *)
-           thunk_FUN_0041dc40(local_14,*(ushort *)((int)this + 0x2a6),
-                              *(undefined2 *)((int)this + 0x2aa),*(short *)((int)this + 0x6c));
+           thunk_FUN_0041dc40(local_14,*(ushort *)((int)this + 0x2a6),*(ushort *)((int)this + 0x2aa)
+                              ,*(short *)((int)this + 0x6c));
   uVar2 = *puVar3;
   sVar1 = *(short *)(puVar3 + 1);
   if (param_1 != (short *)0x0) {

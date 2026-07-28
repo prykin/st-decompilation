@@ -45,10 +45,12 @@ longlong FUN_0074d786(uint param_1,uint param_2,uint param_3,uint param_4,uint p
     uVar9 = param_3;
   }
   if ((int)param_6 < 0) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_3 = -param_5;
     uVar5 = -(param_6 + (param_5 != 0));
   }
   else {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_3 = param_5;
     uVar5 = param_6;
   }
@@ -74,10 +76,12 @@ longlong FUN_0074d786(uint param_1,uint param_2,uint param_3,uint param_4,uint p
   local_34 = (uint)uVar12;
   uVar1 = lVar13 + (uVar1 >> 0x20);
   local_28 = (uint)(uVar1 >> 0x20);
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_7 == 0 && param_8 == 0) goto LAB_0074d94d;
   if (bVar2) {
     uVar7 = -param_7;
     uVar6 = -(param_8 + (param_7 != 0));
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (((int)param_8 < 0) || (((int)param_8 < 1 && (param_7 == 0)))) goto LAB_0074d8cc;
 LAB_0074d8c2:
     local_1c = 0xffffffff;
@@ -141,6 +145,7 @@ LAB_0074d94d:
       }
     }
     else {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_8 = 0x40;
       do {
         lVar13 = Library::MSVCRT::__allshl(1,iVar8);
@@ -156,7 +161,9 @@ LAB_0074d94d:
           lVar13 = lVar13 + 1;
         }
         iVar8 = (int)((ulonglong)lVar13 >> 0x20);
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_5 = (uint)lVar13;
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_8 = param_8 - 1;
       } while (param_8 != 0);
       if (bVar2) {

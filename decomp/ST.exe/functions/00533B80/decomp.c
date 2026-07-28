@@ -1,5 +1,5 @@
 
-void __fastcall FUN_00533b80(void *param_1)
+void __fastcall FUN_00533b80(RecoveredRecord_STPlaySystemC_00533B80 *param_1)
 
 {
   uint uVar1;
@@ -12,18 +12,12 @@ void __fastcall FUN_00533b80(void *param_1)
   undefined4 local_24 [4];
   undefined4 local_14;
 
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if ((DAT_008067a0 != '\0') && (*(short *)((int)param_1 + 0x172) != 2)) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if ((*(char *)((int)param_1 + 0x1a4) == '\x05') && (*(char *)((int)param_1 + 0x1ab) == '\x04'))
-    {
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+  if ((DAT_008067a0 != '\0') && (param_1->field_0172 != 2)) {
+    if ((param_1->field_01A4 == '\x05') && (param_1->field_01AB == '\x04')) {
       Library::DKW::WGR::FUN_006b55f0
-                (*(AnonShape_006B5B10_E0D06CF1 **)((int)param_1 + 0x68),0,0x1d,0x13,
-                 *(byte **)((int)param_1 + 0x184),0,0x1d,0x13,0xee,0x6a);
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      ccFntTy::SetSurf(*(ccFntTy **)((int)param_1 + 0x180),*(int *)((int)param_1 + 0x68),0,0x1d,0x13
-                       ,0xee,0x6a);
+                ((AnonShape_006B5B10_E0D06CF1 *)param_1->field_0068,0,0x1d,0x13,param_1->field_0184,
+                 0,0x1d,0x13,0xee,0x6a);
+      ccFntTy::SetSurf(param_1->field_0180,param_1->field_0068,0,0x1d,0x13,0xee,0x6a);
       if (DAT_008067a0 == '\0') {
         resourceId = 0x3e84;
       }
@@ -31,7 +25,7 @@ void __fastcall FUN_00533b80(void *param_1)
         resourceId = 0x3e96 - (g_playSystem_00802A38->field_00E4 - g_playSystem_00802A38->field_0034
                               < 6000);
       }
-      *(UINT *)((int)param_1 + 0x1a5) = resourceId;
+      param_1->field_01A5 = resourceId;
       if (DAT_0080874e == '\x03') {
         uVar1 = 5;
       }
@@ -43,22 +37,16 @@ void __fastcall FUN_00533b80(void *param_1)
       iVar3 = -1;
       iVar2 = -2;
       resourceString = (uint *)LoadResourceString(resourceId,g_module_00807618);
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      ccFntTy::WrTxt(*(ccFntTy **)((int)param_1 + 0x180),resourceString,iVar2,iVar3,uVar1,iVar4,
-                     iVar5);
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+      ccFntTy::WrTxt(param_1->field_0180,resourceString,iVar2,iVar3,uVar1,iVar4,iVar5);
       Library::DKW::DDX::FUN_006b3640
-                ((int *)PTR_008075a8,*(uint *)((int)param_1 + 0x60),0xffffffff,
-                 *(uint *)((int)param_1 + 0x3c),*(uint *)((int)param_1 + 0x44));
+                ((int *)PTR_008075a8,param_1->field_0060,0xffffffff,param_1->field_003C,
+                 param_1->field_0044);
       return;
     }
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if (*(char *)((int)param_1 + 0x1a4) == '\x01') {
+    if (param_1->field_01A4 == '\x01') {
       local_14 = 5;
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      if (*(int *)((int)param_1 + 0x1c1) != 0) {
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        FUN_006e6080(param_1,2,*(int *)((int)param_1 + 0x1c1),local_24);
+      if (param_1->field_01C1 != 0) {
+        FUN_006e6080(param_1,2,param_1->field_01C1,local_24);
       }
     }
   }

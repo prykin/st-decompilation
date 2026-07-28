@@ -53,6 +53,7 @@ FUN_005fb1f0(void *this,short param_1,short param_2,short param_3,short param_4,
                          (iVar7 * iVar5 + iVar9 * iVar4) / 10000,
                          (int)param_6 - (int)*(short *)((int)this + 0x45),uVar3,uVar8,uVar6,
                          (int *)&DAT_007ce794,0x7ce7a0,(uint *)&param_3,&local_c,&local_10);
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       _param_4 = (int)(_param_3 * iVar5 + local_c * iVar4) / 10000;
       iVar4 = (int)(local_c * iVar5 - _param_3 * iVar4) / 10000;
       FUN_006dd530(*(void **)((int)this + 0x211),&local_1c,&local_18,&local_14);

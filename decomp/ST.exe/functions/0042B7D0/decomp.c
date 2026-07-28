@@ -36,7 +36,7 @@ STAllPlayersC::AddObjsToGroup
   uint local_24;
   int local_20;
   undefined1 local_1c [4];
-  uint local_18;
+  undefined1 local_18 [4];
   DArrayTy *local_14;
   STGroupC *local_10;
   STGroupC *local_c;
@@ -48,8 +48,9 @@ STAllPlayersC::AddObjsToGroup
   local_14 = g_playerRuntime[param_1].groups;
   if (0 < (int)uVar7) {
     do {
-      DArrayGetElement((DArrayTy *)groupContent,uVar6,&local_18);
-      iVar3 = thunk_FUN_0042b5b0(param_1,local_18);
+      DArrayGetElement((DArrayTy *)groupContent,uVar6,local_18);
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+      iVar3 = thunk_FUN_0042b5b0(param_1,local_18._0_2_);
       if (iVar3 == 0) {
         return 0xaffe0002;
       }
@@ -96,8 +97,7 @@ STAllPlayersC::AddObjsToGroup
       local_2c = 0;
       local_40 = 1;
       local_38 = uVar6 & 0xffff;
-      (*g_playSystem_00802A38->vtable->vfunc_08)
-                (g_playSystem_00802A38,0x10ff,local_1c,&local_10,local_4c,0);
+      g_playSystem_00802A38->vfunc_08(0x10ff,local_1c,&local_10,local_4c,0);
       Library::DKW::TBL::FUN_006ae140(&array->flags,uVar6 & 0xffff,&local_10);
       STGroupC::AddObjs(local_10,(DArrayTy *)groupContent,0);
       local_5 = 2;

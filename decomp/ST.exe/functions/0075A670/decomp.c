@@ -19,6 +19,7 @@ void FUN_0075a670(int *param_1,undefined4 *param_2)
   *puVar3 = FUN_0075a780;
   puVar3[2] = FUN_0075a800;
   puVar3[0x1c] = 0;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_2 == (undefined4 *)0x0) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar4 = (**(code **)(*param_1 + 4))(param_1,1,0xa00);
@@ -37,8 +38,10 @@ void FUN_0075a670(int *param_1,undefined4 *param_2)
   }
   piVar9 = param_1 + 7;
   piVar1 = param_1 + 0x34;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = (int *)0x0;
   if (0 < *piVar9) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = puVar3 + 0x12;
     piVar9 = (int *)(*piVar1 + 0xc);
     do {
@@ -54,7 +57,9 @@ void FUN_0075a670(int *param_1,undefined4 *param_2)
       uVar6 = (**(code **)(iVar2 + 0x14))(piVar7,1,1,iVar5,iVar4,iVar8);
       piVar9 = piVar9 + 0x15;
       *param_2 = uVar6;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = param_2 + 1;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (int *)((int)param_1 + 1);
     } while ((int)param_1 < piVar7[7]);
   }

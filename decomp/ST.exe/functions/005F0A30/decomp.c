@@ -33,11 +33,11 @@ bool __fastcall FUN_005f0a30(STBoatC *param_1)
                [(int)g_worldGrid.planeStride * (int)(short)uVar4 +
                 (int)g_worldGrid.sizeX * (int)sVar2 + uVar5].objects[0];
         if (this != (STWorldObject *)0x0) {
-          uVar5 = (*this->vtable->GetObjectTypeId)(this);
+          uVar5 = this->GetObjectTypeId();
           if (uVar5 == 99) {
             iVar6 = (*param_1->vtable[1].vfunc_14)();
             iVar7 = (*param_1->vtable[1].vfunc_0C)();
-            dVar8 = (*param_1->vtable->slot_2C)(param_1);
+            dVar8 = param_1->slot_2C();
             thunk_FUN_004b7e30(this,dVar8,iVar7,iVar6);
             iVar6 = (*param_1->vtable->vfunc_AC)(*(undefined4 *)&this->field_0x18);
             uVar5 = 0;

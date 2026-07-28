@@ -24,6 +24,7 @@ void FUN_0075df10(AnonShape_0075DF10_BA4C6604 *param_1)
   pAVar1->field_001C = uVar2;
   iVar3 = 0;
   local_8 = 0x5b6900;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = (AnonShape_0075DF10_BA4C6604 *)0xff1daf00;
   iVar5 = -0xb2f480;
   iVar4 = 0x2c8d00;
@@ -35,6 +36,7 @@ void FUN_0075df10(AnonShape_0075DF10_BA4C6604 *param_1)
     local_8 = local_8 + -0xb6d2;
     *(int *)(pAVar1->field_001C + iVar3) = iVar4;
     iVar4 = iVar4 + -0x581a;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = (AnonShape_0075DF10_BA4C6604 *)&param_1[0x107].field_0x19a;
     iVar3 = iVar3 + 4;
   } while (-0x2b34e7 < iVar4);

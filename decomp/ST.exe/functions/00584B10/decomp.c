@@ -10,13 +10,13 @@ void __fastcall FUN_00584b10(AnonShape_00584B10_33997544 *param_1)
 
   this = &param_1->field_0x1d5;
   STT3DSprC::StopShow((STT3DSprC *)this,0xe);
-  thunk_FUN_004ad5e0((int)this);
+  thunk_FUN_004ad5e0((STT3DSprC *)this);
   STT3DSprC::LoadSequence((STT3DSprC *)this,8,DAT_00806774,"Expb22",0x1d);
   STT3DSprC::LoadSequence((STT3DSprC *)this,10,DAT_00806774,"expmask3",0x1d);
   uVar4 = 0x45;
   uVar3 = 0x5a;
   iVar2 = 1;
-  uVar1 = thunk_FUN_004ad650((int)this);
+  uVar1 = thunk_FUN_004ad650((STT3DSprC *)this);
   FUN_006ea4e0(param_1->field_0211,uVar1,iVar2,uVar3,uVar4);
   STT3DSprC::sub_004ACFE0((STT3DSprC *)this,'\n');
   STT3DSprC::sub_004ACF20((STT3DSprC *)this,DAT_008032b8,0x10);

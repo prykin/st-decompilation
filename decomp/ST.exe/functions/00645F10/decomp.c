@@ -6,12 +6,22 @@
    Evidence: this_call_owners=[SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410];
    agreed_this_calls=1; incoming_this_accesses=11; incoming_edx_uses=0;
    incoming_stack_parameter_uses=6; direct_non_thunk_callers=0; incoming_ecx_receiver_callers=0;
-   attributed_named_callers=1; owner_evidence_coverage=adequate */
+   attributed_named_callers=1; owner_evidence_coverage=adequate
+
+   [STPrototypeApplier] Propagated parameter 2.
+   Evidence: raw retained-width parameter lifetime: width=2, reads=1, sites=00645F71 MOV CX,word ptr
+   [EBP + 0xc]
+
+   [STPrototypeApplier] Propagated parameter 3.
+   Evidence: raw retained-width parameter lifetime: width=2, reads=1, sites=00645FA1 MOV DX,word ptr
+   [EBP + 0x10]
+
+   [STPrototypeApplier] Propagated parameter 4.
+   Evidence: 00644410 -> 00645F10 @ 00644D63; MOVSX at 00644D4B establishes signed source width 2 */
 
 void __thiscall
 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410::sub_00645F10
-          (AnonReceiver_00644410 *this,void *param_1,undefined2 param_2,undefined2 param_3,
-          undefined2 param_4)
+          (AnonReceiver_00644410 *this,void *param_1,ushort param_2,ushort param_3,short param_4)
 
 {
   uint uVar1;
@@ -20,9 +30,9 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410::sub_00645F10
   undefined2 local_4c;
   undefined2 local_4a;
   undefined2 local_48;
-  undefined2 local_46;
-  undefined2 local_44;
-  undefined2 local_42;
+  ushort local_46;
+  ushort local_44;
+  short local_42;
   short local_40;
   short local_3e;
   short local_3c;
@@ -66,7 +76,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410::sub_00645F10
     *(uint *)&this->field_0x1c = uVar1;
     local_3c = (short)((ulonglong)(uVar1 >> 0x10) % 0x3d) + *(short *)&this->field_0x24f + -0x1e;
     local_38 = *(undefined4 *)&this->field_0x259;
-    (*g_playSystem_00802A38->vtable->vfunc_08)(g_playSystem_00802A38,0x106,0,0,local_60,0);
+    g_playSystem_00802A38->vfunc_08(0x106,0,0,local_60,0);
   }
   return;
 }

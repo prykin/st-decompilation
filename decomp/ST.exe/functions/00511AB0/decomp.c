@@ -3,9 +3,12 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helppan.cpp
-   HelpPanelTy::CheckBkView */
+   HelpPanelTy::CheckBkView
+   [STAbiConsistencyApplier] stack_parameter_width target=parameter:2: parameter=/ushort Evidence:
+   entry-use width=/ushort; unmasked_dword_reads=0; evidence=00511ACA MOV ECX,dword ptr [EBP + 0xc];
+   first-use mask */
 
-void __thiscall HelpPanelTy::CheckBkView(HelpPanelTy *this,int param_1,uint param_2)
+void __thiscall HelpPanelTy::CheckBkView(HelpPanelTy *this,int param_1,ushort param_2)
 
 {
   AnonPointee_HelpPanelTy_0218 **value;
@@ -23,7 +26,7 @@ void __thiscall HelpPanelTy::CheckBkView(HelpPanelTy *this,int param_1,uint para
   uint local_8;
 
   if ((this->field_0218 != (AnonPointee_HelpPanelTy_0218 *)0x0) &&
-     ((int)this->field_0218->field_0008 < (int)((param_2 & 0xffff) + param_1))) {
+     ((int)this->field_0218->field_0008 < (int)((uint)param_2 + param_1))) {
     local_50.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_50;
     local_c = this;
@@ -43,7 +46,7 @@ void __thiscall HelpPanelTy::CheckBkView(HelpPanelTy *this,int param_1,uint para
         local_8 = ((uint)(ushort)pAVar6->field_000E * pAVar6->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
                   pAVar6->field_0008;
       }
-      puVar7 = (undefined4 *)FUN_006b4fa0((int)pAVar6);
+      puVar7 = (undefined4 *)FUN_006b4fa0((int *)pAVar6);
       for (uVar5 = local_8 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
         *puVar7 = 0xffffffff;
         puVar7 = puVar7 + 1;

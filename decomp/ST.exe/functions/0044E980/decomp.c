@@ -15,13 +15,19 @@
 
    [STCallsiteConventionApplier] __cdecl inferred from all-caller stack cleanup. Evidence: all 3
    callers reclaim stack arguments [28] matching the explicit parameter width; no explicit ECX
-   pointer receiver setup observed; incidental ECX observations ignored (live=3, scalar=0) */
+   pointer receiver setup observed; incidental ECX observations ignored (live=3, scalar=0)
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=3, used=0), and
+   decompilation contains no value return
+
+   [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 0044C130 -> 0044E980 @ 0044C194; STAllPlayersC::GetTOBJImage parameter param_1 */
 
 void __cdecl
 STBoatC::GetVisualInfo
-          (undefined4 param_1,STBoatC_GetVisualInfo_param_2Enum param_2,int param_3,
-          undefined4 *param_4,char *param_5,undefined1 *param_6,
-          STAllPlayersC_GetTOBJImage_param_2Enum *param_7)
+          (int param_1,STBoatC_GetVisualInfo_param_2Enum param_2,int param_3,undefined4 *param_4,
+          char *param_5,undefined1 *param_6,STAllPlayersC_GetTOBJImage_param_2Enum *param_7)
 
 {
   char cVar1;

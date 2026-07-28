@@ -4,12 +4,36 @@
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Andrey\support.cpp
    Diagnostic line evidence: 231 (metadata/report site, not the function definition)
-   [STSourceProvenanceApplier end] */
+   [STSourceProvenanceApplier end]
+
+   [STPrototypeApplier] Propagated parameter 6.
+   Evidence: 0059DB20 -> 00540DC0 @ 0059E089; zeroed full register at 0059DFE2 | 0059DB20 ->
+   00540DC0 @ 0059E0C6; zeroed full register at 0059DFE2
+
+   [STPrototypeApplier] Propagated parameter 7.
+   Evidence: 0059DB20 -> 00540DC0 @ 0059E089; zeroed full register at 0059DFE2 | 0059DB20 ->
+   00540DC0 @ 0059E0C6; zeroed full register at 0059DFE2
+
+   [STPrototypeApplier] Propagated parameter 8.
+   Evidence: 0059DB20 -> 00540DC0 @ 0059E089; zeroed full register at 0059DFE2 | 0059DB20 ->
+   00540DC0 @ 0059E0C6; zeroed full register at 0059DFE2
+
+   [STPrototypeApplier] Propagated parameter 9.
+   Evidence: 0059DB20 -> 00540DC0 @ 0059E089; zeroed full register at 0059DFE2 | 0059DB20 ->
+   00540DC0 @ 0059E0C6; zeroed full register at 0059DFE2
+
+   [STPrototypeApplier] Propagated parameter 10.
+   Evidence: 0059DB20 -> 00540DC0 @ 0059E089; zeroed full register at 0059DFE2 | 0059DB20 ->
+   00540DC0 @ 0059E0C6; zeroed full register at 0059DFE2
+
+   [STPrototypeApplier] Propagated parameter 11.
+   Evidence: 0059DB20 -> 00540DC0 @ 0059E089; zeroed full register at 0059DFE2 | 0059DB20 ->
+   00540DC0 @ 0059E0C6; zeroed full register at 0059DFE2 */
 
 void __cdecl
 SetAccelerator(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,uint param_5,
-              undefined4 param_6,undefined4 param_7,undefined4 param_8,undefined4 param_9,
-              undefined4 param_10,undefined4 param_11,undefined4 param_12)
+              undefined4 param_6,uint param_7,uint param_8,uint param_9,uint param_10,uint param_11,
+              uint param_12)
 
 {
   code *pcVar1;
@@ -27,13 +51,13 @@ SetAccelerator(int param_1,undefined4 param_2,undefined4 param_3,undefined4 para
   undefined4 local_3c;
   undefined4 local_38;
   undefined4 local_34;
-  undefined4 local_30;
-  undefined4 local_2c;
+  uint local_30;
+  uint local_2c;
   undefined4 local_1c;
   undefined4 local_18;
-  undefined4 local_14;
-  undefined4 local_10;
-  undefined4 local_c;
+  uint local_14;
+  uint local_10;
+  uint local_c;
 
   local_b4.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_b4;

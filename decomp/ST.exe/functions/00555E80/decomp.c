@@ -15,7 +15,7 @@ void __thiscall TraksClassTy::TraksExec(TraksClassTy *this)
   int iVar4;
   void *pvVar5;
   int iVar6;
-  AnonShape_00555910_7455F960 *pAVar7;
+  RecoveredRecord_TraksClassTy_00555910 *pRVar7;
   uint uVar8;
   InternalExceptionFrame local_4c;
   TraksClassTy *local_8;
@@ -28,21 +28,21 @@ void __thiscall TraksClassTy::TraksExec(TraksClassTy *this)
   if (iVar4 == 0) {
     dVar1 = local_8->field_0024->count;
     if (dVar1 == 0) {
-      pAVar7 = (AnonShape_00555910_7455F960 *)0x0;
+      pRVar7 = (RecoveredRecord_TraksClassTy_00555910 *)0x0;
     }
     else {
-      pAVar7 = local_8->field_0024->data;
+      pRVar7 = local_8->field_0024->data;
     }
     uVar8 = 0;
     if (0 < (int)dVar1) {
       do {
-        if (-1 < (int)pAVar7->field_0032) {
-          if (pAVar7->field_0038 == 0) {
-            DrawTrakSprite(this_00,pAVar7);
+        if (-1 < (int)pRVar7->field_0032) {
+          if (pRVar7->field_0038 == 0) {
+            DrawTrakSprite(this_00,pRVar7);
           }
           else {
-            FUN_006e8ba0(PTR_00807598,pAVar7->field_0032);
-            pAVar7->field_0032 = 0xffffffff;
+            FUN_006e8ba0(PTR_00807598,pRVar7->field_0032);
+            pRVar7->field_0032 = 0xffffffff;
             pDVar2 = this_00->field_0024;
             if (uVar8 < pDVar2->count) {
               /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar2, uVar8) (runtime stride) */
@@ -59,7 +59,7 @@ void __thiscall TraksClassTy::TraksExec(TraksClassTy *this)
             }
           }
         }
-        pAVar7 = pAVar7 + 1;
+        pRVar7 = pRVar7 + 1;
         uVar8 = uVar8 + 1;
       } while ((int)uVar8 < (int)this_00->field_0024->count);
     }

@@ -52,6 +52,7 @@ FUN_00427f20(void *this,float param_1,float param_2,float param_3,int param_4,in
   puVar2 = &stack0xffffff3c;
   if (param_4 < 1) goto cf_common_join_004286D0;
   if (param_5 < 0) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_5 = 0;
   }
   ExceptionList = &local_14;

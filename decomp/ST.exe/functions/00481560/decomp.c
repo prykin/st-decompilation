@@ -68,7 +68,7 @@ FUN_00481560(void *this,short param_1,short param_2,short param_3,short param_4,
   uint local_14;
   uint local_10;
   undefined4 local_c;
-  short local_8;
+  ushort local_8;
 
   local_90 = (uint)*(short *)((int)this + 0x237);
   iVar9 = (int)local_90 >> 0x1f;
@@ -98,7 +98,9 @@ FUN_00481560(void *this,short param_1,short param_2,short param_3,short param_4,
       local_68 = Library::MSVCRT::__allmul(local_14,local_10,local_14,local_10);
       local_80 = Library::MSVCRT::__allmul(uVar2,local_38,uVar2,local_38);
       if ((uVar3 == 0 && local_20 == 0) && (local_14 == 0 && local_10 == 0)) {
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_4 = param_4 + 1;
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_5 = param_5 + 1;
         local_68 = 1;
         local_14 = 1;
@@ -201,7 +203,7 @@ FUN_00481560(void *this,short param_1,short param_2,short param_3,short param_4,
                   local_c._0_2_ = param_1;
                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   local_c._2_2_ = (short)local_30;
-                  local_8 = (short)iVar8;
+                  local_8 = (ushort)iVar8;
                   local_44 = local_40;
                   iVar9 = iVar5;
                   local_1c = uVar3;
@@ -353,7 +355,7 @@ FUN_00481560(void *this,short param_1,short param_2,short param_3,short param_4,
                   local_c._0_2_ = (short)local_48;
                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   local_c._2_2_ = (short)iVar10;
-                  local_8 = (short)iVar5;
+                  local_8 = (ushort)iVar5;
                   local_44 = local_40;
                   iVar9 = iVar8;
                   local_1c = uVar3;
@@ -386,7 +388,7 @@ FUN_00481560(void *this,short param_1,short param_2,short param_3,short param_4,
                         local_34 * local_34;
                 iVar9 = (int)uVar6 >> 0x1f;
                 if ((iVar9 <= local_18) && ((iVar9 < local_18 || (uVar6 < local_1c)))) {
-                  local_8 = (short)iVar5;
+                  local_8 = (ushort)iVar5;
                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   local_c._0_2_ = (short)local_48;
                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -449,7 +451,7 @@ FUN_00481560(void *this,short param_1,short param_2,short param_3,short param_4,
                                       0x168 - *(short *)((int)local_60 + 0x6c));
           uVar2 = local_44;
           local_c = *puVar4;
-          local_8 = *(short *)(puVar4 + 1);
+          local_8 = *(ushort *)(puVar4 + 1);
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           pDVar7 = *(DArrayTy **)((int)pvVar1 + local_44 * 4 + 0x282);
           if (pDVar7 == (DArrayTy *)0x0) {
@@ -458,12 +460,14 @@ FUN_00481560(void *this,short param_1,short param_2,short param_3,short param_4,
             uVar3 = Library::DKW::TBL::FUN_006ae1c0(&pDVar7->flags,&local_c);
             return uVar3 << 0x10 | uVar2 & 0xffff;
           }
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           _param_1 = 0xffffffff;
           uVar3 = pDVar7->count - 1;
           if (-1 < (int)uVar3) {
             do {
               DArrayGetElement(pDVar7,uVar3,&local_2c);
               if (local_2c == 0x7fff) {
+                /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                 _param_1 = uVar3;
               }
               uVar3 = uVar3 - 1;

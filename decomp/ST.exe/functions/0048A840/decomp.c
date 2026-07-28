@@ -1,4 +1,8 @@
 
+/* [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
+   and decompilation contains no value return */
+
 void __fastcall FUN_0048a840(AnonShape_0048A840_34A87A21 *param_1)
 
 {

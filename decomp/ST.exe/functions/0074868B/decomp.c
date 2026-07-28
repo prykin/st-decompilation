@@ -1,10 +1,13 @@
 
 /* [STPrototypeRepairApplier] Propagated parameter 1.
-   Evidence: 0074868B -> EXTERNAL:00000019 @ 007486CE */
+   Evidence: 0074868B -> EXTERNAL:00000019 @ 007486CE
+
+   [STPrototypeApplier] Propagated parameter 2.
+   Evidence: raw retained-width parameter lifetime: width=1, reads=1, sites=007486C5 MOV AL,byte ptr
+   [EBP + 0x10] */
 
 undefined4
-FUN_0074868b(AnonShape_0074868B_7E9383CB *param_1,LPCRITICAL_SECTION lpCriticalSection,
-            undefined1 param_3)
+FUN_0074868b(AnonShape_0074868B_7E9383CB *param_1,LPCRITICAL_SECTION lpCriticalSection,byte param_3)
 
 {
   LPCRITICAL_SECTION lpCriticalSection_00;

@@ -1,10 +1,13 @@
 
-void __fastcall FUN_004ad430(int param_1)
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 004C6210 -> 004AD430 @ 004C6372; /TLOBldMark+0x2c | 004C6440 -> 004AD430 @ 004C68AF;
+   /TLOBldMark+0x2c | 004CC900 -> 004AD430 @ 004CC938; /TLOBaseTy+0x603 */
+
+void __fastcall FUN_004ad430(STT3DSprC *param_1)
 
 {
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  FUN_006eab60(*(void **)(param_1 + 0x3c),*(uint *)(param_1 + 0x18));
-  *(undefined1 *)(param_1 + 0x12) = 1;
+  FUN_006eab60(param_1->field_003C,param_1->field_0018);
+  param_1->field_0012 = 1;
   return;
 }
 

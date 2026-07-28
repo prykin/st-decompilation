@@ -1,4 +1,8 @@
 
+/* [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0), and
+   decompilation contains no value return */
+
 void __cdecl FUN_00691480(AnonShape_00691480_E757992C *param_1)
 
 {
@@ -23,9 +27,11 @@ void __cdecl FUN_00691480(AnonShape_00691480_E757992C *param_1)
             iVar2 = 0;
           }
           if (*(int *)(iVar2 + 4) == 0) {
+            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_1 = (AnonShape_00691480_E757992C *)0x0;
           }
           else {
+            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_1 = (AnonShape_00691480_E757992C *)(*(int *)(iVar2 + 4) + 0x20);
           }
           thunk_FUN_006686c0((int *)&param_1);

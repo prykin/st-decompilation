@@ -50,10 +50,8 @@ undefined4 __fastcall FUN_004e46f0(int *param_1)
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if (param_1[9] == (uint)*(byte *)(param_1[4] + 0x112d)) {
         param_1[0x137] = 1;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        pSVar4 = thunk_FUN_0042b760((char)param_1[9],
-                                    CONCAT22((short)((uint)param_1[9] >> 0x10),(short)param_1[0xc]))
-        ;
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+        pSVar4 = thunk_FUN_0042b760((char)param_1[9],*(ushort *)(param_1 + 0xc));
         if ((pSVar4 != (STGroupBoatC *)0x0) &&
            ((undefined4 *)pSVar4->field_001C != (undefined4 *)0x0)) {
           local_10 = param_1[6];

@@ -121,7 +121,7 @@ family	component	slot_index	slot_offset	tables	owners	unique_targets	named_metho
 007905A0:41	007905A0	41	0xA4	007905A0	STBoatC	1			
 007905A0:42	007905A0	42	0xA8	007905A0	STBoatC	1			
 007905A0:43	007905A0	43	0xAC	007905A0	STBoatC	1			
-007905A0:44	007905A0	44	0xB0	007905A0	STBoatC	1	PrepareForLoading	STBoatC	/undefined(/int,/short,/short,/short,/undefined2) varargs=false noreturn=false
+007905A0:44	007905A0	44	0xB0	007905A0	STBoatC	1	PrepareForLoading	STBoatC	/undefined(/int,/short,/short,/short,/ushort) varargs=false noreturn=false
 007905A0:45	007905A0	45	0xB4	007905A0	STBoatC	1			
 007905A0:46	007905A0	46	0xB8	007905A0	STBoatC	1			
 007905A0:47	007905A0	47	0xBC	007905A0	STBoatC	1			

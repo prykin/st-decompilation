@@ -40,7 +40,7 @@ int __thiscall STAllPlayersC::FUN_005ec850(STAllPlayersC *this,int *param_1)
   STT3DSprC::RestoreSpr
             ((STT3DSprC *)&this->field_0x1d5,(int *)&local_24,
              (AnonShape_004AD790_77673787 *)(param_1 + 1));
-  iVar2 = thunk_FUN_004ad650((int)&this->field_0x1d5);
+  iVar2 = thunk_FUN_004ad650((STT3DSprC *)&this->field_0x1d5);
   this->field_02D6 = iVar2;
   FreeAndNull(&local_24);
   if ((((this->field_023A == 8) && (this->field_02B9 != '\0')) &&
@@ -50,7 +50,7 @@ int __thiscall STAllPlayersC::FUN_005ec850(STAllPlayersC *this,int *param_1)
     iVar7 = *(int *)&this->field_0x2be;
     iVar8 = *(int *)&this->field_0x2c2;
     iVar6 = 1;
-    uVar4 = thunk_FUN_004ad650((int)&this->field_0x1d5);
+    uVar4 = thunk_FUN_004ad650((STT3DSprC *)&this->field_0x1d5);
     thunk_FUN_006377b0(uVar4,iVar6,iVar7,iVar8,iVar2,uVar3);
   }
   piVar5 = (int *)(&((AnonShape_004AD790_77673787 *)(param_1 + 1))->field_0x0 + iVar1);

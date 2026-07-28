@@ -202,7 +202,7 @@ int __thiscall STGroupBoatC::GetMessage(STGroupBoatC *this,STMessage *message)
       DArrayDestroy(*(DArrayTy **)&this_00->field_0x29f);
       *(undefined4 *)&this_00->field_0x29f = 0;
     }
-    (*this_00->vtable->vfunc_18)(this_00,0,0,0);
+    this_00->vfunc_18(0,0,0);
     STGroupC::GetMessage((STGroupC *)this_00,message);
     g_currentExceptionFrame = local_84.previous;
     return 0;
@@ -244,7 +244,7 @@ int __thiscall STGroupBoatC::GetMessage(STGroupBoatC *this,STMessage *message)
       if (0 < (int)array->count) {
         do {
           DArrayGetElement(array,uVar7,&local_14);
-          (*this_00->vtable->vfunc_04)(this_00,local_14);
+          this_00->vfunc_04(local_14);
           array = this_00->field_01DA;
           uVar7 = uVar7 + 1;
         } while ((int)uVar7 < (int)array->count);

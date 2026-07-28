@@ -1,6 +1,16 @@
 
+/* [STAbiConsistencyApplier] stack_parameter_scalar_role target=parameter:5: parameter=/int
+   Evidence: generic pointer has a scalar-only incoming lifetime before its first slot overwrite:
+   frame_offset=0x18, direct_reads=1, scalar_operations=2, signed_comparisons=1, unsigned_bounds=0,
+   pointer_dereferences=0, slot_reused=false; sites=006D3C7F incoming load: MOV EDX,dword ptr [EBP +
+   0x18] | 006D3CB4 scalar operation: ADD ECX,EDX | 006D3CB9 scalar operation: LEA EDX,[EBP + -0x10]
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0), and
+   decompilation contains no value return */
+
 void FUN_006d3c30(AnonShape_006D3C30_0FAA5DE6 *param_1,int param_2,int param_3,int param_4,
-                 int param_5,undefined4 *param_6)
+                 int param_5,AnonShape_006D3C30_B7073A5B *param_6)
 
 {
   undefined4 *lprcDst;
@@ -9,11 +19,11 @@ void FUN_006d3c30(AnonShape_006D3C30_0FAA5DE6 *param_1,int param_2,int param_3,i
   RECT local_24;
   RECT local_14;
 
-  if (param_6 != (undefined4 *)0x0) {
-    *param_6 = param_1->field_0484;
-    param_6[1] = param_1->field_0488;
-    param_6[2] = param_1->field_048C - param_1->field_0484;
-    param_6[3] = param_1->field_0490 - param_1->field_0488;
+  if (param_6 != (AnonShape_006D3C30_B7073A5B *)0x0) {
+    *(undefined4 *)param_6 = param_1->field_0484;
+    param_6->field_0004 = param_1->field_0488;
+    param_6->field_0008 = param_1->field_048C - param_1->field_0484;
+    param_6->field_000C = param_1->field_0490 - param_1->field_0488;
   }
   if ((-1 < param_4) && (-1 < param_5)) {
     if ((param_2 != 0) ||

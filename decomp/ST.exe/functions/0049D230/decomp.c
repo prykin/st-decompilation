@@ -40,7 +40,7 @@ undefined4 __thiscall STGroupBoatC::GrpUnLoadRC(STGroupBoatC *this,int param_1)
   DArrayTy *local_14;
   uint local_10;
   DArrayTy *local_c;
-  uint local_8;
+  undefined4 local_8;
 
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   local_10 = *(uint *)(this->field_0029 + 0xc);
@@ -77,18 +77,18 @@ undefined4 __thiscall STGroupBoatC::GrpUnLoadRC(STGroupBoatC *this,int param_1)
     if (local_10 != 0) {
       do {
         DArrayGetElement((DArrayTy *)pSVar5->field_0029,uVar10,&local_8);
-        if ((short)local_8 != -1) {
+        if ((ushort)local_8 != 0xffff) {
           this_00 = (STBoatC *)
                     STAllPlayersC::GetObjPtr
-                              (g_allPlayers_007FA174,pSVar5->field_0024,local_8,CASE_1);
+                              (g_allPlayers_007FA174,pSVar5->field_0024,(ushort)local_8,CASE_1);
           if (this_00 == (STBoatC *)0x0) {
             RaiseInternalException
                       (-0x5001fffc,g_overwriteContext_007ED77C,
                        "E:\\__titans\\wlad\\to_grpb.cpp",0x960);
           }
-          dVar7 = (*this_00->vtable->slot_2C)(this_00);
-          if (((dVar7 == 8) || (dVar7 = (*this_00->vtable->slot_2C)(this_00), dVar7 == 0x14)) ||
-             (dVar7 = (*this_00->vtable->slot_2C)(this_00), dVar7 == 0x1a)) {
+          dVar7 = this_00->slot_2C();
+          if (((dVar7 == 8) || (dVar7 = this_00->slot_2C(), dVar7 == 0x14)) ||
+             (dVar7 = this_00->slot_2C(), dVar7 == 0x1a)) {
             if (array_00 == (DArrayTy *)0x0) {
               array_00 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
               local_14 = array_00;
@@ -146,8 +146,8 @@ LAB_0049d3ca:
     uVar10 = 0;
     if (((this_01 == (STWorldObject *)0x0) ||
         (this_01[1].vtable != (STWorldObjectVTable *)(int)pSVar5->field_0024)) ||
-       ((iVar6 = (*this_01->vtable->GetObjectTypeId)(this_01), iVar6 != 0x3b &&
-        (iVar6 = (*this_01->vtable->GetObjectTypeId)(this_01), iVar6 != 0x60)))) {
+       ((iVar6 = this_01->GetObjectTypeId(), iVar6 != 0x3b &&
+        (iVar6 = this_01->GetObjectTypeId(), iVar6 != 0x60)))) {
       local_20 = 0;
     }
     else {
@@ -158,9 +158,9 @@ LAB_0049d3ca:
         index = 0;
         do {
           DArrayGetElement((DArrayTy *)pSVar5->field_0029,index,&local_8);
-          if ((short)local_8 != -1) {
+          if ((ushort)local_8 != 0xffff) {
             objPtr = STAllPlayersC::GetObjPtr
-                               (g_allPlayers_007FA174,pSVar5->field_0024,local_8,CASE_1);
+                               (g_allPlayers_007FA174,pSVar5->field_0024,(ushort)local_8,CASE_1);
             if (objPtr == (STGameObjC *)0x0) {
               RaiseInternalException
                         (-0x5001fffc,g_overwriteContext_007ED77C,

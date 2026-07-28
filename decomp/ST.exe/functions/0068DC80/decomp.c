@@ -94,7 +94,7 @@ int __thiscall AiTactClassTy::InitData(AiTactClassTy *this,undefined4 *param_1)
         } while (iVar3 < pAVar2->field_0125);
       }
       local_10 = thunk_FUN_00668180("__REPAIR_FLEET__",pAVar2->field_0039,0x8000,0,
-                                    *(undefined1 *)&pAVar2->field_0024);
+                                    *(byte *)&pAVar2->field_0024);
       local_8 = FltDataPack(local_10,&local_14);
       thunk_FUN_006686c0((int *)&local_10);
       *(undefined4 *)(local_8 + 4) = pAVar2->field_0024;

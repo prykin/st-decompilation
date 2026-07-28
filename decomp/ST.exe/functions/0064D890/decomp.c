@@ -3,11 +3,14 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_event.cpp
-   AiEventClassTy::_CreateRCCont */
+   AiEventClassTy::_CreateRCCont
+   [STAbiConsistencyApplier] stack_parameter_width target=parameter:1: parameter=/ushort Evidence:
+   entry-use width=/ushort; unmasked_dword_reads=0; evidence=0064D903 MOV ESI,dword ptr [EBP + 0x8];
+   first-use mask */
 
 int __thiscall
 AiEventClassTy::_CreateRCCont
-          (AiEventClassTy *this,uint param_1,short param_2,int param_3,int param_4,
+          (AiEventClassTy *this,ushort param_1,short param_2,int param_3,int param_4,
           undefined4 param_5,undefined4 param_6,char *param_7,int param_8)
 
 {
@@ -49,7 +52,7 @@ AiEventClassTy::_CreateRCCont
     if (bVar2) {
       local_c = param_3;
       local_8 = param_4;
-      local_24 = (uint)(byte)(&DAT_008087e8)[(param_1 & 0xffff) * 0x51];
+      local_24 = (uint)(byte)(&DAT_008087e8)[(uint)param_1 * 0x51];
       local_10 = param_5;
       iVar3 = thunk_FUN_004961b0((short)param_3,(short)param_4,(short)param_5);
       if (iVar3 == 0) {
@@ -69,8 +72,9 @@ AiEventClassTy::_CreateRCCont
         if (param_7 == (char *)0x0) {
           param_7 = &DAT_008016a0;
         }
-        thunk_FUN_005fcff0(param_1 & 0xffff,local_24,(int)param_2,param_6,(int)(short)local_c,
-                           (int)(short)local_8,(int)(short)local_10,param_7,0xffffffff,param_8);
+        thunk_FUN_005fcff0((uint)param_1,local_24,(int)param_2,param_6,(int)(short)local_c,
+                           (int)(short)local_8,(int)(short)local_10,param_7,0xffffffff,
+                           (ushort)param_8);
         g_currentExceptionFrame = local_6c.previous;
         return 0;
       }

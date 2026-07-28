@@ -16,7 +16,7 @@ void FUN_006d0390(HDC hdc,int xDest,int yDest,BITMAPINFO *param_4,void *param_5)
   uint uVar2;
 
   if (param_5 == (void *)0x0) {
-    param_5 = (void *)FUN_006b4fa0((int)param_4);
+    param_5 = (void *)FUN_006b4fa0((int *)param_4);
   }
   uVar1 = (param_4->bmiHeader).biHeight;
   uVar2 = (int)uVar1 >> 0x1f;

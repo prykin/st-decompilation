@@ -1,9 +1,11 @@
 
 /* [STTypeFamilyApplier] EXACT_ANONYMOUS_LAYOUT.
-   Evidence: exact anonymous structure fingerprint shared across functions */
+   Evidence: exact anonymous structure fingerprint shared across functions
 
-uint __fastcall
-FUN_006b5a50(AnonShape_006B5A50_BD82F60D *param_1,AnonShape_006B5A50_BD82F60D *param_2)
+   [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 004FF380 -> 006B5A50 @ 004FF5A6; /CPanelTy+0xb4b */
+
+uint __fastcall FUN_006b5a50(DArrayTy *param_1,AnonShape_006B5A50_BD82F60D *param_2)
 
 {
   int iVar1;
@@ -11,19 +13,18 @@ FUN_006b5a50(AnonShape_006B5A50_BD82F60D *param_1,AnonShape_006B5A50_BD82F60D *p
   char *pcVar3;
   bool bVar4;
 
-  if ((param_1 == (AnonShape_006B5A50_BD82F60D *)0x0) ||
-     (param_2 == (AnonShape_006B5A50_BD82F60D *)0x0)) {
+  if ((param_1 == (DArrayTy *)0x0) || (param_2 == (AnonShape_006B5A50_BD82F60D *)0x0)) {
     return 0xffffffcc;
   }
-  if (param_1->field_0008 != param_2->field_0008) {
+  if (param_1->elementSize != param_2->field_0008) {
     return 0xffffffce;
   }
-  if (param_1->field_000C != param_2->field_000C) {
+  if (param_1->count != param_2->field_000C) {
     return 2;
   }
-  iVar1 = param_1->field_000C * param_1->field_0008;
+  iVar1 = param_1->count * param_1->elementSize;
   bVar4 = true;
-  pcVar2 = param_1->field_001C;
+  pcVar2 = param_1->data;
   pcVar3 = param_2->field_001C;
   do {
     if (iVar1 == 0) break;

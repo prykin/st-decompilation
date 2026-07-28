@@ -2,11 +2,13 @@
 /* [STMethodOwnerApplier] Structural method owner recovered as VisibleClassTy.
    Evidence: this_call_owners=[VisibleClassTy]; agreed_this_calls=1; incoming_this_accesses=4;
    incoming_edx_uses=0; incoming_stack_parameter_uses=3; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate
+
+   [STPrototypeApplier] Propagated parameter 3.
+   Evidence: 0041CAF0 -> 0041CDA0 @ 0041CCEE; MOVSX at 0041CCE6 establishes signed source width 2 */
 
 undefined4 __thiscall
-VisibleClassTy::sub_0041CDA0
-          (VisibleClassTy *this,int param_1,int param_2,undefined4 param_3,uint param_4)
+VisibleClassTy::sub_0041CDA0(VisibleClassTy *this,int param_1,int param_2,int param_3,uint param_4)
 
 {
   byte *pbVar1;
@@ -24,10 +26,10 @@ VisibleClassTy::sub_0041CDA0
       if (7 < param_4) {
         return 1;
       }
-      if ((&this->field_0054)[param_4] == 0) {
+      if (this->field_003C[param_4 + 6] == (void *)0x0) {
         return 1;
       }
-      if (*(char *)((&this->field_0054)[param_4] + iVar2 + param_1) == '\0') {
+      if (*(char *)((int)this->field_003C[param_4 + 6] + param_1 + iVar2) == '\0') {
         return 1;
       }
     }

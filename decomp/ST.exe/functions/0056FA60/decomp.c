@@ -108,7 +108,7 @@ switchD_0056fad2_caseD_6105:
         if (pSVar13 != (StartSystemTy *)0x0) {
           StartSystemTy::StartSystemTy(pSVar13,pSVar11);
         }
-        (*g_startSystem_0081176C->vtable->InitSystem)(g_startSystem_0081176C);
+        g_startSystem_0081176C->InitSystem();
         AppClassTy::AddSystem((AppClassTy *)pSVar11,(int *)g_startSystem_0081176C,0);
       }
       else {
@@ -305,7 +305,7 @@ switchD_0056fad2_caseD_6102:
         if (pSVar13 != (StartSystemTy *)0x0) {
           StartSystemTy::StartSystemTy(pSVar13,pSVar11);
         }
-        (*g_startSystem_0081176C->vtable->InitSystem)(g_startSystem_0081176C);
+        g_startSystem_0081176C->InitSystem();
         AppClassTy::AddSystem((AppClassTy *)pSVar11,(int *)g_startSystem_0081176C,0);
       }
       else {
@@ -343,7 +343,7 @@ switchD_0056fad2_caseD_6102:
       (&pSVar11->field_11A7)[(uint)(byte)pSVar11->field_112D * 0x51] = 0;
       if (g_playSystem_00802A38 != (STPlaySystemC *)0x0) {
         STPlaySystemC::sub_006E57B0(g_playSystem_00802A38,0x121);
-        (*g_playSystem_00802A38->vtable->vfunc_08)(g_playSystem_00802A38,0x121,0,0,0,0);
+        g_playSystem_00802A38->vfunc_08(0x121,0,0,0,0);
         local_b8 = 0xf;
         local_b4 = 0x4405;
         (*g_playSystem_00802A38->vtable->SendMessage)
@@ -884,7 +884,7 @@ LAB_00570c2f:
     }
     pvVar17 = FindFirstFileA((LPCSTR)&DAT_00803408,&local_68c);
     if (pvVar17 != (HANDLE)0xffffffff) {
-      (*pSVar11->vtable->GetMessage)(pSVar11,(int)local_44);
+      pSVar11->GetMessage((int)local_44);
       g_currentExceptionFrame = local_a4.previous;
       return 0;
     }

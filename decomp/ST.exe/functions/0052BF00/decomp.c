@@ -57,8 +57,8 @@ int __thiscall MoneyTy::GetMessage(MoneyTy *this,STMessage *message)
   if (iVar7 == 0) {
     switch(message->id) {
     case MESS_ID_NONE:
-      iVar7 = FUN_006e4d40(&DAT_00807620,local_10->field_000C);
-      if (iVar7 == 1) {
+      uVar12 = FUN_006e4d40(&DAT_00807620,local_10->field_000C);
+      if (uVar12 == 1) {
         uVar12 = this_00->field_0086;
         uVar3 = this_00->field_008A;
         if (uVar12 != uVar3) {
@@ -103,7 +103,7 @@ int __thiscall MoneyTy::GetMessage(MoneyTy *this,STMessage *message)
                       *(int *)(puVar9 + 4);
           }
           uVar1 = this_00->field_0069;
-          puVar14 = (undefined4 *)FUN_006b4fa0((int)puVar9);
+          puVar14 = (undefined4 *)FUN_006b4fa0((int *)puVar9);
           for (uVar12 = local_c >> 2; uVar12 != 0; uVar12 = uVar12 - 1) {
             *puVar14 = CONCAT22(CONCAT11(uVar1,uVar1),CONCAT11(uVar1,uVar1));
             puVar14 = puVar14 + 1;
@@ -155,7 +155,7 @@ int __thiscall MoneyTy::GetMessage(MoneyTy *this,STMessage *message)
                       *(int *)(puVar9 + 4);
           }
           uVar1 = this_00->field_0069;
-          puVar14 = (undefined4 *)FUN_006b4fa0((int)puVar9);
+          puVar14 = (undefined4 *)FUN_006b4fa0((int *)puVar9);
           for (uVar12 = local_c >> 2; uVar12 != 0; uVar12 = uVar12 - 1) {
             *puVar14 = CONCAT22(CONCAT11(uVar1,uVar1),CONCAT11(uVar1,uVar1));
             puVar14 = puVar14 + 1;
@@ -207,7 +207,7 @@ int __thiscall MoneyTy::GetMessage(MoneyTy *this,STMessage *message)
                       *(int *)(puVar9 + 4);
           }
           uVar1 = this_00->field_0069;
-          puVar14 = (undefined4 *)FUN_006b4fa0((int)puVar9);
+          puVar14 = (undefined4 *)FUN_006b4fa0((int *)puVar9);
           for (uVar12 = local_c >> 2; uVar12 != 0; uVar12 = uVar12 - 1) {
             *puVar14 = CONCAT22(CONCAT11(uVar1,uVar1),CONCAT11(uVar1,uVar1));
             puVar14 = puVar14 + 1;
@@ -299,7 +299,7 @@ int __thiscall MoneyTy::GetMessage(MoneyTy *this,STMessage *message)
                   *(int *)(puVar9 + 4);
       }
       uVar1 = this_00->field_0069;
-      puVar14 = (undefined4 *)FUN_006b4fa0((int)puVar9);
+      puVar14 = (undefined4 *)FUN_006b4fa0((int *)puVar9);
       iVar7 = 1;
       for (uVar12 = local_c >> 2; uVar12 != 0; uVar12 = uVar12 - 1) {
         *puVar14 = CONCAT22(CONCAT11(uVar1,uVar1),CONCAT11(uVar1,uVar1));
@@ -321,7 +321,7 @@ int __thiscall MoneyTy::GetMessage(MoneyTy *this,STMessage *message)
                   *(int *)(puVar9 + 4);
       }
       uVar1 = this_00->field_0069;
-      puVar14 = (undefined4 *)FUN_006b4fa0((int)puVar9);
+      puVar14 = (undefined4 *)FUN_006b4fa0((int *)puVar9);
       iVar7 = 1;
       for (uVar12 = local_c >> 2; uVar12 != 0; uVar12 = uVar12 - 1) {
         *puVar14 = CONCAT22(CONCAT11(uVar1,uVar1),CONCAT11(uVar1,uVar1));
@@ -343,7 +343,7 @@ int __thiscall MoneyTy::GetMessage(MoneyTy *this,STMessage *message)
                   *(int *)(puVar9 + 4);
       }
       uVar1 = this_00->field_0069;
-      puVar14 = (undefined4 *)FUN_006b4fa0((int)puVar9);
+      puVar14 = (undefined4 *)FUN_006b4fa0((int *)puVar9);
       iVar7 = 1;
       for (uVar12 = local_c >> 2; uVar12 != 0; uVar12 = uVar12 - 1) {
         *puVar14 = CONCAT22(CONCAT11(uVar1,uVar1),CONCAT11(uVar1,uVar1));
@@ -365,7 +365,7 @@ int __thiscall MoneyTy::GetMessage(MoneyTy *this,STMessage *message)
                   *(int *)(puVar9 + 4);
       }
       uVar1 = this_00->field_0069;
-      puVar14 = (undefined4 *)FUN_006b4fa0((int)puVar9);
+      puVar14 = (undefined4 *)FUN_006b4fa0((int *)puVar9);
       for (uVar12 = local_c >> 2; uVar12 != 0; uVar12 = uVar12 - 1) {
         *puVar14 = CONCAT22(CONCAT11(uVar1,uVar1),CONCAT11(uVar1,uVar1));
         puVar14 = puVar14 + 1;

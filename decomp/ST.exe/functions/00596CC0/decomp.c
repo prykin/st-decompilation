@@ -7,7 +7,11 @@
 
    [STSwitchEnumApplier] Switch target field_1A5F uses
    /SubmarineTitans/Recovered/Enums/FSGSTy_field_1A5FState. Cases:
-   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10 */
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0), and
+   decompilation contains no value return */
 
 void __thiscall FSGSTy::PaintFSGS(FSGSTy *this,char param_1)
 
@@ -70,8 +74,8 @@ LAB_00596d58:
     }
     MMMObjTy::OutBSlProc
               ((MMMObjTy *)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,
-               (int)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,(MMMObjTy *)0x0,0,0x22,0x72,0x2e1,
-               0x14c,&this_00->field_1A5B->field_0140);
+               (int)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,(MMMObjTy *)0x0,(MMMObjTy *)0x0,
+               0x22,0x72,0x2e1,0x14c,&this_00->field_1A5B->field_0140);
     g_currentExceptionFrame = local_50.previous;
     return;
   case CASE_4:
@@ -117,8 +121,8 @@ LAB_00596d8b:
     pFVar3 = this_01;
     if ((this_00->field_1F2F == (HoloTy *)0x0) && (param_1 == '\0')) {
       OutSGlProc((FSGSTy *)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,
-                 g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,(MMMObjTy *)0x0,0,0x199,0x5e,0x174,
-                 0x175,(int)&this_00->field_1A5B->field_0140);
+                 g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,(MMMObjTy *)0x0,(MMMObjTy *)0x0,0x199
+                 ,0x5e,0x174,0x175,(int)&this_00->field_1A5B->field_0140);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       pFVar3 = extraout_ECX;
     }
@@ -132,7 +136,7 @@ LAB_00596d8b:
     }
     MMMObjTy::OutBSlProc
               ((MMMObjTy *)pFVar3,(int)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,(MMMObjTy *)0x0
-               ,0,0x13,0x5e,0x174,0x175,&this_00->field_1A5B->field_0140);
+               ,(MMMObjTy *)0x0,0x13,0x5e,0x174,0x175,&this_00->field_1A5B->field_0140);
     g_currentExceptionFrame = local_50.previous;
     return;
   case CASE_9:

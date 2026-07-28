@@ -6,11 +6,19 @@
    MMMObjTy::OutBSlProc
 
    [STPrototypeApplier] Propagated parameter 2.
-   Evidence: 005B68B0 parameter used as this of MMMObjTy::OutRGlProc @ 005B690C */
+   Evidence: 005B68B0 parameter used as this of MMMObjTy::OutRGlProc @ 005B690C
+
+   [STPrototypeApplier] Propagated parameter 3.
+   Evidence: 005B68B0 -> 005B67A0 @ 005B690C | 005B9860 -> 005B68B0 @ 005B98CD; MMMObjTy::OutLstProc
+   parameter param_3
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=9, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall
 MMMObjTy::OutBSlProc
-          (MMMObjTy *this,int param_1,MMMObjTy *param_2,undefined4 param_3,int param_4,int param_5,
+          (MMMObjTy *this,int param_1,MMMObjTy *param_2,MMMObjTy *param_3,int param_4,int param_5,
           int param_6,int param_7,undefined4 *param_8)
 
 {
@@ -29,7 +37,9 @@ MMMObjTy::OutBSlProc
     if (errorCode == 0) {
       OutRGlProc(param_2,param_1,param_2,param_3,param_4,param_5,param_6,param_7,param_8);
       local_c = param_4 + -0x15 + param_6;
-      Library::DKW::DDX::FUN_006c6660(param_1,local_c,param_5 + 0x26,7,param_7 - 0x4cU,3,0);
+      Library::DKW::DDX::FUN_006c6660
+                ((AnonShape_GLOBAL_0080759C_9638EF10 *)param_1,local_c,param_5 + 0x26,7,
+                 param_7 - 0x4cU,3,0);
       Library::DKW::DDX::FUN_006c6470
                 (param_1,local_c,param_5 + 0x26,(undefined4 *)0x7,param_7 - 0x4cU,3,*local_8);
       g_currentExceptionFrame = local_50.previous;

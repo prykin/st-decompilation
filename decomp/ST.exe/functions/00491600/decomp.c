@@ -7,8 +7,7 @@
 void __fastcall FUN_00491600(int *param_1)
 
 {
-  undefined4 uVar1;
-  int iVar2;
+  int iVar1;
   undefined1 local_24 [16];
   undefined4 local_14;
   undefined2 local_10;
@@ -17,11 +16,10 @@ void __fastcall FUN_00491600(int *param_1)
   undefined2 local_a;
 
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  uVar1 = (**(code **)(*param_1 + 0x100))(*(uint *)((int)param_1 + 0x1d1) | 0xd);
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+  (**(code **)(*param_1 + 0x100))(*(uint *)((int)param_1 + 0x1d1) | 0xd);
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   thunk_FUN_00495ff0(*(short *)((int)param_1 + 0x5b),*(short *)((int)param_1 + 0x5d),
-                     *(short *)((int)param_1 + 0x5f),
-                     CONCAT31((int3)((uint)uVar1 >> 8),*(undefined1 *)((int)param_1 + 0x8e)),
+                     *(short *)((int)param_1 + 0x5f),*(byte *)((int)param_1 + 0x8e),
                      (AnonShape_00495FF0_59081BDD *)param_1);
   param_1[0x170] = 3;
   if (DAT_008117bc != (undefined4 *)0x0) {
@@ -32,18 +30,19 @@ void __fastcall FUN_00491600(int *param_1)
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (*(int *)((int)param_1 + 0x5a6) == 0) {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      iVar2 = STPlaySystemC::sub_006E62D0
-                        (g_playSystem_00802A38,*(int *)((int)param_1 + 0x5a2),
+      iVar1 = STPlaySystemC::sub_006E62D0
+                        (g_playSystem_00802A38,
+                         *(AnonShape_005EFAE0_B406B78B **)((int)param_1 + 0x5a2),
                          (int *)((int)param_1 + 0x5a6));
-      if (iVar2 == -4) {
+      if (iVar1 == -4) {
         RaiseInternalException
                   (-4,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",0x5008);
       }
     }
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    iVar2 = *(int *)((int)param_1 + 0x5a6);
-    local_c = *(undefined2 *)(iVar2 + 0x24);
-    local_a = *(undefined2 *)(iVar2 + 0x32);
+    iVar1 = *(int *)((int)param_1 + 0x5a6);
+    local_c = *(undefined2 *)(iVar1 + 0x24);
+    local_a = *(undefined2 *)(iVar1 + 0x32);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)*DAT_008117bc)(local_24);
   }

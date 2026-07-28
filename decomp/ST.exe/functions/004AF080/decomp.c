@@ -358,15 +358,15 @@ LAB_004af325:
                            (((*local_3c == '\x05' &&
                              (local_10 = *(STFishC **)((int)(g_worldGrid.cells)->objects + iVar18),
                              local_10 != (STFishC *)0x0)) &&
-                            (((dVar12 = (*local_10->vtable->slot_2C)(local_10), dVar12 == 0x53 &&
+                            (((dVar12 = local_10->slot_2C(), dVar12 == 0x53 &&
                               (local_10->field_0018 == *(int *)(param_9 + 0x18))) ||
-                             ((dVar12 = (*local_10->vtable->slot_2C)(local_10), 0x53 < (int)dVar12
-                              && ((dVar12 = (*local_10->vtable->slot_2C)(local_10),
+                             ((dVar12 = local_10->slot_2C(), 0x53 < (int)dVar12
+                              && ((dVar12 = local_10->slot_2C(),
                                   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                                   (int)dVar12 < 0x5b &&
                                   (*(int *)&local_10[2].field_0xfd == *(int *)(param_9 + 0x18)))))))
                             )))) {
-                          dVar12 = (*local_10->vtable->slot_2C)(local_10);
+                          dVar12 = local_10->slot_2C();
                           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                           if ((dVar12 == 0x53) && (local_10->field_0018 == *(int *)(param_9 + 0x18))
                              ) {

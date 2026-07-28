@@ -57,7 +57,7 @@ ushort * FUN_005f1700(int param_1,int param_2,int param_3,int param_4,int param_
       FUN_006e8660(PTR_00807598,(int *)&local_8,1,0,*(uint *)((int)puVar3 + 9),
                    *(uint *)((int)puVar3 + 0xd),uVar4,uVar5,0);
       *(uint *)(iVar2 + 0x18) = local_8;
-      FUN_006e98e0(PTR_00807598,local_8,0,*(undefined4 *)puVar3,*(int *)((int)puVar3 + 0x21),1);
+      FUN_006e98e0(PTR_00807598,local_8,0,*(int *)puVar3,*(int *)((int)puVar3 + 0x21),1);
       FUN_006ea270(PTR_00807598,local_8,0,*(uint *)(iVar2 + 0xe));
       FUN_006ea3e0(PTR_00807598,local_8,-1);
       FUN_006e9210(PTR_00807598,local_8);

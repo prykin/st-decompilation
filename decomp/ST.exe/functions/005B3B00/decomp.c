@@ -28,8 +28,7 @@ void __thiscall MainMenuTy::LightPalette(MainMenuTy *this)
                         (g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,(undefined4 *)puVar1,0,0x100,
                          5,&local_8->field_1ADB,1,local_8->field_0061,&local_8->field_1AD7);
       if (iVar4 == -4) {
-        FUN_006b0a20((undefined4 *)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,(int)puVar1,0,0x100
-                     ,0);
+        FUN_006b0a20(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,(int)puVar1,0,0x100,0);
         pMVar3->field_1AD3 = 0;
       }
     }

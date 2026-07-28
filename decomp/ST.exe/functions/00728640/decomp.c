@@ -29,6 +29,7 @@ void __thiscall FUN_00728640(void *this,int param_1,int param_2,int param_3)
 
   iVar5 = (int)*(short *)(DAT_00857110 + 2 + DAT_00857114 * 8);
   local_c = *(int *)((int)this + 0x28);
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = param_1 + iVar5 * param_2;
   local_8 = iVar5 * local_c + *(int *)((int)this + 0xc);
   local_28 = 1;
@@ -112,6 +113,7 @@ LAB_0072876c:
         else {
           local_38 = local_38 + local_34;
         }
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = param_1 + param_2;
         local_8 = local_8 + local_c;
       } while( true );

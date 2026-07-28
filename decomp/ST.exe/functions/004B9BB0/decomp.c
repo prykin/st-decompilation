@@ -1,5 +1,9 @@
 
-undefined4 __thiscall FUN_004b9bb0(void *this,int param_1,undefined2 param_2,undefined2 param_3)
+/* [STPrototypeApplier] Propagated parameter 2.
+   Evidence: raw retained-width parameter lifetime: width=2, reads=1, sites=004B9C6C MOV AX,word ptr
+   [EBP + 0xc] */
+
+undefined4 __thiscall FUN_004b9bb0(void *this,int param_1,ushort param_2,undefined2 param_3)
 
 {
   uint uVar1;
@@ -8,7 +12,7 @@ undefined4 __thiscall FUN_004b9bb0(void *this,int param_1,undefined2 param_2,und
   undefined4 local_14;
   undefined2 local_10;
   undefined2 local_e;
-  undefined2 local_c;
+  ushort local_c;
   undefined2 local_a;
 
   iVar2 = *(int *)((int)this + 0x241) - param_1;

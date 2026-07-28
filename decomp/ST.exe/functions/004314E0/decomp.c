@@ -15,7 +15,19 @@ STAllPlayersC::FramePick
   int iVar2;
   int iVar3;
   STGameObjC *pSVar4;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  int extraout_EAX;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  int extraout_EAX_00;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  int extraout_EAX_01;
   uint uVar5;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  int extraout_EAX_02;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  int extraout_EAX_03;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  int extraout_EAX_04;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_ECX;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -255,7 +267,7 @@ cf_error_exit_004318A9:
     DArrayGetElement(local_34,0,&local_8);
     local_34->count = 0;
     Library::DKW::TBL::FUN_006ae1c0(&local_34->flags,&local_8);
-    pSVar4 = GetObjPtr(this,'\0',local_8,CASE_3);
+    pSVar4 = GetObjPtr(this,'\0',(ushort)local_8,CASE_3);
     if (pSVar4 == (STGameObjC *)0x0) {
       RaiseInternalException
                 (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
@@ -287,7 +299,9 @@ cf_error_exit_00431A49:
         if (iVar2 < 1) {
 LAB_00431c38:
           PushTV(playerId,0);
-          iVar2 = ResetActivityFromTmp(this,playerId,0,1,0);
+          ResetActivityFromTmp(this,playerId,0,1,0);
+          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+          iVar2 = extraout_EAX_00;
           goto cf_error_exit_00431A49;
         }
         ActivateTV(this,playerId,0,iVar2);
@@ -326,7 +340,9 @@ LAB_00431c38:
                           ,sVar8);
         if (iVar2 < 1) {
 LAB_00431a3f:
-          iVar2 = PushTV(playerId,0);
+          PushTV(playerId,0);
+          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+          iVar2 = extraout_EAX;
           goto cf_error_exit_00431A49;
         }
         ActivateTV(this,playerId,0,iVar2);
@@ -365,7 +381,7 @@ LAB_00431a3f:
     DArrayGetElement(local_28,0,&local_8);
     local_28->count = 0;
     Library::DKW::TBL::FUN_006ae1c0(&local_28->flags,&local_8);
-    pSVar4 = GetObjPtr(this,-1,local_8,CASE_2);
+    pSVar4 = GetObjPtr(this,-1,(ushort)local_8,CASE_2);
     if (pSVar4 == (STGameObjC *)0x0) {
       RaiseInternalException
                 (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
@@ -502,7 +518,7 @@ LAB_00431d42:
     DArrayGetElement(local_30,0,&local_8);
     local_30->count = 0;
     Library::DKW::TBL::FUN_006ae1c0(&local_30->flags,&local_8);
-    pSVar4 = GetObjPtr(this,-1,local_8,CASE_5);
+    pSVar4 = GetObjPtr(this,-1,(ushort)local_8,CASE_5);
     if (pSVar4 == (STGameObjC *)0x0) {
       RaiseInternalException
                 (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
@@ -540,7 +556,9 @@ LAB_004321ca:
                           ,sVar8);
         if (iVar2 < 0) {
 LAB_004321f3:
-          iVar2 = PushTV(playerId,1);
+          PushTV(playerId,1);
+          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+          iVar2 = extraout_EAX_01;
 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 LAB_004321fd:
           uVar5 = CONCAT31((int3)((uint)iVar2 >> 8),*(undefined1 *)&pSVar4->field_0024);
@@ -755,7 +773,7 @@ LAB_00432582:
     DArrayGetElement(local_20,0,&local_8);
     local_20->count = 0;
     Library::DKW::TBL::FUN_006ae1c0(&local_20->flags,&local_8);
-    pSVar4 = GetObjPtr(this,-1,local_8,CASE_4);
+    pSVar4 = GetObjPtr(this,-1,(ushort)local_8,CASE_4);
     if (pSVar4 == (STGameObjC *)0x0) {
       RaiseInternalException
                 (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
@@ -892,7 +910,7 @@ LAB_00432706:
     DArrayGetElement(local_38,0,&local_8);
     local_38->count = 0;
     Library::DKW::TBL::FUN_006ae1c0(&local_38->flags,&local_8);
-    pSVar4 = GetObjPtr(this,-1,local_8,CASE_6);
+    pSVar4 = GetObjPtr(this,-1,(ushort)local_8,CASE_6);
     if (pSVar4 == (STGameObjC *)0x0) {
       RaiseInternalException
                 (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
@@ -930,7 +948,9 @@ LAB_00432b8e:
                           ,sVar8);
         if (iVar2 < 0) {
 LAB_00432bb7:
-          iVar2 = PushTV(playerId,1);
+          PushTV(playerId,1);
+          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+          iVar2 = extraout_EAX_02;
 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 LAB_00432bc1:
           uVar5 = CONCAT31((int3)((uint)iVar2 >> 8),*(undefined1 *)&pSVar4->field_0024);
@@ -1121,7 +1141,7 @@ cf_error_exit_00432EAE:
     DArrayGetElement(local_2c,0,&local_8);
     local_2c->count = 0;
     Library::DKW::TBL::FUN_006ae1c0(&local_2c->flags,&local_8);
-    pSVar4 = GetObjPtr(this,'\0',local_8,CASE_3);
+    pSVar4 = GetObjPtr(this,'\0',(ushort)local_8,CASE_3);
     if (pSVar4 == (STGameObjC *)0x0) {
       RaiseInternalException
                 (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
@@ -1153,7 +1173,9 @@ cf_error_exit_00433050:
         if (iVar2 < 1) {
 LAB_0043322b:
           PushTV(playerId,0);
-          iVar2 = ResetActivityFromTmp(this,playerId,0,1,0);
+          ResetActivityFromTmp(this,playerId,0,1,0);
+          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+          iVar2 = extraout_EAX_04;
           goto cf_error_exit_00433050;
         }
         ActivateTV(this,playerId,0,iVar2);
@@ -1192,7 +1214,9 @@ LAB_0043322b:
                           ,sVar8);
         if (iVar2 < 1) {
 LAB_00433046:
-          iVar2 = PushTV(playerId,0);
+          PushTV(playerId,0);
+          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+          iVar2 = extraout_EAX_03;
           goto cf_error_exit_00433050;
         }
         ActivateTV(this,playerId,0,iVar2);

@@ -9,7 +9,7 @@ void __fastcall FUN_0046d400(int *param_1,undefined4 param_2)
   int *in_stack_00000004;
 
   if (param_1[0x14a] == 4) {
-    iVar1 = thunk_FUN_0048fa80((int)param_1);
+    iVar1 = thunk_FUN_0048fa80((STBoatC *)param_1);
     if (iVar1 == 0) {
       STBoatC::sub_00460360((STBoatC *)param_1);
       return;

@@ -66,7 +66,7 @@ undefined4 __thiscall STParticleC::InitVisibelDeton(STParticleC *this,int param_
       FUN_006e9af0(PTR_00807598,*piVar1,2,0,*(uint *)((int)puVar9 + 9),*(uint *)((int)puVar9 + 0xd),
                    0x5a,0x45,1);
     }
-    FUN_006e98e0(PTR_00807598,*piVar1,0,*(undefined4 *)puVar9,*(int *)((int)puVar9 + 0x21),1);
+    FUN_006e98e0(PTR_00807598,*piVar1,0,*(int *)puVar9,*(int *)((int)puVar9 + 0x21),1);
     FUN_006ea270(PTR_00807598,*piVar1,0,pSVar7->field_00B2);
     local_1c = (float)pSVar7->field_0046 * _DAT_007904f8 * _DAT_007904f0;
     pSVar7->field_006A = local_1c;
@@ -151,7 +151,7 @@ undefined4 __thiscall STParticleC::InitVisibelDeton(STParticleC *this,int param_
       if (0xe < pSVar7->field_00B2) {
         local_8 = pSVar7->field_00B2 + 3;
       }
-      FUN_006e98e0(PTR_00807598,*piVar1,1,*(undefined4 *)puVar9,*(int *)((int)puVar9 + 0x21),1);
+      FUN_006e98e0(PTR_00807598,*piVar1,1,*(int *)puVar9,*(int *)((int)puVar9 + 0x21),1);
       FUN_006ea270(PTR_00807598,*piVar1,1,local_8);
       puVar13 = (uint *)*piVar1;
     }
@@ -162,7 +162,7 @@ undefined4 __thiscall STParticleC::InitVisibelDeton(STParticleC *this,int param_
       if (0xe < pSVar7->field_00B2) {
         local_8 = pSVar7->field_00B2 - 0xf;
       }
-      FUN_006e98e0(PTR_00807598,*piVar1,1,*(undefined4 *)puVar9,*(int *)((int)puVar9 + 0x21),1);
+      FUN_006e98e0(PTR_00807598,*piVar1,1,*(int *)puVar9,*(int *)((int)puVar9 + 0x21),1);
       FUN_006ea270(PTR_00807598,*piVar1,1,local_8);
       puVar13 = (uint *)*piVar1;
     }

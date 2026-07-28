@@ -6,7 +6,7 @@ undefined4 __thiscall FUN_00695010(void *this,int param_1,int param_2,int param_
   int iVar2;
   int iVar3;
   undefined4 uVar4;
-  undefined4 local_14;
+  undefined1 local_14 [4];
   uint local_10;
   int local_c;
   undefined4 local_8;
@@ -22,7 +22,7 @@ undefined4 __thiscall FUN_00695010(void *this,int param_1,int param_2,int param_
     iVar2 = iVar1;
   } while (iVar3 == 0);
   local_c = iVar2;
-  thunk_FUN_006a1370(*(int **)((int)this + 8),param_1,param_2,local_c,&local_14);
+  thunk_FUN_006a1370(*(int **)((int)this + 8),param_1,param_2,local_c,(int)local_14);
   if (((local_10 & 0x2000) != 0) || (uVar4 = 6, (short)local_10 == 0x1100)) {
     uVar4 = local_8;
   }

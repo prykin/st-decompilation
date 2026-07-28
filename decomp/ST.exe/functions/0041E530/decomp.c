@@ -151,7 +151,7 @@ int __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,STMessage *message)
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }
-    thunk_FUN_004ad5e0((int)&this_00->field_0x1d5);
+    thunk_FUN_004ad5e0((STT3DSprC *)&this_00->field_0x1d5);
     g_currentExceptionFrame = local_54.previous;
     return 0;
   }
@@ -180,7 +180,7 @@ int __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,STMessage *message)
       if (this_00->field_002C != 0) {
         if (this_00->field_002C == 1) {
           iVar4 = STT3DSprC::Init((STT3DSprC *)&this_00->field_0x1d5,DAT_008073cc,0x78,0x56,
-                                  (uint)this_00,0xf0,0xbe,0x11);
+                                  (STDcResourcC *)this_00,0xf0,0xbe,0x11);
           if (iVar4 != 0) {
             RaiseInternalException
                       (-1,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\Tc_gobj.cpp",0x9d2)
@@ -196,7 +196,7 @@ int __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,STMessage *message)
         return 0;
       }
       iVar4 = STT3DSprC::Init((STT3DSprC *)&this_00->field_0x1d5,DAT_008073cc,0x5a,0x45,
-                              (uint)this_00,0xb4,0x8c,0x11);
+                              (STDcResourcC *)this_00,0xb4,0x8c,0x11);
       if (iVar4 == 0) {
         g_currentExceptionFrame = local_54.previous;
         return 0;

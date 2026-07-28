@@ -16,7 +16,10 @@
    [STSwitchEnumApplier] Switch target field_0B99 uses
    /SubmarineTitans/Recovered/Enums/CPanelTy_field_0B99State. Cases:
    CASE_8=8;CASE_9=9;CASE_14=20;CASE_15=21;CASE_16=22;CASE_17=23;CASE_1A=26;CASE_1B=27;CASE_1D=29;CASE_23=35;CASE_24=36;CASE_25=37;CASE_A6=166;CASE_A7=167;CASE_AF=175;CASE_BD=189
-    */
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall CPanelTy::PaintCtrlBoatSI(CPanelTy *this)
 
@@ -26,9 +29,8 @@ void __thiscall CPanelTy::PaintCtrlBoatSI(CPanelTy *this)
   int iVar3;
   byte *pbVar4;
   int iVar5;
-  ushort *puVar6;
-  byte bVar7;
-  AnonShape_006B5B10_E0D06CF1 *pAVar8;
+  byte bVar6;
+  AnonShape_006B5B10_E0D06CF1 *pAVar7;
   InternalExceptionFrame local_50;
   CPanelTy *local_c;
   uint local_8;
@@ -51,32 +53,32 @@ void __thiscall CPanelTy::PaintCtrlBoatSI(CPanelTy *this)
   switch(local_c->field_0B9E) {
   case CASE_0:
     DibPut((AnonShape_006B5B10_E0D06CF1 *)local_c->field_018C,0,0x46,'\x01',
-           (byte *)local_c->field_0974);
+           (byte *)local_c->field_0974[0]);
     DibPut((AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_018C,0x31,0,'\x06',
-           (byte *)pCVar2->field_097C);
+           (byte *)pCVar2->field_0974[2]);
     break;
   case CASE_1:
     DibPut((AnonShape_006B5B10_E0D06CF1 *)local_c->field_018C,0,0x46,'\x01',
-           (byte *)local_c->field_0988);
+           (byte *)local_c->field_0974[5]);
     if (pCVar2->field_0B99 == CASE_BD) {
-      puVar6 = pCVar2->field_097C;
+      pbVar4 = (byte *)pCVar2->field_0974[2];
 LAB_00502b2d:
-      pAVar8 = (AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_018C;
+      pAVar7 = (AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_018C;
     }
     else {
-      puVar6 = pCVar2->field_098C;
-      pAVar8 = (AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_018C;
+      pbVar4 = (byte *)pCVar2->field_0974[6];
+      pAVar7 = (AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_018C;
     }
     goto LAB_00502b3b;
   case CASE_2:
     DibPut((AnonShape_006B5B10_E0D06CF1 *)local_c->field_018C,0,0x46,'\x01',
-           (byte *)local_c->field_0988);
+           (byte *)local_c->field_0974[5]);
     DibPut((AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_018C,0x31,0,'\x06',
-           (byte *)pCVar2->field_098C);
+           (byte *)pCVar2->field_0974[6]);
     break;
   case CASE_3:
     DibPut((AnonShape_006B5B10_E0D06CF1 *)local_c->field_018C,0,0x46,'\x01',
-           (byte *)local_c->field_0974);
+           (byte *)local_c->field_0974[0]);
     switch(pCVar2->field_0B99) {
     case CASE_9:
     case CASE_15:
@@ -84,40 +86,40 @@ LAB_00502b2d:
     case CASE_A7:
     case CASE_AF:
     case CASE_BD:
-      puVar6 = pCVar2->field_097C;
-      pAVar8 = (AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_018C;
+      pbVar4 = (byte *)pCVar2->field_0974[2];
+      pAVar7 = (AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_018C;
       break;
     default:
-      puVar6 = pCVar2->field_0990;
+      pbVar4 = (byte *)pCVar2->field_0974[7];
       goto LAB_00502b2d;
     }
 LAB_00502b3b:
-    DibPut(pAVar8,0x31,0,'\x06',(byte *)puVar6);
+    DibPut(pAVar7,0x31,0,'\x06',pbVar4);
     break;
   case CASE_4:
     DibPut((AnonShape_006B5B10_E0D06CF1 *)local_c->field_018C,0,0x46,'\x01',
-           (byte *)local_c->field_0974);
+           (byte *)local_c->field_0974[0]);
     DibPut((AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_018C,0x31,0,'\x06',
-           (byte *)pCVar2->field_097C);
+           (byte *)pCVar2->field_0974[2]);
   }
   if (pCVar2->field_0B9E == CASE_1) {
     switch(pCVar2->field_0B99) {
     case CASE_1A:
       pbVar4 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B2,3);
       DibPut((AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_018C,0x3c,0x84,'\x01',pbVar4);
-      bVar7 = 0;
+      bVar6 = 0;
       local_8 = local_8 & 0xffffff00;
       if ((pCVar2->field_0BB6 & 0xfe) != 0) {
         do {
           pbVar4 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B6,3);
           DibPut((AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_018C,(local_8 & 0xff) * 4 + 0x3f,0x87,
                  '\x01',pbVar4);
-          bVar7 = bVar7 + 1;
+          bVar6 = bVar6 + 1;
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_8 = CONCAT31(local_8._1_3_,bVar7);
-        } while (bVar7 < (byte)pCVar2->field_0BB6 >> 1);
+          local_8 = CONCAT31(local_8._1_3_,bVar6);
+        } while (bVar6 < (byte)pCVar2->field_0BB6 >> 1);
       }
-      if (bVar7 < 0x14) {
+      if (bVar6 < 0x14) {
         iVar5 = 0x14 - (local_8 & 0xff);
         iVar3 = (local_8 & 0xff) * 4 + 0x3f;
         do {
@@ -135,7 +137,7 @@ LAB_00502b3b:
       if (pCVar2->field_0BCD != -1) {
         pbVar4 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B2,3);
         DibPut((AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_018C,0x3c,0x84,'\x01',pbVar4);
-        bVar7 = 0;
+        bVar6 = 0;
         local_8 = local_8 & 0xffffff00;
         if (pCVar2->field_0BCD != '\0') {
           do {
@@ -143,12 +145,12 @@ LAB_00502b3b:
                                          );
             DibPut((AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_018C,(local_8 & 0xff) * 4 + 0x3f,
                    0x87,'\x01',pbVar4);
-            bVar7 = bVar7 + 1;
+            bVar6 = bVar6 + 1;
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_8 = CONCAT31(local_8._1_3_,bVar7);
-          } while (bVar7 < (byte)pCVar2->field_0BCD);
+            local_8 = CONCAT31(local_8._1_3_,bVar6);
+          } while (bVar6 < (byte)pCVar2->field_0BCD);
         }
-        if (bVar7 < 0x14) {
+        if (bVar6 < 0x14) {
           iVar5 = 0x14 - (local_8 & 0xff);
           iVar3 = (local_8 & 0xff) * 4 + 0x3f;
           do {
@@ -162,9 +164,9 @@ LAB_00502b3b:
       }
     }
   }
-  if (-1 < pCVar2->field_0154) {
+  if (-1 < (int)pCVar2->field_0148[3]) {
     Library::DKW::DDX::FUN_006b3640
-              ((int *)PTR_008075a8,pCVar2->field_0154,0xffffffff,pCVar2->field_0048,
+              ((int *)PTR_008075a8,(uint)pCVar2->field_0148[3],0xffffffff,pCVar2->field_0048,
                pCVar2->field_00A0);
   }
   g_currentExceptionFrame = local_50.previous;

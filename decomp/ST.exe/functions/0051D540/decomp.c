@@ -119,7 +119,7 @@ LAB_0051d689:
                (uint *)&DAT_007c21ec,0x19c,&DAT_007c2198,1);
     uVar10 = FUN_007113e0(this_00->field_01E0,&DAT_0080f33a);
     local_c = uVar10;
-    CheckBkView(this_00,0,uVar10);
+    CheckBkView(this_00,0,(ushort)uVar10);
     ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,0,0x19c,uVar10 + 2);
     ccFntTy::WrTxt(this_00->field_01E0,&DAT_0080f33a,1,-1,(DAT_0080874e != '\x03') - 1 & 5,-1,-1);
   }

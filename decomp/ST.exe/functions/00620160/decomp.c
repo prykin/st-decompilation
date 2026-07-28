@@ -1,13 +1,16 @@
 
+/* [STPrototypeApplier] Propagated parameter 2.
+   Evidence: 0061FE80 -> 00620160 @ 0061FED6; FUN_0061fe80 parameter param_1 */
+
 uint __thiscall
-FUN_00620160(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+FUN_00620160(void *this,undefined4 param_1,int param_2,undefined4 param_3,undefined4 param_4)
 
 {
   DArrayTy *pDVar1;
   uint uVar2;
   undefined4 local_18;
   undefined4 local_14;
-  undefined4 local_10;
+  int local_10;
   undefined4 local_c;
   undefined4 local_8;
 

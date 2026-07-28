@@ -1,5 +1,8 @@
 
-undefined4 __cdecl FUN_0062ca70(undefined4 *param_1,undefined4 *param_2)
+/* [STPrototypeApplier] Propagated return.
+   Evidence: 0062CA70 returns literal 1 at 0062CA95 @ 0062CA9C */
+
+uint __cdecl FUN_0062ca70(undefined4 *param_1,undefined4 *param_2)
 
 {
   undefined4 *puVar1;

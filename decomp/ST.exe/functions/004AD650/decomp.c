@@ -1,11 +1,14 @@
 
 /* [STPrototypeApplier] Propagated return.
-   Evidence: 004AD650 returns stored into /STMineSetC+0x2ba @ 006231BB */
+   Evidence: 004AD650 returns stored into /STMineSetC+0x2ba @ 006231BB
 
-int __fastcall FUN_004ad650(int param_1)
+   [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 004C6210 -> 004AD650 @ 004C62A0; /TLOBldMark+0x2c | 004CC900 -> 004AD650 @ 004CC943;
+   /TLOBaseTy+0x603 */
+
+int __fastcall FUN_004ad650(STT3DSprC *param_1)
 
 {
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  return *(int *)(param_1 + 0x18);
+  return param_1->field_0018;
 }
 

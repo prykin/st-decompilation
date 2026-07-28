@@ -10,6 +10,7 @@ void FUN_0075d680(int param_1,int param_2,int param_3,undefined4 *param_4)
   undefined4 *puVar6;
 
   puVar6 = param_4;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_4 = (undefined4 *)0x0;
   puVar6 = (undefined4 *)*puVar6;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -34,6 +35,7 @@ void FUN_0075d680(int param_1,int param_2,int param_3,undefined4 *param_4)
       puVar6 = puVar6 + 1;
       *pbVar2 = (byte)((int)(pbVar3[-1] + 1 + (uint)bVar1 * 3) >> 2);
       pbVar2[1] = bVar1;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_4 = (undefined4 *)((int)param_4 + 1);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     } while ((int)param_4 < *(int *)(param_1 + 0x126));

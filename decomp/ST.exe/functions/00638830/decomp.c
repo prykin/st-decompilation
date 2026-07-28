@@ -13,7 +13,7 @@ void __cdecl FUN_00638830(undefined4 param_1,int param_2,int param_3,int param_4
     FUN_006e8660(PTR_00807598,(int *)&local_8,1,0,*(uint *)((int)puVar1 + 9),
                  *(uint *)((int)puVar1 + 0xd),(int)*(uint *)((int)puVar1 + 9) / 2,
                  (int)*(uint *)((int)puVar1 + 0xd) / 2 - 0x17,0);
-    FUN_006e98e0(PTR_00807598,local_8,0,*(undefined4 *)puVar1,*(int *)((int)puVar1 + 0x21),1);
+    FUN_006e98e0(PTR_00807598,local_8,0,*(int *)puVar1,*(int *)((int)puVar1 + 0x21),1);
     FUN_006ea270(PTR_00807598,local_8,0,0);
     FUN_006ea8a0(PTR_00807598,local_8,0,2,DAT_008032bc);
     FUN_006ea960(PTR_00807598,local_8,(float)param_3 * _DAT_007904f8 * _DAT_007904f0,

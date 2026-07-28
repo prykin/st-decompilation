@@ -8,22 +8,23 @@
 int __fastcall FUN_004d6f70(int *param_1)
 
 {
-  int iVar1;
-  int iVar2;
+  uint uVar1;
+  uint uVar2;
+  int iVar3;
 
-  iVar1 = TLOBaseTy::sub_004D6DF0((TLOBaseTy *)param_1);
-  iVar2 = thunk_FUN_004e41c0(param_1[9]);
-  if (iVar2 < iVar1) {
-    iVar1 = thunk_FUN_004e41c0(param_1[9]);
+  uVar1 = TLOBaseTy::sub_004D6DF0((TLOBaseTy *)param_1);
+  uVar2 = thunk_FUN_004e41c0(param_1[9]);
+  if ((int)uVar2 < (int)uVar1) {
+    uVar1 = thunk_FUN_004e41c0(param_1[9]);
   }
-  thunk_FUN_004e4330(param_1[9],iVar1);
-  thunk_FUN_004d6eb0(param_1,iVar1);
+  thunk_FUN_004e4330(param_1[9],uVar1);
+  thunk_FUN_004d6eb0(param_1,uVar1);
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (param_1[9] == (uint)*(byte *)(param_1[4] + 0x112d)) {
     thunk_FUN_004d8b70((char)param_1[9]);
   }
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  iVar1 = (**(code **)(*param_1 + 0xc4))();
-  return (uint)(99 < iVar1);
+  iVar3 = (**(code **)(*param_1 + 0xc4))();
+  return (uint)(99 < iVar3);
 }
 

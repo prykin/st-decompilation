@@ -77,6 +77,7 @@ cf_break_loop_00720F4E:
       cVar1 = *pcVar9;
       pcVar9 = pcVar9 + 1;
     } while (cVar1 != '\0');
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = 0;
     local_8 = *(int *)((int)this + 0x148);
     iVar5 = ~uVar6 - 1;
@@ -99,6 +100,7 @@ cf_break_loop_00720F4E:
           *(int *)((int)this + 0x210) = local_8;
           break;
         }
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_2 = param_2 + iVar4;
         local_8 = local_8 + 1;
         pbVar8 = pbVar8 + 1;

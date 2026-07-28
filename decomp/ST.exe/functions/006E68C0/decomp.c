@@ -35,10 +35,12 @@ undefined4 __thiscall FUN_006e68c0(void *this,int param_1,int param_2,int *param
     break;
   case 2:
     iVar1 = ((iVar6 - iVar5) - param_2) + -1 + param_1;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = ((iVar6 - param_1) - param_2) + -1 + iVar5;
     goto LAB_006e6a01;
   case 3:
     iVar1 = ((iVar6 - param_1) - param_2) + -1 + iVar5;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = ((iVar6 - iVar5) - param_1) + -1 + param_2;
 LAB_006e6a01:
     fVar3 = (float)param_2 * fVar2 * fVar4;

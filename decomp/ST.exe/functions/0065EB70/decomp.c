@@ -33,12 +33,13 @@ FUN_0065eb70(void *this,uint param_1,int param_2,uint *param_3,uint param_4,uint
       else {
         local_c = Library::DKW::LIB::FUN_006aac10((uint)uVar1 * 0x2c);
         DAT_00811900 = 0;
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         if ((char)param_7 == '\b') {
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+          /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
           param_7 = CONCAT31(param_7._1_3_,cVar5);
         }
         else if (((char)param_7 < '\0') || ('\b' < (char)param_7)) {
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+          /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
           param_7 = CONCAT31(param_7._1_3_,0xff);
         }
         _EnumPlObj(param_1,param_4,param_5,param_6,(char)param_7,0,0,0,-1,-1,-1,thunk_FUN_0065e860,
@@ -53,7 +54,7 @@ FUN_0065eb70(void *this,uint param_1,int param_2,uint *param_3,uint param_4,uint
               if (local_c[iVar2 * 0xb + 3] != 0) {
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 param_2._0_2_ = CONCAT11(1,cVar5);
-                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
                 param_2 = CONCAT22((short)local_c[iVar2 * 0xb + 4],(undefined2)param_2);
                 Library::DKW::TBL::FUN_006ae1c0(param_3,&param_2);
                 local_8 = local_8 + 1;
@@ -70,7 +71,7 @@ FUN_0065eb70(void *this,uint param_1,int param_2,uint *param_3,uint param_4,uint
               if (*(int *)(iVar2 + 0xc + (int)local_c) != 0) {
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 param_2._0_2_ = CONCAT11(1,cVar5);
-                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
                 param_2 = CONCAT22(*(undefined2 *)(iVar2 + 0x10 + (int)local_c),(undefined2)param_2)
                 ;
                 Library::DKW::TBL::FUN_006ae1c0(param_3,&param_2);

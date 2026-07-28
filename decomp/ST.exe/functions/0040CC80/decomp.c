@@ -14,6 +14,7 @@ int __thiscall FUN_0040cc80(void *this,uint param_1)
     return -4;
   }
   local_8 = *(int *)(iVar1 + 0xa7);
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = 0;
   if (-1 < local_8) {
     psVar4 = (short *)(*(int *)(iVar1 + 0x9f) + local_8 * 0x48);
@@ -26,12 +27,14 @@ int __thiscall FUN_0040cc80(void *this,uint param_1)
         iVar3 = iVar3 + 1;
         psVar2 = psVar2 + 4;
       } while (iVar3 < 9);
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = param_1 - 1;
       psVar4 = psVar4 + -0x24;
       local_8 = local_8 + -1;
       if (local_8 < 0) break;
     }
   }
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = 0;
 LAB_0040cd0a:
   iVar5 = 0;

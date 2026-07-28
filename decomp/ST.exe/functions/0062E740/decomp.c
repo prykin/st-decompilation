@@ -77,7 +77,7 @@ int __thiscall STRubbishC::GetMessage(STRubbishC *this,STMessage *message)
         thunk_FUN_0062fe00((STJellyGunC *)this_00);
         this_00->field_0x1f9 = 1;
       }
-      thunk_FUN_0062f150((AnonShape_0062F150_AF81DB77 *)this_00);
+      thunk_FUN_0062f150((RecoveredRecord_STRubbishC_0062F150 *)this_00);
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }
@@ -159,7 +159,7 @@ int __thiscall STRubbishC::GetMessage(STRubbishC *this,STMessage *message)
                             ((short)*(undefined4 *)&this_00->field_0x1d5,
                              (short)*(undefined4 *)&this_00->field_0x1d9,
                              (short)*(undefined4 *)&this_00->field_0x1dd,1,
-                             (AnonShape_00495EC0_95A268C6 *)this_00),
+                             (RecoveredRecord_DumpClassC_00495EC0 *)this_00),
          pAVar10 = (AnonShape_0062FA80_0B91B2B9 *)local_8, iVar6 == 0)) {
         iVar6 = local_8->field_0014;
         sVar1 = (short)(iVar6 >> 0x1f);

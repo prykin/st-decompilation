@@ -13,7 +13,7 @@ void __thiscall SettMapMTy::DeleteCtrls(SettMapMTy *this)
   int iVar2;
   HoloTy *pHVar3;
   int iVar4;
-  uint uVar5;
+  byte bVar5;
   char cVar6;
   uint uVar7;
   InternalExceptionFrame local_4c;
@@ -80,17 +80,17 @@ void __thiscall SettMapMTy::DeleteCtrls(SettMapMTy *this)
       if (pHVar3 != (HoloTy *)0x0) {
         uVar7 = 0;
         cVar6 = '\x01';
-        uVar5 = 0x10;
+        bVar5 = 0x10;
         iVar4 = 1;
         iVar2 = Library::DKW::DDX::FUN_006bf9f0((int *)PTR_008075a8,200,0x1f1,400,0x62);
-        uVar5 = HoloTy::Init(this_00->field_21F8,CASE_1,200,0x1f1,iVar2,iVar4,uVar5,cVar6,uVar7);
-        if (uVar5 != 0) {
+        uVar7 = HoloTy::Init(this_00->field_21F8,CASE_1,200,0x1f1,iVar2,iVar4,bVar5,cVar6,uVar7);
+        if (uVar7 != 0) {
           pHVar3 = this_00->field_21F8;
           pHVar3->field_0002 = 0;
           pHVar3->field_0017 = -1;
-          uVar5 = this_00->field_21F8->field_0003;
-          if (-1 < (int)uVar5) {
-            Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,uVar5);
+          uVar7 = this_00->field_21F8->field_0003;
+          if (-1 < (int)uVar7) {
+            Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,uVar7);
           }
           HoloTy::NextFas(this_00->field_21F8);
         }

@@ -8,10 +8,28 @@
    Evidence: 0068DC80 -> 00668180 @ 0068DE36
 
    [STPrototypeApplier] Propagated return.
-   Evidence: 00668180 returns stored into global 008489C4 @ 00685E0A */
+   Evidence: 00668180 returns stored into global 008489C4 @ 00685E0A
+
+   [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 0064E300 -> 00668180 @ 0064E399; FUN_0064e300 parameter param_3 | 00683C70 -> 00668180
+   @ 00685E05; unproven partial register write at 00685DF5 | 0068DC80 -> 00668180 @ 0068DE36;
+   unproven partial register write at 0068DE24
+
+   [STPrototypeApplier] Propagated parameter 2.
+   Evidence: 00683C70 -> 00668180 @ 00685E05; unproven partial register write at 00685DED | 0068DC80
+   -> 00668180 @ 0068DE36; literal 32768 at 0068DE2B
+
+   [STPrototypeApplier] Propagated parameter 3.
+   Evidence: 0064E300 -> 00668180 @ 0064E399; FUN_0064e300 parameter param_5 | 00683C70 -> 00668180
+   @ 00685E05; unproven partial register write at 00685DE5 | 0068DC80 -> 00668180 @ 0068DE36;
+   literal 0 at 0068DE29
+
+   [STPrototypeApplier] Propagated parameter 4.
+   Evidence: 00683C70 -> 00668180 @ 00685E05; unproven partial register write at 00685DDF | 0068DC80
+   -> 00668180 @ 0068DE36; unproven partial register write at 0068DE21 */
 
 AnonShape_GLOBAL_008489C4_F7BABFAC * __cdecl
-FUN_00668180(char *text,undefined2 param_2,undefined2 param_3,undefined2 param_4,undefined1 param_5)
+FUN_00668180(char *text,ushort param_2,ushort param_3,ushort param_4,byte param_5)
 
 {
   int exceptionCode;

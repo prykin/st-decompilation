@@ -60,7 +60,7 @@ undefined4 __fastcall FUN_004c6d00(STJellyGunC *param_1)
   }
   else {
     if (param_1->field_0400 == 0) {
-      iVar3 = (*param_1->vtable->vfunc_20)(param_1);
+      iVar3 = param_1->vfunc_20();
       if (iVar3 == -1) {
         iVar3 = ReportDebugMessage("E:\\__titans\\Artem\\TLO_bmove.cpp",0x35,0,-5,
                                    "%s","stop move error");

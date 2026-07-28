@@ -9,42 +9,41 @@ int __thiscall STBoatC::LoadRC(STBoatC *this,int *param_1,undefined4 param_2,int
 
 {
   STBoatC *pSVar1;
-  STBoatC_field_06F7State SVar2;
-  code *pcVar3;
-  bool bVar4;
-  undefined2 uVar5;
-  int iVar6;
-  STWorldObject *pSVar7;
-  int iVar8;
-  uint uVar9;
-  undefined4 *puVar10;
-  uint uVar11;
-  short sVar12;
+  code *pcVar2;
+  bool bVar3;
+  undefined2 uVar4;
+  int iVar5;
+  STWorldObject *pSVar6;
+  int iVar7;
+  uint uVar8;
+  undefined4 *puVar9;
+  uint uVar10;
+  short sVar11;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_00;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_01;
-  uint uVar13;
+  uint uVar12;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined4 in_EDX;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_02;
-  int *piVar14;
+  int *piVar13;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_03;
-  STBoatCVTable *pSVar15;
-  longlong lVar16;
+  STBoatCVTable *pSVar14;
+  longlong lVar15;
+  short sVar16;
   short sVar17;
   short sVar18;
   short sVar19;
   short sVar20;
-  short sVar21;
-  int iVar22;
-  short sVar23;
-  byte bVar24;
-  undefined4 uVar25;
+  int iVar21;
+  short sVar22;
+  byte bVar23;
+  undefined4 uVar24;
   undefined4 local_2c [2];
   undefined4 local_24;
   short local_20;
@@ -56,6 +55,7 @@ int __thiscall STBoatC::LoadRC(STBoatC *this,int *param_1,undefined4 param_2,int
   int local_8;
 
   local_8 = 0;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if ((param_1 == (int *)0x0) || (param_1 == (int *)0x1)) {
     memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
     this->field_02C4 = 0;
@@ -73,35 +73,35 @@ int __thiscall STBoatC::LoadRC(STBoatC *this,int *param_1,undefined4 param_2,int
     this->field_04BD = 0;
     *(undefined4 *)&this->field_0x4d1 = 0;
     *(undefined4 *)&this->field_0x4cd = 0;
-    iVar6 = thunk_FUN_0048d440((AnonShape_0048D440_9DC42AE7 *)this);
-    if (iVar6 == 0) {
+    iVar5 = thunk_FUN_0048d440(this);
+    if (iVar5 == 0) {
 LAB_00469972:
       *(undefined4 *)&this->field_0x4d5 = 0;
       goto cf_common_exit_00469979;
     }
-    *(int *)&this->field_0x4d5 = iVar6;
+    *(int *)&this->field_0x4d5 = iVar5;
     this->field_00B7 = 3;
-    if (iVar6 == 1) {
-      sVar18 = this->field_049F;
-      sVar17 = this->field_049D;
-      sVar12 = this->field_049B;
+    if (iVar5 == 1) {
+      sVar17 = this->field_049F;
+      sVar16 = this->field_049D;
+      sVar11 = this->field_049B;
     }
     else {
-      sVar18 = this->field_04A9;
-      sVar17 = this->field_04A7;
-      sVar12 = this->field_04A5;
+      sVar17 = this->field_04A9;
+      sVar16 = this->field_04A7;
+      sVar11 = this->field_04A5;
     }
-    iVar22 = sVar18 + 1;
-    iVar6 = (int)sVar17;
-    iVar8 = (int)sVar12;
+    iVar21 = sVar17 + 1;
+    iVar5 = (int)sVar16;
+    iVar7 = (int)sVar11;
 cf_common_exit_004699DA:
-    sub_00481520(this,iVar8,iVar6,iVar22);
+    sub_00481520(this,iVar7,iVar5,iVar21);
   }
   else {
-    iVar6 = *(int *)&this->field_0x4d5;
-    if (iVar6 == 0) {
-      iVar6 = Defence(this,2);
-      if (iVar6 == -1) {
+    iVar5 = *(int *)&this->field_0x4d5;
+    if (iVar5 == 0) {
+      iVar5 = Defence(this,2);
+      if (iVar5 == -1) {
         return -1;
       }
       if (this->field_082E != 0) {
@@ -111,19 +111,19 @@ cf_common_exit_004699DA:
 LAB_00465cda:
         this->field_04BD = 0;
         if (this->field_04A1 != -1) {
-          sVar12 = this->field_049B;
-          sVar17 = this->field_049F;
-          sVar18 = this->field_049D;
-          if (((((sVar12 < 0) || (g_worldGrid.sizeX <= sVar12)) || (sVar18 < 0)) ||
-              ((g_worldGrid.sizeY <= sVar18 || (sVar17 < 0)))) || (g_worldGrid.sizeZ <= sVar17)) {
-            pSVar7 = (STWorldObject *)0x0;
+          sVar11 = this->field_049B;
+          sVar16 = this->field_049F;
+          sVar17 = this->field_049D;
+          if (((((sVar11 < 0) || (g_worldGrid.sizeX <= sVar11)) || (sVar17 < 0)) ||
+              ((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)))) || (g_worldGrid.sizeZ <= sVar16)) {
+            pSVar6 = (STWorldObject *)0x0;
           }
           else {
-            pSVar7 = g_worldGrid.cells
-                     [(int)g_worldGrid.planeStride * (int)sVar17 +
-                      (int)g_worldGrid.sizeX * (int)sVar18 + (int)sVar12].objects[0];
+            pSVar6 = g_worldGrid.cells
+                     [(int)g_worldGrid.planeStride * (int)sVar16 +
+                      (int)g_worldGrid.sizeX * (int)sVar17 + (int)sVar11].objects[0];
           }
-          if (*(int *)&pSVar7->field_0x18 != this->field_04A1) {
+          if (*(int *)&pSVar6->field_0x18 != this->field_04A1) {
             this->field_04A1 = 0xffffffff;
           }
         }
@@ -137,30 +137,30 @@ LAB_00465cda:
       if (this->field_04C1 == 1) {
         this->field_04C1 = 0;
         if (this->field_04AB != -1) {
-          sVar12 = this->field_04A5;
-          sVar17 = this->field_04A9;
-          sVar18 = this->field_04A7;
-          if (((sVar12 < 0) || (g_worldGrid.sizeX <= sVar12)) ||
-             ((sVar18 < 0 ||
-              (((g_worldGrid.sizeY <= sVar18 || (sVar17 < 0)) || (g_worldGrid.sizeZ <= sVar17))))))
+          sVar11 = this->field_04A5;
+          sVar16 = this->field_04A9;
+          sVar17 = this->field_04A7;
+          if (((sVar11 < 0) || (g_worldGrid.sizeX <= sVar11)) ||
+             ((sVar17 < 0 ||
+              (((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)) || (g_worldGrid.sizeZ <= sVar16))))))
           {
-            pSVar7 = (STWorldObject *)0x0;
+            pSVar6 = (STWorldObject *)0x0;
           }
           else {
-            pSVar7 = g_worldGrid.cells
-                     [(int)sVar17 * (int)g_worldGrid.planeStride +
-                      (int)sVar18 * (int)g_worldGrid.sizeX + (int)sVar12].objects[0];
+            pSVar6 = g_worldGrid.cells
+                     [(int)sVar16 * (int)g_worldGrid.planeStride +
+                      (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
           }
-          if (*(int *)&pSVar7->field_0x18 != this->field_04AB) {
+          if (*(int *)&pSVar6->field_0x18 != this->field_04AB) {
             this->field_04AB = 0xffffffff;
           }
         }
       }
-      iVar6 = thunk_FUN_0048d440((AnonShape_0048D440_9DC42AE7 *)this);
-      if (iVar6 == 0) {
+      iVar5 = thunk_FUN_0048d440(this);
+      if (iVar5 == 0) {
         return 2;
       }
-      if (iVar6 == 1) {
+      if (iVar5 == 1) {
         if (this->field_04A1 == -1) {
           return 2;
         }
@@ -175,34 +175,34 @@ cf_common_exit_00468742:
       *(undefined4 *)&this->field_0x4d5 = 7;
       this->field_00B7 = 3;
 cf_common_exit_0046875C:
-      sVar12 = this->field_04A9;
-      sVar17 = this->field_04A7;
-      sVar18 = this->field_04A5;
+      sVar11 = this->field_04A9;
+      sVar16 = this->field_04A7;
+      sVar17 = this->field_04A5;
 LAB_00465e72:
-      sub_00481520(this,(int)sVar18,(int)sVar17,sVar12 + 1);
+      sub_00481520(this,(int)sVar17,(int)sVar16,sVar11 + 1);
 cf_common_exit_00465E7B:
       sub_00460260(this,0);
       return 2;
     }
-    if (iVar6 == 1) {
+    if (iVar5 == 1) {
       if (*(int *)&this->field_0x4cd < 1) {
-        iVar6 = sub_00460260(this,2);
-        switch(iVar6) {
+        iVar5 = sub_00460260(this,2);
+        switch(iVar5) {
         case 0:
-          iVar6 = sub_00490570(this);
-          if (iVar6 == 1) {
-            sVar12 = this->field_049B;
-            sVar17 = this->field_049F;
-            sVar18 = this->field_049D;
-            if ((((((-1 < sVar12) && (sVar12 < g_worldGrid.sizeX)) && (-1 < sVar18)) &&
-                 ((sVar18 < g_worldGrid.sizeY && (-1 < sVar17)))) &&
-                ((sVar17 < g_worldGrid.sizeZ &&
+          iVar5 = sub_00490570(this);
+          if (iVar5 == 1) {
+            sVar11 = this->field_049B;
+            sVar16 = this->field_049F;
+            sVar17 = this->field_049D;
+            if ((((((-1 < sVar11) && (sVar11 < g_worldGrid.sizeX)) && (-1 < sVar17)) &&
+                 ((sVar17 < g_worldGrid.sizeY && (-1 < sVar16)))) &&
+                ((sVar16 < g_worldGrid.sizeZ &&
                  ((pSVar1 = (STBoatC *)
                             g_worldGrid.cells
-                            [(int)sVar17 * (int)g_worldGrid.planeStride +
-                             (int)sVar18 * (int)g_worldGrid.sizeX + (int)sVar12].objects[0],
+                            [(int)sVar16 * (int)g_worldGrid.planeStride +
+                             (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0],
                   pSVar1 != (STBoatC *)0x0 && (pSVar1->field_0018 == this->field_04A1)))))) &&
-               (iVar6 = thunk_FUN_004e1490(pSVar1), iVar6 != 1)) {
+               (iVar5 = thunk_FUN_004e1490(pSVar1), iVar5 != 1)) {
               /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
               sub_0048DFD0(this,this->field_0047,this->field_0049,this->field_004B,this->field_049B,
                            this->field_049D,(int *)CONCAT22(extraout_var,this->field_049F + 1),1,
@@ -221,21 +221,21 @@ cf_common_exit_00465E7B:
           if (this->field_04BD == 1) {
             this->field_04BD = 0;
             if (this->field_04A1 != -1) {
-              sVar12 = this->field_049B;
-              sVar17 = this->field_049F;
-              sVar18 = this->field_049D;
-              if (((sVar12 < 0) || (g_worldGrid.sizeX <= sVar12)) ||
-                 ((sVar18 < 0 ||
-                  (((g_worldGrid.sizeY <= sVar18 || (sVar17 < 0)) || (g_worldGrid.sizeZ <= sVar17)))
+              sVar11 = this->field_049B;
+              sVar16 = this->field_049F;
+              sVar17 = this->field_049D;
+              if (((sVar11 < 0) || (g_worldGrid.sizeX <= sVar11)) ||
+                 ((sVar17 < 0 ||
+                  (((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)) || (g_worldGrid.sizeZ <= sVar16)))
                   ))) {
-                pSVar7 = (STWorldObject *)0x0;
+                pSVar6 = (STWorldObject *)0x0;
               }
               else {
-                pSVar7 = g_worldGrid.cells
-                         [(int)sVar17 * (int)g_worldGrid.planeStride +
-                          (int)sVar18 * (int)g_worldGrid.sizeX + (int)sVar12].objects[0];
+                pSVar6 = g_worldGrid.cells
+                         [(int)sVar16 * (int)g_worldGrid.planeStride +
+                          (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
               }
-              if (*(int *)&pSVar7->field_0x18 != this->field_04A1) {
+              if (*(int *)&pSVar6->field_0x18 != this->field_04A1) {
                 this->field_04A1 = 0xffffffff;
               }
             }
@@ -246,34 +246,34 @@ cf_common_exit_00465E7B:
           if (this->field_04C1 == 1) {
             this->field_04C1 = 0;
             if (this->field_04AB != -1) {
-              sVar12 = this->field_04A5;
-              sVar17 = this->field_04A9;
-              sVar18 = this->field_04A7;
-              if ((((sVar12 < 0) || (g_worldGrid.sizeX <= sVar12)) ||
-                  ((sVar18 < 0 || ((g_worldGrid.sizeY <= sVar18 || (sVar17 < 0)))))) ||
-                 (g_worldGrid.sizeZ <= sVar17)) {
-                pSVar7 = (STWorldObject *)0x0;
+              sVar11 = this->field_04A5;
+              sVar16 = this->field_04A9;
+              sVar17 = this->field_04A7;
+              if ((((sVar11 < 0) || (g_worldGrid.sizeX <= sVar11)) ||
+                  ((sVar17 < 0 || ((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)))))) ||
+                 (g_worldGrid.sizeZ <= sVar16)) {
+                pSVar6 = (STWorldObject *)0x0;
               }
               else {
-                pSVar7 = g_worldGrid.cells
-                         [(int)sVar17 * (int)g_worldGrid.planeStride +
-                          (int)sVar18 * (int)g_worldGrid.sizeX + (int)sVar12].objects[0];
+                pSVar6 = g_worldGrid.cells
+                         [(int)sVar16 * (int)g_worldGrid.planeStride +
+                          (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
               }
-              if (*(int *)&pSVar7->field_0x18 != this->field_04AB) {
+              if (*(int *)&pSVar6->field_0x18 != this->field_04AB) {
                 this->field_04AB = 0xffffffff;
               }
             }
           }
-          iVar6 = thunk_FUN_0048d440((AnonShape_0048D440_9DC42AE7 *)this);
-          if (iVar6 == 0) goto cf_common_exit_00467FE4;
-          if (iVar6 == 1) {
+          iVar5 = thunk_FUN_0048d440(this);
+          if (iVar5 == 0) goto cf_common_exit_00467FE4;
+          if (iVar5 == 1) {
             if ((this->field_04A1 != -1) && (local_c == (undefined4 *)0x0))
             goto cf_common_exit_00468C50;
             sub_004602B0(this);
             if (this->field_04A1 == -1) {
               *(int *)&this->field_0x4cd = *(int *)&this->field_0x4cd + 1;
-              iVar6 = (*this->vtable->vfunc_D8)(this);
-              return (-(uint)(iVar6 != 0) & 0xfffffffd) + 2;
+              iVar5 = this->vfunc_D8();
+              return (-(uint)(iVar5 != 0) & 0xfffffffd) + 2;
             }
             if (local_c != (undefined4 *)0x1) goto cf_common_exit_00468C50;
 LAB_00467018:
@@ -293,29 +293,29 @@ switchD_004660af_caseD_3:
           sub_00481520(this,(int)this->field_049B,(int)this->field_049D,this->field_049F + 1);
           break;
         case -1:
-          iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x1d02,0,0,
+          iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x1d02,0,0,
                                      "%s","STBoatC::LoadRC, move to mine error");
-          if (iVar6 != 0) {
+          if (iVar5 != 0) {
             STDebugBreak(); /* noreturn in standalone pseudocode */
           }
-          iVar6 = 0x1d02;
+          iVar5 = 0x1d02;
           goto cf_error_exit_004660E9;
         }
 cf_common_exit_00468C49:
         sub_00460260(this,0);
         goto cf_common_exit_00468C50;
       }
-      iVar6 = *(int *)&this->field_0x4cd + 1;
-      *(int *)&this->field_0x4cd = iVar6;
-      if (iVar6 == 2) {
-        iVar6 = Defence(this,0);
-        if (iVar6 != -1) {
+      iVar5 = *(int *)&this->field_0x4cd + 1;
+      *(int *)&this->field_0x4cd = iVar5;
+      if (iVar5 == 2) {
+        iVar5 = Defence(this,0);
+        if (iVar5 != -1) {
           return 2;
         }
         return -1;
       }
-      iVar6 = Defence(this,2);
-      if (iVar6 == -1) {
+      iVar5 = Defence(this,2);
+      if (iVar5 == -1) {
         return -1;
       }
       if (this->field_082E != 0) {
@@ -325,19 +325,19 @@ cf_common_exit_00468C49:
 LAB_00465f11:
         this->field_04BD = 0;
         if (this->field_04A1 != -1) {
-          sVar12 = this->field_049B;
-          sVar17 = this->field_049F;
-          sVar18 = this->field_049D;
-          if ((((sVar12 < 0) || (g_worldGrid.sizeX <= sVar12)) || (sVar18 < 0)) ||
-             (((g_worldGrid.sizeY <= sVar18 || (sVar17 < 0)) || (g_worldGrid.sizeZ <= sVar17)))) {
-            pSVar7 = (STWorldObject *)0x0;
+          sVar11 = this->field_049B;
+          sVar16 = this->field_049F;
+          sVar17 = this->field_049D;
+          if ((((sVar11 < 0) || (g_worldGrid.sizeX <= sVar11)) || (sVar17 < 0)) ||
+             (((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)) || (g_worldGrid.sizeZ <= sVar16)))) {
+            pSVar6 = (STWorldObject *)0x0;
           }
           else {
-            pSVar7 = g_worldGrid.cells
-                     [(int)sVar17 * (int)g_worldGrid.planeStride +
-                      (int)sVar18 * (int)g_worldGrid.sizeX + (int)sVar12].objects[0];
+            pSVar6 = g_worldGrid.cells
+                     [(int)sVar16 * (int)g_worldGrid.planeStride +
+                      (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
           }
-          if (*(int *)&pSVar7->field_0x18 != this->field_04A1) {
+          if (*(int *)&pSVar6->field_0x18 != this->field_04A1) {
             this->field_04A1 = 0xffffffff;
           }
         }
@@ -351,49 +351,49 @@ LAB_00465f11:
       if (this->field_04C1 == 1) {
         this->field_04C1 = 0;
         if (this->field_04AB != -1) {
-          sVar12 = this->field_04A5;
-          sVar17 = this->field_04A9;
-          sVar18 = this->field_04A7;
-          if (((sVar12 < 0) || (g_worldGrid.sizeX <= sVar12)) ||
-             ((sVar18 < 0 ||
-              (((g_worldGrid.sizeY <= sVar18 || (sVar17 < 0)) || (g_worldGrid.sizeZ <= sVar17))))))
+          sVar11 = this->field_04A5;
+          sVar16 = this->field_04A9;
+          sVar17 = this->field_04A7;
+          if (((sVar11 < 0) || (g_worldGrid.sizeX <= sVar11)) ||
+             ((sVar17 < 0 ||
+              (((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)) || (g_worldGrid.sizeZ <= sVar16))))))
           {
-            pSVar7 = (STWorldObject *)0x0;
+            pSVar6 = (STWorldObject *)0x0;
           }
           else {
-            pSVar7 = g_worldGrid.cells
-                     [(int)sVar17 * (int)g_worldGrid.planeStride +
-                      (int)sVar18 * (int)g_worldGrid.sizeX + (int)sVar12].objects[0];
+            pSVar6 = g_worldGrid.cells
+                     [(int)sVar16 * (int)g_worldGrid.planeStride +
+                      (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
           }
-          if (*(int *)&pSVar7->field_0x18 != this->field_04AB) {
+          if (*(int *)&pSVar6->field_0x18 != this->field_04AB) {
             this->field_04AB = 0xffffffff;
           }
         }
       }
-      iVar6 = thunk_FUN_0048d440((AnonShape_0048D440_9DC42AE7 *)this);
-      if (iVar6 == 0) {
+      iVar5 = thunk_FUN_0048d440(this);
+      if (iVar5 == 0) {
         sub_004602B0(this);
         *(undefined4 *)&this->field_0x4d5 = 0;
 cf_common_exit_00469979:
-        iVar6 = Defence(this,0);
-        return (-(uint)(iVar6 != -1) & 3) - 1;
+        iVar5 = Defence(this,0);
+        return (-(uint)(iVar5 != -1) & 3) - 1;
       }
-      if (iVar6 != 1) goto LAB_00466087;
+      if (iVar5 != 1) goto LAB_00466087;
       if (this->field_04A1 == -1) {
         return 2;
       }
       *(undefined4 *)&this->field_0x4cd = 0;
 cf_common_exit_00465E5A:
-      sVar12 = this->field_049F;
-      sVar17 = this->field_049D;
-      sVar18 = this->field_049B;
+      sVar11 = this->field_049F;
+      sVar16 = this->field_049D;
+      sVar17 = this->field_049B;
       goto LAB_00465e72;
     }
-    if (iVar6 != 2) {
-      if (iVar6 == 3) {
+    if (iVar5 != 2) {
+      if (iVar5 == 3) {
         *(int *)&this->field_0x4cd = *(int *)&this->field_0x4cd + 1;
-        iVar6 = Defence(this,2);
-        if (iVar6 == -1) {
+        iVar5 = Defence(this,2);
+        if (iVar5 == -1) {
           return -1;
         }
         if (this->field_082E != 0) {
@@ -403,50 +403,50 @@ cf_common_exit_00465E5A:
           if (*(int *)&this->field_0x4cd % 0x32 != 1) {
             return 2;
           }
-          sVar12 = this->field_049B;
-          sVar17 = this->field_049F;
-          sVar18 = this->field_049D;
-          if (sVar12 < 0) {
+          sVar11 = this->field_049B;
+          sVar16 = this->field_049F;
+          sVar17 = this->field_049D;
+          if (sVar11 < 0) {
             return 2;
           }
-          if (g_worldGrid.sizeX <= sVar12) {
-            return 2;
-          }
-          if (sVar18 < 0) {
-            return 2;
-          }
-          if (g_worldGrid.sizeY <= sVar18) {
+          if (g_worldGrid.sizeX <= sVar11) {
             return 2;
           }
           if (sVar17 < 0) {
             return 2;
           }
-          if (g_worldGrid.sizeZ <= sVar17) {
+          if (g_worldGrid.sizeY <= sVar17) {
+            return 2;
+          }
+          if (sVar16 < 0) {
+            return 2;
+          }
+          if (g_worldGrid.sizeZ <= sVar16) {
             return 2;
           }
           pSVar1 = (STBoatC *)
                    g_worldGrid.cells
-                   [(int)sVar17 * (int)g_worldGrid.planeStride +
-                    (int)sVar18 * (int)g_worldGrid.sizeX + (int)sVar12].objects[0];
+                   [(int)sVar16 * (int)g_worldGrid.planeStride +
+                    (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
           if (pSVar1 == (STBoatC *)0x0) {
             return 2;
           }
           if (pSVar1->field_0018 != this->field_04A1) {
             return 2;
           }
-          iVar6 = thunk_FUN_004e1490(pSVar1);
-          if (iVar6 != 1) {
+          iVar5 = thunk_FUN_004e1490(pSVar1);
+          if (iVar5 != 1) {
             return 2;
           }
           thunk_FUN_004e15f0(pSVar1,this->field_0018);
-          sVar17 = this->field_049D;
-          sVar12 = this->field_049B;
-          iVar6 = this->field_049F + 1;
+          sVar16 = this->field_049D;
+          sVar11 = this->field_049B;
+          iVar5 = this->field_049F + 1;
           *(undefined4 *)&this->field_0x4cd = 0;
           *(undefined4 *)&this->field_0x4d5 = 4;
           this->field_00B7 = 0;
 LAB_00468322:
-          sub_00481520(this,(int)sVar12,(int)sVar17,iVar6);
+          sub_00481520(this,(int)sVar11,(int)sVar16,iVar5);
           sub_00460260(this,0);
           return 2;
         }
@@ -454,21 +454,21 @@ LAB_00468322:
         if (this->field_04BD == 1) {
           this->field_04BD = 0;
           if (this->field_04A1 != -1) {
-            sVar12 = this->field_049B;
-            sVar17 = this->field_049F;
-            sVar18 = this->field_049D;
-            if (((sVar12 < 0) || (g_worldGrid.sizeX <= sVar12)) ||
-               ((sVar18 < 0 ||
-                (((g_worldGrid.sizeY <= sVar18 || (sVar17 < 0)) || (g_worldGrid.sizeZ <= sVar17)))))
+            sVar11 = this->field_049B;
+            sVar16 = this->field_049F;
+            sVar17 = this->field_049D;
+            if (((sVar11 < 0) || (g_worldGrid.sizeX <= sVar11)) ||
+               ((sVar17 < 0 ||
+                (((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)) || (g_worldGrid.sizeZ <= sVar16)))))
                ) {
-              pSVar7 = (STWorldObject *)0x0;
+              pSVar6 = (STWorldObject *)0x0;
             }
             else {
-              pSVar7 = g_worldGrid.cells
-                       [(int)sVar17 * (int)g_worldGrid.planeStride +
-                        (int)sVar18 * (int)g_worldGrid.sizeX + (int)sVar12].objects[0];
+              pSVar6 = g_worldGrid.cells
+                       [(int)sVar16 * (int)g_worldGrid.planeStride +
+                        (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
             }
-            if (*(int *)&pSVar7->field_0x18 != this->field_04A1) {
+            if (*(int *)&pSVar6->field_0x18 != this->field_04A1) {
               this->field_04A1 = 0xffffffff;
             }
           }
@@ -479,31 +479,31 @@ LAB_00468322:
         if (this->field_04C1 == 1) {
           this->field_04C1 = 0;
           if (this->field_04AB != -1) {
-            sVar12 = this->field_04A5;
-            sVar17 = this->field_04A9;
-            sVar18 = this->field_04A7;
-            if (((sVar12 < 0) || (g_worldGrid.sizeX <= sVar12)) ||
-               (((sVar18 < 0 || ((g_worldGrid.sizeY <= sVar18 || (sVar17 < 0)))) ||
-                (g_worldGrid.sizeZ <= sVar17)))) {
-              pSVar7 = (STWorldObject *)0x0;
+            sVar11 = this->field_04A5;
+            sVar16 = this->field_04A9;
+            sVar17 = this->field_04A7;
+            if (((sVar11 < 0) || (g_worldGrid.sizeX <= sVar11)) ||
+               (((sVar17 < 0 || ((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)))) ||
+                (g_worldGrid.sizeZ <= sVar16)))) {
+              pSVar6 = (STWorldObject *)0x0;
             }
             else {
-              pSVar7 = g_worldGrid.cells
-                       [(int)sVar17 * (int)g_worldGrid.planeStride +
-                        (int)sVar18 * (int)g_worldGrid.sizeX + (int)sVar12].objects[0];
+              pSVar6 = g_worldGrid.cells
+                       [(int)sVar16 * (int)g_worldGrid.planeStride +
+                        (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
             }
-            if (*(int *)&pSVar7->field_0x18 != this->field_04AB) {
+            if (*(int *)&pSVar6->field_0x18 != this->field_04AB) {
               this->field_04AB = 0xffffffff;
             }
           }
         }
-        iVar6 = thunk_FUN_0048d440((AnonShape_0048D440_9DC42AE7 *)this);
-        if (iVar6 == 0) {
+        iVar5 = thunk_FUN_0048d440(this);
+        if (iVar5 == 0) {
           sub_004602B0(this);
           *(undefined4 *)&this->field_0x4d5 = 0;
           goto cf_common_exit_00469979;
         }
-        if (iVar6 == 1) {
+        if (iVar5 == 1) {
           if (this->field_04A1 == -1) {
             return 2;
           }
@@ -526,34 +526,34 @@ LAB_00466087:
         *(undefined4 *)&this->field_0x4d5 = 7;
         goto cf_common_exit_0046875C;
       }
-      if (iVar6 == 4) {
+      if (iVar5 == 4) {
         if (*(int *)&this->field_0x4cd < 1) {
-          iVar6 = sub_00460260(this,2);
-          switch(iVar6) {
+          iVar5 = sub_00460260(this,2);
+          switch(iVar5) {
           case 0:
             *(undefined4 *)&this->field_0x4d5 = 5;
-            iVar6 = (*this->vtable->vfunc_D8)(this);
-            return (-(uint)(iVar6 != 0) & 0xfffffffd) + 2;
+            iVar5 = this->vfunc_D8();
+            return (-(uint)(iVar5 != 0) & 0xfffffffd) + 2;
           case 1:
             if ((this->field_04BD != 1) && (this->field_04C1 != 1)) goto cf_common_exit_00468C50;
             local_c = (undefined4 *)0x0;
             if (this->field_04BD == 1) {
               this->field_04BD = 0;
               if (this->field_04A1 != -1) {
-                sVar12 = this->field_049B;
-                sVar17 = this->field_049F;
-                sVar18 = this->field_049D;
-                if (((((sVar12 < 0) || (g_worldGrid.sizeX <= sVar12)) || (sVar18 < 0)) ||
-                    ((g_worldGrid.sizeY <= sVar18 || (sVar17 < 0)))) ||
-                   (g_worldGrid.sizeZ <= sVar17)) {
-                  pSVar7 = (STWorldObject *)0x0;
+                sVar11 = this->field_049B;
+                sVar16 = this->field_049F;
+                sVar17 = this->field_049D;
+                if (((((sVar11 < 0) || (g_worldGrid.sizeX <= sVar11)) || (sVar17 < 0)) ||
+                    ((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)))) ||
+                   (g_worldGrid.sizeZ <= sVar16)) {
+                  pSVar6 = (STWorldObject *)0x0;
                 }
                 else {
-                  pSVar7 = g_worldGrid.cells
-                           [(int)sVar17 * (int)g_worldGrid.planeStride +
-                            (int)sVar18 * (int)g_worldGrid.sizeX + (int)sVar12].objects[0];
+                  pSVar6 = g_worldGrid.cells
+                           [(int)sVar16 * (int)g_worldGrid.planeStride +
+                            (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
                 }
-                if (*(int *)&pSVar7->field_0x18 != this->field_04A1) {
+                if (*(int *)&pSVar6->field_0x18 != this->field_04A1) {
                   this->field_04A1 = 0xffffffff;
                 }
               }
@@ -564,39 +564,39 @@ LAB_00466087:
             if (this->field_04C1 == 1) {
               this->field_04C1 = 0;
               if (this->field_04AB != -1) {
-                sVar12 = this->field_04A5;
-                sVar17 = this->field_04A9;
-                sVar18 = this->field_04A7;
-                if (((sVar12 < 0) || (g_worldGrid.sizeX <= sVar12)) ||
-                   ((sVar18 < 0 ||
-                    (((g_worldGrid.sizeY <= sVar18 || (sVar17 < 0)) || (g_worldGrid.sizeZ <= sVar17)
+                sVar11 = this->field_04A5;
+                sVar16 = this->field_04A9;
+                sVar17 = this->field_04A7;
+                if (((sVar11 < 0) || (g_worldGrid.sizeX <= sVar11)) ||
+                   ((sVar17 < 0 ||
+                    (((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)) || (g_worldGrid.sizeZ <= sVar16)
                      ))))) {
-                  pSVar7 = (STWorldObject *)0x0;
+                  pSVar6 = (STWorldObject *)0x0;
                 }
                 else {
-                  pSVar7 = g_worldGrid.cells
-                           [(int)sVar17 * (int)g_worldGrid.planeStride +
-                            (int)sVar18 * (int)g_worldGrid.sizeX + (int)sVar12].objects[0];
+                  pSVar6 = g_worldGrid.cells
+                           [(int)sVar16 * (int)g_worldGrid.planeStride +
+                            (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
                 }
-                if (*(int *)&pSVar7->field_0x18 != this->field_04AB) {
+                if (*(int *)&pSVar6->field_0x18 != this->field_04AB) {
                   this->field_04AB = 0xffffffff;
                 }
               }
             }
-            iVar6 = thunk_FUN_0048d440((AnonShape_0048D440_9DC42AE7 *)this);
-            if (iVar6 == 0) {
+            iVar5 = thunk_FUN_0048d440(this);
+            if (iVar5 == 0) {
               sub_004602B0(this);
               *(undefined4 *)&this->field_0x4d5 = 0;
               goto cf_common_exit_00469979;
             }
-            if (iVar6 == 1) {
+            if (iVar5 == 1) {
               if ((this->field_04A1 != -1) && (local_c == (undefined4 *)0x0))
               goto cf_common_exit_00468C50;
               sub_004602B0(this);
               if (this->field_04A1 == -1) {
                 *(int *)&this->field_0x4cd = *(int *)&this->field_0x4cd + 1;
-                iVar6 = (*this->vtable->vfunc_D8)(this);
-                return (-(uint)(iVar6 != 0) & 0xfffffffd) + 2;
+                iVar5 = this->vfunc_D8();
+                return (-(uint)(iVar5 != 0) & 0xfffffffd) + 2;
               }
               if (local_c != (undefined4 *)0x1) goto cf_common_exit_00468C50;
               *(undefined4 *)&this->field_0x4cd = 0;
@@ -608,39 +608,39 @@ LAB_00466087:
             *(undefined4 *)&this->field_0x4cd = 0;
             this->field_00B7 = 3;
             *(undefined4 *)&this->field_0x4d5 = 7;
-            iVar6 = this->field_04A9 + 1;
+            iVar5 = this->field_04A9 + 1;
             break;
           default:
             goto cf_common_exit_00468C50;
           case 3:
             goto switchD_004660af_caseD_3;
           case -1:
-            iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x1e6e,0,0,
+            iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x1e6e,0,0,
                                        "%s","STBoatC::LoadRC, move to mine 2 error");
-            if (iVar6 != 0) {
+            if (iVar5 != 0) {
               STDebugBreak(); /* noreturn in standalone pseudocode */
             }
-            iVar6 = 0x1e6e;
+            iVar5 = 0x1e6e;
             goto cf_error_exit_004660E9;
           }
 LAB_00467068:
-          sVar17 = this->field_04A7;
-          sVar12 = this->field_04A5;
+          sVar16 = this->field_04A7;
+          sVar11 = this->field_04A5;
 LAB_00468c40:
-          sub_00481520(this,(int)sVar12,(int)sVar17,iVar6);
+          sub_00481520(this,(int)sVar11,(int)sVar16,iVar5);
           goto cf_common_exit_00468C49;
         }
-        iVar6 = *(int *)&this->field_0x4cd + 1;
-        *(int *)&this->field_0x4cd = iVar6;
-        if (iVar6 == 2) {
-          iVar6 = Defence(this,0);
-          if (iVar6 != -1) {
+        iVar5 = *(int *)&this->field_0x4cd + 1;
+        *(int *)&this->field_0x4cd = iVar5;
+        if (iVar5 == 2) {
+          iVar5 = Defence(this,0);
+          if (iVar5 != -1) {
             return 2;
           }
           return -1;
         }
-        iVar6 = Defence(this,2);
-        if (iVar6 == -1) {
+        iVar5 = Defence(this,2);
+        if (iVar5 == -1) {
           return -1;
         }
         if (this->field_082E != 0) {
@@ -650,21 +650,21 @@ LAB_00468c40:
 LAB_00466bff:
           this->field_04BD = 0;
           if (this->field_04A1 != -1) {
-            sVar12 = this->field_049B;
-            sVar17 = this->field_049F;
-            sVar18 = this->field_049D;
-            if (((sVar12 < 0) || (g_worldGrid.sizeX <= sVar12)) ||
-               ((sVar18 < 0 ||
-                (((g_worldGrid.sizeY <= sVar18 || (sVar17 < 0)) || (g_worldGrid.sizeZ <= sVar17)))))
+            sVar11 = this->field_049B;
+            sVar16 = this->field_049F;
+            sVar17 = this->field_049D;
+            if (((sVar11 < 0) || (g_worldGrid.sizeX <= sVar11)) ||
+               ((sVar17 < 0 ||
+                (((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)) || (g_worldGrid.sizeZ <= sVar16)))))
                ) {
-              pSVar7 = (STWorldObject *)0x0;
+              pSVar6 = (STWorldObject *)0x0;
             }
             else {
-              pSVar7 = g_worldGrid.cells
-                       [(int)sVar17 * (int)g_worldGrid.planeStride +
-                        (int)sVar18 * (int)g_worldGrid.sizeX + (int)sVar12].objects[0];
+              pSVar6 = g_worldGrid.cells
+                       [(int)sVar16 * (int)g_worldGrid.planeStride +
+                        (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
             }
-            if (*(int *)&pSVar7->field_0x18 != this->field_04A1) {
+            if (*(int *)&pSVar6->field_0x18 != this->field_04A1) {
               this->field_04A1 = 0xffffffff;
             }
           }
@@ -678,57 +678,57 @@ LAB_00466bff:
         if (this->field_04C1 == 1) {
           this->field_04C1 = 0;
           if (this->field_04AB != -1) {
-            sVar12 = this->field_04A5;
-            sVar17 = this->field_04A9;
-            sVar18 = this->field_04A7;
-            if ((((sVar12 < 0) || (g_worldGrid.sizeX <= sVar12)) ||
-                ((sVar18 < 0 || ((g_worldGrid.sizeY <= sVar18 || (sVar17 < 0)))))) ||
-               (g_worldGrid.sizeZ <= sVar17)) {
-              pSVar7 = (STWorldObject *)0x0;
+            sVar11 = this->field_04A5;
+            sVar16 = this->field_04A9;
+            sVar17 = this->field_04A7;
+            if ((((sVar11 < 0) || (g_worldGrid.sizeX <= sVar11)) ||
+                ((sVar17 < 0 || ((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)))))) ||
+               (g_worldGrid.sizeZ <= sVar16)) {
+              pSVar6 = (STWorldObject *)0x0;
             }
             else {
-              pSVar7 = g_worldGrid.cells
-                       [(int)sVar17 * (int)g_worldGrid.planeStride +
-                        (int)sVar18 * (int)g_worldGrid.sizeX + (int)sVar12].objects[0];
+              pSVar6 = g_worldGrid.cells
+                       [(int)sVar16 * (int)g_worldGrid.planeStride +
+                        (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
             }
-            if (*(int *)&pSVar7->field_0x18 != this->field_04AB) {
+            if (*(int *)&pSVar6->field_0x18 != this->field_04AB) {
               this->field_04AB = 0xffffffff;
             }
           }
         }
-        iVar6 = thunk_FUN_0048d440((AnonShape_0048D440_9DC42AE7 *)this);
-        if (iVar6 == 0) {
+        iVar5 = thunk_FUN_0048d440(this);
+        if (iVar5 == 0) {
           sub_004602B0(this);
           *(undefined4 *)&this->field_0x4d5 = 0;
           goto cf_common_exit_00469979;
         }
-        if (iVar6 != 1) goto cf_common_exit_00468742;
+        if (iVar5 != 1) goto cf_common_exit_00468742;
         if (this->field_04A1 == -1) {
           return 2;
         }
         goto cf_common_exit_00465E40;
       }
-      if (iVar6 == 5) {
+      if (iVar5 == 5) {
         *(int *)&this->field_0x4cd = *(int *)&this->field_0x4cd + 1;
         if ((this->field_04BD == 1) || (this->field_04C1 == 1)) {
           local_c = (undefined4 *)0x0;
           if (this->field_04BD == 1) {
             this->field_04BD = 0;
             if (this->field_04A1 != -1) {
-              sVar12 = this->field_049B;
-              sVar17 = this->field_049F;
-              sVar18 = this->field_049D;
-              if (((((sVar12 < 0) || (g_worldGrid.sizeX <= sVar12)) || (sVar18 < 0)) ||
-                  ((g_worldGrid.sizeY <= sVar18 || (sVar17 < 0)))) || (g_worldGrid.sizeZ <= sVar17))
+              sVar11 = this->field_049B;
+              sVar16 = this->field_049F;
+              sVar17 = this->field_049D;
+              if (((((sVar11 < 0) || (g_worldGrid.sizeX <= sVar11)) || (sVar17 < 0)) ||
+                  ((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)))) || (g_worldGrid.sizeZ <= sVar16))
               {
-                pSVar7 = (STWorldObject *)0x0;
+                pSVar6 = (STWorldObject *)0x0;
               }
               else {
-                pSVar7 = g_worldGrid.cells
-                         [(int)sVar17 * (int)g_worldGrid.planeStride +
-                          (int)sVar18 * (int)g_worldGrid.sizeX + (int)sVar12].objects[0];
+                pSVar6 = g_worldGrid.cells
+                         [(int)sVar16 * (int)g_worldGrid.planeStride +
+                          (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
               }
-              if (*(int *)&pSVar7->field_0x18 != this->field_04A1) {
+              if (*(int *)&pSVar6->field_0x18 != this->field_04A1) {
                 this->field_04A1 = 0xffffffff;
               }
             }
@@ -739,33 +739,33 @@ LAB_00466bff:
           if (this->field_04C1 == 1) {
             this->field_04C1 = 0;
             if (this->field_04AB != -1) {
-              sVar12 = this->field_04A5;
-              sVar17 = this->field_04A9;
-              sVar18 = this->field_04A7;
-              if (((sVar12 < 0) || (g_worldGrid.sizeX <= sVar12)) ||
-                 ((sVar18 < 0 ||
-                  (((g_worldGrid.sizeY <= sVar18 || (sVar17 < 0)) || (g_worldGrid.sizeZ <= sVar17)))
+              sVar11 = this->field_04A5;
+              sVar16 = this->field_04A9;
+              sVar17 = this->field_04A7;
+              if (((sVar11 < 0) || (g_worldGrid.sizeX <= sVar11)) ||
+                 ((sVar17 < 0 ||
+                  (((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)) || (g_worldGrid.sizeZ <= sVar16)))
                   ))) {
-                pSVar7 = (STWorldObject *)0x0;
+                pSVar6 = (STWorldObject *)0x0;
               }
               else {
-                pSVar7 = g_worldGrid.cells
-                         [(int)sVar17 * (int)g_worldGrid.planeStride +
-                          (int)sVar18 * (int)g_worldGrid.sizeX + (int)sVar12].objects[0];
+                pSVar6 = g_worldGrid.cells
+                         [(int)sVar16 * (int)g_worldGrid.planeStride +
+                          (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
               }
-              if (*(int *)&pSVar7->field_0x18 != this->field_04AB) {
+              if (*(int *)&pSVar6->field_0x18 != this->field_04AB) {
                 this->field_04AB = 0xffffffff;
               }
             }
           }
-          iVar6 = thunk_FUN_0048d440((AnonShape_0048D440_9DC42AE7 *)this);
-          if (iVar6 == 0) {
+          iVar5 = thunk_FUN_0048d440(this);
+          if (iVar5 == 0) {
             sub_004602B0(this);
             *(undefined4 *)&this->field_0x4d5 = 0;
             goto cf_common_exit_00469979;
           }
-          if (iVar6 != 1) {
-            iVar6 = (int)this->field_04A9;
+          if (iVar5 != 1) {
+            iVar5 = (int)this->field_04A9;
             *(undefined4 *)&this->field_0x4cd = 0;
             *(undefined4 *)&this->field_0x4d5 = 6;
             this->field_00B7 = 3;
@@ -783,9 +783,9 @@ LAB_00466bff:
               sub_00481520(this,(int)this->field_049B,(int)this->field_049D,this->field_049F + 1);
             }
             else {
-              iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x1efd,0,0,
+              iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x1efd,0,0,
                                          "%s","STBoatC::LoadRC, LOADRC_MINE");
-              if (iVar6 != 0) {
+              if (iVar5 != 0) {
                 STDebugBreak(); /* noreturn in standalone pseudocode */
               }
             }
@@ -793,16 +793,16 @@ LAB_00466bff:
           }
         }
         if (*(int *)&this->field_0x4cd % 10 != 1) goto cf_common_exit_00468C50;
-        sVar12 = this->field_049B;
-        sVar17 = this->field_049F;
-        sVar18 = this->field_049D;
-        if ((((sVar12 < 0) || (g_worldGrid.sizeX <= sVar12)) ||
-            ((sVar18 < 0 ||
-             (((g_worldGrid.sizeY <= sVar18 || (sVar17 < 0)) || (g_worldGrid.sizeZ <= sVar17))))))
-           || ((pSVar7 = g_worldGrid.cells
-                         [(int)sVar17 * (int)g_worldGrid.planeStride +
-                          (int)sVar18 * (int)g_worldGrid.sizeX + (int)sVar12].objects[0],
-               pSVar7 == (STWorldObject *)0x0 || (*(int *)&pSVar7->field_0x18 != this->field_04A1)))
+        sVar11 = this->field_049B;
+        sVar16 = this->field_049F;
+        sVar17 = this->field_049D;
+        if ((((sVar11 < 0) || (g_worldGrid.sizeX <= sVar11)) ||
+            ((sVar17 < 0 ||
+             (((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)) || (g_worldGrid.sizeZ <= sVar16))))))
+           || ((pSVar6 = g_worldGrid.cells
+                         [(int)sVar16 * (int)g_worldGrid.planeStride +
+                          (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0],
+               pSVar6 == (STWorldObject *)0x0 || (*(int *)&pSVar6->field_0x18 != this->field_04A1)))
            ) {
           sub_0048D930(this);
           *(undefined4 *)&this->field_0x4cd = 0;
@@ -811,61 +811,62 @@ LAB_00468b38:
           this->field_00B7 = 3;
           goto LAB_00468b42;
         }
-        if ((*(int *)&pSVar7[0x21].field_0x10 == 0) && (*(int *)&pSVar7[0x10].field_0x5 != 6)) {
-          thunk_FUN_004e1930(pSVar7,&local_8,0);
-          iVar6 = thunk_FUN_00430910(local_8);
-          local_18 = thunk_FUN_004e1930(pSVar7,&local_8,iVar6);
-          if (local_18 == iVar6) {
-            thunk_FUN_004e16d0(pSVar7,this->field_0018);
+        if ((*(int *)&pSVar6[0x21].field_0x10 == 0) && (*(int *)&pSVar6[0x10].field_0x5 != 6)) {
+          thunk_FUN_004e1930(pSVar6,&local_8,0);
+          iVar5 = thunk_FUN_00430910(local_8);
+          local_18 = thunk_FUN_004e1930(pSVar6,&local_8,iVar5);
+          if (local_18 == iVar5) {
+            thunk_FUN_004e16d0(pSVar6,this->field_0018);
             if (*(int *)&this->field_0x4cd % 0x78 == 1) {
-              SVar2 = this->field_06F7;
-              if (SVar2 == CASE_8) {
-                pSVar15 = this->vtable;
-                uVar25 = 0xfc;
+              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+              iVar7 = *(int *)((int)this->field_06CB + 0x2c);
+              if (iVar7 == 8) {
+                pSVar14 = this->vtable;
+                uVar24 = 0xfc;
 LAB_0046739a:
-                (*pSVar15->vfunc_90)(this,3,uVar25);
+                (*pSVar14->vfunc_90)(this,3,uVar24);
               }
-              else if (SVar2 == CASE_14) {
-                (*this->vtable->vfunc_90)(this,3,0x160);
+              else if (iVar7 == 0x14) {
+                this->vfunc_90(3,0x160);
               }
-              else if (SVar2 == CASE_1A) {
-                pSVar15 = this->vtable;
-                uVar25 = 0x19f;
+              else if (iVar7 == 0x1a) {
+                pSVar14 = this->vtable;
+                uVar24 = 0x19f;
                 goto LAB_0046739a;
               }
             }
             if (local_8 == 0xdc) {
-              iVar8 = this->field_07D2 + 1;
-              this->field_07D2 = iVar8;
-              if (0x28 < iVar8 + this->field_07D6 + this->field_07DA) {
+              iVar7 = this->field_07D2 + 1;
+              this->field_07D2 = iVar7;
+              if (0x28 < iVar7 + this->field_07D6 + this->field_07DA) {
                 this->field_07D2 = (0x28 - this->field_07D6) - this->field_07DA;
               }
             }
             else if (local_8 == 0xdd) {
-              iVar8 = this->field_07D6 + 1;
-              this->field_07D6 = iVar8;
-              if (0x28 < iVar8 + this->field_07D2 + this->field_07DA) {
+              iVar7 = this->field_07D6 + 1;
+              this->field_07D6 = iVar7;
+              if (0x28 < iVar7 + this->field_07D2 + this->field_07DA) {
                 this->field_07D6 = (0x28 - this->field_07D2) - this->field_07DA;
               }
             }
             else if (local_8 == 0xde) {
-              iVar8 = this->field_07DA + 1;
-              this->field_07DA = iVar8;
-              if (0x28 < this->field_07D2 + this->field_07D6 + iVar8) {
+              iVar7 = this->field_07DA + 1;
+              this->field_07DA = iVar7;
+              if (0x28 < this->field_07D2 + this->field_07D6 + iVar7) {
                 this->field_07DA = (0x28 - this->field_07D2) - this->field_07D6;
               }
             }
             else {
-              iVar8 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x1f2f,0,0,
+              iVar7 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x1f2f,0,0,
                                          "%s","STBoatC::LoadRC, LOADRC_MINE - unknown resource type");
-              if (iVar8 != 0) {
+              if (iVar7 != 0) {
                 STDebugBreak(); /* noreturn in standalone pseudocode */
               }
             }
           }
-          if (((local_18 < iVar6) ||
+          if (((local_18 < iVar5) ||
               (this->field_07DA + this->field_07D6 + this->field_07D2 == 0x28)) ||
-             (iVar6 = (*pSVar7->vtable[2].slots_00_28[10])(&local_8), iVar6 == 0))
+             (iVar5 = (*pSVar6->vtable[2].slots_00_28[10])(&local_8), iVar5 == 0))
           goto LAB_0046744c;
         }
         else {
@@ -877,34 +878,34 @@ LAB_0046744c:
           sub_00481520(this,(int)this->field_04A5,(int)this->field_04A7,this->field_04A9 + 1);
           sub_00460260(this,0);
         }
-        iVar6 = (*pSVar7->vtable[2].slots_00_28[10])(&local_8);
-        if (iVar6 == 0) {
+        iVar5 = (*pSVar6->vtable[2].slots_00_28[10])(&local_8);
+        if (iVar5 == 0) {
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           STAllPlayersC::_ChangeMD
                     (g_allPlayers_007FA174,0,(int *)this->field_0024,
-                     CONCAT22(extraout_var_00,*(undefined2 *)&pSVar7[1].field_0xe));
-          iVar6 = (*this->vtable->vfunc_D8)(this);
-          return (-(uint)(iVar6 != 0) & 0xfffffffd) + 2;
+                     CONCAT22(extraout_var_00,*(undefined2 *)&pSVar6[1].field_0xe));
+          iVar5 = this->vfunc_D8();
+          return (-(uint)(iVar5 != 0) & 0xfffffffd) + 2;
         }
 cf_common_exit_00468C50:
-        iVar6 = (*this->vtable->vfunc_D8)(this);
-        return (-(uint)(iVar6 != 0) & 0xfffffffd) + 2;
+        iVar5 = this->vfunc_D8();
+        return (-(uint)(iVar5 != 0) & 0xfffffffd) + 2;
       }
-      if (iVar6 != 6) {
-        if (iVar6 != 7) {
-          if (iVar6 == 8) {
-            iVar6 = sub_00460260(this,2);
-            switch(iVar6) {
+      if (iVar5 != 6) {
+        if (iVar5 != 7) {
+          if (iVar5 == 8) {
+            iVar5 = sub_00460260(this,2);
+            switch(iVar5) {
             case 0:
-              iVar6 = sub_00490570(this);
-              if (iVar6 != 1) {
+              iVar5 = sub_00490570(this);
+              if (iVar5 != 1) {
                 *(undefined4 *)&this->field_0x4d5 = 9;
                 this->field_00B7 = 3;
                 goto cf_common_exit_00469979;
               }
-              sVar12 = this->field_04A5;
+              sVar11 = this->field_04A5;
               /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-              piVar14 = (int *)CONCAT22(extraout_var_03,this->field_04A9 + 1);
+              piVar13 = (int *)CONCAT22(extraout_var_03,this->field_04A9 + 1);
               break;
             case 1:
               if ((this->field_04BD == 1) || (this->field_04C1 == 1)) {
@@ -912,21 +913,21 @@ cf_common_exit_00468C50:
                 if (this->field_04BD == 1) {
                   this->field_04BD = 0;
                   if (this->field_04A1 != -1) {
-                    sVar12 = this->field_049B;
-                    sVar17 = this->field_049F;
-                    sVar18 = this->field_049D;
-                    if (((sVar12 < 0) || (g_worldGrid.sizeX <= sVar12)) ||
-                       ((sVar18 < 0 ||
-                        (((g_worldGrid.sizeY <= sVar18 || (sVar17 < 0)) ||
-                         (g_worldGrid.sizeZ <= sVar17)))))) {
-                      pSVar7 = (STWorldObject *)0x0;
+                    sVar11 = this->field_049B;
+                    sVar16 = this->field_049F;
+                    sVar17 = this->field_049D;
+                    if (((sVar11 < 0) || (g_worldGrid.sizeX <= sVar11)) ||
+                       ((sVar17 < 0 ||
+                        (((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)) ||
+                         (g_worldGrid.sizeZ <= sVar16)))))) {
+                      pSVar6 = (STWorldObject *)0x0;
                     }
                     else {
-                      pSVar7 = g_worldGrid.cells
-                               [(int)sVar17 * (int)g_worldGrid.planeStride +
-                                (int)sVar18 * (int)g_worldGrid.sizeX + (int)sVar12].objects[0];
+                      pSVar6 = g_worldGrid.cells
+                               [(int)sVar16 * (int)g_worldGrid.planeStride +
+                                (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
                     }
-                    if (*(int *)&pSVar7->field_0x18 != this->field_04A1) {
+                    if (*(int *)&pSVar6->field_0x18 != this->field_04A1) {
                       this->field_04A1 = 0xffffffff;
                     }
                   }
@@ -937,27 +938,27 @@ cf_common_exit_00468C50:
                 if (this->field_04C1 == 1) {
                   this->field_04C1 = 0;
                   if (this->field_04AB != -1) {
-                    sVar12 = this->field_04A5;
-                    sVar17 = this->field_04A9;
-                    sVar18 = this->field_04A7;
-                    if (((sVar12 < 0) || (g_worldGrid.sizeX <= sVar12)) ||
-                       (((sVar18 < 0 || ((g_worldGrid.sizeY <= sVar18 || (sVar17 < 0)))) ||
-                        (g_worldGrid.sizeZ <= sVar17)))) {
-                      pSVar7 = (STWorldObject *)0x0;
+                    sVar11 = this->field_04A5;
+                    sVar16 = this->field_04A9;
+                    sVar17 = this->field_04A7;
+                    if (((sVar11 < 0) || (g_worldGrid.sizeX <= sVar11)) ||
+                       (((sVar17 < 0 || ((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)))) ||
+                        (g_worldGrid.sizeZ <= sVar16)))) {
+                      pSVar6 = (STWorldObject *)0x0;
                     }
                     else {
-                      pSVar7 = g_worldGrid.cells
-                               [(int)sVar17 * (int)g_worldGrid.planeStride +
-                                (int)sVar18 * (int)g_worldGrid.sizeX + (int)sVar12].objects[0];
+                      pSVar6 = g_worldGrid.cells
+                               [(int)sVar16 * (int)g_worldGrid.planeStride +
+                                (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
                     }
-                    if (*(int *)&pSVar7->field_0x18 != this->field_04AB) {
+                    if (*(int *)&pSVar6->field_0x18 != this->field_04AB) {
                       this->field_04AB = 0xffffffff;
                     }
                   }
                 }
-                iVar6 = thunk_FUN_0048d440((AnonShape_0048D440_9DC42AE7 *)this);
-                if (iVar6 == 0) goto cf_common_exit_00467FE4;
-                if (iVar6 != 1) goto LAB_0046817e;
+                iVar5 = thunk_FUN_0048d440(this);
+                if (iVar5 == 0) goto cf_common_exit_00467FE4;
+                if (iVar5 != 1) goto LAB_0046817e;
                 if ((this->field_04A1 != -1) && (local_c == (undefined4 *)0x0))
                 goto cf_common_exit_004699E9;
                 sub_004602B0(this);
@@ -973,19 +974,19 @@ cf_common_exit_00468C50:
                   goto cf_common_exit_004699E2;
                 }
               }
-              sVar12 = this->field_04A5;
-              sVar17 = this->field_04A9;
-              sVar18 = this->field_04A7;
-              if (((((((sVar12 < 0) || (g_worldGrid.sizeX <= sVar12)) || (sVar18 < 0)) ||
-                    ((g_worldGrid.sizeY <= sVar18 || (sVar17 < 0)))) ||
-                   (g_worldGrid.sizeZ <= sVar17)) ||
+              sVar11 = this->field_04A5;
+              sVar16 = this->field_04A9;
+              sVar17 = this->field_04A7;
+              if (((((((sVar11 < 0) || (g_worldGrid.sizeX <= sVar11)) || (sVar17 < 0)) ||
+                    ((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)))) ||
+                   (g_worldGrid.sizeZ <= sVar16)) ||
                   ((pSVar1 = (STBoatC *)
                              g_worldGrid.cells
-                             [(int)sVar17 * (int)g_worldGrid.planeStride +
-                              (int)sVar18 * (int)g_worldGrid.sizeX + (int)sVar12].objects[0],
+                             [(int)sVar16 * (int)g_worldGrid.planeStride +
+                              (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0],
                    pSVar1 == (STBoatC *)0x0 || (pSVar1->field_0018 != this->field_04AB)))) ||
-                 ((iVar6 = thunk_FUN_004e1490(pSVar1), iVar6 != 1 ||
-                  (iVar6 = thunk_FUN_0048d650(this,(STFishC *)pSVar1), iVar6 != 1))))
+                 ((iVar5 = thunk_FUN_004e1490(pSVar1), iVar5 != 1 ||
+                  (iVar5 = thunk_FUN_0048d650(this,(STFishC *)pSVar1), iVar5 != 1))))
               goto cf_common_exit_004699E9;
               sub_004602B0(this);
               thunk_FUN_004e15f0(pSVar1,this->field_0018);
@@ -996,34 +997,34 @@ cf_common_exit_00468C50:
             default:
               goto cf_common_exit_004699E9;
             case 3:
-              iVar6 = sub_00490570(this);
-              if (iVar6 == 1) {
-                sVar12 = this->field_04A5;
+              iVar5 = sub_00490570(this);
+              if (iVar5 == 1) {
+                sVar11 = this->field_04A5;
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                piVar14 = (int *)CONCAT22((short)((uint)&this->field_04B3 >> 0x10),
+                piVar13 = (int *)CONCAT22((short)((uint)&this->field_04B3 >> 0x10),
                                           this->field_04A9 + 1);
                 goto LAB_00467e31;
               }
               goto LAB_00467e48;
             case -1:
-              iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x201c,0,0,
+              iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x201c,0,0,
                                          "%s","STBoatC::LoadRC, correct move to depot error");
-              if (iVar6 != 0) {
+              if (iVar5 != 0) {
                 STDebugBreak(); /* noreturn in standalone pseudocode */
               }
-              iVar6 = 0x201c;
+              iVar5 = 0x201c;
 cf_error_exit_004660E9:
               RaiseInternalException
                         (0xffff,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",
-                         iVar6);
+                         iVar5);
               return 0xffff;
             }
             goto LAB_00467da5;
           }
-          if (iVar6 == 9) {
+          if (iVar5 == 9) {
             *(int *)&this->field_0x4cd = *(int *)&this->field_0x4cd + 1;
-            iVar6 = Defence(this,2);
-            if (iVar6 == -1) {
+            iVar5 = Defence(this,2);
+            if (iVar5 == -1) {
               return -1;
             }
             if (this->field_082E != 0) {
@@ -1033,49 +1034,49 @@ cf_error_exit_004660E9:
               if (*(int *)&this->field_0x4cd % 0x32 != 1) {
                 return 2;
               }
-              sVar12 = this->field_04A5;
-              sVar17 = this->field_04A9;
-              sVar18 = this->field_04A7;
-              if (sVar12 < 0) {
+              sVar11 = this->field_04A5;
+              sVar16 = this->field_04A9;
+              sVar17 = this->field_04A7;
+              if (sVar11 < 0) {
                 return 2;
               }
-              if (g_worldGrid.sizeX <= sVar12) {
-                return 2;
-              }
-              if (sVar18 < 0) {
-                return 2;
-              }
-              if (g_worldGrid.sizeY <= sVar18) {
+              if (g_worldGrid.sizeX <= sVar11) {
                 return 2;
               }
               if (sVar17 < 0) {
                 return 2;
               }
-              if (g_worldGrid.sizeZ <= sVar17) {
+              if (g_worldGrid.sizeY <= sVar17) {
+                return 2;
+              }
+              if (sVar16 < 0) {
+                return 2;
+              }
+              if (g_worldGrid.sizeZ <= sVar16) {
                 return 2;
               }
               pSVar1 = (STBoatC *)
                        g_worldGrid.cells
-                       [(int)sVar17 * (int)g_worldGrid.planeStride +
-                        (int)sVar18 * (int)g_worldGrid.sizeX + (int)sVar12].objects[0];
+                       [(int)sVar16 * (int)g_worldGrid.planeStride +
+                        (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
               if (pSVar1 == (STBoatC *)0x0) {
                 return 2;
               }
               if (pSVar1->field_0018 != this->field_04AB) {
                 return 2;
               }
-              iVar6 = thunk_FUN_004e1490(pSVar1);
-              if (iVar6 != 1) {
+              iVar5 = thunk_FUN_004e1490(pSVar1);
+              if (iVar5 != 1) {
                 return 2;
               }
-              iVar6 = thunk_FUN_0048d650(this,(STFishC *)pSVar1);
-              if (iVar6 != 1) {
+              iVar5 = thunk_FUN_0048d650(this,(STFishC *)pSVar1);
+              if (iVar5 != 1) {
                 return 2;
               }
               thunk_FUN_004e15f0(pSVar1,this->field_0018);
-              iVar6 = (int)this->field_04C9;
-              sVar17 = this->field_04C7;
-              sVar12 = this->field_04C5;
+              iVar5 = (int)this->field_04C9;
+              sVar16 = this->field_04C7;
+              sVar11 = this->field_04C5;
               *(undefined4 *)&this->field_0x4cd = 0;
               *(undefined4 *)&this->field_0x4d5 = 10;
               this->field_00B7 = 0;
@@ -1085,20 +1086,20 @@ cf_error_exit_004660E9:
             if (this->field_04BD == 1) {
               this->field_04BD = 0;
               if (this->field_04A1 != -1) {
-                sVar12 = this->field_049B;
-                sVar17 = this->field_049F;
-                sVar18 = this->field_049D;
-                if (((((sVar12 < 0) || (g_worldGrid.sizeX <= sVar12)) || (sVar18 < 0)) ||
-                    ((g_worldGrid.sizeY <= sVar18 || (sVar17 < 0)))) ||
-                   (g_worldGrid.sizeZ <= sVar17)) {
-                  pSVar7 = (STWorldObject *)0x0;
+                sVar11 = this->field_049B;
+                sVar16 = this->field_049F;
+                sVar17 = this->field_049D;
+                if (((((sVar11 < 0) || (g_worldGrid.sizeX <= sVar11)) || (sVar17 < 0)) ||
+                    ((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)))) ||
+                   (g_worldGrid.sizeZ <= sVar16)) {
+                  pSVar6 = (STWorldObject *)0x0;
                 }
                 else {
-                  pSVar7 = g_worldGrid.cells
-                           [(int)sVar17 * (int)g_worldGrid.planeStride +
-                            (int)sVar18 * (int)g_worldGrid.sizeX + (int)sVar12].objects[0];
+                  pSVar6 = g_worldGrid.cells
+                           [(int)sVar16 * (int)g_worldGrid.planeStride +
+                            (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
                 }
-                if (*(int *)&pSVar7->field_0x18 != this->field_04A1) {
+                if (*(int *)&pSVar6->field_0x18 != this->field_04A1) {
                   this->field_04A1 = 0xffffffff;
                 }
               }
@@ -1106,44 +1107,44 @@ cf_error_exit_004660E9:
             if (this->field_04C1 == 1) {
               this->field_04C1 = 0;
               if (this->field_04AB != -1) {
-                sVar12 = this->field_04A5;
-                sVar17 = this->field_04A9;
-                sVar18 = this->field_04A7;
-                if (((sVar12 < 0) || (g_worldGrid.sizeX <= sVar12)) ||
-                   ((sVar18 < 0 ||
-                    (((g_worldGrid.sizeY <= sVar18 || (sVar17 < 0)) || (g_worldGrid.sizeZ <= sVar17)
+                sVar11 = this->field_04A5;
+                sVar16 = this->field_04A9;
+                sVar17 = this->field_04A7;
+                if (((sVar11 < 0) || (g_worldGrid.sizeX <= sVar11)) ||
+                   ((sVar17 < 0 ||
+                    (((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)) || (g_worldGrid.sizeZ <= sVar16)
                      ))))) {
-                  pSVar7 = (STWorldObject *)0x0;
+                  pSVar6 = (STWorldObject *)0x0;
                 }
                 else {
-                  pSVar7 = g_worldGrid.cells
-                           [(int)sVar17 * (int)g_worldGrid.planeStride +
-                            (int)sVar18 * (int)g_worldGrid.sizeX + (int)sVar12].objects[0];
+                  pSVar6 = g_worldGrid.cells
+                           [(int)sVar16 * (int)g_worldGrid.planeStride +
+                            (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
                 }
-                if (*(int *)&pSVar7->field_0x18 != this->field_04AB) {
+                if (*(int *)&pSVar6->field_0x18 != this->field_04AB) {
                   this->field_04AB = 0xffffffff;
                 }
               }
-              bVar4 = true;
+              bVar3 = true;
               if (this->field_04AB == -1) goto LAB_00468493;
             }
             else {
 LAB_00468493:
-              bVar4 = false;
+              bVar3 = false;
             }
-            iVar6 = thunk_FUN_0048d440((AnonShape_0048D440_9DC42AE7 *)this);
-            if (iVar6 != 0) {
-              if (iVar6 == 7) {
+            iVar5 = thunk_FUN_0048d440(this);
+            if (iVar5 != 0) {
+              if (iVar5 == 7) {
                 if (this->field_04AB == -1) {
                   return 2;
                 }
-                if (!bVar4) {
+                if (!bVar3) {
                   return 2;
                 }
                 if (this->field_04AB == -1) {
                   return 2;
                 }
-                if (!bVar4) {
+                if (!bVar3) {
                   return 2;
                 }
                 *(undefined4 *)&this->field_0x4cd = 0;
@@ -1160,39 +1161,39 @@ LAB_00468493:
             sub_004602B0(this);
             goto LAB_00469972;
           }
-          if (iVar6 != 10) {
-            if (iVar6 == 0xb) {
+          if (iVar5 != 10) {
+            if (iVar5 == 0xb) {
               if (this->field_04D9 == 0) {
-                iVar8 = (ushort)(this->field_04A9 * 200) + 300;
+                iVar7 = (ushort)(this->field_04A9 * 200) + 300;
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                iVar6 = CONCAT22((short)((uint)iVar8 >> 0x10),this->field_04A7 + 1) * 0xc9;
+                iVar5 = CONCAT22((short)((uint)iVar7 >> 0x10),this->field_04A7 + 1) * 0xc9;
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                iVar22 = CONCAT22((short)((uint)iVar6 >> 0x10),this->field_04A5 + 1);
+                iVar21 = CONCAT22((short)((uint)iVar5 >> 0x10),this->field_04A5 + 1);
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                uVar5 = (*this->vtable->vfunc_10)
+                uVar4 = (*this->vtable->vfunc_10)
                                   (this->field_0041,this->field_0043,
-                                   CONCAT22((short)((uint)(iVar22 * 0x19) >> 0x10),this->field_0045)
-                                   ,(short)(iVar22 * 0xc9),(short)iVar6,iVar8);
-                this->field_04CB = uVar5;
+                                   CONCAT22((short)((uint)(iVar21 * 0x19) >> 0x10),this->field_0045)
+                                   ,(short)(iVar21 * 0xc9),(short)iVar5,iVar7);
+                this->field_04CB = uVar4;
                 this->field_04D9 = 1;
               }
               if (this->field_04D9 == 1) {
-                uVar9 = sub_004176C0(this,this->field_04CB);
-                uVar9 = sub_00417910(this,(short)uVar9);
-                if (uVar9 == 0xffffffff) {
-                  iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2196,0,0,
+                uVar8 = sub_004176C0(this,this->field_04CB);
+                uVar8 = sub_00417910(this,(short)uVar8);
+                if (uVar8 == 0xffffffff) {
+                  iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2196,0,0,
                                              "%s","STBoatC::LoadRC, LOADRC_PDEPOT"
                                             );
-                  if (iVar6 != 0) {
+                  if (iVar5 != 0) {
                     STDebugBreak(); /* noreturn in standalone pseudocode */
                   }
-                  iVar6 = 0x2197;
+                  iVar5 = 0x2197;
                   goto cf_error_exit_004660E9;
                 }
-                if (uVar9 == 0) {
+                if (uVar8 == 0) {
                   this->field_04D9 = 2;
-                  iVar6 = (*this->vtable->vfunc_D8)(this);
-                  return (-(uint)(iVar6 != 0) & 0xfffffffd) + 2;
+                  iVar5 = this->vfunc_D8();
+                  return (-(uint)(iVar5 != 0) & 0xfffffffd) + 2;
                 }
               }
               if (this->field_04D9 == 2) {
@@ -1203,120 +1204,122 @@ LAB_00468493:
               }
               if (this->field_04D9 == 3) {
                 local_10 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_18,&local_14);
+                /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                 param_1 = (int *)0x0;
                 if (this->field_02BF != '\0') {
                   local_c = (undefined4 *)&this->field_0x2b3;
                   do {
-                    puVar10 = (undefined4 *)
-                              thunk_FUN_0041dc40(local_2c,(short)*local_c,
-                                                 *(undefined2 *)(local_c + 1),this->field_006C);
-                    local_24 = *puVar10;
-                    local_20 = *(short *)(puVar10 + 1);
+                    puVar9 = (undefined4 *)
+                             thunk_FUN_0041dc40(local_2c,(short)*local_c,*(ushort *)(local_c + 1),
+                                                this->field_006C);
+                    local_24 = *puVar9;
+                    local_20 = *(short *)(puVar9 + 1);
                     if (DAT_0080732c == 1) {
-                      bVar24 = 0;
-                      sVar23 = 0;
-                      uVar9 = this->field_001C * 0x41c64e6d + 0x3039;
-                      iVar22 = -1;
-                      this->field_001C = uVar9;
-                      sVar21 = 0;
+                      bVar23 = 0;
+                      sVar22 = 0;
+                      uVar8 = this->field_001C * 0x41c64e6d + 0x3039;
+                      iVar21 = -1;
+                      this->field_001C = uVar8;
                       sVar20 = 0;
-                      uVar11 = uVar9 * 0x41c64e6d + 0x3039;
                       sVar19 = 0;
-                      this->field_001C = uVar11;
+                      uVar10 = uVar8 * 0x41c64e6d + 0x3039;
                       sVar18 = 0;
+                      this->field_001C = uVar10;
                       sVar17 = 0;
-                      local_1c = uVar11 * 0x41c64e6d + 0x3039;
-                      sVar12 = 0;
+                      sVar16 = 0;
+                      local_1c = uVar10 * 0x41c64e6d + 0x3039;
+                      sVar11 = 0;
                       this->field_001C = local_1c;
-                      lVar16 = Library::MSVCRT::__ftol();
-                      iVar6 = (int)(short)lVar16 + (uVar9 >> 0x10) % 7 + (int)this->field_0045 + -3
+                      lVar15 = Library::MSVCRT::__ftol();
+                      iVar5 = (int)(short)lVar15 + (uVar8 >> 0x10) % 7 + (int)this->field_0045 + -3
                               + (int)local_20;
                       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                      iVar8 = ((uVar11 >> 0x10) % 7 + (int)this->field_0043) - (int)local_24._2_2_;
-                      uVar9 = local_1c;
+                      iVar7 = ((uVar10 >> 0x10) % 7 + (int)this->field_0043) - (int)local_24._2_2_;
+                      uVar8 = local_1c;
                     }
                     else {
-                      uVar11 = this->field_001C * 0x41c64e6d + 0x3039;
-                      bVar24 = 0;
-                      sVar23 = 0;
-                      uVar13 = uVar11 * 0x41c64e6d + 0x3039;
-                      iVar22 = -1;
-                      sVar21 = 0;
+                      uVar10 = this->field_001C * 0x41c64e6d + 0x3039;
+                      bVar23 = 0;
+                      sVar22 = 0;
+                      uVar12 = uVar10 * 0x41c64e6d + 0x3039;
+                      iVar21 = -1;
                       sVar20 = 0;
                       sVar19 = 0;
                       sVar18 = 0;
                       sVar17 = 0;
-                      this->field_001C = uVar11;
-                      uVar9 = uVar13 * 0x41c64e6d + 0x3039;
-                      sVar12 = 0;
-                      this->field_001C = uVar13;
-                      this->field_001C = uVar9;
-                      iVar6 = (uVar11 >> 0x10) % 7 + (int)this->field_0045 + -3 + (int)local_20;
+                      sVar16 = 0;
+                      this->field_001C = uVar10;
+                      uVar8 = uVar12 * 0x41c64e6d + 0x3039;
+                      sVar11 = 0;
+                      this->field_001C = uVar12;
+                      this->field_001C = uVar8;
+                      iVar5 = (uVar10 >> 0x10) % 7 + (int)this->field_0045 + -3 + (int)local_20;
                       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                       local_24._2_2_ = (short)((uint)local_24 >> 0x10);
                       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                      iVar8 = ((uVar13 >> 0x10) % 7 + (int)this->field_0043) - (int)local_24._2_2_;
+                      iVar7 = ((uVar12 >> 0x10) % 7 + (int)this->field_0043) - (int)local_24._2_2_;
                     }
                     TraksClassTy::TraksCreate
                               (g_traksClass_00802A7C,1,2,7,
-                               (uVar9 >> 0x10) % 7 + (int)this->field_0041 + -3 +
-                               (int)(short)local_24,iVar8 + -3,iVar6,sVar12,sVar17,sVar18,sVar19,
-                               sVar20,sVar21,iVar22,sVar23,bVar24);
+                               (uVar8 >> 0x10) % 7 + (int)this->field_0041 + -3 +
+                               (int)(short)local_24,iVar7 + -3,iVar5,sVar11,sVar16,sVar17,sVar18,
+                               sVar19,sVar20,iVar21,sVar22,bVar23);
+                    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                     param_1 = (int *)((int)param_1 + 1);
                     local_c = (undefined4 *)((int)local_c + 6);
                   } while ((int)param_1 < (int)(uint)(byte)this->field_02BF);
                 }
                 if (local_10 == -1) {
-                  iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x21bc,0,0,
+                  iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x21bc,0,0,
                                              "%s",
                                              "STBoatC::LoadRC, LOADRC_PDEPOT 2");
-                  if (iVar6 != 0) {
+                  if (iVar5 != 0) {
                     STDebugBreak(); /* noreturn in standalone pseudocode */
                   }
-                  iVar6 = 0x21bd;
+                  iVar5 = 0x21bd;
                   goto cf_error_exit_004660E9;
                 }
                 if (local_10 == 0) {
                   *(undefined4 *)&this->field_0x4d5 = 0xc;
                   this->field_04D9 = 0;
-                  iVar6 = (*this->vtable->vfunc_D8)(this);
-                  return (-(uint)(iVar6 != 0) & 0xfffffffd) + 2;
+                  iVar5 = this->vfunc_D8();
+                  return (-(uint)(iVar5 != 0) & 0xfffffffd) + 2;
                 }
               }
               goto cf_common_exit_004693C9;
             }
-            if (iVar6 != 0xc) {
-              if (iVar6 == 0xd) {
-                iVar6 = *(int *)&this->field_0x4d1 + 1;
-                *(int *)&this->field_0x4d1 = iVar6;
-                if (0x45 < iVar6) {
+            if (iVar5 != 0xc) {
+              if (iVar5 == 0xd) {
+                iVar5 = *(int *)&this->field_0x4d1 + 1;
+                *(int *)&this->field_0x4d1 = iVar5;
+                if (0x45 < iVar5) {
                   if (this->field_04D9 == 0) {
                     /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
-                    iVar8 = CONCAT22((short)((uint)in_EDX >> 0x10),this->field_04C7 * 0xc9) + 100;
+                    iVar7 = CONCAT22((short)((uint)in_EDX >> 0x10),this->field_04C7 * 0xc9) + 100;
                     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                    uVar5 = (*this->vtable->vfunc_10)
+                    uVar4 = (*this->vtable->vfunc_10)
                                       (this->field_0041,this->field_0043,
-                                       CONCAT22((short)((uint)iVar8 >> 0x10),this->field_0045),
-                                       this->field_04C5 * 0xc9 + 100,(short)iVar8,
-                                       CONCAT22((short)((uint)iVar6 >> 0x10),this->field_04C9 * 200)
+                                       CONCAT22((short)((uint)iVar7 >> 0x10),this->field_0045),
+                                       this->field_04C5 * 0xc9 + 100,(short)iVar7,
+                                       CONCAT22((short)((uint)iVar5 >> 0x10),this->field_04C9 * 200)
                                        + 100);
-                    this->field_04CB = uVar5;
+                    this->field_04CB = uVar4;
                     this->field_04D9 = 1;
                   }
                   if (this->field_04D9 == 1) {
-                    uVar9 = sub_004176C0(this,this->field_04CB);
-                    uVar9 = sub_00417910(this,(short)uVar9);
-                    if (uVar9 == 0xffffffff) {
-                      iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x223c,0,0,
+                    uVar8 = sub_004176C0(this,this->field_04CB);
+                    uVar8 = sub_00417910(this,(short)uVar8);
+                    if (uVar8 == 0xffffffff) {
+                      iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x223c,0,0,
                                                  "%s",
                                                  "STBoatC::LoadRC, LOADRC_ODEPOT");
-                      if (iVar6 != 0) {
+                      if (iVar5 != 0) {
                         STDebugBreak(); /* noreturn in standalone pseudocode */
                       }
-                      iVar6 = 0x223d;
+                      iVar5 = 0x223d;
                       goto cf_error_exit_004660E9;
                     }
-                    if (uVar9 == 0) {
+                    if (uVar8 == 0) {
                       this->field_04D9 = 2;
                       goto cf_common_exit_004699E9;
                     }
@@ -1329,106 +1332,108 @@ LAB_00468493:
                   }
                   if (this->field_04D9 == 3) {
                     local_10 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_14,&local_18);
+                    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                     param_1 = (int *)0x0;
                     if (this->field_02BF != '\0') {
                       local_c = (undefined4 *)&this->field_0x2b3;
                       do {
-                        puVar10 = (undefined4 *)
-                                  thunk_FUN_0041dc40(local_2c,(short)*local_c,
-                                                     *(undefined2 *)(local_c + 1),this->field_006C);
-                        local_24 = *puVar10;
-                        local_20 = *(short *)(puVar10 + 1);
+                        puVar9 = (undefined4 *)
+                                 thunk_FUN_0041dc40(local_2c,(short)*local_c,
+                                                    *(ushort *)(local_c + 1),this->field_006C);
+                        local_24 = *puVar9;
+                        local_20 = *(short *)(puVar9 + 1);
                         if (DAT_0080732c == 1) {
-                          bVar24 = 0;
-                          sVar23 = 0;
-                          iVar22 = -1;
-                          uVar9 = this->field_001C * 0x41c64e6d + 0x3039;
-                          sVar21 = 0;
-                          this->field_001C = uVar9;
+                          bVar23 = 0;
+                          sVar22 = 0;
+                          iVar21 = -1;
+                          uVar8 = this->field_001C * 0x41c64e6d + 0x3039;
                           sVar20 = 0;
+                          this->field_001C = uVar8;
                           sVar19 = 0;
-                          uVar11 = uVar9 * 0x41c64e6d + 0x3039;
                           sVar18 = 0;
-                          this->field_001C = uVar11;
-                          local_1c = uVar11 * 0x41c64e6d + 0x3039;
+                          uVar10 = uVar8 * 0x41c64e6d + 0x3039;
                           sVar17 = 0;
+                          this->field_001C = uVar10;
+                          local_1c = uVar10 * 0x41c64e6d + 0x3039;
+                          sVar16 = 0;
                           this->field_001C = local_1c;
-                          sVar12 = 0;
-                          lVar16 = Library::MSVCRT::__ftol();
-                          iVar6 = (int)(short)lVar16 + (uVar9 >> 0x10) % 7 + (int)this->field_0045 +
+                          sVar11 = 0;
+                          lVar15 = Library::MSVCRT::__ftol();
+                          iVar5 = (int)(short)lVar15 + (uVar8 >> 0x10) % 7 + (int)this->field_0045 +
                                   -3 + (int)local_20;
                           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                          iVar8 = ((uVar11 >> 0x10) % 7 + (int)this->field_0043) -
+                          iVar7 = ((uVar10 >> 0x10) % 7 + (int)this->field_0043) -
                                   (int)local_24._2_2_;
-                          uVar9 = local_1c;
+                          uVar8 = local_1c;
                         }
                         else {
-                          bVar24 = 0;
-                          uVar11 = this->field_001C * 0x41c64e6d + 0x3039;
-                          sVar23 = 0;
-                          iVar22 = -1;
-                          uVar13 = uVar11 * 0x41c64e6d + 0x3039;
-                          sVar21 = 0;
+                          bVar23 = 0;
+                          uVar10 = this->field_001C * 0x41c64e6d + 0x3039;
+                          sVar22 = 0;
+                          iVar21 = -1;
+                          uVar12 = uVar10 * 0x41c64e6d + 0x3039;
                           sVar20 = 0;
                           sVar19 = 0;
                           sVar18 = 0;
                           sVar17 = 0;
-                          this->field_001C = uVar11;
-                          uVar9 = uVar13 * 0x41c64e6d + 0x3039;
-                          sVar12 = 0;
-                          this->field_001C = uVar13;
-                          this->field_001C = uVar9;
-                          iVar6 = (uVar11 >> 0x10) % 7 + (int)this->field_0045 + -3 + (int)local_20;
+                          sVar16 = 0;
+                          this->field_001C = uVar10;
+                          uVar8 = uVar12 * 0x41c64e6d + 0x3039;
+                          sVar11 = 0;
+                          this->field_001C = uVar12;
+                          this->field_001C = uVar8;
+                          iVar5 = (uVar10 >> 0x10) % 7 + (int)this->field_0045 + -3 + (int)local_20;
                           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                           local_24._2_2_ = (short)((uint)local_24 >> 0x10);
                           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                          iVar8 = ((uVar13 >> 0x10) % 7 + (int)this->field_0043) -
+                          iVar7 = ((uVar12 >> 0x10) % 7 + (int)this->field_0043) -
                                   (int)local_24._2_2_;
                         }
                         TraksClassTy::TraksCreate
                                   (g_traksClass_00802A7C,1,2,7,
-                                   (uVar9 >> 0x10) % 7 + (int)this->field_0041 + -3 +
-                                   (int)(short)local_24,iVar8 + -3,iVar6,sVar12,sVar17,sVar18,sVar19
-                                   ,sVar20,sVar21,iVar22,sVar23,bVar24);
+                                   (uVar8 >> 0x10) % 7 + (int)this->field_0041 + -3 +
+                                   (int)(short)local_24,iVar7 + -3,iVar5,sVar11,sVar16,sVar17,sVar18
+                                   ,sVar19,sVar20,iVar21,sVar22,bVar23);
+                        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                         param_1 = (int *)((int)param_1 + 1);
                         local_c = (undefined4 *)((int)local_c + 6);
                       } while ((int)param_1 < (int)(uint)(byte)this->field_02BF);
                     }
                     if (local_10 == -1) {
-                      iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2262,0,0,
+                      iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2262,0,0,
                                                  "%s",
                                                  "STBoatC::LoadRC, LOADRC_ODEPOT 2");
-                      if (iVar6 != 0) {
+                      if (iVar5 != 0) {
                         STDebugBreak(); /* noreturn in standalone pseudocode */
                       }
-                      iVar6 = 0x2263;
+                      iVar5 = 0x2263;
                       goto cf_error_exit_004660E9;
                     }
                     if (local_10 == 0) {
                       *(undefined4 *)&this->field_0x4cd = 0;
                       *(undefined4 *)&this->field_0x4d1 = 0;
                       this->field_00B7 = 3;
-                      iVar6 = thunk_FUN_0048d440((AnonShape_0048D440_9DC42AE7 *)this);
-                      if (iVar6 == 0) {
+                      iVar5 = thunk_FUN_0048d440(this);
+                      if (iVar5 == 0) {
                         sub_004602B0(this);
                         *(undefined4 *)&this->field_0x4d5 = 0;
                         this->field_00B7 = 0;
-                        iVar6 = Defence(this,0);
-                        return (-(uint)(iVar6 != -1) & 3) - 1;
+                        iVar5 = Defence(this,0);
+                        return (-(uint)(iVar5 != -1) & 3) - 1;
                       }
-                      if (iVar6 == 1) {
-                        sVar12 = this->field_049F;
-                        sVar17 = this->field_049D;
-                        sVar18 = this->field_049B;
+                      if (iVar5 == 1) {
+                        sVar11 = this->field_049F;
+                        sVar16 = this->field_049D;
+                        sVar17 = this->field_049B;
                         *(undefined4 *)&this->field_0x4d5 = 0xe;
                       }
                       else {
-                        sVar12 = this->field_04A9;
-                        sVar17 = this->field_04A7;
-                        sVar18 = this->field_04A5;
+                        sVar11 = this->field_04A9;
+                        sVar16 = this->field_04A7;
+                        sVar17 = this->field_04A5;
                         *(undefined4 *)&this->field_0x4d5 = 7;
                       }
-                      sub_00481520(this,(int)sVar18,(int)sVar17,sVar12 + 1);
+                      sub_00481520(this,(int)sVar17,(int)sVar16,sVar11 + 1);
                       sub_00460260(this,0);
                     }
                   }
@@ -1436,17 +1441,17 @@ LAB_00468493:
                 }
                 goto cf_common_exit_004699E9;
               }
-              if (iVar6 != 0xe) {
-                iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x22ad,0,0,
+              if (iVar5 != 0xe) {
+                iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x22ad,0,0,
                                            "%s","STBoatC::LoadRC - incorrect entry"
                                           );
-                if (iVar6 == 0) {
+                if (iVar5 == 0) {
                   return -1;
                 }
                 STDebugBreak(); /* noreturn in standalone pseudocode */
               }
-              iVar6 = sub_00460260(this,2);
-              switch(iVar6) {
+              iVar5 = sub_00460260(this,2);
+              switch(iVar5) {
               case 1:
                 sub_004602B0(this);
               case 0:
@@ -1454,45 +1459,45 @@ LAB_00468493:
                 *(undefined4 *)&this->field_0x4d5 = 1;
                 this->field_00B7 = 3;
               case 3:
-                iVar6 = (int)this->field_049D;
-                iVar8 = (int)this->field_049B;
-                iVar22 = this->field_049F + 1;
+                iVar5 = (int)this->field_049D;
+                iVar7 = (int)this->field_049B;
+                iVar21 = this->field_049F + 1;
                 break;
               default:
                 goto cf_common_exit_004699E9;
               case -1:
-                iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x228f,0,0,
+                iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x228f,0,0,
                                            "%s","STBoatC::LoadRC, LOADRC_MOVEWAITUNLOAD error"
                                           );
-                if (iVar6 != 0) {
+                if (iVar5 != 0) {
                   STDebugBreak(); /* noreturn in standalone pseudocode */
                 }
-                iVar6 = 0x228f;
+                iVar5 = 0x228f;
                 goto cf_error_exit_004660E9;
               }
               goto cf_common_exit_004699DA;
             }
-            iVar6 = *(int *)&this->field_0x4cd + 1;
-            *(int *)&this->field_0x4cd = iVar6;
+            iVar5 = *(int *)&this->field_0x4cd + 1;
+            *(int *)&this->field_0x4cd = iVar5;
             if ((this->field_04BD == 1) || (this->field_04C1 == 1)) {
               local_c = (undefined4 *)0x0;
               if (this->field_04BD == 1) {
                 this->field_04BD = 0;
                 if (this->field_04A1 != -1) {
-                  sVar12 = this->field_049B;
-                  sVar17 = this->field_049F;
-                  sVar18 = this->field_049D;
-                  if (((((sVar12 < 0) || (g_worldGrid.sizeX <= sVar12)) || (sVar18 < 0)) ||
-                      ((g_worldGrid.sizeY <= sVar18 || (sVar17 < 0)))) ||
-                     (g_worldGrid.sizeZ <= sVar17)) {
-                    pSVar7 = (STWorldObject *)0x0;
+                  sVar11 = this->field_049B;
+                  sVar16 = this->field_049F;
+                  sVar17 = this->field_049D;
+                  if (((((sVar11 < 0) || (g_worldGrid.sizeX <= sVar11)) || (sVar17 < 0)) ||
+                      ((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)))) ||
+                     (g_worldGrid.sizeZ <= sVar16)) {
+                    pSVar6 = (STWorldObject *)0x0;
                   }
                   else {
-                    pSVar7 = g_worldGrid.cells
-                             [(int)sVar17 * (int)g_worldGrid.planeStride +
-                              (int)sVar18 * (int)g_worldGrid.sizeX + (int)sVar12].objects[0];
+                    pSVar6 = g_worldGrid.cells
+                             [(int)sVar16 * (int)g_worldGrid.planeStride +
+                              (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
                   }
-                  if (*(int *)&pSVar7->field_0x18 != this->field_04A1) {
+                  if (*(int *)&pSVar6->field_0x18 != this->field_04A1) {
                     this->field_04A1 = 0xffffffff;
                   }
                 }
@@ -1500,21 +1505,21 @@ LAB_00468493:
               if (this->field_04C1 == 1) {
                 this->field_04C1 = 0;
                 if (this->field_04AB != -1) {
-                  sVar12 = this->field_04A5;
-                  sVar17 = this->field_04A9;
-                  sVar18 = this->field_04A7;
-                  if (((sVar12 < 0) || (g_worldGrid.sizeX <= sVar12)) ||
-                     ((sVar18 < 0 ||
-                      (((g_worldGrid.sizeY <= sVar18 || (sVar17 < 0)) ||
-                       (g_worldGrid.sizeZ <= sVar17)))))) {
-                    pSVar7 = (STWorldObject *)0x0;
+                  sVar11 = this->field_04A5;
+                  sVar16 = this->field_04A9;
+                  sVar17 = this->field_04A7;
+                  if (((sVar11 < 0) || (g_worldGrid.sizeX <= sVar11)) ||
+                     ((sVar17 < 0 ||
+                      (((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)) ||
+                       (g_worldGrid.sizeZ <= sVar16)))))) {
+                    pSVar6 = (STWorldObject *)0x0;
                   }
                   else {
-                    pSVar7 = g_worldGrid.cells
-                             [(int)sVar17 * (int)g_worldGrid.planeStride +
-                              (int)sVar18 * (int)g_worldGrid.sizeX + (int)sVar12].objects[0];
+                    pSVar6 = g_worldGrid.cells
+                             [(int)sVar16 * (int)g_worldGrid.planeStride +
+                              (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
                   }
-                  if (*(int *)&pSVar7->field_0x18 != this->field_04AB) {
+                  if (*(int *)&pSVar6->field_0x18 != this->field_04AB) {
                     this->field_04AB = 0xffffffff;
                   }
                 }
@@ -1531,72 +1536,73 @@ LAB_00469198:
               *(undefined4 *)&this->field_0x4d5 = 0xd;
               this->field_00B7 = 3;
 cf_common_exit_004693C9:
-              iVar6 = (*this->vtable->vfunc_D8)(this);
-              return (-(uint)(iVar6 != 0) & 0xfffffffd) + 2;
+              iVar5 = this->vfunc_D8();
+              return (-(uint)(iVar5 != 0) & 0xfffffffd) + 2;
             }
 LAB_004691ae:
-            if (iVar6 % 10 != 1) goto cf_common_exit_004699E9;
-            sVar12 = this->field_04A5;
-            sVar17 = this->field_04A9;
-            sVar18 = this->field_04A7;
-            if ((((((-1 < sVar12) && (sVar12 < g_worldGrid.sizeX)) &&
-                  ((-1 < sVar18 &&
-                   (((sVar18 < g_worldGrid.sizeY && (-1 < sVar17)) && (sVar17 < g_worldGrid.sizeZ)))
-                   ))) && ((pSVar7 = g_worldGrid.cells
-                                     [(int)sVar17 * (int)g_worldGrid.planeStride +
-                                      (int)sVar18 * (int)g_worldGrid.sizeX + (int)sVar12].objects[0]
-                           , pSVar7 != (STWorldObject *)0x0 &&
-                           (*(int *)&pSVar7->field_0x18 == this->field_04AB)))) &&
-                (*(int *)&pSVar7[0x21].field_0x10 == 0)) && (*(int *)&pSVar7[0x10].field_0x5 != 6))
+            if (iVar5 % 10 != 1) goto cf_common_exit_004699E9;
+            sVar11 = this->field_04A5;
+            sVar16 = this->field_04A9;
+            sVar17 = this->field_04A7;
+            if ((((((-1 < sVar11) && (sVar11 < g_worldGrid.sizeX)) &&
+                  ((-1 < sVar17 &&
+                   (((sVar17 < g_worldGrid.sizeY && (-1 < sVar16)) && (sVar16 < g_worldGrid.sizeZ)))
+                   ))) && ((pSVar6 = g_worldGrid.cells
+                                     [(int)sVar16 * (int)g_worldGrid.planeStride +
+                                      (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0]
+                           , pSVar6 != (STWorldObject *)0x0 &&
+                           (*(int *)&pSVar6->field_0x18 == this->field_04AB)))) &&
+                (*(int *)&pSVar6[0x21].field_0x10 == 0)) && (*(int *)&pSVar6[0x10].field_0x5 != 6))
             {
-              if (iVar6 % 0x78 == 1) {
-                SVar2 = this->field_06F7;
-                if (SVar2 == CASE_8) {
-                  pSVar15 = this->vtable;
-                  uVar25 = 0xfb;
+              if (iVar5 % 0x78 == 1) {
+                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+                iVar5 = *(int *)((int)this->field_06CB + 0x2c);
+                if (iVar5 == 8) {
+                  pSVar14 = this->vtable;
+                  uVar24 = 0xfb;
 LAB_004692be:
-                  (*pSVar15->vfunc_90)(this,3,uVar25);
+                  (*pSVar14->vfunc_90)(this,3,uVar24);
                 }
-                else if (SVar2 == CASE_14) {
-                  (*this->vtable->vfunc_90)(this,3,0x15f);
+                else if (iVar5 == 0x14) {
+                  this->vfunc_90(3,0x15f);
                 }
-                else if (SVar2 == CASE_1A) {
-                  pSVar15 = this->vtable;
-                  uVar25 = 0x19e;
+                else if (iVar5 == 0x1a) {
+                  pSVar14 = this->vtable;
+                  uVar24 = 0x19e;
                   goto LAB_004692be;
                 }
               }
-              iVar6 = this->field_07D2;
-              iVar8 = 1;
-              if (iVar6 < 1) {
-                iVar6 = this->field_07D6;
-                if (iVar6 < 1) {
-                  iVar6 = this->field_07DA;
-                  if (0 < iVar6) {
-                    if (iVar6 < 1) {
-                      iVar8 = iVar6;
+              iVar5 = this->field_07D2;
+              iVar7 = 1;
+              if (iVar5 < 1) {
+                iVar5 = this->field_07D6;
+                if (iVar5 < 1) {
+                  iVar5 = this->field_07DA;
+                  if (0 < iVar5) {
+                    if (iVar5 < 1) {
+                      iVar7 = iVar5;
                     }
-                    thunk_FUN_004e1d70(pSVar7,0xde,iVar8 * 0x14);
-                    thunk_FUN_004e16d0(pSVar7,this->field_0018);
-                    this->field_07DA = this->field_07DA - iVar8;
+                    thunk_FUN_004e1d70(pSVar6,0xde,iVar7 * 0x14);
+                    thunk_FUN_004e16d0(pSVar6,this->field_0018);
+                    this->field_07DA = this->field_07DA - iVar7;
                   }
                 }
                 else {
-                  if (iVar6 < 1) {
-                    iVar8 = iVar6;
+                  if (iVar5 < 1) {
+                    iVar7 = iVar5;
                   }
-                  thunk_FUN_004e1d70(pSVar7,0xdd,iVar8 * 3);
-                  thunk_FUN_004e16d0(pSVar7,this->field_0018);
-                  this->field_07D6 = this->field_07D6 - iVar8;
+                  thunk_FUN_004e1d70(pSVar6,0xdd,iVar7 * 3);
+                  thunk_FUN_004e16d0(pSVar6,this->field_0018);
+                  this->field_07D6 = this->field_07D6 - iVar7;
                 }
               }
               else {
-                if (iVar6 < 1) {
-                  iVar8 = iVar6;
+                if (iVar5 < 1) {
+                  iVar7 = iVar5;
                 }
-                thunk_FUN_004e1d70(pSVar7,0xdc,iVar8 * 5);
-                thunk_FUN_004e16d0(pSVar7,this->field_0018);
-                this->field_07D2 = this->field_07D2 - iVar8;
+                thunk_FUN_004e1d70(pSVar6,0xdc,iVar7 * 5);
+                thunk_FUN_004e16d0(pSVar6,this->field_0018);
+                this->field_07D2 = this->field_07D2 - iVar7;
               }
               if (this->field_07DA + this->field_07D6 + this->field_07D2 != 0)
               goto cf_common_exit_004699E9;
@@ -1608,28 +1614,28 @@ LAB_004692be:
             goto cf_common_exit_004699E9;
           }
           if (*(int *)&this->field_0x4cd < 1) {
-            iVar6 = sub_00460260(this,2);
-            switch(iVar6) {
+            iVar5 = sub_00460260(this,2);
+            switch(iVar5) {
             case 0:
               if (((this->field_0047 == this->field_04C5) && (this->field_0049 == this->field_04C7))
                  && (this->field_004B == this->field_04C9)) {
                 *(undefined4 *)&this->field_0x4d5 = 0xb;
                 this->field_04D9 = 0;
-                iVar6 = (*this->vtable->vfunc_D8)(this);
-                return (-(uint)(iVar6 != 0) & 0xfffffffd) + 2;
+                iVar5 = this->vfunc_D8();
+                return (-(uint)(iVar5 != 0) & 0xfffffffd) + 2;
               }
-              sVar12 = this->field_04A5;
-              sVar17 = this->field_04A9;
-              sVar18 = this->field_04A7;
-              if ((((-1 < sVar12) && (sVar12 < g_worldGrid.sizeX)) &&
-                  ((-1 < sVar18 &&
-                   (((sVar18 < g_worldGrid.sizeY && (-1 < sVar17)) && (sVar17 < g_worldGrid.sizeZ)))
-                   ))) && ((pSVar7 = g_worldGrid.cells
-                                     [(int)sVar17 * (int)g_worldGrid.planeStride +
-                                      (int)sVar18 * (int)g_worldGrid.sizeX + (int)sVar12].objects[0]
-                           , pSVar7 != (STWorldObject *)0x0 &&
-                           (*(int *)&pSVar7->field_0x18 == this->field_04AB)))) {
-                thunk_FUN_004e1690(pSVar7,this->field_0018);
+              sVar11 = this->field_04A5;
+              sVar16 = this->field_04A9;
+              sVar17 = this->field_04A7;
+              if ((((-1 < sVar11) && (sVar11 < g_worldGrid.sizeX)) &&
+                  ((-1 < sVar17 &&
+                   (((sVar17 < g_worldGrid.sizeY && (-1 < sVar16)) && (sVar16 < g_worldGrid.sizeZ)))
+                   ))) && ((pSVar6 = g_worldGrid.cells
+                                     [(int)sVar16 * (int)g_worldGrid.planeStride +
+                                      (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0]
+                           , pSVar6 != (STWorldObject *)0x0 &&
+                           (*(int *)&pSVar6->field_0x18 == this->field_04AB)))) {
+                thunk_FUN_004e1690(pSVar6,this->field_0018);
               }
               return 0;
             case 1:
@@ -1637,46 +1643,46 @@ LAB_004692be:
             default:
               goto cf_common_exit_00468C50;
             case 3:
-              sVar12 = this->field_04A5;
-              sVar17 = this->field_04A9;
-              sVar18 = this->field_04A7;
-              if ((((-1 < sVar12) && (sVar12 < g_worldGrid.sizeX)) && (-1 < sVar18)) &&
-                 (((sVar18 < g_worldGrid.sizeY && (-1 < sVar17)) &&
-                  ((sVar17 < g_worldGrid.sizeZ &&
+              sVar11 = this->field_04A5;
+              sVar16 = this->field_04A9;
+              sVar17 = this->field_04A7;
+              if ((((-1 < sVar11) && (sVar11 < g_worldGrid.sizeX)) && (-1 < sVar17)) &&
+                 (((sVar17 < g_worldGrid.sizeY && (-1 < sVar16)) &&
+                  ((sVar16 < g_worldGrid.sizeZ &&
                    ((STFishC *)
                     g_worldGrid.cells
-                    [(int)sVar17 * (int)g_worldGrid.planeStride +
-                     (int)sVar18 * (int)g_worldGrid.sizeX + (int)sVar12].objects[0] !=
+                    [(int)sVar16 * (int)g_worldGrid.planeStride +
+                     (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0] !=
                     (STFishC *)0x0)))))) {
                 thunk_FUN_0048d650(this,(STFishC *)
                                         g_worldGrid.cells
-                                        [(int)sVar17 * (int)g_worldGrid.planeStride +
-                                         (int)sVar18 * (int)g_worldGrid.sizeX + (int)sVar12].objects
+                                        [(int)sVar16 * (int)g_worldGrid.planeStride +
+                                         (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects
                                         [0]);
               }
               sub_00481520(this,(int)this->field_04C5,(int)this->field_04C7,(int)this->field_04C9);
               goto cf_common_exit_00468C49;
             case -1:
-              iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2126,0,0,
+              iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2126,0,0,
                                          "%s","STBoatC::LoadRC, move to depot 2 error");
-              if (iVar6 != 0) {
+              if (iVar5 != 0) {
                 STDebugBreak(); /* noreturn in standalone pseudocode */
               }
-              iVar6 = 0x2126;
+              iVar5 = 0x2126;
               goto cf_error_exit_004660E9;
             }
           }
-          iVar6 = *(int *)&this->field_0x4cd + 1;
-          *(int *)&this->field_0x4cd = iVar6;
-          if (iVar6 == 2) {
-            iVar6 = Defence(this,0);
-            if (iVar6 != -1) {
+          iVar5 = *(int *)&this->field_0x4cd + 1;
+          *(int *)&this->field_0x4cd = iVar5;
+          if (iVar5 == 2) {
+            iVar5 = Defence(this,0);
+            if (iVar5 != -1) {
               return 2;
             }
             return -1;
           }
-          iVar6 = Defence(this,2);
-          if (iVar6 == -1) {
+          iVar5 = Defence(this,2);
+          if (iVar5 == -1) {
             return -1;
           }
           if (this->field_082E != 0) {
@@ -1686,21 +1692,21 @@ LAB_004692be:
 LAB_004685d3:
             this->field_04BD = 0;
             if (this->field_04A1 != -1) {
-              sVar12 = this->field_049B;
-              sVar17 = this->field_049F;
-              sVar18 = this->field_049D;
-              if (((sVar12 < 0) || (g_worldGrid.sizeX <= sVar12)) ||
-                 ((sVar18 < 0 ||
-                  (((g_worldGrid.sizeY <= sVar18 || (sVar17 < 0)) || (g_worldGrid.sizeZ <= sVar17)))
+              sVar11 = this->field_049B;
+              sVar16 = this->field_049F;
+              sVar17 = this->field_049D;
+              if (((sVar11 < 0) || (g_worldGrid.sizeX <= sVar11)) ||
+                 ((sVar17 < 0 ||
+                  (((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)) || (g_worldGrid.sizeZ <= sVar16)))
                   ))) {
-                pSVar7 = (STWorldObject *)0x0;
+                pSVar6 = (STWorldObject *)0x0;
               }
               else {
-                pSVar7 = g_worldGrid.cells
-                         [(int)sVar17 * (int)g_worldGrid.planeStride +
-                          (int)sVar18 * (int)g_worldGrid.sizeX + (int)sVar12].objects[0];
+                pSVar6 = g_worldGrid.cells
+                         [(int)sVar16 * (int)g_worldGrid.planeStride +
+                          (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
               }
-              if (*(int *)&pSVar7->field_0x18 != this->field_04A1) {
+              if (*(int *)&pSVar6->field_0x18 != this->field_04A1) {
                 this->field_04A1 = 0xffffffff;
               }
             }
@@ -1714,31 +1720,31 @@ LAB_004685d3:
           if (this->field_04C1 == 1) {
             this->field_04C1 = 0;
             if (this->field_04AB != -1) {
-              sVar12 = this->field_04A5;
-              sVar17 = this->field_04A9;
-              sVar18 = this->field_04A7;
-              if (((sVar12 < 0) || (g_worldGrid.sizeX <= sVar12)) ||
-                 (((sVar18 < 0 || ((g_worldGrid.sizeY <= sVar18 || (sVar17 < 0)))) ||
-                  (g_worldGrid.sizeZ <= sVar17)))) {
-                pSVar7 = (STWorldObject *)0x0;
+              sVar11 = this->field_04A5;
+              sVar16 = this->field_04A9;
+              sVar17 = this->field_04A7;
+              if (((sVar11 < 0) || (g_worldGrid.sizeX <= sVar11)) ||
+                 (((sVar17 < 0 || ((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)))) ||
+                  (g_worldGrid.sizeZ <= sVar16)))) {
+                pSVar6 = (STWorldObject *)0x0;
               }
               else {
-                pSVar7 = g_worldGrid.cells
-                         [(int)sVar17 * (int)g_worldGrid.planeStride +
-                          (int)sVar18 * (int)g_worldGrid.sizeX + (int)sVar12].objects[0];
+                pSVar6 = g_worldGrid.cells
+                         [(int)sVar16 * (int)g_worldGrid.planeStride +
+                          (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
               }
-              if (*(int *)&pSVar7->field_0x18 != this->field_04AB) {
+              if (*(int *)&pSVar6->field_0x18 != this->field_04AB) {
                 this->field_04AB = 0xffffffff;
               }
             }
           }
-          iVar6 = thunk_FUN_0048d440((AnonShape_0048D440_9DC42AE7 *)this);
-          if (iVar6 == 0) {
+          iVar5 = thunk_FUN_0048d440(this);
+          if (iVar5 == 0) {
             sub_004602B0(this);
             *(undefined4 *)&this->field_0x4d5 = 0;
             goto cf_common_exit_00469979;
           }
-          if (iVar6 == 7) {
+          if (iVar5 == 7) {
             if (this->field_04AB == -1) {
               return 2;
             }
@@ -1747,23 +1753,23 @@ LAB_004685d3:
           goto cf_common_exit_00465E40;
         }
         if (*(int *)&this->field_0x4cd < 1) {
-          iVar6 = sub_00460260(this,2);
-          switch(iVar6) {
+          iVar5 = sub_00460260(this,2);
+          switch(iVar5) {
           case 0:
-            iVar6 = sub_00490570(this);
-            if (iVar6 == 1) {
-              sVar12 = this->field_04A5;
-              sVar17 = this->field_04A9;
-              sVar18 = this->field_04A7;
-              if ((((((-1 < sVar12) && (sVar12 < g_worldGrid.sizeX)) && (-1 < sVar18)) &&
-                   ((sVar18 < g_worldGrid.sizeY && (-1 < sVar17)))) &&
-                  ((sVar17 < g_worldGrid.sizeZ &&
+            iVar5 = sub_00490570(this);
+            if (iVar5 == 1) {
+              sVar11 = this->field_04A5;
+              sVar16 = this->field_04A9;
+              sVar17 = this->field_04A7;
+              if ((((((-1 < sVar11) && (sVar11 < g_worldGrid.sizeX)) && (-1 < sVar17)) &&
+                   ((sVar17 < g_worldGrid.sizeY && (-1 < sVar16)))) &&
+                  ((sVar16 < g_worldGrid.sizeZ &&
                    ((pSVar1 = (STBoatC *)
                               g_worldGrid.cells
-                              [(int)sVar17 * (int)g_worldGrid.planeStride +
-                               (int)sVar18 * (int)g_worldGrid.sizeX + (int)sVar12].objects[0],
+                              [(int)sVar16 * (int)g_worldGrid.planeStride +
+                               (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0],
                     pSVar1 != (STBoatC *)0x0 && (pSVar1->field_0018 == this->field_04AB)))))) &&
-                 (iVar6 = thunk_FUN_004e1490(pSVar1), iVar6 != 1)) {
+                 (iVar5 = thunk_FUN_004e1490(pSVar1), iVar5 != 1)) {
                 /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
                 sub_0048DFD0(this,this->field_0047,this->field_0049,this->field_004B,
                              this->field_04A5,this->field_04A7,
@@ -1784,21 +1790,21 @@ LAB_004685d3:
             if (this->field_04BD == 1) {
               this->field_04BD = 0;
               if (this->field_04A1 != -1) {
-                sVar12 = this->field_049B;
-                sVar17 = this->field_049F;
-                sVar18 = this->field_049D;
-                if (((sVar12 < 0) || (g_worldGrid.sizeX <= sVar12)) ||
-                   ((sVar18 < 0 ||
-                    (((g_worldGrid.sizeY <= sVar18 || (sVar17 < 0)) || (g_worldGrid.sizeZ <= sVar17)
+                sVar11 = this->field_049B;
+                sVar16 = this->field_049F;
+                sVar17 = this->field_049D;
+                if (((sVar11 < 0) || (g_worldGrid.sizeX <= sVar11)) ||
+                   ((sVar17 < 0 ||
+                    (((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)) || (g_worldGrid.sizeZ <= sVar16)
                      ))))) {
-                  pSVar7 = (STWorldObject *)0x0;
+                  pSVar6 = (STWorldObject *)0x0;
                 }
                 else {
-                  pSVar7 = g_worldGrid.cells
-                           [(int)sVar17 * (int)g_worldGrid.planeStride +
-                            (int)sVar18 * (int)g_worldGrid.sizeX + (int)sVar12].objects[0];
+                  pSVar6 = g_worldGrid.cells
+                           [(int)sVar16 * (int)g_worldGrid.planeStride +
+                            (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
                 }
-                if (*(int *)&pSVar7->field_0x18 != this->field_04A1) {
+                if (*(int *)&pSVar6->field_0x18 != this->field_04A1) {
                   this->field_04A1 = 0xffffffff;
                 }
               }
@@ -1806,20 +1812,20 @@ LAB_004685d3:
             if (this->field_04C1 == 1) {
               this->field_04C1 = 0;
               if (this->field_04AB != -1) {
-                sVar12 = this->field_04A5;
-                sVar17 = this->field_04A9;
-                sVar18 = this->field_04A7;
-                if ((((sVar12 < 0) || (g_worldGrid.sizeX <= sVar12)) ||
-                    ((sVar18 < 0 || ((g_worldGrid.sizeY <= sVar18 || (sVar17 < 0)))))) ||
-                   (g_worldGrid.sizeZ <= sVar17)) {
-                  pSVar7 = (STWorldObject *)0x0;
+                sVar11 = this->field_04A5;
+                sVar16 = this->field_04A9;
+                sVar17 = this->field_04A7;
+                if ((((sVar11 < 0) || (g_worldGrid.sizeX <= sVar11)) ||
+                    ((sVar17 < 0 || ((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)))))) ||
+                   (g_worldGrid.sizeZ <= sVar16)) {
+                  pSVar6 = (STWorldObject *)0x0;
                 }
                 else {
-                  pSVar7 = g_worldGrid.cells
-                           [(int)sVar17 * (int)g_worldGrid.planeStride +
-                            (int)sVar18 * (int)g_worldGrid.sizeX + (int)sVar12].objects[0];
+                  pSVar6 = g_worldGrid.cells
+                           [(int)sVar16 * (int)g_worldGrid.planeStride +
+                            (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
                 }
-                if (*(int *)&pSVar7->field_0x18 != this->field_04AB) {
+                if (*(int *)&pSVar6->field_0x18 != this->field_04AB) {
                   this->field_04AB = 0xffffffff;
                 }
               }
@@ -1827,16 +1833,16 @@ LAB_004685d3:
                 local_c = (undefined4 *)0x1;
               }
             }
-            iVar6 = thunk_FUN_0048d440((AnonShape_0048D440_9DC42AE7 *)this);
-            if (iVar6 == 0) goto cf_common_exit_00467FE4;
-            if (iVar6 == 7) {
+            iVar5 = thunk_FUN_0048d440(this);
+            if (iVar5 == 0) goto cf_common_exit_00467FE4;
+            if (iVar5 == 7) {
               if ((this->field_04AB != -1) && (local_c == (undefined4 *)0x0))
               goto cf_common_exit_00468C50;
               sub_004602B0(this);
               if (this->field_04AB == -1) {
                 *(int *)&this->field_0x4cd = *(int *)&this->field_0x4cd + 1;
-                iVar6 = (*this->vtable->vfunc_D8)(this);
-                return (-(uint)(iVar6 != 0) & 0xfffffffd) + 2;
+                iVar5 = this->vfunc_D8();
+                return (-(uint)(iVar5 != 0) & 0xfffffffd) + 2;
               }
               if (local_c != (undefined4 *)0x1) goto cf_common_exit_00468C50;
               sub_00481520(this,(int)this->field_04A5,(int)this->field_04A7,this->field_04A9 + 1);
@@ -1853,27 +1859,27 @@ LAB_004685d3:
             sub_00481520(this,(int)this->field_04A5,(int)this->field_04A7,this->field_04A9 + 1);
             break;
           case -1:
-            iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x1fb8,0,0,
+            iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x1fb8,0,0,
                                        "%s","STBoatC::LoadRC, move to depot error");
-            if (iVar6 != 0) {
+            if (iVar5 != 0) {
               STDebugBreak(); /* noreturn in standalone pseudocode */
             }
-            iVar6 = 0x1fb8;
+            iVar5 = 0x1fb8;
             goto cf_error_exit_004660E9;
           }
           goto cf_common_exit_00468C49;
         }
-        iVar6 = *(int *)&this->field_0x4cd + 1;
-        *(int *)&this->field_0x4cd = iVar6;
-        if (iVar6 == 2) {
-          iVar6 = Defence(this,0);
-          if (iVar6 != -1) {
+        iVar5 = *(int *)&this->field_0x4cd + 1;
+        *(int *)&this->field_0x4cd = iVar5;
+        if (iVar5 == 2) {
+          iVar5 = Defence(this,0);
+          if (iVar5 != -1) {
             return 2;
           }
           return -1;
         }
-        iVar6 = Defence(this,2);
-        if (iVar6 == -1) {
+        iVar5 = Defence(this,2);
+        if (iVar5 == -1) {
           return -1;
         }
         if (this->field_082E != 0) {
@@ -1883,19 +1889,19 @@ LAB_004685d3:
 LAB_0046779f:
           this->field_04BD = 0;
           if (this->field_04A1 != -1) {
-            sVar12 = this->field_049B;
-            sVar17 = this->field_049F;
-            sVar18 = this->field_049D;
-            if ((((sVar12 < 0) || (g_worldGrid.sizeX <= sVar12)) || (sVar18 < 0)) ||
-               (((g_worldGrid.sizeY <= sVar18 || (sVar17 < 0)) || (g_worldGrid.sizeZ <= sVar17)))) {
-              pSVar7 = (STWorldObject *)0x0;
+            sVar11 = this->field_049B;
+            sVar16 = this->field_049F;
+            sVar17 = this->field_049D;
+            if ((((sVar11 < 0) || (g_worldGrid.sizeX <= sVar11)) || (sVar17 < 0)) ||
+               (((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)) || (g_worldGrid.sizeZ <= sVar16)))) {
+              pSVar6 = (STWorldObject *)0x0;
             }
             else {
-              pSVar7 = g_worldGrid.cells
-                       [(int)sVar17 * (int)g_worldGrid.planeStride +
-                        (int)sVar18 * (int)g_worldGrid.sizeX + (int)sVar12].objects[0];
+              pSVar6 = g_worldGrid.cells
+                       [(int)sVar16 * (int)g_worldGrid.planeStride +
+                        (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
             }
-            if (*(int *)&pSVar7->field_0x18 != this->field_04A1) {
+            if (*(int *)&pSVar6->field_0x18 != this->field_04A1) {
               this->field_04A1 = 0xffffffff;
             }
           }
@@ -1909,32 +1915,32 @@ LAB_0046779f:
         if (this->field_04C1 == 1) {
           this->field_04C1 = 0;
           if (this->field_04AB != -1) {
-            sVar12 = this->field_04A5;
-            sVar17 = this->field_04A9;
-            sVar18 = this->field_04A7;
-            if (((sVar12 < 0) || (g_worldGrid.sizeX <= sVar12)) ||
-               ((sVar18 < 0 ||
-                (((g_worldGrid.sizeY <= sVar18 || (sVar17 < 0)) || (g_worldGrid.sizeZ <= sVar17)))))
+            sVar11 = this->field_04A5;
+            sVar16 = this->field_04A9;
+            sVar17 = this->field_04A7;
+            if (((sVar11 < 0) || (g_worldGrid.sizeX <= sVar11)) ||
+               ((sVar17 < 0 ||
+                (((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)) || (g_worldGrid.sizeZ <= sVar16)))))
                ) {
-              pSVar7 = (STWorldObject *)0x0;
+              pSVar6 = (STWorldObject *)0x0;
             }
             else {
-              pSVar7 = g_worldGrid.cells
-                       [(int)sVar17 * (int)g_worldGrid.planeStride +
-                        (int)sVar18 * (int)g_worldGrid.sizeX + (int)sVar12].objects[0];
+              pSVar6 = g_worldGrid.cells
+                       [(int)sVar16 * (int)g_worldGrid.planeStride +
+                        (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
             }
-            if (*(int *)&pSVar7->field_0x18 != this->field_04AB) {
+            if (*(int *)&pSVar6->field_0x18 != this->field_04AB) {
               this->field_04AB = 0xffffffff;
             }
           }
         }
-        iVar6 = thunk_FUN_0048d440((AnonShape_0048D440_9DC42AE7 *)this);
-        if (iVar6 == 0) {
+        iVar5 = thunk_FUN_0048d440(this);
+        if (iVar5 == 0) {
           sub_004602B0(this);
           *(undefined4 *)&this->field_0x4d5 = 0;
           goto cf_common_exit_00469979;
         }
-        if (iVar6 != 7) {
+        if (iVar5 != 7) {
           *(undefined4 *)&this->field_0x4cd = 0;
           *(undefined4 *)&this->field_0x4d5 = 1;
           goto cf_common_exit_00465E5A;
@@ -1945,15 +1951,15 @@ LAB_0046779f:
         *(undefined4 *)&this->field_0x4cd = 0;
         goto cf_common_exit_0046875C;
       }
-      iVar6 = *(int *)&this->field_0x4d1 + 1;
-      *(int *)&this->field_0x4d1 = iVar6;
-      if (iVar6 < 0x47) goto cf_common_exit_004699E9;
-      iVar6 = sub_00460260(this,2);
-      switch(iVar6) {
+      iVar5 = *(int *)&this->field_0x4d1 + 1;
+      *(int *)&this->field_0x4d1 = iVar5;
+      if (iVar5 < 0x47) goto cf_common_exit_004699E9;
+      iVar5 = sub_00460260(this,2);
+      switch(iVar5) {
       case 1:
-        iVar6 = *(int *)&this->field_0x4cd + 1;
-        *(int *)&this->field_0x4cd = iVar6;
-        if (iVar6 < 3) goto cf_common_exit_004699E9;
+        iVar5 = *(int *)&this->field_0x4cd + 1;
+        *(int *)&this->field_0x4cd = iVar5;
+        if (iVar5 < 3) goto cf_common_exit_004699E9;
         sub_004602B0(this);
       case 0:
         *(undefined4 *)&this->field_0x4cd = 0;
@@ -1961,38 +1967,38 @@ LAB_0046779f:
         *(undefined4 *)&this->field_0x4d5 = 7;
         this->field_00B7 = 3;
       case 3:
-        iVar6 = (int)this->field_04A7;
-        iVar8 = (int)this->field_04A5;
-        iVar22 = this->field_04A9 + 1;
+        iVar5 = (int)this->field_04A7;
+        iVar7 = (int)this->field_04A5;
+        iVar21 = this->field_04A9 + 1;
         break;
       default:
         goto cf_common_exit_004699E9;
       case -1:
-        iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x1f53,0,0,"%s",
+        iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x1f53,0,0,"%s",
                                    "STBoatC::LoadRC, LOADRC_MOVEWAITLOAD error");
-        if (iVar6 != 0) {
+        if (iVar5 != 0) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
-        iVar6 = 0x1f53;
+        iVar5 = 0x1f53;
         goto cf_error_exit_004660E9;
       }
       goto cf_common_exit_004699DA;
     }
-    iVar6 = sub_00460260(this,2);
-    switch(iVar6) {
+    iVar5 = sub_00460260(this,2);
+    switch(iVar5) {
     case 0:
-      iVar6 = sub_00490570(this);
-      if (iVar6 != 1) {
+      iVar5 = sub_00490570(this);
+      if (iVar5 != 1) {
         *(undefined4 *)&this->field_0x4d5 = 3;
         this->field_00B7 = 3;
-        iVar6 = Defence(this,0);
-        return (-(uint)(iVar6 != -1) & 3) - 1;
+        iVar5 = Defence(this,0);
+        return (-(uint)(iVar5 != -1) & 3) - 1;
       }
-      sVar12 = this->field_049B;
+      sVar11 = this->field_049B;
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      piVar14 = (int *)CONCAT22(extraout_var_02,this->field_049F + 1);
+      piVar13 = (int *)CONCAT22(extraout_var_02,this->field_049F + 1);
 LAB_00467da5:
-      sub_0048DFD0(this,this->field_0047,this->field_0049,this->field_004B,sVar12,0,piVar14,1,
+      sub_0048DFD0(this,this->field_0047,this->field_0049,this->field_004B,sVar11,0,piVar13,1,
                    &this->field_04AF,&this->field_04B1,&this->field_04B3);
       sub_00481520(this,(int)this->field_04AF,(int)this->field_04B1,(int)this->field_04B3);
       break;
@@ -2002,21 +2008,21 @@ LAB_00467da5:
         if (this->field_04BD == 1) {
           this->field_04BD = 0;
           if (this->field_04A1 != -1) {
-            sVar12 = this->field_049B;
-            sVar17 = this->field_049F;
-            sVar18 = this->field_049D;
-            if (((sVar12 < 0) || (g_worldGrid.sizeX <= sVar12)) ||
-               ((sVar18 < 0 ||
-                (((g_worldGrid.sizeY <= sVar18 || (sVar17 < 0)) || (g_worldGrid.sizeZ <= sVar17)))))
+            sVar11 = this->field_049B;
+            sVar16 = this->field_049F;
+            sVar17 = this->field_049D;
+            if (((sVar11 < 0) || (g_worldGrid.sizeX <= sVar11)) ||
+               ((sVar17 < 0 ||
+                (((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)) || (g_worldGrid.sizeZ <= sVar16)))))
                ) {
-              pSVar7 = (STWorldObject *)0x0;
+              pSVar6 = (STWorldObject *)0x0;
             }
             else {
-              pSVar7 = g_worldGrid.cells
-                       [(int)sVar17 * (int)g_worldGrid.planeStride +
-                        (int)sVar18 * (int)g_worldGrid.sizeX + (int)sVar12].objects[0];
+              pSVar6 = g_worldGrid.cells
+                       [(int)sVar16 * (int)g_worldGrid.planeStride +
+                        (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
             }
-            if (*(int *)&pSVar7->field_0x18 != this->field_04A1) {
+            if (*(int *)&pSVar6->field_0x18 != this->field_04A1) {
               this->field_04A1 = 0xffffffff;
             }
           }
@@ -2027,32 +2033,32 @@ LAB_00467da5:
         if (this->field_04C1 == 1) {
           this->field_04C1 = 0;
           if (this->field_04AB != -1) {
-            sVar12 = this->field_04A5;
-            sVar17 = this->field_04A9;
-            sVar18 = this->field_04A7;
-            if (((sVar12 < 0) || (g_worldGrid.sizeX <= sVar12)) ||
-               (((sVar18 < 0 || ((g_worldGrid.sizeY <= sVar18 || (sVar17 < 0)))) ||
-                (g_worldGrid.sizeZ <= sVar17)))) {
-              pSVar7 = (STWorldObject *)0x0;
+            sVar11 = this->field_04A5;
+            sVar16 = this->field_04A9;
+            sVar17 = this->field_04A7;
+            if (((sVar11 < 0) || (g_worldGrid.sizeX <= sVar11)) ||
+               (((sVar17 < 0 || ((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)))) ||
+                (g_worldGrid.sizeZ <= sVar16)))) {
+              pSVar6 = (STWorldObject *)0x0;
             }
             else {
-              pSVar7 = g_worldGrid.cells
-                       [(int)sVar17 * (int)g_worldGrid.planeStride +
-                        (int)sVar18 * (int)g_worldGrid.sizeX + (int)sVar12].objects[0];
+              pSVar6 = g_worldGrid.cells
+                       [(int)sVar16 * (int)g_worldGrid.planeStride +
+                        (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
             }
-            if (*(int *)&pSVar7->field_0x18 != this->field_04AB) {
+            if (*(int *)&pSVar6->field_0x18 != this->field_04AB) {
               this->field_04AB = 0xffffffff;
             }
           }
         }
-        iVar6 = thunk_FUN_0048d440((AnonShape_0048D440_9DC42AE7 *)this);
-        if (iVar6 == 0) {
+        iVar5 = thunk_FUN_0048d440(this);
+        if (iVar5 == 0) {
 cf_common_exit_00467FE4:
           sub_004602B0(this);
           *(undefined4 *)&this->field_0x4d5 = 0;
           goto cf_common_exit_00469979;
         }
-        if (iVar6 == 1) {
+        if (iVar5 == 1) {
           if ((this->field_04A1 != -1) && (local_c == (undefined4 *)0x0))
           goto cf_common_exit_004699E9;
           sub_004602B0(this);
@@ -2075,18 +2081,18 @@ LAB_0046817e:
       }
       else {
 LAB_00466744:
-        sVar12 = this->field_049B;
-        sVar17 = this->field_049F;
-        sVar18 = this->field_049D;
-        if ((((((sVar12 < 0) || (g_worldGrid.sizeX <= sVar12)) || (sVar18 < 0)) ||
-             ((g_worldGrid.sizeY <= sVar18 || (sVar17 < 0)))) ||
-            ((g_worldGrid.sizeZ <= sVar17 ||
+        sVar11 = this->field_049B;
+        sVar16 = this->field_049F;
+        sVar17 = this->field_049D;
+        if ((((((sVar11 < 0) || (g_worldGrid.sizeX <= sVar11)) || (sVar17 < 0)) ||
+             ((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)))) ||
+            ((g_worldGrid.sizeZ <= sVar16 ||
              ((pSVar1 = (STBoatC *)
                         g_worldGrid.cells
-                        [(int)sVar17 * (int)g_worldGrid.planeStride +
-                         (int)sVar18 * (int)g_worldGrid.sizeX + (int)sVar12].objects[0],
+                        [(int)sVar16 * (int)g_worldGrid.planeStride +
+                         (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0],
               pSVar1 == (STBoatC *)0x0 || (pSVar1->field_0018 != this->field_04A1)))))) ||
-           (iVar6 = thunk_FUN_004e1490(pSVar1), iVar6 != 1)) goto cf_common_exit_004699E9;
+           (iVar5 = thunk_FUN_004e1490(pSVar1), iVar5 != 1)) goto cf_common_exit_004699E9;
         sub_004602B0(this);
         thunk_FUN_004e15f0(pSVar1,this->field_0018);
         *(undefined4 *)&this->field_0x4cd = 0;
@@ -2097,22 +2103,22 @@ LAB_00466744:
     default:
       goto cf_common_exit_004699E9;
     case 3:
-      iVar6 = sub_00490570(this);
-      if (iVar6 == 1) {
-        sVar12 = this->field_049B;
+      iVar5 = sub_00490570(this);
+      if (iVar5 == 1) {
+        sVar11 = this->field_049B;
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        piVar14 = (int *)CONCAT22((short)((uint)&this->field_04B3 >> 0x10),this->field_049F + 1);
+        piVar13 = (int *)CONCAT22((short)((uint)&this->field_04B3 >> 0x10),this->field_049F + 1);
 LAB_00467e31:
-        sub_0048DFD0(this,this->field_0047,this->field_0049,this->field_004B,sVar12,0,piVar14,1,
+        sub_0048DFD0(this,this->field_0047,this->field_0049,this->field_004B,sVar11,0,piVar13,1,
                      &this->field_04AF,&this->field_04B1,&this->field_04B3);
       }
 LAB_00467e48:
       sub_00481520(this,(int)this->field_04AF,(int)this->field_04B1,(int)this->field_04B3);
       break;
     case -1:
-      iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x1d66,0,0,"%s",
+      iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x1d66,0,0,"%s",
                                  "STBoatC::LoadRC, correct move to mine error");
-      if (iVar6 == 0) {
+      if (iVar5 == 0) {
         RaiseInternalException
                   (0xffff,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",0x1d66
                   );
@@ -2124,27 +2130,27 @@ LAB_00467e48:
 cf_common_exit_004699E2:
   sub_00460260(this,0);
 cf_common_exit_004699E9:
-  iVar6 = (*this->vtable->vfunc_D8)(this);
-  return (-(uint)(iVar6 != 0) & 0xfffffffd) + 2;
+  iVar5 = this->vfunc_D8();
+  return (-(uint)(iVar5 != 0) & 0xfffffffd) + 2;
 switchD_0046878c_caseD_1:
   if ((this->field_04BD == 1) || (this->field_04C1 == 1)) {
     local_c = (undefined4 *)0x0;
     if (this->field_04BD == 1) {
       this->field_04BD = 0;
       if (this->field_04A1 != -1) {
-        sVar12 = this->field_049B;
-        sVar17 = this->field_049F;
-        sVar18 = this->field_049D;
-        if ((((sVar12 < 0) || (g_worldGrid.sizeX <= sVar12)) || (sVar18 < 0)) ||
-           (((g_worldGrid.sizeY <= sVar18 || (sVar17 < 0)) || (g_worldGrid.sizeZ <= sVar17)))) {
-          pSVar7 = (STWorldObject *)0x0;
+        sVar11 = this->field_049B;
+        sVar16 = this->field_049F;
+        sVar17 = this->field_049D;
+        if ((((sVar11 < 0) || (g_worldGrid.sizeX <= sVar11)) || (sVar17 < 0)) ||
+           (((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)) || (g_worldGrid.sizeZ <= sVar16)))) {
+          pSVar6 = (STWorldObject *)0x0;
         }
         else {
-          pSVar7 = g_worldGrid.cells
-                   [(int)sVar17 * (int)g_worldGrid.planeStride +
-                    (int)sVar18 * (int)g_worldGrid.sizeX + (int)sVar12].objects[0];
+          pSVar6 = g_worldGrid.cells
+                   [(int)sVar16 * (int)g_worldGrid.planeStride +
+                    (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
         }
-        if (*(int *)&pSVar7->field_0x18 != this->field_04A1) {
+        if (*(int *)&pSVar6->field_0x18 != this->field_04A1) {
           this->field_04A1 = 0xffffffff;
         }
       }
@@ -2152,20 +2158,20 @@ switchD_0046878c_caseD_1:
     if (this->field_04C1 == 1) {
       this->field_04C1 = 0;
       if (this->field_04AB != -1) {
-        sVar12 = this->field_04A5;
-        sVar17 = this->field_04A9;
-        sVar18 = this->field_04A7;
-        if (((sVar12 < 0) || (g_worldGrid.sizeX <= sVar12)) ||
-           ((sVar18 < 0 ||
-            (((g_worldGrid.sizeY <= sVar18 || (sVar17 < 0)) || (g_worldGrid.sizeZ <= sVar17)))))) {
-          pSVar7 = (STWorldObject *)0x0;
+        sVar11 = this->field_04A5;
+        sVar16 = this->field_04A9;
+        sVar17 = this->field_04A7;
+        if (((sVar11 < 0) || (g_worldGrid.sizeX <= sVar11)) ||
+           ((sVar17 < 0 ||
+            (((g_worldGrid.sizeY <= sVar17 || (sVar16 < 0)) || (g_worldGrid.sizeZ <= sVar16)))))) {
+          pSVar6 = (STWorldObject *)0x0;
         }
         else {
-          pSVar7 = g_worldGrid.cells
-                   [(int)sVar17 * (int)g_worldGrid.planeStride +
-                    (int)sVar18 * (int)g_worldGrid.sizeX + (int)sVar12].objects[0];
+          pSVar6 = g_worldGrid.cells
+                   [(int)sVar16 * (int)g_worldGrid.planeStride +
+                    (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0];
         }
-        if (*(int *)&pSVar7->field_0x18 != this->field_04AB) {
+        if (*(int *)&pSVar6->field_0x18 != this->field_04AB) {
           this->field_04AB = 0xffffffff;
         }
       }
@@ -2173,17 +2179,17 @@ switchD_0046878c_caseD_1:
         local_c = (undefined4 *)0x1;
       }
     }
-    iVar6 = thunk_FUN_0048d440((AnonShape_0048D440_9DC42AE7 *)this);
-    if (iVar6 == 0) {
+    iVar5 = thunk_FUN_0048d440(this);
+    if (iVar5 == 0) {
       sub_004602B0(this);
       *(undefined4 *)&this->field_0x4d5 = 0;
       goto cf_common_exit_00469979;
     }
-    if (iVar6 != 7) {
+    if (iVar5 != 7) {
       sub_004602B0(this);
-      sVar17 = this->field_049D;
-      sVar12 = this->field_049B;
-      iVar6 = this->field_049F + 1;
+      sVar16 = this->field_049D;
+      sVar11 = this->field_049B;
+      iVar5 = this->field_049F + 1;
       *(undefined4 *)&this->field_0x4cd = 0;
       this->field_00B7 = 3;
       *(undefined4 *)&this->field_0x4d5 = 1;
@@ -2193,8 +2199,8 @@ switchD_0046878c_caseD_1:
     sub_004602B0(this);
     if (this->field_04AB == -1) {
       *(int *)&this->field_0x4cd = *(int *)&this->field_0x4cd + 1;
-      iVar6 = (*this->vtable->vfunc_D8)(this);
-      return (-(uint)(iVar6 != 0) & 0xfffffffd) + 2;
+      iVar5 = this->vfunc_D8();
+      return (-(uint)(iVar5 != 0) & 0xfffffffd) + 2;
     }
     if (local_c == (undefined4 *)0x1) {
       *(undefined4 *)&this->field_0x4cd = 0;
@@ -2203,20 +2209,20 @@ switchD_0046878c_caseD_1:
     }
   }
   sub_004602B0(this);
-  sVar12 = this->field_04A5;
-  sVar17 = this->field_04A9;
-  sVar18 = this->field_04A7;
-  if (((-1 < sVar12) && (sVar12 < g_worldGrid.sizeX)) &&
-     ((-1 < sVar18 &&
-      ((((sVar18 < g_worldGrid.sizeY && (-1 < sVar17)) && (sVar17 < g_worldGrid.sizeZ)) &&
+  sVar11 = this->field_04A5;
+  sVar16 = this->field_04A9;
+  sVar17 = this->field_04A7;
+  if (((-1 < sVar11) && (sVar11 < g_worldGrid.sizeX)) &&
+     ((-1 < sVar17 &&
+      ((((sVar17 < g_worldGrid.sizeY && (-1 < sVar16)) && (sVar16 < g_worldGrid.sizeZ)) &&
        ((STFishC *)
         g_worldGrid.cells
-        [(int)sVar17 * (int)g_worldGrid.planeStride + (int)sVar18 * (int)g_worldGrid.sizeX +
-         (int)sVar12].objects[0] != (STFishC *)0x0)))))) {
+        [(int)sVar16 * (int)g_worldGrid.planeStride + (int)sVar17 * (int)g_worldGrid.sizeX +
+         (int)sVar11].objects[0] != (STFishC *)0x0)))))) {
     thunk_FUN_0048d650(this,(STFishC *)
                             g_worldGrid.cells
-                            [(int)sVar17 * (int)g_worldGrid.planeStride +
-                             (int)sVar18 * (int)g_worldGrid.sizeX + (int)sVar12].objects[0]);
+                            [(int)sVar16 * (int)g_worldGrid.planeStride +
+                             (int)sVar17 * (int)g_worldGrid.sizeX + (int)sVar11].objects[0]);
   }
   sub_00481520(this,(int)this->field_04C5,(int)this->field_04C7,(int)this->field_04C9);
   goto cf_common_exit_00468C49;

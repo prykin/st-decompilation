@@ -2,7 +2,11 @@
 /* [STMethodOwnerApplier] Structural method owner recovered as MoneyTy.
    Evidence: this_call_owners=[MoneyTy]; agreed_this_calls=1; incoming_this_accesses=9;
    incoming_edx_uses=0; incoming_stack_parameter_uses=8; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=4, used=0), and
+   decompilation contains no value return */
 
 void __thiscall MoneyTy::sub_0052BDA0(MoneyTy *this,char param_1,int param_2)
 
@@ -15,8 +19,10 @@ void __thiscall MoneyTy::sub_0052BDA0(MoneyTy *this,char param_1,int param_2)
   uint uVar6;
   uint local_c [2];
 
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_1 == DAT_0080874d) {
     if (DAT_00808a97 != -1) {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = DAT_00808a97 - param_2;
     }
     this->field_009E = param_2;
@@ -37,7 +43,7 @@ void __thiscall MoneyTy::sub_0052BDA0(MoneyTy *this,char param_1,int param_2)
               *(int *)(puVar2 + 4);
     }
     uVar1 = this->field_0069;
-    puVar4 = (undefined4 *)FUN_006b4fa0((int)puVar2);
+    puVar4 = (undefined4 *)FUN_006b4fa0((int *)puVar2);
     for (uVar6 = uVar5 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
       *puVar4 = CONCAT22(CONCAT11(uVar1,uVar1),CONCAT11(uVar1,uVar1));
       puVar4 = puVar4 + 1;

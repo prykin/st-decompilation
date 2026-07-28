@@ -52,6 +52,7 @@ int __thiscall CGenerate::sub_0069B190(CGenerate *this,int param_1,int param_2,i
           iVar5 = 0;
           if (-1 < iVar6) {
             iVar7 = iVar6 * local_14 + local_18 * iVar1;
+            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_2 = iVar7 * 2;
             do {
               iVar8 = iVar7 + 1;
@@ -91,6 +92,7 @@ int __thiscall CGenerate::sub_0069B190(CGenerate *this,int param_1,int param_2,i
                   }
                 }
               }
+              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_2 = param_2 + 2;
               iVar6 = this->field_5833;
               iVar7 = iVar8;

@@ -14,6 +14,7 @@ uint __thiscall FUN_00639670(void *this,int param_1)
   if (iVar4 == 0) {
     return 0;
   }
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = ((iVar4 * 500) / 0x1e + (iVar4 * iVar4 * 1000) / 900) / 10;
   *(undefined4 *)((int)this + 0x286) = *(undefined4 *)((int)this + 0x27a);
   *(undefined4 *)((int)this + 0x28e) = *(undefined4 *)((int)this + 0x282);
@@ -33,7 +34,7 @@ uint __thiscall FUN_00639670(void *this,int param_1)
   uVar2 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::thunk_FUN_00601500
                     ((AnonReceiver_00601500 *)((int)this + 0x2ab),local_c,iVar3,iVar1,iVar4,iVar4,
                      iVar4,*(int *)((int)this + 0x255),0x35c,*(int *)((int)this + 0x25b),
-                     *(undefined2 *)((int)this + 0x259),0x10c,0,0);
+                     *(ushort *)((int)this + 0x259),0x10c,0,0);
   if ((int)uVar2 < 1) {
     return 0;
   }

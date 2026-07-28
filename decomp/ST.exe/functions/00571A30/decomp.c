@@ -1,4 +1,8 @@
 
+/* [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0), and
+   decompilation contains no value return */
+
 void __cdecl
 FUN_00571a30(AnonShape_00571A30_8BA8841B *param_1,AnonShape_00571A30_67EE4B56 *param_2,char param_3)
 

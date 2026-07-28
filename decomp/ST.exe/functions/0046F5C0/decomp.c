@@ -53,6 +53,7 @@ int __thiscall STBoatC::ToDok(STBoatC *this,int param_1)
   int local_c;
   undefined4 *local_8;
 
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if ((param_1 == 0) || (param_1 == 1)) {
     memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
     this->field_02C4 = 0;
@@ -86,7 +87,7 @@ int __thiscall STBoatC::ToDok(STBoatC *this,int param_1)
     if (pSVar16 == (STWorldObject *)0x0) {
       return 0;
     }
-    iVar6 = (*pSVar16->vtable->GetObjectTypeId)(pSVar16);
+    iVar6 = pSVar16->GetObjectTypeId();
     if (iVar6 != 0x33) {
       return 0;
     }
@@ -109,7 +110,7 @@ LAB_00470e23:
 cf_common_exit_00470E2B:
     sub_00460260(this,0);
 cf_common_exit_00470E32:
-    iVar6 = (*this->vtable->vfunc_D8)(this);
+    iVar6 = this->vfunc_D8();
     return (-(uint)(iVar6 != 0) & 0xfffffffd) + 2;
   }
   SVar2 = this->field_0580;
@@ -140,7 +141,7 @@ cf_common_exit_00470E32:
       if (iVar6 != 1) {
 LAB_0046f794:
         if (((pSVar16 != (STWorldObject *)0x0) &&
-            (iVar6 = (*pSVar16->vtable->GetObjectTypeId)(pSVar16), iVar6 == 0x33)) &&
+            (iVar6 = pSVar16->GetObjectTypeId(), iVar6 == 0x33)) &&
            (pSVar16[1].vtable == (STWorldObjectVTable *)this->field_0024)) {
           this->field_0580 = CASE_2;
 LAB_0046f98f:
@@ -150,14 +151,14 @@ LAB_0046f98f:
 LAB_0046f888:
         sub_004602B0(this);
         this->field_00B7 = 0;
-        iVar6 = (*this->vtable->vfunc_D8)(this);
+        iVar6 = this->vfunc_D8();
         return -(uint)(iVar6 != 0);
       }
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       uVar5 = extraout_var_00;
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       if (((pSVar16 != (STWorldObject *)0x0) &&
-          (iVar6 = (*pSVar16->vtable->GetObjectTypeId)(pSVar16), uVar5 = extraout_var_01,
+          (iVar6 = pSVar16->GetObjectTypeId(), uVar5 = extraout_var_01,
           iVar6 == 0x33)) && (pSVar16[1].vtable == (STWorldObjectVTable *)this->field_0024)) {
         iVar6 = thunk_FUN_004e1eb0(pSVar16,(int)this->field_0041,(int)this->field_0043,
                                    (int)this->field_0045);
@@ -189,7 +190,7 @@ LAB_0046f888:
                          [(int)sVar19 * (int)g_worldGrid.planeStride +
                           (int)sVar21 * (int)g_worldGrid.sizeX + (int)sVar14].objects[0],
               pSVar16 != (STWorldObject *)0x0 &&
-              (iVar6 = (*pSVar16->vtable->GetObjectTypeId)(pSVar16), iVar6 == 0x33)))))) &&
+              (iVar6 = pSVar16->GetObjectTypeId(), iVar6 == 0x33)))))) &&
            (pSVar16[1].vtable == (STWorldObjectVTable *)this->field_0024))
         goto cf_common_exit_004707B7;
         goto LAB_0046f888;
@@ -244,7 +245,7 @@ cf_error_exit_00470C46:
                        [(int)sVar19 * (int)g_worldGrid.planeStride +
                         (int)sVar21 * (int)g_worldGrid.sizeX + (int)sVar14].objects[0],
             pSVar17 != (STFishC *)0x0 &&
-            (dVar7 = (*pSVar17->vtable->slot_2C)(pSVar17), dVar7 == 0x33)) &&
+            (dVar7 = pSVar17->slot_2C(), dVar7 == 0x33)) &&
            (pSVar17->field_0024 == this->field_0024)))))) {
         iVar6 = thunk_FUN_004e1eb0(pSVar17,(int)this->field_0041,(int)this->field_0043,
                                    (int)this->field_0045);
@@ -271,7 +272,7 @@ LAB_00470bfe:
 LAB_0046fd37:
       sub_004602B0(this);
 LAB_0046fd3e:
-      iVar6 = (*this->vtable->vfunc_D8)(this);
+      iVar6 = this->vfunc_D8();
       return -(uint)(iVar6 != 0);
     }
     if (SVar2 == CASE_3) {
@@ -289,7 +290,7 @@ LAB_0046fd3e:
                             [(int)sVar19 * (int)g_worldGrid.planeStride +
                              (int)sVar21 * (int)g_worldGrid.sizeX + (int)sVar14].objects[0],
                  pSVar16 != (STWorldObject *)0x0 &&
-                 (iVar6 = (*pSVar16->vtable->GetObjectTypeId)(pSVar16), iVar6 == 0x33)) &&
+                 (iVar6 = pSVar16->GetObjectTypeId(), iVar6 == 0x33)) &&
                 (*(int *)&pSVar16[0x21].field_0x10 == 0)) &&
                ((*(int *)&pSVar16[0x10].field_0x5 != 6 &&
                 (pSVar16[1].vtable == (STWorldObjectVTable *)this->field_0024)))))))) {
@@ -297,7 +298,7 @@ LAB_0046fd3e:
                ((this->field_0049 == this->field_056E && (this->field_004B == this->field_0570)))) {
               this->field_0580 = CASE_4;
               *(undefined4 *)&this->field_0x584 = 0;
-              iVar6 = (*this->vtable->vfunc_D8)(this);
+              iVar6 = this->vfunc_D8();
               return (-(uint)(iVar6 != 0) & 0xfffffffd) + 2;
             }
             thunk_FUN_004e2000(pSVar16,this->field_0568,this->field_0018);
@@ -320,7 +321,7 @@ LAB_0046fd3e:
                             [(int)sVar19 * (int)g_worldGrid.planeStride +
                              (int)sVar21 * (int)g_worldGrid.sizeX + (int)sVar14].objects[0],
                  pSVar17 == (STFishC *)0x0 ||
-                 (dVar7 = (*pSVar17->vtable->slot_2C)(pSVar17), dVar7 != 0x33)) ||
+                 (dVar7 = pSVar17->slot_2C(), dVar7 != 0x33)) ||
                 (pSVar17->field_0024 != this->field_0024)))))))) goto LAB_004700a6;
           goto LAB_00470071;
         }
@@ -340,10 +341,10 @@ LAB_0046fd3e:
                         [(int)sVar19 * (int)g_worldGrid.planeStride +
                          (int)sVar21 * (int)g_worldGrid.sizeX + (int)sVar14].objects[0],
              pSVar17 == (STFishC *)0x0 ||
-             (dVar7 = (*pSVar17->vtable->slot_2C)(pSVar17), dVar7 != 0x33)) ||
+             (dVar7 = pSVar17->slot_2C(), dVar7 != 0x33)) ||
             (pSVar17->field_0024 != this->field_0024)))) {
 LAB_004700a6:
-          iVar6 = (*this->vtable->vfunc_D8)(this);
+          iVar6 = this->vfunc_D8();
           return -(uint)(iVar6 != 0);
         }
 LAB_00470071:
@@ -419,12 +420,13 @@ LAB_004707ad:
         uVar1 = this->field_001C * 0x41c64e6d + 0x3039;
         this->field_001C = uVar1;
         local_10 = (uVar1 >> 0x10) % 7 - 3;
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         if ((this->field_074A <= (int)*(short *)(DAT_00806724 + 0x23) / 2) &&
            (param_1 = 0, this->field_02BF != '\0')) {
           local_8 = (undefined4 *)&this->field_0x2b3;
           do {
             puVar10 = (undefined4 *)
-                      thunk_FUN_0041dc40(local_28,(short)*local_8,*(undefined2 *)(local_8 + 1),
+                      thunk_FUN_0041dc40(local_28,(short)*local_8,*(ushort *)(local_8 + 1),
                                          this->field_006C);
             uVar3 = *puVar10;
             bVar26 = 0;
@@ -467,6 +469,7 @@ LAB_004707ad:
                       (g_traksClass_00802A7C,1,2,7,iVar12,iVar11 + ((uVar9 >> 0x10) % 7 - 3),iVar15,
                        sVar14,sVar19,sVar21,sVar22,sVar23,sVar24,iVar8,sVar25,bVar26);
             local_8 = (undefined4 *)((int)local_8 + 6);
+            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_1 = param_1 + 1;
           } while (param_1 < (int)(uint)(byte)this->field_02BF);
         }
@@ -505,7 +508,7 @@ LAB_004707ad:
             pSVar16 != (STWorldObject *)0x0 && (*(int *)&pSVar16->field_0x18 == this->field_055A))))
           )))) {
         if (g_playSystem_00802A38->field_00E4 == this->field_0574 + this->field_0578) {
-          (*this->vtable->vfunc_90)(this,3,0x363);
+          this->vfunc_90(3,0x363);
           iVar6 = (*(short *)&this->field_0x237 * -7) / 10;
           uVar9 = this->field_001C * 0x41c64e6d + 0x3039;
           this->field_001C = uVar9;
@@ -536,15 +539,16 @@ LAB_004707ad:
           this->field_001C = uVar9;
           this->field_0578 = (uVar9 >> 0x10) % 0x33 + 0x28;
         }
-        thunk_FUN_004e20d0(pSVar16,this->field_0568,this->field_0018,this->field_06F7,
-                           this->field_0716);
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+        thunk_FUN_004e20d0(pSVar16,this->field_0568,this->field_0018,
+                           *(int *)((int)this->field_06CB + 0x2c),this->field_0716);
         iVar6 = thunk_FUN_004e2340(pSVar16,this->field_0568,this->field_0018,(undefined4 *)0x0);
         this->field_0716 = iVar6;
         if (iVar6 != this->field_0712) goto cf_common_exit_00470E32;
       }
       sub_0048DBA0(this);
       this->field_0580 = CASE_6;
-      iVar6 = (*this->vtable->vfunc_D8)(this);
+      iVar6 = this->vfunc_D8();
       return (-(uint)(iVar6 != 0) & 0xfffffffd) + 2;
     }
     if (SVar2 != CASE_6) {
@@ -656,12 +660,13 @@ LAB_004707ad:
     uVar1 = this->field_001C * 0x41c64e6d + 0x3039;
     this->field_001C = uVar1;
     local_18 = (uVar1 >> 0x10) % 7 - 3;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if ((this->field_074A <= (int)*(short *)(DAT_00806724 + 0x23) / 2) &&
        (param_1 = 0, this->field_02BF != '\0')) {
       local_8 = (undefined4 *)&this->field_0x2b3;
       do {
         puVar10 = (undefined4 *)
-                  thunk_FUN_0041dc40(local_28,(short)*local_8,*(undefined2 *)(local_8 + 1),
+                  thunk_FUN_0041dc40(local_28,(short)*local_8,*(ushort *)(local_8 + 1),
                                      this->field_006C);
         uVar3 = *puVar10;
         bVar26 = 0;
@@ -704,6 +709,7 @@ LAB_004707ad:
                   (g_traksClass_00802A7C,1,2,7,iVar12,iVar11 + ((uVar9 >> 0x10) % 7 - 3),iVar15,
                    sVar14,sVar19,sVar21,sVar22,sVar23,sVar24,iVar8,sVar25,bVar26);
         local_8 = (undefined4 *)((int)local_8 + 6);
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = param_1 + 1;
       } while (param_1 < (int)(uint)(byte)this->field_02BF);
     }
@@ -792,7 +798,7 @@ cf_common_exit_00470B14:
                     g_worldGrid.cells
                     [(int)sVar19 * (int)g_worldGrid.planeStride +
                      (int)sVar21 * (int)g_worldGrid.sizeX + (int)sVar14].objects[0],
-         pSVar17 == (STFishC *)0x0 || (dVar7 = (*pSVar17->vtable->slot_2C)(pSVar17), dVar7 != 0x33))
+         pSVar17 == (STFishC *)0x0 || (dVar7 = pSVar17->slot_2C(), dVar7 != 0x33))
         )) || (pSVar17->field_0024 != this->field_0024)) goto LAB_0046fd37;
     iVar6 = thunk_FUN_004e1eb0(pSVar17,(int)this->field_0041,(int)this->field_0043,
                                (int)this->field_0045);
@@ -837,7 +843,7 @@ LAB_0046fb98:
   sub_00481520(this,iVar6,iVar8,iVar11);
   sub_00460260(this,0);
 cf_common_exit_004707B7:
-  iVar6 = (*this->vtable->vfunc_D8)(this);
+  iVar6 = this->vfunc_D8();
   return (-(uint)(iVar6 != 0) & 0xfffffffd) + 2;
 }
 

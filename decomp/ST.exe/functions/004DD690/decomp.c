@@ -1,5 +1,8 @@
 
-undefined4 __fastcall FUN_004dd690(int param_1)
+/* [STPrototypeApplier] Propagated return.
+   Evidence: 004DD690 returns zeroed full register at 004DD6A9 @ 004DD6AB */
+
+uint __fastcall FUN_004dd690(int param_1)
 
 {
   if (g_manRub3_008117A4 != (STManRub3C *)0x0) {

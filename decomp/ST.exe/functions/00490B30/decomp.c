@@ -20,9 +20,11 @@ FUN_00490b30(void *this,AnonShape_00490B30_6CCF6294 *param_1,short param_2,uint 
     sVar3 = *(short *)((int)this + 0x802);
     if (((((sVar1 < 0) || (g_worldGrid.sizeX <= sVar1)) || (sVar3 < 0)) ||
         ((g_worldGrid.sizeY <= sVar3 || (sVar2 < 0)))) || (g_worldGrid.sizeZ <= sVar2)) {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (AnonShape_00490B30_6CCF6294 *)0x0;
     }
     else {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (AnonShape_00490B30_6CCF6294 *)
                 g_worldGrid.cells
                 [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar3 +
@@ -31,10 +33,11 @@ FUN_00490b30(void *this,AnonShape_00490B30_6CCF6294 *param_1,short param_2,uint 
     if ((((param_1 != (AnonShape_00490B30_6CCF6294 *)0x0) &&
          (param_1->field_0018 == *(int *)((int)this + 0x7f4))) ||
         (iVar4 = STPlaySystemC::sub_006E62D0
-                           (g_playSystem_00802A38,*(int *)((int)this + 0x7f4),(int *)&param_1),
+                           (g_playSystem_00802A38,
+                            *(AnonShape_005EFAE0_B406B78B **)((int)this + 0x7f4),(int *)&param_1),
         iVar4 != -4)) && ((param_1->field_0032 == param_2 && (param_1->field_0024 == (int)objPtr))))
     {
-      pSVar5 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,objPtr,param_3,CASE_1);
+      pSVar5 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,objPtr,(ushort)param_3,CASE_1);
       *(undefined4 *)((int)this + 0x7f4) = pSVar5->field_0018;
     }
   }

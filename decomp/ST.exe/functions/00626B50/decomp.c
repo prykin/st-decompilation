@@ -10,7 +10,11 @@
 
    [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/STMineSetC_sub_00626B50_param_1Enum. Cases:
-   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3 */
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0), and
+   decompilation contains no value return */
 
 void __thiscall
 STMineSetC::sub_00626B50(STMineSetC *this,STMineSetC_sub_00626B50_param_1Enum param_1)

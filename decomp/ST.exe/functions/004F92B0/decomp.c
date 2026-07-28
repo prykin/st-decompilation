@@ -46,7 +46,7 @@ void __thiscall CPanelTy::OutText(CPanelTy *this,int *param_1,undefined4 param_2
       local_8 = ((uint)puVar1[7] * *(int *)(puVar1 + 2) + 0x1f >> 3 & 0x1ffffffc) *
                 *(int *)(puVar1 + 4);
     }
-    puVar6 = (undefined4 *)FUN_006b4fa0((int)puVar1);
+    puVar6 = (undefined4 *)FUN_006b4fa0((int *)puVar1);
     for (uVar8 = local_8 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
       *puVar6 = 0xffffffff;
       puVar6 = puVar6 + 1;

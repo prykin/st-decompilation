@@ -17,7 +17,7 @@ uint __cdecl FUN_006a3a00(int *param_1,int param_2,int param_3,int param_4,ushor
     iVar3 = *(int *)((int)&DAT_007dfb74 + iVar4) + param_3;
     if ((((-1 < iVar2) && (iVar2 < *param_1)) && (-1 < iVar3)) &&
        (((iVar3 < param_1[1] && (-1 < param_4)) && (param_4 < 6)))) {
-      iVar2 = thunk_FUN_006a1370(param_1,iVar2,iVar3,param_4,(undefined4 *)local_10);
+      iVar2 = thunk_FUN_006a1370(param_1,iVar2,iVar3,param_4,(int)local_10);
       iVar2 = thunk_FUN_006a24e0(local_10,(int)(short)iVar2,param_5,param_4,0xff);
       if (iVar2 != 0) {
         bVar1 = (byte)iVar4 & 0x1f;

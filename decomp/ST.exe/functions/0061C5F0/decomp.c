@@ -8,8 +8,6 @@ undefined4 __thiscall FUN_0061c5f0(void *this,undefined4 *param_1)
   int iVar3;
   undefined4 uVar4;
   int iVar5;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  undefined2 extraout_var;
   int iVar6;
   short local_18;
   undefined2 local_10;
@@ -22,10 +20,9 @@ undefined4 __thiscall FUN_0061c5f0(void *this,undefined4 *param_1)
   *param_1 = 0;
   if ((*(char *)((int)this + 0x14b) != '\0') && (*(short *)((int)this + 0x149) != -1)) {
     SVar2 = thunk_FUN_00601db0(*(Global_sub_00601DB0_param_1Enum *)((int)this + 0x123));
-    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     this_00 = STAllPlayersC::GetObjPtr
                         (g_allPlayers_007FA174,*(char *)((int)this + 0x11f),
-                         CONCAT22(extraout_var,*(undefined2 *)((int)this + 0x149)),SVar2);
+                         *(ushort *)((int)this + 0x149),SVar2);
     if (this_00 != (STGameObjC *)0x0) {
       *(STGameObjC **)((int)this + 0x139) = this_00;
       STFishC::sub_004162B0((STFishC *)this_00,&local_a,&local_e,&local_10);
@@ -80,9 +77,9 @@ undefined4 __thiscall FUN_0061c5f0(void *this,undefined4 *param_1)
         iVar5 = FUN_006acf0d(*(int *)((int)this + 0x9f),*(int *)((int)this + 0xa3),
                              *(int *)((int)this + 0xa7),(int)local_8,(int)local_6,(int)local_c);
         *(int *)((int)this + 0x13d) = iVar5;
-        uVar4 = FUN_006aced8(*(int *)((int)this + 0x9f),*(int *)((int)this + 0xa3),(int)local_8,
+        iVar5 = FUN_006aced8(*(int *)((int)this + 0x9f),*(int *)((int)this + 0xa3),(int)local_8,
                              (int)local_6);
-        *(undefined4 *)((int)this + 0x141) = uVar4;
+        *(int *)((int)this + 0x141) = iVar5;
         return 1;
       }
       return 0;

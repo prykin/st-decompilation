@@ -14,7 +14,9 @@ undefined4 __thiscall FUN_0074fea4(void *this,uint param_1,int param_2,int param
         return 0;
       }
       bVar2 = CARRY4(param_1,*(uint *)((int)this + 0x68));
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = param_1 + *(uint *)((int)this + 0x68);
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = param_2 + *(int *)((int)this + 0x6c) + (uint)bVar2;
     }
     local_c = 0;

@@ -30,7 +30,7 @@ void __thiscall CPanelTy::UpdateStackPanel(CPanelTy *this,uint param_1)
   char *local_20;
   uint local_1c;
   AnonShape_0043BEB0_1C00EC12 *local_18;
-  undefined4 *local_14;
+  uint *local_14;
   undefined1 *local_10;
   AnonShape_0043BEB0_1C00EC12 *local_c;
   byte local_5;
@@ -73,7 +73,7 @@ void __thiscall CPanelTy::UpdateStackPanel(CPanelTy *this,uint param_1)
         local_20 = local_ac;
         local_c = local_18;
         local_10 = &this_00->field_0D3B + (int)pAVar11 * 6;
-        local_14 = &this_00->field_0D53 + (int)pAVar11 * 6;
+        local_14 = this_00->field_0DBF + (int)pAVar11 * 6 + -0x1b;
         do {
           iVar6 = 0xb;
           bVar12 = true;
@@ -95,7 +95,7 @@ void __thiscall CPanelTy::UpdateStackPanel(CPanelTy *this,uint param_1)
             pcVar7 = (char *)thunk_FUN_004f1d20((undefined1 *)local_c);
             puVar8 = Library::Ourlib::MFRLOAD::mfRLoad
                                (DAT_00806794,CASE_1F,pcVar7,uVar13,bVar5,iVar6,iVar14,puVar15);
-            local_14[-0x12] = puVar8;
+            local_14[-0x12] = (uint)puVar8;
             *local_10 = 0;
             *local_14 = this_00->field_0038;
             thunk_FUN_004f1c80(this_00,param_1,local_1c);
@@ -104,9 +104,9 @@ void __thiscall CPanelTy::UpdateStackPanel(CPanelTy *this,uint param_1)
             local_18 = (AnonShape_0043BEB0_1C00EC12 *)CONCAT31(local_18._1_3_,bVar9);
             bVar5 = local_5;
             if (bVar9 < 0xb) {
-              if (-1 < (&this_00->field_0148)[bVar9]) {
+              if (-1 < (int)this_00->field_0148[bVar9]) {
                 Library::DKW::DDX::FUN_006b3640
-                          ((int *)PTR_008075a8,(&this_00->field_0148)[bVar9],0xffffffff,
+                          ((int *)PTR_008075a8,(uint)this_00->field_0148[bVar9],0xffffffff,
                            (&this_00->field_003C)[bVar9],(&this_00->field_0094)[bVar9]);
                 bVar5 = local_5;
               }

@@ -86,7 +86,7 @@ cf_common_exit_00594615:
                 *(int *)(puVar3 + 4);
     }
     uVar1 = local_c->field_00D8;
-    puVar6 = (undefined4 *)FUN_006b4fa0((int)puVar3);
+    puVar6 = (undefined4 *)FUN_006b4fa0((int *)puVar3);
     for (uVar9 = local_8 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
       *puVar6 = CONCAT22(CONCAT11(uVar1,uVar1),CONCAT11(uVar1,uVar1));
       puVar6 = puVar6 + 1;

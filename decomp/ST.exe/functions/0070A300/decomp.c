@@ -1,4 +1,8 @@
 
+/* [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=8, used=0), and
+   decompilation contains no value return */
+
 void __cdecl FUN_0070a300(int *param_1)
 
 {
@@ -13,7 +17,7 @@ void __cdecl FUN_0070a300(int *param_1)
       iVar1 = FUN_006b1190(*(DArrayTy **)(*param_1 + 4),local_34);
       while (-1 < iVar1) {
         if (local_b != 0) {
-          FUN_00709a10(*param_1,(Global_sub_00709A10_param_2Enum)local_34[0],&local_b);
+          FUN_00709a10((void *)*param_1,(Global_sub_00709A10_param_2Enum)local_34[0],&local_b);
         }
         iVar1 = FUN_006b1190(*(DArrayTy **)(*param_1 + 4),local_34);
       }

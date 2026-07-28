@@ -3,9 +3,17 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel1.cpp
-   CPanelTy::SetNewDeep */
+   CPanelTy::SetNewDeep
 
-void __thiscall CPanelTy::SetNewDeep(CPanelTy *this,byte param_1,undefined1 param_2)
+   [STPrototypeApplier] Propagated parameter 2.
+   Evidence: raw retained-width parameter lifetime: width=1, reads=1, sites=00500985 MOV BL,byte ptr
+   [EBP + 0xc]
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=4, used=0, unknown=0),
+   and decompilation contains no value return */
+
+void __thiscall CPanelTy::SetNewDeep(CPanelTy *this,byte param_1,byte param_2)
 
 {
   char cVar1;
@@ -24,7 +32,7 @@ void __thiscall CPanelTy::SetNewDeep(CPanelTy *this,byte param_1,undefined1 para
   undefined3 uStack_13;
   CPanelTy *local_10;
   AnonShape_006B5B10_E0D06CF1 *local_c;
-  undefined1 local_5;
+  byte local_5;
 
   if (DAT_00808784 == 0) {
     if (((DAT_00808788 == 0) && (DAT_0080878c == 0)) && (DAT_00808790 == 0)) {
@@ -73,7 +81,8 @@ void __thiscall CPanelTy::SetNewDeep(CPanelTy *this,byte param_1,undefined1 para
           if (DAT_0080874e == '\x03') {
             if (param_1 == 0) {
               uVar7 = (uint)(byte)local_10->field_02A8;
-              if ((&local_10->field_0xb8d)[uVar7] == '\0') {
+              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+              if (*(char *)((int)local_10->field_0B1F + uVar7 + 0x6e) == '\0') {
                 uVar7 = uVar7 + 5;
               }
               uVar9 = (uint)(byte)local_10->field_02A8;
@@ -102,9 +111,9 @@ void __thiscall CPanelTy::SetNewDeep(CPanelTy *this,byte param_1,undefined1 para
             _local_14 = CONCAT31(uStack_13,bVar10);
             pAVar11 = local_c;
             if (bVar10 < 0xb) {
-              if (-1 < (&pCVar4->field_0148)[bVar10]) {
+              if (-1 < (int)pCVar4->field_0148[bVar10]) {
                 Library::DKW::DDX::FUN_006b3640
-                          ((int *)PTR_008075a8,(&pCVar4->field_0148)[bVar10],0xffffffff,
+                          ((int *)PTR_008075a8,(uint)pCVar4->field_0148[bVar10],0xffffffff,
                            (&pCVar4->field_003C)[bVar10],(&pCVar4->field_0094)[bVar10]);
                 pAVar11 = local_c;
               }
@@ -112,7 +121,8 @@ void __thiscall CPanelTy::SetNewDeep(CPanelTy *this,byte param_1,undefined1 para
           }
           else {
             if (param_1 == 0) {
-              cVar1 = (&local_10->field_0xb8d)[(byte)local_10->field_02A8];
+              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+              cVar1 = *(char *)((int)local_10->field_0B1F + (byte)local_10->field_02A8 + 0x6e);
               local_c = (AnonShape_006B5B10_E0D06CF1 *)local_10->field_0188;
             }
             else {
@@ -128,20 +138,20 @@ void __thiscall CPanelTy::SetNewDeep(CPanelTy *this,byte param_1,undefined1 para
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             _local_14 = CONCAT31(uStack_13,bVar10);
             if (bVar10 < 0xb) {
-              if (-1 < (&pCVar4->field_0148)[bVar10]) {
+              if (-1 < (int)pCVar4->field_0148[bVar10]) {
                 Library::DKW::DDX::FUN_006b3640
-                          ((int *)PTR_008075a8,(&pCVar4->field_0148)[bVar10],0xffffffff,
+                          ((int *)PTR_008075a8,(uint)pCVar4->field_0148[bVar10],0xffffffff,
                            (&pCVar4->field_003C)[bVar10],(&pCVar4->field_0094)[bVar10]);
               }
             }
           }
         }
         ((undefined1 *)((int)&pAVar11[0x2a].field_0004 + 2))[(int)pCVar4] = 0;
-        *(undefined1 *)((int)&pAVar11[0x2a].field_0008 + (int)pCVar4) = param_2;
-        *(undefined4 *)(&pCVar4->field_0x2aa + (int)pAVar11 * 4) = 0;
+        *(byte *)((int)&pAVar11[0x2a].field_0008 + (int)pCVar4) = param_2;
+        *(undefined4 *)((int)pCVar4->field_0308 + (int)pAVar11 * 4 + -0x5e) = 0;
         thunk_FUN_005252c0(0xb4);
         local_5 = param_2;
-        thunk_FUN_0054edf0((undefined4 *)0x15,(undefined4 *)&local_5,0,0xffffffff);
+        thunk_FUN_0054edf0((undefined4 *)0x15,(uint *)&local_5,0,0xffffffff);
         g_currentExceptionFrame = local_58.previous;
         return;
       }

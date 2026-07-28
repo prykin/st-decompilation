@@ -48,9 +48,11 @@ FUN_0058d160(short param_1,short param_2,short param_3,short param_4,int param_5
         if ((short)(param_1 * 0xc9 + 100) <= iVar6) break;
         iVar7 = 1;
       }
+/* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
 LAB_0058d1fe:
       param_6 = 0;
       iVar8 = (int)*(short *)(iVar3 + 0x43);
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_7 = iVar9;
     }
     else {
@@ -64,17 +66,21 @@ LAB_0058d1fe:
         if ((short)(param_2 * 0xc9 + 100) <= iVar8) break;
         iVar9 = 1;
       }
+/* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
 LAB_0058d252:
       param_7 = 0;
       iVar6 = (int)*(short *)(iVar3 + 0x41);
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_6 = iVar7;
     }
     sVar1 = *(short *)(iVar3 + 0x45);
     if (sVar1 < 0) {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_5 = (short)((sVar1 / 200 + (sVar1 >> 0xf)) -
                        (short)((longlong)(int)sVar1 * 0x51eb851f >> 0x3f)) + -1;
     }
     else {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_5 = (int)(short)((sVar1 / 200 + (sVar1 >> 0xf)) -
                             (short)((longlong)(int)sVar1 * 0x51eb851f >> 0x3f));
     }
@@ -112,6 +118,7 @@ LAB_0058d252:
     }
     iVar3 = thunk_FUN_004961b0(sVar5,sVar4,(short)param_5);
     if (iVar3 != 0) break;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_5 = (param_5 + 1) % 5;
     local_8 = local_8 + 1;
     if (4 < local_8) {

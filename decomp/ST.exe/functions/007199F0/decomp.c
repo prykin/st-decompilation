@@ -1,8 +1,11 @@
 
 /* [STPrototypeApplier] Propagated parameter 0.
-   Evidence: 007199F0 -> EXTERNAL:000000D3 @ 00719A33 */
+   Evidence: 007199F0 -> EXTERNAL:000000D3 @ 00719A33
+   [STAbiConsistencyApplier] stack_parameter_width target=parameter:1: parameter=/byte Evidence:
+   entry-use width=/byte; unmasked_dword_reads=0; evidence=00719A1E MOV ECX,dword ptr [EBP + 0xc];
+   first-use mask */
 
-undefined4 __cdecl FUN_007199f0(DWORD_PTR dwParam2,uint param_2,MCIDEVICEID *param_3)
+undefined4 __cdecl FUN_007199f0(DWORD_PTR dwParam2,byte param_2,MCIDEVICEID *param_3)
 
 {
   MCIERROR mcierr;
@@ -15,7 +18,7 @@ undefined4 __cdecl FUN_007199f0(DWORD_PTR dwParam2,uint param_2,MCIDEVICEID *par
   }
   local_10 = dwParam2;
   local_8 = 0;
-  local_c = param_2 & 0xff;
+  local_c = (uint)param_2;
   mcierr = mciSendCommandA(*param_3,0x806,5,(DWORD_PTR)&local_10);
   if (mcierr != 0) {
     FUN_00719c90(mcierr,param_3);

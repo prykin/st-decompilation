@@ -34,14 +34,14 @@ undefined4 __fastcall FUN_00480600(void *param_1)
   this = (STT3DSprC *)((int)param_1 + 0x1d5);
   if (iVar2 == 1) {
     iVar2 = 1;
-    uVar3 = thunk_FUN_004ad650((int)this);
+    uVar3 = thunk_FUN_004ad650(this);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     FUN_006eabf0(*(void **)((int)param_1 + 0x211),uVar3,iVar2);
     iVar2 = 1;
   }
   else {
     iVar2 = 0;
-    uVar3 = thunk_FUN_004ad650((int)this);
+    uVar3 = thunk_FUN_004ad650(this);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     FUN_006eabf0(*(void **)((int)param_1 + 0x211),uVar3,iVar2);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -56,7 +56,7 @@ undefined4 __fastcall FUN_00480600(void *param_1)
       iVar2 = 0;
     }
   }
-  iVar4 = thunk_FUN_004ad650((int)this);
+  iVar4 = thunk_FUN_004ad650(this);
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   FUN_006e6870(*(void **)((int)param_1 + 0x211),iVar4,iVar2);
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -244,7 +244,7 @@ LAB_00480b80:
                 STAllPlayersC::DelObjFromSaveTmps
                           (g_allPlayers_007FA174,*(int *)((int)param_1 + 0x20),
                            *(char *)((int)param_1 + 0x24),*(short *)((int)param_1 + 0x32));
-                thunk_FUN_004ad5e0((int)this);
+                thunk_FUN_004ad5e0(this);
               }
             }
             else {
@@ -315,7 +315,7 @@ LAB_00480b30:
       goto LAB_00480c7f;
 LAB_00480c6a:
       iVar4 = 0;
-      iVar2 = thunk_FUN_004ad650((int)this);
+      iVar2 = thunk_FUN_004ad650(this);
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       FUN_006e6870(*(void **)((int)param_1 + 0x211),iVar2,iVar4);
     }
@@ -458,7 +458,7 @@ LAB_00480f12:
     do {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       puVar5 = (undefined4 *)
-               thunk_FUN_0041dc40(local_20,(short)*local_c,*(undefined2 *)(local_c + 1),
+               thunk_FUN_0041dc40(local_20,(short)*local_c,*(ushort *)(local_c + 1),
                                   *(short *)((int)param_1 + 0x6c));
       uVar7 = *puVar5;
       bVar20 = 0;

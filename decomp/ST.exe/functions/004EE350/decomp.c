@@ -3,11 +3,14 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\behpanel.cpp
-   BehPanelTy::PaintBBut */
+   BehPanelTy::PaintBBut
+   [STAbiConsistencyApplier] stack_parameter_width target=parameter:3: parameter=/byte Evidence:
+   entry-use width=/byte; unmasked_dword_reads=0; evidence=004EE3BE MOV EAX,dword ptr [EBP + 0x10];
+   first-use mask */
 
 void __thiscall
 BehPanelTy::PaintBBut
-          (BehPanelTy *this,AnonShape_004EE350_18D491EA *param_1,char *param_2,uint param_3)
+          (BehPanelTy *this,AnonShape_004EE350_18D491EA *param_1,char *param_2,byte param_3)
 
 {
   AnonNested_004EE350_0018_78690378 *pAVar1;
@@ -37,7 +40,7 @@ BehPanelTy::PaintBBut
   errorCode = (int *)Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   if (errorCode == (int *)0x0) {
     iVar4 = 1;
-    text = FUN_006f2c00(param_2,1,param_3 & 0xff);
+    text = FUN_006f2c00(param_2,1,(uint)param_3);
     local_8 = cMf32::RecGet(g_cMf32_00806790,1,text,errorCode,iVar4);
     pBVar3 = local_14;
     DibPut((AnonShape_006B5B10_E0D06CF1 *)local_14->field_0068,local_10,local_c,'\x01',

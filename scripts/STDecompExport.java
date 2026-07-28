@@ -16,6 +16,7 @@ import java.security.MessageDigest;
 import java.time.Instant;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -47,6 +48,8 @@ import ghidra.program.model.data.Enum;
 import ghidra.program.model.data.Pointer;
 import ghidra.program.model.data.Structure;
 import ghidra.program.model.data.TypeDef;
+import ghidra.program.model.lang.OperandType;
+import ghidra.program.model.lang.Register;
 import ghidra.program.model.listing.Bookmark;
 import ghidra.program.model.listing.BookmarkManager;
 import ghidra.program.model.listing.CodeUnitIterator;
@@ -62,6 +65,7 @@ import ghidra.program.model.listing.Parameter;
 import ghidra.program.model.listing.Variable;
 import ghidra.program.model.mem.Memory;
 import ghidra.program.model.mem.MemoryBlock;
+import ghidra.program.model.scalar.Scalar;
 import ghidra.program.model.symbol.ExternalLocation;
 import ghidra.program.model.symbol.ExternalManager;
 import ghidra.program.model.symbol.Namespace;
@@ -78,8 +82,6 @@ public class STDecompExport extends GhidraScript {
     private static final int MAX_FILENAME_COMPONENT = 96;
     private static final int COVERAGE_PADDING_RUN = 16;
     private static final int COVERAGE_MAX_RANGE = 0x10000;
-    private static final java.util.regex.Pattern SIMPLE_MEMORY = java.util.regex.Pattern.compile(
-        "^\\[([A-Z][A-Z0-9]{1,3})(?:([+-])([+-]?)(0X[0-9A-F]+|[0-9]+))?\\]$");
     private static final Pattern INT3_ASSIGNMENT = Pattern.compile(
         "^(\\s*)([A-Za-z_][A-Za-z0-9_]*)\\s*=\\s*\\(code \\*\\)swi\\(3\\);\\s*$");
     private static final Pattern ASSIGNED_INDIRECT_CALL = Pattern.compile(
@@ -87,6 +89,9 @@ public class STDecompExport extends GhidraScript {
         "(?:\\([^()]+\\)\\s*)?\\(\\*([A-Za-z_][A-Za-z0-9_]*)\\)\\(\\);\\s*$");
     private static final Pattern PLAIN_INDIRECT_CALL = Pattern.compile(
         "^(\\s*)\\(\\*([A-Za-z_][A-Za-z0-9_]*)\\)\\(\\);\\s*$");
+    private static final Pattern EXPLICIT_THIS_VIRTUAL_CALL = Pattern.compile(
+        "\\(\\*([A-Za-z_][A-Za-z0-9_]*)->vtable->" +
+        "([A-Za-z_][A-Za-z0-9_]*)\\)\\s*\\(");
     private static final Pattern BULK_ZERO_SIMPLE = Pattern.compile(
         "(?m)^(?<indent>[ \\t]*)(?<pointer>[A-Za-z_][A-Za-z0-9_]*)[ \\t]*=[ \\t]*" +
         "(?<target>[^;\\r\\n]+);[ \\t]*\\R" +
@@ -151,6 +156,8 @@ public class STDecompExport extends GhidraScript {
         "\\b(?:goto|LAB_[0-9A-Fa-f]+)\\b");
     private static final Pattern GENERATED_ENUM_COMPOSITION = Pattern.compile(
         "\\bCASE_(?:NEG_)?[0-9A-Fa-f]+\\s*\\|\\s*CASE_(?:NEG_)?[0-9A-Fa-f]+\\b");
+    private static final Pattern PARAMETER_ASSIGNMENT = Pattern.compile(
+        "\\b(_?param_[0-9]+)\\s*(?:[+\\-*/&|^]?=)");
     private static final String GENERATED_ENUM_MARKER = "[STSwitchEnumApplier]";
     private static final String CASE_NAME = "CASE_(?:NEG_)?[0-9A-Fa-f]+";
     private static final Pattern FULL_ENUM_COMPOSITION = Pattern.compile(
@@ -191,6 +198,7 @@ public class STDecompExport extends GhidraScript {
     private final List<String> fingerprintCfgFallbackFunctions = new ArrayList<>();
     private final List<String> pseudocodeIdiomRows = new ArrayList<>();
     private final Set<String> pseudocodeIdiomFunctions = new HashSet<>();
+    private final Map<Address, Set<String>> stackSlotReuseCache = new HashMap<>();
     private final List<String> qualityIssueRows = new ArrayList<>();
     private final Set<String> qualityIssueFunctions = new HashSet<>();
     private final Map<String, QualityAggregate> qualityAggregates = new TreeMap<>();
@@ -538,7 +546,7 @@ public class STDecompExport extends GhidraScript {
                 NormalizedCode normalized = normalizePseudocode(cCode);
                 NormalizedCode enumNormalized =
                     normalizeKnownEnumCompositions(function, normalized.code);
-                cCode = annotatePseudocode(enumNormalized.code);
+                cCode = annotatePseudocode(function, enumNormalized.code);
                 writeText(dir.resolve("decomp.c"), cCode);
                 catalogPseudocodeIdioms(function, cCode);
                 catalogQualityIssues(function, cCode);
@@ -615,7 +623,7 @@ public class STDecompExport extends GhidraScript {
         NormalizedCode normalized = normalizePseudocode(literalized);
         NormalizedCode enumNormalized =
             normalizeKnownEnumCompositions(function, normalized.code);
-        String annotated = annotatePseudocode(enumNormalized.code);
+        String annotated = annotatePseudocode(function, enumNormalized.code);
         if (!annotated.equals(original)) writeText(path, annotated);
         catalogPseudocodeIdioms(function, annotated);
         catalogQualityIssues(function, annotated);
@@ -630,10 +638,11 @@ public class STDecompExport extends GhidraScript {
     private NormalizedCode normalizePseudocode(String code) {
         if (code == null || code.isEmpty()) return new NormalizedCode("", 0);
         NormalizedCode bulkZero = normalizeBulkZeroLoops(code);
-        code = bulkZero.code;
+        NormalizedCode virtualCalls = normalizeExplicitThisVirtualCalls(bulkZero.code);
+        code = virtualCalls.code;
         String[] lines = code.split("\\R", -1);
         List<String> output = new ArrayList<>();
-        int replacements = bulkZero.replacements;
+        int replacements = bulkZero.replacements + virtualCalls.replacements;
         for (int index = 0; index < lines.length; index++) {
             Matcher assignment = INT3_ASSIGNMENT.matcher(lines[index]);
             if (!assignment.matches() || index + 1 >= lines.length) {
@@ -666,6 +675,108 @@ public class STDecompExport extends GhidraScript {
         }
         String normalized = String.join(System.lineSeparator(), output);
         return new NormalizedCode(normalized, replacements);
+    }
+
+    /**
+     * A typed Ghidra vtable slot is still rendered as a C function-pointer call:
+     *
+     *     (*object->vtable->method)(object, arg)
+     *
+     * For the future C++ source projection, the exact duplicated receiver is
+     * safely equivalent to object->method(arg).  Fold only a simple receiver
+     * identifier whose first top-level argument is the same identifier.  Calls
+     * with a missing, cast, adjusted, or different receiver remain untouched
+     * because they may represent bad prototypes or secondary-base dispatch.
+     */
+    private NormalizedCode normalizeExplicitThisVirtualCalls(String code) {
+        Matcher matcher = EXPLICIT_THIS_VIRTUAL_CALL.matcher(code);
+        StringBuilder output = new StringBuilder(code.length());
+        int cursor = 0;
+        int search = 0;
+        int replacements = 0;
+        while (matcher.find(search)) {
+            int open = matcher.end() - 1;
+            int close = matchingParen(code, open);
+            if (close < 0) break;
+            String receiver = matcher.group(1);
+            String arguments = code.substring(open + 1, close);
+            int separator = topLevelComma(arguments);
+            String first = (separator < 0 ? arguments :
+                arguments.substring(0, separator)).trim();
+            if (!receiver.equals(first)) {
+                search = matcher.end();
+                continue;
+            }
+            String remaining = separator < 0 ? "" :
+                arguments.substring(separator + 1).stripLeading();
+            output.append(code, cursor, matcher.start());
+            output.append(receiver).append("->").append(matcher.group(2))
+                .append("(").append(remaining).append(")");
+            cursor = close + 1;
+            search = cursor;
+            replacements++;
+        }
+        if (replacements == 0) return new NormalizedCode(code, 0);
+        output.append(code, cursor, code.length());
+        return new NormalizedCode(output.toString(), replacements);
+    }
+
+    private int matchingParen(String text, int open) {
+        int depth = 0;
+        boolean string = false, character = false, escaped = false;
+        boolean lineComment = false, blockComment = false;
+        for (int index = open; index < text.length(); index++) {
+            char ch = text.charAt(index);
+            char next = index + 1 < text.length() ? text.charAt(index + 1) : '\0';
+            if (lineComment) {
+                if (ch == '\n') lineComment = false;
+                continue;
+            }
+            if (blockComment) {
+                if (ch == '*' && next == '/') { blockComment = false; index++; }
+                continue;
+            }
+            if (string || character) {
+                if (escaped) { escaped = false; continue; }
+                if (ch == '\\') { escaped = true; continue; }
+                if (string && ch == '"') string = false;
+                else if (character && ch == '\'') character = false;
+                continue;
+            }
+            if (ch == '/' && next == '/') { lineComment = true; index++; continue; }
+            if (ch == '/' && next == '*') { blockComment = true; index++; continue; }
+            if (ch == '"') { string = true; continue; }
+            if (ch == '\'') { character = true; continue; }
+            if (ch == '(') depth++;
+            else if (ch == ')' && --depth == 0) return index;
+        }
+        return -1;
+    }
+
+    private int topLevelComma(String text) {
+        int parentheses = 0, brackets = 0, braces = 0;
+        boolean string = false, character = false, escaped = false;
+        for (int index = 0; index < text.length(); index++) {
+            char ch = text.charAt(index);
+            if (string || character) {
+                if (escaped) { escaped = false; continue; }
+                if (ch == '\\') { escaped = true; continue; }
+                if (string && ch == '"') string = false;
+                else if (character && ch == '\'') character = false;
+                continue;
+            }
+            if (ch == '"') { string = true; continue; }
+            if (ch == '\'') { character = true; continue; }
+            if (ch == '(') parentheses++;
+            else if (ch == ')') parentheses--;
+            else if (ch == '[') brackets++;
+            else if (ch == ']') brackets--;
+            else if (ch == '{') braces++;
+            else if (ch == '}') braces--;
+            else if (ch == ',' && parentheses == 0 && brackets == 0 && braces == 0)
+                return index;
+        }
+        return -1;
     }
 
     /**
@@ -1186,8 +1297,9 @@ public class STDecompExport extends GhidraScript {
         return result.append('"').toString();
     }
 
-    private String annotatePseudocode(String code) {
+    private String annotatePseudocode(Function function, String code) {
         if (code == null || code.isEmpty()) return "";
+        Set<String> reusedParameters = reusedParameterNames(function);
         String[] lines = code.split("\\R", -1);
         List<String> clean = new ArrayList<>();
         boolean needsRuntime = code.contains("STDebugBreak()") ||
@@ -1219,7 +1331,7 @@ public class STDecompExport extends GhidraScript {
             // Ghidra wrapped across several physical lines.
             StatementWindow statement = statementWindow(clean, index);
             List<String> kinds = index <= coveredUntil ? new ArrayList<>() :
-                lineIdiomKinds(statement.text);
+                lineIdiomKinds(statement.text, reusedParameters);
             kinds.remove("terminal_debug_trap");
             if (!kinds.isEmpty()) {
                 String indent = line.substring(0, line.length() - line.stripLeading().length());
@@ -1309,6 +1421,7 @@ public class STDecompExport extends GhidraScript {
      */
     private void catalogQualityIssues(Function function, String code) {
         Map<String, QualityEvidence> evidence = new LinkedHashMap<>();
+        Set<String> reusedParameters = reusedParameterNames(function);
         String[] lines = code == null ? new String[0] : code.split("\\R", -1);
         for (int index = 0; index < lines.length; index++) {
             String line = lines[index];
@@ -1352,6 +1465,14 @@ public class STDecompExport extends GhidraScript {
                 addQuality(evidence, "dynamic_array_indexing", 1, index + 1, line);
             if (line.toLowerCase(Locale.ROOT).contains("0xa62"))
                 addQuality(evidence, "flattened_global_record_array", 1, index + 1, line);
+            Matcher assignment = PARAMETER_ASSIGNMENT.matcher(line);
+            while (assignment.find()) {
+                String name = assignment.group(1).replaceFirst("^_", "");
+                if (reusedParameters.contains(name)) {
+                    addQuality(evidence, "stack_slot_reuse", 1, index + 1, line);
+                    break;
+                }
+            }
         }
         if (evidence.isEmpty()) return;
         String functionAddress = addr(function.getEntryPoint());
@@ -1404,7 +1525,7 @@ public class STDecompExport extends GhidraScript {
             case "raw_pointer_offset", "packed_or_unaligned_piece",
                  "generic_global_aggregate", "undefined_type",
                  "flattened_global_record_array", "dynamic_array_indexing",
-                 "string_based_aggregate_address" -> "medium";
+                 "string_based_aggregate_address", "stack_slot_reuse" -> "medium";
             default -> "low";
         };
     }
@@ -1412,6 +1533,7 @@ public class STDecompExport extends GhidraScript {
     private String qualityStage(String kind) {
         return switch (kind) {
             case "return_width_artifact", "unresolved_register_input" -> "abi_recovery";
+            case "stack_slot_reuse" -> "ssa_lifetime_presentation";
             case "raw_indirect_call" -> "call_signature_recovery";
             case "raw_pointer_offset", "anonymous_shape_type" -> "layout_recovery";
             case "casted_generic_field", "packed_or_unaligned_piece",
@@ -1479,11 +1601,13 @@ public class STDecompExport extends GhidraScript {
                 "recover element type or render DArrayAt<T>; runtime elementSize is not a native C array stride";
             case "flattened_global_record_array" ->
                 "apply STPlayerRuntimeRecord and its nested arrays after base/stride proof";
+            case "stack_slot_reuse" ->
+                "retain the ABI parameter type, but split the post-overwrite stack-slot lifetime into a source-level local";
             default -> "review machine-code evidence before changing the Ghidra database";
         };
     }
 
-    private List<String> lineIdiomKinds(String line) {
+    private List<String> lineIdiomKinds(String line, Set<String> reusedParameters) {
         List<String> kinds = new ArrayList<>();
         if (line.contains("STDebugBreak()")) kinds.add("terminal_debug_trap");
         if (line.matches(".*\\b(?:unaff_|in_)[A-Za-z0-9_]+.*"))
@@ -1498,6 +1622,14 @@ public class STDecompExport extends GhidraScript {
         if (line.toLowerCase(Locale.ROOT).contains("0xa62"))
             kinds.add("flattened_global_record_array");
         if (RAW_INDIRECT_CALL.matcher(line).find()) kinds.add("raw_indirect_call");
+        Matcher parameterAssignment = PARAMETER_ASSIGNMENT.matcher(line);
+        while (parameterAssignment.find()) {
+            String name = parameterAssignment.group(1).replaceFirst("^_", "");
+            if (reusedParameters.contains(name)) {
+                kinds.add("stack_slot_reuse");
+                break;
+            }
+        }
         if (PACKED_PIECE.matcher(line).find() || (concat && !extraout))
             kinds.add("packed_or_unaligned_piece");
         // Prefer a more specific diagnosis over an additional generic offset hint.
@@ -1526,6 +1658,128 @@ public class STDecompExport extends GhidraScript {
         return new StatementWindow(text.toString(), endIndex);
     }
 
+    /**
+     * Identify physical incoming stack slots which MSVC turns into scratch locals
+     * after their original value dies.  This is presentation evidence only: the
+     * exporter does not mutate the Listing variable or pretend the two SSA
+     * lifetimes have one source-level type.
+     */
+    private Set<String> reusedParameterNames(Function function) {
+        if (function == null) return Set.of();
+        Set<String> cached = stackSlotReuseCache.get(function.getEntryPoint());
+        if (cached != null) return cached;
+        long frameBias = currentProgram.getDefaultPointerSize();
+        Map<Long, StackSlotLifetime> slots = new HashMap<>();
+        List<Parameter> parameters = Arrays.stream(function.getParameters())
+            .filter(parameter -> !parameter.isAutoParameter())
+            .sorted(Comparator.comparingInt(Parameter::getOrdinal)).toList();
+        long abiOffset = frameBias * 2;
+        for (Parameter parameter : parameters) {
+            if (parameter.isAutoParameter() || !parameter.hasStackStorage()) continue;
+            StackSlotLifetime lifetime = new StackSlotLifetime(parameter.getName());
+            slots.putIfAbsent((long)parameter.getStackOffset() + frameBias, lifetime);
+            if (frameBias == 4) slots.putIfAbsent(abiOffset, lifetime);
+            int length = Math.max((int)frameBias,
+                Math.max(parameter.getLength(), parameter.getFormalDataType().getLength()));
+            abiOffset += (length + frameBias - 1) / frameBias * frameBias;
+        }
+        InstructionIterator instructions = listing.getInstructions(
+            function.getBody(), true);
+        while (instructions.hasNext()) {
+            Instruction instruction = instructions.next();
+            String mnemonic = instruction.getMnemonicString()
+                .toUpperCase(Locale.ROOT);
+            for (int operandIndex = 0;
+                    operandIndex < instruction.getNumOperands(); operandIndex++) {
+                Long offset = ebpStackOffset(instruction, operandIndex);
+                StackSlotLifetime slot = offset == null ? null : slots.get(offset);
+                if (slot == null) continue;
+                boolean write = operandIndex == 0 &&
+                    instructionWritesFirstOperand(mnemonic);
+                boolean read = !write || instructionReadsFirstOperand(mnemonic);
+                if (read) {
+                    if (slot.written) slot.readAfterWrite = true;
+                    else slot.readBeforeWrite = true;
+                }
+                if (write && slot.readBeforeWrite) slot.written = true;
+            }
+        }
+        Set<String> result = new TreeSet<>();
+        for (StackSlotLifetime slot : slots.values())
+            if (slot.readBeforeWrite && slot.written && slot.readAfterWrite)
+                result.add(slot.parameterName);
+        Set<String> immutable = Set.copyOf(result);
+        stackSlotReuseCache.put(function.getEntryPoint(), immutable);
+        return immutable;
+    }
+
+    private Long ebpStackOffset(String operand) {
+        if (operand == null) return null;
+        String value = operand.toUpperCase(Locale.ROOT).replace("BYTE PTR", "")
+            .replace("WORD PTR", "").replace("DWORD PTR", "")
+            .replace("QWORD PTR", "").replace(" ", "");
+        Matcher matcher = Pattern.compile(
+            "^\\[EBP(?:([+-])(0X[0-9A-F]+|[0-9]+))?\\]$").matcher(value);
+        if (!matcher.matches()) return null;
+        if (matcher.group(2) == null) return 0L;
+        try {
+            long parsed = matcher.group(2).startsWith("0X") ?
+                Long.parseUnsignedLong(matcher.group(2).substring(2), 16) :
+                Long.parseLong(matcher.group(2));
+            return "-".equals(matcher.group(1)) ? -parsed : parsed;
+        }
+        catch (NumberFormatException ignored) { return null; }
+    }
+
+    private Long ebpStackOffset(Instruction instruction, int operandIndex) {
+        if (instruction == null || operandIndex < 0 ||
+                operandIndex >= instruction.getNumOperands()) return null;
+        String representation =
+            instruction.getDefaultOperandRepresentation(operandIndex);
+        Long rendered = ebpStackOffset(representation);
+        if (rendered != null) return rendered;
+        String instructionText = instruction.toString();
+        int separator = instructionText.indexOf(' ');
+        if (separator >= 0) {
+            String[] listingOperands =
+                instructionText.substring(separator + 1).split("\\s*,\\s*");
+            if (operandIndex < listingOperands.length) {
+                rendered = ebpStackOffset(listingOperands[operandIndex]);
+                if (rendered != null) return rendered;
+            }
+        }
+        int operandType = instruction.getOperandType(operandIndex);
+        if (!OperandType.isIndirect(operandType) &&
+                (representation == null || !representation.contains("["))) return null;
+        boolean ebp = false;
+        long displacement = 0;
+        int scalars = 0;
+        for (Object object : instruction.getOpObjects(operandIndex)) {
+            if (object instanceof Register register) {
+                String name = register.getName().toUpperCase(Locale.ROOT);
+                if (!"EBP".equals(name) && !"RBP".equals(name) && !"BP".equals(name))
+                    return null;
+                ebp = true;
+            }
+            else if (object instanceof Scalar scalar) {
+                displacement += scalar.getSignedValue();
+                scalars++;
+            }
+        }
+        return ebp && scalars <= 1 ? displacement : null;
+    }
+
+    private boolean instructionWritesFirstOperand(String mnemonic) {
+        return Set.of("MOV", "MOVSX", "MOVZX", "LEA", "POP", "XOR", "SUB", "SBB",
+            "ADD", "ADC", "AND", "OR", "IMUL", "SHL", "SHR", "SAR", "SAL", "INC",
+            "DEC", "NEG", "NOT").contains(mnemonic);
+    }
+
+    private boolean instructionReadsFirstOperand(String mnemonic) {
+        return Set.of("XOR", "SUB", "SBB", "ADD", "ADC", "AND", "OR", "IMUL",
+            "SHL", "SHR", "SAR", "SAL", "INC", "DEC", "NEG", "NOT").contains(mnemonic);
+    }
+
     private String inlineTransform(String kind, String line) {
         return switch (kind) {
             case "unresolved_register_input" ->
@@ -1542,6 +1796,8 @@ public class STDecompExport extends GhidraScript {
             case "packed_or_unaligned_piece" -> packedInlineTransform(line);
             case "raw_pointer_offset" ->
                 "candidate structure field after proof; otherwise retain buffer arithmetic";
+            case "stack_slot_reuse" ->
+                "compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable";
             default -> intendedTransform(kind);
         };
     }
@@ -1631,6 +1887,8 @@ public class STDecompExport extends GhidraScript {
                 "replace piece syntax with a named packed field, bit extract/compose, memcpy, or explicit unaligned load";
             case "raw_pointer_offset" ->
                 "propagate a compatible structure type across the pointer family and render a named field access";
+            case "stack_slot_reuse" ->
+                "split the optimized physical argument-slot reuse into the original parameter and a distinct local variable";
             default -> "review and express the machine operation as typed, compilable source";
         };
     }
@@ -1649,6 +1907,8 @@ public class STDecompExport extends GhidraScript {
             case "packed_or_unaligned_piece" ->
                 "Ghidra piece/CONCAT syntax or packed member arithmetic";
             case "raw_pointer_offset" -> "typed dereference over param/local plus constant offset";
+            case "stack_slot_reuse" ->
+                "machine reads an incoming EBP argument slot, later overwrites it, and reads the post-write lifetime";
             default -> "text pattern";
         };
     }
@@ -2237,20 +2497,39 @@ public class STDecompExport extends GhidraScript {
     private FingerprintMemory fingerprintMemory(String operand) {
         int open = operand.indexOf('['), close = operand.lastIndexOf(']');
         if (open < 0 || close <= open) return null;
-        String value = operand.substring(open, close + 1)
+        String expression = operand.substring(open + 1, close)
             .replace(" ", "").toUpperCase(Locale.ROOT);
-        java.util.regex.Matcher matcher = SIMPLE_MEMORY.matcher(value);
-        if (!matcher.matches()) return null;
-        long displacement = 0;
-        if (matcher.group(4) != null) {
-            Long parsed = fingerprintImmediate(matcher.group(4)); if (parsed == null) return null;
-            boolean negative = "-".equals(matcher.group(2)) ^ "-".equals(matcher.group(3));
-            displacement = negative ? -parsed : parsed;
-            if (!negative && currentProgram.getDefaultPointerSize() == 4 &&
-                    displacement >= 0x80000000L && displacement <= 0xffffffffL)
-                displacement -= 0x100000000L;
+        while (expression.contains("+-") || expression.contains("-+") ||
+                expression.contains("--")) {
+            expression = expression.replace("+-", "-")
+                .replace("-+", "-").replace("--", "+");
         }
-        return new FingerprintMemory(fingerprintCanonicalRegister(matcher.group(1)), displacement);
+        Matcher term = Pattern.compile("([+-]?)([^+-]+)").matcher(expression);
+        String baseRegister = null;
+        long displacement = 0;
+        int cursor = 0;
+        while (term.find()) {
+            if (term.start() != cursor) return null;
+            cursor = term.end();
+            String sign = term.group(1);
+            String value = term.group(2);
+            String register = fingerprintRegister(value);
+            if (register != null) {
+                if ("-".equals(sign) || baseRegister != null) return null;
+                baseRegister = register;
+                continue;
+            }
+            if (value.matches("[A-Z][A-Z0-9]{1,3}\\*(?:0X[0-9A-F]+|[0-9]+)"))
+                continue; // index*scale does not change the member displacement
+            Long parsed = fingerprintImmediate(value);
+            if (parsed == null) return null;
+            displacement += "-".equals(sign) ? -parsed : parsed;
+        }
+        if (cursor != expression.length() || baseRegister == null) return null;
+        if (currentProgram.getDefaultPointerSize() == 4 &&
+                displacement >= 0x80000000L && displacement <= 0xffffffffL)
+            displacement -= 0x100000000L;
+        return new FingerprintMemory(baseRegister, displacement);
     }
     private String fingerprintRegister(String operand) {
         String value = operand.trim().toUpperCase(Locale.ROOT);
@@ -3223,6 +3502,16 @@ public class STDecompExport extends GhidraScript {
         }
         catch (java.nio.file.AtomicMoveNotSupportedException exception) {
             Files.move(temporary, path, StandardCopyOption.REPLACE_EXISTING);
+        }
+    }
+
+    private static class StackSlotLifetime {
+        final String parameterName;
+        boolean readBeforeWrite;
+        boolean written;
+        boolean readAfterWrite;
+        StackSlotLifetime(String parameterName) {
+            this.parameterName = parameterName;
         }
     }
 

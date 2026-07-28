@@ -98,7 +98,7 @@ undefined4 __thiscall FUN_00638ca0(void *this,STMessage *param_1)
       uVar12 = 0x53;
       uVar11 = 0x5a;
       iVar5 = 1;
-      uVar6 = thunk_FUN_004ad650((int)this + 0x1d5);
+      uVar6 = thunk_FUN_004ad650((STT3DSprC *)((int)this + 0x1d5));
       FUN_006ea4e0(*(void **)((int)this + 0x211),uVar6,iVar5,uVar11,uVar12);
       *(undefined1 *)((int)this + 0x26f) = 2;
       thunk_FUN_00639990(this);
@@ -107,8 +107,8 @@ undefined4 __thiscall FUN_00638ca0(void *this,STMessage *param_1)
     if (*(char *)((int)this + 0x270) == '\0') {
       return 0;
     }
-    sub_00416240(this,*(undefined2 *)((int)this + 0x27a),*(undefined2 *)((int)this + 0x27e),
-                 *(undefined2 *)((int)this + 0x282));
+    sub_00416240(this,*(ushort *)((int)this + 0x27a),*(short *)((int)this + 0x27e),
+                 *(ushort *)((int)this + 0x282));
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*(int *)this + 0xd8))();
     pVVar4 = g_visibleClass_00802A88;
@@ -118,11 +118,13 @@ undefined4 __thiscall FUN_00638ca0(void *this,STMessage *param_1)
     iVar5 = *(int *)((int)this + 0x282);
     sVar3 = (short)(iVar5 >> 0x1f);
     if (iVar5 < 0) {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (STMessage *)
                 ((short)(((short)(iVar5 / 200) + sVar3) -
                         (short)((longlong)iVar5 * 0x51eb851f >> 0x3f)) + -1);
     }
     else {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (STMessage *)
                 (int)(short)(((short)(iVar5 / 200) + sVar3) -
                             (short)((longlong)iVar5 * 0x51eb851f >> 0x3f));
@@ -161,7 +163,7 @@ joined_r0x00639236:
         if (*(char *)((int)this + 0x271) == '\0') {
           return 0;
         }
-        thunk_FUN_004ad430((int)this + 0x1d5);
+        thunk_FUN_004ad430((STT3DSprC *)((int)this + 0x1d5));
         *(undefined1 *)((int)this + 0x271) = 0;
         return 0;
       }
@@ -217,11 +219,13 @@ joined_r0x00639236:
     iVar5 = *(int *)((int)this + 0x282);
     sVar3 = (short)(iVar5 >> 0x1f);
     if (iVar5 < 0) {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (STMessage *)
                 ((short)(((short)(iVar5 / 200) + sVar3) -
                         (short)((longlong)iVar5 * 0x51eb851f >> 0x3f)) + -1);
     }
     else {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (STMessage *)
                 (int)(short)(((short)(iVar5 / 200) + sVar3) -
                             (short)((longlong)iVar5 * 0x51eb851f >> 0x3f));

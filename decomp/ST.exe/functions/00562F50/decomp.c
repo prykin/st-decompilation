@@ -213,7 +213,7 @@ void AiAiCalcMinesFields(uint param_1,int param_2,int param_3,int param_4,int pa
             if (iVar14 < (int)uVar17) {
               Library::MSVCRT::FUN_0072da70
                         ((undefined4 *)(&stack0xfffffe1c + iVar14 * 4),
-                         (undefined4 *)(&stack0xfffffe18 + iVar14 * 4),
+                         (AnonPointee_TLOBaseTy_0607 *)(&stack0xfffffe18 + iVar14 * 4),
                          (iVar14 * 0x3fffffff + uVar17) * 4);
             }
             *(int **)(&stack0xfffffe18 + iVar14 * 4) = piVar9;

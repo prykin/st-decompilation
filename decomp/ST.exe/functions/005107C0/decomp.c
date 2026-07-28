@@ -23,10 +23,7 @@ int __thiscall FrmPanelTy::GetMessage(FrmPanelTy *this,STMessage *message)
   undefined4 uVar8;
   undefined4 uVar9;
   InternalExceptionFrame local_60;
-  undefined4 local_1c;
-  undefined4 local_18;
-  undefined4 local_14;
-  undefined4 local_10;
+  uint local_1c [4];
   undefined2 local_c;
   FrmPanelTy *local_8;
 
@@ -79,27 +76,27 @@ int __thiscall FrmPanelTy::GetMessage(FrmPanelTy *this,STMessage *message)
             }
           }
 cf_common_exit_005109A5:
-          local_18 = 0;
-          local_14 = 0;
-          local_10 = 0;
+          local_1c[1] = 0;
+          local_1c[2] = 0;
+          local_1c[3] = 0;
           local_c = 0;
           switch(SVar1) {
           case MESS_FRMPANELTY_B108:
-            local_1c = 9;
+            local_1c[0] = 9;
             break;
           default:
-            local_1c = 8;
+            local_1c[0] = 8;
             break;
           case MESS_FRMPANELTY_B10A:
-            local_1c = 10;
+            local_1c[0] = 10;
             break;
           case 0xb10c:
-            local_1c = 0xb;
+            local_1c[0] = 0xb;
             break;
           case MESS_CPANELTY_B10E:
-            local_1c = 0xc;
+            local_1c[0] = 0xc;
           }
-          thunk_FUN_0054edf0((undefined4 *)0x18,&local_1c,0,0xffffffff);
+          thunk_FUN_0054edf0((undefined4 *)0x18,local_1c,0,0xffffffff);
           thunk_FUN_005252c0(0xae);
           g_currentExceptionFrame = local_60.previous;
           return 0;

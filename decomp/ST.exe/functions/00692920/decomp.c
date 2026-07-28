@@ -30,12 +30,15 @@ FUN_00692920(cMf32 *param_1,undefined4 *param_2,undefined4 *param_3,int param_4,
     local_10 = cMf32::RecGet(param_1,1,"PAL_APP",(int *)0x0,1);
     pAVar2 = (AnonShape_006B4B20_3D4F4412 *)
              FUN_006b50c0((int)param_3,param_4,8,0x100,(undefined4 *)(local_10 + 0x14),1);
-    local_8 = FUN_006b4fa0((int)pAVar2);
+    local_8 = FUN_006b4fa0((int *)pAVar2);
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_5 == 0) {
       if (0 < param_4) {
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_3 = (undefined4 *)param_4;
         puVar8 = param_2;
         do {
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_2 = (undefined4 *)(param_4 + -1);
           puVar6 = puVar8;
           puVar7 = (undefined4 *)
@@ -51,16 +54,21 @@ FUN_00692920(cMf32 *param_1,undefined4 *param_2,undefined4 *param_3,int param_4,
             puVar6 = (undefined4 *)((int)puVar6 + 1);
             puVar7 = (undefined4 *)((int)puVar7 + 1);
           }
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_3 = (undefined4 *)((int)param_3 + -1);
           puVar8 = (undefined4 *)((int)puVar8 + (int)puVar1);
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_4 = (int)param_2;
         } while (param_3 != (undefined4 *)0x0);
       }
     }
     else if (0 < param_4) {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_3 = param_2;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_5 = param_4;
       do {
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_2 = (undefined4 *)(param_4 + -1);
         puVar3 = (undefined1 *)
                  (((uint)pAVar2->field_000E * pAVar2->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
@@ -76,8 +84,11 @@ FUN_00692920(cMf32 *param_1,undefined4 *param_2,undefined4 *param_3,int param_4,
             puVar5 = puVar5 + 1;
           } while (puVar8 != (undefined4 *)0x0);
         }
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_3 = (undefined4 *)((int)param_3 + (int)puVar1);
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_5 = param_5 + -1;
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_4 = (int)param_2;
       } while (param_5 != 0);
     }

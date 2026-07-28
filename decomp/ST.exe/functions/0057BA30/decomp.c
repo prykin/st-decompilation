@@ -68,7 +68,7 @@ int __cdecl FUN_0057ba30(void *param_1,int param_2)
                              (int)g_worldGrid.cells
                                   [(int)sVar5 * (int)g_worldGrid.planeStride +
                                    (int)sVar6 * (int)g_worldGrid.sizeX + (int)sVar7].objects[0],
-                             (short)*(undefined4 *)((int)pvVar3 + 0x25e),
+                             (ushort)*(undefined4 *)((int)pvVar3 + 0x25e),
                              *(undefined2 *)((int)pvVar3 + 0x262),0xac,0x110);
         }
       }

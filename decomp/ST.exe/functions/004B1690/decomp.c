@@ -62,9 +62,11 @@ cf_break_loop_004B1816:
     }
   }
   local_8 = (undefined *)0x0;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_4 == 0xdd) {
     local_8 = &DAT_007907ac;
   }
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   else if (param_4 == 0xde) {
     local_8 = &DAT_007907d0;
   }
@@ -75,6 +77,7 @@ cf_break_loop_004B1816:
       do {
         iVar5 = param_2 + -1;
         if (iVar5 < param_2 + 2) {
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_4 = iVar5 * 0xc;
           do {
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -100,6 +103,7 @@ cf_break_loop_004B1816:
               }
             }
             iVar5 = iVar5 + 1;
+            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_4 = param_4 + 0xc;
           } while (iVar5 < param_2 + 2);
         }
@@ -171,7 +175,7 @@ LAB_004b1a39:
       while (-1 < iVar8) {
         if (local_10 != (STFishC *)0x0) {
           STFishC::sub_004162B0
-                    (local_10,(undefined2 *)((int)&param_4 + 2),(undefined2 *)((int)&param_5 + 2),
+                    (local_10,(short *)((int)&param_4 + 2),(undefined2 *)((int)&param_5 + 2),
                      (undefined2 *)((int)&local_8 + 2));
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           if (((param_4._2_2_ == param_1) && (param_5._2_2_ == param_2)) &&

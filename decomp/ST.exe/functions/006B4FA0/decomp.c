@@ -1,25 +1,27 @@
 
-int FUN_006b4fa0(int param_1)
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 0070C860 -> 006B4FA0 @ 0070C8C9; FUN_0070c860 parameter param_1 | 0070CB20 -> 006B4FA0
+   @ 0070CB96; FUN_0070cb20 parameter param_3 */
+
+int FUN_006b4fa0(int *param_1)
 
 {
   ushort uVar1;
   int iVar2;
 
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  iVar2 = *(int *)(param_1 + 0x20);
+  iVar2 = param_1[8];
   if (iVar2 == 0) {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    uVar1 = *(ushort *)(param_1 + 0xe);
+    uVar1 = *(ushort *)((int)param_1 + 0xe);
     if (uVar1 != 0) {
       if (uVar1 < 9) {
-        return param_1 + 0x28 + (1 << ((byte)uVar1 & 0x1f)) * 4;
+        return (int)(param_1 + (1 << ((byte)uVar1 & 0x1f)) + 10);
       }
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      if (*(int *)(param_1 + 0x10) == 3) {
+      if (param_1[4] == 3) {
         iVar2 = 3;
       }
     }
   }
-  return param_1 + 0x28 + iVar2 * 4;
+  return (int)(param_1 + iVar2 + 10);
 }
 

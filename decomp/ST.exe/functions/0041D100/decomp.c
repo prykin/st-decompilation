@@ -1,4 +1,8 @@
 
+/* [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=3, used=0), and
+   decompilation contains no value return */
+
 void __fastcall FUN_0041d100(AnonShape_0041D100_A90F7B7E *param_1)
 
 {
@@ -7,8 +11,8 @@ void __fastcall FUN_0041d100(AnonShape_0041D100_A90F7B7E *param_1)
   if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
     VisibleClassTy::sub_005599D0
               (g_visibleClass_00802A88,(int)param_1->field_005B,(int)param_1->field_005D,
-               (char)param_1->field_005F,*(uint *)&param_1->field_0x24,
-               (undefined *)param_1->field_0109,*(undefined4 *)&param_1->field_0x18);
+               (char)param_1->field_005F,*(uint *)&param_1->field_0x24,param_1->field_0109,
+               *(int *)&param_1->field_0x18);
   }
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   iVar1 = (**(code **)(*(int *)param_1 + 8))();

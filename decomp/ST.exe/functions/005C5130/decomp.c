@@ -121,7 +121,7 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this,int *param_1)
                     ((uint *)this_00->field_1DD5,this_00->field_1D91,0xfffffffe,this_00->field_1DA9,
                      this_00->field_1DAD);
         }
-        puVar9 = &this_00->field_20CC;
+        puVar9 = this_00->field_20CC;
         iVar7 = 10;
         do {
           Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,*puVar9);

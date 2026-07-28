@@ -1,5 +1,8 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __fastcall FUN_005f5440(AnonShape_005F5440_D27C3BDE *param_1)
 
@@ -27,8 +30,7 @@ void __fastcall FUN_005f5440(AnonShape_005F5440_D27C3BDE *param_1)
             (pcVar7 = (char *)(pDVar2->elementSize * local_c + (int)pDVar2->data),
             pcVar7 != (char *)0x0)) && (*pcVar7 == '\x01')) {
           if (*(int *)(pcVar7 + 0x1f) == -1) {
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            thunk_FUN_005f4a30((int)pcVar7,CONCAT31((int3)((uint)pDVar2 >> 8),pcVar7[1]),0);
+            thunk_FUN_005f4a30((int)pcVar7,pcVar7[1],0);
           }
           pVVar4 = g_visibleClass_00802A88;
           if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {

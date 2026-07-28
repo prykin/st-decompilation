@@ -3,7 +3,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
-   STBoatC::_CheckDefenceShots */
+   STBoatC::_CheckDefenceShots
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall STBoatC::_CheckDefenceShots(STBoatC *this,int param_1)
 
@@ -18,7 +22,8 @@ void __thiscall STBoatC::_CheckDefenceShots(STBoatC *this,int param_1)
   uint index;
   InternalExceptionFrame local_68;
   undefined4 local_24;
-  uint local_20;
+  ushort local_20;
+  undefined2 uStack_1e;
   int local_1a;
   uint local_14;
   STBoatC *local_10;
@@ -46,19 +51,19 @@ void __thiscall STBoatC::_CheckDefenceShots(STBoatC *this,int param_1)
   if ((pDVar4 != (DArrayTy *)0x0) && (index = 0, 0 < (int)pDVar4->count)) {
     do {
       DArrayGetElement(pDVar4,index,&local_24);
-      if ((short)local_20 != -1) {
+      if (local_20 != 0xffff) {
         local_1a = local_1a - param_1;
         if (local_1a < 1) {
           pDVar4 = pSVar2->field_047B;
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_20 = CONCAT22(local_20._2_2_,0xffff);
+          _local_20 = CONCAT22(uStack_1e,0xffff);
         }
         else {
           this_00 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,(char)local_24,local_20,CASE_1);
           if (this_00 != (STGameObjC *)0x0) {
-            iVar3 = (*this_00->vtable->vfunc_F8)(this_00);
+            iVar3 = this_00->vfunc_F8();
             if (iVar3 == 1) {
-              iVar3 = (*this_00->vtable->vfunc_F0)(this_00);
+              iVar3 = this_00->vfunc_F0();
               if (iVar3 == 1) {
                 iVar3 = (*this_00->vtable->vfunc_F4)(pSVar2->field_0024);
                 if (iVar3 == 1) {
@@ -68,7 +73,7 @@ void __thiscall STBoatC::_CheckDefenceShots(STBoatC *this,int param_1)
                   iVar6 = (int)pSVar2->field_0045 - (int)local_6;
                   if (local_14 < (uint)(iVar5 * iVar5 + iVar3 * iVar3 + iVar6 * iVar6)) {
                     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                    local_20 = CONCAT22(local_20._2_2_,0xffff);
+                    _local_20 = CONCAT22(uStack_1e,0xffff);
                   }
                   pDVar4 = pSVar2->field_047B;
                   goto LAB_0048d016;
@@ -78,7 +83,7 @@ void __thiscall STBoatC::_CheckDefenceShots(STBoatC *this,int param_1)
           }
           pDVar4 = pSVar2->field_047B;
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_20 = CONCAT22(local_20._2_2_,0xffff);
+          _local_20 = CONCAT22(uStack_1e,0xffff);
         }
 LAB_0048d016:
         Library::DKW::TBL::FUN_006ae140(&pDVar4->flags,index,&local_24);

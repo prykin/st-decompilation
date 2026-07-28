@@ -83,12 +83,12 @@ LAB_00676e12:
         this = (STFishC *)*puVar4;
         if ((this != (STFishC *)0x0) && (iVar3 = (*this->vtable->vfunc_F8)(), iVar3 != 0)) {
           local_10 = 1;
-          dVar5 = (*this->vtable->slot_2C)(this);
+          dVar5 = this->slot_2C();
           if (param_2 != 0) {
             if (dVar5 == 0x78) {
               if ((param_2 & 0x80000000) == 0) {
                 if ((param_2 & 0x3fffffff) != 0) {
-                  dVar6 = (*this->vtable->slot_2C)(this);
+                  dVar6 = this->slot_2C();
                   if (dVar6 == 0x78) {
                     uVar10 = *(uint *)&this->field_0x259;
                   }
@@ -117,7 +117,7 @@ LAB_00677024:
             if (param_3 != 0x3fffffff) {
               if (dVar5 == 0x78) {
                 if ((param_3 & 0x80000000) == 0) {
-                  dVar5 = (*this->vtable->slot_2C)(this);
+                  dVar5 = this->slot_2C();
                   if (dVar5 == 0x78) {
                     iVar3 = *(int *)&this->field_0x259;
                   }
@@ -163,7 +163,7 @@ LAB_00676f4c:
               }
             }
             if ((local_10 == 0) ||
-               ((local_5 != -1 && (iVar3 = (*this->vtable->vfunc_6C)(), local_5 != iVar3))))
+               ((local_5 != -1 && (iVar3 = this->vfunc_6C(), local_5 != iVar3))))
             goto LAB_00677024;
             if ((0 < param_9) &&
                (((0 < param_10 && (0 < param_11)) &&

@@ -1,4 +1,8 @@
 
+/* [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0), and
+   decompilation contains no value return */
+
 void __cdecl FUN_006a2d80(ushort param_1,int *param_2)
 
 {
@@ -16,7 +20,7 @@ void __cdecl FUN_006a2d80(ushort param_1,int *param_2)
           local_c[0] = 0;
           local_c[1] = 0;
           local_c[2] = 0;
-          iVar1 = thunk_FUN_006a1370(param_2,iVar2,iVar3,0,(undefined4 *)local_c);
+          iVar1 = thunk_FUN_006a1370(param_2,iVar2,iVar3,0,(int)local_c);
           if (local_c[2] == 0) {
             local_c[2] = 0x1100;
           }

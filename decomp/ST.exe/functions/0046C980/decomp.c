@@ -64,7 +64,7 @@ int __thiscall STBoatC::BackBuild(STBoatC *this,int *param_1,undefined4 param_2,
       }
       if ((short)uVar3 == 0) {
         this->field_050C = 5;
-        iVar5 = (*this->vtable->vfunc_D8)(this);
+        iVar5 = this->vfunc_D8();
         return (-(uint)(iVar5 != 0) & 0xfffffffd) + 2;
       }
     }
@@ -90,14 +90,14 @@ cf_error_exit_0046CBE2:
         return 0xffff;
       }
       if ((short)uVar4 == 0) {
-        iVar5 = (*this->vtable->vfunc_D8)(this);
+        iVar5 = this->vfunc_D8();
         return -(uint)(iVar5 != 0);
       }
     }
     break;
   case CASE_5:
     if (this->field_0502 == 0) {
-      iVar5 = (*this->vtable->vfunc_D8)(this);
+      iVar5 = this->vfunc_D8();
       return -(uint)(iVar5 != 0);
     }
     this->field_0508 = CASE_6;
@@ -150,7 +150,7 @@ cf_error_exit_0046CBE2:
         goto cf_error_exit_0046CBE2;
       }
       if ((short)uVar4 == 0) {
-        iVar5 = (*this->vtable->vfunc_D8)(this);
+        iVar5 = this->vfunc_D8();
         return -(uint)(iVar5 != 0);
       }
     }
@@ -163,7 +163,7 @@ cf_error_exit_0046CBE2:
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  iVar5 = (*this->vtable->vfunc_D8)(this);
+  iVar5 = this->vfunc_D8();
   return (-(uint)(iVar5 != 0) & 0xfffffffd) + 2;
 }
 

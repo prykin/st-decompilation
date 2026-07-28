@@ -90,7 +90,7 @@ int __thiscall TLOBaseTy::LoadImages(TLOBaseTy *this,void *param_1)
     if (*(int *)(&DAT_00790c2c + this_00->field_0235 * 4) != 0) {
       iVar3 = 1;
       uVar7 = 0xc;
-      uVar2 = thunk_FUN_004ad650((int)this_01);
+      uVar2 = thunk_FUN_004ad650((STT3DSprC *)this_01);
       FUN_006ea190((void *)this_00->field_0211,uVar2,uVar7,iVar3);
     }
   }
@@ -175,7 +175,7 @@ int __thiscall TLOBaseTy::LoadImages(TLOBaseTy *this,void *param_1)
   }
   if (*(int *)(&DAT_00791b18 + (this_00->field_0235 * 3 + this_00->field_0239) * 4) != 0) {
     if (((int)TVar6 < 2) || (4 < (int)TVar6)) {
-      thunk_FUN_004ad5e0((int)this_01);
+      thunk_FUN_004ad5e0((STT3DSprC *)this_01);
     }
     else {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */

@@ -4,7 +4,11 @@
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\to_cursor.cpp
-   CursorClassTy::GCGameState */
+   CursorClassTy::GCGameState
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=11, used=0), and
+   decompilation contains no value return */
 
 void __thiscall CursorClassTy::GCGameState(CursorClassTy *this,int param_1)
 
@@ -30,9 +34,7 @@ void __thiscall CursorClassTy::GCGameState(CursorClassTy *this,int param_1)
   char *pcVar14;
   uint *puVar15;
   longlong lVar16;
-  undefined4 uVar17;
   HINSTANCE module;
-  undefined4 uVar18;
   undefined4 local_f8 [8];
   uint local_d8 [25];
   InternalExceptionFrame local_74;
@@ -40,7 +42,7 @@ void __thiscall CursorClassTy::GCGameState(CursorClassTy *this,int param_1)
   Global_sub_00523410_param_1Enum local_2c;
   undefined4 local_28;
   CursorClassTy *local_18;
-  undefined2 local_14;
+  short local_14;
   undefined2 local_12;
   float local_10;
   undefined4 local_c;
@@ -70,8 +72,8 @@ void __thiscall CursorClassTy::GCGameState(CursorClassTy *this,int param_1)
     if ((g_helpPanel_00801690 == (HelpPanelTy *)0x0) || (g_helpPanel_00801690->field_0172 == 2))
     goto LAB_0054b372;
 LAB_0054b019:
-    uVar18 = this_00->field_0038;
-    uVar17 = this_00->field_0034;
+    iVar5 = this_00->field_0038;
+    iVar10 = this_00->field_0034;
     CVar4 = (CursorClassTy_SetGCType_param_1Enum)(byte)g_helpPanel_00801690->field_01DB;
     goto cf_common_exit_0054B368;
   }
@@ -79,14 +81,14 @@ LAB_0054b019:
   if ((g_allPlayers_007FA174 == (STAllPlayersC *)0x0) || (DAT_00808784 != 0)) {
 LAB_0054b335:
     if ((g_helpPanel_00801690 == (HelpPanelTy *)0x0) || (g_helpPanel_00801690->field_0172 == 2)) {
-      uVar18 = this_00->field_0038;
-      uVar17 = this_00->field_0034;
+      iVar5 = this_00->field_0038;
+      iVar10 = this_00->field_0034;
 LAB_0054b366:
       CVar4 = CASE_0;
     }
     else {
-      uVar18 = this_00->field_0038;
-      uVar17 = this_00->field_0034;
+      iVar5 = this_00->field_0038;
+      iVar10 = this_00->field_0034;
       CVar4 = (CursorClassTy_SetGCType_param_1Enum)(byte)g_helpPanel_00801690->field_01DB;
     }
   }
@@ -104,8 +106,8 @@ LAB_0054b366:
               (g_optPanel_008016DC->field_0172 != CASE_2)))) {
       if ((g_helpPanel_00801690 != (HelpPanelTy *)0x0) && (g_helpPanel_00801690->field_0172 != 2))
       goto LAB_0054b019;
-      uVar18 = this_00->field_0038;
-      uVar17 = this_00->field_0034;
+      iVar5 = this_00->field_0038;
+      iVar10 = this_00->field_0034;
       goto LAB_0054b366;
     }
     pSVar6 = (STFishC *)
@@ -131,12 +133,12 @@ LAB_0054b366:
         thunk_FUN_0051fac0(DAT_00801694,(char *)0x0,0,'\x01',0xfffffc18);
       }
       if (this_00->field_04DE == '\0') goto LAB_0054b2a9;
-      uVar18 = this_00->field_0038;
-      uVar17 = this_00->field_0034;
+      iVar5 = this_00->field_0038;
+      iVar10 = this_00->field_0034;
       CVar4 = CASE_47;
     }
     else {
-      (*pSVar6->vtable->vfunc_68)(pSVar6,&local_30);
+      pSVar6->vfunc_68(&local_30);
       if (this_00->field_049E != local_30) {
         this_00->field_049E = local_30;
         module = g_module_00807618;
@@ -184,24 +186,26 @@ LAB_0054b366:
 /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
 LAB_0054b2a9:
         CVar4 = STAllPlayersC::GetCursorType
-                          (g_allPlayers_007FA174,this_00->field_04A2,this_00->field_049A,
+                          (g_allPlayers_007FA174,this_00->field_04A2,
+                           (AnonShape_00435930_AC276C8C *)this_00->field_049A,
                            this_00->field_00C5 - this_00->field_04B2,
                            (int *)(this_00->field_00C9 - this_00->field_04B6),unaff_EDI,unaff_ESI);
         while (CVar4 == CASE_58) {
           sub_0054A8D0(this_00);
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           CVar4 = STAllPlayersC::GetCursorType
-                            (g_allPlayers_007FA174,this_00->field_04A2,this_00->field_049A,
+                            (g_allPlayers_007FA174,this_00->field_04A2,
+                             (AnonShape_00435930_AC276C8C *)this_00->field_049A,
                              this_00->field_00C5 - this_00->field_04B2,
                              (int *)(this_00->field_00C9 - this_00->field_04B6),unaff_EDI,unaff_ESI)
           ;
         }
-        uVar18 = this_00->field_0038;
-        uVar17 = this_00->field_0034;
+        iVar5 = this_00->field_0038;
+        iVar10 = this_00->field_0034;
       }
       else {
         pSVar6 = this_00->field_049A;
-        GVar9 = (*pSVar6->vtable->slot_2C)(pSVar6);
+        GVar9 = pSVar6->slot_2C();
         if (GVar9 == 0x78) {
           GVar9 = *(Global_sub_005121F0_param_1Enum *)&this_00->field_049A->field_0x259;
         }
@@ -209,20 +213,20 @@ LAB_0054b2a9:
           iVar5 = (*pSVar6->vtable->vfunc_0C)();
           iVar5 = thunk_FUN_005121f0(g_helpPanel_00801690,GVar9,iVar5);
           if (iVar5 != 0) {
-            uVar18 = this_00->field_0038;
-            uVar17 = this_00->field_0034;
+            iVar5 = this_00->field_0038;
+            iVar10 = this_00->field_0034;
             CVar4 = CASE_48;
             goto cf_common_exit_0054B368;
           }
         }
-        uVar18 = this_00->field_0038;
-        uVar17 = this_00->field_0034;
+        iVar5 = this_00->field_0038;
+        iVar10 = this_00->field_0034;
         CVar4 = CASE_47;
       }
     }
   }
 cf_common_exit_0054B368:
-  local_8 = SetGCType(this_00,CVar4,uVar17,uVar18);
+  local_8 = SetGCType(this_00,CVar4,iVar10,iVar5);
 LAB_0054b372:
   if ((param_1 != 0) && (local_8 != 0)) {
     DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);

@@ -18,7 +18,7 @@ void __thiscall AiTactClassTy::GiveObjByFltType(AiTactClassTy *this,uint *param_
   bool bVar5;
   AiTactClassTy *pAVar6;
   int iVar7;
-  undefined2 *puVar8;
+  ushort *puVar8;
   STGameObjC *objPtr;
   AiFltClassTy *pAVar9;
   int iVar10;
@@ -66,19 +66,17 @@ joined_r0x0068f3e2:
           return;
         }
         if (uVar3 < param_1[3]) {
-          puVar8 = (undefined2 *)(param_1[2] * uVar3 + param_1[7]);
+          puVar8 = (ushort *)(param_1[2] * uVar3 + param_1[7]);
         }
         else {
-          puVar8 = (undefined2 *)0x0;
+          puVar8 = (ushort *)0x0;
         }
         if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
           objPtr = (STGameObjC *)0x0;
         }
         else {
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           objPtr = STAllPlayersC::GetObjPtr
-                             (g_allPlayers_007FA174,*(char *)&pAVar6->field_0024,
-                              CONCAT22((short)((uint)puVar8 >> 0x10),*puVar8),CASE_1);
+                             (g_allPlayers_007FA174,*(char *)&pAVar6->field_0024,*puVar8,CASE_1);
         }
         pAVar6 = local_8;
       } while (objPtr == (STGameObjC *)0x0);

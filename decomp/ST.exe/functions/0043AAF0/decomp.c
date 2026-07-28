@@ -31,7 +31,7 @@ STAllPlayersC::GetCamPoint
   undefined2 in_stack_00000006;
   STAllPlayersC_GetObjPtr_param_3Enum SVar10;
   int local_14;
-  uint local_10;
+  undefined1 local_10 [4];
   uint local_c;
   int local_8;
 
@@ -52,10 +52,12 @@ STAllPlayersC::GetCamPoint
       local_c = 0;
       if (0 < (int)dVar1) {
         do {
-          DArrayGetElement(param_3,local_c,&local_10);
-          if ((short)local_10 != -1) {
+          DArrayGetElement(param_3,local_c,local_10);
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+          if (local_10._0_2_ != 0xffff) {
             uVar6 = uVar6 + 1;
-            pSVar5 = GetObjPtr(g_allPlayers_007FA174,(char)param_2,local_10,CASE_1);
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+            pSVar5 = GetObjPtr(g_allPlayers_007FA174,(char)param_2,local_10._0_2_,CASE_1);
             STFishC::sub_004162B0
                       ((STFishC *)pSVar5,&param_1,(undefined2 *)&local_8,
                        (undefined2 *)((int)&param_4 + 2));
@@ -67,9 +69,11 @@ STAllPlayersC::GetCamPoint
         if (uVar6 != 0) {
           local_c = 0;
           do {
-            DArrayGetElement(param_3,local_c,&local_10);
-            if ((short)local_10 != -1) {
-              pSVar5 = GetObjPtr(g_allPlayers_007FA174,(char)param_2,local_10,CASE_1);
+            DArrayGetElement(param_3,local_c,local_10);
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+            if (local_10._0_2_ != 0xffff) {
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+              pSVar5 = GetObjPtr(g_allPlayers_007FA174,(char)param_2,local_10._0_2_,CASE_1);
               STFishC::sub_004162B0
                         ((STFishC *)pSVar5,&param_1,(undefined2 *)&local_8,
                          (undefined2 *)((int)&param_4 + 2));
@@ -126,7 +130,7 @@ LAB_0043acdb:
     if (_param_1 != 0x1b8) goto LAB_0043acdb;
     SVar10 = CASE_6;
   }
-  pSVar5 = GetObjPtr(g_allPlayers_007FA174,(char)param_2,param_4,SVar10);
+  pSVar5 = GetObjPtr(g_allPlayers_007FA174,(char)param_2,(ushort)param_4,SVar10);
   STFishC::sub_004162B0
             ((STFishC *)pSVar5,&param_1,(undefined2 *)&local_8,(undefined2 *)((int)&param_4 + 2));
   if (param_5 != (int *)0x0) {

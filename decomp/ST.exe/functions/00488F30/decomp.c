@@ -120,8 +120,9 @@ LAB_00489086:
   *(undefined1 *)((int)(&param_1->field_0x0 + iVar4 * 0x30) + 8) = 1;
 cf_common_join_00489222:
   iVar4 = 9;
-  switch(this->field_06F7) {
-  case CASE_1:
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+  switch(*(undefined4 *)((int)this->field_06CB + 0x2c)) {
+  case 1:
     uVar3 = thunk_FUN_004e60d0(this->field_0024,0xb);
     if (0 < (short)uVar3) {
       iVar4 = 10;
@@ -135,11 +136,11 @@ cf_common_join_00489222:
       return;
     }
     break;
-  case CASE_2:
-  case CASE_3:
-  case CASE_6:
-  case CASE_B:
-  case CASE_26:
+  case 2:
+  case 3:
+  case 6:
+  case 0xb:
+  case 0x26:
     uVar3 = thunk_FUN_004e60d0(this->field_0024,6);
     if (0 < (short)uVar3) {
       *(uint *)&param_1[3].field_0x60 = (int)(short)uVar3 << 0x10 | 6;
@@ -147,7 +148,7 @@ cf_common_join_00489222:
       return;
     }
     break;
-  case CASE_5:
+  case 5:
     uVar3 = thunk_FUN_004e60d0(this->field_0024,0x3c);
     if (0 < (short)uVar3) {
       iVar4 = 10;
@@ -168,7 +169,7 @@ cf_common_join_00489222:
       return;
     }
     break;
-  case CASE_D:
+  case 0xd:
     uVar3 = thunk_FUN_004e60d0(this->field_0024,0x83);
     if (0 < (short)uVar3) {
       *(uint *)&param_1[3].field_0x60 = (int)(short)uVar3 << 0x10 | 0x83;
@@ -176,17 +177,17 @@ cf_common_join_00489222:
       return;
     }
     break;
-  case CASE_E:
+  case 0xe:
     uVar3 = thunk_FUN_004e60d0(this->field_0024,0x95);
     if (0 < (short)uVar3) {
       *(uint *)&param_1[3].field_0x60 = (int)(short)uVar3 << 0x10 | 0x95;
       param_1[3].field_0x68 = 1;
     }
     break;
-  case CASE_F:
-  case CASE_12:
-  case CASE_17:
-  case CASE_27:
+  case 0xf:
+  case 0x12:
+  case 0x17:
+  case 0x27:
     uVar3 = thunk_FUN_004e60d0(this->field_0024,0x3a);
     if (0 < (short)uVar3) {
       *(uint *)&param_1[3].field_0x60 = (int)(short)uVar3 << 0x10 | 0x3a;
@@ -194,7 +195,7 @@ cf_common_join_00489222:
       return;
     }
     break;
-  case CASE_11:
+  case 0x11:
     uVar3 = thunk_FUN_004e60d0(this->field_0024,0x91);
     if (0 < (short)uVar3) {
       iVar4 = 10;
@@ -208,7 +209,7 @@ cf_common_join_00489222:
       return;
     }
     break;
-  case CASE_16:
+  case 0x16:
     uVar3 = thunk_FUN_004e60d0(this->field_0024,0x3a);
     if (0 < (short)uVar3) {
       iVar4 = 10;
@@ -222,7 +223,7 @@ cf_common_join_00489222:
       return;
     }
     break;
-  case CASE_1C:
+  case 0x1c:
     uVar3 = thunk_FUN_004e60d0(this->field_0024,0x7d);
     if (0 < (short)uVar3) {
       iVar4 = 10;
@@ -236,9 +237,9 @@ cf_common_join_00489222:
       return;
     }
     break;
-  case CASE_1E:
-  case CASE_22:
-  case CASE_28:
+  case 0x1e:
+  case 0x22:
+  case 0x28:
     uVar3 = thunk_FUN_004e60d0(this->field_0024,0x7a);
     if (0 < (short)uVar3) {
       *(uint *)&param_1[3].field_0x60 = (int)(short)uVar3 << 0x10 | 0x7a;
@@ -246,7 +247,7 @@ cf_common_join_00489222:
       return;
     }
     break;
-  case CASE_21:
+  case 0x21:
     uVar3 = thunk_FUN_004e60d0(this->field_0024,0x4b);
     if (0 < (short)uVar3) {
       iVar4 = 10;
@@ -267,7 +268,7 @@ cf_common_join_00489222:
       return;
     }
     break;
-  case CASE_23:
+  case 0x23:
     uVar3 = thunk_FUN_004e60d0(this->field_0024,0x69);
     if (0 < (short)uVar3) {
       *(uint *)&param_1[3].field_0x60 = (int)(short)uVar3 << 0x10 | 0x69;

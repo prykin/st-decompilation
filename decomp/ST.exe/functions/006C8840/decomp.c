@@ -39,6 +39,7 @@ uint * FUN_006c8840(uint *param_1,uint *param_2,int *param_3)
     *(undefined1 *)puVar9 = 0;
     puVar9 = (uint *)((int)puVar9 + 1);
   }
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_2 = (uint *)0x0;
   if (0 < (int)param_1[2]) {
     do {
@@ -69,6 +70,7 @@ uint * FUN_006c8840(uint *param_1,uint *param_2,int *param_3)
         pbVar2 = (byte *)((int)puVar7 + ((int)((uint)param_2 ^ 7) >> 3));
         *pbVar2 = *pbVar2 | '\x01' << (((uint)param_2 ^ 7) & 7);
       }
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = (uint *)((int)param_2 + 1);
     } while ((int)param_2 < (int)param_1[2]);
   }

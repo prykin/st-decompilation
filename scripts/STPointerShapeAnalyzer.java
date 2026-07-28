@@ -118,8 +118,21 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         "(?i)(?:0x0*a62|2658)\\b");
     private static final Pattern SIMPLE_IDENTIFIER = Pattern.compile(
         "[A-Za-z_$][A-Za-z0-9_$]*");
+    private static final Pattern LOCAL_STRUCTURE_DECLARATION = Pattern.compile(
+        "(?m)^\\s*([A-Za-z_$][A-Za-z0-9_$:]*)\\s+" +
+        "([A-Za-z_$][A-Za-z0-9_$]*)\\s*;");
+    private static final Pattern PIECE_ASSIGNMENT = Pattern.compile(
+        "(?m)^\\s*([A-Za-z_$][A-Za-z0-9_$]*)\\._([0-9]+)_([0-9]+)_\\s*=\\s*" +
+        "([^;\\r\\n]+);");
+    private static final Pattern FIELD_ASSIGNMENT = Pattern.compile(
+        "(?m)^\\s*([A-Za-z_$][A-Za-z0-9_$]*)\\.field_(?:0[xX])?" +
+        "([0-9A-Fa-f]+)\\s*=\\s*([^;\\r\\n]+);");
+    private static final Pattern LEADING_CAST = Pattern.compile(
+        "^\\(\\s*([^()\\r\\n]{1,80})\\s*\\)\\s*(.+)$");
 
     private final Map<String, TargetEvidence> targets = new LinkedHashMap<>();
+    private final Map<String, Map<Long, FieldEvidence>> anonymousValueFields =
+        new LinkedHashMap<>();
     private final List<Failure> failures = new ArrayList<>();
     private final List<Structure> structures = new ArrayList<>();
     private final Set<Address> unsettledFunctions = new HashSet<>();
@@ -210,6 +223,7 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         if (c.contains("Type propagation algorithm not settling"))
             unsettledFunctions.add(function.getEntryPoint());
         Map<String, Variable> locals = localVariables(function);
+        collectAnonymousValueFields(function, c, locals);
         Set<String> stableStorages = stableStorages(locals);
         Map<String, TargetEvidence> functionTargets = new LinkedHashMap<>();
         int ownerSpillHints = collectOwnerThisSpills(function, c, locals,
@@ -924,6 +938,7 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         Map<String, List<FieldProposal>> fields = new LinkedHashMap<>();
         List<TargetProposal> targetRows = new ArrayList<>();
         for (TargetEvidence target : targets.values()) {
+            mergeAnonymousValueFields(target);
             TargetDecision decision = decide(target);
             if (decision.anonymous && !decision.typePath.isBlank()) {
                 String shapeId = decision.typePath.substring(decision.typePath.lastIndexOf('/') + 1);
@@ -962,6 +977,145 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         targetRows.sort(Comparator.comparing((TargetProposal row) -> row.functionAddress)
             .thenComparing(row -> row.kind).thenComparing(row -> row.locator));
         return new Analysis(typeRows, fieldRows, targetRows);
+    }
+
+    /**
+     * The decompiler often recognizes a stack value as an existing anonymous structure even
+     * though Listing has no persistent local for that HighVariable.  Those values are commonly
+     * built field-by-field and passed to the pointer-typed helper which originally created the
+     * shape.  Recover the missing byte/word members from the value construction itself so a
+     * later run does not leave holes such as local._6_1_ in an otherwise proven record.
+     */
+    private void collectAnonymousValueFields(Function function, String c,
+            Map<String, Variable> locals) {
+        Map<String, Structure> values = new LinkedHashMap<>();
+        Matcher declaration = LOCAL_STRUCTURE_DECLARATION.matcher(c);
+        while (declaration.find()) {
+            Structure structure = uniqueStructure(declaration.group(1));
+            if (structure == null || !anonymousTypePath(structure.getPathName()) ||
+                    !generatedAnonymousOwned(structure)) continue;
+            values.put(declaration.group(2), structure);
+        }
+        if (values.isEmpty()) return;
+
+        Matcher piece = PIECE_ASSIGNMENT.matcher(c);
+        while (piece.find()) {
+            Structure structure = values.get(piece.group(1));
+            if (structure == null) continue;
+            long offset;
+            int width;
+            try {
+                offset = Long.parseLong(piece.group(2));
+                width = Integer.parseInt(piece.group(3));
+            }
+            catch (NumberFormatException exception) { continue; }
+            if (offset < 0 || width < 1 || width > 16 ||
+                    offset + width > structure.getLength()) continue;
+            recordAnonymousValueField(function, structure, offset, width,
+                expressionType(piece.group(4), locals, width),
+                piece.group(1) + "._" + offset + "_" + width + "_ assignment");
+        }
+
+        Matcher field = FIELD_ASSIGNMENT.matcher(c);
+        while (field.find()) {
+            Structure structure = values.get(field.group(1));
+            if (structure == null) continue;
+            long offset;
+            try { offset = Long.parseUnsignedLong(field.group(2), 16); }
+            catch (NumberFormatException exception) { continue; }
+            if (offset < 0 || offset >= structure.getLength()) continue;
+            DataTypeComponent component = structure.getComponentContaining((int)offset);
+            if (component == null || component.getOffset() != offset) continue;
+            int width = component.getLength();
+            recordAnonymousValueField(function, structure, offset, width,
+                expressionType(field.group(3), locals, width),
+                field.group(1) + ".field_" + field.group(2) + " assignment");
+        }
+    }
+
+    private Structure uniqueStructure(String renderedName) {
+        String name = renderedName;
+        int separator = name.lastIndexOf("::");
+        if (separator >= 0) name = name.substring(separator + 2);
+        List<DataType> matches = new ArrayList<>();
+        dataTypes.findDataTypes(name, matches);
+        Structure found = null;
+        for (DataType match : matches) {
+            DataType unwrapped = untypedef(match);
+            if (!(unwrapped instanceof Structure structure)) continue;
+            if (found != null && !found.getPathName().equals(structure.getPathName()))
+                return null;
+            found = structure;
+        }
+        return found;
+    }
+
+    private String expressionType(String expression, Map<String, Variable> locals,
+            int width) {
+        String value = expression.trim();
+        Matcher cast = LEADING_CAST.matcher(value);
+        if (cast.matches()) {
+            int castWidth = accessWidth(cast.group(1));
+            if (castWidth == width)
+                return concreteWidthType(valueTypeSpecification(cast.group(1), width), width);
+        }
+        String name = simpleArgumentName(value);
+        Variable variable = locals.get(name);
+        if (variable != null)
+            return concreteWidthType(typeSpecification(variable.getDataType()), width);
+        if (width == 1 && value.matches("'(?:[^'\\\\]|\\\\.)*'")) return "/char";
+        return width == 1 ? "/byte" : width == 2 ? "/ushort" :
+            width == 4 ? "/uint" : "/undefined" + width;
+    }
+
+    private String concreteWidthType(String specification, int width) {
+        if (typeLength(specification) == width &&
+                !specification.matches("/undefined(?:1|2|4|8)?"))
+            return specification;
+        if (width == 1) {
+            if (specification.equals("/int") || specification.equals("/short") ||
+                    specification.equals("/char")) return "/char";
+            return "/byte";
+        }
+        if (width == 2) {
+            if (specification.equals("/int") || specification.equals("/short"))
+                return "/short";
+            return "/ushort";
+        }
+        if (width == 4) {
+            if (specification.equals("/int")) return "/int";
+            return "/uint";
+        }
+        return "/undefined" + width;
+    }
+
+    private void recordAnonymousValueField(Function function, Structure structure,
+            long offset, int width, String type, String detail) {
+        Map<Long, FieldEvidence> fields = anonymousValueFields.computeIfAbsent(
+            structure.getPathName(), ignored -> new TreeMap<>());
+        FieldEvidence evidence = fields.computeIfAbsent(offset, FieldEvidence::new);
+        evidence.widths.merge(width, 1, Integer::sum);
+        if (type != null && !type.isBlank()) evidence.types.merge(type, 1, Integer::sum);
+        evidence.sites.add(addr(function.getEntryPoint()) + " stack-value " + detail);
+    }
+
+    private void mergeAnonymousValueFields(TargetEvidence target) {
+        String current = pointedStructure(target.expectedType);
+        Map<Long, FieldEvidence> values = anonymousValueFields.get(current);
+        if (values == null) return;
+        for (Map.Entry<Long, FieldEvidence> entry : values.entrySet()) {
+            FieldEvidence destination = target.fields.computeIfAbsent(
+                entry.getKey(), FieldEvidence::new);
+            FieldEvidence source = entry.getValue();
+            for (Map.Entry<Integer, Integer> width : source.widths.entrySet())
+                destination.widths.merge(width.getKey(), width.getValue(), Integer::sum);
+            for (Map.Entry<String, Integer> type : source.types.entrySet())
+                destination.types.merge(type.getKey(), type.getValue(), Integer::sum);
+            destination.sites.addAll(source.sites);
+            target.accessCount += source.sites.size();
+            target.functions.addAll(source.sites.stream()
+                .map(site -> site.substring(0, Math.min(8, site.length()))).toList());
+        }
     }
 
     private TargetDecision decide(TargetEvidence target) {

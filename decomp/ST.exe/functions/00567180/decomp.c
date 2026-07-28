@@ -1,6 +1,10 @@
 
 /* [STPrototypeRepairApplier] Propagated parameter 1.
-   Evidence: 0056FA60 -> 00567180 @ 0057083B */
+   Evidence: 0056FA60 -> 00567180 @ 0057083B
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=3, used=0), and
+   decompilation contains no value return */
 
 void __thiscall FUN_00567180(void *this,HWND param_1)
 

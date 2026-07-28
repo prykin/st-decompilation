@@ -11,7 +11,7 @@ void __thiscall STColl3C::sub_005FA070(STColl3C *this)
     (*this->vtable[8].vfunc_00)();
     sub_004167A0(this);
   }
-  thunk_FUN_005fa030((AnonShape_005F9F70_43CA4DAC *)this);
+  thunk_FUN_005fa030(this);
   return;
 }
 

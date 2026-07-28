@@ -24,6 +24,7 @@ FUN_004b1120(int param_1,Global_sub_004B1120_param_2Enum param_2,int *param_3,in
   short local_6;
 
   local_14 = -1;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_6 == 0) {
     piVar5 = (int *)0x0;
   }
@@ -37,7 +38,9 @@ FUN_004b1120(int param_1,Global_sub_004B1120_param_2Enum param_2,int *param_3,in
     if ((&STGroupBoatCVTable.vfunc_04)[param_2] ==
         (icall_004A0EE0_FUN_004a0ee0_for_STGroupBoatC *)0x1) {
       param_7 = 0;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = 0;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_6 = 0;
       if (g_dArray_007FA150 != (DArrayTy *)0x0) {
         g_dArray_007FA150->iteratorIndex = 0;
@@ -47,7 +50,7 @@ FUN_004b1120(int param_1,Global_sub_004B1120_param_2Enum param_2,int *param_3,in
             if (local_18 != (STFishC *)0x0) {
               switch(param_2) {
               case CASE_38:
-                dVar3 = (*local_18->vtable->slot_2C)(local_18);
+                dVar3 = local_18->slot_2C();
                 if (dVar3 == 0xdc) {
 LAB_004b1226:
                   STFishC::sub_004162B0(local_18,&local_6,&local_8,&local_a);
@@ -57,8 +60,10 @@ LAB_004b1226:
                         (STWorldObject *)0x0) && (local_a < 4)) &&
                      ((iVar2 = FUN_006aced8((int)local_6,(int)local_8,*param_3,*param_4),
                       local_14 < 0 || (iVar2 < local_14)))) {
+                    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                     param_1 = (int)local_8;
                     param_7 = (int)local_a;
+                    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                     param_6 = (int)local_6;
                     local_10 = 1;
                     local_14 = iVar2;
@@ -67,15 +72,15 @@ LAB_004b1226:
                 break;
               case CASE_39:
               case CASE_5E:
-                dVar3 = (*local_18->vtable->slot_2C)(local_18);
+                dVar3 = local_18->slot_2C();
                 if (dVar3 == 0xdd) goto LAB_004b1226;
                 break;
               case CASE_4F:
-                dVar3 = (*local_18->vtable->slot_2C)(local_18);
+                dVar3 = local_18->slot_2C();
                 if (dVar3 == 0xde) goto LAB_004b1226;
                 break;
               case CASE_61:
-                dVar3 = (*local_18->vtable->slot_2C)(local_18);
+                dVar3 = local_18->slot_2C();
                 if (dVar3 == 0xe0) goto LAB_004b1226;
               }
             }
@@ -110,6 +115,7 @@ LAB_004b1226:
                   if ((-1 < iVar7) && (iVar7 < g_worldGrid.sizeX)) {
                     iVar8 = *param_4 - iVar2;
                     if ((-1 < iVar8) && (iVar8 < g_worldGrid.sizeY)) {
+                      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                       if (param_6 == 0) {
                         piVar5 = (int *)0x0;
                       }
@@ -129,6 +135,7 @@ LAB_004b14f8:
 LAB_004b13a9:
                     iVar8 = *param_4 + iVar2;
                     if ((-1 < iVar8) && (iVar8 < g_worldGrid.sizeY)) {
+                      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                       if (param_6 == 0) {
                         piVar5 = (int *)0x0;
                       }
@@ -152,6 +159,7 @@ LAB_004b13a9:
                   if ((-1 < iVar8) && (iVar8 < g_worldGrid.sizeY)) {
                     iVar7 = iVar7 - iVar2;
                     if ((-1 < iVar7) && (iVar7 < g_worldGrid.sizeX)) {
+                      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                       if (param_6 == 0) {
                         piVar5 = (int *)0x0;
                       }
@@ -166,6 +174,7 @@ LAB_004b13a9:
                     }
                     iVar7 = *param_3 + iVar2;
                     if ((-1 < iVar7) && (iVar7 < g_worldGrid.sizeX)) {
+                      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                       if (param_6 == 0) {
                         piVar5 = (int *)0x0;
                       }

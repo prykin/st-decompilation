@@ -1,5 +1,8 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0), and
+   decompilation contains no value return */
 
 void __cdecl
 FUN_00637930(uint param_1,int param_2,int param_3,int param_4,int param_5,uint param_6,int param_7)
@@ -17,7 +20,7 @@ FUN_00637930(uint param_1,int param_2,int param_3,int param_4,int param_5,uint p
      (PTR_00807598 != (AnonShape_GLOBAL_00807598_0C6808FB *)0x0)) {
     FUN_006e8660(PTR_00807598,(int *)&local_8,1,0,*(uint *)((int)puVar2 + 9),
                  *(uint *)((int)puVar2 + 0xd),0x10,0x15,0);
-    FUN_006e98e0(PTR_00807598,local_8,0,*(undefined4 *)puVar2,*(int *)((int)puVar2 + 0x21),1);
+    FUN_006e98e0(PTR_00807598,local_8,0,*(int *)puVar2,*(int *)((int)puVar2 + 0x21),1);
     FUN_006ea270(PTR_00807598,local_8,0,param_6);
     FUN_006ea960(PTR_00807598,local_8,(float)param_3 * _DAT_007904f8 * _DAT_007904f0,
                  (float)param_4 * _DAT_007904f8 * _DAT_007904f0,

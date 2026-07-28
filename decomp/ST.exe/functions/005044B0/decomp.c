@@ -3,7 +3,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel4.cpp
-   CPanelTy::PaintMineInf */
+   CPanelTy::PaintMineInf
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall CPanelTy::PaintMineInf(CPanelTy *this,int param_1)
 
@@ -14,7 +18,8 @@ void __thiscall CPanelTy::PaintMineInf(CPanelTy *this,int param_1)
   byte *pbVar4;
   char *pcVar5;
   uint *puVar6;
-  int iVar7;
+  uint uVar7;
+  int iVar8;
   size_t _Count;
   undefined1 *_Dest;
   InternalExceptionFrame local_54;
@@ -29,7 +34,7 @@ void __thiscall CPanelTy::PaintMineInf(CPanelTy *this,int param_1)
   pCVar2 = local_10;
   if (iVar3 == 0) {
     DibPut((AnonShape_006B5B10_E0D06CF1 *)local_10->field_0194,param_1,0x50,'\x01',
-           (byte *)local_10->field_09ED);
+           (byte *)local_10->field_09D9[5]);
     if (pCVar2->field_0BF5 == CASE_38) {
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_c = (undefined1 *)CONCAT31(local_c._1_3_,2);
@@ -72,12 +77,12 @@ void __thiscall CPanelTy::PaintMineInf(CPanelTy *this,int param_1)
     if (pbVar4 != (byte *)0x0) {
       wsprintfA((LPSTR)&DAT_0080f33a,"%06d",(uint)(ushort)pCVar2->field_0C34);
       if (pCVar2->field_0BF5 == CASE_38) {
-        iVar7 = 1;
+        uVar7 = 1;
       }
       else {
-        iVar7 = (-(uint)(pCVar2->field_0BF5 != CASE_4F) & 0xfffffffe) + 2;
+        uVar7 = (-(uint)(pCVar2->field_0BF5 != CASE_4F) & 0xfffffffe) + 2;
       }
-      ccFntTy::WrStr(pCVar2->field_01C4,&DAT_0080f33a,-1,-1,iVar7);
+      ccFntTy::WrStr(pCVar2->field_01C4,&DAT_0080f33a,-1,-1,uVar7);
       DibPut((AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_0194,iVar3,0x6f,'\x01',pbVar4);
       ccFntTy::EraseSufr(pCVar2->field_01C4);
     }
@@ -85,9 +90,9 @@ void __thiscall CPanelTy::PaintMineInf(CPanelTy *this,int param_1)
     return;
   }
   g_currentExceptionFrame = local_54.previous;
-  iVar7 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel4.cpp",0x47,0,iVar3,"%s",
+  iVar8 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel4.cpp",0x47,0,iVar3,"%s",
                              "CPanelTy::PaintMineInf");
-  if (iVar7 == 0) {
+  if (iVar8 == 0) {
     RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\cpanel4.cpp",0x47);
     return;
   }

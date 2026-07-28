@@ -1,7 +1,10 @@
 
+/* [STPrototypeApplier] Propagated parameter 5.
+   Evidence: 006255B0 -> 00624140 @ 00625685 */
+
 undefined4 __thiscall
-FUN_006255b0(void *this,int param_1,undefined4 param_2,int param_3,int param_4,int param_5,
-            int param_6,int param_7,int param_8)
+FUN_006255b0(void *this,int param_1,undefined4 param_2,int param_3,int param_4,
+            Global_sub_0061BDB0_param_1Enum *param_5,int param_6,int param_7,int param_8)
 
 {
   int iVar1;

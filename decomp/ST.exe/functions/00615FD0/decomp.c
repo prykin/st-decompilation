@@ -24,15 +24,15 @@ undefined4 __thiscall FUN_00615fd0(void *this,int param_1,undefined4 param_2)
                            &local_6,&local_c), iVar1 == 0)) {
       if (*(int *)((int)this + 0x1f7) == 2) {
         if (*(int *)((int)this + 0x2fb) == *(int *)((int)this + 0x207)) {
-          thunk_FUN_00601d10((int)*(short *)((int)this + 0x201),*(undefined4 *)((int)this + 0x21b),
+          thunk_FUN_00601d10((int)*(short *)((int)this + 0x201),*(int *)((int)this + 0x21b),
                              *(int *)((int)this + 0x2ff),(short)*(undefined4 *)((int)this + 0x1fb),
-                             *(undefined2 *)((int)this + 0x1ff),0xb0,0x12a);
+                             *(ushort *)((int)this + 0x1ff),0xb0,0x12a);
           iVar2 = 1;
         }
         else {
-          thunk_FUN_00601d10((int)*(short *)((int)this + 0x201),*(undefined4 *)((int)this + 0x21b),
+          thunk_FUN_00601d10((int)*(short *)((int)this + 0x201),*(int *)((int)this + 0x21b),
                              *(int *)((int)this + 0x2ff),(short)*(undefined4 *)((int)this + 0x1fb),
-                             *(undefined2 *)((int)this + 0x1ff),0xb0,0x110);
+                             *(ushort *)((int)this + 0x1ff),0xb0,0x110);
         }
       }
       *(int *)((int)this + 0x30f) = (int)param_1._2_2_;

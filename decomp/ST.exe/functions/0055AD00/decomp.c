@@ -13,7 +13,7 @@ VisibleClassTy::sub_0055AD00
   byte bVar2;
   uint uVar3;
   int iVar4;
-  undefined *puVar5;
+  byte *pbVar5;
   uint uVar6;
   int iVar7;
   int iVar8;
@@ -21,7 +21,7 @@ VisibleClassTy::sub_0055AD00
   uint local_1c;
   int local_18;
   char *local_10;
-  undefined *local_c;
+  byte *local_c;
   int *local_8;
 
   if (((this->field_0114 != 0) && (param_4 < 8)) &&
@@ -63,18 +63,19 @@ LAB_0055ae0a:
         }
         if ((bVar9) && (*local_8 != 0)) {
           if (param_5 < 0) {
+            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_5 = 0;
           }
           iVar4 = -param_5 + param_1;
           iVar8 = -param_5 + param_2;
-          puVar5 = thunk_FUN_005532f0(param_5);
+          pbVar5 = thunk_FUN_005532f0(param_5);
           local_18 = 0;
-          local_c = puVar5;
+          local_c = pbVar5;
           if (0 < param_5 * 2 + 1) {
             do {
               iVar7 = 0;
               do {
-                if ((((((puVar5 == (undefined *)0x0) || (local_c[iVar7] != '\0')) &&
+                if ((((((pbVar5 == (byte *)0x0) || (local_c[iVar7] != 0)) &&
                       (iVar1 = iVar7 + iVar4, -1 < iVar1)) &&
                      ((iVar1 < this->field_0020 && (-1 < iVar8)))) &&
                     ((iVar8 < this->field_0024 && (((int)local_10 < 0x808a71 && (*local_8 != 0))))))

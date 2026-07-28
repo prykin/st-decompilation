@@ -28,7 +28,7 @@ uint __thiscall FUN_0063c170(void *this,int param_1)
                      *(int *)((int)this + 0x26a),iVar3,*(int *)((int)this + 0x272),
                      *(int *)((int)this + 0x276),*(int *)((int)this + 0x27a),
                      *(int *)((int)this + 0x235),50000,*(int *)((int)this + 0x25d),
-                     *(undefined2 *)((int)this + 0x261),0xa8,0,0);
+                     *(ushort *)((int)this + 0x261),0xa8,0,0);
   if (uVar2 != 0) {
     if (uVar2 == 1) {
       *(undefined4 *)((int)this + 0x266) = *(undefined4 *)((int)this + 0x3a3);

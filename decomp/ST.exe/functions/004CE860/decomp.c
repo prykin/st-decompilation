@@ -15,15 +15,15 @@ undefined4 __thiscall TLOBaseTy::sub_004CE860(TLOBaseTy *this)
   if ((array != (DArrayTy *)0x0) && (index = 0, local_8 = this, 0 < (int)array->count)) {
     while( true ) {
       DArrayGetElement(array,index,&local_8);
-      if ((&local_8->field_04DC)[*(int *)&this->field_0x369] != 0) break;
+      if (local_8->field_04E0[*(int *)&this->field_0x369 + -1] != 0) break;
       index = index + 1;
       array = g_playerRuntime[(int)this->field_0024].field2168_0x9de;
       if ((int)array->count <= (int)index) {
         return 0;
       }
     }
-    (&local_8->field_04DC)[*(int *)&this->field_0x369] =
-         (&local_8->field_04DC)[*(int *)&this->field_0x369] - 1;
+    local_8->field_04E0[*(int *)&this->field_0x369 + -1] =
+         local_8->field_04E0[*(int *)&this->field_0x369 + -1] - 1;
     this->field_0398 = (this->field_0398 * 0x32) / 100;
     this->field_039C = (this->field_039C * 0x32) / 100;
     this->field_03A0 = (this->field_03A0 * 0x32) / 100;

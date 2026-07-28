@@ -2,7 +2,11 @@
 /* [STMethodOwnerApplier] Structural method owner recovered as FSGSTy.
    Evidence: this_call_owners=[FSGSTy]; agreed_this_calls=3; incoming_this_accesses=48;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=2; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=2; owner_evidence_coverage=adequate
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=4, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall FSGSTy::sub_005A0590(FSGSTy *this)
 

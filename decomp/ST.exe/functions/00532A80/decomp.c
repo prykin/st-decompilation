@@ -3,7 +3,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\optpanel.cpp
-   OptPanelTy::PrepMissObj */
+   OptPanelTy::PrepMissObj
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall OptPanelTy::PrepMissObj(OptPanelTy *this)
 
@@ -67,19 +71,19 @@ LAB_00532af5:
   if (puVar6[2] != 0) {
     ccFntTy::SepColorStrInSarr(this_00->field_017C,puVar6,puVar6);
   }
-  if ((this_00->field_01A4 == CASE_C) && (this_00->field_01B5 != 0)) {
+  if ((this_00->field_01A4 == CASE_C) && (this_00->field_01B5[0] != 0)) {
     puVar1 = &this_00->field_0x18;
     this_00->field_0028 = 0x28;
     *(undefined2 *)&this_00->field_0x2c = 1;
     *(short *)&this_00->field_0x2e = (short)this_00->field_02F9[2];
-    FUN_006e6080(this_00,2,this_00->field_01B5,(undefined4 *)puVar1);
+    FUN_006e6080(this_00,2,this_00->field_01B5[0],(undefined4 *)puVar1);
     *(undefined2 *)&this_00->field_0x2e = 0;
     *(undefined2 *)&this_00->field_0x2c = 0;
     this_00->field_0028 = 0x22;
-    FUN_006e6080(this_00,2,this_00->field_01B5,(undefined4 *)puVar1);
+    FUN_006e6080(this_00,2,this_00->field_01B5[0],(undefined4 *)puVar1);
     this_00->field_0028 = 0x20;
     *(undefined4 *)&this_00->field_0x2c = 1;
-    FUN_006e6080(this_00,2,this_00->field_01B5,(undefined4 *)puVar1);
+    FUN_006e6080(this_00,2,this_00->field_01B5[0],(undefined4 *)puVar1);
   }
   g_currentExceptionFrame = local_4c.previous;
   return;

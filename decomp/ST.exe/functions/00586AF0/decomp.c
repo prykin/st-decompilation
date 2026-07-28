@@ -27,10 +27,6 @@ void __fastcall FUN_00586af0(int *param_1)
   short sVar14;
   short sVar15;
   short sVar16;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  undefined2 extraout_var;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  undefined2 extraout_var_00;
   STWorldObject *pSVar17;
   AnonShape_0041AF40_F59F8577 *pAVar19;
   bool bVar20;
@@ -42,9 +38,9 @@ void __fastcall FUN_00586af0(int *param_1)
   int local_3c;
   int local_38;
   int local_34;
-  undefined2 local_30 [2];
-  undefined2 local_2c [2];
-  undefined2 local_28 [2];
+  ushort local_30 [2];
+  short local_2c [2];
+  ushort local_28 [2];
   int local_24;
   STWorldObject *local_20;
   int local_1c;
@@ -92,7 +88,7 @@ void __fastcall FUN_00586af0(int *param_1)
   this = (STT3DSprC *)((int)param_1 + 0x1d5);
   if (iVar7 == 0) {
     iVar7 = 0;
-    uVar8 = thunk_FUN_004ad650((int)this);
+    uVar8 = thunk_FUN_004ad650(this);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     FUN_006eabf0(*(void **)((int)param_1 + 0x211),uVar8,iVar7);
     iVar7 = thunk_FUN_0041caf0((AnonShape_0041CAF0_1630B9E0 *)param_1);
@@ -105,20 +101,19 @@ void __fastcall FUN_00586af0(int *param_1)
   }
   else {
     iVar7 = 1;
-    uVar8 = thunk_FUN_004ad650((int)this);
+    uVar8 = thunk_FUN_004ad650(this);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     FUN_006eabf0(*(void **)((int)param_1 + 0x211),uVar8,iVar7);
     iVar7 = 1;
   }
-  iVar9 = thunk_FUN_004ad650((int)this);
+  iVar9 = thunk_FUN_004ad650(this);
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   FUN_006e6870(*(void **)((int)param_1 + 0x211),iVar9,iVar7);
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar7 = *(int *)((int)param_1 + 0x231);
   if (iVar7 == 0) {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    iVar7 = *(int *)((int)param_1 + 0x235);
-    lVar4 = (longlong)iVar7 * 0xeeff;
+    lVar4 = (longlong)*(int *)((int)param_1 + 0x235) * 0xeeff;
     uVar8 = (uint)lVar4;
     *(uint *)((int)param_1 + 0x235) =
          (uVar8 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10) + (uint)((uVar8 >> 0xf & 1) != 0)
@@ -135,11 +130,10 @@ void __fastcall FUN_00586af0(int *param_1)
     *(uint *)((int)param_1 + 0x23d) =
          (uVar8 >> 0x10 | (int)((ulonglong)((longlong)local_4c * 0xeeff) >> 0x20) << 0x10) +
          (uint)((uVar8 >> 0xf & 1) != 0);
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     local_44 = STAllPlayersC::GetObjPtr
                          (g_allPlayers_007FA174,*(char *)((int)param_1 + 0x26f),
-                          CONCAT22((short)((uint)iVar7 >> 0x10),
-                                   *(undefined2 *)((int)param_1 + 0x273)),CASE_1);
+                          *(ushort *)((int)param_1 + 0x273),CASE_1);
     if (local_44 == (STGameObjC *)0x0) {
 LAB_00587844:
       local_44 = (STGameObjC *)thunk_FUN_00586320((AnonShape_00586320_9792A2C7 *)param_1);
@@ -422,7 +416,7 @@ LAB_00587f98:
               iVar7 = 0;
               *(int *)((int)param_1 + 0x25f) = -*(int *)((int)param_1 + 0x25f);
             }
-            sub_00416240(param_1,(short)local_c,(short)local_1c,(short)iVar7);
+            sub_00416240(param_1,(ushort)local_c,(short)local_1c,(ushort)iVar7);
           }
           break;
         }
@@ -573,7 +567,7 @@ LAB_005882a0:
     else {
       *(undefined4 *)((int)param_1 + 0x231) = 2;
       STT3DSprC::StopShow((STT3DSprC *)((int)param_1 + 0x1d5),0xe);
-      thunk_FUN_004ad5e0((int)param_1 + 0x1d5);
+      thunk_FUN_004ad5e0((STT3DSprC *)((int)param_1 + 0x1d5));
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       thunk_FUN_00589870(param_1,(int)*(short *)((int)param_1 + 0x41),
                          (int)*(short *)((int)param_1 + 0x43),0x45c);
@@ -827,7 +821,7 @@ LAB_00587359:
             iVar7 = 0;
             *(undefined4 *)((int)param_1 + 0x25f) = 2;
           }
-          sub_00416240(param_1,(short)local_c,(short)local_1c,(short)iVar7);
+          sub_00416240(param_1,(ushort)local_c,(short)local_1c,(ushort)iVar7);
         }
         break;
       }
@@ -980,7 +974,7 @@ LAB_00587648:
     if (4000 < g_playSystem_00802A38->field_00E4 - *(int *)((int)param_1 + 599)) {
       *(undefined4 *)((int)param_1 + 0x231) = 2;
       STT3DSprC::StopShow((STT3DSprC *)((int)param_1 + 0x1d5),0xe);
-      thunk_FUN_004ad5e0((int)param_1 + 0x1d5);
+      thunk_FUN_004ad5e0((STT3DSprC *)((int)param_1 + 0x1d5));
       *(undefined4 *)((int)param_1 + 0x26f) = 0xff;
       iVar7 = thunk_FUN_00589740((AnonShape_00589740_397F9B27 *)param_1);
       if (iVar7 == 0) goto LAB_00588350;
@@ -993,10 +987,10 @@ LAB_00587761:
     local_44 = pSVar10;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if ((pSVar10 == (STGameObjC *)0x1) && (*(int *)((int)param_1 + 0x26f) != 0xff)) {
-      /* ST_PSEUDO[return_width_artifact,raw_pointer_offset]: candidate call-output artifact: verify return width, clobbers, or x87 state; candidate structure field after proof; otherwise retain buffer arithmetic */
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       this_00 = STAllPlayersC::GetObjPtr
                           (g_allPlayers_007FA174,(char)*(int *)((int)param_1 + 0x26f),
-                           CONCAT22(extraout_var,*(undefined2 *)((int)param_1 + 0x273)),CASE_1);
+                           *(ushort *)((int)param_1 + 0x273),CASE_1);
       if (this_00 != (STGameObjC *)0x0) {
         memset(&DAT_008116f0, 0, 0x1c); /* compiler bulk-zero initialization */
         DAT_008116f0 = DAT_007e660c;
@@ -1018,7 +1012,7 @@ LAB_00587761:
         local_6c._12_4_ = 2;
         local_6c.field_0010 = 0x110;
         local_6c.field_0014 = &DAT_008116f0;
-        (*this_00->vtable->GetMessage)(this_00,&local_6c);
+        this_00->GetMessage(&local_6c);
         pSVar10 = local_44;
       }
     }
@@ -1053,12 +1047,12 @@ LAB_00587761:
       thunk_FUN_005862e0(param_1);
       return;
     }
-    /* ST_PSEUDO[return_width_artifact,raw_pointer_offset]: candidate call-output artifact: verify return width, clobbers, or x87 state; candidate structure field after proof; otherwise retain buffer arithmetic */
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if ((((int)pSVar10 < 10) && (*(int *)((int)param_1 + 0x26f) != 0xff)) &&
        (pSVar10 = STAllPlayersC::GetObjPtr
                             (g_allPlayers_007FA174,(char)*(int *)((int)param_1 + 0x26f),
-                             CONCAT22(extraout_var_00,*(undefined2 *)((int)param_1 + 0x273)),CASE_1)
-       , pSVar10 != (STGameObjC *)0x0)) {
+                             *(ushort *)((int)param_1 + 0x273),CASE_1), pSVar10 != (STGameObjC *)0x0
+       )) {
       (*pSVar10->vtable->vfunc_E0)(param_1[0x9e],local_28,local_2c,local_30,&local_24);
       sub_00416240(param_1,local_28[0],local_2c[0],local_30[0]);
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -1118,7 +1112,7 @@ LAB_00588350:
         thunk_FUN_00637ae0((int)*(short *)((int)param_1 + 0x41),(int)*(short *)((int)param_1 + 0x43)
                            ,(int)*(short *)((int)param_1 + 0x45));
         STT3DSprC::StopShow((STT3DSprC *)((int)param_1 + 0x1d5),0xe);
-        thunk_FUN_004ad5e0((int)param_1 + 0x1d5);
+        thunk_FUN_004ad5e0((STT3DSprC *)((int)param_1 + 0x1d5));
         *(undefined4 *)((int)param_1 + 0x231) = 2;
         *(undefined4 *)((int)param_1 + 0x26f) = 0xff;
         thunk_FUN_005862e0(param_1);

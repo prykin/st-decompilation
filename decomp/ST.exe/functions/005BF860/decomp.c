@@ -9,32 +9,33 @@ void __thiscall MReportTy::NoneMReport(MReportTy *this)
 
 {
   char cVar1;
-  code *pcVar2;
-  bool bVar3;
+  AnonPointee_MReportTy_0073 *pAVar2;
+  code *pcVar3;
+  bool bVar4;
   MTaskTy *this_00;
-  int iVar4;
   int iVar5;
-  uint uVar6;
-  int iVar7;
+  int iVar6;
+  uint uVar7;
+  int iVar8;
   InternalExceptionFrame local_50;
   MTaskTy *local_c;
   int local_8;
 
-  iVar5 = 0;
+  iVar6 = 0;
   local_8 = 1;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = (MTaskTy *)this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
+  iVar5 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   this_00 = local_c;
-  if (iVar4 != 0) {
+  if (iVar5 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar5 = ReportDebugMessage("E:\\__titans\\Start\\rpt_obj.cpp",0x1f9,0,iVar4,"%s",
+    iVar6 = ReportDebugMessage("E:\\__titans\\Start\\rpt_obj.cpp",0x1f9,0,iVar5,"%s",
                                "MReportTy::NoneMReport");
-    if (iVar5 != 0) {
+    if (iVar6 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar4,0,"E:\\__titans\\Start\\rpt_obj.cpp",0x1f9);
+    RaiseInternalException(iVar5,0,"E:\\__titans\\Start\\rpt_obj.cpp",0x1f9);
     return;
   }
   cVar1 = *(char *)&local_c->field_0065;
@@ -42,69 +43,78 @@ void __thiscall MReportTy::NoneMReport(MReportTy *this)
     if (((*(char *)((int)&local_c->field_0065 + 2) != '\0') &&
         (*(char *)&local_c->field_0069 == '\0')) &&
        (*(char *)((int)&local_c->field_0065 + 3) != '\0')) {
-      bVar3 = false;
+      bVar4 = false;
       FUN_006b5f80((int *)PTR_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
       if (DAT_0080c83e != 0xffffffff) {
         do {
-          if (iVar5 == 0) {
-            if (DAT_0080c963 <= *(int *)&this_00->field_0x2c3) {
-              uVar6 = *(uint *)&this_00->field_0x2a3;
-              iVar7 = 0;
-              iVar4 = DAT_0080c963;
+          if (iVar6 == 0) {
+            if (DAT_0080c963 <= *(int *)((int)this_00->field_02BD + 6)) {
+              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+              uVar7 = *(uint *)((int)this_00->field_0291 + 0x12);
+              iVar8 = 0;
+              iVar5 = DAT_0080c963;
               goto LAB_005bfb27;
             }
-            uVar6 = *(uint *)&this_00->field_0x2a3;
-            if ((int)uVar6 < 0x29) {
-              iVar4 = 5;
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+            uVar7 = *(uint *)((int)this_00->field_0291 + 0x12);
+            if ((int)uVar7 < 0x29) {
+              iVar5 = 5;
             }
             else {
-              iVar4 = (int)uVar6 / 0x28;
+              iVar5 = (int)uVar7 / 0x28;
             }
-            iVar4 = *(int *)&this_00->field_0x2c3 + iVar4;
-            *(int *)&this_00->field_0x2c3 = iVar4;
-            if (DAT_0080c963 < iVar4) {
-              *(int *)&this_00->field_0x2c3 = DAT_0080c963;
+            iVar5 = *(int *)((int)this_00->field_02BD + 6) + iVar5;
+            *(int *)((int)this_00->field_02BD + 6) = iVar5;
+            if (DAT_0080c963 < iVar5) {
+              *(int *)((int)this_00->field_02BD + 6) = DAT_0080c963;
             }
-            PaintMainScore((MReportTy *)this_00,*(int *)&this_00->field_0x2c3,uVar6,0);
-            bVar3 = true;
+            PaintMainScore((MReportTy *)this_00,*(int *)((int)this_00->field_02BD + 6),uVar7,0);
+            bVar4 = true;
           }
-          else if (*(int *)(&this_00->field_0x2a3 + iVar5 * 4) < (int)(&DAT_0080c943)[iVar5]) {
-            if (*(int *)&this_00->field_0x2a3 < 0x29) {
-              iVar4 = 5;
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+          else if (*(int *)((int)this_00->field_0291 + iVar6 * 4 + 0x12) <
+                   (int)(&DAT_0080c943)[iVar6]) {
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+            iVar5 = *(int *)((int)this_00->field_0291 + 0x12);
+            if (iVar5 < 0x29) {
+              iVar5 = 5;
             }
             else {
-              iVar4 = *(int *)&this_00->field_0x2a3 / 0x28;
+              iVar5 = iVar5 / 0x28;
             }
-            iVar4 = *(int *)(&this_00->field_0x2a3 + iVar5 * 4) + iVar4;
-            *(int *)(&this_00->field_0x2a3 + iVar5 * 4) = iVar4;
-            if ((int)(&DAT_0080c943)[iVar5] < iVar4) {
-              *(undefined4 *)(&this_00->field_0x2a3 + iVar5 * 4) = (&DAT_0080c943)[iVar5];
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+            iVar5 = *(int *)((int)this_00->field_0291 + iVar6 * 4 + 0x12) + iVar5;
+            *(int *)((int)this_00->field_0291 + iVar6 * 4 + 0x12) = iVar5;
+            if ((int)(&DAT_0080c943)[iVar6] < iVar5) {
+              *(undefined4 *)((int)this_00->field_0291 + iVar6 * 4 + 0x12) = (&DAT_0080c943)[iVar6];
             }
-            PaintMainScore((MReportTy *)this_00,*(int *)(&this_00->field_0x2a3 + iVar5 * 4),
-                           *(uint *)&this_00->field_0x2a3,iVar5);
-            bVar3 = true;
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+            PaintMainScore((MReportTy *)this_00,
+                           *(int *)((int)this_00->field_0291 + iVar6 * 4 + 0x12),
+                           *(uint *)((int)this_00->field_0291 + 0x12),iVar6);
+            bVar4 = true;
           }
           else {
-            uVar6 = *(uint *)&this_00->field_0x2a3;
-            iVar4 = (&DAT_0080c943)[iVar5];
-            iVar7 = iVar5;
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+            uVar7 = *(uint *)((int)this_00->field_0291 + 0x12);
+            iVar5 = (&DAT_0080c943)[iVar6];
+            iVar8 = iVar6;
 LAB_005bfb27:
-            PaintMainScore((MReportTy *)this_00,iVar4,uVar6,iVar7);
+            PaintMainScore((MReportTy *)this_00,iVar5,uVar7,iVar8);
           }
-          iVar5 = iVar5 + 1;
-        } while (iVar5 < (int)(DAT_0080c83e + 1));
+          iVar6 = iVar6 + 1;
+        } while (iVar6 < (int)(DAT_0080c83e + 1));
       }
-      if (bVar3) {
+      if (bVar4) {
         thunk_FUN_005b6730(this_00,0x1e,'\x01',-1);
         FUN_006b5f80((int *)PTR_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
-        iVar4 = *(int *)((int)&this_00->field_0070 + 3);
-        PutDDXClip(0x1a,0x46,0x1a,0x46,*(uint *)(iVar4 + 4),*(byte **)(iVar4 + 8),'\x01',
+        iVar5 = *(int *)((int)&this_00->field_0070 + 3);
+        PutDDXClip(0x1a,0x46,0x1a,0x46,*(uint *)(iVar5 + 4),*(byte **)(iVar5 + 8),'\x01',
                    (BITMAPINFO *)this_00->field_005D);
-        iVar4 = *(int *)((int)&this_00->field_0070 + 3);
+        pAVar2 = *(AnonPointee_MReportTy_0073 **)((int)&this_00->field_0070 + 3);
         Library::DKW::DDX::FUN_006b48e0
-                  ((int)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0x1a,0x46,iVar4,0,0,0,
-                   *(uint *)(iVar4 + 4),*(int *)(iVar4 + 8),(int)&this_00->field_0xa3,0x4c,0x10000ff
-                  );
+                  ((int)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0x1a,0x46,pAVar2,0,0,0,
+                   pAVar2->field_0004,pAVar2->field_0008,(int)&this_00->field_0xa3,0x4c,0x10000ff);
         g_currentExceptionFrame = local_50.previous;
         return;
       }
@@ -113,14 +123,14 @@ LAB_005bfb27:
   }
   else if (cVar1 == '\x03') {
     if (*(HoloTy **)&local_c->field_0x453 != (HoloTy *)0x0) {
-      iVar4 = HoloTy::NextFas(*(HoloTy **)&local_c->field_0x453);
-      if (iVar4 != 0) {
+      iVar5 = HoloTy::NextFas(*(HoloTy **)&local_c->field_0x453);
+      if (iVar5 != 0) {
         local_8 = 0;
       }
     }
     if (*(HoloTy **)&this_00->field_0x457 != (HoloTy *)0x0) {
-      iVar4 = HoloTy::NextFas(*(HoloTy **)&this_00->field_0x457);
-      if (iVar4 != 0) {
+      iVar5 = HoloTy::NextFas(*(HoloTy **)&this_00->field_0x457);
+      if (iVar5 != 0) {
         local_8 = 0;
       }
     }
@@ -143,11 +153,11 @@ LAB_005bfb27:
   }
   else if (cVar1 == '\x04') {
     if (*(HoloTy **)&local_c->field_0x453 != (HoloTy *)0x0) {
-      iVar4 = HoloTy::NextFas(*(HoloTy **)&local_c->field_0x453);
-      if (iVar4 == 0) {
-        uVar6 = *(uint *)(*(int *)&this_00->field_0x453 + 3);
-        if (-1 < (int)uVar6) {
-          FUN_006b3af0((int *)PTR_008075a8,uVar6);
+      iVar5 = HoloTy::NextFas(*(HoloTy **)&local_c->field_0x453);
+      if (iVar5 == 0) {
+        uVar7 = *(uint *)(*(int *)&this_00->field_0x453 + 3);
+        if (-1 < (int)uVar7) {
+          FUN_006b3af0((int *)PTR_008075a8,uVar7);
         }
       }
       else {
@@ -155,11 +165,11 @@ LAB_005bfb27:
       }
     }
     if (*(HoloTy **)&this_00->field_0x457 != (HoloTy *)0x0) {
-      iVar4 = HoloTy::NextFas(*(HoloTy **)&this_00->field_0x457);
-      if (iVar4 == 0) {
-        uVar6 = *(uint *)(*(int *)&this_00->field_0x457 + 3);
-        if (-1 < (int)uVar6) {
-          FUN_006b3af0((int *)PTR_008075a8,uVar6);
+      iVar5 = HoloTy::NextFas(*(HoloTy **)&this_00->field_0x457);
+      if (iVar5 == 0) {
+        uVar7 = *(uint *)(*(int *)&this_00->field_0x457 + 3);
+        if (-1 < (int)uVar7) {
+          FUN_006b3af0((int *)PTR_008075a8,uVar7);
         }
       }
       else {

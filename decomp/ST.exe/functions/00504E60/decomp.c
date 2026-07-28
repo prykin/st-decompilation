@@ -37,15 +37,15 @@ void __thiscall CPanelTy::PaintIDSObj(CPanelTy *this)
   }
   if (DAT_0080874e == '\x03') {
     DibPut((AnonShape_006B5B10_E0D06CF1 *)local_8->field_0194,0xf,0x8d,'\x01',
-           (byte *)local_8->field_09F1);
+           (byte *)local_8->field_09D9[6]);
     if (pCVar2->field_0C4D == 0) goto cf_common_exit_00504F81;
     ccFntTy::SetSurf(pCVar2->field_01B8,pCVar2->field_0194,0,0x10,0x8e,
-                     *(int *)(pCVar2->field_09F1 + 2),0xb);
+                     *(int *)(pCVar2->field_09D9[6] + 4),0xb);
     resourceId = pCVar2->field_0C4D;
   }
   else {
     DibPut((AnonShape_006B5B10_E0D06CF1 *)local_8->field_0194,4,0x89,'\x01',
-           (byte *)local_8->field_09F1);
+           (byte *)local_8->field_09D9[6]);
     if (pCVar2->field_0C4D == 0) goto cf_common_exit_00504F81;
     ccFntTy::SetSurf(pCVar2->field_01B8,pCVar2->field_0194,0,6,0x8b,200,0xb);
     resourceId = pCVar2->field_0C4D;
@@ -58,9 +58,9 @@ void __thiscall CPanelTy::PaintIDSObj(CPanelTy *this)
   resourceString = (uint *)LoadResourceString(resourceId,g_module_00807618);
   ccFntTy::WrTxt(pCVar2->field_01B8,resourceString,iVar3,iVar4,uVar5,iVar6,iVar7);
 cf_common_exit_00504F81:
-  if (-1 < pCVar2->field_015C) {
+  if (-1 < (int)pCVar2->field_0148[5]) {
     Library::DKW::DDX::FUN_006b3640
-              ((int *)PTR_008075a8,pCVar2->field_015C,0xffffffff,pCVar2->field_0050,
+              ((int *)PTR_008075a8,(uint)pCVar2->field_0148[5],0xffffffff,pCVar2->field_0050,
                pCVar2->field_00A8);
   }
   g_currentExceptionFrame = local_4c.previous;

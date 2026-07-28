@@ -45,6 +45,7 @@ int __thiscall FUN_004de4f0(void *this,int param_1)
       do {
         DArrayGetElement(pDVar4,uVar5,&local_8);
         if (local_8 != (int *)0x0) {
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_1 = 0;
           if (local_8[8] == 0x14) {
             puVar8 = &local_24;
@@ -62,6 +63,7 @@ LAB_004de602:
               }
             }
             else {
+              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_1 = 0;
             }
           }
@@ -75,6 +77,7 @@ LAB_004de602:
                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                 iVar2 = (**(code **)(*local_8 + 0x2c))();
                 iVar9 = 0;
+                /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                 param_1 = (&DAT_00792ca0)[(iVar2 + -0x32) * 6];
                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                 iVar2 = (**(code **)(*local_8 + 0x2c))();
@@ -99,12 +102,14 @@ LAB_004de602:
       if (pDVar4->count != 0) {
         do {
           DArrayGetElement(pDVar4,uVar5,&local_1c);
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_1 = 0x96;
           do {
             local_c = thunk_FUN_004ddba0(local_1c,param_1);
             if (local_c != 0) {
               aiStackY_330[param_1] = aiStackY_330[param_1] + (int)(0x5dc / (longlong)local_c);
             }
+            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_1 = param_1 + 1;
           } while (param_1 < 0xc3);
           uVar5 = uVar5 + 1;

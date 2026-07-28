@@ -22,6 +22,7 @@ FUN_00697af0(void *this,AnonShape_00697AF0_A94F4D28 *param_1,int *param_2,int *p
   if (pDVar1 != (DArrayTy *)0x0) {
     uVar2 = pDVar1->count;
     uVar7 = 0;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = (AnonShape_00697AF0_A94F4D28 *)0x0;
     local_c = 0;
     local_10 = (AnonShape_00697AF0_A94F4D28 *)0x0;
@@ -42,6 +43,7 @@ FUN_00697af0(void *this,AnonShape_00697AF0_A94F4D28 *param_1,int *param_2,int *p
           iVar4 = iVar6;
           if (uVar7 != 0) {
             if ((int)pAVar8 < (int)param_1) {
+              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_1 = pAVar8;
             }
             if (iVar6 < local_c) {
@@ -57,6 +59,7 @@ FUN_00697af0(void *this,AnonShape_00697AF0_A94F4D28 *param_1,int *param_2,int *p
           }
           local_c = iVar4;
           local_10 = pAVar3;
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_1 = pAVar8;
           local_8 = iVar6;
         }

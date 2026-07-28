@@ -1,5 +1,8 @@
 
-undefined4 FUN_00747822(AnonShape_00747822_A1E67AF6 *param_1)
+/* [STPrototypeApplier] Propagated return.
+   Evidence: 00747822 returns zeroed full register at 00747849 @ 0074784C */
+
+uint FUN_00747822(AnonShape_00747822_A1E67AF6 *param_1)
 
 {
   undefined4 uVar1;

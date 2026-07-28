@@ -48,7 +48,7 @@ void __thiscall PopUpTy::ChangeNumStr(PopUpTy *this)
     uVar9 = ((uint)puVar1[7] * *(int *)(puVar1 + 2) + 0x1f >> 3 & 0x1ffffffc) * *(int *)(puVar1 + 4)
     ;
   }
-  puVar6 = (undefined4 *)FUN_006b4fa0((int)puVar1);
+  puVar6 = (undefined4 *)FUN_006b4fa0((int *)puVar1);
   for (uVar7 = uVar9 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
     *puVar6 = 0x89898989;
     puVar6 = puVar6 + 1;
@@ -61,7 +61,7 @@ void __thiscall PopUpTy::ChangeNumStr(PopUpTy *this)
   }
   local_10 = -0x18 - (int)this_00;
   local_14 = 0;
-  puVar10 = &this_00->field_0018;
+  puVar10 = this_00->field_0018;
   do {
     iVar5 = local_14;
     if ((DAT_00807342 == 0) || (DAT_00807346 <= (byte)local_8)) {
@@ -117,7 +117,7 @@ LAB_0052d7d4:
             iVar5 = 0;
           }
           if (iVar5 != 0) {
-            OutStr(this_00,local_8);
+            OutStr(this_00,(byte)local_8);
           }
           bVar4 = (byte)local_8 + 1;
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */

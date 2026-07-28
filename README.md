@@ -124,6 +124,9 @@ bulk-zero loops (`REP STOS*`) into standalone `STDebugBreak`/`memset` source, an
 writes `pseudocode_idioms.jsonl` for forms that Ghidra cannot
 reliably spell as structured C (packed/unaligned fields, runtime-stride arrays,
 flat global-record arithmetic, raw indirect calls, and residual ABI artifacts).
+Physical argument-slot reuse is catalogued separately so a later source
+extractor can split the post-overwrite lifetime into a local without changing
+the recovered ABI parameter.
 Every referenced immutable NUL-terminated string is emitted as an escaped C
 literal while its original symbol and address remain in metadata.
 The exporter also writes `decomp_quality_summary.json` and
@@ -218,7 +221,8 @@ The current work focuses on recovering what the binary can prove:
 - read-only contradiction auditing for stale manual/protected types;
 - verified semantics for high-fanout utility functions and conservative `void`/boolean/noreturn
   returns, plus unanimous propagation of already recovered structure pointers through EAX;
-- conservative class layouts and field types;
+- conservative class layouts, field types, and fixed member arrays proven by
+  bounded indexing or exact pointer-walk loops;
 - packed global record arrays recovered from x86 stride, range, and field-access evidence;
 - bounded indexed global aggregates such as the player relation matrix;
 - typed global data recovered from class-receiver and trusted-argument use;

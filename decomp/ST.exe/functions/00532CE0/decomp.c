@@ -7,13 +7,15 @@
 void __thiscall OptPanelTy::sub_00532CE0(OptPanelTy *this)
 
 {
-  int iVar1;
+  uint uVar1;
+  int iVar2;
 
   if (this->field_01A4 == CASE_E) {
     this->field_0028 = 0x20;
-    iVar1 = thunk_FUN_00648a30((uint)DAT_0080874d,(char *)0x0);
-    *(uint *)&this->field_0x2c = (uint)(iVar1 != 0);
-    FUN_006e6080(this,2,this->field_01C1,(undefined4 *)&this->field_0x18);
+    iVar2 = thunk_FUN_00648a30((uint)DAT_0080874d,(char *)0x0);
+    uVar1 = this->field_01B5[3];
+    *(uint *)&this->field_0x2c = (uint)(iVar2 != 0);
+    FUN_006e6080(this,2,uVar1,(undefined4 *)&this->field_0x18);
   }
   return;
 }

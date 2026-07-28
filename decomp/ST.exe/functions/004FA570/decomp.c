@@ -3,7 +3,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel.cpp
-   CPanelTy::ShiftControls */
+   CPanelTy::ShiftControls
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=6, used=0), and
+   decompilation contains no value return */
 
 void __thiscall CPanelTy::ShiftControls(CPanelTy *this,int param_1,int param_2)
 
@@ -13,7 +17,7 @@ void __thiscall CPanelTy::ShiftControls(CPanelTy *this,int param_1,int param_2)
   short sVar2;
   int iVar3;
   int iVar4;
-  int *piVar6;
+  uint *puVar6;
   uint uVar7;
   InternalExceptionFrame local_50;
   uint local_c;
@@ -61,22 +65,22 @@ void __thiscall CPanelTy::ShiftControls(CPanelTy *this,int param_1,int param_2)
     if (local_8->field_09D0 != 0) {
       FUN_006e6080(local_8,2,local_8->field_09D0,(undefined4 *)&local_8->field_0x18);
     }
-    piVar6 = &this_00->field_0A15;
+    puVar6 = this_00->field_0A15;
     iVar4 = 6;
     do {
-      if (*piVar6 != 0) {
-        FUN_006e6080(this_00,2,*piVar6,(undefined4 *)&this_00->field_0x18);
+      if (*puVar6 != 0) {
+        FUN_006e6080(this_00,2,*puVar6,(undefined4 *)&this_00->field_0x18);
       }
-      piVar6 = piVar6 + 1;
+      puVar6 = puVar6 + 1;
       iVar4 = iVar4 + -1;
     } while (iVar4 != 0);
-    piVar6 = &this_00->field_0B1F;
+    puVar6 = this_00->field_0B1F;
     iVar4 = 6;
     do {
-      if (*piVar6 != 0) {
-        FUN_006e6080(this_00,2,*piVar6,(undefined4 *)&this_00->field_0x18);
+      if (*puVar6 != 0) {
+        FUN_006e6080(this_00,2,*puVar6,(undefined4 *)&this_00->field_0x18);
       }
-      piVar6 = piVar6 + 1;
+      puVar6 = puVar6 + 1;
       iVar4 = iVar4 + -1;
     } while (iVar4 != 0);
     iVar4 = this_00->field_0B37;
@@ -85,13 +89,13 @@ void __thiscall CPanelTy::ShiftControls(CPanelTy *this,int param_1,int param_2)
     if (local_8->field_095C != 0) {
       FUN_006e6080(local_8,2,local_8->field_095C,(undefined4 *)&local_8->field_0x18);
     }
-    piVar6 = &this_00->field_0960;
+    puVar6 = this_00->field_0960;
     iVar4 = 4;
     do {
-      if (*piVar6 != 0) {
-        FUN_006e6080(this_00,2,*piVar6,(undefined4 *)&this_00->field_0x18);
+      if (*puVar6 != 0) {
+        FUN_006e6080(this_00,2,*puVar6,(undefined4 *)&this_00->field_0x18);
       }
-      piVar6 = piVar6 + 1;
+      puVar6 = puVar6 + 1;
       iVar4 = iVar4 + -1;
     } while (iVar4 != 0);
     iVar4 = this_00->field_0970;
@@ -100,20 +104,21 @@ void __thiscall CPanelTy::ShiftControls(CPanelTy *this,int param_1,int param_2)
     FUN_006e6080(this_00,2,iVar4,(undefined4 *)&this_00->field_0x18);
   }
   uVar7 = local_c & 0xff;
-  if ((&this_00->field_09C0)[uVar7] != 0) {
-    FUN_006e6080(this_00,2,(&this_00->field_09C0)[uVar7],(undefined4 *)&this_00->field_0x18);
+  if (this_00->field_09C0[uVar7] != 0) {
+    FUN_006e6080(this_00,2,this_00->field_09C0[uVar7],(undefined4 *)&this_00->field_0x18);
   }
-  if ((&this_00->field_02FE)[uVar7] != 0) {
-    FUN_006e6080(this_00,2,(&this_00->field_02FE)[uVar7],(undefined4 *)&this_00->field_0x18);
+  iVar4 = *(int *)((int)this_00->field_0308 + uVar7 * 4 + -10);
+  if (iVar4 != 0) {
+    FUN_006e6080(this_00,2,iVar4,(undefined4 *)&this_00->field_0x18);
   }
-  if ((&this_00->field_0308)[uVar7] != 0) {
-    FUN_006e6080(this_00,2,(&this_00->field_0308)[uVar7],(undefined4 *)&this_00->field_0x18);
+  if (this_00->field_0308[uVar7] != 0) {
+    FUN_006e6080(this_00,2,this_00->field_0308[uVar7],(undefined4 *)&this_00->field_0x18);
   }
-  if ((&this_00->field_0310)[uVar7] != 0) {
-    FUN_006e6080(this_00,2,(&this_00->field_0310)[uVar7],(undefined4 *)&this_00->field_0x18);
+  if (this_00->field_0310[uVar7] != 0) {
+    FUN_006e6080(this_00,2,this_00->field_0310[uVar7],(undefined4 *)&this_00->field_0x18);
   }
-  if (((char)local_c != '\0') && ((&this_00->field_0314)[uVar7] != 0)) {
-    FUN_006e6080(this_00,2,(&this_00->field_0314)[uVar7],(undefined4 *)&this_00->field_0x18);
+  if (((char)local_c != '\0') && (this_00->field_0310[uVar7 + 1] != 0)) {
+    FUN_006e6080(this_00,2,this_00->field_0310[uVar7 + 1],(undefined4 *)&this_00->field_0x18);
   }
   g_currentExceptionFrame = local_50.previous;
   return;

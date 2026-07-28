@@ -3,7 +3,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel1.cpp
-   CPanelTy::PaintDeep */
+   CPanelTy::PaintDeep
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=4, used=0), and
+   decompilation contains no value return */
 
 void __thiscall CPanelTy::PaintDeep(CPanelTy *this,int param_1)
 
@@ -82,7 +86,7 @@ void __thiscall CPanelTy::PaintDeep(CPanelTy *this,int param_1)
                                         (int)(pcVar7 + iVar9));
           cVar3 = '\x06';
           iVar9 = iVar4 + 0x7c;
-          pAVar8 = (AnonShape_006B5B10_E0D06CF1 *)(&pCVar2->field_0180)[local_8 & 0xff];
+          pAVar8 = (AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_0148[(local_8 & 0xff) + 0xe];
         }
         else {
           if (*pcVar7 == '\0') {
@@ -97,7 +101,7 @@ void __thiscall CPanelTy::PaintDeep(CPanelTy *this,int param_1)
           iVar9 = 7;
           iVar10 = local_14;
 LAB_00500689:
-          pAVar8 = (AnonShape_006B5B10_E0D06CF1 *)(&pCVar2->field_0180)[local_8 & 0xff];
+          pAVar8 = (AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_0148[(local_8 & 0xff) + 0xe];
         }
         DibPut(pAVar8,iVar9,iVar10,cVar3,pbVar5);
         local_10 = local_10 + -0xb;

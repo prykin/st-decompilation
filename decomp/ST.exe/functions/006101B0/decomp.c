@@ -230,7 +230,7 @@ cf_common_exit_006121E1:
                          (int)*(short *)&param_1->field_0x260,(int)*(short *)&param_1->field_0x262,
                          (int)*(short *)&param_1->field_0x264,*(int *)&param_1->field_0x1d9,
                          *(int *)&param_1->field_0x21b,*(int *)&param_1->field_0x1fb,
-                         *(undefined2 *)&param_1->field_0x1ff,0xb0,local_8,0);
+                         *(ushort *)&param_1->field_0x1ff,0xb0,local_8,0);
       if (0 < (int)uVar6) {
         if (uVar6 == 5) {
           thunk_FUN_0060ec00(param_1);
@@ -557,7 +557,7 @@ LAB_00611185:
                          (int)*(short *)&param_1->field_0x260,(int)*(short *)&param_1->field_0x262,
                          (int)*(short *)&param_1->field_0x264,*(int *)&param_1->field_0x1d9,
                          *(int *)&param_1->field_0x21b,*(int *)&param_1->field_0x1fb,
-                         *(undefined2 *)&param_1->field_0x1ff,0xb0,0,0);
+                         *(ushort *)&param_1->field_0x1ff,0xb0,0,0);
       local_c = uVar6;
       if (0 < (int)uVar6) {
         if (uVar6 == 5) {
@@ -680,7 +680,7 @@ LAB_00611304:
       goto cf_common_exit_00611C0F;
       if (param_1->field_0x250 == '\0') break;
 LAB_006115da:
-      thunk_FUN_004ad430(*(int *)&param_1->field_0x252);
+      thunk_FUN_004ad430(*(STT3DSprC **)&param_1->field_0x252);
       param_1->field_0x250 = 0;
     }
     break;
@@ -736,7 +736,7 @@ LAB_006117e5:
                          (int)*(short *)&param_1->field_0x260,(int)*(short *)&param_1->field_0x262,
                          (int)*(short *)&param_1->field_0x264,*(int *)&param_1->field_0x1d9,
                          *(int *)&param_1->field_0x21b,*(int *)&param_1->field_0x1fb,
-                         *(undefined2 *)&param_1->field_0x1ff,0xb0,local_8,0);
+                         *(ushort *)&param_1->field_0x1ff,0xb0,local_8,0);
       local_c = uVar6;
       if (0 < (int)uVar6) {
         if (uVar6 == 5) {
@@ -887,8 +887,9 @@ cf_common_exit_00611C0F:
                        (int)*(short *)&param_1->field_0x1eb,(int)*(short *)&param_1->field_0x1ed,
                        uVar7);
     STGenBombC::LoadImagSpr((STGenBombC *)param_1,1,0);
-    if ((param_1->field_0x250 != '\0') && (*(int *)&param_1->field_0x252 != 0)) {
-      thunk_FUN_004ad430(*(int *)&param_1->field_0x252);
+    if ((param_1->field_0x250 != '\0') && (*(STT3DSprC **)&param_1->field_0x252 != (STT3DSprC *)0x0)
+       ) {
+      thunk_FUN_004ad430(*(STT3DSprC **)&param_1->field_0x252);
       param_1->field_0x250 = 0;
     }
     *(undefined4 *)&param_1->field_0x20c = 1;
@@ -993,7 +994,7 @@ cf_common_exit_00611C0F:
         if (param_1->field_0x250 == '\0') {
           return local_1c;
         }
-        thunk_FUN_004ad430(*(int *)&param_1->field_0x252);
+        thunk_FUN_004ad430(*(STT3DSprC **)&param_1->field_0x252);
         param_1->field_0x250 = 0;
         return local_1c;
       }
@@ -1086,7 +1087,7 @@ LAB_006122dd:
                          (int)*(short *)&param_1->field_0x260,(int)*(short *)&param_1->field_0x262,
                          (int)*(short *)&param_1->field_0x264,*(int *)&param_1->field_0x1d9,
                          *(int *)&param_1->field_0x21b,*(int *)&param_1->field_0x1fb,
-                         *(undefined2 *)&param_1->field_0x1ff,0xb0,
+                         *(ushort *)&param_1->field_0x1ff,0xb0,
                          (uint)(*(int *)&param_1->field_0x1f7 == 2),0);
       if (0 < (int)uVar6) {
         if (uVar6 == 5) {
@@ -1211,7 +1212,7 @@ LAB_00612459:
   if ((-1 < *(int *)&param_1->field_0x248) && (param_1->field_0x250 != '\0')) {
     iVar14 = (int)*(short *)(DAT_00806724 + 0x2c);
     uVar6 = *(uint *)(DAT_00806724 + 0x30 + *(int *)&param_1->field_0x248 * 4);
-    uVar5 = thunk_FUN_004ad650(*(int *)&param_1->field_0x252);
+    uVar5 = thunk_FUN_004ad650(*(STT3DSprC **)&param_1->field_0x252);
     FUN_006e9350(PTR_00807598,uVar5,uVar6,iVar14);
     return local_1c;
   }

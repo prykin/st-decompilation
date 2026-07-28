@@ -31,9 +31,10 @@ undefined4 __thiscall STColl3C::sub_005FA8B0(STColl3C *this,int *param_1,int *pa
                  g_worldGrid.cells
                  [(int)g_worldGrid.planeStride * (int)sVar2 + (int)g_worldGrid.sizeX * (int)sVar3 +
                   (int)sVar1].objects[0], this_00 == (STFishC *)0x0)))) {
-    if ((this->field_0255 == 0) ||
-       (iVar5 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,this->field_0255,(int *)&local_14)
-       , iVar5 == -4)) {
+    if (((AnonShape_005EFAE0_B406B78B *)this->field_0255 == (AnonShape_005EFAE0_B406B78B *)0x0) ||
+       (iVar5 = STPlaySystemC::sub_006E62D0
+                          (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)this->field_0255,
+                           (int *)&local_14), iVar5 == -4)) {
       return 0;
     }
     this_00 = local_14;
@@ -42,7 +43,7 @@ undefined4 __thiscall STColl3C::sub_005FA8B0(STColl3C *this,int *param_1,int *pa
   else {
     uVar6 = local_10;
     if ((*(int *)&this_00->field_0x20 == 1000) &&
-       (dVar4 = (*this_00->vtable->slot_2C)(this_00), uVar6 = local_10, dVar4 == 0x6e)) {
+       (dVar4 = this_00->slot_2C(), uVar6 = local_10, dVar4 == 0x6e)) {
       uVar6 = 1;
     }
   }

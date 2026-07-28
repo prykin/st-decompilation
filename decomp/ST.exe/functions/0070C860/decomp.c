@@ -1,5 +1,8 @@
 
-int __cdecl FUN_0070c860(uint param_1,uint param_2,int param_3,int param_4)
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 0070C860 -> 006B4FA0 @ 0070C8C9 */
+
+int __cdecl FUN_0070c860(int *param_1,uint param_2,int param_3,int param_4)
 
 {
   int iVar1;
@@ -17,7 +20,8 @@ int __cdecl FUN_0070c860(uint param_1,uint param_2,int param_3,int param_4)
   }
   if (0 < param_4) {
     uVar2 = FUN_006b4fa0(param_1);
-    FUN_007521b0(&local_8,(AnonShape_006B4B20_3D4F4412 *)param_1,uVar2,param_3,param_4,param_2);
+    FUN_007521b0(&local_8,(AnonShape_006B4B20_3D4F4412 *)param_1,uVar2,param_3,param_4,(byte)param_2
+                );
     g_currentExceptionFrame = local_4c.previous;
     return local_8;
   }

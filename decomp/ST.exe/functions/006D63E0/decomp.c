@@ -81,9 +81,9 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006CEC40::FUN_006d63e0
       iVar4 = *(int *)&this->field_0x288;
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       Library::DKW::DDX::FUN_006b42d0
-                (*(uint *)(iVar4 + 0x28),iVar7,iVar1,(BITMAPINFO *)(iVar8 + 0x30),local_bc,
-                 *(int *)(iVar4 + 8),*(int *)(iVar4 + 0xc),*(DWORD *)(iVar4 + 0x10),
-                 *(DWORD *)(iVar4 + 0x14));
+                (*(AnonShape_GLOBAL_0080759C_9638EF10 **)(iVar4 + 0x28),iVar7,iVar1,
+                 (BITMAPINFO *)(iVar8 + 0x30),local_bc,*(int *)(iVar4 + 8),*(int *)(iVar4 + 0xc),
+                 *(DWORD *)(iVar4 + 0x10),*(DWORD *)(iVar4 + 0x14));
     }
     else {
       if (((*(byte *)(iVar4 + 4) & 8) == 0) &&

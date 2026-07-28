@@ -1,4 +1,8 @@
 
+/* [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
+   and decompilation contains no value return */
+
 void FUN_006d0f50(AnonShape_006D0F50_D22E7C78 *param_1,int param_2,uint *param_3,int param_4,
                  uint param_5,int param_6,int param_7,byte param_8,uint param_9)
 
@@ -15,7 +19,7 @@ void FUN_006d0f50(AnonShape_006D0F50_D22E7C78 *param_1,int param_2,uint *param_3
     if (param_9 != 0xffffffff) {
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       _param_8 = CONCAT13(param_8,CONCAT12(param_8,CONCAT11(param_8,param_8)));
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+      /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
       param_9 = CONCAT13((byte)param_9,CONCAT12((byte)param_9,CONCAT11((byte)param_9,(byte)param_9))
                         );
       do {
@@ -118,6 +122,7 @@ LAB_006d1089:
         param_1 = (AnonShape_006D0F50_D22E7C78 *)((int)param_1 + (param_2 - param_5));
         iVar1 = param_6 + -1;
         bVar3 = param_6 < 1;
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_6 = iVar1;
         if (iVar1 == 0 || bVar3) {
           return;
@@ -125,6 +130,7 @@ LAB_006d1089:
       } while( true );
     }
     if (0 < param_6) {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_9 = param_6;
       do {
         uVar7 = param_5;
@@ -144,6 +150,7 @@ LAB_006d1089:
         }
         param_3 = (uint *)((int)param_3 + (param_4 - param_5));
         param_1 = (AnonShape_006D0F50_D22E7C78 *)((int)param_1 + (param_2 - param_5));
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_9 = param_9 - 1;
       } while (param_9 != 0);
     }

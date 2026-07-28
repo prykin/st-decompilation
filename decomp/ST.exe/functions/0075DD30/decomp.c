@@ -40,6 +40,7 @@ void FUN_0075dd30(AnonShape_0075DB50_5854A0B6 *param_1,int *param_2,int param_3,
         iVar15 = *(int *)(param_2[2] + iVar11) - (int)pbVar9;
         iVar12 = *(int *)(iVar11 + param_2[3]) - (int)pbVar9;
         puVar10 = (undefined1 *)*param_4;
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_3 = iVar4;
         do {
           uVar13 = (uint)pbVar9[iVar14];
@@ -53,6 +54,7 @@ void FUN_0075dd30(AnonShape_0075DB50_5854A0B6 *param_1,int *param_2,int param_3,
           puVar10[2] = *(undefined1 *)
                         (((iVar5 - *(int *)(iVar7 + (uint)bVar1 * 4)) - uVar13) + 0xff);
           puVar10[3] = pbVar9[iVar12 + -1];
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_3 = param_3 + -1;
           puVar10 = puVar10 + 4;
         } while (param_3 != 0);

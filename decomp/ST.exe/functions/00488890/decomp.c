@@ -101,7 +101,7 @@ void __thiscall FUN_00488890(void *this,int param_1)
         local_3c = 0xffff;
         iVar8 = GetPlayerRaceId(*(char *)((int)this + 0x24));
         local_43 = (undefined1)iVar8;
-        thunk_FUN_004e6d00(*(int *)((int)this + 0x24),local_4c[0],local_3a);
+        thunk_FUN_004e6d00(*(byte **)((int)this + 0x24),local_4c[0],local_3a);
         Library::DKW::TBL::FUN_006ae1c0(*(uint **)(param_1 + iVar9 * 4),local_4c);
         iVar8 = local_c;
       }

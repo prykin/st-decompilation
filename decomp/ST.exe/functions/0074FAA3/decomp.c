@@ -16,6 +16,7 @@ int * __thiscall FUN_0074faa3(void *this,int param_1,int param_2)
   *(undefined4 *)((int)this + 0xc) = 0;
   *(undefined4 *)((int)this + 4) = 0;
   *(int *)((int)this + 8) = param_1;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_1 == 0) {
     *(undefined4 *)this = 0;
   }

@@ -32,71 +32,72 @@ undefined4 __fastcall FUN_004e0830(TLOBaseTy *param_1)
 
 {
   TLOBaseTy_field_05ACState TVar1;
-  int iVar2;
-  short sVar3;
-  int iVar4;
+  STAppC *pSVar2;
+  byte *pbVar3;
+  short sVar4;
   int iVar5;
   int iVar6;
   uint uVar7;
   uint uVar8;
   TLOBaseTyVTable *pTVar9;
+  uint uVar10;
   STResourceC *this;
-  short sVar10;
   short sVar11;
-  undefined2 uVar12;
-  undefined2 uVar13;
-  undefined2 uVar14;
-  undefined4 uVar15;
-  undefined4 uVar16;
-  undefined4 uVar17;
-  char *pcVar18;
-  char playerId;
-  undefined4 uVar19;
-  undefined4 uVar20;
+  short sVar12;
+  uint uVar13;
+  uint uVar14;
+  ushort uVar15;
+  ushort uVar16;
+  ushort uVar17;
+  uint uVar18;
+  char *pcVar19;
+  char cVar20;
+  undefined4 uVar21;
+  undefined4 uVar22;
 
   if (param_1->field_04D0 == CASE_1) {
     if (*(int *)&param_1->field_01F5->field_0x1a4 == *(int *)&param_1->field_01F5->field_0x1a0) {
-      iVar4 = param_1->field_04E8;
-      if (iVar4 == 1) {
-        if (param_1->field_04E4 == 0) {
-          param_1->field_04E8 = 3;
+      uVar10 = param_1->field_04E0[2];
+      if (uVar10 == 1) {
+        if (param_1->field_04E0[1] == 0) {
+          param_1->field_04E0[2] = 3;
           thunk_FUN_004e04a0((AnonShape_004E04A0_3A5B2D2E *)param_1);
           switch(param_1->field_05AC) {
           case CASE_39:
 switchD_004e08b2_caseD_39:
             pTVar9 = param_1->vtable;
-            iVar4 = GetPlayerRaceId(*(char *)&param_1->field_023D);
-            (*pTVar9->vfunc_90)(3,(-(uint)((char)iVar4 != '\x02') & 0xffffff3a) + 0x2e9);
+            iVar5 = GetPlayerRaceId(*(char *)&param_1->field_023D);
+            (*pTVar9->vfunc_90)(param_1,3,(-(uint)((char)iVar5 != '\x02') & 0xffffff3a) + 0x2e9);
             break;
           case CASE_3B:
 switchD_004e08b2_caseD_3b:
             pTVar9 = param_1->vtable;
-            iVar4 = GetPlayerRaceId(*(char *)&param_1->field_023D);
-            (*pTVar9->vfunc_90)(3,(-(uint)((char)iVar4 != '\x02') & 0xffffff3a) + 0x2f6);
+            iVar5 = GetPlayerRaceId(*(char *)&param_1->field_023D);
+            (*pTVar9->vfunc_90)(param_1,3,(-(uint)((char)iVar5 != '\x02') & 0xffffff3a) + 0x2f6);
             break;
           case CASE_4F:
 switchD_004e08b2_caseD_4f:
             pTVar9 = param_1->vtable;
-            iVar4 = GetPlayerRaceId(*(char *)&param_1->field_023D);
-            (*pTVar9->vfunc_90)(3,(-(uint)((char)iVar4 != '\x02') & 0xffffff32) + 0x34f);
+            iVar5 = GetPlayerRaceId(*(char *)&param_1->field_023D);
+            (*pTVar9->vfunc_90)(param_1,3,(-(uint)((char)iVar5 != '\x02') & 0xffffff32) + 0x34f);
             break;
           case CASE_5E:
 switchD_004e08b2_caseD_5e:
-            (*param_1->vtable->vfunc_90)(3,0x3aa);
+            param_1->vfunc_90(3,0x3aa);
             break;
           case CASE_60:
-            (*param_1->vtable->vfunc_90)(3,0x3b9);
+            param_1->vfunc_90(3,0x3b9);
           }
         }
         else {
-          param_1->field_04E8 = 2;
+          param_1->field_04E0[2] = 2;
 LAB_004e0a1f:
           thunk_FUN_004e04a0((AnonShape_004E04A0_3A5B2D2E *)param_1);
         }
       }
-      else if (iVar4 == 2) {
-        if (param_1->field_04E4 == 0) {
-          param_1->field_04E8 = 3;
+      else if (uVar10 == 2) {
+        if (param_1->field_04E0[1] == 0) {
+          param_1->field_04E0[2] = 3;
           thunk_FUN_004e04a0((AnonShape_004E04A0_3A5B2D2E *)param_1);
           switch(param_1->field_05AC) {
           case CASE_39:
@@ -107,13 +108,13 @@ LAB_004e0a1f:
             goto switchD_004e08b2_caseD_4f;
           case CASE_52:
             pTVar9 = param_1->vtable;
-            iVar4 = GetPlayerRaceId(*(char *)&param_1->field_023D);
-            (*pTVar9->vfunc_90)(3,(-(uint)((char)iVar4 != '\x02') & 0xffffff3b) + 0x35c);
+            iVar5 = GetPlayerRaceId(*(char *)&param_1->field_023D);
+            (*pTVar9->vfunc_90)(param_1,3,(-(uint)((char)iVar5 != '\x02') & 0xffffff3b) + 0x35c);
             break;
           case CASE_5E:
             goto switchD_004e08b2_caseD_5e;
           case CASE_60:
-            (*param_1->vtable->vfunc_90)(3,0x3b9);
+            param_1->vfunc_90(3,0x3b9);
           }
         }
         else {
@@ -121,24 +122,24 @@ LAB_004e0a1f:
           if (((TVar1 == CASE_3B) || (TVar1 == CASE_60)) || (TVar1 == CASE_52)) goto LAB_004e0a1f;
         }
       }
-      else if (iVar4 == 3) {
-        param_1->field_04E8 = 0;
+      else if (uVar10 == 3) {
+        param_1->field_04E0[2] = 0;
         goto LAB_004e0a1f;
       }
     }
-    if (param_1->field_04E4 == 0) {
+    if (param_1->field_04E0[1] == 0) {
       if (param_1->field_05AC == CASE_4F) {
-        iVar4 = GetPlayerRaceId(*(char *)&param_1->field_0024);
-        iVar5 = 0xe;
-        if ((char)iVar4 != '\x02') goto LAB_004e0a4f;
+        iVar5 = GetPlayerRaceId(*(char *)&param_1->field_0024);
+        iVar6 = 0xe;
+        if ((char)iVar5 != '\x02') goto LAB_004e0a4f;
       }
       else {
 LAB_004e0a4f:
-        iVar5 = 0xc;
+        iVar6 = 0xc;
       }
-      if ((*(int *)(&param_1->field_01F5->field_0x18 + iVar5 * 0x24) ==
-           *(int *)(&param_1->field_01F5->field_0x14 + iVar5 * 0x24)) && (param_1->field_04E8 == 0))
-      {
+      if ((*(int *)(&param_1->field_01F5->field_0x18 + iVar6 * 0x24) ==
+           *(int *)(&param_1->field_01F5->field_0x14 + iVar6 * 0x24)) &&
+         (param_1->field_04E0[2] == 0)) {
         param_1->field_04D0 = CASE_0;
         TLOBaseTy::RotateSpr(param_1,1);
       }
@@ -148,174 +149,184 @@ LAB_004e0a4f:
   goto switchD_004e0aad_default;
   switch(param_1->field_04D0) {
   case CASE_2:
-    iVar5 = param_1->field_05B4;
-    iVar4 = iVar5 + 2;
-    if (iVar5 < iVar4) {
-      iVar2 = param_1->field_05B0;
+    uVar10 = param_1->field_05B4;
+    iVar5 = uVar10 + 2;
+    if ((int)uVar10 < iVar5) {
+      uVar18 = param_1->field_05B0;
       do {
-        if (iVar2 < iVar2 + 2) {
-          sVar11 = *(short *)&param_1->field_05B8 + 1;
-          iVar6 = iVar2;
+        if ((int)uVar18 < (int)(uVar18 + 2)) {
+          sVar12 = *(short *)&param_1->field_05B8 + 1;
+          uVar7 = uVar18;
           do {
-            sVar3 = (short)iVar6;
-            if (((sVar3 < 0) || (g_worldGrid.sizeX <= sVar3)) ||
-               ((sVar10 = (short)iVar5, sVar10 < 0 ||
-                ((((g_worldGrid.sizeY <= sVar10 || (sVar11 < 0)) || (g_worldGrid.sizeZ <= sVar11))
+            sVar4 = (short)uVar7;
+            if (((sVar4 < 0) || (g_worldGrid.sizeX <= sVar4)) ||
+               ((sVar11 = (short)uVar10, sVar11 < 0 ||
+                ((((g_worldGrid.sizeY <= sVar11 || (sVar12 < 0)) || (g_worldGrid.sizeZ <= sVar12))
                  || (g_worldGrid.cells
-                     [(int)sVar10 * (int)g_worldGrid.sizeX +
-                      (int)g_worldGrid.planeStride * (int)sVar11 + (int)sVar3].objects[0] ==
+                     [(int)sVar11 * (int)g_worldGrid.sizeX +
+                      (int)g_worldGrid.planeStride * (int)sVar12 + (int)sVar4].objects[0] ==
                      (STWorldObject *)0x0)))))) {
-              param_1->field_04F0 = iVar6;
-              param_1->field_04EC = 1;
-              param_1->field_04F4 = iVar5;
-              param_1->field_04F8 = param_1->field_05B8 + 1;
+              param_1->field_04E0[4] = uVar7;
+              iVar5 = param_1->field_05B8;
+              param_1->field_04E0[3] = 1;
+              param_1->field_04E0[5] = uVar10;
+              param_1->field_04E0[6] = iVar5 + 1;
               if (DAT_00800bcc == (void *)0x0) {
                 thunk_FUN_004cf430();
               }
-              thunk_FUN_004d0970(DAT_00800bcc,param_1->field_04F0,param_1->field_04F4,
-                                 param_1->field_04F8);
+              thunk_FUN_004d0970(DAT_00800bcc,param_1->field_04E0[4],param_1->field_04E0[5],
+                                 param_1->field_04E0[6]);
               param_1->field_04D0 = CASE_3;
-              param_1->field_04FC = param_1->field_05B0 * 0xc9 + 0xdc;
-              param_1->field_0500 = param_1->field_05B4 * 0xc9 + 100;
-              param_1->field_0504 = param_1->field_05B8 * 0xc9 + -0x28;
+              iVar5 = param_1->field_05B4;
+              param_1->field_04E0[7] = param_1->field_05B0 * 0xc9 + 0xdc;
+              iVar6 = param_1->field_05B8;
+              param_1->field_04E0[8] = iVar5 * 0xc9 + 100;
+              param_1->field_04E0[9] = iVar6 * 0xc9 - 0x28;
               thunk_FUN_004ec0f0((AnonShape_004EC0F0_C371FA68 *)param_1);
               TLOBaseTy::RotateSpr(param_1,0);
               if (param_1->field_05AC == CASE_52) {
                 pTVar9 = param_1->vtable;
-                iVar4 = GetPlayerRaceId(*(char *)&param_1->field_023D);
-                (*pTVar9->vfunc_90)(3,(-(uint)((char)iVar4 != '\x02') & 0xffffff3b) + 0x35e);
+                iVar5 = GetPlayerRaceId(*(char *)&param_1->field_023D);
+                (*pTVar9->vfunc_90)(param_1,3,(-(uint)((char)iVar5 != '\x02') & 0xffffff3b) + 0x35e)
+                ;
                 goto switchD_004e0aad_default;
               }
               if (param_1->field_05AC != CASE_5F) goto switchD_004e0aad_default;
               pTVar9 = param_1->vtable;
-              uVar20 = 0x3b1;
+              uVar22 = 0x3b1;
               goto LAB_004e0f14;
             }
-            iVar6 = iVar6 + 1;
-          } while (iVar6 < iVar2 + 2);
+            uVar7 = uVar7 + 1;
+          } while ((int)uVar7 < (int)(uVar18 + 2));
         }
-        iVar5 = iVar5 + 1;
-      } while (iVar5 < iVar4);
+        uVar10 = uVar10 + 1;
+      } while ((int)uVar10 < iVar5);
     }
     break;
   case CASE_3:
-    iVar4 = thunk_FUN_004ac910(&param_1->field_01D5,'\x0e');
-    if (((int)param_1->field_01F5->field_020C <= iVar4) && (param_1->field_04DC != 0)) {
-      param_1->field_0508 = 0;
-      if (param_1->field_0024 == (byte *)(uint)(byte)param_1->field_0010->field_112D) {
+    iVar5 = thunk_FUN_004ac910(&param_1->field_01D5,'\x0e');
+    if (((int)param_1->field_01F5->field_020C <= iVar5) && (param_1->field_04DC != 0)) {
+      pSVar2 = param_1->field_0010;
+      pbVar3 = param_1->field_0024;
+      param_1->field_04E0[10] = 0;
+      if (pbVar3 == (byte *)(uint)(byte)pSVar2->field_112D) {
         thunk_FUN_0052af50(0,(float)param_1->field_01F9,(float)param_1->field_01FD);
       }
       param_1->field_04D0 = CASE_4;
-      param_1->field_0510 = 0;
-      param_1->field_0514 = g_playSystem_00802A38->field_00E4;
+      param_1->field_04E0[0xc] = 0;
+      param_1->field_04E0[0xd] = g_playSystem_00802A38->field_00E4;
       TLOBaseTy::RotateSpr(param_1,0);
     }
     break;
   case CASE_4:
-    if (param_1->field_0510 < 0x1e) break;
-    thunk_FUN_004d0a80(DAT_00800bcc,param_1->field_04F0,param_1->field_04F4,param_1->field_04F8);
-    uVar20 = param_1->field_0018;
-    uVar17 = param_1->field_04F8;
-    uVar16 = param_1->field_04F4;
-    uVar19 = 0x5a;
-    uVar15 = param_1->field_04F0;
-    pcVar18 = (char *)0x0;
-    uVar14 = (undefined2)param_1->field_0504;
-    uVar13 = (undefined2)param_1->field_0500;
-    uVar12 = (undefined2)param_1->field_04FC;
-    iVar4 = param_1->field_04E0;
-    uVar8 = param_1->field_04DC;
-    param_1->field_04EC = 0;
-    uVar7 = GetPlayerRaceId(*(char *)&param_1->field_0024);
-    thunk_FUN_005fd1b0(param_1->field_0024,uVar7 & 0xff,uVar8,iVar4,uVar12,uVar13,uVar14,uVar15,
-                       uVar16,uVar17,pcVar18,uVar20,uVar19);
+    if ((int)param_1->field_04E0[0xc] < 0x1e) break;
+    thunk_FUN_004d0a80(DAT_00800bcc,param_1->field_04E0[4],param_1->field_04E0[5],
+                       param_1->field_04E0[6]);
+    uVar22 = param_1->field_0018;
+    uVar10 = param_1->field_04E0[6];
+    uVar18 = param_1->field_04E0[5];
+    uVar21 = 0x5a;
+    uVar7 = param_1->field_04E0[4];
+    pcVar19 = (char *)0x0;
+    uVar17 = (ushort)param_1->field_04E0[9];
+    uVar16 = (ushort)param_1->field_04E0[8];
+    uVar15 = (ushort)param_1->field_04E0[7];
+    uVar14 = param_1->field_04E0[0];
+    uVar13 = param_1->field_04DC;
+    cVar20 = *(char *)&param_1->field_0024;
+    param_1->field_04E0[3] = 0;
+    uVar8 = GetPlayerRaceId(cVar20);
+    thunk_FUN_005fd1b0(param_1->field_0024,uVar8 & 0xff,uVar13,uVar14,uVar15,uVar16,uVar17,uVar7,
+                       uVar18,uVar10,pcVar19,uVar22,uVar21);
     if (param_1->field_0024 == (byte *)(uint)(byte)param_1->field_0010->field_112D) {
       thunk_FUN_0052af50(0,(float)param_1->field_01F9,(float)param_1->field_01FD);
-      uVar8 = GetPlayerRaceId(*(char *)&param_1->field_0024);
-      uVar8 = uVar8 & 0xff;
-      if (uVar8 == 1) {
+      uVar10 = GetPlayerRaceId(*(char *)&param_1->field_0024);
+      uVar10 = uVar10 & 0xff;
+      if (uVar10 == 1) {
         pTVar9 = param_1->vtable;
-        uVar20 = 0x6b;
+        uVar22 = 0x6b;
 LAB_004e0de2:
-        (*pTVar9->vfunc_90)(6,uVar20);
+        (*pTVar9->vfunc_90)(param_1,6,uVar22);
       }
-      else if (uVar8 == 2) {
-        (*param_1->vtable->vfunc_90)(6,0x6c);
+      else if (uVar10 == 2) {
+        param_1->vfunc_90(6,0x6c);
       }
-      else if (uVar8 == 3) {
+      else if (uVar10 == 3) {
         pTVar9 = param_1->vtable;
-        uVar20 = 0x6d;
+        uVar22 = 0x6d;
         goto LAB_004e0de2;
       }
     }
     param_1->field_04D0 = CASE_5;
-    thunk_FUN_004cbf70((int)param_1);
+    thunk_FUN_004cbf70(param_1);
     TLOBaseTy::RotateSpr(param_1,0);
     TVar1 = param_1->field_05AC;
     if (TVar1 != CASE_52) {
 joined_r0x004e0f0b:
       if (TVar1 == CASE_5F) {
         pTVar9 = param_1->vtable;
-        uVar20 = 0x3b2;
+        uVar22 = 0x3b2;
 LAB_004e0f14:
-        (*pTVar9->vfunc_90)(3,uVar20);
+        (*pTVar9->vfunc_90)(param_1,3,uVar22);
       }
       break;
     }
-    playerId = *(char *)&param_1->field_023D;
+    cVar20 = *(char *)&param_1->field_023D;
     pTVar9 = param_1->vtable;
     goto LAB_004e0e15;
   case CASE_5:
-    iVar4 = thunk_FUN_004ac910(&param_1->field_01D5,'\x0e');
-    if (iVar4 == param_1->field_01F5->field_020C) {
+    iVar5 = thunk_FUN_004ac910(&param_1->field_01D5,'\x0e');
+    if (iVar5 == param_1->field_01F5->field_020C) {
       param_1->field_04D0 = CASE_0;
       param_1->field_04DC = 0;
-      param_1->field_0508 = 0;
-      thunk_FUN_004cbf70((int)param_1);
+      param_1->field_04E0[10] = 0;
+      thunk_FUN_004cbf70(param_1);
       TLOBaseTy::RotateSpr(param_1,0);
     }
     break;
   case CASE_6:
-    if (((param_1->field_04FC != param_1->field_05B0 * 0xc9 + 0xdc) ||
-        (param_1->field_0500 != param_1->field_05B4 * 0xc9 + 100)) ||
-       (param_1->field_0504 != param_1->field_05B8 * 0xc9 + -0x28)) break;
+    if (((param_1->field_04E0[7] != param_1->field_05B0 * 0xc9 + 0xdcU) ||
+        (param_1->field_04E0[8] != param_1->field_05B4 * 0xc9 + 100U)) ||
+       (param_1->field_04E0[9] != param_1->field_05B8 * 0xc9 - 0x28U)) break;
     param_1->field_04D0 = CASE_5;
     TLOBaseTy::RotateSpr(param_1,0);
     TVar1 = param_1->field_05AC;
     if (TVar1 != CASE_52) goto joined_r0x004e0f0b;
-    playerId = *(char *)&param_1->field_023D;
+    cVar20 = *(char *)&param_1->field_023D;
     pTVar9 = param_1->vtable;
 LAB_004e0e15:
-    iVar4 = GetPlayerRaceId(playerId);
-    (*pTVar9->vfunc_90)(3,(-(uint)((char)iVar4 != '\x02') & 0xffffff3b) + 0x35f);
+    iVar5 = GetPlayerRaceId(cVar20);
+    (*pTVar9->vfunc_90)(param_1,3,(-(uint)((char)iVar5 != '\x02') & 0xffffff3b) + 0x35f);
   }
 switchD_004e0aad_default:
-  if ((param_1->field_05AC == CASE_61) && (param_1->field_04E0 != 0)) {
-    iVar4 = thunk_FUN_004e4180((int)param_1->field_0024);
-    iVar5 = thunk_FUN_004e41c0((int)param_1->field_0024);
-    if ((iVar5 < iVar4) &&
-       (param_1->field_0528 + param_1->field_0524 <= g_playSystem_00802A38->field_00E4)) {
-      param_1->field_0524 = g_playSystem_00802A38->field_00E4;
-      if (DAT_007be8c4 <= param_1->field_0518) {
+  if ((param_1->field_05AC == CASE_61) && (param_1->field_04E0[0] != 0)) {
+    iVar5 = thunk_FUN_004e4180((int)param_1->field_0024);
+    uVar10 = thunk_FUN_004e41c0((int)param_1->field_0024);
+    if (((int)uVar10 < iVar5) &&
+       (param_1->field_04E0[0x12] + param_1->field_04E0[0x11] <= g_playSystem_00802A38->field_00E4))
+    {
+      param_1->field_04E0[0x11] = g_playSystem_00802A38->field_00E4;
+      if ((int)DAT_007be8c4 <= (int)param_1->field_04E0[0xe]) {
         thunk_FUN_004e1310((AnonShape_004E1310_4FD56DAE *)param_1);
       }
-      iVar4 = param_1->field_04E0 + -5;
-      param_1->field_04E0 = iVar4;
-      if (iVar4 < 0) {
-        param_1->field_04E0 = 0;
+      uVar10 = param_1->field_04E0[0] - 5;
+      param_1->field_04E0[0] = uVar10;
+      if ((int)uVar10 < 0) {
+        param_1->field_04E0[0] = 0;
       }
-      iVar4 = param_1->field_0518 + 5;
-      param_1->field_0518 = iVar4;
-      if (DAT_007be8c4 < iVar4) {
-        param_1->field_0518 = DAT_007be8c4;
+      uVar10 = param_1->field_04E0[0xe] + 5;
+      param_1->field_04E0[0xe] = uVar10;
+      if ((int)DAT_007be8c4 < (int)uVar10) {
+        param_1->field_04E0[0xe] = DAT_007be8c4;
       }
-      this = thunk_FUN_004d85e0(param_1->field_05B0,param_1->field_05B4,param_1->field_05B8);
+      this = (STResourceC *)
+             thunk_FUN_004d85e0(param_1->field_05B0,param_1->field_05B4,param_1->field_05B8);
       if (this != (STResourceC *)0x0) {
-        STResourceC::SetResource(this,param_1->field_04E0,1);
+        STResourceC::SetResource(this,param_1->field_04E0[0],1);
       }
-      if ((param_1->field_04E0 == 0) &&
+      if ((param_1->field_04E0[0] == 0) &&
          (param_1->field_0024 == (byte *)(uint)(byte)param_1->field_0010->field_112D)) {
-        (*param_1->vtable->vfunc_90)(4,0x3bd);
+        param_1->vfunc_90(4,0x3bd);
       }
     }
   }

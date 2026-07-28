@@ -41,7 +41,7 @@ FUN_006a0ef0(int *param_1,int param_2,int param_3,int param_4,int param_5,ushort
     else {
       iVar1 = thunk_FUN_006a20e0(param_1,iVar3,iVar4,param_4,param_5);
       if (iVar1 != 0) {
-        iVar3 = thunk_FUN_006a1370(param_1,iVar3,iVar4,param_4,(undefined4 *)&local_1c);
+        iVar3 = thunk_FUN_006a1370(param_1,iVar3,iVar4,param_4,(int)&local_1c);
         iVar3 = thunk_FUN_006a24e0(param_6,param_4,&local_1c,(int)(short)iVar3,param_5);
         if (iVar3 != 0) {
           if (param_5 == 0xff) {

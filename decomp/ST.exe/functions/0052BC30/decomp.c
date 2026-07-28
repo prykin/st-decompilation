@@ -2,11 +2,15 @@
 /* [STMethodOwnerApplier] Structural method owner recovered as MoneyTy.
    Evidence: this_call_owners=[MoneyTy]; agreed_this_calls=1; incoming_this_accesses=9;
    incoming_edx_uses=0; incoming_stack_parameter_uses=6; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate
+
+   [STPrototypeApplier] Propagated parameter 5.
+   Evidence: 004D8B70 -> 0052BC30 @ 004D8C18; literal 1 at 004D8BFD | 004D8B70 -> 0052BC30 @
+   004D8C55; literal 0 at 004D8C48 | 004D8B70 -> 0052BC30 @ 004D8C9A; literal 1 at 004D8C88 */
 
 void __thiscall
 MoneyTy::sub_0052BC30
-          (MoneyTy *this,uint param_1,uint param_2,uint param_3,byte param_4,undefined1 param_5,
+          (MoneyTy *this,uint param_1,uint param_2,uint param_3,byte param_4,byte param_5,
           int param_6)
 
 {

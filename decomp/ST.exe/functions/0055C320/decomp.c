@@ -1,4 +1,8 @@
 
+/* [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0), and
+   decompilation contains no value return */
+
 void __thiscall
 FUN_0055c320(void *this,byte *param_1,char *param_2,char *param_3,
             AnonShape_0055C320_953077EC *param_4)
@@ -22,6 +26,7 @@ FUN_0055c320(void *this,byte *param_1,char *param_2,char *param_3,
     uVar3 = uVar3 - 1;
     pbVar7 = param_1 + 1;
     bVar1 = *param_1;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = pbVar7;
   } while (bVar1 != 0);
   uVar3 = ~uVar3;
@@ -77,6 +82,7 @@ FUN_0055c320(void *this,byte *param_1,char *param_2,char *param_3,
     pcVar9 = pcVar9 + 4;
     pcVar8 = pcVar8 + 4;
   }
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = (byte *)0x0;
   for (uVar3 = uVar3 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
     *pcVar8 = *pcVar9;
@@ -94,14 +100,17 @@ FUN_0055c320(void *this,byte *param_1,char *param_2,char *param_3,
         pcVar9 = pcVar9 + 1;
       } while (cVar2 != '\0');
       iVar5 = iVar5 + 1;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = param_1 + ~uVar3;
     } while (iVar5 < param_4->field_0008);
   }
   if (*(int *)((int)this + 0x644) != 0) {
     FreeAndNull((void **)((int)this + 0x644));
   }
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = (byte *)Library::DKW::LIB::FUN_006aac10((uint)(param_1 + param_4->field_0008));
   *(void **)((int)this + 0x644) = param_1;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_1 == (byte *)0x0) {
     *(undefined1 *)((int)this + 10) = 1;
     return;
@@ -145,6 +154,7 @@ LAB_0055c414:
       pbVar10 = pbVar10 + 1;
     }
     param_1[uVar3] = -(iVar6 != param_4->field_0008 + -1) & 10;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = param_1 + uVar3 + 1;
     iVar5 = param_4->field_0008;
     iVar6 = iVar6 + 1;

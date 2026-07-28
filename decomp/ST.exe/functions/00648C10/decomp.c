@@ -7,7 +7,16 @@
    [STSourceProvenanceApplier end]
 
    [STPrototypeApplier] Propagated parameter 0.
-   Evidence: 00648FE0 -> 00648C10 @ 006492F0 */
+   Evidence: 00648FE0 -> 00648C10 @ 006492F0
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0), and
+   decompilation contains no value return
+
+   [STReturnSemanticsApplier] repair_unsafe_eax_rollback.
+   Evidence: restore the earlier evidence-backed void type after an unsafe automated rollback;
+   post-CALL EAX reads alone do not prove a source-level return value; machine CFG audit: used=1,
+   ignored=2, unknown=0 */
 
 void __cdecl StartStrateg(ushort *strategData,uint param_2)
 

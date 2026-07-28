@@ -20,7 +20,7 @@ void __thiscall VisibleClassTy::InitData(VisibleClassTy *this)
   uint uVar10;
   uint uVar11;
   uint uVar12;
-  undefined4 *puVar13;
+  void **ppvVar13;
   bool bVar14;
   InternalExceptionFrame local_50;
   VisibleClassTy *local_c;
@@ -62,12 +62,12 @@ void __thiscall VisibleClassTy::InitData(VisibleClassTy *this)
     pVVar3->field_004C = pbVar6;
     puVar7 = (ushort *)Library::DKW::LIB::FUN_006aac10(pVVar3->field_0030 * pVVar3->field_0034 * 2);
     pVVar3->field_0050 = puVar7;
-    puVar13 = &pVVar3->field_003C;
+    ppvVar13 = pVVar3->field_003C;
     iVar4 = 4;
     do {
       puVar8 = Library::DKW::LIB::FUN_006aac10(pVVar3->field_0028 * pVVar3->field_002C);
-      *puVar13 = puVar8;
-      puVar13 = puVar13 + 1;
+      *ppvVar13 = puVar8;
+      ppvVar13 = ppvVar13 + 1;
       iVar4 = iVar4 + -1;
     } while (iVar4 != 0);
     pDVar9 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x1c,10);
@@ -75,7 +75,7 @@ void __thiscall VisibleClassTy::InitData(VisibleClassTy *this)
     pDVar9 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0xc,10);
     pVVar3->field_0110 = pDVar9;
     pVVar3->field_00F8 = (uint)DAT_00808a95;
-    *(undefined1 *)((int)&pVVar3->field_00FC + (uint)DAT_0080874d) = 1;
+    pVVar3->field_00FC[DAT_0080874d] = 1;
     if (DAT_00808a94 != '\0') {
       uVar12 = 0;
       local_8 = &DAT_008087e9;
@@ -113,7 +113,7 @@ LAB_00557b2d:
             }
             if (bVar14) goto LAB_00557b44;
           }
-          *(undefined1 *)((int)&pVVar3->field_00FC + uVar12) = 1;
+          pVVar3->field_00FC[uVar12] = 1;
         }
 LAB_00557b44:
         local_8 = local_8 + 0x51;

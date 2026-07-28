@@ -3,7 +3,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\Tspr3d.cpp
-   STT3DSprC::RestoreSpr */
+   STT3DSprC::RestoreSpr
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=17, used=0), and
+   decompilation contains no value return */
 
 void __thiscall
 STT3DSprC::RestoreSpr(STT3DSprC *this,int *param_1,AnonShape_004AD790_77673787 *param_2)

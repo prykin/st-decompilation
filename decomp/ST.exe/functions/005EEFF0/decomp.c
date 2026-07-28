@@ -13,6 +13,7 @@ void __thiscall FUN_005eeff0(void *this,int param_1)
   int local_8;
 
   pVVar3 = g_visibleClass_00802A88;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_1 == 0) {
     if (*(int *)((int)this + 0x2d6) < 0) {
       thunk_FUN_005ec9f0(0);
@@ -30,10 +31,12 @@ void __thiscall FUN_005eeff0(void *this,int param_1)
     iVar5 = *(int *)((int)this + 0x27f);
     sVar2 = (short)(iVar5 >> 0x1f);
     if (iVar5 < 0) {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (short)(((short)(iVar5 / 200) + sVar2) -
                        (short)((longlong)iVar5 * 0x51eb851f >> 0x3f)) + -1;
     }
     else {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (int)(short)(((short)(iVar5 / 200) + sVar2) -
                             (short)((longlong)iVar5 * 0x51eb851f >> 0x3f));
     }
@@ -97,10 +100,12 @@ joined_r0x005ef316:
     iVar5 = *(int *)((int)this + 0x27f);
     sVar2 = (short)(iVar5 >> 0x1f);
     if (iVar5 < 0) {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (short)(((short)(iVar5 / 200) + sVar2) -
                        (short)((longlong)iVar5 * 0x51eb851f >> 0x3f)) + -1;
     }
     else {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (int)(short)(((short)(iVar5 / 200) + sVar2) -
                             (short)((longlong)iVar5 * 0x51eb851f >> 0x3f));
     }
@@ -140,7 +145,7 @@ joined_r0x005ef316:
     cVar1 = *(char *)((int)this + 0x2b9);
   }
   if (cVar1 != '\0') {
-    thunk_FUN_004ad430((int)this + 0x1d5);
+    thunk_FUN_004ad430((STT3DSprC *)((int)this + 0x1d5));
     *(undefined1 *)((int)this + 0x2b9) = 0;
   }
   return;

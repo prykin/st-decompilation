@@ -51,20 +51,24 @@ int FUN_0075acb0(AnonShape_0075ACB0_25ECA7C9 *param_1,int *param_2)
           }
         }
         pcVar2 = *(code **)(*(int *)&pAVar3[1].field_0x6 + iVar5 + (int)piVar7);
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_2 = (int *)*piVar7;
         if (0 < (int)local_14) {
           do {
             iVar8 = 0;
+            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_1 = (AnonShape_0075ACB0_25ECA7C9 *)*local_8;
             local_10 = 0;
             if (*(int *)(iVar4 + 0x1c) != 0) {
               do {
                 (*pcVar2)(pAVar3,iVar4,param_1,param_2,iVar8);
+                /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                 param_1 = (AnonShape_0075ACB0_25ECA7C9 *)&param_1->field_0x100;
                 iVar8 = iVar8 + *(int *)(iVar4 + 0x24);
                 local_10 = local_10 + 1;
               } while (local_10 < *(uint *)(iVar4 + 0x1c));
             }
+            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_2 = param_2 + *(int *)(iVar4 + 0x24);
             local_8 = local_8 + 1;
             local_14 = local_14 - 1;

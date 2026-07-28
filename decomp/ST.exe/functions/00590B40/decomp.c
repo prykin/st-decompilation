@@ -106,9 +106,9 @@ void __thiscall CampaignTy::InitCampaign(CampaignTy *this,undefined4 param_1)
   }
   iVar2 = 0;
   do {
-    if ((&this_02->field_1BC7)[iVar2] != 0) {
-      puVar5 = Library::DKW::FLC::FUN_006c4a20((&this_02->field_1BC7)[iVar2]);
-      (&this_02->field_1BD7)[iVar2] = puVar5;
+    if (this_02->field_1BD7[iVar2 + -4] != 0) {
+      puVar5 = Library::DKW::FLC::FUN_006c4a20(this_02->field_1BD7[iVar2 + -4]);
+      this_02->field_1BD7[iVar2] = (uint)puVar5;
       if (puVar5 != (undefined4 *)0x0) {
         switch(iVar2) {
         case 0:
@@ -181,35 +181,35 @@ LAB_00590d4c:
               case 0:
               case 5:
               case 10:
-                puVar5 = *(undefined4 **)(&this_02->field_0x1b8b + iVar2 * 4);
+                puVar5 = (undefined4 *)this_02->field_1BD7[iVar2 + -0x13];
                 uVar17 = 7;
                 uVar15 = 0x54;
                 break;
               case 1:
               case 6:
               case 0xb:
-                puVar5 = *(undefined4 **)(&this_02->field_0x1b8b + iVar2 * 4);
+                puVar5 = (undefined4 *)this_02->field_1BD7[iVar2 + -0x13];
                 uVar17 = 7;
                 uVar15 = 0x279;
                 break;
               case 2:
               case 7:
               case 0xc:
-                puVar5 = *(undefined4 **)(&this_02->field_0x1b8b + iVar2 * 4);
+                puVar5 = (undefined4 *)this_02->field_1BD7[iVar2 + -0x13];
                 uVar17 = 0x25;
                 uVar15 = 0xa5;
                 break;
               case 3:
               case 8:
               case 0xd:
-                puVar5 = *(undefined4 **)(&this_02->field_0x1b8b + iVar2 * 4);
+                puVar5 = (undefined4 *)this_02->field_1BD7[iVar2 + -0x13];
                 uVar17 = 0x25;
                 uVar15 = 0x240;
                 break;
               case 4:
               case 9:
               case 0xe:
-                puVar5 = *(undefined4 **)(&this_02->field_0x1b8b + iVar2 * 4);
+                puVar5 = (undefined4 *)this_02->field_1BD7[iVar2 + -0x13];
                 uVar17 = 0x37;
                 uVar15 = 0xe0;
                 break;
@@ -258,23 +258,24 @@ switchD_00590d73_default:
         } while (iVar2 < 0xf);
         local_8 = local_8 + 1;
         if (2 < local_8) {
-          MMObjTy::InitSprBut((MMObjTy *)this_02,(AnonShape_005B5240_B2C8755B *)&this_02->field_0x9b
-                              ,"MM_MBUT00",0xf2,0x13a,7,8,0,0,0x9d,0x38,10,
+          MMObjTy::InitSprBut((MMObjTy *)this_02,
+                              (RecoveredRecord_MMObjTy_005B5240 *)&this_02->field_0x9b,
+                              "MM_MBUT00",0xf2,0x13a,7,8,0,0,0x9d,0x38,10,
                               "MM_MABUT00",6,8,9,6,0x28,0,(ccFntTy *)0x0,0,0,0,-1,-1);
           MMObjTy::InitSprBut((MMObjTy *)this_02,
-                              (AnonShape_005B5240_B2C8755B *)&this_02->field_0x296,
+                              (RecoveredRecord_MMObjTy_005B5240 *)&this_02->field_0x296,
                               "MM_MBUT01",0x191,0x13a,9,8,0,0,0x9d,0x38,10,
                               "MM_MABUT01",8,8,8,6,0x32,0,(ccFntTy *)0x0,0,0,0,-1,-1);
           MMObjTy::InitSprBut((MMObjTy *)this_02,
-                              (AnonShape_005B5240_B2C8755B *)&this_02->field_0x491,
+                              (RecoveredRecord_MMObjTy_005B5240 *)&this_02->field_0x491,
                               "MM_MBUT02",0xf2,0x173,8,6,0,0,0x9d,0x38,10,
                               "MM_MABUT02",8,7,10,5,0x28,0,(ccFntTy *)0x0,0,0,0,-1,-1);
           MMObjTy::InitSprBut((MMObjTy *)this_02,
-                              (AnonShape_005B5240_B2C8755B *)&this_02->field_0x68c,
+                              (RecoveredRecord_MMObjTy_005B5240 *)&this_02->field_0x68c,
                               "MM_MBUT03",0x191,0x173,8,6,0,0,0x9d,0x38,10,
                               "MM_MABUT03",8,7,8,5,0x32,0,(ccFntTy *)0x0,0,0,0,-1,-1);
           MMObjTy::InitSprBut((MMObjTy *)this_02,
-                              (AnonShape_005B5240_B2C8755B *)&this_02->field_0x887,
+                              (RecoveredRecord_MMObjTy_005B5240 *)&this_02->field_0x887,
                               "MM_MBUT04",0x143,0x1ac,7,8,0,0,0x9d,0x38,10,
                               "MM_MABUT04",8,9,9,6,0x32,0,(ccFntTy *)0x0,0,0,0,-1,-1);
           if (DAT_0080874e == 0) {

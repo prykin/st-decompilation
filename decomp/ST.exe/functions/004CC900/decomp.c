@@ -13,8 +13,8 @@ undefined4 __thiscall TLOBaseTy::sub_004CC900(TLOBaseTy *this)
      ) {
     this->field_0448 = 0;
     STT3DSprC::StopShow(this->field_0603,0xe);
-    thunk_FUN_004ad430((int)this->field_0603);
-    uVar1 = thunk_FUN_004ad650((int)this->field_0603);
+    thunk_FUN_004ad430(this->field_0603);
+    uVar1 = thunk_FUN_004ad650(this->field_0603);
     FUN_006ea2f0((void *)this->field_0211,uVar1);
     STT3DSprC::UnLoadSequence(this->field_0603,0xe);
     this->field_044C = -1;

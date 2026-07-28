@@ -12,7 +12,7 @@ int __thiscall FUN_006151e0(void *this,undefined4 *param_1,int param_2,int param
        ((param_1 != (undefined4 *)(*(int *)((int)this + 0x2d5) + -2) || (iVar1 < 1)))) {
       return 0;
     }
-    uVar2 = thunk_FUN_00614c80(this,param_1,(int)*(short *)((int)this + 0x25a),
+    uVar2 = thunk_FUN_00614c80(this,(int)param_1,(int)*(short *)((int)this + 0x25a),
                                (int)*(short *)((int)this + 0x25c),(int)*(short *)((int)this + 0x25e)
                                ,(int)*(short *)((int)this + 0x2cb),
                                (int)*(short *)((int)this + 0x2cd),(int)*(short *)((int)this + 0x2cf)

@@ -1,4 +1,8 @@
 
+/* [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
+   and decompilation contains no value return */
+
 void FUN_0075da80(AnonShape_0075DA80_57A0CDEF *param_1)
 
 {
@@ -24,6 +28,7 @@ void FUN_0075da80(AnonShape_0075DA80_57A0CDEF *param_1)
   pAVar1->field_0014 = uVar2;
   iVar3 = 0;
   local_8 = 0x5b6900;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = (AnonShape_0075DA80_57A0CDEF *)0xff1daf00;
   iVar5 = -0xb2f480;
   iVar4 = 0x2c8d00;
@@ -35,6 +40,7 @@ void FUN_0075da80(AnonShape_0075DA80_57A0CDEF *param_1)
     local_8 = local_8 + -0xb6d2;
     *(int *)(pAVar1->field_0014 + iVar3) = iVar4;
     iVar4 = iVar4 + -0x581a;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = (AnonShape_0075DA80_57A0CDEF *)&param_1[0x105].field_0xf6;
     iVar3 = iVar3 + 4;
   } while (-0x2b34e7 < iVar4);

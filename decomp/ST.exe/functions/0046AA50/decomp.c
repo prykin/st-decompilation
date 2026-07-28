@@ -52,7 +52,7 @@ int __thiscall STBoatC::BackLoadRC(STBoatC *this,STBoatC *param_1)
     *(int *)&this->field_0x4d1 = iVar5;
     if (iVar5 < 0x47) {
 LAB_0046acad:
-      iVar5 = (*this->vtable->vfunc_D8)(this);
+      iVar5 = this->vfunc_D8();
       return (-(uint)(iVar5 != 0) & 0xfffffffd) + 2;
     }
     *(undefined4 *)&this->field_0x4d1 = 0;
@@ -65,7 +65,7 @@ LAB_0046acad:
     iVar5 = this->field_04D9;
     if (((iVar5 == 0) || (iVar5 == 1)) || (iVar5 == 2)) {
       sub_0048D930(this);
-      iVar5 = (*this->vtable->vfunc_D8)(this);
+      iVar5 = this->vfunc_D8();
       return -(uint)(iVar5 != 0);
     }
     if (iVar5 == 3) {
@@ -110,7 +110,7 @@ LAB_0046acad:
       if (iVar5 != -1) {
         if (iVar5 == 0) {
           sub_0048D930(this);
-          iVar5 = (*this->vtable->vfunc_D8)(this);
+          iVar5 = this->vfunc_D8();
           return -(uint)(iVar5 != 0);
         }
         goto LAB_0046acad;
@@ -151,7 +151,7 @@ LAB_0046acad:
           this->field_04D9 = 2;
         }
 cf_common_exit_0046ABCB:
-        iVar5 = (*this->vtable->vfunc_D8)(this);
+        iVar5 = this->vfunc_D8();
         return (-(uint)(iVar5 != 0) & 0xfffffffd) + 2;
       }
       iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2338,0,0,"%s",
@@ -171,7 +171,7 @@ cf_common_exit_0046ABCB:
       if (this->field_04D9 != 3) {
 switchD_0046aa71_caseD_0:
         iVar5 = thunk_FUN_004620f0(this);
-        iVar4 = (*this->vtable->vfunc_D8)(this);
+        iVar4 = this->vfunc_D8();
         if (iVar4 != 0) {
           return -1;
         }
@@ -180,11 +180,11 @@ switchD_0046aa71_caseD_0:
       iVar5 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_8,(int *)&param_1);
       if (iVar5 != -1) {
         if (iVar5 != 0) {
-          iVar5 = (*this->vtable->vfunc_D8)(this);
+          iVar5 = this->vfunc_D8();
           return (-(uint)(iVar5 != 0) & 0xfffffffd) + 2;
         }
 LAB_0046aaed:
-        iVar5 = (*this->vtable->vfunc_D8)(this);
+        iVar5 = this->vfunc_D8();
         return -(uint)(iVar5 != 0);
       }
       iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2350,0,0,"%s",

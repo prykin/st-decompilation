@@ -23,7 +23,7 @@ void __thiscall SIDTy::DeleteCtrls(SIDTy *this)
   pSVar2 = local_8;
   if (iVar3 == 0) {
     iVar3 = 4;
-    puVar5 = &local_8->field_1AF1;
+    puVar5 = local_8->field_1AF1;
     do {
       if (*puVar5 != 0) {
         StartSystemTy::sub_006E56B0(pSVar2->field_000C,*puVar5);

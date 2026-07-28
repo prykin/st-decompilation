@@ -388,30 +388,30 @@ LAB_005cef5d:
                   bVar21 = local_10 < local_34;
                 } while ((int)local_10 < (int)local_34);
               }
-              piVar18 = &this_00->field_2125;
+              puVar5 = this_00->field_2125;
               iVar3 = 0xe;
               do {
-                if (*piVar18 != 0) {
+                if (*puVar5 != 0) {
                   this_00->field_002D = 5;
-                  FUN_006e6080(this_00,2,*piVar18,(undefined4 *)&this_00->field_0x1d);
+                  FUN_006e6080(this_00,2,*puVar5,(undefined4 *)&this_00->field_0x1d);
                 }
-                piVar18 = piVar18 + 1;
+                puVar5 = puVar5 + 1;
                 iVar3 = iVar3 + -1;
               } while (iVar3 != 0);
               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
               if (((local_5 == '\0') ||
                   ((*(code *)this_00->field_0000->field_002C)(), local_5 == '\0')) &&
                  (local_11 != '\0')) {
-                piVar18 = &this_00->field_1F8C;
+                puVar5 = this_00->field_1F8C;
                 local_10 = (int *)0xa;
                 do {
                   iVar3 = 8;
                   do {
-                    if (*piVar18 != 0) {
+                    if (*puVar5 != 0) {
                       this_00->field_002D = 5;
-                      FUN_006e6080(this_00,2,*piVar18,(undefined4 *)&this_00->field_0x1d);
+                      FUN_006e6080(this_00,2,*puVar5,(undefined4 *)&this_00->field_0x1d);
                     }
-                    piVar18 = piVar18 + 1;
+                    puVar5 = puVar5 + 1;
                     iVar3 = iVar3 + -1;
                   } while (iVar3 != 0);
                   local_10 = (int *)((int)local_10 + -1);
@@ -704,18 +704,18 @@ LAB_005ce59f:
               SendDesc(this_00,0);
               break;
             case 7:
-              piVar18 = &this_00->field_1F8C;
+              puVar5 = this_00->field_1F8C;
               *(undefined1 *)((int)pvVar4 + 0x4f) = pAVar15->field_0x8;
               local_10 = (int *)0xa;
               this_00->field_2121 = this_00->field_2121 + 1;
               do {
                 iVar3 = 8;
                 do {
-                  if (*piVar18 != 0) {
+                  if (*puVar5 != 0) {
                     this_00->field_002D = 5;
-                    FUN_006e6080(this_00,2,*piVar18,(undefined4 *)&this_00->field_0x1d);
+                    FUN_006e6080(this_00,2,*puVar5,(undefined4 *)&this_00->field_0x1d);
                   }
-                  piVar18 = piVar18 + 1;
+                  puVar5 = puVar5 + 1;
                   iVar3 = iVar3 + -1;
                 } while (iVar3 != 0);
                 local_10 = (int *)((int)local_10 + -1);

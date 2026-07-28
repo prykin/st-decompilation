@@ -28,7 +28,7 @@ undefined4 __thiscall STGroupBoatC::GrpGuard(STGroupBoatC *this,int param_1)
   int local_18;
   int local_14;
   DArrayTy *local_10;
-  uint local_c;
+  undefined4 local_c;
   DArrayTy *local_8;
 
   local_8 = (DArrayTy *)0x0;
@@ -90,10 +90,10 @@ undefined4 __thiscall STGroupBoatC::GrpGuard(STGroupBoatC *this,int param_1)
     if (0 < (int)local_20) {
       do {
         DArrayGetElement((DArrayTy *)pSVar2->field_0029,local_2c,&local_c);
-        if ((short)local_c != -1) {
+        if ((ushort)local_c != 0xffff) {
           pSVar4 = (STBoatC *)
-                   STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,pSVar2->field_0024,local_c,CASE_1)
-          ;
+                   STAllPlayersC::GetObjPtr
+                             (g_allPlayers_007FA174,pSVar2->field_0024,(ushort)local_c,CASE_1);
           if (pSVar4 == (STBoatC *)0x0) {
             RaiseInternalException
                       (-0x5001fffc,g_overwriteContext_007ED77C,
@@ -136,9 +136,10 @@ undefined4 __thiscall STGroupBoatC::GrpGuard(STGroupBoatC *this,int param_1)
   if (0 < (int)local_20) {
     do {
       DArrayGetElement((DArrayTy *)pSVar2->field_0029,uVar8,&local_c);
-      if ((short)local_c != -1) {
+      if ((ushort)local_c != 0xffff) {
         pSVar4 = (STBoatC *)
-                 STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,pSVar2->field_0024,local_c,CASE_1);
+                 STAllPlayersC::GetObjPtr
+                           (g_allPlayers_007FA174,pSVar2->field_0024,(ushort)local_c,CASE_1);
         if (pSVar4 == (STBoatC *)0x0) {
           iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0xa34,0,0,"%s"
                                      ,"STGroupBoatC::GrpGuard NULL");

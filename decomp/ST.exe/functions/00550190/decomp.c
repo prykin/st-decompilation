@@ -2,7 +2,11 @@
 /* [STMethodOwnerApplier] Structural method owner recovered as STPlaySystemC.
    Evidence: this_call_owners=[STPlaySystemC]; agreed_this_calls=1; incoming_this_accesses=4;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=3, used=0), and
+   decompilation contains no value return */
 
 void __thiscall STPlaySystemC::sub_00550190(STPlaySystemC *this)
 
@@ -13,7 +17,7 @@ void __thiscall STPlaySystemC::sub_00550190(STPlaySystemC *this)
   this->field_0028 = 1;
   this->field_00E4 = uVar1;
   if ((uVar1 - this->field_0034 == 6000) && (g_optPanel_008016DC != (OptPanelTy *)0x0)) {
-    thunk_FUN_00533b80(g_optPanel_008016DC);
+    thunk_FUN_00533b80((RecoveredRecord_STPlaySystemC_00533B80 *)g_optPanel_008016DC);
     return;
   }
   return;

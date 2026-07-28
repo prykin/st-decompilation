@@ -20,8 +20,9 @@ void __thiscall SettMapMTy::InitSettMap(SettMapMTy *this,char param_1)
   HoloTy *pHVar9;
   uint uVar10;
   int iVar11;
-  char cVar12;
-  ushort *puVar13;
+  byte bVar12;
+  char cVar13;
+  ushort *puVar14;
   InternalExceptionFrame local_50;
   SettMapMTy *local_c;
   uint local_8;
@@ -53,19 +54,19 @@ void __thiscall SettMapMTy::InitSettMap(SettMapMTy *this,char param_1)
     iVar4 = 1;
     puVar2 = g_startSystem_0081176C->field_02F0;
     this_00->field_005D = puVar2;
-    puVar13 = puVar2 + 0x14;
+    puVar14 = puVar2 + 0x14;
     uVar6 = FUN_006b4fe0((int)puVar2);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     pAVar7 = (AnonPointee_SettMapMTy_2204 *)
              FUN_006b50c0(0xfa,0x16,(uint)*(ushort *)(this_00->field_005D + 0xe),uVar6,
-                          (undefined4 *)puVar13,iVar4);
+                          (undefined4 *)puVar14,iVar4);
     this_00->field_2204 = pAVar7;
     uVar6 = pAVar7[1].field_0008;
     if (uVar6 == 0) {
       uVar6 = ((uint)*(ushort *)&pAVar7[1].field_0x2 * pAVar7->field_0004 + 0x1f >> 3 & 0x1ffffffc)
               * pAVar7->field_0008;
     }
-    puVar8 = (undefined4 *)FUN_006b4fa0((int)pAVar7);
+    puVar8 = (undefined4 *)FUN_006b4fa0((int *)pAVar7);
     for (uVar10 = uVar6 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
       *puVar8 = 0xffffffff;
       puVar8 = puVar8 + 1;
@@ -77,14 +78,14 @@ void __thiscall SettMapMTy::InitSettMap(SettMapMTy *this,char param_1)
     pAVar7 = this_00->field_2204;
     piVar1 = &this_00->field_2200;
     FUN_006b2330(PTR_008075a8,(uint *)piVar1,0x31,0x404acf,pAVar7->field_0004,pAVar7->field_0008,
-                 (uint)pAVar7);
+                 (ushort *)pAVar7);
     Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,*piVar1,0xffffffff,200,0x1dc);
     FUN_006b3af0((int *)PTR_008075a8,*piVar1);
     sub_005C29B0(this_00,param_1);
     if (((((param_1 == '\r') || (param_1 == '\x0e')) || (param_1 == '\x0f')) || (param_1 == '\x10'))
        && (this_00->field_1E27 == 0x11)) {
       FUN_006b2330(PTR_008075a8,&local_8,0x32,0x403b61,400,0x62,
-                   (uint)&this_00->field_1A5B->field_0140);
+                   (ushort *)&this_00->field_1A5B->field_0140);
       Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,local_8,0xffffffff,200,0x1f1);
       if (g_startSystem_0081176C->field_0560 != 0xffffffff) {
         Library::DKW::DDX::FUN_006b34d0
@@ -120,12 +121,12 @@ void __thiscall SettMapMTy::InitSettMap(SettMapMTy *this,char param_1)
       }
       this_00->field_21F8 = pHVar9;
       if (pHVar9 != (HoloTy *)0x0) {
-        uVar10 = 0;
-        cVar12 = '\x01';
-        uVar6 = 0x10;
+        uVar6 = 0;
+        cVar13 = '\x01';
+        bVar12 = 0x10;
         iVar11 = 1;
         iVar4 = Library::DKW::DDX::FUN_006bf9f0((int *)PTR_008075a8,200,0x1f1,400,0x62);
-        uVar6 = HoloTy::Init(this_00->field_21F8,CASE_1,200,0x1f1,iVar4,iVar11,uVar6,cVar12,uVar10);
+        uVar6 = HoloTy::Init(this_00->field_21F8,CASE_1,200,0x1f1,iVar4,iVar11,bVar12,cVar13,uVar6);
         if (uVar6 != 0) {
           pHVar9 = this_00->field_21F8;
           pHVar9->field_0002 = 1;

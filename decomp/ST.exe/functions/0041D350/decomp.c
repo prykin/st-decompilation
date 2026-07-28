@@ -17,9 +17,9 @@ int __thiscall FUN_0041d350(void *this,uint param_1)
   iVar2 = (int)*(short *)((int)this + 0x5d);
   if ((((-1 < iVar1) && (iVar1 < g_visibleClass_00802A88->field_0020)) && (-1 < iVar2)) &&
      (((iVar2 < g_visibleClass_00802A88->field_0024 && (param_1 < 8)) &&
-      ((&g_visibleClass_00802A88->field_0074)[param_1] != 0)))) {
-    return (uint)(*(char *)(g_visibleClass_00802A88->field_0020 * iVar2 +
-                            (&g_visibleClass_00802A88->field_0074)[param_1] + iVar1) != '\0');
+      (g_visibleClass_00802A88->field_0074[param_1] != (byte *)0x0)))) {
+    return (uint)(g_visibleClass_00802A88->field_0074[param_1]
+                  [iVar1 + g_visibleClass_00802A88->field_0020 * iVar2] != 0);
   }
   return 0;
 }

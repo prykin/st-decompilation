@@ -34,7 +34,7 @@ undefined4 __fastcall FUN_005eda50(AnonShape_005EDA50_4BDBD797 *param_1)
          (uVar4 = (**(code **)(*(int *)param_1 + 0x128))(), this->field_0018 == uVar4)) {
         return 0;
       }
-      dVar5 = (*this->vtable->slot_2C)(this);
+      dVar5 = this->slot_2C();
       if ((((dVar5 == 0x52) || (dVar5 == 0x5f)) && (iVar6 = thunk_FUN_004e1490(this), iVar6 != 0))
          && (this->field_0508 == CASE_0)) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */

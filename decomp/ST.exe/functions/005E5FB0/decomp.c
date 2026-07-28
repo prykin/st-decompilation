@@ -20,7 +20,7 @@ int __thiscall MTestTy::GetMessage(MTestTy *this,STMessage *message)
   DWORD DVar4;
   int iVar5;
   int iVar6;
-  uint uVar7;
+  byte bVar7;
   char cVar8;
   uint uVar9;
   InternalExceptionFrame local_50;
@@ -59,7 +59,7 @@ int __thiscall MTestTy::GetMessage(MTestTy *this,STMessage *message)
           g_holo_00811778 = (HoloTy *)0x0;
         }
         FUN_006b2330(PTR_008075a8,&local_8,0x32,0x403099,0xf9,0x123,
-                     (uint)&g_startSystem_0081176C->field_0140);
+                     (ushort *)&g_startSystem_0081176C->field_0140);
         Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,local_8,0xffffffff,10,0xb4);
         g_holo_00811778 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
         if (g_holo_00811778 == (HoloTy *)0x0) {
@@ -84,10 +84,10 @@ int __thiscall MTestTy::GetMessage(MTestTy *this,STMessage *message)
         if (g_holo_00811778 != (HoloTy *)0x0) {
           uVar9 = 0;
           cVar8 = '\x01';
-          uVar7 = 0x10;
+          bVar7 = 0x10;
           iVar6 = 1;
           iVar5 = Library::DKW::DDX::FUN_006bf9f0((int *)PTR_008075a8,10,0xb4,0xf9,0x123);
-          HoloTy::Init(g_holo_00811778,CASE_4,10,0xb4,iVar5,iVar6,uVar7,cVar8,uVar9);
+          HoloTy::Init(g_holo_00811778,CASE_4,10,0xb4,iVar5,iVar6,bVar7,cVar8,uVar9);
           pHVar3 = g_holo_00811778;
           piVar1 = &g_holo_00811778->field_0013;
           g_holo_00811778->field_0002 = 1;
@@ -133,14 +133,14 @@ int __thiscall MTestTy::GetMessage(MTestTy *this,STMessage *message)
           FUN_006b5f80((int *)PTR_008075a8,10,0xb4,0xf9,0x121);
           MMMObjTy::OutRGlProc
                     ((MMMObjTy *)&g_startSystem_0081176C->field_0140,
-                     (int)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0,0,10,0xb4,0xf9,0x123,
-                     &g_startSystem_0081176C->field_0140);
+                     (int)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,(MMMObjTy *)0x0,
+                     (MMMObjTy *)0x0,10,0xb4,0xf9,0x123,&g_startSystem_0081176C->field_0140);
           uVar9 = 0;
           cVar8 = '\x01';
-          uVar7 = 0x10;
+          bVar7 = 0x10;
           iVar6 = 1;
           iVar5 = Library::DKW::DDX::FUN_006bf9f0((int *)PTR_008075a8,10,0xb4,0xf9,0x123);
-          HoloTy::Init(g_holo_00811778,CASE_4,10,0xb4,iVar5,iVar6,uVar7,cVar8,uVar9);
+          HoloTy::Init(g_holo_00811778,CASE_4,10,0xb4,iVar5,iVar6,bVar7,cVar8,uVar9);
           pHVar3 = g_holo_00811778;
           g_holo_00811778->field_0002 = 0;
           pHVar3->field_0017 = -1;

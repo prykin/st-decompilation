@@ -29,8 +29,8 @@ undefined4 __thiscall FUN_005fff60(void *this,int param_1,int param_2)
     }
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     iVar3 = thunk_FUN_005ff430(this,param_1,param_2,CONCAT22(sStack_1a,local_1c),
-                               CONCAT22(sStack_18,sStack_1a),CONCAT22(uStack_16,sStack_18),&local_14
-                               ,&local_12,local_10);
+                               (short *)CONCAT22(sStack_18,sStack_1a),CONCAT22(uStack_16,sStack_18),
+                               &local_14,&local_12,local_10);
     if (((iVar3 != 0) &&
         (iVar3 = thunk_FUN_005fe360((short *)(*(int *)((int)this + 0x233) + param_1 * 0x52),
                                     (int)local_1c,(int)sStack_1a,sStack_18,(int)local_14,local_12,

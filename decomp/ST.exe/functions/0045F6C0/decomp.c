@@ -40,8 +40,9 @@ undefined4 __thiscall STBoatC::sub_0045F6C0(STBoatC *this)
     iVar11 = 0x6d;
   }
   iVar10 = thunk_FUN_004e60d0(iVar10,iVar11);
+/* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
 LAB_0045f710:
-  bVar4 = thunk_FUN_00430750(this->field_06F7);
+  bVar4 = thunk_FUN_00430750(*(Global_sub_00430750_param_1Enum *)((int)this->field_06CB + 0x2c));
   if (iVar10 == 1) {
     bVar4 = bVar4 + 2;
   }

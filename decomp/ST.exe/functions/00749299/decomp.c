@@ -6,6 +6,7 @@ undefined4 FUN_00749299(int *param_1,int param_2)
   undefined4 uVar2;
   LPCRITICAL_SECTION lpCriticalSection;
 
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_2 == 0) {
     uVar2 = 0x80004003;
   }

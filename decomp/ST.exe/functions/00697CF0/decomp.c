@@ -20,7 +20,7 @@ void __thiscall FUN_00697cf0(void *this,int param_1,int param_2)
   int iVar16;
   bool bVar17;
   int local_c4;
-  undefined4 local_c0;
+  undefined1 local_c0 [4];
   uint local_bc;
   int local_b8;
   undefined1 *local_b4;
@@ -321,6 +321,7 @@ LAB_00697e8c:
                 iVar12 = iVar12 + 1;
               } while (iVar12 < *(int *)(puVar1 + iVar5) + -1);
             }
+            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_2 = param_2 + -1;
             *(undefined4 *)(local_28 + local_80 * 0x10 + 4) = 0;
             iVar12 = local_6c;
@@ -371,7 +372,7 @@ LAB_00697e8c:
                 uVar4 = (uVar4 - 1 | 0xfffffffc) + 1;
               }
               if (uVar4 == 1) {
-                thunk_FUN_006a1370(*(int **)((int)this + 8),uVar8,iVar5,0,&local_c0);
+                thunk_FUN_006a1370(*(int **)((int)this + 8),uVar8,iVar5,0,(int)local_c0);
                 bVar17 = false;
                 iVar12 = thunk_FUN_006a20e0(*(int **)((int)this + 8),uVar8,iVar5,0,0xff);
                 if ((iVar12 == 0) ||
@@ -416,6 +417,7 @@ LAB_00697e8c:
                     iVar9 = 0;
                   }
                   thunk_FUN_006a0c90(uVar8,iVar5,iVar9,uVar4,iVar12,iVar16,uVar11);
+                  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                   param_1 = param_1 + -1;
                   local_50 = local_50 + -1;
                   if ((local_50 < 1) || (param_1 < 1)) break;

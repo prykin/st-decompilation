@@ -162,7 +162,7 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this,int param_1)
         uVar15 = ((uint)(ushort)pAVar2->field_000E * pAVar2->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
                  pAVar2->field_0008;
       }
-      puVar8 = (undefined4 *)FUN_006b4fa0((int)pAVar2);
+      puVar8 = (undefined4 *)FUN_006b4fa0((int *)pAVar2);
       for (uVar13 = uVar15 >> 2; uVar13 != 0; uVar13 = uVar13 - 1) {
         *puVar8 = 0xffffffff;
         puVar8 = puVar8 + 1;
@@ -380,7 +380,7 @@ joined_r0x00597872:
         uVar15 = ((uint)(ushort)pAVar2->field_000E * pAVar2->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
                  pAVar2->field_0008;
       }
-      puVar8 = (undefined4 *)FUN_006b4fa0((int)pAVar2);
+      puVar8 = (undefined4 *)FUN_006b4fa0((int *)pAVar2);
       for (uVar13 = uVar15 >> 2; uVar13 != 0; uVar13 = uVar13 - 1) {
         *puVar8 = 0xffffffff;
         puVar8 = puVar8 + 1;

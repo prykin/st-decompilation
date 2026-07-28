@@ -1,9 +1,13 @@
 #include "../../pseudocode_runtime.h"
 
 
+/* [STPrototypeApplier] Propagated parameter 3.
+   Evidence: raw retained-width parameter lifetime: width=2, reads=1, sites=0057B9C4 MOV CX,word ptr
+   [EBP + 0x14] */
+
 void __cdecl
-FUN_0057b990(undefined4 param_1,undefined4 param_2,int param_3,undefined2 param_4,undefined2 param_5
-            ,undefined4 param_6,undefined4 param_7)
+FUN_0057b990(undefined4 param_1,undefined4 param_2,int param_3,ushort param_4,undefined2 param_5,
+            undefined4 param_6,undefined4 param_7)
 
 {
   int iVar1;
@@ -11,7 +15,7 @@ FUN_0057b990(undefined4 param_1,undefined4 param_2,int param_3,undefined2 param_
   undefined4 *local_2c;
   undefined4 local_20 [3];
   undefined2 local_14;
-  undefined2 local_12;
+  ushort local_12;
 
   if (param_3 != 0) {
     memset(local_40, 0, 0x20); /* compiler bulk-zero initialization */

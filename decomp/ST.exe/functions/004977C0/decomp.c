@@ -16,6 +16,7 @@ void FUN_004977c0(int param_1,int *param_2,int param_3)
     do {
       iVar1 = *(int *)(iVar3 + 0x10 + *piVar5 * 0x18);
       piVar4 = param_2;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = local_8;
       if (0 < local_8) {
         do {
@@ -24,6 +25,7 @@ void FUN_004977c0(int param_1,int *param_2,int param_3)
             *piVar4 = *piVar5;
             *piVar5 = iVar2;
           }
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_1 = param_1 + -1;
           piVar4 = piVar4 + 1;
         } while (param_1 != 0);

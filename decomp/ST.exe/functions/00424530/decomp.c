@@ -30,10 +30,11 @@ void __thiscall FUN_00424530(void *this,uint param_1)
     index = 0;
     do {
       DArrayGetElement(*(DArrayTy **)((int)this + 0x29),index,&param_1);
-      if ((short)param_1 != -1) {
+      if ((ushort)param_1 != 0xffff) {
         this_00 = STAllPlayersC::GetObjPtr
-                            (g_allPlayers_007FA174,*(char *)((int)this + 0x24),param_1,CASE_1);
-        (*this_00->vtable->vfunc_100)(this_00,(char)uVar2);
+                            (g_allPlayers_007FA174,*(char *)((int)this + 0x24),(ushort)param_1,
+                             CASE_1);
+        this_00->vfunc_100((char)uVar2);
       }
       uVar3 = uVar3 + 1;
       index = uVar3 & 0xffff;

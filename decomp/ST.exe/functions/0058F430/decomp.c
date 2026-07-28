@@ -44,7 +44,7 @@ int __thiscall STSharkC::sub_0058F430(STSharkC *this)
                                 [(int)sVar8 * (int)sVar7 + (int)sVar1 * (int)g_worldGrid.planeStride
                                  + (int)sVar5].objects[0], this_00 != (STWorldObject *)0x0 &&
                      (this_00->value_20 == 0x14)))))))) &&
-                 (iVar2 = (*this_00->vtable->GetObjectTypeId)(this_00), iVar2 == 0x15)) {
+                 (iVar2 = this_00->GetObjectTypeId(), iVar2 == 0x15)) {
                 iVar2 = this->field_0047 - iVar6;
                 if (iVar2 < 0) {
                   iVar2 = -iVar2;

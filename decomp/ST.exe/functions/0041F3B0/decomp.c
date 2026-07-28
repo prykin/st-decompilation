@@ -43,7 +43,7 @@ void __fastcall FUN_0041f3b0(STSprGameObjC *param_1)
     }
     iVar2 = param_1->field_0020;
     if ((((iVar2 == 0x14) || (iVar2 == 1000)) || (iVar2 == 0x172)) || (iVar2 == 0x1a4)) {
-      SVar5 = (*param_1->vtable->slot_2C)(param_1);
+      SVar5 = param_1->slot_2C();
     }
     else {
       if (iVar2 != 0x3e9) goto LAB_0041f51a;
@@ -76,7 +76,7 @@ LAB_0041f51a:
   STT3DSprC::ShowCurFase((STT3DSprC *)puVar1,'\x01');
   iVar2 = param_1->field_0020;
   if (((iVar2 == 0x14) || (iVar2 == 1000)) || ((iVar2 == 0x172 || (iVar2 == 0x1a4)))) {
-    SVar5 = (*param_1->vtable->slot_2C)(param_1);
+    SVar5 = param_1->slot_2C();
   }
   else {
     if (iVar2 != 0x3e9) goto LAB_0041f5a0;

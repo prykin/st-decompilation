@@ -1,6 +1,10 @@
 
 /* [STPrototypeRepairApplier] Propagated parameter 0.
-   Evidence: 004E51B0 -> 00494AE0 @ 004E575B */
+   Evidence: 004E51B0 -> 00494AE0 @ 004E575B
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __fastcall FUN_00494ae0(AnonShape_00494AE0_7F188308 *param_1)
 
@@ -20,8 +24,8 @@ void __fastcall FUN_00494ae0(AnonShape_00494AE0_7F188308 *param_1)
        (param_1->field_078A = 0, g_visibleClass_00802A88 != (VisibleClassTy *)0x0)) {
       VisibleClassTy::sub_0055A4C0
                 (g_visibleClass_00802A88,(int)param_1->field_005B,(int)param_1->field_005D,
-                 (char)param_1->field_005F,*(uint *)&param_1->field_0x24,
-                 (undefined *)param_1->field_0101,*(undefined4 *)&param_1->field_0x18);
+                 (char)param_1->field_005F,*(uint *)&param_1->field_0x24,param_1->field_0101,
+                 *(int *)&param_1->field_0x18);
     }
   }
   else if ((((param_1->field_0792 == 0) &&
@@ -63,8 +67,8 @@ void __fastcall FUN_00494ae0(AnonShape_00494AE0_7F188308 *param_1)
   }
   VisibleClassTy::sub_0055A870
             (g_visibleClass_00802A88,(int)param_1->field_005B,(int)param_1->field_005D,
-             (char)param_1->field_005F,*(uint *)&param_1->field_0x24,
-             (undefined *)param_1->field_0101,*(undefined4 *)&param_1->field_0x18);
+             (char)param_1->field_005F,*(uint *)&param_1->field_0x24,param_1->field_0101,
+             *(int *)&param_1->field_0x18);
   return;
 }
 

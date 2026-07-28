@@ -3,6 +3,9 @@
 
 /* WARNING: Removing unreachable block (ram,0x00572660) */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0), and
+   decompilation contains no value return */
 
 void __fastcall FUN_00572510(AnonShape_00572510_F06DC155 *param_1)
 

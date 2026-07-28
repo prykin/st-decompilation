@@ -70,7 +70,7 @@ int __thiscall STMBombC::GetMessage(STMBombC *this,STMessage *message)
   SVar2 = message->id;
   if (MESS_SHARED_010F < SVar2) {
     if (SVar2 == MESS_STOCTOPUSC_0112) {
-      thunk_FUN_004ad5e0((int)&this_00->field_01D5);
+      thunk_FUN_004ad5e0((STT3DSprC *)&this_00->field_01D5);
     }
     else if (SVar2 == MESS_STSPRGAMEOBJC_0113) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -210,8 +210,8 @@ int __thiscall STMBombC::GetMessage(STMBombC *this,STMessage *message)
            (((-1 < *(int *)&this_00->field_0x294 &&
              (iVar6 = *(int *)&this_00->field_0x298, iVar6 < (short)(g_worldGrid._4_4_ * 200 + 100))
              ) && (-1 < iVar6)))) {
-          sub_00416240(this_00,*(undefined2 *)&this_00->field_0x290,
-                       *(undefined2 *)&this_00->field_0x294,(short)iVar6);
+          sub_00416240(this_00,*(ushort *)&this_00->field_0x290,*(short *)&this_00->field_0x294,
+                       (ushort)iVar6);
           iVar6 = *(int *)&this_00->field_0x290;
           sVar9 = (short)(iVar6 >> 0x1f);
           if (iVar6 < 0) {
@@ -252,9 +252,11 @@ int __thiscall STMBombC::GetMessage(STMBombC *this,STMessage *message)
           }
           STT3DSprC::StartShow
                     ((STT3DSprC *)&this_00->field_01D5,0xe,g_playSystem_00802A38->field_00E4);
-          if ((*(int *)&this_00->field_0x29c == 0) ||
+          if ((*(AnonShape_005EFAE0_B406B78B **)&this_00->field_0x29c ==
+               (AnonShape_005EFAE0_B406B78B *)0x0) ||
              (iVar6 = STPlaySystemC::sub_006E62D0
-                                (g_playSystem_00802A38,*(int *)&this_00->field_0x29c,
+                                (g_playSystem_00802A38,
+                                 *(AnonShape_005EFAE0_B406B78B **)&this_00->field_0x29c,
                                  (int *)&local_24), iVar6 != 0)) {
             this_00->field_0231 = CASE_1;
             *(undefined4 *)&this_00->field_0x235 = 0;

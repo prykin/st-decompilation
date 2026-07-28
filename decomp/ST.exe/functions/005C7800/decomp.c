@@ -65,7 +65,7 @@ void FUN_005c7800(void)
   Library::DKW::DDX::FUN_006c44e0
             (g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,(undefined4 *)&stack0xffffffb8);
   FUN_006b5f80((int *)PTR_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
-  FUN_006b4640((uint)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0,0,PTR_00811758,(uint *)0x0);
+  FUN_006b4640(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0,0,PTR_00811758,(uint *)0x0);
   Library::DKW::DDX::FUN_006bb370(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0,0);
   if (this->field_1F3F != (cMf32 *)0x0) {
     cMf32::delete(this->field_1F3F);

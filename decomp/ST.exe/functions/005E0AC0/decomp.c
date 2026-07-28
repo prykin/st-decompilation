@@ -66,7 +66,7 @@ LAB_005e0b38:
               FUN_00714b30((void *)pAVar10->field_0031,*(int *)&pAVar10->field_0x10 + -1);
               uVar5 = FUN_007140e0((void *)pAVar10->field_0031,1,'\0');
               if (uVar5 != 0) {
-                FUN_006b5440(*(int *)&pAVar10->field_0x4,0,*(int *)&pAVar10->field_0x14,
+                FUN_006b5440(*(ushort **)&pAVar10->field_0x4,0,*(int *)&pAVar10->field_0x14,
                              *(int *)&pAVar10->field_0x18,uVar5,0,0xff);
               }
               FUN_006b35d0((int *)PTR_008075a8,*(uint *)pAVar10);
@@ -82,7 +82,7 @@ LAB_005e0b38:
                          pAVar10->field_0x35,pAVar10->field_0x38);
             uVar5 = FUN_007140e0((void *)pAVar10->field_0031,1,'\0');
             if (uVar5 != 0) {
-              FUN_006b5440(*(int *)&pAVar10->field_0x4,0,*(int *)&pAVar10->field_0x14,
+              FUN_006b5440(*(ushort **)&pAVar10->field_0x4,0,*(int *)&pAVar10->field_0x14,
                            *(int *)&pAVar10->field_0x18,uVar5,0,0xff);
             }
             FUN_006b35d0((int *)PTR_008075a8,*(uint *)pAVar10);

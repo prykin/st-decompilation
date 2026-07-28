@@ -33,7 +33,7 @@ FUN_005f23d0(void *this,int param_1,int param_2,int param_3,uint param_4,int par
   }
   if (g_visibleClass_00802A88 == (VisibleClassTy *)0x0) {
 cf_common_exit_005F26AF:
-    iVar5 = thunk_FUN_005f15f0(local_c,(short)iVar5,(short)param_2,0,(char)param_4,0,'\0');
+    iVar5 = thunk_FUN_005f15f0(local_c,(ushort)iVar5,(short)param_2,0,(char)param_4,0,'\0');
     if (-1 < iVar5) {
       local_8 = 1;
     }

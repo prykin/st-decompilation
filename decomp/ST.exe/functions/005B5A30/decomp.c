@@ -64,7 +64,7 @@ MMObjTy::PaintButDib(MMObjTy *this,int param_1,int *param_2,int param_3,byte par
   errorCode = Library::MSVCRT::__setjmp3(local_94.jumpBuffer,0);
   if (errorCode == 0) {
     if (-1 < (int)param_5) {
-      FUN_006c7ea0(param_1,0,&local_50,8,param_5);
+      FUN_006c7ea0((AnonPointee_MReportTy_0073 *)param_1,0,&local_50,8,(byte)param_5);
     }
     FUN_006c7f10((AnonShape_006B5B10_E0D06CF1 *)param_1,0,&local_50,8,param_4);
     g_currentExceptionFrame = local_94.previous;

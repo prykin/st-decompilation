@@ -53,6 +53,7 @@ undefined4 FUN_0075c180(AnonShape_0075C180_8EED234B *param_1,undefined4 *param_2
   }
   if (0 < param_1->field_0152) {
     local_8 = (int *)&param_1->field_0x156;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = pAVar1;
     do {
       local_1c = (int *)*param_2;
@@ -65,6 +66,7 @@ undefined4 FUN_0075c180(AnonShape_0075C180_8EED234B *param_1,undefined4 *param_2
         if (iVar3 == 0) {
           return 0;
         }
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = local_40;
         iVar3 = local_3c;
         if (7 < local_3c) goto LAB_0075c271;
@@ -74,6 +76,7 @@ LAB_0075c29e:
         if ((int)uVar4 < 0) {
           return 0;
         }
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = local_40;
         iVar3 = local_3c;
       }
@@ -95,6 +98,7 @@ LAB_0075c271:
           if (iVar3 == 0) {
             return 0;
           }
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_1 = local_40;
           iVar3 = local_3c;
         }
@@ -106,6 +110,7 @@ LAB_0075c271:
       }
       iVar7 = local_30[local_14 + 1];
       local_30[local_14 + 1] = uVar6 + iVar7;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = param_2 + 1;
       *local_1c = uVar6 + iVar7 << ((byte)local_18 & 0x1f);
       local_10 = local_10 + 1;
@@ -114,6 +119,7 @@ LAB_0075c271:
       pAVar1 = param_1;
     } while (local_10 < pAVar2->field_0152);
   }
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = pAVar1;
   *pAVar2->field_0010 = local_4c;
   pAVar2->field_0010[1] = local_48;

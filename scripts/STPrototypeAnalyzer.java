@@ -53,9 +53,11 @@ public class STPrototypeAnalyzer extends GhidraScript {
         "\\[(?:STPrototype|STPrototypeRepair)Applier\\] Propagated " +
         "(return|parameter(?: ([0-9]+))?)\\.");
     private static final String TAG = "RECOVERED_PROTOTYPE";
+    private static final int MAX_TYPE_PROPAGATION_PASSES = 8;
 
     private final Map<TargetKey, Evidence> evidence = new TreeMap<>();
     private final List<CallSiteAudit> callSiteAudits = new ArrayList<>();
+    private Map<TargetKey, String> inferredSeeds = Map.of();
     private DataTypeManager dataTypes;
     private int reverseReturnEvidence;
 
@@ -67,28 +69,328 @@ public class STPrototypeAnalyzer extends GhidraScript {
         File selected = outputDirectory(); if (selected == null) return;
         Path directory = programDirectory(selected); Files.createDirectories(directory);
         dataTypes = currentProgram.getDataTypeManager();
-        int functionsSeen = 0, callSites = 0;
-        FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
-        while (functions.hasNext()) {
-            monitor.checkCancelled();
-            Function function = functions.next();
-            if (function.isThunk() || function.isExternal() || isLibrary(function)) continue;
-            functionsSeen++;
-            callSites += analyze(function);
+        int functionsSeen = 0, callSites = 0, propagationPasses = 0;
+        for (int pass = 1; pass <= MAX_TYPE_PROPAGATION_PASSES; pass++) {
+            evidence.clear();
+            callSiteAudits.clear();
+            reverseReturnEvidence = 0;
+            ScanCounts counts = scanAllFunctions();
+            functionsSeen = counts.functions;
+            callSites = counts.callSites;
+            addNarrowRawStorageFallbacks();
+            Map<TargetKey, String> nextSeeds = qualifiedInferredSeeds();
+            propagationPasses = pass;
+            if (nextSeeds.equals(inferredSeeds)) break;
+            inferredSeeds = nextSeeds;
         }
         seedPreviouslyAppliedTargets();
         List<Proposal> proposals = makeProposals();
         writeTsv(directory.resolve("prototype_proposals.tsv"), proposals);
         writeJson(directory.resolve("prototype_proposals.jsonl"), proposals);
         writeCallSiteAudit(directory.resolve("prototype_callsite_audit.tsv"));
+        writeUndefinedBoundaryAudit(
+            directory.resolve("prototype_undefined_boundary_audit.tsv"));
         writeSummary(directory.resolve("prototype_summary.txt"), proposals,
-            functionsSeen, callSites);
+            functionsSeen, callSites, propagationPasses);
         println("Prototype analysis complete: " + directory.toAbsolutePath().normalize());
         println("Functions: " + functionsSeen + ", direct calls: " + callSites +
             ", proposals: " + proposals.size() + ", type_apply: " +
             proposals.stream().filter(row -> row.typeApply).count() + ", name_apply: " +
             proposals.stream().filter(row -> row.nameApply).count() + ", repair: " +
-            proposals.stream().filter(row -> row.repair).count());
+            proposals.stream().filter(row -> row.repair).count() +
+            ", propagation_passes: " + propagationPasses);
+    }
+
+    private ScanCounts scanAllFunctions() throws Exception {
+        int functions = 0, calls = 0;
+        FunctionIterator iterator = currentProgram.getFunctionManager().getFunctions(true);
+        while (iterator.hasNext()) {
+            monitor.checkCancelled();
+            Function function = iterator.next();
+            if (function.isThunk() || function.isExternal() || isLibrary(function)) continue;
+            functions++;
+            addLocalParameterEvidence(function);
+            calls += analyze(function);
+        }
+        return new ScanCounts(functions, calls);
+    }
+
+    /**
+     * Use a parameter's own machine-code loads as a strong signedness source.
+     * This covers leaf/wrapper boundaries which have only one direct caller:
+     * MOVSX/MOVZX plus the already recovered retained width is sufficient proof.
+     */
+    private void addLocalParameterEvidence(Function function) {
+        Map<Long, List<Parameter>> byFrameOffset = new HashMap<>();
+        for (Parameter parameter : explicitParameters(function)) {
+            if (!parameter.hasStackStorage() ||
+                    protectedSource(parameter.getSource()) ||
+                    !Undefined.isUndefined(unwrap(parameter.getFormalDataType()))) continue;
+            int width = effectiveLength(parameter.getFormalDataType());
+            if (width < 1 || width > 4) continue;
+            for (long offset : parameterFrameOffsets(function, parameter))
+                byFrameOffset.computeIfAbsent(offset, ignored -> new ArrayList<>())
+                    .add(parameter);
+        }
+        if (byFrameOffset.isEmpty()) return;
+
+        InstructionIterator instructions = currentProgram.getListing()
+            .getInstructions(function.getBody(), true);
+        while (instructions.hasNext()) {
+            Instruction instruction = instructions.next();
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+            String[] operands =
+                splitOperands(instruction.toString().toUpperCase(Locale.ROOT));
+            for (int operandIndex = 0; operandIndex < operands.length; operandIndex++) {
+                MemoryExpr memory = memoryExpr(operands[operandIndex]);
+                if (memory == null || !"EBP".equals(memory.register)) continue;
+                List<Parameter> parameters = byFrameOffset.get(memory.displacement);
+                if (parameters == null) continue;
+                for (Parameter parameter : parameters) {
+                    int width = effectiveLength(parameter.getFormalDataType());
+                    String proposed = "";
+                    if (operandIndex == 1 && "MOVSX".equals(mnemonic))
+                        proposed = integerType(width, true);
+                    else if (operandIndex == 1 && "MOVZX".equals(mnemonic))
+                        proposed = integerType(width, false);
+                    else if (width == 4 && operandIndex > 0 &&
+                            Set.of("FLD", "FADD", "FSUB", "FSUBR", "FMUL", "FDIV",
+                                "FDIVR", "FCOM", "FCOMP").contains(mnemonic))
+                        proposed = "/float";
+                    else if (width == 4 && operandIndex > 0 &&
+                            Set.of("FILD", "FICOM", "FICOMP").contains(mnemonic))
+                        proposed = "/int";
+                    if (!proposed.isBlank())
+                        addParameterEvidence(function, parameter, proposed, "", true,
+                            addr(instruction.getAddress()) + " " + mnemonic +
+                            " consumes the incoming stack parameter directly");
+
+                    if (width == 4 && operandIndex == 1 && "MOV".equals(mnemonic) &&
+                            operands.length >= 2 && isFullRegister(operands[0]))
+                        addDwordUseEvidence(function, parameter, instruction,
+                            cleanRegister(operands[0]));
+                }
+            }
+        }
+    }
+
+    private void addDwordUseEvidence(Function function, Parameter parameter,
+            Instruction load, String loadedRegister) {
+        if (loadedRegister == null) return;
+        Set<String> aliases = new HashSet<>();
+        aliases.add(loadedRegister);
+        Instruction cursor = currentProgram.getListing()
+            .getInstructionAfter(load.getAddress());
+        for (int step = 0; step < 16 && cursor != null &&
+                function.getBody().contains(cursor.getAddress()); step++) {
+            String mnemonic = cursor.getMnemonicString().toUpperCase(Locale.ROOT);
+            String[] operands =
+                splitOperands(cursor.toString().toUpperCase(Locale.ROOT));
+            String proposed = "";
+
+            if (Set.of("CMP", "TEST").contains(mnemonic) &&
+                    operandsUseAlias(operands, aliases)) {
+                String jump = followingConditionalJump(function, cursor);
+                if (isSignedJump(jump)) proposed = "/int";
+                else if ("CMP".equals(mnemonic) && isUnsignedJump(jump))
+                    proposed = "/uint";
+            }
+            if (("SAR".equals(mnemonic) || "IDIV".equals(mnemonic)) &&
+                    operandsUseAlias(operands, aliases))
+                proposed = "/int";
+            else if (("SHR".equals(mnemonic) || "DIV".equals(mnemonic)) &&
+                    operandsUseAlias(operands, aliases))
+                proposed = "/uint";
+            if (proposed.isBlank() && usesAliasAsUnscaledAddress(operands, aliases))
+                proposed = "pointer:/void";
+            if (!proposed.isBlank())
+                addParameterEvidence(function, parameter, proposed, "", true,
+                    addr(cursor.getAddress()) + " " + cursor +
+                    " classifies dword parameter loaded at " + addr(load.getAddress()));
+
+            String destination = operands.length == 0 ? null :
+                cleanRegister(operands[0]);
+            if ("MOV".equals(mnemonic) && destination != null &&
+                    isFullRegister(operands[0]) && operands.length >= 2) {
+                String source = cleanRegister(operands[1]);
+                if (source != null && aliases.contains(source)) aliases.add(destination);
+                else aliases.remove(destination);
+            }
+            else if (destination != null && writesRegister(mnemonic))
+                aliases.remove(destination);
+
+            if ("CALL".equals(mnemonic) ||
+                    cursor.getFlowType().isJump() &&
+                        !cursor.getFlowType().isConditional() ||
+                    cursor.getFlowType().isTerminal() || aliases.isEmpty()) return;
+            cursor = currentProgram.getListing().getInstructionAfter(cursor.getAddress());
+        }
+    }
+
+    private boolean operandsUseAlias(String[] operands, Set<String> aliases) {
+        for (String operand : operands) {
+            String register = cleanRegister(operand);
+            if (register != null && aliases.contains(register)) return true;
+        }
+        return false;
+    }
+
+    private boolean usesAliasAsUnscaledAddress(String[] operands, Set<String> aliases) {
+        for (String operand : operands) {
+            int open = operand.indexOf('['), close = operand.lastIndexOf(']');
+            if (open < 0 || close <= open) continue;
+            String expression = operand.substring(open + 1, close)
+                .toUpperCase(Locale.ROOT).replace(" ", "");
+            for (String alias : aliases) {
+                if (Pattern.compile("(?:^|[+\\-])" + Pattern.quote(alias) +
+                        "(?![A-Z0-9_*])").matcher(expression).find())
+                    return true;
+            }
+        }
+        return false;
+    }
+
+    private String followingConditionalJump(Function function, Instruction comparison) {
+        Instruction next = currentProgram.getListing()
+            .getInstructionAfter(comparison.getAddress());
+        if (next == null || !function.getBody().contains(next.getAddress())) return "";
+        String jump = next.getMnemonicString().toUpperCase(Locale.ROOT);
+        return jump.startsWith("J") ? jump : "";
+    }
+
+    private boolean isSignedJump(String jump) {
+        return Set.of("JL", "JLE", "JG", "JGE", "JNGE", "JNG", "JNLE", "JNL",
+            "JS", "JNS").contains(jump);
+    }
+
+    private boolean isUnsignedJump(String jump) {
+        return Set.of("JB", "JBE", "JA", "JAE", "JNAE", "JNA", "JNBE", "JNB",
+            "JC", "JNC").contains(jump);
+    }
+
+    /**
+     * A retained one- or two-byte value which is only copied as raw bits can be
+     * represented losslessly as byte/ushort even when signedness is unobservable.
+     * Wider undefined4 values are deliberately excluded: they may be pointers,
+     * floats, handles, enums, or integers.
+     */
+    private void addNarrowRawStorageFallbacks() throws Exception {
+        FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
+        while (functions.hasNext()) {
+            monitor.checkCancelled();
+            Function function = functions.next();
+            if (function.isThunk() || function.isExternal() || isLibrary(function)) continue;
+            for (Parameter parameter : explicitParameters(function)) {
+                DataType current = unwrap(parameter.getFormalDataType());
+                if (!parameter.hasStackStorage() || protectedSource(parameter.getSource()) ||
+                        !Undefined.isUndefined(current)) continue;
+                int width = effectiveLength(current);
+                if (width != 1 && width != 2) continue;
+                TargetKey key = new TargetKey(function.getEntryPoint(), "parameter",
+                    parameter.getOrdinal());
+                Evidence existing = evidence.get(key);
+                if (existing != null && !existing.types.isEmpty()) continue;
+                String machineEvidence = rawNarrowStorageEvidence(function, parameter, width);
+                if (machineEvidence.isBlank()) continue;
+                addParameterEvidence(function, parameter,
+                    width == 1 ? "/byte" : "/ushort", "", true, machineEvidence);
+            }
+        }
+    }
+
+    private String rawNarrowStorageEvidence(Function function, Parameter parameter,
+            int expectedWidth) {
+        Set<Long> offsets = parameterFrameOffsets(function, parameter);
+        int reads = 0;
+        List<String> sites = new ArrayList<>();
+        InstructionIterator instructions = currentProgram.getListing()
+            .getInstructions(function.getBody(), true);
+        while (instructions.hasNext()) {
+            Instruction instruction = instructions.next();
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+            String[] operands =
+                splitOperands(instruction.toString().toUpperCase(Locale.ROOT));
+            for (int index = 0; index < operands.length; index++) {
+                MemoryExpr memory = memoryExpr(operands[index]);
+                if (memory == null || !"EBP".equals(memory.register) ||
+                        !offsets.contains(memory.displacement)) continue;
+                boolean write = index == 0 && writesFirstOperand(mnemonic);
+                if (write) {
+                    if (reads > 0) return "raw retained-width parameter lifetime: width=" +
+                        expectedWidth + ", reads=" + reads + ", sites=" +
+                        String.join(" | ", sites);
+                    return "";
+                }
+                int width = memoryOperandWidth(operands[index]);
+                if (width != expectedWidth || "LEA".equals(mnemonic)) return "";
+                reads++;
+                if (sites.size() < 8)
+                    sites.add(addr(instruction.getAddress()) + " " + instruction);
+            }
+        }
+        return reads == 0 ? "" : "raw retained-width parameter lifetime: width=" +
+            expectedWidth + ", reads=" + reads + ", sites=" + String.join(" | ", sites);
+    }
+
+    private Set<Long> parameterFrameOffsets(Function function, Parameter wanted) {
+        Set<Long> result = new HashSet<>();
+        result.add((long)wanted.getStackOffset() +
+            currentProgram.getDefaultPointerSize());
+        long offset = currentProgram.getDefaultPointerSize() * 2L;
+        for (Parameter parameter : explicitParameters(function)) {
+            if (!parameter.hasStackStorage()) continue;
+            if (parameter.getOrdinal() == wanted.getOrdinal()) {
+                result.add(offset);
+                break;
+            }
+            int length = Math.max(currentProgram.getDefaultPointerSize(),
+                effectiveLength(parameter.getFormalDataType()));
+            offset += (length + currentProgram.getDefaultPointerSize() - 1L) /
+                currentProgram.getDefaultPointerSize() *
+                currentProgram.getDefaultPointerSize();
+        }
+        return result;
+    }
+
+    private int memoryOperandWidth(String operand) {
+        String value = operand == null ? "" : operand.toUpperCase(Locale.ROOT);
+        if (value.contains("BYTE PTR")) return 1;
+        if (value.contains("WORD PTR") && !value.contains("DWORD PTR") &&
+                !value.contains("QWORD PTR")) return 2;
+        if (value.contains("DWORD PTR")) return 4;
+        if (value.contains("QWORD PTR")) return 8;
+        return 0;
+    }
+
+    private boolean writesFirstOperand(String mnemonic) {
+        return Set.of("MOV", "MOVSX", "MOVZX", "LEA", "POP", "XOR", "SUB",
+            "SBB", "ADD", "ADC", "AND", "OR", "IMUL", "SHL", "SHR", "SAR",
+            "SAL", "INC", "DEC", "NEG", "NOT").contains(mnemonic);
+    }
+
+    private Map<TargetKey, String> qualifiedInferredSeeds() {
+        Map<TargetKey, String> result = new TreeMap<>();
+        for (Map.Entry<TargetKey, Evidence> entry : evidence.entrySet()) {
+            TargetKey key = entry.getKey();
+            Evidence found = entry.getValue();
+            String candidate = selectedType(found);
+            if (candidate.isBlank()) continue;
+            Function function = currentProgram.getFunctionManager()
+                .getFunctionAt(key.address);
+            if (function == null) continue;
+            Parameter target = "return".equals(key.kind) ? function.getReturn() :
+                explicitParameter(function, key.ordinal);
+            if (target == null || typeLength(candidate) !=
+                    effectiveLength(target.getFormalDataType())) continue;
+            int count = found.types.getOrDefault(candidate, 0);
+            int strongForType = found.strongTypeSites
+                .getOrDefault(candidate, Set.of()).size();
+            boolean enough = "return".equals(key.kind) ?
+                strongForType > 0 :
+                strongForType > 0 || count >= 2;
+            if (enough) result.put(key, candidate);
+        }
+        return result;
     }
 
     private int analyze(Function caller) {
@@ -96,6 +398,8 @@ public class STPrototypeAnalyzer extends GhidraScript {
         Map<Long, Value> stackParameters = seedParameters(caller);
         Map<String, Value> stackSpills = new HashMap<>();
         seedThis(caller, registers);
+        Map<String, Value> stableRegisters = stableThisAliases(caller);
+        registers.putAll(stableRegisters);
         List<Value> pushes = new ArrayList<>();
         Set<Address> blockStarts = basicBlockStarts(caller);
         boolean stackStateComplete = true;
@@ -111,6 +415,7 @@ public class STPrototypeAnalyzer extends GhidraScript {
                 // A missing proposal is preferable to carrying an EAX/ECX value through an
                 // unrelated branch and manufacturing a false prototype.
                 registers.clear();
+                registers.putAll(stableRegisters);
                 stackSpills.entrySet().removeIf(entry -> !entry.getValue().trusted);
                 pushes.clear();
                 stackStateComplete = false;
@@ -146,11 +451,16 @@ public class STPrototypeAnalyzer extends GhidraScript {
                         stackStateComplete);
                     propagateCall(caller, called, registers.get("ECX"), pushes, registers,
                         instruction.getAddress(), wrapper);
-                    String returnedType = scriptAppliedTarget(called, "return", -1) ? "" :
-                        meaningfulType(called.getReturnType());
+                    String returnedType = inferredSeeds.getOrDefault(
+                        new TargetKey(called.getEntryPoint(), "return", -1), "");
+                    boolean inferredReturn = !returnedType.isBlank();
+                    if (returnedType.isBlank() &&
+                            !scriptAppliedTarget(called, "return", -1))
+                        returnedType = meaningfulType(called.getReturnType());
                     String returnedName = producedName(called);
                     registers.put("EAX", new Value(-1, returnedType, returnedName,
-                        trustedReturn(called), "return of " + called.getName(true), called));
+                        inferredReturn || trustedReturn(called),
+                        "return of " + called.getName(true), called));
                 }
                 else registers.remove("EAX");
                 registers.remove("ECX"); registers.remove("EDX");
@@ -234,8 +544,9 @@ public class STPrototypeAnalyzer extends GhidraScript {
         if (value == null) return;
         String siteText = addr(caller.getEntryPoint()) + " -> " +
             addr(called.getEntryPoint()) + " @ " + addr(site);
-        if (!value.type.isBlank()) addParameterEvidence(called, target,
-            value.type, value.name, value.trusted, siteText);
+        String argumentType = argumentType(target, value);
+        if (!argumentType.isBlank()) addParameterEvidence(called, target,
+            argumentType, value.name, value.trusted, siteText + "; " + value.evidence);
         if (value.producer != null && trustedProducerTarget(called, target)) {
             addProducedReturnEvidence(value.producer,
                 meaningfulType(target.getDataType()), true, site,
@@ -244,11 +555,19 @@ public class STPrototypeAnalyzer extends GhidraScript {
         if (value.parameterOrdinal < 0) return;
         Parameter source = explicitParameter(caller, value.parameterOrdinal);
         if (source == null) return;
-        String type = trustedParameter(called, target) ?
-            meaningfulType(target.getDataType()) : "";
+        String inferredTarget = inferredSeeds.getOrDefault(
+            new TargetKey(called.getEntryPoint(), "parameter", target.getOrdinal()), "");
+        String type = !inferredTarget.isBlank() ? inferredTarget :
+            trustedParameter(called, target) ?
+                meaningfulType(target.getDataType()) : "";
         String name = trustedParameterName(target) ? target.getName() : "";
+        // A callee which keeps only a byte/word cannot establish that the caller's
+        // wider source parameter had the same narrow type.
+        if (effectiveLength(source.getFormalDataType()) !=
+                effectiveLength(target.getFormalDataType())) type = "";
         if (!type.isBlank() || !name.isBlank()) addParameterEvidence(caller,
             source, type, name, wrapper || protectedSource(target.getSource()) ||
+                !inferredTarget.isBlank() ||
                 trustedNamedLibraryParameter(called, target), siteText);
     }
 
@@ -258,10 +577,18 @@ public class STPrototypeAnalyzer extends GhidraScript {
         TargetKey key = new TargetKey(function.getEntryPoint(), "parameter",
             parameter.getOrdinal());
         Evidence value = evidence.computeIfAbsent(key, ignored -> new Evidence());
-        if (!type.isBlank()) value.types.merge(type, 1, Integer::sum);
+        if (!type.isBlank()) {
+            Set<String> typeSites = value.typeSites.computeIfAbsent(type,
+                ignored -> new TreeSet<>());
+            if (typeSites.add(site)) value.types.put(type, typeSites.size());
+            if (strong)
+                value.strongTypeSites.computeIfAbsent(type,
+                    ignored -> new TreeSet<>()).add(site);
+        }
         name = cleanParameterName(name);
         if (!name.isBlank()) value.names.merge(name, 1, Integer::sum);
-        if (strong) value.strongCount++;
+        if (strong && value.strongSites.add(site))
+            value.strongCount = value.strongSites.size();
         value.sites.add(site);
     }
 
@@ -270,10 +597,17 @@ public class STPrototypeAnalyzer extends GhidraScript {
         if (returned.type.isBlank()) return;
         TargetKey key = new TargetKey(function.getEntryPoint(), "return", -1);
         Evidence value = evidence.computeIfAbsent(key, ignored -> new Evidence());
-        value.types.merge(returned.type, 1, Integer::sum);
-        if (returned.trusted || wrapper) value.strongCount++;
-        value.sites.add(addr(function.getEntryPoint()) + " returns " + returned.evidence +
-            " @ " + addr(site));
+        String siteText = addr(function.getEntryPoint()) + " returns " + returned.evidence +
+            " @ " + addr(site);
+        Set<String> typeSites = value.typeSites.computeIfAbsent(returned.type,
+            ignored -> new TreeSet<>());
+        if (typeSites.add(siteText)) value.types.put(returned.type, typeSites.size());
+        if (returned.trusted || wrapper)
+            value.strongTypeSites.computeIfAbsent(returned.type,
+                ignored -> new TreeSet<>()).add(siteText);
+        if ((returned.trusted || wrapper) && value.strongSites.add(siteText))
+            value.strongCount = value.strongSites.size();
+        value.sites.add(siteText);
     }
 
     private void addProducedReturnEvidence(Function producer, String type, boolean strong,
@@ -330,13 +664,15 @@ public class STPrototypeAnalyzer extends GhidraScript {
             Parameter target = "return".equals(key.kind) ? function.getReturn() :
                 explicitParameter(function, key.ordinal);
             if (target == null) continue;
-            String proposedType = unique(ev.types);
+            String proposedType = selectedType(ev);
             String proposedName = "parameter".equals(key.kind) ? unique(ev.names) : "";
             String currentType = typeSpecification(target.getDataType());
             String currentName = target.getName() == null ? "" : target.getName();
             boolean manual = protectedSource(target.getSource());
             boolean scriptOwned = scriptAppliedTarget(function, key.kind, key.ordinal);
-            boolean typeConflict = ev.types.size() > 1;
+            boolean abiMachineTarget = abiMachineTarget(function, key.kind, key.ordinal);
+            boolean typeConflict = ev.types.size() > 1 && proposedType.isBlank();
+            boolean weakTypeAlternatives = ev.types.size() > 1 && !proposedType.isBlank();
             boolean nameConflict = ev.names.size() > 1;
             int typeCount = proposedType.isBlank() ? 0 : ev.types.get(proposedType);
             int nameCount = proposedName.isBlank() ? 0 : ev.names.get(proposedName);
@@ -346,9 +682,11 @@ public class STPrototypeAnalyzer extends GhidraScript {
                 scriptRepairImproves(currentType, proposedType);
             boolean typeChange = compatible && !sameType(currentType, proposedType) &&
                 (safeToRefine(target, proposedType) || scriptOwned) && safeScriptRepair;
-            boolean enoughTypeEvidence = "return".equals(key.kind) ? ev.strongCount > 0 :
-                ev.strongCount > 0 || typeCount >= 2;
-            boolean typeApply = !manual && !typeConflict && typeChange &&
+            int strongTypeCount = proposedType.isBlank() ? 0 :
+                ev.strongTypeSites.getOrDefault(proposedType, Set.of()).size();
+            boolean enoughTypeEvidence = "return".equals(key.kind) ?
+                strongTypeCount > 0 : strongTypeCount > 0 || typeCount >= 2;
+            boolean typeApply = !manual && !abiMachineTarget && !typeConflict && typeChange &&
                 enoughTypeEvidence;
             boolean invalidThisName = "parameter".equals(key.kind) &&
                 "this".equals(currentName) && scriptOwned;
@@ -370,12 +708,15 @@ public class STPrototypeAnalyzer extends GhidraScript {
             reasons.add("strong_evidence=" + ev.strongCount);
             if (!compatible && !proposedType.isBlank()) reasons.add("storage_width_mismatch");
             if (manual) reasons.add("manual_target_preserved");
+            if (abiMachineTarget) reasons.add("machine_abi_target_preserved");
             if (scriptOwned) reasons.add("script_target_repair");
             if (scriptOwned && !safeScriptRepair)
                 reasons.add("script_repair_would_lose_semantic_type");
             if (invalidThisName) reasons.add("explicit_parameter_named_this");
             if (duplicateName) reasons.add("duplicate_parameter_name");
             if (typeConflict) reasons.add("type_conflict");
+            if (weakTypeAlternatives)
+                reasons.add("strong_type_evidence_overrides_weak_alternatives");
             if (nameConflict) reasons.add("name_conflict");
             result.add(new Proposal(function, target, key.kind, key.ordinal, currentType,
                 currentName, proposedType, proposedName, typeApply, nameApply, scriptOwned,
@@ -393,6 +734,15 @@ public class STPrototypeAnalyzer extends GhidraScript {
         String destination = cleanRegister(operands[0]);
         boolean fullDestination = isFullRegister(operands[0]);
         MemoryExpr destinationMemory = memoryExpr(operands[0]);
+        if ("XOR".equals(mnemonic) && destination != null && fullDestination &&
+                operands.length >= 2 &&
+                destination.equals(cleanRegister(operands[1])) &&
+                isFullRegister(operands[1])) {
+            registers.put(destination, new Value(-1, "/uint", "", false,
+                "zeroed full register at " + addr(instruction.getAddress()), null,
+                Extension.UNSIGNED, 0));
+            return;
+        }
         if ("MOV".equals(mnemonic) && destinationMemory != null && operands.length >= 2 &&
                 isStackSpill(destinationMemory)) {
             String key = stackKey(destinationMemory);
@@ -405,12 +755,46 @@ public class STPrototypeAnalyzer extends GhidraScript {
         }
         if ("MOV".equals(mnemonic) && destination != null && operands.length >= 2) {
             if (!fullDestination) {
-                registers.put(destination, partialScalarValue(operands[0], instruction));
+                registers.put(destination, partialScalarValue(instruction, operands,
+                    registers, stackParameters, stackSpills));
                 return;
             }
             Value value = sourceValue(instruction, 1, operands[1], registers,
                 stackParameters, stackSpills, false);
             if (value == null) registers.remove(destination); else registers.put(destination, value);
+            return;
+        }
+        if (("MOVSX".equals(mnemonic) || "MOVZX".equals(mnemonic)) &&
+                destination != null && fullDestination && operands.length >= 2) {
+            Value source = extensionSourceValue(instruction, operands[1], registers,
+                stackParameters, stackSpills);
+            int width = operandWidth(operands[1]);
+            Extension extension = "MOVSX".equals(mnemonic) ?
+                Extension.SIGNED : Extension.UNSIGNED;
+            String primitive = integerType(width, extension == Extension.SIGNED);
+            if (source == null && primitive.isBlank()) {
+                registers.remove(destination);
+                return;
+            }
+            String type = source == null || source.type.isBlank() ? primitive : source.type;
+            String name = source == null ? "" : source.name;
+            // MOVSX/MOVZX is itself machine-level signedness evidence even when the
+            // source field has no recovered semantic type yet.
+            boolean trusted = !primitive.isBlank();
+            int ordinal = source == null ? -1 : source.parameterOrdinal;
+            Function producer = source == null ? null : source.producer;
+            String sourceEvidence = source == null || source.evidence.isBlank() ? "" :
+                source.evidence + "; ";
+            String extensionEvidence = sourceEvidence + mnemonic + " at " +
+                addr(instruction.getAddress()) + " establishes " +
+                (extension == Extension.SIGNED ? "signed" : "unsigned") +
+                " source width " + width;
+            Value extended = new Value(ordinal, type, name, trusted, extensionEvidence,
+                producer, extension, width);
+            registers.put(destination, extended);
+            if (producer != null && !primitive.isBlank())
+                addProducedReturnEvidence(producer, primitive, true,
+                    instruction.getAddress(), extensionEvidence);
             return;
         }
         if ("LEA".equals(mnemonic) && destination != null && operands.length >= 2) {
@@ -440,6 +824,8 @@ public class STPrototypeAnalyzer extends GhidraScript {
             return new Value(parameter.parameterOrdinal, pointed, parameter.name,
                 parameter.trusted, "address of " + parameter.evidence);
         }
+        Value field = typedFieldValue(memory, registers, addressOf);
+        if (field != null) return field;
         for (Reference reference : instruction.getReferencesFrom()) {
             if (reference.getOperandIndex() != operandIndex) continue;
             Data data = currentProgram.getListing().getDefinedDataContaining(reference.getToAddress());
@@ -459,7 +845,136 @@ public class STPrototypeAnalyzer extends GhidraScript {
             return new Value(-1, type, "", semanticType(data.getDataType()),
                 "data at " + addr(data.getMinAddress()));
         }
+        Long literal = immediate(operand);
+        if (!addressOf && literal != null)
+            return Value.literal(literal, addr(instruction.getAddress()));
         return null;
+    }
+
+    /**
+     * Resolve an exact fixed-offset access through any already typed structure pointer.
+     * This is deliberately class- and method-agnostic: a register copied from a typed
+     * receiver, parameter, global, or return value is handled identically.  Interior
+     * byte pieces are not promoted to the containing field because packed/unaligned
+     * accesses need separate proof.
+     */
+    private Value typedFieldValue(MemoryExpr memory, Map<String, Value> registers,
+            boolean addressOf) {
+        if (memory == null || memory.displacement < 0 ||
+                memory.displacement > Integer.MAX_VALUE) return null;
+        Value base = registers.get(memory.register);
+        if (base == null || !base.type.startsWith("pointer:")) return null;
+        DataType owner = dataTypes.getDataType(base.type.substring("pointer:".length()));
+        if (!(owner instanceof Structure structure) ||
+                memory.displacement >= structure.getLength()) return null;
+        ghidra.program.model.data.DataTypeComponent component =
+            structure.getComponentAt((int)memory.displacement);
+        if (component == null) return null;
+        DataType componentType = component.getDataType();
+        String type = meaningfulType(componentType);
+        if (type.isBlank()) return null;
+        if (addressOf) {
+            if (type.startsWith("pointer:")) return null;
+            type = "pointer:" + type;
+        }
+        String fieldName = component.getFieldName() == null ? "" :
+            cleanParameterName(component.getFieldName());
+        if (fieldName.matches("(?i)(?:field|value|member|unk|unknown)_?[0-9a-f]+"))
+            fieldName = "";
+        String evidence = structure.getPathName() + "+0x" +
+            Long.toHexString(memory.displacement) +
+            (fieldName.isBlank() ? "" : " (" + fieldName + ")");
+        // A generated primitive field becomes automatic evidence only after at least
+        // two independent call sites agree.  Named semantic components remain strong.
+        boolean trusted = semanticType(componentType) && base.trusted;
+        return new Value(-1, type, fieldName, trusted, evidence);
+    }
+
+    private Value extensionSourceValue(Instruction instruction, String operand,
+            Map<String, Value> registers, Map<Long, Value> stackParameters,
+            Map<String, Value> stackSpills) {
+        String register = cleanRegister(operand);
+        if (register != null) return registers.get(register);
+        return sourceValue(instruction, 1, operand, registers, stackParameters,
+            stackSpills, false);
+    }
+
+    /**
+     * Convert machine extension provenance to the already recovered ABI width of the
+     * target.  For example, a sign-extended 16-bit field passed to an undefined1 formal
+     * establishes char, not short: the call tells us the source conversion while the
+     * callee's formal storage tells us the retained width.
+     */
+    private String argumentType(Parameter target, Value value) {
+        if (target == null || value == null) return "";
+        DataType current = target.getFormalDataType();
+        DataType unwrapped = unwrap(current);
+        int targetWidth = effectiveLength(current);
+        if (value.literal) {
+            if (!Undefined.isUndefined(unwrapped) || targetWidth >= 4) return "";
+            return integerType(targetWidth, value.literalSigned);
+        }
+        if (value.extension != Extension.NONE &&
+                value.sourceWidth > 0 &&
+                (Undefined.isUndefined(unwrapped) ||
+                 unwrapped instanceof AbstractIntegerDataType)) {
+            String converted = integerType(targetWidth,
+                value.extension == Extension.SIGNED);
+            if (!converted.isBlank()) return converted;
+        }
+        if (Undefined.isUndefined(unwrapped)) {
+            Boolean signed = primitiveSignedness(value.type);
+            if (signed != null) {
+                String converted = integerType(targetWidth, signed);
+                if (!converted.isBlank()) return converted;
+            }
+        }
+        return value.type;
+    }
+
+    private Boolean primitiveSignedness(String specification) {
+        if (specification == null || specification.isBlank()) return null;
+        String value = specification.toLowerCase(Locale.ROOT);
+        if (Set.of("/char", "/sbyte", "/short", "/int", "/long", "/longlong")
+                .contains(value)) return true;
+        if (Set.of("/byte", "/uchar", "/ushort", "/uint", "/ulong", "/ulonglong",
+                "/dword", "/word", "/uint1", "/uint2", "/uint4", "/uint8")
+                .contains(value)) return false;
+        return null;
+    }
+
+    private String integerType(int width, boolean signed) {
+        return switch (width) {
+            case 1 -> signed ? "/char" : "/byte";
+            case 2 -> signed ? "/short" : "/ushort";
+            case 4 -> signed ? "/int" : "/uint";
+            case 8 -> signed ? "/longlong" : "/ulonglong";
+            default -> "";
+        };
+    }
+
+    private int operandWidth(String operand) {
+        String value = operand == null ? "" : operand.toUpperCase(Locale.ROOT);
+        if (value.contains("BYTE PTR")) return 1;
+        if (value.contains("WORD PTR") && !value.contains("DWORD PTR") &&
+                !value.contains("QWORD PTR")) return 2;
+        if (value.contains("DWORD PTR")) return 4;
+        if (value.contains("QWORD PTR")) return 8;
+        String register = operand == null ? "" : operand.trim().toUpperCase(Locale.ROOT);
+        if (Set.of("AL", "AH", "BL", "BH", "CL", "CH", "DL", "DH").contains(register))
+            return 1;
+        if (Set.of("AX", "BX", "CX", "DX", "SI", "DI", "BP", "SP").contains(register))
+            return 2;
+        if (Set.of("EAX", "EBX", "ECX", "EDX", "ESI", "EDI", "EBP", "ESP")
+                .contains(register)) return 4;
+        return 0;
+    }
+
+    private DataType unwrap(DataType type) {
+        Set<String> seen = new HashSet<>();
+        while (type instanceof TypeDef typedef && seen.add(type.getPathName()))
+            type = typedef.getBaseDataType();
+        return type;
     }
 
     private Map<Long, Value> seedParameters(Function function) {
@@ -470,7 +985,11 @@ public class STPrototypeAnalyzer extends GhidraScript {
             boolean trusted = trustedParameter(function, parameter);
             boolean scriptOwned = scriptAppliedTarget(function, "parameter",
                 parameter.getOrdinal());
-            String type = scriptOwned ? "" : meaningfulType(parameter.getDataType());
+            String type = inferredSeeds.getOrDefault(
+                new TargetKey(function.getEntryPoint(), "parameter",
+                    parameter.getOrdinal()), "");
+            if (!type.isBlank()) trusted = true;
+            else type = scriptOwned ? "" : meaningfulType(parameter.getDataType());
             String name = scriptOwned ? "" : trustedParameterName(parameter) ?
                 parameter.getName() : "";
             if (scriptOwned) trusted = false;
@@ -482,10 +1001,60 @@ public class STPrototypeAnalyzer extends GhidraScript {
     }
 
     private void seedThis(Function function, Map<String, Value> registers) {
-        if (!"__thiscall".equals(function.getCallingConventionName())) return;
+        Value receiver = receiverValue(function);
+        if (receiver != null) registers.put("ECX", receiver);
+    }
+
+    /**
+     * Preserve a proven callee-saved copy of incoming this across CFG block resets.
+     * Optimized switch functions commonly execute MOV ESI,ECX once in the prologue
+     * and use ESI in distant case blocks.  ESI/EDI/EBX are stable under the 32-bit
+     * MSVC ABI, but a candidate is accepted only when the whole function writes that
+     * register exactly once.
+     */
+    private Map<String, Value> stableThisAliases(Function function) {
+        Value receiver = receiverValue(function);
+        if (receiver == null) return Map.of();
+        Map<String, Integer> writes = new HashMap<>();
+        Set<String> candidates = new HashSet<>();
+        InstructionIterator instructions = currentProgram.getListing()
+            .getInstructions(function.getBody(), true);
+        int inspected = 0;
+        while (instructions.hasNext()) {
+            Instruction instruction = instructions.next();
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+            String[] operands = splitOperands(instruction.toString().toUpperCase(Locale.ROOT));
+            if (operands.length == 0) continue;
+            String destination = cleanRegister(operands[0]);
+            if (destination != null && isFullRegister(operands[0]) &&
+                    writesRegister(mnemonic)) {
+                writes.merge(destination, 1, Integer::sum);
+                if (inspected < 48 && "MOV".equals(mnemonic) && operands.length >= 2 &&
+                        "ECX".equals(cleanRegister(operands[1])) &&
+                        Set.of("EBX", "ESI", "EDI").contains(destination))
+                    candidates.add(destination);
+            }
+            inspected++;
+        }
+        Map<String, Value> result = new HashMap<>();
+        for (String candidate : candidates)
+            if (writes.getOrDefault(candidate, 0) == 1)
+                result.put(candidate, new Value(-1, receiver.type, "this", true,
+                    receiver.evidence + "; stable alias " + candidate));
+        return result;
+    }
+
+    private boolean writesRegister(String mnemonic) {
+        return !Set.of("CMP", "TEST", "PUSH", "POP", "JMP", "RET", "CALL", "NOP")
+            .contains(mnemonic);
+    }
+
+    private Value receiverValue(Function function) {
+        if (!"__thiscall".equals(function.getCallingConventionName())) return null;
         String typePath = ownerTypePath(function);
-        if (!typePath.isBlank()) registers.put("ECX", new Value(-1, "pointer:" + typePath,
-            "this", true, function.getName(true) + " this"));
+        return typePath.isBlank() ? null :
+            new Value(-1, "pointer:" + typePath, "this", true,
+                function.getName(true) + " this");
     }
 
     private Set<Function> directCalls(Function function) {
@@ -585,7 +1154,9 @@ public class STPrototypeAnalyzer extends GhidraScript {
         if (scriptAppliedTarget(function, "parameter", parameter.getOrdinal())) return false;
         return parameter.getSource() == SourceType.USER_DEFINED ||
             parameter.getSource() == SourceType.IMPORTED || semanticType(parameter.getDataType()) ||
-            hasTag(function, TAG) || trustedNamedLibraryParameter(function, parameter);
+            hasTag(function, TAG) ||
+            abiMachineTarget(function, "parameter", parameter.getOrdinal()) ||
+            trustedNamedLibraryParameter(function, parameter);
     }
 
     private boolean trustedNamedLibraryParameter(Function function, Parameter parameter) {
@@ -613,7 +1184,21 @@ public class STPrototypeAnalyzer extends GhidraScript {
         if (scriptAppliedTarget(function, "return", -1)) return false;
         return function.getSignatureSource() == SourceType.USER_DEFINED ||
             function.getSignatureSource() == SourceType.IMPORTED ||
-            semanticType(function.getReturnType()) || hasTag(function, TAG);
+            semanticType(function.getReturnType()) || hasTag(function, TAG) ||
+            abiMachineTarget(function, "return", -1);
+    }
+
+    private boolean abiMachineTarget(Function function, String kind, int ordinal) {
+        String comment = function == null ? null : function.getComment();
+        if (comment == null || comment.isBlank()) return false;
+        String target = "[STAbiConsistencyApplier] ";
+        for (String repair : List.of("stack_parameter_width",
+                "stack_parameter_scalar_role", "pointer_return_element_width",
+                "full_eax_return")) {
+            if (comment.contains(target + repair + " target=" + kind + ":" +
+                    ordinal + ":")) return true;
+        }
+        return false;
     }
 
     private String meaningfulType(DataType type) {
@@ -750,7 +1335,8 @@ public class STPrototypeAnalyzer extends GhidraScript {
             Parameter parameter = expectedStack.get(index);
             int pushIndex = pushes.size() - 1 - index;
             stackArguments.add("p" + parameter.getOrdinal() + "=" +
-                (pushIndex < 0 ? "untracked" : describeValue(pushes.get(pushIndex))));
+                (pushIndex < 0 ? "untracked" :
+                    describeArgument(parameter, pushes.get(pushIndex))));
         }
         List<String> registerArguments = new ArrayList<>();
         for (Parameter parameter : registerParameters(resolved)) {
@@ -793,6 +1379,18 @@ public class STPrototypeAnalyzer extends GhidraScript {
         if (value == null) return "unknown";
         if (value.type.isBlank()) return value.evidence.isBlank() ? "unknown" : value.evidence;
         return value.evidence.isBlank() ? value.type : value.type + " (" + value.evidence + ")";
+    }
+
+    private String describeArgument(Parameter target, Value value) {
+        if (value == null) return "unknown";
+        String type = argumentType(target, value);
+        if (type.isBlank()) return describeValue(value);
+        String conversion = value.extension == Extension.NONE ? "" :
+            ", source=" + value.type + ", " +
+            (value.extension == Extension.SIGNED ? "sign" : "zero") +
+            "-extended/" + value.sourceWidth;
+        return value.evidence.isBlank() ? type + conversion :
+            type + conversion + " (" + value.evidence + ")";
     }
 
     private boolean isStackSpill(MemoryExpr memory) {
@@ -863,6 +1461,16 @@ public class STPrototypeAnalyzer extends GhidraScript {
         return values.size() == 1 ? values.keySet().iterator().next() : "";
     }
 
+    private String selectedType(Evidence value) {
+        if (value == null || value.types.isEmpty()) return "";
+        if (value.types.size() == 1) return value.types.keySet().iterator().next();
+        List<String> strong = new ArrayList<>();
+        for (String type : value.types.keySet())
+            if (!value.strongTypeSites.getOrDefault(type, Set.of()).isEmpty())
+                strong.add(type);
+        return strong.size() == 1 ? strong.get(0) : "";
+    }
+
     private MemoryExpr memoryExpr(String operand) {
         int open = operand.indexOf('['), close = operand.lastIndexOf(']');
         if (open < 0 || close <= open) return null;
@@ -899,17 +1507,44 @@ public class STPrototypeAnalyzer extends GhidraScript {
         return Set.of("EAX", "EBX", "ECX", "EDX", "ESI", "EDI", "EBP", "ESP",
             "RAX", "RBX", "RCX", "RDX", "RSI", "RDI", "RBP", "RSP").contains(value);
     }
-    private Value partialScalarValue(String operand, Instruction instruction) {
-        return new Value(-1, "/uint", "", false, "partial register write at " +
+    private Value partialScalarValue(Instruction instruction, String[] operands,
+            Map<String, Value> registers, Map<Long, Value> stackParameters,
+            Map<String, Value> stackSpills) {
+        String destination = cleanRegister(operands[0]);
+        int width = operandWidth(operands[0]);
+        Value prior = destination == null ? null : registers.get(destination);
+        boolean zeroBase = prior != null && prior.extension == Extension.UNSIGNED &&
+            prior.sourceWidth == 0;
+        if (zeroBase && width > 0 && operands.length >= 2) {
+            Value source = sourceValue(instruction, 1, operands[1], registers,
+                stackParameters, stackSpills, false);
+            String type = source == null || source.type.isBlank() ?
+                integerType(width, false) : source.type;
+            String name = source == null ? "" : source.name;
+            String sourceEvidence = source == null || source.evidence.isBlank() ? "" :
+                source.evidence + "; ";
+            return new Value(source == null ? -1 : source.parameterOrdinal,
+                type, name, true,
+                sourceEvidence + "zero-filled partial register load at " +
+                    addr(instruction.getAddress()),
+                source == null ? null : source.producer, Extension.UNSIGNED, width);
+        }
+        return new Value(-1, "/uint", "", false, "unproven partial register write at " +
             addr(instruction.getAddress()));
     }
     private Long immediate(String operand) {
         String value = operand.trim().toUpperCase(Locale.ROOT).replace("+", "");
+        boolean negative = value.startsWith("-");
+        if (negative) value = value.substring(1);
         try {
-            if (value.startsWith("0X")) return Long.parseUnsignedLong(value.substring(2), 16);
-            if (value.matches("[0-9A-F]+H"))
-                return Long.parseUnsignedLong(value.substring(0, value.length() - 1), 16);
-            if (value.matches("[0-9]+")) return Long.parseLong(value);
+            long parsed;
+            if (value.startsWith("0X"))
+                parsed = Long.parseUnsignedLong(value.substring(2), 16);
+            else if (value.matches("[0-9A-F]+H"))
+                parsed = Long.parseUnsignedLong(value.substring(0, value.length() - 1), 16);
+            else if (value.matches("[0-9]+")) parsed = Long.parseLong(value);
+            else return null;
+            return negative ? -parsed : parsed;
         }
         catch (NumberFormatException ignored) { }
         return null;
@@ -991,10 +1626,78 @@ public class STPrototypeAnalyzer extends GhidraScript {
             }
         }
     }
-    private void writeSummary(Path path, List<Proposal> rows, int functions, int calls)
-            throws Exception {
+
+    /**
+     * Inventory every undefined function-boundary type, including targets for which no
+     * safe proposal exists.  The proposal file necessarily contains only changes; this
+     * audit makes the remaining undefined1/2/4 population and its rejection reason
+     * visible without searching individual decompiler files.
+     */
+    private void writeUndefinedBoundaryAudit(Path path) throws Exception {
+        List<UndefinedBoundaryRow> rows = new ArrayList<>();
+        FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
+        while (functions.hasNext()) {
+            Function function = functions.next();
+            List<Parameter> targets = new ArrayList<>();
+            targets.add(function.getReturn());
+            targets.addAll(explicitParameters(function));
+            for (Parameter target : targets) {
+                DataType current = unwrap(target.getFormalDataType());
+                if (current == null || !Undefined.isUndefined(current)) continue;
+                String kind = target == function.getReturn() ? "return" : "parameter";
+                int ordinal = "return".equals(kind) ? -1 : target.getOrdinal();
+                Evidence found = evidence.get(
+                    new TargetKey(function.getEntryPoint(), kind, ordinal));
+                String candidate = found == null ? "" : selectedType(found);
+                int candidateCount = candidate.isBlank() || found == null ? 0 :
+                    found.types.getOrDefault(candidate, 0);
+                boolean compatible = !candidate.isBlank() &&
+                    typeLength(candidate) == effectiveLength(target.getFormalDataType());
+                int candidateStrong = candidate.isBlank() || found == null ? 0 :
+                    found.strongTypeSites.getOrDefault(candidate, Set.of()).size();
+                boolean enough = found != null &&
+                    ("return".equals(kind) ? candidateStrong > 0 :
+                        candidateStrong > 0 || candidateCount >= 2);
+                boolean protectedTarget = protectedSource(target.getSource());
+                String status;
+                if (protectedTarget) status = "manual_preserved";
+                else if (found == null || found.types.isEmpty()) status = "no_evidence";
+                else if (candidate.isBlank()) status = "conflicting_evidence";
+                else if (!compatible) status = "width_mismatch";
+                else if (!enough) status = "insufficient_independent_evidence";
+                else if (found.types.size() > 1)
+                    status = "automatic_strong_over_weak";
+                else status = "automatic_candidate";
+                rows.add(new UndefinedBoundaryRow(function.getEntryPoint(),
+                    function.getName(true), kind, ordinal, target.getName(),
+                    typeSpecification(target.getFormalDataType()),
+                    target.getVariableStorage().toString(), target.getSource().toString(),
+                    candidate, found == null ? 0 : found.strongCount, candidateCount,
+                    status, found == null ? "" : found.types.toString(),
+                    found == null ? "" : String.join(" | ", found.sites)));
+            }
+        }
+        rows.sort(Comparator.comparing((UndefinedBoundaryRow row) -> row.address)
+            .thenComparing(row -> row.kind).thenComparingInt(row -> row.ordinal));
+        try (BufferedWriter out = Files.newBufferedWriter(path, StandardCharsets.UTF_8)) {
+            out.write("function_address\tfunction\ttarget_kind\ttarget_ordinal\t" +
+                "target_name\tcurrent_type\tstorage\tsource\tcandidate_type\t" +
+                "strong_evidence\tcandidate_sites\tstatus\ttype_evidence\tevidence_sites\n");
+            for (UndefinedBoundaryRow row : rows)
+                out.write(addr(row.address) + "\t" + tsv(row.function) + "\t" +
+                    row.kind + "\t" + (row.ordinal < 0 ? "" : row.ordinal) + "\t" +
+                    tsv(row.targetName) + "\t" + row.currentType + "\t" +
+                    tsv(row.storage) + "\t" + row.source + "\t" + row.candidateType +
+                    "\t" + row.strongEvidence + "\t" + row.candidateSites + "\t" +
+                    row.status + "\t" + tsv(row.typeEvidence) + "\t" +
+                    tsv(row.evidenceSites) + "\n");
+        }
+    }
+    private void writeSummary(Path path, List<Proposal> rows, int functions, int calls,
+            int propagationPasses) throws Exception {
         Files.write(path, List.of("program=" + currentProgram.getName(),
             "functions_scanned=" + functions, "direct_calls_seen=" + calls,
+            "type_propagation_passes=" + propagationPasses,
             "proposals=" + rows.size(),
             "parameter_proposals=" + rows.stream().filter(r -> r.kind.equals("parameter")).count(),
             "return_proposals=" + rows.stream().filter(r -> r.kind.equals("return")).count(),
@@ -1007,9 +1710,16 @@ public class STPrototypeAnalyzer extends GhidraScript {
             "repair_review_only=" + rows.stream().filter(r -> r.repair &&
                 !r.typeApply && !r.nameApply).count(),
             "conflicts=" + rows.stream().filter(r -> r.confidence.equals("conflict")).count(),
+            "undefined_boundary_audit=prototype_undefined_boundary_audit.tsv",
             "note=Only exact explicit argument counts propagate types. The audit preserves " +
                 "deferred caller-cleanup words across calls, consumes actual callee purge bytes, " +
                 "and separates incomplete CFG stack state from proven underflow.",
+            "note_undefined=All undefined function parameters and returns are audited, " +
+                "including no-evidence and conflicting rows which cannot be auto-applied.",
+            "note_fixed_point=Qualified machine/callsite types are propagated through " +
+                "parameter-forwarding wrappers inside one analyzer run.",
+            "note_narrow_raw=Unobservable signedness on retained 1/2-byte parameters " +
+                "falls back to byte/ushort; undefined4 never receives a raw fallback.",
             "note_returns=Unknown EAX producers are traced into trusted arguments, this receivers, typed stores, and return-forwarding wrappers.",
             "note_manual=USER_DEFINED targets are never auto-applied.",
             "note_iteration=Rerun after applying method owners, globals, or class fields to reach a conservative fixed point."),
@@ -1034,17 +1744,42 @@ public class STPrototypeAnalyzer extends GhidraScript {
     private static class Value {
         final int parameterOrdinal; final String type, name, evidence; final boolean trusted;
         final Function producer;
+        final Extension extension;
+        final int sourceWidth;
+        final boolean literal, literalSigned;
         Value(int parameterOrdinal, String type, String name, boolean trusted, String evidence) {
             this(parameterOrdinal, type, name, trusted, evidence, null);
         }
         Value(int parameterOrdinal, String type, String name, boolean trusted, String evidence,
                 Function producer) {
+            this(parameterOrdinal, type, name, trusted, evidence, producer,
+                Extension.NONE, 0, false, false);
+        }
+        Value(int parameterOrdinal, String type, String name, boolean trusted, String evidence,
+                Function producer, Extension extension, int sourceWidth) {
+            this(parameterOrdinal, type, name, trusted, evidence, producer,
+                extension, sourceWidth, false, false);
+        }
+        Value(int parameterOrdinal, String type, String name, boolean trusted, String evidence,
+                Function producer, Extension extension, int sourceWidth,
+                boolean literal, boolean literalSigned) {
             this.parameterOrdinal = parameterOrdinal; this.type = type == null ? "" : type;
             this.name = name == null ? "" : name; this.trusted = trusted;
             this.evidence = evidence == null ? "" : evidence;
             this.producer = producer;
+            this.extension = extension == null ? Extension.NONE : extension;
+            this.sourceWidth = sourceWidth;
+            this.literal = literal;
+            this.literalSigned = literalSigned;
+        }
+        static Value literal(long value, String site) {
+            boolean signed = value < 0;
+            return new Value(-1, signed ? "/int" : "/uint", "", false,
+                "literal " + value + " at " + site, null, Extension.NONE, 0,
+                true, signed);
         }
     }
+    private enum Extension { NONE, SIGNED, UNSIGNED }
     private static class StoreType {
         final String type, evidence; final boolean strong;
         StoreType(String type, boolean strong, String evidence) {
@@ -1073,6 +1808,10 @@ public class STPrototypeAnalyzer extends GhidraScript {
             this.status = status;
         }
     }
+    private record UndefinedBoundaryRow(Address address, String function, String kind,
+        int ordinal, String targetName, String currentType, String storage, String source,
+        String candidateType, int strongEvidence, int candidateSites, String status,
+        String typeEvidence, String evidenceSites) { }
     private static class MemoryExpr {
         final String register; final long displacement;
         MemoryExpr(String register, long displacement) {
@@ -1093,8 +1832,12 @@ public class STPrototypeAnalyzer extends GhidraScript {
     }
     private static class Evidence {
         final Map<String, Integer> types = new TreeMap<>(), names = new TreeMap<>();
-        final Set<String> sites = new TreeSet<>(); int strongCount;
+        final Set<String> sites = new TreeSet<>(), strongSites = new TreeSet<>();
+        final Map<String, Set<String>> typeSites = new TreeMap<>();
+        final Map<String, Set<String>> strongTypeSites = new TreeMap<>();
+        int strongCount;
     }
+    private record ScanCounts(int functions, int callSites) { }
     private static class Proposal {
         final Address address; final String expectedFunction, kind, expectedTargetName,
             expectedTargetType, expectedTargetSource, proposedName, proposedType,

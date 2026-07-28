@@ -1,5 +1,5 @@
 
-void __thiscall FUN_00618b40(void *this,undefined4 param_1,undefined2 param_2)
+void __thiscall FUN_00618b40(void *this,undefined4 param_1,ushort param_2)
 
 {
   void *this_00;
@@ -9,7 +9,7 @@ void __thiscall FUN_00618b40(void *this,undefined4 param_1,undefined2 param_2)
 
   iVar1 = *(int *)((int)this + 0x5e);
   if (iVar1 == 0) {
-    *(undefined2 *)((int)this + 0x58) = param_2;
+    *(ushort *)((int)this + 0x58) = param_2;
     *(undefined4 *)((int)this + 0x20) = param_1;
     return;
   }
@@ -25,11 +25,11 @@ void __thiscall FUN_00618b40(void *this,undefined4 param_1,undefined2 param_2)
       uVar2 = uVar2 + 1;
       bVar3 = uVar2 < *(uint *)(iVar1 + 0xc);
     } while ((int)uVar2 < (int)*(uint *)(iVar1 + 0xc));
-    *(undefined2 *)((int)this + 0x58) = param_2;
+    *(ushort *)((int)this + 0x58) = param_2;
     *(undefined4 *)((int)this + 0x20) = param_1;
     return;
   }
-  *(undefined2 *)((int)this + 0x58) = param_2;
+  *(ushort *)((int)this + 0x58) = param_2;
   *(undefined4 *)((int)this + 0x20) = param_1;
   return;
 }

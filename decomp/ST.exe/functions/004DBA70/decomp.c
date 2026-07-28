@@ -4,15 +4,18 @@ undefined4 __fastcall FUN_004dba70(int param_1)
 {
   AnonShape_004DBA70_007C3C4C *pAVar1;
   int iVar2;
-  int *piVar3;
+  undefined4 *puVar3;
   AnonShape_004DBA70_007C3C4C *local_c;
   int local_8;
 
-  piVar3 = (int *)(param_1 + 0x4d0);
+  puVar3 = (undefined4 *)(param_1 + 0x4d0);
   local_8 = 2;
   do {
-    if ((*piVar3 != 0) && (piVar3[6] != 0)) {
-      iVar2 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,*piVar3,(int *)&local_c);
+    if (((AnonShape_005EFAE0_B406B78B *)*puVar3 != (AnonShape_005EFAE0_B406B78B *)0x0) &&
+       (puVar3[6] != 0)) {
+      iVar2 = STPlaySystemC::sub_006E62D0
+                        (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)*puVar3,
+                         (int *)&local_c);
       pAVar1 = local_c;
       if (iVar2 == 0) {
         local_c->field_04C0 = 0;
@@ -22,9 +25,9 @@ undefined4 __fastcall FUN_004dba70(int param_1)
           pAVar1->field_061F = (int *)0x0;
         }
       }
-      *piVar3 = 0;
+      *puVar3 = 0;
     }
-    piVar3 = piVar3 + 1;
+    puVar3 = puVar3 + 1;
     local_8 = local_8 + -1;
   } while (local_8 != 0);
   return 0;

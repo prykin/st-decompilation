@@ -1,13 +1,17 @@
 #include "../../pseudocode_runtime.h"
 
 
-void __thiscall FUN_005f05a0(void *this,undefined2 param_1,undefined2 param_2)
+/* [STPrototypeApplier] Propagated parameter 1.
+   Evidence: raw retained-width parameter lifetime: width=2, reads=1, sites=005F05C8 MOV CX,word ptr
+   [EBP + 0x8] */
+
+void __thiscall FUN_005f05a0(void *this,ushort param_1,undefined2 param_2)
 
 {
   undefined4 local_24 [4];
   undefined4 local_14;
   undefined2 local_e;
-  undefined2 local_c;
+  ushort local_c;
   undefined2 local_a;
 
   if (DAT_008117bc != (undefined4 *)0x0) {

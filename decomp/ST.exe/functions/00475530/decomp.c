@@ -40,7 +40,7 @@ int __thiscall STBoatC::BackWaitLoad(STBoatC *this,int *param_1)
   iVar4 = this->field_05C0;
   if (iVar4 == 0) {
 LAB_00475545:
-    iVar4 = (*this->vtable->vfunc_D8)(this);
+    iVar4 = this->vfunc_D8();
     return -(uint)(iVar4 != 0);
   }
   if ((iVar4 == 1) || (iVar4 == 2)) {
@@ -52,7 +52,7 @@ LAB_00475545:
     if (((((iVar17 == 1) || (iVar17 == 2)) || (iVar17 == 3)) || ((iVar17 == 5 || (iVar17 == 6)))) ||
        (iVar17 == 7)) {
       this->field_0076 = 1;
-      iVar4 = (*this->vtable->vfunc_D8)(this);
+      iVar4 = this->vfunc_D8();
       return -(uint)(iVar4 != 0);
     }
     if (iVar17 == 4) {
@@ -70,7 +70,7 @@ LAB_00475545:
         local_8 = (undefined4 *)&this->field_0x2b3;
         do {
           puVar6 = (undefined4 *)
-                   thunk_FUN_0041dc40(local_2c,(short)*local_8,*(undefined2 *)(local_8 + 1),
+                   thunk_FUN_0041dc40(local_2c,(short)*local_8,*(ushort *)(local_8 + 1),
                                       this->field_006C);
           uVar2 = *puVar6;
           bVar19 = 0;
@@ -125,7 +125,7 @@ LAB_00475545:
         return -1;
       }
       if (local_1c != 0) {
-        iVar4 = (*this->vtable->vfunc_D8)(this);
+        iVar4 = this->vfunc_D8();
         return (-(uint)(iVar4 != 0) & 0xfffffffd) + 2;
       }
       goto LAB_00475545;

@@ -8,7 +8,10 @@
    [STSwitchEnumApplier] Switch target field_01A4 uses
    /SubmarineTitans/Recovered/Enums/OptPanelTy_field_01A4State. Cases:
    CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_D=13;CASE_E=14
-    */
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0), and
+   decompilation contains no value return */
 
 void __thiscall OptPanelTy::ShiftControls(OptPanelTy *this,int param_1)
 
@@ -19,7 +22,7 @@ void __thiscall OptPanelTy::ShiftControls(OptPanelTy *this,int param_1)
   undefined4 uVar3;
   int iVar4;
   int iVar5;
-  int *piVar6;
+  uint *puVar6;
   InternalExceptionFrame local_4c;
   OptPanelTy *local_8;
 
@@ -39,21 +42,21 @@ void __thiscall OptPanelTy::ShiftControls(OptPanelTy *this,int param_1)
     this_00 = local_8;
     if (iVar5 == 0) {
       iVar5 = 10;
-      piVar6 = &local_8->field_01B5;
+      puVar6 = local_8->field_01B5;
       do {
-        if (*piVar6 != 0) {
-          FUN_006e6080(this_00,2,*piVar6,(undefined4 *)&this_00->field_0x18);
+        if (*puVar6 != 0) {
+          FUN_006e6080(this_00,2,*puVar6,(undefined4 *)&this_00->field_0x18);
         }
-        piVar6 = piVar6 + 1;
+        puVar6 = puVar6 + 1;
         iVar5 = iVar5 + -1;
       } while (iVar5 != 0);
-      piVar6 = &this_00->field_01AD;
+      puVar6 = this_00->field_01AD;
       iVar5 = 2;
       do {
-        if (*piVar6 != 0) {
-          FUN_006e6080(this_00,2,*piVar6,(undefined4 *)&this_00->field_0x18);
+        if (*puVar6 != 0) {
+          FUN_006e6080(this_00,2,*puVar6,(undefined4 *)&this_00->field_0x18);
         }
-        piVar6 = piVar6 + 1;
+        puVar6 = puVar6 + 1;
         iVar5 = iVar5 + -1;
       } while (iVar5 != 0);
       switch(this_00->field_01A4) {
@@ -66,8 +69,8 @@ void __thiscall OptPanelTy::ShiftControls(OptPanelTy *this,int param_1)
           uVar3 = 0x56;
         }
         this_00->field_0028 = uVar3;
-        if (this_00->field_01B5 != 0) {
-          FUN_006e6080(this_00,2,this_00->field_01B5,(undefined4 *)&this_00->field_0x18);
+        if (this_00->field_01B5[0] != 0) {
+          FUN_006e6080(this_00,2,this_00->field_01B5[0],(undefined4 *)&this_00->field_0x18);
         }
       }
       g_currentExceptionFrame = local_4c.previous;

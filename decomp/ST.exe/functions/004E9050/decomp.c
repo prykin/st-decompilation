@@ -30,24 +30,27 @@ LAB_004e9090:
     TVar1 = param_1->field_04D0 + CASE_1;
     param_1->field_04D4 = g_playSystem_00802A38->field_00E4;
     param_1->field_04D0 = TVar1;
-    if ((99 < (int)TVar1) && (param_1->field_04F4 == 0)) {
-      param_1->field_04F4 = 1;
+    if ((99 < (int)TVar1) && (param_1->field_04E0[5] == 0)) {
+      param_1->field_04E0[5] = 1;
       TLOBaseTy::RotateSpr(param_1,1);
     }
   }
-  if (((int)param_1->field_04D0 < 100) && (param_1->field_04F4 != 0)) {
+  if (((int)param_1->field_04D0 < 100) && (param_1->field_04E0[5] != 0)) {
     iVar3 = thunk_FUN_004ac910(&param_1->field_01D5,'\f');
     if (iVar3 == param_1->field_01F5->field_01C4) {
-      param_1->field_04F4 = 0;
+      param_1->field_04E0[5] = 0;
       TLOBaseTy::RotateSpr(param_1,1);
     }
   }
 LAB_004e914a:
   if (((param_1->field_05AC == CASE_6C) &&
-      (param_1->field_061B != (AnonPointee_TLOBaseTy_061B *)0x0)) && (param_1->field_04FC == 0)) {
-    iVar3 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,param_1->field_04F8,(int *)0x0);
+      (param_1->field_061B != (AnonPointee_TLOBaseTy_061B *)0x0)) && (param_1->field_04E0[7] == 0))
+  {
+    iVar3 = STPlaySystemC::sub_006E62D0
+                      (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)param_1->field_04E0[6],
+                       (int *)0x0);
     if (iVar3 != 0) {
-      param_1->field_04F8 = 0;
+      param_1->field_04E0[6] = 0;
       param_1->field_061B = (AnonPointee_TLOBaseTy_061B *)0x0;
     }
   }

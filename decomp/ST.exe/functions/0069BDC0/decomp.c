@@ -7,7 +7,7 @@
 int __thiscall
 CGenerate::sub_0069BDC0
           (CGenerate *this,int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,
-          AnonShape_0069BDC0_B656F442 *param_7)
+          RecoveredRecord_CGenerate_0069BDC0 *param_7)
 
 {
   undefined1 *puVar1;

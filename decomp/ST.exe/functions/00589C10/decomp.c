@@ -87,7 +87,7 @@ int __thiscall STOctopusC::GetMessage(STOctopusC *this,STMessage *message)
         g_currentExceptionFrame = local_88.previous;
         return 0;
       }
-      uVar9 = thunk_FUN_004ad650((int)&this_00->field_01D5);
+      uVar9 = thunk_FUN_004ad650((STT3DSprC *)&this_00->field_01D5);
       FUN_006eab60((void *)this_00->field_0211,uVar9);
       thunk_FUN_005899e0(this_00);
       *(undefined4 *)&this_00->field_0x249 = 2;
@@ -130,7 +130,7 @@ int __thiscall STOctopusC::GetMessage(STOctopusC *this,STMessage *message)
     return 0;
   }
   if (SVar1 == MESS_STOCTOPUSC_0112) {
-    thunk_FUN_004ad5e0((int)&this_00->field_01D5);
+    thunk_FUN_004ad5e0((STT3DSprC *)&this_00->field_01D5);
     g_currentExceptionFrame = local_88.previous;
     return 0;
   }

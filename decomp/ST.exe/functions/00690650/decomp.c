@@ -42,7 +42,7 @@ AiTactClassTy::HelpOrganize(AiTactClassTy *this,AnonShape_00690650_F810CDF4 *par
   undefined4 local_18;
   byte local_14;
   undefined3 uStack_13;
-  uint local_10;
+  undefined4 local_10;
   AiTactClassTy *local_c;
   uint local_8;
 
@@ -104,7 +104,8 @@ LAB_00690763:
       }
       else {
         pSVar7 = STAllPlayersC::GetObjPtr
-                           (g_allPlayers_007FA174,*(char *)&local_c->field_0024,local_10,CASE_1);
+                           (g_allPlayers_007FA174,*(char *)&local_c->field_0024,(ushort)local_10,
+                            CASE_1);
       }
       if ((pSVar7 != (STGameObjC *)0x0) &&
          (iVar6 = sub_0068E290(this_01,pSVar7->field_0030), iVar6 != 0)) {

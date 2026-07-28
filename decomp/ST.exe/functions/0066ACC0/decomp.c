@@ -2427,8 +2427,8 @@ cf_common_exit_0066DCED:
       iVar15 = (*this_00->vtable->slot_00)(param_1 + 0x14);
       if ((-1 < iVar11) || ((-1 < (int)local_8 || (-1 < (int)local_c)))) {
         STFishC::sub_004162B0
-                  (g_fish_00811984,(undefined2 *)((int)&local_30 + 2),
-                   (undefined2 *)((int)&local_24 + 2),(undefined2 *)((int)&local_1c + 2));
+                  (g_fish_00811984,(short *)((int)&local_30 + 2),(undefined2 *)((int)&local_24 + 2),
+                   (undefined2 *)((int)&local_1c + 2));
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         (*this_00->vtable->slot_20)(iVar11,(int)local_30._2_2_);
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -2509,7 +2509,7 @@ cf_common_exit_0066DCED:
         iVar15 = (*this_00->vtable->slot_00)(param_1 + 0x19);
         if ((-1 < iVar11) || ((-1 < (int)local_8 || (-1 < (int)local_c)))) {
           STFishC::sub_004162B0
-                    (g_fish_00811984,(undefined2 *)((int)&local_2c + 2),
+                    (g_fish_00811984,(short *)((int)&local_2c + 2),
                      (undefined2 *)((int)&local_18 + 2),(undefined2 *)((int)&local_10 + 2));
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           (*this_00->vtable->slot_20)(iVar11,(int)local_2c._2_2_);
@@ -3257,13 +3257,14 @@ LAB_0066fbc1:
     pAVar14 = local_50[0];
     pcVar26 = local_c;
     if (pAVar25 != (AnonShape_0065E360_B94C37CB *)0x0) {
-      uVar21 = (*this_00->vtable->slot_00)(param_1 + 0x19);
+      iVar11 = (*this_00->vtable->slot_00)(param_1 + 0x19);
       pcVar26 = param_1 + 0x14;
-      uVar33 = (*this_00->vtable->slot_00)();
-      uVar33 = (*this_00->vtable->slot_00)(param_1 + 0xf,uVar33);
-      uVar30 = (*this_00->vtable->slot_00)(param_1 + 10,uVar33);
+      uVar21 = (*this_00->vtable->slot_00)();
+      uVar21 = (*this_00->vtable->slot_00)(param_1 + 0xf,uVar21);
+      uVar30 = (*this_00->vtable->slot_00)(param_1 + 10,uVar21);
       pcVar26 = (char *)thunk_FUN_0065e450(pAVar25,(int)((ulonglong)uVar30 >> 0x20),
-                                           (Global_sub_0065E450_param_3Enum)uVar30,pcVar26,uVar21);
+                                           (Global_sub_0065E450_param_3Enum)uVar30,(int)pcVar26,
+                                           iVar11);
       pAVar14 = local_50[0];
       local_c = pcVar26;
     }

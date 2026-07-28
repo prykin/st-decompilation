@@ -329,7 +329,7 @@ void __thiscall STAppC::StartGame(STAppC *this)
     iVar11 = 0;
     local_34[4] = 0x6107;
     local_34[5] = 1;
-    (*pSVar12->vtable->GetMessage)(pSVar12,(int)local_34);
+    pSVar12->GetMessage((int)local_34);
     thunk_FUN_0056a500();
     memset(&pSVar12->field_5012, 0, 0x104); /* compiler bulk-zero initialization */
     iVar11 = 0;
@@ -387,7 +387,7 @@ void __thiscall STAppC::StartGame(STAppC *this)
     memset(local_54, 0, 0x20); /* compiler bulk-zero initialization */
     g_cLoading_00802A58 = (cLoadingTy *)0x0;
     local_44 = 0x6102;
-    (*pSVar12->vtable->GetMessage)(pSVar12,(int)local_54);
+    pSVar12->GetMessage((int)local_54);
     pSVar12->field_1195 = 0;
     return;
   }

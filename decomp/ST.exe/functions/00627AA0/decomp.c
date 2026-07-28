@@ -30,6 +30,7 @@ bool __thiscall FUN_00627aa0(void *this,uint param_1)
   }
   bVar1 = *(byte *)((int)this + 0x24);
   if (DAT_00808a8f == '\0') {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if ((byte)param_1 == bVar1) {
 LAB_00627bb8:
       iVar3 = 0;

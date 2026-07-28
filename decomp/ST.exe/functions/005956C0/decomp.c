@@ -29,7 +29,7 @@ FSGSTy::OutLadProc(FSGSTy *this,int param_1,MMMObjTy *param_2,MMMObjTy *param_3,
   uint uVar5;
   uint uVar6;
   ccFntTy *pcVar7;
-  undefined4 uVar8;
+  uint uVar8;
   InternalExceptionFrame local_50;
   StartServTy *local_c;
   int local_8;

@@ -3,7 +3,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\optpanel.cpp
-   OptPanelTy::PrepFiles */
+   OptPanelTy::PrepFiles
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
 
@@ -30,7 +34,6 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
   char *pcVar16;
   byte *pbVar17;
   bool bVar18;
-  undefined4 uVar19;
   char local_3fc [260];
   byte local_2f8 [260];
   _WIN32_FIND_DATAA local_1f4;
@@ -81,7 +84,7 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
   this_01->field_01ED = pDVar6;
   this_01->field_0028 = 0x20;
   *(undefined4 *)&this_01->field_0x2c = 0;
-  FUN_006e6080(this_01,2,this_01->field_01B5,(undefined4 *)&this_01->field_0x18);
+  FUN_006e6080(this_01,2,this_01->field_01B5[0],(undefined4 *)&this_01->field_0x18);
   uVar12 = 0xffffffff;
   pcVar8 = &DAT_00807680;
   do {
@@ -418,7 +421,7 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
   if (uVar12 == 0) {
     if (this_01->field_01A4 != CASE_3) goto LAB_0053325d;
     Library::DKW::TBL::FUN_006b6020(&this_01->field_01F1->flags,0,&DAT_008016a0);
-    uVar19 = this_01->field_01B9;
+    uVar13 = this_01->field_01B5[1];
     this_01->field_0028 = 0x33;
     *(DArrayTy **)&this_01->field_0x2c = this_01->field_01F1;
   }
@@ -446,24 +449,25 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
     }
     this_01->field_0028 = 0x28;
     *(uint *)&this_01->field_0x2c = uVar12;
-    FUN_006e6080(this_01,2,this_01->field_01B5,(undefined4 *)&this_01->field_0x18);
+    FUN_006e6080(this_01,2,this_01->field_01B5[0],(undefined4 *)&this_01->field_0x18);
     this_01->field_0028 = 0x20;
     *(undefined4 *)&this_01->field_0x2c = 1;
-    FUN_006e6080(this_01,2,this_01->field_01B5,(undefined4 *)&this_01->field_0x18);
+    FUN_006e6080(this_01,2,this_01->field_01B5[0],(undefined4 *)&this_01->field_0x18);
     this_01->field_0028 = 0x22;
     if (uVar12 <= param_1) {
       param_1 = uVar12 - 1;
     }
-    uVar19 = this_01->field_01B5;
+    uVar13 = this_01->field_01B5[0];
     *(uint *)&this_01->field_0x2c = param_1;
   }
-  FUN_006e6080(this_01,2,uVar19,(undefined4 *)&this_01->field_0x18);
+  FUN_006e6080(this_01,2,uVar13,(undefined4 *)&this_01->field_0x18);
 LAB_0053325d:
+  uVar13 = this_01->field_01B5[3];
   this_01->field_0028 = 0x20;
   *(uint *)&this_01->field_0x2c = (uint)(uVar12 != 0);
-  FUN_006e6080(this_01,2,this_01->field_01C1,(undefined4 *)&this_01->field_0x18);
+  FUN_006e6080(this_01,2,uVar13,(undefined4 *)&this_01->field_0x18);
   if (this_01->field_01A4 == CASE_4) {
-    FUN_006e6080(this_01,2,this_01->field_01BD,(undefined4 *)&this_01->field_0x18);
+    FUN_006e6080(this_01,2,this_01->field_01B5[2],(undefined4 *)&this_01->field_0x18);
   }
   g_currentExceptionFrame = local_70.previous;
   return;

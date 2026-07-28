@@ -12,12 +12,15 @@
    Evidence: 0064D270 -> 00675B10 @ 0064D376 | 0064D270 -> 00675B10 @ 0064D450
 
    [STPrototypeApplier] Propagated parameter 5.
-   Evidence: 0064D270 -> 00675B10 @ 0064D376 | 0064D270 -> 00675B10 @ 0064D450 */
+   Evidence: 0064D270 -> 00675B10 @ 0064D376 | 0064D270 -> 00675B10 @ 0064D450
+
+   [STPrototypeApplier] Propagated parameter 6.
+   Evidence: 0064D270 -> 004B0F20 @ 0064D6D4 | 0064D270 -> 004B1040 @ 0064D679 */
 
 int __thiscall
 AiEventClassTy::__CreateObjPl
           (AiEventClassTy *this,uint param_1,short param_2,short *param_3,short *param_4,
-          short *param_5,undefined4 param_6,uint param_7,char *param_8,undefined4 param_9,
+          short *param_5,uint param_6,uint param_7,char *param_8,undefined4 param_9,
           undefined4 param_10,int param_11,int param_12)
 
 {
@@ -112,7 +115,9 @@ AiEventClassTy::__CreateObjPl
         local_34[0] = 3;
         local_34[1] = 0;
         thunk_FUN_006756d0((short *)&local_2c,(short *)&local_24,(short *)&local_18,local_34);
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_3 = (short *)(local_2c + 1);
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_4 = (short *)(local_24 + 1);
       }
       iVar3 = thunk_FUN_00675b10((int)param_3,(int)param_4,(short)param_5,(short *)&param_3,

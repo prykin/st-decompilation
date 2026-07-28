@@ -1,5 +1,9 @@
 
-void __thiscall FUN_004a8220(void *this,char param_1,short param_2,undefined2 param_3)
+/* [STPrototypeApplier] Propagated parameter 3.
+   Evidence: raw retained-width parameter lifetime: width=2, reads=2, sites=004A8272 MOV AX,word ptr
+   [EBP + 0x10] | 004A82DE MOV AX,word ptr [EBP + 0x10] */
+
+void __thiscall FUN_004a8220(void *this,char param_1,short param_2,ushort param_3)
 
 {
   int iVar1;

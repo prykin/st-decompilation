@@ -34,7 +34,7 @@ STAllPlayersC::DeleteGuardBoat(STAllPlayersC *this,char param_1,short param_2,in
   STAllPlayersC *local_14;
   uint local_10;
   dword local_c;
-  uint local_8;
+  short local_8 [2];
 
   local_68.previous = g_currentExceptionFrame;
   local_18 = g_playerRuntime[param_1].pgPairs;
@@ -69,10 +69,10 @@ STAllPlayersC::DeleteGuardBoat(STAllPlayersC *this,char param_1,short param_2,in
         uVar8 = local_20->count;
         if (0 < (int)uVar8) {
           do {
-            DArrayGetElement(local_20,uVar7,&local_8);
-            if ((short)local_8 == param_2) {
+            DArrayGetElement(local_20,uVar7,local_8);
+            if (local_8[0] == param_2) {
               FUN_006b0c70(local_20,uVar7);
-              pSVar4 = (STBoatC *)GetObjPtr(local_14,param_1,local_8,CASE_1);
+              pSVar4 = (STBoatC *)GetObjPtr(local_14,param_1,local_8[0],CASE_1);
               local_10 = g_playSystem_00802A38->field_00E4;
               STBoatC::CmdToObj(pSVar4,CASE_21,&local_10);
               break;
@@ -109,8 +109,8 @@ STAllPlayersC::DeleteGuardBoat(STAllPlayersC *this,char param_1,short param_2,in
         uVar8 = local_24->count;
         if (0 < (int)uVar8) {
           do {
-            DArrayGetElement(local_24,uVar7,&local_8);
-            if ((short)local_8 == param_2) {
+            DArrayGetElement(local_24,uVar7,local_8);
+            if (local_8[0] == param_2) {
               FUN_006b0c70(local_24,uVar7);
               break;
             }
@@ -122,8 +122,8 @@ STAllPlayersC::DeleteGuardBoat(STAllPlayersC *this,char param_1,short param_2,in
           dVar1 = local_20->count;
           if (0 < (int)dVar1) {
             do {
-              DArrayGetElement(local_20,uVar8,&local_8);
-              pSVar4 = (STBoatC *)GetObjPtr(local_14,param_1,local_8,CASE_1);
+              DArrayGetElement(local_20,uVar8,local_8);
+              pSVar4 = (STBoatC *)GetObjPtr(local_14,param_1,local_8[0],CASE_1);
               if (pSVar4 == (STBoatC *)0x0) {
                 iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2955,0,0,
                                            "%s","STAllPlayersC::DeleteGuardBoat NULL"

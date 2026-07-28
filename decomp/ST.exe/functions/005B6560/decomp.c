@@ -3,10 +3,19 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\mmenuobj.cpp
-   MMMObjTy::PaintSlBut */
+   MMMObjTy::PaintSlBut
+   [STAbiConsistencyApplier] stack_parameter_width target=parameter:3: parameter=/byte Evidence:
+   entry-use width=/byte; unmasked_dword_reads=0; evidence=005B65AB MOV ECX,dword ptr [EBP + 0x10];
+   first-use mask | 005B65B9 MOV ECX,dword ptr [EBP + 0x10]; first-use mask | 005B65CB MOV ECX,dword
+   ptr [EBP + 0x10]; first-use mask
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=27, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall
-MMMObjTy::PaintSlBut(MMMObjTy *this,AnonShape_005B6560_61F462DF *param_1,int param_2,uint param_3)
+MMMObjTy::PaintSlBut
+          (MMMObjTy *this,RecoveredRecord_MMMObjTy_005B6560 *param_1,int param_2,byte param_3)
 
 {
   code *pcVar1;
@@ -33,14 +42,14 @@ MMMObjTy::PaintSlBut(MMMObjTy *this,AnonShape_005B6560_61F462DF *param_1,int par
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   switch(*(undefined2 *)(param_2 + 0x14)) {
   case 0:
-    param_1->field_0008 = (param_3 & 0xff) * 3 + 2;
+    param_1->field_0008 = (uint)param_3 * 3 + 2;
     goto switchD_005b65a4_default;
   case 1:
   case 3:
-    iVar2 = (param_3 & 0xff) * 3;
+    iVar2 = (uint)param_3 * 3;
     break;
   case 2:
-    iVar2 = (param_3 & 0xff) * 3 + 1;
+    iVar2 = (uint)param_3 * 3 + 1;
     break;
   default:
     goto switchD_005b65a4_default;

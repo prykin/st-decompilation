@@ -3,7 +3,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\specpan.cpp
-   SpecPanelTy::ShiftControls */
+   SpecPanelTy::ShiftControls
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=6, used=0), and
+   decompilation contains no value return */
 
 void __thiscall SpecPanelTy::ShiftControls(SpecPanelTy *this,int param_1)
 

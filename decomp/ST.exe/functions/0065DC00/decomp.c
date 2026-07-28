@@ -5,7 +5,7 @@ int __fastcall FUN_0065dc00(AiFltClassTy *param_1,undefined4 param_2,uint param_
   char cVar1;
   DArrayTy *array;
   dword dVar2;
-  undefined2 *puVar3;
+  ushort *puVar3;
   STGameObjC *this;
   int iVar4;
   IMAGE_DOS_HEADER *pIVar5;
@@ -20,9 +20,11 @@ int __fastcall FUN_0065dc00(AiFltClassTy *param_1,undefined4 param_2,uint param_
       cVar1 = (char)param_1->field_0024;
     }
     if ((param_4 != '\b') && ((param_4 < '\0' || (cVar1 = param_4, '\b' < param_4)))) {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_4 = -1;
       cVar1 = param_4;
     }
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_4 = cVar1;
     dVar2 = array->count;
     uVar6 = 0;
@@ -30,17 +32,16 @@ int __fastcall FUN_0065dc00(AiFltClassTy *param_1,undefined4 param_2,uint param_
       do {
         if (uVar6 < dVar2) {
           /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, uVar6) (runtime stride) */
-          puVar3 = (undefined2 *)(array->elementSize * uVar6 + (int)array->data);
+          puVar3 = (ushort *)(array->elementSize * uVar6 + (int)array->data);
         }
         else {
-          puVar3 = (undefined2 *)0x0;
+          puVar3 = (ushort *)0x0;
         }
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         this = STAllPlayersC::GetObjPtr
-                         (g_allPlayers_007FA174,*(char *)&param_1->field_0024,
-                          CONCAT22((short)((uint)puVar3 >> 0x10),*puVar3),CASE_1);
-        if (((this != (STGameObjC *)0x0) && (iVar4 = (*this->vtable->vfunc_F8)(this), iVar4 != 0))
-           && ((param_4 < '\0' || (iVar4 = (*this->vtable->vfunc_6C)(this), param_4 == iVar4)))) {
+                         (g_allPlayers_007FA174,*(char *)&param_1->field_0024,*puVar3,CASE_1);
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+        if (((this != (STGameObjC *)0x0) && (iVar4 = this->vfunc_F8(), iVar4 != 0))
+           && ((param_4 < '\0' || (iVar4 = this->vfunc_6C(), param_4 == iVar4)))) {
           iVar4 = (*this->vtable->vfunc_2C)();
           pIVar5 = thunk_FUN_00674fb0(iVar4);
           if ((param_3 & (uint)pIVar5) != 0) {

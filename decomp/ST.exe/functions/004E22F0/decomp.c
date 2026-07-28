@@ -1,5 +1,8 @@
 
-undefined4 __thiscall FUN_004e22f0(void *this,int param_1)
+/* [STPrototypeApplier] Propagated return.
+   Evidence: 004E22F0 returns zeroed full register at 004E231E @ 004E2322 */
+
+uint __thiscall FUN_004e22f0(void *this,int param_1)
 
 {
   int iVar1;

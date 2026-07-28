@@ -31,7 +31,7 @@ undefined4 __thiscall TLOBaseTy::procResult(TLOBaseTy *this)
   if (errorCode == 0) {
     switch(*(undefined4 *)&local_c->field_0x361) {
     case 1:
-      uVar4 = sub_004CEB00(local_c,*(undefined4 *)&local_c->field_0x369);
+      uVar4 = sub_004CEB00(local_c,*(int *)&local_c->field_0x369);
       g_currentExceptionFrame = local_50.previous;
       return uVar4;
     case 2:
@@ -39,9 +39,9 @@ undefined4 __thiscall TLOBaseTy::procResult(TLOBaseTy *this)
       g_currentExceptionFrame = local_50.previous;
       return uVar4;
     case 3:
-      uVar4 = thunk_FUN_004ea830(local_c);
+      uVar2 = thunk_FUN_004ea830(local_c);
       g_currentExceptionFrame = local_50.previous;
-      return uVar4;
+      return uVar2;
     case 4:
       uVar4 = thunk_FUN_004d9c20(local_c);
       g_currentExceptionFrame = local_50.previous;
@@ -55,7 +55,7 @@ undefined4 __thiscall TLOBaseTy::procResult(TLOBaseTy *this)
       g_currentExceptionFrame = local_50.previous;
       return 1;
     case 6:
-      uVar4 = thunk_FUN_004de820((int *)local_c);
+      uVar4 = thunk_FUN_004de820((AnonShape_004DE820_615D04DD *)local_c);
       g_currentExceptionFrame = local_50.previous;
       return uVar4;
     default:

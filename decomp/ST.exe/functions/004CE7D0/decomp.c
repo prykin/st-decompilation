@@ -20,7 +20,7 @@ int __thiscall TLOBaseTy::sub_004CE7D0(TLOBaseTy *this)
       return 0;
     }
     if ((iVar2 != 0) && (this->field_04DC != 0)) {
-      thunk_FUN_004d0a80(DAT_00800bcc,this->field_04E0,this->field_04E4,this->field_04E8);
+      thunk_FUN_004d0a80(DAT_00800bcc,this->field_04E0[0],this->field_04E0[1],this->field_04E0[2]);
       this->field_04DC = 0;
     }
   }

@@ -14,11 +14,11 @@ FUN_006a19d0(int *param_1,int param_2,int param_3,int param_4,int param_5,ushort
   int iVar6;
   uint uVar7;
   byte bVar8;
-  undefined4 local_14 [2];
+  undefined1 local_14 [8];
   undefined4 local_c;
   ushort local_8;
 
-  thunk_FUN_006a1370(param_1,param_2,param_3,param_4,local_14);
+  thunk_FUN_006a1370(param_1,param_2,param_3,param_4,(int)local_14);
   uVar5 = thunk_FUN_006a0ef0(param_1,param_2,param_3,param_4,param_5,param_6);
   uVar4 = (ushort)uVar5;
   if (uVar4 == 0xffff) {

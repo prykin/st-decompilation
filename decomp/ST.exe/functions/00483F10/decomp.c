@@ -1,38 +1,35 @@
 
 /* WARNING: Removing unreachable block (ram,0x00483fc6) */
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 004608B0 -> 00483F10 @ 00461551; STBoatC::Defence this; stable alias ESI | 00471AC0 ->
+   00483F10 @ 004726CF; STBoatC::Guard this; stable alias ESI */
 
-undefined4 __fastcall FUN_00483f10(int param_1)
+undefined4 __fastcall FUN_00483f10(STBoatC *param_1)
 
 {
-  uint uVar1;
-  int iVar2;
-  uint uVar3;
+  ushort *puVar1;
+  uint uVar2;
+  int iVar3;
   uint uVar4;
   uint uVar5;
-  longlong lVar6;
+  uint uVar6;
   longlong lVar7;
   longlong lVar8;
   longlong lVar9;
+  longlong lVar10;
 
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  iVar2 = STAllPlayersC::IsTorpLive
-                    (g_allPlayers_007FA174,*(short *)(param_1 + 0x46f),*(int *)(param_1 + 0x471));
-  if (iVar2 != 0) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    iVar2 = *(int *)(param_1 + 0x46b);
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    uVar3 = (int)*(short *)(param_1 + 0x45) - (int)*(short *)(iVar2 + 0x45);
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    uVar4 = (int)*(short *)(param_1 + 0x43) - (int)*(short *)(iVar2 + 0x43);
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    uVar5 = (int)*(short *)(param_1 + 0x41) - (int)*(short *)(iVar2 + 0x41);
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    uVar1 = *(uint *)(param_1 + 0x810);
-    lVar6 = Library::MSVCRT::__allmul(uVar5,(int)uVar5 >> 0x1f,uVar5,(int)uVar5 >> 0x1f);
-    lVar7 = Library::MSVCRT::__allmul(uVar4,(int)uVar4 >> 0x1f,uVar4,(int)uVar4 >> 0x1f);
-    lVar8 = Library::MSVCRT::__allmul(uVar3,(int)uVar3 >> 0x1f,uVar3,(int)uVar3 >> 0x1f);
-    lVar9 = Library::MSVCRT::__allmul(uVar1,(int)uVar1 >> 0x1f,uVar1,(int)uVar1 >> 0x1f);
-    if (lVar9 < lVar7 + lVar6 + lVar8) {
+  iVar3 = STAllPlayersC::IsTorpLive(g_allPlayers_007FA174,param_1->field_046F,param_1->field_0471);
+  if (iVar3 != 0) {
+    puVar1 = param_1->field_046B;
+    uVar4 = (int)param_1->field_0045 - (int)*(short *)((int)puVar1 + 0x45);
+    uVar5 = (int)param_1->field_0043 - (int)*(short *)((int)puVar1 + 0x43);
+    uVar6 = (int)param_1->field_0041 - (int)*(short *)((int)puVar1 + 0x41);
+    uVar2 = param_1->field_0810;
+    lVar7 = Library::MSVCRT::__allmul(uVar6,(int)uVar6 >> 0x1f,uVar6,(int)uVar6 >> 0x1f);
+    lVar8 = Library::MSVCRT::__allmul(uVar5,(int)uVar5 >> 0x1f,uVar5,(int)uVar5 >> 0x1f);
+    lVar9 = Library::MSVCRT::__allmul(uVar4,(int)uVar4 >> 0x1f,uVar4,(int)uVar4 >> 0x1f);
+    lVar10 = Library::MSVCRT::__allmul(uVar2,(int)uVar2 >> 0x1f,uVar2,(int)uVar2 >> 0x1f);
+    if (lVar10 < lVar8 + lVar7 + lVar9) {
       return 0;
     }
   }

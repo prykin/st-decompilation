@@ -3,7 +3,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helppan.cpp
-   HelpPanelTy::SwitchOptPanel */
+   HelpPanelTy::SwitchOptPanel
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0), and
+   decompilation contains no value return */
 
 void __thiscall HelpPanelTy::SwitchOptPanel(HelpPanelTy *this,int param_1)
 

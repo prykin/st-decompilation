@@ -156,8 +156,8 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
               puVar5 = (undefined4 *)
                        thunk_FUN_0041dc40(local_b8,(short)*(undefined4 *)
                                                            (&DAT_007932d4 + iVar3 + iVar12),
-                                          *(undefined2 *)((int)(&DAT_007932d4 + iVar3 + iVar12) + 4)
-                                          ,-(short)this->field_0259);
+                                          *(ushort *)((int)(&DAT_007932d4 + iVar3 + iVar12) + 4),
+                                          -(short)this->field_0259);
               local_2c = (short)*puVar5;
               sStack_2a = (short)((uint)*puVar5 >> 0x10);
               local_28 = *(short *)(puVar5 + 1);
@@ -184,7 +184,7 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
                                    (&this->field_028D)[(int)piVar2 * 0x20],this->field_0024,
                                    this->field_0018,this->field_0032);
                 if (this->field_05AC == CASE_47) {
-                  (*this->vtable->vfunc_90)(this,4,0x315);
+                  this->vfunc_90(4,0x315);
                 }
               }
               else {
@@ -232,26 +232,27 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
       iVar3 = (int)param_1 * 0x20;
       iVar12 = (int)param_1 * 0x80;
       iVar10 = (int)param_1 * 0x80;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (int *)(&this->field_0x2a5 + iVar12);
       STAllPlayersC::sub_004DB160
                 (g_allPlayers_007FA174,(int)this->field_0024,0xa8,
                  (int *)(&this->field_0x2a5 + iVar12),&this->field_02A9 + iVar3,
                  (int *)(&this->field_0x2ad + iVar10),&local_1c);
-      thunk_FUN_00584a30(this->field_04E0,this->field_04E4,this->field_04E8,*param_1 * 0xc9 + 100,
-                         (&this->field_02A9)[iVar3] * 0xc9 + 100,this->field_0024,local_1c,
-                         this->field_0018,this->field_0032);
+      thunk_FUN_00584a30(this->field_04E0[0],this->field_04E0[1],this->field_04E0[2],
+                         *param_1 * 0xc9 + 100,(&this->field_02A9)[iVar3] * 0xc9 + 100,
+                         this->field_0024,local_1c,this->field_0018,this->field_0032);
       uVar4 = GetPlayerRaceId(DAT_0080874d);
       uVar4 = uVar4 & 0xff;
       if (uVar4 == 1) {
-        (*this->vtable->vfunc_90)(this,6,0x9e);
+        this->vfunc_90(6,0x9e);
         return 0;
       }
       if (uVar4 == 2) {
-        (*this->vtable->vfunc_90)(this,6,0x9f);
+        this->vfunc_90(6,0x9f);
         return 0;
       }
       if (uVar4 == 3) {
-        (*this->vtable->vfunc_90)(this,6,0xa0);
+        this->vfunc_90(6,0xa0);
         return 0;
       }
       break;
@@ -259,35 +260,37 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
       iVar3 = (int)param_1 * 0x20;
       iVar10 = (int)param_1 * 0x80;
       iVar12 = (int)param_1 * 0x80;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (int *)(&this->field_0x2a5 + iVar10);
       STAllPlayersC::sub_004DB160
                 (g_allPlayers_007FA174,(int)this->field_0024,0xa8,
                  (int *)(&this->field_0x2a5 + iVar10),&this->field_02A9 + iVar3,
                  (int *)(&this->field_0x2ad + iVar12),&local_1c);
       thunk_FUN_006405f0(0xa8,this->field_0024,this->field_0018,this->field_0032,
-                         (short)this->field_04E0,(short)this->field_04E4,(short)this->field_04E8,
-                         (short)*param_1 * 0xc9 + 100,(short)(&this->field_02A9)[iVar3] * 0xc9 + 100
-                         ,(short)local_1c);
+                         (ushort)this->field_04E0[0],(ushort)this->field_04E0[1],
+                         (ushort)this->field_04E0[2],(short)*param_1 * 0xc9 + 100,
+                         (short)(&this->field_02A9)[iVar3] * 0xc9 + 100,(ushort)local_1c);
       uVar4 = GetPlayerRaceId(DAT_0080874d);
       uVar4 = uVar4 & 0xff;
       if (uVar4 == 1) {
-        (*this->vtable->vfunc_90)(this,6,0x98);
+        this->vfunc_90(6,0x98);
         return 0;
       }
       if (uVar4 == 2) {
-        (*this->vtable->vfunc_90)(this,6,0x99);
+        this->vfunc_90(6,0x99);
         return 0;
       }
       if (uVar4 == 3) {
-        (*this->vtable->vfunc_90)(this,6,0x9a);
+        this->vfunc_90(6,0x9a);
         return 0;
       }
       break;
     case 0xb2:
-      if ((this->field_05AC == CASE_70) && (this->field_04F0 == 0)) {
-        this_00 = (void *)thunk_FUN_0058bab0(this->field_04E0,this->field_04E4,this->field_04E8,
-                                             this->field_0024,this->field_0018,this->field_0032);
-        this->field_04F0 = *(undefined4 *)((int)this_00 + 0x18);
+      if ((this->field_05AC == CASE_70) && (this->field_04E0[4] == 0)) {
+        this_00 = (void *)thunk_FUN_0058bab0(this->field_04E0[0],this->field_04E0[1],
+                                             this->field_04E0[2],this->field_0024,this->field_0018,
+                                             this->field_0032);
+        this->field_04E0[4] = *(uint *)((int)this_00 + 0x18);
         if ((-1 < *(int *)(&this->field_0x2a5 + (int)piVar2 * 0x80)) &&
            (-1 < (int)(&this->field_02A9)[(int)piVar2 * 0x20])) {
           thunk_FUN_0058c560(this_00,*(int *)(&this->field_0x2a5 + (int)piVar2 * 0x80),
@@ -300,27 +303,28 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
       iVar3 = (int)param_1 * 0x20;
       iVar12 = (int)param_1 * 0x80;
       iVar10 = (int)param_1 * 0x80;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (int *)(&this->field_0x2a5 + iVar12);
       STAllPlayersC::sub_004DB160
                 (g_allPlayers_007FA174,(int)this->field_0024,0xa8,
                  (int *)(&this->field_0x2a5 + iVar12),&this->field_02A9 + iVar3,
                  (int *)(&this->field_0x2ad + iVar10),&local_1c);
       thunk_FUN_006405f0(0xbe,this->field_0024,this->field_0018,this->field_0032,
-                         (short)this->field_04E0,(short)this->field_04E4,(short)this->field_04E8,
-                         (short)*param_1 * 0xc9 + 100,(short)(&this->field_02A9)[iVar3] * 0xc9 + 100
-                         ,(short)local_1c);
+                         (ushort)this->field_04E0[0],(ushort)this->field_04E0[1],
+                         (ushort)this->field_04E0[2],(short)*param_1 * 0xc9 + 100,
+                         (short)(&this->field_02A9)[iVar3] * 0xc9 + 100,(ushort)local_1c);
       uVar4 = GetPlayerRaceId(DAT_0080874d);
       uVar4 = uVar4 & 0xff;
       if (uVar4 == 1) {
-        (*this->vtable->vfunc_90)(this,6,0x9b);
+        this->vfunc_90(6,0x9b);
         return 0;
       }
       if (uVar4 == 2) {
-        (*this->vtable->vfunc_90)(this,6,0x9c);
+        this->vfunc_90(6,0x9c);
         return 0;
       }
       if (uVar4 == 3) {
-        (*this->vtable->vfunc_90)(this,6,0x9d);
+        this->vfunc_90(6,0x9d);
         return 0;
       }
     }
@@ -336,9 +340,10 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
       if (&stack0x00000000 != (undefined1 *)0x10) {
         sVar6 = this->field_0045;
       }
-      if (this->field_04D0 != CASE_0) {
-        iVar3 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,this->field_04D0,(int *)&local_24)
-        ;
+      if ((AnonShape_005EFAE0_B406B78B *)this->field_04D0 != (AnonShape_005EFAE0_B406B78B *)0x0) {
+        iVar3 = STPlaySystemC::sub_006E62D0
+                          (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)this->field_04D0,
+                           (int *)&local_24);
         if (iVar3 != 0) {
           this->field_04D0 = CASE_0;
           *(undefined4 *)(&this->field_0x29d + (int)piVar2 * 0x80) = 1;
@@ -355,6 +360,7 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
           local_14 = (int)(short)(((short)(local_10 / 200) + sVar6) -
                                  (short)((longlong)local_10 * 0x51eb851f >> 0x3f));
         }
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = (int *)((int)(short)local_8 + (int)*(short *)(&DAT_007932d6 + iVar3));
         sVar6 = (short)((int)param_1 >> 0x1f);
         if ((int)param_1 < 0) {
@@ -390,14 +396,17 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
       }
     }
     else if ((&DAT_00792ca0)[iVar3 * 3] == 0xb3) {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (int *)0x0;
-      if ((this->field_04EC != 0) &&
-         (iVar3 = STPlaySystemC::sub_006E62D0
-                            (g_playSystem_00802A38,this->field_04EC,(int *)&param_1), iVar3 == 0)) {
+      if (((AnonShape_005EFAE0_B406B78B *)this->field_04E0[3] != (AnonShape_005EFAE0_B406B78B *)0x0)
+         && (iVar3 = STPlaySystemC::sub_006E62D0
+                               (g_playSystem_00802A38,
+                                (AnonShape_005EFAE0_B406B78B *)this->field_04E0[3],(int *)&param_1),
+            iVar3 == 0)) {
         thunk_FUN_00617b10(param_1,*(undefined4 *)(&this->field_0x2a5 + (int)piVar2 * 0x80),
                            (&this->field_02A9)[(int)piVar2 * 0x20],
-                           *(undefined4 *)(&this->field_0x2ad + (int)piVar2 * 0x80),this->field_04F4
-                           ,this->field_04F8,this->field_04FC);
+                           *(undefined4 *)(&this->field_0x2ad + (int)piVar2 * 0x80),
+                           this->field_04E0[5],this->field_04E0[6],this->field_04E0[7]);
         *(undefined4 *)(&this->field_0x29d + (int)piVar2 * 0x80) = 1;
         *(int *)(&this->field_0x2c5 + (int)piVar2 * 0x80) =
              *(int *)(&this->field_0x2c5 + (int)piVar2 * 0x80) + -1;

@@ -1,9 +1,13 @@
 
-int __thiscall FUN_0058f1e0(void *this,int param_1)
+/* [STPrototypeApplier] Propagated return.
+   Evidence: 0058F1E0 returns stored into /STSharkC+0x257 @ 0058EBA1 | 0058F1E0 returns stored into
+   /STSharkC+0x257 @ 0058EBEB */
+
+STSharkC_field_0257State __thiscall FUN_0058f1e0(void *this,int param_1)
 
 {
   short sVar1;
-  int iVar2;
+  STSharkC_field_0257State SVar2;
   uint uVar3;
   uint uVar4;
   short sVar5;
@@ -18,25 +22,25 @@ int __thiscall FUN_0058f1e0(void *this,int param_1)
     {
       if ((((sVar5 == *(short *)((int)this + 0x231)) && (sVar1 == *(short *)((int)this + 0x233))) &&
           (*(short *)((int)this + 0x4b) == *(short *)((int)this + 0x235))) || (param_1 != 0)) {
-        iVar2 = thunk_FUN_0058f680(this,(undefined2 *)((int)this + 0x231),
+        SVar2 = thunk_FUN_0058f680(this,(undefined2 *)((int)this + 0x231),
                                    (undefined2 *)((int)this + 0x233),
                                    (undefined2 *)((int)this + 0x235),(short *)((int)this + 0x237));
-        if (iVar2 == 2) {
+        if (SVar2 == CASE_2) {
           *(undefined4 *)((int)this + 0x253) = 0;
         }
       }
       else {
-        iVar2 = 2;
+        SVar2 = CASE_2;
       }
       goto LAB_0058f34a;
     }
   }
-  iVar2 = *(int *)((int)this + 0x287) - *(int *)((int)this + 0x27f);
-  uVar7 = (int)(iVar2 - 1U) >> 0x1f;
+  iVar6 = *(int *)((int)this + 0x287) - *(int *)((int)this + 0x27f);
+  uVar7 = (int)(iVar6 - 1U) >> 0x1f;
   uVar3 = (*(int *)((int)this + 0x28b) - *(int *)((int)this + 0x283)) - 1;
   uVar8 = (int)uVar3 >> 0x1f;
-  if (iVar2 < 1) {
-    sVar5 = -(ushort)(iVar2 != 0);
+  if (iVar6 < 1) {
+    sVar5 = -(ushort)(iVar6 != 0);
   }
   else {
     sVar5 = 1;
@@ -44,7 +48,7 @@ int __thiscall FUN_0058f1e0(void *this,int param_1)
   uVar4 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
   *(uint *)((int)this + 0x1c) = uVar4;
   *(short *)((int)this + 0x231) =
-       (short)((uVar4 >> 0x10) % (((iVar2 - 1U ^ uVar7) - uVar7) + 1)) * sVar5 +
+       (short)((uVar4 >> 0x10) % (((iVar6 - 1U ^ uVar7) - uVar7) + 1)) * sVar5 +
        *(short *)((int)this + 0x27f);
   if (*(int *)((int)this + 0x28b) - *(int *)((int)this + 0x283) < 1) {
     iVar6 = -(uint)(*(int *)((int)this + 0x28b) != *(int *)((int)this + 0x283));
@@ -52,7 +56,7 @@ int __thiscall FUN_0058f1e0(void *this,int param_1)
   else {
     iVar6 = 1;
   }
-  iVar2 = 3;
+  SVar2 = CASE_3;
   uVar7 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
   *(uint *)((int)this + 0x1c) = uVar7;
   *(undefined2 *)((int)this + 0x235) = *(undefined2 *)((int)this + 0x4b);
@@ -60,21 +64,21 @@ int __thiscall FUN_0058f1e0(void *this,int param_1)
        (short)(((uVar7 >> 0x10) % (((uVar3 ^ uVar8) - uVar8) + 1)) * iVar6) +
        *(short *)((int)this + 0x283);
 LAB_0058f34a:
-  switch(iVar2) {
-  case 1:
-  case 2:
-  case 3:
+  switch(SVar2) {
+  case CASE_1:
+  case CASE_2:
+  case CASE_3:
     iVar6 = thunk_FUN_0058f030(this);
     if (iVar6 == 0) {
-      return 0;
+      return CASE_0;
     }
     break;
-  case 6:
+  case CASE_6:
     iVar6 = thunk_FUN_00417740(this,*(short *)((int)this + 0x6c),*(short *)((int)this + 0x237));
     if (iVar6 != 0) {
-      iVar2 = 0;
+      SVar2 = CASE_0;
     }
   }
-  return iVar2;
+  return SVar2;
 }
 

@@ -26,8 +26,6 @@ int __thiscall PopUpTy::GetMessage(PopUpTy *this,STMessage *message)
   char *resourceString;
   int iVar10;
   uint uVar11;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  undefined4 extraout_ECX;
   uint uVar12;
   uint *puVar13;
   InternalExceptionFrame local_5c;
@@ -74,14 +72,13 @@ int __thiscall PopUpTy::GetMessage(PopUpTy *this,STMessage *message)
           this_00->field_009C = (char)puVar13[2];
         }
         if ((int)(uint)DAT_00807346 <= (int)puVar13[2]) {
-          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-          OutStr(this_00,CONCAT31((int3)((uint)extraout_ECX >> 8),DAT_00807346 - 1));
+          OutStr(this_00,DAT_00807346 - 1);
         }
         local_5 = 0;
         local_c = -0x18 - (int)this_00;
         local_14 = 0;
         local_10 = 0x1e;
-        puVar13 = &this_00->field_0018;
+        puVar13 = this_00->field_0018;
         do {
           iVar4 = local_14;
           if ((DAT_00807342 == 0) || ((byte)this_00->field_009C <= local_5)) {
@@ -140,7 +137,7 @@ LAB_0052e184:
       uVar12 = ((uint)puVar6[7] * *(int *)(puVar6 + 2) + 0x1f >> 3 & 0x1ffffffc) *
                *(int *)(puVar6 + 4);
     }
-    puVar7 = (undefined4 *)FUN_006b4fa0((int)puVar6);
+    puVar7 = (undefined4 *)FUN_006b4fa0((int *)puVar6);
     for (uVar11 = uVar12 >> 2; uVar11 != 0; uVar11 = uVar11 - 1) {
       *puVar7 = 0x89898989;
       puVar7 = puVar7 + 1;
@@ -151,9 +148,9 @@ LAB_0052e184:
       *(undefined1 *)puVar7 = 0x89;
       puVar7 = (undefined4 *)((int)puVar7 + 1);
     }
-    puVar13 = &this_00->field_0018;
+    puVar13 = this_00->field_0018;
     do {
-      FUN_006b2330(PTR_008075a8,puVar13,8,0x405c22,puVar13[0xf],0x13,(uint)this_00);
+      FUN_006b2330(PTR_008075a8,puVar13,8,0x405c22,puVar13[0xf],0x13,(ushort *)this_00);
       FUN_006b1bd0((AnonShape_006B1BD0_7C890E99 *)PTR_008075a8,*puVar13);
       Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,*puVar13,0xffffffff,0xd,uVar11);
       FUN_006b3af0((int *)PTR_008075a8,*puVar13);
@@ -169,7 +166,7 @@ LAB_0052e184:
     break;
   case MESS_SHARED_0003:
     g_popUp_008016D8 = (PopUpTy *)0x0;
-    puVar13 = &local_18->field_0018;
+    puVar13 = local_18->field_0018;
     iVar4 = 0xf;
     do {
       if (*puVar13 != 0xffffffff) {
@@ -195,7 +192,7 @@ LAB_0052e184:
     local_10 = 0;
     iVar4 = -0x18 - (int)local_18;
     uVar12 = 0x1e;
-    puVar13 = &local_18->field_0018;
+    puVar13 = local_18->field_0018;
     local_14 = 0xf;
     local_c = iVar4;
     do {

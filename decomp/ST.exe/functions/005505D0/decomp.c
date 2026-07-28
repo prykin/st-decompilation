@@ -2,7 +2,11 @@
 /* [STMethodOwnerApplier] Structural method owner recovered as STPlaySystemC.
    Evidence: this_call_owners=[STPlaySystemC]; agreed_this_calls=2; incoming_this_accesses=15;
    incoming_edx_uses=0; incoming_stack_parameter_uses=9; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=2; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=2; owner_evidence_coverage=adequate
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall STPlaySystemC::sub_005505D0(STPlaySystemC *this,int param_1,int *param_2)
 
@@ -49,6 +53,7 @@ void __thiscall STPlaySystemC::sub_005505D0(STPlaySystemC *this,int param_1,int 
       }
       if (DAT_0080735e != '\0') {
         bVar3 = 0;
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_2 = (int *)0x0;
         if (DAT_00808aaf != 0) {
           do {
@@ -62,6 +67,7 @@ void __thiscall STPlaySystemC::sub_005505D0(STPlaySystemC *this,int param_1,int 
               }
             }
             bVar3 = bVar3 + 1;
+            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_2 = (int *)(uint)bVar3;
           } while (bVar3 < DAT_00808aaf);
           return;

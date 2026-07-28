@@ -55,8 +55,8 @@ int FUN_00755e10(AnonShape_00755E10_BD685653 *param_1,int param_2,undefined4 par
                    (int)*(short *)(iVar5 + 8));
       if ((int)*(short *)(iVar1 + 8) + (int)*(short *)(iVar5 + 8) < iVar6) {
         Library::MSVCRT::FUN_0072da70
-                  ((undefined4 *)(*(short *)(iVar5 + 8) + 0x10 + iVar5),(undefined4 *)(iVar1 + 0x10)
-                   ,(int)*(short *)(iVar1 + 8));
+                  ((undefined4 *)(*(short *)(iVar5 + 8) + 0x10 + iVar5),
+                   (AnonPointee_TLOBaseTy_0607 *)(iVar1 + 0x10),(int)*(short *)(iVar1 + 8));
         *(short *)(iVar5 + 8) = *(short *)(iVar5 + 8) + *(short *)(iVar1 + 8);
         iVar3 = FUN_00757670((AnonShape_00757670_86D3B9A7 *)param_1,iVar3);
         if (iVar3 < 0) {
@@ -70,7 +70,7 @@ int FUN_00755e10(AnonShape_00755E10_BD685653 *param_1,int param_2,undefined4 par
         return -2;
       }
       Library::MSVCRT::FUN_0072da70
-                ((undefined4 *)(iVar1 + 0x10),(undefined4 *)(iVar1 + 0x10 + uVar4),
+                ((undefined4 *)(iVar1 + 0x10),(AnonPointee_TLOBaseTy_0607 *)(iVar1 + 0x10 + uVar4),
                  (int)*(short *)(iVar1 + 8) - uVar4);
       *(short *)(iVar1 + 8) = *(short *)(iVar1 + 8) - (short)uVar4;
       *(undefined4 *)(iVar1 + 4) = *(undefined4 *)param_1->field_001C;
@@ -91,6 +91,7 @@ int FUN_00755e10(AnonShape_00755E10_BD685653 *param_1,int param_2,undefined4 par
     else {
       iVar3 = (int)*(short *)(iVar3 + 0x34);
     }
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if ((iVar3 + 8 + param_2 < iVar6) || (param_2 == 0)) {
       uVar4 = FUN_00757530((AnonShape_00757530_EEED7D69 *)param_1,1,
                            (undefined4 *)(iVar1 + 0x10 + iVar5));
@@ -123,8 +124,8 @@ int FUN_00755e10(AnonShape_00755E10_BD685653 *param_1,int param_2,undefined4 par
       FUN_007574c0((AnonShape_00753C80_4C8E695D *)param_1,iVar2,(uint *)param_1->field_001C,0);
       if ((int)*(short *)(iVar2 + 8) + (int)*(short *)(iVar3 + 8) < iVar6) {
         Library::MSVCRT::FUN_0072da70
-                  ((undefined4 *)(*(short *)(iVar3 + 8) + 0x10 + iVar3),(undefined4 *)(iVar2 + 0x10)
-                   ,(int)*(short *)(iVar2 + 8));
+                  ((undefined4 *)(*(short *)(iVar3 + 8) + 0x10 + iVar3),
+                   (AnonPointee_TLOBaseTy_0607 *)(iVar2 + 0x10),(int)*(short *)(iVar2 + 8));
         *(short *)(iVar3 + 8) = *(short *)(iVar3 + 8) + *(short *)(iVar2 + 8);
         iVar3 = FUN_00757670((AnonShape_00757670_86D3B9A7 *)param_1,param_1->field_0010);
         if (iVar3 < 0) {

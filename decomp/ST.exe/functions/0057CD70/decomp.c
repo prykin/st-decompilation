@@ -27,7 +27,7 @@ void __thiscall STFishC::LifeFish(STFishC *this,int *param_1)
   this_00 = &this->field_01D5;
   if (iVar2 == 0) {
     iVar2 = 0;
-    uVar3 = thunk_FUN_004ad650((int)this_00);
+    uVar3 = thunk_FUN_004ad650((STT3DSprC *)this_00);
     FUN_006eabf0((void *)this->field_0211,uVar3,iVar2);
     iVar2 = thunk_FUN_0041caf0((AnonShape_0041CAF0_1630B9E0 *)this);
     if (iVar2 == 1) {
@@ -39,15 +39,15 @@ void __thiscall STFishC::LifeFish(STFishC *this,int *param_1)
   }
   else {
     iVar2 = 1;
-    uVar3 = thunk_FUN_004ad650((int)this_00);
+    uVar3 = thunk_FUN_004ad650((STT3DSprC *)this_00);
     FUN_006eabf0((void *)this->field_0211,uVar3,iVar2);
     iVar2 = 1;
   }
-  iVar4 = thunk_FUN_004ad650((int)this_00);
+  iVar4 = thunk_FUN_004ad650((STT3DSprC *)this_00);
   FUN_006e6870((void *)this->field_0211,iVar4,iVar2);
   iVar2 = this->field_023B;
   if (iVar2 == 4) {
-    iVar2 = (*this->vtable->vfunc_20)(this);
+    iVar2 = this->vfunc_20();
     if (iVar2 == -1) {
       iVar2 = ReportDebugMessage("E:\\__titans\\Igor\\To_fish.cpp",0x709,0,0,"%s",
                                  "stop move error");
@@ -63,8 +63,8 @@ void __thiscall STFishC::LifeFish(STFishC *this,int *param_1)
       else if (this->field_0267 == CASE_E9) {
         cVar6 = -1;
       }
-      thunk_FUN_00417ff0(this,cVar6 + '\a');
-      thunk_FUN_00418010(this,cVar6 + '\x06');
+      thunk_FUN_00417ff0(this,cVar6 + 7);
+      thunk_FUN_00418010(this,cVar6 + 6);
       SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004167A0::thunk_FUN_00418030
                 ((AnonReceiver_004167A0 *)this,this->field_0235,this->field_0237,this->field_0239);
       this->field_023B = 1;
@@ -119,7 +119,7 @@ void __thiscall STFishC::LifeFish(STFishC *this,int *param_1)
       return;
     }
   }
-  else if ((0xf < this->field_023F) && (iVar2 = (*this->vtable->vfunc_20)(this), iVar2 == 1)) {
+  else if ((0xf < this->field_023F) && (iVar2 = this->vfunc_20(), iVar2 == 1)) {
     this->field_023F = 0;
     uVar5 = sub_0057D5F0(this,1);
     this->field_023B = uVar5;
@@ -167,7 +167,7 @@ LAB_0057d24b:
   STT3DSprC::ShowCurFase((STT3DSprC *)this_00,'\x0e');
 switchD_0057cff4_default:
   this->field_023F = this->field_023F + 1;
-  (*this->vtable->vfunc_D8)(this);
+  this->vfunc_D8();
   return;
 }
 

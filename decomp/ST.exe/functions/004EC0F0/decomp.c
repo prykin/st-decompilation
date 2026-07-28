@@ -20,8 +20,8 @@ undefined4 __fastcall FUN_004ec0f0(AnonShape_004EC0F0_C371FA68 *param_1)
               (iVar1,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_trade.cpp",0x126);
   }
   uVar3 = 10;
-  iVar1 = thunk_FUN_004ad650((int)&param_1->field_0x1d5);
-  uVar2 = thunk_FUN_004ad650(param_1->field_05FF);
+  iVar1 = thunk_FUN_004ad650((STT3DSprC *)&param_1->field_0x1d5);
+  uVar2 = thunk_FUN_004ad650((STT3DSprC *)param_1->field_05FF);
   FUN_006ea340(param_1->field_0211,uVar2,iVar1,uVar3);
   STT3DSprC::sub_004AD3C0
             ((STT3DSprC *)param_1->field_05FF,

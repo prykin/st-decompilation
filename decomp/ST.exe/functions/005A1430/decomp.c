@@ -35,7 +35,7 @@ void __thiscall FSGSTy::Download(FSGSTy *this,undefined4 param_1,undefined4 para
         uVar9 = ((uint)puVar1[7] * *(int *)(puVar1 + 2) + 0x1f >> 3 & 0x1ffffffc) *
                 *(int *)(puVar1 + 4);
       }
-      puVar4 = (undefined4 *)FUN_006b4fa0((int)puVar1);
+      puVar4 = (undefined4 *)FUN_006b4fa0((int *)puVar1);
       for (uVar8 = uVar9 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
         *puVar4 = 0xffffffff;
         puVar4 = puVar4 + 1;

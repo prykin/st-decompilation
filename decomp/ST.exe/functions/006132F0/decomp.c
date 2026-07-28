@@ -58,7 +58,7 @@ undefined4 __thiscall STGenBombC::LoadImagSpr(STGenBombC *this,int param_1,int p
     if (this_00 == (STT3DSprC *)0x0) {
       return 0xffffffff;
     }
-    iVar5 = STT3DSprC::Init(this_00,DAT_008073cc,0x5a,0x45,0,0xb4,0x8c,0x11);
+    iVar5 = STT3DSprC::Init(this_00,DAT_008073cc,0x5a,0x45,(STDcResourcC *)0x0,0xb4,0x8c,0x11);
     if (iVar5 != 0) {
       RaiseInternalException
                 (-1,g_overwriteContext_007ED77C,"E:\\__titans\\nick\\to_GnBom.cpp",0x509);
@@ -84,13 +84,13 @@ undefined4 __thiscall STGenBombC::LoadImagSpr(STGenBombC *this,int param_1,int p
     uVar10 = 0x5a;
     iVar5 = 1;
     pSVar4->field_0251 = 1;
-    uVar7 = thunk_FUN_004ad650((int)pSVar4->field_0252);
+    uVar7 = thunk_FUN_004ad650(pSVar4->field_0252);
     FUN_006ea4e0(PTR_00807598,uVar7,iVar5,uVar10,uVar12);
     thunk_FUN_004ac700(pSVar4->field_0252,'\x0f');
     STT3DSprC::StartShow(pSVar4->field_0252,0xd,g_playSystem_00802A38->field_00E4);
     iVar5 = (int)*(short *)(DAT_00806724 + 0x2c);
     uVar11 = 0;
-    uVar7 = thunk_FUN_004ad650((int)pSVar4->field_0252);
+    uVar7 = thunk_FUN_004ad650(pSVar4->field_0252);
     FUN_006e9350(PTR_00807598,uVar7,uVar11,iVar5);
     pSVar4->field_0250 = 1;
     STT3DSprC::sub_004ACF20(pSVar4->field_0252,DAT_008032b8,0x10);
@@ -202,7 +202,7 @@ LAB_0061364b:
     }
   }
   else if (pSVar4->field_0250 != '\0') {
-    thunk_FUN_004ad430((int)pSVar4->field_0252);
+    thunk_FUN_004ad430(pSVar4->field_0252);
     pSVar4->field_0250 = 0;
   }
   g_currentExceptionFrame = local_5c.previous;

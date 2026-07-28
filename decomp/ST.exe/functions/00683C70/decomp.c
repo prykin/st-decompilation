@@ -75,8 +75,9 @@ uint * FUN_00683c70(LPCSTR lpFileName,AnonShape_00683C70_22193481 *param_2,undef
   char *pcVar19;
   int *piVar20;
   float10 fVar21;
-  byte bVar22;
-  uint *puVar23;
+  ushort uVar22;
+  byte bVar23;
+  uint *puVar24;
   byte local_8ec [256];
   byte local_7ec [256];
   char local_6ec [260];
@@ -290,9 +291,9 @@ uint * FUN_00683c70(LPCSTR lpFileName,AnonShape_00683C70_22193481 *param_2,undef
                   (-2,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x471);
       }
       pbVar14 = local_4cc;
-      puVar23 = (uint *)0x0;
+      puVar24 = (uint *)0x0;
       pbVar3 = thunk_FUN_0067ece0(DAT_00848a24);
-      iVar2 = thunk_FUN_0067f030((char *)pbVar3,(char *)pbVar14,puVar23);
+      iVar2 = thunk_FUN_0067f030((char *)pbVar3,(char *)pbVar14,puVar24);
       if (iVar2 == 0) {
         RaiseInternalException
                   (-2,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x472);
@@ -345,9 +346,9 @@ switchD_006841b6_default:
             if (uVar8 == 0) break;
             uVar8 = uVar8 - 1;
             pbVar3 = pbVar14 + 1;
-            bVar22 = *pbVar14;
+            bVar23 = *pbVar14;
             pbVar14 = pbVar3;
-          } while (bVar22 != 0);
+          } while (bVar23 != 0);
           uVar8 = ~uVar8;
           pbVar14 = pbVar3 + -uVar8;
           pbVar3 = (byte *)&DAT_0084790c;
@@ -456,19 +457,19 @@ cf_common_join_0068A687:
           if (((pvVar15 == (void *)0x0) && (*(int *)(&DAT_008143f8 + iVar2) == 0)) ||
              ((pvVar15 == (void *)0x1 && (*(int *)(&DAT_008143f8 + iVar2) != 0)))) {
             thunk_FUN_00672ab0(pvVar15,1);
-            bVar22 = 1;
+            bVar23 = 1;
             /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
             pvVar15 = extraout_ECX_00;
           }
           else {
 LAB_006842cf:
             thunk_FUN_00672ab0(pvVar15,0);
-            bVar22 = 0;
+            bVar23 = 0;
             /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
             pvVar15 = extraout_ECX_01;
           }
 LAB_006842d6:
-          thunk_FUN_00672af0(pvVar15,bVar22);
+          thunk_FUN_00672af0(pvVar15,bVar23);
         }
         else if (DAT_007d2d18 == 0x3b8) {
           if ((int)(&DAT_0081458c)[DAT_008488b0 * 0xac5] < 1) {
@@ -485,7 +486,7 @@ LAB_006842d6:
               ((*(int *)(&DAT_008143f4 + (int)pvVar15 * 8 + iVar2) != 1 ||
                (*(int *)(&DAT_008143f8 + (int)pvVar15 * 8 + iVar2) == 0)))))) goto LAB_006842cf;
           thunk_FUN_00672ab0(pvVar15,1);
-          bVar22 = 1;
+          bVar23 = 1;
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           pvVar15 = extraout_ECX;
           goto LAB_006842d6;
@@ -607,8 +608,8 @@ LAB_006842d6:
                           thunk_FUN_0064a830(piVar20,(undefined4 *)&local_5c);
                           Library::DKW::TBL::FUN_006ae1c0
                                     ((uint *)PTR_008489cc->field_000F,&local_c8);
-                          pcVar7 = thunk_FUN_0064a910((int)piVar20,
-                                                      (&DAT_00814590)[DAT_008488b0 * 0xac5]);
+                          pcVar7 = thunk_FUN_0064a910(piVar20,(&DAT_00814590)[DAT_008488b0 * 0xac5])
+                          ;
                           if (pcVar7 == (char *)0x0) {
                             RaiseInternalException
                                       (-0x6c,g_overwriteContext_007ED77C,
@@ -638,7 +639,7 @@ LAB_006842d6:
                             thunk_FUN_0064a830((int *)(iVar2 + 0x46e),(undefined4 *)&local_6c);
                             Library::DKW::TBL::FUN_006ae1c0
                                       ((uint *)PTR_008489cc->field_000F,&local_c0);
-                            pcVar7 = thunk_FUN_0064a910(iVar2 + 0x46e,
+                            pcVar7 = thunk_FUN_0064a910((int *)(iVar2 + 0x46e),
                                                         (&DAT_00814590)[DAT_008488b0 * 0xac5]);
                             if (pcVar7 == (char *)0x0) {
                               iVar2 = 0x607;
@@ -668,7 +669,7 @@ LAB_00684777:
                             thunk_FUN_0064a830((int *)(iVar2 + 0x46e),(undefined4 *)&local_7c);
                             Library::DKW::TBL::FUN_006ae1c0
                                       ((uint *)PTR_008489cc->field_000F,&local_b8);
-                            pcVar7 = thunk_FUN_0064a910(iVar2 + 0x46e,
+                            pcVar7 = thunk_FUN_0064a910((int *)(iVar2 + 0x46e),
                                                         (&DAT_00814590)[DAT_008488b0 * 0xac5]);
                             if (pcVar7 == (char *)0x0) {
                               iVar2 = 0x5f7;
@@ -1075,7 +1076,7 @@ switchD_00684bb9_caseD_3f2:
             piVar20 = (int *)(iVar10 + 0x46e);
             thunk_FUN_006838b0(piVar20,'\x02',(byte *)(&DAT_00811aa0 + DAT_008488b0 * 0xac5),
                                *(int *)(iVar10 + 0x456));
-            pcVar7 = thunk_FUN_0064a910((int)g_int_00848A14,0);
+            pcVar7 = thunk_FUN_0064a910(g_int_00848A14,0);
             if ((g_int_00848A14[1] == 1) && (cVar1 = *pcVar7, cVar1 != '\a')) {
               if ((cVar1 != '\x04') && (cVar1 != '\x01')) {
                 thunk_FUN_006802a0(-0x74,(char *)(&DAT_00811aa4 + DAT_008488b0 * 0xac5));
@@ -1116,7 +1117,7 @@ switchD_00684bb9_caseD_3f2:
             if ((((iVar2 == 5) || (iVar2 == 6)) || (iVar2 == 7)) || (iVar2 == 8)) {
               thunk_FUN_006802a0(-0x74,(char *)(&DAT_00811aa4 + DAT_008488b0 * 0xac5));
             }
-            pcVar7 = thunk_FUN_0064a910((int)g_int_00848A14,0);
+            pcVar7 = thunk_FUN_0064a910(g_int_00848A14,0);
             if ((g_int_00848A14[1] != 1) || (cVar1 = *pcVar7, cVar1 == '\a')) {
               if (((&DAT_00811a9c)[DAT_008488b0 * 0xac5] != 0) &&
                  ((&DAT_00811a9c)[DAT_008488b0 * 0xac5] != 4)) {
@@ -1273,7 +1274,7 @@ cf_error_exit_0068A22B:
             piVar20 = (int *)(iVar2 + 0x46e);
             thunk_FUN_006838b0(piVar20,'\x02',(byte *)(&DAT_00811aa0 + DAT_008488b0 * 0xac5),
                                *(int *)(iVar2 + 0x456));
-            pcVar7 = thunk_FUN_0064a910((int)g_int_00848A14,0);
+            pcVar7 = thunk_FUN_0064a910(g_int_00848A14,0);
             if ((g_int_00848A14[1] == 1) && (local_5 = *pcVar7, local_5 != '\a')) {
               iVar10 = (&DAT_00811a9c)[DAT_008488b0 * 0xac5];
               if (4 < iVar10) {
@@ -1327,7 +1328,7 @@ cf_error_exit_0068A22B:
                     );
         }
         if (0 < g_int_00848A14[1]) {
-          pcVar7 = thunk_FUN_0064a910((int)g_int_00848A14,0);
+          pcVar7 = thunk_FUN_0064a910(g_int_00848A14,0);
           iVar2 = DAT_008488b0;
           if ((g_int_00848A14[1] == 1) && (*pcVar7 != '\a')) {
             switch(*pcVar7) {
@@ -1432,9 +1433,9 @@ cf_error_exit_0068A22B:
           if (uVar8 == 0) break;
           uVar8 = uVar8 - 1;
           pbVar14 = (byte *)(lpFileName + 1);
-          bVar22 = *lpFileName;
+          bVar23 = *lpFileName;
           lpFileName = (LPCSTR)pbVar14;
-        } while (bVar22 != 0);
+        } while (bVar23 != 0);
         uVar8 = ~uVar8;
         pbVar14 = pbVar14 + -uVar8;
         pbVar3 = (byte *)&DAT_0084790c;
@@ -2182,7 +2183,7 @@ cf_common_join_006895D5:
         thunk_FUN_006802a0(-0x7d,(char *)(&DAT_00811aa4 + DAT_008488b0 * 0xac5));
       }
       iVar10 = *(int *)(iVar2 + 0x456);
-      uVar13 = (undefined2)(&DAT_00811a94)[DAT_008488b0 * 0xac5];
+      uVar22 = (ushort)(&DAT_00811a94)[DAT_008488b0 * 0xac5];
       goto LAB_006896f6;
     }
     if (iVar10 == 0x4b3) {
@@ -2208,10 +2209,10 @@ cf_common_join_006895D5:
                     );
         }
         PTR_008489c4 = thunk_FUN_00668180((char *)(&DAT_00811aec)[DAT_008488b0 * 0xac5],
-                                          *(undefined2 *)(&DAT_00811c80 + DAT_008488b0 * 0xac5),
-                                          *(undefined2 *)(&DAT_00811c84 + DAT_008488b0 * 0xac5),
-                                          *(undefined2 *)(&DAT_00811c88 + DAT_008488b0 * 0xac5),
-                                          *(undefined1 *)(&DAT_00811c8c + DAT_008488b0 * 0xac5));
+                                          *(ushort *)(&DAT_00811c80 + DAT_008488b0 * 0xac5),
+                                          *(ushort *)(&DAT_00811c84 + DAT_008488b0 * 0xac5),
+                                          *(ushort *)(&DAT_00811c88 + DAT_008488b0 * 0xac5),
+                                          *(byte *)(&DAT_00811c8c + DAT_008488b0 * 0xac5));
         DAT_008488b0 = DAT_008488b0 + -1;
         goto switchD_006841b6_default;
       }
@@ -4100,9 +4101,9 @@ joined_r0x00689693:
       thunk_FUN_006802a0(-0x7d,(char *)(&DAT_00811aa4 + DAT_008488b0 * 0xac5));
     }
     iVar10 = *(int *)(iVar2 + 0x456);
-    uVar13 = (undefined2)(&DAT_00811a94)[DAT_008488b0 * 0xac5];
+    uVar22 = (ushort)(&DAT_00811a94)[DAT_008488b0 * 0xac5];
 LAB_006896f6:
-    thunk_FUN_006839d0((int)PTR_008489cc,(int *)(iVar2 + 0x46e),uVar13,iVar10);
+    thunk_FUN_006839d0((int)PTR_008489cc,(int *)(iVar2 + 0x46e),uVar22,iVar10);
   }
 switchD_00685456_default:
   DAT_008488b0 = DAT_008488b0 + -1;

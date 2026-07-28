@@ -31,12 +31,14 @@ void FUN_0069f660(undefined4 param_1,int param_2,int param_3,int param_4,int par
     iVar3 = -iVar1;
     puVar5 = puVar2;
     for (; (iVar3 = iVar11 * 2 + iVar3, param_2 != param_4 || (param_3 != param_5));
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_3 = param_3 + iVar4) {
       *puVar5 = (short)param_2;
       puVar5[1] = (short)param_3;
       iVar9 = iVar10 + 1;
       puVar6 = puVar5 + 2;
       if (-1 < iVar3) {
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_2 = param_2 + iVar8;
         iVar3 = iVar3 + iVar1 * -2;
         iVar9 = iVar10 + 2;
@@ -59,11 +61,13 @@ void FUN_0069f660(undefined4 param_1,int param_2,int param_3,int param_4,int par
       if (-1 < iVar3) {
         *puVar6 = (short)param_2;
         iVar3 = iVar3 + iVar11 * -2;
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_3 = param_3 + iVar4;
         iVar9 = iVar10 + 2;
         puVar5[3] = (short)param_3;
         puVar6 = puVar5 + 4;
       }
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = param_2 + iVar8;
       puVar5 = puVar6;
       iVar10 = iVar9;

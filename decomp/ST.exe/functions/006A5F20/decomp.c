@@ -40,6 +40,7 @@ FUN_006a5f20(int param_1,int param_2,int param_3,int param_4,int param_5,int par
     local_14 = 2;
   }
   else {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     local_14 = (uint)(param_6 == param_3);
   }
   bVar1 = iVar4 <= iVar8;
@@ -63,11 +64,13 @@ FUN_006a5f20(int param_1,int param_2,int param_3,int param_4,int param_5,int par
     local_14 = uVar7;
     bVar2 = bVar1;
   }
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_6 = iVar4;
   uVar7 = uVar6;
   bVar11 = bVar10;
   bVar3 = !bVar1;
   if (iVar8 < iVar4) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_6 = iVar8;
     iVar8 = iVar4;
     uVar7 = local_2c;
@@ -78,18 +81,23 @@ FUN_006a5f20(int param_1,int param_2,int param_3,int param_4,int param_5,int par
   if (param_6 * 2 < iVar8) {
     uVar7 = 1;
     local_14 = 1;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_6 = iVar8 - param_6;
   }
   else if (local_18 * 2 < param_6) {
     local_14 = 1;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_6 = param_6 - local_18;
   }
   else if (local_18 == 0) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_6 == 0) {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_6 = iVar8;
     }
   }
   else {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_6 = local_18;
   }
   uVar6 = local_2c;

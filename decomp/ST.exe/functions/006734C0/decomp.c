@@ -50,7 +50,8 @@ int FUN_006734c0(void)
             puVar3 = (uint *)(iVar6 + (int)DAT_0085755c);
           }
           Library::MSVCRT::FUN_0072da70
-                    ((undefined4 *)(uVar5 + (int)puVar3),(undefined4 *)(iVar2 + (int)puVar3),
+                    ((undefined4 *)(uVar5 + (int)puVar3),
+                     (AnonPointee_TLOBaseTy_0607 *)(iVar2 + (int)puVar3),
                      ((DAT_00857558 - iVar2) - (int)puVar3) + 1 + (int)DAT_0085755c);
           puVar7 = (uint *)local_8[2];
           puVar9 = puVar3;

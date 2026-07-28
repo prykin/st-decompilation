@@ -16,7 +16,7 @@ void __thiscall PrividerTy::DeleteCtrls(PrividerTy *this,char param_1)
   undefined4 *puVar6;
   uint *puVar7;
   int iVar8;
-  uint uVar9;
+  byte bVar9;
   char cVar10;
   uint uVar11;
   InternalExceptionFrame local_50;
@@ -83,17 +83,17 @@ void __thiscall PrividerTy::DeleteCtrls(PrividerTy *this,char param_1)
     if (pHVar5 != (HoloTy *)0x0) {
       uVar11 = 0;
       cVar10 = '\x01';
-      uVar9 = 0x10;
+      bVar9 = 0x10;
       iVar8 = 1;
       iVar4 = Library::DKW::DDX::FUN_006bf9f0((int *)PTR_008075a8,0x79,0x51,0x22e,0x145);
-      uVar9 = HoloTy::Init(pPVar3->field_1C96,CASE_2,0x79,0x51,iVar4,iVar8,uVar9,cVar10,uVar11);
-      if (uVar9 != 0) {
+      uVar11 = HoloTy::Init(pPVar3->field_1C96,CASE_2,0x79,0x51,iVar4,iVar8,bVar9,cVar10,uVar11);
+      if (uVar11 != 0) {
         pHVar5 = pPVar3->field_1C96;
         pHVar5->field_0002 = 0;
         pHVar5->field_0017 = -1;
-        uVar9 = pPVar3->field_1C96->field_0003;
-        if (-1 < (int)uVar9) {
-          Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,uVar9);
+        uVar11 = pPVar3->field_1C96->field_0003;
+        if (-1 < (int)uVar11) {
+          Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,uVar11);
         }
         HoloTy::NextFas(pPVar3->field_1C96);
       }
@@ -123,12 +123,12 @@ void __thiscall PrividerTy::DeleteCtrls(PrividerTy *this,char param_1)
     local_8 = ((uint)puVar1[7] * *(int *)(puVar1 + 2) + 0x1f >> 3 & 0x1ffffffc) *
               *(int *)(puVar1 + 4);
   }
-  puVar6 = (undefined4 *)FUN_006b4fa0((int)puVar1);
-  for (uVar9 = local_8 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
+  puVar6 = (undefined4 *)FUN_006b4fa0((int *)puVar1);
+  for (uVar11 = local_8 >> 2; uVar11 != 0; uVar11 = uVar11 - 1) {
     *puVar6 = 0;
     puVar6 = puVar6 + 1;
   }
-  for (uVar9 = local_8 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {
+  for (uVar11 = local_8 & 3; uVar11 != 0; uVar11 = uVar11 - 1) {
     *(undefined1 *)puVar6 = 0;
     puVar6 = (undefined4 *)((int)puVar6 + 1);
   }
@@ -165,17 +165,17 @@ void __thiscall PrividerTy::DeleteCtrls(PrividerTy *this,char param_1)
     if (pHVar5 != (HoloTy *)0x0) {
       uVar11 = 0;
       cVar10 = '\x01';
-      uVar9 = 0x10;
+      bVar9 = 0x10;
       iVar8 = 1;
       iVar4 = Library::DKW::DDX::FUN_006bf9f0((int *)PTR_008075a8,0x79,0x197,0x22e,0x2e);
-      uVar9 = HoloTy::Init(pPVar3->field_1C9A,CASE_1,0x79,0x197,iVar4,iVar8,uVar9,cVar10,uVar11);
-      if (uVar9 != 0) {
+      uVar11 = HoloTy::Init(pPVar3->field_1C9A,CASE_1,0x79,0x197,iVar4,iVar8,bVar9,cVar10,uVar11);
+      if (uVar11 != 0) {
         pHVar5 = pPVar3->field_1C9A;
         pHVar5->field_0002 = 0;
         pHVar5->field_0017 = -1;
-        uVar9 = pPVar3->field_1C9A->field_0003;
-        if (-1 < (int)uVar9) {
-          Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,uVar9);
+        uVar11 = pPVar3->field_1C9A->field_0003;
+        if (-1 < (int)uVar11) {
+          Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,uVar11);
         }
         HoloTy::NextFas(pPVar3->field_1C9A);
       }

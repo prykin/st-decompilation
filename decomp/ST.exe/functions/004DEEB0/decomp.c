@@ -6,10 +6,13 @@
    Evidence: 004CAFC0 -> 004DEEB0 @ 004CB08B
 
    [STPrototypeRepairApplier] Propagated parameter 1.
-   Evidence: 004CAFC0 -> 004DEEB0 @ 004CB08B */
+   Evidence: 004CAFC0 -> 004DEEB0 @ 004CB08B
+
+   [STPrototypeApplier] Propagated parameter 2.
+   Evidence: 004CAFC0 -> 004DEEB0 @ 004CB08B; TLOBaseTy::sub_004CAFC0 parameter param_2 */
 
 void __thiscall
-FUN_004deeb0(void *this,TLOBaseTy_sub_004CAFC0_param_1Enum param_1,undefined4 param_2,uint *param_3,
+FUN_004deeb0(void *this,TLOBaseTy_sub_004CAFC0_param_1Enum param_1,int param_2,uint *param_3,
             uint *param_4)
 
 {

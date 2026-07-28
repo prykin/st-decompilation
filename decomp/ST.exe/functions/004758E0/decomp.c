@@ -44,6 +44,7 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
   AnonShape_004758E0_51E65DA0 *local_c;
   undefined1 local_5;
 
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if ((param_1 == 0) || (param_1 == 1)) {
     memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
     this->field_02C4 = 0;
@@ -108,7 +109,7 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
                                (undefined2 *)&this->field_0x5d0,(undefined2 *)&this->field_0x5d2,
                                (short *)&this->field_0x5d4);
     if (iVar5 == 0) {
-      iVar5 = (*this->vtable->vfunc_D8)(this);
+      iVar5 = this->vfunc_D8();
       return -(uint)(iVar5 != 0);
     }
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -126,7 +127,9 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
     if (uVar6 != 0xffffffff) {
       if (uVar6 == 0) {
         this->field_05D6 = 1;
-        STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,this->field_07CA,(int *)&local_c);
+        STPlaySystemC::sub_006E62D0
+                  (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)this->field_07CA,
+                   (int *)&local_c);
         uVar1 = local_c->field_0062;
         uVar2 = local_c->field_0061;
         local_5 = local_c->field_0063;
@@ -149,12 +152,14 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
         (**(code **)(*(int *)local_c + 0xb8))();
         DumpClassC::WritePtr
                   (*(short *)&this->field_0x5d0,*(short *)&this->field_0x5d2,
-                   *(short *)&this->field_0x5d4,0,(AnonShape_00495EC0_95A268C6 *)this);
-        TLOEmbryoTy::sub_0041C3F0((TLOEmbryoTy *)this,(undefined *)this->field_070A);
+                   *(short *)&this->field_0x5d4,0,(RecoveredRecord_DumpClassC_00495EC0 *)this);
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+        TLOEmbryoTy::sub_0041C3F0((TLOEmbryoTy *)this,*(undefined **)((int)this->field_06CB + 0x3f))
+        ;
         this->field_07CA = 0;
         this->field_07C6 = 0;
       }
-      iVar5 = (*this->vtable->vfunc_D8)(this);
+      iVar5 = this->vfunc_D8();
       return (-(uint)(iVar5 != 0) & 0xfffffffd) + 2;
     }
     iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x309b,0,0,"%s",
@@ -174,11 +179,12 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
     local_20 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_18,&local_14);
     local_10 = 0;
     if (this->field_02BF != '\0') {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (int)&this->field_0x2b3;
       do {
         puVar7 = (undefined4 *)
-                 thunk_FUN_0041dc40(local_30,(short)*(undefined4 *)param_1,
-                                    *(undefined2 *)(param_1 + 4),this->field_006C);
+                 thunk_FUN_0041dc40(local_30,(short)*(undefined4 *)param_1,*(ushort *)(param_1 + 4),
+                                    this->field_006C);
         local_28 = *puVar7;
         local_24 = *(short *)(puVar7 + 1);
         if (DAT_0080732c == 1) {
@@ -231,6 +237,7 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
                    (uVar6 >> 0x10) % 7 + (int)this->field_0041 + -3 + (int)(short)local_28,
                    iVar9 + -3,iVar5,sVar4,sVar13,sVar14,sVar15,sVar16,sVar17,iVar18,sVar19,bVar20);
         local_10 = local_10 + 1;
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = param_1 + 6;
       } while (local_10 < (int)(uint)(byte)this->field_02BF);
     }
@@ -244,11 +251,11 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
     }
     if (local_20 == 0) {
       FUN_006ea2f0(this->field_0211,this->field_01ED);
-      iVar5 = (*this->vtable->vfunc_D8)(this);
+      iVar5 = this->vfunc_D8();
       return -(uint)(iVar5 != 0);
     }
   }
-  iVar5 = (*this->vtable->vfunc_D8)(this);
+  iVar5 = this->vfunc_D8();
   return (-(uint)(iVar5 != 0) & 0xfffffffd) + 2;
 }
 

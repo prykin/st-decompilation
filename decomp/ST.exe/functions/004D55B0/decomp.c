@@ -99,7 +99,7 @@ int __thiscall TLOEmbryoTy::GetMessage(TLOEmbryoTy *this,STMessage *message)
         if (iVar5 < 1) {
           if (this_00->field_02A0 == 0) {
             STT3DSprC::StopShow(this_00->field_035C,0xe);
-            thunk_FUN_004ad430((int)this_00->field_035C);
+            thunk_FUN_004ad430(this_00->field_035C);
             puVar12 = &this_00->field_01D5;
             if (this_00->field_002C == 1) {
               pcVar15 = "expl_bt1";
@@ -262,7 +262,7 @@ LAB_004d600f:
     do {
       if (*piVar10 != 0) {
         *piVar10 = 0;
-        thunk_FUN_004ad430((int)*ppSVar14);
+        thunk_FUN_004ad430(*ppSVar14);
       }
       ppSVar14 = ppSVar14 + 1;
       piVar10 = piVar10 + 4;

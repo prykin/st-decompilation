@@ -1,5 +1,8 @@
 
 /* WARNING: Restarted to delay deadcode elimination for space: stack */
+/* [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void FUN_006daed0(undefined4 *param_1,int param_2,int param_3,int param_4,int param_5,int param_6,
                  int param_7,uint param_8)
@@ -31,6 +34,7 @@ void FUN_006daed0(undefined4 *param_1,int param_2,int param_3,int param_4,int pa
     } while (iVar4 != 0);
   }
   local_8 = param_4;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_7 = -(param_8 >> 1);
   iVar1 = param_5 - param_6;
   do {
@@ -38,7 +42,9 @@ void FUN_006daed0(undefined4 *param_1,int param_2,int param_3,int param_4,int pa
       do {
         iVar1 = iVar1 + param_6;
         bVar5 = SCARRY4(param_7,param_4);
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_7 = param_7 + param_4;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       } while (param_7 == 0 || bVar5 != param_7 < 0);
     }
     piVar3 = (int *)&stack0xffffffe8;
@@ -64,6 +70,7 @@ joined_r0x006daf6b:
       if (iVar2 != 0 && 0 < param_3) goto joined_r0x006daf6b;
     }
     param_1 = (undefined4 *)((int)param_1 + param_2 + param_3 * -2);
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_7 = param_7 - param_8;
     iVar2 = local_8 + -1;
     bVar5 = local_8 < 1;

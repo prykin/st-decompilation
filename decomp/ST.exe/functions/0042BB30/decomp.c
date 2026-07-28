@@ -118,8 +118,8 @@ LAB_0042bc00:
   }
   Library::DKW::TBL::FUN_006ae140(&pDVar3->flags,local_14,&param_5);
   pSVar6->activityCount = pSVar6->activityCount + 1;
-  this_00 = GetObjPtr(local_c,param_4,param_5,CASE_1);
-  (*this_00->vtable->vfunc_E8)(this_00,1);
+  this_00 = GetObjPtr(local_c,param_4,(ushort)param_5,CASE_1);
+  this_00->vfunc_E8(1);
   g_currentExceptionFrame = local_5c.previous;
   return local_18;
 }

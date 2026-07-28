@@ -1,13 +1,17 @@
 
 /* [STMethodOwnerApplier] Structural method owner recovered as StartSystemTy.
    Evidence: this_call_owners=[StartSystemTy]; agreed_this_calls=1; incoming_this_accesses=22;
-   incoming_edx_uses=0; incoming_stack_parameter_uses=0 */
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=3, used=0), and
+   decompilation contains no value return */
 
 void __thiscall StartSystemTy::sub_005DB2A0(StartSystemTy *this)
 
 {
   int iVar1;
-  int *piVar2;
+  uint *puVar2;
 
   thunk_FUN_0055db70();
   if (this->field_002C != (ushort *)0x0) {
@@ -21,11 +25,11 @@ void __thiscall StartSystemTy::sub_005DB2A0(StartSystemTy *this)
     ccFntTy::operator_delete((uint *)this->field_0034);
     this->field_0034 = (ccFntTy *)0x0;
   }
-  piVar2 = (int *)&this->field_0x244;
+  puVar2 = this->array_0244;
   iVar1 = 6;
   do {
-    FUN_0070b1d0(piVar2);
-    piVar2 = piVar2 + 1;
+    FUN_0070b1d0((int *)puVar2);
+    puVar2 = puVar2 + 1;
     iVar1 = iVar1 + -1;
   } while (iVar1 != 0);
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this->field_038D);

@@ -3,10 +3,14 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_plr.cpp
-   AiPlrClassTy::SetTech */
+   AiPlrClassTy::SetTech
+
+   [STPrototypeApplier] Propagated parameter 4.
+   Evidence: 00652810 -> 0067B3C0 @ 0065668A; literal -1 at 0065667D | 0067B520 -> 0067B3C0 @
+   0067B8C7; MOVSX at 0067B8AC establishes signed source width 2 */
 
 int __thiscall
-AiPlrClassTy::SetTech(AiPlrClassTy *this,int param_1,int param_2,int param_3,undefined1 param_4)
+AiPlrClassTy::SetTech(AiPlrClassTy *this,int param_1,int param_2,int param_3,char param_4)
 
 {
   code *pcVar1;
@@ -14,7 +18,7 @@ AiPlrClassTy::SetTech(AiPlrClassTy *this,int param_1,int param_2,int param_3,und
   int iVar3;
   int iVar4;
   InternalExceptionFrame local_60;
-  undefined1 local_1c;
+  char local_1c;
   undefined2 uStack_1b;
   undefined1 uStack_19;
   undefined1 uStack_18;

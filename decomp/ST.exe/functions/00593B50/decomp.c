@@ -15,9 +15,10 @@ void __thiscall ComboTy::InitCombo(ComboTy *this,undefined4 *param_1)
   uint uVar4;
   AnonPointee_ComboTy_00FC *pAVar5;
   undefined4 *puVar6;
-  ushort *puVar7;
-  uint uVar8;
-  int iVar9;
+  int *piVar7;
+  ushort *puVar8;
+  uint uVar9;
+  int iVar10;
   int iVar12;
   int local_528 [4];
   int local_518;
@@ -48,9 +49,9 @@ void __thiscall ComboTy::InitCombo(ComboTy *this,undefined4 *param_1)
   this_00 = local_10;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_54.previous;
-    iVar9 = ReportDebugMessage("E:\\__titans\\Start\\combo.cpp",99,0,iVar3,"%s",
-                               "ComboTy::InitCombo");
-    if (iVar9 != 0) {
+    iVar10 = ReportDebugMessage("E:\\__titans\\Start\\combo.cpp",99,0,iVar3,"%s",
+                                "ComboTy::InitCombo");
+    if (iVar10 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar3,0,"E:\\__titans\\Start\\combo.cpp",99);
@@ -64,12 +65,12 @@ void __thiscall ComboTy::InitCombo(ComboTy *this,undefined4 *param_1)
   }
   iVar3 = local_10->field_00D4;
   local_10->field_009C = 0xffffffff;
-  if ((iVar3 != 0) && (iVar9 = local_10->field_00D0, iVar9 != 0)) {
-    if (iVar9 + -1 < local_10->field_00C8) {
+  if ((iVar3 != 0) && (iVar10 = local_10->field_00D0, iVar10 != 0)) {
+    if (iVar10 + -1 < local_10->field_00C8) {
       local_10->field_00C8 = 0;
     }
     iVar12 = 1;
-    local_10->field_00F8 = iVar9 * local_10->field_00CC + 10;
+    local_10->field_00F8 = iVar10 * local_10->field_00CC + 10;
     puVar6 = (undefined4 *)(iVar3 + 0x28);
     uVar4 = FUN_006b4fe0(iVar3);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -83,9 +84,9 @@ void __thiscall ComboTy::InitCombo(ComboTy *this,undefined4 *param_1)
               * pAVar5->field_0008;
     }
     local_5 = this_00->field_00D8;
-    puVar6 = (undefined4 *)FUN_006b4fa0((int)pAVar5);
+    puVar6 = (undefined4 *)FUN_006b4fa0((int *)pAVar5);
     iVar3 = 1;
-    for (uVar8 = uVar4 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
+    for (uVar9 = uVar4 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
       *puVar6 = CONCAT22(CONCAT11(local_5,local_5),CONCAT11(local_5,local_5));
       puVar6 = puVar6 + 1;
     }
@@ -96,18 +97,18 @@ void __thiscall ComboTy::InitCombo(ComboTy *this,undefined4 *param_1)
     puVar6 = (undefined4 *)(this_00->field_00D4 + 0x28);
     uVar4 = FUN_006b4fe0(this_00->field_00D4);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    iVar3 = FUN_006b50c0(this_00->field_00F4,this_00->field_00F8,
-                         (uint)*(ushort *)(this_00->field_00D4 + 0xe),uVar4,puVar6,iVar3);
-    this_00->field_0100 = iVar3;
-    uVar4 = *(uint *)(iVar3 + 0x14);
+    piVar7 = (int *)FUN_006b50c0(this_00->field_00F4,this_00->field_00F8,
+                                 (uint)*(ushort *)(this_00->field_00D4 + 0xe),uVar4,puVar6,iVar3);
+    this_00->field_0100 = piVar7;
+    uVar4 = piVar7[5];
     if (uVar4 == 0) {
-      uVar4 = ((uint)*(ushort *)(iVar3 + 0xe) * *(int *)(iVar3 + 4) + 0x1f >> 3 & 0x1ffffffc) *
-              *(int *)(iVar3 + 8);
+      uVar4 = ((uint)*(ushort *)((int)piVar7 + 0xe) * piVar7[1] + 0x1f >> 3 & 0x1ffffffc) *
+              piVar7[2];
     }
     local_5 = this_00->field_00E0;
-    puVar6 = (undefined4 *)FUN_006b4fa0(iVar3);
+    puVar6 = (undefined4 *)FUN_006b4fa0(piVar7);
     iVar3 = 1;
-    for (uVar8 = uVar4 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
+    for (uVar9 = uVar4 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
       *puVar6 = CONCAT22(CONCAT11(local_5,local_5),CONCAT11(local_5,local_5));
       puVar6 = puVar6 + 1;
     }
@@ -118,18 +119,18 @@ void __thiscall ComboTy::InitCombo(ComboTy *this,undefined4 *param_1)
     puVar6 = (undefined4 *)(this_00->field_00D4 + 0x28);
     uVar4 = FUN_006b4fe0(this_00->field_00D4);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    puVar7 = (ushort *)
+    puVar8 = (ushort *)
              FUN_006b50c0(this_00->field_00F4 + -10,this_00->field_00CC,
                           (uint)*(ushort *)(this_00->field_00D4 + 0xe),uVar4,puVar6,iVar3);
-    this_00->field_0104 = puVar7;
-    uVar4 = *(uint *)(puVar7 + 10);
+    this_00->field_0104 = puVar8;
+    uVar4 = *(uint *)(puVar8 + 10);
     if (uVar4 == 0) {
-      uVar4 = ((uint)puVar7[7] * *(int *)(puVar7 + 2) + 0x1f >> 3 & 0x1ffffffc) *
-              *(int *)(puVar7 + 4);
+      uVar4 = ((uint)puVar8[7] * *(int *)(puVar8 + 2) + 0x1f >> 3 & 0x1ffffffc) *
+              *(int *)(puVar8 + 4);
     }
     local_5 = this_00->field_00D8;
-    puVar6 = (undefined4 *)FUN_006b4fa0((int)puVar7);
-    for (uVar8 = uVar4 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
+    puVar6 = (undefined4 *)FUN_006b4fa0((int *)puVar8);
+    for (uVar9 = uVar4 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
       *puVar6 = CONCAT22(CONCAT11(local_5,local_5),CONCAT11(local_5,local_5));
       puVar6 = puVar6 + 1;
     }
@@ -143,7 +144,7 @@ void __thiscall ComboTy::InitCombo(ComboTy *this,undefined4 *param_1)
     puVar6 = &this_00->field_0108;
     local_c = puVar6;
     FUN_006b2330(PTR_008075a8,puVar6,2,0x401712,this_00->field_00FC->field_0004 + 3,
-                 this_00->field_00FC->field_0008 + 3,(uint)&this_00->field_0x88);
+                 this_00->field_00FC->field_0008 + 3,(ushort *)&this_00->field_0x88);
     Library::DKW::DDX::FUN_006b3640
               ((int *)PTR_008075a8,*puVar6,0xffffffff,this_00->field_00EC - 3,this_00->field_00F0);
     puVar1 = &this_00->field_0x18;

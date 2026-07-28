@@ -1,5 +1,8 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0), and
+   decompilation contains no value return */
 
 void __fastcall FUN_0063e410(AnonShape_0063E410_6FBC68F2 *param_1)
 

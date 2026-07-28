@@ -76,7 +76,7 @@ undefined4 __thiscall CGenerate::CreateMap(CGenerate *this)
   this_00->field_0018 = pcVar4;
   sub_0069FF90(this_00);
   pbVar5 = (byte *)Library::Ourlib::MFSTMAP::mfTMapCreate
-                             (this_00->field_0228,this_00->field_022C,(int)this_00->field_0234,
+                             (this_00->field_0228,this_00->field_022C,this_00->field_0234,
                               this_00->field_0239,0x20);
   this_00->field_000C = pbVar5;
   sub_0069FF90(this_00);

@@ -16,7 +16,7 @@ uint __thiscall FUN_0063c380(void *this,int param_1)
                        *(int *)((int)this + 0x26a),iVar2,*(int *)((int)this + 0x272),
                        *(int *)((int)this + 0x276),*(int *)((int)this + 0x27a),
                        *(int *)((int)this + 0x235),50000,*(int *)((int)this + 0x25d),
-                       *(undefined2 *)((int)this + 0x261),0xa8,0,0);
+                       *(ushort *)((int)this + 0x261),0xa8,0,0);
     return uVar1;
   }
   if (iVar2 <= *(short *)((int)this + 599)) {

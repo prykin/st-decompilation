@@ -64,7 +64,9 @@ int __thiscall TLOBaseTy::fireProc(TLOBaseTy *this)
               if ((bVar9) ||
                  ((AnonPointee_TLOBaseTy_0291 *)puVar8[3] == (AnonPointee_TLOBaseTy_0291 *)0x0)) {
                 puVar8[3] = 0;
-                STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,puVar8[2],(int *)(puVar8 + 3));
+                STPlaySystemC::sub_006E62D0
+                          (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)puVar8[2],
+                           (int *)(puVar8 + 3));
               }
               pAVar1 = (AnonPointee_TLOBaseTy_0291 *)puVar8[3];
               if (pAVar1 != (AnonPointee_TLOBaseTy_0291 *)0x0) {
@@ -105,8 +107,7 @@ int __thiscall TLOBaseTy::fireProc(TLOBaseTy *this)
                   puVar8[0xe] = uVar5;
                 } while (uVar5 == this_00->field_0259);
                 if (*(int *)(&DAT_00795afc + this_00->field_0235 * 4) != 0) {
-                  (*this_00->vtable->vfunc_90)
-                            (this_00,3,*(int *)(&DAT_00795afc + this_00->field_0235 * 4));
+                  this_00->vfunc_90(3,*(int *)(&DAT_00795afc + this_00->field_0235 * 4));
                 }
               }
             }
@@ -137,9 +138,11 @@ int __thiscall TLOBaseTy::fireProc(TLOBaseTy *this)
                  (iVar4 = sub_004C56B0(this_00,piVar7), iVar4 != 0)))) || (puVar8[2] != 0)) {
               puVar8[0xc] = g_playSystem_00802A38->field_00E4;
               puVar8[0xd] = 100;
-              if (puVar8[2] != 0) {
+              if ((AnonShape_005EFAE0_B406B78B *)puVar8[2] != (AnonShape_005EFAE0_B406B78B *)0x0) {
                 if ((AnonPointee_TLOBaseTy_0291 *)puVar8[3] == (AnonPointee_TLOBaseTy_0291 *)0x0) {
-                  STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,puVar8[2],(int *)(puVar8 + 3));
+                  STPlaySystemC::sub_006E62D0
+                            (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)puVar8[2],
+                             (int *)(puVar8 + 3));
                 }
                 puVar8[8] = (int)((AnonPointee_TLOBaseTy_0291 *)puVar8[3])->field_0041;
                 puVar8[9] = (int)((AnonPointee_TLOBaseTy_0291 *)puVar8[3])->field_0043;

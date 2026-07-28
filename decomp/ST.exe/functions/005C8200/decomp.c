@@ -26,7 +26,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004EEFB0::FUN_005c8200
   uint uVar6;
   uint uVar7;
   byte *pbVar8;
-  int *piVar9;
+  uint *puVar9;
   undefined4 *puVar10;
   byte *pbVar11;
   byte local_218 [336];
@@ -184,15 +184,15 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004EEFB0::FUN_005c8200
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (*(code *)this_00->field_0000->field_0028)();
   SettMapTy::PaintSettMap(this_00,'\0');
-  piVar9 = &this_00->field_1F60;
+  puVar9 = this_00->field_1F60;
   memset(local_38, 0, 0x20); /* compiler bulk-zero initialization */
   local_28 = 5;
   iVar2 = 7;
   do {
-    if (*piVar9 != 0) {
-      FUN_006e6080(this_00,2,*piVar9,local_38);
+    if (*puVar9 != 0) {
+      FUN_006e6080(this_00,2,*puVar9,local_38);
     }
-    piVar9 = piVar9 + 1;
+    puVar9 = puVar9 + 1;
     iVar2 = iVar2 + -1;
   } while (iVar2 != 0);
   g_currentExceptionFrame = local_7c.previous;

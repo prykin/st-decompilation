@@ -22,10 +22,14 @@ FUN_0043e9a0(char param_1,Global_sub_0043E9A0_param_2Enum param_2,short param_3,
 
   local_8 = (int)param_3;
   local_c = param_6 + -1 + local_8;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   _param_6 = (int)param_4;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   _param_4 = param_7 + -1 + _param_6;
   iVar2 = (int)param_5;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   _param_5 = param_8 + -1 + iVar2;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_3 = 0;
   if (local_8 < 0) {
     local_8 = 0;
@@ -35,25 +39,31 @@ FUN_0043e9a0(char param_1,Global_sub_0043E9A0_param_2Enum param_2,short param_3,
     local_c = iVar4;
   }
   if (_param_6 < 0) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     _param_6 = 0;
   }
   if (g_worldGrid.sizeY + -1 < _param_4) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     _param_4 = g_worldGrid.sizeY + -1;
   }
   if (iVar2 < 0) {
     iVar2 = 0;
   }
   if (g_worldGrid.sizeZ + -1 < _param_5) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     _param_5 = g_worldGrid.sizeZ + -1;
   }
   iVar4 = g_worldGrid.sizeX * _param_6 + local_8 + (iVar2 + -1) * (int)g_worldGrid.planeStride;
   if (iVar2 <= _param_5) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     _param_5 = _param_5 - iVar2;
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     iVar2 = CONCAT22((short)((uint)iVar2 >> 0x10),g_worldGrid.sizeX);
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     _param_5 = _param_5 + 1;
     iVar6 = local_c;
     iVar7 = local_8;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_3 = 0;
     do {
       iVar4 = iVar4 + g_worldGrid.planeStride;
@@ -80,6 +90,7 @@ LAB_0043eb0f:
                   if ((param_10 == -1) ||
                      (pSVar3 = (STWorldCell *)(**(code **)(*piVar1 + 0x6c))(),
                      pSVar3 == (STWorldCell *)(int)param_10)) {
+                    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                     param_3 = param_3 + 1;
                   }
                 }
@@ -108,6 +119,7 @@ LAB_0043eb0f:
           iVar5 = iVar5 + -1;
         } while (iVar5 != 0);
       }
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       _param_5 = _param_5 + -1;
     } while (_param_5 != 0);
   }

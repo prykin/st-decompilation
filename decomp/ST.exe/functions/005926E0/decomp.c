@@ -19,10 +19,11 @@ void __thiscall CampaignTy::AnimationCampaign(CampaignTy *this)
   BITMAPINFO *pBVar4;
   int iVar5;
   CampaignTy_field_1BE8State CVar6;
-  undefined4 *puVar7;
-  int *piVar8;
-  uint uVar9;
-  char cVar10;
+  uint *puVar7;
+  undefined4 *puVar8;
+  int *piVar9;
+  uint uVar10;
+  char cVar11;
   InternalExceptionFrame local_68;
   int local_24 [7];
   CampaignTy *local_8;
@@ -45,7 +46,7 @@ void __thiscall CampaignTy::AnimationCampaign(CampaignTy *this)
   if (g_startSystem_0081176C->field_0028 == 0) goto LAB_00592b82;
   if (local_8->field_1BE7 != '\0') goto LAB_00592b7c;
   local_24[5] = local_8->field_1BE8;
-  puVar7 = &local_8->field_1BD7;
+  puVar7 = local_8->field_1BD7;
   iVar3 = 4;
   do {
     if ((int *)*puVar7 != (int *)0x0) {
@@ -175,50 +176,50 @@ LAB_00592933:
   case CASE_0:
     thunk_FUN_005b6730(this_00,0x15,'\0',1);
     iVar3 = 1;
-    cVar10 = '\x02';
-    uVar9 = 0x18;
+    cVar11 = '\x02';
+    uVar10 = 0x18;
     break;
   default:
     goto switchD_00592962_caseD_1;
   case CASE_2:
     iVar3 = -1;
-    cVar10 = '\x01';
-    uVar9 = 0x1b;
+    cVar11 = '\x01';
+    uVar10 = 0x1b;
     break;
   case CASE_3:
     thunk_FUN_005b6730(this_00,0x16,'\0',1);
     iVar3 = 1;
-    cVar10 = '\x02';
-    uVar9 = 0x19;
+    cVar11 = '\x02';
+    uVar10 = 0x19;
     break;
   case CASE_5:
     iVar3 = -1;
-    cVar10 = '\x01';
-    uVar9 = 0x1c;
+    cVar11 = '\x01';
+    uVar10 = 0x1c;
     break;
   case CASE_6:
     thunk_FUN_005b6730(this_00,0x17,'\0',1);
     iVar3 = 1;
-    cVar10 = '\x02';
-    uVar9 = 0x1a;
+    cVar11 = '\x02';
+    uVar10 = 0x1a;
     break;
   case CASE_8:
     iVar3 = -1;
-    cVar10 = '\x01';
-    uVar9 = 0x1d;
+    cVar11 = '\x01';
+    uVar10 = 0x1d;
   }
-  thunk_FUN_005b6730(this_00,uVar9,cVar10,iVar3);
+  thunk_FUN_005b6730(this_00,uVar10,cVar11,iVar3);
 switchD_00592962_caseD_1:
   if (local_24[5] != this_00->field_1BE8) {
-    puVar7 = &this_00->field_1B13;
+    puVar8 = &this_00->field_1B13;
     local_24[5] = 3;
     do {
       iVar3 = 0xf;
       do {
-        if ((AnonShape_006C4AA0_6E9A3AA4 *)*puVar7 != (AnonShape_006C4AA0_6E9A3AA4 *)0x0) {
-          FUN_006c4aa0((AnonShape_006C4AA0_6E9A3AA4 *)*puVar7);
+        if ((AnonShape_006C4AA0_6E9A3AA4 *)*puVar8 != (AnonShape_006C4AA0_6E9A3AA4 *)0x0) {
+          FUN_006c4aa0((AnonShape_006C4AA0_6E9A3AA4 *)*puVar8);
         }
-        puVar7 = puVar7 + 1;
+        puVar8 = puVar8 + 1;
         iVar3 = iVar3 + -1;
       } while (iVar3 != 0);
       local_24[5] = local_24[5] + -1;
@@ -264,7 +265,7 @@ switchD_00592962_caseD_1:
       local_24[4] = 0xb;
     }
   }
-  piVar8 = local_24;
+  piVar9 = local_24;
   local_24[5] = 5;
   do {
     switch(this_00->field_1BE8) {
@@ -281,7 +282,7 @@ switchD_00592962_caseD_1:
     case CASE_8:
       iVar3 = 2;
     }
-    if ((&this_00->field_1B13)[*piVar8 + iVar3 * 0xf] != 0) {
+    if ((&this_00->field_1B13)[*piVar9 + iVar3 * 0xf] != 0) {
       switch(this_00->field_1BE8) {
       default:
         iVar3 = 0;
@@ -296,9 +297,9 @@ switchD_00592962_caseD_1:
       case CASE_8:
         iVar3 = 2;
       }
-      thunk_FUN_005926a0((int *)(&this_00->field_1B13)[*piVar8 + iVar3 * 0xf]);
+      thunk_FUN_005926a0((int *)(&this_00->field_1B13)[*piVar9 + iVar3 * 0xf]);
     }
-    piVar8 = piVar8 + 1;
+    piVar9 = piVar9 + 1;
     local_24[5] = local_24[5] + -1;
   } while (local_24[5] != 0);
   if (this_00->field_1BE8 == CASE_1) {
@@ -316,51 +317,52 @@ LAB_00592b82:
     pAVar1 = *(AnonShape_GLOBAL_0081175C_57F682DD **)
               ((int)&g_startSystem_0081176C->vtable + local_24[6]);
     if (pAVar1 != (AnonShape_GLOBAL_0081175C_57F682DD *)0x0) {
-      piVar8 = (int *)((int)&g_startSystem_0081176C->field_025C + local_24[5]);
-      if ((&g_startSystem_0081176C->field_0x270)[local_24[5]] == '\0') {
-        uVar9 = piVar8[2];
+      piVar9 = (int *)((int)g_startSystem_0081176C->array_0244 + local_24[5] + 0x18);
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+      if (*(char *)((int)g_startSystem_0081176C->array_0244 + local_24[5] + 0x2c) == '\0') {
+        uVar10 = piVar9[2];
       }
       else {
-        uVar9 = piVar8[3];
+        uVar10 = piVar9[3];
       }
-      if (uVar9 <= local_8->field_0061 - piVar8[4]) {
+      if (uVar10 <= local_8->field_0061 - piVar9[4]) {
         pBVar4 = (BITMAPINFO *)FUN_0070b3a0(pAVar1,(int)(short)pAVar1->field_0029);
-        FUN_006b5f80((int *)PTR_008075a8,*piVar8,piVar8[1],(int)*(short *)(pAVar1 + 1),
+        FUN_006b5f80((int *)PTR_008075a8,*piVar9,piVar9[1],(int)*(short *)(pAVar1 + 1),
                      (int)*(short *)&pAVar1[1].field_0x2);
-        PutDDX(*piVar8,piVar8[1],'\x01',pBVar4);
-        if ((char)piVar8[5] != '\0') {
-          *(undefined1 *)(piVar8 + 5) = 0;
+        PutDDX(*piVar9,piVar9[1],'\x01',pBVar4);
+        if ((char)piVar9[5] != '\0') {
+          *(undefined1 *)(piVar9 + 5) = 0;
         }
-        piVar8[4] = local_8->field_0061;
-        switch(*(undefined2 *)((int)piVar8 + 0x15)) {
+        piVar9[4] = local_8->field_0061;
+        switch(*(undefined2 *)((int)piVar9 + 0x15)) {
         case 0:
           pAVar1->field_0029 = pAVar1->field_0029 + 1;
           if (pAVar1->field_0023 <= (short)pAVar1->field_0029) {
             pAVar1->field_0029 = 0;
-            *(undefined1 *)(piVar8 + 5) = 1;
+            *(undefined1 *)(piVar9 + 5) = 1;
           }
           break;
         case 1:
           pAVar1->field_0029 = pAVar1->field_0029 + -1;
           if ((short)pAVar1->field_0029 < 0) {
             pAVar1->field_0029 = pAVar1->field_0023 + -1;
-            *(undefined1 *)(piVar8 + 5) = 1;
+            *(undefined1 *)(piVar9 + 5) = 1;
           }
           break;
         case 2:
           pAVar1->field_0029 = pAVar1->field_0029 + 1;
           if (pAVar1->field_0023 <= (short)pAVar1->field_0029) {
             pAVar1->field_0029 = pAVar1->field_0023 + -1;
-            *(undefined1 *)(piVar8 + 5) = 1;
-            *(undefined2 *)((int)piVar8 + 0x15) = 3;
+            *(undefined1 *)(piVar9 + 5) = 1;
+            *(undefined2 *)((int)piVar9 + 0x15) = 3;
           }
           break;
         case 3:
           pAVar1->field_0029 = pAVar1->field_0029 + -1;
           if ((short)pAVar1->field_0029 < 0) {
             pAVar1->field_0029 = 0;
-            *(undefined1 *)(piVar8 + 5) = 1;
-            *(undefined2 *)((int)piVar8 + 0x15) = 2;
+            *(undefined1 *)(piVar9 + 5) = 1;
+            *(undefined2 *)((int)piVar9 + 0x15) = 2;
           }
         }
       }

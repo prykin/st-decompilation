@@ -18,7 +18,7 @@ undefined4 __fastcall FUN_004d7270(AnonShape_004D7270_8F0A3C37 *param_1)
       if (iVar1 < iVar2) {
         iVar1 = 0;
         uVar4 = (uint)(*(int *)&param_1->field_0x2c == 1);
-        uVar3 = thunk_FUN_004ad650((int)&param_1->field_0x1d5);
+        uVar3 = thunk_FUN_004ad650((STT3DSprC *)&param_1->field_0x1d5);
         thunk_FUN_00637c50(uVar3,uVar4,iVar1);
       }
       uVar3 = GetPlayerRaceId(param_1->field_023D);

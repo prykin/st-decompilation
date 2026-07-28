@@ -13,10 +13,8 @@ undefined4 __thiscall STGameObjC::MoveStep(STGameObjC *this,int *param_1)
   int iVar3;
   code *pcVar4;
   int iVar5;
-  undefined4 uVar6;
-  uint uVar7;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  undefined4 extraout_EDX;
+  uint uVar6;
+  undefined4 uVar7;
   undefined4 local_10;
   undefined4 local_c;
   undefined4 local_8;
@@ -31,7 +29,7 @@ undefined4 __thiscall STGameObjC::MoveStep(STGameObjC *this,int *param_1)
   }
   if (iVar5 == 2) {
     thunk_FUN_00416840(this,(undefined2 *)&local_10,(undefined2 *)&local_c,(undefined2 *)&local_8);
-    iVar5 = (*this->vtable->vfunc_18)(this,(short)local_10,(short)local_c,(short)local_8);
+    iVar5 = this->vfunc_18((short)local_10,(short)local_c,(short)local_8);
     if (iVar5 != 1) {
       this->field_00FA = this->field_00FA + 1;
       if (this->field_00FA <= this->field_00F8) {
@@ -44,18 +42,14 @@ undefined4 __thiscall STGameObjC::MoveStep(STGameObjC *this,int *param_1)
       sub_004167A0(this);
       return 2;
     }
-    uVar6 = sub_0041C5A0(this);
+    sub_0041C5A0(this);
     this->field_00FA = 0;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    iVar5 = thunk_FUN_00495ff0(this->field_005B,this->field_005D,this->field_005F,
-                               CONCAT31((int3)((uint)uVar6 >> 8),this->field_008E),
+    iVar5 = thunk_FUN_00495ff0(this->field_005B,this->field_005D,this->field_005F,this->field_008E,
                                (AnonShape_00495FF0_59081BDD *)this);
-    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     if ((iVar5 == 0) &&
        (iVar5 = DumpClassC::WritePtr
-                          ((short)local_10,(short)local_c,(short)local_8,
-                           CONCAT31((int3)((uint)extraout_EDX >> 8),this->field_008E),
-                           (AnonShape_00495EC0_95A268C6 *)this), iVar5 == 0)) {
+                          ((short)local_10,(short)local_c,(short)local_8,this->field_008E,
+                           (RecoveredRecord_DumpClassC_00495EC0 *)this), iVar5 == 0)) {
       TLOEmbryoTy::sub_0041C3F0((TLOEmbryoTy *)this,(undefined *)this->field_0101);
       thunk_FUN_004168b0((int)this);
       return 0;
@@ -63,10 +57,10 @@ undefined4 __thiscall STGameObjC::MoveStep(STGameObjC *this,int *param_1)
   }
   else if (iVar5 == 3) {
     thunk_FUN_00416840(this,(undefined2 *)&local_10,(undefined2 *)&local_c,(undefined2 *)&local_8);
-    uVar7 = thunk_FUN_00418d20(this->field_0047,this->field_0049,this->field_004B,(short)local_10,
+    uVar6 = thunk_FUN_00418d20(this->field_0047,this->field_0049,this->field_004B,(short)local_10,
                                (short)local_c,(short)local_8);
-    if (uVar7 != 0xffffffff) {
-      if (uVar7 == 1) {
+    if (uVar6 != 0xffffffff) {
+      if (uVar6 == 1) {
         iVar2 = this->field_009B;
         iVar3 = this->field_0097;
         iVar5 = iVar3 + iVar2 * 8;

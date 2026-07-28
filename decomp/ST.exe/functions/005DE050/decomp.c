@@ -3,7 +3,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\startsys.cpp
-   StartSystemTy::PaintBinDesc */
+   StartSystemTy::PaintBinDesc
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=3, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall
 StartSystemTy::PaintBinDesc(StartSystemTy *this,AnonShape_005DE050_5BD86458 *param_1)

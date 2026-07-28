@@ -179,7 +179,7 @@ cf_common_exit_005EEDDF:
         STT3DSprC::StopShow((STT3DSprC *)this,0xe);
         if ((param_1->field_0315 == '\x04') || (param_1->field_0315 == '\x02')) {
           uVar4 = 0xffffffff;
-          iVar3 = thunk_FUN_004ad650((int)this);
+          iVar3 = thunk_FUN_004ad650((STT3DSprC *)this);
           thunk_FUN_0062b770((int)param_1->field_0041,(int)param_1->field_0043,
                              (int)param_1->field_0045,param_1->field_0231,(int)param_1,
                              (int)*(short *)&param_1->field_0x6c,iVar3,uVar4);
@@ -210,7 +210,7 @@ joined_r0x005eed0b:
         }
       }
       if (iVar2 == *(int *)(&DAT_007cdf56 + (uint)param_1->field_02DF * 0x32)) {
-        thunk_FUN_004ad5e0((int)this);
+        thunk_FUN_004ad5e0((STT3DSprC *)this);
       }
       if (iVar2 == *(int *)(&DAT_007cdf5a + (uint)param_1->field_02DF * 0x32)) {
         STT3DSprC::StartShow((STT3DSprC *)this,9,g_playSystem_00802A38->field_00E4);

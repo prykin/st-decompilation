@@ -43,8 +43,8 @@ STAllPlayersC::sub_004DB160
                    [(int)g_worldGrid.planeStride * (int)sVar6 + (int)g_worldGrid.sizeX * (int)sVar8
                     + (int)sVar2].objects[0], this_00 != (STWorldObject *)0x0 &&
         (this_00[1].vtable != (STWorldObjectVTable *)param_1)))))) &&
-     ((iVar3 = (*this_00->vtable->GetObjectTypeId)(this_00), iVar3 == 0x3c ||
-      (iVar3 = (*this_00->vtable->GetObjectTypeId)(this_00), iVar3 == 0x53)))) {
+     ((iVar3 = this_00->GetObjectTypeId(), iVar3 == 0x3c ||
+      (iVar3 = this_00->GetObjectTypeId(), iVar3 == 0x53)))) {
     uVar4 = GetPlayerRaceId(*(char *)&this_00[1].vtable);
     uVar4 = uVar4 & 0xff;
     if (uVar4 == 1) {
@@ -66,6 +66,7 @@ STAllPlayersC::sub_004DB160
       iVar3 = *param_5;
       iVar11 = *param_4;
       iVar10 = *param_3;
+/* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
 cf_common_join_004DB690:
       param_1 = iVar10;
       *param_6 = (int)this_00[1].vtable;
@@ -142,6 +143,7 @@ cf_common_join_004DB690:
       return;
     }
   }
+/* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
 LAB_004db257:
   param_5 = (int *)0x1;
   sVar2 = g_worldGrid.sizeZ;
@@ -165,8 +167,8 @@ LAB_004db257:
                                (int)sVar8 * (int)g_worldGrid.sizeX + (int)sVar2].objects[0],
                    this_00 != (STWorldObject *)0x0)) &&
                   ((this_00[1].vtable != (STWorldObjectVTable *)param_1 &&
-                   ((iVar3 = (*this_00->vtable->GetObjectTypeId)(this_00), iVar3 == 0x3c ||
-                    (iVar3 = (*this_00->vtable->GetObjectTypeId)(this_00), iVar3 == 0x53)))))))) {
+                   ((iVar3 = this_00->GetObjectTypeId(), iVar3 == 0x3c ||
+                    (iVar3 = this_00->GetObjectTypeId(), iVar3 == 0x53)))))))) {
                 uVar4 = GetPlayerRaceId(*(char *)&this_00[1].vtable);
                 uVar4 = uVar4 & 0xff;
                 if (uVar4 == 1) {
@@ -196,8 +198,8 @@ LAB_004db3e4:
                              thunk_FUN_004db980(sVar2,(short)iVar11,(short)local_8,0),
                   this_00 != (STWorldObject *)0x0)) &&
                  ((this_00[1].vtable != (STWorldObjectVTable *)param_1 &&
-                  ((iVar3 = (*this_00->vtable->GetObjectTypeId)(this_00), iVar3 == 0x3c ||
-                   (iVar3 = (*this_00->vtable->GetObjectTypeId)(this_00), iVar3 == 0x53)))))) {
+                  ((iVar3 = this_00->GetObjectTypeId(), iVar3 == 0x3c ||
+                   (iVar3 = this_00->GetObjectTypeId(), iVar3 == 0x53)))))) {
                 uVar4 = GetPlayerRaceId(*(char *)&this_00[1].vtable);
                 uVar4 = uVar4 & 0xff;
                 if (uVar4 == 1) {
@@ -236,8 +238,8 @@ LAB_004db497:
                                thunk_FUN_004db980((short)iVar10,(short)iVar11,(short)local_8,0),
                     this_00 != (STWorldObject *)0x0)) &&
                    (this_00[1].vtable != (STWorldObjectVTable *)param_1)) &&
-                  ((iVar3 = (*this_00->vtable->GetObjectTypeId)(this_00), iVar3 == 0x3c ||
-                   (iVar3 = (*this_00->vtable->GetObjectTypeId)(this_00), iVar3 == 0x53)))))) {
+                  ((iVar3 = this_00->GetObjectTypeId(), iVar3 == 0x3c ||
+                   (iVar3 = this_00->GetObjectTypeId(), iVar3 == 0x53)))))) {
                 uVar4 = GetPlayerRaceId(*(char *)&this_00[1].vtable);
                 uVar4 = uVar4 & 0xff;
                 if (uVar4 == 1) {
@@ -267,8 +269,8 @@ LAB_004db58d:
                               thunk_FUN_004db980((short)iVar10,(short)iVar11,(short)local_8,0),
                    this_00 != (STWorldObject *)0x0 &&
                    (this_00[1].vtable != (STWorldObjectVTable *)param_1)))) &&
-                 ((iVar3 = (*this_00->vtable->GetObjectTypeId)(this_00), iVar3 == 0x3c ||
-                  (iVar3 = (*this_00->vtable->GetObjectTypeId)(this_00), iVar3 == 0x53)))) {
+                 ((iVar3 = this_00->GetObjectTypeId(), iVar3 == 0x3c ||
+                  (iVar3 = this_00->GetObjectTypeId(), iVar3 == 0x53)))) {
                 uVar4 = GetPlayerRaceId(*(char *)&this_00[1].vtable);
                 uVar4 = uVar4 & 0xff;
                 if (uVar4 == 1) {
@@ -300,6 +302,7 @@ LAB_004db638:
         sVar2 = g_worldGrid.sizeZ;
       } while (local_8 < g_worldGrid.sizeZ + -1);
     }
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_5 = (int *)((int)param_5 + 1);
     if (7 < (int)param_5) {
       return;

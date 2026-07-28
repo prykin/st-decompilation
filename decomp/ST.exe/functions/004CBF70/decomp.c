@@ -1,15 +1,14 @@
 
-undefined4 __fastcall FUN_004cbf70(int param_1)
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 004CEB00 -> 004CBF70 @ 004CF048; TLOBaseTy::sub_004CEB00 this; stable alias EBX */
+
+undefined4 __fastcall FUN_004cbf70(TLOBaseTy *param_1)
 
 {
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (*(STT3DSprC **)(param_1 + 0x5ff) != (STT3DSprC *)0x0) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    STT3DSprC::StopShow(*(STT3DSprC **)(param_1 + 0x5ff),0xe);
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    STT3DSprC::StopShow(*(STT3DSprC **)(param_1 + 0x5ff),0xc);
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    thunk_FUN_004ad430(*(int *)(param_1 + 0x5ff));
+  if (param_1->field_05FF != (STT3DSprC *)0x0) {
+    STT3DSprC::StopShow(param_1->field_05FF,0xe);
+    STT3DSprC::StopShow(param_1->field_05FF,0xc);
+    thunk_FUN_004ad430(param_1->field_05FF);
   }
   return 0;
 }

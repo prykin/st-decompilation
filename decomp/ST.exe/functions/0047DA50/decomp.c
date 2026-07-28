@@ -104,7 +104,7 @@ LAB_0047ddc3:
         local_8 = (undefined4 *)&this->field_0x2b3;
         do {
           puVar6 = (undefined4 *)
-                   thunk_FUN_0041dc40(local_2c,(short)*local_8,*(undefined2 *)(local_8 + 1),
+                   thunk_FUN_0041dc40(local_2c,(short)*local_8,*(ushort *)(local_8 + 1),
                                       this->field_006C);
           uVar2 = *puVar6;
           bVar20 = 0;
@@ -160,12 +160,12 @@ LAB_0047ddc3:
         goto LAB_0047ddc3;
       }
       if (local_1c == 0) {
-        iVar8 = (*this->vtable->vfunc_D8)(this);
+        iVar8 = this->vfunc_D8();
         return -(uint)(iVar8 != 0);
       }
     }
   }
-  iVar8 = (*this->vtable->vfunc_D8)(this);
+  iVar8 = this->vfunc_D8();
   return (-(uint)(iVar8 != 0) & 0xfffffffd) + 2;
 }
 

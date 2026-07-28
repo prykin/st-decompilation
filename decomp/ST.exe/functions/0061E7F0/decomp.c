@@ -28,7 +28,7 @@ undefined4 __fastcall FUN_0061e7f0(STLightC *param_1)
   longlong lVar19;
   int iVar20;
   int iVar21;
-  undefined2 uVar22;
+  ushort uVar22;
   int iVar23;
   uint uVar24;
   undefined4 local_80;

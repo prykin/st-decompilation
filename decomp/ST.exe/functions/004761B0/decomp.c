@@ -11,15 +11,15 @@ int __thiscall STBoatC::SetMine(STBoatC *this,int *param_1,undefined4 param_2,in
   short sVar1;
   short sVar2;
   short sVar3;
-  STBoatC_field_06F7State SVar4;
-  code *pcVar5;
-  int iVar6;
-  STBoatCVTable *pSVar7;
+  code *pcVar4;
+  int iVar5;
+  STBoatCVTable *pSVar6;
   undefined4 arg_2;
 
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if ((param_1 == (int *)0x0) || (param_1 == (int *)0x1)) {
     memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
-    iVar6 = 0;
+    iVar5 = 0;
     this->field_02C4 = 0;
     if (this->field_07BE < 1) {
       return 0;
@@ -46,26 +46,26 @@ int __thiscall STBoatC::SetMine(STBoatC *this,int *param_1,undefined4 param_2,in
             (g_worldGrid.cells
              [(int)g_worldGrid.planeStride * (int)sVar3 + (int)g_worldGrid.sizeX * (int)sVar2 +
               (int)sVar1].objects[1] != (STWorldObject *)0x0)) &&
-           ((iVar6 = g_worldGrid.cells
+           ((iVar5 = g_worldGrid.cells
                      [(int)g_worldGrid.planeStride * (int)sVar3 +
                       (int)g_worldGrid.sizeX * (int)sVar2 + (int)sVar1].objects[1]->value_20,
-            iVar6 == 0x5a || (iVar6 == 0x1ae)))))))))) &&
-       (iVar6 = sub_0048DFD0(this,sVar1,sVar2,sVar3,this->field_0047,this->field_0049,
+            iVar5 == 0x5a || (iVar5 == 0x1ae)))))))))) &&
+       (iVar5 = sub_0048DFD0(this,sVar1,sVar2,sVar3,this->field_0047,this->field_0049,
                              (int *)CONCAT22((short)((uint)&this->field_0x5e2 >> 0x10),
                                              this->field_004B),1,(short *)&this->field_0x5e2,
-                             (short *)&this->field_0x5e4,(short *)&this->field_0x5e6), iVar6 == 0))
+                             (short *)&this->field_0x5e4,(short *)&this->field_0x5e6), iVar5 == 0))
     {
       return 0;
     }
     this->field_05E8 = 0;
     sub_00481520(this,(int)*(short *)&this->field_0x5e2,(int)*(short *)&this->field_0x5e4,
                  (int)*(short *)&this->field_0x5e6);
-    iVar6 = sub_00460260(this,0);
-    return (-(uint)(iVar6 != -1) & 3) - 1;
+    iVar5 = sub_00460260(this,0);
+    return (-(uint)(iVar5 != -1) & 3) - 1;
   }
   if (this->field_05E8 == 0) {
-    iVar6 = sub_00460260(this,2);
-    switch(iVar6) {
+    iVar5 = sub_00460260(this,2);
+    switch(iVar5) {
     case 0:
       this->field_05E8 = 1;
       return 2;
@@ -88,14 +88,14 @@ int __thiscall STBoatC::SetMine(STBoatC *this,int *param_1,undefined4 param_2,in
            ((g_worldGrid.cells
              [(int)g_worldGrid.planeStride * (int)sVar3 + (int)g_worldGrid.sizeX * (int)sVar2 +
               (int)sVar1].objects[1] != (STWorldObject *)0x0 &&
-            ((iVar6 = g_worldGrid.cells
+            ((iVar5 = g_worldGrid.cells
                       [(int)g_worldGrid.planeStride * (int)sVar3 +
                        (int)g_worldGrid.sizeX * (int)sVar2 + (int)sVar1].objects[1]->value_20,
-             iVar6 == 0x5a || (iVar6 == 0x1ae)))))))) &&
-         (iVar6 = sub_0048DFD0(this,sVar1,sVar2,sVar3,this->field_0047,this->field_0049,
+             iVar5 == 0x5a || (iVar5 == 0x1ae)))))))) &&
+         (iVar5 = sub_0048DFD0(this,sVar1,sVar2,sVar3,this->field_0047,this->field_0049,
                                (int *)CONCAT22((short)((uint)&this->field_0x5e2 >> 0x10),
                                                this->field_004B),1,(short *)&this->field_0x5e2,
-                               (short *)&this->field_0x5e4,(short *)&this->field_0x5e6), iVar6 == 0)
+                               (short *)&this->field_0x5e4,(short *)&this->field_0x5e6), iVar5 == 0)
          ) {
         return 0;
       }
@@ -129,22 +129,22 @@ int __thiscall STBoatC::SetMine(STBoatC *this,int *param_1,undefined4 param_2,in
                (g_worldGrid.cells
                 [(int)g_worldGrid.planeStride * (int)sVar3 + (int)g_worldGrid.sizeX * (int)sVar2 +
                  (int)sVar1].objects[1] != (STWorldObject *)0x0)))))) &&
-            ((iVar6 = g_worldGrid.cells
+            ((iVar5 = g_worldGrid.cells
                       [(int)g_worldGrid.planeStride * (int)sVar3 +
                        (int)g_worldGrid.sizeX * (int)sVar2 + (int)sVar1].objects[1]->value_20,
-             iVar6 == 0x5a || (iVar6 == 0x1ae)))))))) &&
-         (iVar6 = sub_0048DFD0(this,sVar1,sVar2,sVar3,this->field_0047,this->field_0049,
+             iVar5 == 0x5a || (iVar5 == 0x1ae)))))))) &&
+         (iVar5 = sub_0048DFD0(this,sVar1,sVar2,sVar3,this->field_0047,this->field_0049,
                                (int *)CONCAT22((short)((uint)&this->field_0x5e2 >> 0x10),
                                                this->field_004B),1,(short *)&this->field_0x5e2,
-                               (short *)&this->field_0x5e4,(short *)&this->field_0x5e6), iVar6 == 0)
+                               (short *)&this->field_0x5e4,(short *)&this->field_0x5e6), iVar5 == 0)
          ) {
         return 0;
       }
       break;
     case -1:
-      iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x311d,0,0,"%s",
+      iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x311d,0,0,"%s",
                                  "STBoatC::SetMine, SETMINE_MOVE error");
-      if (iVar6 != 0) {
+      if (iVar5 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       return 0xffff;
@@ -156,27 +156,28 @@ switchD_004761eb_caseD_3:
     return 2;
   }
   if (this->field_05E8 != 1) goto LAB_00476633;
-  SVar4 = this->field_06F7;
-  if (SVar4 == CASE_5) {
-    pSVar7 = this->vtable;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+  iVar5 = *(int *)((int)this->field_06CB + 0x2c);
+  if (iVar5 == 5) {
+    pSVar6 = this->vtable;
     arg_2 = 0xe6;
 LAB_004765df:
-    (*pSVar7->vfunc_90)(this,3,arg_2);
+    (*pSVar6->vfunc_90)(this,3,arg_2);
   }
-  else if (SVar4 == CASE_11) {
-    (*this->vtable->vfunc_90)(this,3,0x14a);
+  else if (iVar5 == 0x11) {
+    this->vfunc_90(3,0x14a);
   }
-  else if (SVar4 == CASE_21) {
-    pSVar7 = this->vtable;
+  else if (iVar5 == 0x21) {
+    pSVar6 = this->vtable;
     arg_2 = 0x1cb;
     goto LAB_004765df;
   }
   thunk_FUN_00627850(this->field_07B6,this->field_0024,this->field_0018,
                      (uint)(ushort)this->field_0032,(int)this->field_0041,(int)this->field_0043,
-                     this->field_0045 + -10,this->field_06F3,(char *)0x0,0xffffffff);
+                     this->field_0045 + -10,(int)this->field_06CB[5],(char *)0x0,0xffffffff);
   this->field_07BE = this->field_07BE + -1;
 LAB_00476633:
-  iVar6 = (*this->vtable->vfunc_D8)(this);
-  return -(uint)(iVar6 != 0);
+  iVar5 = this->vfunc_D8();
+  return -(uint)(iVar5 != 0);
 }
 

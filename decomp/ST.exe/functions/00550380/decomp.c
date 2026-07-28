@@ -1,5 +1,8 @@
 
-void FUN_00550380(undefined1 param_1)
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 00550380 -> 00533A10 @ 005503A7 */
+
+void FUN_00550380(byte param_1)
 
 {
   DAT_0080c50a = 0;

@@ -3,7 +3,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel4.cpp
-   CPanelTy::PaintArsenal */
+   CPanelTy::PaintArsenal
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall CPanelTy::PaintArsenal(CPanelTy *this)
 
@@ -66,7 +70,7 @@ void __thiscall CPanelTy::PaintArsenal(CPanelTy *this)
     local_18 = (AnonShape_00505960_269BEFC9 *)(&pCVar2->field_0C11 + local_2c * 6);
     local_24 = (uint)bVar7;
     do {
-      if (*(byte *)local_18 == 0) {
+      if (*(CPanelTy_field_0C11State *)local_18 == CASE_0) {
         uVar4 = 0;
       }
       else {

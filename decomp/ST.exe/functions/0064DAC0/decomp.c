@@ -1,6 +1,8 @@
 
-undefined4 __cdecl
-FUN_0064dac0(undefined4 *param_1,uint param_2,undefined4 param_3,undefined4 *param_4)
+/* [STPrototypeApplier] Propagated return.
+   Evidence: 0064DAC0 returns zeroed full register at 0064DAE9 @ 0064DAEC */
+
+uint __cdecl FUN_0064dac0(undefined4 *param_1,uint param_2,undefined4 param_3,undefined4 *param_4)
 
 {
   STAllPlayersC::DestroyObjectMsg(g_allPlayers_007FA174,(char)param_1,param_2,CASE_5,*param_4);

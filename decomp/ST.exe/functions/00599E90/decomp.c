@@ -17,7 +17,6 @@ void __thiscall FSGSTy::PaintLogNew(FSGSTy *this)
   uint uVar7;
   uint uVar8;
   int iVar9;
-  undefined4 uVar10;
   InternalExceptionFrame local_4c;
   FSGSTy *local_8;
 
@@ -33,7 +32,7 @@ void __thiscall FSGSTy::PaintLogNew(FSGSTy *this)
       uVar8 = ((uint)puVar1[7] * *(int *)(puVar1 + 2) + 0x1f >> 3 & 0x1ffffffc) *
               *(int *)(puVar1 + 4);
     }
-    puVar5 = (undefined4 *)FUN_006b4fa0((int)puVar1);
+    puVar5 = (undefined4 *)FUN_006b4fa0((int *)puVar1);
     for (uVar7 = uVar8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
       *puVar5 = 0xffffffff;
       puVar5 = puVar5 + 1;
@@ -43,53 +42,53 @@ void __thiscall FSGSTy::PaintLogNew(FSGSTy *this)
       puVar5 = (undefined4 *)((int)puVar5 + 1);
     }
     ccFntTy::SetSurf(pFVar3->field_1A73,(int)pFVar3->field_1AC0,0,0x19,0x1b,0x186,0x14);
-    uVar10 = 2;
+    uVar8 = 2;
     iVar9 = -1;
     iVar4 = 0;
     puVar6 = (uint *)LoadResourceString(0x254f,g_module_00807618);
-    ccFntTy::WrStr(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar10);
+    ccFntTy::WrStr(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar8);
     FUN_006b5ee0((AnonShape_006B5B10_E0D06CF1 *)pFVar3->field_1AC0,0,0x18,0x2e,0x188,0x1b,0xf,0xd);
     ccFntTy::SetSurf(pFVar3->field_1A73,(int)pFVar3->field_1AC0,0,0x19,0x48,0xb4,0x14);
-    uVar10 = 2;
+    uVar8 = 2;
     iVar9 = -1;
     iVar4 = 0;
     puVar6 = (uint *)LoadResourceString(0x2550,g_module_00807618);
-    ccFntTy::WrStr(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar10);
+    ccFntTy::WrStr(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar8);
     FUN_006b5ee0((AnonShape_006B5B10_E0D06CF1 *)pFVar3->field_1AC0,0,0x18,0x5b,0xb6,0x16,0xf,0xd);
     ccFntTy::SetSurf(pFVar3->field_1A73,(int)pFVar3->field_1AC0,0,0xeb,0x48,0xb4,0x14);
-    uVar10 = 2;
+    uVar8 = 2;
     iVar9 = -1;
     iVar4 = 0;
     puVar6 = (uint *)LoadResourceString(0x2554,g_module_00807618);
-    ccFntTy::WrStr(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar10);
+    ccFntTy::WrStr(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar8);
     FUN_006b5ee0((AnonShape_006B5B10_E0D06CF1 *)pFVar3->field_1AC0,0,0xea,0x5b,0xb6,0x16,0xf,0xd);
     ccFntTy::SetSurf(pFVar3->field_1A73,(int)pFVar3->field_1AC0,0,0x19,0x70,0x6e,0x14);
-    uVar10 = 2;
+    uVar8 = 2;
     iVar9 = -1;
     iVar4 = 0;
     puVar6 = (uint *)LoadResourceString(0x2557,g_module_00807618);
-    ccFntTy::WrStr(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar10);
+    ccFntTy::WrStr(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar8);
     FUN_006b5ee0((AnonShape_006B5B10_E0D06CF1 *)pFVar3->field_1AC0,0,0x18,0x83,0x70,0x16,0xf,0xd);
     ccFntTy::SetSurf(pFVar3->field_1A73,(int)pFVar3->field_1AC0,0,0xa5,0x70,0x6e,0x14);
-    uVar10 = 2;
+    uVar8 = 2;
     iVar9 = -1;
     iVar4 = 0;
     puVar6 = (uint *)LoadResourceString(0x2558,g_module_00807618);
-    ccFntTy::WrStr(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar10);
+    ccFntTy::WrStr(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar8);
     FUN_006b5ee0((AnonShape_006B5B10_E0D06CF1 *)pFVar3->field_1AC0,0,0xa4,0x83,0x70,0x16,0xf,0xd);
     ccFntTy::SetSurf(pFVar3->field_1A73,(int)pFVar3->field_1AC0,0,0x131,0x70,0x6e,0x14);
-    uVar10 = 2;
+    uVar8 = 2;
     iVar9 = -1;
     iVar4 = 0;
     puVar6 = (uint *)LoadResourceString(0x2559,g_module_00807618);
-    ccFntTy::WrStr(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar10);
+    ccFntTy::WrStr(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar8);
     FUN_006b5ee0((AnonShape_006B5B10_E0D06CF1 *)pFVar3->field_1AC0,0,0x130,0x83,0x70,0x16,0xf,0xd);
     ccFntTy::SetSurf(pFVar3->field_1A73,(int)pFVar3->field_1AC0,0,0x19,0x98,0x186,0x14);
-    uVar10 = 2;
+    uVar8 = 2;
     iVar9 = -1;
     iVar4 = 0;
     puVar6 = (uint *)LoadResourceString(0x255a,g_module_00807618);
-    ccFntTy::WrStr(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar10);
+    ccFntTy::WrStr(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar8);
     FUN_006b5ee0((AnonShape_006B5B10_E0D06CF1 *)pFVar3->field_1AC0,0,0x18,0xab,0x188,0x4d,0xf,0xd);
     Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,pFVar3->field_1ABC);
     FUN_006b35d0((int *)PTR_008075a8,pFVar3->field_1ABC);

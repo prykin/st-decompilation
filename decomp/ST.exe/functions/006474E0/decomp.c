@@ -35,7 +35,7 @@ undefined4 __thiscall STVolcanoC::LoadImagVolcano(STVolcanoC *this,int param_1)
                           (undefined4 *)0x0);
       FUN_006e8660(PTR_00807598,(int *)&local_8,1,0,*(uint *)((int)puVar3 + 9),
                    *(uint *)((int)puVar3 + 0xd),0x5a,0x2f,0);
-      FUN_006e98e0(PTR_00807598,local_8,0,*(undefined4 *)puVar3,*(int *)((int)puVar3 + 0x21),1);
+      FUN_006e98e0(PTR_00807598,local_8,0,*(int *)puVar3,*(int *)((int)puVar3 + 0x21),1);
       FUN_006ea270(PTR_00807598,local_8,0,pSVar2->field_0071);
       FUN_006e92c0(PTR_00807598,local_8,9.950249);
       FUN_006ea960(PTR_00807598,local_8,(float)pSVar2->field_0065 * _DAT_007904f8 * _DAT_007904f0,
@@ -49,7 +49,7 @@ undefined4 __thiscall STVolcanoC::LoadImagVolcano(STVolcanoC *this,int param_1)
                           (undefined4 *)0x0);
       FUN_006e8660(PTR_00807598,(int *)&local_c,1,0,*(uint *)((int)puVar3 + 9),
                    *(uint *)((int)puVar3 + 0xd),0x40,0x6a,0);
-      FUN_006e98e0(PTR_00807598,local_c,0,*(undefined4 *)puVar3,*(int *)((int)puVar3 + 0x21),1);
+      FUN_006e98e0(PTR_00807598,local_c,0,*(int *)puVar3,*(int *)((int)puVar3 + 0x21),1);
       FUN_006ea270(PTR_00807598,local_c,0,pSVar2->field_008A);
       FUN_006ea960(PTR_00807598,local_c,(float)pSVar2->field_0065 * _DAT_007904f8 * _DAT_007904f0,
                    (float)pSVar2->field_0069 * _DAT_007904f8 * _DAT_007904f0,
@@ -65,7 +65,7 @@ undefined4 __thiscall STVolcanoC::LoadImagVolcano(STVolcanoC *this,int param_1)
                           (undefined4 *)0x0);
       FUN_006e8660(PTR_00807598,(int *)&local_10,1,0,*(uint *)((int)puVar3 + 9),
                    *(uint *)((int)puVar3 + 0xd),0x4b,0x7e,0);
-      FUN_006e98e0(PTR_00807598,local_10,0,*(undefined4 *)puVar3,*(int *)((int)puVar3 + 0x21),1);
+      FUN_006e98e0(PTR_00807598,local_10,0,*(int *)puVar3,*(int *)((int)puVar3 + 0x21),1);
       FUN_006ea270(PTR_00807598,local_10,0,pSVar2->field_007E);
       FUN_006ea960(PTR_00807598,local_10,(float)pSVar2->field_0065 * _DAT_007904f8 * _DAT_007904f0,
                    (float)pSVar2->field_0069 * _DAT_007904f8 * _DAT_007904f0,

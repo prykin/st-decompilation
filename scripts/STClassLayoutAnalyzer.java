@@ -29,6 +29,7 @@ import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
 import ghidra.program.model.data.AbstractFloatDataType;
 import ghidra.program.model.data.AbstractIntegerDataType;
+import ghidra.program.model.data.Array;
 import ghidra.program.model.data.DataType;
 import ghidra.program.model.data.DataTypeComponent;
 import ghidra.program.model.data.DataTypeManager;
@@ -85,6 +86,8 @@ public class STClassLayoutAnalyzer extends GhidraScript {
             directory.resolve("constructor_class_sizes.tsv"));
         Map<String, String> vtableTypes = readVtableTypes(
             directory.resolve("vtable_proposals.tsv"));
+        Map<String, List<MemberArrayProposal>> memberArrays = readMemberArrays(
+            directory.resolve("class_array_proposals.tsv"));
         Map<String, ClassEvidence> classes = new TreeMap<>();
 
         FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
@@ -110,6 +113,11 @@ public class STClassLayoutAnalyzer extends GhidraScript {
             if (!(ownerType instanceof Structure structure) || evidence.fields.isEmpty()) continue;
             long observedSize = evidence.fields.values().stream()
                 .mapToLong(field -> field.offset + field.maximumSize()).max().orElse(1);
+            List<MemberArrayProposal> ownerArrays =
+                memberArrays.getOrDefault(evidence.owner, List.of());
+            for (MemberArrayProposal array : ownerArrays)
+                if (array.apply) observedSize = Math.max(observedSize,
+                    array.offset + array.size);
             if (vtableTypes.containsKey(evidence.owner)) observedSize = Math.max(observedSize, 4);
             long exactSize = exactSizes.getOrDefault(evidence.owner, -1L);
             long proposedSize = exactSize >= observedSize ? exactSize : observedSize;
@@ -119,7 +127,7 @@ public class STClassLayoutAnalyzer extends GhidraScript {
             List<NestedTypeProposal> ownerNested = prepareNestedTypes(evidence, nestedFields,
                 ownerVtableType != null);
             List<FieldProposal> ownerFields = makeFields(evidence, structure,
-                ownerVtableType, proposedSize);
+                ownerVtableType, proposedSize, ownerArrays);
             markOverlaps(ownerFields);
             long autoFields = ownerFields.stream().filter(field -> field.apply).count();
             boolean safeStructure = isPlaceholder(structure) || isOwnedUnchangedCandidate(structure);
@@ -186,6 +194,8 @@ public class STClassLayoutAnalyzer extends GhidraScript {
             ", cross_type_links: " + crossTypeLinks +
             ", nested_pointees: " + nestedTypes.size() +
             ", nested_apply: " + nestedTypes.stream().filter(row -> row.apply).count() +
+            ", member_arrays: " + memberArrays.values().stream()
+                .flatMap(List::stream).filter(row -> row.apply).count() +
             ", review_name_suggestions: " + suggestedNames);
     }
 
@@ -1480,8 +1490,13 @@ public class STClassLayoutAnalyzer extends GhidraScript {
     }
 
     private List<FieldProposal> makeFields(ClassEvidence evidence, Structure structure,
-            String vtableType, long proposedSize) {
+            String vtableType, long proposedSize,
+            List<MemberArrayProposal> memberArrays) {
         List<FieldProposal> result = new ArrayList<>();
+        List<MemberArrayProposal> activeArrays = memberArrays.stream()
+            .filter(array -> array.apply && array.offset >= 0 && array.size > 0 &&
+                array.offset + array.size <= proposedSize)
+            .sorted(Comparator.comparingLong(array -> array.offset)).toList();
         Map<String, Integer> inferredTypeCounts = new HashMap<>();
         for (FieldEvidence field : evidence.fields.values()) {
             String inferred = field.uniqueType();
@@ -1489,6 +1504,9 @@ public class STClassLayoutAnalyzer extends GhidraScript {
         }
         boolean hasOffsetZero = false;
         for (FieldEvidence field : evidence.fields.values()) {
+            if (activeArrays.stream().anyMatch(array ->
+                    field.offset >= array.offset &&
+                    field.offset < array.offset + array.size)) continue;
             if (field.offset == 0) hasOffsetZero = true;
             int size = field.layoutSize();
             boolean consistent = field.compatibleWidths();
@@ -1597,6 +1615,26 @@ public class STClassLayoutAnalyzer extends GhidraScript {
                 field.reads, field.writes, field.functions, apply,
                 apply ? "high" : "conflict", reason));
         }
+        for (MemberArrayProposal array : activeArrays) {
+            DataTypeComponent existing = structure.getComponentAt((int)array.offset);
+            String currentType = existing != null && existing.getOffset() == array.offset ?
+                typeSpecification(existing.getDataType()) : "";
+            String name = existing != null && existing.getOffset() == array.offset &&
+                existing.getFieldName() != null &&
+                !existing.getFieldName().isBlank() ? existing.getFieldName() :
+                array.proposedName;
+            boolean exact = currentType.equals(array.proposedType) &&
+                existing != null && existing.getLength() == array.size;
+            String evidenceText = array.proposedType + " <= " + array.evidenceSites;
+            result.add(new FieldProposal(evidence.owner, array.offset, array.size,
+                name, exact ? currentType : array.proposedType,
+                array.proposedType, !exact, "", false, evidenceText, "",
+                exact ? "existing" : "high", "none", array.boundedSites,
+                array.exactLoops, array.functions, true, "high",
+                "bounded_member_array; count=" + array.count +
+                "; element_size=" + array.elementSize +
+                "; [STClassArrayAnalyzer] " + array.reason));
+        }
         disableDuplicateSuggestedNames(result);
         // A high-confidence owner vtable is direct layout evidence even when none of the
         // currently named methods happens to dereference [this] itself.
@@ -1628,6 +1666,17 @@ public class STClassLayoutAnalyzer extends GhidraScript {
     }
 
     private int typeLength(String specification) {
+        if (specification.startsWith("array:")) {
+            int separator = specification.indexOf(':', "array:".length());
+            if (separator < 0) return -1;
+            try {
+                int count = Integer.parseInt(
+                    specification.substring("array:".length(), separator));
+                int element = typeLength(specification.substring(separator + 1));
+                return count > 0 && element > 0 ? count * element : -1;
+            }
+            catch (NumberFormatException ignored) { return -1; }
+        }
         if (specification.startsWith("pointer:")) return currentProgram.getDefaultPointerSize();
         DataType type = dataTypes.getDataType(specification);
         return type == null ? -1 : type.getLength();
@@ -1655,6 +1704,9 @@ public class STClassLayoutAnalyzer extends GhidraScript {
     }
 
     private String typeSpecification(DataType type) {
+        if (type instanceof Array array)
+            return "array:" + array.getNumElements() + ":" +
+                typeSpecification(array.getDataType());
         if (type instanceof Pointer pointer && pointer.getDataType() != null)
             return "pointer:" + pointer.getDataType().getPathName();
         return type.getPathName();
@@ -1691,6 +1743,50 @@ public class STClassLayoutAnalyzer extends GhidraScript {
             if (!enabled(row.get("apply"))) continue;
             result.put(unt(row.get("owner")), Long.parseLong(row.get("size")));
         }
+        return result;
+    }
+
+    private Map<String, List<MemberArrayProposal>> readMemberArrays(Path path)
+            throws Exception {
+        Map<String, List<MemberArrayProposal>> result = new TreeMap<>();
+        if (!Files.isRegularFile(path)) return result;
+        Tsv tsv = readTsv(path);
+        for (String required : List.of("apply", "owner", "offset", "count",
+                "element_size", "total_size", "proposed_type", "proposed_name",
+                "bounded_sites", "exact_loops", "reason", "evidence_functions",
+                "evidence_sites"))
+            if (!tsv.header.contains(required))
+                throw new IllegalArgumentException(
+                    "class_array_proposals.tsv missing column " + required);
+        for (Map<String, String> row : tsv.rows) {
+            String owner = unt(row.get("owner"));
+            if (owner.isBlank()) continue;
+            try {
+                Set<String> functions = new TreeSet<>();
+                String functionText = unt(row.get("evidence_functions"));
+                if (!functionText.isBlank())
+                    functions.addAll(List.of(functionText.split(" \\| ")));
+                MemberArrayProposal proposal = new MemberArrayProposal(
+                    enabled(row.get("apply")), owner,
+                    Long.parseLong(row.get("offset")),
+                    Integer.parseInt(row.get("count")),
+                    Integer.parseInt(row.get("element_size")),
+                    Integer.parseInt(row.get("total_size")),
+                    unt(row.get("proposed_type")),
+                    unt(row.get("proposed_name")),
+                    Integer.parseInt(row.get("bounded_sites")),
+                    Integer.parseInt(row.get("exact_loops")),
+                    unt(row.get("reason")), functions,
+                    unt(row.get("evidence_sites")));
+                result.computeIfAbsent(owner, ignored -> new ArrayList<>()).add(proposal);
+            }
+            catch (NumberFormatException exception) {
+                throw new IllegalArgumentException(
+                    "invalid class-array row for " + owner, exception);
+            }
+        }
+        for (List<MemberArrayProposal> arrays : result.values())
+            arrays.sort(Comparator.comparingLong(array -> array.offset));
         return result;
     }
 
@@ -2470,6 +2566,32 @@ public class STClassLayoutAnalyzer extends GhidraScript {
             this.autoFieldCount = autoFieldCount; this.apply = apply;
             this.confidence = confidence; this.reason = reason;
             this.functions = new TreeSet<>(functions);
+        }
+    }
+    private static class MemberArrayProposal {
+        final boolean apply;
+        final String owner;
+        final long offset;
+        final int count, elementSize, size, boundedSites, exactLoops;
+        final String proposedType, proposedName, reason, evidenceSites;
+        final Set<String> functions;
+        MemberArrayProposal(boolean apply, String owner, long offset, int count,
+                int elementSize, int size, String proposedType, String proposedName,
+                int boundedSites, int exactLoops, String reason,
+                Set<String> functions, String evidenceSites) {
+            this.apply = apply;
+            this.owner = owner;
+            this.offset = offset;
+            this.count = count;
+            this.elementSize = elementSize;
+            this.size = size;
+            this.proposedType = proposedType;
+            this.proposedName = proposedName;
+            this.boundedSites = boundedSites;
+            this.exactLoops = exactLoops;
+            this.reason = reason;
+            this.functions = new TreeSet<>(functions);
+            this.evidenceSites = evidenceSites;
         }
     }
     private static class FieldProposal {

@@ -55,7 +55,8 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
     }
     return;
   }
-  this_01 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,local_24->field_0024,param_2,CASE_1);
+  this_01 = STAllPlayersC::GetObjPtr
+                      (g_allPlayers_007FA174,local_24->field_0024,(ushort)param_2,CASE_1);
   local_18 = this_01;
   if (param_1 == 1) {
     iVar3 = (*this_01->vtable->vfunc_2C)();

@@ -9,7 +9,11 @@
    Evidence: 004FB060 -> 004F42A0 @ 004FD148 | 004FB060 -> 004F42A0 @ 004FD176
 
    [STPrototypeApplier] Propagated parameter 4.
-   Evidence: 004FB060 -> 004F42A0 @ 004FD148 | 004FB060 -> 004F42A0 @ 004FD176 */
+   Evidence: 004FB060 -> 004F42A0 @ 004FD148 | 004FB060 -> 004F42A0 @ 004FD176
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall
 CPanelTy::PaintTab(CPanelTy *this,byte param_1,STMessage *param_2,byte param_3,char *text,
@@ -80,18 +84,18 @@ cf_common_join_004F4331:
       local_8 = cMf32::RecGet(g_cMf32_00806790,param_3,text_00,(int *)0x0,1);
       pCVar3 = local_14;
       uVar2 = (uint)param_1;
-      DibPut((AnonShape_006B5B10_E0D06CF1 *)(&local_14->field_0180)[uVar2],local_10,local_c,param_3,
-             (byte *)local_8);
+      DibPut((AnonShape_006B5B10_E0D06CF1 *)local_14->field_0148[uVar2 + 0xe],local_10,local_c,
+             param_3,(byte *)local_8);
       cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);
       if ((*(int *)((param_2->arg0).u32 + 4) == 3) && (param_5 != (char *)0x0)) {
         local_8 = cMf32::RecGet(g_cMf32_00806790,6,param_5,(int *)0x0,1);
-        DibPut((AnonShape_006B5B10_E0D06CF1 *)(&pCVar3->field_0180)[uVar2],local_10,local_c,'\x06',
-               (byte *)local_8);
+        DibPut((AnonShape_006B5B10_E0D06CF1 *)pCVar3->field_0148[uVar2 + 0xe],local_10,local_c,
+               '\x06',(byte *)local_8);
         cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);
       }
-      if ((param_1 < 0xb) && (-1 < (&pCVar3->field_0148)[uVar2])) {
+      if ((param_1 < 0xb) && (-1 < (int)pCVar3->field_0148[uVar2])) {
         Library::DKW::DDX::FUN_006b3640
-                  ((int *)PTR_008075a8,(&pCVar3->field_0148)[uVar2],0xffffffff,
+                  ((int *)PTR_008075a8,(uint)pCVar3->field_0148[uVar2],0xffffffff,
                    (&pCVar3->field_003C)[uVar2],(&pCVar3->field_0094)[uVar2]);
       }
       g_currentExceptionFrame = local_58.previous;

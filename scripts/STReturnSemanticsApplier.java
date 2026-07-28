@@ -58,6 +58,11 @@ public class STReturnSemanticsApplier extends GhidraScript {
         if (!enabled(row.get("apply"))) {
             report.add(new Report(addressText, row.get("semantic_id"), "disabled", "apply=0")); return;
         }
+        // Refuse stale proposal files emitted by the short-lived unsafe rollback heuristic.
+        if ("revert_unsafe_ignored_eax_void".equals(row.get("semantic_id"))) {
+            report.add(new Report(addressText, row.get("semantic_id"), "disabled",
+                "obsolete unsafe rollback proposal; rerun STReturnSemanticsAnalyzer")); return;
+        }
         try {
             Address address = currentProgram.getAddressFactory().getAddress(addressText);
             Function function = address == null ? null : currentProgram.getFunctionManager().getFunctionAt(address);
@@ -82,7 +87,10 @@ public class STReturnSemanticsApplier extends GhidraScript {
             }
             function.setReturnType(proposed, SourceType.ANALYSIS);
             function.setNoReturn(proposedNoReturn);
-            function.addTag(TAG); addComment(function, row);
+            function.addTag(TAG);
+            if ("repair_unsafe_eax_rollback".equals(row.get("semantic_id")))
+                removeCommentBlock(function, "revert_unsafe_ignored_eax_void");
+            addComment(function, row);
             report.add(new Report(addressText, row.get("semantic_id"), "applied",
                 row.get("proposed_return_type") + ", noreturn=" + proposedNoReturn));
         }
@@ -93,6 +101,23 @@ public class STReturnSemanticsApplier extends GhidraScript {
         String old = function.getComment();
         if (old == null || old.isBlank()) function.setComment(block);
         else if (!old.contains(MARKER + " " + row.get("semantic_id"))) function.setComment(old + "\n\n" + block);
+    }
+    private void removeCommentBlock(Function function, String semantic) {
+        String comment = function.getComment();
+        if (comment == null || comment.isBlank()) return;
+        String marker = MARKER + " " + semantic;
+        int start = comment.indexOf(marker);
+        if (start < 0) return;
+        int end = comment.indexOf("\n\n[", start + marker.length());
+        if (end < 0) end = comment.length();
+        else end += 2; // Preserve the '[' which starts the following block.
+        int removeStart = start;
+        while (removeStart > 0 && comment.charAt(removeStart - 1) == '\n') removeStart--;
+        String before = comment.substring(0, removeStart).trim();
+        String after = comment.substring(end).trim();
+        String cleaned = before.isBlank() ? after :
+            after.isBlank() ? before : before + "\n\n" + after;
+        function.setComment(cleaned.isBlank() ? null : cleaned);
     }
     private DataType resolve(String specification) {
         if (specification.startsWith("pointer:")) {

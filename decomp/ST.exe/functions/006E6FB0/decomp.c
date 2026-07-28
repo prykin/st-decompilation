@@ -50,7 +50,7 @@ FUN_006e6fb0(void *this,AnonShape_006B5B10_E0D06CF1 *param_1,int param_2,int par
     if (param_4 != 0) {
       iVar6 = param_1->field_0008;
       DAT_00856d8c = (uint)param_1->field_000E * param_1->field_0004 + 0x1f >> 3 & 0x1ffffffc;
-      iVar5 = FUN_006b4fa0((int)param_1);
+      iVar5 = FUN_006b4fa0((int *)param_1);
       local_2c = ((iVar6 - param_3) + -1) * DAT_00856d8c + param_2 + iVar5;
       local_4c = *(int *)((int)this + 0x41c);
       if (*(int *)((int)this + 0x310) < *(int *)((int)this + 0x41c)) {

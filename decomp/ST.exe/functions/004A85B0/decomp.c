@@ -14,7 +14,7 @@ void __thiscall STGroupBoatC::StartReceiveOrderSound(STGroupBoatC *this,int para
   int iVar4;
   uint index;
   uint uVar5;
-  uint local_8;
+  undefined1 local_8 [4];
 
   uVar5 = 0;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -22,9 +22,12 @@ void __thiscall STGroupBoatC::StartReceiveOrderSound(STGroupBoatC *this,int para
   if (uVar1 != 0) {
     index = 0;
     do {
-      DArrayGetElement((DArrayTy *)this->field_0029,index,&local_8);
-      if ((short)local_8 != -1) {
-        pSVar3 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,this->field_0024,local_8,CASE_1);
+      DArrayGetElement((DArrayTy *)this->field_0029,index,local_8);
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+      if (local_8._0_2_ != 0xffff) {
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+        pSVar3 = STAllPlayersC::GetObjPtr
+                           (g_allPlayers_007FA174,this->field_0024,local_8._0_2_,CASE_1);
         if (pSVar3 == (STGameObjC *)0x0) {
           iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x172d,0,0,
                                      "%s","STGroupBoatC::StartReceiveOrderSound NULL");

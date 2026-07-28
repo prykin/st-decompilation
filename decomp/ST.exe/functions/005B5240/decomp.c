@@ -16,10 +16,14 @@
    005B5240 @ 005B6DDF
 
    [STPrototypeApplier] Propagated parameter 19.
-   Evidence: 005B5240 parameter used as this of ccFntTy::CreateTypeSSpr @ 005B540A */
+   Evidence: 005B5240 parameter used as this of ccFntTy::CreateTypeSSpr @ 005B540A
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=9, used=0), and
+   decompilation contains no value return */
 
 void __thiscall
-MMObjTy::InitSprBut(MMObjTy *this,AnonShape_005B5240_B2C8755B *param_1,char *text,int param_3,
+MMObjTy::InitSprBut(MMObjTy *this,RecoveredRecord_MMObjTy_005B5240 *param_1,char *text,int param_3,
                    int param_4,int param_5,int param_6,undefined4 param_7,undefined4 param_8,
                    undefined4 param_9,undefined4 param_10,uint param_11,char *param_12,int param_13,
                    int param_14,undefined4 param_15,undefined4 param_16,undefined4 param_17,

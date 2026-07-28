@@ -24,8 +24,7 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   AnonPointee_FSGSTy_1A97 *pAVar12;
   LPSTR text;
   int iVar13;
-  undefined1 uVar14;
-  byte bVar15;
+  byte bVar14;
   undefined4 local_450 [256];
   InternalExceptionFrame local_50;
   FSGSTy *local_c;
@@ -81,7 +80,7 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   this_01->field_1A5B->field_0140 = 0xf;
   Library::Ourlib::PALETTE::FUN_00718780
             ((int)local_450,0,0x100,0x8b,0x15,(undefined4 *)&this_01->field_1A5B->field_0x144);
-  pvVar6 = (HGDIOBJ)FUN_006c6a60((int)this_01->field_005D);
+  pvVar6 = (HGDIOBJ)FUN_006c6a60(this_01->field_005D);
   this_01->field_1A67 = pvVar6;
   this_01->field_1F5B = this_01->field_0008;
   this_01->field_1F3B = this_01->field_0008;
@@ -121,23 +120,23 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
     local_8 = ((uint)(ushort)pAVar12->field_000E * pAVar12->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
               pAVar12->field_0008;
   }
-  puVar9 = (undefined4 *)FUN_006b4fa0((int)pAVar12);
+  puVar9 = (undefined4 *)FUN_006b4fa0((int *)pAVar12);
   for (uVar11 = local_8 >> 2; uVar11 != 0; uVar11 = uVar11 - 1) {
     *puVar9 = 0xffffffff;
     puVar9 = puVar9 + 1;
   }
   iVar4 = 0;
-  bVar15 = 0;
+  bVar14 = 0;
   for (uVar11 = local_8 & 3; uVar11 != 0; uVar11 = uVar11 - 1) {
     *(undefined1 *)puVar9 = 0xff;
     puVar9 = (undefined4 *)((int)puVar9 + 1);
   }
   text = FUN_006f2c00("MM_BAN_",2,this_01->field_1A93);
-  puVar5 = Library::Ourlib::MFIMG::mfImgLoad(g_cMf32_00806780,6,text,bVar15,iVar4);
+  puVar5 = Library::Ourlib::MFIMG::mfImgLoad(g_cMf32_00806780,6,text,bVar14,iVar4);
   DibPut((AnonShape_006B5B10_E0D06CF1 *)this_01->field_1A97,0,0,'\x06',(byte *)puVar5);
   pAVar12 = this_01->field_1A97;
   FUN_006b2330(PTR_008075a8,(uint *)&this_01->field_1A8F,0x31,0x4023f6,pAVar12->field_0004,
-               pAVar12->field_0008,(uint)pAVar12);
+               pAVar12->field_0008,(ushort *)pAVar12);
   Library::DKW::DDX::FUN_006b3640
             ((int *)PTR_008075a8,this_01->field_1A8F,0xffffffff,g_nWidth_00806730 - 0x24d,0);
   iVar4 = 1;
@@ -149,7 +148,7 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   this_01->field_1ABB = 0;
   piVar1 = &this_01->field_1ABC;
   FUN_006b2330(PTR_008075a8,(uint *)piVar1,0x31,0x4023f6,*(uint *)(puVar5 + 2),*(uint *)(puVar5 + 4)
-               ,(uint)puVar5);
+               ,puVar5);
   Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,*piVar1,0xffffffff,0xb4,0xaa);
   FUN_006b3af0((int *)PTR_008075a8,*piVar1);
   SpriteClassTy::InitSprite
@@ -224,7 +223,7 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   Library::DKW::TBL::FUN_006b5aa0(&this_01->field_1B08->flags,"Nothing to do");
   PaintFSGS(this_01,'\x01');
   thunk_FUN_0055ddf0((undefined4 *)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,(int *)PTR_008075a8
-                     ,(int)this_01->field_005D,10,2);
+                     ,this_01->field_005D,10,2);
   if ((5 < param_1) && (param_1 < 9)) {
     pDVar7 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,100,100);
     this_01->field_1E9E = &pDVar7->flags;
@@ -232,11 +231,11 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   this_01->field_1A62 = 0;
   if (param_1 == 6) {
     this_01->field_1A5F = CASE_6;
-    uVar14 = 8;
+    bVar14 = 8;
   }
   else if (param_1 == 7) {
     this_01->field_1A5F = CASE_7;
-    uVar14 = 7;
+    bVar14 = 7;
   }
   else {
     if (param_1 != 8) {
@@ -245,9 +244,9 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
       goto LAB_00596510;
     }
     this_01->field_1A5F = CASE_8;
-    uVar14 = 10;
+    bVar14 = 10;
   }
-  SetState(this_01,uVar14);
+  SetState(this_01,bVar14);
 LAB_00596510:
   this_00 = g_cursorClass_00802A30;
   if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {

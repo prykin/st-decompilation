@@ -1,4 +1,7 @@
 
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 0070AD40 -> 0070A5A0 @ 0070AD55 */
+
 void __cdecl FUN_0070ad40(cMf32 *param_1,char *param_2,byte param_3,int param_4)
 
 {

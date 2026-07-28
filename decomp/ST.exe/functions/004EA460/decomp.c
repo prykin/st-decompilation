@@ -8,8 +8,9 @@ undefined4 __thiscall FUN_004ea460(void *this,int param_1,AnonShape_004EA460_7CF
 
   if (((*(int *)((int)this + 0x245) == 4) && (*(int *)((int)this + 0x46c) == 0)) &&
      ((param_2 != (AnonShape_004EA460_7CF77153 *)0x0 ||
-      (iVar3 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,param_1,(int *)&param_2),
-      iVar3 == 0)))) {
+      (iVar3 = STPlaySystemC::sub_006E62D0
+                         (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)param_1,
+                          (int *)&param_2), iVar3 == 0)))) {
     *(undefined4 *)((int)this + 0x46c) = 1;
     *(int *)((int)this + 0x470) = param_1;
     *(undefined4 *)((int)this + 0x48c) = 0;

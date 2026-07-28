@@ -62,6 +62,7 @@ address	status	proposed_name	detail
 00808406	disabled		apply flags are 0
 0080874D	disabled		apply flags are 0
 008087B6	disabled		apply flags are 0
+0080883C	disabled	g_uint_0080883C	apply flags are 0
 00808AF4	disabled		apply flags are 0
 00809960	disabled		apply flags are 0
 0080C3C3	disabled	g__Source_0080C3C3	apply flags are 0
@@ -90,7 +91,6 @@ address	status	proposed_name	detail
 00848A04	disabled		apply flags are 0
 00853DD4	disabled		apply flags are 0
 00853DE4	disabled		apply flags are 0
-00854EB8	disabled	g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8	apply flags are 0
 00854EE8	disabled	g_anonShape_006CEC40_BB23E716_00854EE8	apply flags are 0
 00854EF0	disabled		apply flags are 0
 00854F00	disabled	g_uint_00854F00	apply flags are 0

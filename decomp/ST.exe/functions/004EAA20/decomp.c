@@ -30,7 +30,7 @@ undefined4 __fastcall TLOBaseTy::sub_004EAA20(AnonShape_004D9C80_80F657D3 *param
       this = (STT3DSprC *)thunk_FUN_004ab810(pAVar1);
     }
     param_1->field_05FF = this;
-    iVar2 = STT3DSprC::Init(this,DAT_008073cc,0x5a,0x45,0,0xb4,0x8c,0x11);
+    iVar2 = STT3DSprC::Init(this,DAT_008073cc,0x5a,0x45,(STDcResourcC *)0x0,0xb4,0x8c,0x11);
     if (iVar2 != 0) {
       RaiseInternalException
                 (iVar2,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_tls.cpp",0x56);
@@ -58,7 +58,7 @@ undefined4 __fastcall TLOBaseTy::sub_004EAA20(AnonShape_004D9C80_80F657D3 *param
     (**(code **)(*(int *)param_1 + 0x90))(3,0x279);
   }
   if ((*(int *)&param_1->field_0x4d0 != 1) && (*(int *)&param_1->field_0x4d0 != 3)) {
-    thunk_FUN_004ad430(param_1->field_05FF);
+    thunk_FUN_004ad430((STT3DSprC *)param_1->field_05FF);
     return 0;
   }
   wsprintfA(local_108,"%s","trmmine");
@@ -68,8 +68,8 @@ undefined4 __fastcall TLOBaseTy::sub_004EAA20(AnonShape_004D9C80_80F657D3 *param
               (iVar2,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_tls.cpp",99);
   }
   uVar4 = 10;
-  iVar2 = thunk_FUN_004ad650((int)&param_1->field_0x1d5);
-  uVar3 = thunk_FUN_004ad650(param_1->field_05FF);
+  iVar2 = thunk_FUN_004ad650((STT3DSprC *)&param_1->field_0x1d5);
+  uVar3 = thunk_FUN_004ad650((STT3DSprC *)param_1->field_05FF);
   FUN_006ea340(param_1->field_0211,uVar3,iVar2,uVar4);
   thunk_FUN_004abce0((void *)param_1->field_05FF,0xe,0x28,
                      (-(uint)(*(int *)&param_1->field_0x4d0 != 3) & 0xffffffed) + 0x3b,'\0');

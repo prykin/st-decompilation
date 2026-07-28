@@ -1,5 +1,5 @@
 
-undefined4 * __cdecl FUN_00680650(byte *param_1,undefined4 param_2)
+undefined4 * __cdecl FUN_00680650(byte *param_1,uint param_2)
 
 {
   byte *_Drive;

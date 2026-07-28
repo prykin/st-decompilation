@@ -1,7 +1,11 @@
 
 /* [STMethodOwnerApplier] Structural method owner recovered as STBoatC.
    Evidence: this_call_owners=[STBoatC]; agreed_this_calls=2; incoming_this_accesses=9;
-   incoming_edx_uses=0 */
+   incoming_edx_uses=0
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=12, used=0), and
+   decompilation contains no value return */
 
 void __thiscall STBoatC::sub_0048D930(STBoatC *this)
 

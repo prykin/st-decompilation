@@ -19,8 +19,8 @@ undefined4 __thiscall FUN_004cdef0(void *this,int param_1)
     }
     Library::MSVCRT::FUN_0072da70
               ((undefined4 *)((int)this + iVar2 * 4 + 0x4d0),
-               (undefined4 *)((int)this + iVar2 * 4 + 0x4d4),((iVar2 + 1) * 0x3fffffff + iVar1) * 4)
-    ;
+               (AnonPointee_TLOBaseTy_0607 *)((int)this + iVar2 * 4 + 0x4d4),
+               ((iVar2 + 1) * 0x3fffffff + iVar1) * 4);
     *(int *)((int)this + 0x524) = *(int *)((int)this + 0x524) + -1;
   }
   return 0;

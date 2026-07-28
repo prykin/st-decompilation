@@ -80,7 +80,7 @@ void __thiscall FSGSTy::CheckUpdate(FSGSTy *this)
     uVar8 = ((uint)puVar2[7] * *(int *)(puVar2 + 2) + 0x1f >> 3 & 0x1ffffffc) * *(int *)(puVar2 + 4)
     ;
   }
-  puVar7 = (undefined4 *)FUN_006b4fa0((int)puVar2);
+  puVar7 = (undefined4 *)FUN_006b4fa0((int *)puVar2);
   for (uVar9 = uVar8 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
     *puVar7 = 0xffffffff;
     puVar7 = puVar7 + 1;

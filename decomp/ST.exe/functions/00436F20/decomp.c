@@ -1,7 +1,6 @@
 #include "../../pseudocode_runtime.h"
 
 
-/* WARNING: Type propagation algorithm not settling */
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::CmdToPlsObj
@@ -59,7 +58,7 @@ void __thiscall STAllPlayersC::CmdToPlsObj(STAllPlayersC *this,STControlCommand 
   DArrayTy *pDVar22;
   STPackedValue32 arg_4;
   undefined4 local_1fc;
-  int local_1f6;
+  AnonShape_005EFAE0_B406B78B *local_1f6;
   undefined4 local_1b8 [17];
   STGroupBoatOrderData9 orderData9;
   undefined4 local_150;
@@ -68,7 +67,8 @@ void __thiscall STAllPlayersC::CmdToPlsObj(STAllPlayersC *this,STControlCommand 
   undefined4 local_138;
   DArrayTy *local_134;
   STGroupBoatOrderDataD orderDataD;
-  uint local_118 [2];
+  undefined1 local_118 [4];
+  undefined4 local_114;
   DArrayTy *local_110;
   undefined2 local_10c;
   undefined2 local_10a;
@@ -107,14 +107,14 @@ void __thiscall STAllPlayersC::CmdToPlsObj(STAllPlayersC *this,STControlCommand 
   STGroupBoatOrderData1 orderData;
   int *local_40;
   int local_3c;
-  uint local_38;
+  undefined4 local_38;
   DArrayTy *local_34;
   AiPlrClassTy *local_30;
   DArrayTy *local_2c;
   uint local_28;
   int local_24;
   STAllPlayersC *local_20;
-  uint local_1c;
+  undefined4 local_1c;
   undefined1 local_18;
   undefined1 local_17;
   undefined2 local_16;
@@ -123,9 +123,9 @@ void __thiscall STAllPlayersC::CmdToPlsObj(STAllPlayersC *this,STControlCommand 
   STGameObjC *local_8;
 
   bVar1 = command->playerId;
-  sVar18 = command->objectId;
+  uVar2 = command->objectId;
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  local_38 = CONCAT22((short)((uint)this >> 0x10),sVar18);
+  local_38 = CONCAT22((short)((uint)this >> 0x10),uVar2);
   local_8 = (STGameObjC *)0x0;
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   uVar7._0_2_ = command->objectId;
@@ -140,10 +140,10 @@ void __thiscall STAllPlayersC::CmdToPlsObj(STAllPlayersC *this,STControlCommand 
       if (uVar7 != 2) {
         return;
       }
-      if (sVar18 == -1) {
+      if (uVar2 == 0xffff) {
         return;
       }
-      pSVar8 = GetObjPtr(g_allPlayers_007FA174,bVar1,local_38,CASE_3);
+      pSVar8 = GetObjPtr(g_allPlayers_007FA174,bVar1,uVar2,CASE_3);
       if (pSVar8 == (STGameObjC *)0x0) {
         return;
       }
@@ -159,10 +159,10 @@ void __thiscall STAllPlayersC::CmdToPlsObj(STAllPlayersC *this,STControlCommand 
       thunk_FUN_006270e0(pSVar8,0x15,(undefined1 *)&local_24);
       return;
     }
-    if (sVar18 == -1) {
+    if (uVar2 == 0xffff) {
       return;
     }
-    local_8 = GetObjPtr(g_allPlayers_007FA174,bVar1,local_38,CASE_1);
+    local_8 = GetObjPtr(g_allPlayers_007FA174,bVar1,uVar2,CASE_1);
     if (local_8 == (STGameObjC *)0x0) {
       return;
     }
@@ -224,7 +224,7 @@ void __thiscall STAllPlayersC::CmdToPlsObj(STAllPlayersC *this,STControlCommand 
       }
 cf_common_exit_00437191:
       local_8c.field_0014 = &command->unknown_00;
-      (*local_8->vtable->GetMessage)(local_8,&local_8c);
+      local_8->GetMessage(&local_8c);
       return;
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     case 0x29:
@@ -253,7 +253,7 @@ cf_common_exit_00437191:
       return;
     }
   }
-  if (sVar18 == -1) {
+  if (uVar2 == 0xffff) {
     return;
   }
   local_1c = local_38;
@@ -263,7 +263,7 @@ cf_common_exit_00437191:
     switch((pSVar5->packed).variant) {
     case 0x11:
       if (command->secondaryPayloadSize == 0) {
-        pSVar10 = thunk_FUN_0042b760(bVar1,local_38);
+        pSVar10 = thunk_FUN_0042b760(bVar1,uVar2);
         if (pSVar10 == (STGroupBoatC *)0x0) {
           return;
         }
@@ -294,7 +294,7 @@ cf_common_exit_00437191:
       return;
     case 0x15:
       if (command->secondaryPayloadSize == 0) {
-        pSVar10 = thunk_FUN_0042b760(bVar1,local_38);
+        pSVar10 = thunk_FUN_0042b760(bVar1,uVar2);
         if (pSVar10 == (STGroupBoatC *)0x0) {
           return;
         }
@@ -328,7 +328,7 @@ cf_common_exit_00437191:
       return;
     case 0x16:
       if (command->secondaryPayloadSize == 0) {
-        pSVar10 = thunk_FUN_0042b760(bVar1,local_38);
+        pSVar10 = thunk_FUN_0042b760(bVar1,uVar2);
         if (pSVar10 == (STGroupBoatC *)0x0) {
           return;
         }
@@ -359,7 +359,7 @@ cf_common_exit_00437191:
       return;
     case 0x17:
       if (command->secondaryPayloadSize == 0) {
-        pSVar10 = thunk_FUN_0042b760(bVar1,local_38);
+        pSVar10 = thunk_FUN_0042b760(bVar1,uVar2);
         if (pSVar10 == (STGroupBoatC *)0x0) {
           return;
         }
@@ -411,8 +411,8 @@ cf_common_exit_00437191:
   }
   pAVar20 = local_30;
   if (((local_30 != (AiPlrClassTy *)0x0) &&
-      (pSVar10 = thunk_FUN_0042b760(command->playerId,local_1c), pSVar10 != (STGroupBoatC *)0x0)) &&
-     (pSVar10->field_001C != 0)) {
+      (pSVar10 = thunk_FUN_0042b760(command->playerId,(ushort)local_1c),
+      pSVar10 != (STGroupBoatC *)0x0)) && (pSVar10->field_001C != 0)) {
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     if ((command->commandType == 0x29) && ((command->payload->packed).variant == 1)) {
       return;
@@ -422,7 +422,7 @@ cf_common_exit_00437191:
     AddObjsToGroup(local_20,command->playerId,0xfffe,(uint *)pDVar9,(undefined2 *)&local_1c);
     DArrayDestroy(pDVar9);
   }
-  pSVar10 = thunk_FUN_0042b760(command->playerId,local_1c);
+  pSVar10 = thunk_FUN_0042b760(command->playerId,(ushort)local_1c);
   if (pSVar10 == (STGroupBoatC *)0x0) {
     return;
   }
@@ -443,7 +443,7 @@ cf_common_exit_00437191:
       Library::DKW::TBL::FUN_006ae1c0(&pDVar9->flags,(undefined4 *)&targetPosition);
       orderData6.mode = 1;
       orderData6.positions = pDVar9;
-      (*pSVar10->vtable->SetOrderData)(pSVar10,CASE_6,&orderData6);
+      pSVar10->SetOrderData(CASE_6,&orderData6);
       DArrayDestroy(pDVar9);
       return;
     }
@@ -451,20 +451,23 @@ cf_common_exit_00437191:
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     orderData.position.y = *(short *)((int)&(command->payload->packed).value_01.words.high + 1);
     STGroupBoatC::sub_0049A500(pSVar10,(undefined2 *)0x0,(undefined2 *)0x0,&orderData.position.z);
-    (*pSVar10->vtable->SetOrderData)(pSVar10,CASE_1,&orderData);
+    pSVar10->SetOrderData(CASE_1,&orderData);
     return;
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   case 0x15:
     local_24 = 4 - (uint)(command->payload->packed).variant;
-    (*pSVar10->vtable->SetOrderData)(pSVar10,CASE_7,&local_24);
+    pSVar10->SetOrderData(CASE_7,&local_24);
     return;
   case 0x16:
     pSVar5 = command->payload;
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     switch((pSVar5->packed).variant) {
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     case 0:
     case 5:
-      STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,(pSVar5->position32).x,(int *)&local_8);
+      STPlaySystemC::sub_006E62D0
+                (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)(pSVar5->packed).value_01,
+                 (int *)&local_8);
       if (local_8 == (STGameObjC *)0x0) {
         return;
       }
@@ -496,16 +499,19 @@ LAB_00437842:
       local_14c = (uint)((command->payload->packed).variant != 0);
       local_150 = 0;
       local_148 = pDVar9;
-      (*pSVar10->vtable->SetOrderData)(pSVar10,CASE_2,&local_150);
+      pSVar10->SetOrderData(CASE_2,&local_150);
       DArrayDestroy(pDVar9);
       return;
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     case 1:
-      STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,(pSVar5->position32).x,(int *)&local_8);
+      STPlaySystemC::sub_006E62D0
+                (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)(pSVar5->packed).value_01,
+                 (int *)&local_8);
       if (local_8 != (STGameObjC *)0x0) {
         orderDataF.value_00 = *(byte *)&local_8->field_0024;
         orderDataF.value_01 = local_8->field_0032;
         orderDataF.value_03 = local_8->field_0018;
-        (*pSVar10->vtable->SetOrderData)(pSVar10,CASE_F,&orderDataF);
+        pSVar10->SetOrderData(CASE_F,&orderDataF);
         return;
       }
       break;
@@ -516,7 +522,7 @@ LAB_00437842:
       orderDataE.value_02 = (short)(pSVar5->packed).value_05.bytes.byte1;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       orderDataE.value_04 = (short)(pSVar5->packed).value_05.bytes.byte2;
-      (*pSVar10->vtable->SetOrderData)(pSVar10,CASE_E,&orderDataE);
+      pSVar10->SetOrderData(CASE_E,&orderDataE);
       return;
     }
     break;
@@ -526,13 +532,15 @@ LAB_00437842:
     switch((pSVar5->packed).variant) {
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     case 1:
-      STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,(pSVar5->packed).value_1d,(int *)&local_8);
+      STPlaySystemC::sub_006E62D0
+                (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)(pSVar5->packed).value_1d,
+                 (int *)&local_8);
       if (local_8 != (STGameObjC *)0x0) {
         pDVar9 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
         Library::DKW::TBL::FUN_006ae1c0(&pDVar9->flags,(undefined4 *)&local_8->field_0032);
         local_138 = 0;
         local_134 = pDVar9;
-        (*pSVar10->vtable->SetOrderData)(pSVar10,CASE_5,&local_138);
+        pSVar10->SetOrderData(CASE_5,&local_138);
         DArrayDestroy(pDVar9);
         return;
       }
@@ -547,7 +555,7 @@ LAB_00437842:
       Library::DKW::TBL::FUN_006ae1c0(&pDVar9->flags,(undefined4 *)&targetPosition);
       orderData6.mode = 0;
       orderData6.positions = pDVar9;
-      (*pSVar10->vtable->SetOrderData)(pSVar10,CASE_6,&orderData6);
+      pSVar10->SetOrderData(CASE_6,&orderData6);
       DArrayDestroy(pDVar9);
       return;
     case 3:
@@ -565,7 +573,7 @@ LAB_00437842:
         Library::DKW::TBL::FUN_006ae1c0(&pDVar9->flags,(undefined4 *)&pSVar12[1].field_0xe);
         orderData4.mode = 0;
         orderData4.objectIds = pDVar9;
-        (*pSVar10->vtable->SetOrderData)(pSVar10,CASE_4,&orderData4);
+        pSVar10->SetOrderData(CASE_4,&orderData4);
         DArrayDestroy(pDVar9);
         return;
       }
@@ -573,13 +581,13 @@ LAB_00437842:
     case 10:
       orderData4.mode = 1;
       orderData4.objectIds = (DArrayTy *)0x0;
-      (*pSVar10->vtable->SetOrderData)(pSVar10,CASE_4,&orderData4);
+      pSVar10->SetOrderData(CASE_4,&orderData4);
       return;
     case 0x10:
       orderPosition14.x = (pSVar5->position16).x;
       orderPosition14.y = (pSVar5->position16).y;
       orderPosition14.z = (pSVar5->position16).z;
-      (*pSVar10->vtable->SetOrderData)(pSVar10,CASE_14,&orderPosition14);
+      pSVar10->SetOrderData(CASE_14,&orderPosition14);
       return;
     case 0x13:
       sVar18 = (pSVar5->position16).x;
@@ -595,7 +603,7 @@ LAB_00437842:
         orderData11.position.x = (pSVar5->position16).x;
         orderData11.position.y = (pSVar5->position16).y;
         orderData11.position.z = (pSVar5->position16).z;
-        (*pSVar10->vtable->SetOrderData)(pSVar10,CASE_11,&orderData11);
+        pSVar10->SetOrderData(CASE_11,&orderData11);
         return;
       }
       break;
@@ -604,13 +612,13 @@ LAB_00437842:
       orderData11.position.z = 0;
       orderData11.position.y = 0;
       orderData11.position.x = 0;
-      (*pSVar10->vtable->SetOrderData)(pSVar10,CASE_11,&orderData11);
+      pSVar10->SetOrderData(CASE_11,&orderData11);
       return;
     case 0x18:
       orderPosition13.x = (pSVar5->position16).x;
       orderPosition13.y = (pSVar5->position16).y;
       orderPosition13.z = (pSVar5->position16).z;
-      (*pSVar10->vtable->SetOrderData)(pSVar10,CASE_13,&orderPosition13);
+      pSVar10->SetOrderData(CASE_13,&orderPosition13);
       return;
     }
     break;
@@ -675,33 +683,33 @@ LAB_00437842:
       uVar21 = 0xfffffffe;
       break;
     case 8:
-      (*pSVar10->vtable->vfunc_18)(pSVar10,0,0,0);
+      pSVar10->vfunc_18(0,0,0);
       thunk_FUN_0043fc50(CASE_11,0);
       goto switchD_004384bc_default;
     case 9:
       pSVar15 = pSVar10->vtable;
       dVar14 = (*pSVar15->slot_24)(pSVar10);
-      dVar13 = (*pSVar10->vtable->slot_20)(pSVar10);
+      dVar13 = pSVar10->slot_20();
       (*pSVar15->vfunc_18)(pSVar10,0xffffffff,dVar13 + 1,dVar14);
       goto switchD_004384bc_default;
     case 10:
       pSVar15 = pSVar10->vtable;
       dVar14 = (*pSVar15->slot_24)(pSVar10);
-      dVar13 = (*pSVar10->vtable->slot_20)(pSVar10);
+      dVar13 = pSVar10->slot_20();
       (*pSVar15->vfunc_18)(pSVar10,0xffffffff,dVar13 - 1,dVar14);
       goto switchD_004384bc_default;
     case 0xb:
       pSVar15 = pSVar10->vtable;
       dVar14 = (*pSVar15->slot_24)(pSVar10);
       iVar16 = dVar14 + 0x2d;
-      dVar14 = (*pSVar10->vtable->slot_20)(pSVar10);
+      dVar14 = pSVar10->slot_20();
       (*pSVar15->vfunc_18)(pSVar10,0xffffffff,dVar14,iVar16);
       goto switchD_004384bc_default;
     case 0xc:
       pSVar15 = pSVar10->vtable;
       dVar14 = (*pSVar15->slot_24)(pSVar10);
       iVar16 = dVar14 - 0x2d;
-      dVar14 = (*pSVar10->vtable->slot_20)(pSVar10);
+      dVar14 = pSVar10->slot_20();
       (*pSVar15->vfunc_18)(pSVar10,0xffffffff,dVar14,iVar16);
     default:
       goto switchD_004384bc_default;
@@ -719,11 +727,11 @@ switchD_004384bc_default:
       orderData.position.x = (pSVar5->position16).x;
       orderData.position.y = (pSVar5->position16).y;
       STGroupBoatC::sub_0049A500(pSVar10,(undefined2 *)0x0,(undefined2 *)0x0,&orderData.position.z);
-      (*pSVar10->vtable->SetOrderData)(pSVar10,CASE_1,&orderData);
+      pSVar10->SetOrderData(CASE_1,&orderData);
       return;
     case 8:
 cf_common_exit_0043824D:
-      (*pSVar10->vtable->SetOrderData)(pSVar10,CASE_3,(void *)0x0);
+      pSVar10->SetOrderData(CASE_3,(void *)0x0);
       return;
     case 9:
     case 10:
@@ -731,7 +739,7 @@ cf_common_exit_0043824D:
     case 0xc:
       STGroupBoatC::sub_0049A500
                 (pSVar10,(undefined2 *)&orderData,&orderData.position.y,&orderData.position.z);
-      (*pSVar10->vtable->SetOrderData)(pSVar10,CASE_1,&orderData);
+      pSVar10->SetOrderData(CASE_1,&orderData);
       return;
     }
     break;
@@ -743,7 +751,7 @@ cf_common_exit_0043824D:
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     orderDataD.position.z = *(short *)((int)&(pSVar5->packed).value_05.words.high + 1);
     orderDataD.value_06 = -1;
-    (*pSVar10->vtable->SetOrderData)(pSVar10,CASE_D,&orderDataD);
+    pSVar10->SetOrderData(CASE_D,&orderDataD);
     return;
   case 0x1a:
     pSVar5 = command->payload;
@@ -756,7 +764,7 @@ cf_common_exit_0043824D:
       orderData10.targetPosition.x = (pSVar5->position16).x;
       orderData10.targetPosition.y = (pSVar5->position16).y;
       orderData10.targetPosition.z = (pSVar5->position16).z;
-      (*pSVar10->vtable->SetOrderData)(pSVar10,CASE_10,&orderData10);
+      pSVar10->SetOrderData(CASE_10,&orderData10);
       return;
     }
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -775,7 +783,7 @@ cf_common_exit_0043824D:
                       (int)orderData10.sourcePosition.y * (int)g_worldGrid.sizeX +
                       (int)orderData10.sourcePosition.x].objects[0], pSVar12 != (STWorldObject *)0x0
           && (pSVar12->value_20 == 1000)))) {
-        iVar16 = (*pSVar12->vtable->GetObjectTypeId)(pSVar12);
+        iVar16 = pSVar12->GetObjectTypeId();
         if (iVar16 == 0x37) {
           orderData10.mode = 0;
           orderData10.targetPosition.x = 0;
@@ -783,7 +791,7 @@ cf_common_exit_0043824D:
           orderData10.targetPosition.z = 0;
         }
         else {
-          iVar16 = (*pSVar12->vtable->GetObjectTypeId)(pSVar12);
+          iVar16 = pSVar12->GetObjectTypeId();
           if (iVar16 != 0x6c) {
             return;
           }
@@ -795,7 +803,7 @@ cf_common_exit_0043824D:
           }
           orderData10.mode = 1;
         }
-        (*pSVar10->vtable->SetOrderData)(pSVar10,CASE_10,&orderData10);
+        pSVar10->SetOrderData(CASE_10,&orderData10);
         return;
       }
     }
@@ -835,14 +843,14 @@ cf_common_exit_0043824D:
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       orderPosition12.y = (pSVar5->packed).value_01.words.high;
       orderPosition12.z = (pSVar5->position16).y;
-      (*pSVar10->vtable->SetOrderData)(pSVar10,CASE_12,&orderPosition12);
+      pSVar10->SetOrderData(CASE_12,&orderPosition12);
       return;
     }
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     if ((pSVar5->packed).variant == 1) {
       pDVar9 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
       Library::DKW::TBL::FUN_006ae1c0(&pDVar9->flags,(undefined4 *)&pSVar12[1].field_0xe);
-      local_118[1] = 0;
+      local_114 = 0;
       local_102 = 0xffff;
       local_104 = 0xffff;
       local_106 = 0xffff;
@@ -850,7 +858,7 @@ cf_common_exit_0043824D:
       local_10a = 0xffff;
       local_10c = 0xffff;
       local_110 = pDVar9;
-      local_100 = (*pSVar12->vtable->GetObjectTypeId)(pSVar12);
+      local_100 = pSVar12->GetObjectTypeId();
       local_fc = 1;
       local_f8 = (DArrayTy *)0x0;
       local_ea = 0xffff;
@@ -859,7 +867,7 @@ cf_common_exit_0043824D:
       local_f0 = 0xffff;
       local_f2 = 0xffff;
       local_f4 = 0xffff;
-      (*pSVar10->vtable->SetOrderData)(pSVar10,CASE_8,local_118 + 1);
+      pSVar10->SetOrderData(CASE_8,&local_114);
       DArrayDestroy(pDVar9);
       return;
     }
@@ -881,14 +889,15 @@ cf_common_exit_00437E03:
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       orderPositionA.y = (pSVar5->packed).value_01.words.high;
       orderPositionA.z = (pSVar5->position16).y;
-      (*pSVar10->vtable->SetOrderData)(pSVar10,CASE_A,&orderPositionA);
+      pSVar10->SetOrderData(CASE_A,&orderPositionA);
       pAVar20 = local_30;
     }
     else {
       uVar7 = 0;
       do {
         DArrayGetElement(pDVar9,uVar7,local_118);
-        pSVar8 = GetObjPtr(g_allPlayers_007FA174,pSVar10->field_0024,local_118[0],CASE_1);
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+        pSVar8 = GetObjPtr(g_allPlayers_007FA174,pSVar10->field_0024,local_118._0_2_,CASE_1);
         iVar16 = (*pSVar8->vtable->vfunc_2C)();
         if ((((iVar16 == 8) || (iVar16 = (*pSVar8->vtable->vfunc_2C)(), iVar16 == 0x14)) ||
             (iVar16 = (*pSVar8->vtable->vfunc_2C)(), iVar16 == 0x1a)) &&
@@ -947,7 +956,7 @@ LAB_00437c45:
         iVar16 = 2;
       }
 LAB_00437cb5:
-      local_118[1] = 0;
+      local_114 = 0;
       if (iVar16 == 0) {
         local_100 = 0x38;
         local_110 = local_6c;
@@ -991,7 +1000,7 @@ LAB_00437cb5:
       local_f0 = 0xffff;
       local_f2 = 0xffff;
       local_f4 = 0xffff;
-      (*pSVar10->vtable->SetOrderData)(pSVar10,CASE_8,local_118 + 1);
+      pSVar10->SetOrderData(CASE_8,&local_114);
     }
     DArrayDestroy(pDVar9);
     DArrayDestroy(local_6c);
@@ -1006,20 +1015,20 @@ LAB_00437cb5:
     if (bVar1 == 1) {
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_64 = (pSVar5->packed).value_01;
-      (*pSVar10->vtable->SetOrderData)(pSVar10,CASE_15,&local_64);
+      pSVar10->SetOrderData(CASE_15,&local_64);
       return;
     }
     if (bVar1 == 3) {
       orderPositionC.z = -1;
       orderPositionC.y = -1;
       orderPositionC.x = -1;
-      (*pSVar10->vtable->SetOrderData)(pSVar10,CASE_C,&orderPositionC);
+      pSVar10->SetOrderData(CASE_C,&orderPositionC);
       return;
     }
     if (bVar1 == 4) {
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_60 = (pSVar5->packed).value_01;
-      (*pSVar10->vtable->SetOrderData)(pSVar10,CASE_B,&local_60);
+      pSVar10->SetOrderData(CASE_B,&local_60);
       return;
     }
     break;
@@ -1035,7 +1044,7 @@ LAB_00437cb5:
     orderData9.playerId = (dword)command->playerId;
     orderData9.value_0e = 0;
     orderData9.value_1d = -1;
-    (*pSVar10->vtable->SetOrderData)(pSVar10,CASE_9,&orderData9);
+    pSVar10->SetOrderData(CASE_9,&orderData9);
     return;
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   case 0x28:
@@ -1082,7 +1091,7 @@ LAB_00437cb5:
           iVar16 = (int)sVar18;
         } while (iVar16 < (int)(uint)(ushort)(pSVar5->position16).x);
       }
-      (*pSVar10->vtable->SetOrderData)(pSVar10,CASE_2,&local_150);
+      pSVar10->SetOrderData(CASE_2,&local_150);
       DArrayDestroy(local_148);
       return;
     case 3:
@@ -1098,7 +1107,7 @@ LAB_00437cb5:
           iVar16 = (int)sVar18;
         } while (iVar16 < (int)(uint)(ushort)(pSVar5->position16).x);
       }
-      (*pSVar10->vtable->SetOrderData)(pSVar10,CASE_5,&local_138);
+      pSVar10->SetOrderData(CASE_5,&local_138);
       DArrayDestroy(local_134);
       return;
     case 4:

@@ -100,7 +100,7 @@ void __thiscall OpticClassC::InitOptic(OpticClassC *this)
     pcVar4 = &DAT_008087e9;
     do {
       if (*pcVar4 == DAT_0080874d) {
-        thunk_FUN_004ab470(*(int *)((int)&DAT_008087eb + iVar3 * 0x51),
+        thunk_FUN_004ab470(*(uint **)((int)&DAT_008087eb + iVar3 * 0x51),
                            *(int *)((int)&DAT_008087ef + iVar3 * 0x51));
         g_currentExceptionFrame = local_5c.previous;
         return;

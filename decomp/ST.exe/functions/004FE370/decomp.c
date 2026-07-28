@@ -3,7 +3,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel1.cpp
-   CPanelTy::PaintName */
+   CPanelTy::PaintName
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=6, used=0), and
+   decompilation contains no value return */
 
 void __thiscall CPanelTy::PaintName(CPanelTy *this,int param_1)
 

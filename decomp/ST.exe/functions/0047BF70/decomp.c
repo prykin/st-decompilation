@@ -19,7 +19,7 @@ int __thiscall STBoatC::BackTeleport(STBoatC *this,int *param_1)
     iVar2 = sub_00460360(this);
     return iVar2;
   case 2:
-    thunk_FUN_00493bc0((int)this);
+    thunk_FUN_00493bc0(this);
     iVar2 = sub_00460360(this);
     return iVar2;
   case 3:

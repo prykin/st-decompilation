@@ -4,7 +4,7 @@ void FUN_005335e0(void)
 {
   char cVar1;
   int iVar2;
-  undefined4 *puVar3;
+  uint *puVar3;
   DWORD DVar4;
   uint uVar5;
   uint uVar6;
@@ -13,7 +13,7 @@ void FUN_005335e0(void)
   char *pcVar9;
   InternalExceptionFrame local_54;
   uint local_10;
-  undefined4 *local_c;
+  uint *local_c;
   undefined4 *local_8;
 
   local_54.previous = g_currentExceptionFrame;
@@ -25,7 +25,7 @@ void FUN_005335e0(void)
   }
   if (DAT_00808783 == '\x03') {
     uVar5 = 0xffffffff;
-    local_c = (undefined4 *)0x0;
+    local_c = (uint *)0x0;
     pcVar7 = (char *)((int)local_8 + 0x1f5);
     pcVar9 = pcVar7;
     do {
@@ -37,7 +37,7 @@ void FUN_005335e0(void)
     local_10 = ~uVar5 + 0xd;
     puVar3 = Library::DKW::LIB::FUN_006aac10(local_10);
     local_c = puVar3;
-    if (puVar3 != (undefined4 *)0x0) {
+    if (puVar3 != (uint *)0x0) {
       *(undefined1 *)puVar3 = 2;
       *(uint *)((int)puVar3 + 1) = ~uVar5;
       *(undefined4 *)((int)puVar3 + 5) = DAT_008087be;

@@ -1,9 +1,12 @@
 
-undefined4 __thiscall FUN_0067a140(void *this,int param_1,int param_2)
+/* [STPrototypeApplier] Propagated return.
+   Evidence: 0067A140 returns literal 65535 at 0067A162 @ 0067A168 */
+
+uint __thiscall FUN_0067a140(void *this,int param_1,int param_2)
 
 {
   undefined4 *puVar1;
-  undefined4 uVar2;
+  uint uVar2;
 
   puVar1 = (undefined4 *)thunk_FUN_00678d90(this,param_1);
   if ((puVar1 != (undefined4 *)0x0) && (param_2 != 0)) {

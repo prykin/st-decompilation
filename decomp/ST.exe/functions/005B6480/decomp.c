@@ -3,7 +3,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\mmenuobj.cpp
-   MMObjTy::CloseButtons */
+   MMObjTy::CloseButtons
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=10, used=0), and
+   decompilation contains no value return */
 
 void __thiscall MMObjTy::CloseButtons(MMObjTy *this)
 

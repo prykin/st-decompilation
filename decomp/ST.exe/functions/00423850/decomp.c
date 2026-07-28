@@ -56,7 +56,8 @@ uint __thiscall STGroupC::AddObj(STGroupC *this,uint param_1,int param_2)
       }
     }
     Library::DKW::TBL::FUN_006ae140(pSVar2->field_0029,uVar7,&param_1);
-    this_00 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,pSVar2->field_0024,param_1,CASE_1);
+    this_00 = STAllPlayersC::GetObjPtr
+                        (g_allPlayers_007FA174,pSVar2->field_0024,(ushort)param_1,CASE_1);
     thunk_FUN_00419c30(this_00,pSVar2->field_0025);
     pSVar2->field_0027 = pSVar2->field_0027 + 1;
     if (param_2 == 1) {
@@ -112,10 +113,10 @@ uint __thiscall STGroupC::AddObj(STGroupC *this,uint param_1,int param_2)
       local_c = local_c | 0x10;
     }
     if (local_c != 0) {
-      (*this_00->vtable->vfunc_100)(this_00,(char)local_c);
+      this_00->vfunc_100((char)local_c);
     }
     if (local_10 != 0) {
-      (*this_00->vtable->vfunc_104)(this_00,(char)local_10);
+      this_00->vfunc_104((char)local_10);
     }
     if (this_00->field_0020 == 0x14) {
       thunk_FUN_004956c0(this_00,pSVar2->field_0039);

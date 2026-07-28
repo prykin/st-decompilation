@@ -38,7 +38,7 @@ undefined4 __thiscall STBHEShellC::sub_005F35F0(STBHEShellC *this,int param_1)
       puVar1 = &pAVar2->field_008F;
       FUN_006e8660(PTR_00807598,(int *)puVar1,1,0,*(uint *)((int)puVar4 + 9),
                    *(uint *)((int)puVar4 + 0xd),0x5a,0x45,0);
-      FUN_006e98e0(PTR_00807598,*puVar1,0,*(undefined4 *)puVar4,*(int *)((int)puVar4 + 0x21),1);
+      FUN_006e98e0(PTR_00807598,*puVar1,0,*(int *)puVar4,*(int *)((int)puVar4 + 0x21),1);
       FUN_006ea270(PTR_00807598,*puVar1,0,pAVar2->field_00AB);
       pAVar2->field_0171 = puVar4;
       if (DAT_00807326 != '\0') {
@@ -58,12 +58,12 @@ undefined4 __thiscall STBHEShellC::sub_005F35F0(STBHEShellC *this,int param_1)
                           (undefined4 *)0x0);
       FUN_006e8660(PTR_00807598,(int *)puVar1,3,0,*(uint *)((int)puVar4 + 9),
                    *(uint *)((int)puVar4 + 0xd),0x5a,0x45,0);
-      FUN_006e98e0(PTR_00807598,*puVar1,0,*(undefined4 *)puVar4,*(int *)((int)puVar4 + 0x21),1);
+      FUN_006e98e0(PTR_00807598,*puVar1,0,*(int *)puVar4,*(int *)((int)puVar4 + 0x21),1);
       FUN_006ea270(PTR_00807598,*puVar1,0,pAVar2->field_00AB);
       puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
                          (DAT_00806764,CASE_1D,"expl_s0",0xffffffff,0,1,0,(undefined4 *)0x0
                          );
-      FUN_006e98e0(PTR_00807598,*puVar1,2,*(undefined4 *)puVar4,*(int *)((int)puVar4 + 0x21),1);
+      FUN_006e98e0(PTR_00807598,*puVar1,2,*(int *)puVar4,*(int *)((int)puVar4 + 0x21),1);
       FUN_006ea270(PTR_00807598,*puVar1,2,pAVar2->field_00C0);
       FUN_006e9d40(PTR_00807598,(uint *)*puVar1,2);
     }

@@ -9,8 +9,8 @@ void __thiscall CPanelTy::PaintNewDeep(CPanelTy *this)
 
 {
   byte *pbVar1;
-  code *pcVar2;
-  uint uVar3;
+  ushort *puVar2;
+  code *pcVar3;
   CPanelTy *pCVar4;
   char cVar5;
   int iVar6;
@@ -45,12 +45,14 @@ void __thiscall CPanelTy::PaintNewDeep(CPanelTy *this)
   local_c = local_c & 0xffffff00;
   do {
     uVar7 = local_c & 0xff;
-    pbVar1 = &pCVar4->field_02A8 + uVar7;
-    if (((&pCVar4->field_02A8)[uVar7] != -1) &&
-       (199 < (uint)(pCVar4->field_0038 - *(int *)(&pCVar4->field_0x2aa + uVar7 * 4)))) {
-      *(undefined4 *)(&pCVar4->field_0x2aa + uVar7 * 4) = pCVar4->field_0038;
-      local_1c = &pCVar4->field_0x2a6 + uVar7;
-      bVar10 = (&pCVar4->field_0x2a6)[uVar7] + 1;
+    pbVar1 = (byte *)((int)pCVar4->field_0308 + (uVar7 - 0x60));
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+    if ((*(char *)((int)pCVar4->field_0308 + (uVar7 - 0x60)) != -1) &&
+       (199 < (uint)(pCVar4->field_0038 - *(int *)((int)pCVar4->field_0308 + uVar7 * 4 + -0x5e)))) {
+      *(undefined4 *)((int)pCVar4->field_0308 + uVar7 * 4 + -0x5e) = pCVar4->field_0038;
+      local_1c = (byte *)((int)pCVar4->field_0308 + (uVar7 - 0x62));
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+      bVar10 = *(char *)((int)pCVar4->field_0308 + (uVar7 - 0x62)) + 1;
       *local_1c = bVar10;
       switch(bVar10) {
       case 1:
@@ -92,7 +94,8 @@ LAB_00500d40:
         break;
       default:
         if ((char)local_c == '\0') {
-          cVar5 = (&pCVar4->field_0xb8d)[(byte)pCVar4->field_02A8];
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+          cVar5 = *(char *)((int)pCVar4->field_0B1F + (byte)pCVar4->field_02A8 + 0x6e);
         }
         else {
           cVar5 = (&pCVar4->field_0xc7b)[*pbVar1];
@@ -139,13 +142,13 @@ LAB_00500d40:
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_14 = CONCAT31(local_14._1_3_,bVar10);
           if (bVar10 < 0xb) {
-            uVar3 = (uint)bVar10;
-            uVar7 = (&pCVar4->field_0148)[uVar3];
+            uVar7 = (uint)bVar10;
+            puVar2 = pCVar4->field_0148[uVar7];
 joined_r0x00500e7c:
-            if (-1 < (int)uVar7) {
+            if (-1 < (int)puVar2) {
               Library::DKW::DDX::FUN_006b3640
-                        ((int *)PTR_008075a8,uVar7,0xffffffff,(&pCVar4->field_003C)[uVar3],
-                         (&pCVar4->field_0094)[uVar3]);
+                        ((int *)PTR_008075a8,(uint)puVar2,0xffffffff,(&pCVar4->field_003C)[uVar7],
+                         (&pCVar4->field_0094)[uVar7]);
             }
           }
         }
@@ -163,8 +166,8 @@ joined_r0x00500e7c:
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_18 = CONCAT31(local_18._1_3_,bVar10);
           if (bVar10 < 0xb) {
-            uVar3 = (uint)bVar10;
-            uVar7 = (&pCVar4->field_0148)[uVar3];
+            uVar7 = (uint)bVar10;
+            puVar2 = pCVar4->field_0148[uVar7];
             goto joined_r0x00500e7c;
           }
         }

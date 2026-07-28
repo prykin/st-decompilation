@@ -9,9 +9,15 @@ import java.io.File;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Deque;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -36,7 +42,11 @@ import ghidra.program.model.symbol.SourceType;
 public class STReturnSemanticsAnalyzer extends GhidraScript {
     private static final Pattern VALUE_RETURN = Pattern.compile("(?m)\\breturn\\s+([^;\\r\\n]+);");
     private static final Pattern BARE_RETURN = Pattern.compile("(?m)\\breturn\\s*;");
+    private static final int RETURN_USE_SCAN_LIMIT = 96;
+    private static final int RETURN_USE_NODE_LIMIT = 192;
     private final List<Failure> failures = new ArrayList<>();
+    private final Map<Address, ReturnUse> returnUses = new HashMap<>();
+    private boolean repairOnly;
 
     @Override
     protected void run() throws Exception {
@@ -44,11 +54,15 @@ public class STReturnSemanticsAnalyzer extends GhidraScript {
         end(true);
         if (currentProgram == null) { printerr("Open the analyzed ST program first."); return; }
         File selected = outputDirectory(); if (selected == null) return;
+        String[] arguments = getScriptArgs();
+        repairOnly = arguments.length > 1 &&
+            "repair-only".equalsIgnoreCase(arguments[1]);
         Path directory = programDirectory(selected); Files.createDirectories(directory);
         DecompInterface decompiler = new DecompInterface();
         decompiler.toggleCCode(true); decompiler.toggleSyntaxTree(false);
         if (!decompiler.openProgram(currentProgram))
             throw new IllegalStateException("Decompiler could not open the current program");
+        if (!repairOnly) collectReturnUses();
         List<Row> rows = new ArrayList<>(); int functionsSeen = 0;
         try {
             FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
@@ -65,17 +79,43 @@ public class STReturnSemanticsAnalyzer extends GhidraScript {
         writeFailures(directory.resolve("return_semantics_failures.tsv"));
         writeSummary(directory.resolve("return_semantics_summary.txt"), functionsSeen, rows);
         println("Return-semantics analysis complete: " + directory.toAbsolutePath().normalize());
-        println("Functions=" + functionsSeen + ", proposals=" + rows.size() + ", apply=" +
+        println("Mode=" + (repairOnly ? "repair-only" : "full") +
+            ", functions=" + functionsSeen + ", proposals=" + rows.size() + ", apply=" +
             rows.stream().filter(row -> row.apply).count() + ", failures=" + failures.size());
     }
 
     private Row analyze(Function function, DecompInterface decompiler) throws Exception {
-        Body body = body(function);
         String currentType = typeSpec(function.getReturnType());
         Parameter returned = function.getReturn();
         boolean mutable = returned.getSource() != SourceType.USER_DEFINED &&
             returned.getSource() != SourceType.IMPORTED;
+        ReturnUse observed = returnUses.get(function.getEntryPoint());
+        /*
+         * A read of EAX after CALL is necessary evidence for a return value, but it is not
+         * sufficient evidence.  Optimized x86 routinely carries a value through EAX across a
+         * call whose source-level return type is void, and SSA joins can make that look like a
+         * call result.  An older version of this pass automatically changed such functions back
+         * to undefined4.  That produced extraout_EAX/in_EAX artifacts in the callee itself.
+         *
+         * Repair only our own earlier mutation, identified by both persistent comments.  This is
+         * not a new semantic guess: it restores the last evidence-backed state and leaves the
+         * contradictory callsites in a review-only row below.
+         */
+        boolean previousUnsafeRollback = mutable && genericUnknown(currentType) &&
+            hasMarker(function, "ignored_eax_void") &&
+            hasMarker(function, "revert_unsafe_ignored_eax_void");
+        if (previousUnsafeRollback)
+            return row(function, currentType, "/void", function.hasNoReturn(), false,
+                true, "repair_unsafe_eax_rollback", "high",
+                "restore the earlier evidence-backed void type after an unsafe automated " +
+                "rollback; post-CALL EAX reads alone do not prove a source-level return value" +
+                observedEvidence(observed));
+        // The export safety pass repairs only a mutation made by this script itself. Ordinary
+        // semantic discovery belongs to deep mode; otherwise export can start a transitive
+        // void-inference chain and fail its own small ABI stabilization bound.
+        if (repairOnly) return null;
 
+        Body body = body(function);
         if (!body.hasRet && body.endsInNoReturnCall && !function.hasNoReturn())
             return row(function, currentType, currentType, false, true, mutable,
                 "noreturn_terminal_call", "high",
@@ -90,10 +130,21 @@ public class STReturnSemanticsAnalyzer extends GhidraScript {
                 "leaf_void", "high",
                 "leaf function has RET and never writes EAX/AX/AL/AH");
 
+        boolean scriptVoidWithContradictoryCallsite = mutable && currentType.equals("/void") &&
+            hasMarker(function, "ignored_eax_void") && observed != null &&
+            (observed.used > 0 || observed.unknown > 0);
+        if (scriptVoidWithContradictoryCallsite)
+            return row(function, currentType, currentType, function.hasNoReturn(), false,
+                false, "void_eax_read_review", "review",
+                "void remains unchanged: one or more callsites retain/read EAX, but that alone " +
+                "does not prove the callee returned it" + observedEvidence(observed));
         boolean pointerCandidate = genericPointerReturn(currentType) &&
             hasEvidenceBackedPointerVariable(function);
         boolean booleanCandidate = genericInteger(currentType) && body.booleanLike;
-        if (!mutable || (!pointerCandidate && !booleanCandidate) ||
+        boolean ignoredReturnCandidate = mutable && genericUnknown(currentType) &&
+            body.hasRet && observed != null && observed.used == 0 &&
+            observed.unknown == 0 && observed.ignored >= 2;
+        if (!mutable || (!pointerCandidate && !booleanCandidate && !ignoredReturnCandidate) ||
                 function.getBody().getNumAddresses() > 0x800) return null;
 
         DecompileResults result = decompiler.decompileFunction(function, 30, monitor);
@@ -105,6 +156,12 @@ public class STReturnSemanticsAnalyzer extends GhidraScript {
         List<String> returns = new ArrayList<>(); Matcher matcher = VALUE_RETURN.matcher(c);
         while (matcher.find()) returns.add(matcher.group(1).trim());
         int bare = 0; matcher = BARE_RETURN.matcher(c); while (matcher.find()) bare++;
+        if (ignoredReturnCandidate && returns.isEmpty())
+            return row(function, currentType, "/void", function.hasNoReturn(), false,
+                true, "ignored_eax_void", "high",
+                "all observed direct callers ignore the return register (ignored=" +
+                observed.ignored + ", used=0, unknown=0), and decompilation contains " +
+                "no value return");
         Row pointer = pointerCandidate && bare == 0 ?
             typedPointerReturn(function, currentType, returns) : null;
         if (pointer != null) return pointer;
@@ -117,6 +174,149 @@ public class STReturnSemanticsAnalyzer extends GhidraScript {
                 returns);
 
         return null;
+    }
+
+    private void collectReturnUses() throws Exception {
+        FunctionIterator callers = currentProgram.getFunctionManager().getFunctions(true);
+        while (callers.hasNext()) {
+            monitor.checkCancelled();
+            Function caller = callers.next();
+            if (caller.isExternal()) continue;
+            InstructionIterator instructions = currentProgram.getListing()
+                .getInstructions(caller.getBody(), true);
+            while (instructions.hasNext()) {
+                Instruction call = instructions.next();
+                if (!"CALL".equalsIgnoreCase(call.getMnemonicString())) continue;
+                Function called = resolveThunk(directCalledFunction(call));
+                if (called == null || called.isExternal()) continue;
+                ReturnUse use = returnUses.computeIfAbsent(called.getEntryPoint(),
+                    ignored -> new ReturnUse());
+                ReturnDisposition disposition = returnDisposition(caller, call);
+                if (disposition == ReturnDisposition.USED) use.used++;
+                else if (disposition == ReturnDisposition.IGNORED) use.ignored++;
+                else use.unknown++;
+            }
+        }
+    }
+
+    private ReturnDisposition returnDisposition(Function caller, Instruction call) {
+        Address start = call.getFallThrough();
+        if (start == null || !caller.getBody().contains(start))
+            return ReturnDisposition.UNKNOWN;
+        Deque<ScanState> pending = new ArrayDeque<>();
+        pending.add(new ScanState(start, 0));
+        Set<Address> visited = new HashSet<>();
+        boolean unknown = false;
+        int killedPaths = 0;
+        int nodes = 0;
+        while (!pending.isEmpty()) {
+            ScanState state = pending.removeFirst();
+            if (!visited.add(state.address)) continue;
+            if (state.distance >= RETURN_USE_SCAN_LIMIT ||
+                    ++nodes > RETURN_USE_NODE_LIMIT) {
+                unknown = true;
+                continue;
+            }
+            Instruction cursor = currentProgram.getListing()
+                .getInstructionAt(state.address);
+            if (cursor == null || !caller.getBody().contains(cursor.getAddress())) {
+                unknown = true;
+                continue;
+            }
+            if (accumulatorWidth(cursor.getInputObjects()) > 0)
+                return ReturnDisposition.USED;
+            String mnemonic = cursor.getMnemonicString().toUpperCase(Locale.ROOT);
+            if (mnemonic.startsWith("RET")) {
+                /*
+                 * RET does not read EAX at the instruction level.  Treating every tail call as
+                 * a used result made generic/incorrect caller return types recursively validate
+                 * one another.  Only a protected non-void caller ABI makes the pass-through
+                 * semantically meaningful; void callers ignore it and generic callers remain
+                 * unknown.
+                 */
+                if (protectedNonVoidReturn(caller)) return ReturnDisposition.USED;
+                if ("/void".equals(typeSpec(caller.getReturnType()))) {
+                    killedPaths++;
+                    continue;
+                }
+                unknown = true;
+                continue;
+            }
+            if (accumulatorWidth(cursor.getResultObjects()) > 0 ||
+                    "CALL".equals(mnemonic)) {
+                killedPaths++;
+                continue;
+            }
+            if (cursor.getFlowType().isTerminal()) {
+                killedPaths++;
+                continue;
+            }
+            int successors = 0;
+            Address fallThrough = cursor.getFallThrough();
+            if (fallThrough != null && caller.getBody().contains(fallThrough)) {
+                pending.addLast(new ScanState(fallThrough, state.distance + 1));
+                successors++;
+            }
+            if (cursor.getFlowType().isJump()) {
+                for (Address flow : cursor.getFlows()) {
+                    if (!caller.getBody().contains(flow)) continue;
+                    pending.addLast(new ScanState(flow, state.distance + 1));
+                    successors++;
+                }
+            }
+            if (successors == 0) unknown = true;
+        }
+        return !unknown && killedPaths > 0 ?
+            ReturnDisposition.IGNORED : ReturnDisposition.UNKNOWN;
+    }
+
+    private boolean hasMarker(Function function, String semantic) {
+        String comment = function.getComment();
+        return comment != null &&
+            comment.contains("[STReturnSemanticsApplier] " + semantic);
+    }
+
+    private boolean protectedNonVoidReturn(Function function) {
+        SourceType source = function.getReturn().getSource();
+        return !"/void".equals(typeSpec(function.getReturnType())) &&
+            (source == SourceType.USER_DEFINED || source == SourceType.IMPORTED);
+    }
+
+    private String observedEvidence(ReturnUse observed) {
+        if (observed == null) return "; no currently resolved direct callsites";
+        return "; machine CFG audit: used=" + observed.used + ", ignored=" +
+            observed.ignored + ", unknown=" + observed.unknown;
+    }
+
+    private int accumulatorWidth(Object[] objects) {
+        int width = 0;
+        for (Object object : objects) {
+            if (!(object instanceof Register register)) continue;
+            String name = register.getName().toUpperCase(Locale.ROOT);
+            if (Set.of("EAX", "RAX").contains(name)) width = Math.max(width, 4);
+            else if ("AX".equals(name)) width = Math.max(width, 2);
+            else if (Set.of("AL", "AH").contains(name)) width = Math.max(width, 1);
+        }
+        return width;
+    }
+
+    private Function directCalledFunction(Instruction instruction) {
+        for (Address flow : instruction.getFlows()) {
+            Function function = currentProgram.getFunctionManager().getFunctionAt(flow);
+            if (function != null) return function;
+        }
+        return null;
+    }
+
+    private Function resolveThunk(Function function) {
+        Set<Address> seen = new HashSet<>();
+        while (function != null && function.isThunk() &&
+                seen.add(function.getEntryPoint())) {
+            Function target = function.getThunkedFunction(false);
+            if (target == null || target.equals(function)) break;
+            function = target;
+        }
+        return function;
     }
 
     /**
@@ -302,9 +502,13 @@ public class STReturnSemanticsAnalyzer extends GhidraScript {
     }
     private void writeSummary(Path path, int functions, List<Row> rows) throws Exception {
         try (BufferedWriter out = Files.newBufferedWriter(path, StandardCharsets.UTF_8)) {
-            out.write("ST return semantics\n\nFunctions: " + functions + "\nProposals: " + rows.size() +
+            out.write("ST return semantics\n\nMode: " +
+                (repairOnly ? "repair-only" : "full") +
+                "\nFunctions: " + functions + "\nProposals: " + rows.size() +
                 "\nAutomatic: " + rows.stream().filter(row -> row.apply).count() + "\n");
-            for (String id : List.of("leaf_void", "typed_pointer_return",
+            for (String id : List.of("leaf_void", "ignored_eax_void",
+                    "repair_unsafe_eax_rollback", "void_eax_read_review",
+                    "typed_pointer_return",
                     "boolean_return_domain", "noreturn_terminal_call"))
                 out.write(id + ": " + rows.stream().filter(row -> row.semantic.equals(id)).count() + "\n");
         }
@@ -334,6 +538,9 @@ public class STReturnSemanticsAnalyzer extends GhidraScript {
     private static String clean(String value) { return value == null ? "" : value.replace('\t',' ').replace('\r',' ').replace('\n',' '); }
     private record Body(boolean hasRet, boolean hasCall, boolean writesAccumulator,
         boolean endsInNoReturnCall, boolean booleanLike) {}
+    private static class ReturnUse { int used, ignored, unknown; }
+    private record ScanState(Address address, int distance) {}
+    private enum ReturnDisposition { USED, IGNORED, UNKNOWN }
     private record Row(boolean apply, String address, String function, String signature,
         String expectedType, String source, boolean expectedNoReturn, String proposedType,
         boolean proposedNoReturn, String semantic, String confidence, String evidence) {}

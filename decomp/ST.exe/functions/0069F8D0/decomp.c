@@ -39,6 +39,7 @@ FUN_0069f8d0(int param_1,int param_2,int param_3,int param_4,int param_5,int par
   local_28 = (undefined2 *)0x0;
   local_18 = (short *)0x0;
   local_20 = 0;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if ((param_4 == param_6) && (iVar3 = 1, param_5 == param_7)) {
 LAB_0069fb6f:
     FreeAndNull(&local_18);
@@ -46,8 +47,10 @@ LAB_0069fb6f:
     if (local_28 != (undefined2 *)0x0) {
       local_20 = 1;
       bVar13 = param_4 != param_6;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_5 = param_4;
       *local_28 = (short)param_4;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_4 = iVar7;
       local_28[1] = (short)iVar7;
       puVar2 = local_28;
@@ -70,7 +73,9 @@ LAB_0069fb6f:
             }
             psVar6 = psVar6 + 2;
           } while ((int)psVar6 < 0x7d8022);
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_5 = local_3c;
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_4 = local_40;
           *local_38 = (short)local_3c;
           puVar2[3] = (short)local_40;
@@ -131,7 +136,7 @@ LAB_0069fc43:
             local_18 = psVar4;
             Library::MSVCRT::FUN_0072da70
                       ((undefined4 *)(local_2c + 0x400 + (int)psVar4),
-                       (undefined4 *)(uVar5 + (int)psVar4),uVar5);
+                       (AnonPointee_TLOBaseTy_0607 *)(uVar5 + (int)psVar4),uVar5);
             local_2c = uVar5;
           }
           psVar4 = local_10;

@@ -20,8 +20,7 @@ undefined4 __thiscall STGroupBoatC::MakePVec(STGroupBoatC *this)
   InternalExceptionFrame local_58;
   char local_14;
   char cStack_13;
-  undefined2 uStack_12;
-  undefined2 uStack_10;
+  ushort uStack_12;
   uint local_c;
   STGroupBoatC *local_8;
 
@@ -59,10 +58,7 @@ undefined4 __thiscall STGroupBoatC::MakePVec(STGroupBoatC *this)
     if (0 < (int)local_c) {
       do {
         DArrayGetElement(pSVar3->field_020E,uVar9,&local_14);
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        pSVar6 = STAllPlayersC::GetObjPtr
-                           (g_allPlayers_007FA174,local_14,CONCAT22(uStack_10,uStack_12),
-                            (int)cStack_13);
+        pSVar6 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,local_14,uStack_12,(int)cStack_13);
         if (pSVar6 == (STGameObjC *)0x0) {
           uStack_12 = 0xffff;
           Library::DKW::TBL::FUN_006ae140(&pSVar3->field_020E->flags,uVar9,(undefined4 *)&local_14);

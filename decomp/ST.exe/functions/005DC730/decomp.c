@@ -3,7 +3,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\startsys.cpp
-   StartSystemTy::SetObjectives */
+   StartSystemTy::SetObjectives
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0), and
+   decompilation contains no value return */
 
 void __thiscall
 StartSystemTy::SetObjectives(StartSystemTy *this,int param_1,char *param_2,int param_3)

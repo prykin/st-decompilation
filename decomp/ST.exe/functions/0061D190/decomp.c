@@ -145,7 +145,7 @@ int __thiscall STLightC::GetMessage(STLightC *this,STMessage *message)
       this_00->field_00A7 = (char)uVar6;
       iVar5 = LoadNextLight(this_00);
       if (iVar5 != 0) {
-        thunk_FUN_0061dd40((AnonShape_0061DD40_21C2820F *)this_00);
+        thunk_FUN_0061dd40((RecoveredRecord_STLightC_0061DD40 *)this_00);
         g_currentExceptionFrame = local_60.previous;
         return 0;
       }

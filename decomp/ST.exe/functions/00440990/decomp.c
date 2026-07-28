@@ -3,7 +3,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
-   STAllPlayersC::_ChangeDock */
+   STAllPlayersC::_ChangeDock
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0), and
+   decompilation contains no value return */
 
 void STAllPlayersC::_ChangeDock(undefined4 param_1,int *param_2,uint param_3)
 
@@ -18,8 +22,9 @@ void STAllPlayersC::_ChangeDock(undefined4 param_1,int *param_2,uint param_3)
   uint index;
 
   piVar3 = param_2;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  param_2 = (int *)GetObjPtr(in_ECX,(char)param_2,param_3,CASE_1);
+  /* ST_PSEUDO[unresolved_register_input,stack_slot_reuse]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+  param_2 = (int *)GetObjPtr(in_ECX,(char)param_2,(ushort)param_3,CASE_1);
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if ((STGameObjC *)param_2 == (STGameObjC *)0x0) {
     iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x21ed,0,0,"%s",
                                "STAllPlayersC::_ChangeDock");

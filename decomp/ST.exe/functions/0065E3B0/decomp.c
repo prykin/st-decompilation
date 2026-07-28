@@ -3,7 +3,7 @@ int __fastcall FUN_0065e3b0(AnonShape_0065DA10_8B0AA883 *param_1,undefined4 para
 
 {
   DArrayTy *array;
-  undefined2 *puVar1;
+  ushort *puVar1;
   STGameObjC *this;
   int iVar2;
   uint uVar3;
@@ -19,17 +19,14 @@ int __fastcall FUN_0065e3b0(AnonShape_0065DA10_8B0AA883 *param_1,undefined4 para
       do {
         if (bVar4) {
           /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, uVar3) (runtime stride) */
-          puVar1 = (undefined2 *)(array->elementSize * uVar3 + (int)array->data);
+          puVar1 = (ushort *)(array->elementSize * uVar3 + (int)array->data);
         }
         else {
-          puVar1 = (undefined2 *)0x0;
+          puVar1 = (ushort *)0x0;
         }
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        this = STAllPlayersC::GetObjPtr
-                         (g_allPlayers_007FA174,param_1->field_0024,
-                          CONCAT22((short)((uint)puVar1 >> 0x10),*puVar1),CASE_1);
+        this = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,param_1->field_0024,*puVar1,CASE_1);
         if (this != (STGameObjC *)0x0) {
-          iVar2 = (*this->vtable->vfunc_D4)(this);
+          iVar2 = this->vfunc_D4();
           local_8 = local_8 + iVar2;
         }
         uVar3 = uVar3 + 1;

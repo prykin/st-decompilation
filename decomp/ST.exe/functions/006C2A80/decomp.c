@@ -3,9 +3,12 @@
    Evidence: 0056ADC0 -> 006C2A80 @ 0056B28E
 
    [STPrototypeApplier] Propagated parameter 1.
-   Evidence: 0056ADC0 -> 006C2A80 @ 0056B28E */
+   Evidence: 0056ADC0 -> 006C2A80 @ 0056B28E
 
-undefined4 FUN_006c2a80(int *param_1,AnonShape_GLOBAL_0080759C_9638EF10 *param_2)
+   [STPrototypeApplier] Propagated return.
+   Evidence: 006C2A80 returns zeroed full register at 006C2AAD @ 006C2AB1 */
+
+uint FUN_006c2a80(int *param_1,AnonShape_GLOBAL_0080759C_9638EF10 *param_2)
 
 {
   undefined4 *puVar1;

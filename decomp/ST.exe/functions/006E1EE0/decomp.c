@@ -154,9 +154,10 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_006e1ee0
                  ((int)param_2[(uint)*(byte *)(iVar4 + 3) * 4 + 2] < iVar2)) {
                 if (iVar3 < local_28) {
                   Library::MSVCRT::FUN_0072da70
-                            ((undefined4 *)(iVar3 + 1 + param_3),(undefined4 *)(iVar3 + param_3),
-                             local_28 - iVar3);
-                  *(undefined1 *)(iVar3 + param_3) = (undefined1)local_48;
+                            ((undefined4 *)(iVar3 + 1 + param_3),
+                             (AnonPointee_TLOBaseTy_0607 *)(iVar3 + param_3),local_28 - iVar3);
+                  *(undefined1 *)&((AnonPointee_TLOBaseTy_0607 *)(iVar3 + param_3))->field_0000 =
+                       (undefined1)local_48;
                   goto LAB_006e22a2;
                 }
                 break;
@@ -229,6 +230,7 @@ LAB_006e22a2:
       iVar3 = (iVar3 - iVar2) / *(int *)&this->field_0x2c4;
       iVar2 = *(int *)&this->field_0x2b0 + iVar7 * *(int *)&this->field_0x2b8 * 2;
       if (iVar7 <= iVar3) {
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_2 = (undefined4 *)((iVar3 - iVar7) + 1);
         do {
           if (iVar4 <= iVar6) {
@@ -244,6 +246,7 @@ LAB_006e22a2:
               iVar3 = iVar3 + -1;
             } while (iVar3 != 0);
           }
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_2 = (undefined4 *)((int)param_2 + -1);
           iVar2 = iVar2 + *(int *)&this->field_0x2b8 * 2;
         } while (param_2 != (undefined4 *)0x0);

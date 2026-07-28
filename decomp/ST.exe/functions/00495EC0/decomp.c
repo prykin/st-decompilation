@@ -3,12 +3,15 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_dump.cpp
-   DumpClassC::WritePtr */
+   DumpClassC::WritePtr
+   [STAbiConsistencyApplier] stack_parameter_width target=parameter:3: parameter=/byte Evidence:
+   entry-use width=/byte; unmasked_dword_reads=0; evidence=00495F20 MOV EDX,dword ptr [EBP + 0x14];
+   first-use mask */
 
 undefined4
 DumpClassC::WritePtr
-          (short param_1,short param_2,short param_3,uint param_4,
-          AnonShape_00495EC0_95A268C6 *param_5)
+          (short param_1,short param_2,short param_3,byte param_4,
+          RecoveredRecord_DumpClassC_00495EC0 *param_5)
 
 {
   code *pcVar1;
@@ -26,10 +29,10 @@ DumpClassC::WritePtr
   }
   if (g_worldGrid.cells
       [(int)g_worldGrid.sizeX * (int)param_2 + (int)g_worldGrid.planeStride * (int)param_3 +
-       (int)param_1].objects[param_4 & 0xff] == (STWorldObject *)0x0) {
+       (int)param_1].objects[param_4] == (STWorldObject *)0x0) {
     g_worldGrid.cells
     [(int)g_worldGrid.sizeX * (int)param_2 + (int)g_worldGrid.planeStride * (int)param_3 +
-     (int)param_1].objects[param_4 & 0xff] = (STWorldObject *)param_5;
+     (int)param_1].objects[param_4] = (STWorldObject *)param_5;
     param_5->field_005F = param_3;
     param_5->field_005D = param_2;
     param_5->field_005B = param_1;

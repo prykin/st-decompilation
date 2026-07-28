@@ -9,7 +9,7 @@ void __thiscall CPanelTy::sub_004FAFF0(CPanelTy *this)
 {
   if ((((DAT_00808784 == 0) && (DAT_00808788 == 0)) && (DAT_0080878c == 0)) &&
      (((DAT_00808790 == 0 && (-1 < this->field_0237)) && (-1 < this->field_023B)))) {
-    thunk_FUN_004ab530((uint)DAT_00807349,this->field_0237,this->field_023B);
+    thunk_FUN_004ab530((uint)DAT_00807349,(uint *)this->field_0237,this->field_023B);
   }
   return;
 }

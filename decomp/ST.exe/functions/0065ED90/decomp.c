@@ -44,6 +44,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065ED90::FUN_0065ed90
   param_2[5] = 5;
   uVar4 = *(int *)&local_10->field_0x1c * 0x41c64e6d + 0x3039;
   *(uint *)&local_10->field_0x1c = uVar4;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_2 = (short *)param_3;
   iVar6 = (uVar4 >> 0x10) % 6 + 0x14;
   if (param_3 != 0x200) {
@@ -52,6 +53,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065ED90::FUN_0065ed90
       *(uint *)&local_10->field_0x1c = uVar4;
       param_3 = (-(uint)((uVar4 & 0x10000) != 0) & 0x200) + 0x200;
     }
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = (short *)param_3;
     if ((short *)param_3 != (short *)0x200) {
       *psVar1 = ((short)iVar7 - (short)((iVar6 * (local_c - iVar5)) / iVar3)) + -1;

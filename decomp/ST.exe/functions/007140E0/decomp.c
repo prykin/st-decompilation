@@ -246,7 +246,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
     if (*(int *)((int)this + 8) + -3 <= *(int *)((int)this + 4)) {
       if (param_1 != 0) {
         FUN_006b4170(local_c,iVar9,0,0,*(int *)((int)this + 0x5c),*(int *)((int)this + 0x60),
-                     (char)*(undefined4 *)((int)this + 0xa0));
+                     (byte)*(undefined4 *)((int)this + 0xa0));
         if (*(int *)((int)this + 4) == *(int *)((int)this + 8) + -3) {
           ccFntTy::WrTxt(*(ccFntTy **)this,*(uint **)((int)this + 0x90),*(int *)((int)this + 0x6c),
                          *(int *)((int)this + 0x70),*(uint *)((int)this + 0x94),-1,-1);
@@ -266,6 +266,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
       goto cf_common_exit_00714ACB;
     }
     if (((int)this_00->field_005C < 0) && (*(int *)((int)this + 0x74) < -4)) {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = '\x01';
     }
     if (-1 < *(int *)((int)this + 0x7c)) {
@@ -293,6 +294,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
         *(int *)((int)this + 0x84) = iVar9;
         *(int *)((int)this + 0xac) = *(int *)((int)this + 0xac) + 1;
         *(int *)((int)this + 0x90) = iVar9 + *(int *)((int)this + 0x58);
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         if (param_2 == '\0') {
           uVar7 = *(int *)((int)this + 8) * 2 + 10;
           puVar11 = *(undefined4 **)((int)this + 0x88);
@@ -308,7 +310,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
                     (*(char **)((int)this + 0x88),*(char **)((int)this + 0x90),
                      *(int *)((int)this + 0xc) - *(int *)((int)this + 0x84));
           FUN_006b4170(local_c,local_10,0,0,*(int *)((int)this + 0x5c),*(int *)((int)this + 0x60),
-                       (char)*(undefined4 *)((int)this + 0xa0));
+                       (byte)*(undefined4 *)((int)this + 0xa0));
           if ((*(int *)((int)this + 0x74) == -4) || (*(int *)((int)this + 0x74) == -7)) {
             iVar9 = *(int *)((int)this + 100);
           }
@@ -354,6 +356,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
       *(undefined1 *)puVar11 = 0;
       puVar11 = (undefined4 *)((int)puVar11 + 1);
     }
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_2 == '\x01') {
       iVar9 = *(int *)((int)this + 0x84);
       pcVar4 = *(char **)((int)this + 0x90);
@@ -504,9 +507,10 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
       }
     }
     if (param_1 == 0) goto cf_common_exit_00714ACB;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_2 == '\x01') {
       FUN_006b4170(local_c,local_10,0,0,*(int *)((int)this + 0x5c),*(int *)((int)this + 0x60),
-                   (char)*(undefined4 *)((int)this + 0xa0));
+                   (byte)*(undefined4 *)((int)this + 0xa0));
       ccFntTy::WrTxt(*(ccFntTy **)this,*(uint **)((int)this + 0x88),*(int *)((int)this + 0x6c),
                      *(int *)((int)this + 0x70),*(uint *)((int)this + 0x94),iVar9,local_14);
       goto cf_common_exit_00714ACB;
@@ -518,7 +522,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
       }
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       FUN_006b4170(local_c,local_10,0,*(int *)((int)this + 0xa4),*(int *)((int)this + 0x5c),
-                   pAVar2->field_008A,(char)*(undefined4 *)((int)this + 0xa0));
+                   pAVar2->field_008A,(byte)*(undefined4 *)((int)this + 0xa0));
     }
     uVar7 = *(uint *)((int)this + 0x94);
     iVar8 = *(int *)((int)this + 0xa4);

@@ -31,6 +31,7 @@ void __thiscall FUN_00721080(void *this,int param_1,uint param_2)
   if (iVar4 <= (int)uVar5) {
     uVar5 = iVar4 - 1;
   }
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_1 == 0xfff) {
     if ((int)uVar5 < iVar4) {
       pcVar6 = *(char **)(*(int *)(iVar8 + 0x14) + uVar5 * 4);
@@ -45,13 +46,17 @@ void __thiscall FUN_00721080(void *this,int param_1,uint param_2)
       cVar1 = *pcVar6;
       pcVar6 = pcVar6 + 1;
     } while (cVar1 != '\0');
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = ~uVar3 - 1;
   }
   else {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_1 == 0xffe) {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = 0;
       goto LAB_0072111d;
     }
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = *(int *)((int)this + 0x148) + param_1;
   }
   if ((int)param_2 < 0) {
@@ -85,6 +90,7 @@ LAB_0072111d:
       cVar1 = *pcVar6;
       pcVar6 = pcVar6 + 1;
     } while (cVar1 != '\0');
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = ~uVar3 - 1;
   }
   if (param_2 < *(uint *)((int)this + 0x148)) {

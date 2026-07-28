@@ -42,6 +42,7 @@ undefined4 __cdecl FUN_0057b350(int *param_1,int param_2,int *param_3)
       local_18 = 3;
       do {
         local_14 = 3;
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = (int *)0xffffff37;
         do {
           iVar7 = -200;
@@ -71,6 +72,7 @@ undefined4 __cdecl FUN_0057b350(int *param_1,int param_2,int *param_3)
             iVar7 = iVar7 + 200;
             local_10 = local_10 + -1;
           } while (local_10 != 0);
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_1 = (int *)((int)param_1 + 0xc9);
           local_14 = local_14 + -1;
         } while (local_14 != 0);
@@ -84,6 +86,7 @@ undefined4 __cdecl FUN_0057b350(int *param_1,int param_2,int *param_3)
       local_10 = 2;
       do {
         local_14 = 2;
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = (int *)0xffffff9c;
         do {
           iVar7 = -100;
@@ -114,6 +117,7 @@ undefined4 __cdecl FUN_0057b350(int *param_1,int param_2,int *param_3)
             iVar7 = iVar7 + 200;
             local_18 = local_18 + -1;
           } while (-1 < local_18);
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_1 = (int *)((int)param_1 + 0xc9);
           local_14 = local_14 + -1;
         } while (local_14 != 0);

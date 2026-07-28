@@ -32,7 +32,7 @@ void __thiscall SAMPanelTy::InitSAMPanel(SAMPanelTy *this)
   InternalExceptionFrame local_5c;
   SAMPanelTy *local_14;
   int local_10;
-  undefined4 *local_c;
+  uint *local_c;
   int local_8;
 
   local_5c.previous = g_currentExceptionFrame;
@@ -52,7 +52,7 @@ void __thiscall SAMPanelTy::InitSAMPanel(SAMPanelTy *this)
     pCVar5 = thunk_FUN_00571240("BUT_PRODWEAP",0);
     puVar6 = Library::Ourlib::MFRLOAD::mfRLoad
                        (DAT_00806794,CASE_B,pCVar5,uVar11,bVar13,iVar4,iVar16,puVar18);
-    local_c = &pSVar3->field_01B5;
+    local_c = pSVar3->field_01B5;
     pSVar3->field_01B1 = puVar6;
     iVar4 = 0xb4ff;
     local_8 = 0x17;
@@ -72,18 +72,18 @@ void __thiscall SAMPanelTy::InitSAMPanel(SAMPanelTy *this)
       pCVar5 = FUN_006f2c00(pCVar5,iVar8,uVar9);
       iVar8 = local_8;
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      uVar9 = (*(code *)pAVar1->field_0004)
-                        (0,1,0x24,local_8 + 1,0,1,1,pCVar5,iVar10,iVar16,uVar12,uVar14,uVar15,uVar17
-                         ,uVar19);
-      *local_c = uVar9;
+      uVar11 = (*(code *)pAVar1->field_0004)
+                         (0,1,0x24,local_8 + 1,0,1,1,pCVar5,iVar10,iVar16,uVar12,uVar14,uVar15,
+                          uVar17,uVar19);
+      *local_c = uVar11;
       pbVar7 = (byte *)ccFntTy::CreateSurf(pSVar3->field_0189,pSVar3->field_0185,0,0x37,iVar8,0xd2,
                                            0xc,0);
       if (pbVar7 != (byte *)0x0) {
-        uVar9 = 0;
+        uVar11 = 0;
         iVar8 = -1;
         iVar16 = 0;
         resourceString = (uint *)LoadResourceString(iVar4 - 0x842b,g_module_00807618);
-        ccFntTy::WrStr(pSVar3->field_0189,resourceString,iVar16,iVar8,uVar9);
+        ccFntTy::WrStr(pSVar3->field_0189,resourceString,iVar16,iVar8,uVar11);
         DibPut((AnonShape_006B5B10_E0D06CF1 *)pSVar3->field_0068,0x37,local_8,'\x01',pbVar7);
         ccFntTy::EraseSufr(pSVar3->field_0189);
       }

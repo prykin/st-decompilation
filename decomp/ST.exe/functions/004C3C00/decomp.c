@@ -238,7 +238,7 @@ LAB_004c4192:
                                   }
                                   else {
 LAB_004c41a5:
-                                    iVar8 = (*local_8->vtable->vfunc_F0)(local_8);
+                                    iVar8 = local_8->vfunc_F0();
                                     iVar7 = local_18;
                                     iVar16 = local_28;
                                     if (iVar8 != 0) {
@@ -281,7 +281,7 @@ LAB_004c41a5:
                                             thunk_FUN_0041dc40(local_74,(short)*(undefined4 *)
                                                                                 (&DAT_007932d4 +
                                                                                 iVar7 + iVar12),
-                                                               *(undefined2 *)
+                                                               *(ushort *)
                                                                 ((int)(&DAT_007932d4 +
                                                                       iVar7 + iVar12) + 4),
                                                                -(short)this_00->field_0259);
@@ -339,10 +339,12 @@ LAB_004c42b5:
     *(undefined4 *)((int)ppTVar15 + 0x28d) = local_20->field_0018;
     *(STFishC **)((int)ppTVar15 + 0x291) = local_20;
     if ((((*(byte *)((int)ppTVar15 + 0x265) & 2) != 0) &&
-        (*(int *)((int)ppTVar15 + 0x28d) != *(int *)((int)ppTVar15 + 0x26d))) &&
+        (*(AnonShape_005EFAE0_B406B78B **)((int)ppTVar15 + 0x28d) !=
+         *(AnonShape_005EFAE0_B406B78B **)((int)ppTVar15 + 0x26d))) &&
        (iVar7 = STPlaySystemC::sub_006E62D0
-                          (g_playSystem_00802A38,*(int *)((int)ppTVar15 + 0x26d),(int *)&local_8),
-       iVar7 != 0)) {
+                          (g_playSystem_00802A38,
+                           *(AnonShape_005EFAE0_B406B78B **)((int)ppTVar15 + 0x26d),(int *)&local_8)
+       , iVar7 != 0)) {
       *(uint *)((int)ppTVar15 + 0x265) = *(uint *)((int)ppTVar15 + 0x265) & 0xfffffffd;
       *(undefined4 *)((int)ppTVar15 + 0x26d) = 0;
     }

@@ -11,13 +11,12 @@ byte * __thiscall STManRub3C::sub_0062D670(STManRub3C *this,uint *param_1)
 
 {
   uint *puVar1;
-  int *piVar2;
+  uint *puVar2;
   int iVar3;
   uint uVar4;
   undefined4 *puVar5;
-  uint *puVar6;
-  byte *pbVar7;
-  uint *puVar8;
+  byte *pbVar6;
+  uint *puVar7;
   uint *local_14;
   byte *local_10;
   uint local_c;
@@ -35,50 +34,52 @@ byte * __thiscall STManRub3C::sub_0062D670(STManRub3C *this,uint *param_1)
   else {
     puVar5 = &this->field_001C;
   }
-  pbVar7 = local_10;
+  pbVar6 = local_10;
   for (iVar3 = 0x26; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *(undefined4 *)pbVar7 = *puVar5;
+    *(undefined4 *)pbVar6 = *puVar5;
     puVar5 = puVar5 + 1;
-    pbVar7 = pbVar7 + 4;
+    pbVar6 = pbVar6 + 4;
   }
   *param_1 = 0x98;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = (uint *)0x0;
   do {
     switch(param_1) {
     case (uint *)0x0:
-      piVar2 = &local_8->field_0030;
+      puVar2 = local_8->field_0030;
       break;
     case (uint *)0x1:
-      piVar2 = &local_8->field_0050;
+      puVar2 = &local_8->field_0050;
       break;
     case (uint *)0x2:
-      piVar2 = &local_8->field_0070;
+      puVar2 = &local_8->field_0070;
       break;
     case (uint *)0x3:
-      piVar2 = (int *)&local_8->field_0x90;
+      puVar2 = (uint *)&local_8->field_0x90;
       break;
     default:
       goto switchD_0062d6cc_default;
     }
-    if ((piVar2 != (int *)0x0) &&
-       (local_14 = thunk_FUN_0062d550(piVar2,(int *)&local_c), local_c != 0)) {
+    if ((puVar2 != (uint *)0x0) &&
+       (local_14 = thunk_FUN_0062d550((int *)puVar2,(int *)&local_c), local_c != 0)) {
       uVar4 = *puVar1;
       *puVar1 = uVar4 + local_c;
       local_10 = (byte *)Library::DKW::LIB::FUN_006acf50((int)local_10,uVar4 + local_c);
-      puVar6 = local_14;
-      puVar8 = (uint *)(local_10 + (*puVar1 - local_c));
+      puVar2 = local_14;
+      puVar7 = (uint *)(local_10 + (*puVar1 - local_c));
       for (uVar4 = local_c >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
-        *puVar8 = *puVar6;
-        puVar6 = puVar6 + 1;
-        puVar8 = puVar8 + 1;
+        *puVar7 = *puVar2;
+        puVar2 = puVar2 + 1;
+        puVar7 = puVar7 + 1;
       }
       for (uVar4 = local_c & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
-        *(char *)puVar8 = (char)*puVar6;
-        puVar6 = (uint *)((int)puVar6 + 1);
-        puVar8 = (uint *)((int)puVar8 + 1);
+        *(char *)puVar7 = (char)*puVar2;
+        puVar2 = (uint *)((int)puVar2 + 1);
+        puVar7 = (uint *)((int)puVar7 + 1);
       }
       FreeAndNull(&local_14);
     }
+/* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
 switchD_0062d6cc_default:
     param_1 = (uint *)((int)param_1 + 1);
     if (3 < (int)param_1) {

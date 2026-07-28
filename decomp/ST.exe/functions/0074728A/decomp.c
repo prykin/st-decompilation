@@ -19,6 +19,7 @@ undefined4 FUN_0074728a(int param_1,ushort *param_2,uint *param_3)
     piVar1 = (int *)(param_1 + -0xc);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar3 = (**(code **)(*(int *)(param_1 + -0xc) + 0x18))();
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = 0;
     if (0 < iVar3) {
       do {
@@ -33,6 +34,7 @@ undefined4 FUN_0074728a(int param_1,ushort *param_2,uint *param_3)
           LeaveCriticalSection(lpCriticalSection);
           return 0;
         }
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = param_1 + 1;
       } while (param_1 < iVar3);
     }

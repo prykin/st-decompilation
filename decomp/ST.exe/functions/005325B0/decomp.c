@@ -35,7 +35,7 @@ void __thiscall OptPanelTy::PrepAsses(OptPanelTy *this,void *param_1)
   this->field_0028 = 0x20;
   *(undefined4 *)&this->field_0x2c = 0;
   local_8 = this;
-  FUN_006e6080(this,2,this->field_01B5,(undefined4 *)&this->field_0x18);
+  FUN_006e6080(this,2,this->field_01B5[0],(undefined4 *)&this->field_0x18);
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   iVar5 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
@@ -140,15 +140,15 @@ LAB_00532758:
   pOVar12->field_0028 = 0x28;
   puVar1 = &pOVar12->field_0x18;
   *(dword *)&pOVar12->field_0x2c = pOVar12->field_02FD->count;
-  FUN_006e6080(pOVar12,2,pOVar12->field_01B5,(undefined4 *)puVar1);
+  FUN_006e6080(pOVar12,2,pOVar12->field_01B5[0],(undefined4 *)puVar1);
   pOVar12->field_0028 = 0x20;
   *(undefined4 *)&pOVar12->field_0x2c = 1;
-  FUN_006e6080(pOVar12,2,pOVar12->field_01B5,(undefined4 *)puVar1);
+  FUN_006e6080(pOVar12,2,pOVar12->field_01B5[0],(undefined4 *)puVar1);
   iVar5 = thunk_FUN_00648a30((uint)DAT_0080874d,(char *)&DAT_0080f33a);
   if (iVar5 == 0) {
     pOVar12->field_0028 = 0x22;
     *(undefined4 *)&pOVar12->field_0x2c = 0;
-    FUN_006e6080(pOVar12,2,pOVar12->field_01B5,(undefined4 *)puVar1);
+    FUN_006e6080(pOVar12,2,pOVar12->field_01B5[0],(undefined4 *)puVar1);
   }
   else {
     pDVar7 = pOVar12->field_02FD;
@@ -183,7 +183,7 @@ LAB_00532883:
         if (iVar5 == 0) {
           *(uint *)&pOVar12->field_0x2c = local_c;
           pOVar12->field_0028 = 0x22;
-          FUN_006e6080(pOVar12,2,pOVar12->field_01B5,(undefined4 *)&pOVar12->field_0x18);
+          FUN_006e6080(pOVar12,2,pOVar12->field_01B5[0],(undefined4 *)&pOVar12->field_0x18);
         }
         pDVar7 = pOVar12->field_02FD;
         local_c = local_c + 1;

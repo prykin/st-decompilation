@@ -20,9 +20,9 @@ undefined4 * __thiscall STDestC::sub_00602E90(STDestC *this)
   ushort *puVar3;
   InternalExceptionFrame local_50;
   STDestC *local_c;
-  undefined4 *local_8;
+  ushort *local_8;
 
-  local_8 = (undefined4 *)0x0;
+  local_8 = (ushort *)0x0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
@@ -54,9 +54,9 @@ undefined4 * __thiscall STDestC::sub_00602E90(STDestC *this)
       }
     }
     g_currentExceptionFrame = local_50.previous;
-    return local_8;
+    return (undefined4 *)local_8;
   }
   g_currentExceptionFrame = local_50.previous;
-  return local_8;
+  return (undefined4 *)local_8;
 }
 

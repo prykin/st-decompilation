@@ -3,70 +3,71 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\main_obj.cpp
-   MainMenuTy::PaintMainMenu */
+   MainMenuTy::PaintMainMenu
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall MainMenuTy::PaintMainMenu(MainMenuTy *this)
 
 {
   code *pcVar1;
   MainMenuTy *pMVar2;
-  int iVar3;
+  uint uVar3;
   uint *puVar4;
   char *text;
-  int iVar5;
   StartServTy *this_00;
   StartServTy *this_01;
+  int iVar5;
   uint uVar6;
-  AnonPointee_MainMenuTy_1AA7 **ppAVar7;
-  uint uVar8;
-  uint uVar9;
-  ccFntTy *pcVar10;
-  undefined4 uVar11;
+  uint uVar7;
+  ccFntTy *pcVar8;
   InternalExceptionFrame local_4c;
   MainMenuTy *local_8;
 
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
-  if (iVar3 == 0) {
+  uVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
+  if (uVar3 == 0) {
     FUN_006b5f80((int *)PTR_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
     PutDDX(0,0,'\x01',(BITMAPINFO *)g_startSystem_0081176C->field_002C);
     pMVar2 = local_8;
     if (local_8->field_1EE3 == '\0') {
-      uVar11 = 0;
-      pcVar10 = g_startSystem_0081176C->field_0030;
-      uVar9 = 0xffffffff;
-      uVar8 = 0xfffffffe;
+      uVar7 = 0;
+      pcVar8 = g_startSystem_0081176C->field_0030;
+      uVar6 = 0xffffffff;
+      uVar3 = 0xfffffffe;
       puVar4 = (uint *)LoadResourceString(0x26ac,g_module_00807618);
-      StartServTy::WrTextDDX(this_01,0,0xe9,0x14,0x14c,0x18,puVar4,uVar8,uVar9,pcVar10,uVar11);
-      uVar9 = DAT_00807dd5 >> 0x10 & 0xff;
-      uVar6 = DAT_00807dd5 & 0xffff;
-      uVar8 = DAT_00807dd5 >> 0x18;
+      StartServTy::WrTextDDX(this_01,0,0xe9,0x14,0x14c,0x18,puVar4,uVar3,uVar6,pcVar8,uVar7);
+      uVar6 = DAT_00807dd5 >> 0x10 & 0xff;
+      uVar7 = DAT_00807dd5 & 0xffff;
+      uVar3 = DAT_00807dd5 >> 0x18;
       text = LoadResourceString(0x2329,g_module_00807618);
-      wsprintfA((LPSTR)(pMVar2->field_1A5B + 0x3c),text,uVar8,uVar9,uVar6);
+      wsprintfA((LPSTR)(pMVar2->field_1A5B + 0x3c),text,uVar3,uVar6,uVar7);
       StartServTy::WrTextDDX
                 ((StartServTy *)g_startSystem_0081176C,0,0,0x240,800,0x18,
                  (uint *)(pMVar2->field_1A5B + 0x3c),0xfffffffe,0xffffffff,
                  g_startSystem_0081176C->field_0034,0);
     }
     else if (local_8->field_1EE3 == '\x01') {
-      pcVar10 = g_startSystem_0081176C->field_0030;
-      uVar9 = 0xffffffff;
-      uVar8 = 0xfffffffe;
+      pcVar8 = g_startSystem_0081176C->field_0030;
+      uVar7 = 0xffffffff;
+      uVar6 = 0xfffffffe;
       puVar4 = (uint *)LoadResourceString(0x26b0,g_module_00807618);
-      StartServTy::WrTextDDX(this_00,0,0xe9,0x14,0x14c,0x18,puVar4,uVar8,uVar9,pcVar10,iVar3);
+      StartServTy::WrTextDDX(this_00,0,0xe9,0x14,0x14c,0x18,puVar4,uVar6,uVar7,pcVar8,uVar3);
     }
-    ppAVar7 = &pMVar2->field_1AA7;
-    iVar3 = 10;
+    puVar4 = pMVar2->field_1AA7;
+    iVar5 = 10;
     do {
-      if ((AnonShape_006C4AA0_6E9A3AA4 *)*ppAVar7 != (AnonShape_006C4AA0_6E9A3AA4 *)0x0) {
-        FUN_006c4aa0((AnonShape_006C4AA0_6E9A3AA4 *)*ppAVar7);
+      if ((AnonShape_006C4AA0_6E9A3AA4 *)*puVar4 != (AnonShape_006C4AA0_6E9A3AA4 *)0x0) {
+        FUN_006c4aa0((AnonShape_006C4AA0_6E9A3AA4 *)*puVar4);
       }
-      ppAVar7 = ppAVar7 + 1;
-      iVar3 = iVar3 + -1;
-    } while (iVar3 != 0);
-    iVar3 = 0;
+      puVar4 = puVar4 + 1;
+      iVar5 = iVar5 + -1;
+    } while (iVar5 != 0);
+    iVar5 = 0;
     if (pMVar2->field_009A != 0) {
       puVar4 = &pMVar2->field_00FF;
       do {
@@ -80,20 +81,20 @@ void __thiscall MainMenuTy::PaintMainMenu(MainMenuTy *this)
                      *(uint *)((int)puVar4 + 0x7d),*(uint *)((int)puVar4 + 0x91),
                      *(uint *)((int)puVar4 + 0x95));
         }
-        iVar3 = iVar3 + 1;
+        iVar5 = iVar5 + 1;
         puVar4 = (uint *)((int)puVar4 + 0x1fb);
-      } while (iVar3 < (int)(uint)pMVar2->field_009A);
+      } while (iVar5 < (int)(uint)pMVar2->field_009A);
     }
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar5 = ReportDebugMessage("E:\\__titans\\Start\\main_obj.cpp",0x7e,0,iVar3,"%s",
+  iVar5 = ReportDebugMessage("E:\\__titans\\Start\\main_obj.cpp",0x7e,0,uVar3,"%s",
                              "MainMenuTy::PaintMainMenu");
   if (iVar5 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,"E:\\__titans\\Start\\main_obj.cpp",0x7e);
+  RaiseInternalException(uVar3,0,"E:\\__titans\\Start\\main_obj.cpp",0x7e);
   return;
 }
 

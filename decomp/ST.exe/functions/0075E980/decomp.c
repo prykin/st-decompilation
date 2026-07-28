@@ -27,11 +27,13 @@ void FUN_0075e980(int param_1,int param_2,int *param_3,int param_4,int param_5)
   local_c = *(int *)(param_1 + 0x7c);
   local_20 = (int)param_3 * 2 + 0x1c >> 1;
   local_8 = 0x7fffffff;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = 0;
   local_28 = param_2 * 2 + 0x18 >> 1;
   local_24 = param_4 * 2 + 0x18 >> 1;
   if (0 < local_c) {
     piVar1 = *(int **)(iVar3 + 0x80);
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_3 = local_428;
     local_18 = *piVar1;
     local_10 = piVar1[1];
@@ -98,7 +100,9 @@ LAB_0075eac8:
       if (iVar3 < local_8) {
         local_8 = iVar3;
       }
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = param_1 + 1;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_3 = param_3 + 1;
     } while (param_1 < local_c);
   }

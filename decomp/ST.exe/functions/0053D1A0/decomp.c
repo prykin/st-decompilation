@@ -24,7 +24,7 @@ void __thiscall SAMPanelTy::DoneSAMPanel(SAMPanelTy *this)
   if (iVar3 == 0) {
     iVar3 = 7;
     local_8->field_01B1 = (ushort *)0x0;
-    puVar5 = &local_8->field_01B5;
+    puVar5 = local_8->field_01B5;
     do {
       if (*puVar5 != 0) {
         StartSystemTy::sub_006E56B0(pSVar2->field_000C,*puVar5);

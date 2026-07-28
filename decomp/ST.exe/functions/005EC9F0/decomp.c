@@ -38,7 +38,7 @@ undefined4 FUN_005ec9f0(int param_1)
     STT3DSprC::SetCurShad((STT3DSprC *)this,'\x0e',local_8->field_02BA / 0xf);
     thunk_FUN_00417e70(local_8,0x18);
     local_8->field_02B9 = 1;
-    iVar1 = thunk_FUN_004ad650((int)this);
+    iVar1 = thunk_FUN_004ad650((STT3DSprC *)this);
     local_8->field_02D6 = iVar1;
     if (local_8->field_0235 == '\x01') {
       STT3DSprC::LoadSequence((STT3DSprC *)this,0xb,DAT_00806774,"forcef0",0x1d);
@@ -65,7 +65,7 @@ undefined4 FUN_005ec9f0(int param_1)
     STT3DSprC::sub_004ACF20((STT3DSprC *)this,DAT_008032b8,0x10);
     STT3DSprC::StartShow((STT3DSprC *)this,8,g_playSystem_00802A38->field_00E4);
     STT3DSprC::sub_004ACFE0((STT3DSprC *)this,'\n');
-    iVar1 = thunk_FUN_004ad650((int)this);
+    iVar1 = thunk_FUN_004ad650((STT3DSprC *)this);
     local_8->field_02D6 = iVar1;
   }
   g_currentExceptionFrame = local_54.previous;

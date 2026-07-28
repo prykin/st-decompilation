@@ -322,7 +322,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
           local_1c = (uint *)(((uint)(ushort)pAVar5->field_000E * pAVar5->field_0004 + 0x1f >> 3 &
                               0x1ffffffc) * pAVar5->field_0008);
         }
-        puVar10 = (undefined4 *)FUN_006b4fa0((int)pAVar5);
+        puVar10 = (undefined4 *)FUN_006b4fa0((int *)pAVar5);
         for (uVar16 = (uint)local_1c >> 2; uVar16 != 0; uVar16 = uVar16 - 1) {
           *puVar10 = 0xffffffff;
           puVar10 = puVar10 + 1;
@@ -561,13 +561,13 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
                   ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0,0x21,iVar8,
                    (byte *)this_00->field_01DC,0,0x21,iVar8,0x19c,*(int *)(this_00->field_01EC + 8))
         ;
-        iVar8 = this_00->field_01EC;
-        uVar16 = *(uint *)(iVar8 + 0x14);
+        piVar9 = (int *)this_00->field_01EC;
+        uVar16 = piVar9[5];
         if (uVar16 == 0) {
-          uVar16 = ((uint)*(ushort *)(iVar8 + 0xe) * *(int *)(iVar8 + 4) + 0x1f >> 3 & 0x1ffffffc) *
-                   *(int *)(iVar8 + 8);
+          uVar16 = ((uint)*(ushort *)((int)piVar9 + 0xe) * piVar9[1] + 0x1f >> 3 & 0x1ffffffc) *
+                   piVar9[2];
         }
-        puVar10 = (undefined4 *)FUN_006b4fa0(iVar8);
+        puVar10 = (undefined4 *)FUN_006b4fa0(piVar9);
         for (uVar18 = uVar16 >> 2; uVar18 != 0; uVar18 = uVar18 - 1) {
           *puVar10 = 0xffffffff;
           puVar10 = puVar10 + 1;
@@ -680,7 +680,7 @@ LAB_0051ef61:
             bVar20 = bVar20 + 1;
           } while (iVar8 < 0x280);
         }
-        FUN_006b5440((int)this_00->field_0068,0,0x21,(message->arg1).words.high + 0x16,
+        FUN_006b5440((ushort *)this_00->field_0068,0,0x21,(message->arg1).words.high + 0x16,
                      this_00->field_01EC,0,0xff);
       }
       Library::DKW::DDX::FUN_006b3640

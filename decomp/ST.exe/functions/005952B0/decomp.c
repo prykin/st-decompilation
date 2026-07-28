@@ -9,11 +9,14 @@
    Evidence: 005952B0 parameter used as this of MMMObjTy::OutRGlProc @ 00595314
 
    [STPrototypeApplier] Propagated parameter 1.
-   Evidence: 00596CC0 -> 005952B0 @ 00596F2C */
+   Evidence: 00596CC0 -> 005952B0 @ 00596F2C
+
+   [STPrototypeApplier] Propagated parameter 3.
+   Evidence: 005952B0 -> 005B67A0 @ 00595314 */
 
 void __thiscall
 FSGSTy::OutSGlProc(FSGSTy *this,AnonShape_GLOBAL_0080759C_9638EF10 *param_1,MMMObjTy *param_2,
-                  undefined4 param_3,int param_4,int param_5,int param_6,int param_7,int param_8)
+                  MMMObjTy *param_3,int param_4,int param_5,int param_6,int param_7,int param_8)
 
 {
   code *pcVar1;
@@ -26,7 +29,7 @@ FSGSTy::OutSGlProc(FSGSTy *this,AnonShape_GLOBAL_0080759C_9638EF10 *param_1,MMMO
   uint uVar5;
   uint uVar6;
   ccFntTy *pcVar7;
-  undefined4 uVar8;
+  uint uVar8;
   InternalExceptionFrame local_50;
   int local_c;
   undefined4 *local_8;

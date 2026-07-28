@@ -1,6 +1,10 @@
 
 /* [STPrototypeApplier] Propagated parameter 0.
-   Evidence: 006807D0 -> 00674EF0 @ 006807F0 */
+   Evidence: 006807D0 -> 00674EF0 @ 006807F0
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=6, used=0), and
+   decompilation contains no value return */
 
 void __cdecl FUN_00674ef0(char *resourceString)
 

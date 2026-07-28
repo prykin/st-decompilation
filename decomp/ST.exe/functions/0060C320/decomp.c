@@ -21,7 +21,7 @@ int __fastcall FUN_0060c320(void *param_1)
   STWorldObject *pSVar17;
   short sVar18;
   bool bVar19;
-  undefined2 local_80 [2];
+  short local_80 [2];
   int local_7c;
   int local_74;
   int local_6c;
@@ -29,13 +29,13 @@ int __fastcall FUN_0060c320(void *param_1)
   int local_64;
   int local_5c;
   int local_58;
-  undefined2 local_54 [4];
+  short local_54 [4];
   undefined4 local_4c;
   int local_44;
   int local_40;
   int local_3c;
   int local_2c;
-  undefined2 local_28 [4];
+  short local_28 [4];
   int local_20;
   undefined1 *local_1c;
   void *local_14;

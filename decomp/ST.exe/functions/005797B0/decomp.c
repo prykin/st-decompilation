@@ -4,7 +4,7 @@ FUN_005797b0(void *this,undefined2 *param_1,undefined2 *param_2,undefined2 *para
 
 {
   uint uVar1;
-  void *pvVar2;
+  uint *puVar2;
   int iVar3;
   short sVar4;
   short sVar5;
@@ -238,8 +238,8 @@ switchD_0057988b_default:
           uVar1 = thunk_FUN_00496250(local_14,local_18,(int)*(short *)((int)this + 0x45));
           sVar4 = (short)iVar3;
           if ((int)uVar1 < 0) {
-            pvVar2 = thunk_FUN_004d85e0((int)sVar4,(int)(short)local_8,(int)local_10);
-            if ((pvVar2 == (void *)0x0) &&
+            puVar2 = thunk_FUN_004d85e0((int)sVar4,(int)(short)local_8,(int)local_10);
+            if ((puVar2 == (uint *)0x0) &&
                (((((sVar4 < 0 || (g_worldGrid.sizeX <= sVar4)) || ((short)local_8 < 0)) ||
                  ((g_worldGrid.sizeY <= (short)local_8 || (local_10 < 0)))) ||
                 ((g_worldGrid.sizeZ <= local_10 ||

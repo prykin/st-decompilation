@@ -16,6 +16,7 @@ int FUN_006bb8b0(AnonShape_006BB8B0_D6DE56CA *param_1)
   if ((param_1->field_0008 & 0x4000000) != 0) {
     EnterCriticalSection((LPCRITICAL_SECTION)&param_1[1].field_0x78);
   }
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = (AnonShape_006BB8B0_D6DE56CA *)0x0;
   while( true ) {
     iVar2 = FUN_006bbe40((int *)pAVar1->field_0040,&pAVar1->field_0474,(int *)(pAVar1 + 1),0);
@@ -24,6 +25,7 @@ int FUN_006bb8b0(AnonShape_006BB8B0_D6DE56CA *param_1)
     }
     if (iVar2 != -0x7789fe3e) break;
     FUN_006cec40((AnonShape_006CEC40_BB23E716 *)pAVar1);
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = (AnonShape_006BB8B0_D6DE56CA *)&param_1->field_0x1;
     if (1 < (int)param_1) {
 LAB_006bb943:

@@ -3,7 +3,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
-   STAllPlayersC::RegisterPGPair */
+   STAllPlayersC::RegisterPGPair
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=7, used=0), and
+   decompilation contains no value return */
 
 void __thiscall
 STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uint *param_3)
@@ -36,7 +40,7 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
   DArrayTy *local_14;
   uint local_10;
   uint local_c;
-  uint local_8;
+  short local_8 [2];
 
   local_18 = (DArrayTy *)0x0;
   local_14 = (DArrayTy *)0x0;
@@ -81,10 +85,10 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
   this_01 = local_34;
   if (0 < (int)uVar6) {
     do {
-      DArrayGetElement(local_18,uVar7,&local_8);
+      DArrayGetElement(local_18,uVar7,local_8);
       this_01 = local_34;
-      pSVar3 = GetObjPtr(local_34,objPtr,local_8,CASE_1);
-      if ((pSVar3 == (STGameObjC *)0x0) || (iVar2 = (*pSVar3->vtable->vfunc_F8)(pSVar3), iVar2 == 0)
+      pSVar3 = GetObjPtr(local_34,objPtr,local_8[0],CASE_1);
+      if ((pSVar3 == (STGameObjC *)0x0) || (iVar2 = pSVar3->vfunc_F8(), iVar2 == 0)
          ) {
         FUN_006b0c70(local_18,uVar7);
         uVar6 = uVar6 - 1;
@@ -102,10 +106,10 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
   uVar6 = 0;
   if (0 < (int)local_c) {
     do {
-      DArrayGetElement(local_14,uVar6,&local_8);
-      pSVar3 = GetObjPtr(this_01,objPtr,local_8,CASE_1);
+      DArrayGetElement(local_14,uVar6,local_8);
+      pSVar3 = GetObjPtr(this_01,objPtr,local_8[0],CASE_1);
       if (((pSVar3 == (STGameObjC *)0x0) || (iVar2 = thunk_FUN_00490d90(pSVar3), iVar2 == 0)) ||
-         ((iVar2 = (*pSVar3->vtable->vfunc_F8)(pSVar3), iVar2 == 0 || (pSVar3->field_0030 == -1))))
+         ((iVar2 = pSVar3->vfunc_F8(), iVar2 == 0 || (pSVar3->field_0030 == -1))))
       {
         FUN_006b0c70(local_14,uVar6);
         local_c = local_c - 1;
@@ -123,17 +127,17 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
   pDVar4 = local_28;
   if (0 < (int)local_10) {
     do {
-      DArrayGetElement(local_18,uVar6,&local_8);
+      DArrayGetElement(local_18,uVar6,local_8);
       uVar7 = 0;
       if (0 < (int)local_c) {
         do {
           DArrayGetElement(local_14,uVar7,&local_1a);
-          if ((short)local_8 == local_1a) {
+          if (local_8[0] == local_1a) {
             if (pDVar4 == (DArrayTy *)0x0) {
               pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
               local_28 = pDVar4;
             }
-            Library::DKW::TBL::FUN_006ae1c0(&pDVar4->flags,&local_8);
+            Library::DKW::TBL::FUN_006ae1c0(&pDVar4->flags,(undefined4 *)local_8);
             FUN_006b0c70(local_18,uVar6);
             local_10 = local_10 - 1;
             uVar6 = uVar6 - 1;
@@ -158,13 +162,13 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
     if (0 < (int)local_30) {
       local_24 = &g_playerRuntime[objPtr].pgPairs;
       do {
-        DArrayGetElement(pDVar4,local_20,&local_8);
-        this_00 = (STBoatC *)GetObjPtr(this_01,objPtr,local_8,CASE_1);
+        DArrayGetElement(pDVar4,local_20,local_8);
+        this_00 = (STBoatC *)GetObjPtr(this_01,objPtr,local_8[0],CASE_1);
         local_2c = g_playSystem_00802A38->field_00E4;
         STBoatC::CmdToObj(this_00,CASE_21,&local_2c);
         if ((*local_24 != (DArrayTy *)0x0) &&
-           (iVar2 = _DeleteGuardBoat(this_01,objPtr,(short)local_8,1), iVar2 == -1)) {
-          _DeleteGuardBoat(this_01,objPtr,(short)local_8,0);
+           (iVar2 = _DeleteGuardBoat(this_01,objPtr,local_8[0],1), iVar2 == -1)) {
+          _DeleteGuardBoat(this_01,objPtr,local_8[0],0);
         }
         local_20 = local_20 + 1;
       } while ((int)local_20 < (int)local_30);
@@ -201,8 +205,8 @@ LAB_00445dca:
       local_20 = 0;
       if (0 < (int)local_30) {
         do {
-          DArrayGetElement(pDVar4,local_20,&local_8);
-          Library::DKW::TBL::FUN_006ae1c0(&local_14->flags,&local_8);
+          DArrayGetElement(pDVar4,local_20,local_8);
+          Library::DKW::TBL::FUN_006ae1c0(&local_14->flags,(undefined4 *)local_8);
           local_20 = local_20 + 1;
         } while ((int)local_20 < (int)local_30);
       }
@@ -218,10 +222,10 @@ LAB_00445e36:
     local_24 = &g_playerRuntime[objPtr].pgPairs;
     do {
       if (*local_24 == (DArrayTy *)0x0) break;
-      DArrayGetElement(local_14,uVar6,&local_8);
-      iVar2 = _DeleteGuardBoat(this_01,objPtr,(short)local_8,1);
+      DArrayGetElement(local_14,uVar6,local_8);
+      iVar2 = _DeleteGuardBoat(this_01,objPtr,local_8[0],1);
       if (iVar2 == -1) {
-        _DeleteGuardBoat(this_01,objPtr,(short)local_8,0);
+        _DeleteGuardBoat(this_01,objPtr,local_8[0],0);
       }
       uVar6 = uVar6 + 1;
     } while ((int)uVar6 < (int)local_c);
@@ -231,8 +235,8 @@ LAB_00445e36:
     local_24 = &g_playerRuntime[objPtr].pgPairs;
     do {
       if (*local_24 == (DArrayTy *)0x0) break;
-      DArrayGetElement(local_18,uVar6,&local_8);
-      _DeleteGuardBoat(this_01,objPtr,(short)local_8,1);
+      DArrayGetElement(local_18,uVar6,local_8);
+      _DeleteGuardBoat(this_01,objPtr,local_8[0],1);
       uVar6 = uVar6 + 1;
     } while ((int)uVar6 < (int)local_10);
   }

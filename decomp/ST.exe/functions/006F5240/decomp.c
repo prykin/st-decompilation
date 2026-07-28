@@ -2,7 +2,11 @@
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WARNING: Restarted to delay deadcode elimination for space: stack */
 /* [STPrototypeApplier] Propagated parameter 8.
-   Evidence: 006F31D0 -> 006F5240 @ 006F4DBC */
+   Evidence: 006F31D0 -> 006F5240 @ 006F4DBC
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void FUN_006f5240(byte *param_1,int param_2,uint *param_3,int param_4,int param_5,byte *param_6,
                  int param_7,int param_8,byte *param_9,int param_10)
@@ -30,6 +34,7 @@ LAB_006f5259:
     param_3 = (uint *)((int)param_3 + param_4);
     iVar8 = param_10 + -1;
     bVar2 = param_10 < 1;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_10 = iVar8;
     if (iVar8 == 0 || bVar2) {
       return;
@@ -220,6 +225,7 @@ cf_continue_loop_006F53F2:
   param_1 = param_1 + (param_2 - (int)param_9);
   iVar8 = param_10 + -1;
   bVar2 = param_10 < 1;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_10 = iVar8;
   if (iVar8 == 0 || bVar2) {
     return;

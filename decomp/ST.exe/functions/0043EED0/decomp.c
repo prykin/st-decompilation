@@ -15,7 +15,7 @@ STAllPlayersC::GetTOBJListFromDArr
           STAllPlayersC_GetTOBJListFromDArr_param_3Enum param_3,int param_4,char param_5)
 
 {
-  short sVar1;
+  ushort uVar1;
   code *pcVar2;
   bool bVar3;
   STAllPlayersC *this_00;
@@ -29,7 +29,7 @@ STAllPlayersC::GetTOBJListFromDArr
   STAllPlayersC *local_14;
   int local_10;
   DArrayTy *local_c;
-  uint local_8;
+  undefined4 local_8;
 
   local_10 = param_2->field_000C;
   local_5c.previous = g_currentExceptionFrame;
@@ -51,11 +51,11 @@ STAllPlayersC::GetTOBJListFromDArr
   iVar4 = 0;
   if (0 < local_10) {
     do {
-      sVar1 = *(short *)(param_2->field_001C + iVar4 * 2);
+      uVar1 = *(ushort *)(param_2->field_001C + iVar4 * 2);
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_8 = CONCAT22((short)((uint)param_2->field_001C >> 0x10),sVar1);
-      if (sVar1 != -1) {
-        this_01 = GetObjPtr(this_00,(char)param_1,local_8,CASE_1);
+      local_8 = CONCAT22((short)((uint)param_2->field_001C >> 0x10),uVar1);
+      if (uVar1 != 0xffff) {
+        this_01 = GetObjPtr(this_00,(char)param_1,uVar1,CASE_1);
         if (this_01 == (STGameObjC *)0x0) {
           RaiseInternalException
                     (-0x5001fffc,g_overwriteContext_007ED77C,
@@ -65,7 +65,7 @@ switchD_0043efb1_caseD_3a:
         }
         else {
           SVar5 = (*this_01->vtable->vfunc_2C)();
-          if ((SVar5 != param_3) || (iVar6 = (*this_01->vtable->vfunc_F8)(this_01), iVar6 == 0))
+          if ((SVar5 != param_3) || (iVar6 = this_01->vfunc_F8(), iVar6 == 0))
           goto switchD_0043efb1_caseD_3a;
           if (param_4 != 0) {
             switch(param_3) {
@@ -84,7 +84,7 @@ switchD_0043efb1_caseD_3a:
         }
 LAB_0043efd8:
         if ((bVar3) &&
-           ((param_5 == -1 || (iVar6 = (*this_01->vtable->vfunc_6C)(this_01), iVar6 == param_5)))) {
+           ((param_5 == -1 || (iVar6 = this_01->vfunc_6C(), iVar6 == param_5)))) {
           Library::DKW::TBL::FUN_006ae1c0(&local_c->flags,&local_8);
         }
       }

@@ -58,7 +58,7 @@ int __thiscall STColl3C::GetMessage(STColl3C *this,STMessage *message)
       g_currentExceptionFrame = local_60.previous;
       return 0;
     case MESS_STOCTOPUSC_0112:
-      thunk_FUN_004ad5e0((int)&local_8->vtable_at_1d5);
+      thunk_FUN_004ad5e0((STT3DSprC *)&local_8->vtable_at_1d5);
       g_currentExceptionFrame = local_60.previous;
       return 0;
     case MESS_STSPRGAMEOBJC_0113:
@@ -66,7 +66,7 @@ int __thiscall STColl3C::GetMessage(STColl3C *this,STMessage *message)
       g_currentExceptionFrame = local_60.previous;
       return 0;
     case MESS_HITKILL:
-      thunk_FUN_004ad430((int)&local_8->vtable_at_1d5);
+      thunk_FUN_004ad430((STT3DSprC *)&local_8->vtable_at_1d5);
       this_00->field_02BB = 0;
       sub_0041C5A0(this_00);
       sub_005F66B0(this_00);
@@ -186,7 +186,7 @@ int __thiscall STColl3C::GetMessage(STColl3C *this,STMessage *message)
        ((this_00->field_02DD == CASE_1 ||
         (iVar5 = DumpClassC::WritePtr
                            (local_14[0],local_10[0],local_c[0],0,
-                            (AnonShape_00495EC0_95A268C6 *)this_00), iVar5 == 0))))
+                            (RecoveredRecord_DumpClassC_00495EC0 *)this_00), iVar5 == 0))))
     goto LAB_005f61e2;
   }
   sub_005F66B0(this_00);

@@ -15,9 +15,8 @@ void __thiscall MTaskTy::DoneMTask(MTaskTy *this)
   AnonShape_005E10A0_819783CC *pAVar4;
   int iVar5;
   cMf32 *this_01;
-  int *piVar6;
-  uint *puVar7;
-  uint uVar8;
+  uint *puVar6;
+  uint uVar7;
   void **value;
   SpriteClassTy *this_02;
   InternalExceptionFrame local_4c;
@@ -67,99 +66,99 @@ void __thiscall MTaskTy::DoneMTask(MTaskTy *this)
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this_00->field_02D1);
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this_00->field_0362);
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this_00->field_03F3);
-  piVar6 = &this_00->field_02BD;
+  puVar6 = this_00->field_02BD;
   iVar2 = 4;
   do {
-    if (-1 < *piVar6) {
-      FUN_006b3bb0((int *)PTR_008075a8,*piVar6);
-      *piVar6 = 0xffffffff;
+    if (-1 < (int)*puVar6) {
+      FUN_006b3bb0((int *)PTR_008075a8,*puVar6);
+      *puVar6 = 0xffffffff;
     }
-    piVar6 = piVar6 + 1;
+    puVar6 = puVar6 + 1;
     iVar2 = iVar2 + -1;
   } while (iVar2 != 0);
   if (this_00->field_02B9 != 0) {
     StartSystemTy::sub_006E56B0(this_00->field_000C,this_00->field_02B9);
     this_00->field_02B9 = 0;
   }
-  piVar6 = &this_00->field_02A5;
+  puVar6 = this_00->field_02A5;
   iVar2 = 5;
   do {
-    if (-1 < *piVar6) {
-      FUN_006b3bb0((int *)PTR_008075a8,*piVar6);
-      *piVar6 = 0xffffffff;
+    if (-1 < (int)*puVar6) {
+      FUN_006b3bb0((int *)PTR_008075a8,*puVar6);
+      *puVar6 = 0xffffffff;
     }
-    piVar6 = piVar6 + 1;
+    puVar6 = puVar6 + 1;
     iVar2 = iVar2 + -1;
   } while (iVar2 != 0);
-  puVar7 = &this_00->field_0291;
+  puVar6 = this_00->field_0291;
   iVar2 = 5;
   do {
-    if (*puVar7 != 0) {
-      StartSystemTy::sub_006E56B0(this_00->field_000C,*puVar7);
-      *puVar7 = 0;
+    if (*puVar6 != 0) {
+      StartSystemTy::sub_006E56B0(this_00->field_000C,*puVar6);
+      *puVar6 = 0;
     }
-    puVar7 = puVar7 + 1;
+    puVar6 = puVar6 + 1;
     iVar2 = iVar2 + -1;
   } while (iVar2 != 0);
   pDVar3 = this_00->field_064B;
   if (pDVar3 != (DArrayTy *)0x0) {
-    uVar8 = 0;
+    uVar7 = 0;
     if (pDVar3->count != 0) {
       if (pDVar3->count == 0) {
         this_02 = (SpriteClassTy *)0x0;
         goto LAB_005e0672;
       }
       do {
-        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar3, uVar8) (runtime stride) */
-        this_02 = (SpriteClassTy *)(pDVar3->elementSize * uVar8 + (int)pDVar3->data);
+        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar3, uVar7) (runtime stride) */
+        this_02 = (SpriteClassTy *)(pDVar3->elementSize * uVar7 + (int)pDVar3->data);
 LAB_005e0672:
         SpriteClassTy::CloseSprite(this_02);
         if (*(int *)((int)&this_02[1].field_0008 + 1) != 0) {
           FreeAndNull((void **)((int)&this_02[1].field_0008 + 1));
         }
         pDVar3 = this_00->field_064B;
-        uVar8 = uVar8 + 1;
-      } while (uVar8 < pDVar3->count);
+        uVar7 = uVar7 + 1;
+      } while (uVar7 < pDVar3->count);
     }
     DArrayDestroy(this_00->field_064B);
     this_00->field_064B = (DArrayTy *)0x0;
   }
   pDVar3 = this_00->field_0647;
   if (pDVar3 != (DArrayTy *)0x0) {
-    uVar8 = 0;
+    uVar7 = 0;
     if (pDVar3->count != 0) {
       if (pDVar3->count == 0) {
         pAVar4 = (AnonShape_005E10A0_819783CC *)0x0;
         goto LAB_005e06d9;
       }
       do {
-        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar3, uVar8) (runtime stride) */
-        pAVar4 = (AnonShape_005E10A0_819783CC *)(pDVar3->elementSize * uVar8 + (int)pDVar3->data);
+        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar3, uVar7) (runtime stride) */
+        pAVar4 = (AnonShape_005E10A0_819783CC *)(pDVar3->elementSize * uVar7 + (int)pDVar3->data);
 LAB_005e06d9:
         TTaskItemClose(this_00,pAVar4);
         pDVar3 = this_00->field_0647;
-        uVar8 = uVar8 + 1;
-      } while (uVar8 < pDVar3->count);
+        uVar7 = uVar7 + 1;
+      } while (uVar7 < pDVar3->count);
     }
     DArrayDestroy(this_00->field_0647);
     this_00->field_0647 = (DArrayTy *)0x0;
   }
   pDVar3 = this_00->field_064F;
   if (pDVar3 != (DArrayTy *)0x0) {
-    uVar8 = 0;
+    uVar7 = 0;
     if (pDVar3->count != 0) {
       if (pDVar3->count == 0) {
         pAVar4 = (AnonShape_005E10A0_819783CC *)0x0;
         goto LAB_005e072b;
       }
       do {
-        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar3, uVar8) (runtime stride) */
-        pAVar4 = (AnonShape_005E10A0_819783CC *)(pDVar3->elementSize * uVar8 + (int)pDVar3->data);
+        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar3, uVar7) (runtime stride) */
+        pAVar4 = (AnonShape_005E10A0_819783CC *)(pDVar3->elementSize * uVar7 + (int)pDVar3->data);
 LAB_005e072b:
         TTaskItemClose(this_00,pAVar4);
         pDVar3 = this_00->field_064F;
-        uVar8 = uVar8 + 1;
-      } while (uVar8 < pDVar3->count);
+        uVar7 = uVar7 + 1;
+      } while (uVar7 < pDVar3->count);
     }
     DArrayDestroy(this_00->field_064F);
     this_00->field_064F = (DArrayTy *)0x0;

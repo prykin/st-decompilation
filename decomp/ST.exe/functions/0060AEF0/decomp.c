@@ -172,9 +172,9 @@ int __fastcall FUN_0060aef0(void *param_1)
                          (int)g_worldGrid.sizeX * (int)sVar16 + (int)sVar17].objects[0];
             }
             if ((pSVar19 != (STFishC *)0x0) &&
-               (iVar12 = (*pSVar19->vtable->vfunc_F0)(pSVar19), iVar12 != 0)) {
+               (iVar12 = pSVar19->vfunc_F0(), iVar12 != 0)) {
               if ((*(int *)&pSVar19->field_0x20 == 1000) &&
-                 (dVar13 = (*pSVar19->vtable->slot_2C)(pSVar19),
+                 (dVar13 = pSVar19->slot_2C(),
                  *(int *)(&DAT_00791d68 + dVar13 * 4) == 1)) {
                 bVar21 = false;
                 iVar12 = 0;
@@ -261,7 +261,7 @@ LAB_0060b2ce:
                     }
                     iVar12 = FUN_006acf90(local_98,local_40,iVar18,iVar12);
                     puVar1[2] = iVar12;
-                    dVar13 = (*pSVar19->vtable->slot_2C)(pSVar19);
+                    dVar13 = pSVar19->slot_2C();
                     if (dVar13 == 0x23) {
                       local_4c = local_4c + 1;
                     }
@@ -357,9 +357,9 @@ LAB_0060b48b:
                       }
                     }
                     if (bVar21) {
-                      dVar13 = (*pSVar19->vtable->slot_2C)(pSVar19);
+                      dVar13 = pSVar19->slot_2C();
                       uVar22 = (uint)(*(int *)(&DAT_00791d68 + dVar13 * 4) == 1);
-                      uVar15 = thunk_FUN_004ad650((int)&pSVar19->field_01D5);
+                      uVar15 = thunk_FUN_004ad650((STT3DSprC *)&pSVar19->field_01D5);
                       thunk_FUN_00637f40(uVar15,uVar22,iVar12);
                     }
                   }
@@ -447,7 +447,7 @@ cf_continue_loop_0060B649:
       do {
         pSVar19 = *(STFishC **)(local_74 + local_6c * 0xc);
         local_48 = 1;
-        dVar13 = (*pSVar19->vtable->slot_2C)(pSVar19);
+        dVar13 = pSVar19->slot_2C();
         if (((dVar13 != 0x23) && (local_4c != 0)) && (iVar12 = 0, 0 < local_4c)) {
           do {
             this = *(void **)(local_ac + iVar12 * 0xc);
@@ -473,11 +473,11 @@ cf_continue_loop_0060B649:
           uVar15 = *(int *)((int)param_1 + 0x1c) * 0x41c64e6d + 0x3039;
           *(uint *)((int)param_1 + 0x1c) = uVar15;
           iVar12 = iVar12 + (uVar15 >> 0x10) % (iVar12 * 3 + 1U);
-          uVar15 = thunk_FUN_004ad650((int)&pSVar19->field_01D5);
+          uVar15 = thunk_FUN_004ad650((STT3DSprC *)&pSVar19->field_01D5);
           thunk_FUN_00637d80(uVar15,iVar12);
           thunk_FUN_0060bdd0(param_1,&pSVar19->vtable);
           if (DAT_00811798 != (void *)0x0) {
-            (*pSVar19->vtable->slot_2C)(pSVar19);
+            pSVar19->slot_2C();
             thunk_FUN_006211e0(DAT_00811798,local_7c,local_8c,pSVar19->field_0024);
           }
           local_84 = local_84 + 1;

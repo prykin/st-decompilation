@@ -60,7 +60,7 @@ STAllPlayersC::UnRegisterObject
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  if ((short)param_3 == -1) {
+  if ((ushort)param_3 == 0xffff) {
     RaiseInternalException
               (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0x6cd);
@@ -425,20 +425,20 @@ LAB_0042f547:
     }
   }
   this_00 = local_18;
-  pSVar7 = GetObjPtr(local_18,param_1,param_3,CASE_1);
+  pSVar7 = GetObjPtr(local_18,param_1,(ushort)param_3,CASE_1);
   if (pSVar7 != (STGameObjC *)param_4) {
     RaiseInternalException
               (-0x5001fff9,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0x7a3);
   }
-  if ((short)param_2 != -1) {
-    local_10 = thunk_FUN_0042b760(param_1,param_2);
+  if ((ushort)param_2 != 0xffff) {
+    local_10 = thunk_FUN_0042b760(param_1,(ushort)param_2);
     if (local_10 == (STGroupBoatC *)0x0) {
       RaiseInternalException
                 (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                  0x7a5);
     }
-    iVar9 = thunk_FUN_004237d0(local_10,(short)param_3);
+    iVar9 = thunk_FUN_004237d0(local_10,(ushort)param_3);
     if (iVar9 == 0) {
       RaiseInternalException
                 (-0x5001fffd,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
@@ -447,14 +447,14 @@ LAB_0042f547:
   }
   thunk_FUN_00440820(_param_1,param_3);
   DelObjFromTmps(this_00,DAT_0080874d,param_4[8],param_1,param_3);
-  DelObjFromSaveTmps(this_00,param_4[8],param_1,(short)param_3);
+  DelObjFromSaveTmps(this_00,param_4[8],param_1,(ushort)param_3);
   pSVar3 = local_10;
   pDVar8 = local_14;
   uVar10 = param_3;
-  if ((short)param_2 != -1) {
-    (*local_10->vtable->vfunc_04)(param_3);
+  if ((ushort)param_2 != 0xffff) {
+    local_10->vfunc_04(param_3);
     Library::DKW::TBL::FUN_006ae140(&local_14->flags,param_3 & 0xffff,&local_c);
-    sVar4 = thunk_FUN_004233c0((int)pSVar3);
+    sVar4 = thunk_FUN_004233c0(pSVar3);
     if ((sVar4 != 0) || (iVar9 = thunk_FUN_004233a0((int)pSVar3), iVar9 != 0)) goto LAB_00430018;
     thunk_FUN_0054cf70(g_playSystem_00802A38,pSVar3->field_0008);
     pDVar8 = local_1c;
@@ -471,7 +471,7 @@ LAB_00430018:
     if (0 < (int)local_24) {
       while( true ) {
         DArrayGetElement(pDVar8,uVar10,&local_8);
-        if ((short)local_8 == (short)param_3) break;
+        if ((ushort)local_8 == (ushort)param_3) break;
         uVar10 = uVar10 + 1;
         if ((int)local_24 <= (int)uVar10) {
           g_currentExceptionFrame = local_68.previous;

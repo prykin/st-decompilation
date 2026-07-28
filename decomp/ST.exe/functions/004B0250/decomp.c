@@ -143,10 +143,10 @@ LAB_004b04c9:
                 }
                 if (bVar17) {
                   *(undefined1 *)((int)psVar11 + iVar15 + (int)local_10) = 4;
-                  dVar5 = (*local_c->vtable->slot_2C)(local_c);
+                  dVar5 = local_c->slot_2C();
                   if (((&STGroupBoatCVTable.vfunc_04)[dVar5] ==
                        (icall_004A0EE0_FUN_004a0ee0_for_STGroupBoatC *)0x2) ||
-                     ((dVar5 = (*local_c->vtable->slot_2C)(local_c), dVar5 == 0x78 &&
+                     ((dVar5 = local_c->slot_2C(), dVar5 == 0x78 &&
                       ((&STGroupBoatCVTable.vfunc_04)[*(int *)&local_c->field_0x259] ==
                        (icall_004A0EE0_FUN_004a0ee0_for_STGroupBoatC *)0x2)))) {
                     Library::DKW::TBL::FUN_006ae1c0(&local_2c->flags,&local_c);
@@ -154,10 +154,10 @@ LAB_004b04c9:
                   goto LAB_004b057d;
                 }
               }
-              dVar5 = (*local_c->vtable->slot_2C)(local_c);
+              dVar5 = local_c->slot_2C();
               if (((&STGroupBoatCVTable.vfunc_04)[dVar5] ==
                    (icall_004A0EE0_FUN_004a0ee0_for_STGroupBoatC *)0x2) ||
-                 ((dVar5 = (*local_c->vtable->slot_2C)(local_c), dVar5 == 0x78 &&
+                 ((dVar5 = local_c->slot_2C(), dVar5 == 0x78 &&
                   ((&STGroupBoatCVTable.vfunc_04)[*(int *)&local_c->field_0x259] ==
                    (icall_004A0EE0_FUN_004a0ee0_for_STGroupBoatC *)0x2)))) {
                 *(undefined1 *)((int)psVar11 + iVar15 + (int)local_10) = 6;
@@ -217,6 +217,7 @@ LAB_004b057d:
                      cVar2 != '\x01' && (cVar2 != '\x03')) && (cVar2 != '\x02')))))) {
               local_34 = (short *)(iVar9 * local_18 + (int)local_10);
               memset(local_88, 0, 0x20); /* compiler bulk-zero initialization */
+              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_1 = 0;
               if (0 < local_40) {
                 local_20 = local_14 + -1;
@@ -236,6 +237,7 @@ LAB_004b057d:
                       local_88[0] = 1;
                     }
                     else {
+                      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                       param_1 = param_1 + 1;
                     }
                   }
@@ -244,6 +246,7 @@ LAB_004b057d:
                       local_88[1] = 1;
                     }
                     else {
+                      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                       param_1 = param_1 + 1;
                     }
                   }
@@ -253,6 +256,7 @@ LAB_004b057d:
                       local_88[2] = 1;
                     }
                     else {
+                      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                       param_1 = param_1 + 1;
                     }
                   }
@@ -262,6 +266,7 @@ LAB_004b057d:
                       local_88[3] = 1;
                     }
                     else {
+                      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                       param_1 = param_1 + 1;
                     }
                   }
@@ -273,6 +278,7 @@ LAB_004b057d:
                         local_88[4] = 1;
                       }
                       else {
+                        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                         param_1 = param_1 + 1;
                       }
                     }
@@ -282,6 +288,7 @@ LAB_004b057d:
                         local_88[5] = 1;
                       }
                       else {
+                        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                         param_1 = param_1 + 1;
                       }
                     }
@@ -292,6 +299,7 @@ LAB_004b057d:
                         local_88[6] = 1;
                       }
                       else {
+                        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                         param_1 = param_1 + 1;
                       }
                     }
@@ -302,6 +310,7 @@ LAB_004b057d:
                         local_88[7] = 1;
                       }
                       else {
+                        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                         param_1 = param_1 + 1;
                       }
                     }
@@ -360,6 +369,7 @@ LAB_004b0a54:
                 }
                 else if (-1 < local_50) {
                   if (iVar9 < 0) goto LAB_004b0a3e;
+                  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                   if ((local_50 < iVar9) ||
                      ((iVar9 == local_50 &&
                       (((int)local_48 < (int)param_1 ||

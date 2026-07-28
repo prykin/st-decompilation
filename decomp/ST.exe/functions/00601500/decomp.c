@@ -3,13 +3,29 @@
    /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00601500.
    Evidence: incoming_receiver_captures=1; receiver_accesses=19; incoming_edx_uses=0; calls=17;
    ecx_pointer_setup=16; ecx_scalar_setup=0; caller_cleanup_calls=0; callee_ret_pop=[52];
-   expected_stack=52; receiver_family_members=2; adopt_untyped_existing_thiscall */
+   expected_stack=52; receiver_family_members=2; adopt_untyped_existing_thiscall
+
+   [STPrototypeApplier] Propagated parameter 10.
+   Evidence: 005F27C0 -> 00601500 @ 005F2A2B; unproven partial register write at 005F29F2 | 005F27C0
+   -> 00601500 @ 005F2B21; unproven partial register write at 005F2AE8 | 006001E0 -> 00601500 @
+   0060039D; unproven partial register write at 00600357 | 00601500 -> 00601D10 @ 00601B22 |
+   006101B0 -> 00601500 @ 0061084C; unproven partial register write at 006107FD | 006101B0 ->
+   00601500 @ 006111CC; unproven partial register write at 00611185 | 006101B0 -> 00601500 @
+   0061182E; unproven partial register write at 006117E8 | 006101B0 -> 00601500 @ 00612338; unproven
+   partial register write at 006122F4 | 00619C70 -> 00601500 @ 0061A739; unproven partial register
+   write at 0061A6FE | 0061B340 -> 00601500 @ 0061B680; unproven partial register write at 0061B63A
+   | 0061B340 -> 00601500 @ 0061BB26; unproven partial register write at 0061BAE0 | 0061E7F0 ->
+   00601500 @ 0061ED10; unproven partial register write at 0061ECBE | 00624920 -> 00601500 @
+   00624C9E; literal 65535 at 00624C6F | 0062A370 -> 00601500 @ 0062A54B; literal 65535 at 0062A522
+   | 0063C170 -> 00601500 @ 0063C23C; unproven partial register write at 0063C1EE | 0063C380 ->
+   00601500 @ 0063C444; unproven partial register write at 0063C3F6 | 0063C510 -> 00601500 @
+   0063C5F4; unproven partial register write at 0063C5A6 */
 
 uint __thiscall
 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::FUN_00601500
           (AnonReceiver_00601500 *this,int param_1,int param_2,int param_3,int param_4,int param_5,
-          int param_6,int param_7,int param_8,int param_9,undefined2 param_10,int param_11,
-          int param_12,int param_13)
+          int param_6,int param_7,int param_8,int param_9,ushort param_10,int param_11,int param_12,
+          int param_13)
 
 {
   undefined4 uVar1;
@@ -65,10 +81,12 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::FUN_00601500
   bVar11 = param_1 < 0;
   if (bVar11) {
     iVar10 = 0;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = 0;
   }
   local_c = (uint)bVar11;
   if (param_2 < 0) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = 0;
     local_c = 1;
     iVar10 = 0;

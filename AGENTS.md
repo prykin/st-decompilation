@@ -49,9 +49,22 @@ Original binaries are local under ignored `bin/` and must not be committed.
 - Named `GetMessage` methods share the recovered `STMessage *` envelope. Its
   three argument slots are ID-dependent unions, not three globally fixed types.
 - A runtime `DArrayTy::elementSize` stride cannot become a static C array type.
-- Typed vtable function pointers retain an explicit receiver in Ghidra C output.
+- A fixed class-member array may be installed only from a proven bound or exact
+  pointer-walk extent; run `STClassArrayAnalyzer` before the class-layout pair.
+- Typed vtable function pointers retain an explicit receiver in Ghidra's own C
+  output. `STDecompExport` folds only the exact duplicated-receiver form
+  `(*obj->vtable->slot)(obj, ...)` into C++ member-call sugar
+  `obj->slot(...)`; adjusted, cast, missing, and secondary-base receivers stay
+  explicit for review.
 - Compiler optimization can merge several SSA lifetimes into one Listing local;
   avoid persistent local typing when evidence shows mixed scalar/pointer roles.
+- Non-leaf `void` is valid only when every direct-call CFG path kills EAX before
+  an explicit read; an unresolved path is `unknown`, not ignored. A bare caller
+  `RET` proves forwarding only when that caller already has a protected non-void
+  return ABI—generic return types must not recursively validate each other.
+- `RecoveredRecord_<Owner>_<Address>` is a deterministic generated identity for
+  one complete one-owner pointer shape. It is not an asserted original type name
+  and never licenses geometry-only merging.
 
 ## Validation and hygiene
 

@@ -3,7 +3,7 @@
    full EAX (1), none consume AL/AX, and every RET path defines full EAX; sites=006952B0 @ 006956B8
    -> TEST TEST EAX,EAX */
 
-int FUN_00695180(AnonShape_0052EFB0_8161B92D *param_1,AnonShape_00695180_3C0E4B54 *param_2,
+int FUN_00695180(AnonShape_0052EFB0_8161B92D *param_1,RecoveredRecord_CGenerate_00695180 *param_2,
                 int param_3,int param_4)
 
 {
@@ -25,6 +25,7 @@ int FUN_00695180(AnonShape_0052EFB0_8161B92D *param_1,AnonShape_00695180_3C0E4B5
   if (param_1->field_000C != iVar1) {
     return 0;
   }
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_4 == 0) {
     return 1;
   }

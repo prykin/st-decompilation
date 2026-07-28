@@ -236,7 +236,7 @@ undefined4 __thiscall InterSystemC::CreateInterfObjects(InterSystemC *this)
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,0x14b,(undefined4 *)0x0,(int *)0x0,0,1);
     thunk_FUN_0056a500();
-    (*this_00->vtable->vfunc_10)(this_00,0x201,0);
+    this_00->vfunc_10(0x201,0);
     thunk_FUN_0056a500();
     if (g_helpPanel_00801690 != (HelpPanelTy *)0x0) {
       HelpPanelTy::sub_0051DA70(g_helpPanel_00801690);

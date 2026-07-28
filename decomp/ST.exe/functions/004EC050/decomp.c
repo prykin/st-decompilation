@@ -21,14 +21,14 @@ undefined4 __fastcall FUN_004ec050(int param_1)
       this = (STT3DSprC *)thunk_FUN_004ab810(pAVar1);
     }
     *(STT3DSprC **)(param_1 + 0x5ff) = this;
-    exceptionCode = STT3DSprC::Init(this,DAT_008073cc,0x5a,0x45,0,0xb4,0x8c,0x11);
+    exceptionCode = STT3DSprC::Init(this,DAT_008073cc,0x5a,0x45,(STDcResourcC *)0x0,0xb4,0x8c,0x11);
     if (exceptionCode != 0) {
       RaiseInternalException
                 (exceptionCode,g_overwriteContext_007ED77C,
                  "E:\\__titans\\Artem\\TLO_trade.cpp",0x11b);
     }
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    thunk_FUN_004ad5e0(*(int *)(param_1 + 0x5ff));
+    thunk_FUN_004ad5e0(*(STT3DSprC **)(param_1 + 0x5ff));
   }
   return 0;
 }

@@ -1,16 +1,51 @@
 #include "../../pseudocode_runtime.h"
 
 
-void FUN_00601d10(undefined4 param_1,undefined4 param_2,int param_3,undefined2 param_4,
-                 undefined2 param_5,undefined4 param_6,undefined4 param_7)
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 00601500 -> 00601D10 @ 00601B22;
+   SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::FUN_00601500 parameter param_7 |
+   00615FD0 -> 00601D10 @ 0061608F; MOVSX at 0061607F establishes signed source width 2 | 00615FD0
+   -> 00601D10 @ 006160D0; MOVSX at 006160C0 establishes signed source width 2
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=10, used=0), and
+   decompilation contains no value return
+
+   [STPrototypeApplier] Propagated parameter 4.
+   Evidence: 005F5700 -> 00601D10 @ 005F5980; unproven partial register write at 005F594A | 00601500
+   -> 00601D10 @ 00601B22;
+   SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::FUN_00601500 parameter param_10 |
+   00615FD0 -> 00601D10 @ 0061608F; unproven partial register write at 0061605A | 00615FD0 ->
+   00601D10 @ 006160D0; unproven partial register write at 0061609B | 00625730 -> 00601D10 @
+   00625A8B; literal 65535 at 00625A76 | 00625730 -> 00601D10 @ 00625DCD; literal 65535 at 00625DB8
+   | 0063E700 -> 00601D10 @ 0063E819; unproven partial register write at 0063E7FB | 0063E700 ->
+   00601D10 @ 0063E8B6; unproven partial register write at 0063E898 | 0063E9C0 -> 00601D10 @
+   0063ED56; unproven partial register write at 0063ED2B | 0063E9C0 -> 00601D10 @ 0063EDDD; unproven
+   partial register write at 0063EDB2 | 0063E9C0 -> 00601D10 @ 0063EF70; unproven partial register
+   write at 0063EF45
+
+   [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 00601500 -> 00601D10 @ 00601B22;
+   SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::FUN_00601500 parameter param_8
+
+   [STPrototypeApplier] Propagated parameter 3.
+   Evidence: 00601500 -> 00601D10 @ 00601B22;
+   SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::FUN_00601500 parameter param_9
+
+   [STPrototypeApplier] Propagated parameter 5.
+   Evidence: 00601500 -> 00601D10 @ 00601B22;
+   SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::FUN_00601500 parameter param_11 */
+
+void FUN_00601d10(int param_1,int param_2,int param_3,short param_4,ushort param_5,int param_6,
+                 undefined4 param_7)
 
 {
   int iVar1;
   undefined4 local_40 [5];
-  undefined4 *local_2c;
-  undefined4 local_20 [3];
-  undefined2 local_14;
-  undefined2 local_12;
+  int *local_2c;
+  int local_20 [3];
+  ushort local_14;
+  short local_12;
 
   if (param_3 != 0) {
     memset(local_20, 0, 0x1c); /* compiler bulk-zero initialization */

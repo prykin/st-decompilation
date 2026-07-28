@@ -32,6 +32,7 @@ LAB_006f545a:
     param_3 = (uint *)((int)param_3 + param_4);
     iVar9 = param_10 + -1;
     bVar3 = param_10 < 1;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_10 = iVar9;
     if (iVar9 == 0 || bVar3) {
       return param_11;
@@ -259,6 +260,7 @@ cf_continue_loop_006F571D:
   param_1 = param_1 + (param_2 - param_9);
   iVar9 = param_10 + -1;
   bVar3 = param_10 < 1;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_10 = iVar9;
   if (iVar9 == 0 || bVar3) {
     return param_11;

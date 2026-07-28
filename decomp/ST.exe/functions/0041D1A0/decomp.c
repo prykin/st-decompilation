@@ -16,7 +16,7 @@ void __thiscall STMineSetC::sub_0041D1A0(STMineSetC *this,int param_1)
               (g_visibleClass_00802A88,(int)this->field_005B,(int)this->field_005D,
                (char)this->field_005F,this->field_0024,param_1,this->field_0018,0xffffffff);
   }
-  iVar1 = (*this->vtable->vfunc_08)(this);
+  iVar1 = this->vfunc_08();
   if ((iVar1 == 1) && (this->field_0024 == (uint)DAT_0080874d)) {
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected STPackTagged24(2, this->field_0018) == (((uint32_t)(this->field_0018) & 0x00ffffffu) | ((uint32_t)(2) << 24)) */
     FUN_006e6710(PTR_00807598,(float)(int)this->field_0041 * _DAT_007904f8 * _DAT_007904f0,

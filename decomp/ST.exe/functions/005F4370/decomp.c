@@ -14,6 +14,7 @@ STBHEShellC::sub_005F4370(STBHEShellC *this,int *param_1,int *param_2,int *param
   int iVar4;
 
   uVar1 = 0xffffffff;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_4 == 0) {
     *param_1 = (int)this->field_00D1;
     *param_2 = (int)this->field_00D3;
@@ -22,6 +23,7 @@ STBHEShellC::sub_005F4370(STBHEShellC *this,int *param_1,int *param_2,int *param
     uVar1 = (uint)(this->field_00EF <= iVar2);
   }
   else {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_4 == 1) {
       iVar4 = g_playSystem_00802A38->field_00E4 - this->field_00FB;
       iVar2 = this->field_00E7;
@@ -35,6 +37,7 @@ STBHEShellC::sub_005F4370(STBHEShellC *this,int *param_1,int *param_2,int *param
       }
       return (uint)(iVar4 == this->field_00E7);
     }
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_4 == 2) {
       iVar2 = g_playSystem_00802A38->field_00E4 - this->field_00FB;
       *param_1 = (this->field_00D7 * iVar2) / 10000 + (int)this->field_00D1;

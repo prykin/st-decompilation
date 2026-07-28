@@ -6,12 +6,16 @@
    PanelTy::CreateBut
 
    [STPrototypeApplier] Propagated parameter 8.
-   Evidence: 00539280 -> 00538690 @ 005393BB | 0053EF20 -> 00538690 @ 0053F07B */
+   Evidence: 00539280 -> 00538690 @ 005393BB | 0053EF20 -> 00538690 @ 0053F07B
+
+   [STPrototypeApplier] Propagated parameter 12.
+   Evidence: 00539280 -> 00538690 @ 005393BB; literal 0 at 00539398 | 0053EF20 -> 00538690 @
+   0053F07B; literal 0 at 0053F05B | 0053EF20 -> 00538690 @ 0053F0F2; literal 0 at 0053F0D7 */
 
 undefined4 __thiscall
 PanelTy::CreateBut(PanelTy *this,undefined4 param_1,int param_2,int param_3,int param_4,int param_5,
                   int param_6,byte param_7,LPSTR param_8,undefined4 param_9,undefined4 param_10,
-                  short param_11,undefined2 param_12,undefined4 param_13,char *param_14,
+                  short param_11,ushort param_12,undefined4 param_13,char *param_14,
                   undefined4 param_15)
 
 {
@@ -38,14 +42,14 @@ PanelTy::CreateBut(PanelTy *this,undefined4 param_1,int param_2,int param_3,int 
   undefined4 local_10c;
   undefined4 local_108;
   undefined4 local_104;
-  undefined2 local_100;
+  ushort local_100;
   short local_fe;
   undefined4 local_fc;
   undefined4 local_f4;
   undefined4 local_e8;
   undefined4 local_e4;
   undefined4 local_e0;
-  undefined2 local_dc;
+  ushort local_dc;
   short local_da;
   undefined4 local_d8;
   undefined4 local_d0;

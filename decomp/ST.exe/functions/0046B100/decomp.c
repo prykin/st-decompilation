@@ -115,7 +115,7 @@ int __thiscall STBoatC::Build(STBoatC *this,uint param_1)
     this->field_04E7 = this->field_037D;
     Library::MSVCRT::_strncpy(&this->field_0x4eb,&this->field_0x381,0xe);
     this->field_04F9 = 0;
-    thunk_FUN_0048dcf0((AnonShape_0048DCF0_C8633E73 *)this);
+    thunk_FUN_0048dcf0(this);
     this->field_0508 = CASE_0;
     this->field_050C = 0;
     sub_00481520(this,(int)this->field_04FC,(int)this->field_04FE,(int)this->field_0500);
@@ -138,7 +138,8 @@ int __thiscall STBoatC::Build(STBoatC *this,uint param_1)
                                       ,(int *)0x0,0,(int *)0x0), iVar13 == 0)) {
         return 0;
       }
-      if (this->field_06F7 == CASE_19) {
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+      if (*(int *)((int)this->field_06CB + 0x2c) == 0x19) {
         this->field_0508 = CASE_3 - (this->field_0502 != 0);
       }
       else {
@@ -216,7 +217,7 @@ LAB_0046b5ac:
       this->field_0508 = CASE_1;
       break;
     case 3:
-      thunk_FUN_0048dcf0((AnonShape_0048DCF0_C8633E73 *)this);
+      thunk_FUN_0048dcf0(this);
       sub_00481520(this,(int)this->field_04FC,(int)this->field_04FE,(int)this->field_0500);
       goto LAB_0046c3be;
     case 0xffffffff:
@@ -234,14 +235,14 @@ LAB_0046b5ac:
   else {
     if (SVar4 == CASE_1) {
       /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-      iVar13 = (*this->vtable->StopMove)(this,unaff_EDI);
+      iVar13 = this->StopMove(unaff_EDI);
       if (iVar13 == -1) {
         return -1;
       }
       if (iVar13 == 1) {
         this->field_0508 = CASE_7;
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-        thunk_FUN_0048df40((AnonShape_0048DF40_8D46D7E8 *)this,extraout_EDX);
+        thunk_FUN_0048df40(this,extraout_EDX);
         sub_00481520(this,(int)this->field_04FC,(int)this->field_04FE,(int)this->field_0500);
         iVar13 = sub_0045FF50(this,0);
         if (iVar13 == -1) {
@@ -295,7 +296,7 @@ LAB_0046b5ac:
           local_10 = (undefined4 *)&this->field_0x2b3;
           do {
             puVar11 = (undefined4 *)
-                      thunk_FUN_0041dc40(local_4c,(short)*local_10,*(undefined2 *)(local_10 + 1),
+                      thunk_FUN_0041dc40(local_4c,(short)*local_10,*(ushort *)(local_10 + 1),
                                          this->field_006C);
             local_c = *puVar11;
             local_8 = *(short *)(puVar11 + 1);
@@ -365,8 +366,10 @@ LAB_0046b5ac:
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
         if (local_1c == 0) {
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+          iVar13 = *(int *)((int)this->field_06CB + 0x2c);
           this->field_050C = 0;
-          this->field_0508 = (-(uint)(this->field_06F7 != CASE_19) & 2) + CASE_3;
+          this->field_0508 = (-(uint)(iVar13 != 0x19) & 2) + CASE_3;
         }
       }
       goto cf_common_exit_0046C3C5;
@@ -389,7 +392,7 @@ LAB_0046b5ac:
       if (uVar10 == 0) {
         this->field_0508 = CASE_4;
         this->field_050C = 2;
-        iVar13 = (*this->vtable->vfunc_D8)(this);
+        iVar13 = this->vfunc_D8();
         return (-(uint)(iVar13 != 0) & 0xfffffffd) + 2;
       }
       goto cf_common_exit_0046C3C5;
@@ -407,7 +410,7 @@ LAB_0046b5ac:
           local_10 = (undefined4 *)&this->field_0x2b3;
           do {
             puVar11 = (undefined4 *)
-                      thunk_FUN_0041dc40(local_4c,(short)*local_10,*(undefined2 *)(local_10 + 1),
+                      thunk_FUN_0041dc40(local_4c,(short)*local_10,*(ushort *)(local_10 + 1),
                                          this->field_006C);
             local_c = *puVar11;
             local_8 = *(short *)(puVar11 + 1);
@@ -482,7 +485,7 @@ LAB_0046b5ac:
         }
       }
 LAB_0046b6e2:
-      iVar13 = (*this->vtable->vfunc_D8)(this);
+      iVar13 = this->vfunc_D8();
       return (-(uint)(iVar13 != 0) & 0xfffffffd) + 2;
     }
     if (SVar4 == CASE_5) {
@@ -521,10 +524,10 @@ LAB_0046b6e2:
                                     (int *)0x0,0,(int *)0x0);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         uVar8 = extraout_EDX_00;
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        /* ST_PSEUDO[return_width_artifact,raw_pointer_offset]: candidate call-output artifact: verify return width, clobbers, or x87 state; candidate structure field after proof; otherwise retain buffer arithmetic */
         if ((iVar13 != 0) &&
            (STPlaySystemC::CreateGameObject(this->field_000C,0x3e9,0,0,&local_d8,0),
-           uVar8 = extraout_EDX_01, this->field_06F7 == CASE_19)) {
+           uVar8 = extraout_EDX_01, *(int *)((int)this->field_06CB + 0x2c) == 0x19)) {
           local_44.arg0.ptr = &local_68;
           local_68 = 10000;
           local_64 = 0;
@@ -532,7 +535,7 @@ LAB_0046b6e2:
           local_54 = 1;
           local_50 = 1;
           local_44.id = MESS_HITKILL;
-          (*this->vtable->GetMessage)(this,&local_44);
+          this->GetMessage(&local_44);
           goto cf_common_exit_0046C3C5;
         }
       }
@@ -542,10 +545,10 @@ LAB_0046b6e2:
                                     (int *)0x0,0,(int *)0x0);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         uVar8 = extraout_EDX_02;
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        /* ST_PSEUDO[return_width_artifact,raw_pointer_offset]: candidate call-output artifact: verify return width, clobbers, or x87 state; candidate structure field after proof; otherwise retain buffer arithmetic */
         if ((iVar13 != 0) &&
            (STPlaySystemC::CreateGameObject(this->field_000C,0x3e9,0,0,&local_d8,0),
-           uVar8 = extraout_EDX_03, this->field_06F7 == CASE_19)) {
+           uVar8 = extraout_EDX_03, *(int *)((int)this->field_06CB + 0x2c) == 0x19)) {
           local_44.arg0.ptr = &local_68;
           local_68 = 10000;
           local_64 = 0;
@@ -553,7 +556,7 @@ LAB_0046b6e2:
           local_54 = 1;
           local_50 = 1;
           local_44.id = MESS_HITKILL;
-          (*this->vtable->GetMessage)(this,&local_44);
+          this->GetMessage(&local_44);
           goto cf_common_exit_0046C3C5;
         }
       }
@@ -562,7 +565,7 @@ LAB_0046b6e2:
       }
       else {
         this->field_0508 = CASE_7;
-        thunk_FUN_0048df40((AnonShape_0048DF40_8D46D7E8 *)this,uVar8);
+        thunk_FUN_0048df40(this,uVar8);
         sub_00481520(this,(int)this->field_04FC,(int)this->field_04FE,(int)this->field_0500);
         iVar13 = sub_0045FF50(this,0);
         if (iVar13 == -1) {
@@ -570,7 +573,7 @@ LAB_0046b6e2:
         }
       }
 cf_common_exit_0046C04E:
-      iVar13 = (*this->vtable->vfunc_D8)(this);
+      iVar13 = this->vfunc_D8();
       return (-(uint)(iVar13 != 0) & 0xfffffffd) + 2;
     }
     if (SVar4 == CASE_6) {
@@ -618,7 +621,7 @@ cf_common_exit_0046C04E:
           local_10 = (undefined4 *)&this->field_0x2b3;
           do {
             puVar11 = (undefined4 *)
-                      thunk_FUN_0041dc40(local_4c,(short)*local_10,*(undefined2 *)(local_10 + 1),
+                      thunk_FUN_0041dc40(local_4c,(short)*local_10,*(ushort *)(local_10 + 1),
                                          this->field_006C);
             local_c = *puVar11;
             local_8 = *(short *)(puVar11 + 1);
@@ -691,7 +694,7 @@ cf_common_exit_0046C04E:
         }
         if (local_1c == 0) {
           this->field_0508 = CASE_7;
-          thunk_FUN_0048df40((AnonShape_0048DF40_8D46D7E8 *)this,uVar8);
+          thunk_FUN_0048df40(this,uVar8);
           sub_00481520(this,(int)this->field_04FC,(int)this->field_04FE,(int)this->field_0500);
           iVar13 = sub_0045FF50(this,0);
           if (iVar13 == -1) {
@@ -723,18 +726,18 @@ cf_error_exit_0046C422:
       return 0xffff;
     }
     if (iVar13 == 0) {
-      iVar13 = (*this->vtable->vfunc_D8)(this);
+      iVar13 = this->vfunc_D8();
       return -(uint)(iVar13 != 0);
     }
     if (iVar13 != 3) goto cf_common_exit_0046C3C5;
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-    thunk_FUN_0048df40((AnonShape_0048DF40_8D46D7E8 *)this,extraout_EDX_06);
+    thunk_FUN_0048df40(this,extraout_EDX_06);
     sub_00481520(this,(int)this->field_04FC,(int)this->field_04FE,(int)this->field_0500);
 LAB_0046c3be:
     sub_0045FF50(this,0);
   }
 cf_common_exit_0046C3C5:
-  iVar13 = (*this->vtable->vfunc_D8)(this);
+  iVar13 = this->vfunc_D8();
   return (-(uint)(iVar13 != 0) & 0xfffffffd) + 2;
 }
 

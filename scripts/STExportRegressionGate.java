@@ -60,6 +60,12 @@ public class STExportRegressionGate extends GhidraScript {
         Pattern.quote(JSON_QUOTE));
     private static final Pattern CATEGORY = Pattern.compile(
         "\\{\\\"kind\\\":\\\"([^\\\"]+)\\\".*?\\\"occurrences\\\":([0-9]+)");
+    private static final Pattern ISSUE_FUNCTION = Pattern.compile(
+        "\\\"function_address\\\":\\\"([0-9A-Fa-f]{8})\\\"");
+    private static final Pattern ISSUE_KIND = Pattern.compile(
+        "\\\"kind\\\":\\\"([^\\\"]+)\\\"");
+    private static final Pattern ISSUE_OCCURRENCES = Pattern.compile(
+        "\\\"occurrences\\\":([0-9]+)");
     private static final Pattern HEX64 = Pattern.compile("[0-9a-f]{64}");
 
     private final List<Check> checks = new ArrayList<>();
@@ -199,11 +205,15 @@ public class STExportRegressionGate extends GhidraScript {
                         "First dispatch-shape migration may expose honest unresolved tail " +
                             "calls while removing wrapped vtable[1] aliases; the next export " +
                             "uses the normal blocking nonincreasing policy" :
-                        "policy=nonincreasing; blocking=" + blockingQuality(kind));
+                        "policy=nonincreasing; blocking=" + blockingQuality(kind) +
+                            (regressed ? "; increased_functions=" +
+                                qualityDeltaSample(before, now, kind) : ""));
             }
             else if ("stage_transition".equals(policy) && newValue != oldValue) {
                 add("warning", "quality:" + kind, oldValue, newValue, "stage_transition",
-                    "A later recovery stage may expose more named layout debt without losing structure");
+                    "A later recovery stage may expose more named layout debt without losing " +
+                    "structure; changed_functions=" +
+                    qualityDeltaSample(before, now, kind));
             }
         }
     }
@@ -242,7 +252,54 @@ public class STExportRegressionGate extends GhidraScript {
             while (matcher.find())
                 result.quality.put(matcher.group(1), Long.parseLong(matcher.group(2)));
         }
+        Path idioms = root.resolve("pseudocode_idioms.jsonl");
+        if (Files.isRegularFile(idioms)) readQualityByFunction(idioms, result);
         return result;
+    }
+
+    private void readQualityByFunction(Path path, CorpusMetrics result) throws Exception {
+        try (BufferedReader reader = Files.newBufferedReader(path,
+                StandardCharsets.UTF_8)) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                Matcher function = ISSUE_FUNCTION.matcher(line);
+                Matcher kind = ISSUE_KIND.matcher(line);
+                Matcher occurrences = ISSUE_OCCURRENCES.matcher(line);
+                if (!function.find() || !kind.find() || !occurrences.find()) continue;
+                result.qualityByFunction.computeIfAbsent(kind.group(1),
+                    ignored -> new HashMap<>()).put(
+                        function.group(1).toUpperCase(Locale.ROOT),
+                        Long.parseLong(occurrences.group(1)));
+            }
+        }
+    }
+
+    private String qualityDeltaSample(CorpusMetrics before, CorpusMetrics now,
+            String kind) {
+        Map<String, Long> left = before.qualityByFunction.getOrDefault(kind, Map.of());
+        Map<String, Long> right = now.qualityByFunction.getOrDefault(kind, Map.of());
+        if (left.isEmpty() && right.isEmpty()) return "<detail unavailable>";
+        List<Map.Entry<String, Long>> deltas = new ArrayList<>();
+        Set<String> functions = new TreeSet<>(left.keySet());
+        functions.addAll(right.keySet());
+        for (String function : functions) {
+            long delta = right.getOrDefault(function, 0L) -
+                left.getOrDefault(function, 0L);
+            if (delta != 0)
+                deltas.add(Map.entry(function, delta));
+        }
+        deltas.sort((a, b) -> {
+            int byDelta = Long.compare(Math.abs(b.getValue()),
+                Math.abs(a.getValue()));
+            return byDelta != 0 ? byDelta : a.getKey().compareTo(b.getKey());
+        });
+        List<String> sample = new ArrayList<>();
+        for (Map.Entry<String, Long> entry : deltas) {
+            sample.add(entry.getKey() + (entry.getValue() > 0 ? "+" : "") +
+                entry.getValue());
+            if (sample.size() == 12) break;
+        }
+        return sample.isEmpty() ? "<summary-only delta>" : String.join(" | ", sample);
     }
 
     private void readFunctions(Path path, CorpusMetrics result) throws Exception {
@@ -472,6 +529,7 @@ public class STExportRegressionGate extends GhidraScript {
         final Map<String, Long> numbers = new HashMap<>();
         final Map<String, String> names = new HashMap<>();
         final Map<String, Long> quality = new HashMap<>();
+        final Map<String, Map<String, Long>> qualityByFunction = new HashMap<>();
         final Map<String, String> vtableSlots = new HashMap<>();
         final Map<String, String> thunkTargets = new HashMap<>();
         final Set<String> taggedMessageHandlers = new TreeSet<>();

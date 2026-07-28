@@ -15,18 +15,30 @@ void __thiscall STAllPlayersC::RestoreTmp(STAllPlayersC *this,int param_1)
   STGameObjC *pSVar4;
   uint uVar5;
   STGameObjC *pSVar6;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  int extraout_EAX;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  int extraout_EAX_00;
   uint uVar7;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  int extraout_EAX_01;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
-  undefined4 uVar8;
-  uint uVar9;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  undefined4 extraout_EAX_02;
+  uint uVar8;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_00;
-  int iVar10;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  undefined4 extraout_EAX_03;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  int extraout_EAX_04;
+  int iVar9;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_ECX;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_ECX_00;
+  undefined4 uVar10;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_01;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -91,9 +103,9 @@ void __thiscall STAllPlayersC::RestoreTmp(STAllPlayersC *this,int param_1)
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_70.previous;
     if (iVar3 != -0x5001fff7) {
-      iVar10 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x19ab,0,0,"%s",
-                                  "STAllPlayersC::RestoreTmp");
-      if (iVar10 != 0) {
+      iVar9 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x19ab,0,0,"%s",
+                                 "STAllPlayersC::RestoreTmp");
+      if (iVar9 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       RaiseInternalException(iVar3,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x19ac);
@@ -127,7 +139,9 @@ void __thiscall STAllPlayersC::RestoreTmp(STAllPlayersC *this,int param_1)
               ActivateTV(this_00,(char)local_8,1,iVar3);
               goto cf_common_exit_0043A47C;
             }
-            iVar3 = PushTV((char)local_8,1);
+            PushTV((char)local_8,1);
+            /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+            iVar3 = extraout_EAX_01;
 LAB_00439c32:
             cVar12 = pAVar1->field_0x4;
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -238,11 +252,9 @@ LAB_00439b10:
       }
       goto cf_common_exit_0043A47C;
     }
-    uVar11 = (undefined2)((uint)((int)pSVar4 * 0x29) >> 0x10);
     if (0x5a < iVar3) {
       if (iVar3 == 0x172) {
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        pSVar6 = GetObjPtr(local_2c,-1,CONCAT22(uVar11,*(undefined2 *)&pAVar1->field_0x8),CASE_2);
+        pSVar6 = GetObjPtr(local_2c,-1,*(ushort *)&pAVar1->field_0x8,CASE_2);
         uVar5 = local_8;
         cVar12 = (char)local_8;
         if (g_playerRuntime[(int)pSVar4].field324_0x203 != 0) {
@@ -448,8 +460,7 @@ LAB_00439566:
       g_playerRuntime[(int)pSVar4].tempSlots[0][0].objectType = 0x3c;
       goto cf_common_exit_0043A47C;
     }
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    pSVar6 = GetObjPtr(local_2c,-1,CONCAT22(uVar11,*(undefined2 *)&pAVar1->field_0x8),CASE_4);
+    pSVar6 = GetObjPtr(local_2c,-1,*(ushort *)&pAVar1->field_0x8,CASE_4);
     uVar5 = local_8;
     cVar12 = (char)local_8;
     if (g_playerRuntime[(int)pSVar4].field324_0x203 != 0) {
@@ -475,7 +486,9 @@ LAB_004397fb:
           }
 LAB_00439672:
           PushTV((char)uVar5,1);
-          iVar3 = ResetActivityFromTmp(this_00,(char)uVar5,1,1,0);
+          ResetActivityFromTmp(this_00,(char)uVar5,1,1,0);
+          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+          iVar3 = extraout_EAX;
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           uVar11 = extraout_var_08;
           goto LAB_0043a463;
@@ -528,7 +541,7 @@ LAB_004398e7:
       iVar3 = CheckTmps(cVar12,1,pSVar6->field_0020,*(char *)&pSVar6->field_0024,(DArrayTy *)0x0,
                         pSVar6->field_0032);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      uVar8 = extraout_ECX;
+      uVar10 = extraout_ECX;
       if (0 < iVar3) {
         ActivateTV(this_00,cVar12,1,iVar3);
         goto cf_common_exit_0043A47C;
@@ -553,21 +566,23 @@ LAB_00439740:
         goto cf_common_exit_0043A47C;
       }
 LAB_00439986:
-      iVar3 = PushTV((char)uVar5,1);
+      PushTV((char)uVar5,1);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      uVar8 = extraout_ECX_00;
+      iVar3 = extraout_EAX_00;
+      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+      uVar10 = extraout_ECX_00;
     }
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     uVar7 = CONCAT22((short)((uint)iVar3 >> 0x10),pSVar6->field_0032);
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    uVar9 = CONCAT31((int3)((uint)uVar8 >> 8),*(undefined1 *)&pSVar6->field_0024);
+    uVar8 = CONCAT31((int3)((uint)uVar10 >> 8),*(undefined1 *)&pSVar6->field_0024);
     uVar13 = pSVar6->field_0020;
 LAB_0043a470:
     iVar3 = 1;
   }
   else {
     if (iVar3 == 0x1a4) {
-      pSVar6 = GetObjPtr(local_2c,-1,(uint)*(ushort *)&pAVar1->field_0x8,CASE_5);
+      pSVar6 = GetObjPtr(local_2c,-1,*(ushort *)&pAVar1->field_0x8,CASE_5);
       uVar5 = local_8;
       cVar12 = (char)local_8;
       if (g_playerRuntime[(int)pSVar4].field324_0x203 != 0) {
@@ -603,7 +618,7 @@ LAB_0043a247:
           iVar3 = CheckTmps(cVar12,1,pSVar6->field_0020,*(char *)&pSVar6->field_0024,(DArrayTy *)0x0
                             ,pSVar6->field_0032);
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-          uVar8 = extraout_EDX_00;
+          uVar10 = extraout_EDX_00;
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           uVar11 = extraout_var_04;
           if (0 < iVar3) {
@@ -634,14 +649,14 @@ LAB_0043a320:
           PushTV((char)uVar5,1);
           ResetActivityFromTmp(this_00,(char)uVar5,1,1,0);
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-          uVar8 = extraout_EDX_01;
+          uVar10 = extraout_EDX_01;
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           uVar11 = extraout_var_05;
         }
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         uVar7 = CONCAT22(uVar11,pSVar6->field_0032);
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        uVar9 = CONCAT31((int3)((uint)uVar8 >> 8),*(undefined1 *)&pSVar6->field_0024);
+        uVar8 = CONCAT31((int3)((uint)uVar10 >> 8),*(undefined1 *)&pSVar6->field_0024);
         uVar13 = pSVar6->field_0020;
         goto LAB_0043a470;
       }
@@ -697,7 +712,9 @@ LAB_0043a42c:
           goto cf_common_exit_0043A47C;
         }
 LAB_0043a459:
-        iVar3 = PushTV((char)uVar5,1);
+        PushTV((char)uVar5,1);
+        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        iVar3 = extraout_EAX_04;
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         uVar11 = extraout_var_14;
       }
@@ -705,13 +722,13 @@ LAB_0043a459:
 LAB_0043a463:
       uVar7 = CONCAT22(uVar11,pSVar6->field_0032);
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      uVar9 = CONCAT31((int3)((uint)iVar3 >> 8),*(undefined1 *)&pSVar6->field_0024);
+      uVar8 = CONCAT31((int3)((uint)iVar3 >> 8),*(undefined1 *)&pSVar6->field_0024);
       uVar13 = pSVar6->field_0020;
       goto LAB_0043a470;
     }
     if (iVar3 != 0x1ae) {
       if (iVar3 != 0x1b8) goto LAB_00439cfb;
-      pSVar6 = GetObjPtr(local_2c,-1,(uint)*(ushort *)&pAVar1->field_0x8,CASE_6);
+      pSVar6 = GetObjPtr(local_2c,-1,*(ushort *)&pAVar1->field_0x8,CASE_6);
       uVar5 = local_8;
       cVar12 = (char)local_8;
       if (g_playerRuntime[(int)pSVar4].field324_0x203 == 0) {
@@ -773,10 +790,7 @@ LAB_00439dfb:
       }
       goto cf_common_exit_0043A47C;
     }
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_20 = GetObjPtr(local_2c,pAVar1->field_0x4,
-                         CONCAT22((short)((uint)((int)pSVar4 * 5) >> 0x10),
-                                  *(undefined2 *)&pAVar1->field_0x8),CASE_3);
+    local_20 = GetObjPtr(local_2c,pAVar1->field_0x4,*(ushort *)&pAVar1->field_0x8,CASE_3);
     uVar5 = local_8;
     cVar12 = (char)local_8;
     if (g_playerRuntime[(int)pSVar4].field324_0x203 == 0) {
@@ -794,7 +808,7 @@ LAB_0043a177:
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         uVar7 = CONCAT22(extraout_var_03,*(undefined2 *)&pAVar1->field_0x8);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-        uVar9 = CONCAT31((int3)((uint)extraout_EDX >> 8),pAVar1->field_0x4);
+        uVar8 = CONCAT31((int3)((uint)extraout_EDX >> 8),pAVar1->field_0x4);
         uVar13 = local_20->field_0020;
         iVar3 = 0;
       }
@@ -806,11 +820,11 @@ LAB_0043a177:
           goto cf_common_exit_0043A47C;
         }
         PushTV(cVar12,0);
-        uVar8 = ResetActivityFromTmp(this_00,cVar12,0,1,0);
+        ResetActivityFromTmp(this_00,cVar12,0,1,0);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         uVar7 = CONCAT22(extraout_var_12,*(undefined2 *)&pAVar1->field_0x8);
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        uVar9 = CONCAT31((int3)((uint)uVar8 >> 8),pAVar1->field_0x4);
+        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        uVar8 = CONCAT31((int3)((uint)extraout_EAX_03 >> 8),pAVar1->field_0x4);
         uVar13 = local_20->field_0020;
         iVar3 = 0;
       }
@@ -835,7 +849,7 @@ LAB_0043a177:
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         uVar7 = CONCAT22(extraout_var_00,*(undefined2 *)&pAVar1->field_0x8);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-        uVar9 = CONCAT31((int3)((uint)extraout_ECX_02 >> 8),pAVar1->field_0x4);
+        uVar8 = CONCAT31((int3)((uint)extraout_ECX_02 >> 8),pAVar1->field_0x4);
         uVar13 = local_20->field_0020;
         iVar3 = 0;
       }
@@ -862,11 +876,11 @@ LAB_0043a177:
           ActivateTV(this_00,cVar12,0,iVar3);
           goto cf_common_exit_0043A47C;
         }
-        uVar8 = PushTV(cVar12,0);
+        PushTV(cVar12,0);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         uVar7 = CONCAT22(extraout_var_11,*(undefined2 *)&pAVar1->field_0x8);
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        uVar9 = CONCAT31((int3)((uint)uVar8 >> 8),pAVar1->field_0x4);
+        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+        uVar8 = CONCAT31((int3)((uint)extraout_EAX_02 >> 8),pAVar1->field_0x4);
         uVar13 = local_20->field_0020;
         iVar3 = 0;
       }
@@ -889,13 +903,13 @@ LAB_0043a177:
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         uVar7 = CONCAT22(extraout_var,*(undefined2 *)&pAVar1->field_0x8);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-        uVar9 = CONCAT31((int3)((uint)extraout_ECX_01 >> 8),pAVar1->field_0x4);
+        uVar8 = CONCAT31((int3)((uint)extraout_ECX_01 >> 8),pAVar1->field_0x4);
         uVar13 = local_20->field_0020;
         iVar3 = 0;
       }
     }
   }
-  AddObjToTmp2(this_00,(char)uVar5,iVar3,0,uVar13,uVar9,uVar7);
+  AddObjToTmp2(this_00,(char)uVar5,iVar3,0,uVar13,uVar8,uVar7);
 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 cf_common_exit_0043A47C:
   if (((local_24 == 1) &&

@@ -4,7 +4,11 @@
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Andrey\support.cpp
    Diagnostic line evidence: 58 (metadata/report site, not the function definition)
-   [STSourceProvenanceApplier end] */
+   [STSourceProvenanceApplier end]
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=43, used=0), and
+   decompilation contains no value return */
 
 void __cdecl
 PutDDXClip(int param_1,int param_2,int param_3,int param_4,uint param_5,byte *param_6,char param_7,
@@ -24,8 +28,8 @@ PutDDXClip(int param_1,int param_2,int param_3,int param_4,uint param_5,byte *pa
     if (errorCode == 0) {
       if (param_7 == '\x01') {
         Library::DKW::DDX::FUN_006b42d0
-                  ((uint)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,param_1,param_2,param_8,
-                   (uint *)0x0,param_3,param_4,param_5,(DWORD)param_6);
+                  (g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,param_1,param_2,param_8,(uint *)0x0
+                   ,param_3,param_4,param_5,(DWORD)param_6);
       }
       else if (param_7 == '\x06') {
         Library::DKW::DDX::FUN_006b82e0

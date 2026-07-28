@@ -3,10 +3,19 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helppan.cpp
-   HelpPanelTy::DrawObj */
+   HelpPanelTy::DrawObj
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=5, used=0), and
+   decompilation contains no value return
+
+   [STPrototypeApplier] Propagated parameter 2.
+   Evidence: 00515650 -> 0044C130 @ 005156B3 | 00515650 -> 00526BA0 @ 0051578E */
 
 void __thiscall
-HelpPanelTy::DrawObj(HelpPanelTy *this,int *param_1,int param_2,byte param_3,int param_4)
+HelpPanelTy::DrawObj
+          (HelpPanelTy *this,int *param_1,STAllPlayersC_GetTOBJImage_param_2Enum *param_2,
+          byte param_3,int param_4)
 
 {
   code *pcVar1;
@@ -30,7 +39,9 @@ HelpPanelTy::DrawObj(HelpPanelTy *this,int *param_1,int param_2,byte param_3,int
     if (g_allPlayers_007FA174 != (STAllPlayersC *)0x0) {
       *param_1 = *param_1 + 2;
       local_8 = (AnonShape_00515650_BBDC7053 *)
-                STAllPlayersC::GetTOBJImage(g_allPlayers_007FA174,(uint)param_3,param_2);
+                STAllPlayersC::GetTOBJImage
+                          (g_allPlayers_007FA174,(uint)param_3,
+                           (STAllPlayersC_GetTOBJImage_param_2Enum)param_2);
       if (local_8 != (AnonShape_00515650_BBDC7053 *)0x0) {
         local_14 = local_8->field_0004;
         local_c = local_8->field_0008;
@@ -39,7 +50,7 @@ HelpPanelTy::DrawObj(HelpPanelTy *this,int *param_1,int param_2,byte param_3,int
                   ((AnonShape_006B5B10_E0D06CF1 *)pHVar2->field_0218,0,iVar3,*param_1,
                    (byte *)pHVar2->field_021C,0,(*(int *)(pHVar2->field_021C + 2) - local_14) / 2,
                    (*(int *)(pHVar2->field_021C + 4) - local_c) / 2,local_14,local_c);
-        FUN_006b5440((int)pHVar2->field_0218,0,iVar3,*param_1,(uint)local_8,0,0xff);
+        FUN_006b5440((ushort *)pHVar2->field_0218,0,iVar3,*param_1,(uint)local_8,0,0xff);
         FUN_006b5ee0((AnonShape_006B5B10_E0D06CF1 *)pHVar2->field_0218,0,iVar3 + -2,*param_1 + -2,
                      local_14 + 4,local_c + 4,0x6f,0xd);
         *param_1 = *param_1 + local_c + 10;
@@ -47,7 +58,7 @@ HelpPanelTy::DrawObj(HelpPanelTy *this,int *param_1,int param_2,byte param_3,int
       }
     }
     if (param_4 != 0) {
-      uVar4 = thunk_FUN_00526ba0(param_2,param_3);
+      uVar4 = thunk_FUN_00526ba0((Global_sub_00526BA0_param_1Enum)param_2,param_3);
       local_8 = (AnonShape_00515650_BBDC7053 *)
                 FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)param_4,uVar4);
       if (local_8 != (AnonShape_00515650_BBDC7053 *)0x0) {

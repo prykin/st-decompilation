@@ -3,12 +3,19 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
-   STAllPlayersC::PutOnPlaceGuardBoats */
+   STAllPlayersC::PutOnPlaceGuardBoats
+
+   [STPrototypeApplier] Propagated parameter 4.
+   Evidence: 00446F80 -> 00448120 @ 004478E3; MOVSX at 004478C9 establishes signed source width 2 |
+   00446F80 -> 00448120 @ 00447B1A; MOVSX at 00447B03 establishes signed source width 2
+
+   [STPrototypeApplier] Propagated parameter 7.
+   Evidence: 00446F80 -> 00448120 @ 004478E3; MOVSX at 004478C9 establishes signed source width 2 */
 
 void __thiscall
 STAllPlayersC::PutOnPlaceGuardBoats
-          (STAllPlayersC *this,uint param_1,uint param_2,int param_3,undefined2 param_4,uint param_5
-          ,int param_6,undefined4 param_7,DArrayTy *param_8)
+          (STAllPlayersC *this,uint param_1,uint param_2,int param_3,short param_4,uint param_5,
+          int param_6,int param_7,DArrayTy *param_8)
 
 {
   code *pcVar1;
@@ -175,6 +182,7 @@ STAllPlayersC::PutOnPlaceGuardBoats
     sVar3 = (short)param_2;
     sVar2 = (short)param_3;
     local_28 = this;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if ((param_2 == param_5) && (param_3 == param_6)) {
       iVar5 = -1;
     }
@@ -219,10 +227,13 @@ STAllPlayersC::PutOnPlaceGuardBoats
         if (-1 < (int)local_24) {
           local_1c = 0;
           do {
+            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             _param_4 = local_20;
             if (9 < (int)local_20) {
+              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               _param_4 = 10;
             }
+            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_6 = 0;
             if (0 < (int)_param_4) {
               psVar13 = local_6a;
@@ -230,7 +241,7 @@ STAllPlayersC::PutOnPlaceGuardBoats
               do {
                 psVar13 = psVar13 + 3;
                 DArrayGetElement(param_8,local_8,&param_5);
-                pSVar7 = (STBoatC *)GetObjPtr(local_28,objPtr,param_5,CASE_1);
+                pSVar7 = (STBoatC *)GetObjPtr(local_28,objPtr,(ushort)param_5,CASE_1);
                 if (pSVar7 == (STBoatC *)0x0) {
                   iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2d64,0,0,
                                              "%s",
@@ -260,6 +271,7 @@ STAllPlayersC::PutOnPlaceGuardBoats
                 else {
                   STBoatC::CmdToObj(pSVar7,CASE_5,&local_18);
                 }
+                /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                 param_6 = param_6 + 1;
                 local_8 = local_8 + 1;
               } while (param_6 < (int)_param_4);
@@ -279,17 +291,20 @@ STAllPlayersC::PutOnPlaceGuardBoats
           if (-1 < (int)local_20) {
             local_8 = 0;
             do {
+              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               _param_4 = local_1c;
               if (0xe < (int)local_1c) {
+                /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                 _param_4 = 0xf;
               }
+              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_6 = 0;
               if (0 < (int)_param_4) {
                 puVar12 = &local_be;
                 uVar14 = local_8;
                 do {
                   DArrayGetElement(param_8,uVar14,&param_5);
-                  pSVar7 = (STBoatC *)GetObjPtr(local_28,objPtr,param_5,CASE_1);
+                  pSVar7 = (STBoatC *)GetObjPtr(local_28,objPtr,(ushort)param_5,CASE_1);
                   if (pSVar7 == (STBoatC *)0x0) {
                     iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2d83,0,0,
                                                "%s",
@@ -310,6 +325,7 @@ STAllPlayersC::PutOnPlaceGuardBoats
                   else {
                     STBoatC::CmdToObj(pSVar7,CASE_5,&local_18);
                   }
+                  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                   param_6 = param_6 + 1;
                   uVar14 = uVar14 + 1;
                   puVar12 = puVar12 + 3;
@@ -328,10 +344,13 @@ STAllPlayersC::PutOnPlaceGuardBoats
           if (-1 < (int)local_24) {
             local_1c = 0;
             do {
+              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               _param_4 = local_20;
               if (9 < (int)local_20) {
+                /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                 _param_4 = 10;
               }
+              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_6 = 0;
               if (0 < (int)_param_4) {
                 psVar13 = local_6a;
@@ -339,7 +358,7 @@ STAllPlayersC::PutOnPlaceGuardBoats
                 do {
                   psVar13 = psVar13 + 3;
                   DArrayGetElement(param_8,local_8,&param_5);
-                  pSVar7 = (STBoatC *)GetObjPtr(local_28,objPtr,param_5,CASE_1);
+                  pSVar7 = (STBoatC *)GetObjPtr(local_28,objPtr,(ushort)param_5,CASE_1);
                   if (pSVar7 == (STBoatC *)0x0) {
                     iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2d45,0,0,
                                                "%s",
@@ -369,6 +388,7 @@ STAllPlayersC::PutOnPlaceGuardBoats
                   else {
                     STBoatC::CmdToObj(pSVar7,CASE_5,&local_18);
                   }
+                  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                   param_6 = param_6 + 1;
                   local_8 = local_8 + 1;
                 } while (param_6 < (int)_param_4);
@@ -387,17 +407,20 @@ STAllPlayersC::PutOnPlaceGuardBoats
             local_1c = 0;
             local_8 = dVar11;
             do {
+              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               _param_4 = local_8;
               if (0xe < (int)local_8) {
+                /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                 _param_4 = 0xf;
               }
+              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_6 = 0;
               if (0 < (int)_param_4) {
                 puVar12 = &local_be;
                 uVar14 = local_1c;
                 do {
                   DArrayGetElement(param_8,uVar14,&param_5);
-                  pSVar7 = (STBoatC *)GetObjPtr(local_28,objPtr,param_5,CASE_1);
+                  pSVar7 = (STBoatC *)GetObjPtr(local_28,objPtr,(ushort)param_5,CASE_1);
                   if (pSVar7 == (STBoatC *)0x0) {
                     iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2d2c,0,0,
                                                "%s",
@@ -418,6 +441,7 @@ STAllPlayersC::PutOnPlaceGuardBoats
                   else {
                     STBoatC::CmdToObj(pSVar7,CASE_5,&local_18);
                   }
+                  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                   param_6 = param_6 + 1;
                   uVar14 = uVar14 + 1;
                   puVar12 = puVar12 + 3;
@@ -443,16 +467,19 @@ STAllPlayersC::PutOnPlaceGuardBoats
                 *piVar15 = 0;
                 piVar15 = piVar15 + 1;
               }
+              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               _param_4 = dVar11;
               if (99 < (int)dVar11) {
+                /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                 _param_4 = 100;
               }
+              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_6 = 0;
               uVar14 = local_8;
               if (0 < (int)_param_4) {
                 do {
                   DArrayGetElement(param_8,uVar14,&param_5);
-                  local_24 = (STBoatC *)GetObjPtr(local_28,objPtr,param_5,CASE_1);
+                  local_24 = (STBoatC *)GetObjPtr(local_28,objPtr,(ushort)param_5,CASE_1);
                   if (local_24 == (STBoatC *)0x0) {
                     iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2e0b,0,0,
                                                "%s",
@@ -586,6 +613,7 @@ LAB_00448bc0:
                   else {
                     STBoatC::sub_00490CD0(pSVar7,local_18,local_14,local_10,local_c);
                   }
+                  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                   param_6 = param_6 + 1;
                   uVar14 = uVar14 + 1;
                 } while (param_6 < (int)_param_4);
@@ -609,17 +637,20 @@ LAB_00448bc0:
         if (-1 < (int)local_20) {
           local_8 = 0;
           do {
+            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             _param_4 = local_1c;
             if (0xe < (int)local_1c) {
+              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               _param_4 = 0xf;
             }
+            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_6 = 0;
             if (0 < (int)_param_4) {
               puVar12 = &local_be;
               uVar14 = local_8;
               do {
                 DArrayGetElement(param_8,uVar14,&param_5);
-                pSVar7 = (STBoatC *)GetObjPtr(local_28,objPtr,param_5,CASE_1);
+                pSVar7 = (STBoatC *)GetObjPtr(local_28,objPtr,(ushort)param_5,CASE_1);
                 if (pSVar7 == (STBoatC *)0x0) {
                   iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2d9b,0,0,
                                              "%s",
@@ -640,6 +671,7 @@ LAB_00448bc0:
                 else {
                   STBoatC::CmdToObj(pSVar7,CASE_5,&local_18);
                 }
+                /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                 param_6 = param_6 + 1;
                 uVar14 = uVar14 + 1;
                 puVar12 = puVar12 + 3;
@@ -658,10 +690,13 @@ LAB_00448bc0:
         if (-1 < (int)local_24) {
           local_1c = 0;
           do {
+            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             _param_4 = local_20;
             if (0x13 < (int)local_20) {
+              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               _param_4 = 0x14;
             }
+            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_6 = 0;
             if (0 < (int)_param_4) {
               psVar13 = local_6a;
@@ -669,7 +704,7 @@ LAB_00448bc0:
               do {
                 psVar13 = psVar13 + 3;
                 DArrayGetElement(param_8,local_8,&param_5);
-                pSVar7 = (STBoatC *)GetObjPtr(local_28,objPtr,param_5,CASE_1);
+                pSVar7 = (STBoatC *)GetObjPtr(local_28,objPtr,(ushort)param_5,CASE_1);
                 if (pSVar7 == (STBoatC *)0x0) {
                   iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2dd2,0,0,
                                              "%s",
@@ -702,6 +737,7 @@ LAB_00448bc0:
                 else {
                   STBoatC::CmdToObj(pSVar7,CASE_5,&local_18);
                 }
+                /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                 param_6 = param_6 + 1;
                 local_8 = local_8 + 1;
               } while (param_6 < (int)_param_4);
@@ -719,17 +755,20 @@ LAB_00448bc0:
         if (-1 < (int)local_20) {
           local_8 = 0;
           do {
+            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             _param_4 = local_1c;
             if (0xe < (int)local_1c) {
+              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               _param_4 = 0xf;
             }
+            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_6 = 0;
             if (0 < (int)_param_4) {
               puVar12 = &local_be;
               uVar14 = local_8;
               do {
                 DArrayGetElement(param_8,uVar14,&param_5);
-                pSVar7 = (STBoatC *)GetObjPtr(local_28,objPtr,param_5,CASE_1);
+                pSVar7 = (STBoatC *)GetObjPtr(local_28,objPtr,(ushort)param_5,CASE_1);
                 if (pSVar7 == (STBoatC *)0x0) {
                   iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2df1,0,0,
                                              "%s",
@@ -750,6 +789,7 @@ LAB_00448bc0:
                 else {
                   STBoatC::CmdToObj(pSVar7,CASE_5,&local_18);
                 }
+                /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                 param_6 = param_6 + 1;
                 uVar14 = uVar14 + 1;
                 puVar12 = puVar12 + 3;
@@ -768,10 +808,13 @@ LAB_00448bc0:
         if (-1 < (int)local_24) {
           local_1c = 0;
           do {
+            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             _param_4 = local_20;
             if (0x13 < (int)local_20) {
+              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               _param_4 = 0x14;
             }
+            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_6 = 0;
             if (0 < (int)_param_4) {
               psVar13 = local_6a;
@@ -779,7 +822,7 @@ LAB_00448bc0:
               do {
                 psVar13 = psVar13 + 3;
                 DArrayGetElement(param_8,local_8,&param_5);
-                pSVar7 = (STBoatC *)GetObjPtr(local_28,objPtr,param_5,CASE_1);
+                pSVar7 = (STBoatC *)GetObjPtr(local_28,objPtr,(ushort)param_5,CASE_1);
                 if (pSVar7 == (STBoatC *)0x0) {
                   iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2db3,0,0,
                                              "%s",
@@ -809,6 +852,7 @@ LAB_00448bc0:
                 else {
                   STBoatC::CmdToObj(pSVar7,CASE_5,&local_18);
                 }
+                /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                 param_6 = param_6 + 1;
                 local_8 = local_8 + 1;
               } while (param_6 < (int)_param_4);

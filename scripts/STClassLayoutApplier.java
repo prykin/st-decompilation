@@ -18,6 +18,7 @@ import java.util.Locale;
 import java.util.Map;
 
 import ghidra.app.script.GhidraScript;
+import ghidra.program.model.data.ArrayDataType;
 import ghidra.program.model.data.CategoryPath;
 import ghidra.program.model.data.DataType;
 import ghidra.program.model.data.DataTypeComponent;
@@ -283,6 +284,22 @@ public class STClassLayoutApplier extends GhidraScript {
     }
 
     private DataType resolveType(String specification, int size) {
+        if (specification.startsWith("array:")) {
+            int separator = specification.indexOf(':', "array:".length());
+            if (separator < 0)
+                throw new IllegalArgumentException("invalid array type " + specification);
+            int count = Integer.parseInt(
+                specification.substring("array:".length(), separator));
+            String elementSpecification = specification.substring(separator + 1);
+            DataType element = resolveType(elementSpecification,
+                elementSize(elementSpecification));
+            ArrayDataType array = new ArrayDataType(element, count, element.getLength(),
+                dataTypes);
+            if (array.getLength() != size)
+                throw new IllegalArgumentException("array size mismatch " + specification +
+                    ": expected " + size + ", resolved " + array.getLength());
+            return array;
+        }
         if (specification.startsWith("pointer:")) {
             String path = specification.substring("pointer:".length());
             DataType pointed = dataTypes.getDataType(path);
@@ -293,6 +310,23 @@ public class STClassLayoutApplier extends GhidraScript {
         DataType type = dataTypes.getDataType(specification);
         if (type == null) throw new IllegalArgumentException("missing data type " + specification);
         return type;
+    }
+
+    private int elementSize(String specification) {
+        if (specification.startsWith("pointer:"))
+            return currentProgram.getDefaultPointerSize();
+        if (specification.startsWith("array:")) {
+            int separator = specification.indexOf(':', "array:".length());
+            if (separator < 0)
+                throw new IllegalArgumentException("invalid nested array type " + specification);
+            int count = Integer.parseInt(
+                specification.substring("array:".length(), separator));
+            return count * elementSize(specification.substring(separator + 1));
+        }
+        DataType type = dataTypes.getDataType(specification);
+        if (type == null)
+            throw new IllegalArgumentException("missing data type " + specification);
+        return type.getLength();
     }
 
     private Safety safety(Structure structure) {

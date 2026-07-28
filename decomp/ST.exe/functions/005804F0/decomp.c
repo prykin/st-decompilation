@@ -1,5 +1,12 @@
 
-void __thiscall FUN_005804f0(void *this,undefined4 param_1,undefined2 param_2,undefined2 param_3)
+/* [STPrototypeApplier] Propagated parameter 3.
+   Evidence: 004E0040 -> 005804F0 @ 004E0114; zero-filled partial register load at 004E0108 |
+   004E0250 -> 005804F0 @ 004E030B; zero-filled partial register load at 004E02FF
+
+   [STPrototypeApplier] Propagated parameter 2.
+   Evidence: 005804F0 -> 00580FF0 @ 0058053D */
+
+void __thiscall FUN_005804f0(void *this,undefined4 param_1,ushort param_2,ushort param_3)
 
 {
   uint uVar1;

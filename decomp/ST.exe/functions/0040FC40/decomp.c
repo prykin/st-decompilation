@@ -101,7 +101,9 @@ int FUN_0040fc40(int param_1,int param_2,int param_3,int param_4,int param_5,int
   local_44[5] = (int)(0 < DAT_007f4d24);
   local_24 = (undefined4 *)0x0;
   if (0 < param_4) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = param_1 - (DAT_007f4d38 * param_4 >> 0x10);
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = param_2 + (DAT_007f4d28 * param_4 >> 0x10);
   }
   uVar15 = *(uint *)(&DAT_007a4b88 + param_5 * 8);
@@ -112,13 +114,17 @@ int FUN_0040fc40(int param_1,int param_2,int param_3,int param_4,int param_5,int
   iVar11 = local_20 * uVar15;
   iVar3 = local_20 / 2;
   if (4 < iVar3 + param_3) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_3 = 4 - iVar3;
   }
   if (param_3 - iVar3 < 0) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_3 = iVar3;
   }
   iVar3 = param_3 - iVar3;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = param_1 * 4 + 2;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_2 = param_2 * 4 + 2;
   local_5c = (int)(uVar15 + ((int)uVar15 >> 0x1f & 7U)) >> 3;
   if (local_5c == 0) {
@@ -419,7 +425,9 @@ int FUN_0040fc40(int param_1,int param_2,int param_3,int param_4,int param_5,int
       if (0 < DAT_007f4d14) goto LAB_00410872;
       goto LAB_00410987;
     }
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = param_1 - (DAT_007f4d38 * 4 >> 0x10);
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = param_2 + ((DAT_007f4d28 << 2) >> 0x10);
     local_44[5] = 1;
   } while (((-1 < param_1) && (param_1 < iVar4)) &&

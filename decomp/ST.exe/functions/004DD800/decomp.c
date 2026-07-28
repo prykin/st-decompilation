@@ -1,5 +1,8 @@
 
-undefined4 __thiscall FUN_004dd800(void *this,int param_1)
+/* [STPrototypeApplier] Propagated return.
+   Evidence: 004DD800 returns zeroed full register at 004DD837 @ 004DD83B */
+
+uint __thiscall FUN_004dd800(void *this,int param_1)
 
 {
   if (*(int *)((int)this + 0x4d4) == param_1) {

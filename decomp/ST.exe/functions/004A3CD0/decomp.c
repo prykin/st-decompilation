@@ -20,23 +20,22 @@ STGroupBoatC::DistributeDock(STGroupBoatC *this,int param_1,DArrayTy *param_2,DA
   uint uVar9;
   InternalExceptionFrame local_88;
   uint local_44;
-  undefined2 local_40;
+  short local_40;
   undefined2 local_3e;
   undefined2 local_3c;
-  undefined2 local_38;
-  short sStack_36;
-  undefined2 uStack_34;
+  ushort local_38;
+  ushort uStack_36;
   dword local_30;
   STGroupBoatC *local_2c;
   DArrayTy *local_28;
   dword local_24;
   DArrayTy *local_20;
-  undefined2 local_1c [2];
+  short local_1c [2];
   undefined2 local_18 [2];
   undefined2 local_14 [2];
   uint local_10;
   DArrayTy *local_c;
-  uint local_8;
+  undefined4 local_8;
 
   uVar9 = 0;
   local_20 = (DArrayTy *)0x0;
@@ -59,9 +58,9 @@ STGroupBoatC::DistributeDock(STGroupBoatC *this,int param_1,DArrayTy *param_2,DA
     if (0 < (int)dVar1) {
       do {
         DArrayGetElement(param_3,uVar9,&local_8);
-        if ((short)local_8 != -1) {
-          pSVar5 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,pSVar3->field_0024,local_8,CASE_1)
-          ;
+        if ((ushort)local_8 != 0xffff) {
+          pSVar5 = STAllPlayersC::GetObjPtr
+                             (g_allPlayers_007FA174,pSVar3->field_0024,(ushort)local_8,CASE_1);
           if (pSVar5 == (STGameObjC *)0x0) {
             iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x1191,0,0,
                                        "%s","STGroupBoatC::DistributeDock NULL value");
@@ -91,8 +90,8 @@ STGroupBoatC::DistributeDock(STGroupBoatC *this,int param_1,DArrayTy *param_2,DA
         do {
           DArrayGetElement(local_c,uVar9,&local_8);
           pSVar6 = (STBoatC *)
-                   STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,pSVar3->field_0024,local_8,CASE_1)
-          ;
+                   STAllPlayersC::GetObjPtr
+                             (g_allPlayers_007FA174,pSVar3->field_0024,(ushort)local_8,CASE_1);
           STBoatC::CmdToObj(pSVar6,CASE_3,&local_10);
           uVar9 = uVar9 + 1;
         } while ((int)uVar9 < (int)dVar1);
@@ -121,40 +120,30 @@ STGroupBoatC::DistributeDock(STGroupBoatC *this,int param_1,DArrayTy *param_2,DA
     if (0 < (int)local_30) {
       do {
         DArrayGetElement(pDVar7,uVar9,&local_38);
-        if (sStack_36 == -1) {
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+        if (uStack_36 == 0xffff) {
           pSVar6 = (STBoatC *)
                    STAllPlayersC::GetObjPtr
-                             (g_allPlayers_007FA174,pSVar3->field_0024,CONCAT22(0xffff,local_38),
-                              CASE_1);
+                             (g_allPlayers_007FA174,pSVar3->field_0024,local_38,CASE_1);
           STBoatC::CmdToObj(pSVar6,CASE_3,&local_10);
         }
         else if (param_1 == 1) {
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           pSVar5 = STAllPlayersC::GetObjPtr
-                             (g_allPlayers_007FA174,pSVar3->field_0024,CONCAT22(uStack_34,sStack_36)
-                              ,CASE_1);
+                             (g_allPlayers_007FA174,pSVar3->field_0024,uStack_36,CASE_1);
           STFishC::sub_004162B0((STFishC *)pSVar5,local_1c,local_18,local_14);
           local_40 = local_1c[0];
           local_3e = local_18[0];
           local_3c = local_14[0];
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           pSVar6 = (STBoatC *)
                    STAllPlayersC::GetObjPtr
-                             (g_allPlayers_007FA174,pSVar3->field_0024,CONCAT22(sStack_36,local_38),
-                              CASE_1);
+                             (g_allPlayers_007FA174,pSVar3->field_0024,local_38,CASE_1);
           STBoatC::CmdToObj(pSVar6,CASE_4,&local_44);
         }
         else {
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           pSVar5 = STAllPlayersC::GetObjPtr
-                             (g_allPlayers_007FA174,pSVar3->field_0024,CONCAT22(uStack_34,sStack_36)
-                              ,CASE_1);
+                             (g_allPlayers_007FA174,pSVar3->field_0024,uStack_36,CASE_1);
           STFishC::sub_004162B0((STFishC *)pSVar5,local_1c,local_18,local_14);
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           pSVar5 = STAllPlayersC::GetObjPtr
-                             (g_allPlayers_007FA174,pSVar3->field_0024,CONCAT22(sStack_36,local_38),
-                              CASE_1);
+                             (g_allPlayers_007FA174,pSVar3->field_0024,local_38,CASE_1);
           thunk_FUN_00490a00(pSVar5,local_1c[0],local_18[0],local_14[0]);
         }
         uVar9 = uVar9 + 1;
@@ -166,7 +155,8 @@ STGroupBoatC::DistributeDock(STGroupBoatC *this,int param_1,DArrayTy *param_2,DA
       do {
         DArrayGetElement(local_c,uVar9,&local_8);
         pSVar6 = (STBoatC *)
-                 STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,pSVar3->field_0024,local_8,CASE_1);
+                 STAllPlayersC::GetObjPtr
+                           (g_allPlayers_007FA174,pSVar3->field_0024,(ushort)local_8,CASE_1);
         STBoatC::CmdToObj(pSVar6,CASE_3,&local_10);
         uVar9 = uVar9 + 1;
         pDVar7 = local_28;

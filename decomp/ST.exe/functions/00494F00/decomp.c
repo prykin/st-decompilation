@@ -12,7 +12,7 @@ void __fastcall FUN_00494f00(AnonShape_00494F00_45028F21 *param_1)
       if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
         VisibleClassTy::sub_0055A4C0
                   (g_visibleClass_00802A88,(int)param_1->field_005B,(int)param_1->field_005D,
-                   (char)param_1->field_005F,param_1->field_0024,param_1->field_0101,
+                   (char)param_1->field_005F,param_1->field_0024,(int)param_1->field_0101,
                    param_1->field_0018);
       }
     }
@@ -22,7 +22,7 @@ void __fastcall FUN_00494f00(AnonShape_00494F00_45028F21 *param_1)
       if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
         VisibleClassTy::sub_0055A870
                   (g_visibleClass_00802A88,(int)param_1->field_005B,(int)param_1->field_005D,
-                   (char)param_1->field_005F,param_1->field_0024,param_1->field_0101,
+                   (char)param_1->field_005F,param_1->field_0024,(int)param_1->field_0101,
                    param_1->field_0018);
       }
     }

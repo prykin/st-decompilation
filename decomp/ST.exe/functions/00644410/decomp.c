@@ -158,7 +158,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410::FUN_00644410
                           ((this_00 = g_worldGrid.cells
                                       [(int)sVar11 * (int)g_worldGrid.planeStride + sVar2 * iVar6 +
                                        (int)sVar9].objects[1], this_00 != (STWorldObject *)0x0 &&
-                           (((iVar6 = (*this_00->vtable->GetObjectTypeId)(this_00), iVar6 != 0xa6 &&
+                           (((iVar6 = this_00->GetObjectTypeId(), iVar6 != 0xa6 &&
                              (iVar6 != 0xa7)) && ((iVar6 != 0xbd && (iVar6 != 0xaf)))))))))) {
                         this_00 = (STWorldObject *)0x0;
                       }
@@ -250,6 +250,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410::FUN_00644410
                           local_28 = local_20;
                           local_20 = 3;
                           iVar12 = (local_34 - local_14) / 2 + local_14;
+                          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                           param_1 = local_18;
                           iVar6 = iVar5 / 2 + iVar6;
                           local_18 = (undefined4 *)
@@ -290,6 +291,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410::FUN_00644410
                             if (g_pathingGrid.cells
                                 [local_2c * g_pathingGrid.planeStride +
                                  iVar3 + iVar5 * g_pathingGrid.sizeX] < 0) {
+                              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                               param_1 = local_18;
                               iVar7 = local_38;
                               iVar10 = local_34;
@@ -308,12 +310,14 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410::FUN_00644410
                           } while (local_20 != 0);
                           sVar2 = (short)((int)local_18 >> 0x1f);
                           if ((int)local_18 < 0) {
+                            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                             param_1 = (undefined4 *)
                                       ((short)(((short)((int)local_18 / 200) + sVar2) -
                                               (short)((longlong)(int)local_18 * 0x51eb851f >> 0x3f))
                                       + -1);
                           }
                           else {
+                            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                             param_1 = (undefined4 *)
                                       (int)(short)(((short)((int)local_18 / 200) + sVar2) -
                                                   (short)((longlong)(int)local_18 * 0x51eb851f >>
@@ -374,8 +378,8 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410::FUN_00644410
                           *param_2 = (int)local_6;
                           *param_3 = (int)local_8;
                           *param_4 = (int)local_a;
-                          sub_00645F10((AnonReceiver_00644410 *)pAVar1,this_00,(short)*param_2,
-                                       (short)*param_3,local_a);
+                          sub_00645F10((AnonReceiver_00644410 *)pAVar1,this_00,(ushort)*param_2,
+                                       (ushort)*param_3,local_a);
                           pAVar1->field_0285 = '\x02';
                         }
                         pAVar1->field_0270 = 1;

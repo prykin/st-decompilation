@@ -1,6 +1,17 @@
 
-undefined4 * __thiscall
-FUN_006e9000(void *this,int param_1,short param_2,short param_3,undefined4 param_4,
+/* [STPrototypeApplier] Propagated parameter 2.
+   Evidence: raw retained-width parameter lifetime: width=2, reads=1, sites=006E903A MOV AX,word ptr
+   [EBP + 0xc]
+
+   [STPrototypeApplier] Propagated parameter 3.
+   Evidence: raw retained-width parameter lifetime: width=2, reads=1, sites=006E9030 MOV CX,word ptr
+   [EBP + 0x10]
+
+   [STPrototypeApplier] Propagated return.
+   Evidence: 006E9000 returns forwarded through return of STManRuinC::sub_00630C50 @ 00630F22 */
+
+ushort * __thiscall
+FUN_006e9000(void *this,int param_1,ushort param_2,ushort param_3,undefined4 param_4,
             undefined4 param_5,undefined4 param_6,int param_7)
 
 {
@@ -23,6 +34,6 @@ FUN_006e9000(void *this,int param_1,short param_2,short param_3,undefined4 param
   if (iVar2 != 0) {
     *(undefined4 *)((int)this + 0x134) = 1;
   }
-  return (undefined4 *)pAVar1;
+  return (ushort *)pAVar1;
 }
 

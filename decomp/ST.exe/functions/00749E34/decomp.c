@@ -30,7 +30,7 @@ undefined4 FUN_00749e34(AnonShape_00749E34_D5356433 *param_1)
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*(int *)this + 0x6c))();
       SetEvent(param_1->field_0050);
-      FUN_00749d5f((int)this);
+      FUN_00749d5f((CBaseRenderer *)this);
       param_1->field_0054 = 0;
     }
   }

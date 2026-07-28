@@ -171,11 +171,13 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_00424e10
       iVar10 = (int)lVar27 - *(int *)&this->field_0x374;
       local_c4 = 0;
       if (*(int *)&this->field_0x370 < iVar10 + param_5) {
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_5 = *(int *)&this->field_0x370 - iVar10;
         local_2c = 1;
       }
       if (iVar10 < 0) {
         local_c4 = -iVar10;
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_5 = param_5 + iVar10;
         local_2c = 1;
       }
@@ -187,11 +189,13 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_00424e10
       local_54 = (int)lVar27 - *(int *)&this->field_0x378;
       local_d4 = 0;
       if (*(int *)&this->field_0x370 < param_6 + local_54) {
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_6 = *(int *)&this->field_0x370 - local_54;
         local_2c = 1;
       }
       if (local_54 < 0) {
         local_d4 = -local_54;
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_6 = param_6 + local_54;
         local_2c = 1;
       }

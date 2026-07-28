@@ -110,7 +110,7 @@ int __thiscall BldBoatPanelTy::GetMessage(BldBoatPanelTy *this,STMessage *messag
         uStack_d = 0xff;
         local_c = 0xffff;
         local_a = 0xff;
-        thunk_FUN_0054edf0((undefined4 *)0x1e,(undefined4 *)&local_14,0,0xffffffff);
+        thunk_FUN_0054edf0((undefined4 *)0x1e,(uint *)&local_14,0,0xffffffff);
         thunk_FUN_005252c0(0xae);
         g_currentExceptionFrame = local_58.previous;
         return 0;

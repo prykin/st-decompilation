@@ -1,5 +1,11 @@
 
-undefined4 __thiscall FUN_004e15f0(void *this,undefined4 param_1)
+/* [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 00465C60 -> 004E15F0 @ 004667FA; /STBoatC+0x18 | 00465C60 -> 004E15F0 @ 0046695D;
+   /STBoatC+0x18 | 00465C60 -> 004E15F0 @ 0046813F; /STBoatC+0x18 | 00465C60 -> 004E15F0 @ 004682F0;
+   /STBoatC+0x18 | 0046D450 -> 004E15F0 @ 0046D97D; /STBoatC+0x18 | 0046D450 -> 004E15F0 @ 0046DAFF;
+   /STBoatC+0x18 */
+
+undefined4 __thiscall FUN_004e15f0(void *this,uint param_1)
 
 {
   int iVar1;
@@ -17,7 +23,7 @@ undefined4 __thiscall FUN_004e15f0(void *this,undefined4 param_1)
   if (*(int *)((int)this + 0x4d8) != -1) {
     return 0;
   }
-  *(undefined4 *)((int)this + 0x4d8) = param_1;
+  *(uint *)((int)this + 0x4d8) = param_1;
   return 1;
 }
 

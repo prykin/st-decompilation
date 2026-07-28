@@ -3,11 +3,14 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helppan.cpp
-   HelpPanelTy::DrawWeapon */
+   HelpPanelTy::DrawWeapon
+   [STAbiConsistencyApplier] stack_parameter_width target=parameter:5: parameter=/byte Evidence:
+   entry-use width=/byte; unmasked_dword_reads=0; evidence=00515A93 MOV EDX,dword ptr [EBP + 0x18];
+   first-use mask */
 
 undefined4 __thiscall
 HelpPanelTy::DrawWeapon
-          (HelpPanelTy *this,int param_1,int *param_2,int param_3,int param_4,uint param_5)
+          (HelpPanelTy *this,int param_1,int *param_2,int param_3,int param_4,byte param_5)
 
 {
   code *pcVar1;
@@ -82,7 +85,7 @@ HelpPanelTy::DrawWeapon
       local_24 = (0xf - *(int *)(pbVar4 + 8)) / 2 + *param_2;
       local_1c = *(undefined4 *)(pbVar4 + 8);
       local_17 = param_3;
-      local_13 = param_5 & 0xff;
+      local_13 = (uint)param_5;
       local_18 = 4;
       Library::DKW::TBL::FUN_006ae1c0((uint *)local_8->field_01D7,&local_28);
       iVar2 = *(int *)(pbVar4 + 8);

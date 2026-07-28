@@ -50,7 +50,7 @@ void __thiscall OptPanelTy::DoneOptPanel(OptPanelTy *this)
       FindCloseChangeNotification(pOVar2->field_01DD);
       pOVar2->field_01DD = (HANDLE)0x0;
     }
-    puVar6 = &pOVar2->field_01B5;
+    puVar6 = pOVar2->field_01B5;
     iVar3 = 10;
     do {
       if (*puVar6 != 0) {
@@ -60,7 +60,7 @@ void __thiscall OptPanelTy::DoneOptPanel(OptPanelTy *this)
       puVar6 = puVar6 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
-    puVar6 = &pOVar2->field_01AD;
+    puVar6 = pOVar2->field_01AD;
     iVar3 = 2;
     do {
       if (*puVar6 != 0) {

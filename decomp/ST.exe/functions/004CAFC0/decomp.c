@@ -149,7 +149,7 @@ TLOBaseTy::sub_004CAFC0
   case CASE_C:
     switch(TVar4) {
     case CASE_33:
-      if (this->field_0520 == 0) {
+      if (this->field_04E0[0x10] == 0) {
 cf_common_exit_004CB489:
         uVar1 = *(uint *)((&PTR_DAT_007b8310)[TVar5] +
                          (param_2 + (iVar2 + this->field_0235 * 3) * 4) * 8);

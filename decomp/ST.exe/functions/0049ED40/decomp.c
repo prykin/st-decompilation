@@ -31,7 +31,7 @@ undefined4 __thiscall STGroupBoatC::DCBomb(STGroupBoatC *this,int param_1)
   DArrayTy *local_14;
   int local_10;
   DArrayTy *local_c;
-  uint local_8;
+  undefined4 local_8;
 
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   local_10 = *(int *)(this->field_0029 + 0xc);
@@ -60,16 +60,17 @@ undefined4 __thiscall STGroupBoatC::DCBomb(STGroupBoatC *this,int param_1)
       if (0 < local_10) {
         do {
           DArrayGetElement((DArrayTy *)pSVar2->field_0029,local_20,&local_8);
-          if ((short)local_8 != -1) {
+          if ((ushort)local_8 != 0xffff) {
             pSVar4 = (STBoatC *)
                      STAllPlayersC::GetObjPtr
-                               (g_allPlayers_007FA174,pSVar2->field_0024,local_8,CASE_1);
+                               (g_allPlayers_007FA174,pSVar2->field_0024,(ushort)local_8,CASE_1);
             if (pSVar4 == (STBoatC *)0x0) {
               RaiseInternalException
                         (-0x5001fffc,g_overwriteContext_007ED77C,
                          "E:\\__titans\\wlad\\to_grpb.cpp",0xb6b);
             }
-            if ((pSVar4->field_06F7 == CASE_4) && (0 < pSVar4->field_07BE)) {
+            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+            if ((*(int *)((int)pSVar4->field_06CB + 0x2c) == 4) && (0 < pSVar4->field_07BE)) {
               if (array_00 == (DArrayTy *)0x0) {
                 array_00 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
                 local_14 = array_00;
@@ -113,10 +114,10 @@ undefined4 __thiscall STGroupBoatC::DCBomb(STGroupBoatC *this,int param_1)
       if (0 < local_10) {
         do {
           DArrayGetElement((DArrayTy *)pSVar2->field_0029,index,&local_8);
-          if ((short)local_8 != -1) {
+          if ((ushort)local_8 != 0xffff) {
             pSVar4 = (STBoatC *)
                      STAllPlayersC::GetObjPtr
-                               (g_allPlayers_007FA174,pSVar2->field_0024,local_8,CASE_1);
+                               (g_allPlayers_007FA174,pSVar2->field_0024,(ushort)local_8,CASE_1);
             if (pSVar4 == (STBoatC *)0x0) {
               RaiseInternalException
                         (-0x5001fffc,g_overwriteContext_007ED77C,

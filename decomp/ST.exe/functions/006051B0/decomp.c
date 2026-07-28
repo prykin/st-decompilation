@@ -74,7 +74,8 @@ STExplosionC::LoadImagSpr(STExplosionC *this,undefined4 param_1,undefined4 param
     pSVar4->field_02AF = pSVar7;
   }
   if ((&DAT_007cede8)[local_c] == '\0') {
-    iVar5 = STT3DSprC::Init(pSVar4->field_02AF,DAT_008073cc,0x5a,0x45,0,0xb4,0x8c,0x11);
+    iVar5 = STT3DSprC::Init(pSVar4->field_02AF,DAT_008073cc,0x5a,0x45,(STDcResourcC *)0x0,0xb4,0x8c,
+                            0x11);
     if (iVar5 != 0) {
       RaiseInternalException
                 (-1,g_overwriteContext_007ED77C,"E:\\__titans\\nick\\to_Expl.cpp",0x36a);
@@ -82,7 +83,8 @@ STExplosionC::LoadImagSpr(STExplosionC *this,undefined4 param_1,undefined4 param
     }
   }
   else {
-    iVar5 = STT3DSprC::Init(pSVar4->field_02AF,DAT_008073cc,0x78,0x56,0,0xf0,0xbe,0x11);
+    iVar5 = STT3DSprC::Init(pSVar4->field_02AF,DAT_008073cc,0x78,0x56,(STDcResourcC *)0x0,0xf0,0xbe,
+                            0x11);
     if (iVar5 != 0) {
       RaiseInternalException
                 (-1,g_overwriteContext_007ED77C,"E:\\__titans\\nick\\to_Expl.cpp",0x370);
@@ -160,7 +162,7 @@ STExplosionC::LoadImagSpr(STExplosionC *this,undefined4 param_1,undefined4 param
         }
       }
       if (!bVar10) {
-        thunk_FUN_004ad430((int)pSVar4->field_02AF);
+        thunk_FUN_004ad430(pSVar4->field_02AF);
         pSVar4->field_0286 = 0;
       }
       g_currentExceptionFrame = local_68.previous;

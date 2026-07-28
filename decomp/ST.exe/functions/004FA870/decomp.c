@@ -19,7 +19,9 @@ void __thiscall CPanelTy::sub_004FA870(CPanelTy *this,CPanelTy_sub_004FA870_para
     *(undefined1 *)((int)&this->field_0B4B + param_1 + 3) = 1;
     return;
   }
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if ((((param_1 == 0) || (CASE_5 < param_1)) && (param_1 != CASE_E)) && (param_1 != CASE_F)) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_1 == CASE_6) {
       if (g_prodPanel_008016E8 != (ProdPanelTy *)0x0) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -27,6 +29,7 @@ void __thiscall CPanelTy::sub_004FA870(CPanelTy *this,CPanelTy_sub_004FA870_para
         return;
       }
     }
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     else if (param_1 == CASE_7) {
       if (g_prodPanel_0080167C != (ProdPanelTy *)0x0) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -34,6 +37,7 @@ void __thiscall CPanelTy::sub_004FA870(CPanelTy *this,CPanelTy_sub_004FA870_para
         return;
       }
     }
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     else if (param_1 == 8) {
       if (g_prodPanel_00801684 != (ProdPanelTy *)0x0) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -41,6 +45,7 @@ void __thiscall CPanelTy::sub_004FA870(CPanelTy *this,CPanelTy_sub_004FA870_para
         return;
       }
     }
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     else if (param_1 == 9) {
       if (g_infocPanel_00801698 != (InfocPanelTy *)0x0) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -48,6 +53,7 @@ void __thiscall CPanelTy::sub_004FA870(CPanelTy *this,CPanelTy_sub_004FA870_para
         return;
       }
     }
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     else if (param_1 == 10) {
       if (g_tradePanel_00802A44 != (TradePanelTy *)0x0) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -55,6 +61,7 @@ void __thiscall CPanelTy::sub_004FA870(CPanelTy *this,CPanelTy_sub_004FA870_para
         return;
       }
     }
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     else if (param_1 == 0xb) {
       if (g_behPanel_00801678 != (BehPanelTy *)0x0) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -62,6 +69,7 @@ void __thiscall CPanelTy::sub_004FA870(CPanelTy *this,CPanelTy_sub_004FA870_para
         return;
       }
     }
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     else if (param_1 == 0xc) {
       if (g_prodPanel_00801680 != (ProdPanelTy *)0x0) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -69,6 +77,7 @@ void __thiscall CPanelTy::sub_004FA870(CPanelTy *this,CPanelTy_sub_004FA870_para
         return;
       }
     }
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     else if (param_1 == 0x10) {
       if (g_upgPanel_00802A48 != (UpgPanelTy *)0x0) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -76,6 +85,7 @@ void __thiscall CPanelTy::sub_004FA870(CPanelTy *this,CPanelTy_sub_004FA870_para
         return;
       }
     }
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     else if (param_1 == 0x11) {
       if (g_frmPanel_0080168C != (FrmPanelTy *)0x0) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -83,6 +93,7 @@ void __thiscall CPanelTy::sub_004FA870(CPanelTy *this,CPanelTy_sub_004FA870_para
         return;
       }
     }
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     else if (param_1 == 0x12) {
       if (g_sAMPanel_008016EC != (SAMPanelTy *)0x0) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -90,6 +101,7 @@ void __thiscall CPanelTy::sub_004FA870(CPanelTy *this,CPanelTy_sub_004FA870_para
         return;
       }
     }
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     else if ((param_1 == 0x13) && (g_helpPanel_00801690 != (HelpPanelTy *)0x0)) {
       HelpPanelTy::sub_00515180(g_helpPanel_00801690,'\x06');
       HelpPanelTy::sub_00515180(g_helpPanel_00801690,'\x05');

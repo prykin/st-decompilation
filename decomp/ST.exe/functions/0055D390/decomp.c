@@ -1,6 +1,10 @@
 
 /* [STPrototypeApplier] Propagated parameter 1.
-   Evidence: 00597120 -> 0055D390 @ 0059778F */
+   Evidence: 00597120 -> 0055D390 @ 0059778F
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=6, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall FUN_0055d390(void *this,char *resourceString,char *param_2,ulong param_3)
 

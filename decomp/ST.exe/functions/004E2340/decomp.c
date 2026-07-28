@@ -24,12 +24,12 @@ int __thiscall FUN_004e2340(void *this,uint param_1,int param_2,undefined4 *para
     if ((iVar5 != 0) &&
        ((iVar5 = thunk_FUN_004b79c0(*(char *)((int)this + 0x24),*(int *)((int)this + 0x18)),
         iVar5 == 0 && (iVar4 = iVar4 * 4, DAT_00811798 != (void *)0x0)))) {
-      thunk_FUN_00621580(DAT_00811798,*(uint *)((int)this + 0x24),5);
+      thunk_FUN_00621580(DAT_00811798,*(byte **)((int)this + 0x24),5);
     }
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     iVar5 = *(int *)((int)this + param_1 * 0x28 + 0x4e8);
     if ((uint)(iVar5 + iVar4) <= g_playSystem_00802A38->field_00E4) {
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+      /* ST_PSEUDO[stack_slot_reuse,raw_pointer_offset]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; candidate structure field after proof; otherwise retain buffer arithmetic */
       param_1 = ((g_playSystem_00802A38->field_00E4 - iVar5) *
                 *(int *)((int)this + param_1 * 0x28 + 0x4e4)) /
                 *(uint *)(&DAT_007e091c + *piVar1 * 4);
@@ -39,23 +39,28 @@ int __thiscall FUN_004e2340(void *this,uint param_1,int param_2,undefined4 *para
       if ((iVar4 != 0) &&
          (iVar4 = thunk_FUN_004b79c0(*(char *)((int)this + 0x24),*(int *)((int)this + 0x18)),
          iVar4 == 0)) {
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = (int)(param_1 + ((int)param_1 >> 0x1f & 3U)) >> 2;
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         if (param_1 == 0) {
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_1 = 1;
         }
         if (DAT_00811798 != (void *)0x0) {
-          thunk_FUN_00621580(DAT_00811798,*(uint *)((int)this + 0x24),5);
+          thunk_FUN_00621580(DAT_00811798,*(byte **)((int)this + 0x24),5);
         }
       }
       iVar4 = *(int *)((int)this + uVar3 * 0x28 + 0x4e0);
       iVar5 = *(int *)((int)this + uVar3 * 0x28 + 0x4e4);
       if (iVar5 < (int)(iVar4 + param_1)) {
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = iVar5 - iVar4;
       }
       do {
         local_8 = 0;
         local_c = 0;
         iVar4 = *(int *)(&DAT_007e085c + *piVar1 * 4);
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_2 = (int)(iVar4 * param_1) / iVar5;
         iVar4 = iVar4 - (iVar4 * *(int *)((int)this + uVar3 * 0x28 + 0x4dc)) / iVar5;
         iVar5 = *(int *)((int)this + uVar3 * 0x28 + 0x4ec);
@@ -67,10 +72,12 @@ int __thiscall FUN_004e2340(void *this,uint param_1,int param_2,undefined4 *para
           local_c = 0;
         }
         iVar5 = *(int *)((int)this + uVar3 * 0x28 + 0x4f4);
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         if ((iVar4 < iVar5 + param_2) && (param_2 = iVar4 - iVar5, param_2 < 0)) {
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_2 = 0;
         }
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+        /* ST_PSEUDO[stack_slot_reuse,raw_pointer_offset]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; candidate structure field after proof; otherwise retain buffer arithmetic */
         if ((((local_8 == 0) ||
              (iVar4 = thunk_FUN_004d7b10(*(char *)((int)this + 0x24),4), local_8 <= iVar4)) &&
             ((local_c == 0 ||
@@ -107,6 +114,7 @@ int __thiscall FUN_004e2340(void *this,uint param_1,int param_2,undefined4 *para
         }
         iVar5 = *(int *)((int)this + uVar3 * 0x28 + 0x4e4);
         bVar2 = iVar5 / 100 < (int)param_1;
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = iVar5 / 100;
       } while (bVar2);
       *(uint *)((int)this + uVar3 * 0x28 + 0x4e8) = g_playSystem_00802A38->field_00E4;

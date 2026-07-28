@@ -35,7 +35,7 @@ undefined4 FUN_005da7a0(void)
         if (pcVar5 != (char *)0x0) {
           iVar3 = *puVar1;
           Library::MSVCRT::FUN_0072da70
-                    ((undefined4 *)(iVar3 + 0x1c),(undefined4 *)(iVar3 + 8),
+                    ((undefined4 *)(iVar3 + 0x1c),(AnonPointee_TLOBaseTy_0607 *)(iVar3 + 8),
                      *(int *)(iVar3 + 4) * 0x14);
           iVar3 = *puVar1;
           *(undefined4 *)(iVar3 + 0xc) = DAT_007cd700;

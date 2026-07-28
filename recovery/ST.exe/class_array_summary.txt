@@ -1,0 +1,9 @@
+program=ST.exe
+functions_scanned=1404
+candidate_arrays=54
+auto_apply=46
+bounded_index_arrays=6
+exact_pointer_walk_arrays=52
+note=Only bounded this+index*stride accesses and exact decrementing pointer walks contribute an extent.
+note=Semantic names are not guessed; address-stable array_XXXX names are structural.
+note=Manual/unowned class components and conflicting element roles remain review-only.

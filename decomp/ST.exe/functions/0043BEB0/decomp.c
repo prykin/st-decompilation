@@ -10,19 +10,17 @@ STAllPlayersC::GetPanelInfo
           (STAllPlayersC *this,undefined4 param_1,AnonShape_0043BEB0_1C00EC12 *param_2)
 
 {
-  ushort uVar1;
-  DArrayTy *pDVar2;
-  code *pcVar3;
+  DArrayTy *pDVar1;
+  code *pcVar2;
+  ushort uVar3;
   int iVar4;
   STGroupBoatC *pSVar5;
   Global_sub_0044D320_param_1Enum GVar6;
-  undefined2 *puVar7;
+  byte *pbVar7;
   STGameObjC *pSVar8;
   undefined4 uVar9;
   AnonShape_0043BEB0_1C00EC12 *pAVar10;
-  undefined1 *puVar11;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  undefined2 extraout_var;
+  byte *pbVar11;
   uint uVar12;
   uint uVar13;
   short *psVar14;
@@ -41,12 +39,12 @@ STAllPlayersC::GetPanelInfo
   uint local_24;
   uint local_20;
   DArrayTy *local_1c;
-  undefined2 *local_18;
+  byte *local_18;
   dword local_14;
   STAllPlayersC *local_10;
-  uint local_c;
+  undefined1 local_c [4];
   undefined2 local_8;
-  undefined2 local_6;
+  short local_6;
 
   pAVar16 = param_2;
   local_20 = 0;
@@ -66,14 +64,14 @@ STAllPlayersC::GetPanelInfo
         }
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      local_c = (uint)(ushort)g_playerRuntime[uVar12].tempSlots[0][0].objectId;
+      uVar3 = g_playerRuntime[uVar12].tempSlots[0][0].objectId;
       SVar18 = CASE_3;
       cVar17 = -1;
       goto cf_common_exit_0043CB5C;
     }
-    uVar1 = g_playerRuntime[uVar12].tempSlots[0][0].activityCount;
-    if (uVar1 != 1) {
-      if (uVar1 < 2) {
+    uVar3 = g_playerRuntime[uVar12].tempSlots[0][0].activityCount;
+    if (uVar3 != 1) {
+      if (uVar3 < 2) {
         *(undefined1 *)param_2 = 0;
         return;
       }
@@ -101,10 +99,12 @@ STAllPlayersC::GetPanelInfo
       }
       do {
         uVar13 = local_24;
-        DArrayGetElement(local_1c,local_24,&local_c);
-        if ((short)local_c != -1) {
-          pSVar8 = GetObjPtr(local_10,(char)g_playerRuntime[uVar12].tempSlots[0][0].playerId,local_c
-                             ,CASE_1);
+        DArrayGetElement(local_1c,local_24,local_c);
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+        if (local_c._0_2_ != 0xffff) {
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+          pSVar8 = GetObjPtr(local_10,(char)g_playerRuntime[uVar12].tempSlots[0][0].playerId,
+                             local_c._0_2_,CASE_1);
           STFishC::sub_004162B0
                     ((STFishC *)pSVar8,&local_6,&local_8,(undefined2 *)((int)&param_1 + 2));
           *(undefined1 *)((int)pAVar16 + (0x2e - param_1._2_2_)) = 1;
@@ -119,13 +119,17 @@ STAllPlayersC::GetPanelInfo
       } while ((int)local_24 < (int)local_14);
       return;
     }
-    pDVar2 = g_playerRuntime[uVar12].tempSlots[0][0].objectIds;
+    pDVar1 = g_playerRuntime[uVar12].tempSlots[0][0].objectIds;
     uVar13 = 0;
-    local_14 = pDVar2->count;
+    local_14 = pDVar1->count;
     if ((int)local_14 < 1) {
       return;
     }
-    while (DArrayGetElement(pDVar2,uVar13,&local_c), (short)local_c == -1) {
+    while( true ) {
+      DArrayGetElement(pDVar1,uVar13,local_c);
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+      uVar3 = local_c._0_2_;
+      if (uVar3 != 0xffff) break;
       uVar13 = uVar13 + 1;
       if ((int)local_14 <= (int)uVar13) {
         return;
@@ -149,20 +153,24 @@ STAllPlayersC::GetPanelInfo
           }
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
-        local_c = (uint)(ushort)g_playerRuntime[uVar12].tempSlots[0][0].objectId;
+        uVar3 = g_playerRuntime[uVar12].tempSlots[0][0].objectId;
         SVar18 = CASE_3;
         cVar17 = -1;
         goto cf_common_exit_0043CA35;
       }
-      uVar1 = g_playerRuntime[uVar12].tempSlots[0][0].activityCount;
-      if (uVar1 == 1) {
-        pDVar2 = g_playerRuntime[uVar12].tempSlots[0][0].objectIds;
+      uVar3 = g_playerRuntime[uVar12].tempSlots[0][0].activityCount;
+      if (uVar3 == 1) {
+        pDVar1 = g_playerRuntime[uVar12].tempSlots[0][0].objectIds;
         uVar13 = 0;
-        local_14 = pDVar2->count;
+        local_14 = pDVar1->count;
         if ((int)local_14 < 1) {
           return;
         }
-        while (DArrayGetElement(pDVar2,uVar13,&local_c), (short)local_c == -1) {
+        while( true ) {
+          DArrayGetElement(pDVar1,uVar13,local_c);
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+          uVar3 = local_c._0_2_;
+          if (uVar3 != 0xffff) break;
           uVar13 = uVar13 + 1;
           if ((int)local_14 <= (int)uVar13) {
             return;
@@ -171,7 +179,7 @@ STAllPlayersC::GetPanelInfo
         cVar17 = (char)g_playerRuntime[uVar12].tempSlots[0][0].playerId;
         goto LAB_0043ca31;
       }
-      if (uVar1 < 2) {
+      if (uVar3 < 2) {
         param_2->field_0005 = 0;
         return;
       }
@@ -183,9 +191,11 @@ STAllPlayersC::GetPanelInfo
       dVar15 = 0;
       if (0 < (int)local_14) {
         do {
-          DArrayGetElement(local_1c,dVar15,&local_c);
-          if ((short)local_c != -1) {
-            pSVar8 = GetObjPtr(this,DAT_0080874d,local_c,CASE_1);
+          DArrayGetElement(local_1c,dVar15,local_c);
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+          if (local_c._0_2_ != 0xffff) {
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+            pSVar8 = GetObjPtr(this,DAT_0080874d,local_c._0_2_,CASE_1);
             iVar4 = thunk_FUN_00493cd0(pSVar8);
             if (iVar4 == 0) break;
           }
@@ -208,11 +218,12 @@ LAB_0043c293:
         pAVar16[1].field_0001 = 3;
         if (0 < (int)local_14) {
           do {
-            DArrayGetElement(local_1c,dVar15,&local_c);
-            if ((short)local_c != -1) {
-              pSVar8 = GetObjPtr(this,DAT_0080874d,local_c,CASE_1);
-              /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-              pSVar5 = thunk_FUN_0042b760(DAT_0080874d,CONCAT22(extraout_var,pSVar8->field_0030));
+            DArrayGetElement(local_1c,dVar15,local_c);
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+            if (local_c._0_2_ != 0xffff) {
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+              pSVar8 = GetObjPtr(this,DAT_0080874d,local_c._0_2_,CASE_1);
+              pSVar5 = thunk_FUN_0042b760(DAT_0080874d,pSVar8->field_0030);
               if ((pSVar5 != (STGroupBoatC *)0x0) &&
                  (pAVar16[1].field_0001 = 1, pSVar5->field_001C == 0)) break;
             }
@@ -229,15 +240,16 @@ LAB_0043c293:
       pAVar16->field_0007 = 1;
       GVar6 = thunk_FUN_0044ce40(this);
       local_18 = thunk_FUN_0044d320(GVar6);
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = (AnonShape_0043BEB0_1C00EC12 *)&pAVar16->field_000F;
-      puVar7 = local_18;
-      puVar11 = (undefined1 *)param_2;
+      pbVar7 = local_18;
+      pbVar11 = (byte *)param_2;
       do {
-        puVar11[-6] = *(undefined1 *)((int)puVar7 + 1);
-        *puVar11 = *(undefined1 *)puVar7;
-        puVar11 = puVar11 + 1;
-        puVar7 = puVar7 + 1;
-      } while ((int)(puVar11 + (-0xf - (int)pAVar16)) < 6);
+        pbVar11[-6] = pbVar7[1];
+        *pbVar11 = *pbVar7;
+        pbVar11 = pbVar11 + 1;
+        pbVar7 = pbVar7 + 2;
+      } while ((int)(pbVar11 + (-0xf - (int)pAVar16)) < 6);
       FreeAndNull(&local_18);
       uVar12 = 0;
       pAVar16[2].field_0011 = 1;
@@ -246,9 +258,11 @@ LAB_0043c293:
       pAVar16[2].field_000E = 1;
       if (0 < (int)local_14) {
         do {
-          DArrayGetElement(local_1c,uVar12,&local_c);
-          if ((short)local_c != -1) {
-            pSVar8 = GetObjPtr(local_10,DAT_0080874d,local_c,CASE_1);
+          DArrayGetElement(local_1c,uVar12,local_c);
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+          if (local_c._0_2_ != 0xffff) {
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+            pSVar8 = GetObjPtr(local_10,DAT_0080874d,local_c._0_2_,CASE_1);
             (&pAVar16[2].field_000E)[pSVar8->field_07EE] = 3;
           }
           uVar12 = uVar12 + 1;
@@ -307,10 +321,12 @@ LAB_0043c293:
       uVar12 = local_20;
       if (0 < (int)local_14) {
         do {
-          DArrayGetElement(local_1c,local_24,&local_c);
-          if ((short)local_c != -1) {
+          DArrayGetElement(local_1c,local_24,local_c);
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+          if (local_c._0_2_ != 0xffff) {
             local_28 = (STPlayerTempSlot *)((int)&local_28->objectType + 1);
-            pSVar8 = GetObjPtr(local_10,DAT_0080874d,local_c,CASE_1);
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+            pSVar8 = GetObjPtr(local_10,DAT_0080874d,local_c._0_2_,CASE_1);
             if (local_28 == (STPlayerTempSlot *)0x1) {
               uVar12 = (uint)(ushort)pSVar8->field_0030;
             }
@@ -324,11 +340,12 @@ LAB_0043c293:
           return;
         }
       }
+      uVar3 = (ushort)uVar12;
       if (0x1000 < GVar6) {
         if (GVar6 < 0x100001) {
           if (GVar6 == 0x100000) {
-            pSVar5 = thunk_FUN_0042b760(DAT_0080874d,uVar12);
-            dVar15 = (*pSVar5->vtable->slot_0C)(pSVar5);
+            pSVar5 = thunk_FUN_0042b760(DAT_0080874d,uVar3);
+            dVar15 = pSVar5->slot_0C();
             switch(dVar15) {
             case 1:
             case 7:
@@ -345,8 +362,8 @@ LAB_0043c293:
           }
           if (GVar6 < 0x20001) {
             if (GVar6 == 0x20000) {
-              pSVar5 = thunk_FUN_0042b760(DAT_0080874d,uVar12);
-              dVar15 = (*pSVar5->vtable->slot_0C)(pSVar5);
+              pSVar5 = thunk_FUN_0042b760(DAT_0080874d,uVar3);
+              dVar15 = pSVar5->slot_0C();
               switch(dVar15) {
               case 1:
               case 7:
@@ -364,8 +381,8 @@ LAB_0043c293:
               }
             }
             if (GVar6 == 0x2000) {
-              pSVar5 = thunk_FUN_0042b760(DAT_0080874d,uVar12);
-              dVar15 = (*pSVar5->vtable->slot_0C)(pSVar5);
+              pSVar5 = thunk_FUN_0042b760(DAT_0080874d,uVar3);
+              dVar15 = pSVar5->slot_0C();
               switch(dVar15) {
               case 1:
               case 7:
@@ -385,8 +402,8 @@ LAB_0043c293:
             if (GVar6 != 0x10000) {
               return;
             }
-            pSVar5 = thunk_FUN_0042b760(DAT_0080874d,uVar12);
-            dVar15 = (*pSVar5->vtable->slot_0C)(pSVar5);
+            pSVar5 = thunk_FUN_0042b760(DAT_0080874d,uVar3);
+            dVar15 = pSVar5->slot_0C();
             switch(dVar15) {
             case 1:
             case 7:
@@ -404,8 +421,8 @@ LAB_0043c293:
             }
           }
           if (GVar6 == 0x40000) {
-            pSVar5 = thunk_FUN_0042b760(DAT_0080874d,uVar12);
-            dVar15 = (*pSVar5->vtable->slot_0C)(pSVar5);
+            pSVar5 = thunk_FUN_0042b760(DAT_0080874d,uVar3);
+            dVar15 = pSVar5->slot_0C();
             switch(dVar15) {
             case 1:
             case 7:
@@ -423,8 +440,8 @@ LAB_0043c293:
           if (GVar6 != 0x80000) {
             return;
           }
-          pSVar5 = thunk_FUN_0042b760(DAT_0080874d,uVar12);
-          dVar15 = (*pSVar5->vtable->slot_0C)(pSVar5);
+          pSVar5 = thunk_FUN_0042b760(DAT_0080874d,uVar3);
+          dVar15 = pSVar5->slot_0C();
           switch(dVar15) {
           case 1:
           case 7:
@@ -441,8 +458,8 @@ LAB_0043c293:
         }
         if (GVar6 < 0x800001) {
           if (GVar6 == 0x800000) {
-            pSVar5 = thunk_FUN_0042b760(DAT_0080874d,uVar12);
-            dVar15 = (*pSVar5->vtable->slot_0C)(pSVar5);
+            pSVar5 = thunk_FUN_0042b760(DAT_0080874d,uVar3);
+            dVar15 = pSVar5->slot_0C();
             switch(dVar15) {
             case 1:
             case 7:
@@ -458,8 +475,8 @@ LAB_0043c293:
             }
           }
           if (GVar6 == 0x200000) {
-            pSVar5 = thunk_FUN_0042b760(DAT_0080874d,uVar12);
-            dVar15 = (*pSVar5->vtable->slot_0C)(pSVar5);
+            pSVar5 = thunk_FUN_0042b760(DAT_0080874d,uVar3);
+            dVar15 = pSVar5->slot_0C();
             switch(dVar15) {
             case 1:
             case 7:
@@ -478,8 +495,8 @@ LAB_0043c293:
           if (GVar6 != 0x400000) {
             return;
           }
-          pSVar5 = thunk_FUN_0042b760(DAT_0080874d,uVar12);
-          dVar15 = (*pSVar5->vtable->slot_0C)(pSVar5);
+          pSVar5 = thunk_FUN_0042b760(DAT_0080874d,uVar3);
+          dVar15 = pSVar5->slot_0C();
           switch(dVar15) {
           case 1:
           case 7:
@@ -497,8 +514,8 @@ LAB_0043c293:
           }
         }
         if (GVar6 == 0x1000000) {
-          pSVar5 = thunk_FUN_0042b760(DAT_0080874d,uVar12);
-          dVar15 = (*pSVar5->vtable->slot_0C)(pSVar5);
+          pSVar5 = thunk_FUN_0042b760(DAT_0080874d,uVar3);
+          dVar15 = pSVar5->slot_0C();
           switch(dVar15) {
           case 1:
           case 7:
@@ -514,8 +531,8 @@ LAB_0043c293:
         if (GVar6 != 0x2000000) {
           return;
         }
-        pSVar5 = thunk_FUN_0042b760(DAT_0080874d,uVar12);
-        dVar15 = (*pSVar5->vtable->slot_0C)(pSVar5);
+        pSVar5 = thunk_FUN_0042b760(DAT_0080874d,uVar3);
+        dVar15 = pSVar5->slot_0C();
         switch(dVar15) {
         case 1:
         case 7:
@@ -534,8 +551,8 @@ LAB_0043c293:
       if (0x40 < GVar6) {
         if (0x200 < GVar6) {
           if (GVar6 == 0x400) {
-            pSVar5 = thunk_FUN_0042b760(DAT_0080874d,uVar12);
-            dVar15 = (*pSVar5->vtable->slot_0C)(pSVar5);
+            pSVar5 = thunk_FUN_0042b760(DAT_0080874d,uVar3);
+            dVar15 = pSVar5->slot_0C();
             switch(dVar15) {
             case 1:
             case 7:
@@ -556,8 +573,8 @@ LAB_0043c293:
           if (GVar6 != 0x800) {
             return;
           }
-          pSVar5 = thunk_FUN_0042b760(DAT_0080874d,uVar12);
-          dVar15 = (*pSVar5->vtable->slot_0C)(pSVar5);
+          pSVar5 = thunk_FUN_0042b760(DAT_0080874d,uVar3);
+          dVar15 = pSVar5->slot_0C();
           switch(dVar15) {
           case 1:
           case 7:
@@ -575,8 +592,8 @@ LAB_0043c293:
           }
         }
         if (GVar6 == 0x200) {
-          pSVar5 = thunk_FUN_0042b760(DAT_0080874d,uVar12);
-          dVar15 = (*pSVar5->vtable->slot_0C)(pSVar5);
+          pSVar5 = thunk_FUN_0042b760(DAT_0080874d,uVar3);
+          dVar15 = pSVar5->slot_0C();
           switch(dVar15) {
           case 1:
           case 7:
@@ -596,8 +613,8 @@ LAB_0043c293:
         if ((GVar6 != 0x80) && (GVar6 != 0x100)) {
           return;
         }
-        pSVar5 = thunk_FUN_0042b760(DAT_0080874d,uVar12);
-        dVar15 = (*pSVar5->vtable->slot_0C)(pSVar5);
+        pSVar5 = thunk_FUN_0042b760(DAT_0080874d,uVar3);
+        dVar15 = pSVar5->slot_0C();
         switch(dVar15) {
         case 1:
         case 7:
@@ -611,8 +628,8 @@ LAB_0043c293:
         }
       }
       if (GVar6 == 0x40) {
-        pSVar5 = thunk_FUN_0042b760(DAT_0080874d,uVar12);
-        dVar15 = (*pSVar5->vtable->slot_0C)(pSVar5);
+        pSVar5 = thunk_FUN_0042b760(DAT_0080874d,uVar3);
+        dVar15 = pSVar5->slot_0C();
         switch(dVar15) {
         case 1:
         case 7:
@@ -631,8 +648,8 @@ LAB_0043c293:
       }
       switch(GVar6) {
       case CASE_1:
-        pSVar5 = thunk_FUN_0042b760(DAT_0080874d,uVar12);
-        dVar15 = (*pSVar5->vtable->slot_0C)(pSVar5);
+        pSVar5 = thunk_FUN_0042b760(DAT_0080874d,uVar3);
+        dVar15 = pSVar5->slot_0C();
         switch(dVar15) {
         case 1:
         case 7:
@@ -652,8 +669,8 @@ cf_common_exit_0043C508:
       case CASE_2:
       case CASE_4:
       case CASE_8:
-        pSVar5 = thunk_FUN_0042b760(DAT_0080874d,uVar12);
-        dVar15 = (*pSVar5->vtable->slot_0C)(pSVar5);
+        pSVar5 = thunk_FUN_0042b760(DAT_0080874d,uVar3);
+        dVar15 = pSVar5->slot_0C();
         switch(dVar15) {
         case 1:
         case 7:
@@ -669,8 +686,8 @@ cf_common_exit_0043C508:
         }
         break;
       case CASE_10:
-        pSVar5 = thunk_FUN_0042b760(DAT_0080874d,uVar12);
-        dVar15 = (*pSVar5->vtable->slot_0C)(pSVar5);
+        pSVar5 = thunk_FUN_0042b760(DAT_0080874d,uVar3);
+        dVar15 = pSVar5->slot_0C();
         switch(dVar15) {
         case 1:
         case 7:
@@ -685,9 +702,10 @@ cf_common_exit_0043C508:
         break;
       case CASE_28:
 switchD_0043c4d2_caseD_28:
-        pSVar5 = thunk_FUN_0042b760(DAT_0080874d,uVar12);
-        dVar15 = (*pSVar5->vtable->slot_0C)(pSVar5);
+        pSVar5 = thunk_FUN_0042b760(DAT_0080874d,uVar3);
+        dVar15 = pSVar5->slot_0C();
         switch(dVar15) {
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         case 1:
         case 7:
 cf_common_exit_0043C72D:
@@ -714,7 +732,7 @@ cf_common_exit_0043C86F:
       iVar4 = g_playerRuntime[uVar12].tempSlots[1][0].objectType;
       if (0x19a < iVar4) {
         if (iVar4 == 0x1a4) {
-          local_c = (uint)(ushort)g_playerRuntime[uVar12].tempSlots[1][0].objectId;
+          uVar3 = g_playerRuntime[uVar12].tempSlots[1][0].objectId;
           SVar18 = CASE_5;
           cVar17 = -1;
         }
@@ -728,7 +746,7 @@ LAB_0043ca5a:
             }
             STDebugBreak(); /* noreturn in standalone pseudocode */
           }
-          local_c = (uint)(ushort)g_playerRuntime[uVar12].tempSlots[1][0].objectId;
+          uVar3 = g_playerRuntime[uVar12].tempSlots[1][0].objectId;
           SVar18 = CASE_6;
           cVar17 = -1;
         }
@@ -739,13 +757,13 @@ LAB_0043ca5a:
           return;
         }
         if (iVar4 == 0x5a) {
-          local_c = (uint)(ushort)g_playerRuntime[uVar12].tempSlots[1][0].objectId;
+          uVar3 = g_playerRuntime[uVar12].tempSlots[1][0].objectId;
           SVar18 = CASE_4;
           cVar17 = -1;
         }
         else {
           if (iVar4 != 0x172) goto LAB_0043ca5a;
-          local_c = (uint)(ushort)g_playerRuntime[uVar12].tempSlots[1][0].objectId;
+          uVar3 = g_playerRuntime[uVar12].tempSlots[1][0].objectId;
           SVar18 = CASE_2;
           cVar17 = -1;
         }
@@ -754,13 +772,17 @@ LAB_0043ca5a:
       if (g_playerRuntime[uVar12].tempSlots[1][0].activityCount != 1) {
         return;
       }
-      pDVar2 = g_playerRuntime[uVar12].tempSlots[1][0].objectIds;
+      pDVar1 = g_playerRuntime[uVar12].tempSlots[1][0].objectIds;
       uVar13 = 0;
-      local_14 = pDVar2->count;
+      local_14 = pDVar1->count;
       if ((int)local_14 < 1) {
         return;
       }
-      while (DArrayGetElement(pDVar2,uVar13,&local_c), (short)local_c == -1) {
+      while( true ) {
+        DArrayGetElement(pDVar1,uVar13,local_c);
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+        uVar3 = local_c._0_2_;
+        if (uVar3 != 0xffff) break;
         uVar13 = uVar13 + 1;
         if ((int)local_14 <= (int)uVar13) {
           return;
@@ -770,7 +792,7 @@ LAB_0043ca5a:
 LAB_0043ca31:
       SVar18 = CASE_1;
 cf_common_exit_0043CA35:
-      pSVar8 = GetObjPtr(local_10,cVar17,local_c,SVar18);
+      pSVar8 = GetObjPtr(local_10,cVar17,uVar3,SVar18);
       (*pSVar8->vtable->vfunc_34)(param_2);
       return;
     }
@@ -795,17 +817,19 @@ cf_common_exit_0043CA35:
         if (g_playerRuntime[uVar12].tempSlots[1][0].activityCount != 1) {
           return;
         }
-        pDVar2 = g_playerRuntime[uVar12].tempSlots[1][0].objectIds;
+        pDVar1 = g_playerRuntime[uVar12].tempSlots[1][0].objectIds;
         uVar13 = 0;
-        local_14 = pDVar2->count;
+        local_14 = pDVar1->count;
         if ((int)local_14 < 1) {
           return;
         }
         do {
-          DArrayGetElement(pDVar2,uVar13,&local_c);
-          if ((short)local_c != -1) {
+          DArrayGetElement(pDVar1,uVar13,local_c);
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+          if (local_c._0_2_ != 0xffff) {
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             pSVar8 = GetObjPtr(local_10,(char)g_playerRuntime[uVar12].tempSlots[1][0].playerId,
-                               local_c,CASE_1);
+                               local_c._0_2_,CASE_1);
             (*pSVar8->vtable->vfunc_38)(param_2);
             return;
           }
@@ -834,17 +858,19 @@ cf_common_exit_0043CA35:
         if (g_playerRuntime[uVar12].tempSlots[1][0].activityCount != 1) {
           return;
         }
-        pDVar2 = g_playerRuntime[uVar12].tempSlots[1][0].objectIds;
+        pDVar1 = g_playerRuntime[uVar12].tempSlots[1][0].objectIds;
         uVar13 = 0;
-        local_14 = pDVar2->count;
+        local_14 = pDVar1->count;
         if ((int)local_14 < 1) {
           return;
         }
         do {
-          DArrayGetElement(pDVar2,uVar13,&local_c);
-          if ((short)local_c != -1) {
+          DArrayGetElement(pDVar1,uVar13,local_c);
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+          if (local_c._0_2_ != 0xffff) {
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             pSVar8 = GetObjPtr(local_10,(char)g_playerRuntime[uVar12].tempSlots[1][0].playerId,
-                               local_c,CASE_1);
+                               local_c._0_2_,CASE_1);
             (*pSVar8->vtable->vfunc_3C)(param_2);
             return;
           }
@@ -881,10 +907,12 @@ cf_common_exit_0043CA35:
           return;
         }
         do {
-          DArrayGetElement(local_1c,uVar13,&local_c);
-          if ((short)local_c != -1) {
+          DArrayGetElement(local_1c,uVar13,local_c);
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+          if (local_c._0_2_ != 0xffff) {
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             pSVar8 = GetObjPtr(local_10,(char)g_playerRuntime[uVar12].tempSlots[0][0].playerId,
-                               local_c,CASE_1);
+                               local_c._0_2_,CASE_1);
             (*pSVar8->vtable->vfunc_40)(pAVar16);
             return;
           }
@@ -909,17 +937,19 @@ cf_common_exit_0043CA35:
         if (g_playerRuntime[uVar12].tempSlots[1][0].activityCount != 1) {
           return;
         }
-        pDVar2 = g_playerRuntime[uVar12].tempSlots[1][0].objectIds;
+        pDVar1 = g_playerRuntime[uVar12].tempSlots[1][0].objectIds;
         uVar13 = 0;
-        local_14 = pDVar2->count;
+        local_14 = pDVar1->count;
         if ((int)local_14 < 1) {
           return;
         }
         do {
-          DArrayGetElement(pDVar2,uVar13,&local_c);
-          if ((short)local_c != -1) {
+          DArrayGetElement(pDVar1,uVar13,local_c);
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+          if (local_c._0_2_ != 0xffff) {
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             pSVar8 = GetObjPtr(local_10,(char)g_playerRuntime[uVar12].tempSlots[1][0].playerId,
-                               local_c,CASE_1);
+                               local_c._0_2_,CASE_1);
             (*pSVar8->vtable->vfunc_44)(param_2);
             return;
           }
@@ -936,16 +966,18 @@ cf_common_exit_0043CA35:
         if (g_playerRuntime[uVar12].tempSlots[1][0].activityCount != 1) {
           return;
         }
-        pDVar2 = g_playerRuntime[uVar12].tempSlots[1][0].objectIds;
+        pDVar1 = g_playerRuntime[uVar12].tempSlots[1][0].objectIds;
         uVar12 = 0;
-        dVar15 = pDVar2->count;
+        dVar15 = pDVar1->count;
         if ((int)dVar15 < 1) {
           return;
         }
         do {
-          DArrayGetElement(pDVar2,uVar12,&local_c);
-          if ((short)local_c != -1) {
-            pSVar8 = GetObjPtr(local_10,(char)local_28->playerId,local_c,CASE_1);
+          DArrayGetElement(pDVar1,uVar12,local_c);
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+          if (local_c._0_2_ != 0xffff) {
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+            pSVar8 = GetObjPtr(local_10,(char)local_28->playerId,local_c._0_2_,CASE_1);
             (*pSVar8->vtable->vfunc_48)(param_2);
             return;
           }
@@ -974,17 +1006,19 @@ cf_common_exit_0043CA35:
           if (g_playerRuntime[uVar12].tempSlots[1][0].activityCount != 1) {
             return;
           }
-          pDVar2 = g_playerRuntime[uVar12].tempSlots[1][0].objectIds;
+          pDVar1 = g_playerRuntime[uVar12].tempSlots[1][0].objectIds;
           uVar13 = 0;
-          local_14 = pDVar2->count;
+          local_14 = pDVar1->count;
           if ((int)local_14 < 1) {
             return;
           }
           do {
-            DArrayGetElement(pDVar2,uVar13,&local_c);
-            if ((short)local_c != -1) {
+            DArrayGetElement(pDVar1,uVar13,local_c);
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+            if (local_c._0_2_ != 0xffff) {
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               pSVar8 = GetObjPtr(local_10,(char)g_playerRuntime[uVar12].tempSlots[1][0].playerId,
-                                 local_c,CASE_1);
+                                 local_c._0_2_,CASE_1);
               (*pSVar8->vtable->vfunc_50)(param_2);
               return;
             }
@@ -1005,6 +1039,7 @@ cf_common_exit_0043CA35:
             iVar4._2_1_ = pAVar10[-0xffffffff00000001].field_0xc;
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             iVar4._3_1_ = pAVar10[-0xffffffff00000001].field_000D;
+            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_2 = pAVar10;
             if (iVar4 == 0) {
 LAB_0043d41d:
@@ -1013,15 +1048,16 @@ LAB_0043d41d:
             else if (iVar4 == 0x3c) {
               if (*(ushort *)&pAVar10->field_0004 == 1) {
                 uVar12 = 0;
-                pDVar2 = *(DArrayTy **)pAVar10;
-                local_14 = pDVar2->count;
+                pDVar1 = *(DArrayTy **)pAVar10;
+                local_14 = pDVar1->count;
                 if (0 < (int)local_14) {
                   do {
-                    DArrayGetElement(pDVar2,uVar12,&local_c);
-                    if ((short)local_c != -1) {
+                    DArrayGetElement(pDVar1,uVar12,local_c);
+                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                    uVar3 = local_c._0_2_;
+                    if (uVar3 != 0xffff) {
                       SVar18 = CASE_1;
                       cVar17 = param_2[-1].field_000E;
-                      uVar12 = local_c;
                       goto LAB_0043d447;
                     }
                     uVar12 = uVar12 + 1;
@@ -1045,13 +1081,11 @@ LAB_0043d41d:
                 }
                 goto LAB_0043d41d;
               }
+              uVar3 = *(ushort *)&pAVar10[-1].field_0012;
               SVar18 = CASE_3;
               cVar17 = -1;
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              uVar12 = CONCAT22((short)((uint)pAVar10 >> 0x10),
-                                *(undefined2 *)&pAVar10[-1].field_0012);
 LAB_0043d447:
-              pSVar8 = GetObjPtr(local_10,cVar17,uVar12,SVar18);
+              pSVar8 = GetObjPtr(local_10,cVar17,uVar3,SVar18);
               (*pSVar8->vtable->vfunc_58)(pAVar16);
             }
             pAVar10 = (AnonShape_0043BEB0_1C00EC12 *)&param_2->field_0x10;
@@ -1063,6 +1097,7 @@ LAB_0043d447:
           } while( true );
         }
         if ((char)param_1 == '\x0f') {
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_2 = (AnonShape_0043BEB0_1C00EC12 *)0x4;
           psVar14 = &g_playerRuntime[DAT_0080874d].tempSlots[1][1].objectId;
           do {
@@ -1075,11 +1110,12 @@ LAB_0043d447:
                   local_14 = local_1c->count;
                   if (0 < (int)local_14) {
                     do {
-                      DArrayGetElement(local_1c,uVar12,&local_c);
-                      if ((short)local_c != -1) {
+                      DArrayGetElement(local_1c,uVar12,local_c);
+                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                      uVar3 = local_c._0_2_;
+                      if (uVar3 != 0xffff) {
                         cVar17 = (char)*(int *)(psVar14 + -2);
                         SVar18 = CASE_1;
-                        uVar12 = local_c;
                         goto LAB_0043d5b7;
                       }
                       uVar12 = uVar12 + 1;
@@ -1104,7 +1140,6 @@ LAB_0043d5a6:
             else {
               if (iVar4 == 0x1a4) {
                 SVar18 = CASE_5;
-                iVar4 = 0;
               }
               else {
                 if (iVar4 != 0x1b8) {
@@ -1118,20 +1153,20 @@ LAB_0043d581:
                   goto LAB_0043d5a6;
                 }
                 SVar18 = CASE_6;
-                iVar4 = 0;
               }
 LAB_0043d5b1:
+              uVar3 = *psVar14;
               cVar17 = -1;
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              uVar12 = CONCAT22((short)((uint)iVar4 >> 0x10),*psVar14);
 LAB_0043d5b7:
-              pSVar8 = GetObjPtr(local_10,cVar17,uVar12,SVar18);
+              pSVar8 = GetObjPtr(local_10,cVar17,uVar3,SVar18);
               (*pSVar8->vtable->vfunc_5C)(pAVar16);
             }
 LAB_0043d5c4:
             psVar14 = psVar14 + 8;
             pAVar16 = (AnonShape_0043BEB0_1C00EC12 *)&pAVar16->field_000B;
+            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_2 = (AnonShape_0043BEB0_1C00EC12 *)&param_2[-1].field_0x13;
+            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             if (param_2 == (AnonShape_0043BEB0_1C00EC12 *)0x0) {
               return;
             }
@@ -1155,16 +1190,18 @@ LAB_0043d5c4:
             if ((ushort)g_playerRuntime[uVar12].tempSlots[0][0].activityCount < 2) {
               return;
             }
-            pDVar2 = g_playerRuntime[uVar12].tempSlots[0][0].objectIds;
+            pDVar1 = g_playerRuntime[uVar12].tempSlots[0][0].objectIds;
             iVar4 = 0;
             uVar12 = 0;
-            local_14 = pDVar2->count;
+            local_14 = pDVar1->count;
             if (0 < (int)local_14) {
               do {
-                DArrayGetElement(pDVar2,uVar12,&local_c);
-                if ((short)local_c != -1) {
+                DArrayGetElement(pDVar1,uVar12,local_c);
+                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                if (local_c._0_2_ != 0xffff) {
                   iVar4 = iVar4 + 1;
-                  pSVar8 = GetObjPtr(local_10,DAT_0080874d,local_c,CASE_1);
+                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                  pSVar8 = GetObjPtr(local_10,DAT_0080874d,local_c._0_2_,CASE_1);
                   if (iVar4 == 1) {
                     local_20 = (uint)(ushort)pSVar8->field_0030;
                   }
@@ -1178,12 +1215,13 @@ LAB_0043d5c4:
                 return;
               }
             }
-            pSVar5 = thunk_FUN_0042b760(DAT_0080874d,local_20);
-            dVar15 = (*pSVar5->vtable->slot_1C)(pSVar5);
+            pSVar5 = thunk_FUN_0042b760(DAT_0080874d,(ushort)local_20);
+            dVar15 = pSVar5->slot_1C();
             switch(dVar15) {
             case 0:
               param_2->field_0007 = 1;
               return;
+            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             case 1:
               *(undefined1 *)param_2 = 1;
               return;
@@ -1212,16 +1250,13 @@ LAB_0043d5c4:
           if ((char)param_1 != '\x12') {
             return;
           }
-          uVar12 = (uint)DAT_0080874d;
-          iVar4 = g_playerRuntime[uVar12].tempSlots[0][0].objectType;
+          iVar4 = g_playerRuntime[DAT_0080874d].tempSlots[0][0].objectType;
           if (iVar4 == 0) {
             return;
           }
           if (iVar4 == 0x1ae) {
-            /* ST_PSEUDO[flattened_global_record_array,packed_or_unaligned_piece]: expected g_playerRuntime[player].field[index...] after base/stride proof; expected named packed member, bit extract/compose, or unaligned load */
-            pSVar8 = GetObjPtr(this,-1,CONCAT22((short)(uVar12 * 0xa62 + 0x7f4f83 >> 0x10),
-                                                g_playerRuntime[uVar12].tempSlots[0][0].objectId),
-                               CASE_3);
+            pSVar8 = GetObjPtr(this,-1,g_playerRuntime[DAT_0080874d].tempSlots[0][0].objectId,CASE_3
+                              );
             (*pSVar8->vtable->vfunc_64)(param_2);
             return;
           }
@@ -1251,15 +1286,17 @@ LAB_0043d5c4:
         if (g_playerRuntime[uVar12].tempSlots[0][0].activityCount == 0) {
           return;
         }
-        pDVar2 = g_playerRuntime[uVar12].tempSlots[0][0].objectIds;
+        pDVar1 = g_playerRuntime[uVar12].tempSlots[0][0].objectIds;
         uVar13 = 0;
-        local_14 = pDVar2->count;
+        local_14 = pDVar1->count;
         if (0 < (int)local_14) {
           do {
-            DArrayGetElement(pDVar2,uVar13,&local_c);
-            if ((short)local_c != -1) {
+            DArrayGetElement(pDVar1,uVar13,local_c);
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+            if (local_c._0_2_ != 0xffff) {
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               pSVar8 = GetObjPtr(local_10,(char)g_playerRuntime[uVar12].tempSlots[0][0].playerId,
-                                 local_c,CASE_1);
+                                 local_c._0_2_,CASE_1);
               (*pSVar8->vtable->vfunc_60)(param_2);
               break;
             }
@@ -1287,19 +1324,21 @@ LAB_0043d5c4:
         }
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      uVar1 = g_playerRuntime[uVar12].tempSlots[0][0].activityCount;
-      if (uVar1 == 1) {
-        pDVar2 = g_playerRuntime[uVar12].tempSlots[0][0].objectIds;
+      uVar3 = g_playerRuntime[uVar12].tempSlots[0][0].activityCount;
+      if (uVar3 == 1) {
+        pDVar1 = g_playerRuntime[uVar12].tempSlots[0][0].objectIds;
         uVar13 = 0;
-        local_14 = pDVar2->count;
+        local_14 = pDVar1->count;
         if ((int)local_14 < 1) {
           return;
         }
         do {
-          DArrayGetElement(pDVar2,uVar13,&local_c);
-          if ((short)local_c != -1) {
+          DArrayGetElement(pDVar1,uVar13,local_c);
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+          if (local_c._0_2_ != 0xffff) {
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             pSVar8 = GetObjPtr(local_10,(char)g_playerRuntime[uVar12].tempSlots[0][0].playerId,
-                               local_c,CASE_1);
+                               local_c._0_2_,CASE_1);
             (*pSVar8->vtable->vfunc_4C)(param_2);
             return;
           }
@@ -1307,7 +1346,7 @@ LAB_0043d5c4:
         } while ((int)uVar13 < (int)local_14);
         return;
       }
-      if (uVar1 < 2) {
+      if (uVar3 < 2) {
         return;
       }
       *(undefined4 *)param_2 = 0;
@@ -1323,18 +1362,20 @@ LAB_0043d5c4:
       param_2->field_000E = 1;
       param_2->field_000F = 1;
       param_2->field_000B = 0;
-      pDVar2 = g_playerRuntime[uVar12].tempSlots[0][0].objectIds;
+      pDVar1 = g_playerRuntime[uVar12].tempSlots[0][0].objectIds;
       uVar12 = 0;
-      local_14 = pDVar2->count;
+      local_14 = pDVar1->count;
       param_2->field_0011 = 1;
       param_2->field_0x10 = 1;
       param_2->field_0012 = 3;
-      local_1c = pDVar2;
+      local_1c = pDVar1;
       if (0 < (int)local_14) {
         do {
-          DArrayGetElement(pDVar2,uVar12,&local_c);
-          if ((short)local_c != -1) {
-            pSVar8 = GetObjPtr(local_10,DAT_0080874d,local_c,CASE_1);
+          DArrayGetElement(pDVar1,uVar12,local_c);
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+          if (local_c._0_2_ != 0xffff) {
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+            pSVar8 = GetObjPtr(local_10,DAT_0080874d,local_c._0_2_,CASE_1);
             if (pSVar8->field_07E6 == 0) {
               pAVar16->field_0011 = 3;
             }
@@ -1351,9 +1392,11 @@ LAB_0043d5c4:
       dVar15 = 0;
       if (0 < (int)local_14) {
         do {
-          DArrayGetElement(pDVar2,dVar15,&local_c);
-          if ((short)local_c != -1) {
-            pSVar8 = GetObjPtr(local_10,DAT_0080874d,local_c,CASE_1);
+          DArrayGetElement(pDVar1,dVar15,local_c);
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+          if (local_c._0_2_ != 0xffff) {
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+            pSVar8 = GetObjPtr(local_10,DAT_0080874d,local_c._0_2_,CASE_1);
             uVar9 = (*pSVar8->vtable->vfunc_2C)();
             switch(uVar9) {
             case 7:
@@ -1381,15 +1424,18 @@ switchD_0043d1bf_caseD_a:
         pAVar16->field_0xc = 0;
         pAVar16->field_000D = 0;
       }
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = (AnonShape_0043BEB0_1C00EC12 *)(uint)(dVar15 == local_14);
       iVar4 = 0;
       uVar12 = 0;
       if (0 < (int)local_14) {
         do {
-          DArrayGetElement(local_1c,uVar12,&local_c);
-          if ((short)local_c != -1) {
+          DArrayGetElement(local_1c,uVar12,local_c);
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+          if (local_c._0_2_ != 0xffff) {
             iVar4 = iVar4 + 1;
-            pSVar8 = GetObjPtr(local_10,DAT_0080874d,local_c,CASE_1);
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+            pSVar8 = GetObjPtr(local_10,DAT_0080874d,local_c._0_2_,CASE_1);
             if (iVar4 == 1) {
               local_20 = (uint)(ushort)pSVar8->field_0030;
             }
@@ -1400,14 +1446,15 @@ switchD_0043d1bf_caseD_a:
           uVar12 = uVar12 + 1;
         } while ((int)uVar12 < (int)local_14);
       }
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       if (param_2 == (AnonShape_0043BEB0_1C00EC12 *)0x1) {
         return;
       }
       if (local_20 == 0xffff) {
         return;
       }
-      pSVar5 = thunk_FUN_0042b760(DAT_0080874d,local_20);
-      dVar15 = (*pSVar5->vtable->slot_0C)(pSVar5);
+      pSVar5 = thunk_FUN_0042b760(DAT_0080874d,(ushort)local_20);
+      dVar15 = pSVar5->slot_0C();
       switch(dVar15) {
       case 5:
         pAVar16->field_0xc = 3;
@@ -1429,7 +1476,7 @@ switchD_0043d1bf_caseD_a:
     iVar4 = g_playerRuntime[uVar12].tempSlots[1][0].objectType;
     if (0x19a < iVar4) {
       if (iVar4 == 0x1a4) {
-        local_c = (uint)(ushort)g_playerRuntime[uVar12].tempSlots[1][0].objectId;
+        uVar3 = g_playerRuntime[uVar12].tempSlots[1][0].objectId;
         SVar18 = CASE_5;
         cVar17 = -1;
       }
@@ -1443,7 +1490,7 @@ LAB_0043cb81:
           }
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
-        local_c = (uint)(ushort)g_playerRuntime[uVar12].tempSlots[1][0].objectId;
+        uVar3 = g_playerRuntime[uVar12].tempSlots[1][0].objectId;
         SVar18 = CASE_6;
         cVar17 = -1;
       }
@@ -1454,13 +1501,13 @@ LAB_0043cb81:
         return;
       }
       if (iVar4 == 0x5a) {
-        local_c = (uint)(ushort)g_playerRuntime[uVar12].tempSlots[1][0].objectId;
+        uVar3 = g_playerRuntime[uVar12].tempSlots[1][0].objectId;
         SVar18 = CASE_4;
         cVar17 = -1;
       }
       else {
         if (iVar4 != 0x172) goto LAB_0043cb81;
-        local_c = (uint)(ushort)g_playerRuntime[uVar12].tempSlots[1][0].objectId;
+        uVar3 = g_playerRuntime[uVar12].tempSlots[1][0].objectId;
         SVar18 = CASE_2;
         cVar17 = -1;
       }
@@ -1469,13 +1516,17 @@ LAB_0043cb81:
     if (g_playerRuntime[uVar12].tempSlots[1][0].activityCount != 1) {
       return;
     }
-    pDVar2 = g_playerRuntime[uVar12].tempSlots[1][0].objectIds;
+    pDVar1 = g_playerRuntime[uVar12].tempSlots[1][0].objectIds;
     uVar13 = 0;
-    local_14 = pDVar2->count;
+    local_14 = pDVar1->count;
     if ((int)local_14 < 1) {
       return;
     }
-    while (DArrayGetElement(pDVar2,uVar13,&local_c), (short)local_c == -1) {
+    while( true ) {
+      DArrayGetElement(pDVar1,uVar13,local_c);
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+      uVar3 = local_c._0_2_;
+      if (uVar3 != 0xffff) break;
       uVar13 = uVar13 + 1;
       if ((int)local_14 <= (int)uVar13) {
         return;
@@ -1485,9 +1536,10 @@ LAB_0043cb81:
   }
   SVar18 = CASE_1;
 cf_common_exit_0043CB5C:
-  pSVar8 = GetObjPtr(local_10,cVar17,local_c,SVar18);
+  pSVar8 = GetObjPtr(local_10,cVar17,uVar3,SVar18);
   (*pSVar8->vtable->vfunc_30)(param_2);
   return;
+/* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
 cf_common_exit_0043C94C:
   *(undefined1 *)param_2 = 3;
   return;

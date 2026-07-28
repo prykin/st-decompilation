@@ -13,7 +13,7 @@ void __thiscall FrmPanelTy::ShiftControls(FrmPanelTy *this,int param_1)
   short sVar2;
   int iVar3;
   int iVar4;
-  int *piVar5;
+  uint *puVar5;
   InternalExceptionFrame local_4c;
   FrmPanelTy *local_8;
 
@@ -32,21 +32,21 @@ void __thiscall FrmPanelTy::ShiftControls(FrmPanelTy *this,int param_1)
     this_00 = local_8;
     if (iVar3 == 0) {
       iVar3 = 8;
-      piVar5 = &local_8->field_01B3;
+      puVar5 = local_8->field_01B3;
       do {
-        if (*piVar5 != 0) {
-          FUN_006e6080(this_00,2,*piVar5,(undefined4 *)&this_00->field_0x18);
+        if (*puVar5 != 0) {
+          FUN_006e6080(this_00,2,*puVar5,(undefined4 *)&this_00->field_0x18);
         }
-        piVar5 = piVar5 + 1;
+        puVar5 = puVar5 + 1;
         iVar3 = iVar3 + -1;
       } while (iVar3 != 0);
-      piVar5 = &this_00->field_01D3;
+      puVar5 = this_00->field_01D3;
       iVar3 = 4;
       do {
-        if (*piVar5 != 0) {
-          FUN_006e6080(this_00,2,*piVar5,(undefined4 *)&this_00->field_0x18);
+        if (*puVar5 != 0) {
+          FUN_006e6080(this_00,2,*puVar5,(undefined4 *)&this_00->field_0x18);
         }
-        piVar5 = piVar5 + 1;
+        puVar5 = puVar5 + 1;
         iVar3 = iVar3 + -1;
       } while (iVar3 != 0);
       g_currentExceptionFrame = local_4c.previous;

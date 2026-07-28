@@ -1,8 +1,11 @@
 
-undefined2 __fastcall FUN_004233c0(int param_1)
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 0042D770 -> 004233C0 @ 0042D8CF; return of FUN_0042b760 | 0042F2B0 -> 004233C0 @
+   0042FFCC; return of FUN_0042b760 */
+
+ushort __fastcall FUN_004233c0(STGroupBoatC *param_1)
 
 {
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  return *(undefined2 *)(param_1 + 0x27);
+  return param_1->field_0027;
 }
 

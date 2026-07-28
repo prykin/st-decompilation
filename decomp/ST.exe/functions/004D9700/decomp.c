@@ -1,9 +1,12 @@
 
-undefined4 __fastcall FUN_004d9700(int param_1)
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 004B9A40 -> 004D9700 @ 004B9B20; TLOBaseTy::sub_004B9A40 this; stable alias ESI */
+
+undefined4 __fastcall FUN_004d9700(TLOBaseTy *param_1)
 
 {
   uint index;
-  int local_8;
+  TLOBaseTy *local_8;
 
   if (g_dArray_007FA16C != (DArrayTy *)0x0) {
     index = 0;

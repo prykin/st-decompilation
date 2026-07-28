@@ -3,7 +3,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\settmobj.cpp
-   SettMapMTy::SendDesc */
+   SettMapMTy::SendDesc
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=6, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall SettMapMTy::SendDesc(SettMapMTy *this,int param_1)
 

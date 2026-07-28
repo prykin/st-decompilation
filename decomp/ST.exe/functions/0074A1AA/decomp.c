@@ -1,5 +1,8 @@
 
-undefined4 __fastcall FUN_0074a1aa(int *param_1)
+/* [STPrototypeApplier] Propagated return.
+   Evidence: 0074A1AA returns zeroed full register at 0074A1C0 @ 0074A1C3 */
+
+uint __fastcall FUN_0074a1aa(int *param_1)
 
 {
   if ((AnonShape_0074F0D8_3A9DA5F1 *)param_1[0x14] != (AnonShape_0074F0D8_3A9DA5F1 *)0x0) {

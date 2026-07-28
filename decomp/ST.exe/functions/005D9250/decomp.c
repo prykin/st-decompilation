@@ -3,7 +3,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\sid_obj.cpp
-   SIDTy::PaintExplanation */
+   SIDTy::PaintExplanation
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=3, used=0), and
+   decompilation contains no value return */
 
 void __thiscall SIDTy::PaintExplanation(SIDTy *this)
 
@@ -38,7 +42,7 @@ void __thiscall SIDTy::PaintExplanation(SIDTy *this)
       uVar8 = ((uint)puVar1[7] * *(int *)(puVar1 + 2) + 0x1f >> 3 & 0x1ffffffc) *
               *(int *)(puVar1 + 4);
     }
-    puVar5 = (undefined4 *)FUN_006b4fa0((int)puVar1);
+    puVar5 = (undefined4 *)FUN_006b4fa0((int *)puVar1);
     for (uVar7 = uVar8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
       *puVar5 = 0xffffffff;
       puVar5 = puVar5 + 1;
@@ -70,7 +74,7 @@ void __thiscall SIDTy::PaintExplanation(SIDTy *this)
       iVar4 = -2;
     }
     ccFntTy::WrTxt(this_00,resourceString,iVar4,iVar9,uVar8,iVar10,iVar11);
-    FUN_006b5440((int)pSVar3->field_1CB8,0,0,0x7d,(uint)pSVar3->field_1CC0,0,0xff);
+    FUN_006b5440(pSVar3->field_1CB8,0,0,0x7d,(uint)pSVar3->field_1CC0,0,0xff);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }

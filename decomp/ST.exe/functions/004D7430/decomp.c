@@ -1,5 +1,8 @@
 
-undefined4 FUN_004d7430(char param_1)
+/* [STPrototypeApplier] Propagated return.
+   Evidence: 004D7430 returns zeroed full register at 004D7460 @ 004D7464 */
+
+uint FUN_004d7430(char param_1)
 
 {
   DArrayTy *array;

@@ -1,6 +1,7 @@
 
 void __thiscall
-FUN_00501d00(void *this,AnonShape_00501D00_3942B646 *param_1,AnonShape_00501D00_04A7E309 *param_2)
+FUN_00501d00(void *this,AnonShape_00501D00_3942B646 *param_1,
+            RecoveredRecord_CPanelTy_00501D00 *param_2)
 
 {
   byte bVar1;
@@ -119,7 +120,8 @@ FUN_00501d00(void *this,AnonShape_00501D00_3942B646 *param_1,AnonShape_00501D00_
   if ((param_1->field_0036 != param_2->field_0036) || (param_1->field_0007 != param_2->field_0007))
   {
     piVar6 = (int *)((int)this + 0x960);
-    param_2 = (AnonShape_00501D00_04A7E309 *)0x4;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+    param_2 = (RecoveredRecord_CPanelTy_00501D00 *)0x4;
     do {
       if (*piVar6 != 0) {
         *(undefined4 *)((int)this + 0x28) = 0x20;
@@ -134,8 +136,9 @@ FUN_00501d00(void *this,AnonShape_00501D00_3942B646 *param_1,AnonShape_00501D00_
       }
       piVar6 = piVar6 + 1;
       piVar9 = (int *)((int)piVar9 + 1);
-      param_2 = (AnonShape_00501D00_04A7E309 *)&param_2[-1].field_0x3b;
-    } while (param_2 != (AnonShape_00501D00_04A7E309 *)0x0);
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+      param_2 = (RecoveredRecord_CPanelTy_00501D00 *)&param_2[-1].field_0x3b;
+    } while (param_2 != (RecoveredRecord_CPanelTy_00501D00 *)0x0);
   }
   return;
 }

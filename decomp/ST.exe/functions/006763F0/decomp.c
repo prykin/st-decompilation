@@ -52,7 +52,7 @@ int __cdecl _GetEmbrGrpTobjGrpExch(uint param_1,int param_2,int param_3)
         /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, uVar6) (runtime stride) */
         puVar3 = (ushort *)(array->elementSize * uVar6 + (int)array->data);
 LAB_00676470:
-        pSVar4 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,(char)param_1,(uint)*puVar3,CASE_1);
+        pSVar4 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,(char)param_1,*puVar3,CASE_1);
         if (pSVar4 != (STGameObjC *)0x0) {
           iVar2 = (*pSVar4->vtable->vfunc_2C)();
           if (iVar2 == 0x78) {

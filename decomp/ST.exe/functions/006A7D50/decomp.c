@@ -80,6 +80,7 @@ LAB_006a8234:
   local_28 = puVar11;
   local_14 = local_2c;
   do {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_13 = 30000;
     iVar1 = param_1 + (local_c * param_2 + local_30 + local_10 * iVar10) * 2;
     if (uVar6 == 0) {
@@ -116,6 +117,7 @@ LAB_006a80b6:
                                            (local_38 * param_2 + local_20 + local_48 * iVar10) * 2);
                 if (((local_20 == param_5) && (local_38 == param_6)) && (local_48 == param_7)) {
                   local_2c = local_24;
+                  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                   param_13 = (&DAT_007ed640)[local_24] + local_4c;
                   local_44 = local_38;
                   local_40 = local_20;
@@ -128,6 +130,7 @@ LAB_006a80b6:
                      ((local_4c == param_13 &&
                       (((int)(short)uVar3 == local_14 || ((int)(short)uVar3 == local_34)))))) {
                     local_2c = local_24;
+                    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                     param_13 = local_4c;
                     local_44 = local_38;
                     local_40 = local_20;

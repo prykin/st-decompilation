@@ -23,7 +23,7 @@ TLOBaseTy::sub_004C7860
   iVar5 = 0;
   switch(param_1 + -1) {
   case 0:
-    iVar3 = thunk_FUN_004e6a80((int)this->field_0024,param_2);
+    iVar3 = thunk_FUN_004e6a80(this->field_0024,param_2);
     if ((iVar3 != 0) && ((int)this->field_05B8 < g_worldGrid.sizeZ + -1))
     goto switchD_004c787f_caseD_2;
     break;
@@ -81,7 +81,7 @@ LAB_004c796d:
     return 0;
   }
   iVar5 = 0;
-  dVar4 = (*this->vtable->slot_F8)(this);
+  dVar4 = this->slot_F8();
   if (dVar4 == 0) {
     return 0;
   }
@@ -100,7 +100,7 @@ LAB_004c796d:
       return 0;
     }
     if ((&PTR_DAT_007bfc04)[this->field_0239][param_2] != '\0') {
-      bVar2 = thunk_FUN_004e5c40((int)this->field_0024,param_2);
+      bVar2 = thunk_FUN_004e5c40(this->field_0024,param_2);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       if (CONCAT31(extraout_var_00,bVar2) == 0) {
         return 0;
@@ -115,7 +115,7 @@ LAB_004c796d:
     }
     break;
   case 4:
-    iVar3 = (*this->vtable->vfunc_7C)(this);
+    iVar3 = this->vfunc_7C();
     if (iVar3 == 100) {
       return 0;
     }

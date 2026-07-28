@@ -462,7 +462,7 @@ LAB_005e91f7:
         MMsgTy::StatePanel(pSVar4->field_02E6,(int)local_a8);
       }
       sub_005E9970(this_01);
-      puVar14 = &this_01->field_1A94;
+      puVar14 = this_01->field_1A94;
       iVar8 = 0x16;
       do {
         Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,*puVar14);

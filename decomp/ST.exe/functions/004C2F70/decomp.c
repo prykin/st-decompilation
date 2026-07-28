@@ -12,7 +12,9 @@ undefined4 __thiscall TLOBaseTy::sub_004C2F70(TLOBaseTy *this)
 
   local_8 = (AnonShape_0060A470_93FA2EC1 *)0x0;
   if ((*(int *)(&DAT_007951b4 + this->field_0235 * 4) != 0) && (this->field_0408 != 0)) {
-    iVar1 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,this->field_040C,(int *)&local_8);
+    iVar1 = STPlaySystemC::sub_006E62D0
+                      (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)this->field_040C,
+                       (int *)&local_8);
     if (iVar1 == 0) {
       if (this->field_021D != 0) {
         thunk_FUN_0060a430(local_8,1);

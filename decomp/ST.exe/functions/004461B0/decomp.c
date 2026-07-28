@@ -29,7 +29,7 @@ STAllPlayersC::_DeleteGuardBoat(STAllPlayersC *this,char param_1,short param_2,i
   undefined4 local_18;
   uint local_14;
   DArrayTy *local_10;
-  uint local_c;
+  short local_c [2];
   dword local_8;
 
   local_18 = 0xffffffff;
@@ -66,10 +66,10 @@ STAllPlayersC::_DeleteGuardBoat(STAllPlayersC *this,char param_1,short param_2,i
         uVar8 = local_24->count;
         if (0 < (int)uVar8) {
           do {
-            DArrayGetElement(local_24,uVar7,&local_c);
-            if ((short)local_c == param_2) {
+            DArrayGetElement(local_24,uVar7,local_c);
+            if (local_c[0] == param_2) {
               FUN_006b0c70(local_24,uVar7);
-              pSVar3 = (STBoatC *)GetObjPtr(local_1c,param_1,local_c,CASE_1);
+              pSVar3 = (STBoatC *)GetObjPtr(local_1c,param_1,local_c[0],CASE_1);
               local_14 = g_playSystem_00802A38->field_00E4;
               STBoatC::CmdToObj(pSVar3,CASE_21,&local_14);
               break;
@@ -102,8 +102,8 @@ STAllPlayersC::_DeleteGuardBoat(STAllPlayersC *this,char param_1,short param_2,i
         uVar8 = local_28->count;
         if (0 < (int)uVar8) {
           do {
-            DArrayGetElement(local_28,uVar7,&local_c);
-            if ((short)local_c == param_2) {
+            DArrayGetElement(local_28,uVar7,local_c);
+            if (local_c[0] == param_2) {
               FUN_006b0c70(local_28,uVar7);
               break;
             }
@@ -116,8 +116,8 @@ STAllPlayersC::_DeleteGuardBoat(STAllPlayersC *this,char param_1,short param_2,i
             dVar1 = local_24->count;
             if (0 < (int)dVar1) {
               do {
-                DArrayGetElement(local_24,uVar8,&local_c);
-                pSVar3 = (STBoatC *)GetObjPtr(local_1c,param_1,local_c,CASE_1);
+                DArrayGetElement(local_24,uVar8,local_c);
+                pSVar3 = (STBoatC *)GetObjPtr(local_1c,param_1,local_c[0],CASE_1);
                 local_14 = g_playSystem_00802A38->field_00E4;
                 STBoatC::CmdToObj(pSVar3,CASE_21,&local_14);
                 uVar8 = uVar8 + 1;

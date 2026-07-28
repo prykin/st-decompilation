@@ -365,11 +365,11 @@ int __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,STMessage *message)
     }
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     thunk_FUN_004d8b70(*(char *)(this_00->field_0010 + 0x112d));
-    iVar5 = 0;
+    uVar11 = 0;
     do {
-      thunk_FUN_004b7750(iVar5);
-      iVar5 = iVar5 + 1;
-    } while (iVar5 < 8);
+      thunk_FUN_004b7750(uVar11);
+      uVar11 = uVar11 + 1;
+    } while ((int)uVar11 < 8);
     g_currentExceptionFrame = local_6c.previous;
     return 0;
   }

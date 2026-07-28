@@ -30,19 +30,19 @@ FUN_004affa0(undefined4 param_1,Global_sub_004AFFA0_param_2Enum param_2,int *par
         if (local_10 == (STFishC *)0x0) goto switchD_004afffd_caseD_3a;
         switch(param_2) {
         case CASE_38:
-          dVar2 = (*local_10->vtable->slot_2C)(local_10);
+          dVar2 = local_10->slot_2C();
           if (dVar2 != 0xdc) break;
           goto LAB_004b004a;
         case CASE_39:
         case CASE_5E:
-          dVar2 = (*local_10->vtable->slot_2C)(local_10);
+          dVar2 = local_10->slot_2C();
           if (dVar2 == 0xdd) goto LAB_004b004a;
           break;
         case CASE_4F:
-          dVar2 = (*local_10->vtable->slot_2C)(local_10);
+          dVar2 = local_10->slot_2C();
           goto joined_r0x004b0044;
         case CASE_61:
-          dVar2 = (*local_10->vtable->slot_2C)(local_10);
+          dVar2 = local_10->slot_2C();
 joined_r0x004b0044:
           if (dVar2 == 0xde) {
 LAB_004b004a:

@@ -65,7 +65,7 @@ int __thiscall STBoatC::Recharge(STBoatC *this,int param_1)
       if (pSVar5 == (STWorldObject *)0x0) {
         return 0;
       }
-      iVar9 = (*pSVar5->vtable->GetObjectTypeId)(pSVar5);
+      iVar9 = pSVar5->GetObjectTypeId();
       if (iVar9 != 0x62) {
         return 0;
       }
@@ -212,7 +212,7 @@ LAB_0047885b:
     sub_004602B0(this);
     this->field_00B7 = 0;
 cf_common_exit_00478E51:
-    (*this->vtable->vfunc_90)(this,3,0x1b2);
+    this->vfunc_90(3,0x1b2);
     return 0;
   }
   if (iVar9 == 2) {
@@ -327,7 +327,7 @@ LAB_00478b1a:
       }
       iVar9 = thunk_FUN_004d6f70((int *)this);
       if (iVar9 != 1) goto LAB_00478ff2;
-      (*this->vtable->vfunc_90)(this,3,0x1b2);
+      this->vfunc_90(3,0x1b2);
       puVar1 = &this->field_0x62b;
       if (*(int *)&pSVar5[0x1d].field_0x18 == 0) {
 LAB_00478f91:
@@ -352,7 +352,7 @@ LAB_00478f91:
                    (int)*(short *)puVar1);
       sub_00460260(this,0);
 LAB_00478ff2:
-      iVar9 = (*this->vtable->vfunc_D8)(this);
+      iVar9 = this->vfunc_D8();
       return (-(uint)(iVar9 != 0) & 0xfffffffd) + 2;
     }
     iVar9 = sub_00460260(this,2);

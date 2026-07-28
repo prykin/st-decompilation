@@ -12,7 +12,7 @@ void FUN_007574c0(AnonShape_00753C80_4C8E695D *param_1,int param_2,uint *param_3
   short sVar2;
   int iVar3;
   uint uVar4;
-  uint *puVar5;
+  AnonPointee_TLOBaseTy_0607 *pAVar5;
 
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   sVar2 = *(short *)(param_1->field_000C + 0x34);
@@ -24,19 +24,19 @@ void FUN_007574c0(AnonShape_00753C80_4C8E695D *param_1,int param_2,uint *param_3
     iVar3 = (int)sVar2;
   }
   uVar1 = iVar3 + 8;
-  puVar5 = (uint *)(param_2 + 0x10 + param_4);
+  pAVar5 = (AnonPointee_TLOBaseTy_0607 *)(param_2 + 0x10 + param_4);
   Library::MSVCRT::FUN_0072da70
-            ((undefined4 *)(uVar1 + param_2 + 0x10 + param_4),puVar5,
+            ((undefined4 *)(uVar1 + param_2 + 0x10 + param_4),pAVar5,
              *(short *)(param_2 + 8) - param_4);
   for (uVar4 = uVar1 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
-    *puVar5 = *param_3;
+    pAVar5->field_0000 = *param_3;
     param_3 = param_3 + 1;
-    puVar5 = puVar5 + 1;
+    pAVar5 = (AnonPointee_TLOBaseTy_0607 *)&pAVar5->field_0004;
   }
   for (uVar4 = uVar1 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
-    *(char *)puVar5 = (char)*param_3;
+    *(char *)&pAVar5->field_0000 = (char)*param_3;
     param_3 = (uint *)((int)param_3 + 1);
-    puVar5 = (uint *)((int)puVar5 + 1);
+    pAVar5 = (AnonPointee_TLOBaseTy_0607 *)((int)&pAVar5->field_0000 + 1);
   }
   *(short *)(param_2 + 8) = *(short *)(param_2 + 8) + (short)uVar1;
   return;

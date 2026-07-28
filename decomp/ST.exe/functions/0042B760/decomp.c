@@ -51,18 +51,23 @@
    STGroupBoatC::GetPatrolTask @ 00465943 | 0042B760 returns used as this of
    STGroupBoatC::GetPatrolTask @ 004659C3
    [STAbiConsistencyApplier] stack_parameter_width: parameter=/char Evidence: entry-use width=/char;
-   unmasked_dword_reads=0; evidence=0042B763 MOVSX EAX,byte ptr [EBP + 0x8] */
+   unmasked_dword_reads=0; evidence=0042B763 MOVSX EAX,byte ptr [EBP + 0x8]
+   [STAbiConsistencyApplier] stack_parameter_width target=parameter:1: parameter=/ushort Evidence:
+   entry-use width=/ushort; unmasked_dword_reads=0; evidence=0042B783 MOV EDX,dword ptr [EBP + 0xc];
+   first-use mask */
 
-STGroupBoatC * FUN_0042b760(char param_1,uint param_2)
+STGroupBoatC * FUN_0042b760(char param_1,ushort param_2)
 
 {
   uint uVar1;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined3 in_stack_00000005;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+  undefined2 in_stack_0000000a;
 
   uVar1 = (g_playerRuntime[param_1].groups)->count;
-  if ((uVar1 != 0) && ((param_2 & 0xffff) < uVar1)) {
-    DArrayGetElement(g_playerRuntime[param_1].groups,param_2 & 0xffff,&param_1);
+  if ((uVar1 != 0) && (param_2 < uVar1)) {
+    DArrayGetElement(g_playerRuntime[param_1].groups,(uint)param_2,&param_1);
     return _param_1;
   }
   return (STGroupBoatC *)0x0;

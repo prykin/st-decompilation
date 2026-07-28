@@ -13,7 +13,7 @@ void __thiscall CGenerate::sub_006964F0(CGenerate *this,uint param_1,int param_2
   undefined1 *puVar4;
   int *piVar5;
   int local_54 [9];
-  undefined4 local_30;
+  undefined1 local_30 [4];
   uint local_2c;
   int local_28;
   ushort *local_24;
@@ -66,7 +66,7 @@ void __thiscall CGenerate::sub_006964F0(CGenerate *this,uint param_1,int param_2
                 local_14 = local_14 + 1;
                 if (param_2 != 0) {
                   thunk_FUN_006a1370(this->field_0008,iVar2 % this->field_5833,
-                                     iVar2 / this->field_5833,local_8,&local_30);
+                                     iVar2 / this->field_5833,local_8,(int)local_30);
                   uVar3 = local_2c & 0xf;
                   piVar5 = local_1c;
                   if (((local_2c & 0x2000) == 0x2000) &&

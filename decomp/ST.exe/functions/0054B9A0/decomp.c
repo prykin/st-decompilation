@@ -27,8 +27,8 @@ FUN_0054b9a0(void *this,int param_1,int param_2,int param_3,int param_4,int para
                              (uint)*(byte *)((int)this + 0xd1),0);
           if (param_7 != 0) {
             CursorClassTy::SetGCType
-                      (this,(-(ushort)(iVar4 != -2) & 0xfff6) + CASE_40,
-                       *(undefined4 *)((int)this + 0x34),*(undefined4 *)((int)this + 0x38));
+                      (this,(-(ushort)(iVar4 != -2) & 0xfff6) + CASE_40,*(int *)((int)this + 0x34),
+                       *(int *)((int)this + 0x38));
           }
           *(undefined1 *)((int)this + 0xd1) = 0;
           return 1;
@@ -39,8 +39,8 @@ FUN_0054b9a0(void *this,int param_1,int param_2,int param_3,int param_4,int para
                              (uint)*(byte *)((int)this + 0xd1),0);
           if (param_7 != 0) {
             CursorClassTy::SetGCType
-                      (this,(-(ushort)(iVar4 != -2) & 0xfff6) + CASE_42,
-                       *(undefined4 *)((int)this + 0x34),*(undefined4 *)((int)this + 0x38));
+                      (this,(-(ushort)(iVar4 != -2) & 0xfff6) + CASE_42,*(int *)((int)this + 0x34),
+                       *(int *)((int)this + 0x38));
           }
           *(undefined1 *)((int)this + 0xd1) = 0;
           return 1;
@@ -53,8 +53,8 @@ FUN_0054b9a0(void *this,int param_1,int param_2,int param_3,int param_4,int para
                              (uint)*(byte *)((int)this + 0xd1),0);
           if (param_7 != 0) {
             CursorClassTy::SetGCType
-                      (this,(-(ushort)(iVar4 != -2) & 0xfff6) + CASE_41,
-                       *(undefined4 *)((int)this + 0x34),*(undefined4 *)((int)this + 0x38));
+                      (this,(-(ushort)(iVar4 != -2) & 0xfff6) + CASE_41,*(int *)((int)this + 0x34),
+                       *(int *)((int)this + 0x38));
           }
           *(undefined1 *)((int)this + 0xd1) = 0;
           return 1;
@@ -65,8 +65,8 @@ FUN_0054b9a0(void *this,int param_1,int param_2,int param_3,int param_4,int para
                              (uint)*(byte *)((int)this + 0xd1),0);
           if (param_7 != 0) {
             CursorClassTy::SetGCType
-                      (this,(-(ushort)(iVar4 != -2) & 0xfff6) + CASE_43,
-                       *(undefined4 *)((int)this + 0x34),*(undefined4 *)((int)this + 0x38));
+                      (this,(-(ushort)(iVar4 != -2) & 0xfff6) + CASE_43,*(int *)((int)this + 0x34),
+                       *(int *)((int)this + 0x38));
           }
           *(undefined1 *)((int)this + 0xd1) = 0;
           return 1;
@@ -78,8 +78,8 @@ FUN_0054b9a0(void *this,int param_1,int param_2,int param_3,int param_4,int para
                            ,0);
         if (param_7 != 0) {
           CursorClassTy::SetGCType
-                    (this,(-(ushort)(iVar4 != -2) & 0xfff6) + CASE_3F,
-                     *(undefined4 *)((int)this + 0x34),*(undefined4 *)((int)this + 0x38));
+                    (this,(-(ushort)(iVar4 != -2) & 0xfff6) + CASE_3F,*(int *)((int)this + 0x34),
+                     *(int *)((int)this + 0x38));
         }
         *(undefined1 *)((int)this + 0xd1) = 0;
         return 1;
@@ -90,8 +90,8 @@ FUN_0054b9a0(void *this,int param_1,int param_2,int param_3,int param_4,int para
                            ,0);
         if (param_7 != 0) {
           CursorClassTy::SetGCType
-                    (this,(-(ushort)(iVar4 != -2) & 0xfff6) + CASE_3E,
-                     *(undefined4 *)((int)this + 0x34),*(undefined4 *)((int)this + 0x38));
+                    (this,(-(ushort)(iVar4 != -2) & 0xfff6) + CASE_3E,*(int *)((int)this + 0x34),
+                     *(int *)((int)this + 0x38));
         }
         *(undefined1 *)((int)this + 0xd1) = 0;
         return 1;
@@ -102,8 +102,8 @@ FUN_0054b9a0(void *this,int param_1,int param_2,int param_3,int param_4,int para
                            ,0);
         if (param_7 != 0) {
           CursorClassTy::SetGCType
-                    (this,(-(ushort)(iVar4 != -2) & 0xfff6) + CASE_3C,
-                     *(undefined4 *)((int)this + 0x34),*(undefined4 *)((int)this + 0x38));
+                    (this,(-(ushort)(iVar4 != -2) & 0xfff6) + CASE_3C,*(int *)((int)this + 0x34),
+                     *(int *)((int)this + 0x38));
         }
         *(undefined1 *)((int)this + 0xd1) = 0;
         return 1;
@@ -114,8 +114,8 @@ FUN_0054b9a0(void *this,int param_1,int param_2,int param_3,int param_4,int para
                            ,0);
         if (param_7 != 0) {
           CursorClassTy::SetGCType
-                    (this,(-(ushort)(iVar4 != -2) & 0xfff6) + CASE_3D,
-                     *(undefined4 *)((int)this + 0x34),*(undefined4 *)((int)this + 0x38));
+                    (this,(-(ushort)(iVar4 != -2) & 0xfff6) + CASE_3D,*(int *)((int)this + 0x34),
+                     *(int *)((int)this + 0x38));
         }
         *(undefined1 *)((int)this + 0xd1) = 0;
         return 1;
@@ -130,8 +130,7 @@ FUN_0054b9a0(void *this,int param_1,int param_2,int param_3,int param_4,int para
     iVar4 = FUN_00405687((int)this);
     if (iVar4 != 0) goto cf_common_exit_0054BA0C;
   }
-  CursorClassTy::SetGCType
-            (this,CASE_0,*(undefined4 *)((int)this + 0x34),*(undefined4 *)((int)this + 0x38));
+  CursorClassTy::SetGCType(this,CASE_0,*(int *)((int)this + 0x34),*(int *)((int)this + 0x38));
 cf_common_exit_0054BA0C:
   *(undefined1 *)((int)this + 0xd1) = 1;
   return 0;

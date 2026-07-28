@@ -2,9 +2,13 @@
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STPrototypeApplier] Propagated parameter 3.
    Evidence: 0060CBE0 -> 0060E210 @ 0060CC81 | 00614C80 -> 0060E210 @ 00614DB0 | 00615430 ->
-   0060E210 @ 006156C1 */
+   0060E210 @ 006156C1
 
-undefined4 FUN_0060e210(undefined4 param_1,undefined4 param_2,int param_3,int param_4,int param_5)
+   [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 0060E2EC FILD dword ptr [EAX + ESI*0x4] classifies dword parameter loaded at 0060E2DF |
+   0060E35B FILD dword ptr [EDX] classifies dword parameter loaded at 0060E34F */
+
+undefined4 FUN_0060e210(void *param_1,undefined4 param_2,int param_3,int param_4,int param_5)
 
 {
   int iVar1;
@@ -30,15 +34,18 @@ undefined4 FUN_0060e210(undefined4 param_1,undefined4 param_2,int param_3,int pa
     fVar7 = (float10)_DAT_0079cd88 / (float10)(param_5 + -1);
     iVar3 = 0;
     pdVar5 = pdVar2;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_3 = iVar6;
     if (-1 < iVar4) {
       do {
         iVar3 = iVar3 + 1;
         pdVar5[1] = ((double)param_3 * *pdVar5) / (double)iVar3;
         pdVar5 = pdVar5 + 1;
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_3 = param_3 + -1;
       } while (iVar3 <= iVar4);
     }
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_3 = 0;
     if (0 < param_5) {
       do {
@@ -74,7 +81,9 @@ undefined4 FUN_0060e210(undefined4 param_1,undefined4 param_2,int param_3,int pa
         *(short *)param_4 = (short)lVar8;
         lVar8 = Library::MSVCRT::__ftol();
         *(short *)(param_4 + 2) = (short)lVar8;
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_4 = param_4 + 4;
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_3 = param_3 + 1;
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         fVar7 = extraout_ST1;

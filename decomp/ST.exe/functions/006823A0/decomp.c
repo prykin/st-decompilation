@@ -1,9 +1,16 @@
 
-void __cdecl FUN_006823a0(undefined2 param_1,undefined2 param_2)
+/* [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=7, used=0), and
+   decompilation contains no value return
+
+   [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 006823E0 -> 006823A0 @ 006823FE; FUN_006823e0 parameter param_1 */
+
+void __cdecl FUN_006823a0(short param_1,undefined2 param_2)
 
 {
   undefined1 local_c;
-  undefined2 local_b;
+  short local_b;
   undefined2 local_9;
 
   local_c = 7;

@@ -100,7 +100,7 @@ LAB_00623863:
     cVar2 = param_1->field_02E9;
   }
   if (cVar2 != '\0') {
-    thunk_FUN_004ad430((int)&param_1->field_0x1d5);
+    thunk_FUN_004ad430((STT3DSprC *)&param_1->field_0x1d5);
     param_1->field_02E9 = 0;
   }
 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */

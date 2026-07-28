@@ -30,7 +30,7 @@ undefined4 __thiscall TLOBldMark::sub_004C6210(TLOBldMark *this,int param_1,unde
   }
   this->field_002C = this_00;
   if (*(int *)(&DAT_00791d68 + this->field_001C * 4) == 0) {
-    iVar2 = STT3DSprC::Init(this_00,DAT_008073cc,0x5a,0x45,0,0xb4,0x8c,0x11);
+    iVar2 = STT3DSprC::Init(this_00,DAT_008073cc,0x5a,0x45,(STDcResourcC *)0x0,0xb4,0x8c,0x11);
     if (iVar2 != 0) {
       RaiseInternalException
                 (iVar2,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_BldMark.cpp",0x48)
@@ -38,16 +38,16 @@ undefined4 __thiscall TLOBldMark::sub_004C6210(TLOBldMark *this,int param_1,unde
     }
   }
   else if (*(int *)(&DAT_00791d68 + this->field_001C * 4) == 1) {
-    iVar2 = STT3DSprC::Init(this_00,DAT_008073cc,0x78,0x56,0,0xf0,0xbe,0x11);
+    iVar2 = STT3DSprC::Init(this_00,DAT_008073cc,0x78,0x56,(STDcResourcC *)0x0,0xf0,0xbe,0x11);
     if (iVar2 != 0) {
       RaiseInternalException
                 (iVar2,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_BldMark.cpp",0x49)
       ;
     }
-    uVar3 = thunk_FUN_004ad650((int)this->field_002C);
+    uVar3 = thunk_FUN_004ad650(this->field_002C);
     FUN_006e9210(PTR_00807598,uVar3);
   }
-  thunk_FUN_004ad5e0((int)this->field_002C);
+  thunk_FUN_004ad5e0(this->field_002C);
   iVar2 = STT3DSprC::LoadSequence
                     (this->field_002C,0,DAT_0080678c,
                      *(char **)(&DAT_007ad250 + (uint)(byte)this->field_0010->field_112E * 4),0x1d);
@@ -60,7 +60,7 @@ undefined4 __thiscall TLOBldMark::sub_004C6210(TLOBldMark *this,int param_1,unde
   STT3DSprC::SetCurFase(this->field_002C,'\0',*(uint *)(&DAT_00790f84 + this->field_001C * 4));
   DVar4 = STAppC::sub_006E51B0(this->field_0010);
   STT3DSprC::StartShow(this->field_002C,0,DVar4);
-  thunk_FUN_004ad430((int)this->field_002C);
+  thunk_FUN_004ad430(this->field_002C);
   this->field_0024 = 0;
   this->field_0028 = 0;
   return 0;

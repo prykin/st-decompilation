@@ -36,7 +36,7 @@ undefined4 __thiscall STMineSetC::LoadImagMineSet(STMineSetC *this,int param_1)
     return 0xffff;
   }
   this_00 = &local_c->field_01D5;
-  iVar3 = thunk_FUN_004ad650((int)this_00);
+  iVar3 = thunk_FUN_004ad650((STT3DSprC *)this_00);
   pSVar2->field_02BA = iVar3;
   if (param_1 == 0) {
     iVar3 = STT3DSprC::LoadSequence

@@ -2,7 +2,11 @@
 /* [STMethodOwnerApplier] Structural method owner recovered as STGroupBoatC.
    Evidence: this_call_owners=[STGroupBoatC]; agreed_this_calls=1; incoming_this_accesses=7;
    incoming_edx_uses=2; incoming_stack_parameter_uses=3; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=7, used=0), and
+   decompilation contains no value return */
 
 void __thiscall
 STGroupBoatC::sub_0049A500
@@ -17,7 +21,7 @@ STGroupBoatC::sub_0049A500
   int local_1c;
   int local_18;
   int local_14;
-  uint local_10;
+  undefined1 local_10 [4];
   uint local_c;
   int local_8;
   int iVar3;
@@ -35,12 +39,14 @@ STGroupBoatC::sub_0049A500
     local_c = 0;
     if (uVar1 != 0) {
       do {
-        DArrayGetElement((DArrayTy *)this->field_0029,index,&local_10);
-        if ((short)local_10 != -1) {
-          this_00 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,this->field_0024,local_10,CASE_1)
-          ;
+        DArrayGetElement((DArrayTy *)this->field_0029,index,local_10);
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+        if (local_10._0_2_ != 0xffff) {
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+          this_00 = STAllPlayersC::GetObjPtr
+                              (g_allPlayers_007FA174,this->field_0024,local_10._0_2_,CASE_1);
           STFishC::sub_004162B0
-                    ((STFishC *)this_00,(undefined2 *)&local_14,(undefined2 *)&local_18,
+                    ((STFishC *)this_00,(short *)&local_14,(undefined2 *)&local_18,
                      (undefined2 *)&local_1c);
           iVar5 = iVar5 + local_14;
           iVar3 = iVar3 + local_18;

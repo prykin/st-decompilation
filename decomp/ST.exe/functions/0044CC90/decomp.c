@@ -18,8 +18,9 @@ void FUN_0044cc90(uint param_1,uint *groupContent,undefined4 param_3)
     index = 0;
     do {
       DArrayGetElement((DArrayTy *)groupContent,index,&param_1);
-      if ((((short)param_1 != -1) &&
-          (pSVar3 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,(char)uVar2,param_1,CASE_1),
+      if ((((ushort)param_1 != 0xffff) &&
+          (pSVar3 = STAllPlayersC::GetObjPtr
+                              (g_allPlayers_007FA174,(char)uVar2,(ushort)param_1,CASE_1),
           pSVar3 != (STGameObjC *)0x0)) && (pSVar3->field_0020 == 0x14)) {
         pSVar3->field_07E6 = param_3;
       }

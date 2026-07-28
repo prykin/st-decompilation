@@ -62,7 +62,7 @@ void __fastcall FUN_006057c0(STExplosionC *param_1)
         }
       }
       else if (param_1->field_0286 != 0) {
-        thunk_FUN_004ad430((int)param_1->field_02AF);
+        thunk_FUN_004ad430(param_1->field_02AF);
         param_1->field_0286 = 0;
       }
     }

@@ -1,7 +1,11 @@
 
+/* [STPrototypeApplier] Propagated parameter 5.
+   Evidence: 0052AFE0 -> 006E6460 @ 0052B134; literal 0 at 0052B10F | 00580B60 -> 006E6460 @
+   00580C22; literal 1 at 00580C0D */
+
 undefined4 * __thiscall
 FUN_006e6460(void *this,undefined4 param_1,int param_2,undefined2 param_3,undefined2 param_4,
-            undefined1 param_5,int param_6)
+            byte param_5,int param_6)
 
 {
   undefined4 *puVar1;
@@ -14,7 +18,7 @@ FUN_006e6460(void *this,undefined4 param_1,int param_2,undefined2 param_3,undefi
     return (undefined4 *)0x0;
   }
   puVar1[6] = param_1;
-  *(undefined1 *)(puVar1 + 3) = param_5;
+  *(byte *)(puVar1 + 3) = param_5;
   *(undefined2 *)((int)puVar1 + 0xe) = param_3;
   *(bool *)((int)puVar1 + 0xd) = param_6 != 0;
   *(char *)((int)puVar1 + 0x17) = (char)param_2;

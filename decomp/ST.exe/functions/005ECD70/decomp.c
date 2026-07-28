@@ -1,6 +1,12 @@
 
+/* [STPrototypeApplier] Propagated parameter 3.
+   Evidence: 005EBD80 -> 005ECD70 @ 005EC1F4; MOVSX at 005EC1C5 establishes signed source width 2 |
+   005ECFE0 -> 005ECD70 @ 005ED0E7; MOVSX at 005ED0DF establishes signed source width 2 | 005EF4B0
+   -> 005ECD70 @ 005EF569; MOVSX at 005EF54F establishes signed source width 2 | 005FC4A0 ->
+   005ECD70 @ 005FC94E; MOVSX at 005FC920 establishes signed source width 2 */
+
 undefined4 __thiscall
-FUN_005ecd70(void *this,int param_1,int param_2,undefined4 param_3,int param_4,char param_5,
+FUN_005ecd70(void *this,int param_1,int param_2,int param_3,int param_4,char param_5,
             undefined4 param_6)
 
 {
@@ -13,7 +19,7 @@ FUN_005ecd70(void *this,int param_1,int param_2,undefined4 param_3,int param_4,c
   *(char *)((int)this + 0x25a) = param_5;
   *(int *)((int)this + 0x267) = param_1;
   *(int *)((int)this + 0x26b) = param_2;
-  *(undefined4 *)((int)this + 0x26f) = param_3;
+  *(int *)((int)this + 0x26f) = param_3;
   *(undefined4 *)((int)this + 0x283) = 1;
   uVar1 = g_playSystem_00802A38->field_00E4;
   *(int *)((int)this + 0x273) = param_4;

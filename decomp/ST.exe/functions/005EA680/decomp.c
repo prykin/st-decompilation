@@ -106,8 +106,8 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
       if (SVar2 == MESS_WAITTY_6333) {
         MMMObjTy::PaintSlBut
                   ((MMMObjTy *)this_02,
-                   (AnonShape_005B6560_61F462DF *)&g_startSystem_0081176C->field_038D,(int)message,0
-                  );
+                   (RecoveredRecord_MMMObjTy_005B6560 *)&g_startSystem_0081176C->field_038D,
+                   (int)message,0);
       }
       else if (SVar2 == MESS_SHARED_6121) {
         this_02->field_0045 = 0x200;
@@ -124,7 +124,8 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
     else if (SVar2 == MESS_SHARED_6334) {
       MMMObjTy::PaintSlBut
                 ((MMMObjTy *)this_02,
-                 (AnonShape_005B6560_61F462DF *)&g_startSystem_0081176C->field_041E,(int)message,0);
+                 (RecoveredRecord_MMMObjTy_005B6560 *)&g_startSystem_0081176C->field_041E,
+                 (int)message,0);
     }
     goto cf_common_exit_005EAB6A;
   }
@@ -143,12 +144,14 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
       else if (SVar2 == MESS_SETTMAPMTY_6340) {
         MMMObjTy::PaintSlBut
                   ((MMMObjTy *)this_02,
-                   (AnonShape_005B6560_61F462DF *)&this_02->field_1A5B->field_055C,(int)message,0);
+                   (RecoveredRecord_MMMObjTy_005B6560 *)&this_02->field_1A5B->field_055C,
+                   (int)message,0);
       }
       else if (SVar2 == MESS_SHARED_6341) {
         MMMObjTy::PaintSlBut
                   ((MMMObjTy *)this_02,
-                   (AnonShape_005B6560_61F462DF *)&this_02->field_1A5B->field_05ED,(int)message,0);
+                   (RecoveredRecord_MMMObjTy_005B6560 *)&this_02->field_1A5B->field_05ED,
+                   (int)message,0);
       }
     }
     else if (SVar2 == MESS_SHARED_6940) {
@@ -162,7 +165,7 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
       this_02->field_1A64 = 0;
     }
     else if (SVar2 == MESS_WAITTY_6943) {
-      thunk_FUN_005b6350(this_02,0x6942,message->arg0,0);
+      thunk_FUN_005b6350(this_02,0x6942,(message->arg0).u32,0);
       this_02->field_1A64 = 0;
       if (DAT_00811768 == '\x01') {
         DAT_00811768 = '\x02';

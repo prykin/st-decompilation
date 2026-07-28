@@ -1,12 +1,15 @@
 
-void __thiscall FUN_00621580(void *this,uint param_1,int param_2)
+/* [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 004CEB00 -> 00621580 @ 004CEDDB; /TLOBaseTy+0x24 */
+
+void __thiscall FUN_00621580(void *this,byte *param_1,int param_2)
 
 {
   uint uVar1;
   int local_8;
 
   local_8 = 0;
-  if (DAT_0080874d != param_1) {
+  if ((byte *)(uint)DAT_0080874d != param_1) {
     return;
   }
   if ((*(int *)((int)this + 0x10a) == 0) ||

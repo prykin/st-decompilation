@@ -57,8 +57,8 @@ undefined4 __thiscall TLOBaseTy::FUN_004e2c30(TLOBaseTy *this,uint param_1)
     puVar7 = puVar7 + 1;
     pbVar9 = pbVar9 + 4;
   }
-  thunk_FUN_004e6310((int)pbVar1,param_1,local_10 + 1);
-  thunk_FUN_004e5f20((int)this->field_0024,param_1);
+  thunk_FUN_004e6310(pbVar1,param_1,local_10 + 1);
+  thunk_FUN_004e5f20(this->field_0024,param_1);
   if (DAT_008117bc != (undefined4 *)0x0) {
     pbVar1 = this->field_0024;
     memset(local_60, 0, 0x20); /* compiler bulk-zero initialization */
@@ -119,7 +119,7 @@ LAB_004e2efc:
       (*pTVar6->vfunc_90)(this,6,uVar4);
     }
     else if (uVar5 == 2) {
-      (*this->vtable->vfunc_90)(this,6,0x60);
+      this->vfunc_90(6,0x60);
     }
     else if (uVar5 == 3) {
       pTVar6 = this->vtable;
@@ -137,7 +137,7 @@ LAB_004e2f42:
       (*pTVar6->vfunc_90)(this,6,uVar4);
     }
     else if (uVar5 == 2) {
-      (*this->vtable->vfunc_90)(this,6,0x5d);
+      this->vfunc_90(6,0x5d);
     }
     else if (uVar5 == 3) {
       pTVar6 = this->vtable;
@@ -155,7 +155,7 @@ LAB_004e2f8d:
       (*pTVar6->vfunc_90)(this,6,uVar4);
     }
     else if (uVar5 == 2) {
-      (*this->vtable->vfunc_90)(this,6,0x5a);
+      this->vfunc_90(6,0x5a);
     }
     else if (uVar5 == 3) {
       pTVar6 = this->vtable;
@@ -171,7 +171,7 @@ LAB_004e2f8d:
   }
   else {
     if (uVar5 == 2) {
-      (*this->vtable->vfunc_90)(this,4,0x2d5);
+      this->vfunc_90(4,0x2d5);
       goto cf_common_exit_004E2FE4;
     }
     if (uVar5 != 3) goto cf_common_exit_004E2FE4;

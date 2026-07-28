@@ -33,7 +33,8 @@ undefined4 __thiscall FUN_004dbb60(void *this,int *param_1,int param_2)
         *piVar3 = 100 - *(int *)((int)this + iVar5 * 4 + 0x4e0);
         if (*(int *)((int)this + (0x13b - iVar5) * 4) != 0) {
           iVar5 = STPlaySystemC::sub_006E62D0
-                            (g_playSystem_00802A38,*(int *)((int)this + (0x135 - iVar5) * 4),
+                            (g_playSystem_00802A38,
+                             *(AnonShape_005EFAE0_B406B78B **)((int)this + (0x135 - iVar5) * 4),
                              (int *)&param_1);
           if ((iVar5 == 0) && (param_1[0x131] == *(int *)((int)this + 0x18))) {
             param_1[0x130] = *piVar3;

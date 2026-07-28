@@ -23,8 +23,8 @@ STAllPlayersC::RegisterObject
   int iVar7;
   undefined4 uVar8;
   int iVar9;
-  short sVar10;
-  undefined2 uVar11;
+  ushort uVar10;
+  ushort uVar11;
   dword dVar12;
   uint uVar13;
   InternalExceptionFrame local_94;
@@ -69,11 +69,11 @@ STAllPlayersC::RegisterObject
                0x5bd);
   }
   pDVar4 = local_28;
-  if ((short)param_3 == -1) {
+  if ((ushort)param_3 == 0xffff) {
     dVar12 = local_28->count;
   }
   else {
-    iVar9 = thunk_FUN_0042b5b0(param_1,param_3);
+    iVar9 = thunk_FUN_0042b5b0(param_1,(ushort)param_3);
     if (iVar9 == 1) {
       RaiseInternalException
                 (-0x5001fffa,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
@@ -83,7 +83,7 @@ STAllPlayersC::RegisterObject
   }
   local_20 = dVar12;
   Library::DKW::TBL::FUN_006ae140(&pDVar4->flags,dVar12,&param_4);
-  thunk_FUN_00419c50(param_4,(short)dVar12);
+  thunk_FUN_00419c50(param_4,(ushort)dVar12);
   if (param_4[8] == 0x14) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar9 = (**(code **)(*param_4 + 0x2c))();
@@ -389,7 +389,8 @@ LAB_0042e4fd:
       }
     }
   }
-  if ((short)param_2 == -2) {
+  uVar10 = (ushort)param_2;
+  if (uVar10 == 0xfffe) {
 LAB_0042eb3e:
     uVar13 = local_1c->count;
     local_14 = uVar13;
@@ -409,27 +410,26 @@ LAB_0042eb3e:
     local_30 = 0;
     local_44 = 1;
     local_3c = uVar13;
-    (*g_playSystem_00802A38->vtable->vfunc_08)
-              (g_playSystem_00802A38,0x10ff,local_10,&local_c,local_50,0);
+    g_playSystem_00802A38->vfunc_08(0x10ff,local_10,&local_c,local_50,0);
     Library::DKW::TBL::FUN_006ae140(&local_1c->flags,uVar13,&local_c);
     iVar9 = param_5;
   }
   else {
-    if ((((short)param_2 != -1) && (iVar9 == 0)) &&
-       (local_c = thunk_FUN_0042b760(param_1,param_2), local_c == (STGroupBoatC *)0x0)) {
+    if (((uVar10 != 0xffff) && (iVar9 == 0)) &&
+       (local_c = thunk_FUN_0042b760(param_1,uVar10), local_c == (STGroupBoatC *)0x0)) {
       param_2 = 0xfffe;
     }
     uVar13 = local_14;
     if ((short)param_2 == -2) goto LAB_0042eb3e;
   }
-  sVar10 = (short)param_2;
-  if (sVar10 == -2) {
+  uVar10 = (ushort)param_2;
+  if (uVar10 == 0xfffe) {
 LAB_0042ebe7:
-    uVar11 = (undefined2)uVar13;
-    if (sVar10 != -1) goto LAB_0042ebf6;
+    uVar11 = (ushort)uVar13;
+    if (uVar10 != 0xffff) goto LAB_0042ebf6;
   }
-  else if (sVar10 != -1) {
-    local_c = thunk_FUN_0042b760(param_1,param_2);
+  else if (uVar10 != 0xffff) {
+    local_c = thunk_FUN_0042b760(param_1,uVar10);
     uVar13 = param_2 & 0xffff;
     local_14 = uVar13;
     goto LAB_0042ebe7;
@@ -438,8 +438,8 @@ LAB_0042ebe7:
   local_14 = 0xffff;
 LAB_0042ebf6:
   thunk_FUN_00419c30(param_4,uVar11);
-  if (((iVar9 == 0) || (param_6 == 1)) && (sVar10 != -1)) {
-    STGroupC::AddObj((STGroupC *)local_c,local_20,(uint)(sVar10 != -2));
+  if (((iVar9 == 0) || (param_6 == 1)) && (uVar10 != 0xffff)) {
+    STGroupC::AddObj((STGroupC *)local_c,local_20,(uint)(uVar10 != 0xfffe));
   }
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   iVar9 = (**(code **)(*param_4 + 0x2c))();

@@ -19,11 +19,13 @@ void FUN_0075d370(AnonShape_0075D370_6C1A68B3 *param_1,int *param_2,int *param_3
     local_c = 0;
     if (0 < *(int *)&param_1->field_0x1c) {
       puVar5 = &pAVar1->field_0xc;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (AnonShape_0075D370_6C1A68B3 *)param_2;
       do {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(puVar5 + 0x28))
                   (pAVar2,local_8,*(int *)param_1 + *(int *)(puVar5 + 0x58) * *param_3 * 4,puVar5);
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = (AnonShape_0075D370_6C1A68B3 *)&param_1->field_0x4;
         local_c = local_c + 1;
         puVar5 = puVar5 + 4;

@@ -13,11 +13,9 @@ void __thiscall CPanelTy::DoneCPanel(CPanelTy *this)
   CPanelTy *this_00;
   int iVar3;
   int iVar4;
-  uint *puVar5;
-  int *piVar6;
-  undefined4 *puVar7;
-  ushort **ppuVar8;
-  void **ppvVar9;
+  ushort **ppuVar6;
+  uint *puVar7;
+  void **ppvVar8;
   InternalExceptionFrame local_50;
   CPanelTy *local_c;
   int local_8;
@@ -31,13 +29,13 @@ void __thiscall CPanelTy::DoneCPanel(CPanelTy *this)
     puVar1 = &local_c->field_0x18;
     local_c->field_0028 = 0x4404;
     FUN_006e6000(local_c,0xf,0,(undefined4 *)puVar1);
-    ppvVar9 = (void **)&this_00->field_0x217;
+    ppvVar8 = (void **)&this_00->field_0x217;
     local_8 = 4;
     do {
-      if (*ppvVar9 != (void *)0x0) {
-        FreeAndNull(ppvVar9);
+      if (*ppvVar8 != (void *)0x0) {
+        FreeAndNull(ppvVar8);
       }
-      ppvVar9 = ppvVar9 + 1;
+      ppvVar8 = ppvVar8 + 1;
       local_8 = local_8 + -1;
     } while (local_8 != 0);
     memset((void *)puVar1, 0, 0x20); /* compiler bulk-zero initialization */
@@ -48,101 +46,101 @@ void __thiscall CPanelTy::DoneCPanel(CPanelTy *this)
       StartSystemTy::sub_006E56B0(this_00->field_000C,this_00->field_095C);
     }
     this_00->field_095C = 0;
-    puVar5 = &this_00->field_0308;
+    puVar7 = this_00->field_0308;
     iVar3 = 2;
     do {
-      if (*(uint *)((int)puVar5 + -10) != 0) {
-        StartSystemTy::sub_006E56B0(this_00->field_000C,*(uint *)((int)puVar5 + -10));
+      if (*(uint *)((int)puVar7 + -10) != 0) {
+        StartSystemTy::sub_006E56B0(this_00->field_000C,*(uint *)((int)puVar7 + -10));
       }
-      *(undefined4 *)((int)puVar5 + -10) = 0;
-      if (*puVar5 != 0) {
-        StartSystemTy::sub_006E56B0(this_00->field_000C,*puVar5);
+      *(undefined4 *)((int)puVar7 + -10) = 0;
+      if (*puVar7 != 0) {
+        StartSystemTy::sub_006E56B0(this_00->field_000C,*puVar7);
       }
-      *puVar5 = 0;
-      puVar5 = puVar5 + 1;
+      *puVar7 = 0;
+      puVar7 = puVar7 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
-    puVar5 = &this_00->field_0310;
+    puVar7 = this_00->field_0310;
     iVar3 = 3;
     do {
-      if (*puVar5 != 0) {
-        StartSystemTy::sub_006E56B0(this_00->field_000C,*puVar5);
+      if (*puVar7 != 0) {
+        StartSystemTy::sub_006E56B0(this_00->field_000C,*puVar7);
       }
-      *puVar5 = 0;
-      puVar5 = puVar5 + 1;
+      *puVar7 = 0;
+      puVar7 = puVar7 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
     if (this_00->field_09D0 != 0) {
       StartSystemTy::sub_006E56B0(this_00->field_000C,this_00->field_09D0);
     }
     this_00->field_09D0 = 0;
-    puVar5 = &this_00->field_09A4;
+    puVar7 = this_00->field_09A4;
     iVar3 = 7;
     do {
-      if (*puVar5 != 0) {
-        StartSystemTy::sub_006E56B0(this_00->field_000C,*puVar5);
-        *puVar5 = 0;
+      if (*puVar7 != 0) {
+        StartSystemTy::sub_006E56B0(this_00->field_000C,*puVar7);
+        *puVar7 = 0;
       }
-      puVar5 = puVar5 + 1;
+      puVar7 = puVar7 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
-    puVar5 = &this_00->field_09C0;
+    puVar7 = this_00->field_09C0;
     iVar3 = 2;
     do {
-      if (*puVar5 != 0) {
-        StartSystemTy::sub_006E56B0(this_00->field_000C,*puVar5);
-        *puVar5 = 0;
+      if (*puVar7 != 0) {
+        StartSystemTy::sub_006E56B0(this_00->field_000C,*puVar7);
+        *puVar7 = 0;
       }
-      puVar5 = puVar5 + 1;
+      puVar7 = puVar7 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
-    puVar5 = &this_00->field_0A15;
+    puVar7 = this_00->field_0A15;
     iVar3 = 6;
     do {
-      if (*puVar5 != 0) {
-        StartSystemTy::sub_006E56B0(this_00->field_000C,*puVar5);
-        *puVar5 = 0;
+      if (*puVar7 != 0) {
+        StartSystemTy::sub_006E56B0(this_00->field_000C,*puVar7);
+        *puVar7 = 0;
       }
-      puVar5 = puVar5 + 1;
+      puVar7 = puVar7 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
-    puVar5 = &this_00->field_0B1F;
+    puVar7 = this_00->field_0B1F;
     iVar3 = 6;
     do {
-      if (*puVar5 != 0) {
-        StartSystemTy::sub_006E56B0(this_00->field_000C,*puVar5);
-        *puVar5 = 0;
+      if (*puVar7 != 0) {
+        StartSystemTy::sub_006E56B0(this_00->field_000C,*puVar7);
+        *puVar7 = 0;
       }
-      puVar5 = puVar5 + 1;
+      puVar7 = puVar7 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
     if (this_00->field_0B37 != 0) {
       StartSystemTy::sub_006E56B0(this_00->field_000C,this_00->field_0B37);
     }
     this_00->field_0B37 = 0;
-    puVar5 = &this_00->field_0960;
+    puVar7 = this_00->field_0960;
     iVar3 = 4;
     do {
-      if (*puVar5 != 0) {
-        StartSystemTy::sub_006E56B0(this_00->field_000C,*puVar5);
-        *puVar5 = 0;
+      if (*puVar7 != 0) {
+        StartSystemTy::sub_006E56B0(this_00->field_000C,*puVar7);
+        *puVar7 = 0;
       }
-      puVar5 = puVar5 + 1;
+      puVar7 = puVar7 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
     if (this_00->field_0970 != 0) {
       StartSystemTy::sub_006E56B0(this_00->field_000C,this_00->field_0970);
     }
-    piVar6 = &this_00->field_0148;
+    ppuVar6 = this_00->field_0148;
     this_00->field_0970 = 0;
     g_cPanel_00801688 = (CPanelTy *)0x0;
     iVar3 = 0xb;
     do {
-      if (-1 < *piVar6) {
-        FUN_006b3bb0((int *)PTR_008075a8,*piVar6);
+      if (-1 < (int)*ppuVar6) {
+        FUN_006b3bb0((int *)PTR_008075a8,(uint)*ppuVar6);
       }
-      *piVar6 = 0xffffffff;
-      piVar6 = piVar6 + 1;
+      *ppuVar6 = (ushort *)0xffffffff;
+      ppuVar6 = ppuVar6 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
     if (-1 < this_00->field_0174) {
@@ -159,11 +157,11 @@ void __thiscall CPanelTy::DoneCPanel(CPanelTy *this)
     this_00->field_017C = -1;
     cMf32::RecMemFree(g_cMf32_00806790,(uint *)&this_00->field_0B43);
     cMf32::RecMemFree(g_cMf32_00806790,(uint *)&this_00->field_0B47);
-    ppuVar8 = &this_00->field_09D9;
+    puVar7 = this_00->field_09D9;
     iVar3 = 0xf;
     do {
-      cMf32::RecMemFree(g_cMf32_00806790,(uint *)ppuVar8);
-      ppuVar8 = ppuVar8 + 1;
+      cMf32::RecMemFree(g_cMf32_00806790,puVar7);
+      puVar7 = puVar7 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
     if ((PTR_00807598 != (AnonShape_GLOBAL_00807598_0C6808FB *)0x0) &&
@@ -174,17 +172,17 @@ void __thiscall CPanelTy::DoneCPanel(CPanelTy *this)
     if (PTR_00807598 != (AnonShape_GLOBAL_00807598_0C6808FB *)0x0) {
       FUN_006e6500(PTR_00807598,(undefined4 *)0x0);
     }
-    ppvVar9 = (void **)&this_00->field_0227;
+    ppvVar8 = this_00->field_0227;
     iVar3 = 4;
     do {
-      if (*ppvVar9 != (void *)0x0) {
-        FreeAndNull(ppvVar9);
+      if (*ppvVar8 != (void *)0x0) {
+        FreeAndNull(ppvVar8);
       }
-      ppvVar9 = ppvVar9 + 1;
+      ppvVar8 = ppvVar8 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
     cMf32::RecMemFree(g_cMf32_00806790,(uint *)&this_00->field_0994);
-    puVar7 = &this_00->field_0DBF;
+    puVar7 = this_00->field_0DBF;
     iVar3 = 2;
     do {
       *(undefined4 *)((int)puVar7 + -0x3f7) = 0;
@@ -193,11 +191,11 @@ void __thiscall CPanelTy::DoneCPanel(CPanelTy *this)
       puVar7 = puVar7 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
-    ppuVar8 = &this_00->field_0974;
+    puVar7 = this_00->field_0974;
     iVar3 = 8;
     do {
-      cMf32::RecMemFree(g_cMf32_00806790,(uint *)ppuVar8);
-      ppuVar8 = ppuVar8 + 1;
+      cMf32::RecMemFree(g_cMf32_00806790,puVar7);
+      puVar7 = puVar7 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
     cMf32::RecMemFree(g_cMf32_00806790,(uint *)&this_00->field_0954);
@@ -279,13 +277,13 @@ void __thiscall CPanelTy::DoneCPanel(CPanelTy *this)
     if (this_00->field_01B4 != (AnonPointee_CPanelTy_01B4 *)0x0) {
       FreeAndNull(&this_00->field_01B4);
     }
-    ppvVar9 = (void **)&this_00->field_0180;
+    ppvVar8 = (void **)&this_00->field_0180;
     local_8 = 0xb;
     do {
-      if (*ppvVar9 != (void *)0x0) {
-        FreeAndNull(ppvVar9);
+      if (*ppvVar8 != (void *)0x0) {
+        FreeAndNull(ppvVar8);
       }
-      ppvVar9 = ppvVar9 + 1;
+      ppvVar8 = ppvVar8 + 1;
       local_8 = local_8 + -1;
     } while (local_8 != 0);
     if ((int *)this_00->field_01D8 != (int *)0x0) {

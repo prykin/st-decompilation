@@ -151,7 +151,7 @@ int __thiscall STDcResourcC::GetMessage(STDcResourcC *this,STMessage *message)
       g_currentExceptionFrame = local_68.previous;
       return 0;
     }
-    iVar9 = (*pSVar16->vtable->GetObjectTypeId)(pSVar16);
+    iVar9 = pSVar16->GetObjectTypeId();
     if ((*(int *)&this_00->field_0x255 != 0xdd) || ((iVar9 != 0x39 && (iVar9 != 0x5e)))) {
       if (*(int *)&this_00->field_0x255 != 0xde) {
         g_currentExceptionFrame = local_68.previous;
@@ -258,7 +258,7 @@ int __thiscall STDcResourcC::GetMessage(STDcResourcC *this,STMessage *message)
         pSVar19 = pSVar19 + 1;
       }
       if (*(int *)&this_00->field_0x251 < 1) {
-        thunk_FUN_00580380(this_00);
+        thunk_FUN_00580380((STResourceC *)this_00);
         goto cf_common_exit_0057E624;
       }
       iVar9 = *(int *)&this_00->field_0x255;
@@ -298,15 +298,15 @@ int __thiscall STDcResourcC::GetMessage(STDcResourcC *this,STMessage *message)
       }
       if ((sVar8 != 0) &&
          ((pSVar16 == (STWorldObject *)0x0 ||
-          (((iVar9 = (*pSVar16->vtable->GetObjectTypeId)(pSVar16), iVar9 != 0x39 &&
-            (iVar9 = (*pSVar16->vtable->GetObjectTypeId)(pSVar16), iVar9 != 0x4f)) &&
-           ((iVar9 = (*pSVar16->vtable->GetObjectTypeId)(pSVar16), iVar9 != 0x5e &&
-            (iVar9 = (*pSVar16->vtable->GetObjectTypeId)(pSVar16), iVar9 != 0x61)))))))) {
-        thunk_FUN_00580380(this_00);
+          (((iVar9 = pSVar16->GetObjectTypeId(), iVar9 != 0x39 &&
+            (iVar9 = pSVar16->GetObjectTypeId(), iVar9 != 0x4f)) &&
+           ((iVar9 = pSVar16->GetObjectTypeId(), iVar9 != 0x5e &&
+            (iVar9 = pSVar16->GetObjectTypeId(), iVar9 != 0x61)))))))) {
+        thunk_FUN_00580380((STResourceC *)this_00);
       }
       iVar9 = STAllPlayersC::RegisterDeposit(g_allPlayers_007FA174,0xffff,this_00);
       if (iVar9 != 0) {
-        thunk_FUN_00580380(this_00);
+        thunk_FUN_00580380((STResourceC *)this_00);
       }
       *(uint *)&this_00->field_0x261 = *(uint *)&this_00->field_0x261 | 1;
       this_00->field_0259 = *(STSprGameObjC_field_0259State *)&this_00->field_0x251;
@@ -359,16 +359,16 @@ int __thiscall STDcResourcC::GetMessage(STDcResourcC *this,STMessage *message)
       }
       if ((sVar8 != 0) &&
          ((pSVar16 == (STWorldObject *)0x0 ||
-          (((iVar9 = (*pSVar16->vtable->GetObjectTypeId)(pSVar16), iVar9 != 0x39 &&
-            (iVar9 = (*pSVar16->vtable->GetObjectTypeId)(pSVar16), iVar9 != 0x4f)) &&
-           ((iVar9 = (*pSVar16->vtable->GetObjectTypeId)(pSVar16), iVar9 != 0x5e &&
-            (iVar9 = (*pSVar16->vtable->GetObjectTypeId)(pSVar16), iVar9 != 0x61)))))))) {
-        thunk_FUN_00580380(this_00);
+          (((iVar9 = pSVar16->GetObjectTypeId(), iVar9 != 0x39 &&
+            (iVar9 = pSVar16->GetObjectTypeId(), iVar9 != 0x4f)) &&
+           ((iVar9 = pSVar16->GetObjectTypeId(), iVar9 != 0x5e &&
+            (iVar9 = pSVar16->GetObjectTypeId(), iVar9 != 0x61)))))))) {
+        thunk_FUN_00580380((STResourceC *)this_00);
       }
       iVar9 = STAllPlayersC::RegisterDeposit
                         (g_allPlayers_007FA174,*(ushort *)&this_00->field_0x32,this_00);
       if (iVar9 != 0) {
-        thunk_FUN_00580380(this_00);
+        thunk_FUN_00580380((STResourceC *)this_00);
       }
       if (local_18[3] == CASE_1) {
         thunk_FUN_00580f50();
@@ -444,9 +444,11 @@ LAB_0057e6f0:
           bVar5 = true;
         }
         if (((bVar5) && (pVVar6->field_010C < 4)) &&
-           ((&pVVar6->field_003C)[pVVar6->field_010C] != 0)) {
-          uVar10 = (uint)*(byte *)((g_centeredOffsets5[iVar9] + local_14) * pVVar6->field_0028 +
-                                   (&pVVar6->field_003C)[pVVar6->field_010C] + (int)local_18);
+           (pVVar6->field_003C[pVVar6->field_010C] != (void *)0x0)) {
+          uVar10 = (uint)*(byte *)((int)local_18 +
+                                  (int)((int)pVVar6->field_003C[pVVar6->field_010C] +
+                                       (g_centeredOffsets5[iVar9] + local_14) * pVVar6->field_0028))
+          ;
         }
         else {
           uVar10 = 0xffffffff;
@@ -512,9 +514,10 @@ LAB_0057e6f0:
           bVar5 = true;
         }
         if (((bVar5) && (pVVar6->field_010C < 4)) &&
-           ((&pVVar6->field_003C)[pVVar6->field_010C] != 0)) {
-          uVar10 = (uint)*(byte *)((g_centeredOffsets5[iVar9] + local_20) * pVVar6->field_0028 +
-                                   (&pVVar6->field_003C)[pVVar6->field_010C] + local_1c);
+           (pVVar6->field_003C[pVVar6->field_010C] != (void *)0x0)) {
+          uVar10 = (uint)*(byte *)((int)pVVar6->field_003C[pVVar6->field_010C] +
+                                  local_1c +
+                                  (g_centeredOffsets5[iVar9] + local_20) * pVVar6->field_0028);
         }
         else {
           uVar10 = 0xffffffff;
@@ -553,7 +556,7 @@ LAB_0057e6f0:
   FUN_006e6580((void *)this_00->field_0211,piVar22);
   *(undefined4 *)&this_00->field_0x273 = 0;
 cf_common_join_0057E9C2:
-  (*this_00->vtable->vfunc_D8)(this_00);
+  this_00->vfunc_D8();
   if ((*(int *)&this_00->field_0x255 != 0xe0) && (iVar9 = 0, 0 < *(int *)&this_00->field_0x265)) {
     do {
       thunk_FUN_004ac9e0(*(void **)(*(int *)&this_00->field_0x26d + iVar9 * 4),
@@ -583,7 +586,7 @@ cf_common_join_0057E9C2:
         }
       }
       else {
-        thunk_FUN_00580380(this_00);
+        thunk_FUN_00580380((STResourceC *)this_00);
       }
     }
     if ((((this_00->field_0259 != 0) &&

@@ -51,7 +51,7 @@ cLoadingTy::InitParam
       uVar11 = ((uint)puVar1[7] * *(int *)(puVar1 + 2) + 0x1f >> 3 & 0x1ffffffc) *
                *(int *)(puVar1 + 4);
     }
-    puVar8 = (undefined4 *)FUN_006b4fa0((int)puVar1);
+    puVar8 = (undefined4 *)FUN_006b4fa0((int *)puVar1);
     for (uVar10 = uVar11 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
       *puVar8 = 0;
       puVar8 = puVar8 + 1;
@@ -88,8 +88,8 @@ cLoadingTy::InitParam
     pcVar6->field_0058 = param_8;
     pcVar6->field_0054 = param_9;
     FUN_006b5f80((int *)PTR_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
-    FUN_006b4640((uint)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0,0,
-                 (BITMAPINFO *)pcVar6->field_0000,(uint *)0x0);
+    FUN_006b4640(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0,0,(BITMAPINFO *)pcVar6->field_0000,
+                 (uint *)0x0);
     Library::DKW::DDX::FUN_006bb370(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0,0);
     g_currentExceptionFrame = local_4c.previous;
     return;

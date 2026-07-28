@@ -3,7 +3,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel1.cpp
-   CPanelTy::PaintLife */
+   CPanelTy::PaintLife
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=4, used=0), and
+   decompilation contains no value return */
 
 void __thiscall CPanelTy::PaintLife(CPanelTy *this,int param_1)
 
@@ -15,8 +19,6 @@ void __thiscall CPanelTy::PaintLife(CPanelTy *this,int param_1)
   int iVar4;
   int iVar5;
   char cVar6;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  undefined4 extraout_EDX;
   uint uVar7;
   UINT UVar8;
   InternalExceptionFrame local_5c;
@@ -72,10 +74,9 @@ void __thiscall CPanelTy::PaintLife(CPanelTy *this,int param_1)
       }
       else {
         UVar8 = 0x36b1;
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-        uVar7 = CONCAT31((int3)((uint)extraout_EDX >> 8),'d' - bVar3);
+        uVar7 = (uint)(byte)(100 - bVar3);
       }
-      PaintDamageXY(this_00,(int)pAVar2,5,0x27,uVar7,UVar8);
+      PaintDamageXY(this_00,(int)pAVar2,5,0x27,(byte)uVar7,UVar8);
       g_currentExceptionFrame = local_5c.previous;
       return;
     }

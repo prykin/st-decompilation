@@ -7,7 +7,11 @@
 
    [STPrototypeRepairApplier] Propagated parameter 1.
    Evidence: 005B0BA0 -> 005DD470 @ 005B0BFB | 005D1400 -> 005DD470 @ 005D1464 | 005EA680 ->
-   005DD470 @ 005EA6DB */
+   005DD470 @ 005EA6DB
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=3, used=0), and
+   decompilation contains no value return */
 
 void __thiscall StartSystemTy::ChatMessage(StartSystemTy *this,STMessage *param_1)
 
@@ -100,7 +104,7 @@ void __thiscall StartSystemTy::ChatMessage(StartSystemTy *this,STMessage *param_
         uVar12 = ((uint)puVar3[7] * *(int *)(puVar3 + 2) + 0x1f >> 3 & 0x1ffffffc) *
                  *(int *)(puVar3 + 4);
       }
-      puVar8 = (undefined4 *)FUN_006b4fa0((int)puVar3);
+      puVar8 = (undefined4 *)FUN_006b4fa0((int *)puVar3);
       for (uVar11 = uVar12 >> 2; uVar11 != 0; uVar11 = uVar11 - 1) {
         *puVar8 = 0xffffffff;
         puVar8 = puVar8 + 1;

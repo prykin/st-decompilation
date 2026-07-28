@@ -3,11 +3,18 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cp_sup.cpp
-   CPanelTy::PaintDamageXY */
+   CPanelTy::PaintDamageXY
+   [STAbiConsistencyApplier] stack_parameter_width target=parameter:4: parameter=/byte Evidence:
+   entry-use width=/byte; unmasked_dword_reads=0; evidence=004F1FDA MOV ECX,dword ptr [EBP + 0x14];
+   first-use mask
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=3, used=0), and
+   decompilation contains no value return */
 
 void __thiscall
 CPanelTy::PaintDamageXY
-          (CPanelTy *this,int param_1,int param_2,int param_3,uint param_4,UINT param_5)
+          (CPanelTy *this,int param_1,int param_2,int param_3,byte param_4,UINT param_5)
 
 {
   code *pcVar1;
@@ -35,7 +42,7 @@ CPanelTy::PaintDamageXY
     iVar3 = 0;
     puVar4 = (uint *)LoadResourceString(param_5,g_module_00807618);
     ccFntTy::WrTxt(pCVar2->field_01B8,puVar4,iVar3,iVar5,uVar6,iVar7,iVar8);
-    wsprintfA(&pCVar2->field_0x1e1,"%3d",param_4 & 0xff);
+    wsprintfA(&pCVar2->field_0x1e1,"%3d",param_4);
     ccFntTy::SetSurf(pCVar2->field_01BC,param_1,0,param_2 + 0xc,param_3 + 10,0x14,0xf);
     ccFntTy::WrTxt(pCVar2->field_01BC,(uint *)&pCVar2->field_0x1e1,-3,-1,1,-1,-1);
     ccFntTy::SetSurf(pCVar2->field_01B8,param_1,0,param_2 + 0x22,param_3 + 0xd,10,10);

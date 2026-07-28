@@ -36,7 +36,7 @@ void __thiscall FSGSTy::ConnectProc(FSGSTy *this,int param_1,int param_2)
         uVar10 = ((uint)puVar2[7] * *(int *)(puVar2 + 2) + 0x1f >> 3 & 0x1ffffffc) *
                  *(int *)(puVar2 + 4);
       }
-      puVar6 = (undefined4 *)FUN_006b4fa0((int)puVar2);
+      puVar6 = (undefined4 *)FUN_006b4fa0((int *)puVar2);
       for (uVar9 = uVar10 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
         *puVar6 = 0xffffffff;
         puVar6 = puVar6 + 1;

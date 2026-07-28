@@ -29,8 +29,7 @@ uint __thiscall CPanelTy::PaintPerRes(CPanelTy *this,int param_1)
   iVar2 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   this_00 = local_c;
   if (iVar2 == 0) {
-    PaintDamageXY(local_c,local_c->field_0194,param_1 + 0x39,0x65,(uint)(byte)local_c->field_0C33,
-                  0x2714);
+    PaintDamageXY(local_c,local_c->field_0194,param_1 + 0x39,0x65,local_c->field_0C33,0x2714);
     PaintCostsXY(this_00,this_00->field_0194,param_1 + 0x39,0x70,this_00->field_0C1C,0xffff,3,0);
     local_8 = local_8 & 0xffffff00;
     local_10 = ((uint)(byte)this_00->field_0C33 * 0x28) / 100;

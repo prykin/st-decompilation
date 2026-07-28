@@ -25,7 +25,7 @@ undefined4 __thiscall TLOBaseTy::sub_004E2AD0(TLOBaseTy *this,int param_1,uint p
   }
   this->field_04D0 = CASE_1;
   RotateSpr(this,1);
-  thunk_FUN_004e5eb0((int)this->field_0024,param_2);
+  thunk_FUN_004e5eb0(this->field_0024,param_2);
   if (this->field_0024 != (byte *)(uint)(byte)this->field_0010->field_112D)
   goto cf_common_exit_004E2B69;
   uVar2 = GetPlayerRaceId(*(char *)&this->field_023D);
@@ -36,7 +36,7 @@ undefined4 __thiscall TLOBaseTy::sub_004E2AD0(TLOBaseTy *this,int param_1,uint p
   }
   else {
     if (uVar2 == 2) {
-      (*this->vtable->vfunc_90)(this,4,0x2d4);
+      this->vfunc_90(4,0x2d4);
       goto cf_common_exit_004E2B69;
     }
     if (uVar2 != 3) goto cf_common_exit_004E2B69;

@@ -42,6 +42,7 @@ int __thiscall FUN_0069f160(void *this,int param_1,int param_2,int param_3,int p
   uVar6 = (param_3 + 1) * param_1 * param_2;
   iVar1 = param_1 * param_2;
   if (100 < param_4) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_4 = 100;
   }
   ExceptionList = &local_14;

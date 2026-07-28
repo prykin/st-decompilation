@@ -17,10 +17,10 @@ CGenerate::sub_00698CA0
   int iVar1;
   int iVar2;
   uint uVar3;
-  undefined4 local_c;
+  undefined1 local_c [4];
   uint local_8;
 
-  iVar1 = thunk_FUN_006a1370(this->field_0008,param_1,param_2,param_3,&local_c);
+  iVar1 = thunk_FUN_006a1370(this->field_0008,param_1,param_2,param_3,(int)local_c);
   *param_4 = -1;
   *param_5 = -1;
   *param_6 = 0;
@@ -38,6 +38,7 @@ CGenerate::sub_00698CA0
       *param_5 = (int)(short)iVar1;
       iVar1 = (int)(short)iVar1 - uVar3;
       *param_4 = iVar1;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       if (param_3 == *param_5) {
         return 4;
       }

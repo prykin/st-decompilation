@@ -33,7 +33,8 @@ undefined4 __fastcall FUN_004e3910(int *param_1)
     if (0 < param_1[0x139]) {
       do {
         iVar9 = local_c;
-        if (param_1[local_c + 0x134] == 0) {
+        if ((AnonShape_005EFAE0_B406B78B *)param_1[local_c + 0x134] ==
+            (AnonShape_005EFAE0_B406B78B *)0x0) {
           local_c = iVar9;
           if (local_10 == 0) {
             local_10 = 1;
@@ -199,7 +200,8 @@ undefined4 __fastcall FUN_004e3910(int *param_1)
         }
         else {
           iVar3 = STPlaySystemC::sub_006E62D0
-                            (g_playSystem_00802A38,param_1[local_c + 0x134],(int *)0x0);
+                            (g_playSystem_00802A38,
+                             (AnonShape_005EFAE0_B406B78B *)param_1[local_c + 0x134],(int *)0x0);
           local_c = iVar9;
           if (iVar3 != 0) {
             param_1[iVar9 + 0x134] = 0;

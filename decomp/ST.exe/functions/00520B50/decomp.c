@@ -3,15 +3,23 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\infocen.cpp
-   InfocPanelTy::PaintInfocObj */
+   InfocPanelTy::PaintInfocObj
+   [STAbiConsistencyApplier] stack_parameter_width target=parameter:2: parameter=/ushort Evidence:
+   entry-use width=/ushort; unmasked_dword_reads=0; evidence=00520B9B MOV EAX,dword ptr [EBP + 0xc];
+   first-use mask | 00520BBB MOV ECX,dword ptr [EBP + 0xc]; first-use mask
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=8, used=0), and
+   decompilation contains no value return */
 
 void __thiscall
-InfocPanelTy::PaintInfocObj(InfocPanelTy *this,ushort param_1,uint param_2,int param_3,int param_4)
+InfocPanelTy::PaintInfocObj
+          (InfocPanelTy *this,ushort param_1,ushort param_2,int param_3,int param_4)
 
 {
   code *pcVar1;
   InfocPanelTy *pIVar2;
-  char cVar3;
+  byte bVar3;
   int errorCode;
   int iVar4;
   InternalExceptionFrame local_4c;
@@ -24,18 +32,18 @@ InfocPanelTy::PaintInfocObj(InfocPanelTy *this,ushort param_1,uint param_2,int p
   pIVar2 = local_8;
   if (errorCode == 0) {
     if ((local_8->field_03D4 == -1) && (param_1 == 0xffff)) {
-      wsprintfA(&local_8->field_0x18d,"----/%d",param_2 & 0xffff);
+      wsprintfA(&local_8->field_0x18d,"----/%d",param_2);
     }
     else {
-      wsprintfA(&local_8->field_0x18d,"%d/%d",param_1,param_2 & 0xffff);
+      wsprintfA(&local_8->field_0x18d,"%d/%d",param_1,param_2);
     }
     if (DAT_0080874e == '\x03') {
-      cVar3 = 's';
+      bVar3 = 0x73;
     }
     else {
-      cVar3 = (-(DAT_0080874e != '\x01') & 0x89U) + 0x3a;
+      bVar3 = (-(DAT_0080874e != '\x01') & 0x89U) + 0x3a;
     }
-    FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)pIVar2->field_0068,0,param_3,param_4,0x2d,0xc,cVar3)
+    FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)pIVar2->field_0068,0,param_3,param_4,0x2d,0xc,bVar3)
     ;
     ccFntTy::SetSurf(pIVar2->field_0189,pIVar2->field_0068,0,param_3,param_4,0x2d,0xc);
     ccFntTy::WrStr(pIVar2->field_0189,(uint *)&pIVar2->field_0x18d,-1,-1,

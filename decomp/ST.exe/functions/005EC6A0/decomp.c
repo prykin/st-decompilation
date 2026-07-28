@@ -17,8 +17,10 @@ void __fastcall FUN_005ec6a0(AnonShape_005EC6A0_C8559927 *param_1)
     local_12 = param_1->field_0032;
     local_10 = param_1->field_032A;
     local_18 = 0x5ddb;
-    if (param_1->field_0354 != 0) {
-      iVar1 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,param_1->field_0354,&local_8);
+    if ((AnonShape_005EFAE0_B406B78B *)param_1->field_0354 != (AnonShape_005EFAE0_B406B78B *)0x0) {
+      iVar1 = STPlaySystemC::sub_006E62D0
+                        (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)param_1->field_0354,
+                         &local_8);
       if (iVar1 != -4) {
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         local_e = *(undefined2 *)(local_8 + 0x32);

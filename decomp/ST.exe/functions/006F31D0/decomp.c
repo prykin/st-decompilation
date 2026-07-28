@@ -140,10 +140,12 @@ LAB_006f32f9:
   }
   uVar15 = puVar18[0xe];
   local_48 = (AnonShape_006F31D0_0BFF23DC *)0x0;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = uVar7;
   if ((int)param_3 < 0) {
     local_50 = (int)uVar15 >> 2;
     if (param_2 == 0) {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = uVar7 + puVar18[0xb];
       uVar15 = uVar15 - local_50;
     }
@@ -156,12 +158,14 @@ LAB_006f32f9:
   else if (param_2 == 0) {
     local_50 = param_3;
     uVar15 = puVar18[0xb];
+/* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
 LAB_006f34a4:
     param_1 = uVar7 + uVar15;
     uVar15 = local_50;
   }
   else if (param_2 == 1) {
     local_48 = (AnonShape_006F31D0_0BFF23DC *)param_3;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = uVar7 + puVar18[0xc];
     uVar15 = uVar15 - param_3;
   }
@@ -488,6 +492,7 @@ LAB_006f3a60:
                               local_30 = FUN_006cfe10(DAT_00856fe4,iVar12);
                             }
                             if (local_38 != 0) {
+                              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                               param_1 = 0;
                             }
                             if (DAT_00856fd8 == pbVar14) {
@@ -512,6 +517,7 @@ LAB_006f3a60:
                         }
                         else {
                           if (local_38 != 0) {
+                            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                             param_1 = 0;
                           }
                           if (DAT_00856fd8 == pbVar14) {
@@ -569,6 +575,7 @@ LAB_006f3a60:
                         local_44 = (AnonShape_006F31D0_0BFF23DC *)local_2c[0x2c];
                         if (local_44 != (AnonShape_006F31D0_0BFF23DC *)0x0) {
                           if (local_38 != 0) {
+                            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                             param_1 = 0;
                           }
                           if (DAT_00856fd8 == pbVar14) {
@@ -582,6 +589,7 @@ LAB_006f3a60:
                     }
                     else {
                       if (local_38 != 0) {
+                        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                         param_1 = 0;
                       }
                       if (DAT_00856fd8 == pbVar14) {
@@ -782,6 +790,7 @@ LAB_006f3a60:
                               pbVar19 = FUN_006cfe10(DAT_00856fe4,iVar5);
                             }
                             if (local_38 != 0) {
+                              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                               param_1 = 0;
                             }
                             if (local_20 == 0) {
@@ -818,6 +827,7 @@ LAB_006f3a60:
                         }
                         else {
                           if (local_38 != 0) {
+                            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                             param_1 = 0;
                           }
                           if ((uVar2 & 4) == 0) {
@@ -909,6 +919,7 @@ LAB_006f3a60:
                         uVar7 = local_2c[0x2c];
                         if (uVar7 != 0) {
                           if (local_38 != 0) {
+                            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                             param_1 = 0;
                           }
                           if (DAT_00857008 == 3) {
@@ -928,6 +939,7 @@ LAB_006f3a60:
                     }
                     else {
                       if (local_38 != 0) {
+                        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                         param_1 = 0;
                       }
                       if (DAT_00857008 == 3) {

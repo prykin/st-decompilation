@@ -12,7 +12,7 @@ void __thiscall MainMenuTy::DoneMainMenu(MainMenuTy *this)
   MainMenuTy *pMVar2;
   int iVar3;
   int iVar4;
-  AnonPointee_MainMenuTy_1AA7 **ppAVar5;
+  uint *puVar5;
   InternalExceptionFrame local_4c;
   MainMenuTy *local_8;
 
@@ -42,17 +42,17 @@ void __thiscall MainMenuTy::DoneMainMenu(MainMenuTy *this)
       MMsgTy::HideSprites(*(MMsgTy **)(pMVar2->field_1A5B + 0x2e6));
       *(undefined4 *)(*(int *)(pMVar2->field_1A5B + 0x2e6) + 0x1cab) = 0;
     }
-    ppAVar5 = &pMVar2->field_1AA7;
+    puVar5 = pMVar2->field_1AA7;
     iVar3 = 10;
     do {
-      if (*ppAVar5 != (AnonPointee_MainMenuTy_1AA7 *)0x0) {
-        FUN_006c4a70(&(*ppAVar5)->field_0000);
-        *ppAVar5 = (AnonPointee_MainMenuTy_1AA7 *)0x0;
+      if ((undefined4 *)*puVar5 != (undefined4 *)0x0) {
+        FUN_006c4a70((undefined4 *)*puVar5);
+        *puVar5 = 0;
       }
-      if (ppAVar5[-10] != (AnonPointee_MainMenuTy_1AA7 *)0x0) {
-        cMf32::RecMemFree(g_cMf32_00806780,(uint *)(ppAVar5 + -10));
+      if (puVar5[-10] != 0) {
+        cMf32::RecMemFree(g_cMf32_00806780,puVar5 + -10);
       }
-      ppAVar5 = ppAVar5 + 1;
+      puVar5 = puVar5 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
     if (pMVar2->field_004D != 0) {

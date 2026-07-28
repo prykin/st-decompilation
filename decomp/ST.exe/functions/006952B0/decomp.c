@@ -138,7 +138,7 @@ CGenerate::FUN_006952b0(CGenerate *this,AnonShape_006952B0_7A982E30 *param_1,byt
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_6c._12_4_ =
            sub_0069BDC0(this,local_28,10,10,4,0x23,(int)local_8,
-                        (AnonShape_0069BDC0_B656F442 *)local_6c);
+                        (RecoveredRecord_CGenerate_0069BDC0 *)local_6c);
       sub_0069FF90(this);
       _DAT_00853dd0 = Library::MSVCRT::FUN_0072e6c0();
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -151,8 +151,8 @@ CGenerate::FUN_006952b0(CGenerate *this,AnonShape_006952B0_7A982E30 *param_1,byt
       sub_00695EB0(this);
       sub_0069FF90(this);
       iVar2 = thunk_FUN_00695180((AnonShape_0052EFB0_8161B92D *)local_6c,
-                                 (AnonShape_00695180_3C0E4B54 *)&stack0xffffff70,(int)&local_38,
-                                 local_c);
+                                 (RecoveredRecord_CGenerate_00695180 *)&stack0xffffff70,
+                                 (int)&local_38,local_c);
       if (iVar2 == 0) {
         sub_00694B90(this);
       }

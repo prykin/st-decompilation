@@ -3,9 +3,13 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_torp.cpp
-   STTorpC::SetDangerous */
+   STTorpC::SetDangerous
 
-undefined4 __thiscall STTorpC::SetDangerous(STTorpC *this,undefined4 param_1,uint *param_2)
+   [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 004608B0 -> 006451B0 @ 00460ABD; /STBoatC+0x18 | 00471AC0 -> 006451B0 @ 00471C9F;
+   /STBoatC+0x18 */
+
+undefined4 __thiscall STTorpC::SetDangerous(STTorpC *this,uint param_1,uint *param_2)
 
 {
   code *pcVar1;
@@ -14,8 +18,7 @@ undefined4 __thiscall STTorpC::SetDangerous(STTorpC *this,undefined4 param_1,uin
   int iVar3;
   undefined4 uVar4;
   InternalExceptionFrame local_54;
-  undefined4 local_10;
-  undefined4 local_c;
+  uint local_10 [2];
   STTorpC *local_8;
 
   local_54.previous = g_currentExceptionFrame;
@@ -24,9 +27,9 @@ undefined4 __thiscall STTorpC::SetDangerous(STTorpC *this,undefined4 param_1,uin
   errorCode = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   if (errorCode == 0) {
     if (*param_2 == 0xffffffff) {
-      local_10 = param_1;
-      local_c = 1;
-      uVar2 = Library::DKW::TBL::FUN_006ae1c0(&local_8->field_0241->flags,&local_10);
+      local_10[0] = param_1;
+      local_10[1] = 1;
+      uVar2 = Library::DKW::TBL::FUN_006ae1c0(&local_8->field_0241->flags,local_10);
       *param_2 = uVar2;
     }
     g_currentExceptionFrame = local_54.previous;

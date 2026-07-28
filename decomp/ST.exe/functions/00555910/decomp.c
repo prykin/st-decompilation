@@ -7,7 +7,7 @@
    TraksClassTy::DrawTrakSprite */
 
 void __thiscall
-TraksClassTy::DrawTrakSprite(TraksClassTy *this,AnonShape_00555910_7455F960 *param_1)
+TraksClassTy::DrawTrakSprite(TraksClassTy *this,RecoveredRecord_TraksClassTy_00555910 *param_1)
 
 {
   undefined2 uVar1;
@@ -108,7 +108,7 @@ TraksClassTy::DrawTrakSprite(TraksClassTy *this,AnonShape_00555910_7455F960 *par
         sVar4 = (sVar4 / 200 + (sVar4 >> 0xf)) - (short)((longlong)(int)sVar4 * 0x51eb851f >> 0x3f);
       }
       param_1->field_0020 = sVar4;
-      iVar3 = thunk_FUN_00555880((AnonShape_00555880_021D11E5 *)param_1);
+      iVar3 = thunk_FUN_00555880((RecoveredRecord_TraksClassTy_00555880 *)param_1);
       if (iVar3 == 0) {
         param_1->field_0002 = (undefined2)local_c;
         param_1->field_0004 = (undefined2)local_10;

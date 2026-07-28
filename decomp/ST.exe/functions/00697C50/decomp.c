@@ -9,7 +9,7 @@ undefined4 __thiscall CGenerate::sub_00697C50(CGenerate *this,int param_1,int pa
 {
   int iVar1;
   undefined4 uVar2;
-  undefined4 local_10 [2];
+  undefined1 local_10 [8];
   undefined4 local_8;
 
   local_8 = 0;
@@ -18,7 +18,7 @@ undefined4 __thiscall CGenerate::sub_00697C50(CGenerate *this,int param_1,int pa
     uVar2 = 0;
   }
   else {
-    thunk_FUN_006a1370(this->field_0008,param_2,param_3,param_1,local_10);
+    thunk_FUN_006a1370(this->field_0008,param_2,param_3,param_1,(int)local_10);
     iVar1 = thunk_FUN_006a20e0(this->field_0008,param_2,param_3,param_1,0xff);
     uVar2 = 1;
     if (iVar1 != 0) {

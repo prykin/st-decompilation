@@ -49,19 +49,19 @@ int __fastcall FUN_005fa180(AnonShape_005FA180_2D8671A3 *param_1)
     param_1->field_02D1 = iVar3;
     thunk_FUN_00495ff0((short)param_1->field_025D,(short)param_1->field_0261,
                        (short)param_1->field_0265,0,(AnonShape_00495FF0_59081BDD *)param_1);
-    thunk_FUN_004ad430((int)puVar1);
+    thunk_FUN_004ad430((STT3DSprC *)puVar1);
     param_1->field_02BB = 0;
     sub_0041C5A0(param_1);
     return iVar6;
   }
   if (iVar6 == (int)*(short *)(DAT_00806724 + 0x23) / 2) {
-    thunk_FUN_004ad5e0((int)puVar1);
+    thunk_FUN_004ad5e0((STT3DSprC *)puVar1);
     iVar5 = (int)param_1->field_0045;
     iVar7 = (int)param_1->field_0043;
     iVar3 = (int)param_1->field_0041;
     uVar9 = 0;
     iVar8 = 0;
-    uVar4 = thunk_FUN_004ad650((int)puVar1);
+    uVar4 = thunk_FUN_004ad650((STT3DSprC *)puVar1);
     thunk_FUN_006377b0(uVar4,iVar8,iVar3,iVar7,iVar5,uVar9);
   }
   return iVar6;

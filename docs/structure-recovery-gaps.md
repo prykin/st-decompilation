@@ -85,6 +85,7 @@ zero.
 | Raw constant access relative to a parameter | 5,319 | 1,058 | `STPointerShapeAnalyzer`; automatic application requires a persistent, replaceable Ghidra parameter and sufficient consistent evidence. |
 | Raw constant access relative to a temporary | 7,191 | 928 | Aliases with a persistent origin are redirected to that origin. A genuinely transient High Variable remains report-only because Listing-variable typing cannot safely represent an SSA split. |
 | Variable index/stride in an address | 2,912 | 731 | This is an array/record problem rather than a fixed field. Known global player records use `STGlobalRecordAnalyzer`; `STGlobalAggregateAnalyzer` audits SIB-indexed ranges and installs only bounded arrays/matrices. Unknown strides still require an array-element/record proof before application. |
+| Fixed member array flattened into adjacent class fields | review current export | review current export | `STClassArrayAnalyzer` proves count/stride from an unsigned bound or an exact decrementing pointer walk, then `STClassLayoutAnalyzer/Applier` installs one native array while preserving manual layouts. |
 | Absolute indexed global record | 49 | 32 | The confirmed `0xA62` player record is handled by `STGlobalRecordAnalyzer`. Other bases/strides stay separate candidates; an address plus a multiplication alone does not prove record boundaries or count. |
 | Raw indirect/vtable call | 2,658 | 856 | `STVTable*` and `STVirtualMethod*` recover physical table ownership and slots. `STIndirectCall*` refines trusted slots and may install neutral thiscall/stdcall ABIs from non-contradictory machine evidence; `STHiddenThis*` handles ownerless ECX receivers. When at least two longer related tables prove that a base pointer dispatches beyond its physical table, a separate `<Owner>DispatchVTable` is inferred without extending the physical data object. Tail signatures still require a cross-table quorum. A raw call by itself is not enough to invent a semantic class or callback signature. |
 | Already typed `->vtable->slot` call | 822 | 225 | This is successful recovery, not residue. Ghidra intentionally prints the receiver as the first argument of an indirect `__thiscall` function pointer. |
@@ -186,4 +187,11 @@ concrete unowned globals are preserved. Known semantic types take precedence ove
 anonymous shapes. Later fixed-point passes can extend an unchanged hashed anonymous
 shape only when the current evidence covers every old generated field; observed
 minimum extents are not rounded, and a temporarily smaller observation never shrinks
-an existing generated structure.
+an existing generated structure. Decompiler-only stack values may contribute
+missing component widths and scalar types when their `_offset_width_` stores name
+the same generated structure. Once such a shape is complete and all of its
+signature uses resolve to one class-owner context, `STTypeFamilyAnalyzer` may
+replace the hash-heavy `AnonShape_*` spelling with a deterministic
+`RecoveredRecord_<Owner>_<Anchor>` name. This is a presentation/identity
+promotion of one existing shape, never permission to merge unrelated equal
+geometries or invent semantic field names.

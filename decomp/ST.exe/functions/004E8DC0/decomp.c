@@ -5,9 +5,12 @@ undefined4 __fastcall FUN_004e8dc0(AnonShape_004E8DC0_1D60A929 *param_1)
   int iVar1;
   AnonShape_004E8DC0_1D60A929 *local_8;
 
-  if ((*(int *)&param_1->field_0x4f8 == 0) && (param_1->field_05D3 != 0)) {
+  if ((*(int *)&param_1->field_0x4f8 == 0) &&
+     ((AnonShape_005EFAE0_B406B78B *)param_1->field_05D3 != (AnonShape_005EFAE0_B406B78B *)0x0)) {
     local_8 = param_1;
-    iVar1 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,param_1->field_05D3,(int *)&local_8);
+    iVar1 = STPlaySystemC::sub_006E62D0
+                      (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)param_1->field_05D3,
+                       (int *)&local_8);
     if (iVar1 == 0) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       iVar1 = (**(code **)(*(int *)local_8 + 0x2c))();

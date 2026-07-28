@@ -7,6 +7,10 @@ known_setjmp3: 0
 known_load_resource_string: 0
 full_eax_return: 0
 stack_parameter_width: 0
+stack_parameter_scalar_role: 0
+pointer_return_element_width: 0
 note=USER_DEFINED and IMPORTED target types are never selected for automatic repair.
 note_returns=Full-EAX repairs require full-width caller use and a full EAX definition on every RET path.
 note_parameters=Narrow stack parameters require consistent MOVSX/MOVZX or an immediate AND mask and no unmasked dword reads.
+note_scalar_roles=Generic pointer parameters become int/uint only when their incoming lifetime has multiple scalar operations, a signed/range comparison, and no pointer dereference before the first argument-slot overwrite.
+note_pointer_returns=Generic pointer returns gain only a byte/word/dword element width when at least two caller dereferences agree; no semantic table type is guessed.

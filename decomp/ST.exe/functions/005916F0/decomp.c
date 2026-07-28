@@ -13,7 +13,8 @@ void __thiscall CampaignTy::DoneCampaign(CampaignTy *this)
   CampaignTy *pCVar2;
   int iVar3;
   undefined4 *puVar4;
-  int iVar5;
+  uint *puVar5;
+  int iVar6;
   InternalExceptionFrame local_4c;
   CampaignTy *local_8;
 
@@ -47,7 +48,7 @@ void __thiscall CampaignTy::DoneCampaign(CampaignTy *this)
     puVar4 = &pCVar2->field_1B13;
     iVar3 = 3;
     do {
-      iVar5 = 0xf;
+      iVar6 = 0xf;
       do {
         if ((undefined4 *)*puVar4 != (undefined4 *)0x0) {
           FUN_006c4a70((undefined4 *)*puVar4);
@@ -58,21 +59,21 @@ void __thiscall CampaignTy::DoneCampaign(CampaignTy *this)
         }
         pCVar2 = local_8;
         puVar4 = puVar4 + 1;
-        iVar5 = iVar5 + -1;
-      } while (iVar5 != 0);
+        iVar6 = iVar6 + -1;
+      } while (iVar6 != 0);
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
     iVar3 = 4;
-    puVar4 = &local_8->field_1BD7;
+    puVar5 = local_8->field_1BD7;
     do {
-      if ((undefined4 *)*puVar4 != (undefined4 *)0x0) {
-        FUN_006c4a70((undefined4 *)*puVar4);
-        *puVar4 = 0;
+      if ((undefined4 *)*puVar5 != (undefined4 *)0x0) {
+        FUN_006c4a70((undefined4 *)*puVar5);
+        *puVar5 = 0;
       }
-      if (puVar4[-4] != 0) {
-        cMf32::RecMemFree(g_cMf32_00806780,puVar4 + -4);
+      if (puVar5[-4] != 0) {
+        cMf32::RecMemFree(g_cMf32_00806780,puVar5 + -4);
       }
-      puVar4 = puVar4 + 1;
+      puVar5 = puVar5 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
     if (pCVar2->field_004D != 0) {
@@ -82,9 +83,9 @@ void __thiscall CampaignTy::DoneCampaign(CampaignTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar5 = ReportDebugMessage("E:\\__titans\\Start\\camp_obj.cpp",0x9d,0,iVar3,"%s",
+  iVar6 = ReportDebugMessage("E:\\__titans\\Start\\camp_obj.cpp",0x9d,0,iVar3,"%s",
                              "CampaignTy::DoneCampaign");
-  if (iVar5 != 0) {
+  if (iVar6 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar3,0,"E:\\__titans\\Start\\camp_obj.cpp",0x9d);

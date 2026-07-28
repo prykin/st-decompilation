@@ -16,7 +16,7 @@ undefined4 FUN_004e7d70(int param_1)
       do {
         if (*(int *)(iVar4 + 5 + (int)piVar3) == 0) {
           thunk_FUN_004e76e0(param_1,*(uint **)(iVar4 + (int)piVar3),
-                             *(undefined1 *)(iVar4 + 4 + (int)piVar3));
+                             *(byte *)(iVar4 + 4 + (int)piVar3));
         }
         piVar3 = (int *)(&PTR_DAT_007c0dc8)[iVar2];
         iVar4 = iVar4 + 0x19;

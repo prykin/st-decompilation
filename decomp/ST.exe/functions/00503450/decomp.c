@@ -24,8 +24,8 @@ void __thiscall CPanelTy::SetControlBoatSI(CPanelTy *this)
   uint uVar13;
   undefined4 uVar14;
   short sVar15;
-  undefined2 uVar16;
-  undefined2 uVar17;
+  ushort uVar16;
+  ushort uVar17;
   undefined1 *puVar18;
   undefined4 uVar19;
   int iVar20;
@@ -50,7 +50,7 @@ void __thiscall CPanelTy::SetControlBoatSI(CPanelTy *this)
   int local_20;
   LPSTR local_1c;
   int local_18;
-  undefined4 *local_14;
+  uint *local_14;
   int local_10;
   uint local_c;
   int local_8;
@@ -81,7 +81,7 @@ void __thiscall CPanelTy::SetControlBoatSI(CPanelTy *this)
     StartSystemTy::sub_006E56B0(local_24->field_000C,local_24->field_02FE);
   }
   this_00->field_02FE = 0;
-  puVar11 = &this_00->field_0960;
+  puVar11 = this_00->field_0960;
   iVar8 = 4;
   do {
     if (*puVar11 != 0) {
@@ -98,8 +98,8 @@ void __thiscall CPanelTy::SetControlBoatSI(CPanelTy *this)
   CVar1 = this_00->field_0B9E;
   this_00->field_0970 = 0;
   if (((CVar1 == CASE_0) || (CVar1 == CASE_4)) || (CVar1 == CASE_3)) {
-    iVar8 = this_00->field_09C0;
-    if (iVar8 == 0) goto LAB_00503776;
+    uVar13 = this_00->field_09C0[0];
+    if (uVar13 == 0) goto LAB_00503776;
     this_00->field_0028 = 0x20;
     *(undefined4 *)&this_00->field_0x2c = 0;
   }
@@ -108,7 +108,8 @@ void __thiscall CPanelTy::SetControlBoatSI(CPanelTy *this)
     local_c = local_c & 0xffffff00;
     do {
       uVar13 = local_c & 0xff;
-      if ((&this_00->field_0BA2)[uVar13] == '\0') goto LAB_005036ae;
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+      if (*(char *)((int)this_00->field_0B1F + uVar13 + 0x83) == '\0') goto LAB_005036ae;
       switch(uVar13) {
       case 0:
         iVar8 = 0x10;
@@ -139,17 +140,19 @@ LAB_005035b5:
       }
       sub_004F17D0(this_00,1,(byte)local_c);
       if (this_00->field_0BA0 == '\0') {
-        local_14 = (undefined4 *)0x0;
+        local_14 = (uint *)0x0;
       }
       else {
-        local_14 = (undefined4 *)(uint)(byte)(&this_00->field_0BA8)[uVar13];
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+        local_14 = (uint *)(uint)*(byte *)((int)this_00->field_0B1F + uVar13 + 0x89);
       }
       pcVar21 = (char *)0x0;
       puVar18 = &this_00->field_0x780 + uVar13 * 0x27;
       uVar17 = 0;
       uVar16 = 1;
       iVar9 = 0;
-      pcVar5 = thunk_FUN_00529590((&this_00->field_0BA2)[uVar13],this_00->field_0B99);
+      pcVar5 = thunk_FUN_00529590(*(Global_sub_00529590_param_1Enum *)
+                                   ((int)this_00->field_0B1F + uVar13 + 0x83),this_00->field_0B99);
       pCVar6 = thunk_FUN_00571240(pcVar5,iVar9);
       SetButStruct(this_00,(AnonShape_004F2E40_DC76A8C6 *)((int)&local_9f8 + local_2c * 0x17c),3,
                    local_14,iVar8,local_8,6,pCVar6,uVar16,uVar17,puVar18,pcVar21);
@@ -187,8 +190,8 @@ LAB_005036ae:
     (*this_00->field_000C->vtable->CreateObject)
               ((SystemClassTy *)this_00->field_000C,9,&this_00->field_02FE,(int *)0x0,local_74,0);
     sub_004F1610(this_00,'\x01');
-    iVar8 = this_00->field_09C0;
-    if (iVar8 == 0) goto LAB_00503776;
+    uVar13 = this_00->field_09C0[0];
+    if (uVar13 == 0) goto LAB_00503776;
     this_00->field_0028 = 0x20;
     if (this_00->field_0BA0 == '\0') {
       *(undefined4 *)&this_00->field_0x2c = 0;
@@ -197,7 +200,7 @@ LAB_005036ae:
       *(uint *)&this_00->field_0x2c = (uint)(byte)this_00->field_0BAE;
     }
   }
-  FUN_006e6080(this_00,2,iVar8,(undefined4 *)&this_00->field_0x18);
+  FUN_006e6080(this_00,2,uVar13,(undefined4 *)&this_00->field_0x18);
 LAB_00503776:
   if (((this_00->field_0B9E == CASE_1) || (this_00->field_0B9E == CASE_3)) &&
      ((CVar2 = this_00->field_0B99, CVar2 != CASE_9 &&
@@ -234,7 +237,7 @@ LAB_00503776:
   }
   if (((this_00->field_0B9E == CASE_1) && (this_00->field_0B99 != CASE_BD)) ||
      (this_00->field_0B9E == CASE_2)) {
-    local_14 = &this_00->field_0960;
+    local_14 = this_00->field_0960;
     local_c = local_c & 0xffffff00;
     local_8 = 0;
     iVar8 = local_20;
@@ -284,9 +287,9 @@ switchD_0050389f_default:
       else {
         uVar13 = (uint)(byte)(&this_00->field_0BCF)[local_8];
       }
-      uVar7 = CreateBut(this_00,3,0,uVar13,iVar9,iVar8,6,local_1c,local_8 + 0xb220,local_8 + 0xb230,
-                        2,0,0x4e36 - (uint)((byte)local_c != '\0'),pCVar6,0,0,0);
-      *local_14 = uVar7;
+      uVar13 = CreateBut(this_00,3,0,uVar13,iVar9,iVar8,6,local_1c,local_8 + 0xb220,local_8 + 0xb230
+                         ,2,0,0x4e36 - (uint)((byte)local_c != '\0'),pCVar6,0,0,0);
+      *local_14 = uVar13;
       bVar4 = (byte)local_c + 1;
       local_8 = local_8 + 1;
       local_14 = local_14 + 1;

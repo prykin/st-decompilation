@@ -103,7 +103,7 @@ int __thiscall CampaignTy::GetMessage(CampaignTy *this,STMessage *message)
     thunk_FUN_005b66e0((MTaskTy *)this_00);
     break;
   case MESS_WAITTY_6943:
-    thunk_FUN_005b6350(this_00,0x6942,message->arg0,0);
+    thunk_FUN_005b6350(this_00,0x6942,(message->arg0).u32,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(this_00->field_0000 + 8))();
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */

@@ -20,7 +20,7 @@ undefined4 * __thiscall VisibleClassTy::PrepareToSave(VisibleClassTy *this,uint 
   InternalExceptionFrame local_68;
   VisibleClassTy *local_24;
   undefined4 *local_20;
-  undefined4 *local_1c;
+  void **local_1c;
   uint local_18;
   undefined4 *local_14;
   uint local_10;
@@ -85,16 +85,16 @@ LAB_0055832e:
   local_8[0xd] = (uint)DAT_0080874d;
   local_8[0xe] = local_10;
   local_8[0xf] = local_18;
-  local_8[0x12] = pVVar2->field_00FC;
-  local_8[0x13] = pVVar2->field_0100;
+  local_8[0x12] = *(undefined4 *)pVVar2->field_00FC;
+  local_8[0x13] = *(undefined4 *)(pVVar2->field_00FC + 4);
   if (pVVar2->field_0114 != 0) {
-    local_1c = &pVVar2->field_003C;
+    local_1c = pVVar2->field_003C;
     puVar4 = local_8 + 0x20;
     local_20 = (undefined4 *)0x4;
     do {
-      if ((undefined4 *)*local_1c != (undefined4 *)0x0) {
+      if (*local_1c != (undefined4 *)0x0) {
         uVar6 = pVVar2->field_0028 * pVVar2->field_002C;
-        puVar8 = (undefined4 *)*local_1c;
+        puVar8 = *local_1c;
         puVar9 = puVar4;
         for (uVar7 = uVar6 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
           *puVar9 = *puVar8;

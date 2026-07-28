@@ -9,7 +9,11 @@
    Evidence: 005BE5B0 -> 005BFF00 @ 005BE975 | 005BE5B0 -> 005BFF00 @ 005BE9AA | 005BE5B0 ->
    005BFF00 @ 005BE9E0 | 005BE5B0 -> 005BFF00 @ 005BEA15 | 005BE5B0 -> 005BFF00 @ 005BEA4B |
    005BE5B0 -> 005BFF00 @ 005BEA83 | 005BE5B0 -> 005BFF00 @ 005BEABC | 005BE5B0 -> 005BFF00 @
-   005BEAF4 */
+   005BEAF4
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=8, used=0), and
+   decompilation contains no value return */
 
 void __thiscall
 MReportTy::PaintObjScore(MReportTy *this,int param_1,uint param_2,int param_3,int param_4)

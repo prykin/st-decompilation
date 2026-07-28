@@ -41,7 +41,7 @@ undefined4 __thiscall STColl3C::LoadImagSpr(STColl3C *this,int param_1)
       STT3DSprC::sub_004ACF20((STT3DSprC *)this_00,DAT_008032b8,0x10);
       STT3DSprC::StartShow((STT3DSprC *)this_00,8,g_playSystem_00802A38->field_00E4);
       STT3DSprC::sub_004ACFE0((STT3DSprC *)this_00,'\n');
-      iVar2 = thunk_FUN_004ad650((int)this_00);
+      iVar2 = thunk_FUN_004ad650((STT3DSprC *)this_00);
       this_01->field_02B7 = iVar2;
       g_currentExceptionFrame = local_50.previous;
       return local_c;
@@ -60,9 +60,9 @@ undefined4 __thiscall STColl3C::LoadImagSpr(STColl3C *this,int param_1)
       thunk_FUN_004ac610(this_00,'\f');
       STT3DSprC::StartShow((STT3DSprC *)this_00,0xc,g_playSystem_00802A38->field_00E4);
       thunk_FUN_005fa0b0(this_01);
-      iVar2 = thunk_FUN_004ad650((int)this_00);
+      iVar2 = thunk_FUN_004ad650((STT3DSprC *)this_00);
       this_01->field_02B7 = iVar2;
-      thunk_FUN_004ad430((int)this_00);
+      thunk_FUN_004ad430((STT3DSprC *)this_00);
       if (this_01->field_02BB != '\0') {
         sub_0041C5A0(this_01);
       }

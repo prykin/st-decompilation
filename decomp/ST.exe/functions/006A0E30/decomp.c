@@ -2,7 +2,11 @@
 /* [STMethodOwnerApplier] Structural method owner recovered as CGenerate.
    Evidence: this_call_owners=[CGenerate]; agreed_this_calls=4; incoming_this_accesses=1;
    incoming_edx_uses=0; incoming_stack_parameter_uses=5; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=2; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=2; owner_evidence_coverage=adequate
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=4, used=0), and
+   decompilation contains no value return */
 
 void __thiscall
 CGenerate::sub_006A0E30(CGenerate *this,uint param_1,int param_2,int param_3,int param_4)

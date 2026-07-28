@@ -14,8 +14,8 @@ void __thiscall HelpPanelTy::TTreeProc(HelpPanelTy *this,uint param_1,char param
   HelpPanelTy *this_00;
   undefined1 uVar4;
   int iVar5;
-  uint *puVar6;
-  uint uVar7;
+  uint uVar6;
+  uint *puVar7;
   undefined4 *puVar8;
   byte *pbVar9;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -25,7 +25,6 @@ void __thiscall HelpPanelTy::TTreeProc(HelpPanelTy *this,uint param_1,char param
   UINT resourceId;
   AnonShape_GLOBAL_0081175C_57F682DD *pAVar12;
   int iVar13;
-  int iVar14;
   InternalExceptionFrame local_58;
   HelpPanelTy *local_14;
   undefined4 *local_10;
@@ -101,33 +100,33 @@ void __thiscall HelpPanelTy::TTreeProc(HelpPanelTy *this,uint param_1,char param
   }
   ccFntTy::SetSurf(this_00->field_01E4,(int)this_00->field_0068,0,0x21,0x16,0x19c,0x14);
   if (DAT_0080874e == 3) {
-    iVar5 = 5;
+    uVar6 = 5;
   }
   else {
-    iVar5 = (-(uint)(DAT_0080874e != 1) & 6) + 1;
+    uVar6 = (-(uint)(DAT_0080874e != 1) & 6) + 1;
   }
-  iVar14 = -1;
-  iVar13 = -1;
-  puVar6 = (uint *)LoadResourceString(0x55f4,g_module_00807618);
-  ccFntTy::WrStr(this_00->field_01E4,puVar6,iVar13,iVar14,iVar5);
-  ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0068,0,0x21,0x2a,0x19c,0xf);
-  uVar7 = (DAT_0080874e != 3) - 1 & 5;
   iVar13 = -1;
   iVar5 = -1;
-  puVar6 = (uint *)LoadResourceString(resourceId,g_module_00807618);
-  ccFntTy::WrStr(this_00->field_01E0,puVar6,iVar5,iVar13,uVar7);
+  puVar7 = (uint *)LoadResourceString(0x55f4,g_module_00807618);
+  ccFntTy::WrStr(this_00->field_01E4,puVar7,iVar5,iVar13,uVar6);
+  ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0068,0,0x21,0x2a,0x19c,0xf);
+  uVar6 = (DAT_0080874e != 3) - 1 & 5;
+  iVar13 = -1;
+  iVar5 = -1;
+  puVar7 = (uint *)LoadResourceString(resourceId,g_module_00807618);
+  ccFntTy::WrStr(this_00->field_01E0,puVar7,iVar5,iVar13,uVar6);
   pAVar2 = this_00->field_0218;
-  uVar7 = pAVar2->field_0014;
-  if (uVar7 == 0) {
-    uVar7 = ((uint)(ushort)pAVar2->field_000E * pAVar2->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
+  uVar6 = pAVar2->field_0014;
+  if (uVar6 == 0) {
+    uVar6 = ((uint)(ushort)pAVar2->field_000E * pAVar2->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
             pAVar2->field_0008;
   }
-  puVar8 = (undefined4 *)FUN_006b4fa0((int)pAVar2);
-  for (uVar11 = uVar7 >> 2; uVar11 != 0; uVar11 = uVar11 - 1) {
+  puVar8 = (undefined4 *)FUN_006b4fa0((int *)pAVar2);
+  for (uVar11 = uVar6 >> 2; uVar11 != 0; uVar11 = uVar11 - 1) {
     *puVar8 = 0xffffffff;
     puVar8 = puVar8 + 1;
   }
-  for (uVar7 = uVar7 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
+  for (uVar6 = uVar6 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
     *(undefined1 *)puVar8 = 0xff;
     puVar8 = (undefined4 *)((int)puVar8 + 1);
   }
@@ -152,8 +151,8 @@ LAB_00516776:
         if (iVar5 < (int)(uint)*pbVar9) goto LAB_00516776;
         pAVar12 = (AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_0228;
       }
-      uVar7 = thunk_FUN_005276e0(pbVar9[-4],*pbVar9);
-      pbVar10 = (byte *)FUN_0070b3a0(pAVar12,uVar7);
+      uVar6 = thunk_FUN_005276e0(pbVar9[-4],*pbVar9);
+      pbVar10 = (byte *)FUN_0070b3a0(pAVar12,uVar6);
       DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0218,*(int *)(pbVar9 + 1),
              *(int *)(pbVar9 + 5),'\x01',pbVar10);
       iVar5 = thunk_FUN_004e5910((uint)DAT_0080874d,*(uint *)(pbVar9 + -4));

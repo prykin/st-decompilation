@@ -1,12 +1,15 @@
 #include "../../pseudocode_runtime.h"
 
 
-void FUN_00580ff0(undefined2 param_1,undefined2 param_2)
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 005804F0 -> 00580FF0 @ 0058053D; FUN_005804f0 parameter param_2 */
+
+void FUN_00580ff0(ushort param_1,undefined2 param_2)
 
 {
   undefined4 local_24 [4];
   undefined4 local_14;
-  undefined2 local_c;
+  ushort local_c;
   undefined2 local_a;
 
   if (DAT_008117bc != (undefined4 *)0x0) {

@@ -3,7 +3,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
-   STAllPlayersC::ResetActivityFromObjs */
+   STAllPlayersC::ResetActivityFromObjs
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=7, used=0), and
+   decompilation contains no value return */
 
 void __thiscall
 STAllPlayersC::ResetActivityFromObjs
@@ -18,10 +22,13 @@ STAllPlayersC::ResetActivityFromObjs
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   int unaff_EDI;
   char objPtr;
-  STAllPlayersC_GetObjPtr_param_3Enum SVar5;
+  ushort uVar5;
+  STAllPlayersC_GetObjPtr_param_3Enum SVar6;
 
   objPtr = (char)param_1;
+  uVar5 = (ushort)param_4;
   if (param_2 < 0x19b) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_2 == 0x19a) {
 LAB_0042d1f8:
       index = 0;
@@ -31,9 +38,9 @@ LAB_0042d1f8:
       }
       do {
         DArrayGetElement(param_3,index,&param_4);
-        if ((((short)param_4 != -1) &&
-            (pSVar3 = GetObjPtr(this,objPtr,param_4,CASE_1), pSVar3 != (STGameObjC *)0x0)) &&
-           ((*pSVar3->vtable->vfunc_E8)(pSVar3,0), param_5 != 0)) {
+        if ((((ushort)param_4 != 0xffff) &&
+            (pSVar3 = GetObjPtr(this,objPtr,(ushort)param_4,CASE_1), pSVar3 != (STGameObjC *)0x0))
+           && (pSVar3->vfunc_E8(0), param_5 != 0)) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           STGameObjC::ResetSelfCheckFlag(pSVar3,unaff_EDI);
         }
@@ -42,23 +49,27 @@ LAB_0042d1f8:
       return;
     }
     if (param_2 < 0x5b) {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       if (param_2 == 0x5a) {
-        SVar5 = CASE_4;
+        SVar6 = CASE_4;
 LAB_0042d1c3:
-        pSVar3 = GetObjPtr(this,objPtr,param_4,SVar5);
+        pSVar3 = GetObjPtr(this,objPtr,uVar5,SVar6);
         if (pSVar3 == (STGameObjC *)0x0) {
           return;
         }
-        (*pSVar3->vtable->vfunc_E8)(pSVar3,0);
+        pSVar3->vfunc_E8(0);
         goto LAB_0042d2c3;
       }
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       if (param_2 == 0) {
         return;
       }
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       if (param_2 == 0x3c) goto LAB_0042d1f8;
     }
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     else if (param_2 == 0x172) {
-      SVar5 = CASE_2;
+      SVar6 = CASE_2;
       goto LAB_0042d1c3;
     }
 LAB_0042d270:
@@ -69,12 +80,13 @@ LAB_0042d270:
     }
   }
   else {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_2 == 0x1a4) {
-      pSVar3 = GetObjPtr(this,objPtr,param_4,CASE_5);
+      pSVar3 = GetObjPtr(this,objPtr,uVar5,CASE_5);
       if (pSVar3 == (STGameObjC *)0x0) {
         return;
       }
-      (*pSVar3->vtable->vfunc_E8)(pSVar3,0);
+      pSVar3->vfunc_E8(0);
       if (param_5 == 0) {
         return;
       }
@@ -82,18 +94,19 @@ LAB_0042d270:
       STGameObjC::ResetSelfCheckFlag(pSVar3,unaff_EDI);
       return;
     }
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_2 == 0x1ae) {
-      SVar5 = CASE_3;
+      SVar6 = CASE_3;
     }
     else {
       if (param_2 != 0x1b8) goto LAB_0042d270;
-      SVar5 = CASE_6;
+      SVar6 = CASE_6;
     }
-    pSVar3 = GetObjPtr(this,objPtr,param_4,SVar5);
+    pSVar3 = GetObjPtr(this,objPtr,uVar5,SVar6);
     if (pSVar3 == (STGameObjC *)0x0) {
       return;
     }
-    (*pSVar3->vtable->vfunc_E8)(pSVar3,0);
+    pSVar3->vfunc_E8(0);
 LAB_0042d2c3:
     if (param_5 != 0) {
       /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */

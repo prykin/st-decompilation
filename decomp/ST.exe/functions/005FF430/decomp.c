@@ -2,14 +2,16 @@
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_005FF430_param_1Enum. Cases:
    CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_D=13;CASE_E=14;CASE_F=15;CASE_10=16
-    */
+
+   [STPrototypeApplier] Propagated parameter 4.
+   Evidence: 005FF430 -> 00416270 @ 005FF4AC */
 
 undefined4 __thiscall
 FUN_005ff430(void *this,Global_sub_005FF430_param_1Enum param_1,int param_2,undefined4 param_3,
-            undefined4 param_4,undefined4 param_5,short *param_6,short *param_7,undefined2 *param_8)
+            short *param_4,undefined4 param_5,short *param_6,short *param_7,undefined2 *param_8)
 
 {
-  undefined2 *puVar1;
+  ushort *puVar1;
   short sVar2;
   STAllPlayersC_GetObjPtr_param_3Enum SVar3;
   STGameObjC *this_00;
@@ -20,20 +22,17 @@ FUN_005ff430(void *this,Global_sub_005FF430_param_1Enum param_1,int param_2,unde
 
   uVar7 = 0;
   if (param_2 != 30000) {
-    puVar1 = (undefined2 *)
+    puVar1 = (ushort *)
              (*(int *)((int)this + 0x23b) +
              *(int *)(*(int *)((int)this + 0x23f) + param_2 * 4) * 0x18);
     SVar3 = thunk_FUN_00601db0(*(Global_sub_00601DB0_param_1Enum *)
                                 (*(int *)((int)this + 0x23b) + 4 +
                                 *(int *)(*(int *)((int)this + 0x23f) + param_2 * 4) * 0x18));
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    this_00 = STAllPlayersC::GetObjPtr
-                        (g_allPlayers_007FA174,*(char *)(puVar1 + 4),
-                         CONCAT22((short)(SVar3 >> 0x10),*puVar1),SVar3);
+    this_00 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,(char)puVar1[4],*puVar1,SVar3);
     if (this_00 == (STGameObjC *)0x0) {
       return 0;
     }
-    thunk_FUN_00416270(this_00,(undefined2 *)&param_3,&param_4,(int *)((int)&param_5 + 2));
+    thunk_FUN_00416270(this_00,(undefined2 *)&param_3,(int *)&param_4,(int *)((int)&param_5 + 2));
     iVar4 = (*this_00->vtable->vfunc_78)();
     if (iVar4 < 1) {
       return 0;

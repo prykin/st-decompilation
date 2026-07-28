@@ -95,7 +95,7 @@ LAB_00678692:
         }
       }
       if ((iVar3 != 0) &&
-         ((local_5 == -1 || (iVar6 = (*this->vtable->vfunc_6C)(), local_5 == iVar6)))) {
+         ((local_5 == -1 || (iVar6 = this->vfunc_6C(), local_5 == iVar6)))) {
         if ((0 < param_6) &&
            (((0 < param_7 && (0 < param_8)) &&
             ((STFishC::sub_004162B0(this,&local_8,&local_a,&local_c), local_8 < param_3 ||

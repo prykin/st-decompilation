@@ -65,7 +65,7 @@ undefined4 __thiscall STFieldC::LoadImagSpr(STFieldC *this,uint param_1)
     FUN_006e8660(PTR_00807598,(int *)&local_8,1,0,*(uint *)((int)puVar5 + 9),
                  *(uint *)((int)puVar5 + 0xd),*(int *)(&DAT_007cf6f0 + *puVar4 * 8) / 2,
                  *(int *)(&DAT_007cf6f4 + *puVar4 * 8) / 2 - 0xe,0);
-    FUN_006e98e0(PTR_00807598,local_8,0,*(undefined4 *)puVar5,*(int *)((int)puVar5 + 0x21),1);
+    FUN_006e98e0(PTR_00807598,local_8,0,*(int *)puVar5,*(int *)((int)puVar5 + 0x21),1);
     FUN_006ea270(PTR_00807598,local_8,0,0);
     FUN_006ea5e0(PTR_00807598,local_8,0,0);
     FUN_006ea960(PTR_00807598,local_8,(float)(int)puVar4[3] * _DAT_007904f8 * _DAT_007904f0,

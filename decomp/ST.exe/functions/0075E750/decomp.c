@@ -15,6 +15,7 @@ void FUN_0075e750(AnonShape_0075E750_D250320C *param_1,undefined4 *param_2,undef
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar3 = *(int *)(param_1->field_01BA + 0x18);
   if (0 < param_4) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = (AnonShape_0075E750_D250320C *)param_4;
     do {
       pbVar5 = (byte *)*param_2;
@@ -30,6 +31,7 @@ void FUN_0075e750(AnonShape_0075E750_D250320C *param_1,undefined4 *param_2,undef
         pbVar5 = pbVar5 + 3;
       }
       param_2 = param_2 + 1;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (AnonShape_0075E750_D250320C *)&param_1[-1].field_0x1bf;
     } while (param_1 != (AnonShape_0075E750_D250320C *)0x0);
   }

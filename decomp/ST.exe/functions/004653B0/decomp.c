@@ -24,9 +24,11 @@ int __thiscall STBoatC::BackAttack(STBoatC *this,int *param_1,int param_2,int pa
 
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   uVar7 = (undefined2)((uint)in_EDX >> 0x10);
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+  iVar3 = *(int *)((int)this->field_06CB + 0x2c);
   uVar6 = (undefined2)((uint)this >> 0x10);
   local_8 = this;
-  if (this->field_06F7 == CASE_9) {
+  if (iVar3 == 9) {
     if (this->field_082E != 3) {
 LAB_00465581:
       this->field_00B7 = 0;
@@ -40,7 +42,7 @@ LAB_00465581:
          ((this->field_0043 == this->field_0036 &&
           (pSVar5 = (STBoatC *)CONCAT22(uVar6,this->field_0045),
           this->field_0045 == this->field_0038)))) {
-        iVar3 = (*this->vtable->vfunc_D8)(this);
+        iVar3 = this->vfunc_D8();
         return -(uint)(iVar3 != 0);
       }
       this->field_0832 = 0;
@@ -60,7 +62,7 @@ LAB_00465581:
           this->field_007A = 0;
           this->field_0832 = 1;
         }
-        iVar3 = (*this->vtable->vfunc_D8)(this);
+        iVar3 = this->vfunc_D8();
         return (-(uint)(iVar3 != 0) & 0xfffffffd) + 2;
       }
       iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x1b8c,0,0,"%s",
@@ -86,7 +88,7 @@ LAB_00465581:
     }
   }
   else {
-    if (this->field_06F7 != CASE_15) {
+    if (iVar3 != 0x15) {
       iVar3 = sub_00460360(this);
       if (iVar3 != 0) {
         return iVar3;
@@ -125,7 +127,7 @@ LAB_00465581:
           this->field_007A = 0;
           this->field_0832 = 1;
         }
-        iVar3 = (*this->vtable->vfunc_D8)(this);
+        iVar3 = this->vfunc_D8();
         return (-(uint)(iVar3 != 0) & 0xfffffffd) + 2;
       }
       iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x1bc5,0,0,"%s",
@@ -154,11 +156,11 @@ cf_error_exit_00465763:
     }
   }
   if (iVar3 != 0) {
-    iVar3 = (*this->vtable->vfunc_D8)(this);
+    iVar3 = this->vfunc_D8();
     return (-(uint)(iVar3 != 0) & 0xfffffffd) + 2;
   }
 LAB_004655df:
-  iVar3 = (*this->vtable->vfunc_D8)(this);
+  iVar3 = this->vfunc_D8();
   return -(uint)(iVar3 != 0);
 }
 

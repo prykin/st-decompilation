@@ -6,7 +6,11 @@
    MReportTy::PaintBut
 
    [STPrototypeApplier] Propagated parameter 1.
-   Evidence: 005C1A90 -> 005C0B00 @ 005C1F2B */
+   Evidence: 005C1A90 -> 005C0B00 @ 005C1F2B
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=5, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall
 MReportTy::PaintBut(MReportTy *this,STMessage *param_1,UINT param_2,int param_3,char param_4,
@@ -18,12 +22,12 @@ MReportTy::PaintBut(MReportTy *this,STMessage *param_1,UINT param_2,int param_3,
   STMessageArg SVar3;
   byte *pbVar4;
   AnonPointee_MReportTy_0077 *pAVar5;
-  int iVar6;
-  undefined4 *puVar7;
-  int iVar8;
-  char cVar9;
+  int errorCode;
+  undefined4 *puVar6;
+  int iVar7;
+  char cVar8;
+  uint uVar9;
   uint uVar10;
-  uint uVar11;
   InternalExceptionFrame local_64;
   STMessageArg local_20;
   byte *local_1c;
@@ -35,14 +39,14 @@ MReportTy::PaintBut(MReportTy *this,STMessage *param_1,UINT param_2,int param_3,
   undefined4 *local_8;
 
   if ((param_1->arg0).words.low == 3) {
-    cVar9 = (-(param_4 != '\0') & 0xedU) + 0x2a;
+    cVar8 = (-(param_4 != '\0') & 0xedU) + 0x2a;
   }
   else {
-    cVar9 = (-(param_4 != '\0') & 0xecU) + 0x2c;
+    cVar8 = (-(param_4 != '\0') & 0xecU) + 0x2c;
   }
   local_20 = param_1->arg1;
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  _local_10 = CONCAT31(uStack_f,cVar9);
+  _local_10 = CONCAT31(uStack_f,cVar8);
   if (param_4 == '\0') {
     local_14 = this->field_0077;
   }
@@ -54,23 +58,23 @@ MReportTy::PaintBut(MReportTy *this,STMessage *param_1,UINT param_2,int param_3,
   local_64.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_64;
   local_c = this;
-  iVar6 = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0);
+  errorCode = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0);
   pAVar5 = local_14;
-  if (iVar6 == 0) {
-    uVar11 = local_14->field_0014;
-    if (uVar11 == 0) {
-      uVar11 = ((uint)(ushort)local_14->field_000E * local_14->field_0004 + 0x1f >> 3 & 0x1ffffffc)
+  if (errorCode == 0) {
+    uVar10 = local_14->field_0014;
+    if (uVar10 == 0) {
+      uVar10 = ((uint)(ushort)local_14->field_000E * local_14->field_0004 + 0x1f >> 3 & 0x1ffffffc)
                * local_14->field_0008;
     }
-    puVar7 = (undefined4 *)FUN_006b4fa0((int)local_14);
+    puVar6 = (undefined4 *)FUN_006b4fa0((int *)local_14);
     pbVar4 = local_1c;
-    for (uVar10 = uVar11 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
-      *puVar7 = 0xffffffff;
-      puVar7 = puVar7 + 1;
+    for (uVar9 = uVar10 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
+      *puVar6 = 0xffffffff;
+      puVar6 = puVar6 + 1;
     }
-    for (uVar11 = uVar11 & 3; uVar11 != 0; uVar11 = uVar11 - 1) {
-      *(undefined1 *)puVar7 = 0xff;
-      puVar7 = (undefined4 *)((int)puVar7 + 1);
+    for (uVar10 = uVar10 & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
+      *(undefined1 *)puVar6 = 0xff;
+      puVar6 = (undefined4 *)((int)puVar6 + 1);
     }
     FUN_006c7610((AnonShape_006B5B10_E0D06CF1 *)pAVar5,0,0,0,(uint)local_8,(uint)local_1c,param_3,
                  0x4c);
@@ -86,15 +90,15 @@ MReportTy::PaintBut(MReportTy *this,STMessage *param_1,UINT param_2,int param_3,
       ccFntTy::SetSurf(local_c->field_0083,(int)pAVar5,0,0,0,0,0);
       wVar1 = (param_1->arg0).words.low;
       if ((wVar1 == 1) || (wVar1 == 2)) {
-        iVar6 = (-(uint)(param_4 != '\0') & 0xfffffffe) + 2;
+        uVar10 = (-(uint)(param_4 != '\0') & 0xfffffffe) + 2;
       }
       else if (wVar1 == 3) {
-        iVar6 = (-(uint)(param_4 != '\0') & 0xfffffffe) + 3;
+        uVar10 = (-(uint)(param_4 != '\0') & 0xfffffffe) + 3;
       }
       else {
-        iVar6 = 4;
+        uVar10 = 4;
       }
-      ccFntTy::WrStr(local_c->field_0083,local_18,-1,-1,iVar6);
+      ccFntTy::WrStr(local_c->field_0083,local_18,-1,-1,uVar10);
     }
     SVar3 = local_20;
                     /* WARNING: Load size is inaccurate */
@@ -106,18 +110,18 @@ MReportTy::PaintBut(MReportTy *this,STMessage *param_1,UINT param_2,int param_3,
                     /* WARNING: Load size is inaccurate */
     Library::DKW::DDX::FUN_006b48e0
               ((int)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,*SVar3.i32,*(int *)(SVar3.u32 + 4)
-               ,(int)pAVar5,0,0,0,(uint)local_8,(int)pbVar4,(int)&local_c->field_0xa3,0x4c,0x10000ff
-              );
+               ,(AnonPointee_MReportTy_0073 *)pAVar5,0,0,0,(uint)local_8,(int)pbVar4,
+               (int)&local_c->field_0xa3,0x4c,0x10000ff);
     g_currentExceptionFrame = local_64.previous;
     return;
   }
   g_currentExceptionFrame = local_64.previous;
-  iVar8 = ReportDebugMessage("E:\\__titans\\Start\\rpt_obj.cpp",0x2c1,0,iVar6,"%s",
-                             "MReportTy::PaintBut");
-  if (iVar8 != 0) {
+  iVar7 = ReportDebugMessage("E:\\__titans\\Start\\rpt_obj.cpp",0x2c1,0,errorCode,
+                             "%s","MReportTy::PaintBut");
+  if (iVar7 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar6,0,"E:\\__titans\\Start\\rpt_obj.cpp",0x2c1);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\Start\\rpt_obj.cpp",0x2c1);
   return;
 }
 

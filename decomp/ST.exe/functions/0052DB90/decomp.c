@@ -39,12 +39,12 @@ void __thiscall PopUpTy::Clear(PopUpTy *this)
         uVar9 = ((uint)puVar1[7] * *(int *)(puVar1 + 2) + 0x1f >> 3 & 0x1ffffffc) *
                 *(int *)(puVar1 + 4);
       }
-      puVar6 = (undefined4 *)FUN_006b4fa0((int)puVar1);
+      puVar6 = (undefined4 *)FUN_006b4fa0((int *)puVar1);
       for (uVar8 = uVar9 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
         *puVar6 = 0x89898989;
         puVar6 = puVar6 + 1;
       }
-      puVar10 = &pPVar3->field_0018;
+      puVar10 = pPVar3->field_0018;
       for (uVar9 = uVar9 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {
         *(undefined1 *)puVar6 = 0x89;
         puVar6 = (undefined4 *)((int)puVar6 + 1);

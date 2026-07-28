@@ -1,5 +1,8 @@
 
-void FUN_00440820(undefined4 param_1,undefined4 param_2)
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 0042F2B0 -> 00440820 @ 0042FF76; STAllPlayersC::UnRegisterObject parameter param_1 */
+
+void FUN_00440820(int param_1,undefined4 param_2)
 
 {
   int iVar1;

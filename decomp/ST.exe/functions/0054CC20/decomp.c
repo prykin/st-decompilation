@@ -30,7 +30,7 @@ STPlaySystemC::CreateGameObject
       RaiseInternalException
                 (-4,g_overwriteContext_007ED77C,"E:\\__titans\\Andrey\\tplaysys.cpp",0xef);
     }
-    iVar2 = (*this_00->vtable->vfunc_08)(this_00,local_8,param_2,param_3,param_4,param_5);
+    iVar2 = this_00->vfunc_08(local_8,param_2,param_3,param_4,param_5);
     if (iVar2 != 0) {
       RaiseInternalException
                 (iVar2,g_overwriteContext_007ED77C,"E:\\__titans\\Andrey\\tplaysys.cpp",0xf0);

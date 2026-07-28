@@ -3,11 +3,15 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cp_sup.cpp
-   CPanelTy::OutProc */
+   CPanelTy::OutProc
+
+   [STPrototypeApplier] Propagated parameter 8.
+   Evidence: 004F1530 -> 006B48E0 @ 004F1587 */
 
 void __thiscall
 CPanelTy::OutProc(CPanelTy *this,int param_1,undefined4 param_2,undefined4 param_3,int param_4,
-                 int param_5,undefined4 param_6,undefined4 param_7,int param_8)
+                 int param_5,undefined4 param_6,undefined4 param_7,
+                 AnonPointee_MReportTy_0073 *param_8)
 
 {
   code *pcVar1;
@@ -20,7 +24,7 @@ CPanelTy::OutProc(CPanelTy *this,int param_1,undefined4 param_2,undefined4 param
   errorCode = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0);
   if (errorCode == 0) {
     Library::DKW::DDX::FUN_006b48e0
-              (param_1,param_4,param_5,param_8,0,0,0,*(uint *)(param_8 + 4),*(int *)(param_8 + 8),
+              (param_1,param_4,param_5,param_8,0,0,0,param_8->field_0004,param_8->field_0008,
                DAT_008032b4,0,0x10000ff);
     g_currentExceptionFrame = local_48.previous;
     return;

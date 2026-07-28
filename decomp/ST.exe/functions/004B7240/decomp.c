@@ -1,5 +1,5 @@
 
-int FUN_004b7240(undefined4 param_1,int param_2)
+int FUN_004b7240(uint param_1,int param_2)
 
 {
   undefined4 *puVar1;

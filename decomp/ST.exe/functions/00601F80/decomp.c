@@ -124,7 +124,7 @@ int __thiscall STDestC::GetMessage(STDestC *this,STMessage *message)
       }
       else if (SVar1 == MESS_STOCTOPUSC_0112) {
         if (-1 < (int)local_8->field_039B) {
-          thunk_FUN_004ad5e0((int)&local_8->field_0x1d5);
+          thunk_FUN_004ad5e0((STT3DSprC *)&local_8->field_0x1d5);
         }
       }
       else if (SVar1 == MESS_STSPRGAMEOBJC_0113) {
@@ -136,7 +136,7 @@ int __thiscall STDestC::GetMessage(STDestC *this,STMessage *message)
         }
       }
       else if (SVar1 == MESS_HITKILL) {
-        thunk_FUN_004ad430((int)&local_8->field_0x1d5);
+        thunk_FUN_004ad430((STT3DSprC *)&local_8->field_0x1d5);
         sub_00602440((STDestC *)this_00);
         g_currentExceptionFrame = local_54.previous;
         return 0;

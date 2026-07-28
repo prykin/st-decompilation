@@ -30,7 +30,7 @@ int FUN_006b08f0(AnonShape_GLOBAL_0080759C_9638EF10 *param_1,int param_2,UINT pa
       if ((*(uint *)&param_1->field_0x8 & 0x4000000) != 0) {
         EnterCriticalSection((LPCRITICAL_SECTION)&param_1[1].field_0x38);
       }
-      bVar2 = FUN_006b06a0((undefined4 *)param_1,local_40c,param_2 + iVar3 * 4,param_3,param_4);
+      bVar2 = FUN_006b06a0(param_1,local_40c,param_2 + iVar3 * 4,param_3,param_4);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       if (CONCAT31(extraout_var,bVar2) == 0) {
         iVar3 = -0xfd;

@@ -27,8 +27,7 @@ undefined4 __thiscall STGroupBoatC::GrpAttack(STGroupBoatC *this,int param_1)
   InternalExceptionFrame local_70;
   byte local_2c;
   char cStack_2b;
-  undefined2 uStack_2a;
-  undefined2 uStack_28;
+  ushort uStack_2a;
   undefined4 local_24;
   byte local_20;
   undefined3 uStack_1f;
@@ -59,14 +58,17 @@ undefined4 __thiscall STGroupBoatC::GrpAttack(STGroupBoatC *this,int param_1)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_1 == 1) {
     DArrayDestroy(local_8->field_020E);
     pSVar13->field_020E = (DArrayTy *)0x0;
     pSVar13->field_0212 = 0;
     FreeAndNull(&pSVar13->field_021E);
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = 0;
   }
   pSVar16 = local_8;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_1 == 0) {
     memset(&pSVar13->field_0089, 0, 0x54); /* compiler bulk-zero initialization */
     iVar6 = 0;
@@ -91,16 +93,15 @@ undefined4 __thiscall STGroupBoatC::GrpAttack(STGroupBoatC *this,int param_1)
         uVar15 = 0;
         do {
           DArrayGetElement(pSVar13->field_00EF,uVar15,&local_2c);
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           if ((local_2c < 8) &&
              ((((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
                 ((byte)(&DAT_008087e9)[(char)local_2c * 0x51] < 8)) &&
                (pSVar8 = STAllPlayersC::GetObjPtr
-                                   (g_allPlayers_007FA174,local_2c,CONCAT22(uStack_28,uStack_2a),
-                                    (int)cStack_2b), pSVar13 = local_8, pSVar8 != (STGameObjC *)0x0)
-               ) && ((iVar6 = (*pSVar8->vtable->vfunc_F8)(pSVar8), pSVar13 = local_8, iVar6 == 1 &&
-                     (iVar6 = (*pSVar8->vtable->vfunc_F4)((int)local_8->field_0024),
-                     pSVar13 = local_8, iVar6 == 1)))))) {
+                                   (g_allPlayers_007FA174,local_2c,uStack_2a,(int)cStack_2b),
+               pSVar13 = local_8, pSVar8 != (STGameObjC *)0x0)) &&
+              ((iVar6 = pSVar8->vfunc_F8(), pSVar13 = local_8, iVar6 == 1 &&
+               (iVar6 = (*pSVar8->vtable->vfunc_F4)((int)local_8->field_0024), pSVar13 = local_8,
+               iVar6 == 1)))))) {
             Library::DKW::TBL::FUN_006ae140
                       (&local_8->field_020E->flags,uVar15,(undefined4 *)&local_2c);
             pSVar13 = local_8;
@@ -210,7 +211,7 @@ LAB_0049b073:
                                  (&DAT_008087ea)[(CONCAT11(cStack_2b,local_2c) & 0xff) * 0x51];
                       }
                       if (bVar17) {
-                        uStack_2a = *(undefined2 *)&pSVar12[1].field_0xe;
+                        uStack_2a = *(ushort *)&pSVar12[1].field_0xe;
                         cStack_2b = '\x03';
                         iVar6 = (*pSVar12->vtable[5].slots_00_28[2])();
                         if ((iVar6 == 1) &&
@@ -263,7 +264,7 @@ LAB_0049aec9:
                                  (&DAT_008087ea)[(CONCAT11(cStack_2b,local_2c) & 0xff) * 0x51];
                       }
                       if (bVar17) {
-                        uStack_2a = *(undefined2 *)&pSVar12[1].field_0xe;
+                        uStack_2a = *(ushort *)&pSVar12[1].field_0xe;
                         cStack_2b = '\x01';
                         iVar9 = (*pSVar12->vtable[5].slots_00_28[2])();
                         pSVar13 = local_8;
@@ -308,11 +309,9 @@ LAB_0049aec9:
       if (0 < (int)dVar10) {
         do {
           DArrayGetElement(local_8->field_020E,(int)sVar5,&local_2c);
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           if ((cStack_2b != '\x01') ||
-             (pSVar8 = STAllPlayersC::GetObjPtr
-                                 (g_allPlayers_007FA174,local_2c,CONCAT22(uStack_28,uStack_2a),
-                                  CASE_1), pSVar8->field_0020 != 0x14)) {
+             (pSVar8 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,local_2c,uStack_2a,CASE_1),
+             pSVar8->field_0020 != 0x14)) {
             FUN_006b0c70(local_8->field_020E,(int)sVar5);
             dVar10 = dVar10 - 1;
             sVar5 = sVar5 + -1;
@@ -331,6 +330,7 @@ LAB_0049aec9:
     DistributeTargets(pSVar16,(uint *)pSVar16->field_0029);
     pSVar13 = local_8;
   }
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if ((param_1 == 2) && (pSVar13->field_0212 == 0)) {
     g_currentExceptionFrame = local_70.previous;
     return 0;

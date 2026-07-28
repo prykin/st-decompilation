@@ -4,7 +4,11 @@
 /* [STMethodOwnerApplier] Structural method owner recovered as CPanelTy.
    Evidence: this_call_owners=[CPanelTy]; agreed_this_calls=8; incoming_this_accesses=5;
    incoming_edx_uses=0; incoming_stack_parameter_uses=6; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=6; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=6; owner_evidence_coverage=adequate
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=11, used=0), and
+   decompilation contains no value return */
 
 void __thiscall CPanelTy::sub_004F1610(CPanelTy *this,char param_1)
 
@@ -28,10 +32,10 @@ void __thiscall CPanelTy::sub_004F1610(CPanelTy *this,char param_1)
   uint local_8;
 
   local_10 = (uint)(param_1 == '\0');
-  if ((&this->field_02FE)[local_10] != 0) {
+  iVar6 = *(int *)((int)this->field_0308 + local_10 * 4 + -10);
+  if (iVar6 != 0) {
     local_40 = 0x5b;
-    SystemClassTy::SendMessage
-              ((SystemClassTy *)this->field_000C,2,(&this->field_02FE)[local_10],(int)local_50);
+    SystemClassTy::SendMessage((SystemClassTy *)this->field_000C,2,iVar6,(int)local_50);
     local_c = local_3c;
     local_8 = local_8 & 0xffffff00;
     if (local_38 != 0) {

@@ -24,6 +24,7 @@ FUN_006a17b0(int *param_1,int param_2,int param_3,int param_4,int param_5,ushort
     thunk_FUN_006a1410(param_1,param_2,param_3,param_4,param_5,param_7,param_8);
     local_c = 0;
     do {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_4 = 0;
       local_8 = &DAT_007df82c;
       do {
@@ -33,7 +34,7 @@ FUN_006a17b0(int *param_1,int param_2,int param_3,int param_4,int param_5,ushort
            (((iVar6 < param_1[1] && (-1 < iVar1)) &&
             ((iVar1 < 6 &&
              (iVar3 = thunk_FUN_006a20e0(param_1,iVar2,iVar6,iVar1,param_5), iVar3 != 0)))))) {
-          iVar3 = thunk_FUN_006a1370(param_1,iVar2,iVar6,iVar1,(undefined4 *)&local_14);
+          iVar3 = thunk_FUN_006a1370(param_1,iVar2,iVar6,iVar1,(int)&local_14);
           iVar3 = thunk_FUN_006a24e0(&local_14,iVar1,param_6,(int)(short)iVar3,param_5);
           if (iVar3 != 0) {
             if (param_5 == 0xff) {
@@ -63,6 +64,7 @@ FUN_006a17b0(int *param_1,int param_2,int param_3,int param_4,int param_5,ushort
           }
         }
         local_8 = local_8 + 2;
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_4 = param_4 + 1;
       } while ((int)local_8 < 0x7df86c);
       local_c = local_c + 1;

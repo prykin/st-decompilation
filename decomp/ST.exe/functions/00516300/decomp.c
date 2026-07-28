@@ -3,7 +3,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\helppan.cpp
-   HelpPanelTy::MObjProc */
+   HelpPanelTy::MObjProc
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=5, used=0), and
+   decompilation contains no value return */
 
 void __thiscall HelpPanelTy::MObjProc(HelpPanelTy *this)
 

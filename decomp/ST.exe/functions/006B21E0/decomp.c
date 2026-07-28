@@ -1,4 +1,8 @@
 
+/* [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0), and
+   decompilation contains no value return */
+
 void FUN_006b21e0(uint param_1,uint *param_2,uint param_3,uint param_4,int *param_5,uint param_6,
                  uint param_7,uint param_8,uint param_9)
 

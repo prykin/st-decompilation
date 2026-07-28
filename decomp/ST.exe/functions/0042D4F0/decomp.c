@@ -3,7 +3,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
-   STAllPlayersC::ResetActivityFromTmp */
+   STAllPlayersC::ResetActivityFromTmp
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=45, used=0), and
+   decompilation contains no value return */
 
 void __thiscall
 STAllPlayersC::ResetActivityFromTmp

@@ -8,7 +8,11 @@
    [STMethodOwnerApplier] Structural method owner recovered as CursorClassTy.
    Evidence: this_call_owners=[CursorClassTy]; agreed_this_calls=2; incoming_this_accesses=9;
    incoming_edx_uses=0; incoming_stack_parameter_uses=2; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall CursorClassTy::sub_0054B700(CursorClassTy *this,int param_1)
 

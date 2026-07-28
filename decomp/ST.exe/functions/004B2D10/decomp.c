@@ -50,10 +50,12 @@ undefined4 __cdecl FUN_004b2d10(byte param_1,int param_2,int param_3,int param_4
       do {
         if (local_30 < local_34 * 2) {
           iVar6 = (local_30 - local_34) + param_3;
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_2 = (param_4 - param_3) + local_c;
         }
         else if (local_30 < local_14) {
           iVar6 = param_3 + local_34;
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_2 = local_30 + local_34 * -3 + param_4;
         }
         else {
@@ -65,6 +67,7 @@ undefined4 __cdecl FUN_004b2d10(byte param_1,int param_2,int param_3,int param_4
             iVar5 = local_20 - local_30;
             iVar6 = local_c;
           }
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_2 = iVar5 + param_4;
         }
         if (((((-1 < iVar6) && (iVar6 < g_worldGrid.sizeX)) && (-1 < param_2)) &&
@@ -78,7 +81,7 @@ undefined4 __cdecl FUN_004b2d10(byte param_1,int param_2,int param_3,int param_4
             if ((((this != (STWorldObject *)0x0) && (this[1].vtable < (STWorldObjectVTable *)0x8))
                 && ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
                     ((byte)(&DAT_008087e9)[(int)this[1].vtable * 0x51] < 8)))) &&
-               (iVar5 = (*this->vtable->GetObjectTypeId)(this), iVar5 == 0x73)) {
+               (iVar5 = this->GetObjectTypeId(), iVar5 == 0x73)) {
               bVar1 = *(byte *)&this[1].vtable;
               if (g_appClass_00806728->field_146F == '\0') {
                 if (bVar1 == param_1) {

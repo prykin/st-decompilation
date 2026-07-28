@@ -667,7 +667,7 @@ address	status	proposed_name	detail
 0065D940	disabled	AiFltClassTy::sub_0065D940	all apply flags are 0
 0065D9C0	disabled	AiFltClassTy::sub_0065D9C0	all apply flags are 0
 0065DA10	disabled	AiFltClassTy::sub_0065DA10	all apply flags are 0
-0065E360	conflict	AiFltClassTy::sub_0065E360	this_type=conflict(no auto this parameter)
+0065E360	disabled	AiFltClassTy::sub_0065E360	all apply flags are 0
 0065E3B0	disabled	AiFltClassTy::sub_0065E3B0	all apply flags are 0
 0065E6C0	disabled	AiFltClassTy::sub_0065E6C0	all apply flags are 0
 0065F5C0	disabled	AiFltClassTy::sub_0065F5C0	all apply flags are 0

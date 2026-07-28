@@ -13,7 +13,7 @@ undefined4 __thiscall CPanelTy::ShiftControls(CPanelTy *this,int param_1)
   int iVar2;
   int iVar3;
   undefined4 uVar4;
-  int *piVar5;
+  uint *puVar5;
   InternalExceptionFrame local_4c;
   CPanelTy *local_8;
 
@@ -29,22 +29,22 @@ undefined4 __thiscall CPanelTy::ShiftControls(CPanelTy *this,int param_1)
   if (iVar2 == 0) {
     ShiftControls(local_8,1,param_1);
     ShiftControls(this_00,0,param_1);
-    piVar5 = &this_00->field_09A4;
+    puVar5 = this_00->field_09A4;
     iVar2 = 7;
     do {
-      if (*piVar5 != 0) {
-        FUN_006e6080(this_00,2,*piVar5,(undefined4 *)&this_00->field_0x18);
+      if (*puVar5 != 0) {
+        FUN_006e6080(this_00,2,*puVar5,(undefined4 *)&this_00->field_0x18);
       }
-      piVar5 = piVar5 + 1;
+      puVar5 = puVar5 + 1;
       iVar2 = iVar2 + -1;
     } while (iVar2 != 0);
-    piVar5 = &this_00->field_09C0;
+    puVar5 = this_00->field_09C0;
     iVar2 = 2;
     do {
-      if (*piVar5 != 0) {
-        FUN_006e6080(this_00,2,*piVar5,(undefined4 *)&this_00->field_0x18);
+      if (*puVar5 != 0) {
+        FUN_006e6080(this_00,2,*puVar5,(undefined4 *)&this_00->field_0x18);
       }
-      piVar5 = piVar5 + 1;
+      puVar5 = puVar5 + 1;
       iVar2 = iVar2 + -1;
     } while (iVar2 != 0);
     g_currentExceptionFrame = local_4c.previous;

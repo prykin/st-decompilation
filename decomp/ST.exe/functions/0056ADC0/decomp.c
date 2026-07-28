@@ -66,7 +66,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
   local_30 = iVar8;
   if (iVar8 != 0) {
     g_currentExceptionFrame = local_b0.previous;
-    (*local_c->vtable->DoneApp)(local_c);
+    local_c->DoneApp();
     switch(iVar8) {
     case -0x5001fff7:
     case -0x5001fff4:
@@ -708,7 +708,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
           if (pSVar14 != (StartSystemTy *)0x0) {
             StartSystemTy::StartSystemTy(pSVar14,pSVar20);
           }
-          (*g_startSystem_0081176C->vtable->InitSystem)(g_startSystem_0081176C);
+          g_startSystem_0081176C->InitSystem();
           AppClassTy::AddSystem((AppClassTy *)pSVar20,(int *)g_startSystem_0081176C,0);
           local_1c = 0x60ff;
           pSVar20->field_7D0E = 1;
@@ -866,7 +866,7 @@ switchD_0056b4ce_caseD_47:
           if (pSVar14 != (StartSystemTy *)0x0) {
             StartSystemTy::StartSystemTy(pSVar14,pSVar20);
           }
-          (*g_startSystem_0081176C->vtable->InitSystem)(g_startSystem_0081176C);
+          g_startSystem_0081176C->InitSystem();
           AppClassTy::AddSystem((AppClassTy *)pSVar20,(int *)g_startSystem_0081176C,0);
           local_1c = 0x60ff;
         }
@@ -1218,7 +1218,7 @@ switchD_0056b4ce_caseD_57:
   }
 cf_common_exit_0056C034:
   local_560 = (AnonShape_00683C70_22193481 *)0x56c03f;
-  (*pSVar20->vtable->GetMessage)(pSVar20,(int)local_2c);
+  pSVar20->GetMessage((int)local_2c);
   g_currentExceptionFrame = local_b0.previous;
   return 1;
 }

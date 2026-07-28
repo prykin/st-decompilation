@@ -54,65 +54,66 @@
 void __thiscall STAllPlayersC::ActivateTV(STAllPlayersC *this,char param_1,int param_2,int objPtr)
 
 {
-  int iVar1;
+  undefined4 uVar1;
   undefined4 uVar2;
   undefined4 uVar3;
-  code *pcVar4;
-  int iVar5;
-  STPlayerTempSlot *pSVar6;
-  uint uVar7;
-  STPlayerTempSlot (*paSVar9) [5];
-  STPlayerTempSlot (*paSVar8) [5];
+  undefined4 uVar4;
+  code *pcVar5;
+  int iVar6;
+  undefined4 *puVar7;
+  uint uVar8;
+  AnonPointee_TLOBaseTy_0607 *pAVar10;
+  AnonPointee_TLOBaseTy_0607 *pAVar9;
 
   if (param_2 == 0) {
-    paSVar9 = g_playerRuntime[param_1].tempSlots;
+    pAVar10 = (AnonPointee_TLOBaseTy_0607 *)g_playerRuntime[param_1].tempSlots;
   }
   else {
     if (param_2 != 1) {
-      iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x3042,0,0,"%s",
+      iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x3042,0,0,"%s",
                                  "STAllPlayersC::ActivateTV invalid panel number");
-      if (iVar5 == 0) {
+      if (iVar6 == 0) {
         return;
       }
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    paSVar9 = g_playerRuntime[param_1].tempSlots + 1;
+    pAVar10 = (AnonPointee_TLOBaseTy_0607 *)(g_playerRuntime[param_1].tempSlots + 1);
   }
-  paSVar8 = (STPlayerTempSlot (*) [5])(int)param_1;
+  pAVar9 = (AnonPointee_TLOBaseTy_0607 *)(int)param_1;
   if (0 < objPtr) {
-    if ((*paSVar9)[0].objectType == 0) {
-      pSVar6 = *paSVar9 + objPtr;
-      (*paSVar9)[0].objectType = pSVar6->objectType;
-      (*paSVar9)[0].playerId = pSVar6->playerId;
-      *(undefined4 *)&(*paSVar9)[0].objectId = *(undefined4 *)&pSVar6->objectId;
-      *(undefined4 *)((int)&(*paSVar9)[0].objectIds + 2) =
-           *(undefined4 *)((int)&pSVar6->objectIds + 2);
+    if (pAVar10->field_0000 == 0) {
+      puVar7 = &pAVar10->field_0000 + objPtr * 4;
+      pAVar10->field_0000 = *puVar7;
+      pAVar10->field_0004 = puVar7[1];
+      pAVar10->field_0008 = puVar7[2];
+      pAVar10->field_000C = puVar7[3];
       Library::MSVCRT::FUN_0072da70
-                (&pSVar6->objectType,&(*paSVar9)[objPtr + 1].objectType,objPtr * -0x10 + 0x40);
-      (*paSVar9)[4].objectType = 0;
-      (*paSVar9)[4].playerId = 0xff;
-      (*paSVar9)[4].objectIds = (DArrayTy *)0x0;
-      paSVar8 = (STPlayerTempSlot (*) [5])0x0;
+                (puVar7,(AnonPointee_TLOBaseTy_0607 *)(&pAVar10->field_0010 + objPtr * 4),
+                 objPtr * -0x10 + 0x40);
+      pAVar10[2].field_0010 = 0;
+      pAVar10[2].field_0014 = 0xff;
+      *(undefined4 *)((int)&pAVar10[3].field_0000 + 2) = 0;
+      pAVar9 = (AnonPointee_TLOBaseTy_0607 *)0x0;
     }
     else {
       ResetActivityFromTmp(this,param_1,param_2,0,0);
-      iVar5 = (*paSVar9)[objPtr].objectType;
-      iVar1 = (*paSVar9)[objPtr].playerId;
-      uVar2 = *(undefined4 *)&(*paSVar9)[objPtr].objectId;
-      uVar3 = *(undefined4 *)((int)&(*paSVar9)[objPtr].objectIds + 2);
-      Library::MSVCRT::FUN_0072da70(&(*paSVar9)[1].objectType,(undefined4 *)paSVar9,objPtr * 0x10);
-      (*paSVar9)[0].objectType = iVar5;
-      (*paSVar9)[0].playerId = iVar1;
-      *(undefined4 *)&(*paSVar9)[0].objectId = uVar2;
-      *(undefined4 *)((int)&(*paSVar9)[0].objectIds + 2) = uVar3;
-      paSVar8 = paSVar9;
+      uVar1 = (&pAVar10->field_0000)[objPtr * 4];
+      uVar2 = (&pAVar10->field_0004)[objPtr * 4];
+      uVar3 = (&pAVar10->field_0008)[objPtr * 4];
+      uVar4 = (&pAVar10->field_000C)[objPtr * 4];
+      Library::MSVCRT::FUN_0072da70(&pAVar10->field_0010,pAVar10,objPtr * 0x10);
+      pAVar10->field_0000 = uVar1;
+      pAVar10->field_0004 = uVar2;
+      pAVar10->field_0008 = uVar3;
+      pAVar10->field_000C = uVar4;
+      pAVar9 = pAVar10;
     }
   }
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  uVar7 = CONCAT22((short)((uint)paSVar8 >> 0x10),(*paSVar9)[0].objectId);
+  uVar8 = CONCAT22((short)((uint)pAVar9 >> 0x10),*(undefined2 *)&pAVar10->field_0008);
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  SetActivityToObjs(this,CONCAT31((int3)(uVar7 >> 8),(char)(*paSVar9)[0].playerId),
-                    (*paSVar9)[0].objectType,(*paSVar9)[0].objectIds,uVar7);
+  SetActivityToObjs(this,CONCAT31((int3)(uVar8 >> 8),*(undefined1 *)&pAVar10->field_0004),
+                    pAVar10->field_0000,*(DArrayTy **)((int)&pAVar10->field_0008 + 2),uVar8);
   SelfCheckObjControl(this);
   if (param_2 == 0) {
     thunk_FUN_0043fc50(CASE_1,0);

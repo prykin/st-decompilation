@@ -38,6 +38,7 @@ int __thiscall FUN_007483c3(void *this,int *param_1,int *param_2)
     if ((((int)piVar3 < 0) ||
         (piVar3 = (int *)(**(code **)(*(int *)this + 0x3c))(*param_2,&local_14), (int)piVar3 < 0))
        || (piVar3 = (int *)(**(code **)(*param_1 + 0x10))(param_1,*param_2,0), (int)piVar3 < 0)) {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = piVar3;
       piVar3 = (int *)*piVar1;
       if (piVar3 == (int *)0x0) {

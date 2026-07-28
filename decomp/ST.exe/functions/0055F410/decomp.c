@@ -214,7 +214,7 @@ void AiCalcDispositionAreas
             if (iVar15 < (int)uVar18) {
               Library::MSVCRT::FUN_0072da70
                         ((undefined4 *)(&stack0xfffffe18 + iVar15 * 4),
-                         (undefined4 *)(&stack0xfffffe14 + iVar15 * 4),
+                         (AnonPointee_TLOBaseTy_0607 *)(&stack0xfffffe14 + iVar15 * 4),
                          (iVar15 * 0x3fffffff + uVar18) * 4);
             }
             *(int **)(&stack0xfffffe14 + iVar15 * 4) = piVar10;

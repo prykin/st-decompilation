@@ -76,11 +76,11 @@ LAB_0048a37f:
     }
     else {
       local_8 = STAllPlayersC::GetObjPtr
-                          (g_allPlayers_007FA174,*(char *)&this->field_0487,this->field_048B,
-                           this->field_0483);
+                          (g_allPlayers_007FA174,*(char *)&this->field_0487,(ushort)this->field_048B
+                           ,this->field_0483);
       if ((((local_8 != (STGameObjC *)0x0) &&
-           (iVar11 = (*local_8->vtable->vfunc_F8)(local_8), iVar11 == 1)) &&
-          (iVar11 = (*local_8->vtable->vfunc_F0)(local_8), iVar11 == 1)) &&
+           (iVar11 = local_8->vfunc_F8(), iVar11 == 1)) &&
+          (iVar11 = local_8->vfunc_F0(), iVar11 == 1)) &&
          ((iVar11 = (*local_8->vtable->vfunc_F4)(this->field_0024), iVar11 == 1 &&
           (this->field_047F % 0x28 != 0)))) {
         return 0;
@@ -99,9 +99,7 @@ LAB_0048a37f:
                                   (uint *)(int)this->field_0475,(int)this->field_0477,2,(int *)0x6,6
                                   ,2,(uint)(this->field_0736 != 0));
       if (pDVar4 != (DArrayTy *)0x0) {
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        this_00 = thunk_FUN_0042b760(*(char *)&this->field_0024,
-                                     CONCAT22((short)((uint)pDVar4 >> 0x10),this->field_0030));
+        this_00 = thunk_FUN_0042b760(*(char *)&this->field_0024,this->field_0030);
         local_20 = thunk_FUN_0040c080(this_00,(uint)(ushort)this->field_0032,(uint *)pDVar4);
         local_18 = 0;
         if (0 < (int)pDVar4->count) {
@@ -110,11 +108,11 @@ LAB_0048a37f:
             if ((iVar11 != -4) && (iVar11 < 9)) {
               iVar7 = (8 - iVar11) * 0x32;
               DArrayGetElement(pDVar4,local_18,&local_8);
-              iVar11 = (*local_8->vtable->vfunc_F8)(local_8);
+              iVar11 = local_8->vfunc_F8();
               if ((iVar11 != 0) &&
-                 ((iVar11 = (*local_8->vtable->vfunc_F0)(local_8), iVar11 != 0 &&
+                 ((iVar11 = local_8->vfunc_F0(), iVar11 != 0 &&
                   (iVar11 = (*local_8->vtable->vfunc_F4)(this->field_0024), iVar11 != 0)))) {
-                iVar11 = (*local_8->vtable->vfunc_FC)(local_8);
+                iVar11 = local_8->vfunc_FC();
                 if (0 < iVar11) {
                   iVar7 = iVar7 + 300;
                 }
@@ -206,8 +204,9 @@ LAB_00489dfc:
                     uVar5 = uVar5 + 1;
                   } while ((int)uVar5 < (int)pDVar10->count);
                 }
-                if ((this->field_06F7 == CASE_1C) &&
-                   (iVar7 = (*local_8->vtable->vfunc_120)(local_8), iVar7 == 1)) {
+                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+                if ((*(int *)((int)this->field_06CB + 0x2c) == 0x1c) &&
+                   (iVar7 = local_8->vfunc_120(), iVar7 == 1)) {
                   iVar11 = iVar11 / 0x14;
                 }
                 if (local_34 < iVar11) {
@@ -253,8 +252,8 @@ LAB_00489eb0:
         if (0 < (int)pDVar4->count) {
           do {
             DArrayGetElement(pDVar4,local_18,&local_8);
-            iVar11 = (*local_8->vtable->vfunc_F8)(local_8);
-            if (((iVar11 != 0) && (iVar11 = (*local_8->vtable->vfunc_F0)(local_8), iVar11 != 0)) &&
+            iVar11 = local_8->vfunc_F8();
+            if (((iVar11 != 0) && (iVar11 = local_8->vfunc_F0(), iVar11 != 0)) &&
                (iVar11 = (*local_8->vtable->vfunc_F4)(this->field_0024), iVar11 != 0)) {
               thunk_FUN_00416270(local_8,(undefined2 *)&local_14,&local_10,&local_c);
               iVar11 = FUN_006acf0d((int)this->field_0041,(int)this->field_0043,
@@ -312,7 +311,7 @@ LAB_00489eb0:
                   } while (local_2c < (int)(uint)(byte)this->field_02B2);
                 }
                 iVar7 = ((int)this->field_0816 - iVar11 / 0xc9) * 0x32;
-                iVar11 = (*local_8->vtable->vfunc_FC)(local_8);
+                iVar11 = local_8->vfunc_FC();
                 if (0 < iVar11) {
                   iVar7 = iVar7 + 300;
                 }
@@ -349,8 +348,9 @@ LAB_0048a235:
 LAB_0048a22c:
                   if (local_8->field_0020 != 0x1ae) goto LAB_0048a235;
                 }
-                if ((this->field_06F7 == CASE_1C) &&
-                   (iVar7 = (*local_8->vtable->vfunc_120)(local_8), iVar7 == 1)) {
+                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+                if ((*(int *)((int)this->field_06CB + 0x2c) == 0x1c) &&
+                   (iVar7 = local_8->vfunc_120(), iVar7 == 1)) {
                   iVar11 = iVar11 / 0x14;
                 }
                 if (local_34 < iVar11) {

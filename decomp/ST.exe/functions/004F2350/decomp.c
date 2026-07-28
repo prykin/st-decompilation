@@ -3,11 +3,21 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cp_sup.cpp
-   CPanelTy::PaintCostsXYSI */
+   CPanelTy::PaintCostsXYSI
+   [STAbiConsistencyApplier] stack_parameter_width target=parameter:4: parameter=/ushort Evidence:
+   entry-use width=/ushort; unmasked_dword_reads=0; evidence=004F2418 MOV EAX,dword ptr [EBP +
+   0x14]; first-use mask
+   [STAbiConsistencyApplier] stack_parameter_width target=parameter:5: parameter=/ushort Evidence:
+   entry-use width=/ushort; unmasked_dword_reads=0; evidence=004F2474 MOV EDX,dword ptr [EBP +
+   0x18]; first-use mask
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0), and
+   decompilation contains no value return */
 
 void __thiscall
 CPanelTy::PaintCostsXYSI
-          (CPanelTy *this,int param_1,ushort param_2,ushort param_3,uint param_4,uint param_5)
+          (CPanelTy *this,int param_1,ushort param_2,ushort param_3,ushort param_4,ushort param_5)
 
 {
   code *pcVar1;
@@ -40,12 +50,12 @@ CPanelTy::PaintCostsXYSI
     if (param_2 != 0xffff) {
       wsprintfA(&pCVar2->field_0x1e1,"%4d",param_2);
       ccFntTy::SetSurf(pCVar2->field_01C4,param_1,0,0x7d,0x5a,0x18,0xf);
-      ccFntTy::WrTxt(pCVar2->field_01C4,(uint *)&pCVar2->field_0x1e1,-3,-1,param_4 & 0xffff,-1,-1);
+      ccFntTy::WrTxt(pCVar2->field_01C4,(uint *)&pCVar2->field_0x1e1,-3,-1,(uint)param_4,-1,-1);
     }
     if (param_3 != 0xffff) {
       wsprintfA(&pCVar2->field_0x1e1,"%4d",param_3);
       ccFntTy::SetSurf(pCVar2->field_01C4,param_1,0,0x5f,0x5a,0x18,0xf);
-      ccFntTy::WrTxt(pCVar2->field_01C4,(uint *)&pCVar2->field_0x1e1,-3,-1,param_5 & 0xffff,-1,-1);
+      ccFntTy::WrTxt(pCVar2->field_01C4,(uint *)&pCVar2->field_0x1e1,-3,-1,(uint)param_5,-1,-1);
     }
     g_currentExceptionFrame = local_4c.previous;
     return;

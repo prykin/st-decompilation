@@ -12,8 +12,8 @@ undefined4 __thiscall FUN_004eb6d0(void *this,int param_1,int param_2,int param_
   if ((char)iVar1 == '\x03') {
     if (param_2 == 0xdd) {
       if (param_1 == 2) {
-        iVar1 = thunk_FUN_004e41c0(*(int *)((int)this + 0x24));
-        if (iVar1 < param_3 * param_4) {
+        uVar2 = thunk_FUN_004e41c0(*(int *)((int)this + 0x24));
+        if ((int)uVar2 < param_3 * param_4) {
           return 0;
         }
         thunk_FUN_004d88f0(*(char *)((int)this + 0x24),param_3);
@@ -36,8 +36,8 @@ undefined4 __thiscall FUN_004eb6d0(void *this,int param_1,int param_2,int param_
         return 0;
       }
       if (param_1 == 2) {
-        iVar1 = thunk_FUN_004e41c0(*(int *)((int)this + 0x24));
-        if (iVar1 < param_3 / param_4) {
+        uVar2 = thunk_FUN_004e41c0(*(int *)((int)this + 0x24));
+        if ((int)uVar2 < param_3 / param_4) {
           return 0;
         }
         thunk_FUN_004e4380(*(int *)((int)this + 0x24),param_3);
@@ -47,7 +47,7 @@ undefined4 __thiscall FUN_004eb6d0(void *this,int param_1,int param_2,int param_
         if (param_1 != 3) {
           return 0;
         }
-        iVar1 = thunk_FUN_004e4410(*(int *)((int)this + 0x24));
+        iVar1 = thunk_FUN_004e4410(*(byte **)((int)this + 0x24));
         if (iVar1 < param_3) {
           return 0;
         }

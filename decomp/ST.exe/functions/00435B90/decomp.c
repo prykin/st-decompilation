@@ -38,6 +38,7 @@ short FUN_00435b90(uint param_1,DArrayTy *param_2,Global_sub_00435B90_param_3Enu
        (7 < (byte)(&DAT_008087e9)[(char)objPtr * 0x51])))))) {
     return 1;
   }
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_4 = (int *)0x0;
   if (0 < (int)dVar3) {
     do {
@@ -46,11 +47,12 @@ short FUN_00435b90(uint param_1,DArrayTy *param_2,Global_sub_00435B90_param_3Enu
         local_10 = param_1;
         local_c = local_c + 1;
       }
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_4 = (int *)((int)param_4 + 1);
     } while ((int)param_4 < (int)dVar3);
     if (local_c == 1) {
       /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-      pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,local_10,CASE_1);
+      pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,(ushort)local_10,CASE_1);
       uVar6 = (*pSVar5->vtable->vfunc_28)(param_3,arg_2,param_5,param_6);
       return (short)uVar6;
     }
@@ -59,45 +61,48 @@ short FUN_00435b90(uint param_1,DArrayTy *param_2,Global_sub_00435B90_param_3Enu
   case CASE_0:
     if ((arg_2 == (int *)0x0) ||
        (((iVar7 = arg_2[8], iVar7 != 0x14 && (iVar7 != 1000)) && (iVar7 != 0x3e9)))) {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_4 = (int *)0x0;
       if ((int)dVar3 < 1) {
         return 0;
       }
       do {
         DArrayGetElement(param_2,(uint)param_4,&param_1);
-        if ((short)param_1 != -1) {
+        if ((ushort)param_1 != 0xffff) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
+          pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,(ushort)param_1,CASE_1);
           uVar6 = (*pSVar5->vtable->vfunc_28)(0,arg_2,param_5,param_6);
           if ((short)uVar6 == 5) {
             return 5;
           }
         }
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_4 = (int *)((int)param_4 + 1);
       } while ((int)param_4 < (int)dVar3);
       return 0;
     }
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar7 = (**(code **)(*arg_2 + 0x2c))();
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    /* ST_PSEUDO[raw_indirect_call,stack_slot_reuse]: expected typed vtable/callback call with explicit __thiscall receiver; compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if ((((iVar7 == 99) || (iVar7 = (**(code **)(*arg_2 + 0x2c))(), iVar7 == 0x52)) ||
         (iVar7 = (**(code **)(*arg_2 + 0x2c))(), iVar7 == 0x5f)) &&
        (param_4 = (int *)0x0, 0 < (int)dVar3)) {
       do {
         DArrayGetElement(param_2,(uint)param_4,&param_1);
-        if ((short)param_1 != -1) {
+        if ((ushort)param_1 != 0xffff) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
+          pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,(ushort)param_1,CASE_1);
           uVar6 = (*pSVar5->vtable->vfunc_28)(0,arg_2,param_5,param_6);
           if ((short)uVar6 == 0x1e) {
             return 0x1e;
           }
         }
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_4 = (int *)((int)param_4 + 1);
       } while ((int)param_4 < (int)dVar3);
     }
     bVar1 = *(byte *)(arg_2 + 9);
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+    /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
     param_3 = CONCAT31(param_3._1_3_,bVar1);
     if (DAT_00808a8f == '\0') {
       if (bVar1 == objPtr) {
@@ -131,55 +136,59 @@ LAB_004366b0:
         if ((arg_2[8] != 0x3e9) && (arg_2[9] == (int)(char)objPtr)) {
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           iVar7 = (**(code **)(*arg_2 + 0x2c))();
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           if ((iVar7 == 0x33) && (param_4 = (int *)0x0, 0 < (int)dVar3)) {
             do {
               DArrayGetElement(param_2,(uint)param_4,&param_1);
-              if ((short)param_1 != -1) {
+              if ((ushort)param_1 != 0xffff) {
                 /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-                pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
+                pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,(ushort)param_1,CASE_1);
                 uVar6 = (*pSVar5->vtable->vfunc_28)(0,arg_2,param_5,param_6);
                 if ((short)uVar6 == 0x18) {
                   return 0x18;
                 }
               }
+              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_4 = (int *)((int)param_4 + 1);
             } while ((int)param_4 < (int)dVar3);
           }
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           iVar7 = (**(code **)(*arg_2 + 0x2c))();
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call,stack_slot_reuse]: expected typed vtable/callback call with explicit __thiscall receiver; compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           if (((iVar7 == 0x37) || (iVar7 = (**(code **)(*arg_2 + 0x2c))(), iVar7 == 0x6c)) &&
              (param_4 = (int *)0x0, 0 < (int)dVar3)) {
             do {
               DArrayGetElement(param_2,(uint)param_4,&param_1);
-              if ((short)param_1 != -1) {
+              if ((ushort)param_1 != 0xffff) {
                 /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-                pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
+                pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,(ushort)param_1,CASE_1);
                 uVar6 = (*pSVar5->vtable->vfunc_28)(0,arg_2,param_5,param_6);
                 if ((short)uVar6 == 0x1d) {
                   return 0x1d;
                 }
               }
+              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_4 = (int *)((int)param_4 + 1);
             } while ((int)param_4 < (int)dVar3);
           }
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           iVar7 = (**(code **)(*arg_2 + 0x2c))();
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+          /* ST_PSEUDO[raw_indirect_call,stack_slot_reuse]: expected typed vtable/callback call with explicit __thiscall receiver; compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           if ((((iVar7 == 0x38) || (iVar7 = (**(code **)(*arg_2 + 0x2c))(), iVar7 == 0x39)) ||
               ((iVar7 = (**(code **)(*arg_2 + 0x2c))(), iVar7 == 0x4f ||
                (iVar7 = (**(code **)(*arg_2 + 0x2c))(), iVar7 == 0x5e)))) &&
              (param_4 = (int *)0x0, 0 < (int)dVar3)) {
             do {
               DArrayGetElement(param_2,(uint)param_4,&param_1);
-              if ((short)param_1 != -1) {
+              if ((ushort)param_1 != 0xffff) {
                 /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-                pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
+                pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,(ushort)param_1,CASE_1);
                 uVar6 = (*pSVar5->vtable->vfunc_28)(0,arg_2,param_5,param_6);
                 if ((short)uVar6 == 0x12) {
                   return 0x12;
                 }
               }
+              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_4 = (int *)((int)param_4 + 1);
             } while ((int)param_4 < (int)dVar3);
           }
@@ -191,13 +200,14 @@ LAB_004366b0:
         iVar7 = (**(code **)(*arg_2 + 0xec))();
         return (-(ushort)(iVar7 != 1) & 0xfffc) + 4;
       }
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_4 = (int *)0x0;
       if (0 < (int)dVar3) {
         do {
           DArrayGetElement(param_2,(uint)param_4,&param_1);
-          if ((short)param_1 != -1) {
+          if ((ushort)param_1 != 0xffff) {
             /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-            pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
+            pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,(ushort)param_1,CASE_1);
             uVar6 = (*pSVar5->vtable->vfunc_28)(0,arg_2,param_5,param_6);
             if ((short)uVar6 == 0x17) {
               return 0x17;
@@ -206,6 +216,7 @@ LAB_004366b0:
               return 0x1a;
             }
           }
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_4 = (int *)((int)param_4 + 1);
         } while ((int)param_4 < (int)dVar3);
       }
@@ -215,14 +226,15 @@ LAB_004366b0:
     }
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar7 = (**(code **)(*arg_2 + 0x2c))();
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_4 = (int *)0x0;
     if (iVar7 == 0x6c) {
       if (0 < (int)dVar3) {
         do {
           DArrayGetElement(param_2,(uint)param_4,&param_1);
-          if ((short)param_1 != -1) {
+          if ((ushort)param_1 != 0xffff) {
             /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-            pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
+            pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,(ushort)param_1,CASE_1);
             uVar6 = (*pSVar5->vtable->vfunc_28)(0,arg_2,param_5,param_6);
             if ((short)uVar6 == 7) {
               return 7;
@@ -231,6 +243,7 @@ LAB_004366b0:
               return 0x1d;
             }
           }
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_4 = (int *)((int)param_4 + 1);
           if ((int)dVar3 <= (int)param_4) {
             return 0;
@@ -241,14 +254,15 @@ LAB_004366b0:
     else if (0 < (int)dVar3) {
       do {
         DArrayGetElement(param_2,(uint)param_4,&param_1);
-        if ((short)param_1 != -1) {
+        if ((ushort)param_1 != 0xffff) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
+          pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,(ushort)param_1,CASE_1);
           uVar6 = (*pSVar5->vtable->vfunc_28)(0,arg_2,param_5,param_6);
           if ((short)uVar6 == 7) {
             return 7;
           }
         }
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_4 = (int *)((int)param_4 + 1);
       } while ((int)param_4 < (int)dVar3);
     }
@@ -256,19 +270,21 @@ switchD_00435c5c_caseD_1:
     return 0;
   default:
     goto switchD_00435c5c_caseD_1;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   case CASE_2:
     param_4 = (int *)0x0;
     if (0 < (int)dVar3) {
       do {
         DArrayGetElement(param_2,(uint)param_4,&param_1);
-        if ((short)param_1 != -1) {
+        if ((ushort)param_1 != 0xffff) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
+          pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,(ushort)param_1,CASE_1);
           uVar6 = (*pSVar5->vtable->vfunc_28)(2,arg_2,param_5,param_6);
           if ((short)uVar6 == 6) {
             return 6;
           }
         }
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_4 = (int *)((int)param_4 + 1);
       } while ((int)param_4 < (int)dVar3);
       return 1;
@@ -279,13 +295,14 @@ switchD_00435c5c_caseD_1:
     if (arg_2 == (int *)0x0) {
       return 1;
     }
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_4 = (int *)0x0;
     if (0 < (int)dVar3) {
       do {
         DArrayGetElement(param_2,(uint)param_4,&param_1);
-        if ((short)param_1 != -1) {
+        if ((ushort)param_1 != 0xffff) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
+          pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,(ushort)param_1,CASE_1);
           uVar6 = (*pSVar5->vtable->vfunc_28)(param_3,arg_2,param_5,param_6);
           if ((short)uVar6 == 7) {
             return 7;
@@ -294,6 +311,7 @@ switchD_00435c5c_caseD_1:
             return 2;
           }
         }
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_4 = (int *)((int)param_4 + 1);
       } while ((int)param_4 < (int)dVar3);
     }
@@ -302,18 +320,20 @@ switchD_00435c5c_caseD_1:
     if (arg_2 == (int *)0x0) {
       return 1;
     }
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_4 = (int *)0x0;
     if (0 < (int)dVar3) {
       do {
         DArrayGetElement(param_2,(uint)param_4,&param_1);
-        if ((short)param_1 != -1) {
+        if ((ushort)param_1 != 0xffff) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
+          pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,(ushort)param_1,CASE_1);
           uVar6 = (*pSVar5->vtable->vfunc_28)(4,arg_2,param_5,param_6);
           if ((short)uVar6 == 0x18) {
             return 0x18;
           }
         }
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_4 = (int *)((int)param_4 + 1);
       } while ((int)param_4 < (int)dVar3);
       return 1;
@@ -323,36 +343,40 @@ switchD_00435c5c_caseD_1:
     if (arg_2 == (int *)0x0) {
       return 1;
     }
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_4 = (int *)0x0;
     if (0 < (int)dVar3) {
       do {
         DArrayGetElement(param_2,(uint)param_4,&param_1);
-        if ((short)param_1 != -1) {
+        if ((ushort)param_1 != 0xffff) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
+          pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,(ushort)param_1,CASE_1);
           uVar6 = (*pSVar5->vtable->vfunc_28)(5,arg_2,param_5,param_6);
           if ((short)uVar6 == 0xd) {
             return 0xd;
           }
         }
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_4 = (int *)((int)param_4 + 1);
       } while ((int)param_4 < (int)dVar3);
       return 1;
     }
     break;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   case CASE_6:
     param_4 = (int *)0x0;
     if (0 < (int)dVar3) {
       do {
         DArrayGetElement(param_2,(uint)param_4,&param_1);
-        if ((short)param_1 != -1) {
+        if ((ushort)param_1 != 0xffff) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
+          pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,(ushort)param_1,CASE_1);
           uVar6 = (*pSVar5->vtable->vfunc_28)(6,arg_2,param_5,param_6);
           if ((short)uVar6 == 0xf) {
             return 0xf;
           }
         }
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_4 = (int *)((int)param_4 + 1);
       } while ((int)param_4 < (int)dVar3);
       return 1;
@@ -362,13 +386,14 @@ switchD_00435c5c_caseD_1:
     if (arg_2 == (int *)0x0) {
       return 1;
     }
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_4 = (int *)0x0;
     if (0 < (int)dVar3) {
       do {
         DArrayGetElement(param_2,(uint)param_4,&param_1);
-        if ((short)param_1 != -1) {
+        if ((ushort)param_1 != 0xffff) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
+          pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,(ushort)param_1,CASE_1);
           uVar6 = (*pSVar5->vtable->vfunc_28)(7,arg_2,param_5,param_6);
           sVar4 = (short)uVar6;
           if (sVar4 == 9) {
@@ -381,41 +406,46 @@ switchD_00435c5c_caseD_1:
             return 0xb;
           }
         }
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_4 = (int *)((int)param_4 + 1);
       } while ((int)param_4 < (int)dVar3);
     }
     return 1;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   case CASE_8:
     param_4 = (int *)0x0;
     if (0 < (int)dVar3) {
       do {
         DArrayGetElement(param_2,(uint)param_4,&param_1);
-        if ((short)param_1 != -1) {
+        if ((ushort)param_1 != 0xffff) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
+          pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,(ushort)param_1,CASE_1);
           uVar6 = (*pSVar5->vtable->vfunc_28)(8,arg_2,param_5,param_6);
           if ((short)uVar6 == 0x11) {
             return 0x11;
           }
         }
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_4 = (int *)((int)param_4 + 1);
       } while ((int)param_4 < (int)dVar3);
       return 1;
     }
     break;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   case CASE_9:
     param_4 = (int *)0x0;
     if (0 < (int)dVar3) {
       do {
         DArrayGetElement(param_2,(uint)param_4,&param_1);
-        if ((short)param_1 != -1) {
+        if ((ushort)param_1 != 0xffff) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
+          pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,(ushort)param_1,CASE_1);
           uVar6 = (*pSVar5->vtable->vfunc_28)(9,arg_2,param_5,param_6);
           if ((short)uVar6 == 8) {
             return 8;
           }
         }
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_4 = (int *)((int)param_4 + 1);
       } while ((int)param_4 < (int)dVar3);
       return 1;
@@ -425,30 +455,33 @@ switchD_00435c5c_caseD_1:
     if (arg_2 == (int *)0x0) {
       return 1;
     }
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_4 = (int *)0x0;
     if (0 < (int)dVar3) {
       do {
         DArrayGetElement(param_2,(uint)param_4,&param_1);
-        if ((short)param_1 != -1) {
+        if ((ushort)param_1 != 0xffff) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
+          pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,(ushort)param_1,CASE_1);
           uVar6 = (*pSVar5->vtable->vfunc_28)(10,arg_2,param_5,param_6);
           if ((short)uVar6 == 0xc) {
             return 0xc;
           }
         }
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_4 = (int *)((int)param_4 + 1);
       } while ((int)param_4 < (int)dVar3);
       return 1;
     }
     break;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   case CASE_D:
     if ((arg_2 != (int *)0x0) && (param_4 = (int *)0x0, 0 < (int)dVar3)) {
       do {
         DArrayGetElement(param_2,(uint)param_4,&param_1);
-        if ((short)param_1 != -1) {
+        if ((ushort)param_1 != 0xffff) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
+          pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,(ushort)param_1,CASE_1);
           if ((STGameObjC *)arg_2 == pSVar5) {
             return 0;
           }
@@ -457,6 +490,7 @@ switchD_00435c5c_caseD_1:
             return 0x17;
           }
         }
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_4 = (int *)((int)param_4 + 1);
         if ((int)dVar3 <= (int)param_4) {
           return 1;
@@ -464,14 +498,15 @@ switchD_00435c5c_caseD_1:
       } while( true );
     }
     break;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   case CASE_E:
     param_4 = (int *)0x0;
     if (0 < (int)dVar3) {
       do {
         DArrayGetElement(param_2,(uint)param_4,&param_1);
-        if ((short)param_1 != -1) {
+        if ((ushort)param_1 != 0xffff) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
+          pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,(ushort)param_1,CASE_1);
           if ((STGameObjC *)arg_2 == pSVar5) {
             return 0;
           }
@@ -480,6 +515,7 @@ switchD_00435c5c_caseD_1:
             return 0x14;
           }
         }
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_4 = (int *)((int)param_4 + 1);
       } while ((int)param_4 < (int)dVar3);
     }
@@ -488,18 +524,20 @@ switchD_00435c5c_caseD_1:
     if (arg_2 == (int *)0x0) {
       return 1;
     }
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_4 = (int *)0x0;
     if (0 < (int)dVar3) {
       do {
         DArrayGetElement(param_2,(uint)param_4,&param_1);
-        if ((short)param_1 != -1) {
+        if ((ushort)param_1 != 0xffff) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
+          pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,(ushort)param_1,CASE_1);
           uVar6 = (*pSVar5->vtable->vfunc_28)(0x10,arg_2,param_5,param_6);
           if ((short)uVar6 == 0x16) {
             return 0x16;
           }
         }
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_4 = (int *)((int)param_4 + 1);
       } while ((int)param_4 < (int)dVar3);
       return 1;
@@ -509,18 +547,20 @@ switchD_00435c5c_caseD_1:
     if (arg_2 == (int *)0x0) {
       return 1;
     }
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_4 = (int *)0x0;
     if (0 < (int)dVar3) {
       do {
         DArrayGetElement(param_2,(uint)param_4,&param_1);
-        if ((short)param_1 != -1) {
+        if ((ushort)param_1 != 0xffff) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
+          pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,(ushort)param_1,CASE_1);
           uVar6 = (*pSVar5->vtable->vfunc_28)(0x11,arg_2,param_5,param_6);
           if ((short)uVar6 == 0x12) {
             return 0x12;
           }
         }
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_4 = (int *)((int)param_4 + 1);
       } while ((int)param_4 < (int)dVar3);
       return 1;
@@ -530,18 +570,20 @@ switchD_00435c5c_caseD_1:
     if (arg_2 == (int *)0x0) {
       return 1;
     }
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_4 = (int *)0x0;
     if (0 < (int)dVar3) {
       do {
         DArrayGetElement(param_2,(uint)param_4,&param_1);
-        if ((short)param_1 != -1) {
+        if ((ushort)param_1 != 0xffff) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
+          pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,(ushort)param_1,CASE_1);
           uVar6 = (*pSVar5->vtable->vfunc_28)(0x12,arg_2,param_5,param_6);
           if ((short)uVar6 == 0x13) {
             return 0x13;
           }
         }
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_4 = (int *)((int)param_4 + 1);
       } while ((int)param_4 < (int)dVar3);
       return 1;
@@ -551,13 +593,14 @@ switchD_00435c5c_caseD_1:
     if (arg_2 == (int *)0x0) {
       return 1;
     }
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_4 = (int *)0x0;
     if (0 < (int)dVar3) {
       do {
         DArrayGetElement(param_2,(uint)param_4,&param_1);
-        if ((short)param_1 != -1) {
+        if ((ushort)param_1 != 0xffff) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
+          pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,(ushort)param_1,CASE_1);
           if ((STGameObjC *)arg_2 == pSVar5) {
             return 0;
           }
@@ -566,6 +609,7 @@ switchD_00435c5c_caseD_1:
             return 0x1a;
           }
         }
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_4 = (int *)((int)param_4 + 1);
         if ((int)dVar3 <= (int)param_4) {
           return 1;
@@ -573,14 +617,15 @@ switchD_00435c5c_caseD_1:
       } while( true );
     }
     break;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   case CASE_18:
     param_4 = (int *)0x0;
     if (0 < (int)dVar3) {
       do {
         DArrayGetElement(param_2,(uint)param_4,&param_1);
-        if ((short)param_1 != -1) {
+        if ((ushort)param_1 != 0xffff) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
+          pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,(ushort)param_1,CASE_1);
           if ((STGameObjC *)arg_2 == pSVar5) {
             return 0;
           }
@@ -589,6 +634,7 @@ switchD_00435c5c_caseD_1:
             return 0x1d;
           }
         }
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_4 = (int *)((int)param_4 + 1);
         if ((int)dVar3 <= (int)param_4) {
           return 1;
@@ -596,19 +642,21 @@ switchD_00435c5c_caseD_1:
       } while( true );
     }
     break;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   case CASE_2D:
     param_4 = (int *)0x0;
     if (0 < (int)dVar3) {
       do {
         DArrayGetElement(param_2,(uint)param_4,&param_1);
-        if ((short)param_1 != -1) {
+        if ((ushort)param_1 != 0xffff) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
+          pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,(ushort)param_1,CASE_1);
           uVar6 = (*pSVar5->vtable->vfunc_28)(0x2d,arg_2,param_5,param_6);
           if ((short)uVar6 == 0x10) {
             return 0x10;
           }
         }
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_4 = (int *)((int)param_4 + 1);
       } while ((int)param_4 < (int)dVar3);
       return 1;
@@ -618,18 +666,20 @@ switchD_00435c5c_caseD_1:
     if (arg_2 == (int *)0x0) {
       return 1;
     }
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_4 = (int *)0x0;
     if (0 < (int)dVar3) {
       do {
         DArrayGetElement(param_2,(uint)param_4,&param_1);
-        if ((short)param_1 != -1) {
+        if ((ushort)param_1 != 0xffff) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,param_1,CASE_1);
+          pSVar5 = STAllPlayersC::GetObjPtr(in_ECX,objPtr,(ushort)param_1,CASE_1);
           uVar6 = (*pSVar5->vtable->vfunc_28)(0x4d,arg_2,param_5,param_6);
           if ((short)uVar6 == 0x1d) {
             return 0x1d;
           }
         }
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_4 = (int *)((int)param_4 + 1);
       } while ((int)param_4 < (int)dVar3);
       return 1;

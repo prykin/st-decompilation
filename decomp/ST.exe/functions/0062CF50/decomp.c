@@ -7,10 +7,10 @@
 void __thiscall STManRub3C::sub_0062CF50(STManRub3C *this)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   int iVar2;
 
-  puVar1 = &this->field_0030;
+  puVar1 = this->field_0030;
   iVar2 = 8;
   do {
     if ((DArrayTy *)*puVar1 != (DArrayTy *)0x0) {

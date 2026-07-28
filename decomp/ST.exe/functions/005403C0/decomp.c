@@ -21,7 +21,7 @@ void __cdecl PutDDX(int param_1,int param_2,char param_3,BITMAPINFO *param_4)
     errorCode = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0);
     if (errorCode == 0) {
       if (param_3 == '\x01') {
-        FUN_006b4640((uint)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,param_1,param_2,param_4,
+        FUN_006b4640(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,param_1,param_2,param_4,
                      (uint *)0x0);
       }
       else if (param_3 == '\x06') {

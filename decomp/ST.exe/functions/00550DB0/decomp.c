@@ -21,7 +21,7 @@ void __thiscall TradePanelTy::InitTradePanel(TradePanelTy *this)
   uint uVar10;
   int *piVar11;
   bool bVar12;
-  undefined4 uVar13;
+  int iVar13;
   undefined4 uVar14;
   int iVar15;
   uint uVar16;
@@ -91,10 +91,10 @@ void __thiscall TradePanelTy::InitTradePanel(TradePanelTy *this)
     iVar17 = 0xb;
     iVar15 = 0xbf;
     uVar14 = 3;
-    uVar13 = 0x40;
+    iVar13 = 0x40;
     pCVar4 = thunk_FUN_00571240("BKG_TRADECENTERW",0);
     SpecPanelTy::InitPanel
-              ((SpecPanelTy *)this_00,pCVar4,uVar13,uVar14,iVar15,iVar17,UVar18,iVar8,uVar21);
+              ((SpecPanelTy *)this_00,pCVar4,iVar13,uVar14,iVar15,iVar17,UVar18,iVar8,uVar21);
     pcVar5 = (ccFntTy *)ccFntTy::operator_new(0x19d,g_cMf32_00806790,"MONEY_FONT",0);
     uVar10 = 1;
     this_00->field_01DD = pcVar5;
@@ -121,14 +121,14 @@ void __thiscall TradePanelTy::InitTradePanel(TradePanelTy *this)
     puVar9 = local_5e0 + 1;
     local_c = (-(uint)(DAT_0080874e != '\x03') & 0xfffffffe) + 0x22 + this_00->field_003C;
     do {
-      iVar15 = local_1c;
+      iVar13 = local_1c;
       bVar12 = bVar7 == local_5;
       puVar9[-1] = uVar10;
       *puVar9 = (uint)bVar12;
       puVar9[2] = local_c;
       puVar9[4] = 0x3a;
       iVar8 = DAT_00806734;
-      if (iVar15 != 0) {
+      if (iVar13 != 0) {
         iVar8 = this_00->field_0044;
       }
       bVar7 = bVar7 + 1;
@@ -154,9 +154,9 @@ void __thiscall TradePanelTy::InitTradePanel(TradePanelTy *this)
     (*this_00->field_000C->vtable->CreateObject)
               ((SystemClassTy *)this_00->field_000C,5,&this_00->field_01C4,(int *)0x0,local_74,0);
     local_e8 = this_00->field_0008;
-    iVar15 = 1;
+    iVar13 = 1;
     piVar20 = (int *)0x0;
-    uVar13 = 0;
+    uVar14 = 0;
     iVar8 = 1;
     local_490[0] = 0;
     local_e4 = 2;
@@ -168,26 +168,26 @@ void __thiscall TradePanelTy::InitTradePanel(TradePanelTy *this)
     local_490[2] = 0;
     local_490[3] = 2;
     pCVar4 = thunk_FUN_00571240("BUT_TBUP",0);
-    pCVar4 = FUN_006f2c00(pCVar4,iVar8,uVar13);
-    local_18 = cMf32::RecGet(g_cMf32_00806790,1,pCVar4,piVar20,iVar15);
+    pCVar4 = FUN_006f2c00(pCVar4,iVar8,uVar14);
+    local_18 = cMf32::RecGet(g_cMf32_00806790,1,pCVar4,piVar20,iVar13);
     local_478 = *(undefined4 *)(local_18 + 2);
     local_474 = *(undefined4 *)(local_18 + 4);
     cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_18);
     iVar8 = this_00->field_005C;
     local_490[4] = this_00->field_003C + 0x69;
-    iVar15 = DAT_00806734;
+    iVar13 = DAT_00806734;
     if (iVar8 != 0) {
-      iVar15 = this_00->field_0044;
+      iVar13 = this_00->field_0044;
     }
     local_424 = 2;
-    local_490[5] = iVar15 + 0x46;
+    local_490[5] = iVar13 + 0x46;
     local_428 = this_00->field_0008;
     local_420 = 0xc005;
     local_378 = 500;
     local_374 = 0x28;
     piVar20 = local_490 + 2;
     piVar11 = local_308;
-    for (iVar15 = 0x5f; iVar15 != 0; iVar15 = iVar15 + -1) {
+    for (iVar13 = 0x5f; iVar13 != 0; iVar13 = iVar13 + -1) {
       *piVar11 = *piVar20;
       piVar20 = piVar20 + 1;
       piVar11 = piVar11 + 1;

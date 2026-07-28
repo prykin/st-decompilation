@@ -24,14 +24,15 @@ int __thiscall FUN_004e1930(void *this,int *param_1,int param_2)
       param_2 = iVar1;
     }
     *(int *)((int)this + 0x4e0) = iVar1 - param_2;
-    this_00 = thunk_FUN_004d85e0(*(int *)((int)this + 0x5b0),*(int *)((int)this + 0x5b4),
+    this_00 = (STResourceC *)
+              thunk_FUN_004d85e0(*(int *)((int)this + 0x5b0),*(int *)((int)this + 0x5b4),
                                  *(int *)((int)this + 0x5b8));
     if (this_00 != (STResourceC *)0x0) {
       STResourceC::SetResource(this_00,*(int *)((int)this + 0x4e0),1);
     }
     if ((*(int *)((int)this + 0x4e0) == 0) && (param_2 != 0)) {
       *(undefined4 *)((int)this + 0x4d4) = 0;
-      pSVar2 = thunk_FUN_0042b760(*(char *)((int)this + 0x24),(uint)*(ushort *)((int)this + 0x30));
+      pSVar2 = thunk_FUN_0042b760(*(char *)((int)this + 0x24),*(ushort *)((int)this + 0x30));
       if ((pSVar2 != (STGroupBoatC *)0x0) && ((undefined4 *)pSVar2->field_001C != (undefined4 *)0x0)
          ) {
         local_c = *(undefined4 *)((int)this + 0x18);

@@ -15,6 +15,7 @@ undefined4 __thiscall FUN_005f9cb0(void *this,int param_1,int *param_2,int *para
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     iVar4 = *(int *)(iVar2 + 0x60) - (param_1 - *(int *)(iVar2 + 0x68)) * *(int *)(iVar2 + 100);
     if (iVar4 < 1) {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = 3;
       iVar4 = 0;
       goto LAB_005f9d2f;
@@ -26,11 +27,13 @@ undefined4 __thiscall FUN_005f9cb0(void *this,int param_1,int *param_2,int *para
     }
     iVar4 = (param_1 - *(int *)(iVar2 + 0x68)) * *(int *)(iVar2 + 100) + *(int *)(iVar2 + 0x60);
     if (*(int *)(iVar2 + 0x5c) <= iVar4) {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = 3;
       iVar4 = *(int *)(iVar2 + 0x5c) + -1;
       goto LAB_005f9d2f;
     }
   }
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = 1;
 LAB_005f9d2f:
   iVar3 = (int)*(short *)(*(int *)(iVar2 + 0x58) + 2 + iVar4 * 4);

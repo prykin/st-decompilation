@@ -3,9 +3,12 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
-   STBoatC::LoadObj */
+   STBoatC::LoadObj
 
-int __thiscall STBoatC::LoadObj(STBoatC *this,int param_1)
+   [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 004732F0 -> 006E62D0 @ 004733E4 */
+
+int __thiscall STBoatC::LoadObj(STBoatC *this,AnonShape_005EFAE0_B406B78B *param_1)
 
 {
   undefined2 *puVar1;
@@ -89,7 +92,9 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,int param_1)
 
   uVar4 = 0;
   local_c = (STFishC *)0x0;
-  if ((param_1 == 0) || (pSVar11 = this, param_1 == 1)) {
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+  if ((param_1 == (AnonShape_005EFAE0_B406B78B *)0x0) ||
+     (pSVar11 = this, param_1 == (AnonShape_005EFAE0_B406B78B *)0x1)) {
     memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
     this->field_02C4 = 0;
     if (this->field_07CA != 0) {
@@ -98,7 +103,8 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,int param_1)
     sVar15 = *(short *)&this->field_0x3ba;
     sVar16 = *(short *)&this->field_0x3bc;
     sVar17 = *(short *)&this->field_0x3be;
-    param_1 = *(int *)&this->field_0x3c0;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+    param_1 = *(AnonShape_005EFAE0_B406B78B **)&this->field_0x3c0;
     puVar1 = &this->field_0588;
     this->field_058A = sVar16;
     *puVar1 = sVar15;
@@ -114,7 +120,8 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,int param_1)
                 [(int)sVar16 * (int)g_worldGrid.sizeX + (int)g_worldGrid.planeStride * (int)sVar17 +
                  (int)sVar15].objects[0];
     }
-    if ((local_c == (STFishC *)0x0) || (local_c->field_0018 != param_1)) {
+    if ((local_c == (STFishC *)0x0) ||
+       ((AnonShape_005EFAE0_B406B78B *)local_c->field_0018 != param_1)) {
       iVar10 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,param_1,(int *)&local_c);
       if (iVar10 == -4) {
         return 0;
@@ -186,10 +193,10 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,int param_1)
       }
       if ((((local_c == (STFishC *)0x0) || (local_c->field_0018 != this->field_058E)) &&
           (iVar10 = STPlaySystemC::sub_006E62D0
-                              (g_playSystem_00802A38,this->field_058E,(int *)&local_c), iVar10 == -4
-          )) || ((iVar10 = (*local_c->vtable->vfunc_A4)(), iVar10 == 1 ||
-                 (iVar10 = (*local_c->vtable->vfunc_C0)(), iVar10 == 1))))
-      goto cf_common_exit_004743A5;
+                              (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)this->field_058E
+                               ,(int *)&local_c), iVar10 == -4)) ||
+         ((iVar10 = (*local_c->vtable->vfunc_A4)(), iVar10 == 1 ||
+          (iVar10 = (*local_c->vtable->vfunc_C0)(), iVar10 == 1)))) goto cf_common_exit_004743A5;
       STFishC::sub_004162F0(local_c,&this->field_0588,&this->field_058A,&this->field_058C);
       iVar10 = GetCellForLoading(this,this->field_005B,this->field_005D,this->field_005F,
                                  this->field_0588,this->field_058A,this->field_058C,&local_6,
@@ -234,7 +241,7 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,int param_1)
   }
   iVar10 = this->field_0596;
   if (iVar10 == 1) {
-    iVar10 = (*this->vtable->vfunc_D8)(this);
+    iVar10 = this->vfunc_D8();
     if (iVar10 != 0) {
       return -1;
     }
@@ -256,8 +263,8 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,int param_1)
       }
       if (((local_c == (STFishC *)0x0) || (local_c->field_0018 != this->field_058E)) &&
          (iVar10 = STPlaySystemC::sub_006E62D0
-                             (g_playSystem_00802A38,this->field_058E,(int *)&local_c), iVar10 == -4)
-         ) {
+                             (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)this->field_058E,
+                              (int *)&local_c), iVar10 == -4)) {
         return 0;
       }
       iVar10 = (*local_c->vtable->vfunc_A4)();
@@ -334,18 +341,19 @@ LAB_004736e2:
                  (int)sVar15].objects[0];
     }
     if (((local_c == (STFishC *)0x0) || (local_c->field_0018 != this->field_058E)) &&
-       (iVar10 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,this->field_058E,(int *)&local_c)
-       , iVar10 == -4)) {
+       (iVar10 = STPlaySystemC::sub_006E62D0
+                           (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)this->field_058E,
+                            (int *)&local_c), iVar10 == -4)) {
       return 0;
     }
     iVar10 = (*local_c->vtable->vfunc_A4)();
     if ((iVar10 == 1) || (iVar10 = (*local_c->vtable->vfunc_C0)(), iVar10 == 1)) {
       sub_00492420(this);
-      iVar10 = (*this->vtable->vfunc_D8)(this);
+      iVar10 = this->vfunc_D8();
       return -(uint)(iVar10 != 0);
     }
 cf_common_exit_0047405D:
-    iVar10 = (*this->vtable->vfunc_D8)(this);
+    iVar10 = this->vfunc_D8();
     return (-(uint)(iVar10 != 0) & 0xfffffffd) + 2;
   }
   if (iVar10 == 3) {
@@ -420,7 +428,7 @@ cf_common_exit_0047405D:
         local_20 = (undefined4 *)&this->field_0x2b3;
         do {
           puVar8 = (undefined4 *)
-                   thunk_FUN_0041dc40(local_40,(short)*local_20,*(undefined2 *)(local_20 + 1),
+                   thunk_FUN_0041dc40(local_40,(short)*local_20,*(ushort *)(local_20 + 1),
                                       this->field_006C);
           local_38 = *puVar8;
           local_34 = *(short *)(puVar8 + 1);
@@ -512,7 +520,7 @@ cf_common_exit_0047405D:
       if (((local_c != (STFishC *)0x0) && (local_c->field_0018 == this->field_058E)) &&
          ((iVar10 = (*local_c->vtable->vfunc_A4)(), iVar10 != 1 &&
           (iVar10 = (*local_c->vtable->vfunc_C0)(), iVar10 != 1)))) {
-        (*local_c->vtable->vfunc_B4)(local_c);
+        local_c->vfunc_B4();
         this->field_07CA = this->field_058E;
         this->field_07CE = 0;
         sub_0041C5A0(this);
@@ -520,9 +528,11 @@ cf_common_exit_0047405D:
                            (AnonShape_00495FF0_59081BDD *)this);
         DumpClassC::WritePtr
                   (this->field_0588,this->field_058A,this->field_058C,0,
-                   (AnonShape_00495EC0_95A268C6 *)this);
-        TLOEmbryoTy::sub_0041C3F0((TLOEmbryoTy *)this,(undefined *)this->field_070A);
-        iVar10 = (*this->vtable->vfunc_D8)(this);
+                   (RecoveredRecord_DumpClassC_00495EC0 *)this);
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+        TLOEmbryoTy::sub_0041C3F0((TLOEmbryoTy *)this,*(undefined **)((int)this->field_06CB + 0x3f))
+        ;
+        iVar10 = this->vfunc_D8();
         return -(uint)(iVar10 != 0);
       }
       sub_00492420(this);
@@ -572,7 +582,7 @@ switchD_004734db_caseD_2:
         local_20 = (undefined4 *)&this->field_0x2b3;
         do {
           puVar8 = (undefined4 *)
-                   thunk_FUN_0041dc40(local_40,(short)*local_20,*(undefined2 *)(local_20 + 1),
+                   thunk_FUN_0041dc40(local_40,(short)*local_20,*(ushort *)(local_20 + 1),
                                       this->field_006C);
           local_38 = *puVar8;
           local_34 = *(short *)(puVar8 + 1);
@@ -640,17 +650,17 @@ switchD_004734db_caseD_2:
       }
       if (local_24 == 0) {
         FUN_006ea2f0(this->field_0211,this->field_01ED);
-        iVar10 = (*this->vtable->vfunc_D8)(this);
+        iVar10 = this->vfunc_D8();
         return -(uint)(iVar10 != 0);
       }
     }
     if (this->field_059A == 9) {
-      iVar10 = (*this->vtable->vfunc_D8)(this);
+      iVar10 = this->vfunc_D8();
       return -(uint)(iVar10 != 0);
     }
   }
 LAB_00473b6c:
-  iVar10 = (*this->vtable->vfunc_D8)(this);
+  iVar10 = this->vfunc_D8();
   return (-(uint)(iVar10 != 0) & 0xfffffffd) + 2;
 }
 

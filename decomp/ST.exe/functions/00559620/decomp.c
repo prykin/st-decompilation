@@ -8,17 +8,28 @@
    [STMethodOwnerApplier] Structural method owner recovered as VisibleClassTy.
    Evidence: this_call_owners=[VisibleClassTy]; agreed_this_calls=2; incoming_this_accesses=5;
    incoming_edx_uses=0; incoming_stack_parameter_uses=23; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=2; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=2; owner_evidence_coverage=adequate
+
+   [STPrototypeApplier] Propagated parameter 3.
+   Evidence: 0041C5A0 -> 00559620 @ 0041C60F; MOVSX at 0041C5F9 establishes signed source width 2 |
+   0041CF50 -> 00559620 @ 0041CF7D; MOVSX at 0041CF6D establishes signed source width 2
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0), and
+   decompilation contains no value return
+
+   [STPrototypeApplier] Propagated parameter 6.
+   Evidence: 00559620 -> 0055BBC0 @ 00559691 */
 
 void __thiscall
 VisibleClassTy::sub_00559620
-          (VisibleClassTy *this,int param_1,int param_2,undefined1 param_3,undefined *param_4,
-          int param_5,undefined4 param_6,uint param_7)
+          (VisibleClassTy *this,int param_1,int param_2,char param_3,undefined *param_4,int param_5,
+          int param_6,uint param_7)
 
 {
   int iVar1;
   byte bVar2;
-  undefined *puVar3;
+  byte *pbVar3;
   int iVar4;
   int iVar5;
   int iVar6;
@@ -30,22 +41,24 @@ VisibleClassTy::sub_00559620
       ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
        ((byte)(&DAT_008087e9)[(int)param_4 * 0x51] < 8)))))) {
     if ((param_7 & 0x1000) != 0) {
-      sub_0055BBC0(this,1,(short)param_1,(short)param_2,param_3,(uint)param_4,(char)param_5,param_6)
+      sub_0055BBC0(this,1,(short)param_1,(short)param_2,param_3,(uint)param_4,(byte)param_5,param_6)
       ;
     }
     if (((param_4 + 0xfc)[(int)this] != '\0') && ((param_7 & 2) != 0)) {
       iVar1 = param_5 * 2 + 1;
       iVar5 = param_1 - param_5;
       iVar8 = param_2 - param_5;
-      puVar3 = thunk_FUN_005532f0(param_5);
-      param_4 = puVar3;
+      pbVar3 = thunk_FUN_005532f0(param_5);
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+      param_4 = pbVar3;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_5 = iVar1;
       if (0 < iVar1) {
         do {
           iVar4 = 0;
           iVar7 = iVar5;
           do {
-            if (((((puVar3 == (undefined *)0x0) || (param_4[iVar4] != '\0')) && (-1 < iVar7)) &&
+            if (((((pbVar3 == (byte *)0x0) || (param_4[iVar4] != '\0')) && (-1 < iVar7)) &&
                 ((iVar7 < this->field_0020 && (-1 < iVar8)))) && (iVar8 < this->field_0024)) {
               iVar6 = iVar8 * this->field_0020 + iVar7;
               bVar2 = this->field_0038[iVar6 * 2 + 1];
@@ -57,7 +70,9 @@ VisibleClassTy::sub_00559620
             iVar7 = iVar7 + 1;
           } while (iVar4 < iVar1);
           iVar8 = iVar8 + 1;
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_5 = param_5 + -1;
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_4 = param_4 + iVar1;
         } while (param_5 != 0);
       }

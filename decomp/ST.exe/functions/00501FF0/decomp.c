@@ -18,15 +18,15 @@ void __thiscall CPanelTy::Update2PanelWB(CPanelTy *this)
 
 {
   CPanelTy_field_0B99State *pCVar1;
-  uint uVar2;
+  ushort *puVar2;
   code *pcVar3;
   CPanelTy *this_00;
   int iVar4;
   int iVar5;
   CPanelTy_field_0B99State *pCVar6;
-  AnonShape_00501D00_04A7E309 *pAVar7;
+  RecoveredRecord_CPanelTy_00501D00 *pRVar7;
   InternalExceptionFrame local_a8;
-  AnonShape_00501D00_04A7E309 local_64;
+  RecoveredRecord_CPanelTy_00501D00 local_64;
   CPanelTy *local_8;
 
   local_a8.previous = g_currentExceptionFrame;
@@ -46,11 +46,11 @@ void __thiscall CPanelTy::Update2PanelWB(CPanelTy *this)
   }
   pCVar1 = &local_8->field_0B99;
   pCVar6 = pCVar1;
-  pAVar7 = &local_64;
+  pRVar7 = &local_64;
   for (iVar4 = 0x17; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *(CPanelTy_field_0B99State *)pAVar7 = *pCVar6;
+    *(CPanelTy_field_0B99State *)pRVar7 = *pCVar6;
     pCVar6 = pCVar6 + 1;
-    pAVar7 = (AnonShape_00501D00_04A7E309 *)&pAVar7->field_0x4;
+    pRVar7 = (RecoveredRecord_CPanelTy_00501D00 *)&pRVar7->field_0x4;
   }
   memset(pCVar1, 0, 0x5c); /* compiler bulk-zero initialization */
   STAllPlayersC::GetPanelInfo(g_allPlayers_007FA174,2,(AnonShape_0043BEB0_1C00EC12 *)pCVar1);
@@ -79,7 +79,7 @@ cf_common_exit_00502155:
         return;
       }
       PaintBCapacity(this_00);
-      uVar2 = this_00->field_0154;
+      puVar2 = this_00->field_0148[3];
       break;
     default:
       goto switchD_0050207d_default;
@@ -92,7 +92,7 @@ cf_common_exit_00502155:
         return;
       }
       PaintBEnergy(this_00);
-      uVar2 = this_00->field_0154;
+      puVar2 = this_00->field_0148[3];
     }
     break;
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -112,14 +112,14 @@ cf_common_exit_00502155:
       return;
     }
     PaintBEnergy(this_00);
-    uVar2 = this_00->field_0154;
+    puVar2 = this_00->field_0148[3];
     break;
   default:
     goto switchD_0050207d_default;
   }
-  if (-1 < (int)uVar2) {
+  if (-1 < (int)puVar2) {
     Library::DKW::DDX::FUN_006b3640
-              ((int *)PTR_008075a8,uVar2,0xffffffff,this_00->field_0048,this_00->field_00A0);
+              ((int *)PTR_008075a8,(uint)puVar2,0xffffffff,this_00->field_0048,this_00->field_00A0);
   }
 switchD_0050207d_default:
   g_currentExceptionFrame = local_a8.previous;

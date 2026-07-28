@@ -1,4 +1,7 @@
 
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 00693DC0 -> 00693D00 @ 00693E07 */
+
 undefined4 FUN_00693dc0(cMf32 *param_1,undefined4 param_2)
 
 {

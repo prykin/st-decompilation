@@ -6,11 +6,15 @@
    STPlaySystemC::SetCtrlCmd
 
    [STPrototypeApplier] Propagated parameter 2.
-   Evidence: 0054EDF0 -> 0054EEE0 @ 0054EE87 */
+   Evidence: 0054EDF0 -> 0054EEE0 @ 0054EE87
+
+   [STPrototypeApplier] Propagated parameter 4.
+   Evidence: 0054EDF0 -> 0054EEE0 @ 0054EE42; FUN_0054edf0 parameter param_2 | 0054EDF0 -> 0054EEE0
+   @ 0054EE87; FUN_0054edf0 parameter param_2 */
 
 void __thiscall
 STPlaySystemC::SetCtrlCmd
-          (STPlaySystemC *this,undefined1 param_1,uint param_2,char param_3,undefined4 *param_4,
+          (STPlaySystemC *this,undefined1 param_1,uint param_2,char param_3,uint *param_4,
           uint param_5,undefined4 *param_6,uint param_7)
 
 {
@@ -23,7 +27,8 @@ STPlaySystemC::SetCtrlCmd
   uint uVar7;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   int unaff_EDI;
-  undefined4 *puVar8;
+  uint *puVar8;
+  undefined4 *puVar9;
   InternalExceptionFrame local_54;
   int local_10;
   uint local_c;
@@ -95,32 +100,32 @@ STPlaySystemC::SetCtrlCmd
     *(uint *)((int)puVar4 + 0xf) = uVar7;
     *(uint *)((int)puVar4 + 0x13) = param_7;
     local_c = iVar3;
-    if (param_4 != (undefined4 *)0x0) {
+    if (param_4 != (uint *)0x0) {
       uVar6 = uVar7 >> 2;
-      *(undefined4 **)((int)puVar4 + 0x17) = (undefined4 *)((int)puVar4 + 0x1b);
-      puVar8 = (undefined4 *)((int)puVar4 + 0x1b);
+      *(uint **)((int)puVar4 + 0x17) = (uint *)((int)puVar4 + 0x1b);
+      puVar8 = (uint *)((int)puVar4 + 0x1b);
       for (; uVar6 != 0; uVar6 = uVar6 - 1) {
         *puVar8 = *param_4;
         param_4 = param_4 + 1;
         puVar8 = puVar8 + 1;
       }
       for (uVar7 = uVar7 & 3; local_c = local_10, uVar7 != 0; uVar7 = uVar7 - 1) {
-        *(undefined1 *)puVar8 = *(undefined1 *)param_4;
-        param_4 = (undefined4 *)((int)param_4 + 1);
-        puVar8 = (undefined4 *)((int)puVar8 + 1);
+        *(char *)puVar8 = (char)*param_4;
+        param_4 = (uint *)((int)param_4 + 1);
+        puVar8 = (uint *)((int)puVar8 + 1);
       }
     }
     if ((param_6 != (undefined4 *)0x0) && (param_7 != 0)) {
-      puVar8 = (undefined4 *)(*(int *)((int)puVar4 + 0x17) + *(int *)((int)puVar4 + 0xf));
+      puVar9 = (undefined4 *)(*(int *)((int)puVar4 + 0x17) + *(int *)((int)puVar4 + 0xf));
       for (uVar7 = param_7 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-        *puVar8 = *param_6;
+        *puVar9 = *param_6;
         param_6 = param_6 + 1;
-        puVar8 = puVar8 + 1;
+        puVar9 = puVar9 + 1;
       }
       for (uVar7 = param_7 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-        *(undefined1 *)puVar8 = *(undefined1 *)param_6;
+        *(undefined1 *)puVar9 = *(undefined1 *)param_6;
         param_6 = (undefined4 *)((int)param_6 + 1);
-        puVar8 = (undefined4 *)((int)puVar8 + 1);
+        puVar9 = (undefined4 *)((int)puVar9 + 1);
       }
     }
     if (DAT_0080877e == '\0') {

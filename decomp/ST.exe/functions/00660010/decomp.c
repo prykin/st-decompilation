@@ -40,23 +40,21 @@ LAB_00660050:
     DArrayDestroy(array);
     return 0xffffffff;
   }
-  if ((param_1->field_007D != -2) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) {
-    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-    this = thunk_FUN_0042b760(*(char *)&param_1->field_0024,
-                              CONCAT22(extraout_var,param_1->field_007D));
+  if ((param_1->field_007D != 0xfffe) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) {
+    this = thunk_FUN_0042b760(*(char *)&param_1->field_0024,param_1->field_007D);
     if (this != (STGroupBoatC *)0x0) {
       if (param_1->field_0039 == 3) {
         local_14 = 1;
         local_10 = (DArrayTy *)0x0;
         local_c = 0;
-        (*this->vtable->SetOrderData)(this,CASE_11,&local_14);
+        this->SetOrderData(CASE_11,&local_14);
         uVar2 = local_8;
         DArrayDestroy(array);
         return uVar2;
       }
       local_14 = 0;
       local_10 = array;
-      (*this->vtable->SetOrderData)(this,CASE_4,&local_14);
+      this->SetOrderData(CASE_4,&local_14);
       uVar2 = local_8;
       DArrayDestroy(array);
       return uVar2;

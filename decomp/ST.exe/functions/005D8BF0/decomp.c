@@ -3,7 +3,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\sid_obj.cpp
-   SIDTy::PrepFiles */
+   SIDTy::PrepFiles
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=3, used=0), and
+   decompilation contains no value return */
 
 void __thiscall SIDTy::PrepFiles(SIDTy *this)
 
@@ -29,7 +33,6 @@ void __thiscall SIDTy::PrepFiles(SIDTy *this)
   byte *pbVar16;
   byte *pbVar17;
   bool bVar18;
-  undefined4 uVar19;
   _WIN32_FIND_DATAA local_21c;
   byte local_dc [64];
   InternalExceptionFrame local_9c;
@@ -63,10 +66,11 @@ void __thiscall SIDTy::PrepFiles(SIDTy *this)
   this_01->field_1CCC = pDVar5;
   this_01->field_002D = 0x20;
   this_01->field_0031 = 0;
-  FUN_006e6080(this_01,2,this_01->field_1AF1,(undefined4 *)&this_01->field_0x1d);
+  FUN_006e6080(this_01,2,this_01->field_1AF1[0],(undefined4 *)&this_01->field_0x1d);
+  uVar10 = this_01->field_1AF1[1];
   this_01->field_002D = 0x29;
   this_01->field_0031 = 0x19;
-  FUN_006e6080(this_01,2,this_01->field_1AF5,(undefined4 *)&this_01->field_0x1d);
+  FUN_006e6080(this_01,2,uVar10,(undefined4 *)&this_01->field_0x1d);
   FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_01->field_1CB8,0,3,0x15,0x142,0x62,0xff);
   FUN_006b35d0((int *)PTR_008075a8,this_01->field_1CB4);
   wsprintfA(&this_01->field_1CD4,"%s%s",&DAT_00807680,PTR_s_SAVEGAME__0079c19c);
@@ -208,7 +212,7 @@ LAB_005d8dbf:
     pbVar16 = pbVar16 + 4;
     pbVar17 = pbVar17 + 4;
   }
-  uVar19 = this_01->field_1AF1;
+  uVar11 = this_01->field_1AF1[0];
   for (uVar10 = uVar10 & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
     *pbVar17 = *pbVar16;
     pbVar16 = pbVar16 + 1;
@@ -216,14 +220,14 @@ LAB_005d8dbf:
   }
   this_01->field_002D = 0x28;
   this_01->field_0031 = this_01->field_1CCC->elementSize;
-  FUN_006e6080(this_01,2,uVar19,(undefined4 *)&this_01->field_0x1d);
+  FUN_006e6080(this_01,2,uVar11,(undefined4 *)&this_01->field_0x1d);
   pDVar5 = this_01->field_1CCC;
   dVar7 = pDVar5->elementSize;
   if ((int)dVar7 < 1) {
     this_01->field_002D = 0x22;
     this_01->field_0031 = 0;
-    FUN_006e6080(this_01,2,this_01->field_1AF1,(undefined4 *)&this_01->field_0x1d);
-    uVar19 = this_01->field_1AF1;
+    FUN_006e6080(this_01,2,this_01->field_1AF1[0],(undefined4 *)&this_01->field_0x1d);
+    uVar10 = this_01->field_1AF1[0];
     this_01->field_002D = 5;
   }
   else {
@@ -260,7 +264,7 @@ LAB_005d8dbf:
     }
     this_01->field_002D = 0x20;
     this_01->field_0031 = 1;
-    FUN_006e6080(this_01,2,this_01->field_1AF1,(undefined4 *)&this_01->field_0x1d);
+    FUN_006e6080(this_01,2,this_01->field_1AF1[0],(undefined4 *)&this_01->field_0x1d);
     iVar12 = 0;
     local_8 = this_01->field_1CCC->elementSize;
     iVar4 = local_10;
@@ -294,14 +298,15 @@ LAB_005d9011:
       } while ((iVar9 != 0) && (iVar12 = iVar12 + 1, iVar4 = local_10, iVar12 < (int)local_8));
     }
     local_10 = iVar4;
-    uVar19 = this_01->field_1AF1;
+    uVar10 = this_01->field_1AF1[0];
     this_01->field_002D = 0x22;
     this_01->field_0031 = local_10;
   }
-  FUN_006e6080(this_01,2,uVar19,(undefined4 *)&this_01->field_0x1d);
+  FUN_006e6080(this_01,2,uVar10,(undefined4 *)&this_01->field_0x1d);
+  uVar10 = this_01->field_1AF1[1];
   this_01->field_002D = 0x29;
   this_01->field_0031 = 9;
-  FUN_006e6080(this_01,2,this_01->field_1AF5,(undefined4 *)&this_01->field_0x1d);
+  FUN_006e6080(this_01,2,uVar10,(undefined4 *)&this_01->field_0x1d);
   FUN_006b35d0((int *)PTR_008075a8,this_01->field_1CB4);
   g_currentExceptionFrame = local_58.previous;
   return;

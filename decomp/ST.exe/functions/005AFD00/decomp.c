@@ -156,7 +156,7 @@ switchD_005afd30_caseD_c:
   pAVar4 = (AnonShape_006B5B10_E0D06CF1 *)this_00->field_1C7B;
   FUN_006b4170(pAVar4,0,0,0,pAVar4->field_0004,pAVar4->field_0008,0);
   uVar20 = 0x3f;
-  puVar17 = &this_00->field_1C23;
+  puVar17 = this_00->field_1C23;
   do {
     Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,*puVar17,0xffffffff,0x114,uVar20);
     uVar20 = uVar20 + 0x13;

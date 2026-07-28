@@ -2,7 +2,11 @@
 /* [STMethodOwnerApplier] Structural method owner recovered as MReportTy.
    Evidence: this_call_owners=[MReportTy]; agreed_this_calls=3; incoming_this_accesses=26;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=3, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall MReportTy::sub_005C05F0(MReportTy *this)
 
@@ -11,7 +15,7 @@ void __thiscall MReportTy::sub_005C05F0(MReportTy *this)
   int iVar2;
   uint *puVar3;
   int iVar4;
-  uint uVar5;
+  byte bVar5;
   char cVar6;
   uint uVar7;
   int local_8;
@@ -74,17 +78,17 @@ void __thiscall MReportTy::sub_005C05F0(MReportTy *this)
   if (pHVar1 != (HoloTy *)0x0) {
     uVar7 = 0;
     cVar6 = '\x01';
-    uVar5 = 0x10;
+    bVar5 = 0x10;
     iVar4 = 1;
     iVar2 = Library::DKW::DDX::FUN_006bf9f0((int *)PTR_008075a8,0x47,0x46,0x2bd,0x15e);
-    uVar5 = HoloTy::Init(this->field_0453,CASE_2,0x47,0x46,iVar2,iVar4,uVar5,cVar6,uVar7);
-    if (uVar5 != 0) {
+    uVar7 = HoloTy::Init(this->field_0453,CASE_2,0x47,0x46,iVar2,iVar4,bVar5,cVar6,uVar7);
+    if (uVar7 != 0) {
       pHVar1 = this->field_0453;
       pHVar1->field_0002 = 0;
       pHVar1->field_0017 = -1;
-      uVar5 = this->field_0453->field_0003;
-      if (-1 < (int)uVar5) {
-        Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,uVar5);
+      uVar7 = this->field_0453->field_0003;
+      if (-1 < (int)uVar7) {
+        Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,uVar7);
       }
       HoloTy::NextFas(this->field_0453);
     }
@@ -114,17 +118,17 @@ void __thiscall MReportTy::sub_005C05F0(MReportTy *this)
   if (pHVar1 != (HoloTy *)0x0) {
     uVar7 = 0;
     cVar6 = '\x01';
-    uVar5 = 0x10;
+    bVar5 = 0x10;
     iVar4 = 1;
     iVar2 = Library::DKW::DDX::FUN_006bf9f0((int *)PTR_008075a8,0x1a,10,0x2e9,0x32);
-    uVar5 = HoloTy::Init(this->field_0457,CASE_3,0x1a,10,iVar2,iVar4,uVar5,cVar6,uVar7);
-    if (uVar5 != 0) {
+    uVar7 = HoloTy::Init(this->field_0457,CASE_3,0x1a,10,iVar2,iVar4,bVar5,cVar6,uVar7);
+    if (uVar7 != 0) {
       pHVar1 = this->field_0457;
       pHVar1->field_0002 = 0;
       pHVar1->field_0017 = -1;
-      uVar5 = this->field_0457->field_0003;
-      if (-1 < (int)uVar5) {
-        Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,uVar5);
+      uVar7 = this->field_0457->field_0003;
+      if (-1 < (int)uVar7) {
+        Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,uVar7);
       }
       HoloTy::NextFas(this->field_0457);
     }

@@ -9,11 +9,14 @@
    [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Maps\DefObj.cpp
    Diagnostic line evidence: 442 | 448 (metadata/report site, not the function definition)
-   [STSourceProvenanceApplier end] */
+   [STSourceProvenanceApplier end]
+
+   [STPrototypeApplier] Propagated parameter 3.
+   Evidence: 00694CD0 -> 00692C10 @ 00694E08; MOVSX at 00694DFA establishes signed source width 2 */
 
 uint * __cdecl
-FUN_00692c10(Global_sub_00692C10_param_1Enum param_1,int param_2,undefined4 *param_3,
-            undefined4 param_4,uint param_5)
+FUN_00692c10(Global_sub_00692C10_param_1Enum param_1,int param_2,undefined4 *param_3,int param_4,
+            uint param_5)
 
 {
   char cVar1;
@@ -44,6 +47,7 @@ FUN_00692c10(Global_sub_00692C10_param_1Enum param_1,int param_2,undefined4 *par
         return (uint *)&DAT_007d5af8;
       }
       switch(param_1) {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       case CASE_A:
         *param_3 = 0xa6;
         memset(&DAT_00853cd8, 0, 0xa6); /* compiler bulk-zero initialization */
@@ -191,11 +195,13 @@ FUN_00692c10(Global_sub_00692C10_param_1Enum param_1,int param_2,undefined4 *par
         _DAT_007d5c58 = (undefined2)param_4;
         *param_3 = 0x69;
         return (uint *)&DAT_007d5c38;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       case CASE_32:
         *param_3 = 0x28;
         _DAT_007d5a3c = param_4;
         _DAT_007d5a44 = param_2;
         return (uint *)&DAT_007d5a20;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       case CASE_5A:
         *param_3 = 0x28;
         _DAT_007d5a1c = param_2;
@@ -203,6 +209,7 @@ FUN_00692c10(Global_sub_00692C10_param_1Enum param_1,int param_2,undefined4 *par
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         _DAT_007d5a18 = *(undefined4 *)(&DAT_007d59e0 + (param_2 * 3 + -0x297) * 4);
         return (uint *)&DAT_007d59f8;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       case CASE_8C:
         *param_3 = 0x34;
         _DAT_007d5a64 = param_4;
@@ -211,26 +218,31 @@ FUN_00692c10(Global_sub_00692C10_param_1Enum param_1,int param_2,undefined4 *par
     }
     else {
       switch(param_1) {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       case CASE_10E:
         *param_3 = 0x28;
         _DAT_007d5d20 = param_2;
         _DAT_007d5d1c = param_4;
         return (uint *)&DAT_007d5d00;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       case CASE_118:
         *param_3 = 0x28;
         _DAT_007d5d48 = param_2;
         _DAT_007d5d44 = param_4;
         return (uint *)&DAT_007d5d28;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       case CASE_122:
         *param_3 = 0x28;
         _DAT_007d5d70 = param_2;
         _DAT_007d5d6c = param_4;
         return (uint *)&DAT_007d5d50;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       case CASE_12C:
         *param_3 = 0x28;
         _DAT_007d5d98 = param_2;
         _DAT_007d5d94 = param_4;
         return (uint *)&DAT_007d5d78;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       case CASE_172:
         *param_3 = 0x151;
         _DAT_007d5f60 = param_2;
@@ -289,6 +301,7 @@ FUN_00692c10(Global_sub_00692C10_param_1Enum param_1,int param_2,undefined4 *par
   }
   else {
     switch(param_1) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     case CASE_BBE:
       *param_3 = 0x24;
       _DAT_007d5af0 = param_5;
@@ -309,9 +322,11 @@ switchD_00693197_caseD_bc0:
       _DAT_007d5aa4 = param_5;
       *param_3 = 0x28;
       return (uint *)&DAT_007d5a80;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     case CASE_BC1:
       *param_3 = 0x2c;
       return (uint *)&DAT_007d5c08;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     case CASE_BC3:
       *param_3 = 0x3f;
       return (uint *)&DAT_007d5bc8;

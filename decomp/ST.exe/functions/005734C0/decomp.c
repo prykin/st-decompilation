@@ -6,7 +6,11 @@
    Evidence: 005734C0 -> EXTERNAL:000000C4 @ 00573652
 
    [STPrototypeRepairApplier] Propagated parameter 2.
-   Evidence: 005734C0 -> EXTERNAL:000000C5 @ 00573628 */
+   Evidence: 005734C0 -> EXTERNAL:000000C5 @ 00573628
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0), and
+   decompilation contains no value return */
 
 void __thiscall FUN_005734c0(void *this,LPDWORD lpcbData,PHKEY phkResult)
 

@@ -19,7 +19,7 @@ uint __thiscall STGroupC::GetTOBJQty(STGroupC *this,int param_1)
   InternalExceptionFrame local_58;
   uint local_14;
   STGroupC *local_10;
-  uint local_c;
+  undefined1 local_c [4];
   int local_8;
 
   uVar6 = 0;
@@ -33,10 +33,12 @@ uint __thiscall STGroupC::GetTOBJQty(STGroupC *this,int param_1)
     local_14 = local_10->field_0029[3];
     if (0 < (int)local_14) {
       do {
-        DArrayGetElement((DArrayTy *)pSVar2->field_0029,uVar6,&local_c);
-        if ((short)local_c != -1) {
-          pSVar4 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,pSVar2->field_0024,local_c,CASE_1)
-          ;
+        DArrayGetElement((DArrayTy *)pSVar2->field_0029,uVar6,local_c);
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+        if (local_c._0_2_ != 0xffff) {
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+          pSVar4 = STAllPlayersC::GetObjPtr
+                             (g_allPlayers_007FA174,pSVar2->field_0024,local_c._0_2_,CASE_1);
           if (pSVar4 == (STGameObjC *)0x0) {
             RaiseInternalException
                       (-0x5001fffc,g_overwriteContext_007ED77C,

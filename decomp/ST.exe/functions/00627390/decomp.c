@@ -1,6 +1,10 @@
 
 /* [STPrototypeApplier] Propagated parameter 0.
-   Evidence: 00621B50 -> 00627390 @ 00622291 */
+   Evidence: 00621B50 -> 00627390 @ 00622291
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=6, used=0), and
+   decompilation contains no value return */
 
 void __fastcall FUN_00627390(STMineSetC *param_1)
 

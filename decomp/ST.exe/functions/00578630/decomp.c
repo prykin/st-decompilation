@@ -84,7 +84,7 @@ int __thiscall STCrabC::GetMessage(STCrabC *this,STMessage *message)
       g_currentExceptionFrame = local_80.previous;
       return 0;
     }
-    uVar10 = thunk_FUN_004ad650((int)&this_00->field_01D5);
+    uVar10 = thunk_FUN_004ad650((STT3DSprC *)&this_00->field_01D5);
     FUN_006eab60((void *)this_00->field_0211,uVar10);
     goto LAB_00578ea2;
   }

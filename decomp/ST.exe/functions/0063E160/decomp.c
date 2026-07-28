@@ -72,7 +72,7 @@ undefined4 __thiscall STTmMineC::LoadImagSpr(STTmMineC *this,uint param_1,int pa
                    *(int *)((int)puVar6 + 0xd) / 2 - 0xe);
     }
     puVar9 = &pSVar4->field_0211;
-    FUN_006e98e0((void *)*puVar9,local_8,0,*(undefined4 *)puVar6,*(int *)((int)puVar6 + 0x21),1);
+    FUN_006e98e0((void *)*puVar9,local_8,0,*(int *)puVar6,*(int *)((int)puVar6 + 0x21),1);
     FUN_006ea270((void *)*puVar9,local_8,0,piVar5[8]);
     FUN_006ea5e0((void *)*puVar9,local_8,0,0);
     FUN_006ea960((void *)*puVar9,local_8,(float)piVar5[2] * _DAT_007904f8 * _DAT_007904f0,

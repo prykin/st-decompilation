@@ -1,7 +1,17 @@
 
+/* [STPrototypeApplier] Propagated parameter 3.
+   Evidence: 004C5350 -> 006ACF90 @ 004C552D | 0065E450 -> 004C5350 @ 0065E520; FUN_0065e450
+   parameter param_4 | 00664960 -> 004C5350 @ 00666F3E; MOVSX at 00666F2E establishes signed source
+   width 2
+
+   [STPrototypeApplier] Propagated parameter 4.
+   Evidence: 004C5350 -> 006ACF90 @ 004C552D | 0065E450 -> 004C5350 @ 0065E520; FUN_0065e450
+   parameter param_5 | 00664960 -> 004C5350 @ 00666F3E; MOVSX at 00666F27 establishes signed source
+   width 2 */
+
 uint __thiscall
-FUN_004c5350(void *this,int param_1,int *param_2,undefined4 param_3,undefined4 param_4,
-            undefined4 param_5,int param_6,int param_7)
+FUN_004c5350(void *this,int param_1,int *param_2,int param_3,int param_4,undefined4 param_5,
+            int param_6,int param_7)
 
 {
   byte bVar1;
@@ -13,8 +23,8 @@ FUN_004c5350(void *this,int param_1,int *param_2,undefined4 param_3,undefined4 p
   uint uVar6;
   bool bVar7;
   undefined4 local_1c;
-  undefined4 local_18;
-  undefined4 local_14;
+  int local_18;
+  int local_14;
   byte local_10;
   undefined3 uStack_f;
   uint local_c;
@@ -37,8 +47,8 @@ FUN_004c5350(void *this,int param_1,int *param_2,undefined4 param_3,undefined4 p
   }
   else {
     STFishC::sub_004162B0
-              ((STFishC *)param_2,(undefined2 *)&local_18,(undefined2 *)&local_14,
-               (undefined2 *)&local_1c);
+              ((STFishC *)param_2,(short *)&local_18,(undefined2 *)&local_14,(undefined2 *)&local_1c
+              );
   }
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (*(int *)(&DAT_00792a90 + (param_1 + *(int *)((int)this + 0x235) * 2) * 4) == 1) {
@@ -68,10 +78,11 @@ FUN_004c5350(void *this,int param_1,int *param_2,undefined4 param_3,undefined4 p
   if (iVar4 == 0) {
     return local_c;
   }
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_7 == 0) goto LAB_004c5515;
   bVar1 = *(byte *)(this_00 + 9);
   bVar2 = *(byte *)((int)this + 0x24);
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+  /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
   param_7 = CONCAT31(param_7._1_3_,bVar1);
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   _local_10 = CONCAT31(uStack_f,bVar2);

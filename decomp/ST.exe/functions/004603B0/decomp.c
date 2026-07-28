@@ -56,11 +56,11 @@ int __thiscall FUN_004603b0(void *this,STTorpC *param_1)
           if (iVar3 != 2) {
             if (iVar3 == 0) {
               iVar3 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004603B0::
-                      thunk_FUN_004838e0(this,(AnonShape_004838E0_0C45D4D6 *)param_1);
+                      thunk_FUN_004838e0(this,(RecoveredRecord_STBoatC_004838E0 *)param_1);
               if (iVar3 == 1) {
-                STTorpC::SetDangerous(param_1,*(undefined4 *)((int)this + 0x18),&local_8);
+                STTorpC::SetDangerous(param_1,*(uint *)((int)this + 0x18),&local_8);
 LAB_004604c9:
-                iVar3 = thunk_FUN_00483e30(this,(AnonShape_00482DB0_070D50BF *)param_1);
+                iVar3 = thunk_FUN_00483e30(this,(RecoveredRecord_STBoatC_00482DB0 *)param_1);
                 if (iVar3 == 1) {
                   STTorpC::ClearDangerous(param_1,*(int *)((int)this + 0x18),local_8);
                   *(STTorpC **)((int)this + 0x46b) = param_1;
@@ -166,7 +166,7 @@ LAB_00460581:
       *(undefined4 *)((int)this + 0x82e) = 0;
     }
   }
-  if ((*(int *)((int)this + 0x82e) == 2) && (iVar6 = thunk_FUN_00483f10((int)this), iVar6 == 1)) {
+  if ((*(int *)((int)this + 0x82e) == 2) && (iVar6 = thunk_FUN_00483f10(this), iVar6 == 1)) {
     sVar1 = *(short *)((int)this + 0x469);
     *(short *)((int)this + 0x469) = -sVar1;
     /* ST_PSEUDO[return_width_artifact,raw_indirect_call]: candidate call-output artifact: verify return width, clobbers, or x87 state; expected typed vtable/callback call with explicit __thiscall receiver */

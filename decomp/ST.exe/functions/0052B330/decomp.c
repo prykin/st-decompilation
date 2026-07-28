@@ -77,8 +77,8 @@ cf_common_exit_0052B581:
   this->field_0DB3 = (void *)0x0;
   this->field_0DC8 = 0;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  FUN_006e65c0(PTR_00807598,(&this->field_0DBF)[(byte)this->field_0DCC],
-               (char)*(undefined2 *)((&this->field_09C8)[(byte)this->field_0DCC] + 0x23),
+  FUN_006e65c0(PTR_00807598,this->field_0DBF[(byte)this->field_0DCC],
+               (char)*(undefined2 *)(this->field_09C0[(byte)this->field_0DCC + 2] + 0x23),
                this->field_0DD6,this->field_0DDA,5,5,1);
   thunk_FUN_005252c0((this->field_0DCC != '\0') + CASE_B6);
   return false;

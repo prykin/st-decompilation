@@ -101,7 +101,7 @@ STAllPlayersC::_AssignMDPairs
   short local_12;
   short local_10;
   int local_e;
-  uint local_8;
+  undefined4 local_8;
 
   local_d0[4] = 4;
   local_d0[0] = 0x38;
@@ -277,8 +277,8 @@ LAB_00442f1f:
 LAB_0044326c:
           uVar14 = local_38;
           DArrayGetElement(local_48,(uint)local_44,&local_8);
-          if ((short)local_8 != -1) {
-            objPtr = GetObjPtr(local_8c,param_1,local_8,CASE_1);
+          if ((ushort)local_8 != 0xffff) {
+            objPtr = GetObjPtr(local_8c,param_1,(ushort)local_8,CASE_1);
             local_40 = (STFishC *)objPtr;
             if (objPtr == (STGameObjC *)0x0) {
               iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2539,0,0,
@@ -580,8 +580,8 @@ LAB_004436f7:
       if (0 < (int)local_38) {
         do {
           DArrayGetElement(pDVar8,uVar14,&local_8);
-          if ((short)local_8 != -1) {
-            local_40 = (STFishC *)GetObjPtr(local_8c,param_1,local_8,CASE_1);
+          if ((ushort)local_8 != 0xffff) {
+            local_40 = (STFishC *)GetObjPtr(local_8c,param_1,(ushort)local_8,CASE_1);
             STFishC::sub_004162B0(local_40,&local_18,&local_14,&local_16);
             iVar9 = FUN_006aadd0((int)local_18,(int)local_14,(int)local_16,(int)local_70,
                                  (int)local_6e,(int)local_6c);

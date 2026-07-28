@@ -60,7 +60,7 @@ undefined4 __fastcall FUN_004c84c0(TLOBaseTy *param_1)
     if (iVar5 == 0) {
       return 0;
     }
-    iVar5 = thunk_FUN_004c7c20((int)param_1);
+    iVar5 = thunk_FUN_004c7c20(param_1);
     if (iVar5 == 0) {
       return 0;
     }
@@ -87,7 +87,8 @@ undefined4 __fastcall FUN_004c84c0(TLOBaseTy *param_1)
     return 0;
   }
   if (((*(int *)&param_1->field_0x361 == 5) &&
-      (iVar5 = (*param_1->vtable->vfunc_7C)(), iVar5 == 100)) || (99 < param_1->field_0394)) {
+      (iVar5 = param_1->vfunc_7C(), iVar5 == 100)) || (99 < param_1->field_0394))
+  {
     iVar5 = TLOBaseTy::procResult(param_1);
     if (iVar5 == 0) {
       return 0;
@@ -183,7 +184,7 @@ LAB_004c8806:
   if (uVar10 == 0) {
     uVar10 = 1;
   }
-  dVar8 = (*param_1->vtable->slot_2C)(param_1);
+  dVar8 = param_1->slot_2C();
   iVar5 = thunk_FUN_004b72e0(*(char *)&param_1->field_0024,dVar8);
   if ((iVar5 == 0) ||
      (iVar5 = thunk_FUN_004b79c0(*(char *)&param_1->field_0024,param_1->field_0018), iVar5 != 0)) {
@@ -194,7 +195,7 @@ LAB_004c8806:
   }
   param_1->field_03B8 = iVar5;
   if ((iVar5 != 0) && (uVar10 = uVar10 << 2, DAT_00811798 != (void *)0x0)) {
-    thunk_FUN_00621580(DAT_00811798,(uint)param_1->field_0024,5);
+    thunk_FUN_00621580(DAT_00811798,param_1->field_0024,5);
   }
   if (g_playSystem_00802A38->field_00E4 < param_1->field_038C + uVar10) {
     return 0;
@@ -297,7 +298,7 @@ LAB_004c8bf2:
     iVar5 = GetPlayerRaceId(*(char *)&param_1->field_0024);
     if ((char)iVar5 == '\x03') {
       if ((local_14 != 0) &&
-         (iVar5 = thunk_FUN_004e41c0((int)param_1->field_0024), iVar5 < local_14)) {
+         (uVar10 = thunk_FUN_004e41c0((int)param_1->field_0024), (int)uVar10 < local_14)) {
         bVar4 = false;
         param_1->field_03C8 = 1;
       }
@@ -335,18 +336,18 @@ LAB_004c8bf2:
     }
     if (DAT_00811798 != (void *)0x0) {
       if (param_1->field_03BC != 0) {
-        thunk_FUN_00621580(DAT_00811798,(uint)param_1->field_0024,4);
+        thunk_FUN_00621580(DAT_00811798,param_1->field_0024,4);
       }
       if (param_1->field_03C4 != 0) {
-        thunk_FUN_00621580(DAT_00811798,(uint)param_1->field_0024,2);
+        thunk_FUN_00621580(DAT_00811798,param_1->field_0024,2);
       }
       if (param_1->field_03C8 != 0) {
         iVar5 = GetPlayerRaceId(*(char *)&param_1->field_0024);
-        thunk_FUN_00621580(DAT_00811798,(uint)param_1->field_0024,
+        thunk_FUN_00621580(DAT_00811798,param_1->field_0024,
                            (-(uint)((char)iVar5 != '\x03') & 0xfffffffd) + 6);
       }
       if (param_1->field_03C0 != 0) {
-        thunk_FUN_00621580(DAT_00811798,(uint)param_1->field_0024,7);
+        thunk_FUN_00621580(DAT_00811798,param_1->field_0024,7);
         return 0;
       }
     }

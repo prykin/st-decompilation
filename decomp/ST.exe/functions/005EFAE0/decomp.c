@@ -5,7 +5,7 @@ undefined4 __thiscall FUN_005efae0(void *this,AnonShape_005EFAE0_B406B78B *param
   int iVar1;
 
   if ((*(char *)((int)this + 0x24f) == '\0') &&
-     (iVar1 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,(int)param_1,(int *)&param_1),
+     (iVar1 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,param_1,(int *)&param_1),
      iVar1 != -4)) {
     *(undefined4 *)((int)this + 0x2a7) = param_1->field_0018;
     *(undefined2 *)((int)this + 0x2ab) = param_1->field_0032;

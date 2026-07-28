@@ -22,8 +22,8 @@ undefined4 __thiscall GameSystemC::CreateSystemObjects(GameSystemC *this)
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (errorCode == 0) {
-    (*local_8->vtable->vfunc_0C)(local_8,0x100,&DAT_007fb2a4,0,0);
-    (*this_00->vtable->vfunc_0C)(this_00,0x102,&DAT_007fb288,0,0);
+    local_8->vfunc_0C(0x100,&DAT_007fb2a4,0,0);
+    this_00->vfunc_0C(0x102,&DAT_007fb288,0,0);
     g_currentExceptionFrame = local_4c.previous;
     return 0;
   }

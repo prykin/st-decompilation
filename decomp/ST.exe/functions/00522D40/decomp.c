@@ -3,9 +3,18 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\intercom.cpp
-   IntercomPanelTy::SwitchIntercomPanel */
+   IntercomPanelTy::SwitchIntercomPanel
 
-void __thiscall IntercomPanelTy::SwitchIntercomPanel(IntercomPanelTy *this,undefined1 param_1)
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=5, used=0), and
+   decompilation contains no value return
+
+   [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 00522E80 -> 00522D40 @ 0052315F; literal 0 at 0052315B | 005449B0 -> 00522D40 @
+   00546551; literal 0 at 0054654F | 005449B0 -> 00522D40 @ 0054667C; literal 1 at 0054667A |
+   005449B0 -> 00522D40 @ 005466BB; literal 3 at 005466B9 */
+
+void __thiscall IntercomPanelTy::SwitchIntercomPanel(IntercomPanelTy *this,byte param_1)
 
 {
   short sVar1;

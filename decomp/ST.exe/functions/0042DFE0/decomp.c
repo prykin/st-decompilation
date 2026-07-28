@@ -77,8 +77,8 @@ uint __thiscall STAllPlayersC::PrepareToCmd(STAllPlayersC *this,undefined4 *para
       if (0 < (int)dVar1) {
         do {
           DArrayGetElement(array,uVar5,&param_2);
-          if (((short)param_2 != -1) &&
-             (pSVar6 = GetObjPtr(this,DAT_0080874d,(uint)param_2,CASE_1),
+          if (((ushort)param_2 != 0xffff) &&
+             (pSVar6 = GetObjPtr(this,DAT_0080874d,(ushort)param_2,CASE_1),
              (*(byte *)&pSVar6->field_01D1 & 4) == 0)) {
             local_c = 1;
             local_10 = param_2;

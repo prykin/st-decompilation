@@ -1,15 +1,23 @@
 
+/* [STAbiConsistencyApplier] stack_parameter_scalar_role target=parameter:1: parameter=/int
+   Evidence: generic pointer has a scalar-only incoming lifetime before its first slot overwrite:
+   frame_offset=0x8, direct_reads=1, scalar_operations=2, signed_comparisons=1, unsigned_bounds=0,
+   pointer_dereferences=0, slot_reused=true; sites=00614C86 incoming load: MOV EAX,dword ptr [EBP +
+   0x8] | 00614C9A scalar operation: LEA ECX,[EAX*0x8 + 0x0] | 00614CA1 scalar operation: SUB
+   ECX,EAX | 00614CAF first slot write: MOV dword ptr [EBP + 0x8],ESI */
+
 uint __thiscall
-FUN_00614c80(void *this,undefined4 *param_1,int param_2,int param_3,int param_4,int param_5,
-            int param_6,int param_7,uint param_8,uint param_9,int param_10)
+FUN_00614c80(void *this,int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,
+            int param_7,uint param_8,uint param_9,int param_10)
 
 {
-  undefined4 uVar1;
-  int iVar2;
-  uint uVar3;
-  int iVar4;
-  undefined4 *puVar5;
+  int iVar1;
+  undefined4 uVar2;
+  int iVar3;
+  uint uVar4;
+  int iVar5;
   undefined4 *puVar6;
+  undefined4 *puVar7;
   undefined4 local_24;
   int local_20;
   int local_1c;
@@ -19,29 +27,29 @@ FUN_00614c80(void *this,undefined4 *param_1,int param_2,int param_3,int param_4,
   undefined4 local_c;
   undefined4 local_8;
 
-  puVar5 = param_1;
-  if ((int)param_1 < 1) {
-    param_1 = (undefined4 *)param_9;
-    iVar2 = param_10;
-    uVar3 = param_8;
+  iVar5 = param_1;
+  if (param_1 < 1) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+    param_1 = param_9;
+    iVar3 = param_10;
+    uVar4 = param_8;
   }
   else {
-    iVar4 = *(int *)((int)this + 0x2dd) + (int)param_1 * 0x1c;
-    iVar2 = (int)*(short *)(iVar4 + -0x18);
-    uVar3 = (int)*(short *)(iVar4 + -0x1c);
-    param_1 = (undefined4 *)
-              (int)*(short *)(*(int *)((int)this + 0x2dd) + -0x1a + (int)param_1 * 0x1c);
+    iVar1 = *(int *)((int)this + 0x2dd) + param_1 * 0x1c;
+    iVar3 = (int)*(short *)(iVar1 + -0x18);
+    uVar4 = (int)*(short *)(iVar1 + -0x1c);
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+    param_1 = (int)*(short *)(*(int *)((int)this + 0x2dd) + -0x1a + param_1 * 0x1c);
   }
-  iVar4 = (int)puVar5 * 0x1c;
-  uVar1 = thunk_FUN_0060f940(0,0,(AnonShape_0060F940_1CCED7C8 *)
-                                 (iVar4 + *(int *)((int)this + 0x2dd)),0,uVar3,(int)param_1,iVar2,
-                             param_2,param_3,param_4,param_5,param_6,param_7,&param_10,
-                             (int *)&param_8);
-  *(undefined4 *)(iVar4 + 0x18 + *(int *)((int)this + 0x2dd)) = uVar1;
-  if (*(int *)(iVar4 + 0x18 + *(int *)((int)this + 0x2dd)) == 8) {
-    uVar3 = param_8;
+  iVar5 = iVar5 * 0x1c;
+  uVar2 = thunk_FUN_0060f940(0,0,(AnonShape_0060F940_1CCED7C8 *)
+                                 (iVar5 + *(int *)((int)this + 0x2dd)),0,uVar4,param_1,iVar3,param_2
+                             ,param_3,param_4,param_5,param_6,param_7,&param_10,(int *)&param_8);
+  *(undefined4 *)(iVar5 + 0x18 + *(int *)((int)this + 0x2dd)) = uVar2;
+  if (*(int *)(iVar5 + 0x18 + *(int *)((int)this + 0x2dd)) == 8) {
+    uVar4 = param_8;
     if (*(int *)((int)this + 0x288) != 0) {
-      uVar3 = (int)param_8 / *(int *)((int)this + 0x288);
+      uVar4 = (int)param_8 / *(int *)((int)this + 0x288);
     }
     local_24 = 0;
     local_14 = 0;
@@ -50,40 +58,42 @@ FUN_00614c80(void *this,undefined4 *param_1,int param_2,int param_3,int param_4,
     local_8 = 0;
     local_1c = (int)(param_8 * 0x46) / 100;
     local_18 = param_8;
-    param_9 = uVar3;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+    param_9 = uVar4;
     local_10 = local_20;
-    param_1 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(uVar3 * 4);
-    iVar2 = thunk_FUN_0060e210(&local_24,&local_14,4,(int)param_1,uVar3);
-    if (iVar2 == 0) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+    param_1 = Library::DKW::LIB::FUN_006aac70(uVar4 * 4);
+    iVar5 = thunk_FUN_0060e210(&local_24,&local_14,4,param_1,uVar4);
+    if (iVar5 == 0) {
       if (*(undefined4 **)((int)this + 0x2e5) == (undefined4 *)0x0) {
-        *(uint *)((int)this + 0x2e1) = uVar3;
-        *(void **)((int)this + 0x2e5) = param_1;
+        *(uint *)((int)this + 0x2e1) = uVar4;
+        *(void **)((int)this + 0x2e5) = (void *)param_1;
         return param_8;
       }
-      if (*(int *)((int)this + 0x2e1) < (int)uVar3) {
+      if (*(int *)((int)this + 0x2e1) < (int)uVar4) {
         FreeAndNull((void **)((int)this + 0x2e5));
-        *(uint *)((int)this + 0x2e1) = uVar3;
-        *(undefined4 **)((int)this + 0x2e5) = param_1;
+        *(uint *)((int)this + 0x2e1) = uVar4;
+        *(int *)((int)this + 0x2e5) = param_1;
         return param_8;
       }
-      puVar5 = param_1;
-      puVar6 = *(undefined4 **)((int)this + 0x2e5);
-      for (uVar3 = uVar3 & 0x3fffffff; uVar3 != 0; uVar3 = uVar3 - 1) {
-        *puVar6 = *puVar5;
-        puVar5 = puVar5 + 1;
+      puVar6 = (undefined4 *)param_1;
+      puVar7 = *(undefined4 **)((int)this + 0x2e5);
+      for (uVar4 = uVar4 & 0x3fffffff; uVar4 != 0; uVar4 = uVar4 - 1) {
+        *puVar7 = *puVar6;
         puVar6 = puVar6 + 1;
+        puVar7 = puVar7 + 1;
       }
-      for (iVar2 = 0; iVar2 != 0; iVar2 = iVar2 + -1) {
-        *(undefined1 *)puVar6 = *(undefined1 *)puVar5;
-        puVar5 = (undefined4 *)((int)puVar5 + 1);
+      for (iVar5 = 0; iVar5 != 0; iVar5 = iVar5 + -1) {
+        *(undefined1 *)puVar7 = *(undefined1 *)puVar6;
         puVar6 = (undefined4 *)((int)puVar6 + 1);
+        puVar7 = (undefined4 *)((int)puVar7 + 1);
       }
       *(uint *)((int)this + 0x2e1) = param_9;
-      FreeAndNull(&param_1);
+      FreeAndNull((void **)&param_1);
       return param_8;
     }
-    if (param_1 != (undefined4 *)0x0) {
-      FreeAndNull(&param_1);
+    if (param_1 != 0) {
+      FreeAndNull((void **)&param_1);
     }
   }
   return 0;

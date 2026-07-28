@@ -68,11 +68,13 @@ uint FUN_00755830(AnonShape_00753C80_4C8E695D *param_1,uint *param_2,int param_3
       puVar12 = puVar7 + 4;
       for (uVar6 = uVar4 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
         *puVar12 = *param_2;
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_2 = param_2 + 1;
         puVar12 = puVar12 + 1;
       }
       for (uVar6 = uVar4 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
         *(char *)puVar12 = (char)*param_2;
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_2 = (uint *)((int)param_2 + 1);
         puVar12 = (uint *)((int)puVar12 + 1);
       }

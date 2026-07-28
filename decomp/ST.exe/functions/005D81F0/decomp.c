@@ -13,7 +13,7 @@ void __thiscall SIDTy::NoneSID(SIDTy *this,void *param_1)
   DWORD DVar2;
   int iVar3;
   int iVar4;
-  int *piVar5;
+  uint *puVar5;
   InternalExceptionFrame local_50;
   SIDTy *local_c;
   int local_8;
@@ -41,13 +41,13 @@ void __thiscall SIDTy::NoneSID(SIDTy *this,void *param_1)
     FindNextChangeNotification(this_00->field_1CC4);
     PrepFiles(this_00);
     this_00->field_002D = 5;
-    piVar5 = &this_00->field_1AF1;
+    puVar5 = this_00->field_1AF1;
     iVar3 = 2;
     do {
-      if (*piVar5 != 0) {
-        FUN_006e6080(this_00,2,*piVar5,(undefined4 *)&this_00->field_0x1d);
+      if (*puVar5 != 0) {
+        FUN_006e6080(this_00,2,*puVar5,(undefined4 *)&this_00->field_0x1d);
       }
-      piVar5 = piVar5 + 1;
+      puVar5 = puVar5 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
   }

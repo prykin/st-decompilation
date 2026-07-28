@@ -108,7 +108,7 @@ LAB_006a2f2f:
     uVar16 = ((uint)*(ushort *)(pbVar8 + 0xe) * *(int *)(pbVar8 + 4) + 0x1f >> 3 & 0x1ffffffc) *
              *(int *)(pbVar8 + 8);
   }
-  puVar9 = (undefined4 *)FUN_006b4fa0((int)pbVar8);
+  puVar9 = (undefined4 *)FUN_006b4fa0((int *)pbVar8);
   for (uVar12 = uVar16 >> 2; uVar12 != 0; uVar12 = uVar12 - 1) {
     *puVar9 = 0;
     puVar9 = puVar9 + 1;
@@ -117,10 +117,11 @@ LAB_006a2f2f:
     *(undefined1 *)puVar9 = 0;
     puVar9 = (undefined4 *)((int)puVar9 + 1);
   }
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = local_8;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   in_stack_00000008 = (cMf32 *)0x45;
-  iVar11 = FUN_006b4fa0((int)pbVar8);
+  iVar11 = FUN_006b4fa0((int *)pbVar8);
   local_18 = 0x46;
   iVar11 = iVar11 + ((uint)*(ushort *)(pbVar8 + 0xe) * *(int *)(pbVar8 + 4) + 0x1f >> 3 & 0x1ffffffc
                     ) * (*(int *)(pbVar8 + 8) + -1);
@@ -142,6 +143,7 @@ LAB_006a2f2f:
         puVar15 = puVar15 + 1;
       } while (iVar10 != 0);
     }
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = (short *)((int)param_1 + 0x8b);
     iVar11 = iVar11 - ((uint)*(ushort *)(pbVar8 + 0xe) * *(int *)(pbVar8 + 4) + 0x1f >> 3 &
                       0x1ffffffc);
@@ -168,6 +170,7 @@ LAB_006a2f2f:
     }
     iVar11 = iVar11 - ((uint)*(ushort *)(pbVar8 + 0xe) * *(int *)(pbVar8 + 4) + 0x1f >> 3 &
                       0x1ffffffc);
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = (short *)((int)param_1 + 0x8b);
     local_18 = local_18 + -1;
   } while (local_18 != 0);

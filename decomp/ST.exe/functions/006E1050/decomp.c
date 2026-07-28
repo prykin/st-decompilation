@@ -32,8 +32,8 @@ void __fastcall FUN_006e1050(AnonShape_GLOBAL_00807598_0C6808FB *param_1)
   lVar6 = Library::MSVCRT::__ftol();
   iVar3 = (int)lVar6;
   *(int *)&param_1->field_0x2c4 = iVar3;
-  iVar4 = (*(int *)&param_1->field_0x28 + -1 + *(int *)&param_1->field_0x2c0) /
-          *(int *)&param_1->field_0x2c0 + 1;
+  iVar4 = (param_1->field_0028 + -1 + *(int *)&param_1->field_0x2c0) / *(int *)&param_1->field_0x2c0
+          + 1;
   *(int *)&param_1->field_0x2b8 = iVar4;
   iVar3 = (*(int *)&param_1->field_0x2c + -1 + iVar3) / iVar3 + 1;
   *(int *)&param_1->field_0x2bc = iVar3;

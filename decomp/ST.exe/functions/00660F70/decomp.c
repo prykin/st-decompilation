@@ -63,7 +63,7 @@ void __thiscall AiFltClassTy::sub_00660F70(AiFltClassTy *this,uint *param_1,unde
           }
         }
         else {
-          pSVar7 = (STAllPlayersC *)thunk_FUN_004e6a80(this->field_0024,GVar1);
+          pSVar7 = (STAllPlayersC *)thunk_FUN_004e6a80((byte *)this->field_0024,GVar1);
           pSVar4 = g_allPlayers_007FA174;
         }
         bVar3 = pSVar7 == (STAllPlayersC *)0x0;
@@ -120,15 +120,12 @@ switchD_0066104e_caseD_9:
                                             ,0,(int *)0x0), uVar11 = extraout_EDX, iVar8 == 0)))) {
               local_10 = (STGameObjC *)0x0;
               if (((0x53 < *local_8) && (*local_8 < 0x5b)) &&
-                 (array = (DArrayTy *)sub_0065E360((AnonShape_0065E360_B94C37CB *)this,uVar11,0x53),
-                 array != (DArrayTy *)0x0)) {
-                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                 (array = (DArrayTy *)sub_0065E360(this,uVar11,0x53), array != (DArrayTy *)0x0)) {
                 if (((array->count != 0) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) &&
                    (pSVar9 = STAllPlayersC::GetObjPtr
                                        (g_allPlayers_007FA174,*(char *)&this->field_0024,
-                                        CONCAT22((short)((uint)array->data >> 0x10),
-                                                 *(undefined2 *)array->data),CASE_1),
-                   pSVar9 != (STGameObjC *)0x0)) {
+                                        *(ushort *)array->data,CASE_1), pSVar9 != (STGameObjC *)0x0)
+                   ) {
                   local_10 = pSVar9;
                 }
                 DArrayDestroy(array);

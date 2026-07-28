@@ -3,7 +3,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\wait_obj.cpp
-   WaitTy::AddStr */
+   WaitTy::AddStr
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=5, used=0), and
+   decompilation contains no value return */
 
 void __thiscall WaitTy::AddStr(WaitTy *this,uint *param_1,int param_2)
 
@@ -92,7 +96,7 @@ LAB_005e7d14:
           local_8 = (uint *)(((uint)puVar2[7] * *(int *)(puVar2 + 2) + 0x1f >> 3 & 0x1ffffffc) *
                             *(int *)(puVar2 + 4));
         }
-        puVar9 = (undefined4 *)FUN_006b4fa0((int)puVar2);
+        puVar9 = (undefined4 *)FUN_006b4fa0((int *)puVar2);
         for (uVar11 = (uint)local_8 >> 2; uVar11 != 0; uVar11 = uVar11 - 1) {
           *puVar9 = 0;
           puVar9 = puVar9 + 1;
@@ -110,7 +114,7 @@ LAB_005e7d14:
         dVar1 = pDVar8[-1].capacity;
       }
       if (iVar6 <= (int)(pWVar5->field_1AF0->elementSize - 1)) {
-        local_8 = &pWVar5->field_1A94 + iVar6;
+        local_8 = pWVar5->field_1A94 + iVar6;
         uVar11 = iVar6 * 0x13;
         do {
           FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)pWVar5->field_1AEC,0,0,uVar11,

@@ -81,14 +81,14 @@ LAB_0042bf8b:
   pSVar4 = local_14 + param_3;
   objPtr = (char)param_5;
   if (((pSVar4->objectType == param_4) && (pSVar4->playerId == (int)objPtr)) &&
-     (pSVar4->objectId == (short)param_6)) {
+     (pSVar4->objectId == (ushort)param_6)) {
     RaiseInternalException
               (-0x5001ffff,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0x23f);
   }
   pSVar4->objectType = param_4;
   pSVar4->playerId = (int)objPtr;
-  pSVar4->objectId = (short)param_6;
+  pSVar4->objectId = (ushort)param_6;
   if (param_4 < 0x1a5) {
     if (param_4 == 0x1a4) {
       local_8 = CASE_5;
@@ -122,8 +122,8 @@ LAB_0042bf8b:
             (-0x5001ffff,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",0x24a)
   ;
 cf_common_exit_0042C072:
-  this_00 = GetObjPtr(local_c,objPtr,param_6,local_8);
-  (*this_00->vtable->vfunc_E8)(this_00,1);
+  this_00 = GetObjPtr(local_c,objPtr,(ushort)param_6,local_8);
+  this_00->vfunc_E8(1);
   g_currentExceptionFrame = local_58.previous;
   return local_10;
 }

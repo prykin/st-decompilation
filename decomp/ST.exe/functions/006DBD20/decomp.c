@@ -1,7 +1,11 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STPrototypeApplier] Propagated parameter 0.
-   Evidence: 004A9540 -> 006DBD20 @ 004A9724 */
+   Evidence: 004A9540 -> 006DBD20 @ 004A9724
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=3, used=0), and
+   decompilation contains no value return */
 
 void __thiscall
 FUN_006dbd20(AnonShape_GLOBAL_00807598_0C6808FB *param_1,undefined4 param_2,uint param_3,
@@ -30,7 +34,7 @@ FUN_006dbd20(AnonShape_GLOBAL_00807598_0C6808FB *param_1,undefined4 param_2,uint
   *(undefined4 *)&param_1->field_0x4 = param_2;
   *(uint *)&param_1->field_0x20 = param_3;
   *(undefined4 *)&param_1->field_0x24 = param_4;
-  *(int *)&param_1->field_0x28 = param_5;
+  param_1->field_0028 = param_5;
   iVar4 = param_5 * param_6;
   *(int *)&param_1->field_0x2c = param_6;
   iVar3 = Library::DKW::LIB::FUN_006acf50(*(int *)&param_1->field_0x8,iVar4 + 0x18);
@@ -43,11 +47,10 @@ FUN_006dbd20(AnonShape_GLOBAL_00807598_0C6808FB *param_1,undefined4 param_2,uint
   else {
     iVar3 = Library::DKW::LIB::FUN_006acf50(*(int *)&param_1->field_0x10,iVar4 * 2 + 0x10);
     *(int *)&param_1->field_0x10 = iVar3;
-    if (((*(int *)&param_1->field_0x144 != 0) && (iVar3 = *(int *)&param_1->field_0x174, 0 < iVar3))
-       && (iVar3 < *(int *)&param_1->field_0x2c)) {
-      iVar3 = Library::DKW::LIB::FUN_006acf50
-                        (*(int *)&param_1->field_0x1c,*(int *)&param_1->field_0x28 * iVar3);
-      *(int *)&param_1->field_0x1c = iVar3;
+    if (((param_1->field_0144 != 0) && (iVar3 = param_1->field_0174, 0 < iVar3)) &&
+       (iVar3 < *(int *)&param_1->field_0x2c)) {
+      iVar3 = Library::DKW::LIB::FUN_006acf50(param_1->field_001C,param_1->field_0028 * iVar3);
+      param_1->field_001C = iVar3;
     }
   }
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -70,8 +73,8 @@ FUN_006dbd20(AnonShape_GLOBAL_00807598_0C6808FB *param_1,undefined4 param_2,uint
             (param_1,param_7,param_8,param_9,param_10,param_11._0_4_,param_11._4_4_,param_12._0_4_,
              param_12._4_4_);
   FUN_006dd610(param_1,(-(uint)(*(int *)&param_1->field_0x124 != 1) & 0xfffffffc) + 4,
-               *(undefined4 *)&param_1->field_0098,*(undefined4 *)((int)&param_1->field_0098 + 4),
-               *(undefined4 *)&param_1->field_00A0,*(undefined4 *)((int)&param_1->field_00A0 + 4));
+               *(uint *)&param_1->field_0098,*(undefined4 *)((int)&param_1->field_0098 + 4),
+               *(uint *)&param_1->field_00A0,*(undefined4 *)((int)&param_1->field_00A0 + 4));
   if ((*(int *)&param_1->field_0x124 == 0) || (*(int *)&param_1->field_0x124 == 10)) {
     local_20 = 0;
     local_1c = 0;
@@ -80,7 +83,7 @@ FUN_006dbd20(AnonShape_GLOBAL_00807598_0C6808FB *param_1,undefined4 param_2,uint
     FUN_006e25d0(param_1,&local_30);
     param_1->field_0108 = local_2c - local_3c;
   }
-  *(undefined4 *)&param_1->field_0x2d8 = 1;
+  param_1->field_02D8 = 1;
   *(undefined4 *)&param_1->field_0x2dc = 0;
   *(undefined4 *)&param_1->field_0x140 = 0;
   *(undefined4 *)&param_1->field_0x13c = 0;

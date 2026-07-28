@@ -26,6 +26,7 @@ STBHEShellC::sub_005F3BF0(STBHEShellC *this,int param_1,int param_2,undefined4 p
   undefined4 local_8;
 
   local_8 = 0;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_4 == '\0') {
     this->field_00D1 = (short)this->field_0093;
     this->field_00D3 = (short)this->field_0097;
@@ -46,6 +47,7 @@ STBHEShellC::sub_005F3BF0(STBHEShellC *this,int param_1,int param_2,undefined4 p
       local_8 = 1;
     }
   }
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   else if (param_4 == '\x01') {
     iVar4 = FUN_006aced8(this->field_0093,this->field_0097,param_1,param_2);
     this->field_00EF = iVar4;
@@ -128,6 +130,7 @@ STBHEShellC::sub_005F3BF0(STBHEShellC *this,int param_1,int param_2,undefined4 p
       }
     }
   }
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   else if ((param_4 == '\x02') && (iVar4 = this->field_00EF, iVar4 != 0)) {
     uVar6 = this->field_00FF;
     this->field_00C9 = 2;

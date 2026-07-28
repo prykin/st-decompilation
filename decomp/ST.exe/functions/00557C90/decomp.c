@@ -89,7 +89,7 @@ void __thiscall VisibleClassTy::Init(VisibleClassTy *this)
       iVar11 = iVar11 + 1;
     } while (iVar11 < 3);
     Library::Ourlib::STDARK::FUN_007176f0
-              (PTR_00807598,&this_00->field_003C,this_00->field_0028,this_00->field_002C,
+              (PTR_00807598,this_00->field_003C,this_00->field_0028,this_00->field_002C,
                (int)&this_00->field_0118,(int)this_00->field_004C,this_00->field_0030,
                this_00->field_0034,(int)&this_00->field_01D8,3,0x10,&DAT_007c9290,&DAT_007c929c);
     pDVar9 = this_00->field_0110;
@@ -121,7 +121,7 @@ void __thiscall VisibleClassTy::Init(VisibleClassTy *this)
           break;
         case 3:
           SetZoneAst(this_00,(int)*(short *)(puVar8 + 2),(int)*(short *)(puVar8 + 4),puVar8[6],
-                     (uint)(byte)puVar8[1],(uint)(byte)puVar8[7],*(undefined4 *)(puVar8 + 8),8);
+                     (uint)(byte)puVar8[1],(uint)(byte)puVar8[7],*(uint *)(puVar8 + 8),8);
           break;
         case 4:
           SetZoneTsh(this_00,(int)*(short *)(puVar8 + 2),(int)*(short *)(puVar8 + 4),puVar8[6],

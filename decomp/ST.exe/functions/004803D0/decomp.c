@@ -16,12 +16,13 @@ int __thiscall STBoatC::FUN_004803d0(STBoatC *this,int param_1)
     *(undefined2 *)&this->field_0x3be = *(undefined2 *)&this->field_0x44f;
     *(undefined2 *)&this->field_0x3bc = *(undefined2 *)&this->field_0x44d;
     *(undefined4 *)&this->field_0x3c0 = *(undefined4 *)&this->field_0x451;
-    this->field_06EB = *(undefined4 *)&this->field_0x451;
-    this->field_06EF = 0;
+    *(undefined4 *)(this->field_06CB + 4) = *(undefined4 *)&this->field_0x451;
+    *(undefined4 *)((int)this->field_06CB + 0x24) = 0;
   }
-  iVar1 = this->field_06EF;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+  iVar1 = *(int *)((int)this->field_06CB + 0x24);
   if (iVar1 == 0) {
-    iVar1 = LoadObj(this,param_1);
+    iVar1 = LoadObj(this,(AnonShape_005EFAE0_B406B78B *)param_1);
     if (iVar1 == -1) {
       return -1;
     }
@@ -31,16 +32,18 @@ int __thiscall STBoatC::FUN_004803d0(STBoatC *this,int param_1)
     if (this->field_07CA == 0) {
       return 0;
     }
-    this->field_06EF = 1;
+    *(undefined4 *)((int)this->field_06CB + 0x24) = 1;
     this->field_07CE = 1;
   }
   else if (iVar1 == 1) {
-    iVar1 = (*this->vtable->vfunc_D8)(this);
+    iVar1 = this->vfunc_D8();
     if (iVar1 != 0) {
       return -1;
     }
     if (g_playSystem_00802A38->field_00E4 % 0x25 == 0) {
-      iVar1 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,this->field_07CA,&param_1);
+      iVar1 = STPlaySystemC::sub_006E62D0
+                        (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)this->field_07CA,
+                         &param_1);
       if (iVar1 == -4) {
         return 0;
       }
@@ -49,7 +52,7 @@ int __thiscall STBoatC::FUN_004803d0(STBoatC *this,int param_1)
         this->field_03D2 = 0xffff;
         this->field_03D0 = 0xffff;
         this->field_03CE = 0xffff;
-        this->field_06EF = 2;
+        *(undefined4 *)((int)this->field_06CB + 0x24) = 2;
         iVar1 = UnLoadObj(this,1);
         return iVar1;
       }

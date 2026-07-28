@@ -3,12 +3,17 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
-   STAllPlayersC::GetCursorType */
+   STAllPlayersC::GetCursorType
+
+   [STPrototypeApplier] Propagated parameter 2.
+   Evidence: 00435945 MOV EAX,dword ptr [EDI + 0x20] classifies dword parameter loaded at 00435939
+    */
 
 short __thiscall
 STAllPlayersC::GetCursorType
-          (STAllPlayersC *this,Global_sub_00435B90_param_3Enum param_1,int *param_2,
-          undefined4 param_3,int *param_4,undefined4 param_5,undefined4 param_6)
+          (STAllPlayersC *this,Global_sub_00435B90_param_3Enum param_1,
+          AnonShape_00435930_AC276C8C *param_2,undefined4 param_3,int *param_4,undefined4 param_5,
+          undefined4 param_6)
 
 {
   DArrayTy *array;
@@ -24,10 +29,10 @@ STAllPlayersC::GetCursorType
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_EDX;
   uint index;
-  uint local_8;
+  undefined1 local_8 [4];
 
-  if ((param_2 != (int *)0x0) &&
-     ((((iVar5 = param_2[8], iVar5 == 0x14 || (iVar5 == 1000)) || (iVar5 == 0x3e9)) ||
+  if ((param_2 != (AnonShape_00435930_AC276C8C *)0x0) &&
+     ((((iVar5 = param_2->field_0020, iVar5 == 0x14 || (iVar5 == 1000)) || (iVar5 == 0x3e9)) ||
       ((iVar5 == 0x172 || (iVar5 == 0x1a4)))))) {
     thunk_FUN_0041f390((int)param_2);
     /* ST_PSEUDO[unresolved_register_input,return_width_artifact]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -45,8 +50,8 @@ STAllPlayersC::GetCursorType
       }
       /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
       sVar3 = thunk_FUN_00435b90(CONCAT31((int3)((uint)in_EDX >> 8),DAT_0080874d),
-                                 g_playerRuntime[uVar4].tempSlots[0][0].objectIds,param_1,param_2,
-                                 param_3,param_4);
+                                 g_playerRuntime[uVar4].tempSlots[0][0].objectIds,param_1,
+                                 (int *)param_2,param_3,param_4);
       return sVar3;
     }
   }
@@ -69,10 +74,12 @@ STAllPlayersC::GetCursorType
         return 0;
       }
       do {
-        DArrayGetElement(array,index,&local_8);
-        if ((short)local_8 != -1) {
-          pSVar6 = GetObjPtr(this,(char)g_playerRuntime[uVar4].tempSlots[1][0].playerId,local_8,
-                             CASE_1);
+        DArrayGetElement(array,index,local_8);
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+        if (local_8._0_2_ != 0xffff) {
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+          pSVar6 = GetObjPtr(this,(char)g_playerRuntime[uVar4].tempSlots[1][0].playerId,
+                             local_8._0_2_,CASE_1);
           uVar7 = (*pSVar6->vtable->vfunc_28)(param_1,param_2,param_3,param_4);
           return (short)uVar7;
         }
@@ -88,14 +95,16 @@ STAllPlayersC::GetCursorType
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
   }
-  if ((param_2 != (int *)0x0) && (param_2[9] == (uint)DAT_0080874d)) {
+  if ((param_2 != (AnonShape_00435930_AC276C8C *)0x0) && (param_2->field_0024 == (uint)DAT_0080874d)
+     ) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    if ((param_2[8] == 0x14) && (iVar5 = (**(code **)(*param_2 + 0xec))(), iVar5 == 1)) {
+    if ((param_2->field_0020 == 0x14) &&
+       (iVar5 = (**(code **)(*(int *)param_2 + 0xec))(), iVar5 == 1)) {
       return 3;
     }
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    if (((param_2[8] == 1000) || (param_2[8] == 0x3e9)) &&
-       (iVar5 = (**(code **)(*param_2 + 0xec))(), iVar5 == 1)) {
+    if (((param_2->field_0020 == 1000) || (param_2->field_0020 == 0x3e9)) &&
+       (iVar5 = (**(code **)(*(int *)param_2 + 0xec))(), iVar5 == 1)) {
       return 4;
     }
   }

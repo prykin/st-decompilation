@@ -3,23 +3,28 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel1.cpp
-   CPanelTy::SwitchTV */
+   CPanelTy::SwitchTV
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=4, used=0), and
+   decompilation contains no value return */
 
 void __thiscall CPanelTy::SwitchTV(CPanelTy *this,int param_1)
 
 {
-  code *pcVar1;
+  char cVar1;
+  code *pcVar2;
   CPanelTy *this_00;
-  uint uVar2;
-  undefined1 *puVar3;
-  byte bVar4;
-  int iVar5;
-  char *pcVar6;
-  ushort *puVar7;
-  uint uVar8;
+  uint uVar3;
+  undefined1 *puVar4;
+  byte bVar5;
+  int iVar6;
+  char *pcVar7;
+  ushort *puVar8;
   uint uVar9;
-  int iVar10;
-  undefined4 *puVar11;
+  uint uVar10;
+  int iVar11;
+  undefined4 *puVar12;
   InternalExceptionFrame local_58;
   byte local_14;
   undefined3 uStack_13;
@@ -38,51 +43,53 @@ void __thiscall CPanelTy::SwitchTV(CPanelTy *this,int param_1)
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_10 = this;
-  iVar5 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
-  puVar3 = local_8;
-  uVar2 = local_c;
+  iVar6 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
+  puVar4 = local_8;
+  uVar3 = local_c;
   this_00 = local_10;
-  if (iVar5 == 0) {
-    uVar8 = local_c & 0xff;
-    if ((&local_10->field_02EC)[uVar8] == '\x01') {
-      puVar11 = (undefined4 *)0x0;
-      iVar10 = 0;
-      iVar5 = 1;
-      bVar4 = 0;
-      uVar9 = 6;
+  if (iVar6 == 0) {
+    uVar9 = local_c & 0xff;
+    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+    cVar1 = *(char *)((int)local_10->field_0308 + (uVar9 - 0x1c));
+    if (cVar1 == '\x01') {
+      puVar12 = (undefined4 *)0x0;
+      iVar11 = 0;
+      iVar6 = 1;
+      bVar5 = 0;
+      uVar10 = 6;
       if (DAT_0080731a != 0) {
-        pcVar6 = thunk_FUN_00526100(local_8,1);
-        puVar7 = Library::Ourlib::MFRLOAD::mfRLoad
-                           (DAT_00806794,CASE_1F,pcVar6,uVar9,bVar4,iVar5,iVar10,puVar11);
-        (&this_00->field_02E2)[uVar8] = puVar7;
-        (&this_00->field_02EC)[uVar8] = 5;
-        (&this_00->field_02EA)[uVar8] = 0;
-        pcVar6 = thunk_FUN_00526100(puVar3,0);
-        *(char **)(&this_00->field_0x2f6 + uVar8 * 4) = pcVar6;
+        pcVar7 = thunk_FUN_00526100(local_8,1);
+        puVar8 = Library::Ourlib::MFRLOAD::mfRLoad
+                           (DAT_00806794,CASE_1F,pcVar7,uVar10,bVar5,iVar6,iVar11,puVar12);
+        *(ushort **)((int)this_00->field_0308 + uVar9 * 4 + -0x26) = puVar8;
+        *(undefined1 *)((int)this_00->field_0308 + (uVar9 - 0x1c)) = 5;
+        *(undefined1 *)((int)this_00->field_0308 + (uVar9 - 0x1e)) = 0;
+        pcVar7 = thunk_FUN_00526100(puVar4,0);
+        *(char **)((int)this_00->field_0308 + uVar9 * 4 + -0x12) = pcVar7;
         thunk_FUN_005252c0(0xb3);
         g_currentExceptionFrame = local_58.previous;
         return;
       }
-      pcVar6 = thunk_FUN_00526100(local_8,0);
-      puVar7 = Library::Ourlib::MFRLOAD::mfRLoad
-                         (DAT_00806794,CASE_1F,pcVar6,uVar9,bVar4,iVar5,iVar10,puVar11);
-      (&this_00->field_02E2)[uVar8] = puVar7;
-      (&this_00->field_02EA)[uVar8] = 0;
-      thunk_FUN_004f1890(this_00,(byte)uVar2);
-      bVar4 = (-(param_1 != 0) & 0xf8U) + 8;
+      pcVar7 = thunk_FUN_00526100(local_8,0);
+      puVar8 = Library::Ourlib::MFRLOAD::mfRLoad
+                         (DAT_00806794,CASE_1F,pcVar7,uVar10,bVar5,iVar6,iVar11,puVar12);
+      *(ushort **)((int)this_00->field_0308 + uVar9 * 4 + -0x26) = puVar8;
+      *(undefined1 *)((int)this_00->field_0308 + (uVar9 - 0x1e)) = 0;
+      thunk_FUN_004f1890(this_00,(byte)uVar3);
+      bVar5 = (-(param_1 != 0) & 0xf8U) + 8;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      _local_14 = CONCAT31(uStack_13,bVar4);
-      if (bVar4 < 0xb) {
-        if (-1 < (&this_00->field_0148)[bVar4]) {
+      _local_14 = CONCAT31(uStack_13,bVar5);
+      if (bVar5 < 0xb) {
+        if (-1 < (int)this_00->field_0148[bVar5]) {
           Library::DKW::DDX::FUN_006b3640
-                    ((int *)PTR_008075a8,(&this_00->field_0148)[bVar4],0xffffffff,
-                     (&this_00->field_003C)[bVar4],(&this_00->field_0094)[bVar4]);
+                    ((int *)PTR_008075a8,(uint)this_00->field_0148[bVar5],0xffffffff,
+                     (&this_00->field_003C)[bVar5],(&this_00->field_0094)[bVar5]);
         }
       }
     }
-    else if ((&local_10->field_02EC)[uVar8] == '\x05') {
-      pcVar6 = thunk_FUN_00526100(local_8,0);
-      *(char **)(&this_00->field_0x2f6 + uVar8 * 4) = pcVar6;
+    else if (cVar1 == '\x05') {
+      pcVar7 = thunk_FUN_00526100(local_8,0);
+      *(char **)((int)this_00->field_0308 + uVar9 * 4 + -0x12) = pcVar7;
       g_currentExceptionFrame = local_58.previous;
       return;
     }
@@ -90,12 +97,12 @@ void __thiscall CPanelTy::SwitchTV(CPanelTy *this,int param_1)
     return;
   }
   g_currentExceptionFrame = local_58.previous;
-  iVar10 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel1.cpp",0xd3,0,iVar5,"%s",
+  iVar11 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel1.cpp",0xd3,0,iVar6,"%s",
                               "CPanelTy::SwitchTV");
-  if (iVar10 != 0) {
+  if (iVar11 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar5,0,"E:\\__titans\\Andrey\\cpanel1.cpp",0xd3);
+  RaiseInternalException(iVar6,0,"E:\\__titans\\Andrey\\cpanel1.cpp",0xd3);
   return;
 }
 

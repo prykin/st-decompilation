@@ -25,7 +25,7 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
   undefined4 uVar13;
   undefined4 uVar14;
   short sVar15;
-  undefined2 uVar16;
+  ushort uVar16;
   uint uVar17;
   byte bVar18;
   undefined4 uVar19;
@@ -115,7 +115,7 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
       uVar17 = ((uint)puVar4[7] * *(int *)(puVar4 + 2) + 0x1f >> 3 & 0x1ffffffc) *
                *(int *)(puVar4 + 4);
     }
-    puVar24 = (undefined4 *)FUN_006b4fa0((int)puVar4);
+    puVar24 = (undefined4 *)FUN_006b4fa0((int *)puVar4);
     for (uVar9 = uVar17 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
       *puVar24 = 0xffffffff;
       puVar24 = puVar24 + 1;

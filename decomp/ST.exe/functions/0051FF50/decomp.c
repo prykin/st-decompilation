@@ -16,16 +16,15 @@ void __thiscall InfocPanelTy::InitInfocPanel(InfocPanelTy *this)
   ccFntTy *pcVar5;
   int iVar6;
   int *piVar7;
-  int iVar8;
-  undefined4 uVar9;
-  undefined4 uVar10;
-  uint uVar11;
-  byte bVar12;
-  int iVar13;
-  UINT UVar14;
+  undefined4 uVar8;
+  int iVar9;
+  uint uVar10;
+  byte bVar11;
+  int iVar12;
+  UINT UVar13;
+  undefined4 uVar14;
   undefined4 uVar15;
-  undefined4 uVar16;
-  undefined4 *puVar17;
+  undefined4 *puVar16;
   undefined4 local_430 [224];
   InternalExceptionFrame local_b0;
   undefined4 local_6c [4];
@@ -44,11 +43,11 @@ void __thiscall InfocPanelTy::InitInfocPanel(InfocPanelTy *this)
   int local_c;
   int local_8;
 
-  puVar17 = local_6c;
+  puVar16 = local_6c;
   local_10 = this;
   for (iVar6 = 0x16; iVar6 != 0; iVar6 = iVar6 + -1) {
-    *puVar17 = 0;
-    puVar17 = puVar17 + 1;
+    *puVar16 = 0;
+    puVar16 = puVar16 + 1;
   }
   memset(local_430, 0, 0x380); /* compiler bulk-zero initialization */
   local_b0.previous = g_currentExceptionFrame;
@@ -56,17 +55,17 @@ void __thiscall InfocPanelTy::InitInfocPanel(InfocPanelTy *this)
   iVar6 = Library::MSVCRT::__setjmp3(local_b0.jumpBuffer,0);
   this_00 = local_10;
   if (iVar6 == 0) {
-    uVar16 = 0x8b;
-    uVar15 = 0xd8;
-    UVar14 = 0x36bf;
-    iVar13 = 0xb;
-    iVar6 = 0xbf;
-    uVar10 = 3;
-    uVar9 = 0x40;
+    uVar15 = 0x8b;
+    uVar14 = 0xd8;
+    UVar13 = 0x36bf;
+    iVar12 = 0xb;
+    iVar9 = 0xbf;
+    uVar8 = 3;
+    iVar6 = 0x40;
     g_infocPanel_00801698 = local_10;
     pCVar3 = thunk_FUN_00571240("BKG_INFOCENTERW",0);
     SpecPanelTy::InitPanel
-              ((SpecPanelTy *)this_00,pCVar3,uVar9,uVar10,iVar6,iVar13,UVar14,uVar15,uVar16);
+              ((SpecPanelTy *)this_00,pCVar3,iVar6,uVar8,iVar9,iVar12,UVar13,uVar14,uVar15);
     puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
                        (DAT_00806794,CASE_B,"BUT_CHPLAYER",0xffffffff,0,1,0,
                         (undefined4 *)0x0);
@@ -75,14 +74,14 @@ void __thiscall InfocPanelTy::InitInfocPanel(InfocPanelTy *this)
                        (DAT_00806794,CASE_B,"GAME_ALLY",0xffffffff,0,1,0,(undefined4 *)0x0)
     ;
     this_00->field_03C8 = puVar4;
-    puVar17 = (undefined4 *)0x0;
-    iVar13 = 0;
+    puVar16 = (undefined4 *)0x0;
+    iVar9 = 0;
     iVar6 = 1;
-    bVar12 = 0;
-    uVar11 = 0xffffffff;
+    bVar11 = 0;
+    uVar10 = 0xffffffff;
     pCVar3 = thunk_FUN_00571240("IND_PNT",0);
     puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
-                       (DAT_00806794,CASE_B,pCVar3,uVar11,bVar12,iVar6,iVar13,puVar17);
+                       (DAT_00806794,CASE_B,pCVar3,uVar10,bVar11,iVar6,iVar9,puVar16);
     this_00->field_03CC = puVar4;
     pcVar5 = (ccFntTy *)ccFntTy::operator_new(0x19d,g_cMf32_00806790,"MONEY_FONT",0);
     this_00->field_03D5 = pcVar5;
@@ -90,26 +89,26 @@ void __thiscall InfocPanelTy::InitInfocPanel(InfocPanelTy *this)
     pcVar5->field_005C = 0;
     local_c = this_00->field_005C;
     local_14 = this_00->field_003C + 0x1d;
-    iVar13 = 0;
+    iVar9 = 0;
     iVar6 = 1;
-    puVar17 = local_430 + 1;
+    puVar16 = local_430 + 1;
     local_8 = 7;
     do {
-      iVar8 = local_14;
-      puVar17[-1] = iVar6;
-      *puVar17 = 2;
-      puVar17[2] = iVar8;
+      iVar12 = local_14;
+      puVar16[-1] = iVar6;
+      *puVar16 = 2;
+      puVar16[2] = iVar12;
       iVar2 = local_c;
-      puVar17[4] = 0x11;
-      iVar8 = DAT_00806734;
+      puVar16[4] = 0x11;
+      iVar12 = DAT_00806734;
       if (iVar2 != 0) {
-        iVar8 = this_00->field_0044;
+        iVar12 = this_00->field_0044;
       }
       iVar6 = iVar6 + 1;
-      puVar17[3] = iVar13 + 0x23 + iVar8;
-      puVar17[5] = 0xc;
-      iVar13 = iVar13 + 0xd;
-      puVar17 = puVar17 + 0x1c;
+      puVar16[3] = iVar9 + 0x23 + iVar12;
+      puVar16[5] = 0xc;
+      iVar9 = iVar9 + 0xd;
+      puVar16 = puVar16 + 0x1c;
       local_8 = local_8 + -1;
     } while (local_8 != 0);
     local_5c = this_00->field_0008;
@@ -197,9 +196,9 @@ void __thiscall InfocPanelTy::InitInfocPanel(InfocPanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_b0.previous;
-  iVar13 = ReportDebugMessage("E:\\__titans\\Andrey\\infocen.cpp",0x3e,0,iVar6,"%s",
-                              "InfocPanelTy::InitInfocPanel");
-  if (iVar13 != 0) {
+  iVar9 = ReportDebugMessage("E:\\__titans\\Andrey\\infocen.cpp",0x3e,0,iVar6,"%s",
+                             "InfocPanelTy::InitInfocPanel");
+  if (iVar9 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar6,0,"E:\\__titans\\Andrey\\infocen.cpp",0x3e);

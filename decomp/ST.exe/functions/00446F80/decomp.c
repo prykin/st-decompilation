@@ -45,7 +45,7 @@ void __thiscall STAllPlayersC::DistributeGuardBoats(STAllPlayersC *this,char par
   DArrayTy *local_60;
   int local_5c;
   uint local_58;
-  undefined2 local_54;
+  ushort local_54;
   undefined2 uStack_52;
   undefined2 uStack_50;
   int local_4e;
@@ -215,8 +215,7 @@ LAB_0044738a:
             DArrayGetElement(local_48,local_8,&local_c);
             DArrayGetElement(local_c,0,&local_34);
             DArrayGetElement(local_60,local_34 & 0xffff,&local_54);
-            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_28 = (STFishC *)GetObjPtr(local_6c,param_1,CONCAT22(uStack_52,local_54),CASE_1);
+            local_28 = (STFishC *)GetObjPtr(local_6c,param_1,local_54,CASE_1);
             if ((STGameObjC *)local_28 != (STGameObjC *)0x0) {
               STFishC::sub_004162B0(local_28,&local_e,&local_10,&local_16);
               DArrayGetElement(local_40,local_8,&local_c);
@@ -234,7 +233,7 @@ LAB_0044738a:
                     DArrayGetElement(pDVar3,uVar7,&local_28);
                     iVar5 = (*local_28->vtable->vfunc_F8)();
                     if (((iVar5 == 0) ||
-                        (iVar5 = (*local_28->vtable->vfunc_F0)(local_28), iVar5 == 0)) ||
+                        (iVar5 = local_28->vfunc_F0(), iVar5 == 0)) ||
                        (iVar5 = (*local_28->vtable->vfunc_F4)(local_a0), iVar5 == 0)) {
                       FUN_006b0c70(pDVar3,uVar7);
                       uVar7 = uVar7 - 1;
@@ -327,8 +326,7 @@ LAB_0044738a:
               DArrayGetElement(local_48,local_8,&local_80);
               DArrayGetElement(local_80,0,&local_34);
               DArrayGetElement(local_60,local_34 & 0xffff,&local_54);
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              local_28 = (STFishC *)GetObjPtr(local_6c,param_1,CONCAT22(uStack_52,local_54),CASE_1);
+              local_28 = (STFishC *)GetObjPtr(local_6c,param_1,local_54,CASE_1);
               if ((STGameObjC *)local_28 != (STGameObjC *)0x0) {
                 STFishC::sub_004162B0(local_28,&local_e,&local_10,&local_16);
                 PutOnPlaceGuardBoats
@@ -349,8 +347,7 @@ LAB_0044738a:
               DArrayGetElement(local_48,local_8,&local_80);
               DArrayGetElement(local_80,0,&local_34);
               DArrayGetElement(local_60,local_34 & 0xffff,&local_54);
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              local_28 = (STFishC *)GetObjPtr(local_6c,param_1,CONCAT22(uStack_52,local_54),CASE_1);
+              local_28 = (STFishC *)GetObjPtr(local_6c,param_1,local_54,CASE_1);
               if ((STGameObjC *)local_28 != (STGameObjC *)0x0) {
                 STFishC::sub_004162B0(local_28,&local_e,&local_10,&local_16);
                 uVar10 = 0;
@@ -549,17 +546,15 @@ LAB_004471ad:
   pDVar3 = local_30;
 LAB_004471bd:
   if (local_1c == (DArrayTy *)0x0) goto LAB_0044738a;
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  local_28 = (STFishC *)GetObjPtr(local_6c,param_1,CONCAT22(uStack_52,local_54),CASE_1);
+  local_28 = (STFishC *)GetObjPtr(local_6c,param_1,local_54,CASE_1);
   if ((STGameObjC *)local_28 != (STGameObjC *)0x0) {
     STFishC::sub_004162B0(local_28,&local_e,&local_10,&local_16);
     local_8 = local_8 + 1;
     if ((int)local_8 < (int)pDVar3) {
       do {
         DArrayGetElement(pDVar6,local_8,&local_54);
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         if ((((local_4e != 1) &&
-             (local_28 = (STFishC *)GetObjPtr(local_6c,param_1,CONCAT22(uStack_52,local_54),CASE_1),
+             (local_28 = (STFishC *)GetObjPtr(local_6c,param_1,local_54,CASE_1),
              (STGameObjC *)local_28 != (STGameObjC *)0x0)) &&
             (STFishC::sub_004162B0(local_28,&local_38,&local_36,&local_66),
             uVar7 = (int)local_38 - (int)local_e >> 0x1f,

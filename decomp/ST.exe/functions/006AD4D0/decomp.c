@@ -407,12 +407,15 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
           pcVar9 = pcVar9 + 4;
         }
       }
-      if ((DAT_00854eb8 == (AnonShape_GLOBAL_0080759C_9638EF10 *)0x0) ||
-         (puVar10 = *(undefined4 **)&DAT_00854eb8->field_0x47c, puVar10 == (undefined4 *)0x0)) {
+      if ((g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8 ==
+           (AnonShape_GLOBAL_0080759C_9638EF10 *)0x0) ||
+         (puVar10 = *(undefined4 **)&g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8->field_0x47c,
+         puVar10 == (undefined4 *)0x0)) {
         puVar10 = (undefined4 *)0x0;
       }
       else {
-        Library::DKW::DDX::FUN_006ce8c0((int)DAT_00854eb8,(HDC)*puVar10);
+        Library::DKW::DDX::FUN_006ce8c0
+                  ((int)g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8,(HDC)*puVar10);
         uVar5 = 0xffffffff;
         pcVar8 = " (UNSAFE)";
         do {
@@ -447,25 +450,32 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
           pcVar9 = pcVar9 + 1;
         }
       }
-      if ((DAT_00854eb8 != (AnonShape_GLOBAL_0080759C_9638EF10 *)0x0) &&
-         ((*(uint *)&DAT_00854eb8->field_0x8 & 0x2000000) != 0)) {
-        *(uint *)&DAT_00854eb8->field_0x8 = *(uint *)&DAT_00854eb8->field_0x8 & 0xfdfffffe;
+      if ((g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8 !=
+           (AnonShape_GLOBAL_0080759C_9638EF10 *)0x0) &&
+         ((*(uint *)&g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8->field_0x8 & 0x2000000) != 0)) {
+        *(uint *)&g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8->field_0x8 =
+             *(uint *)&g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8->field_0x8 & 0xfdfffffe;
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (**(code **)(*DAT_00854eb8->field_0030 + 0x50))
-                  (DAT_00854eb8->field_0030,*(undefined4 *)&DAT_00854eb8->field_0x4,8);
+        (**(code **)(*g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8->field_0030 + 0x50))
+                  (g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8->field_0030,
+                   *(undefined4 *)&g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8->field_0x4,8);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (**(code **)(*DAT_00854eb8->field_0030 + 0x4c))(DAT_00854eb8->field_0030);
+        (**(code **)(*g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8->field_0030 + 0x4c))
+                  (g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8->field_0030);
       }
       iVar2 = FUN_006ad3a0((LPCSTR)&local_74c,debugMessage,2);
       if (iVar2 == 4) {
         iVar2 = 1;
-        if ((DAT_00854eb8 != (AnonShape_GLOBAL_0080759C_9638EF10 *)0x0) &&
-           ((*(uint *)&DAT_00854eb8->field_0x8 & 1) != 0)) {
-          *(uint *)&DAT_00854eb8->field_0x8 = *(uint *)&DAT_00854eb8->field_0x8 & 0xfdfffffe;
+        if ((g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8 !=
+             (AnonShape_GLOBAL_0080759C_9638EF10 *)0x0) &&
+           ((*(uint *)&g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8->field_0x8 & 1) != 0)) {
+          *(uint *)&g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8->field_0x8 =
+               *(uint *)&g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8->field_0x8 & 0xfdfffffe;
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          (**(code **)(*DAT_00854eb8->field_0030 + 0x50))
-                    (DAT_00854eb8->field_0030,*(undefined4 *)&DAT_00854eb8->field_0x4,8);
-          FUN_006b08f0(DAT_00854eb8,0x854aa4,0,0x100);
+          (**(code **)(*g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8->field_0030 + 0x50))
+                    (g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8->field_0030,
+                     *(undefined4 *)&g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8->field_0x4,8);
+          FUN_006b08f0(g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8,0x854aa4,0,0x100);
         }
       }
       else if (iVar2 == 3) {
@@ -473,9 +483,10 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
       }
       else {
         iVar2 = 0;
-        if ((DAT_00854eb8 != (AnonShape_GLOBAL_0080759C_9638EF10 *)0x0) &&
-           (puVar10 != (undefined4 *)0x0)) {
-          Library::DKW::DDX::FUN_006ce770((uint)DAT_00854eb8,puVar10);
+        if ((g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8 !=
+             (AnonShape_GLOBAL_0080759C_9638EF10 *)0x0) && (puVar10 != (undefined4 *)0x0)) {
+          Library::DKW::DDX::FUN_006ce770
+                    ((uint)g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8,puVar10);
         }
       }
       goto LAB_006ad9d3;

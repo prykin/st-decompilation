@@ -8,10 +8,9 @@ void __thiscall TradePanelTy::sub_00551800(TradePanelTy *this)
 
 {
   int iVar1;
-  int iVar2;
+  uint uVar2;
   int iVar3;
-  uint uVar4;
-  undefined4 uVar5;
+  undefined4 uVar4;
 
   iVar1 = this->field_01C8;
   if ((&this->field_01BC)[(byte)this->field_01D0] == 0) {
@@ -47,12 +46,12 @@ void __thiscall TradePanelTy::sub_00551800(TradePanelTy *this)
 LAB_0055194f:
       if (iVar3 < 1) goto LAB_0055198e;
       if (DAT_0080874e == '\x03') {
-        iVar2 = thunk_FUN_004e41c0((uint)DAT_0080874d);
+        uVar2 = thunk_FUN_004e41c0((uint)DAT_0080874d);
       }
       else {
-        iVar2 = thunk_FUN_004d8870(DAT_0080874d);
+        uVar2 = thunk_FUN_004d8870(DAT_0080874d);
       }
-      if (iVar2 < iVar3) goto LAB_0055198e;
+      if ((int)uVar2 < iVar3) goto LAB_0055198e;
       iVar3 = 1;
     }
     else {
@@ -70,7 +69,7 @@ LAB_0055198e:
     if (iVar3 == 0) {
       if (iVar1 != 0) {
 LAB_005519a4:
-        uVar5 = this->field_01C8;
+        uVar4 = this->field_01C8;
         this->field_0028 = 0x20;
         goto LAB_005519b3;
       }
@@ -79,11 +78,11 @@ LAB_005519a4:
   }
   else {
     if (iVar1 != 0) goto LAB_005519bc;
-    uVar5 = this->field_01C8;
+    uVar4 = this->field_01C8;
     this->field_0028 = 0x20;
     *(undefined4 *)&this->field_0x2c = 1;
 LAB_005519b3:
-    FUN_006e6080(this,2,uVar5,(undefined4 *)&this->field_0x18);
+    FUN_006e6080(this,2,uVar4,(undefined4 *)&this->field_0x18);
   }
 LAB_005519bc:
   if (this->field_01CC == 0) {
@@ -101,9 +100,9 @@ LAB_005519bc:
   else {
     iVar3 = thunk_FUN_004d8af0(DAT_0080874d);
   }
-  uVar4 = (uint)((int)(uint)(ushort)(&this->field_01BC)[(byte)this->field_01D0] <= iVar3);
-  *(uint *)&this->field_0x2c = uVar4;
-  if (uVar4 == 0) {
+  uVar2 = (uint)((int)(uint)(ushort)(&this->field_01BC)[(byte)this->field_01D0] <= iVar3);
+  *(uint *)&this->field_0x2c = uVar2;
+  if (uVar2 == 0) {
     if (iVar1 == 0) {
       return;
     }

@@ -6,7 +6,11 @@
    cLoadingTy::SetProcess
 
    [STPrototypeRepairApplier] Propagated parameter 2.
-   Evidence: 0052AB40 -> 00554F20 @ 0052ABA6 */
+   Evidence: 0052AB40 -> 00554F20 @ 0052ABA6
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=5, used=0), and
+   decompilation contains no value return */
 
 void __thiscall cLoadingTy::SetProcess(cLoadingTy *this,int param_1,char *text,int param_3)
 

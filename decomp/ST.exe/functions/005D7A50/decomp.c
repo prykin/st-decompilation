@@ -51,7 +51,7 @@ void __thiscall SIDTy::InitSID(SIDTy *this)
       uVar3 = ((uint)puVar4[7] * *(int *)(puVar4 + 2) + 0x1f >> 3 & 0x1ffffffc) *
               *(int *)(puVar4 + 4);
     }
-    puVar5 = (undefined4 *)FUN_006b4fa0((int)puVar4);
+    puVar5 = (undefined4 *)FUN_006b4fa0((int *)puVar4);
     for (uVar8 = uVar3 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
       *puVar5 = 0xffffffff;
       puVar5 = puVar5 + 1;
@@ -72,7 +72,7 @@ void __thiscall SIDTy::InitSID(SIDTy *this)
       uVar3 = ((uint)puVar4[7] * *(int *)(puVar4 + 2) + 0x1f >> 3 & 0x1ffffffc) *
               *(int *)(puVar4 + 4);
     }
-    puVar5 = (undefined4 *)FUN_006b4fa0((int)puVar4);
+    puVar5 = (undefined4 *)FUN_006b4fa0((int *)puVar4);
     for (uVar8 = uVar3 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
       *puVar5 = 0xffffffff;
       puVar5 = puVar5 + 1;
@@ -93,7 +93,7 @@ void __thiscall SIDTy::InitSID(SIDTy *this)
       uVar3 = ((uint)puVar4[7] * *(int *)(puVar4 + 2) + 0x1f >> 3 & 0x1ffffffc) *
               *(int *)(puVar4 + 4);
     }
-    puVar5 = (undefined4 *)FUN_006b4fa0((int)puVar4);
+    puVar5 = (undefined4 *)FUN_006b4fa0((int *)puVar4);
     for (uVar8 = uVar3 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
       *puVar5 = 0xffffffff;
       puVar5 = puVar5 + 1;
@@ -106,7 +106,7 @@ void __thiscall SIDTy::InitSID(SIDTy *this)
     puVar4 = this_00->field_1CB8;
     puVar5 = &this_00->field_1CB4;
     FUN_006b2330(PTR_008075a8,puVar5,0x2e,0x4023f6,*(uint *)(puVar4 + 2),*(uint *)(puVar4 + 4),
-                 (uint)puVar4);
+                 puVar4);
     Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,*puVar5,0xffffffff,0xe1,0x1a9);
     FUN_006b3af0((int *)PTR_008075a8,*puVar5);
     SpriteClassTy::InitSprite

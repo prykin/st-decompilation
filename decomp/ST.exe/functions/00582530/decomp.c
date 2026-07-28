@@ -3,7 +3,11 @@
 
 /* [STMethodOwnerApplier] Structural method owner recovered as STJellyGunC.
    Evidence: this_call_owners=[STJellyGunC]; agreed_this_calls=3; incoming_this_accesses=2;
-   incoming_edx_uses=0; incoming_stack_parameter_uses=0 */
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=5, used=0), and
+   decompilation contains no value return */
 
 void __thiscall STJellyGunC::sub_00582530(STJellyGunC *this)
 

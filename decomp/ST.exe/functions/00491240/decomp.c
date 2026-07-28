@@ -3,11 +3,15 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
-   STBoatC::PrepareForLoading */
+   STBoatC::PrepareForLoading
+
+   [STPrototypeApplier] Propagated parameter 5.
+   Evidence: raw retained-width parameter lifetime: width=2, reads=1, sites=00491287 MOV DX,word ptr
+   [EBP + 0x18] */
 
 void __thiscall
 STBoatC::PrepareForLoading
-          (STBoatC *this,int param_1,short param_2,short param_3,short param_4,undefined2 param_5)
+          (STBoatC *this,int param_1,short param_2,short param_3,short param_4,ushort param_5)
 
 {
   short sVar1;

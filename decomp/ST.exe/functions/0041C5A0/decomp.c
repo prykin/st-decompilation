@@ -16,7 +16,7 @@ void __thiscall sub_0041C5A0(void *this)
                 (g_visibleClass_00802A88,(int)*(short *)((int)this + 0x5b),
                  (int)*(short *)((int)this + 0x5d),(char)*(undefined2 *)((int)this + 0x5f),
                  *(undefined **)((int)this + 0x24),*(int *)((int)this + 0x105),
-                 *(undefined4 *)((int)this + 0x18),0xffffffff);
+                 *(int *)((int)this + 0x18),0xffffffff);
     }
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     uVar1 = (**(code **)(*(int *)this + 0x2c))();
@@ -32,8 +32,8 @@ void __thiscall sub_0041C5A0(void *this)
       VisibleClassTy::sub_00559D60
                 (g_visibleClass_00802A88,(int)*(short *)((int)this + 0x5b),
                  (int)*(short *)((int)this + 0x5d),(char)*(undefined2 *)((int)this + 0x5f),
-                 *(uint *)((int)this + 0x24),*(undefined **)((int)this + 0x10d),
-                 *(undefined4 *)((int)this + 0x18));
+                 *(uint *)((int)this + 0x24),*(int *)((int)this + 0x10d),*(uint *)((int)this + 0x18)
+                );
       return;
     }
   }

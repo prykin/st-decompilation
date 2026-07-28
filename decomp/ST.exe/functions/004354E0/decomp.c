@@ -100,7 +100,7 @@ STAllPlayersC::ReplaceObject(STAllPlayersC *this,char param_1,undefined4 param_2
       do {
         DArrayGetElement(pDVar1,uVar5,&local_c);
         if (local_c != (void *)0x0) {
-          thunk_FUN_004a8220(local_c,param_1,(short)param_2,(short)param_3);
+          thunk_FUN_004a8220(local_c,param_1,(short)param_2,(ushort)param_3);
         }
         uVar5 = uVar5 + 1;
       } while ((int)uVar5 < (int)dVar7);

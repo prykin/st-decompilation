@@ -3,7 +3,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\mmsg_obj.cpp
-   MMsgTy::ShowSprites */
+   MMsgTy::ShowSprites
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=7, used=0), and
+   decompilation contains no value return */
 
 void __thiscall MMsgTy::ShowSprites(MMsgTy *this)
 

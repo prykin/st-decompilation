@@ -58,6 +58,7 @@ FUN_005ee3f0(void *this,float param_1,short *param_2,short *param_3,short *param
     lVar16 = Library::MSVCRT::__allmul(uVar13,(int)local_8,uVar13,(int)local_8);
     lVar14 = Library::MSVCRT::__allmul(uVar8 - uVar5,(int)local_10,uVar8 - uVar5,(int)local_10);
     lVar14 = lVar14 + lVar16 + lVar15;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = (short *)lVar14;
     lVar15 = Library::MSVCRT::__allmul(uVar3 - uVar5,iVar10,uVar3 - uVar5,iVar10);
     lVar16 = Library::MSVCRT::__allmul(uVar2 - uVar6,iVar12,uVar2 - uVar6,iVar12);

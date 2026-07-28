@@ -1,6 +1,10 @@
 
 /* [STTypeFamilyApplier] EXACT_ANONYMOUS_LAYOUT.
-   Evidence: exact anonymous structure fingerprint shared across functions */
+   Evidence: exact anonymous structure fingerprint shared across functions
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0), and
+   decompilation contains no value return */
 
 void FUN_006b84d0(AnonShape_006B5B10_E0D06CF1 *param_1,int param_2,int param_3,int param_4,
                  byte *param_5)
@@ -17,8 +21,10 @@ void FUN_006b84d0(AnonShape_006B5B10_E0D06CF1 *param_1,int param_2,int param_3,i
   uint local_c;
   uint local_8;
 
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_2 == 0) {
-    param_2 = FUN_006b4fa0((int)param_1);
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+    param_2 = FUN_006b4fa0((int *)param_1);
   }
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   sVar1 = *(short *)(param_5 + 0xe);
@@ -36,9 +42,11 @@ void FUN_006b84d0(AnonShape_006B5B10_E0D06CF1 *param_1,int param_2,int param_3,i
            ((uint)param_1->field_000E * local_24[2] + 0x1f >> 3 & 0x1ffffffc);
   if (local_18 < 0) {
     local_18 = -local_18;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = pAVar4;
   }
   else {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = (AnonShape_006B5B10_E0D06CF1 *)-(int)pAVar4;
   }
   local_14 = param_3 + sVar1;

@@ -22,6 +22,7 @@ undefined8 FUN_0074da81(uint param_1,uint param_2,uint param_3,uint param_4,uint
   uVar6 = param_2;
   if ((int)param_2 < 0) {
     bVar11 = param_1 != 0;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = -param_1;
     uVar6 = -(param_2 + bVar11);
   }
@@ -54,6 +55,7 @@ undefined8 FUN_0074da81(uint param_1,uint param_2,uint param_3,uint param_4,uint
     if (bVar11) {
       uVar6 = -(uVar6 + (param_5 != 0));
       bVar12 = (int)param_5 < 1;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_5 = -param_5;
     }
     else {

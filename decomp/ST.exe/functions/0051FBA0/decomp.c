@@ -60,7 +60,7 @@ int __thiscall HelpStringTy::GetMessage(HelpStringTy *this,STMessage *message)
         uVar4 = ((uint)puVar5[7] * *(int *)(puVar5 + 2) + 0x1f >> 3 & 0x1ffffffc) *
                 *(int *)(puVar5 + 4);
       }
-      puVar6 = (undefined4 *)FUN_006b4fa0((int)puVar5);
+      puVar6 = (undefined4 *)FUN_006b4fa0((int *)puVar5);
       for (uVar9 = uVar4 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
         *puVar6 = 0;
         puVar6 = puVar6 + 1;

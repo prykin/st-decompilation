@@ -1,9 +1,25 @@
 #include "../../pseudocode_runtime.h"
 
 
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 0064DDA0 -> 006034E0 @ 0064DE5A; AiEventClassTy::_CreateDest parameter param_3; MOVSX
+   at 0064DE10 establishes signed source width 2
+
+   [STPrototypeApplier] Propagated parameter 1.
+   Evidence: raw retained-width parameter lifetime: width=2, reads=1, sites=0060353F MOV DX,word ptr
+   [EBP + 0xc]
+
+   [STPrototypeApplier] Propagated parameter 2.
+   Evidence: raw retained-width parameter lifetime: width=2, reads=1, sites=00603549 MOV AX,word ptr
+   [EBP + 0x10]
+
+   [STPrototypeApplier] Propagated parameter 4.
+   Evidence: 0064DDA0 -> 006034E0 @ 0064DE5A; AiEventClassTy::_CreateDest parameter param_2; MOVSX
+   at 0064DE51 establishes signed source width 2 */
+
 void __cdecl
-FUN_006034e0(undefined2 param_1,undefined2 param_2,undefined2 param_3,int param_4,undefined4 param_5
-            ,char *param_6,char *param_7,undefined4 param_8)
+FUN_006034e0(short param_1,ushort param_2,ushort param_3,int param_4,int param_5,char *param_6,
+            char *param_7,undefined4 param_8)
 
 {
   char cVar1;
@@ -13,12 +29,12 @@ FUN_006034e0(undefined2 param_1,undefined2 param_2,undefined2 param_3,int param_
   char *pcVar7;
   uint local_144 [5];
   int local_130;
-  undefined4 local_12c;
+  int local_12c;
   undefined4 local_128;
   undefined4 local_124;
-  undefined2 local_120;
-  undefined2 local_11e;
-  undefined2 local_11c;
+  short local_120;
+  ushort local_11e;
+  ushort local_11c;
   char local_11a [14];
   undefined1 local_10c;
   char local_10b [259];
@@ -109,7 +125,7 @@ FUN_006034e0(undefined2 param_1,undefined2 param_2,undefined2 param_3,int param_
     Library::MSVCRT::_strncpy(local_10b,param_7,0x103);
     local_8 = 0;
   }
-  (*g_playSystem_00802A38->vtable->vfunc_08)(g_playSystem_00802A38,0x15a,0,0,local_144,0);
+  g_playSystem_00802A38->vfunc_08(0x15a,0,0,local_144,0);
   return;
 }
 

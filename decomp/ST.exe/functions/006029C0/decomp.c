@@ -47,7 +47,7 @@ undefined4 FUN_006029c0(void)
       sVar1 = *(short *)(DAT_00806724 + 0x23);
       local_c->field_039F = 0xff;
       local_c->field_0397 = sVar1 + -1;
-      iVar2 = thunk_FUN_004ad650((int)this);
+      iVar2 = thunk_FUN_004ad650((STT3DSprC *)this);
       local_c->field_039B = iVar2;
       g_currentExceptionFrame = local_50.previous;
       return 1;

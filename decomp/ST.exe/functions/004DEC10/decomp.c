@@ -50,7 +50,7 @@ undefined4 __fastcall FUN_004dec10(TLOBaseTy *param_1)
         param_1->field_04D4 = 5000;
         param_1->field_04D0 = CASE_0;
         TLOBaseTy::RotateSpr(param_1,0);
-        dVar2 = (*param_1->vtable->slot_2C)(param_1);
+        dVar2 = param_1->slot_2C();
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         thunk_FUN_004b7710(CONCAT31((int3)(dVar2 >> 8),*(undefined1 *)&param_1->field_0024),dVar2);
         if (param_1->field_0024 == (uint)(byte)param_1->field_0010->field_112D) {
@@ -67,7 +67,7 @@ undefined4 __fastcall FUN_004dec10(TLOBaseTy *param_1)
       param_1->field_04D0 = CASE_2;
       TLOBaseTy::RotateSpr(param_1,0);
       param_1->field_04D8 = g_playSystem_00802A38->field_00E4;
-      dVar2 = (*param_1->vtable->slot_2C)(param_1);
+      dVar2 = param_1->slot_2C();
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       thunk_FUN_004b76d0(CONCAT31((int3)(dVar2 >> 8),*(undefined1 *)&param_1->field_0024),dVar2);
       if (param_1->field_0024 == (uint)(byte)param_1->field_0010->field_112D) {

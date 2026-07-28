@@ -31,6 +31,7 @@ OpticClassC::sub_004AB070
     return 0;
   }
   DAT_008073e0 = 0;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_2 == 1.4013e-45) {
     if (param_3 == 0) {
       DAT_00807461 = DAT_00807461 + 1;
@@ -44,9 +45,11 @@ OpticClassC::sub_004AB070
 LAB_004ab0d1:
     DAT_00807461 = 0x18;
   }
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_2 = (float)(DAT_00807461 + 1) * *(float *)(&DAT_007ac584 + (uint)DAT_0080733a * 4) *
             _DAT_0079078c;
   if (param_4 == 1) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = param_2 * _DAT_00790788;
   }
   this->field_0018 = DVar1;

@@ -18,8 +18,8 @@ undefined4 __fastcall FUN_004cd790(AnonShape_004CD790_161F55D2 *param_1)
          (pSVar1 = g_worldGrid.cells
                    [(int)g_worldGrid.planeStride * (int)sVar6 + (int)g_worldGrid.sizeX * (int)sVar2
                     + (int)sVar5].objects[0], pSVar1 != (STWorldObject *)0x0)))))) &&
-      (iVar3 = (*pSVar1->vtable->GetObjectTypeId)(pSVar1), 0x53 < iVar3)) &&
-     ((iVar3 = (*pSVar1->vtable->GetObjectTypeId)(pSVar1), iVar3 < 0x5b &&
+      (iVar3 = pSVar1->GetObjectTypeId(), 0x53 < iVar3)) &&
+     ((iVar3 = pSVar1->GetObjectTypeId(), iVar3 < 0x5b &&
       (*(int *)&pSVar1[0x29].field_0xf == 0)))) {
     *(undefined4 *)&pSVar1[0x29].field_0xf = param_1->field_0018;
     thunk_FUN_004ce250(pSVar1,1);
@@ -33,8 +33,8 @@ undefined4 __fastcall FUN_004cd790(AnonShape_004CD790_161F55D2 *param_1)
          (pSVar1 = g_worldGrid.cells
                    [(int)g_worldGrid.planeStride * (int)sVar6 + (int)g_worldGrid.sizeX * (int)sVar2
                     + (int)sVar5].objects[0], pSVar1 != (STWorldObject *)0x0)))))))) &&
-     ((iVar4 = (*pSVar1->vtable->GetObjectTypeId)(pSVar1), 0x53 < iVar4 &&
-      ((iVar4 = (*pSVar1->vtable->GetObjectTypeId)(pSVar1), iVar4 < 0x5b &&
+     ((iVar4 = pSVar1->GetObjectTypeId(), 0x53 < iVar4 &&
+      ((iVar4 = pSVar1->GetObjectTypeId(), iVar4 < 0x5b &&
        (*(int *)&pSVar1[0x29].field_0xf == 0)))))) {
     *(undefined4 *)&pSVar1[0x29].field_0xf = param_1->field_0018;
     thunk_FUN_004ce250(pSVar1,1);
@@ -51,8 +51,8 @@ undefined4 __fastcall FUN_004cd790(AnonShape_004CD790_161F55D2 *param_1)
                            [(int)g_worldGrid.planeStride * (int)sVar6 +
                             (int)sVar2 * (int)g_worldGrid.sizeX + (int)sVar5].objects[0],
                  pSVar1 != (STWorldObject *)0x0)))))))) &&
-       ((iVar3 = (*pSVar1->vtable->GetObjectTypeId)(pSVar1), 0x53 < iVar3 &&
-        ((iVar3 = (*pSVar1->vtable->GetObjectTypeId)(pSVar1), iVar3 < 0x5b &&
+       ((iVar3 = pSVar1->GetObjectTypeId(), 0x53 < iVar3 &&
+        ((iVar3 = pSVar1->GetObjectTypeId(), iVar3 < 0x5b &&
          (*(int *)&pSVar1[0x29].field_0xf == 0)))))) {
       *(undefined4 *)&pSVar1[0x29].field_0xf = param_1->field_0018;
       thunk_FUN_004ce250(pSVar1,1);
@@ -65,8 +65,8 @@ undefined4 __fastcall FUN_004cd790(AnonShape_004CD790_161F55D2 *param_1)
          (pSVar1 = g_worldGrid.cells
                    [(int)g_worldGrid.planeStride * (int)sVar6 + (int)g_worldGrid.sizeX * (int)sVar2
                     + (int)sVar5].objects[0], pSVar1 != (STWorldObject *)0x0)) &&
-        ((iVar4 = (*pSVar1->vtable->GetObjectTypeId)(pSVar1), 0x53 < iVar4 &&
-         ((iVar4 = (*pSVar1->vtable->GetObjectTypeId)(pSVar1), iVar4 < 0x5b &&
+        ((iVar4 = pSVar1->GetObjectTypeId(), 0x53 < iVar4 &&
+         ((iVar4 = pSVar1->GetObjectTypeId(), iVar4 < 0x5b &&
           (*(int *)&pSVar1[0x29].field_0xf == 0)))))))) {
       *(undefined4 *)&pSVar1[0x29].field_0xf = param_1->field_0018;
       thunk_FUN_004ce250(pSVar1,1);
@@ -82,8 +82,8 @@ undefined4 __fastcall FUN_004cd790(AnonShape_004CD790_161F55D2 *param_1)
          ((pSVar1 = g_worldGrid.cells
                     [(int)g_worldGrid.planeStride * (int)sVar5 + (int)g_worldGrid.sizeX * (int)sVar2
                      + (int)sVar6].objects[0], pSVar1 != (STWorldObject *)0x0 &&
-          (iVar3 = (*pSVar1->vtable->GetObjectTypeId)(pSVar1), 0x53 < iVar3)))) &&
-        ((iVar3 = (*pSVar1->vtable->GetObjectTypeId)(pSVar1), iVar3 < 0x5b &&
+          (iVar3 = pSVar1->GetObjectTypeId(), 0x53 < iVar3)))) &&
+        ((iVar3 = pSVar1->GetObjectTypeId(), iVar3 < 0x5b &&
          (*(int *)&pSVar1[0x29].field_0xf == 0)))))) {
       *(undefined4 *)&pSVar1[0x29].field_0xf = param_1->field_0018;
       thunk_FUN_004ce250(pSVar1,1);
@@ -98,8 +98,8 @@ undefined4 __fastcall FUN_004cd790(AnonShape_004CD790_161F55D2 *param_1)
                      [(int)g_worldGrid.planeStride * (int)sVar5 +
                       (int)g_worldGrid.sizeX * (int)sVar2 + (int)sVar6].objects[0],
            pSVar1 != (STWorldObject *)0x0)))))))) &&
-       ((iVar4 = (*pSVar1->vtable->GetObjectTypeId)(pSVar1), 0x53 < iVar4 &&
-        ((iVar4 = (*pSVar1->vtable->GetObjectTypeId)(pSVar1), iVar4 < 0x5b &&
+       ((iVar4 = pSVar1->GetObjectTypeId(), 0x53 < iVar4 &&
+        ((iVar4 = pSVar1->GetObjectTypeId(), iVar4 < 0x5b &&
          (*(int *)&pSVar1[0x29].field_0xf == 0)))))) {
       *(undefined4 *)&pSVar1[0x29].field_0xf = param_1->field_0018;
       thunk_FUN_004ce250(pSVar1,1);
@@ -116,8 +116,8 @@ undefined4 __fastcall FUN_004cd790(AnonShape_004CD790_161F55D2 *param_1)
                      [(int)g_worldGrid.planeStride * (int)sVar5 +
                       (int)sVar2 * (int)g_worldGrid.sizeX + (int)sVar6].objects[0],
            pSVar1 != (STWorldObject *)0x0 &&
-           (iVar3 = (*pSVar1->vtable->GetObjectTypeId)(pSVar1), 0x53 < iVar3)))) &&
-         (iVar3 = (*pSVar1->vtable->GetObjectTypeId)(pSVar1), iVar3 < 0x5b)) &&
+           (iVar3 = pSVar1->GetObjectTypeId(), 0x53 < iVar3)))) &&
+         (iVar3 = pSVar1->GetObjectTypeId(), iVar3 < 0x5b)) &&
         (*(int *)&pSVar1[0x29].field_0xf == 0)))) {
       *(undefined4 *)&pSVar1[0x29].field_0xf = param_1->field_0018;
       thunk_FUN_004ce250(pSVar1,1);
@@ -132,8 +132,8 @@ undefined4 __fastcall FUN_004cd790(AnonShape_004CD790_161F55D2 *param_1)
                       [(int)g_worldGrid.planeStride * (int)sVar5 +
                        (int)g_worldGrid.sizeX * (int)sVar2 + (int)sVar6].objects[0],
             pSVar1 != (STWorldObject *)0x0)))))) &&
-         (iVar3 = (*pSVar1->vtable->GetObjectTypeId)(pSVar1), 0x53 < iVar3)) &&
-        ((iVar3 = (*pSVar1->vtable->GetObjectTypeId)(pSVar1), iVar3 < 0x5b &&
+         (iVar3 = pSVar1->GetObjectTypeId(), 0x53 < iVar3)) &&
+        ((iVar3 = pSVar1->GetObjectTypeId(), iVar3 < 0x5b &&
          (*(int *)&pSVar1[0x29].field_0xf == 0)))))) {
       *(undefined4 *)&pSVar1[0x29].field_0xf = param_1->field_0018;
       thunk_FUN_004ce250(pSVar1,1);

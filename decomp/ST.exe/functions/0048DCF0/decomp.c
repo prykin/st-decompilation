@@ -1,5 +1,9 @@
 
-bool __fastcall FUN_0048dcf0(AnonShape_0048DCF0_C8633E73 *param_1)
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 0046B100 -> 0048DCF0 @ 0046B225; STBoatC::Build this; stable alias ESI | 0046B100 ->
+   0048DCF0 @ 0046B37D; STBoatC::Build this; stable alias ESI */
+
+bool __fastcall FUN_0048dcf0(STBoatC *param_1)
 
 {
   short sVar1;

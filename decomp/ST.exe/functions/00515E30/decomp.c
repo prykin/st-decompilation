@@ -15,12 +15,11 @@ HelpPanelTy::AddLinks(HelpPanelTy *this,int *param_1,char param_2,int param_3,in
   int iVar3;
   uint *puVar4;
   int *piVar5;
-  uint uVar6;
-  char *pcVar7;
-  uint uVar8;
-  char *pcVar9;
-  int iVar10;
-  undefined4 uVar11;
+  char *pcVar6;
+  uint uVar7;
+  char *pcVar8;
+  int iVar9;
+  uint uVar10;
   InternalExceptionFrame local_88;
   undefined4 local_44;
   int local_40;
@@ -49,31 +48,31 @@ HelpPanelTy::AddLinks(HelpPanelTy *this,int *param_1,char param_2,int param_3,in
   this_00 = local_20;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_88.previous;
-    iVar10 = ReportDebugMessage("E:\\__titans\\Andrey\\helppan.cpp",0x460,0,iVar3,
-                                "%s","HelpPanelTy::AddLinks");
-    if (iVar10 != 0) {
+    iVar9 = ReportDebugMessage("E:\\__titans\\Andrey\\helppan.cpp",0x460,0,iVar3,"%s"
+                               ,"HelpPanelTy::AddLinks");
+    if (iVar9 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\helppan.cpp",0x460);
     return;
   }
   if (DAT_007e68a0 != '\0') {
-    pcVar7 = &DAT_007e68a0;
+    pcVar6 = &DAT_007e68a0;
     local_10 = &DAT_007e68a5;
     do {
-      if (((*pcVar7 == param_2) && (local_10[-1] == param_3)) && (*local_10 == param_4)) {
+      if (((*pcVar6 == param_2) && (local_10[-1] == param_3)) && (*local_10 == param_4)) {
         local_c = (int *)((int)local_10 + 5);
         local_1c = 1;
 LAB_00515ee1:
-        if ((*(char *)((int)local_c + -1) != '\0') && (uVar8 = 0, *local_c != 0)) {
+        if ((*(char *)((int)local_c + -1) != '\0') && (uVar7 = 0, *local_c != 0)) {
           if (local_14 != 0) {
             CheckBkView(this_00,*param_1,0xf);
             ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,*param_1,0x19c,0xf);
-            uVar11 = 3;
-            iVar10 = -1;
+            uVar10 = 3;
+            iVar9 = -1;
             iVar3 = -1;
             puVar4 = (uint *)LoadResourceString(0x55f6,g_module_00807618);
-            ccFntTy::WrStr(this_00->field_01E0,puVar4,iVar3,iVar10,uVar11);
+            ccFntTy::WrStr(this_00->field_01E0,puVar4,iVar3,iVar9,uVar10);
             local_14 = 0;
             *param_1 = *param_1 + 0xf;
           }
@@ -88,24 +87,24 @@ LAB_00515ee1:
                  (piVar5[1] == local_c[1])) {
                 ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,local_18 + 0x5f,
                                  *param_1,0x13d - local_18,0xf);
-                pcVar7 = LoadResourceString(*(UINT *)(uVar8 * 0x11 + this_00->field_01C7),
+                pcVar6 = LoadResourceString(*(UINT *)(uVar7 * 0x11 + this_00->field_01C7),
                                             g_module_00807618);
-                uVar8 = 0xffffffff;
+                uVar7 = 0xffffffff;
                 goto code_r0x00516013;
               }
-              uVar8 = uVar8 + 1;
+              uVar7 = uVar7 + 1;
               piVar5 = (int *)((int)piVar5 + 0x11);
-            } while (uVar8 < local_24);
+            } while (uVar7 < local_24);
           }
           goto LAB_0051607e;
         }
       }
 LAB_005160da:
       piVar5 = (int *)((int)local_10 + 0x36);
-      pcVar9 = (char *)((int)local_10 + 0x31);
-      pcVar7 = (char *)((int)local_10 + 0x31);
+      pcVar8 = (char *)((int)local_10 + 0x31);
+      pcVar6 = (char *)((int)local_10 + 0x31);
       local_10 = piVar5;
-    } while (*pcVar9 != '\0');
+    } while (*pcVar8 != '\0');
   }
   CheckBkView(this_00,*param_1,10);
   iVar3 = (*param_1 / 10 + 1) * 10;
@@ -127,27 +126,27 @@ LAB_005160da:
   g_currentExceptionFrame = local_88.previous;
   return;
   while( true ) {
-    uVar8 = uVar8 - 1;
-    pcVar9 = pcVar7 + 1;
-    cVar1 = *pcVar7;
-    pcVar7 = pcVar9;
+    uVar7 = uVar7 - 1;
+    pcVar8 = pcVar6 + 1;
+    cVar1 = *pcVar6;
+    pcVar6 = pcVar8;
     if (cVar1 == '\0') break;
 code_r0x00516013:
-    pcVar9 = pcVar7;
-    if (uVar8 == 0) break;
+    pcVar8 = pcVar6;
+    if (uVar7 == 0) break;
   }
-  uVar8 = ~uVar8;
-  pcVar7 = pcVar9 + -uVar8;
-  pcVar9 = (char *)&DAT_0080f33a;
-  for (uVar6 = uVar8 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-    *(undefined4 *)pcVar9 = *(undefined4 *)pcVar7;
-    pcVar7 = pcVar7 + 4;
-    pcVar9 = pcVar9 + 4;
+  uVar7 = ~uVar7;
+  pcVar6 = pcVar8 + -uVar7;
+  pcVar8 = (char *)&DAT_0080f33a;
+  for (uVar10 = uVar7 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
+    *(undefined4 *)pcVar8 = *(undefined4 *)pcVar6;
+    pcVar6 = pcVar6 + 4;
+    pcVar8 = pcVar8 + 4;
   }
-  for (uVar8 = uVar8 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
-    *pcVar9 = *pcVar7;
-    pcVar7 = pcVar7 + 1;
-    pcVar9 = pcVar9 + 1;
+  for (uVar7 = uVar7 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
+    *pcVar8 = *pcVar6;
+    pcVar6 = pcVar6 + 1;
+    pcVar8 = pcVar8 + 1;
   }
   for (puVar4 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar4 != (uint *)0x0;
       puVar4 = Library::MSVCRT::FUN_0072e560(puVar4,'\n')) {

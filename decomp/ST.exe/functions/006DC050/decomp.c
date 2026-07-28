@@ -1,7 +1,11 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STPrototypeApplier] Propagated parameter 0.
-   Evidence: 004A8FC0 -> 006DC050 @ 004A90C9 | 004A8FC0 -> 006DC050 @ 004A9301 */
+   Evidence: 004A8FC0 -> 006DC050 @ 004A90C9 | 004A8FC0 -> 006DC050 @ 004A9301
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=8, used=0), and
+   decompilation contains no value return */
 
 void __thiscall
 FUN_006dc050(AnonShape_GLOBAL_00807598_0C6808FB *param_1,undefined4 param_2,uint param_3,

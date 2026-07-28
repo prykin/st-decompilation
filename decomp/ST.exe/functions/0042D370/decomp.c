@@ -20,11 +20,11 @@ STAllPlayersC::SetActivityToObjs
   objPtr = (char)param_1;
   if (0x19a < param_2) {
     if (param_2 == 0x1a4) {
-      pSVar2 = GetObjPtr(this,objPtr,param_4,CASE_5);
+      pSVar2 = GetObjPtr(this,objPtr,(ushort)param_4,CASE_5);
       if (pSVar2 == (STGameObjC *)0x0) {
         return;
       }
-      (*pSVar2->vtable->vfunc_E8)(pSVar2,1);
+      pSVar2->vfunc_E8(1);
       return;
     }
     if (param_2 == 0x1ae) {
@@ -45,9 +45,9 @@ LAB_0042d3b2:
     }
     do {
       DArrayGetElement(param_3,index,&param_1);
-      if (((short)param_1 != -1) &&
-         (pSVar2 = GetObjPtr(this,objPtr,param_1,CASE_1), pSVar2 != (STGameObjC *)0x0)) {
-        (*pSVar2->vtable->vfunc_E8)(pSVar2,1);
+      if (((ushort)param_1 != 0xffff) &&
+         (pSVar2 = GetObjPtr(this,objPtr,(ushort)param_1,CASE_1), pSVar2 != (STGameObjC *)0x0)) {
+        pSVar2->vfunc_E8(1);
       }
       index = index + 1;
     } while ((int)index < (int)param_4);
@@ -57,11 +57,11 @@ LAB_0042d3b2:
     if (param_2 == 0x5a) {
       SVar4 = CASE_4;
 cf_common_exit_0042D44C:
-      pSVar2 = GetObjPtr(this,objPtr,param_4,SVar4);
+      pSVar2 = GetObjPtr(this,objPtr,(ushort)param_4,SVar4);
       if (pSVar2 == (STGameObjC *)0x0) {
         return;
       }
-      (*pSVar2->vtable->vfunc_E8)(pSVar2,1);
+      pSVar2->vfunc_E8(1);
       return;
     }
     if (param_2 == 0) {

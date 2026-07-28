@@ -11,54 +11,53 @@
 void __thiscall SoundManagerTy::sub_00566AA0(SoundManagerTy *this)
 
 {
-  int iVar1;
+  uint uVar1;
   uint uVar2;
-  uint uVar3;
 
   if ((this->field_0018 != 0) && (this->field_0028 != 0)) {
     switch(this->field_0038) {
     case CASE_0:
     case CASE_1:
-      uVar3 = this->field_002C;
+      uVar2 = this->field_002C;
       break;
     case CASE_2:
-      uVar3 = this->field_0030;
+      uVar2 = this->field_0030;
       break;
     case CASE_3:
-      uVar3 = this->field_0034;
+      uVar2 = this->field_0034;
       break;
     default:
       goto switchD_00566ac8_default;
     }
-    if (0 < (int)uVar3) {
+    if (0 < (int)uVar2) {
       if (this->field_0039 < 0) {
         sub_00566970(this,0,2000);
       }
       else {
-        iVar1 = thunk_FUN_0056a4d0(0x807658);
-        if (iVar1 == 0) {
-          if (((int)uVar3 < 2) || ((this->field_0038 != CASE_1 && (this->field_0038 != CASE_3)))) {
-            uVar2 = Library::MSVCRT::FUN_0072e6c0();
-            uVar2 = uVar2 % uVar3;
-            if ((uVar2 == this->field_0039) && (1 < this->field_003D)) {
-              uVar2 = this->field_0039 + 1;
+        uVar1 = thunk_FUN_0056a4d0(0x807658);
+        if (uVar1 == 0) {
+          if (((int)uVar2 < 2) || ((this->field_0038 != CASE_1 && (this->field_0038 != CASE_3)))) {
+            uVar1 = Library::MSVCRT::FUN_0072e6c0();
+            uVar1 = uVar1 % uVar2;
+            if ((uVar1 == this->field_0039) && (1 < this->field_003D)) {
+              uVar1 = this->field_0039 + 1;
             }
-            if ((int)uVar3 <= (int)uVar2) {
-              uVar2 = 0;
+            if ((int)uVar2 <= (int)uVar1) {
+              uVar1 = 0;
             }
           }
           else {
-            uVar2 = Library::MSVCRT::FUN_0072e6c0();
-            uVar2 = uVar2 % (uVar3 - 1) + 1;
-            if ((uVar2 == this->field_0039) && (1 < this->field_003D)) {
-              uVar2 = this->field_0039 + 1;
+            uVar1 = Library::MSVCRT::FUN_0072e6c0();
+            uVar1 = uVar1 % (uVar2 - 1) + 1;
+            if ((uVar1 == this->field_0039) && (1 < this->field_003D)) {
+              uVar1 = this->field_0039 + 1;
             }
-            if ((int)uVar3 <= (int)uVar2) {
+            if ((int)uVar2 <= (int)uVar1) {
               sub_00566970(this,1,0);
               return;
             }
           }
-          sub_00566970(this,uVar2,0);
+          sub_00566970(this,uVar1,0);
           return;
         }
       }

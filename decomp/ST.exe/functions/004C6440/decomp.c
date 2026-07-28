@@ -89,7 +89,7 @@ TLOBldMark::sub_004C6440
     if ((int)local_20 < 0x79aed0) {
 cf_common_exit_004C6899:
       if (((this->field_0024 != 0) || (this->field_0028 != 0)) && (local_28 == 0)) {
-        thunk_FUN_004ad430((int)this->field_002C);
+        thunk_FUN_004ad430(this->field_002C);
         this->field_0024 = 0;
         this->field_0028 = 0;
       }

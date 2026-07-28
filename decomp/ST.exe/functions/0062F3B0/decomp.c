@@ -69,7 +69,7 @@ LAB_0062f450:
   iVar2 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   this_00 = local_14;
   if (iVar2 == 0) {
-    iVar2 = STT3DSprC::Init(local_14,DAT_008073cc,0x5a,0x45,0,0xb4,0x8c,0x11);
+    iVar2 = STT3DSprC::Init(local_14,DAT_008073cc,0x5a,0x45,(STDcResourcC *)0x0,0xb4,0x8c,0x11);
     if (iVar2 != 0) {
       RaiseInternalException
                 (-1,g_overwriteContext_007ED77C,"E:\\__titans\\nick\\to_Rubb.cpp",0x17b);

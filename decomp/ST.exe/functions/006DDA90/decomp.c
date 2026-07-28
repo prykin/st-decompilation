@@ -5,6 +5,7 @@ void __thiscall FUN_006dda90(void *this,float param_1,float param_2)
 
 {
   if (param_1 < _DAT_0079034c) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = 0.0;
   }
   if (_DAT_0079dfd0 < param_2) {

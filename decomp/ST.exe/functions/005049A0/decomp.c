@@ -29,7 +29,7 @@ uint __thiscall CPanelTy::PaintPerResSI(CPanelTy *this)
   iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   pCVar2 = local_c;
   if (iVar3 == 0) {
-    PaintDamageXY(local_c,local_c->field_0194,0x5c,0x50,(uint)(byte)local_c->field_0C33,0x2714);
+    PaintDamageXY(local_c,local_c->field_0194,0x5c,0x50,local_c->field_0C33,0x2714);
     pbVar4 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B2,1);
     DibPut((AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_0194,0x33,0x7b,'\x01',pbVar4);
     bVar6 = 0;

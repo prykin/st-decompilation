@@ -1,6 +1,10 @@
 
 /* [STPrototypeApplier] Propagated parameter 0.
-   Evidence: 004A8920 -> 006DDBE0 @ 004A89ED */
+   Evidence: 004A8920 -> 006DDBE0 @ 004A89ED
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=13, used=0), and
+   decompilation contains no value return */
 
 void __fastcall FUN_006ddbe0(AnonShape_GLOBAL_00807598_0C6808FB *param_1)
 
@@ -23,17 +27,17 @@ void __fastcall FUN_006ddbe0(AnonShape_GLOBAL_00807598_0C6808FB *param_1)
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (((*(int *)&param_1->field_0x4 == 0) ||
       ((*(uint *)(*(int *)&param_1->field_0x4 + 0xc) & 0x1100) != 0x100)) &&
-     ((*(int *)&param_1->field_0x2dc == 0 || (*(int *)&param_1->field_0x2d8 != 0)))) {
+     ((*(int *)&param_1->field_0x2dc == 0 || (param_1->field_02D8 != 0)))) {
     uVar4 = *(int *)&param_1->field_0x38 - *(int *)&param_1->field_0x30;
     iVar3 = *(int *)&param_1->field_0x3c - *(int *)&param_1->field_0x34;
     ExceptionList = &local_14;
-    FUN_006b01d0(*(int *)&param_1->field_0xc,*(int *)&param_1->field_0x28,
-                 *(int *)&param_1->field_0x30,*(int *)&param_1->field_0x34,uVar4,iVar3,
-                 (char)*(undefined4 *)&param_1->field_0x128);
+    FUN_006b01d0(*(int *)&param_1->field_0xc,param_1->field_0028,*(int *)&param_1->field_0x30,
+                 *(int *)&param_1->field_0x34,uVar4,iVar3,(byte)*(undefined4 *)&param_1->field_0x128
+                );
     if (*(int *)&param_1->field_0x124 == 1) {
       puVar2 = (undefined4 *)
-               (*(int *)&param_1->field_0x28 * *(int *)&param_1->field_0x34 +
-                *(int *)&param_1->field_0x14 + *(int *)&param_1->field_0x30);
+               (param_1->field_0028 * *(int *)&param_1->field_0x34 + *(int *)&param_1->field_0x14 +
+               *(int *)&param_1->field_0x30);
       while (iVar3 != 0) {
         puVar5 = puVar2;
         for (uVar1 = uVar4 >> 2; uVar1 != 0; uVar1 = uVar1 - 1) {
@@ -44,19 +48,19 @@ void __fastcall FUN_006ddbe0(AnonShape_GLOBAL_00807598_0C6808FB *param_1)
           *(undefined1 *)puVar5 = 0x40;
           puVar5 = (undefined4 *)((int)puVar5 + 1);
         }
-        puVar2 = (undefined4 *)((int)puVar2 + *(int *)&param_1->field_0x28);
+        puVar2 = (undefined4 *)((int)puVar2 + param_1->field_0028);
         iVar3 = iVar3 + -1;
       }
     }
     else {
       local_2c = (ushort *)
                  (*(int *)&param_1->field_0x14 +
-                 (*(int *)&param_1->field_0x28 * *(int *)&param_1->field_0x34 +
-                 *(int *)&param_1->field_0x30) * 2);
+                 (param_1->field_0028 * *(int *)&param_1->field_0x34 + *(int *)&param_1->field_0x30)
+                 * 2);
       local_8 = 1;
       while (iVar3 != 0) {
         FUN_006ce6c0(local_2c,uVar4,30000);
-        local_2c = local_2c + *(int *)&param_1->field_0x28;
+        local_2c = local_2c + param_1->field_0028;
         iVar3 = iVar3 + -1;
       }
     }

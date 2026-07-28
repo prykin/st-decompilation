@@ -20,8 +20,7 @@ STGroupBoatC::GetDepotForAttack
   InternalExceptionFrame local_68;
   char local_24;
   char cStack_23;
-  short sStack_22;
-  undefined2 uStack_20;
+  ushort uStack_22;
   dword local_1c;
   int local_18;
   STGroupBoatC *local_14;
@@ -45,7 +44,8 @@ STGroupBoatC::GetDepotForAttack
                 (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                  0x1708);
     }
-    pSVar3 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,pSVar5->field_0024,param_1,CASE_1);
+    pSVar3 = STAllPlayersC::GetObjPtr
+                       (g_allPlayers_007FA174,pSVar5->field_0024,(ushort)param_1,CASE_1);
     STFishC::sub_004162B0((STFishC *)pSVar3,&local_10,&local_e,&local_c);
     index = 0;
     local_1c = pSVar5->field_020E->count;
@@ -53,11 +53,9 @@ STGroupBoatC::GetDepotForAttack
     if (0 < (int)local_1c) {
       do {
         DArrayGetElement(pSVar5->field_020E,index,&local_24);
-        if (sStack_22 != -1) {
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          pSVar3 = STAllPlayersC::GetObjPtr
-                             (g_allPlayers_007FA174,local_24,CONCAT22(uStack_20,sStack_22),
-                              (int)cStack_23);
+        if (uStack_22 != 0xffff) {
+          pSVar3 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,local_24,uStack_22,(int)cStack_23)
+          ;
           iVar4 = (*pSVar3->vtable->vfunc_2C)();
           if ((iVar4 == 0x3b) ||
              (iVar4 = (*pSVar3->vtable->vfunc_2C)(), pSVar5 = local_14, iVar4 == 0x60)) {
@@ -67,7 +65,7 @@ STGroupBoatC::GetDepotForAttack
             pSVar5 = local_14;
             if (iVar4 < iVar2) {
               *param_2 = local_24;
-              *param_3 = sStack_22;
+              *param_3 = uStack_22;
               *param_4 = local_8;
               *param_5 = local_6;
               *param_6 = local_a;

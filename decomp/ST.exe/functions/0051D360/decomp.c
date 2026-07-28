@@ -53,7 +53,7 @@ void __thiscall HelpPanelTy::NatProc(HelpPanelTy *this,int param_1,char param_2)
     }
     UVar3 = thunk_FUN_00523410(param_1,'\0',0);
     DrawTitle(this_00,0x55f9,0,UVar3);
-    DrawObj(this_00,&local_8,param_1,0,0);
+    DrawObj(this_00,&local_8,(STAllPlayersC_GetTOBJImage_param_2Enum *)param_1,0,0);
     UVar3 = thunk_FUN_00523410(param_1,'\0',2);
     DrawDescription(this_00,&local_8,UVar3);
     AddLinks(this_00,&local_8,'\f',param_1,0);

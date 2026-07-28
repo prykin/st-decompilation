@@ -16,7 +16,7 @@ long __thiscall CBaseRenderer::BeginFlush(CBaseRenderer *this)
   (**(code **)(*(int *)this + 0x6c))();
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (**(code **)(*(int *)this + 0x70))();
-  FUN_00749d5f((int)this);
+  FUN_00749d5f(this);
   return 0;
 }
 

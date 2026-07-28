@@ -1,5 +1,8 @@
 
-undefined4 FUN_00571c90(int param_1)
+/* [STPrototypeApplier] Propagated return.
+   Evidence: 00571C90 returns zeroed full register at 00571CB0 @ 00571CB3 */
+
+uint FUN_00571c90(int param_1)
 
 {
   int iVar1;

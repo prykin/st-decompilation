@@ -33,7 +33,7 @@ int __thiscall PrividerTy::GetMessage(PrividerTy *this,STMessage *message)
   MMsgTy *pMVar14;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined4 *unaff_EDI;
-  uint uVar16;
+  byte bVar16;
   char cVar17;
   uint uVar18;
   InternalExceptionFrame local_8c;
@@ -134,7 +134,7 @@ int __thiscall PrividerTy::GetMessage(PrividerTy *this,STMessage *message)
         }
 LAB_005bccb9:
         this_00->field_004D = 0x6951;
-        (*this_00->vtable->GetMessage)(this_00,(int)&this_00->field_0x3d);
+        this_00->GetMessage((int)&this_00->field_0x3d);
         goto cf_common_exit_005BCF7F;
       }
       if (SVar3 == MESS_SHARED_6501) goto switchD_005bc9da_caseD_6949;
@@ -146,10 +146,10 @@ LAB_005bccb9:
           ccFntTy::WrStr(g_startSystem_0081176C->field_0030,*(uint **)(message->arg0).ptr,0,-1,3);
           uVar2 = (message->arg1).words.low;
           if ((uVar2 != 0xffff) || ((message->arg1).words.high != 0xffff)) {
-            uVar16 = (uint)(message->arg1).words.high;
+            uVar18 = (uint)(message->arg1).words.high;
             iVar10 = uVar2 + 5;
-            FUN_006b5b10((AnonShape_006E6FB0_BC494FEA *)this_00->field_1C8E,0,iVar10,uVar16 + 0x19,
-                         iVar10,uVar16 + 0x28,9,0xd);
+            FUN_006b5b10((AnonShape_006E6FB0_BC494FEA *)this_00->field_1C8E,0,iVar10,uVar18 + 0x19,
+                         iVar10,uVar18 + 0x28,9,0xd);
           }
           FUN_006b35d0((int *)PTR_008075a8,this_00->field_1C8A);
         }
@@ -162,8 +162,8 @@ LAB_005bccb9:
             this_00->field_002D = 0x20;
             FUN_006e6080(this_00,2,this_00->field_1A73,(undefined4 *)puVar1);
             this_00->field_002D = 0x28;
-            uVar16 = *(uint *)(g_startSystem_0081176C->field_068E + 4);
-            this_00->field_0031 = uVar16 & ((int)uVar16 < 0) - 1;
+            uVar18 = *(uint *)(g_startSystem_0081176C->field_068E + 4);
+            this_00->field_0031 = uVar18 & ((int)uVar18 < 0) - 1;
             FUN_006e6080(this_00,2,this_00->field_1A73,(undefined4 *)puVar1);
             if (0 < *(int *)(g_startSystem_0081176C->field_068E + 4)) {
               this_00->field_002D = 0x20;
@@ -211,10 +211,10 @@ LAB_005bccb9:
                        *(uint **)(iVar10 + 8 + (uint)(message->arg0).words.low * 0x14),2,-1,
                        (-(uint)((message->arg0).words.high != 0) & 2) + 1);
       }
-      uVar16 = (uint)(message->arg1).words.high;
+      uVar18 = (uint)(message->arg1).words.high;
       Library::DKW::DDX::FUN_006b3640
-                ((int *)PTR_008075a8,(&this_00->field_1C2A)[uVar16 / 0x13],0xfffffffe,0x7a,
-                 uVar16 + 0x67);
+                ((int *)PTR_008075a8,(&this_00->field_1C2A)[uVar18 / 0x13],0xfffffffe,0x7a,
+                 uVar18 + 0x67);
       break;
     case MESS_SIDTY_8163:
       SVar5 = message->arg0;
@@ -223,21 +223,21 @@ LAB_005bccb9:
       break;
     case MESS_OPTPANELTY_8164:
       MMMObjTy::PaintSlBut
-                ((MMMObjTy *)this_00,(AnonShape_005B6560_61F462DF *)&this_00->field_1A77,
+                ((MMMObjTy *)this_00,(RecoveredRecord_MMMObjTy_005B6560 *)&this_00->field_1A77,
                  (int)message,0);
       break;
     case MESS_OPTPANELTY_8165:
       MMMObjTy::PaintSlBut
-                ((MMMObjTy *)this_00,(AnonShape_005B6560_61F462DF *)&this_00->field_1B08,
+                ((MMMObjTy *)this_00,(RecoveredRecord_MMMObjTy_005B6560 *)&this_00->field_1B08,
                  (int)message,0);
       break;
     case MESS_SHARED_8166:
-      uVar16 = *(int *)((message->arg1).u32 + 4) + (uint)(message->arg0).words.high;
-      this_00->field_1BB9 = uVar16;
+      uVar18 = *(int *)((message->arg1).u32 + 4) + (uint)(message->arg0).words.high;
+      this_00->field_1BB9 = uVar18;
       if (this_00->field_1B9D != 0xffffffff) {
         Library::DKW::DDX::FUN_006b3730
                   ((uint *)this_00->field_1BE1,this_00->field_1B9D,this_00->field_1BA1,
-                   this_00->field_1BB5,uVar16);
+                   this_00->field_1BB5,uVar18);
       }
     }
     goto cf_common_exit_005BCF7F;
@@ -256,7 +256,7 @@ LAB_005bccb9:
     break;
   case MESS_WAITTY_6943:
     DAT_0080877e = 1;
-    thunk_FUN_005b6350(this_00,0x6942,message->arg0,0);
+    thunk_FUN_005b6350(this_00,0x6942,(message->arg0).u32,0);
     CloseButtons(this_00,'\x01');
     pMVar14 = this_00->field_1A5B->field_02E6;
     goto cf_common_exit_005BCD75;
@@ -331,7 +331,7 @@ cf_common_exit_005BCD75:
       pCVar7->field_04DF = -1;
     }
     if (this_00->field_1A5F == '\0') {
-      thunk_FUN_005b6350(this_00,0x6942,message->arg0,0);
+      thunk_FUN_005b6350(this_00,0x6942,(message->arg0).u32,0);
       CloseButtons(this_00,'\x01');
       pMVar14 = this_00->field_1A5B->field_02E6;
       if (pMVar14 != (MMsgTy *)0x0) {
@@ -352,7 +352,7 @@ cf_common_exit_005BCD75:
       local_8 = 0xffffffff;
       Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,this_00->field_1C8A);
       FUN_006b2330(PTR_008075a8,&local_8,0x32,0x402f13,0x22e,0x2e,
-                   (uint)&this_00->field_1A5B->field_0140);
+                   (ushort *)&this_00->field_1A5B->field_0140);
       Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,local_8,0xffffffff,0x79,0x197);
       pHVar11 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
       if (pHVar11 == (HoloTy *)0x0) {
@@ -378,18 +378,18 @@ cf_common_exit_005BCD75:
       if (pHVar11 != (HoloTy *)0x0) {
         uVar18 = 0;
         cVar17 = '\x01';
-        uVar16 = 0x10;
+        bVar16 = 0x10;
         iVar13 = 1;
         iVar10 = Library::DKW::DDX::FUN_006bf9f0((int *)PTR_008075a8,0x79,0x197,0x22e,0x2e);
-        uVar16 = HoloTy::Init(this_00->field_1C9A,CASE_1,0x79,0x197,iVar10,iVar13,uVar16,cVar17,
+        uVar18 = HoloTy::Init(this_00->field_1C9A,CASE_1,0x79,0x197,iVar10,iVar13,bVar16,cVar17,
                               uVar18);
-        if (uVar16 != 0) {
+        if (uVar18 != 0) {
           pHVar11 = this_00->field_1C9A;
           pHVar11->field_0002 = 1;
           pHVar11->field_0017 = pHVar11->field_0013;
-          uVar16 = this_00->field_1C9A->field_0003;
-          if (-1 < (int)uVar16) {
-            Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,uVar16);
+          uVar18 = this_00->field_1C9A->field_0003;
+          if (-1 < (int)uVar18) {
+            Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,uVar18);
           }
           FUN_006b3af0((int *)PTR_008075a8,this_00->field_1C8A);
         }

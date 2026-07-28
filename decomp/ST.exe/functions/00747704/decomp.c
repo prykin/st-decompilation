@@ -30,10 +30,13 @@ uint FUN_00747704(AnonShape_00747822_A1E67AF6 *param_1,uint param_2,int *param_3
     if (iVar4 == 1) {
       FUN_0074784f(param_1);
     }
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = (AnonShape_00747822_A1E67AF6 *)(param_1->field_0008 - param_1->field_0004);
     if ((int)param_2 <= (int)param_1) {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (AnonShape_00747822_A1E67AF6 *)param_2;
     }
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_1 == (AnonShape_00747822_A1E67AF6 *)0x0) {
       uVar3 = 1;
     }
@@ -56,6 +59,7 @@ uint FUN_00747704(AnonShape_00747822_A1E67AF6 *param_1,uint param_2,int *param_3
           local_8 = local_8 + 1;
           param_3 = param_3 + 1;
           FUN_0074df72(&pAVar2[1].field_0004,iVar4);
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_1 = (AnonShape_00747822_A1E67AF6 *)((int)&param_1[-1].field_0010 + 3);
         }
       } while (param_1 != (AnonShape_00747822_A1E67AF6 *)0x0);

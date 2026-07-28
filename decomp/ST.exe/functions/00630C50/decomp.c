@@ -60,8 +60,7 @@ STManRuinC::sub_00630C50
                       (undefined4 *)0x0);
   if (param_3 == 0) {
     if (param_2 == 1) {
-      local_c = (ushort *)
-                FUN_006e9000(PTR_00807598,**(undefined4 **)((int)puVar4 + 0x21),0x5a,0x45,
+      local_c = FUN_006e9000(PTR_00807598,**(undefined4 **)((int)puVar4 + 0x21),0x5a,0x45,
                              (float)pSVar2->field_0054 * _DAT_007904f8 * _DAT_007904f0,
                              (float)pSVar2->field_0058 * _DAT_007904f8 * _DAT_007904f0,
                              (float)pSVar2->field_005C * _DAT_007904f8 * _DAT_007904f0 +
@@ -69,8 +68,7 @@ STManRuinC::sub_00630C50
     }
     if (param_2 == 4) {
       local_14 = pSVar2->field_0054 + 100;
-      local_c = (ushort *)
-                FUN_006e9000(PTR_00807598,**(undefined4 **)((int)puVar4 + 0x21),0x78,0x56,
+      local_c = FUN_006e9000(PTR_00807598,**(undefined4 **)((int)puVar4 + 0x21),0x78,0x56,
                              (float)local_14 * _DAT_007904f8 * _DAT_007904f0,
                              (float)(pSVar2->field_0058 + 100) * _DAT_007904f8 * _DAT_007904f0,
                              (float)pSVar2->field_005C * _DAT_007904f8 * _DAT_007904f0 +
@@ -93,7 +91,7 @@ STManRuinC::sub_00630C50
     uVar8 = 0x78;
   }
   FUN_006e8660(PTR_00807598,piVar1,1,0,uVar6,uVar7,uVar8,uVar9,0);
-  FUN_006e98e0(PTR_00807598,*piVar1,0,*(undefined4 *)puVar4,*(int *)((int)puVar4 + 0x21),1);
+  FUN_006e98e0(PTR_00807598,*piVar1,0,*(int *)puVar4,*(int *)((int)puVar4 + 0x21),1);
   FUN_006ea270(PTR_00807598,*piVar1,0,0);
   FUN_006ea3e0(PTR_00807598,*piVar1,-1);
   FUN_006e9210(PTR_00807598,*piVar1);

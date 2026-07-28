@@ -72,7 +72,7 @@ undefined4 __thiscall FUN_00639c90(void *this,STMessage *param_1)
     if (SVar4 != MESS_HITKILL) {
       return 0;
     }
-    thunk_FUN_004ad430((int)this + 0x1d5);
+    thunk_FUN_004ad430((STT3DSprC *)((int)this + 0x1d5));
 switchD_00639e3d_caseD_d:
     thunk_FUN_0063cc10(this);
     return 0;
@@ -129,8 +129,8 @@ switchD_00639e3d_caseD_d:
     }
     thunk_FUN_0063de20(this,iVar8);
 LAB_00639dab:
-    sub_00416240(this,*(undefined2 *)((int)this + 0x266),*(undefined2 *)((int)this + 0x26a),
-                 *(undefined2 *)((int)this + 0x26e));
+    sub_00416240(this,*(ushort *)((int)this + 0x266),*(short *)((int)this + 0x26a),
+                 *(ushort *)((int)this + 0x26e));
     thunk_FUN_004ac660((STT3DSprC *)((int)this + 0x1d5),'\r');
     STT3DSprC::StartShow((STT3DSprC *)((int)this + 0x1d5),0xd,g_playSystem_00802A38->field_00E4);
     *(undefined1 *)((int)this + 0x29f) = 1;
@@ -142,7 +142,7 @@ LAB_00639dab:
     uVar10 = thunk_FUN_0063c170(this,g_playSystem_00802A38->field_00E4);
     if (0 < (int)uVar10) {
       if (uVar10 != 2) {
-        thunk_FUN_004ad430((int)this + 0x1d5);
+        thunk_FUN_004ad430((STT3DSprC *)((int)this + 0x1d5));
         *(undefined1 *)((int)this + 0x29f) = 0;
         *(uint *)((int)this + 0x28e) = g_playSystem_00802A38->field_00E4;
         *(undefined1 *)((int)this + 0x265) = 2;
@@ -158,8 +158,8 @@ LAB_00639dab:
           *(undefined1 *)((int)this + 0x29f) = 1;
           thunk_FUN_0062b990(*(undefined4 *)((int)this + 0x266),*(undefined4 *)((int)this + 0x26a),
                              *(undefined4 *)((int)this + 0x26e),0,(int)this,0,0);
-          sub_00416240(this,*(undefined2 *)((int)this + 0x266),*(undefined2 *)((int)this + 0x26a),
-                       *(undefined2 *)((int)this + 0x26e));
+          sub_00416240(this,*(ushort *)((int)this + 0x266),*(short *)((int)this + 0x26a),
+                       *(ushort *)((int)this + 0x26e));
           if ((*(int *)((int)this + 0x397) != 0) && (*(int *)((int)this + 0x39f) == 0)) {
             SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006EA050::sub_006EA460
                       (*(AnonReceiver_006EA050 **)((int)this + 0x211),*(uint *)((int)this + 0x1ed),
@@ -172,8 +172,8 @@ LAB_00639dab:
       }
       return 0xffff;
     }
-    sub_00416240(this,*(undefined2 *)((int)this + 0x266),*(undefined2 *)((int)this + 0x26a),
-                 *(undefined2 *)((int)this + 0x26e));
+    sub_00416240(this,*(ushort *)((int)this + 0x266),*(short *)((int)this + 0x26a),
+                 *(ushort *)((int)this + 0x26e));
     if ((*(uint *)((int)this + 0x245) < 2) || (iVar8 = 0x50, *(uint *)((int)this + 0x245) != 2)) {
       iVar8 = 0x78;
     }
@@ -232,7 +232,7 @@ joined_r0x0063a754:
         if (*(char *)((int)this + 0x29f) == '\0') {
           return 0;
         }
-        thunk_FUN_004ad430((int)this + 0x1d5);
+        thunk_FUN_004ad430((STT3DSprC *)((int)this + 0x1d5));
         *(undefined1 *)((int)this + 0x29f) = 0;
         return 0;
       }
@@ -285,8 +285,8 @@ LAB_0063a27d:
     thunk_FUN_004ad460((STT3DSprC *)((int)this + 0x1d5),0);
     *(undefined1 *)((int)this + 0x29f) = 1;
     *(uint *)((int)this + 0x28e) = g_playSystem_00802A38->field_00E4;
-    sub_00416240(this,*(undefined2 *)((int)this + 0x266),*(undefined2 *)((int)this + 0x26a),
-                 *(undefined2 *)((int)this + 0x26e));
+    sub_00416240(this,*(ushort *)((int)this + 0x266),*(short *)((int)this + 0x26a),
+                 *(ushort *)((int)this + 0x26e));
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*(int *)this + 0xd8))();
     pVVar12 = g_visibleClass_00802A88;
@@ -337,7 +337,7 @@ LAB_0063a27d:
         }
       }
       else if (*(char *)((int)this + 0x29f) != '\0') {
-        thunk_FUN_004ad430((int)this + 0x1d5);
+        thunk_FUN_004ad430((STT3DSprC *)((int)this + 0x1d5));
         *(undefined1 *)((int)this + 0x29f) = 0;
       }
     }
@@ -399,8 +399,8 @@ LAB_0063a27d:
                  *(int *)((int)this + 0x26a),*(int *)((int)this + 0x26e),uVar6 & 1,uVar6 & 1,0,0,0,0
                  ,-1,0,0);
     }
-    sub_00416240(this,*(undefined2 *)((int)this + 0x266),*(undefined2 *)((int)this + 0x26a),
-                 *(undefined2 *)((int)this + 0x26e));
+    sub_00416240(this,*(ushort *)((int)this + 0x266),*(short *)((int)this + 0x26a),
+                 *(ushort *)((int)this + 0x26e));
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*(int *)this + 0xd8))();
     pVVar12 = g_visibleClass_00802A88;
@@ -457,8 +457,8 @@ LAB_0063a728:
     if (0 < iVar8) {
       return 0;
     }
-    sub_00416240(this,*(undefined2 *)((int)this + 0x266),*(undefined2 *)((int)this + 0x26a),
-                 *(undefined2 *)((int)this + 0x26e));
+    sub_00416240(this,*(ushort *)((int)this + 0x266),*(short *)((int)this + 0x26a),
+                 *(ushort *)((int)this + 0x26e));
     if ((g_playSystem_00802A38->field_00E4 & 1) == 0) {
       iVar8 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
       *(int *)((int)this + 0x1c) = iVar8;
@@ -521,8 +521,8 @@ LAB_0063a728:
   case 5:
     uVar10 = thunk_FUN_0063c380(this,g_playSystem_00802A38->field_00E4);
     if (uVar10 == 0) {
-      sub_00416240(this,*(undefined2 *)((int)this + 0x266),*(undefined2 *)((int)this + 0x26a),
-                   *(undefined2 *)((int)this + 0x26e));
+      sub_00416240(this,*(ushort *)((int)this + 0x266),*(short *)((int)this + 0x26a),
+                   *(ushort *)((int)this + 0x26e));
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*(int *)this + 0xd8))();
       pVVar12 = g_visibleClass_00802A88;
@@ -572,7 +572,7 @@ LAB_0063a728:
           }
         }
         else if (*(char *)((int)this + 0x29f) != '\0') {
-          thunk_FUN_004ad430((int)this + 0x1d5);
+          thunk_FUN_004ad430((STT3DSprC *)((int)this + 0x1d5));
           *(undefined1 *)((int)this + 0x29f) = 0;
         }
       }
@@ -645,8 +645,8 @@ LAB_0063a728:
     if (iVar8 % 7 == 0) {
       thunk_FUN_0063cc50(this,iVar8 / 7);
     }
-    sub_00416240(this,*(undefined2 *)((int)this + 0x266),*(undefined2 *)((int)this + 0x26a),
-                 *(undefined2 *)((int)this + 0x26e));
+    sub_00416240(this,*(ushort *)((int)this + 0x266),*(short *)((int)this + 0x26a),
+                 *(ushort *)((int)this + 0x26e));
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*(int *)this + 0xd8))();
     pVVar12 = g_visibleClass_00802A88;
@@ -705,11 +705,11 @@ LAB_0063a728:
       thunk_FUN_004ac700(pSVar1,'\r');
       STT3DSprC::StartShow(pSVar1,0xd,g_playSystem_00802A38->field_00E4);
       *(undefined1 *)((int)this + 0x29f) = 1;
-      sub_00416240(this,*(undefined2 *)((int)this + 0x266),*(undefined2 *)((int)this + 0x26a),
-                   *(undefined2 *)((int)this + 0x26e));
+      sub_00416240(this,*(ushort *)((int)this + 0x266),*(short *)((int)this + 0x26a),
+                   *(ushort *)((int)this + 0x26e));
       *(undefined1 *)((int)this + 0x265) = 8;
-      sub_00416240(this,*(undefined2 *)((int)this + 0x266),*(undefined2 *)((int)this + 0x26a),
-                   *(undefined2 *)((int)this + 0x26e));
+      sub_00416240(this,*(ushort *)((int)this + 0x266),*(short *)((int)this + 0x26a),
+                   *(ushort *)((int)this + 0x26e));
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*(int *)this + 0xd8))();
       return 0;
@@ -852,6 +852,7 @@ LAB_0063a728:
                      (*(int *)((int)this + 0x2a4) * iVar8) / 0xc9,
                      (*(int *)((int)this + 0x2a8) * iVar8) / 0xc9);
         lVar17 = Library::MSVCRT::__ftol();
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = (STMessage *)((short)lVar17 + 0x2d);
       }
       uVar10 = *(int *)((int)this + 0x367) + 1;

@@ -50,7 +50,7 @@ void __fastcall FUN_0058bd90(AnonShape_0058BD90_DCBCF849 *param_1)
   puVar1 = &param_1->field_0x1d5;
   if (iVar2 == 0) {
     iVar2 = 0;
-    uVar3 = thunk_FUN_004ad650((int)puVar1);
+    uVar3 = thunk_FUN_004ad650((STT3DSprC *)puVar1);
     FUN_006eabf0(param_1->field_0211,uVar3,iVar2);
     iVar2 = thunk_FUN_0041caf0((AnonShape_0041CAF0_1630B9E0 *)param_1);
     if (iVar2 == 1) {
@@ -62,11 +62,11 @@ void __fastcall FUN_0058bd90(AnonShape_0058BD90_DCBCF849 *param_1)
   }
   else {
     iVar2 = 1;
-    uVar3 = thunk_FUN_004ad650((int)puVar1);
+    uVar3 = thunk_FUN_004ad650((STT3DSprC *)puVar1);
     FUN_006eabf0(param_1->field_0211,uVar3,iVar2);
     iVar2 = 1;
   }
-  iVar4 = thunk_FUN_004ad650((int)puVar1);
+  iVar4 = thunk_FUN_004ad650((STT3DSprC *)puVar1);
   FUN_006e6870(param_1->field_0211,iVar4,iVar2);
   switch(param_1->field_0231) {
   case 0:
@@ -224,7 +224,7 @@ LAB_0058c38c:
     puVar1 = &param_1->field_0x1d5;
     param_1->field_0231 = 5;
     STT3DSprC::StopShow((STT3DSprC *)puVar1,0xe);
-    thunk_FUN_004ad5e0((int)puVar1);
+    thunk_FUN_004ad5e0((STT3DSprC *)puVar1);
     STT3DSprC::LoadSequence((STT3DSprC *)puVar1,8,DAT_00806774,"explsna",0x1d);
     STT3DSprC::StartShow((STT3DSprC *)puVar1,8,g_playSystem_00802A38->field_00E4);
     param_1->field_0045 = param_1->field_0045 + 0x12;

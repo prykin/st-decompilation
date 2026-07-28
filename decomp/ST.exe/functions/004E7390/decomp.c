@@ -1,7 +1,10 @@
 #include "../../pseudocode_runtime.h"
 
 
-void FUN_004e7390(int param_1,uint param_2,uint param_3,int param_4)
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 004E7390 -> 004E6310 @ 004E755C */
+
+void FUN_004e7390(byte *param_1,uint param_2,uint param_3,int param_4)
 
 {
   int *piVar1;
@@ -25,7 +28,7 @@ void FUN_004e7390(int param_1,uint param_2,uint param_3,int param_4)
   int local_c;
   char *local_8;
 
-  if ((-1 < param_1) && (param_1 < 8)) {
+  if ((-1 < (int)param_1) && ((int)param_1 < 8)) {
     uVar3 = GetPlayerRaceId((char)param_1);
     memset(&DAT_00801020, 0, 0x30c); /* compiler bulk-zero initialization */
     iVar5 = 0;

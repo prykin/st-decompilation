@@ -15,10 +15,15 @@ import java.util.Map;
 
 import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
+import ghidra.program.model.data.CategoryPath;
 import ghidra.program.model.data.DataType;
+import ghidra.program.model.data.DataTypeComponent;
+import ghidra.program.model.data.DataTypeConflictHandler;
 import ghidra.program.model.data.DataTypeManager;
 import ghidra.program.model.data.Pointer;
 import ghidra.program.model.data.PointerDataType;
+import ghidra.program.model.data.Structure;
+import ghidra.program.model.data.StructureDataType;
 import ghidra.program.model.listing.Function;
 import ghidra.program.model.listing.Parameter;
 import ghidra.program.model.listing.Variable;
@@ -81,12 +86,6 @@ public class STTypeFamilyApplier extends GhidraScript {
             }
             Variable variable = findTarget(function, row);
             if (variable == null) { conflict(row, target, "target missing"); return; }
-            DataType proposed = resolve(row.get("proposed_type"));
-            if (proposed == null) { conflict(row, target, "proposed type missing"); return; }
-            if (variable.getDataType().isEquivalent(proposed)) {
-                report.add(new Report(row.get("function_address"), target, "unchanged",
-                    "desired type already present")); return;
-            }
             boolean baseline = variable.getName().equals(row.get("expected_name")) &&
                 variable.getVariableStorage().toString().equals(row.get("expected_storage")) &&
                 typeSpec(variable.getDataType()).equals(row.get("expected_type")) &&
@@ -97,6 +96,15 @@ public class STTypeFamilyApplier extends GhidraScript {
             if (!baseline || (manual && !override)) {
                 preserve(row, target, "stale or manually refined target"); return;
             }
+            DataType proposed = resolve(row.get("proposed_type"));
+            if (proposed == null &&
+                    "CONTEXTUAL_GENERATED_RECORD".equals(row.get("family_id")))
+                proposed = materializeContextualRecord(row, variable.getDataType());
+            if (proposed == null) { conflict(row, target, "proposed type missing"); return; }
+            if (variable.getDataType().isEquivalent(proposed)) {
+                report.add(new Report(row.get("function_address"), target, "unchanged",
+                    "desired type already present")); return;
+            }
             if ("return".equals(row.get("target_kind")))
                 function.setReturnType(proposed, SourceType.ANALYSIS);
             else variable.setDataType(proposed, SourceType.ANALYSIS);
@@ -106,6 +114,64 @@ public class STTypeFamilyApplier extends GhidraScript {
             report.add(new Report(row.get("function_address"), target, "applied", row.get("proposed_type")));
         }
         catch (Exception exception) { conflict(row, target, message(exception)); }
+    }
+
+    private DataType materializeContextualRecord(Map<String, String> row,
+            DataType currentType) throws Exception {
+        String specification = row.get("proposed_type");
+        if (!specification.startsWith("pointer:") ||
+                !(currentType instanceof Pointer pointer) ||
+                !(pointer.getDataType() instanceof Structure source))
+            return null;
+        String targetPath = specification.substring("pointer:".length());
+        if (!source.getName().startsWith("AnonShape_") ||
+                !source.getPathName().contains("/Recovered/PointerShapes/"))
+            return null;
+
+        StructureDataType desired = new StructureDataType(category(targetPath),
+            leaf(targetPath), source.getLength(), dataTypes);
+        for (DataTypeComponent component : source.getDefinedComponents())
+            desired.replaceAtOffset(component.getOffset(), component.getDataType(),
+                component.getLength(), component.getFieldName(), component.getComment());
+        String sourceDescription = source.getDescription();
+        desired.setDescription((sourceDescription == null ? "" : sourceDescription + " ") +
+            MARKER + " Contextual generated record; promoted_from=" +
+            source.getPathName());
+
+        DataType existing = dataTypes.getDataType(targetPath);
+        if (existing == null) {
+            DataType installed = dataTypes.resolve(desired,
+                DataTypeConflictHandler.KEEP_HANDLER);
+            if (!(installed instanceof Structure structure) ||
+                    !structure.getPathName().equals(targetPath))
+                return null;
+            structure.setDescription(desired.getDescription());
+            existing = structure;
+        }
+        else {
+            if (!(existing instanceof Structure structure)) return null;
+            String description = structure.getDescription();
+            boolean scriptOwned = description != null &&
+                (description.contains(MARKER + " Contextual generated record") ||
+                 description.contains("[STPointerShapeApplier]"));
+            if (!structure.isEquivalent(desired)) {
+                if (!scriptOwned) return null;
+                structure.replaceWith(desired);
+            }
+            structure.setDescription(desired.getDescription());
+        }
+        return new PointerDataType(existing, currentProgram.getDefaultPointerSize(),
+            dataTypes);
+    }
+
+    private CategoryPath category(String path) {
+        int split = path.lastIndexOf('/');
+        return new CategoryPath(split <= 0 ? "/" : path.substring(0, split));
+    }
+
+    private String leaf(String path) {
+        int split = path.lastIndexOf('/');
+        return split < 0 ? path : path.substring(split + 1);
     }
 
     private Variable findTarget(Function function, Map<String, String> row) {

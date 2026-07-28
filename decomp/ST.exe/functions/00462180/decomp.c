@@ -24,15 +24,11 @@ int __thiscall FUN_00462180(void *this,int param_1)
   undefined2 extraout_var;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_00;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  undefined2 extraout_var_01;
   undefined2 uVar16;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  undefined2 extraout_var_01;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_02;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  undefined2 extraout_var_03;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  undefined2 extraout_var_04;
   undefined2 uVar20;
   STFishC *pSVar17;
   uint uVar18;
@@ -60,7 +56,7 @@ int __thiscall FUN_00462180(void *this,int param_1)
   undefined4 local_1c;
   short local_16;
   STFishC *local_14;
-  STFishC *local_10;
+  int local_10;
   STFishC *local_c;
   undefined2 local_8 [2];
 
@@ -74,7 +70,7 @@ int __thiscall FUN_00462180(void *this,int param_1)
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     this_00 = STAllPlayersC::GetObjPtr
                         (g_allPlayers_007FA174,*(char *)((int)this + 0x33a),
-                         (uint)*(ushort *)((int)this + 0x33f),
+                         *(ushort *)((int)this + 0x33f),
                          *(STAllPlayersC_GetObjPtr_param_3Enum *)((int)this + 0x33b));
     if (((this_00 != (STGameObjC *)0x0) && (this_00 != this)) &&
        ((*(int *)((int)this + 0x6f7) != 9 ||
@@ -84,8 +80,8 @@ int __thiscall FUN_00462180(void *this,int param_1)
       *(undefined4 *)((int)this + 0x7f8) = this_00->field_002C;
       *(undefined4 *)((int)this + 0x7fc) = *(undefined4 *)((int)this + 0x33b);
       STFishC::sub_004162B0
-                ((STFishC *)this_00,(undefined2 *)((int)this + 0x800),
-                 (undefined2 *)((int)this + 0x802),(undefined2 *)((int)this + 0x804));
+                ((STFishC *)this_00,(short *)((int)this + 0x800),(undefined2 *)((int)this + 0x802),
+                 (undefined2 *)((int)this + 0x804));
       *(undefined2 *)((int)this + 0x7f2) = *(undefined2 *)((int)this + 0x341);
       *(undefined4 *)((int)this + 0x7de) = *(undefined4 *)((int)this + 0x336);
       *(undefined4 *)((int)this + 0x82e) = 0;
@@ -133,23 +129,22 @@ LAB_00462320:
           psVar2 = (short *)((int)this + 0x802);
           sVar7 = *(short *)&local_c->vtable;
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_10 = (STFishC *)CONCAT22((short)((uint)local_c >> 0x10),sVar7);
-          pSVar14 = local_10;
+          local_10 = CONCAT22((short)((uint)local_c >> 0x10),sVar7);
           if ((((((-1 < sVar7) && (sVar7 < g_worldGrid.sizeX)) && (-1 < sVar6)) &&
                ((sVar6 < g_worldGrid.sizeY && (-1 < sVar9)))) && (sVar9 < g_worldGrid.sizeZ)) &&
              (((local_14 = (STFishC *)
                            g_worldGrid.cells
                            [(int)sVar9 * (int)g_worldGrid.planeStride +
                             (int)sVar6 * (int)g_worldGrid.sizeX + (int)sVar7].objects[0],
-               pSVar14 = local_14, local_14 != (STFishC *)0x0 && ((uint)local_14->field_0024 < 8))
-              && ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
-                  ((byte)(&DAT_008087e9)[local_14->field_0024 * 0x51] < 8)))))) {
+               local_14 != (STFishC *)0x0 && ((uint)local_14->field_0024 < 8)) &&
+              ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
+               ((byte)(&DAT_008087e9)[local_14->field_0024 * 0x51] < 8)))))) {
             bVar3 = *(byte *)&local_14->field_0024;
             bVar4 = *(byte *)((int)this + 0x24);
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             local_10._1_3_ = (undefined3)((uint)local_10 >> 8);
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_10 = (STFishC *)CONCAT31(local_10._1_3_,bVar3);
+            local_10 = CONCAT31(local_10._1_3_,bVar3);
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             local_28 = CONCAT31(local_28._1_3_,bVar4);
             if (DAT_00808a8f == '\0') {
@@ -179,14 +174,12 @@ LAB_00462c49:
             else {
               bVar24 = (&DAT_008087ea)[(uint)bVar4 * 0x51] != (&DAT_008087ea)[(uint)bVar3 * 0x51];
             }
-            pSVar14 = (STFishC *)0x0;
             if ((bVar24) &&
-               ((dVar13 = (*local_14->vtable->slot_2C)(local_14), dVar13 == 0x3b ||
-                (pSVar14 = (STFishC *)(*local_14->vtable->slot_2C)(local_14),
-                pSVar14 == (STFishC *)0x60)))) {
+               ((dVar13 = local_14->slot_2C(), dVar13 == 0x3b ||
+                (dVar13 = local_14->slot_2C(), dVar13 == 0x60)))) {
               *(undefined4 *)((int)this + 0x82e) = 2;
               *(undefined4 *)((int)this + 0xb7) = 0;
-              STFishC::sub_004162B0(local_14,(undefined2 *)local_c,psVar2,psVar1);
+              STFishC::sub_004162B0(local_14,(short *)local_c,psVar2,psVar1);
               STBoatC::sub_00481520(this,(int)*(short *)&local_c->vtable,(int)*psVar2,(int)*psVar1);
               thunk_FUN_00496140(*(short *)&local_c->vtable,*psVar2,*psVar1);
               thunk_FUN_00496140(*(short *)&local_c->vtable + 1,*psVar2,*psVar1);
@@ -201,10 +194,7 @@ LAB_00462c49:
               return 2;
             }
           }
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          pSVar12 = thunk_FUN_0042b760(*(char *)((int)this + 0x24),
-                                       CONCAT22((short)((uint)pSVar14 >> 0x10),
-                                                *(undefined2 *)((int)this + 0x30)));
+          pSVar12 = thunk_FUN_0042b760(*(char *)((int)this + 0x24),*(ushort *)((int)this + 0x30));
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           STGroupBoatC::GetDepotForAttack
                     (pSVar12,CONCAT22((short)((uint)&local_16 >> 0x10),
@@ -239,7 +229,7 @@ cf_common_exit_00462E32:
             bVar3 = *(byte *)&pSVar23[1].vtable;
             bVar4 = *(byte *)((int)this + 0x24);
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_10 = (STFishC *)CONCAT31(local_10._1_3_,bVar3);
+            local_10 = CONCAT31(local_10._1_3_,bVar3);
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             local_c = (STFishC *)CONCAT31(local_c._1_3_,bVar4);
             if (DAT_00808a8f == '\0') {
@@ -270,20 +260,18 @@ LAB_00462a36:
               bVar24 = (&DAT_008087ea)[(uint)bVar4 * 0x51] != (&DAT_008087ea)[(uint)bVar3 * 0x51];
             }
             if (bVar24) {
-              iVar15 = (*pSVar23->vtable->GetObjectTypeId)(pSVar23);
+              iVar15 = pSVar23->GetObjectTypeId();
               if (iVar15 == 0x3b) {
                 return 2;
               }
-              iVar15 = (*pSVar23->vtable->GetObjectTypeId)(pSVar23);
+              iVar15 = pSVar23->GetObjectTypeId();
               if (iVar15 == 0x60) {
                 return 2;
               }
             }
           }
           STBoatC::sub_004602B0(this);
-          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-          pSVar12 = thunk_FUN_0042b760(*(char *)((int)this + 0x24),
-                                       CONCAT22(extraout_var,*(undefined2 *)((int)this + 0x30)));
+          pSVar12 = thunk_FUN_0042b760(*(char *)((int)this + 0x24),*(ushort *)((int)this + 0x30));
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           STGroupBoatC::GetDepotForAttack
                     (pSVar12,CONCAT22((short)((uint)&local_16 >> 0x10),
@@ -316,7 +304,7 @@ LAB_00462a36:
           if (iVar15 != 3) {
             return -1;
           }
-          iVar15 = STJellyGunC::sub_00415ED0(this,local_74,(int *)&local_10);
+          iVar15 = STJellyGunC::sub_00415ED0(this,local_74,&local_10);
           if (iVar15 == -1) {
             return -1;
           }
@@ -354,8 +342,7 @@ LAB_00462a36:
               iVar15 = (**(code **)(*(int *)this + 0xd8))();
               return (-(uint)(iVar15 != 0) & 0xfffffffd) + 2;
             }
-            iVar15 = (*pSVar14->vtable->vfunc_DC)
-                               (pSVar14,*(undefined2 *)((int)this + 0x41),
+            iVar15 = pSVar14->vfunc_DC(*(undefined2 *)((int)this + 0x41),
                                 *(undefined2 *)((int)this + 0x43),*(undefined2 *)((int)this + 0x45),
                                 *(undefined2 *)((int)this + 0x34),*(undefined2 *)((int)this + 0x36),
                                 *(undefined2 *)((int)this + 0x38));
@@ -397,7 +384,7 @@ LAB_00462a36:
                 STFishC::sub_004162F0
                           (pSVar14,(undefined2 *)((int)&local_14 + 2),
                            (undefined2 *)((int)&local_28 + 2),local_8);
-                (*pSVar14->vtable->slot_2C)(pSVar14);
+                pSVar14->slot_2C();
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 thunk_FUN_00620a00(DAT_00811798,(int)local_14._2_2_,(int)local_28._2_2_,
                                    pSVar14->field_0024);
@@ -412,10 +399,8 @@ LAB_00462a36:
           return (-(uint)(iVar15 != 0) & 0xfffffffd) + 2;
         }
         iVar15 = STBoatC::sub_00460260(this,2);
-        switch(iVar15 + 1) {
+        switch(iVar15) {
         case 0:
-          goto cf_common_exit_0046401F;
-        case 1:
           local_58 = &local_4c;
           local_4c = 10000;
           local_44 = 0xff;
@@ -424,7 +409,7 @@ LAB_00462a36:
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (*(code *)**(undefined4 **)this)(local_6c);
           return 2;
-        case 2:
+        case 1:
           sVar9 = *(short *)((int)this + 0x800);
           sVar6 = *(short *)((int)this + 0x804);
           sVar7 = *(short *)((int)this + 0x802);
@@ -440,7 +425,7 @@ LAB_00462a36:
             bVar3 = *(byte *)&pSVar23[1].vtable;
             bVar4 = *(byte *)((int)this + 0x24);
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_10 = (STFishC *)CONCAT31(local_10._1_3_,bVar3);
+            local_10 = CONCAT31(local_10._1_3_,bVar3);
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             local_c = (STFishC *)CONCAT31(local_c._1_3_,bVar4);
             if (DAT_00808a8f == '\0') {
@@ -471,20 +456,18 @@ LAB_00463442:
               bVar24 = (&DAT_008087ea)[(uint)bVar4 * 0x51] != (&DAT_008087ea)[(uint)bVar3 * 0x51];
             }
             if (bVar24) {
-              iVar15 = (*pSVar23->vtable->GetObjectTypeId)(pSVar23);
+              iVar15 = pSVar23->GetObjectTypeId();
               if (iVar15 == 0x3b) {
                 return 2;
               }
-              iVar15 = (*pSVar23->vtable->GetObjectTypeId)(pSVar23);
+              iVar15 = pSVar23->GetObjectTypeId();
               if (iVar15 == 0x60) {
                 return 2;
               }
             }
           }
           STBoatC::sub_004602B0(this);
-          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-          pSVar12 = thunk_FUN_0042b760(*(char *)((int)this + 0x24),
-                                       CONCAT22(extraout_var_02,*(undefined2 *)((int)this + 0x30)));
+          pSVar12 = thunk_FUN_0042b760(*(char *)((int)this + 0x24),*(ushort *)((int)this + 0x30));
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           STGroupBoatC::GetDepotForAttack
                     (pSVar12,CONCAT22((short)((uint)&local_16 >> 0x10),
@@ -505,118 +488,109 @@ LAB_00463442:
           break;
         default:
           return 2;
-        case 4:
+        case 3:
           sVar9 = *(short *)((int)this + 0x800);
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          uVar10 = CONCAT22((short)((uint)(iVar15 + 1) >> 0x10),sVar9);
           sVar6 = *(short *)((int)this + 0x804);
           sVar7 = *(short *)((int)this + 0x802);
           psVar1 = (short *)((int)this + 0x804);
-          if ((((-1 < sVar9) && (sVar9 < g_worldGrid.sizeX)) && (-1 < sVar7)) &&
-             (((sVar7 < g_worldGrid.sizeY && (-1 < sVar6)) && (sVar6 < g_worldGrid.sizeZ)))) {
-            pSVar14 = (STFishC *)
-                      g_worldGrid.cells
-                      [(int)sVar6 * (int)g_worldGrid.planeStride +
-                       (int)sVar7 * (int)g_worldGrid.sizeX + (int)sVar9].objects[0];
-            uVar10 = (int)sVar9;
-            local_14 = pSVar14;
-            if (((pSVar14 != (STFishC *)0x0) &&
-                (uVar18 = pSVar14->field_0024, uVar10 = uVar18, uVar18 < 8)) &&
-               ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
-                (uVar10 = uVar18 * 9, (byte)(&DAT_008087e9)[uVar18 * 0x51] < 8)))) {
-              bVar3 = *(byte *)&pSVar14->field_0024;
-              bVar4 = *(byte *)((int)this + 0x24);
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              local_10 = (STFishC *)CONCAT31(local_10._1_3_,bVar3);
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              local_c = (STFishC *)CONCAT31(local_c._1_3_,bVar4);
-              if (DAT_00808a8f == '\0') {
-                if (bVar3 == bVar4) {
+          if (((((-1 < sVar9) && (sVar9 < g_worldGrid.sizeX)) && (-1 < sVar7)) &&
+              (((sVar7 < g_worldGrid.sizeY && (-1 < sVar6)) &&
+               ((sVar6 < g_worldGrid.sizeZ &&
+                ((pSVar14 = (STFishC *)
+                            g_worldGrid.cells
+                            [(int)sVar6 * (int)g_worldGrid.planeStride +
+                             (int)sVar7 * (int)g_worldGrid.sizeX + (int)sVar9].objects[0],
+                 local_14 = pSVar14, pSVar14 != (STFishC *)0x0 && ((uint)pSVar14->field_0024 < 8))))
+               )))) && ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
+                        ((byte)(&DAT_008087e9)[pSVar14->field_0024 * 0x51] < 8)))) {
+            bVar3 = *(byte *)&pSVar14->field_0024;
+            bVar4 = *(byte *)((int)this + 0x24);
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+            local_10 = CONCAT31(local_10._1_3_,bVar3);
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+            local_c = (STFishC *)CONCAT31(local_c._1_3_,bVar4);
+            if (DAT_00808a8f == '\0') {
+              if (bVar3 == bVar4) {
 LAB_00462fde:
-                  iVar15 = 0;
-                }
-                else {
-                  bVar5 = g_playerRelationMatrix[bVar3][bVar4];
-                  if ((bVar5 == 0) && (g_playerRelationMatrix[bVar4][bVar3] == 0)) {
-                    iVar15 = -2;
-                  }
-                  else if ((bVar5 == 1) && (g_playerRelationMatrix[bVar4][bVar3] == 0)) {
-                    iVar15 = -1;
-                  }
-                  else if ((bVar5 == 0) && (g_playerRelationMatrix[bVar4][bVar3] == 1)) {
-                    iVar15 = 1;
-                  }
-                  else {
-                    if ((bVar5 != 1) || (g_playerRelationMatrix[bVar4][bVar3] != 1))
-                    goto LAB_00462fde;
-                    iVar15 = 2;
-                  }
-                }
-                bVar24 = iVar15 < 0;
+                iVar15 = 0;
               }
               else {
-                bVar24 = (&DAT_008087ea)[(uint)bVar4 * 0x51] != (&DAT_008087ea)[(uint)bVar3 * 0x51];
-              }
-              uVar10 = 0;
-              /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-              if ((bVar24) &&
-                 ((uVar10 = (*pSVar14->vtable->slot_2C)(pSVar14), uVar20 = extraout_var_03,
-                  uVar16 = extraout_var_00, uVar10 == 0x3b ||
-                  (uVar10 = (*pSVar14->vtable->slot_2C)(pSVar14), uVar20 = extraout_var_04,
-                  uVar16 = extraout_var_01, uVar10 == 0x60)))) {
-                sVar9 = *(short *)((int)this + 0xd7);
-                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                local_24 = CONCAT22((short)(uVar10 >> 0x10),sVar9);
-                sVar6 = *(short *)((int)this + 0xdb);
-                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                local_1c = CONCAT22(uVar16,sVar6);
-                sVar7 = *(short *)((int)this + 0xdf);
-                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                local_20 = CONCAT22(uVar20,sVar7);
-                if ((sVar9 < 0) ||
-                   ((((g_worldGrid.sizeX <= sVar9 || (sVar6 < 0)) || (g_worldGrid.sizeY <= sVar6))
-                    || ((sVar7 < 0 || (g_worldGrid.sizeZ <= sVar7)))))) {
-                  pSVar17 = (STFishC *)0x0;
+                bVar5 = g_playerRelationMatrix[bVar3][bVar4];
+                if ((bVar5 == 0) && (g_playerRelationMatrix[bVar4][bVar3] == 0)) {
+                  iVar15 = -2;
+                }
+                else if ((bVar5 == 1) && (g_playerRelationMatrix[bVar4][bVar3] == 0)) {
+                  iVar15 = -1;
+                }
+                else if ((bVar5 == 0) && (g_playerRelationMatrix[bVar4][bVar3] == 1)) {
+                  iVar15 = 1;
                 }
                 else {
-                  pSVar17 = (STFishC *)
-                            g_worldGrid.cells
-                            [(int)g_worldGrid.planeStride * (int)sVar7 +
-                             (int)g_worldGrid.sizeX * (int)sVar6 + (int)sVar9].objects[0];
-                  pSVar14 = local_14;
+                  if ((bVar5 != 1) || (g_playerRelationMatrix[bVar4][bVar3] != 1))
+                  goto LAB_00462fde;
+                  iVar15 = 2;
                 }
-                if (pSVar14 != pSVar17) {
-                  psVar2 = (short *)((int)this + 0x802);
-                  local_c = (STFishC *)((int)this + 0x800);
-                  STFishC::sub_004162B0(local_14,(undefined2 *)local_c,psVar2,psVar1);
-                  STBoatC::sub_00481520
-                            (this,(int)*(short *)&local_c->vtable,(int)*psVar2,(int)*psVar1);
-                  thunk_FUN_00496140(*(short *)&local_c->vtable,*psVar2,*psVar1);
-                  thunk_FUN_00496140(*(short *)&local_c->vtable + 1,*psVar2,*psVar1);
-                  thunk_FUN_00496140(*(short *)&local_c->vtable,*psVar2 + 1,*psVar1);
-                  thunk_FUN_00496140(*(short *)&local_c->vtable + 1,*psVar2 + 1,*psVar1);
-                  STBoatC::sub_00460260(this,0);
-                  *(undefined2 *)((int)this + 0xf8) = 0;
-                  thunk_FUN_004960d0(*(short *)&local_c->vtable,*psVar2,*psVar1);
-                  thunk_FUN_004960d0(*(short *)&local_c->vtable + 1,*psVar2,*psVar1);
-                  thunk_FUN_004960d0(*(short *)&local_c->vtable,*psVar2 + 1,*psVar1);
-                  thunk_FUN_004960d0(*(short *)&local_c->vtable + 1,*psVar2 + 1,*psVar1);
-                  return 2;
-                }
-                *(undefined4 *)((int)this + 0x82e) = 3;
-                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                sub_00415B30(this,*(short *)((int)this + 0x41),*(short *)((int)this + 0x43),
-                             *(short *)((int)this + 0x45),(short)(local_24 * 0xc9 + 100),
-                             sVar6 * 0xc9 + 100,sVar7 * 200 + 100,*(byte *)((int)this + 0x61));
-                *(undefined4 *)((int)this + 0x7a) = 0;
+              }
+              bVar24 = iVar15 < 0;
+            }
+            else {
+              bVar24 = (&DAT_008087ea)[(uint)bVar4 * 0x51] != (&DAT_008087ea)[(uint)bVar3 * 0x51];
+            }
+            /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+            if ((bVar24) &&
+               ((dVar13 = pSVar14->slot_2C(), uVar20 = extraout_var_01,
+                uVar16 = extraout_var, dVar13 == 0x3b ||
+                (dVar13 = pSVar14->slot_2C(), uVar20 = extraout_var_02,
+                uVar16 = extraout_var_00, dVar13 == 0x60)))) {
+              sVar9 = *(short *)((int)this + 0xd7);
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+              local_24 = CONCAT22((short)(dVar13 >> 0x10),sVar9);
+              sVar6 = *(short *)((int)this + 0xdb);
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+              local_1c = CONCAT22(uVar16,sVar6);
+              sVar7 = *(short *)((int)this + 0xdf);
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+              local_20 = CONCAT22(uVar20,sVar7);
+              if ((sVar9 < 0) ||
+                 ((((g_worldGrid.sizeX <= sVar9 || (sVar6 < 0)) || (g_worldGrid.sizeY <= sVar6)) ||
+                  ((sVar7 < 0 || (g_worldGrid.sizeZ <= sVar7)))))) {
+                pSVar17 = (STFishC *)0x0;
+              }
+              else {
+                pSVar17 = (STFishC *)
+                          g_worldGrid.cells
+                          [(int)g_worldGrid.planeStride * (int)sVar7 +
+                           (int)g_worldGrid.sizeX * (int)sVar6 + (int)sVar9].objects[0];
+                pSVar14 = local_14;
+              }
+              if (pSVar14 != pSVar17) {
+                psVar2 = (short *)((int)this + 0x802);
+                local_c = (STFishC *)((int)this + 0x800);
+                STFishC::sub_004162B0(local_14,(short *)local_c,psVar2,psVar1);
+                STBoatC::sub_00481520
+                          (this,(int)*(short *)&local_c->vtable,(int)*psVar2,(int)*psVar1);
+                thunk_FUN_00496140(*(short *)&local_c->vtable,*psVar2,*psVar1);
+                thunk_FUN_00496140(*(short *)&local_c->vtable + 1,*psVar2,*psVar1);
+                thunk_FUN_00496140(*(short *)&local_c->vtable,*psVar2 + 1,*psVar1);
+                thunk_FUN_00496140(*(short *)&local_c->vtable + 1,*psVar2 + 1,*psVar1);
+                STBoatC::sub_00460260(this,0);
+                *(undefined2 *)((int)this + 0xf8) = 0;
+                thunk_FUN_004960d0(*(short *)&local_c->vtable,*psVar2,*psVar1);
+                thunk_FUN_004960d0(*(short *)&local_c->vtable + 1,*psVar2,*psVar1);
+                thunk_FUN_004960d0(*(short *)&local_c->vtable,*psVar2 + 1,*psVar1);
+                thunk_FUN_004960d0(*(short *)&local_c->vtable + 1,*psVar2 + 1,*psVar1);
                 return 2;
               }
+              *(undefined4 *)((int)this + 0x82e) = 3;
+              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+              sub_00415B30(this,*(short *)((int)this + 0x41),*(short *)((int)this + 0x43),
+                           *(short *)((int)this + 0x45),(short)(local_24 * 0xc9 + 100),
+                           sVar6 * 0xc9 + 100,sVar7 * 200 + 100,*(byte *)((int)this + 0x61));
+              *(undefined4 *)((int)this + 0x7a) = 0;
+              return 2;
             }
           }
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          pSVar12 = thunk_FUN_0042b760(*(char *)((int)this + 0x24),
-                                       CONCAT22((short)(uVar10 >> 0x10),
-                                                *(undefined2 *)((int)this + 0x30)));
+          pSVar12 = thunk_FUN_0042b760(*(char *)((int)this + 0x24),*(ushort *)((int)this + 0x30));
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           STGroupBoatC::GetDepotForAttack
                     (pSVar12,CONCAT22((short)((uint)&local_16 >> 0x10),
@@ -636,6 +610,8 @@ LAB_00462fde:
             return 2;
           }
           goto cf_common_exit_0046351A;
+        case -1:
+          goto cf_common_exit_0046401F;
         }
       }
       *(undefined4 *)((int)this + 0xb7) = 0;
@@ -676,7 +652,7 @@ LAB_004625fd:
             local_9c.field_000A = *(undefined2 *)((int)this + 0x43);
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             local_9c._12_2_ = *(undefined2 *)((int)this + 0x45);
-            local_10 = (STFishC *)0x0;
+            local_10 = 0;
             if (*(char *)((int)this + 0x2b2) != '\0') {
               puVar22 = (ushort *)((int)this + 0x2a8);
               do {
@@ -723,9 +699,9 @@ LAB_004625fd:
                 *(int *)((int)this + 0x7a2) = iVar15;
                 *(undefined4 *)((int)this + 0x7aa) = 0;
                 if ((*(int *)((int)this + 0x7de) == 0) && (iVar15 < 1)) break;
-                local_10 = (STFishC *)((int)&local_10->vtable + 1);
+                local_10 = local_10 + 1;
                 puVar22 = puVar22 + 3;
-              } while ((int)local_10 < (int)(uint)*(byte *)((int)this + 0x2b2));
+              } while (local_10 < (int)(uint)*(byte *)((int)this + 0x2b2));
             }
             if (*(int *)((int)this + 0x7de) == 1) {
               *(undefined4 *)((int)this + 0x72a) = 0;
@@ -909,7 +885,7 @@ cf_common_exit_00464526:
             local_c = (STFishC *)((int)this + 0x800);
             sVar7 = *(short *)&local_c->vtable;
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_10 = (STFishC *)CONCAT22((short)((uint)local_c >> 0x10),sVar7);
+            local_10 = CONCAT22((short)((uint)local_c >> 0x10),sVar7);
             if (*(int *)((int)this + 0x7fc) == 3) {
               if ((((-1 < sVar7) && (sVar7 < g_worldGrid.sizeX)) &&
                   ((-1 < sVar6 && ((sVar6 < g_worldGrid.sizeY && (-1 < sVar9)))))) &&
@@ -930,8 +906,7 @@ LAB_00464147:
                   sVar6 = *(short *)((int)this + 0xdb);
                   sVar7 = *(short *)((int)this + 0xd7);
                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                  local_10 = (STFishC *)
-                             CONCAT22((short)((uint)*(int *)((int)this + 0x7fc) >> 0x10),sVar7);
+                  local_10 = CONCAT22((short)((uint)*(int *)((int)this + 0x7fc) >> 0x10),sVar7);
                   if (*(int *)((int)this + 0x7fc) == 3) {
                     if (((-1 < sVar7) && (sVar7 < g_worldGrid.sizeX)) &&
                        (((-1 < sVar6 && ((sVar6 < g_worldGrid.sizeY && (-1 < sVar9)))) &&
@@ -956,7 +931,7 @@ LAB_00464147:
                   pSVar14 = (STFishC *)0x0;
 cf_common_exit_00464282:
                   if (local_14 != pSVar14) {
-                    STFishC::sub_004162B0(local_14,(undefined2 *)local_c,psVar2,psVar1);
+                    STFishC::sub_004162B0(local_14,(short *)local_c,psVar2,psVar1);
                     STBoatC::sub_00481520
                               (this,(int)*(short *)&local_c->vtable,(int)*psVar2,(int)*psVar1);
                     thunk_FUN_00496140(*(short *)&local_c->vtable,*psVar2,*psVar1);
@@ -1023,7 +998,8 @@ LAB_0046461c:
         }
         if ((local_c == (STFishC *)0x0) || (local_c->field_0018 != *(int *)((int)this + 0x7f4))) {
           iVar15 = STPlaySystemC::sub_006E62D0
-                             (g_playSystem_00802A38,*(int *)((int)this + 0x7f4),(int *)&local_c);
+                             (g_playSystem_00802A38,
+                              *(AnonShape_005EFAE0_B406B78B **)((int)this + 0x7f4),(int *)&local_c);
           pSVar14 = this;
           if (((iVar15 == -4) || (iVar15 = (*local_c->vtable->vfunc_F8)(), iVar15 == 0)) ||
              ((*(int *)&local_c->field_0x20 == 0x1ae &&
@@ -1037,8 +1013,7 @@ LAB_0046461c:
           }
           else {
             STFishC::sub_004162B0
-                      (local_c,(undefined2 *)&local_10,(undefined2 *)&local_28,
-                       (undefined2 *)&local_14);
+                      (local_c,(short *)&local_10,(undefined2 *)&local_28,(undefined2 *)&local_14);
             uVar10 = (int)*(short *)((int)this + 0x800) - (int)(short)local_10;
             uVar18 = (int)uVar10 >> 0x1f;
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -1091,8 +1066,7 @@ LAB_0046470b:
           }
           else {
             if ((iVar15 != 1) ||
-               (iVar15 = (*local_c->vtable->vfunc_DC)
-                                   (local_c,*(undefined2 *)((int)this + 0x41),
+               (iVar15 = local_c->vfunc_DC(*(undefined2 *)((int)this + 0x41),
                                     *(undefined2 *)((int)this + 0x43),
                                     *(undefined2 *)((int)this + 0x45),
                                     *(undefined2 *)((int)this + 0x34),
@@ -1131,7 +1105,7 @@ cf_common_exit_00464889:
         local_c = (STFishC *)((int)this + 0x800);
         sVar7 = *(short *)&local_c->vtable;
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_10 = (STFishC *)CONCAT22((short)((uint)local_c >> 0x10),sVar7);
+        local_10 = CONCAT22((short)((uint)local_c >> 0x10),sVar7);
         if (*(int *)((int)this + 0x7fc) == 3) {
           if (((sVar7 < 0) || (g_worldGrid.sizeX <= sVar7)) ||
              ((sVar6 < 0 ||
@@ -1157,12 +1131,14 @@ LAB_00463d56:
         }
         if ((local_14 == (STFishC *)0x0) || (local_14->field_0018 != *(int *)((int)this + 0x7f4))) {
           iVar15 = STPlaySystemC::sub_006E62D0
-                             (g_playSystem_00802A38,*(int *)((int)this + 0x7f4),(int *)&local_14);
+                             (g_playSystem_00802A38,
+                              *(AnonShape_005EFAE0_B406B78B **)((int)this + 0x7f4),(int *)&local_14)
+          ;
           if (((iVar15 != -4) && (iVar15 = (*local_14->vtable->vfunc_F8)(), iVar15 != 0)) &&
              ((*(int *)&local_14->field_0x20 != 0x1ae ||
               (iVar15 = (*local_14->vtable->vfunc_F4)(*(undefined4 *)((int)this + 0x24)),
               iVar15 != 0)))) {
-            STFishC::sub_004162B0(local_14,(undefined2 *)local_c,psVar2,psVar1);
+            STFishC::sub_004162B0(local_14,(short *)local_c,psVar2,psVar1);
             sVar6 = *psVar1;
             sVar9 = *psVar2;
             iVar15 = (int)*(short *)&local_c->vtable;
@@ -1178,7 +1154,7 @@ LAB_00463d56:
             if (*(int *)((int)this + 0x7f8) != 0) {
               *(undefined4 *)((int)this + 0x82e) = 2;
               *(undefined4 *)((int)this + 0xb7) = 0;
-              STFishC::sub_004162B0(local_14,(undefined2 *)local_c,psVar2,psVar1);
+              STFishC::sub_004162B0(local_14,(short *)local_c,psVar2,psVar1);
               STBoatC::sub_00481520(this,(int)*(short *)&local_c->vtable,(int)*psVar2,(int)*psVar1);
               thunk_FUN_00496140(*(short *)&local_c->vtable,*psVar2,*psVar1);
               thunk_FUN_00496140(*(short *)&local_c->vtable + 1,*psVar2,*psVar1);
@@ -1219,7 +1195,7 @@ switchD_004638e6_caseD_2:
         sVar6 = *(short *)((int)this + 0x802);
         sVar7 = *(short *)((int)this + 0x800);
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_10 = (STFishC *)CONCAT22((short)((uint)*(int *)((int)this + 0x7fc) >> 0x10),sVar7);
+        local_10 = CONCAT22((short)((uint)*(int *)((int)this + 0x7fc) >> 0x10),sVar7);
         if (*(int *)((int)this + 0x7fc) == 3) {
           if (((sVar7 < 0) || (g_worldGrid.sizeX <= sVar7)) ||
              ((sVar6 < 0 ||
@@ -1259,7 +1235,8 @@ LAB_00463b9d:
         }
         STBoatC::sub_004602B0(this);
         iVar15 = STPlaySystemC::sub_006E62D0
-                           (g_playSystem_00802A38,*(int *)((int)this + 0x7f4),(int *)&local_c);
+                           (g_playSystem_00802A38,
+                            *(AnonShape_005EFAE0_B406B78B **)((int)this + 0x7f4),(int *)&local_c);
         if ((iVar15 != -4) && (iVar15 = (*local_c->vtable->vfunc_F8)(), iVar15 != 0)) {
           if (*(int *)&local_c->field_0x20 == 0x1ae) {
             iVar15 = (*local_c->vtable->vfunc_F4)(*(undefined4 *)((int)this + 0x24));
@@ -1268,7 +1245,7 @@ joined_r0x00463a7a:
           }
 LAB_00463a83:
           STFishC::sub_004162B0
-                    (local_c,(undefined2 *)((int)this + 0x800),(undefined2 *)((int)this + 0x802),
+                    (local_c,(short *)((int)this + 0x800),(undefined2 *)((int)this + 0x802),
                      (undefined2 *)((int)this + 0x804));
 LAB_00463a91:
           sVar6 = *(short *)((int)this + 0x804);
@@ -1284,7 +1261,7 @@ LAB_00463a91:
         sVar6 = *(short *)((int)this + 0x802);
         sVar7 = *(short *)((int)this + 0x800);
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        local_10 = (STFishC *)CONCAT22((short)((uint)*(int *)((int)this + 0x7fc) >> 0x10),sVar7);
+        local_10 = CONCAT22((short)((uint)*(int *)((int)this + 0x7fc) >> 0x10),sVar7);
         if (*(int *)((int)this + 0x7fc) == 3) {
           if (((sVar7 < 0) || (g_worldGrid.sizeX <= sVar7)) ||
              ((sVar6 < 0 ||
@@ -1310,7 +1287,8 @@ LAB_004639e6:
         }
         if ((local_c == (STFishC *)0x0) || (local_c->field_0018 != *(int *)((int)this + 0x7f4))) {
           iVar15 = STPlaySystemC::sub_006E62D0
-                             (g_playSystem_00802A38,*(int *)((int)this + 0x7f4),(int *)&local_c);
+                             (g_playSystem_00802A38,
+                              *(AnonShape_005EFAE0_B406B78B **)((int)this + 0x7f4),(int *)&local_c);
           if ((iVar15 != -4) && (iVar15 = (*local_c->vtable->vfunc_F8)(), iVar15 != 0)) {
             if (*(int *)&local_c->field_0x20 == 0x1ae) {
               iVar15 = (*local_c->vtable->vfunc_F4)(*(undefined4 *)((int)this + 0x24));

@@ -99,6 +99,7 @@ LAB_0055cf74:
         bVar1 = *pbVar8;
         pbVar8 = pbVar8 + 1;
       } while (bVar1 != 0);
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = (byte *)Library::DKW::LIB::FUN_006aac70(~uVar6 + ~uVar7 + 4);
       if (param_2 != (byte *)0x0) {
         wsprintfA((LPSTR)param_2,"%s %s",pcVar3,param_4);
@@ -158,10 +159,7 @@ LAB_0055c9c5:
         *(char *)((int)this + 0x2b) = (*(char *)((int)this + 0x2b) == '\a') + '\a';
       }
       if ((*(char *)((int)this + 9) == '\0') && (g_fSGS_0081174C != (FSGSTy *)0x0)) {
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        FSGSTy::AddMessage(g_fSGS_0081174C,
-                           CONCAT31((int3)((uint)param_5 >> 8),*(undefined1 *)((int)this + 0x2b)),
-                           param_4,param_5,5);
+        FSGSTy::AddMessage(g_fSGS_0081174C,*(byte *)((int)this + 0x2b),param_4,param_5,5);
         return;
       }
       break;
@@ -183,6 +181,7 @@ LAB_0055c9c5:
         bVar1 = *pbVar9;
         pbVar9 = pbVar9 + 1;
       } while (bVar1 != 0);
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = (byte *)Library::DKW::LIB::FUN_006aac70(~uVar6 + ~uVar7 + 4);
       if (param_2 != (byte *)0x0) {
         pcVar4 = LoadResourceString(0x2576,g_module_00807618);

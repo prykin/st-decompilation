@@ -20,7 +20,7 @@ undefined4 __thiscall DebugSystemC::CreateSystemObjects(DebugSystemC *this)
   local_8 = this;
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (errorCode == 0) {
-    (*local_8->vtable->vfunc_0C)(local_8,0x8100,&DAT_007fb228,0,0);
+    local_8->vfunc_0C(0x8100,&DAT_007fb228,0,0);
     g_currentExceptionFrame = local_4c.previous;
     return 0;
   }

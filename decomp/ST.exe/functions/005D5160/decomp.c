@@ -62,7 +62,7 @@ void __thiscall SettMapSTy::PrepPlList(SettMapSTy *this,int *param_1)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  if (local_8->field_1E26 == 2) {
+  if (local_8->field_1E26 == CASE_2) {
     local_10 = local_8->field_1F3F;
   }
   else {
@@ -107,7 +107,7 @@ void __thiscall SettMapSTy::PrepPlList(SettMapSTy *this,int *param_1)
         cStack_71 = *local_c;
       }
       local_72 = cVar1;
-      if (this_00->field_1E26 == 2) {
+      if (this_00->field_1E26 == CASE_2) {
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_24 = CreateStrategList((int)local_10,
                                      CONCAT12(uStack_70,CONCAT11(cStack_71,cVar1)) & 0xff,0xffffffff
@@ -148,7 +148,7 @@ void __thiscall SettMapSTy::PrepPlList(SettMapSTy *this,int *param_1)
       else {
         uStack_70 = 4;
         uStack_6f = 0;
-        if (local_8->field_1E26 == 2) {
+        if (local_8->field_1E26 == CASE_2) {
           uVar9 = 0;
           uVar11 = local_24[3];
           if (0 < (int)uVar11) {

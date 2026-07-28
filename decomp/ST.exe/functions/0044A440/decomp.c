@@ -29,14 +29,14 @@ STAllPlayersC::UnRegisterDeposit(STAllPlayersC *this,uint param_1,STResourceC *p
   errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   this_00 = local_c;
   if (errorCode == 0) {
-    pSVar2 = GetObjPtr(local_c,-1,param_1,CASE_4);
+    pSVar2 = GetObjPtr(local_c,-1,(ushort)param_1,CASE_4);
     if (pSVar2 != (STGameObjC *)param_2) {
       RaiseInternalException
                 (-0x5001fff9,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                  0x2f4e);
     }
     DelObjFromTmps(this_00,DAT_0080874d,param_2->field_0020,param_2->field_0024,param_1);
-    DelObjFromSaveTmps(this_00,param_2->field_0020,param_2->field_0024,(short)param_1);
+    DelObjFromSaveTmps(this_00,param_2->field_0020,param_2->field_0024,(ushort)param_1);
     Library::DKW::TBL::FUN_006ae140(&PTR_007fa15c->flags,param_1 & 0xffff,&local_8);
     g_currentExceptionFrame = local_50.previous;
   }

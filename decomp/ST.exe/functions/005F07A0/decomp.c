@@ -26,7 +26,7 @@ undefined4 __fastcall FUN_005f07a0(STBoatC *param_1)
                    g_worldGrid.cells
                    [(int)g_worldGrid.planeStride * (int)sVar3 + (int)g_worldGrid.sizeX * (int)sVar2
                     + (int)sVar1].objects[0], this != (STFishC *)0x0)))))) {
-        dVar5 = (*this->vtable->slot_2C)(this);
+        dVar5 = this->slot_2C();
         if (dVar5 == 99) {
           iVar4 = thunk_FUN_004b7d00(this,param_1);
           if (iVar4 != 0) {

@@ -27,8 +27,8 @@ apply	type_path	offset	size	proposed_name	proposed_type	evidence_count	reason
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_CPanelTy_01B0	8	4	field_0008	/undefined4	1	nested reads=1, writes=0
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_CPanelTy_01B0	14	2	field_000E	/undefined2	1	nested reads=1, writes=0
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_CPanelTy_01B0	20	4	field_0014	/undefined4	1	nested reads=1, writes=0
-0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_CPanelTy_09ED	4	4	field_0004	/undefined4	2	nested reads=13, writes=0
-0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_CPanelTy_09ED	8	4	field_0008	/undefined4	1	nested reads=3, writes=0
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_CPanelTy_09ED	4	4	field_0004	/undefined4	4	nested reads=34, writes=0
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_CPanelTy_09ED	8	4	field_0008	/undefined4	3	nested reads=8, writes=0
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ChooseMapTy_0000	0	4	field_0000	/undefined4	1	nested reads=4, writes=0
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ChooseMapTy_0000	8	4	field_0008	/undefined4	1	nested reads=7, writes=0
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ChooseMapTy_000C	0	4	field_0000	/undefined4	3	nested reads=11, writes=0

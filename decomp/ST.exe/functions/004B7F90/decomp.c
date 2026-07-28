@@ -45,7 +45,7 @@ switchD_004b7fa6_caseD_ffffffff:
       uVar3 = 1;
     }
     else {
-      uVar3 = thunk_FUN_004cc040((int)this);
+      uVar3 = thunk_FUN_004cc040(this);
     }
   }
 cf_common_exit_004B8058:

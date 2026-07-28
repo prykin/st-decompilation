@@ -3,10 +3,16 @@
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_event.cpp
    Diagnostic line evidence: 436 | 440 (metadata/report site, not the function definition)
-   [STSourceProvenanceApplier end] */
+   [STSourceProvenanceApplier end]
 
-uint FUN_0064e300(int param_1,char *param_2,undefined2 param_3,char param_4,undefined2 param_5,
-                 char param_6,uint param_7)
+   [STPrototypeApplier] Propagated parameter 2.
+   Evidence: 0064E300 -> 00668180 @ 0064E399
+
+   [STPrototypeApplier] Propagated parameter 4.
+   Evidence: 0064E300 -> 00668180 @ 0064E399 */
+
+uint FUN_0064e300(int param_1,char *param_2,ushort param_3,char param_4,ushort param_5,char param_6,
+                 uint param_7)
 
 {
   uint uVar1;
@@ -47,7 +53,7 @@ uint FUN_0064e300(int param_1,char *param_2,undefined2 param_3,char param_4,unde
   if ((param_6 < '\0') || (iVar2 = (int)param_6, '\a' < param_6)) {
     iVar2 = param_1;
   }
-  local_8 = thunk_FUN_00668180(param_2,param_3,(short)param_4,param_5,(char)iVar2);
+  local_8 = thunk_FUN_00668180(param_2,param_3,(short)param_4,param_5,(byte)iVar2);
   *(int *)&local_8->field_0x4 = param_1;
   *(uint *)&local_8->field_0x77 = uVar1;
   local_c = FltDataPack(local_8,local_20);

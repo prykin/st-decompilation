@@ -30,6 +30,7 @@ void FUN_006db0d0(undefined4 *param_1,int param_2,int param_3,int param_4,int pa
     } while (iVar5 != 0);
   }
   local_8 = param_4;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_7 = -(param_8 >> 1);
   pbVar4 = (byte *)(param_5 - param_6);
   do {
@@ -37,7 +38,9 @@ void FUN_006db0d0(undefined4 *param_1,int param_2,int param_3,int param_4,int pa
       do {
         pbVar4 = pbVar4 + param_6;
         bVar6 = SCARRY4(param_7,param_4);
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_7 = param_7 + param_4;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       } while (param_7 == 0 || bVar6 != param_7 < 0);
     }
     piVar3 = (int *)&stack0xffffffe8;
@@ -67,6 +70,7 @@ joined_r0x006db171:
       if (iVar1 != 0 && 0 < param_3) goto joined_r0x006db171;
     }
     param_1 = (undefined4 *)((int)param_1 + param_2 + param_3 * -2);
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_7 = param_7 - param_8;
     iVar1 = local_8 + -1;
     bVar6 = local_8 < 1;

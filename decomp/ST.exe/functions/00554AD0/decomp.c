@@ -30,7 +30,7 @@ void __thiscall cLoadingTy::DrawLine(cLoadingTy *this,uint *param_1)
     iVar3 = pcVar2->field_0010 + pcVar2->field_0018;
     iVar4 = pcVar2->field_000C + pcVar2->field_0014;
     Library::DKW::DDX::FUN_006b42d0
-              ((uint)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,iVar4,iVar3,
+              (g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,iVar4,iVar3,
                (BITMAPINFO *)pcVar2->field_0000,(uint *)0x0,iVar4,iVar3,pcVar2->field_001C,
                pcVar2->field_0034);
     iVar3 = pcVar2->field_0010 + pcVar2->field_0018;

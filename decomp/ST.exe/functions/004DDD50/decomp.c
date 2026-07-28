@@ -54,7 +54,7 @@ undefined4 __fastcall FUN_004ddd50(int *param_1)
             if (iVar6 == 0) {
               local_c = local_c * 4;
               if (DAT_00811798 != (void *)0x0) {
-                thunk_FUN_00621580(DAT_00811798,param_1[9],5);
+                thunk_FUN_00621580(DAT_00811798,(byte *)param_1[9],5);
               }
             }
           }

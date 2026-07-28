@@ -136,11 +136,11 @@ int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
     case 6:
     case 7:
       if (*piVar18 == 6) {
-        thunk_FUN_0056a8d0(&DAT_00807620,(uint)piVar18[1] >> 0x10,*(byte *)(piVar18 + 1),
+        thunk_FUN_0056a8d0(&DAT_00807620,(byte)((uint)piVar18[1] >> 0x10),*(byte *)(piVar18 + 1),
                            (char)piVar18[2]);
       }
       else {
-        thunk_FUN_0056a960(&DAT_00807620,(uint)piVar18[1] >> 0x10,*(byte *)(piVar18 + 1));
+        thunk_FUN_0056a960(&DAT_00807620,(byte)((uint)piVar18[1] >> 0x10),*(byte *)(piVar18 + 1));
       }
       this_00 = g_playPanel_008016E4;
       if (g_playPanel_008016E4 != (PlayPanelTy *)0x0) {

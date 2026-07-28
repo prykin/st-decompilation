@@ -33,7 +33,7 @@ undefined4 __cdecl FUN_005809e0(short param_1,short param_2,int param_3,int para
                (int)param_1].objects[0], this == (STWorldObject *)0x0)))) {
     return 1;
   }
-  iVar2 = (*this->vtable->GetObjectTypeId)(this);
+  iVar2 = this->GetObjectTypeId();
   if (iVar2 != 0x39) {
     if (iVar2 == 0x4f) {
       if (param_4 != 0xde) {

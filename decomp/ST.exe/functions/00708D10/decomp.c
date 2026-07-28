@@ -3,7 +3,11 @@
    /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00702510.
    Evidence: incoming_receiver_captures=1; receiver_accesses=27; incoming_edx_uses=0; calls=5;
    ecx_pointer_setup=5; ecx_scalar_setup=0; caller_cleanup_calls=0; callee_ret_pop=[32];
-   expected_stack=32; receiver_family_members=3; adopt_untyped_existing_thiscall */
+   expected_stack=32; receiver_family_members=3; adopt_untyped_existing_thiscall
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=3, used=0), and
+   decompilation contains no value return */
 
 void __thiscall
 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00702510::FUN_00708d10
@@ -93,6 +97,7 @@ LAB_00708dda:
   local_14 = this;
   while( true ) {
     if (local_30 == 1) {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_6 = param_6 + param_7;
     }
     if (DAT_00856fc8 == DAT_00857008) {

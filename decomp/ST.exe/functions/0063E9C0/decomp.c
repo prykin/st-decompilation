@@ -1,5 +1,8 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0), and
+   decompilation contains no value return */
 
 void __thiscall FUN_0063e9c0(void *this,int param_1)
 
@@ -21,7 +24,7 @@ void __thiscall FUN_0063e9c0(void *this,int param_1)
   unkbyte10 extraout_ST1;
   longlong lVar12;
   longlong lVar13;
-  undefined4 local_1c;
+  int local_1c;
   int local_18;
   uint local_14;
   int local_10;
@@ -118,7 +121,7 @@ cf_common_join_0063EACD:
                 local_1c = 4000;
               }
               else {
-                local_1c = (undefined4)(4000 / (longlong)iVar5);
+                local_1c = (int)(4000 / (longlong)iVar5);
               }
               local_10 = 0;
               do {
@@ -131,13 +134,13 @@ cf_common_join_0063EACD:
                              (int)g_worldGrid.sizeX * (int)sVar8 + (int)(short)local_c].objects[0]
                             != (STWorldObject *)0x0)) {
                     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                    thunk_FUN_00601d10(*(undefined4 *)((int)this + 0x259),local_1c,
+                    thunk_FUN_00601d10(*(int *)((int)this + 0x259),local_1c,
                                        (int)g_worldGrid.cells
                                             [(int)sVar3 * (int)g_worldGrid.planeStride +
                                              (int)g_worldGrid.sizeX * (int)sVar8 +
                                              (int)(short)local_c].objects[0],
                                        (short)*(undefined4 *)((int)this + 0x25d),
-                                       *(undefined2 *)((int)this + 0x261),0xa8,0x110);
+                                       *(ushort *)((int)this + 0x261),0xa8,0x110);
                   }
                   if ((((short)local_c < g_worldGrid.sizeX) && (-1 < sVar8)) &&
                      ((sVar8 < g_worldGrid.sizeY &&
@@ -147,13 +150,13 @@ cf_common_join_0063EACD:
                          (int)g_worldGrid.sizeX * (int)sVar8 + (int)(short)local_c].objects[1] !=
                         (STWorldObject *)0x0)))))) {
                     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                    thunk_FUN_00601d10(*(undefined4 *)((int)this + 0x259),local_1c,
+                    thunk_FUN_00601d10(*(int *)((int)this + 0x259),local_1c,
                                        (int)g_worldGrid.cells
                                             [(int)sVar3 * (int)g_worldGrid.planeStride +
                                              (int)g_worldGrid.sizeX * (int)sVar8 +
                                              (int)(short)local_c].objects[1],
                                        (short)*(undefined4 *)((int)this + 0x25d),
-                                       *(undefined2 *)((int)this + 0x261),0xa8,0x110);
+                                       *(ushort *)((int)this + 0x261),0xa8,0x110);
                   }
                 }
                 local_10 = local_10 + 1;
@@ -190,7 +193,7 @@ cf_common_join_0063EACD:
               local_1c = 4000;
             }
             else {
-              local_1c = (undefined4)(4000 / (longlong)iVar5);
+              local_1c = (int)(4000 / (longlong)iVar5);
             }
             local_10 = 0;
             do {
@@ -202,12 +205,12 @@ cf_common_join_0063EACD:
                         (int)g_worldGrid.sizeX * (int)sVar8 + (int)(short)local_c].objects[0] !=
                        (STWorldObject *)0x0)))))) {
                 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                thunk_FUN_00601d10(*(undefined4 *)((int)this + 0x259),local_1c,
+                thunk_FUN_00601d10(*(int *)((int)this + 0x259),local_1c,
                                    (int)g_worldGrid.cells
                                         [(int)sVar3 * (int)g_worldGrid.planeStride +
                                          (int)g_worldGrid.sizeX * (int)sVar8 + (int)(short)local_c].
                                         objects[0],(short)*(undefined4 *)((int)this + 0x25d),
-                                   *(undefined2 *)((int)this + 0x261),0xa8,0x110);
+                                   *(ushort *)((int)this + 0x261),0xa8,0x110);
               }
               local_10 = local_10 + 1;
             } while (local_10 < 5);

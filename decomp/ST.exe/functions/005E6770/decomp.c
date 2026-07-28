@@ -23,7 +23,8 @@ void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 para
   uint uVar10;
   uint *puVar11;
   int iVar12;
-  char cVar13;
+  byte bVar13;
+  char cVar14;
   undefined4 local_668 [256];
   undefined4 local_268;
   undefined4 local_1a5;
@@ -102,7 +103,7 @@ void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 para
       uVar7 = ((uint)puVar6[7] * *(int *)(puVar6 + 2) + 0x1f >> 3 & 0x1ffffffc) *
               *(int *)(puVar6 + 4);
     }
-    puVar8 = (undefined4 *)FUN_006b4fa0((int)puVar6);
+    puVar8 = (undefined4 *)FUN_006b4fa0((int *)puVar6);
     for (uVar10 = uVar7 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
       *puVar8 = 0;
       puVar8 = puVar8 + 1;
@@ -112,10 +113,10 @@ void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 para
       *(undefined1 *)puVar8 = 0;
       puVar8 = (undefined4 *)((int)puVar8 + 1);
     }
-    puVar11 = &this_01->field_1A94;
+    puVar11 = this_01->field_1A94;
     do {
       FUN_006b2330(PTR_008075a8,puVar11,0x31,0x402211,*(uint *)(this_01->field_1AEC + 2),0x13,
-                   (uint)this_01);
+                   (ushort *)this_01);
       Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,*puVar11,0xffffffff,0x114,uVar10);
       FUN_006b3af0((int *)PTR_008075a8,*puVar11);
       uVar10 = uVar10 + 0x13;
@@ -123,7 +124,7 @@ void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 para
     } while ((int)uVar10 < 0x1e1);
     CreateCtrls(this_01);
     FUN_006b2330(PTR_008075a8,&local_8,0x32,0x403099,0x204,0x19d,
-                 (uint)&this_01->field_1A5B->field_0140);
+                 (ushort *)&this_01->field_1A5B->field_0140);
     Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,local_8,0xffffffff,0x112,0x38);
     pHVar9 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
     if (pHVar9 == (HoloTy *)0x0) {
@@ -147,12 +148,12 @@ void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 para
     }
     this_01->field_1AF8 = pHVar9;
     if (pHVar9 != (HoloTy *)0x0) {
-      uVar10 = 0;
-      cVar13 = '\x01';
-      uVar7 = 0x10;
+      uVar7 = 0;
+      cVar14 = '\x01';
+      bVar13 = 0x10;
       iVar12 = 1;
       iVar4 = Library::DKW::DDX::FUN_006bf9f0((int *)PTR_008075a8,0x112,0x38,0x204,0x19d);
-      uVar7 = HoloTy::Init(this_01->field_1AF8,CASE_2,0x112,0x38,iVar4,iVar12,uVar7,cVar13,uVar10);
+      uVar7 = HoloTy::Init(this_01->field_1AF8,CASE_2,0x112,0x38,iVar4,iVar12,bVar13,cVar14,uVar7);
       if (uVar7 != 0) {
         pHVar9 = this_01->field_1AF8;
         pHVar9->field_0002 = 1;
@@ -169,7 +170,7 @@ void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 para
     }
     if ((this_01->field_1A64 == 0) || (this_01->field_1A68 != 0)) {
       FUN_006b2330(PTR_008075a8,&local_8,0x32,0x4042d2,0xf9,0x121,
-                   (uint)&this_01->field_1A5B->field_0140);
+                   (ushort *)&this_01->field_1A5B->field_0140);
       Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,local_8,0xffffffff,10,0xb4);
       pHVar9 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
       if (pHVar9 == (HoloTy *)0x0) {
@@ -193,12 +194,12 @@ void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 para
       }
       this_01->field_1B00 = pHVar9;
       if (pHVar9 != (HoloTy *)0x0) {
-        uVar10 = 0;
-        cVar13 = '\x01';
-        uVar7 = 0x10;
+        uVar7 = 0;
+        cVar14 = '\x01';
+        bVar13 = 0x10;
         iVar12 = 1;
         iVar4 = Library::DKW::DDX::FUN_006bf9f0((int *)PTR_008075a8,10,0xb4,0xf9,0x121);
-        uVar7 = HoloTy::Init(this_01->field_1B00,CASE_4,10,0xb4,iVar4,iVar12,uVar7,cVar13,uVar10);
+        uVar7 = HoloTy::Init(this_01->field_1B00,CASE_4,10,0xb4,iVar4,iVar12,bVar13,cVar14,uVar7);
         if (uVar7 != 0) {
           pHVar9 = this_01->field_1B00;
           pHVar9->field_0002 = 1;
@@ -250,7 +251,7 @@ void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 para
     }
     if (this_01->field_1A64 == 0) {
       FUN_006b2330(PTR_008075a8,&local_8,0x32,0x403b61,400,0x62,
-                   (uint)&this_01->field_1A5B->field_0140);
+                   (ushort *)&this_01->field_1A5B->field_0140);
       Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,local_8,0xffffffff,200,0x1f1);
       if (g_startSystem_0081176C->field_0560 != 0xffffffff) {
         Library::DKW::DDX::FUN_006b34d0
@@ -286,12 +287,12 @@ void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 para
       }
       this_01->field_1AFC = pHVar9;
       if (pHVar9 != (HoloTy *)0x0) {
-        uVar10 = 0;
-        cVar13 = '\x01';
-        uVar7 = 0x10;
+        uVar7 = 0;
+        cVar14 = '\x01';
+        bVar13 = 0x10;
         iVar12 = 1;
         iVar4 = Library::DKW::DDX::FUN_006bf9f0((int *)PTR_008075a8,200,0x1f1,400,0x62);
-        uVar7 = HoloTy::Init(this_01->field_1AFC,CASE_1,200,0x1f1,iVar4,iVar12,uVar7,cVar13,uVar10);
+        uVar7 = HoloTy::Init(this_01->field_1AFC,CASE_1,200,0x1f1,iVar4,iVar12,bVar13,cVar14,uVar7);
         if (uVar7 != 0) {
           pHVar9 = this_01->field_1AFC;
           pHVar9->field_0002 = 1;
@@ -335,7 +336,7 @@ void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 para
     }
     if ((DAT_00811768 != '\0') || (DAT_008067a0 != '\0')) {
       thunk_FUN_0055ddf0((undefined4 *)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,
-                         (int *)PTR_008075a8,(int)this_01->field_005D,10,2);
+                         (int *)PTR_008075a8,this_01->field_005D,10,2);
     }
     pHVar9 = this_01->field_1AF8;
     if (((pHVar9 != (HoloTy *)0x0) && (pHVar9->field_0000 != '\0')) && (-1 < pHVar9->field_0003)) {

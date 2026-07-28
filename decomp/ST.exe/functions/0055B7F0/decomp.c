@@ -57,11 +57,11 @@ void __thiscall VisibleClassTy::sub_0055B7F0(VisibleClassTy *this,int param_1,un
           else if (*pcVar1 == '\x01') {
             if (param_1 == 0) {
               sub_00559620(this,(int)*(short *)(pcVar1 + 2),(int)*(short *)(pcVar1 + 4),pcVar1[6],
-                           (undefined *)piVar3,(uint)(byte)pcVar1[7],*(undefined4 *)(pcVar1 + 8),2);
+                           (undefined *)piVar3,(uint)(byte)pcVar1[7],*(int *)(pcVar1 + 8),2);
             }
             else {
               sub_005594A0(this,(int)*(short *)(pcVar1 + 2),(int)*(short *)(pcVar1 + 4),pcVar1[6],
-                           (undefined *)piVar3,(uint)(byte)pcVar1[7],*(undefined4 *)(pcVar1 + 8),2);
+                           (undefined *)piVar3,(uint)(byte)pcVar1[7],*(int *)(pcVar1 + 8),2);
             }
           }
         }

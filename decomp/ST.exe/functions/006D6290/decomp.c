@@ -32,6 +32,7 @@ int FUN_006d6290(AnonShape_006D6290_6C97E0B2 *param_1,int *param_2)
     }
   }
   local_8 = &param_1->field_000C;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = (AnonShape_006D6290_6C97E0B2 *)0x0;
   do {
     iVar3 = FUN_006bbe40(pAVar1->field_0064,(uint *)local_8,&local_10,0);
@@ -53,6 +54,7 @@ LAB_006d6394:
     }
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*pAVar1->field_0064 + 0x6c))(pAVar1->field_0064);
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = (AnonShape_006D6290_6C97E0B2 *)&param_1->field_0x1;
     if (1 < (int)param_1) {
 LAB_006d6363:

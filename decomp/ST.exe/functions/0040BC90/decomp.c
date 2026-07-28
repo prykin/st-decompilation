@@ -55,8 +55,10 @@ FUN_0040bc90(void *this,uint param_1,short *param_2,short *param_3,short *param_
     if (local_20 < 0) {
       local_20 = 0;
     }
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = (int)pAVar1->field_004B - 2;
     if ((int)param_1 < 0) {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = 0;
     }
     iVar2 = (int)g_pathingGrid.sizeX;
@@ -99,6 +101,7 @@ FUN_0040bc90(void *this,uint param_1,short *param_2,short *param_3,short *param_
             iVar8 = local_20;
           } while (local_1c <= iVar9);
         }
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = param_1 + 1;
       } while ((int)param_1 <= local_c);
     }

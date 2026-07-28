@@ -8,7 +8,16 @@
    005BE5B0 -> 006B5F80 @ 005BE5FE | 005BF860 -> 006B5F80 @ 005BFA14 | 005BF860 -> 006B5F80 @
    005BFB6D | 005C05F0 -> 006B5F80 @ 005C0685 | 005C2760 -> 006B5F80 @ 005C27A7 | 005C4E20 ->
    006B5F80 @ 005C4E6A | 005C7800 -> 006B5F80 @ 005C78F9 | 005E09E0 -> 006B5F80 @ 005E0A25 |
-   005E5D50 -> 006B5F80 @ 005E5D95 | 005E79B0 -> 006B5F80 @ 005E79FA */
+   005E5D50 -> 006B5F80 @ 005E5D95 | 005E79B0 -> 006B5F80 @ 005E79FA
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=88, used=0), and
+   decompilation contains no value return
+
+   [STReturnSemanticsApplier] repair_unsafe_eax_rollback.
+   Evidence: restore the earlier evidence-backed void type after an unsafe automated rollback;
+   post-CALL EAX reads alone do not prove a source-level return value; machine CFG audit: used=1,
+   ignored=96, unknown=1 */
 
 void FUN_006b5f80(int *param_1,int param_2,int param_3,int param_4,int param_5)
 

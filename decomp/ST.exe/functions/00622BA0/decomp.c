@@ -115,8 +115,8 @@ undefined4 __thiscall STMineSetC::sub_00622BA0(STMineSetC *this)
         return 0;
       }
       iVar4 = DumpClassC::WritePtr
-                        (sVar5,sVar6,sVar7,(uint)(byte)this->field_008E,
-                         (AnonShape_00495EC0_95A268C6 *)this);
+                        (sVar5,sVar6,sVar7,this->field_008E,
+                         (RecoveredRecord_DumpClassC_00495EC0 *)this);
       if (iVar4 != 0) {
         return 0;
       }

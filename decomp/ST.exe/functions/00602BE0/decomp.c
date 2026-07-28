@@ -2,7 +2,11 @@
 /* [STMethodOwnerApplier] Structural method owner recovered as STDestC.
    Evidence: this_call_owners=[STDestC]; agreed_this_calls=2; incoming_this_accesses=27;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall STDestC::sub_00602BE0(STDestC *this)
 
@@ -34,7 +38,7 @@ void __thiscall STDestC::sub_00602BE0(STDestC *this)
     }
     else if (((int)*(short *)(DAT_00806724 + 0x23) <= this->field_0397) &&
             (this->field_036E = 0, this->field_037A == '\x01')) {
-      thunk_FUN_004ad430((int)&this->field_01D5);
+      thunk_FUN_004ad430((STT3DSprC *)&this->field_01D5);
       this->field_037A = 0;
     }
   }
@@ -62,11 +66,11 @@ void __thiscall STDestC::sub_00602BE0(STDestC *this)
       if (this->field_037A == '\0') {
         return;
       }
-      thunk_FUN_004ad430((int)&this->field_01D5);
+      thunk_FUN_004ad430((STT3DSprC *)&this->field_01D5);
       this->field_037A = 0;
       return;
     }
-    (*this->vtable->vfunc_D8)(this);
+    this->vfunc_D8();
     if (this->field_037A == '\0') {
       thunk_FUN_004ad460(&this->field_01D5,0);
       this->field_037A = 1;

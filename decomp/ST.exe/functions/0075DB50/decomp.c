@@ -29,6 +29,7 @@ void FUN_0075db50(AnonShape_0075DB50_5854A0B6 *param_1,int *param_2,int param_3,
   iVar6 = *(int *)(iVar6 + 0x14);
   if (-1 < param_5 + -1) {
     iVar11 = param_3 << 2;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_3 = param_5;
     do {
       piVar1 = (int *)(*param_2 + iVar11);
@@ -39,6 +40,7 @@ void FUN_0075db50(AnonShape_0075DB50_5854A0B6 *param_1,int *param_2,int param_3,
         iVar15 = *piVar1 - (int)pbVar12;
         iVar16 = *piVar2 - (int)pbVar12;
         puVar13 = (undefined1 *)*param_4;
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_5 = iVar5;
         do {
           uVar14 = (uint)pbVar12[iVar15];
@@ -49,11 +51,13 @@ void FUN_0075db50(AnonShape_0075DB50_5854A0B6 *param_1,int *param_2,int param_3,
                         ((*(int *)(iVar6 + (uint)bVar3 * 4) + *(int *)(iVar10 + (uint)bVar4 * 4) >>
                          0x10) + uVar14 + iVar7);
           pbVar12 = pbVar12 + 1;
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_5 = param_5 + -1;
           *puVar13 = *(undefined1 *)(*(int *)(iVar9 + (uint)bVar3 * 4) + uVar14 + iVar7);
           puVar13 = puVar13 + 3;
         } while (param_5 != 0);
       }
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_3 = param_3 + -1;
       param_4 = param_4 + 1;
     } while (param_3 != 0);

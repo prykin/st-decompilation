@@ -78,12 +78,10 @@ LAB_0065fec9:
       local_20 = 0;
       local_38[1] = array;
       local_1c = local_c;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      if (((param_1->field_007D != -2) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) &&
-         (this = thunk_FUN_0042b760(*(char *)&param_1->field_0024,
-                                    CONCAT22((short)((uint)local_c >> 0x10),param_1->field_007D)),
+      if (((param_1->field_007D != 0xfffe) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) &&
+         (this = thunk_FUN_0042b760(*(char *)&param_1->field_0024,param_1->field_007D),
          this != (STGroupBoatC *)0x0)) {
-        (*this->vtable->SetOrderData)(this,CASE_8,local_38);
+        this->SetOrderData(CASE_8,local_38);
         goto LAB_0065ff72;
       }
     }

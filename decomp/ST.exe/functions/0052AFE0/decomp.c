@@ -69,7 +69,7 @@ void __thiscall CPanelTy::sub_0052AFE0(CPanelTy *this,byte param_1,float param_2
       piVar7 = piVar7 + 2;
     } while (iVar5 < 4);
     if (fVar2 != _DAT_0079034c) {
-      puVar6 = FUN_006e6460(PTR_00807598,&this->field_0DB7 + param_1,1,0x97,0x96,0,1);
+      puVar6 = FUN_006e6460(PTR_00807598,this->field_0DBF + (param_1 - 2),1,0x97,0x96,0,1);
       iVar5 = local_30[iVar8 * 2];
       this->field_0DB3 = puVar6;
       this->field_0DCC = param_1;
@@ -97,8 +97,8 @@ void __thiscall CPanelTy::sub_0052AFE0(CPanelTy *this,byte param_1,float param_2
   }
   else {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    FUN_006e65c0(PTR_00807598,(&this->field_0DBF)[param_1],
-                 (char)*(undefined2 *)((&this->field_09C8)[param_1] + 0x23),param_2,param_3,5,5,1);
+    FUN_006e65c0(PTR_00807598,this->field_0DBF[param_1],
+                 (char)*(undefined2 *)(this->field_09C0[param_1 + 2] + 0x23),param_2,param_3,5,5,1);
     thunk_FUN_005252c0((param_1 != 0) + CASE_B6);
   }
   return;

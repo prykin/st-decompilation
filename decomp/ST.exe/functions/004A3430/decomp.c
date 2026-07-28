@@ -25,19 +25,19 @@ STGroupBoatC::DistributeMD
   dword local_68;
   dword local_64;
   uint local_60;
-  undefined2 local_5c;
+  short local_5c;
   undefined2 local_5a;
   undefined2 local_58;
   undefined4 local_56;
-  undefined2 local_52;
+  short local_52;
   undefined2 local_50;
   undefined2 local_4e;
   undefined4 local_4c;
   undefined4 local_44;
   DArrayTy *local_40;
-  undefined2 local_3c;
-  undefined2 uStack_3a;
-  undefined2 uStack_38;
+  ushort local_3c;
+  ushort uStack_3a;
+  ushort uStack_38;
   undefined2 local_36;
   undefined2 uStack_34;
   undefined4 local_32;
@@ -49,8 +49,8 @@ STGroupBoatC::DistributeMD
   uint local_18;
   undefined2 local_14 [2];
   undefined2 local_10 [2];
-  undefined2 local_c [2];
-  uint local_8;
+  short local_c [2];
+  undefined4 local_8;
 
   uVar10 = 0;
   local_40 = (DArrayTy *)0x0;
@@ -103,9 +103,10 @@ STGroupBoatC::DistributeMD
   if (0 < (int)dVar5) {
     do {
       DArrayGetElement(param_4,uVar10,&local_8);
-      if ((short)local_8 != -1) {
+      if ((ushort)local_8 != 0xffff) {
         pSVar4 = (STBoatC *)
-                 STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,pSVar2->field_0024,local_8,CASE_1);
+                 STAllPlayersC::GetObjPtr
+                           (g_allPlayers_007FA174,pSVar2->field_0024,(ushort)local_8,CASE_1);
         if (pSVar4 == (STBoatC *)0x0) {
           iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x10fc,0,0,
                                      "%s","STGroupBoatC::DistributeMD ptr==NULL");
@@ -116,11 +117,11 @@ STGroupBoatC::DistributeMD
                     (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp"
                      ,0x10fd);
         }
-        dVar5 = (*pSVar4->vtable->slot_2C)(pSVar4);
+        dVar5 = pSVar4->slot_2C();
         pDVar7 = local_1c;
         if (((dVar5 != 8) &&
-            (dVar5 = (*pSVar4->vtable->slot_2C)(pSVar4), pDVar7 = local_1c, dVar5 != 0x14)) &&
-           (dVar5 = (*pSVar4->vtable->slot_2C)(pSVar4), pDVar7 = local_1c, dVar5 != 0x1a)) {
+            (dVar5 = pSVar4->slot_2C(), pDVar7 = local_1c, dVar5 != 0x14)) &&
+           (dVar5 = pSVar4->slot_2C(), pDVar7 = local_1c, dVar5 != 0x1a)) {
           iVar3 = thunk_FUN_00490d90((STGameObjC *)pSVar4);
           if (iVar3 == 0) {
             local_18 = g_playSystem_00802A38->field_00E4;
@@ -151,9 +152,9 @@ LAB_004a35b6:
     if (0 < (int)dVar5) {
       do {
         DArrayGetElement(param_2,uVar10,&local_8);
-        if (((short)local_8 != -1) &&
+        if (((ushort)local_8 != 0xffff) &&
            (pSVar6 = STAllPlayersC::GetObjPtr
-                               (g_allPlayers_007FA174,pSVar2->field_0024,local_8,CASE_1),
+                               (g_allPlayers_007FA174,pSVar2->field_0024,(ushort)local_8,CASE_1),
            pSVar6 != (STGameObjC *)0x0)) {
           Library::DKW::TBL::FUN_006ae1c0(&local_2c->flags,&local_8);
         }
@@ -168,7 +169,8 @@ LAB_004a35b6:
       do {
         DArrayGetElement(local_1c,uVar9,&local_8);
         pSVar4 = (STBoatC *)
-                 STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,pSVar2->field_0024,local_8,CASE_1);
+                 STAllPlayersC::GetObjPtr
+                           (g_allPlayers_007FA174,pSVar2->field_0024,(ushort)local_8,CASE_1);
         if (param_1 == 1) {
           local_60 = g_playSystem_00802A38->field_00E4;
           local_4c = 0xffffffff;
@@ -191,9 +193,9 @@ LAB_004a35b6:
     if (0 < (int)dVar5) {
       do {
         DArrayGetElement(param_3,uVar10,&local_8);
-        if (((short)local_8 != -1) &&
+        if (((ushort)local_8 != 0xffff) &&
            (pSVar6 = STAllPlayersC::GetObjPtr
-                               (g_allPlayers_007FA174,pSVar2->field_0024,local_8,CASE_1),
+                               (g_allPlayers_007FA174,pSVar2->field_0024,(ushort)local_8,CASE_1),
            pSVar6 != (STGameObjC *)0x0)) {
           Library::DKW::TBL::FUN_006ae1c0(&local_28->flags,&local_8);
         }
@@ -208,7 +210,8 @@ LAB_004a35b6:
       do {
         DArrayGetElement(local_1c,uVar9,&local_8);
         pSVar4 = (STBoatC *)
-                 STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,pSVar2->field_0024,local_8,CASE_1);
+                 STAllPlayersC::GetObjPtr
+                           (g_allPlayers_007FA174,pSVar2->field_0024,(ushort)local_8,CASE_1);
         if (param_1 == 1) {
           local_60 = g_playSystem_00802A38->field_00E4;
           local_4c = 0xffffffff;
@@ -258,45 +261,31 @@ LAB_004a35b6:
       DArrayGetElement(pDVar7,local_20,&local_3c);
       if (param_1 == 1) {
         local_60 = g_playSystem_00802A38->field_00E4;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        pSVar6 = STAllPlayersC::GetObjPtr
-                           (g_allPlayers_007FA174,pSVar2->field_0024,CONCAT22(uStack_3a,local_3c),
-                            CASE_1);
+        pSVar6 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,pSVar2->field_0024,local_3c,CASE_1);
         STFishC::sub_004162B0((STFishC *)pSVar6,&local_5c,&local_5a,&local_58);
         local_56 = pSVar6->field_0018;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        pSVar6 = STAllPlayersC::GetObjPtr
-                           (g_allPlayers_007FA174,pSVar2->field_0024,CONCAT22(uStack_38,uStack_3a),
-                            CASE_1);
+        pSVar6 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,pSVar2->field_0024,uStack_3a,CASE_1)
+        ;
         STFishC::sub_004162B0((STFishC *)pSVar6,&local_52,&local_50,&local_4e);
         local_4c = pSVar6->field_0018;
         local_44 = local_32;
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         pSVar4 = (STBoatC *)
-                 STAllPlayersC::GetObjPtr
-                           (g_allPlayers_007FA174,pSVar2->field_0024,CONCAT22(local_36,uStack_38),
-                            CASE_1);
+                 STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,pSVar2->field_0024,uStack_38,CASE_1)
+        ;
         STBoatC::CmdToObj(pSVar4,CASE_C,&local_60);
         local_20 = uVar10;
       }
       else {
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         pSVar4 = (STBoatC *)
-                 STAllPlayersC::GetObjPtr
-                           (g_allPlayers_007FA174,pSVar2->field_0024,CONCAT22(local_36,uStack_38),
-                            CASE_1);
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        pSVar6 = STAllPlayersC::GetObjPtr
-                           (g_allPlayers_007FA174,pSVar2->field_0024,CONCAT22(uStack_3a,local_3c),
-                            CASE_1);
+                 STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,pSVar2->field_0024,uStack_38,CASE_1)
+        ;
+        pSVar6 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,pSVar2->field_0024,local_3c,CASE_1);
         STFishC::sub_004162B0((STFishC *)pSVar6,local_c,local_14,local_10);
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         STBoatC::SetNewMD(pSVar4,1,local_c[0],local_14[0],local_10[0],pSVar6->field_0018,
                           CONCAT22(uStack_34,local_36));
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        pSVar6 = STAllPlayersC::GetObjPtr
-                           (g_allPlayers_007FA174,pSVar2->field_0024,CONCAT22(uStack_38,uStack_3a),
-                            CASE_1);
+        pSVar6 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,pSVar2->field_0024,uStack_3a,CASE_1)
+        ;
         STFishC::sub_004162B0((STFishC *)pSVar6,local_c,local_14,local_10);
         STBoatC::SetNewMD(pSVar4,0,local_c[0],local_14[0],local_10[0],pSVar6->field_0018,local_32);
       }

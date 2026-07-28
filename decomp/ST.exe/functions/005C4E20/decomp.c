@@ -25,7 +25,7 @@ void __thiscall SettMapTy::PaintSettMap(SettMapTy *this,char param_1)
   uint uVar6;
   uint uVar7;
   ccFntTy *pcVar8;
-  undefined4 uVar9;
+  uint uVar9;
   InternalExceptionFrame local_4c;
   SettMapTy *local_8;
 
@@ -44,8 +44,8 @@ void __thiscall SettMapTy::PaintSettMap(SettMapTy *this,char param_1)
       if ((pSVar3->field_21F0 == (HoloTy *)0x0) && (param_1 == '\0')) {
         MMMObjTy::OutRGlProc
                   ((MMMObjTy *)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,
-                   (int)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0,0,10,0xb4,0xf9,0x123,
-                   (undefined4 *)(pSVar3->field_1A5B + 0x140));
+                   (int)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,(MMMObjTy *)0x0,
+                   (MMMObjTy *)0x0,10,0xb4,0xf9,0x123,(undefined4 *)(pSVar3->field_1A5B + 0x140));
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         pCVar5 = extraout_ECX_01;
       }
@@ -54,7 +54,8 @@ void __thiscall SettMapTy::PaintSettMap(SettMapTy *this,char param_1)
             ((param_1 != '\0' && (pSVar3->field_0x21e2 == '\0')))) {
       MMMObjTy::OutBSlProc
                 (pSVar3->field_1A5B + 0x140,(int)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,
-                 (MMMObjTy *)0x0,0,10,0xb4,0xf9,0x121,(undefined4 *)(pSVar3->field_1A5B + 0x140));
+                 (MMMObjTy *)0x0,(MMMObjTy *)0x0,10,0xb4,0xf9,0x121,
+                 (undefined4 *)(pSVar3->field_1A5B + 0x140));
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       pCVar5 = extraout_ECX_00;
     }
@@ -69,14 +70,14 @@ void __thiscall SettMapTy::PaintSettMap(SettMapTy *this,char param_1)
     if ((pSVar3->field_21E8 == (HoloTy *)0x0) && (param_1 == '\0')) {
       MMMObjTy::OutBSlProc
                 (pSVar3->field_1A5B + 0x140,(int)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,
-                 (MMMObjTy *)0x0,0,0x112,0x38,0x205,0x104,(undefined4 *)(pSVar3->field_1A5B + 0x140)
-                );
+                 (MMMObjTy *)0x0,(MMMObjTy *)0x0,0x112,0x38,0x205,0x104,
+                 (undefined4 *)(pSVar3->field_1A5B + 0x140));
     }
     if ((pSVar3->field_21F4 == (HoloTy *)0x0) && (param_1 == '\0')) {
       MMMObjTy::OutRGlProc
                 ((MMMObjTy *)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,
-                 (int)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0,0,0x112,0x149,0x205,0x8c,
-                 (undefined4 *)(pSVar3->field_1A5B + 0x140));
+                 (int)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,(MMMObjTy *)0x0,(MMMObjTy *)0x0,
+                 0x112,0x149,0x205,0x8c,(undefined4 *)(pSVar3->field_1A5B + 0x140));
     }
     uVar9 = 0;
     pcVar8 = g_startSystem_0081176C->field_0030;

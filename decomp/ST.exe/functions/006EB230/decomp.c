@@ -13,11 +13,13 @@ FUN_006eb230(void *this,uint param_1,int param_2,int param_3,int param_4,int par
     iVar5 = param_4;
     if (param_4 < 0) {
       iVar5 = -param_4;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = param_2 + param_4 + 1;
     }
     iVar3 = param_5;
     if (param_5 < 0) {
       iVar3 = -param_5;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_3 = param_3 + param_5 + 1;
     }
     if (param_1 < *(uint *)((int)this + 0x310)) {

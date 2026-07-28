@@ -1,7 +1,17 @@
 
+/* [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=5, used=0), and
+   decompilation contains no value return
+
+   [STPrototypeApplier] Propagated parameter 6.
+   Evidence: 00575CB0 -> 006E9EF0 @ 0057644C; literal 30000 at 00576436 | 00575CB0 -> 006E9EF0 @
+   0057649F; literal 30000 at 0057648C | 005F6F60 -> 006E9EF0 @ 005F7D6A; literal 30000 at 005F7D51
+   | 005FAA10 -> 006E9EF0 @ 005FAB6C; literal 30000 at 005FAB58 | 006029C0 -> 006E9EF0 @ 00602B0F;
+   literal 30000 at 00602B01 */
+
 void __thiscall
 FUN_006e9ef0(void *this,uint param_1,uint param_2,int param_3,int param_4,uint param_5,
-            undefined2 param_6)
+            ushort param_6)
 
 {
   uint *puVar1;
@@ -31,7 +41,7 @@ FUN_006e9ef0(void *this,uint param_1,uint param_2,int param_3,int param_4,uint p
           }
         }
         *(short *)(puVar1[0x2a] + param_2 * 8) = (short)param_5;
-        *(undefined2 *)(puVar1[0x2a] + 2 + param_2 * 8) = param_6;
+        *(ushort *)(puVar1[0x2a] + 2 + param_2 * 8) = param_6;
         if (param_4 == 0) {
           param_4 = 1;
         }

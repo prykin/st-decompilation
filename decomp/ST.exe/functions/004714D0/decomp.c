@@ -37,7 +37,7 @@ int __thiscall STBoatC::BackToDok(STBoatC *this,int *param_1,undefined4 param_2,
     iVar4 = *(int *)&this->field_0x584;
     if (((iVar4 == 0) || (iVar4 == 1)) || (iVar4 == 2)) {
       sub_0048DBA0(this);
-      iVar4 = (*this->vtable->vfunc_D8)(this);
+      iVar4 = this->vfunc_D8();
       return -(uint)(iVar4 != 0);
     }
     if (iVar4 == 3) {
@@ -121,7 +121,7 @@ int __thiscall STBoatC::BackToDok(STBoatC *this,int *param_1,undefined4 param_2,
           *(undefined4 *)&this->field_0x584 = 2;
         }
 LAB_00471835:
-        iVar4 = (*this->vtable->vfunc_D8)(this);
+        iVar4 = this->vfunc_D8();
         return (-(uint)(iVar4 != 0) & 0xfffffffd) + 2;
       }
       iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2b25,0,0,"%s",
@@ -151,11 +151,11 @@ switchD_004714f1_default:
       if (iVar4 != -1) {
         if (iVar4 == 0) {
 LAB_004716df:
-          iVar4 = (*this->vtable->vfunc_D8)(this);
+          iVar4 = this->vfunc_D8();
           return -(uint)(iVar4 != 0);
         }
 cf_common_exit_004715EF:
-        iVar4 = (*this->vtable->vfunc_D8)(this);
+        iVar4 = this->vfunc_D8();
         return (-(uint)(iVar4 != 0) & 0xfffffffd) + 2;
       }
       iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2b3d,0,0,"%s",

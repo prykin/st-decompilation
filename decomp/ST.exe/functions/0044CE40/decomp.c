@@ -10,7 +10,7 @@ uint __fastcall FUN_0044ce40(STAllPlayersC *param_1)
   uint uVar5;
   short sVar6;
   uint index;
-  uint local_c;
+  undefined1 local_c [4];
   STAllPlayersC *local_8;
 
   uVar5 = 0;
@@ -20,9 +20,10 @@ uint __fastcall FUN_0044ce40(STAllPlayersC *param_1)
   local_8 = param_1;
   if (0 < (int)dVar1) {
     do {
-      DArrayGetElement(array,index,&local_c);
-      if (((short)local_c != -1) &&
-         (pSVar2 = STAllPlayersC::GetObjPtr(local_8,DAT_0080874d,local_c,CASE_1),
+      DArrayGetElement(array,index,local_c);
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+      if ((local_c._0_2_ != 0xffff) &&
+         (pSVar2 = STAllPlayersC::GetObjPtr(local_8,DAT_0080874d,local_c._0_2_,CASE_1),
          pSVar2 != (STGameObjC *)0x0)) {
         uVar3 = (*pSVar2->vtable->vfunc_2C)();
         switch(uVar3) {

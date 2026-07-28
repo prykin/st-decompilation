@@ -1,5 +1,8 @@
 
-undefined4 __fastcall FUN_004de000(int param_1)
+/* [STPrototypeApplier] Propagated return.
+   Evidence: 004DE000 returns zeroed full register at 004DE015 @ 004DE017 */
+
+uint __fastcall FUN_004de000(int param_1)
 
 {
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */

@@ -1,9 +1,17 @@
 #include "../../pseudocode_runtime.h"
 
 
+/* [STPrototypeApplier] Propagated parameter 4.
+   Evidence: raw retained-width parameter lifetime: width=2, reads=1, sites=00638697 MOV DX,word ptr
+   [EBP + 0x18]
+
+   [STPrototypeApplier] Propagated parameter 5.
+   Evidence: raw retained-width parameter lifetime: width=2, reads=1, sites=0063868F MOV CX,word ptr
+   [EBP + 0x1c] */
+
 int __cdecl
-FUN_006383e0(int param_1,int param_2,int param_3,undefined4 param_4,undefined2 param_5,
-            undefined2 param_6,undefined4 param_7,undefined4 param_8,int param_9)
+FUN_006383e0(int param_1,int param_2,int param_3,undefined4 param_4,ushort param_5,ushort param_6,
+            undefined4 param_7,undefined4 param_8,int param_9)
 
 {
   bool bVar1;
@@ -28,8 +36,8 @@ FUN_006383e0(int param_1,int param_2,int param_3,undefined4 param_4,undefined2 p
   undefined4 *local_74 [9];
   int local_50;
   undefined4 local_48 [3];
-  undefined2 local_3c;
-  undefined2 local_3a;
+  ushort local_3c;
+  ushort local_3a;
   int local_20;
   undefined1 *local_1c;
   void *local_14;
@@ -128,7 +136,7 @@ FUN_006383e0(int param_1,int param_2,int param_3,undefined4 param_4,undefined2 p
              (iVar3 = (*this->vtable[5].slots_00_28[0])(), iVar8 = local_50, iVar3 != 0)) {
             bVar1 = false;
             if ((this->value_20 == 1000) &&
-               (iVar8 = (*this->vtable->GetObjectTypeId)(this),
+               (iVar8 = this->GetObjectTypeId(),
                *(int *)(&DAT_00791d68 + iVar8 * 4) == 1)) {
               iVar8 = 0;
               if (0 < local_a0) {

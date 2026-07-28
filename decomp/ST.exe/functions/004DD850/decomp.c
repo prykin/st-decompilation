@@ -1,5 +1,8 @@
 
-undefined4 __fastcall FUN_004dd850(int param_1)
+/* [STPrototypeApplier] Propagated return.
+   Evidence: 004DD850 returns zeroed full register at 004DD86A @ 004DD86D */
+
+uint __fastcall FUN_004dd850(int param_1)
 
 {
   int iVar1;

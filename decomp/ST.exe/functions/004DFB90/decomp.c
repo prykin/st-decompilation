@@ -13,6 +13,7 @@ int FUN_004dfb90(uint param_1,int param_2,int param_3)
   iVar5 = 0;
   pSVar2 = g_playerRuntime + param_1;
   array = pSVar2->field2165_0x9d2;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if ((array != (DArrayTy *)0x0) && (param_1 = 0, 0 < (int)array->count)) {
     do {
       DArrayGetElement(array,param_1,&param_3);
@@ -29,6 +30,7 @@ int FUN_004dfb90(uint param_1,int param_2,int param_3)
           *(int *)(param_3 + 0x4d0) = iVar1 - iVar4;
         }
       }
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = param_1 + 1;
       array = pSVar2->field2165_0x9d2;
     } while ((int)param_1 < (int)array->count);

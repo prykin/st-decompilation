@@ -1,7 +1,11 @@
 
 /* WARNING: Restarted to delay deadcode elimination for space: stack */
 /* [STPrototypeApplier] Propagated parameter 6.
-   Evidence: 006F31D0 -> 006F4E70 @ 006F4CA8 */
+   Evidence: 006F31D0 -> 006F4E70 @ 006F4CA8
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void FUN_006f4e70(byte *param_1,int param_2,uint *param_3,int param_4,int param_5,byte *param_6,
                  byte *param_7,int param_8)
@@ -93,6 +97,7 @@ LAB_006f4f0f:
     }
     iVar1 = param_8 + -1;
     bVar3 = param_8 < 1;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_8 = iVar1;
     if (iVar1 == 0 || bVar3) {
       return;
@@ -140,6 +145,7 @@ LAB_006f4fb6:
         while( true ) {
           iVar1 = param_8 + -1;
           bVar3 = param_8 < 1;
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_8 = iVar1;
           if (iVar1 == 0 || bVar3) {
             return;

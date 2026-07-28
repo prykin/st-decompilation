@@ -127,6 +127,7 @@ LAB_00491b42:
     local_8 = *(int *)((int)local_20 + iVar9) * (int)g_pathingGrid.planeStride;
     if (0 < g_pathingScratchGrid.cells[local_8 + iVar10 + (int)param_4]) {
       piVar3 = &local_68;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       _param_3 = 1000000000;
       iVar11 = 0;
       do {
@@ -145,6 +146,7 @@ LAB_00491b42:
               if (*(int *)((int)local_48 + iVar9) == 0) {
                 *(int *)((int)local_48 + iVar9 + 0x14) = iVar11;
                 *(undefined4 *)((int)local_48 + iVar9) = 1;
+                /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                 _param_3 = iVar8;
                 goto cf_continue_loop_00491C1C;
               }
@@ -156,6 +158,7 @@ LAB_00491c08:
             }
             if (iVar8 < _param_3) {
               *(int *)((int)local_48 + iVar9 + 0x14) = iVar11;
+              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               _param_3 = iVar8;
             }
           }
@@ -218,7 +221,9 @@ cf_continue_loop_00491C1C:
       }
       iVar10 = -1;
       iVar9 = 0;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       _param_3 = 1000000000;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       _param_6 = 0;
       do {
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -226,6 +231,7 @@ cf_continue_loop_00491C1C:
         if (iVar11 != -1) {
           if ((iVar10 == -1) || ((*(int *)((int)local_48 + iVar9) == 1 && (local_48[iVar10] == 0))))
           {
+            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             _param_3 = (int)g_pathingScratchGrid.cells
                             [*(int *)((int)local_64 + iVar11 * 8) * (int)g_pathingGrid.sizeX +
                              *(int *)((int)local_20 + iVar9) * (int)g_pathingGrid.planeStride +
@@ -238,6 +244,7 @@ cf_continue_loop_00491C1C:
                     *(int *)((int)local_20 + iVar9) * (int)g_pathingGrid.planeStride +
                     (&local_68)[iVar11 * 2]] < _param_3)) {
             iVar10 = _param_6;
+            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             _param_3 = (int)g_pathingScratchGrid.cells
                             [*(int *)((int)local_64 + iVar11 * 8) * (int)g_pathingGrid.sizeX +
                              *(int *)((int)local_20 + iVar9) * (int)g_pathingGrid.planeStride +
@@ -245,6 +252,7 @@ cf_continue_loop_00491C1C:
           }
         }
         iVar9 = iVar9 + 4;
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         _param_6 = _param_6 + 1;
       } while (iVar9 < 0x14);
       if (iVar10 != -1) {

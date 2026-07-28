@@ -161,7 +161,7 @@ LAB_005fee45:
                   }
                   local_90[iVar11 * 6 + -1] = (uint)this_00[1].vtable;
                   local_90[iVar11 * 6 + -3] = (uint)*(ushort *)&this_00[1].field_0xe;
-                  uVar8 = (*this_00->vtable->GetObjectTypeId)(this_00);
+                  uVar8 = this_00->GetObjectTypeId();
                   local_90[iVar11 * 6 + -2] = uVar8;
                   local_90[iVar11 * 6] = *(uint *)&this_00[0xe].field_0x1d;
                   local_90[iVar11 * 6 + 1] = *(uint *)((int)&this_00[0xe].value_20 + 1);

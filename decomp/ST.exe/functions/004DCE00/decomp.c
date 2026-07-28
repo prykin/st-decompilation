@@ -27,7 +27,7 @@ undefined4 __fastcall FUN_004dce00(int *param_1)
       this = (STT3DSprC *)thunk_FUN_004ab810(pAVar2);
     }
     *(STT3DSprC **)((int)param_1 + 0x5ff) = this;
-    iVar3 = STT3DSprC::Init(this,DAT_008073cc,0x5a,0x45,0,0xb4,0x8c,0x11);
+    iVar3 = STT3DSprC::Init(this,DAT_008073cc,0x5a,0x45,(STDcResourcC *)0x0,0xb4,0x8c,0x11);
     if (iVar3 != 0) {
       RaiseInternalException
                 (iVar3,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_jump.cpp",0x58);
@@ -50,11 +50,11 @@ undefined4 __fastcall FUN_004dce00(int *param_1)
                 (iVar3,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_jump.cpp",0x61);
     }
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    thunk_FUN_004ad5e0(*(int *)((int)param_1 + 0x5ff));
+    thunk_FUN_004ad5e0(*(STT3DSprC **)((int)param_1 + 0x5ff));
     uVar5 = 10;
-    iVar3 = thunk_FUN_004ad650((int)param_1 + 0x1d5);
+    iVar3 = thunk_FUN_004ad650((STT3DSprC *)((int)param_1 + 0x1d5));
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    uVar4 = thunk_FUN_004ad650(*(int *)((int)param_1 + 0x5ff));
+    uVar4 = thunk_FUN_004ad650(*(STT3DSprC **)((int)param_1 + 0x5ff));
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     FUN_006ea340(*(void **)((int)param_1 + 0x211),uVar4,iVar3,uVar5);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -81,7 +81,7 @@ undefined4 __fastcall FUN_004dce00(int *param_1)
     return 0;
   }
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  thunk_FUN_004ad430(*(int *)((int)param_1 + 0x5ff));
+  thunk_FUN_004ad430(*(STT3DSprC **)((int)param_1 + 0x5ff));
   return 0;
 }
 

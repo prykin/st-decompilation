@@ -16,6 +16,7 @@ FUN_0060f940(int param_1,int param_2,AnonShape_0060F940_1CCED7C8 *param_3,int pa
   undefined4 local_8;
 
   local_8 = 0xffffffff;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_4 == 0) {
     iVar6 = FUN_006acf0d(param_5,param_6,param_7,param_8,param_9,param_10);
     iVar4 = FUN_006acf0d(param_8,param_9,param_10,param_11,param_12,param_13);

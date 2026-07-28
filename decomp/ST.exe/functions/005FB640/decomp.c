@@ -62,7 +62,7 @@ int __thiscall STContainerC::GetMessage(STContainerC *this,STMessage *message)
             g_currentExceptionFrame = local_60.previous;
             return 0;
           }
-          thunk_FUN_004ad5e0((int)&local_8->field_01D5);
+          thunk_FUN_004ad5e0((STT3DSprC *)&local_8->field_01D5);
           g_currentExceptionFrame = local_60.previous;
           return 0;
         case MESS_STSPRGAMEOBJC_0113:
@@ -80,14 +80,11 @@ int __thiscall STContainerC::GetMessage(STContainerC *this,STMessage *message)
         case MESS_HITKILL:
           dVar5 = (message->arg0).u32;
           local_8->field_0315 = *(undefined1 *)(dVar5 + 0x18);
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          if (((local_8->field_024E != '\0') && (local_8->field_02AB != -1)) &&
+          if (((local_8->field_024E != '\0') && (local_8->field_02AB != 0xffff)) &&
              ((this_01 = (STGameObjC *)local_8->field_02AD, this_01 != (STGameObjC *)0x0 ||
               (this_01 = STAllPlayersC::GetObjPtr
-                                   (g_allPlayers_007FA174,local_8->field_02A3,
-                                    CONCAT22((short)(SVar4 - MESS_STOCTOPUSC_0112 >> 0x10),
-                                             local_8->field_02AB),CASE_1),
-              this_01 != (STGameObjC *)0x0)))) {
+                                   (g_allPlayers_007FA174,local_8->field_02A3,local_8->field_02AB,
+                                    CASE_1), this_01 != (STGameObjC *)0x0)))) {
             thunk_FUN_00492510(this_01,this_00->field_0018);
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (*(code *)this_00->field_0000->field_00AC)(this_01->field_0018);
@@ -107,7 +104,7 @@ int __thiscall STContainerC::GetMessage(STContainerC *this,STMessage *message)
             this_00->field_02E0 = g_playSystem_00802A38->field_00E4 + 0x15;
             iVar19 = this_00->field_02BE;
             iVar18 = 1;
-            uVar9 = thunk_FUN_004ad650((int)&this_00->field_01D5);
+            uVar9 = thunk_FUN_004ad650((STT3DSprC *)&this_00->field_01D5);
             thunk_FUN_006377b0(uVar9,iVar18,iVar19,iVar11,iVar8,uVar20);
             g_currentExceptionFrame = local_60.previous;
             return 0;
@@ -260,10 +257,12 @@ int __thiscall STContainerC::GetMessage(STContainerC *this,STMessage *message)
           return 0;
         }
         thunk_FUN_005ec9f0(0);
-        if ((((this_00->field_0358 != 0) && ((short)this_00->field_0342 == 1)) &&
+        if (((((AnonShape_005EFAE0_B406B78B *)this_00->field_0358 !=
+               (AnonShape_005EFAE0_B406B78B *)0x0) && ((short)this_00->field_0342 == 1)) &&
             (iVar8 = STPlaySystemC::sub_006E62D0
-                               (g_playSystem_00802A38,this_00->field_0358,&local_18), iVar8 != -4))
-           && (this_00->field_0211 != (AnonReceiver_006EA050 *)0x0)) {
+                               (g_playSystem_00802A38,
+                                (AnonShape_005EFAE0_B406B78B *)this_00->field_0358,&local_18),
+            iVar8 != -4)) && (this_00->field_0211 != (AnonReceiver_006EA050 *)0x0)) {
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006EA050::sub_006EA460
                     (this_00->field_0211,this_00->field_01ED,*(int *)(local_18 + 0x1ed));
@@ -317,8 +316,9 @@ int __thiscall STContainerC::GetMessage(STContainerC *this,STMessage *message)
         }
         bVar7 = true;
         if ((pSVar17 == (STWorldObject *)0x0) &&
-           (iVar8 = DumpClassC::WritePtr(sVar1,sVar2,sVar3,0,(AnonShape_00495EC0_95A268C6 *)this_00)
-           , iVar8 == 0)) {
+           (iVar8 = DumpClassC::WritePtr
+                              (sVar1,sVar2,sVar3,0,(RecoveredRecord_DumpClassC_00495EC0 *)this_00),
+           iVar8 == 0)) {
           this_00->field_0252 = this_00->field_0252 + '\x01';
         }
         else {
@@ -349,8 +349,8 @@ int __thiscall STContainerC::GetMessage(STContainerC *this,STMessage *message)
           bVar7 = true;
           if ((pSVar17 == (STWorldObject *)0x0) &&
              (iVar8 = DumpClassC::WritePtr
-                                (sVar1,sVar2,sVar3,0,(AnonShape_00495EC0_95A268C6 *)this_00),
-             iVar8 == 0)) {
+                                (sVar1,sVar2,sVar3,0,(RecoveredRecord_DumpClassC_00495EC0 *)this_00)
+             , iVar8 == 0)) {
             this_00->field_0252 = this_00->field_0252 + '\x01';
           }
           else {
@@ -410,7 +410,7 @@ switchD_005fbd08_caseD_129:
     g_currentExceptionFrame = local_60.previous;
     return 0;
   }
-  if (local_8->field_02AB == -1) {
+  if (local_8->field_02AB == 0xffff) {
     g_currentExceptionFrame = local_60.previous;
     return 0;
   }
@@ -420,10 +420,8 @@ switchD_005fbd08_caseD_129:
   }
   local_c = (STGameObjC *)local_8->field_02AD;
   if (local_c == (STGameObjC *)0x0) {
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_c = STAllPlayersC::GetObjPtr
-                        (g_allPlayers_007FA174,local_8->field_02A3,
-                         CONCAT22((short)((uint)message >> 0x10),local_8->field_02AB),CASE_1);
+                        (g_allPlayers_007FA174,local_8->field_02A3,local_8->field_02AB,CASE_1);
   }
   if (local_c != (STGameObjC *)0x0) {
     this_00->field_0277 = (int)*(short *)&local_c->field_0x41;

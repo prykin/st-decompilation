@@ -105,12 +105,10 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
         }
       }
       else if (TVar3 == CASE_2) {
-        (*this_01->vtable->vfunc_90)
-                  (this_01,3,*(undefined4 *)(&DAT_007958ec + this_01->field_0235 * 4));
+        this_01->vfunc_90(3,*(undefined4 *)(&DAT_007958ec + this_01->field_0235 * 4));
       }
       else if (TVar3 == CASE_3) {
-        (*this_01->vtable->vfunc_90)
-                  (this_01,3,*(undefined4 *)(&DAT_007959f4 + this_01->field_0235 * 4));
+        this_01->vfunc_90(3,*(undefined4 *)(&DAT_007959f4 + this_01->field_0235 * 4));
       }
     }
     switch(this_01->field_0245) {
@@ -159,9 +157,9 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
       }
       break;
     case CASE_1:
-      iVar9 = (*this_01->vtable->vfunc_08)(this_01);
+      iVar9 = this_01->vfunc_08();
       if (iVar9 != 0) {
-        (*this_01->vtable->SetActivity)(this_01,0);
+        this_01->SetActivity(0);
       }
       sVar8 = *(short *)&this_01->field_05B0;
       sVar1 = *(short *)&this_01->field_05B8;

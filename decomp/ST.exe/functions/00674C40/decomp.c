@@ -1,6 +1,10 @@
 
 /* [STPrototypeApplier] Propagated parameter 0.
-   Evidence: 00674C40 -> 0072E730 @ 00674C73 | 00674C40 -> 0072F110 @ 00674C96 */
+   Evidence: 00674C40 -> 0072E730 @ 00674C73 | 00674C40 -> 0072F110 @ 00674C96
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=3, used=0), and
+   decompilation contains no value return */
 
 void __cdecl FUN_00674c40(byte *_Drive)
 

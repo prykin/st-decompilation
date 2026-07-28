@@ -43,7 +43,7 @@ int __thiscall STBoatC::BackUnLoadRC(STBoatC *this,STBoatC *param_1)
     iVar4 = this->field_0550;
     if (((iVar4 == 0) || (iVar4 == 1)) || (iVar4 == 2)) {
       sub_0048D930(this);
-      iVar4 = (*this->vtable->vfunc_D8)(this);
+      iVar4 = this->vfunc_D8();
       return -(uint)(iVar4 != 0);
     }
     if (iVar4 == 3) {
@@ -79,7 +79,7 @@ int __thiscall STBoatC::BackUnLoadRC(STBoatC *this,STBoatC *param_1)
         goto cf_error_exit_0046F13E;
       }
       if (iVar4 != 0) {
-        iVar4 = (*this->vtable->vfunc_D8)(this);
+        iVar4 = this->vfunc_D8();
         return (-(uint)(iVar4 != 0) & 0xfffffffd) + 2;
       }
       sub_0048D930(this);
@@ -128,7 +128,7 @@ int __thiscall STBoatC::BackUnLoadRC(STBoatC *this,STBoatC *param_1)
           this->field_0550 = 2;
         }
 cf_common_exit_0046F0F9:
-        iVar4 = (*this->vtable->vfunc_D8)(this);
+        iVar4 = this->vfunc_D8();
         return (-(uint)(iVar4 != 0) & 0xfffffffd) + 2;
       }
       iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2864,0,0,"%s",
@@ -157,11 +157,11 @@ switchD_0046eff1_default:
       iVar4 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_8,(int *)&param_1);
       if (iVar4 != -1) {
         if (iVar4 != 0) {
-          iVar4 = (*this->vtable->vfunc_D8)(this);
+          iVar4 = this->vfunc_D8();
           return (-(uint)(iVar4 != 0) & 0xfffffffd) + 2;
         }
 LAB_0046f1fd:
-        iVar4 = (*this->vtable->vfunc_D8)(this);
+        iVar4 = this->vfunc_D8();
         return -(uint)(iVar4 != 0);
       }
       iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x287c,0,0,"%s",

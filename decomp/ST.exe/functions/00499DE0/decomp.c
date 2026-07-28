@@ -91,20 +91,21 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
     do {
       dVar5 = local_14;
       DArrayGetElement(local_10,uVar11,&local_c);
-      if ((short)local_c == -1) {
+      if ((ushort)local_c == 0xffff) {
         FUN_006b0c70(local_10,uVar11);
         uVar11 = uVar11 - 1;
         local_14 = dVar5 - 1;
       }
       else {
         pSVar4 = (STBoatC *)
-                 STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,this_00->field_0024,local_c,CASE_1);
+                 STAllPlayersC::GetObjPtr
+                           (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_c,CASE_1);
         if (pSVar4 == (STBoatC *)0x0) {
           RaiseInternalException
                     (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp"
                      ,0x564);
         }
-        dVar5 = (*pSVar4->vtable->slot_2C)(pSVar4);
+        dVar5 = pSVar4->slot_2C();
         switch(dVar5) {
         case 7:
         case 8:
@@ -124,7 +125,7 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
           break;
         default:
           if ((this_00->field_020A == 1) &&
-             (dVar5 = (*pSVar4->vtable->slot_2C)(pSVar4), dVar5 != 0x17)) {
+             (dVar5 = pSVar4->slot_2C(), dVar5 != 0x17)) {
             FUN_006b0c70(local_10,uVar11);
             uVar11 = uVar11 - 1;
             local_14 = local_14 - 1;
@@ -165,10 +166,10 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
     if (0 < (int)dVar5) {
       do {
         DArrayGetElement(local_10,uVar11,&local_c);
-        if ((short)local_c != -1) {
+        if ((ushort)local_c != 0xffff) {
           pSVar4 = (STBoatC *)
                    STAllPlayersC::GetObjPtr
-                             (g_allPlayers_007FA174,this_00->field_0024,local_c,CASE_1);
+                             (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_c,CASE_1);
           iVar3 = (*((STGameObjCDispatchVTable *)pSVar4->vtable)->vfunc_2C)();
           if (iVar3 == 9) {
             GetDepotForAttack(this_00,local_c,&local_5,&local_16,&local_2a,&local_28,&local_26);
@@ -226,7 +227,7 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
             local_39 = sVar13;
             pSVar4 = (STBoatC *)
                      STAllPlayersC::GetObjPtr
-                               (g_allPlayers_007FA174,this_00->field_0024,local_c,CASE_1);
+                               (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_c,CASE_1);
             puVar16 = &local_48;
             SVar14 = CASE_2;
           }
@@ -245,9 +246,9 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
       if (0 < (int)local_14) {
         do {
           DArrayGetElement((DArrayTy *)this_00->field_0029,uVar11,&local_c);
-          if ((short)local_c != -1) {
+          if ((ushort)local_c != 0xffff) {
             objPtr = STAllPlayersC::GetObjPtr
-                               (g_allPlayers_007FA174,this_00->field_0024,local_c,CASE_1);
+                               (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_c,CASE_1);
             if (objPtr == (STGameObjC *)0x0) {
               RaiseInternalException
                         (-0x5001fffc,g_overwriteContext_007ED77C,

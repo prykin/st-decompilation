@@ -1,11 +1,22 @@
 #include "../../pseudocode_runtime.h"
 
 
+/* [STPrototypeApplier] Propagated parameter 4.
+   Evidence: raw retained-width parameter lifetime: width=2, reads=1, sites=005FD211 MOV AX,word ptr
+   [EBP + 0x18]
+
+   [STPrototypeApplier] Propagated parameter 5.
+   Evidence: raw retained-width parameter lifetime: width=2, reads=1, sites=005FD207 MOV CX,word ptr
+   [EBP + 0x1c]
+
+   [STPrototypeApplier] Propagated parameter 6.
+   Evidence: raw retained-width parameter lifetime: width=2, reads=1, sites=005FD1DC MOV DX,word ptr
+   [EBP + 0x20] */
+
 undefined4 __cdecl
 FUN_005fd1b0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
-            undefined2 param_5,undefined2 param_6,undefined2 param_7,undefined4 param_8,
-            undefined4 param_9,undefined4 param_10,char *param_11,undefined4 param_12,
-            undefined4 param_13)
+            ushort param_5,ushort param_6,ushort param_7,undefined4 param_8,undefined4 param_9,
+            undefined4 param_10,char *param_11,undefined4 param_12,undefined4 param_13)
 
 {
   char cVar1;
@@ -17,9 +28,9 @@ FUN_005fd1b0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
   undefined4 local_144;
   undefined4 local_140;
   undefined4 local_13c;
-  undefined2 local_138;
-  undefined2 local_136;
-  undefined2 local_134;
+  ushort local_138;
+  ushort local_136;
+  ushort local_134;
   undefined4 local_132;
   undefined4 local_12e;
   char local_12a [14];
@@ -87,7 +98,7 @@ FUN_005fd1b0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
       local_11c = 0;
     }
   }
-  (*g_playSystem_00802A38->vtable->vfunc_08)(g_playSystem_00802A38,0x157,0,&local_8,local_160,0);
+  g_playSystem_00802A38->vfunc_08(0x157,0,&local_8,local_160,0);
   if (local_8 == 0) {
     return 0;
   }

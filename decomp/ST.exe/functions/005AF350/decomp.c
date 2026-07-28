@@ -16,7 +16,7 @@ void __thiscall ChooseMapTy::DeleteCtrls(ChooseMapTy *this)
   DArrayTy *pDVar5;
   uint *puVar6;
   int iVar7;
-  uint uVar8;
+  byte bVar8;
   char cVar9;
   uint uVar10;
   InternalExceptionFrame local_50;
@@ -56,8 +56,8 @@ void __thiscall ChooseMapTy::DeleteCtrls(ChooseMapTy *this)
   FUN_006b5f80((int *)PTR_008075a8,0x112,0x38,0x204,0x19d);
   MMMObjTy::OutBSlProc
             ((MMMObjTy *)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,
-             (int)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,(MMMObjTy *)0x0,0,0x112,0x38,0x204,
-             0x19d,&this_00->field_1A5B->field_0140);
+             (int)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,(MMMObjTy *)0x0,(MMMObjTy *)0x0,
+             0x112,0x38,0x204,0x19d,&this_00->field_1A5B->field_0140);
   if (this_00->field_1A6C != 0) {
     StartSystemTy::sub_006E56B0(this_00->field_000C,this_00->field_1A6C);
   }
@@ -91,17 +91,17 @@ void __thiscall ChooseMapTy::DeleteCtrls(ChooseMapTy *this)
   if (pHVar4 != (HoloTy *)0x0) {
     uVar10 = 0;
     cVar9 = '\x01';
-    uVar8 = 0x10;
+    bVar8 = 0x10;
     iVar7 = 1;
     iVar3 = Library::DKW::DDX::FUN_006bf9f0((int *)PTR_008075a8,0x112,0x38,0x204,0x19d);
-    uVar8 = HoloTy::Init(this_00->field_20B8,CASE_2,0x112,0x38,iVar3,iVar7,uVar8,cVar9,uVar10);
-    if (uVar8 != 0) {
+    uVar10 = HoloTy::Init(this_00->field_20B8,CASE_2,0x112,0x38,iVar3,iVar7,bVar8,cVar9,uVar10);
+    if (uVar10 != 0) {
       pHVar4 = this_00->field_20B8;
       pHVar4->field_0002 = 0;
       pHVar4->field_0017 = -1;
-      uVar8 = this_00->field_20B8->field_0003;
-      if (-1 < (int)uVar8) {
-        Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,uVar8);
+      uVar10 = this_00->field_20B8->field_0003;
+      if (-1 < (int)uVar10) {
+        Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,uVar10);
       }
       HoloTy::NextFas(this_00->field_20B8);
     }
@@ -117,7 +117,7 @@ void __thiscall ChooseMapTy::DeleteCtrls(ChooseMapTy *this)
   if (this_00->field_1B96 != 0xffffffff) {
     FUN_006b3af0((int *)this_00->field_1BDA,this_00->field_1B96);
   }
-  puVar6 = &this_00->field_1C23;
+  puVar6 = this_00->field_1C23;
   local_8 = 0x16;
   do {
     FUN_006b3af0((int *)PTR_008075a8,*puVar6);
@@ -170,17 +170,17 @@ void __thiscall ChooseMapTy::DeleteCtrls(ChooseMapTy *this)
     if (pHVar4 != (HoloTy *)0x0) {
       uVar10 = 0;
       cVar9 = '\x01';
-      uVar8 = 0x10;
+      bVar8 = 0x10;
       iVar7 = 1;
       iVar3 = Library::DKW::DDX::FUN_006bf9f0((int *)PTR_008075a8,10,0xb4,0xf9,0x121);
-      uVar8 = HoloTy::Init(this_00->field_20BC,CASE_4,10,0xb4,iVar3,iVar7,uVar8,cVar9,uVar10);
-      if (uVar8 != 0) {
+      uVar10 = HoloTy::Init(this_00->field_20BC,CASE_4,10,0xb4,iVar3,iVar7,bVar8,cVar9,uVar10);
+      if (uVar10 != 0) {
         pHVar4 = this_00->field_20BC;
         pHVar4->field_0002 = 0;
         pHVar4->field_0017 = -1;
-        uVar8 = this_00->field_20BC->field_0003;
-        if (-1 < (int)uVar8) {
-          Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,uVar8);
+        uVar10 = this_00->field_20BC->field_0003;
+        if (-1 < (int)uVar10) {
+          Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,uVar10);
         }
         HoloTy::NextFas(this_00->field_20BC);
       }
@@ -248,17 +248,17 @@ void __thiscall ChooseMapTy::DeleteCtrls(ChooseMapTy *this)
     if (pHVar4 != (HoloTy *)0x0) {
       uVar10 = 0;
       cVar9 = '\x01';
-      uVar8 = 0x10;
+      bVar8 = 0x10;
       iVar7 = 1;
       iVar3 = Library::DKW::DDX::FUN_006bf9f0((int *)PTR_008075a8,200,0x1f1,400,0x62);
-      uVar8 = HoloTy::Init(this_00->field_20C0,CASE_1,200,0x1f1,iVar3,iVar7,uVar8,cVar9,uVar10);
-      if (uVar8 != 0) {
+      uVar10 = HoloTy::Init(this_00->field_20C0,CASE_1,200,0x1f1,iVar3,iVar7,bVar8,cVar9,uVar10);
+      if (uVar10 != 0) {
         pHVar4 = this_00->field_20C0;
         pHVar4->field_0002 = 0;
         pHVar4->field_0017 = -1;
-        uVar8 = this_00->field_20C0->field_0003;
-        if (-1 < (int)uVar8) {
-          Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,uVar8);
+        uVar10 = this_00->field_20C0->field_0003;
+        if (-1 < (int)uVar10) {
+          Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,uVar10);
         }
         HoloTy::NextFas(this_00->field_20C0);
       }

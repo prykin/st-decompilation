@@ -4,7 +4,11 @@
    /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0054A9B0.
    Evidence: incoming_receiver_captures=1; receiver_accesses=18; incoming_edx_uses=0; calls=16;
    ecx_pointer_setup=16; ecx_scalar_setup=0; caller_cleanup_calls=0; callee_ret_pop=[12];
-   expected_stack=12; receiver_family_members=1 */
+   expected_stack=12; receiver_family_members=1
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=16, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall
 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::FUN_0054a9b0
@@ -82,10 +86,11 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::FUN_0054a9b0
       else {
         bVar2 = true;
       }
-      if (((bVar2) && (pVVar3->field_010C < 4)) && ((&pVVar3->field_003C)[pVVar3->field_010C] != 0))
-      {
-        uVar6 = (uint)*(byte *)((g_centeredOffsets5[iVar8] + local_14) * pVVar3->field_0028 +
-                                (&pVVar3->field_003C)[pVVar3->field_010C] + local_10);
+      if (((bVar2) && (pVVar3->field_010C < 4)) &&
+         (pVVar3->field_003C[pVVar3->field_010C] != (void *)0x0)) {
+        uVar6 = (uint)*(byte *)((int)pVVar3->field_003C[pVVar3->field_010C] +
+                               local_10 +
+                               (g_centeredOffsets5[iVar8] + local_14) * pVVar3->field_0028);
       }
       else {
         uVar6 = 0xffffffff;
@@ -169,7 +174,7 @@ cf_common_exit_0054ACFD:
   FUN_006e8660(PTR_00807598,(int *)&local_8,1,0,uVar1,uVar6,(int)uVar1 / 2,(int)uVar6 / 2 - 0xe,0);
   if (-1 < (int)local_8) {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    FUN_006e98e0(PTR_00807598,local_8,0,*(undefined4 *)pAVar4->field_04E7,
+    FUN_006e98e0(PTR_00807598,local_8,0,*(int *)pAVar4->field_04E7,
                  *(int *)((int)pAVar4->field_04E7 + 0x21),1);
     FUN_006eaaa0(PTR_00807598,local_8,0);
     FUN_006ea960(PTR_00807598,local_8,param_1,param_2,param_3 + _DAT_007904fc);

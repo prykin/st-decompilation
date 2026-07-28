@@ -23,7 +23,7 @@ void __thiscall FrmPanelTy::DoneFrmPanel(FrmPanelTy *this)
   pFVar2 = local_8;
   if (iVar3 == 0) {
     iVar3 = 8;
-    puVar5 = &local_8->field_01B3;
+    puVar5 = local_8->field_01B3;
     do {
       if (*puVar5 != 0) {
         StartSystemTy::sub_006E56B0(pFVar2->field_000C,*puVar5);
@@ -32,7 +32,7 @@ void __thiscall FrmPanelTy::DoneFrmPanel(FrmPanelTy *this)
       puVar5 = puVar5 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
-    puVar5 = &pFVar2->field_01D3;
+    puVar5 = pFVar2->field_01D3;
     iVar3 = 4;
     do {
       if (*puVar5 != 0) {

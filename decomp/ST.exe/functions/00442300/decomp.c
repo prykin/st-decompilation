@@ -48,7 +48,7 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,char param_
   int local_30;
   undefined4 local_2c;
   undefined4 local_28;
-  uint local_1c;
+  undefined1 local_1c [4];
   uint local_18;
   int local_14;
   undefined4 local_10;
@@ -61,7 +61,7 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,char param_
   local_6c[2] = 0x4f;
   local_6c[3] = 0x5e;
   local_5c = this;
-  local_44 = GetObjPtr(this,param_1,param_2,CASE_1);
+  local_44 = GetObjPtr(this,param_1,(ushort)param_2,CASE_1);
   local_58 = (*local_44->vtable->vfunc_2C)();
   local_10 = 0;
   local_d4.previous = g_currentExceptionFrame;
@@ -126,8 +126,9 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,char param_
           local_18 = 0;
           if (0 < (int)local_48) {
             do {
-              DArrayGetElement(local_c,local_18,&local_1c);
-              pSVar5 = GetObjPtr(pSVar2,param_1,local_1c,CASE_1);
+              DArrayGetElement(local_c,local_18,local_1c);
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+              pSVar5 = GetObjPtr(pSVar2,param_1,local_1c._0_2_,CASE_1);
               local_44 = pSVar5;
               iVar6 = (*pSVar5->vtable->vfunc_88)(local_54);
               if (0 < iVar6) {
@@ -218,8 +219,9 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,char param_
             SVar13 = local_58;
             if (0 < (int)local_48) {
               do {
-                DArrayGetElement(local_c,local_18,&local_1c);
-                pSVar5 = GetObjPtr(pSVar2,param_1,local_1c,CASE_1);
+                DArrayGetElement(local_c,local_18,local_1c);
+                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                pSVar5 = GetObjPtr(pSVar2,param_1,local_1c._0_2_,CASE_1);
                 local_44 = pSVar5;
                 STFishC::sub_004162B0((STFishC *)pSVar5,&local_38,&local_36,&local_34);
                 local_32 = pSVar5->field_0032;

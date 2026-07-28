@@ -8,7 +8,7 @@
 
 undefined4 __thiscall
 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004603B0::FUN_004838e0
-          (AnonReceiver_004603B0 *this,AnonShape_004838E0_0C45D4D6 *param_1)
+          (AnonReceiver_004603B0 *this,RecoveredRecord_STBoatC_004838E0 *param_1)
 
 {
   short sVar1;

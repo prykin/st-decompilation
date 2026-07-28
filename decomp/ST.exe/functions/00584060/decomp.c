@@ -14,7 +14,7 @@ STJellyGunC::sub_00584060(STJellyGunC *this,int *param_1,int *param_2,int *param
   int local_1c;
   int local_18;
   int local_14;
-  undefined2 local_10;
+  short local_10;
   undefined2 local_e;
   undefined2 local_c;
   short local_a;
@@ -22,13 +22,11 @@ STJellyGunC::sub_00584060(STJellyGunC *this,int *param_1,int *param_2,int *param
   short local_6;
 
   if (this->field_023D != 0) {
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     this_00 = STAllPlayersC::GetObjPtr
                         (g_allPlayers_007FA174,*(char *)&this->field_0241,
-                         CONCAT22((short)((uint)this->field_023D >> 0x10),
-                                  *(undefined2 *)&this->field_0x245),CASE_1);
+                         *(ushort *)&this->field_0x245,CASE_1);
     if ((this_00 != (STGameObjC *)0x0) &&
-       (iVar1 = (*this_00->vtable->vfunc_F8)(this_00), iVar1 != 0)) {
+       (iVar1 = this_00->vfunc_F8(), iVar1 != 0)) {
       STFishC::sub_004162F0((STFishC *)this_00,&local_6,&local_8,&local_a);
       *param_1 = (int)local_6;
       *param_2 = (int)local_8;

@@ -3,7 +3,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\Tc_gobj.cpp
-   STSprGameObjC::LoadActFrame */
+   STSprGameObjC::LoadActFrame
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0), and
+   decompilation contains no value return */
 
 void __thiscall STSprGameObjC::LoadActFrame(STSprGameObjC *this,int *param_1)
 
@@ -99,7 +103,7 @@ void __thiscall STSprGameObjC::LoadActFrame(STSprGameObjC *this,int *param_1)
   if ((((iVar7 != 0x1ae) && (iVar7 != 0x172)) && (iVar7 != 0x5a)) &&
      ((iVar7 != 0x1a4 && (iVar7 != 0x1b8)))) {
     if ((iVar7 == 0x14) || (iVar7 == 1000)) {
-      SVar4 = (*this->vtable->slot_2C)(this);
+      SVar4 = this->slot_2C();
     }
     else {
       if (iVar7 != 0x3e9) {
@@ -493,7 +497,7 @@ LAB_00420678:
     STT3DSprC::StartShow((STT3DSprC *)this_00,0xf,g_playSystem_00802A38->field_00E4);
     return;
   }
-  dVar5 = (*this->vtable->slot_2C)(this);
+  dVar5 = this->slot_2C();
   switch(dVar5) {
   case 0xa6:
   case 0xa7:

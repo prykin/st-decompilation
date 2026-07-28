@@ -132,7 +132,7 @@ void __thiscall SettMapTy::DoneSettMap(SettMapTy *this)
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pSVar2->field_0x1c6b);
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pSVar2->field_0x1cfc);
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pSVar2->field_0x1d8d);
-    value = (void **)&pSVar2->field_20F4;
+    value = pSVar2->field_20F4;
     iVar3 = 10;
     do {
       FUN_006b3bb0((int *)PTR_008075a8,(uint)value[-10]);

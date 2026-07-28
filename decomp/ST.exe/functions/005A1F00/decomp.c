@@ -3,10 +3,17 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\fsgs_obj.cpp
-   FSGSTy::AddMessage */
+   FSGSTy::AddMessage
+   [STAbiConsistencyApplier] stack_parameter_width target=parameter:1: parameter=/byte Evidence:
+   entry-use width=/byte; unmasked_dword_reads=0; evidence=005A1FC7 MOV ECX,dword ptr [EBP + 0x8];
+   first-use mask | 005A1FF1 MOV EAX,dword ptr [EBP + 0x8]; first-use mask | 005A2048 MOV EDX,dword
+   ptr [EBP + 0x8]; first-use mask
+   [STAbiConsistencyApplier] stack_parameter_width target=parameter:4: parameter=/byte Evidence:
+   entry-use width=/byte; unmasked_dword_reads=0; evidence=005A1FF7 MOV ECX,dword ptr [EBP + 0x14];
+   first-use mask */
 
 void __thiscall
-FSGSTy::AddMessage(FSGSTy *this,uint param_1,byte *param_2,char *param_3,uint param_4)
+FSGSTy::AddMessage(FSGSTy *this,byte param_1,byte *param_2,char *param_3,byte param_4)
 
 {
   byte bVar1;
@@ -73,7 +80,7 @@ FSGSTy::AddMessage(FSGSTy *this,uint param_1,byte *param_2,char *param_3,uint pa
       g_currentExceptionFrame = local_5c.previous;
       return;
     }
-    wsprintfA((LPSTR)local_c,"%s%1d%s",&DAT_007c6ff0,param_1 & 0xff,param_3);
+    wsprintfA((LPSTR)local_c,"%s%1d%s",&DAT_007c6ff0,param_1,param_3);
   }
   else {
     uVar12 = 0xffffffff;
@@ -117,12 +124,12 @@ LAB_005a1fbe:
     iVar6 = 0;
 LAB_005a1fc3:
     if (iVar6 == 0) {
-      wsprintfA((LPSTR)local_c,s__s2_s>__s_1d_s_007cc4a0,&DAT_007c6ff0,param_2,&DAT_007c6ff0,
-                param_1 & 0xff,param_3);
+      wsprintfA((LPSTR)local_c,s__s2_s>__s_1d_s_007cc4a0,&DAT_007c6ff0,param_2,&DAT_007c6ff0,param_1
+                ,param_3);
     }
     else {
-      wsprintfA((LPSTR)local_c,s__s_1d_s>__s_1d_s_007cc48c,&DAT_007c6ff0,param_4 & 0xff,param_2,
-                &DAT_007c6ff0,param_1 & 0xff,param_3);
+      wsprintfA((LPSTR)local_c,s__s_1d_s>__s_1d_s_007cc48c,&DAT_007c6ff0,param_4,param_2,
+                &DAT_007c6ff0,param_1,param_3);
     }
   }
   if (local_c != (uint *)0x0) {

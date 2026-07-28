@@ -9,7 +9,7 @@ FUN_0065e070(int param_1,undefined4 param_2,uint param_3,uint param_4,uint param
   byte bVar1;
   undefined2 uVar2;
   char cVar3;
-  undefined2 *puVar4;
+  ushort *puVar4;
   STGameObjC *this;
   uint uVar5;
   uint uVar6;
@@ -26,7 +26,7 @@ FUN_0065e070(int param_1,undefined4 param_2,uint param_3,uint param_4,uint param
   int local_14;
   int *local_10;
   int local_c;
-  undefined2 local_8;
+  short local_8;
   undefined2 local_6;
 
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -44,9 +44,11 @@ FUN_0065e070(int param_1,undefined4 param_2,uint param_3,uint param_4,uint param
     cVar3 = (char)*(undefined4 *)(param_1 + 0x24);
   }
   if ((param_6 != '\b') && ((param_6 < '\0' || (cVar3 = param_6, '\b' < param_6)))) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_6 = -1;
     cVar3 = param_6;
   }
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_6 = cVar3;
   local_10 = local_4c;
   local_c = 0;
@@ -59,16 +61,13 @@ FUN_0065e070(int param_1,undefined4 param_2,uint param_3,uint param_4,uint param
         do {
           if (bVar13) {
             /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(local_1c, local_18) (runtime stride) */
-            puVar4 = (undefined2 *)(local_1c->elementSize * local_18 + (int)local_1c->data);
+            puVar4 = (ushort *)(local_1c->elementSize * local_18 + (int)local_1c->data);
           }
           else {
-            puVar4 = (undefined2 *)0x0;
+            puVar4 = (ushort *)0x0;
           }
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          this = STAllPlayersC::GetObjPtr
-                           (g_allPlayers_007FA174,(char)local_c,
-                            CONCAT22((short)((uint)puVar4 >> 0x10),*puVar4),CASE_1);
-          if ((this == (STGameObjC *)0x0) || (iVar9 = (*this->vtable->vfunc_F8)(this), iVar9 == 0))
+          this = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,(char)local_c,*puVar4,CASE_1);
+          if ((this == (STGameObjC *)0x0) || (iVar9 = this->vfunc_F8(), iVar9 == 0))
           goto cf_continue_loop_0065E27E;
           uVar5 = (*this->vtable->vfunc_2C)();
           STFishC::sub_004162B0((STFishC *)this,&local_8,&local_6,(undefined2 *)((int)&param_3 + 2))
@@ -123,7 +122,8 @@ LAB_0065e261:
               if (iVar9 != 0) goto cf_continue_loop_0065E27E;
             }
             cVar3 = param_6;
-            if ((param_6 == -1) || (iVar9 = (*this->vtable->vfunc_6C)(this), cVar3 == iVar9)) {
+            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+            if ((param_6 == -1) || (iVar9 = this->vfunc_6C(), cVar3 == iVar9)) {
               local_14 = local_14 + 1;
             }
           }

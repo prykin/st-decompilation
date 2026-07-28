@@ -18,7 +18,8 @@ void __thiscall STBoatC::NotReadyForLoading(STBoatC *this,int param_1)
   short local_6;
 
   if ((((this->field_045D != CASE_F) && (this->field_045D != CASE_E)) ||
-      (this->field_058E != param_1)) || (this->field_0596 != 2)) {
+      ((AnonShape_005EFAE0_B406B78B *)this->field_058E != (AnonShape_005EFAE0_B406B78B *)param_1))
+     || (this->field_0596 != 2)) {
     iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x50db,0,0,"%s",
                                "STBoatC::NotReadyForLoading incorrect call");
     if (iVar2 == 0) {
@@ -26,7 +27,9 @@ void __thiscall STBoatC::NotReadyForLoading(STBoatC *this,int param_1)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  iVar2 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,this->field_058E,(int *)&local_14);
+  iVar2 = STPlaySystemC::sub_006E62D0
+                    (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)this->field_058E,
+                     (int *)&local_14);
   if (iVar2 != -4) {
     (*local_14->vtable->vfunc_AC)(this->field_0018);
     STFishC::sub_004162F0(local_14,&this->field_0588,&this->field_058A,&this->field_058C);

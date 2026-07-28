@@ -1,10 +1,13 @@
 #include "../../pseudocode_runtime.h"
 
 
+/* [STPrototypeApplier] Propagated parameter 10.
+   Evidence: 00581AC0 -> 00582460 @ 00581B44; zero-filled partial register load at 00581B06 */
+
 undefined4 __cdecl
 FUN_00582460(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
             undefined4 param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8,
-            undefined4 param_9,undefined4 param_10,undefined4 param_11,undefined2 param_12)
+            undefined4 param_9,undefined4 param_10,uint param_11,undefined2 param_12)
 
 {
   undefined4 local_44 [5];
@@ -17,7 +20,7 @@ FUN_00582460(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
   undefined4 local_18;
   undefined4 local_14;
   undefined4 local_10;
-  undefined4 local_c;
+  uint local_c;
   undefined2 local_8;
 
   memset(local_44, 0, 0x3e); /* compiler bulk-zero initialization */
@@ -36,7 +39,7 @@ FUN_00582460(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
   local_44[3] = 1;
   local_10 = 0;
   local_8 = param_12;
-  (*g_playSystem_00802A38->vtable->vfunc_08)(g_playSystem_00802A38,0x137,0,&param_9,local_44,0);
+  g_playSystem_00802A38->vfunc_08(0x137,0,&param_9,local_44,0);
   return param_9;
 }
 

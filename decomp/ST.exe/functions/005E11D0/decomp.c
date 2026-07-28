@@ -3,7 +3,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\task_obj.cpp
-   MTaskTy::PrepareTSurf */
+   MTaskTy::PrepareTSurf
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=3, used=0), and
+   decompilation contains no value return */
 
 void __thiscall
 MTaskTy::PrepareTSurf(MTaskTy *this,AnonShape_005E11D0_D0F8BE03 *param_1,char param_2,char param_3)
@@ -26,7 +30,7 @@ MTaskTy::PrepareTSurf(MTaskTy *this,AnonShape_005E11D0_D0F8BE03 *param_1,char pa
       uVar5 = ((uint)param_1->field_000E * param_1->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
               param_1->field_0008;
     }
-    puVar2 = (undefined4 *)FUN_006b4fa0((int)param_1);
+    puVar2 = (undefined4 *)FUN_006b4fa0((int *)param_1);
     for (uVar4 = uVar5 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
       *puVar2 = 0xffffffff;
       puVar2 = puVar2 + 1;

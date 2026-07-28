@@ -20,7 +20,7 @@ FUN_006a1100(int *param_1,int param_2,int param_3,int param_4,int param_5,ushort
     if (iVar4 == 0) {
       return false;
     }
-    iVar4 = thunk_FUN_006a1370(param_1,param_2,param_3,param_4,(undefined4 *)local_c);
+    iVar4 = thunk_FUN_006a1370(param_1,param_2,param_3,param_4,(int)local_c);
     if (param_5 == 0xff) {
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       param_3._3_1_ = bStack_8;

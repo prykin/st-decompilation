@@ -86,6 +86,7 @@ int FUN_0075af80(AnonShape_0075AF80_4192DD78 *param_1,int *param_2)
         if (uVar9 < local_80) {
           local_70 = 0;
           piVar5 = (int *)((int)piVar1 * 2);
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_2 = piVar1;
         }
         else {
@@ -94,6 +95,7 @@ int FUN_0075af80(AnonShape_0075AF80_4192DD78 *param_1,int *param_2)
             piVar5 = piVar1;
           }
           local_70 = 1;
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_2 = piVar5;
         }
         local_28 = iVar4;

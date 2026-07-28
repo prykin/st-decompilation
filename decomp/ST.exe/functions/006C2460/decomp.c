@@ -1,5 +1,9 @@
 
-void FUN_006c2460(int param_1,DWORD param_2,uint param_3,uint param_4,undefined4 param_5,
+/* [STAbiConsistencyApplier] stack_parameter_width target=parameter:2: parameter=/byte Evidence:
+   entry-use width=/byte; unmasked_dword_reads=0; evidence=006C2476 MOV EAX,dword ptr [EBP + 0x10];
+   first-use mask */
+
+void FUN_006c2460(int param_1,DWORD param_2,byte param_3,uint param_4,undefined4 param_5,
                  undefined4 param_6,int param_7)
 
 {
@@ -11,7 +15,7 @@ void FUN_006c2460(int param_1,DWORD param_2,uint param_3,uint param_4,undefined4
   iVar3 = param_7 * 0xc4;
   pAVar4 = (AnonShape_006BFBF0_13F73F95 *)(&DAT_00854ff8 + iVar3);
   *(undefined4 *)(&DAT_00855028 + iVar3) = param_5;
-  (&DAT_00855024)[param_7 * 0x31] = param_3 & 0xff;
+  (&DAT_00855024)[param_7 * 0x31] = (uint)param_3;
   *(undefined4 *)(&DAT_0085502c + iVar3) = param_6;
   (&DAT_00855014)[param_7 * 0x31] = param_1;
   (&DAT_00855018)[param_7 * 0x31] = param_2;

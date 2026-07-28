@@ -46,7 +46,7 @@ StartSystemTy * __thiscall StartSystemTy::StartSystemTy(StartSystemTy *this,unde
   this->field_0682 = (ushort *)0x0;
   this->field_067E = (ushort *)0x0;
   this->field_0686 = (DArrayTy *)0x0;
-  memset(&this->field_0x244, 0, 0x18); /* compiler bulk-zero initialization */
+  memset(this->array_0244, 0, 0x18); /* compiler bulk-zero initialization */
   iVar1 = 0;
   memset(&this->field_025C, 0, 0x8a); /* compiler bulk-zero initialization */
   this->field_068A = 0;

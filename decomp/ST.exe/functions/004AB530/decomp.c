@@ -1,7 +1,10 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 004AB530 -> 004AB470 @ 004AB5FF | 004FAD60 -> 004AB530 @ 004FAE21;
+   CPanelTy::sub_004FAD60 parameter param_1 */
 
-void FUN_004ab530(int param_1,int param_2,int param_3)
+void FUN_004ab530(int param_1,uint *param_2,int param_3)
 
 {
   float fVar1;
@@ -12,7 +15,7 @@ void FUN_004ab530(int param_1,int param_2,int param_3)
     _DAT_008073ec = _DAT_008073d4;
     DAT_00807461 = 0;
     _DAT_008073e8 = DAT_008073d0;
-    _DAT_008073f0 = (float)param_2 * _DAT_007904f8 + _DAT_007904f4;
+    _DAT_008073f0 = (float)(int)param_2 * _DAT_007904f8 + _DAT_007904f4;
     _DAT_008073f4 = (float)param_3 * _DAT_007904f8 + _DAT_007904f4;
     fVar1 = _DAT_008073f4 - _DAT_008073d4;
     fVar2 = _DAT_008073f0 - DAT_008073d0;

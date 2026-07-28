@@ -13,7 +13,7 @@ int __thiscall STManRub3C::sub_0062D840(STManRub3C *this,undefined4 *param_1)
   undefined4 *puVar4;
   int *piVar5;
   undefined4 *puVar6;
-  int *piVar7;
+  uint *puVar7;
 
   puVar1 = param_1;
   if (this == (STManRub3C *)0x0) {
@@ -22,6 +22,7 @@ int __thiscall STManRub3C::sub_0062D840(STManRub3C *this,undefined4 *param_1)
   else {
     puVar6 = &this->field_001C;
   }
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = (undefined4 *)0x98;
   puVar4 = puVar1;
   for (iVar3 = 0x26; iVar3 != 0; iVar3 = iVar3 + -1) {
@@ -36,23 +37,24 @@ int __thiscall STManRub3C::sub_0062D840(STManRub3C *this,undefined4 *param_1)
     iVar2 = 0;
     switch(iVar3) {
     case 0:
-      piVar7 = &this->field_0030;
+      puVar7 = this->field_0030;
       break;
     case 1:
-      piVar7 = &this->field_0050;
+      puVar7 = &this->field_0050;
       break;
     case 2:
-      piVar7 = &this->field_0070;
+      puVar7 = &this->field_0070;
       break;
     case 3:
-      piVar7 = (int *)&this->field_0x90;
+      puVar7 = (uint *)&this->field_0x90;
       break;
     default:
       goto switchD_0062d881_default;
     }
-    iVar2 = thunk_FUN_0062d7d0(piVar7,piVar5);
+    iVar2 = thunk_FUN_0062d7d0((int *)puVar7,piVar5);
 switchD_0062d881_default:
     piVar5 = (int *)((int)piVar5 + iVar2);
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = (undefined4 *)((int)param_1 + iVar2);
     iVar3 = iVar3 + 1;
     if (3 < iVar3) {

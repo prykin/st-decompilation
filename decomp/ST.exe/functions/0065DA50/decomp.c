@@ -11,63 +11,43 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065DA50::FUN_0065da50
 
 {
   ushort uVar1;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  undefined4 in_EAX;
   STGroupBoatC *this_00;
   uint uVar2;
   DArrayTy *array;
   dword dVar3;
-  undefined2 *puVar4;
+  ushort *puVar4;
   STGameObjC *this_01;
   int iVar5;
-  void *pvVar6;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  void *extraout_ECX;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  void *extraout_ECX_00;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  void *extraout_ECX_01;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  void *extraout_ECX_02;
-  void *pvVar7;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_EDX;
-  undefined4 uVar8;
-  char cVar9;
+  undefined4 uVar6;
+  char cVar7;
   uint local_8;
 
   local_8 = 0;
-  /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
-  if ((((*(short *)&this->field_0x7d != -2) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) &&
-      (this_00 = thunk_FUN_0042b760(this->field_0x24,
-                                    CONCAT22((short)((uint)in_EAX >> 0x10),
-                                             *(short *)&this->field_0x7d)),
-      this_00 != (STGroupBoatC *)0x0)) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) {
-    cVar9 = this->field_0x81;
-    if ((cVar9 < '\0') || ('\a' < cVar9)) {
-      cVar9 = (char)*(undefined4 *)&this->field_0x24;
+  if ((((*(ushort *)&this->field_0x7d != 0xfffe) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0))
+      && (this_00 = thunk_FUN_0042b760(this->field_0x24,*(ushort *)&this->field_0x7d),
+         this_00 != (STGroupBoatC *)0x0)) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) {
+    cVar7 = this->field_0x81;
+    if ((cVar7 < '\0') || ('\a' < cVar7)) {
+      cVar7 = (char)*(undefined4 *)&this->field_0x24;
     }
-    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-    if (((param_2 != '\b') && ((param_2 < '\0' || (cVar9 = param_2, '\b' < param_2)))) ||
-       (param_2 = cVar9, uVar8 = CONCAT31((int3)((uint)extraout_EDX >> 8),param_2), param_2 < '\0'))
+    /* ST_PSEUDO[return_width_artifact,stack_slot_reuse]: candidate call-output artifact: verify return width, clobbers, or x87 state; compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+    if (((param_2 != '\b') && ((param_2 < '\0' || (cVar7 = param_2, '\b' < param_2)))) ||
+       (param_2 = cVar7, uVar6 = CONCAT31((int3)((uint)extraout_EDX >> 8),param_2), param_2 < '\0'))
     {
       if (param_1 != 0) {
         uVar2 = STGroupC::GetTOBJQty((STGroupC *)this_00,param_1);
         return uVar2 & 0xffff;
       }
-      uVar1 = thunk_FUN_004233c0((int)this_00);
+      uVar1 = thunk_FUN_004233c0(this_00);
       return (uint)uVar1;
     }
     if (param_1 == 0) {
-      array = (DArrayTy *)AiFltClassTy::sub_0065DA10((AiFltClassTy *)this,uVar8);
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      pvVar7 = extraout_ECX;
+      array = (DArrayTy *)AiFltClassTy::sub_0065DA10((AiFltClassTy *)this,uVar6);
     }
     else {
-      array = (DArrayTy *)
-              AiFltClassTy::sub_0065E360((AnonShape_0065E360_B94C37CB *)this,uVar8,param_1);
-      /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      pvVar7 = extraout_ECX_00;
+      array = (DArrayTy *)AiFltClassTy::sub_0065E360((AiFltClassTy *)this,uVar6,param_1);
     }
     if (array != (DArrayTy *)0x0) {
       dVar3 = array->count;
@@ -75,27 +55,18 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065DA50::FUN_0065da50
       if (0 < (int)dVar3) {
         do {
           if (uVar2 < dVar3) {
-            pvVar7 = array->data;
-            puVar4 = (undefined2 *)(array->elementSize * uVar2 + (int)pvVar7);
+            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, uVar2) (runtime stride) */
+            puVar4 = (ushort *)(array->elementSize * uVar2 + (int)array->data);
           }
           else {
-            puVar4 = (undefined2 *)0x0;
+            puVar4 = (ushort *)0x0;
           }
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          this_01 = STAllPlayersC::GetObjPtr
-                              (g_allPlayers_007FA174,this->field_0x24,
-                               CONCAT22((short)((uint)pvVar7 >> 0x10),*puVar4),CASE_1);
-          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-          pvVar7 = extraout_ECX_01;
-          /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-          if ((this_01 != (STGameObjC *)0x0) &&
-             (iVar5 = (*this_01->vtable->vfunc_F8)(this_01), pvVar7 = extraout_ECX_02, iVar5 != 0))
-          {
-            pvVar6 = (void *)(*this_01->vtable->vfunc_6C)(this_01);
-            pvVar7 = (void *)(int)param_2;
-            if (pvVar7 == pvVar6) {
-              local_8 = local_8 + 1;
-            }
+          this_01 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,this->field_0x24,*puVar4,CASE_1);
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+          if (((this_01 != (STGameObjC *)0x0) &&
+              (iVar5 = this_01->vfunc_F8(), iVar5 != 0)) &&
+             (iVar5 = this_01->vfunc_6C(), param_2 == iVar5)) {
+            local_8 = local_8 + 1;
           }
           dVar3 = array->count;
           uVar2 = uVar2 + 1;

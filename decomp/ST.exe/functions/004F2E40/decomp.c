@@ -7,12 +7,26 @@
 
    [STPrototypeApplier] Propagated parameter 7.
    Evidence: 00502360 -> 004F2E40 @ 00502527 | 00503450 -> 004F2E40 @ 00503643 | 005097E0 ->
-   004F2E40 @ 005099DD | 0050E7D0 -> 004F2E40 @ 0050EA07 */
+   004F2E40 @ 005099DD | 0050E7D0 -> 004F2E40 @ 0050EA07
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=4, used=0), and
+   decompilation contains no value return
+
+   [STPrototypeApplier] Propagated parameter 8.
+   Evidence: 00502360 -> 004F2E40 @ 00502527; literal 1 at 005024F0 | 00503450 -> 004F2E40 @
+   00503643; literal 1 at 00503609 | 005097E0 -> 004F2E40 @ 005099DD; literal 1 at 005099A6 |
+   0050E7D0 -> 004F2E40 @ 0050EA07; literal 1 at 0050E9D0
+
+   [STPrototypeApplier] Propagated parameter 9.
+   Evidence: 00502360 -> 004F2E40 @ 00502527; literal 0 at 005024EE | 00503450 -> 004F2E40 @
+   00503643; literal 0 at 00503607 | 005097E0 -> 004F2E40 @ 005099DD; literal 0 at 005099A4 |
+   0050E7D0 -> 004F2E40 @ 0050EA07; literal 0 at 0050E9CE */
 
 void __thiscall
 CPanelTy::SetButStruct
           (CPanelTy *this,AnonShape_004F2E40_DC76A8C6 *param_1,byte param_2,undefined4 param_3,
-          int param_4,int param_5,byte param_6,LPSTR param_7,undefined2 param_8,undefined2 param_9,
+          int param_4,int param_5,byte param_6,LPSTR param_7,ushort param_8,ushort param_9,
           undefined4 param_10,char *param_11)
 
 {
@@ -85,14 +99,14 @@ CPanelTy::SetButStruct
     *(undefined4 *)&param_1->field_0xa8 = 3;
     *(undefined4 *)&param_1->field_0x80 = 0x101;
     *(undefined4 *)&param_1->field_0x88 = 0x4201;
-    *(undefined2 *)&param_1->field_0x8c = param_9;
+    *(ushort *)&param_1->field_0x8c = param_9;
     param_1->field_008E = param_8;
     *(undefined4 *)&param_1->field_0x90 = param_10;
     *(undefined4 *)&param_1->field_0x98 = 0;
     *(undefined4 *)&param_1[1].field_0x8 = 1;
     *(undefined4 *)&param_1->field_0xa4 = 0x101;
     *(undefined4 *)&param_1->field_0xac = 0x4202;
-    *(undefined2 *)&param_1->field_0xb0 = param_9;
+    *(ushort *)&param_1->field_0xb0 = param_9;
     param_1->field_00B2 = param_8;
     *(undefined4 *)(param_1 + 1) = param_10;
     if (param_11 != (char *)0x0) {

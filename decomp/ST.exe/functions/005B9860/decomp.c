@@ -6,12 +6,15 @@
    MMMObjTy::OutLstProc
 
    [STPrototypeApplier] Propagated parameter 2.
-   Evidence: 005B9860 parameter used as this of MMMObjTy::OutBSlProc @ 005B98CD */
+   Evidence: 005B9860 parameter used as this of MMMObjTy::OutBSlProc @ 005B98CD
+
+   [STPrototypeApplier] Propagated parameter 3.
+   Evidence: 005B9860 -> 005B68B0 @ 005B98CD */
 
 void __thiscall
 MMMObjTy::OutLstProc
-          (MMMObjTy *this,int param_1,MMMObjTy *param_2,undefined4 param_3,int param_4,int param_5,
-          int param_6,int param_7,int param_8)
+          (MMMObjTy *this,AnonShape_GLOBAL_0080759C_9638EF10 *param_1,MMMObjTy *param_2,
+          MMMObjTy *param_3,int param_4,int param_5,int param_6,int param_7,int param_8)
 
 {
   code *pcVar1;
@@ -22,7 +25,7 @@ MMMObjTy::OutLstProc
   uint uVar3;
   uint uVar4;
   ccFntTy *pcVar5;
-  undefined4 uVar6;
+  uint uVar6;
   InternalExceptionFrame local_4c;
   int local_8;
 
@@ -32,11 +35,11 @@ MMMObjTy::OutLstProc
     g_currentExceptionFrame = &local_4c;
     errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
     if (errorCode == 0) {
-      OutBSlProc(param_2,param_1,param_2,param_3,param_4,param_5 + 0x16,param_6,param_7 + -0x16,
-                 &g_startSystem_0081176C->field_0140);
+      OutBSlProc(param_2,(int)param_1,param_2,param_3,param_4,param_5 + 0x16,param_6,param_7 + -0x16
+                 ,&g_startSystem_0081176C->field_0140);
       Library::DKW::DDX::FUN_006c68f0
                 (param_1,param_4,param_5,param_6,0x15,(int)&g_startSystem_0081176C->field_0x144);
-      FUN_006c6850(param_1,param_4,param_5,param_6,0x15,g_startSystem_0081176C->field_0140);
+      FUN_006c6850((int)param_1,param_4,param_5,param_6,0x15,g_startSystem_0081176C->field_0140);
       uVar6 = 0;
       pcVar5 = g_startSystem_0081176C->field_0034;
       uVar4 = 0xffffffff;

@@ -1,6 +1,10 @@
 
 /* [STPrototypeApplier] Propagated parameter 1.
-   Evidence: 00436F20 -> 0044CD20 @ 004372DA | 00436F20 -> 0044CD20 @ 004373EE */
+   Evidence: 00436F20 -> 0044CD20 @ 004372DA | 00436F20 -> 0044CD20 @ 004373EE
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=3, used=0), and
+   decompilation contains no value return */
 
 void FUN_0044cd20(uint param_1,uint *groupContent,undefined4 param_3)
 
@@ -18,8 +22,9 @@ void FUN_0044cd20(uint param_1,uint *groupContent,undefined4 param_3)
     index = 0;
     do {
       DArrayGetElement((DArrayTy *)groupContent,index,&param_1);
-      if ((((short)param_1 != -1) &&
-          (pSVar3 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,(char)uVar2,param_1,CASE_1),
+      if ((((ushort)param_1 != 0xffff) &&
+          (pSVar3 = STAllPlayersC::GetObjPtr
+                              (g_allPlayers_007FA174,(char)uVar2,(ushort)param_1,CASE_1),
           pSVar3 != (STGameObjC *)0x0)) && (pSVar3->field_0020 == 0x14)) {
         pSVar3->field_07EA = param_3;
       }

@@ -4,7 +4,11 @@
    /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00573260.
    Evidence: incoming_receiver_captures=1; receiver_accesses=12; incoming_edx_uses=0; calls=3;
    ecx_pointer_setup=3; ecx_scalar_setup=0; caller_cleanup_calls=0; callee_ret_pop=[0];
-   expected_stack=0; receiver_family_members=2 */
+   expected_stack=0; receiver_family_members=2
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=3, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall
 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00573260::FUN_00573260

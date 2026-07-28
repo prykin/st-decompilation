@@ -1,6 +1,15 @@
 #include "../../pseudocode_runtime.h"
 
 
+/* [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0), and
+   decompilation contains no value return
+
+   [STReturnSemanticsApplier] repair_unsafe_eax_rollback.
+   Evidence: restore the earlier evidence-backed void type after an unsafe automated rollback;
+   post-CALL EAX reads alone do not prove a source-level return value; machine CFG audit: used=1,
+   ignored=3, unknown=0 */
+
 void __cdecl
 FUN_0062b770(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,int param_5
             ,undefined4 param_6,undefined4 param_7,undefined4 param_8)
@@ -37,7 +46,7 @@ FUN_0062b770(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
   local_2c = 0;
   local_30 = 0;
   local_c = param_7;
-  (*g_playSystem_00802A38->vtable->vfunc_08)(g_playSystem_00802A38,0x124,0,0,local_44,0);
+  g_playSystem_00802A38->vfunc_08(0x124,0,0,local_44,0);
   return;
 }
 

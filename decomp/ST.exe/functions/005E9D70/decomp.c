@@ -17,7 +17,7 @@ void __thiscall WaitTy::DeleteCtrls(WaitTy *this)
   undefined4 *this_01;
   uint *puVar6;
   int iVar7;
-  uint uVar8;
+  byte bVar8;
   char cVar9;
   uint uVar10;
   InternalExceptionFrame local_50;
@@ -52,8 +52,8 @@ void __thiscall WaitTy::DeleteCtrls(WaitTy *this)
   FUN_006b5f80((int *)PTR_008075a8,0x112,0x38,0x204,0x19d);
   this_01 = &this_00->field_1A5B->field_0140;
   MMMObjTy::OutRGlProc
-            ((MMMObjTy *)this_01,(int)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0,0,0x112,0x38,
-             0x204,0x19d,this_01);
+            ((MMMObjTy *)this_01,(int)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,(MMMObjTy *)0x0,
+             (MMMObjTy *)0x0,0x112,0x38,0x204,0x19d,this_01);
   if (this_00->field_1AF8 != (HoloTy *)0x0) {
     HoloTy::Done(this_00->field_1AF8);
     Library::MSVCRT::FUN_0072e2b0(this_00->field_1AF8);
@@ -83,24 +83,24 @@ void __thiscall WaitTy::DeleteCtrls(WaitTy *this)
   if (pHVar4 != (HoloTy *)0x0) {
     uVar10 = 0;
     cVar9 = '\x01';
-    uVar8 = 0x10;
+    bVar8 = 0x10;
     iVar7 = 1;
     iVar3 = Library::DKW::DDX::FUN_006bf9f0((int *)PTR_008075a8,0x112,0x38,0x204,0x19d);
-    uVar8 = HoloTy::Init(this_00->field_1AF8,CASE_2,0x112,0x38,iVar3,iVar7,uVar8,cVar9,uVar10);
-    if (uVar8 != 0) {
+    uVar10 = HoloTy::Init(this_00->field_1AF8,CASE_2,0x112,0x38,iVar3,iVar7,bVar8,cVar9,uVar10);
+    if (uVar10 != 0) {
       pHVar4 = this_00->field_1AF8;
       pHVar4->field_0002 = 0;
       pHVar4->field_0017 = -1;
-      uVar8 = this_00->field_1AF8->field_0003;
-      if (-1 < (int)uVar8) {
-        Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,uVar8);
+      uVar10 = this_00->field_1AF8->field_0003;
+      if (-1 < (int)uVar10) {
+        Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,uVar10);
       }
       HoloTy::NextFas(this_00->field_1AF8);
     }
     PutDDXClip(0x112,0x38,0x112,0x38,0x204,(byte *)0x19d,'\x01',
                (BITMAPINFO *)g_startSystem_0081176C->field_002C);
   }
-  puVar6 = &this_00->field_1A94;
+  puVar6 = this_00->field_1A94;
   local_8 = 0x16;
   do {
     FUN_006b3af0((int *)PTR_008075a8,*puVar6);
@@ -148,17 +148,17 @@ void __thiscall WaitTy::DeleteCtrls(WaitTy *this)
     if (pHVar4 != (HoloTy *)0x0) {
       uVar10 = 0;
       cVar9 = '\x01';
-      uVar8 = 0x10;
+      bVar8 = 0x10;
       iVar7 = 1;
       iVar3 = Library::DKW::DDX::FUN_006bf9f0((int *)PTR_008075a8,10,0xb4,0xf9,0x121);
-      uVar8 = HoloTy::Init(this_00->field_1B00,CASE_4,10,0xb4,iVar3,iVar7,uVar8,cVar9,uVar10);
-      if (uVar8 != 0) {
+      uVar10 = HoloTy::Init(this_00->field_1B00,CASE_4,10,0xb4,iVar3,iVar7,bVar8,cVar9,uVar10);
+      if (uVar10 != 0) {
         pHVar4 = this_00->field_1B00;
         pHVar4->field_0002 = 0;
         pHVar4->field_0017 = -1;
-        uVar8 = this_00->field_1B00->field_0003;
-        if (-1 < (int)uVar8) {
-          Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,uVar8);
+        uVar10 = this_00->field_1B00->field_0003;
+        if (-1 < (int)uVar10) {
+          Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,uVar10);
         }
         HoloTy::NextFas(this_00->field_1B00);
       }
@@ -220,17 +220,17 @@ void __thiscall WaitTy::DeleteCtrls(WaitTy *this)
     if (pHVar4 != (HoloTy *)0x0) {
       uVar10 = 0;
       cVar9 = '\x01';
-      uVar8 = 0x10;
+      bVar8 = 0x10;
       iVar7 = 1;
       iVar3 = Library::DKW::DDX::FUN_006bf9f0((int *)PTR_008075a8,200,0x1f1,400,0x62);
-      uVar8 = HoloTy::Init(this_00->field_1AFC,CASE_1,200,0x1f1,iVar3,iVar7,uVar8,cVar9,uVar10);
-      if (uVar8 != 0) {
+      uVar10 = HoloTy::Init(this_00->field_1AFC,CASE_1,200,0x1f1,iVar3,iVar7,bVar8,cVar9,uVar10);
+      if (uVar10 != 0) {
         pHVar4 = this_00->field_1AFC;
         pHVar4->field_0002 = 0;
         pHVar4->field_0017 = -1;
-        uVar8 = this_00->field_1AFC->field_0003;
-        if (-1 < (int)uVar8) {
-          Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,uVar8);
+        uVar10 = this_00->field_1AFC->field_0003;
+        if (-1 < (int)uVar10) {
+          Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,uVar10);
         }
         HoloTy::NextFas(this_00->field_1AFC);
       }

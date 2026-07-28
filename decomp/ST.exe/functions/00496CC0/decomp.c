@@ -16,6 +16,7 @@ void FUN_00496cc0(int param_1,int param_2,uint param_3,undefined4 param_4,uint p
   if ((int)uVar2 < 0) {
     iVar4 = thunk_FUN_00497370(param_1,param_2,uVar1,param_5,param_6);
     if (0 < iVar4) {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_5 = thunk_FUN_004969f0(param_1,param_2,uVar1,param_4,param_5,pvVar3,0xffffffff);
       if ((&DAT_007fb24c)[uVar1] == 0) {
         puVar5 = (undefined4 *)

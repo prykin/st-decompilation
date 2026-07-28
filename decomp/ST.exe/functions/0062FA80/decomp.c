@@ -18,6 +18,7 @@ int __thiscall FUN_0062fa80(void *this,AnonShape_0062FA80_0B91B2B9 *param_1)
 
   pAVar6 = param_1;
   local_c = 0;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_1 == (AnonShape_0062FA80_0B91B2B9 *)0x0) {
     return 0;
   }
@@ -44,12 +45,14 @@ int __thiscall FUN_0062fa80(void *this,AnonShape_0062FA80_0B91B2B9 *param_1)
       piVar8 = (int *)&param_1->field_0x24;
       *(undefined4 *)((int)this + 0x1e1) = param_1->field_0020;
       *(undefined1 *)((int)this + 0x1f9) = param_1->field_0038;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (AnonShape_0062FA80_0B91B2B9 *)0x5;
       do {
         if ((*piVar8 != 0) && (iVar7 = STRubbishC::RubbishCreatePart(this), -1 < iVar7)) {
           local_c = local_c + 1;
         }
         piVar8 = piVar8 + 1;
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = (AnonShape_0062FA80_0B91B2B9 *)&param_1[-1].field_0x3b;
       } while (param_1 != (AnonShape_0062FA80_0B91B2B9 *)0x0);
       *(undefined4 *)((int)this + 0x1fa) = *(undefined4 *)&pAVar6->field_0x39;
@@ -59,6 +62,7 @@ int __thiscall FUN_0062fa80(void *this,AnonShape_0062FA80_0B91B2B9 *param_1)
       local_8 = 0x3d;
       puVar9 = (undefined4 *)&pAVar6[1].field_0x1;
       piVar8 = (int *)((int)this + 0x1e5);
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (AnonShape_0062FA80_0B91B2B9 *)0x5;
       do {
         puVar11 = (undefined4 *)*piVar8;
@@ -76,6 +80,7 @@ int __thiscall FUN_0062fa80(void *this,AnonShape_0062FA80_0B91B2B9 *param_1)
           *(undefined4 *)(*piVar8 + 0x10) = uVar4;
         }
         piVar8 = piVar8 + 1;
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = (AnonShape_0062FA80_0B91B2B9 *)&param_1[-1].field_0x3b;
       } while (param_1 != (AnonShape_0062FA80_0B91B2B9 *)0x0);
       return local_8;

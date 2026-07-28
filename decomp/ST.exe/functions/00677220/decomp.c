@@ -1,5 +1,8 @@
 
-undefined4 FUN_00677220(void)
+/* [STPrototypeApplier] Propagated return.
+   Evidence: 00677220 returns zeroed full register at 00677234 @ 00677237 */
+
+uint FUN_00677220(void)
 
 {
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */

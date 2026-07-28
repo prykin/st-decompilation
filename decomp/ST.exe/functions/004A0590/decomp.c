@@ -40,7 +40,7 @@ uint * __thiscall STGroupBoatC::Scout(STGroupBoatC *this,int param_1)
   STGroupBoatC *local_18;
   uint *local_14;
   DArrayTy *local_10;
-  uint local_c;
+  undefined1 local_c [4];
   uint local_8;
 
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -89,11 +89,13 @@ uint * __thiscall STGroupBoatC::Scout(STGroupBoatC *this,int param_1)
         do {
           DArrayGetElement(local_10,uVar11,&local_24);
           DArrayGetElement(array,uVar11,&local_2c);
-          DArrayGetElement((DArrayTy *)pSVar4->field_0029,uVar11,&local_c);
-          if ((short)local_c != -1) {
+          DArrayGetElement((DArrayTy *)pSVar4->field_0029,uVar11,local_c);
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+          if (local_c._0_2_ != 0xffff) {
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             pSVar6 = (STBoatC *)
                      STAllPlayersC::GetObjPtr
-                               (g_allPlayers_007FA174,pSVar4->field_0024,local_c,CASE_1);
+                               (g_allPlayers_007FA174,pSVar4->field_0024,local_c._0_2_,CASE_1);
             if (pSVar6 == (STBoatC *)0x0) {
               RaiseInternalException
                         (-0x5001fffc,g_overwriteContext_007ED77C,
@@ -118,11 +120,13 @@ uint * __thiscall STGroupBoatC::Scout(STGroupBoatC *this,int param_1)
       uVar11 = 0;
       if (0 < (int)local_8) {
         do {
-          DArrayGetElement((DArrayTy *)pSVar4->field_0029,uVar11,&local_c);
-          if ((short)local_c != -1) {
+          DArrayGetElement((DArrayTy *)pSVar4->field_0029,uVar11,local_c);
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+          if (local_c._0_2_ != 0xffff) {
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             pSVar6 = (STBoatC *)
                      STAllPlayersC::GetObjPtr
-                               (g_allPlayers_007FA174,pSVar4->field_0024,local_c,CASE_1);
+                               (g_allPlayers_007FA174,pSVar4->field_0024,local_c._0_2_,CASE_1);
             if (pSVar6 == (STBoatC *)0x0) {
               RaiseInternalException
                         (-0x5001fffc,g_overwriteContext_007ED77C,

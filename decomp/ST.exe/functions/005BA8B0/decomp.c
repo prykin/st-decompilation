@@ -19,7 +19,7 @@ void __thiscall PrividerTy::PaintPrivider(PrividerTy *this,char param_1)
   uint uVar5;
   uint uVar6;
   ccFntTy *pcVar7;
-  undefined4 uVar8;
+  uint uVar8;
   InternalExceptionFrame local_4c;
   PrividerTy *local_8;
 
@@ -42,8 +42,8 @@ void __thiscall PrividerTy::PaintPrivider(PrividerTy *this,char param_1)
   pPVar2 = local_8;
   if ((local_8->field_1C96 == (HoloTy *)0x0) && (param_1 == '\0')) {
     MMMObjTy::OutLstProc
-              (this_00,(int)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,(MMMObjTy *)0x0,0,0x79,
-               0x51,0x22e,0x145,(int)local_8);
+              (this_00,g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,(MMMObjTy *)0x0,(MMMObjTy *)0x0
+               ,0x79,0x51,0x22e,0x145,(int)local_8);
   }
   uVar8 = 0;
   pcVar7 = g_startSystem_0081176C->field_0030;

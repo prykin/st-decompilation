@@ -33,10 +33,12 @@ FUN_004c21a0(void *this,Global_sub_004C21A0_param_1Enum param_1,int *param_2,flo
   }
   if (local_c < _DAT_0079034c) {
     lVar6 = Library::MSVCRT::__ftol();
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_4 = (short)lVar6 + -1;
   }
   else {
     lVar6 = Library::MSVCRT::__ftol();
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_4 = (int)(short)lVar6;
   }
   pAVar1 = local_8;

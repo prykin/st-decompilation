@@ -1,5 +1,8 @@
 
-undefined4 FUN_00497370(int param_1,int param_2,uint param_3,undefined4 param_4,void *param_5)
+/* [STPrototypeApplier] Propagated parameter 3.
+   Evidence: 00496CC0 -> 00497370 @ 00496D62; FUN_00496cc0 parameter param_5 */
+
+undefined4 FUN_00497370(int param_1,int param_2,uint param_3,uint param_4,void *param_5)
 
 {
   byte bVar1;

@@ -7,11 +7,17 @@
    [STSourceProvenanceApplier end]
 
    [STPrototypeApplier] Propagated parameter 5.
-   Evidence: 0057B670 -> 0057A2C0 @ 0057B6F7 */
+   Evidence: 0057B670 -> 0057A2C0 @ 0057B6F7
+
+   [STPrototypeApplier] Propagated parameter 3.
+   Evidence: 0057B670 -> 0057A2C0 @ 0057B6F7; FUN_0057b670 parameter param_4
+
+   [STPrototypeApplier] Propagated parameter 6.
+   Evidence: 0057B670 -> 0057A2C0 @ 0057B6F7; FUN_0057b670 parameter param_5 */
 
 undefined4 __cdecl
-FUN_0057a2c0(AnonShape_0057A2C0_A829D396 *param_1,uint param_2,int *param_3,int param_4,int param_5,
-            int *param_6,int param_7)
+FUN_0057a2c0(AnonShape_0057A2C0_A829D396 *param_1,uint param_2,int *param_3,short *param_4,
+            int param_5,int *param_6,short *param_7)
 
 {
   undefined2 *puVar1;
@@ -92,6 +98,7 @@ FUN_0057a2c0(AnonShape_0057A2C0_A829D396 *param_1,uint param_2,int *param_3,int 
   ExceptionList = &local_14;
   iVar9 = Library::DKW::LIB::FUN_006aac70(param_2 * 8);
   *param_3 = iVar9;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (((iVar9 == 0) || (param_2 == 0)) || ((param_2 != 5 && (param_2 != 7)))) {
     iVar9 = ReportDebugMessage("E:\\__titans\\Igor\\to_etorp.cpp",0x4c,0,0,"%s",
                                "ConusExplosion:Bad parameters or memory error");
@@ -108,7 +115,7 @@ FUN_0057a2c0(AnonShape_0057A2C0_A829D396 *param_1,uint param_2,int *param_3,int 
     sVar17 = *(short *)&param_1->field_0x3c;
     sVar5 = param_1->field_0036;
     local_40 = (int)param_1->field_003E - (int)*(short *)&param_1->field_0x38;
-    if ((param_4 == 0) || (param_5 == 0)) {
+    if ((param_4 == (short *)0x0) || (param_5 == 0)) {
 LAB_0057ac02:
       iVar9 = FUN_006acf0d((int)*(short *)&param_1->field_0x34,(int)param_1->field_0036,
                            (int)*(short *)&param_1->field_0x38,(int)param_1->field_003A,
@@ -132,6 +139,7 @@ LAB_0057ac02:
             local_78 = local_78 +
                        ((uVar13 >> 0x10) % (((int)((local_78 >> 0x1f & 7U) + local_78) >> 3) + 1U) -
                        ((int)(local_78 + (local_78 >> 0x1f & 0xfU)) >> 4));
+            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             if (param_2 == 7) {
               iVar15 = *(int *)(iVar21 + 0x7cae80);
               iVar10 = (int)((ulonglong)
@@ -207,6 +215,7 @@ LAB_0057ac02:
         local_94 = ((local_64 - iVar9) * 10000) / local_b8;
         local_b8 = ((iVar21 - local_68) * 10000) / local_b8;
         if (((int)param_2 < 0) || (10 < (int)param_2)) {
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_2 = 7;
         }
         local_8 = 0;
@@ -425,7 +434,7 @@ LAB_0057a96b:
           } while (local_74 < 5);
           local_f0 = &stack0xfffffec8;
           if (local_d8 != 0) {
-            local_c8 = param_7 % local_d8;
+            local_c8 = (int)param_7 % local_d8;
             iVar9 = 0;
             local_f0 = &stack0xfffffec8;
             if (0 < local_d8) {

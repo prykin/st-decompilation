@@ -10,7 +10,16 @@
 
    [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/VisibleClassTy_sub_00558C00_param_1Enum. Cases:
-   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3 */
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=42, used=0), and
+   decompilation contains no value return
+
+   [STReturnSemanticsApplier] repair_unsafe_eax_rollback.
+   Evidence: restore the earlier evidence-backed void type after an unsafe automated rollback;
+   post-CALL EAX reads alone do not prove a source-level return value; machine CFG audit: used=8,
+   ignored=81, unknown=0 */
 
 void __thiscall
 VisibleClassTy::sub_00558C00

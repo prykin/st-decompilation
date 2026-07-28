@@ -52,7 +52,7 @@ void __thiscall WaitTy::DoneWait(WaitTy *this)
       Library::MSVCRT::FUN_0072e2b0(pWVar2->field_1AF8);
       pWVar2->field_1AF8 = (HoloTy *)0x0;
     }
-    puVar5 = &pWVar2->field_1A94;
+    puVar5 = pWVar2->field_1A94;
     iVar3 = 0x16;
     do {
       if (*puVar5 != 0xffffffff) {

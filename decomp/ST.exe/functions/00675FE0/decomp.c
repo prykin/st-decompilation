@@ -51,7 +51,7 @@ void __cdecl _AddAllGrpExch(uint param_1)
             /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, uVar7) (runtime stride) */
             puVar4 = (ushort *)(array->elementSize * uVar7 + (int)array->data);
 LAB_00676053:
-            pSVar5 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,objPtr,(uint)*puVar4,CASE_1);
+            pSVar5 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,objPtr,*puVar4,CASE_1);
             if (pSVar5 != (STGameObjC *)0x0) {
               iVar3 = (*pSVar5->vtable->vfunc_2C)();
               if (iVar3 == 0x78) {

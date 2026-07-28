@@ -102,7 +102,7 @@ undefined4 __fastcall FUN_005fc4a0(void *param_1)
     if (this == (STWorldObject *)0x0) {
       return 0;
     }
-    iVar6 = (*this->vtable->GetObjectTypeId)(this);
+    iVar6 = this->GetObjectTypeId();
     if (((iVar6 != 0x1b) && (iVar6 != 7)) && (iVar6 != 0x13)) {
       return 0;
     }

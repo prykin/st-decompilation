@@ -1,4 +1,7 @@
 
+/* [STPrototypeApplier] Propagated parameter 2.
+   Evidence: 0074A844 -> 00747406 @ 0074A881 */
+
 void __thiscall FUN_0074a844(void *this,int *param_1,int *param_2)
 
 {

@@ -1,4 +1,8 @@
 
+/* [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=6, used=0), and
+   decompilation contains no value return */
+
 void FUN_00415050(undefined4 param_1,undefined4 param_2,undefined4 param_3,int param_4,int param_5,
                  undefined4 param_6)
 
@@ -20,7 +24,8 @@ void FUN_00415050(undefined4 param_1,undefined4 param_2,undefined4 param_3,int p
   if (iVar3 < DAT_007f4d44) {
     Library::MSVCRT::FUN_0072da70
               ((undefined4 *)(DAT_007f4d18 + (iVar2 + 4 + iVar3 * 2) * 8),
-               (undefined4 *)(iVar3 * 0x18 + DAT_007f4d18),DAT_007f4d44 * 0x18 + iVar3 * -0x18);
+               (AnonPointee_TLOBaseTy_0607 *)(iVar3 * 0x18 + DAT_007f4d18),
+               DAT_007f4d44 * 0x18 + iVar3 * -0x18);
   }
   iVar3 = iVar3 * 0x18;
   *(undefined4 *)(iVar3 + DAT_007f4d18) = param_1;

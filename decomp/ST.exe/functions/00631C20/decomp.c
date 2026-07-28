@@ -28,6 +28,7 @@ FUN_00631c20(void *this,int param_1,int param_2,byte param_3,undefined4 param_4,
             ((byte)(&DAT_008087e9)[*puVar6 * 0x51] < 8)))) {
           bVar1 = (byte)*puVar6;
           if (DAT_00808a8f == '\0') {
+            /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             if (param_3 == bVar1) {
 LAB_00631d60:
               iVar5 = 0;

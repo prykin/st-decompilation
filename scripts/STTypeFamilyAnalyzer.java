@@ -105,6 +105,10 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
         }
         addCompatibleNamedMatches(namedMatches);
         List<AnonAuditRow> anonymousAudit = anonymousAudit(namedMatches);
+        List<ContextualPromotion> contextualPromotions =
+            contextualRecordPromotions(redirects);
+        for (ContextualPromotion promotion : contextualPromotions)
+            redirects.putIfAbsent(promotion.sourceType, promotion.targetType);
         List<Row> rows = variableRows(redirects);
         addGetObjPtrFamily(rows);
         addReturnedPointerConsumers(rows);
@@ -113,9 +117,11 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
         writeGroups(directory.resolve("type_family_groups.tsv"), groupRows);
         writeNamedMatches(directory.resolve("anon_named_type_matches.tsv"), namedMatches);
         writeAnonymousAudit(directory.resolve("anonymous_type_audit.tsv"), anonymousAudit);
+        writeContextualPromotions(directory.resolve(
+            "contextual_record_promotions.tsv"), contextualPromotions);
         writeRows(directory.resolve("type_family_proposals.tsv"), rows);
         writeSummary(directory.resolve("type_family_summary.txt"), groupRows, namedMatches,
-            anonymousAudit, rows);
+            anonymousAudit, contextualPromotions, rows);
         println("Type-family analysis complete: " + directory.toAbsolutePath().normalize());
         println("Exact groups=" + groupRows.stream().map(row -> row.id).distinct().count() +
             ", target proposals=" + rows.size() + ", apply=" +
@@ -360,11 +366,143 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
         if (canonical == null) return;
         boolean apply = variable.getSource() != SourceType.USER_DEFINED &&
             variable.getSource() != SourceType.IMPORTED;
+        boolean contextual = canonical.startsWith(
+            POINTER_SHAPES + "RecoveredRecord_");
         rows.add(new Row(apply, addr(function.getEntryPoint()), function.getName(true), kind,
             ordinal, variable.getName(), variable.getVariableStorage().toString(), typeSpec(type),
             variable.getSource().toString(), "pointer:" + canonical,
-            false, "EXACT_NAMED_LAYOUT", "high",
-            "anonymous structure has an exact full-layout match to one unique named type"));
+            false, contextual ? "CONTEXTUAL_GENERATED_RECORD" : "EXACT_NAMED_LAYOUT",
+            "high", contextual ?
+                "one script-owned pointer shape is used only by functions with one unique " +
+                "class-owner context; promote its stable machine layout to a generated " +
+                "owner-qualified record name" :
+                "anonymous structure has an exact full-layout match to one unique named type"));
+    }
+
+    /**
+     * A complete pointer shape can lack the original source-level noun even when its identity
+     * is no longer anonymous: one generated type flows through several function signatures and
+     * every owning/calling method belongs to the same class.  Give that record a deterministic,
+     * explicitly generated owner-qualified name.  This is not a geometry merge and does not
+     * invent field semantics; one source shape remains one type.
+     */
+    private List<ContextualPromotion> contextualRecordPromotions(
+            Map<String, String> existingRedirects) throws Exception {
+        Map<String, Usage> usage = anonymousUsage();
+        Map<Address, Set<String>> callerOwners = callerOwners();
+        Map<String, List<Function>> functionsByType = new TreeMap<>();
+        FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
+        while (functions.hasNext()) {
+            monitor.checkCancelled();
+            Function function = functions.next();
+            collectFunctionType(functionsByType, function, function.getReturn().getDataType());
+            for (Parameter parameter : function.getParameters())
+                collectFunctionType(functionsByType, function, parameter.getDataType());
+            for (Variable local : function.getLocalVariables())
+                collectFunctionType(functionsByType, function, local.getDataType());
+        }
+
+        List<ContextualPromotion> rows = new ArrayList<>();
+        Iterator<Structure> structures =
+            currentProgram.getDataTypeManager().getAllStructures();
+        while (structures.hasNext()) {
+            monitor.checkCancelled();
+            Structure structure = structures.next();
+            String source = structure.getPathName();
+            String description = structure.getDescription();
+            Usage targets = usage.getOrDefault(source, new Usage());
+            if (!source.startsWith(POINTER_SHAPES) ||
+                    !structure.getName().startsWith("AnonShape_") ||
+                    existingRedirects.containsKey(source) ||
+                    structure.getLength() < 2 || structure.getLength() > 0x200 ||
+                    concreteFields(structure) < 3 || targets.functions < 2 ||
+                    targets.globals != 0 || targets.fields != 0 ||
+                    description == null ||
+                    !description.contains("[STPointerShapeApplier]") ||
+                    !description.contains("generated_layout_sha256="))
+                continue;
+
+            List<Function> anchors = functionsByType.getOrDefault(source, List.of());
+            Set<String> owners = new TreeSet<>();
+            Address anchor = null;
+            for (Function function : anchors) {
+                String owner = functionOwner(function);
+                if (!owner.isBlank()) owners.add(owner);
+                else owners.addAll(callerOwners.getOrDefault(
+                    resolveThunk(function).getEntryPoint(), Set.of()));
+                if (!function.isThunk() && (anchor == null ||
+                        function.getEntryPoint().compareTo(anchor) < 0))
+                    anchor = function.getEntryPoint();
+            }
+            if (owners.size() != 1 || anchor == null) continue;
+            String owner = owners.iterator().next();
+            String target = POINTER_SHAPES + "RecoveredRecord_" +
+                sanitizeLeaf(owner) + "_" + addr(anchor);
+            DataType existing = currentProgram.getDataTypeManager().getDataType(target);
+            if (existing != null && (!(existing instanceof Structure targetStructure) ||
+                    !targetStructure.isEquivalent(structure)))
+                continue;
+            rows.add(new ContextualPromotion(source, target, owner, addr(anchor),
+                structure.getLength(), concreteFields(structure), targets.functions,
+                "unique owner context across every function-typed use; no global or " +
+                "containing-field aliases"));
+        }
+        rows.sort(Comparator.comparing(row -> row.sourceType));
+        return rows;
+    }
+
+    private void collectFunctionType(Map<String, List<Function>> result,
+            Function function, DataType type) {
+        if (!(type instanceof Pointer pointer) || pointer.getDataType() == null ||
+                !(pointer.getDataType() instanceof Structure structure) ||
+                !structure.getName().startsWith("AnonShape_")) return;
+        List<Function> values = result.computeIfAbsent(
+            structure.getPathName(), ignored -> new ArrayList<>());
+        if (!values.contains(function)) values.add(function);
+    }
+
+    private Map<Address, Set<String>> callerOwners() throws Exception {
+        Map<Address, Set<String>> result = new HashMap<>();
+        FunctionIterator callers = currentProgram.getFunctionManager().getFunctions(true);
+        while (callers.hasNext()) {
+            monitor.checkCancelled();
+            Function caller = callers.next();
+            String owner = functionOwner(caller);
+            if (owner.isBlank()) continue;
+            for (Function called : caller.getCalledFunctions(monitor)) {
+                Function resolved = resolveThunk(called);
+                result.computeIfAbsent(resolved.getEntryPoint(),
+                    ignored -> new TreeSet<>()).add(owner);
+            }
+        }
+        return result;
+    }
+
+    private Function resolveThunk(Function function) {
+        Set<Address> seen = new HashSet<>();
+        while (function != null && function.isThunk() &&
+                seen.add(function.getEntryPoint())) {
+            Function next = function.getThunkedFunction(false);
+            if (next == null || next.equals(function)) break;
+            function = next;
+        }
+        return function;
+    }
+
+    private String functionOwner(Function function) {
+        String qualified = function.getName(true);
+        int separator = qualified.lastIndexOf("::");
+        if (separator <= 0 || qualified.startsWith("Library::") ||
+                qualified.contains("SubmarineTitans::Recovered::HiddenThis::"))
+            return "";
+        String owner = qualified.substring(0, separator);
+        int nested = owner.lastIndexOf("::");
+        return nested < 0 ? owner : owner.substring(nested + 2);
+    }
+
+    private String sanitizeLeaf(String value) {
+        String result = value.replaceAll("[^A-Za-z0-9_$]", "_");
+        return result.isBlank() ? "UnknownOwner" : result;
     }
 
     private void addGetObjPtrFamily(List<Row> rows) {
@@ -585,6 +723,19 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
         }
     }
 
+    private void writeContextualPromotions(Path path,
+            List<ContextualPromotion> rows) throws Exception {
+        try (BufferedWriter out = Files.newBufferedWriter(path, StandardCharsets.UTF_8)) {
+            out.write("source_type\ttarget_type\towner\tanchor_function\tlength\t" +
+                "concrete_fields\tfunction_targets\tevidence\n");
+            for (ContextualPromotion row : rows)
+                out.write(row.sourceType + "\t" + row.targetType + "\t" +
+                    row.owner + "\t" + row.anchorFunction + "\t" + row.length +
+                    "\t" + row.concreteFields + "\t" + row.functionTargets +
+                    "\t" + clean(row.evidence) + "\n");
+        }
+    }
+
     private void writeRows(Path path, List<Row> rows) throws Exception {
         try (BufferedWriter out = Files.newBufferedWriter(path, StandardCharsets.UTF_8)) {
             out.write("apply\tfunction_address\texpected_function\ttarget_kind\ttarget_ordinal\t" +
@@ -602,7 +753,8 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
 
     private void writeSummary(Path path, List<GroupRow> groups,
             List<NamedMatchRow> namedMatches, List<AnonAuditRow> anonymousAudit,
-            List<Row> rows) throws Exception {
+            List<ContextualPromotion> contextualPromotions, List<Row> rows)
+            throws Exception {
         try (BufferedWriter out = Files.newBufferedWriter(path, StandardCharsets.UTF_8)) {
             out.write("ST cross-function type families\n\n");
             out.write("Anonymous types audited: " + anonymousAudit.size() +
@@ -610,6 +762,7 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
                 "\nNamed anonymous matches: " + namedMatches.size() +
                 "\nAutomatic named matches: " +
                 namedMatches.stream().filter(row -> row.apply).count() +
+                "\nContextual generated records: " + contextualPromotions.size() +
                 "\nAutomatic targets: " + rows.stream().filter(row -> row.apply).count() + "\n" +
                 "Note: anonymous-to-anonymous geometry matches are review-only; generated " +
                 "field_XXXX names are not semantic evidence. Exact named layouts are automatic " +
@@ -646,6 +799,9 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
         int functionTargets, int globalTargets, int fieldTargets,
         String exactNamedCandidates, String compatibleNamedCandidates,
         String automaticNamedType, String matchStatus, String usageStatus) {}
+    private record ContextualPromotion(String sourceType, String targetType,
+        String owner, String anchorFunction, int length, int concreteFields,
+        int functionTargets, String evidence) {}
     private record Row(boolean apply, String functionAddress, String function, String targetKind,
         int ordinal, String name, String storage, String expectedType, String source,
         String proposedType, boolean allowManualOverride, String family, String confidence,

@@ -1,11 +1,13 @@
 
-void __fastcall FUN_004ad5e0(int param_1)
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 004C6210 -> 004AD5E0 @ 004C62EC; /TLOBldMark+0x2c */
+
+void __fastcall FUN_004ad5e0(STT3DSprC *param_1)
 
 {
-  *(undefined1 *)(param_1 + 0x11) = 1;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+  param_1->field_0011 = 1;
   SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_006e9520
-            (*(AnonReceiver_004248D0 **)(param_1 + 0x3c),*(uint *)(param_1 + 0x18),0,0,0);
+            (param_1->field_003C,param_1->field_0018,0,0,0);
   return;
 }
 

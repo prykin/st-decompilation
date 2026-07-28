@@ -34,7 +34,7 @@ void __thiscall cLoadingTy::DrawLineCR(cLoadingTy *this,char *resourceString)
     iVar3 = pcVar2->field_0018 + pcVar2->field_0010;
     iVar4 = pcVar2->field_0014 + pcVar2->field_000C;
     Library::DKW::DDX::FUN_006b42d0
-              ((uint)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,iVar4,iVar3,
+              (g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,iVar4,iVar3,
                (BITMAPINFO *)pcVar2->field_0000,(uint *)0x0,iVar4,iVar3,pcVar2->field_001C,
                pcVar2->field_0034);
     iVar3 = pcVar2->field_0010 + pcVar2->field_0018;
@@ -58,9 +58,9 @@ void __thiscall cLoadingTy::DrawLineCR(cLoadingTy *this,char *resourceString)
                    pcVar2->field_0014 + pcVar2->field_000C,pcVar2->field_0010 + pcVar2->field_0018,
                    pcVar2->field_001C,pcVar2->field_0034,0);
       Library::DKW::DDX::FUN_006b42d0
-                ((uint)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,pcVar2->field_0014,
-                 pcVar2->field_0018,(BITMAPINFO *)pcVar2->field_0000,(uint *)0x0,pcVar2->field_0014,
-                 pcVar2->field_0018,pcVar2->field_001C,pcVar2->field_0020);
+                (g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,pcVar2->field_0014,pcVar2->field_0018
+                 ,(BITMAPINFO *)pcVar2->field_0000,(uint *)0x0,pcVar2->field_0014,pcVar2->field_0018
+                 ,pcVar2->field_001C,pcVar2->field_0020);
       Library::DKW::DDX::FUN_006b4680
                 ((int *)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,pcVar2->field_0014,
                  pcVar2->field_0018,(BITMAPINFO *)pcVar2->field_0004,(uint *)0x0,pcVar2->field_0014,

@@ -15,13 +15,12 @@ void __thiscall STBoatC::RestoreBoatData(STBoatC *this,int param_1)
   STBoatC *pSVar5;
   DArrayTy *pDVar6;
   int iVar7;
-  STBoatC_field_06F3State *pSVar8;
-  short *psVar9;
+  short *psVar8;
+  undefined4 *puVar9;
   undefined4 *puVar10;
-  STBoatC_field_06F3State *pSVar11;
-  undefined4 *puVar12;
-  short *psVar13;
-  int *piVar14;
+  short *psVar11;
+  ulonglong *puVar12;
+  int *piVar13;
   InternalExceptionFrame local_54;
   AnonShape_004900E0_F89C68CE *local_10;
   int local_c;
@@ -43,23 +42,23 @@ void __thiscall STBoatC::RestoreBoatData(STBoatC *this,int param_1)
     RaiseInternalException(iVar3,0,"E:\\__titans\\wlad\\To_boat.cpp",0x4ed5);
     return;
   }
-  pSVar8 = (STBoatC_field_06F3State *)&local_10->field_0x5c;
-  pSVar11 = &local_8->field_06F3;
+  puVar9 = (undefined4 *)&local_10->field_0x5c;
+  puVar12 = local_8->field_06CB + 5;
   for (iVar3 = 0x5a; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *pSVar11 = *pSVar8;
-    pSVar8 = pSVar8 + 1;
-    pSVar11 = pSVar11 + 1;
+    *(undefined4 *)puVar12 = *puVar9;
+    puVar9 = puVar9 + 1;
+    puVar12 = (ulonglong *)((int)puVar12 + 4);
   }
-  *(short *)pSVar11 = (short)*pSVar8;
-  *(byte *)((int)pSVar11 + 2) = *(byte *)((int)pSVar8 + 2);
-  puVar10 = (undefined4 *)&local_10->field_0x1c7;
-  puVar12 = &local_8->field_02C0;
+  *(undefined2 *)puVar12 = *(undefined2 *)puVar9;
+  *(undefined1 *)((int)puVar12 + 2) = *(undefined1 *)((int)puVar9 + 2);
+  puVar9 = (undefined4 *)&local_10->field_0x1c7;
+  puVar10 = &local_8->field_02C0;
   for (iVar3 = 0x65; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar12 = *puVar10;
+    *puVar10 = *puVar9;
+    puVar9 = puVar9 + 1;
     puVar10 = puVar10 + 1;
-    puVar12 = puVar12 + 1;
   }
-  *(undefined1 *)puVar12 = *(undefined1 *)puVar10;
+  *(undefined1 *)puVar10 = *(undefined1 *)puVar9;
   local_8->field_0455 = local_10->field_035C;
   local_8->field_0459 = local_10->field_0360;
   local_8->field_045D = local_10->field_0364;
@@ -77,59 +76,59 @@ void __thiscall STBoatC::RestoreBoatData(STBoatC *this,int param_1)
   local_8->field_048F = local_10->field_0392;
   local_8->field_0493 = local_10->field_0396;
   local_8->field_0497 = local_10->field_039A;
-  psVar9 = (short *)&local_10->field_0x39e;
-  psVar13 = &local_8->field_049B;
+  psVar8 = (short *)&local_10->field_0x39e;
+  psVar11 = &local_8->field_049B;
   for (iVar3 = 0x10; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *(undefined4 *)psVar13 = *(undefined4 *)psVar9;
-    psVar9 = psVar9 + 2;
-    psVar13 = psVar13 + 2;
+    *(undefined4 *)psVar11 = *(undefined4 *)psVar8;
+    psVar8 = psVar8 + 2;
+    psVar11 = psVar11 + 2;
   }
-  *psVar13 = *psVar9;
-  psVar9 = (short *)&local_10->field_0x3e0;
-  psVar13 = &local_8->field_04DD;
+  *psVar11 = *psVar8;
+  psVar8 = (short *)&local_10->field_0x3e0;
+  psVar11 = &local_8->field_04DD;
   for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *(undefined4 *)psVar13 = *(undefined4 *)psVar9;
-    psVar9 = psVar9 + 2;
-    psVar13 = psVar13 + 2;
+    *(undefined4 *)psVar11 = *(undefined4 *)psVar8;
+    psVar8 = psVar8 + 2;
+    psVar11 = psVar11 + 2;
   }
-  *psVar13 = *psVar9;
-  *(char *)(psVar13 + 1) = (char)psVar9[1];
-  puVar10 = (undefined4 *)&local_10->field_0x413;
-  puVar12 = (undefined4 *)&local_8->field_0510;
+  *psVar11 = *psVar8;
+  *(char *)(psVar11 + 1) = (char)psVar8[1];
+  puVar9 = (undefined4 *)&local_10->field_0x413;
+  puVar10 = (undefined4 *)&local_8->field_0510;
   for (iVar3 = 7; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar12 = *puVar10;
+    *puVar10 = *puVar9;
+    puVar9 = puVar9 + 1;
     puVar10 = puVar10 + 1;
-    puVar12 = puVar12 + 1;
   }
-  puVar10 = (undefined4 *)&local_10->field_0x42f;
-  psVar9 = &local_8->field_052C;
+  puVar9 = (undefined4 *)&local_10->field_0x42f;
+  psVar8 = &local_8->field_052C;
   for (iVar3 = 10; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *(undefined4 *)psVar9 = *puVar10;
-    puVar10 = puVar10 + 1;
-    psVar9 = psVar9 + 2;
+    *(undefined4 *)psVar8 = *puVar9;
+    puVar9 = puVar9 + 1;
+    psVar8 = psVar8 + 2;
   }
-  puVar10 = (undefined4 *)&local_10->field_0x457;
-  psVar9 = &local_8->field_0554;
+  puVar9 = (undefined4 *)&local_10->field_0x457;
+  psVar8 = &local_8->field_0554;
   for (iVar3 = 0xd; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *(undefined4 *)psVar9 = *puVar10;
-    puVar10 = puVar10 + 1;
-    psVar9 = psVar9 + 2;
+    *(undefined4 *)psVar8 = *puVar9;
+    puVar9 = puVar9 + 1;
+    psVar8 = psVar8 + 2;
   }
-  puVar10 = (undefined4 *)&local_10->field_0x48b;
-  puVar12 = (undefined4 *)&local_8->field_0588;
+  puVar9 = (undefined4 *)&local_10->field_0x48b;
+  puVar10 = (undefined4 *)&local_8->field_0588;
   for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar12 = *puVar10;
+    *puVar10 = *puVar9;
+    puVar9 = puVar9 + 1;
     puVar10 = puVar10 + 1;
-    puVar12 = puVar12 + 1;
   }
-  puVar10 = (undefined4 *)&local_10->field_0x4a3;
-  puVar12 = (undefined4 *)&local_8->field_05A0;
+  puVar9 = (undefined4 *)&local_10->field_0x4a3;
+  puVar10 = (undefined4 *)&local_8->field_05A0;
   for (iVar3 = 10; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar12 = *puVar10;
+    *puVar10 = *puVar9;
+    puVar9 = puVar9 + 1;
     puVar10 = puVar10 + 1;
-    puVar12 = puVar12 + 1;
   }
-  *(undefined2 *)puVar12 = *(undefined2 *)puVar10;
+  *(undefined2 *)puVar10 = *(undefined2 *)puVar9;
   *(undefined4 *)&local_8->field_0x5ca = local_10->field_04CD;
   local_c = 9;
   *(undefined4 *)&local_8->field_0x5ce = local_10->field_04D1;
@@ -144,75 +143,75 @@ void __thiscall STBoatC::RestoreBoatData(STBoatC *this,int param_1)
   *(undefined4 *)&local_8->field_0x5f0 = local_10->field_04F3;
   *(undefined4 *)&local_8->field_0x5f4 = local_10->field_04F7;
   local_8->field_05F8 = local_10->field_04FB;
-  puVar10 = (undefined4 *)&local_10->field_0x4ff;
-  puVar12 = (undefined4 *)&local_8->field_05FC;
+  puVar9 = (undefined4 *)&local_10->field_0x4ff;
+  puVar10 = (undefined4 *)&local_8->field_05FC;
   for (iVar3 = 7; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar12 = *puVar10;
+    *puVar10 = *puVar9;
+    puVar9 = puVar9 + 1;
     puVar10 = puVar10 + 1;
-    puVar12 = puVar12 + 1;
   }
-  *(undefined1 *)puVar12 = *(undefined1 *)puVar10;
-  puVar10 = (undefined4 *)&local_10->field_0x51c;
-  puVar12 = &local_8->field_0619;
+  *(undefined1 *)puVar10 = *(undefined1 *)puVar9;
+  puVar9 = (undefined4 *)&local_10->field_0x51c;
+  puVar10 = &local_8->field_0619;
   for (iVar3 = 7; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar12 = *puVar10;
+    *puVar10 = *puVar9;
+    puVar9 = puVar9 + 1;
     puVar10 = puVar10 + 1;
-    puVar12 = puVar12 + 1;
   }
-  puVar10 = (undefined4 *)&local_10->field_0x538;
-  puVar12 = &local_8->field_0635;
+  puVar9 = (undefined4 *)&local_10->field_0x538;
+  puVar10 = &local_8->field_0635;
   for (iVar3 = 0xd; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar12 = *puVar10;
+    *puVar10 = *puVar9;
+    puVar9 = puVar9 + 1;
     puVar10 = puVar10 + 1;
-    puVar12 = puVar12 + 1;
   }
-  *(undefined2 *)puVar12 = *(undefined2 *)puVar10;
-  puVar10 = (undefined4 *)&local_10->field_0x56e;
-  puVar12 = &local_8->field_066B;
+  *(undefined2 *)puVar10 = *(undefined2 *)puVar9;
+  puVar9 = (undefined4 *)&local_10->field_0x56e;
+  puVar10 = &local_8->field_066B;
   for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar12 = *puVar10;
+    *puVar10 = *puVar9;
+    puVar9 = puVar9 + 1;
     puVar10 = puVar10 + 1;
-    puVar12 = puVar12 + 1;
   }
-  puVar10 = (undefined4 *)&local_10->field_0x58e;
-  puVar12 = (undefined4 *)&local_8->field_068B;
+  puVar9 = (undefined4 *)&local_10->field_0x58e;
+  puVar10 = (undefined4 *)&local_8->field_068B;
   for (iVar3 = 7; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar12 = *puVar10;
+    *puVar10 = *puVar9;
+    puVar9 = puVar9 + 1;
     puVar10 = puVar10 + 1;
-    puVar12 = puVar12 + 1;
   }
-  *(undefined2 *)puVar12 = *(undefined2 *)puVar10;
-  psVar9 = (short *)&local_10->field_0x5ac;
-  psVar13 = &local_8->field_06A9;
+  *(undefined2 *)puVar10 = *(undefined2 *)puVar9;
+  psVar8 = (short *)&local_10->field_0x5ac;
+  psVar11 = &local_8->field_06A9;
   for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *(undefined4 *)psVar13 = *(undefined4 *)psVar9;
-    psVar9 = psVar9 + 2;
-    psVar13 = psVar13 + 2;
+    *(undefined4 *)psVar11 = *(undefined4 *)psVar8;
+    psVar8 = psVar8 + 2;
+    psVar11 = psVar11 + 2;
   }
-  *psVar13 = *psVar9;
-  puVar10 = (undefined4 *)&local_10->field_0x5ce;
-  psVar9 = &local_8->field_06CB;
+  *psVar11 = *psVar8;
+  puVar9 = (undefined4 *)&local_10->field_0x5ce;
+  puVar12 = local_8->field_06CB;
   for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *(undefined4 *)psVar9 = *puVar10;
-    puVar10 = puVar10 + 1;
-    psVar9 = psVar9 + 2;
+    *(undefined4 *)puVar12 = *puVar9;
+    puVar9 = puVar9 + 1;
+    puVar12 = (ulonglong *)((int)puVar12 + 4);
   }
-  puVar10 = &local_8->field_0282;
-  local_8->field_06EB = local_10->field_05EE;
-  local_8->field_06EF = local_10->field_05F2;
-  piVar14 = (int *)&local_10->field_0x14;
+  puVar9 = &local_8->field_0282;
+  *(undefined4 *)(local_8->field_06CB + 4) = local_10->field_05EE;
+  *(undefined4 *)((int)local_8->field_06CB + 0x24) = local_10->field_05F2;
+  piVar13 = (int *)&local_10->field_0x14;
   pSVar5 = local_8;
   do {
-    if (*piVar14 == -1) {
-      *puVar10 = 0;
+    if (*piVar13 == -1) {
+      *puVar9 = 0;
     }
     else {
-      uVar4 = FUN_006b0060((uint *)0x0,(uint *)(&pAVar2->field_0x0 + *piVar14));
-      *puVar10 = uVar4;
+      uVar4 = FUN_006b0060((uint *)0x0,(uint *)(&pAVar2->field_0x0 + *piVar13));
+      *puVar9 = uVar4;
       pSVar5 = local_8;
     }
-    piVar14 = piVar14 + 2;
-    puVar10 = puVar10 + 1;
+    piVar13 = piVar13 + 2;
+    puVar9 = puVar9 + 1;
     local_c = local_c + -1;
   } while (local_c != 0);
   if (*(int *)&pAVar2->field_0x37a != -1) {

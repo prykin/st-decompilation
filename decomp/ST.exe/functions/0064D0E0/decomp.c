@@ -12,7 +12,11 @@
    00656DDE | 00652810 -> 0064D0E0 @ 00656EAE | 00652810 -> 0064D0E0 @ 00656EEF | 00652810 ->
    0064D0E0 @ 00656F22 | 00652810 -> 0064D0E0 @ 00657127 | 00652810 -> 0064D0E0 @ 006571F8 |
    00652810 -> 0064D0E0 @ 006572CF | 00652810 -> 0064D0E0 @ 00657518 | 00652810 -> 0064D0E0 @
-   00657644 | 00652810 -> 0064D0E0 @ 00659A60 */
+   00657644 | 00652810 -> 0064D0E0 @ 00659A60
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=79, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall FUN_0064d0e0(void *this,int param_1,char *param_2,undefined4 param_3,int param_4)
 

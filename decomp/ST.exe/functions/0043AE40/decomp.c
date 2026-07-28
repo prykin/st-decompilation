@@ -45,9 +45,9 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint *param_1,int param_2,int 
       if (iVar6 != 0x3c) {
         if (iVar6 == 0x1ae) {
           if (param_3 == 1) {
-            pSVar7 = GetObjPtr(this,(char)piVar1[1],(uint)*(ushort *)(piVar1 + 2),CASE_3);
+            pSVar7 = GetObjPtr(this,(char)piVar1[1],*(ushort *)(piVar1 + 2),CASE_3);
             STFishC::sub_004162B0
-                      ((STFishC *)pSVar7,(undefined2 *)&local_10,(undefined2 *)&local_c,
+                      ((STFishC *)pSVar7,(short *)&local_10,(undefined2 *)&local_c,
                        (undefined2 *)&local_8);
             iVar5 = FUN_006eb230(PTR_00807598,pSVar7->field_01ED,DAT_00807410,DAT_00807414,
                                  DAT_00807418,DAT_0080741c);
@@ -133,9 +133,9 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint *param_1,int param_2,int 
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       if (param_3 == 1) {
-        pSVar7 = GetObjPtr(this,*(char *)(iVar6 + 4),(uint)*(ushort *)(iVar6 + 8),CASE_3);
+        pSVar7 = GetObjPtr(this,*(char *)(iVar6 + 4),*(ushort *)(iVar6 + 8),CASE_3);
         STFishC::sub_004162B0
-                  ((STFishC *)pSVar7,(undefined2 *)&local_10,(undefined2 *)&local_c,
+                  ((STFishC *)pSVar7,(short *)&local_10,(undefined2 *)&local_c,
                    (undefined2 *)&local_8);
         iVar5 = FUN_006eb230(PTR_00807598,pSVar7->field_01ED,DAT_00807410,DAT_00807414,DAT_00807418,
                              DAT_0080741c);
@@ -208,12 +208,10 @@ LAB_0043aee4:
       if (iVar6 == 0x5a) {
         if (param_3 == 1) {
           SVar9 = CASE_4;
-/* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 LAB_0043b0f1:
-          pSVar7 = GetObjPtr(this,(char)piVar1[1],
-                             CONCAT22((short)((uint)param_3 >> 0x10),(short)piVar1[2]),SVar9);
+          pSVar7 = GetObjPtr(this,(char)piVar1[1],*(ushort *)(piVar1 + 2),SVar9);
           STFishC::sub_004162B0
-                    ((STFishC *)pSVar7,(undefined2 *)&local_10,(undefined2 *)&local_c,
+                    ((STFishC *)pSVar7,(short *)&local_10,(undefined2 *)&local_c,
                      (undefined2 *)&local_8);
           iVar5 = FUN_006eb230(PTR_00807598,pSVar7->field_01ED,DAT_00807410,DAT_00807414,
                                DAT_00807418,DAT_0080741c);
@@ -255,10 +253,9 @@ LAB_0043b0af:
       if (param_3 != 1) goto cf_common_exit_0043B294;
       SVar9 = CASE_5;
     }
-    pSVar7 = GetObjPtr(this,(char)piVar1[1],(uint)*(ushort *)(piVar1 + 2),SVar9);
+    pSVar7 = GetObjPtr(this,(char)piVar1[1],*(ushort *)(piVar1 + 2),SVar9);
     STFishC::sub_004162B0
-              ((STFishC *)pSVar7,(undefined2 *)&local_10,(undefined2 *)&local_c,
-               (undefined2 *)&local_8);
+              ((STFishC *)pSVar7,(short *)&local_10,(undefined2 *)&local_c,(undefined2 *)&local_8);
     iVar5 = FUN_006eb230(PTR_00807598,pSVar7->field_01ED,DAT_00807410,DAT_00807414,DAT_00807418,
                          DAT_0080741c);
     if (iVar5 != 1) {
@@ -305,9 +302,9 @@ cf_common_exit_0043B294:
       if (param_3 == 1) {
         SVar9 = CASE_4;
 LAB_0043b2fe:
-        pSVar7 = GetObjPtr(this,(char)piVar1[1],(uint)*(ushort *)(piVar1 + 2),SVar9);
+        pSVar7 = GetObjPtr(this,(char)piVar1[1],*(ushort *)(piVar1 + 2),SVar9);
         STFishC::sub_004162B0
-                  ((STFishC *)pSVar7,(undefined2 *)&local_10,(undefined2 *)&local_c,
+                  ((STFishC *)pSVar7,(short *)&local_10,(undefined2 *)&local_c,
                    (undefined2 *)&local_8);
         iVar5 = FUN_006eb230(PTR_00807598,pSVar7->field_01ED,DAT_00807410,DAT_00807414,DAT_00807418,
                              DAT_0080741c);
@@ -341,10 +338,10 @@ LAB_0043b4a2:
   }
   else if (iVar6 == 0x1a4) {
     if (param_3 == 1) {
-      pSVar7 = GetObjPtr(this,(char)piVar1[1],(uint)*(ushort *)(piVar1 + 2),CASE_5);
+      pSVar7 = GetObjPtr(this,(char)piVar1[1],*(ushort *)(piVar1 + 2),CASE_5);
       STFishC::sub_004162B0
-                ((STFishC *)pSVar7,(undefined2 *)&local_10,(undefined2 *)&local_c,
-                 (undefined2 *)&local_8);
+                ((STFishC *)pSVar7,(short *)&local_10,(undefined2 *)&local_c,(undefined2 *)&local_8)
+      ;
       iVar5 = FUN_006eb230(PTR_00807598,pSVar7->field_01ED,DAT_00807410,DAT_00807414,DAT_00807418,
                            DAT_0080741c);
       goto joined_r0x0043b5ec;
@@ -353,10 +350,10 @@ LAB_0043b4a2:
   else {
     if (iVar6 != 0x1b8) goto LAB_0043b4a2;
     if (param_3 == 1) {
-      pSVar7 = GetObjPtr(this,(char)piVar1[1],(uint)*(ushort *)(piVar1 + 2),CASE_6);
+      pSVar7 = GetObjPtr(this,(char)piVar1[1],*(ushort *)(piVar1 + 2),CASE_6);
       STFishC::sub_004162B0
-                ((STFishC *)pSVar7,(undefined2 *)&local_10,(undefined2 *)&local_c,
-                 (undefined2 *)&local_8);
+                ((STFishC *)pSVar7,(short *)&local_10,(undefined2 *)&local_c,(undefined2 *)&local_8)
+      ;
       iVar5 = FUN_006eb230(PTR_00807598,pSVar7->field_01ED,DAT_00807410,DAT_00807414,DAT_00807418,
                            DAT_0080741c);
       if (iVar5 != 1) {

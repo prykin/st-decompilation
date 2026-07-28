@@ -1,5 +1,9 @@
 
-uint FUN_00754fd0(AnonShape_00754FD0_6B521B56 *param_1,undefined4 param_2,undefined2 param_3)
+/* [STPrototypeApplier] Propagated parameter 2.
+   Evidence: raw retained-width parameter lifetime: width=2, reads=1, sites=00754FF8 MOV DX,word ptr
+   [EBP + 0x10] */
+
+uint FUN_00754fd0(AnonShape_00754FD0_6B521B56 *param_1,undefined4 param_2,ushort param_3)
 
 {
   int iVar1;
@@ -14,7 +18,7 @@ uint FUN_00754fd0(AnonShape_00754FD0_6B521B56 *param_1,undefined4 param_2,undefi
   param_1->field_000C = iVar2;
   *(undefined4 *)(iVar2 + 0x18) = param_2;
   *(undefined2 *)(param_1->field_000C + 0x2a) = 1;
-  *(undefined2 *)(param_1->field_000C + 0x2e) = param_3;
+  *(ushort *)(param_1->field_000C + 0x2e) = param_3;
   *(undefined4 *)(param_1->field_000C + 0x14) = 1;
   *(undefined4 *)(param_1->field_000C + 0x1c) = 0;
   *(undefined4 *)(param_1->field_000C + 0x40) = 0;

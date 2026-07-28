@@ -22,6 +22,7 @@ int FUN_00755970(AnonShape_00755970_4FB144E0 *param_1,ushort *param_2,int param_
   do {
     *(int *)(pAVar2->field_000C + 0x1c) = local_8;
     iVar7 = FUN_00753b80((AnonShape_00750F20_F8C16F98 *)pAVar2,iVar7,local_8);
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = (AnonShape_00755970_4FB144E0 *)0xffffffff;
     pAVar6 = (AnonShape_00755970_4FB144E0 *)0xffffffff;
     pAVar3 = (AnonShape_00755970_4FB144E0 *)0x0;
@@ -57,6 +58,7 @@ int FUN_00755970(AnonShape_00755970_4FB144E0 *param_1,ushort *param_2,int param_
         *(AnonShape_00755970_4FB144E0 **)
          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
          (pAVar2->field_000C + 0x44 + *(int *)(pAVar2->field_000C + 0x1c) * 8) = pAVar3;
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = pAVar8;
       } while ((int)pAVar3 < (int)*(short *)(iVar7 + 8));
     }

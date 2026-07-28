@@ -6,7 +6,11 @@
    AiFltClassTy::_AddObjFlt
 
    [STPrototypeRepairApplier] Propagated parameter 1.
-   Evidence: 0065D940 -> 0065D760 @ 0065D98B */
+   Evidence: 0065D940 -> 0065D760 @ 0065D98B
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=4, used=0), and
+   decompilation contains no value return */
 
 void __thiscall AiFltClassTy::_AddObjFlt(AiFltClassTy *this,uint objPtr,int param_2)
 

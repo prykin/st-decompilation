@@ -3,9 +3,14 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\optpanel.cpp
-   OptPanelTy::Notification */
+   OptPanelTy::Notification
 
-void __thiscall OptPanelTy::Notification(OptPanelTy *this,char param_1,undefined1 param_2)
+   [STPrototypeApplier] Propagated parameter 2.
+   Evidence: 0054F1D0 -> 00533A10 @ 0054FCA4; literal 0 at 0054FCA0 | 00550380 -> 00533A10 @
+   005503A7; FUN_00550380 parameter param_1 | 0056F250 -> 00533A10 @ 0056F7B8; literal 0 at 0056F7B4
+    */
+
+void __thiscall OptPanelTy::Notification(OptPanelTy *this,char param_1,byte param_2)
 
 {
   OptPanelTy_field_0172State OVar1;

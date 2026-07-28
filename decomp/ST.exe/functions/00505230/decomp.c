@@ -3,7 +3,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel4.cpp
-   CPanelTy::PaintMunition */
+   CPanelTy::PaintMunition
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall CPanelTy::PaintMunition(CPanelTy *this,int param_1)
 
@@ -55,7 +59,7 @@ void __thiscall CPanelTy::PaintMunition(CPanelTy *this,int param_1)
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   DibPut((AnonShape_006B5B10_E0D06CF1 *)local_2c->field_0194,param_1,0x36,'\x01',
-         (byte *)local_2c->field_09F9);
+         (byte *)local_2c->field_09D9[8]);
   pCVar9 = &pCVar2->field_0C11;
   local_6 = 0;
   local_28 = -1;

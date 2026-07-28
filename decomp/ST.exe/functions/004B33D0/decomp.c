@@ -61,7 +61,7 @@ int FUN_004b33d0(uint param_1,int *param_2)
   int local_2e3;
   int local_2df;
   int local_2db;
-  undefined4 local_2d7;
+  int local_2d7;
   undefined4 local_2d3;
   InternalExceptionFrame local_2c0;
   undefined1 *local_27c;
@@ -245,7 +245,7 @@ int FUN_004b33d0(uint param_1,int *param_2)
           }
           *pbVar25 = 0;
           local_2ec = 1;
-          local_2e7 = (*local_58->vtable->slot_2C)(local_58);
+          local_2e7 = local_58->slot_2C();
           local_2e3 = (int)local_7c[0];
           local_2df = (int)local_8c[0];
           local_2db = (int)local_a8[0];
@@ -266,7 +266,7 @@ int FUN_004b33d0(uint param_1,int *param_2)
         else {
           if ((this[1].vtable != (STWorldObjectVTable *)param_1) ||
              (((this->value_20 != 1000 ||
-               (iVar10 = (*this->vtable->GetObjectTypeId)(this),
+               (iVar10 = this->GetObjectTypeId(),
                *(int *)(&DAT_00790888 + iVar10 * 4) != 0)) &&
               ((this->value_20 != 0x3e9 ||
                (*(int *)(&DAT_00790888 + *(int *)&local_110[0x10].field_0x19 * 4) != 0))))))
@@ -281,11 +281,11 @@ int FUN_004b33d0(uint param_1,int *param_2)
           }
           *pbVar25 = 0;
           local_2ec = 2;
-          local_2eb = (*local_110->vtable->GetObjectTypeId)(local_110);
+          local_2eb = local_110->GetObjectTypeId();
           if (local_2eb == 0x61) {
             local_2ec = local_2ec | 8;
           }
-          local_2e7 = (*local_58->vtable->slot_2C)(local_58);
+          local_2e7 = local_58->slot_2C();
           local_2e3 = (int)local_7c[0];
           local_2df = (int)local_8c[0];
           local_2db = (int)local_a8[0];
@@ -946,9 +946,9 @@ LAB_004b4f35:
                                 else if (*(short *)(local_27c + iVar15 * 2) == 0x205) {
                                   local_58 = (STFishC *)g_worldGrid.cells[iVar15].objects[0];
                                   if (((local_58 != (STFishC *)0x0) &&
-                                      (dVar14 = (*local_58->vtable->slot_2C)(local_58),
+                                      (dVar14 = local_58->slot_2C(),
                                       0x53 < (int)dVar14)) &&
-                                     ((dVar14 = (*local_58->vtable->slot_2C)(local_58),
+                                     ((dVar14 = local_58->slot_2C(),
                                       (int)dVar14 < 0x5b && (*(int *)&local_58[2].field_0xfd == 0)))
                                      ) goto LAB_004b4f35;
                                 }
@@ -1512,10 +1512,10 @@ LAB_004b5fd6:
               if (sVar18 == 0) {
                 local_58 = (STFishC *)g_worldGrid.cells[iVar10].objects[1];
                 if ((local_58 == (STFishC *)0x0) ||
-                   (((dVar14 = (*local_58->vtable->slot_2C)(local_58), dVar14 != 0xa6 &&
-                     (dVar14 = (*local_58->vtable->slot_2C)(local_58), dVar14 != 0xbd)) &&
-                    ((dVar14 = (*local_58->vtable->slot_2C)(local_58), dVar14 != 0xa7 &&
-                     (dVar14 = (*local_58->vtable->slot_2C)(local_58), dVar14 != 0xaf)))))) {
+                   (((dVar14 = local_58->slot_2C(), dVar14 != 0xa6 &&
+                     (dVar14 = local_58->slot_2C(), dVar14 != 0xbd)) &&
+                    ((dVar14 = local_58->slot_2C(), dVar14 != 0xa7 &&
+                     (dVar14 = local_58->slot_2C(), dVar14 != 0xaf)))))) {
 LAB_004b432d:
                   *(undefined2 *)(puVar28 + iVar10 * 2) = 0;
                 }
@@ -1530,7 +1530,7 @@ LAB_004b432d:
             }
             else {
               if (*(int *)&local_58->field_0x20 == 1000) {
-                local_34c = (*local_58->vtable->slot_2C)(local_58);
+                local_34c = local_58->slot_2C();
               }
               else {
                 if (*(int *)&local_58->field_0x20 != 0x3e9) goto LAB_004b432d;

@@ -6,7 +6,11 @@
    CPanelTy::PaintTxtBut
 
    [STPrototypeApplier] Propagated parameter 2.
-   Evidence: 004FB060 -> 004F3CF0 @ 004FCB08 | 004FB060 -> 004F3CF0 @ 004FCB36 */
+   Evidence: 004FB060 -> 004F3CF0 @ 004FCB08 | 004FB060 -> 004F3CF0 @ 004FCB36
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall
 CPanelTy::PaintTxtBut
@@ -84,11 +88,11 @@ cf_common_join_004F3D83:
       local_8 = cMf32::RecGet(g_cMf32_00806790,param_3,text,errorCode,iVar8);
       pCVar3 = local_14;
       uVar2 = (uint)param_1;
-      DibPut((AnonShape_006B5B10_E0D06CF1 *)(&local_14->field_0180)[uVar2],local_10,local_c,param_3,
-             (byte *)local_8);
+      DibPut((AnonShape_006B5B10_E0D06CF1 *)local_14->field_0148[uVar2 + 0xe],local_10,local_c,
+             param_3,(byte *)local_8);
       cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);
-      ccFntTy::SetSurf(*(ccFntTy **)&PTR_00802a28->field_0x24,(&pCVar3->field_0180)[uVar2],0,
-                       local_10,local_c,local_18[2],local_18[3]);
+      ccFntTy::SetSurf(*(ccFntTy **)&PTR_00802a28->field_0x24,(int)pCVar3->field_0148[uVar2 + 0xe],0
+                       ,local_10,local_c,local_18[2],local_18[3]);
       iVar9 = -1;
       iVar7 = -1;
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -98,9 +102,9 @@ cf_common_join_004F3D83:
       resourceString = (uint *)LoadResourceString(param_5,g_module_00807618);
       ccFntTy::WrTxt(*(ccFntTy **)&PTR_00802a28->field_0x24,resourceString,iVar8,iVar6,uVar5,iVar7,
                      iVar9);
-      if ((param_1 < 0xb) && (-1 < (&pCVar3->field_0148)[uVar2])) {
+      if ((param_1 < 0xb) && (-1 < (int)pCVar3->field_0148[uVar2])) {
         Library::DKW::DDX::FUN_006b3640
-                  ((int *)PTR_008075a8,(&pCVar3->field_0148)[uVar2],0xffffffff,
+                  ((int *)PTR_008075a8,(uint)pCVar3->field_0148[uVar2],0xffffffff,
                    (&pCVar3->field_003C)[uVar2],(&pCVar3->field_0094)[uVar2]);
       }
       g_currentExceptionFrame = local_5c.previous;

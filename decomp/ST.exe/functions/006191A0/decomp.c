@@ -10,6 +10,8 @@ uint __thiscall STJumpMineC::sub_006191A0(STJumpMineC *this,uint param_1,int par
   VisibleClassTy *pVVar1;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   uint in_EAX;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  uint extraout_EAX;
   int iVar2;
   STJumpMineC *local_8;
 
@@ -18,10 +20,12 @@ uint __thiscall STJumpMineC::sub_006191A0(STJumpMineC *this,uint param_1,int par
       (in_EAX = param_2, PTR_00807598->field_0044 <= param_2)) &&
      (param_2 <= PTR_00807598->field_0054)) {
     local_8 = this;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = FUN_006ddbd0();
     pVVar1 = g_visibleClass_00802A88;
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     in_EAX = param_1;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if ((param_1 == 0) || (g_visibleClass_00802A88 == (VisibleClassTy *)0x0))
     goto cf_common_exit_00619287;
     /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
@@ -30,10 +34,11 @@ uint __thiscall STJumpMineC::sub_006191A0(STJumpMineC *this,uint param_1,int par
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     if ((DAT_0080874d == -1) || (in_EAX = 0, g_visibleClass_00802A88->field_00F8 == 0))
     goto cf_common_exit_00619287;
-    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-    in_EAX = VisibleClassTy::sub_00558C00
-                       (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,
-                        (int)this->field_00C9,(int)this->field_00CB,&param_2,(int *)&local_8);
+    VisibleClassTy::sub_00558C00
+              (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,(int)this->field_00C9,
+               (int)this->field_00CB,&param_2,(int *)&local_8);
+    /* ST_PSEUDO[unresolved_register_input,return_width_artifact]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; candidate call-output artifact: verify return width, clobbers, or x87 state */
+    in_EAX = extraout_EAX;
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     if ((((iVar2 < 0) || (4 < iVar2)) || (param_2 < 0)) ||
        ((((pVVar1->field_0030 <= param_2 ||
@@ -43,6 +48,7 @@ uint __thiscall STJumpMineC::sub_006191A0(STJumpMineC *this,uint param_1,int par
          (in_EAX = (uint)pVVar1->field_004C[param_2 + in_EAX * pVVar1->field_0030], in_EAX != 0)))))
        ) goto cf_common_exit_00619287;
   }
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = 0;
 /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
 cf_common_exit_00619287:

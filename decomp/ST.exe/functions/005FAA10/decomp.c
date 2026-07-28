@@ -52,7 +52,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00416270::FUN_005faa10
       uVar6 = 0x5a;
     }
     FUN_006e8660(pAVar1->field_0211,(int *)&local_8,1,0,uVar4,uVar5,uVar6,uVar7,0);
-    FUN_006e98e0(pAVar1->field_0211,local_8,0,*(undefined4 *)puVar3,*(int *)((int)puVar3 + 0x21),1);
+    FUN_006e98e0(pAVar1->field_0211,local_8,0,*(int *)puVar3,*(int *)((int)puVar3 + 0x21),1);
     FUN_006ea270(pAVar1->field_0211,local_8,0,0);
     iVar2 = pAVar1->field_02E6;
     FUN_006ea960(pAVar1->field_0211,local_8,

@@ -1,9 +1,12 @@
 
-undefined4 __fastcall FUN_00492b20(AnonShape_00492B20_AFE20A9A *param_1)
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 00476CE0 -> 00492B20 @ 00476D5E; STBoatC::Capture this; stable alias EBX | 00476CE0 ->
+   00492B20 @ 00476E32; STBoatC::Capture this; stable alias EBX | 00476CE0 -> 00492B20 @ 00477C00;
+   STBoatC::Capture this; stable alias EBX */
+
+undefined4 __fastcall FUN_00492b20(STBoatC *param_1)
 
 {
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  undefined4 in_EAX;
   STGameObjC *this;
   int iVar1;
   int iVar2;
@@ -21,10 +24,8 @@ undefined4 __fastcall FUN_00492b20(AnonShape_00492B20_AFE20A9A *param_1)
   short local_8;
   short local_6;
 
-  /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
   this = STAllPlayersC::GetObjPtr
-                   (g_allPlayers_007FA174,param_1->field_05FC,
-                    CONCAT22((short)((uint)in_EAX >> 0x10),param_1->field_05FD),CASE_1);
+                   (g_allPlayers_007FA174,param_1->field_05FC,param_1->field_05FD,CASE_1);
   if ((((((this != (STGameObjC *)0x0) && (this->field_0018 == param_1->field_05FF)) &&
         (iVar1 = (*this->vtable->vfunc_108)(param_1->field_0024), iVar1 != 0)) &&
        ((STFishC::sub_004162B0((STFishC *)this,&local_8,&local_6,local_c), -1 < local_8 &&

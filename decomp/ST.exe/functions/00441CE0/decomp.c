@@ -3,7 +3,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
-   STAllPlayersC::_MakeMDPairs */
+   STAllPlayersC::_MakeMDPairs
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall STAllPlayersC::_MakeMDPairs(STAllPlayersC *this,char param_1)
 
@@ -124,7 +128,7 @@ void __thiscall STAllPlayersC::_MakeMDPairs(STAllPlayersC *this,char param_1)
         do {
           DArrayGetElement(local_18,uVar13,&local_8);
           if (local_8 != (STFishC *)0x0) {
-            dVar5 = (*local_8->vtable->slot_2C)(local_8);
+            dVar5 = local_8->slot_2C();
             pDVar15 = local_10;
             if ((dVar5 == 0x3b) || (dVar5 == 0x60)) {
 LAB_00441e92:

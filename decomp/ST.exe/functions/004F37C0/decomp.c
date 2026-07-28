@@ -6,11 +6,18 @@
    CPanelTy::PaintBBut
 
    [STPrototypeApplier] Propagated parameter 2.
-   Evidence: 004FB060 -> 004F37C0 @ 004FD224 */
+   Evidence: 004FB060 -> 004F37C0 @ 004FD224
+   [STAbiConsistencyApplier] stack_parameter_width target=parameter:5: parameter=/byte Evidence:
+   entry-use width=/byte; unmasked_dword_reads=0; evidence=004F3805 MOV EDX,dword ptr [EBP + 0x18];
+   first-use mask
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __thiscall
 CPanelTy::PaintBBut(CPanelTy *this,byte param_1,STMessage *param_2,byte param_3,char *param_4,
-                   uint param_5)
+                   byte param_5)
 
 {
   code *pcVar1;
@@ -42,7 +49,7 @@ CPanelTy::PaintBBut(CPanelTy *this,byte param_1,STMessage *param_2,byte param_3,
     return;
   }
   iVar5 = 1;
-  text = FUN_006f2c00(param_4,1,param_5 & 0xff);
+  text = FUN_006f2c00(param_4,1,(uint)param_5);
   local_c = cMf32::RecGet(g_cMf32_00806790,param_3,text,errorCode,iVar5);
   pCVar3 = local_8;
   uVar2 = (uint)param_1;
@@ -78,12 +85,12 @@ CPanelTy::PaintBBut(CPanelTy *this,byte param_1,STMessage *param_2,byte param_3,
 LAB_004f38ad:
     iVar5 = iVar5 - local_8->field_00C0;
   }
-  DibPut((AnonShape_006B5B10_E0D06CF1 *)(&local_8->field_0180)[uVar2],
+  DibPut((AnonShape_006B5B10_E0D06CF1 *)local_8->field_0148[uVar2 + 0xe],
          *local_10 - (&local_8->field_003C)[uVar2],iVar5 - iVar4,param_3,(byte *)local_c);
   cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_c);
-  if ((param_1 < 0xb) && (-1 < (&pCVar3->field_0148)[uVar2])) {
+  if ((param_1 < 0xb) && (-1 < (int)pCVar3->field_0148[uVar2])) {
     Library::DKW::DDX::FUN_006b3640
-              ((int *)PTR_008075a8,(&pCVar3->field_0148)[uVar2],0xffffffff,
+              ((int *)PTR_008075a8,(uint)pCVar3->field_0148[uVar2],0xffffffff,
                (&pCVar3->field_003C)[uVar2],(&pCVar3->field_0094)[uVar2]);
   }
   g_currentExceptionFrame = local_54.previous;

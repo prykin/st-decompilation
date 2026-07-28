@@ -32,8 +32,8 @@ int __thiscall FUN_00614ee0(void *this,int param_1,int param_2,int param_3,int p
                     + (int)sVar1].objects[0], this_00 == (STFishC *)0x0 ||
         (this_00->field_0018 != *(int *)((int)this + 0x2d1))))))) &&
      (iVar4 = STPlaySystemC::sub_006E62D0
-                        (g_playSystem_00802A38,*(int *)((int)this + 0x2d1),(int *)&local_1c),
-     this_00 = local_1c, iVar4 == -4)) {
+                        (g_playSystem_00802A38,*(AnonShape_005EFAE0_B406B78B **)((int)this + 0x2d1),
+                         (int *)&local_1c), this_00 = local_1c, iVar4 == -4)) {
     return -1;
   }
   thunk_FUN_00416270(this_00,(undefined2 *)&local_10,&local_14,&local_18);

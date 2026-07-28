@@ -55,19 +55,17 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00660180::FUN_00660180
       local_22 = param_1[3];
       local_20 = param_1[4];
       local_1e = param_1[5];
-      if ((*(short *)&this->field_0x7d == -2) || (g_allPlayers_007FA174 == (STAllPlayersC *)0x0)) {
+      if ((*(ushort *)&this->field_0x7d == 0xfffe) ||
+         (g_allPlayers_007FA174 == (STAllPlayersC *)0x0)) {
         pSVar3 = (STGroupBoatC *)0x0;
       }
       else {
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        pSVar3 = thunk_FUN_0042b760(this->field_0x24,
-                                    CONCAT22((short)((uint)param_1 >> 0x10),
-                                             *(short *)&this->field_0x7d));
+        pSVar3 = thunk_FUN_0042b760(this->field_0x24,*(ushort *)&this->field_0x7d);
       }
       if (pSVar3 == (STGroupBoatC *)0x0) {
         return 0xffffffff;
       }
-      (*pSVar3->vtable->vfunc_08)(pSVar3,CASE_2,local_34);
+      pSVar3->SetOrderData(CASE_2,local_34);
       return 0;
     }
   }
@@ -92,23 +90,21 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00660180::FUN_00660180
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   thunk_FUN_00675950(CONCAT22(sStack_12,local_14),CONCAT22(asStack_10[0],sStack_12),asStack_10[0],
                      &local_14,&sStack_12,asStack_10,0);
-  uVar1 = Library::DKW::TBL::FUN_006ae1c0(&array->flags,(undefined4 *)&local_14);
+  Library::DKW::TBL::FUN_006ae1c0(&array->flags,(undefined4 *)&local_14);
   local_18 = 1;
   local_1c = array;
-  if ((local_c->field_007D == -2) || (g_allPlayers_007FA174 == (STAllPlayersC *)0x0)) {
+  if ((local_c->field_007D == 0xfffe) || (g_allPlayers_007FA174 == (STAllPlayersC *)0x0)) {
     pSVar3 = (STGroupBoatC *)0x0;
   }
   else {
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    pSVar3 = thunk_FUN_0042b760(local_c->field_0024,
-                                CONCAT22((short)(uVar1 >> 0x10),local_c->field_007D));
+    pSVar3 = thunk_FUN_0042b760(local_c->field_0024,local_c->field_007D);
   }
   if (pSVar3 == (STGroupBoatC *)0x0) {
     RaiseInternalException
               (-1,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_flt.cpp",0x467);
   }
   else {
-    (*pSVar3->vtable->vfunc_08)(pSVar3,CASE_6,&local_1c);
+    pSVar3->SetOrderData(CASE_6,&local_1c);
   }
   if (array != (DArrayTy *)0x0) {
     DArrayDestroy(array);

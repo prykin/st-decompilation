@@ -19,7 +19,7 @@ uint * __thiscall STGroupC::GetTOBJList(STGroupC *this,int param_1)
   uint local_14;
   STGroupC *local_10;
   DArrayTy *local_c;
-  uint local_8;
+  undefined4 local_8;
 
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
@@ -33,9 +33,9 @@ uint * __thiscall STGroupC::GetTOBJList(STGroupC *this,int param_1)
     if (0 < (int)local_14) {
       do {
         DArrayGetElement((DArrayTy *)pSVar2->field_0029,index,&local_8);
-        if ((short)local_8 != -1) {
-          pSVar4 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,pSVar2->field_0024,local_8,CASE_1)
-          ;
+        if ((ushort)local_8 != 0xffff) {
+          pSVar4 = STAllPlayersC::GetObjPtr
+                             (g_allPlayers_007FA174,pSVar2->field_0024,(ushort)local_8,CASE_1);
           if (pSVar4 == (STGameObjC *)0x0) {
             RaiseInternalException
                       (-0x5001fffc,g_overwriteContext_007ED77C,

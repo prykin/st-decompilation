@@ -36,7 +36,7 @@ void __thiscall TradePanelTy::PaintPanel(TradePanelTy *this)
     iVar2 = 0;
     uVar3 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_01D1,
                          (uint)(byte)this_00->field_01D0);
-    FUN_006b5440(this_00->field_0068,0,0x22,0x38,uVar3,iVar2,bVar7);
+    FUN_006b5440((ushort *)this_00->field_0068,0,0x22,0x38,uVar3,iVar2,bVar7);
     Library::DKW::WGR::FUN_006b55f0
               ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0,0xa6,0x31,
                (byte *)this_00->field_0185,0,0xa6,0x31,0x77,0x26);
@@ -45,7 +45,7 @@ void __thiscall TradePanelTy::PaintPanel(TradePanelTy *this)
       iVar2 = 0;
       uVar3 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_01D5,
                            (-(uint)(DAT_0080874e != '\x03') & 0xfffffffe) + 4);
-      FUN_006b5440(this_00->field_0068,0,0xd9,0x34,uVar3,iVar2,bVar7);
+      FUN_006b5440((ushort *)this_00->field_0068,0,0xd9,0x34,uVar3,iVar2,bVar7);
       if (DAT_0080874e != '\x03') {
         iVar5 = 0;
         iVar2 = 0xb5;

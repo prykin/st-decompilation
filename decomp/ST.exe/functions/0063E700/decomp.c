@@ -59,13 +59,13 @@ int __thiscall FUN_0063e700(void *this,int param_1,int param_2,int param_3)
                    (int)(short)local_18].objects[1] != (STWorldObject *)0x0)))) {
                 local_c = local_c + 1;
                 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                thunk_FUN_00601d10(*(undefined4 *)((int)this + 0x259),0,
+                thunk_FUN_00601d10(*(int *)((int)this + 0x259),0,
                                    (int)g_worldGrid.cells
                                         [(int)sVar1 * (int)sVar3 +
                                          (int)sVar5 * (int)g_worldGrid.planeStride +
                                          (int)(short)local_18].objects[1],
                                    (short)*(undefined4 *)((int)this + 0x25d),
-                                   *(undefined2 *)((int)this + 0x261),0xa8,0x128);
+                                   *(ushort *)((int)this + 0x261),0xa8,0x128);
                 iVar2 = local_8;
                 sVar3 = g_worldGrid.sizeX;
               }
@@ -78,13 +78,13 @@ int __thiscall FUN_0063e700(void *this,int param_1,int param_2,int param_3)
                       (int)(short)local_18].objects[0] != (STWorldObject *)0x0)))) {
                 local_c = local_c + 1;
                 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                thunk_FUN_00601d10(*(undefined4 *)((int)this + 0x259),0,
+                thunk_FUN_00601d10(*(int *)((int)this + 0x259),0,
                                    (int)g_worldGrid.cells
                                         [(int)sVar1 * (int)sVar3 +
                                          (int)sVar5 * (int)g_worldGrid.planeStride +
                                          (int)(short)local_18].objects[0],
                                    (short)*(undefined4 *)((int)this + 0x25d),
-                                   *(undefined2 *)((int)this + 0x261),0xa8,0x128);
+                                   *(ushort *)((int)this + 0x261),0xa8,0x128);
                 iVar2 = local_8;
                 sVar3 = g_worldGrid.sizeX;
               }

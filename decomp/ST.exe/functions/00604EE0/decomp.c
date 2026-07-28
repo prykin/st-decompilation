@@ -2,7 +2,7 @@
 int __thiscall FUN_00604ee0(void *this,int *param_1)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   int iVar2;
   int *piVar3;
   STMessage *pSVar4;
@@ -20,6 +20,7 @@ int __thiscall FUN_00604ee0(void *this,int *param_1)
   iVar2 = 0;
   local_8 = 0;
   local_2c.id = MESS_ID_CREATE;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = (int *)0x0;
   if (0 < *(int *)((int)this + 0x269)) {
     piVar3 = (int *)((int)this + 0x219);
@@ -38,6 +39,7 @@ int __thiscall FUN_00604ee0(void *this,int *param_1)
         iVar2 = local_8;
         this = local_c;
       }
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (int *)((int)param_1 + 1);
       piVar3 = piVar3 + 1;
     } while ((int)param_1 < *(int *)((int)this + 0x269));

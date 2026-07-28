@@ -169,8 +169,8 @@ int __thiscall STLBombC::GetMessage(STLBombC *this,STMessage *message)
           }
           STT3DSprC::StartShow
                     ((STT3DSprC *)&this_00->field_01D5,0xe,g_playSystem_00802A38->field_00E4);
-          sub_00416240(this_00,*(undefined2 *)&this_00->field_0x26c,
-                       *(undefined2 *)&this_00->field_0x270,*(undefined2 *)&this_00->field_0x274);
+          sub_00416240(this_00,*(ushort *)&this_00->field_0x26c,*(short *)&this_00->field_0x270,
+                       *(ushort *)&this_00->field_0x274);
           *(int *)&this_00->field_0x245 = (int)*(short *)(DAT_00806724 + 0x2c);
           this_00->field_0231 = CASE_0;
           thunk_FUN_005860d0(this_00,*(int *)&this_00->field_0x26c,*(int *)&this_00->field_0x270,
@@ -264,7 +264,7 @@ int __thiscall STLBombC::GetMessage(STLBombC *this,STMessage *message)
     }
   }
   else if (SVar1 == MESS_STOCTOPUSC_0112) {
-    thunk_FUN_004ad5e0((int)&this_00->field_01D5);
+    thunk_FUN_004ad5e0((STT3DSprC *)&this_00->field_01D5);
   }
   else if (SVar1 == MESS_STSPRGAMEOBJC_0113) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */

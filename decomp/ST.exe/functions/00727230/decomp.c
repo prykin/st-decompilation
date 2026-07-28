@@ -31,6 +31,7 @@ void FUN_00727230(int *param_1)
   if (0 < local_8) {
     while (param_1[4] == 0) {
       iVar2 = iVar2 + 1;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = param_1 + 8;
       if (local_8 <= iVar2) {
         return;
@@ -380,6 +381,7 @@ LAB_007275f0:
       } while (iVar8 != 0 && bVar16);
 LAB_007278f0:
       piVar4 = param_1;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (int *)(DAT_0085707c + (DAT_00857064 + iVar2) * DAT_00857090 * 2);
       local_8 = (DAT_008570ec - DAT_00857064) - iVar2;
       do {
@@ -408,6 +410,7 @@ LAB_007278f0:
             *(short *)puVar15 = (short)(uVar3 >> 0x10);
           }
         }
+/* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
 LAB_0072797d:
         param_1 = (int *)((int)param_1 + DAT_00857090 * 2);
         piVar4 = piVar4 + 8;

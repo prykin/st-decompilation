@@ -2,11 +2,16 @@
 /* [STMethodOwnerApplier] Structural method owner recovered as CursorClassTy.
    Evidence: this_call_owners=[CursorClassTy]; agreed_this_calls=7; incoming_this_accesses=9;
    incoming_edx_uses=0; incoming_stack_parameter_uses=2; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=6; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=6; owner_evidence_coverage=adequate
 
-void __thiscall
-CursorClassTy::sub_0054B630
-          (CursorClassTy *this,CursorClassTy_field_04A2State param_1,undefined4 param_2)
+   [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 004EE4D0 -> 0054B630 @ 004EE5A4; zero-filled partial register load at 004EE594
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=7, used=0, unknown=0),
+   and decompilation contains no value return */
+
+void __thiscall CursorClassTy::sub_0054B630(CursorClassTy *this,uint param_1,undefined4 param_2)
 
 {
   sub_0054A8D0(this);

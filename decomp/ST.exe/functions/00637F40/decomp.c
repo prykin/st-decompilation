@@ -32,7 +32,7 @@ void __cdecl FUN_00637f40(uint param_1,uint param_2,int param_3)
       uVar4 = 0x78;
     }
     FUN_006e8660(PTR_00807598,(int *)&param_2,1,0,uVar2,uVar3,uVar4,uVar5,0);
-    FUN_006e98e0(PTR_00807598,param_2,0,*(undefined4 *)puVar1,*(int *)((int)puVar1 + 0x21),1);
+    FUN_006e98e0(PTR_00807598,param_2,0,*(int *)puVar1,*(int *)((int)puVar1 + 0x21),1);
     FUN_006ea270(PTR_00807598,param_2,0,0);
     SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006EA050::FUN_006ea050
               ((AnonReceiver_006EA050 *)PTR_00807598,param_2,2,param_1,param_3);

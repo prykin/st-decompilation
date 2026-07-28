@@ -3,9 +3,16 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\cpanel2.cpp
-   CPanelTy::SetCmdBoat */
+   CPanelTy::SetCmdBoat
+   [STAbiConsistencyApplier] stack_parameter_width target=parameter:1: parameter=/byte Evidence:
+   entry-use width=/byte; unmasked_dword_reads=0; evidence=00503D0B MOV ECX,dword ptr [EBP + 0x8];
+   first-use mask
 
-void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,uint param_1)
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
+   and decompilation contains no value return */
+
+void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,byte param_1)
 
 {
   byte bVar1;
@@ -14,11 +21,11 @@ void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,uint param_1)
   CPanelTy *this_00;
   int iVar4;
   int iVar5;
-  undefined4 local_9c [9];
-  undefined4 local_78 [9];
+  uint local_9c [9];
+  uint local_78 [9];
   InternalExceptionFrame local_54;
   CPanelTy *local_10;
-  undefined4 local_c;
+  uint local_c;
   undefined1 local_8;
   undefined1 local_6;
   undefined1 local_5;
@@ -92,11 +99,12 @@ void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,uint param_1)
     (*(code *)g_frmPanel_0080168C->field_0000->field_001C)(0);
   }
   CursorClassTy::sub_0054A8D0(g_cursorClass_00802A30);
-  bVar1 = (&this_00->field_0BA2)[param_1 & 0xff];
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+  bVar1 = *(byte *)((int)this_00->field_0B1F + param_1 + 0x83);
   switch((uint)bVar1) {
   case 1:
     local_5 = 0;
-    thunk_FUN_0054edf0((undefined4 *)0xa,(undefined4 *)&local_5,0,0xffffffff);
+    thunk_FUN_0054edf0((undefined4 *)0xa,(uint *)&local_5,0,0xffffffff);
     g_currentExceptionFrame = local_54.previous;
     return;
   case 2:
@@ -127,7 +135,7 @@ void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,uint param_1)
   case 0xb:
   case 0xc:
     local_6 = bVar1 == 0xb;
-    thunk_FUN_0054edf0((undefined4 *)0x28,(undefined4 *)&local_6,0,0xffffffff);
+    thunk_FUN_0054edf0((undefined4 *)0x28,(uint *)&local_6,0,0xffffffff);
     g_currentExceptionFrame = local_54.previous;
     return;
   case 0xe:

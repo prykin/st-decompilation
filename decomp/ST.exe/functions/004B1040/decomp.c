@@ -1,9 +1,24 @@
 #include "../../pseudocode_runtime.h"
 
 
+/* [STPrototypeApplier] Propagated parameter 2.
+   Evidence: 0064D270 -> 004B1040 @ 0064D679; AiEventClassTy::__CreateObjPl parameter param_3; MOVSX
+   at 0064D5DF establishes signed source width 2
+
+   [STPrototypeApplier] Propagated parameter 3.
+   Evidence: 0064D270 -> 004B1040 @ 0064D679; AiEventClassTy::__CreateObjPl parameter param_4; MOVSX
+   at 0064D5E3 establishes signed source width 2
+
+   [STPrototypeApplier] Propagated parameter 4.
+   Evidence: 0064D270 -> 004B1040 @ 0064D679; AiEventClassTy::__CreateObjPl parameter param_5; MOVSX
+   at 0064D5E7 establishes signed source width 2
+
+   [STPrototypeApplier] Propagated parameter 5.
+   Evidence: 0064D270 -> 004B1040 @ 0064D679; AiEventClassTy::__CreateObjPl parameter param_6 */
+
 void __cdecl
-FUN_004b1040(int param_1,int param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,
-            undefined4 param_6,int param_7,char *param_8,undefined4 param_9,undefined4 param_10)
+FUN_004b1040(int param_1,int param_2,int param_3,int param_4,int param_5,uint param_6,int param_7,
+            char *param_8,undefined4 param_9,undefined4 param_10)
 
 {
   undefined4 *puVar2;
@@ -13,10 +28,10 @@ FUN_004b1040(int param_1,int param_2,undefined4 param_3,undefined4 param_4,undef
   undefined4 local_50;
   undefined4 local_4c;
   int local_48;
-  undefined4 local_44;
-  undefined4 local_40;
-  undefined4 local_3c;
-  undefined4 local_38;
+  int local_44;
+  int local_40;
+  int local_3c;
+  uint local_38;
   int local_34;
   char local_30 [19];
   undefined4 local_1d;

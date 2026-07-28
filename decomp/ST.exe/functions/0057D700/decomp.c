@@ -25,7 +25,7 @@ STFishC::sub_0057D700(STFishC *this,uint *param_1,uint *param_2,int *param_3,int
   short sVar12;
   short sVar13;
   int local_18;
-  undefined2 local_a;
+  short local_a;
   undefined2 local_8;
   undefined2 local_6;
 

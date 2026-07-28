@@ -24,8 +24,8 @@ undefined4 __thiscall FUN_00616280(void *this,int *param_1,int *param_2,int *par
                      + (int)sVar1].objects[0], this_00 == (STWorldObject *)0x0 ||
          (*(int *)&this_00->field_0x18 != *(int *)((int)this + 0x2d1))))))))) &&
      (iVar4 = STPlaySystemC::sub_006E62D0
-                        (g_playSystem_00802A38,*(int *)((int)this + 0x2d1),(int *)&local_14),
-     this_00 = local_14, iVar4 == -4)) {
+                        (g_playSystem_00802A38,*(AnonShape_005EFAE0_B406B78B **)((int)this + 0x2d1),
+                         (int *)&local_14), this_00 = local_14, iVar4 == -4)) {
     return 0xffffffff;
   }
   thunk_FUN_00416270(this_00,(undefined2 *)(local_10 + 2),local_10 + 1,local_10);

@@ -3,10 +3,13 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
-   STAllPlayersC::UnRegisterGroup */
+   STAllPlayersC::UnRegisterGroup
+   [STAbiConsistencyApplier] stack_parameter_width target=parameter:2: parameter=/ushort Evidence:
+   entry-use width=/ushort; unmasked_dword_reads=0; evidence=0042F1AF MOV ESI,dword ptr [EBP + 0xc];
+   first-use mask */
 
 undefined4 __thiscall
-STAllPlayersC::UnRegisterGroup(STAllPlayersC *this,char param_1,uint param_2,int param_3)
+STAllPlayersC::UnRegisterGroup(STAllPlayersC *this,char param_1,ushort param_2,int param_3)
 
 {
   code *pcVar1;
@@ -29,14 +32,14 @@ STAllPlayersC::UnRegisterGroup(STAllPlayersC *this,char param_1,uint param_2,int
                  0x6a7);
     }
     pDVar2 = local_c;
-    iVar3 = DArrayGetElement(local_c,param_2 & 0xffff,&local_8);
+    iVar3 = DArrayGetElement(local_c,(uint)param_2,&local_8);
     if ((iVar3 == -4) || (local_8 != param_3)) {
       RaiseInternalException
                 (-0x5001fffe,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                  0x6a9);
     }
     local_8 = 0;
-    Library::DKW::TBL::FUN_006ae140(&pDVar2->flags,param_2 & 0xffff,&local_8);
+    Library::DKW::TBL::FUN_006ae140(&pDVar2->flags,(uint)param_2,&local_8);
     g_currentExceptionFrame = local_50.previous;
     return 0;
   }

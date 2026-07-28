@@ -37,9 +37,13 @@ LAB_006b719c:
       FreeAndNull(&local_8);
     }
     if (*(char *)local_8 != '\x05') break;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = (int *)FUN_006b73e0(piVar1[0x14],local_10);
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_1 == (int *)0x0) {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (int *)Library::DKW::LIB::FUN_006aac70(0x18);
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       if (param_1 == (int *)0x0) {
         return -2;
       }
@@ -70,6 +74,7 @@ LAB_006b719c:
   }
   if (*(char *)local_8 == '\x06') goto code_r0x006b72b1;
   goto LAB_006b7373;
+/* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
 code_r0x006b72b1:
   param_1 = (int *)FUN_006b73e0(piVar1[0x14],local_10);
   if (param_1 != (int *)0x0) {

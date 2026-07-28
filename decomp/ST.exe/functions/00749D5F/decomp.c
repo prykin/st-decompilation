@@ -1,5 +1,8 @@
 
-void __fastcall FUN_00749d5f(int param_1)
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 0074A143 -> 00749D5F @ 0074A16E; CBaseRenderer::BeginFlush this; stable alias ESI */
+
+void __fastcall FUN_00749d5f(CBaseRenderer *param_1)
 
 {
   DWORD DVar1;

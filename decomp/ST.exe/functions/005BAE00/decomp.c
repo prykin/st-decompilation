@@ -40,7 +40,7 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this,undefined4 *param_1)
   PrividerTy *local_20;
   uint local_1c;
   short *local_18;
-  int local_14;
+  uint local_14;
   short *local_10;
   uint local_c;
   int local_8;
@@ -243,7 +243,7 @@ LAB_005bb532:
       g_currentExceptionFrame = local_a0.previous;
       return;
     }
-    (*this_01->vtable->GetMessage)(this_01,(int)local_5c);
+    this_01->GetMessage((int)local_5c);
     break;
   case CASE_3:
     if ((local_20->field_1C96 != (HoloTy *)0x0) &&

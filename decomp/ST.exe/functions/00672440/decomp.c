@@ -3,11 +3,14 @@
    /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0064A970.
    Evidence: incoming_receiver_captures=1; receiver_accesses=14; incoming_edx_uses=0; calls=2;
    ecx_pointer_setup=2; ecx_scalar_setup=0; caller_cleanup_calls=0; callee_ret_pop=[12];
-   expected_stack=12; receiver_family_members=5 */
+   expected_stack=12; receiver_family_members=5
+
+   [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 00672440 -> 0064A910 @ 006724CA */
 
 int __thiscall
 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_00672440
-          (AnonReceiver_0064A970 *this,int param_1,int param_2,short *param_3)
+          (AnonReceiver_0064A970 *this,int *param_1,int param_2,short *param_3)
 
 {
   AnonReceiver_0064A970 *pAVar1;

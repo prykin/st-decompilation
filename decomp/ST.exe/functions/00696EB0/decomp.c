@@ -23,8 +23,8 @@ FUN_00696eb0(int *param_1,int param_2,int param_3,int param_4,int param_5,int pa
   if (((((-1 < param_2) && (param_2 < *param_1)) && (-1 < param_3)) &&
       ((param_3 < param_1[1] && (-1 < param_4)))) &&
      ((param_4 < *param_1 && ((-1 < param_5 && (param_5 < param_1[1])))))) {
-    iVar2 = thunk_FUN_006a1370(param_1,param_2,param_3,param_6,(undefined4 *)&local_14);
-    iVar3 = thunk_FUN_006a1370(param_1,param_4,param_5,param_6,(undefined4 *)&local_1c);
+    iVar2 = thunk_FUN_006a1370(param_1,param_2,param_3,param_6,(int)&local_14);
+    iVar3 = thunk_FUN_006a1370(param_1,param_4,param_5,param_6,(int)&local_1c);
     if (uStack_12 != 0) {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       pbVar5 = (byte *)(*(int *)(local_8 + 0x5833) * param_3 + *(int *)(local_8 + 0x584b) + param_2)

@@ -10,7 +10,7 @@ FUN_006e83f0(AnonShape_006B5B10_E0D06CF1 *param_1,int param_2,int param_3,int pa
   int iVar1;
 
   DAT_00856d8c = (uint)param_1->field_000E * param_1->field_0004 + 0x1f >> 3 & 0x1ffffffc;
-  iVar1 = FUN_006b4fa0((int)param_1);
+  iVar1 = FUN_006b4fa0((int *)param_1);
   DAT_00856da0 = param_4;
   _DAT_00856d80 = _DAT_0079dfd0 / (float)param_5;
   DAT_00856d88 = ((param_1->field_0008 - param_3) + -1) * DAT_00856d8c + param_2 + iVar1;

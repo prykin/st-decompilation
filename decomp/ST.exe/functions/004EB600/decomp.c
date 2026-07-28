@@ -20,6 +20,7 @@ void __thiscall FUN_004eb600(void *this,short *param_1)
     iVar2 = 0;
     psVar4 = param_1;
     do {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (short *)0x2;
       iVar3 = iVar2;
       psVar5 = psVar4;
@@ -36,6 +37,7 @@ void __thiscall FUN_004eb600(void *this,short *param_1)
         psVar4 = psVar5 + 2;
         /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
         psVar5[1] = *(short *)(iVar3 + 0x7f57c2 + *(int *)((int)this + 0x24) * 0xa62);
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = (short *)((int)param_1 + -1);
         iVar3 = iVar2;
         psVar5 = psVar4;

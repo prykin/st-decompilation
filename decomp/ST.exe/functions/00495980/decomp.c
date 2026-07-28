@@ -15,8 +15,8 @@ int __thiscall DumpClassC::GetMessage(DumpClassC *this,STMessage *message)
   code *pcVar1;
   DumpClassC *pDVar2;
   int iVar3;
-  int iVar4;
-  uint uVar5;
+  uint uVar4;
+  int iVar5;
   uint uVar6;
   short *psVar7;
   STWorldObject **ppSVar8;
@@ -34,14 +34,14 @@ int __thiscall DumpClassC::GetMessage(DumpClassC *this,STMessage *message)
     iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
     if (iVar3 != 0) {
       g_currentExceptionFrame = local_4c.previous;
-      iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\To_dump.cpp",0x3d,0,iVar3,"%s",
+      iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\To_dump.cpp",0x3d,0,iVar3,"%s",
                                  "DumpClassC::GetMessage - MESS_ID_CREATE");
-      if (iVar4 != 0) {
+      if (iVar5 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      iVar4 = 0x3e;
+      iVar5 = 0x3e;
 LAB_00495c27:
-      RaiseInternalException(iVar3,0,"E:\\__titans\\wlad\\To_dump.cpp",iVar4);
+      RaiseInternalException(iVar3,0,"E:\\__titans\\wlad\\To_dump.cpp",iVar5);
       return 0xffff;
     }
     g_pathingGrid.sizeX = *DAT_00806750;
@@ -55,14 +55,14 @@ LAB_00495c27:
       RaiseInternalException
                 (-1,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_dump.cpp",0x2b);
     }
-    uVar5 = (int)g_pathingGrid.sizeZ * (int)g_pathingGrid.sizeY * (int)g_pathingGrid.sizeX;
+    uVar4 = (int)g_pathingGrid.sizeZ * (int)g_pathingGrid.sizeY * (int)g_pathingGrid.sizeX;
     psVar7 = g_pathingGrid.cells;
-    for (uVar6 = (uVar5 & 0x7fffffff) >> 1; uVar6 != 0; uVar6 = uVar6 - 1) {
+    for (uVar6 = (uVar4 & 0x7fffffff) >> 1; uVar6 != 0; uVar6 = uVar6 - 1) {
       psVar7[0] = 0;
       psVar7[1] = 0;
       psVar7 = psVar7 + 2;
     }
-    for (uVar5 = uVar5 * 2 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
+    for (uVar4 = uVar4 * 2 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
       *(undefined1 *)psVar7 = 0;
       psVar7 = (short *)((int)psVar7 + 1);
     }
@@ -106,13 +106,13 @@ LAB_00495c27:
                    Library::DKW::LIB::FUN_006aac70
                              ((int)g_pathingScratchGrid.sizeY * (int)g_pathingScratchGrid.sizeX);
     iVar3 = (int)g_pathingScratchGrid.sizeY;
-    iVar4 = (int)g_pathingScratchGrid.sizeX;
+    iVar5 = (int)g_pathingScratchGrid.sizeX;
     puVar9 = DAT_007fb26c;
-    for (uVar5 = (uint)(iVar3 * iVar4) >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
+    for (uVar4 = (uint)(iVar3 * iVar5) >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
       *puVar9 = 0;
       puVar9 = puVar9 + 1;
     }
-    for (uVar5 = iVar3 * iVar4 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
+    for (uVar4 = iVar3 * iVar5 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
       *(undefined1 *)puVar9 = 0;
       puVar9 = (undefined4 *)((int)puVar9 + 1);
     }
@@ -127,12 +127,12 @@ LAB_00495c27:
     iVar3 = Library::MSVCRT::__setjmp3(local_90.jumpBuffer,0);
     if (iVar3 != 0) {
       g_currentExceptionFrame = local_90.previous;
-      iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\To_dump.cpp",0x58,0,iVar3,"%s",
+      iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\To_dump.cpp",0x58,0,iVar3,"%s",
                                  "DumpClassC::GetMessage - MESS_ID_DONE");
-      if (iVar4 != 0) {
+      if (iVar5 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      iVar4 = 0x59;
+      iVar5 = 0x59;
       goto LAB_00495c27;
     }
     thunk_FUN_00495ea0();
@@ -150,8 +150,8 @@ LAB_00495c27:
     if (g_dArray_007FB270 != (DArrayTy *)0x0) {
       DArrayDestroy(g_dArray_007FB270);
     }
-    iVar3 = FUN_006e4d40((void *)pDVar2->field_0010,pDVar2->field_000C);
-    if (iVar3 == 1) {
+    uVar4 = FUN_006e4d40((void *)pDVar2->field_0010,pDVar2->field_000C);
+    if (uVar4 == 1) {
       g_currentExceptionFrame = local_90.previous;
       return 0;
     }

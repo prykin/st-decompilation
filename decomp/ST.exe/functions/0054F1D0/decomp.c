@@ -36,7 +36,6 @@ undefined4 * __thiscall STPlaySystemC::PrepareMail(STPlaySystemC *this)
   char *pcVar24;
   undefined4 *puVar25;
   bool bVar26;
-  undefined1 uVar27;
   char local_17c [260];
   InternalExceptionFrame local_78;
   uint local_34;
@@ -306,9 +305,9 @@ LAB_0054f531:
         iVar8 = sub_0054EBB0(local_c,(char *)local_c->field_003D,7);
         puVar18 = (undefined4 *)0x0;
         if (iVar8 != 0) {
-          uVar27 = 7;
+          bVar7 = 7;
 LAB_0054f6c6:
-          puVar18 = (undefined4 *)thunk_FUN_00550380(uVar27);
+          puVar18 = (undefined4 *)thunk_FUN_00550380(bVar7);
           g_currentExceptionFrame = local_78.previous;
           return puVar18;
         }
@@ -322,7 +321,7 @@ LAB_0054f6c6:
         iVar8 = sub_0054EBB0(local_c,(char *)local_c->field_003D,local_28);
         puVar18 = (undefined4 *)0x0;
         if (iVar8 != 0) {
-          uVar27 = 8;
+          bVar7 = 8;
           goto LAB_0054f6c6;
         }
       }
@@ -352,7 +351,7 @@ LAB_0054f6c6:
         FUN_006b6500(g_int_00811764,1);
         iVar8 = FUN_00715360(g_int_00811764,1,'C',(char *)0x0,0,0,0xffffffff);
         if (iVar8 != 0) {
-          uVar27 = 0xc;
+          bVar7 = 0xc;
           goto cf_common_exit_0054F76E;
         }
         FUN_006b6500(g_int_00811764,DAT_0080733c);
@@ -369,7 +368,7 @@ LAB_0054f6c6:
         local_19 = '\x01';
         iVar8 = FUN_00715360(g_int_00811764,1,'B',&local_19,1,0,0xffffffff);
         if (iVar8 != 0) {
-          uVar27 = 0xb;
+          bVar7 = 0xb;
           goto cf_common_exit_0054F76E;
         }
         FUN_006b6500(g_int_00811764,DAT_0080733c);
@@ -395,9 +394,9 @@ LAB_0054f6c6:
   }
   DVar12 = STAppC::sub_006E51B0((STAppC *)&DAT_00807620);
   if (30000 < (int)(DVar12 - pSVar21->field_0079)) {
-    uVar27 = 10;
+    bVar7 = 10;
 cf_common_exit_0054F76E:
-    puVar18 = (undefined4 *)thunk_FUN_00550380(uVar27);
+    puVar18 = (undefined4 *)thunk_FUN_00550380(bVar7);
     g_currentExceptionFrame = local_78.previous;
     return puVar18;
   }
@@ -456,7 +455,7 @@ cf_common_exit_0054F76E:
         g_currentExceptionFrame = local_78.previous;
         return puVar18;
       }
-      uVar27 = 0x10;
+      bVar7 = 0x10;
       goto cf_common_exit_0054F76E;
     }
   }

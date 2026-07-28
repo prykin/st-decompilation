@@ -1,46 +1,52 @@
-#include "../../pseudocode_runtime.h"
 
+/* [STPrototypeApplier] Propagated parameter 2.
+   Evidence: 00664960 -> 00660540 @ 006653F2; MOVSX at 006653E0 establishes signed source width 2
+
+   [STPrototypeApplier] Propagated parameter 3.
+   Evidence: 00664960 -> 00660540 @ 006653F2; MOVSX at 006653D7 establishes signed source width 2
+
+   [STPrototypeApplier] Propagated parameter 4.
+   Evidence: 00664960 -> 00660540 @ 006653F2; MOVSX at 006653D0 establishes signed source width 2 */
 
 undefined4 __thiscall
-FUN_00660540(void *this,undefined4 param_1,undefined2 param_2,undefined2 param_3,undefined2 param_4,
+FUN_00660540(void *this,undefined4 param_1,short param_2,short param_3,short param_4,
             undefined2 param_5,char param_6,char *param_7)
 
 {
-  char *pcVar1;
   STGroupBoatC *this_00;
-  undefined4 *puVar4;
-  undefined4 local_24;
-  undefined2 local_20;
+  int iVar1;
+  short *psVar2;
+  short local_24;
+  short local_22;
+  short local_20;
   undefined4 local_1e;
   int local_1a;
   char local_16 [15];
   undefined2 local_7;
-  undefined2 uVar2;
 
-  puVar4 = &local_24;
-  memset(puVar4, 0, 0x1e); /* compiler bulk-zero initialization */
-  puVar4 = (undefined4 *)((byte *)puVar4 + 0x1c);
-  *(undefined1 *)((int)puVar4 + 2) = 0;
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  local_24._2_2_ = param_3;
+  psVar2 = &local_24;
+  for (iVar1 = 7; iVar1 != 0; iVar1 = iVar1 + -1) {
+    psVar2[0] = 0;
+    psVar2[1] = 0;
+    psVar2 = psVar2 + 2;
+  }
+  *psVar2 = 0;
+  *(undefined1 *)(psVar2 + 1) = 0;
+  local_22 = param_3;
   local_1a = (int)param_6;
   local_1e = param_1;
   local_20 = param_4;
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  local_24._0_2_ = param_2;
+  local_24 = param_2;
   *(undefined4 *)((int)this + 0xa7) = 0;
   local_7 = param_5;
-  uVar2 = 0;
   if (param_7 != (char *)0x0) {
-    pcVar1 = Library::MSVCRT::_strncpy(local_16,param_7,0xe);
-    uVar2 = (undefined2)((uint)pcVar1 >> 0x10);
+    Library::MSVCRT::_strncpy(local_16,param_7,0xe);
   }
-  if ((*(short *)((int)this + 0x7d) != -2) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) {
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    this_00 = thunk_FUN_0042b760(*(char *)((int)this + 0x24),
-                                 CONCAT22(uVar2,*(short *)((int)this + 0x7d)));
+  if ((*(ushort *)((int)this + 0x7d) != 0xfffe) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0))
+  {
+    this_00 = thunk_FUN_0042b760(*(char *)((int)this + 0x24),*(ushort *)((int)this + 0x7d));
     if (this_00 != (STGroupBoatC *)0x0) {
-      (*this_00->vtable->SetOrderData)(this_00,CASE_9,&local_24);
+      this_00->SetOrderData(CASE_9,&local_24);
       return 0;
     }
   }

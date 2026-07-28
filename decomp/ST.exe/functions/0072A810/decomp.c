@@ -1,7 +1,11 @@
 
 /* [STPrototypeApplier] Propagated parameter 5.
    Evidence: 007297E0 -> 0072A810 @ 00729A8E | 007297E0 -> 0072A810 @ 00729C9B | 007297E0 ->
-   0072A810 @ 00729DB2 | 007297E0 -> 0072A810 @ 0072A01D */
+   0072A810 @ 00729DB2 | 007297E0 -> 0072A810 @ 0072A01D
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=4, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void __cdecl
 FUN_0072a810(byte *param_1,int param_2,ushort *param_3,int param_4,int *param_5,uint *param_6)

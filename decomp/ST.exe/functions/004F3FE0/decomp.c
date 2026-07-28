@@ -72,18 +72,18 @@ cf_common_join_004F4070:
       local_8 = cMf32::RecGet(g_cMf32_00806790,param_3,text,(int *)0x0,1);
       pCVar3 = local_14;
       uVar2 = (uint)param_1;
-      DibPut((AnonShape_006B5B10_E0D06CF1 *)(&local_14->field_0180)[uVar2],local_10,local_c,param_3,
-             (byte *)local_8);
+      DibPut((AnonShape_006B5B10_E0D06CF1 *)local_14->field_0148[uVar2 + 0xe],local_10,local_c,
+             param_3,(byte *)local_8);
       cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);
       if (param_2->field_0014 == 3) {
         local_8 = cMf32::RecGet(g_cMf32_00806790,6,param_5,(int *)0x0,1);
-        DibPut((AnonShape_006B5B10_E0D06CF1 *)(&pCVar3->field_0180)[uVar2],local_10,local_c,'\x06',
-               (byte *)local_8);
+        DibPut((AnonShape_006B5B10_E0D06CF1 *)pCVar3->field_0148[uVar2 + 0xe],local_10,local_c,
+               '\x06',(byte *)local_8);
         cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);
       }
-      if ((param_1 < 0xb) && (-1 < (&pCVar3->field_0148)[uVar2])) {
+      if ((param_1 < 0xb) && (-1 < (int)pCVar3->field_0148[uVar2])) {
         Library::DKW::DDX::FUN_006b3640
-                  ((int *)PTR_008075a8,(&pCVar3->field_0148)[uVar2],0xffffffff,
+                  ((int *)PTR_008075a8,(uint)pCVar3->field_0148[uVar2],0xffffffff,
                    (&pCVar3->field_003C)[uVar2],(&pCVar3->field_0094)[uVar2]);
       }
       g_currentExceptionFrame = local_58.previous;

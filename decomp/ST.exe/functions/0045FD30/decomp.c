@@ -12,16 +12,12 @@ undefined4 __thiscall STBoatC::StopMove(STBoatC *this,void *param_1)
   short sVar2;
   short sVar3;
   code *pcVar4;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  undefined4 in_EAX;
   STGroupBoatC *this_00;
   int iVar5;
   undefined4 uVar6;
   STBoatC *pSVar7;
 
-  /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
-  this_00 = thunk_FUN_0042b760(*(char *)&this->field_0024,
-                               CONCAT22((short)((uint)in_EAX >> 0x10),this->field_0030));
+  this_00 = thunk_FUN_0042b760(*(char *)&this->field_0024,this->field_0030);
   if (this_00 == (STGroupBoatC *)0x0) {
     return 0xffffffff;
   }

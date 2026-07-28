@@ -48,7 +48,7 @@ STSharkC::CreateShark
   local_24 = param_1;
   local_20 = param_2;
   local_1c = param_3;
-  (*g_playSystem_00802A38->vtable->vfunc_08)(g_playSystem_00802A38,0x129,0,&param_9,local_38,0);
+  g_playSystem_00802A38->vfunc_08(0x129,0,&param_9,local_38,0);
   return param_9;
 }
 

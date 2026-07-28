@@ -27,8 +27,8 @@ undefined4 __fastcall FUN_004cc220(AnonShape_004CC220_7DEF08C7 *param_1)
   }
   param_1->field_0603 = this;
   exceptionCode =
-       STT3DSprC::Init(this,DAT_008073cc,param_1->field_0613,param_1->field_0617,0,
-                       param_1->field_060B,param_1->field_060F,0x11);
+       STT3DSprC::Init(this,DAT_008073cc,param_1->field_0613,param_1->field_0617,(STDcResourcC *)0x0
+                       ,param_1->field_060B,param_1->field_060F,0x11);
   if (exceptionCode != 0) {
     RaiseInternalException
               (exceptionCode,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_bspr.cpp",

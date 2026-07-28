@@ -20,6 +20,7 @@ void FUN_006d26d0(byte *param_1,int param_2,byte *param_3,int param_4,int param_
       param_1 = param_1 + param_2;
       iVar5 = param_7 + -1;
       bVar2 = param_7 < 1;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_7 = iVar5;
       if (iVar5 == 0 || bVar2) {
         return;
@@ -151,6 +152,7 @@ cf_continue_loop_006D27EE:
     param_1 = param_1 + (param_2 - param_6);
     iVar5 = param_7 + -1;
     bVar2 = param_7 < 1;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_7 = iVar5;
     if (iVar5 == 0 || bVar2) {
       return;

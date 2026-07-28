@@ -28,8 +28,6 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
   uint uVar11;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  undefined2 extraout_var_00;
   char *pcVar12;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   void *unaff_EDI;
@@ -201,9 +199,11 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
           else {
             piVar14 = (int *)0x0;
           }
-          if (piVar14[1] != 0) {
+          if ((AnonShape_005EFAE0_B406B78B *)piVar14[1] != (AnonShape_005EFAE0_B406B78B *)0x0) {
             local_c = 0;
-            iVar5 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,piVar14[1],&local_c);
+            iVar5 = STPlaySystemC::sub_006E62D0
+                              (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)piVar14[1],
+                               &local_c);
             if ((iVar5 == 0) && (local_c != 0)) {
               *piVar14 = local_c;
             }
@@ -223,10 +223,9 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
         objPtr = (STGameObjC *)0x0;
       }
       else {
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         objPtr = STAllPlayersC::GetObjPtr
                            (g_allPlayers_007FA174,*(char *)&local_10->field_05D7,
-                            CONCAT22(extraout_var,(message->arg0).words.high),CASE_1);
+                            (message->arg0).words.high,CASE_1);
       }
       if (objPtr != (STGameObjC *)0x0) {
         iVar5 = (*objPtr->vtable->vfunc_2C)();
@@ -308,7 +307,7 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
       if (this_00->field_0645 + 10 <= this_00->field_06FE) {
         this_00->field_0645 = this_00->field_06FE;
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-        thunk_FUN_006799b0(this_00,CONCAT22(extraout_var_00,(message->arg1).words.low));
+        thunk_FUN_006799b0(this_00,CONCAT22(extraout_var,(message->arg1).words.low));
         thunk_FUN_0067a1b0(this_00,(int)message);
       }
     }

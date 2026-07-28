@@ -1,6 +1,10 @@
 
 /* [STPrototypeApplier] Propagated parameter 0.
-   Evidence: 006BCD10 -> 006BCB30 @ 006BCEF6 */
+   Evidence: 006BCD10 -> 006BCB30 @ 006BCEF6
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
+   and decompilation contains no value return */
 
 void FUN_006bcb30(int *param_1,int param_2,int param_3,int param_4,int param_5)
 
@@ -20,12 +24,16 @@ void FUN_006bcb30(int *param_1,int param_2,int param_3,int param_4,int param_5)
   piVar2 = param_1;
   iVar8 = param_2 - param_1[param_1[0x79] * 2 + 0x47];
   if (iVar8 < 0) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_4 = param_4 + iVar8;
     iVar8 = 0;
   }
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_3 = param_3 - param_1[param_1[0x79] * 2 + 0x48];
   if (param_3 < 0) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_3 = 0;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_5 = param_5 + iVar8;
   }
   if ((0 < param_4) && (0 < param_5)) {
@@ -38,10 +46,12 @@ void FUN_006bcb30(int *param_1,int param_2,int param_3,int param_4,int param_5)
     iVar8 = param_1[0x7d] + 7;
     iVar8 = (int)(iVar8 + (iVar8 >> 0x1f & 7U)) >> 3;
     iVar7 = iVar8 * iVar5;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_3 = param_1[0x88] + iVar7;
     iVar5 = param_1[0x7d] * iVar5;
     iVar9 = param_1[0x81] + iVar5 + uVar4;
     iVar5 = param_1[0x87] + iVar5 + uVar4;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = (int *)(param_1[0x84] + iVar7);
     if (0 < local_10) {
       do {
@@ -71,8 +81,10 @@ void FUN_006bcb30(int *param_1,int param_2,int param_3,int param_4,int param_5)
         }
         iVar9 = iVar9 + piVar2[0x7d];
         iVar5 = iVar5 + piVar2[0x7d];
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_3 = param_3 + iVar8;
         local_10 = local_10 + -1;
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = (int *)((int)param_1 + iVar8);
       } while (local_10 != 0);
     }

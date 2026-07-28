@@ -11,8 +11,6 @@ AiFltClassTy::sub_00661CA0(AnonShape_00661CA0_93A030EF *param_1,undefined4 param
   undefined4 uVar1;
   AiTactClassTy *pAVar2;
   STGameObjC *pSVar3;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  undefined4 in_EAX;
   STGameObjC *this;
   uint uVar4;
   uint *puVar5;
@@ -43,13 +41,12 @@ AiFltClassTy::sub_00661CA0(AnonShape_00661CA0_93A030EF *param_1,undefined4 param
   uint local_c;
   undefined2 local_6;
 
-  /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if ((g_allPlayers_007FA174 != (STAllPlayersC *)0x0) &&
      (local_14 = param_1,
      this = STAllPlayersC::GetObjPtr
-                      (g_allPlayers_007FA174,param_1->field_0024,
-                       CONCAT22((short)((uint)in_EAX >> 0x10),*(undefined2 *)(param_3 + 0x16)),
-                       CASE_1), this != (STGameObjC *)0x0)) {
+                      (g_allPlayers_007FA174,param_1->field_0024,*(ushort *)(param_3 + 0x16),CASE_1)
+     , this != (STGameObjC *)0x0)) {
     local_10 = this;
     local_20 = thunk_FUN_004357f0(param_1->field_0024);
     uVar4 = (*this->vtable->vfunc_2C)();

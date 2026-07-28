@@ -28,6 +28,7 @@ STAllPlayersC::DelObjFromTmps
 
   local_c = 0xffffffff;
   if (param_2 < 0x1a5) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_2 == 0x1a4) {
       iVar8 = 0;
       /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
@@ -35,9 +36,9 @@ STAllPlayersC::DelObjFromTmps
       do {
         puVar1 = (undefined4 *)(iVar8 * 0x10 + iVar6);
         if (((*(int *)(iVar8 * 0x10 + iVar6) == 0x1a4) && (puVar1[1] == (int)param_3)) &&
-           (*(short *)(puVar1 + 2) == (short)param_4)) {
-          pSVar5 = GetObjPtr(this,param_3,param_4,CASE_5);
-          (*pSVar5->vtable->vfunc_E8)(pSVar5,0);
+           (*(ushort *)(puVar1 + 2) == (ushort)param_4)) {
+          pSVar5 = GetObjPtr(this,param_3,(ushort)param_4,CASE_5);
+          pSVar5->vfunc_E8(0);
           *puVar1 = 0;
           puVar1[1] = 0xff;
           *(undefined2 *)(puVar1 + 2) = 0;
@@ -55,7 +56,9 @@ STAllPlayersC::DelObjFromTmps
       } while (iVar8 < 5);
       return local_c;
     }
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_2 == 0x14) {
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = 0;
       /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
       iVar6 = param_1 * 0xa62 + 0x7f4f83;
@@ -68,9 +71,9 @@ STAllPlayersC::DelObjFromTmps
           if (0 < (int)dVar3) {
             do {
               DArrayGetElement(pDVar2,uVar9,&local_8);
-              if ((short)local_8 == (short)param_4) {
-                pSVar5 = GetObjPtr(this,param_3,param_4,CASE_1);
-                (*pSVar5->vtable->vfunc_E8)(pSVar5,0);
+              if ((ushort)local_8 == (ushort)param_4) {
+                pSVar5 = GetObjPtr(this,param_3,(ushort)param_4,CASE_1);
+                pSVar5->vfunc_E8(0);
                 local_8 = 0xffff;
                 Library::DKW::TBL::FUN_006ae140(&pDVar2->flags,uVar9,&local_8);
                 *(short *)((int)puVar1 + 0xe) = *(short *)((int)puVar1 + 0xe) + -1;
@@ -79,6 +82,7 @@ STAllPlayersC::DelObjFromTmps
                   *(undefined4 *)((int)puVar1 + 10) = 0;
                   *puVar1 = 0;
                 }
+                /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                 if (param_2 == 0) {
                   thunk_FUN_0043fc50(CASE_1,0);
                   GVar10 = CASE_2;
@@ -94,12 +98,14 @@ STAllPlayersC::DelObjFromTmps
             } while ((int)uVar9 < (int)dVar3);
           }
         }
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_2 = param_2 + 1;
         if (4 < param_2) {
           return local_c;
         }
       } while( true );
     }
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_2 == 0x5a) {
       iVar8 = 0;
       /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
@@ -107,9 +113,9 @@ STAllPlayersC::DelObjFromTmps
       do {
         puVar1 = (undefined4 *)(iVar8 * 0x10 + iVar6);
         if (((*(int *)(iVar8 * 0x10 + iVar6) == 0x5a) && (puVar1[1] == (int)param_3)) &&
-           (*(short *)(puVar1 + 2) == (short)param_4)) {
-          pSVar5 = GetObjPtr(this,param_3,param_4,CASE_4);
-          (*pSVar5->vtable->vfunc_E8)(pSVar5,0);
+           (*(ushort *)(puVar1 + 2) == (ushort)param_4)) {
+          pSVar5 = GetObjPtr(this,param_3,(ushort)param_4,CASE_4);
+          pSVar5->vfunc_E8(0);
           *puVar1 = 0;
           puVar1[1] = 0xff;
           *(undefined2 *)(puVar1 + 2) = 0;
@@ -127,6 +133,7 @@ STAllPlayersC::DelObjFromTmps
       } while (iVar8 < 5);
       return local_c;
     }
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_2 == 0x172) {
       iVar8 = 0;
       /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
@@ -134,9 +141,9 @@ STAllPlayersC::DelObjFromTmps
       do {
         puVar1 = (undefined4 *)(iVar8 * 0x10 + iVar6);
         if (((*(int *)(iVar8 * 0x10 + iVar6) == 0x172) && (puVar1[1] == (int)param_3)) &&
-           (*(short *)(puVar1 + 2) == (short)param_4)) {
-          pSVar5 = GetObjPtr(this,param_3,param_4,CASE_2);
-          (*pSVar5->vtable->vfunc_E8)(pSVar5,0);
+           (*(ushort *)(puVar1 + 2) == (ushort)param_4)) {
+          pSVar5 = GetObjPtr(this,param_3,(ushort)param_4,CASE_2);
+          pSVar5->vfunc_E8(0);
           *puVar1 = 0;
           puVar1[1] = 0xff;
           *(undefined2 *)(puVar1 + 2) = 0;
@@ -156,6 +163,7 @@ STAllPlayersC::DelObjFromTmps
     }
   }
   else if (param_2 < 0x1b9) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_2 == 0x1b8) {
       iVar8 = 0;
       /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
@@ -163,9 +171,9 @@ STAllPlayersC::DelObjFromTmps
       do {
         puVar1 = (undefined4 *)(iVar8 * 0x10 + iVar6);
         if (((*(int *)(iVar8 * 0x10 + iVar6) == 0x1b8) && (puVar1[1] == (int)param_3)) &&
-           (*(short *)(puVar1 + 2) == (short)param_4)) {
-          pSVar5 = GetObjPtr(this,param_3,param_4,CASE_6);
-          (*pSVar5->vtable->vfunc_E8)(pSVar5,0);
+           (*(ushort *)(puVar1 + 2) == (ushort)param_4)) {
+          pSVar5 = GetObjPtr(this,param_3,(ushort)param_4,CASE_6);
+          pSVar5->vfunc_E8(0);
           *puVar1 = 0;
           puVar1[1] = 0xff;
           *(undefined2 *)(puVar1 + 2) = 0;
@@ -183,6 +191,7 @@ STAllPlayersC::DelObjFromTmps
       } while (iVar8 < 5);
       return local_c;
     }
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_2 == 0x1ae) {
       iVar8 = 0;
       /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
@@ -190,9 +199,9 @@ STAllPlayersC::DelObjFromTmps
       do {
         puVar1 = (undefined4 *)(iVar8 * 0x10 + iVar6);
         if (((*(int *)(iVar8 * 0x10 + iVar6) == 0x1ae) && (puVar1[1] == (int)param_3)) &&
-           (*(short *)(puVar1 + 2) == (short)param_4)) {
-          pSVar5 = GetObjPtr(this,param_3,param_4,CASE_3);
-          (*pSVar5->vtable->vfunc_E8)(pSVar5,0);
+           (*(ushort *)(puVar1 + 2) == (ushort)param_4)) {
+          pSVar5 = GetObjPtr(this,param_3,(ushort)param_4,CASE_3);
+          pSVar5->vfunc_E8(0);
           *puVar1 = 0;
           puVar1[1] = 0xff;
           *(undefined2 *)(puVar1 + 2) = 0;
@@ -212,6 +221,7 @@ STAllPlayersC::DelObjFromTmps
     }
   }
   else if ((999 < param_2) && (param_2 < 0x3ea)) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = 0;
     /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
     iVar6 = param_1 * 0xa62 + 0x7f4fd3;
@@ -224,9 +234,9 @@ STAllPlayersC::DelObjFromTmps
         if (0 < (int)dVar3) {
           do {
             DArrayGetElement(pDVar2,uVar9,&local_8);
-            if ((short)local_8 == (short)param_4) {
-              pSVar5 = GetObjPtr(this,param_3,param_4,CASE_1);
-              (*pSVar5->vtable->vfunc_E8)(pSVar5,0);
+            if ((ushort)local_8 == (ushort)param_4) {
+              pSVar5 = GetObjPtr(this,param_3,(ushort)param_4,CASE_1);
+              pSVar5->vfunc_E8(0);
               local_8 = 0xffff;
               Library::DKW::TBL::FUN_006ae140(&pDVar2->flags,uVar9,&local_8);
               *(short *)((int)puVar1 + 0xe) = *(short *)((int)puVar1 + 0xe) + -1;
@@ -235,6 +245,7 @@ STAllPlayersC::DelObjFromTmps
                 *(undefined4 *)((int)puVar1 + 10) = 0;
                 *puVar1 = 0;
               }
+              /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               if (param_2 == 0) {
                 thunk_FUN_0043fc50(CASE_4,0);
                 GVar10 = CASE_5;
@@ -250,6 +261,7 @@ STAllPlayersC::DelObjFromTmps
           } while ((int)uVar9 < (int)dVar3);
         }
       }
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = param_2 + 1;
       if (4 < param_2) {
         return local_c;

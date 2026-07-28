@@ -13,30 +13,29 @@ int __thiscall AiTactClassTy::GetMessage(AiTactClassTy *this,STMessage *message)
 
 {
   STMessageId SVar1;
-  undefined4 *puVar2;
-  code *pcVar3;
+  code *pcVar2;
   AiTactClassTy *this_00;
-  int iVar4;
-  DArrayTy *pDVar5;
-  int iVar6;
-  uint uVar7;
-  int *piVar8;
+  int iVar3;
+  DArrayTy *pDVar4;
+  int iVar5;
+  uint uVar6;
+  undefined4 *puVar7;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   int unaff_EDI;
-  bool bVar9;
+  bool bVar8;
   InternalExceptionFrame local_58;
   AiTactClassTy *local_14;
   byte *local_10;
   AnonShape_0060EA30_DCEB68AD *local_c;
   int local_8;
 
-  uVar7 = 0;
+  uVar6 = 0;
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_14 = this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
+  iVar3 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   this_00 = local_14;
-  if (iVar4 == 0) {
+  if (iVar3 == 0) {
     local_14->field_012C = g_playSystem_00802A38->field_00E4;
     SVar1 = message->id;
     if (SVar1 < MESS_TORPHIT) {
@@ -60,19 +59,19 @@ int __thiscall AiTactClassTy::GetMessage(AiTactClassTy *this,STMessage *message)
         }
       }
       else if (SVar1 == MESS_ID_CREATE) {
-        puVar2 = (message->arg0).ptr;
-        if (puVar2 == (undefined4 *)0x0) {
+        puVar7 = (message->arg0).ptr;
+        if (puVar7 == (undefined4 *)0x0) {
           RaiseInternalException
                     (-6,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_tact.cpp",0x45e);
         }
-        InitData(this_00,puVar2);
-        if (puVar2[3] == 0) {
+        InitData(this_00,puVar7);
+        if (puVar7[3] == 0) {
           this_00->field_001C = DAT_00808754;
         }
         else {
           this_00->field_001C = this_00->field_007E;
         }
-        if (puVar2[3] == 0) {
+        if (puVar7[3] == 0) {
           InitDistrObj(this_00);
         }
       }
@@ -81,32 +80,33 @@ int __thiscall AiTactClassTy::GetMessage(AiTactClassTy *this,STMessage *message)
       }
     }
     else if (SVar1 == MESS_ID_ALLCREATE) {
-      pDVar5 = local_14->field_00A5;
-      if (0 < (int)pDVar5->count) {
-        bVar9 = pDVar5->count != 0;
+      pDVar4 = local_14->field_00A5;
+      if (0 < (int)pDVar4->count) {
+        bVar8 = pDVar4->count != 0;
         do {
-          if (bVar9) {
-            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar5, uVar7) (runtime stride) */
-            piVar8 = (int *)(pDVar5->elementSize * uVar7 + (int)pDVar5->data);
+          if (bVar8) {
+            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar4, uVar6) (runtime stride) */
+            puVar7 = (undefined4 *)(pDVar4->elementSize * uVar6 + (int)pDVar4->data);
           }
           else {
-            piVar8 = (int *)0x0;
+            puVar7 = (undefined4 *)0x0;
           }
           local_8 = 0;
-          if (((*piVar8 == 0) ||
-              (iVar4 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,*piVar8,&local_8),
-              iVar4 != 0)) || (local_8 == 0)) {
-            piVar8[1] = 0;
-            *piVar8 = 0;
+          if ((((AnonShape_005EFAE0_B406B78B *)*puVar7 == (AnonShape_005EFAE0_B406B78B *)0x0) ||
+              (iVar3 = STPlaySystemC::sub_006E62D0
+                                 (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)*puVar7,
+                                  &local_8), iVar3 != 0)) || (local_8 == 0)) {
+            puVar7[1] = 0;
+            *puVar7 = 0;
           }
           else {
-            piVar8[1] = local_8;
+            puVar7[1] = local_8;
             *(AiTactClassTy **)(local_8 + 0x284) = this_00;
           }
-          pDVar5 = this_00->field_00A5;
-          uVar7 = uVar7 + 1;
-          bVar9 = uVar7 < pDVar5->count;
-        } while ((int)uVar7 < (int)pDVar5->count);
+          pDVar4 = this_00->field_00A5;
+          uVar6 = uVar6 + 1;
+          bVar8 = uVar6 < pDVar4->count;
+        } while ((int)uVar6 < (int)pDVar4->count);
       }
     }
     else if (SVar1 == MESS_SHARED_5DD5) {
@@ -117,11 +117,11 @@ int __thiscall AiTactClassTy::GetMessage(AiTactClassTy *this,STMessage *message)
     return 0;
   }
   g_currentExceptionFrame = local_58.previous;
-  iVar6 = ReportDebugMessage("E:\\__titans\\ai\\ai_tact.cpp",0x4ad,0,iVar4,
+  iVar5 = ReportDebugMessage("E:\\__titans\\ai\\ai_tact.cpp",0x4ad,0,iVar3,
                              "AiTactClassTy::GetMessage error mess->id == %lX Name=%d",message->id,
                              local_14->field_0018);
-  if (iVar6 == 0) {
-    RaiseInternalException(iVar4,0,"E:\\__titans\\ai\\ai_tact.cpp",0x4ae);
+  if (iVar5 == 0) {
+    RaiseInternalException(iVar3,0,"E:\\__titans\\ai\\ai_tact.cpp",0x4ae);
     return 0xffff;
   }
   STDebugBreak(); /* noreturn in standalone pseudocode */

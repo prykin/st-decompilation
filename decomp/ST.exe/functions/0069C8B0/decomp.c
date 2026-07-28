@@ -36,7 +36,9 @@ uint * FUN_0069c8b0(int param_1,int param_2,int param_3)
     local_34 = iVar6;
     do {
       if (0 < param_2) {
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = local_18;
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_3 = local_1c;
         local_14 = local_20;
         local_28 = param_2;
@@ -98,8 +100,10 @@ LAB_0069ca03:
             } while (local_10 < local_30);
             if ((int)uVar7 < 0) goto LAB_0069ca03;
           }
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_3 = param_3 + 0xe;
           local_14 = (int *)((int)local_14 + 0xe);
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_1 = param_1 + 1;
           local_28 = local_28 + -1;
           iVar6 = local_34;

@@ -12,7 +12,7 @@ void __thiscall AiTactClassTy::GiveObjByGrpNum(AiTactClassTy *this,DArrayTy *par
   code *pcVar2;
   bool bVar3;
   int iVar4;
-  undefined2 *puVar5;
+  ushort *puVar5;
   STGameObjC *objPtr;
   AiFltClassTy *this_00;
   int iVar6;
@@ -28,19 +28,17 @@ void __thiscall AiTactClassTy::GiveObjByGrpNum(AiTactClassTy *this,DArrayTy *par
       while (uVar1 = uVar1 - 1, -1 < (int)uVar1) {
         if (uVar1 < param_1->count) {
           /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(param_1, uVar1) (runtime stride) */
-          puVar5 = (undefined2 *)(param_1->elementSize * uVar1 + (int)param_1->data);
+          puVar5 = (ushort *)(param_1->elementSize * uVar1 + (int)param_1->data);
         }
         else {
-          puVar5 = (undefined2 *)0x0;
+          puVar5 = (ushort *)0x0;
         }
         if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
           objPtr = (STGameObjC *)0x0;
         }
         else {
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           objPtr = STAllPlayersC::GetObjPtr
-                             (g_allPlayers_007FA174,*(char *)&local_8->field_0024,
-                              CONCAT22((short)((uint)puVar5 >> 0x10),*puVar5),CASE_1);
+                             (g_allPlayers_007FA174,*(char *)&local_8->field_0024,*puVar5,CASE_1);
         }
         if (objPtr != (STGameObjC *)0x0) {
           iVar4 = (*objPtr->vtable->vfunc_2C)();

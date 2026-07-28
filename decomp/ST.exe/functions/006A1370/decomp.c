@@ -1,13 +1,20 @@
 
-int __cdecl FUN_006a1370(int *param_1,int param_2,int param_3,int param_4,undefined4 *param_5)
+/* [STAbiConsistencyApplier] stack_parameter_scalar_role target=parameter:4: parameter=/int
+   Evidence: generic pointer has a scalar-only incoming lifetime before its first slot overwrite:
+   frame_offset=0x14, direct_reads=2, scalar_operations=2, signed_comparisons=2, unsigned_bounds=0,
+   pointer_dereferences=0, slot_reused=false; sites=006A1383 incoming load: MOV EAX,dword ptr [EBP +
+   0x14] | 006A139C scalar operation: IMUL ECX,EAX | 006A13C8 scalar operation: INC EAX | 006A13D0
+   incoming load: MOV EAX,dword ptr [EBP + 0x14] */
+
+int __cdecl FUN_006a1370(int *param_1,int param_2,int param_3,int param_4,int param_5)
 
 {
   ushort uVar1;
   int iVar2;
   undefined4 *puVar3;
 
-  *param_5 = 0;
-  *(undefined2 *)(param_5 + 1) = 0;
+  *(undefined4 *)param_5 = 0;
+  *(undefined2 *)(param_5 + 4) = 0;
   iVar2 = param_4;
   if (param_4 < 6) {
     puVar3 = (undefined4 *)
@@ -21,9 +28,9 @@ int __cdecl FUN_006a1370(int *param_1,int param_2,int param_3,int param_4,undefi
         return param_4;
       }
     }
-    if (param_5 != (undefined4 *)0x0) {
-      *param_5 = *puVar3;
-      *(ushort *)(param_5 + 1) = uVar1;
+    if (param_5 != 0) {
+      *(undefined4 *)param_5 = *puVar3;
+      *(ushort *)(param_5 + 4) = uVar1;
     }
   }
   return iVar2;

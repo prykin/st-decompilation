@@ -1,7 +1,15 @@
 
+/* [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 00664960 -> 00660B50 @ 00666DA3; MOVSX at 00666D98 establishes signed source width 2
+
+   [STPrototypeApplier] Propagated parameter 4.
+   Evidence: 00660C14 TEST AX,AX classifies dword parameter loaded at 00660C11 | 00660C19 CMP
+   AX,word ptr [0x007fb244] classifies dword parameter loaded at 00660C11 | 00664960 -> 00660B50 @
+   00666DA3; MOVSX at 00666D88 establishes signed source width 2 */
+
 undefined4 __fastcall
-FUN_00660b50(AnonShape_00660620_6BCED4D7 *param_1,undefined4 param_2,short param_3,short param_4,
-            undefined4 param_5,int param_6)
+FUN_00660b50(AnonShape_00660620_6BCED4D7 *param_1,int param_2,short param_3,short param_4,
+            int param_5,int param_6)
 
 {
   STGroupBoatC *pSVar1;
@@ -16,12 +24,10 @@ FUN_00660b50(AnonShape_00660620_6BCED4D7 *param_1,undefined4 param_2,short param
     local_8 = (short)param_5;
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_c = (AnonShape_00660620_6BCED4D7 *)CONCAT22(param_4,param_3);
-    if ((param_1->field_007D != -2) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) {
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      pSVar1 = thunk_FUN_0042b760(param_1->field_0024,
-                                  CONCAT22((short)((uint)param_2 >> 0x10),param_1->field_007D));
+    if ((param_1->field_007D != 0xfffe) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) {
+      pSVar1 = thunk_FUN_0042b760(param_1->field_0024,param_1->field_007D);
       if (pSVar1 != (STGroupBoatC *)0x0) {
-        (*pSVar1->vtable->SetOrderData)(pSVar1,CASE_C,&local_c);
+        pSVar1->SetOrderData(CASE_C,&local_c);
         return 0;
       }
     }
@@ -35,14 +41,12 @@ FUN_00660b50(AnonShape_00660620_6BCED4D7 *param_1,undefined4 param_2,short param
       {
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         _local_14 = CONCAT22(param_4,param_3);
-        if ((param_1->field_007D != -2) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) {
+        if ((param_1->field_007D != 0xfffe) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) {
           local_10 = (short)param_5;
           local_c = param_1;
-          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          pSVar1 = thunk_FUN_0042b760(param_1->field_0024,
-                                      CONCAT22((short)((uint)param_5 >> 0x10),param_1->field_007D));
+          pSVar1 = thunk_FUN_0042b760(param_1->field_0024,param_1->field_007D);
           if (pSVar1 != (STGroupBoatC *)0x0) {
-            (*pSVar1->vtable->SetOrderData)(pSVar1,CASE_12,&local_14);
+            pSVar1->SetOrderData(CASE_12,&local_14);
             return 0;
           }
         }

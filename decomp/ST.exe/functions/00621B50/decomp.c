@@ -67,7 +67,7 @@ int __thiscall STMineSetC::GetMessage(STMineSetC *this,STMessage *message)
       return 0;
     }
     if (SVar5 == MESS_HITKILL) {
-      thunk_FUN_004ad430((int)&local_8->field_01D5);
+      thunk_FUN_004ad430((STT3DSprC *)&local_8->field_01D5);
       sub_00622670(this_00);
       g_currentExceptionFrame = local_60.previous;
       return 0;
@@ -98,7 +98,7 @@ int __thiscall STMineSetC::GetMessage(STMineSetC *this,STMessage *message)
       g_currentExceptionFrame = local_60.previous;
       return 0;
     }
-    thunk_FUN_004ad5e0((int)&local_8->field_01D5);
+    thunk_FUN_004ad5e0((STT3DSprC *)&local_8->field_01D5);
     g_currentExceptionFrame = local_60.previous;
     return 0;
   }
@@ -173,7 +173,7 @@ int __thiscall STMineSetC::GetMessage(STMineSetC *this,STMessage *message)
           uVar11 = sub_006226C0(this_00,(int)this_00->field_0047,(int)this_00->field_0049);
           this_00->field_0353 = (char)uVar11;
           if (((char)uVar11 == '\0') && (this_00->field_02E9 != '\0')) {
-            thunk_FUN_004ad430((int)&this_00->field_01D5);
+            thunk_FUN_004ad430((STT3DSprC *)&this_00->field_01D5);
             this_00->field_02E9 = 0;
           }
         }
@@ -243,8 +243,8 @@ int __thiscall STMineSetC::GetMessage(STMineSetC *this,STMessage *message)
       }
       if ((pSVar15 == (STWorldObject *)0x0) &&
          (iVar9 = DumpClassC::WritePtr
-                            (sVar2,sVar4,sVar3,local_14,(AnonShape_00495EC0_95A268C6 *)this_00),
-         iVar9 == 0)) {
+                            (sVar2,sVar4,sVar3,this_00->field_008E,
+                             (RecoveredRecord_DumpClassC_00495EC0 *)this_00), iVar9 == 0)) {
         this_00->field_0314 = this_00->field_0314 + '\x01';
         iVar9 = local_1c;
       }
@@ -257,7 +257,7 @@ int __thiscall STMineSetC::GetMessage(STMineSetC *this,STMessage *message)
     }
     memset(&this_00->field_0x231, 0, 0x2d); /* compiler bulk-zero initialization */
     if (this_00->field_0353 != '\0') {
-      iVar9 = thunk_FUN_004ad650((int)&this_00->field_01D5);
+      iVar9 = thunk_FUN_004ad650((STT3DSprC *)&this_00->field_01D5);
       this_00->field_02BA = iVar9;
     }
     this_00->field_0363 = (void *)0x0;

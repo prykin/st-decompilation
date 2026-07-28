@@ -165,10 +165,13 @@ public class STAbiConsistencyApplier extends GhidraScript {
     private void finish(Function function, Map<String, String> row, String detail) throws Exception {
         if (!hasTag(function, TAG)) function.addTag(TAG);
         String old = function.getComment();
-        String line = COMMENT_MARKER + " " + row.get("repair_kind") + ": " + detail +
+        String target = row.get("target_kind") + ":" + row.get("target_ordinal");
+        String key = COMMENT_MARKER + " " + row.get("repair_kind") +
+            " target=" + target + ":";
+        String line = key + " " + detail +
             " Evidence: " + unt(row.get("evidence"));
         if (old == null || old.isBlank()) function.setComment(line);
-        else if (!old.contains(COMMENT_MARKER + " " + row.get("repair_kind")))
+        else if (!old.contains(key))
             function.setComment(old + "\n" + line);
         report.add(new Report(addr(function.getEntryPoint()), row.get("repair_kind"),
             "applied", detail));

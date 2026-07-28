@@ -29,7 +29,7 @@ void __thiscall OptPanelTy::SwitchOptPanel(OptPanelTy *this,char param_1)
   bool bVar13;
   Global_sub_005252C0_param_1Enum GVar14;
   InternalExceptionFrame local_5c;
-  undefined4 local_18;
+  uint local_18;
   uint local_14;
   undefined4 local_10;
   OptPanelTy *local_c;

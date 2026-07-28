@@ -19,7 +19,7 @@ void __thiscall TLOBaseTy::SetActivity(TLOBaseTy *this,int param_1)
   TLOBaseTy *local_8;
 
   local_8 = this;
-  if ((param_1 != 0) && (dVar3 = (*this->vtable->slot_F8)(this), dVar3 == 0)) {
+  if ((param_1 != 0) && (dVar3 = this->slot_F8(), dVar3 == 0)) {
     return;
   }
   local_4c.previous = g_currentExceptionFrame;

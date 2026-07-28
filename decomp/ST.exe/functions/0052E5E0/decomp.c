@@ -18,7 +18,7 @@ void __thiscall OptPanelTy::InitOptPanel(OptPanelTy *this)
   undefined4 uVar7;
   undefined4 uVar8;
   short sVar9;
-  undefined2 uVar10;
+  ushort uVar10;
   uint uVar11;
   byte bVar12;
   undefined4 uVar13;
@@ -28,7 +28,6 @@ void __thiscall OptPanelTy::InitOptPanel(OptPanelTy *this)
   undefined4 uVar17;
   undefined4 *puVar18;
   undefined4 uVar19;
-  undefined4 uVar20;
   InternalExceptionFrame local_4c;
   OptPanelTy *local_8;
 
@@ -97,22 +96,23 @@ void __thiscall OptPanelTy::InitOptPanel(OptPanelTy *this)
     uVar8 = 0xc002;
     uVar7 = 0xc001;
     pCVar4 = thunk_FUN_00571240("BUT_MEDIUM",0);
-    uVar7 = UPanelTy::CreateBut((UPanelTy *)this_00,0,1,0xc9,0x9f,1,pCVar4,uVar7,uVar8,sVar9,uVar10,
-                                uVar13,pcVar14,uVar17,uVar19);
-    uVar20 = 0;
+    uVar11 = UPanelTy::CreateBut((UPanelTy *)this_00,0,1,0xc9,0x9f,1,pCVar4,uVar7,uVar8,sVar9,uVar10
+                                 ,uVar13,pcVar14,uVar17,uVar19);
     uVar19 = 0;
-    pcVar14 = (char *)0x0;
     uVar17 = 0;
+    pcVar14 = (char *)0x0;
+    uVar13 = 0;
     uVar10 = 0;
     sVar9 = 0;
-    uVar13 = 0xc004;
-    uVar8 = 0xc003;
-    this_00->field_01AD = uVar7;
+    uVar8 = 0xc004;
+    uVar7 = 0xc003;
+    this_00->field_01AD[0] = uVar11;
     pCVar4 = thunk_FUN_00571240("BUT_MEDIUM",0);
-    uVar7 = UPanelTy::CreateBut((UPanelTy *)this_00,0,0,0x93,0x9f,1,pCVar4,uVar8,uVar13,sVar9,uVar10
-                                ,uVar17,pcVar14,uVar19,uVar20);
-    this_00->field_01B1 = uVar7;
-    this_00->field_0301 = this_00->field_0038;
+    uVar11 = UPanelTy::CreateBut((UPanelTy *)this_00,0,0,0x93,0x9f,1,pCVar4,uVar7,uVar8,sVar9,uVar10
+                                 ,uVar13,pcVar14,uVar17,uVar19);
+    uVar7 = this_00->field_0038;
+    this_00->field_01AD[1] = uVar11;
+    this_00->field_0301 = uVar7;
     g_currentExceptionFrame = local_4c.previous;
     return;
   }

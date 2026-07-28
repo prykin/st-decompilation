@@ -1,5 +1,9 @@
 
-void FUN_004e6310(int param_1,uint param_2,uint param_3)
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 004E2C30 -> 004E6310 @ 004E2CDD; /TLOBaseTy+0x24 | 004E7390 -> 004E6310 @ 004E755C;
+   FUN_004e7390 parameter param_1 */
+
+void FUN_004e6310(byte *param_1,uint param_2,uint param_3)
 
 {
   int *piVar1;
@@ -17,14 +21,15 @@ void FUN_004e6310(int param_1,uint param_2,uint param_3)
   AnonShape_004DDCC0_33DEB43E *local_c;
   AnonShape_00494AE0_7F188308 *local_8;
 
-  if ((((-1 < param_1) && (param_1 < 8)) && (0 < (int)param_2)) && ((int)param_2 < 0x9b)) {
+  if ((((-1 < (int)param_1) && ((int)param_1 < 8)) && (0 < (int)param_2)) && ((int)param_2 < 0x9b))
+  {
     /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
-    iVar11 = param_1 * 0xa62;
+    iVar11 = (int)param_1 * 0xa62;
     *(uint *)(iVar11 + 0x7f5147 + param_2 * 4) = param_3;
     pbVar2 = (byte *)(iVar11 + 0x7f511f + ((int)(param_2 ^ 7) >> 3));
     *pbVar2 = *pbVar2 & ~('\x01' << ((param_2 ^ 7) & 7));
     if (*(int *)(iVar11 + 0x7f5147 + param_2 * 4) != 0) {
-      iVar3 = g_playerRuntime[param_1].raceId - 1;
+      iVar3 = g_playerRuntime[(int)param_1].raceId - 1;
       piVar4 = (int *)(&PTR_DAT_007c0dc8)[iVar3];
       if (*piVar4 != 0) {
         iVar9 = 0;
@@ -49,17 +54,17 @@ LAB_004e63ab:
         goto cf_continue_loop_004E643C;
       }
 LAB_004e645f:
-      if (g_playerRuntime[param_1].field2164_0x9ce != (DArrayTy *)0x0) {
-        (g_playerRuntime[param_1].field2164_0x9ce)->iteratorIndex = 0;
-        iVar11 = FUN_006b1190(g_playerRuntime[param_1].field2164_0x9ce,&local_c);
+      if (g_playerRuntime[(int)param_1].field2164_0x9ce != (DArrayTy *)0x0) {
+        (g_playerRuntime[(int)param_1].field2164_0x9ce)->iteratorIndex = 0;
+        iVar11 = FUN_006b1190(g_playerRuntime[(int)param_1].field2164_0x9ce,&local_c);
         while (-1 < iVar11) {
           thunk_FUN_004dd880(local_c);
-          iVar11 = FUN_006b1190(g_playerRuntime[param_1].field2164_0x9ce,&local_c);
+          iVar11 = FUN_006b1190(g_playerRuntime[(int)param_1].field2164_0x9ce,&local_c);
         }
       }
       if (((((param_2 == 0x1d) || (param_2 == 0x89)) || (param_2 == 0x46)) ||
           ((param_2 == 0x4a || (param_2 == 0x12)))) &&
-         ((pDVar7 = g_playerRuntime[param_1].objects, pDVar7 != (DArrayTy *)0x0 &&
+         ((pDVar7 = g_playerRuntime[(int)param_1].objects, pDVar7 != (DArrayTy *)0x0 &&
           (uVar10 = 0, pDVar7->count != 0)))) {
         do {
           DArrayGetElement(pDVar7,uVar10,&local_8);
@@ -71,13 +76,13 @@ LAB_004e645f:
             thunk_FUN_004e4d60((int *)local_8);
             thunk_FUN_004e4f30((STMineSetC *)local_8);
           }
-          pDVar7 = g_playerRuntime[param_1].objects;
+          pDVar7 = g_playerRuntime[(int)param_1].objects;
           uVar10 = uVar10 + 1;
         } while (uVar10 < pDVar7->count);
       }
       if ((((((param_2 == 0x3c) || (param_2 == 0x91)) || (param_2 == 0x9a)) ||
            ((param_2 == 0x4b || (param_2 == 0x4c)))) || (param_2 == 0x41)) &&
-         ((pDVar7 = g_playerRuntime[param_1].objects, pDVar7 != (DArrayTy *)0x0 &&
+         ((pDVar7 = g_playerRuntime[(int)param_1].objects, pDVar7 != (DArrayTy *)0x0 &&
           (uVar10 = 0, pDVar7->count != 0)))) {
         do {
           DArrayGetElement(pDVar7,uVar10,&local_8);
@@ -88,12 +93,12 @@ LAB_004e645f:
               (iVar11 = (**(code **)(*(int *)local_8 + 0x2c))(), iVar11 == 0x11)))) {
             thunk_FUN_00494ae0(local_8);
           }
-          pDVar7 = g_playerRuntime[param_1].objects;
+          pDVar7 = g_playerRuntime[(int)param_1].objects;
           uVar10 = uVar10 + 1;
         } while (uVar10 < pDVar7->count);
       }
     }
-    thunk_FUN_004e6680(param_1);
+    thunk_FUN_004e6680((int)param_1);
     thunk_FUN_0043fc50(CASE_13,0);
   }
   return;

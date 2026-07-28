@@ -1,10 +1,15 @@
 
 /* [STPrototypeApplier] Propagated parameter 4.
    Evidence: 004B2520 -> 004B2390 @ 004B25DA | 004B2520 -> 004B2390 @ 004B2996 | 004B2520 ->
-   004B2390 @ 004B29F2 | 004B2520 -> 004B2390 @ 004B2A8B | 004B2520 -> 004B2390 @ 004B2ADB */
+   004B2390 @ 004B29F2 | 004B2520 -> 004B2390 @ 004B2A8B | 004B2520 -> 004B2390 @ 004B2ADB
+
+   [STPrototypeApplier] Propagated parameter 3.
+   Evidence: 004B23F3 TEST SI,SI classifies dword parameter loaded at 004B23E1 | 004B23F8 CMP
+   SI,word ptr [0x007fb244] classifies dword parameter loaded at 004B23E1 | 004B2520 -> 004B2390 @
+   004B25DA; FUN_004b2520 parameter param_5 */
 
 undefined4 __cdecl
-FUN_004b2390(uint param_1,int param_2,int param_3,undefined4 param_4,int *param_5,int param_6)
+FUN_004b2390(uint param_1,int param_2,int param_3,int param_4,int *param_5,int param_6)
 
 {
   short sVar1;

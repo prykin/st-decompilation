@@ -14,6 +14,7 @@ int FUN_006d10f0(int param_1,int param_2,int param_3,uint param_4,int param_5)
   undefined4 *puVar6;
 
   if (0x100 < (int)param_4) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_4 = 0;
   }
   uVar3 = param_4 * 4 + 0x28;
@@ -41,6 +42,7 @@ int FUN_006d10f0(int param_1,int param_2,int param_3,uint param_4,int param_5)
     *(short *)((int)puVar2 + 0xe) = (short)param_3;
     puVar2[4] = 0;
     puVar2[8] = (0xf < param_3) - 1 & param_4;
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_4 == 3) {
       if (param_3 == 0x10) {
         puVar2[10] = 0xf800;

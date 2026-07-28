@@ -16,6 +16,7 @@ undefined4 __thiscall FUN_004e8b10(void *this,uint param_1)
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   iVar2 = (**(code **)(*(int *)this + 0x2c))();
   if (iVar2 == 0x37) {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_1 == *(uint *)((int)this + 0x24)) {
       return 1;
     }
@@ -34,6 +35,7 @@ undefined4 __thiscall FUN_004e8b10(void *this,uint param_1)
   if (iVar2 == 0) {
     return 1;
   }
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = (uint)*(byte *)((int)this + 0x24);
   if (DAT_00808a8f != '\0') {
     bVar4 = (&DAT_008087ea)[param_1 * 0x51] != (&DAT_008087ea)[(uVar3 & 0xff) * 0x51];

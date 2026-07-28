@@ -17,6 +17,7 @@ void FUN_0075cf90(AnonShape_0075CF90_FD450D17 *param_1,undefined4 param_2,undefi
     uVar5 = pAVar1->field_0010;
   }
   pAVar2 = param_1 + 1;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = (AnonShape_0075CF90_FD450D17 *)0x0;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (**(code **)(*(int *)&pAVar2->field_0xe + 4))

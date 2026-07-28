@@ -13,8 +13,9 @@ undefined4 __thiscall STBoatC::sub_0045FF50(STBoatC *this,int param_1)
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   void *unaff_EDI;
 
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_1 == 0) {
-    this_00 = thunk_FUN_0042b760(*(char *)&this->field_0024,(uint)(ushort)this->field_0030);
+    this_00 = thunk_FUN_0042b760(*(char *)&this->field_0024,this->field_0030);
     if (this_00 != (STGroupBoatC *)0x0) {
       thunk_FUN_0040ae40(this_00,(uint)(ushort)this->field_0032,'\0');
       iVar1 = thunk_FUN_0040d540((AnonShape_0040D540_1BB7A4CF *)this_00,
@@ -40,12 +41,14 @@ switchD_00460024_caseD_1:
     }
   }
   else {
-    uVar2 = (*this->vtable->vfunc_1C)(this);
-    iVar1 = (*this->vtable->vfunc_D8)(this);
+    uVar2 = this->vfunc_1C();
+    iVar1 = this->vfunc_D8();
     if (iVar1 == 0) {
       switch(uVar2) {
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       case 0:
-        if ((this->field_06F7 != CASE_B) && (this->field_06F7 != CASE_23)) {
+        iVar1 = *(int *)((int)this->field_06CB + 0x2c);
+        if ((iVar1 != 0xb) && (iVar1 != 0x23)) {
           return 2;
         }
         if (this->field_021D != 1) {
@@ -69,7 +72,7 @@ switchD_00460024_caseD_1:
         goto switchD_00460024_caseD_1;
       /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
       case 2:
-        (*this->vtable->StopMove)(this,unaff_EDI);
+        this->StopMove(unaff_EDI);
         return 3;
       }
     }

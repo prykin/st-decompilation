@@ -15,10 +15,9 @@ void __thiscall MReportTy::PaintTab(MReportTy *this,AnonShape_005C1610_B64592CA 
   int iVar5;
   int iVar6;
   int iVar7;
-  undefined1 uVar8;
-  char cVar9;
-  int iVar10;
-  byte bVar11;
+  char cVar8;
+  int iVar9;
+  byte bVar10;
   InternalExceptionFrame local_8c;
   int local_48;
   AnonNested_005C1610_0014_572A8044 *local_44;
@@ -80,9 +79,9 @@ void __thiscall MReportTy::PaintTab(MReportTy *this,AnonShape_005C1610_B64592CA 
     FUN_006c7f10((AnonShape_006B5B10_E0D06CF1 *)local_8->field_0073,0,&local_3c,6,0x18);
     iVar6 = iVar5 + -1 + pAVar4->field_0014;
 LAB_005c17e9:
-    bVar11 = 0x18;
+    bVar10 = 0x18;
     iVar1 = pAVar4->field_0018 - 1;
-    iVar10 = iVar7;
+    iVar9 = iVar7;
   }
   else {
     if (uVar2 != 1) {
@@ -104,59 +103,59 @@ LAB_005c17e9:
     local_1c = local_34;
     FUN_006c7ea0(local_8->field_0073,0,&local_3c,6,0x4c);
     FUN_006c7f10((AnonShape_006B5B10_E0D06CF1 *)local_8->field_0073,0,&local_3c,6,0x18);
-    bVar11 = 0x4c;
+    bVar10 = 0x4c;
     iVar6 = iVar5 + -1 + pAVar4->field_0014;
     iVar1 = pAVar4->field_0018 - 2;
-    iVar10 = iVar7 + 1;
+    iVar9 = iVar7 + 1;
   }
-  FUN_006b5b10((AnonShape_006E6FB0_BC494FEA *)local_8->field_0073,0,iVar6,iVar10,iVar6,iVar1 + iVar7
-               ,bVar11,0xd);
+  FUN_006b5b10((AnonShape_006E6FB0_BC494FEA *)local_8->field_0073,0,iVar6,iVar9,iVar6,iVar1 + iVar7,
+               bVar10,0xd);
 LAB_005c1806:
   if (pAVar4->field_0004 < 2) {
     uVar2 = pAVar4->field_0000;
-    cVar9 = -1;
+    cVar8 = -1;
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_c = CONCAT31(local_c._1_3_,0xff);
     if (1 < uVar2) {
-      cVar9 = DAT_0080c846;
+      cVar8 = DAT_0080c846;
       if (uVar2 != 2) {
-        cVar9 = *(char *)((int)&DAT_0080c83a + uVar2 + 2);
+        cVar8 = *(char *)((int)&DAT_0080c83a + uVar2 + 2);
       }
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_c = CONCAT31(local_c._1_3_,cVar9);
+      local_c = CONCAT31(local_c._1_3_,cVar8);
     }
-    if (cVar9 != -1) {
+    if (cVar8 != -1) {
       switch(local_c & 0xff) {
       case 0:
-        uVar8 = 0xfc;
+        bVar10 = 0xfc;
         break;
       case 1:
-        uVar8 = 0xfa;
+        bVar10 = 0xfa;
         break;
       case 2:
-        uVar8 = 0xfb;
+        bVar10 = 0xfb;
         break;
       case 3:
-        uVar8 = 0xf9;
+        bVar10 = 0xf9;
         break;
       case 4:
-        uVar8 = 0xfd;
+        bVar10 = 0xfd;
         break;
       case 5:
-        uVar8 = 0xfe;
+        bVar10 = 0xfe;
         break;
       case 6:
-        uVar8 = 0xf3;
+        bVar10 = 0xf3;
         break;
       case 7:
-        uVar8 = 7;
+        bVar10 = 7;
         break;
       default:
-        uVar8 = 0xff;
+        bVar10 = 0xff;
       }
       FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)local_8->field_0073,0,
                    (-(uint)(pAVar4->field_0004 != 0) & 0xfffffffb) + 0xc + iVar5,iVar7 + 0xb,0x1a,
-                   0xd,uVar8);
+                   0xd,bVar10);
       FUN_006b5ee0((AnonShape_006B5B10_E0D06CF1 *)local_8->field_0073,0,
                    (-(uint)(pAVar4->field_0004 != 0) & 0xfffffffb) + 0xc + iVar5,iVar7 + 0xb,0x1a,
                    0xd,0,0xd);
@@ -164,7 +163,7 @@ LAB_005c1806:
   }
   Library::DKW::DDX::FUN_006b48e0
             ((int)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,pAVar4->field_000C,
-             pAVar4->field_0010,(int)local_8->field_0073,0,iVar5,iVar7,pAVar4->field_0014,
+             pAVar4->field_0010,local_8->field_0073,0,iVar5,iVar7,pAVar4->field_0014,
              pAVar4->field_0018,(int)&local_8->field_0xa3,0x4c,0x10000ff);
   g_currentExceptionFrame = local_8c.previous;
   return;

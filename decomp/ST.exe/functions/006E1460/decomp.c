@@ -1,6 +1,6 @@
 
 undefined4 __thiscall
-FUN_006e1460(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+FUN_006e1460(void *this,uint param_1,undefined4 param_2,uint param_3,undefined4 param_4)
 
 {
   int iVar1;

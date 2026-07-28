@@ -24,12 +24,14 @@ undefined4 __thiscall FUN_004eb150(void *this,int param_1)
            ((int)g_playerRuntime[param_1].field2159_0x9c6 < 2)) {
           g_playerRuntime[param_1].field2159_0x9c6 = 2;
         }
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = 0;
         iVar5 = 0;
         piVar6 = &g_playerRuntime[iVar3].field2135_0x9a2;
       }
       else {
         g_playerRuntime[param_1].field2159_0x9c6 = 1;
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = 0;
         iVar5 = 0;
         piVar6 = &g_playerRuntime[iVar3].field2135_0x9a2;
@@ -47,6 +49,7 @@ undefined4 __thiscall FUN_004eb150(void *this,int param_1)
           *piVar6 = (uVar4 >> 0x10) % ((iVar2 - iVar1) + 1U) + iVar1;
           piVar6 = piVar7;
         } while (iVar5 < 2);
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = param_1 + 1;
         if (1 < param_1) break;
         iVar5 = 0;

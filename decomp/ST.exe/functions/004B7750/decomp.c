@@ -1,4 +1,8 @@
 
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 004B6E30 -> 004B7750 @ 004B6F30; unproven partial register write at 004B6F26 | 004B7750
+   -> 004B7350 @ 004B7836 | 004B7750 -> 004B7520 @ 004B77F5 */
+
 undefined4 FUN_004b7750(uint param_1)
 
 {

@@ -68,7 +68,9 @@ int __thiscall TLOBaseTy::teleNone(TLOBaseTy *this)
     }
     break;
   case CASE_2:
-    iVar3 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,local_20->field_0470,(int *)&local_8);
+    iVar3 = STPlaySystemC::sub_006E62D0
+                      (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)local_20->field_0470,
+                       (int *)&local_8);
     if (iVar3 != 0) {
       sub_004EA620(this_00);
       g_currentExceptionFrame = local_64.previous;
@@ -118,7 +120,7 @@ int __thiscall TLOBaseTy::teleNone(TLOBaseTy *this)
       iVar6 = (int)this_00->field_0041;
       iVar8 = 0;
       this_00->field_0498 = 0;
-      uVar4 = thunk_FUN_004ad650((int)&this_00->field_01D5);
+      uVar4 = thunk_FUN_004ad650((STT3DSprC *)&this_00->field_01D5);
       thunk_FUN_006377b0(uVar4,iVar8,iVar6,iVar3,iVar7,uVar9);
       g_currentExceptionFrame = local_64.previous;
       return 0;
@@ -129,16 +131,16 @@ int __thiscall TLOBaseTy::teleNone(TLOBaseTy *this)
     uVar9 = g_playSystem_00802A38->field_00E4;
     if ((uVar4 + 0x15 <= uVar9) && (local_20->field_0490 == 0)) {
       iVar3 = 0;
-      uVar4 = thunk_FUN_004ad650((int)&local_20->field_01D5);
+      uVar4 = thunk_FUN_004ad650((STT3DSprC *)&local_20->field_01D5);
       FUN_006eabf0((void *)this_00->field_0211,uVar4,iVar3);
       if (this_00->field_05FF != (STT3DSprC *)0x0) {
         iVar3 = 0;
-        uVar4 = thunk_FUN_004ad650((int)this_00->field_05FF);
+        uVar4 = thunk_FUN_004ad650(this_00->field_05FF);
         FUN_006eabf0((void *)this_00->field_0211,uVar4,iVar3);
       }
       if (this_00->field_0603 != (STT3DSprC *)0x0) {
         iVar3 = 0;
-        uVar4 = thunk_FUN_004ad650((int)this_00->field_0603);
+        uVar4 = thunk_FUN_004ad650(this_00->field_0603);
         FUN_006eabf0((void *)this_00->field_0211,uVar4,iVar3);
       }
       this_00->field_0490 = 1;
@@ -151,7 +153,7 @@ int __thiscall TLOBaseTy::teleNone(TLOBaseTy *this)
       iVar3 = (int)(short)(*(short *)&local_20->field_0484 * 0xc9 + 100);
       iVar7 = (int)(short)(*(short *)&local_20->field_0480 * 0xc9 + 100);
       iVar8 = 0;
-      uVar4 = thunk_FUN_004ad650((int)&local_20->field_01D5);
+      uVar4 = thunk_FUN_004ad650((STT3DSprC *)&local_20->field_01D5);
       thunk_FUN_006377b0(uVar4,iVar8,iVar7,iVar3,iVar6,uVar9);
       this_00->field_0498 = 1;
       g_currentExceptionFrame = local_64.previous;
@@ -176,16 +178,16 @@ int __thiscall TLOBaseTy::teleNone(TLOBaseTy *this)
       thunk_FUN_0041d900(this_00,*(short *)&this_00->field_05B0,*(short *)&this_00->field_05B4,
                          *(short *)&this_00->field_05B8);
       iVar3 = 1;
-      uVar4 = thunk_FUN_004ad650((int)&this_00->field_01D5);
+      uVar4 = thunk_FUN_004ad650((STT3DSprC *)&this_00->field_01D5);
       FUN_006eabf0((void *)this_00->field_0211,uVar4,iVar3);
       if (this_00->field_05FF != (STT3DSprC *)0x0) {
         iVar3 = 1;
-        uVar4 = thunk_FUN_004ad650((int)this_00->field_05FF);
+        uVar4 = thunk_FUN_004ad650(this_00->field_05FF);
         FUN_006eabf0((void *)this_00->field_0211,uVar4,iVar3);
       }
       if (this_00->field_0603 != (STT3DSprC *)0x0) {
         iVar3 = 1;
-        uVar4 = thunk_FUN_004ad650((int)this_00->field_0603);
+        uVar4 = thunk_FUN_004ad650(this_00->field_0603);
         FUN_006eabf0((void *)this_00->field_0211,uVar4,iVar3);
       }
       if ((*(int *)(&DAT_00792778 + this_00->field_0235 * 4) == 0) ||
@@ -207,9 +209,9 @@ int __thiscall TLOBaseTy::teleNone(TLOBaseTy *this)
   case CASE_5:
     if ((local_20->field_048C != 0) &&
        (iVar3 = STPlaySystemC::sub_006E62D0
-                          (g_playSystem_00802A38,local_20->field_0470,(int *)&local_8), iVar3 == 0))
-    {
-      thunk_FUN_004e95c0(local_8,(int)this_00);
+                          (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)local_20->field_0470
+                           ,(int *)&local_8), iVar3 == 0)) {
+      thunk_FUN_004e95c0(local_8,(STBoatC *)this_00);
     }
     this_00->field_046C = 0;
     this_00->field_0470 = 0;

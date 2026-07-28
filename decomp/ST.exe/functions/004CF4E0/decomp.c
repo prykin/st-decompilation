@@ -19,7 +19,7 @@ TLOBaseTy::FUN_004cf4e0
     this->field_0607 = pAVar2;
   }
   Library::MSVCRT::FUN_0072da70
-            ((undefined4 *)((int)&this->field_0607[1].field_000C + 3),&this->field_0607->field_0000,
+            ((undefined4 *)((int)&this->field_0607[1].field_000C + 3),this->field_0607,
              this->field_03D4 * 0x27);
   this->field_0607->field_0000 = 1;
   this->field_0607->field_0004 = param_1;

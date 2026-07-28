@@ -18,13 +18,13 @@ undefined4 __thiscall FUN_005f9050(void *this,int *param_1,undefined4 *param_2)
                      [(int)g_worldGrid.planeStride * (int)sVar1 +
                       (int)g_worldGrid.sizeX * (int)local_6 + (int)local_8].objects[0],
           this_00 != (STWorldObject *)0x0 && (this_00->value_20 == 1000)))))) &&
-       (iVar2 = (*this_00->vtable->GetObjectTypeId)(this_00), iVar2 == 0x6e)))) &&
+       (iVar2 = this_00->GetObjectTypeId(), iVar2 == 0x6e)))) &&
      (((*(int *)&this_00->field_0x18 == *(int *)((int)this + 0x255) &&
        (iVar2 = thunk_FUN_004dd740((int)this_00), iVar2 == 0)) &&
       (iVar2 = thunk_FUN_004dd6c0(this_00,*(undefined4 *)((int)this + 0x18)), iVar2 != 0)))) {
     thunk_FUN_004dd770(this_00,*(int *)((int)this + 0x18));
     thunk_FUN_00416270(this_00,&local_8,(int *)&local_6,&local_c);
-    iVar2 = thunk_FUN_004ad650((int)((int)&this_00[0xd].vtable + 1));
+    iVar2 = thunk_FUN_004ad650((STT3DSprC *)((int)&this_00[0xd].vtable + 1));
     *param_2 = iVar2;
     *param_1 = (short)local_c + -0x5a;
     return 1;

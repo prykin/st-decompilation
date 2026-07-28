@@ -53,7 +53,7 @@ int __thiscall SAMPanelTy::GetMessage(SAMPanelTy *this,STMessage *message)
   if (SVar1 < 0xb509) {
     if (SVar1 == MESS_SAMPANELTY_B508) {
       local_6 = 0xff;
-      thunk_FUN_0054edf0((undefined4 *)0x2a,(undefined4 *)&local_6,0,0xffffffff);
+      thunk_FUN_0054edf0((undefined4 *)0x2a,(uint *)&local_6,0,0xffffffff);
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }
@@ -71,7 +71,7 @@ int __thiscall SAMPanelTy::GetMessage(SAMPanelTy *this,STMessage *message)
     }
     else if ((0xb4fe < SVar1) && (SVar1 < MESS_SAMPANELTY_B508)) {
       local_5 = (char)message->id + 1;
-      thunk_FUN_0054edf0((undefined4 *)0x2a,(undefined4 *)&local_5,0,0xffffffff);
+      thunk_FUN_0054edf0((undefined4 *)0x2a,(uint *)&local_5,0,0xffffffff);
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }
@@ -89,7 +89,7 @@ int __thiscall SAMPanelTy::GetMessage(SAMPanelTy *this,STMessage *message)
         iVar8 = this_00->field_0044;
       }
       pbVar9 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_01B1,
-                                    (uint)(*(char *)((int)&this_00->field_01AB + (uint)bVar5) ==
+                                    (uint)(*(char *)((int)this_00->field_01B5 + (bVar5 - 10)) ==
                                           '\0'));
       DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,iVar10 - iVar6,iVar3 - iVar8,'\x01',
              pbVar9);

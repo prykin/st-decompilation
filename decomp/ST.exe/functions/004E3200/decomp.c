@@ -43,6 +43,7 @@ void __thiscall FUN_004e3200(void *this,int *param_1)
   local_c = 0;
   local_10 = 0;
   local_14 = 0;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (*param_1 == 0) {
     pDVar3 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,5,0x30,5);
     *param_1 = (int)pDVar3;
@@ -79,7 +80,7 @@ LAB_004e3526:
             local_40 = '\x01';
           }
           else {
-            bVar2 = thunk_FUN_004e5c40(*(int *)((int)this + 0x24),(uint)puVar7);
+            bVar2 = thunk_FUN_004e5c40(*(byte **)((int)this + 0x24),(uint)puVar7);
             local_40 = '\0';
             /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
             if (CONCAT31(extraout_var_02,bVar2) != 0) goto LAB_004e3526;
@@ -98,7 +99,7 @@ LAB_004e3526:
           puVar10 = local_36;
           local_3f = (undefined1)iVar4;
           iVar4 = thunk_FUN_004e60d0(*(int *)((int)this + 0x24),(int)puVar7);
-          thunk_FUN_004e68a0(*(int *)((int)this + 0x24),puVar7,iVar4 + 1,puVar10);
+          thunk_FUN_004e68a0(*(byte **)((int)this + 0x24),puVar7,iVar4 + 1,puVar10);
           if (puVar7[(int)(&PTR_DAT_007bfc04)[*(int *)((int)this + 0x239)]] == '\0') {
             puVar6 = (uint *)param_1[1];
           }
@@ -133,7 +134,7 @@ LAB_004e336e:
             local_40 = '\0';
           }
           else {
-            bVar2 = thunk_FUN_004e5c40(*(int *)((int)this + 0x24),*puVar6);
+            bVar2 = thunk_FUN_004e5c40(*(byte **)((int)this + 0x24),*puVar6);
             local_40 = '\x01';
             /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
             if (CONCAT31(extraout_var_00,bVar2) == 0) goto LAB_004e336e;
@@ -152,7 +153,7 @@ LAB_004e336e:
           local_3f = (undefined1)iVar4;
           puVar10 = local_36;
           iVar4 = thunk_FUN_004e60d0(*(int *)((int)this + 0x24),*puVar6);
-          thunk_FUN_004e68a0(*(int *)((int)this + 0x24),(undefined1 *)*puVar6,iVar4 + 1,puVar10);
+          thunk_FUN_004e68a0(*(byte **)((int)this + 0x24),(undefined1 *)*puVar6,iVar4 + 1,puVar10);
           Library::DKW::TBL::FUN_006ae1c0((uint *)*param_1,local_48);
         }
       }
@@ -164,9 +165,11 @@ LAB_004e336e:
   local_18 = 2;
   piVar8 = param_1;
   do {
+    /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = *(int **)(*piVar8 + 0xc);
     while (param_1 != (int *)0x0) {
       pDVar3 = (DArrayTy *)*piVar8;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (int *)0x0;
       index_00 = 0;
       if ((int)(pDVar3->count - 2) < 0) break;
@@ -176,6 +179,7 @@ LAB_004e336e:
         DArrayGetElement((DArrayTy *)*piVar8,index,local_78);
         if ((local_40 == '\0') && (local_70 != '\0')) {
           FUN_006b0cd0((AnonShape_00413AF0_B6B4EE9A *)*piVar8,index_00,index);
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_1 = (int *)0x1;
         }
         pDVar3 = (DArrayTy *)*piVar8;

@@ -11,7 +11,15 @@
 
    [STSwitchEnumApplier] Switch target field_0493 uses
    /SubmarineTitans/Recovered/Enums/CursorClassTy_field_0493State. Cases:
-   CASE_1=1;CASE_3=3;CASE_4=4;CASE_5=5 */
+   CASE_1=1;CASE_3=3;CASE_4=4;CASE_5=5
+
+   [STPrototypeApplier] Propagated parameter 2.
+   Evidence: 00577280 -> 0054BF40 @ 00577358; /CursorClassTy+0xc5 | 005A4350 -> 0054BF40 @ 005A4EFF;
+   /CursorClassTy+0xc5
+
+   [STPrototypeApplier] Propagated parameter 3.
+   Evidence: 00577280 -> 0054BF40 @ 00577358; /CursorClassTy+0xc9 | 005A4350 -> 0054BF40 @ 005A4EFF;
+   /CursorClassTy+0xc9 */
 
 undefined4 __thiscall
 CursorClassTy::SetGCType

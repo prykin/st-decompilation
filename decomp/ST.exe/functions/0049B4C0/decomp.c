@@ -24,7 +24,7 @@ undefined4 __thiscall STGroupBoatC::GrpGoToDeep(STGroupBoatC *this,int param_1)
   undefined2 local_20;
   STGroupBoatC *local_1c;
   uint local_18;
-  uint local_14;
+  undefined1 local_14 [4];
   undefined4 local_10;
   undefined2 local_a;
   short local_8;
@@ -55,19 +55,20 @@ undefined4 __thiscall STGroupBoatC::GrpGoToDeep(STGroupBoatC *this,int param_1)
     if (local_18 != 0) {
       uVar6 = 0;
       do {
-        DArrayGetElement((DArrayTy *)pSVar2->field_0029,uVar6,&local_14);
-        if ((short)local_14 != -1) {
+        DArrayGetElement((DArrayTy *)pSVar2->field_0029,uVar6,local_14);
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+        if (local_14._0_2_ != 0xffff) {
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           this_00 = (STBoatC *)
                     STAllPlayersC::GetObjPtr
-                              (g_allPlayers_007FA174,pSVar2->field_0024,local_14,CASE_1);
+                              (g_allPlayers_007FA174,pSVar2->field_0024,local_14._0_2_,CASE_1);
           if (this_00 == (STBoatC *)0x0) {
             RaiseInternalException
                       (-0x5001fffc,g_overwriteContext_007ED77C,
                        "E:\\__titans\\wlad\\to_grpb.cpp",0x720);
           }
           STFishC::sub_004162B0((STFishC *)this_00,&local_8,&local_6,&local_a);
-          STBoatC::sub_00481520
-                    (this_00,(int)local_8,(int)local_6,*(undefined4 *)&pSVar2->field_0x222);
+          STBoatC::sub_00481520(this_00,(int)local_8,(int)local_6,*(int *)&pSVar2->field_0x222);
           local_28 = g_playSystem_00802A38->field_00E4;
           local_24 = 0xffff;
           local_22 = 0xffff;
@@ -89,10 +90,12 @@ undefined4 __thiscall STGroupBoatC::GrpGoToDeep(STGroupBoatC *this,int param_1)
       uVar5 = 0;
       if (local_18 != 0) {
         do {
-          DArrayGetElement((DArrayTy *)pSVar2->field_0029,uVar8,&local_14);
-          if ((short)local_14 != -1) {
+          DArrayGetElement((DArrayTy *)pSVar2->field_0029,uVar8,local_14);
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+          if (local_14._0_2_ != 0xffff) {
+            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             objPtr = STAllPlayersC::GetObjPtr
-                               (g_allPlayers_007FA174,pSVar2->field_0024,local_14,CASE_1);
+                               (g_allPlayers_007FA174,pSVar2->field_0024,local_14._0_2_,CASE_1);
             if (objPtr == (STGameObjC *)0x0) {
               RaiseInternalException
                         (-0x5001fffc,g_overwriteContext_007ED77C,

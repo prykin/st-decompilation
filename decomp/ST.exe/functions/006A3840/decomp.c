@@ -18,7 +18,7 @@ FUN_006a3840(int *param_1,int param_2,int param_3,int param_4,ushort *param_5,un
        (((iVar3 < param_1[1] && (-1 < param_4)) &&
         ((param_4 < 6 && (iVar1 = thunk_FUN_006a20e0(param_1,iVar2,iVar3,param_4,0xff), iVar1 != 0))
         )))) {
-      iVar1 = thunk_FUN_006a1370(param_1,iVar2,iVar3,param_4,(undefined4 *)local_10);
+      iVar1 = thunk_FUN_006a1370(param_1,iVar2,iVar3,param_4,(int)local_10);
       iVar1 = thunk_FUN_006a24e0(local_10,(int)(short)iVar1,param_5,param_4,0xff);
       if (iVar1 != 0) {
         thunk_FUN_006a3930(param_1,iVar2,iVar3,param_4,param_5,param_6,param_7);

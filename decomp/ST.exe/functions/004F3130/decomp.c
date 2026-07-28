@@ -8,12 +8,32 @@
    [STPrototypeApplier] Propagated parameter 7.
    Evidence: 0050E7D0 -> 004F3130 @ 0050EC8C | 0050E7D0 -> 004F3130 @ 0050ECDA | 0050E7D0 ->
    004F3130 @ 0050EF83 | 0050E7D0 -> 004F3130 @ 0050EFC5 | 0050E7D0 -> 004F3130 @ 0050F00A |
-   0050E7D0 -> 004F3130 @ 0050F04F */
+   0050E7D0 -> 004F3130 @ 0050F04F
+
+   [STPrototypeApplier] Propagated parameter 11.
+   Evidence: 004F5690 -> 004F3130 @ 004F6C51; literal 0 at 004F6BF9 | 004F5690 -> 004F3130 @
+   004F6CD2; literal 0 at 004F6C89 | 004F5690 -> 004F3130 @ 004F6D27; literal 0 at 004F6CE7 |
+   004F5690 -> 004F3130 @ 004F6D81; literal 0 at 004F6D3C | 004F5690 -> 004F3130 @ 004F6DDB; literal
+   0 at 004F6D96 | 004F5690 -> 004F3130 @ 004F6E32; literal 0 at 004F6DF0 | 004F5690 -> 004F3130 @
+   004F6E87; literal 0 at 004F6E47 | 004F5690 -> 004F3130 @ 004F6F25; literal 0 at 004F6ED0 |
+   004F5690 -> 004F3130 @ 004F6FC6; literal 0 at 004F6F71 | 00502360 -> 004F3130 @ 005026A1; literal
+   0 at 00502669 | 00502360 -> 004F3130 @ 005026FA; literal 0 at 005026C2 | 00502360 -> 004F3130 @
+   005027B9; literal 0 at 0050278B | 00503450 -> 004F3130 @ 005037F8; literal 0 at 005037C0 |
+   00503450 -> 004F3130 @ 00503854; literal 0 at 0050381C | 00503450 -> 004F3130 @ 00503980; literal
+   0 at 00503968 | 005097E0 -> 004F3130 @ 00509B32; literal 0 at 00509B07 | 005097E0 -> 004F3130 @
+   00509BA5; literal 0 at 00509B6A | 005097E0 -> 004F3130 @ 00509CE7; literal 0 at 00509CAE |
+   005097E0 -> 004F3130 @ 00509F30; literal 0 at 00509F10 | 005097E0 -> 004F3130 @ 00509FE3; literal
+   0 at 00509FC0 | 0050E7D0 -> 004F3130 @ 0050EC8C; literal 0 at 0050EC6C | 0050E7D0 -> 004F3130 @
+   0050ECDA; literal 0 at 0050ECB7 | 0050E7D0 -> 004F3130 @ 0050EF1B; literal 0 at 0050EEF1 |
+   0050E7D0 -> 004F3130 @ 0050EF83; literal 0 at 0050EF5C | 0050E7D0 -> 004F3130 @ 0050EFC5; literal
+   0 at 0050EF98 | 0050E7D0 -> 004F3130 @ 0050F00A; literal 0 at 0050EFDA | 0050E7D0 -> 004F3130 @
+   0050F04F; literal 0 at 0050F019 | 0050E7D0 -> 004F3130 @ 0050F08E; literal 0 at 0050F064 |
+   0050E7D0 -> 004F3130 @ 0050F0D0; literal 0 at 0050F0A3 */
 
 undefined4 __thiscall
 CPanelTy::CreateBut(CPanelTy *this,byte param_1,undefined4 param_2,int param_3,int param_4,
                    int param_5,byte param_6,char *text,undefined4 param_8,undefined4 param_9,
-                   short param_10,undefined2 param_11,int param_12,char *param_13,int param_14,
+                   short param_10,ushort param_11,int param_12,char *param_13,int param_14,
                    undefined4 param_15,undefined4 param_16)
 
 {
@@ -39,14 +59,14 @@ CPanelTy::CreateBut(CPanelTy *this,byte param_1,undefined4 param_2,int param_3,i
   undefined4 local_10c;
   undefined4 local_108;
   undefined4 local_104;
-  undefined2 local_100;
+  ushort local_100;
   short local_fe;
   int local_fc;
   undefined4 local_f4;
   undefined4 local_e8;
   undefined4 local_e4;
   undefined4 local_e0;
-  undefined2 local_dc;
+  ushort local_dc;
   short local_da;
   int local_d8;
   undefined4 local_d0;

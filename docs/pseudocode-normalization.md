@@ -29,6 +29,24 @@ internals. It would still need the same evidence and ambiguity policy as an
 export postprocessor. For this project, address-stable export normalization is
 the smaller and more auditable boundary.
 
+### Reused incoming stack slots
+
+Optimized 32-bit MSVC code often reads an incoming `[EBP+N]` argument, lets that
+value die, writes an unrelated loop cursor or pointer back to the same word, and
+then reads the new lifetime. Ghidra may spell the result as assignments to
+`param_N`/`_param_N`, even after the ABI parameter itself has the correct scalar
+type. The exporter detects the machine read → overwrite → read sequence and
+inserts:
+
+```c
+/* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot;
+   split the post-write lifetime into a local variable */
+```
+
+This is not a request to change the ABI signature. A later source extractor
+should introduce a distinct local at the first overwrite. The same sites are
+catalogued in `pseudocode_idioms.jsonl` and `decomp_quality_issues.jsonl`.
+
 ## Automatically normalized terminal `INT3`
 
 Ghidra commonly renders a terminal x86 `INT3` as if `swi(3)` returned a function
@@ -53,6 +71,27 @@ STDebugBreak(); /* noreturn in standalone pseudocode */
 the function is lifted into a compilable translation unit. Ghidra's database
 function is not globally marked noreturn, so this presentation choice cannot
 corrupt control-flow analysis elsewhere.
+
+## Automatically normalized typed virtual calls
+
+Ghidra models a typed vtable slot as a C function pointer, so its native
+decompiler output retains the ABI receiver:
+
+```c
+iVar1 = (*this->vtable->vfunc_08)(this);
+```
+
+For the future C++ source projection, `STDecompExport` folds only an exact
+duplicated simple receiver into member-call syntax:
+
+```cpp
+iVar1 = this->vfunc_08();
+```
+
+The transformation is deliberately not applied when the receiver is absent,
+cast, adjusted, differs from the object before `->vtable`, or dispatches through
+a secondary vtable. Those cases still carry ABI/prototype information that must
+be recovered rather than hidden by presentation sugar.
 
 ## Automatically normalized bulk zero initialization
 

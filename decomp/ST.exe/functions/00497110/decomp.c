@@ -43,11 +43,11 @@ void FUN_00497110(AnonShape_00497110_11FEE69C *param_1,AnonShape_00497110_465BC7
     local_8 = local_8 * 200;
     iVar2 = iVar2 * 4;
     thunk_FUN_0061f5c0(param_1->field_01D9,(short)(((iVar4 - iVar5) * 600) / iVar2) + (short)iVar5,
-                       (short)((iVar3 * 600) / iVar2) + (short)iVar6,(short)local_10,(short)local_14
-                       ,(short)local_c,(short)local_8);
+                       (short)((iVar3 * 600) / iVar2) + (short)iVar6,(ushort)local_10,
+                       (short)local_14,(short)local_c,(short)local_8);
     thunk_FUN_0061f5c0(param_2->field_01D9,(short)(((iVar5 - iVar4) * 600) / iVar2) + (short)iVar4,
-                       (short)(((iVar6 - local_18) * 600) / iVar2) + (short)local_18,(short)local_10
-                       ,(short)local_14,(short)local_c,(short)local_8);
+                       (short)(((iVar6 - local_18) * 600) / iVar2) + (short)local_18,
+                       (ushort)local_10,(short)local_14,(short)local_c,(short)local_8);
   }
   return;
 }

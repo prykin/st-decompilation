@@ -1,5 +1,5 @@
 
-undefined4 FUN_00555880(AnonShape_00555880_021D11E5 *param_1)
+undefined4 FUN_00555880(RecoveredRecord_TraksClassTy_00555880 *param_1)
 
 {
   short sVar1;

@@ -15,8 +15,9 @@ MTaskTy::OutGlassTxtProc
 
 {
   uint uVar1;
-  code *pcVar2;
-  int iVar3;
+  AnonPointee_MReportTy_0073 *pAVar2;
+  code *pcVar3;
+  int errorCode;
   int iVar4;
   uint uVar5;
   InternalExceptionFrame local_4c;
@@ -38,13 +39,13 @@ LAB_005df673:
     }
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
-    iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
-    if (iVar3 == 0) {
+    errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
+    if (errorCode == 0) {
       if (local_8[0xb] != 0) {
-        iVar3 = local_8[local_8[4] + 1];
+        pAVar2 = (AnonPointee_MReportTy_0073 *)local_8[local_8[4] + 1];
         Library::DKW::DDX::FUN_006b48e0
-                  ((int)param_1,param_4,param_5,iVar3,0,0,0,*(uint *)(iVar3 + 4),*(int *)(iVar3 + 8)
-                   ,local_8[0xb],0,0x10000ff);
+                  ((int)param_1,param_4,param_5,pAVar2,0,0,0,pAVar2->field_0004,pAVar2->field_0008,
+                   local_8[0xb],0,0x10000ff);
         g_currentExceptionFrame = local_4c.previous;
         return;
       }
@@ -54,12 +55,12 @@ LAB_005df673:
       return;
     }
     g_currentExceptionFrame = local_4c.previous;
-    iVar4 = ReportDebugMessage("E:\\__titans\\Start\\task_obj.cpp",0x3a,0,iVar3,"%s",
-                               "MTaskTy::OutGlassTxtProc");
+    iVar4 = ReportDebugMessage("E:\\__titans\\Start\\task_obj.cpp",0x3a,0,errorCode,
+                               "%s","MTaskTy::OutGlassTxtProc");
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar3,0,"E:\\__titans\\Start\\task_obj.cpp",0x3a);
+    RaiseInternalException(errorCode,0,"E:\\__titans\\Start\\task_obj.cpp",0x3a);
   }
   return;
 }

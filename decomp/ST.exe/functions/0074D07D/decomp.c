@@ -32,6 +32,7 @@ int __thiscall FUN_0074d07d(void *this,int *param_1,int *param_2)
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*piVar1 + 4))(piVar1);
   }
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (*param_2 == 0) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar4 = (**(code **)(*(int *)this + 0x48))(param_2);

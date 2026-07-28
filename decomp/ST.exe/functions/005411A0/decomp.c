@@ -6,7 +6,16 @@
 
    [STPrototypeRepairApplier] Propagated parameter 0.
    Evidence: 004F9480 -> 005411A0 @ 004F94F8 | 004F95B0 -> 005411A0 @ 004F95F6 | 004F96A0 ->
-   005411A0 @ 004F9803 */
+   005411A0 @ 004F9803
+
+   [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=7, used=0), and
+   decompilation contains no value return
+
+   [STReturnSemanticsApplier] repair_unsafe_eax_rollback.
+   Evidence: restore the earlier evidence-backed void type after an unsafe automated rollback;
+   post-CALL EAX reads alone do not prove a source-level return value; machine CFG audit: used=1,
+   ignored=7, unknown=0 */
 
 void __cdecl FUN_005411a0(DArrayTy *param_1,char *param_2,char *text)
 

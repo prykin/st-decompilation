@@ -29,8 +29,10 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_00427bb0
     do {
       iVar4 = param_1;
       local_14 = *piVar3;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = piVar3[3];
       if (param_3 == -1) {
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = piVar3[1];
       }
       else if (param_3 == 1) {
@@ -105,6 +107,7 @@ LAB_00427cca:
       }
       piVar3 = piVar3 + 4;
       iVar6 = iVar6 + *(int *)&this->field_0x37c;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = iVar4 + 1;
     } while (iVar4 + 1 <= param_2);
     if (local_8 != 0x7fffffff) {

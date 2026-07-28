@@ -87,7 +87,7 @@ LAB_00552481:
           uStack_10 = (undefined1)
                       ((ushort)*(undefined2 *)(&this_00->field_0x1ad + (uint)bVar10 * 8) >> 8);
         }
-        thunk_FUN_0054edf0((undefined4 *)0x20,(undefined4 *)&local_18,0,0xffffffff);
+        thunk_FUN_0054edf0((undefined4 *)0x20,(uint *)&local_18,0,0xffffffff);
         if (this_00->field_01BB != '\0') {
           this_00->field_0028 = 0xbfff;
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -123,7 +123,7 @@ LAB_00552481:
         uVar1 = *(undefined2 *)((int)&this_00->field_01AF + (uint)bVar10 * 8 + 2);
         uStack_1d = (undefined1)uVar1;
         uStack_1c = (undefined1)((ushort)uVar1 >> 8);
-        thunk_FUN_0054edf0((undefined4 *)0x20,(undefined4 *)&local_24,0,0xffffffff);
+        thunk_FUN_0054edf0((undefined4 *)0x20,(uint *)&local_24,0,0xffffffff);
         g_currentExceptionFrame = local_68.previous;
         return 0;
       }

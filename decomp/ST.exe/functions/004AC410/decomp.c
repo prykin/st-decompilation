@@ -47,11 +47,11 @@ undefined4 __thiscall STT3DSprC::StopShow(STT3DSprC *this,byte param_1)
   pSVar2->field_001C = pSVar2->field_001C & ~uVar5;
   if (param_1 == 0xe) {
     if (pSVar2->field_0011 == '\x01') {
-      thunk_FUN_004ad5e0((int)pSVar2);
+      thunk_FUN_004ad5e0(pSVar2);
       g_currentExceptionFrame = local_4c.previous;
       return 0;
     }
-    thunk_FUN_004ad5e0((int)pSVar2);
+    thunk_FUN_004ad5e0(pSVar2);
     pSVar2->field_0011 = 0;
   }
   g_currentExceptionFrame = local_4c.previous;

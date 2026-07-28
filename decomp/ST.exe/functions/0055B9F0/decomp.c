@@ -1,5 +1,5 @@
 
-uint __thiscall FUN_0055b9f0(void *this,AnonShape_0055B9F0_A6E61FFF *param_1)
+uint __thiscall FUN_0055b9f0(void *this,RecoveredRecord_VisibleClassTy_0055B9F0 *param_1)
 
 {
   int iVar1;

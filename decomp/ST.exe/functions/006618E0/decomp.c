@@ -15,7 +15,7 @@ void __thiscall AiFltClassTy::GoToRepair(AiFltClassTy *this,int param_1)
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
   int iVar5;
-  undefined2 *puVar6;
+  ushort *puVar6;
   STGameObjC *this_00;
   IMAGE_DOS_HEADER *pIVar7;
   DArrayTy *array;
@@ -25,7 +25,7 @@ void __thiscall AiFltClassTy::GoToRepair(AiFltClassTy *this,int param_1)
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_EDX_00;
   InternalExceptionFrame local_68;
-  uint local_24;
+  undefined4 local_24;
   int local_20;
   AiFltClassTy *local_1c;
   int local_18;
@@ -61,16 +61,16 @@ void __thiscall AiFltClassTy::GoToRepair(AiFltClassTy *this,int param_1)
             do {
               if (local_14 < local_8->count) {
                 /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(local_8, local_14) (runtime stride) */
-                puVar6 = (undefined2 *)(local_8->elementSize * local_14 + (int)local_8->data);
+                puVar6 = (ushort *)(local_8->elementSize * local_14 + (int)local_8->data);
               }
               else {
-                puVar6 = (undefined2 *)0x0;
+                puVar6 = (ushort *)0x0;
               }
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               local_24 = CONCAT22((short)((uint)puVar6 >> 0x10),*puVar6);
               this_00 = STAllPlayersC::GetObjPtr
-                                  (g_allPlayers_007FA174,*(char *)&pAVar3->field_0024,local_24,
-                                   CASE_1);
+                                  (g_allPlayers_007FA174,*(char *)&pAVar3->field_0024,*puVar6,CASE_1
+                                  );
               if ((this_00 != (STGameObjC *)0x0) && ((int)pAVar3->field_0179 < local_20 - local_c))
               {
                 iVar5 = (*this_00->vtable->vfunc_2C)();

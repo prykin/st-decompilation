@@ -1,4 +1,8 @@
 
+/* [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
+   and decompilation contains no value return */
+
 void FUN_006dafd0(ushort *param_1,int param_2,ushort *param_3,int param_4,int param_5,int param_6)
 
 {
@@ -44,6 +48,7 @@ void FUN_006dafd0(ushort *param_1,int param_2,ushort *param_3,int param_4,int pa
       iVar6 = param_6 + -1;
       bVar3 = 0 < param_6;
       iVar5 = param_5;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_6 = iVar6;
     } while (iVar6 != 0 && bVar3);
   }
@@ -92,6 +97,7 @@ void FUN_006dafd0(ushort *param_1,int param_2,ushort *param_3,int param_4,int pa
       param_1 = (ushort *)((int)puVar9 + param_5 * -4 + param_2 + 2);
       iVar5 = param_6 + -1;
       bVar3 = 0 < param_6;
+      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_6 = iVar5;
     } while (iVar5 != 0 && bVar3);
   }

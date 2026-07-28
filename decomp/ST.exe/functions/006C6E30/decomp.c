@@ -36,8 +36,10 @@ int FUN_006c6e30(AnonShape_006C6E30_3C2F0429 *param_1)
       pAVar3 = (AnonShape_006C6E30_3C2F0429 *)(*(code *)param_1->field_0042)(param_1,iVar2,pAVar1);
       if (pAVar3 != pAVar1) {
         FreeAndNull((void **)value);
+        /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = pAVar3;
         if (-1 < (int)pAVar3) {
+          /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_1 = (AnonShape_006C6E30_3C2F0429 *)0xfffffffb;
         }
         return (int)param_1;

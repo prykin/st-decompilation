@@ -16,7 +16,7 @@ void __thiscall CGenerate::sub_006988C0(CGenerate *this)
   AnonShape_00697AF0_A94F4D28 *pAVar7;
   int iVar8;
   bool bVar9;
-  undefined4 local_3c [2];
+  undefined1 local_3c [8];
   dword local_34;
   uint local_30;
   uint local_2c;
@@ -150,7 +150,7 @@ LAB_00698a36:
                       }
                       uVar5 = Library::MSVCRT::FUN_0072e6c0();
                       iVar1 = thunk_FUN_006a1370(this->field_0008,local_20,local_24,local_28,
-                                                 local_3c);
+                                                 (int)local_3c);
                       pAVar7 = local_8;
                       if ((int)((int)(short)iVar1 + uVar2 + 1) < this->field_5847) {
                         thunk_FUN_006a0c90(local_20,local_24,*(int *)local_8 + 1,uVar2 + 1,0xff,0,

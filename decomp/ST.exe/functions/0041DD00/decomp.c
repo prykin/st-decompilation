@@ -12,6 +12,7 @@ void __thiscall FUN_0041dd00(void *this,int param_1)
   float fVar4;
   float fVar5;
 
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_1 == *(int *)((int)this + 0x21d)) {
     return;
   }

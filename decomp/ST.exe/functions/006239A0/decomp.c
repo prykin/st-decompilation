@@ -58,7 +58,7 @@ undefined4 __thiscall STMineSetC::sub_006239A0(STMineSetC *this)
       uVar1 = sub_006226C0(this,(int)this->field_0047,(int)this->field_0049);
       this->field_0353 = (char)uVar1;
     }
-    thunk_FUN_00624000((AnonShape_00624000_A9481D8E *)this);
+    thunk_FUN_00624000(this);
     if (this->field_0353 != '\0') {
       iVar2 = LoadImagMineSet(this,1);
       if (iVar2 == 0) {
@@ -80,7 +80,7 @@ undefined4 __thiscall STMineSetC::sub_006239A0(STMineSetC *this)
   case CASE_3:
     if (g_playSystem_00802A38->field_00E4 < this->field_030F) goto switchD_006239c1_caseD_4;
     sub_00625730(this);
-    thunk_FUN_00627790((AnonShape_00627790_BD208A1C *)this);
+    thunk_FUN_00627790(this);
     this->field_02AE = CASE_4;
     iVar2 = thunk_FUN_00627d90(1);
     uVar3 = thunk_FUN_00627db0(this,this->field_02C2,this->field_02C6,iVar2);
@@ -88,10 +88,10 @@ undefined4 __thiscall STMineSetC::sub_006239A0(STMineSetC *this)
     STAllPlayersC::UnRegisterMine
               (g_allPlayers_007FA174,
                CONCAT31((int3)((uint)uVar3 >> 8),*(undefined1 *)&this->field_0262),
-               CONCAT22(extraout_var,this->field_0032),(AnonShape_0044A150_E4FE1661 *)this);
+               CONCAT22(extraout_var,this->field_0032),this);
     sub_0041D2B0(this);
-    iVar2 = thunk_FUN_00495ff0(this->field_0047,this->field_0049,this->field_004B,
-                               (uint)(byte)this->field_008E,(AnonShape_00495FF0_59081BDD *)this);
+    iVar2 = thunk_FUN_00495ff0(this->field_0047,this->field_0049,this->field_004B,this->field_008E,
+                               (AnonShape_00495FF0_59081BDD *)this);
     if (iVar2 == 0) {
       this->field_0314 = this->field_0314 + -1;
     }
@@ -175,7 +175,7 @@ LAB_00623d08:
         if (this->field_02E9 == '\0') {
           return local_8;
         }
-        thunk_FUN_004ad430((int)&this->field_01D5);
+        thunk_FUN_004ad430((STT3DSprC *)&this->field_01D5);
         this->field_02E9 = 0;
         return local_8;
       }
