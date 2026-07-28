@@ -12,8 +12,10 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Iterator;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 import ghidra.app.script.GhidraScript;
 import ghidra.program.model.data.DataType;
@@ -31,6 +33,7 @@ public class STTypeLifecycleAnalyzer extends GhidraScript {
     private static final String ROOT = "/SubmarineTitans/Recovered";
     private static final String VIEW = "[ST_VIEW_ONLY]";
     private static final String ANCHOR = "[ST_SEMANTIC_ANCHOR]";
+    private Map<String, Integer> receiverOwnerCounts;
 
     @Override
     protected void run() throws Exception {
@@ -58,7 +61,22 @@ public class STTypeLifecycleAnalyzer extends GhidraScript {
             int functionUses = functionUses(type);
             int listingUses = listingUses(type);
             int parents = type.getParents().size();
-            if (anchors.size() == 1 && (description.contains(VIEW) ||
+            List<DataType> receiverAnchors = new ArrayList<>();
+            if (hiddenThis(type, description) && ownedReceiverFunctions(type) == 0) {
+                for (DataType candidate : types)
+                    if (candidate != type && candidate.isEquivalent(type) &&
+                            hiddenThis(candidate, text(candidate.getDescription())) &&
+                            ownedReceiverFunctions(candidate) >= 2)
+                        receiverAnchors.add(candidate);
+            }
+            if (receiverAnchors.size() == 1) {
+                DataType replacement = receiverAnchors.get(0);
+                rows.add(new Row(true, "replace", type.getPathName(),
+                    replacement.getPathName(), type.getLength(), parents, functionUses,
+                    listingUses, description,
+                    "unique namespace-backed HiddenThis receiver family"));
+            }
+            else if (anchors.size() == 1 && (description.contains(VIEW) ||
                     type.getName().contains(".conflict"))) {
                 DataType replacement = anchors.get(0);
                 rows.add(new Row(true, "replace", type.getPathName(),
@@ -95,7 +113,8 @@ public class STTypeLifecycleAnalyzer extends GhidraScript {
             "note=Deletion requires an original script-owner marker and zero " +
                 "parents/signature/Listing uses. Non-view deletion is limited to generated " +
                 "anonymous PointerShapes/ClassPointees/HiddenThis types. Equivalent types " +
-                "migrate only to one anchor."),
+                "migrate only to one semantic anchor or one exact namespace-backed " +
+                "HiddenThis receiver family."),
             StandardCharsets.UTF_8);
         println("Type lifecycle: candidates=" + rows.size() + ", automatic=" +
             rows.stream().filter(row -> row.apply).count() + ", output=" + directory);
@@ -131,6 +150,31 @@ public class STTypeLifecycleAnalyzer extends GhidraScript {
         if (actual instanceof Pointer pointer && pointer.getDataType() != null)
             return uses(pointer.getDataType(), wanted);
         return actual.dependsOn(wanted);
+    }
+
+    private boolean hiddenThis(DataType type, String description) {
+        return type instanceof Structure &&
+            type.getPathName().startsWith(
+                "/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_") &&
+            description.contains("[STHiddenThisApplier generated]");
+    }
+
+    private int ownedReceiverFunctions(DataType type) {
+        if (receiverOwnerCounts == null) {
+            receiverOwnerCounts = new HashMap<>();
+            FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
+            while (functions.hasNext()) {
+                Function function = functions.next();
+                String qualified = function.getName(true);
+                int separator = qualified.lastIndexOf("::");
+                if (separator <= 0) continue;
+                String owner = qualified.substring(0, separator);
+                int leaf = owner.lastIndexOf("::");
+                receiverOwnerCounts.merge(
+                    leaf < 0 ? owner : owner.substring(leaf + 2), 1, Integer::sum);
+            }
+        }
+        return receiverOwnerCounts.getOrDefault(type.getName(), 0);
     }
 
     private boolean scriptOwned(String description) {

@@ -263,7 +263,7 @@ void __thiscall SIDTy::CreateCtrls(SIDTy *this)
   uVar6 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,0x1e8,0x23b,0x55,0x12,0x6901,0x6981);
   this_00->field_1AF9[1] = uVar6;
   PrepFiles(this_00);
-  Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,this_00->field_1CB4);
+  Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,this_00->field_1CB4);
   if (this_00->field_1B05 != 0xffffffff) {
     Library::DKW::DDX::FUN_006b34d0
               ((uint *)this_00->field_1B49,this_00->field_1B05,0xfffffffe,this_00->field_1B1D,

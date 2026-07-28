@@ -146,7 +146,7 @@ int __thiscall InfocPanelTy::GetMessage(InfocPanelTy *this,STMessage *message)
     DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,iVar8 - iVar11,iVar3 - iVar6,'\x01',
            pbVar10);
     Library::DKW::DDX::FUN_006b3640
-              ((int *)PTR_008075a8,this_00->field_0060,0xffffffff,this_00->field_003C,
+              ((int *)g_ddxContext_008075A8,this_00->field_0060,0xffffffff,this_00->field_003C,
                this_00->field_0044);
     g_currentExceptionFrame = local_58.previous;
     return 0;

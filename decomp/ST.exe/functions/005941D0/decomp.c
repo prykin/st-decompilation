@@ -45,7 +45,7 @@ void __thiscall ComboTy::DoneCombo(ComboTy *this)
     this_00->field_0028 = 0x1b;
     FUN_006e6000(this_00,3,1,(undefined4 *)puVar1);
     if (this_00->field_0108 != 0xffffffff) {
-      FUN_006b3bb0((int *)PTR_008075a8,this_00->field_0108);
+      FUN_006b3bb0((int *)g_ddxContext_008075A8,this_00->field_0108);
     }
     this_00->field_0108 = 0xffffffff;
     if (this_00->field_00FC != (AnonPointee_ComboTy_00FC *)0x0) {

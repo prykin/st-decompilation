@@ -55,8 +55,8 @@ void __thiscall MReportTy::PaintTab(MReportTy *this,AnonShape_005C1610_B64592CA 
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  FUN_006b5f80((int *)PTR_008075a8,local_44->field_000C,local_44->field_0010,local_44->field_0014,
-               local_44->field_0018);
+  FUN_006b5f80((int *)g_ddxContext_008075A8,local_44->field_000C,local_44->field_0010,
+               local_44->field_0014,local_44->field_0018);
   iVar7 = local_40;
   iVar5 = local_48;
   FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)local_8->field_0073,0,local_48,local_40,
@@ -162,9 +162,9 @@ LAB_005c1806:
     }
   }
   Library::DKW::DDX::FUN_006b48e0
-            ((int)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,pAVar4->field_000C,
-             pAVar4->field_0010,local_8->field_0073,0,iVar5,iVar7,pAVar4->field_0014,
-             pAVar4->field_0018,(int)&local_8->field_0xa3,0x4c,0x10000ff);
+            ((int)g_dDXContext_0080759C,pAVar4->field_000C,pAVar4->field_0010,local_8->field_0073,0,
+             iVar5,iVar7,pAVar4->field_0014,pAVar4->field_0018,(int)&local_8->field_0xa3,0x4c,
+             0x10000ff);
   g_currentExceptionFrame = local_8c.previous;
   return;
 }

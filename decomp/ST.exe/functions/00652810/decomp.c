@@ -4313,7 +4313,7 @@ LAB_00653778:
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                 iVar7 = (*(code *)this_00->field_0000->field_0018)();
                                 if (iVar7 == 8) {
-                                  SoundClassTy::PlaySound_thunk
+                                  SoundClassTy::PlaySound
                                             ((SoundClassTy *)&g_sound,SOUND_MODE_12,
                                              (char *)local_15c,0,(SoundPosition *)0x0,0);
                                   break;
@@ -4329,7 +4329,7 @@ LAB_00653778:
                                 pDVar12 = &local_34;
                                 do {
                                   if (pDVar12->flags == (uint)DAT_0080874d) {
-                                    SoundClassTy::PlaySound_thunk
+                                    SoundClassTy::PlaySound
                                               ((SoundClassTy *)&g_sound,SOUND_MODE_12,
                                                (char *)local_15c,0,(SoundPosition *)0x0,0);
                                     break;

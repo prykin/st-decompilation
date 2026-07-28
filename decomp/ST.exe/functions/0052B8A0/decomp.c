@@ -11,7 +11,7 @@
 void __thiscall MoneyTy::sub_0052B8A0(MoneyTy *this)
 
 {
-  FUN_006b5f80((int *)PTR_008075a8,this->field_0018,this->field_001C,this->field_0040,
+  FUN_006b5f80((int *)g_ddxContext_008075A8,this->field_0018,this->field_001C,this->field_0040,
                this->field_0044);
   PutDDX(this->field_0018,this->field_001C,'\x01',(BITMAPINFO *)this->field_0072);
   return;

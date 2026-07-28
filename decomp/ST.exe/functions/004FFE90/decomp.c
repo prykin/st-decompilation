@@ -138,8 +138,8 @@ void __thiscall CPanelTy::Update5Panel(CPanelTy *this)
       PaintName(this_00,0);
       if (-1 < (int)this_00->field_0148[7]) {
         Library::DKW::DDX::FUN_006b3640
-                  ((int *)PTR_008075a8,(uint)this_00->field_0148[7],0xffffffff,this_00->field_0058,
-                   this_00->field_00B0);
+                  ((int *)g_ddxContext_008075A8,(uint)this_00->field_0148[7],0xffffffff,
+                   this_00->field_0058,this_00->field_00B0);
       }
     }
     pbVar10 = &this_00->field_0C5D;
@@ -168,8 +168,8 @@ LAB_00500126:
       PaintName(this_00,0);
       if (-1 < (int)this_00->field_0148[7]) {
         Library::DKW::DDX::FUN_006b3640
-                  ((int *)PTR_008075a8,(uint)this_00->field_0148[7],0xffffffff,this_00->field_0058,
-                   this_00->field_00B0);
+                  ((int *)g_ddxContext_008075A8,(uint)this_00->field_0148[7],0xffffffff,
+                   this_00->field_0058,this_00->field_00B0);
       }
     }
     if ((((local_29 != this_00->field_0C6C) || (local_42 != this_00->field_0C53)) &&
@@ -180,8 +180,8 @@ LAB_00500126:
       PaintLife(this_00,0);
       if (-1 < (int)this_00->field_0148[7]) {
         Library::DKW::DDX::FUN_006b3640
-                  ((int *)PTR_008075a8,(uint)this_00->field_0148[7],0xffffffff,this_00->field_0058,
-                   this_00->field_00B0);
+                  ((int *)g_ddxContext_008075A8,(uint)this_00->field_0148[7],0xffffffff,
+                   this_00->field_0058,this_00->field_00B0);
       }
     }
     if (((DAT_0080874e == '\x03') && (this_00->field_0C58 == '\x03')) &&
@@ -200,8 +200,8 @@ LAB_00500126:
       PaintWeap(this_00,0);
       if (-1 < (int)this_00->field_0148[7]) {
         Library::DKW::DDX::FUN_006b3640
-                  ((int *)PTR_008075a8,(uint)this_00->field_0148[7],0xffffffff,this_00->field_0058,
-                   this_00->field_00B0);
+                  ((int *)g_ddxContext_008075A8,(uint)this_00->field_0148[7],0xffffffff,
+                   this_00->field_0058,this_00->field_00B0);
       }
     }
     iVar5 = 5;
@@ -223,7 +223,7 @@ LAB_00500126:
       if (bVar4 < 0xb) {
         if (-1 < (int)this_00->field_0148[bVar4]) {
           Library::DKW::DDX::FUN_006b3640
-                    ((int *)PTR_008075a8,(uint)this_00->field_0148[bVar4],0xffffffff,
+                    ((int *)g_ddxContext_008075A8,(uint)this_00->field_0148[bVar4],0xffffffff,
                      (&this_00->field_003C)[bVar4],(&this_00->field_0094)[bVar4]);
         }
       }

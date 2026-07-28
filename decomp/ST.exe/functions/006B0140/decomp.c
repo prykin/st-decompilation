@@ -12,20 +12,21 @@ char * LoadResourceString(UINT resourceId,HINSTANCE module)
   uint uVar1;
   char *pcVar2;
 
-  if (0x1004 < DAT_008568e0 + 0x800) {
-    DAT_008568e0 = 0;
+  if (0x1004 < (int)(g_resourceStringBufferOffset + 0x800)) {
+    g_resourceStringBufferOffset = 0;
   }
   if (module == (HINSTANCE)0x0) {
     module = GetModuleHandleA((LPCSTR)0x0);
   }
-  uVar1 = LoadStringA(module,resourceId,&DAT_00857a60 + DAT_008568e0,0x800);
-  pcVar2 = &DAT_00857a60 + DAT_008568e0;
+  uVar1 = LoadStringA(module,resourceId,g_resourceStringBuffer + g_resourceStringBufferOffset,0x800)
+  ;
+  pcVar2 = g_resourceStringBuffer + g_resourceStringBufferOffset;
   if ((uVar1 != 0) && (uVar1 < 0x800)) {
-    DAT_008568e0 = DAT_008568e0 + 1 + uVar1;
+    g_resourceStringBufferOffset = g_resourceStringBufferOffset + 1 + uVar1;
     return pcVar2;
   }
-  (&DAT_00857a60)[DAT_008568e0] = '\0';
-  DAT_008568e0 = DAT_008568e0 + 1;
+  g_resourceStringBuffer[g_resourceStringBufferOffset] = '\0';
+  g_resourceStringBufferOffset = g_resourceStringBufferOffset + 1;
   return pcVar2;
 }
 

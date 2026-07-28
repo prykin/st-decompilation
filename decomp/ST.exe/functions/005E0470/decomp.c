@@ -36,7 +36,7 @@ void __thiscall MTaskTy::DoneMTask(MTaskTy *this)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  DarkScreen(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,10,2);
+  DarkScreen(g_dDXContext_0080759C,10,2);
   this_00 = local_8;
   SetAccelerator(0,local_8->field_0008,2,100,2,1,0,0,0,0,0,0);
   SetAccelerator(0,this_00->field_0008,2,0x62,2,0x1c,0,0,0,0,0,0);
@@ -45,7 +45,7 @@ void __thiscall MTaskTy::DoneMTask(MTaskTy *this)
     this_00->field_0488 = 0;
   }
   if (-1 < this_00->field_063F) {
-    FUN_006b3bb0((int *)PTR_008075a8,this_00->field_063F);
+    FUN_006b3bb0((int *)g_ddxContext_008075A8,this_00->field_063F);
     this_00->field_063F = -1;
   }
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this_00->field_048C);
@@ -60,7 +60,7 @@ void __thiscall MTaskTy::DoneMTask(MTaskTy *this)
     this_00->field_02CD = 0;
   }
   if (-1 < this_00->field_0484) {
-    FUN_006b3bb0((int *)PTR_008075a8,this_00->field_0484);
+    FUN_006b3bb0((int *)g_ddxContext_008075A8,this_00->field_0484);
     this_00->field_0484 = -1;
   }
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this_00->field_02D1);
@@ -70,7 +70,7 @@ void __thiscall MTaskTy::DoneMTask(MTaskTy *this)
   iVar2 = 4;
   do {
     if (-1 < (int)*puVar6) {
-      FUN_006b3bb0((int *)PTR_008075a8,*puVar6);
+      FUN_006b3bb0((int *)g_ddxContext_008075A8,*puVar6);
       *puVar6 = 0xffffffff;
     }
     puVar6 = puVar6 + 1;
@@ -84,7 +84,7 @@ void __thiscall MTaskTy::DoneMTask(MTaskTy *this)
   iVar2 = 5;
   do {
     if (-1 < (int)*puVar6) {
-      FUN_006b3bb0((int *)PTR_008075a8,*puVar6);
+      FUN_006b3bb0((int *)g_ddxContext_008075A8,*puVar6);
       *puVar6 = 0xffffffff;
     }
     puVar6 = puVar6 + 1;

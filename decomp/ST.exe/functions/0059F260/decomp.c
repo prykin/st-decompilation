@@ -59,8 +59,7 @@ void __thiscall FSGSTy::LadderCtrls(FSGSTy *this)
     uVar3 = FUN_006b4fe0((int)this_00->field_005D);
     uVar4 = FUN_006b50c0(0x2e1,0x175,(uint)this_00->field_005D[7],uVar3,(undefined4 *)puVar9,iVar6);
     this_00->field_1E8E = uVar4;
-    ptVar5 = Library::DKW::DDX::FUN_006c4880
-                       (g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0x22,0x5e,0x2e1,0x175,8);
+    ptVar5 = Library::DKW::DDX::FUN_006c4880(g_dDXContext_0080759C,0x22,0x5e,0x2e1,0x175,8);
     this_00->field_1E92 = ptVar5;
     uVar4 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,0x2c,0x90,0x96,0x19,0x6906,0x698e);
     this_00->field_1EB6 = uVar4;

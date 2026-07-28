@@ -287,12 +287,12 @@ LAB_005bb532:
       puVar10 = &this_01->field_1C2A;
       iVar8 = 0x16;
       do {
-        Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,*puVar10);
+        Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,*puVar10);
         puVar10 = puVar10 + 1;
         iVar8 = iVar8 + -1;
       } while (iVar8 != 0);
       if (this_01->field_1A5F == '\0') {
-        Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,this_01->field_1C8A);
+        Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,this_01->field_1C8A);
       }
       this_01->field_0065 = CASE_1;
       CreateCtrls(this_01,'\0');
@@ -307,7 +307,7 @@ LAB_005bb532:
       if (iVar8 == 0) {
         uVar2 = this_01->field_1C96->field_0003;
         if (-1 < (int)uVar2) {
-          FUN_006b3af0((int *)PTR_008075a8,uVar2);
+          FUN_006b3af0((int *)g_ddxContext_008075A8,uVar2);
         }
       }
       else {
@@ -319,7 +319,7 @@ LAB_005bb532:
       if (iVar8 == 0) {
         uVar2 = this_01->field_1C9A->field_0003;
         if (-1 < (int)uVar2) {
-          FUN_006b3af0((int *)PTR_008075a8,uVar2);
+          FUN_006b3af0((int *)g_ddxContext_008075A8,uVar2);
         }
       }
       else {
@@ -348,7 +348,7 @@ LAB_005bb532:
       if (iVar8 == 0) {
         if ((this_01->field_1A60 == '\x01') &&
            (uVar2 = this_01->field_1C9A->field_0003, -1 < (int)uVar2)) {
-          FUN_006b3af0((int *)PTR_008075a8,uVar2);
+          FUN_006b3af0((int *)g_ddxContext_008075A8,uVar2);
         }
       }
       else {
@@ -366,7 +366,7 @@ LAB_005bb532:
         this_01->field_1C9A = (HoloTy *)0x0;
       }
       if (this_01->field_1A60 == '\0') {
-        Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,this_01->field_1C8A);
+        Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,this_01->field_1C8A);
       }
       SetMode(this_01,this_01->field_1A60,'\0');
       g_currentExceptionFrame = local_a0.previous;

@@ -290,9 +290,10 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
     puVar11 = (uint *)LoadResourceString(0x2353,g_module_00807618);
     ccFntTy::WrStr(g_startSystem_0081176C->field_0034,puVar11,iVar5,iVar30,uVar19);
     pAVar10 = this_01->field_1C67;
-    FUN_006b2330(PTR_008075a8,&this_01->field_1F80,0x31,0x40407f,pAVar10->field_0004,
+    FUN_006b2330(g_ddxContext_008075A8,&this_01->field_1F80,0x31,0x40407f,pAVar10->field_0004,
                  pAVar10->field_0008,(ushort *)pAVar10);
-    Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,this_01->field_1F80,0xffffffff,10,0xb4);
+    Library::DKW::DDX::FUN_006b3640
+              ((int *)g_ddxContext_008075A8,this_01->field_1F80,0xffffffff,10,0xb4);
     pDVar8 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,5,0x20c,5);
     this_01->field_1F7C = pDVar8;
     wsprintfA((LPSTR)local_3cc,"%s%s%s%s",&DAT_00807680,PTR_s_SYSTEM__0079c0ec,
@@ -442,24 +443,24 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
     }
   }
   SpriteClassTy::InitSprite
-            ((SpriteClassTy *)&this_01->field_1C6B,(int *)PTR_008075a8,0x31,'\a',(undefined4 *)0x0,0
-             ,0);
+            ((SpriteClassTy *)&this_01->field_1C6B,(int *)g_ddxContext_008075A8,0x31,'\a',
+             (undefined4 *)0x0,0,0);
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (**(code **)(this_01->field_1C6B + 4))(DAT_00806784,7,0,"MM_SLDUP",0xffffffff);
   this_01->field_1C87 = 0x2fa;
   this_01->field_1C8B = 0x3b;
   this_01->field_1C73 = 0;
   SpriteClassTy::InitSprite
-            ((SpriteClassTy *)&this_01->field_1CFC,(int *)PTR_008075a8,0x31,'\a',(undefined4 *)0x0,0
-             ,0);
+            ((SpriteClassTy *)&this_01->field_1CFC,(int *)g_ddxContext_008075A8,0x31,'\a',
+             (undefined4 *)0x0,0,0);
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (**(code **)(this_01->field_1CFC + 4))(DAT_00806784,7,0,"MM_SLDDN",0xffffffff);
   this_01->field_1D18 = 0x2fa;
   this_01->field_1D1C = 0x11e;
   this_01->field_1D04 = 0;
   SpriteClassTy::InitSprite
-            ((SpriteClassTy *)&this_01->field_1D8D,(int *)PTR_008075a8,0x31,'\a',(undefined4 *)0x0,0
-             ,0);
+            ((SpriteClassTy *)&this_01->field_1D8D,(int *)g_ddxContext_008075A8,0x31,'\a',
+             (undefined4 *)0x0,0,0);
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (**(code **)(this_01->field_1D8D + 4))(DAT_00806784,7,0,"MM_SLDT",0xffffffff);
   this_01->field_1DA9 = 0x2ff;
@@ -490,9 +491,10 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
       puVar15 = (undefined4 *)((int)puVar15 + 1);
     }
     puVar9 = (ushort *)*puVar6;
-    FUN_006b2330(PTR_008075a8,puVar6 + -10,0x31,0x40407f,*(uint *)(puVar9 + 2),*(uint *)(puVar9 + 4)
-                 ,puVar9);
-    Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,puVar6[-10],0xffffffff,0x113,local_c);
+    FUN_006b2330(g_ddxContext_008075A8,puVar6 + -10,0x31,0x40407f,*(uint *)(puVar9 + 2),
+                 *(uint *)(puVar9 + 4),puVar9);
+    Library::DKW::DDX::FUN_006b3640
+              ((int *)g_ddxContext_008075A8,puVar6[-10],0xffffffff,0x113,local_c);
     puVar6 = puVar6 + 1;
     local_c = local_c + 0x19;
   } while ((int)local_c < 0x13b);
@@ -643,15 +645,15 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
   }
   pAVar16 = this_01->field_1E1E;
   puVar6 = &this_01->field_1E22;
-  FUN_006b2330(PTR_008075a8,puVar6,0x31,0x40407f,pAVar16->field_0004,pAVar16->field_0008,
+  FUN_006b2330(g_ddxContext_008075A8,puVar6,0x31,0x40407f,pAVar16->field_0004,pAVar16->field_0008,
                (ushort *)pAVar16);
-  Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,*puVar6,0xffffffff,0x112,0x149);
+  Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,*puVar6,0xffffffff,0x112,0x149);
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (*(code *)this_01->field_0000->field_0018)(1);
   if (this_01->field_21E2 != '\0') {
-    FUN_006b2330(PTR_008075a8,&local_8,0x32,0x4042d2,0xf9,0x121,
+    FUN_006b2330(g_ddxContext_008075A8,&local_8,0x32,0x4042d2,0xf9,0x121,
                  (ushort *)&this_01->field_1A5B->field_0140);
-    Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,local_8,0xffffffff,10,0xb4);
+    Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,local_8,0xffffffff,10,0xb4);
     pHVar17 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
     if (pHVar17 == (HoloTy *)0x0) {
       pHVar17 = (HoloTy *)0x0;
@@ -663,8 +665,8 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
       pHVar17->field_0001 = CASE_2;
       pHVar17->field_0007 = 0;
       pHVar17->field_000B = (void *)0x0;
-      *(undefined4 *)&pHVar17->field_0xf = 0;
-      *(undefined4 *)&pHVar17->field_0x1b = 1;
+      pHVar17->field_000F = 0;
+      pHVar17->field_001B = 1;
       pHVar17->field_0013 = 1;
       pHVar17->field_0017 = -1;
       pHVar17->field_0027 = 0;
@@ -678,7 +680,7 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
       cVar28 = '\x01';
       bVar27 = 0x10;
       iVar30 = 1;
-      iVar5 = Library::DKW::DDX::FUN_006bf9f0((int *)PTR_008075a8,10,0xb4,0xf9,0x121);
+      iVar5 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,10,0xb4,0xf9,0x121);
       uVar19 = HoloTy::Init(this_01->field_21EC,CASE_4,10,0xb4,iVar5,iVar30,bVar27,cVar28,uVar19);
       if (uVar19 != 0) {
         pHVar17 = this_01->field_21EC;
@@ -686,7 +688,7 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
         pHVar17->field_0017 = pHVar17->field_0013;
         uVar19 = this_01->field_21EC->field_0003;
         if (-1 < (int)uVar19) {
-          Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,uVar19);
+          Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar19);
         }
         if (g_startSystem_0081176C->field_0391 != 0xffffffff) {
           FUN_006b3af0((int *)g_startSystem_0081176C->field_03D5,g_startSystem_0081176C->field_0391)
@@ -700,21 +702,21 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
           FUN_006b3af0((int *)g_startSystem_0081176C->field_04F7,g_startSystem_0081176C->field_04B3)
           ;
         }
-        FUN_006b3af0((int *)PTR_008075a8,g_startSystem_0081176C->field_0540);
+        FUN_006b3af0((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0540);
       }
     }
     if (local_8 != 0xffffffff) {
-      FUN_006b3bb0((int *)PTR_008075a8,local_8);
+      FUN_006b3bb0((int *)g_ddxContext_008075A8,local_8);
       local_8 = 0xffffffff;
     }
   }
   if (this_01->field_21E5 == '\0') {
-    FUN_006b3af0((int *)PTR_008075a8,*puVar6);
+    FUN_006b3af0((int *)g_ddxContext_008075A8,*puVar6);
   }
   else {
-    FUN_006b2330(PTR_008075a8,&local_8,0x32,0x403099,0x205,0x8c,
+    FUN_006b2330(g_ddxContext_008075A8,&local_8,0x32,0x403099,0x205,0x8c,
                  (ushort *)&this_01->field_1A5B->field_0140);
-    Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,local_8,0xffffffff,0x112,0x149);
+    Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,local_8,0xffffffff,0x112,0x149);
     pHVar17 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
     if (pHVar17 == (HoloTy *)0x0) {
       pHVar17 = (HoloTy *)0x0;
@@ -726,8 +728,8 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
       pHVar17->field_0001 = CASE_2;
       pHVar17->field_0007 = 0;
       pHVar17->field_000B = (void *)0x0;
-      *(undefined4 *)&pHVar17->field_0xf = 0;
-      *(undefined4 *)&pHVar17->field_0x1b = 1;
+      pHVar17->field_000F = 0;
+      pHVar17->field_001B = 1;
       pHVar17->field_0013 = 1;
       pHVar17->field_0017 = -1;
       pHVar17->field_0027 = 0;
@@ -741,7 +743,7 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
       cVar28 = '\x01';
       bVar27 = 0x10;
       iVar30 = 1;
-      iVar5 = Library::DKW::DDX::FUN_006bf9f0((int *)PTR_008075a8,0x112,0x149,0x205,0x8c);
+      iVar5 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,0x112,0x149,0x205,0x8c);
       uVar19 = HoloTy::Init(this_01->field_21F4,CASE_2,0x112,0x149,iVar5,iVar30,bVar27,cVar28,uVar19
                            );
       if (uVar19 != 0) {
@@ -750,13 +752,13 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
         pHVar17->field_0017 = pHVar17->field_0013;
         uVar19 = this_01->field_21F4->field_0003;
         if (-1 < (int)uVar19) {
-          Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,uVar19);
+          Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar19);
         }
-        FUN_006b3af0((int *)PTR_008075a8,*puVar6);
+        FUN_006b3af0((int *)g_ddxContext_008075A8,*puVar6);
       }
     }
     if (local_8 != 0xffffffff) {
-      FUN_006b3bb0((int *)PTR_008075a8,local_8);
+      FUN_006b3bb0((int *)g_ddxContext_008075A8,local_8);
       local_8 = 0xffffffff;
     }
   }
@@ -773,15 +775,15 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
     puVar11 = this_01->field_20CC;
     iVar5 = 10;
     do {
-      FUN_006b3af0((int *)PTR_008075a8,*puVar11);
+      FUN_006b3af0((int *)g_ddxContext_008075A8,*puVar11);
       puVar11 = puVar11 + 1;
       iVar5 = iVar5 + -1;
     } while (iVar5 != 0);
   }
   else {
-    FUN_006b2330(PTR_008075a8,&local_8,0x32,0x4042d2,0x205,0x104,
+    FUN_006b2330(g_ddxContext_008075A8,&local_8,0x32,0x4042d2,0x205,0x104,
                  (ushort *)&this_01->field_1A5B->field_0140);
-    Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,local_8,0xffffffff,0x112,0x38);
+    Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,local_8,0xffffffff,0x112,0x38);
     pHVar17 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
     if (pHVar17 == (HoloTy *)0x0) {
       pHVar17 = (HoloTy *)0x0;
@@ -793,8 +795,8 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
       pHVar17->field_0001 = CASE_2;
       pHVar17->field_0007 = 0;
       pHVar17->field_000B = (void *)0x0;
-      *(undefined4 *)&pHVar17->field_0xf = 0;
-      *(undefined4 *)&pHVar17->field_0x1b = 1;
+      pHVar17->field_000F = 0;
+      pHVar17->field_001B = 1;
       pHVar17->field_0013 = 1;
       pHVar17->field_0017 = -1;
       pHVar17->field_0027 = 0;
@@ -808,7 +810,7 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
       cVar28 = '\x01';
       bVar27 = 0x10;
       iVar30 = 1;
-      iVar5 = Library::DKW::DDX::FUN_006bf9f0((int *)PTR_008075a8,0x112,0x38,0x205,0x104);
+      iVar5 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,0x112,0x38,0x205,0x104);
       uVar19 = HoloTy::Init(this_01->field_21E8,CASE_2,0x112,0x38,iVar5,iVar30,bVar27,cVar28,uVar19)
       ;
       if (uVar19 != 0) {
@@ -817,7 +819,7 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
         pHVar17->field_0017 = pHVar17->field_0013;
         uVar19 = this_01->field_21E8->field_0003;
         if (-1 < (int)uVar19) {
-          Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,uVar19);
+          Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar19);
         }
         if (this_01->field_1C6F != 0xffffffff) {
           FUN_006b3af0((int *)this_01->field_1CB3,this_01->field_1C6F);
@@ -831,21 +833,21 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
         puVar11 = this_01->field_20CC;
         iVar5 = 10;
         do {
-          FUN_006b3af0((int *)PTR_008075a8,*puVar11);
+          FUN_006b3af0((int *)g_ddxContext_008075A8,*puVar11);
           puVar11 = puVar11 + 1;
           iVar5 = iVar5 + -1;
         } while (iVar5 != 0);
       }
     }
     if (local_8 != 0xffffffff) {
-      FUN_006b3bb0((int *)PTR_008075a8,local_8);
+      FUN_006b3bb0((int *)g_ddxContext_008075A8,local_8);
       local_8 = 0xffffffff;
     }
   }
   if (this_01->field_21E3 != '\0') {
-    FUN_006b2330(PTR_008075a8,&local_8,0x32,0x403099,0xf9,0x123,
+    FUN_006b2330(g_ddxContext_008075A8,&local_8,0x32,0x403099,0xf9,0x123,
                  (ushort *)&this_01->field_1A5B->field_0140);
-    Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,local_8,0xffffffff,10,0xb4);
+    Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,local_8,0xffffffff,10,0xb4);
     pHVar17 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
     if (pHVar17 == (HoloTy *)0x0) {
       pHVar17 = (HoloTy *)0x0;
@@ -857,8 +859,8 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
       pHVar17->field_0001 = CASE_2;
       pHVar17->field_0007 = 0;
       pHVar17->field_000B = (void *)0x0;
-      *(undefined4 *)&pHVar17->field_0xf = 0;
-      *(undefined4 *)&pHVar17->field_0x1b = 1;
+      pHVar17->field_000F = 0;
+      pHVar17->field_001B = 1;
       pHVar17->field_0013 = 1;
       pHVar17->field_0017 = -1;
       pHVar17->field_0027 = 0;
@@ -872,7 +874,7 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
       cVar28 = '\x01';
       bVar27 = 0x10;
       iVar30 = 1;
-      iVar5 = Library::DKW::DDX::FUN_006bf9f0((int *)PTR_008075a8,10,0xb4,0xf9,0x123);
+      iVar5 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,10,0xb4,0xf9,0x123);
       uVar19 = HoloTy::Init(this_01->field_21F0,CASE_4,10,0xb4,iVar5,iVar30,bVar27,cVar28,uVar19);
       if (uVar19 != 0) {
         pHVar17 = this_01->field_21F0;
@@ -880,13 +882,13 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
         pHVar17->field_0017 = pHVar17->field_0013;
         uVar19 = this_01->field_21F0->field_0003;
         if (-1 < (int)uVar19) {
-          Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,uVar19);
+          Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar19);
         }
-        FUN_006b3af0((int *)PTR_008075a8,this_01->field_1F80);
+        FUN_006b3af0((int *)g_ddxContext_008075A8,this_01->field_1F80);
       }
     }
     if (local_8 != 0xffffffff) {
-      FUN_006b3bb0((int *)PTR_008075a8,local_8);
+      FUN_006b3bb0((int *)g_ddxContext_008075A8,local_8);
       local_8 = 0xffffffff;
     }
   }

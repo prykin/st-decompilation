@@ -35,7 +35,7 @@ void __thiscall SIDTy::DoneSID(SIDTy *this)
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pSVar2->field_1B92);
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pSVar2->field_1C23);
     if (pSVar2->field_1CB4 != 0xffffffff) {
-      FUN_006b3bb0((int *)PTR_008075a8,pSVar2->field_1CB4);
+      FUN_006b3bb0((int *)g_ddxContext_008075A8,pSVar2->field_1CB4);
     }
     pSVar2->field_1CB4 = 0xffffffff;
     if (pSVar2->field_1CB8 != (ushort *)0x0) {

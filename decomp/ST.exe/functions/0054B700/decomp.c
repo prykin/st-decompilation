@@ -49,7 +49,7 @@ void __thiscall CursorClassTy::sub_0054B700(CursorClassTy *this,int param_1)
     iVar2 = g_nWidth_00806730 + -0x18;
     iVar4 = 0xa1;
   }
-  FUN_006b5f80((int *)PTR_008075a8,iVar2,iVar4,iVar5,iVar6);
+  FUN_006b5f80((int *)g_ddxContext_008075A8,iVar2,iVar4,iVar5,iVar6);
   pCVar1 = local_8;
   if (local_8->field_04DF < 0) goto LAB_0054b81b;
   if (DAT_0080874e == '\x01') {

@@ -378,10 +378,10 @@ LAB_005ae53a:
   }
 LAB_005ae602:
   if ((pCVar17->field_1A5F != CASE_3) && (-1 < g_startSystem_0081176C->field_02EC)) {
-    FUN_006b35d0((int *)PTR_008075a8,g_startSystem_0081176C->field_02EC);
+    FUN_006b35d0((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_02EC);
   }
   if (-1 < g_startSystem_0081176C->field_0540) {
-    FUN_006b35d0((int *)PTR_008075a8,g_startSystem_0081176C->field_0540);
+    FUN_006b35d0((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0540);
   }
   g_currentExceptionFrame = local_78.previous;
   return;

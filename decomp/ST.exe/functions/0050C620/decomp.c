@@ -231,8 +231,8 @@ cf_common_exit_0050E007:
         PaintCostsXYSI(this_00,this_00->field_0194,this_00->field_0C1C,this_00->field_0C20,7,4);
         if (-1 < (int)this_00->field_0148[5]) {
           Library::DKW::DDX::FUN_006b3640
-                    ((int *)PTR_008075a8,(uint)this_00->field_0148[5],0xffffffff,this_00->field_0050
-                     ,this_00->field_00A8);
+                    ((int *)g_ddxContext_008075A8,(uint)this_00->field_0148[5],0xffffffff,
+                     this_00->field_0050,this_00->field_00A8);
         }
       }
     }
@@ -439,8 +439,8 @@ cf_common_exit_0050E007:
       }
       if (-1 < (int)this_00->field_0148[5]) {
         Library::DKW::DDX::FUN_006b3640
-                  ((int *)PTR_008075a8,(uint)this_00->field_0148[5],0xffffffff,this_00->field_0050,
-                   this_00->field_00A8);
+                  ((int *)g_ddxContext_008075A8,(uint)this_00->field_0148[5],0xffffffff,
+                   this_00->field_0050,this_00->field_00A8);
       }
       break;
     }
@@ -472,8 +472,8 @@ cf_common_exit_0050E007:
         PaintPerResSI(this_00);
         if (-1 < (int)this_00->field_0148[5]) {
           Library::DKW::DDX::FUN_006b3640
-                    ((int *)PTR_008075a8,(uint)this_00->field_0148[5],0xffffffff,this_00->field_0050
-                     ,this_00->field_00A8);
+                    ((int *)g_ddxContext_008075A8,(uint)this_00->field_0148[5],0xffffffff,
+                     this_00->field_0050,this_00->field_00A8);
         }
       }
       break;
@@ -530,8 +530,8 @@ LAB_0050ce3f:
     } while (uVar7 < 4);
     if (-1 < (int)this_00->field_0148[5]) {
       Library::DKW::DDX::FUN_006b3640
-                ((int *)PTR_008075a8,(uint)this_00->field_0148[5],0xffffffff,this_00->field_0050,
-                 this_00->field_00A8);
+                ((int *)g_ddxContext_008075A8,(uint)this_00->field_0148[5],0xffffffff,
+                 this_00->field_0050,this_00->field_00A8);
     }
     break;
   case CASE_5C:
@@ -565,8 +565,8 @@ LAB_0050ce3f:
         PaintCostsXYSI(this_00,this_00->field_0194,this_00->field_0C1C,this_00->field_0C20,7,4);
         if (-1 < (int)this_00->field_0148[5]) {
           Library::DKW::DDX::FUN_006b3640
-                    ((int *)PTR_008075a8,(uint)this_00->field_0148[5],0xffffffff,this_00->field_0050
-                     ,this_00->field_00A8);
+                    ((int *)g_ddxContext_008075A8,(uint)this_00->field_0148[5],0xffffffff,
+                     this_00->field_0050,this_00->field_00A8);
         }
       }
     }
@@ -587,8 +587,8 @@ LAB_0050ce3f:
     ccFntTy::WrStr(this_00->field_01C4,&DAT_0080f33a,-1,-1,4);
     if (-1 < (int)this_00->field_0148[5]) {
       Library::DKW::DDX::FUN_006b3640
-                ((int *)PTR_008075a8,(uint)this_00->field_0148[5],0xffffffff,this_00->field_0050,
-                 this_00->field_00A8);
+                ((int *)g_ddxContext_008075A8,(uint)this_00->field_0148[5],0xffffffff,
+                 this_00->field_0050,this_00->field_00A8);
     }
     break;
   case CASE_61:
@@ -625,8 +625,8 @@ LAB_0050ce3f:
       }
       if (-1 < (int)this_00->field_0148[5]) {
         Library::DKW::DDX::FUN_006b3640
-                  ((int *)PTR_008075a8,(uint)this_00->field_0148[5],0xffffffff,this_00->field_0050,
-                   this_00->field_00A8);
+                  ((int *)g_ddxContext_008075A8,(uint)this_00->field_0148[5],0xffffffff,
+                   this_00->field_0050,this_00->field_00A8);
       }
     }
     if (this_00->field_0C29 != local_44) {
@@ -654,8 +654,8 @@ LAB_0050ce3f:
       }
       if (-1 < (int)this_00->field_0148[5]) {
         Library::DKW::DDX::FUN_006b3640
-                  ((int *)PTR_008075a8,(uint)this_00->field_0148[5],0xffffffff,this_00->field_0050,
-                   this_00->field_00A8);
+                  ((int *)g_ddxContext_008075A8,(uint)this_00->field_0148[5],0xffffffff,
+                   this_00->field_0050,this_00->field_00A8);
       }
     }
     break;
@@ -711,8 +711,8 @@ LAB_0050ce3f:
       }
       if (-1 < (int)this_00->field_0148[5]) {
         Library::DKW::DDX::FUN_006b3640
-                  ((int *)PTR_008075a8,(uint)this_00->field_0148[5],0xffffffff,this_00->field_0050,
-                   this_00->field_00A8);
+                  ((int *)g_ddxContext_008075A8,(uint)this_00->field_0148[5],0xffffffff,
+                   this_00->field_0050,this_00->field_00A8);
       }
     }
     break;
@@ -752,8 +752,8 @@ LAB_0050ce3f:
       }
       if (-1 < (int)this_00->field_0148[5]) {
         Library::DKW::DDX::FUN_006b3640
-                  ((int *)PTR_008075a8,(uint)this_00->field_0148[5],0xffffffff,this_00->field_0050,
-                   this_00->field_00A8);
+                  ((int *)g_ddxContext_008075A8,(uint)this_00->field_0148[5],0xffffffff,
+                   this_00->field_0050,this_00->field_00A8);
       }
     }
     if (((this_00->field_0C1C == local_51) && (this_00->field_0C20 == local_4d)) ||
@@ -765,8 +765,8 @@ LAB_0050ce3f:
       DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,100,0x59,'\x01',pbVar8);
       if (-1 < (int)this_00->field_0148[5]) {
         Library::DKW::DDX::FUN_006b3640
-                  ((int *)PTR_008075a8,(uint)this_00->field_0148[5],0xffffffff,this_00->field_0050,
-                   this_00->field_00A8);
+                  ((int *)g_ddxContext_008075A8,(uint)this_00->field_0148[5],0xffffffff,
+                   this_00->field_0050,this_00->field_00A8);
       }
     }
     if (this_00->field_0C20 != local_4d) {
@@ -775,8 +775,8 @@ LAB_0050ce3f:
       DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,0xaf,0x59,'\x01',pbVar8);
       if (-1 < (int)this_00->field_0148[5]) {
         Library::DKW::DDX::FUN_006b3640
-                  ((int *)PTR_008075a8,(uint)this_00->field_0148[5],0xffffffff,this_00->field_0050,
-                   this_00->field_00A8);
+                  ((int *)g_ddxContext_008075A8,(uint)this_00->field_0148[5],0xffffffff,
+                   this_00->field_0050,this_00->field_00A8);
       }
     }
     this_01 = this_00->field_01C4;
@@ -817,8 +817,8 @@ LAB_0050ce3f:
       }
       if (-1 < (int)this_00->field_0148[5]) {
         Library::DKW::DDX::FUN_006b3640
-                  ((int *)PTR_008075a8,(uint)this_00->field_0148[5],0xffffffff,this_00->field_0050,
-                   this_00->field_00A8);
+                  ((int *)g_ddxContext_008075A8,(uint)this_00->field_0148[5],0xffffffff,
+                   this_00->field_0050,this_00->field_00A8);
       }
     }
     break;
@@ -847,8 +847,8 @@ LAB_0050ce3f:
       }
       if (-1 < (int)this_00->field_0148[5]) {
         Library::DKW::DDX::FUN_006b3640
-                  ((int *)PTR_008075a8,(uint)this_00->field_0148[5],0xffffffff,this_00->field_0050,
-                   this_00->field_00A8);
+                  ((int *)g_ddxContext_008075A8,(uint)this_00->field_0148[5],0xffffffff,
+                   this_00->field_0050,this_00->field_00A8);
       }
     }
     if (*(Global_sub_00526BA0_param_1Enum *)&this_00->field_0xc12 != local_5b) {
@@ -874,8 +874,8 @@ LAB_0050ce3f:
       }
       if (-1 < (int)this_00->field_0148[5]) {
         Library::DKW::DDX::FUN_006b3640
-                  ((int *)PTR_008075a8,(uint)this_00->field_0148[5],0xffffffff,this_00->field_0050,
-                   this_00->field_00A8);
+                  ((int *)g_ddxContext_008075A8,(uint)this_00->field_0148[5],0xffffffff,
+                   this_00->field_0050,this_00->field_00A8);
       }
     }
     break;
@@ -897,8 +897,8 @@ LAB_0050ce3f:
         DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,uVar7,0x57,'\x01',pbVar8);
         if (-1 < (int)this_00->field_0148[5]) {
           Library::DKW::DDX::FUN_006b3640
-                    ((int *)PTR_008075a8,(uint)this_00->field_0148[5],0xffffffff,this_00->field_0050
-                     ,this_00->field_00A8);
+                    ((int *)g_ddxContext_008075A8,(uint)this_00->field_0148[5],0xffffffff,
+                     this_00->field_0050,this_00->field_00A8);
         }
       }
       if (local_49[uVar9] != (&this_00->field_0C24)[uVar9]) {
@@ -928,8 +928,8 @@ LAB_0050ce3f:
         }
         if (-1 < (int)this_00->field_0148[5]) {
           Library::DKW::DDX::FUN_006b3640
-                    ((int *)PTR_008075a8,(uint)this_00->field_0148[5],0xffffffff,this_00->field_0050
-                     ,this_00->field_00A8);
+                    ((int *)g_ddxContext_008075A8,(uint)this_00->field_0148[5],0xffffffff,
+                     this_00->field_0050,this_00->field_00A8);
         }
       }
       local_10 = local_10 + 1;
@@ -981,8 +981,8 @@ LAB_0050dfdc:
         }
         if (-1 < (int)this_00->field_0148[5]) {
           Library::DKW::DDX::FUN_006b3640
-                    ((int *)PTR_008075a8,(uint)this_00->field_0148[5],0xffffffff,this_00->field_0050
-                     ,this_00->field_00A8);
+                    ((int *)g_ddxContext_008075A8,(uint)this_00->field_0148[5],0xffffffff,
+                     this_00->field_0050,this_00->field_00A8);
         }
       }
     }
@@ -1038,8 +1038,8 @@ LAB_0050dfdc:
       }
       if (-1 < (int)this_00->field_0148[5]) {
         Library::DKW::DDX::FUN_006b3640
-                  ((int *)PTR_008075a8,(uint)this_00->field_0148[5],0xffffffff,this_00->field_0050,
-                   this_00->field_00A8);
+                  ((int *)g_ddxContext_008075A8,(uint)this_00->field_0148[5],0xffffffff,
+                   this_00->field_0050,this_00->field_00A8);
       }
     }
   }

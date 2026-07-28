@@ -70,7 +70,7 @@ ResearchPanelTy::PaintUpdBut(ResearchPanelTy *this,AnonShape_004EF320_444F9AB1 *
       DibPut((AnonShape_006B5B10_E0D06CF1 *)pRVar4->field_0068,iVar5,iVar7,'\x06',pbVar6);
     }
     Library::DKW::DDX::FUN_006b3640
-              ((int *)PTR_008075a8,pRVar4->field_0060,0xffffffff,pRVar4->field_003C,
+              ((int *)g_ddxContext_008075A8,pRVar4->field_0060,0xffffffff,pRVar4->field_003C,
                pRVar4->field_0044);
     g_currentExceptionFrame = local_5c.previous;
     return;

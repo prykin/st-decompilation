@@ -54,19 +54,16 @@ void FUN_005c7800(void)
     }
   }
   SettMapTy::PaintSettMap(this,'\0');
-  Library::DKW::DDX::FUN_006bd740((int *)PTR_008075a8);
+  Library::DKW::DDX::FUN_006bd740((int *)g_ddxContext_008075A8);
   Library::DKW::DDX::FUN_006c4630
-            (g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,
-             g_anonShape_GLOBAL_0080759C_9638EF10_0080759C->field_0044,
-             (undefined4 *)&stack0xffffffb8);
+            (g_dDXContext_0080759C,g_dDXContext_0080759C->field_0044,(undefined4 *)&stack0xffffffb8)
+  ;
   PTR_00811758 = Library::DKW::DDX::FUN_006c4880
-                           (g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0,0,g_nWidth_00806730,
-                            DAT_00806734,DAT_00806738);
-  Library::DKW::DDX::FUN_006c44e0
-            (g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,(undefined4 *)&stack0xffffffb8);
-  FUN_006b5f80((int *)PTR_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
-  FUN_006b4640(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0,0,PTR_00811758,(uint *)0x0);
-  Library::DKW::DDX::FUN_006bb370(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0,0);
+                           (g_dDXContext_0080759C,0,0,g_nWidth_00806730,DAT_00806734,DAT_00806738);
+  Library::DKW::DDX::FUN_006c44e0(g_dDXContext_0080759C,(undefined4 *)&stack0xffffffb8);
+  FUN_006b5f80((int *)g_ddxContext_008075A8,0,0,g_nWidth_00806730,DAT_00806734);
+  FUN_006b4640(g_dDXContext_0080759C,0,0,PTR_00811758,(uint *)0x0);
+  Library::DKW::DDX::FUN_006bb370(g_dDXContext_0080759C,0,0);
   if (this->field_1F3F != (cMf32 *)0x0) {
     cMf32::delete(this->field_1F3F);
   }
@@ -201,8 +198,8 @@ LAB_005c7ae0:
     puVar8 = Library::Ourlib::MFIMG::mfImgLoad(this->field_1F3F,0xc,PTR_s_SMALL_MAP_0079c114,2,0);
     g_startSystem_0081176C->field_02F4 = puVar8;
     if (g_startSystem_0081176C->field_02F4 != (ushort *)0x0) {
-      FUN_006c7f90(g_startSystem_0081176C->field_02F4,(byte *)0x0,
-                   g_anonShape_GLOBAL_0080759C_9638EF10_0080759C->field_04B4,0);
+      FUN_006c7f90(g_startSystem_0081176C->field_02F4,(byte *)0x0,g_dDXContext_0080759C->field_04B4,
+                   0);
     }
     local_94 = DAT_0080995c;
     puVar7 = &DAT_00809960;

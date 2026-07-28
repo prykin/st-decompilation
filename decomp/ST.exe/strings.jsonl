@@ -3961,6 +3961,7 @@
 {"address":"007F2E88","type":"string","length":23,"value":"\"E:\\\\DKW\\\\JPG\\\\C\\\\jquant2.c\"","referenced_from":["0075E460 Library::DKW::JPG::FUN_0075e460","0075E630 Library::DKW::JPG::FUN_0075e630"]}
 {"address":"007F2EA0","type":"string","length":23,"value":"\"E:\\\\DKW\\\\JPG\\\\C\\\\jquant1.c\"","referenced_from":["0075F740 Library::DKW::JPG::FUN_0075f740","0075F8E0 Library::DKW::JPG::FUN_0075f8e0","0075FBA0 Library::DKW::JPG::FUN_0075fba0","007602CA"]}
 {"address":"007F2EB8","type":"string","length":24,"value":"\"E:\\\\DKW\\\\JPG\\\\C\\\\jmemnobs.c\"","referenced_from":["00760370 Library::DKW::JPG::FUN_00760370"]}
+{"address":"00857A60","type":"char[4100]","length":4100,"value":"\"\"","referenced_from":["006B0140 LoadResourceString"]}
 {"address":"0085C14E","type":"TerminatedCString","length":28,"value":"\"FindCloseChangeNotification\"","referenced_from":[]}
 {"address":"0085C16C","type":"TerminatedCString","length":29,"value":"\"FindFirstChangeNotificationA\"","referenced_from":[]}
 {"address":"0085C18C","type":"TerminatedCString","length":16,"value":"\"CompareFileTime\"","referenced_from":[]}

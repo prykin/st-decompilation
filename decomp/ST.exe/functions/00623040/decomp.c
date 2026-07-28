@@ -4,9 +4,12 @@
    Evidence: 00623040 parameter used as this of
    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00424E10::FUN_00424e10 @ 006230BC | 00623040
    parameter used as this of
-   SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00424E10::FUN_00424e10 @ 0062311E */
+   SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00424E10::FUN_00424e10 @ 0062311E
 
-int FUN_00623040(AnonReceiver_00424E10 *param_1,undefined4 param_2,int *param_3,
+   [STTypeFamilyApplier] EXACT_NAMED_LAYOUT.
+   Evidence: anonymous structure has an exact full-layout match to one unique named type */
+
+int FUN_00623040(AnonReceiver_004248D0 *param_1,undefined4 param_2,int *param_3,
                 AnonShape_00623040_D312340A *param_4)
 
 {
@@ -18,7 +21,7 @@ int FUN_00623040(AnonReceiver_00424E10 *param_1,undefined4 param_2,int *param_3,
   if ((iVar2 != 0) && (iVar1 = *(int *)(iVar2 + param_4->field_0070 * 4), iVar1 != 0)) {
     if (param_4->field_004F != '\0') {
       iVar2 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::thunk_FUN_00424e10
-                        ((AnonReceiver_004248D0 *)param_1,iVar1,
+                        (param_1,iVar1,
                          (float)param_4->field_0064 * _DAT_007904f8 * _DAT_007904f0 - _DAT_007907a8,
                          (float)param_4->field_0068 * _DAT_007904f8 * _DAT_007904f0 - _DAT_007907a8,
                          (float)param_4->field_006C * _DAT_007904f8 * _DAT_007904f0,0x20,0x20,
@@ -26,8 +29,7 @@ int FUN_00623040(AnonReceiver_00424E10 *param_1,undefined4 param_2,int *param_3,
       return iVar2;
     }
     iVar2 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::thunk_FUN_00424e10
-                      ((AnonReceiver_004248D0 *)param_1,
-                       *(int *)(iVar2 + (uint)param_4->field_0078 * 4),
+                      (param_1,*(int *)(iVar2 + (uint)param_4->field_0078 * 4),
                        (float)param_4->field_0064 * _DAT_007904f8 * _DAT_007904f0 - _DAT_007907a8,
                        (float)param_4->field_0068 * _DAT_007904f8 * _DAT_007904f0 - _DAT_007907a8,
                        (float)param_4->field_006C * _DAT_007904f8 * _DAT_007904f0,0x20,0x20,param_3)

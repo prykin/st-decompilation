@@ -2,7 +2,7 @@
 int FUN_006bea40(int *param_1,uint param_2)
 
 {
-  AnonShape_GLOBAL_0080759C_9638EF10 *pAVar1;
+  DDXContext *pDVar1;
   void **ppvVar2;
   undefined1 *puVar3;
   int iVar4;
@@ -28,7 +28,7 @@ int FUN_006bea40(int *param_1,uint param_2)
   int local_68;
   undefined1 local_64 [4];
   undefined4 local_60 [4];
-  AnonShape_GLOBAL_0080759C_9638EF10 *local_50;
+  DDXContext *local_50;
   int local_4c;
   int local_48;
   int local_44;
@@ -48,33 +48,33 @@ int FUN_006bea40(int *param_1,uint param_2)
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;
   local_1c = &stack0xffffff4c;
-  pAVar1 = (AnonShape_GLOBAL_0080759C_9638EF10 *)*param_1;
+  pDVar1 = (DDXContext *)*param_1;
   iVar6 = 0;
   local_24 = 0;
-  local_50 = pAVar1;
+  local_50 = pDVar1;
   if (DAT_00854fe8 != 0) {
     ExceptionList = &local_14;
     local_1c = &stack0xffffff4c;
-    Library::DKW::DDX::FUN_006c4630(pAVar1,pAVar1->field_0044,local_60);
+    Library::DKW::DDX::FUN_006c4630(pDVar1,pDVar1->field_0044,local_60);
     g_tagBITMAPINFO_00854F74 =
          Library::DKW::DDX::FUN_006c4880
-                   (pAVar1,DAT_00854f30,DAT_00854f34,DAT_00854f38,DAT_00854f3c,pAVar1->field_0020);
-    Library::DKW::DDX::FUN_006c44e0(pAVar1,local_60);
+                   (pDVar1,DAT_00854f30,DAT_00854f34,DAT_00854f38,DAT_00854f3c,pDVar1->field_0020);
+    Library::DKW::DDX::FUN_006c44e0(pDVar1,local_60);
     ExceptionList = local_14;
     return 0;
   }
-  if ((*(uint *)&pAVar1->field_0x8 & 0x2000000) != 0) {
+  if ((*(uint *)&pDVar1->field_0x8 & 0x2000000) != 0) {
     ExceptionList = &local_14;
     ppvVar2 = &local_14;
     local_1c = &stack0xffffff4c;
     puVar3 = &stack0xffffff4c;
-    if ((*(uint *)&pAVar1->field_0x8 & 0x1000000) != 0) {
+    if ((*(uint *)&pDVar1->field_0x8 & 0x1000000) != 0) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      while (iVar4 = (**(code **)(**(int **)&pAVar1->field_0x48 + 0x14))
-                               (*(int **)&pAVar1->field_0x48,0), ppvVar2 = ExceptionList,
+      while (iVar4 = (**(code **)(**(int **)&pDVar1->field_0x48 + 0x14))
+                               (*(int **)&pDVar1->field_0x48,0), ppvVar2 = ExceptionList,
             puVar3 = local_1c, iVar4 != 0) {
         if (iVar4 == -0x7789fe3e) {
-          FUN_006cec40((AnonShape_006CEC40_BB23E716 *)pAVar1);
+          FUN_006cec40((AnonShape_006CEC40_BB23E716 *)pDVar1);
         }
         else {
           if (((iVar4 != -0x7789ff60) && (iVar4 != -0x7789fe52)) || (iVar6 != 0)) break;
@@ -90,9 +90,9 @@ int FUN_006bea40(int *param_1,uint param_2)
     ExceptionList = ppvVar2;
     iVar4 = 0;
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    while (iVar6 = (**(code **)(**(int **)&pAVar1->field_0x34 + 0x2c))(), iVar6 != 0) {
+    while (iVar6 = (**(code **)(**(int **)&pDVar1->field_0x34 + 0x2c))(), iVar6 != 0) {
       if (iVar6 == -0x7789fe3e) {
-        FUN_006cec40((AnonShape_006CEC40_BB23E716 *)pAVar1);
+        FUN_006cec40((AnonShape_006CEC40_BB23E716 *)pDVar1);
       }
       else {
         if (((iVar6 != -0x7789ff60) && (iVar6 != -0x7789fe52)) || (iVar4 != 0)) break;
@@ -107,12 +107,12 @@ int FUN_006bea40(int *param_1,uint param_2)
     goto cf_common_join_006BF619;
   }
   local_20 = *(int *)param_1[0x70];
-  if (*(int *)&pAVar1->field_0x24 == pAVar1->field_0020) {
-    if (((1 < local_20) && ((pAVar1->field_000C & 2) != 0)) &&
+  if (*(int *)&pDVar1->field_0x24 == pDVar1->field_0020) {
+    if (((1 < local_20) && ((pDVar1->field_000C & 2) != 0)) &&
        ((param_1[4] * param_1[3] * 3) / (local_20 + 2) <= ((int *)param_1[0x70])[1])) {
       param_2 = param_2 | 1;
     }
-    if ((*(uint *)&pAVar1->field_0x8 & 0x1000000) == 0) {
+    if ((*(uint *)&pDVar1->field_0x8 & 0x1000000) == 0) {
       local_3c.left = param_1[1];
       local_3c.top = param_1[2];
       local_3c.right = param_1[3];
@@ -122,17 +122,17 @@ int FUN_006bea40(int *param_1,uint param_2)
     }
     else {
       ExceptionList = &local_14;
-      GetClientRect(*(HWND *)&pAVar1->field_0x4,&local_3c);
+      GetClientRect(*(HWND *)&pDVar1->field_0x4,&local_3c);
       param_2 = 1;
     }
-    ClientToScreen(*(HWND *)&pAVar1->field_0x4,(LPPOINT)&local_3c);
+    ClientToScreen(*(HWND *)&pDVar1->field_0x4,(LPPOINT)&local_3c);
     if (param_2 == 0) {
       local_40 = local_3c.left;
       local_44 = local_3c.top;
-      if (*(int *)&pAVar1[1].field_0x54 != 0) {
+      if (*(int *)&pDVar1[1].field_0x54 != 0) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (**(code **)(**(int **)&pAVar1->field_0x2c + 0x58))();
-        *(undefined4 *)&pAVar1[1].field_0x54 = 0;
+        (**(code **)(**(int **)&pDVar1->field_0x2c + 0x58))();
+        *(undefined4 *)&pDVar1[1].field_0x54 = 0;
       }
       piVar7 = (int *)(param_1[0x70] + 8);
       if (0 < local_20) {
@@ -146,10 +146,10 @@ int FUN_006bea40(int *param_1,uint param_2)
           local_3c.bottom = piVar7[3] + local_44;
           local_48 = 0;
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-          while (iVar6 = (**(code **)(**(int **)&pAVar1->field_0x34 + 0x14))
-                                   (*(int **)&pAVar1->field_0x34,&local_3c), iVar6 != 0) {
+          while (iVar6 = (**(code **)(**(int **)&pDVar1->field_0x34 + 0x14))
+                                   (*(int **)&pDVar1->field_0x34,&local_3c), iVar6 != 0) {
             if (iVar6 == -0x7789fe3e) {
-              FUN_006cec40((AnonShape_006CEC40_BB23E716 *)pAVar1);
+              FUN_006cec40((AnonShape_006CEC40_BB23E716 *)pDVar1);
             }
             else {
               if (((iVar6 != -0x7789ff60) && (iVar6 != -0x7789fe52)) || (local_48 != 0)) break;
@@ -175,16 +175,16 @@ int FUN_006bea40(int *param_1,uint param_2)
       local_3c.right = local_3c.right + local_3c.left;
       local_3c.bottom = local_3c.bottom + local_3c.top;
       iVar4 = 0;
-      if (*(int *)&pAVar1[1].field_0x54 != 0) {
+      if (*(int *)&pDVar1[1].field_0x54 != 0) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (**(code **)(**(int **)&pAVar1->field_0x2c + 0x58))();
-        *(undefined4 *)&pAVar1[1].field_0x54 = 0;
+        (**(code **)(**(int **)&pDVar1->field_0x2c + 0x58))();
+        *(undefined4 *)&pDVar1[1].field_0x54 = 0;
       }
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      while (iVar6 = (**(code **)(**(int **)&pAVar1->field_0x34 + 0x14))
-                               (*(int **)&pAVar1->field_0x34,&local_3c), iVar6 != 0) {
+      while (iVar6 = (**(code **)(**(int **)&pDVar1->field_0x34 + 0x14))
+                               (*(int **)&pDVar1->field_0x34,&local_3c), iVar6 != 0) {
         if (iVar6 == -0x7789fe3e) {
-          FUN_006cec40((AnonShape_006CEC40_BB23E716 *)pAVar1);
+          FUN_006cec40((AnonShape_006CEC40_BB23E716 *)pDVar1);
         }
         else {
           if (((iVar6 != -0x7789ff60) && (iVar6 != -0x7789fe52)) || (iVar4 != 0)) break;
@@ -205,16 +205,16 @@ int FUN_006bea40(int *param_1,uint param_2)
   local_3c.top = param_1[2];
   ExceptionList = &local_14;
   local_1c = &stack0xffffff4c;
-  ClientToScreen(*(HWND *)&pAVar1->field_0x4,(LPPOINT)&local_3c);
+  ClientToScreen(*(HWND *)&pDVar1->field_0x4,(LPPOINT)&local_3c);
   local_40 = local_3c.left;
   local_44 = local_3c.top;
   local_3c.right = param_1[3] + local_3c.left;
   local_3c.bottom = param_1[4] + local_3c.top;
   local_48 = 0;
-  while (iVar6 = FUN_006bbed0(*(int **)&pAVar1->field_0x34,&local_74,&local_70,&local_3c),
+  while (iVar6 = FUN_006bbed0(*(int **)&pDVar1->field_0x34,&local_74,&local_70,&local_3c),
         iVar6 != 0) {
     if (iVar6 == -0x7789fe3e) {
-      FUN_006cec40((AnonShape_006CEC40_BB23E716 *)pAVar1);
+      FUN_006cec40((AnonShape_006CEC40_BB23E716 *)pDVar1);
     }
     else {
       if (((iVar6 != -0x7789ff60) && (iVar6 != -0x7789fe52)) || (local_48 != 0)) break;
@@ -234,7 +234,7 @@ int FUN_006bea40(int *param_1,uint param_2)
   local_6c = (int *)0x0;
   iVar4 = 0;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  iVar6 = (**(code **)(**(int **)&pAVar1->field_0x38 + 0xc))();
+  iVar6 = (**(code **)(**(int **)&pDVar1->field_0x38 + 0xc))();
   if (iVar6 == 0) {
     local_8 = 0;
     Library::MSVCRT::FUN_0072da40();
@@ -242,13 +242,13 @@ int FUN_006bea40(int *param_1,uint param_2)
     local_78 = &stack0xffffff3c;
     local_1c = &stack0xffffff3c;
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    iVar6 = (**(code **)(**(int **)&pAVar1->field_0x38 + 0xc))
-                      (*(int **)&pAVar1->field_0x38,&local_3c,&stack0xffffff3c,local_64);
+    iVar6 = (**(code **)(**(int **)&pDVar1->field_0x38 + 0xc))
+                      (*(int **)&pDVar1->field_0x38,&local_3c,&stack0xffffff3c,local_64);
     if (iVar6 == 0) {
       local_68 = iVar4;
       if (iVar4 < 1) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (**(code **)(**(int **)&pAVar1->field_0x34 + 0x80))(*(int **)&pAVar1->field_0x34,0);
+        (**(code **)(**(int **)&pDVar1->field_0x34 + 0x80))(*(int **)&pDVar1->field_0x34,0);
         iVar6 = 0;
         goto cf_common_join_006BF619;
       }
@@ -274,10 +274,10 @@ int FUN_006bea40(int *param_1,uint param_2)
   }
   iVar4 = 0;
   do {
-    iVar6 = FUN_006bbe40(pAVar1->field_0044,(uint *)&local_90,&local_94,0);
+    iVar6 = FUN_006bbe40(pDVar1->field_0044,(uint *)&local_90,&local_94,0);
     if (iVar6 == 0) goto LAB_006bed50;
     if (iVar6 != -0x7789fe3e) break;
-    FUN_006cec40((AnonShape_006CEC40_BB23E716 *)pAVar1);
+    FUN_006cec40((AnonShape_006CEC40_BB23E716 *)pDVar1);
     iVar4 = iVar4 + 1;
   } while (iVar4 < 2);
   if (iVar6 == 0) {
@@ -292,7 +292,7 @@ LAB_006bed50:
           while (iVar4 = local_48, local_48 < local_68) {
             iVar5 = FUN_006cfeb0(&local_8c,local_2c,local_7c);
             if (iVar5 == 0) goto switchD_006befc1_caseD_9;
-            switch(*(undefined4 *)&pAVar1->field_0x24) {
+            switch(*(undefined4 *)&pDVar1->field_0x24) {
             case 8:
               FUN_006cea60((undefined8 *)(local_88 * local_70 + local_8c + (int)local_74),local_70,
                            (undefined8 *)(local_88 * local_94 + local_8c + (int)local_90),local_94,
@@ -303,21 +303,21 @@ LAB_006bed50:
             case 0x10:
               FUN_006d05b0((undefined4 *)((int)local_74 + local_8c * 2 + local_88 * local_70),
                            local_70,(uint *)(local_88 * local_94 + local_8c + (int)local_90),
-                           local_94,local_84,local_80,*(int *)&pAVar1[1].field_0x8);
+                           local_94,local_84,local_80,*(int *)&pDVar1[1].field_0x8);
               local_48 = iVar4 + 1;
               local_7c = local_7c + 4;
               break;
             case 0x18:
               FUN_006d3a50((undefined2 *)((int)local_74 + local_8c * 3 + local_88 * local_70),
                            local_70,(byte *)(local_88 * local_94 + local_8c + (int)local_90),
-                           local_94,local_84,local_80,*(int *)&pAVar1[1].field_0x8);
+                           local_94,local_84,local_80,*(int *)&pDVar1[1].field_0x8);
               local_48 = iVar4 + 1;
               local_7c = local_7c + 4;
               break;
             case 0x20:
               FUN_006d39f0((undefined4 *)((int)local_74 + local_8c * 4 + local_88 * local_70),
                            local_70,(byte *)(local_88 * local_94 + local_8c + (int)local_90),
-                           local_94,local_84,local_80,*(int *)&pAVar1[1].field_0x8);
+                           local_94,local_84,local_80,*(int *)&pDVar1[1].field_0x8);
             default:
 switchD_006befc1_caseD_9:
               local_48 = iVar4 + 1;
@@ -337,7 +337,7 @@ switchD_006befc1_caseD_9:
         while (iVar4 = local_48, local_48 < local_68) {
           iVar5 = FUN_006cfeb0(&local_8c,&local_a4,local_7c);
           if (iVar5 == 0) goto switchD_006bedda_caseD_9;
-          switch(*(undefined4 *)&pAVar1->field_0x24) {
+          switch(*(undefined4 *)&pDVar1->field_0x24) {
           case 8:
             FUN_006cea60((undefined8 *)(local_88 * local_70 + local_8c + (int)local_74),local_70,
                          (undefined8 *)(local_88 * local_94 + local_8c + (int)local_90),local_94,
@@ -348,21 +348,21 @@ switchD_006befc1_caseD_9:
           case 0x10:
             FUN_006d05b0((undefined4 *)((int)local_74 + local_8c * 2 + local_88 * local_70),local_70
                          ,(uint *)(local_88 * local_94 + local_8c + (int)local_90),local_94,local_84
-                         ,local_80,*(int *)&pAVar1[1].field_0x8);
+                         ,local_80,*(int *)&pDVar1[1].field_0x8);
             local_48 = iVar4 + 1;
             local_7c = local_7c + 4;
             break;
           case 0x18:
             FUN_006d3a50((undefined2 *)((int)local_74 + local_8c * 3 + local_88 * local_70),local_70
                          ,(byte *)(local_88 * local_94 + local_8c + (int)local_90),local_94,local_84
-                         ,local_80,*(int *)&pAVar1[1].field_0x8);
+                         ,local_80,*(int *)&pDVar1[1].field_0x8);
             local_48 = iVar4 + 1;
             local_7c = local_7c + 4;
             break;
           case 0x20:
             FUN_006d39f0((undefined4 *)((int)local_74 + local_8c * 4 + local_88 * local_70),local_70
                          ,(byte *)(local_88 * local_94 + local_8c + (int)local_90),local_94,local_84
-                         ,local_80,*(int *)&pAVar1[1].field_0x8);
+                         ,local_80,*(int *)&pDVar1[1].field_0x8);
           default:
 switchD_006bedda_caseD_9:
             local_48 = iVar4 + 1;
@@ -376,7 +376,7 @@ switchD_006bedda_caseD_9:
       local_2c = (int *)(param_1[0x70] + 8);
       local_4c = 0;
       while (piVar7 = local_2c, local_4c < local_20) {
-        switch(*(undefined4 *)&pAVar1->field_0x24) {
+        switch(*(undefined4 *)&pDVar1->field_0x24) {
         case 8:
           FUN_006cea60((undefined8 *)((int)local_74 + *local_2c + local_70 * local_2c[1]),local_70,
                        (undefined8 *)((int)local_90 + *local_2c + local_94 * local_2c[1]),local_94,
@@ -387,21 +387,21 @@ switchD_006bedda_caseD_9:
         case 0x10:
           FUN_006d05b0((undefined4 *)((int)local_74 + *local_2c * 2 + local_70 * local_2c[1]),
                        local_70,(uint *)((int)local_90 + *local_2c + local_94 * local_2c[1]),
-                       local_94,local_2c[2],local_2c[3],*(int *)&pAVar1[1].field_0x8);
+                       local_94,local_2c[2],local_2c[3],*(int *)&pDVar1[1].field_0x8);
           local_4c = local_4c + 1;
           local_2c = piVar7 + 4;
           break;
         case 0x18:
           FUN_006d3a50((undefined2 *)((int)local_74 + *local_2c * 3 + local_70 * local_2c[1]),
                        local_70,(byte *)((int)local_90 + *local_2c + local_94 * local_2c[1]),
-                       local_94,local_2c[2],local_2c[3],*(int *)&pAVar1[1].field_0x8);
+                       local_94,local_2c[2],local_2c[3],*(int *)&pDVar1[1].field_0x8);
           local_4c = local_4c + 1;
           local_2c = piVar7 + 4;
           break;
         case 0x20:
           FUN_006d39f0((undefined4 *)((int)local_74 + *local_2c * 4 + local_70 * local_2c[1]),
                        local_70,(byte *)((int)local_90 + *local_2c + local_94 * local_2c[1]),
-                       local_94,local_2c[2],local_2c[3],*(int *)&pAVar1[1].field_0x8);
+                       local_94,local_2c[2],local_2c[3],*(int *)&pDVar1[1].field_0x8);
         default:
           local_4c = local_4c + 1;
           local_2c = piVar7 + 4;
@@ -409,7 +409,7 @@ switchD_006bedda_caseD_9:
       }
       goto switchD_006bf136_caseD_9;
     }
-    switch(*(undefined4 *)&pAVar1->field_0x24) {
+    switch(*(undefined4 *)&pDVar1->field_0x24) {
     case 8:
       FUN_006cea60(local_74,local_70,(undefined8 *)local_90,local_94,param_1[3],param_1[4]);
     default:
@@ -417,22 +417,22 @@ switchD_006bf136_caseD_9:
       break;
     case 0x10:
       FUN_006d05b0((undefined4 *)local_74,local_70,local_90,local_94,param_1[3],param_1[4],
-                   *(int *)&pAVar1[1].field_0x8);
+                   *(int *)&pDVar1[1].field_0x8);
       break;
     case 0x18:
       FUN_006d3a50((undefined2 *)local_74,local_70,(byte *)local_90,local_94,param_1[3],param_1[4],
-                   *(int *)&pAVar1[1].field_0x8);
+                   *(int *)&pDVar1[1].field_0x8);
       break;
     case 0x20:
       FUN_006d39f0((undefined4 *)local_74,local_70,(byte *)local_90,local_94,param_1[3],param_1[4],
-                   *(int *)&pAVar1[1].field_0x8);
+                   *(int *)&pDVar1[1].field_0x8);
     }
     local_8 = 0xffffffff;
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(*pAVar1->field_0044 + 0x80))(pAVar1->field_0044,0);
+    (**(code **)(*pDVar1->field_0044 + 0x80))(pDVar1->field_0044,0);
   }
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-  (**(code **)(**(int **)&pAVar1->field_0x34 + 0x80))(*(int **)&pAVar1->field_0x34,0);
+  (**(code **)(**(int **)&pDVar1->field_0x34 + 0x80))(*(int **)&pDVar1->field_0x34,0);
 cf_common_join_006BF619:
   if ((iVar6 == -0x7789ff60) || (iVar6 == -0x7789fe52)) {
     iVar6 = 0;

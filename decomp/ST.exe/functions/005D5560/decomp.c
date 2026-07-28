@@ -1602,7 +1602,7 @@ LAB_005d6d70:
     }
   }
 switchD_005d6abd_default:
-  FUN_006b35d0((int *)PTR_008075a8,this_00->field_20CC[uVar29]);
+  FUN_006b35d0((int *)g_ddxContext_008075A8,this_00->field_20CC[uVar29]);
   if ((message->arg0).words.low == 3) {
     thunk_FUN_005b6730(this_00,9,'\x01',-1);
   }

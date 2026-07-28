@@ -48,7 +48,7 @@ UPanelTy::PaintBut(UPanelTy *this,AnonShape_0053D7A0_044B6141 *param_1,byte para
              (byte *)local_8);
       cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);
       Library::DKW::DDX::FUN_006b3640
-                ((int *)PTR_008075a8,pUVar3->field_0060,0xffffffff,pUVar3->field_003C,
+                ((int *)g_ddxContext_008075A8,pUVar3->field_0060,0xffffffff,pUVar3->field_003C,
                  pUVar3->field_0044);
       g_currentExceptionFrame = local_58.previous;
       return;

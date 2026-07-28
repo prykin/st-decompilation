@@ -193,7 +193,7 @@ int __thiscall ChooseMapTy::GetMessage(ChooseMapTy *this,STMessage *message)
       iVar13 = -1;
       puVar14 = (uint *)LoadResourceString(resourceId,g_module_00807618);
       ccFntTy::WrStr(g_startSystem_0081176C->field_0034,puVar14,iVar13,iVar26,uVar27);
-      FUN_006b35d0((int *)PTR_008075a8,this_01->field_1C87);
+      FUN_006b35d0((int *)g_ddxContext_008075A8,this_01->field_1C87);
       goto cf_common_exit_005B2053;
     }
     if (SVar5 < (MESS_STARTSYSTEMTY_6104|MESS_ID_CREATE)) {
@@ -361,7 +361,7 @@ LAB_005b1da4:
                        (-(uint)((message->arg0).words.high != 0) & 2) + 1);
         uVar27 = (uint)(message->arg1).words.high;
         Library::DKW::DDX::FUN_006b3640
-                  ((int *)PTR_008075a8,this_01->field_1C23[uVar27 / 0x13],0xfffffffe,0x114,
+                  ((int *)g_ddxContext_008075A8,this_01->field_1C23[uVar27 / 0x13],0xfffffffe,0x114,
                    uVar27 + 0x3f);
         break;
       case MESS_OPTPANELTY_8162:

@@ -26,7 +26,7 @@ void __thiscall MReportTy::DoneMReport(MReportTy *this)
     local_8->field_002D = 0x14;
     *(undefined4 *)&local_8->field_0x31 = local_8->field_0008;
     FUN_006e6000(local_8,3,1,(undefined4 *)&local_8->field_0x1d);
-    DarkScreen(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,10,2);
+    DarkScreen(g_dDXContext_0080759C,10,2);
     if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
       CursorClassTy::sub_00544940(g_cursorClass_00802A30);
     }

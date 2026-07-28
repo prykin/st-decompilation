@@ -2,7 +2,7 @@ ST recovery launcher
 Ghidra version: 12.1.2
 Repository: <local-home>/st
 Pipeline source: <local-home>/st/scripts/STRecoveryPipeline.java
-Pipeline source SHA-256: 51641e4405ff7063b21a754dc5e2d851137d2a5c3709c4ff95d4bc84ad507eb3
+Pipeline source SHA-256: 9cd076eba6ae09123c4f2d2988d7ee147d3f2e0491070fa5ba90069d0f33942e
 Bootstrap log: <local-home>/st/recovery/ST.exe/pipeline_bootstrap.log
 ST recovery pipeline: mode=export, repository=<local-home>/st
 No proposal flags are changed by the pipeline. Review-only rows remain disabled.
@@ -30,21 +30,20 @@ Export indirect ABI stabilization pass 1: mutating rows=0
 == evidence checkpoint ==
 [05] STEvidenceLedger.java <- record | <repo>/recovery
 Computing semantic Program fingerprint...
-Evidence ledger recorded: program modification=6532, semantic_sha256=1815442ce4d19b217adfef6b6291f3adccb4ebd077f9b299f4faa47998ee36d6, artifacts=75
+Evidence ledger recorded: program modification=3, semantic_sha256=f222eda18ed929cc5b13e4e3cec99b9b53a8826a508fac2fbdfdec00389dfdd5, artifacts=77
 
 == LLM corpus export ==
 [06] STEvidenceLedger.java <- verify | <repo>/recovery
 Computing semantic Program fingerprint...
-Evidence ledger verified: program modification=6532, semantic_sha256=1815442ce4d19b217adfef6b6291f3adccb4ebd077f9b299f4faa47998ee36d6, artifacts=75
-Preserving the last accepted export baseline after a failed gate: <local-home>/st/recovery/ST.exe/runs/4c245198d9adc5149790a4cd56011391ab137e3ef9070c3d8944e3791e309305/pre_export
+Evidence ledger verified: program modification=3, semantic_sha256=f222eda18ed929cc5b13e4e3cec99b9b53a8826a508fac2fbdfdec00389dfdd5, artifacts=77
 [07] STDecompExport.java <- <repo>/decomp
 Exporting ST.exe to <local-home>/st/decomp/ST.exe
-Functions reused without decompilation: 10029/10392
+Functions reused without decompilation: 10117/10392
 STDecompExport complete: <local-home>/st/decomp/ST.exe
 [08] STExportRegressionGate.java <- <repo>/decomp/ST.exe | <repo>/recovery/ST.exe/runs/.current/pre_export | <repo>/recovery/ST.exe
-Export regression gate: status=passed, errors=0, warnings=1, report=<local-home>/st/recovery/ST.exe/export_regression_report.tsv
-ST recovery pipeline complete in 209 s.
+Export regression gate: status=passed, errors=0, warnings=4, report=<local-home>/st/recovery/ST.exe/export_regression_report.tsv
+ST recovery pipeline complete in 146 s.
 Pipeline report: <local-home>/st/recovery/ST.exe/pipeline_report.tsv
 Program changed after pipeline: false
-Latest archived run: 4b1e24768c953fc0ed006206fa6d604fe06ab5a0bb49ce9b549e8861d64cfb1f
+Latest archived run: c6b9ac0dde74e541678d41ff1ee1db6f7f025cd484d54b1f4fe5df08a407d7df
 ST recovery launcher completed.

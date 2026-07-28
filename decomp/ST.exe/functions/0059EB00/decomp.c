@@ -103,11 +103,9 @@ void __thiscall FSGSTy::JoinGameCtrls(FSGSTy *this)
     uVar3 = FUN_006b50c0(0x174,0x175,(uint)this_00->field_005D[7],uVar2,(undefined4 *)puVar12,iVar7)
     ;
     this_00->field_1E8E = uVar3;
-    ptVar4 = Library::DKW::DDX::FUN_006c4880
-                       (g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0x199,0x5e,0x174,0x175,8);
+    ptVar4 = Library::DKW::DDX::FUN_006c4880(g_dDXContext_0080759C,0x199,0x5e,0x174,0x175,8);
     this_00->field_1E92 = ptVar4;
-    ptVar4 = Library::DKW::DDX::FUN_006c4880
-                       (g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0x13,0x5e,0x174,0x175,8);
+    ptVar4 = Library::DKW::DDX::FUN_006c4880(g_dDXContext_0080759C,0x13,0x5e,0x174,0x175,8);
     this_00->field_1E9A = ptVar4;
     pDVar5 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,1,1);
     this_00->field_1AE8 = pDVar5;

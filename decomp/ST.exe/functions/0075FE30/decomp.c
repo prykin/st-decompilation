@@ -4,7 +4,7 @@ void FUN_0075fe30(AnonShape_0075FE30_46CD87E7 *param_1,int param_2,int *param_3,
 {
   byte bVar1;
   int iVar2;
-  int *piVar3;
+  AnonNested_AnonShape_0075FE30_46CD87E7_01BA_82756618 *pAVar3;
   int iVar4;
   int iVar5;
   int iVar6;
@@ -18,11 +18,10 @@ void FUN_0075fe30(AnonShape_0075FE30_46CD87E7 *param_1,int param_2,int *param_3,
 
   piVar10 = param_3;
   iVar2 = param_1->field_0068;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  piVar3 = *(int **)(param_1->field_01BA + 0x18);
-  iVar4 = *piVar3;
-  iVar5 = piVar3[1];
-  iVar6 = piVar3[2];
+  pAVar3 = param_1->entries_01BA[6];
+  iVar4 = pAVar3->field_0000;
+  iVar5 = pAVar3->field_0004;
+  iVar6 = pAVar3->field_0008;
   if (0 < param_4) {
     iVar12 = param_2 - (int)param_3;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */

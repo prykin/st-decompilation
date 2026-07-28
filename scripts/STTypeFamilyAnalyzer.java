@@ -46,6 +46,7 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
     private static final String CLASS_POINTEES = "/SubmarineTitans/Recovered/ClassPointees/";
     private static final String VIEW_MARKER = "[ST_VIEW_ONLY]";
     private static final String ANCHOR_MARKER = "[ST_SEMANTIC_ANCHOR]";
+    private Map<String, Integer> receiverOwnerCounts;
 
     @Override
     protected void run() throws Exception {
@@ -69,18 +70,32 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
             List<Structure> anchors = named.stream().filter(this::semanticAnchor).toList();
             boolean uniqueNamed = named.size() == 1;
             boolean uniqueAnchor = anchors.size() == 1;
-            Structure canonical = uniqueAnchor ? anchors.get(0) : anonymous.get(0);
+            List<Structure> receiverAnchors = anonymous.stream()
+                .filter(this::hiddenThisStructure)
+                .filter(type -> ownedReceiverFunctions(type) >= 2).toList();
+            boolean hiddenThisGroup = named.isEmpty() && anonymous.stream()
+                .allMatch(this::hiddenThisStructure);
+            boolean uniqueReceiverAnchor = hiddenThisGroup && receiverAnchors.size() == 1;
+            Structure canonical = uniqueAnchor ? anchors.get(0) :
+                uniqueReceiverAnchor ? receiverAnchors.get(0) : anonymous.get(0);
             int fields = meaningfulFields(canonical);
             int concrete = concreteFields(canonical);
             // Equal offsets and widths alone do not prove type identity.  Earlier versions
             // counted generated field_XXXX labels as semantic names and consequently merged
-            // unrelated packet, UI and object records.  Automatic consolidation now requires
-            // one unambiguous named structure whose complete concrete layout is identical.
-            boolean apply = uniqueAnchor && concrete >= 2 && fields >= 2;
-            String id = "EXACT_" + entry.getKey().substring(0, 12).toUpperCase(Locale.ROOT);
+            // unrelated packet, UI and object records. Automatic consolidation now requires
+            // one unambiguous named semantic anchor, except for generated HiddenThis records
+            // where one exact member uniquely owns a multi-function receiver namespace.
+            boolean apply = uniqueAnchor && concrete >= 2 && fields >= 2 ||
+                uniqueReceiverAnchor;
+            String id = (uniqueReceiverAnchor ? "EXACT_HIDDEN_THIS_" : "EXACT_") +
+                entry.getKey().substring(0, 12).toUpperCase(Locale.ROOT);
             String evidence = uniqueAnchor ?
                 "exact full layout matches one evidence-qualified semantic anchor; " +
                     "concrete_fields=" + concrete :
+                uniqueReceiverAnchor ?
+                    "exact generated HiddenThis layout plus one unique namespace-backed " +
+                        "receiver family; owned_receiver_functions=" +
+                        ownedReceiverFunctions(canonical) :
                 uniqueNamed && anchors.isEmpty() ?
                     "the unique named geometry is not a semantic anchor; layout equality alone " +
                         "cannot identify a type" :
@@ -126,6 +141,36 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
         println("Exact groups=" + groupRows.stream().map(row -> row.id).distinct().count() +
             ", target proposals=" + rows.size() + ", apply=" +
             rows.stream().filter(row -> row.apply).count());
+    }
+
+    private boolean hiddenThisStructure(Structure structure) {
+        return structure.getPathName().startsWith(
+            "/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_") &&
+            structure.getDescription() != null &&
+            structure.getDescription().contains("[STHiddenThisApplier generated]");
+    }
+
+    /**
+     * A namespace backed by the generated receiver type is provenance which plain
+     * layout equality does not provide.  Requiring one unique, multi-function
+     * owner keeps unrelated anonymous records with identical geometry separate.
+     */
+    private int ownedReceiverFunctions(Structure structure) {
+        if (receiverOwnerCounts == null) {
+            receiverOwnerCounts = new HashMap<>();
+            FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
+            while (functions.hasNext()) {
+                Function function = functions.next();
+                String qualified = function.getName(true);
+                int separator = qualified.lastIndexOf("::");
+                if (separator <= 0) continue;
+                String owner = qualified.substring(0, separator);
+                int leaf = owner.lastIndexOf("::");
+                receiverOwnerCounts.merge(
+                    leaf < 0 ? owner : owner.substring(leaf + 2), 1, Integer::sum);
+            }
+        }
+        return receiverOwnerCounts.getOrDefault(structure.getName(), 0);
     }
 
     private Map<String, List<Structure>> exactGroups() throws Exception {
@@ -764,10 +809,11 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
                 namedMatches.stream().filter(row -> row.apply).count() +
                 "\nContextual generated records: " + contextualPromotions.size() +
                 "\nAutomatic targets: " + rows.stream().filter(row -> row.apply).count() + "\n" +
-                "Note: anonymous-to-anonymous geometry matches are review-only; generated " +
-                "field_XXXX names are not semantic evidence. Exact named layouts are automatic " +
-                "only for evidence-qualified semantic anchors; [ST_VIEW_ONLY] types are never " +
-                "anchors.\n");
+                "Note: anonymous-to-anonymous geometry matches are review-only unless one " +
+                "generated HiddenThis member uniquely owns a multi-function receiver namespace. " +
+                "Generated field_XXXX names are not semantic evidence. Exact named layouts are " +
+                "automatic only for evidence-qualified semantic anchors; [ST_VIEW_ONLY] types " +
+                "are never anchors.\n");
         }
     }
     private String typeSpec(DataType type) {

@@ -116,6 +116,7 @@ public class STGlobalDataAnalyzer extends GhidraScript {
                 Function called = calledFunction(instruction);
                 if (called != null) {
                     calls++;
+                    collectModuleHandleGlobal(called, instruction);
                     propagateCall(function, called, registers.get("ECX"), pushes,
                         instruction.getAddress());
                 }
@@ -143,6 +144,71 @@ public class STGlobalDataAnalyzer extends GhidraScript {
                     "ESP".equals(cleanRegister(operands[1]))) pushes.clear();
         }
         return calls;
+    }
+
+    private void collectModuleHandleGlobal(Function called, Instruction call) {
+        if (called == null || !"GetModuleHandleA".equalsIgnoreCase(called.getName())) return;
+        String module = previousPushedString(call);
+        Address global = forwardEaxGlobalStore(call);
+        String name = moduleGlobalName(module);
+        if (global == null || name.isBlank()) return;
+        Evidence ev = evidence.computeIfAbsent(global, ignored -> new Evidence());
+        ev.names.merge(name, 1, Integer::sum);
+        ev.strongNames.add(name);
+        ev.sites.add(addr(call.getAddress()) + " GetModuleHandleA(" + module +
+            ") result stored in global " + addr(global));
+    }
+
+    private String previousPushedString(Instruction call) {
+        Instruction previous = call.getPrevious();
+        for (int count = 0; previous != null && count < 8;
+                count++, previous = previous.getPrevious()) {
+            if ("CALL".equalsIgnoreCase(previous.getMnemonicString())) break;
+            if (!"PUSH".equalsIgnoreCase(previous.getMnemonicString())) continue;
+            for (Reference reference : previous.getReferencesFrom()) {
+                Data data = currentProgram.getListing().getDefinedDataAt(reference.getToAddress());
+                if (data != null && data.hasStringValue() && data.getValue() != null)
+                    return data.getValue().toString();
+            }
+        }
+        return "";
+    }
+
+    private Address forwardEaxGlobalStore(Instruction call) {
+        Instruction next = call.getNext();
+        for (int count = 0; next != null && count < 24; count++, next = next.getNext()) {
+            String mnemonic = next.getMnemonicString().toUpperCase(Locale.ROOT);
+            String[] operands = splitOperands(next.toString().toUpperCase(Locale.ROOT));
+            if ("CALL".equals(mnemonic)) return null;
+            if ("MOV".equals(mnemonic) && operands.length >= 2 &&
+                    "EAX".equals(cleanRegister(operands[1]))) {
+                GlobalValue target = referencedGlobal(next, 0, operands[0], false);
+                if (target != null && !target.addressOf) return target.address;
+            }
+            String destination = operands.length == 0 ? null : cleanRegister(operands[0]);
+            if (destination != null && "EAX".equals(destination) &&
+                    isFullRegister(operands[0]) &&
+                    !Set.of("CMP", "TEST", "PUSH", "JMP", "RET").contains(mnemonic))
+                return null;
+        }
+        return null;
+    }
+
+    private String moduleGlobalName(String module) {
+        if (module == null || module.isBlank()) return "";
+        String base = module.replace('\\', '/');
+        int slash = base.lastIndexOf('/');
+        if (slash >= 0) base = base.substring(slash + 1);
+        base = base.replaceFirst("(?i)\\.dll$", "");
+        String[] parts = base.split("[^A-Za-z0-9]+");
+        StringBuilder result = new StringBuilder();
+        for (String part : parts) {
+            if (part.isBlank()) continue;
+            if (result.length() == 0) result.append(part.toLowerCase(Locale.ROOT));
+            else result.append(Character.toUpperCase(part.charAt(0)))
+                .append(part.substring(1).toLowerCase(Locale.ROOT));
+        }
+        return result.isEmpty() ? "" : result + "Module";
     }
 
     private void trackTypedStore(Function containing, Instruction instruction,
@@ -214,19 +280,22 @@ public class STGlobalDataAnalyzer extends GhidraScript {
     private void propagateCall(Function containing, Function called, GlobalValue receiver,
             List<GlobalValue> pushes, Address site) {
         String ownerType = ownerTypePath(called);
-        if ("__thiscall".equals(called.getCallingConventionName()) && receiver != null &&
-                !ownerType.isBlank()) {
-            String type = receiver.addressOf ? ownerType : "pointer:" + ownerType;
-            add(receiver.address, type, "",
-                true, receiver.addressOf,
-                addr(containing.getEntryPoint()) + " used as this of " +
-                called.getName(true) + " @ " + addr(site));
+        if ("__thiscall".equals(called.getCallingConventionName()) && receiver != null) {
+            recordLibraryContext(receiver, called);
+            if (!ownerType.isBlank()) {
+                String type = receiver.addressOf ? ownerType : "pointer:" + ownerType;
+                add(receiver.address, type, "",
+                    true, receiver.addressOf,
+                    addr(containing.getEntryPoint()) + " used as this of " +
+                    called.getName(true) + " @ " + addr(site));
+            }
         }
         List<Parameter> parameters = explicitParameters(called);
         if (parameters.size() != pushes.size()) return;
         for (int index = 0; index < parameters.size(); index++) {
             GlobalValue value = pushes.get(pushes.size() - 1 - index);
             if (value == null) continue;
+            if (index == 0) recordLibraryContext(value, called);
             Parameter parameter = parameters.get(index);
             if (!trusted(parameter)) continue;
             String type = meaningfulType(parameter.getDataType());
@@ -242,6 +311,26 @@ public class STGlobalDataAnalyzer extends GhidraScript {
                 addr(containing.getEntryPoint()) + " passed to " + called.getName(true) +
                 " parameter " + parameter.getName() + " @ " + addr(site));
         }
+    }
+
+    private void recordLibraryContext(GlobalValue value, Function called) {
+        if (value == null || value.addressOf || called == null) return;
+        String qualified = called.getName(true);
+        if (!qualified.startsWith("Library::")) return;
+        int separator = qualified.lastIndexOf("::");
+        if (separator <= "Library::".length()) return;
+        String owner = qualified.substring(0, separator);
+        int leaf = owner.lastIndexOf("::");
+        String family = leaf < 0 ? owner : owner.substring(leaf + 2);
+        family = family.replaceAll("[^A-Za-z0-9_]", "");
+        if (family.isBlank()) return;
+        Evidence ev = evidence.computeIfAbsent(value.address, ignored -> new Evidence());
+        // The quorum is intentionally over library-context calls only.  Counting
+        // ordinary wrapper/helper calls here used to dilute a perfectly coherent
+        // DDX/SND/etc. context merely because the same singleton flowed through
+        // several internal adapters before reaching the library boundary.
+        ev.libraryContextCalls++;
+        ev.libraryContexts.merge(family, 1, Integer::sum);
     }
 
     private void collectScalarEvidence(Function function, Instruction instruction,
@@ -286,16 +375,23 @@ public class STGlobalDataAnalyzer extends GhidraScript {
             if (data == null || symbol == null || data.hasStringValue()) continue;
             String currentName = symbol.getName();
             boolean scriptOwned = isOwned(address);
-            boolean synthetic = SYNTHETIC.matcher(currentName).matches() || scriptOwned;
+            boolean synthetic = SYNTHETIC.matcher(currentName).matches() || scriptOwned ||
+                currentName.matches("(?i)g_[A-Za-z0-9_]+_[0-9a-f]{8}");
             if (!synthetic) continue;
             String constructorType = unique(ev.constructorStores);
             String proposedType = constructorType.isBlank() ? unique(ev.types) : constructorType;
             String currentType = typeSpecification(data.getDataType());
+            ContextVote context = dominantLibraryContext(ev);
+            boolean contextualAnonymous = context != null &&
+                currentType.startsWith("pointer:") && anonymousPointer(data.getDataType());
+            if (contextualAnonymous)
+                proposedType = "pointer:" + libraryContextPath(
+                    context.family, address, data.getDataType());
             boolean constructorConflict = ev.constructorStores.size() > 1;
             boolean constructorDominates = !constructorType.isBlank() && !constructorConflict;
-            boolean typeConflict = constructorConflict ||
-                !constructorDominates && ev.types.size() > 1;
-            int count = proposedType.isBlank() ? 0 : ev.types.get(proposedType);
+            boolean typeConflict = !contextualAnonymous && (constructorConflict ||
+                !constructorDominates && ev.types.size() > 1);
+            int count = proposedType.isBlank() ? 0 : ev.types.getOrDefault(proposedType, 0);
             int currentTypeCount = ev.types.getOrDefault(currentType, 0);
             boolean currentTypeDominates = currentTypeCount >= 3;
             for (Map.Entry<String, Integer> type : ev.types.entrySet())
@@ -315,13 +411,25 @@ public class STGlobalDataAnalyzer extends GhidraScript {
                 pointer.getDataType() : null;
             DataType proposedBase = resolveBaseType(proposedType);
             boolean extentCompatible = !generatedAnonymous ||
+                contextualAnonymous ||
                 currentBase instanceof Structure currentStructure &&
                 proposedBase instanceof Structure proposedStructure &&
                 proposedStructure.getLength() >= currentStructure.getLength();
             boolean typeChange = !proposedType.isBlank() && !sameType(currentType, proposedType);
+            // Taking the address of a pointer-valued singleton is normal for an
+            // initializer/destructor which fills or clears T **.  It does not
+            // contradict hundreds of later T * context uses.  Retain the old
+            // review boundary for scalar/weak globals and require a 16:1
+            // context-to-address-use quorum for this exception.
+            boolean contextualAddressSafe = contextualAnonymous &&
+                data.getDataType() instanceof Pointer &&
+                ev.addressEvidence > 0 &&
+                context.count >= ev.addressEvidence * 16;
+            boolean addressEvidenceCompatible =
+                ev.addressEvidence == 0 || contextualAddressSafe;
             boolean typeApply = !typeConflict && typeChange && smallSafeType &&
-                currentReplaceable && extentCompatible && ev.addressEvidence == 0 &&
-                (constructorDominates || ev.typedStores >= 1 ||
+                currentReplaceable && extentCompatible && addressEvidenceCompatible &&
+                (contextualAnonymous || constructorDominates || ev.typedStores >= 1 ||
                     ev.strongCount >= 2 || count >= 3);
             String proposedName = unique(ev.names);
             int proposedNameCount = proposedName.isBlank() ? 0 :
@@ -329,32 +437,46 @@ public class STGlobalDataAnalyzer extends GhidraScript {
             // A single parameter name is call-site context, not global identity. For example,
             // AddChildSystem's childSystem parameter must not override dozens of concrete
             // STPlaySystemC receiver uses of the same global.
-            if (proposedNameCount < 2) proposedName = "";
+            boolean strongSemanticName = ev.strongNames.contains(proposedName);
+            if (proposedNameCount < 2 && !strongSemanticName) proposedName = "";
             String namingType = proposedType.startsWith("pointer:") ? proposedType :
                 currentTypeDominates && currentType.startsWith("pointer:") ? currentType : "";
             if (proposedName.isBlank() && !namingType.isBlank())
                 proposedName = structuralName(namingType.substring("pointer:".length()), address);
             else if (!proposedName.isBlank()) proposedName = "g_" + proposedName + "_" + addr(address);
+            if (contextualAnonymous)
+                proposedName = "g_" + context.family.toLowerCase(Locale.ROOT) +
+                    "Context_" + addr(address);
             boolean sameConcreteType = !proposedType.isBlank() && sameType(currentType, proposedType);
             boolean nameApply = (!typeConflict || currentTypeDominates) && !proposedName.isBlank() &&
                 !symbol.getName().equals(proposedName) && (typeApply || sameConcreteType &&
                     (ev.typedStores >= 1 || ev.strongCount >= 2 || count >= 3) ||
-                    currentTypeDominates) &&
+                    currentTypeDominates || contextualAnonymous || strongSemanticName) &&
                 symbol.getSource() != SourceType.USER_DEFINED &&
                 symbol.getSource() != SourceType.IMPORTED;
             if (!typeChange && !nameApply) continue;
             List<String> reasons = new ArrayList<>();
             reasons.add("type_evidence=" + ev.types);
             reasons.add("name_evidence=" + ev.names);
+            reasons.add("strong_semantic_names=" + ev.strongNames);
             reasons.add("strong_evidence=" + ev.strongCount);
             reasons.add("closed_named_pointer_stores=" + ev.typedStores);
             reasons.add("constructor_store_types=" + ev.constructorStores);
+            reasons.add("library_context_votes=" + ev.libraryContexts);
+            if (contextualAnonymous)
+                reasons.add("dominant_library_context=" + context.family +
+                    "; context_votes=" + context.count + "/" + context.total);
             if (constructorDominates && ev.types.size() > 1)
                 reasons.add("constructor_store_dominates_weaker_use_types");
             if (typeConflict) reasons.add("type_conflict");
             if (currentTypeDominates) reasons.add("existing_type_dominates_conflicting_evidence=" +
                 currentTypeCount);
-            if (ev.addressEvidence > 0) reasons.add("address_of_global_requires_review");
+            if (contextualAddressSafe)
+                reasons.add("address_of_pointer_global_compatible=" +
+                    ev.addressEvidence + "; context_to_address_quorum=" +
+                    context.count + ":" + ev.addressEvidence);
+            else if (ev.addressEvidence > 0)
+                reasons.add("address_of_global_requires_review");
             if (generatedAnonymous) reasons.add("script_owned_anonymous_pointer_upgrade");
             if (!extentCompatible) reasons.add("named_type_shorter_than_observed_anonymous_extent");
             if (!currentReplaceable) reasons.add("concrete_existing_data_preserved");
@@ -364,6 +486,42 @@ public class STGlobalDataAnalyzer extends GhidraScript {
         }
         result.sort(Comparator.comparing(row -> row.address));
         return result;
+    }
+
+    /**
+     * A library namespace is not a C type identity.  DDX, SND and similar
+     * modules may expose several unrelated context structures.  Reuse the short
+     * family name only when it is free or already derives from the same
+     * anonymous source; otherwise retain the semantic family and append the
+     * global address.
+     */
+    private String libraryContextPath(String family, Address address,
+            DataType currentType) {
+        String root = "/SubmarineTitans/Recovered/LibraryContexts/";
+        String preferred = root + family + "Context";
+        DataType existing = dataTypes.getDataType(preferred);
+        DataType source = currentType instanceof Pointer pointer ?
+            pointer.getDataType() : null;
+        if (existing == null || source != null && existing.isEquivalent(source))
+            return preferred;
+        String description =
+            existing.getDescription() == null ? "" : existing.getDescription();
+        if (source != null && description.contains("from " + source.getPathName()))
+            return preferred;
+        return preferred + "_" + addr(address);
+    }
+
+    private ContextVote dominantLibraryContext(Evidence evidence) {
+        int total = evidence.libraryContextCalls;
+        if (total < 8 || evidence.libraryContexts.isEmpty()) return null;
+        Map.Entry<String, Integer> winner = evidence.libraryContexts.entrySet().stream()
+            .max(Map.Entry.<String, Integer>comparingByValue()
+                .thenComparing(Map.Entry.comparingByKey())).orElse(null);
+        if (winner == null || winner.getValue() < 8 ||
+                winner.getValue() * 5 < total * 4) return null;
+        long tied = evidence.libraryContexts.values().stream()
+            .filter(value -> value.equals(winner.getValue())).count();
+        return tied == 1 ? new ContextVote(winner.getKey(), winner.getValue(), total) : null;
     }
 
     private void updateRegisters(Instruction instruction, String mnemonic, String[] operands,
@@ -402,7 +560,9 @@ public class STGlobalDataAnalyzer extends GhidraScript {
             Data data = currentProgram.getListing().getDefinedDataAt(address);
             Symbol symbol = currentProgram.getSymbolTable().getPrimarySymbol(address);
             if (data == null || symbol == null || data.hasStringValue() ||
-                    !SYNTHETIC.matcher(symbol.getName()).matches() && !isOwned(address)) continue;
+                    !SYNTHETIC.matcher(symbol.getName()).matches() &&
+                    !symbol.getName().matches("(?i)g_[A-Za-z0-9_]+_[0-9a-f]{8}") &&
+                    !isOwned(address)) continue;
             boolean memoryOperand = operand.contains("[") && operand.contains("]");
             return new GlobalValue(address, addressOf || !memoryOperand);
         }
@@ -738,10 +898,11 @@ public class STGlobalDataAnalyzer extends GhidraScript {
     }
     private static class Evidence {
         final Map<String, Integer> types = new TreeMap<>(), names = new TreeMap<>(),
-            constructorStores = new TreeMap<>();
-        final Set<String> sites = new TreeSet<>();
-        int strongCount, addressEvidence, typedStores;
+            constructorStores = new TreeMap<>(), libraryContexts = new TreeMap<>();
+        final Set<String> sites = new TreeSet<>(), strongNames = new TreeSet<>();
+        int strongCount, addressEvidence, typedStores, libraryContextCalls;
     }
+    private record ContextVote(String family, int count, int total) {}
     private record TypedValue(String type, String producer, boolean constructorResult) {}
     private static class Proposal {
         final Address address; final String expectedName, expectedNameSource, expectedType,

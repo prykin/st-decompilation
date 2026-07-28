@@ -8,7 +8,7 @@ uint __cdecl FUN_0067f950(byte *param_1)
   byte *pbVar4;
   int iVar5;
   uint uVar6;
-  byte *pbVar7;
+  AnonNested_AnonShape_GLOBAL_00848A34_1A834A18_0014_B03F56A9 *pAVar7;
   bool bVar8;
   InternalExceptionFrame local_4c;
   undefined4 local_8;
@@ -28,27 +28,27 @@ uint __cdecl FUN_0067f950(byte *param_1)
   iVar2 = PTR_00848a34->field_0008;
   if (0 < iVar2) {
     if (iVar2 < 1) {
-      pbVar7 = (byte *)0x0;
+      pAVar7 = (AnonNested_AnonShape_GLOBAL_00848A34_1A834A18_0014_B03F56A9 *)0x0;
       pbVar4 = param_1;
       goto LAB_0067f9ac;
     }
     do {
-      pbVar7 = *(byte **)(PTR_00848a34->field_0014 + uVar3 * 4);
+      pAVar7 = PTR_00848a34->entries_0014[uVar3];
       pbVar4 = param_1;
 LAB_0067f9ac:
       do {
         bVar1 = *pbVar4;
-        bVar8 = bVar1 < *pbVar7;
-        if (bVar1 != *pbVar7) {
+        bVar8 = bVar1 < pAVar7->field_0000;
+        if (bVar1 != pAVar7->field_0000) {
 LAB_0067f9d0:
           iVar5 = (1 - (uint)bVar8) - (uint)(bVar8 != 0);
           goto LAB_0067f9d5;
         }
         if (bVar1 == 0) break;
         bVar1 = pbVar4[1];
-        bVar8 = bVar1 < pbVar7[1];
-        if (bVar1 != pbVar7[1]) goto LAB_0067f9d0;
-        pbVar7 = pbVar7 + 2;
+        bVar8 = bVar1 < pAVar7->field_0001;
+        if (bVar1 != pAVar7->field_0001) goto LAB_0067f9d0;
+        pAVar7 = pAVar7 + 1;
         pbVar4 = pbVar4 + 2;
       } while (bVar1 != 0);
       iVar5 = 0;

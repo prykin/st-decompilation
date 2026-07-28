@@ -39,7 +39,7 @@ void __fastcall FUN_00533b80(RecoveredRecord_STPlaySystemC_00533B80 *param_1)
       resourceString = (uint *)LoadResourceString(resourceId,g_module_00807618);
       ccFntTy::WrTxt(param_1->field_0180,resourceString,iVar2,iVar3,uVar1,iVar4,iVar5);
       Library::DKW::DDX::FUN_006b3640
-                ((int *)PTR_008075a8,param_1->field_0060,0xffffffff,param_1->field_003C,
+                ((int *)g_ddxContext_008075A8,param_1->field_0060,0xffffffff,param_1->field_003C,
                  param_1->field_0044);
       return;
     }

@@ -200,7 +200,7 @@ LAB_005aecc2:
     local_50 = local_70;
     (*this_00->field_000C->vtable->CreateObject)
               ((SystemClassTy *)this_00->field_000C,5,&this_00->field_1C83,(int *)0x0,local_80,0);
-    Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,this_00->field_1C87);
+    Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,this_00->field_1C87);
     goto LAB_005aecc2;
   }
   local_570 = this_00->field_0008;
@@ -315,7 +315,8 @@ LAB_005aef44:
     (*pSVar1->vtable->CreateObject)
               ((SystemClassTy *)pSVar1,6,&g_startSystem_0081176C->field_054C,(int *)0x0,local_fe4,0)
     ;
-    Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,g_startSystem_0081176C->field_0554);
+    Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0554)
+    ;
   }
   pSVar1 = this_00->field_1A5B;
   if (pSVar1->field_02E6 != (MMsgTy *)0x0) {

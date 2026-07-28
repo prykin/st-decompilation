@@ -189,7 +189,7 @@ LAB_0054532f:
         iVar9 = thunk_FUN_00544990(this_00);
         if (iVar9 == 0) break;
         if (-1 < this_00->field_010B) {
-          FUN_006b3bb0((int *)PTR_008075a8,this_00->field_010B);
+          FUN_006b3bb0((int *)g_ddxContext_008075A8,this_00->field_010B);
           this_00->field_010B = -1;
         }
         switch(this_00->field_00CD) {
@@ -233,7 +233,7 @@ LAB_005450ca:
           piVar25 = &this_00->field_010B;
           this_00->field_00DE = CASE_2;
           if (-1 < this_00->field_010B) {
-            FUN_006b3bb0((int *)PTR_008075a8,this_00->field_010B);
+            FUN_006b3bb0((int *)g_ddxContext_008075A8,this_00->field_010B);
           }
           iVar9 = 0x20;
           puVar14 = (uint *)&this_00->field_0x113;
@@ -242,12 +242,13 @@ LAB_005450ca:
             *puVar14 = (-(uint)(this_00->field_04A2 != 0) & 0x49) + 0x45 | 0x1000000;
             puVar14 = puVar14 + 7;
           } while (iVar9 != 0);
-          FUN_006b96f0((int *)PTR_008075a8,(uint *)piVar25,10,0x20,(uint)&this_00->field_0x113);
-          FUN_006b1b10(PTR_008075a8,*piVar25,2);
+          FUN_006b96f0((int *)g_ddxContext_008075A8,(uint *)piVar25,10,0x20,
+                       (uint)&this_00->field_0x113);
+          FUN_006b1b10((AnonShape_006B1B10_121F236C *)g_ddxContext_008075A8,*piVar25,2);
           Library::DKW::DDX::FUN_006b3640
-                    ((int *)PTR_008075a8,*piVar25,0xffffffff,this_00->field_00DF,this_00->field_00E3
-                    );
-          FUN_006b2800(PTR_008075a8,*piVar25,this_00->field_00E7,this_00->field_00EB);
+                    ((int *)g_ddxContext_008075A8,*piVar25,0xffffffff,this_00->field_00DF,
+                     this_00->field_00E3);
+          FUN_006b2800(g_ddxContext_008075A8,*piVar25,this_00->field_00E7,this_00->field_00EB);
           iVar9 = FUN_00405687((int)this_00);
           if (iVar9 == 0) {
             SetGCType(this_00,CASE_0,this_00->field_0034,this_00->field_0038);
@@ -346,12 +347,12 @@ LAB_00544e8f:
           local_8 = (AnonShape_005449B0_F65ED625 *)0xffffffff;
         }
         if (local_c != 0.0) {
-          FUN_006b2800(PTR_008075a8,this_00->field_010B,uVar21,uVar20);
+          FUN_006b2800(g_ddxContext_008075A8,this_00->field_010B,uVar21,uVar20);
         }
         if ((local_c != 0.0) || ((int)local_8 < 0)) {
           Library::DKW::DDX::FUN_006b3640
-                    ((int *)PTR_008075a8,this_00->field_010B,(uint)local_8,this_00->field_00DF,
-                     this_00->field_00E3);
+                    ((int *)g_ddxContext_008075A8,this_00->field_010B,(uint)local_8,
+                     this_00->field_00DF,this_00->field_00E3);
         }
         break;
       case CASE_3:
@@ -361,7 +362,7 @@ LAB_00544e8f:
       case CASE_4:
         uVar21 = this_00->field_010B;
 LAB_0054505c:
-        FUN_006b3bb0((int *)PTR_008075a8,uVar21);
+        FUN_006b3bb0((int *)g_ddxContext_008075A8,uVar21);
         this_00->field_010B = -1;
 LAB_0054506b:
         this_00->field_00DE = CASE_0;
@@ -923,8 +924,8 @@ switchD_0054679d_default:
         return 0;
       }
       this_00->field_04DA = 0;
-      FUN_006b2800(PTR_008075a8,this_00->field_04D6,0,0);
-      FUN_006b3af0((int *)PTR_008075a8,this_00->field_04D6);
+      FUN_006b2800(g_ddxContext_008075A8,this_00->field_04D6,0,0);
+      FUN_006b3af0((int *)g_ddxContext_008075A8,this_00->field_04D6);
       g_currentExceptionFrame = local_e0.previous;
       return 0;
     }
@@ -1412,11 +1413,11 @@ cf_common_exit_00545FF6:
       g_currentExceptionFrame = local_e0.previous;
       return 0;
     }
-    FUN_006b2800(PTR_008075a8,this_00->field_04D6,this_00->field_04CA,this_00->field_04CE);
+    FUN_006b2800(g_ddxContext_008075A8,this_00->field_04D6,this_00->field_04CA,this_00->field_04CE);
     Library::DKW::DDX::FUN_006b3640
-              ((int *)PTR_008075a8,this_00->field_04D6,0xffffffff,this_00->field_04C2,
+              ((int *)g_ddxContext_008075A8,this_00->field_04D6,0xffffffff,this_00->field_04C2,
                this_00->field_04C6);
-    Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,this_00->field_04D6);
+    Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,this_00->field_04D6);
     g_currentExceptionFrame = local_e0.previous;
     return 0;
   }

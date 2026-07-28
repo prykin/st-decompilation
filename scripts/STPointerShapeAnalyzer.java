@@ -97,6 +97,22 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         "([A-Za-z_$][A-Za-z0-9_$:]*)\\s*\\+\\s*" +
         "(0[xX][0-9A-Fa-f]+|[0-9]+)\\s*\\)\\s*\\)\\s*" +
         "\\[\\s*(0[xX][0-9A-Fa-f]+|[0-9]+)\\s*\\]");
+    private static final Pattern TYPED_INDEXED_POINTER = Pattern.compile(
+        "^\\*\\s*\\(\\s*([^()\\r\\n]{1,80}?\\*\\s*\\*)\\s*\\)\\s*" +
+        "\\(\\s*([A-Za-z_$][A-Za-z0-9_$:]*)\\s*->\\s*" +
+        "(?:field|entries)_(?:0[xX])?([0-9A-Fa-f]+)\\s*\\+\\s*" +
+        "[^()\\r\\n]{1,180}\\s*\\)$");
+    private static final Pattern TYPED_MEMBER_INDEX = Pattern.compile(
+        "^([A-Za-z_$][A-Za-z0-9_$:]*)\\s*->\\s*" +
+        "([A-Za-z_$][A-Za-z0-9_$:]*)\\s*\\[[^\\]\\r\\n]+\\]$");
+    private static final Pattern FORWARD_COUNT_BOUND = Pattern.compile(
+        "(?<![A-Za-z0-9_$:])([A-Za-z_$][A-Za-z0-9_$:]*)\\s*<\\s*" +
+        "([A-Za-z_$][A-Za-z0-9_$:]*)\\s*->\\s*" +
+        "(field_(?:0[xX])?[0-9A-Fa-f]+|entryCount)\\b");
+    private static final Pattern REVERSE_COUNT_BOUND = Pattern.compile(
+        "(?<![A-Za-z0-9_$:])([A-Za-z_$][A-Za-z0-9_$:]*)\\s*->\\s*" +
+        "(field_(?:0[xX])?[0-9A-Fa-f]+|entryCount)\\s*>\\s*" +
+        "([A-Za-z_$][A-Za-z0-9_$:]*)\\b");
     private static final Pattern CONSTANT_INDEX = Pattern.compile(
         "(?<![A-Za-z0-9_$:])([A-Za-z_$][A-Za-z0-9_$:]*)\\s*" +
         "\\[\\s*(0[xX][0-9A-Fa-f]+|[0-9]+)\\s*\\]");
@@ -231,6 +247,8 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         collectNestedAccesses(function, c, locals, stableStorages, functionTargets);
         Map<String, PointerAlias> aliases = collectPointerAliases(function, c, locals,
             stableStorages, functionTargets);
+        collectCountedPointerTableRoles(function, c, locals, stableStorages,
+            functionTargets);
         Matcher matcher = RAW_ACCESS.matcher(c);
         int before = rawAccesses;
         while (matcher.find()) {
@@ -451,24 +469,66 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             String aliasName = assignment.group(1);
             String expression = assignment.group(2).trim();
             Matcher access = RAW_ACCESS.matcher(expression);
-            if (!access.find() || access.start() != 0 || access.end() != expression.length())
-                continue;
-            String loadedType = access.group(1).trim();
+            Matcher typedIndex = TYPED_INDEXED_POINTER.matcher(expression);
+            Matcher typedMember = TYPED_MEMBER_INDEX.matcher(expression);
+            boolean raw = access.find() && access.start() == 0 &&
+                access.end() == expression.length();
+            boolean indexedField = !raw && typedIndex.matches();
+            boolean indexedMember = !raw && !indexedField && typedMember.matches();
+            if (!raw && !indexedField && !indexedMember) continue;
+            String loadedType;
+            String parentName;
+            long parentOffset;
+            int pointerDepth = 1;
+            TargetEvidence parent = null;
+            if (indexedMember) {
+                parentName = typedMember.group(1);
+                parent = canonicalTarget(function, locals, stableStorages,
+                    functionTargets, parentName);
+                Structure owner =
+                    parent == null ? null : structureFromPointer(parent.expectedType);
+                DataTypeComponent member =
+                    owner == null ? null : componentNamed(owner, typedMember.group(2));
+                if (member == null || pointerDepth(member.getDataType()) < 2) continue;
+                parentOffset = member.getOffset();
+                DataType selected = untypedef(member.getDataType());
+                if (!(selected instanceof Pointer pointer)) continue;
+                selected = untypedef(pointer.getDataType());
+                loadedType = selected.getDisplayName();
+                pointerDepth = 2;
+            }
+            else if (indexedField) {
+                String tableType = typedIndex.group(1).trim();
+                int lastStar = tableType.lastIndexOf('*');
+                if (lastStar < 0) continue;
+                loadedType = tableType.substring(0, lastStar).trim();
+                parentName = typedIndex.group(2);
+                parentOffset = parseUnsigned("0x" + typedIndex.group(3));
+                pointerDepth = 2;
+            }
+            else {
+                loadedType = access.group(1).trim();
+                parentName = access.group(2);
+                parentOffset = parseUnsigned(access.group(3));
+            }
             boolean declaredPointer = loadedType.contains("*");
             if (!declaredPointer && (accessWidth(loadedType) !=
                     currentProgram.getDefaultPointerSize() ||
                     !usedAsDereferenceBase(c, aliasName))) continue;
-            String parentName = access.group(2);
-            long parentOffset = parseUnsigned(access.group(3));
             int elementWidth = declaredPointer ? pointedElementWidth(loadedType) : 1;
             if (parentOffset < 0 || parentOffset + currentProgram.getDefaultPointerSize() >
-                    MAX_SHAPE_SIZE || elementWidth < 1 || elementWidth > 16) continue;
-            TargetEvidence parent = canonicalTarget(function, locals, stableStorages,
-                functionTargets, parentName);
+                    MAX_SHAPE_SIZE || elementWidth < 1 ||
+                    elementWidth > MAX_SHAPE_SIZE) continue;
+            if (parent == null)
+                parent = canonicalTarget(function, locals, stableStorages,
+                    functionTargets, parentName);
             if (parent == null) continue;
             recordPointerField(function, parent, parentOffset,
                 "pointer-field alias " + aliasName + " = " + parentName + "+0x" +
-                Long.toHexString(parentOffset).toUpperCase(Locale.ROOT));
+                Long.toHexString(parentOffset).toUpperCase(Locale.ROOT) +
+                (pointerDepth == 2 ? " through indexed pointer table" : ""));
+            NestedEvidence nested = nestedEvidence(parent, parentOffset);
+            nested.pointerDepth = Math.max(nested.pointerDepth, pointerDepth);
             PointerAlias previous = result.putIfAbsent(aliasName,
                 new PointerAlias(parent, parentOffset, 0, elementWidth,
                     declaredPointer ? loadedType.substring(0,
@@ -496,6 +556,27 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             if (!changed) break;
         }
         return result;
+    }
+
+    private DataTypeComponent componentNamed(Structure structure, String name) {
+        if (structure == null || name == null || name.isBlank()) return null;
+        DataTypeComponent found = null;
+        for (DataTypeComponent component : structure.getDefinedComponents()) {
+            if (!name.equals(component.getFieldName())) continue;
+            if (found != null) return null;
+            found = component;
+        }
+        return found;
+    }
+
+    private int pointerDepth(DataType type) {
+        int depth = 0;
+        type = untypedef(type);
+        while (type instanceof Pointer pointer) {
+            depth++;
+            type = untypedef(pointer.getDataType());
+        }
+        return depth;
     }
 
     private boolean usedAsDereferenceBase(String c, String name) {
@@ -592,7 +673,95 @@ public class STPointerShapeAnalyzer extends GhidraScript {
                         " through pointer-field alias");
                 redirectedAliasAccesses++;
             }
+            String aliasName = Pattern.quote(entry.getKey());
+            Pattern bitMaskUse = Pattern.compile(
+                "(?<![A-Za-z0-9_$:])\\*\\s*" + aliasName +
+                "\\s*(?:[&|^]=|[&|^]\\s*(?:0[xX][0-9a-fA-F]+|\\d+))");
+            if (bitMaskUse.matcher(c).find()) {
+                PointerAlias alias = entry.getValue();
+                NestedEvidence nested = nestedEvidence(alias.parent, alias.parentOffset);
+                FieldEvidence field = nested.fields.computeIfAbsent(
+                    alias.childBaseOffset, FieldEvidence::new);
+                field.roles.merge("flags", 1, Integer::sum);
+                field.sites.add(addr(function.getEntryPoint()) + " " +
+                    entry.getKey() + " first member used with a bit mask");
+            }
         }
+    }
+
+    /**
+     * A strict upper-bound check followed by an indexed pointer-table load is
+     * class- and library-independent evidence for the two container roles:
+     *
+     *   if (index < context->field_01A0)
+     *       entry = context->entries_01B0[index];
+     *
+     * The names intentionally stay generic.  They express the proven relation
+     * without guessing whether the source called the selected value a sprite,
+     * surface, resource, object, or handle.
+     */
+    private void collectCountedPointerTableRoles(Function function, String c,
+            Map<String, Variable> locals, Set<String> stableStorages,
+            Map<String, TargetEvidence> functionTargets) {
+        Matcher forward = FORWARD_COUNT_BOUND.matcher(c);
+        while (forward.find())
+            collectCountedPointerTableRole(function, c, forward.end(),
+                forward.group(2), forward.group(1),
+                forward.group(3), locals, stableStorages,
+                functionTargets);
+
+        Matcher reverse = REVERSE_COUNT_BOUND.matcher(c);
+        while (reverse.find())
+            collectCountedPointerTableRole(function, c, reverse.end(),
+                reverse.group(1), reverse.group(3),
+                reverse.group(2), locals, stableStorages,
+                functionTargets);
+    }
+
+    private void collectCountedPointerTableRole(Function function, String c,
+            int comparisonEnd, String baseName, String indexName, String countMember,
+            Map<String, Variable> locals, Set<String> stableStorages,
+            Map<String, TargetEvidence> functionTargets) {
+        TargetEvidence target = canonicalTarget(function, locals, stableStorages,
+            functionTargets, baseName);
+        if (target == null) return;
+        long countOffset = memberOffset(target, countMember);
+        if (countOffset < 0 || countOffset + 4 > MAX_SHAPE_SIZE) return;
+        int end = Math.min(c.length(), comparisonEnd + 1200);
+        String window = c.substring(comparisonEnd, end);
+        Pattern indexed = Pattern.compile("(?<![A-Za-z0-9_$:])" +
+            Pattern.quote(baseName) + "\\s*->\\s*" +
+            "((?:entries|field)_(?:0[xX])?[0-9A-Fa-f]+|entries)\\s*\\[\\s*" +
+            Pattern.quote(indexName) + "\\s*\\]");
+        Matcher table = indexed.matcher(window);
+        if (!table.find()) return;
+        long tableOffset = memberOffset(target, table.group(1));
+        if (tableOffset < 0 ||
+                tableOffset + currentProgram.getDefaultPointerSize() > MAX_SHAPE_SIZE)
+            return;
+        semanticRole(function, target, countOffset, "entryCount",
+            indexName + " is strictly bounded by " + baseName + "+0x" +
+            Long.toHexString(countOffset).toUpperCase(Locale.ROOT));
+        semanticRole(function, target, tableOffset, "entries",
+            baseName + "+0x" + Long.toHexString(tableOffset).toUpperCase(Locale.ROOT) +
+            " is indexed by the same bounded value " + indexName);
+    }
+
+    private long memberOffset(TargetEvidence target, String memberName) {
+        Matcher structural = Pattern.compile(
+            "(?:field|entries)_(?:0[xX])?([0-9A-Fa-f]+)")
+            .matcher(memberName);
+        if (structural.matches()) return parseUnsigned("0x" + structural.group(1));
+        Structure owner = structureFromPointer(target.expectedType);
+        DataTypeComponent component = componentNamed(owner, memberName);
+        return component == null ? -1 : component.getOffset();
+    }
+
+    private void semanticRole(Function function, TargetEvidence target, long offset,
+            String role, String detail) {
+        FieldEvidence field = target.fields.computeIfAbsent(offset, FieldEvidence::new);
+        field.roles.merge(role, 1, Integer::sum);
+        field.sites.add(addr(function.getEntryPoint()) + " " + detail);
     }
 
     private TargetEvidence canonicalTarget(Function function, Map<String, Variable> locals,
@@ -621,18 +790,22 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             String detail) {
         recordField(function, parent, parentOffset, currentProgram.getDefaultPointerSize(),
             "", detail);
-        parent.nested.computeIfAbsent(parentOffset, NestedEvidence::new);
+        nestedEvidence(parent, parentOffset);
     }
 
     private void recordNestedField(Function function, TargetEvidence parent, long parentOffset,
             long childOffset, int width, String type, String detail) {
         recordPointerField(function, parent, parentOffset, detail);
-        NestedEvidence child = parent.nested.computeIfAbsent(parentOffset, NestedEvidence::new);
+        NestedEvidence child = nestedEvidence(parent, parentOffset);
         FieldEvidence field = child.fields.computeIfAbsent(childOffset, FieldEvidence::new);
         field.widths.merge(width, 1, Integer::sum);
         if (type != null && !type.isBlank()) field.types.merge(type, 1, Integer::sum);
         field.sites.add(addr(function.getEntryPoint()) + " " + detail);
         child.accessCount++;
+    }
+
+    private NestedEvidence nestedEvidence(TargetEvidence parent, long parentOffset) {
+        return parent.nested.computeIfAbsent(parentOffset, NestedEvidence::new);
     }
 
     private boolean validNestedOffsets(long parentOffset, long childOffset, int width) {
@@ -740,7 +913,9 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             String key = addr(function.getEntryPoint()) + "|" + kind + "|" + storage;
             return new TargetEvidence(key, kind, function.getEntryPoint(),
                 function.getName(true), name, storage, typeSpecification(local.getDataType()),
-                source, scriptOwnedPointer(comment), typeFamilyOwned(comment),
+                source, scriptOwnedPointer(comment) ||
+                    !protectedSource(local.getSource()) &&
+                    generatedOwnedPointer(local.getDataType()), typeFamilyOwned(comment),
                 stableStorages.contains(storage));
         }
         List<Symbol> matches = currentProgram.getSymbolTable().getGlobalSymbols(name);
@@ -934,6 +1109,7 @@ public class STPointerShapeAnalyzer extends GhidraScript {
     }
 
     private Analysis makeProposals() {
+        mergeGeneratedTypeEvidence();
         Map<String, TypeProposal> types = new LinkedHashMap<>();
         Map<String, List<FieldProposal>> fields = new LinkedHashMap<>();
         List<TargetProposal> targetRows = new ArrayList<>();
@@ -977,6 +1153,78 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         targetRows.sort(Comparator.comparing((TargetProposal row) -> row.functionAddress)
             .thenComparing(row -> row.kind).thenComparing(row -> row.locator));
         return new Analysis(typeRows, fieldRows, targetRows);
+    }
+
+    /**
+     * A generated structure is shared database state even when distinct
+     * functions expose it through different parameters or locals. Merge their
+     * observations by exact generated type identity before deciding a revision.
+     * Existing generated components are retained as a baseline, so a richer use
+     * site cannot accidentally delete fields which it did not touch.
+     */
+    private void mergeGeneratedTypeEvidence() {
+        Map<String, MergedGeneratedEvidence> merged = new LinkedHashMap<>();
+        for (TargetEvidence target : targets.values()) {
+            String path = pointedStructure(target.expectedType);
+            Structure structure = path.isBlank() ? null :
+                structureFromPointer("pointer:" + path);
+            if (structure == null || !generatedAnonymousOwned(structure) ||
+                    !target.scriptOwned) continue;
+            MergedGeneratedEvidence value = merged.computeIfAbsent(path,
+                ignored -> new MergedGeneratedEvidence());
+            if (!value.baselineSeeded) {
+                for (DataTypeComponent component : structure.getDefinedComponents()) {
+                    FieldEvidence field = value.fields.computeIfAbsent(
+                        (long)component.getOffset(), FieldEvidence::new);
+                    field.widths.merge(component.getLength(), 1, Integer::sum);
+                    field.types.merge(typeSpecification(component.getDataType()), 1,
+                        Integer::sum);
+                    String name = component.getFieldName();
+                    if ("flags".equals(name) || "entryCount".equals(name) ||
+                            "entries".equals(name))
+                        field.roles.merge(name, 1, Integer::sum);
+                    field.sites.add("existing generated baseline " + path);
+                }
+                value.baselineSeeded = true;
+            }
+            mergeFields(value.fields, target.fields);
+            for (Map.Entry<Long, NestedEvidence> nested : target.nested.entrySet()) {
+                NestedEvidence destination = value.nested.computeIfAbsent(
+                    nested.getKey(), NestedEvidence::new);
+                mergeNested(destination, nested.getValue());
+            }
+        }
+        for (TargetEvidence target : targets.values()) {
+            String path = pointedStructure(target.expectedType);
+            MergedGeneratedEvidence value = merged.get(path);
+            if (value == null) continue;
+            mergeFields(target.fields, value.fields);
+            for (Map.Entry<Long, NestedEvidence> nested : value.nested.entrySet())
+                target.nested.put(nested.getKey(), nested.getValue());
+        }
+    }
+
+    private void mergeFields(Map<Long, FieldEvidence> destination,
+            Map<Long, FieldEvidence> source) {
+        for (Map.Entry<Long, FieldEvidence> entry : source.entrySet()) {
+            FieldEvidence target = destination.computeIfAbsent(entry.getKey(),
+                FieldEvidence::new);
+            FieldEvidence found = entry.getValue();
+            for (Map.Entry<Integer, Integer> width : found.widths.entrySet())
+                target.widths.merge(width.getKey(), width.getValue(), Integer::sum);
+            for (Map.Entry<String, Integer> type : found.types.entrySet())
+                target.types.merge(type.getKey(), type.getValue(), Integer::sum);
+            for (Map.Entry<String, Integer> role : found.roles.entrySet())
+                target.roles.merge(role.getKey(), role.getValue(), Integer::sum);
+            target.sites.addAll(found.sites);
+        }
+    }
+
+    private void mergeNested(NestedEvidence destination, NestedEvidence source) {
+        destination.accessCount += source.accessCount;
+        destination.dArrayIndexEvidence += source.dArrayIndexEvidence;
+        destination.pointerDepth = Math.max(destination.pointerDepth, source.pointerDepth);
+        mergeFields(destination.fields, source.fields);
     }
 
     /**
@@ -1137,7 +1385,7 @@ public class STPointerShapeAnalyzer extends GhidraScript {
                     owner.getPathName());
         }
         boolean generatedAnonymous = !currentStructure.isBlank() && target.scriptOwned &&
-            anonymousTypePath(currentStructure);
+            generatedRefinablePath(currentStructure);
         if (!currentStructure.isBlank() && !generatedAnonymous)
             return new TargetDecision(false, false, currentStructure, "existing",
                 "target already has a named/manual structure pointer type");
@@ -1442,7 +1690,11 @@ public class STPointerShapeAnalyzer extends GhidraScript {
                 description.contains("[STClassLayoutApplier]") &&
                 description.contains("generated_layout_sha256=") ||
             path.contains("/Recovered/HiddenThis/") &&
-                description.contains("[STHiddenThisApplier generated]");
+                description.contains("[STHiddenThisApplier generated]") ||
+            path.contains("/Recovered/LibraryContexts/") &&
+                (description.contains("[STGlobalDataApplier]") ||
+                 description.contains(APPLIER_MARKER)) &&
+                description.contains("generated_layout_sha256=");
     }
 
     private boolean automaticTarget(TargetEvidence target) {
@@ -1472,6 +1724,10 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         for (String marker : POINTER_OWNER_MARKERS)
             if (comment.contains(marker)) return true;
         return false;
+    }
+
+    private boolean protectedSource(SourceType source) {
+        return source == SourceType.USER_DEFINED || source == SourceType.IMPORTED;
     }
 
     private boolean typeFamilyOwned(String comment) {
@@ -1550,14 +1806,23 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             List<FieldEvidence> selected = nested == null ? List.of() :
                 selectedNestedFields(nested);
             Structure knownNested = knownNestedType(nested);
-            if (knownNested != null) type = "pointer:" + knownNested.getPathName();
+            if (knownNested != null)
+                type = pointerSpecification(nested.pointerDepth, knownNested.getPathName());
             else if (nested != null && usableNested(nested, selected))
-                type = "pointer:" + nestedPath(target, field.offset, nested);
+                type = pointerSpecification(nested.pointerDepth,
+                    nestedPath(target, field.offset, nested));
             else if (type.isBlank() || typeLength(type) != width)
                 type = "/undefined" + width;
-            String name = "field_" + String.format("%04X", field.offset);
+            String semanticName = unique(field.roles);
+            int semanticEvidence = semanticName.isBlank() ? 0 :
+                field.roles.getOrDefault(semanticName, 0);
+            String name = semanticEvidence >= 2 ? semanticName :
+                nested != null && nested.pointerDepth > 1 ?
+                    "entries_" + String.format("%04X", field.offset) :
+                    "field_" + String.format("%04X", field.offset);
             result.add(new FieldProposal(true, shapeId, field.offset, width, name, type,
-                field.sites.size(), "fixed-offset dereference; observed_types=" + field.types));
+                field.sites.size(), "fixed-offset dereference; observed_types=" + field.types +
+                    "; semantic_roles=" + field.roles));
         }
         return result;
     }
@@ -1569,9 +1834,15 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             int width = uniqueWidth(field);
             String type = unique(field.types);
             if (type.isBlank() || typeLength(type) != width) type = "/undefined" + width;
+            String semanticName = unique(field.roles);
+            int semanticEvidence = semanticName.isBlank() ? 0 :
+                field.roles.getOrDefault(semanticName, 0);
+            String name = semanticEvidence >= 2 ? semanticName :
+                "field_" + String.format("%04X", field.offset);
             result.add(new FieldProposal(true, shapeId, field.offset, width,
-                "field_" + String.format("%04X", field.offset), type, field.sites.size(),
-                "dereference through parent pointer field; observed_types=" + field.types));
+                name, type, field.sites.size(),
+                "dereference through parent pointer field; observed_types=" + field.types +
+                    "; semantic_roles=" + field.roles));
         }
         return result;
     }
@@ -1689,6 +1960,29 @@ public class STPointerShapeAnalyzer extends GhidraScript {
 
     private String nestedPath(TargetEvidence target, long parentOffset,
             NestedEvidence nested) {
+        String current = pointedStructure(target.expectedType);
+        String libraryRoot = "/SubmarineTitans/Recovered/LibraryContexts/";
+        if (current.startsWith(libraryRoot)) {
+            String contextName = leaf(current);
+            int contextMarker = contextName.indexOf("Context");
+            if (contextMarker > 0) {
+                String family = contextName.substring(0, contextMarker);
+                String contextSuffix =
+                    contextName.substring(contextMarker + "Context".length());
+                return libraryRoot + family + "Entry" + contextSuffix + "_" +
+                    String.format("%04X", parentOffset);
+            }
+        }
+        if (!current.isBlank() && generatedRefinablePath(current)) {
+            StringBuilder sharedProfile = new StringBuilder();
+            for (FieldEvidence field : selectedNestedFields(nested))
+                sharedProfile.append(field.offset).append(':')
+                    .append(uniqueWidth(field)).append(';');
+            String sharedHash = sha256(current + "|nested|" + parentOffset + "|" +
+                sharedProfile).substring(0, 8).toUpperCase(Locale.ROOT);
+            return ANON_ROOT + "AnonNested_" + leaf(current) + "_" +
+                String.format("%04X", parentOffset) + "_" + sharedHash;
+        }
         String owner = target.kind.equals("global") ? "GLOBAL_" + target.locator :
             addr(target.functionAddress);
         owner = owner.replaceAll("[^A-Za-z0-9_]", "_");
@@ -1785,9 +2079,42 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             if (component == null || component.getOffset() != field.offset ||
                     component.getLength() != width) return true;
             String observed = unique(field.types);
+            NestedEvidence nested = target.nested.get(field.offset);
+            if (nested != null) {
+                Structure known = knownNestedType(nested);
+                List<FieldEvidence> selected = selectedNestedFields(nested);
+                if (known != null || usableNested(nested, selected)) {
+                    String path = known != null ? known.getPathName() :
+                        nestedPath(target, field.offset, nested);
+                    String desired = pointerSpecification(nested.pointerDepth, path);
+                    if (!desired.equals(typeSpecification(component.getDataType()))) return true;
+                    if (nestedSemanticNamesNeedRefinement(nested, path)) return true;
+                }
+            }
             if (Undefined.isUndefined(component.getDataType()) && !observed.isBlank() &&
                     !observed.matches("/undefined(?:1|2|4|8)?") &&
                     typeLength(observed) == width) return true;
+            String semanticName = unique(field.roles);
+            if (!semanticName.isBlank() &&
+                    field.roles.getOrDefault(semanticName, 0) >= 2 &&
+                    !semanticName.equals(component.getFieldName())) return true;
+        }
+        return false;
+    }
+
+    private boolean nestedSemanticNamesNeedRefinement(NestedEvidence nested,
+            String typePath) {
+        DataType candidate = dataTypes.getDataType(typePath);
+        if (!(candidate instanceof Structure structure) ||
+                !generatedAnonymousOwned(structure)) return false;
+        for (FieldEvidence field : selectedNestedFields(nested)) {
+            String semanticName = unique(field.roles);
+            if (semanticName.isBlank() ||
+                    field.roles.getOrDefault(semanticName, 0) < 2) continue;
+            DataTypeComponent component =
+                structure.getComponentAt((int)field.offset);
+            if (component != null && component.getOffset() == field.offset &&
+                    !semanticName.equals(component.getFieldName())) return true;
         }
         return false;
     }
@@ -1900,8 +2227,25 @@ public class STPointerShapeAnalyzer extends GhidraScript {
     private String typeSpecification(DataType type) {
         type = untypedef(type);
         if (type instanceof Pointer pointer && pointer.getDataType() != null)
-            return "pointer:" + untypedef(pointer.getDataType()).getPathName();
+            return "pointer:" + typeSpecification(pointer.getDataType());
         return type == null ? "" : type.getPathName();
+    }
+
+    private String pointerSpecification(int depth, String path) {
+        return "pointer:".repeat(Math.max(1, depth)) + path;
+    }
+
+    private boolean generatedRefinablePath(String path) {
+        return anonymousTypePath(path) ||
+            path.contains("/Recovered/LibraryContexts/");
+    }
+
+    private boolean generatedOwnedPointer(DataType type) {
+        type = untypedef(type);
+        if (!(type instanceof Pointer pointer)) return false;
+        type = untypedef(pointer.getDataType());
+        return type instanceof Structure structure &&
+            generatedAnonymousOwned(structure);
     }
 
     private DataType untypedef(DataType type) {
@@ -2090,13 +2434,19 @@ public class STPointerShapeAnalyzer extends GhidraScript {
     private static class NestedEvidence {
         final long parentOffset;
         final Map<Long, FieldEvidence> fields = new TreeMap<>();
-        int accessCount, dArrayIndexEvidence;
+        int accessCount, dArrayIndexEvidence, pointerDepth = 1;
         NestedEvidence(long parentOffset) { this.parentOffset = parentOffset; }
+    }
+    private static class MergedGeneratedEvidence {
+        final Map<Long, FieldEvidence> fields = new TreeMap<>();
+        final Map<Long, NestedEvidence> nested = new TreeMap<>();
+        boolean baselineSeeded;
     }
     private static class FieldEvidence {
         final long offset;
         final Map<Integer, Integer> widths = new TreeMap<>();
         final Map<String, Integer> types = new TreeMap<>();
+        final Map<String, Integer> roles = new TreeMap<>();
         final Set<String> sites = new TreeSet<>();
         FieldEvidence(long offset) { this.offset = offset; }
     }

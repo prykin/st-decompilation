@@ -58,7 +58,7 @@ void __thiscall CPanelTy::PlayBriefing(CPanelTy *this,char *param_1)
         if ((DAT_0080c4f7 != 3) && (DAT_0080c4f7 != 1)) {
           pCVar3->field_0260 = CASE_3;
           DAT_0080c4f7 = 3;
-          Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,pCVar3->field_017C);
+          Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,pCVar3->field_017C);
         }
       }
     }

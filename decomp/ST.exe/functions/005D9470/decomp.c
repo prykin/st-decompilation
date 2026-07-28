@@ -373,7 +373,7 @@ LAB_005d97ca:
         ccFntTy::WrStr(g_startSystem_0081176C->field_0034,local_8,0,-1,2);
         FUN_006b5440(this_00->field_1CB8,0,(message->arg1).words.low + 6,
                      (message->arg1).words.high + 0x15,(uint)this_00->field_1CBC,0,0xff);
-        FUN_006b35d0((int *)PTR_008075a8,this_00->field_1CB4);
+        FUN_006b35d0((int *)g_ddxContext_008075A8,this_00->field_1CB4);
       }
       goto cf_common_exit_005D9CCB;
     }
@@ -406,7 +406,7 @@ LAB_005d97ca:
     puVar15 = (uint *)LoadResourceString(resourceId,g_module_00807618);
     ccFntTy::WrStr(g_startSystem_0081176C->field_0034,puVar15,iVar11,iVar25,uVar16);
   }
-  FUN_006b35d0((int *)PTR_008075a8,this_00->field_1CB4);
+  FUN_006b35d0((int *)g_ddxContext_008075A8,this_00->field_1CB4);
 cf_common_exit_005D9CCB:
   g_currentExceptionFrame = local_64.previous;
   iVar11 = MMObjTy::GetMessage((MMObjTy *)this_00,message);

@@ -55,7 +55,7 @@ int __thiscall ComboTy::GetMessage(ComboTy *this,STMessage *message)
       DoneCombo(local_c);
       break;
     case MESS_SHARED_0005:
-      FUN_006b35d0((int *)PTR_008075a8,local_c->field_0108);
+      FUN_006b35d0((int *)g_ddxContext_008075A8,local_c->field_0108);
       break;
     case MESS_TRACKBARCLASSTY_0062:
       uVar9 = (uint)(message->arg1).words.low;

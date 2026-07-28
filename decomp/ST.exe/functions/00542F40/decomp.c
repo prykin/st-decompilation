@@ -120,7 +120,7 @@ switchD_00543107_caseD_b904:
       return 0;
     }
     piVar10 = (message->arg1).ptr;
-    FUN_006b5f80((int *)PTR_008075a8,*piVar10,piVar10[1],piVar10[2],piVar10[3]);
+    FUN_006b5f80((int *)g_ddxContext_008075A8,*piVar10,piVar10[1],piVar10[2],piVar10[3]);
     SVar1 = message->id;
     if (SVar1 == MESS_INTERSYSTEMC_B900) {
       text = "BUT_FILEOPT";
@@ -182,7 +182,7 @@ LAB_00543291:
         return 0;
       }
       piVar10 = (message->arg1).ptr;
-      FUN_006b5f80((int *)PTR_008075a8,*piVar10,piVar10[1],piVar10[2],piVar10[3]);
+      FUN_006b5f80((int *)g_ddxContext_008075A8,*piVar10,piVar10[1],piVar10[2],piVar10[3]);
       puVar13 = (undefined4 *)0x0;
       iVar11 = 0;
       iVar12 = 1;

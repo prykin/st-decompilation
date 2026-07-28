@@ -16,7 +16,8 @@ void __thiscall CPanelTy::sub_004F1950(CPanelTy *this)
   pbVar1 = FUN_0070b650(this->field_025B,(uint)(byte)this->field_025F);
   DibPut((AnonShape_006B5B10_E0D06CF1 *)this->field_01B4,0xb,9,'\x06',pbVar1);
   Library::DKW::DDX::FUN_006b3640
-            ((int *)PTR_008075a8,this->field_017C,0xffffffff,this->field_010C,this->field_0110);
+            ((int *)g_ddxContext_008075A8,this->field_017C,0xffffffff,this->field_010C,
+             this->field_0110);
   return;
 }
 

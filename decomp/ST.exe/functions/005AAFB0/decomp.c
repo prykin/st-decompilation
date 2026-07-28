@@ -26,7 +26,7 @@ void __thiscall HoloTy::Done(HoloTy *this)
   pHVar2 = local_8;
   if (errorCode == 0) {
     if (-1 < local_8->field_0003) {
-      FUN_006b3bb0((int *)PTR_008075a8,local_8->field_0003);
+      FUN_006b3bb0((int *)g_ddxContext_008075A8,local_8->field_0003);
     }
     pHVar2->field_0003 = -1;
     if (pHVar2->field_000B != (void *)0x0) {

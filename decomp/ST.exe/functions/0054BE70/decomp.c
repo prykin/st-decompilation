@@ -5,13 +5,12 @@
    E:\__titans\Andrey\to_cursor.cpp
    CPanelTy::OutProc
 
-   [STPrototypeApplier] Propagated parameter 1.
+   [STPrototypeRepairApplier] Propagated parameter 1.
    Evidence: 0054BE70 -> 006B4640 @ 0054BEAD */
 
 void __thiscall
-CPanelTy::OutProc(CPanelTy *this,AnonShape_GLOBAL_0080759C_9638EF10 *param_1,undefined4 param_2,
-                 undefined4 param_3,int param_4,int param_5,undefined4 param_6,undefined4 param_7,
-                 BITMAPINFO *param_8)
+CPanelTy::OutProc(CPanelTy *this,DDXContext *param_1,undefined4 param_2,undefined4 param_3,
+                 int param_4,int param_5,undefined4 param_6,undefined4 param_7,BITMAPINFO *param_8)
 
 {
   code *pcVar1;

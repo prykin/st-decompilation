@@ -777,6 +777,9 @@ migration instead of happening as a side effect of one decompiler run.
    - The containing program directory is also accepted.
 16. Run `STGlobalAggregateAnalyzer`.
     - Directory: `<repo>/recovery`
+    - In addition to indexed tables, this recognizes bounded Win32 resource-string
+      scratch arenas from `LoadStringA`, a global base-plus-cursor destination, and
+      the wrapper's exact chunk/capacity checks.
 17. Run `STGlobalAggregateApplier`.
     - File: `<repo>/recovery/ST.exe/global_aggregate_proposals.tsv`
 18. Run `STGlobalDataAnalyzer`.
@@ -789,6 +792,16 @@ migration instead of happening as a side effect of one decompiler run.
      constructor result dominates weaker generic use-site casts, allowing a
      script-owned anonymous singleton pointer to graduate to the named class
      without authorizing changes to unrelated concrete/manual globals.
+   - A high-fanout anonymous singleton used overwhelmingly as the context argument
+     of one statically linked library family becomes a generated
+     `<Family>Context`, with the observed anonymous layout copied unchanged.
+     A library family is not assumed to have only one context layout: if that
+     semantic name is already occupied by a non-equivalent generated structure,
+     the additional context is named `<Family>Context_<GLOBAL_ADDRESS>`.
+     Taking the address of a pointer-valued singleton for a rare initializer or
+     teardown `T **` use does not block promotion when ordinary family-context
+     uses outvote it by at least 16:1.
+     `GetModuleHandleA("*.dll")` stores also receive a literal-derived module name.
 19. Run `STGlobalDataApplier`.
    - File: `<repo>/recovery/ST.exe/global_data_proposals.tsv`
 20. Run `STIndirectCallAnalyzer`.
@@ -826,12 +839,25 @@ migration instead of happening as a side effect of one decompiler run.
      `local._offset_width_ = value` contributes field evidence to its existing
      generated pointer shape. This recovers narrow members which are visible in
      machine stores but absent from Listing locals.
+   - An indexed load through a generated context field, for example
+     `entry = *(T **)(context->field_01B0 + index * 4)`, is treated as a
+     pointer-table member rather than a scalar integer. Uses of the loaded
+     record are merged across all functions sharing that generated context.
+     Both raw `field_01B0` and an earlier generated `entries_01B0` spelling are
+     recognized on subsequent passes. A repeated strict `index < count`
+     guard followed by `table[index]` names those proven container roles
+     `entryCount` and `entries`; it does not guess the library-specific noun.
+     When its first dword is repeatedly tested or updated with bit masks, that
+     member is named `flags`; individual mask constants remain unnamed until
+     independent enum/debug evidence exists.
 26. Run `STTypeFamilyAnalyzer`.
     - Directory: `<repo>/recovery`
     - Inspect `<repo>/recovery/ST.exe/anon_named_type_matches.tsv`. Exact full-layout
       matches are automatic only when there is one unique named type with at least
       two concrete, meaningfully named fields. Partial or ambiguous matches remain
-      `apply=0`; anonymous-to-anonymous geometry is never merged automatically.
+      `apply=0`. Anonymous-to-anonymous geometry remains review-only except when
+      exact generated HiddenThis members have one unique multi-function
+      namespace-backed receiver family.
     - Inspect `contextual_record_promotions.tsv`. A small, complete,
       script-owned `AnonShape` used only in one unique class-owner context may
       receive a deterministic generated name such as
@@ -879,11 +905,21 @@ the same persistent Listing variable and that variable/type is manual, imported,
 or owned by a hashed recovery pass. This connects return ABI to a recovered
 layout; it never creates a structure from a return cast.
 
-`STGlobalAggregateAnalyzer` writes a broad SIB-index audit, but automatic application
-requires a proven complete range and element formula. High-confidence proposals
-include the 64-byte `g_playerRelationMatrix[8][8]` and exact compiler-emitted
-centered neighbourhood sequences such as `{2,1,0,-1,-2}`. Other indexed bases
-remain `apply=0` until their bounds and record shape are proven.
+`STGlobalAggregateAnalyzer` writes a broad indexed-global audit. It recognizes both
+ordinary SIB operands and compiler sequences which materialize a record stride first
+(`SHL`/power-of-two `IMUL`, followed by `[scaled_register + global]`). Automatic
+application requires a proven complete range and element formula. High-confidence
+proposals include the 64-byte `g_playerRelationMatrix[8][8]`, exact compiler-emitted
+centered neighbourhood sequences such as `{2,1,0,-1,-2}`, and constant record
+tables when every dword field is repeatedly read with the same stride, no write is
+observed, and two zero records give an exact trailing boundary. Those tables become
+arrays of generated records, so raw base-plus-byte-offset expressions can fold to
+`g_constantRecords[index].value_08`. Strong monotone distance/percentage profiles
+receive `SoundDistanceProfile` member names; unrelated layouts retain
+address-stable structural names. A resource-string scratch arena is also automatic
+only when one wrapper proves the `LoadStringA` destination base, read/write cursor,
+chunk limit, and enclosing capacity. Other indexed bases remain `apply=0` until
+their bounds and record shape are proven.
 
 Indirect-call analysis audits every raw call site in `indirect_call_sites.tsv`.
 It prefers an independently tagged/imported target signature. If semantic typing
@@ -1137,7 +1173,24 @@ original function definition line.
 Run this before the final library applier. Source-provenance analysis skips
 functions already tagged as libraries.
 
-### 9. Structural control-flow labels
+### 9. Transparent thunk propagation
+
+1. Run `STThunkPropagationAnalyzer`.
+   - Directory: `<repo>/recovery`
+2. Run `STThunkPropagationApplier`.
+   - File: `<repo>/recovery/ST.exe/thunk_proposals.tsv`
+
+Ghidra normally mirrors a direct one-instruction `JMP` thunk's target name,
+namespace, and signature automatically. A manually named wrapper pins a
+separate symbol and prevents later target renames from reaching it. This pair
+audits every thunk and releases only an exact redundant `TargetName_thunk` in
+the target namespace when the complete ABI already matches. Ghidra's real thunk
+signature is already delegated to the target; the applier deliberately never
+changes it. Other manual/imported wrappers, non-transparent adapters, and stale
+target baselines are preserved. Ordinary automatically forwarded thunks remain
+unchanged.
+
+### 10. Structural control-flow labels
 
 1. Run `STControlFlowLabelAnalyzer`.
    - Directory: `<repo>/recovery`
@@ -1148,7 +1201,7 @@ Only labels that are actual decompiler `goto` targets are considered. Common
 exits, loop breaks/continues, and well-supported joins can be named; generic
 joins remain disabled.
 
-### 10. Library classification
+### 11. Library classification
 
 1. Run `STLibraryAnalyzer`.
    - Directory: `<repo>/recovery`
@@ -1177,7 +1230,7 @@ The switch analyzer is the exception: it continues to inspect internal
 Keep the richer pre-library proposal files for the other analyzers unless the
 purpose of the rerun is specifically to analyze only game-owned code.
 
-### 11. Export the text corpus
+### 12. Export the text corpus
 
 Normally run `STRecoveryPipeline` in `export` or `full-export` mode so evidence
 verification, the prior-corpus snapshot, `STDecompExport`, and
@@ -1313,7 +1366,7 @@ a new conflict is what requires another iteration.
 | `STVTableAnalyzer/Applier` | Find long and strongly referenced short vtables, resolve direct-JMP thunks, preserve tagged owner-specific message signatures, apply physical layouts separately from semantic owners, type safe owner vptrs, and record owner conflicts. |
 | `STVirtualMethodAnalyzer/Applier` | Propagate reviewed virtual slot names, conventions, and compatible signatures. |
 | `STConstructorAnalyzer/Applier` | Recover constructors, allocation sizes, direct hierarchy evidence, receiver-only signatures, and ABI `Owner *` returns when EAX is proven to return `this`. |
-| `STClassLayoutAnalyzer/Applier` | Build and revalidate conservative class layouts, including fields reached after stable prologue `this` spills, dynamic byte/word buffers, nested class-field pointee layouts, and semantic field-type/name proposals. |
+| `STClassLayoutAnalyzer/Applier` | Build and revalidate conservative class layouts, including fields reached after stable prologue `this` spills, dynamic byte/word buffers, nested class-field pointee layouts, semantic field-type/name proposals, and packed initialization writes between an allocator/factory return and its store into an already typed singleton. |
 | `STClassArrayAnalyzer` | Prove fixed arrays embedded in generated class layouts from bounded indexed accesses and exact pointer-walk loops, and recover a selected pointer element's pointee width from its subsequent dereference; `STClassLayoutAnalyzer/Applier` consumes the proposals. |
 | `STMethodOwnerAnalyzer/Applier` | Assign structural class ownership to non-virtual methods, use typed global-singleton values passed in ECX as owner evidence, and repair weak script-owned assignments to high-fanout shared helpers; it participates in the deep fixed point after global typing. |
 | `STHiddenThisAnalyzer/Applier` | Recover anonymous `__thiscall` receivers from ECX/RET/call-site evidence with neutral structural owners required by Ghidra. |
@@ -1328,15 +1381,16 @@ a new conflict is what requires another iteration.
 | `STGlobalRecordAnalyzer/Applier` | Recover packed arrays of repeated global records and their proven fields, including nested temporary-object slot arrays, from stride/range evidence. |
 | `STSpatialGridAnalyzer/Applier` | Collapse the shared world/pathing x-y-z-stride globals into typed runtime grid descriptors. |
 | `STDiscriminatedPayloadAnalyzer/Applier` | Infer per-case payload layouts and caller stack aggregates from switch discriminators and observed callsite lifetimes. |
-| `STGlobalAggregateAnalyzer/Applier` | Audit indexed global ranges and install only bounded arrays/matrices with a proven extent and indexing formula. |
-| `STGlobalDataAnalyzer/Applier` | Type generic globals from receiver/argument use and named-constructor stores, promote script-owned anonymous singleton pointers to named classes, assign address-stable structural names, and audit every `PTR_*` symbol by pointer role. |
+| `STGlobalAggregateAnalyzer/Applier` | Audit indexed global ranges and install only bounded arrays/matrices with a proven extent/indexing formula, including behavior-proven Win32 resource-string scratch arenas. |
+| `STGlobalDataAnalyzer/Applier` | Type generic globals from receiver/argument use and named-constructor stores, promote script-owned anonymous singleton pointers to named classes or dominant statically linked library contexts, name literal-backed module handles, assign address-stable structural names, and audit every `PTR_*` symbol by pointer role. |
 | `STIndirectCallAnalyzer/Applier` | Audit raw indirect calls; refine trusted slots semantically and otherwise install machine-proven neutral thiscall/stdcall definitions with per-slot stack-access and accumulator-return widths. |
 | `STPointerRoleRepairAnalyzer/Applier` | Remove prior script-owned pointer constraints from stack slots with proven scalar lifetimes in unsettled functions. |
 | `STPointerShapeAnalyzer/Applier` | Recover and fixed-point-refine known or anonymous pointer-backed structures from fixed, nested, alias-mediated dereferences, typed calls, and field-by-field stack aggregate construction; merge non-conflicting generated partial views only when their identity is proven by one global singleton value; for an untyped singleton, materialize a target-local superset instead of widening helper-local views; apply auto-`this` types through the owning class namespace. |
-| `STTypeFamilyAnalyzer/Applier` | Promote anonymous layouts to one explicit semantic anchor, propagate named aggregate returns, and give complete one-owner generated records deterministic contextual names without geometry merging; ambiguous layouts remain review-only. |
-| `STTypeLifecycleAnalyzer/Applier` | Replace legacy views with one equivalent semantic anchor and remove unreferenced, hash-owned anonymous PointerShape/ClassPointee/HiddenThis types after zero-parent/signature/Listing-use revalidation. |
+| `STTypeFamilyAnalyzer/Applier` | Promote anonymous layouts to one explicit semantic anchor, propagate named aggregate returns, and give complete one-owner generated records deterministic contextual names without geometry merging. Anonymous-to-anonymous consolidation is limited to exact HiddenThis layouts with one unique multi-function receiver namespace. |
+| `STTypeLifecycleAnalyzer/Applier` | Replace legacy views with one equivalent semantic anchor, consolidate an exact orphan HiddenThis duplicate into its unique namespace-backed receiver family, and remove unreferenced, hash-owned anonymous PointerShape/ClassPointee/HiddenThis types after zero-parent/signature/Listing-use revalidation. |
 | `STEvidenceLedger` | Record/verify a deterministic semantic Program fingerprint and hashes of every proposal/apply artifact plus monotonic enum state before export; retain the volatile modification counter for diagnostics only. |
 | `STSourceProvenanceAnalyzer/Applier` | Attach original source files and strict free-function names. |
+| `STThunkPropagationAnalyzer/Applier` | Audit transparent direct-JMP thunks, preserve normal Ghidra target forwarding, and release only exact redundant manual `TargetName_thunk` symbols after full ABI and stale-baseline validation; delegated target signatures are never mutated. |
 | `STControlFlowLabelAnalyzer/Applier` | Give structural names to real decompiler goto targets. |
 | `STLibraryAnalyzer/Applier` | Classify linked CRT, DKW, and internal Ourlib implementations. |
 | `STExportRegressionGate` | Compare a fresh corpus with the prior central-index snapshot, report per-function quality deltas, reject exact structural/critical regressions, and write a reproducible export receipt. |

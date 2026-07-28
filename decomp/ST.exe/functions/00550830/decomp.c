@@ -34,7 +34,7 @@ void FUN_00550830(int param_1)
       }
       soundId = 0x3a;
     }
-    SoundClassTy::PlaySound_thunk
+    SoundClassTy::PlaySound
               ((SoundClassTy *)&g_sound,SOUND_MODE_5,(char *)0x0,soundId,(SoundPosition *)0x0,0);
   }
   return;

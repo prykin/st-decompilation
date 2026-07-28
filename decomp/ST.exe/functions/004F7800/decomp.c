@@ -137,22 +137,22 @@ void __thiscall CPanelTy::DoneCPanel(CPanelTy *this)
     iVar3 = 0xb;
     do {
       if (-1 < (int)*ppuVar6) {
-        FUN_006b3bb0((int *)PTR_008075a8,(uint)*ppuVar6);
+        FUN_006b3bb0((int *)g_ddxContext_008075A8,(uint)*ppuVar6);
       }
       *ppuVar6 = (ushort *)0xffffffff;
       ppuVar6 = ppuVar6 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
     if (-1 < this_00->field_0174) {
-      FUN_006b3bb0((int *)PTR_008075a8,this_00->field_0174);
+      FUN_006b3bb0((int *)g_ddxContext_008075A8,this_00->field_0174);
     }
     this_00->field_0174 = -1;
     if (-1 < this_00->field_0178) {
-      FUN_006b3bb0((int *)PTR_008075a8,this_00->field_0178);
+      FUN_006b3bb0((int *)g_ddxContext_008075A8,this_00->field_0178);
     }
     this_00->field_0178 = -1;
     if (-1 < this_00->field_017C) {
-      FUN_006b3bb0((int *)PTR_008075a8,this_00->field_017C);
+      FUN_006b3bb0((int *)g_ddxContext_008075A8,this_00->field_017C);
     }
     this_00->field_017C = -1;
     cMf32::RecMemFree(g_cMf32_00806790,(uint *)&this_00->field_0B43);

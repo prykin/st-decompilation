@@ -87,8 +87,8 @@ int FUN_006b8f10(AnonShape_006B8F10_41B61BA9 *param_1,int *param_2)
       local_24 = local_10 - local_18;
       if ((pAVar2->field_0004 & 0x8000000) != 0) {
         iVar3 = Library::DKW::DDX::FUN_006b82e0
-                          (*(AnonShape_GLOBAL_0080759C_9638EF10 **)pAVar2,local_14,local_10,
-                           (byte *)param_1,local_28,local_24,local_c,local_8);
+                          (*(DDXContext **)pAVar2,local_14,local_10,(byte *)param_1,local_28,
+                           local_24,local_c,local_8);
         pAVar2->field_0004 = pAVar2->field_0004 | 0x4000;
         return iVar3;
       }

@@ -549,6 +549,15 @@ public class STClassLayoutAnalyzer extends GhidraScript {
             state.registers.remove("EAX"); state.registers.remove("ECX");
             state.registers.remove("EDX");
             CrossValue returned = called == null ? null : crossPointer(called.getReturnType(), owners);
+            // Allocators and factory helpers frequently still have an undefined/integer
+            // return type.  MSVC then initializes the object through EAX before storing
+            // it in an already typed singleton.  The later store is a strong backward
+            // constraint on the whole uninterrupted EAX lifetime, and lets us recover
+            // packed fields written between the CALL and the global assignment.
+            CrossValue stored = forwardTypedGlobalStore(instruction, owners);
+            if (stored != null && (returned == null ||
+                    returned.kind == CrossKind.GENERIC_POINTER))
+                returned = stored;
             if (returned != null) state.registers.put("EAX", returned);
             return;
         }
@@ -617,6 +626,50 @@ public class STClassLayoutAnalyzer extends GhidraScript {
                 state.registers.get(destination).kind == CrossKind.FIELD) return;
         if (!Set.of("CMP", "TEST", "PUSH", "JMP", "RET").contains(mnemonic))
             state.registers.remove(destination);
+    }
+
+    /**
+     * Find a typed global-pointer store fed by the current CALL's EAX result before
+     * that value is clobbered.  This is deliberately a local register-lifetime
+     * proof, not a guess based on allocator names or a particular class.
+     */
+    private CrossValue forwardTypedGlobalStore(Instruction call,
+            Map<String, CrossOwner> owners) {
+        Function containing = currentProgram.getFunctionManager()
+            .getFunctionContaining(call.getAddress());
+        if (containing == null) return null;
+        Set<String> aliases = new HashSet<>();
+        aliases.add("EAX");
+        Instruction next = call.getNext();
+        for (int count = 0; next != null && count < 96 &&
+                containing.getBody().contains(next.getAddress()); count++, next = next.getNext()) {
+            String mnemonic = next.getMnemonicString().toUpperCase(Locale.ROOT);
+            String[] operands = splitOperands(next.toString().toUpperCase(Locale.ROOT));
+            if ("CALL".equals(mnemonic)) return null;
+            if ("MOV".equals(mnemonic) && operands.length >= 2) {
+                String source = cleanRegister(operands[1]);
+                String destination = cleanRegister(operands[0]);
+                if (destination == null && source != null && aliases.contains(source)) {
+                    CrossValue target = referencedCrossPointer(next, 0, owners);
+                    if (target != null && target.kind == CrossKind.ADDRESS) return target;
+                }
+                if (destination != null && isFullRegister(operands[0])) {
+                    if (source != null && aliases.contains(source)) aliases.add(destination);
+                    else {
+                        aliases.remove(destination);
+                        if ("EAX".equals(destination)) return null;
+                    }
+                }
+                continue;
+            }
+            String destination = operands.length == 0 ? null : cleanRegister(operands[0]);
+            if (destination != null && isFullRegister(operands[0]) &&
+                    !Set.of("CMP", "TEST", "PUSH", "JMP", "RET").contains(mnemonic)) {
+                aliases.remove(destination);
+                if ("EAX".equals(destination)) return null;
+            }
+        }
+        return null;
     }
 
     private CrossValue crossMemoryField(String operand, CrossState state) {

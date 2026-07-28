@@ -408,7 +408,7 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
         FreeAndNull(&local_c);
       }
       local_8 = (int *)((int)local_8 + 1);
-      local_10 = (AnonShape_00710790_4CBB90D4 *)&local_10->field_0x4;
+      local_10 = (AnonShape_00710790_4CBB90D4 *)((int)&local_10->field_0001 + 3);
       local_14 = local_14 + -1;
     } while (local_14 != 0);
     iVar3 = 0;
@@ -640,7 +640,7 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
       PaintCtrlObj(this_00,1);
     }
     PaintInfoObj(this_00);
-    FUN_006b1a50(PTR_008075a8,3,(undefined4 *)0x0,&this_00->field_011C);
+    FUN_006b1a50(g_ddxContext_008075A8,3,(undefined4 *)0x0,&this_00->field_011C);
     iVar3 = this_00->field_011C;
     piVar24 = &this_00->field_003C;
     this_00->field_0040 = iVar3;
@@ -691,10 +691,11 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
       do {
         if (((&this_00->field_0068)[uVar4] != 0) && ((&this_00->field_00C0)[uVar4] != 0)) {
           ppuVar17 = this_00->field_0148 + uVar4;
-          FUN_006b2330(PTR_008075a8,(uint *)ppuVar17,5,0x402946,(&this_00->field_0068)[uVar4],
-                       (&this_00->field_00C0)[uVar4],this_00->field_0148[uVar4 + 0xe]);
-          FUN_006b1b10(PTR_008075a8,(uint)*ppuVar17,3);
-          FUN_006b28c0(PTR_008075a8,(uint)*ppuVar17,1);
+          FUN_006b2330(g_ddxContext_008075A8,(uint *)ppuVar17,5,0x402946,
+                       (&this_00->field_0068)[uVar4],(&this_00->field_00C0)[uVar4],
+                       this_00->field_0148[uVar4 + 0xe]);
+          FUN_006b1b10((AnonShape_006B1B10_121F236C *)g_ddxContext_008075A8,(uint)*ppuVar17,3);
+          FUN_006b28c0(g_ddxContext_008075A8,(uint)*ppuVar17,1);
         }
         bVar2 = bVar2 + 1;
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -716,31 +717,34 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
     }
     this_00->field_00F0 = iVar3;
     piVar24 = &this_00->field_0174;
-    FUN_006b2330(PTR_008075a8,(uint *)piVar24,5,0x40402a,this_00->field_00F4,this_00->field_00F8,
-                 (ushort *)this_00->field_01AC);
-    FUN_006b1b10(PTR_008075a8,*piVar24,3);
+    FUN_006b2330(g_ddxContext_008075A8,(uint *)piVar24,5,0x40402a,this_00->field_00F4,
+                 this_00->field_00F8,(ushort *)this_00->field_01AC);
+    FUN_006b1b10((AnonShape_006B1B10_121F236C *)g_ddxContext_008075A8,*piVar24,3);
     Library::DKW::DDX::FUN_006b3640
-              ((int *)PTR_008075a8,*piVar24,0xffffffff,this_00->field_00EC,this_00->field_00F0);
+              ((int *)g_ddxContext_008075A8,*piVar24,0xffffffff,this_00->field_00EC,
+               this_00->field_00F0);
     piVar24 = &this_00->field_0178;
     this_00->field_00FC = (this_00->field_0124 - this_00->field_0104) + this_00->field_011C;
     this_00->field_0100 = this_00->field_00A4 - this_00->field_0108;
-    FUN_006b2330(PTR_008075a8,(uint *)piVar24,6,0x40402a,this_00->field_0104,this_00->field_0108,
-                 this_00->field_01B0);
-    FUN_006b1b10(PTR_008075a8,*piVar24,3);
+    FUN_006b2330(g_ddxContext_008075A8,(uint *)piVar24,6,0x40402a,this_00->field_0104,
+                 this_00->field_0108,this_00->field_01B0);
+    FUN_006b1b10((AnonShape_006B1B10_121F236C *)g_ddxContext_008075A8,*piVar24,3);
     Library::DKW::DDX::FUN_006b3640
-              ((int *)PTR_008075a8,*piVar24,0xffffffff,this_00->field_00FC,this_00->field_0100);
-    FUN_006b3af0((int *)PTR_008075a8,*piVar24);
+              ((int *)g_ddxContext_008075A8,*piVar24,0xffffffff,this_00->field_00FC,
+               this_00->field_0100);
+    FUN_006b3af0((int *)g_ddxContext_008075A8,*piVar24);
     this_00->field_0114 = this_00->field_01B4->field_0004;
     this_00->field_0118 = this_00->field_01B4->field_0008;
     piVar24 = &this_00->field_017C;
     this_00->field_010C = (this_00->field_0124 - this_00->field_0114) + this_00->field_011C;
     this_00->field_0110 = this_00->field_00A4;
-    FUN_006b2330(PTR_008075a8,(uint *)piVar24,6,0x401988,this_00->field_0114,this_00->field_0118,
-                 (ushort *)this_00->field_01B4);
-    FUN_006b1b10(PTR_008075a8,*piVar24,3);
+    FUN_006b2330(g_ddxContext_008075A8,(uint *)piVar24,6,0x401988,this_00->field_0114,
+                 this_00->field_0118,(ushort *)this_00->field_01B4);
+    FUN_006b1b10((AnonShape_006B1B10_121F236C *)g_ddxContext_008075A8,*piVar24,3);
     Library::DKW::DDX::FUN_006b3640
-              ((int *)PTR_008075a8,*piVar24,0xffffffff,this_00->field_010C,this_00->field_0110);
-    FUN_006b3af0((int *)PTR_008075a8,*piVar24);
+              ((int *)g_ddxContext_008075A8,*piVar24,0xffffffff,this_00->field_010C,
+               this_00->field_0110);
+    FUN_006b3af0((int *)g_ddxContext_008075A8,*piVar24);
     psVar28 = (short *)0x1;
     bVar22 = 0;
     bVar2 = 6;
@@ -756,7 +760,7 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
     do {
       if (-1 < (int)*ppuVar17) {
         Library::DKW::DDX::FUN_006b3640
-                  ((int *)PTR_008075a8,(uint)*ppuVar17,0xffffffff,(uint)ppuVar17[-0x43],
+                  ((int *)g_ddxContext_008075A8,(uint)*ppuVar17,0xffffffff,(uint)ppuVar17[-0x43],
                    (uint)ppuVar17[-0x2d]);
       }
       bVar2 = bVar2 + 1;

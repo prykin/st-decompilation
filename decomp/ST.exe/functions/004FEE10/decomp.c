@@ -76,18 +76,18 @@ LAB_004fef26:
   }
   if (-1 < (int)this_00->field_0148[8]) {
     Library::DKW::DDX::FUN_006b3640
-              ((int *)PTR_008075a8,(uint)this_00->field_0148[8],0xffffffff,this_00->field_005C,
-               this_00->field_00B4);
+              ((int *)g_ddxContext_008075A8,(uint)this_00->field_0148[8],0xffffffff,
+               this_00->field_005C,this_00->field_00B4);
   }
   if (-1 < (int)this_00->field_0148[7]) {
     Library::DKW::DDX::FUN_006b3640
-              ((int *)PTR_008075a8,(uint)this_00->field_0148[7],0xffffffff,this_00->field_0058,
-               this_00->field_00B0);
+              ((int *)g_ddxContext_008075A8,(uint)this_00->field_0148[7],0xffffffff,
+               this_00->field_0058,this_00->field_00B0);
   }
   if ((DAT_0080874e != '\x03') && (-1 < (int)this_00->field_0148[6])) {
     Library::DKW::DDX::FUN_006b3640
-              ((int *)PTR_008075a8,(uint)this_00->field_0148[6],0xffffffff,this_00->field_0054,
-               this_00->field_00AC);
+              ((int *)g_ddxContext_008075A8,(uint)this_00->field_0148[6],0xffffffff,
+               this_00->field_0054,this_00->field_00AC);
   }
   g_currentExceptionFrame = local_4c.previous;
   return;

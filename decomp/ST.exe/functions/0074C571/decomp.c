@@ -1,25 +1,24 @@
 
-int FUN_0074c571(int param_1)
+int FUN_0074c571(AnonShape_0074C571_537DB7FB *param_1)
 
 {
   int iVar1;
-  LPCRITICAL_SECTION lpCriticalSection;
+  undefined1 *lpCriticalSection;
 
+  lpCriticalSection = &param_1->field_00CC->field_0x5c;
+  EnterCriticalSection((LPCRITICAL_SECTION)lpCriticalSection);
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  lpCriticalSection = (LPCRITICAL_SECTION)(*(int *)(param_1 + 0xcc) + 0x5c);
-  EnterCriticalSection(lpCriticalSection);
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if ((*(int *)(param_1 + 0xc) == 0) || (*(int *)((*(int **)(param_1 + 0xcc))[0x24] + 0x18) == 0)) {
-    LeaveCriticalSection(lpCriticalSection);
+  if ((param_1->field_000C == 0) || (*(int *)(param_1->field_00CC->field_0090 + 0x18) == 0)) {
+    LeaveCriticalSection((LPCRITICAL_SECTION)lpCriticalSection);
     iVar1 = -0x7ffbfdf7;
   }
   else {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    iVar1 = (**(code **)(**(int **)(param_1 + 0xcc) + 0x60))();
+    iVar1 = (**(code **)(param_1->field_00CC->field_0000 + 0x60))();
     if (-1 < iVar1) {
-      iVar1 = FUN_0074896b(param_1);
+      iVar1 = FUN_0074896b((int)param_1);
     }
-    LeaveCriticalSection(lpCriticalSection);
+    LeaveCriticalSection((LPCRITICAL_SECTION)lpCriticalSection);
   }
   return iVar1;
 }

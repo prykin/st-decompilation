@@ -19,7 +19,7 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
   int iVar5;
   byte bVar6;
   char cVar7;
-  AnonShape_006B1B10_121F236C *pAVar8;
+  DDXContext_008075A8 *pDVar8;
   uint uVar9;
   InternalExceptionFrame local_4c;
   FSGSTy *local_8;
@@ -76,8 +76,8 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
       pHVar4->field_0001 = CASE_2;
       pHVar4->field_0007 = 0;
       pHVar4->field_000B = (void *)0x0;
-      *(undefined4 *)&pHVar4->field_0xf = 0;
-      *(undefined4 *)&pHVar4->field_0x1b = 1;
+      pHVar4->field_000F = 0;
+      pHVar4->field_001B = 1;
       pHVar4->field_0013 = 1;
       pHVar4->field_0017 = -1;
       pHVar4->field_0027 = 0;
@@ -91,7 +91,7 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
       cVar7 = '\x01';
       bVar6 = 0x10;
       iVar5 = 1;
-      iVar3 = Library::DKW::DDX::FUN_006bf9f0((int *)PTR_008075a8,0xb4,0xaa,0x1b8,0x106);
+      iVar3 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,0xb4,0xaa,0x1b8,0x106);
       uVar9 = HoloTy::Init(pFVar2->field_1F23,CASE_4,0xb4,0xaa,iVar3,iVar5,bVar6,cVar7,uVar9);
       if (uVar9 != 0) {
         pHVar4 = pFVar2->field_1F23;
@@ -99,15 +99,15 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
         pHVar4->field_0017 = -1;
         uVar9 = pFVar2->field_1F23->field_0003;
         if (-1 < (int)uVar9) {
-          Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,uVar9);
+          Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar9);
         }
         HoloTy::NextFas(pFVar2->field_1F23);
       }
-      FUN_006b5f80((int *)PTR_008075a8,0xb4,0xaa,0x1b8,0x106);
+      FUN_006b5f80((int *)g_ddxContext_008075A8,0xb4,0xaa,0x1b8,0x106);
       PutDDXClip(0xb4,0xaa,0xb4,0xaa,0x1b8,(byte *)0x106,'\x01',(BITMAPINFO *)pFVar2->field_005D);
     }
     uVar9 = pFVar2->field_1ABC;
-    pAVar8 = PTR_008075a8;
+    pDVar8 = g_ddxContext_008075A8;
     break;
   case CASE_3:
     sub_005A0590(local_8);
@@ -127,8 +127,8 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
       pHVar4->field_0001 = CASE_2;
       pHVar4->field_0007 = 0;
       pHVar4->field_000B = (void *)0x0;
-      *(undefined4 *)&pHVar4->field_0xf = 0;
-      *(undefined4 *)&pHVar4->field_0x1b = 1;
+      pHVar4->field_000F = 0;
+      pHVar4->field_001B = 1;
       pHVar4->field_0013 = 1;
       pHVar4->field_0017 = -1;
       pHVar4->field_0027 = 0;
@@ -142,7 +142,7 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
     cVar7 = '\x01';
     bVar6 = 0x10;
     iVar5 = 1;
-    iVar3 = Library::DKW::DDX::FUN_006bf9f0((int *)PTR_008075a8,0x22,0x72,0x2e1,0x14c);
+    iVar3 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,0x22,0x72,0x2e1,0x14c);
     uVar9 = HoloTy::Init(pFVar2->field_1F23,CASE_4,0x22,0x72,iVar3,iVar5,bVar6,cVar7,uVar9);
     if (uVar9 != 0) {
       pHVar4 = pFVar2->field_1F23;
@@ -150,11 +150,11 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
       pHVar4->field_0017 = -1;
       uVar9 = pFVar2->field_1F23->field_0003;
       if (-1 < (int)uVar9) {
-        Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,uVar9);
+        Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar9);
       }
       HoloTy::NextFas(pFVar2->field_1F23);
     }
-    FUN_006b5f80((int *)PTR_008075a8,0x22,0x72,0x2e1,0x14c);
+    FUN_006b5f80((int *)g_ddxContext_008075A8,0x22,0x72,0x2e1,0x14c);
     PutDDXClip(0x22,0x72,0x22,0x72,0x2e1,(byte *)0x14c,'\x01',(BITMAPINFO *)pFVar2->field_005D);
     if (pFVar2->field_1B2C != 0xffffffff) {
       FUN_006b3af0((int *)pFVar2->field_1B70,pFVar2->field_1B2C);
@@ -164,7 +164,7 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
     }
     uVar9 = pFVar2->field_1C4E;
     if (uVar9 == 0xffffffff) goto switchD_0059f6f7_default;
-    pAVar8 = (AnonShape_006B1B10_121F236C *)pFVar2->field_1C92;
+    pDVar8 = (DDXContext_008075A8 *)pFVar2->field_1C92;
     break;
   case CASE_6:
     sub_005A07F0(local_8);
@@ -184,8 +184,8 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
       pHVar4->field_0001 = CASE_2;
       pHVar4->field_0007 = 0;
       pHVar4->field_000B = (void *)0x0;
-      *(undefined4 *)&pHVar4->field_0xf = 0;
-      *(undefined4 *)&pHVar4->field_0x1b = 1;
+      pHVar4->field_000F = 0;
+      pHVar4->field_001B = 1;
       pHVar4->field_0013 = 1;
       pHVar4->field_0017 = -1;
       pHVar4->field_0027 = 0;
@@ -199,7 +199,7 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
       cVar7 = '\x01';
       bVar6 = 0x10;
       iVar5 = 1;
-      iVar3 = Library::DKW::DDX::FUN_006bf9f0((int *)PTR_008075a8,0x13,0x5e,0x1bf,0x175);
+      iVar3 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,0x13,0x5e,0x1bf,0x175);
       uVar9 = HoloTy::Init(pFVar2->field_1F27,CASE_4,0x13,0x5e,iVar3,iVar5,bVar6,cVar7,uVar9);
       if (uVar9 != 0) {
         pHVar4 = pFVar2->field_1F27;
@@ -207,11 +207,11 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
         pHVar4->field_0017 = -1;
         uVar9 = pFVar2->field_1F27->field_0003;
         if (-1 < (int)uVar9) {
-          Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,uVar9);
+          Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar9);
         }
         HoloTy::NextFas(pFVar2->field_1F27);
       }
-      FUN_006b5f80((int *)PTR_008075a8,0x13,0x5e,0x1bf,0x175);
+      FUN_006b5f80((int *)g_ddxContext_008075A8,0x13,0x5e,0x1bf,0x175);
       PutDDXClip(0x13,0x5e,0x13,0x5e,0x1bf,(byte *)0x175,'\x01',(BITMAPINFO *)pFVar2->field_005D);
       if (pFVar2->field_1B2C != 0xffffffff) {
         FUN_006b3af0((int *)pFVar2->field_1B70,pFVar2->field_1B2C);
@@ -239,8 +239,8 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
       pHVar4->field_0001 = CASE_2;
       pHVar4->field_0007 = 0;
       pHVar4->field_000B = (void *)0x0;
-      *(undefined4 *)&pHVar4->field_0xf = 0;
-      *(undefined4 *)&pHVar4->field_0x1b = 1;
+      pHVar4->field_000F = 0;
+      pHVar4->field_001B = 1;
       pHVar4->field_0013 = 1;
       pHVar4->field_0017 = -1;
       pHVar4->field_0027 = 0;
@@ -254,7 +254,7 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
     cVar7 = '\x01';
     bVar6 = 0x10;
     iVar5 = 1;
-    iVar3 = Library::DKW::DDX::FUN_006bf9f0((int *)PTR_008075a8,0x1e9,0x5e,0x124,0x175);
+    iVar3 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,0x1e9,0x5e,0x124,0x175);
     uVar9 = HoloTy::Init(pFVar2->field_1F2B,CASE_2,0x1e9,0x5e,iVar3,iVar5,bVar6,cVar7,uVar9);
     if (uVar9 != 0) {
       pHVar4 = pFVar2->field_1F2B;
@@ -262,11 +262,11 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
       pHVar4->field_0017 = -1;
       uVar9 = pFVar2->field_1F2B->field_0003;
       if (-1 < (int)uVar9) {
-        Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,uVar9);
+        Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar9);
       }
       HoloTy::NextFas(pFVar2->field_1F2B);
     }
-    FUN_006b5f80((int *)PTR_008075a8,0x1e9,0x5e,0x124,0x175);
+    FUN_006b5f80((int *)g_ddxContext_008075A8,0x1e9,0x5e,0x124,0x175);
     PutDDXClip(0x1e9,0x5e,0x1e9,0x5e,0x124,(byte *)0x175,'\x01',(BITMAPINFO *)pFVar2->field_005D);
     if (pFVar2->field_1CDF != 0xffffffff) {
       FUN_006b3af0((int *)pFVar2->field_1D23,pFVar2->field_1CDF);
@@ -276,7 +276,7 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
     }
     uVar9 = pFVar2->field_1E01;
     if (uVar9 == 0xffffffff) goto switchD_0059f6f7_default;
-    pAVar8 = (AnonShape_006B1B10_121F236C *)pFVar2->field_1E45;
+    pDVar8 = (DDXContext_008075A8 *)pFVar2->field_1E45;
     break;
   case CASE_8:
     sub_005A0AF0(local_8);
@@ -296,8 +296,8 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
       pHVar4->field_0001 = CASE_2;
       pHVar4->field_0007 = 0;
       pHVar4->field_000B = (void *)0x0;
-      *(undefined4 *)&pHVar4->field_0xf = 0;
-      *(undefined4 *)&pHVar4->field_0x1b = 1;
+      pHVar4->field_000F = 0;
+      pHVar4->field_001B = 1;
       pHVar4->field_0013 = 1;
       pHVar4->field_0017 = -1;
       pHVar4->field_0027 = 0;
@@ -311,7 +311,7 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
       cVar7 = '\x01';
       bVar6 = 0x10;
       iVar5 = 1;
-      iVar3 = Library::DKW::DDX::FUN_006bf9f0((int *)PTR_008075a8,0x199,0x5e,0x174,0x175);
+      iVar3 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,0x199,0x5e,0x174,0x175);
       uVar9 = HoloTy::Init(pFVar2->field_1F2F,CASE_2,0x199,0x5e,iVar3,iVar5,bVar6,cVar7,uVar9);
       if (uVar9 != 0) {
         pHVar4 = pFVar2->field_1F2F;
@@ -319,11 +319,11 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
         pHVar4->field_0017 = -1;
         uVar9 = pFVar2->field_1F2F->field_0003;
         if (-1 < (int)uVar9) {
-          Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,uVar9);
+          Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar9);
         }
         HoloTy::NextFas(pFVar2->field_1F2F);
       }
-      FUN_006b5f80((int *)PTR_008075a8,0x199,0x5e,0x174,0x175);
+      FUN_006b5f80((int *)g_ddxContext_008075A8,0x199,0x5e,0x174,0x175);
       PutDDXClip(0x199,0x5e,0x199,0x5e,0x174,(byte *)0x175,'\x01',(BITMAPINFO *)pFVar2->field_005D);
     }
     if (pFVar2->field_1F2B != (HoloTy *)0x0) {
@@ -342,8 +342,8 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
       pHVar4->field_0001 = CASE_2;
       pHVar4->field_0007 = 0;
       pHVar4->field_000B = (void *)0x0;
-      *(undefined4 *)&pHVar4->field_0xf = 0;
-      *(undefined4 *)&pHVar4->field_0x1b = 1;
+      pHVar4->field_000F = 0;
+      pHVar4->field_001B = 1;
       pHVar4->field_0013 = 1;
       pHVar4->field_0017 = -1;
       pHVar4->field_0027 = 0;
@@ -357,7 +357,7 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
     cVar7 = '\x01';
     bVar6 = 0x10;
     iVar5 = 1;
-    iVar3 = Library::DKW::DDX::FUN_006bf9f0((int *)PTR_008075a8,0x13,0x5e,0x174,0x175);
+    iVar3 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,0x13,0x5e,0x174,0x175);
     uVar9 = HoloTy::Init(pFVar2->field_1F2B,CASE_4,0x13,0x5e,iVar3,iVar5,bVar6,cVar7,uVar9);
     if (uVar9 != 0) {
       pHVar4 = pFVar2->field_1F2B;
@@ -365,11 +365,11 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
       pHVar4->field_0017 = -1;
       uVar9 = pFVar2->field_1F2B->field_0003;
       if (-1 < (int)uVar9) {
-        Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,uVar9);
+        Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar9);
       }
       HoloTy::NextFas(pFVar2->field_1F2B);
     }
-    FUN_006b5f80((int *)PTR_008075a8,0x13,0x5e,0x174,0x175);
+    FUN_006b5f80((int *)g_ddxContext_008075A8,0x13,0x5e,0x174,0x175);
     PutDDXClip(0x13,0x5e,0x13,0x5e,0x174,(byte *)0x175,'\x01',(BITMAPINFO *)pFVar2->field_005D);
     if (pFVar2->field_1CDF != 0xffffffff) {
       FUN_006b3af0((int *)pFVar2->field_1D23,pFVar2->field_1CDF);
@@ -379,7 +379,7 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
     }
     uVar9 = pFVar2->field_1E01;
     if (uVar9 == 0xffffffff) goto switchD_0059f6f7_default;
-    pAVar8 = (AnonShape_006B1B10_121F236C *)pFVar2->field_1E45;
+    pDVar8 = (DDXContext_008075A8 *)pFVar2->field_1E45;
     break;
   case CASE_9:
     sub_005A0C80(local_8);
@@ -399,8 +399,8 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
       pHVar4->field_0001 = CASE_2;
       pHVar4->field_0007 = 0;
       pHVar4->field_000B = (void *)0x0;
-      *(undefined4 *)&pHVar4->field_0xf = 0;
-      *(undefined4 *)&pHVar4->field_0x1b = 1;
+      pHVar4->field_000F = 0;
+      pHVar4->field_001B = 1;
       pHVar4->field_0013 = 1;
       pHVar4->field_0017 = -1;
       pHVar4->field_0027 = 0;
@@ -414,7 +414,7 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
       cVar7 = '\x01';
       bVar6 = 0x10;
       iVar5 = 1;
-      iVar3 = Library::DKW::DDX::FUN_006bf9f0((int *)PTR_008075a8,0x22,0x5e,0x2e1,0x175);
+      iVar3 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,0x22,0x5e,0x2e1,0x175);
       uVar9 = HoloTy::Init(pFVar2->field_1F23,CASE_4,0x22,0x5e,iVar3,iVar5,bVar6,cVar7,uVar9);
       if (uVar9 != 0) {
         pHVar4 = pFVar2->field_1F23;
@@ -422,15 +422,15 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
         pHVar4->field_0017 = -1;
         uVar9 = pFVar2->field_1F23->field_0003;
         if (-1 < (int)uVar9) {
-          Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,uVar9);
+          Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar9);
         }
         HoloTy::NextFas(pFVar2->field_1F23);
       }
-      FUN_006b5f80((int *)PTR_008075a8,0x22,0x5e,0x2e1,0x175);
+      FUN_006b5f80((int *)g_ddxContext_008075A8,0x22,0x5e,0x2e1,0x175);
       PutDDXClip(0x22,0x5e,0x22,0x5e,0x2e1,(byte *)0x175,'\x01',(BITMAPINFO *)pFVar2->field_005D);
     }
     uVar9 = pFVar2->field_1ABC;
-    pAVar8 = PTR_008075a8;
+    pDVar8 = g_ddxContext_008075A8;
     break;
   case CASE_A:
     sub_005A0590(local_8);
@@ -450,8 +450,8 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
       pHVar4->field_0001 = CASE_2;
       pHVar4->field_0007 = 0;
       pHVar4->field_000B = (void *)0x0;
-      *(undefined4 *)&pHVar4->field_0xf = 0;
-      *(undefined4 *)&pHVar4->field_0x1b = 1;
+      pHVar4->field_000F = 0;
+      pHVar4->field_001B = 1;
       pHVar4->field_0013 = 1;
       pHVar4->field_0017 = -1;
       pHVar4->field_0027 = 0;
@@ -465,7 +465,7 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
       cVar7 = '\x01';
       bVar6 = 0x10;
       iVar5 = 1;
-      iVar3 = Library::DKW::DDX::FUN_006bf9f0((int *)PTR_008075a8,0xb4,0x5e,0x1b8,0x17a);
+      iVar3 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,0xb4,0x5e,0x1b8,0x17a);
       uVar9 = HoloTy::Init(pFVar2->field_1F23,CASE_4,0xb4,0x5e,iVar3,iVar5,bVar6,cVar7,uVar9);
       if (uVar9 != 0) {
         pHVar4 = pFVar2->field_1F23;
@@ -473,20 +473,20 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
         pHVar4->field_0017 = -1;
         uVar9 = pFVar2->field_1F23->field_0003;
         if (-1 < (int)uVar9) {
-          Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,uVar9);
+          Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar9);
         }
         HoloTy::NextFas(pFVar2->field_1F23);
       }
-      FUN_006b5f80((int *)PTR_008075a8,0xb4,0x5e,0x1b8,0x17a);
+      FUN_006b5f80((int *)g_ddxContext_008075A8,0xb4,0x5e,0x1b8,0x17a);
       PutDDXClip(0xb4,0x5e,0xb4,0x5e,0x1b8,(byte *)0x17a,'\x01',(BITMAPINFO *)pFVar2->field_005D);
     }
     uVar9 = pFVar2->field_1ABC;
-    pAVar8 = PTR_008075a8;
+    pDVar8 = g_ddxContext_008075A8;
     break;
   default:
     goto switchD_0059f6f7_default;
   }
-  FUN_006b3af0((int *)pAVar8,uVar9);
+  FUN_006b3af0((int *)pDVar8,uVar9);
 switchD_0059f6f7_default:
   if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
     if (g_cursorClass_00802A30->field_00A9 == 0) {

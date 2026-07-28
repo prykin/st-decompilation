@@ -36,17 +36,17 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this)
     if (local_c->field_008F != 0) {
       StartSystemTy::sub_006E56B0(local_c->field_000C,local_c->field_008F);
       this_00->field_008F = 0;
-      FUN_006b5f80((int *)PTR_008075a8,0x262,0x226,0x91,0x28);
+      FUN_006b5f80((int *)g_ddxContext_008075A8,0x262,0x226,0x91,0x28);
       PutDDXClip(0x262,0x226,0x262,0x226,0x91,(byte *)0x28,'\x01',(BITMAPINFO *)this_00->field_005D)
       ;
     }
     if (this_00->field_009B != 0) {
       StartSystemTy::sub_006E56B0(this_00->field_000C,this_00->field_009B);
       this_00->field_009B = 0;
-      FUN_006b5f80((int *)PTR_008075a8,0x1e,0x1ea,300,0x1e);
+      FUN_006b5f80((int *)g_ddxContext_008075A8,0x1e,0x1ea,300,0x1e);
       PutDDXClip(0x1e,0x1ea,0x1e,0x1ea,300,(byte *)0x1e,'\x01',(BITMAPINFO *)this_00->field_005D);
     }
-    FUN_006b5f80((int *)PTR_008075a8,0x174,0x1a9,400,0x32);
+    FUN_006b5f80((int *)g_ddxContext_008075A8,0x174,0x1a9,400,0x32);
     PutDDXClip(0x174,0x1a9,0x174,0x1a9,400,(byte *)0x32,'\x01',(BITMAPINFO *)this_00->field_005D);
     if ((this_00->field_0066 == '\x01') &&
        (this_00->field_0067 = 0, (&this_00->field_0347)[(byte)this_00->field_006A]->count != 0)) {

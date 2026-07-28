@@ -128,7 +128,7 @@ LAB_005e7d14:
             resourceString = (uint *)0x0;
           }
           ccFntTy::WrStr(g_startSystem_0081176C->field_0030,resourceString,0,-1,1);
-          FUN_006b35d0((int *)PTR_008075a8,*local_8);
+          FUN_006b35d0((int *)g_ddxContext_008075A8,*local_8);
           iVar6 = iVar6 + 1;
           local_8 = local_8 + 1;
           uVar11 = uVar11 + 0x13;

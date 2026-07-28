@@ -66,8 +66,8 @@ STAppC::MainWindowProc
       return local_8;
     case CASE_F:
       BeginPaint(hWnd,&local_ac);
-      if (PTR_008075a8 != (AnonShape_006B1B10_121F236C *)0x0) {
-        FUN_006b5f80((int *)PTR_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
+      if (g_ddxContext_008075A8 != (DDXContext_008075A8 *)0x0) {
+        FUN_006b5f80((int *)g_ddxContext_008075A8,0,0,g_nWidth_00806730,DAT_00806734);
       }
       if ((PTR_0081163c != (AnonShape_00577690_10255A81 *)0x0) &&
          (PTR_00807598 != (AnonShape_GLOBAL_00807598_0C6808FB *)0x0)) {
@@ -85,9 +85,8 @@ STAppC::MainWindowProc
       return 0;
     case CASE_1C:
       if (param_3 == 0) {
-        if (g_anonShape_GLOBAL_0080759C_9638EF10_0080759C !=
-            (AnonShape_GLOBAL_0080759C_9638EF10 *)0x0) {
-          FUN_006ba760((int)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C);
+        if (g_dDXContext_0080759C != (DDXContext *)0x0) {
+          FUN_006ba760((int)g_dDXContext_0080759C);
         }
         if (PTR_00807598 != (AnonShape_GLOBAL_00807598_0C6808FB *)0x0) {
           FUN_006dc310();
@@ -104,9 +103,8 @@ STAppC::MainWindowProc
         g_currentExceptionFrame = local_4c.previous;
         return local_8;
       }
-      if (g_anonShape_GLOBAL_0080759C_9638EF10_0080759C != (AnonShape_GLOBAL_0080759C_9638EF10 *)0x0
-         ) {
-        FUN_006ba740((int)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C);
+      if (g_dDXContext_0080759C != (DDXContext *)0x0) {
+        FUN_006ba740((int)g_dDXContext_0080759C);
       }
       if (PTR_00807598 != (AnonShape_GLOBAL_00807598_0C6808FB *)0x0) {
         FUN_006dc300((int)PTR_00807598);
@@ -166,13 +164,13 @@ STAppC::MainWindowProc
     if (DAT_00806738 != 8) {
       DAT_00806738 = 8;
       Library::DKW::DDX::FUN_006b9b40
-                (g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0x10000001,g_nWidth_00806730,
-                 DAT_00806734,8,g_nWidth_00806730,DAT_00806734,0,0,0);
-      Library::DKW::DDX::FUN_006b1470((int *)PTR_008075a8);
+                (g_dDXContext_0080759C,0x10000001,g_nWidth_00806730,DAT_00806734,8,g_nWidth_00806730
+                 ,DAT_00806734,0,0,0);
+      Library::DKW::DDX::FUN_006b1470((int *)g_ddxContext_008075A8);
     }
-    FUN_006b5f80((int *)PTR_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
-    Library::DKW::DDX::FUN_006bab60(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0x1000000);
-    Library::DKW::DDX::FUN_006bb370(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0,0);
+    FUN_006b5f80((int *)g_ddxContext_008075A8,0,0,g_nWidth_00806730,DAT_00806734);
+    Library::DKW::DDX::FUN_006bab60(g_dDXContext_0080759C,0x1000000);
+    Library::DKW::DDX::FUN_006bb370(g_dDXContext_0080759C,0,0);
     g_appClass_00806728->field_4EFA = 0;
     thunk_FUN_00567180(&g_appClass_00806728->field_0x38,hWnd);
     FUN_006e3db0((int)&g_appClass_00806728->field_0x113a);

@@ -113,7 +113,7 @@ void __thiscall CPanelTy::SetNewDeep(CPanelTy *this,byte param_1,byte param_2)
             if (bVar10 < 0xb) {
               if (-1 < (int)pCVar4->field_0148[bVar10]) {
                 Library::DKW::DDX::FUN_006b3640
-                          ((int *)PTR_008075a8,(uint)pCVar4->field_0148[bVar10],0xffffffff,
+                          ((int *)g_ddxContext_008075A8,(uint)pCVar4->field_0148[bVar10],0xffffffff,
                            (&pCVar4->field_003C)[bVar10],(&pCVar4->field_0094)[bVar10]);
                 pAVar11 = local_c;
               }
@@ -140,7 +140,7 @@ void __thiscall CPanelTy::SetNewDeep(CPanelTy *this,byte param_1,byte param_2)
             if (bVar10 < 0xb) {
               if (-1 < (int)pCVar4->field_0148[bVar10]) {
                 Library::DKW::DDX::FUN_006b3640
-                          ((int *)PTR_008075a8,(uint)pCVar4->field_0148[bVar10],0xffffffff,
+                          ((int *)g_ddxContext_008075A8,(uint)pCVar4->field_0148[bVar10],0xffffffff,
                            (&pCVar4->field_003C)[bVar10],(&pCVar4->field_0094)[bVar10]);
               }
             }

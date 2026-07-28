@@ -146,7 +146,7 @@ LAB_005a3b63:
                      0x161,0x4e,0x12);
         sub_005A39A0(this_01,(ccFntTy *)this_01->field_1A7F,"0\\Disconnects",param_2,param_3
                      ,0x146,0x161,0x4e,0x12);
-        FUN_006b35d0((int *)PTR_008075a8,this_01->field_1ABC);
+        FUN_006b35d0((int *)g_ddxContext_008075A8,this_01->field_1ABC);
         g_currentExceptionFrame = local_68.previous;
         return;
       }

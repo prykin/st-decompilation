@@ -5,14 +5,13 @@
    E:\__titans\Start\combo.cpp
    ComboTy::OutBmpProc
 
-   [STPrototypeApplier] Propagated parameter 1.
+   [STPrototypeRepairApplier] Propagated parameter 1.
    Evidence: 005939E0 -> 006B4640 @ 00593A9E | 005939E0 -> 006C5000 @ 00593A50 | 005939E0 ->
    006C5000 @ 00593A79 */
 
 void __thiscall
-ComboTy::OutBmpProc(ComboTy *this,AnonShape_GLOBAL_0080759C_9638EF10 *param_1,undefined4 param_2,
-                   undefined4 param_3,int param_4,int param_5,undefined4 param_6,undefined4 param_7,
-                   int param_8)
+ComboTy::OutBmpProc(ComboTy *this,DDXContext *param_1,undefined4 param_2,undefined4 param_3,
+                   int param_4,int param_5,undefined4 param_6,undefined4 param_7,int param_8)
 
 {
   code *pcVar1;

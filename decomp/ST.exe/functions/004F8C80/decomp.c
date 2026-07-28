@@ -152,15 +152,15 @@ uint __thiscall CPanelTy::PaintSMap(CPanelTy *this)
         ccFntTy::WrTxt(pCVar3->field_01CC,(uint *)&pCVar3->field_0x1e1,0xd,10,0,-1,-1);
         puVar5 = (ushort *)
                  Library::DKW::DDX::FUN_006b3640
-                           ((int *)PTR_008075a8,pCVar3->field_0174,0xffffffff,pCVar3->field_00EC,
-                            pCVar3->field_00F0);
+                           ((int *)g_ddxContext_008075A8,pCVar3->field_0174,0xffffffff,
+                            pCVar3->field_00EC,pCVar3->field_00F0);
       }
     }
   }
   if ((pCVar3->field_023F != CASE_2) && (puVar5 = pCVar3->field_0148[4], -1 < (int)puVar5)) {
     puVar5 = (ushort *)
              Library::DKW::DDX::FUN_006b3640
-                       ((int *)PTR_008075a8,(uint)puVar5,0xffffffff,pCVar3->field_004C,
+                       ((int *)g_ddxContext_008075A8,(uint)puVar5,0xffffffff,pCVar3->field_004C,
                         pCVar3->field_00A4);
   }
   g_currentExceptionFrame = local_50.previous;

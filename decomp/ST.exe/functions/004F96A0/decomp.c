@@ -54,7 +54,7 @@ void __thiscall CPanelTy::PlayBrief(CPanelTy *this,int param_1)
           }
           switch(*puVar11) {
           case 1:
-            SoundClassTy::PlaySound_thunk
+            SoundClassTy::PlaySound
                       ((SoundClassTy *)&g_sound,SOUND_MODE_12,puVar11 + 9,*(int *)(puVar11 + 5),
                        (SoundPosition *)0x0,0);
             break;

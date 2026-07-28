@@ -16,8 +16,12 @@ import java.util.Map;
 import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
 import ghidra.program.model.data.ArrayDataType;
+import ghidra.program.model.data.CategoryPath;
 import ghidra.program.model.data.DataType;
+import ghidra.program.model.data.DataTypeConflictHandler;
 import ghidra.program.model.data.DataTypeManager;
+import ghidra.program.model.data.Structure;
+import ghidra.program.model.data.StructureDataType;
 import ghidra.program.model.listing.CommentType;
 import ghidra.program.model.listing.Data;
 import ghidra.program.model.listing.Listing;
@@ -146,6 +150,39 @@ public class STGlobalAggregateApplier extends GhidraScript {
             return element == null || count < 1 ? null :
                 new ArrayDataType(element, count, element.getLength(), dataTypes);
         }
+        if (specification.startsWith("record:")) {
+            int open = specification.indexOf('{');
+            int close = specification.lastIndexOf('}');
+            if (open <= "record:".length() || close <= open) return null;
+            String path = specification.substring("record:".length(), open);
+            DataType existing = dataTypes.getDataType(path);
+            if (existing != null) return existing instanceof Structure ? existing : null;
+            String fields = specification.substring(open + 1, close);
+            int length = 0;
+            List<RecordField> parsed = new ArrayList<>();
+            for (String field : fields.split("\\|")) {
+                String[] parts = field.split(",", 3);
+                if (parts.length != 3) return null;
+                int offset = integer(parts[0]);
+                DataType type = resolve(parts[2]);
+                if (offset < 0 || type == null || type.getLength() < 1) return null;
+                parsed.add(new RecordField(offset, parts[1], type));
+                length = Math.max(length, offset + type.getLength());
+            }
+            int separator = path.lastIndexOf('/');
+            if (separator <= 0 || separator == path.length() - 1 || length < 1) return null;
+            StructureDataType structure = new StructureDataType(
+                new CategoryPath(path.substring(0, separator)),
+                path.substring(separator + 1), length, dataTypes);
+            for (RecordField field : parsed)
+                structure.replaceAtOffset(field.offset, field.type,
+                    field.type.getLength(), field.name, null);
+            structure.setDescription(MARKER +
+                " Generated constant record layout from indexed machine-code accesses.");
+            DataType added = dataTypes.addDataType(structure,
+                DataTypeConflictHandler.REPLACE_HANDLER);
+            return added instanceof Structure ? added : null;
+        }
         return dataTypes.getDataType(specification);
     }
     private boolean owned(Address address) {
@@ -200,5 +237,6 @@ public class STGlobalAggregateApplier extends GhidraScript {
     private static String clean(String value) { return value == null ? "" : value.replace('\t',' ').replace('\r',' ').replace('\n',' '); }
     private static String message(Exception e) { return e.getMessage() == null ? e.getClass().getSimpleName() : e.getMessage(); }
     private record Tsv(List<String> header, List<Map<String, String>> rows) {}
+    private record RecordField(int offset, String name, DataType type) {}
     private record Report(String address, String id, String status, String detail) {}
 }

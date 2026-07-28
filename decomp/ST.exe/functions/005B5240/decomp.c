@@ -55,7 +55,7 @@ MMObjTy::InitSprBut(MMObjTy *this,RecoveredRecord_MMObjTy_005B5240 *param_1,char
     *(undefined4 *)&param_1->field_0x4 = param_8;
     *(undefined4 *)&param_1->field_0xc = param_10;
     SpriteClassTy::InitSprite
-              ((SpriteClassTy *)&param_1->field_0x48,(int *)PTR_008075a8,param_11,'\a',
+              ((SpriteClassTy *)&param_1->field_0x48,(int *)g_ddxContext_008075A8,param_11,'\a',
                (undefined4 *)0x0,0,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*(int *)&param_1->field_0x48 + 4))(DAT_00806784,7,0,text,0xffffffff);
@@ -79,8 +79,8 @@ MMObjTy::InitSprBut(MMObjTy *this,RecoveredRecord_MMObjTy_005B5240 *param_1,char
       *(undefined4 *)&param_1->field_0x1c = param_16;
       param_1->field_01AA = param_17;
       SpriteClassTy::InitSprite
-                ((SpriteClassTy *)&param_1->field_0x16a,(int *)PTR_008075a8,param_11 - 1,'\a',
-                 (undefined4 *)0x0,0,0);
+                ((SpriteClassTy *)&param_1->field_0x16a,(int *)g_ddxContext_008075A8,param_11 - 1,
+                 '\a',(undefined4 *)0x0,0,0);
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*(int *)&param_1->field_0x16a + 4))(DAT_00806784,7,0,param_12,0xffffffff);
       param_1->field_0186 = param_3 + param_13;
@@ -88,7 +88,7 @@ MMObjTy::InitSprBut(MMObjTy *this,RecoveredRecord_MMObjTy_005B5240 *param_1,char
       param_1->field_018A = param_4 + param_14;
     }
     SpriteClassTy::InitSprite
-              ((SpriteClassTy *)&param_1->field_0xd9,(int *)PTR_008075a8,param_11 - 2,'\a',
+              ((SpriteClassTy *)&param_1->field_0xd9,(int *)g_ddxContext_008075A8,param_11 - 2,'\a',
                (undefined4 *)0x0,0,0);
     param_1->field_00F5 = param_3 + param_5;
     param_1->field_00F9 = param_4 + param_6;

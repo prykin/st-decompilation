@@ -90,8 +90,8 @@ int __thiscall StartSystemTy::GetMessage(StartSystemTy *this,STMessage *message)
           if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
             CursorClassTy::sub_00544940(g_cursorClass_00802A30);
           }
-          FUN_006bbb20(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,1);
-          FUN_006ba780(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,1);
+          FUN_006bbb20(g_dDXContext_0080759C,1);
+          FUN_006ba780(g_dDXContext_0080759C,1);
           goto switchD_005dd1c0_default;
         }
         if (SVar1 != MESS_STARTSYSTEMTY_6102) goto switchD_005dd1c0_default;

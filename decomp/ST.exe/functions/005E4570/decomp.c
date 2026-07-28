@@ -68,7 +68,7 @@ int __thiscall MTaskTy::GetMessage(MTaskTy *this,STMessage *message)
   if (SVar2 < MESS_MREPORTTY_6214) {
     if (SVar2 == MESS_MTASKTY_6213) {
       PaintBut(local_18,(int *)&local_18->field_0x65f,0x24bc,4,1,(message->arg0).words.low);
-      FUN_006b35d0((int *)PTR_008075a8,this_00->field_02A5[1]);
+      FUN_006b35d0((int *)g_ddxContext_008075A8,this_00->field_02A5[1]);
       goto cf_common_exit_005E525B;
     }
     if (SVar2 < MESS_PLAYPANELTY_6201) {
@@ -238,7 +238,7 @@ LAB_005e470e:
         thunk_FUN_005b6730(local_18,4,'\x01',-1);
         this_00->field_007C = 0;
         this_00->field_0061 = this_00->field_0069;
-        DarkScreen(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,1,0);
+        DarkScreen(g_dDXContext_0080759C,1,0);
         pDVar10 = this_00->field_064F;
         if (pDVar10 != (DArrayTy *)0x0) {
           uVar18 = 0;
@@ -302,7 +302,7 @@ LAB_005e496b:
           StartSystemTy::sub_006E56B0(this_00->field_000C,this_00->field_02CD);
           this_00->field_02CD = 0;
         }
-        FUN_006b3af0((int *)PTR_008075a8,this_00->field_0484);
+        FUN_006b3af0((int *)g_ddxContext_008075A8,this_00->field_0484);
         if (this_00->field_02D5 != 0xffffffff) {
           FUN_006b3af0((int *)this_00->field_0319,this_00->field_02D5);
         }
@@ -315,7 +315,7 @@ LAB_005e496b:
         puVar13 = this_00->field_02BD;
         iVar9 = 4;
         do {
-          FUN_006b3af0((int *)PTR_008075a8,*puVar13);
+          FUN_006b3af0((int *)g_ddxContext_008075A8,*puVar13);
           puVar13 = puVar13 + 1;
           iVar9 = iVar9 + -1;
         } while (iVar9 != 0);
@@ -326,7 +326,7 @@ LAB_005e496b:
         puVar13 = this_00->field_0291;
         iVar9 = 5;
         do {
-          FUN_006b3af0((int *)PTR_008075a8,puVar13[5]);
+          FUN_006b3af0((int *)g_ddxContext_008075A8,puVar13[5]);
           if (*puVar13 != 0) {
             StartSystemTy::sub_006E56B0(this_00->field_000C,*puVar13);
             *puVar13 = 0;
@@ -338,8 +338,8 @@ LAB_005e496b:
         this_00->field_006D = 3;
         Library::DKW::TBL::FUN_006afe40((int *)&this_00->field_0074,(uint *)this_00->field_0078);
         PlayScript(this_00);
-        thunk_FUN_0055ddf0((undefined4 *)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,
-                           (int *)PTR_008075a8,(ushort *)this_00->field_005D,10,2);
+        thunk_FUN_0055ddf0((undefined4 *)g_dDXContext_0080759C,(int *)g_ddxContext_008075A8,
+                           (ushort *)this_00->field_005D,10,2);
         break;
       case 0x6204:
         if (local_18->field_006D != '\x01') {
@@ -362,7 +362,7 @@ LAB_005e496b:
         break;
       case MESS_MTASKTY_6212:
         PaintBut(local_18,&local_18->field_0653,0x26ac,4,1,(message->arg0).words.low);
-        FUN_006b35d0((int *)PTR_008075a8,this_00->field_02A5[0]);
+        FUN_006b35d0((int *)g_ddxContext_008075A8,this_00->field_02A5[0]);
       }
     }
     goto cf_common_exit_005E525B;
@@ -433,7 +433,7 @@ LAB_005e496b:
         iVar9 = 0;
         puVar13 = (uint *)LoadResourceString((UINT)puVar11,g_module_00807618);
         ccFntTy::WrStr(this_00->field_008D,puVar13,iVar9,iVar22,uVar18);
-        FUN_006b35d0((int *)PTR_008075a8,this_00->field_02BD[*local_c + -1]);
+        FUN_006b35d0((int *)g_ddxContext_008075A8,this_00->field_02BD[*local_c + -1]);
       }
       else if (SVar2 == MESS_MREPORTTY_6214) {
         if (local_18->field_006E == '\0') {
@@ -443,15 +443,15 @@ LAB_005e496b:
           UVar17 = (-(uint)(DAT_0080c632 != '\0') & 0x2b) + 0x232c;
         }
         PaintBut(local_18,(int *)&local_18->field_0x66b,UVar17,4,1,(message->arg0).words.low);
-        FUN_006b35d0((int *)PTR_008075a8,this_00->field_02A5[2]);
+        FUN_006b35d0((int *)g_ddxContext_008075A8,this_00->field_02A5[2]);
       }
       else if (SVar2 == MESS_MREPORTTY_6215) {
         PaintBut(local_18,(int *)&local_18->field_0x677,0x2358,4,1,(message->arg0).words.low);
-        FUN_006b35d0((int *)PTR_008075a8,this_00->field_02A5[3]);
+        FUN_006b35d0((int *)g_ddxContext_008075A8,this_00->field_02A5[3]);
       }
       else if (SVar2 == MESS_MTASKTY_6216) {
         PaintBut(local_18,(int *)&local_18->field_0x683,0x235e,4,1,(message->arg0).words.low);
-        FUN_006b35d0((int *)PTR_008075a8,this_00->field_02A5[4]);
+        FUN_006b35d0((int *)g_ddxContext_008075A8,this_00->field_02A5[4]);
       }
     }
     else if (SVar2 == MESS_SHARED_6332) {
@@ -504,7 +504,7 @@ LAB_005e496b:
               uVar15 = (uint)(message->arg0).words.high;
             } while ((int)uVar18 < (int)(uVar15 + local_8->field_01E0));
           }
-          FUN_006b35d0((int *)PTR_008075a8,this_00->field_0484);
+          FUN_006b35d0((int *)g_ddxContext_008075A8,this_00->field_0484);
         }
       }
     }
@@ -575,7 +575,7 @@ LAB_005e496b:
           uVar15 = (uint)(message->arg0).words.high;
         } while ((int)uVar18 < (int)(uVar15 + local_8->field_01E0));
       }
-      FUN_006b35d0((int *)PTR_008075a8,this_00->field_063F);
+      FUN_006b35d0((int *)g_ddxContext_008075A8,this_00->field_063F);
     }
     break;
   case MESS_SHARED_6334|MESS_SHARED_0003:

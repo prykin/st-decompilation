@@ -40,7 +40,7 @@ void __thiscall SettMapMTy::DeleteCtrls(SettMapMTy *this)
       this_00->field_21FC = 0;
     }
     if (-1 < this_00->field_2200) {
-      FUN_006b3af0((int *)PTR_008075a8,this_00->field_2200);
+      FUN_006b3af0((int *)g_ddxContext_008075A8,this_00->field_2200);
     }
     if (this_00->field_21E6 != '\0') {
       if (g_startSystem_0081176C->field_054C != 0) {
@@ -67,8 +67,8 @@ void __thiscall SettMapMTy::DeleteCtrls(SettMapMTy *this)
         pHVar3->field_0001 = CASE_2;
         pHVar3->field_0007 = 0;
         pHVar3->field_000B = (void *)0x0;
-        *(undefined4 *)&pHVar3->field_0xf = 0;
-        *(undefined4 *)&pHVar3->field_0x1b = 1;
+        pHVar3->field_000F = 0;
+        pHVar3->field_001B = 1;
         pHVar3->field_0013 = 1;
         pHVar3->field_0017 = -1;
         pHVar3->field_0027 = 0;
@@ -82,7 +82,7 @@ void __thiscall SettMapMTy::DeleteCtrls(SettMapMTy *this)
         cVar6 = '\x01';
         bVar5 = 0x10;
         iVar4 = 1;
-        iVar2 = Library::DKW::DDX::FUN_006bf9f0((int *)PTR_008075a8,200,0x1f1,400,0x62);
+        iVar2 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,200,0x1f1,400,0x62);
         uVar7 = HoloTy::Init(this_00->field_21F8,CASE_1,200,0x1f1,iVar2,iVar4,bVar5,cVar6,uVar7);
         if (uVar7 != 0) {
           pHVar3 = this_00->field_21F8;
@@ -90,16 +90,16 @@ void __thiscall SettMapMTy::DeleteCtrls(SettMapMTy *this)
           pHVar3->field_0017 = -1;
           uVar7 = this_00->field_21F8->field_0003;
           if (-1 < (int)uVar7) {
-            Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,uVar7);
+            Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar7);
           }
           HoloTy::NextFas(this_00->field_21F8);
         }
-        FUN_006b5f80((int *)PTR_008075a8,200,0x1f1,400,0x62);
+        FUN_006b5f80((int *)g_ddxContext_008075A8,200,0x1f1,400,0x62);
         PutDDXClip(200,0x1f1,200,0x1f1,400,(byte *)0x62,'\x01',
                    (BITMAPINFO *)g_startSystem_0081176C->field_002C);
       }
-      FUN_006b3af0((int *)PTR_008075a8,g_startSystem_0081176C->field_0554);
-      FUN_006b3af0((int *)PTR_008075a8,g_startSystem_0081176C->field_0558);
+      FUN_006b3af0((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0554);
+      FUN_006b3af0((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0558);
       if (g_startSystem_0081176C->field_0560 != 0xffffffff) {
         FUN_006b3af0((int *)g_startSystem_0081176C->field_05A4,g_startSystem_0081176C->field_0560);
       }

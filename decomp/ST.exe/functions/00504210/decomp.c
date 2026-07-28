@@ -106,7 +106,7 @@ void __thiscall CPanelTy::UpdateStackPanel(CPanelTy *this,uint param_1)
             if (bVar9 < 0xb) {
               if (-1 < (int)this_00->field_0148[bVar9]) {
                 Library::DKW::DDX::FUN_006b3640
-                          ((int *)PTR_008075a8,(uint)this_00->field_0148[bVar9],0xffffffff,
+                          ((int *)g_ddxContext_008075A8,(uint)this_00->field_0148[bVar9],0xffffffff,
                            (&this_00->field_003C)[bVar9],(&this_00->field_0094)[bVar9]);
                 bVar5 = local_5;
               }

@@ -97,7 +97,7 @@ void __thiscall FSGSTy::CheckUpdate(FSGSTy *this)
   iVar5 = -2;
   resourceString = (uint *)LoadResourceString(0x25bd,g_module_00807618);
   ccFntTy::WrTxt(pFVar4->field_1A73,resourceString,iVar5,iVar11,uVar8,iVar12,iVar13);
-  FUN_006b35d0((int *)PTR_008075a8,pFVar4->field_1ABC);
+  FUN_006b35d0((int *)g_ddxContext_008075A8,pFVar4->field_1ABC);
   memset(local_2c, 0, 0x20); /* compiler bulk-zero initialization */
   iVar5 = 0;
   memset(local_4c, 0, 0x20); /* compiler bulk-zero initialization */

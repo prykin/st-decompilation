@@ -95,8 +95,8 @@ void __thiscall CPanelTy::PaintTV(CPanelTy *this)
 joined_r0x004f81d1:
           if (-1 < (int)puVar7) {
             Library::DKW::DDX::FUN_006b3640
-                      ((int *)PTR_008075a8,(uint)puVar7,0xffffffff,(&this_00->field_003C)[uVar12],
-                       (&this_00->field_0094)[uVar12]);
+                      ((int *)g_ddxContext_008075A8,(uint)puVar7,0xffffffff,
+                       (&this_00->field_003C)[uVar12],(&this_00->field_0094)[uVar12]);
           }
         }
       }
@@ -147,7 +147,7 @@ joined_r0x004f81d1:
           uVar12 = bVar9 & 8;
           if (-1 < (int)this_00->field_0148[uVar12]) {
             Library::DKW::DDX::FUN_006b3640
-                      ((int *)PTR_008075a8,(uint)this_00->field_0148[uVar12],0xffffffff,
+                      ((int *)g_ddxContext_008075A8,(uint)this_00->field_0148[uVar12],0xffffffff,
                        (&this_00->field_003C)[uVar12],(&this_00->field_0094)[uVar12]);
           }
         }
@@ -317,8 +317,8 @@ joined_r0x004f81d1:
 joined_r0x004f861b:
             if (-1 < (int)puVar7) {
               Library::DKW::DDX::FUN_006b3640
-                        ((int *)PTR_008075a8,(uint)puVar7,0xffffffff,(&this_00->field_003C)[uVar12],
-                         (&this_00->field_0094)[uVar12]);
+                        ((int *)g_ddxContext_008075A8,(uint)puVar7,0xffffffff,
+                         (&this_00->field_003C)[uVar12],(&this_00->field_0094)[uVar12]);
             }
           }
         }
@@ -337,7 +337,7 @@ joined_r0x004f861b:
       local_10 = (undefined1 *)CONCAT31(local_10._1_3_,bVar9);
     } while (bVar9 < local_5);
   }
-  iVar4 = FUN_006b33f0(PTR_008075a8,this_00->field_017C);
+  iVar4 = FUN_006b33f0(g_ddxContext_008075A8,this_00->field_017C);
   if (iVar4 == 0) {
     g_currentExceptionFrame = local_74.previous;
     return;
@@ -435,7 +435,7 @@ cf_common_join_004F88ED:
     if (uVar12 != 0) {
       FUN_006b5440((ushort *)this_00->field_01B4,0,100,5,uVar12,0,0xff);
     }
-    FUN_006b35d0((int *)PTR_008075a8,this_00->field_017C);
+    FUN_006b35d0((int *)g_ddxContext_008075A8,this_00->field_017C);
     if (this_00->field_01E0 != '\0') {
       uVar12 = iVar4 + 1U & 0x80000001;
       bVar14 = uVar12 == 0;

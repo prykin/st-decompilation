@@ -28,7 +28,8 @@ void __thiscall SIDTy::InitSID(SIDTy *this)
   if (iVar2 == 0) {
     puVar5 = &local_8->field_1A60;
     SpriteClassTy::InitSprite
-              ((SpriteClassTy *)puVar5,(int *)PTR_008075a8,0x2f,'\a',(undefined4 *)0x0,0,0);
+              ((SpriteClassTy *)puVar5,(int *)g_ddxContext_008075A8,0x2f,'\a',(undefined4 *)0x0,0,0)
+    ;
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*puVar5 + 4))(DAT_00806784,7,0,"MM_SID",0xffffffff);
     this_00->field_1A7C = 0x2e;
@@ -105,13 +106,13 @@ void __thiscall SIDTy::InitSID(SIDTy *this)
     PaintExplanation(this_00);
     puVar4 = this_00->field_1CB8;
     puVar5 = &this_00->field_1CB4;
-    FUN_006b2330(PTR_008075a8,puVar5,0x2e,0x4023f6,*(uint *)(puVar4 + 2),*(uint *)(puVar4 + 4),
-                 puVar4);
-    Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,*puVar5,0xffffffff,0xe1,0x1a9);
-    FUN_006b3af0((int *)PTR_008075a8,*puVar5);
+    FUN_006b2330(g_ddxContext_008075A8,puVar5,0x2e,0x4023f6,*(uint *)(puVar4 + 2),
+                 *(uint *)(puVar4 + 4),puVar4);
+    Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,*puVar5,0xffffffff,0xe1,0x1a9);
+    FUN_006b3af0((int *)g_ddxContext_008075A8,*puVar5);
     SpriteClassTy::InitSprite
-              ((SpriteClassTy *)&this_00->field_1B01,(int *)PTR_008075a8,0x2d,'\a',(undefined4 *)0x0
-               ,0,0);
+              ((SpriteClassTy *)&this_00->field_1B01,(int *)g_ddxContext_008075A8,0x2d,'\a',
+               (undefined4 *)0x0,0,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(this_00->field_1B01 + 4))(DAT_00806784,7,0,"SID_SLDUP",0xffffffff);
     this_00->field_1B1D = 0x22b;
@@ -121,8 +122,8 @@ void __thiscall SIDTy::InitSID(SIDTy *this)
       FUN_006b3af0((int *)this_00->field_1B49,this_00->field_1B05);
     }
     SpriteClassTy::InitSprite
-              ((SpriteClassTy *)&this_00->field_1B92,(int *)PTR_008075a8,0x2d,'\a',(undefined4 *)0x0
-               ,0,0);
+              ((SpriteClassTy *)&this_00->field_1B92,(int *)g_ddxContext_008075A8,0x2d,'\a',
+               (undefined4 *)0x0,0,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(this_00->field_1B92 + 4))(DAT_00806784,7,0,"SID_SLDDN",0xffffffff);
     this_00->field_1BAE = 0x22b;
@@ -132,8 +133,8 @@ void __thiscall SIDTy::InitSID(SIDTy *this)
       FUN_006b3af0((int *)this_00->field_1BDA,this_00->field_1B96);
     }
     SpriteClassTy::InitSprite
-              ((SpriteClassTy *)&this_00->field_1C23,(int *)PTR_008075a8,0x2d,'\a',(undefined4 *)0x0
-               ,0,0);
+              ((SpriteClassTy *)&this_00->field_1C23,(int *)g_ddxContext_008075A8,0x2d,'\a',
+               (undefined4 *)0x0,0,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(this_00->field_1C23 + 4))(DAT_00806784,7,0,"SID_SLDT",0xffffffff);
     this_00->field_1C3F = 0x22f;

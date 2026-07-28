@@ -31,7 +31,7 @@ void __thiscall MainMenuTy::PaintMainMenu(MainMenuTy *this)
   local_8 = this;
   uVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (uVar3 == 0) {
-    FUN_006b5f80((int *)PTR_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
+    FUN_006b5f80((int *)g_ddxContext_008075A8,0,0,g_nWidth_00806730,DAT_00806734);
     PutDDX(0,0,'\x01',(BITMAPINFO *)g_startSystem_0081176C->field_002C);
     pMVar2 = local_8;
     if (local_8->field_1EE3 == '\0') {

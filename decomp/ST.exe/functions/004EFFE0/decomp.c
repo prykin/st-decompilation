@@ -70,7 +70,7 @@ void __thiscall BldLabPanelTy::PaintUpdBut(BldLabPanelTy *this,AnonShape_004EF32
       DibPut((AnonShape_006B5B10_E0D06CF1 *)pBVar5->field_0068,iVar6,iVar8,'\x06',pbVar7);
     }
     Library::DKW::DDX::FUN_006b3640
-              ((int *)PTR_008075a8,pBVar5->field_0060,0xffffffff,pBVar5->field_003C,
+              ((int *)g_ddxContext_008075A8,pBVar5->field_0060,0xffffffff,pBVar5->field_003C,
                pBVar5->field_0044);
     g_currentExceptionFrame = local_5c.previous;
     return;

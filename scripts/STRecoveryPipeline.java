@@ -244,9 +244,11 @@ public class STRecoveryPipeline extends GhidraScript {
             "indirect_call_proposals.tsv", "indirect_call_apply_report.tsv");
 
         section("deep finalization");
-        analyzer("STManualTypeAuditAnalyzer.java");
         pair("STSourceProvenanceAnalyzer.java", "STSourceProvenanceApplier.java",
             "source_provenance_proposals.tsv", "source_provenance_apply_report.tsv");
+        pair("STThunkPropagationAnalyzer.java", "STThunkPropagationApplier.java",
+            "thunk_proposals.tsv", "thunk_apply_report.tsv");
+        analyzer("STManualTypeAuditAnalyzer.java");
         pair("STControlFlowLabelAnalyzer.java", "STControlFlowLabelApplier.java",
             "control_flow_label_proposals.tsv", "control_flow_label_apply_report.tsv");
         pair("STLibraryAnalyzer.java", "STLibraryApplier.java",

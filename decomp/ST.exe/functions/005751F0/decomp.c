@@ -38,10 +38,9 @@ void __cdecl LandInit(short *param_1)
       RaiseInternalException
                 (-2,g_overwriteContext_007ED77C,"E:\\__titans\\tinittxt.cpp",0x160);
     }
-    FUN_006dc050((AnonShape_GLOBAL_00807598_0C6808FB *)PTR_0080760c,
-                 g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0,0,(uint)*(byte *)(param_1 + 2) << 1
-                 ,(uint)*(byte *)(param_1 + 2) << 1,0,0xc0240000,0,0x40240000,0,0xc0240000,0,
-                 0x40240000,0x4024000000000000,0x4023ee97865e3540,0);
+    FUN_006dc050((AnonShape_GLOBAL_00807598_0C6808FB *)PTR_0080760c,g_dDXContext_0080759C,0,0,
+                 (uint)*(byte *)(param_1 + 2) << 1,(uint)*(byte *)(param_1 + 2) << 1,0,0xc0240000,0,
+                 0x40240000,0,0xc0240000,0,0x40240000,0x4024000000000000,0x4023ee97865e3540,0);
     *(undefined4 *)&PTR_0080760c->field_0x128 = 0;
     FUN_006dd610(PTR_0080760c,4,0,0x40240000,0,0x40240000);
     pDVar6 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0x14,8,0x14);

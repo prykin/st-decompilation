@@ -67,8 +67,8 @@ void __thiscall PopUpTy::ChangeNumStr(PopUpTy *this)
     if ((DAT_00807342 == 0) || (DAT_00807346 <= (byte)local_8)) {
 LAB_0052d7d4:
       puVar10[0xf] = 0;
-      FUN_006b2800(PTR_008075a8,*puVar10,0,0x13);
-      FUN_006b3af0((int *)PTR_008075a8,*puVar10);
+      FUN_006b2800(g_ddxContext_008075A8,*puVar10,0,0x13);
+      FUN_006b3af0((int *)g_ddxContext_008075A8,*puVar10);
     }
     else {
       puVar2 = this_00->field_0098;
@@ -90,9 +90,9 @@ LAB_0052d7d4:
         uVar9 = *(uint *)(this_00->field_0090 + 2);
       }
       puVar10[0xf] = uVar9;
-      FUN_006b2800(PTR_008075a8,*puVar10,uVar9,0x13);
-      Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,*puVar10,0xffffffff,0xd,local_c);
-      Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,*puVar10);
+      FUN_006b2800(g_ddxContext_008075A8,*puVar10,uVar9,0x13);
+      Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,*puVar10,0xffffffff,0xd,local_c);
+      Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,*puVar10);
     }
     bVar4 = (byte)local_8 + 1;
     local_14 = iVar5 + 1;

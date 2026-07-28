@@ -28,7 +28,8 @@ void FUN_0042a860(void)
       iVar1 = iVar1 + -1;
       puVar3 = puVar3 + 4;
     } while (iVar1 != 0);
-    FUN_006b08f0(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,(int)local_448,0,0x100);
+    FUN_006b08f0((AnonShape_GLOBAL_0080759C_9638EF10 *)g_dDXContext_0080759C,(int)local_448,0,0x100)
+    ;
     g_currentExceptionFrame = local_48.previous;
     return;
   }

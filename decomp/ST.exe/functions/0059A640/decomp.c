@@ -65,8 +65,8 @@ void __thiscall FSGSTy::PaintGameNew(FSGSTy *this)
                  0x19,4,0xf);
     FUN_006c7570((AnonShape_006B5B10_E0D06CF1 *)pFVar3->field_1AC0,0,0x1b,199,(undefined4 *)0x182,
                  0x15,4,0xf);
-    Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,pFVar3->field_1ABC);
-    FUN_006b35d0((int *)PTR_008075a8,pFVar3->field_1ABC);
+    Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,pFVar3->field_1ABC);
+    FUN_006b35d0((int *)g_ddxContext_008075A8,pFVar3->field_1ABC);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }

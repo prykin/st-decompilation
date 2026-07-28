@@ -49,7 +49,7 @@ void __thiscall FSGSTy::Download(FSGSTy *this,undefined4 param_1,undefined4 para
       pcVar6 = LoadResourceString(0x25ba,g_module_00807618);
       wsprintfA((LPSTR)&DAT_0080f33a,"%s %d%%\n(%d %s)",pcVar6,param_1,param_2,pcVar5);
       ccFntTy::WrTxt(pFVar3->field_1A73,&DAT_0080f33a,-2,-1,2,-1,-1);
-      FUN_006b35d0((int *)PTR_008075a8,pFVar3->field_1ABC);
+      FUN_006b35d0((int *)g_ddxContext_008075A8,pFVar3->field_1ABC);
       g_currentExceptionFrame = local_4c.previous;
       return;
     }

@@ -44,7 +44,7 @@ void __thiscall PrividerTy::DonePrivider(PrividerTy *this)
       }
     }
     if (pPVar2->field_004D == 0x6102) {
-      DarkScreen(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,10,2);
+      DarkScreen(g_dDXContext_0080759C,10,2);
     }
     if (g_startSystem_0081176C->field_002C != (ushort *)0x0) {
       cMf32::RecMemFree(g_cMf32_00806780,(uint *)&g_startSystem_0081176C->field_002C);
@@ -56,14 +56,14 @@ void __thiscall PrividerTy::DonePrivider(PrividerTy *this)
     iVar3 = 0x16;
     do {
       if (*puVar5 != 0xffffffff) {
-        FUN_006b3bb0((int *)PTR_008075a8,*puVar5);
+        FUN_006b3bb0((int *)g_ddxContext_008075A8,*puVar5);
         *puVar5 = 0xffffffff;
       }
       puVar5 = puVar5 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
     if (pPVar2->field_1C8A != 0xffffffff) {
-      FUN_006b3bb0((int *)PTR_008075a8,pPVar2->field_1C8A);
+      FUN_006b3bb0((int *)g_ddxContext_008075A8,pPVar2->field_1C8A);
     }
     pPVar2->field_1C8A = 0xffffffff;
     if (pPVar2->field_1C82 != (ushort *)0x0) {

@@ -34,7 +34,7 @@ void __thiscall MainMenuTy::AnimationMainMenu(MainMenuTy *this)
       do {
         piVar1 = (int *)*puVar9;
         if (piVar1 != (int *)0x0) {
-          FUN_006b5f80((int *)PTR_008075a8,*piVar1,piVar1[1],piVar1[2],piVar1[3]);
+          FUN_006b5f80((int *)g_ddxContext_008075A8,*piVar1,piVar1[1],piVar1[2],piVar1[3]);
           Library::DKW::FLC::FUN_006c4ac0((int *)*puVar9);
         }
         puVar9 = puVar9 + 1;
@@ -58,7 +58,7 @@ void __thiscall MainMenuTy::AnimationMainMenu(MainMenuTy *this)
         }
         if (uVar5 <= pMVar8->field_0061 - piVar1[4]) {
           pBVar6 = (BITMAPINFO *)FUN_0070b3a0(pAVar2,(int)(short)pAVar2->field_0029);
-          FUN_006b5f80((int *)PTR_008075a8,*piVar1,piVar1[1],(int)*(short *)(pAVar2 + 1),
+          FUN_006b5f80((int *)g_ddxContext_008075A8,*piVar1,piVar1[1],(int)*(short *)(pAVar2 + 1),
                        (int)*(short *)&pAVar2[1].field_0x2);
           PutDDX(*piVar1,piVar1[1],'\x01',pBVar6);
           if ((char)piVar1[5] != '\0') {

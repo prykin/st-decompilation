@@ -50,7 +50,7 @@ void __thiscall OptPanelTy::SetOptControls(OptPanelTy *this)
   void *unaff_EDI;
   char *pcVar21;
   char *pcVar22;
-  AnonShape_GLOBAL_0080765C_F1992A46 *pAVar23;
+  SNDContext *pSVar23;
   ccFntTy **ppcVar24;
   int *piVar25;
   uint local_1c48 [112];
@@ -198,7 +198,7 @@ void __thiscall OptPanelTy::SetOptControls(OptPanelTy *this)
   ushort uVar30;
   UINT UVar31;
   AnonShape_006B5B10_E0D06CF1 *pAVar32;
-  AnonShape_GLOBAL_0080765C_F1992A46 *pAVar33;
+  SNDContext *pSVar33;
   undefined4 uVar34;
   size_t sVar35;
   undefined4 *puVar36;
@@ -1101,7 +1101,7 @@ cf_common_join_005305BC:
           uVar13 = 0;
         }
         else {
-          uVar13 = PTR_0080765c->field_0050 & 1;
+          uVar13 = g_sndContext_0080765C->field_0050 & 1;
         }
         if (uVar13 == 0) {
           piVar39 = (int *)0x0;
@@ -1116,12 +1116,12 @@ cf_common_join_005305BC:
               uVar13 = 0;
             }
             else {
-              uVar13 = PTR_0080765c->field_0050 & 1;
+              uVar13 = g_sndContext_0080765C->field_0050 & 1;
             }
             if (uVar13 != 0) {
               piVar39 = &local_70;
               uVar12 = 0x530e3a;
-              Library::DKW::SND::FUN_006b7e00((int)PTR_0080765c,1,&local_74,piVar39);
+              Library::DKW::SND::FUN_006b7e00((int)g_sndContext_0080765C,1,&local_74,piVar39);
             }
             uVar13 = (uint)(local_74 + local_70) >> 1;
           }
@@ -1132,13 +1132,13 @@ cf_common_join_005305BC:
             uVar11 = 0;
           }
           else {
-            uVar11 = PTR_0080765c->field_0050 & 1;
+            uVar11 = g_sndContext_0080765C->field_0050 & 1;
           }
           g_currentExceptionFrame = local_264.previous;
           this_00 = pOVar29;
           if (uVar11 != 0) {
-            iVar6 = PTR_0080765c->field_0064;
-            iVar17 = PTR_0080765c->field_0060;
+            iVar6 = g_sndContext_0080765C->field_0064;
+            iVar17 = g_sndContext_0080765C->field_0060;
 LAB_00530d9d:
             uVar38 = (iVar6 - iVar17) + 1;
             this_00 = pOVar29;
@@ -1153,7 +1153,7 @@ LAB_00530da0:
           uVar13 = 0;
         }
         else {
-          uVar13 = PTR_0080765c->field_0038 & 1;
+          uVar13 = g_sndContext_0080765C->field_0038 & 1;
         }
         if (uVar13 != 0) {
           piVar39 = (int *)0x0;
@@ -1165,12 +1165,12 @@ LAB_00530da0:
               uVar13 = 0;
             }
             else {
-              uVar13 = PTR_0080765c->field_0038 & 1;
+              uVar13 = g_sndContext_0080765C->field_0038 & 1;
             }
             if (uVar13 != 0) {
               piVar39 = &local_6c;
               uVar12 = 0x530d50;
-              Library::DKW::SND::FUN_006b7e00((int)PTR_0080765c,0,&local_60,piVar39);
+              Library::DKW::SND::FUN_006b7e00((int)g_sndContext_0080765C,0,&local_60,piVar39);
             }
             uVar13 = (uint)(local_60 + local_6c) >> 1;
           }
@@ -1181,13 +1181,13 @@ LAB_00530da0:
             uVar11 = 0;
           }
           else {
-            uVar11 = PTR_0080765c->field_0038 & 1;
+            uVar11 = g_sndContext_0080765C->field_0038 & 1;
           }
           g_currentExceptionFrame = local_154.previous;
           this_00 = pOVar29;
           if (uVar11 != 0) {
-            iVar6 = PTR_0080765c->field_004C;
-            iVar17 = PTR_0080765c->field_0048;
+            iVar6 = g_sndContext_0080765C->field_004C;
+            iVar17 = g_sndContext_0080765C->field_0048;
             goto LAB_00530d9d;
           }
           goto LAB_00530da0;
@@ -1219,9 +1219,9 @@ LAB_00530da0:
                                  0xc0af);
     this_00->field_01B5[0] = uVar18;
     bVar5 = 5;
-    pAVar23 = PTR_0080765c;
+    pSVar23 = g_sndContext_0080765C;
     do {
-      pAVar33 = (AnonShape_GLOBAL_0080765C_F1992A46 *)0x1;
+      pSVar33 = (SNDContext *)0x1;
       uVar18 = 4;
       if (bVar5 != 5) {
         uVar18 = (uint)bVar5;
@@ -1233,11 +1233,11 @@ LAB_00530da0:
             uVar13 = 0;
           }
           else {
-            uVar13 = pAVar23->field_0080 & 1;
+            uVar13 = pSVar23->field_0080 & 1;
           }
           if (uVar13 == 0) {
             uVar38 = 0;
-            pAVar33 = (AnonShape_GLOBAL_0080765C_F1992A46 *)0x0;
+            pSVar33 = (SNDContext *)0x0;
             goto cf_common_join_0053138B;
           }
         }
@@ -1246,12 +1246,12 @@ LAB_00530da0:
             uVar13 = 0;
           }
           else {
-            uVar13 = pAVar23->field_0068 & 1;
+            uVar13 = pSVar23->field_0068 & 1;
           }
           if (uVar13 != 0) goto LAB_005311d8;
 switchD_005311ec_caseD_1:
           uVar38 = 0;
-          pAVar33 = (AnonShape_GLOBAL_0080765C_F1992A46 *)0x0;
+          pSVar33 = (SNDContext *)0x0;
           goto cf_common_join_0053138B;
         }
 LAB_005311d8:
@@ -1267,12 +1267,12 @@ LAB_005311d8:
               uVar38 = 0;
             }
             else {
-              uVar38 = PTR_0080765c->field_0080 & 1;
+              uVar38 = g_sndContext_0080765C->field_0080 & 1;
             }
             if (uVar38 != 0) {
               uVar18 = 0x53124e;
-              pAVar33 = PTR_0080765c;
-              Library::DKW::SND::FUN_006b7e00((int)PTR_0080765c,3,&local_4c,&local_50);
+              pSVar33 = g_sndContext_0080765C;
+              Library::DKW::SND::FUN_006b7e00((int)g_sndContext_0080765C,3,&local_4c,&local_50);
             }
             uVar13 = (uint)(local_50 + local_4c) >> 1;
           }
@@ -1283,7 +1283,7 @@ LAB_005311d8:
             uVar38 = 0;
           }
           else {
-            uVar38 = PTR_0080765c->field_0080 & 1;
+            uVar38 = g_sndContext_0080765C->field_0080 & 1;
           }
           g_currentExceptionFrame = local_198.previous;
           if (uVar38 == 0) {
@@ -1292,7 +1292,7 @@ LAB_0053108d:
             this_00 = pOVar29;
           }
           else {
-            uVar38 = (PTR_0080765c->field_0094 - PTR_0080765c->field_0090) + 1;
+            uVar38 = (g_sndContext_0080765C->field_0094 - g_sndContext_0080765C->field_0090) + 1;
             this_00 = pOVar29;
           }
           break;
@@ -1307,12 +1307,12 @@ LAB_0053108d:
               uVar38 = 0;
             }
             else {
-              uVar38 = PTR_0080765c->field_0068 & 1;
+              uVar38 = g_sndContext_0080765C->field_0068 & 1;
             }
             if (uVar38 != 0) {
               uVar18 = 0x531309;
-              pAVar33 = PTR_0080765c;
-              Library::DKW::SND::FUN_006b7e00((int)PTR_0080765c,2,&local_64,&local_5c);
+              pSVar33 = g_sndContext_0080765C;
+              Library::DKW::SND::FUN_006b7e00((int)g_sndContext_0080765C,2,&local_64,&local_5c);
             }
             uVar13 = (uint)(local_64 + local_5c) >> 1;
           }
@@ -1323,11 +1323,11 @@ LAB_0053108d:
             uVar38 = 0;
           }
           else {
-            uVar38 = PTR_0080765c->field_0068 & 1;
+            uVar38 = g_sndContext_0080765C->field_0068 & 1;
           }
           g_currentExceptionFrame = local_1dc.previous;
           if (uVar38 == 0) goto LAB_0053108d;
-          uVar38 = (PTR_0080765c->field_007C - PTR_0080765c->field_0078) + 1;
+          uVar38 = (g_sndContext_0080765C->field_007C - g_sndContext_0080765C->field_0078) + 1;
           this_00 = pOVar29;
           break;
         case 8:
@@ -1344,10 +1344,10 @@ LAB_0053108f:
             uVar13 = 0;
           }
           else {
-            uVar13 = pAVar23->field_0050 & 1;
+            uVar13 = pSVar23->field_0050 & 1;
           }
           if (uVar13 == 0) {
-            pAVar33 = (AnonShape_GLOBAL_0080765C_F1992A46 *)0x0;
+            pSVar33 = (SNDContext *)0x0;
             goto cf_common_join_0053138B;
           }
           local_220.previous = g_currentExceptionFrame;
@@ -1358,13 +1358,13 @@ LAB_0053108f:
               uVar38 = 0;
             }
             else {
-              uVar38 = PTR_0080765c->field_0050 & 1;
+              uVar38 = g_sndContext_0080765C->field_0050 & 1;
             }
             if (uVar38 != 0) {
               uVar18 = 0x53111e;
-              pAVar33 = PTR_0080765c;
+              pSVar33 = g_sndContext_0080765C;
               Library::DKW::SND::FUN_006b7e00
-                        ((int)PTR_0080765c,1,(undefined4 *)&stack0xffffffb8,&local_68);
+                        ((int)g_sndContext_0080765C,1,(undefined4 *)&stack0xffffffb8,&local_68);
             }
             /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
             uVar13 = (uint)(local_68 + in_stack_ffffffb8) >> 1;
@@ -1376,11 +1376,11 @@ LAB_0053108f:
             uVar38 = 0;
           }
           else {
-            uVar38 = PTR_0080765c->field_0050 & 1;
+            uVar38 = g_sndContext_0080765C->field_0050 & 1;
           }
           g_currentExceptionFrame = local_220.previous;
           if (uVar38 != 0) {
-            uVar38 = (PTR_0080765c->field_0064 - PTR_0080765c->field_0060) + 1;
+            uVar38 = (g_sndContext_0080765C->field_0064 - g_sndContext_0080765C->field_0060) + 1;
             this_00 = pOVar29;
             goto LAB_0053108f;
           }
@@ -1392,10 +1392,10 @@ LAB_0053108f:
             uVar13 = 0;
           }
           else {
-            uVar13 = pAVar23->field_0038 & 1;
+            uVar13 = pSVar23->field_0038 & 1;
           }
           if (uVar13 == 0) {
-            pAVar33 = (AnonShape_GLOBAL_0080765C_F1992A46 *)0x0;
+            pSVar33 = (SNDContext *)0x0;
             goto cf_common_join_0053138B;
           }
           local_2a8.previous = g_currentExceptionFrame;
@@ -1406,12 +1406,12 @@ LAB_0053108f:
               uVar38 = 0;
             }
             else {
-              uVar38 = PTR_0080765c->field_0038 & 1;
+              uVar38 = g_sndContext_0080765C->field_0038 & 1;
             }
             if (uVar38 != 0) {
               uVar18 = 0x531039;
-              pAVar33 = PTR_0080765c;
-              Library::DKW::SND::FUN_006b7e00((int)PTR_0080765c,0,&local_58,&local_54);
+              pSVar33 = g_sndContext_0080765C;
+              Library::DKW::SND::FUN_006b7e00((int)g_sndContext_0080765C,0,&local_58,&local_54);
             }
             uVar13 = (uint)(local_58 + local_54) >> 1;
           }
@@ -1422,11 +1422,11 @@ LAB_0053108f:
             uVar38 = 0;
           }
           else {
-            uVar38 = PTR_0080765c->field_0038 & 1;
+            uVar38 = g_sndContext_0080765C->field_0038 & 1;
           }
           g_currentExceptionFrame = local_2a8.previous;
           if (uVar38 == 0) goto LAB_0053108d;
-          uVar38 = (PTR_0080765c->field_004C - PTR_0080765c->field_0048) + 1;
+          uVar38 = (g_sndContext_0080765C->field_004C - g_sndContext_0080765C->field_0048) + 1;
           this_00 = pOVar29;
           goto LAB_0053108f;
         }
@@ -1435,10 +1435,10 @@ cf_common_join_0053138B:
       uVar18 = uVar18 & 0xff;
       iVar6 = uVar12 + uVar18 * 0xd + 0x29;
       pOVar29 = (OptPanelTy *)0xf9;
-      uVar12 = CreateSlider(this_00,0x6d,iVar6,0xf9,iVar6,uVar18 + 0xc09f,0x1f,uVar38,(int)pAVar33);
+      uVar12 = CreateSlider(this_00,0x6d,iVar6,0xf9,iVar6,uVar18 + 0xc09f,0x1f,uVar38,(int)pSVar33);
       this_00->field_01B5[uVar18] = uVar12;
       PaintVolume(this_00,(char)iVar6 - 4,(byte)uVar38);
-      pAVar23 = PTR_0080765c;
+      pSVar23 = g_sndContext_0080765C;
 switchD_005311ec_caseD_3:
       bVar5 = bVar5 + 1;
     } while (bVar5 < 8);

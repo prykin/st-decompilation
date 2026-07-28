@@ -175,8 +175,7 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     this_00->field_06C2 = 0;
     this_00->field_08B9 = 1;
     this_00->field_08BD = 0x7102;
-    Library::DKW::DDX::FUN_006ba9e0
-              (g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0xe9,0x14,0x14c,0x18,0);
+    Library::DKW::DDX::FUN_006ba9e0(g_dDXContext_0080759C,0xe9,0x14,0x14c,0x18,0);
     uVar21 = 0;
     pcVar19 = g_startSystem_0081176C->field_0030;
     uVar17 = 0xffffffff;
@@ -315,8 +314,7 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     if (*(MMsgTy **)(pSVar1 + 0x2e6) != (MMsgTy *)0x0) {
       MMsgTy::SetPanel(*(MMsgTy **)(pSVar1 + 0x2e6),0,(int)&local_24c,0,0);
     }
-    Library::DKW::DDX::FUN_006ba9e0
-              (g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0xe9,0x14,0x14c,0x18,0);
+    Library::DKW::DDX::FUN_006ba9e0(g_dDXContext_0080759C,0xe9,0x14,0x14c,0x18,0);
     uVar21 = 0;
     pcVar19 = g_startSystem_0081176C->field_0030;
     uVar17 = 0xffffffff;
@@ -331,9 +329,8 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     this_00->field_1AD7 = this_00->field_0061;
     goto LAB_005b44f1;
   }
-  FUN_006b5f80((int *)PTR_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
-  Library::DKW::DDX::FUN_006ba9e0
-            (g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0xe9,0x14,0x14c,0x18,0);
+  FUN_006b5f80((int *)g_ddxContext_008075A8,0,0,g_nWidth_00806730,DAT_00806734);
+  Library::DKW::DDX::FUN_006ba9e0(g_dDXContext_0080759C,0xe9,0x14,0x14c,0x18,0);
   if (this_00->field_1EE3 == '\0') {
     pcVar19 = g_startSystem_0081176C->field_0030;
     resourceId = 0x26ac;

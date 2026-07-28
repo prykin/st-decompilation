@@ -2,13 +2,13 @@
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 0056ADC0 -> 006C2A80 @ 0056B28E
 
-   [STPrototypeApplier] Propagated parameter 1.
-   Evidence: 0056ADC0 -> 006C2A80 @ 0056B28E
-
    [STPrototypeApplier] Propagated return.
-   Evidence: 006C2A80 returns zeroed full register at 006C2AAD @ 006C2AB1 */
+   Evidence: 006C2A80 returns zeroed full register at 006C2AAD @ 006C2AB1
 
-uint FUN_006c2a80(int *param_1,AnonShape_GLOBAL_0080759C_9638EF10 *param_2)
+   [STPrototypeRepairApplier] Propagated parameter 1.
+   Evidence: 0056ADC0 -> 006C2A80 @ 0056B28E; data at 0080759C */
+
+uint FUN_006c2a80(int *param_1,DDXContext *param_2)
 
 {
   undefined4 *puVar1;

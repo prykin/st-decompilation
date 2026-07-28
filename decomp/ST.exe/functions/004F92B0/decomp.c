@@ -59,7 +59,7 @@ void __thiscall CPanelTy::OutText(CPanelTy *this,int *param_1,undefined4 param_2
     FUN_006b5570((DArrayTy *)*param_1);
     pCVar3->field_0243 = pCVar3->field_09A0;
     pCVar3->field_0247 = param_2;
-    Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,pCVar3->field_0178);
+    Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,pCVar3->field_0178);
     g_currentExceptionFrame = local_50.previous;
     return;
   }

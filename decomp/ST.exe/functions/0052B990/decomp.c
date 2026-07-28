@@ -21,7 +21,7 @@ void __thiscall MoneyTy::sub_0052B990(MoneyTy *this)
   uint local_8;
 
   bVar2 = ((DAT_0080874e == '\x03') - 1U & 0xf9) + 0x14;
-  FUN_006b5f80((int *)PTR_008075a8,this->field_0030,this->field_0034,this->field_0058,
+  FUN_006b5f80((int *)g_ddxContext_008075A8,this->field_0030,this->field_0034,this->field_0058,
                this->field_005C);
   if (this->field_00A4 == '\0') {
     uVar1 = (uint)bVar2;

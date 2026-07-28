@@ -107,7 +107,7 @@ OptPanelTy::PaintDblBut
       resourceString = (uint *)LoadResourceString(param_3,g_module_00807618);
       ccFntTy::WrTxt(pOVar2->field_0180,resourceString,iVar3,iVar7,uVar6,iVar9,iVar10);
       Library::DKW::DDX::FUN_006b3640
-                ((int *)PTR_008075a8,pOVar2->field_0060,0xffffffff,pOVar2->field_003C,
+                ((int *)g_ddxContext_008075A8,pOVar2->field_0060,0xffffffff,pOVar2->field_003C,
                  pOVar2->field_0044);
       g_currentExceptionFrame = local_60.previous;
       return;

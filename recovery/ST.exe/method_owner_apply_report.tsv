@@ -396,6 +396,7 @@ address	status	proposed_name	detail
 0055BB00	disabled	VisibleClassTy::sub_0055BB00	all apply flags are 0
 0055BBC0	disabled	VisibleClassTy::sub_0055BBC0	all apply flags are 0
 0055DB70	disabled	StartSystemTy::sub_0055DB70	all apply flags are 0
+0055DDF0	disabled		all apply flags are 0
 00566900	disabled	SoundManagerTy::sub_00566900	all apply flags are 0
 00566970	disabled	SoundManagerTy::sub_00566970	all apply flags are 0
 00566AA0	disabled	SoundManagerTy::sub_00566AA0	all apply flags are 0
@@ -760,17 +761,32 @@ address	status	proposed_name	detail
 006A0E30	disabled	CGenerate::sub_006A0E30	all apply flags are 0
 006A5E90	disabled	InternalExceptionFrame::sub_006A5E90	all apply flags are 0
 006B0020	disabled		all apply flags are 0
+006B08F0	disabled	DDXContext::sub_006B08F0	all apply flags are 0
+006B0A20	disabled	DDXContext::sub_006B0A20	all apply flags are 0
 006B0C70	disabled		all apply flags are 0
 006B1190	disabled	DArrayTy::sub_006B1190	all apply flags are 0
-006B35D0	disabled	StartSystemTy::sub_006B35D0	all apply flags are 0
+006B13E0	disabled	DDXContext_008075A8::sub_006B13E0	all apply flags are 0
+006B1980	disabled	DDXContext_008075A8::sub_006B1980	all apply flags are 0
+006B1A50	disabled	DDXContext_008075A8::sub_006B1A50	all apply flags are 0
+006B1CC0	disabled	DDXContext_008075A8::sub_006B1CC0	all apply flags are 0
+006B2330	disabled	DDXContext_008075A8::sub_006B2330	all apply flags are 0
+006B2800	disabled	DDXContext_008075A8::sub_006B2800	all apply flags are 0
+006B35D0	disabled		all apply flags are 0
 006B3AF0	disabled		all apply flags are 0
+006B3BB0	disabled	DDXContext_008075A8::sub_006B3BB0	all apply flags are 0
 006B4170	disabled		all apply flags are 0
+006B4640	disabled	DDXContext::sub_006B4640	all apply flags are 0
+006B48A0	disabled	DDXContext::sub_006B48A0	all apply flags are 0
 006B4FA0	disabled	InternalExceptionFrame::sub_006B4FA0	all apply flags are 0
 006B5570	disabled	STAppC::sub_006B5570	all apply flags are 0
 006B5B10	disabled	ChooseMapTy::sub_006B5B10	all apply flags are 0
 006B5EE0	disabled	MReportTy::sub_006B5EE0	all apply flags are 0
+006B5F80	disabled	DDXContext_008075A8::sub_006B5F80	all apply flags are 0
 006B6110	disabled	StartSystemTy::sub_006B6110	all apply flags are 0
 006B6500	disabled	StartSystemTy::sub_006B6500	all apply flags are 0
+006BBB20	disabled	DDXContext::sub_006BBB20	all apply flags are 0
+006C4A00	disabled	DDXContext::sub_006C4A00	all apply flags are 0
+006C7F90	disabled	DDXContext::sub_006C7F90	all apply flags are 0
 006C87C0	disabled	DArrayTy::sub_006C87C0	all apply flags are 0
 006D46A0	disabled	InternalExceptionFrame::sub_006D46A0	all apply flags are 0
 006E3DB0	disabled		all apply flags are 0

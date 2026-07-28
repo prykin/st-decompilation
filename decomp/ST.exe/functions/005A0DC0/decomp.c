@@ -77,7 +77,7 @@ void __thiscall FSGSTy::ConnectProc(FSGSTy *this,int param_1,int param_2)
         }
       }
       ccFntTy::WrTxt(pFVar4->field_1A73,&DAT_0080f33a,-1,-1,2,-1,-1);
-      FUN_006b35d0((int *)PTR_008075a8,pFVar4->field_1ABC);
+      FUN_006b35d0((int *)g_ddxContext_008075A8,pFVar4->field_1ABC);
       g_currentExceptionFrame = local_4c.previous;
       return;
     }

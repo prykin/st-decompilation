@@ -135,8 +135,7 @@ void __thiscall FUN_00621780(void *this,uint param_1)
     local_10.unknown = 0;
     local_10.x = -1;
     local_10.y = -1;
-    SoundClassTy::PlaySound_thunk
-              ((SoundClassTy *)&g_sound,SOUND_MODE_6,(char *)0x0,iVar1,&local_10,0);
+    SoundClassTy::PlaySound((SoundClassTy *)&g_sound,SOUND_MODE_6,(char *)0x0,iVar1,&local_10,0);
     *puVar2 = 1;
     *(uint *)(puVar2 + 1) = g_playSystem_00802A38->field_00E4;
     *(uint *)((int)this + 0x106) = g_playSystem_00802A38->field_00E4;

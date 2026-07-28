@@ -3,8 +3,8 @@ address	function	current_calling_convention	signature_source	evidence	action
 0042B1F0	STAllPlayersC::GetGObjFromBox	__thiscall	USER_DEFINED	no live incoming ECX use found before clobber/call	review_only; analyzer never reverts an existing signature
 0042B620	STAllPlayersC::GetObjPtr	__thiscall	ANALYSIS	no live incoming ECX use found before clobber/call	review_only; analyzer never reverts an existing signature
 0042D980	STAllPlayersC::GetActiveCenter	__thiscall	USER_DEFINED	no live incoming ECX use found before clobber/call	review_only; analyzer never reverts an existing signature
-0042EFD0	STAllPlayersC::RegisterGroup	__thiscall	USER_DEFINED	no live incoming ECX use found before clobber/call	review_only; analyzer never reverts an existing signature
-0042F140	STAllPlayersC::UnRegisterGroup	__thiscall	USER_DEFINED	no live incoming ECX use found before clobber/call	review_only; analyzer never reverts an existing signature
+0042EFD0	STAllPlayersC::RegisterGroup	__thiscall	ANALYSIS	no live incoming ECX use found before clobber/call	review_only; analyzer never reverts an existing signature
+0042F140	STAllPlayersC::UnRegisterGroup	__thiscall	ANALYSIS	no live incoming ECX use found before clobber/call	review_only; analyzer never reverts an existing signature
 00430470	STAllPlayersC::RegisterTorpedo	__thiscall	USER_DEFINED	no live incoming ECX use found before clobber/call	review_only; analyzer never reverts an existing signature
 00430620	STAllPlayersC::IsTorpLive	__thiscall	USER_DEFINED	no live incoming ECX use found before clobber/call	review_only; analyzer never reverts an existing signature
 00430960	STAllPlayersC::UnRegisterTorpedo	__thiscall	USER_DEFINED	no live incoming ECX use found before clobber/call	review_only; analyzer never reverts an existing signature
@@ -47,7 +47,7 @@ address	function	current_calling_convention	signature_source	evidence	action
 005956C0	FSGSTy::OutLadProc	__thiscall	USER_DEFINED	no live incoming ECX use found before clobber/call	review_only; analyzer never reverts an existing signature
 0059DB20	FSGSTy::ChatCtrls	__thiscall	USER_DEFINED	no live incoming ECX use found before clobber/call	review_only; analyzer never reverts an existing signature
 005AA6A0	HoloTy::OutHoloProc	__thiscall	USER_DEFINED	no live incoming ECX use found before clobber/call	review_only; analyzer never reverts an existing signature
-005AA880	HoloTy::CalcHologram	__thiscall	USER_DEFINED	no live incoming ECX use found before clobber/call	review_only; analyzer never reverts an existing signature
+005AA880	HoloTy::CalcHologram	__thiscall	ANALYSIS	no live incoming ECX use found before clobber/call	review_only; analyzer never reverts an existing signature
 005AB1D0	ChooseMapTy::OutListProc	__thiscall	USER_DEFINED	no live incoming ECX use found before clobber/call	review_only; analyzer never reverts an existing signature
 005B5240	MMObjTy::InitSprBut	__thiscall	USER_DEFINED	no live incoming ECX use found before clobber/call	review_only; analyzer never reverts an existing signature
 005B5A30	MMObjTy::PaintButDib	__thiscall	USER_DEFINED	no live incoming ECX use found before clobber/call	review_only; analyzer never reverts an existing signature
@@ -73,7 +73,7 @@ address	function	current_calling_convention	signature_source	evidence	action
 005E3E80	MTaskTy::CreateTextSSpr	__thiscall	USER_DEFINED	no live incoming ECX use found before clobber/call	review_only; analyzer never reverts an existing signature
 005E6640	ChooseMapTy::OutListProc	__thiscall	USER_DEFINED	no live incoming ECX use found before clobber/call	review_only; analyzer never reverts an existing signature
 0062F3B0	STRubbishC::LoadImagSpr	__thiscall	USER_DEFINED	no live incoming ECX use found before clobber/call	review_only; analyzer never reverts an existing signature
-0064D890	AiEventClassTy::_CreateRCCont	__thiscall	USER_DEFINED	no live incoming ECX use found before clobber/call	review_only; analyzer never reverts an existing signature
+0064D890	AiEventClassTy::_CreateRCCont	__thiscall	ANALYSIS	no live incoming ECX use found before clobber/call	review_only; analyzer never reverts an existing signature
 0064DB00	AiEventClassTy::_CreateArt	__thiscall	USER_DEFINED	no live incoming ECX use found before clobber/call	review_only; analyzer never reverts an existing signature
 0064DDA0	AiEventClassTy::_CreateDest	__thiscall	USER_DEFINED	no live incoming ECX use found before clobber/call	review_only; analyzer never reverts an existing signature
 0064DFA0	AiEventClassTy::_CreateMine	__thiscall	USER_DEFINED	no live incoming ECX use found before clobber/call	review_only; analyzer never reverts an existing signature

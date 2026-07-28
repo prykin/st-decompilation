@@ -102,15 +102,15 @@ MReportTy::PaintBut(MReportTy *this,STMessage *param_1,UINT param_2,int param_3,
     }
     SVar3 = local_20;
                     /* WARNING: Load size is inaccurate */
-    FUN_006b5f80((int *)PTR_008075a8,*local_20.i32,*(int *)(local_20.u32 + 4),(int)local_8,
+    FUN_006b5f80((int *)g_ddxContext_008075A8,*local_20.i32,*(int *)(local_20.u32 + 4),(int)local_8,
                  (int)pbVar4);
                     /* WARNING: Load size is inaccurate */
     PutDDXClip(*SVar3.i32,*(int *)(SVar3.u32 + 4),*SVar3.i32,*(int *)(SVar3.u32 + 4),(uint)local_8,
                pbVar4,'\x01',(BITMAPINFO *)local_c->field_005D);
                     /* WARNING: Load size is inaccurate */
     Library::DKW::DDX::FUN_006b48e0
-              ((int)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,*SVar3.i32,*(int *)(SVar3.u32 + 4)
-               ,(AnonPointee_MReportTy_0073 *)pAVar5,0,0,0,(uint)local_8,(int)pbVar4,
+              ((int)g_dDXContext_0080759C,*SVar3.i32,*(int *)(SVar3.u32 + 4),
+               (AnonPointee_MReportTy_0073 *)pAVar5,0,0,0,(uint)local_8,(int)pbVar4,
                (int)&local_c->field_0xa3,0x4c,0x10000ff);
     g_currentExceptionFrame = local_64.previous;
     return;

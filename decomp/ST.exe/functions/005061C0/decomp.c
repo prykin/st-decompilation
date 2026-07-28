@@ -854,8 +854,8 @@ switchD_00506878_caseD_3b:
 switchD_00506377_caseD_df:
   if (-1 < (int)this_00->field_0148[5]) {
     Library::DKW::DDX::FUN_006b3640
-              ((int *)PTR_008075a8,(uint)this_00->field_0148[5],0xffffffff,this_00->field_0050,
-               this_00->field_00A8);
+              ((int *)g_ddxContext_008075A8,(uint)this_00->field_0148[5],0xffffffff,
+               this_00->field_0050,this_00->field_00A8);
   }
   g_currentExceptionFrame = local_64.previous;
   return;

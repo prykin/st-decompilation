@@ -63,12 +63,12 @@ void __thiscall MReportTy::PaintMReport(MReportTy *this,char param_1)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  FUN_006b5f80((int *)PTR_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
+  FUN_006b5f80((int *)g_ddxContext_008075A8,0,0,g_nWidth_00806730,DAT_00806734);
   this_00 = local_20;
   PutDDXClip(0,0,0,0,800,(byte *)0x3c,'\x01',(BITMAPINFO *)local_20->field_005D);
   if ((this_00->field_0457 == (HoloTy *)0x0) && (param_1 == '\0')) {
-    OutTGlProc((MReportTy *)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,
-               g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0,0,0x1a,10,0x2e9,0x32,(int)this_00);
+    OutTGlProc((MReportTy *)g_dDXContext_0080759C,g_dDXContext_0080759C,0,0,0x1a,10,0x2e9,0x32,
+               (int)this_00);
   }
   if (this_00->field_0453 != (HoloTy *)0x0) {
     g_currentExceptionFrame = local_64.previous;
@@ -579,14 +579,14 @@ LAB_005bef6c:
                    (local_c->field_0008 + -0x1c) / 2,0x50,0x1c);
   ccFntTy::WrStr(this_00->field_008B,&DAT_0080f33a,-1,-1,8);
   Library::DKW::DDX::FUN_006c5000
-            (g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0x174,0x1a9,(int)local_c,0,0,0,
-             local_c->field_0004,local_c->field_0008,(int)&this_00->field_0xa3,0x4c);
+            (g_dDXContext_0080759C,0x174,0x1a9,(int)local_c,0,0,0,local_c->field_0004,
+             local_c->field_0008,(int)&this_00->field_0xa3,0x4c);
   FreeAndNull(&local_c);
 LAB_005bf406:
   pAVar2 = this_00->field_0073;
   Library::DKW::DDX::FUN_006b48e0
-            ((int)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0x1a,0x46,pAVar2,0,0,0,
-             pAVar2->field_0004,pAVar2->field_0008,(int)&this_00->field_0xa3,0x4c,0x10000ff);
+            ((int)g_dDXContext_0080759C,0x1a,0x46,pAVar2,0,0,0,pAVar2->field_0004,pAVar2->field_0008
+             ,(int)&this_00->field_0xa3,0x4c,0x10000ff);
   g_currentExceptionFrame = local_64.previous;
   return;
 }

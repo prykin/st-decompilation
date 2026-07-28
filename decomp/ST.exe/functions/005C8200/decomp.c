@@ -70,8 +70,8 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004EEFB0::FUN_005c8200
   puVar4 = Library::Ourlib::MFIMG::mfImgLoad(this_00->field_1F3F,0xc,PTR_s_SMALL_MAP_0079c114,2,0);
   g_startSystem_0081176C->field_02F4 = puVar4;
   if (g_startSystem_0081176C->field_02F4 != (ushort *)0x0) {
-    FUN_006c7f90(g_startSystem_0081176C->field_02F4,(byte *)0x0,
-                 g_anonShape_GLOBAL_0080759C_9638EF10_0080759C->field_04B4,0);
+    FUN_006c7f90(g_startSystem_0081176C->field_02F4,(byte *)0x0,g_dDXContext_0080759C->field_04B4,0)
+    ;
   }
   local_84 = DAT_0080995c;
   puVar3 = &DAT_00809960;

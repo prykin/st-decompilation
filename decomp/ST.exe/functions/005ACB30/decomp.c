@@ -45,7 +45,7 @@ void __thiscall ChooseMapTy::DoneChooseMap(ChooseMapTy *this)
     }
     iVar4 = pCVar3->field_004D;
     if (((iVar4 != 0x6120) && (iVar4 != 0x6121)) && (iVar4 != 0x6105)) {
-      DarkScreen(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,10,2);
+      DarkScreen(g_dDXContext_0080759C,10,2);
     }
     if (g_startSystem_0081176C->field_002C != (ushort *)0x0) {
       cMf32::RecMemFree(g_cMf32_00806780,(uint *)&g_startSystem_0081176C->field_002C);
@@ -62,14 +62,14 @@ void __thiscall ChooseMapTy::DoneChooseMap(ChooseMapTy *this)
     iVar4 = 0x16;
     do {
       if (*puVar6 != 0xffffffff) {
-        FUN_006b3bb0((int *)PTR_008075a8,*puVar6);
+        FUN_006b3bb0((int *)g_ddxContext_008075A8,*puVar6);
         *puVar6 = 0xffffffff;
       }
       puVar6 = puVar6 + 1;
       iVar4 = iVar4 + -1;
     } while (iVar4 != 0);
     if (pCVar3->field_1C87 != 0xffffffff) {
-      FUN_006b3bb0((int *)PTR_008075a8,pCVar3->field_1C87);
+      FUN_006b3bb0((int *)g_ddxContext_008075A8,pCVar3->field_1C87);
     }
     pCVar3->field_1C87 = 0xffffffff;
     if (pCVar3->field_20BC != (HoloTy *)0x0) {
@@ -88,7 +88,7 @@ void __thiscall ChooseMapTy::DoneChooseMap(ChooseMapTy *this)
         FUN_006b3af0((int *)g_startSystem_0081176C->field_04F7,g_startSystem_0081176C->field_04B3);
       }
       if (-1 < g_startSystem_0081176C->field_0540) {
-        FUN_006b3af0((int *)PTR_008075a8,g_startSystem_0081176C->field_0540);
+        FUN_006b3af0((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0540);
       }
     }
     if (pCVar3->field_20C0 != (HoloTy *)0x0) {
@@ -106,10 +106,10 @@ void __thiscall ChooseMapTy::DoneChooseMap(ChooseMapTy *this)
         FUN_006b3af0((int *)g_startSystem_0081176C->field_0635,g_startSystem_0081176C->field_05F1);
       }
       if (-1 < g_startSystem_0081176C->field_0558) {
-        FUN_006b3af0((int *)PTR_008075a8,g_startSystem_0081176C->field_0558);
+        FUN_006b3af0((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0558);
       }
       if (-1 < g_startSystem_0081176C->field_0554) {
-        FUN_006b3af0((int *)PTR_008075a8,g_startSystem_0081176C->field_0554);
+        FUN_006b3af0((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0554);
       }
     }
     if (pCVar3->field_1C7B != (AnonPointee_ChooseMapTy_1C7B *)0x0) {

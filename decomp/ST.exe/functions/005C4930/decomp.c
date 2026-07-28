@@ -46,7 +46,7 @@ void __thiscall SettMapTy::DoneSettMap(SettMapTy *this)
     }
     iVar3 = pSVar2->field_004D;
     if (((iVar3 != 0x611f) && (iVar3 != 0x6109)) && (iVar3 != 0x6105)) {
-      DarkScreen(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,10,2);
+      DarkScreen(g_dDXContext_0080759C,10,2);
     }
     if (pSVar2->field_21EC != (HoloTy *)0x0) {
       HoloTy::Done(pSVar2->field_21EC);
@@ -64,7 +64,7 @@ void __thiscall SettMapTy::DoneSettMap(SettMapTy *this)
         FUN_006b3af0((int *)g_startSystem_0081176C->field_04F7,g_startSystem_0081176C->field_04B3);
       }
       if (-1 < g_startSystem_0081176C->field_0540) {
-        FUN_006b3af0((int *)PTR_008075a8,g_startSystem_0081176C->field_0540);
+        FUN_006b3af0((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0540);
       }
     }
     if (pSVar2->field_21F4 != (HoloTy *)0x0) {
@@ -135,7 +135,7 @@ void __thiscall SettMapTy::DoneSettMap(SettMapTy *this)
     value = pSVar2->field_20F4;
     iVar3 = 10;
     do {
-      FUN_006b3bb0((int *)PTR_008075a8,(uint)value[-10]);
+      FUN_006b3bb0((int *)g_ddxContext_008075A8,(uint)value[-10]);
       if (*value != (void *)0x0) {
         FreeAndNull(value);
       }
@@ -145,7 +145,7 @@ void __thiscall SettMapTy::DoneSettMap(SettMapTy *this)
     if (pSVar2->field_1E1E != 0) {
       FreeAndNull((void **)&pSVar2->field_1E1E);
     }
-    FUN_006b3bb0((int *)PTR_008075a8,pSVar2->field_1E22);
+    FUN_006b3bb0((int *)g_ddxContext_008075A8,pSVar2->field_1E22);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if ((pSVar2->field_21E7 != '\0') && (*(MMsgTy **)(pSVar2->field_1A5B + 0x2e6) != (MMsgTy *)0x0))
     {

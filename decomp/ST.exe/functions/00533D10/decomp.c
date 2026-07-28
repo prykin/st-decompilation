@@ -186,8 +186,8 @@ int __thiscall OptPanelTy::GetMessage(OptPanelTy *this,STMessage *message)
                          (message->arg1).words.low + 0x26,(message->arg1).words.high + 0x31,
                          (byte *)this_00->field_01E5,0,0,0,200,*(int *)(this_00->field_01E5 + 4));
               Library::DKW::DDX::FUN_006b3640
-                        ((int *)PTR_008075a8,this_00->field_0060,0xffffffff,this_00->field_003C,
-                         this_00->field_0044);
+                        ((int *)g_ddxContext_008075A8,this_00->field_0060,0xffffffff,
+                         this_00->field_003C,this_00->field_0044);
               g_currentExceptionFrame = local_8c.previous;
               return 0;
             }
@@ -339,8 +339,8 @@ int __thiscall OptPanelTy::GetMessage(OptPanelTy *this,STMessage *message)
               } while ((int)uVar11 < (int)(*(int *)(local_18 + 0x1e0) + uVar16));
             }
             Library::DKW::DDX::FUN_006b3640
-                      ((int *)PTR_008075a8,this_00->field_0060,0xffffffff,this_00->field_003C,
-                       this_00->field_0044);
+                      ((int *)g_ddxContext_008075A8,this_00->field_0060,0xffffffff,
+                       this_00->field_003C,this_00->field_0044);
             g_currentExceptionFrame = local_8c.previous;
             return 0;
           }
@@ -438,7 +438,8 @@ int __thiscall OptPanelTy::GetMessage(OptPanelTy *this,STMessage *message)
             uVar16 = this_00->field_003C;
             uVar25 = this_00->field_0060;
           }
-          Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,uVar25,0xffffffff,uVar16,uVar11);
+          Library::DKW::DDX::FUN_006b3640
+                    ((int *)g_ddxContext_008075A8,uVar25,0xffffffff,uVar16,uVar11);
 LAB_00534016:
           if ((uint)(this_00->field_0038 - this_00->field_0301) < 0x7d1) {
             g_currentExceptionFrame = local_8c.previous;
@@ -1233,10 +1234,10 @@ LAB_00534654:
             uVar11 = 0;
           }
           else {
-            uVar11 = PTR_0080765c->field_0080 & 1;
+            uVar11 = g_sndContext_0080765C->field_0080 & 1;
           }
           if (uVar11 != 0) {
-            Library::DKW::SND::FUN_006b7e00((int)PTR_0080765c,3,local_3c + 3,&local_28);
+            Library::DKW::SND::FUN_006b7e00((int)g_sndContext_0080765C,3,local_3c + 3,&local_28);
           }
           uVar11 = local_3c[3] + local_28 >> 1;
         }
@@ -1247,7 +1248,7 @@ LAB_00534654:
           uVar16 = 0;
         }
         else {
-          uVar16 = PTR_0080765c->field_0080 & 1;
+          uVar16 = g_sndContext_0080765C->field_0080 & 1;
         }
         g_currentExceptionFrame = local_d0.previous;
         if (uVar16 == 0) {
@@ -1255,7 +1256,7 @@ LAB_005350ba:
           uVar16 = 0;
         }
         else {
-          uVar16 = (PTR_0080765c->field_0094 - PTR_0080765c->field_0090) + 1;
+          uVar16 = (g_sndContext_0080765C->field_0094 - g_sndContext_0080765C->field_0090) + 1;
         }
         goto LAB_005350bc;
       default:
@@ -1269,10 +1270,10 @@ LAB_005350ba:
             uVar11 = 0;
           }
           else {
-            uVar11 = PTR_0080765c->field_0068 & 1;
+            uVar11 = g_sndContext_0080765C->field_0068 & 1;
           }
           if (uVar11 != 0) {
-            Library::DKW::SND::FUN_006b7e00((int)PTR_0080765c,2,&local_24,&local_2c);
+            Library::DKW::SND::FUN_006b7e00((int)g_sndContext_0080765C,2,&local_24,&local_2c);
           }
           uVar11 = local_24 + local_2c >> 1;
         }
@@ -1283,11 +1284,11 @@ LAB_005350ba:
           uVar16 = 0;
         }
         else {
-          uVar16 = PTR_0080765c->field_0068 & 1;
+          uVar16 = g_sndContext_0080765C->field_0068 & 1;
         }
         g_currentExceptionFrame = local_224.previous;
         if (uVar16 == 0) goto LAB_005350ba;
-        uVar16 = (PTR_0080765c->field_007C - PTR_0080765c->field_0078) + 1;
+        uVar16 = (g_sndContext_0080765C->field_007C - g_sndContext_0080765C->field_0078) + 1;
 LAB_005350bc:
         local_c = (cMf32 *)((uVar11 * 0x1f) / uVar16);
         this_00 = local_10;
@@ -1575,7 +1576,7 @@ switchD_00534835_caseD_1:
     case CASE_6:
       DAT_00807300._1_1_ = DAT_00807300._1_1_ ^ 4;
       thunk_FUN_00568010(&g_sound,CASE_4);
-      SoundClassTy::PlaySound_thunk
+      SoundClassTy::PlaySound
                 ((SoundClassTy *)&g_sound,SOUND_MODE_1,(char *)0x0,0x4b7,(SoundPosition *)0x0,0);
       g_currentExceptionFrame = local_8c.previous;
       return 0;
@@ -1827,20 +1828,20 @@ switchD_00534835_caseD_1:
           uVar11 = 0;
         }
         else {
-          uVar11 = PTR_0080765c->field_0080 & 1;
+          uVar11 = g_sndContext_0080765C->field_0080 & 1;
         }
         if (uVar11 != 0) {
           if (g_sound == 0) {
             uVar11 = 0;
           }
           else {
-            uVar11 = PTR_0080765c->field_0080 & 1;
+            uVar11 = g_sndContext_0080765C->field_0080 & 1;
           }
           if (uVar11 == 0) {
             iVar9 = 0;
           }
           else {
-            iVar9 = (PTR_0080765c->field_0094 - PTR_0080765c->field_0090) + 1;
+            iVar9 = (g_sndContext_0080765C->field_0094 - g_sndContext_0080765C->field_0090) + 1;
           }
           local_8 = ((iVar9 + -1) * (message->arg0).u32) / 0x1e;
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -1855,10 +1856,10 @@ switchD_00534835_caseD_1:
               uVar11 = 0;
             }
             else {
-              uVar11 = PTR_0080765c->field_0080 & 1;
+              uVar11 = g_sndContext_0080765C->field_0080 & 1;
             }
             if (uVar11 != 0) {
-              Library::DKW::SND::FUN_006b7f00((int)PTR_0080765c,3,local_8,local_8);
+              Library::DKW::SND::FUN_006b7f00((int)g_sndContext_0080765C,3,local_8,local_8);
             }
             g_currentExceptionFrame = local_158.previous;
             pIVar7 = g_currentExceptionFrame;
@@ -1875,20 +1876,20 @@ LAB_00535ef1:
           uVar11 = 0;
         }
         else {
-          uVar11 = PTR_0080765c->field_0068 & 1;
+          uVar11 = g_sndContext_0080765C->field_0068 & 1;
         }
         if (uVar11 != 0) {
           if (g_sound == 0) {
             uVar11 = 0;
           }
           else {
-            uVar11 = PTR_0080765c->field_0068 & 1;
+            uVar11 = g_sndContext_0080765C->field_0068 & 1;
           }
           if (uVar11 == 0) {
             iVar9 = 0;
           }
           else {
-            iVar9 = (PTR_0080765c->field_007C - PTR_0080765c->field_0078) + 1;
+            iVar9 = (g_sndContext_0080765C->field_007C - g_sndContext_0080765C->field_0078) + 1;
           }
           _DAT_00807306 = ((iVar9 + -1) * (message->arg0).u32) / 0x1e;
           local_114.previous = g_currentExceptionFrame;
@@ -1901,10 +1902,10 @@ LAB_00535ef1:
               uVar11 = 0;
             }
             else {
-              uVar11 = PTR_0080765c->field_0068 & 1;
+              uVar11 = g_sndContext_0080765C->field_0068 & 1;
             }
             if (uVar11 != 0) {
-              Library::DKW::SND::FUN_006b7f00((int)PTR_0080765c,2,local_8,local_8);
+              Library::DKW::SND::FUN_006b7f00((int)g_sndContext_0080765C,2,local_8,local_8);
             }
             g_currentExceptionFrame = local_114.previous;
             pIVar7 = g_currentExceptionFrame;
@@ -1975,20 +1976,20 @@ LAB_00535ef1:
         uVar11 = 0;
       }
       else {
-        uVar11 = PTR_0080765c->field_0050 & 1;
+        uVar11 = g_sndContext_0080765C->field_0050 & 1;
       }
       if (uVar11 != 0) {
         if (g_sound == 0) {
           uVar11 = 0;
         }
         else {
-          uVar11 = PTR_0080765c->field_0050 & 1;
+          uVar11 = g_sndContext_0080765C->field_0050 & 1;
         }
         if (uVar11 == 0) {
           iVar9 = 0;
         }
         else {
-          iVar9 = (PTR_0080765c->field_0064 - PTR_0080765c->field_0060) + 1;
+          iVar9 = (g_sndContext_0080765C->field_0064 - g_sndContext_0080765C->field_0060) + 1;
         }
         _DAT_00807312 = ((iVar9 + -1) * (message->arg0).u32) / 0x1e;
         local_1e0.previous = g_currentExceptionFrame;
@@ -2000,10 +2001,10 @@ LAB_00535ef1:
             uVar11 = 0;
           }
           else {
-            uVar11 = PTR_0080765c->field_0050 & 1;
+            uVar11 = g_sndContext_0080765C->field_0050 & 1;
           }
           if (uVar11 != 0) {
-            Library::DKW::SND::FUN_006b7f00((int)PTR_0080765c,1,local_8,local_8);
+            Library::DKW::SND::FUN_006b7f00((int)g_sndContext_0080765C,1,local_8,local_8);
           }
         }
         g_currentExceptionFrame = local_1e0.previous;
@@ -2019,20 +2020,20 @@ LAB_00535ef1:
         uVar11 = 0;
       }
       else {
-        uVar11 = PTR_0080765c->field_0038 & 1;
+        uVar11 = g_sndContext_0080765C->field_0038 & 1;
       }
       if (uVar11 != 0) {
         if (g_sound == 0) {
           uVar11 = 0;
         }
         else {
-          uVar11 = PTR_0080765c->field_0038 & 1;
+          uVar11 = g_sndContext_0080765C->field_0038 & 1;
         }
         if (uVar11 == 0) {
           iVar9 = 0;
         }
         else {
-          iVar9 = (PTR_0080765c->field_004C - PTR_0080765c->field_0048) + 1;
+          iVar9 = (g_sndContext_0080765C->field_004C - g_sndContext_0080765C->field_0048) + 1;
         }
         _DAT_00807316 = ((iVar9 + -1) * (message->arg0).u32) / 0x1e;
         local_268.previous = g_currentExceptionFrame;
@@ -2044,10 +2045,10 @@ LAB_00535ef1:
             uVar11 = 0;
           }
           else {
-            uVar11 = PTR_0080765c->field_0038 & 1;
+            uVar11 = g_sndContext_0080765C->field_0038 & 1;
           }
           if (uVar11 != 0) {
-            Library::DKW::SND::FUN_006b7f00((int)PTR_0080765c,0,local_8,local_8);
+            Library::DKW::SND::FUN_006b7f00((int)g_sndContext_0080765C,0,local_8,local_8);
           }
         }
         g_currentExceptionFrame = local_268.previous;
@@ -2379,7 +2380,7 @@ cf_common_exit_00536EE8:
                 ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0,0x26,0x1c,(byte *)puVar18,0,0,
                  0,*(int *)(puVar18 + 2),*(int *)(puVar18 + 4));
       Library::DKW::DDX::FUN_006b3640
-                ((int *)PTR_008075a8,this_00->field_0060,0xffffffff,this_00->field_003C,
+                ((int *)g_ddxContext_008075A8,this_00->field_0060,0xffffffff,this_00->field_003C,
                  this_00->field_0044);
       g_currentExceptionFrame = local_8c.previous;
       return 0;

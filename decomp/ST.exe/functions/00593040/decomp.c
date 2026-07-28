@@ -80,7 +80,7 @@ int __thiscall CampaignTy::GetMessage(CampaignTy *this,STMessage *message)
     else if (SVar2 == MESS_MMSGTY_68FF) {
       DAT_0080874e = *(byte *)(message->arg0).ptr;
       if (g_startSystem_0081176C->field_0028 == 0) {
-        FUN_006b5f80((int *)PTR_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
+        FUN_006b5f80((int *)g_ddxContext_008075A8,0,0,g_nWidth_00806730,DAT_00806734);
         iVar7 = 0;
         bVar18 = 0;
         text = FUN_006f2c00("CMPG_BKG",1,(uint)DAT_0080874e);

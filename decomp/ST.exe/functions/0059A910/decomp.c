@@ -167,8 +167,8 @@ void __thiscall FSGSTy::PaintInfo(FSGSTy *this)
     puVar6 = (uint *)LoadResourceString(0x25a1,g_module_00807618);
     ccFntTy::WrStr(pFVar3->field_1A73,puVar6,iVar4,iVar9,uVar8);
     FUN_006b5ee0((AnonShape_006B5B10_E0D06CF1 *)pFVar3->field_1AC0,0,0x144,0x160,0x52,0x14,0xf,0xd);
-    Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,pFVar3->field_1ABC);
-    FUN_006b35d0((int *)PTR_008075a8,pFVar3->field_1ABC);
+    Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,pFVar3->field_1ABC);
+    FUN_006b35d0((int *)g_ddxContext_008075A8,pFVar3->field_1ABC);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }

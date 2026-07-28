@@ -44,7 +44,7 @@ void __thiscall MReportTy::NoneMReport(MReportTy *this)
         (*(char *)&local_c->field_0069 == '\0')) &&
        (*(char *)((int)&local_c->field_0065 + 3) != '\0')) {
       bVar4 = false;
-      FUN_006b5f80((int *)PTR_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
+      FUN_006b5f80((int *)g_ddxContext_008075A8,0,0,g_nWidth_00806730,DAT_00806734);
       if (DAT_0080c83e != 0xffffffff) {
         do {
           if (iVar6 == 0) {
@@ -107,14 +107,14 @@ LAB_005bfb27:
       }
       if (bVar4) {
         thunk_FUN_005b6730(this_00,0x1e,'\x01',-1);
-        FUN_006b5f80((int *)PTR_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
+        FUN_006b5f80((int *)g_ddxContext_008075A8,0,0,g_nWidth_00806730,DAT_00806734);
         iVar5 = *(int *)((int)&this_00->field_0070 + 3);
         PutDDXClip(0x1a,0x46,0x1a,0x46,*(uint *)(iVar5 + 4),*(byte **)(iVar5 + 8),'\x01',
                    (BITMAPINFO *)this_00->field_005D);
         pAVar2 = *(AnonPointee_MReportTy_0073 **)((int)&this_00->field_0070 + 3);
         Library::DKW::DDX::FUN_006b48e0
-                  ((int)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0x1a,0x46,pAVar2,0,0,0,
-                   pAVar2->field_0004,pAVar2->field_0008,(int)&this_00->field_0xa3,0x4c,0x10000ff);
+                  ((int)g_dDXContext_0080759C,0x1a,0x46,pAVar2,0,0,0,pAVar2->field_0004,
+                   pAVar2->field_0008,(int)&this_00->field_0xa3,0x4c,0x10000ff);
         g_currentExceptionFrame = local_50.previous;
         return;
       }
@@ -157,7 +157,7 @@ LAB_005bfb27:
       if (iVar5 == 0) {
         uVar7 = *(uint *)(*(int *)&this_00->field_0x453 + 3);
         if (-1 < (int)uVar7) {
-          FUN_006b3af0((int *)PTR_008075a8,uVar7);
+          FUN_006b3af0((int *)g_ddxContext_008075A8,uVar7);
         }
       }
       else {
@@ -169,7 +169,7 @@ LAB_005bfb27:
       if (iVar5 == 0) {
         uVar7 = *(uint *)(*(int *)&this_00->field_0x457 + 3);
         if (-1 < (int)uVar7) {
-          FUN_006b3af0((int *)PTR_008075a8,uVar7);
+          FUN_006b3af0((int *)g_ddxContext_008075A8,uVar7);
         }
       }
       else {

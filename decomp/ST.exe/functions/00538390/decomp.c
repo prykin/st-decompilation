@@ -26,7 +26,7 @@ void __thiscall PanelTy::DonePanel(PanelTy *this)
     local_8->field_002C = local_8->field_0008;
     FUN_006e6000(local_8,3,1,(undefined4 *)&local_8->field_0x18);
     if (-1 < pPVar2->field_0060) {
-      FUN_006b3bb0((int *)PTR_008075a8,pPVar2->field_0060);
+      FUN_006b3bb0((int *)g_ddxContext_008075A8,pPVar2->field_0060);
     }
     pPVar2->field_0060 = -1;
     if (pPVar2->field_0068 != 0) {

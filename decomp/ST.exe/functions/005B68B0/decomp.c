@@ -38,8 +38,7 @@ MMMObjTy::OutBSlProc
       OutRGlProc(param_2,param_1,param_2,param_3,param_4,param_5,param_6,param_7,param_8);
       local_c = param_4 + -0x15 + param_6;
       Library::DKW::DDX::FUN_006c6660
-                ((AnonShape_GLOBAL_0080759C_9638EF10 *)param_1,local_c,param_5 + 0x26,7,
-                 param_7 - 0x4cU,3,0);
+                ((DDXContext *)param_1,local_c,param_5 + 0x26,7,param_7 - 0x4cU,3,0);
       Library::DKW::DDX::FUN_006c6470
                 (param_1,local_c,param_5 + 0x26,(undefined4 *)0x7,param_7 - 0x4cU,3,*local_8);
       g_currentExceptionFrame = local_50.previous;

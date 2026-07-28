@@ -1,11 +1,11 @@
 #include "../../pseudocode_runtime.h"
 
 
-/* [STPrototypeApplier] Propagated parameter 0.
-   Evidence: 0056ADC0 -> 006BBB20 @ 0056B228 | 0056DB80 -> 006BBB20 @ 0056E646 | 005DCE90 ->
-   006BBB20 @ 005DD056 */
+/* [STPrototypeRepairApplier] Propagated parameter 0.
+   Evidence: 0056ADC0 -> 006BBB20 @ 0056B228; data at 0080759C | 0056DB80 -> 006BBB20 @ 0056E646;
+   data at 0080759C | 005DCE90 -> 006BBB20 @ 005DD056; data at 0080759C */
 
-int FUN_006bbb20(AnonShape_GLOBAL_0080759C_9638EF10 *param_1,int param_2)
+int FUN_006bbb20(DDXContext *param_1,int param_2)
 
 {
   int *piVar1;

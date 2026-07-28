@@ -82,7 +82,7 @@ void __thiscall STAppC::StartGame(STAppC *this)
     pSVar12->field_1168 = 0;
     pSVar12->field_0034 = uVar2;
     pSVar12->field_1164 = 0;
-    DarkScreen(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,10,2);
+    DarkScreen(g_dDXContext_0080759C,10,2);
     if (g_cursorClass_00802A30->field_00A9 == 0) {
       Library::DKW::DDX::FUN_006b8b10((int *)g_cursorClass_00802A30->field_00AD);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -360,14 +360,14 @@ void __thiscall STAppC::StartGame(STAppC *this)
     FUN_006e3db0((int)local_34);
     thunk_FUN_0056a500();
     thunk_FUN_00577690(PTR_0081163c);
-    SoundClassTy::PlaySound_thunk
+    SoundClassTy::PlaySound
               ((SoundClassTy *)&pSVar12->field_0038,SOUND_MODE_1,(char *)0x0,0x4b7,
                (SoundPosition *)0x0,0);
     DAT_0080674c = 2;
     ShowCursor(0);
     DAT_00856d7c = 0;
-    FUN_006bbb20(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0);
-    FUN_006ba780(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0);
+    FUN_006bbb20(g_dDXContext_0080759C,0);
+    FUN_006ba780(g_dDXContext_0080759C,0);
     g_currentExceptionFrame = local_98.previous;
     pSVar12->field_1195 = 0;
     return;

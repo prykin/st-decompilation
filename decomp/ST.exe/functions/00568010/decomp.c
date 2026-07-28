@@ -64,8 +64,8 @@ void __thiscall FUN_00568010(void *this,Global_sub_00568010_param_1Enum param_1)
             *(undefined4 *)(&this_00->field_0xe13 + iVar1 * 0xc) = 0;
             FUN_006c1ba0(iVar1);
             if (iVar1 == 2) {
-              SoundClassTy::PlaySound_thunk
-                        (this_00,SOUND_MODE_1,(char *)0x0,0x4b7,(SoundPosition *)0x0,0);
+              SoundClassTy::PlaySound(this_00,SOUND_MODE_1,(char *)0x0,0x4b7,(SoundPosition *)0x0,0)
+              ;
             }
           }
           iVar1 = iVar1 + 1;

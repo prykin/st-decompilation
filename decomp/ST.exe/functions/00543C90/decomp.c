@@ -26,7 +26,7 @@ void __thiscall CursorClassTy::DrawSprite(CursorClassTy *this,int param_1,int pa
     iVar5 = 0;
   }
   else {
-    iVar5 = FUN_006b33f0((AnonShape_006B1B10_121F236C *)this->field_0060,(uint)this->field_001C);
+    iVar5 = FUN_006b33f0((DDXContext_008075A8 *)this->field_0060,(uint)this->field_001C);
   }
   if (iVar5 != 0) {
     local_54.previous = g_currentExceptionFrame;
@@ -56,7 +56,7 @@ void __thiscall CursorClassTy::DrawSprite(CursorClassTy *this,int param_1,int pa
         }
         else {
           Library::DKW::DDX::FUN_006b3640
-                    ((int *)PTR_008075a8,(uint)local_c->field_001C,local_c->field_0020,
+                    ((int *)g_ddxContext_008075A8,(uint)local_c->field_001C,local_c->field_0020,
                      local_c->field_00B9 + local_c->field_0034,
                      local_c->field_00BD + local_c->field_0038);
         }
@@ -83,8 +83,8 @@ void __thiscall CursorClassTy::DrawSprite(CursorClassTy *this,int param_1,int pa
                pCVar4->field_04EB->field_0020 - *(int *)((int)pCVar4->field_04E7 + 0xd) / 2;
           pSVar1 = pCVar4->field_04EB;
           Library::DKW::DDX::FUN_006b3730
-                    ((uint *)PTR_008075a8,pSVar1->field_0004,pSVar1->field_0008,pSVar1->field_001C,
-                     pSVar1->field_0020);
+                    ((uint *)g_ddxContext_008075A8,pSVar1->field_0004,pSVar1->field_0008,
+                     pSVar1->field_001C,pSVar1->field_0020);
         }
       }
       g_currentExceptionFrame = local_54.previous;

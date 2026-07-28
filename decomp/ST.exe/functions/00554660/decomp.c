@@ -27,14 +27,14 @@ void __thiscall cLoadingTy::ShowScr(cLoadingTy *this,int param_1,int param_2)
   g_currentExceptionFrame = &local_4c;
   iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar4 == 0) {
-    FUN_006b0a20(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,(int)local_44c,0,0x100,0);
-    FUN_006b5f80((int *)PTR_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
+    FUN_006b0a20((AnonShape_GLOBAL_0080759C_9638EF10 *)g_dDXContext_0080759C,(int)local_44c,0,0x100,
+                 0);
+    FUN_006b5f80((int *)g_ddxContext_008075A8,0,0,g_nWidth_00806730,DAT_00806734);
     pcVar2 = local_8;
-    FUN_006b4640(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0,0,(BITMAPINFO *)local_8->field_0000
-                 ,(uint *)0x0);
-    Library::DKW::DDX::FUN_006bb370(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0,0);
-    thunk_FUN_0055ddf0((undefined4 *)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,
-                       (int *)PTR_008075a8,(ushort *)pcVar2->field_0000,param_1,param_2);
+    FUN_006b4640(g_dDXContext_0080759C,0,0,(BITMAPINFO *)local_8->field_0000,(uint *)0x0);
+    Library::DKW::DDX::FUN_006bb370(g_dDXContext_0080759C,0,0);
+    thunk_FUN_0055ddf0((undefined4 *)g_dDXContext_0080759C,(int *)g_ddxContext_008075A8,
+                       (ushort *)pcVar2->field_0000,param_1,param_2);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }

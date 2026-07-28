@@ -457,7 +457,8 @@ LAB_004fd533:
       uVar7 = this_00->field_00A8;
       uVar12 = this_00->field_0050;
 cf_common_exit_004FD606:
-      Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,(uint)puVar6,0xffffffff,uVar12,uVar7);
+      Library::DKW::DDX::FUN_006b3640
+                ((int *)g_ddxContext_008075A8,(uint)puVar6,0xffffffff,uVar12,uVar7);
       break;
     case 0xb220:
     case 0xb221:
@@ -1322,8 +1323,8 @@ LAB_004fbaa0:
         do {
           if (-1 < (int)*ppuVar16) {
             Library::DKW::DDX::FUN_006b3640
-                      ((int *)PTR_008075a8,(uint)*ppuVar16,0xffffffff,(uint)ppuVar16[-0x43],
-                       (uint)ppuVar16[-0x2d]);
+                      ((int *)g_ddxContext_008075A8,(uint)*ppuVar16,0xffffffff,(uint)ppuVar16[-0x43]
+                       ,(uint)ppuVar16[-0x2d]);
           }
           bVar14 = bVar14 + 1;
           ppuVar16 = ppuVar16 + 1;
@@ -1360,8 +1361,8 @@ LAB_004fbaa0:
         do {
           if (-1 < (int)*ppuVar16) {
             Library::DKW::DDX::FUN_006b3640
-                      ((int *)PTR_008075a8,(uint)*ppuVar16,0xffffffff,(uint)ppuVar16[-0x43],
-                       (uint)ppuVar16[-0x2d]);
+                      ((int *)g_ddxContext_008075A8,(uint)*ppuVar16,0xffffffff,(uint)ppuVar16[-0x43]
+                       ,(uint)ppuVar16[-0x2d]);
           }
           bVar14 = bVar14 + 1;
           ppuVar16 = ppuVar16 + 1;
@@ -1379,7 +1380,8 @@ LAB_004fbaa0:
         uVar12 = this_00->field_00EC;
         uVar22 = this_00->field_0174;
 LAB_004fb69f:
-        Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,uVar22,0xffffffff,uVar12,uVar7);
+        Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,uVar22,0xffffffff,uVar12,uVar7)
+        ;
       }
       else if (DAT_0080c4d3 == 4) {
         if (this_00->field_0120 - this_00->field_00F8 < this_00->field_00F0) {
@@ -1401,7 +1403,8 @@ LAB_004fb69f:
         if (this_00->field_0110 != uVar7) {
           this_00->field_0110 = uVar7;
           Library::DKW::DDX::FUN_006b3640
-                    ((int *)PTR_008075a8,this_00->field_017C,0xffffffff,this_00->field_010C,uVar7);
+                    ((int *)g_ddxContext_008075A8,this_00->field_017C,0xffffffff,this_00->field_010C
+                     ,uVar7);
           uVar7 = this_00->field_0110 - this_00->field_0108;
           if (this_00->field_0100 != uVar7) {
 LAB_004fb8d0:
@@ -1415,7 +1418,8 @@ LAB_004fb8d0:
         if (this_00->field_0110 != uVar7) {
           this_00->field_0110 = uVar7;
           Library::DKW::DDX::FUN_006b3640
-                    ((int *)PTR_008075a8,this_00->field_017C,0xffffffff,this_00->field_010C,uVar7);
+                    ((int *)g_ddxContext_008075A8,this_00->field_017C,0xffffffff,this_00->field_010C
+                     ,uVar7);
           uVar7 = this_00->field_0110 - this_00->field_0108;
           if (this_00->field_0100 != uVar7) goto LAB_004fb8d0;
         }
@@ -1430,10 +1434,10 @@ LAB_004fb8d0:
           DAT_0080c4f7 = 1;
         }
         Library::DKW::DDX::FUN_006b3640
-                  ((int *)PTR_008075a8,this_00->field_017C,0xffffffff,this_00->field_010C,
+                  ((int *)g_ddxContext_008075A8,this_00->field_017C,0xffffffff,this_00->field_010C,
                    this_00->field_0110);
         if (DAT_0080c4f7 == 2) {
-          FUN_006b3af0((int *)PTR_008075a8,this_00->field_017C);
+          FUN_006b3af0((int *)g_ddxContext_008075A8,this_00->field_017C);
         }
         iVar5 = this_00->field_0110 - this_00->field_0108;
         if (iVar5 < this_00->field_0100) {
@@ -1455,7 +1459,7 @@ LAB_004fb8d0:
           DAT_0080c4f7 = 2;
         }
         Library::DKW::DDX::FUN_006b3640
-                  ((int *)PTR_008075a8,this_00->field_017C,0xffffffff,this_00->field_010C,
+                  ((int *)g_ddxContext_008075A8,this_00->field_017C,0xffffffff,this_00->field_010C,
                    this_00->field_0110);
         iVar5 = this_00->field_0110 - this_00->field_0108;
         if (this_00->field_0100 < iVar5) {
@@ -1469,11 +1473,12 @@ LAB_004fb8d7:
         uVar12 = this_00->field_00FC;
         uVar22 = this_00->field_0178;
 LAB_004fb8ee:
-        Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,uVar22,0xffffffff,uVar12,uVar7);
+        Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,uVar22,0xffffffff,uVar12,uVar7)
+        ;
       }
-      iVar5 = FUN_006b33f0(PTR_008075a8,this_00->field_0178);
+      iVar5 = FUN_006b33f0(g_ddxContext_008075A8,this_00->field_0178);
       if ((iVar5 != 0) && (this_00->field_0247 + this_00->field_0243 <= this_00->field_09A0)) {
-        FUN_006b3af0((int *)PTR_008075a8,this_00->field_0178);
+        FUN_006b3af0((int *)g_ddxContext_008075A8,this_00->field_0178);
       }
       break;
     case MESS_ID_CREATE:
@@ -1488,7 +1493,7 @@ LAB_004fb8ee:
       do {
         if (-1 < (int)*ppuVar16) {
           Library::DKW::DDX::FUN_006b3640
-                    ((int *)PTR_008075a8,(uint)*ppuVar16,0xffffffff,(uint)ppuVar16[-0x43],
+                    ((int *)g_ddxContext_008075A8,(uint)*ppuVar16,0xffffffff,(uint)ppuVar16[-0x43],
                      (uint)ppuVar16[-0x2d]);
         }
         local_d = local_d + 1;

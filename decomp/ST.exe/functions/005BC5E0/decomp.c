@@ -151,7 +151,7 @@ LAB_005bccb9:
             FUN_006b5b10((AnonShape_006E6FB0_BC494FEA *)this_00->field_1C8E,0,iVar10,uVar18 + 0x19,
                          iVar10,uVar18 + 0x28,9,0xd);
           }
-          FUN_006b35d0((int *)PTR_008075a8,this_00->field_1C8A);
+          FUN_006b35d0((int *)g_ddxContext_008075A8,this_00->field_1C8A);
         }
         else if (SVar3 == MESS_SHARED_64FF) {
           this_00->field_1A71 = 0;
@@ -213,7 +213,7 @@ LAB_005bccb9:
       }
       uVar18 = (uint)(message->arg1).words.high;
       Library::DKW::DDX::FUN_006b3640
-                ((int *)PTR_008075a8,(&this_00->field_1C2A)[uVar18 / 0x13],0xfffffffe,0x7a,
+                ((int *)g_ddxContext_008075A8,(&this_00->field_1C2A)[uVar18 / 0x13],0xfffffffe,0x7a,
                  uVar18 + 0x67);
       break;
     case MESS_SIDTY_8163:
@@ -350,10 +350,10 @@ cf_common_exit_005BCD75:
       this_00->field_0065 = CASE_5;
       this_00->field_1A60 = 0;
       local_8 = 0xffffffff;
-      Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,this_00->field_1C8A);
-      FUN_006b2330(PTR_008075a8,&local_8,0x32,0x402f13,0x22e,0x2e,
+      Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,this_00->field_1C8A);
+      FUN_006b2330(g_ddxContext_008075A8,&local_8,0x32,0x402f13,0x22e,0x2e,
                    (ushort *)&this_00->field_1A5B->field_0140);
-      Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,local_8,0xffffffff,0x79,0x197);
+      Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,local_8,0xffffffff,0x79,0x197);
       pHVar11 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
       if (pHVar11 == (HoloTy *)0x0) {
         pHVar11 = (HoloTy *)0x0;
@@ -365,8 +365,8 @@ cf_common_exit_005BCD75:
         pHVar11->field_0001 = CASE_2;
         pHVar11->field_0007 = 0;
         pHVar11->field_000B = (void *)0x0;
-        *(undefined4 *)&pHVar11->field_0xf = 0;
-        *(undefined4 *)&pHVar11->field_0x1b = 1;
+        pHVar11->field_000F = 0;
+        pHVar11->field_001B = 1;
         pHVar11->field_0013 = 1;
         pHVar11->field_0017 = -1;
         pHVar11->field_0027 = 0;
@@ -380,7 +380,8 @@ cf_common_exit_005BCD75:
         cVar17 = '\x01';
         bVar16 = 0x10;
         iVar13 = 1;
-        iVar10 = Library::DKW::DDX::FUN_006bf9f0((int *)PTR_008075a8,0x79,0x197,0x22e,0x2e);
+        iVar10 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,0x79,0x197,0x22e,0x2e)
+        ;
         uVar18 = HoloTy::Init(this_00->field_1C9A,CASE_1,0x79,0x197,iVar10,iVar13,bVar16,cVar17,
                               uVar18);
         if (uVar18 != 0) {
@@ -389,13 +390,13 @@ cf_common_exit_005BCD75:
           pHVar11->field_0017 = pHVar11->field_0013;
           uVar18 = this_00->field_1C9A->field_0003;
           if (-1 < (int)uVar18) {
-            Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,uVar18);
+            Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar18);
           }
-          FUN_006b3af0((int *)PTR_008075a8,this_00->field_1C8A);
+          FUN_006b3af0((int *)g_ddxContext_008075A8,this_00->field_1C8A);
         }
       }
       if (local_8 != 0xffffffff) {
-        FUN_006b3bb0((int *)PTR_008075a8,local_8);
+        FUN_006b3bb0((int *)g_ddxContext_008075A8,local_8);
       }
     }
   }

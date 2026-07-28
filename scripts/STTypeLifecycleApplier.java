@@ -9,6 +9,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -30,6 +31,7 @@ public class STTypeLifecycleApplier extends GhidraScript {
     private static final String ANCHOR = "[ST_SEMANTIC_ANCHOR]";
     private final List<Report> report = new ArrayList<>();
     private DataTypeManager manager;
+    private Map<String, Integer> receiverOwnerCounts;
 
     @Override
     protected void run() throws Exception {
@@ -87,7 +89,15 @@ public class STTypeLifecycleApplier extends GhidraScript {
             }
             if ("replace".equals(row.get("action"))) {
                 DataType replacement = manager.getDataType(row.get("replacement_path"));
+                boolean hiddenReceiverFamily =
+                    row.get("reason").equals(
+                        "unique namespace-backed HiddenThis receiver family") &&
+                    hiddenThis(type) && hiddenThis(replacement) &&
+                    replacement != null && type.isEquivalent(replacement) &&
+                    ownedReceiverFunctions(type) == 0 &&
+                    ownedReceiverFunctions(replacement) >= 2;
                 if (replacement == null ||
+                        !hiddenReceiverFamily &&
                         !text(replacement.getDescription()).contains(ANCHOR) ||
                         !type.isEquivalent(replacement)) {
                     report.add(new Report("replace", path, "preserved",
@@ -151,6 +161,30 @@ public class STTypeLifecycleApplier extends GhidraScript {
         if (actual instanceof Pointer pointer && pointer.getDataType() != null)
             return uses(pointer.getDataType(), wanted);
         return actual.dependsOn(wanted);
+    }
+    private boolean hiddenThis(DataType type) {
+        return type instanceof Structure &&
+            type.getPathName().startsWith(
+                "/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_") &&
+            text(type.getDescription()).contains("[STHiddenThisApplier generated]");
+    }
+    private int ownedReceiverFunctions(DataType type) {
+        if (type == null) return 0;
+        if (receiverOwnerCounts == null) {
+            receiverOwnerCounts = new HashMap<>();
+            FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
+            while (functions.hasNext()) {
+                Function function = functions.next();
+                String qualified = function.getName(true);
+                int separator = qualified.lastIndexOf("::");
+                if (separator <= 0) continue;
+                String owner = qualified.substring(0, separator);
+                int leaf = owner.lastIndexOf("::");
+                receiverOwnerCounts.merge(
+                    leaf < 0 ? owner : owner.substring(leaf + 2), 1, Integer::sum);
+            }
+        }
+        return receiverOwnerCounts.getOrDefault(type.getName(), 0);
     }
     private boolean removalProvenance(String description) {
         return description.contains("[STRecoveredTypesApplier]") ||

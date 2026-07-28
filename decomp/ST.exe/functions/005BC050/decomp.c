@@ -53,7 +53,7 @@ void __thiscall PrividerTy::DeleteCtrls(PrividerTy *this,char param_1)
     }
     pPVar3->field_1A73 = 0;
     pPVar3->field_1A61 = 0;
-    FUN_006b5f80((int *)PTR_008075a8,0x79,0x51,0x22e,0x145);
+    FUN_006b5f80((int *)g_ddxContext_008075A8,0x79,0x51,0x22e,0x145);
     if (pPVar3->field_1C96 != (HoloTy *)0x0) {
       HoloTy::Done(pPVar3->field_1C96);
       Library::MSVCRT::FUN_0072e2b0(pPVar3->field_1C96);
@@ -70,8 +70,8 @@ void __thiscall PrividerTy::DeleteCtrls(PrividerTy *this,char param_1)
       pHVar5->field_0001 = CASE_2;
       pHVar5->field_0007 = 0;
       pHVar5->field_000B = (void *)0x0;
-      *(undefined4 *)&pHVar5->field_0xf = 0;
-      *(undefined4 *)&pHVar5->field_0x1b = 1;
+      pHVar5->field_000F = 0;
+      pHVar5->field_001B = 1;
       pHVar5->field_0013 = 1;
       pHVar5->field_0017 = -1;
       pHVar5->field_0027 = 0;
@@ -85,7 +85,7 @@ void __thiscall PrividerTy::DeleteCtrls(PrividerTy *this,char param_1)
       cVar10 = '\x01';
       bVar9 = 0x10;
       iVar8 = 1;
-      iVar4 = Library::DKW::DDX::FUN_006bf9f0((int *)PTR_008075a8,0x79,0x51,0x22e,0x145);
+      iVar4 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,0x79,0x51,0x22e,0x145);
       uVar11 = HoloTy::Init(pPVar3->field_1C96,CASE_2,0x79,0x51,iVar4,iVar8,bVar9,cVar10,uVar11);
       if (uVar11 != 0) {
         pHVar5 = pPVar3->field_1C96;
@@ -93,7 +93,7 @@ void __thiscall PrividerTy::DeleteCtrls(PrividerTy *this,char param_1)
         pHVar5->field_0017 = -1;
         uVar11 = pPVar3->field_1C96->field_0003;
         if (-1 < (int)uVar11) {
-          Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,uVar11);
+          Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar11);
         }
         HoloTy::NextFas(pPVar3->field_1C96);
       }
@@ -112,7 +112,7 @@ void __thiscall PrividerTy::DeleteCtrls(PrividerTy *this,char param_1)
     puVar7 = &pPVar3->field_1C2A;
     local_8 = 0x16;
     do {
-      FUN_006b3af0((int *)PTR_008075a8,*puVar7);
+      FUN_006b3af0((int *)g_ddxContext_008075A8,*puVar7);
       puVar7 = puVar7 + 1;
       local_8 = local_8 + -1;
     } while (local_8 != 0);
@@ -135,7 +135,7 @@ void __thiscall PrividerTy::DeleteCtrls(PrividerTy *this,char param_1)
   if (pPVar3->field_1C86 != 0) {
     StartSystemTy::sub_006E56B0(pPVar3->field_000C,pPVar3->field_1C86);
     pPVar3->field_1C86 = 0;
-    FUN_006b5f80((int *)PTR_008075a8,0x79,0x197,0x22e,0x2e);
+    FUN_006b5f80((int *)g_ddxContext_008075A8,0x79,0x197,0x22e,0x2e);
     if (pPVar3->field_1C9A != (HoloTy *)0x0) {
       HoloTy::Done(pPVar3->field_1C9A);
       Library::MSVCRT::FUN_0072e2b0(pPVar3->field_1C9A);
@@ -152,8 +152,8 @@ void __thiscall PrividerTy::DeleteCtrls(PrividerTy *this,char param_1)
       pHVar5->field_0001 = CASE_2;
       pHVar5->field_0007 = 0;
       pHVar5->field_000B = (void *)0x0;
-      *(undefined4 *)&pHVar5->field_0xf = 0;
-      *(undefined4 *)&pHVar5->field_0x1b = 1;
+      pHVar5->field_000F = 0;
+      pHVar5->field_001B = 1;
       pHVar5->field_0013 = 1;
       pHVar5->field_0017 = -1;
       pHVar5->field_0027 = 0;
@@ -167,7 +167,7 @@ void __thiscall PrividerTy::DeleteCtrls(PrividerTy *this,char param_1)
       cVar10 = '\x01';
       bVar9 = 0x10;
       iVar8 = 1;
-      iVar4 = Library::DKW::DDX::FUN_006bf9f0((int *)PTR_008075a8,0x79,0x197,0x22e,0x2e);
+      iVar4 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,0x79,0x197,0x22e,0x2e);
       uVar11 = HoloTy::Init(pPVar3->field_1C9A,CASE_1,0x79,0x197,iVar4,iVar8,bVar9,cVar10,uVar11);
       if (uVar11 != 0) {
         pHVar5 = pPVar3->field_1C9A;
@@ -175,14 +175,14 @@ void __thiscall PrividerTy::DeleteCtrls(PrividerTy *this,char param_1)
         pHVar5->field_0017 = -1;
         uVar11 = pPVar3->field_1C9A->field_0003;
         if (-1 < (int)uVar11) {
-          Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,uVar11);
+          Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar11);
         }
         HoloTy::NextFas(pPVar3->field_1C9A);
       }
     }
     PutDDXClip(0x79,0x197,0x79,0x197,0x22e,(byte *)0x2e,'\x01',
                (BITMAPINFO *)g_startSystem_0081176C->field_002C);
-    FUN_006b3af0((int *)PTR_008075a8,pPVar3->field_1C8A);
+    FUN_006b3af0((int *)g_ddxContext_008075A8,pPVar3->field_1C8A);
   }
   if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
     if (g_cursorClass_00802A30->field_00A9 == 0) {

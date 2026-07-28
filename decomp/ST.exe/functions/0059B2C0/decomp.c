@@ -34,7 +34,7 @@ void __thiscall FSGSTy::PaintLadder(FSGSTy *this,int param_1)
     local_10 = this;
     iVar4 = Library::MSVCRT::__setjmp3(local_8c.jumpBuffer,0);
     if (iVar4 == 0) {
-      FUN_006b5f80((int *)PTR_008075a8,0x22,0x5e,0x2e1,0x175);
+      FUN_006b5f80((int *)g_ddxContext_008075A8,0x22,0x5e,0x2e1,0x175);
       pFVar2 = local_10;
       PutDDXClip(0x18a,0x90,0x168,0x32,100,(byte *)0x19,'\x01',local_10->field_1E92);
       wsprintfA((LPSTR)local_48,"%6d_:_%6d",pFVar2->field_1EDF,

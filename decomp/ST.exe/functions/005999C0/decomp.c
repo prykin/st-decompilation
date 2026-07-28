@@ -46,8 +46,9 @@ void __thiscall FSGSTy::PrepBkgMess(FSGSTy *this,char param_1)
                           iVar3);
     uVar4 = pFVar2->field_1ABC;
     *value = puVar5;
-    FUN_006b2410(PTR_008075a8,uVar4,(uint)puVar5);
-    FUN_006b2800(PTR_008075a8,pFVar2->field_1ABC,*(uint *)(*value + 2),*(uint *)(*value + 4));
+    FUN_006b2410(g_ddxContext_008075A8,uVar4,(uint)puVar5);
+    FUN_006b2800(g_ddxContext_008075A8,pFVar2->field_1ABC,*(uint *)(*value + 2),
+                 *(uint *)(*value + 4));
     if (param_1 == '\0') {
       uVar4 = 0xb4;
     }
@@ -55,9 +56,9 @@ void __thiscall FSGSTy::PrepBkgMess(FSGSTy *this,char param_1)
       uVar4 = (-(uint)(param_1 != '\x01') & 0xffffff6e) + 0xb4;
     }
     Library::DKW::DDX::FUN_006b3640
-              ((int *)PTR_008075a8,pFVar2->field_1ABC,0xffffffff,uVar4,
+              ((int *)g_ddxContext_008075A8,pFVar2->field_1ABC,0xffffffff,uVar4,
                (-(uint)(param_1 != '\0') & 0xffffffb4) + 0xaa);
-    FUN_006b3af0((int *)PTR_008075a8,pFVar2->field_1ABC);
+    FUN_006b3af0((int *)g_ddxContext_008075A8,pFVar2->field_1ABC);
     pFVar2->field_1ABB = param_1;
     g_currentExceptionFrame = local_54.previous;
     return;

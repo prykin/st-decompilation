@@ -98,8 +98,7 @@ int __thiscall STLightC::GetMessage(STLightC *this,STMessage *message)
         local_1c.unknown = this_00->field_0018;
         iVar5 = 0x475;
       }
-      SoundClassTy::PlaySound_thunk
-                ((SoundClassTy *)&g_sound,SOUND_MODE_2,(char *)0x0,iVar5,&local_1c,0);
+      SoundClassTy::PlaySound((SoundClassTy *)&g_sound,SOUND_MODE_2,(char *)0x0,iVar5,&local_1c,0);
       iVar5 = this_00->field_004F + 1;
       this_00->field_004F = iVar5;
       if (this_00->field_005F * 4 <= iVar5) {

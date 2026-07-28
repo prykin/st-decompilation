@@ -52,8 +52,8 @@ int FUN_006b3120(uint *param_1,uint *param_2)
             if (local_8 != 0) {
               return local_8;
             }
-            iVar6 = FUN_006b33f0((AnonShape_006B1B10_121F236C *)param_1,
-                                 *(uint *)(param_2[0x34] + iVar7 * 4));
+            iVar6 = FUN_006b33f0((DDXContext_008075A8 *)param_1,*(uint *)(param_2[0x34] + iVar7 * 4)
+                                );
             if ((iVar6 == 0) &&
                (local_8 = Library::DKW::DDX::FUN_006b3430
                                     ((int *)param_1,*(uint *)(param_2[0x34] + iVar7 * 4)),

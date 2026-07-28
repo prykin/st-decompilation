@@ -61,7 +61,7 @@ UPanelTy::PaintIBut(UPanelTy *this,AnonShape_0053DAF0_3BDC2979 *param_1,char *pa
     resourceString = (uint *)LoadResourceString(param_3,g_module_00807618);
     ccFntTy::WrStr(*(ccFntTy **)&PTR_00802a28->field_0x24,resourceString,iVar7,iVar9,uVar5);
     Library::DKW::DDX::FUN_006b3640
-              ((int *)PTR_008075a8,pUVar2->field_0060,0xffffffff,pUVar2->field_003C,
+              ((int *)g_ddxContext_008075A8,pUVar2->field_0060,0xffffffff,pUVar2->field_003C,
                pUVar2->field_0044);
     g_currentExceptionFrame = local_58.previous;
     return;

@@ -56,9 +56,10 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
       iVar9 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006CEC40::FUN_006d63e0
                         (local_10,param_1);
       local_8 = iVar9;
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       Library::DKW::DDX::FUN_006bb370
-                (*(AnonShape_GLOBAL_0080759C_9638EF10 **)
-                  (*(int *)&((AnonReceiver_006CEC40 *)this)->field_0x288 + 0x28),0,0);
+                (*(DDXContext **)(*(int *)&((AnonReceiver_006CEC40 *)this)->field_0x288 + 0x28),0,0)
+      ;
       g_currentExceptionFrame = local_98.previous;
     }
     else {
@@ -130,9 +131,7 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
         if ((*(uint *)(iVar3 + 8) & 0x4000000) != 0) {
           LeaveCriticalSection((LPCRITICAL_SECTION)(iVar3 + 0x4f0));
         }
-        Library::DKW::DDX::FUN_006bb370
-                  (*(AnonShape_GLOBAL_0080759C_9638EF10 **)(*(int *)((int)this + 0x288) + 0x28),0,0)
-        ;
+        Library::DKW::DDX::FUN_006bb370(*(DDXContext **)(*(int *)((int)this + 0x288) + 0x28),0,0);
       }
       else {
         if (*(int *)((int)this + 0x300) != 0) {
@@ -152,8 +151,7 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
         if (iVar9 == 0) {
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           Library::DKW::DDX::FUN_006bb370
-                    (*(AnonShape_GLOBAL_0080759C_9638EF10 **)(*(int *)&local_10->field_0x288 + 0x28)
-                     ,0,0);
+                    (*(DDXContext **)(*(int *)&local_10->field_0x288 + 0x28),0,0);
           g_currentExceptionFrame = local_dc.previous;
           iVar9 = local_8;
         }

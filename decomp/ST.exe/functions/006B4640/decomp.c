@@ -1,13 +1,12 @@
 
-/* [STPrototypeApplier] Propagated parameter 0.
+/* [STPrototypeRepairApplier] Propagated parameter 0.
    Evidence: 004F1390 -> 006B4640 @ 004F13CD; CPanelTy::OutProc parameter param_1 | 005403C0 ->
    006B4640 @ 00540458; data at 0080759C | 0054BE70 -> 006B4640 @ 0054BEAD; CPanelTy::OutProc
    parameter param_1 | 00554660 -> 006B4640 @ 005546EC; data at 0080759C | 00554800 -> 006B4640 @
    0055495C; data at 0080759C | 005939E0 -> 006B4640 @ 00593A9E; ComboTy::OutBmpProc parameter
    param_1 | 005C7800 -> 006B4640 @ 005C7911; data at 0080759C | 006B4640 -> 006B42D0 @ 006B4668 */
 
-void FUN_006b4640(AnonShape_GLOBAL_0080759C_9638EF10 *param_1,int param_2,int param_3,
-                 BITMAPINFO *param_4,uint *param_5)
+void FUN_006b4640(DDXContext *param_1,int param_2,int param_3,BITMAPINFO *param_4,uint *param_5)
 
 {
   uint uVar1;

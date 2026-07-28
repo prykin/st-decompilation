@@ -147,8 +147,8 @@ LAB_00500d40:
 joined_r0x00500e7c:
             if (-1 < (int)puVar2) {
               Library::DKW::DDX::FUN_006b3640
-                        ((int *)PTR_008075a8,(uint)puVar2,0xffffffff,(&pCVar4->field_003C)[uVar7],
-                         (&pCVar4->field_0094)[uVar7]);
+                        ((int *)g_ddxContext_008075A8,(uint)puVar2,0xffffffff,
+                         (&pCVar4->field_003C)[uVar7],(&pCVar4->field_0094)[uVar7]);
             }
           }
         }

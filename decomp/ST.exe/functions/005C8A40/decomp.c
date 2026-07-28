@@ -271,7 +271,7 @@ switchD_005c8bd0_caseD_611f:
                 this_00->field_1F5C = 3;
                 this_00->field_002D = 5;
                 FUN_006e6080(this_00,2,uVar18,(undefined4 *)&this_00->field_0x1d);
-                FUN_006b35d0((int *)PTR_008075a8,this_00->field_1F80);
+                FUN_006b35d0((int *)g_ddxContext_008075A8,this_00->field_1F80);
               }
             }
             else if (((uVar18 & 0xff) == 1) && (5 < this_00->field_1F5C)) {
@@ -279,7 +279,7 @@ switchD_005c8bd0_caseD_611f:
               this_00->field_1F5C = 4;
               this_00->field_002D = 5;
               FUN_006e6080(this_00,2,uVar18,(undefined4 *)&this_00->field_0x1d);
-              FUN_006b35d0((int *)PTR_008075a8,this_00->field_1F80);
+              FUN_006b35d0((int *)g_ddxContext_008075A8,this_00->field_1F80);
             }
 cf_common_join_005C8ECC:
             this_00->field_1F47 = 0;
@@ -318,7 +318,7 @@ cf_common_join_005C8ECC:
         this_00->field_002D = 5;
         FUN_006e6080(this_00,2,this_00->field_1F60[(message->arg1).u32],
                      (undefined4 *)&this_00->field_0x1d);
-        FUN_006b35d0((int *)PTR_008075a8,this_00->field_1F80);
+        FUN_006b35d0((int *)g_ddxContext_008075A8,this_00->field_1F80);
       }
       else if (SVar4 == MESS_SETTMAPTY_6500) {
         ccFntTy::SetSurf(g_startSystem_0081176C->field_0034,(message->arg1).i32,0,0,0,0,0);
@@ -1546,7 +1546,7 @@ LAB_005ca73b:
       uVar18 = (-(uint)(wVar3 != 0) & 2) + 1;
     }
     ccFntTy::WrStr(g_startSystem_0081176C->field_0034,local_98,-1,-1,uVar18);
-    FUN_006b35d0((int *)PTR_008075a8,this_00->field_1F80);
+    FUN_006b35d0((int *)g_ddxContext_008075A8,this_00->field_1F80);
     if ((message->arg0).words.low == 3) goto LAB_005ca964;
     break;
   case MESS_SHARED_6980|MESS_SHARED_0005:
@@ -1782,7 +1782,7 @@ cf_common_exit_005CAE0F:
   case 0x658c:
     if (DAT_00808aaa != '\0') goto LAB_005cadd5;
   }
-  FUN_006b35d0((int *)PTR_008075a8,this_00->field_1E22);
+  FUN_006b35d0((int *)g_ddxContext_008075A8,this_00->field_1E22);
   if ((message->arg0).words.low == 3) {
     thunk_FUN_005b6730(this_00,9,'\x01',-1);
   }

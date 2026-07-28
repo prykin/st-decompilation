@@ -37,7 +37,7 @@ STAllPlayersC::_AssignDocks(STAllPlayersC *this,char param_1,DArrayTy *param_2,D
   InternalExceptionFrame local_c8;
   dword local_84;
   DArrayTy *local_80;
-  int *local_7c;
+  AnonShape_00440AA0_D2D43F84 *local_7c;
   DArrayTy *local_78;
   int local_74;
   DArrayTy *local_70;
@@ -172,10 +172,10 @@ LAB_00440c19:
       uVar15 = local_1c;
       DArrayGetElement(local_80,local_1c,&local_7c);
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      if (((local_7c != (int *)0x0) && (iVar4 = (**(code **)(*local_7c + 0xc))(), iVar4 == 4)) &&
-         (*(short *)((int)local_7c + 0x27) != 0)) {
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        local_6c = *(DArrayTy **)((int)local_7c + 0x29);
+      if (((local_7c != (AnonShape_00440AA0_D2D43F84 *)0x0) &&
+          (iVar4 = (**(code **)(*(int *)local_7c + 0xc))(), iVar4 == 4)) &&
+         (local_7c->field_0027 != 0)) {
+        local_6c = local_7c->field_0029;
         local_2c = 0;
         local_78 = (DArrayTy *)local_6c->count;
         if (0 < (int)local_78) {

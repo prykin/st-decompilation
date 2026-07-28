@@ -65,7 +65,7 @@ StartSystemTy::PaintBinDesc(StartSystemTy *this,AnonShape_005DE050_5BD86458 *par
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         } while ((int)uVar7 < (int)(*(int *)(local_c + 0x1e0) + uVar5));
       }
-      FUN_006b35d0((int *)PTR_008075a8,pSVar4->field_0540);
+      FUN_006b35d0((int *)g_ddxContext_008075A8,pSVar4->field_0540);
       g_currentExceptionFrame = local_54.previous;
       return;
     }

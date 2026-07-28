@@ -119,7 +119,8 @@ cf_common_exit_00502155:
   }
   if (-1 < (int)puVar2) {
     Library::DKW::DDX::FUN_006b3640
-              ((int *)PTR_008075a8,(uint)puVar2,0xffffffff,this_00->field_0048,this_00->field_00A0);
+              ((int *)g_ddxContext_008075A8,(uint)puVar2,0xffffffff,this_00->field_0048,
+               this_00->field_00A0);
   }
 switchD_0050207d_default:
   g_currentExceptionFrame = local_a8.previous;

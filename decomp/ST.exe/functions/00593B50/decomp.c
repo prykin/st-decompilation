@@ -143,10 +143,11 @@ void __thiscall ComboTy::InitCombo(ComboTy *this,undefined4 *param_1)
                  this_00->field_00F8 + -4,(byte)this_00->field_00DC,0xd);
     puVar6 = &this_00->field_0108;
     local_c = puVar6;
-    FUN_006b2330(PTR_008075a8,puVar6,2,0x401712,this_00->field_00FC->field_0004 + 3,
+    FUN_006b2330(g_ddxContext_008075A8,puVar6,2,0x401712,this_00->field_00FC->field_0004 + 3,
                  this_00->field_00FC->field_0008 + 3,(ushort *)&this_00->field_0x88);
     Library::DKW::DDX::FUN_006b3640
-              ((int *)PTR_008075a8,*puVar6,0xffffffff,this_00->field_00EC - 3,this_00->field_00F0);
+              ((int *)g_ddxContext_008075A8,*puVar6,0xffffffff,this_00->field_00EC - 3,
+               this_00->field_00F0);
     puVar1 = &this_00->field_0x18;
     memset((void *)puVar1, 0, 0x20); /* compiler bulk-zero initialization */
     iVar3 = 0;
@@ -206,7 +207,7 @@ void __thiscall ComboTy::InitCombo(ComboTy *this,undefined4 *param_1)
     this_00->field_002C = (ComboTy *)this_00->field_00C8;
     FUN_006e6080(this_00,2,this_00->field_010C,(undefined4 *)puVar1);
     this_00->field_0110 = 1;
-    FUN_006b35d0((int *)PTR_008075a8,*local_c);
+    FUN_006b35d0((int *)g_ddxContext_008075A8,*local_c);
     g_currentExceptionFrame = local_54.previous;
     return;
   }

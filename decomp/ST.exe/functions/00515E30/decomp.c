@@ -121,7 +121,7 @@ LAB_005160da:
             ((int)this_00->field_0068,0,0x21,(ushort)this_00->field_01AF + 0x16,
              (int)this_00->field_0218,0,0,0,0x19c,0x117 - (uint)(ushort)this_00->field_01AF,0xff);
   Library::DKW::DDX::FUN_006b3640
-            ((int *)PTR_008075a8,this_00->field_0060,0xffffffff,this_00->field_003C,
+            ((int *)g_ddxContext_008075A8,this_00->field_0060,0xffffffff,this_00->field_003C,
              this_00->field_0044);
   g_currentExceptionFrame = local_88.previous;
   return;

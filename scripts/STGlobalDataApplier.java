@@ -8,6 +8,7 @@ import java.io.File;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.security.MessageDigest;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -16,11 +17,16 @@ import java.util.Map;
 
 import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
+import ghidra.program.model.data.CategoryPath;
 import ghidra.program.model.data.DataType;
+import ghidra.program.model.data.DataTypeComponent;
+import ghidra.program.model.data.DataTypeConflictHandler;
 import ghidra.program.model.data.DataTypeManager;
 import ghidra.program.model.data.DataUtilities;
 import ghidra.program.model.data.Pointer;
 import ghidra.program.model.data.PointerDataType;
+import ghidra.program.model.data.Structure;
+import ghidra.program.model.data.StructureDataType;
 import ghidra.program.model.data.Undefined;
 import ghidra.program.model.listing.CommentType;
 import ghidra.program.model.listing.Data;
@@ -96,6 +102,8 @@ public class STGlobalDataApplier extends GhidraScript {
             boolean changed = false, preserved = false, conflict = false;
             if (typeApply) {
                 DataType proposed = resolveType(unt(row.get("proposed_type")));
+                if (proposed == null && baseline && (!concreteData || scriptOwned))
+                    proposed = materializeLibraryContext(row, data);
                 if (proposed == null) {
                     details.add("type=conflict(missing proposed type)"); conflict = true;
                 }
@@ -140,6 +148,173 @@ public class STGlobalDataApplier extends GhidraScript {
         }
         catch (Exception exception) {
             report.add(new ReportRow(addr(address), "conflict", proposedName, message(exception)));
+        }
+    }
+
+    /**
+     * A dominant statically linked library family can identify an otherwise
+     * anonymous global context.  Clone only the script-owned observed layout;
+     * no new fields are invented and a stale/manual global is still rejected by
+     * the normal baseline checks below.
+     */
+    private DataType materializeLibraryContext(Map<String, String> row, Data current)
+            throws Exception {
+        String specification = unt(row.get("proposed_type"));
+        String prefix = "pointer:/SubmarineTitans/Recovered/LibraryContexts/";
+        if (!specification.startsWith(prefix) ||
+                !unt(row.get("reason")).contains("dominant_library_context=") ||
+                !(current.getDataType() instanceof Pointer pointer) ||
+                !(pointer.getDataType() instanceof Structure source) ||
+                !anonymousStructure(source)) return null;
+        String path = specification.substring("pointer:".length());
+        DataType existing = dataTypes.getDataType(path);
+        Structure target;
+        if (existing instanceof Structure structure) {
+            String description = structure.getDescription();
+            if (description == null || !description.contains(MARKER) ||
+                    structure.getLength() < source.getLength() ||
+                    !structure.isEquivalent(source) &&
+                    !description.contains("from " + source.getPathName())) return null;
+            target = structure;
+        }
+        else {
+            if (existing != null) return null;
+            int separator = path.lastIndexOf('/');
+            if (separator <= 0 || separator == path.length() - 1) return null;
+            StructureDataType created = new StructureDataType(
+                new CategoryPath(path.substring(0, separator)),
+                path.substring(separator + 1), source.getLength(), dataTypes);
+            for (DataTypeComponent component : source.getDefinedComponents()) {
+                String fieldName = component.getFieldName();
+                DataType fieldType = materializeLibraryEntry(path, component);
+                if (fieldType == null) fieldType = component.getDataType();
+                if (pointerDepth(fieldType) > 1 &&
+                        (fieldName == null || fieldName.isBlank() ||
+                         fieldName.matches("(?i)field_[0-9a-f]+")))
+                    fieldName = "entries_" + String.format("%04X",
+                        component.getOffset());
+                if (Undefined.isUndefined(fieldType) &&
+                        (fieldName == null || fieldName.isBlank())) continue;
+                created.replaceAtOffset(component.getOffset(), fieldType,
+                    component.getLength(), fieldName, component.getComment());
+            }
+            String description = MARKER + " Generated library-context view from " +
+                source.getPathName() + "; " + unt(row.get("reason"));
+            created.setDescription(description + "; generated_layout_sha256=" +
+                layoutHash(created));
+            DataType added = dataTypes.addDataType(created,
+                DataTypeConflictHandler.REPLACE_HANDLER);
+            if (!(added instanceof Structure structure)) return null;
+            target = structure;
+        }
+        return new PointerDataType(target, currentProgram.getDefaultPointerSize(), dataTypes);
+    }
+
+    /**
+     * A context member used as an indexed pointer table carries one more useful
+     * identity: its selected record layout.  Give that already observed nested
+     * generated structure a library-family name while preserving every field and
+     * pointer depth.  No new member or semantic role is invented here.
+     */
+    private DataType materializeLibraryEntry(String contextPath,
+            DataTypeComponent component) {
+        DataType type = component.getDataType();
+        int depth = pointerDepth(type);
+        if (depth < 2) return null;
+        DataType base = pointerBase(type);
+        if (!(base instanceof Structure source) || !anonymousStructure(source)) return null;
+        int separator = contextPath.lastIndexOf('/');
+        if (separator <= 0) return null;
+        String contextName = contextPath.substring(separator + 1);
+        String family = contextName;
+        String contextSuffix = "";
+        int contextMarker = contextName.indexOf("Context");
+        if (contextMarker > 0) {
+            family = contextName.substring(0, contextMarker);
+            contextSuffix = contextName.substring(contextMarker + "Context".length());
+        }
+        String entryPath = contextPath.substring(0, separator + 1) + family +
+            "Entry" + contextSuffix + "_" +
+            String.format("%04X", component.getOffset());
+        DataType existing = dataTypes.getDataType(entryPath);
+        Structure target;
+        if (existing instanceof Structure structure) {
+            String description = structure.getDescription();
+            if (description == null || !description.contains(MARKER) ||
+                    structure.getLength() < source.getLength()) return null;
+            target = structure;
+        }
+        else {
+            if (existing != null) return null;
+            StructureDataType created = new StructureDataType(
+                new CategoryPath(entryPath.substring(0, entryPath.lastIndexOf('/'))),
+                entryPath.substring(entryPath.lastIndexOf('/') + 1),
+                source.getLength(), dataTypes);
+            for (DataTypeComponent field : source.getDefinedComponents()) {
+                if (Undefined.isUndefined(field.getDataType()) &&
+                        (field.getFieldName() == null || field.getFieldName().isBlank()))
+                    continue;
+                created.replaceAtOffset(field.getOffset(), field.getDataType(),
+                    field.getLength(), field.getFieldName(), field.getComment());
+            }
+            created.setDescription(MARKER + " Generated library entry view from " +
+                source.getPathName() + "; generated_layout_sha256=" +
+                layoutHash(created));
+            DataType added = dataTypes.addDataType(created,
+                DataTypeConflictHandler.REPLACE_HANDLER);
+            if (!(added instanceof Structure structure)) return null;
+            target = structure;
+        }
+        DataType result = target;
+        for (int index = 0; index < depth; index++)
+            result = new PointerDataType(result,
+                currentProgram.getDefaultPointerSize(), dataTypes);
+        return result;
+    }
+
+    private int pointerDepth(DataType type) {
+        int depth = 0;
+        while (type instanceof Pointer pointer) {
+            depth++;
+            type = pointer.getDataType();
+        }
+        return depth;
+    }
+
+    private DataType pointerBase(DataType type) {
+        while (type instanceof Pointer pointer) type = pointer.getDataType();
+        return type;
+    }
+
+    private boolean anonymousStructure(Structure structure) {
+        String path = structure.getPathName();
+        String description = structure.getDescription();
+        return structure.getName().startsWith("Anon") ||
+            path.contains("/Recovered/PointerShapes/") ||
+            path.contains("/Recovered/ClassPointees/") ||
+            path.contains("/Recovered/HiddenThis/") ||
+            description != null && description.contains("Generated anonymous");
+    }
+
+    private String layoutHash(Structure structure) {
+        StringBuilder value = new StringBuilder();
+        value.append("length=").append(structure.getLength()).append('\n');
+        for (DataTypeComponent component : structure.getDefinedComponents()) {
+            value.append(component.getOffset()).append('|').append(component.getLength())
+                .append('|').append(component.getDataType().getPathName()).append('|')
+                .append(component.getFieldName() == null ? "" : component.getFieldName())
+                .append('|').append(component.getComment() == null ? "" :
+                    component.getComment()).append('\n');
+        }
+        try {
+            byte[] digest = MessageDigest.getInstance("SHA-256")
+                .digest(value.toString().getBytes(StandardCharsets.UTF_8));
+            StringBuilder result = new StringBuilder();
+            for (byte item : digest) result.append(String.format("%02x", item & 0xff));
+            return result.toString();
+        }
+        catch (Exception exception) {
+            throw new IllegalStateException(exception);
         }
     }
 

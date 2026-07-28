@@ -24,7 +24,7 @@ undefined4 __thiscall STAppC::CommonFunction(STAppC *this,int param_1)
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (errorCode == 0) {
     if (DAT_0080674c == 0) {
-      Library::DKW::DDX::FUN_006bd740((int *)PTR_008075a8);
+      Library::DKW::DDX::FUN_006bd740((int *)g_ddxContext_008075A8);
       g_currentExceptionFrame = local_4c.previous;
       return 0;
     }
@@ -35,7 +35,7 @@ undefined4 __thiscall STAppC::CommonFunction(STAppC *this,int param_1)
         Library::DKW::DDX::FUN_006b8d50((int *)g_cursorClass_00802A30->field_00AD,0,0,0,0);
       }
       Library::Ourlib::ST3DSPR::FUN_006ed100(PTR_00807598);
-      Library::DKW::DDX::FUN_006bd740((int *)PTR_008075a8);
+      Library::DKW::DDX::FUN_006bd740((int *)g_ddxContext_008075A8);
     }
     g_currentExceptionFrame = local_4c.previous;
     return 0;

@@ -106,8 +106,8 @@ void __thiscall CPanelTy::Update2PanelSI(CPanelTy *this)
             return;
           }
           Library::DKW::DDX::FUN_006b3640
-                    ((int *)PTR_008075a8,(uint)this_00->field_0148[3],0xffffffff,this_00->field_0048
-                     ,this_00->field_00A0);
+                    ((int *)g_ddxContext_008075A8,(uint)this_00->field_0148[3],0xffffffff,
+                     this_00->field_0048,this_00->field_00A0);
           g_currentExceptionFrame = local_ac.previous;
           return;
         default:
@@ -175,8 +175,8 @@ switchD_005030a2_caseD_1a:
     return;
   }
   Library::DKW::DDX::FUN_006b3640
-            ((int *)PTR_008075a8,(uint)this_00->field_0148[3],0xffffffff,this_00->field_0048,
-             this_00->field_00A0);
+            ((int *)g_ddxContext_008075A8,(uint)this_00->field_0148[3],0xffffffff,
+             this_00->field_0048,this_00->field_00A0);
   g_currentExceptionFrame = local_ac.previous;
   return;
 }

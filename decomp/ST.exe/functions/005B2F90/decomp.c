@@ -32,7 +32,7 @@ void __thiscall MainMenuTy::DoneMainMenu(MainMenuTy *this)
                      (uint)g_cursorClass_00802A30->field_001C);
       }
     }
-    DarkScreen(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,10,2);
+    DarkScreen(g_dDXContext_0080759C,10,2);
     if (g_startSystem_0081176C->field_002C != (ushort *)0x0) {
       cMf32::RecMemFree(g_cMf32_00806780,(uint *)&g_startSystem_0081176C->field_002C);
     }

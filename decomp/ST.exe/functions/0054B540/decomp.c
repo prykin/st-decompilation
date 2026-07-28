@@ -31,7 +31,7 @@ void __thiscall CursorClassTy::sub_0054B540(CursorClassTy *this)
       DrawSprite(this,this->field_00C5,this->field_00C9);
     }
     else {
-      FUN_006b3bb0((int *)PTR_008075a8,uVar1);
+      FUN_006b3bb0((int *)g_ddxContext_008075A8,uVar1);
     }
     this->field_010B = -1;
   }

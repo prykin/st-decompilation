@@ -47,7 +47,7 @@ BehPanelTy::PaintBBut
            (byte *)local_8);
     cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);
     Library::DKW::DDX::FUN_006b3640
-              ((int *)PTR_008075a8,pBVar3->field_0060,0xffffffff,pBVar3->field_003C,
+              ((int *)g_ddxContext_008075A8,pBVar3->field_0060,0xffffffff,pBVar3->field_003C,
                pBVar3->field_0044);
     g_currentExceptionFrame = local_58.previous;
     return;

@@ -177,9 +177,9 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,undefined1 param_2
   puVar15 = pMVar4->field_02A5;
   local_8 = (undefined4 *)0x5;
   do {
-    FUN_006b2330(PTR_008075a8,puVar15,0x31,0x402f63,0,0,local_c);
-    Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,*puVar15,0xffffffff,0,0);
-    FUN_006b3af0((int *)PTR_008075a8,*puVar15);
+    FUN_006b2330(g_ddxContext_008075A8,puVar15,0x31,0x402f63,0,0,local_c);
+    Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,*puVar15,0xffffffff,0,0);
+    FUN_006b3af0((int *)g_ddxContext_008075A8,*puVar15);
     local_c = local_c + 6;
     puVar15 = puVar15 + 1;
     local_8 = (undefined4 *)((int)local_8 + -1);
@@ -188,16 +188,16 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,undefined1 param_2
   puVar15 = pMVar4->field_02BD;
   local_8 = (undefined4 *)0x5;
   do {
-    FUN_006b2330(PTR_008075a8,puVar15,0x31,0x402f63,0,0,local_c);
-    Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,*puVar15,0xffffffff,0,0);
-    FUN_006b3af0((int *)PTR_008075a8,*puVar15);
+    FUN_006b2330(g_ddxContext_008075A8,puVar15,0x31,0x402f63,0,0,local_c);
+    Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,*puVar15,0xffffffff,0,0);
+    FUN_006b3af0((int *)g_ddxContext_008075A8,*puVar15);
     local_c = local_c + 6;
     puVar15 = puVar15 + 1;
     local_8 = (undefined4 *)((int)local_8 + -1);
   } while (local_8 != (undefined4 *)0x0);
   SpriteClassTy::InitSprite
-            ((SpriteClassTy *)&pMVar4->field_02D1,(int *)PTR_008075a8,0x31,'\a',(undefined4 *)0x0,0,
-             0);
+            ((SpriteClassTy *)&pMVar4->field_02D1,(int *)g_ddxContext_008075A8,0x31,'\a',
+             (undefined4 *)0x0,0,0);
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (**(code **)(pMVar4->field_02D1 + 4))(DAT_00806784,7,0,"MT_SLDUP",0xffffffff);
   pMVar4->field_02ED = 0;
@@ -207,8 +207,8 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,undefined1 param_2
     FUN_006b3af0((int *)pMVar4->field_0319,pMVar4->field_02D5);
   }
   SpriteClassTy::InitSprite
-            ((SpriteClassTy *)&pMVar4->field_0362,(int *)PTR_008075a8,0x31,'\a',(undefined4 *)0x0,0,
-             0);
+            ((SpriteClassTy *)&pMVar4->field_0362,(int *)g_ddxContext_008075A8,0x31,'\a',
+             (undefined4 *)0x0,0,0);
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (**(code **)(pMVar4->field_0362 + 4))(DAT_00806784,7,0,"MT_SLDDN",0xffffffff);
   pMVar4->field_037E = 0;
@@ -218,8 +218,8 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,undefined1 param_2
     FUN_006b3af0((int *)pMVar4->field_03AA,pMVar4->field_0366);
   }
   SpriteClassTy::InitSprite
-            ((SpriteClassTy *)&pMVar4->field_03F3,(int *)PTR_008075a8,0x31,'\a',(undefined4 *)0x0,0,
-             0);
+            ((SpriteClassTy *)&pMVar4->field_03F3,(int *)g_ddxContext_008075A8,0x31,'\a',
+             (undefined4 *)0x0,0,0);
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (**(code **)(pMVar4->field_03F3 + 4))(DAT_00806784,7,0,"MT_SLDT",0xffffffff);
   pMVar4->field_040F = 0;
@@ -229,12 +229,13 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,undefined1 param_2
     FUN_006b3af0((int *)pMVar4->field_043B,pMVar4->field_03F7);
   }
   piVar1 = &pMVar4->field_0484;
-  FUN_006b2330(PTR_008075a8,(uint *)piVar1,0x32,0x402f63,0,0,(ushort *)&pMVar4->field_06BF);
-  Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,*piVar1,0xffffffff,0,0);
-  FUN_006b3af0((int *)PTR_008075a8,*piVar1);
+  FUN_006b2330(g_ddxContext_008075A8,(uint *)piVar1,0x32,0x402f63,0,0,(ushort *)&pMVar4->field_06BF)
+  ;
+  Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,*piVar1,0xffffffff,0,0);
+  FUN_006b3af0((int *)g_ddxContext_008075A8,*piVar1);
   SpriteClassTy::InitSprite
-            ((SpriteClassTy *)&pMVar4->field_048C,(int *)PTR_008075a8,0x31,'\a',(undefined4 *)0x0,0,
-             0);
+            ((SpriteClassTy *)&pMVar4->field_048C,(int *)g_ddxContext_008075A8,0x31,'\a',
+             (undefined4 *)0x0,0,0);
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (**(code **)(pMVar4->field_048C + 4))(DAT_00806784,7,0,"MT_SLDUP",0xffffffff);
   pMVar4->field_04A8 = 0;
@@ -244,8 +245,8 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,undefined1 param_2
     FUN_006b3af0((int *)pMVar4->field_04D4,pMVar4->field_0490);
   }
   SpriteClassTy::InitSprite
-            ((SpriteClassTy *)&pMVar4->field_051D,(int *)PTR_008075a8,0x31,'\a',(undefined4 *)0x0,0,
-             0);
+            ((SpriteClassTy *)&pMVar4->field_051D,(int *)g_ddxContext_008075A8,0x31,'\a',
+             (undefined4 *)0x0,0,0);
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (**(code **)(pMVar4->field_051D + 4))(DAT_00806784,7,0,"MT_SLDDN",0xffffffff);
   pMVar4->field_0539 = 0;
@@ -255,8 +256,8 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,undefined1 param_2
     FUN_006b3af0((int *)pMVar4->field_0565,pMVar4->field_0521);
   }
   SpriteClassTy::InitSprite
-            ((SpriteClassTy *)&pMVar4->field_05AE,(int *)PTR_008075a8,0x31,'\a',(undefined4 *)0x0,0,
-             0);
+            ((SpriteClassTy *)&pMVar4->field_05AE,(int *)g_ddxContext_008075A8,0x31,'\a',
+             (undefined4 *)0x0,0,0);
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (**(code **)(pMVar4->field_05AE + 4))(DAT_00806784,7,0,"MT_SLDT",0xffffffff);
   pMVar4->field_05CA = 0;
@@ -266,9 +267,10 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,undefined1 param_2
     FUN_006b3af0((int *)pMVar4->field_05F6,pMVar4->field_05B2);
   }
   piVar1 = &pMVar4->field_063F;
-  FUN_006b2330(PTR_008075a8,(uint *)piVar1,0x32,0x402f63,0,0,(ushort *)&pMVar4->field_06CB);
-  Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,*piVar1,0xffffffff,0,0);
-  FUN_006b3af0((int *)PTR_008075a8,*piVar1);
+  FUN_006b2330(g_ddxContext_008075A8,(uint *)piVar1,0x32,0x402f63,0,0,(ushort *)&pMVar4->field_06CB)
+  ;
+  Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,*piVar1,0xffffffff,0,0);
+  FUN_006b3af0((int *)g_ddxContext_008075A8,*piVar1);
   pDVar8 = (DArrayTy *)Library::DKW::TBL::FUN_006ae310((uint *)0x0,10,0x9e,10,0x405de4);
   pMVar4->field_064B = pDVar8;
   pDVar8 = (DArrayTy *)Library::DKW::TBL::FUN_006ae310((uint *)0x0,10,0x3e,10,0x40365c);
@@ -278,7 +280,7 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,undefined1 param_2
   if (g_startSystem_0081176C->field_02E6 != (MMsgTy *)0x0) {
     MMsgTy::HidePanel(g_startSystem_0081176C->field_02E6,0,0,1);
   }
-  DarkScreen(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,1,0);
+  DarkScreen(g_dDXContext_0080759C,1,0);
   this_00 = g_cursorClass_00802A30;
   if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
     iVar5 = g_cursorClass_00802A30->field_00C9;
@@ -295,8 +297,8 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,undefined1 param_2
   pMVar4->field_006D = 3;
   PlayScript(pMVar4);
   PaintMTask(pMVar4);
-  thunk_FUN_0055ddf0((undefined4 *)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,(int *)PTR_008075a8
-                     ,(ushort *)pMVar4->field_005D,10,2);
+  thunk_FUN_0055ddf0((undefined4 *)g_dDXContext_0080759C,(int *)g_ddxContext_008075A8,
+                     (ushort *)pMVar4->field_005D,10,2);
   g_currentExceptionFrame = local_54.previous;
   return;
 }

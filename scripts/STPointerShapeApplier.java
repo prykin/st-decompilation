@@ -139,8 +139,10 @@ public class STPointerShapeApplier extends GhidraScript {
             if (!enabled(field.get("apply"))) continue;
             String specification = unt(field.get("proposed_type"));
             if (!specification.startsWith("pointer:")) continue;
-            Map<String, String> dependency = byPath.get(
-                specification.substring("pointer:".length()));
+            String dependencyPath = specification;
+            while (dependencyPath.startsWith("pointer:"))
+                dependencyPath = dependencyPath.substring("pointer:".length());
+            Map<String, String> dependency = byPath.get(dependencyPath);
             if (dependency != null) visitType(dependency, byPath, byShape, state, result);
         }
         state.put(path, 2);
@@ -441,7 +443,10 @@ public class STPointerShapeApplier extends GhidraScript {
     private Safety structureSafety(Structure structure) {
         if (structure == null) return new Safety(true, "new script-owned type");
         String description = structure.getDescription();
-        if (description == null || !description.contains(MARKER))
+        boolean owned = description != null && (description.contains(MARKER) ||
+            structure.getPathName().contains("/Recovered/LibraryContexts/") &&
+                description.contains("[STGlobalDataApplier]"));
+        if (!owned)
             return new Safety(false, "existing manual/unowned structure");
         String stored = storedHash(description);
         if (stored == null) return new Safety(false, "generated structure lacks safety hash");
@@ -454,7 +459,10 @@ public class STPointerShapeApplier extends GhidraScript {
         if (!specification.startsWith("pointer:")) return null;
         String path = specification.substring("pointer:".length());
         DataType pointed;
-        if (path.matches("/undefined(?:1|2|4|8)?")) {
+        if (path.startsWith("pointer:")) {
+            pointed = resolvePointer(path);
+        }
+        else if (path.matches("/undefined(?:1|2|4|8)?")) {
             String suffix = path.substring("/undefined".length());
             int size = suffix.isBlank() ? 1 : Integer.parseInt(suffix);
             pointed = Undefined.getUndefinedDataType(size);
@@ -500,7 +508,7 @@ public class STPointerShapeApplier extends GhidraScript {
     private String typeSpecification(DataType type) {
         type = untypedef(type);
         if (type instanceof Pointer pointer && pointer.getDataType() != null)
-            return "pointer:" + untypedef(pointer.getDataType()).getPathName();
+            return "pointer:" + typeSpecification(pointer.getDataType());
         return type == null ? "" : type.getPathName();
     }
 

@@ -5,17 +5,17 @@
    E:\__titans\Start\rpt_obj.cpp
    MReportTy::OutTGlProc
 
-   [STPrototypeApplier] Propagated parameter 1.
-   Evidence: 005BE5B0 -> 005BD4B0 @ 005BE645
-
    [STTypeFamilyApplier] CONTEXTUAL_GENERATED_RECORD.
    Evidence: one script-owned pointer shape is used only by functions with one unique class-owner
-   context; promote its stable machine layout to a generated owner-qualified record name */
+   context; promote its stable machine layout to a generated owner-qualified record name
+
+   [STPrototypeRepairApplier] Propagated parameter 1.
+   Evidence: 005BD4B0 -> 006C5000 @ 005BD699 | 005BE5B0 -> 005BD4B0 @ 005BE645; data at 0080759C */
 
 void __thiscall
 MReportTy::OutTGlProc
-          (MReportTy *this,AnonShape_GLOBAL_0080759C_9638EF10 *param_1,undefined4 param_2,
-          undefined4 param_3,int param_4,int param_5,int param_6,int param_7,int param_8)
+          (MReportTy *this,DDXContext *param_1,undefined4 param_2,undefined4 param_3,int param_4,
+          int param_5,int param_6,int param_7,int param_8)
 
 {
   code *pcVar1;

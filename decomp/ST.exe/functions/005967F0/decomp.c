@@ -33,7 +33,7 @@ void __thiscall FSGSTy::DoneFSGS(FSGSTy *this)
                      (uint)g_cursorClass_00802A30->field_001C);
       }
     }
-    DarkScreen(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,10,2);
+    DarkScreen(g_dDXContext_0080759C,10,2);
     if (g_startSystem_0081176C->field_002C != (ushort *)0x0) {
       cMf32::RecMemFree(g_cMf32_00806780,(uint *)&g_startSystem_0081176C->field_002C);
     }
@@ -86,7 +86,7 @@ void __thiscall FSGSTy::DoneFSGS(FSGSTy *this)
       FreeAndNull(&this_01->field_1E9A);
     }
     if (-1 < this_01->field_1ABC) {
-      FUN_006b3bb0((int *)PTR_008075a8,this_01->field_1ABC);
+      FUN_006b3bb0((int *)g_ddxContext_008075A8,this_01->field_1ABC);
     }
     this_01->field_1ABC = -1;
     if (this_01->field_1AC0 != (ushort *)0x0) {
@@ -107,7 +107,7 @@ void __thiscall FSGSTy::DoneFSGS(FSGSTy *this)
       FreeAndNull((void **)&this_01->field_1A9B);
     }
     if (-1 < this_01->field_1A8F) {
-      FUN_006b3bb0((int *)PTR_008075a8,this_01->field_1A8F);
+      FUN_006b3bb0((int *)g_ddxContext_008075A8,this_01->field_1A8F);
     }
     this_01->field_1A8F = -1;
     if (this_01->field_1A97 != (AnonPointee_FSGSTy_1A97 *)0x0) {

@@ -1,10 +1,10 @@
 
-undefined4 __cdecl FUN_0067ee40(int param_1)
+AnonNested_AnonShape_GLOBAL_00848A18_1B9B27FE_0014_B23B2AAD * __cdecl FUN_0067ee40(int param_1)
 
 {
-  if (param_1 < PTR_00848a18->field_0008) {
-    return *(undefined4 *)(PTR_00848a18->field_0014 + param_1 * 4);
+  if (param_1 < PTR_00848a18->entryCount) {
+    return PTR_00848a18->entries[param_1];
   }
-  return 0;
+  return (AnonNested_AnonShape_GLOBAL_00848A18_1B9B27FE_0014_B23B2AAD *)0;
 }
 

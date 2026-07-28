@@ -206,6 +206,8 @@ The current work focuses on recovering what the binary can prove:
 - original C++ class and method names embedded in diagnostics;
 - source-file provenance and compilation-unit boundaries;
 - calling conventions, callsite/thunk evidence, parameters, and selected free-function names;
+- automatic target metadata forwarding for transparent direct-JMP thunks, including
+  audited release of redundant manually pinned `_thunk` aliases;
 - anonymous hidden-`this` receivers proven from ECX flow and stack discipline;
 - message IDs and anonymous state/switch domains;
 - the common `STMessage` envelope and compatible `GetMessage` handler family;

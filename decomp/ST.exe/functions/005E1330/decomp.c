@@ -148,7 +148,7 @@ void __thiscall MTaskTy::PlayScript(MTaskTy *this)
   undefined2 uStackY_48;
   undefined2 local_46;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  AnonShape_006B1B10_121F236C *in_stack_ffffffdc;
+  DDXContext_008075A8 *in_stack_ffffffdc;
   UINT resourceId;
   undefined1 *puVar32;
   undefined4 *puVar33;
@@ -197,28 +197,28 @@ void __thiscall MTaskTy::PlayScript(MTaskTy *this)
           switch(puVar19[0xd]) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           case 0:
-            in_stack_ffffffdc = (AnonShape_006B1B10_121F236C *)0x0;
+            in_stack_ffffffdc = (DDXContext_008075A8 *)0x0;
             break;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           case 1:
-            in_stack_ffffffdc = (AnonShape_006B1B10_121F236C *)0x1;
+            in_stack_ffffffdc = (DDXContext_008075A8 *)0x1;
             break;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           case 2:
-            in_stack_ffffffdc = (AnonShape_006B1B10_121F236C *)0x2;
+            in_stack_ffffffdc = (DDXContext_008075A8 *)0x2;
             break;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           case 3:
-            in_stack_ffffffdc = (AnonShape_006B1B10_121F236C *)0x3;
+            in_stack_ffffffdc = (DDXContext_008075A8 *)0x3;
             break;
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           case 4:
-            in_stack_ffffffdc = (AnonShape_006B1B10_121F236C *)0x4;
+            in_stack_ffffffdc = (DDXContext_008075A8 *)0x4;
           }
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           uVar30 = (uint)in_stack_ffffffdc & 0xff;
           if (this_00->field_0291[uVar30] != 0) {
-            FUN_006b3af0((int *)PTR_008075a8,this_00->field_02A5[uVar30]);
+            FUN_006b3af0((int *)g_ddxContext_008075A8,this_00->field_02A5[uVar30]);
             StartSystemTy::sub_006E56B0(this_00->field_000C,this_00->field_0291[uVar30]);
             this_00->field_0291[uVar30] = 0;
           }
@@ -246,13 +246,13 @@ void __thiscall MTaskTy::PlayScript(MTaskTy *this)
             uVar18 = *(uint *)(puVar19 + 0xf);
             puVar10 = this_00->field_02A5 + uVar30;
             Library::DKW::DDX::FUN_006b3640
-                      ((int *)PTR_008075a8,this_00->field_02A5[uVar30],0xffffffff,uVar18,
+                      ((int *)g_ddxContext_008075A8,this_00->field_02A5[uVar30],0xffffffff,uVar18,
                        *(uint *)(puVar19 + 0x13));
             /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-            in_stack_ffffffdc = (AnonShape_006B1B10_121F236C *)0x5e1e40;
-            FUN_006b2800(PTR_008075a8,*puVar10,uVar18,local_84);
-            FUN_006b3020((int)PTR_008075a8,*puVar10,*(uint *)(puVar19 + 5));
-            Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,*puVar10);
+            in_stack_ffffffdc = (DDXContext_008075A8 *)0x5e1e40;
+            FUN_006b2800(g_ddxContext_008075A8,*puVar10,uVar18,local_84);
+            FUN_006b3020((int)g_ddxContext_008075A8,*puVar10,*(uint *)(puVar19 + 5));
+            Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,*puVar10);
           }
         }
         break;
@@ -262,7 +262,7 @@ void __thiscall MTaskTy::PlayScript(MTaskTy *this)
             puVar10 = this_00->field_02BD;
             iVar7 = 4;
             do {
-              FUN_006b3af0((int *)PTR_008075a8,*puVar10);
+              FUN_006b3af0((int *)g_ddxContext_008075A8,*puVar10);
               puVar10 = puVar10 + 1;
               iVar7 = iVar7 + -1;
             } while (iVar7 != 0);
@@ -401,13 +401,13 @@ LAB_005e200a:
             iVar7 = 4;
             do {
               Library::DKW::DDX::FUN_006b3640
-                        ((int *)PTR_008075a8,*puVar28,0xffffffff,*puVar10,puVar10[1]);
+                        ((int *)g_ddxContext_008075A8,*puVar28,0xffffffff,*puVar10,puVar10[1]);
               uVar30 = puVar10[3];
               /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-              in_stack_ffffffdc = (AnonShape_006B1B10_121F236C *)0x5e21c3;
-              FUN_006b2800(PTR_008075a8,*puVar28,puVar10[2],uVar30);
-              FUN_006b3020((int)PTR_008075a8,*puVar28,*(uint *)(uVar30 + 5));
-              Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,*puVar28);
+              in_stack_ffffffdc = (DDXContext_008075A8 *)0x5e21c3;
+              FUN_006b2800(g_ddxContext_008075A8,*puVar28,puVar10[2],uVar30);
+              FUN_006b3020((int)g_ddxContext_008075A8,*puVar28,*(uint *)(uVar30 + 5));
+              Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,*puVar28);
               puVar10 = puVar10 + 0x1c;
               puVar28 = puVar28 + 1;
               iVar7 = iVar7 + -1;
@@ -420,7 +420,7 @@ LAB_005e200a:
           if (this_00->field_02CD != 0) {
             StartSystemTy::sub_006E56B0(this_00->field_000C,this_00->field_02CD);
             this_00->field_02CD = 0;
-            FUN_006b3af0((int *)PTR_008075a8,this_00->field_0484);
+            FUN_006b3af0((int *)g_ddxContext_008075A8,this_00->field_0484);
             if (this_00->field_02D5 != 0xffffffff) {
               FUN_006b3af0((int *)this_00->field_0319,this_00->field_02D5);
             }
@@ -586,16 +586,16 @@ LAB_005e24c5:
               this_00->field_0031 = 1;
               FUN_006e6080(this_00,2,this_00->field_02CD,(undefined4 *)&this_00->field_0x1d);
               Library::DKW::DDX::FUN_006b3640
-                        ((int *)PTR_008075a8,this_00->field_0484,0xffffffff,
+                        ((int *)g_ddxContext_008075A8,this_00->field_0484,0xffffffff,
                          *(uint *)&pcVar35->field_0xe,*(uint *)&pcVar35->field_0x12);
               /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-              in_stack_ffffffdc = (AnonShape_006B1B10_121F236C *)0x5e2823;
-              FUN_006b2800(PTR_008075a8,this_00->field_0484,*(uint *)&pcVar35->field_0x16,
+              in_stack_ffffffdc = (DDXContext_008075A8 *)0x5e2823;
+              FUN_006b2800(g_ddxContext_008075A8,this_00->field_0484,*(uint *)&pcVar35->field_0x16,
                            *(uint *)&pcVar35->field_0x1a);
-              FUN_006b3020((int)PTR_008075a8,this_00->field_0484,
+              FUN_006b3020((int)g_ddxContext_008075A8,this_00->field_0484,
                            *(uint *)((int)&pcVar35->field_0004 + 1));
               uVar30 = this_00->field_0484;
-              Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,uVar30);
+              Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar30);
               iVar7 = *(int *)((int)&pcVar35->field_0004 + 1);
               if (iVar7 < 1) {
                 uVar18 = 0;
@@ -631,7 +631,7 @@ LAB_005e24c5:
               this_00->field_03FB = (uint)(this_00->field_06CA == '\x01');
               if (this_00->field_02D5 != 0xffffffff) {
                 /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-                in_stack_ffffffdc = (AnonShape_006B1B10_121F236C *)this_00->field_0319;
+                in_stack_ffffffdc = (DDXContext_008075A8 *)this_00->field_0319;
                 /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
                 Library::DKW::DDX::FUN_006b34d0
                           ((uint *)in_stack_ffffffdc,this_00->field_02D5,0xfffffffe,
@@ -639,7 +639,7 @@ LAB_005e24c5:
               }
               if (this_00->field_0366 != 0xffffffff) {
                 /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-                in_stack_ffffffdc = (AnonShape_006B1B10_121F236C *)this_00->field_03AA;
+                in_stack_ffffffdc = (DDXContext_008075A8 *)this_00->field_03AA;
                 /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
                 Library::DKW::DDX::FUN_006b34d0
                           ((uint *)in_stack_ffffffdc,this_00->field_0366,0xfffffffe,
@@ -647,7 +647,7 @@ LAB_005e24c5:
               }
               if (this_00->field_03F7 != 0xffffffff) {
                 /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-                in_stack_ffffffdc = (AnonShape_006B1B10_121F236C *)this_00->field_043B;
+                in_stack_ffffffdc = (DDXContext_008075A8 *)this_00->field_043B;
                 /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
                 Library::DKW::DDX::FUN_006b34d0
                           ((uint *)in_stack_ffffffdc,this_00->field_03F7,0xfffffffe,
@@ -655,7 +655,7 @@ LAB_005e24c5:
               }
               if (this_00->field_03F7 != 0xffffffff) {
                 /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-                in_stack_ffffffdc = (AnonShape_006B1B10_121F236C *)this_00->field_043B;
+                in_stack_ffffffdc = (DDXContext_008075A8 *)this_00->field_043B;
                 /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
                 Library::DKW::DDX::FUN_006b3730
                           ((uint *)in_stack_ffffffdc,this_00->field_03F7,this_00->field_03FB,
@@ -765,7 +765,7 @@ LAB_005e24c5:
                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   local_7c = CONCAT31(local_7c._1_3_,bVar6);
                 } while (bVar6 < 3);
-                FUN_006b2330(PTR_008075a8,&local_13c,*(uint *)(puVar19 + 5),0x403db4,
+                FUN_006b2330(g_ddxContext_008075A8,&local_13c,*(uint *)(puVar19 + 5),0x403db4,
                              *(uint *)(puVar19 + 0x22),*(uint *)(puVar19 + 0x26),
                              (ushort *)this_00->field_064F);
                 uVar30 = *(uint *)(puVar19 + 0xf);
@@ -833,7 +833,7 @@ LAB_005e24c5:
                   }
                   FUN_006b5570(pDVar16);
                 }
-                FUN_006b2330(PTR_008075a8,&local_13c,*(uint *)(puVar19 + 5),0x4041b0,
+                FUN_006b2330(g_ddxContext_008075A8,&local_13c,*(uint *)(puVar19 + 5),0x4041b0,
                              *(uint *)(puVar19 + 0x22),*(uint *)(puVar19 + 0x26),
                              (ushort *)this_00->field_0647);
                 uVar30 = *(uint *)(puVar19 + 0xf);
@@ -841,9 +841,9 @@ LAB_005e24c5:
               }
               Library::DKW::TBL::FUN_006ae140(&pDVar15->flags,uVar30,&local_13c);
               /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-              in_stack_ffffffdc = PTR_008075a8;
+              in_stack_ffffffdc = g_ddxContext_008075A8;
               Library::DKW::DDX::FUN_006b3640
-                        ((int *)PTR_008075a8,local_13c,0,*(uint *)(puVar19 + 0x1a),
+                        ((int *)g_ddxContext_008075A8,local_13c,0,*(uint *)(puVar19 + 0x1a),
                          *(uint *)(puVar19 + 0x1e));
             }
           }
@@ -855,10 +855,10 @@ LAB_005e24c5:
               uVar30 = 0;
             }
             /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-            in_stack_ffffffdc = PTR_008075a8;
+            in_stack_ffffffdc = g_ddxContext_008075A8;
             Library::DKW::DDX::FUN_006b3730
-                      ((uint *)PTR_008075a8,*(uint *)pAVar13,uVar30,*(uint *)(puVar19 + 0x1a),
-                       *(uint *)(puVar19 + 0x1e));
+                      ((uint *)g_ddxContext_008075A8,*(uint *)pAVar13,uVar30,
+                       *(uint *)(puVar19 + 0x1a),*(uint *)(puVar19 + 0x1e));
           }
         }
         else if ((pAVar13 != (AnonShape_005E10A0_819783CC *)0x0) && (-1 < *(int *)pAVar13)) {
@@ -875,7 +875,7 @@ LAB_005e24c5:
             *(int *)&pAVar13->field_0x10 = iVar7;
             *(undefined4 *)&pAVar13->field_0x28 = 2;
             *(undefined4 *)&pAVar13->field_0x24 = this_00->field_0069;
-            FUN_006b35d0((int *)PTR_008075a8,*(uint *)pAVar13);
+            FUN_006b35d0((int *)g_ddxContext_008075A8,*(uint *)pAVar13);
           }
         }
         break;
@@ -885,13 +885,13 @@ LAB_005e24c5:
                                       (this_00->field_0070,puVar19 + 0xd,0,(ushort *)0x0);
           if (puVar10 == (uint *)0x0) {
             /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-            in_stack_ffffffdc = (AnonShape_006B1B10_121F236C *)0x5e2f3a;
+            in_stack_ffffffdc = (DDXContext_008075A8 *)0x5e2f3a;
             puVar10 = (uint *)Library::Ourlib::MFWAV::mfWavLoad
                                         (g_cMf32_00806798,puVar19 + 0xd,0,(ushort *)0x0);
             if (puVar10 == (uint *)0x0) break;
           }
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          in_stack_ffffffdc = (AnonShape_006B1B10_121F236C *)0x5e2f24;
+          in_stack_ffffffdc = (DDXContext_008075A8 *)0x5e2f24;
           thunk_FUN_0056a130(&g_sound,0,'\x03',-1,puVar10);
         }
         break;
@@ -965,7 +965,7 @@ LAB_005e3030:
                 puVar24 = puVar24 + 1;
                 puVar33 = puVar33 + 1;
               }
-              local_1dc.field_0048 = (AnonShape_006B1B10_121F236C *)pSVar25->field_0048;
+              local_1dc.field_0048 = (DDXContext_008075A8 *)pSVar25->field_0048;
               local_1dc.field_004C = pSVar25->field_004C;
               local_1dc.field_004D = pSVar25->field_004D;
               local_1dc.field_0051 = pSVar25->field_0051;
@@ -986,16 +986,16 @@ LAB_005e3030:
             }
             else {
               SpriteClassTy::InitSprite
-                        (&local_1dc,(int *)PTR_008075a8,*(uint *)((int)ppvVar36 + 5),'\x1e',
-                         (undefined4 *)0x0,0,0);
+                        (&local_1dc,(int *)g_ddxContext_008075A8,*(uint *)((int)ppvVar36 + 5),'\x1e'
+                         ,(undefined4 *)0x0,0,0);
               /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-              in_stack_ffffffdc = (AnonShape_006B1B10_121F236C *)0x1e;
+              in_stack_ffffffdc = (DDXContext_008075A8 *)0x1e;
               iVar7 = SpriteClassTy::SetImages
                                 (&local_1dc,this_00->field_0070,CASE_1E,0,
                                  (char *)((int)ppvVar36 + 0x12),0xffffffff,0);
               if (iVar7 != 0) {
                 /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-                in_stack_ffffffdc = (AnonShape_006B1B10_121F236C *)0x1e;
+                in_stack_ffffffdc = (DDXContext_008075A8 *)0x1e;
                 SpriteClassTy::SetImages
                           (&local_1dc,g_cMf32_00806798,CASE_1E,0,(char *)((int)ppvVar36 + 0x12),
                            0xffffffff,1);
@@ -1022,7 +1022,7 @@ LAB_005e3030:
               local_14a = 0;
               local_146 = *(int *)((int)ppvVar36 + 0x42);
               /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-              in_stack_ffffffdc = *(AnonShape_006B1B10_121F236C **)((int)ppvVar36 + 0x32);
+              in_stack_ffffffdc = *(DDXContext_008075A8 **)((int)ppvVar36 + 0x32);
               /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
               local_142 = FUN_006c81c0((int)in_stack_ffffffdc,*(int *)((int)ppvVar36 + 0x36),
                                        *(int *)((int)ppvVar36 + 0x3a),*(int *)((int)ppvVar36 + 0x3e)
@@ -1767,18 +1767,18 @@ LAB_005e195d:
         }
         FUN_006bc360((ushort *)this_00->field_005D,local_1268,piVar22);
         /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-        in_stack_ffffffdc = (AnonShape_006B1B10_121F236C *)0x0;
+        in_stack_ffffffdc = (DDXContext_008075A8 *)0x0;
         Library::Ourlib::PALETTE::FUN_00718780
                   ((int)local_1268,0,0x100,0x1a,0x10,(undefined4 *)&this_00->field_0x91);
         Library::Ourlib::PALETTE::FUN_00718780
                   ((int)local_1268,0,0x100,0x2e,0x10,(undefined4 *)&this_00->field_0x191);
         if (this_00->field_007C != 0) {
-          DarkScreen(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,1,0);
+          DarkScreen(g_dDXContext_0080759C,1,0);
           PaintMTask(this_00);
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          in_stack_ffffffdc = PTR_008075a8;
-          thunk_FUN_0055ddf0((undefined4 *)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,
-                             (int *)PTR_008075a8,(ushort *)this_00->field_005D,10,2);
+          in_stack_ffffffdc = g_ddxContext_008075A8;
+          thunk_FUN_0055ddf0((undefined4 *)g_dDXContext_0080759C,(int *)g_ddxContext_008075A8,
+                             (ushort *)this_00->field_005D,10,2);
         }
         if (this_00->field_0089 != (ccFntTy *)0x0) {
           ccFntTy::operator_delete((uint *)this_00->field_0089);
@@ -1808,13 +1808,13 @@ LAB_005e195d:
             *(uint **)&this_00->field_0x85 = puVar10;
             if (puVar10 == (uint *)0x0) {
               /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-              in_stack_ffffffdc = (AnonShape_006B1B10_121F236C *)0x5e1cab;
+              in_stack_ffffffdc = (DDXContext_008075A8 *)0x5e1cab;
               thunk_FUN_0056a130(&g_sound,0x14,'\x02',0,(uint *)0x0);
               break;
             }
           }
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-          in_stack_ffffffdc = (AnonShape_006B1B10_121F236C *)0x5e1c94;
+          in_stack_ffffffdc = (DDXContext_008075A8 *)0x5e1c94;
           thunk_FUN_0056a130(&g_sound,0,'\x02',0,puVar10);
         }
       }

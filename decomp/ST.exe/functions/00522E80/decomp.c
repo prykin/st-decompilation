@@ -110,8 +110,8 @@ int __thiscall IntercomPanelTy::GetMessage(IntercomPanelTy *this,STMessage *mess
                        local_8dc,1);
           }
           Library::DKW::DDX::FUN_006b3640
-                    ((int *)PTR_008075a8,this_00->field_0060,0xffffffff,this_00->field_003C,
-                     this_00->field_0044);
+                    ((int *)g_ddxContext_008075A8,this_00->field_0060,0xffffffff,this_00->field_003C
+                     ,this_00->field_0044);
           g_currentExceptionFrame = local_50.previous;
           return 0;
         }
@@ -129,7 +129,7 @@ int __thiscall IntercomPanelTy::GetMessage(IntercomPanelTy *this,STMessage *mess
           this_00->field_017C = 0;
         }
         Library::DKW::DDX::FUN_006b3640
-                  ((int *)PTR_008075a8,this_00->field_0060,0xffffffff,this_00->field_003C,
+                  ((int *)g_ddxContext_008075A8,this_00->field_0060,0xffffffff,this_00->field_003C,
                    this_00->field_0044);
         g_currentExceptionFrame = local_50.previous;
         return 0;
@@ -189,7 +189,7 @@ int __thiscall IntercomPanelTy::GetMessage(IntercomPanelTy *this,STMessage *mess
                (-(uint)(DAT_0080874e != '\x03') & 0xffffffe7) + 0x1e,5,(byte *)puVar4,0,0,0,
                *(int *)(puVar4 + 2),*(int *)(puVar4 + 4));
     Library::DKW::DDX::FUN_006b3640
-              ((int *)PTR_008075a8,this_00->field_0060,0xffffffff,this_00->field_003C,
+              ((int *)g_ddxContext_008075A8,this_00->field_0060,0xffffffff,this_00->field_003C,
                this_00->field_0044);
     g_currentExceptionFrame = local_50.previous;
     return 0;

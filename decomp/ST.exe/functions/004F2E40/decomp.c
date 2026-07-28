@@ -51,7 +51,7 @@ CPanelTy::SetButStruct
     pAVar7 = param_1;
     for (iVar4 = 0x5f; iVar4 != 0; iVar4 = iVar4 + -1) {
       *(undefined4 *)pAVar7 = 0;
-      pAVar7 = (AnonShape_004F2E40_DC76A8C6 *)&pAVar7->field_0x4;
+      pAVar7 = (AnonShape_004F2E40_DC76A8C6 *)((int)&pAVar7->field_0001 + 3);
     }
     *(undefined4 *)param_1 = param_3;
     uVar2 = (uint)param_2;

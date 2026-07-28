@@ -166,8 +166,8 @@ LAB_00502b3b:
   }
   if (-1 < (int)pCVar2->field_0148[3]) {
     Library::DKW::DDX::FUN_006b3640
-              ((int *)PTR_008075a8,(uint)pCVar2->field_0148[3],0xffffffff,pCVar2->field_0048,
-               pCVar2->field_00A0);
+              ((int *)g_ddxContext_008075A8,(uint)pCVar2->field_0148[3],0xffffffff,
+               pCVar2->field_0048,pCVar2->field_00A0);
   }
   g_currentExceptionFrame = local_50.previous;
   return;

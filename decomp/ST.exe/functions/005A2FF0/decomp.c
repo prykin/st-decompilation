@@ -80,7 +80,7 @@ void __thiscall FSGSTy::SetChannelList(FSGSTy *this,int param_1,undefined4 *para
           } while (uVar1 < dVar7 - 1);
         }
       } while (local_8 != 0);
-      FUN_006b5f80((int *)PTR_008075a8,0x1e9,0x5e,0x124,0xf3);
+      FUN_006b5f80((int *)g_ddxContext_008075A8,0x1e9,0x5e,0x124,0xf3);
       PutDDXClip(0x1e9,0x5e,0,0,0x124,(byte *)0xf3,'\x01',this_01->field_1E9A);
       this_01->field_002D = 0x28;
       *(dword *)&this_01->field_0x31 = this_01->field_1EAA->count;

@@ -93,7 +93,7 @@ cf_common_join_004F3AC3:
       ccFntTy::WrTxt(pCVar3->field_01B8,resourceString,iVar4,iVar6,uVar5,iVar7,iVar8);
       if ((param_1 < 0xb) && (-1 < (int)pCVar3->field_0148[uVar2])) {
         Library::DKW::DDX::FUN_006b3640
-                  ((int *)PTR_008075a8,(uint)pCVar3->field_0148[uVar2],0xffffffff,
+                  ((int *)g_ddxContext_008075A8,(uint)pCVar3->field_0148[uVar2],0xffffffff,
                    (&pCVar3->field_003C)[uVar2],(&pCVar3->field_0094)[uVar2]);
       }
       g_currentExceptionFrame = local_5c.previous;

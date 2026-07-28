@@ -142,7 +142,7 @@ void __thiscall SettMapTy::CreateCtrls(SettMapTy *this,char param_1)
   puVar13 = this_00->field_20CC;
   iVar11 = 10;
   do {
-    Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,*puVar13);
+    Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,*puVar13);
     puVar13 = puVar13 + 1;
     iVar11 = iVar11 + -1;
   } while (iVar11 != 0);
@@ -407,7 +407,7 @@ LAB_005c665d:
       iVar11 = iVar11 + -1;
     } while (iVar11 != 0);
   }
-  Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,this_00->field_1E22);
+  Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,this_00->field_1E22);
   SVar2 = this_00->field_1E26;
   if (((SVar2 != CASE_6) && (SVar2 != CASE_7)) && (SVar2 != CASE_E)) {
     this_00->field_002D = 0x20;

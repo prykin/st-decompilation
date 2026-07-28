@@ -787,7 +787,7 @@ LAB_0063a728:
       iVar8 = *(int *)((int)this + 0x34f) + 1;
       *(int *)((int)this + 0x34f) = iVar8;
       if (iVar8 == 7) {
-        Library::DKW::DDX::FUN_006c83b0((int *)PTR_008075a8,2,3,(int *)&DAT_007d1ff8);
+        Library::DKW::DDX::FUN_006c83b0((int *)g_ddxContext_008075A8,2,3,(int *)&DAT_007d1ff8);
       }
       if (8 < *(int *)((int)this + 0x34f)) {
         FUN_006ead40(*(void **)((int)this + 0x211),0,0,0x108,0xf7,
@@ -936,7 +936,7 @@ LAB_0063a728:
       iVar8 = *(int *)((int)this + 0x34f) + 1;
       *(int *)((int)this + 0x34f) = iVar8;
       if (iVar8 == 7) {
-        Library::DKW::DDX::FUN_006c83b0((int *)PTR_008075a8,2,3,(int *)&DAT_007d1ff8);
+        Library::DKW::DDX::FUN_006c83b0((int *)g_ddxContext_008075A8,2,3,(int *)&DAT_007d1ff8);
       }
       if (8 < *(int *)((int)this + 0x34f)) {
         FUN_006ead40(*(void **)((int)this + 0x211),0,0,0x108,0xf7,

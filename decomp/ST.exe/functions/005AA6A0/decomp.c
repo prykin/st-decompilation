@@ -66,8 +66,8 @@ void __thiscall HoloTy::OutHoloProc(HoloTy *this,uint param_1)
               goto switchD_005aa738_default;
             }
             Library::DKW::DDX::FUN_006b42d0
-                      ((AnonShape_GLOBAL_0080759C_9638EF10 *)param_1,iVar4,iVar3,pBVar7,(uint *)0x0,
-                       iVar8,iVar5,DVar9,DVar10);
+                      ((DDXContext *)param_1,iVar4,iVar3,pBVar7,(uint *)0x0,iVar8,iVar5,DVar9,DVar10
+                      );
           }
 switchD_005aa738_default:
           uVar6 = uVar6 + 1;

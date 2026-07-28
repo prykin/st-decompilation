@@ -104,7 +104,7 @@ void __thiscall StartSystemTy::CreateChatView(StartSystemTy *this)
     local_678 = uVar2;
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,8,&this_00->field_0550,(int *)0x0,local_8c4,0);
-    Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,this_00->field_0558);
+    Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,this_00->field_0558);
     if (this_00->field_0560 != 0xffffffff) {
       Library::DKW::DDX::FUN_006b34d0
                 ((uint *)this_00->field_05A4,this_00->field_0560,0xfffffffe,this_00->field_0578,

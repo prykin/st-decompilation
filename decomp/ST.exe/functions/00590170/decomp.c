@@ -47,10 +47,10 @@ void __thiscall MAdvTy::InitMAdv(MAdvTy *this)
       MMsgTy::HidePanel(g_startSystem_0081176C->field_02E6,0,0,1);
       MMsgTy::HideSprites(g_startSystem_0081176C->field_02E6);
     }
-    DarkScreen(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,1,0);
+    DarkScreen(g_dDXContext_0080759C,1,0);
     PaintMAdv(this_01);
-    thunk_FUN_0055ddf0((undefined4 *)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,
-                       (int *)PTR_008075a8,(ushort *)this_01->field_005E,10,2);
+    thunk_FUN_0055ddf0((undefined4 *)g_dDXContext_0080759C,(int *)g_ddxContext_008075A8,
+                       (ushort *)this_01->field_005E,10,2);
     this_00 = g_cursorClass_00802A30;
     if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
       iVar2 = g_cursorClass_00802A30->field_00C9;

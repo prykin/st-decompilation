@@ -83,7 +83,7 @@ void __thiscall SettMapMTy::CreateCtrls(SettMapMTy *this,char param_1)
       local_30 = local_50;
       (*local_8->field_000C->vtable->CreateObject)
                 ((SystemClassTy *)local_8->field_000C,5,&local_8->field_21FC,(int *)0x0,local_60,0);
-      Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,this_01->field_2200);
+      Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,this_01->field_2200);
     }
     else {
       if (local_8->field_21E6 != '\0') {
@@ -114,7 +114,8 @@ void __thiscall SettMapMTy::CreateCtrls(SettMapMTy *this,char param_1)
                   ((SystemClassTy *)this_00,6,&g_startSystem_0081176C->field_054C,(int *)0x0,
                    local_a80,0);
       }
-      Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,g_startSystem_0081176C->field_0558);
+      Library::DKW::DDX::FUN_006b3430
+                ((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0558);
       if (g_startSystem_0081176C->field_0560 != 0xffffffff) {
         Library::DKW::DDX::FUN_006b34d0
                   ((uint *)g_startSystem_0081176C->field_05A4,g_startSystem_0081176C->field_0560,
@@ -127,7 +128,8 @@ void __thiscall SettMapMTy::CreateCtrls(SettMapMTy *this,char param_1)
                    0xfffffffe,g_startSystem_0081176C->field_0609,g_startSystem_0081176C->field_060D)
         ;
       }
-      Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,g_startSystem_0081176C->field_0554);
+      Library::DKW::DDX::FUN_006b3430
+                ((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0554);
     }
     SettMapTy::CreateCtrls((SettMapTy *)this_01,param_1);
     if (param_1 == '\0') {

@@ -76,7 +76,7 @@ void __thiscall FSGSTy::Finished(FSGSTy *this,int param_1)
       iVar5 = -2;
       resourceString = (uint *)LoadResourceString(0x25b9,g_module_00807618);
       ccFntTy::WrTxt(pFVar4->field_1A73,resourceString,iVar5,iVar9,uVar8,iVar10,iVar11);
-      FUN_006b35d0((int *)PTR_008075a8,pFVar4->field_1ABC);
+      FUN_006b35d0((int *)g_ddxContext_008075A8,pFVar4->field_1ABC);
       pSVar2 = pFVar4->field_1A5B;
       memset(local_28, 0, 0x20); /* compiler bulk-zero initialization */
       local_28[2] = pFVar4->field_0008;

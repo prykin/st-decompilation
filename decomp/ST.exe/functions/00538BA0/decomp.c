@@ -72,7 +72,7 @@ LAB_00538bd9:
       resourceString = (uint *)LoadResourceString(param_5,g_module_00807618);
       ccFntTy::WrStr(param_4,resourceString,iVar3,iVar5,uVar4);
       Library::DKW::DDX::FUN_006b3640
-                ((int *)PTR_008075a8,pPVar2->field_0060,0xffffffff,pPVar2->field_003C,
+                ((int *)g_ddxContext_008075A8,pPVar2->field_0060,0xffffffff,pPVar2->field_003C,
                  pPVar2->field_0044);
       g_currentExceptionFrame = local_5c.previous;
       return;

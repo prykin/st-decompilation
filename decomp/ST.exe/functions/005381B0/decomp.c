@@ -45,13 +45,14 @@ void __thiscall PanelTy::InitPanel(PanelTy *this)
       *(undefined1 *)puVar5 = 0xff;
       puVar5 = (undefined4 *)((int)puVar5 + 1);
     }
-    FUN_006b1a50(PTR_008075a8,3,(undefined4 *)0x0,(undefined4 *)&this_00->field_0x4c);
+    FUN_006b1a50(g_ddxContext_008075A8,3,(undefined4 *)0x0,(undefined4 *)&this_00->field_0x4c);
     piVar4 = &this_00->field_0060;
-    FUN_006b2330(PTR_008075a8,(uint *)piVar4,this_00->field_0064,0x4057ea,this_00->field_0040,
-                 this_00->field_0048,(ushort *)this_00->field_0068);
-    FUN_006b1b10(PTR_008075a8,*piVar4,3);
+    FUN_006b2330(g_ddxContext_008075A8,(uint *)piVar4,this_00->field_0064,0x4057ea,
+                 this_00->field_0040,this_00->field_0048,(ushort *)this_00->field_0068);
+    FUN_006b1b10((AnonShape_006B1B10_121F236C *)g_ddxContext_008075A8,*piVar4,3);
     Library::DKW::DDX::FUN_006b3640
-              ((int *)PTR_008075a8,*piVar4,0xffffffff,this_00->field_003C,this_00->field_0044);
+              ((int *)g_ddxContext_008075A8,*piVar4,0xffffffff,this_00->field_003C,
+               this_00->field_0044);
     memset(&this_00->field_0x18, 0, 0x20); /* compiler bulk-zero initialization */
     this_00->field_002C = this_00->field_0008;
     this_00->field_0028 = 0x13;

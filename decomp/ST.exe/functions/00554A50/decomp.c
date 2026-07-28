@@ -7,12 +7,10 @@
 void __thiscall cLoadingTy::sub_00554A50(cLoadingTy *this)
 
 {
-  FUN_006b5f80((int *)PTR_008075a8,0,0,g_nWidth_00806730,DAT_00806734);
-  FUN_006b4640(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0,0,(BITMAPINFO *)this->field_0000,
-               (uint *)0x0);
-  FUN_006b48a0((int *)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0,0,
-               (BITMAPINFO *)this->field_0004,(uint *)0x0,0);
-  Library::DKW::DDX::FUN_006bb370(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0,0);
+  FUN_006b5f80((int *)g_ddxContext_008075A8,0,0,g_nWidth_00806730,DAT_00806734);
+  FUN_006b4640(g_dDXContext_0080759C,0,0,(BITMAPINFO *)this->field_0000,(uint *)0x0);
+  FUN_006b48a0((int *)g_dDXContext_0080759C,0,0,(BITMAPINFO *)this->field_0004,(uint *)0x0,0);
+  Library::DKW::DDX::FUN_006bb370(g_dDXContext_0080759C,0,0);
   return;
 }
 

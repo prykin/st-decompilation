@@ -130,7 +130,7 @@ void __thiscall CampaignTy::InitCampaign(CampaignTy *this,undefined4 param_1)
         default:
           goto switchD_00590c7b_default;
         }
-        FUN_006c4a00(puVar5,g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,uVar15,uVar17);
+        FUN_006c4a00(puVar5,g_dDXContext_0080759C,uVar15,uVar17);
       }
     }
 switchD_00590c7b_default:
@@ -251,7 +251,7 @@ LAB_00590d4c:
                 goto switchD_00590d73_default;
               }
             }
-            FUN_006c4a00(puVar5,g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,uVar15,uVar17);
+            FUN_006c4a00(puVar5,g_dDXContext_0080759C,uVar15,uVar17);
           }
 switchD_00590d73_default:
           iVar2 = iVar2 + 1;
@@ -284,7 +284,7 @@ switchD_00590d73_default:
           this_02->field_1BE8 = (uint)DAT_0080874e * 3 - CASE_3;
           puVar4 = (ushort *)FUN_0070a9f0(g_cMf32_00806780,"CMPGN_BKG",0,1);
           g_startSystem_0081176C->field_002C = puVar4;
-          DarkScreen(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,1,0);
+          DarkScreen(g_dDXContext_0080759C,1,0);
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           this_00 = *(MMsgTy **)(this_02->field_1A5B + 0x2e6);
           if (this_00 != (MMsgTy *)0x0) {

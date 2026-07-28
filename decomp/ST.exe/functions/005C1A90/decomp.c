@@ -200,8 +200,8 @@ int __thiscall MReportTy::GetMessage(MReportTy *this,STMessage *message)
       goto cf_common_exit_005C22B1;
     }
     if (SVar5 != MESS_MREPORTTY_70FF) goto cf_common_exit_005C22B1;
-    thunk_FUN_0055ddf0((undefined4 *)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,
-                       (int *)PTR_008075a8,(ushort *)local_10->field_005D,0,0);
+    thunk_FUN_0055ddf0((undefined4 *)g_dDXContext_0080759C,(int *)g_ddxContext_008075A8,
+                       (ushort *)local_10->field_005D,0,0);
 switchD_005c1b14_caseD_5:
     PaintMReport(this_00,'\0');
     goto cf_common_exit_005C22B1;

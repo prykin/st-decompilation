@@ -184,7 +184,7 @@ STT3DSprC::RestoreSpr(STT3DSprC *this,int *param_1,AnonShape_004AD790_77673787 *
       else {
         sub_004ACF90(this_00,(char)_local_c);
       }
-      if (pAVar5[1].field_0x1 == '\x01') {
+      if (pAVar5[1].field_0001 == '\x01') {
         sub_004ACFE0(this_00,(char)_local_c);
       }
       else {

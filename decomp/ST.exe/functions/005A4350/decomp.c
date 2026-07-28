@@ -224,7 +224,7 @@ int __thiscall FSGSTy::GetMessage(FSGSTy *this,STMessage *message)
           FUN_006b5b10((AnonShape_006E6FB0_BC494FEA *)this_00->field_1AC0,0,iVar18,uVar31 + 1,iVar18
                        ,local_54 + -2 + uVar31,9,0xd);
         }
-        FUN_006b35d0((int *)PTR_008075a8,this_00->field_1ABC);
+        FUN_006b35d0((int *)g_ddxContext_008075A8,this_00->field_1ABC);
         goto cf_common_exit_005A8CA7;
       }
       switch(SVar6) {
@@ -787,7 +787,7 @@ LAB_005a6d57:
         iVar18 = -2;
         puVar21 = (uint *)LoadResourceString(0x25be,g_module_00807618);
         ccFntTy::WrTxt(this_00->field_1A73,puVar21,iVar18,iVar42,uVar31,iVar44,iVar45);
-        FUN_006b35d0((int *)PTR_008075a8,this_00->field_1ABC);
+        FUN_006b35d0((int *)g_ddxContext_008075A8,this_00->field_1ABC);
         wsprintfA((LPSTR)&DAT_0080f33a,"%s%s%s",&DAT_00807680,PTR_s_UPDATES__0079c020,
                   &DAT_0080f126);
         wsprintfA(local_4b8,"subtitans/%s",&DAT_0080f126);
@@ -821,7 +821,7 @@ LAB_005a6e50:
           if ((this_00->field_1E8E == 0) || (this_00->field_1E9A == (tagBITMAPINFO *)0x0)) break;
           pAVar39 = (AnonShape_005A4350_59BACD18 *)(message->arg2).u32;
           local_1c = pAVar39;
-          FUN_006b5f80((int *)PTR_008075a8,*(int *)&pAVar39->field_0x24,
+          FUN_006b5f80((int *)g_ddxContext_008075A8,*(int *)&pAVar39->field_0x24,
                        (uint)(message->arg1).words.high + *(int *)&pAVar39->field_0x28,
                        pAVar39->field_002C,0x11);
           if (this_00->field_1A5F == CASE_6) {
@@ -1126,7 +1126,7 @@ LAB_005a6e50:
               this_00->field_002D = 0x33;
               *(DArrayTy **)&this_00->field_0x31 = this_00->field_1AE8;
               FUN_006e6080(this_00,2,this_00->field_1AC4,(undefined4 *)&this_00->field_0x1d);
-              FUN_006b5f80((int *)PTR_008075a8,0x1a4,0x7d,0x15e,0x8c);
+              FUN_006b5f80((int *)g_ddxContext_008075A8,0x1a4,0x7d,0x15e,0x8c);
               PutDDXClip(0x1a4,0x7d,0xb,0x1f,0x15e,(byte *)0x8c,'\x01',this_00->field_1E92);
               FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_00->field_1E8E,0,0,0,0x15e,0x8c,0xff)
               ;
@@ -1181,15 +1181,15 @@ LAB_005a6e50:
                 ccFntTy::WrStr(this_00->field_1A73,&DAT_0080f33a,0,-1,0);
               }
               Library::DKW::DDX::FUN_006b4680
-                        ((int *)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0x1a4,0x7d,
-                         (BITMAPINFO *)this_00->field_1E8E,(uint *)0x0,0,0,0x15e,0x8c,0x10000ff);
+                        ((int *)g_dDXContext_0080759C,0x1a4,0x7d,(BITMAPINFO *)this_00->field_1E8E,
+                         (uint *)0x0,0,0,0x15e,0x8c,0x10000ff);
             }
             if (bVar40) {
               Library::DKW::TBL::FUN_006b6020(&this_00->field_1AE8->flags,0,&DAT_008016a0);
               this_00->field_002D = 0x33;
               *(DArrayTy **)&this_00->field_0x31 = this_00->field_1AE8;
               FUN_006e6080(this_00,2,this_00->field_1AC4,(undefined4 *)&this_00->field_0x1d);
-              FUN_006b5f80((int *)PTR_008075a8,0x1a4,0x7d,0x15e,0x8c);
+              FUN_006b5f80((int *)g_ddxContext_008075A8,0x1a4,0x7d,0x15e,0x8c);
               PutDDXClip(0x1a4,0x7d,0xb,0x1f,0x15e,(byte *)0x8c,'\x01',this_00->field_1E92);
               FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_00->field_1E8E,0,0,0,0x15e,0x8c,0xff)
               ;
@@ -1218,8 +1218,8 @@ LAB_005a6e50:
               puVar21 = (uint *)LoadResourceString(0x2345,g_module_00807618);
               ccFntTy::WrStr(this_00->field_1A73,puVar21,iVar18,iVar42,uVar31);
               Library::DKW::DDX::FUN_006b4680
-                        ((int *)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0x1a4,0x7d,
-                         (BITMAPINFO *)this_00->field_1E8E,(uint *)0x0,0,0,0x15e,0x8c,0x10000ff);
+                        ((int *)g_dDXContext_0080759C,0x1a4,0x7d,(BITMAPINFO *)this_00->field_1E8E,
+                         (uint *)0x0,0,0,0x15e,0x8c,0x10000ff);
             }
           }
           break;
@@ -1419,7 +1419,7 @@ LAB_005a8c85:
           pcVar9 = this_00->field_1A77;
           local_1c = (AnonShape_005A4350_59BACD18 *)this_00->field_1E9E;
         }
-        FUN_006b5f80((int *)PTR_008075a8,local_8[9],local_8[10],local_8[0xb],local_8[0xc]);
+        FUN_006b5f80((int *)g_ddxContext_008075A8,local_8[9],local_8[10],local_8[0xb],local_8[0xc]);
         PutDDXClip(local_8[9],local_8[10],6,1,local_8[0xb],(byte *)local_8[0xc],'\x01',
                    this_00->field_1E92);
         FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_00->field_1E8E,0,0,0,local_8[0xb],
@@ -1453,7 +1453,7 @@ LAB_005a8c85:
           } while ((int)local_14 < (int)((uint)(message->arg0).words.high + local_8[0x78]));
         }
         Library::DKW::DDX::FUN_006b4680
-                  ((int *)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,local_8[9],local_8[10],
+                  ((int *)g_dDXContext_0080759C,local_8[9],local_8[10],
                    (BITMAPINFO *)this_00->field_1E8E,(uint *)0x0,0,0,local_8[0xb],local_8[0xc],
                    0x10000ff);
       }
@@ -1461,7 +1461,7 @@ LAB_005a8c85:
     case MESS_MAINMENUTY_6983:
       if ((this_00->field_1E8E != 0) && (this_00->field_1E92 != (tagBITMAPINFO *)0x0)) {
         dVar8 = (message->arg2).u32;
-        FUN_006b5f80((int *)PTR_008075a8,*(int *)(dVar8 + 0x24),*(int *)(dVar8 + 0x28),
+        FUN_006b5f80((int *)g_ddxContext_008075A8,*(int *)(dVar8 + 0x24),*(int *)(dVar8 + 0x28),
                      *(int *)(dVar8 + 0x2c),*(int *)(dVar8 + 0x30));
         PutDDXClip(*(int *)(dVar8 + 0x24),*(int *)(dVar8 + 0x28),6,0x15f,*(uint *)(dVar8 + 0x2c),
                    *(byte **)(dVar8 + 0x30),'\x01',this_00->field_1E92);
@@ -1479,16 +1479,16 @@ LAB_005a8c85:
         }
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         Library::DKW::DDX::FUN_006b4680
-                  ((int *)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,*(int *)(dVar8 + 0x24),
-                   *(int *)(dVar8 + 0x28),(BITMAPINFO *)this_00->field_1E8E,(uint *)0x0,0,0,
-                   *(DWORD *)(dVar8 + 0x2c),*(DWORD *)(dVar8 + 0x30),0x10000ff);
+                  ((int *)g_dDXContext_0080759C,*(int *)(dVar8 + 0x24),*(int *)(dVar8 + 0x28),
+                   (BITMAPINFO *)this_00->field_1E8E,(uint *)0x0,0,0,*(DWORD *)(dVar8 + 0x2c),
+                   *(DWORD *)(dVar8 + 0x30),0x10000ff);
       }
       break;
     case 0x6984:
       if ((this_00->field_1E8E == 0) || (this_00->field_1E92 == (tagBITMAPINFO *)0x0)) break;
       pAVar39 = (AnonShape_005A4350_59BACD18 *)(message->arg2).u32;
-      FUN_006b5f80((int *)PTR_008075a8,*(int *)&pAVar39->field_0x24,*(int *)&pAVar39->field_0x28,
-                   pAVar39->field_002C,*(int *)(pAVar39 + 1));
+      FUN_006b5f80((int *)g_ddxContext_008075A8,*(int *)&pAVar39->field_0x24,
+                   *(int *)&pAVar39->field_0x28,pAVar39->field_002C,*(int *)(pAVar39 + 1));
       PutDDXClip(*(int *)&pAVar39->field_0x24,*(int *)&pAVar39->field_0x28,
                  *(int *)&pAVar39->field_0x24 + -0x13,0x160,pAVar39->field_002C,
                  *(byte **)(pAVar39 + 1),'\x01',this_00->field_1E92);
@@ -1670,8 +1670,8 @@ LAB_005a7656:
         local_8 = (uint *)0x25b1;
       }
       pAVar39 = local_c;
-      FUN_006b5f80((int *)PTR_008075a8,*(int *)&local_c->field_0x24,*(int *)&local_c->field_0x28,
-                   local_c->field_002C,*(int *)(local_c + 1));
+      FUN_006b5f80((int *)g_ddxContext_008075A8,*(int *)&local_c->field_0x24,
+                   *(int *)&local_c->field_0x28,local_c->field_002C,*(int *)(local_c + 1));
       PutDDXClip(*(int *)&pAVar39->field_0x24,*(int *)&pAVar39->field_0x28,
                  *(int *)&pAVar39->field_0x24 - (int)local_10,
                  *(int *)&pAVar39->field_0x28 - (int)local_1c,pAVar39->field_002C,
@@ -1719,13 +1719,13 @@ LAB_005a754e:
       iVar18 = *(int *)&pAVar39->field_0x28;
 LAB_005a89f6:
       Library::DKW::DDX::FUN_006b4680
-                ((int *)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,*(int *)&pAVar39->field_0x24,
-                 iVar18,pBVar41,(uint *)0x0,0,0,DVar43,DVar17,0x10000ff);
+                ((int *)g_dDXContext_0080759C,*(int *)&pAVar39->field_0x24,iVar18,pBVar41,
+                 (uint *)0x0,0,0,DVar43,DVar17,0x10000ff);
       break;
     case 0x6987:
       if ((this_00->field_1E8E != 0) && (this_00->field_1E9A != (tagBITMAPINFO *)0x0)) {
         dVar8 = (message->arg2).u32;
-        FUN_006b5f80((int *)PTR_008075a8,*(int *)(dVar8 + 0x24),*(int *)(dVar8 + 0x28),
+        FUN_006b5f80((int *)g_ddxContext_008075A8,*(int *)(dVar8 + 0x24),*(int *)(dVar8 + 0x28),
                      *(int *)(dVar8 + 0x2c),*(int *)(dVar8 + 0x30));
         PutDDXClip(*(int *)(dVar8 + 0x24),*(int *)(dVar8 + 0x28),*(int *)(dVar8 + 0x24) + -0x1e9,
                    *(int *)(dVar8 + 0x28) + -0x5e,*(uint *)(dVar8 + 0x2c),*(byte **)(dVar8 + 0x30),
@@ -1745,15 +1745,15 @@ LAB_005a89f6:
         }
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         Library::DKW::DDX::FUN_006b4680
-                  ((int *)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,*(int *)(dVar8 + 0x24),
-                   *(int *)(dVar8 + 0x28),(BITMAPINFO *)this_00->field_1E8E,(uint *)0x0,0,0,
-                   *(DWORD *)(dVar8 + 0x2c),*(DWORD *)(dVar8 + 0x30),0x10000ff);
+                  ((int *)g_dDXContext_0080759C,*(int *)(dVar8 + 0x24),*(int *)(dVar8 + 0x28),
+                   (BITMAPINFO *)this_00->field_1E8E,(uint *)0x0,0,0,*(DWORD *)(dVar8 + 0x2c),
+                   *(DWORD *)(dVar8 + 0x30),0x10000ff);
       }
       break;
     case MESS_SHARED_6980|MESS_SHARED_0008:
       if ((this_00->field_1E8E != 0) && (this_00->field_1E92 != (tagBITMAPINFO *)0x0)) {
         dVar8 = (message->arg2).u32;
-        FUN_006b5f80((int *)PTR_008075a8,*(int *)(dVar8 + 0x24),*(int *)(dVar8 + 0x28),
+        FUN_006b5f80((int *)g_ddxContext_008075A8,*(int *)(dVar8 + 0x24),*(int *)(dVar8 + 0x28),
                      *(int *)(dVar8 + 0x2c),*(int *)(dVar8 + 0x30));
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         PutDDXClip(*(int *)(dVar8 + 0x24),*(int *)(dVar8 + 0x28),
@@ -1776,9 +1776,9 @@ LAB_005a89f6:
         }
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         Library::DKW::DDX::FUN_006b4680
-                  ((int *)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,*(int *)(dVar8 + 0x24),
-                   *(int *)(dVar8 + 0x28),(BITMAPINFO *)this_00->field_1E8E,(uint *)0x0,0,0,
-                   *(DWORD *)(dVar8 + 0x2c),*(DWORD *)(dVar8 + 0x30),0x10000ff);
+                  ((int *)g_dDXContext_0080759C,*(int *)(dVar8 + 0x24),*(int *)(dVar8 + 0x28),
+                   (BITMAPINFO *)this_00->field_1E8E,(uint *)0x0,0,0,*(DWORD *)(dVar8 + 0x2c),
+                   *(DWORD *)(dVar8 + 0x30),0x10000ff);
       }
       break;
     case 0x698b:
@@ -1843,7 +1843,7 @@ LAB_005a7c26:
       puVar21 = (uint *)LoadResourceString((UINT)local_8,g_module_00807618);
       ccFntTy::WrStr(this_00->field_1A73,puVar21,iVar18,iVar42,uVar31);
 LAB_005a7c92:
-      FUN_006b35d0((int *)PTR_008075a8,this_00->field_1ABC);
+      FUN_006b35d0((int *)g_ddxContext_008075A8,this_00->field_1ABC);
       break;
     case 0x698c:
       ccFntTy::SetSurf(this_00->field_1A73,(message->arg1).i32,0,0,0,0,0);
@@ -3064,7 +3064,7 @@ LAB_005a50be:
       iVar18 = -1;
       puVar21 = (uint *)LoadResourceString(0x25b6,g_module_00807618);
       ccFntTy::WrTxt(this_00->field_1A73,puVar21,iVar18,iVar42,uVar31,iVar44,iVar45);
-      FUN_006b35d0((int *)PTR_008075a8,this_00->field_1ABC);
+      FUN_006b35d0((int *)g_ddxContext_008075A8,this_00->field_1ABC);
       CFsgsConnection::RequestDatafile((CFsgsConnection *)&DAT_00802a90,"st.inf");
       goto cf_common_exit_005A8CA7;
     }

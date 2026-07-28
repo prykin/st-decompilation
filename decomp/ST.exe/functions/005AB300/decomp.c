@@ -410,7 +410,7 @@ switchD_005ab66b_caseD_6:
         case 0x13:
           break;
         default:
-          DarkScreen(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,1,0);
+          DarkScreen(g_dDXContext_0080759C,1,0);
         }
         this_00 = this_02->field_1A5B->field_02E6;
         if (this_00 != (MMsgTy *)0x0) {
@@ -419,7 +419,7 @@ switchD_005ab66b_caseD_6:
         }
         PaintChooseMap(this_02,'\x01');
         SpriteClassTy::InitSprite
-                  ((SpriteClassTy *)&this_02->field_1A70,(int *)PTR_008075a8,0x31,'\a',
+                  ((SpriteClassTy *)&this_02->field_1A70,(int *)g_ddxContext_008075A8,0x31,'\a',
                    (undefined4 *)0x0,0,0);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(this_02->field_1A70 + 4))(DAT_00806784,7,0,"MM_SLDUP",0xffffffff);
@@ -427,7 +427,7 @@ switchD_005ab66b_caseD_6:
         this_02->field_1A90 = 0x3c;
         this_02->field_1A78 = 0;
         SpriteClassTy::InitSprite
-                  ((SpriteClassTy *)&this_02->field_1B01,(int *)PTR_008075a8,0x31,'\a',
+                  ((SpriteClassTy *)&this_02->field_1B01,(int *)g_ddxContext_008075A8,0x31,'\a',
                    (undefined4 *)0x0,0,0);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(this_02->field_1B01 + 4))(DAT_00806784,7,0,"MM_SLDDN",0xffffffff);
@@ -435,7 +435,7 @@ switchD_005ab66b_caseD_6:
         this_02->field_1B21 = 0x1b8;
         this_02->field_1B09 = 0;
         SpriteClassTy::InitSprite
-                  ((SpriteClassTy *)&this_02->field_1B92,(int *)PTR_008075a8,0x31,'\a',
+                  ((SpriteClassTy *)&this_02->field_1B92,(int *)g_ddxContext_008075A8,0x31,'\a',
                    (undefined4 *)0x0,0,0);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(this_02->field_1B92 + 4))(DAT_00806784,7,0,"MM_SLDT",0xffffffff);
@@ -466,17 +466,18 @@ switchD_005ab66b_caseD_6:
         }
         uVar14 = 0x3f;
         do {
-          FUN_006b2330(PTR_008075a8,puVar18,0x31,0x40213a,this_02->field_1C7B->field_0004,0x13,
-                       (ushort *)this_02);
-          Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,*puVar18,0xffffffff,0x114,uVar14);
+          FUN_006b2330(g_ddxContext_008075A8,puVar18,0x31,0x40213a,this_02->field_1C7B->field_0004,
+                       0x13,(ushort *)this_02);
+          Library::DKW::DDX::FUN_006b3640
+                    ((int *)g_ddxContext_008075A8,*puVar18,0xffffffff,0x114,uVar14);
           uVar14 = uVar14 + 0x13;
           puVar18 = puVar18 + 1;
         } while ((int)uVar14 < 0x1e1);
         CreateCtrls(this_02,'\0');
         PrepFiles(this_02,this_02->field_1C93);
-        FUN_006b2330(PTR_008075a8,&local_8,0x32,0x4042d2,0x204,0x19d,
+        FUN_006b2330(g_ddxContext_008075A8,&local_8,0x32,0x4042d2,0x204,0x19d,
                      (ushort *)&this_02->field_1A5B->field_0140);
-        Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,local_8,0xffffffff,0x112,0x38);
+        Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,local_8,0xffffffff,0x112,0x38);
         pHVar12 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
         if (pHVar12 == (HoloTy *)0x0) {
           pHVar12 = (HoloTy *)0x0;
@@ -488,8 +489,8 @@ switchD_005ab66b_caseD_6:
           pHVar12->field_0001 = CASE_2;
           pHVar12->field_0007 = 0;
           pHVar12->field_000B = (void *)0x0;
-          *(undefined4 *)&pHVar12->field_0xf = 0;
-          *(undefined4 *)&pHVar12->field_0x1b = 1;
+          pHVar12->field_000F = 0;
+          pHVar12->field_001B = 1;
           pHVar12->field_0013 = 1;
           pHVar12->field_0017 = -1;
           pHVar12->field_0027 = 0;
@@ -503,7 +504,8 @@ switchD_005ab66b_caseD_6:
           cVar22 = '\x01';
           bVar21 = 0x10;
           iVar20 = 1;
-          iVar6 = Library::DKW::DDX::FUN_006bf9f0((int *)PTR_008075a8,0x112,0x38,0x204,0x19d);
+          iVar6 = Library::DKW::DDX::FUN_006bf9f0
+                            ((int *)g_ddxContext_008075A8,0x112,0x38,0x204,0x19d);
           uVar14 = HoloTy::Init(this_02->field_20B8,CASE_2,0x112,0x38,iVar6,iVar20,bVar21,cVar22,
                                 uVar14);
           if (uVar14 != 0) {
@@ -512,7 +514,7 @@ switchD_005ab66b_caseD_6:
             pHVar12->field_0017 = pHVar12->field_0013;
             uVar14 = this_02->field_20B8->field_0003;
             if (-1 < (int)uVar14) {
-              FUN_006b3af0((int *)PTR_008075a8,uVar14);
+              FUN_006b3af0((int *)g_ddxContext_008075A8,uVar14);
             }
             if (this_02->field_1A74 != 0xffffffff) {
               FUN_006b3af0((int *)this_02->field_1AB8,this_02->field_1A74);
@@ -526,14 +528,14 @@ switchD_005ab66b_caseD_6:
             puVar18 = this_02->field_1C23;
             iVar6 = 0x16;
             do {
-              FUN_006b3af0((int *)PTR_008075a8,*puVar18);
+              FUN_006b3af0((int *)g_ddxContext_008075A8,*puVar18);
               puVar18 = puVar18 + 1;
               iVar6 = iVar6 + -1;
             } while (iVar6 != 0);
           }
         }
         if (local_8 != 0xffffffff) {
-          FUN_006b3bb0((int *)PTR_008075a8,local_8);
+          FUN_006b3bb0((int *)g_ddxContext_008075A8,local_8);
           local_8 = 0xffffffff;
         }
         if (this_02->field_0x20b4 == '\0') {
@@ -555,12 +557,13 @@ switchD_005ab66b_caseD_6:
                        ,0xfffffffe,g_startSystem_0081176C->field_04CB,
                        g_startSystem_0081176C->field_04CF);
           }
-          Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,g_startSystem_0081176C->field_0540);
+          Library::DKW::DDX::FUN_006b3430
+                    ((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0540);
         }
         else {
-          FUN_006b2330(PTR_008075a8,&local_8,0x32,0x4042d2,0xf9,0x121,
+          FUN_006b2330(g_ddxContext_008075A8,&local_8,0x32,0x4042d2,0xf9,0x121,
                        (ushort *)&this_02->field_1A5B->field_0140);
-          Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,local_8,0xffffffff,10,0xb4);
+          Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,local_8,0xffffffff,10,0xb4);
           pHVar12 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
           if (pHVar12 == (HoloTy *)0x0) {
             pHVar12 = (HoloTy *)0x0;
@@ -572,8 +575,8 @@ switchD_005ab66b_caseD_6:
             pHVar12->field_0001 = CASE_2;
             pHVar12->field_0007 = 0;
             pHVar12->field_000B = (void *)0x0;
-            *(undefined4 *)&pHVar12->field_0xf = 0;
-            *(undefined4 *)&pHVar12->field_0x1b = 1;
+            pHVar12->field_000F = 0;
+            pHVar12->field_001B = 1;
             pHVar12->field_0013 = 1;
             pHVar12->field_0017 = -1;
             pHVar12->field_0027 = 0;
@@ -587,7 +590,8 @@ switchD_005ab66b_caseD_6:
             cVar22 = '\x01';
             bVar21 = 0x10;
             iVar20 = 1;
-            iVar6 = Library::DKW::DDX::FUN_006bf9f0((int *)PTR_008075a8,10,0xb4,0xf9,0x121);
+            iVar6 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,10,0xb4,0xf9,0x121)
+            ;
             uVar14 = HoloTy::Init(this_02->field_20BC,CASE_4,10,0xb4,iVar6,iVar20,bVar21,cVar22,
                                   uVar14);
             if (uVar14 != 0) {
@@ -596,7 +600,7 @@ switchD_005ab66b_caseD_6:
               pHVar12->field_0017 = pHVar12->field_0013;
               uVar14 = this_02->field_20BC->field_0003;
               if (-1 < (int)uVar14) {
-                FUN_006b3af0((int *)PTR_008075a8,uVar14);
+                FUN_006b3af0((int *)g_ddxContext_008075A8,uVar14);
               }
               if (g_startSystem_0081176C->field_0391 != 0xffffffff) {
                 FUN_006b3af0((int *)g_startSystem_0081176C->field_03D5,
@@ -610,11 +614,11 @@ switchD_005ab66b_caseD_6:
                 FUN_006b3af0((int *)g_startSystem_0081176C->field_04F7,
                              g_startSystem_0081176C->field_04B3);
               }
-              FUN_006b3af0((int *)PTR_008075a8,g_startSystem_0081176C->field_0540);
+              FUN_006b3af0((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0540);
             }
           }
           if (local_8 != 0xffffffff) {
-            FUN_006b3bb0((int *)PTR_008075a8,local_8);
+            FUN_006b3bb0((int *)g_ddxContext_008075A8,local_8);
             local_8 = 0xffffffff;
           }
         }
@@ -634,8 +638,10 @@ switchD_005ab66b_caseD_6:
                          g_startSystem_0081176C->field_05F1,0xfffffffe,
                          g_startSystem_0081176C->field_0609,g_startSystem_0081176C->field_060D);
             }
-            Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,g_startSystem_0081176C->field_0558);
-            Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,g_startSystem_0081176C->field_0554);
+            Library::DKW::DDX::FUN_006b3430
+                      ((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0558);
+            Library::DKW::DDX::FUN_006b3430
+                      ((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0554);
           }
           else {
             if (g_startSystem_0081176C->field_0560 != 0xffffffff) {
@@ -646,14 +652,15 @@ switchD_005ab66b_caseD_6:
               FUN_006b3af0((int *)g_startSystem_0081176C->field_0635,
                            g_startSystem_0081176C->field_05F1);
             }
-            FUN_006b3af0((int *)PTR_008075a8,g_startSystem_0081176C->field_0558);
-            FUN_006b3af0((int *)PTR_008075a8,g_startSystem_0081176C->field_0554);
+            FUN_006b3af0((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0558);
+            FUN_006b3af0((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0554);
           }
         }
         else {
-          FUN_006b2330(PTR_008075a8,&local_8,0x32,0x403b61,400,0x62,
+          FUN_006b2330(g_ddxContext_008075A8,&local_8,0x32,0x403b61,400,0x62,
                        (ushort *)&this_02->field_1A5B->field_0140);
-          Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,local_8,0xffffffff,200,0x1f1);
+          Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,local_8,0xffffffff,200,0x1f1)
+          ;
           if (g_startSystem_0081176C->field_0560 != 0xffffffff) {
             Library::DKW::DDX::FUN_006b34d0
                       ((uint *)g_startSystem_0081176C->field_05A4,g_startSystem_0081176C->field_0560
@@ -677,8 +684,8 @@ switchD_005ab66b_caseD_6:
             pHVar12->field_0001 = CASE_2;
             pHVar12->field_0007 = 0;
             pHVar12->field_000B = (void *)0x0;
-            *(undefined4 *)&pHVar12->field_0xf = 0;
-            *(undefined4 *)&pHVar12->field_0x1b = 1;
+            pHVar12->field_000F = 0;
+            pHVar12->field_001B = 1;
             pHVar12->field_0013 = 1;
             pHVar12->field_0017 = -1;
             pHVar12->field_0027 = 0;
@@ -692,7 +699,8 @@ switchD_005ab66b_caseD_6:
             cVar22 = '\x01';
             bVar21 = 0x10;
             iVar20 = 1;
-            iVar6 = Library::DKW::DDX::FUN_006bf9f0((int *)PTR_008075a8,200,0x1f1,400,0x62);
+            iVar6 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,200,0x1f1,400,0x62)
+            ;
             uVar14 = HoloTy::Init(this_02->field_20C0,CASE_1,200,0x1f1,iVar6,iVar20,bVar21,cVar22,
                                   uVar14);
             if (uVar14 != 0) {
@@ -701,7 +709,7 @@ switchD_005ab66b_caseD_6:
               pHVar12->field_0017 = pHVar12->field_0013;
               uVar14 = this_02->field_20C0->field_0003;
               if (-1 < (int)uVar14) {
-                FUN_006b3af0((int *)PTR_008075a8,uVar14);
+                FUN_006b3af0((int *)g_ddxContext_008075A8,uVar14);
               }
               if (g_startSystem_0081176C->field_0560 != 0xffffffff) {
                 FUN_006b3af0((int *)g_startSystem_0081176C->field_05A4,
@@ -711,12 +719,12 @@ switchD_005ab66b_caseD_6:
                 FUN_006b3af0((int *)g_startSystem_0081176C->field_0635,
                              g_startSystem_0081176C->field_05F1);
               }
-              FUN_006b3af0((int *)PTR_008075a8,g_startSystem_0081176C->field_0558);
-              FUN_006b3af0((int *)PTR_008075a8,g_startSystem_0081176C->field_0554);
+              FUN_006b3af0((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0558);
+              FUN_006b3af0((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0554);
             }
           }
           if (local_8 != 0xffffffff) {
-            FUN_006b3bb0((int *)PTR_008075a8,local_8);
+            FUN_006b3bb0((int *)g_ddxContext_008075A8,local_8);
             local_8 = 0xffffffff;
           }
         }
@@ -746,10 +754,11 @@ switchD_005ab66b_caseD_6:
                      (byte)this_02->field_1A5B->field_0140,0xd);
         pAVar13 = this_02->field_1C8B;
         puVar11 = &this_02->field_1C87;
-        FUN_006b2330(PTR_008075a8,puVar11,0x31,0x404acf,pAVar13->field_0004,pAVar13->field_0008,
-                     (ushort *)pAVar13);
-        Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,*puVar11,0xffffffff,0x112,0x1d3);
-        FUN_006b3af0((int *)PTR_008075a8,*puVar11);
+        FUN_006b2330(g_ddxContext_008075A8,puVar11,0x31,0x404acf,pAVar13->field_0004,
+                     pAVar13->field_0008,(ushort *)pAVar13);
+        Library::DKW::DDX::FUN_006b3640
+                  ((int *)g_ddxContext_008075A8,*puVar11,0xffffffff,0x112,0x1d3);
+        FUN_006b3af0((int *)g_ddxContext_008075A8,*puVar11);
         switch(local_c) {
         case 0:
         case 1:
@@ -762,23 +771,23 @@ switchD_005ab66b_caseD_6:
         case 0x13:
           break;
         default:
-          thunk_FUN_0055ddf0((undefined4 *)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,
-                             (int *)PTR_008075a8,this_02->field_005D,10,2);
+          thunk_FUN_0055ddf0((undefined4 *)g_dDXContext_0080759C,(int *)g_ddxContext_008075A8,
+                             this_02->field_005D,10,2);
         }
         pHVar12 = this_02->field_20B8;
         if (((pHVar12 != (HoloTy *)0x0) && (pHVar12->field_0000 != '\0')) &&
            (-1 < pHVar12->field_0003)) {
-          Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,pHVar12->field_0003);
+          Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,pHVar12->field_0003);
         }
         pHVar12 = this_02->field_20BC;
         if (((pHVar12 != (HoloTy *)0x0) && (pHVar12->field_0000 != '\0')) &&
            (-1 < pHVar12->field_0003)) {
-          Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,pHVar12->field_0003);
+          Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,pHVar12->field_0003);
         }
         pHVar12 = this_02->field_20C0;
         if (((pHVar12 != (HoloTy *)0x0) && (pHVar12->field_0000 != '\0')) &&
            (-1 < pHVar12->field_0003)) {
-          Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,pHVar12->field_0003);
+          Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,pHVar12->field_0003);
         }
         this_01 = g_cursorClass_00802A30;
         if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {

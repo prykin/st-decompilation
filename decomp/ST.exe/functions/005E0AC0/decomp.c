@@ -69,7 +69,7 @@ LAB_005e0b38:
                 FUN_006b5440(*(ushort **)&pAVar10->field_0x4,0,*(int *)&pAVar10->field_0x14,
                              *(int *)&pAVar10->field_0x18,uVar5,0,0xff);
               }
-              FUN_006b35d0((int *)PTR_008075a8,*(uint *)pAVar10);
+              FUN_006b35d0((int *)g_ddxContext_008075A8,*(uint *)pAVar10);
               *(int *)&pAVar10->field_0x10 = *(int *)&pAVar10->field_0x10 + 1;
               *(undefined4 *)&pAVar10->field_0x24 = this_00->field_0069;
             }
@@ -85,7 +85,7 @@ LAB_005e0b38:
               FUN_006b5440(*(ushort **)&pAVar10->field_0x4,0,*(int *)&pAVar10->field_0x14,
                            *(int *)&pAVar10->field_0x18,uVar5,0,0xff);
             }
-            FUN_006b35d0((int *)PTR_008075a8,*(uint *)pAVar10);
+            FUN_006b35d0((int *)g_ddxContext_008075A8,*(uint *)pAVar10);
             uVar5 = *(int *)&pAVar10->field_0x10 + 1;
             *(uint *)&pAVar10->field_0x10 = uVar5;
             if ((pAVar10->field_0x30 != '\0') && (uVar5 % 3 != 0)) {
@@ -117,7 +117,7 @@ LAB_005e0ca3:
           *(uint *)&pAVar10->field_0x10 = uVar5;
           *(undefined4 *)&pAVar10->field_0x24 = this_00->field_0069;
           if (uVar5 < 3) {
-            FUN_006b35d0((int *)PTR_008075a8,*(uint *)pAVar10);
+            FUN_006b35d0((int *)g_ddxContext_008075A8,*(uint *)pAVar10);
           }
           else {
             TTaskItemClose(this_00,pAVar10);

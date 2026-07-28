@@ -1,9 +1,9 @@
 sequence	script	status	duration_ms	argument	detail
-1	STReturnSemanticsAnalyzer.java	completed	421	<repo>/recovery | repair-only	-
-2	STReturnSemanticsApplier.java	completed	28	<repo>/recovery/ST.exe/return_semantics_proposals.tsv	recovery_state: proposals_enabled=0, proposals_review=0, changed=0, unchanged=0, review=0, conflict=0, error=0
-3	STIndirectCallAnalyzer.java	completed	2892	<repo>/recovery	-
-4	STIndirectCallApplier.java	completed	71	<repo>/recovery/ST.exe/indirect_call_proposals.tsv	recovery_state: proposals_enabled=2146, proposals_review=489, changed=0, unchanged=2146, review=489, conflict=0, error=0
-5	STEvidenceLedger.java	completed	6226	record | <repo>/recovery	-
-6	STEvidenceLedger.java	completed	5273	verify | <repo>/recovery	-
-7	STDecompExport.java	completed	190266	<repo>/decomp	-
-8	STExportRegressionGate.java	completed	1082	<repo>/decomp/ST.exe | <repo>/recovery/ST.exe/runs/.current/pre_export | <repo>/recovery/ST.exe	-
+1	STReturnSemanticsAnalyzer.java	completed	564	<repo>/recovery | repair-only	-
+2	STReturnSemanticsApplier.java	completed	17	<repo>/recovery/ST.exe/return_semantics_proposals.tsv	recovery_state: proposals_enabled=0, proposals_review=0, changed=0, unchanged=0, review=0, conflict=0, error=0
+3	STIndirectCallAnalyzer.java	completed	3680	<repo>/recovery	-
+4	STIndirectCallApplier.java	completed	104	<repo>/recovery/ST.exe/indirect_call_proposals.tsv	recovery_state: proposals_enabled=2146, proposals_review=489, changed=0, unchanged=2146, review=489, conflict=0, error=0
+5	STEvidenceLedger.java	completed	6003	record | <repo>/recovery	-
+6	STEvidenceLedger.java	completed	4777	verify | <repo>/recovery	-
+7	STDecompExport.java	completed	128340	<repo>/decomp	-
+8	STExportRegressionGate.java	completed	718	<repo>/decomp/ST.exe | <repo>/recovery/ST.exe/runs/.current/pre_export | <repo>/recovery/ST.exe	-

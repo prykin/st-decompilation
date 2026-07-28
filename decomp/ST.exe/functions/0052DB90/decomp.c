@@ -52,8 +52,8 @@ void __thiscall PopUpTy::Clear(PopUpTy *this)
       iVar4 = 0xf;
       do {
         puVar10[0xf] = 0;
-        FUN_006b2800(PTR_008075a8,*puVar10,0,0x13);
-        FUN_006b3af0((int *)PTR_008075a8,*puVar10);
+        FUN_006b2800(g_ddxContext_008075A8,*puVar10,0,0x13);
+        FUN_006b3af0((int *)g_ddxContext_008075A8,*puVar10);
         puVar10 = puVar10 + 1;
         iVar4 = iVar4 + -1;
       } while (iVar4 != 0);

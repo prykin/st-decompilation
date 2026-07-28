@@ -12,8 +12,8 @@ void __thiscall CursorClassTy::sub_00544940(CursorClassTy *this)
 
 {
   this->field_04DA = 0;
-  FUN_006b2800(PTR_008075a8,this->field_04D6,0,0);
-  FUN_006b3af0((int *)PTR_008075a8,this->field_04D6);
+  FUN_006b2800(g_ddxContext_008075A8,this->field_04D6,0,0);
+  FUN_006b3af0((int *)g_ddxContext_008075A8,this->field_04D6);
   return;
 }
 

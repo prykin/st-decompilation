@@ -70,8 +70,8 @@ void __cdecl CreateMiniMap(short *param_1,int *param_2,uint param_3,byte *param_
     dVar2 = (double)((float)-(int)param_1[1] * local_8 * _DAT_007904f4);
     dVar3 = (double)((float)local_18 * local_8 * _DAT_007904f4);
     dVar4 = (double)((float)(int)local_1c * local_8 * _DAT_007904f4);
-    FUN_006dc050(this,g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,0,0,uVar12,uVar12,SUB84(dVar4,0)
-                 ,(int)((ulonglong)dVar4 >> 0x20),SUB84(dVar3,0),(int)((ulonglong)dVar3 >> 0x20),
+    FUN_006dc050(this,g_dDXContext_0080759C,0,0,uVar12,uVar12,SUB84(dVar4,0),
+                 (int)((ulonglong)dVar4 >> 0x20),SUB84(dVar3,0),(int)((ulonglong)dVar3 >> 0x20),
                  SUB84(dVar2,0),(int)((ulonglong)dVar2 >> 0x20),SUB84(dVar1,0),
                  (int)((ulonglong)dVar1 >> 0x20),0x4024000000000000,0x4023ee97865e3540,0);
     *(uint *)&this->field_0x128 = (uint)*param_4;

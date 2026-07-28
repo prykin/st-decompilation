@@ -100,9 +100,11 @@ undefined4 __thiscall SettMapMTy::NoneSettMap(SettMapMTy *this,int *param_1)
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   iVar3 = SettMapTy::NoneSettMap((SettMapTy *)local_5c,unaff_EDI);
   if (((iVar3 != 0) && (local_1d == '\x03')) && (this_00->field_0065 == '\x01')) {
-    Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,this_00->field_2200);
-    Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,g_startSystem_0081176C->field_0554);
-    Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,g_startSystem_0081176C->field_0558);
+    Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,this_00->field_2200);
+    Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0554)
+    ;
+    Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0558)
+    ;
     if (g_startSystem_0081176C->field_0560 != 0xffffffff) {
       Library::DKW::DDX::FUN_006b34d0
                 ((uint *)g_startSystem_0081176C->field_05A4,g_startSystem_0081176C->field_0560,
@@ -459,7 +461,7 @@ LAB_005cef5d:
                 piVar18 = piVar18 + 1;
                 iVar3 = iVar3 + -1;
               } while (iVar3 != 0);
-              FUN_006b35d0((int *)PTR_008075a8,this_00->field_1F80);
+              FUN_006b35d0((int *)g_ddxContext_008075A8,this_00->field_1F80);
             }
             break;
           case 0x22:

@@ -36,12 +36,12 @@ void __thiscall WaitTy::DoneWait(WaitTy *this)
     if (pWVar2->field_004D == 0x6105) {
       if (DAT_00811768 == '\x02') {
         pWVar2->field_004D = 0x6102;
-        DarkScreen(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,10,2);
+        DarkScreen(g_dDXContext_0080759C,10,2);
       }
       thunk_FUN_005dac60();
     }
     if (pWVar2->field_004D == 0x610a) {
-      DarkScreen(g_anonShape_GLOBAL_0080759C_9638EF10_0080759C,10,2);
+      DarkScreen(g_dDXContext_0080759C,10,2);
       thunk_FUN_005dac60();
     }
     if (g_startSystem_0081176C->field_002C != (ushort *)0x0) {
@@ -56,7 +56,7 @@ void __thiscall WaitTy::DoneWait(WaitTy *this)
     iVar3 = 0x16;
     do {
       if (*puVar5 != 0xffffffff) {
-        FUN_006b3bb0((int *)PTR_008075a8,*puVar5);
+        FUN_006b3bb0((int *)g_ddxContext_008075A8,*puVar5);
         *puVar5 = 0xffffffff;
       }
       puVar5 = puVar5 + 1;
@@ -78,7 +78,7 @@ void __thiscall WaitTy::DoneWait(WaitTy *this)
         FUN_006b3af0((int *)g_startSystem_0081176C->field_04F7,g_startSystem_0081176C->field_04B3);
       }
       if (-1 < g_startSystem_0081176C->field_0540) {
-        FUN_006b3af0((int *)PTR_008075a8,g_startSystem_0081176C->field_0540);
+        FUN_006b3af0((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0540);
       }
     }
     if (pWVar2->field_1AFC != (HoloTy *)0x0) {
@@ -94,10 +94,10 @@ void __thiscall WaitTy::DoneWait(WaitTy *this)
         FUN_006b3af0((int *)g_startSystem_0081176C->field_0635,g_startSystem_0081176C->field_05F1);
       }
       if (-1 < g_startSystem_0081176C->field_0558) {
-        FUN_006b3af0((int *)PTR_008075a8,g_startSystem_0081176C->field_0558);
+        FUN_006b3af0((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0558);
       }
       if (-1 < g_startSystem_0081176C->field_0554) {
-        FUN_006b3af0((int *)PTR_008075a8,g_startSystem_0081176C->field_0554);
+        FUN_006b3af0((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0554);
       }
     }
     if (pWVar2->field_1AF0 != (DArrayTy *)0x0) {

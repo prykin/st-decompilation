@@ -46,7 +46,8 @@ FSGSTy::OutTRGlProc(FSGSTy *this,AnonShape_GLOBAL_0080759C_9638EF10 *param_1,MMM
                 (param_3,(int)param_1,param_2,param_3,(int)param_4,param_5,param_6,param_7 + -0x5f,
                  &g_startSystem_0081176C->field_0140);
       local_8 = param_4 + param_6 + -0x15;
-      Library::DKW::DDX::FUN_006c6660(param_1,(int)local_8,param_5 + 0x26,7,param_7 - 0xab,3,0);
+      Library::DKW::DDX::FUN_006c6660
+                ((DDXContext *)param_1,(int)local_8,param_5 + 0x26,7,param_7 - 0xab,3,0);
       Library::DKW::DDX::FUN_006c6470
                 ((int)param_1,(int)local_8,param_5 + 0x26,(undefined4 *)0x7,param_7 + -0xab,3,
                  g_startSystem_0081176C->field_0140);

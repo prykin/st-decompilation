@@ -87,8 +87,8 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
     pHVar5->field_0001 = CASE_2;
     pHVar5->field_0007 = 0;
     pHVar5->field_000B = (void *)0x0;
-    *(undefined4 *)&pHVar5->field_0xf = 0;
-    *(undefined4 *)&pHVar5->field_0x1b = 1;
+    pHVar5->field_000F = 0;
+    pHVar5->field_001B = 1;
     pHVar5->field_0013 = 1;
     pHVar5->field_0017 = -1;
     pHVar5->field_0027 = 0;
@@ -102,7 +102,7 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
     cVar10 = '\x01';
     bVar9 = 0x10;
     iVar8 = 1;
-    iVar4 = Library::DKW::DDX::FUN_006bf9f0((int *)PTR_008075a8,0x112,0x38,0x205,0x104);
+    iVar4 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,0x112,0x38,0x205,0x104);
     uVar11 = HoloTy::Init(this_00->field_21E8,CASE_2,0x112,0x38,iVar4,iVar8,bVar9,cVar10,uVar11);
     if (uVar11 != 0) {
       pHVar5 = this_00->field_21E8;
@@ -110,11 +110,11 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
       pHVar5->field_0017 = -1;
       uVar11 = this_00->field_21E8->field_0003;
       if (-1 < (int)uVar11) {
-        Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,uVar11);
+        Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar11);
       }
       HoloTy::NextFas(this_00->field_21E8);
     }
-    FUN_006b5f80((int *)PTR_008075a8,0x112,0x38,0x205,0x104);
+    FUN_006b5f80((int *)g_ddxContext_008075A8,0x112,0x38,0x205,0x104);
     PutDDXClip(0x112,0x38,0x112,0x38,0x205,(byte *)0x104,'\x01',
                (BITMAPINFO *)g_startSystem_0081176C->field_002C);
   }
@@ -130,7 +130,7 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
   puVar7 = this_00->field_20CC;
   local_c = 10;
   do {
-    FUN_006b3af0((int *)PTR_008075a8,*puVar7);
+    FUN_006b3af0((int *)g_ddxContext_008075A8,*puVar7);
     puVar7 = puVar7 + 1;
     local_c = local_c + -1;
   } while (local_c != 0);
@@ -160,8 +160,8 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
     pHVar5->field_0001 = CASE_2;
     pHVar5->field_0007 = 0;
     pHVar5->field_000B = (void *)0x0;
-    *(undefined4 *)&pHVar5->field_0xf = 0;
-    *(undefined4 *)&pHVar5->field_0x1b = 1;
+    pHVar5->field_000F = 0;
+    pHVar5->field_001B = 1;
     pHVar5->field_0013 = 1;
     pHVar5->field_0017 = -1;
     pHVar5->field_0027 = 0;
@@ -175,7 +175,7 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
     cVar10 = '\x01';
     bVar9 = 0x10;
     iVar8 = 1;
-    iVar4 = Library::DKW::DDX::FUN_006bf9f0((int *)PTR_008075a8,0x112,0x149,0x205,0x8c);
+    iVar4 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,0x112,0x149,0x205,0x8c);
     uVar11 = HoloTy::Init(this_00->field_21F4,CASE_2,0x112,0x149,iVar4,iVar8,bVar9,cVar10,uVar11);
     if (uVar11 != 0) {
       pHVar5 = this_00->field_21F4;
@@ -183,15 +183,15 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
       pHVar5->field_0017 = -1;
       uVar11 = this_00->field_21F4->field_0003;
       if (-1 < (int)uVar11) {
-        Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,uVar11);
+        Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar11);
       }
       HoloTy::NextFas(this_00->field_21F4);
     }
-    FUN_006b5f80((int *)PTR_008075a8,0x112,0x149,0x205,0x8c);
+    FUN_006b5f80((int *)g_ddxContext_008075A8,0x112,0x149,0x205,0x8c);
     PutDDXClip(0x112,0x149,0x112,0x149,0x205,(byte *)0x8c,'\x01',
                (BITMAPINFO *)g_startSystem_0081176C->field_002C);
   }
-  FUN_006b3af0((int *)PTR_008075a8,this_00->field_1E22);
+  FUN_006b3af0((int *)g_ddxContext_008075A8,this_00->field_1E22);
   if ((((this_00->field_0x21e2 == '\0') || (SVar1 = this_00->field_1E26, SVar1 == CASE_6)) ||
       (SVar1 == CASE_7)) || (SVar1 == CASE_E)) {
     this_00->field_002D = 0x20;
@@ -226,8 +226,8 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
       pHVar5->field_0001 = CASE_2;
       pHVar5->field_0007 = 0;
       pHVar5->field_000B = (void *)0x0;
-      *(undefined4 *)&pHVar5->field_0xf = 0;
-      *(undefined4 *)&pHVar5->field_0x1b = 1;
+      pHVar5->field_000F = 0;
+      pHVar5->field_001B = 1;
       pHVar5->field_0013 = 1;
       pHVar5->field_0017 = -1;
       pHVar5->field_0027 = 0;
@@ -241,7 +241,7 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
       cVar10 = '\x01';
       bVar9 = 0x10;
       iVar8 = 1;
-      iVar4 = Library::DKW::DDX::FUN_006bf9f0((int *)PTR_008075a8,10,0xb4,0xf9,0x121);
+      iVar4 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,10,0xb4,0xf9,0x121);
       uVar11 = HoloTy::Init(this_00->field_21EC,CASE_4,10,0xb4,iVar4,iVar8,bVar9,cVar10,uVar11);
       if (uVar11 != 0) {
         pHVar5 = this_00->field_21EC;
@@ -249,11 +249,11 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
         pHVar5->field_0017 = -1;
         uVar11 = this_00->field_21EC->field_0003;
         if (-1 < (int)uVar11) {
-          Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,uVar11);
+          Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar11);
         }
         HoloTy::NextFas(this_00->field_21EC);
       }
-      FUN_006b5f80((int *)PTR_008075a8,10,0xb4,0xf9,0x121);
+      FUN_006b5f80((int *)g_ddxContext_008075A8,10,0xb4,0xf9,0x121);
       PutDDXClip(10,0xb4,10,0xb4,0xf9,(byte *)0x121,'\x01',
                  (BITMAPINFO *)g_startSystem_0081176C->field_002C);
     }
@@ -266,7 +266,7 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
     if (g_startSystem_0081176C->field_04B3 != 0xffffffff) {
       FUN_006b3af0((int *)g_startSystem_0081176C->field_04F7,g_startSystem_0081176C->field_04B3);
     }
-    FUN_006b3af0((int *)PTR_008075a8,g_startSystem_0081176C->field_0540);
+    FUN_006b3af0((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0540);
   }
   if ((this_00->field_0x21e3 != '\0') &&
      (((SVar1 = this_00->field_1E26, SVar1 == CASE_6 || (SVar1 == CASE_7)) || (SVar1 == CASE_E)))) {
@@ -296,8 +296,8 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
       pHVar5->field_0001 = CASE_2;
       pHVar5->field_0007 = 0;
       pHVar5->field_000B = (void *)0x0;
-      *(undefined4 *)&pHVar5->field_0xf = 0;
-      *(undefined4 *)&pHVar5->field_0x1b = 1;
+      pHVar5->field_000F = 0;
+      pHVar5->field_001B = 1;
       pHVar5->field_0013 = 1;
       pHVar5->field_0017 = -1;
       pHVar5->field_0027 = 0;
@@ -311,7 +311,7 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
       cVar10 = '\x01';
       bVar9 = 0x10;
       iVar8 = 1;
-      iVar4 = Library::DKW::DDX::FUN_006bf9f0((int *)PTR_008075a8,10,0xb4,0xf9,0x123);
+      iVar4 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,10,0xb4,0xf9,0x123);
       uVar11 = HoloTy::Init(this_00->field_21F0,CASE_4,10,0xb4,iVar4,iVar8,bVar9,cVar10,uVar11);
       if (uVar11 != 0) {
         pHVar5 = this_00->field_21F0;
@@ -319,15 +319,15 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
         pHVar5->field_0017 = -1;
         uVar11 = this_00->field_21F0->field_0003;
         if (-1 < (int)uVar11) {
-          Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,uVar11);
+          Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar11);
         }
         HoloTy::NextFas(this_00->field_21F0);
       }
-      FUN_006b5f80((int *)PTR_008075a8,10,0xb4,0xf9,0x121);
+      FUN_006b5f80((int *)g_ddxContext_008075A8,10,0xb4,0xf9,0x121);
       PutDDXClip(10,0xb4,10,0xb4,0xf9,(byte *)0x123,'\x01',
                  (BITMAPINFO *)g_startSystem_0081176C->field_002C);
     }
-    FUN_006b3af0((int *)PTR_008075a8,this_00->field_1F80);
+    FUN_006b3af0((int *)g_ddxContext_008075A8,this_00->field_1F80);
   }
   if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
     if (g_cursorClass_00802A30->field_00A9 == 0) {

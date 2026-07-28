@@ -205,7 +205,7 @@ int __thiscall SettMapMTy::GetMessage(SettMapMTy *this,STMessage *message)
         iVar36 = -1;
         puVar15 = (uint *)LoadResourceString((iVar14 != 1) + 0x2422,g_module_00807618);
         ccFntTy::WrStr(g_startSystem_0081176C->field_0034,puVar15,iVar36,iVar38,uVar27);
-        FUN_006b35d0((int *)PTR_008075a8,this_00->field_2200);
+        FUN_006b35d0((int *)g_ddxContext_008075A8,this_00->field_2200);
       }
     }
     else if (SVar5 < MESS_PRIVIDERTY_6502) {
@@ -2220,7 +2220,7 @@ LAB_005d3bfa:
            (local_1c - *(int *)(pbVar20 + 8)) / 2 + 1 + local_24,'\x06',pbVar20);
   }
 switchD_005d35aa_default:
-  FUN_006b35d0((int *)PTR_008075a8,this_00->field_20CC[(int)pcVar26]);
+  FUN_006b35d0((int *)g_ddxContext_008075A8,this_00->field_20CC[(int)pcVar26]);
   if ((message->arg0).words.low == 3) {
     thunk_FUN_005b6730(this_00,9,'\x01',-1);
   }

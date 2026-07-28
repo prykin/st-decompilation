@@ -67,7 +67,8 @@ void __thiscall WaitTy::CreateCtrls(WaitTy *this)
       (*this_00->vtable->CreateObject)
                 ((SystemClassTy *)this_00,6,&g_startSystem_0081176C->field_054C,(int *)0x0,local_8d8
                  ,0);
-      Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,g_startSystem_0081176C->field_0554);
+      Library::DKW::DDX::FUN_006b3430
+                ((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0554);
     }
     g_currentExceptionFrame = local_4c.previous;
     return;

@@ -82,7 +82,7 @@ void __thiscall CPanelTy::SwitchTV(CPanelTy *this,int param_1)
       if (bVar5 < 0xb) {
         if (-1 < (int)this_00->field_0148[bVar5]) {
           Library::DKW::DDX::FUN_006b3640
-                    ((int *)PTR_008075a8,(uint)this_00->field_0148[bVar5],0xffffffff,
+                    ((int *)g_ddxContext_008075A8,(uint)this_00->field_0148[bVar5],0xffffffff,
                      (&this_00->field_003C)[bVar5],(&this_00->field_0094)[bVar5]);
         }
       }

@@ -142,7 +142,7 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this,int param_1)
       else {
         this_02->field_1AA7 = this_02->field_0061;
       }
-      FUN_006b35d0((int *)PTR_008075a8,this_02->field_1A8F);
+      FUN_006b35d0((int *)g_ddxContext_008075A8,this_02->field_1A8F);
     }
     break;
   case CASE_3:
@@ -176,7 +176,7 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this,int param_1)
       pCVar9 = FUN_006f2c00("MM_BAN_",2,this_02->field_1A93);
       puVar10 = Library::Ourlib::MFIMG::mfImgLoad(g_cMf32_00806780,6,pCVar9,bVar16,iVar6);
       DibPut((AnonShape_006B5B10_E0D06CF1 *)this_02->field_1A97,0,0,'\x06',(byte *)puVar10);
-      FUN_006b35d0((int *)PTR_008075a8,this_02->field_1A8F);
+      FUN_006b35d0((int *)g_ddxContext_008075A8,this_02->field_1A8F);
       local_8 = 0;
     }
     if ((this_02->field_1F23 != (HoloTy *)0x0) &&
@@ -230,14 +230,14 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this,int param_1)
     }
     switch(this_02->field_0065) {
     case CASE_6:
-      Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,this_02->field_1ABC);
+      Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,this_02->field_1ABC);
       this_02->field_1A5F = CASE_1;
       thunk_FUN_0055c180((CFsgsConnection *)&DAT_00802a90);
       local_18 = 1;
       break;
     case CASE_7:
       if ((this_02->field_1A5F != CASE_3) && (this_02->field_1A5F != CASE_9)) {
-        Library::DKW::DDX::FUN_006b3430((int *)PTR_008075a8,this_02->field_1ABC);
+        Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,this_02->field_1ABC);
       }
     case CASE_8:
     case CASE_A:
@@ -324,7 +324,7 @@ joined_r0x00597872:
       if (iVar6 == 0) {
         uVar15 = this_02->field_1F23->field_0003;
         if (-1 < (int)uVar15) {
-          FUN_006b3af0((int *)PTR_008075a8,uVar15);
+          FUN_006b3af0((int *)g_ddxContext_008075A8,uVar15);
         }
       }
       else {
@@ -336,7 +336,7 @@ joined_r0x00597872:
       if (iVar6 == 0) {
         uVar15 = this_02->field_1F27->field_0003;
         if (-1 < (int)uVar15) {
-          FUN_006b3af0((int *)PTR_008075a8,uVar15);
+          FUN_006b3af0((int *)g_ddxContext_008075A8,uVar15);
         }
       }
       else {
@@ -348,7 +348,7 @@ joined_r0x00597872:
       if (iVar6 == 0) {
         uVar15 = this_02->field_1F2B->field_0003;
         if (-1 < (int)uVar15) {
-          FUN_006b3af0((int *)PTR_008075a8,uVar15);
+          FUN_006b3af0((int *)g_ddxContext_008075A8,uVar15);
         }
       }
       else {
@@ -360,7 +360,7 @@ joined_r0x00597872:
       if (iVar6 == 0) {
         uVar15 = this_02->field_1F2F->field_0003;
         if (-1 < (int)uVar15) {
-          FUN_006b3af0((int *)PTR_008075a8,uVar15);
+          FUN_006b3af0((int *)g_ddxContext_008075A8,uVar15);
         }
       }
       else {
@@ -394,7 +394,7 @@ joined_r0x00597872:
       pCVar9 = FUN_006f2c00("MM_BAN_",2,this_02->field_1A93);
       puVar10 = Library::Ourlib::MFIMG::mfImgLoad(g_cMf32_00806780,6,pCVar9,bVar16,iVar6);
       DibPut((AnonShape_006B5B10_E0D06CF1 *)this_02->field_1A97,0,0,'\x06',(byte *)puVar10);
-      FUN_006b35d0((int *)PTR_008075a8,this_02->field_1A8F);
+      FUN_006b35d0((int *)g_ddxContext_008075A8,this_02->field_1A8F);
       local_8 = 0;
     }
     pCVar4 = g_cursorClass_00802A30;

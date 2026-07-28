@@ -99,21 +99,21 @@ undefined4 __thiscall StartSystemTy::LoadGraph(StartSystemTy *this)
     pSVar3->field_0034 = pcVar7;
     puVar6 = pSVar3->field_02F0;
     piVar1 = &pSVar3->field_02EC;
-    FUN_006b2330(PTR_008075a8,(uint *)piVar1,0x32,0x4023f6,*(uint *)(puVar6 + 2),
+    FUN_006b2330(g_ddxContext_008075A8,(uint *)piVar1,0x32,0x4023f6,*(uint *)(puVar6 + 2),
                  *(uint *)(puVar6 + 4),puVar6);
-    Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,*piVar1,0xffffffff,1,0);
-    FUN_006b3af0((int *)PTR_008075a8,*piVar1);
+    Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,*piVar1,0xffffffff,1,0);
+    FUN_006b3af0((int *)g_ddxContext_008075A8,*piVar1);
     SpriteClassTy::InitSprite
-              ((SpriteClassTy *)&pSVar3->field_02F8,(int *)PTR_008075a8,0x32,'\a',(undefined4 *)0x0,
-               0,0);
+              ((SpriteClassTy *)&pSVar3->field_02F8,(int *)g_ddxContext_008075A8,0x32,'\a',
+               (undefined4 *)0x0,0,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(pSVar3->field_02F8 + 4))(DAT_00806784,7,0,"MM_MAP",0xffffffff);
     pSVar3->field_0314 = 1;
     pSVar3->field_0318 = 0;
     pSVar3->field_0300 = 0;
     SpriteClassTy::InitSprite
-              ((SpriteClassTy *)&pSVar3->field_038D,(int *)PTR_008075a8,0x31,'\a',(undefined4 *)0x0,
-               0,0);
+              ((SpriteClassTy *)&pSVar3->field_038D,(int *)g_ddxContext_008075A8,0x31,'\a',
+               (undefined4 *)0x0,0,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(pSVar3->field_038D + 4))(DAT_00806784,7,0,"MM_SLDUP",0xffffffff);
     pSVar3->field_03A9 = 0xe5;
@@ -123,8 +123,8 @@ undefined4 __thiscall StartSystemTy::LoadGraph(StartSystemTy *this)
       FUN_006b3af0((int *)pSVar3->field_03D5,pSVar3->field_0391);
     }
     SpriteClassTy::InitSprite
-              ((SpriteClassTy *)&pSVar3->field_041E,(int *)PTR_008075a8,0x31,'\a',(undefined4 *)0x0,
-               0,0);
+              ((SpriteClassTy *)&pSVar3->field_041E,(int *)g_ddxContext_008075A8,0x31,'\a',
+               (undefined4 *)0x0,0,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(pSVar3->field_041E + 4))(DAT_00806784,7,0,"MM_SLDDN",0xffffffff);
     pSVar3->field_043A = 0xe5;
@@ -134,8 +134,8 @@ undefined4 __thiscall StartSystemTy::LoadGraph(StartSystemTy *this)
       FUN_006b3af0((int *)pSVar3->field_0466,pSVar3->field_0422);
     }
     SpriteClassTy::InitSprite
-              ((SpriteClassTy *)&pSVar3->field_04AF,(int *)PTR_008075a8,0x31,'\a',(undefined4 *)0x0,
-               0,0);
+              ((SpriteClassTy *)&pSVar3->field_04AF,(int *)g_ddxContext_008075A8,0x31,'\a',
+               (undefined4 *)0x0,0,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(pSVar3->field_04AF + 4))(DAT_00806784,7,0,"MM_SLDT",0xffffffff);
     pSVar3->field_04CB = 0xeb;
@@ -166,10 +166,10 @@ undefined4 __thiscall StartSystemTy::LoadGraph(StartSystemTy *this)
     }
     pAVar9 = pSVar3->field_0544;
     piVar1 = &pSVar3->field_0540;
-    FUN_006b2330(PTR_008075a8,(uint *)piVar1,0x31,0x4023f6,pAVar9->field_0004,pAVar9->field_0008,
-                 (ushort *)pAVar9);
-    Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,*piVar1,0xffffffff,0xd,0xb9);
-    FUN_006b3af0((int *)PTR_008075a8,*piVar1);
+    FUN_006b2330(g_ddxContext_008075A8,(uint *)piVar1,0x31,0x4023f6,pAVar9->field_0004,
+                 pAVar9->field_0008,(ushort *)pAVar9);
+    Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,*piVar1,0xffffffff,0xd,0xb9);
+    FUN_006b3af0((int *)g_ddxContext_008075A8,*piVar1);
     iVar4 = 1;
     puVar6 = pSVar3->field_02F0 + 0x14;
     uVar8 = FUN_006b4fe0((int)pSVar3->field_02F0);
@@ -192,24 +192,24 @@ undefined4 __thiscall StartSystemTy::LoadGraph(StartSystemTy *this)
     }
     puVar6 = pSVar3->field_0682;
     piVar1 = &pSVar3->field_0554;
-    FUN_006b2330(PTR_008075a8,(uint *)piVar1,0x31,0x4023f6,*(uint *)(puVar6 + 2),
+    FUN_006b2330(g_ddxContext_008075A8,(uint *)piVar1,0x31,0x4023f6,*(uint *)(puVar6 + 2),
                  *(uint *)(puVar6 + 4),puVar6);
-    Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,*piVar1,0xffffffff,0xcb,0x23f);
-    FUN_006b3af0((int *)PTR_008075a8,*piVar1);
+    Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,*piVar1,0xffffffff,0xcb,0x23f);
+    FUN_006b3af0((int *)g_ddxContext_008075A8,*piVar1);
     pDVar11 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,1,1);
     pSVar3->field_0686 = pDVar11;
     Library::DKW::TBL::FUN_006b6020(&pDVar11->flags,0,&DAT_008016a0);
     SpriteClassTy::InitSprite
-              ((SpriteClassTy *)&pSVar3->field_055C,(int *)PTR_008075a8,0x31,'\a',(undefined4 *)0x0,
-               0,0);
+              ((SpriteClassTy *)&pSVar3->field_055C,(int *)g_ddxContext_008075A8,0x31,'\a',
+               (undefined4 *)0x0,0,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(pSVar3->field_055C + 4))(DAT_00806784,7,0,"MM_SLDUP",0xffffffff);
     pSVar3->field_0578 = 0x23a;
     pSVar3->field_057C = 500;
     pSVar3->field_0564 = 0;
     SpriteClassTy::InitSprite
-              ((SpriteClassTy *)&pSVar3->field_05ED,(int *)PTR_008075a8,0x31,'\a',(undefined4 *)0x0,
-               0,0);
+              ((SpriteClassTy *)&pSVar3->field_05ED,(int *)g_ddxContext_008075A8,0x31,'\a',
+               (undefined4 *)0x0,0,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(pSVar3->field_05ED + 4))(DAT_00806784,7,0,"MM_SLDDN",0xffffffff);
     iVar4 = 1;
@@ -236,9 +236,10 @@ undefined4 __thiscall StartSystemTy::LoadGraph(StartSystemTy *this)
       puVar10 = (undefined4 *)((int)puVar10 + 1);
     }
     puVar6 = pSVar3->field_067E;
-    FUN_006b2330(PTR_008075a8,(uint *)&pSVar3->field_0558,0x31,0x4023f6,*(uint *)(puVar6 + 2),
-                 *(uint *)(puVar6 + 4),puVar6);
-    Library::DKW::DDX::FUN_006b3640((int *)PTR_008075a8,pSVar3->field_0558,0xffffffff,0xcd,499);
+    FUN_006b2330(g_ddxContext_008075A8,(uint *)&pSVar3->field_0558,0x31,0x4023f6,
+                 *(uint *)(puVar6 + 2),*(uint *)(puVar6 + 4),puVar6);
+    Library::DKW::DDX::FUN_006b3640
+              ((int *)g_ddxContext_008075A8,pSVar3->field_0558,0xffffffff,0xcd,499);
     g_currentExceptionFrame = local_50.previous;
     return 0;
   }

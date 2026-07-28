@@ -29,8 +29,8 @@ void __thiscall HelpStringTy::OutStr(HelpStringTy *this)
   iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar4 == 0) {
     iVar4 = (-(uint)(DAT_0080874e != '\x03') & 0xfffffff6) + 0x1e;
-    FUN_006b5f80((int *)PTR_008075a8,iVar4,DAT_00806734 + -0x1a,(g_nWidth_00806730 - iVar4) + -0x87,
-                 0x12);
+    FUN_006b5f80((int *)g_ddxContext_008075A8,iVar4,DAT_00806734 + -0x1a,
+                 (g_nWidth_00806730 - iVar4) + -0x87,0x12);
     pHVar3 = local_8;
     puVar1 = local_8->field_012A;
     uVar8 = *(uint *)(puVar1 + 10);

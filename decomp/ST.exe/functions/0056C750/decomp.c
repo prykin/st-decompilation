@@ -53,14 +53,13 @@ void __thiscall STAppC::DoneApp(STAppC *this)
       FUN_006c2ac0(g_int_008075A4);
       g_int_008075A4 = (int *)0x0;
     }
-    if (PTR_008075a8 != (AnonShape_006B1B10_121F236C *)0x0) {
-      Library::DKW::DDX::FUN_006b3cc0((int *)PTR_008075a8);
-      PTR_008075a8 = (AnonShape_006B1B10_121F236C *)0x0;
+    if (g_ddxContext_008075A8 != (DDXContext_008075A8 *)0x0) {
+      Library::DKW::DDX::FUN_006b3cc0((int *)g_ddxContext_008075A8);
+      g_ddxContext_008075A8 = (DDXContext_008075A8 *)0x0;
     }
-    if (g_anonShape_GLOBAL_0080759C_9638EF10_0080759C != (AnonShape_GLOBAL_0080759C_9638EF10 *)0x0)
-    {
-      FUN_006ba600((undefined4 *)g_anonShape_GLOBAL_0080759C_9638EF10_0080759C);
-      g_anonShape_GLOBAL_0080759C_9638EF10_0080759C = (AnonShape_GLOBAL_0080759C_9638EF10 *)0x0;
+    if (g_dDXContext_0080759C != (DDXContext *)0x0) {
+      FUN_006ba600((undefined4 *)g_dDXContext_0080759C);
+      g_dDXContext_0080759C = (DDXContext *)0x0;
     }
     thunk_FUN_0055d910();
     if (g_cMf32_00806758 != (cMf32 *)0x0) {

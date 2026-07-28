@@ -60,8 +60,8 @@ void __thiscall CPanelTy::PaintIDSObj(CPanelTy *this)
 cf_common_exit_00504F81:
   if (-1 < (int)pCVar2->field_0148[5]) {
     Library::DKW::DDX::FUN_006b3640
-              ((int *)PTR_008075a8,(uint)pCVar2->field_0148[5],0xffffffff,pCVar2->field_0050,
-               pCVar2->field_00A8);
+              ((int *)g_ddxContext_008075A8,(uint)pCVar2->field_0148[5],0xffffffff,
+               pCVar2->field_0050,pCVar2->field_00A8);
   }
   g_currentExceptionFrame = local_4c.previous;
   return;
