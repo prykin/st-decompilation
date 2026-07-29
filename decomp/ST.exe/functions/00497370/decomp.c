@@ -40,13 +40,13 @@ undefined4 FUN_00497370(int param_1,int param_2,uint param_3,uint param_4,void *
   undefined *puStack_c;
   undefined4 local_8;
 
-  pDVar14 = g_dArray_007FB270;
+  pDVar14 = g_array_007FB270;
   puStack_c = &DAT_00790718;
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;
   local_1c = &stack0xffffff90;
   local_28 = 0xffffffff;
-  dVar2 = g_dArray_007FB270->count;
+  dVar2 = g_array_007FB270->count;
   local_8 = 0;
   ExceptionList = &local_14;
   local_44 = dVar2;
@@ -107,21 +107,17 @@ LAB_004974ca:
         }
         if ((bVar15) &&
            (iVar3 = FUN_006aced8(*puVar12 * 0xc9 + 100,puVar12[1] * 0xc9 + 100,param_1 * 0xc9 + 100,
-                                 param_2 * 0xc9 + 100), pDVar14 = g_dArray_007FB270, iVar3 < 0xbc7))
+                                 param_2 * 0xc9 + 100), pDVar14 = g_array_007FB270, iVar3 < 0xbc7))
         {
           puVar13 = puVar11 + -4;
-          for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
-            *puVar13 = *puVar12;
-            puVar12 = puVar12 + 1;
-            puVar13 = puVar13 + 1;
-          }
+          memmove(puVar13, puVar12, 0x18); /* compiler REP MOVS byte copy */
           uVar4 = thunk_FUN_0060ca20(puVar11[1]);
           uVar4 = ((int)uVar4 < 0) - 1 & uVar4;
           *puVar11 = uVar4;
           local_40 = local_40 + uVar4;
           local_30 = local_30 + 1;
           puVar11 = puVar11 + 6;
-          pDVar14 = g_dArray_007FB270;
+          pDVar14 = g_array_007FB270;
         }
       }
       local_34 = local_34 + 1;

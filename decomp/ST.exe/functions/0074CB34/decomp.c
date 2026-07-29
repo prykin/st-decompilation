@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 int * __thiscall FUN_0074cb34(void *this,int *param_1)
 
@@ -5,7 +7,6 @@ int * __thiscall FUN_0074cb34(void *this,int *param_1)
   int *piVar1;
   int iVar2;
   uint uVar3;
-  uint uVar4;
   bool bVar5;
   undefined1 local_30 [8];
   undefined1 local_28 [8];
@@ -92,16 +93,7 @@ LAB_0074cbe0:
     (**(code **)(*piVar1 + 0xc))(piVar1,&local_c);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*param_1 + 0xc))(param_1,&local_10);
-    for (uVar4 = uVar3 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
-      *local_10 = *local_c;
-      local_c = local_c + 1;
-      local_10 = local_10 + 1;
-    }
-    for (uVar3 = uVar3 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
-      *(char *)local_10 = (char)*local_c;
-      local_c = (int *)((int)local_c + 1);
-      local_10 = (int *)((int)local_10 + 1);
-    }
+    memmove(local_10, local_c, uVar3); /* compiler REP MOVS byte copy */
   }
   return param_1;
 }

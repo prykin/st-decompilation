@@ -21,7 +21,7 @@ HoloTy::Init(HoloTy *this,HoloTy_Init_param_1Enum param_1,int param_2,int param_
             int param_5,byte param_6,char param_7,uint param_8)
 
 {
-  int *piVar1;
+  undefined1 *puVar1;
   code *pcVar2;
   HoloTy *this_00;
   int iVar3;
@@ -31,7 +31,7 @@ HoloTy::Init(HoloTy *this,HoloTy_Init_param_1Enum param_1,int param_2,int param_
   InternalExceptionFrame local_58;
   HoloTy *local_14;
   uint local_10;
-  int local_c;
+  uint local_c;
   uint local_8;
 
   local_10 = 0;
@@ -50,14 +50,14 @@ HoloTy::Init(HoloTy *this,HoloTy_Init_param_1Enum param_1,int param_2,int param_
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  local_14->field_0007 = param_4;
+  local_14->field_0007 = (void *)param_4;
   if (param_4 != 0) {
     local_14->field_0023 = param_2;
     local_14->field_0027 = param_3;
     local_14->field_0001 = param_1;
     local_14->field_002B = *(undefined4 *)(param_4 + 4);
-    iVar3 = *(int *)(param_4 + 8);
-    local_14->field_002F = iVar3;
+    uVar5 = *(uint *)(param_4 + 8);
+    local_14->field_002F = uVar5;
     switch(param_1) {
     case CASE_1:
       local_c = local_14->field_002B;
@@ -65,25 +65,25 @@ HoloTy::Init(HoloTy *this,HoloTy_Init_param_1Enum param_1,int param_2,int param_
       break;
     case CASE_2:
       local_8 = g_nWidth_00806730 - param_2;
-      local_c = iVar3;
+      local_c = uVar5;
       break;
     case CASE_3:
-      local_8 = iVar3 + param_3;
+      local_8 = uVar5 + param_3;
       local_c = local_14->field_002B;
       break;
     case CASE_4:
       local_8 = local_14->field_002B + param_2;
-      local_c = iVar3;
+      local_c = uVar5;
     }
     local_14->field_0013 = (uint)param_6;
-    local_14->field_001F = local_8;
+    *(uint *)&local_14->field_0x1f = local_8;
     puVar4 = CalcHologram(local_14,&local_14->field_000F,local_8,local_c,param_5,param_6,
                           (byte)param_8);
     this_00->field_000B = puVar4;
     if (puVar4 != (undefined4 *)0x0) {
-      piVar1 = &this_00->field_0003;
-      FUN_006b2330(g_ddxContext_008075A8,(uint *)piVar1,10,0x402842,0,0,(ushort *)this_00);
-      uVar5 = *piVar1;
+      puVar1 = &this_00->field_0x3;
+      FUN_006b2330(g_ddxContext_008075A8,(uint *)puVar1,10,0x402842,0,0,(ushort *)this_00);
+      uVar5 = *(uint *)puVar1;
       if (-1 < (int)uVar5) {
         switch(this_00->field_0001) {
         case CASE_1:
@@ -101,9 +101,10 @@ HoloTy::Init(HoloTy *this,HoloTy_Init_param_1Enum param_1,int param_2,int param_
         default:
           goto switchD_005aadcd_default;
         }
-        Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,*piVar1,0xffffffff,uVar5,uVar6);
+        Library::DKW::DDX::FUN_006b3640
+                  ((int *)g_ddxContext_008075A8,*(uint *)puVar1,0xffffffff,uVar5,uVar6);
 switchD_005aadcd_default:
-        FUN_006b3af0((int *)g_ddxContext_008075A8,*piVar1);
+        FUN_006b3af0((int *)g_ddxContext_008075A8,*(uint *)puVar1);
         this_00->field_0002 = param_7;
         if (param_7 == '\0') {
           this_00->field_0017 = -1;

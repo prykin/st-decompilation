@@ -200,11 +200,7 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
     local_374 = 1;
     piVar22 = local_488 + 2;
     piVar11 = local_300;
-    for (iVar21 = 0x5f; iVar21 != 0; iVar21 = iVar21 + -1) {
-      *piVar11 = *piVar22;
-      piVar22 = piVar22 + 1;
-      piVar11 = piVar11 + 1;
-    }
+    memmove(piVar11, piVar22, 0x17c); /* compiler REP MOVS byte copy */
     if (iVar8 == 0) {
       local_300[3] = -this_00->field_0048;
     }

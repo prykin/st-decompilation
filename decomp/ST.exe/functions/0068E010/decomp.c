@@ -20,8 +20,8 @@ void __thiscall AiTactClassTy::sub_0068E010(AiTactClassTy *this)
     pAVar1 = (AnonShape_00691480_E757992C *)&this->field_0020;
   }
   thunk_FUN_00691480(pAVar1);
-  if (this->field_0130 != 0) {
-    FreeAndNull((void **)&this->field_0130);
+  if (this->field_0130 != (void *)0x0) {
+    FreeAndNull(&this->field_0130);
   }
   return;
 }

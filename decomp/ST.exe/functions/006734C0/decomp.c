@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 int FUN_006734c0(void)
 
@@ -55,16 +57,7 @@ int FUN_006734c0(void)
                      ((DAT_00857558 - iVar2) - (int)puVar3) + 1 + (int)DAT_0085755c);
           puVar7 = (uint *)local_8[2];
           puVar9 = puVar3;
-          for (uVar4 = uVar5 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
-            *puVar9 = *puVar7;
-            puVar7 = puVar7 + 1;
-            puVar9 = puVar9 + 1;
-          }
-          for (uVar4 = uVar5 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
-            *(char *)puVar9 = (char)*puVar7;
-            puVar7 = (uint *)((int)puVar7 + 1);
-            puVar9 = (uint *)((int)puVar9 + 1);
-          }
+          memmove(puVar9, puVar7, uVar5); /* compiler REP MOVS byte copy */
           DAT_00857558 = DAT_00857558 + (uVar5 - iVar2);
           puVar3 = Library::MSVCRT::FUN_00730590((uint *)((int)puVar3 + 1),(char *)local_8[1]);
         } while (puVar3 != (uint *)0x0);

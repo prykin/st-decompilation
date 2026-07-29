@@ -553,6 +553,11 @@ structural until independent evidence names it.
    - Directory: `<repo>/recovery`
    - It automatically consumes the sibling `class_array_proposals.tsv` and
      replaces covered generated scalar fields with one native Ghidra array.
+   - An exact interior `&this->field` passed to a trusted recovered `T *`
+     parameter proves the field's `T` type. This first turns deallocator-style
+     `void **` consumers into a neutral `void *` field; a following fixed-point
+     pass may refine that pointer to `byte *`/`ushort *` from actual memory
+     dereference width.
 7. Optionally review field-name suggestions in
    `class_field_proposals.tsv`.
 8. Run `STClassLayoutApplier`.
@@ -586,9 +591,10 @@ structural until independent evidence names it.
    - The applier commits element/descriptor layouts before it decompiles and
      hashes local SSA lifetimes. It then commits locals in a second transaction
      and verifies every reported `applied` row against another fresh
-     `HighFunction`. Obsolete script-owned dynamic locals left by an earlier
-     pre-layout hash are removed; a DB local which does not reattach is reported
-     as `conflict`, never as a successful application.
+     `HighFunction`. Obsolete script-owned locals left by an earlier pre-layout
+     hash or by later register/stack SSA reuse are removed by their exact
+     applier marker and database-variable identity; a DB local which does not
+     reattach is reported as `conflict`, never as a successful application.
       The generic `DArrayTy` ABI is not changed. One descriptor specialization
       is created per owning class field, and only its `data` member becomes a
       pointer to that field's recovered packed element record.
@@ -942,7 +948,16 @@ migration instead of happening as a side effect of one decompiler run.
 The utility pass is intentionally small and strict. It verifies body shapes before
 assigning the semantics and prototypes of `FreeAndNull`, `DArrayDestroy`,
 `DArrayCreate`, `SArrayCreate`, `LoadResourceString`, `DArrayGetElement`, and
-`GetPlayerRaceId`. Typing both DKW array factories is especially important:
+`GetPlayerRaceId`. It also discovers the unique generic `DArrayRemoveAt` helper
+and the iterator-style `DArrayGetNext` helper from their descriptor accesses
+plus exact `REP MOVSD`/`REP MOVSB` bodies, rather than from ST-specific
+addresses. The optimized six-argument pitched-buffer primitive is similarly
+recovered as `CopyRows(byte *, int, byte *, int, uint, int)` only when its
+complete row-width/pitch and 4/8-byte copy contract is present. The
+source-tagged `mfAObjLoad` return is kept
+as neutral `byte *`: the archive contains heterogeneous serialized payloads,
+and each consumer must recover its own record layout instead of contaminating
+all callsites with one payload structure. Typing both DKW array factories is especially important:
 their named `DArrayTy *` returns flow into many otherwise anonymous globals.
 These high-fanout
 facts should precede prototype propagation because one corrected helper signature
@@ -1048,9 +1063,13 @@ locals in such unsettled functions again.
 `STLocalLifetimeAnalyzer/Applier` handles the complementary positive case. If
 Ghidra already separated reused storage into distinct merge groups and one
 group has an independent exact semantic type anchor, the pair persists a
-different type for only that lifetime. Physical register/stack reuse is not
-itself evidence: same-group values, competing anchors, and a dynamic local
-which reattaches anywhere except its original machine address are rejected.
+different type for only that lifetime. It also types a single non-reused
+`undefinedN`/`undefinedN *` local when the same exact evidence exists: one
+trusted typed return or typed copy, or at least two agreeing typed call
+consumers. It does not use arithmetic shape or names to guess signedness.
+Physical register/stack reuse is not itself evidence: competing anchors and a
+dynamic local which reattaches anywhere except its original machine address are
+rejected.
 
 `STAbiConsistencyAnalyzer` separately repairs polluted incoming parameter roles.
 A generic `undefined *` parameter becomes `int`/`uint` only when its machine
@@ -1453,15 +1472,15 @@ a new conflict is what requires another iteration.
 | `STVTableAnalyzer/Applier` | Find long and strongly referenced short vtables, resolve direct-JMP thunks, preserve tagged owner-specific message signatures, apply physical layouts separately from semantic owners, type safe owner vptrs, and record owner conflicts. |
 | `STVirtualMethodAnalyzer/Applier` | Propagate reviewed virtual slot names, conventions, and compatible signatures. |
 | `STConstructorAnalyzer/Applier` | Recover constructors, allocation sizes, direct hierarchy evidence, receiver-only signatures, and ABI `Owner *` returns when EAX is proven to return `this`. |
-| `STClassLayoutAnalyzer/Applier` | Build and revalidate conservative class layouts, including fields reached after stable prologue `this` spills, dynamic byte/word buffers, nested class-field pointee layouts, semantic field-type/name proposals, and packed initialization writes between an allocator/factory return and its store into an already typed singleton. |
+| `STClassLayoutAnalyzer/Applier` | Build and revalidate conservative class layouts, including fields reached after stable prologue `this` spills, exact address-of-field consumer types, dynamic byte/word buffers, nested class-field pointee layouts, semantic field-type/name proposals, and packed initialization writes between an allocator/factory return and its store into an already typed singleton. |
 | `STClassArrayAnalyzer` | Prove fixed arrays embedded in generated class layouts from bounded indexed accesses and exact pointer-walk loops, and recover a selected pointer element's pointee width from its subsequent dereference; `STClassLayoutAnalyzer/Applier` consumes the proposals. |
 | `STDArrayElementAnalyzer/Applier` | Recover one packed element record and one ABI-compatible descriptor specialization per generated class `DArrayTy` field from exact factory element sizes, runtime-stride aliases, exact inline-record snapshots, typed consumer parameters, and conservative state/index/handle/coordinate roles. |
-| `STLocalLifetimeAnalyzer/Applier` | Split compiler-reused decompiler locals at distinct merge groups and persist only independently type-anchored lifetimes; verify the exact machine anchor after a fresh decompile. |
+| `STLocalLifetimeAnalyzer/Applier` | Split compiler-reused decompiler locals at distinct merge groups, and type single-group raw-undefined locals from the same exact call/copy evidence; verify the exact machine anchor after a fresh decompile. |
 | `STMethodOwnerAnalyzer/Applier` | Assign structural class ownership to non-virtual methods, use typed global-singleton values passed in ECX as owner evidence, and repair weak script-owned assignments to high-fanout shared helpers; it participates in the deep fixed point after global typing. |
 | `STHiddenThisAnalyzer/Applier` | Recover anonymous `__thiscall` receivers from ECX/RET/call-site evidence with neutral structural owners required by Ghidra. |
 | `STDestructorAnalyzer/Applier` | Recover conservative destructor and scalar-deleting-destructor candidates. |
 | `STSwitchEnumAnalyzer/Applier` | Turn repeated switch/state domains into enums, decode exact OR-composed cases, and retain an evidence-generated monotonic domain state. |
-| `STUtilityFunctionAnalyzer/Applier` | Verify and name high-fanout runtime helpers and install their exact prototypes. |
+| `STUtilityFunctionAnalyzer/Applier` | Verify and name high-fanout runtime helpers, discover generic DArray erase/iterator and pitched row-copy implementations, retain heterogeneous object-loader payloads as `byte *`, and install their exact prototypes. |
 | `STAbiConsistencyAnalyzer/Applier` | Repair machine-proven x86 calling/return widths, `_setjmp3` varargs, and other ABI details that otherwise create `unaff_*`/`extraout_*` artifacts. |
 | `STReturnSemanticsAnalyzer/Applier` | Recover conservative leaf and CFG-proven non-leaf `void`, boolean, terminal `noreturn`, and unanimous evidence-backed structure-pointer returns; retain contradictory EAX reads for review and repair the short-lived unsafe automatic `void` rollback. |
 | `STPrototypeAnalyzer/Applier` | Propagate compatible parameter/return types and reviewed parameter names across direct calls. |
@@ -1483,7 +1502,7 @@ a new conflict is what requires another iteration.
 | `STControlFlowLabelAnalyzer/Applier` | Give structural names to real decompiler goto targets. |
 | `STLibraryAnalyzer/Applier` | Classify linked CRT, DKW, and internal Ourlib implementations. |
 | `STExportRegressionGate` | Compare a fresh corpus with the prior central-index snapshot, report per-function quality deltas, reject exact structural/critical regressions, and write a reproducible export receipt. |
-| `STDecompExport` | Export the address-stable, dependency-fingerprinted LLM corpus, resolved thunk/call relations, and executable coverage gaps; inline proven immutable strings; normalize terminal traps, compiler bulk-zero loops, exact C++ virtual-call sugar, and exact recovered DArray element lifetimes without persistently typing reused SSA storage; catalogue stage-aware pseudocode and quality debt. |
+| `STDecompExport` | Export the address-stable, dependency-fingerprinted LLM corpus, resolved thunk/call relations, and executable coverage gaps; inline proven immutable strings; normalize terminal traps, fixed/dynamic compiler bulk-zero loops, exact dead `REP MOVS` copies as overlap-safe `memmove`, exact C++ virtual-call sugar, and exact recovered DArray element lifetimes without persistently typing reused SSA storage; catalogue stage-aware pseudocode and quality debt. |
 
 ## Git and Ghidra database hygiene
 

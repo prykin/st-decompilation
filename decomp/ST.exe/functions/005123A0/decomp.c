@@ -140,11 +140,7 @@ void __thiscall HelpPanelTy::CreateList(HelpPanelTy *this)
     local_388 = 0x8164;
     piVar5 = local_3f0;
     piVar6 = local_270;
-    for (iVar4 = 0x5f; iVar4 != 0; iVar4 = iVar4 + -1) {
-      *piVar6 = *piVar5;
-      piVar5 = piVar5 + 1;
-      piVar6 = piVar6 + 1;
-    }
+    memmove(piVar6, piVar5, 0x17c); /* compiler REP MOVS byte copy */
     if (iVar3 == 0) {
       local_270[3] = -this_00->field_0048;
     }

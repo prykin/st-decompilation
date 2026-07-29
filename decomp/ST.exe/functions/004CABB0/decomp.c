@@ -64,7 +64,7 @@ int __thiscall TLOBaseTy::RotateSpr(TLOBaseTy *this,int param_1)
     g_currentExceptionFrame = local_50.previous;
     return 0;
   }
-  if (this_00->field_05EF != 0) {
+  if (this_00->field_05EF != (char *)0x0) {
     sub_004CA7B0(this_00,(uint *)0xe,param_1);
   }
   if (*(int *)(&DAT_00791a10 + this_00->field_0235 * 4) != 0) {
@@ -120,10 +120,10 @@ int __thiscall TLOBaseTy::RotateSpr(TLOBaseTy *this,int param_1)
     sub_004CA7B0(this_00,(uint *)0xd,param_1);
   }
 LAB_004cadb1:
-  if (this_00->field_05F7 != 0) {
+  if (this_00->field_05F7 != (char *)0x0) {
     sub_004CA7B0(this_00,(uint *)&DAT_0000000c,param_1);
   }
-  if (this_00->field_05FF != (STT3DSprC *)0x0) {
+  if (this_00->field_05FF != (HoloTy *)0x0) {
     thunk_FUN_004cbfb0((int)this_00);
   }
   switch(this_00->field_05AC) {

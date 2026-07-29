@@ -32,7 +32,7 @@ undefined4 __thiscall HoloTy::NextFas(HoloTy *this)
     RaiseInternalException(iVar3,0,"E:\\__titans\\Start\\hologram.cpp",0xc1);
     return local_8;
   }
-  uVar1 = local_c->field_0003;
+  uVar1 = *(uint *)&local_c->field_0x3;
   if (-1 < (int)uVar1) {
     iVar3 = local_c->field_0017;
     if (local_c->field_0002 == '\0') {

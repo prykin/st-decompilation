@@ -1,7 +1,7 @@
 function_address	owner	field_offset	rendered_alias	status	detail
 004FF380	CPanelTy	2965	piVar10	disabled	apply=0
 00510E30	HelpPanelTy	443	pUVar15	disabled	apply=0
-00510E30	HelpPanelTy	443	pUVar18	disabled	apply=0
+00510E30	HelpPanelTy	443	pUVar19	disabled	apply=0
 00510E30	HelpPanelTy	443	pvVar6	disabled	apply=0
 00514330	HelpPanelTy	459	puVar6	disabled	apply=0
 005145E0	HelpPanelTy	459	puVar6	disabled	apply=0
@@ -15,7 +15,7 @@ function_address	owner	field_offset	rendered_alias	status	detail
 0068EC70	AiTactClassTy	165	puVar13	disabled	apply=0
 0068F020	AiTactClassTy	165	puVar7	disabled	apply=0
 0068F020	AiTactClassTy	165	this_01	disabled	apply=0
-0068F360	AiTactClassTy	165	pAVar9	disabled	apply=0
+0068F360	AiTactClassTy	165	pAVar8	disabled	apply=0
 0068FD00	AiTactClassTy	165	puVar5	disabled	apply=0
 00690230	AiTactClassTy	165	puVar1	disabled	apply=0
 006902B0	AiTactClassTy	165	puVar1	disabled	apply=0
@@ -37,12 +37,12 @@ function_address	owner	field_offset	rendered_alias	status	detail
 005D0150	SettMapMTy	8068	pcVar8	conflict	merge-group split failed: multiple DArray assignment varnodes
 005D06C0	SettMapMTy	8068	pcVar3	conflict	merge-group split failed: multiple DArray assignment varnodes
 005D0850	SettMapMTy	8068	pcVar2	conflict	merge-group split failed: multiple DArray assignment varnodes
-005D0A20	SettMapMTy	8068	pcVar5	conflict	merge-group split failed: mixed rendered local belongs to one inseparable merge group
+005D0A20	SettMapMTy	8068	pcVar4	conflict	merge-group split failed: mixed rendered local belongs to one inseparable merge group
 005D0BB0	SettMapMTy	8068	pcVar4	conflict	merge-group split failed: multiple DArray assignment varnodes
 005D1100	SettMapMTy	8068	pcVar6	conflict	merge-group split failed: multiple DArray assignment varnodes
 005D1400	SettMapMTy	7727	puVar16	conflict	merge-group split failed: multiple DArray assignment varnodes
 005D1400	SettMapMTy	8068	pcVar27	conflict	merge-group split failed: multiple DArray assignment varnodes
-005E1330	MTaskTy	116	piVar21	conflict	merge-group split failed: multiple DArray assignment varnodes
+005E1330	MTaskTy	116	piVar22	conflict	merge-group split failed: multiple DArray assignment varnodes
 005F4FA0	STBHEShellC	361	pcVar8	conflict	merge-group split failed: mixed rendered local belongs to one inseparable merge group
 0061F290	STLightC	163	piVar5	conflict	merge-group split failed: mixed rendered local belongs to one inseparable merge group
 00631010	STManRuinC	56	psVar2	conflict	merge-group split failed: mixed rendered local belongs to one inseparable merge group
@@ -55,8 +55,8 @@ function_address	owner	field_offset	rendered_alias	status	detail
 0055AB50	VisibleClassTy	244	piVar6	unchanged	element-pointer type already applied
 005A3540	FSGSTy	7870	local_c	unchanged	element-pointer type already applied
 005A3540	FSGSTy	7870	puVar5	unchanged	element-pointer type already applied
-005A4350	FSGSTy	7870	puVar24	applied	pointer:/uint -> pointer:/SubmarineTitans/Recovered/DArrayElements/FSGSTy_field_1EBEElement; fresh HighFunction attached as puVar24
-005A4350	FSGSTy	8115	puVar24	applied	pointer:/uint -> pointer:/SubmarineTitans/Recovered/DArrayElements/FSGSTy_field_1FB3Element; fresh HighFunction attached as local_ECX_14725
+005A4350	FSGSTy	7870	puVar24	unchanged	element-pointer type already applied
+005A4350	FSGSTy	8115	local_ECX_14725	unchanged	element-pointer type already applied
 005C29B0	SettMapMTy	8060	puVar24	unchanged	element-pointer type already applied
 005C29B0	SettMapMTy	8060	puVar29	unchanged	element-pointer type already applied
 005CC2D0	SettMapMTy	8759	piVar2	unchanged	element-pointer type already applied
@@ -66,7 +66,7 @@ function_address	owner	field_offset	rendered_alias	status	detail
 005CFF40	SettMapMTy	8068	pcVar4	unchanged	element-pointer type already applied
 005D0150	SettMapMTy	8068	pAVar7	unchanged	element-pointer type already applied
 005D0150	SettMapMTy	8068	pAVar8	unchanged	element-pointer type already applied
-005D0150	SettMapMTy	8068	pcVar7	applied	pointer:/char -> pointer:/SubmarineTitans/Recovered/DArrayElements/SettMapMTy_field_1F84Element; fresh HighFunction attached as pcVar7
+005D0150	SettMapMTy	8068	pcVar7	unchanged	element-pointer type already applied
 005D0A20	SettMapMTy	8068	pAVar7	unchanged	element-pointer type already applied
 005D0ED0	SettMapMTy	8068	pcVar5	unchanged	element-pointer type already applied
 005D0ED0	SettMapMTy	8068	pcVar8	unchanged	element-pointer type already applied
@@ -74,7 +74,7 @@ function_address	owner	field_offset	rendered_alias	status	detail
 005D1380	SettMapMTy	8068	pcVar3	unchanged	element-pointer type already applied
 005D1400	SettMapMTy	8068	pAVar24	unchanged	element-pointer type already applied
 005D1400	SettMapMTy	8068	pAVar28	unchanged	element-pointer type already applied
-005D1400	SettMapMTy	8068	pcVar30	applied	pointer:/char -> pointer:/SubmarineTitans/Recovered/DArrayElements/SettMapMTy_field_1F84Element; fresh HighFunction attached as pcVar30
+005D1400	SettMapMTy	8068	pcVar30	unchanged	element-pointer type already applied
 005F21D0	STManBasisC	56	psVar5	conflict	pointer:/short -> pointer:/SubmarineTitans/Recovered/DArrayElements/STManBasisC_field_0038Element; verification failed: database local attached to a different lifetime; fresh HighVariable does not contain anchor 005F21FD
 005F4C50	STBHEShellC	361	pcVar3	unchanged	element-pointer type already applied
 005F53A0	STBHEShellC	361	pcVar3	unchanged	element-pointer type already applied
@@ -84,7 +84,7 @@ function_address	owner	field_offset	rendered_alias	status	detail
 00609D60	STFieldC	564	local_c	unchanged	element-pointer type already applied
 0060C1A0	STFieldC	564	puVar3	unchanged	element-pointer type already applied
 0061F530	STLightC	163	piVar2	unchanged	element-pointer type already applied
-00630430	STManRuinC	60	puVar10	applied	pointer:/undefined4 -> pointer:/SubmarineTitans/Recovered/DArrayElements/STManRuinC_field_003CElement; fresh HighFunction attached as puVar10
+00630430	STManRuinC	60	puVar10	unchanged	element-pointer type already applied
 00630AC0	STManRuinC	56	psVar3	unchanged	element-pointer type already applied
 00631190	STManRuinC	56	psVar3	unchanged	element-pointer type already applied
 00631450	STManRuinC	56	psVar4	unchanged	element-pointer type already applied

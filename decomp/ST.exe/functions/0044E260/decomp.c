@@ -47,7 +47,7 @@ void FUN_0044e260(uint param_1,uint param_2,uint param_3,int *param_4)
           local_14 = STAllPlayersC::GetObjPtr(in_ECX,(char)param_1,local_2c._0_2_,CASE_1);
           if ((local_14 == (STGameObjC *)0x0) ||
              (iVar6 = local_14->vfunc_F8(), iVar6 == 0)) {
-            FUN_006b0c70(pDVar5,uVar12);
+            DArrayRemoveAt(pDVar5,uVar12);
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_2 = param_2 - 1;
             uVar12 = uVar12 - 1;

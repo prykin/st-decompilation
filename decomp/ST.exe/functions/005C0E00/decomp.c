@@ -13,14 +13,14 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this)
   code *pcVar3;
   short sVar4;
   int iVar5;
-  undefined4 *puVar6;
+  byte *puVar6;
   ushort *puVar7;
   undefined4 uVar8;
   int iVar9;
   MReportTy *this_00;
   cMf32 *this_01;
   int *piVar10;
-  undefined4 *puVar11;
+  byte *puVar11;
   InternalExceptionFrame local_98;
   InternalExceptionFrame local_54;
   undefined4 *local_10;
@@ -66,24 +66,19 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this)
         pDVar2 = (&local_c->field_0347)[(byte)local_c->field_006A];
         if (local_c->field_006B < pDVar2->count) {
           /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar2, local_c->field_006B) (runtime stride) */
-          puVar6 = (undefined4 *)(pDVar2->elementSize * local_c->field_006B + (int)pDVar2->data);
+          puVar6 = (byte *)(pDVar2->elementSize * local_c->field_006B + (int)pDVar2->data);
         }
         else {
-          puVar6 = (undefined4 *)0x0;
+          puVar6 = (byte *)0x0;
         }
         wsprintfA((LPSTR)&DAT_0080f33a,"%s%01d%02d",PTR_DAT_0079c0dc,
                   (byte)local_c->field_006A + 1,*puVar6);
         puVar7 = cMf32::RecGet(this_01,0xc,(char *)&DAT_0080f33a,(int *)&local_10,0);
         if (puVar7 != (ushort *)0x0) {
           this_00->field_0067 = 1;
-          puVar6 = &DAT_0080c967;
-          puVar11 = &DAT_008087b6;
-          for (iVar5 = 0x666; iVar5 != 0; iVar5 = iVar5 + -1) {
-            *puVar11 = *puVar6;
-            puVar6 = puVar6 + 1;
-            puVar11 = puVar11 + 1;
-          }
-          *(undefined1 *)puVar11 = *(undefined1 *)puVar6;
+          puVar6 = (byte *)(&DAT_0080c967);
+          puVar11 = (byte *)(&DAT_008087b6);
+          memmove(puVar11, puVar6, 0x1999); /* compiler REP MOVS byte copy */
           this_01 = local_8;
         }
         cMf32::delete(this_01);

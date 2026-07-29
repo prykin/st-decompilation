@@ -21,7 +21,7 @@ void __thiscall STMineSetC::sub_0041D2B0(STMineSetC *this)
               (g_sT3DSMAPContext_00807598,
                CONCAT22(CONCAT11(2,(char)(this->field_0018 >> 0x10)),(short)this->field_0018));
   }
-  this->field_010D = 0xffffffff;
+  this->field_010D = -1;
   return;
 }
 

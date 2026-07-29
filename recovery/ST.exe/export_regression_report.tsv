@@ -12,16 +12,16 @@ info	dispatch_vtable_count	1	1	0	ok	Physical vtable layouts and polymorphic disp
 info	typed_vtable_slot_erasure	0	0	0	ok	-
 info	function_addresses_removed	0	0	0	ok	-
 info	semantic_name_downgrades	0	0	0	ok	-
-warning	quality:casted_generic_field	5547	5544	-3	stage_transition	A later recovery stage may expose more named layout debt without losing structure; changed_functions=<detail unavailable>
-info	quality:dynamic_array_indexing	313	311	-2	improved	policy=nonincreasing; blocking=false
+warning	quality:casted_generic_field	5601	5602	1	stage_transition	A later recovery stage may expose more named layout debt without losing structure; changed_functions=<detail unavailable>
+info	quality:dynamic_array_indexing	311	311	0	ok	policy=nonincreasing; blocking=false
 info	quality:flattened_global_record_array	87	87	0	ok	policy=nonincreasing; blocking=false
-warning	quality:generic_data_symbol	16646	16645	-1	stage_transition	A later recovery stage may expose more named layout debt without losing structure; changed_functions=<detail unavailable>
+warning	quality:generic_field_name	57539	57540	1	stage_transition	A later recovery stage may expose more named layout debt without losing structure; changed_functions=<detail unavailable>
 info	quality:generic_global_aggregate	172	172	0	ok	policy=nonincreasing; blocking=false
-info	quality:packed_or_unaligned_piece	1781	1781	0	ok	policy=nonincreasing; blocking=false
-info	quality:raw_indirect_call	2104	2104	0	ok	policy=nonincreasing; blocking=true
-info	quality:raw_pointer_offset	3049	3048	-1	improved	policy=nonincreasing; blocking=false
+info	quality:packed_or_unaligned_piece	1781	1530	-251	improved	policy=nonincreasing; blocking=false
+info	quality:raw_indirect_call	2103	2103	0	ok	policy=nonincreasing; blocking=true
+info	quality:raw_pointer_offset	3031	3031	0	ok	policy=nonincreasing; blocking=false
 info	quality:return_width_artifact	1078	1078	0	ok	policy=nonincreasing; blocking=true
 info	quality:stack_slot_reuse	4297	4297	0	ok	policy=nonincreasing; blocking=false
 info	quality:string_based_aggregate_address	7	7	0	ok	policy=nonincreasing; blocking=false
-warning	quality:undefined_type	19309	19316	7	regressed	policy=nonincreasing; blocking=false; increased_functions=<detail unavailable>
+info	quality:undefined_type	18465	18348	-117	improved	policy=nonincreasing; blocking=false
 info	quality:unresolved_register_input	766	766	0	ok	policy=nonincreasing; blocking=true

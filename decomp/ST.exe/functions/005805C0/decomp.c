@@ -25,7 +25,7 @@ undefined4 __thiscall STDcResourcC::sub_005805C0(STDcResourcC *this)
       STT3DSprC::sub_004AD3C0
                 ((STT3DSprC *)this_00,(float)(int)this->field_0245 * _DAT_007904f8 + _DAT_007904f4,
                  (float)this->field_0249 * _DAT_007904f8 + _DAT_007904f4,
-                 (float)this->field_024D * _DAT_00790504 + _DAT_00790500 + _DAT_007904fc);
+                 (float)(int)this->field_024D * _DAT_00790504 + _DAT_00790500 + _DAT_007904fc);
       Library::Ourlib::ST3DSMAP::SprSetLevAfter((void *)this->field_0211,this->field_01ED,-1);
       STT3DSprC::sub_004ACF50((STT3DSprC *)this_00,'\r');
       STT3DSprC::StartShow((STT3DSprC *)this_00,0xd,g_playSystem_00802A38->field_00E4);

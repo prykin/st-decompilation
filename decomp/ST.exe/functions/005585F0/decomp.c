@@ -25,7 +25,7 @@ void __thiscall Visible::PrepareAfterSave(Visible *this,ushort *param_1)
   InternalExceptionFrame local_58;
   Visible *local_14;
   int local_10;
-  undefined4 *local_c;
+  void **local_c;
   uint *local_8;
 
   local_58.previous = g_currentExceptionFrame;
@@ -67,16 +67,7 @@ void __thiscall Visible::PrepareAfterSave(Visible *this,ushort *param_1)
         uVar7 = pVVar2->field_002C * pVVar2->field_0028;
         local_c = local_c + 1;
         puVar8 = local_8;
-        for (uVar3 = uVar7 >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {
-          *puVar4 = *puVar8;
-          puVar8 = puVar8 + 1;
-          puVar4 = puVar4 + 1;
-        }
-        for (uVar7 = uVar7 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-          *(char *)puVar4 = (char)*puVar8;
-          puVar8 = (uint *)((int)puVar8 + 1);
-          puVar4 = (uint *)((int)puVar4 + 1);
-        }
+        memmove(puVar4, puVar8, uVar7); /* compiler REP MOVS byte copy */
         uVar3 = pVVar2->field_002C * pVVar2->field_0028;
         puVar8 = (uint *)((int)local_8 + uVar3);
         local_10 = local_10 + -1;
@@ -99,7 +90,7 @@ void __thiscall Visible::PrepareAfterSave(Visible *this,ushort *param_1)
   }
   g_currentExceptionFrame = local_58.previous;
   iVar9 = 4;
-  value = (void **)&local_14->field_003C;
+  value = &local_14->field_003C;
   do {
     if (*value != (void *)0x0) {
       FreeAndNull(value);

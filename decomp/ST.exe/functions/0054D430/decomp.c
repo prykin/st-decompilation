@@ -6,12 +6,15 @@
    STPlaySystemC::SaveObjData
 
    [STPrototypeApplier] Propagated parameter 3.
-   Evidence: 0060EA30 -> 0054D430 @ 0060EB81 */
+   Evidence: 0060EA30 -> 0054D430 @ 0060EB81
+
+   [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 005F5F20 -> 0054D430 @ 005F62C9; /STColl3C+0x18 | 00621B50 -> 0054D430 @ 00622246;
+   /STMineSetC+0x18 */
 
 int __thiscall
 STPlaySystemC::SaveObjData
-          (STPlaySystemC *this,undefined4 param_1,byte *param_2,AnonShape_0060EA30_DCEB68AD *param_3
-          )
+          (STPlaySystemC *this,int *param_1,byte *param_2,AnonShape_0060EA30_DCEB68AD *param_3)
 
 {
   code *pcVar1;

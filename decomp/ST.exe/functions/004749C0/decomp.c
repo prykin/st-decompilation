@@ -77,8 +77,8 @@ LAB_00475068:
       }
       if ((this->field_05A6 == (ushort *)0x0) &&
          (iVar10 = STPlaySystemC::sub_006E62D0
-                             (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)this->field_05A2,
-                              (int *)&this->field_05A6), iVar10 == -4)) {
+                             (g_playSystem_00802A38,this->field_05A2,(int *)&this->field_05A6),
+         iVar10 == -4)) {
         RaiseInternalException
                   (0xffff,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",0x2fea
                   );
@@ -111,7 +111,7 @@ LAB_00475068:
               thunk_FUN_004d8b70((char)this->field_0024);
             }
           }
-          thunk_FUN_004d7570(*(char *)&this->field_0024,4,this->field_0018);
+          thunk_FUN_004d7570(*(char *)&this->field_0024,4,(int *)this->field_0018);
         }
       }
       local_44 = this->field_0008;
@@ -152,9 +152,7 @@ switchD_00474a47_caseD_2:
         goto switchD_00474a47_caseD_2;
       case 3:
         this->field_05C0 = 0;
-        iVar10 = STPlaySystemC::sub_006E62D0
-                           (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)this->field_05A2,
-                            (int *)&param_1);
+        iVar10 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,this->field_05A2,(int *)&param_1);
         if (iVar10 != -4) {
           NotReadyForLoading(param_1,this->field_0018);
           return 2;
@@ -307,8 +305,7 @@ switchD_00474a47_caseD_2:
         if (this->field_006E == 0x2f) {
           this->field_0076 = 0;
           iVar10 = STPlaySystemC::sub_006E62D0
-                             (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)this->field_05A2,
-                              (int *)&param_1);
+                             (g_playSystem_00802A38,this->field_05A2,(int *)&param_1);
           if (iVar10 == -4) {
             iVar10 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2fd1,0,0,
                                         "%s","STBoatC::WaitLoad WAITLOAD_PREPARE ptr=NULL 2");

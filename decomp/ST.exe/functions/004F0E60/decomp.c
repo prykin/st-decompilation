@@ -65,8 +65,7 @@ void __thiscall BldObjPanelTy::PaintBldBut(BldObjPanelTy *this,AnonShape_004EF32
     DibPut((AnonShape_006B5B10_E0D06CF1 *)local_14->field_0068,local_18,local_10,'\x01',
            (byte *)local_c);
     if ((param_1->field_0014 == 3) && (local_8 != (Global_sub_00526BA0_param_1Enum *)0x0)) {
-      pbVar6 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pBVar3->field_0190,
-                                    9 - (uint)((char)local_8[2] != 0));
+      pbVar6 = (byte *)FUN_0070b3a0(pBVar3->field_0190,9 - (uint)((char)local_8[2] != 0));
       DibPut((AnonShape_006B5B10_E0D06CF1 *)pBVar3->field_0068,iVar7,iVar4,'\x06',pbVar6);
     }
     Library::DKW::DDX::FUN_006b3640

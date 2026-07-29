@@ -43,9 +43,8 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
     if (g_cursorClass_00802A30->field_00A9 == 0) {
       Library::DKW::DDX::FUN_006b8b10((int *)g_cursorClass_00802A30->field_00AD);
     }
-    else if (g_cursorClass_00802A30->field_001C != (cLoadingTy *)0xffffffff) {
-      FUN_006b3af0((int *)g_cursorClass_00802A30->field_0060,
-                   (uint)g_cursorClass_00802A30->field_001C);
+    else if (g_cursorClass_00802A30->field_001C != 0xffffffff) {
+      FUN_006b3af0((int *)g_cursorClass_00802A30->field_0060,g_cursorClass_00802A30->field_001C);
     }
   }
   this_00 = local_10;
@@ -83,12 +82,12 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
   else {
     pHVar5->field_0002 = 1;
     pHVar5->field_0000 = 0;
-    pHVar5->field_0003 = -1;
+    *(undefined4 *)&pHVar5->field_0x3 = 0xffffffff;
     pHVar5->field_0001 = CASE_2;
-    pHVar5->field_0007 = 0;
+    pHVar5->field_0007 = (void *)0x0;
     pHVar5->field_000B = (void *)0x0;
     pHVar5->field_000F = 0;
-    pHVar5->field_001B = 1;
+    *(undefined4 *)&pHVar5->field_0x1b = 1;
     pHVar5->field_0013 = 1;
     pHVar5->field_0017 = -1;
     pHVar5->field_0027 = 0;
@@ -108,7 +107,7 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
       pHVar5 = this_00->field_21E8;
       pHVar5->field_0002 = 0;
       pHVar5->field_0017 = -1;
-      uVar11 = this_00->field_21E8->field_0003;
+      uVar11 = *(uint *)&this_00->field_21E8->field_0x3;
       if (-1 < (int)uVar11) {
         Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar11);
       }
@@ -156,12 +155,12 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
   else {
     pHVar5->field_0002 = 1;
     pHVar5->field_0000 = 0;
-    pHVar5->field_0003 = -1;
+    *(undefined4 *)&pHVar5->field_0x3 = 0xffffffff;
     pHVar5->field_0001 = CASE_2;
-    pHVar5->field_0007 = 0;
+    pHVar5->field_0007 = (void *)0x0;
     pHVar5->field_000B = (void *)0x0;
     pHVar5->field_000F = 0;
-    pHVar5->field_001B = 1;
+    *(undefined4 *)&pHVar5->field_0x1b = 1;
     pHVar5->field_0013 = 1;
     pHVar5->field_0017 = -1;
     pHVar5->field_0027 = 0;
@@ -181,7 +180,7 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
       pHVar5 = this_00->field_21F4;
       pHVar5->field_0002 = 0;
       pHVar5->field_0017 = -1;
-      uVar11 = this_00->field_21F4->field_0003;
+      uVar11 = *(uint *)&this_00->field_21F4->field_0x3;
       if (-1 < (int)uVar11) {
         Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar11);
       }
@@ -222,12 +221,12 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
     else {
       pHVar5->field_0002 = 1;
       pHVar5->field_0000 = 0;
-      pHVar5->field_0003 = -1;
+      *(undefined4 *)&pHVar5->field_0x3 = 0xffffffff;
       pHVar5->field_0001 = CASE_2;
-      pHVar5->field_0007 = 0;
+      pHVar5->field_0007 = (void *)0x0;
       pHVar5->field_000B = (void *)0x0;
       pHVar5->field_000F = 0;
-      pHVar5->field_001B = 1;
+      *(undefined4 *)&pHVar5->field_0x1b = 1;
       pHVar5->field_0013 = 1;
       pHVar5->field_0017 = -1;
       pHVar5->field_0027 = 0;
@@ -247,7 +246,7 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
         pHVar5 = this_00->field_21EC;
         pHVar5->field_0002 = 0;
         pHVar5->field_0017 = -1;
-        uVar11 = this_00->field_21EC->field_0003;
+        uVar11 = *(uint *)&this_00->field_21EC->field_0x3;
         if (-1 < (int)uVar11) {
           Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar11);
         }
@@ -292,12 +291,12 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
     else {
       pHVar5->field_0002 = 1;
       pHVar5->field_0000 = 0;
-      pHVar5->field_0003 = -1;
+      *(undefined4 *)&pHVar5->field_0x3 = 0xffffffff;
       pHVar5->field_0001 = CASE_2;
-      pHVar5->field_0007 = 0;
+      pHVar5->field_0007 = (void *)0x0;
       pHVar5->field_000B = (void *)0x0;
       pHVar5->field_000F = 0;
-      pHVar5->field_001B = 1;
+      *(undefined4 *)&pHVar5->field_0x1b = 1;
       pHVar5->field_0013 = 1;
       pHVar5->field_0017 = -1;
       pHVar5->field_0027 = 0;
@@ -317,7 +316,7 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
         pHVar5 = this_00->field_21F0;
         pHVar5->field_0002 = 0;
         pHVar5->field_0017 = -1;
-        uVar11 = this_00->field_21F0->field_0003;
+        uVar11 = *(uint *)&this_00->field_21F0->field_0x3;
         if (-1 < (int)uVar11) {
           Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar11);
         }
@@ -333,10 +332,10 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
     if (g_cursorClass_00802A30->field_00A9 == 0) {
       Library::DKW::DDX::FUN_006b8a60((byte *)g_cursorClass_00802A30->field_00AD);
     }
-    else if (g_cursorClass_00802A30->field_001C != (cLoadingTy *)0xffffffff) {
+    else if (g_cursorClass_00802A30->field_001C != 0xffffffff) {
       Library::DKW::DDX::FUN_006b34d0
-                ((uint *)g_cursorClass_00802A30->field_0060,(uint)g_cursorClass_00802A30->field_001C
-                 ,0xfffffffe,g_cursorClass_00802A30->field_0034,g_cursorClass_00802A30->field_0038);
+                ((uint *)g_cursorClass_00802A30->field_0060,g_cursorClass_00802A30->field_001C,
+                 0xfffffffe,g_cursorClass_00802A30->field_0034,g_cursorClass_00802A30->field_0038);
       g_currentExceptionFrame = local_54.previous;
       return;
     }

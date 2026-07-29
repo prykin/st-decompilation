@@ -28,7 +28,7 @@ StartSystemTy::PaintBinDesc(StartSystemTy *this,AnonShape_005DE050_5BD86458 *par
   int local_8;
 
   if ((((this->field_0544 != (AnonPointee_StartSystemTy_0544 *)0x0) &&
-       (this->field_0548 != (uint *)0x0)) && (-1 < this->field_0540)) &&
+       (this->field_0548 != (uint *)0x0)) && (-1 < (int)this->field_0540)) &&
      ((param_1 != (AnonShape_005DE050_5BD86458 *)0x0 &&
       (local_c = param_1->field_001C, local_c != 0)))) {
     pcVar1 = this->field_0034;

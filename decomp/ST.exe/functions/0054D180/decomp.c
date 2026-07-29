@@ -28,8 +28,8 @@ void __thiscall STPlaySystemC::DoneSystem(STPlaySystemC *this)
     if (pSVar2->field_0039 != (AnonPointee_STPlaySystemC_0039 *)0x0) {
       FUN_006b9890((int *)&pSVar2->field_0039);
     }
-    if (pSVar2->field_004F != 0) {
-      FreeAndNull((void **)&pSVar2->field_004F);
+    if (pSVar2->field_004F != (void *)0x0) {
+      FreeAndNull(&pSVar2->field_004F);
     }
     if (pSVar2->field_003D != (AnonPointee_STPlaySystemC_003D *)0x0) {
       FreeAndNull(&pSVar2->field_003D);

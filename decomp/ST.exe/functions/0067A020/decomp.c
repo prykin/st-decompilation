@@ -1,5 +1,3 @@
-#include "../../pseudocode_runtime.h"
-
 
 /* [STHiddenThisApplier] Anonymous hidden receiver recovered as
    /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_006799B0.

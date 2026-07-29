@@ -13,7 +13,7 @@ void __thiscall AiPlrClassTy::ExecTech(AiPlrClassTy *this,void *param_1)
   AiPlrClassTy *this_00;
   undefined1 uVar3;
   int iVar4;
-  AiPlrClassTy_field_06A1DArray *groupContent;
+  AiPlrClassTy_field_06A1DArray *array;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined3 extraout_var;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -47,15 +47,15 @@ void __thiscall AiPlrClassTy::ExecTech(AiPlrClassTy *this,void *param_1)
     this_00 = local_18;
     if (iVar4 == 0) {
       local_10 = 0;
-      groupContent = local_18->field_06A1;
-      if (0 < (int)groupContent->count) {
-        bVar12 = groupContent->count != 0;
+      array = local_18->field_06A1;
+      if (0 < (int)array->count) {
+        bVar12 = array->count != 0;
         do {
           uVar5 = local_10;
           if (bVar12) {
             /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
             pvVar10 = (AiPlrClassTy_field_06A1Element *)
-                      ((int)&groupContent->data->field_0000 + groupContent->elementSize * local_10);
+                      ((int)&array->data->field_0000 + array->elementSize * local_10);
           }
           else {
             pvVar10 = (AiPlrClassTy_field_06A1Element *)0x0;
@@ -180,13 +180,13 @@ LAB_0067b724:
             break;
           case 2:
           case 3:
-            FUN_006b0c70((DArrayTy *)groupContent,local_10);
+            DArrayRemoveAt((DArrayTy *)array,local_10);
             local_10 = uVar5 - 1;
           }
-          groupContent = this_00->field_06A1;
+          array = this_00->field_06A1;
           local_10 = local_10 + 1;
-          bVar12 = local_10 < groupContent->count;
-        } while ((int)local_10 < (int)groupContent->count);
+          bVar12 = local_10 < array->count;
+        } while ((int)local_10 < (int)array->count);
       }
       if (((g_allPlayers_007FA174 != (STAllPlayersC *)0x0) && (this_00->field_0662 == '\x01')) &&
          (iVar4 = thunk_FUN_0067b1a0(this_00,(int)this_00->field_0660),

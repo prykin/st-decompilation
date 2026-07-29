@@ -127,7 +127,7 @@ LAB_00500d40:
             uVar7 = (uint)(byte)pCVar4->field_02A8;
             pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar4->field_02A2,
                                           local_8 & 0xff);
-            pAVar11 = (AnonShape_006B5B10_E0D06CF1 *)pCVar4->field_018C;
+            pAVar11 = pCVar4->field_018C;
             iVar6 = (5 - uVar7) * 0xb;
           }
           else {

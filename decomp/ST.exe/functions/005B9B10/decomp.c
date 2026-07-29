@@ -51,9 +51,8 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
       if (g_cursorClass_00802A30->field_00A9 == 0) {
         Library::DKW::DDX::FUN_006b8b10((int *)g_cursorClass_00802A30->field_00AD);
       }
-      else if (g_cursorClass_00802A30->field_001C != (cLoadingTy *)0xffffffff) {
-        FUN_006b3af0((int *)g_cursorClass_00802A30->field_0060,
-                     (uint)g_cursorClass_00802A30->field_001C);
+      else if (g_cursorClass_00802A30->field_001C != 0xffffffff) {
+        FUN_006b3af0((int *)g_cursorClass_00802A30->field_0060,g_cursorClass_00802A30->field_001C);
       }
     }
     puVar4 = (ushort *)FUN_0070a9f0(g_cMf32_00806780,"LOADSINGLE",0,1);
@@ -174,12 +173,12 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
     else {
       pHVar8->field_0002 = 1;
       pHVar8->field_0000 = 0;
-      pHVar8->field_0003 = -1;
+      *(undefined4 *)&pHVar8->field_0x3 = 0xffffffff;
       pHVar8->field_0001 = CASE_2;
-      pHVar8->field_0007 = 0;
+      pHVar8->field_0007 = (void *)0x0;
       pHVar8->field_000B = (void *)0x0;
       pHVar8->field_000F = 0;
-      pHVar8->field_001B = 1;
+      *(undefined4 *)&pHVar8->field_0x1b = 1;
       pHVar8->field_0013 = 1;
       pHVar8->field_0017 = -1;
       pHVar8->field_0027 = 0;
@@ -199,7 +198,7 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
         pHVar8 = this_02->field_1C96;
         pHVar8->field_0002 = 1;
         pHVar8->field_0017 = pHVar8->field_0013;
-        uVar10 = this_02->field_1C96->field_0003;
+        uVar10 = *(uint *)&this_02->field_1C96->field_0x3;
         if (-1 < (int)uVar10) {
           FUN_006b3af0((int *)g_ddxContext_008075A8,uVar10);
         }
@@ -237,12 +236,12 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
       else {
         pHVar8->field_0002 = 1;
         pHVar8->field_0000 = 0;
-        pHVar8->field_0003 = -1;
+        *(undefined4 *)&pHVar8->field_0x3 = 0xffffffff;
         pHVar8->field_0001 = CASE_2;
-        pHVar8->field_0007 = 0;
+        pHVar8->field_0007 = (void *)0x0;
         pHVar8->field_000B = (void *)0x0;
         pHVar8->field_000F = 0;
-        pHVar8->field_001B = 1;
+        *(undefined4 *)&pHVar8->field_0x1b = 1;
         pHVar8->field_0013 = 1;
         pHVar8->field_0017 = -1;
         pHVar8->field_0027 = 0;
@@ -263,7 +262,7 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
           pHVar8 = this_02->field_1C9A;
           pHVar8->field_0002 = 1;
           pHVar8->field_0017 = pHVar8->field_0013;
-          uVar10 = this_02->field_1C9A->field_0003;
+          uVar10 = *(uint *)&this_02->field_1C9A->field_0x3;
           if (-1 < (int)uVar10) {
             FUN_006b3af0((int *)g_ddxContext_008075A8,uVar10);
           }
@@ -294,12 +293,14 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
                          this_02->field_005D,10,2);
     }
     pHVar8 = this_02->field_1C96;
-    if (((pHVar8 != (HoloTy *)0x0) && (pHVar8->field_0000 != '\0')) && (-1 < pHVar8->field_0003)) {
-      Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,pHVar8->field_0003);
+    if (((pHVar8 != (HoloTy *)0x0) && (pHVar8->field_0000 != '\0')) &&
+       (-1 < (int)*(uint *)&pHVar8->field_0x3)) {
+      Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,*(uint *)&pHVar8->field_0x3);
     }
     pHVar8 = this_02->field_1C9A;
-    if (((pHVar8 != (HoloTy *)0x0) && (pHVar8->field_0000 != '\0')) && (-1 < pHVar8->field_0003)) {
-      Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,pHVar8->field_0003);
+    if (((pHVar8 != (HoloTy *)0x0) && (pHVar8->field_0000 != '\0')) &&
+       (-1 < (int)*(uint *)&pHVar8->field_0x3)) {
+      Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,*(uint *)&pHVar8->field_0x3);
     }
     g_currentExceptionFrame = local_54.previous;
     return;

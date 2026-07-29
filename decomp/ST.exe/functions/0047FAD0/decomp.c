@@ -51,12 +51,11 @@ int __thiscall STBoatC::BackDismant(STBoatC *this,int *param_1,undefined4 param_
     }
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if ((((AnonShape_004B9D90_4F3151F9 *)param_1 == (AnonShape_004B9D90_4F3151F9 *)0x0) ||
-        (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x18 != this->field_06AF)) ||
+        (*(AnonShape_005EFAE0_B406B78B **)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x18 !=
+         this->field_06AF)) ||
        ((*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x24 != this->field_0024 ||
         (iVar5 = thunk_FUN_004b9d90((AnonShape_004B9D90_4F3151F9 *)param_1), iVar5 == 0)))) {
-      STPlaySystemC::sub_006E62D0
-                (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)this->field_06AF,
-                 (int *)&param_1);
+      STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,this->field_06AF,(int *)&param_1);
     }
     if (param_1 != (int *)0x0) {
       thunk_FUN_004b9d20(param_1,this);
@@ -100,12 +99,11 @@ int __thiscall STBoatC::BackDismant(STBoatC *this,int *param_1,undefined4 param_
     }
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if ((((AnonShape_004B9D90_4F3151F9 *)param_1 == (AnonShape_004B9D90_4F3151F9 *)0x0) ||
-        (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x18 != this->field_06AF)) ||
+        (*(AnonShape_005EFAE0_B406B78B **)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x18 !=
+         this->field_06AF)) ||
        ((*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x24 != this->field_0024 ||
         (iVar5 = thunk_FUN_004b9d90((AnonShape_004B9D90_4F3151F9 *)param_1), iVar5 == 0)))) {
-      STPlaySystemC::sub_006E62D0
-                (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)this->field_06AF,
-                 (int *)&param_1);
+      STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,this->field_06AF,(int *)&param_1);
     }
     if ((param_1 != (int *)0x0) && (param_1[300] == this->field_0018)) {
       param_1[300] = 0;

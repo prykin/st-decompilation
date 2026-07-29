@@ -32,16 +32,15 @@ void __thiscall CPanelTy::PaintBCapacity(CPanelTy *this)
   pCVar2 = local_10;
   if (iVar4 == 0) {
     iVar4 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)local_10->field_02B2,0);
-    iVar4 = (*(int *)(pCVar2->field_018C + 4) - *(int *)(iVar4 + 4)) / 2;
+    iVar4 = (pCVar2->field_018C->field_0004 - *(int *)(iVar4 + 4)) / 2;
     pbVar5 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B2,
                                   -(uint)(DAT_0080874e != '\x01') & 6);
-    DibPut((AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_018C,iVar4,0x50,'\x01',pbVar5);
+    DibPut(pCVar2->field_018C,iVar4,0x50,'\x01',pbVar5);
     local_8 = local_8 & 0xffffff00;
     if (pCVar2->field_0BB6 != '\0') {
       do {
         pbVar5 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B6,1);
-        DibPut((AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_018C,iVar4 + 3 + (local_8 & 0xff) * 4,
-               0x53,'\x01',pbVar5);
+        DibPut(pCVar2->field_018C,iVar4 + 3 + (local_8 & 0xff) * 4,0x53,'\x01',pbVar5);
         bVar3 = (byte)local_8 + 1;
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_8 = CONCAT31(local_8._1_3_,bVar3);
@@ -54,8 +53,7 @@ void __thiscall CPanelTy::PaintBCapacity(CPanelTy *this)
     if (uVar7 < (byte)pCVar2->field_0BB7 + uVar7) {
       do {
         pbVar5 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B6,5);
-        DibPut((AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_018C,iVar4 + 3 + uVar7 * 4,0x53,'\x01',
-               pbVar5);
+        DibPut(pCVar2->field_018C,iVar4 + 3 + uVar7 * 4,0x53,'\x01',pbVar5);
         bVar3 = (byte)local_c + 1;
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_c = CONCAT31(local_c._1_3_,bVar3);
@@ -69,8 +67,7 @@ void __thiscall CPanelTy::PaintBCapacity(CPanelTy *this)
     if (uVar7 < (byte)pCVar2->field_0BB5 + uVar7) {
       do {
         pbVar5 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B6,2);
-        DibPut((AnonShape_006B5B10_E0D06CF1 *)pCVar2->field_018C,iVar4 + 3 + uVar7 * 4,0x53,'\x01',
-               pbVar5);
+        DibPut(pCVar2->field_018C,iVar4 + 3 + uVar7 * 4,0x53,'\x01',pbVar5);
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_8._0_1_ = (byte)local_8 + 1;
         uVar7 = (uint)(byte)local_8;

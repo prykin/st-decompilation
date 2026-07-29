@@ -127,7 +127,7 @@ LAB_005dc22d:
       }
       pDVar7 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
       this_01->field_0548 = &pDVar7->flags;
-      puVar5 = &this_01->field_0x3c;
+      puVar5 = &this_01->field_003C;
       pcVar8 = LoadResourceString(0x2347,g_module_00807618);
       wsprintfA(puVar5,"&2 %s:",pcVar8);
       Library::DKW::TBL::FUN_006b5aa0(this_01->field_0548,puVar5);

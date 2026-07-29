@@ -17,8 +17,8 @@ int __thiscall JumpManagC::GetMessage(JumpManagC *this,STMessage *message)
   JumpManagC *this_00;
   int iVar3;
   int iVar4;
-  undefined4 *puVar5;
-  undefined4 *puVar6;
+  byte *puVar5;
+  byte *puVar6;
   InternalExceptionFrame local_54;
   byte *local_10;
   AnonShape_0060EA30_DCEB68AD *local_c;
@@ -41,15 +41,10 @@ int __thiscall JumpManagC::GetMessage(JumpManagC *this,STMessage *message)
   }
   SVar1 = message->id;
   if (SVar1 == MESS_ID_CREATE) {
-    puVar5 = (message->arg0).ptr;
+    puVar5 = (byte *)((message->arg0).ptr);
     if (puVar5[3] != 2) {
-      puVar6 = (undefined4 *)&local_8->field_0x1c;
-      for (iVar3 = 0xf; iVar3 != 0; iVar3 = iVar3 + -1) {
-        *puVar6 = *puVar5;
-        puVar5 = puVar5 + 1;
-        puVar6 = puVar6 + 1;
-      }
-      *(undefined2 *)puVar6 = *(undefined2 *)puVar5;
+      puVar6 = (byte *)&local_8->field_0x1c;
+      memmove(puVar6, puVar5, 0x3e); /* compiler REP MOVS byte copy */
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }
@@ -62,13 +57,13 @@ int __thiscall JumpManagC::GetMessage(JumpManagC *this,STMessage *message)
       DArrayDestroy(this_00->field_005E);
       this_00->field_005E = (DArrayTy *)0x0;
     }
-    if ((DArrayTy *)this_00->field_0062 != (DArrayTy *)0x0) {
-      DArrayDestroy((DArrayTy *)this_00->field_0062);
-      this_00->field_0062 = (AnonPointee_JumpManagC_0062 *)0x0;
+    if (this_00->field_0062 != (DArrayTy *)0x0) {
+      DArrayDestroy(this_00->field_0062);
+      this_00->field_0062 = (DArrayTy *)0x0;
     }
-    if ((DArrayTy *)this_00->field_0066 != (DArrayTy *)0x0) {
-      DArrayDestroy((DArrayTy *)this_00->field_0066);
-      this_00->field_0066 = (AnonPointee_JumpManagC_0066 *)0x0;
+    if (this_00->field_0066 != (DArrayTy *)0x0) {
+      DArrayDestroy(this_00->field_0066);
+      this_00->field_0066 = (DArrayTy *)0x0;
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }

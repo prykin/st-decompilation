@@ -296,7 +296,7 @@ int __thiscall STExplosion::GetMessage(STExplosion *this,STMessage *message)
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }
-    STPlaySystemC::SaveObjData(g_playSystem_00802A38,this_00->field_0018,local_c,local_8);
+    STPlaySystemC::SaveObjData(g_playSystem_00802A38,(int *)this_00->field_0018,local_c,local_8);
     value = &local_c;
   }
   else {

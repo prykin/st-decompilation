@@ -31,7 +31,7 @@ STBoatC::GetExplosionInfo
   uint local_2c;
   uint local_28;
   STBoatC *local_24;
-  undefined8 local_20;
+  longlong local_20;
   uint local_18;
   float local_14 [2];
   float local_c;
@@ -58,7 +58,7 @@ STBoatC::GetExplosionInfo
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   iVar3 = local_20._4_4_;
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  if (((longlong)local_20 < 0) || ((int)((byte)local_24->field_0281 - 1) < local_20._4_4_)) {
+  if ((local_20 < 0) || ((int)((byte)local_24->field_0281 - 1) < local_20._4_4_)) {
     RaiseInternalException
               (-0x5001fff5,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",
                0x3d4f);
@@ -115,7 +115,7 @@ STBoatC::GetExplosionInfo
   local_3c = (uint)lVar11;
   lVar12 = Library::MSVCRT::__allmul(uVar7 - uVar5,iVar10,uVar7 - uVar5,iVar10);
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  if ((longlong)(lVar12 + CONCAT44((int)((ulonglong)lVar11 >> 0x20),local_3c) + local_20) <=
+  if (lVar12 + CONCAT44((int)((ulonglong)lVar11 >> 0x20),local_3c) + local_20 <=
       CONCAT44(local_c,local_28)) {
     *param_5 = (uint)((short)local_30 + 0x46 < 0x15);
     *param_5 = 1;

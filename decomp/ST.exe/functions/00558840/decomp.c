@@ -58,17 +58,7 @@ int __thiscall VisibleClassTy::GetMessage(VisibleClassTy *this,STMessage *messag
           }
           uVar7 = this_00->field_0030 * this_00->field_0034;
           pbVar10 = this_00->field_004C;
-          for (uVar6 = uVar7 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-            pbVar10[0] = 0;
-            pbVar10[1] = 0;
-            pbVar10[2] = 0;
-            pbVar10[3] = 0;
-            pbVar10 = pbVar10 + 4;
-          }
-          for (uVar7 = uVar7 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-            *pbVar10 = 0;
-            pbVar10 = pbVar10 + 1;
-          }
+          memset(pbVar10, 0, uVar7); /* compiler bulk-zero initialization */
           pVVar8 = this_00->field_0110;
           uVar6 = 0;
           if (0 < (int)pVVar8->count) {

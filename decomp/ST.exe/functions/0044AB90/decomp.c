@@ -81,7 +81,7 @@ LAB_0044ac57:
         DArrayGetElement(local_c,uVar5,&stack0x0000001a);
         /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
         if (in_stack_0000001a == -1) {
-          FUN_006b0c70(local_c,uVar5);
+          DArrayRemoveAt(local_c,uVar5);
           dVar4 = dVar4 - 1;
           uVar5 = uVar5 - 1;
         }
@@ -104,7 +104,7 @@ LAB_0044ac57:
                 DArrayGetElement(local_8,uVar5,&stack0x00000006);
                 /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
                 if (in_stack_00000006 == -1) {
-                  FUN_006b0c70(local_8,uVar5);
+                  DArrayRemoveAt(local_8,uVar5);
                   iVar6 = iVar6 + -1;
                   uVar5 = uVar5 - 1;
                 }
@@ -121,9 +121,9 @@ LAB_0044ac57:
                     uVar5 = uVar5 + 1;
                     if (iVar6 <= (int)uVar5) goto LAB_0044ada0;
                   }
-                  FUN_006b0c70(local_10,0);
+                  DArrayRemoveAt(local_10,0);
                   tempGroup = tempGroup - 1;
-                  FUN_006b0c70(local_8,uVar5);
+                  DArrayRemoveAt(local_8,uVar5);
                   iVar6 = iVar6 + -1;
                   if ((int)tempGroup < 1) break;
                 }

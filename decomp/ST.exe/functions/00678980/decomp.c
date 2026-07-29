@@ -13,13 +13,12 @@ int __thiscall AiPlrClassTy::InitData(AiPlrClassTy *this,undefined4 *param_1)
   int iVar3;
   DArrayTy *pDVar4;
   AiPlrClassTy_field_06A1DArray *pAVar5;
-  undefined4 *puVar6;
+  byte *puVar6;
   int iVar7;
-  uint uVar8;
   uint uVar9;
   uint uVar10;
   AiPlrClassTy_field_06A1DArray **ppAVar11;
-  undefined4 *puVar12;
+  byte *puVar12;
   bool bVar13;
   InternalExceptionFrame local_50;
   AiPlrClassTy *local_c;
@@ -32,16 +31,16 @@ int __thiscall AiPlrClassTy::InitData(AiPlrClassTy *this,undefined4 *param_1)
   pAVar2 = local_c;
   if (iVar3 == 0) {
     if (local_c == (AiPlrClassTy *)0x0) {
-      puVar12 = (undefined4 *)0x0;
+      puVar12 = (byte *)0x0;
     }
     else {
-      puVar12 = &local_c->field_05D3;
+      puVar12 = (byte *)(&local_c->field_05D3);
     }
-    puVar6 = param_1;
+    puVar6 = (byte *)(param_1);
     for (iVar3 = 0x4a; iVar3 != 0; iVar3 = iVar3 + -1) {
       *puVar12 = *puVar6;
-      puVar6 = puVar6 + 1;
-      puVar12 = puVar12 + 1;
+      puVar6 = (byte *)(puVar6 + 1);
+      puVar12 = (byte *)(puVar12 + 1);
     }
     *(undefined2 *)puVar12 = *(undefined2 *)puVar6;
     *(undefined1 *)((int)puVar12 + 2) = *(undefined1 *)((int)puVar6 + 2);
@@ -78,27 +77,18 @@ int __thiscall AiPlrClassTy::InitData(AiPlrClassTy *this,undefined4 *param_1)
       do {
         if (bVar13) {
           /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
-          puVar12 = (undefined4 *)((int)pDVar4->data + pDVar4->elementSize * uVar10);
+          puVar12 = (byte *)((int)pDVar4->data + pDVar4->elementSize * uVar10);
         }
         else {
-          puVar12 = (undefined4 *)0x0;
+          puVar12 = (byte *)0x0;
         }
         if (puVar12[1] == 0) {
           iVar3 = puVar12[2];
-          puVar6 = Library::DKW::LIB::FUN_006aac10(puVar12[3]);
+          puVar6 = (byte *)(Library::DKW::LIB::FUN_006aac10(puVar12[3]));
           uVar9 = puVar12[3];
           *puVar12 = puVar6;
-          puVar12 = (undefined4 *)(iVar3 + 0x12a + (int)param_1);
-          for (uVar8 = uVar9 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
-            *puVar6 = *puVar12;
-            puVar12 = puVar12 + 1;
-            puVar6 = puVar6 + 1;
-          }
-          for (uVar9 = uVar9 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {
-            *(undefined1 *)puVar6 = *(undefined1 *)puVar12;
-            puVar12 = (undefined4 *)((int)puVar12 + 1);
-            puVar6 = (undefined4 *)((int)puVar6 + 1);
-          }
+          puVar12 = (byte *)(iVar3 + 0x12a + (int)param_1);
+          memmove(puVar6, puVar12, uVar9); /* compiler REP MOVS byte copy */
         }
         uVar10 = uVar10 + 1;
         pDVar4 = *local_8;

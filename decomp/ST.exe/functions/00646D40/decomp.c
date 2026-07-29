@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STMethodOwnerApplier] Structural method owner recovered as STVolcanoC.
    Evidence: this_call_owners=[STVolcanoC]; agreed_this_calls=1; incoming_this_accesses=3;
@@ -7,25 +9,19 @@
 void __thiscall STVolcanoC::sub_00646D40(STVolcanoC *this,undefined4 *param_1)
 
 {
-  undefined4 *puVar1;
-  int iVar2;
-  undefined4 *puVar3;
+  byte *puVar1;
+  byte *puVar3;
 
-  puVar1 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0x95);
+  puVar1 = (byte *)Library::DKW::LIB::FUN_006aac70(0x95);
   this->field_0028 = 2;
   this->field_00AD = this->field_00B1;
   if (this == (STVolcanoC *)0x0) {
-    puVar3 = (undefined4 *)0x0;
+    puVar3 = (byte *)0x0;
   }
   else {
-    puVar3 = (undefined4 *)&this->field_0x1c;
+    puVar3 = (byte *)&this->field_0x1c;
   }
-  for (iVar2 = 0x25; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *puVar1 = *puVar3;
-    puVar3 = puVar3 + 1;
-    puVar1 = puVar1 + 1;
-  }
-  *(undefined1 *)puVar1 = *(undefined1 *)puVar3;
+  memmove(puVar1, puVar3, 0x95); /* compiler REP MOVS byte copy */
   *param_1 = 0x95;
   return;
 }

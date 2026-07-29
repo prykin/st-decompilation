@@ -392,12 +392,10 @@ LAB_00479ba6:
                 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                 iVar10 = *(int *)((int)this->field_06CB + 0x2c);
                 if ((((iVar10 == 7) || (iVar10 == 0x13)) || (iVar10 == 0x1b)) &&
-                   (((AnonShape_005EFAE0_B406B78B *)this->field_07CA !=
-                     (AnonShape_005EFAE0_B406B78B *)0x0 &&
+                   ((this->field_07CA != (AnonShape_005EFAE0_B406B78B *)0x0 &&
                     (iVar10 = STPlaySystemC::sub_006E62D0
-                                        (g_playSystem_00802A38,
-                                         (AnonShape_005EFAE0_B406B78B *)this->field_07CA,
-                                         (int *)&local_8), iVar10 != -4)))) {
+                                        (g_playSystem_00802A38,this->field_07CA,(int *)&local_8),
+                    iVar10 != -4)))) {
                   iVar11 = (int)this->field_0045;
                   iVar10 = (int)this->field_0043;
                   iVar14 = (int)this->field_0041;
@@ -427,10 +425,10 @@ LAB_00479ba6:
                 iVar10 = *(int *)((int)this->field_06CB + 0x2c);
                 if (((iVar10 == 0xb) || (iVar10 == 0x23)) &&
                    ((this->field_021D == 1 && (this->field_0024 == (uint)DAT_0080874d)))) {
-                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected STPackTagged24(2, this->field_0018) == (((uint32_t)(this->field_0018) & 0x00ffffffu) | ((uint32_t)(2) << 24)) */
+                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   ST3DSMAPContext::sub_006E6780
                             (this->field_0211,
-                             CONCAT22(CONCAT11(2,(char)(this->field_0018 >> 0x10)),
+                             CONCAT22(CONCAT11(2,(char)((uint)this->field_0018 >> 0x10)),
                                       (short)this->field_0018));
                 }
                 thunk_FUN_004d0a80(DAT_00800bcc,(int)*(short *)&this->field_0x657,
@@ -455,12 +453,10 @@ LAB_00479ba6:
                 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                 iVar10 = *(int *)((int)this->field_06CB + 0x2c);
                 if ((((iVar10 == 7) || (iVar10 == 0x13)) || (iVar10 == 0x1b)) &&
-                   (((AnonShape_005EFAE0_B406B78B *)this->field_07CA !=
-                     (AnonShape_005EFAE0_B406B78B *)0x0 &&
+                   ((this->field_07CA != (AnonShape_005EFAE0_B406B78B *)0x0 &&
                     (iVar10 = STPlaySystemC::sub_006E62D0
-                                        (g_playSystem_00802A38,
-                                         (AnonShape_005EFAE0_B406B78B *)this->field_07CA,
-                                         (int *)&local_8), iVar10 != -4)))) {
+                                        (g_playSystem_00802A38,this->field_07CA,(int *)&local_8),
+                    iVar10 != -4)))) {
                   iVar14 = (int)this->field_0045;
                   iVar10 = (int)this->field_0043;
                   iVar11 = (int)this->field_0041;
@@ -484,12 +480,10 @@ LAB_00479ba6:
                 iVar10 = *(int *)((int)this->field_06CB + 0x2c);
                 *(undefined4 *)&this->field_0x65d = 0;
                 if (((iVar10 == 7) || ((iVar10 == 0x13 || (iVar10 == 0x1b)))) &&
-                   (((AnonShape_005EFAE0_B406B78B *)this->field_07CA !=
-                     (AnonShape_005EFAE0_B406B78B *)0x0 &&
+                   ((this->field_07CA != (AnonShape_005EFAE0_B406B78B *)0x0 &&
                     (iVar10 = STPlaySystemC::sub_006E62D0
-                                        (g_playSystem_00802A38,
-                                         (AnonShape_005EFAE0_B406B78B *)this->field_07CA,
-                                         (int *)&local_8), iVar10 != -4)))) {
+                                        (g_playSystem_00802A38,this->field_07CA,(int *)&local_8),
+                    iVar10 != -4)))) {
                   thunk_FUN_004ad460((void *)((int)&local_8[0xd].vtable + 1),0);
                 }
                 thunk_FUN_004ad460(&this->field_01D5,0);
@@ -498,12 +492,12 @@ LAB_00479ba6:
                 if ((((iVar10 == 0xb) || (iVar10 == 0x23)) && (this->field_021D == 1)) &&
                    (this->field_0024 == (uint)DAT_0080874d)) {
                   local_20 = (int)this->field_0041;
-                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected STPackTagged24(2, this->field_0018) == (((uint32_t)(this->field_0018) & 0x00ffffffu) | ((uint32_t)(2) << 24)) */
+                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   ST3DSMAPContext::sub_006E6710
                             (this->field_0211,(float)local_20 * _DAT_007904f8 * _DAT_007904f0,
                              (float)(int)this->field_0043 * _DAT_007904f8 * _DAT_007904f0,
                              (uint)((float)this->field_010D * _DAT_007904f8 + _DAT_007904f4),0x28,
-                             CONCAT22(CONCAT11(2,(char)(this->field_0018 >> 0x10)),
+                             CONCAT22(CONCAT11(2,(char)((uint)this->field_0018 >> 0x10)),
                                       (short)this->field_0018));
                 }
               }
@@ -521,12 +515,10 @@ LAB_00479ba6:
                 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                 iVar10 = *(int *)((int)this->field_06CB + 0x2c);
                 if ((((iVar10 == 7) || (iVar10 == 0x13)) || (iVar10 == 0x1b)) &&
-                   (((AnonShape_005EFAE0_B406B78B *)this->field_07CA !=
-                     (AnonShape_005EFAE0_B406B78B *)0x0 &&
+                   ((this->field_07CA != (AnonShape_005EFAE0_B406B78B *)0x0 &&
                     (iVar10 = STPlaySystemC::sub_006E62D0
-                                        (g_playSystem_00802A38,
-                                         (AnonShape_005EFAE0_B406B78B *)this->field_07CA,
-                                         (int *)&local_8), iVar10 != -4)))) {
+                                        (g_playSystem_00802A38,this->field_07CA,(int *)&local_8),
+                    iVar10 != -4)))) {
                   iVar11 = (int)this->field_0045;
                   iVar10 = (int)this->field_0043;
                   iVar14 = (int)this->field_0041;
@@ -581,12 +573,10 @@ LAB_00479ba6:
                 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                 iVar10 = *(int *)((int)this->field_06CB + 0x2c);
                 if ((((iVar10 == 7) || (iVar10 == 0x13)) || (iVar10 == 0x1b)) &&
-                   (((AnonShape_005EFAE0_B406B78B *)this->field_07CA !=
-                     (AnonShape_005EFAE0_B406B78B *)0x0 &&
+                   ((this->field_07CA != (AnonShape_005EFAE0_B406B78B *)0x0 &&
                     (iVar10 = STPlaySystemC::sub_006E62D0
-                                        (g_playSystem_00802A38,
-                                         (AnonShape_005EFAE0_B406B78B *)this->field_07CA,
-                                         (int *)&local_8), iVar10 != -4)))) {
+                                        (g_playSystem_00802A38,this->field_07CA,(int *)&local_8),
+                    iVar10 != -4)))) {
                   iVar14 = (int)this->field_0045;
                   iVar10 = (int)this->field_0043;
                   iVar11 = (int)this->field_0041;
@@ -610,12 +600,10 @@ LAB_00479ba6:
                 iVar10 = *(int *)((int)this->field_06CB + 0x2c);
                 *(undefined4 *)&this->field_0x65d = 0;
                 if (((iVar10 == 7) || ((iVar10 == 0x13 || (iVar10 == 0x1b)))) &&
-                   (((AnonShape_005EFAE0_B406B78B *)this->field_07CA !=
-                     (AnonShape_005EFAE0_B406B78B *)0x0 &&
+                   ((this->field_07CA != (AnonShape_005EFAE0_B406B78B *)0x0 &&
                     (iVar10 = STPlaySystemC::sub_006E62D0
-                                        (g_playSystem_00802A38,
-                                         (AnonShape_005EFAE0_B406B78B *)this->field_07CA,
-                                         (int *)&local_8), iVar10 != -4)))) {
+                                        (g_playSystem_00802A38,this->field_07CA,(int *)&local_8),
+                    iVar10 != -4)))) {
                   thunk_FUN_004ad460((void *)((int)&local_8[0xd].vtable + 1),0);
                 }
                 thunk_FUN_004ad460(&this->field_01D5,0);

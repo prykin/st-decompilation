@@ -43,7 +43,7 @@ void __thiscall SettMapSTy::SetListCtrls(SettMapSTy *this)
     local_8 = (cMf32 *)local_14->field_1F3F;
   }
   else {
-    local_8 = (cMf32 *)local_14->field_1F43;
+    local_8 = local_14->field_1F43;
   }
   local_14->field_0029 = 2;
   local_14->field_002D = 0x20;

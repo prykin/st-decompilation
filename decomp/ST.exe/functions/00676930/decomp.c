@@ -1,14 +1,15 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __cdecl FUN_00676930(uint param_1)
 
 {
-  undefined4 *puVar1;
+  byte *puVar1;
   uint uVar2;
-  int iVar3;
   ushort *puVar4;
   uint *puVar5;
   uint *puVar6;
-  undefined4 *puVar7;
+  byte *puVar7;
   undefined4 local_298 [78];
   uint local_160 [8];
   undefined4 local_140 [43];
@@ -42,11 +43,7 @@ void __cdecl FUN_00676930(uint param_1)
   if (g_allPlayers_007FA174 != (STAllPlayersC *)0x0) {
     puVar5 = &DAT_0080c947;
     puVar6 = local_160;
-    for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar6 = *puVar5;
-      puVar5 = puVar5 + 1;
-      puVar6 = puVar6 + 1;
-    }
+    memmove(puVar6, puVar5, 0x20); /* compiler REP MOVS byte copy */
     thunk_FUN_004da390(g_allPlayers_007FA174,param_1,&DAT_0080c83e,0);
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = 0;
@@ -54,13 +51,9 @@ void __cdecl FUN_00676930(uint param_1)
     puVar4 = &DAT_0080c8cd;
     do {
       if ((byte)(&DAT_0080c83f)[param_1] < 8) {
-        puVar1 = (undefined4 *)thunk_FUN_0043e420(local_298,(&DAT_0080c83f)[param_1]);
-        puVar7 = local_140;
-        for (iVar3 = 0x4e; iVar3 != 0; iVar3 = iVar3 + -1) {
-          *puVar7 = *puVar1;
-          puVar1 = puVar1 + 1;
-          puVar7 = puVar7 + 1;
-        }
+        puVar1 = (byte *)thunk_FUN_0043e420(local_298,(&DAT_0080c83f)[param_1]);
+        puVar7 = (byte *)(local_140);
+        memmove(puVar7, puVar1, 0x138); /* compiler REP MOVS byte copy */
         puVar4[-2] = (short)local_140[0x25] + (short)local_140[0x21] + (short)local_140[0x1d] +
                      (short)local_140[0x19] + (short)local_140[0x15] + (short)local_140[0x11] +
                      (short)local_140[0xd] + (short)local_140[9];

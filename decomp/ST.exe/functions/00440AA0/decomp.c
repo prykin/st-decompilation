@@ -110,7 +110,7 @@ STAllPlayersC::_AssignDocks(STAllPlayersC *this,char param_1,DArrayTy *param_2,D
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       if ((ushort)local_28._0_4_ == 0xffff) {
 LAB_00440bab:
-        FUN_006b0c70(param_2,uVar13);
+        DArrayRemoveAt(param_2,uVar13);
         uVar15 = uVar15 - 1;
         uVar13 = uVar13 - 1;
         local_20 = uVar15;
@@ -136,7 +136,7 @@ LAB_00440bab:
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       if ((ushort)local_28._0_4_ == 0xffff) {
 LAB_00440c19:
-        FUN_006b0c70(param_3,uVar13);
+        DArrayRemoveAt(param_3,uVar13);
         local_48 = local_48 - 1;
         uVar13 = uVar13 - 1;
       }
@@ -589,7 +589,7 @@ LAB_00440c19:
                   do {
                     DArrayGetElement(local_10,uVar15,&local_3c);
                     if (local_3c == local_4c) {
-                      FUN_006b0c70(local_10,uVar15);
+                      DArrayRemoveAt(local_10,uVar15);
                       pDVar6 = local_44;
                       break;
                     }

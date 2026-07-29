@@ -42,9 +42,9 @@ CPanelTy::PaintDamageXY
     iVar3 = 0;
     puVar4 = (uint *)LoadResourceString(param_5,g_module_00807618);
     ccFntTy::WrTxt(pCVar2->field_01B8,puVar4,iVar3,iVar5,uVar6,iVar7,iVar8);
-    wsprintfA(&pCVar2->field_0x1e1,"%3d",param_4);
+    wsprintfA(&pCVar2->field_01E1,"%3d",param_4);
     ccFntTy::SetSurf(pCVar2->field_01BC,param_1,0,param_2 + 0xc,param_3 + 10,0x14,0xf);
-    ccFntTy::WrTxt(pCVar2->field_01BC,(uint *)&pCVar2->field_0x1e1,-3,-1,1,-1,-1);
+    ccFntTy::WrTxt(pCVar2->field_01BC,(uint *)&pCVar2->field_01E1,-3,-1,1,-1,-1);
     ccFntTy::SetSurf(pCVar2->field_01B8,param_1,0,param_2 + 0x22,param_3 + 0xd,10,10);
     iVar8 = -1;
     iVar7 = -1;

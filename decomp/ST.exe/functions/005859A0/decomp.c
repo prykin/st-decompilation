@@ -23,9 +23,9 @@ int __thiscall STLBombC::GetMessage(STLBombC *this,STMessage *message)
   uint uVar8;
   short sVar9;
   AnonShape_005859A0_2434EC3C *pAVar10;
-  undefined4 *puVar11;
+  byte *puVar11;
   byte *pbVar12;
-  undefined4 *puVar13;
+  byte *puVar13;
   AnonShape_005859A0_2F00015D *pAVar14;
   byte *pbVar15;
   InternalExceptionFrame local_80;
@@ -72,11 +72,11 @@ int __thiscall STLBombC::GetMessage(STLBombC *this,STMessage *message)
                 Library::DKW::LIB::FUN_006aac70(local_10 + 0x67 + local_8);
       if (((local_18 != (byte *)0x0) && (local_14 != (byte *)0x0)) &&
          (local_c != (AnonShape_005859A0_2F00015D *)0x0)) {
-        puVar11 = (undefined4 *)&this_00->field_0x258;
+        puVar11 = (byte *)&this_00->field_0x258;
         pAVar14 = local_c;
         for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {
           *(undefined4 *)pAVar14 = *puVar11;
-          puVar11 = puVar11 + 1;
+          puVar11 = (byte *)(puVar11 + 1);
           pAVar14 = (AnonShape_005859A0_2F00015D *)&pAVar14->field_0x4;
         }
         *(undefined2 *)pAVar14 = *(undefined2 *)puVar11;
@@ -127,7 +127,7 @@ int __thiscall STLBombC::GetMessage(STLBombC *this,STMessage *message)
           pbVar15 = pbVar15 + 1;
         }
         STPlaySystemC::SaveObjData
-                  (g_playSystem_00802A38,this_00->field_0018,(byte *)local_c,
+                  (g_playSystem_00802A38,(int *)this_00->field_0018,(byte *)local_c,
                    (AnonShape_0060EA30_DCEB68AD *)(local_10 + 0x67 + local_8));
         FreeAndNull(&local_18);
         FreeAndNull(&local_14);
@@ -149,14 +149,9 @@ int __thiscall STLBombC::GetMessage(STLBombC *this,STMessage *message)
         if (uVar8 < 2) {
           *(undefined4 *)((int)&this_00->field_023E + 3) = 0;
           *(uint *)&this_00->field_0x23d = g_playSystem_00802A38->field_00E4;
-          puVar11 = (message->arg0).ptr;
-          puVar13 = (undefined4 *)&this_00->field_0x258;
-          for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {
-            *puVar13 = *puVar11;
-            puVar11 = puVar11 + 1;
-            puVar13 = puVar13 + 1;
-          }
-          *(undefined2 *)puVar13 = *(undefined2 *)puVar11;
+          puVar11 = (byte *)((message->arg0).ptr);
+          puVar13 = (byte *)&this_00->field_0x258;
+          memmove(puVar13, puVar11, 0x32); /* compiler REP MOVS byte copy */
           *(undefined4 *)&this_00->field_0x249 = 0x28;
           *(undefined4 *)&this_00->field_0x24d = 0xfffffe70;
           iVar6 = STT3DSprC::LoadSequence
@@ -179,11 +174,11 @@ int __thiscall STLBombC::GetMessage(STLBombC *this,STMessage *message)
         else if (uVar8 == 2) {
           local_20 = (message->arg0).ptr;
           pAVar10 = local_20;
-          puVar11 = (undefined4 *)&this_00->field_0x258;
+          puVar11 = (byte *)&this_00->field_0x258;
           for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {
             *puVar11 = *(undefined4 *)pAVar10;
             pAVar10 = (AnonShape_005859A0_2434EC3C *)&pAVar10->field_0x4;
-            puVar11 = puVar11 + 1;
+            puVar11 = (byte *)(puVar11 + 1);
           }
           *(undefined2 *)puVar11 = *(undefined2 *)pAVar10;
           local_8 = local_20->field_005F;

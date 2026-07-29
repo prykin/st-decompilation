@@ -143,18 +143,18 @@ void __thiscall CPanelTy::DoneCPanel(CPanelTy *this)
       ppuVar6 = ppuVar6 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
-    if (-1 < this_00->field_0174) {
+    if (-1 < (int)this_00->field_0174) {
       FUN_006b3bb0((int *)g_ddxContext_008075A8,this_00->field_0174);
     }
-    this_00->field_0174 = -1;
-    if (-1 < this_00->field_0178) {
+    this_00->field_0174 = 0xffffffff;
+    if (-1 < (int)this_00->field_0178) {
       FUN_006b3bb0((int *)g_ddxContext_008075A8,this_00->field_0178);
     }
-    this_00->field_0178 = -1;
-    if (-1 < this_00->field_017C) {
+    this_00->field_0178 = 0xffffffff;
+    if (-1 < (int)this_00->field_017C) {
       FUN_006b3bb0((int *)g_ddxContext_008075A8,this_00->field_017C);
     }
-    this_00->field_017C = -1;
+    this_00->field_017C = 0xffffffff;
     cMf32::RecMemFree(g_cMf32_00806790,(uint *)&this_00->field_0B43);
     cMf32::RecMemFree(g_cMf32_00806790,(uint *)&this_00->field_0B47);
     puVar7 = this_00->field_09D9;
@@ -268,7 +268,7 @@ void __thiscall CPanelTy::DoneCPanel(CPanelTy *this)
       ccFntTy::operator_delete((uint *)this_00->field_01B8);
       this_00->field_01B8 = (ccFntTy *)0x0;
     }
-    if (this_00->field_01AC != (AnonPointee_CPanelTy_01AC *)0x0) {
+    if (this_00->field_01AC != (ushort *)0x0) {
       FreeAndNull(&this_00->field_01AC);
     }
     if (this_00->field_01B0 != (ushort *)0x0) {
@@ -277,7 +277,7 @@ void __thiscall CPanelTy::DoneCPanel(CPanelTy *this)
     if (this_00->field_01B4 != (AnonPointee_CPanelTy_01B4 *)0x0) {
       FreeAndNull(&this_00->field_01B4);
     }
-    ppvVar8 = (void **)&this_00->field_0180;
+    ppvVar8 = &this_00->field_0180;
     local_8 = 0xb;
     do {
       if (*ppvVar8 != (void *)0x0) {
@@ -286,10 +286,10 @@ void __thiscall CPanelTy::DoneCPanel(CPanelTy *this)
       ppvVar8 = ppvVar8 + 1;
       local_8 = local_8 + -1;
     } while (local_8 != 0);
-    if ((int *)this_00->field_01D8 != (int *)0x0) {
+    if (this_00->field_01D8 != (HoloTy *)0x0) {
       FUN_00714060((int *)this_00->field_01D8);
-      Library::MSVCRT::FUN_0072e2b0((HoloTy *)this_00->field_01D8);
-      this_00->field_01D8 = 0;
+      Library::MSVCRT::FUN_0072e2b0(this_00->field_01D8);
+      this_00->field_01D8 = (HoloTy *)0x0;
     }
     if (this_00->field_025B != (short *)0x0) {
       FUN_0070b600((int *)&this_00->field_025B);

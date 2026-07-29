@@ -101,10 +101,10 @@ void __thiscall CPanelTy::PaintArsenal(CPanelTy *this)
           iVar9 = iVar9 + -1;
         } while (iVar9 != 0);
       }
-      wsprintfA(&pCVar2->field_0x1e1,"%3d",(uint)local_18->field_0002);
+      wsprintfA(&pCVar2->field_01E1,"%3d",(uint)local_18->field_0002);
       uVar4 = local_1c;
       ccFntTy::SetSurf(pCVar2->field_01B8,pCVar2->field_0194,0,0xa2,local_1c,0x15,0xc);
-      ccFntTy::WrStr(pCVar2->field_01B8,(uint *)&pCVar2->field_0x1e1,-3,-1,5);
+      ccFntTy::WrStr(pCVar2->field_01B8,(uint *)&pCVar2->field_01E1,-3,-1,5);
       if ((char)local_20 == '\0') {
         if ((int)uVar4 < 0x76) {
                     /* WARNING: Could not recover jumptable at 0x00505bca. Too many branches */

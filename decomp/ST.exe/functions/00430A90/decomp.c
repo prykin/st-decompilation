@@ -223,9 +223,9 @@ int __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,STMessage *message)
       PTR_007fa160 = (DArrayTy *)0x0;
       DArrayDestroy(PTR_007fa164);
       PTR_007fa164 = (DArrayTy *)0x0;
-      if (g_dArray_007FA150 != (DArrayTy *)0x0) {
-        DArrayDestroy(g_dArray_007FA150);
-        g_dArray_007FA150 = (DArrayTy *)0x0;
+      if (g_array_007FA150 != (DArrayTy *)0x0) {
+        DArrayDestroy(g_array_007FA150);
+        g_array_007FA150 = (DArrayTy *)0x0;
       }
       if (DAT_007fa168 != (undefined4 *)0x0) {
         FreeAndNull(&DAT_007fa168);

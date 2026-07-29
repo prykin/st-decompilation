@@ -10,31 +10,35 @@
    006B1190 @ 004B4823 | 004D8530 -> 006B1190 @ 004D854E | 004D8530 -> 006B1190 @ 004D8568 |
    004D85E0 -> 006B1190 @ 004D8600 | 004D85E0 -> 006B1190 @ 004D8649 | 004DE820 -> 006B1190 @
    004DE96C | 00540DC0 -> 006B1190 @ 00540EDF | 00540DC0 -> 006B1190 @ 00540F08 | 00541030 ->
-   006B1190 @ 0054108B | 00541030 -> 006B1190 @ 005410D9 | 006E4C90 -> 006B1190 @ 006E4CAA */
+   006B1190 @ 0054108B | 00541030 -> 006B1190 @ 005410D9 | 006E4C90 -> 006B1190 @ 006E4CAA
 
-int __fastcall FUN_006b1190(DArrayTy *groupContent,undefined4 *param_2)
+   [STUtilityFunctionApplier] darray_get_next: copies the element at iteratorIndex to caller
+   storage, advances the iterator, and returns the previous index or -4
+   Evidence: body pattern verified */
+
+int __fastcall DArrayGetNext(DArrayTy *array,byte *outElement)
 
 {
   dword dVar1;
   uint uVar2;
   uint uVar3;
-  undefined4 *puVar4;
+  byte *pbVar4;
 
-  if (groupContent->iteratorIndex < groupContent->count) {
-    uVar3 = groupContent->elementSize;
-    puVar4 = (undefined4 *)(uVar3 * groupContent->iteratorIndex + (int)groupContent->data);
+  if (array->iteratorIndex < array->count) {
+    uVar3 = array->elementSize;
+    pbVar4 = (byte *)(uVar3 * array->iteratorIndex + (int)array->data);
     for (uVar2 = uVar3 >> 2; uVar2 != 0; uVar2 = uVar2 - 1) {
-      *param_2 = *puVar4;
-      puVar4 = puVar4 + 1;
-      param_2 = param_2 + 1;
+      *(undefined4 *)outElement = *(undefined4 *)pbVar4;
+      pbVar4 = pbVar4 + 4;
+      outElement = outElement + 4;
     }
     for (uVar3 = uVar3 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
-      *(undefined1 *)param_2 = *(undefined1 *)puVar4;
-      puVar4 = (undefined4 *)((int)puVar4 + 1);
-      param_2 = (undefined4 *)((int)param_2 + 1);
+      *outElement = *pbVar4;
+      pbVar4 = pbVar4 + 1;
+      outElement = outElement + 1;
     }
-    dVar1 = groupContent->iteratorIndex;
-    groupContent->iteratorIndex = dVar1 + 1;
+    dVar1 = array->iteratorIndex;
+    array->iteratorIndex = dVar1 + 1;
     return dVar1;
   }
   return -4;

@@ -15,12 +15,12 @@ void __thiscall FSGSTy::DelPlayer(FSGSTy *this,byte *param_1)
   int iVar4;
   undefined4 uVar5;
   int iVar6;
+  uint index;
   uint uVar7;
-  uint uVar8;
-  undefined4 *puVar9;
+  undefined4 *puVar8;
+  byte *pbVar9;
   byte *pbVar10;
-  byte *pbVar11;
-  bool bVar12;
+  bool bVar11;
   InternalExceptionFrame local_84;
   byte local_40 [48];
   FSGSTy *local_10;
@@ -37,8 +37,8 @@ void __thiscall FSGSTy::DelPlayer(FSGSTy *this,byte *param_1)
       local_10->field_002D = 0x26;
       FUN_006e6080(local_10,2,local_10->field_1B20,(undefined4 *)&local_10->field_0x1d);
       pDVar2 = this_00->field_1EA6;
-      uVar8 = pDVar2->count;
-      if (*(ushort *)&this_00->field_0x31 < uVar8) {
+      uVar7 = pDVar2->count;
+      if (*(ushort *)&this_00->field_0x31 < uVar7) {
         /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar2, (uint)*(ushort *)&this_00->field_0x31) (runtime stride) */
         local_8 = (undefined4 *)
                   (pDVar2->elementSize * (uint)*(ushort *)&this_00->field_0x31 + (int)pDVar2->data);
@@ -46,55 +46,55 @@ void __thiscall FSGSTy::DelPlayer(FSGSTy *this,byte *param_1)
       else {
         local_8 = (undefined4 *)0x0;
       }
-      local_c = uVar8;
+      local_c = uVar7;
       if (local_8 != (undefined4 *)0x0) {
-        puVar9 = local_8;
-        pbVar10 = local_40;
+        puVar8 = local_8;
+        pbVar9 = local_40;
         for (iVar4 = 0xb; iVar4 != 0; iVar4 = iVar4 + -1) {
-          *(undefined4 *)pbVar10 = *puVar9;
-          puVar9 = puVar9 + 1;
-          pbVar10 = pbVar10 + 4;
+          *(undefined4 *)pbVar9 = *puVar8;
+          puVar8 = puVar8 + 1;
+          pbVar9 = pbVar9 + 4;
         }
-        *(undefined2 *)pbVar10 = *(undefined2 *)puVar9;
+        *(undefined2 *)pbVar9 = *(undefined2 *)puVar8;
       }
-      uVar7 = 0;
-      if (uVar8 != 0) {
-        if (uVar8 == 0) {
-          pbVar10 = (byte *)0x0;
+      index = 0;
+      if (uVar7 != 0) {
+        if (uVar7 == 0) {
+          pbVar9 = (byte *)0x0;
           goto LAB_005a278f;
         }
         do {
           /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
-          pbVar10 = (byte *)(this_00->field_1EA6->elementSize * uVar7 +
-                            (int)this_00->field_1EA6->data);
+          pbVar9 = (byte *)(this_00->field_1EA6->elementSize * index +
+                           (int)this_00->field_1EA6->data);
 LAB_005a278f:
-          pbVar11 = param_1;
-          if (pbVar10 != (byte *)0x0) {
+          pbVar10 = param_1;
+          if (pbVar9 != (byte *)0x0) {
             do {
-              bVar1 = *pbVar10;
-              bVar12 = bVar1 < *pbVar11;
-              if (bVar1 != *pbVar11) {
+              bVar1 = *pbVar9;
+              bVar11 = bVar1 < *pbVar10;
+              if (bVar1 != *pbVar10) {
 LAB_005a27ba:
-                iVar4 = (1 - (uint)bVar12) - (uint)(bVar12 != 0);
+                iVar4 = (1 - (uint)bVar11) - (uint)(bVar11 != 0);
                 goto LAB_005a27bf;
               }
               if (bVar1 == 0) break;
-              bVar1 = pbVar10[1];
-              bVar12 = bVar1 < pbVar11[1];
-              if (bVar1 != pbVar11[1]) goto LAB_005a27ba;
+              bVar1 = pbVar9[1];
+              bVar11 = bVar1 < pbVar10[1];
+              if (bVar1 != pbVar10[1]) goto LAB_005a27ba;
+              pbVar9 = pbVar9 + 2;
               pbVar10 = pbVar10 + 2;
-              pbVar11 = pbVar11 + 2;
             } while (bVar1 != 0);
             iVar4 = 0;
 LAB_005a27bf:
-            uVar8 = local_c;
+            uVar7 = local_c;
             if (iVar4 == 0) {
-              FUN_006b0c70(this_00->field_1EA6,uVar7);
+              DArrayRemoveAt(this_00->field_1EA6,index);
               break;
             }
           }
-          uVar7 = uVar7 + 1;
-        } while (uVar7 < uVar8);
+          index = index + 1;
+        } while (index < uVar7);
       }
       FUN_006b5f80((int *)g_ddxContext_008075A8,0x1e9,0x5e,0x124,0xf3);
       PutDDXClip(0x1e9,0x5e,0,0,0x124,(byte *)0xf3,'\x01',this_00->field_1E9A);
@@ -112,39 +112,39 @@ LAB_005a27bf:
       *(undefined4 *)&this_00->field_0x31 = uVar5;
       FUN_006e6080(this_00,2,this_00->field_1B20,(undefined4 *)&this_00->field_0x1d);
       if (local_8 != (undefined4 *)0x0) {
-        uVar8 = 0;
+        uVar7 = 0;
         local_c = this_00->field_1EA6->count;
         if (local_c != 0) {
           if (local_c == 0) {
-            pbVar10 = (byte *)0x0;
+            pbVar9 = (byte *)0x0;
             goto LAB_005a28be;
           }
           do {
             /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
-            pbVar10 = (byte *)(this_00->field_1EA6->elementSize * uVar8 +
-                              (int)this_00->field_1EA6->data);
+            pbVar9 = (byte *)(this_00->field_1EA6->elementSize * uVar7 +
+                             (int)this_00->field_1EA6->data);
 LAB_005a28be:
-            if (pbVar10 != (byte *)0x0) {
-              pbVar11 = local_40;
+            if (pbVar9 != (byte *)0x0) {
+              pbVar10 = local_40;
               do {
-                bVar1 = *pbVar10;
-                bVar12 = bVar1 < *pbVar11;
-                if (bVar1 != *pbVar11) {
+                bVar1 = *pbVar9;
+                bVar11 = bVar1 < *pbVar10;
+                if (bVar1 != *pbVar10) {
 LAB_005a28e9:
-                  iVar4 = (1 - (uint)bVar12) - (uint)(bVar12 != 0);
+                  iVar4 = (1 - (uint)bVar11) - (uint)(bVar11 != 0);
                   goto LAB_005a28ee;
                 }
                 if (bVar1 == 0) break;
-                bVar1 = pbVar10[1];
-                bVar12 = bVar1 < pbVar11[1];
-                if (bVar1 != pbVar11[1]) goto LAB_005a28e9;
+                bVar1 = pbVar9[1];
+                bVar11 = bVar1 < pbVar10[1];
+                if (bVar1 != pbVar10[1]) goto LAB_005a28e9;
+                pbVar9 = pbVar9 + 2;
                 pbVar10 = pbVar10 + 2;
-                pbVar11 = pbVar11 + 2;
               } while (bVar1 != 0);
               iVar4 = 0;
 LAB_005a28ee:
               if (iVar4 == 0) {
-                *(short *)&this_00->field_0x31 = (short)uVar8;
+                *(short *)&this_00->field_0x31 = (short)uVar7;
                 *(undefined2 *)&this_00->field_0x37 = 1;
                 *(undefined2 *)&this_00->field_0x35 = 1;
                 this_00->field_002D = 0x22;
@@ -153,8 +153,8 @@ LAB_005a28ee:
                 return;
               }
             }
-            uVar8 = uVar8 + 1;
-            if (local_c <= uVar8) {
+            uVar7 = uVar7 + 1;
+            if (local_c <= uVar7) {
               g_currentExceptionFrame = local_84.previous;
               return;
             }

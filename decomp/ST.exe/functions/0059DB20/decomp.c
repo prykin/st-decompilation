@@ -18,8 +18,8 @@ void __thiscall FSGSTy::ChatCtrls(FSGSTy *this)
   DArrayTy *pDVar8;
   MMObjTy *this_00;
   int iVar9;
-  undefined4 *puVar10;
-  undefined4 *puVar12;
+  byte *puVar10;
+  byte *puVar12;
   undefined4 local_1654 [11];
   undefined4 local_1628;
   undefined4 local_1624;
@@ -138,7 +138,7 @@ void __thiscall FSGSTy::ChatCtrls(FSGSTy *this)
       FreeAndNull((void **)&this_00[0x22].field_0x74);
     }
     iVar9 = 1;
-    puVar10 = (undefined4 *)(*(int *)&this_00->field_0x5d + 0x28);
+    puVar10 = (byte *)(*(int *)&this_00->field_0x5d + 0x28);
     uVar5 = FUN_006b4fe0(*(int *)&this_00->field_0x5d);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     uVar6 = FUN_006b50c0(0x1bf,0x175,(uint)*(ushort *)(*(int *)&this_00->field_0x5d + 0xe),uVar5,
@@ -197,13 +197,9 @@ void __thiscall FSGSTy::ChatCtrls(FSGSTy *this)
     iVar14 = 0;
     local_d90 = this_00->field_0008;
     local_cac = local_d90;
-    puVar10 = local_d0c;
-    puVar12 = local_b8c;
-    for (iVar9 = 0x5f; iVar9 != 0; iVar9 = iVar9 + -1) {
-      *puVar12 = *puVar10;
-      puVar10 = puVar10 + 1;
-      puVar12 = puVar12 + 1;
-    }
+    puVar10 = (byte *)(local_d0c);
+    puVar12 = (byte *)(local_b8c);
+    memmove(puVar12, puVar10, 0x17c); /* compiler REP MOVS byte copy */
     local_b8c[2] = *(undefined4 *)&this_00[0x1e].field_0xaa;
     local_b78 = *(undefined4 *)&this_00[0x1e].field_0xb6;
     local_b7c = *(undefined4 *)&this_00[0x1e].field_0xb2;
@@ -327,13 +323,9 @@ void __thiscall FSGSTy::ChatCtrls(FSGSTy *this)
     local_2dc = 0x32;
     local_390 = local_a0;
     local_388 = 0x8164;
-    puVar10 = local_3f0;
-    puVar12 = local_270;
-    for (iVar9 = 0x5f; iVar9 != 0; iVar9 = iVar9 + -1) {
-      *puVar12 = *puVar10;
-      puVar10 = puVar10 + 1;
-      puVar12 = puVar12 + 1;
-    }
+    puVar10 = (byte *)(local_3f0);
+    puVar12 = (byte *)(local_270);
+    memmove(puVar12, puVar10, 0x17c); /* compiler REP MOVS byte copy */
     local_270[3] = *(undefined4 *)&this_00[0x21].field_0x49;
     local_260 = *(undefined4 *)&this_00[0x21].field_0x4d;
     local_25c = *(undefined4 *)&this_00[0x21].field_0x51;

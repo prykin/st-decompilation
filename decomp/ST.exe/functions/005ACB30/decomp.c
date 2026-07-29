@@ -38,9 +38,8 @@ void __thiscall ChooseMapTy::DoneChooseMap(ChooseMapTy *this)
       if (g_cursorClass_00802A30->field_00A9 == 0) {
         Library::DKW::DDX::FUN_006b8b10((int *)g_cursorClass_00802A30->field_00AD);
       }
-      else if (g_cursorClass_00802A30->field_001C != (cLoadingTy *)0xffffffff) {
-        FUN_006b3af0((int *)g_cursorClass_00802A30->field_0060,
-                     (uint)g_cursorClass_00802A30->field_001C);
+      else if (g_cursorClass_00802A30->field_001C != 0xffffffff) {
+        FUN_006b3af0((int *)g_cursorClass_00802A30->field_0060,g_cursorClass_00802A30->field_001C);
       }
     }
     iVar4 = pCVar3->field_004D;
@@ -87,7 +86,7 @@ void __thiscall ChooseMapTy::DoneChooseMap(ChooseMapTy *this)
       if (g_startSystem_0081176C->field_04B3 != 0xffffffff) {
         FUN_006b3af0((int *)g_startSystem_0081176C->field_04F7,g_startSystem_0081176C->field_04B3);
       }
-      if (-1 < g_startSystem_0081176C->field_0540) {
+      if (-1 < (int)g_startSystem_0081176C->field_0540) {
         FUN_006b3af0((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0540);
       }
     }
@@ -105,10 +104,10 @@ void __thiscall ChooseMapTy::DoneChooseMap(ChooseMapTy *this)
       if (g_startSystem_0081176C->field_05F1 != 0xffffffff) {
         FUN_006b3af0((int *)g_startSystem_0081176C->field_0635,g_startSystem_0081176C->field_05F1);
       }
-      if (-1 < g_startSystem_0081176C->field_0558) {
+      if (-1 < (int)g_startSystem_0081176C->field_0558) {
         FUN_006b3af0((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0558);
       }
-      if (-1 < g_startSystem_0081176C->field_0554) {
+      if (-1 < (int)g_startSystem_0081176C->field_0554) {
         FUN_006b3af0((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0554);
       }
     }

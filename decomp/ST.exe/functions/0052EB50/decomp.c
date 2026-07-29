@@ -94,11 +94,7 @@ OptPanelTy::CreateSlider
     local_310 = 0x32;
     puVar6 = local_42c + 2;
     puVar7 = local_2a4;
-    for (iVar5 = 0x5f; iVar5 != 0; iVar5 = iVar5 + -1) {
-      *puVar7 = *puVar6;
-      puVar6 = puVar6 + 1;
-      puVar7 = puVar7 + 1;
-    }
+    memmove(puVar7, puVar6, 0x17c); /* compiler REP MOVS byte copy */
     local_2a4[2] = iVar3 + param_1;
     if (iVar10 == 0) {
       iVar3 = -pOVar2->field_0048;

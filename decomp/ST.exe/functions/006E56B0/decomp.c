@@ -23,7 +23,7 @@ void __thiscall StartSystemTy::sub_006E56B0(StartSystemTy *this,uint param_1)
   }
   iVar3 = sub_006E5360(this,uVar2,(int *)&param_1,&local_8);
   if (iVar3 == 0) {
-    FUN_006b0c70((DArrayTy *)this->field_0010,param_1);
+    DArrayRemoveAt(this->field_0010,param_1);
     AppClassTy::DeleteObject(this->field_0018,uVar2);
     for (pAVar1 = this->field_000C; pAVar1 != (AnonPointee_StartSystemTy_000C *)0x0;
         pAVar1 = (AnonPointee_StartSystemTy_000C *)pAVar1->field_0000) {

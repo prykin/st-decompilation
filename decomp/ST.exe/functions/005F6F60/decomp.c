@@ -99,7 +99,7 @@ void __thiscall STColl3C::sub_005F6F60(STColl3C *this)
     }
     if (this->field_029F == '\0') {
       if (this->field_029E == '\0') {
-        if ((g_playSystem_00802A38->field_00E4 + this->field_0018 & 3) != 0) {
+        if ((g_playSystem_00802A38->field_00E4 + (int)this->field_0018 & 3) != 0) {
           return;
         }
         uVar2 = thunk_FUN_005f9310(this,0);
@@ -501,7 +501,7 @@ LAB_005f7efc:
     }
     if (this->field_029F == '\0') {
       if (this->field_029E == '\0') {
-        if ((this->field_0018 + g_playSystem_00802A38->field_00E4 & 3) == 0) {
+        if (((int)this->field_0018 + g_playSystem_00802A38->field_00E4 & 3) == 0) {
           thunk_FUN_005f9310(this,0);
           return;
         }

@@ -20,7 +20,7 @@ void FUN_00413af0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int pa
   int *extraout_EDX;
   int *piVar13;
   uint uVar14;
-  undefined4 *puVar15;
+  byte *puVar15;
   undefined8 uVar16;
   int local_48;
   int local_40;
@@ -52,15 +52,8 @@ void FUN_00413af0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int pa
   uVar14 = (int)(iVar6 + (iVar6 >> 0x1f & 7U)) >> 3;
   DAT_007f4d3c = &stack0xffffff84;
   Library::MSVCRT::FUN_0072da40();
-  puVar15 = (undefined4 *)&stack0xffffff84;
-  for (uVar12 = uVar14 >> 2; uVar12 != 0; uVar12 = uVar12 - 1) {
-    *puVar15 = 0;
-    puVar15 = puVar15 + 1;
-  }
-  for (uVar14 = uVar14 & 3; uVar14 != 0; uVar14 = uVar14 - 1) {
-    *(undefined1 *)puVar15 = 0;
-    puVar15 = (undefined4 *)((int)puVar15 + 1);
-  }
+  puVar15 = (byte *)&stack0xffffff84;
+  memset(puVar15, 0, uVar14); /* compiler bulk-zero initialization */
   local_8 = 0xffffffff;
   iVar6 = DAT_007f4d30 * DAT_007f4d2c;
   DAT_007f4d24 = 0;

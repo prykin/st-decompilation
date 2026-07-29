@@ -66,16 +66,7 @@ cLoadingTy::SetState
     uVar8 = ~uVar8;
     puVar11 = (uint *)(pcVar13 + -uVar8);
     puVar12 = local_450;
-    for (uVar9 = uVar8 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
-      *puVar12 = *puVar11;
-      puVar11 = puVar11 + 1;
-      puVar12 = puVar12 + 1;
-    }
-    for (uVar8 = uVar8 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
-      *(char *)puVar12 = (char)*puVar11;
-      puVar11 = (uint *)((int)puVar11 + 1);
-      puVar12 = (uint *)((int)puVar12 + 1);
-    }
+    memmove(puVar12, puVar11, uVar8); /* compiler REP MOVS byte copy */
     pcVar5 = LoadResourceString(0x267e,g_module_00807618);
     uVar8 = 0xffffffff;
     do {
@@ -126,16 +117,7 @@ cLoadingTy::SetState
     uVar8 = ~uVar8;
     puVar11 = (uint *)(pcVar13 + -uVar8);
     puVar12 = local_450;
-    for (uVar9 = uVar8 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
-      *puVar12 = *puVar11;
-      puVar11 = puVar11 + 1;
-      puVar12 = puVar12 + 1;
-    }
-    for (uVar8 = uVar8 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
-      *(char *)puVar12 = (char)*puVar11;
-      puVar11 = (uint *)((int)puVar11 + 1);
-      puVar12 = (uint *)((int)puVar12 + 1);
-    }
+    memmove(puVar12, puVar11, uVar8); /* compiler REP MOVS byte copy */
     pcVar5 = LoadResourceString(0x267b,g_module_00807618);
     uVar8 = 0xffffffff;
     do {
@@ -256,16 +238,7 @@ cLoadingTy::SetState
     uVar8 = ~uVar8;
     puVar11 = (uint *)(pcVar13 + -uVar8);
     puVar12 = local_450;
-    for (uVar9 = uVar8 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
-      *puVar12 = *puVar11;
-      puVar11 = puVar11 + 1;
-      puVar12 = puVar12 + 1;
-    }
-    for (uVar8 = uVar8 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
-      *(char *)puVar12 = (char)*puVar11;
-      puVar11 = (uint *)((int)puVar11 + 1);
-      puVar12 = (uint *)((int)puVar12 + 1);
-    }
+    memmove(puVar12, puVar11, uVar8); /* compiler REP MOVS byte copy */
     pcVar5 = LoadResourceString(0x267c,g_module_00807618);
     uVar8 = 0xffffffff;
     do {
@@ -315,16 +288,7 @@ cLoadingTy::SetState
     uVar8 = ~uVar8;
     puVar11 = (uint *)(pcVar13 + -uVar8);
     puVar12 = local_450;
-    for (uVar9 = uVar8 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
-      *puVar12 = *puVar11;
-      puVar11 = puVar11 + 1;
-      puVar12 = puVar12 + 1;
-    }
-    for (uVar8 = uVar8 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
-      *(char *)puVar12 = (char)*puVar11;
-      puVar11 = (uint *)((int)puVar11 + 1);
-      puVar12 = (uint *)((int)puVar12 + 1);
-    }
+    memmove(puVar12, puVar11, uVar8); /* compiler REP MOVS byte copy */
     pcVar5 = LoadResourceString(0x267d,g_module_00807618);
     uVar8 = 0xffffffff;
     do {

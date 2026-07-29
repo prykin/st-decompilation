@@ -11,17 +11,16 @@ undefined4 * __thiscall STExplosionC::SaveObj(STExplosionC *this,uint *param_1)
   code *pcVar1;
   undefined1 *puVar2;
   int iVar3;
-  undefined4 *puVar4;
+  HoloTy **ppHVar4;
   uint *puVar5;
   int iVar6;
-  undefined4 *puVar7;
-  uint uVar8;
+  byte *puVar7;
   uint uVar9;
   uint *puVar10;
   uint *puVar11;
   AnonShape_00604A90_035626E6 *pAVar12;
   uint *puVar13;
-  int *local_b4;
+  HoloTy **local_b4;
   InternalExceptionFrame local_8c;
   AnonShape_00604A90_035626E6 *local_48;
   uint *local_44;
@@ -53,21 +52,17 @@ undefined4 * __thiscall STExplosionC::SaveObj(STExplosionC *this,uint *param_1)
     local_48 = (AnonShape_00604A90_035626E6 *)Library::DKW::LIB::FUN_006aac70(0xe2);
     *param_1 = 0xe2;
     this->field_01E1 = 1;
-    puVar7 = (undefined4 *)&this->field_0x1d5;
+    puVar7 = (byte *)&this->field_0x1d5;
     pAVar12 = local_48;
     for (iVar3 = 0x10; iVar3 != 0; iVar3 = iVar3 + -1) {
       *(undefined4 *)pAVar12 = *puVar7;
-      puVar7 = puVar7 + 1;
+      puVar7 = (byte *)(puVar7 + 1);
       pAVar12 = (AnonShape_00604A90_035626E6 *)&pAVar12->field_0x4;
     }
     *(undefined4 *)&local_48->field_0x40 = this->field_0215;
-    puVar7 = &this->field_0219;
-    puVar4 = (undefined4 *)&local_48->field_0x44;
-    for (iVar3 = 0x14; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar4 = *puVar7;
-      puVar7 = puVar7 + 1;
-      puVar4 = puVar4 + 1;
-    }
+    ppHVar4 = &this->field_0219;
+    puVar7 = (byte *)&local_48->field_0x44;
+    memmove(puVar7, ppHVar4, 0x50); /* compiler REP MOVS byte copy */
     *(int *)&local_48->field_0x94 = this->field_0269;
     local_48->field_0x98 = this->field_026D;
     local_48->field_0099 = this->field_026E;
@@ -85,19 +80,10 @@ undefined4 * __thiscall STExplosionC::SaveObj(STExplosionC *this,uint *param_1)
       *(uint *)((*param_1 - local_20) + -4 + (int)local_48) = local_20;
       puVar5 = local_3c[0];
       puVar11 = (uint *)((*param_1 - local_20) + (int)local_48);
-      for (uVar9 = local_20 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
-        *puVar11 = *puVar5;
-        puVar5 = puVar5 + 1;
-        puVar11 = puVar11 + 1;
-      }
-      for (local_20 = local_20 & 3; local_20 != 0; local_20 = local_20 - 1) {
-        *(char *)puVar11 = (char)*puVar5;
-        puVar5 = (uint *)((int)puVar5 + 1);
-        puVar11 = (uint *)((int)puVar11 + 1);
-      }
+      memmove(puVar11, puVar5, local_20); /* compiler REP MOVS byte copy */
       FreeAndNull(local_3c);
     }
-    puVar7 = (undefined4 *)&stack0xffffff40;
+    puVar7 = (byte *)&stack0xffffff40;
     iVar3 = 0;
     iVar6 = this->field_0269;
     if (iVar6 != 0) {
@@ -108,19 +94,19 @@ undefined4 * __thiscall STExplosionC::SaveObj(STExplosionC *this,uint *param_1)
       local_24 = &stack0xffffff40;
       local_1c = &stack0xffffff40;
       if (0 < iVar6) {
-        puVar4 = &this->field_0219;
+        ppHVar4 = &this->field_0219;
         local_24 = &stack0xffffff40;
         local_1c = &stack0xffffff40;
         do {
-          if ((void *)*puVar4 != (void *)0x0) {
-            local_3c[0] = (uint *)thunk_FUN_0062af40((void *)*puVar4,local_2c);
+          if (*ppHVar4 != (HoloTy *)0x0) {
+            local_3c[0] = (uint *)thunk_FUN_0062af40(*ppHVar4,local_2c);
             iVar3 = iVar3 + 4 + local_2c[0];
             puVar7[1] = local_2c[0];
             *puVar7 = local_3c[0];
           }
           local_30 = local_30 + 1;
-          puVar4 = puVar4 + 1;
-          puVar7 = puVar7 + 2;
+          ppHVar4 = ppHVar4 + 1;
+          puVar7 = (byte *)(puVar7 + 2);
         } while (local_30 < this->field_0269);
       }
       uVar9 = *param_1;
@@ -133,23 +119,14 @@ undefined4 * __thiscall STExplosionC::SaveObj(STExplosionC *this,uint *param_1)
         puVar5 = (uint *)(local_24 + 4);
         local_b4 = &this->field_0219;
         do {
-          if (*local_b4 != 0) {
+          if (*local_b4 != (HoloTy *)0x0) {
             *local_44 = *puVar5;
             puVar10 = local_44 + 1;
             local_3c[0] = (uint *)puVar5[-1];
             uVar9 = *puVar5;
             puVar11 = local_3c[0];
             puVar13 = puVar10;
-            for (uVar8 = uVar9 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
-              *puVar13 = *puVar11;
-              puVar11 = puVar11 + 1;
-              puVar13 = puVar13 + 1;
-            }
-            for (uVar9 = uVar9 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {
-              *(char *)puVar13 = (char)*puVar11;
-              puVar11 = (uint *)((int)puVar11 + 1);
-              puVar13 = (uint *)((int)puVar13 + 1);
-            }
+            memmove(puVar13, puVar11, uVar9); /* compiler REP MOVS byte copy */
             FreeAndNull(local_3c);
             local_44 = (uint *)((int)puVar10 + *local_44);
           }

@@ -7,8 +7,8 @@ undefined4 __thiscall FUN_0060ea30(void *this,AnonShape_0060EA30_DCEB68AD *param
   uint uVar1;
   undefined4 uVar2;
   int iVar3;
-  undefined4 *puVar4;
-  undefined4 *puVar5;
+  byte *puVar4;
+  byte *puVar5;
   byte *local_8;
 
   uVar1 = param_1->field_0010;
@@ -27,14 +27,10 @@ undefined4 __thiscall FUN_0060ea30(void *this,AnonShape_0060EA30_DCEB68AD *param
       }
     }
     else if (uVar1 == 2) {
-      puVar4 = (undefined4 *)param_1->field_0014;
+      puVar4 = (byte *)param_1->field_0014;
       if (puVar4[3] != 2) {
-        puVar5 = (undefined4 *)((int)this + 0x1d5);
-        for (iVar3 = 5; iVar3 != 0; iVar3 = iVar3 + -1) {
-          *puVar5 = *puVar4;
-          puVar4 = puVar4 + 1;
-          puVar5 = puVar5 + 1;
-        }
+        puVar5 = (byte *)((int)this + 0x1d5);
+        memmove(puVar5, puVar4, 0x14); /* compiler REP MOVS byte copy */
         *(undefined4 *)((int)this + 0x1d5) = 0x15e;
         *(undefined4 *)((int)this + 0x24) = *(undefined4 *)((int)this + 0x1d9);
         thunk_FUN_00614400(this,(AnonShape_00614400_1B90EA7E *)param_1->field_0014);
@@ -57,8 +53,7 @@ undefined4 __thiscall FUN_0060ea30(void *this,AnonShape_0060EA30_DCEB68AD *param
   }
   else if ((uVar1 == 0x10f) &&
           (local_8 = (byte *)thunk_FUN_00614950(this,(int *)&param_1), local_8 != (byte *)0x0)) {
-    STPlaySystemC::SaveObjData
-              (g_playSystem_00802A38,*(undefined4 *)((int)this + 0x18),local_8,param_1);
+    STPlaySystemC::SaveObjData(g_playSystem_00802A38,*(int **)((int)this + 0x18),local_8,param_1);
     FreeAndNull(&local_8);
   }
   return 0;

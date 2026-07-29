@@ -19,7 +19,7 @@ STGroupBoatC * __thiscall STGroupBoatC::sub_004232A0(STGroupBoatC *this)
   this->field_001C = 0;
   this->field_0020 = 0;
   this->field_0029 = 0;
-  this->field_002D = 0;
+  this->field_002D = (DArrayTy *)0x0;
   this->field_0027 = 0;
   this->field_0035 = 0;
   this->field_0039 = 0;

@@ -79,7 +79,7 @@ int __thiscall TLOBaseTy::fireFindCheckTarget(TLOBaseTy *this,int param_1,int pa
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   ppTVar15 = &local_60->vtable + param_1 * 0x20;
-  *(undefined4 *)((int)ppTVar15 + 0x28d) = 0;
+  *(AnonShape_005EFAE0_B406B78B **)((int)ppTVar15 + 0x28d) = (AnonShape_005EFAE0_B406B78B *)0x0;
   *(AnonPointee_TLOBaseTy_0291 **)((int)ppTVar15 + 0x291) = (AnonPointee_TLOBaseTy_0291 *)0x0;
   if (&stack0x00000000 != (undefined1 *)0x2c) {
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -336,7 +336,8 @@ LAB_004c41a5:
   }
 LAB_004c42b5:
   if (local_20 != (STFishC *)0x0) {
-    *(undefined4 *)((int)ppTVar15 + 0x28d) = local_20->field_0018;
+    *(AnonShape_005EFAE0_B406B78B **)((int)ppTVar15 + 0x28d) =
+         (AnonShape_005EFAE0_B406B78B *)local_20->field_0018;
     *(STFishC **)((int)ppTVar15 + 0x291) = local_20;
     if ((((*(byte *)((int)ppTVar15 + 0x265) & 2) != 0) &&
         (*(AnonShape_005EFAE0_B406B78B **)((int)ppTVar15 + 0x28d) !=

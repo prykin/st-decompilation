@@ -24,10 +24,9 @@ int __thiscall STBoatC::BackLoadObj(STBoatC *this,int *param_1)
     return -(uint)(iVar2 != 0);
   }
   if (iVar2 == 2) {
-    STPlaySystemC::sub_006E62D0
-              (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)this->field_058E,(int *)&param_1
-              );
-    if ((param_1 != (int *)0x0) && (param_1[6] == this->field_058E)) {
+    STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,this->field_058E,(int *)&param_1);
+    if ((param_1 != (int *)0x0) && ((AnonShape_005EFAE0_B406B78B *)param_1[6] == this->field_058E))
+    {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*param_1 + 0xac))(this->field_0018);
       iVar2 = this->vfunc_D8();

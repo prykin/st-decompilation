@@ -11,9 +11,8 @@
 void __thiscall CGenerate::sub_0069FF90(CGenerate *this)
 
 {
-  if ((code *)this->field_024A != (code *)0x0) {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)this->field_024A)(0);
+  if (this->field_024A != (code *)0x0) {
+    (*this->field_024A)(0);
   }
   return;
 }

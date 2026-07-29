@@ -33,12 +33,12 @@ int __thiscall STAlgaC::GetMessage(STAlgaC *this,STMessage *message)
   uint uVar15;
   undefined4 uVar16;
   STAlgaC *pSVar17;
-  undefined4 *puVar18;
+  byte *puVar18;
   AnonShape_00575CB0_0408A0C4 *pAVar19;
   int *piVar20;
   char *pcVar21;
   int iVar22;
-  undefined4 *puVar23;
+  byte *puVar23;
   byte *pbVar24;
   AnonNested_00575CB0_0004_76DA00C1 *pAVar25;
   undefined1 *puVar26;
@@ -101,13 +101,9 @@ int __thiscall STAlgaC::GetMessage(STAlgaC *this,STMessage *message)
     pSVar17->field_0048 = 0;
     local_30 = 0;
     local_28 = 0;
-    puVar18 = (message->arg0).ptr;
-    puVar23 = (undefined4 *)&pSVar17->field_0x1c;
-    for (iVar9 = 5; iVar9 != 0; iVar9 = iVar9 + -1) {
-      *puVar23 = *puVar18;
-      puVar18 = puVar18 + 1;
-      puVar23 = puVar23 + 1;
-    }
+    puVar18 = (byte *)((message->arg0).ptr);
+    puVar23 = (byte *)&pSVar17->field_0x1c;
+    memmove(puVar23, puVar18, 0x14); /* compiler REP MOVS byte copy */
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     local_20 = *(AnonShape_0060EA30_DCEB68AD **)((message->arg0).u32 + 0x14);
     local_10 = (AnonShape_00575CB0_065D0A66 *)((message->arg0).u32 + 0x18);
@@ -307,7 +303,7 @@ LAB_00576308:
               pSVar17->field_0040 = iVar9;
               local_30 = iVar22 + 10;
             }
-            puVar18 = (undefined4 *)(pSVar17->field_0040 + pSVar17->field_003C * 0x2c);
+            puVar18 = (byte *)(pSVar17->field_0040 + pSVar17->field_003C * 0x2c);
             *puVar18 = 0;
             puVar18[1] = *piVar20;
             puVar18[2] = (float)(int)*(short *)local_10 * _DAT_007904f8 * (float)_DAT_0079b168;
@@ -394,11 +390,11 @@ LAB_00576308:
           (iVar9 = pSVar17->field_003C + pSVar17->field_0044, 0 < iVar9)) {
     local_20 = (AnonShape_0060EA30_DCEB68AD *)(iVar9 * 0x92 + 0x18);
     local_1c = (byte *)Library::DKW::LIB::FUN_006aac10((uint)local_20);
-    puVar18 = (undefined4 *)&pSVar17->field_0x1c;
+    puVar18 = (byte *)&pSVar17->field_0x1c;
     pbVar11 = local_1c;
     for (iVar9 = 5; iVar9 != 0; iVar9 = iVar9 + -1) {
       *(undefined4 *)pbVar11 = *puVar18;
-      puVar18 = puVar18 + 1;
+      puVar18 = (byte *)(puVar18 + 1);
       pbVar11 = pbVar11 + 4;
     }
     local_18 = 0;

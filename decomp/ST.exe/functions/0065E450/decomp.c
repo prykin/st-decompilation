@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSwitchEnumApplier] Switch target param_3 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_0065E450_param_3Enum. Cases:
@@ -21,8 +23,9 @@ FUN_0065e450(AnonShape_0065E360_B94C37CB *param_1,undefined4 param_2,
   Global_sub_0065E450_param_3Enum GVar4;
   ushort *puVar5;
   STGameObjC *this;
-  uint uVar7;
+  uint uVar8;
   int uVar6;
+  int uVar7;
   int local_8;
 
   GVar2 = param_3;
@@ -65,8 +68,8 @@ FUN_0065e450(AnonShape_0065E360_B94C37CB *param_1,undefined4 param_2,
       case 5:
       case 0x1b:
                     /* WARNING: This code block may not be properly labeled as switch case */
-        uVar7 = thunk_FUN_004c5350(this,0,(int *)0x0,param_4,param_5,0,0,0);
-        local_8 = local_8 + (uint)(uVar7 != 0);
+        uVar8 = thunk_FUN_004c5350(this,0,(int *)0x0,param_4,param_5,0,0,0);
+        local_8 = local_8 + (uint)(uVar8 != 0);
         break;
       case 0xf:
                     /* WARNING: This code block may not be properly labeled as switch case */
@@ -79,7 +82,7 @@ LAB_0065e58d:
           uVar6 = GetPlayerRaceId((char)this->field_023D);
           iVar3 = this->field_0235;
           uVar7 = GetPlayerRaceId(*(char *)&this->field_0024);
-          if ((&DAT_007e1984)[(uVar7 & 0xff) + ((uVar6 & 0xffU) + iVar3 * 3) * 3] != '\0')
+          if ((&DAT_007e1984)[(uVar7 & 0xffU) + ((uVar6 & 0xffU) + iVar3 * 3) * 3] != '\0')
           goto LAB_0065e58d;
 LAB_0065e5a7:
           bVar1 = 0;

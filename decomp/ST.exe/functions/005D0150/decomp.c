@@ -68,7 +68,7 @@ LAB_005d01c2:
               if (*(DArrayTy **)(pcVar8 + 0x50) != (DArrayTy *)0x0) {
                 DArrayDestroy(*(DArrayTy **)(pcVar8 + 0x50));
               }
-              FUN_006b0c70((DArrayTy *)pSVar3->field_1F84,uVar11);
+              DArrayRemoveAt((DArrayTy *)pSVar3->field_1F84,uVar11);
               uVar11 = uVar11 - 1;
             }
             pSVar10 = pSVar3->field_1F84;
@@ -100,7 +100,7 @@ LAB_005d021c:
                   if (*(DArrayTy **)(pcVar8 + 0x50) != (DArrayTy *)0x0) {
                     DArrayDestroy(*(DArrayTy **)(pcVar8 + 0x50));
                   }
-                  FUN_006b0c70((DArrayTy *)pSVar3->field_1F84,uVar12);
+                  DArrayRemoveAt((DArrayTy *)pSVar3->field_1F84,uVar12);
                   bVar2 = true;
                   goto LAB_005d0277;
                 }
@@ -203,7 +203,7 @@ LAB_005d0391:
               if (element_1f84_3->handle != (DArrayTy *)0x0) {
                 DArrayDestroy(element_1f84_3->handle);
               }
-              FUN_006b0c70((DArrayTy *)local_c->field_1F84,uVar12 - 1);
+              DArrayRemoveAt((DArrayTy *)local_c->field_1F84,uVar12 - 1);
               local_5 = '\x01';
               break;
             }
@@ -250,7 +250,7 @@ LAB_005d045a:
                 }
                 pcVar8[1] = '\0';
                 *pcVar8 = '\x01';
-                FUN_006b0c70((DArrayTy *)local_c->field_1F84,local_14);
+                DArrayRemoveAt((DArrayTy *)local_c->field_1F84,local_14);
                 local_5 = '\x01';
               }
             }
@@ -269,7 +269,7 @@ LAB_005d048e:
                 if (element_1f84_4->handle != (DArrayTy *)0x0) {
                   DArrayDestroy(element_1f84_4->handle);
                 }
-                FUN_006b0c70((DArrayTy *)local_c->field_1F84,uVar11);
+                DArrayRemoveAt((DArrayTy *)local_c->field_1F84,uVar11);
               }
             }
           }

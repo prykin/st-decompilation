@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 int FUN_00755bc0(AnonShape_00755BC0_D59C64DD *param_1,int param_2)
 
@@ -8,9 +10,9 @@ int FUN_00755bc0(AnonShape_00755BC0_D59C64DD *param_1,int param_2)
   int iVar4;
   uint uVar5;
   int iVar6;
-  undefined4 *puVar7;
+  byte *puVar7;
   uint uVar8;
-  undefined4 *puVar9;
+  byte *puVar9;
 
   *(uint *)(param_1->field_0008 + 8) = *(uint *)(param_1->field_0008 + 8) | 0x10;
   if (param_2 != -1) {
@@ -53,25 +55,16 @@ int FUN_00755bc0(AnonShape_00755BC0_D59C64DD *param_1,int param_2)
     if ((iVar4 == 0) && (*(short *)(iVar6 + 8) == 0)) {
       iVar4 = param_1->field_000C;
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      puVar9 = (undefined4 *)(*(int *)(iVar4 + 0x24) + *(int *)(param_1->field_0008 + 0x34));
+      puVar9 = (byte *)(*(int *)(iVar4 + 0x24) + *(int *)(param_1->field_0008 + 0x34));
       if (puVar9[1] != -1) {
         *(int *)(iVar4 + 0x1c) = *(int *)(iVar4 + 0x1c) + 1;
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        puVar7 = (undefined4 *)
+        puVar7 = (byte *)
                  FUN_00753b80((AnonShape_00750F20_F8C16F98 *)param_1,puVar9[1],
                               *(int *)(param_1->field_000C + 0x1c));
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         uVar8 = (uint)*(short *)(param_1->field_0008 + 0x16);
-        for (uVar5 = uVar8 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
-          *puVar9 = *puVar7;
-          puVar7 = puVar7 + 1;
-          puVar9 = puVar9 + 1;
-        }
-        for (uVar8 = uVar8 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
-          *(undefined1 *)puVar9 = *(undefined1 *)puVar7;
-          puVar7 = (undefined4 *)((int)puVar7 + 1);
-          puVar9 = (undefined4 *)((int)puVar9 + 1);
-        }
+        memmove(puVar9, puVar7, uVar8); /* compiler REP MOVS byte copy */
         psVar1 = (short *)(param_1->field_000C + 0x2a);
         *psVar1 = *psVar1 + -1;
         iVar4 = FUN_00757670((AnonShape_00757670_86D3B9A7 *)param_1,param_1->field_0010);

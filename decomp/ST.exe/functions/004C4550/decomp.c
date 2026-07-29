@@ -45,9 +45,9 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
   undefined2 local_5e;
   int local_5c;
   undefined1 local_58;
-  undefined4 local_57;
+  int *local_57;
   undefined2 local_53;
-  undefined4 local_41;
+  AnonShape_005EFAE0_B406B78B *local_41;
   short local_2c;
   short sStack_2a;
   short local_28;

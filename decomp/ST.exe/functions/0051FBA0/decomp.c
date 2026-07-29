@@ -18,10 +18,9 @@ int __thiscall HelpStringTy::GetMessage(HelpStringTy *this,STMessage *message)
   ccFntTy *pcVar3;
   int uVar4;
   ushort *puVar4;
-  undefined4 *puVar5;
+  byte *puVar5;
   DWORD DVar6;
   int iVar7;
-  uint uVar8;
   uint uVar9;
   InternalExceptionFrame local_4c;
   HelpStringTy *local_8;
@@ -48,7 +47,7 @@ int __thiscall HelpStringTy::GetMessage(HelpStringTy *this,STMessage *message)
       this_00->field_011E = pcVar3;
       pcVar3->field_0058 = 0;
       pcVar3->field_005C = 0;
-      puVar5 = (undefined4 *)(DAT_0080679c + 0x28);
+      puVar5 = (byte *)(DAT_0080679c + 0x28);
       iVar2 = 1;
       uVar4 = FUN_006b4fe0(DAT_0080679c);
       puVar4 = (ushort *)
@@ -61,15 +60,8 @@ int __thiscall HelpStringTy::GetMessage(HelpStringTy *this,STMessage *message)
         uVar9 = ((uint)puVar4[7] * *(int *)(puVar4 + 2) + 0x1f >> 3 & 0x1ffffffc) *
                 *(int *)(puVar4 + 4);
       }
-      puVar5 = (undefined4 *)FUN_006b4fa0((int *)puVar4);
-      for (uVar8 = uVar9 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
-        *puVar5 = 0;
-        puVar5 = puVar5 + 1;
-      }
-      for (uVar9 = uVar9 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {
-        *(undefined1 *)puVar5 = 0;
-        puVar5 = (undefined4 *)((int)puVar5 + 1);
-      }
+      puVar5 = (byte *)FUN_006b4fa0((int *)puVar4);
+      memset(puVar5, 0, uVar9); /* compiler bulk-zero initialization */
       DAT_00801694 = this_00;
       break;
     case MESS_SHARED_0003:

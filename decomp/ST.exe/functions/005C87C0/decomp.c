@@ -84,7 +84,7 @@ void __thiscall SettMapTy::PaintSC(SettMapTy *this)
           bVar8 = uVar7 < pDVar4->count;
         } while ((int)uVar7 < (int)pDVar4->count);
       }
-      if (-1 < g_startSystem_0081176C->field_02EC) {
+      if (-1 < (int)g_startSystem_0081176C->field_02EC) {
         FUN_006b35d0((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_02EC);
       }
     }

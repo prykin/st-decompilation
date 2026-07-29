@@ -9,7 +9,7 @@
    incoming_edx_uses=0; incoming_stack_parameter_uses=2; direct_non_thunk_callers=0;
    incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
 
-undefined4 __thiscall TLOBldMark::sub_004C6210(TLOBldMark *this,int param_1,undefined4 param_2)
+undefined4 __thiscall TLOBldMark::sub_004C6210(TLOBldMark *this,int param_1,int *param_2)
 
 {
   AnonShape_004AB810_8E5693D5 *pAVar1;

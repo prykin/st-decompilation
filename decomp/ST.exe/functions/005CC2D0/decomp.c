@@ -38,7 +38,7 @@ void __thiscall SettMapMTy::DoneSettMap(SettMapMTy *this)
   }
   FUN_006b3bb0((int *)g_ddxContext_008075A8,this_00->field_2200);
   pSVar3 = this_00->field_2237;
-  this_00->field_2200 = -1;
+  this_00->field_2200 = 0xffffffff;
   if (pSVar3 != (SettMapMTy_field_2237DArray *)0x0) {
     uVar4 = 0;
     if (pSVar3->count != 0) {

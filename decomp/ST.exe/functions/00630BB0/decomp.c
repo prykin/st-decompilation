@@ -26,7 +26,7 @@ STManRuinC::sub_00630BB0
   memset(&this->field_0040, 0, 0x21); /* compiler bulk-zero initialization */
   this->field_0040 = param_4;
   this->field_0060 = 0;
-  this->field_0061 = -1;
+  this->field_0061 = 0xffffffff;
   this->field_0054 = (int)(short)(param_1 * 0xc9 + 100);
   this->field_0058 = (int)(short)(param_2 * 0xc9 + 100);
   this->field_005C = (int)(short)(param_3 * 200 + 100);

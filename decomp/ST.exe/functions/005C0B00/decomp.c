@@ -51,7 +51,7 @@ MReportTy::PaintBut(MReportTy *this,STMessage *param_1,UINT param_2,int param_3,
     local_14 = this->field_0077;
   }
   else {
-    local_14 = (AnonPointee_MReportTy_0077 *)this->field_007B;
+    local_14 = this->field_007B;
   }
   local_1c = (byte *)local_14->field_0008;
   local_8 = (undefined4 *)local_14->field_0004;

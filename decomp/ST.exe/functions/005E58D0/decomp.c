@@ -27,9 +27,8 @@ void __thiscall MTestTy::InitMTest(MTestTy *this)
       if (g_cursorClass_00802A30->field_00A9 == 0) {
         Library::DKW::DDX::FUN_006b8b10((int *)g_cursorClass_00802A30->field_00AD);
       }
-      else if (g_cursorClass_00802A30->field_001C != (cLoadingTy *)0xffffffff) {
-        FUN_006b3af0((int *)g_cursorClass_00802A30->field_0060,
-                     (uint)g_cursorClass_00802A30->field_001C);
+      else if (g_cursorClass_00802A30->field_001C != 0xffffffff) {
+        FUN_006b3af0((int *)g_cursorClass_00802A30->field_0060,g_cursorClass_00802A30->field_001C);
       }
     }
     puVar3 = (ushort *)FUN_0070a9f0(g_cMf32_00806780,"LOADSINGLE",0,1);

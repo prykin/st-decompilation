@@ -765,10 +765,10 @@ LAB_005d24b8:
                 this_00->field_222E = 1;
                 pDVar18 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0x28,4,10);
                 this_00->field_222F = pDVar18;
-                if (g_dArray_0080C4FE != (DArrayTy *)0x0) {
-                  DArrayDestroy(g_dArray_0080C4FE);
+                if (g_array_0080C4FE != (DArrayTy *)0x0) {
+                  DArrayDestroy(g_array_0080C4FE);
                 }
-                g_dArray_0080C4FE = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0x28,4,10);
+                g_array_0080C4FE = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0x28,4,10);
                 memset(&DAT_00808ab0, 0, 0xea0); /* compiler bulk-zero initialization */
                 DAT_00808aaf = 0;
                 pSVar19 = this_00->field_1F84;
@@ -787,7 +787,7 @@ LAB_005d24b8:
                       if (((element_1f84_4->field_0004 == '\x02') || (element_1f84_4->field_0004 == '\x03')) &&
                          (DAT_0080877f != element_1f84_4->data)) {
                         Library::DKW::TBL::FUN_006ae1c0(&this_00->field_222F->flags,&element_1f84_4->data);
-                        Library::DKW::TBL::FUN_006ae1c0(&g_dArray_0080C4FE->flags,&element_1f84_4->data);
+                        Library::DKW::TBL::FUN_006ae1c0(&g_array_0080C4FE->flags,&element_1f84_4->data);
                       }
                       cVar2 = element_1f84_4->field_0004;
                       local_5 = cVar2;

@@ -19,7 +19,7 @@ undefined4 __fastcall FUN_004ddcc0(AnonShape_004DDCC0_33DEB43E *param_1)
     piVar3 = piVar3 + 5;
     iVar2 = *piVar1;
   }
-  thunk_FUN_004d76e0(param_1->field_0024,3,param_1->field_0018,0,iVar4,0,0);
+  thunk_FUN_004d76e0(param_1->field_0024,3,(int *)param_1->field_0018,0,iVar4,0,0);
   return 0;
 }
 

@@ -106,10 +106,10 @@ STAllPlayersC::CalibrateTmp
             if (param_6 != (int *)0x0) {
               Library::DKW::TBL::FUN_006ae1c0((uint *)*param_6,(undefined4 *)&local_6);
             }
-            FUN_006b0c70(local_10,index_00);
+            DArrayRemoveAt(local_10,index_00);
             dVar5 = dVar5 - 1;
             index_00 = index_00 - 1;
-            FUN_006b0c70(local_c,index);
+            DArrayRemoveAt(local_c,index);
             local_14 = local_14 - 1;
             index = index - 1;
           }

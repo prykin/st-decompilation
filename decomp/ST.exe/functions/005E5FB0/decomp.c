@@ -68,12 +68,12 @@ int __thiscall MTestTy::GetMessage(MTestTy *this,STMessage *message)
         else {
           g_holo_00811778->field_0002 = 1;
           g_holo_00811778->field_0000 = 0;
-          g_holo_00811778->field_0003 = -1;
+          *(undefined4 *)&g_holo_00811778->field_0x3 = 0xffffffff;
           g_holo_00811778->field_0001 = CASE_2;
-          g_holo_00811778->field_0007 = 0;
+          g_holo_00811778->field_0007 = (void *)0x0;
           g_holo_00811778->field_000B = (void *)0x0;
           g_holo_00811778->field_000F = 0;
-          g_holo_00811778->field_001B = 1;
+          *(undefined4 *)&g_holo_00811778->field_0x1b = 1;
           g_holo_00811778->field_0013 = 1;
           g_holo_00811778->field_0017 = -1;
           g_holo_00811778->field_0027 = 0;
@@ -92,9 +92,9 @@ int __thiscall MTestTy::GetMessage(MTestTy *this,STMessage *message)
           piVar1 = &g_holo_00811778->field_0013;
           g_holo_00811778->field_0002 = 1;
           pHVar3->field_0017 = *piVar1;
-          if (-1 < g_holo_00811778->field_0003) {
+          if (-1 < (int)*(uint *)&g_holo_00811778->field_0x3) {
             Library::DKW::DDX::FUN_006b3430
-                      ((int *)g_ddxContext_008075A8,g_holo_00811778->field_0003);
+                      ((int *)g_ddxContext_008075A8,*(uint *)&g_holo_00811778->field_0x3);
           }
         }
         if (local_8 != 0xffffffff) {
@@ -117,12 +117,12 @@ int __thiscall MTestTy::GetMessage(MTestTy *this,STMessage *message)
         else {
           g_holo_00811778->field_0002 = 1;
           g_holo_00811778->field_0000 = 0;
-          g_holo_00811778->field_0003 = -1;
+          *(undefined4 *)&g_holo_00811778->field_0x3 = 0xffffffff;
           g_holo_00811778->field_0001 = CASE_2;
-          g_holo_00811778->field_0007 = 0;
+          g_holo_00811778->field_0007 = (void *)0x0;
           g_holo_00811778->field_000B = (void *)0x0;
           g_holo_00811778->field_000F = 0;
-          g_holo_00811778->field_001B = 1;
+          *(undefined4 *)&g_holo_00811778->field_0x1b = 1;
           g_holo_00811778->field_0013 = 1;
           g_holo_00811778->field_0017 = -1;
           g_holo_00811778->field_0027 = 0;
@@ -145,9 +145,9 @@ int __thiscall MTestTy::GetMessage(MTestTy *this,STMessage *message)
           pHVar3 = g_holo_00811778;
           g_holo_00811778->field_0002 = 0;
           pHVar3->field_0017 = -1;
-          if (-1 < g_holo_00811778->field_0003) {
+          if (-1 < (int)*(uint *)&g_holo_00811778->field_0x3) {
             Library::DKW::DDX::FUN_006b3430
-                      ((int *)g_ddxContext_008075A8,g_holo_00811778->field_0003);
+                      ((int *)g_ddxContext_008075A8,*(uint *)&g_holo_00811778->field_0x3);
           }
           FUN_006b5f80((int *)g_ddxContext_008075A8,10,0xb4,0xf9,0x121);
           PutDDXClip(10,0xb4,10,0xb4,0xf9,(byte *)0x123,'\x01',(BITMAPINFO *)this_00->field_005D);

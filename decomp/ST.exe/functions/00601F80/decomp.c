@@ -16,11 +16,11 @@ int __thiscall STDestC::GetMessage(STDestC *this,STMessage *message)
   code *pcVar2;
   AnonShape_00602BE0_B1CC517D *this_00;
   int iVar3;
-  undefined4 *puVar4;
+  byte *puVar4;
   int iVar5;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
-  undefined4 *puVar6;
+  byte *puVar6;
   InternalExceptionFrame local_54;
   byte *local_10;
   AnonShape_0060EA30_DCEB68AD *local_c;
@@ -39,7 +39,7 @@ int __thiscall STDestC::GetMessage(STDestC *this,STMessage *message)
         if (SVar1 == MESS_SHARED_010F) {
           local_10 = sub_006025D0((STDestC *)local_8,&local_c);
           STPlaySystemC::SaveObjData
-                    (g_playSystem_00802A38,*(undefined4 *)&this_00->field_0x18,local_10,local_c);
+                    (g_playSystem_00802A38,*(int **)&this_00->field_0x18,local_10,local_c);
           FreeAndNull(&local_10);
           g_currentExceptionFrame = local_54.previous;
           return 0;
@@ -55,15 +55,10 @@ int __thiscall STDestC::GetMessage(STDestC *this,STMessage *message)
           }
         }
         else if (SVar1 == MESS_ID_CREATE) {
-          puVar4 = (message->arg0).ptr;
+          puVar4 = (byte *)((message->arg0).ptr);
           if (puVar4[3] != 2) {
-            puVar6 = (undefined4 *)&local_8->field_0x231;
-            for (iVar3 = 0x4f; iVar3 != 0; iVar3 = iVar3 + -1) {
-              *puVar6 = *puVar4;
-              puVar4 = puVar4 + 1;
-              puVar6 = puVar6 + 1;
-            }
-            *(undefined1 *)puVar6 = *(undefined1 *)puVar4;
+            puVar6 = (byte *)&local_8->field_0x231;
+            memmove(puVar6, puVar4, 0x13d); /* compiler REP MOVS byte copy */
             iVar3 = sub_006024B0((STDestC *)local_8);
             if (iVar3 != 0) {
               if ((*(int *)&this_00->field_0x3a7 != 0) && (iVar3 = thunk_FUN_006029c0(), iVar3 == 0)
@@ -90,7 +85,7 @@ int __thiscall STDestC::GetMessage(STDestC *this,STMessage *message)
           iVar3 = sub_00602660((STDestC *)local_8,puVar4);
           if (-1 < iVar3) {
             if (this_00->field_036E == 4) {
-              puVar4 = sub_00602E90((STDestC *)this_00);
+              puVar4 = (byte *)(sub_00602E90((STDestC *)this_00));
               this_00->field_03AB = puVar4;
               if (puVar4 == (undefined4 *)0x0) {
                 sub_00602440((STDestC *)this_00);

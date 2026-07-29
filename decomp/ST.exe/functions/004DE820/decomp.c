@@ -5,7 +5,7 @@ undefined4 __fastcall FUN_004de820(AnonShape_004DE820_615D04DD *param_1)
   bool bVar1;
   int iVar2;
   STGroupBoatC *this;
-  DArrayTy *groupContent;
+  DArrayTy *array;
   STGameObjC *this_00;
   undefined4 local_8;
 
@@ -20,10 +20,10 @@ undefined4 __fastcall FUN_004de820(AnonShape_004DE820_615D04DD *param_1)
   bVar1 = false;
   this = thunk_FUN_0042b760(param_1->field_0x24,*(ushort *)&param_1->field_0x30);
   if (((this != (STGroupBoatC *)0x0) &&
-      (groupContent = (DArrayTy *)STGroupC::GetGroupContent((STGroupC *)this,iVar2),
-      groupContent != (DArrayTy *)0x0)) && (groupContent->count != 0)) {
-    groupContent->iteratorIndex = 0;
-    iVar2 = FUN_006b1190(groupContent,&local_8);
+      (array = (DArrayTy *)STGroupC::GetGroupContent((STGroupC *)this,iVar2),
+      array != (DArrayTy *)0x0)) && (array->count != 0)) {
+    array->iteratorIndex = 0;
+    iVar2 = DArrayGetNext(array,(byte *)&local_8);
     while (-1 < iVar2) {
       this_00 = STAllPlayersC::GetObjPtr
                           (g_allPlayers_007FA174,param_1->field_0x24,(ushort)local_8,CASE_1);
@@ -39,9 +39,9 @@ undefined4 __fastcall FUN_004de820(AnonShape_004DE820_615D04DD *param_1)
         }
         bVar1 = true;
       }
-      iVar2 = FUN_006b1190(groupContent,&local_8);
+      iVar2 = DArrayGetNext(array,(byte *)&local_8);
     }
-    DArrayDestroy(groupContent);
+    DArrayDestroy(array);
     if (bVar1) {
       return 1;
     }

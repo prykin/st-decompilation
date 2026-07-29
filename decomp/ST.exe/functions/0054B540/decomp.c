@@ -23,9 +23,9 @@ void __thiscall CursorClassTy::sub_0054B540(CursorClassTy *this)
       if (this->field_00A9 == 0) {
         Library::DKW::DDX::FUN_006b8a60((byte *)this->field_00AD);
       }
-      else if (this->field_001C != (cLoadingTy *)0xffffffff) {
+      else if (this->field_001C != 0xffffffff) {
         Library::DKW::DDX::FUN_006b34d0
-                  ((uint *)this->field_0060,(uint)this->field_001C,0xfffffffe,this->field_0034,
+                  ((uint *)this->field_0060,this->field_001C,0xfffffffe,this->field_0034,
                    this->field_0038);
       }
       DrawSprite(this,this->field_00C5,this->field_00C9);

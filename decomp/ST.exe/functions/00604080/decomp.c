@@ -17,7 +17,7 @@ STExplosion * __thiscall STExplosion::STExplosion(STExplosion *this)
 
   STGameObjC::STGameObjC((STGameObjC *)this);
   this->vtable = &STExplosionVTable;
-  this->field_0215 = 0;
+  this->field_0215 = (DArrayTy *)0x0;
   ppSVar2 = &this->field_0219;
   for (iVar1 = 0x14; iVar1 != 0; iVar1 = iVar1 + -1) {
     *ppSVar2 = (STParticleC *)0x0;
@@ -27,9 +27,9 @@ STExplosion * __thiscall STExplosion::STExplosion(STExplosion *this)
   this->field_026D = 0;
   this->field_026E = g_playSystem_00802A38->field_00E4;
   memset(&this->field_0282, 0, 0x2d); /* compiler bulk-zero initialization */
-  this->field_02AF = 0;
-  this->field_02B3 = 0;
-  this->field_02BB = (void *)0x0;
+  this->field_02AF = (HoloTy *)0x0;
+  this->field_02B3 = (void *)0x0;
+  this->field_02BB = (HoloTy *)0x0;
   this->field_02B7 = -1;
   return this;
 }

@@ -110,7 +110,7 @@ void __thiscall InfocPanelTy::PaintInfoc(InfocPanelTy *this)
     } while (cVar1 != '\0');
     uVar9 = ~uVar9;
     pcVar8 = pcVar10 + -uVar9;
-    pcVar10 = &this_00->field_0x18d;
+    pcVar10 = &this_00->field_018D;
     for (uVar7 = uVar9 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
       *(undefined4 *)pcVar10 = *(undefined4 *)pcVar8;
       pcVar8 = pcVar8 + 4;
@@ -123,11 +123,11 @@ void __thiscall InfocPanelTy::PaintInfoc(InfocPanelTy *this)
     }
   }
   else {
-    wsprintfA(&this_00->field_0x18d,"%4d",
+    wsprintfA(&this_00->field_018D,"%4d",
               *(int *)(&this_00->field_0x1b4 + (uint)(byte)this_00->field_03D4 * 0x10));
   }
   ccFntTy::SetSurf(this_00->field_03D5,this_00->field_0068,0,0x54,0x71,0x23,0xc);
-  ccFntTy::WrStr(this_00->field_03D5,(uint *)&this_00->field_0x18d,-1,-1,
+  ccFntTy::WrStr(this_00->field_03D5,(uint *)&this_00->field_018D,-1,-1,
                  (-(uint)(DAT_0080874e != '\x03') & 0xfffffffb) + 6);
   if ((this_00->field_03D4 == 0xff) ||
      (999999 < *(int *)(&this_00->field_0x1b8 + (uint)(byte)this_00->field_03D4 * 0x10))) {
@@ -143,7 +143,7 @@ void __thiscall InfocPanelTy::PaintInfoc(InfocPanelTy *this)
     } while (cVar1 != '\0');
     uVar9 = ~uVar9;
     pcVar8 = pcVar10 + -uVar9;
-    pcVar10 = &this_00->field_0x18d;
+    pcVar10 = &this_00->field_018D;
     for (uVar7 = uVar9 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
       *(undefined4 *)pcVar10 = *(undefined4 *)pcVar8;
       pcVar8 = pcVar8 + 4;
@@ -156,11 +156,11 @@ void __thiscall InfocPanelTy::PaintInfoc(InfocPanelTy *this)
     }
   }
   else {
-    wsprintfA(&this_00->field_0x18d,"%6d",
+    wsprintfA(&this_00->field_018D,"%6d",
               *(int *)(&this_00->field_0x1b8 + (uint)(byte)this_00->field_03D4 * 0x10));
   }
   ccFntTy::SetSurf(this_00->field_03D5,this_00->field_0068,0,0x78,0x71,0x17,0xc);
-  ccFntTy::WrStr(this_00->field_03D5,(uint *)&this_00->field_0x18d,-1,-1,
+  ccFntTy::WrStr(this_00->field_03D5,(uint *)&this_00->field_018D,-1,-1,
                  (-(uint)(DAT_0080874e != '\x03') & 0xfffffffc) + 4);
   if ((this_00->field_03D4 == 0xff) ||
      (999999 < *(int *)(&this_00->field_0x1bc + (uint)(byte)this_00->field_03D4 * 0x10))) {
@@ -176,7 +176,7 @@ void __thiscall InfocPanelTy::PaintInfoc(InfocPanelTy *this)
     } while (cVar1 != '\0');
     uVar9 = ~uVar9;
     pcVar8 = pcVar10 + -uVar9;
-    pcVar10 = &this_00->field_0x18d;
+    pcVar10 = &this_00->field_018D;
     for (uVar7 = uVar9 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
       *(undefined4 *)pcVar10 = *(undefined4 *)pcVar8;
       pcVar8 = pcVar8 + 4;
@@ -189,11 +189,11 @@ void __thiscall InfocPanelTy::PaintInfoc(InfocPanelTy *this)
     }
   }
   else {
-    wsprintfA(&this_00->field_0x18d,"%6d",
+    wsprintfA(&this_00->field_018D,"%6d",
               *(int *)(&this_00->field_0x1bc + (uint)(byte)this_00->field_03D4 * 0x10));
   }
   ccFntTy::SetSurf(this_00->field_03D5,this_00->field_0068,0,0xa2,0x71,0x23,0xc);
-  ccFntTy::WrStr(this_00->field_03D5,(uint *)&this_00->field_0x18d,-1,-1,
+  ccFntTy::WrStr(this_00->field_03D5,(uint *)&this_00->field_018D,-1,-1,
                  (-(uint)(DAT_0080874e != '\x03') & 0xfffffffd) + 5);
   if (this_00->field_03D4 == 0xff) {
     iVar4 = 0xce;

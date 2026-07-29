@@ -31,7 +31,7 @@ void __thiscall cLoadingTy::ShowScr(cLoadingTy *this,int param_1,int param_2)
                  0);
     FUN_006b5f80((int *)g_ddxContext_008075A8,0,0,g_nWidth_00806730,DAT_00806734);
     pcVar2 = local_8;
-    FUN_006b4640(g_dDXContext_0080759C,0,0,(BITMAPINFO *)local_8->field_0000,(uint *)0x0);
+    FUN_006b4640(g_dDXContext_0080759C,0,0,local_8->field_0000,(uint *)0x0);
     Library::DKW::DDX::FUN_006bb370(g_dDXContext_0080759C,0,0);
     thunk_FUN_0055ddf0((undefined4 *)g_dDXContext_0080759C,(int *)g_ddxContext_008075A8,
                        (ushort *)pcVar2->field_0000,param_1,param_2);

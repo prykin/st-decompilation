@@ -35,7 +35,7 @@ byte * __thiscall STLightC::sub_0061D710(STLightC *this,int *param_1)
   if (iVar8 != 0) {
     iVar11 = iVar8 * 0x14;
     if (0 < iVar8) {
-      piVar7 = (int *)this->field_009B;
+      piVar7 = this->field_009B;
       do {
         iVar1 = *piVar7;
         piVar7 = piVar7 + 1;
@@ -60,7 +60,7 @@ byte * __thiscall STLightC::sub_0061D710(STLightC *this,int *param_1)
     pbVar12 = pbVar12 + 4;
   }
   uVar6 = this->field_0093;
-  pbVar12 = (byte *)this->field_009B;
+  pbVar12 = this->field_009B;
   pbVar10 = pbVar2 + 0x90;
   for (uVar5 = uVar6 & 0x3fffffff; uVar5 != 0; uVar5 = uVar5 - 1) {
     *(undefined4 *)pbVar10 = *(undefined4 *)pbVar12;
@@ -76,8 +76,8 @@ byte * __thiscall STLightC::sub_0061D710(STLightC *this,int *param_1)
   local_c = (byte *)0x0;
   if (0 < this->field_0093) {
     do {
-      iVar8 = *(int *)(this->field_009B + (int)local_c * 4);
-      pbVar12 = *(byte **)(this->field_009F + (int)local_c * 4);
+      iVar8 = *(int *)((int)this->field_009B + (int)local_c * 4);
+      pbVar12 = *(byte **)((int)this->field_009F + (int)local_c * 4);
       pbVar10 = pbVar3;
       for (uVar6 = iVar8 * 5 & 0x3fffffff; uVar6 != 0; uVar6 = uVar6 - 1) {
         *(undefined4 *)pbVar10 = *(undefined4 *)pbVar12;
@@ -97,7 +97,7 @@ byte * __thiscall STLightC::sub_0061D710(STLightC *this,int *param_1)
   local_8 = uVar6 * 0x10;
   *(int *)pbVar3 = local_8;
   local_c = pbVar3 + 4 + local_8;
-  pbVar12 = (byte *)this->field_0057;
+  pbVar12 = this->field_0057;
   pbVar10 = pbVar3 + 4;
   for (iVar8 = (uVar6 & 0xfffffff) << 2; iVar8 != 0; iVar8 = iVar8 + -1) {
     *(undefined4 *)pbVar10 = *(undefined4 *)pbVar12;

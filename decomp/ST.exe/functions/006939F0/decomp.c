@@ -5,11 +5,11 @@ undefined4 FUN_006939f0(void)
 
 {
   int iVar1;
-  undefined4 *puVar2;
+  byte *puVar2;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   cMf32 *in_stack_00000004;
   InternalExceptionFrame local_54;
-  undefined4 *local_10;
+  byte *local_10;
   undefined4 local_c;
   undefined4 *local_8;
 
@@ -32,13 +32,8 @@ undefined4 FUN_006939f0(void)
     cMf32::RecMemFree(in_stack_00000004,(uint *)&local_8);
   }
   if (local_8 != (undefined4 *)0x0) {
-    puVar2 = local_8;
-    for (iVar1 = 0x666; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *local_10 = *puVar2;
-      puVar2 = puVar2 + 1;
-      local_10 = local_10 + 1;
-    }
-    *(undefined1 *)local_10 = *(undefined1 *)puVar2;
+    puVar2 = (byte *)(local_8);
+    memmove(local_10, puVar2, 0x1999); /* compiler REP MOVS byte copy */
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     cMf32::RecMemFree(in_stack_00000004,(uint *)&local_8);
   }

@@ -42,9 +42,8 @@ void __thiscall WaitTy::DeleteCtrls(WaitTy *this)
     if (g_cursorClass_00802A30->field_00A9 == 0) {
       Library::DKW::DDX::FUN_006b8b10((int *)g_cursorClass_00802A30->field_00AD);
     }
-    else if (g_cursorClass_00802A30->field_001C != (cLoadingTy *)0xffffffff) {
-      FUN_006b3af0((int *)g_cursorClass_00802A30->field_0060,
-                   (uint)g_cursorClass_00802A30->field_001C);
+    else if (g_cursorClass_00802A30->field_001C != 0xffffffff) {
+      FUN_006b3af0((int *)g_cursorClass_00802A30->field_0060,g_cursorClass_00802A30->field_001C);
     }
   }
   this_00 = local_c;
@@ -66,12 +65,12 @@ void __thiscall WaitTy::DeleteCtrls(WaitTy *this)
   else {
     pHVar4->field_0002 = 1;
     pHVar4->field_0000 = 0;
-    pHVar4->field_0003 = -1;
+    *(undefined4 *)&pHVar4->field_0x3 = 0xffffffff;
     pHVar4->field_0001 = CASE_2;
-    pHVar4->field_0007 = 0;
+    pHVar4->field_0007 = (void *)0x0;
     pHVar4->field_000B = (void *)0x0;
     pHVar4->field_000F = 0;
-    pHVar4->field_001B = 1;
+    *(undefined4 *)&pHVar4->field_0x1b = 1;
     pHVar4->field_0013 = 1;
     pHVar4->field_0017 = -1;
     pHVar4->field_0027 = 0;
@@ -91,7 +90,7 @@ void __thiscall WaitTy::DeleteCtrls(WaitTy *this)
       pHVar4 = this_00->field_1AF8;
       pHVar4->field_0002 = 0;
       pHVar4->field_0017 = -1;
-      uVar10 = this_00->field_1AF8->field_0003;
+      uVar10 = *(uint *)&this_00->field_1AF8->field_0x3;
       if (-1 < (int)uVar10) {
         Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar10);
       }
@@ -131,12 +130,12 @@ void __thiscall WaitTy::DeleteCtrls(WaitTy *this)
     else {
       pHVar4->field_0002 = 1;
       pHVar4->field_0000 = 0;
-      pHVar4->field_0003 = -1;
+      *(undefined4 *)&pHVar4->field_0x3 = 0xffffffff;
       pHVar4->field_0001 = CASE_2;
-      pHVar4->field_0007 = 0;
+      pHVar4->field_0007 = (void *)0x0;
       pHVar4->field_000B = (void *)0x0;
       pHVar4->field_000F = 0;
-      pHVar4->field_001B = 1;
+      *(undefined4 *)&pHVar4->field_0x1b = 1;
       pHVar4->field_0013 = 1;
       pHVar4->field_0017 = -1;
       pHVar4->field_0027 = 0;
@@ -156,7 +155,7 @@ void __thiscall WaitTy::DeleteCtrls(WaitTy *this)
         pHVar4 = this_00->field_1B00;
         pHVar4->field_0002 = 0;
         pHVar4->field_0017 = -1;
-        uVar10 = this_00->field_1B00->field_0003;
+        uVar10 = *(uint *)&this_00->field_1B00->field_0x3;
         if (-1 < (int)uVar10) {
           Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar10);
         }
@@ -203,12 +202,12 @@ void __thiscall WaitTy::DeleteCtrls(WaitTy *this)
     else {
       pHVar4->field_0002 = 1;
       pHVar4->field_0000 = 0;
-      pHVar4->field_0003 = -1;
+      *(undefined4 *)&pHVar4->field_0x3 = 0xffffffff;
       pHVar4->field_0001 = CASE_2;
-      pHVar4->field_0007 = 0;
+      pHVar4->field_0007 = (void *)0x0;
       pHVar4->field_000B = (void *)0x0;
       pHVar4->field_000F = 0;
-      pHVar4->field_001B = 1;
+      *(undefined4 *)&pHVar4->field_0x1b = 1;
       pHVar4->field_0013 = 1;
       pHVar4->field_0017 = -1;
       pHVar4->field_0027 = 0;
@@ -228,7 +227,7 @@ void __thiscall WaitTy::DeleteCtrls(WaitTy *this)
         pHVar4 = this_00->field_1AFC;
         pHVar4->field_0002 = 0;
         pHVar4->field_0017 = -1;
-        uVar10 = this_00->field_1AFC->field_0003;
+        uVar10 = *(uint *)&this_00->field_1AFC->field_0x3;
         if (-1 < (int)uVar10) {
           Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar10);
         }
@@ -262,10 +261,10 @@ void __thiscall WaitTy::DeleteCtrls(WaitTy *this)
     if (g_cursorClass_00802A30->field_00A9 == 0) {
       Library::DKW::DDX::FUN_006b8a60((byte *)g_cursorClass_00802A30->field_00AD);
     }
-    else if (g_cursorClass_00802A30->field_001C != (cLoadingTy *)0xffffffff) {
+    else if (g_cursorClass_00802A30->field_001C != 0xffffffff) {
       Library::DKW::DDX::FUN_006b34d0
-                ((uint *)g_cursorClass_00802A30->field_0060,(uint)g_cursorClass_00802A30->field_001C
-                 ,0xfffffffe,g_cursorClass_00802A30->field_0034,g_cursorClass_00802A30->field_0038);
+                ((uint *)g_cursorClass_00802A30->field_0060,g_cursorClass_00802A30->field_001C,
+                 0xfffffffe,g_cursorClass_00802A30->field_0034,g_cursorClass_00802A30->field_0038);
       g_currentExceptionFrame = local_50.previous;
       return;
     }

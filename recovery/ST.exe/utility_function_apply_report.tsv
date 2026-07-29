@@ -1,8 +1,12 @@
 function_address	semantic_id	status	detail
-006AB060	free_and_null	disabled	apply=0
-006AE110	darray_destroy	disabled	apply=0
+006AB060	free_and_null	unchanged	desired name and prototype already present
+006AE110	darray_destroy	unchanged	desired name and prototype already present
 006AE290	darray_create	unchanged	desired name and prototype already present
 006B54F0	sarray_create	unchanged	desired name and prototype already present
 006B0140	load_resource_string	unchanged	desired name and prototype already present
-006ACC70	darray_get_element	disabled	apply=0
+006ACC70	darray_get_element	unchanged	desired name and prototype already present
 004406C0	player_race_id	unchanged	desired name and prototype already present
+006B0C70	darray_remove_at	applied	DArrayRemoveAt __stdcall
+006B1190	darray_get_next	applied	DArrayGetNext __fastcall
+006CEA60	copy_rows	applied	CopyRows __stdcall
+006F2D90	mfaobj_load_payload	preserved	stale baseline or manual function identity

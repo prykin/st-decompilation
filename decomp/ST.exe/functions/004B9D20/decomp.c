@@ -6,7 +6,7 @@ undefined4 __thiscall FUN_004b9d20(void *this,STBoatC *param_1)
 
 {
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (((*(int *)((int)this + 0x4b4) != 0) && (*(uint *)((int)this + 0x4b0) == param_1->field_0018))
+  if (((*(int *)((int)this + 0x4b4) != 0) && (*(int *)((int)this + 0x4b0) == param_1->field_0018))
      && (*(int *)((int)this + 0x245) != 6)) {
     *(undefined4 *)((int)this + 0x4b4) = 0;
     return 1;

@@ -32,10 +32,10 @@ InfocPanelTy::PaintInfocObj
   pIVar2 = local_8;
   if (errorCode == 0) {
     if ((local_8->field_03D4 == -1) && (param_1 == 0xffff)) {
-      wsprintfA(&local_8->field_0x18d,"----/%d",param_2);
+      wsprintfA(&local_8->field_018D,"----/%d",param_2);
     }
     else {
-      wsprintfA(&local_8->field_0x18d,"%d/%d",param_1,param_2);
+      wsprintfA(&local_8->field_018D,"%d/%d",param_1,param_2);
     }
     if (DAT_0080874e == '\x03') {
       bVar3 = 0x73;
@@ -45,7 +45,7 @@ InfocPanelTy::PaintInfocObj
     }
     FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)pIVar2->field_0068,0,param_3,param_4,0x2d,0xc,bVar3);
     ccFntTy::SetSurf(pIVar2->field_0189,pIVar2->field_0068,0,param_3,param_4,0x2d,0xc);
-    ccFntTy::WrStr(pIVar2->field_0189,(uint *)&pIVar2->field_0x18d,-1,-1,
+    ccFntTy::WrStr(pIVar2->field_0189,(uint *)&pIVar2->field_018D,-1,-1,
                    (DAT_0080874e != '\x03') - 1 & 5);
     g_currentExceptionFrame = local_4c.previous;
     return;

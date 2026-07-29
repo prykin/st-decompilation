@@ -58,7 +58,7 @@ int __thiscall TLOBaseTy::fireProc(TLOBaseTy *this)
               puVar8[1] = uVar5;
               fireFindCheckTarget(this_00,(int)local_8,0);
             }
-            if (puVar8[2] != 0) {
+            if ((AnonShape_005EFAE0_B406B78B *)puVar8[2] != (AnonShape_005EFAE0_B406B78B *)0x0) {
               puVar8[0xc] = g_playSystem_00802A38->field_00E4;
               puVar8[0xd] = 100;
               if ((bVar9) ||
@@ -95,7 +95,8 @@ int __thiscall TLOBaseTy::fireProc(TLOBaseTy *this)
               }
             }
           }
-          if (((this_00->field_0255 != 0) && (puVar8[-4] != 0)) && (puVar8[2] == 0)) {
+          if (((this_00->field_0255 != 0) && (puVar8[-4] != 0)) &&
+             ((AnonShape_005EFAE0_B406B78B *)puVar8[2] == (AnonShape_005EFAE0_B406B78B *)0x0)) {
             if (puVar8[0xb] == 0) {
               if (puVar8[0xd] + puVar8[0xc] <= g_playSystem_00802A38->field_00E4) {
                 puVar8[0xc] = g_playSystem_00802A38->field_00E4;
@@ -135,7 +136,8 @@ int __thiscall TLOBaseTy::fireProc(TLOBaseTy *this)
             fireFindCheckTarget(this_00,(int)local_8,1);
             if (((*(int *)(&DAT_00792a90 + ((int)piVar7 + this_00->field_0235 * 2) * 4) == 2) ||
                 ((*(int *)(&DAT_00792a90 + ((int)piVar7 + this_00->field_0235 * 2) * 4) == 3 &&
-                 (iVar4 = sub_004C56B0(this_00,piVar7), iVar4 != 0)))) || (puVar8[2] != 0)) {
+                 (iVar4 = sub_004C56B0(this_00,piVar7), iVar4 != 0)))) ||
+               ((AnonShape_005EFAE0_B406B78B *)puVar8[2] != (AnonShape_005EFAE0_B406B78B *)0x0)) {
               puVar8[0xc] = g_playSystem_00802A38->field_00E4;
               puVar8[0xd] = 100;
               if ((AnonShape_005EFAE0_B406B78B *)puVar8[2] != (AnonShape_005EFAE0_B406B78B *)0x0) {

@@ -23,7 +23,7 @@ void __thiscall STBoatC::ReleaseLoad(STBoatC *this,uint param_1)
     iVar2 = this->field_07C2 + -1;
     this->field_07C2 = iVar2;
     if (iVar2 == 0) {
-      this->field_05A2 = 0;
+      this->field_05A2 = (AnonShape_005EFAE0_B406B78B *)0x0;
       piVar3 = &this->field_02CC;
       iVar2 = 0;
       do {

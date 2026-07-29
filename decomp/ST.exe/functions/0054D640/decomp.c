@@ -281,20 +281,20 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
                 } while (iVar2 < (int)(uint)DAT_00808aaf);
               }
               uVar8 = 0;
-              uVar13 = g_dArray_0080C4FE->count;
+              uVar13 = g_array_0080C4FE->count;
               if (0 < (int)uVar13) {
                 bVar12 = uVar13 != 0;
                 do {
                   if (bVar12) {
-                    /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(g_dArray_0080C4FE, uVar8) (runtime stride) */
-                    piVar10 = (int *)(g_dArray_0080C4FE->elementSize * uVar8 +
-                                     (int)g_dArray_0080C4FE->data);
+                    /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(g_array_0080C4FE, uVar8) (runtime stride) */
+                    piVar10 = (int *)(g_array_0080C4FE->elementSize * uVar8 +
+                                     (int)g_array_0080C4FE->data);
                   }
                   else {
                     piVar10 = (int *)0x0;
                   }
                   if ((piVar10 != (int *)0x0) && (*piVar10 == local_18)) {
-                    FUN_006b0c70(g_dArray_0080C4FE,uVar8);
+                    DArrayRemoveAt(g_array_0080C4FE,uVar8);
                     break;
                   }
                   uVar8 = uVar8 + 1;
@@ -307,20 +307,20 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
               break;
             case 0x35:
               uVar8 = 0;
-              uVar13 = g_dArray_0080C4FE->count;
+              uVar13 = g_array_0080C4FE->count;
               if (0 < (int)uVar13) {
                 bVar12 = uVar13 != 0;
                 do {
                   if (bVar12) {
-                    /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(g_dArray_0080C4FE, uVar8) (runtime stride) */
-                    piVar10 = (int *)(g_dArray_0080C4FE->elementSize * uVar8 +
-                                     (int)g_dArray_0080C4FE->data);
+                    /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(g_array_0080C4FE, uVar8) (runtime stride) */
+                    piVar10 = (int *)(g_array_0080C4FE->elementSize * uVar8 +
+                                     (int)g_array_0080C4FE->data);
                   }
                   else {
                     piVar10 = (int *)0x0;
                   }
                   if ((piVar10 != (int *)0x0) && (*piVar10 == local_18)) {
-                    FUN_006b0c70(g_dArray_0080C4FE,uVar8);
+                    DArrayRemoveAt(g_array_0080C4FE,uVar8);
                     iVar2 = 0;
                     if (DAT_00808aaf != 0) {
                       pcVar4 = &DAT_00808af6;
@@ -368,7 +368,7 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
         pcVar4 = LoadResourceString(0x426a,g_module_00807618);
         thunk_FUN_0052d320(g_popUp_008016D8,pcVar4,uVar13);
       }
-      if ((g_dArray_0080C4FE->count == 0) || (59999 < (int)(DVar6 - this_00->field_00BC))) {
+      if ((g_array_0080C4FE->count == 0) || (59999 < (int)(DVar6 - this_00->field_00BC))) {
         if (g_popUp_008016D8 != (PopUpTy *)0x0) {
           uVar13 = 8;
           pcVar4 = LoadResourceString(0x4269,g_module_00807618);

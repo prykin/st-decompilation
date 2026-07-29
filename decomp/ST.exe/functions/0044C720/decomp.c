@@ -21,9 +21,9 @@ STAllPlayersC::GetScrObjList
   ushort *puVar8;
   uint uVar9;
   uint uVar10;
-  undefined4 *puVar11;
+  byte *puVar11;
   int iVar12;
-  undefined4 *puVar13;
+  byte *puVar13;
   bool bVar14;
   InternalExceptionFrame local_68;
   byte local_24;
@@ -155,7 +155,7 @@ LAB_0044c94c:
       local_14 = (ushort *)Library::DKW::LIB::FUN_006aac70(iVar6);
       *local_14 = (ushort)pDVar7->count;
       *(undefined1 *)(local_14 + 1) = (undefined1)param_1;
-      puVar11 = pDVar7->data;
+      puVar11 = (byte *)(pDVar7->data);
       uVar9 = (uint)*local_14 << 2;
     }
     else {
@@ -195,20 +195,11 @@ LAB_0044c94c:
       local_14 = (ushort *)Library::DKW::LIB::FUN_006aac70(iVar6);
       *local_14 = (ushort)pDVar7->count;
       *(undefined1 *)(local_14 + 1) = 3;
-      puVar11 = pDVar7->data;
+      puVar11 = (byte *)(pDVar7->data);
       uVar9 = (uint)*local_14 << 1;
     }
-    puVar13 = (undefined4 *)((int)local_14 + 3);
-    for (uVar10 = uVar9 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
-      *puVar13 = *puVar11;
-      puVar11 = puVar11 + 1;
-      puVar13 = puVar13 + 1;
-    }
-    for (uVar9 = uVar9 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {
-      *(undefined1 *)puVar13 = *(undefined1 *)puVar11;
-      puVar11 = (undefined4 *)((int)puVar11 + 1);
-      puVar13 = (undefined4 *)((int)puVar13 + 1);
-    }
+    puVar13 = (byte *)((int)local_14 + 3);
+    memmove(puVar13, puVar11, uVar9); /* compiler REP MOVS byte copy */
     g_currentExceptionFrame = local_68.previous;
   }
 LAB_0044cb54:

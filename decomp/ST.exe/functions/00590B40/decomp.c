@@ -68,9 +68,8 @@ void __thiscall CampaignTy::InitCampaign(CampaignTy *this,undefined4 param_1)
     if (g_cursorClass_00802A30->field_00A9 == 0) {
       Library::DKW::DDX::FUN_006b8b10((int *)g_cursorClass_00802A30->field_00AD);
     }
-    else if (g_cursorClass_00802A30->field_001C != (cLoadingTy *)0xffffffff) {
-      FUN_006b3af0((int *)g_cursorClass_00802A30->field_0060,
-                   (uint)g_cursorClass_00802A30->field_001C);
+    else if (g_cursorClass_00802A30->field_001C != 0xffffffff) {
+      FUN_006b3af0((int *)g_cursorClass_00802A30->field_0060,g_cursorClass_00802A30->field_001C);
     }
   }
   if (g_startSystem_0081176C->field_0028 != 0) {

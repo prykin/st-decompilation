@@ -18,7 +18,7 @@ STBoatC::PrepareForLoading
   code *pcVar2;
   int iVar3;
 
-  if (param_1 == this->field_05A2) {
+  if ((AnonShape_005EFAE0_B406B78B *)param_1 == this->field_05A2) {
     sVar1 = this->field_005F;
     *(short *)&this->field_0x5ac = param_3;
     *(short *)&this->field_0x5ae = param_4;

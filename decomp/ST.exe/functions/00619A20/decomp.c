@@ -14,7 +14,7 @@ void __thiscall STJumpMineC::sub_00619A20(STJumpMineC *this)
   int local_c;
   int local_8;
 
-  if (this->field_0097 < 0) {
+  if ((int)this->field_0097 < 0) {
     LoadImagJMine(this,this->field_008F);
   }
   pVVar1 = g_visibleClass_00802A88;

@@ -16,9 +16,9 @@ void __thiscall FSGSTy::LicCtrls(FSGSTy *this)
   LPBITMAPINFO ptVar5;
   int iVar6;
   int iVar7;
-  undefined4 *puVar8;
+  byte *puVar8;
   int *piVar9;
-  undefined4 *puVar10;
+  byte *puVar10;
   ushort *puVar11;
   int local_8c4 [5];
   int local_8b0;
@@ -70,7 +70,7 @@ void __thiscall FSGSTy::LicCtrls(FSGSTy *this)
   iVar7 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (iVar7 == 0) {
-    puVar8 = &local_8->field_1E8E;
+    puVar8 = (byte *)(&local_8->field_1E8E);
     if (local_8->field_1E8E != 0) {
       FreeAndNull((void **)puVar8);
     }
@@ -120,13 +120,9 @@ void __thiscall FSGSTy::LicCtrls(FSGSTy *this)
       uVar4 = this_00->field_1B48;
       local_88c = this_00->field_0008;
       local_7a8 = local_88c;
-      puVar8 = local_808;
-      puVar10 = local_688;
-      for (iVar7 = 0x5f; iVar7 != 0; iVar7 = iVar7 + -1) {
-        *puVar10 = *puVar8;
-        puVar8 = puVar8 + 1;
-        puVar10 = puVar10 + 1;
-      }
+      puVar8 = (byte *)(local_808);
+      puVar10 = (byte *)(local_688);
+      memmove(puVar10, puVar8, 0x17c); /* compiler REP MOVS byte copy */
       local_688[2] = this_00->field_1B44;
       local_674 = this_00->field_1B50;
       local_678 = this_00->field_1B4C;

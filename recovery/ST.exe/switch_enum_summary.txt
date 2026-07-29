@@ -5,7 +5,7 @@ decompile_retries=2
 decompile_failures=0
 proposals=597
 auto_apply=180
-target_kinds={class_field=88, global=6, local=378, parameter=125}
+target_kinds={class_field=90, global=6, local=376, parameter=125}
 note=At least three numeric case values are required to create a new enum; an existing script-owned enum can grow from one exact typed value.
 note_nested_switches=Case labels are assigned to their innermost switch; nested switches are analyzed independently.
 note_compositions=Exact CASE_A|CASE_B and ~(CASE_A|CASE_B) values grow only an already script-owned enum when the typed operand is unambiguous.

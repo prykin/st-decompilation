@@ -15,7 +15,7 @@ void __thiscall FUN_0071c9f0(void *this,int param_1)
       do {
         DArrayGetElement(array,index,local_10);
         if (*(int *)(local_8 + 8) == param_1) {
-          FUN_006b0c70(*(DArrayTy **)((int)this + 0x28),index);
+          DArrayRemoveAt(*(DArrayTy **)((int)this + 0x28),index);
         }
         else {
           if ((local_10[0] & 2) != 0) {

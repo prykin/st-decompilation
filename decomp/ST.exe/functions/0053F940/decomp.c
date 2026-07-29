@@ -122,11 +122,7 @@ ProdPanelTy::CreateSlider
     local_310 = 0x32;
     piVar7 = local_42c + 2;
     piVar5 = local_2a4;
-    for (iVar4 = 0x5f; iVar4 != 0; iVar4 = iVar4 + -1) {
-      *piVar5 = *piVar7;
-      piVar7 = piVar7 + 1;
-      piVar5 = piVar5 + 1;
-    }
+    memmove(piVar5, piVar7, 0x17c); /* compiler REP MOVS byte copy */
     local_2a4[2] = iVar2 + param_1;
     local_2a4[3] = DAT_00806734;
     if (iVar8 != 0) {

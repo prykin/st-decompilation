@@ -312,7 +312,7 @@ LAB_0049aec9:
           if ((cStack_2b != '\x01') ||
              (pSVar8 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,local_2c,uStack_2a,CASE_1),
              pSVar8->field_0020 != 0x14)) {
-            FUN_006b0c70(local_8->field_020E,(int)sVar5);
+            DArrayRemoveAt(local_8->field_020E,(int)sVar5);
             dVar10 = dVar10 - 1;
             sVar5 = sVar5 + -1;
           }

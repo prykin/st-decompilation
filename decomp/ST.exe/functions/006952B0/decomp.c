@@ -18,7 +18,9 @@ CGenerate::FUN_006952b0(CGenerate *this,AnonShape_006952B0_7A982E30 *param_1,byt
   DArrayTy *local_78;
   DArrayTy *local_74;
   DWORD local_70;
-  undefined1 local_6c [24];
+  int local_6c;
+  int iStack_64;
+  int iStack_60;
   DArrayTy *local_54;
   DArrayTy *local_50;
   CGenerate *local_4c;
@@ -84,7 +86,7 @@ CGenerate::FUN_006952b0(CGenerate *this,AnonShape_006952B0_7A982E30 *param_1,byt
     while ((0 < local_10 || (local_3c < local_14 + local_48))) {
       local_54->count = 0;
       local_50->count = 0;
-      memset((void *)local_6c, 0, 0x18); /* compiler bulk-zero initialization */
+      memset(&local_6c, 0, 0x18); /* compiler bulk-zero initialization */
       if ((this->field_0008 == (int *)0x0) && (this->field_000C == (byte *)0x0)) {
         sub_006A0150(this);
       }
@@ -134,21 +136,18 @@ CGenerate::FUN_006952b0(CGenerate *this,AnonShape_006952B0_7A982E30 *param_1,byt
       sub_0069B190(this,*this->field_0008 << 1,this->field_0008[1] << 1,local_34 + -1);
       sub_0069FF90(this);
       _DAT_00853dd0 = Library::MSVCRT::FUN_0072e6c0();
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_6c._12_4_ =
-           sub_0069BDC0(this,local_28,10,10,4,0x23,(int)local_8,
-                        (RecoveredRecord_CGenerate_0069BDC0 *)local_6c);
+      iStack_60 = sub_0069BDC0(this,local_28,10,10,4,0x23,(int)local_8,
+                               (RecoveredRecord_CGenerate_0069BDC0 *)&local_6c);
       sub_0069FF90(this);
       _DAT_00853dd0 = Library::MSVCRT::FUN_0072e6c0();
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      local_6c._8_4_ =
-           sub_006991C0(this,*this->field_0008 << 1,this->field_0008[1] << 1,local_1c,local_18,
-                        local_28,(int)local_8,local_34 + -1,(AnonShape_006991C0_D95B9E4A *)local_6c);
+      iStack_64 = sub_006991C0(this,*this->field_0008 << 1,this->field_0008[1] << 1,local_1c,
+                               local_18,local_28,(int)local_8,local_34 + -1,
+                               (AnonShape_006991C0_D95B9E4A *)&local_6c);
       sub_0069FF90(this);
       _DAT_00853dd0 = Library::MSVCRT::FUN_0072e6c0();
       sub_00695EB0(this);
       sub_0069FF90(this);
-      iVar2 = thunk_FUN_00695180((AnonShape_0052EFB0_8161B92D *)local_6c,
+      iVar2 = thunk_FUN_00695180((AnonShape_0052EFB0_8161B92D *)&local_6c,
                                  (RecoveredRecord_CGenerate_00695180 *)&stack0xffffff70,
                                  (int)&local_38,local_c);
       if (iVar2 == 0) {
@@ -156,7 +155,7 @@ CGenerate::FUN_006952b0(CGenerate *this,AnonShape_006952B0_7A982E30 *param_1,byt
       }
       else {
         local_c = 1;
-        thunk_FUN_00695140((undefined4 *)local_6c,(undefined4 *)&stack0xffffff70);
+        thunk_FUN_00695140(&local_6c,(undefined4 *)&stack0xffffff70);
         sub_00694C30(this);
       }
       local_3c = timeGetTime();

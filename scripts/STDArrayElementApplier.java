@@ -38,6 +38,7 @@ import ghidra.program.model.data.StructureDataType;
 import ghidra.program.model.data.TypeDef;
 import ghidra.program.model.data.Undefined;
 import ghidra.program.model.listing.Function;
+import ghidra.program.model.listing.FunctionIterator;
 import ghidra.program.model.listing.Variable;
 import ghidra.program.model.listing.VariableStorage;
 import ghidra.program.model.symbol.SourceType;
@@ -56,6 +57,7 @@ public class STDArrayElementApplier extends GhidraScript {
     private final Map<String, Set<Long>> activeDynamicHashes =
         new HashMap<>();
     private DataTypeManager dataTypes;
+    private int staleLocalsRemoved;
 
     @Override
     protected void run() throws Exception {
@@ -152,7 +154,8 @@ public class STDArrayElementApplier extends GhidraScript {
         println("DArray element locals: applied=" + localCount("applied") +
             ", unchanged=" + localCount("unchanged") + ", preserved=" +
             localCount("preserved") + ", conflicts=" + localCount("conflict") +
-            ", disabled=" + localCount("disabled"));
+            ", disabled=" + localCount("disabled") + ", stale_removed=" +
+            staleLocalsRemoved);
         println("Apply report: " + reportPath.toAbsolutePath().normalize());
         println("Local apply report: " +
             localReportPath.toAbsolutePath().normalize());
@@ -600,28 +603,67 @@ public class STDArrayElementApplier extends GhidraScript {
     }
 
     /**
-     * Remove only obsolete hash locals whose data type belongs to this
-     * applier's generated DArray element category.  Older versions could leave
-     * one behind after computing the hash from a pre-layout syntax tree.
+     * Remove obsolete locals installed by this applier.  Older versions only
+     * cleaned hash/unique-storage variables.  A register local could therefore
+     * survive after the decompiler split or merged its SSA lifetime and leak an
+     * element-record type into a later, unrelated use of the same register.
+     *
+     * The comment marker proves script ownership; USER_DEFINED/IMPORTED locals
+     * remain protected.  Active database variables are resolved from the fresh
+     * HighSymbols prepared above and compared by Symbol id (or exact storage +
+     * first-use fallback), so a still-valid register local is retained.
      */
     private void cleanupStaleElementLocals(List<PreparedLocal> prepared) {
-        Set<String> functions = new HashSet<>();
-        for (PreparedLocal local : prepared)
-            functions.add(unt(local.row.get("function_address")));
-        for (String address : functions) {
-            Function function = function(address);
+        Map<Function, List<Variable>> active = new LinkedHashMap<>();
+        for (PreparedLocal local : prepared) {
+            Function function =
+                function(unt(local.row.get("function_address")));
             if (function == null) continue;
-            Set<Long> active =
-                activeDynamicHashes.getOrDefault(address, Set.of());
+            try {
+                Variable variable = functionVariable(local.highSymbol);
+                if (variable != null)
+                    active.computeIfAbsent(function,
+                        ignored -> new ArrayList<>()).add(variable);
+            }
+            catch (Exception ignored) {
+                // applyLocal will report the unresolved HighSymbol precisely.
+            }
+        }
+
+        FunctionIterator functions =
+            currentProgram.getFunctionManager().getFunctions(true);
+        while (functions.hasNext()) {
+            Function function = functions.next();
+            List<Variable> current =
+                active.getOrDefault(function, List.of());
+            Set<Long> activeHashes = activeDynamicHashes.getOrDefault(
+                addr(function.getEntryPoint()), Set.of());
             for (Variable variable : function.getLocalVariables()) {
-                if (!variable.isUniqueVariable() ||
+                String comment = text(variable.getComment());
+                boolean marked =
+                    comment.contains(MARKER + " DArray element local;");
+                boolean obsoleteHash =
+                    activeDynamicHashes.containsKey(
+                        addr(function.getEntryPoint())) &&
+                    variable.isUniqueVariable() &&
+                    !activeHashes.contains(
+                        variable.getFirstStorageVarnode().getOffset());
+                if ((!marked && !obsoleteHash) ||
                         variable.getSource() == SourceType.USER_DEFINED ||
                         variable.getSource() == SourceType.IMPORTED ||
                         !isGeneratedElementPointer(variable.getDataType()))
                     continue;
-                long hash = variable.getFirstStorageVarnode().getOffset();
-                if (!active.contains(hash))
+                boolean retained = false;
+                for (Variable candidate : current) {
+                    if (sameVariable(candidate, variable)) {
+                        retained = true;
+                        break;
+                    }
+                }
+                if (!retained) {
                     function.removeVariable(variable);
+                    staleLocalsRemoved++;
+                }
             }
         }
     }

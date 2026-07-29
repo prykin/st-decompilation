@@ -204,7 +204,7 @@ STGroupBoatC::SetOrderData(STGroupBoatC *this,Global_sub_00498D20_param_1Enum or
   case CASE_B:
     this->field_0065 = 1;
     this->field_00B1 = 1;
-    this->field_0178 = *(undefined4 *)data;
+    this->field_0178 = *(AnonShape_005EFAE0_B406B78B **)data;
     return;
   case CASE_C:
     this->field_0065 = 1;
@@ -270,7 +270,7 @@ LAB_00499129:
   case CASE_15:
     this->field_0065 = 1;
     this->field_00D9 = 1;
-    this->field_01C5 = *(undefined4 *)data;
+    this->field_01C5 = *(AnonShape_005EFAE0_B406B78B **)data;
     return;
   case CASE_65:
     this->field_0061 = 1;

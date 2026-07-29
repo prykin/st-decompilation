@@ -31,7 +31,7 @@ int __thiscall STSharkC::GetMessage(STSharkC *this,STMessage *message)
   byte *pbVar13;
   InternalExceptionFrame local_80;
   void *local_3c;
-  undefined4 local_38;
+  uint local_38;
   int local_34;
   undefined4 local_30;
   undefined4 local_2c;
@@ -152,7 +152,7 @@ int __thiscall STSharkC::GetMessage(STSharkC *this,STMessage *message)
         pbVar13 = pbVar13 + 1;
       }
       STPlaySystemC::SaveObjData
-                (g_playSystem_00802A38,this_00->field_0018,(byte *)local_c,
+                (g_playSystem_00802A38,(int *)this_00->field_0018,(byte *)local_c,
                  (AnonShape_0060EA30_DCEB68AD *)(local_10 + 0x66 + local_8));
       FreeAndNull(&local_18);
       FreeAndNull(&local_14);

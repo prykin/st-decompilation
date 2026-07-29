@@ -1,26 +1,27 @@
+#include "../../pseudocode_runtime.h"
+
 
 int __thiscall FUN_006010a0(void *this,undefined4 *param_1)
 
 {
   undefined4 uVar1;
-  undefined4 *puVar2;
+  byte *puVar2;
   int iVar3;
   int iVar4;
   int iVar5;
   uint uVar6;
-  uint uVar7;
-  undefined4 *puVar8;
+  byte *puVar8;
   undefined4 *puVar9;
   int local_10;
   int local_c;
   int local_8;
 
-  puVar8 = param_1;
-  puVar2 = (undefined4 *)((int)this + 0x206);
+  puVar8 = (byte *)(param_1);
+  puVar2 = (byte *)((int)this + 0x206);
   for (iVar4 = 0xf; iVar4 != 0; iVar4 = iVar4 + -1) {
     *puVar2 = *puVar8;
-    puVar8 = puVar8 + 1;
-    puVar2 = puVar2 + 1;
+    puVar8 = (byte *)(puVar8 + 1);
+    puVar2 = (byte *)(puVar2 + 1);
   }
   *(undefined1 *)puVar2 = *(undefined1 *)puVar8;
   local_8 = 0;
@@ -31,14 +32,14 @@ int __thiscall FUN_006010a0(void *this,undefined4 *param_1)
     do {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       iVar4 = *(int *)((int)param_1 + local_8 + 0x3d);
-      puVar8 = (undefined4 *)((int)param_1 + local_8 + 0x41);
+      puVar8 = (byte *)((int)param_1 + local_8 + 0x41);
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       uVar1 = *(undefined4 *)(local_c + 0x42 + *(int *)((int)this + 0x233));
-      puVar2 = puVar8;
+      puVar2 = (byte *)(puVar8);
       puVar9 = (undefined4 *)(local_c + *(int *)((int)this + 0x233));
       for (iVar5 = 0x14; iVar5 != 0; iVar5 = iVar5 + -1) {
         *puVar9 = *puVar2;
-        puVar2 = puVar2 + 1;
+        puVar2 = (byte *)(puVar2 + 1);
         puVar9 = puVar9 + 1;
       }
       *(undefined2 *)puVar9 = *(undefined2 *)puVar2;
@@ -59,18 +60,9 @@ int __thiscall FUN_006010a0(void *this,undefined4 *param_1)
           *(int *)(local_c + 0x4e + *(int *)((int)this + 0x233)) = iVar5;
           iVar5 = *(int *)((int)this + 0x233) + local_c;
           uVar6 = *(int *)(iVar5 + 0x46) * 6;
-          puVar8 = (undefined4 *)((int)puVar8 + 0x52);
-          puVar2 = *(undefined4 **)(iVar5 + 0x4e);
-          for (uVar7 = uVar6 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-            *puVar2 = *puVar8;
-            puVar8 = puVar8 + 1;
-            puVar2 = puVar2 + 1;
-          }
-          for (uVar6 = uVar6 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
-            *(undefined1 *)puVar2 = *(undefined1 *)puVar8;
-            puVar8 = (undefined4 *)((int)puVar8 + 1);
-            puVar2 = (undefined4 *)((int)puVar2 + 1);
-          }
+          puVar8 = (byte *)((int)puVar8 + 0x52);
+          puVar2 = (byte *)(*(undefined4 **)(iVar5 + 0x4e));
+          memmove(puVar2, puVar8, uVar6); /* compiler REP MOVS byte copy */
         }
       }
       local_8 = local_8 + iVar4;
@@ -82,19 +74,19 @@ int __thiscall FUN_006010a0(void *this,undefined4 *param_1)
     return local_8 + 0x41;
   }
   iVar4 = *(int *)((int)this + 0x237) * 0x18;
-  puVar2 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(iVar4);
+  puVar2 = (byte *)Library::DKW::LIB::FUN_006aac70(iVar4);
   *(undefined4 **)((int)this + 0x23b) = puVar2;
-  puVar8 = (undefined4 *)(local_8 + 0x41 + (int)param_1);
+  puVar8 = (byte *)(local_8 + 0x41 + (int)param_1);
   for (iVar5 = (*(int *)((int)this + 0x237) * 3 & 0x1fffffffU) << 1; iVar5 != 0; iVar5 = iVar5 + -1)
   {
     *puVar2 = *puVar8;
-    puVar8 = puVar8 + 1;
-    puVar2 = puVar2 + 1;
+    puVar8 = (byte *)(puVar8 + 1);
+    puVar2 = (byte *)(puVar2 + 1);
   }
   for (iVar5 = 0; iVar5 != 0; iVar5 = iVar5 + -1) {
     *(undefined1 *)puVar2 = *(undefined1 *)puVar8;
-    puVar8 = (undefined4 *)((int)puVar8 + 1);
-    puVar2 = (undefined4 *)((int)puVar2 + 1);
+    puVar8 = (byte *)((int)puVar8 + 1);
+    puVar2 = (byte *)((int)puVar2 + 1);
   }
   iVar5 = *(int *)((int)this + 0x237) * 4;
   iVar3 = Library::DKW::LIB::FUN_006aac70(iVar5);

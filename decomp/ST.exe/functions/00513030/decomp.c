@@ -9,7 +9,7 @@ void __thiscall HelpPanelTy::ChangeTree(HelpPanelTy *this,int *param_1,int param
 
 {
   undefined1 *puVar1;
-  DArrayTy *groupContent;
+  DArrayTy *array;
   AnonPointee_HelpPanelTy_01B3 *pAVar2;
   undefined4 uVar3;
   code *pcVar4;
@@ -167,17 +167,16 @@ LAB_00513233:
     }
   }
   else {
-    groupContent = (DArrayTy *)local_20->field_01B3;
+    array = (DArrayTy *)local_20->field_01B3;
     uVar9 = param_2 + 1;
-    uVar13 = groupContent->count;
-    /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(groupContent, uVar9) (runtime stride) */
+    uVar13 = array->count;
+    /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, uVar9) (runtime stride) */
     while (((uVar9 < uVar13 &&
-            (pvVar8 = (void *)(groupContent->elementSize * uVar9 + (int)groupContent->data),
-            pvVar8 != (void *)0x0)) &&
-           (*(byte *)((int)piVar12 + 0x11) < *(byte *)((int)pvVar8 + 0x11)))) {
-      FUN_006b0c70(groupContent,uVar9);
-      groupContent = (DArrayTy *)this_00->field_01B3;
-      uVar13 = groupContent->count;
+            (pvVar8 = (void *)(array->elementSize * uVar9 + (int)array->data), pvVar8 != (void *)0x0
+            )) && (*(byte *)((int)piVar12 + 0x11) < *(byte *)((int)pvVar8 + 0x11)))) {
+      DArrayRemoveAt(array,uVar9);
+      array = (DArrayTy *)this_00->field_01B3;
+      uVar13 = array->count;
     }
   }
   *(bool *)((int)piVar12 + 0x12) = *(char *)((int)piVar12 + 0x12) == '\0';

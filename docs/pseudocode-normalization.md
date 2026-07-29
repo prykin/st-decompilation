@@ -123,6 +123,37 @@ loop, the exporter preserves its post-loop value. The generated runtime header
 includes `<string.h>`, and every normalized site is recorded as
 `bulk_zero_initialization` in `pseudocode_idioms.jsonl`.
 
+The same normalization accepts the exact dynamic-size `REP STOSD` plus
+`REP STOSB` pair when the advanced pointer and both counters are dead. If
+Ghidra has already typed the destination as `byte *`, the dword store may render
+as four consecutive `buffer[0..3] = 0` assignments; that exact unrolled spelling
+is accepted as the same machine operation:
+
+```c
+memset(buffer, 0, byteCount); /* compiler bulk-zero initialization */
+```
+
+The `byteCount >> 2` and `byteCount & 3` expressions are instruction counts for
+the dword and trailing-byte transfers; they are not source-level array
+arithmetic.
+
+## Automatically normalized overlap-safe byte copies
+
+MSVC similarly lowers byte copies to `REP MOVSD` followed by `REP MOVSB`.
+When the exporter sees the exact dynamic pair, or a constant-count dword loop
+with an exact same-pointer tail transfer, one source and destination increment
+in each loop body, and all advanced temporaries are dead, it emits:
+
+```c
+memmove(destination, source, byteCount); /* compiler REP MOVS byte copy */
+```
+
+`memmove` is intentional. Generic DArray erase shifts a tail toward a lower
+address, so the ranges overlap even though the forward machine copy is safe for
+that direction. The exporter does not fold adjusted pointers, extra statements,
+or later uses of the post-copy pointer/counter values. Normalized sites are
+recorded as `bulk_byte_copy` in `pseudocode_idioms.jsonl`.
+
 ## Catalogued forms awaiting typed rewriting
 
 Every export recreates `decomp/ST.exe/pseudocode_idioms.jsonl`. Each JSON object

@@ -16,11 +16,11 @@ undefined4 __thiscall FUN_00639c90(void *this,STMessage *param_1)
   int iVar8;
   int iVar9;
   uint uVar10;
-  undefined4 *puVar11;
+  byte *puVar11;
   VisibleClassTy *pVVar12;
   uint uVar13;
   byte *pbVar14;
-  undefined4 *puVar15;
+  byte *puVar15;
   byte *pbVar16;
   longlong lVar17;
   undefined4 uVar18;
@@ -63,7 +63,7 @@ undefined4 __thiscall FUN_00639c90(void *this,STMessage *param_1)
         }
       }
       STPlaySystemC::SaveObjData
-                (g_playSystem_00802A38,*(undefined4 *)((int)this + 0x18),local_8,
+                (g_playSystem_00802A38,*(int **)((int)this + 0x18),local_8,
                  (AnonShape_0060EA30_DCEB68AD *)((int)&param_1->unknown_00 + local_10));
       FreeAndNull(&local_8);
       FreeAndNull(&local_14);
@@ -97,18 +97,14 @@ switchD_00639e3d_caseD_d:
     if (SVar4 != MESS_ID_CREATE) {
       return 0;
     }
-    puVar11 = (pSVar7->arg0).ptr;
+    puVar11 = (byte *)((pSVar7->arg0).ptr);
     if (puVar11[3] == 2) {
       thunk_FUN_0063d100(this,puVar11);
       memset((void *)((int)this + 899), 0, 0x2d); /* compiler bulk-zero initialization */
       return 0;
     }
-    puVar15 = (undefined4 *)((int)this + 0x231);
-    for (iVar8 = 0xd; iVar8 != 0; iVar8 = iVar8 + -1) {
-      *puVar15 = *puVar11;
-      puVar11 = puVar11 + 1;
-      puVar15 = puVar15 + 1;
-    }
+    puVar15 = (byte *)((int)this + 0x231);
+    memmove(puVar15, puVar11, 0x34); /* compiler REP MOVS byte copy */
     thunk_FUN_0063c030(this,g_playSystem_00802A38->field_00E4);
     if (*(uint *)((int)this + 0x245) < 2) {
       iVar8 = STT3DSprC::LoadSequence

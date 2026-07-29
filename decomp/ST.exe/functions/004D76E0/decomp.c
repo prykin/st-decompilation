@@ -1,6 +1,9 @@
 
+/* [STPrototypeApplier] Propagated parameter 2.
+   Evidence: 004C7460 -> 004D76E0 @ 004C7688; /TLOBaseTy+0x18 */
+
 undefined4
-FUN_004d76e0(char param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7)
+FUN_004d76e0(char param_1,int param_2,int *param_3,int param_4,int param_5,int param_6,int param_7)
 
 {
   uint uVar1;
@@ -17,7 +20,7 @@ FUN_004d76e0(char param_1,int param_2,int param_3,int param_4,int param_5,int pa
                     *(int *)(&g_playerRuntime[iVar2].field_0x80a + iVar3));
     *(uint *)(&g_playerRuntime[iVar2].field_0x7f2 + iVar3) = uVar1 + 1;
     if (piVar4 == (int *)0x0) break;
-    if (*piVar4 == param_3) {
+    if ((int *)*piVar4 == param_3) {
       *(int *)(&g_playerRuntime[iVar2].field_0x80e + iVar3) =
            *(int *)(&g_playerRuntime[iVar2].field_0x80e + iVar3) - piVar4[1];
       *(int *)(&g_playerRuntime[iVar2].field_0x812 + iVar3) =

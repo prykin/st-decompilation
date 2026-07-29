@@ -92,8 +92,8 @@ CPanelTy::CreateBut(CPanelTy *this,byte param_1,undefined4 param_2,int param_3,i
     local_18c[1] = param_2;
     local_18c[0] = param_3;
     if (text != (char *)0x0) {
-      wsprintfA(&pCVar3->field_0x1e1,"%s0",text);
-      local_8 = cMf32::RecGet(g_cMf32_00806790,param_6,&pCVar3->field_0x1e1,(int *)0x0,1);
+      wsprintfA(&pCVar3->field_01E1,"%s0",text);
+      local_8 = cMf32::RecGet(g_cMf32_00806790,param_6,&pCVar3->field_01E1,(int *)0x0,1);
     }
     if (param_6 == 1) {
       local_17c = *(int *)(local_8 + 2);

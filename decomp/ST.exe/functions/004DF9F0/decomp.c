@@ -19,7 +19,7 @@ undefined4 __thiscall TLOBaseTy::sub_004DF9F0(TLOBaseTy *this)
       do {
         DArrayGetElement(array,index,&local_8);
         if (local_8 == this) {
-          FUN_006b0c70(g_playerRuntime[(int)this->field_0024].field2165_0x9d2,index);
+          DArrayRemoveAt(g_playerRuntime[(int)this->field_0024].field2165_0x9d2,index);
           break;
         }
         index = index + 1;

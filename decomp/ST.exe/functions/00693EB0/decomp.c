@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 FUN_00693eb0(int param_1,int param_2)
 
@@ -10,8 +12,8 @@ undefined4 FUN_00693eb0(int param_1,int param_2)
   undefined4 *this;
   int iVar6;
   int iVar7;
-  undefined4 *puVar8;
-  undefined4 *puVar9;
+  byte *puVar8;
+  byte *puVar9;
   int iVar10;
   undefined4 local_19ac [4];
   undefined4 auStackY_199b [8];
@@ -21,38 +23,28 @@ undefined4 FUN_00693eb0(int param_1,int param_2)
 
   iVar10 = param_2;
   Library::MSVCRT::FUN_0072da40();
-  puVar8 = this;
-  puVar9 = local_19ac;
-  for (iVar6 = 0x666; iVar6 != 0; iVar6 = iVar6 + -1) {
-    *puVar9 = *puVar8;
-    puVar8 = puVar8 + 1;
-    puVar9 = puVar9 + 1;
-  }
-  *(undefined1 *)puVar9 = *(undefined1 *)puVar8;
+  puVar8 = (byte *)(this);
+  puVar9 = (byte *)(local_19ac);
+  memmove(puVar9, puVar8, 0x1999); /* compiler REP MOVS byte copy */
   iVar6 = param_2 * 0x51;
-  puVar8 = (undefined4 *)((int)this + param_1 * 0x51 + 0x11);
-  puVar9 = (undefined4 *)(iVar6 + 0x11 + (int)this);
+  puVar8 = (byte *)((int)this + param_1 * 0x51 + 0x11);
+  puVar9 = (byte *)(iVar6 + 0x11 + (int)this);
   for (iVar7 = 0x14; iVar7 != 0; iVar7 = iVar7 + -1) {
     *puVar9 = *puVar8;
-    puVar8 = puVar8 + 1;
-    puVar9 = puVar9 + 1;
+    puVar8 = (byte *)(puVar8 + 1);
+    puVar9 = (byte *)(puVar9 + 1);
   }
   *(undefined1 *)puVar9 = *(undefined1 *)puVar8;
   *(char *)(iVar6 + 0x33 + (int)this) = (char)param_2;
   uStackY_18 = 0x693f0a;
   thunk_FUN_00693cb0(this,param_1);
   if (acStackY_1979[iVar6] != -1) {
-    puVar8 = (undefined4 *)((int)auStackY_199b + iVar6);
-    puVar9 = (undefined4 *)((int)this + param_1 * 0x51 + 0x11);
-    for (iVar7 = 0x14; iVar7 != 0; iVar7 = iVar7 + -1) {
-      *puVar9 = *puVar8;
-      puVar8 = puVar8 + 1;
-      puVar9 = puVar9 + 1;
-    }
-    *(undefined1 *)puVar9 = *(undefined1 *)puVar8;
+    puVar8 = (byte *)((int)auStackY_199b + iVar6);
+    puVar9 = (byte *)((int)this + param_1 * 0x51 + 0x11);
+    memmove(puVar9, puVar8, 0x51); /* compiler REP MOVS byte copy */
     *(char *)((int)this + param_1 * 0x51 + 0x33) = (char)param_1;
   }
-  puVar8 = (undefined4 *)((int)this + param_1 * 8 + 0x299);
+  puVar8 = (byte *)((int)this + param_1 * 8 + 0x299);
   iVar6 = 0;
   do {
     *(undefined1 *)((int)this + iVar6 + param_2 * 8 + 0x299) = *(undefined1 *)((int)puVar8 + iVar6);

@@ -51,7 +51,7 @@ STAppC * __thiscall STAppC::STAppC(STAppC *this,undefined4 param_1)
   this->field_117C = 0;
   this->field_112D = 1;
   this->field_112E = 1;
-  this->field_4EDE = 0;
+  this->field_4EDE = (DArrayTy *)0x0;
   this->field_4EE2 = (uint *)0x0;
   this->field_4EE6 = (uint *)0x0;
   this->field_4EEA = 0;
@@ -64,7 +64,7 @@ STAppC * __thiscall STAppC::STAppC(STAppC *this,undefined4 param_1)
   this->field_7D0E = 0;
   DVar1 = sub_006E51B0(this);
   this->field_1134 = DVar1;
-  this->field_76F2 = 0;
+  this->field_76F2 = (void *)0x0;
   this->field_854E = 0;
   this->field_8552 = 0;
   this->field_8556 = 0;

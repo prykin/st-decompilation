@@ -95,7 +95,7 @@ void __thiscall STAllPlayersC::OptimizeGuardBoats(STAllPlayersC *this,char param
                     if (local_44 != (DArrayTy *)0x0) {
                       DArrayDestroy(local_44);
                     }
-                    FUN_006b0c70(local_1c,local_10);
+                    DArrayRemoveAt(local_1c,local_10);
                     local_18 = local_18 - 1;
                     local_30 = local_30 + -1;
                     local_10 = local_10 - 1;

@@ -481,7 +481,7 @@ address	status	detail
 006D63E0	disabled	all apply flags are 0
 006D70B0	disabled	all apply flags are 0
 006DE570	disabled	all apply flags are 0
-006E1EE0	applied	owner=applied(AnonReceiver_006E1EE0); receiver_type=unchanged
+006E1EE0	disabled	all apply flags are 0
 006E2C30	disabled	all apply flags are 0
 006E3A70	disabled	all apply flags are 0
 006E3A90	disabled	all apply flags are 0

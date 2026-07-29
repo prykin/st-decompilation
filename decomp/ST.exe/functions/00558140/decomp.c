@@ -24,7 +24,7 @@ void __thiscall VisibleClassTy::sub_00558140(VisibleClassTy *this)
   if (this->field_0050 != (ushort *)0x0) {
     FreeAndNull(&this->field_0050);
   }
-  ppvVar3 = (void **)&this->field_0054;
+  ppvVar3 = &this->field_0054;
   iVar1 = 8;
   do {
     if (*ppvVar3 != (void *)0x0) {

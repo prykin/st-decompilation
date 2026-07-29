@@ -1,5 +1,3 @@
-#include "../../pseudocode_runtime.h"
-
 
 undefined4 FUN_00496f00(int param_1)
 
@@ -12,13 +10,13 @@ undefined4 FUN_00496f00(int param_1)
 
   uVar2 = 0;
   uVar4 = 0;
-  uVar1 = g_dArray_007FB270->count;
+  uVar1 = g_array_007FB270->count;
   if (0 < (int)uVar1) {
     bVar5 = uVar1 != 0;
     while( true ) {
       if (bVar5) {
-        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(g_dArray_007FB270, uVar4) (runtime stride) */
-        pvVar3 = (void *)(g_dArray_007FB270->elementSize * uVar4 + (int)g_dArray_007FB270->data);
+        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(g_array_007FB270, uVar4) (runtime stride) */
+        pvVar3 = (void *)(g_array_007FB270->elementSize * uVar4 + (int)g_array_007FB270->data);
       }
       else {
         pvVar3 = (void *)0x0;

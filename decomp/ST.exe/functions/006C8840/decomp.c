@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 uint * FUN_006c8840(uint *param_1,uint *param_2,int *param_3)
 
@@ -6,7 +8,6 @@ uint * FUN_006c8840(uint *param_1,uint *param_2,int *param_3)
   byte *pbVar2;
   uint *puVar3;
   uint uVar4;
-  int iVar5;
   uint uVar6;
   uint *puVar7;
   char *pcVar8;
@@ -21,11 +22,7 @@ uint * FUN_006c8840(uint *param_1,uint *param_2,int *param_3)
   local_c = uVar4 + 0x18;
   puVar7 = param_1;
   puVar9 = param_2;
-  for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *puVar9 = *puVar7;
-    puVar7 = puVar7 + 1;
-    puVar9 = puVar9 + 1;
-  }
+  memmove(puVar9, puVar7, 0x18); /* compiler REP MOVS byte copy */
   param_2[5] = 0;
   *param_2 = *param_2 & 0xfffffff7;
   puVar7 = param_2 + 6;

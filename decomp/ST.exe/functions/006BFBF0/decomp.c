@@ -12,8 +12,8 @@ void FUN_006bfbf0(AnonShape_006BFBF0_13F73F95 *param_1)
   DWORD DVar6;
   int iVar7;
   uint uVar8;
-  undefined4 *puVar9;
-  undefined4 *puVar11;
+  byte *puVar9;
+  byte *puVar11;
   uint local_34 [4];
   undefined1 *local_24;
   undefined4 local_20;
@@ -29,14 +29,9 @@ void FUN_006bfbf0(AnonShape_006BFBF0_13F73F95 *param_1)
   iVar7 = 0;
   local_24 = &param_1->field_0x8a;
   *(undefined4 *)&param_1->field_0x18 = 0x7fffffff;
-  puVar9 = (undefined4 *)&param_1->field_0x4c;
-  puVar11 = (undefined4 *)local_24;
-  for (iVar7 = 0xc; iVar7 != 0; iVar7 = iVar7 + -1) {
-    *puVar11 = *puVar9;
-    puVar9 = puVar9 + 1;
-    puVar11 = puVar11 + 1;
-  }
-  *(undefined2 *)puVar11 = *(undefined2 *)puVar9;
+  puVar9 = (byte *)&param_1->field_0x4c;
+  puVar11 = (byte *)local_24;
+  memmove(puVar11, puVar9, 0x32); /* compiler REP MOVS byte copy */
   local_34[0] = 0x24;
   if (*(short *)local_24 == 2) {
     *(undefined2 *)local_24 = 1;

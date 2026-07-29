@@ -22,7 +22,7 @@ undefined4 __thiscall CGenerate::CreateMap(CGenerate *this)
   char *pcVar11;
   InternalExceptionFrame local_64;
   int local_20;
-  undefined4 local_1c;
+  int local_1c;
   undefined4 local_18;
   CGenerate *local_10;
   undefined4 local_c;
@@ -72,7 +72,7 @@ undefined4 __thiscall CGenerate::CreateMap(CGenerate *this)
   cMf32::RecGet(local_10->field_0234,0xc,"TEXTURE_DSCR",(int *)&local_8,1);
   thunk_FUN_00693710(*local_8);
   cMf32::RecMemFree(this_00->field_0234,(uint *)&local_8);
-  pcVar4 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&this_00->field_0x20,1,0,0);
+  pcVar4 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&this_00->field_0020,1,0,0);
   this_00->field_0018 = pcVar4;
   sub_0069FF90(this_00);
   pbVar5 = (byte *)Library::Ourlib::MFSTMAP::mfTMapCreate
@@ -103,7 +103,7 @@ undefined4 __thiscall CGenerate::CreateMap(CGenerate *this)
   thunk_FUN_006945c0(&this_00->field_0x1bef,&local_20);
   sub_0069FF90(this_00);
   thunk_FUN_00691690(&this_00->field_0x1c03,(cMf32 *)this_00->field_0239,(cMf32 *)0x0,0,
-                     (undefined *)this_00->field_024A);
+                     this_00->field_024A);
   sub_0069FF90(this_00);
   g_currentExceptionFrame = local_64.previous;
   return local_c;

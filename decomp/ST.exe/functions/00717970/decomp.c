@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
@@ -20,12 +22,11 @@ undefined4 __fastcall FUN_00717970(undefined4 *param_1)
   int iVar6;
   int iVar7;
   uint uVar8;
-  uint uVar9;
   int iVar10;
   char *pcVar11;
   int iVar12;
   int iVar13;
-  undefined4 *puVar14;
+  byte *puVar14;
   longlong lVar15;
   int local_5c;
   double local_44;
@@ -258,15 +259,8 @@ LAB_00717b22:
   *(int *)((int)param_1 + 0x48e) = param_1[8] + iVar5;
   uVar8 = (int)(iVar6 + (iVar6 >> 0x1f & 7U)) >> 3;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  puVar14 = *(undefined4 **)((int)param_1 + 0x46e);
-  for (uVar9 = uVar8 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
-    *puVar14 = 0;
-    puVar14 = puVar14 + 1;
-  }
-  for (uVar8 = uVar8 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
-    *(undefined1 *)puVar14 = 0;
-    puVar14 = (undefined4 *)((int)puVar14 + 1);
-  }
+  puVar14 = (byte *)(*(undefined4 **)((int)param_1 + 0x46e));
+  memset(puVar14, 0, uVar8); /* compiler bulk-zero initialization */
   *(undefined4 *)((int)param_1 + 0x46a) = 0;
   return 0;
 }

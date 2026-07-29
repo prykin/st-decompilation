@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSwitchEnumApplier] Switch target field_05AC uses
    /SubmarineTitans/Recovered/Enums/TLOBaseTy_field_05ACState. Cases:
@@ -32,11 +34,10 @@ TLOBaseTy::FUN_004c7cc0
   int local_EAX_1031;
   AnonPointee_TLOBaseTy_0607 *pAVar6;
   int *piVar7;
-  uint uVar8;
   uint uVar10;
   int iVar11;
-  undefined4 *puVar12;
-  undefined4 *puVar13;
+  byte *puVar12;
+  byte *puVar13;
 
   if ((int)param_3 < 0) {
     iVar5 = (param_3 ^ (int)param_3 >> 0x1f) - ((int)param_3 >> 0x1f);
@@ -50,23 +51,14 @@ TLOBaseTy::FUN_004c7cc0
 LAB_004c7d1c:
           if ((*piVar7 != param_1) || (piVar7[1] != param_2)) goto LAB_004c7d2b;
           bVar4 = true;
-          puVar13 = (undefined4 *)(iVar11 * 0x27 + (int)this->field_0607);
+          puVar13 = (byte *)(iVar11 * 0x27 + (int)this->field_0607);
           iVar2 = puVar13[2];
           if (iVar2 <= iVar5) {
             iVar5 = iVar5 - iVar2;
             if (iVar11 < iVar1 + -1) {
               uVar10 = ((iVar1 - iVar11) + -1) * 0x27;
-              puVar12 = (undefined4 *)((iVar11 + 1) * 0x27 + (int)this->field_0607);
-              for (uVar8 = uVar10 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
-                *puVar13 = *puVar12;
-                puVar12 = puVar12 + 1;
-                puVar13 = puVar13 + 1;
-              }
-              for (uVar10 = uVar10 & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
-                *(undefined1 *)puVar13 = *(undefined1 *)puVar12;
-                puVar12 = (undefined4 *)((int)puVar12 + 1);
-                puVar13 = (undefined4 *)((int)puVar13 + 1);
-              }
+              puVar12 = (byte *)((iVar11 + 1) * 0x27 + (int)this->field_0607);
+              memmove(puVar13, puVar12, uVar10); /* compiler REP MOVS byte copy */
             }
             this->field_03D4 = this->field_03D4 + -1;
             goto LAB_004c7d8c;
@@ -135,7 +127,7 @@ LAB_004c7d8c:
             *(uint *)(this->field_03D4 * 0x27 + 0xc + (int)this->field_0607) = param_5;
             *(undefined4 *)(this->field_03D4 * 0x27 + 0x10 + (int)this->field_0607) = param_6;
             *(int *)(this->field_03D4 * 0x27 + 0x14 + (int)this->field_0607) = param_7;
-            puVar13 = (undefined4 *)(this->field_03D4 * 0x27 + 0x18 + (int)this->field_0607);
+            puVar13 = (byte *)(this->field_03D4 * 0x27 + 0x18 + (int)this->field_0607);
             *puVar13 = 0;
             puVar13[1] = 0;
             puVar13[2] = 0;

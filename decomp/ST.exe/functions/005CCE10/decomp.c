@@ -64,7 +64,7 @@ void __thiscall SettMapMTy::SetListCtrls(SettMapMTy *this)
     local_1c = local_28;
   }
   if ((pSVar5->field_1E26 == CASE_5) || (pSVar5->field_1E26 == CASE_F)) {
-    local_c = (cMf32 *)pSVar5->field_1F3F;
+    local_c = pSVar5->field_1F3F;
   }
   else {
     local_c = pSVar5->field_1F43;

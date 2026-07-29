@@ -187,11 +187,7 @@ void __thiscall TradePanelTy::InitTradePanel(TradePanelTy *this)
     local_374 = 0x28;
     piVar20 = local_490 + 2;
     piVar11 = local_308;
-    for (iVar13 = 0x5f; iVar13 != 0; iVar13 = iVar13 + -1) {
-      *piVar11 = *piVar20;
-      piVar20 = piVar20 + 1;
-      piVar11 = piVar11 + 1;
-    }
+    memmove(piVar11, piVar20, 0x17c); /* compiler REP MOVS byte copy */
     local_308[3] = DAT_00806734;
     if (iVar8 != 0) {
       local_308[3] = this_00->field_0044;

@@ -124,12 +124,11 @@ int __thiscall SettMapTy::GetMessage(SettMapTy *this,STMessage *message)
           }
           else if (SVar4 == MESS_ID_CREATE) {
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-            uVar25 = *(undefined4 *)((message->arg0).u32 + 0x18);
-            this_00->field_1E27 = uVar25;
+            uVar18 = *(uint *)((message->arg0).u32 + 0x18);
+            this_00->field_1E27 = uVar18;
             /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable/callback call with explicit __thiscall receiver; expected named packed member, bit extract/compose, or unaligned load */
             (*(code *)this_00->field_0000->field_0010)
-                      (CONCAT31((int3)((uint)uVar25 >> 8),
-                                *(undefined1 *)((message->arg0).u32 + 0x14)));
+                      (CONCAT31((int3)(uVar18 >> 8),*(undefined1 *)((message->arg0).u32 + 0x14)));
           }
           else if (SVar4 == MESS_SHARED_0003) {
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -372,7 +371,8 @@ cf_common_join_005C8ECC:
             DAT_0080995c = 1;
             memset(&DAT_00809960, 0, 0x20); /* compiler bulk-zero initialization */
             StartSystemTy::SetObjectives
-                      (g_startSystem_0081176C,this_00->field_1F43,(char *)0x0,this_00->field_1C63);
+                      (g_startSystem_0081176C,(int)this_00->field_1F43,(char *)0x0,
+                       this_00->field_1C63);
           }
           else {
             this_00->field_1C5F = uVar18;
@@ -401,8 +401,8 @@ cf_common_join_005C8ECC:
               pcVar22 = pcVar22 + 1;
             }
             StartSystemTy::SetObjectives
-                      (g_startSystem_0081176C,this_00->field_1F43,(char *)((int)pvVar12 + 0x70),
-                       this_00->field_1C63);
+                      (g_startSystem_0081176C,(int)this_00->field_1F43,(char *)((int)pvVar12 + 0x70)
+                       ,this_00->field_1C63);
           }
           this_00->field_002D = 5;
           FUN_006e6080(this_00,2,this_00->field_2125[0],(undefined4 *)&this_00->field_0x1d);
@@ -415,7 +415,7 @@ cf_common_join_005C8ECC:
             wsprintfA((LPSTR)&local_64,"%08x",DAT_0080995c);
             this_00->field_1A82 = local_64;
             this_00->field_1A86 = local_60;
-            Library::MSVCRT::_strncpy(&this_00->field_0x1a8a,(char *)&DAT_0080c3c3,0x1d5);
+            Library::MSVCRT::_strncpy(&this_00->field_1A8A,(char *)&DAT_0080c3c3,0x1d5);
             this_00->field_1C5E = 0;
           }
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -1753,14 +1753,14 @@ LAB_005cab38:
   case 0x6589:
     if (DAT_00808a8f == '\0') break;
 LAB_005cadd5:
-    pbVar15 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_1F4F,0);
+    pbVar15 = (byte *)FUN_0070b3a0(this_00->field_1F4F,0);
     iVar11 = (local_10 + -0x10) / 2 + local_18;
     pAVar24 = (AnonShape_006B5B10_E0D06CF1 *)this_00->field_1E1E;
     iVar16 = (local_14 + -0x11) / 2 + local_1c;
     goto cf_common_exit_005CAE0F;
   case 0x658a:
     if (DAT_00808a94 != '\0') {
-      pbVar15 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_1F4F,0);
+      pbVar15 = (byte *)FUN_0070b3a0(this_00->field_1F4F,0);
       iVar11 = (local_10 + -0x10) / 2 + local_18;
       iVar16 = (local_14 + -0x11) / 2 + local_1c;
       pAVar24 = (AnonShape_006B5B10_E0D06CF1 *)this_00->field_1E1E;
@@ -1771,7 +1771,7 @@ LAB_005cadd5:
     cVar9 = DAT_00808aa9;
 LAB_005cad88:
     if (cVar9 != '\0') {
-      pbVar15 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_1F4F,0);
+      pbVar15 = (byte *)FUN_0070b3a0(this_00->field_1F4F,0);
       iVar11 = (local_10 + -0x10) / 2 + local_18;
       iVar16 = (local_14 + -0x11) / 2 + local_1c;
       pAVar24 = (AnonShape_006B5B10_E0D06CF1 *)this_00->field_1E1E;

@@ -815,7 +815,7 @@ LAB_00534654:
         } while (cVar2 != '\0');
         uVar11 = ~uVar11;
         pcVar18 = pcVar21 + -uVar11;
-        pcVar21 = &this_00->field_0x6c;
+        pcVar21 = &this_00->field_006C;
         for (uVar16 = uVar11 >> 2; uVar16 != 0; uVar16 = uVar16 - 1) {
           *(undefined4 *)pcVar21 = *(undefined4 *)pcVar18;
           pcVar18 = pcVar18 + 4;
@@ -838,7 +838,7 @@ LAB_00534654:
         } while (cVar2 != '\0');
         uVar11 = ~uVar11;
         iVar9 = -1;
-        pcVar18 = &this_00->field_0x6c;
+        pcVar18 = &this_00->field_006C;
         do {
           pcVar20 = pcVar18;
           if (iVar9 == 0) break;
@@ -871,7 +871,7 @@ LAB_00534654:
         } while (cVar2 != '\0');
         uVar11 = ~uVar11;
         iVar9 = -1;
-        pcVar18 = &this_00->field_0x6c;
+        pcVar18 = &this_00->field_006C;
         do {
           pcVar20 = pcVar18;
           if (iVar9 == 0) break;
@@ -892,7 +892,7 @@ LAB_00534654:
           pcVar18 = pcVar18 + 1;
           pcVar21 = pcVar21 + 1;
         }
-        FUN_006b8280(&this_00->field_0x6c,&this_00->field_0x6c);
+        FUN_006b8280(&this_00->field_006C,&this_00->field_006C);
         uVar11 = 0xffffffff;
         pcVar18 = PTR_DAT_0079ad00;
         do {
@@ -905,7 +905,7 @@ LAB_00534654:
         } while (cVar2 != '\0');
         uVar11 = ~uVar11;
         iVar9 = -1;
-        pcVar18 = &this_00->field_0x6c;
+        pcVar18 = &this_00->field_006C;
         do {
           pcVar20 = pcVar18;
           if (iVar9 == 0) break;
@@ -938,7 +938,7 @@ LAB_00534654:
         } while (cVar2 != '\0');
         uVar11 = ~uVar11;
         iVar9 = -1;
-        pcVar18 = &this_00->field_0x6c;
+        pcVar18 = &this_00->field_006C;
         do {
           pcVar20 = pcVar18;
           if (iVar9 == 0) break;
@@ -971,7 +971,7 @@ LAB_00534654:
         } while (cVar2 != '\0');
         uVar11 = ~uVar11;
         iVar9 = -1;
-        pcVar18 = &this_00->field_0x6c;
+        pcVar18 = &this_00->field_006C;
         do {
           pcVar20 = pcVar18;
           if (iVar9 == 0) break;
@@ -992,7 +992,7 @@ LAB_00534654:
           pcVar18 = pcVar18 + 1;
           pcVar21 = pcVar21 + 1;
         }
-        DeleteFileA(&this_00->field_0x6c);
+        DeleteFileA(&this_00->field_006C);
         uVar11 = 0xffffffff;
         pcVar18 = &DAT_00807680;
         do {
@@ -1005,7 +1005,7 @@ LAB_00534654:
         } while (cVar2 != '\0');
         uVar11 = ~uVar11;
         pcVar18 = pcVar21 + -uVar11;
-        pcVar21 = &this_00->field_0x6c;
+        pcVar21 = &this_00->field_006C;
         for (uVar16 = uVar11 >> 2; uVar16 != 0; uVar16 = uVar16 - 1) {
           *(undefined4 *)pcVar21 = *(undefined4 *)pcVar18;
           pcVar18 = pcVar18 + 4;
@@ -1028,7 +1028,7 @@ LAB_00534654:
         } while (cVar2 != '\0');
         uVar11 = ~uVar11;
         iVar9 = -1;
-        pcVar18 = &this_00->field_0x6c;
+        pcVar18 = &this_00->field_006C;
         do {
           pcVar20 = pcVar18;
           if (iVar9 == 0) break;
@@ -1061,7 +1061,7 @@ LAB_00534654:
         } while (cVar2 != '\0');
         uVar11 = ~uVar11;
         iVar9 = -1;
-        pcVar18 = &this_00->field_0x6c;
+        pcVar18 = &this_00->field_006C;
         do {
           pcVar20 = pcVar18;
           if (iVar9 == 0) break;
@@ -1082,7 +1082,7 @@ LAB_00534654:
           pcVar18 = pcVar18 + 1;
           pcVar21 = pcVar21 + 1;
         }
-        FUN_006b8280(&this_00->field_0x6c,&this_00->field_0x6c);
+        FUN_006b8280(&this_00->field_006C,&this_00->field_006C);
         uVar11 = 0xffffffff;
         pcVar18 = PTR_DAT_0079ad00;
         do {
@@ -1095,7 +1095,7 @@ LAB_00534654:
         } while (cVar2 != '\0');
         uVar11 = ~uVar11;
         iVar9 = -1;
-        pcVar18 = &this_00->field_0x6c;
+        pcVar18 = &this_00->field_006C;
         do {
           pcVar20 = pcVar18;
           if (iVar9 == 0) break;
@@ -1128,7 +1128,7 @@ LAB_00534654:
         } while (cVar2 != '\0');
         uVar11 = ~uVar11;
         iVar9 = -1;
-        pcVar18 = &this_00->field_0x6c;
+        pcVar18 = &this_00->field_006C;
         do {
           pcVar20 = pcVar18;
           if (iVar9 == 0) break;
@@ -1161,7 +1161,7 @@ LAB_00534654:
         } while (cVar2 != '\0');
         uVar11 = ~uVar11;
         iVar9 = -1;
-        pcVar18 = &this_00->field_0x6c;
+        pcVar18 = &this_00->field_006C;
         do {
           pcVar20 = pcVar18;
           if (iVar9 == 0) break;
@@ -1182,7 +1182,7 @@ LAB_00534654:
           pcVar18 = pcVar18 + 1;
           pcVar21 = pcVar21 + 1;
         }
-        DeleteFileA(&this_00->field_0x6c);
+        DeleteFileA(&this_00->field_006C);
         OVar3 = this_00->field_01A9;
         this_00->field_01A9 = this_00->field_01AA;
         this_00->field_01A4 = OVar3;
@@ -1785,10 +1785,10 @@ switchD_00534835_caseD_1:
       DAT_00807346 = (*(char *)&message->arg0 + '\x01') * '\x05';
       DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0xaa,0x6f,'\x01',
              (byte *)this_00->field_018C);
-      wsprintfA(&this_00->field_0x6c,"%d",(uint)(byte)DAT_00807346);
+      wsprintfA(&this_00->field_006C,"%d",(uint)(byte)DAT_00807346);
       ccFntTy::SetSurf(this_00->field_017C,this_00->field_0068,0,0xaa,0x6f,
                        *(int *)(this_00->field_018C + 2),*(int *)(this_00->field_018C + 4));
-      ccFntTy::WrTxt(this_00->field_017C,(uint *)&this_00->field_0x6c,-2,-1,0,-1,-1);
+      ccFntTy::WrTxt(this_00->field_017C,(uint *)&this_00->field_006C,-2,-1,0,-1,-1);
       if (g_popUp_008016D8 != (PopUpTy *)0x0) {
         PopUpTy::ChangeNumStr(g_popUp_008016D8);
         g_currentExceptionFrame = local_8c.previous;
@@ -1934,10 +1934,10 @@ LAB_00535ef1:
       DAT_00807347 = *(byte *)&message->arg0;
       DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0xaa,0x81,'\x01',
              (byte *)this_00->field_018C);
-      wsprintfA(&this_00->field_0x6c,"%d",DAT_00807347 + 1);
+      wsprintfA(&this_00->field_006C,"%d",DAT_00807347 + 1);
       ccFntTy::SetSurf(this_00->field_017C,this_00->field_0068,0,0xaa,0x81,
                        *(int *)(this_00->field_018C + 2),*(int *)(this_00->field_018C + 4));
-      ccFntTy::WrTxt(this_00->field_017C,(uint *)&this_00->field_0x6c,-2,-1,0,-1,-1);
+      ccFntTy::WrTxt(this_00->field_017C,(uint *)&this_00->field_006C,-2,-1,0,-1,-1);
       g_currentExceptionFrame = local_8c.previous;
       return 0;
     }

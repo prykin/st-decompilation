@@ -34,8 +34,8 @@ void __thiscall TradePanelTy::SetModeControls(TradePanelTy *this,char param_1)
     this_00 = local_8;
     if (errorCode == 0) {
       Library::DKW::WGR::FUN_006b55f0
-                ((AnonShape_006B5B10_E0D06CF1 *)local_8->field_0068,0,0xa6,0x31,
-                 (byte *)local_8->field_0185,0,0xa6,0x31,0x77,0x39);
+                ((AnonShape_006B5B10_E0D06CF1 *)local_8->field_0068,0,0xa6,0x31,local_8->field_0185,
+                 0,0xa6,0x31,0x77,0x39);
       if (this_00->field_01C8 != 0) {
         StartSystemTy::sub_006E56B0(this_00->field_000C,this_00->field_01C8);
       }

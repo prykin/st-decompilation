@@ -62,7 +62,7 @@ void __thiscall STManRuinC::sub_00631010(STManRuinC *this)
           if (((uVar4 == 0) && (this->field_0048 != 0)) && (this->field_0061 != 0)) {
             Library::Ourlib::ST3DSMAP::SprClose(g_sT3DSMAPContext_00807598,this->field_0061);
           }
-          this->field_0061 = -1;
+          this->field_0061 = 0xffffffff;
         }
       }
     }

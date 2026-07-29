@@ -92,7 +92,7 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
       dVar5 = local_14;
       DArrayGetElement(local_10,uVar11,&local_c);
       if ((ushort)local_c == 0xffff) {
-        FUN_006b0c70(local_10,uVar11);
+        DArrayRemoveAt(local_10,uVar11);
         uVar11 = uVar11 - 1;
         local_14 = dVar5 - 1;
       }
@@ -118,7 +118,7 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
         case 0x1b:
         case 0x24:
         case 0x25:
-          FUN_006b0c70(local_10,uVar11);
+          DArrayRemoveAt(local_10,uVar11);
           uVar11 = uVar11 - 1;
           local_14 = local_14 - 1;
           STBoatC::CmdToObj(pSVar4,CASE_3,&local_20);
@@ -126,7 +126,7 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
         default:
           if ((this_00->field_020A == 1) &&
              (dVar5 = pSVar4->slot_2C(), dVar5 != 0x17)) {
-            FUN_006b0c70(local_10,uVar11);
+            DArrayRemoveAt(local_10,uVar11);
             uVar11 = uVar11 - 1;
             local_14 = local_14 - 1;
             iVar3 = thunk_FUN_00490d90((STGameObjC *)pSVar4);

@@ -8,11 +8,11 @@
 void __thiscall AiTactClassTy::ClaimSave(AiTactClassTy *this)
 
 {
-  undefined4 *value;
+  void **value;
   code *pcVar1;
   AiTactClassTy *pAVar2;
   int errorCode;
-  undefined4 uVar3;
+  void *pvVar3;
   int iVar4;
   InternalExceptionFrame local_50;
   int local_c;
@@ -25,12 +25,12 @@ void __thiscall AiTactClassTy::ClaimSave(AiTactClassTy *this)
   pAVar2 = local_8;
   if (errorCode == 0) {
     value = &local_8->field_0130;
-    if (local_8->field_0130 != 0) {
-      FreeAndNull((void **)value);
+    if (local_8->field_0130 != (void *)0x0) {
+      FreeAndNull(value);
     }
     if (pAVar2->field_00BD != (AiTactClassTy_field_00BDDArray *)0x0) {
-      uVar3 = FUN_006b0020(&pAVar2->field_00BD->flags,&local_c);
-      *value = uVar3;
+      pvVar3 = (void *)FUN_006b0020(&pAVar2->field_00BD->flags,&local_c);
+      *value = pvVar3;
     }
     g_currentExceptionFrame = local_50.previous;
     return;

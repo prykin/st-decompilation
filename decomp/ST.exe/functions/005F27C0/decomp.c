@@ -25,9 +25,9 @@ int __thiscall STBHEShellC::GetMessage(STBHEShellC *this,STMessage *message)
   int iVar5;
   int iVar6;
   uint uVar7;
-  undefined4 *puVar8;
+  byte *puVar8;
   uint uVar9;
-  undefined4 *puVar10;
+  byte *puVar10;
   bool bVar11;
   code *pcVar12;
   InternalExceptionFrame local_6c;
@@ -109,15 +109,10 @@ int __thiscall STBHEShellC::GetMessage(STBHEShellC *this,STMessage *message)
       g_currentExceptionFrame = local_6c.previous;
       return 0;
     }
-    puVar8 = (message->arg0).ptr;
+    puVar8 = (byte *)((message->arg0).ptr);
     if (puVar8[3] != 2) {
-      puVar10 = (undefined4 *)&local_14->field_0x4d;
-      for (iVar5 = 0xe; iVar5 != 0; iVar5 = iVar5 + -1) {
-        *puVar10 = *puVar8;
-        puVar8 = puVar8 + 1;
-        puVar10 = puVar10 + 1;
-      }
-      *(undefined2 *)puVar10 = *(undefined2 *)puVar8;
+      puVar10 = (byte *)&local_14->field_0x4d;
+      memmove(puVar10, puVar8, 0x3a); /* compiler REP MOVS byte copy */
       iVar5 = local_14->field_006D;
       uVar9 = iVar5 - local_14->field_0061;
       if (((int)((uVar9 ^ (int)uVar9 >> 0x1f) - ((int)uVar9 >> 0x1f)) < 4) &&
@@ -246,17 +241,17 @@ LAB_005f3027:
     }
     break;
   case CASE_3:
-    if (local_14->field_008F < 0) {
+    if ((int)local_14->field_008F < 0) {
       local_14->field_0104 = CASE_5 - (local_14->field_0108 != '\0');
       goto switchD_005f29cb_default;
     }
-    if (0x10 < local_14->field_00AB) {
+    if (0x10 < (int)local_14->field_00AB) {
       if (local_14->field_00AB == 0x11) {
         ST3DSMAPContext::sub_006E9CB0(g_sT3DSMAPContext_00807598,(uint *)local_14->field_008F,2);
       }
       ST3DSMAPContext::sub_006EA270
                 (g_sT3DSMAPContext_00807598,this_00->field_008F,2,this_00->field_00C0);
-      if (this_00->field_00C0 < this_00->field_00BC) {
+      if ((int)this_00->field_00C0 < this_00->field_00BC) {
         this_00->field_00C0 = this_00->field_00C0 + 1;
       }
     }
@@ -278,7 +273,7 @@ LAB_005f2d8b:
       this_00->field_00AB = this_00->field_00AB + 1;
     }
     else if (uVar9 == this_00->field_00AF) {
-      if (-1 < this_00->field_008F) {
+      if (-1 < (int)this_00->field_008F) {
         ST3DSMAPContext::sub_006E9D40(g_sT3DSMAPContext_00807598,(uint *)this_00->field_008F,0);
       }
       goto LAB_005f2d8b;
@@ -289,7 +284,7 @@ LAB_005f2d8b:
                (float)this_00->field_0097 * _DAT_007904f8 * _DAT_007904f0,
                (float)(int)this_00->field_009B * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
     if (this_00->field_00C0 == this_00->field_00BC) {
-      if (-1 < this_00->field_008F) {
+      if (-1 < (int)this_00->field_008F) {
         Library::Ourlib::ST3DSMAP::SprHide(g_sT3DSMAPContext_00807598,this_00->field_008F);
       }
       this_00->field_0104 = CASE_4;

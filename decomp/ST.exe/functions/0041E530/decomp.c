@@ -211,10 +211,10 @@ int __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,STMessage *message)
       return 0;
     }
     sub_0041F970((STSprGameObjC *)this_00);
-    FreeAndNull((void **)&this_00->field_011D);
-    FreeAndNull((void **)&this_00->field_0121);
-    FreeAndNull((void **)&this_00->field_0125);
-    FreeAndNull((void **)&this_00->field_0129);
+    FreeAndNull(&this_00->field_011D);
+    FreeAndNull(&this_00->field_0121);
+    FreeAndNull(&this_00->field_0125);
+    FreeAndNull(&this_00->field_0129);
     uVar6 = this_00->field_0020;
     if (uVar6 != 0x14) {
       if (uVar6 == 0x1ae) {
@@ -296,52 +296,52 @@ int __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,STMessage *message)
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }
-    if ((DArrayTy *)this_00->field_0171 != (DArrayTy *)0x0) {
-      DArrayDestroy((DArrayTy *)this_00->field_0171);
+    if (this_00->field_0171 != (DArrayTy *)0x0) {
+      DArrayDestroy(this_00->field_0171);
     }
-    if ((DArrayTy *)this_00->field_0175 != (DArrayTy *)0x0) {
-      DArrayDestroy((DArrayTy *)this_00->field_0175);
+    if (this_00->field_0175 != (DArrayTy *)0x0) {
+      DArrayDestroy(this_00->field_0175);
     }
-    if ((DArrayTy *)this_00->field_0179 != (DArrayTy *)0x0) {
-      DArrayDestroy((DArrayTy *)this_00->field_0179);
+    if (this_00->field_0179 != (DArrayTy *)0x0) {
+      DArrayDestroy(this_00->field_0179);
     }
-    if ((DArrayTy *)this_00->field_017D != (DArrayTy *)0x0) {
-      DArrayDestroy((DArrayTy *)this_00->field_017D);
+    if (this_00->field_017D != (DArrayTy *)0x0) {
+      DArrayDestroy(this_00->field_017D);
     }
-    if ((DArrayTy *)this_00->field_0181 != (DArrayTy *)0x0) {
-      DArrayDestroy((DArrayTy *)this_00->field_0181);
+    if (this_00->field_0181 != (DArrayTy *)0x0) {
+      DArrayDestroy(this_00->field_0181);
     }
-    this_00->field_0171 = 0;
-    this_00->field_0175 = 0;
-    this_00->field_0179 = 0;
-    this_00->field_017D = 0;
-    this_00->field_0181 = 0;
-    if ((DArrayTy *)this_00->field_015D != (DArrayTy *)0x0) {
-      DArrayDestroy((DArrayTy *)this_00->field_015D);
+    this_00->field_0171 = (DArrayTy *)0x0;
+    this_00->field_0175 = (DArrayTy *)0x0;
+    this_00->field_0179 = (DArrayTy *)0x0;
+    this_00->field_017D = (DArrayTy *)0x0;
+    this_00->field_0181 = (DArrayTy *)0x0;
+    if (this_00->field_015D != (DArrayTy *)0x0) {
+      DArrayDestroy(this_00->field_015D);
     }
-    if ((DArrayTy *)this_00->field_0161 != (DArrayTy *)0x0) {
-      DArrayDestroy((DArrayTy *)this_00->field_0161);
+    if (this_00->field_0161 != (DArrayTy *)0x0) {
+      DArrayDestroy(this_00->field_0161);
     }
-    if ((DArrayTy *)this_00->field_0165 != (DArrayTy *)0x0) {
-      DArrayDestroy((DArrayTy *)this_00->field_0165);
+    if (this_00->field_0165 != (DArrayTy *)0x0) {
+      DArrayDestroy(this_00->field_0165);
     }
-    if ((DArrayTy *)this_00->field_0169 != (DArrayTy *)0x0) {
-      DArrayDestroy((DArrayTy *)this_00->field_0169);
+    if (this_00->field_0169 != (DArrayTy *)0x0) {
+      DArrayDestroy(this_00->field_0169);
     }
-    if ((DArrayTy *)this_00->field_016D != (DArrayTy *)0x0) {
-      DArrayDestroy((DArrayTy *)this_00->field_016D);
+    if (this_00->field_016D != (DArrayTy *)0x0) {
+      DArrayDestroy(this_00->field_016D);
     }
-    this_00->field_015D = 0;
-    this_00->field_0161 = 0;
-    this_00->field_0165 = 0;
-    this_00->field_0169 = 0;
-    this_00->field_016D = 0;
+    this_00->field_015D = (DArrayTy *)0x0;
+    this_00->field_0161 = (DArrayTy *)0x0;
+    this_00->field_0165 = (DArrayTy *)0x0;
+    this_00->field_0169 = (DArrayTy *)0x0;
+    this_00->field_016D = (DArrayTy *)0x0;
     FreeAndNull(&this_00->field_0195);
     FreeAndNull(&this_00->field_0199);
     FreeAndNull(&this_00->field_01AD);
     FreeAndNull(&this_00->field_01B1);
-    FreeAndNull((void **)&this_00->field_01BD);
-    FreeAndNull((void **)&this_00->field_01C1);
+    FreeAndNull(&this_00->field_01BD);
+    FreeAndNull(&this_00->field_01C1);
     g_currentExceptionFrame = local_54.previous;
     return 0;
   }

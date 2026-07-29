@@ -169,9 +169,9 @@ LAB_004b1a39:
         iVar8 = iVar8 + 1;
       } while (iVar8 < param_1 + 3);
     }
-    if (g_dArray_007FA150 != (DArrayTy *)0x0) {
-      g_dArray_007FA150->iteratorIndex = 0;
-      iVar8 = FUN_006b1190(g_dArray_007FA150,&local_10);
+    if (g_array_007FA150 != (DArrayTy *)0x0) {
+      g_array_007FA150->iteratorIndex = 0;
+      iVar8 = DArrayGetNext(g_array_007FA150,(byte *)&local_10);
       while (-1 < iVar8) {
         if (local_10 != (STFishC *)0x0) {
           STFishC::sub_004162B0
@@ -183,7 +183,7 @@ LAB_004b1a39:
             bVar1 = false;
           }
         }
-        iVar8 = FUN_006b1190(g_dArray_007FA150,&local_10);
+        iVar8 = DArrayGetNext(g_array_007FA150,(byte *)&local_10);
       }
     }
 LAB_004b1b6e:

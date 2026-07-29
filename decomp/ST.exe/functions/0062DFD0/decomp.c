@@ -34,7 +34,7 @@ uint __thiscall FUN_0062dfd0(void *this,int param_1,int param_2,int *param_3)
             *(int *)(iVar3 + 0xc) = *(int *)(iVar3 + 0xc) + -1;
           }
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          FUN_006b0c70(*(DArrayTy **)((int)this + param_1 * 4 + 0x70),local_8);
+          DArrayRemoveAt(*(DArrayTy **)((int)this + param_1 * 4 + 0x70),local_8);
           local_c = local_8;
         }
         local_8 = local_8 + 1;

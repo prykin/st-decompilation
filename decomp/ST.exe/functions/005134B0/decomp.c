@@ -34,7 +34,7 @@ void __thiscall HelpPanelTy::PutToSHlp(HelpPanelTy *this,int param_1)
       while (-1 < iVar4) {
         dVar1 = pHVar3->field_01CB->count;
         if ((int)(dVar1 - 1) <= iVar4) break;
-        FUN_006b0c70(pHVar3->field_01CB,dVar1 - 1);
+        DArrayRemoveAt(pHVar3->field_01CB,dVar1 - 1);
         iVar4 = pHVar3->field_01CF;
       }
       uVar6 = pHVar3->field_01CF + 1;

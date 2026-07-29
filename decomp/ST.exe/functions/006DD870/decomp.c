@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 006DD790 -> 006DD870 @ 006DD7E3; ST3DSMAPContext::sub_006DD790 this; stable alias ESI |
@@ -17,8 +19,8 @@ void __thiscall ST3DSMAPContext::sub_006DD870(ST3DSMAPContext *this)
   int iVar3;
   int iVar4;
   uint uVar5;
-  undefined4 *puVar6;
-  undefined4 *puVar7;
+  byte *puVar6;
+  byte *puVar7;
   longlong lVar8;
   int local_14;
   int local_10;
@@ -44,15 +46,11 @@ void __thiscall ST3DSMAPContext::sub_006DD870(ST3DSMAPContext *this)
       iVar4 = 0;
       iVar2 = iVar1;
       do {
-        puVar7 = (undefined4 *)(*(int *)&this->field_0x158 + iVar4);
+        puVar7 = (byte *)(*(int *)&this->field_0x158 + iVar4);
         iVar4 = iVar4 + 0x100;
         iVar2 = iVar2 + -1;
-        puVar6 = *(undefined4 **)&this->field_0x154;
-        for (iVar3 = 0x40; iVar3 != 0; iVar3 = iVar3 + -1) {
-          *puVar7 = *puVar6;
-          puVar6 = puVar6 + 1;
-          puVar7 = puVar7 + 1;
-        }
+        puVar6 = (byte *)(*(undefined4 **)&this->field_0x154);
+        memmove(puVar7, puVar6, 0x100); /* compiler REP MOVS byte copy */
         local_c = iVar1;
       } while (iVar2 != 0);
     }
@@ -65,14 +63,10 @@ void __thiscall ST3DSMAPContext::sub_006DD870(ST3DSMAPContext *this)
       iVar3 = iVar4 / 2;
       local_14 = iVar4;
       do {
-        puVar7 = (undefined4 *)(*(int *)&this->field_0x158 + local_10);
+        puVar7 = (byte *)(*(int *)&this->field_0x158 + local_10);
         local_10 = local_10 + 0x100;
-        puVar6 = (undefined4 *)((iVar3 / iVar4 + 1) * 0x100 + *(int *)&this->field_0x154);
-        for (iVar2 = 0x40; iVar2 != 0; iVar2 = iVar2 + -1) {
-          *puVar7 = *puVar6;
-          puVar6 = puVar6 + 1;
-          puVar7 = puVar7 + 1;
-        }
+        puVar6 = (byte *)((iVar3 / iVar4 + 1) * 0x100 + *(int *)&this->field_0x154);
+        memmove(puVar7, puVar6, 0x100); /* compiler REP MOVS byte copy */
         iVar3 = iVar3 + iVar1;
         local_14 = local_14 + -1;
         iVar2 = iVar4;
@@ -81,14 +75,10 @@ void __thiscall ST3DSMAPContext::sub_006DD870(ST3DSMAPContext *this)
     if (local_c + iVar2 < 0xc0) {
       iVar1 = (local_c + iVar2) * 0x100;
       do {
-        puVar7 = (undefined4 *)(*(int *)&this->field_0x158 + iVar1);
+        puVar7 = (byte *)(*(int *)&this->field_0x158 + iVar1);
         iVar1 = iVar1 + 0x100;
-        puVar6 = (undefined4 *)(*(int *)&this->field_0x148 * 0x100 + *(int *)&this->field_0x154);
-        for (iVar2 = 0x40; iVar2 != 0; iVar2 = iVar2 + -1) {
-          *puVar7 = *puVar6;
-          puVar6 = puVar6 + 1;
-          puVar7 = puVar7 + 1;
-        }
+        puVar6 = (byte *)(*(int *)&this->field_0x148 * 0x100 + *(int *)&this->field_0x154);
+        memmove(puVar7, puVar6, 0x100); /* compiler REP MOVS byte copy */
       } while (iVar1 < 0xc000);
     }
     lVar8 = Library::MSVCRT::__ftol();

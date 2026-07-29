@@ -6,8 +6,8 @@ undefined4 * FUN_007530f0(undefined4 *param_1,LPCSTR param_2,DWORD param_3,undef
 {
   undefined4 *puVar1;
   int iVar2;
-  undefined4 *puVar3;
-  undefined4 *puVar4;
+  byte *puVar3;
+  byte *puVar4;
 
   if (param_3 < 0x28) {
     param_3 = 0x28;
@@ -16,7 +16,7 @@ undefined4 * FUN_007530f0(undefined4 *param_1,LPCSTR param_2,DWORD param_3,undef
   if (puVar1 == (undefined4 *)0x0) {
     return (undefined4 *)0x0;
   }
-  puVar3 = (undefined4 *)puVar1[0xd];
+  puVar3 = (byte *)puVar1[0xd];
   memset(puVar3, 0, 0x28); /* compiler bulk-zero initialization */
   iVar2 = 0;
   *puVar3 = 0x4d464b44;
@@ -24,12 +24,8 @@ undefined4 * FUN_007530f0(undefined4 *param_1,LPCSTR param_2,DWORD param_3,undef
   puVar3[3] = 0x20;
   puVar3[2] = 0x28;
   *(undefined4 *)(puVar1[0xd] + 0x20) = 0x3fffffe0;
-  puVar4 = puVar1 + 4;
-  for (iVar2 = 8; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *puVar4 = *puVar3;
-    puVar3 = puVar3 + 1;
-    puVar4 = puVar4 + 1;
-  }
+  puVar4 = (byte *)(puVar1 + 4);
+  memmove(puVar4, puVar3, 0x20); /* compiler REP MOVS byte copy */
   return puVar1;
 }
 

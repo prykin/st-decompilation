@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeRepairApplier] Propagated return.
    Evidence: 005F66F0 returns used as parameter 2 of STPlaySystemC::SaveObjData @ 005F62C9
@@ -19,10 +21,10 @@ byte * __thiscall STColl3C::sub_005F66F0(STColl3C *this,uint *param_1)
   uint uVar7;
   uint uVar8;
   uint *puVar9;
-  undefined4 *puVar10;
+  byte *puVar10;
   uint *puVar11;
   byte *pbVar12;
-  undefined4 *puVar13;
+  byte *puVar13;
   uint *local_1c;
   byte *local_18;
   STAllPlayersC *local_14;
@@ -34,18 +36,13 @@ byte * __thiscall STColl3C::sub_005F66F0(STColl3C *this,uint *param_1)
   puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0xc2);
   pSVar2 = local_14;
   if (this == (STColl3C *)0x0) {
-    puVar10 = (undefined4 *)0x0;
+    puVar10 = (byte *)0x0;
   }
   else {
-    puVar10 = (undefined4 *)&this->field_0x231;
+    puVar10 = (byte *)&this->field_0x231;
   }
-  puVar13 = puVar3;
-  for (iVar6 = 0x30; iVar6 != 0; iVar6 = iVar6 + -1) {
-    *puVar13 = *puVar10;
-    puVar10 = puVar10 + 1;
-    puVar13 = puVar13 + 1;
-  }
-  *(undefined2 *)puVar13 = *(undefined2 *)puVar10;
+  puVar13 = (byte *)(puVar3);
+  memmove(puVar13, puVar10, 0xc2); /* compiler REP MOVS byte copy */
   puVar3[3] = 2;
   local_18 = (byte *)STT3DSprC::SaveSpr((STT3DSprC *)&local_14->field_0x1d5,&local_c);
   local_1c = STAllPlayersC::SaveGObjData(pSVar2,(int *)&local_10);

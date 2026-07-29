@@ -26,9 +26,9 @@ int __thiscall STSatC::GetMessage(STSatC *this,STMessage *message)
   uint uVar11;
   short sVar12;
   AnonShape_0058C760_4470B7C6 *pAVar13;
-  undefined4 *puVar14;
+  byte *puVar14;
   byte *pbVar15;
-  undefined4 *puVar16;
+  byte *puVar16;
   AnonShape_0058C760_5C56630E *pAVar17;
   byte *pbVar18;
   InternalExceptionFrame local_80;
@@ -75,11 +75,11 @@ int __thiscall STSatC::GetMessage(STSatC *this,STMessage *message)
                 Library::DKW::LIB::FUN_006aac70(local_10 + 0x7c + local_8);
       if (((local_18 != (byte *)0x0) && (local_14 != (byte *)0x0)) &&
          (local_c != (AnonShape_0058C760_5C56630E *)0x0)) {
-        puVar14 = (undefined4 *)&this_00->field_0x275;
+        puVar14 = (byte *)&this_00->field_0x275;
         pAVar17 = local_c;
         for (iVar9 = 9; iVar9 != 0; iVar9 = iVar9 + -1) {
           *(undefined4 *)pAVar17 = *puVar14;
-          puVar14 = puVar14 + 1;
+          puVar14 = (byte *)(puVar14 + 1);
           pAVar17 = (AnonShape_0058C760_5C56630E *)&pAVar17->field_0x4;
         }
         *(undefined2 *)pAVar17 = *(undefined2 *)puVar14;
@@ -142,7 +142,7 @@ int __thiscall STSatC::GetMessage(STSatC *this,STMessage *message)
           pbVar18 = pbVar18 + 1;
         }
         STPlaySystemC::SaveObjData
-                  (g_playSystem_00802A38,this_00->field_0018,(byte *)local_c,
+                  (g_playSystem_00802A38,(int *)this_00->field_0018,(byte *)local_c,
                    (AnonShape_0060EA30_DCEB68AD *)(local_10 + 0x7c + local_8));
         FreeAndNull(&local_18);
         FreeAndNull(&local_14);
@@ -163,15 +163,10 @@ int __thiscall STSatC::GetMessage(STSatC *this,STMessage *message)
         uVar11 = *(uint *)(dVar2 + 0xc);
         if (uVar11 < 2) {
           *(undefined4 *)&this_00->field_0x239 = 0;
-          puVar14 = (message->arg0).ptr;
-          puVar16 = (undefined4 *)&this_00->field_0x275;
-          for (iVar9 = 9; iVar9 != 0; iVar9 = iVar9 + -1) {
-            *puVar16 = *puVar14;
-            puVar14 = puVar14 + 1;
-            puVar16 = puVar16 + 1;
-          }
-          *(undefined2 *)puVar16 = *(undefined2 *)puVar14;
-          puVar14 = &this_00->field_01D5;
+          puVar14 = (byte *)((message->arg0).ptr);
+          puVar16 = (byte *)&this_00->field_0x275;
+          memmove(puVar16, puVar14, 0x26); /* compiler REP MOVS byte copy */
+          puVar14 = (byte *)(&this_00->field_01D5);
           iVar9 = STT3DSprC::LoadSequence((STT3DSprC *)puVar14,0xe,DAT_00806774,&DAT_007cbaa8,0x1d);
           if (iVar9 != 0) {
             RaiseInternalException
@@ -208,11 +203,11 @@ int __thiscall STSatC::GetMessage(STSatC *this,STMessage *message)
         else if (uVar11 == 2) {
           local_20 = (message->arg0).ptr;
           pAVar13 = local_20;
-          puVar14 = (undefined4 *)&this_00->field_0x275;
+          puVar14 = (byte *)&this_00->field_0x275;
           for (iVar9 = 9; iVar9 != 0; iVar9 = iVar9 + -1) {
             *puVar14 = *(undefined4 *)pAVar13;
             pAVar13 = (AnonShape_0058C760_4470B7C6 *)&pAVar13->field_0x4;
-            puVar14 = puVar14 + 1;
+            puVar14 = (byte *)(puVar14 + 1);
           }
           *(undefined2 *)puVar14 = *(undefined2 *)pAVar13;
           local_8 = *(uint *)&local_20[1].field_0x4;

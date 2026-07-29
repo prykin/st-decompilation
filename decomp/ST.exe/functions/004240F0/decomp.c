@@ -13,8 +13,8 @@ int __thiscall STGroupC::SaveGrpData(STGroupC *this,int *param_1)
   int iVar3;
   uint uVar4;
   STGroupC *pSVar5;
-  undefined4 *puVar6;
-  undefined4 *puVar7;
+  byte *puVar6;
+  byte *puVar7;
   InternalExceptionFrame local_5c;
   int local_18;
   int local_14;
@@ -57,17 +57,17 @@ int __thiscall STGroupC::SaveGrpData(STGroupC *this,int *param_1)
     }
     else {
       local_c = (undefined4 *)FUN_006b0020(pSVar5->field_0029,(int *)&local_8);
-      puVar6 = local_c;
-      puVar7 = (undefined4 *)(iVar2 + 0x40);
+      puVar6 = (byte *)(local_c);
+      puVar7 = (byte *)(iVar2 + 0x40);
       for (uVar4 = local_8 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
         *puVar7 = *puVar6;
-        puVar6 = puVar6 + 1;
-        puVar7 = puVar7 + 1;
+        puVar6 = (byte *)(puVar6 + 1);
+        puVar7 = (byte *)(puVar7 + 1);
       }
       for (uVar4 = local_8 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
         *(undefined1 *)puVar7 = *(undefined1 *)puVar6;
-        puVar6 = (undefined4 *)((int)puVar6 + 1);
-        puVar7 = (undefined4 *)((int)puVar7 + 1);
+        puVar6 = (byte *)((int)puVar6 + 1);
+        puVar7 = (byte *)((int)puVar7 + 1);
       }
       *(undefined4 *)(iVar2 + 0x1c) = 0x40;
       *(uint *)(iVar2 + 0x20) = local_8;
@@ -82,18 +82,9 @@ int __thiscall STGroupC::SaveGrpData(STGroupC *this,int *param_1)
     else {
       local_14 = iVar3;
       local_c = (undefined4 *)FUN_006b0020(pSVar5->field_002D,(int *)&local_8);
-      puVar6 = local_c;
-      puVar7 = (undefined4 *)(iVar3 + iVar2);
-      for (uVar4 = local_8 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
-        *puVar7 = *puVar6;
-        puVar6 = puVar6 + 1;
-        puVar7 = puVar7 + 1;
-      }
-      for (uVar4 = local_8 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
-        *(undefined1 *)puVar7 = *(undefined1 *)puVar6;
-        puVar6 = (undefined4 *)((int)puVar6 + 1);
-        puVar7 = (undefined4 *)((int)puVar7 + 1);
-      }
+      puVar6 = (byte *)(local_c);
+      puVar7 = (byte *)(iVar3 + iVar2);
+      memmove(puVar7, puVar6, local_8); /* compiler REP MOVS byte copy */
       *(int *)(iVar2 + 0x24) = local_14;
       *(uint *)(iVar2 + 0x28) = local_8;
       FreeAndNull(&local_c);

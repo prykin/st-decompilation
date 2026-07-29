@@ -7,11 +7,11 @@
 void __thiscall STExplosion::sub_00604120(STExplosion *this)
 
 {
-  if ((DArrayTy *)this->field_0215 != (DArrayTy *)0x0) {
-    DArrayDestroy((DArrayTy *)this->field_0215);
+  if (this->field_0215 != (DArrayTy *)0x0) {
+    DArrayDestroy(this->field_0215);
   }
-  if (this->field_02B3 != 0) {
-    FreeAndNull((void **)&this->field_02B3);
+  if (this->field_02B3 != (void *)0x0) {
+    FreeAndNull(&this->field_02B3);
   }
   return;
 }

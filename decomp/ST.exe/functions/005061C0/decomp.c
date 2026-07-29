@@ -329,7 +329,7 @@ switchD_00506214_caseD_2:
       } while (cVar13 != '\0');
       uVar5 = ~uVar5;
       pcVar8 = pcVar15 + -uVar5;
-      pcVar15 = &this_00->field_0x1e1;
+      pcVar15 = &this_00->field_01E1;
       for (uVar12 = uVar5 >> 2; uVar12 != 0; uVar12 = uVar12 - 1) {
         *(undefined4 *)pcVar15 = *(undefined4 *)pcVar8;
         pcVar8 = pcVar8 + 4;
@@ -340,7 +340,7 @@ switchD_00506214_caseD_2:
         pcVar8 = pcVar8 + 1;
         pcVar15 = pcVar15 + 1;
       }
-      for (puVar9 = Library::MSVCRT::FUN_0072e560((uint *)&this_00->field_0x1e1,'\n');
+      for (puVar9 = Library::MSVCRT::FUN_0072e560((uint *)&this_00->field_01E1,'\n');
           puVar9 != (uint *)0x0; puVar9 = Library::MSVCRT::FUN_0072e560(puVar9,'\n')) {
         *(undefined1 *)puVar9 = 0x20;
       }
@@ -370,9 +370,9 @@ LAB_005070be:
     pbVar6 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02BA,uVar5);
     DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,GVar14 + 6,0x5d,'\x01',pbVar6);
     if (this_00->field_0C26 != 0) {
-      wsprintfA(&this_00->field_0x1e1,"%d",(uint)(byte)this_00->field_0C26);
+      wsprintfA(&this_00->field_01E1,"%d",(uint)(byte)this_00->field_0C26);
       ccFntTy::SetSurf(this_00->field_01C8,this_00->field_0194,0,GVar14 + 6,0x5d,0x30,0x21);
-      ccFntTy::WrStr(this_00->field_01C8,(uint *)&this_00->field_0x1e1,-2,-1,0);
+      ccFntTy::WrStr(this_00->field_01C8,(uint *)&this_00->field_01E1,-2,-1,0);
     }
     FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,0,GVar14 + 0x36,0x5d,7,0x21,0);
     GVar14 = local_8;
@@ -413,7 +413,7 @@ LAB_005070be:
     } while (cVar13 != '\0');
     uVar5 = ~uVar5;
     pcVar8 = pcVar15 + -uVar5;
-    pcVar15 = &this_00->field_0x1e1;
+    pcVar15 = &this_00->field_01E1;
     for (uVar12 = uVar5 >> 2; uVar12 != 0; uVar12 = uVar12 - 1) {
       *(undefined4 *)pcVar15 = *(undefined4 *)pcVar8;
       pcVar8 = pcVar8 + 4;
@@ -424,7 +424,7 @@ LAB_005070be:
       pcVar8 = pcVar8 + 1;
       pcVar15 = pcVar15 + 1;
     }
-    for (puVar9 = Library::MSVCRT::FUN_0072e560((uint *)&this_00->field_0x1e1,'\n');
+    for (puVar9 = Library::MSVCRT::FUN_0072e560((uint *)&this_00->field_01E1,'\n');
         puVar9 != (uint *)0x0; puVar9 = Library::MSVCRT::FUN_0072e560(puVar9,'\n')) {
       *(undefined1 *)puVar9 = 0x20;
     }
@@ -737,12 +737,12 @@ LAB_005070be:
       iVar11 = -2;
       puVar9 = (uint *)LoadResourceString(0x36bc,g_module_00807618);
       ccFntTy::WrTxt(this_00->field_01B8,puVar9,iVar11,iVar18,uVar5,iVar19,iVar20);
-      wsprintfA(&this_00->field_0x1e1,"%4d",this_00->field_0C3D);
+      wsprintfA(&this_00->field_01E1,"%4d",this_00->field_0C3D);
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       ccFntTy::SetSurf(this_00->field_01BC,this_00->field_0194,0,iVar4,0x71,
                        *(int *)(this_00->field_09D9[5] + 4),
                        *(int *)(this_00->field_09D9[5] + 8) + -0x21);
-      ccFntTy::WrStr(this_00->field_01BC,(uint *)&this_00->field_0x1e1,-1,-1,0);
+      ccFntTy::WrStr(this_00->field_01BC,(uint *)&this_00->field_01E1,-1,-1,0);
       break;
     case CASE_3:
       ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,iVar4,0x50,
@@ -813,7 +813,7 @@ LAB_00507784:
     } while (cVar13 != '\0');
     uVar5 = ~uVar5;
     pcVar8 = pcVar15 + -uVar5;
-    pcVar15 = &this_00->field_0x1e1;
+    pcVar15 = &this_00->field_01E1;
     for (uVar12 = uVar5 >> 2; uVar12 != 0; uVar12 = uVar12 - 1) {
       *(undefined4 *)pcVar15 = *(undefined4 *)pcVar8;
       pcVar8 = pcVar8 + 4;
@@ -824,12 +824,12 @@ LAB_00507784:
       pcVar8 = pcVar8 + 1;
       pcVar15 = pcVar15 + 1;
     }
-    for (puVar9 = Library::MSVCRT::FUN_0072e560((uint *)&this_00->field_0x1e1,'\n');
+    for (puVar9 = Library::MSVCRT::FUN_0072e560((uint *)&this_00->field_01E1,'\n');
         puVar9 != (uint *)0x0; puVar9 = Library::MSVCRT::FUN_0072e560(puVar9,'\n')) {
       *(undefined1 *)puVar9 = 0x20;
     }
 cf_common_exit_00507034:
-    ccFntTy::WrTxt(this_00->field_01B8,(uint *)&this_00->field_0x1e1,-2,-1,0,-1,-1);
+    ccFntTy::WrTxt(this_00->field_01B8,(uint *)&this_00->field_01E1,-2,-1,0,-1,-1);
     iVar4 = local_8 + 0x41;
     PaintDamageXY(this_00,this_00->field_0194,iVar4,0x5d,this_00->field_0C24,0x2714);
     PaintCostsXY(this_00,this_00->field_0194,iVar4,0x68,this_00->field_0C1C,this_00->field_0C20,4,2);

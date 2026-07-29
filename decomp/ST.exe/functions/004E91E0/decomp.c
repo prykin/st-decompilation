@@ -112,7 +112,7 @@ undefined4 __thiscall FUN_004e91e0(void *this,STBoatC *param_1)
 LAB_004e946f:
     if (((-1 < *(int *)((int)this + 0x4e4)) && (-1 < *(int *)((int)this + 0x4e8))) &&
        (-1 < *(int *)((int)this + 0x4ec))) {
-      *(uint *)((int)this + 0x4d8) = param_1->field_0018;
+      *(int *)((int)this + 0x4d8) = param_1->field_0018;
       dVar8 = param_1->slot_2C();
       *(dword *)((int)this + 0x4dc) = dVar8;
       if (DAT_00800bcc == (void *)0x0) {

@@ -174,16 +174,7 @@ PlrDataPack(AnonShape_0067D3B0_B421D52F *param_1,undefined4 *param_2,int param_3
         if ((puVar17 != (uint *)0x0) && ((byte)puVar17[6] == 0)) {
           uVar19 = puVar13[3];
           puVar22 = puVar15;
-          for (uVar10 = uVar19 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
-            *puVar22 = *puVar17;
-            puVar17 = puVar17 + 1;
-            puVar22 = puVar22 + 1;
-          }
-          for (uVar19 = uVar19 & 3; uVar19 != 0; uVar19 = uVar19 - 1) {
-            *(byte *)puVar22 = (byte)*puVar17;
-            puVar17 = (uint *)((int)puVar17 + 1);
-            puVar22 = (uint *)((int)puVar22 + 1);
-          }
+          memmove(puVar22, puVar17, uVar19); /* compiler REP MOVS byte copy */
           pbVar11 = (byte *)((int)puVar15 + (-0x12a - (int)pbVar8));
           puVar15 = (uint *)((int)puVar15 + puVar13[3]);
           puVar13[2] = pbVar11;

@@ -19,7 +19,7 @@ int __thiscall IntercomPanelTy::GetMessage(IntercomPanelTy *this,STMessage *mess
   code *pcVar5;
   IntercomPanelTy *this_00;
   int iVar6;
-  undefined4 *puVar7;
+  byte *puVar7;
   int iVar8;
   uint uVar9;
   AnonShape_00710790_4CBB90D4 **ppAVar10;
@@ -164,15 +164,8 @@ int __thiscall IntercomPanelTy::GetMessage(IntercomPanelTy *this,STMessage *mess
       local_8 = ((uint)puVar4[7] * *(int *)(puVar4 + 2) + 0x1f >> 3 & 0x1ffffffc) *
                 *(int *)(puVar4 + 4);
     }
-    puVar7 = (undefined4 *)FUN_006b4fa0((int *)puVar4);
-    for (uVar9 = local_8 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
-      *puVar7 = 0;
-      puVar7 = puVar7 + 1;
-    }
-    for (uVar9 = local_8 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {
-      *(undefined1 *)puVar7 = 0;
-      puVar7 = (undefined4 *)((int)puVar7 + 1);
-    }
+    puVar7 = (byte *)FUN_006b4fa0((int *)puVar4);
+    memset(puVar7, 0, local_8); /* compiler bulk-zero initialization */
     ccFntTy::SetSurf(this_00->field_0180,(int)this_00->field_019C,0,0,0,0,0);
     ccFntTy::WrStr(this_00->field_0180,*(uint **)(message->arg0).ptr,0,-1,0);
     uVar1 = (message->arg1).words.low;

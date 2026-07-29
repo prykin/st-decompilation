@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeRepairApplier] Propagated parameter 2.
    Evidence: 005A3AB0 -> 005A39A0 @ 005A3D10 | 005A3AB0 -> 005A39A0 @ 005A3D30 | 005A3AB0 ->
@@ -30,7 +32,6 @@ FSGSTy::sub_005A39A0
   undefined4 uVar4;
   int iVar5;
   uint uVar6;
-  uint uVar7;
   uint *puVar8;
   byte *pbVar9;
   char *pcVar10;
@@ -67,16 +68,7 @@ FSGSTy::sub_005A39A0
   uVar6 = ~uVar6;
   puVar8 = (uint *)(pcVar11 + -uVar6);
   puVar12 = local_10;
-  for (uVar7 = uVar6 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-    *puVar12 = *puVar8;
-    puVar8 = puVar8 + 1;
-    puVar12 = puVar12 + 1;
-  }
-  for (uVar6 = uVar6 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
-    *(char *)puVar12 = (char)*puVar8;
-    puVar8 = (uint *)((int)puVar8 + 1);
-    puVar12 = (uint *)((int)puVar12 + 1);
-  }
+  memmove(puVar12, puVar8, uVar6); /* compiler REP MOVS byte copy */
 LAB_005a3a15:
   FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this->field_1AC0,0,param_5,param_6,param_7,param_8,
                0xff);

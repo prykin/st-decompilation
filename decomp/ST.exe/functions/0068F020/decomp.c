@@ -104,9 +104,9 @@ void __thiscall AiTactClassTy::GiveObjByClaim(AiTactClassTy *this,uint *param_1)
                 if (iVar5 == 0x78) {
                   objPtr->field_0269 = (uint)uVar1;
                 }
-                FUN_006b0c70((DArrayTy *)param_1,local_c);
+                DArrayRemoveAt((DArrayTy *)param_1,local_c);
               }
-              FUN_006b0c70((DArrayTy *)local_8->field_00BD,uVar10);
+              DArrayRemoveAt((DArrayTy *)local_8->field_00BD,uVar10);
               this_00 = local_8;
             }
           }
@@ -136,9 +136,9 @@ void __thiscall AiTactClassTy::GiveObjByClaim(AiTactClassTy *this,uint *param_1)
                   }
                 }
                 AiFltClassTy::_AddObjFlt(this_01,(uint)objPtr,0);
-                FUN_006b0c70((DArrayTy *)param_1,local_c);
+                DArrayRemoveAt((DArrayTy *)param_1,local_c);
               }
-              FUN_006b0c70((DArrayTy *)this_00->field_00BD,uVar10);
+              DArrayRemoveAt((DArrayTy *)this_00->field_00BD,uVar10);
             }
           }
         }

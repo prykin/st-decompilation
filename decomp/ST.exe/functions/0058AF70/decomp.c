@@ -29,14 +29,14 @@ STOctopusC::sub_0058AF70(STOctopusC *this,short param_1,short param_2,short para
   this->field_023D = iVar2;
   if ((uVar1 == 0xf8) || (uVar1 == 0xf9)) {
     iVar2 = this->field_0239;
-    this->field_0251 = (int)(this->field_0269 << 8) / iVar2;
-    this->field_0255 = (int)(this->field_026D << 8) / iVar2;
+    this->field_0251 = (this->field_0269 << 8) / iVar2;
+    this->field_0255 = (this->field_026D << 8) / iVar2;
     iVar3 = this->field_0271 << 8;
   }
   else {
     iVar2 = this->field_0239;
-    this->field_0251 = (int)(this->field_0269 << 9) / iVar2;
-    this->field_0255 = (int)(this->field_026D << 9) / iVar2;
+    this->field_0251 = (this->field_0269 << 9) / iVar2;
+    this->field_0255 = (this->field_026D << 9) / iVar2;
     iVar3 = this->field_0271 << 9;
   }
   this->field_0275 = (int)this->field_0041;

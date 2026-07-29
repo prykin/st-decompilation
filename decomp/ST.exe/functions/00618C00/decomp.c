@@ -18,8 +18,8 @@ int __thiscall STJumpMineC::GetMessage(STJumpMineC *this,STMessage *message)
   int iVar3;
   uint uVar4;
   int iVar5;
-  undefined4 *puVar6;
-  undefined4 *puVar7;
+  byte *puVar6;
+  byte *puVar7;
   InternalExceptionFrame local_58;
   void *local_14;
   byte *local_10;
@@ -70,12 +70,12 @@ int __thiscall STJumpMineC::GetMessage(STJumpMineC *this,STMessage *message)
       }
     }
     else if (SVar1 == MESS_ID_CREATE) {
-      puVar6 = (message->arg0).ptr;
+      puVar6 = (byte *)((message->arg0).ptr);
       if (puVar6[3] == 2) {
         thunk_FUN_006193a0(local_8,puVar6);
-        puVar6 = (undefined4 *)&this_00->field_0x20;
+        puVar6 = (byte *)&this_00->field_0x20;
         memset(puVar6, 0, 0x2d); /* compiler bulk-zero initialization */
-        puVar6 = (undefined4 *)((byte *)puVar6 + 0x2c);
+        puVar6 = (byte *)((byte *)puVar6 + 0x2c);
         iVar3 = 0;
         this_00->field_001C = this_00->field_014C;
         if ((this_00->field_0150 != '\0') && (this_00->field_0093 != CASE_5)) {
@@ -89,13 +89,8 @@ int __thiscall STJumpMineC::GetMessage(STJumpMineC *this,STMessage *message)
         }
       }
       else {
-        puVar7 = (undefined4 *)&local_8->field_0x4d;
-        for (iVar3 = 0x10; iVar3 != 0; iVar3 = iVar3 + -1) {
-          *puVar7 = *puVar6;
-          puVar6 = puVar6 + 1;
-          puVar7 = puVar7 + 1;
-        }
-        *(undefined2 *)puVar7 = *(undefined2 *)puVar6;
+        puVar7 = (byte *)&local_8->field_0x4d;
+        memmove(puVar7, puVar6, 0x42); /* compiler REP MOVS byte copy */
         local_8->field_001C = DAT_00808754;
         iVar3 = sub_006193E0(local_8);
         if (iVar3 == 0) {
@@ -134,7 +129,7 @@ LAB_00618ce0:
           thunk_FUN_00618900((void *)local_8->field_007D,local_8->field_0145,0);
         }
         this_00->field_014B = 0;
-        thunk_FUN_00617aa0((void *)this_00->field_007D,this_00->field_0018);
+        thunk_FUN_00617aa0((void *)this_00->field_007D,(int)this_00->field_0018);
       }
       thunk_FUN_00619320((int)this_00);
       g_currentExceptionFrame = local_58.previous;
@@ -144,21 +139,20 @@ LAB_00618ce0:
   else if (SVar1 == MESS_ID_ALLCREATE) {
     if (((local_8->field_007D != 0) &&
         (iVar3 = STPlaySystemC::sub_006E62D0
-                           (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)local_8->field_0079
-                            ,(int *)&local_14), iVar3 != -4)) &&
-       (this_00->field_007D = local_14, local_14 != (void *)0x0)) {
+                           (g_playSystem_00802A38,local_8->field_0079,(int *)&local_14), iVar3 != -4
+        )) && (this_00->field_007D = local_14, local_14 != (void *)0x0)) {
       thunk_FUN_00617a20(local_14,this_00->field_008B,this_00->field_0018,this_00);
     }
   }
   else if (SVar1 == MESS_STOCTOPUSC_0112) {
-    if ((-1 < local_8->field_0097) && (local_8->field_0093 != CASE_5)) {
+    if ((-1 < (int)local_8->field_0097) && (local_8->field_0093 != CASE_5)) {
       Library::Ourlib::ST3DSMAP::SprSetShadow
                 (g_sT3DSMAPContext_00807598,local_8->field_0097,0,0,(uint)local_8);
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }
   }
-  else if (((SVar1 == MESS_STSPRGAMEOBJC_0113) && (-1 < local_8->field_0097)) &&
+  else if (((SVar1 == MESS_STSPRGAMEOBJC_0113) && (-1 < (int)local_8->field_0097)) &&
           (local_8->field_0093 != CASE_5)) {
     Library::Ourlib::ST3DSMAP::SprSetShadow
               (g_sT3DSMAPContext_00807598,local_8->field_0097,0,0x401109,(uint)&local_8->field_0x4d);

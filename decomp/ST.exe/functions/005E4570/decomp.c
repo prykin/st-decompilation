@@ -336,10 +336,10 @@ LAB_005e496b:
         } while (iVar9 != 0);
         PaintMTask(this_00);
         this_00->field_006D = 3;
-        Library::DKW::TBL::FUN_006afe40((int *)&this_00->field_0074,(uint *)this_00->field_0078);
+        Library::DKW::TBL::FUN_006afe40((int *)&this_00->field_0074,&this_00->field_0078->flags);
         PlayScript(this_00);
         thunk_FUN_0055ddf0((undefined4 *)g_dDXContext_0080759C,(int *)g_ddxContext_008075A8,
-                           (ushort *)this_00->field_005D,10,2);
+                           this_00->field_005D,10,2);
         break;
       case 0x6204:
         if (local_18->field_006D != '\x01') {
@@ -454,7 +454,7 @@ LAB_005e496b:
       }
     }
     else if (SVar2 == MESS_SHARED_6332) {
-      if (((-1 < local_18->field_0484) && (message != (STMessage *)0x0)) &&
+      if (((-1 < (int)local_18->field_0484) && (message != (STMessage *)0x0)) &&
          (local_8 = (message->arg2).ptr, local_8 != (AnonShape_005E4570_F1672769 *)0x0)) {
         pcVar4 = local_18->field_008D;
         if (pcVar4->field_00A0 != 0) {
@@ -525,7 +525,7 @@ LAB_005e496b:
     puVar13 = (uint *)local_18->field_043B;
     goto LAB_005e5255;
   case MESS_SHARED_6334|MESS_ID_CREATE:
-    if (((-1 < local_18->field_0484) && (message != (STMessage *)0x0)) &&
+    if (((-1 < (int)local_18->field_0484) && (message != (STMessage *)0x0)) &&
        ((local_8 = (message->arg2).ptr, local_8 != (AnonShape_005E4570_F1672769 *)0x0 &&
         (pAVar3 = (AnonShape_006B5B10_E0D06CF1 *)local_18->field_06CB,
         pAVar3 != (AnonShape_006B5B10_E0D06CF1 *)0x0)))) {
@@ -558,8 +558,8 @@ LAB_005e496b:
       uVar18 = uVar15;
       if ((int)uVar15 < (int)(uVar15 + local_8->field_01E0)) {
         do {
-          if ((int)uVar18 < (int)this_00->field_0643->field_0008) {
-            local_14 = *(uint **)(this_00->field_0643->field_0014 + uVar18 * 4);
+          if ((int)uVar18 < (int)this_00->field_0643->elementSize) {
+            local_14 = *(uint **)(this_00->field_0643->growCapacity + uVar18 * 4);
           }
           else {
             local_14 = (uint *)0x0;

@@ -552,7 +552,7 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
       local_20->field_05F6 = local_34 + local_2c;
       local_20->field_05FA = local_38;
       STPlaySystemC::SaveObjData
-                (g_playSystem_00802A38,this_00->field_0018,(byte *)local_20,local_7c);
+                (g_playSystem_00802A38,(int *)this_00->field_0018,(byte *)local_20,local_7c);
       FreeAndNull(&local_44);
       FreeAndNull(&local_3c);
       FreeAndNull(&local_40);

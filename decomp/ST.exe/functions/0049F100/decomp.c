@@ -20,8 +20,8 @@ undefined4 __thiscall STGroupBoatC::Capture(STGroupBoatC *this,int param_1)
   undefined4 uVar8;
   uint uVar9;
   uint uVar10;
-  undefined4 *puVar11;
-  undefined4 *puVar12;
+  byte *puVar11;
+  byte *puVar12;
   STBoatC_CmdToObj_param_1Enum SVar13;
   uint *puVar14;
   undefined4 local_9c [5];
@@ -158,14 +158,9 @@ LAB_0049f2b2:
             }
             iVar3 = thunk_FUN_0045ff10((STGameObjC *)pSVar4);
             if (iVar3 == 9) {
-              puVar11 = (undefined4 *)&pSVar4->field_05FC;
-              puVar12 = local_9c;
-              for (iVar3 = 7; iVar3 != 0; iVar3 = iVar3 + -1) {
-                *puVar12 = *puVar11;
-                puVar11 = puVar11 + 1;
-                puVar12 = puVar12 + 1;
-              }
-              *(undefined1 *)puVar12 = *(undefined1 *)puVar11;
+              puVar11 = (byte *)&pSVar4->field_05FC;
+              puVar12 = (byte *)(local_9c);
+              memmove(puVar12, puVar11, 0x1d); /* compiler REP MOVS byte copy */
               pSVar4 = local_34;
               if (3 < local_87) goto LAB_0049f3f5;
             }

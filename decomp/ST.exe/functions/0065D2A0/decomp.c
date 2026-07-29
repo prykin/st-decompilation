@@ -14,9 +14,9 @@ int __thiscall AiFltClassTy::InitData(AiFltClassTy *this,undefined4 *param_1)
   int iVar4;
   DArrayTy *pDVar5;
   int iVar6;
-  undefined4 *puVar7;
+  byte *puVar7;
   DArrayTy **ppDVar8;
-  undefined4 *puVar9;
+  byte *puVar9;
   InternalExceptionFrame local_50;
   AiFltClassTy *local_c;
   int local_8;
@@ -28,17 +28,13 @@ int __thiscall AiFltClassTy::InitData(AiFltClassTy *this,undefined4 *param_1)
   pAVar3 = local_c;
   if (iVar4 == 0) {
     if (local_c == (AiFltClassTy *)0x0) {
-      puVar9 = (undefined4 *)0x0;
+      puVar9 = (byte *)0x0;
     }
     else {
-      puVar9 = &local_c->field_0020;
+      puVar9 = (byte *)(&local_c->field_0020);
     }
-    puVar7 = param_1;
-    for (iVar4 = 0x98; iVar4 != 0; iVar4 = iVar4 + -1) {
-      *puVar9 = *puVar7;
-      puVar7 = puVar7 + 1;
-      puVar9 = puVar9 + 1;
-    }
+    puVar7 = (byte *)(param_1);
+    memmove(puVar9, puVar7, 0x260); /* compiler REP MOVS byte copy */
     ppDVar1 = &local_c->field_020B;
     local_c->field_0020 = 900;
     local_c->field_0038 = 1;

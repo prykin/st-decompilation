@@ -165,7 +165,7 @@ switchD_004ceb68_caseD_32:
     }
     iVar4 = thunk_FUN_004ac910(&this->field_01D5,'\t');
     if ((*(int *)&this->field_01F5->field_0x154 + iVar5 <= iVar4) &&
-       ((this->field_05FF->field_001C & 0x4000) == 0)) {
+       ((*(uint *)&this->field_05FF->field_0x1c & 0x4000) == 0)) {
       thunk_FUN_004d0310(this);
     }
     iVar5 = thunk_FUN_004ac910(&this->field_01D5,'\x0e');

@@ -9,7 +9,7 @@
 undefined4 __thiscall STParticleC::InitVisibelFlight(STParticleC *this,int param_1)
 
 {
-  int *piVar1;
+  undefined4 *puVar1;
   int iVar2;
   uint uVar3;
   code *pcVar4;
@@ -154,18 +154,18 @@ LAB_00629242:
     return 0;
   }
   local_1c->field_00CA = puVar10;
-  piVar1 = &local_1c->field_00C6;
+  puVar1 = &local_1c->field_00C6;
   ST3DSMAPContext::sub_006E8660
-            (g_sT3DSMAPContext_00807598,piVar1,2,0,*(uint *)((int)puVar10 + 9),
+            (g_sT3DSMAPContext_00807598,puVar1,2,0,*(uint *)((int)puVar10 + 9),
              *(uint *)((int)puVar10 + 0xd),local_10,local_c,0);
   if (DAT_00807326 != '\0') {
     Library::Ourlib::ST3DSMAP::SprSetShadow
-              (g_sT3DSMAPContext_00807598,*piVar1,0,0x4049f8,(uint)pSVar8);
+              (g_sT3DSMAPContext_00807598,*puVar1,0,0x4049f8,(uint)pSVar8);
   }
   ST3DSMAPContext::sub_006E98E0
-            (g_sT3DSMAPContext_00807598,*piVar1,0,*(int *)puVar10,*(int *)((int)puVar10 + 0x21),1);
-  ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,*piVar1,0,0);
-  uVar3 = *piVar1;
+            (g_sT3DSMAPContext_00807598,*puVar1,0,*(int *)puVar10,*(int *)((int)puVar10 + 0x21),1);
+  ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,*puVar1,0,0);
+  uVar3 = *puVar1;
   local_20 = (float)pSVar8->field_0046 * _DAT_007904f8 * _DAT_007904f0;
   pSVar8->field_006A = local_20;
   local_14 = (float)pSVar8->field_004A * _DAT_007904f8 * _DAT_007904f0;
@@ -174,14 +174,14 @@ LAB_00629242:
   pSVar8->field_0072 = fVar6;
   Library::Ourlib::ST3DSMAP::SprMove
             (g_sT3DSMAPContext_00807598,uVar3,local_20,local_14,fVar6 + _DAT_007904fc);
-  Library::Ourlib::ST3DSMAP::SprShow(g_sT3DSMAPContext_00807598,*piVar1,0);
+  Library::Ourlib::ST3DSMAP::SprShow(g_sT3DSMAPContext_00807598,*puVar1,0);
   pSVar8->field_00C1 = 1;
   if (local_24 == 4) {
     Library::Ourlib::ST3DSMAP::SprSetLevBeforeLand
-              (g_sT3DSMAPContext_00807598,*piVar1,1,0xffffffff,0xffffffff);
+              (g_sT3DSMAPContext_00807598,*puVar1,1,0xffffffff,0xffffffff);
     if (pSVar8->field_0018 != 0) {
       Library::Ourlib::ST3DSMAP::SprSetLevBefore
-                (g_sT3DSMAPContext_00807598,*piVar1,pSVar8->field_0018);
+                (g_sT3DSMAPContext_00807598,*puVar1,pSVar8->field_0018);
     }
   }
   pVVar7 = g_visibleClass_00802A88;

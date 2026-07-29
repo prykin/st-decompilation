@@ -17,7 +17,7 @@ undefined4 __fastcall FUN_004e2970(TLOBaseTy *param_1)
       do {
         DArrayGetElement(array,index,&local_8);
         if (local_8 == param_1) {
-          FUN_006b0c70(g_playerRuntime[(int)param_1->field_0024].field2167_0x9da,index);
+          DArrayRemoveAt(g_playerRuntime[(int)param_1->field_0024].field2167_0x9da,index);
           break;
         }
         index = index + 1;

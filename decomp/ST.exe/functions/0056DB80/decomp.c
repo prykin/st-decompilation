@@ -89,7 +89,7 @@ void __thiscall STAppC::StartGame(STAppC *this)
       this_00 = extraout_ECX_00;
     }
     else {
-      this_00 = g_cursorClass_00802A30->field_001C;
+      this_00 = (cLoadingTy *)g_cursorClass_00802A30->field_001C;
       if (this_00 != (cLoadingTy *)0xffffffff) {
         FUN_006b3af0((int *)g_cursorClass_00802A30->field_0060,(uint)this_00);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -109,7 +109,7 @@ void __thiscall STAppC::StartGame(STAppC *this)
     }
     DAT_00806720 = timeGetTime();
     g_cMf32_00806754 =
-         (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&pSVar12->field_0x76f6,0,0,0);
+         (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&pSVar12->field_76F6,0,0,0);
     local_8 = (STAppC_field_1180State *)&pSVar12->field_4EAF;
     cMf32::RecGet(g_cMf32_00806754,0xc,PTR_s_AUTOSAVETIME_GAME_0079b068,(int *)&local_8,0);
     local_8 = (STAppC_field_1180State *)&pSVar12->field_4EB3;
@@ -139,15 +139,15 @@ void __thiscall STAppC::StartGame(STAppC *this)
       pIVar5 = local_dc.previous;
       if (iVar11 == 0) {
         g_cMf32_00806758 =
-             (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&local_c->field_0x76f6,0,0,0);
+             (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&local_c->field_76F6,0,0,0);
         g_currentExceptionFrame = local_dc.previous;
         pIVar5 = g_currentExceptionFrame;
       }
     }
     else {
-      Library::MSVCRT::_strncpy(&pSVar12->field_0x78fe,local_14,0x103);
+      Library::MSVCRT::_strncpy(&pSVar12->field_78FE,local_14,0x103);
       pSVar12->field_7A01 = 0;
-      wsprintfA(local_14,"%s%s",&pSVar12->field_0x60,&pSVar12->field_0x78fe);
+      wsprintfA(local_14,"%s%s",&pSVar12->field_0x60,&pSVar12->field_78FE);
       local_120.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_120;
       iVar11 = Library::MSVCRT::__setjmp3(local_120.jumpBuffer,0);
@@ -222,7 +222,7 @@ void __thiscall STAppC::StartGame(STAppC *this)
       if ((puVar7 == (ushort *)0x0) || (pbVar14 = &pSVar12->field_4DA3, pSVar12->field_4DA3 == '\0')
          ) {
         Library::MSVCRT::FUN_0072e730
-                  (&pSVar12->field_0x76f6,(byte *)0x0,(byte *)0x0,local_328,(byte *)0x0);
+                  (&pSVar12->field_76F6,(byte *)0x0,(byte *)0x0,local_328,(byte *)0x0);
         pbVar14 = local_328;
       }
       pcVar8 = LoadResourceString(0x267f,g_module_00807618);
@@ -348,10 +348,10 @@ void __thiscall STAppC::StartGame(STAppC *this)
     if (g_cursorClass_00802A30->field_00A9 == 0) {
       Library::DKW::DDX::FUN_006b8a60((byte *)g_cursorClass_00802A30->field_00AD);
     }
-    else if (g_cursorClass_00802A30->field_001C != (cLoadingTy *)0xffffffff) {
+    else if (g_cursorClass_00802A30->field_001C != 0xffffffff) {
       Library::DKW::DDX::FUN_006b34d0
-                ((uint *)g_cursorClass_00802A30->field_0060,(uint)g_cursorClass_00802A30->field_001C
-                 ,0xfffffffe,g_cursorClass_00802A30->field_0034,g_cursorClass_00802A30->field_0038);
+                ((uint *)g_cursorClass_00802A30->field_0060,g_cursorClass_00802A30->field_001C,
+                 0xfffffffe,g_cursorClass_00802A30->field_0034,g_cursorClass_00802A30->field_0038);
     }
     thunk_FUN_00440700((uint)DAT_00807326);
     thunk_FUN_0056a500();

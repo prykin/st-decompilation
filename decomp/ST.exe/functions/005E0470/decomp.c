@@ -44,24 +44,24 @@ void __thiscall MTaskTy::DoneMTask(MTaskTy *this)
     StartSystemTy::sub_006E56B0(this_00->field_000C,this_00->field_0488);
     this_00->field_0488 = 0;
   }
-  if (-1 < this_00->field_063F) {
+  if (-1 < (int)this_00->field_063F) {
     FUN_006b3bb0((int *)g_ddxContext_008075A8,this_00->field_063F);
-    this_00->field_063F = -1;
+    this_00->field_063F = 0xffffffff;
   }
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this_00->field_048C);
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this_00->field_051D);
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this_00->field_05AE);
-  if ((DArrayTy *)this_00->field_0643 != (DArrayTy *)0x0) {
-    FUN_006b5570((DArrayTy *)this_00->field_0643);
+  if (this_00->field_0643 != (DArrayTy *)0x0) {
+    FUN_006b5570(this_00->field_0643);
   }
-  this_00->field_0643 = (AnonPointee_MTaskTy_0643 *)0x0;
+  this_00->field_0643 = (DArrayTy *)0x0;
   if (this_00->field_02CD != 0) {
     StartSystemTy::sub_006E56B0(this_00->field_000C,this_00->field_02CD);
     this_00->field_02CD = 0;
   }
-  if (-1 < this_00->field_0484) {
+  if (-1 < (int)this_00->field_0484) {
     FUN_006b3bb0((int *)g_ddxContext_008075A8,this_00->field_0484);
-    this_00->field_0484 = -1;
+    this_00->field_0484 = 0xffffffff;
   }
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this_00->field_02D1);
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this_00->field_0362);
@@ -181,7 +181,7 @@ LAB_005e072b:
     this_00->field_008D = (ccFntTy *)0x0;
   }
   this_00->field_0081 = (ushort *)0x0;
-  if (this_00->field_005D != (cMf32 *)0x0) {
+  if (this_00->field_005D != (ushort *)0x0) {
     this_01 = g_cMf32_00806780;
     if ((this_00->field_0080 != '\x01') &&
        (this_01 = g_cMf32_00806798, this_00->field_0080 != '\x02')) {
@@ -197,10 +197,10 @@ LAB_005e072b:
     DArrayDestroy((DArrayTy *)this_00->field_0074);
   }
   this_00->field_0074 = (MTaskTy_field_0074DArray *)0x0;
-  if ((DArrayTy *)this_00->field_0078 != (DArrayTy *)0x0) {
-    DArrayDestroy((DArrayTy *)this_00->field_0078);
+  if (this_00->field_0078 != (DArrayTy *)0x0) {
+    DArrayDestroy(this_00->field_0078);
   }
-  this_00->field_0078 = 0;
+  this_00->field_0078 = (DArrayTy *)0x0;
   if (this_00->field_0070 != (cMf32 *)0x0) {
     cMf32::delete(this_00->field_0070);
   }

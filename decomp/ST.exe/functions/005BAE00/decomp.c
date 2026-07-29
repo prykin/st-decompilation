@@ -305,7 +305,7 @@ LAB_005bb532:
     if (local_20->field_1C96 != (HoloTy *)0x0) {
       iVar8 = HoloTy::NextFas(local_20->field_1C96);
       if (iVar8 == 0) {
-        uVar2 = this_01->field_1C96->field_0003;
+        uVar2 = *(uint *)&this_01->field_1C96->field_0x3;
         if (-1 < (int)uVar2) {
           FUN_006b3af0((int *)g_ddxContext_008075A8,uVar2);
         }
@@ -317,7 +317,7 @@ LAB_005bb532:
     if (this_01->field_1C9A != (HoloTy *)0x0) {
       iVar8 = HoloTy::NextFas(this_01->field_1C9A);
       if (iVar8 == 0) {
-        uVar2 = this_01->field_1C9A->field_0003;
+        uVar2 = *(uint *)&this_01->field_1C9A->field_0x3;
         if (-1 < (int)uVar2) {
           FUN_006b3af0((int *)g_ddxContext_008075A8,uVar2);
         }
@@ -347,7 +347,7 @@ LAB_005bb532:
       iVar8 = HoloTy::NextFas(local_20->field_1C9A);
       if (iVar8 == 0) {
         if ((this_01->field_1A60 == '\x01') &&
-           (uVar2 = this_01->field_1C9A->field_0003, -1 < (int)uVar2)) {
+           (uVar2 = *(uint *)&this_01->field_1C9A->field_0x3, -1 < (int)uVar2)) {
           FUN_006b3af0((int *)g_ddxContext_008075A8,uVar2);
         }
       }

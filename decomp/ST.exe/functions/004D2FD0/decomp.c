@@ -1,14 +1,16 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __fastcall FUN_004d2fd0(int param_1)
 
 {
-  undefined4 *puVar1;
+  byte *puVar1;
   int iVar2;
   uint uVar3;
   uint uVar4;
   byte *pbVar5;
   void **value;
-  undefined4 *puVar6;
+  byte *puVar6;
   byte *pbVar7;
   undefined4 local_17c;
   undefined4 local_170;
@@ -33,32 +35,28 @@ undefined4 __fastcall FUN_004d2fd0(int param_1)
   local_10 = (byte *)0x0;
   local_14 = (byte *)0x0;
   if (param_1 == 0) {
-    puVar1 = (undefined4 *)0x0;
+    puVar1 = (byte *)0x0;
   }
   else {
-    puVar1 = (undefined4 *)(param_1 + 0x231);
+    puVar1 = (byte *)(param_1 + 0x231);
   }
-  puVar6 = &local_17c;
+  puVar6 = (byte *)(&local_17c);
   for (iVar2 = 0x1b; iVar2 != 0; iVar2 = iVar2 + -1) {
     *puVar6 = *puVar1;
-    puVar1 = puVar1 + 1;
-    puVar6 = puVar6 + 1;
+    puVar1 = (byte *)(puVar1 + 1);
+    puVar6 = (byte *)(puVar6 + 1);
   }
   *(undefined2 *)puVar6 = *(undefined2 *)puVar1;
   *(undefined1 *)((int)puVar6 + 2) = *(undefined1 *)((int)puVar1 + 2);
   local_170 = 2;
   if (param_1 == 0) {
-    puVar1 = (undefined4 *)0x0;
+    puVar1 = (byte *)0x0;
   }
   else {
-    puVar1 = (undefined4 *)(param_1 + 0x2a0);
+    puVar1 = (byte *)(param_1 + 0x2a0);
   }
-  puVar6 = local_10d;
-  for (iVar2 = 0x2c; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *puVar6 = *puVar1;
-    puVar1 = puVar1 + 1;
-    puVar6 = puVar6 + 1;
-  }
+  puVar6 = (byte *)(local_10d);
+  memmove(puVar6, puVar1, 0xb0); /* compiler REP MOVS byte copy */
   local_20 = (byte *)STAllPlayersC::SaveGObjData((STAllPlayersC *)param_1,(int *)&local_5d);
   local_59 = 0x14f;
   local_10 = (byte *)STT3DSprC::SaveSpr((STT3DSprC *)(param_1 + 0x1d5),&local_55);
@@ -73,7 +71,7 @@ undefined4 __fastcall FUN_004d2fd0(int param_1)
   if (*(int *)(param_1 + 0x370) == 0) {
     local_1c = (undefined4 *)(param_1 + 0x350);
     do {
-      puVar1 = STT3DSprC::SaveSpr((STT3DSprC *)*local_1c,(uint *)((int)local_45 + iVar2));
+      puVar1 = (byte *)(STT3DSprC::SaveSpr((STT3DSprC *)*local_1c,(uint *)((int)local_45 + iVar2)));
       *(undefined4 **)((int)local_2c + iVar2) = puVar1;
       *(AnonShape_0060EA30_DCEB68AD **)((int)local_45 + iVar2 + 0xc) = local_c;
       uVar3 = *(uint *)((int)local_45 + iVar2);
@@ -85,11 +83,11 @@ undefined4 __fastcall FUN_004d2fd0(int param_1)
   }
   local_c = (AnonShape_0060EA30_DCEB68AD *)(local_18 + local_4d + local_55 + 0x14f + local_5d);
   local_8 = (byte *)Library::DKW::LIB::FUN_006aac70((int)local_c);
-  puVar1 = &local_17c;
+  puVar1 = (byte *)(&local_17c);
   pbVar5 = local_8;
   for (iVar2 = 0x53; iVar2 != 0; iVar2 = iVar2 + -1) {
     *(undefined4 *)pbVar5 = *puVar1;
-    puVar1 = puVar1 + 1;
+    puVar1 = (byte *)(puVar1 + 1);
     pbVar5 = pbVar5 + 4;
   }
   *(undefined2 *)pbVar5 = *(undefined2 *)puVar1;
@@ -152,7 +150,7 @@ undefined4 __fastcall FUN_004d2fd0(int param_1)
     } while (iVar2 < 0xc);
   }
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  STPlaySystemC::SaveObjData(g_playSystem_00802A38,*(undefined4 *)(param_1 + 0x18),local_8,local_c);
+  STPlaySystemC::SaveObjData(g_playSystem_00802A38,*(int **)(param_1 + 0x18),local_8,local_c);
   FreeAndNull(&local_8);
   FreeAndNull(&local_20);
   FreeAndNull(&local_10);

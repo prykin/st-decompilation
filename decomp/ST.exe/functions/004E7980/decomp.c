@@ -17,10 +17,10 @@ undefined4 FUN_004e7980(uint *param_1,int param_2,byte param_3)
   int iVar8;
   uint *puVar9;
   int iVar10;
-  undefined4 *puVar11;
+  byte *puVar11;
   byte *pbVar12;
   int *piVar13;
-  undefined4 *puVar14;
+  byte *puVar14;
   undefined4 *local_1c;
   int local_10;
   int local_c;
@@ -137,13 +137,9 @@ LAB_004e7bd3:
     if (local_c == 0) {
       return 0;
     }
-    puVar11 = &DAT_00800bd0;
-    puVar14 = &DAT_00801020;
-    for (iVar10 = 0xc3; iVar10 != 0; iVar10 = iVar10 + -1) {
-      *puVar14 = *puVar11;
-      puVar11 = puVar11 + 1;
-      puVar14 = puVar14 + 1;
-    }
+    puVar11 = (byte *)(&DAT_00800bd0);
+    puVar14 = (byte *)(&DAT_00801020);
+    memmove(puVar14, puVar11, 0x30c); /* compiler REP MOVS byte copy */
   } while( true );
 }
 

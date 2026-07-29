@@ -19,8 +19,8 @@ int __thiscall STColl3C::GetMessage(STColl3C *this,STMessage *message)
   STColl3C *this_00;
   int iVar5;
   int iVar6;
-  undefined4 *puVar7;
-  undefined4 *puVar8;
+  byte *puVar7;
+  byte *puVar8;
   STWorldObject *pSVar9;
   InternalExceptionFrame local_60;
   byte *local_1c;
@@ -93,7 +93,7 @@ int __thiscall STColl3C::GetMessage(STColl3C *this,STMessage *message)
   if (SVar1 == MESS_SHARED_0003) {
     if (g_manRub3_008117A4 != (STManRub3C *)0x0) {
       sub_005F9450(local_8);
-      thunk_FUN_0062e610(g_manRub3_008117A4,this_00->field_0235,(int *)this_00->field_0018);
+      thunk_FUN_0062e610(g_manRub3_008117A4,this_00->field_0235,this_00->field_0018);
     }
     sub_005FA070(this_00);
     thunk_FUN_004ad310((STT3DSprC *)&this_00->vtable_at_1d5);
@@ -110,14 +110,10 @@ int __thiscall STColl3C::GetMessage(STColl3C *this,STMessage *message)
     g_currentExceptionFrame = local_60.previous;
     return 0;
   }
-  puVar7 = (message->arg0).ptr;
+  puVar7 = (byte *)((message->arg0).ptr);
   if (puVar7[3] != 2) {
-    puVar8 = (undefined4 *)&local_8->field_0x231;
-    for (iVar5 = 0xb; iVar5 != 0; iVar5 = iVar5 + -1) {
-      *puVar8 = *puVar7;
-      puVar7 = puVar7 + 1;
-      puVar8 = puVar8 + 1;
-    }
+    puVar8 = (byte *)&local_8->field_0x231;
+    memmove(puVar8, puVar7, 0x2c); /* compiler REP MOVS byte copy */
     iVar5 = local_8->field_0245;
     sVar4 = (short)(iVar5 >> 0x1f);
     if (iVar5 < 0) {
@@ -156,7 +152,7 @@ int __thiscall STColl3C::GetMessage(STColl3C *this,STMessage *message)
     this_00->field_02DD = CASE_1;
     this_00->field_02E1 = g_playSystem_00802A38->field_00E4 + this_00->field_0259;
     if (g_manRub3_008117A4 != (STManRub3C *)0x0) {
-      thunk_FUN_0062e550(g_manRub3_008117A4,this_00->field_0235,this_00->field_0018,
+      thunk_FUN_0062e550(g_manRub3_008117A4,this_00->field_0235,(int)this_00->field_0018,
                          this_00->field_0255);
     }
     this_00->field_02E5 = 1;

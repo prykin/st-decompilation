@@ -39,8 +39,8 @@ void __thiscall FSGSTy::sub_005A0C80(FSGSTy *this)
     FUN_006b5570(this->field_1AE8);
   }
   this->field_1AE8 = (DArrayTy *)0x0;
-  if (this->field_1EDB != 0) {
-    FreeAndNull((void **)&this->field_1EDB);
+  if (this->field_1EDB != (void *)0x0) {
+    FreeAndNull(&this->field_1EDB);
   }
   if (this->field_1E8E != 0) {
     FreeAndNull((void **)&this->field_1E8E);

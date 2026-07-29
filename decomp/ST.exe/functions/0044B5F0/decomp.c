@@ -73,7 +73,7 @@ STAllPlayersC::SelectObjects
         if ((((pSVar7 == (STGameObjC *)0x0) || (pSVar7->field_0020 != 0x14)) ||
             (iVar8 = pSVar7->vfunc_F8(), iVar8 == 0)) ||
            (iVar8 = pSVar7->vfunc_EC(), iVar8 == 0)) {
-          FUN_006b0c70(local_8,param_3);
+          DArrayRemoveAt(local_8,param_3);
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_2 = param_2 - 1;
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -195,7 +195,7 @@ STAllPlayersC::SelectObjects
           if ((((pSVar7 == (STGameObjC *)0x0) || (pSVar7->field_0020 != 0x14)) ||
               (iVar8 = pSVar7->vfunc_F8(), iVar8 == 0)) ||
              (iVar8 = pSVar7->vfunc_EC(), iVar8 == 0)) {
-            FUN_006b0c70(local_8,param_3);
+            DArrayRemoveAt(local_8,param_3);
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_2 = param_2 - 1;
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -226,7 +226,7 @@ STAllPlayersC::SelectObjects
           pSVar7 = GetObjPtr(this,objPtr,local_14._0_2_,CASE_1);
           iVar8 = pSVar7->vfunc_EC();
           if (iVar8 == 0) {
-            FUN_006b0c70(local_8,index);
+            DArrayRemoveAt(local_8,index);
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_2 = param_2 - 1;
             index = index - 1;

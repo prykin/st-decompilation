@@ -50,7 +50,7 @@ void __thiscall STAppC::sub_0056F040(STAppC *this)
         memset((void *)(&this->field_0x1490 + (uint)(byte)this->field_148F * 0x9c), 0, 0x9c); /* compiler bulk-zero initialization */
         if (*pcVar2 == this->field_112D) {
           uVar3 = 0xffffffff;
-          pcVar6 = &this->field_0x7bd;
+          pcVar6 = &this->field_07BD;
           do {
             pcVar8 = pcVar6;
             if (uVar3 == 0) break;

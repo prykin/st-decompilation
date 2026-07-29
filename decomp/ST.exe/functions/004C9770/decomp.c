@@ -49,14 +49,13 @@ int __thiscall TLOBaseTy::LoadImages(TLOBaseTy *this,void *param_1)
   sub_004C96E0(local_10);
   if ((TVar6 == CASE_1) && (this_00->field_024D == 4)) {
     iVar2 = (local_8 + this_00->field_0235 * 3) * 0xc;
-    this_00->field_05EF = *(undefined4 *)(PTR_DAT_007bb1a8 + iVar2);
+    this_00->field_05EF = *(char **)(PTR_DAT_007bb1a8 + iVar2);
     this_00->field_05F3 = *(undefined4 *)(PTR_DAT_007bb1a8 + iVar2 + 4);
-    this_00->field_05F7 = *(undefined4 *)(PTR_DAT_007bb1a8 + iVar2 + 8);
+    this_00->field_05F7 = *(char **)(PTR_DAT_007bb1a8 + iVar2 + 8);
   }
-  if ((char *)this_00->field_05EF != (char *)0x0) {
+  if (this_00->field_05EF != (char *)0x0) {
     iVar2 = STT3DSprC::LoadSequence
-                      ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_0080678c,
-                       (char *)this_00->field_05EF,0x1d);
+                      ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_0080678c,this_00->field_05EF,0x1d);
     if (iVar2 != 0) {
       RaiseInternalException
                 (iVar2,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_bspr.cpp",0x1f);
@@ -77,14 +76,13 @@ int __thiscall TLOBaseTy::LoadImages(TLOBaseTy *this,void *param_1)
     }
   }
   this_01 = &this_00->field_01D5;
-  if ((char *)this_00->field_05F7 == (char *)0x0) {
+  if (this_00->field_05F7 == (char *)0x0) {
     STT3DSprC::StopShow((STT3DSprC *)this_01,0xc);
     this_00->field_01F5->field_01C4 = 0;
     this_00->field_01F5->field_01C0 = 0;
   }
   else {
-    iVar2 = STT3DSprC::LoadSequence
-                      ((STT3DSprC *)this_01,0xc,DAT_0080678c,(char *)this_00->field_05F7,0x1d);
+    iVar2 = STT3DSprC::LoadSequence((STT3DSprC *)this_01,0xc,DAT_0080678c,this_00->field_05F7,0x1d);
     if (iVar2 != 0) {
       RaiseInternalException
                 (iVar2,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_bspr.cpp",0x28);

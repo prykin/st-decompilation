@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 * __thiscall
 FUN_00693b20(void *param_1,int param_2,undefined1 param_3,undefined4 param_4,undefined4 param_5,
@@ -9,9 +11,9 @@ FUN_00693b20(void *param_1,int param_2,undefined1 param_3,undefined4 param_4,und
   int iVar3;
   uint uVar4;
   uint uVar5;
-  undefined4 *puVar6;
+  byte *puVar6;
   char *pcVar7;
-  undefined4 *puVar8;
+  byte *puVar8;
   char *pcVar9;
 
   iVar3 = thunk_FUN_00693e60(param_1,param_2);
@@ -20,14 +22,9 @@ FUN_00693b20(void *param_1,int param_2,undefined1 param_3,undefined4 param_4,und
   }
   uVar4 = thunk_FUN_006941c0(param_1);
   puVar1 = (undefined4 *)((int)param_1 + param_2 * 0x51 + 0x11);
-  puVar6 = &DAT_007d6268;
-  puVar8 = puVar1;
-  for (iVar3 = 0x14; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar8 = *puVar6;
-    puVar6 = puVar6 + 1;
-    puVar8 = puVar8 + 1;
-  }
-  *(undefined1 *)puVar8 = *(undefined1 *)puVar6;
+  puVar6 = (byte *)(&DAT_007d6268);
+  puVar8 = (byte *)(puVar1);
+  memmove(puVar8, puVar6, 0x51); /* compiler REP MOVS byte copy */
   *(char *)((int)param_1 + param_2 * 0x51 + 0x33) = (char)param_2;
   *(undefined1 *)((int)param_1 + param_2 * 0x51 + 0x32) = param_3;
   *(undefined4 *)((int)param_1 + param_2 * 0x51 + 0x35) = param_4;

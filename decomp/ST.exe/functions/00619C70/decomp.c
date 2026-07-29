@@ -501,16 +501,16 @@ cf_common_exit_0061A55D:
       thunk_FUN_00618900((void *)this->field_007D,this->field_0145,0);
       this->field_014B = 0;
     }
-    if (this->field_0097 < 0) {
+    if ((int)this->field_0097 < 0) {
       this->field_0093 = CASE_6;
       return local_2c;
     }
-    if (0x10 < this->field_00AB) {
+    if (0x10 < (int)this->field_00AB) {
       if (this->field_00AB == 0x11) {
         ST3DSMAPContext::sub_006E9CB0(g_sT3DSMAPContext_00807598,(uint *)this->field_0097,2);
       }
       ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,this->field_0097,2,this->field_00B7);
-      if (this->field_00B7 < this->field_00B3) {
+      if ((int)this->field_00B7 < this->field_00B3) {
         this->field_00B7 = this->field_00B7 + 1;
       }
     }
@@ -532,7 +532,7 @@ LAB_0061acc2:
       this->field_00AB = this->field_00AB + 1;
     }
     else if (uVar11 == this->field_00AF) {
-      if (-1 < this->field_0097) {
+      if (-1 < (int)this->field_0097) {
         ST3DSMAPContext::sub_006E9D40(g_sT3DSMAPContext_00807598,(uint *)this->field_0097,0);
       }
       goto LAB_0061acc2;
@@ -543,7 +543,7 @@ LAB_0061acc2:
                (float)this->field_00A3 * _DAT_007904f8 * _DAT_007904f0,
                (float)this->field_00A7 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
     if (this->field_00B7 == this->field_00B3) {
-      if (-1 < this->field_0097) {
+      if (-1 < (int)this->field_0097) {
         Library::Ourlib::ST3DSMAP::SprHide(g_sT3DSMAPContext_00807598,this->field_0097);
       }
       this->field_0093 = CASE_6;
@@ -582,7 +582,7 @@ LAB_0061acc2:
 switchD_00619c92_default:
   return local_2c;
 cf_common_exit_0061AB3A:
-  if (-1 < this->field_0097) {
+  if (-1 < (int)this->field_0097) {
     Library::Ourlib::ST3DSMAP::SprHide(g_sT3DSMAPContext_00807598,this->field_0097);
     this->field_00C4 = 0;
   }

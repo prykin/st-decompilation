@@ -21,11 +21,11 @@ int __thiscall STFishC::GetMessage(STFishC *this,STMessage *message)
   int iVar5;
   uint uVar6;
   short sVar7;
-  undefined4 *puVar8;
+  byte *puVar8;
   byte *pbVar9;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   int *unaff_EDI;
-  undefined4 *puVar10;
+  byte *puVar10;
   AnonShape_0057BF60_C1393638 *pAVar11;
   byte *pbVar12;
   InternalExceptionFrame local_80;
@@ -98,7 +98,7 @@ int __thiscall STFishC::GetMessage(STFishC *this,STMessage *message)
       g_currentExceptionFrame = local_80.previous;
       return 0;
     }
-    puVar8 = &this_00->field_01D5;
+    puVar8 = (byte *)(&this_00->field_01D5);
     *(undefined4 *)&this_00->field_0x23b = 5;
     STT3DSprC::StopShow((STT3DSprC *)puVar8,0xe);
     thunk_FUN_004ad5e0((STT3DSprC *)puVar8);
@@ -124,11 +124,11 @@ int __thiscall STFishC::GetMessage(STFishC *this,STMessage *message)
       g_currentExceptionFrame = local_80.previous;
       return 0;
     }
-    puVar8 = (undefined4 *)&this_00->field_0x243;
+    puVar8 = (byte *)&this_00->field_0x243;
     pAVar11 = local_c;
     for (iVar4 = 10; iVar4 != 0; iVar4 = iVar4 + -1) {
       *(undefined4 *)pAVar11 = *puVar8;
-      puVar8 = puVar8 + 1;
+      puVar8 = (byte *)(puVar8 + 1);
       pAVar11 = (AnonShape_0057BF60_C1393638 *)&pAVar11->field_0x4;
     }
     *(undefined4 *)&local_c->field_0xc = 2;
@@ -166,7 +166,7 @@ int __thiscall STFishC::GetMessage(STFishC *this,STMessage *message)
       pbVar12 = pbVar12 + 1;
     }
     STPlaySystemC::SaveObjData
-              (g_playSystem_00802A38,this_00->field_0018,(byte *)local_c,
+              (g_playSystem_00802A38,(int *)this_00->field_0018,(byte *)local_c,
                (AnonShape_0060EA30_DCEB68AD *)(local_10 + 0x46 + local_8));
     FreeAndNull(&local_14);
     FreeAndNull(&local_18);
@@ -201,18 +201,14 @@ int __thiscall STFishC::GetMessage(STFishC *this,STMessage *message)
   local_20 = (message->arg0).ptr;
   if (1 < (uint)local_20[3]) {
     if (local_20[3] == 2) {
-      puVar8 = local_20;
-      puVar10 = (undefined4 *)&this_00->field_0x243;
-      for (iVar4 = 10; iVar4 != 0; iVar4 = iVar4 + -1) {
-        *puVar10 = *puVar8;
-        puVar8 = puVar8 + 1;
-        puVar10 = puVar10 + 1;
-      }
+      puVar8 = (byte *)(local_20);
+      puVar10 = (byte *)&this_00->field_0x243;
+      memmove(puVar10, puVar8, 0x28); /* compiler REP MOVS byte copy */
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       local_8 = *(uint *)((int)local_20 + 0x3e);
       STAllPlayersC::RestoreGObjData
                 ((STAllPlayersC *)this_00,(undefined4 *)(local_8 + 0x46 + (int)local_20));
-      puVar8 = local_20;
+      puVar8 = (byte *)(local_20);
       *(undefined4 *)&this_00->field_0x23b = local_20[0xb];
       this_00->field_0231 = local_20[10];
       *(undefined4 *)((int)&this_00->field_023E + 1) = *(undefined4 *)((int)local_20 + 0x36);
@@ -252,12 +248,12 @@ int __thiscall STFishC::GetMessage(STFishC *this,STMessage *message)
   *(undefined4 *)&this_00->field_0x23b = 6;
   this_00->field_0231 = CASE_0;
   *(undefined4 *)((int)&this_00->field_023E + 1) = 0;
-  puVar8 = (message->arg0).ptr;
-  puVar10 = (undefined4 *)&this_00->field_0x243;
+  puVar8 = (byte *)((message->arg0).ptr);
+  puVar10 = (byte *)&this_00->field_0x243;
   for (iVar4 = 10; iVar4 != 0; iVar4 = iVar4 + -1) {
     *puVar10 = *puVar8;
-    puVar8 = puVar8 + 1;
-    puVar10 = puVar10 + 1;
+    puVar8 = (byte *)(puVar8 + 1);
+    puVar10 = (byte *)(puVar10 + 1);
   }
   thunk_FUN_0057cb30((AnonShape_0057CB30_71092CE7 *)this_00);
   thunk_FUN_00417a00(this_00,1);
@@ -279,7 +275,7 @@ int __thiscall STFishC::GetMessage(STFishC *this,STMessage *message)
   }
   switch(*(undefined4 *)&this_00->field_0x267) {
   case 0xe7:
-    puVar8 = &this_00->field_01D5;
+    puVar8 = (byte *)(&this_00->field_01D5);
     iVar4 = STT3DSprC::LoadSequence((STT3DSprC *)puVar8,0xe,DAT_0080676c,"fish1",0x1d);
     if (iVar4 != 0) {
       RaiseInternalException

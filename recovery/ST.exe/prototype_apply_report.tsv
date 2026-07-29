@@ -33,7 +33,6 @@ function_address	target	status	detail
 004E9960	parameter:3	disabled	apply flags are 0
 004EA460	parameter:2	disabled	apply flags are 0
 005260B0	parameter:1	disabled	apply flags are 0
-0054D430	parameter:1	disabled	apply flags are 0
 0054EEE0	parameter:1	disabled	apply flags are 0
 00555FE0	return:	disabled	apply flags are 0
 005582A0	return:	disabled	apply flags are 0
@@ -82,7 +81,6 @@ function_address	target	status	detail
 0062E170	parameter:4	disabled	apply flags are 0
 0062FEA0	parameter:2	disabled	apply flags are 0
 00630BB0	parameter:6	disabled	apply flags are 0
-00631880	parameter:2	disabled	apply flags are 0
 00635BF0	parameter:1	disabled	apply flags are 0
 00635BF0	parameter:2	disabled	apply flags are 0
 00635DA0	parameter:1	disabled	apply flags are 0

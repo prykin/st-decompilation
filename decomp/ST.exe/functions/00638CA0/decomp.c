@@ -13,8 +13,8 @@ undefined4 __thiscall FUN_00638ca0(void *this,STMessage *param_1)
   uint uVar6;
   int iVar7;
   int iVar8;
-  undefined4 *puVar9;
-  undefined4 *puVar10;
+  byte *puVar9;
+  byte *puVar10;
   undefined4 uVar11;
   undefined4 uVar12;
   int local_10;
@@ -33,7 +33,7 @@ undefined4 __thiscall FUN_00638ca0(void *this,STMessage *param_1)
     local_8 = (byte *)Library::DKW::LIB::FUN_006aac70(0x7a);
     thunk_FUN_00639bf0(this,(undefined4 *)local_8);
     STPlaySystemC::SaveObjData
-              (g_playSystem_00802A38,*(undefined4 *)((int)this + 0x18),local_8,
+              (g_playSystem_00802A38,*(int **)((int)this + 0x18),local_8,
                (AnonShape_0060EA30_DCEB68AD *)0x7a);
     FreeAndNull(&local_8);
     return 0;
@@ -46,25 +46,20 @@ undefined4 __thiscall FUN_00638ca0(void *this,STMessage *param_1)
     if (SVar2 != MESS_ID_CREATE) {
       return 0;
     }
-    puVar9 = (param_1->arg0).ptr;
+    puVar9 = (byte *)((param_1->arg0).ptr);
     if (puVar9[3] == 2) {
       thunk_FUN_00639c40(this,puVar9);
-      puVar9 = (undefined4 *)((int)this + 0x2ab);
+      puVar9 = (byte *)((int)this + 0x2ab);
       memset(puVar9, 0, 0x2d); /* compiler bulk-zero initialization */
-      puVar9 = (undefined4 *)((byte *)puVar9 + 0x2c);
+      puVar9 = (byte *)((byte *)puVar9 + 0x2c);
       iVar5 = 0;
       if (*(char *)((int)this + 0x26f) == '\x02') {
         *(undefined1 *)((int)this + 0x26f) = 3;
       }
     }
     else {
-      puVar10 = (undefined4 *)((int)this + 0x231);
-      for (iVar5 = 0xb; iVar5 != 0; iVar5 = iVar5 + -1) {
-        *puVar10 = *puVar9;
-        puVar9 = puVar9 + 1;
-        puVar10 = puVar10 + 1;
-      }
-      *(undefined2 *)puVar10 = *(undefined2 *)puVar9;
+      puVar10 = (byte *)((int)this + 0x231);
+      memmove(puVar10, puVar9, 0x2e); /* compiler REP MOVS byte copy */
       thunk_FUN_00639500(this,g_playSystem_00802A38->field_00E4);
     }
     if (*(char *)((int)this + 0x270) == '\0') {

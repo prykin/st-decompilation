@@ -21,9 +21,9 @@ int __thiscall AiBossClassTy::GetMessage(AiBossClassTy *this,STMessage *message)
   uint uVar6;
   uint uVar7;
   char *pcVar8;
-  undefined4 *puVar9;
+  byte *puVar9;
   char cVar10;
-  undefined4 *puVar11;
+  byte *puVar11;
   char *pcVar12;
   InternalExceptionFrame local_54;
   AiBossClassTy *local_10;
@@ -62,7 +62,7 @@ int __thiscall AiBossClassTy::GetMessage(AiBossClassTy *this,STMessage *message)
       AiEventClassTy::GetMessage((AiEventClassTy *)&local_10->vtable_at_1c,message);
     }
     else if (SVar1 == MESS_ID_CREATE) {
-      puVar9 = (message->arg0).ptr;
+      puVar9 = (byte *)((message->arg0).ptr);
       if (puVar9 == (undefined4 *)0x0) {
         RaiseInternalException
                   (-6,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_boss.cpp",0x61);
@@ -106,14 +106,9 @@ int __thiscall AiBossClassTy::GetMessage(AiBossClassTy *this,STMessage *message)
     else {
       DAT_0080c83a = g_playSystem_00802A38->field_00E4 / 0x19;
     }
-    puVar9 = &DAT_008087b6;
-    puVar11 = &DAT_0080c967;
-    for (iVar3 = 0x666; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar11 = *puVar9;
-      puVar9 = puVar9 + 1;
-      puVar11 = puVar11 + 1;
-    }
-    *(undefined1 *)puVar11 = *(undefined1 *)puVar9;
+    puVar9 = (byte *)(&DAT_008087b6);
+    puVar11 = (byte *)(&DAT_0080c967);
+    memmove(puVar11, puVar9, 0x1999); /* compiler REP MOVS byte copy */
     thunk_FUN_006765b0();
     uVar6 = 0xffffffff;
     pcVar8 = &DAT_0080ef1e;

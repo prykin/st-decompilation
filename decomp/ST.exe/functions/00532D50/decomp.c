@@ -97,7 +97,7 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
   } while (cVar1 != '\0');
   uVar12 = ~uVar12;
   pcVar8 = pcVar16 + -uVar12;
-  pcVar16 = &this_01->field_0x6c;
+  pcVar16 = &this_01->field_006C;
   for (uVar13 = uVar12 >> 2; uVar13 != 0; uVar13 = uVar13 - 1) {
     *(undefined4 *)pcVar16 = *(undefined4 *)pcVar8;
     pcVar8 = pcVar8 + 4;
@@ -120,7 +120,7 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
   } while (cVar1 != '\0');
   uVar12 = ~uVar12;
   iVar5 = -1;
-  pcVar8 = &this_01->field_0x6c;
+  pcVar8 = &this_01->field_006C;
   do {
     pcVar15 = pcVar8;
     if (iVar5 == 0) break;
@@ -153,7 +153,7 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
   } while (cVar1 != '\0');
   uVar12 = ~uVar12;
   iVar5 = -1;
-  pcVar8 = &this_01->field_0x6c;
+  pcVar8 = &this_01->field_006C;
   do {
     pcVar15 = pcVar8;
     if (iVar5 == 0) break;
@@ -174,7 +174,7 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
     pcVar8 = pcVar8 + 1;
     pcVar16 = pcVar16 + 1;
   }
-  pcVar8 = &this_01->field_0x6c;
+  pcVar8 = &this_01->field_006C;
   FUN_006b8280(pcVar8,pcVar8);
   uVar12 = 0xffffffff;
   do {
@@ -210,7 +210,7 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
   } while (cVar1 != '\0');
   uVar12 = ~uVar12;
   iVar5 = -1;
-  pcVar8 = &this_01->field_0x6c;
+  pcVar8 = &this_01->field_006C;
   do {
     pcVar15 = pcVar8;
     if (iVar5 == 0) break;
@@ -243,7 +243,7 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
   } while (cVar1 != '\0');
   uVar12 = ~uVar12;
   iVar5 = -1;
-  pcVar8 = &this_01->field_0x6c;
+  pcVar8 = &this_01->field_006C;
   do {
     pcVar15 = pcVar8;
     if (iVar5 == 0) break;
@@ -276,7 +276,7 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
   } while (cVar1 != '\0');
   uVar12 = ~uVar12;
   iVar5 = -1;
-  pcVar8 = &this_01->field_0x6c;
+  pcVar8 = &this_01->field_006C;
   do {
     pcVar15 = pcVar8;
     if (iVar5 == 0) break;
@@ -297,7 +297,7 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
     pcVar8 = pcVar8 + 1;
     pcVar16 = pcVar16 + 1;
   }
-  hFindFile = FindFirstFileA(&this_01->field_0x6c,&local_1f4);
+  hFindFile = FindFirstFileA(&this_01->field_006C,&local_1f4);
   local_18 = hFindFile;
   if (hFindFile != (HANDLE)0xffffffff) {
     do {
@@ -326,7 +326,7 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
           } while (cVar1 != '\0');
           uVar12 = ~uVar12;
           pcVar8 = pcVar16 + -uVar12;
-          pcVar16 = &local_10->field_0x6c;
+          pcVar16 = &local_10->field_006C;
           for (uVar13 = uVar12 >> 2; uVar13 != 0; uVar13 = uVar13 - 1) {
             *(undefined4 *)pcVar16 = *(undefined4 *)pcVar8;
             pcVar8 = pcVar8 + 4;
@@ -349,7 +349,7 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
           } while (bVar2 != 0);
           uVar12 = ~uVar12;
           iVar5 = -1;
-          pcVar8 = &local_10->field_0x6c;
+          pcVar8 = &local_10->field_006C;
           do {
             pcVar16 = pcVar8;
             if (iVar5 == 0) break;
@@ -371,7 +371,7 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
             pbVar17 = pbVar17 + 1;
           }
           this_00 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0
-                                       (0x345,&local_10->field_0x6c,0,0,0);
+                                       (0x345,&local_10->field_006C,0,0,0);
           puVar7 = cMf32::RecGet(this_00,0x80,PTR_s_SAVE_DESC_0079ad04,(int *)&local_1c,0);
           if (puVar7 == (ushort *)0x0) {
             local_8 = 0;

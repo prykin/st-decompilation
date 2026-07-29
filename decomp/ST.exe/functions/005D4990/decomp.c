@@ -18,7 +18,7 @@ SettMapMTy::PrepareAFT(SettMapMTy *this,AnonShape_005D4990_5F0525CF *param_1,uin
   int iVar3;
   uint uVar4;
   uint uVar5;
-  undefined4 *puVar6;
+  byte *puVar6;
   InternalExceptionFrame local_4c;
   SettMapMTy *local_8;
 
@@ -30,15 +30,8 @@ SettMapMTy::PrepareAFT(SettMapMTy *this,AnonShape_005D4990_5F0525CF *param_1,uin
     if (iVar2 == 0) {
       if (*param_2 != 0xffffffff) {
         uVar5 = local_8->field_1A5B->field_06A6;
-        puVar6 = (undefined4 *)param_1->field_0008;
-        for (uVar4 = uVar5 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
-          *puVar6 = 0;
-          puVar6 = puVar6 + 1;
-        }
-        for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-          *(undefined1 *)puVar6 = 0;
-          puVar6 = (undefined4 *)((int)puVar6 + 1);
-        }
+        puVar6 = (byte *)param_1->field_0008;
+        memset(puVar6, 0, uVar5); /* compiler bulk-zero initialization */
         uVar5 = *param_2;
         iVar2 = param_1->field_0008;
         uVar4 = 0;
@@ -56,14 +49,14 @@ SettMapMTy::PrepareAFT(SettMapMTy *this,AnonShape_005D4990_5F0525CF *param_1,uin
         return;
       }
       uVar5 = local_8->field_1A5B->field_06A6;
-      puVar6 = (undefined4 *)param_1->field_0008;
+      puVar6 = (byte *)param_1->field_0008;
       for (uVar4 = uVar5 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
         *puVar6 = 0x1010101;
-        puVar6 = puVar6 + 1;
+        puVar6 = (byte *)(puVar6 + 1);
       }
       for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
         *(undefined1 *)puVar6 = 1;
-        puVar6 = (undefined4 *)((int)puVar6 + 1);
+        puVar6 = (byte *)((int)puVar6 + 1);
       }
       param_1->field_0004 = local_8->field_1A5B->field_06A6;
       g_currentExceptionFrame = local_4c.previous;

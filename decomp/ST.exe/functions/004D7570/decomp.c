@@ -1,5 +1,9 @@
 
-undefined4 FUN_004d7570(char param_1,int param_2,int param_3)
+/* [STPrototypeApplier] Propagated parameter 2.
+   Evidence: 004749C0 -> 004D7570 @ 0047525A; /STBoatC+0x18 | 004C7460 -> 004D7570 @ 004C74A4;
+   /TLOBaseTy+0x18 */
+
+undefined4 FUN_004d7570(char param_1,int param_2,int *param_3)
 
 {
   uint uVar1;
@@ -18,7 +22,7 @@ undefined4 FUN_004d7570(char param_1,int param_2,int param_3)
                     *(int *)(&g_playerRuntime[iVar2].field_0x80a + iVar4));
     *(uint *)(&g_playerRuntime[iVar2].field_0x7f2 + iVar4) = uVar1 + 1;
     if (piVar3 == (int *)0x0) goto cf_common_exit_004D766D;
-  } while (*piVar3 != param_3);
+  } while ((int *)*piVar3 != param_3);
   *(int *)(&g_playerRuntime[iVar2].field_0x80e + iVar4) =
        *(int *)(&g_playerRuntime[iVar2].field_0x80e + iVar4) - piVar3[1];
   *(int *)(&g_playerRuntime[iVar2].field_0x812 + iVar4) =
@@ -39,8 +43,8 @@ undefined4 FUN_004d7570(char param_1,int param_2,int param_3)
   if (*(int *)(&g_playerRuntime[iVar2].field_0x81a + iVar4) < 0) {
     *(undefined4 *)(&g_playerRuntime[iVar2].field_0x81a + iVar4) = 0;
   }
-  FUN_006b0c70((DArrayTy *)(&g_playerRuntime[iVar2].field_0x7ee + iVar4),
-               *(int *)(&g_playerRuntime[iVar2].field_0x7f2 + iVar4) - 1);
+  DArrayRemoveAt((DArrayTy *)(&g_playerRuntime[iVar2].field_0x7ee + iVar4),
+                 *(int *)(&g_playerRuntime[iVar2].field_0x7f2 + iVar4) - 1);
 cf_common_exit_004D766D:
   thunk_FUN_004d78e0(param_1);
   return 0;

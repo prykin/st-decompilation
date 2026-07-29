@@ -10,7 +10,7 @@ void __thiscall STPlaySystemC::sub_006E57B0(STPlaySystemC *this,int param_1)
   DArrayTy *pDVar1;
   void *pvVar2;
   uint uVar3;
-  uint uVar4;
+  uint index;
   undefined1 local_24 [16];
   undefined4 local_14;
 
@@ -18,7 +18,7 @@ void __thiscall STPlaySystemC::sub_006E57B0(STPlaySystemC *this,int param_1)
   if (pDVar1 != (DArrayTy *)0x0) {
     local_14 = 3;
     uVar3 = pDVar1->count;
-    uVar4 = 0;
+    index = 0;
     if (uVar3 != 0) {
       do {
         if (uVar3 == 0) {
@@ -30,14 +30,14 @@ void __thiscall STPlaySystemC::sub_006E57B0(STPlaySystemC *this,int param_1)
         if ((*(undefined4 **)((int)pvVar2 + 4))[1] == param_1) {
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (**(code **)**(undefined4 **)((int)pvVar2 + 4))(local_24);
-          FUN_006b0c70(this->field_0010,uVar4);
+          DArrayRemoveAt(this->field_0010,index);
         }
         else {
-          uVar4 = uVar4 + 1;
+          index = index + 1;
         }
         pDVar1 = this->field_0010;
         uVar3 = pDVar1->count;
-      } while (uVar4 < uVar3);
+      } while (index < uVar3);
     }
   }
   return;

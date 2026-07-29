@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated return.
    Evidence: 0060C020 returns return of Library::DKW::LIB::FUN_006acf50 @ 0060C147 */
@@ -8,9 +10,9 @@ int __thiscall FUN_0060c020(void *this,uint *param_1)
   undefined4 *puVar1;
   int iVar2;
   uint uVar3;
-  undefined4 *puVar4;
+  byte *puVar4;
   uint *puVar5;
-  undefined4 *puVar6;
+  byte *puVar6;
   uint *puVar7;
   uint *local_1c;
   AnonShape_0060C020_72526BDF *local_18;
@@ -24,16 +26,16 @@ int __thiscall FUN_0060c020(void *this,uint *param_1)
   puVar1 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0x83);
   *(undefined4 *)((int)this + 0x1e1) = 2;
   if (this == (void *)0x0) {
-    puVar4 = (undefined4 *)0x0;
+    puVar4 = (byte *)0x0;
   }
   else {
-    puVar4 = (undefined4 *)((int)this + 0x1d5);
+    puVar4 = (byte *)((int)this + 0x1d5);
   }
-  puVar6 = puVar1;
+  puVar6 = (byte *)(puVar1);
   for (iVar2 = 0x20; iVar2 != 0; iVar2 = iVar2 + -1) {
     *puVar6 = *puVar4;
-    puVar4 = puVar4 + 1;
-    puVar6 = puVar6 + 1;
+    puVar4 = (byte *)(puVar4 + 1);
+    puVar6 = (byte *)(puVar6 + 1);
   }
   *(undefined2 *)puVar6 = *(undefined2 *)puVar4;
   *(undefined1 *)((int)puVar6 + 2) = *(undefined1 *)((int)puVar4 + 2);
@@ -43,18 +45,9 @@ int __thiscall FUN_0060c020(void *this,uint *param_1)
     local_8 = uVar3;
     puVar1 = (undefined4 *)Library::DKW::LIB::FUN_006acf50((int)puVar1,uVar3);
     *(uint *)((int)puVar1 + uVar3 + (-4 - local_c)) = local_c;
-    puVar4 = local_14;
-    puVar6 = (undefined4 *)((int)puVar1 + (local_8 - local_c));
-    for (uVar3 = local_c >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {
-      *puVar6 = *puVar4;
-      puVar4 = puVar4 + 1;
-      puVar6 = puVar6 + 1;
-    }
-    for (local_c = local_c & 3; local_c != 0; local_c = local_c - 1) {
-      *(undefined1 *)puVar6 = *(undefined1 *)puVar4;
-      puVar4 = (undefined4 *)((int)puVar4 + 1);
-      puVar6 = (undefined4 *)((int)puVar6 + 1);
-    }
+    puVar4 = (byte *)(local_14);
+    puVar6 = (byte *)((int)puVar1 + (local_8 - local_c));
+    memmove(puVar6, puVar4, local_c); /* compiler REP MOVS byte copy */
     FreeAndNull(&local_14);
     if ((local_18->field_023C != 0) && (local_18->field_0244 != 0)) {
       local_1c = (uint *)thunk_FUN_0060d390(local_18,&local_10);

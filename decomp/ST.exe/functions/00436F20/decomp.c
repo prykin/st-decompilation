@@ -22,7 +22,7 @@ void __thiscall STAllPlayersC::CmdToPlsObj(STAllPlayersC *this,STControlCommand 
   STGameObjC *pSVar9;
   DArrayTy *pDVar10;
   STGroupBoatC *pSVar11;
-  undefined4 *puVar12;
+  byte *puVar12;
   STWorldObject *pSVar13;
   dword dVar14;
   dword dVar15;
@@ -52,7 +52,7 @@ void __thiscall STAllPlayersC::CmdToPlsObj(STAllPlayersC *this,STControlCommand 
   short sVar19;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   int unaff_EDI;
-  undefined4 *puVar20;
+  byte *puVar20;
   AiPlrClassTy *pAVar21;
   undefined4 uVar22;
   DArrayTy *pDVar23;
@@ -903,14 +903,9 @@ cf_common_exit_00437E03:
         if ((((iVar17 == 8) || (iVar17 = (*pSVar9->vtable->vfunc_2C)(), iVar17 == 0x14)) ||
             (iVar17 = (*pSVar9->vtable->vfunc_2C)(), iVar17 == 0x1a)) &&
            (iVar17 = thunk_FUN_0045ff10(pSVar9), iVar17 == 0xc)) {
-          puVar12 = (undefined4 *)thunk_FUN_0048dc90(pSVar9,local_1b8);
-          puVar20 = &local_1fc;
-          for (iVar17 = 0x10; iVar17 != 0; iVar17 = iVar17 + -1) {
-            *puVar20 = *puVar12;
-            puVar12 = puVar12 + 1;
-            puVar20 = puVar20 + 1;
-          }
-          *(undefined2 *)puVar20 = *(undefined2 *)puVar12;
+          puVar12 = (byte *)thunk_FUN_0048dc90(pSVar9,local_1b8);
+          puVar20 = (byte *)(&local_1fc);
+          memmove(puVar20, puVar12, 0x42); /* compiler REP MOVS byte copy */
           iVar17 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,local_1f6,(int *)&local_40);
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           if ((iVar17 == 0) && (iVar17 = (**(code **)(*local_40 + 0x88))(&local_e8), 0 < iVar17)) {

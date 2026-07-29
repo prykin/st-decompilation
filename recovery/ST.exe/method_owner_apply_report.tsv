@@ -764,8 +764,6 @@ address	status	proposed_name	detail
 006B08F0	disabled	DDXContext::sub_006B08F0	all apply flags are 0
 006B0A20	disabled	DDXContext::sub_006B0A20	all apply flags are 0
 006B0BA0	disabled	ST3DSMAPContext::sub_006B0BA0	all apply flags are 0
-006B0C70	disabled		all apply flags are 0
-006B1190	disabled	DArrayTy::sub_006B1190	all apply flags are 0
 006B13E0	disabled	DDXContext_008075A8::sub_006B13E0	all apply flags are 0
 006B1980	disabled	DDXContext_008075A8::sub_006B1980	all apply flags are 0
 006B1A50	disabled	DDXContext_008075A8::sub_006B1A50	all apply flags are 0

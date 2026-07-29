@@ -122,10 +122,10 @@ LAB_0048a37f:
                 local_38 = iVar7 + ((int)(iVar11 + (iVar11 >> 0x1f & 3U)) >> 2) + iVar1 + iVar8 * 2;
                 if ((((uint)(ushort)local_8->field_0032 == this->field_048B) &&
                     (local_8->field_0024 == this->field_0487)) &&
-                   (((this->field_0483 == 1 &&
+                   (((this->field_0483 == CASE_1 &&
                      (((uVar5 = local_8->field_0020, uVar5 == 0x14 || (uVar5 == 1000)) ||
                       (uVar5 == 0x3e9)))) ||
-                    ((this->field_0483 == 3 && (local_8->field_0020 == 0x1ae)))))) {
+                    ((this->field_0483 == CASE_3 && (local_8->field_0020 == 0x1ae)))))) {
                   local_38 = local_38 + 200;
                 }
                 iVar11 = local_38;
@@ -212,7 +212,7 @@ LAB_00489dfc:
                 if (local_34 < iVar11) {
                   this->field_0487 = local_8->field_0024;
                   this->field_048B = (uint)(ushort)local_8->field_0032;
-                  this->field_0483 = (-(uint)(local_8->field_0020 != 0x1ae) & 0xfffffffe) + 3;
+                  this->field_0483 = (-(uint)(local_8->field_0020 != 0x1ae) & 0xfffffffe) + CASE_3;
                   local_34 = iVar11;
                 }
               }
@@ -321,14 +321,14 @@ LAB_00489eb0:
                 iVar11 = iVar7 + ((int)(iVar11 + (iVar11 >> 0x1f & 3U)) >> 2) + iVar1 + iVar8 * 2;
                 if (((uint)(ushort)local_8->field_0032 == this->field_048B) &&
                    (local_8->field_0024 == this->field_0487)) {
-                  if ((this->field_0483 == 1) &&
+                  if ((this->field_0483 == CASE_1) &&
                      (((uVar5 = local_8->field_0020, uVar5 == 0x14 || (uVar5 == 1000)) ||
                       (uVar5 == 0x3e9)))) {
 LAB_0048a226:
                     iVar11 = iVar11 + 200;
                     goto LAB_0048a22c;
                   }
-                  if (this->field_0483 != 3) goto LAB_0048a22c;
+                  if (this->field_0483 != CASE_3) goto LAB_0048a22c;
                   if (local_8->field_0020 == 0x1ae) goto LAB_0048a226;
 LAB_0048a235:
                   pDVar10 = this->field_047B;
@@ -356,7 +356,7 @@ LAB_0048a22c:
                 if (local_34 < iVar11) {
                   this->field_0487 = local_8->field_0024;
                   this->field_048B = (uint)(ushort)local_8->field_0032;
-                  this->field_0483 = (-(uint)(local_8->field_0020 != 0x1ae) & 0xfffffffe) + 3;
+                  this->field_0483 = (-(uint)(local_8->field_0020 != 0x1ae) & 0xfffffffe) + CASE_3;
                   local_34 = iVar11;
                 }
               }

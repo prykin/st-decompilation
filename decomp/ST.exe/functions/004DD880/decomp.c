@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeRepairApplier] Propagated parameter 0.
    Evidence: 004E51B0 -> 004DD880 @ 004E569A */
@@ -69,11 +71,7 @@ LAB_004dd9b3:
           if (iVar4 != iVar6) goto code_r0x004dd9bb;
           piVar7 = &pAVar1->field_04D0 + iVar5 * 5;
           piVar9 = piVar8;
-          for (iVar6 = 5; iVar6 != 0; iVar6 = iVar6 + -1) {
-            *piVar9 = *piVar7;
-            piVar7 = piVar7 + 1;
-            piVar9 = piVar9 + 1;
-          }
+          memmove(piVar9, piVar7, 0x14); /* compiler REP MOVS byte copy */
           piVar8 = piVar8 + 5;
           local_10 = local_10 + 5;
           local_8 = local_8 + 5;
@@ -105,11 +103,7 @@ LAB_004dda13:
 LAB_004dda3a:
   piVar8 = local_104;
   piVar7 = &param_1->field_04D0;
-  for (iVar6 = 0x37; iVar6 != 0; iVar6 = iVar6 + -1) {
-    *piVar7 = *piVar8;
-    piVar8 = piVar8 + 1;
-    piVar7 = piVar7 + 1;
-  }
+  memmove(piVar7, piVar8, 0xdc); /* compiler REP MOVS byte copy */
   thunk_FUN_004ddcc0(param_1);
   return 0;
 code_r0x004dd9bb:

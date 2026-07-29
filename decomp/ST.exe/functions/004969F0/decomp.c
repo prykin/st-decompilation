@@ -1,5 +1,3 @@
-#include "../../pseudocode_runtime.h"
-
 
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 00496CC0 -> 004969F0 @ 00496D38 | 00496CC0 -> 004969F0 @ 00496D81
@@ -23,9 +21,9 @@ void FUN_004969f0(int param_1,int param_2,int param_3,int param_4,uint param_5,u
   undefined4 local_8;
 
   if (-1 < (int)param_7) {
-    if (param_7 < g_dArray_007FB270->count) {
-      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(g_dArray_007FB270, param_7) (runtime stride) */
-      piVar1 = (int *)(g_dArray_007FB270->elementSize * param_7 + (int)g_dArray_007FB270->data);
+    if (param_7 < g_array_007FB270->count) {
+      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(g_array_007FB270, param_7) (runtime stride) */
+      piVar1 = (int *)(g_array_007FB270->elementSize * param_7 + (int)g_array_007FB270->data);
     }
     else {
       piVar1 = (int *)0x0;
@@ -42,7 +40,7 @@ void FUN_004969f0(int param_1,int param_2,int param_3,int param_4,uint param_5,u
   local_8 = param_6;
   local_1c = param_1;
   local_18 = param_2;
-  Library::DKW::TBL::FUN_006ae1c0(&g_dArray_007FB270->flags,&local_1c);
+  Library::DKW::TBL::FUN_006ae1c0(&g_array_007FB270->flags,&local_1c);
   return;
 }
 

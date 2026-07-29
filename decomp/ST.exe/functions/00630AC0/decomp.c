@@ -1,5 +1,3 @@
-#include "../../pseudocode_runtime.h"
-
 
 /* [STMethodOwnerApplier] Structural method owner recovered as STManRuinC.
    Evidence: this_call_owners=[STManRuinC]; agreed_this_calls=1; incoming_this_accesses=2;
@@ -11,16 +9,16 @@ undefined4 __thiscall STManRuinC::sub_00630AC0(STManRuinC *this,uint param_1)
 {
   int iVar1;
   short sVar2;
-  STManRuinC_field_0038DArray *groupContent;
+  STManRuinC_field_0038DArray *array;
   STManRuinC_field_0038Element *psVar3;
   int iVar3;
   int iVar4;
 
-  groupContent = this->field_0038;
+  array = this->field_0038;
   /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
-  if ((groupContent->count <= param_1) ||
+  if ((array->count <= param_1) ||
      (psVar3 = (STManRuinC_field_0038Element *)
-               ((int)&groupContent->data->field_0000 + groupContent->elementSize * param_1),
+               ((int)&array->data->field_0000 + array->elementSize * param_1),
      psVar3 == (STManRuinC_field_0038Element *)0x0)) {
     return 0;
   }
@@ -28,18 +26,18 @@ undefined4 __thiscall STManRuinC::sub_00630AC0(STManRuinC *this,uint param_1)
   iVar4 = ((int)psVar3->field_0004 * (int)g_worldGrid.sizeX + (int)psVar3->field_0002) *
           (int)g_worldGrid.sizeY + (int)psVar3->field_0000;
   iVar1 = g_worldGrid.sizeY + iVar4;
-  iVar3 = FUN_006b0c70((DArrayTy *)groupContent,param_1);
+  iVar3 = DArrayRemoveAt((DArrayTy *)array,param_1);
   if (iVar3 != 0) {
     return 0;
   }
   if (sVar2 == 1) {
-    *(undefined1 *)(this->field_0034 + iVar4) = 0;
+    this->field_0034[iVar4] = 0;
     return 1;
   }
-  *(undefined1 *)(iVar4 + this->field_0034) = 0;
-  *(undefined1 *)(iVar4 + 1 + this->field_0034) = 0;
-  *(undefined1 *)(iVar1 + this->field_0034) = 0;
-  *(undefined1 *)(iVar1 + 1 + this->field_0034) = 0;
+  this->field_0034[iVar4] = 0;
+  this->field_0034[iVar4 + 1] = 0;
+  this->field_0034[iVar1] = 0;
+  this->field_0034[iVar1 + 1] = 0;
   return 1;
 }
 

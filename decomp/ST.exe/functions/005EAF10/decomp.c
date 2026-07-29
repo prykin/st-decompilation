@@ -28,9 +28,9 @@ int __thiscall STArtiafactC::GetMessage(STArtiafactC *this,STMessage *message)
   byte bVar13;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
-  undefined4 *puVar14;
+  byte *puVar14;
   undefined4 *puVar15;
-  undefined4 *puVar16;
+  byte *puVar16;
   STWorldObject *pSVar17;
   int iVar18;
   int iVar19;
@@ -82,7 +82,7 @@ int __thiscall STArtiafactC::GetMessage(STArtiafactC *this,STMessage *message)
               (pSVar11 = STAllPlayersC::GetObjPtr
                                    (g_allPlayers_007FA174,local_8->field_02A3,local_8->field_02AB,
                                     CASE_1), pSVar11 != (STGameObjC *)0x0)))) {
-            thunk_FUN_00492510(pSVar11,this_00->field_0018);
+            thunk_FUN_00492510(pSVar11,(int)this_00->field_0018);
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (*(code *)this_00->field_0000->field_00AC)(pSVar11->field_0018);
           }
@@ -284,14 +284,9 @@ int __thiscall STArtiafactC::GetMessage(STArtiafactC *this,STMessage *message)
           g_currentExceptionFrame = local_60.previous;
           return 0;
         }
-        puVar14 = puVar15;
-        puVar16 = (undefined4 *)&local_8->field_0x326;
-        for (iVar8 = 0x54; iVar8 != 0; iVar8 = iVar8 + -1) {
-          *puVar16 = *puVar14;
-          puVar14 = puVar14 + 1;
-          puVar16 = puVar16 + 1;
-        }
-        *(undefined1 *)puVar16 = *(undefined1 *)puVar14;
+        puVar14 = (byte *)(puVar15);
+        puVar16 = (byte *)&local_8->field_0x326;
+        memmove(puVar16, puVar14, 0x151); /* compiler REP MOVS byte copy */
         if (puVar15[3] == 0) {
           local_8->field_046B = (int)local_8->field_034A;
           local_8->field_046F = (int)local_8->field_034C;
@@ -396,7 +391,7 @@ switchD_005eb5ad_caseD_129:
     g_currentExceptionFrame = local_60.previous;
     return 0;
   }
-  if ((AnonShape_005EFAE0_B406B78B *)local_8->field_02A7 == (AnonShape_005EFAE0_B406B78B *)0x0) {
+  if (local_8->field_02A7 == (AnonShape_005EFAE0_B406B78B *)0x0) {
     g_currentExceptionFrame = local_60.previous;
     return 0;
   }
@@ -405,9 +400,8 @@ switchD_005eb5ad_caseD_129:
     return 0;
   }
   if ((local_8->field_02AB == -1) &&
-     (iVar8 = STPlaySystemC::sub_006E62D0
-                        (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)local_8->field_02A7,
-                         &local_14), iVar8 != -4)) {
+     (iVar8 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,local_8->field_02A7,&local_14),
+     iVar8 != -4)) {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     this_00->field_02AB = *(undefined2 *)(local_14 + 0x32);
   }
@@ -425,11 +419,11 @@ switchD_005eb5ad_caseD_129:
     this_00->field_027F = (int)*(short *)&pSVar11->field_0x45;
     this_00->field_02BA = (int)(short)pSVar11->field_006C / 0xf;
     puVar15 = (undefined4 *)&pSVar11->field_0x34;
-    puVar14 = (undefined4 *)&this_00->field_0x34;
+    puVar14 = (byte *)&this_00->field_0x34;
     for (iVar8 = 0x17; iVar8 != 0; iVar8 = iVar8 + -1) {
       *puVar14 = *puVar15;
       puVar15 = puVar15 + 1;
-      puVar14 = puVar14 + 1;
+      puVar14 = (byte *)(puVar14 + 1);
     }
     *(undefined2 *)puVar14 = *(undefined2 *)puVar15;
     *(undefined1 *)((int)puVar14 + 2) = *(undefined1 *)((int)puVar15 + 2);

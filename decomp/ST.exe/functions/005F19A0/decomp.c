@@ -1,5 +1,3 @@
-#include "../../pseudocode_runtime.h"
-
 
 /* [STMethodOwnerApplier] Structural method owner recovered as STManBasisC.
    Evidence: this_call_owners=[STManBasisC]; agreed_this_calls=1; incoming_this_accesses=3;
@@ -111,7 +109,7 @@ LAB_005f1c4c:
                        *(short *)((int)psVar6 + 7));
   pVVar4 = g_visibleClass_00802A88;
   if (-1 < iVar7) {
-    FUN_006b0c70(local_14->field_003C,local_c);
+    DArrayRemoveAt(local_14->field_003C,local_c);
     pVVar4 = g_visibleClass_00802A88;
   }
   goto joined_r0x005f19be;

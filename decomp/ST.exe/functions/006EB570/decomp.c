@@ -6,11 +6,11 @@ undefined4 FUN_006eb570(int *param_1,AnonShape_006EB570_80B255F3 *param_2)
   uint uVar2;
   char *pcVar3;
   int iVar4;
-  undefined8 *puVar5;
+  byte *pbVar5;
   int iVar6;
   int iVar7;
   int iVar8;
-  int iVar9;
+  int rowCount;
   int local_9c;
   int local_94;
   int local_90;
@@ -56,18 +56,17 @@ undefined4 FUN_006eb570(int *param_1,AnonShape_006EB570_80B255F3 *param_2)
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_1 == (int *)0x0) {
       ExceptionList = &local_14;
-      FUN_006cea60((undefined8 *)param_2->field_04EA,param_2->field_04EE,
-                   *(undefined8 **)(iVar8 + 0x474),*(int *)(iVar8 + 0x478),*(uint *)(iVar1 + 0xc),
-                   *(int *)(iVar1 + 0x10));
+      CopyRows((byte *)param_2->field_04EA,param_2->field_04EE,*(byte **)(iVar8 + 0x474),
+               *(int *)(iVar8 + 0x478),*(uint *)(iVar1 + 0xc),*(int *)(iVar1 + 0x10));
       ExceptionList = local_14;
       return 0;
     }
     iVar1 = *(int *)(iVar8 + 0x478);
     iVar7 = param_1[1];
     iVar6 = *param_1;
-    iVar9 = param_1[3];
+    rowCount = param_1[3];
     uVar2 = param_1[2];
-    puVar5 = (undefined8 *)(iVar7 * iVar1 + *(int *)(iVar8 + 0x474) + iVar6);
+    pbVar5 = (byte *)(iVar7 * iVar1 + *(int *)(iVar8 + 0x474) + iVar6);
     ExceptionList = &local_14;
     local_1c = &stack0xffffff44;
   }
@@ -171,41 +170,34 @@ LAB_006eb87f:
         }
         if (local_30 < local_6c) {
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          FUN_006cea60((undefined8 *)
-                       (param_2->field_04EE * local_30 + param_2->field_04EA + local_34),
-                       param_2->field_04EE,
-                       (undefined8 *)
-                       (*(int *)(iVar8 + 0x478) * local_30 + *(int *)(iVar8 + 0x474) + local_34),
-                       *(int *)(iVar8 + 0x478),local_2c,local_6c - local_30);
+          CopyRows((byte *)(param_2->field_04EE * local_30 + param_2->field_04EA + local_34),
+                   param_2->field_04EE,
+                   (byte *)(*(int *)(iVar8 + 0x478) * local_30 + *(int *)(iVar8 + 0x474) + local_34)
+                   ,*(int *)(iVar8 + 0x478),local_2c,local_6c - local_30);
         }
         iVar1 = ((local_28 - local_64) - local_6c) + local_30;
         if (0 < iVar1) {
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          FUN_006cea60((undefined8 *)
-                       ((local_64 + local_6c) * param_2->field_04EE + param_2->field_04EA + local_34
-                       ),param_2->field_04EE,
-                       (undefined8 *)
-                       ((local_64 + local_6c) * *(int *)(iVar8 + 0x478) + *(int *)(iVar8 + 0x474) +
-                       local_34),*(int *)(iVar8 + 0x478),local_2c,iVar1);
+          CopyRows((byte *)((local_64 + local_6c) * param_2->field_04EE + param_2->field_04EA +
+                           local_34),param_2->field_04EE,
+                   (byte *)((local_64 + local_6c) * *(int *)(iVar8 + 0x478) +
+                            *(int *)(iVar8 + 0x474) + local_34),*(int *)(iVar8 + 0x478),local_2c,
+                   iVar1);
         }
         if (local_34 < local_70) {
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          FUN_006cea60((undefined8 *)
-                       (param_2->field_04EE * local_6c + param_2->field_04EA + local_34),
-                       param_2->field_04EE,
-                       (undefined8 *)
-                       (*(int *)(iVar8 + 0x478) * local_6c + *(int *)(iVar8 + 0x474) + local_34),
-                       *(int *)(iVar8 + 0x478),local_70 - local_34,local_64);
+          CopyRows((byte *)(param_2->field_04EE * local_6c + param_2->field_04EA + local_34),
+                   param_2->field_04EE,
+                   (byte *)(*(int *)(iVar8 + 0x478) * local_6c + *(int *)(iVar8 + 0x474) + local_34)
+                   ,*(int *)(iVar8 + 0x478),local_70 - local_34,local_64);
         }
         uVar2 = ((local_2c - local_68) - local_70) + local_34;
         if (0 < (int)uVar2) {
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          FUN_006cea60((undefined8 *)
-                       (param_2->field_04EE * local_6c + param_2->field_04EA + local_68 + local_70),
-                       param_2->field_04EE,
-                       (undefined8 *)
-                       (*(int *)(iVar8 + 0x478) * local_6c + *(int *)(iVar8 + 0x474) + local_68 +
-                       local_70),*(int *)(iVar8 + 0x478),uVar2,local_64);
+          CopyRows((byte *)(param_2->field_04EE * local_6c + param_2->field_04EA + local_68 +
+                           local_70),param_2->field_04EE,
+                   (byte *)(*(int *)(iVar8 + 0x478) * local_6c + *(int *)(iVar8 + 0x474) + local_68
+                           + local_70),*(int *)(iVar8 + 0x478),uVar2,local_64);
         }
         local_9c = param_2->field_04E6 - local_5c;
         local_3c = local_6c;
@@ -219,7 +211,7 @@ LAB_006eb87f:
           local_74 = local_4c;
           local_24 = local_70;
           while( true ) {
-            puVar5 = (undefined8 *)(param_2->field_04EE * local_3c + param_2->field_04EA + local_24);
+            pbVar5 = (byte *)(param_2->field_04EE * local_3c + param_2->field_04EA + local_24);
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             local_54 = (byte *)(*(int *)(iVar8 + 0x478) * local_3c + *(int *)(iVar8 + 0x474) +
                                local_24);
@@ -234,8 +226,8 @@ LAB_006eb87f:
                 local_8c = local_40;
               }
               if (uVar2 == 0xff) {
-                FUN_006cea60(puVar5,param_2->field_04EE,(undefined8 *)local_54,
-                             *(int *)(iVar8 + 0x478),local_8c,local_9c);
+                CopyRows(pbVar5,param_2->field_04EE,local_54,*(int *)(iVar8 + 0x478),local_8c,
+                         local_9c);
               }
               else {
                 if (uVar2 == 0x20) {
@@ -244,8 +236,8 @@ LAB_006eb87f:
                 else {
                   iVar1 = *(int *)&param_2->field_0x154 + 0x1800;
                 }
-                FUN_00750590((undefined1 *)puVar5,param_2->field_04EE,local_54,
-                             *(int *)(iVar8 + 0x478),local_8c,local_9c,iVar1);
+                FUN_00750590(pbVar5,param_2->field_04EE,local_54,*(int *)(iVar8 + 0x478),local_8c,
+                             local_9c,iVar1);
               }
             }
             else {
@@ -255,9 +247,8 @@ LAB_006eb87f:
               local_60 = (undefined1 *)
                          (*(int *)(param_2->field_0472 + uVar2 * 4) + param_2->field_04E2 * local_5c
                          + local_50);
-              FUN_00750660((undefined1 *)puVar5,param_2->field_04EE,local_54,*(int *)(iVar8 + 0x478)
-                           ,local_60,param_2->field_04E2,local_8c,local_9c,
-                           *(int *)&param_2->field_0x154);
+              FUN_00750660(pbVar5,param_2->field_04EE,local_54,*(int *)(iVar8 + 0x478),local_60,
+                           param_2->field_04E2,local_8c,local_9c,*(int *)&param_2->field_0x154);
             }
             local_74 = local_74 + 1;
             if (local_58 < local_74) break;
@@ -301,24 +292,23 @@ LAB_006eb763:
       iVar4 = param_1[1];
       iVar6 = *param_1;
       iVar7 = param_2->field_04EE;
-      iVar9 = param_1[3];
+      rowCount = param_1[3];
       uVar2 = param_1[2];
-      puVar5 = (undefined8 *)(iVar4 * iVar1 + *(int *)(iVar8 + 0x474) + iVar6);
+      pbVar5 = (byte *)(iVar4 * iVar1 + *(int *)(iVar8 + 0x474) + iVar6);
       iVar8 = iVar7;
       goto LAB_006ebde1;
     }
     iVar1 = *(int *)(iVar8 + 0x478);
     iVar7 = param_1[1];
     iVar6 = *param_1;
-    iVar9 = param_1[3];
+    rowCount = param_1[3];
     uVar2 = param_1[2];
-    puVar5 = (undefined8 *)(iVar7 * iVar1 + *(int *)(iVar8 + 0x474) + iVar6);
+    pbVar5 = (byte *)(iVar7 * iVar1 + *(int *)(iVar8 + 0x474) + iVar6);
   }
   iVar4 = param_2->field_04EE;
   iVar8 = iVar4;
 LAB_006ebde1:
-  FUN_006cea60((undefined8 *)(iVar7 * iVar4 + param_2->field_04EA + iVar6),iVar8,puVar5,iVar1,uVar2,
-               iVar9);
+  CopyRows((byte *)(iVar7 * iVar4 + param_2->field_04EA + iVar6),iVar8,pbVar5,iVar1,uVar2,rowCount);
   ExceptionList = local_14;
   return 0;
 }

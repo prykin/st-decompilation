@@ -65,9 +65,7 @@ undefined4 __thiscall STGroupBoatC::GrpRepSub(STGroupBoatC *this,int param_1)
   if ((param_1 != 1) && (param_1 != 0)) goto LAB_004a0c5b;
   memset(&local_30->field_0089, 0, 0x54); /* compiler bulk-zero initialization */
   local_30->field_0065 = 0;
-  iVar3 = STPlaySystemC::sub_006E62D0
-                    (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)local_30->field_01C5,
-                     (int *)&local_8);
+  iVar3 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,local_30->field_01C5,(int *)&local_8);
   if (iVar3 == -4) {
     return 0;
   }
@@ -75,7 +73,7 @@ undefined4 __thiscall STGroupBoatC::GrpRepSub(STGroupBoatC *this,int param_1)
             ((STFishC *)local_8,(undefined2 *)&pSVar2->field_0x304,
              (undefined2 *)&pSVar2->field_0x306,(undefined2 *)&pSVar2->field_0x308);
   local_20 = 0;
-  *(uint *)&pSVar2->field_0x30a = local_8->field_0018;
+  *(int *)&pSVar2->field_0x30a = local_8->field_0018;
   local_40 = g_playSystem_00802A38->field_00E4;
   pSVar9 = local_8;
   array = local_24;

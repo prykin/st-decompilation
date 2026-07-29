@@ -16,15 +16,14 @@ byte * __cdecl EventDataPack(AnonShape_0065CD10_BA40DE58 *param_1,uint *param_2)
   int iVar2;
   AnonShape_0065CD10_CB9334E9 *pAVar3;
   byte *pbVar4;
-  uint uVar5;
   uint uVar6;
   int iVar7;
   uint *puVar8;
   undefined4 *puVar9;
   AnonShape_0065CD10_BA40DE58 *pAVar10;
-  undefined4 *puVar11;
+  byte *puVar11;
   AnonShape_0065CD10_CB9334E9 *pAVar12;
-  undefined4 *puVar13;
+  byte *puVar13;
   bool bVar14;
   InternalExceptionFrame local_50;
   int local_c;
@@ -121,18 +120,9 @@ byte * __cdecl EventDataPack(AnonShape_0065CD10_BA40DE58 *param_1,uint *param_2)
     else {
       uVar6 = param_1->field_046E * 5;
     }
-    puVar11 = param_1->field_0476;
-    puVar13 = puVar9;
-    for (uVar5 = uVar6 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
-      *puVar13 = *puVar11;
-      puVar11 = puVar11 + 1;
-      puVar13 = puVar13 + 1;
-    }
-    for (uVar6 = uVar6 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
-      *(undefined1 *)puVar13 = *(undefined1 *)puVar11;
-      puVar11 = (undefined4 *)((int)puVar11 + 1);
-      puVar13 = (undefined4 *)((int)puVar13 + 1);
-    }
+    puVar11 = (byte *)(param_1->field_0476);
+    puVar13 = (byte *)(puVar9);
+    memmove(puVar13, puVar11, uVar6); /* compiler REP MOVS byte copy */
     local_8->field_047A = (undefined1 *)((int)puVar9 + (-0x49e - (int)local_8));
     local_8->field_0476 = 0;
     g_currentExceptionFrame = local_50.previous;

@@ -14,7 +14,7 @@ undefined4 __thiscall STJumpMineC::LoadImagJMine(STJumpMineC *this,int param_1)
   ushort *puVar3;
   int iVar4;
   undefined4 uVar5;
-  int *piVar6;
+  uint *puVar6;
   STJumpMineC *pSVar7;
   InternalExceptionFrame local_4c;
   STJumpMineC *local_8;
@@ -30,63 +30,63 @@ undefined4 __thiscall STJumpMineC::LoadImagJMine(STJumpMineC *this,int param_1)
                          (DAT_00806774,CASE_1D,"jmpmine",0xffffffff,0,1,0,(undefined4 *)0x0
                          );
       pSVar7 = local_8;
-      piVar6 = &local_8->field_0097;
+      puVar6 = &local_8->field_0097;
       ST3DSMAPContext::sub_006E8660
-                (g_sT3DSMAPContext_00807598,piVar6,1,0,*(uint *)((int)puVar3 + 9),
+                (g_sT3DSMAPContext_00807598,(int *)puVar6,1,0,*(uint *)((int)puVar3 + 9),
                  *(uint *)((int)puVar3 + 0xd),0x5a,0x45,0);
       ST3DSMAPContext::sub_006E98E0
-                (g_sT3DSMAPContext_00807598,*piVar6,0,*(int *)puVar3,*(int *)((int)puVar3 + 0x21),1);
-      ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,*piVar6,0,pSVar7->field_00AB);
+                (g_sT3DSMAPContext_00807598,*puVar6,0,*(int *)puVar3,*(int *)((int)puVar3 + 0x21),1);
+      ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,*puVar6,0,pSVar7->field_00AB);
       iVar2 = *(int *)puVar3;
       pSVar7->field_009B = puVar3;
       pSVar7->field_00AF = iVar2;
       if (DAT_00807326 != '\0') {
         Library::Ourlib::ST3DSMAP::SprSetShadow
-                  (g_sT3DSMAPContext_00807598,*piVar6,0,0x401109,(uint)&pSVar7->field_0x4d);
+                  (g_sT3DSMAPContext_00807598,*puVar6,0,0x401109,(uint)&pSVar7->field_0x4d);
       }
     }
     else {
-      piVar6 = &local_8->field_0097;
-      if (-1 < local_8->field_0097) {
+      puVar6 = &local_8->field_0097;
+      if (-1 < (int)local_8->field_0097) {
         Library::Ourlib::ST3DSMAP::SprSetShadow
                   (g_sT3DSMAPContext_00807598,local_8->field_0097,0,0,(uint)local_8);
-        Library::Ourlib::ST3DSMAP::SprClose(g_sT3DSMAPContext_00807598,*piVar6);
+        Library::Ourlib::ST3DSMAP::SprClose(g_sT3DSMAPContext_00807598,*puVar6);
       }
       puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
                          (DAT_00806774,CASE_1D,"exptme",0xffffffff,0,1,0,(undefined4 *)0x0);
       ST3DSMAPContext::sub_006E8660
-                (g_sT3DSMAPContext_00807598,piVar6,3,0,*(uint *)((int)puVar3 + 9),
+                (g_sT3DSMAPContext_00807598,(int *)puVar6,3,0,*(uint *)((int)puVar3 + 9),
                  *(uint *)((int)puVar3 + 0xd),0x5a,0x45,0);
       ST3DSMAPContext::sub_006E98E0
-                (g_sT3DSMAPContext_00807598,*piVar6,0,*(int *)puVar3,*(int *)((int)puVar3 + 0x21),1);
-      ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,*piVar6,0,pSVar7->field_00AB);
+                (g_sT3DSMAPContext_00807598,*puVar6,0,*(int *)puVar3,*(int *)((int)puVar3 + 0x21),1);
+      ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,*puVar6,0,pSVar7->field_00AB);
       pSVar7->field_00AF = *(int *)puVar3;
       puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
                          (DAT_00806774,CASE_1D,"expmask2",0xffffffff,0,1,0,
                           (undefined4 *)0x0);
       ST3DSMAPContext::sub_006E98E0
-                (g_sT3DSMAPContext_00807598,*piVar6,1,*(int *)puVar3,*(int *)((int)puVar3 + 0x21),1);
-      ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,*piVar6,1,pSVar7->field_00BC);
-      ST3DSMAPContext::sub_006EA800(g_sT3DSMAPContext_00807598,*piVar6,1,1);
+                (g_sT3DSMAPContext_00807598,*puVar6,1,*(int *)puVar3,*(int *)((int)puVar3 + 0x21),1);
+      ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,*puVar6,1,pSVar7->field_00BC);
+      ST3DSMAPContext::sub_006EA800(g_sT3DSMAPContext_00807598,*puVar6,1,1);
       Library::Ourlib::ST3DSMAP::SprSetMShadowTbl
-                (g_sT3DSMAPContext_00807598,*piVar6,DAT_008032b8,0x10);
+                (g_sT3DSMAPContext_00807598,*puVar6,DAT_008032b8,0x10);
       pSVar7->field_00C0 = *(undefined4 *)puVar3;
       pSVar7->field_00BB = 1;
       puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
                          (DAT_00806764,CASE_1D,"bulb_n4",0xffffffff,0,1,0,(undefined4 *)0x0
                          );
       ST3DSMAPContext::sub_006E98E0
-                (g_sT3DSMAPContext_00807598,*piVar6,2,*(int *)puVar3,*(int *)((int)puVar3 + 0x21),1);
-      ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,*piVar6,2,pSVar7->field_00B7);
-      ST3DSMAPContext::sub_006E9D40(g_sT3DSMAPContext_00807598,(uint *)*piVar6,2);
+                (g_sT3DSMAPContext_00807598,*puVar6,2,*(int *)puVar3,*(int *)((int)puVar3 + 0x21),1);
+      ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,*puVar6,2,pSVar7->field_00B7);
+      ST3DSMAPContext::sub_006E9D40(g_sT3DSMAPContext_00807598,(uint *)*puVar6,2);
       pSVar7->field_00B3 = *(int *)puVar3;
     }
     Library::Ourlib::ST3DSMAP::SprMove
-              (g_sT3DSMAPContext_00807598,*piVar6,
+              (g_sT3DSMAPContext_00807598,*puVar6,
                (float)pSVar7->field_009F * _DAT_007904f8 * _DAT_007904f0,
                (float)pSVar7->field_00A3 * _DAT_007904f8 * _DAT_007904f0,
                (float)pSVar7->field_00A7 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
-    Library::Ourlib::ST3DSMAP::SprShow(g_sT3DSMAPContext_00807598,*piVar6,0);
+    Library::Ourlib::ST3DSMAP::SprShow(g_sT3DSMAPContext_00807598,*puVar6,0);
     pSVar7->field_00C4 = 1;
     g_currentExceptionFrame = local_4c.previous;
     return 1;

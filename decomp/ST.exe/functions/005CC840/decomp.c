@@ -28,9 +28,8 @@ void __thiscall SettMapMTy::DeleteCtrls(SettMapMTy *this)
       if (g_cursorClass_00802A30->field_00A9 == 0) {
         Library::DKW::DDX::FUN_006b8b10((int *)g_cursorClass_00802A30->field_00AD);
       }
-      else if (g_cursorClass_00802A30->field_001C != (cLoadingTy *)0xffffffff) {
-        FUN_006b3af0((int *)g_cursorClass_00802A30->field_0060,
-                     (uint)g_cursorClass_00802A30->field_001C);
+      else if (g_cursorClass_00802A30->field_001C != 0xffffffff) {
+        FUN_006b3af0((int *)g_cursorClass_00802A30->field_0060,g_cursorClass_00802A30->field_001C);
       }
     }
     this_00 = local_8;
@@ -39,7 +38,7 @@ void __thiscall SettMapMTy::DeleteCtrls(SettMapMTy *this)
       StartSystemTy::sub_006E56B0(this_00->field_000C,this_00->field_21FC);
       this_00->field_21FC = 0;
     }
-    if (-1 < this_00->field_2200) {
+    if (-1 < (int)this_00->field_2200) {
       FUN_006b3af0((int *)g_ddxContext_008075A8,this_00->field_2200);
     }
     if (this_00->field_21E6 != '\0') {
@@ -63,12 +62,12 @@ void __thiscall SettMapMTy::DeleteCtrls(SettMapMTy *this)
       else {
         pHVar3->field_0002 = 1;
         pHVar3->field_0000 = 0;
-        pHVar3->field_0003 = -1;
+        *(undefined4 *)&pHVar3->field_0x3 = 0xffffffff;
         pHVar3->field_0001 = CASE_2;
-        pHVar3->field_0007 = 0;
+        pHVar3->field_0007 = (void *)0x0;
         pHVar3->field_000B = (void *)0x0;
         pHVar3->field_000F = 0;
-        pHVar3->field_001B = 1;
+        *(undefined4 *)&pHVar3->field_0x1b = 1;
         pHVar3->field_0013 = 1;
         pHVar3->field_0017 = -1;
         pHVar3->field_0027 = 0;
@@ -88,7 +87,7 @@ void __thiscall SettMapMTy::DeleteCtrls(SettMapMTy *this)
           pHVar3 = this_00->field_21F8;
           pHVar3->field_0002 = 0;
           pHVar3->field_0017 = -1;
-          uVar7 = this_00->field_21F8->field_0003;
+          uVar7 = *(uint *)&this_00->field_21F8->field_0x3;
           if (-1 < (int)uVar7) {
             Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar7);
           }

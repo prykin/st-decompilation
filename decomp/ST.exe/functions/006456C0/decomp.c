@@ -13,8 +13,8 @@ void __thiscall STTorpC::RestoreTorpData(STTorpC *this,int param_1)
   int iVar3;
   DArrayTy *pDVar4;
   int iVar5;
-  undefined4 *puVar6;
-  undefined4 *puVar7;
+  byte *puVar6;
+  byte *puVar7;
   InternalExceptionFrame local_50;
   STTorpC *local_c;
   AnonShape_006456C0_B6840D7C *local_8;
@@ -26,13 +26,9 @@ void __thiscall STTorpC::RestoreTorpData(STTorpC *this,int param_1)
   iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   pSVar2 = local_c;
   if (iVar3 == 0) {
-    puVar6 = (undefined4 *)&local_8->field_0x14;
-    puVar7 = (undefined4 *)&local_c->field_0245;
-    for (iVar3 = 0x11; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar7 = *puVar6;
-      puVar6 = puVar6 + 1;
-      puVar7 = puVar7 + 1;
-    }
+    puVar6 = (byte *)&local_8->field_0x14;
+    puVar7 = (byte *)&local_c->field_0245;
+    memmove(puVar7, puVar6, 0x44); /* compiler REP MOVS byte copy */
     *(undefined4 *)&local_c->field_0x231 = local_8->field_0058;
     *(undefined4 *)&local_c->field_0x235 = local_8->field_005C;
     *(undefined4 *)&local_c->field_0x239 = local_8->field_0060;

@@ -17,8 +17,8 @@ STJellyManC * __thiscall STJellyManC::STJellyManC(STJellyManC *this)
   this->vtable = &STJellyManCVTable;
   memset(&this->field_0x1d9, 0, 0x2e); /* compiler bulk-zero initialization */
   this->field_01D5 = 0;
-  this->field_0207 = 0;
-  this->field_020B = 0;
+  this->field_0207 = (void *)0x0;
+  this->field_020B = (void *)0x0;
   this->field_020F = 0;
   return this;
 }

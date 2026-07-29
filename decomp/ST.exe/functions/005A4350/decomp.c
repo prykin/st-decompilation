@@ -1859,7 +1859,7 @@ LAB_005a7c92:
       else {
         element_1fb3 = (FSGSTy_field_1FB3Element *)0x0;
       }
-      ccFntTy::WrStr(this_00->field_1A73,&element_1fb3->field_0000,-1,-1,
+      ccFntTy::WrStr(this_00->field_1A73,(uint *)element_1fb3,-1,-1,
                      3 - ((message->arg0).words.high != 1));
       if ((message->arg0).words.high == 1) {
         pAVar18 = (message->arg1).ptr;
@@ -2625,10 +2625,10 @@ cf_common_exit_005A52AA:
       bVar34 = (char)message->id - 0x13;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_c = (AnonShape_005A4350_59BACD18 *)CONCAT31(local_c._1_3_,bVar34);
-      if ((this_00->field_1EE3 <= (uint)bVar34) || (this_00->field_1EDB == 0)) break;
+      if ((this_00->field_1EE3 <= (uint)bVar34) || (this_00->field_1EDB == (void *)0x0)) break;
       iVar45 = (uint)bVar34 * 0x24;
       iVar21 = -1;
-      pcVar39 = (char *)(iVar45 + 0x14 + this_00->field_1EDB);
+      pcVar39 = (char *)(iVar45 + 0x14 + (int)this_00->field_1EDB);
       do {
         if (iVar21 == 0) break;
         iVar21 = iVar21 + -1;
@@ -2640,7 +2640,7 @@ cf_common_exit_005A52AA:
         FreeAndNull(&this_00->field_1B0C);
       }
       uVar35 = 0xffffffff;
-      pcVar39 = (char *)(iVar45 + 0x14 + this_00->field_1EDB);
+      pcVar39 = (char *)(iVar45 + 0x14 + (int)this_00->field_1EDB);
       do {
         if (uVar35 == 0) break;
         uVar35 = uVar35 - 1;
@@ -2650,7 +2650,7 @@ cf_common_exit_005A52AA:
       pbVar40 = (byte *)Library::DKW::LIB::FUN_006aac70(~uVar35);
       this_00->field_1B0C = pbVar40;
       uVar35 = 0xffffffff;
-      pcVar39 = (char *)(iVar45 + 0x14 + this_00->field_1EDB);
+      pcVar39 = (char *)(iVar45 + 0x14 + (int)this_00->field_1EDB);
       do {
         pcVar28 = pcVar39;
         if (uVar35 == 0) break;

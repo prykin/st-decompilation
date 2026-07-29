@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4
 FUN_007553f0(AnonShape_007553F0_ACB112C2 *param_1,int *param_2,undefined4 *param_3,
@@ -8,10 +10,9 @@ FUN_007553f0(AnonShape_007553F0_ACB112C2 *param_1,int *param_2,undefined4 *param
   int iVar2;
   int iVar3;
   int iVar4;
-  uint uVar5;
   uint uVar6;
-  undefined4 *puVar7;
-  undefined4 *puVar8;
+  byte *puVar7;
+  byte *puVar8;
 
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar4 = *(int *)(param_1->field_0008 + 0x50);
@@ -64,7 +65,7 @@ LAB_00755464:
   }
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar4 = *(int *)(param_1->field_000C + 0x44 + *(int *)(param_1->field_000C + 0x1c) * 8);
-  puVar7 = (undefined4 *)(iVar4 + 0x10 + iVar3);
+  puVar7 = (byte *)(iVar4 + 0x10 + iVar3);
   *param_3 = *(undefined4 *)(iVar4 + 0x14 + iVar3);
   *param_4 = *puVar7;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -84,18 +85,9 @@ LAB_00755464:
     }
   }
   if ((undefined4 *)*param_2 != (undefined4 *)0x0) {
-    puVar7 = puVar7 + 2;
-    puVar8 = (undefined4 *)*param_2;
-    for (uVar5 = uVar6 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
-      *puVar8 = *puVar7;
-      puVar7 = puVar7 + 1;
-      puVar8 = puVar8 + 1;
-    }
-    for (uVar6 = uVar6 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
-      *(undefined1 *)puVar8 = *(undefined1 *)puVar7;
-      puVar7 = (undefined4 *)((int)puVar7 + 1);
-      puVar8 = (undefined4 *)((int)puVar8 + 1);
-    }
+    puVar7 = (byte *)(puVar7 + 2);
+    puVar8 = (byte *)*param_2;
+    memmove(puVar8, puVar7, uVar6); /* compiler REP MOVS byte copy */
   }
   return 0;
 }

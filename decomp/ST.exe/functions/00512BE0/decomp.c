@@ -24,7 +24,6 @@ void __thiscall HelpPanelTy::sub_00512BE0(HelpPanelTy *this,int param_1)
   code *pcVar2;
   HelpPanelTy *this_00;
   int iVar3;
-  int iVar4;
   int *piVar5;
   int *piVar6;
   int local_8c4 [4];
@@ -136,11 +135,7 @@ void __thiscall HelpPanelTy::sub_00512BE0(HelpPanelTy *this,int param_1)
     local_68c = 2;
     piVar5 = local_808;
     piVar6 = local_688;
-    for (iVar4 = 0x5f; iVar4 != 0; iVar4 = iVar4 + -1) {
-      *piVar6 = *piVar5;
-      piVar5 = piVar5 + 1;
-      piVar6 = piVar6 + 1;
-    }
+    memmove(piVar6, piVar5, 0x17c); /* compiler REP MOVS byte copy */
     if (iVar3 == 0) {
       local_688[3] = -this_00->field_0048;
     }

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STHiddenThisApplier] Anonymous hidden receiver recovered as
    /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0060EF40.
@@ -16,13 +18,12 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0060EF40::FUN_0060ef40
   AnonShape_0060F940_1CCED7C8 *pAVar2;
   undefined4 uVar3;
   short sVar4;
-  uint uVar5;
   int iVar6;
   short sVar7;
   STWorldObject *pSVar8;
   short sVar9;
   uint uVar10;
-  undefined4 *puVar11;
+  byte *puVar11;
   int iVar12;
   int local_b8 [2];
   int local_b0;
@@ -123,16 +124,9 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0060EF40::FUN_0060ef40
   local_8 = 0;
   uVar10 = local_8c * 10;
   Library::MSVCRT::FUN_0072da40();
-  puVar11 = (undefined4 *)&stack0xffffff38;
+  puVar11 = (byte *)&stack0xffffff38;
   local_1c = &stack0xffffff38;
-  for (uVar5 = uVar10 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
-    *puVar11 = 0;
-    puVar11 = puVar11 + 1;
-  }
-  for (uVar10 = uVar10 & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
-    *(undefined1 *)puVar11 = 0;
-    puVar11 = (undefined4 *)((int)puVar11 + 1);
-  }
+  memset(puVar11, 0, uVar10); /* compiler bulk-zero initialization */
   local_8 = 0xffffffff;
   local_4c = 0;
   do {

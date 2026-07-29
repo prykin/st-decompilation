@@ -32,9 +32,9 @@ int __thiscall STContainerC::GetMessage(STContainerC *this,STMessage *message)
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_00;
   undefined2 uVar14;
-  undefined4 *puVar15;
+  byte *puVar15;
   undefined4 *puVar16;
-  undefined4 *puVar17;
+  byte *puVar17;
   STWorldObject *pSVar18;
   int iVar19;
   int iVar20;
@@ -85,7 +85,7 @@ int __thiscall STContainerC::GetMessage(STContainerC *this,STMessage *message)
               (this_01 = STAllPlayersC::GetObjPtr
                                    (g_allPlayers_007FA174,local_8->field_02A3,local_8->field_02AB,
                                     CASE_1), this_01 != (STGameObjC *)0x0)))) {
-            thunk_FUN_00492510(this_01,this_00->field_0018);
+            thunk_FUN_00492510(this_01,(int)this_00->field_0018);
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (*(code *)this_00->field_0000->field_00AC)(this_01->field_0018);
           }
@@ -234,14 +234,9 @@ int __thiscall STContainerC::GetMessage(STContainerC *this,STMessage *message)
       }
       puVar16 = (message->arg0).ptr;
       if (puVar16[3] != 2) {
-        puVar15 = puVar16;
-        puVar17 = (undefined4 *)&local_8->field_0x326;
-        for (iVar8 = 0x55; iVar8 != 0; iVar8 = iVar8 + -1) {
-          *puVar17 = *puVar15;
-          puVar15 = puVar15 + 1;
-          puVar17 = puVar17 + 1;
-        }
-        *(undefined1 *)puVar17 = *(undefined1 *)puVar15;
+        puVar15 = (byte *)(puVar16);
+        puVar17 = (byte *)&local_8->field_0x326;
+        memmove(puVar17, puVar15, 0x155); /* compiler REP MOVS byte copy */
         if (puVar16[3] == 0) {
           local_8->field_046F = (int)local_8->field_034E;
           local_8->field_0473 = (int)local_8->field_0350;
@@ -429,11 +424,11 @@ switchD_005fbd08_caseD_129:
     this_00->field_027F = *(short *)&local_c->field_0x45 + 5;
     this_00->field_02BA = (int)(short)local_c->field_006C / 0xf;
     puVar16 = (undefined4 *)&local_c->field_0x34;
-    puVar15 = (undefined4 *)&this_00->field_0x34;
+    puVar15 = (byte *)&this_00->field_0x34;
     for (iVar8 = 0x17; iVar8 != 0; iVar8 = iVar8 + -1) {
       *puVar15 = *puVar16;
       puVar16 = puVar16 + 1;
-      puVar15 = puVar15 + 1;
+      puVar15 = (byte *)(puVar15 + 1);
     }
     *(undefined2 *)puVar15 = *(undefined2 *)puVar16;
     *(undefined1 *)((int)puVar15 + 2) = *(undefined1 *)((int)puVar16 + 2);

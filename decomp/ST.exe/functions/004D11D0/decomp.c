@@ -37,8 +37,8 @@ int __thiscall TLOEmbryoTy::Create(TLOEmbryoTy *this,RecoveredRecord_TLOEmbryoTy
   undefined4 uVar10;
   RecoveredRecord_TLOEmbryoTy_004D11D0 *pRVar11;
   int iVar12;
-  undefined4 *puVar13;
-  undefined4 *puVar14;
+  byte *puVar13;
+  byte *puVar14;
   STT3DSprC **ppSVar15;
   short sVar16;
   short sVar17;
@@ -62,7 +62,7 @@ int __thiscall TLOEmbryoTy::Create(TLOEmbryoTy *this,RecoveredRecord_TLOEmbryoTy
   int local_c;
   TLOEmbryoTy *local_8;
 
-  puVar14 = (undefined4 *)0x0;
+  puVar14 = (byte *)0x0;
   local_c = 0;
   local_cc.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_cc;
@@ -80,13 +80,13 @@ int __thiscall TLOEmbryoTy::Create(TLOEmbryoTy *this,RecoveredRecord_TLOEmbryoTy
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if (local_3c != (TLOEmbryoTy *)0x0) {
-    puVar14 = (undefined4 *)&local_3c->field_0x231;
+    puVar14 = (byte *)&local_3c->field_0x231;
   }
   pRVar11 = param_1;
   for (iVar3 = 0x1b; iVar3 != 0; iVar3 = iVar3 + -1) {
     *puVar14 = *(undefined4 *)pRVar11;
     pRVar11 = (RecoveredRecord_TLOEmbryoTy_004D11D0 *)&pRVar11->field_0x4;
-    puVar14 = puVar14 + 1;
+    puVar14 = (byte *)(puVar14 + 1);
   }
   *(undefined2 *)puVar14 = *(undefined2 *)pRVar11;
   *(undefined1 *)((int)puVar14 + 2) = pRVar11->field_0x2;
@@ -154,7 +154,7 @@ int __thiscall TLOEmbryoTy::Create(TLOEmbryoTy *this,RecoveredRecord_TLOEmbryoTy
       iVar3 = iVar3 + 1;
     } while (iVar3 < this_00->field_0261 + local_c);
   }
-  puVar14 = (undefined4 *)0x0;
+  puVar14 = (byte *)0x0;
   if (this_00->field_002C == 0) {
     this_00->field_02F8 = 0xb4;
     this_00->field_02FC = 0x8c;
@@ -170,11 +170,11 @@ int __thiscall TLOEmbryoTy::Create(TLOEmbryoTy *this,RecoveredRecord_TLOEmbryoTy
   if (this_00->field_0259 == 0x5c) {
     *(undefined4 *)&g_playerRuntime[this_00->field_0024].field_0x9ca = 1;
   }
-  if (g_dArray_007FA170 == (DArrayTy *)0x0) {
-    g_dArray_007FA170 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,4,10);
+  if (g_array_007FA170 == (DArrayTy *)0x0) {
+    g_array_007FA170 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,4,10);
   }
   local_2c = this_00;
-  Library::DKW::TBL::FUN_006ae1c0(&g_dArray_007FA170->flags,&local_2c);
+  Library::DKW::TBL::FUN_006ae1c0(&g_array_007FA170->flags,&local_2c);
   iVar3 = this_00->field_0259;
   if (iVar3 == 100) {
     if (g_playerRuntime[this_00->field_0024].field2166_0x9d6 == (DArrayTy *)0x0) {
@@ -219,12 +219,12 @@ cf_common_join_004D1763:
       goto cf_common_join_004D1763;
     }
     if (iVar3 == 0x3a) {
-      if (g_dArray_007FA16C == (DArrayTy *)0x0) {
-        g_dArray_007FA16C = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,4,10);
+      if (g_array_007FA16C == (DArrayTy *)0x0) {
+        g_array_007FA16C = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,4,10);
       }
       data = &local_48;
       local_48 = this_00;
-      pDVar4 = g_dArray_007FA16C;
+      pDVar4 = g_array_007FA16C;
       goto cf_common_join_004D1763;
     }
     if (iVar3 == 0x65) {
@@ -251,14 +251,10 @@ cf_common_join_004D1763:
   if (this_00->field_023D != 1) {
     if (this_00->field_023D == 2) {
       if (this_00 != (TLOEmbryoTy *)0x0) {
-        puVar14 = &this_00->field_02A0;
+        puVar14 = (byte *)(&this_00->field_02A0);
       }
-      puVar13 = (undefined4 *)&param_1->field_0x6f;
-      for (iVar3 = 0x2c; iVar3 != 0; iVar3 = iVar3 + -1) {
-        *puVar14 = *puVar13;
-        puVar13 = puVar13 + 1;
-        puVar14 = puVar14 + 1;
-      }
+      puVar13 = (byte *)&param_1->field_0x6f;
+      memmove(puVar14, puVar13, 0xb0); /* compiler REP MOVS byte copy */
       local_28 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0x44);
       local_28[1] = DAT_00806774;
       local_28[2] = DAT_00806774;
@@ -407,7 +403,7 @@ LAB_004d1bda:
       goto LAB_004d1bda;
     }
   }
-  puVar14 = &this_00->field_01D5;
+  puVar14 = (byte *)(&this_00->field_01D5);
   uVar7 = (-(uint)(this_00->field_0370 != 0) & 4) + 7;
   this_00->field_02F4 = uVar7;
   iVar3 = thunk_FUN_004ad650((STT3DSprC *)puVar14);
@@ -606,7 +602,7 @@ LAB_004d1df8:
   this_00->field_02D0 = 0;
   this_00->field_02CC = 0;
   iVar3 = (this_00->field_0368 * 3 + this_00->field_036C) * 4;
-  thunk_FUN_004d76e0(*(char *)&this_00->field_0024,0,this_00->field_0018,
+  thunk_FUN_004d76e0(*(char *)&this_00->field_0024,0,(int *)this_00->field_0018,
                      *(int *)(&DAT_008545ac + iVar3),*(int *)(&DAT_007e1c50 + iVar3),
                      *(int *)(&DAT_007e24fc + iVar3),*(int *)(&DAT_007e3160 + iVar3));
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */

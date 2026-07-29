@@ -538,13 +538,14 @@ LAB_005cef5d:
                     if (element_1f84_3 != (SettMapMTy_field_1F84Element *)0x0) {
                       if ((local_11 == '\x05') || (this_00->field_1E26 == CASE_F)) {
                         pDVar12 = (DArrayTy *)
-                                  CreateStrategList(this_00->field_1F3F,(uint)(byte)element_1f84_3->state,
+                                  CreateStrategList((int)this_00->field_1F3F,(uint)(byte)element_1f84_3->state,
                                                     0xffffffff);
                       }
                       else if ((local_11 == '\f') || (this_00->field_1E26 == CASE_10)) {
                         pDVar12 = (DArrayTy *)
                                   CreateSaveStrategList
-                                            (this_00->field_1F3F,(uint)(byte)element_1f84_3->state,0xffffffff);
+                                            ((int)this_00->field_1F3F,(uint)(byte)element_1f84_3->state,
+                                             0xffffffff);
                       }
                       else {
                         pDVar12 = (DArrayTy *)
@@ -741,7 +742,7 @@ LAB_005ce59f:
         if (((3 < local_2c) && (DAT_00807361 != '\0')) && (this_00->field_2243 != '\0')) {
           if ((((AnonShape_005DE670_0D4D7A8C *)this_00->field_1A5B)->field_069A == (LPVOID)0x0) &&
              (thunk_FUN_005de670((AnonShape_005DE670_0D4D7A8C *)this_00->field_1A5B),
-             this_00->field_1A5B->field_069A == 0)) {
+             this_00->field_1A5B->field_069A == (void *)0x0)) {
             this_00->field_2243 = 0;
           }
           else {
@@ -819,7 +820,7 @@ LAB_005ce8fe:
               }
               if ((puVar8 != (uint *)0x0) && (*puVar8 == local_18)) {
                 local_1c = uVar17;
-                FUN_006b0c70(pDVar12,uVar17);
+                DArrayRemoveAt(pDVar12,uVar17);
                 break;
               }
               uVar17 = uVar17 + 1;
@@ -848,8 +849,8 @@ cf_continue_loop_005CF38C:
     if (local_24 != 0xffffffff) {
       SendPlList(this_00,local_24);
     }
-    if ((this_00->field_223B < this_00->field_2237->count) && (this_00->field_1A5B->field_069A != 0)
-       ) {
+    if ((this_00->field_223B < this_00->field_2237->count) &&
+       (this_00->field_1A5B->field_069A != (void *)0x0)) {
       if (this_00->field_223F == 0) {
         this_00->field_223F = this_00->field_1A5B->field_06AA;
       }
@@ -894,18 +895,9 @@ LAB_005cf496:
             local_38[5] = this_00->field_1A5B->field_06B2;
             local_38[6] = this_00->field_1A5B->field_06A2;
             puVar8 = (uint *)(this_00->field_1A5B->field_06A2 * local_1c +
-                             this_00->field_1A5B->field_069A);
+                             (int)this_00->field_1A5B->field_069A);
             puVar24 = local_38 + 7;
-            for (uVar17 = uVar18 >> 2; uVar17 != 0; uVar17 = uVar17 - 1) {
-              *puVar24 = *puVar8;
-              puVar8 = puVar8 + 1;
-              puVar24 = puVar24 + 1;
-            }
-            for (uVar18 = uVar18 & 3; uVar18 != 0; uVar18 = uVar18 - 1) {
-              *(char *)puVar24 = (char)*puVar8;
-              puVar8 = (uint *)((int)puVar8 + 1);
-              puVar24 = (uint *)((int)puVar24 + 1);
-            }
+            memmove(puVar24, puVar8, uVar18); /* compiler REP MOVS byte copy */
             FUN_00715360(g_int_00811764,*local_10,'&',(char *)local_38,(uint)local_34,1,0xffffffff);
             FreeAndNull(&local_38);
             *(undefined1 *)(local_1c + local_68) = 0;
@@ -913,7 +905,7 @@ LAB_005cf496:
             piVar23[1] = iVar6;
             if (iVar6 == 0) {
               FreeAndNull((void **)local_60);
-              FUN_006b0c70((DArrayTy *)this_00->field_2237,this_00->field_223B);
+              DArrayRemoveAt((DArrayTy *)this_00->field_2237,this_00->field_223B);
             }
           }
 LAB_005cf5bf:

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STMethodOwnerApplier] Structural method owner recovered as STManRub3C.
    Evidence: this_call_owners=[STManRub3C]; agreed_this_calls=1; incoming_this_accesses=2;
@@ -10,26 +12,22 @@ int __thiscall STManRub3C::sub_0062D840(STManRub3C *this,undefined4 *param_1)
   undefined4 *puVar1;
   int iVar2;
   int iVar3;
-  undefined4 *puVar4;
+  byte *puVar4;
   int *piVar5;
-  undefined4 *puVar6;
-  uint *puVar7;
+  byte *puVar6;
+  DArrayTy **ppDVar7;
 
   puVar1 = param_1;
   if (this == (STManRub3C *)0x0) {
-    puVar6 = (undefined4 *)0x0;
+    puVar6 = (byte *)0x0;
   }
   else {
-    puVar6 = &this->field_001C;
+    puVar6 = (byte *)(&this->field_001C);
   }
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = (undefined4 *)0x98;
-  puVar4 = puVar1;
-  for (iVar3 = 0x26; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar6 = *puVar4;
-    puVar4 = puVar4 + 1;
-    puVar6 = puVar6 + 1;
-  }
+  puVar4 = (byte *)(puVar1);
+  memmove(puVar6, puVar4, 0x98); /* compiler REP MOVS byte copy */
   piVar5 = puVar1 + 0x26;
   this->field_00B4 = this->field_00B0;
   iVar3 = 0;
@@ -37,21 +35,21 @@ int __thiscall STManRub3C::sub_0062D840(STManRub3C *this,undefined4 *param_1)
     iVar2 = 0;
     switch(iVar3) {
     case 0:
-      puVar7 = this->field_0030;
+      ppDVar7 = (DArrayTy **)this->field_0030;
       break;
     case 1:
-      puVar7 = &this->field_0050;
+      ppDVar7 = &this->field_0050;
       break;
     case 2:
-      puVar7 = &this->field_0070;
+      ppDVar7 = &this->field_0070;
       break;
     case 3:
-      puVar7 = (uint *)&this->field_0x90;
+      ppDVar7 = (DArrayTy **)&this->field_0x90;
       break;
     default:
       goto switchD_0062d881_default;
     }
-    iVar2 = thunk_FUN_0062d7d0((int *)puVar7,piVar5);
+    iVar2 = thunk_FUN_0062d7d0((int *)ppDVar7,piVar5);
 switchD_0062d881_default:
     piVar5 = (int *)((int)piVar5 + iVar2);
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */

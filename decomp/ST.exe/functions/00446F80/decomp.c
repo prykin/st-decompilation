@@ -235,7 +235,7 @@ LAB_0044738a:
                     if (((iVar5 == 0) ||
                         (iVar5 = local_28->vfunc_F0(), iVar5 == 0)) ||
                        (iVar5 = (*local_28->vtable->vfunc_F4)(local_a0), iVar5 == 0)) {
-                      FUN_006b0c70(pDVar3,uVar7);
+                      DArrayRemoveAt(pDVar3,uVar7);
                       uVar7 = uVar7 - 1;
                       local_14 = (DArrayTy *)((int)&local_14[-1].data + 3);
                       pDVar6 = (DArrayTy *)((int)&pDVar6[-1].data + 3);

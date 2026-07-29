@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __thiscall FUN_00608e90(void *this,AnonShape_00608E90_523B07BC *param_1)
 
@@ -8,8 +10,8 @@ undefined4 __thiscall FUN_00608e90(void *this,AnonShape_00608E90_523B07BC *param
   undefined4 uVar4;
   int iVar5;
   int iVar6;
-  undefined4 *puVar7;
-  undefined4 *puVar8;
+  byte *puVar7;
+  byte *puVar8;
   byte *local_c;
   AnonShape_0060EA30_DCEB68AD *local_8;
 
@@ -24,8 +26,7 @@ undefined4 __thiscall FUN_00608e90(void *this,AnonShape_00608E90_523B07BC *param
       if (local_c == (byte *)0x0) {
         return 0;
       }
-      STPlaySystemC::SaveObjData
-                (g_playSystem_00802A38,*(undefined4 *)((int)this + 0x18),local_c,local_8);
+      STPlaySystemC::SaveObjData(g_playSystem_00802A38,*(int **)((int)this + 0x18),local_c,local_8);
       FreeAndNull(&local_c);
       return 0;
     }
@@ -148,13 +149,9 @@ undefined4 __thiscall FUN_00608e90(void *this,AnonShape_00608E90_523B07BC *param
   if (uVar3 != 2) {
     return 0;
   }
-  puVar7 = param_1->field_0014;
-  puVar8 = (undefined4 *)((int)this + 0x1d5);
-  for (iVar2 = 0x14; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *puVar8 = *puVar7;
-    puVar7 = puVar7 + 1;
-    puVar8 = puVar8 + 1;
-  }
+  puVar7 = (byte *)(param_1->field_0014);
+  puVar8 = (byte *)((int)this + 0x1d5);
+  memmove(puVar8, puVar7, 0x50); /* compiler REP MOVS byte copy */
   if (*(int *)((int)this + 0x1e1) == 2) {
     STFieldC::thunk_FUN_0060c1a0(this,param_1->field_0014);
     return 0;

@@ -22,13 +22,14 @@ void __thiscall FSGSTy::PaintLadder(FSGSTy *this,int param_1)
   uint *puVar10;
   InternalExceptionFrame local_8c;
   StartServTy local_48 [52];
-  int local_14;
+  void *local_14;
   FSGSTy *local_10;
   uint local_c;
   StartServTy *local_8;
 
   local_14 = this->field_1EDB;
-  if (((this->field_1E8E != 0) && (this->field_1E92 != (tagBITMAPINFO *)0x0)) && (local_14 != 0)) {
+  if (((this->field_1E8E != 0) && (this->field_1E92 != (tagBITMAPINFO *)0x0)) &&
+     (local_14 != (void *)0x0)) {
     local_8c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_8c;
     local_10 = this;
@@ -45,7 +46,7 @@ void __thiscall FSGSTy::PaintLadder(FSGSTy *this,int param_1)
       PutDDXClip(0x22,0xd6,0,0x78,0x2e1,(byte *)0xfd,'\x01',pFVar2->field_1E92);
       if (pFVar2->field_1EE3 != 0) {
         local_8 = (StartServTy *)0xdb;
-        piVar9 = (int *)(local_14 + 0xc);
+        piVar9 = (int *)((int)local_14 + 0xc);
         local_c = 0;
         do {
           wsprintfA((LPSTR)local_48,"%6d",pFVar2->field_1EDF + local_c);

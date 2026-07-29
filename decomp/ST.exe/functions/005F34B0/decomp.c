@@ -16,7 +16,7 @@ void __thiscall STBHEShellC::sub_005F34B0(STBHEShellC *this)
   this->field_0087 = 1;
   this->field_00AB = 0;
   this->field_00AF = 0x14;
-  this->field_008F = -1;
+  this->field_008F = 0xffffffff;
   return;
 }
 

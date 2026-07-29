@@ -99,11 +99,7 @@ void __thiscall HelpPanelTy::CreateSlider(HelpPanelTy *this,int param_1)
     local_3b4 = 0x8165;
     piVar4 = local_424 + 2;
     piVar5 = local_29c;
-    for (iVar3 = 0x5f; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *piVar5 = *piVar4;
-      piVar4 = piVar4 + 1;
-      piVar5 = piVar5 + 1;
-    }
+    memmove(piVar5, piVar4, 0x17c); /* compiler REP MOVS byte copy */
     if (iVar2 == 0) {
       local_29c[3] = -this_00->field_0048;
     }

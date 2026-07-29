@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated return.
    Evidence: 00622990 returns used as parameter 2 of STPlaySystemC::SaveObjData @ 00622246 */
@@ -6,14 +8,13 @@ byte * __thiscall STAllPlayersC::FUN_00622990(STAllPlayersC *this,uint *param_1)
 
 {
   uint uVar1;
-  int iVar2;
   uint uVar3;
   byte *pbVar4;
   uint *puVar5;
-  undefined4 *puVar6;
+  byte *puVar6;
   byte *pbVar7;
   uint *puVar8;
-  undefined4 *puVar9;
+  byte *puVar9;
   byte *pbVar10;
   uint *local_18;
   byte *local_14;
@@ -22,14 +23,9 @@ byte * __thiscall STAllPlayersC::FUN_00622990(STAllPlayersC *this,uint *param_1)
   uint local_8;
 
   local_10 = (byte *)Library::DKW::LIB::FUN_006aac70(0x109);
-  puVar6 = (undefined4 *)&this->field_0x25e;
-  puVar9 = (undefined4 *)local_10;
-  for (iVar2 = 0x42; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *puVar9 = *puVar6;
-    puVar6 = puVar6 + 1;
-    puVar9 = puVar9 + 1;
-  }
-  *(undefined1 *)puVar9 = *(undefined1 *)puVar6;
+  puVar6 = (byte *)&this->field_0x25e;
+  puVar9 = (byte *)local_10;
+  memmove(puVar9, puVar6, 0x109); /* compiler REP MOVS byte copy */
   *(undefined4 *)((int)local_10 + 0xc) = 2;
   local_14 = (byte *)STT3DSprC::SaveSpr((STT3DSprC *)&this->field_0x1d5,&local_8);
   local_18 = SaveGObjData(this,(int *)&local_c);

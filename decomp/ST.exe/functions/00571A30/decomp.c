@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=2, used=0), and
@@ -8,28 +10,24 @@ FUN_00571a30(AnonShape_00571A30_8BA8841B *param_1,AnonShape_00571A30_67EE4B56 *p
 
 {
   int iVar1;
-  undefined4 *puVar2;
-  undefined4 *puVar3;
+  byte *puVar2;
+  byte *puVar3;
 
   iVar1 = 0x10;
   if (param_3 != '\0') {
-    puVar2 = (undefined4 *)&param_2->field_0x10;
-    puVar3 = (undefined4 *)&param_1->field_0x299;
+    puVar2 = (byte *)&param_2->field_0x10;
+    puVar3 = (byte *)&param_1->field_0x299;
     for (; iVar1 != 0; iVar1 = iVar1 + -1) {
       *puVar3 = *puVar2;
-      puVar2 = puVar2 + 1;
-      puVar3 = puVar3 + 1;
+      puVar2 = (byte *)(puVar2 + 1);
+      puVar3 = (byte *)(puVar3 + 1);
     }
     param_1->field_02E6 = param_2->field_005D;
     param_1->field_02EA = param_2->field_0061;
     param_1->field_02EE = param_2->field_0065;
-    puVar2 = (undefined4 *)&param_2[1].field_0x8;
-    puVar3 = (undefined4 *)&param_1->field_0x11aa;
-    for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *puVar3 = *puVar2;
-      puVar2 = puVar2 + 1;
-      puVar3 = puVar3 + 1;
-    }
+    puVar2 = (byte *)&param_2[1].field_0x8;
+    puVar3 = (byte *)&param_1->field_0x11aa;
+    memmove(puVar3, puVar2, 0x20); /* compiler REP MOVS byte copy */
     *(undefined4 *)param_1 = *(undefined4 *)param_2;
     *(undefined4 *)((int)&param_1->field_0003 + 1) = *(undefined4 *)((int)&param_2->field_0003 + 1);
     *(undefined4 *)&param_1->field_0x8 = *(undefined4 *)&param_2->field_0x8;
@@ -52,23 +50,19 @@ FUN_00571a30(AnonShape_00571A30_8BA8841B *param_1,AnonShape_00571A30_67EE4B56 *p
     param_1->field_11A6 = *(undefined4 *)((int)&param_2[1].field_0003 + 1);
     return;
   }
-  puVar2 = (undefined4 *)&param_1->field_0x299;
-  puVar3 = (undefined4 *)&param_2->field_0x10;
+  puVar2 = (byte *)&param_1->field_0x299;
+  puVar3 = (byte *)&param_2->field_0x10;
   for (; iVar1 != 0; iVar1 = iVar1 + -1) {
     *puVar3 = *puVar2;
-    puVar2 = puVar2 + 1;
-    puVar3 = puVar3 + 1;
+    puVar2 = (byte *)(puVar2 + 1);
+    puVar3 = (byte *)(puVar3 + 1);
   }
   param_2->field_005D = param_1->field_02E6;
   param_2->field_0061 = param_1->field_02EA;
   param_2->field_0065 = param_1->field_02EE;
-  puVar2 = (undefined4 *)&param_1->field_0x11aa;
-  puVar3 = (undefined4 *)&param_2[1].field_0x8;
-  for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar3 = *puVar2;
-    puVar2 = puVar2 + 1;
-    puVar3 = puVar3 + 1;
-  }
+  puVar2 = (byte *)&param_1->field_0x11aa;
+  puVar3 = (byte *)&param_2[1].field_0x8;
+  memmove(puVar3, puVar2, 0x20); /* compiler REP MOVS byte copy */
   *(undefined4 *)param_2 = *(undefined4 *)param_1;
   *(undefined4 *)((int)&param_2->field_0003 + 1) = *(undefined4 *)((int)&param_1->field_0003 + 1);
   *(undefined4 *)&param_2->field_0x8 = *(undefined4 *)&param_1->field_0x8;

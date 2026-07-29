@@ -244,11 +244,10 @@ cf_common_exit_004B8F5A:
       if (((iVar4 == param_1->field_01F5->field_020C) &&
           (local_8 = 1, param_1->field_05AC == CASE_65)) &&
          ((param_1->field_0408 != 0 &&
-          (((AnonShape_005EFAE0_B406B78B *)param_1->field_040C != (AnonShape_005EFAE0_B406B78B *)0x0
-           && (iVar4 = STPlaySystemC::sub_006E62D0
-                                 (g_playSystem_00802A38,
-                                  (AnonShape_005EFAE0_B406B78B *)param_1->field_040C,(int *)&local_c
-                                 ), iVar4 == 0)))))) {
+          ((param_1->field_040C != (AnonShape_005EFAE0_B406B78B *)0x0 &&
+           (iVar4 = STPlaySystemC::sub_006E62D0
+                              (g_playSystem_00802A38,param_1->field_040C,(int *)&local_c),
+           iVar4 == 0)))))) {
         thunk_FUN_0060d340(local_c);
         param_1->vfunc_90(3,0x3d9);
       }

@@ -8,7 +8,7 @@ void FUN_0072b0b0(void)
   int iVar4;
   int iVar5;
   uint uVar6;
-  byte *pbVar7;
+  byte *source;
   uint local_98;
   uint local_94;
   int local_90;
@@ -57,9 +57,8 @@ void FUN_0072b0b0(void)
     }
     else {
       local_8 = 0;
-      FUN_006cea60((undefined8 *)(DAT_00857118[2] * (int)local_20 + DAT_00857118[1] + local_24),
-                   (int)local_20,(undefined8 *)DAT_00857118[0x30],DAT_00857118[3],DAT_00857118[3],
-                   DAT_00857118[4]);
+      CopyRows((byte *)(DAT_00857118[2] * (int)local_20 + DAT_00857118[1] + local_24),(int)local_20,
+               (byte *)DAT_00857118[0x30],DAT_00857118[3],DAT_00857118[3],DAT_00857118[4]);
       local_8 = 0xffffffff;
       local_5c = DAT_00857118[1];
       local_68 = DAT_00857118[3] + local_5c;
@@ -84,12 +83,11 @@ void FUN_0072b0b0(void)
       if (((0 < (int)DAT_00857118[0xc]) && (0 < (int)DAT_00857118[0xd])) &&
          (iVar5 = FUN_006cfeb0((int *)&local_38,(int *)(DAT_00857118 + 10),piVar1), iVar5 != 0)) {
         local_8 = 1;
-        pbVar7 = (byte *)(local_34 * (int)local_20 + local_38 + local_24);
-        local_60 = pbVar7;
-        FUN_006cea60((undefined8 *)DAT_00857118[0x30],local_30,(undefined8 *)pbVar7,(int)local_20,
-                     local_30,local_2c);
+        source = (byte *)(local_34 * (int)local_20 + local_38 + local_24);
+        local_60 = source;
+        CopyRows((byte *)DAT_00857118[0x30],local_30,source,(int)local_20,local_30,local_2c);
         local_88 = local_38 - DAT_00857118[10];
-        FUN_006d2820(pbVar7,local_20,*(byte **)(DAT_00857118[0x33] + DAT_00857118[0x31] * 4),
+        FUN_006d2820(source,local_20,*(byte **)(DAT_00857118[0x33] + DAT_00857118[0x31] * 4),
                      local_88,local_34 - DAT_00857118[0xb],local_30,local_2c,DAT_00857118[0x2c],
                      (byte *)0x0,0,0,(byte *)0x0);
         local_8 = 0xffffffff;
@@ -130,9 +128,9 @@ void FUN_0072b0b0(void)
           iVar4 = local_84;
           if (local_3c == 0) {
             local_8 = 2;
-            FUN_006cea60((undefined8 *)(local_44[0] * local_54.y + local_28 + local_54.x),
-                         local_44[0],(undefined8 *)(local_94 * (int)local_20 + local_98 + local_24),
-                         (int)local_20,local_30,local_2c);
+            CopyRows((byte *)(local_44[0] * local_54.y + local_28 + local_54.x),local_44[0],
+                     (byte *)(local_94 * (int)local_20 + local_98 + local_24),(int)local_20,local_30
+                     ,local_2c);
             iVar4 = local_84;
             local_8 = 0xffffffff;
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -185,9 +183,9 @@ void FUN_0072b0b0(void)
         uVar6 = FUN_006bbe40(*(int **)(*DAT_00857134 + 0x44),&local_24,(int *)&local_20,0);
         if (uVar6 == 0) {
           local_8 = 3;
-          FUN_006cea60((undefined8 *)(local_44[0] * local_54.y + local_28 + local_54.x),local_44[0],
-                       (undefined8 *)(local_94 * (int)local_20 + local_98 + local_24),(int)local_20,
-                       local_68 - local_5c,iVar4 - local_80);
+          CopyRows((byte *)(local_44[0] * local_54.y + local_28 + local_54.x),local_44[0],
+                   (byte *)(local_94 * (int)local_20 + local_98 + local_24),(int)local_20,
+                   local_68 - local_5c,iVar4 - local_80);
           local_8 = 0xffffffff;
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (**(code **)(**(int **)(*DAT_00857134 + 0x44) + 0x80))(*(int **)(*DAT_00857134 + 0x44),0);

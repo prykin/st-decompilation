@@ -32,7 +32,7 @@ UPanelTy::CreateBut(UPanelTy *this,undefined4 param_1,int param_2,int param_3,in
                    undefined4 param_14)
 
 {
-  UPanelTy *text;
+  char *text;
   code *pcVar1;
   UPanelTy *pUVar2;
   int iVar3;
@@ -86,9 +86,9 @@ UPanelTy::CreateBut(UPanelTy *this,undefined4 param_1,int param_2,int param_3,in
     local_1d0[1] = param_1;
     local_1d0[0] = param_2;
     if (param_6 != (LPSTR)0x0) {
-      text = local_10 + 1;
-      wsprintfA((LPSTR)text,"%s0",param_6);
-      local_8 = cMf32::RecGet(g_cMf32_00806790,param_5,(char *)text,(int *)0x0,1);
+      text = &local_10->field_006C;
+      wsprintfA(text,"%s0",param_6);
+      local_8 = cMf32::RecGet(g_cMf32_00806790,param_5,text,(int *)0x0,1);
     }
     if ((param_5 == 1) || (param_5 == 6)) {
       local_1c0 = *(undefined4 *)(local_8 + 2);

@@ -59,7 +59,7 @@ void __thiscall CPanelTy::PaintMineInf(CPanelTy *this,int param_1)
       local_8 = 0x271d;
     }
     _Count = 0x32;
-    _Dest = &pCVar2->field_0x1e1;
+    _Dest = &pCVar2->field_01E1;
     pcVar5 = LoadResourceString(0x2721,g_module_00807618);
     Library::MSVCRT::_strncpy(_Dest,pcVar5,_Count);
     pCVar2->field_0x212 = 0;

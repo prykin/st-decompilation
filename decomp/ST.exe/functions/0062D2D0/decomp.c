@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __thiscall
 FUN_0062d2d0(void *this,int param_1,int param_2,int param_3,undefined4 param_4,int *param_5,
@@ -67,11 +69,7 @@ FUN_0062d2d0(void *this,int param_1,int param_2,int param_3,undefined4 param_4,i
           local_20 = uVar3;
         }
         piVar5 = local_4c[0] + -9;
-        for (iVar2 = 8; iVar2 != 0; iVar2 = iVar2 + -1) {
-          *piVar5 = *piVar4;
-          piVar4 = piVar4 + 1;
-          piVar5 = piVar5 + 1;
-        }
+        memmove(piVar5, piVar4, 0x20); /* compiler REP MOVS byte copy */
         local_4c[0][-1] = iVar1;
         *local_4c[0] = 0;
         uVar3 = uVar3 + 1;

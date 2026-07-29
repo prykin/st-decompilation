@@ -35,7 +35,7 @@ void __thiscall STAppC::sub_0056EBE0(STAppC *this)
     memset(&this->field_0x2340, 0, 0x20); /* compiler bulk-zero initialization */
   }
   else {
-    this->field_233C = *(undefined4 *)(uVar8 + 0x90);
+    this->field_233C = *(uint *)(uVar8 + 0x90);
     uVar5 = 0xffffffff;
     pcVar9 = (char *)(uVar8 + 0x4c);
     do {

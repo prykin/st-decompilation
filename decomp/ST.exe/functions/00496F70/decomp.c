@@ -1,5 +1,3 @@
-#include "../../pseudocode_runtime.h"
-
 
 void FUN_00496f70(int param_1,int param_2,undefined4 param_3,int param_4)
 
@@ -10,12 +8,12 @@ void FUN_00496f70(int param_1,int param_2,undefined4 param_3,int param_4)
   int iVar4;
 
   uVar2 = 0;
-  iVar4 = g_dArray_007FB270->count * g_dArray_007FB270->elementSize + 0x1c;
+  iVar4 = g_array_007FB270->count * g_array_007FB270->elementSize + 0x1c;
   if (0 < iVar4) {
     do {
-      if (uVar2 < g_dArray_007FB270->count) {
-        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(g_dArray_007FB270, uVar2) (runtime stride) */
-        piVar3 = (int *)(g_dArray_007FB270->elementSize * uVar2 + (int)g_dArray_007FB270->data);
+      if (uVar2 < g_array_007FB270->count) {
+        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(g_array_007FB270, uVar2) (runtime stride) */
+        piVar3 = (int *)(g_array_007FB270->elementSize * uVar2 + (int)g_array_007FB270->data);
       }
       else {
         piVar3 = (int *)0x0;

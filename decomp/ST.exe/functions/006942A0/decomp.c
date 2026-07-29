@@ -6,8 +6,8 @@ int FUN_006942a0(void)
 {
   int iVar1;
   int iVar2;
-  undefined4 *puVar3;
-  undefined4 *puVar4;
+  byte *puVar3;
+  byte *puVar4;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   cMf32 *in_stack_00000004;
   InternalExceptionFrame local_54;
@@ -32,13 +32,9 @@ int FUN_006942a0(void)
   if (local_8 != 0) {
     memset((void *)(local_10 + 0x11), 0, 0x288); /* compiler bulk-zero initialization */
     iVar2 = 0;
-    puVar3 = (undefined4 *)(local_c + 0x11);
-    puVar4 = (undefined4 *)(local_10 + 0x11);
-    for (iVar2 = 0xa2; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *puVar4 = *puVar3;
-      puVar3 = puVar3 + 1;
-      puVar4 = puVar4 + 1;
-    }
+    puVar3 = (byte *)(local_c + 0x11);
+    puVar4 = (byte *)(local_10 + 0x11);
+    memmove(puVar4, puVar3, 0x288); /* compiler REP MOVS byte copy */
     *(undefined1 *)(local_10 + 0x10) = *(undefined1 *)(local_c + 0x10);
   }
   if (local_c != 0) {

@@ -97,7 +97,7 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,AnonShape_005EFAE0_B406B78B *param
      (pSVar11 = this, param_1 == (AnonShape_005EFAE0_B406B78B *)0x1)) {
     memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
     this->field_02C4 = 0;
-    if (this->field_07CA != 0) {
+    if (this->field_07CA != (AnonShape_005EFAE0_B406B78B *)0x0) {
       return 0;
     }
     sVar15 = *(short *)&this->field_0x3ba;
@@ -191,12 +191,13 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,AnonShape_005EFAE0_B406B78B *param
                   [(int)sVar16 * (int)g_worldGrid.planeStride + (int)sVar17 * (int)g_worldGrid.sizeX
                    + (int)sVar15].objects[0];
       }
-      if ((((local_c == (STFishC *)0x0) || (local_c->field_0018 != this->field_058E)) &&
+      if ((((local_c == (STFishC *)0x0) ||
+           ((AnonShape_005EFAE0_B406B78B *)local_c->field_0018 != this->field_058E)) &&
           (iVar10 = STPlaySystemC::sub_006E62D0
-                              (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)this->field_058E
-                               ,(int *)&local_c), iVar10 == -4)) ||
-         ((iVar10 = (*local_c->vtable->vfunc_A4)(), iVar10 == 1 ||
-          (iVar10 = (*local_c->vtable->vfunc_C0)(), iVar10 == 1)))) goto cf_common_exit_004743A5;
+                              (g_playSystem_00802A38,this->field_058E,(int *)&local_c), iVar10 == -4
+          )) || ((iVar10 = (*local_c->vtable->vfunc_A4)(), iVar10 == 1 ||
+                 (iVar10 = (*local_c->vtable->vfunc_C0)(), iVar10 == 1))))
+      goto cf_common_exit_004743A5;
       STFishC::sub_004162F0(local_c,&this->field_0588,&this->field_058A,&this->field_058C);
       iVar10 = GetCellForLoading(this,this->field_005B,this->field_005D,this->field_005F,
                                  this->field_0588,this->field_058A,this->field_058C,&local_6,
@@ -261,10 +262,11 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,AnonShape_005EFAE0_B406B78B *param
                   [(int)sVar16 * (int)g_worldGrid.planeStride + (int)sVar17 * (int)g_worldGrid.sizeX
                    + (int)sVar15].objects[0];
       }
-      if (((local_c == (STFishC *)0x0) || (local_c->field_0018 != this->field_058E)) &&
+      if (((local_c == (STFishC *)0x0) ||
+          ((AnonShape_005EFAE0_B406B78B *)local_c->field_0018 != this->field_058E)) &&
          (iVar10 = STPlaySystemC::sub_006E62D0
-                             (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)this->field_058E,
-                              (int *)&local_c), iVar10 == -4)) {
+                             (g_playSystem_00802A38,this->field_058E,(int *)&local_c), iVar10 == -4)
+         ) {
         return 0;
       }
       iVar10 = (*local_c->vtable->vfunc_A4)();
@@ -340,10 +342,10 @@ LAB_004736e2:
                 [(int)sVar16 * (int)g_worldGrid.planeStride + (int)sVar17 * (int)g_worldGrid.sizeX +
                  (int)sVar15].objects[0];
     }
-    if (((local_c == (STFishC *)0x0) || (local_c->field_0018 != this->field_058E)) &&
-       (iVar10 = STPlaySystemC::sub_006E62D0
-                           (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)this->field_058E,
-                            (int *)&local_c), iVar10 == -4)) {
+    if (((local_c == (STFishC *)0x0) ||
+        ((AnonShape_005EFAE0_B406B78B *)local_c->field_0018 != this->field_058E)) &&
+       (iVar10 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,this->field_058E,(int *)&local_c)
+       , iVar10 == -4)) {
       return 0;
     }
     iVar10 = (*local_c->vtable->vfunc_A4)();
@@ -518,7 +520,8 @@ cf_common_exit_0047405D:
                   [(int)sVar16 * (int)g_worldGrid.planeStride + (int)sVar17 * (int)g_worldGrid.sizeX
                    + (int)sVar15].objects[0];
       }
-      if (((local_c != (STFishC *)0x0) && (local_c->field_0018 == this->field_058E)) &&
+      if (((local_c != (STFishC *)0x0) &&
+          ((AnonShape_005EFAE0_B406B78B *)local_c->field_0018 == this->field_058E)) &&
          ((iVar10 = (*local_c->vtable->vfunc_A4)(), iVar10 != 1 &&
           (iVar10 = (*local_c->vtable->vfunc_C0)(), iVar10 != 1)))) {
         local_c->vfunc_B4();

@@ -38,15 +38,14 @@ void __thiscall CPanelTy::PaintInfoBoat(CPanelTy *this)
     RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\cpanel1.cpp",0x8a);
     return;
   }
-  DibPut((AnonShape_006B5B10_E0D06CF1 *)local_c->field_0180,0,0,'\x01',(byte *)local_c->field_0954);
+  DibPut(local_c->field_0180,0,0,'\x01',(byte *)local_c->field_0954);
   DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0184,0,0,'\x01',(byte *)this_00->field_0958);
   if (this_00->field_02E2 != (ushort *)0x0) {
     thunk_FUN_004f1890(this_00,0);
   }
   if (this_00->field_0B63 == '\0') {
     if (DAT_0080874e == '\x03') {
-      DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_018C,0,0,'\x06',
-             (byte *)this_00->field_0974[1]);
+      DibPut(this_00->field_018C,0,0,'\x06',(byte *)this_00->field_0974[1]);
       goto LAB_004fea77;
     }
     pbVar6 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_029E,1);
@@ -54,8 +53,7 @@ void __thiscall CPanelTy::PaintInfoBoat(CPanelTy *this)
   }
   else {
     if (DAT_0080874e == '\x03') {
-      DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_018C,0,0,'\x06',
-             (byte *)this_00->field_0974[3]);
+      DibPut(this_00->field_018C,0,0,'\x06',(byte *)this_00->field_0974[3]);
       goto LAB_004fea77;
     }
     pbVar6 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_029E,0);

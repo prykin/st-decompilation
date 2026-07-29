@@ -241,18 +241,19 @@ LAB_004e5655:
         iVar9 = *(int *)((int)&g_playerRuntime[0].field2164_0x9ce + local_10);
         if (iVar9 != 0) {
           *(undefined4 *)(iVar9 + 4) = 0;
-          iVar9 = FUN_006b1190(*(DArrayTy **)((int)&g_playerRuntime[0].field2164_0x9ce + local_10),
-                               &param_1);
+          iVar9 = DArrayGetNext(*(DArrayTy **)((int)&g_playerRuntime[0].field2164_0x9ce + local_10),
+                                (byte *)&param_1);
           while (-1 < iVar9) {
             thunk_FUN_004dd880((AnonShape_004DDCC0_33DEB43E *)param_1);
-            iVar9 = FUN_006b1190(*(DArrayTy **)((int)&g_playerRuntime[0].field2164_0x9ce + iVar7),
-                                 &param_1);
+            iVar9 = DArrayGetNext(*(DArrayTy **)((int)&g_playerRuntime[0].field2164_0x9ce + iVar7),
+                                  (byte *)&param_1);
           }
         }
         iVar9 = *(int *)((int)&g_playerRuntime[0].objects + iVar7);
         if (iVar9 != 0) {
           *(undefined4 *)(iVar9 + 4) = 0;
-          iVar9 = FUN_006b1190(*(DArrayTy **)((int)&g_playerRuntime[0].objects + iVar7),&param_1);
+          iVar9 = DArrayGetNext(*(DArrayTy **)((int)&g_playerRuntime[0].objects + iVar7),
+                                (byte *)&param_1);
           while (-1 < iVar9) {
             if (param_1 != (int *)0x0) {
               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -277,7 +278,8 @@ LAB_004e5655:
                 }
               }
             }
-            iVar9 = FUN_006b1190(*(DArrayTy **)((int)&g_playerRuntime[0].objects + iVar7),&param_1);
+            iVar9 = DArrayGetNext(*(DArrayTy **)((int)&g_playerRuntime[0].objects + iVar7),
+                                  (byte *)&param_1);
           }
         }
         return 0;

@@ -180,8 +180,7 @@ void __thiscall STGroupBoatC::RechargeNewCmd(STGroupBoatC *this,void *param_1)
   DArrayTy *local_c;
   undefined4 local_8;
 
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  local_14 = *(uint *)(this->field_002D + 0xc);
+  local_14 = this->field_002D->count;
   local_e8 = 0xffffffff;
   local_c = (DArrayTy *)0x0;
   local_10 = (DArrayTy *)0x0;
@@ -206,11 +205,11 @@ void __thiscall STGroupBoatC::RechargeNewCmd(STGroupBoatC *this,void *param_1)
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   while (uVar12 = uVar12 - 1, -1 < (int)uVar12) {
-    DArrayGetElement((DArrayTy *)this_00->field_002D,uVar12,&local_8);
+    DArrayGetElement(this_00->field_002D,uVar12,&local_8);
     pSVar4 = STAllPlayersC::GetObjPtr
                        (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_8,CASE_1);
     if ((pSVar4 == (STGameObjC *)0x0) || (pSVar4->field_0020 != 0x14)) {
-      FUN_006b0c70((DArrayTy *)this_00->field_002D,uVar12);
+      DArrayRemoveAt(this_00->field_002D,uVar12);
       uVar11 = uVar11 - 1;
     }
   }
@@ -220,11 +219,10 @@ void __thiscall STGroupBoatC::RechargeNewCmd(STGroupBoatC *this,void *param_1)
               );
   }
   SVar10 = this_00->field_01E6;
-  uVar12 = ((DArrayTy *)this_00->field_002D)->count;
+  uVar12 = this_00->field_002D->count;
   local_14 = uVar12;
   if (SVar10 == CASE_1) {
-    InitWay(this_00,(DArrayTy *)this_00->field_002D,this_00->field_003D,this_00->field_0041,
-            this_00->field_0045);
+    InitWay(this_00,this_00->field_002D,this_00->field_003D,this_00->field_0041,this_00->field_0045);
     uVar11 = 0;
     local_18 = 0;
     SVar10 = g_playSystem_00802A38->field_00E4;
@@ -234,7 +232,7 @@ void __thiscall STGroupBoatC::RechargeNewCmd(STGroupBoatC *this,void *param_1)
     local_44 = SVar10;
     if (uVar12 != 0) {
       do {
-        DArrayGetElement((DArrayTy *)this_00->field_002D,uVar11,&local_8);
+        DArrayGetElement(this_00->field_002D,uVar11,&local_8);
         pSVar5 = (STBoatC *)
                  STAllPlayersC::GetObjPtr
                            (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_8,CASE_1);
@@ -257,7 +255,7 @@ void __thiscall STGroupBoatC::RechargeNewCmd(STGroupBoatC *this,void *param_1)
     if (uVar12 != 0) {
       uVar11 = 0;
       do {
-        DArrayGetElement((DArrayTy *)this_00->field_002D,uVar11,&local_8);
+        DArrayGetElement(this_00->field_002D,uVar11,&local_8);
         pSVar5 = (STBoatC *)
                  STAllPlayersC::GetObjPtr
                            (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_8,CASE_1);
@@ -275,7 +273,7 @@ void __thiscall STGroupBoatC::RechargeNewCmd(STGroupBoatC *this,void *param_1)
     }
   }
   if (this_00->field_01E6 == CASE_2) {
-    DistributeTargets(this_00,(uint *)this_00->field_002D);
+    DistributeTargets(this_00,&this_00->field_002D->flags);
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     SVar10 = extraout_ECX_01;
   }
@@ -290,7 +288,7 @@ void __thiscall STGroupBoatC::RechargeNewCmd(STGroupBoatC *this,void *param_1)
       if (uVar12 != 0) {
         uVar12 = 0;
         do {
-          DArrayGetElement((DArrayTy *)this_00->field_002D,uVar12,&local_8);
+          DArrayGetElement(this_00->field_002D,uVar12,&local_8);
           local_110 = (short)local_8;
           local_114 = 0;
           local_102 = 0;
@@ -331,7 +329,7 @@ void __thiscall STGroupBoatC::RechargeNewCmd(STGroupBoatC *this,void *param_1)
               uVar11 = uVar12;
             }
           }
-          DArrayGetElement((DArrayTy *)this_00->field_002D,uVar2 & 0xffff,&local_8);
+          DArrayGetElement(this_00->field_002D,uVar2 & 0xffff,&local_8);
           local_114 = 0;
           local_102 = 0;
           local_110 = (short)local_8;
@@ -375,7 +373,7 @@ void __thiscall STGroupBoatC::RechargeNewCmd(STGroupBoatC *this,void *param_1)
     if (local_14 != 0) {
       uVar11 = 0;
       do {
-        DArrayGetElement((DArrayTy *)this_00->field_002D,uVar11,&local_8);
+        DArrayGetElement(this_00->field_002D,uVar11,&local_8);
         pSVar5 = (STBoatC *)
                  STAllPlayersC::GetObjPtr
                            (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_8,CASE_1);
@@ -400,7 +398,7 @@ void __thiscall STGroupBoatC::RechargeNewCmd(STGroupBoatC *this,void *param_1)
     if (local_14 != 0) {
       do {
         uVar12 = local_18 & 0xffff;
-        DArrayGetElement((DArrayTy *)this_00->field_002D,uVar12,&local_8);
+        DArrayGetElement(this_00->field_002D,uVar12,&local_8);
         if ((ushort)local_8 != 0xffff) {
           pSVar5 = (STBoatC *)
                    STAllPlayersC::GetObjPtr
@@ -423,7 +421,7 @@ void __thiscall STGroupBoatC::RechargeNewCmd(STGroupBoatC *this,void *param_1)
               }
               Library::DKW::TBL::FUN_006ae1c0(&local_c->flags,&local_8);
             }
-            FUN_006b0c70((DArrayTy *)this_00->field_002D,uVar12);
+            DArrayRemoveAt(this_00->field_002D,uVar12);
             local_18 = local_18 + 0xffff;
             local_14 = local_14 - 1;
           }
@@ -470,7 +468,7 @@ void __thiscall STGroupBoatC::RechargeNewCmd(STGroupBoatC *this,void *param_1)
     if (pDVar8 != (DArrayTy *)0x0) {
       DArrayDestroy(pDVar8);
     }
-    DistributeMD(this_00,1,this_00->field_024E,this_00->field_0266,(DArrayTy *)this_00->field_002D);
+    DistributeMD(this_00,1,this_00->field_024E,this_00->field_0266,this_00->field_002D);
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     SVar10 = extraout_ECX_04;
   }
@@ -492,7 +490,7 @@ void __thiscall STGroupBoatC::RechargeNewCmd(STGroupBoatC *this,void *param_1)
     if (local_14 != 0) {
       uVar11 = 0;
       do {
-        DArrayGetElement((DArrayTy *)this_00->field_002D,uVar11,&local_8);
+        DArrayGetElement(this_00->field_002D,uVar11,&local_8);
         if ((ushort)local_8 != 0xffff) {
           pSVar5 = (STBoatC *)
                    STAllPlayersC::GetObjPtr
@@ -583,7 +581,7 @@ LAB_004a1878:
     if (local_14 != 0) {
       uVar11 = 0;
       do {
-        DArrayGetElement((DArrayTy *)this_00->field_002D,uVar11,&local_8);
+        DArrayGetElement(this_00->field_002D,uVar11,&local_8);
         if ((ushort)local_8 != 0xffff) {
           pSVar5 = (STBoatC *)
                    STAllPlayersC::GetObjPtr
@@ -665,7 +663,7 @@ LAB_004a1a74:
     }
   }
   if (this_00->field_01E6 == CASE_4) {
-    DistributeDock(this_00,1,*(DArrayTy **)&this_00->field_0x29f,(DArrayTy *)this_00->field_002D);
+    DistributeDock(this_00,1,*(DArrayTy **)&this_00->field_0x29f,this_00->field_002D);
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     SVar10 = extraout_ECX_11;
   }
@@ -674,7 +672,7 @@ LAB_004a1a74:
     if (local_14 != 0) {
       uVar11 = 0;
       do {
-        DArrayGetElement((DArrayTy *)this_00->field_002D,uVar11,&local_8);
+        DArrayGetElement(this_00->field_002D,uVar11,&local_8);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         SVar10 = extraout_ECX_12;
         if ((ushort)local_8 != 0xffff) {
@@ -765,7 +763,7 @@ LAB_004a1a74:
     local_1c = local_d8;
     if (0 < (int)local_14) {
       do {
-        DArrayGetElement((DArrayTy *)this_00->field_002D,uVar12,&local_8);
+        DArrayGetElement(this_00->field_002D,uVar12,&local_8);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         SVar10 = extraout_ECX_22;
         if ((ushort)local_8 != 0xffff) {
@@ -862,7 +860,7 @@ LAB_004a1ede:
     local_1c = local_e4[0];
     if (0 < (int)local_14) {
       do {
-        DArrayGetElement((DArrayTy *)this_00->field_002D,uVar12,&local_8);
+        DArrayGetElement(this_00->field_002D,uVar12,&local_8);
         if ((ushort)local_8 != 0xffff) {
           pSVar5 = (STBoatC *)
                    STAllPlayersC::GetObjPtr
@@ -955,7 +953,7 @@ LAB_004a20d0:
     if (0 < (int)local_14) {
       uVar11 = 0;
       do {
-        DArrayGetElement((DArrayTy *)this_00->field_002D,uVar11,&local_8);
+        DArrayGetElement(this_00->field_002D,uVar11,&local_8);
         if ((ushort)local_8 != 0xffff) {
           pSVar5 = (STBoatC *)
                    STAllPlayersC::GetObjPtr
@@ -999,7 +997,7 @@ LAB_004a221d:
     if (0 < (int)local_14) {
       uVar11 = 0;
       do {
-        DArrayGetElement((DArrayTy *)this_00->field_002D,uVar11,&local_8);
+        DArrayGetElement(this_00->field_002D,uVar11,&local_8);
         if ((ushort)local_8 != 0xffff) {
           pSVar5 = (STBoatC *)
                    STAllPlayersC::GetObjPtr
@@ -1035,7 +1033,7 @@ LAB_004a221d:
     if (0 < (int)local_14) {
       uVar11 = 0;
       do {
-        DArrayGetElement((DArrayTy *)this_00->field_002D,uVar11,&local_8);
+        DArrayGetElement(this_00->field_002D,uVar11,&local_8);
         if ((ushort)local_8 != 0xffff) {
           pSVar5 = (STBoatC *)
                    STAllPlayersC::GetObjPtr
@@ -1072,7 +1070,7 @@ LAB_004a221d:
     if (0 < (int)local_14) {
       uVar11 = 0;
       do {
-        DArrayGetElement((DArrayTy *)this_00->field_002D,uVar11,&local_8);
+        DArrayGetElement(this_00->field_002D,uVar11,&local_8);
         if ((ushort)local_8 != 0xffff) {
           pSVar5 = (STBoatC *)
                    STAllPlayersC::GetObjPtr
@@ -1102,7 +1100,7 @@ LAB_004a221d:
     if (0 < (int)local_14) {
       uVar11 = 0;
       do {
-        DArrayGetElement((DArrayTy *)this_00->field_002D,uVar11,&local_8);
+        DArrayGetElement(this_00->field_002D,uVar11,&local_8);
         if ((ushort)local_8 != 0xffff) {
           pSVar5 = (STBoatC *)
                    STAllPlayersC::GetObjPtr
@@ -1129,7 +1127,7 @@ LAB_004a221d:
     pDVar8 = local_c;
     if (0 < (int)local_14) {
       do {
-        DArrayGetElement((DArrayTy *)this_00->field_002D,uVar12,&local_8);
+        DArrayGetElement(this_00->field_002D,uVar12,&local_8);
         if ((ushort)local_8 != 0xffff) {
           pSVar5 = (STBoatC *)
                    STAllPlayersC::GetObjPtr
@@ -1217,7 +1215,7 @@ LAB_004a26f5:
     if (0 < (int)local_14) {
       uVar12 = 0;
       do {
-        DArrayGetElement((DArrayTy *)this_00->field_002D,uVar12,&local_8);
+        DArrayGetElement(this_00->field_002D,uVar12,&local_8);
         if ((ushort)local_8 != 0xffff) {
           pSVar5 = (STBoatC *)
                    STAllPlayersC::GetObjPtr
@@ -1271,17 +1269,17 @@ LAB_004a2897:
   if (this_00->field_01E6 == CASE_14) {
     local_28 = (DArrayTy *)
                Way3DGrpGetDistrPoint
-                         (this_00,(DArrayTy *)this_00->field_002D,
-                          (int)*(short *)&this_00->field_0x2fe,(int)*(short *)&this_00->field_0x300,
-                          (int)*(short *)&this_00->field_0x302,(int)*(short *)&this_00->field_0x2f8,
-                          (int)*(short *)&this_00->field_0x2fa,(int)*(short *)&this_00->field_0x2fc);
+                         (this_00,this_00->field_002D,(int)*(short *)&this_00->field_0x2fe,
+                          (int)*(short *)&this_00->field_0x300,(int)*(short *)&this_00->field_0x302,
+                          (int)*(short *)&this_00->field_0x2f8,(int)*(short *)&this_00->field_0x2fa,
+                          (int)*(short *)&this_00->field_0x2fc);
     if (local_28 == (DArrayTy *)0x0) {
       return;
     }
     pDVar8 = (DArrayTy *)
              Way3DGrpGetDistrPoint
-                       (this_00,(DArrayTy *)this_00->field_002D,(int)*(short *)&this_00->field_0x2f8
-                        ,(int)*(short *)&this_00->field_0x2fa,(int)*(short *)&this_00->field_0x2fc,
+                       (this_00,this_00->field_002D,(int)*(short *)&this_00->field_0x2f8,
+                        (int)*(short *)&this_00->field_0x2fa,(int)*(short *)&this_00->field_0x2fc,
                         (int)*(short *)&this_00->field_0x2fe,(int)*(short *)&this_00->field_0x300,
                         (int)*(short *)&this_00->field_0x302);
     if (pDVar8 == (DArrayTy *)0x0) {
@@ -1295,7 +1293,7 @@ LAB_004a2897:
       do {
         DArrayGetElement(local_28,uVar12,&local_38);
         DArrayGetElement(pDVar8,uVar12,&local_30);
-        DArrayGetElement((DArrayTy *)this_00->field_002D,uVar12,&local_8);
+        DArrayGetElement(this_00->field_002D,uVar12,&local_8);
         if ((ushort)local_8 != 0xffff) {
           pSVar5 = (STBoatC *)
                    STAllPlayersC::GetObjPtr
@@ -1330,7 +1328,7 @@ LAB_004a2897:
   if (0 < (int)local_14) {
     uVar11 = 0;
     do {
-      DArrayGetElement((DArrayTy *)this_00->field_002D,uVar11,&local_8);
+      DArrayGetElement(this_00->field_002D,uVar11,&local_8);
       if ((ushort)local_8 != 0xffff) {
         pSVar5 = (STBoatC *)
                  STAllPlayersC::GetObjPtr

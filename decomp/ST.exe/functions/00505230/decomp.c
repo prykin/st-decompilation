@@ -301,10 +301,10 @@ switchD_00505324_default:
         iVar4 = iVar4 + -1;
       } while (iVar4 != 0);
     }
-    wsprintfA(&pCVar2->field_0x1e1,"%d",(uint)*(ushort *)(local_24 + 2));
+    wsprintfA(&pCVar2->field_01E1,"%d",(uint)*(ushort *)(local_24 + 2));
     ccFntTy::SetSurf(pCVar2->field_01B8,pCVar2->field_0194,0,param_1 + 0x8f,
                      (uVar3 & 0xff) * 0xb + 0x39,0x23,0xc);
-    ccFntTy::WrTxt(pCVar2->field_01B8,(uint *)&pCVar2->field_0x1e1,-3,-1,0,-1,-1);
+    ccFntTy::WrTxt(pCVar2->field_01B8,(uint *)&pCVar2->field_01E1,-3,-1,0,-1,-1);
     pCVar9 = local_24;
 cf_continue_loop_00505716:
     local_6 = local_6 + 1;

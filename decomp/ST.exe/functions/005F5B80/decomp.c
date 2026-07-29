@@ -13,24 +13,20 @@ int __thiscall STBHEShellC::sub_005F5B80(STBHEShellC *this,undefined4 *param_1)
   STBHEShellC_field_0169DArray *pSVar2;
   int iVar3;
   STBHEShellC_field_0169Element *pcVar4;
-  undefined4 *puVar4;
+  byte *puVar4;
   uint uVar5;
-  undefined4 *puVar6;
+  byte *puVar6;
 
-  puVar4 = param_1;
-  puVar6 = (undefined4 *)&this->field_0x4d;
-  for (iVar3 = 0x4a; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar6 = *puVar4;
-    puVar4 = puVar4 + 1;
-    puVar6 = puVar6 + 1;
-  }
+  puVar4 = (byte *)(param_1);
+  puVar6 = (byte *)&this->field_0x4d;
+  memmove(puVar6, puVar4, 0x128); /* compiler REP MOVS byte copy */
   iVar3 = 0x128;
   if (this->field_0169 != (STBHEShellC_field_0169DArray *)0x0) {
     pSVar2 = (STBHEShellC_field_0169DArray *)FUN_006b0060((uint *)0x0,param_1 + 0x4b);
     this->field_0169 = pSVar2;
     iVar3 = param_1[0x4a] + 300;
   }
-  this->field_008F = -1;
+  this->field_008F = 0xffffffff;
   if (this->field_0169 != (STBHEShellC_field_0169DArray *)0x0) {
     dVar1 = this->field_0169->count;
     uVar5 = 0;

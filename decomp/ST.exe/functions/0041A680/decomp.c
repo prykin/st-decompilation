@@ -16,10 +16,10 @@ void __thiscall STGameObjC::ResetSelfCheckFlag(STGameObjC *this,int param_1)
     return;
   }
   this->field_01CD = 0;
-  FreeAndNull((void **)&this->field_011D);
-  FreeAndNull((void **)&this->field_0121);
-  FreeAndNull((void **)&this->field_0125);
-  FreeAndNull((void **)&this->field_0129);
+  FreeAndNull(&this->field_011D);
+  FreeAndNull(&this->field_0121);
+  FreeAndNull(&this->field_0125);
+  FreeAndNull(&this->field_0129);
   uVar1 = this->field_0020;
   if (uVar1 < 0x1af) {
     if (uVar1 == 0x1ae) {
@@ -34,52 +34,52 @@ void __thiscall STGameObjC::ResetSelfCheckFlag(STGameObjC *this,int param_1)
         return;
       }
       if (uVar1 == 0x14) {
-        if ((DArrayTy *)this->field_0171 != (DArrayTy *)0x0) {
-          DArrayDestroy((DArrayTy *)this->field_0171);
+        if (this->field_0171 != (DArrayTy *)0x0) {
+          DArrayDestroy(this->field_0171);
         }
-        if ((DArrayTy *)this->field_0175 != (DArrayTy *)0x0) {
-          DArrayDestroy((DArrayTy *)this->field_0175);
+        if (this->field_0175 != (DArrayTy *)0x0) {
+          DArrayDestroy(this->field_0175);
         }
-        if ((DArrayTy *)this->field_0179 != (DArrayTy *)0x0) {
-          DArrayDestroy((DArrayTy *)this->field_0179);
+        if (this->field_0179 != (DArrayTy *)0x0) {
+          DArrayDestroy(this->field_0179);
         }
-        if ((DArrayTy *)this->field_017D != (DArrayTy *)0x0) {
-          DArrayDestroy((DArrayTy *)this->field_017D);
+        if (this->field_017D != (DArrayTy *)0x0) {
+          DArrayDestroy(this->field_017D);
         }
-        if ((DArrayTy *)this->field_0181 != (DArrayTy *)0x0) {
-          DArrayDestroy((DArrayTy *)this->field_0181);
+        if (this->field_0181 != (DArrayTy *)0x0) {
+          DArrayDestroy(this->field_0181);
         }
-        this->field_0171 = 0;
-        this->field_0175 = 0;
-        this->field_0179 = 0;
-        this->field_017D = 0;
-        this->field_0181 = 0;
-        if ((DArrayTy *)this->field_015D != (DArrayTy *)0x0) {
-          DArrayDestroy((DArrayTy *)this->field_015D);
+        this->field_0171 = (DArrayTy *)0x0;
+        this->field_0175 = (DArrayTy *)0x0;
+        this->field_0179 = (DArrayTy *)0x0;
+        this->field_017D = (DArrayTy *)0x0;
+        this->field_0181 = (DArrayTy *)0x0;
+        if (this->field_015D != (DArrayTy *)0x0) {
+          DArrayDestroy(this->field_015D);
         }
-        if ((DArrayTy *)this->field_0161 != (DArrayTy *)0x0) {
-          DArrayDestroy((DArrayTy *)this->field_0161);
+        if (this->field_0161 != (DArrayTy *)0x0) {
+          DArrayDestroy(this->field_0161);
         }
-        if ((DArrayTy *)this->field_0165 != (DArrayTy *)0x0) {
-          DArrayDestroy((DArrayTy *)this->field_0165);
+        if (this->field_0165 != (DArrayTy *)0x0) {
+          DArrayDestroy(this->field_0165);
         }
-        if ((DArrayTy *)this->field_0169 != (DArrayTy *)0x0) {
-          DArrayDestroy((DArrayTy *)this->field_0169);
+        if (this->field_0169 != (DArrayTy *)0x0) {
+          DArrayDestroy(this->field_0169);
         }
-        if ((DArrayTy *)this->field_016D != (DArrayTy *)0x0) {
-          DArrayDestroy((DArrayTy *)this->field_016D);
+        if (this->field_016D != (DArrayTy *)0x0) {
+          DArrayDestroy(this->field_016D);
         }
-        this->field_015D = 0;
-        this->field_0161 = 0;
-        this->field_0165 = 0;
-        this->field_0169 = 0;
-        this->field_016D = 0;
+        this->field_015D = (DArrayTy *)0x0;
+        this->field_0161 = (DArrayTy *)0x0;
+        this->field_0165 = (DArrayTy *)0x0;
+        this->field_0169 = (DArrayTy *)0x0;
+        this->field_016D = (DArrayTy *)0x0;
         FreeAndNull(&this->field_0195);
         FreeAndNull(&this->field_0199);
         FreeAndNull(&this->field_01AD);
         FreeAndNull(&this->field_01B1);
-        FreeAndNull((void **)&this->field_01BD);
-        FreeAndNull((void **)&this->field_01C1);
+        FreeAndNull(&this->field_01BD);
+        FreeAndNull(&this->field_01C1);
         return;
       }
       if (uVar1 == 0x5a) {

@@ -83,8 +83,8 @@ LAB_004b77c4:
   while( true ) {
     DArrayGetElement(*(DArrayTy **)&g_playerRuntime[iVar2].field_0x992,dVar1 - 1,local_28);
     iVar3 = iVar3 - local_20;
-    FUN_006b0c70(*(DArrayTy **)&g_playerRuntime[iVar2].field_0x992,
-                 (*(DArrayTy **)&g_playerRuntime[iVar2].field_0x992)->count - 1);
+    DArrayRemoveAt(*(DArrayTy **)&g_playerRuntime[iVar2].field_0x992,
+                   (*(DArrayTy **)&g_playerRuntime[iVar2].field_0x992)->count - 1);
     iVar4 = thunk_FUN_004b71c0(cVar6);
     if (iVar3 <= iVar4) break;
 LAB_004b78f0:

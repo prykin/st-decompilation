@@ -31,7 +31,7 @@ void __thiscall STBHEShellC::sub_005F5C40(STBHEShellC *this,int param_1,int para
     local_10.y = (int)(short)(((short)(param_2 / 0xc9) + sVar1) -
                              (short)((longlong)param_2 * 0x28c1979 >> 0x3f));
   }
-  local_10.unknown = this->field_0018;
+  local_10.unknown = (int)this->field_0018;
   SoundClassTy::PlaySound((SoundClassTy *)&g_sound,SOUND_MODE_2,(char *)0x0,soundId,&local_10,0);
   return;
 }

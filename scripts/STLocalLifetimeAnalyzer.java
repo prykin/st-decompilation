@@ -44,6 +44,8 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
     private int functionsSeen;
     private int mergedLocals;
     private int mergeGroups;
+    private int singleGroupUnknowns;
+    private int singleGroupProposals;
     private int groupsWithEvidence;
     private int conflicts;
 
@@ -99,7 +101,9 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
             directory.toAbsolutePath().normalize());
         println("Functions=" + functionsSeen + ", merged_locals=" + mergedLocals +
             ", merge_groups=" + mergeGroups + ", groups_with_evidence=" +
-            groupsWithEvidence + ", proposals=" + rows.size() + ", apply=" +
+            groupsWithEvidence + ", single_group_unknowns=" +
+            singleGroupUnknowns + ", single_group_proposals=" +
+            singleGroupProposals + ", proposals=" + rows.size() + ", apply=" +
             rows.stream().filter(row -> row.apply).count() + ", conflicts=" +
             conflicts + ", failures=" + failures.size());
     }
@@ -152,16 +156,19 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
             groups.computeIfAbsent(group, ignored -> new ArrayList<>())
                 .add(varnode);
         }
-        if (groups.size() < 2) return;
-        mergedLocals++;
-        mergeGroups += groups.size();
-
         String originalName = (String)highSymbol.getClass()
             .getMethod("getName").invoke(highSymbol);
         DataType currentType = (DataType)highSymbol.getClass()
             .getMethod("getDataType").invoke(highSymbol);
         String currentSpecification = typeSpecification(currentType);
         SourceType symbolSource = symbolSource(highSymbol);
+        boolean merged = groups.size() > 1;
+        if (!merged && !genericUnknown(currentType)) return;
+        if (merged) {
+            mergedLocals++;
+            mergeGroups += groups.size();
+        }
+        else singleGroupUnknowns++;
 
         Map<Short, Decision> decisions = new TreeMap<>();
         for (Map.Entry<Short, List<Object>> entry : groups.entrySet()) {
@@ -193,13 +200,20 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
             if (anchor == null) continue;
             boolean different = !selected.specification.equals(
                 currentSpecification);
+            // Single-group locals are an undefined-type recovery pass, not an
+            // inventory of already typed SSA values. The older multi-group
+            // rows remain complete because they document every independent
+            // lifetime sharing one Listing local.
+            if (!merged && !different) continue;
             boolean manual = symbolSource == SourceType.USER_DEFINED ||
                 symbolSource == SourceType.IMPORTED;
             boolean apply = different && !manual &&
                 selected.score >= automaticThreshold(selected);
+            if (!merged) singleGroupProposals++;
             String confidence = apply ? "high" :
                 manual ? "manual" : different ? "review" : "existing";
-            String reason = "separate decompiler merge group; exact_type_votes=" +
+            String reason = (merged ? "separate decompiler merge group" :
+                "single undefined local lifetime") + "; exact_type_votes=" +
                 selected.anchors.size() + "; score=" + selected.score +
                 "; sources=" + selected.sources +
                 (different ? "" : "; group already has the merged type") +
@@ -466,6 +480,21 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
         return untypedef(type) instanceof Pointer && semanticType(type);
     }
 
+    /**
+     * A one-lifetime HighSymbol is eligible only when its current type carries
+     * no semantic information. In particular, do not reinterpret void * or an
+     * already named integer merely because one consumer accepts something more
+     * specific. Raw undefinedN and undefinedN * are safe targets for exact
+     * typed call/copy evidence.
+     */
+    private boolean genericUnknown(DataType type) {
+        type = untypedef(type);
+        if (type == null || Undefined.isUndefined(type)) return true;
+        if (!(type instanceof Pointer pointer)) return false;
+        DataType pointed = untypedef(pointer.getDataType());
+        return pointed == null || Undefined.isUndefined(pointed);
+    }
+
     private DataType untypedef(DataType type) {
         while (type instanceof TypeDef typedef) type = typedef.getBaseDataType();
         return type;
@@ -578,15 +607,18 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
             "functions_seen=" + functionsSeen,
             "merged_locals=" + mergedLocals,
             "merge_groups=" + mergeGroups,
+            "single_group_unknowns=" + singleGroupUnknowns,
+            "single_group_proposals=" + singleGroupProposals,
             "groups_with_evidence=" + groupsWithEvidence,
             "proposals=" + rows.size(),
             "auto_apply=" + rows.stream().filter(row -> row.apply).count(),
             "review_or_existing=" + rows.stream().filter(row -> !row.apply).count(),
             "conflicts=" + conflicts,
             "decompile_failures=" + failures.size(),
-            "policy=Only distinct decompiler merge groups are considered. One exact " +
-                "typed return or typed copy is sufficient; call-argument evidence " +
-                "requires two agreeing anchors. Competing exact types are review-only.",
+            "policy=Distinct decompiler merge groups are split independently. A " +
+                "single-group raw undefined local is also eligible, but only from " +
+                "the same exact typed return/copy evidence or two agreeing typed " +
+                "call arguments. Competing exact types are review-only.",
             "manual_safety=USER_DEFINED and IMPORTED HighSymbols are never enabled."
         ), StandardCharsets.UTF_8);
     }

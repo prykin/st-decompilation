@@ -31,7 +31,7 @@ void __thiscall TradePanelTy::PaintIndicators(TradePanelTy *this)
   iVar4 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   pTVar3 = local_10;
   if (iVar4 == 0) {
-    resourceString = &local_10->field_0x18d;
+    resourceString = &local_10->field_018D;
     wsprintfA(resourceString,"%6d",
               (uint)(ushort)(&local_10->field_01BC)[(byte)local_10->field_01D0]);
     ccFntTy::SetSurf(pTVar3->field_01DD,pTVar3->field_0068,0,0x67,0x36,0x23,0xc);

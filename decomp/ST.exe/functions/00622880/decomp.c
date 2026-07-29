@@ -27,9 +27,9 @@ void __thiscall STMineSetC::sub_00622880(STMineSetC *this)
       sub_0041D2B0(this);
     }
   }
-  if ((DArrayTy *)this->field_034A != (DArrayTy *)0x0) {
-    DArrayDestroy((DArrayTy *)this->field_034A);
-    this->field_034A = 0;
+  if (this->field_034A != (DArrayTy *)0x0) {
+    DArrayDestroy(this->field_034A);
+    this->field_034A = (DArrayTy *)0x0;
   }
   return;
 }

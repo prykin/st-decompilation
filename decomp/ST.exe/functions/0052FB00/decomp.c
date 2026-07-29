@@ -402,7 +402,7 @@ LAB_0052fd4a:
         pcVar7 = pcVar7 + 1;
       }
       pcVar8 = LoadResourceString(UVar31,g_module_00807618);
-      wsprintfA(&this_00->field_0x6c,pcVar8);
+      wsprintfA(&this_00->field_006C,pcVar8);
       break;
     default:
       pcVar8 = LoadResourceString(this_00->field_01A5,g_module_00807618);
@@ -417,7 +417,7 @@ LAB_0052fd4a:
       } while (cVar1 != '\0');
       uVar38 = ~uVar38;
       pcVar8 = pcVar7 + -uVar38;
-      pcVar7 = &this_00->field_0x6c;
+      pcVar7 = &this_00->field_006C;
       for (uVar18 = uVar38 >> 2; uVar18 != 0; uVar18 = uVar18 - 1) {
         *(undefined4 *)pcVar7 = *(undefined4 *)pcVar8;
         pcVar8 = pcVar8 + 4;
@@ -570,11 +570,11 @@ LAB_0052ff02:
         pcVar7 = pcVar7 + 1;
       }
       pcVar8 = LoadResourceString(UVar31,g_module_00807618);
-      wsprintfA(&this_00->field_0x6c,pcVar8);
+      wsprintfA(&this_00->field_006C,pcVar8);
       break;
     case CASE_A:
       pcVar8 = LoadResourceString(this_00->field_01A5,g_module_00807618);
-      wsprintfA(&this_00->field_0x6c,pcVar8);
+      wsprintfA(&this_00->field_006C,pcVar8);
     }
     if (DAT_0080874e == '\x03') {
       uVar38 = 5;
@@ -582,7 +582,7 @@ LAB_0052ff02:
     else {
       uVar38 = -(uint)(DAT_0080874e != '\x01') & 7;
     }
-    ccFntTy::WrTxt(this_00->field_0180,(uint *)&this_00->field_0x6c,-2,-1,uVar38,-1,-1);
+    ccFntTy::WrTxt(this_00->field_0180,(uint *)&this_00->field_006C,-2,-1,uVar38,-1,-1);
     goto cf_common_join_005305BC;
   case CASE_6:
     uVar38 = 0;
@@ -698,7 +698,7 @@ LAB_00530554:
     ccFntTy::WrStr(this_00->field_017C,puVar9,iVar6,iVar17,uVar38);
     DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0xaa,0x6f,'\x01',
            (byte *)this_00->field_018C);
-    resourceString = &this_00->field_0x6c;
+    resourceString = &this_00->field_006C;
     wsprintfA(resourceString,"%d");
     ccFntTy::SetSurf(this_00->field_017C,this_00->field_0068,0,0xaa,0x6f,
                      *(int *)(this_00->field_018C + 2),*(int *)(this_00->field_018C + 4));
@@ -792,7 +792,7 @@ cf_common_join_005305BC:
       } while (cVar1 != '\0');
       uVar38 = ~uVar38;
       pcVar8 = pcVar7 + -uVar38;
-      pcVar7 = &this_00->field_0x6c;
+      pcVar7 = &this_00->field_006C;
       for (uVar18 = uVar38 >> 2; uVar18 != 0; uVar18 = uVar18 - 1) {
         *(undefined4 *)pcVar7 = *(undefined4 *)pcVar8;
         pcVar8 = pcVar8 + 4;
@@ -815,7 +815,7 @@ cf_common_join_005305BC:
       } while (cVar1 != '\0');
       uVar38 = ~uVar38;
       iVar6 = -1;
-      pcVar8 = &this_00->field_0x6c;
+      pcVar8 = &this_00->field_006C;
       do {
         pcVar20 = pcVar8;
         if (iVar6 == 0) break;
@@ -848,7 +848,7 @@ cf_common_join_005305BC:
       } while (cVar1 != '\0');
       uVar38 = ~uVar38;
       iVar6 = -1;
-      pcVar8 = &this_00->field_0x6c;
+      pcVar8 = &this_00->field_006C;
       do {
         pcVar20 = pcVar8;
         if (iVar6 == 0) break;
@@ -869,8 +869,8 @@ cf_common_join_005305BC:
         pcVar8 = pcVar8 + 1;
         pcVar7 = pcVar7 + 1;
       }
-      FUN_006b78c0(&this_00->field_0x6c,&this_00->field_0x6c);
-      pvVar14 = FindFirstChangeNotificationA(&this_00->field_0x6c,0,1);
+      FUN_006b78c0(&this_00->field_006C,&this_00->field_006C);
+      pvVar14 = FindFirstChangeNotificationA(&this_00->field_006C,0,1);
       this_00->field_01DD = pvVar14;
       if (pvVar14 == (HANDLE)0xffffffff) {
         this_00->field_01DD = (HANDLE)0x0;
@@ -1556,11 +1556,7 @@ switchD_005311ec_caseD_3:
     local_fc0[2] = this_00->field_003C + 0xf2;
     piVar39 = local_1140;
     piVar25 = local_fc0;
-    for (iVar17 = 0x5f; iVar17 != 0; iVar17 = iVar17 + -1) {
-      *piVar25 = *piVar39;
-      piVar39 = piVar39 + 1;
-      piVar25 = piVar25 + 1;
-    }
+    memmove(piVar25, piVar39, 0x17c); /* compiler REP MOVS byte copy */
     if (iVar6 == 0) {
       local_fc0[3] = -this_00->field_0048;
     }

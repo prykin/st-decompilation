@@ -30,18 +30,17 @@ void __thiscall SettMapTy::DoneSettMap(SettMapTy *this)
     if (pSVar2->field_1F3F != (cMf32 *)0x0) {
       cMf32::delete(pSVar2->field_1F3F);
     }
-    pSVar2->field_1F3F = (void *)0x0;
-    if ((cMf32 *)pSVar2->field_1F43 != (cMf32 *)0x0) {
-      cMf32::delete((cMf32 *)pSVar2->field_1F43);
+    pSVar2->field_1F3F = (cMf32 *)0x0;
+    if (pSVar2->field_1F43 != (cMf32 *)0x0) {
+      cMf32::delete(pSVar2->field_1F43);
     }
-    pSVar2->field_1F43 = 0;
+    pSVar2->field_1F43 = (cMf32 *)0x0;
     if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
       if (g_cursorClass_00802A30->field_00A9 == 0) {
         Library::DKW::DDX::FUN_006b8b10((int *)g_cursorClass_00802A30->field_00AD);
       }
-      else if (g_cursorClass_00802A30->field_001C != (cLoadingTy *)0xffffffff) {
-        FUN_006b3af0((int *)g_cursorClass_00802A30->field_0060,
-                     (uint)g_cursorClass_00802A30->field_001C);
+      else if (g_cursorClass_00802A30->field_001C != 0xffffffff) {
+        FUN_006b3af0((int *)g_cursorClass_00802A30->field_0060,g_cursorClass_00802A30->field_001C);
       }
     }
     iVar3 = pSVar2->field_004D;
@@ -63,7 +62,7 @@ void __thiscall SettMapTy::DoneSettMap(SettMapTy *this)
       if (g_startSystem_0081176C->field_04B3 != 0xffffffff) {
         FUN_006b3af0((int *)g_startSystem_0081176C->field_04F7,g_startSystem_0081176C->field_04B3);
       }
-      if (-1 < g_startSystem_0081176C->field_0540) {
+      if (-1 < (int)g_startSystem_0081176C->field_0540) {
         FUN_006b3af0((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0540);
       }
     }

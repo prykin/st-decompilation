@@ -298,7 +298,7 @@ joined_r0x0049bc58:
             if (g_pathingScratchGrid.cells
                 [(int)g_pathingGrid.planeStride * (int)(short)local_14 +
                  (int)g_pathingGrid.sizeX * (int)(short)local_10 + (int)param_1._2_2_] == 0) {
-              FUN_006b0c70(this->field_0103,local_28);
+              DArrayRemoveAt(this->field_0103,local_28);
               break;
             }
           }

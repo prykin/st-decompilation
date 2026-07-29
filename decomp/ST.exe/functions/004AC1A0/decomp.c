@@ -120,7 +120,7 @@ undefined4 __thiscall STT3DSprC::StartShow(STT3DSprC *this,byte param_1,uint par
     }
     return 0xffffffff;
   }
-  if (local_8->field_0018 == -1) {
+  if (local_8->field_0018 == 0xffffffff) {
     RaiseInternalException
               (-1,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\Tspr3d.cpp",0xce);
   }

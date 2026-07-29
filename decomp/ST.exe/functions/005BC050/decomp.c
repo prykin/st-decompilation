@@ -13,7 +13,7 @@ void __thiscall PrividerTy::DeleteCtrls(PrividerTy *this,char param_1)
   PrividerTy *pPVar3;
   int iVar4;
   HoloTy *pHVar5;
-  undefined4 *puVar6;
+  byte *puVar6;
   uint *puVar7;
   int iVar8;
   byte bVar9;
@@ -41,9 +41,8 @@ void __thiscall PrividerTy::DeleteCtrls(PrividerTy *this,char param_1)
     if (g_cursorClass_00802A30->field_00A9 == 0) {
       Library::DKW::DDX::FUN_006b8b10((int *)g_cursorClass_00802A30->field_00AD);
     }
-    else if (g_cursorClass_00802A30->field_001C != (cLoadingTy *)0xffffffff) {
-      FUN_006b3af0((int *)g_cursorClass_00802A30->field_0060,
-                   (uint)g_cursorClass_00802A30->field_001C);
+    else if (g_cursorClass_00802A30->field_001C != 0xffffffff) {
+      FUN_006b3af0((int *)g_cursorClass_00802A30->field_0060,g_cursorClass_00802A30->field_001C);
     }
   }
   pPVar3 = local_c;
@@ -66,12 +65,12 @@ void __thiscall PrividerTy::DeleteCtrls(PrividerTy *this,char param_1)
     else {
       pHVar5->field_0002 = 1;
       pHVar5->field_0000 = 0;
-      pHVar5->field_0003 = -1;
+      *(undefined4 *)&pHVar5->field_0x3 = 0xffffffff;
       pHVar5->field_0001 = CASE_2;
-      pHVar5->field_0007 = 0;
+      pHVar5->field_0007 = (void *)0x0;
       pHVar5->field_000B = (void *)0x0;
       pHVar5->field_000F = 0;
-      pHVar5->field_001B = 1;
+      *(undefined4 *)&pHVar5->field_0x1b = 1;
       pHVar5->field_0013 = 1;
       pHVar5->field_0017 = -1;
       pHVar5->field_0027 = 0;
@@ -91,7 +90,7 @@ void __thiscall PrividerTy::DeleteCtrls(PrividerTy *this,char param_1)
         pHVar5 = pPVar3->field_1C96;
         pHVar5->field_0002 = 0;
         pHVar5->field_0017 = -1;
-        uVar11 = pPVar3->field_1C96->field_0003;
+        uVar11 = *(uint *)&pPVar3->field_1C96->field_0x3;
         if (-1 < (int)uVar11) {
           Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar11);
         }
@@ -123,15 +122,8 @@ void __thiscall PrividerTy::DeleteCtrls(PrividerTy *this,char param_1)
     local_8 = ((uint)puVar1[7] * *(int *)(puVar1 + 2) + 0x1f >> 3 & 0x1ffffffc) *
               *(int *)(puVar1 + 4);
   }
-  puVar6 = (undefined4 *)FUN_006b4fa0((int *)puVar1);
-  for (uVar11 = local_8 >> 2; uVar11 != 0; uVar11 = uVar11 - 1) {
-    *puVar6 = 0;
-    puVar6 = puVar6 + 1;
-  }
-  for (uVar11 = local_8 & 3; uVar11 != 0; uVar11 = uVar11 - 1) {
-    *(undefined1 *)puVar6 = 0;
-    puVar6 = (undefined4 *)((int)puVar6 + 1);
-  }
+  puVar6 = (byte *)FUN_006b4fa0((int *)puVar1);
+  memset(puVar6, 0, local_8); /* compiler bulk-zero initialization */
   if (pPVar3->field_1C86 != 0) {
     StartSystemTy::sub_006E56B0(pPVar3->field_000C,pPVar3->field_1C86);
     pPVar3->field_1C86 = 0;
@@ -148,12 +140,12 @@ void __thiscall PrividerTy::DeleteCtrls(PrividerTy *this,char param_1)
     else {
       pHVar5->field_0002 = 1;
       pHVar5->field_0000 = 0;
-      pHVar5->field_0003 = -1;
+      *(undefined4 *)&pHVar5->field_0x3 = 0xffffffff;
       pHVar5->field_0001 = CASE_2;
-      pHVar5->field_0007 = 0;
+      pHVar5->field_0007 = (void *)0x0;
       pHVar5->field_000B = (void *)0x0;
       pHVar5->field_000F = 0;
-      pHVar5->field_001B = 1;
+      *(undefined4 *)&pHVar5->field_0x1b = 1;
       pHVar5->field_0013 = 1;
       pHVar5->field_0017 = -1;
       pHVar5->field_0027 = 0;
@@ -173,7 +165,7 @@ void __thiscall PrividerTy::DeleteCtrls(PrividerTy *this,char param_1)
         pHVar5 = pPVar3->field_1C9A;
         pHVar5->field_0002 = 0;
         pHVar5->field_0017 = -1;
-        uVar11 = pPVar3->field_1C9A->field_0003;
+        uVar11 = *(uint *)&pPVar3->field_1C9A->field_0x3;
         if (-1 < (int)uVar11) {
           Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar11);
         }
@@ -188,10 +180,10 @@ void __thiscall PrividerTy::DeleteCtrls(PrividerTy *this,char param_1)
     if (g_cursorClass_00802A30->field_00A9 == 0) {
       Library::DKW::DDX::FUN_006b8a60((byte *)g_cursorClass_00802A30->field_00AD);
     }
-    else if (g_cursorClass_00802A30->field_001C != (cLoadingTy *)0xffffffff) {
+    else if (g_cursorClass_00802A30->field_001C != 0xffffffff) {
       Library::DKW::DDX::FUN_006b34d0
-                ((uint *)g_cursorClass_00802A30->field_0060,(uint)g_cursorClass_00802A30->field_001C
-                 ,0xfffffffe,g_cursorClass_00802A30->field_0034,g_cursorClass_00802A30->field_0038);
+                ((uint *)g_cursorClass_00802A30->field_0060,g_cursorClass_00802A30->field_001C,
+                 0xfffffffe,g_cursorClass_00802A30->field_0034,g_cursorClass_00802A30->field_0038);
       g_currentExceptionFrame = local_50.previous;
       return;
     }

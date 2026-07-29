@@ -16,7 +16,8 @@ void __thiscall SoundManagerTy::sub_00566970(SoundManagerTy *this,int param_1,in
   char *text;
   undefined4 *puVar3;
 
-  if (((this->field_0018 != 0) && (iVar2 = this->field_0028, iVar2 != 0)) && (-1 < param_1)) {
+  if (((this->field_0018 != (cMf32 *)0x0) && (iVar2 = this->field_0028, iVar2 != 0)) &&
+     (-1 < param_1)) {
     switch(this->field_0038) {
     case CASE_0:
     case CASE_1:
@@ -45,7 +46,7 @@ void __thiscall SoundManagerTy::sub_00566970(SoundManagerTy *this,int param_1,in
     }
     puVar3 = (undefined4 *)0x0;
     pCVar1 = FUN_006f2c00(text,3,iVar2);
-    iVar2 = thunk_FUN_0056a2a0(&g_sound,(cMf32 *)this->field_0018,pCVar1,param_2,puVar3);
+    iVar2 = thunk_FUN_0056a2a0(&g_sound,this->field_0018,pCVar1,param_2,puVar3);
     if (iVar2 == 0) {
       if (this->field_0039 == param_1) {
         this->field_0039 = param_1;

@@ -1184,8 +1184,22 @@ public class STClassLayoutAnalyzer extends GhidraScript {
         for (int index = 0; index < parameters.size(); index++) {
             Parameter parameter = parameters.get(index);
             PushEvidence pushed = pushes.get(pushes.size() - 1 - index);
-            if (pushed == null || pushed.kind != ValueKind.FIELD_VALUE) continue;
-            boolean trusted = trusted(parameter.getSource());
+            if (pushed == null) continue;
+            boolean trusted = trusted(parameter.getSource()) ||
+                recoveredPrototype(called);
+            if (pushed.kind == ValueKind.THIS_ADDRESS && pushed.offset != 0 &&
+                    trusted) {
+                String inferredType =
+                    addressedFieldType(parameter.getDataType());
+                if (inferredType.isBlank()) continue;
+                FieldEvidence field = field(owner, pushed.offset);
+                field.addType(inferredType, addr(containing.getEntryPoint()) +
+                    " exact address of [this+" + hex(pushed.offset) +
+                    "] passed to " + called.getName(true) + " parameter " +
+                    parameter.getName());
+                continue;
+            }
+            if (pushed.kind != ValueKind.FIELD_VALUE) continue;
             String inferredType = trusted ?
                 meaningfulTypeSpecification(parameter.getDataType()) : "";
             if (inferredType.isBlank() &&
@@ -1199,6 +1213,38 @@ public class STClassLayoutAnalyzer extends GhidraScript {
                 field.addName(cleanFieldName(parameter.getName()), evidence);
             }
         }
+    }
+
+    /**
+     * Passing an exact interior class address to a trusted T* parameter proves
+     * that the class field at that address is T.  In particular,
+     * FreeAndNull(void **) called with &this->field proves a void * field
+     * without guessing the eventual byte/record element type.
+     */
+    private String addressedFieldType(DataType parameterType) {
+        parameterType = untypedef(parameterType);
+        if (!(parameterType instanceof Pointer pointer) ||
+                pointer.getDataType() == null)
+            return "";
+        return meaningfulTypeSpecification(untypedef(pointer.getDataType()));
+    }
+
+    private DataType untypedef(DataType type) {
+        while (type instanceof TypeDef typeDef)
+            type = typeDef.getBaseDataType();
+        return type;
+    }
+
+    private boolean recoveredPrototype(Function function) {
+        if (function == null) return false;
+        for (FunctionTag tag : function.getTags())
+            if (tag.getName().equals("RECOVERED_PROTOTYPE"))
+                return true;
+        String comment = function.getComment();
+        return comment != null &&
+            (comment.contains("[STUtilityFunctionApplier]") ||
+             comment.contains("[STPrototypeApplier]") ||
+             comment.contains("[STAbiConsistencyApplier]"));
     }
 
     private Function calledFunction(Instruction instruction) {
@@ -2232,7 +2278,8 @@ public class STClassLayoutAnalyzer extends GhidraScript {
                 row.typeConfidence + "\t" + row.nameConfidence + "\t" +
                 tsv(row.typeEvidence) + "\t" + tsv(row.nameEvidence) + "\t" + row.reads +
                 "\t" + row.writes + "\t" + row.confidence + "\t" + row.reason + "\t" +
-                tsv(String.join(" | ", row.functions)) + "\n");
+                tsv(row.functions.isEmpty() ? "-" :
+                    String.join(" | ", row.functions)) + "\n");
         }
     }
 

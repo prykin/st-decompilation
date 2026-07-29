@@ -82,7 +82,7 @@ CPanelTy::SetButStruct
     else {
       iVar4 = (&local_c->field_0094)[uVar2];
     }
-    text = &local_c->field_0x1e1;
+    text = &local_c->field_01E1;
     *(int *)&param_1->field_0xc = iVar4 + param_5;
     *(undefined4 *)&param_1[1].field_0x54 = 1;
     *(undefined4 *)&param_1[1].field_0x58 = 1;

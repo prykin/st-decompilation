@@ -55,8 +55,8 @@ void __thiscall MReportTy::DoneMReport(MReportTy *this)
     if (pMVar2->field_0077 != (AnonPointee_MReportTy_0077 *)0x0) {
       FreeAndNull(&pMVar2->field_0077);
     }
-    if (pMVar2->field_007B != 0) {
-      FreeAndNull((void **)&pMVar2->field_007B);
+    if (pMVar2->field_007B != (void *)0x0) {
+      FreeAndNull(&pMVar2->field_007B);
     }
     if (pMVar2->field_0073 != (AnonPointee_MReportTy_0073 *)0x0) {
       FreeAndNull(&pMVar2->field_0073);

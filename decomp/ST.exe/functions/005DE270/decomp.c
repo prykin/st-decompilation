@@ -15,8 +15,8 @@ void __thiscall StartSystemTy::CreateChatView(StartSystemTy *this)
   StartSystemTy *this_00;
   int iVar5;
   int iVar6;
-  undefined4 *puVar7;
-  undefined4 *puVar8;
+  byte *puVar7;
+  byte *puVar8;
   undefined4 local_8c4 [5];
   int local_8b0;
   undefined4 local_8ac;
@@ -45,11 +45,11 @@ void __thiscall StartSystemTy::CreateChatView(StartSystemTy *this)
   InternalExceptionFrame local_4c;
   StartSystemTy *local_8;
 
-  puVar7 = local_8c4;
+  puVar7 = (byte *)(local_8c4);
   local_8 = this;
   for (iVar6 = 0x21e; iVar6 != 0; iVar6 = iVar6 + -1) {
     *puVar7 = 0;
-    puVar7 = puVar7 + 1;
+    puVar7 = (byte *)(puVar7 + 1);
   }
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
@@ -90,13 +90,9 @@ void __thiscall StartSystemTy::CreateChatView(StartSystemTy *this)
     local_88c = this_00->field_0014;
     local_7a8 = local_88c;
     uVar3 = this_00->field_0578;
-    puVar7 = local_808;
-    puVar8 = local_688;
-    for (iVar6 = 0x5f; iVar6 != 0; iVar6 = iVar6 + -1) {
-      *puVar8 = *puVar7;
-      puVar7 = puVar7 + 1;
-      puVar8 = puVar8 + 1;
-    }
+    puVar7 = (byte *)(local_808);
+    puVar8 = (byte *)(local_688);
+    memmove(puVar8, puVar7, 0x17c); /* compiler REP MOVS byte copy */
     local_688[3] = this_00->field_057C;
     local_674 = this_00->field_0584;
     local_620 = 0x6340;

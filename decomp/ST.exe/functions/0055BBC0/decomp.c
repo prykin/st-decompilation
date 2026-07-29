@@ -58,7 +58,7 @@ VisibleClassTy::sub_0055BBC0
           byte param_6,int param_7)
 
 {
-  uint uVar1;
+  uint index;
   RecoveredRecord_VisibleClassTy_0055B9F0 local_10;
 
   if ((((this->field_0114 != 0) && (this->field_0110 != (VisibleClassTy_field_0110DArray *)0x0)) &&
@@ -76,9 +76,9 @@ VisibleClassTy::sub_0055BBC0
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_10._7_1_ = param_6;
     local_10.field_0008 = param_7;
-    uVar1 = thunk_FUN_0055b9f0(this,&local_10);
-    if (-1 < (int)uVar1) {
-      FUN_006b0c70((DArrayTy *)this->field_0110,uVar1);
+    index = thunk_FUN_0055b9f0(this,&local_10);
+    if (-1 < (int)index) {
+      DArrayRemoveAt((DArrayTy *)this->field_0110,index);
     }
   }
   return;

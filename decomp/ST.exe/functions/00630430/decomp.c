@@ -18,13 +18,12 @@ int __thiscall STManRuinC::GetMessage(STManRuinC *this,STMessage *message)
   code *pcVar4;
   STManRuinC *this_00;
   int iVar5;
-  STManRuinC_field_003CElement *puVar6;
+  byte *pbVar6;
   ushort *puVar7;
   int iVar8;
-  uint uVar9;
-  undefined4 *puVar11;
+  byte *puVar11;
   STManRuinC_field_003CElement *element_003c;
-  undefined4 *puVar12;
+  byte *puVar12;
   InternalExceptionFrame local_58;
   byte *local_14;
   uint local_10;
@@ -101,7 +100,7 @@ int __thiscall STManRuinC::GetMessage(STManRuinC *this,STMessage *message)
             }
             if (PTR_00806724->entryCount <= (short)(ushort)element_003c->maskIndex) {
               Library::Ourlib::ST3DSMAP::SprClose(g_sT3DSMAPContext_00807598,element_003c->spriteHandle);
-              FUN_006b0c70((DArrayTy *)this_00->field_003C,uVar2);
+              DArrayRemoveAt((DArrayTy *)this_00->field_003C,uVar2);
             }
           }
         }
@@ -134,30 +133,19 @@ LAB_006304e7:
       goto LAB_00630558;
     }
     if (local_8 == (ushort *)0x0) goto LAB_006304e7;
-    puVar11 = (message->arg0).ptr;
-    puVar12 = &this_00->field_001C;
-    for (iVar5 = 5; iVar5 != 0; iVar5 = iVar5 + -1) {
-      *puVar12 = *puVar11;
-      puVar11 = puVar11 + 1;
-      puVar12 = puVar12 + 1;
-    }
+    puVar11 = (byte *)((message->arg0).ptr);
+    puVar12 = (byte *)(&this_00->field_001C);
+    memmove(puVar12, puVar11, 0x14); /* compiler REP MOVS byte copy */
   }
-  if (this_00->field_0034 == 0) {
+  if (this_00->field_0034 == (byte *)0x0) {
     uVar2 = (int)g_worldGrid.sizeX * (int)g_worldGrid.sizeY * 5;
-    puVar6 = (STManRuinC_field_003CElement *)Library::DKW::LIB::FUN_006aac70(uVar2);
-    this_00->field_0034 = puVar6;
-    if (puVar6 == (STManRuinC_field_003CElement *)0x0) {
+    pbVar6 = (byte *)Library::DKW::LIB::FUN_006aac70(uVar2);
+    this_00->field_0034 = pbVar6;
+    if (pbVar6 == (byte *)0x0) {
       thunk_FUN_006308b0(this_00);
     }
     else {
-      for (uVar9 = uVar2 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
-        puVar6->field_0000 = 0;
-        puVar6 = (STManRuinC_field_003CElement *)&puVar6->state;
-      }
-      for (uVar9 = uVar2 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {
-        *(undefined1 *)&puVar6->field_0000 = 0;
-        puVar6 = (STManRuinC_field_003CElement *)((int)&puVar6->field_0000 + 1);
-      }
+      memset(pbVar6, 0, uVar2); /* compiler bulk-zero initialization */
       this_00->field_0030 = uVar2;
     }
   }

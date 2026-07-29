@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STHiddenThisApplier] Anonymous hidden receiver recovered as
    /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00714CE0.
@@ -14,8 +16,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00714CE0::FUN_00714ce0
   int iVar2;
   undefined4 *puVar3;
   uint uVar4;
-  uint uVar5;
-  undefined4 *puVar6;
+  byte *puVar6;
   InternalExceptionFrame local_4c;
   AnonReceiver_00714CE0 *local_8;
 
@@ -42,15 +43,8 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00714CE0::FUN_00714ce0
     puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006acf50(*(int *)local_8,param_1);
     iVar2 = *(int *)&pAVar1->field_0x4;
     uVar4 = param_1 - iVar2;
-    puVar6 = (undefined4 *)(iVar2 + (int)puVar3);
-    for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
-      *puVar6 = 0;
-      puVar6 = puVar6 + 1;
-    }
-    for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
-      *(undefined1 *)puVar6 = 0;
-      puVar6 = (undefined4 *)((int)puVar6 + 1);
-    }
+    puVar6 = (byte *)(iVar2 + (int)puVar3);
+    memset(puVar6, 0, uVar4); /* compiler bulk-zero initialization */
   }
   g_currentExceptionFrame = local_4c.previous;
   *(undefined4 **)local_8 = puVar3;

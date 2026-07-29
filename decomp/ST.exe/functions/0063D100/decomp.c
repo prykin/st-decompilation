@@ -1,12 +1,14 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __thiscall FUN_0063d100(void *this,undefined4 *param_1)
 
 {
   undefined4 uVar1;
   int iVar2;
-  undefined4 *puVar3;
+  byte *puVar3;
   AnonShape_004AD790_77673787 *pAVar4;
-  undefined4 *puVar5;
+  byte *puVar5;
   void *local_20;
   undefined4 local_1c;
   undefined4 local_18;
@@ -16,18 +18,13 @@ void __thiscall FUN_0063d100(void *this,undefined4 *param_1)
   undefined4 local_8;
 
   if (this == (void *)0x0) {
-    puVar5 = (undefined4 *)0x0;
+    puVar5 = (byte *)0x0;
   }
   else {
-    puVar5 = (undefined4 *)((int)this + 0x231);
+    puVar5 = (byte *)((int)this + 0x231);
   }
-  puVar3 = param_1;
-  for (iVar2 = 0x54; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *puVar5 = *puVar3;
-    puVar3 = puVar3 + 1;
-    puVar5 = puVar5 + 1;
-  }
-  *(undefined2 *)puVar5 = *(undefined2 *)puVar3;
+  puVar3 = (byte *)(param_1);
+  memmove(puVar5, puVar3, 0x152); /* compiler REP MOVS byte copy */
   *(undefined4 *)((int)this + 0x347) = 0;
   pAVar4 = (AnonShape_004AD790_77673787 *)((int)param_1 + 0x152);
   if (*(int *)((int)this + 0x336) != 0) {

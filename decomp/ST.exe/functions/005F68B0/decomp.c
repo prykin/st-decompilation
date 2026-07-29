@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STMethodOwnerApplier] Structural method owner recovered as STColl3C.
    Evidence: this_call_owners=[STColl3C]; agreed_this_calls=1; incoming_this_accesses=11;
@@ -11,9 +13,9 @@ int __thiscall STColl3C::sub_005F68B0(STColl3C *this,undefined4 *param_1)
   int iVar2;
   int iVar3;
   uint uVar4;
-  undefined4 *puVar5;
+  byte *puVar5;
   int *piVar6;
-  undefined4 *puVar7;
+  byte *puVar7;
   int iVar8;
   void *local_28;
   undefined4 local_24;
@@ -26,18 +28,13 @@ int __thiscall STColl3C::sub_005F68B0(STColl3C *this,undefined4 *param_1)
   undefined4 *local_8;
 
   if (this == (STColl3C *)0x0) {
-    puVar7 = (undefined4 *)0x0;
+    puVar7 = (byte *)0x0;
   }
   else {
-    puVar7 = (undefined4 *)&this->field_0x231;
+    puVar7 = (byte *)&this->field_0x231;
   }
-  puVar5 = param_1;
-  for (iVar2 = 0x30; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *puVar7 = *puVar5;
-    puVar5 = puVar5 + 1;
-    puVar7 = puVar7 + 1;
-  }
-  *(undefined2 *)puVar7 = *(undefined2 *)puVar5;
+  puVar5 = (byte *)(param_1);
+  memmove(puVar7, puVar5, 0xc2); /* compiler REP MOVS byte copy */
   this->field_02B7 = -1;
   local_28 = (void *)Library::DKW::LIB::FUN_006aac70(0x44);
   iVar2 = 0;
@@ -61,7 +58,7 @@ int __thiscall STColl3C::sub_005F68B0(STColl3C *this,undefined4 *param_1)
   iVar2 = *(int *)((int)param_1 + 0xc2);
   piVar6 = (int *)(&((AnonShape_004AD790_77673787 *)((int)param_1 + 0xc6))->field_0x0 + iVar2);
   STAllPlayersC::RestoreGObjData((STAllPlayersC *)this,piVar6 + 1);
-  puVar7 = (undefined4 *)((int)(piVar6 + 1) + *piVar6);
+  puVar7 = (byte *)((int)(piVar6 + 1) + *piVar6);
   iVar2 = iVar2 + 0xca + *piVar6;
   if (this->field_02E6 == (ushort *)0x0) {
     return iVar2;
@@ -71,7 +68,7 @@ int __thiscall STColl3C::sub_005F68B0(STColl3C *this,undefined4 *param_1)
   this->field_02E6 = puVar1;
   for (iVar3 = 0x1b; iVar3 != 0; iVar3 = iVar3 + -1) {
     *(undefined4 *)puVar1 = *puVar7;
-    puVar7 = puVar7 + 1;
+    puVar7 = (byte *)(puVar7 + 1);
     puVar1 = puVar1 + 2;
   }
   puVar1 = this->field_02E6;
@@ -90,16 +87,16 @@ int __thiscall STColl3C::sub_005F68B0(STColl3C *this,undefined4 *param_1)
     iVar3 = Library::DKW::LIB::FUN_006aac70(iVar8);
     *(int *)(this->field_02E6 + 0x2c) = iVar3;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    puVar7 = *(undefined4 **)(this->field_02E6 + 0x2c);
+    puVar7 = (byte *)(*(undefined4 **)(this->field_02E6 + 0x2c));
     for (uVar4 = uVar4 & 0x3fffffff; uVar4 != 0; uVar4 = uVar4 - 1) {
       *puVar7 = *local_8;
       local_8 = local_8 + 1;
-      puVar7 = puVar7 + 1;
+      puVar7 = (byte *)(puVar7 + 1);
     }
     for (iVar3 = 0; iVar3 != 0; iVar3 = iVar3 + -1) {
       *(undefined1 *)puVar7 = *(undefined1 *)local_8;
       local_8 = (undefined4 *)((int)local_8 + 1);
-      puVar7 = (undefined4 *)((int)puVar7 + 1);
+      puVar7 = (byte *)((int)puVar7 + 1);
     }
     return iVar2 + iVar8;
   }

@@ -89,10 +89,10 @@ void __thiscall STAppC::DoneApp(STAppC *this)
       cMf32::delete(g_cMf32_0080675C);
     }
     g_cMf32_0080675C = (cMf32 *)0x0;
-    if ((DArrayTy *)pSVar3->field_4EDE != (DArrayTy *)0x0) {
-      DArrayDestroy((DArrayTy *)pSVar3->field_4EDE);
+    if (pSVar3->field_4EDE != (DArrayTy *)0x0) {
+      DArrayDestroy(pSVar3->field_4EDE);
     }
-    pSVar3->field_4EDE = 0;
+    pSVar3->field_4EDE = (DArrayTy *)0x0;
     if ((DArrayTy *)pSVar3->field_4EA7 != (DArrayTy *)0x0) {
       FUN_006b5570((DArrayTy *)pSVar3->field_4EA7);
     }
@@ -108,8 +108,8 @@ void __thiscall STAppC::DoneApp(STAppC *this)
     if (pSVar3->field_7D12 != (ushort *)0x0) {
       FreeAndNull(&pSVar3->field_7D12);
     }
-    if (pSVar3->field_76F2 != 0) {
-      FreeAndNull((void **)&pSVar3->field_76F2);
+    if (pSVar3->field_76F2 != (void *)0x0) {
+      FreeAndNull(&pSVar3->field_76F2);
     }
     thunk_FUN_005713b0((int)pSVar3);
     this_00 = &pSVar3->field_0038;

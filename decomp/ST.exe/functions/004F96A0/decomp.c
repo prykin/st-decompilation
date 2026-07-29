@@ -59,10 +59,10 @@ void __thiscall CPanelTy::PlayBrief(CPanelTy *this,int param_1)
                        (SoundPosition *)0x0,0);
             break;
           case 2:
-            if ((int *)this_00->field_01D8 != (int *)0x0) {
+            if (this_00->field_01D8 != (HoloTy *)0x0) {
               FUN_00714060((int *)this_00->field_01D8);
-              Library::MSVCRT::FUN_0072e2b0((HoloTy *)this_00->field_01D8);
-              this_00->field_01D8 = 0;
+              Library::MSVCRT::FUN_0072e2b0(this_00->field_01D8);
+              this_00->field_01D8 = (HoloTy *)0x0;
             }
             FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_00->field_01B4,0,100,5,0x226,0x55,0);
             local_8 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
@@ -119,7 +119,7 @@ void __thiscall CPanelTy::PlayBrief(CPanelTy *this,int param_1)
                 this_01->field_0058 = 0;
                 this_01->field_0088 = 0;
               }
-              this_00->field_01D8 = this_01;
+              this_00->field_01D8 = (HoloTy *)this_01;
               iVar3 = cTypingTy::TypingInitSarr
                                 (this_01,local_8,this_00->field_01D4,0,0,0,0x226,0x55,0,0,0,1,2,0xff
                                 );
@@ -183,11 +183,11 @@ LAB_004f9a8a:
               _Count = 0x1f;
               if (puVar11[10] == '\0') {
                 pcVar6 = (char *)thunk_FUN_005260b0(*(int *)(puVar11 + 5),puVar11[9],0);
-                Library::MSVCRT::_strncpy(&this_00->field_0x265,pcVar6,_Count);
+                Library::MSVCRT::_strncpy(&this_00->field_0265,pcVar6,_Count);
                 this_00->field_0285 = 1;
               }
               else {
-                Library::MSVCRT::_strncpy(&this_00->field_0x265,puVar11 + 10,0x1f);
+                Library::MSVCRT::_strncpy(&this_00->field_0265,puVar11 + 10,0x1f);
                 this_00->field_0285 = 0;
               }
               this_00->field_0284 = 0;

@@ -19,8 +19,8 @@ void __thiscall InfocPanelTy::Update(InfocPanelTy *this)
   uint *resourceString;
   undefined4 uVar7;
   uint uVar8;
-  undefined4 *puVar9;
-  undefined4 *puVar10;
+  byte *puVar9;
+  byte *puVar10;
   byte *pbVar11;
   int iVar12;
   uint uVar13;
@@ -49,14 +49,9 @@ void __thiscall InfocPanelTy::Update(InfocPanelTy *this)
     return;
   }
   puVar1 = &local_14->field_01AB;
-  puVar9 = (undefined4 *)puVar1;
-  puVar10 = local_188;
-  for (iVar6 = 0x4a; iVar6 != 0; iVar6 = iVar6 + -1) {
-    *puVar10 = *puVar9;
-    puVar9 = puVar9 + 1;
-    puVar10 = puVar10 + 1;
-  }
-  *(undefined1 *)puVar10 = *(undefined1 *)puVar9;
+  puVar9 = (byte *)puVar1;
+  puVar10 = (byte *)(local_188);
+  memmove(puVar10, puVar9, 0x129); /* compiler REP MOVS byte copy */
   STAllPlayersC::GetPanelInfo(g_allPlayers_007FA174,9,(AnonShape_0043BEB0_1C00EC12 *)puVar1);
   if (this_00->field_01AB == 0) {
     this_00->field_03D4 = 0xff;
@@ -165,10 +160,10 @@ LAB_00520987:
         }
       }
       else {
-        wsprintfA(&this_00->field_0x18d,"%c",
+        wsprintfA(&this_00->field_018D,"%c",
                   (byte)(&DAT_008087ea)[(uint)*local_c * 0x51] + 0x41);
         ccFntTy::SetSurf(this_00->field_0189,this_00->field_0068,0,0x41,uVar8,0x12,0xc);
-        ccFntTy::WrStr(this_00->field_0189,(uint *)&this_00->field_0x18d,-1,-1,3);
+        ccFntTy::WrStr(this_00->field_0189,(uint *)&this_00->field_018D,-1,-1,3);
       }
     }
     local_5 = local_5 + 1;

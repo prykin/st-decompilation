@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 FUN_0075c180(AnonShape_0075C180_8EED234B *param_1,undefined4 *param_2)
 
@@ -47,11 +49,7 @@ undefined4 FUN_0075c180(AnonShape_0075C180_8EED234B *param_1,undefined4 *param_2
   local_34 = local_c + 1;
   piVar9 = (int *)&local_c[1].field_0x4;
   piVar10 = local_30;
-  for (iVar5 = 5; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *piVar10 = *piVar9;
-    piVar9 = piVar9 + 1;
-    piVar10 = piVar10 + 1;
-  }
+  memmove(piVar10, piVar9, 0x14); /* compiler REP MOVS byte copy */
   if (0 < param_1->field_0152) {
     local_8 = (int *)&param_1->field_0x156;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -130,11 +128,7 @@ LAB_0075c271:
   pAVar2 = pAVar8[2].field_0008;
   piVar9 = local_30;
   piVar10 = (int *)&pAVar8[1].field_0x4;
-  for (iVar3 = 5; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *piVar10 = *piVar9;
-    piVar9 = piVar9 + 1;
-    piVar10 = piVar10 + 1;
-  }
+  memmove(piVar10, piVar9, 0x14); /* compiler REP MOVS byte copy */
   pAVar8[2].field_0008 = (AnonShape_0075C180_8EED234B *)&pAVar2[-1].field_0x1af;
   return 1;
 }

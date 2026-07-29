@@ -117,6 +117,36 @@ public class STDecompExport extends GhidraScript {
         "\\k<pointer>[ \\t]*=[ \\t]*0;)?");
     private static final String BULK_ZERO_MARKER =
         "/* compiler bulk-zero initialization */";
+    private static final Pattern BULK_COPY_WORD_HEADER = Pattern.compile(
+        "^(?<indent>[ \\t]*)for[ \\t]*\\((?<counter>[A-Za-z_$][A-Za-z0-9_$]*)" +
+        "[ \\t]*=[ \\t]*(?:\\(uint\\)[ \\t]*)?(?<bytes>[A-Za-z_$][A-Za-z0-9_$]*)" +
+        "[ \\t]*>>[ \\t]*2;[ \\t]*\\k<counter>[ \\t]*!=[ \\t]*0;[ \\t]*" +
+        "\\k<counter>[ \\t]*=[ \\t]*\\k<counter>[ \\t]*-[ \\t]*1\\)[ \\t]*\\{[ \\t]*$");
+    private static final Pattern BULK_COPY_TAIL_HEADER = Pattern.compile(
+        "^(?<indent>[ \\t]*)for[ \\t]*\\((?<counter>[A-Za-z_$][A-Za-z0-9_$]*)" +
+        "[ \\t]*=[ \\t]*(?<bytes>[A-Za-z_$][A-Za-z0-9_$]*)[ \\t]*&[ \\t]*3;" +
+        "[ \\t]*\\k<counter>" +
+        "[ \\t]*!=[ \\t]*0;[ \\t]*\\k<counter>[ \\t]*=[ \\t]*\\k<counter>" +
+        "[ \\t]*-[ \\t]*1\\)[ \\t]*\\{[ \\t]*$");
+    private static final Pattern BULK_COPY_FIXED_HEADER = Pattern.compile(
+        "^(?<indent>[ \\t]*)for[ \\t]*\\((?<counter>[A-Za-z_$][A-Za-z0-9_$]*)" +
+        "[ \\t]*=[ \\t]*(?<count>0x[0-9A-Fa-f]+|[0-9]+);[ \\t]*" +
+        "\\k<counter>[ \\t]*!=[ \\t]*0;[ \\t]*\\k<counter>[ \\t]*=[ \\t]*" +
+        "\\k<counter>[ \\t]*(?:\\+[ \\t]*-1|-[ \\t]*1)\\)[ \\t]*\\{[ \\t]*$");
+    private static final Pattern POINTER_INCREMENT = Pattern.compile(
+        "^(?<name>[A-Za-z_$][A-Za-z0-9_$]*)[ \\t]*=[ \\t]*\\k<name>" +
+        "[ \\t]*\\+[ \\t]*1;$");
+    private static final Pattern BYTE_POINTER_INCREMENT = Pattern.compile(
+        "^(?<name>[A-Za-z_$][A-Za-z0-9_$]*)[ \\t]*=[ \\t]*" +
+        "\\([^;]+\\)[ \\t]*\\(\\(int\\)[ \\t]*\\k<name>[ \\t]*\\+[ \\t]*1\\);$");
+    private static final Pattern BYTE_POINTER_INCREMENT_FOUR = Pattern.compile(
+        "^(?<name>[A-Za-z_$][A-Za-z0-9_$]*)[ \\t]*=[ \\t]*\\k<name>" +
+        "[ \\t]*\\+[ \\t]*4;$");
+    private static final Pattern BYTE_ZERO_ELEMENT = Pattern.compile(
+        "^(?<name>[A-Za-z_$][A-Za-z0-9_$]*)\\[(?<index>[0-3])\\]" +
+        "[ \\t]*=[ \\t]*(?:\\([^)]*\\)[ \\t]*)?0;$");
+    private static final String BULK_COPY_MARKER =
+        "/* compiler REP MOVS byte copy */";
     private static final Pattern HEX_ADDRESS = Pattern.compile("0x([0-9A-Fa-f]{6,8})");
     private static final Pattern RAW_INDIRECT_CALL = Pattern.compile(
         "\\(\\*\\*?\\(code \\*\\*?\\)|\\(\\*\\(code \\*\\)");
@@ -650,14 +680,15 @@ public class STDecompExport extends GhidraScript {
     private NormalizedCode normalizePseudocode(String code) {
         if (code == null || code.isEmpty()) return new NormalizedCode("", 0);
         NormalizedCode bulkZero = normalizeBulkZeroLoops(code);
-        NormalizedCode darrayAliases = normalizeDArrayElementAliases(bulkZero.code);
+        NormalizedCode bulkCopy = normalizeBulkCopyLoops(bulkZero.code);
+        NormalizedCode darrayAliases = normalizeDArrayElementAliases(bulkCopy.code);
         NormalizedCode virtualCalls =
             normalizeExplicitThisVirtualCalls(darrayAliases.code);
         code = virtualCalls.code;
         String[] lines = code.split("\\R", -1);
         List<String> output = new ArrayList<>();
-        int replacements = bulkZero.replacements + darrayAliases.replacements +
-            virtualCalls.replacements;
+        int replacements = bulkZero.replacements + bulkCopy.replacements +
+            darrayAliases.replacements + virtualCalls.replacements;
         for (int index = 0; index < lines.length; index++) {
             Matcher assignment = INT3_ASSIGNMENT.matcher(lines[index]);
             if (!assignment.matches() || index + 1 >= lines.length) {
@@ -1154,7 +1185,9 @@ public class STDecompExport extends GhidraScript {
     }
 
     private int pointerArithmeticWidth(String type, int stars) {
-        if (stars != 1) return currentProgram.getDefaultPointerSize();
+        if (stars != 1)
+            return currentProgram == null ? -1 :
+                currentProgram.getDefaultPointerSize();
         return renderedTypeWidth(type);
     }
 
@@ -1162,7 +1195,9 @@ public class STDecompExport extends GhidraScript {
         String value = rendered == null ? "" :
             rendered.replaceAll("\\b(?:const|volatile|signed|unsigned)\\b", "")
                 .replaceAll("\\s+", " ").trim();
-        if (value.contains("*")) return currentProgram.getDefaultPointerSize();
+        if (value.contains("*"))
+            return currentProgram == null ? 4 :
+                currentProgram.getDefaultPointerSize();
         if (Set.of("char", "byte", "undefined", "undefined1", "bool").contains(value))
             return 1;
         if (Set.of("short", "ushort", "word", "undefined2").contains(value))
@@ -1514,6 +1549,306 @@ public class STDecompExport extends GhidraScript {
     }
 
     /**
+     * MSVC lowers many fixed-direction byte copies to REP MOVSD followed by
+     * REP MOVSB.  Ghidra expands those two instructions into a pair of source
+     * loops whose counters are byte_count >> 2 and byte_count & 3.  Those
+     * counters are not source-level array indices and their undefined4/
+     * undefined1 pointer spelling creates a large amount of false type debt.
+     *
+     * Fold only the exact two-loop form with one copy plus the matching source
+     * and destination increments in each body.  All four temporaries must be
+     * dead after the pair, so replacing the advanced pointers/counters cannot
+     * change later pseudocode.  memmove is deliberately used instead of memcpy:
+     * the DArray erase helper copies an overlapping tail toward a lower address.
+     */
+    private NormalizedCode normalizeBulkCopyLoops(String code) {
+        if (code == null || code.isEmpty())
+            return new NormalizedCode(code, 0);
+        boolean dynamicCandidate =
+            code.contains(">> 2") && code.contains("& 3");
+        String[] lines = code.split("\\R", -1);
+        Map<String, PointerDeclaration> declarations = pointerDeclarations(code);
+        List<String> output = new ArrayList<>();
+        Set<String> bytePointers = new LinkedHashSet<>();
+        Set<String> deadLocals = new LinkedHashSet<>();
+        int replacements = 0;
+        for (int index = 0; index < lines.length; index++) {
+            Matcher words = BULK_COPY_WORD_HEADER.matcher(lines[index]);
+            if (!dynamicCandidate || !words.matches() ||
+                    index + 9 >= lines.length) {
+                output.add(lines[index]);
+                continue;
+            }
+            String indent = words.group("indent");
+            String wordCounter = words.group("counter");
+            String byteCounter = words.group("bytes");
+            CopyBody wordBody = copyBody(lines, index + 1, 4, declarations, false);
+            int wordClose = index + 4;
+            int tailHeaderIndex = index + 5;
+            Matcher tail = BULK_COPY_TAIL_HEADER.matcher(lines[tailHeaderIndex]);
+            CopyBody byteBody = copyBody(lines, tailHeaderIndex + 1, 1,
+                declarations, true);
+            int tailClose = tailHeaderIndex + 4;
+            boolean exact = wordBody != null && byteBody != null &&
+                lines[wordClose].equals(indent + "}") &&
+                tail.matches() && tail.group("indent").equals(indent) &&
+                tail.group("bytes").equals(byteCounter) &&
+                lines[tailClose].equals(indent + "}") &&
+                wordBody.destination.equals(byteBody.destination) &&
+                wordBody.source.equals(byteBody.source);
+            if (!exact) {
+                output.add(lines[index]);
+                continue;
+            }
+            String tailCounter = tail.group("counter");
+            String after = String.join(System.lineSeparator(),
+                Arrays.copyOfRange(lines, tailClose + 1, lines.length));
+            if (identifierValueLiveAfter(after, wordCounter, 0,
+                        indent.length()) ||
+                    identifierValueLiveAfter(after, tailCounter, 0,
+                        indent.length()) ||
+                    identifierValueLiveAfter(after, wordBody.destination, 0,
+                        indent.length()) ||
+                    identifierValueLiveAfter(after, wordBody.source, 0,
+                        indent.length())) {
+                output.add(lines[index]);
+                continue;
+            }
+            output.add(indent + "memmove(" + wordBody.destination + ", " +
+                wordBody.source + ", " + byteCounter + "); " + BULK_COPY_MARKER);
+            deadLocals.add(wordCounter);
+            if (!tailCounter.equals(byteCounter))
+                deadLocals.add(tailCounter);
+            PointerDeclaration destination =
+                declarations.get(wordBody.destination);
+            PointerDeclaration source = declarations.get(wordBody.source);
+            if (destination != null && destination.width == 4 &&
+                    destination.type.trim().equals("undefined4"))
+                bytePointers.add(wordBody.destination);
+            if (source != null && source.width == 4 &&
+                    source.type.trim().equals("undefined4"))
+                bytePointers.add(wordBody.source);
+            index = tailClose;
+            replacements++;
+        }
+        String normalized = replacements == 0 ? code :
+            String.join(System.lineSeparator(), output);
+        for (String pointer : bytePointers)
+            normalized = normalizeBulkCopyBytePointer(normalized, pointer);
+        NormalizedCode fixed =
+            normalizeFixedBulkCopyLoops(normalized, deadLocals);
+        normalized = removeDeadBulkZeroLocals(fixed.code, deadLocals);
+        return new NormalizedCode(normalized,
+            replacements + fixed.replacements);
+    }
+
+    /**
+     * A constant-size REP MOVSD followed by one non-dword tail transfer is the
+     * fixed-size sibling of the dynamic two-loop form.  The exact loop body,
+     * optional equal-width source/destination tail, and dead temporaries make
+     * the byte count provable without assigning an artificial undefined4 array.
+     */
+    private NormalizedCode normalizeFixedBulkCopyLoops(String code,
+            Set<String> deadLocals) {
+        String[] lines = code.split("\\R", -1);
+        Map<String, PointerDeclaration> declarations = pointerDeclarations(code);
+        List<String> output = new ArrayList<>();
+        Set<String> bytePointers = new LinkedHashSet<>();
+        int replacements = 0;
+        for (int index = 0; index < lines.length; index++) {
+            Matcher header = BULK_COPY_FIXED_HEADER.matcher(lines[index]);
+            if (!header.matches() || index + 4 >= lines.length) {
+                output.add(lines[index]);
+                continue;
+            }
+            CopyBody body = copyBody(lines, index + 1, 4,
+                declarations, false);
+            String indent = header.group("indent");
+            int close = index + 4;
+            if (body == null || !lines[close].equals(indent + "}")) {
+                output.add(lines[index]);
+                continue;
+            }
+            int tailWidth = 0;
+            int end = close;
+            if (close + 1 < lines.length) {
+                String tailLine = lines[close + 1];
+                String stripped = tailLine.stripLeading();
+                String tailIndent = tailLine.substring(
+                    0, tailLine.length() - stripped.length());
+                if (tailIndent.equals(indent)) {
+                    for (int width : List.of(1, 2, 4, 8)) {
+                        CopyBody tail =
+                            copyStatement(stripped, width, declarations);
+                        if (tail != null &&
+                                tail.destination.equals(body.destination) &&
+                                tail.source.equals(body.source)) {
+                            tailWidth = width;
+                            end = close + 1;
+                            break;
+                        }
+                    }
+                }
+            }
+            long count;
+            try {
+                String value = header.group("count");
+                count = value.regionMatches(true, 0, "0x", 0, 2) ?
+                    Long.parseUnsignedLong(value.substring(2), 16) :
+                    Long.parseLong(value);
+            }
+            catch (RuntimeException exception) {
+                output.add(lines[index]);
+                continue;
+            }
+            long bytes;
+            try {
+                bytes = Math.addExact(Math.multiplyExact(count, 4L),
+                    tailWidth);
+            }
+            catch (ArithmeticException exception) {
+                output.add(lines[index]);
+                continue;
+            }
+            if (bytes <= 0 || bytes > 0x1000000L) {
+                output.add(lines[index]);
+                continue;
+            }
+            String after = String.join(System.lineSeparator(),
+                Arrays.copyOfRange(lines, end + 1, lines.length));
+            String counter = header.group("counter");
+            if (identifierValueLiveAfter(after, counter, 0,
+                        indent.length()) ||
+                    identifierValueLiveAfter(after, body.destination, 0,
+                        indent.length()) ||
+                    identifierValueLiveAfter(after, body.source, 0,
+                        indent.length())) {
+                output.add(lines[index]);
+                continue;
+            }
+            output.add(indent + "memmove(" + body.destination + ", " +
+                body.source + ", " + hexLiteral(bytes) + "); " +
+                BULK_COPY_MARKER);
+            deadLocals.add(counter);
+            PointerDeclaration destination =
+                declarations.get(body.destination);
+            PointerDeclaration source = declarations.get(body.source);
+            if (destination != null && destination.width == 4 &&
+                    destination.type.trim().equals("undefined4"))
+                bytePointers.add(body.destination);
+            if (source != null && source.width == 4 &&
+                    source.type.trim().equals("undefined4"))
+                bytePointers.add(body.source);
+            index = end;
+            replacements++;
+        }
+        if (replacements == 0) return new NormalizedCode(code, 0);
+        String normalized = String.join(System.lineSeparator(), output);
+        for (String pointer : bytePointers)
+            normalized = normalizeBulkCopyBytePointer(normalized, pointer);
+        return new NormalizedCode(normalized, replacements);
+    }
+
+    private CopyBody copyBody(String[] lines, int start, int width,
+            Map<String, PointerDeclaration> declarations, boolean byteIncrements) {
+        if (start < 0 || start + 2 >= lines.length) return null;
+        CopyBody copy = null;
+        Set<String> increments = new LinkedHashSet<>();
+        for (int index = start; index < start + 3; index++) {
+            String statement = lines[index].trim();
+            String increment = incrementedPointer(statement, byteIncrements);
+            if (increment != null) {
+                increments.add(increment);
+                continue;
+            }
+            CopyBody found = copyStatement(statement, width, declarations);
+            if (found == null || copy != null) return null;
+            copy = found;
+        }
+        if (copy == null || increments.size() != 2 ||
+                !increments.contains(copy.destination) ||
+                !increments.contains(copy.source))
+            return null;
+        return copy;
+    }
+
+    private String incrementedPointer(String statement,
+            boolean allowByteCast) {
+        if (allowByteCast) {
+            Matcher cast = BYTE_POINTER_INCREMENT.matcher(statement);
+            if (cast.matches()) return cast.group("name");
+        }
+        Matcher direct = POINTER_INCREMENT.matcher(statement);
+        return direct.matches() ? direct.group("name") : null;
+    }
+
+    private CopyBody copyStatement(String statement, int width,
+            Map<String, PointerDeclaration> declarations) {
+        Matcher assignment =
+            Pattern.compile("^(.+?)[ \\t]*=[ \\t]*(.+);$").matcher(statement);
+        if (!assignment.matches()) return null;
+        String destination =
+            dereferencedVariable(assignment.group(1), width, declarations);
+        String source =
+            dereferencedVariable(assignment.group(2), width, declarations);
+        return destination == null || source == null ?
+            null : new CopyBody(destination, source);
+    }
+
+    private String dereferencedVariable(String expression, int width,
+            Map<String, PointerDeclaration> declarations) {
+        String value = expression.trim();
+        Matcher direct = Pattern.compile(
+            "^\\*([A-Za-z_$][A-Za-z0-9_$]*)$").matcher(value);
+        if (direct.matches()) {
+            PointerDeclaration declaration = declarations.get(direct.group(1));
+            return declaration != null && declaration.width == width ?
+                direct.group(1) : null;
+        }
+        Matcher cast = Pattern.compile(
+            "^\\*\\(([^)]+)\\*\\)[ \\t]*([A-Za-z_$][A-Za-z0-9_$]*)$")
+            .matcher(value);
+        if (cast.matches())
+            return pointerArithmeticWidth(cast.group(1).trim(), 1) == width ?
+                cast.group(2) : null;
+        if (width == 1) {
+            Matcher narrowed = Pattern.compile(
+                "^\\((?:char|byte|undefined1)\\)[ \\t]*" +
+                "\\*([A-Za-z_$][A-Za-z0-9_$]*)$").matcher(value);
+            if (narrowed.matches()) return narrowed.group(1);
+        }
+        return null;
+    }
+
+    private String normalizeBulkCopyBytePointer(String code, String pointer) {
+        Pattern declaration = Pattern.compile(
+            "(?m)^(?<indent>[ \\t]*)undefined4[ \\t]*\\*[ \\t]*" +
+            Pattern.quote(pointer) + "[ \\t]*;$");
+        Matcher declared = declaration.matcher(code);
+        if (!declared.find()) return code;
+        String normalized = declared.replaceFirst(
+            Matcher.quoteReplacement(declared.group("indent") +
+                "byte *" + pointer + ";"));
+        Pattern assignmentCast = Pattern.compile(
+            "(?m)^(?<prefix>[ \\t]*" + Pattern.quote(pointer) +
+            "[ \\t]*=[ \\t]*)\\(undefined4[ \\t]*\\*\\)");
+        Matcher cast = assignmentCast.matcher(normalized);
+        normalized = cast.replaceAll(match ->
+            Matcher.quoteReplacement(match.group("prefix") + "(byte *)"));
+        Pattern directAssignment = Pattern.compile(
+            "(?m)^(?<prefix>[ \\t]*" + Pattern.quote(pointer) +
+            "[ \\t]*=[ \\t]*)(?<value>[^;\\r\\n]+);$");
+        Matcher direct = directAssignment.matcher(normalized);
+        return direct.replaceAll(match -> {
+            String value = match.group("value").trim();
+            if (value.matches("^\\(byte[ \\t]*\\*\\).*"))
+                return Matcher.quoteReplacement(match.group());
+            return Matcher.quoteReplacement(match.group("prefix") +
+                "(byte *)(" + value + ");");
+        });
+    }
+
+    /**
      * MSVC emits REP STOSD followed by an optional STOSB for many aggregate and
      * object-tail initializers.  Ghidra expands that instruction pair into an
      * undefined4-pointer loop and an undefined1 tail store.  The widths describe
@@ -1527,9 +1862,142 @@ public class STDecompExport extends GhidraScript {
             code, BULK_ZERO_NULL_SELECT, candidates, true);
         NormalizedCode simple = normalizeBulkZeroPattern(
             selected.code, BULK_ZERO_SIMPLE, candidates, false);
-        String normalized = removeDeadBulkZeroLocals(simple.code, candidates);
+        NormalizedCode dynamic =
+            normalizeDynamicBulkZeroLoops(simple.code, candidates);
+        String normalized = removeDeadBulkZeroLocals(dynamic.code, candidates);
         return new NormalizedCode(normalized,
-            selected.replacements + simple.replacements);
+            selected.replacements + simple.replacements +
+                dynamic.replacements);
+    }
+
+    /**
+     * Dynamic allocation sizes produce the same REP STOSD/REP STOSB pair as
+     * fixed object tails, but the fill length is a variable.  Fold only the
+     * exact two-loop form and require the advanced pointer and loop counters to
+     * be dead.  The original byte count remains live and is passed to memset.
+     */
+    private NormalizedCode normalizeDynamicBulkZeroLoops(String code,
+            Set<String> deadLocals) {
+        if (code == null || code.isEmpty() || !code.contains(">> 2") ||
+                !code.contains("& 3"))
+            return new NormalizedCode(code, 0);
+        String[] lines = code.split("\\R", -1);
+        Map<String, PointerDeclaration> declarations = pointerDeclarations(code);
+        List<String> output = new ArrayList<>();
+        Set<String> bytePointers = new LinkedHashSet<>();
+        int replacements = 0;
+        for (int index = 0; index < lines.length; index++) {
+            Matcher words = BULK_COPY_WORD_HEADER.matcher(lines[index]);
+            if (!words.matches() || index + 7 >= lines.length) {
+                output.add(lines[index]);
+                continue;
+            }
+            String indent = words.group("indent");
+            String wordCounter = words.group("counter");
+            String byteCount = words.group("bytes");
+            ZeroLoopBody wordBody = zeroBody(lines, index + 1, 4,
+                declarations, false);
+            if (wordBody == null) {
+                output.add(lines[index]);
+                continue;
+            }
+            String pointer = wordBody.pointer;
+            int wordClose = index + wordBody.lineCount + 1;
+            int tailHeaderIndex = wordClose + 1;
+            if (tailHeaderIndex >= lines.length) {
+                output.add(lines[index]);
+                continue;
+            }
+            Matcher tail =
+                BULK_COPY_TAIL_HEADER.matcher(lines[tailHeaderIndex]);
+            ZeroLoopBody tailBody = zeroBody(lines, tailHeaderIndex + 1, 1,
+                declarations, true);
+            if (tailBody == null) {
+                output.add(lines[index]);
+                continue;
+            }
+            String bytePointer = tailBody.pointer;
+            int tailClose = tailHeaderIndex + tailBody.lineCount + 1;
+            boolean exact = tailClose < lines.length &&
+                pointer.equals(bytePointer) &&
+                lines[wordClose].equals(indent + "}") &&
+                tail.matches() && tail.group("indent").equals(indent) &&
+                tail.group("bytes").equals(byteCount) &&
+                lines[tailClose].equals(indent + "}");
+            if (!exact) {
+                output.add(lines[index]);
+                continue;
+            }
+            String tailCounter = tail.group("counter");
+            String after = String.join(System.lineSeparator(),
+                Arrays.copyOfRange(lines, tailClose + 1, lines.length));
+            if (identifierValueLiveAfter(after, pointer, 0,
+                        indent.length()) ||
+                    identifierValueLiveAfter(after, wordCounter, 0,
+                        indent.length()) ||
+                    identifierValueLiveAfter(after, tailCounter, 0,
+                        indent.length())) {
+                output.add(lines[index]);
+                continue;
+            }
+            output.add(indent + "memset(" + pointer + ", 0, " +
+                byteCount + "); " + BULK_ZERO_MARKER);
+            deadLocals.add(wordCounter);
+            deadLocals.add(tailCounter);
+            PointerDeclaration declaration = declarations.get(pointer);
+            if (declaration != null && declaration.width == 4 &&
+                    declaration.type.trim().equals("undefined4"))
+                bytePointers.add(pointer);
+            index = tailClose;
+            replacements++;
+        }
+        if (replacements == 0) return new NormalizedCode(code, 0);
+        String normalized = String.join(System.lineSeparator(), output);
+        for (String pointer : bytePointers)
+            normalized = normalizeBulkCopyBytePointer(normalized, pointer);
+        return new NormalizedCode(normalized, replacements);
+    }
+
+    private ZeroLoopBody zeroBody(String[] lines, int start, int width,
+            Map<String, PointerDeclaration> declarations,
+            boolean byteIncrement) {
+        if (start < 0 || start + 1 >= lines.length) return null;
+        String pointer = zeroStatement(lines[start].trim(), width,
+            declarations);
+        String increment = incrementedPointer(lines[start + 1].trim(),
+            byteIncrement);
+        if (pointer != null && pointer.equals(increment))
+            return new ZeroLoopBody(pointer, 2);
+        if (width != 4 || start + 4 >= lines.length) return null;
+
+        String bytePointer = null;
+        for (int offset = 0; offset < 4; offset++) {
+            Matcher store =
+                BYTE_ZERO_ELEMENT.matcher(lines[start + offset].trim());
+            if (!store.matches() ||
+                    Integer.parseInt(store.group("index")) != offset ||
+                    (bytePointer != null &&
+                        !bytePointer.equals(store.group("name"))))
+                return null;
+            bytePointer = store.group("name");
+        }
+        Matcher advance = BYTE_POINTER_INCREMENT_FOUR.matcher(
+            lines[start + 4].trim());
+        PointerDeclaration declaration = declarations.get(bytePointer);
+        return bytePointer != null && advance.matches() &&
+            advance.group("name").equals(bytePointer) &&
+            declaration != null && declaration.width == 1 ?
+                new ZeroLoopBody(bytePointer, 5) : null;
+    }
+
+    private String zeroStatement(String statement, int width,
+            Map<String, PointerDeclaration> declarations) {
+        Matcher assignment = Pattern.compile(
+            "^(.+?)[ \\t]*=[ \\t]*(?:\\([^)]*\\)[ \\t]*)?0;$")
+            .matcher(statement);
+        return assignment.matches() ?
+            dereferencedVariable(assignment.group(1), width, declarations) :
+            null;
     }
 
     private NormalizedCode normalizeBulkZeroPattern(String code, Pattern pattern,
@@ -1859,7 +2327,8 @@ public class STDecompExport extends GhidraScript {
         String[] lines = code.split("\\R", -1);
         List<String> clean = new ArrayList<>();
         boolean needsRuntime = code.contains("STDebugBreak()") ||
-            code.contains(BULK_ZERO_MARKER) || code.contains("DArrayAt<");
+            code.contains(BULK_ZERO_MARKER) ||
+            code.contains(BULK_COPY_MARKER) || code.contains("DArrayAt<");
         boolean hasRuntimeInclude = false;
         for (String line : lines) {
             if (line.contains(PSEUDOCODE_COMMENT_MARKER)) continue;
@@ -1928,6 +2397,8 @@ public class STDecompExport extends GhidraScript {
                 addIdiom(evidence, "terminal_debug_trap", index + 1, line);
             if (line.contains(BULK_ZERO_MARKER))
                 addIdiom(evidence, "bulk_zero_initialization", index + 1, line);
+            if (line.contains(BULK_COPY_MARKER))
+                addIdiom(evidence, "bulk_byte_copy", index + 1, line);
             if (line.contains("DArrayAt<"))
                 addIdiom(evidence, "dynamic_array_indexing", index + 1, line);
         }
@@ -1949,6 +2420,8 @@ public class STDecompExport extends GhidraScript {
                     code.contains("STDebugBreak()")) ||
                 (kind.equals("bulk_zero_initialization") && code != null &&
                     code.contains(BULK_ZERO_MARKER)) ||
+                (kind.equals("bulk_byte_copy") && code != null &&
+                    code.contains(BULK_COPY_MARKER)) ||
                 (kind.equals("dynamic_array_indexing") && code != null &&
                     code.contains("DArrayAt<"));
             if (normalizedSite) pseudocodeNormalizationCount += value.occurrences;
@@ -2433,6 +2906,8 @@ public class STDecompExport extends GhidraScript {
                 "replace swi(3) plus synthetic indirect call/return with noreturn STDebugBreak()";
             case "bulk_zero_initialization" ->
                 "replace the REP STOSD/STOSB decompiler loop with memset(destination, 0, byte_count)";
+            case "bulk_byte_copy" ->
+                "replace the exact dead REP MOVSD/MOVSB decompiler loops with overlap-safe memmove(destination, source, byte_count)";
             case "unresolved_register_input" ->
                 "verify function boundary, calling convention, and SEH/setjmp live-in state before replacing unaff_/in_";
             case "return_width_artifact" ->
@@ -2458,6 +2933,8 @@ public class STDecompExport extends GhidraScript {
             case "terminal_debug_trap" -> "x86 opcode CC plus decompiler swi(3) call idiom";
             case "bulk_zero_initialization" ->
                 "exact decrementing undefined4 zero loop with an optional undefined1/2/4/8 tail store";
+            case "bulk_byte_copy" ->
+                "exact paired REP MOVSD/REP MOVSB copy loops with dead advanced pointers and counters";
             case "unresolved_register_input" -> "unaff_*/in_* high-variable name";
             case "return_width_artifact" ->
                 "extraout_* high variable, possibly consumed by CONCAT*";
@@ -3297,6 +3774,8 @@ public class STDecompExport extends GhidraScript {
     }
     private record NormalizedCode(String code, int replacements) { }
     private record PointerDeclaration(String type, String indent, int width) { }
+    private record CopyBody(String destination, String source) { }
+    private record ZeroLoopBody(String pointer, int lineCount) { }
     private record AliasAssignment(int start, int end, String operator,
         String expression) { }
     private record DArrayAccess(String base, String index,

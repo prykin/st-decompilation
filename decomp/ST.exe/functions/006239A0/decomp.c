@@ -64,9 +64,9 @@ undefined4 __thiscall STMineSetC::sub_006239A0(STMineSetC *this)
       if (iVar2 == 0) {
         sub_00622670(this);
       }
-      if (this->field_0363 == (void *)0x0) {
+      if (this->field_0363 == (HoloTy *)0x0) {
         this_01 = (AnonReceiver_00636260 *)thunk_FUN_00636200();
-        this->field_0363 = this_01;
+        this->field_0363 = (HoloTy *)this_01;
         if (this_01 != (AnonReceiver_00636260 *)0x0) {
           SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00636260::thunk_FUN_00636260
                     (this_01,this->field_02C2,this->field_02C6,this->field_02CA + -0x28,0x82,0x14,5,
@@ -86,8 +86,7 @@ undefined4 __thiscall STMineSetC::sub_006239A0(STMineSetC *this)
     uVar3 = thunk_FUN_00627db0(this,this->field_02C2,this->field_02C6,iVar2);
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     STAllPlayersC::UnRegisterMine
-              (g_allPlayers_007FA174,
-               CONCAT31((int3)((uint)uVar3 >> 8),*(undefined1 *)&this->field_0262),
+              (g_allPlayers_007FA174,CONCAT31((int3)((uint)uVar3 >> 8),(char)this->field_0262),
                CONCAT22(extraout_var,this->field_0032),this);
     sub_0041D2B0(this);
     iVar2 = thunk_FUN_00495ff0(this->field_0047,this->field_0049,this->field_004B,this->field_008E,

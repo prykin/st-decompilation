@@ -43,14 +43,14 @@ undefined4 __thiscall STLightC::LoadNextLight(STLightC *this)
     iVar2 = 0;
     if (0 < this_00->field_0093) {
       do {
-        *(undefined4 *)(this_00->field_0057 + iVar2 * 4) = 0xffffffff;
+        *(undefined4 *)((int)this_00->field_0057 + iVar2 * 4) = 0xffffffff;
         iVar6 = iVar2 + this_00->field_0093 * 3;
         iVar2 = iVar2 + 1;
-        *(undefined4 *)(this_00->field_0057 + iVar6 * 4) = 0xffffffff;
+        *(undefined4 *)((int)this_00->field_0057 + iVar6 * 4) = 0xffffffff;
       } while (iVar2 < this_00->field_0093);
     }
     *(undefined4 *)this_00->field_0057 = 0;
-    *(undefined4 *)(this_00->field_0057 + this_00->field_0093 * 0xc) = 0;
+    *(undefined4 *)((int)this_00->field_0057 + this_00->field_0093 * 0xc) = 0;
     pSVar5 = (STLightC_field_00A3DArray *)
              Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,local_8,0x30,10);
     this_00->field_00A3 = pSVar5;

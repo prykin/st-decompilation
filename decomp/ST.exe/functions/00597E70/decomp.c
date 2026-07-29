@@ -95,9 +95,8 @@ void __thiscall FSGSTy::SetState(FSGSTy *this,byte param_1)
     if (g_cursorClass_00802A30->field_00A9 == 0) {
       Library::DKW::DDX::FUN_006b8b10((int *)g_cursorClass_00802A30->field_00AD);
     }
-    else if (g_cursorClass_00802A30->field_001C != (cLoadingTy *)0xffffffff) {
-      FUN_006b3af0((int *)g_cursorClass_00802A30->field_0060,
-                   (uint)g_cursorClass_00802A30->field_001C);
+    else if (g_cursorClass_00802A30->field_001C != 0xffffffff) {
+      FUN_006b3af0((int *)g_cursorClass_00802A30->field_0060,g_cursorClass_00802A30->field_001C);
     }
   }
   this_00 = local_14;
@@ -161,12 +160,12 @@ void __thiscall FSGSTy::SetState(FSGSTy *this,byte param_1)
     else {
       pHVar6->field_0002 = 1;
       pHVar6->field_0000 = 0;
-      pHVar6->field_0003 = -1;
+      *(undefined4 *)&pHVar6->field_0x3 = 0xffffffff;
       pHVar6->field_0001 = CASE_2;
-      pHVar6->field_0007 = 0;
+      pHVar6->field_0007 = (void *)0x0;
       pHVar6->field_000B = (void *)0x0;
       pHVar6->field_000F = 0;
-      pHVar6->field_001B = 1;
+      *(undefined4 *)&pHVar6->field_0x1b = 1;
       pHVar6->field_0013 = 1;
       pHVar6->field_0017 = -1;
       pHVar6->field_0027 = 0;
@@ -186,7 +185,7 @@ void __thiscall FSGSTy::SetState(FSGSTy *this,byte param_1)
         pHVar6 = this_00->field_1F23;
         pHVar6->field_0002 = 1;
         pHVar6->field_0017 = pHVar6->field_0013;
-        uVar14 = this_00->field_1F23->field_0003;
+        uVar14 = *(uint *)&this_00->field_1F23->field_0x3;
         if (-1 < (int)uVar14) {
           Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar14);
         }
@@ -248,12 +247,12 @@ void __thiscall FSGSTy::SetState(FSGSTy *this,byte param_1)
       else {
         pHVar6->field_0002 = 1;
         pHVar6->field_0000 = 0;
-        pHVar6->field_0003 = -1;
+        *(undefined4 *)&pHVar6->field_0x3 = 0xffffffff;
         pHVar6->field_0001 = CASE_2;
-        pHVar6->field_0007 = 0;
+        pHVar6->field_0007 = (void *)0x0;
         pHVar6->field_000B = (void *)0x0;
         pHVar6->field_000F = 0;
-        pHVar6->field_001B = 1;
+        *(undefined4 *)&pHVar6->field_0x1b = 1;
         pHVar6->field_0013 = 1;
         pHVar6->field_0017 = -1;
         pHVar6->field_0027 = 0;
@@ -273,7 +272,7 @@ void __thiscall FSGSTy::SetState(FSGSTy *this,byte param_1)
           pHVar6 = this_00->field_1F23;
           pHVar6->field_0002 = 1;
           pHVar6->field_0017 = pHVar6->field_0013;
-          uVar14 = this_00->field_1F23->field_0003;
+          uVar14 = *(uint *)&this_00->field_1F23->field_0x3;
           if (-1 < (int)uVar14) {
             Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar14);
           }
@@ -306,12 +305,12 @@ void __thiscall FSGSTy::SetState(FSGSTy *this,byte param_1)
         else {
           pHVar6->field_0002 = 1;
           pHVar6->field_0000 = 0;
-          pHVar6->field_0003 = -1;
+          *(undefined4 *)&pHVar6->field_0x3 = 0xffffffff;
           pHVar6->field_0001 = CASE_2;
-          pHVar6->field_0007 = 0;
+          pHVar6->field_0007 = (void *)0x0;
           pHVar6->field_000B = (void *)0x0;
           pHVar6->field_000F = 0;
-          pHVar6->field_001B = 1;
+          *(undefined4 *)&pHVar6->field_0x1b = 1;
           pHVar6->field_0013 = 1;
           pHVar6->field_0017 = -1;
           pHVar6->field_0027 = 0;
@@ -333,7 +332,7 @@ void __thiscall FSGSTy::SetState(FSGSTy *this,byte param_1)
             pHVar6 = this_00->field_1F23;
             pHVar6->field_0002 = 1;
             pHVar6->field_0017 = pHVar6->field_0013;
-            uVar14 = this_00->field_1F23->field_0003;
+            uVar14 = *(uint *)&this_00->field_1F23->field_0x3;
             if (-1 < (int)uVar14) {
               Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar14);
             }
@@ -393,12 +392,12 @@ LAB_00598221:
         else {
           pHVar6->field_0002 = 1;
           pHVar6->field_0000 = 0;
-          pHVar6->field_0003 = -1;
+          *(undefined4 *)&pHVar6->field_0x3 = 0xffffffff;
           pHVar6->field_0001 = CASE_2;
-          pHVar6->field_0007 = 0;
+          pHVar6->field_0007 = (void *)0x0;
           pHVar6->field_000B = (void *)0x0;
           pHVar6->field_000F = 0;
-          pHVar6->field_001B = 1;
+          *(undefined4 *)&pHVar6->field_0x1b = 1;
           pHVar6->field_0013 = 1;
           pHVar6->field_0017 = -1;
           pHVar6->field_0027 = 0;
@@ -420,7 +419,7 @@ LAB_00598221:
             pHVar6 = this_00->field_1F23;
             pHVar6->field_0002 = 1;
             pHVar6->field_0017 = pHVar6->field_0013;
-            uVar14 = this_00->field_1F23->field_0003;
+            uVar14 = *(uint *)&this_00->field_1F23->field_0x3;
             if (-1 < (int)uVar14) {
               Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar14);
             }
@@ -532,12 +531,12 @@ LAB_00598221:
     else {
       pHVar6->field_0002 = 1;
       pHVar6->field_0000 = 0;
-      pHVar6->field_0003 = -1;
+      *(undefined4 *)&pHVar6->field_0x3 = 0xffffffff;
       pHVar6->field_0001 = CASE_2;
-      pHVar6->field_0007 = 0;
+      pHVar6->field_0007 = (void *)0x0;
       pHVar6->field_000B = (void *)0x0;
       pHVar6->field_000F = 0;
-      pHVar6->field_001B = 1;
+      *(undefined4 *)&pHVar6->field_0x1b = 1;
       pHVar6->field_0013 = 1;
       pHVar6->field_0017 = -1;
       pHVar6->field_0027 = 0;
@@ -557,7 +556,7 @@ LAB_00598221:
         pHVar6 = this_00->field_1F27;
         pHVar6->field_0002 = 1;
         pHVar6->field_0017 = pHVar6->field_0013;
-        uVar14 = this_00->field_1F27->field_0003;
+        uVar14 = *(uint *)&this_00->field_1F27->field_0x3;
         if (-1 < (int)uVar14) {
           Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar14);
         }
@@ -619,12 +618,12 @@ LAB_00598221:
     else {
       pHVar6->field_0002 = 1;
       pHVar6->field_0000 = 0;
-      pHVar6->field_0003 = -1;
+      *(undefined4 *)&pHVar6->field_0x3 = 0xffffffff;
       pHVar6->field_0001 = CASE_2;
-      pHVar6->field_0007 = 0;
+      pHVar6->field_0007 = (void *)0x0;
       pHVar6->field_000B = (void *)0x0;
       pHVar6->field_000F = 0;
-      pHVar6->field_001B = 1;
+      *(undefined4 *)&pHVar6->field_0x1b = 1;
       pHVar6->field_0013 = 1;
       pHVar6->field_0017 = -1;
       pHVar6->field_0027 = 0;
@@ -644,7 +643,7 @@ LAB_00598221:
         pHVar6 = this_00->field_1F2B;
         pHVar6->field_0002 = 1;
         pHVar6->field_0017 = pHVar6->field_0013;
-        uVar14 = this_00->field_1F2B->field_0003;
+        uVar14 = *(uint *)&this_00->field_1F2B->field_0x3;
         if (-1 < (int)uVar14) {
           Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar14);
         }
@@ -689,12 +688,12 @@ LAB_00598221:
     else {
       pHVar6->field_0002 = 1;
       pHVar6->field_0000 = 0;
-      pHVar6->field_0003 = -1;
+      *(undefined4 *)&pHVar6->field_0x3 = 0xffffffff;
       pHVar6->field_0001 = CASE_2;
-      pHVar6->field_0007 = 0;
+      pHVar6->field_0007 = (void *)0x0;
       pHVar6->field_000B = (void *)0x0;
       pHVar6->field_000F = 0;
-      pHVar6->field_001B = 1;
+      *(undefined4 *)&pHVar6->field_0x1b = 1;
       pHVar6->field_0013 = 1;
       pHVar6->field_0017 = -1;
       pHVar6->field_0027 = 0;
@@ -714,7 +713,7 @@ LAB_00598221:
         pHVar6 = this_00->field_1F2F;
         pHVar6->field_0002 = 1;
         pHVar6->field_0017 = pHVar6->field_0013;
-        uVar14 = this_00->field_1F2F->field_0003;
+        uVar14 = *(uint *)&this_00->field_1F2F->field_0x3;
         if (-1 < (int)uVar14) {
           Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar14);
         }
@@ -767,12 +766,12 @@ LAB_00598221:
     else {
       pHVar6->field_0002 = 1;
       pHVar6->field_0000 = 0;
-      pHVar6->field_0003 = -1;
+      *(undefined4 *)&pHVar6->field_0x3 = 0xffffffff;
       pHVar6->field_0001 = CASE_2;
-      pHVar6->field_0007 = 0;
+      pHVar6->field_0007 = (void *)0x0;
       pHVar6->field_000B = (void *)0x0;
       pHVar6->field_000F = 0;
-      pHVar6->field_001B = 1;
+      *(undefined4 *)&pHVar6->field_0x1b = 1;
       pHVar6->field_0013 = 1;
       pHVar6->field_0017 = -1;
       pHVar6->field_0027 = 0;
@@ -792,7 +791,7 @@ LAB_00598221:
         pHVar6 = this_00->field_1F2B;
         pHVar6->field_0002 = 1;
         pHVar6->field_0017 = pHVar6->field_0013;
-        uVar14 = this_00->field_1F2B->field_0003;
+        uVar14 = *(uint *)&this_00->field_1F2B->field_0x3;
         if (-1 < (int)uVar14) {
           Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar14);
         }
@@ -844,10 +843,10 @@ switchD_00597fa6_caseD_9:
     if (g_cursorClass_00802A30->field_00A9 == 0) {
       Library::DKW::DDX::FUN_006b8a60((byte *)g_cursorClass_00802A30->field_00AD);
     }
-    else if (g_cursorClass_00802A30->field_001C != (cLoadingTy *)0xffffffff) {
+    else if (g_cursorClass_00802A30->field_001C != 0xffffffff) {
       Library::DKW::DDX::FUN_006b34d0
-                ((uint *)g_cursorClass_00802A30->field_0060,(uint)g_cursorClass_00802A30->field_001C
-                 ,0xfffffffe,g_cursorClass_00802A30->field_0034,g_cursorClass_00802A30->field_0038);
+                ((uint *)g_cursorClass_00802A30->field_0060,g_cursorClass_00802A30->field_001C,
+                 0xfffffffe,g_cursorClass_00802A30->field_0034,g_cursorClass_00802A30->field_0038);
       g_currentExceptionFrame = local_254.previous;
       return;
     }

@@ -20,8 +20,8 @@ undefined4 __thiscall STGroupBoatC::GrpLoadRC(STGroupBoatC *this,int param_1)
   int iVar8;
   STWorldObject *pSVar9;
   int *piVar10;
-  undefined4 *puVar11;
-  undefined4 *puVar12;
+  byte *puVar11;
+  byte *puVar12;
   uint uVar13;
   dword dVar14;
   short *psVar15;
@@ -101,13 +101,9 @@ undefined4 __thiscall STGroupBoatC::GrpLoadRC(STGroupBoatC *this,int param_1)
     if (this_00->field_0266 != (DArrayTy *)0x0) {
       DArrayDestroy(this_00->field_0266);
     }
-    puVar11 = &this_00->field_010B;
-    puVar12 = &this_00->field_024A;
-    for (iVar2 = 0xb; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *puVar12 = *puVar11;
-      puVar11 = puVar11 + 1;
-      puVar12 = puVar12 + 1;
-    }
+    puVar11 = (byte *)(&this_00->field_010B);
+    puVar12 = (byte *)(&this_00->field_024A);
+    memmove(puVar12, puVar11, 0x2c); /* compiler REP MOVS byte copy */
     this_00->field_024E = (DArrayTy *)0x0;
     this_00->field_0266 = (DArrayTy *)0x0;
     if (this_00->field_010B == 0) {

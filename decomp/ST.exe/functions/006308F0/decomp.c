@@ -10,11 +10,12 @@ STManRuinC::sub_006308F0
           int param_6)
 
 {
-  char cVar1;
-  STManRuinC_field_0038DArray *pSVar2;
-  int iVar3;
+  byte bVar1;
+  byte *pbVar2;
+  STManRuinC_field_0038DArray *pSVar3;
   int iVar4;
-  uint uVar5;
+  int iVar5;
+  uint index;
   short *psVar6;
   short local_20;
   short local_1e;
@@ -25,36 +26,36 @@ STManRuinC::sub_006308F0
   int local_c;
   int local_8;
 
-  uVar5 = 0xffffffff;
-  iVar4 = (g_worldGrid.sizeX * param_3 + param_2) * (int)g_worldGrid.sizeY + param_1;
+  index = 0xffffffff;
+  iVar5 = (g_worldGrid.sizeX * param_3 + param_2) * (int)g_worldGrid.sizeY + param_1;
   local_8 = 0;
   if (param_4 == 1) {
-    cVar1 = *(char *)(this->field_0034 + iVar4);
+    bVar1 = this->field_0034[iVar5];
   }
   else {
-    iVar3 = this->field_0034;
-    local_8 = g_worldGrid.sizeY + iVar4;
-    if (*(char *)(iVar3 + iVar4) != '\0') {
+    pbVar2 = this->field_0034;
+    local_8 = g_worldGrid.sizeY + iVar5;
+    if (pbVar2[iVar5] != 0) {
       return 0xffffffff;
     }
-    if (*(char *)(iVar3 + 1 + iVar4) != '\0') {
+    if (pbVar2[iVar5 + 1] != 0) {
       return 0xffffffff;
     }
-    if (*(char *)(iVar3 + local_8) != '\0') {
+    if (pbVar2[local_8] != 0) {
       return 0xffffffff;
     }
-    cVar1 = *(char *)(iVar3 + 1 + local_8);
+    bVar1 = pbVar2[local_8 + 1];
   }
-  if (cVar1 == '\0') {
+  if (bVar1 == 0) {
     if (this->field_0038 == (STManRuinC_field_0038DArray *)0x0) {
-      pSVar2 = (STManRuinC_field_0038DArray *)
+      pSVar3 = (STManRuinC_field_0038DArray *)
                Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x75,10);
-      this->field_0038 = pSVar2;
+      this->field_0038 = pSVar3;
     }
-    pSVar2 = this->field_0038;
-    if ((pSVar2 != (STManRuinC_field_0038DArray *)0x0) && (pSVar2->count < 0xfe)) {
+    pSVar3 = this->field_0038;
+    if ((pSVar3 != (STManRuinC_field_0038DArray *)0x0) && (pSVar3->count < 0xfe)) {
       psVar6 = &local_20;
-      for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
+      for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
         psVar6[0] = 0;
         psVar6[1] = 0;
         psVar6 = psVar6 + 2;
@@ -66,26 +67,26 @@ STManRuinC::sub_006308F0
       local_1c = (short)param_3;
       local_1e = (short)param_2;
       local_c = param_6;
-      uVar5 = Library::DKW::TBL::FUN_006ae1c0(&pSVar2->flags,(undefined4 *)&local_20);
-      if (-1 < (int)uVar5) {
+      index = Library::DKW::TBL::FUN_006ae1c0(&pSVar3->flags,(undefined4 *)&local_20);
+      if (-1 < (int)index) {
         if (param_4 == 1) {
-          *(undefined1 *)(this->field_0034 + iVar4) = 1;
+          this->field_0034[iVar5] = 1;
         }
         else {
-          *(undefined1 *)(this->field_0034 + iVar4) = 1;
-          *(undefined1 *)(this->field_0034 + 1 + iVar4) = 1;
-          *(undefined1 *)(this->field_0034 + local_8) = 1;
-          *(undefined1 *)(this->field_0034 + 1 + local_8) = 1;
+          this->field_0034[iVar5] = 1;
+          this->field_0034[iVar5 + 1] = 1;
+          this->field_0034[local_8] = 1;
+          this->field_0034[local_8 + 1] = 1;
         }
-        iVar4 = thunk_FUN_00631190(this,uVar5,(short)param_1,(short)param_2,(short)param_3,param_4,
+        iVar5 = thunk_FUN_00631190(this,index,(short)param_1,(short)param_2,(short)param_3,param_4,
                                    param_5,param_6);
-        if (iVar4 == 0) {
-          FUN_006b0c70((DArrayTy *)this->field_0038,uVar5);
-          uVar5 = 0xffffffff;
+        if (iVar5 == 0) {
+          DArrayRemoveAt((DArrayTy *)this->field_0038,index);
+          index = 0xffffffff;
         }
       }
     }
   }
-  return uVar5;
+  return index;
 }
 

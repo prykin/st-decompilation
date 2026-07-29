@@ -1,4 +1,4 @@
-FUN_006b0c70:
+DArrayRemoveAt:
 006B0C70  55                        PUSH EBP
 006B0C71  8B EC                     MOV EBP,ESP
 006B0C73  8B 45 08                  MOV EAX,dword ptr [EBP + 0x8]

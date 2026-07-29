@@ -16,9 +16,8 @@ void __thiscall HelpStringTy::OutStr(HelpStringTy *this)
   code *pcVar2;
   HelpStringTy *pHVar3;
   int iVar4;
-  undefined4 *puVar5;
+  byte *puVar5;
   int iVar6;
-  uint uVar7;
   uint uVar8;
   InternalExceptionFrame local_4c;
   HelpStringTy *local_8;
@@ -38,15 +37,8 @@ void __thiscall HelpStringTy::OutStr(HelpStringTy *this)
       uVar8 = ((uint)puVar1[7] * *(int *)(puVar1 + 2) + 0x1f >> 3 & 0x1ffffffc) *
               *(int *)(puVar1 + 4);
     }
-    puVar5 = (undefined4 *)FUN_006b4fa0((int *)puVar1);
-    for (uVar7 = uVar8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *puVar5 = 0;
-      puVar5 = puVar5 + 1;
-    }
-    for (uVar8 = uVar8 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
-      *(undefined1 *)puVar5 = 0;
-      puVar5 = (undefined4 *)((int)puVar5 + 1);
-    }
+    puVar5 = (byte *)FUN_006b4fa0((int *)puVar1);
+    memset(puVar5, 0, uVar8); /* compiler bulk-zero initialization */
     if (pHVar3->field_0018 != '\0') {
       ccFntTy::SetSurf(pHVar3->field_011E,(int)pHVar3->field_012A,0,0,0,0,0);
       ccFntTy::WrStr(pHVar3->field_011E,(uint *)&pHVar3->field_0018,0,-1,

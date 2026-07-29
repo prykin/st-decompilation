@@ -61,7 +61,7 @@ void __thiscall CPanelTy::sub_00501A10(CPanelTy *this)
       this->field_043C = *(undefined4 *)(iVar3 + 4);
       iVar3 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_02B2,0);
       this->field_0440 = *(undefined4 *)(iVar3 + 8);
-      *puVar1 = (*(int *)(this->field_018C + 4) - this->field_043C) / 2 + this->field_0048;
+      *puVar1 = (this->field_018C->field_0004 - this->field_043C) / 2 + this->field_0048;
       this->field_0438 = this->field_00A0 + 0x50;
     }
     switch(this->field_0B99) {

@@ -84,8 +84,8 @@ TLOBldMark::sub_004C6440
           (pVVar4->field_004C[local_30 + iVar9 * pVVar4->field_0030] != 0)))) &&
         (iVar9 = local_10,
         thunk_FUN_004ae0b0((short)local_10,local_8,local_c,this->field_001C,(uint)DAT_0080874d,
-                           &local_2c,&local_24,&local_1c,0,(int *)this->field_0020), local_24 != 0))
-       )) break;
+                           &local_2c,&local_24,&local_1c,0,this->field_0020), local_24 != 0))))
+    break;
     local_20 = piVar8 + -1;
     local_c = local_c + -1;
     if ((int)local_20 < 0x79aed0) {

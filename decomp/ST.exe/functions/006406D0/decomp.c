@@ -34,7 +34,7 @@ int __thiscall STTorpC::GetMessage(STTorpC *this,STMessage *message)
   short sVar9;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
-  undefined4 *puVar14;
+  byte *puVar14;
   undefined4 uVar15;
   uint uVar17;
   STGameObjC *pSVar18;
@@ -45,7 +45,7 @@ int __thiscall STTorpC::GetMessage(STTorpC *this,STMessage *message)
   undefined2 extraout_var_01;
   undefined2 uVar19;
   int iVar20;
-  undefined4 *puVar21;
+  byte *puVar21;
   char *pcVar22;
   char *pcVar23;
   char *pcVar24;
@@ -179,7 +179,7 @@ int __thiscall STTorpC::GetMessage(STTorpC *this,STMessage *message)
       }
       local_4c = (STGameObjC *)SaveTorpData((STTorpC *)this_00,(int *)&local_90);
       STPlaySystemC::SaveObjData
-                (g_playSystem_00802A38,this_00->field_0018,(byte *)local_4c,local_90);
+                (g_playSystem_00802A38,(int *)this_00->field_0018,(byte *)local_4c,local_90);
       FreeAndNull(&local_4c);
       g_currentExceptionFrame = local_28c.previous;
       return 0;
@@ -322,13 +322,9 @@ int __thiscall STTorpC::GetMessage(STTorpC *this,STMessage *message)
       g_currentExceptionFrame = local_28c.previous;
       return 0;
     }
-    puVar14 = (undefined4 *)(iVar10 + 0x14);
-    puVar21 = (undefined4 *)&this_00->field_0x245;
-    for (iVar11 = 0x11; iVar11 != 0; iVar11 = iVar11 + -1) {
-      *puVar21 = *puVar14;
-      puVar14 = puVar14 + 1;
-      puVar21 = puVar21 + 1;
-    }
+    puVar14 = (byte *)(iVar10 + 0x14);
+    puVar21 = (byte *)&this_00->field_0x245;
+    memmove(puVar21, puVar14, 0x44); /* compiler REP MOVS byte copy */
     sVar9 = *(short *)&this_00->field_0x24b;
     if ((((sVar9 < 0) || (sVar2 = *(short *)&this_00->field_0x24d, sVar2 < 0)) ||
         (*(short *)&this_00->field_0x24f < 0)) ||
@@ -473,7 +469,7 @@ LAB_00642c6e:
     }
     *(undefined2 *)((int)&this_00->field_0231 + 2) = CASE_0 >> 0x10;
 switchD_00640ad9_caseD_a2:
-    puVar14 = (undefined4 *)
+    puVar14 = (byte *)
               thunk_FUN_0041dc40(local_248,(short)this_00->field_0231,
                                  *(ushort *)&this_00->field_0x235,*(short *)&this_00->field_0x6c);
     *(undefined4 *)&this_00->field_0x237 = *puVar14;
@@ -600,7 +596,7 @@ switchD_00640ad9_caseD_a2:
       pcVar24 = pcVar24 + 1;
     }
 switchD_00640c2d_caseD_a2:
-    puVar14 = &this_00->field_01D5;
+    puVar14 = (byte *)(&this_00->field_01D5);
     iVar10 = STT3DSprC::LoadSequence((STT3DSprC *)puVar14,0,DAT_00806774,local_60,0x1d);
     if (iVar10 != 0) {
       RaiseInternalException
@@ -855,7 +851,7 @@ switchD_00640c2d_caseD_a2:
                   ((SystemWithNamedObjClassTy *)g_playSystem_00802A38,(int)local_240);
       }
     }
-    puVar14 = &this_00->field_01D5;
+    puVar14 = (byte *)(&this_00->field_01D5);
     iVar10 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar14,'\0');
     if (iVar10 + -1 < (int)(uint)(byte)this_00->field_0x27c) {
       STT3DSprC::StopShow((STT3DSprC *)puVar14,0);
@@ -3106,7 +3102,7 @@ LAB_00642561:
     pcVar22 = &DAT_007d0564;
     goto LAB_00642561;
   }
-  puVar14 = &this_00->field_01D5;
+  puVar14 = (byte *)(&this_00->field_01D5);
   iVar10 = STT3DSprC::LoadSequence((STT3DSprC *)puVar14,0,DAT_00806774,local_48,0x1d);
   if (iVar10 != 0) {
     RaiseInternalException

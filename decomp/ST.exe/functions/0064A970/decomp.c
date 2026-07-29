@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
@@ -546,16 +548,7 @@ cf_error_exit_0064B368:
           uVar13 = ~uVar13;
           pfVar15 = (float *)(pcVar10 + -uVar13);
           pfVar16 = local_8;
-          for (uVar14 = uVar13 >> 2; uVar14 != 0; uVar14 = uVar14 - 1) {
-            *pfVar16 = *pfVar15;
-            pfVar15 = pfVar15 + 1;
-            pfVar16 = pfVar16 + 1;
-          }
-          for (uVar13 = uVar13 & 3; uVar13 != 0; uVar13 = uVar13 - 1) {
-            *(undefined1 *)pfVar16 = *(undefined1 *)pfVar15;
-            pfVar15 = (float *)((int)pfVar15 + 1);
-            pfVar16 = (float *)((int)pfVar16 + 1);
-          }
+          memmove(pfVar16, pfVar15, uVar13); /* compiler REP MOVS byte copy */
           goto cf_common_exit_0064BBB1;
         }
       }

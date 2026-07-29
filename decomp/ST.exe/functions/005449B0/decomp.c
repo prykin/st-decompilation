@@ -2179,11 +2179,11 @@ switchD_00546ac9_caseD_a506:
     Library::Ourlib::ST3DSMAP::SprShow(g_sT3DSMAPContext_00807598,*piVar25,0);
     Library::Ourlib::ST3DSMAP::SprSetLevBefore(g_sT3DSMAPContext_00807598,*piVar25,-1);
     if (this_00->field_00A9 != 0) {
-      if (this_00->field_001C == (cLoadingTy *)0xffffffff) {
+      if (this_00->field_001C == 0xffffffff) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      FUN_006b3af0((int *)this_00->field_0060,(uint)this_00->field_001C);
+      FUN_006b3af0((int *)this_00->field_0060,this_00->field_001C);
       g_currentExceptionFrame = local_e0.previous;
       return 0;
     }
@@ -2365,9 +2365,9 @@ LAB_00546f1c:
   if (this_00->field_00A9 == 0) {
     Library::DKW::DDX::FUN_006b8a60((byte *)this_00->field_00AD);
   }
-  else if (this_00->field_001C != (cLoadingTy *)0xffffffff) {
+  else if (this_00->field_001C != 0xffffffff) {
     Library::DKW::DDX::FUN_006b34d0
-              ((uint *)this_00->field_0060,(uint)this_00->field_001C,0xfffffffe,this_00->field_0034,
+              ((uint *)this_00->field_0060,this_00->field_001C,0xfffffffe,this_00->field_0034,
                this_00->field_0038);
   }
   DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
@@ -2396,9 +2396,9 @@ switchD_00546e07_caseD_5:
   if (this_00->field_00A9 == 0) {
     Library::DKW::DDX::FUN_006b8a60((byte *)this_00->field_00AD);
   }
-  else if (this_00->field_001C != (cLoadingTy *)0xffffffff) {
+  else if (this_00->field_001C != 0xffffffff) {
     Library::DKW::DDX::FUN_006b34d0
-              ((uint *)this_00->field_0060,(uint)this_00->field_001C,0xfffffffe,this_00->field_0034,
+              ((uint *)this_00->field_0060,this_00->field_001C,0xfffffffe,this_00->field_0034,
                this_00->field_0038);
   }
   DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);

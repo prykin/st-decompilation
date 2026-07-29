@@ -20,8 +20,8 @@ int __thiscall STLightC::GetMessage(STLightC *this,STMessage *message)
   int iVar5;
   undefined4 uVar6;
   int iVar7;
-  undefined4 *puVar8;
-  undefined4 *puVar9;
+  byte *puVar8;
+  byte *puVar9;
   STLightC *pSVar10;
   InternalExceptionFrame local_60;
   SoundPosition local_1c;
@@ -73,7 +73,7 @@ int __thiscall STLightC::GetMessage(STLightC *this,STMessage *message)
           local_1c.y = (int)(short)((sVar2 / 0xc9 + (sVar2 >> 0xf)) -
                                    (short)((longlong)(int)sVar2 * 0x28c1979 >> 0x3f));
         }
-        local_1c.unknown = this_00->field_0018;
+        local_1c.unknown = (int)this_00->field_0018;
         iVar5 = 0x476;
       }
       else {
@@ -95,7 +95,7 @@ int __thiscall STLightC::GetMessage(STLightC *this,STMessage *message)
           local_1c.y = (int)(short)((sVar2 / 0xc9 + (sVar2 >> 0xf)) -
                                    (short)((longlong)(int)sVar2 * 0x28c1979 >> 0x3f));
         }
-        local_1c.unknown = this_00->field_0018;
+        local_1c.unknown = (int)this_00->field_0018;
         iVar5 = 0x475;
       }
       SoundClassTy::PlaySound((SoundClassTy *)&g_sound,SOUND_MODE_2,(char *)0x0,iVar5,&local_1c,0);
@@ -114,7 +114,7 @@ int __thiscall STLightC::GetMessage(STLightC *this,STMessage *message)
       if (iVar5 == 0) goto LAB_0061d434;
     }
     else if (SVar3 == MESS_ID_CREATE) {
-      puVar8 = (message->arg0).ptr;
+      puVar8 = (byte *)((message->arg0).ptr);
       if (puVar8[3] == 2) {
         sub_0061D8F0(local_8,puVar8);
         pSVar10 = this_00 + 1;
@@ -128,13 +128,8 @@ int __thiscall STLightC::GetMessage(STLightC *this,STMessage *message)
         g_currentExceptionFrame = local_60.previous;
         return 0;
       }
-      puVar9 = (undefined4 *)&local_8->field_0x1c;
-      for (iVar5 = 10; iVar5 != 0; iVar5 = iVar5 + -1) {
-        *puVar9 = *puVar8;
-        puVar8 = puVar8 + 1;
-        puVar9 = puVar9 + 1;
-      }
-      *(undefined2 *)puVar9 = *(undefined2 *)puVar8;
+      puVar9 = (byte *)&local_8->field_0x1c;
+      memmove(puVar9, puVar8, 0x2a); /* compiler REP MOVS byte copy */
       iVar5 = DAT_00808754;
       local_8->field_00AC = DAT_00808754;
       uVar1 = iVar5 * 0x41c64e6d + 0x3039;

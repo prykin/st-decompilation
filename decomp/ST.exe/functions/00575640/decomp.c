@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __cdecl FUN_00575640(short *param_1,undefined4 *param_2,short *param_3)
 
@@ -12,7 +14,7 @@ void __cdecl FUN_00575640(short *param_1,undefined4 *param_2,short *param_3)
   uint uVar8;
   short *psVar9;
   uint uVar10;
-  undefined4 *puVar11;
+  byte *puVar11;
   int iVar12;
   int iVar13;
   int local_1c;
@@ -24,15 +26,8 @@ void __cdecl FUN_00575640(short *param_1,undefined4 *param_2,short *param_3)
   iVar4 = (int)*param_1 * (int)param_1[1];
   uVar10 = iVar4 * 10;
   local_1c = 0;
-  puVar11 = param_2;
-  for (uVar8 = uVar10 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
-    *puVar11 = 0;
-    puVar11 = puVar11 + 1;
-  }
-  for (uVar8 = uVar10 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
-    *(undefined1 *)puVar11 = 0;
-    puVar11 = (undefined4 *)((int)puVar11 + 1);
-  }
+  puVar11 = (byte *)(param_2);
+  memset(puVar11, 0, uVar10); /* compiler bulk-zero initialization */
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (0 < *(int *)((int)param_1 + 0x455)) {
     local_18 = (int *)((int)param_1 + 0x459);
@@ -106,16 +101,16 @@ void __cdecl FUN_00575640(short *param_1,undefined4 *param_2,short *param_3)
   if (param_3 != (short *)0x0) {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = (short *)Library::DKW::LIB::FUN_006aac70(uVar10);
-    puVar11 = param_2;
+    puVar11 = (byte *)(param_2);
     psVar9 = param_1;
     for (uVar8 = uVar10 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
       *(undefined4 *)psVar9 = *puVar11;
-      puVar11 = puVar11 + 1;
+      puVar11 = (byte *)(puVar11 + 1);
       psVar9 = psVar9 + 2;
     }
     for (uVar10 = uVar10 & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
       *(undefined1 *)psVar9 = *(undefined1 *)puVar11;
-      puVar11 = (undefined4 *)((int)puVar11 + 1);
+      puVar11 = (byte *)((int)puVar11 + 1);
       psVar9 = (short *)((int)psVar9 + 1);
     }
     iVar13 = 0;

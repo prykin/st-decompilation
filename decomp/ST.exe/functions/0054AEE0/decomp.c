@@ -26,7 +26,6 @@ void __thiscall CursorClassTy::GCGameState(CursorClassTy *this,int param_1)
   Global_sub_005121F0_param_1Enum GVar9;
   int iVar10;
   uint uVar11;
-  uint uVar12;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined4 unaff_ESI;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
@@ -156,16 +155,7 @@ LAB_0054b366:
         uVar11 = ~uVar11;
         puVar8 = (uint *)(pcVar14 + -uVar11);
         puVar15 = local_d8;
-        for (uVar12 = uVar11 >> 2; uVar12 != 0; uVar12 = uVar12 - 1) {
-          *puVar15 = *puVar8;
-          puVar8 = puVar8 + 1;
-          puVar15 = puVar15 + 1;
-        }
-        for (uVar11 = uVar11 & 3; uVar11 != 0; uVar11 = uVar11 - 1) {
-          *(char *)puVar15 = (char)*puVar8;
-          puVar8 = (uint *)((int)puVar8 + 1);
-          puVar15 = (uint *)((int)puVar15 + 1);
-        }
+        memmove(puVar15, puVar8, uVar11); /* compiler REP MOVS byte copy */
         puVar8 = Library::MSVCRT::FUN_0072e560(local_d8,'\n');
         while (puVar8 != (uint *)0x0) {
           *(undefined1 *)puVar8 = 0x20;

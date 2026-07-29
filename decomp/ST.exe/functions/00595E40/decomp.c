@@ -8,26 +8,25 @@
 void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
 
 {
-  int *piVar1;
-  MMsgTy *pMVar2;
-  code *pcVar3;
+  MMsgTy *pMVar1;
+  code *pcVar2;
   CursorClassTy *this_00;
   FSGSTy *this_01;
-  int iVar4;
-  ushort *puVar5;
-  HGDIOBJ pvVar6;
-  FSGSTy_field_1FB3DArray *pFVar7;
-  ccFntTy *pcVar8;
-  undefined4 *puVar9;
-  StartServTy *pSVar10;
+  int iVar3;
+  ushort *puVar4;
+  HGDIOBJ pvVar5;
+  FSGSTy_field_1FB3DArray *pFVar6;
+  ccFntTy *pcVar7;
+  StartServTy *pSVar8;
   int local_EAX_679;
-  AnonPointee_FSGSTy_1A97 *pAVar11;
+  AnonPointee_FSGSTy_1A97 *pAVar9;
+  undefined4 *puVar10;
   LPSTR text;
   int uVar11;
-  DArrayTy *pDVar12;
-  int iVar13;
-  uint uVar14;
-  byte bVar15;
+  DArrayTy *pDVar11;
+  int iVar12;
+  uint uVar13;
+  byte bVar14;
   undefined4 local_450 [256];
   InternalExceptionFrame local_50;
   FSGSTy *local_c;
@@ -36,16 +35,16 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
+  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   this_01 = local_c;
-  if (iVar4 != 0) {
+  if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar13 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x15d,0,iVar4,
+    iVar12 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x15d,0,iVar3,
                                 "%s","FSGSTy::InitFSGS");
-    if (iVar13 != 0) {
+    if (iVar12 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar4,0,"E:\\__titans\\Start\\fsgs_obj.cpp",0x15d);
+    RaiseInternalException(iVar3,0,"E:\\__titans\\Start\\fsgs_obj.cpp",0x15d);
     return;
   }
   StartSystemTy::sub_005DAF20(local_c->field_1A5B);
@@ -57,34 +56,33 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
     if (g_cursorClass_00802A30->field_00A9 == 0) {
       Library::DKW::DDX::FUN_006b8b10((int *)g_cursorClass_00802A30->field_00AD);
     }
-    else if (g_cursorClass_00802A30->field_001C != (cLoadingTy *)0xffffffff) {
-      FUN_006b3af0((int *)g_cursorClass_00802A30->field_0060,
-                   (uint)g_cursorClass_00802A30->field_001C);
+    else if (g_cursorClass_00802A30->field_001C != 0xffffffff) {
+      FUN_006b3af0((int *)g_cursorClass_00802A30->field_0060,g_cursorClass_00802A30->field_001C);
     }
   }
-  pMVar2 = this_01->field_1A5B->field_02E6;
-  if (pMVar2 != (MMsgTy *)0x0) {
-    MMsgTy::HideSprites(pMVar2);
+  pMVar1 = this_01->field_1A5B->field_02E6;
+  if (pMVar1 != (MMsgTy *)0x0) {
+    MMsgTy::HideSprites(pMVar1);
     this_01->field_1A5B->field_02E6->field_1CAB = 0;
   }
-  puVar5 = (ushort *)FUN_0070a9f0(g_cMf32_00806780,"FSGS_BKG",0,1);
-  g_startSystem_0081176C->field_002C = puVar5;
+  puVar4 = (ushort *)FUN_0070a9f0(g_cMf32_00806780,"FSGS_BKG",0,1);
+  g_startSystem_0081176C->field_002C = puVar4;
   this_01->field_005D = g_startSystem_0081176C->field_002C;
-  puVar5 = Library::Ourlib::MFRLOAD::mfRLoad
+  puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
                      (DAT_00806784,CASE_B,"SET_ACC",0xffffffff,0,1,0,(undefined4 *)0x0);
-  this_01->field_1A83 = puVar5;
-  puVar5 = Library::Ourlib::MFRLOAD::mfRLoad
+  this_01->field_1A83 = puVar4;
+  puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
                      (DAT_00806784,CASE_B,"FILE_LIST",0xffffffff,0,1,0,(undefined4 *)0x0);
-  this_01->field_1A87 = puVar5;
-  puVar5 = Library::Ourlib::MFRLOAD::mfRLoad
+  this_01->field_1A87 = puVar4;
+  puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
                      (DAT_00806784,CASE_B,&DAT_007cc07c,0xffffffff,0,1,0,(undefined4 *)0x0);
-  this_01->field_1A8B = puVar5;
+  this_01->field_1A8B = puVar4;
   FUN_006bc360(this_01->field_005D,local_450,(int *)0x0);
   this_01->field_1A5B->field_0140 = 0xf;
   Library::Ourlib::PALETTE::FUN_00718780
             ((int)local_450,0,0x100,0x8b,0x15,(undefined4 *)&this_01->field_1A5B->field_0x144);
-  pvVar6 = (HGDIOBJ)FUN_006c6a60(this_01->field_005D);
-  this_01->field_1A67 = pvVar6;
+  pvVar5 = (HGDIOBJ)FUN_006c6a60(this_01->field_005D);
+  this_01->field_1A67 = pvVar5;
   this_01->field_1F5B = this_01->field_0008;
   this_01->field_1F3B = this_01->field_0008;
   this_01->field_1F5F = 2;
@@ -95,67 +93,67 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   this_01->field_1F87 = 0xf;
   this_01->field_1F8B = 1;
   this_01->field_1F83 = 0x4d;
-  pFVar7 = (FSGSTy_field_1FB3DArray *)Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,5,0x10c,5);
-  this_01->field_1FB3 = pFVar7;
+  pFVar6 = (FSGSTy_field_1FB3DArray *)Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,5,0x10c,5);
+  this_01->field_1FB3 = pFVar6;
   this_01->field_1A6F = this_01->field_1A5B->field_0030;
   this_01->field_1A73 = this_01->field_1A5B->field_0034;
-  pcVar8 = (ccFntTy *)thunk_FUN_00594850((int)this_01->field_005D,(undefined *)0x0,DAT_00807dd9);
-  this_01->field_1A77 = pcVar8;
-  pcVar8->field_007E = 1;
-  *(undefined2 *)&pcVar8->field_0x9e = 0;
-  pcVar8->field_0x9e = DAT_007c6ff0;
-  puVar9 = ccFntTy::operator_new(0x19d,g_cMf32_00806780,"FSGS_NB",0);
-  this_01->field_1A7B = puVar9;
-  puVar9[0x16] = 1;
-  puVar9[0x17] = 0;
-  pSVar10 = (StartServTy *)ccFntTy::operator_new(0x19d,g_cMf32_00806780,"FSGS_NS",0);
-  this_01->field_1A7F = pSVar10;
-  *(undefined4 *)(pSVar10 + 0x58) = 1;
-  *(undefined4 *)(pSVar10 + 0x5c) = 0;
-  puVar5 = this_01->field_005D + 0x14;
-  iVar4 = 1;
+  pcVar7 = (ccFntTy *)thunk_FUN_00594850((int)this_01->field_005D,(undefined *)0x0,DAT_00807dd9);
+  this_01->field_1A77 = pcVar7;
+  pcVar7->field_007E = 1;
+  *(undefined2 *)&pcVar7->field_0x9e = 0;
+  pcVar7->field_0x9e = DAT_007c6ff0;
+  pcVar7 = (ccFntTy *)ccFntTy::operator_new(0x19d,g_cMf32_00806780,"FSGS_NB",0);
+  this_01->field_1A7B = pcVar7;
+  pcVar7->field_0058 = 1;
+  pcVar7->field_005C = 0;
+  pSVar8 = (StartServTy *)ccFntTy::operator_new(0x19d,g_cMf32_00806780,"FSGS_NS",0);
+  this_01->field_1A7F = pSVar8;
+  *(undefined4 *)(pSVar8 + 0x58) = 1;
+  *(undefined4 *)(pSVar8 + 0x5c) = 0;
+  puVar4 = this_01->field_005D + 0x14;
+  iVar3 = 1;
   local_EAX_679 = FUN_006b4fe0((int)this_01->field_005D);
-  pAVar11 = (AnonPointee_FSGSTy_1A97 *)
-            FUN_006b50c0(0x24d,0x59,(uint)this_01->field_005D[7],local_EAX_679,(undefined4 *)puVar5,
-                         iVar4);
-  this_01->field_1A97 = pAVar11;
-  local_8 = pAVar11->field_0014;
+  pAVar9 = (AnonPointee_FSGSTy_1A97 *)
+           FUN_006b50c0(0x24d,0x59,(uint)this_01->field_005D[7],local_EAX_679,(undefined4 *)puVar4,
+                        iVar3);
+  this_01->field_1A97 = pAVar9;
+  local_8 = pAVar9->field_0014;
   if (local_8 == 0) {
-    local_8 = ((uint)(ushort)pAVar11->field_000E * pAVar11->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
-              pAVar11->field_0008;
+    local_8 = ((uint)(ushort)pAVar9->field_000E * pAVar9->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
+              pAVar9->field_0008;
   }
-  puVar9 = (undefined4 *)FUN_006b4fa0((int *)pAVar11);
-  for (uVar14 = local_8 >> 2; uVar14 != 0; uVar14 = uVar14 - 1) {
-    *puVar9 = 0xffffffff;
-    puVar9 = puVar9 + 1;
+  puVar10 = (undefined4 *)FUN_006b4fa0((int *)pAVar9);
+  for (uVar13 = local_8 >> 2; uVar13 != 0; uVar13 = uVar13 - 1) {
+    *puVar10 = 0xffffffff;
+    puVar10 = puVar10 + 1;
   }
-  iVar4 = 0;
-  bVar15 = 0;
-  for (uVar14 = local_8 & 3; uVar14 != 0; uVar14 = uVar14 - 1) {
-    *(undefined1 *)puVar9 = 0xff;
-    puVar9 = (undefined4 *)((int)puVar9 + 1);
+  iVar3 = 0;
+  bVar14 = 0;
+  for (uVar13 = local_8 & 3; uVar13 != 0; uVar13 = uVar13 - 1) {
+    *(undefined1 *)puVar10 = 0xff;
+    puVar10 = (undefined4 *)((int)puVar10 + 1);
   }
   text = FUN_006f2c00("MM_BAN_",2,this_01->field_1A93);
-  puVar5 = Library::Ourlib::MFIMG::mfImgLoad(g_cMf32_00806780,6,text,bVar15,iVar4);
-  DibPut((AnonShape_006B5B10_E0D06CF1 *)this_01->field_1A97,0,0,'\x06',(byte *)puVar5);
-  pAVar11 = this_01->field_1A97;
-  FUN_006b2330(g_ddxContext_008075A8,(uint *)&this_01->field_1A8F,0x31,0x4023f6,pAVar11->field_0004,
-               pAVar11->field_0008,(ushort *)pAVar11);
+  puVar4 = Library::Ourlib::MFIMG::mfImgLoad(g_cMf32_00806780,6,text,bVar14,iVar3);
+  DibPut((AnonShape_006B5B10_E0D06CF1 *)this_01->field_1A97,0,0,'\x06',(byte *)puVar4);
+  pAVar9 = this_01->field_1A97;
+  FUN_006b2330(g_ddxContext_008075A8,&this_01->field_1A8F,0x31,0x4023f6,pAVar9->field_0004,
+               pAVar9->field_0008,(ushort *)pAVar9);
   Library::DKW::DDX::FUN_006b3640
             ((int *)g_ddxContext_008075A8,this_01->field_1A8F,0xffffffff,g_nWidth_00806730 - 0x24d,0
             );
-  iVar4 = 1;
-  puVar5 = this_01->field_005D + 0x14;
+  iVar3 = 1;
+  puVar4 = this_01->field_005D + 0x14;
   uVar11 = FUN_006b4fe0((int)this_01->field_005D);
-  puVar5 = (ushort *)
-           FUN_006b50c0(0x1b8,0x106,(uint)this_01->field_005D[7],uVar11,(undefined4 *)puVar5,iVar4);
-  this_01->field_1AC0 = puVar5;
+  puVar4 = (ushort *)
+           FUN_006b50c0(0x1b8,0x106,(uint)this_01->field_005D[7],uVar11,(undefined4 *)puVar4,iVar3);
+  this_01->field_1AC0 = puVar4;
   this_01->field_1ABB = 0;
-  piVar1 = &this_01->field_1ABC;
-  FUN_006b2330(g_ddxContext_008075A8,(uint *)piVar1,0x31,0x4023f6,*(uint *)(puVar5 + 2),
-               *(uint *)(puVar5 + 4),puVar5);
-  Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,*piVar1,0xffffffff,0xb4,0xaa);
-  FUN_006b3af0((int *)g_ddxContext_008075A8,*piVar1);
+  puVar10 = &this_01->field_1ABC;
+  FUN_006b2330(g_ddxContext_008075A8,puVar10,0x31,0x4023f6,*(uint *)(puVar4 + 2),
+               *(uint *)(puVar4 + 4),puVar4);
+  Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,*puVar10,0xffffffff,0xb4,0xaa);
+  FUN_006b3af0((int *)g_ddxContext_008075A8,*puVar10);
   SpriteClassTy::InitSprite
             ((SpriteClassTy *)&this_01->field_1B28,(int *)g_ddxContext_008075A8,0x31,'\a',
              (undefined4 *)0x0,0,0);
@@ -222,25 +220,25 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   this_01->field_1E19 = 0;
   this_01->field_1C6A = 0;
   this_01->field_1C66 = 0;
-  pDVar12 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
-  this_01->field_1B08 = pDVar12;
-  Library::DKW::TBL::FUN_006b5aa0(&pDVar12->flags,"License agreement");
+  pDVar11 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
+  this_01->field_1B08 = pDVar11;
+  Library::DKW::TBL::FUN_006b5aa0(&pDVar11->flags,"License agreement");
   Library::DKW::TBL::FUN_006b5aa0(&this_01->field_1B08->flags,"Nothing to do");
   PaintFSGS(this_01,'\x01');
   thunk_FUN_0055ddf0((undefined4 *)g_dDXContext_0080759C,(int *)g_ddxContext_008075A8,
                      this_01->field_005D,10,2);
   if ((5 < param_1) && (param_1 < 9)) {
-    pDVar12 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,100,100);
-    this_01->field_1E9E = &pDVar12->flags;
+    pDVar11 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,100,100);
+    this_01->field_1E9E = &pDVar11->flags;
   }
   this_01->field_1A62 = 0;
   if (param_1 == 6) {
     this_01->field_1A5F = CASE_6;
-    bVar15 = 8;
+    bVar14 = 8;
   }
   else if (param_1 == 7) {
     this_01->field_1A5F = CASE_7;
-    bVar15 = 7;
+    bVar14 = 7;
   }
   else {
     if (param_1 != 8) {
@@ -249,24 +247,24 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
       goto LAB_00596510;
     }
     this_01->field_1A5F = CASE_8;
-    bVar15 = 10;
+    bVar14 = 10;
   }
-  SetState(this_01,bVar15);
+  SetState(this_01,bVar14);
 LAB_00596510:
   this_00 = g_cursorClass_00802A30;
   if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
-    iVar4 = g_cursorClass_00802A30->field_00C9;
-    iVar13 = g_cursorClass_00802A30->field_00C5;
+    iVar3 = g_cursorClass_00802A30->field_00C9;
+    iVar12 = g_cursorClass_00802A30->field_00C5;
     g_cursorClass_00802A30->field_0493 = CASE_1;
     this_00->field_0494 = 0xffff;
-    CursorClassTy::SetGCType(this_00,CASE_0,iVar13,iVar4);
+    CursorClassTy::SetGCType(this_00,CASE_0,iVar12,iVar3);
     CursorClassTy::DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
     this_00->field_00D2 = 0;
     this_00->field_04DF = -1;
   }
-  pMVar2 = this_01->field_1A5B->field_02E6;
-  if (pMVar2 != (MMsgTy *)0x0) {
-    MMsgTy::ShowSprites(pMVar2);
+  pMVar1 = this_01->field_1A5B->field_02E6;
+  if (pMVar1 != (MMsgTy *)0x0) {
+    MMsgTy::ShowSprites(pMVar1);
     this_01->field_1A5B->field_02E6->field_1CAB = this_01->field_0008;
   }
   thunk_FUN_00568bc0(&g_sound,0);

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
@@ -8,9 +10,9 @@ void __cdecl FUN_00574920(short *param_1,int param_2,int param_3,undefined4 *par
 {
   byte bVar1;
   int iVar2;
-  undefined4 *puVar3;
+  byte *puVar3;
   int iVar4;
-  undefined4 *puVar5;
+  byte *puVar5;
   undefined4 *puVar6;
   int iVar7;
   uint uVar8;
@@ -81,24 +83,24 @@ void __cdecl FUN_00574920(short *param_1,int param_2,int param_3,undefined4 *par
         local_3c = 1;
         if (piVar10 == (int *)0x0) {
           FUN_006a5e90(*(short **)(iVar2 + 0xc));
-          puVar3 = (undefined4 *)
+          puVar3 = (byte *)
                    Library::DKW::LIB::FUN_006aac70
                              ((uint)*(byte *)(param_1 + 2) * (uint)*(byte *)(param_1 + 2) * 4);
           *(undefined4 **)(iVar2 + 0xc) = puVar3;
           local_28 = 1;
           local_20 = 1;
           if (*(undefined4 **)(iVar2 + 0x10) != (undefined4 *)0x0) {
-            puVar5 = *(undefined4 **)(iVar2 + 0x10);
+            puVar5 = (byte *)(*(undefined4 **)(iVar2 + 0x10));
             for (iVar7 = (uint)*(byte *)(param_1 + 2) * (uint)*(byte *)(param_1 + 2); iVar7 != 0;
                 iVar7 = iVar7 + -1) {
               *puVar3 = *puVar5;
-              puVar5 = puVar5 + 1;
-              puVar3 = puVar3 + 1;
+              puVar5 = (byte *)(puVar5 + 1);
+              puVar3 = (byte *)(puVar3 + 1);
             }
             for (iVar7 = 0; iVar7 != 0; iVar7 = iVar7 + -1) {
               *(undefined1 *)puVar3 = *(undefined1 *)puVar5;
-              puVar5 = (undefined4 *)((int)puVar5 + 1);
-              puVar3 = (undefined4 *)((int)puVar3 + 1);
+              puVar5 = (byte *)((int)puVar5 + 1);
+              puVar3 = (byte *)((int)puVar3 + 1);
             }
           }
           local_8 = 0;
@@ -160,23 +162,23 @@ LAB_00574bcc:
                   FUN_006a5e90(*(short **)(iVar2 + 0xc));
                 }
               }
-              puVar5 = (undefined4 *)
+              puVar5 = (byte *)
                        Library::DKW::LIB::FUN_006aac70
                                  ((uint)*(byte *)(param_1 + 2) * (uint)*(byte *)(param_1 + 2) * 4);
               *(undefined4 **)(iVar2 + 0xc) = puVar5;
-              puVar3 = *(undefined4 **)(iVar2 + 0x10);
+              puVar3 = (byte *)(*(undefined4 **)(iVar2 + 0x10));
               if ((puVar3 != (undefined4 *)0x0) ||
                  (puVar3 = *(undefined4 **)(iVar2 + 0x14), puVar3 != (undefined4 *)0x0)) {
                 for (iVar7 = (uint)*(byte *)(param_1 + 2) * (uint)*(byte *)(param_1 + 2); iVar7 != 0
                     ; iVar7 = iVar7 + -1) {
                   *puVar5 = *puVar3;
-                  puVar3 = puVar3 + 1;
-                  puVar5 = puVar5 + 1;
+                  puVar3 = (byte *)(puVar3 + 1);
+                  puVar5 = (byte *)(puVar5 + 1);
                 }
                 for (iVar7 = 0; iVar7 != 0; iVar7 = iVar7 + -1) {
                   *(undefined1 *)puVar5 = *(undefined1 *)puVar3;
-                  puVar3 = (undefined4 *)((int)puVar3 + 1);
-                  puVar5 = (undefined4 *)((int)puVar5 + 1);
+                  puVar3 = (byte *)((int)puVar3 + 1);
+                  puVar5 = (byte *)((int)puVar5 + 1);
                 }
               }
             }
@@ -184,18 +186,18 @@ LAB_00574bcc:
               puVar6 = (undefined4 *)
                        Library::DKW::LIB::FUN_006aac70
                                  ((uint)*(byte *)(param_1 + 2) * (uint)*(byte *)(param_1 + 2) * 4);
-              puVar3 = *(undefined4 **)(iVar2 + 0xc);
-              puVar5 = puVar6;
+              puVar3 = (byte *)(*(undefined4 **)(iVar2 + 0xc));
+              puVar5 = (byte *)(puVar6);
               for (iVar7 = (uint)*(byte *)(param_1 + 2) * (uint)*(byte *)(param_1 + 2); iVar7 != 0;
                   iVar7 = iVar7 + -1) {
                 *puVar5 = *puVar3;
-                puVar3 = puVar3 + 1;
-                puVar5 = puVar5 + 1;
+                puVar3 = (byte *)(puVar3 + 1);
+                puVar5 = (byte *)(puVar5 + 1);
               }
               for (iVar7 = 0; iVar7 != 0; iVar7 = iVar7 + -1) {
                 *(undefined1 *)puVar5 = *(undefined1 *)puVar3;
-                puVar3 = (undefined4 *)((int)puVar3 + 1);
-                puVar5 = (undefined4 *)((int)puVar5 + 1);
+                puVar3 = (byte *)((int)puVar3 + 1);
+                puVar5 = (byte *)((int)puVar5 + 1);
               }
               *(undefined4 **)(iVar2 + 0xc) = puVar6;
             }
@@ -269,18 +271,9 @@ LAB_00574e10:
           }
           else {
             uVar8 = (uint)*(byte *)(param_1 + 2) * (uint)*(byte *)(param_1 + 2);
-            puVar3 = local_4c;
-            puVar5 = param_4;
-            for (uVar9 = uVar8 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
-              *puVar5 = *puVar3;
-              puVar3 = puVar3 + 1;
-              puVar5 = puVar5 + 1;
-            }
-            for (uVar8 = uVar8 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
-              *(undefined1 *)puVar5 = *(undefined1 *)puVar3;
-              puVar3 = (undefined4 *)((int)puVar3 + 1);
-              puVar5 = (undefined4 *)((int)puVar5 + 1);
-            }
+            puVar3 = (byte *)(local_4c);
+            puVar5 = (byte *)(param_4);
+            memmove(puVar5, puVar3, uVar8); /* compiler REP MOVS byte copy */
             local_40 = 0;
           }
         }

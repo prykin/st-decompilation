@@ -109,7 +109,7 @@ undefined4 __thiscall STMineSetC::sub_00625730(STMineSetC *this)
                  ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
                   ((byte)(&DAT_008087e9)[(int)this_00[1].vtable * 0x51] < 8)))) {
                 bVar1 = *(byte *)&this_00[1].vtable;
-                bVar2 = *(byte *)&this->field_0262;
+                bVar2 = (byte)this->field_0262;
                 if (DAT_00808a8f == '\0') {
                   if (bVar1 == bVar2) {
 LAB_006259bf:
@@ -327,7 +327,7 @@ LAB_00625d60:
                ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
                 ((byte)(&DAT_008087e9)[pSVar14->field_0024 * 0x51] < 8)))) {
               bVar1 = *(byte *)&pSVar14->field_0024;
-              bVar2 = *(byte *)&this->field_0262;
+              bVar2 = (byte)this->field_0262;
               if (DAT_00808a8f == '\0') {
                 if (bVar1 == bVar2) {
 LAB_00625efc:

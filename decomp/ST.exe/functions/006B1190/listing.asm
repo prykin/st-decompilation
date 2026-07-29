@@ -1,4 +1,4 @@
-FUN_006b1190:
+DArrayGetNext:
 006B1190  53                        PUSH EBX
 006B1191  8B D9                     MOV EBX,ECX
 006B1193  8B 43 04                  MOV EAX,dword ptr [EBX + 0x4]

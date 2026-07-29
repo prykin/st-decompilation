@@ -1382,7 +1382,7 @@ LAB_004fb69f:
         Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,uVar22,0xffffffff,uVar12,uVar7);
       }
       else if (DAT_0080c4d3 == 4) {
-        if (this_00->field_0120 - this_00->field_00F8 < this_00->field_00F0) {
+        if ((int)(this_00->field_0120 - this_00->field_00F8) < this_00->field_00F0) {
           this_00->field_00F0 = this_00->field_00F0 + -10;
         }
         iVar5 = this_00->field_0120 - this_00->field_00F8;
@@ -1423,7 +1423,7 @@ LAB_004fb8d0:
         }
         break;
       case 3:
-        if (this_00->field_0094 - this_00->field_0118 < this_00->field_0110) {
+        if ((int)(this_00->field_0094 - this_00->field_0118) < this_00->field_0110) {
           this_00->field_0110 = this_00->field_0110 + -10;
         }
         iVar5 = this_00->field_0094 - this_00->field_0118;

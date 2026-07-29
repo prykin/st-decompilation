@@ -34,8 +34,8 @@ void __thiscall MTestTy::NoneMTest(MTestTy *this)
       iVar3 = HoloTy::NextFas(g_holo_00811778);
       if (iVar3 == 0) {
         pMVar2->field_00B3 = 0;
-        if (-1 < g_holo_00811778->field_0003) {
-          FUN_006b3af0((int *)g_ddxContext_008075A8,g_holo_00811778->field_0003);
+        if (-1 < (int)*(uint *)&g_holo_00811778->field_0x3) {
+          FUN_006b3af0((int *)g_ddxContext_008075A8,*(uint *)&g_holo_00811778->field_0x3);
         }
       }
     }

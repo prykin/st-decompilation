@@ -1,5 +1,3 @@
-#include "../../pseudocode_runtime.h"
-
 
 /* [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
@@ -9,24 +7,24 @@ void FUN_00496e40(int param_1,int param_2,undefined4 param_3,int param_4)
 
 {
   int iVar1;
-  uint uVar2;
-  int iVar3;
-  void *pvVar4;
+  uint index;
+  int iVar2;
+  void *pvVar3;
 
-  uVar2 = thunk_FUN_00496a90(param_1,param_2,0,param_3,param_4,&param_4);
-  if (-1 < (int)uVar2) {
-    if (uVar2 < g_dArray_007FB270->count) {
-      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(g_dArray_007FB270, uVar2) (runtime stride) */
-      pvVar4 = (void *)(g_dArray_007FB270->elementSize * uVar2 + (int)g_dArray_007FB270->data);
+  index = thunk_FUN_00496a90(param_1,param_2,0,param_3,param_4,&param_4);
+  if (-1 < (int)index) {
+    if (index < g_array_007FB270->count) {
+      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(g_array_007FB270, index) (runtime stride) */
+      pvVar3 = (void *)(g_array_007FB270->elementSize * index + (int)g_array_007FB270->data);
     }
     else {
-      pvVar4 = (void *)0x0;
+      pvVar3 = (void *)0x0;
     }
-    thunk_FUN_00496b30(uVar2,*(int *)((int)pvVar4 + 8),0);
-    iVar1 = *(int *)((int)pvVar4 + 8);
-    FUN_006b0c70(g_dArray_007FB270,uVar2);
-    iVar3 = thunk_FUN_00496f00(iVar1);
-    if (iVar3 == 0) {
+    thunk_FUN_00496b30(index,*(int *)((int)pvVar3 + 8),0);
+    iVar1 = *(int *)((int)pvVar3 + 8);
+    DArrayRemoveAt(g_array_007FB270,index);
+    iVar2 = thunk_FUN_00496f00(iVar1);
+    if (iVar2 == 0) {
       FreeAndNull((void **)(&DAT_007fb24c + iVar1));
     }
   }

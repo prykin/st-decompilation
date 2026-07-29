@@ -11,10 +11,9 @@ undefined4 * __thiscall TraksClassTy::PrepareToSave(TraksClassTy *this,uint *par
   code *pcVar1;
   int errorCode;
   int iVar2;
-  undefined4 *puVar3;
-  uint uVar4;
+  byte *puVar3;
   uint uVar5;
-  undefined4 *puVar6;
+  byte *puVar6;
   InternalExceptionFrame local_58;
   TraksClassTy *local_14;
   uint local_10;
@@ -39,18 +38,9 @@ undefined4 * __thiscall TraksClassTy::PrepareToSave(TraksClassTy *this,uint *par
     local_8[6] = local_14->field_001C;
     *(bool *)(local_8 + 7) = local_c != (undefined4 *)0x0;
     if (local_c != (undefined4 *)0x0) {
-      puVar3 = local_c;
-      puVar6 = local_8 + 0x17;
-      for (uVar4 = uVar5 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
-        *puVar6 = *puVar3;
-        puVar3 = puVar3 + 1;
-        puVar6 = puVar6 + 1;
-      }
-      for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-        *(undefined1 *)puVar6 = *(undefined1 *)puVar3;
-        puVar3 = (undefined4 *)((int)puVar3 + 1);
-        puVar6 = (undefined4 *)((int)puVar6 + 1);
-      }
+      puVar3 = (byte *)(local_c);
+      puVar6 = (byte *)(local_8 + 0x17);
+      memmove(puVar6, puVar3, uVar5); /* compiler REP MOVS byte copy */
       FreeAndNull(&local_c);
     }
     g_currentExceptionFrame = local_58.previous;

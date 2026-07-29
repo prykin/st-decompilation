@@ -105,7 +105,8 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
   AnonShape_00652810_4F58F813 *local_178;
   int local_174;
   DArrayTy *local_170;
-  undefined1 local_16c [12];
+  uint local_16c;
+  DArrayTy *pDStack_164;
   DArrayTy *local_160;
   DArrayTy *local_15c;
   uint *local_158;
@@ -190,16 +191,15 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                 }
                 iVar7 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::
                         thunk_FUN_00672440((AnonReceiver_0064A970 *)this_00,&this_00->field_04FA,
-                                           (int)*(short *)&pAVar28->field_0x9,(short *)local_16c);
+                                           (int)*(short *)&pAVar28->field_0x9,(short *)&local_16c);
                 uVar17 = uVar32;
                 if (iVar7 < 0) {
                   iVar36 = this_00->field_0084;
-                  pcVar9 = &this_00->field_0x4;
+                  pcVar9 = &this_00->field_0004;
                 }
                 else {
                   if (local_9c == '\b') {
-                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                    if ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x0) {
+                    if (pDStack_164 != (DArrayTy *)0x0) {
                       *(char *)pAVar28 = '\x01';
                       pAVar28->field_000B = 0;
                       pAVar29 = pAVar28->field_000F;
@@ -218,9 +218,9 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                           iVar7 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::
                                   thunk_FUN_00672440((AnonReceiver_0064A970 *)this_00,
                                                      &this_00->field_04FA,(int)*psVar10,
-                                                     (short *)local_16c);
+                                                     (short *)&local_16c);
                           if (iVar7 < 0) {
-                            thunk_FUN_0064d0e0(this_00,iVar7,&this_00->field_0x4,uVar32,-1);
+                            thunk_FUN_0064d0e0(this_00,iVar7,&this_00->field_0004,uVar32,-1);
                             goto cf_common_join_00659A73;
                           }
                           if (iVar7 != 0x19) {
@@ -232,20 +232,17 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                 if (iVar7 != 0x76c) {
                                   switch(iVar7) {
                                   case 0x5dc:
-                                    iVar36 = thunk_FUN_00651010((short *)local_16c);
+                                    iVar36 = thunk_FUN_00651010((short *)&local_16c);
                                     if (iVar36 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                       iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                      if ((iVar36 != 8) ||
-                                         ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar12 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)local_16c._8_4_,(uint)local_160
-                                                             ,&local_34.flags);
+                                                             (char *)pDStack_164,(uint)local_160,
+                                                             &local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           pDVar25 = &local_34;
                                           local_c = pDVar12;
@@ -263,20 +260,17 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                     }
                                     break;
                                   case 0x5dd:
-                                    iVar36 = thunk_FUN_00651120((int)local_16c);
+                                    iVar36 = thunk_FUN_00651120((int)&local_16c);
                                     if (iVar36 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                       iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                      if ((iVar36 != 8) ||
-                                         ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar12 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)local_16c._8_4_,(uint)local_160
-                                                             ,&local_34.flags);
+                                                             (char *)pDStack_164,(uint)local_160,
+                                                             &local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_10 = (AiFltClassTy *)&local_34;
                                           local_c = pDVar12;
@@ -312,20 +306,17 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                     }
                                     break;
                                   case 0x5de:
-                                    iVar36 = thunk_FUN_00651160((int)local_16c);
+                                    iVar36 = thunk_FUN_00651160((int)&local_16c);
                                     if (iVar36 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                       iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                      if ((iVar36 != 8) ||
-                                         ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar12 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)local_16c._8_4_,(uint)local_160
-                                                             ,&local_34.flags);
+                                                             (char *)pDStack_164,(uint)local_160,
+                                                             &local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_10 = (AiFltClassTy *)&local_34;
                                           local_c = pDVar12;
@@ -361,20 +352,17 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                     }
                                     break;
                                   case 0x5df:
-                                    iVar36 = thunk_FUN_00651160((int)local_16c);
+                                    iVar36 = thunk_FUN_00651160((int)&local_16c);
                                     if (iVar36 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                       iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                      if ((iVar36 != 8) ||
-                                         ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar12 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)local_16c._8_4_,(uint)local_160
-                                                             ,&local_34.flags);
+                                                             (char *)pDStack_164,(uint)local_160,
+                                                             &local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_10 = (AiFltClassTy *)&local_34;
                                           local_8 = pDVar12;
@@ -413,20 +401,17 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                     }
                                     break;
                                   case 0x5e0:
-                                    iVar36 = thunk_FUN_006511a0((int)local_16c);
+                                    iVar36 = thunk_FUN_006511a0((int)&local_16c);
                                     if (iVar36 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                       iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                      if ((iVar36 != 8) ||
-                                         ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar12 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)local_16c._8_4_,(uint)local_160
-                                                             ,&local_34.flags);
+                                                             (char *)pDStack_164,(uint)local_160,
+                                                             &local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           pDVar25 = &local_34;
                                           local_c = pDVar12;
@@ -449,20 +434,17 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                     }
                                     break;
                                   case 0x5e1:
-                                    iVar36 = thunk_FUN_006511a0((int)local_16c);
+                                    iVar36 = thunk_FUN_006511a0((int)&local_16c);
                                     if (iVar36 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                       iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                      if ((iVar36 != 8) ||
-                                         ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar12 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)local_16c._8_4_,(uint)local_160
-                                                             ,&local_34.flags);
+                                                             (char *)pDStack_164,(uint)local_160,
+                                                             &local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           pDVar25 = &local_34;
                                           local_c = pDVar12;
@@ -485,20 +467,17 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                     }
                                     break;
                                   case 0x5e2:
-                                    iVar36 = thunk_FUN_006511e0((int)local_16c);
+                                    iVar36 = thunk_FUN_006511e0((int)&local_16c);
                                     if (iVar36 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                       iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                      if ((iVar36 != 8) ||
-                                         ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar12 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)local_16c._8_4_,(uint)local_160
-                                                             ,&local_34.flags);
+                                                             (char *)pDStack_164,(uint)local_160,
+                                                             &local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_10 = (AiFltClassTy *)&local_34;
                                           local_c = pDVar12;
@@ -549,20 +528,17 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                     }
                                     break;
                                   case 0x5e3:
-                                    iVar36 = thunk_FUN_00651250((int)local_16c);
+                                    iVar36 = thunk_FUN_00651250((int)&local_16c);
                                     if (iVar36 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                       iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                      if ((iVar36 != 8) ||
-                                         ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar12 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)local_16c._8_4_,(uint)local_160
-                                                             ,&local_34.flags);
+                                                             (char *)pDStack_164,(uint)local_160,
+                                                             &local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_10 = (AiFltClassTy *)&local_34;
                                           local_c = pDVar12;
@@ -596,20 +572,17 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                     }
                                     break;
                                   case 0x5e4:
-                                    iVar36 = thunk_FUN_00651290((short *)local_16c);
+                                    iVar36 = thunk_FUN_00651290((short *)&local_16c);
                                     if (iVar36 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                       iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                      if ((iVar36 != 8) ||
-                                         ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar12 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)local_16c._8_4_,(uint)local_160
-                                                             ,&local_34.flags);
+                                                             (char *)pDStack_164,(uint)local_160,
+                                                             &local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_10 = (AiFltClassTy *)&local_34;
                                           local_c = pDVar12;
@@ -680,20 +653,17 @@ LAB_006577ae:
                                     }
                                     break;
                                   case 0x5e5:
-                                    iVar36 = thunk_FUN_006514d0((short *)local_16c);
+                                    iVar36 = thunk_FUN_006514d0((short *)&local_16c);
                                     if (iVar36 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                       iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                      if ((iVar36 != 8) ||
-                                         ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar12 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)local_16c._8_4_,(uint)local_160
-                                                             ,&local_34.flags);
+                                                             (char *)pDStack_164,(uint)local_160,
+                                                             &local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_10 = (AiFltClassTy *)&local_34;
                                           local_c = pDVar12;
@@ -756,20 +726,17 @@ LAB_00657a41:
                                     }
                                     break;
                                   case 0x5e6:
-                                    iVar36 = thunk_FUN_006513c0((short *)local_16c);
+                                    iVar36 = thunk_FUN_006513c0((short *)&local_16c);
                                     if (iVar36 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                       iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                      if ((iVar36 != 8) ||
-                                         ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar12 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)local_16c._8_4_,(uint)local_160
-                                                             ,&local_34.flags);
+                                                             (char *)pDStack_164,(uint)local_160,
+                                                             &local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_10 = (AiFltClassTy *)&local_34;
                                           local_c = pDVar12;
@@ -836,20 +803,17 @@ LAB_006578fe:
                                     }
                                     break;
                                   case 0x5e7:
-                                    iVar36 = thunk_FUN_006515b0((short *)local_16c);
+                                    iVar36 = thunk_FUN_006515b0((short *)&local_16c);
                                     if (iVar36 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                       iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                      if ((iVar36 != 8) ||
-                                         ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar12 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)local_16c._8_4_,(uint)local_160
-                                                             ,&local_34.flags);
+                                                             (char *)pDStack_164,(uint)local_160,
+                                                             &local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_8 = &local_34;
                                           local_c = pDVar12;
@@ -924,20 +888,17 @@ LAB_00657bce:
                                     }
                                     break;
                                   case 0x5e8:
-                                    iVar36 = thunk_FUN_00651730((int)local_16c);
+                                    iVar36 = thunk_FUN_00651730((int)&local_16c);
                                     if (iVar36 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                       iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                      if ((iVar36 != 8) ||
-                                         ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar12 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)local_16c._8_4_,(uint)local_160
-                                                             ,&local_34.flags);
+                                                             (char *)pDStack_164,(uint)local_160,
+                                                             &local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_8 = &local_34;
                                           local_c = pDVar12;
@@ -985,20 +946,17 @@ LAB_00657ccf:
                                     break;
                                   case 0x5e9:
                                     iVar36 = thunk_FUN_00651770((AnonShape_00651770_8F77396F *)
-                                                                local_16c);
+                                                                &local_16c);
                                     if (iVar36 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                       iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                      if ((iVar36 != 8) ||
-                                         ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar12 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)local_16c._8_4_,(uint)local_160
-                                                             ,&local_34.flags);
+                                                             (char *)pDStack_164,(uint)local_160,
+                                                             &local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_8 = &local_34;
                                           local_c = pDVar12;
@@ -1047,20 +1005,17 @@ LAB_00657dd9:
                                     }
                                     break;
                                   case 0x5ea:
-                                    iVar36 = thunk_FUN_006517c0((short *)local_16c);
+                                    iVar36 = thunk_FUN_006517c0((short *)&local_16c);
                                     if (iVar36 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                       iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                      if ((iVar36 != 8) ||
-                                         ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar12 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)local_16c._8_4_,(uint)local_160
-                                                             ,&local_34.flags);
+                                                             (char *)pDStack_164,(uint)local_160,
+                                                             &local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_8 = &local_34;
                                           local_c = pDVar12;
@@ -1123,20 +1078,17 @@ LAB_00657f1c:
                                     }
                                     break;
                                   case 0x5eb:
-                                    iVar36 = thunk_FUN_00651880((int)local_16c);
+                                    iVar36 = thunk_FUN_00651880((int)&local_16c);
                                     if (iVar36 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                       iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                      if ((iVar36 != 8) ||
-                                         ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar12 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)local_16c._8_4_,(uint)local_160
-                                                             ,&local_34.flags);
+                                                             (char *)pDStack_164,(uint)local_160,
+                                                             &local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_8 = &local_34;
                                           local_c = pDVar12;
@@ -1196,20 +1148,17 @@ LAB_0065806e:
                                     }
                                     break;
                                   case 0x5ec:
-                                    iVar36 = thunk_FUN_006518c0((int)local_16c);
+                                    iVar36 = thunk_FUN_006518c0((int)&local_16c);
                                     if (iVar36 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                       iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                      if ((iVar36 != 8) ||
-                                         ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar12 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)local_16c._8_4_,(uint)local_160
-                                                             ,&local_34.flags);
+                                                             (char *)pDStack_164,(uint)local_160,
+                                                             &local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_8 = &local_34;
                                           local_c = pDVar12;
@@ -1257,20 +1206,17 @@ LAB_00658177:
                                     }
                                     break;
                                   case 0x5ed:
-                                    iVar36 = thunk_FUN_00651df0((short *)local_16c);
+                                    iVar36 = thunk_FUN_00651df0((short *)&local_16c);
                                     if (iVar36 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                       iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                      if ((iVar36 != 8) ||
-                                         ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar12 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)local_16c._8_4_,(uint)local_160
-                                                             ,&local_34.flags);
+                                                             (char *)pDStack_164,(uint)local_160,
+                                                             &local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_8 = &local_34;
                                           local_c = pDVar12;
@@ -1338,20 +1284,17 @@ LAB_00658b70:
                                     }
                                     break;
                                   case 0x5ee:
-                                    iVar36 = thunk_FUN_00651ed0((short *)local_16c);
+                                    iVar36 = thunk_FUN_00651ed0((short *)&local_16c);
                                     if (iVar36 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                       iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                      if ((iVar36 != 8) ||
-                                         ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar12 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)local_16c._8_4_,(uint)local_160
-                                                             ,&local_34.flags);
+                                                             (char *)pDStack_164,(uint)local_160,
+                                                             &local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_8 = &local_34;
                                           local_c = pDVar12;
@@ -1429,20 +1372,17 @@ LAB_00658d01:
                                     }
                                     break;
                                   case 0x5ef:
-                                    iVar36 = thunk_FUN_00652030((short *)local_16c);
+                                    iVar36 = thunk_FUN_00652030((short *)&local_16c);
                                     if (iVar36 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                       iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                      if ((iVar36 != 8) ||
-                                         ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar12 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)local_16c._8_4_,(uint)local_160
-                                                             ,&local_34.flags);
+                                                             (char *)pDStack_164,(uint)local_160,
+                                                             &local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_8 = &local_34;
                                           local_c = pDVar12;
@@ -1513,20 +1453,17 @@ LAB_00658e8e:
                                     }
                                     break;
                                   case 0x5f0:
-                                    iVar36 = thunk_FUN_00652100((short *)local_16c);
+                                    iVar36 = thunk_FUN_00652100((short *)&local_16c);
                                     if (iVar36 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                       iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                      if ((iVar36 != 8) ||
-                                         ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar12 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)local_16c._8_4_,(uint)local_160
-                                                             ,&local_34.flags);
+                                                             (char *)pDStack_164,(uint)local_160,
+                                                             &local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_8 = &local_34;
                                           local_c = pDVar12;
@@ -1587,20 +1524,17 @@ LAB_00658fc8:
                                     }
                                     break;
                                   case 0x5f1:
-                                    iVar36 = thunk_FUN_00651900((short *)local_16c);
+                                    iVar36 = thunk_FUN_00651900((short *)&local_16c);
                                     if (iVar36 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                       iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                      if ((iVar36 != 8) ||
-                                         ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar12 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)local_16c._8_4_,(uint)local_160
-                                                             ,&local_34.flags);
+                                                             (char *)pDStack_164,(uint)local_160,
+                                                             &local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_8 = &local_34;
                                           local_c = pDVar12;
@@ -1665,20 +1599,17 @@ LAB_006582b3:
                                     }
                                     break;
                                   case 0x5f2:
-                                    iVar36 = thunk_FUN_006519e0((short *)local_16c);
+                                    iVar36 = thunk_FUN_006519e0((short *)&local_16c);
                                     if (iVar36 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                       iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                      if ((iVar36 != 8) ||
-                                         ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar12 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)local_16c._8_4_,(uint)local_160
-                                                             ,&local_34.flags);
+                                                             (char *)pDStack_164,(uint)local_160,
+                                                             &local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_8 = &local_34;
                                           local_c = pDVar12;
@@ -1746,20 +1677,17 @@ LAB_00658416:
                                     }
                                     break;
                                   case 0x5f3:
-                                    iVar36 = thunk_FUN_00651b40((short *)local_16c);
+                                    iVar36 = thunk_FUN_00651b40((short *)&local_16c);
                                     if (iVar36 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                       iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                      if ((iVar36 != 8) ||
-                                         ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar12 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)local_16c._8_4_,(uint)local_160
-                                                             ,&local_34.flags);
+                                                             (char *)pDStack_164,(uint)local_160,
+                                                             &local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_8 = &local_34;
                                           local_c = pDVar12;
@@ -1818,20 +1746,17 @@ LAB_00658543:
                                     }
                                     break;
                                   case 0x5f4:
-                                    iVar36 = thunk_FUN_00651bd0((short *)local_16c);
+                                    iVar36 = thunk_FUN_00651bd0((short *)&local_16c);
                                     if (iVar36 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                       iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                      if ((iVar36 != 8) ||
-                                         ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar12 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)local_16c._8_4_,(uint)local_160
-                                                             ,&local_34.flags);
+                                                             (char *)pDStack_164,(uint)local_160,
+                                                             &local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_8 = &local_34;
                                           local_c = pDVar12;
@@ -1890,20 +1815,17 @@ LAB_00658670:
                                     }
                                     break;
                                   case 0x5f5:
-                                    iVar36 = thunk_FUN_00651cd0((short *)local_16c);
+                                    iVar36 = thunk_FUN_00651cd0((short *)&local_16c);
                                     if (iVar36 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                       iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                      if ((iVar36 != 8) ||
-                                         ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar12 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)local_16c._8_4_,(uint)local_160
-                                                             ,&local_34.flags);
+                                                             (char *)pDStack_164,(uint)local_160,
+                                                             &local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_8 = &local_34;
                                           local_c = pDVar12;
@@ -1971,20 +1893,17 @@ LAB_006587e2:
                                     }
                                     break;
                                   case 0x5f6:
-                                    iVar36 = thunk_FUN_00651db0((int)local_16c);
+                                    iVar36 = thunk_FUN_00651db0((int)&local_16c);
                                     if (iVar36 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                       iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                      if ((iVar36 != 8) ||
-                                         ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar12 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)local_16c._8_4_,(uint)local_160
-                                                             ,&local_34.flags);
+                                                             (char *)pDStack_164,(uint)local_160,
+                                                             &local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_8 = &local_34;
                                           local_c = pDVar12;
@@ -2032,20 +1951,17 @@ LAB_006588eb:
                                     }
                                     break;
                                   case 0x5f7:
-                                    iVar36 = thunk_FUN_00651c60((short *)local_16c);
+                                    iVar36 = thunk_FUN_00651c60((short *)&local_16c);
                                     if (iVar36 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                       iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                      if ((iVar36 != 8) ||
-                                         ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar12 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)local_16c._8_4_,(uint)local_160
-                                                             ,&local_34.flags);
+                                                             (char *)pDStack_164,(uint)local_160,
+                                                             &local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_8 = &local_34;
                                           local_c = pDVar12;
@@ -2098,20 +2014,17 @@ LAB_006589fe:
                                     }
                                     break;
                                   case 0x5f8:
-                                    iVar36 = thunk_FUN_006521c0((short *)local_16c);
+                                    iVar36 = thunk_FUN_006521c0((short *)&local_16c);
                                     if (iVar36 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                       iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                      if ((iVar36 != 8) ||
-                                         ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar12 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)local_16c._8_4_,(uint)local_160
-                                                             ,&local_34.flags);
+                                                             (char *)pDStack_164,(uint)local_160,
+                                                             &local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_8 = &local_34;
                                           local_c = pDVar12;
@@ -2183,20 +2096,17 @@ LAB_00659143:
                                     }
                                     break;
                                   case 0x5f9:
-                                    iVar36 = thunk_FUN_00652460((short *)local_16c);
+                                    iVar36 = thunk_FUN_00652460((short *)&local_16c);
                                     if (iVar36 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                       iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                      if ((iVar36 != 8) ||
-                                         ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar12 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)local_16c._8_4_,(uint)local_160
-                                                             ,&local_34.flags);
+                                                             (char *)pDStack_164,(uint)local_160,
+                                                             &local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_8 = &local_34;
                                           local_c = pDVar12;
@@ -2264,20 +2174,17 @@ LAB_006594ec:
                                     }
                                     break;
                                   case 0x5fa:
-                                    iVar36 = thunk_FUN_00652540((short *)local_16c);
+                                    iVar36 = thunk_FUN_00652540((short *)&local_16c);
                                     if (iVar36 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                       iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                      if ((iVar36 != 8) ||
-                                         ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar12 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)local_16c._8_4_,(uint)local_160
-                                                             ,&local_34.flags);
+                                                             (char *)pDStack_164,(uint)local_160,
+                                                             &local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_8 = &local_34;
                                           local_c = pDVar12;
@@ -2342,20 +2249,17 @@ LAB_00659640:
                                     }
                                     break;
                                   case 0x5fb:
-                                    iVar36 = thunk_FUN_006525e0((short *)local_16c);
+                                    iVar36 = thunk_FUN_006525e0((short *)&local_16c);
                                     if (iVar36 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                       iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                      if ((iVar36 != 8) ||
-                                         ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar12 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)local_16c._8_4_,(uint)local_160
-                                                             ,&local_34.flags);
+                                                             (char *)pDStack_164,(uint)local_160,
+                                                             &local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_8 = &local_34;
                                           local_c = pDVar12;
@@ -2418,20 +2322,17 @@ LAB_00659785:
                                     }
                                     break;
                                   case 0x5fc:
-                                    iVar36 = thunk_FUN_00652670((short *)local_16c);
+                                    iVar36 = thunk_FUN_00652670((short *)&local_16c);
                                     if (iVar36 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                       iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                      if ((iVar36 != 8) ||
-                                         ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar12 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)local_16c._8_4_,(uint)local_160
-                                                             ,&local_34.flags);
+                                                             (char *)pDStack_164,(uint)local_160,
+                                                             &local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_8 = &local_34;
                                           local_c = pDVar12;
@@ -2494,20 +2395,17 @@ LAB_006598ca:
                                     }
                                     break;
                                   case 0x5fd:
-                                    iVar36 = thunk_FUN_00652300((short *)local_16c);
+                                    iVar36 = thunk_FUN_00652300((short *)&local_16c);
                                     if (iVar36 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                       iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                      if ((iVar36 != 8) ||
-                                         ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar12 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)local_16c._8_4_,(uint)local_160
-                                                             ,&local_34.flags);
+                                                             (char *)pDStack_164,(uint)local_160,
+                                                             &local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_8 = &local_34;
                                           local_c = pDVar12;
@@ -2604,20 +2502,17 @@ LAB_0065937a:
                                     }
                                     break;
                                   case 0x5fe:
-                                    iVar36 = thunk_FUN_00652700((short *)local_16c);
+                                    iVar36 = thunk_FUN_00652700((short *)&local_16c);
                                     if (iVar36 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                       iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                      if ((iVar36 != 8) ||
-                                         ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                      if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                         pDVar12 = (DArrayTy *)
                                                   SubmarineTitans::Recovered::HiddenThis::
                                                   AnonReceiver_0064A970::sub_00668F50
                                                             ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)local_16c._8_4_,(uint)local_160
-                                                             ,&local_34.flags);
+                                                             (char *)pDStack_164,(uint)local_160,
+                                                             &local_34.flags);
                                         if (0 < (int)pDVar12) {
                                           local_8 = &local_34;
                                           local_c = pDVar12;
@@ -2690,7 +2585,7 @@ LAB_00659a1c:
                                   }
                                   goto cf_common_join_00652A99;
                                 }
-                                iVar7 = thunk_FUN_006527d0((int)local_16c);
+                                iVar7 = thunk_FUN_006527d0((int)&local_16c);
                                 if (iVar7 == 0) {
                                   iVar7 = -1;
                                   uVar17 = uVar32;
@@ -2698,14 +2593,13 @@ LAB_00659a1c:
                                   thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar17,iVar7);
                                 }
                                 else {
-                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                  DAT_0080c51e = (DArrayTy *)local_16c._8_4_;
+                                  DAT_0080c51e = pDStack_164;
                                 }
                               }
                               goto cf_common_join_00659A73;
                             }
                             if (iVar7 == 0x5c8) {
-                              iVar7 = thunk_FUN_00650ad0((int)local_16c);
+                              iVar7 = thunk_FUN_00650ad0((int)&local_16c);
                               if (iVar7 == 0) {
                                 iVar7 = -1;
                                 uVar17 = uVar32;
@@ -2715,21 +2609,18 @@ LAB_00659a1c:
                               else {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                 iVar7 = (*(code *)this_00->field_0000->field_0018)();
-                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                if ((iVar7 == 8) && ((DArrayTy *)local_16c._8_4_ == (DArrayTy *)0x9)
-                                   ) {
+                                if ((iVar7 == 8) && (pDStack_164 == (DArrayTy *)0x9)) {
                                   iVar7 = -1;
                                   uVar17 = uVar32;
                                   pcVar9 = thunk_FUN_00674af0(0x5c8);
                                   thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar17,iVar7);
                                 }
                                 else {
-                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   pDVar12 = (DArrayTy *)
                                             SubmarineTitans::Recovered::HiddenThis::
                                             AnonReceiver_0064A970::sub_00668F50
                                                       ((AnonReceiver_0064A970 *)this_00,
-                                                       (char *)local_16c._8_4_,(uint)local_160,
+                                                       (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
                                   if (0 < (int)pDVar12) {
                                     pDVar25 = &local_34;
@@ -2769,21 +2660,19 @@ LAB_00659a1c:
                             }
                             switch(iVar7) {
                             case 0x594:
-                              iVar36 = thunk_FUN_0064feb0((int)local_16c);
+                              iVar36 = thunk_FUN_0064feb0((int)&local_16c);
                               if (iVar36 == 0) break;
                               if (local_160 != (DArrayTy *)0x0) {
-                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                _EnumArt(0,(byte *)local_16c._8_4_,0,0,0,-1,-1,-1,thunk_FUN_0064dd70
-                                         ,local_160);
+                                _EnumArt(0,(byte *)pDStack_164,0,0,0,-1,-1,-1,thunk_FUN_0064dd70,
+                                         local_160);
                               }
                               goto cf_common_join_00659A73;
                             case 0x595:
-                              iVar36 = thunk_FUN_0064fef0((short *)local_16c);
+                              iVar36 = thunk_FUN_0064fef0((short *)&local_16c);
                               if (iVar36 == 0) break;
-                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                              if ((((DArrayTy *)local_16c._8_4_ == (DArrayTy *)0xdd) ||
-                                  ((DArrayTy *)local_16c._8_4_ == (DArrayTy *)0xde)) ||
-                                 ((DArrayTy *)local_16c._8_4_ == (DArrayTy *)0xe0)) {
+                              if (((pDStack_164 == (DArrayTy *)0xdd) ||
+                                  (pDStack_164 == (DArrayTy *)0xde)) ||
+                                 (pDStack_164 == (DArrayTy *)0xe0)) {
                                 bVar35 = true;
                               }
                               else {
@@ -2793,77 +2682,67 @@ LAB_00659a1c:
                                 local_18c = local_160;
                                 local_190 = local_15c;
                                 local_184 = local_158;
-                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                iVar36 = thunk_FUN_004b1cf0(local_16c._8_4_,(int *)&local_18c,
+                                iVar36 = thunk_FUN_004b1cf0((int)pDStack_164,(int *)&local_18c,
                                                             (int *)&local_190,(int *)&local_184);
                                 if (iVar36 == 0) goto LAB_00655f4c;
-                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                thunk_FUN_00580450(local_18c,local_190,local_184,local_16c._8_4_,
+                                thunk_FUN_00580450(local_18c,local_190,local_184,pDStack_164,
                                                    local_154);
                               }
                               goto cf_common_join_00659A73;
                             case 0x596:
-                              iVar36 = thunk_FUN_0064ff70((short *)local_16c);
+                              iVar36 = thunk_FUN_0064ff70((short *)&local_16c);
                               if (iVar36 == 0) break;
                               DAT_008118fc = 0;
-                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                              _EnumRCField((short)local_16c._8_4_,(short)local_160,(short)local_15c,
+                              _EnumRCField((short)pDStack_164,(short)local_160,(short)local_15c,
                                            (short)local_158,(short)local_154,(short)local_150,
                                            (short)local_14c,thunk_FUN_0064e260,&local_148);
                               goto cf_common_join_00659A73;
                             case 0x597:
-                              iVar36 = thunk_FUN_00650090((short *)local_16c);
+                              iVar36 = thunk_FUN_00650090((short *)&local_16c);
                               if (iVar36 == 0) break;
-                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                               _EnumRCField((short)local_15c,(short)local_158,(short)local_154,
                                            (short)local_150,(short)local_14c,(short)local_148,
                                            (short)local_144,thunk_FUN_0064e290,
-                                           (int)local_160 << 0x10 | local_16c._8_4_ & 0xffff);
+                                           (int)local_160 << 0x10 | (uint)pDStack_164 & 0xffff);
                               goto cf_common_join_00659A73;
                             case 0x598:
-                              iVar36 = thunk_FUN_006501a0((short *)local_16c);
+                              iVar36 = thunk_FUN_006501a0((short *)&local_16c);
                               if (iVar36 != 0) {
-                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                iVar36 = _CreateDest(this_00,(short)local_16c._8_4_,(short)local_160
-                                                     ,(short)local_15c,(short)local_158,
+                                iVar36 = _CreateDest(this_00,(short)pDStack_164,(short)local_160,
+                                                     (short)local_15c,(short)local_158,
                                                      (short)local_154,(char *)local_150,local_14c,
                                                      local_148);
                                 goto LAB_00655f44;
                               }
                               break;
                             case 0x599:
-                              iVar36 = thunk_FUN_00650240((short *)local_16c);
+                              iVar36 = thunk_FUN_00650240((short *)&local_16c);
                               if (iVar36 == 0) break;
                               DAT_008118fc = 0;
-                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                              _EnumDest((byte *)local_160,(char)local_16c._8_4_,(short)local_15c,
+                              _EnumDest((byte *)local_160,(char)pDStack_164,(short)local_15c,
                                         (short)local_158,(short)local_154,(short)local_150,
                                         (short)local_14c,(short)local_148,thunk_FUN_0064df30,
                                         &local_144);
                               goto cf_common_join_00659A73;
                             case 0x59a:
-                              iVar36 = thunk_FUN_00650370((int)local_16c);
+                              iVar36 = thunk_FUN_00650370((int)&local_16c);
                               if (iVar36 == 0) break;
                               if (local_160 != (DArrayTy *)0x0) {
-                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                _EnumDest((byte *)local_16c._8_4_,-1,0,0,0,-1,-1,-1,
-                                          thunk_FUN_0064df70,local_160);
+                                _EnumDest((byte *)pDStack_164,-1,0,0,0,-1,-1,-1,thunk_FUN_0064df70,
+                                          local_160);
                               }
                               goto cf_common_join_00659A73;
                             case 0x59b:
-                              iVar36 = thunk_FUN_006503b0((short *)local_16c);
+                              iVar36 = thunk_FUN_006503b0((short *)&local_16c);
                               if (iVar36 != 0) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                 iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                if ((iVar36 != 8) ||
-                                   ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar12 = (DArrayTy *)
                                             SubmarineTitans::Recovered::HiddenThis::
                                             AnonReceiver_0064A970::sub_00668F50
                                                       ((AnonReceiver_0064A970 *)this_00,
-                                                       (char *)local_16c._8_4_,(uint)local_160,
+                                                       (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
                                   if (0 < (int)pDVar12) {
                                     local_8 = &local_34;
@@ -2890,19 +2769,16 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x59c:
-                              iVar36 = thunk_FUN_00650480((short *)local_16c);
+                              iVar36 = thunk_FUN_00650480((short *)&local_16c);
                               if (iVar36 != 0) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                 iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                if ((iVar36 != 8) ||
-                                   ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar12 = (DArrayTy *)
                                             SubmarineTitans::Recovered::HiddenThis::
                                             AnonReceiver_0064A970::sub_00668F50
                                                       ((AnonReceiver_0064A970 *)this_00,
-                                                       (char *)local_16c._8_4_,(uint)local_160,
+                                                       (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
                                   if (0 < (int)pDVar12) {
                                     pDVar25 = &local_34;
@@ -2922,19 +2798,16 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x59d:
-                              iVar36 = thunk_FUN_00650600((short *)local_16c);
+                              iVar36 = thunk_FUN_00650600((short *)&local_16c);
                               if (iVar36 != 0) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                 iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                if ((iVar36 != 8) ||
-                                   ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar12 = (DArrayTy *)
                                             SubmarineTitans::Recovered::HiddenThis::
                                             AnonReceiver_0064A970::sub_00668F50
                                                       ((AnonReceiver_0064A970 *)this_00,
-                                                       (char *)local_16c._8_4_,(uint)local_160,
+                                                       (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
                                   if (0 < (int)pDVar12) {
                                     pDVar25 = &local_34;
@@ -2956,19 +2829,16 @@ LAB_00659a1c:
                             default:
                               goto cf_common_join_00659A73;
                             case 0x5aa:
-                              iVar36 = thunk_FUN_00650760((short *)local_16c);
+                              iVar36 = thunk_FUN_00650760((short *)&local_16c);
                               if (iVar36 != 0) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                 iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                if ((iVar36 != 8) ||
-                                   ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar12 = (DArrayTy *)
                                             SubmarineTitans::Recovered::HiddenThis::
                                             AnonReceiver_0064A970::sub_00668F50
                                                       ((AnonReceiver_0064A970 *)this_00,
-                                                       (char *)local_16c._8_4_,(uint)local_160,
+                                                       (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
                                   if (0 < (int)pDVar12) {
                                     pDVar25 = &local_34;
@@ -2985,19 +2855,16 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5ab:
-                              iVar36 = thunk_FUN_00650760((short *)local_16c);
+                              iVar36 = thunk_FUN_00650760((short *)&local_16c);
                               if (iVar36 != 0) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                 iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                if ((iVar36 != 8) ||
-                                   ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar12 = (DArrayTy *)
                                             SubmarineTitans::Recovered::HiddenThis::
                                             AnonReceiver_0064A970::sub_00668F50
                                                       ((AnonReceiver_0064A970 *)this_00,
-                                                       (char *)local_16c._8_4_,(uint)local_160,
+                                                       (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
                                   if (0 < (int)pDVar12) {
                                     pDVar25 = &local_34;
@@ -3014,19 +2881,16 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5ac:
-                              iVar36 = thunk_FUN_00650820((short *)local_16c);
+                              iVar36 = thunk_FUN_00650820((short *)&local_16c);
                               if (iVar36 != 0) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                 iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                if ((iVar36 != 8) ||
-                                   ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar12 = (DArrayTy *)
                                             SubmarineTitans::Recovered::HiddenThis::
                                             AnonReceiver_0064A970::sub_00668F50
                                                       ((AnonReceiver_0064A970 *)this_00,
-                                                       (char *)local_16c._8_4_,(uint)local_160,
+                                                       (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
                                   if (0 < (int)pDVar12) {
                                     local_8 = &local_34;
@@ -3054,19 +2918,16 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5ad:
-                              iVar36 = thunk_FUN_006508c0((short *)local_16c);
+                              iVar36 = thunk_FUN_006508c0((short *)&local_16c);
                               if (iVar36 != 0) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                 iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                if ((iVar36 != 8) ||
-                                   ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar12 = (DArrayTy *)
                                             SubmarineTitans::Recovered::HiddenThis::
                                             AnonReceiver_0064A970::sub_00668F50
                                                       ((AnonReceiver_0064A970 *)this_00,
-                                                       (char *)local_16c._8_4_,(uint)local_160,
+                                                       (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
                                   if (0 < (int)pDVar12) {
                                     pDVar25 = &local_34;
@@ -3083,19 +2944,16 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5ae:
-                              iVar36 = thunk_FUN_006509e0((int)local_16c);
+                              iVar36 = thunk_FUN_006509e0((int)&local_16c);
                               if (iVar36 != 0) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                 iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                if ((iVar36 != 8) ||
-                                   ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar12 = (DArrayTy *)
                                             SubmarineTitans::Recovered::HiddenThis::
                                             AnonReceiver_0064A970::sub_00668F50
                                                       ((AnonReceiver_0064A970 *)this_00,
-                                                       (char *)local_16c._8_4_,(uint)local_160,
+                                                       (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
                                   if (0 < (int)pDVar12) {
                                     pDVar25 = &local_34;
@@ -3111,19 +2969,16 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5af:
-                              iVar36 = thunk_FUN_00650a20((short *)local_16c);
+                              iVar36 = thunk_FUN_00650a20((short *)&local_16c);
                               if (iVar36 != 0) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                 iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                if ((iVar36 != 8) ||
-                                   ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar12 = (DArrayTy *)
                                             SubmarineTitans::Recovered::HiddenThis::
                                             AnonReceiver_0064A970::sub_00668F50
                                                       ((AnonReceiver_0064A970 *)this_00,
-                                                       (char *)local_16c._8_4_,(uint)local_160,
+                                                       (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
                                   if (0 < (int)pDVar12) {
                                     local_8 = &local_34;
@@ -3149,19 +3004,16 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5b0:
-                              iVar36 = thunk_FUN_00650a90((int)local_16c);
+                              iVar36 = thunk_FUN_00650a90((int)&local_16c);
                               if (iVar36 != 0) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                 iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                if ((iVar36 != 8) ||
-                                   ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar12 = (DArrayTy *)
                                             SubmarineTitans::Recovered::HiddenThis::
                                             AnonReceiver_0064A970::sub_00668F50
                                                       ((AnonReceiver_0064A970 *)this_00,
-                                                       (char *)local_16c._8_4_,(uint)local_160,
+                                                       (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
                                   if (0 < (int)pDVar12) {
                                     local_8 = &local_34;
@@ -3187,19 +3039,16 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5b1:
-                              iVar36 = thunk_FUN_006507e0((int)local_16c);
+                              iVar36 = thunk_FUN_006507e0((int)&local_16c);
                               if (iVar36 != 0) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                 iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                if ((iVar36 != 8) ||
-                                   ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar12 = (DArrayTy *)
                                             SubmarineTitans::Recovered::HiddenThis::
                                             AnonReceiver_0064A970::sub_00668F50
                                                       ((AnonReceiver_0064A970 *)this_00,
-                                                       (char *)local_16c._8_4_,(uint)local_160,
+                                                       (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
                                   if (0 < (int)pDVar12) {
                                     pDVar25 = &local_34;
@@ -3215,19 +3064,16 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5b2:
-                              iVar36 = thunk_FUN_006507e0((int)local_16c);
+                              iVar36 = thunk_FUN_006507e0((int)&local_16c);
                               if (iVar36 != 0) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                 iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                if ((iVar36 != 8) ||
-                                   ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar12 = (DArrayTy *)
                                             SubmarineTitans::Recovered::HiddenThis::
                                             AnonReceiver_0064A970::sub_00668F50
                                                       ((AnonReceiver_0064A970 *)this_00,
-                                                       (char *)local_16c._8_4_,(uint)local_160,
+                                                       (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
                                   if (0 < (int)pDVar12) {
                                     pDVar25 = &local_34;
@@ -3243,19 +3089,16 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5b3:
-                              iVar36 = thunk_FUN_00650940((short *)local_16c);
+                              iVar36 = thunk_FUN_00650940((short *)&local_16c);
                               if (iVar36 != 0) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                 iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                if ((iVar36 != 8) ||
-                                   ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar12 = (DArrayTy *)
                                             SubmarineTitans::Recovered::HiddenThis::
                                             AnonReceiver_0064A970::sub_00668F50
                                                       ((AnonReceiver_0064A970 *)this_00,
-                                                       (char *)local_16c._8_4_,(uint)local_160,
+                                                       (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
                                   if (0 < (int)pDVar12) {
                                     pDVar25 = &local_34;
@@ -3272,19 +3115,16 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5b4:
-                              iVar36 = thunk_FUN_00650b10((short *)local_16c);
+                              iVar36 = thunk_FUN_00650b10((short *)&local_16c);
                               if (iVar36 != 0) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                 iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                if ((iVar36 != 8) ||
-                                   ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar12 = (DArrayTy *)
                                             SubmarineTitans::Recovered::HiddenThis::
                                             AnonReceiver_0064A970::sub_00668F50
                                                       ((AnonReceiver_0064A970 *)this_00,
-                                                       (char *)local_16c._8_4_,(uint)local_160,
+                                                       (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
                                   if (0 < (int)pDVar12) {
                                     pDVar25 = &local_34;
@@ -3320,19 +3160,16 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5b5:
-                              iVar36 = thunk_FUN_00650f50((int)local_16c);
+                              iVar36 = thunk_FUN_00650f50((int)&local_16c);
                               if (iVar36 != 0) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                 iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                if ((iVar36 != 8) ||
-                                   ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar12 = (DArrayTy *)
                                             SubmarineTitans::Recovered::HiddenThis::
                                             AnonReceiver_0064A970::sub_00668F50
                                                       ((AnonReceiver_0064A970 *)this_00,
-                                                       (char *)local_16c._8_4_,(uint)local_160,
+                                                       (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
                                   if (0 < (int)pDVar12) {
                                     local_8 = &local_34;
@@ -3366,19 +3203,16 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5b6:
-                              iVar36 = thunk_FUN_00650f90((short *)local_16c);
+                              iVar36 = thunk_FUN_00650f90((short *)&local_16c);
                               if (iVar36 != 0) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                 iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                if ((iVar36 != 8) ||
-                                   ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar12 = (DArrayTy *)
                                             SubmarineTitans::Recovered::HiddenThis::
                                             AnonReceiver_0064A970::sub_00668F50
                                                       ((AnonReceiver_0064A970 *)this_00,
-                                                       (char *)local_16c._8_4_,(uint)local_160,
+                                                       (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
                                   if (0 < (int)pDVar12) {
                                     local_8 = &local_34;
@@ -3411,19 +3245,16 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5b7:
-                              iVar36 = thunk_FUN_00650bd0((short *)local_16c);
+                              iVar36 = thunk_FUN_00650bd0((short *)&local_16c);
                               if (iVar36 != 0) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                 iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                if ((iVar36 != 8) ||
-                                   ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar12 = (DArrayTy *)
                                             SubmarineTitans::Recovered::HiddenThis::
                                             AnonReceiver_0064A970::sub_00668F50
                                                       ((AnonReceiver_0064A970 *)this_00,
-                                                       (char *)local_16c._8_4_,(uint)local_160,
+                                                       (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
                                   if (0 < (int)pDVar12) {
                                     local_10 = (AiFltClassTy *)&local_34;
@@ -3456,19 +3287,16 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5b8:
-                              iVar36 = thunk_FUN_00650cf0((short *)local_16c);
+                              iVar36 = thunk_FUN_00650cf0((short *)&local_16c);
                               if (iVar36 != 0) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                 iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                if ((iVar36 != 8) ||
-                                   ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar12 = (DArrayTy *)
                                             SubmarineTitans::Recovered::HiddenThis::
                                             AnonReceiver_0064A970::sub_00668F50
                                                       ((AnonReceiver_0064A970 *)this_00,
-                                                       (char *)local_16c._8_4_,(uint)local_160,
+                                                       (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
                                   if (0 < (int)pDVar12) {
                                     local_10 = (AiFltClassTy *)&local_34;
@@ -3501,19 +3329,16 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5b9:
-                              iVar36 = thunk_FUN_00650e10((short *)local_16c);
+                              iVar36 = thunk_FUN_00650e10((short *)&local_16c);
                               if (iVar36 != 0) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                 iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                if ((iVar36 != 8) ||
-                                   ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar12 = (DArrayTy *)
                                             SubmarineTitans::Recovered::HiddenThis::
                                             AnonReceiver_0064A970::sub_00668F50
                                                       ((AnonReceiver_0064A970 *)this_00,
-                                                       (char *)local_16c._8_4_,(uint)local_160,
+                                                       (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
                                   if (0 < (int)pDVar12) {
                                     local_10 = (AiFltClassTy *)&local_34;
@@ -3549,7 +3374,7 @@ LAB_00659a1c:
                             goto cf_common_join_00652A99;
                           }
                           if (iVar7 == 0x593) {
-                            iVar7 = thunk_FUN_0064fd80((short *)local_16c);
+                            iVar7 = thunk_FUN_0064fd80((short *)&local_16c);
                             if (iVar7 == 0) {
                               iVar7 = -1;
                               uVar17 = uVar32;
@@ -3558,8 +3383,7 @@ LAB_00659a1c:
                             }
                             else {
                               DAT_008118fc = 0;
-                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                              _EnumArt((short)local_16c._8_4_,(byte *)local_160,(short)local_15c,
+                              _EnumArt((short)pDStack_164,(byte *)local_160,(short)local_15c,
                                        (short)local_158,(short)local_154,(short)local_150,
                                        (short)local_14c,(short)local_148,thunk_FUN_0064dd30,
                                        &local_144);
@@ -3568,7 +3392,7 @@ LAB_00659a1c:
                           }
                           if (iVar7 < 0x54e) {
                             if (iVar7 == 0x54d) {
-                              iVar7 = thunk_FUN_0064ef10((int)local_16c);
+                              iVar7 = thunk_FUN_0064ef10((int)&local_16c);
                               if (iVar7 == 0) {
                                 iVar7 = -1;
                                 uVar17 = uVar32;
@@ -3578,20 +3402,17 @@ LAB_00659a1c:
                               else {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                 iVar7 = (*(code *)this_00->field_0000->field_0018)();
-                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                if ((iVar7 == 8) && ((DArrayTy *)local_16c._8_4_ == (DArrayTy *)0x9)
-                                   ) {
+                                if ((iVar7 == 8) && (pDStack_164 == (DArrayTy *)0x9)) {
                                   iVar7 = -1;
                                   uVar17 = uVar32;
                                   pcVar9 = thunk_FUN_00674af0(0x54d);
                                   thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar17,iVar7);
                                 }
                                 else {
-                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   iVar7 = SubmarineTitans::Recovered::HiddenThis::
                                           AnonReceiver_0064A970::sub_00668F50
                                                     ((AnonReceiver_0064A970 *)this_00,
-                                                     (char *)local_16c._8_4_,(uint)local_160,
+                                                     (char *)pDStack_164,(uint)local_160,
                                                      &local_34.flags);
                                   iVar36 = 0;
                                   if (0 < iVar7) {
@@ -3613,7 +3434,7 @@ LAB_00659a1c:
                             }
                             if (iVar7 < 0x51b) {
                               if (iVar7 == 0x51a) {
-                                iVar7 = thunk_FUN_0064e960((int)local_16c);
+                                iVar7 = thunk_FUN_0064e960((int)&local_16c);
                                 if (iVar7 == 0) {
                                   iVar7 = -1;
                                   uVar17 = uVar32;
@@ -3621,15 +3442,14 @@ LAB_00659a1c:
                                   thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar17,iVar7);
                                 }
                                 else {
-                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                  (&this_00->field_052F)[local_16c._8_4_] = local_160;
+                                  (&this_00->field_052F)[(int)pDStack_164] = local_160;
                                 }
                                 goto cf_common_join_00659A73;
                               }
                               if (0x3e < iVar7) {
                                 if (iVar7 < 0x517) {
                                   if (iVar7 == 0x516) {
-                                    iVar7 = thunk_FUN_0064e7c0((short *)local_16c);
+                                    iVar7 = thunk_FUN_0064e7c0((short *)&local_16c);
                                     if (iVar7 == 0) {
                                       iVar7 = -1;
                                       uVar17 = uVar32;
@@ -3637,8 +3457,7 @@ LAB_00659a1c:
                                       thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar17,iVar7);
                                     }
                                     else {
-                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                      if ((DArrayTy *)local_16c._8_4_ == (DArrayTy *)0x9) {
+                                      if (pDStack_164 == (DArrayTy *)0x9) {
                                         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                         iVar7 = (*(code *)this_00->field_0000->field_0018)();
                                         if (iVar7 == 8) {
@@ -3656,12 +3475,11 @@ LAB_00659a1c:
                                           goto cf_common_join_00659A73;
                                         }
                                       }
-                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                       pDVar12 = (DArrayTy *)
                                                 SubmarineTitans::Recovered::HiddenThis::
                                                 AnonReceiver_0064A970::sub_00668F50
                                                           ((AnonReceiver_0064A970 *)this_00,
-                                                           (char *)local_16c._8_4_,(uint)local_160,
+                                                           (char *)pDStack_164,(uint)local_160,
                                                            &local_34.flags);
                                       if (0 < (int)pDVar12) {
                                         local_8 = &local_34;
@@ -3696,7 +3514,7 @@ LAB_00659a1c:
                                     }
                                   }
                                   else if (iVar7 == 0x42) {
-                                    iVar7 = thunk_FUN_0064e700((int)local_16c);
+                                    iVar7 = thunk_FUN_0064e700((int)&local_16c);
                                     if (iVar7 == 0) {
                                       iVar7 = -1;
                                       uVar17 = uVar32;
@@ -3705,8 +3523,7 @@ LAB_00659a1c:
                                     }
                                     else {
                                       pDVar12 = local_160;
-                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                      if ((DArrayTy *)local_16c._8_4_ == (DArrayTy *)0x0)
+                                      if (pDStack_164 == (DArrayTy *)0x0)
                                       goto cf_continue_loop_00659A80;
                                     }
                                   }
@@ -3714,27 +3531,25 @@ LAB_00659a1c:
                                     local_174 = 1;
                                   }
                                   else if (iVar7 == 0x515) {
-                                    iVar7 = thunk_FUN_0064e780((short *)local_16c);
+                                    iVar7 = thunk_FUN_0064e780((short *)&local_16c);
                                     if (iVar7 == 0) {
                                       iVar7 = -1;
                                       uVar17 = uVar32;
                                       pcVar9 = thunk_FUN_00674af0(0x515);
                                       thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar17,iVar7);
                                     }
-                                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                    else if ((DArrayTy *)local_16c._8_4_ == (DArrayTy *)0x0) {
+                                    else if (pDStack_164 == (DArrayTy *)0x0) {
                                       *(undefined1 *)local_178 = 0;
                                       local_178->field_000B = 0;
                                     }
                                     else {
                                       *(undefined1 *)local_178 = 1;
-                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                      local_178->field_000B = local_16c._8_4_;
+                                      local_178->field_000B = pDStack_164;
                                     }
                                   }
                                 }
                                 else if (iVar7 == 0x517) {
-                                  iVar7 = thunk_FUN_0064e830((short *)local_16c);
+                                  iVar7 = thunk_FUN_0064e830((short *)&local_16c);
                                   if (iVar7 == 0) {
                                     iVar7 = -1;
                                     uVar17 = uVar32;
@@ -3742,8 +3557,7 @@ LAB_00659a1c:
                                     thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar17,iVar7);
                                   }
                                   else {
-                                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                    if ((DArrayTy *)local_16c._8_4_ == (DArrayTy *)0x9) {
+                                    if (pDStack_164 == (DArrayTy *)0x9) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                       iVar7 = (*(code *)this_00->field_0000->field_0018)();
                                       if (iVar7 == 8) {
@@ -3762,12 +3576,11 @@ LAB_00659a1c:
                                         goto cf_common_join_00659A73;
                                       }
                                     }
-                                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                     pDVar12 = (DArrayTy *)
                                               SubmarineTitans::Recovered::HiddenThis::
                                               AnonReceiver_0064A970::sub_00668F50
                                                         ((AnonReceiver_0064A970 *)this_00,
-                                                         (char *)local_16c._8_4_,(uint)local_160,
+                                                         (char *)pDStack_164,(uint)local_160,
                                                          &local_34.flags);
                                     if (0 < (int)pDVar12) {
                                       local_8 = &local_34;
@@ -3803,7 +3616,7 @@ LAB_00659a1c:
                                   }
                                 }
                                 else if (iVar7 == 0x518) {
-                                  iVar7 = thunk_FUN_0064e8c0((int)local_16c);
+                                  iVar7 = thunk_FUN_0064e8c0((int)&local_16c);
                                   if (iVar7 == 0) {
                                     iVar7 = -1;
                                     uVar17 = uVar32;
@@ -3811,8 +3624,7 @@ LAB_00659a1c:
                                     thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar17,iVar7);
                                   }
                                   else {
-                                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                    if ((DArrayTy *)local_16c._8_4_ == (DArrayTy *)0x9) {
+                                    if (pDStack_164 == (DArrayTy *)0x9) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                       iVar7 = (*(code *)this_00->field_0000->field_0018)();
                                       if (iVar7 == 8) {
@@ -3821,12 +3633,11 @@ LAB_00659a1c:
                                         goto cf_common_join_00659A73;
                                       }
                                     }
-                                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                     pDVar12 = (DArrayTy *)
                                               SubmarineTitans::Recovered::HiddenThis::
                                               AnonReceiver_0064A970::sub_00668F50
                                                         ((AnonReceiver_0064A970 *)this_00,
-                                                         (char *)local_16c._8_4_,(uint)local_160,
+                                                         (char *)pDStack_164,(uint)local_160,
                                                          &local_34.flags);
                                     if (0 < (int)pDVar12) {
                                       pDVar25 = &local_34;
@@ -3857,7 +3668,7 @@ LAB_00659a1c:
                                   }
                                 }
                                 else if (iVar7 == 0x519) {
-                                  iVar7 = thunk_FUN_0064e910((int)local_16c);
+                                  iVar7 = thunk_FUN_0064e910((int)&local_16c);
                                   if (iVar7 == 0) {
                                     iVar7 = -1;
                                     uVar17 = uVar32;
@@ -3865,8 +3676,7 @@ LAB_00659a1c:
                                     thunk_FUN_0064d0e0(this_00,-0x7d,pcVar9,uVar17,iVar7);
                                   }
                                   else {
-                                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                    (&DAT_0080e43b)[local_16c._8_4_] = local_160;
+                                    (&DAT_0080e43b)[(int)pDStack_164] = local_160;
                                   }
                                 }
                                 goto cf_common_join_00659A73;
@@ -3875,18 +3685,16 @@ LAB_00659a1c:
 switchD_00652b42_switchD:
                                 switch(local_15c) {
                                 case (DArrayTy *)0x0:
-                                  iVar36 = thunk_FUN_0064ea10((int)local_16c);
+                                  iVar36 = thunk_FUN_0064ea10((int)&local_16c);
                                   if (iVar36 == 0) goto cf_common_join_00652A99;
                                   switch(iVar7) {
-                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   case 2:
-                                    *(int *)(&this_00->field_0xde + local_16c._8_4_ * 4) =
+                                    *(int *)(&this_00->field_0xde + (int)pDStack_164 * 4) =
                                          (int)&local_160->flags +
-                                         *(int *)(&this_00->field_0xde + local_16c._8_4_ * 4);
+                                         *(int *)(&this_00->field_0xde + (int)pDStack_164 * 4);
                                     break;
-                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   case 5:
-                                    *(DArrayTy **)(&this_00->field_0xde + local_16c._8_4_ * 4) =
+                                    *(DArrayTy **)(&this_00->field_0xde + (int)pDStack_164 * 4) =
                                          local_160;
                                     break;
                                   case 0x17:
@@ -3894,8 +3702,8 @@ switchD_00652b42_switchD:
                                       thunk_FUN_0064d0e0(this_00,-0x67,&DAT_008016a0,uVar32,-1);
                                     }
                                     else {
-                                      *(int *)(&this_00->field_0xde + local_16c._8_4_ * 4) =
-                                           *(int *)(&this_00->field_0xde + local_16c._8_4_ * 4) /
+                                      *(int *)(&this_00->field_0xde + (int)pDStack_164 * 4) =
+                                           *(int *)(&this_00->field_0xde + (int)pDStack_164 * 4) /
                                            (int)local_160;
                                     }
                                     break;
@@ -3904,45 +3712,40 @@ switchD_00652b42_switchD:
                                       thunk_FUN_0064d0e0(this_00,-0x67,&DAT_008016a0,uVar32,-1);
                                     }
                                     else {
-                                      *(int *)(&this_00->field_0xde + local_16c._8_4_ * 4) =
-                                           *(int *)(&this_00->field_0xde + local_16c._8_4_ * 4) %
+                                      *(int *)(&this_00->field_0xde + (int)pDStack_164 * 4) =
+                                           *(int *)(&this_00->field_0xde + (int)pDStack_164 * 4) %
                                            (int)local_160;
                                     }
                                     break;
-                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   case 0x31:
-                                    *(int *)(&this_00->field_0xde + local_16c._8_4_ * 4) =
-                                         *(int *)(&this_00->field_0xde + local_16c._8_4_ * 4) *
+                                    *(int *)(&this_00->field_0xde + (int)pDStack_164 * 4) =
+                                         *(int *)(&this_00->field_0xde + (int)pDStack_164 * 4) *
                                          (int)local_160;
                                     break;
-                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   case 0x3e:
-                                    *(int *)(&this_00->field_0xde + local_16c._8_4_ * 4) =
-                                         *(int *)(&this_00->field_0xde + local_16c._8_4_ * 4) -
+                                    *(int *)(&this_00->field_0xde + (int)pDStack_164 * 4) =
+                                         *(int *)(&this_00->field_0xde + (int)pDStack_164 * 4) -
                                          (int)local_160;
                                   }
                                   break;
                                 case (DArrayTy *)0x1:
-                                  iVar36 = thunk_FUN_0064ea10((int)local_16c);
+                                  iVar36 = thunk_FUN_0064ea10((int)&local_16c);
                                   if (iVar36 == 0) goto cf_common_join_00652A99;
                                   switch(iVar7) {
-                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   case 2:
-                                    (&DAT_0080e43b)[local_16c._8_4_] =
-                                         (int)&local_160->flags + (&DAT_0080e43b)[local_16c._8_4_];
+                                    (&DAT_0080e43b)[(int)pDStack_164] =
+                                         (int)&local_160->flags + (&DAT_0080e43b)[(int)pDStack_164];
                                     break;
-                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   case 5:
-                                    (&DAT_0080e43b)[local_16c._8_4_] = local_160;
+                                    (&DAT_0080e43b)[(int)pDStack_164] = local_160;
                                     break;
                                   case 0x17:
                                     if (local_160 == (DArrayTy *)0x0) {
                                       thunk_FUN_0064d0e0(this_00,-0x67,&DAT_008016a0,uVar32,-1);
                                     }
                                     else {
-                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                      (&DAT_0080e43b)[local_16c._8_4_] =
-                                           (int)(&DAT_0080e43b)[local_16c._8_4_] / (int)local_160;
+                                      (&DAT_0080e43b)[(int)pDStack_164] =
+                                           (int)(&DAT_0080e43b)[(int)pDStack_164] / (int)local_160;
                                     }
                                     break;
                                   case 0x2d:
@@ -3950,44 +3753,38 @@ switchD_00652b42_switchD:
                                       thunk_FUN_0064d0e0(this_00,-0x67,&DAT_008016a0,uVar32,-1);
                                     }
                                     else {
-                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                      (&DAT_0080e43b)[local_16c._8_4_] =
-                                           (int)(&DAT_0080e43b)[local_16c._8_4_] % (int)local_160;
+                                      (&DAT_0080e43b)[(int)pDStack_164] =
+                                           (int)(&DAT_0080e43b)[(int)pDStack_164] % (int)local_160;
                                     }
                                     break;
-                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   case 0x31:
-                                    (&DAT_0080e43b)[local_16c._8_4_] =
-                                         (&DAT_0080e43b)[local_16c._8_4_] * (int)local_160;
+                                    (&DAT_0080e43b)[(int)pDStack_164] =
+                                         (&DAT_0080e43b)[(int)pDStack_164] * (int)local_160;
                                     break;
-                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   case 0x3e:
-                                    (&DAT_0080e43b)[local_16c._8_4_] =
-                                         (&DAT_0080e43b)[local_16c._8_4_] - (int)local_160;
+                                    (&DAT_0080e43b)[(int)pDStack_164] =
+                                         (&DAT_0080e43b)[(int)pDStack_164] - (int)local_160;
                                   }
                                   break;
                                 case (DArrayTy *)0x2:
-                                  iVar36 = thunk_FUN_0064ea60((int)local_16c);
+                                  iVar36 = thunk_FUN_0064ea60((int)&local_16c);
                                   if (iVar36 == 0) goto cf_common_join_00652A99;
                                   switch(iVar7) {
-                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   case 2:
-                                    (&this_00->field_052F)[local_16c._8_4_] =
+                                    (&this_00->field_052F)[(int)pDStack_164] =
                                          (int)&local_160->flags +
-                                         (&this_00->field_052F)[local_16c._8_4_];
+                                         (&this_00->field_052F)[(int)pDStack_164];
                                     break;
-                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   case 5:
-                                    (&this_00->field_052F)[local_16c._8_4_] = local_160;
+                                    (&this_00->field_052F)[(int)pDStack_164] = local_160;
                                     break;
                                   case 0x17:
                                     if (local_160 == (DArrayTy *)0x0) {
                                       thunk_FUN_0064d0e0(this_00,-0x67,&DAT_008016a0,uVar32,-1);
                                     }
                                     else {
-                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                      (&this_00->field_052F)[local_16c._8_4_] =
-                                           (int)(&this_00->field_052F)[local_16c._8_4_] /
+                                      (&this_00->field_052F)[(int)pDStack_164] =
+                                           (int)(&this_00->field_052F)[(int)pDStack_164] /
                                            (int)local_160;
                                     }
                                     break;
@@ -3996,30 +3793,26 @@ switchD_00652b42_switchD:
                                       thunk_FUN_0064d0e0(this_00,-0x67,&DAT_008016a0,uVar32,-1);
                                     }
                                     else {
-                                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                      (&this_00->field_052F)[local_16c._8_4_] =
-                                           (int)(&this_00->field_052F)[local_16c._8_4_] %
+                                      (&this_00->field_052F)[(int)pDStack_164] =
+                                           (int)(&this_00->field_052F)[(int)pDStack_164] %
                                            (int)local_160;
                                     }
                                     break;
-                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   case 0x31:
-                                    (&this_00->field_052F)[local_16c._8_4_] =
-                                         (&this_00->field_052F)[local_16c._8_4_] * (int)local_160;
+                                    (&this_00->field_052F)[(int)pDStack_164] =
+                                         (&this_00->field_052F)[(int)pDStack_164] * (int)local_160;
                                     break;
-                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   case 0x3e:
-                                    (&this_00->field_052F)[local_16c._8_4_] =
-                                         (&this_00->field_052F)[local_16c._8_4_] - (int)local_160;
+                                    (&this_00->field_052F)[(int)pDStack_164] =
+                                         (&this_00->field_052F)[(int)pDStack_164] - (int)local_160;
                                   }
                                   break;
                                 case (DArrayTy *)0x3:
-                                  iVar36 = thunk_FUN_0064eaa0((int)local_16c);
+                                  iVar36 = thunk_FUN_0064eaa0((int)&local_16c);
                                   if (iVar36 == 0) goto cf_common_join_00652A99;
                                   if (iVar7 == 5) {
-                                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                     Library::DKW::TBL::FUN_006b6020
-                                              (&this_00->field_05B3->flags,local_16c._8_4_,
+                                              (&this_00->field_05B3->flags,(uint)pDStack_164,
                                                (char *)local_160);
                                   }
                                 }
@@ -4033,28 +3826,25 @@ switchD_00652b42_switchD:
                               case 0x31:
                                 goto switchD_00652b42_switchD;
                               case 0x19:
-                                iVar36 = thunk_FUN_0064e6c0((int)local_16c);
+                                iVar36 = thunk_FUN_0064e6c0((int)&local_16c);
                                 if (iVar36 == 0) goto cf_common_join_00652A99;
                                 if (local_174 != 0) {
                                   local_174 = 0;
-                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                  local_170 = (DArrayTy *)local_16c._8_4_;
+                                  local_170 = pDStack_164;
                                   pDVar12 = local_170;
                                   goto cf_continue_loop_00659A80;
                                 }
                                 local_174 = 0;
                                 break;
                               case 0x21:
-                                iVar36 = thunk_FUN_0064e740((int)local_16c);
-                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                pDVar12 = (DArrayTy *)local_16c._8_4_;
+                                iVar36 = thunk_FUN_0064e740((int)&local_16c);
+                                pDVar12 = pDStack_164;
                                 if (iVar36 == 0) goto cf_common_join_00652A99;
                                 goto cf_continue_loop_00659A80;
                               case 0x23:
-                                iVar36 = thunk_FUN_0064e680((int)local_16c);
+                                iVar36 = thunk_FUN_0064e680((int)&local_16c);
                                 if (iVar36 == 0) goto cf_common_join_00652A99;
-                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                if ((DArrayTy *)local_16c._8_4_ == (DArrayTy *)0x0) {
+                                if (pDStack_164 == (DArrayTy *)0x0) {
                                   local_170 = local_160;
                                   pDVar12 = local_170;
                                   goto cf_continue_loop_00659A80;
@@ -4064,27 +3854,23 @@ switchD_00652b42_switchD:
                             }
                             switch(iVar7) {
                             case 0x51b:
-                              iVar36 = thunk_FUN_0064e9a0((int)local_16c);
+                              iVar36 = thunk_FUN_0064e9a0((int)&local_16c);
                               if (iVar36 == 0) goto cf_common_join_00652A99;
-                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                               Library::DKW::TBL::FUN_006b6020
-                                        (&this_00->field_05B3->flags,local_16c._8_4_,
+                                        (&this_00->field_05B3->flags,(uint)pDStack_164,
                                          (char *)local_160);
                               break;
                             case 0x528:
-                              iVar36 = thunk_FUN_0064eb20((int)local_16c);
+                              iVar36 = thunk_FUN_0064eb20((int)&local_16c);
                               if (iVar36 != 0) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                 iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                if ((iVar36 != 8) ||
-                                   ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar12 = (DArrayTy *)
                                             SubmarineTitans::Recovered::HiddenThis::
                                             AnonReceiver_0064A970::sub_00668F50
                                                       ((AnonReceiver_0064A970 *)this_00,
-                                                       (char *)local_16c._8_4_,(uint)local_160,
+                                                       (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
                                   if (0 < (int)pDVar12) {
                                     pDVar25 = &local_34;
@@ -4105,19 +3891,16 @@ switchD_00652b42_switchD:
                               }
                               goto cf_common_join_00652A99;
                             case 0x529:
-                              iVar36 = thunk_FUN_0064eb60((int)local_16c);
+                              iVar36 = thunk_FUN_0064eb60((int)&local_16c);
                               if (iVar36 != 0) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                 iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                if ((iVar36 != 8) ||
-                                   ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   pDVar12 = (DArrayTy *)
                                             SubmarineTitans::Recovered::HiddenThis::
                                             AnonReceiver_0064A970::sub_00668F50
                                                       ((AnonReceiver_0064A970 *)this_00,
-                                                       (char *)local_16c._8_4_,(uint)local_160,
+                                                       (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
                                   if (0 < (int)pDVar12) {
                                     pDVar25 = &local_34;
@@ -4139,18 +3922,15 @@ switchD_00652b42_switchD:
                               }
                               goto cf_common_join_00652A99;
                             case 0x52a:
-                              iVar36 = thunk_FUN_0064eba0((int)local_16c);
+                              iVar36 = thunk_FUN_0064eba0((int)&local_16c);
                               if (iVar36 != 0) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                 iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                if ((iVar36 != 8) ||
-                                   ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   iVar7 = SubmarineTitans::Recovered::HiddenThis::
                                           AnonReceiver_0064A970::sub_00668F50
                                                     ((AnonReceiver_0064A970 *)this_00,
-                                                     (char *)local_16c._8_4_,(uint)local_160,
+                                                     (char *)pDStack_164,(uint)local_160,
                                                      &local_34.flags);
                                   iVar36 = 0;
                                   if (0 < iVar7) {
@@ -4171,11 +3951,10 @@ switchD_00652b42_switchD:
                               }
                               goto cf_common_join_00652A99;
                             case 0x532:
-                              iVar36 = thunk_FUN_0064ebe0((int)local_16c);
+                              iVar36 = thunk_FUN_0064ebe0((int)&local_16c);
                               if (iVar36 == 0) goto cf_common_join_00652A99;
                               if (g_popUp_008016D8 != (PopUpTy *)0x0) {
-                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                if ((DArrayTy *)local_16c._8_4_ == (DArrayTy *)0x9) {
+                                if (pDStack_164 == (DArrayTy *)0x9) {
                                   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                   iVar7 = (*(code *)this_00->field_0000->field_0018)();
                                   if (iVar7 == 8) {
@@ -4183,11 +3962,10 @@ switchD_00652b42_switchD:
                                     break;
                                   }
                                 }
-                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                 iVar7 = SubmarineTitans::Recovered::HiddenThis::
                                         AnonReceiver_0064A970::sub_00668F50
                                                   ((AnonReceiver_0064A970 *)this_00,
-                                                   (char *)local_16c._8_4_,(uint)local_160,
+                                                   (char *)pDStack_164,(uint)local_160,
                                                    &local_34.flags);
                                 iVar36 = 0;
                                 if (0 < iVar7) {
@@ -4204,10 +3982,9 @@ switchD_00652b42_switchD:
                               }
                               break;
                             case 0x533:
-                              iVar36 = thunk_FUN_0064ec30((int)local_16c);
+                              iVar36 = thunk_FUN_0064ec30((int)&local_16c);
                               if (iVar36 == 0) goto cf_common_join_00652A99;
-                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                              if ((DArrayTy *)local_16c._8_4_ == (DArrayTy *)0x9) {
+                              if (pDStack_164 == (DArrayTy *)0x9) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                 iVar7 = (*(code *)this_00->field_0000->field_0018)();
                                 if (iVar7 == 8) {
@@ -4218,10 +3995,9 @@ switchD_00652b42_switchD:
                                   break;
                                 }
                               }
-                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                               iVar7 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970
                                       ::sub_00668F50((AnonReceiver_0064A970 *)this_00,
-                                                     (char *)local_16c._8_4_,(uint)local_160,
+                                                     (char *)pDStack_164,(uint)local_160,
                                                      &local_34.flags);
                               iVar36 = 0;
                               if (0 < iVar7) {
@@ -4240,10 +4016,9 @@ switchD_00652b42_switchD:
                               }
                               break;
                             case 0x534:
-                              iVar36 = thunk_FUN_0064ec80((AnonShape_0064EC80_53C284F2 *)local_16c);
+                              iVar36 = thunk_FUN_0064ec80((AnonShape_0064EC80_53C284F2 *)&local_16c);
                               if (iVar36 == 0) goto cf_common_join_00652A99;
-                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                              if ((DArrayTy *)local_16c._8_4_ == (DArrayTy *)0x9) {
+                              if (pDStack_164 == (DArrayTy *)0x9) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                 iVar7 = (*(code *)this_00->field_0000->field_0018)();
                                 if (iVar7 == 8) {
@@ -4256,10 +4031,9 @@ LAB_006536dd:
                                   break;
                                 }
                               }
-                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                               iVar7 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970
                                       ::sub_00668F50((AnonReceiver_0064A970 *)this_00,
-                                                     (char *)local_16c._8_4_,(uint)local_160,
+                                                     (char *)pDStack_164,(uint)local_160,
                                                      &local_34.flags);
                               iVar36 = 0;
                               if (0 < iVar7) {
@@ -4272,10 +4046,9 @@ LAB_006536dd:
                               }
                               break;
                             case 0x535:
-                              iVar36 = thunk_FUN_0064ecd0((int)local_16c);
+                              iVar36 = thunk_FUN_0064ecd0((int)&local_16c);
                               if (iVar36 == 0) goto cf_common_join_00652A99;
-                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                              if ((DArrayTy *)local_16c._8_4_ == (DArrayTy *)0x9) {
+                              if (pDStack_164 == (DArrayTy *)0x9) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                 iVar7 = (*(code *)this_00->field_0000->field_0018)();
                                 if (iVar7 == 8) {
@@ -4286,10 +4059,9 @@ LAB_00653778:
                                   break;
                                 }
                               }
-                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                               iVar7 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970
                                       ::sub_00668F50((AnonReceiver_0064A970 *)this_00,
-                                                     (char *)local_16c._8_4_,(uint)local_160,
+                                                     (char *)pDStack_164,(uint)local_160,
                                                      &local_34.flags);
                               iVar36 = 0;
                               if (0 < iVar7) {
@@ -4302,10 +4074,9 @@ LAB_00653778:
                               }
                               break;
                             case 0x536:
-                              iVar36 = thunk_FUN_0064ed20((int)local_16c);
+                              iVar36 = thunk_FUN_0064ed20((int)&local_16c);
                               if (iVar36 == 0) goto cf_common_join_00652A99;
-                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                              if ((DArrayTy *)local_16c._8_4_ == (DArrayTy *)0x9) {
+                              if (pDStack_164 == (DArrayTy *)0x9) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                 iVar7 = (*(code *)this_00->field_0000->field_0018)();
                                 if (iVar7 == 8) {
@@ -4315,10 +4086,9 @@ LAB_00653778:
                                   break;
                                 }
                               }
-                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                               iVar7 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970
                                       ::sub_00668F50((AnonReceiver_0064A970 *)this_00,
-                                                     (char *)local_16c._8_4_,(uint)local_160,
+                                                     (char *)pDStack_164,(uint)local_160,
                                                      &local_34.flags);
                               iVar36 = 0;
                               if (0 < iVar7) {
@@ -4336,10 +4106,9 @@ LAB_00653778:
                               }
                               break;
                             case 0x537:
-                              iVar36 = thunk_FUN_0064ed70((int)local_16c);
+                              iVar36 = thunk_FUN_0064ed70((int)&local_16c);
                               if (iVar36 == 0) goto cf_common_join_00652A99;
-                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                              if ((DArrayTy *)local_16c._8_4_ == (DArrayTy *)0x9) {
+                              if (pDStack_164 == (DArrayTy *)0x9) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                 iVar7 = (*(code *)this_00->field_0000->field_0018)();
                                 if (iVar7 == 8) {
@@ -4349,10 +4118,9 @@ LAB_00653778:
                                   break;
                                 }
                               }
-                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                               iVar7 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970
                                       ::sub_00668F50((AnonReceiver_0064A970 *)this_00,
-                                                     (char *)local_16c._8_4_,(uint)local_160,
+                                                     (char *)pDStack_164,(uint)local_160,
                                                      &local_34.flags);
                               iVar36 = 0;
                               if (0 < iVar7) {
@@ -4370,18 +4138,15 @@ LAB_00653778:
                               }
                               break;
                             case 0x546:
-                              iVar36 = thunk_FUN_0064edc0((int)local_16c);
+                              iVar36 = thunk_FUN_0064edc0((int)&local_16c);
                               if (iVar36 != 0) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                 iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                if ((iVar36 != 8) ||
-                                   ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   iVar7 = SubmarineTitans::Recovered::HiddenThis::
                                           AnonReceiver_0064A970::sub_00668F50
                                                     ((AnonReceiver_0064A970 *)this_00,
-                                                     (char *)local_16c._8_4_,(uint)local_160,
+                                                     (char *)pDStack_164,(uint)local_160,
                                                      &local_34.flags);
                                   iVar36 = 0;
                                   if (0 < iVar7) {
@@ -4412,19 +4177,16 @@ LAB_00653778:
                               goto cf_common_join_00652A99;
                             case 0x547:
                             case 0x548:
-                              iVar36 = thunk_FUN_0064ee00((int)local_16c);
+                              iVar36 = thunk_FUN_0064ee00((int)&local_16c);
                               if (iVar36 != 0) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                 iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                if ((iVar36 != 8) ||
-                                   ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   local_10 = (AiFltClassTy *)
                                              SubmarineTitans::Recovered::HiddenThis::
                                              AnonReceiver_0064A970::sub_00668F50
                                                        ((AnonReceiver_0064A970 *)this_00,
-                                                        (char *)local_16c._8_4_,(uint)local_160,
+                                                        (char *)pDStack_164,(uint)local_160,
                                                         &local_34.flags);
                                   iVar36 = 0;
                                   if (0 < (int)local_10) {
@@ -4459,18 +4221,15 @@ LAB_00653778:
                               }
                               goto cf_common_join_00652A99;
                             case 0x549:
-                              iVar36 = thunk_FUN_0064ee40((short *)local_16c);
+                              iVar36 = thunk_FUN_0064ee40((short *)&local_16c);
                               if (iVar36 != 0) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                 iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                if ((iVar36 != 8) ||
-                                   ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   iVar7 = SubmarineTitans::Recovered::HiddenThis::
                                           AnonReceiver_0064A970::sub_00668F50
                                                     ((AnonReceiver_0064A970 *)this_00,
-                                                     (char *)local_16c._8_4_,(uint)local_160,
+                                                     (char *)pDStack_164,(uint)local_160,
                                                      &local_34.flags);
                                   iVar36 = 0;
                                   if (0 < iVar7) {
@@ -4492,19 +4251,16 @@ LAB_00653778:
                               }
                               goto cf_common_join_00652A99;
                             case 0x54a:
-                              iVar36 = thunk_FUN_0064ee90((int)local_16c);
+                              iVar36 = thunk_FUN_0064ee90((int)&local_16c);
                               if (iVar36 != 0) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                 iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                if ((iVar36 != 8) ||
-                                   ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   local_10 = (AiFltClassTy *)
                                              SubmarineTitans::Recovered::HiddenThis::
                                              AnonReceiver_0064A970::sub_00668F50
                                                        ((AnonReceiver_0064A970 *)this_00,
-                                                        (char *)local_16c._8_4_,(uint)local_160,
+                                                        (char *)pDStack_164,(uint)local_160,
                                                         &local_34.flags);
                                   iVar36 = 0;
                                   if (0 < (int)local_10) {
@@ -4545,19 +4301,16 @@ LAB_00653bb7:
                               goto cf_common_join_00652A99;
                             case 0x54b:
                             case 0x54c:
-                              iVar36 = thunk_FUN_0064eed0((int)local_16c);
+                              iVar36 = thunk_FUN_0064eed0((int)&local_16c);
                               if (iVar36 != 0) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                 iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                if ((iVar36 != 8) ||
-                                   ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)) {
-                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                                if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                   local_10 = (AiFltClassTy *)
                                              SubmarineTitans::Recovered::HiddenThis::
                                              AnonReceiver_0064A970::sub_00668F50
                                                        ((AnonReceiver_0064A970 *)this_00,
-                                                        (char *)local_16c._8_4_,(uint)local_160,
+                                                        (char *)pDStack_164,(uint)local_160,
                                                         &local_34.flags);
                                   iVar36 = 0;
                                   if (0 < (int)local_10) {
@@ -4588,18 +4341,15 @@ LAB_00653bb7:
                           }
                           switch(iVar7) {
                           case 0x54e:
-                            iVar36 = thunk_FUN_0064ef50((int)local_16c);
+                            iVar36 = thunk_FUN_0064ef50((int)&local_16c);
                             if (iVar36 != 0) {
                               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                               iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                              if ((iVar36 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
-                              {
-                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                              if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 iVar7 = SubmarineTitans::Recovered::HiddenThis::
                                         AnonReceiver_0064A970::sub_00668F50
                                                   ((AnonReceiver_0064A970 *)this_00,
-                                                   (char *)local_16c._8_4_,(uint)local_160,
+                                                   (char *)pDStack_164,(uint)local_160,
                                                    &local_34.flags);
                                 iVar36 = 0;
                                 if (0 < iVar7) {
@@ -4621,19 +4371,16 @@ LAB_00653bb7:
                           default:
                             goto cf_common_join_00659A73;
                           case 0x55a:
-                            iVar36 = thunk_FUN_0064f080((int)local_16c);
+                            iVar36 = thunk_FUN_0064f080((int)&local_16c);
                             if (iVar36 != 0) {
                               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                               iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                              if ((iVar36 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
-                              {
-                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                              if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 pDVar12 = (DArrayTy *)
                                           SubmarineTitans::Recovered::HiddenThis::
                                           AnonReceiver_0064A970::sub_00668F50
                                                     ((AnonReceiver_0064A970 *)this_00,
-                                                     (char *)local_16c._8_4_,(uint)local_160,
+                                                     (char *)pDStack_164,(uint)local_160,
                                                      &local_34.flags);
                                 if (0 < (int)pDVar12) {
                                   pDVar25 = &local_34;
@@ -4654,18 +4401,15 @@ LAB_00653bb7:
                             }
                             break;
                           case 0x55b:
-                            iVar36 = thunk_FUN_0064f0c0((int)local_16c);
+                            iVar36 = thunk_FUN_0064f0c0((int)&local_16c);
                             if (iVar36 != 0) {
                               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                               iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                              if ((iVar36 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
-                              {
-                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                              if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 iVar7 = SubmarineTitans::Recovered::HiddenThis::
                                         AnonReceiver_0064A970::sub_00668F50
                                                   ((AnonReceiver_0064A970 *)this_00,
-                                                   (char *)local_16c._8_4_,(uint)local_160,
+                                                   (char *)pDStack_164,(uint)local_160,
                                                    &local_34.flags);
                                 iVar36 = 0;
                                 if (0 < iVar7) {
@@ -4692,18 +4436,15 @@ LAB_00653bb7:
                             }
                             break;
                           case 0x55c:
-                            iVar36 = thunk_FUN_0064f110((short *)local_16c);
+                            iVar36 = thunk_FUN_0064f110((short *)&local_16c);
                             if (iVar36 != 0) {
                               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                               iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                              if ((iVar36 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
-                              {
-                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                              if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 iVar7 = SubmarineTitans::Recovered::HiddenThis::
                                         AnonReceiver_0064A970::sub_00668F50
                                                   ((AnonReceiver_0064A970 *)this_00,
-                                                   (char *)local_16c._8_4_,(uint)local_160,
+                                                   (char *)pDStack_164,(uint)local_160,
                                                    &local_34.flags);
                                 iVar36 = 0;
                                 if (0 < iVar7) {
@@ -4720,18 +4461,15 @@ LAB_00653bb7:
                             }
                             break;
                           case 0x55d:
-                            iVar36 = thunk_FUN_0064f160((int)local_16c);
+                            iVar36 = thunk_FUN_0064f160((int)&local_16c);
                             if (iVar36 != 0) {
                               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                               iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                              if ((iVar36 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
-                              {
-                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                              if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 iVar7 = SubmarineTitans::Recovered::HiddenThis::
                                         AnonReceiver_0064A970::sub_00668F50
                                                   ((AnonReceiver_0064A970 *)this_00,
-                                                   (char *)local_16c._8_4_,(uint)local_160,
+                                                   (char *)pDStack_164,(uint)local_160,
                                                    &local_34.flags);
                                 iVar36 = 0;
                                 if (0 < iVar7) {
@@ -4749,18 +4487,15 @@ LAB_006540b9:
                             }
                             break;
                           case 0x55e:
-                            iVar36 = thunk_FUN_0064f1b0((short *)local_16c);
+                            iVar36 = thunk_FUN_0064f1b0((short *)&local_16c);
                             if (iVar36 != 0) {
                               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                               iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                              if ((iVar36 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
-                              {
-                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                              if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 iVar7 = SubmarineTitans::Recovered::HiddenThis::
                                         AnonReceiver_0064A970::sub_00668F50
                                                   ((AnonReceiver_0064A970 *)this_00,
-                                                   (char *)local_16c._8_4_,(uint)local_160,
+                                                   (char *)pDStack_164,(uint)local_160,
                                                    &local_34.flags);
                                 iVar36 = 0;
                                 if (0 < iVar7) {
@@ -4804,18 +4539,15 @@ LAB_006540b9:
                             }
                             break;
                           case 0x55f:
-                            iVar36 = thunk_FUN_0064ef90((AnonShape_0064EF90_4909407D *)local_16c);
+                            iVar36 = thunk_FUN_0064ef90((AnonShape_0064EF90_4909407D *)&local_16c);
                             if (iVar36 != 0) {
                               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                               iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                              if ((iVar36 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
-                              {
-                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                              if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 iVar7 = SubmarineTitans::Recovered::HiddenThis::
                                         AnonReceiver_0064A970::sub_00668F50
                                                   ((AnonReceiver_0064A970 *)this_00,
-                                                   (char *)local_16c._8_4_,(uint)local_160,
+                                                   (char *)pDStack_164,(uint)local_160,
                                                    &local_34.flags);
                                 iVar36 = 0;
                                 if (0 < iVar7) {
@@ -4842,18 +4574,15 @@ LAB_006540b9:
                             }
                             break;
                           case 0x560:
-                            iVar36 = thunk_FUN_0064f000((int)local_16c);
+                            iVar36 = thunk_FUN_0064f000((int)&local_16c);
                             if (iVar36 != 0) {
                               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                               iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                              if ((iVar36 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
-                              {
-                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                              if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 iVar7 = SubmarineTitans::Recovered::HiddenThis::
                                         AnonReceiver_0064A970::sub_00668F50
                                                   ((AnonReceiver_0064A970 *)this_00,
-                                                   (char *)local_16c._8_4_,(uint)local_160,
+                                                   (char *)pDStack_164,(uint)local_160,
                                                    &local_34.flags);
                                 iVar36 = 0;
                                 if (0 < iVar7) {
@@ -4871,18 +4600,15 @@ LAB_00654386:
                             }
                             break;
                           case 0x561:
-                            iVar36 = thunk_FUN_0064f040((int)local_16c);
+                            iVar36 = thunk_FUN_0064f040((int)&local_16c);
                             if (iVar36 != 0) {
                               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                               iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                              if ((iVar36 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
-                              {
-                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                              if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 iVar7 = SubmarineTitans::Recovered::HiddenThis::
                                         AnonReceiver_0064A970::sub_00668F50
                                                   ((AnonReceiver_0064A970 *)this_00,
-                                                   (char *)local_16c._8_4_,(uint)local_160,
+                                                   (char *)pDStack_164,(uint)local_160,
                                                    &local_34.flags);
                                 iVar36 = 0;
                                 if (0 < iVar7) {
@@ -4905,18 +4631,15 @@ LAB_00654386:
                             }
                             break;
                           case 0x562:
-                            iVar36 = thunk_FUN_0064ef90((AnonShape_0064EF90_4909407D *)local_16c);
+                            iVar36 = thunk_FUN_0064ef90((AnonShape_0064EF90_4909407D *)&local_16c);
                             if (iVar36 != 0) {
                               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                               iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                              if ((iVar36 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
-                              {
-                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                              if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 iVar7 = SubmarineTitans::Recovered::HiddenThis::
                                         AnonReceiver_0064A970::sub_00668F50
                                                   ((AnonReceiver_0064A970 *)this_00,
-                                                   (char *)local_16c._8_4_,(uint)local_160,
+                                                   (char *)pDStack_164,(uint)local_160,
                                                    &local_34.flags);
                                 iVar36 = 0;
                                 if (0 < iVar7) {
@@ -4944,18 +4667,15 @@ LAB_00654386:
                             }
                             break;
                           case 0x563:
-                            iVar36 = thunk_FUN_0064f000((int)local_16c);
+                            iVar36 = thunk_FUN_0064f000((int)&local_16c);
                             if (iVar36 != 0) {
                               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                               iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                              if ((iVar36 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
-                              {
-                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                              if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 iVar7 = SubmarineTitans::Recovered::HiddenThis::
                                         AnonReceiver_0064A970::sub_00668F50
                                                   ((AnonReceiver_0064A970 *)this_00,
-                                                   (char *)local_16c._8_4_,(uint)local_160,
+                                                   (char *)pDStack_164,(uint)local_160,
                                                    &local_34.flags);
                                 iVar36 = 0;
                                 if (0 < iVar7) {
@@ -4976,18 +4696,15 @@ LAB_00654386:
                             }
                             break;
                           case 0x564:
-                            iVar36 = thunk_FUN_0064f040((int)local_16c);
+                            iVar36 = thunk_FUN_0064f040((int)&local_16c);
                             if (iVar36 != 0) {
                               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                               iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                              if ((iVar36 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
-                              {
-                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                              if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 iVar7 = SubmarineTitans::Recovered::HiddenThis::
                                         AnonReceiver_0064A970::sub_00668F50
                                                   ((AnonReceiver_0064A970 *)this_00,
-                                                   (char *)local_16c._8_4_,(uint)local_160,
+                                                   (char *)pDStack_164,(uint)local_160,
                                                    &local_34.flags);
                                 iVar36 = 0;
                                 if (0 < iVar7) {
@@ -5011,27 +4728,24 @@ LAB_00654386:
                             break;
                           case 0x565:
                           case 0x566:
-                            iVar36 = thunk_FUN_0064f320((int)local_16c);
+                            iVar36 = thunk_FUN_0064f320((int)&local_16c);
                             if (iVar36 != 0) {
                               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                               iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                               if (((iVar36 != 8) ||
-                                  ((local_15c != (DArrayTy *)0x9 &&
-                                   ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9)))) &&
-                                 (local_15c != (DArrayTy *)0xff)) {
+                                  ((local_15c != (DArrayTy *)0x9 && (pDStack_164 != (DArrayTy *)0x9)
+                                   ))) && (local_15c != (DArrayTy *)0xff)) {
                                 iVar36 = SubmarineTitans::Recovered::HiddenThis::
                                          AnonReceiver_0064A970::sub_00668F50
                                                    ((AnonReceiver_0064A970 *)this_00,
                                                     (char *)local_15c,0,&local_34.flags);
                                 if (iVar36 == 1) {
                                   local_8 = (DArrayTy *)local_34.flags;
-                                  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                   pAVar14 = (AiFltClassTy *)
                                             SubmarineTitans::Recovered::HiddenThis::
                                             AnonReceiver_0064A970::sub_00668F50
                                                       ((AnonReceiver_0064A970 *)this_00,
-                                                       (char *)local_16c._8_4_,(uint)local_160,
+                                                       (char *)pDStack_164,(uint)local_160,
                                                        &local_34.flags);
                                   local_10 = pAVar14;
                                   if (0 < (int)pAVar14) {
@@ -5070,19 +4784,16 @@ LAB_00654386:
                             }
                             break;
                           case 0x567:
-                            iVar36 = thunk_FUN_0064f360((int)local_16c);
+                            iVar36 = thunk_FUN_0064f360((int)&local_16c);
                             if (iVar36 != 0) {
                               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                               iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                              if ((iVar36 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
-                              {
-                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                              if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 local_10 = (AiFltClassTy *)
                                            SubmarineTitans::Recovered::HiddenThis::
                                            AnonReceiver_0064A970::sub_00668F50
                                                      ((AnonReceiver_0064A970 *)this_00,
-                                                      (char *)local_16c._8_4_,(uint)local_160,
+                                                      (char *)pDStack_164,(uint)local_160,
                                                       &local_34.flags);
                                 if (0 < (int)local_10) {
                                   pDVar12 = &local_34;
@@ -5115,18 +4826,15 @@ LAB_00654386:
                             }
                             break;
                           case 0x568:
-                            iVar36 = thunk_FUN_0064f3b0((int)local_16c);
+                            iVar36 = thunk_FUN_0064f3b0((int)&local_16c);
                             if (iVar36 != 0) {
                               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                               iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                              if ((iVar36 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
-                              {
-                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                              if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 iVar7 = SubmarineTitans::Recovered::HiddenThis::
                                         AnonReceiver_0064A970::sub_00668F50
                                                   ((AnonReceiver_0064A970 *)this_00,
-                                                   (char *)local_16c._8_4_,(uint)local_160,
+                                                   (char *)pDStack_164,(uint)local_160,
                                                    &local_34.flags);
                                 iVar36 = 0;
                                 if (0 < iVar7) {
@@ -5145,25 +4853,21 @@ LAB_00654386:
                             }
                             break;
                           case 0x56a:
-                            iVar36 = thunk_FUN_0064f3f0((int)local_16c);
+                            iVar36 = thunk_FUN_0064f3f0((int)&local_16c);
                             if (iVar36 == 0) break;
-                            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                            thunk_FUN_0056abc0(&DAT_00807620,(char *)local_16c._8_4_);
+                            thunk_FUN_0056abc0(&DAT_00807620,(char *)pDStack_164);
                             goto cf_common_join_00659A73;
                           case 0x578:
-                            iVar36 = thunk_FUN_0064f430((int)local_16c);
+                            iVar36 = thunk_FUN_0064f430((int)&local_16c);
                             if (iVar36 != 0) {
                               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                               iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                              if ((iVar36 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
-                              {
-                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                              if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 pDVar12 = (DArrayTy *)
                                           SubmarineTitans::Recovered::HiddenThis::
                                           AnonReceiver_0064A970::sub_00668F50
                                                     ((AnonReceiver_0064A970 *)this_00,
-                                                     (char *)local_16c._8_4_,(uint)local_160,
+                                                     (char *)pDStack_164,(uint)local_160,
                                                      &local_34.flags);
                                 if (0 < (int)pDVar12) {
                                   pDVar25 = &local_34;
@@ -5183,19 +4887,16 @@ LAB_00654386:
                             }
                             break;
                           case 0x579:
-                            iVar36 = thunk_FUN_0064f470((int)local_16c);
+                            iVar36 = thunk_FUN_0064f470((int)&local_16c);
                             if (iVar36 != 0) {
                               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                               iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                              if ((iVar36 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
-                              {
-                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                              if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 pDVar12 = (DArrayTy *)
                                           SubmarineTitans::Recovered::HiddenThis::
                                           AnonReceiver_0064A970::sub_00668F50
                                                     ((AnonReceiver_0064A970 *)this_00,
-                                                     (char *)local_16c._8_4_,(uint)local_160,
+                                                     (char *)pDStack_164,(uint)local_160,
                                                      &local_34.flags);
                                 if (0 < (int)pDVar12) {
                                   pDVar25 = &local_34;
@@ -5220,34 +4921,29 @@ LAB_00654386:
                             }
                             break;
                           case 0x57a:
-                            iVar36 = thunk_FUN_0064f4c0((int)local_16c);
+                            iVar36 = thunk_FUN_0064f4c0((int)&local_16c);
                             if (iVar36 == 0) break;
-                            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                            pDVar12 = (DArrayTy *)local_16c._8_4_;
-                            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                            if ((int)local_16c._8_4_ < 0) {
+                            pDVar12 = pDStack_164;
+                            if ((int)pDStack_164 < 0) {
                               pDVar12 = (DArrayTy *)(DAT_00808a90 & 0xff);
                             }
                             thunk_FUN_004d8760((int)pDVar12);
                             goto cf_common_join_00659A73;
                           case 0x57b:
-                            iVar36 = thunk_FUN_0064f500((short *)local_16c);
+                            iVar36 = thunk_FUN_0064f500((short *)&local_16c);
                             if (iVar36 != 0) {
                               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                               iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                              if ((iVar36 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
-                              {
+                              if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 local_8 = local_15c;
                                 if ((int)local_15c < 0) {
                                   local_8 = (DArrayTy *)(uint)DAT_00808a9b;
                                 }
-                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                                 pDVar12 = (DArrayTy *)
                                           SubmarineTitans::Recovered::HiddenThis::
                                           AnonReceiver_0064A970::sub_00668F50
                                                     ((AnonReceiver_0064A970 *)this_00,
-                                                     (char *)local_16c._8_4_,(uint)local_160,
+                                                     (char *)pDStack_164,(uint)local_160,
                                                      &local_34.flags);
                                 if (0 < (int)pDVar12) {
                                   pDVar25 = &local_34;
@@ -5561,19 +5257,16 @@ LAB_00655324:
                             }
                             break;
                           case 0x582:
-                            iVar36 = thunk_FUN_0064f5a0((int)local_16c);
+                            iVar36 = thunk_FUN_0064f5a0((int)&local_16c);
                             if (iVar36 != 0) {
                               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                               iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                              if ((iVar36 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
-                              {
-                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                              if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 pDVar12 = (DArrayTy *)
                                           SubmarineTitans::Recovered::HiddenThis::
                                           AnonReceiver_0064A970::sub_00668F50
                                                     ((AnonReceiver_0064A970 *)this_00,
-                                                     (char *)local_16c._8_4_,(uint)local_160,
+                                                     (char *)pDStack_164,(uint)local_160,
                                                      &local_34.flags);
                                 if (0 < (int)pDVar12) {
                                   pDVar25 = &local_34;
@@ -5676,15 +5369,13 @@ LAB_00655324:
                             }
                             break;
                           case 0x583:
-                            iVar36 = thunk_FUN_0064f5e0((int)local_16c);
+                            iVar36 = thunk_FUN_0064f5e0((int)&local_16c);
                             if (iVar36 == 0) break;
-                            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                            if ((DArrayTy *)local_16c._8_4_ == (DArrayTy *)0x0) {
+                            if (pDStack_164 == (DArrayTy *)0x0) {
                               thunk_FUN_004d8320(local_160);
                               goto cf_common_join_00659A73;
                             }
-                            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                            if ((int)local_16c._8_4_ < 1) {
+                            if ((int)pDStack_164 < 1) {
                               local_c = local_160;
                               iVar7 = thunk_FUN_004d82b0(0);
                               if ((int)local_c < iVar7) {
@@ -5703,11 +5394,10 @@ LAB_0065565b:
                             thunk_FUN_004d82b0(0);
                             goto cf_common_join_00659A73;
                           case 0x584:
-                            iVar36 = thunk_FUN_0064f620((short *)local_16c);
+                            iVar36 = thunk_FUN_0064f620((short *)&local_16c);
                             if (iVar36 == 0) break;
-                            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                            thunk_FUN_0064e5c0((char)local_16c._8_4_,(short)local_160,
-                                               (short)local_15c,local_158,(int)local_154);
+                            thunk_FUN_0064e5c0((char)pDStack_164,(short)local_160,(short)local_15c,
+                                               local_158,(int)local_154);
                             goto cf_common_join_00659A73;
                           case 0x585:
                             iVar36 = thunk_FUN_0064f6e0();
@@ -5716,7 +5406,7 @@ LAB_0065565b:
                                                               &DAT_00807620);
                             goto cf_common_join_00659A73;
                           case 0x58c:
-                            iVar36 = thunk_FUN_0064f700((short *)local_16c);
+                            iVar36 = thunk_FUN_0064f700((short *)&local_16c);
                             if (iVar36 == 0) break;
                             pSVar30 = (STFishC *)0x0;
                             sVar24 = (short)local_160;
@@ -5754,27 +5444,21 @@ LAB_00655871:
                                 pSVar30 = g_fish_00811984;
                               }
                             }
-                            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                            if ((pSVar30 != (STFishC *)0x0) &&
-                               ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x0)) {
-                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                              (*pSVar30->vtable->vfunc_70)(local_16c._8_4_);
+                            if ((pSVar30 != (STFishC *)0x0) && (pDStack_164 != (DArrayTy *)0x0)) {
+                              (*pSVar30->vtable->vfunc_70)(pDStack_164);
                             }
                             goto cf_common_join_00659A73;
                           case 0x58d:
-                            iVar36 = thunk_FUN_0064f780((short *)local_16c);
+                            iVar36 = thunk_FUN_0064f780((short *)&local_16c);
                             if (iVar36 != 0) {
                               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                               iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                              if ((iVar36 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
-                              {
-                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                              if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 pDVar12 = (DArrayTy *)
                                           SubmarineTitans::Recovered::HiddenThis::
                                           AnonReceiver_0064A970::sub_00668F50
                                                     ((AnonReceiver_0064A970 *)this_00,
-                                                     (char *)local_16c._8_4_,(uint)local_160,
+                                                     (char *)pDStack_164,(uint)local_160,
                                                      &local_34.flags);
                                 if (0 < (int)pDVar12) {
                                   local_10 = (AiFltClassTy *)&local_34;
@@ -5839,19 +5523,16 @@ LAB_006559e3:
                             }
                             break;
                           case 0x58e:
-                            iVar36 = thunk_FUN_0064f900((short *)local_16c);
+                            iVar36 = thunk_FUN_0064f900((short *)&local_16c);
                             if (iVar36 != 0) {
                               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                               iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                              if ((iVar36 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
-                              {
-                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                              if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 pDVar12 = (DArrayTy *)
                                           SubmarineTitans::Recovered::HiddenThis::
                                           AnonReceiver_0064A970::sub_00668F50
                                                     ((AnonReceiver_0064A970 *)this_00,
-                                                     (char *)local_16c._8_4_,(uint)local_160,
+                                                     (char *)pDStack_164,(uint)local_160,
                                                      &local_34.flags);
                                 if (0 < (int)pDVar12) {
                                   local_10 = (AiFltClassTy *)&local_34;
@@ -5896,19 +5577,16 @@ LAB_006559e3:
                             }
                             break;
                           case 0x58f:
-                            iVar36 = thunk_FUN_0064f950((short *)local_16c);
+                            iVar36 = thunk_FUN_0064f950((short *)&local_16c);
                             if (iVar36 != 0) {
                               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                               iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                              if ((iVar36 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
-                              {
-                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                              if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 pDVar12 = (DArrayTy *)
                                           SubmarineTitans::Recovered::HiddenThis::
                                           AnonReceiver_0064A970::sub_00668F50
                                                     ((AnonReceiver_0064A970 *)this_00,
-                                                     (char *)local_16c._8_4_,(uint)local_160,
+                                                     (char *)pDStack_164,(uint)local_160,
                                                      &local_34.flags);
                                 if (0 < (int)pDVar12) {
                                   local_10 = (AiFltClassTy *)&local_34;
@@ -5969,19 +5647,16 @@ LAB_006559e3:
                             }
                             break;
                           case 0x590:
-                            iVar36 = thunk_FUN_0064fb00((short *)local_16c);
+                            iVar36 = thunk_FUN_0064fb00((short *)&local_16c);
                             if (iVar36 != 0) {
                               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                               iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                              if ((iVar36 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
-                              {
-                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                              if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 pDVar12 = (DArrayTy *)
                                           SubmarineTitans::Recovered::HiddenThis::
                                           AnonReceiver_0064A970::sub_00668F50
                                                     ((AnonReceiver_0064A970 *)this_00,
-                                                     (char *)local_16c._8_4_,(uint)local_160,
+                                                     (char *)pDStack_164,(uint)local_160,
                                                      &local_34.flags);
                                 if (0 < (int)pDVar12) {
                                   local_8 = &local_34;
@@ -6007,19 +5682,16 @@ LAB_006559e3:
                             }
                             break;
                           case 0x591:
-                            iVar36 = thunk_FUN_0064fb80((short *)local_16c);
+                            iVar36 = thunk_FUN_0064fb80((short *)&local_16c);
                             if (iVar36 != 0) {
                               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                               iVar36 = (*(code *)this_00->field_0000->field_0018)();
-                              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                              if ((iVar36 != 8) || ((DArrayTy *)local_16c._8_4_ != (DArrayTy *)0x9))
-                              {
-                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                              if ((iVar36 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
                                 pDVar12 = (DArrayTy *)
                                           SubmarineTitans::Recovered::HiddenThis::
                                           AnonReceiver_0064A970::sub_00668F50
                                                     ((AnonReceiver_0064A970 *)this_00,
-                                                     (char *)local_16c._8_4_,(uint)local_160,
+                                                     (char *)pDStack_164,(uint)local_160,
                                                      &local_34.flags);
                                 if (0 < (int)pDVar12) {
                                   pDVar25 = &local_34;
@@ -6039,10 +5711,9 @@ LAB_006559e3:
                             }
                             break;
                           case 0x592:
-                            iVar36 = thunk_FUN_0064fce0((short *)local_16c);
+                            iVar36 = thunk_FUN_0064fce0((short *)&local_16c);
                             if (iVar36 == 0) break;
-                            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                            iVar36 = _CreateArt(this_00,(short)local_16c._8_4_,(short)local_160,
+                            iVar36 = _CreateArt(this_00,(short)pDStack_164,(short)local_160,
                                                 (int)local_15c,(int)local_158,local_154,
                                                 (char *)local_150,local_14c,local_148);
 LAB_00655f44:

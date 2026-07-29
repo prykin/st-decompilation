@@ -50,9 +50,9 @@ FUN_004b1fb0(Global_sub_004B1FB0_param_1Enum param_1,int *param_2,int *param_3,i
       return 0;
     }
   }
-  else if (g_dArray_007FA150 != (DArrayTy *)0x0) {
-    g_dArray_007FA150->iteratorIndex = 0;
-    iVar4 = FUN_006b1190(g_dArray_007FA150,&local_18);
+  else if (g_array_007FA150 != (DArrayTy *)0x0) {
+    g_array_007FA150->iteratorIndex = 0;
+    iVar4 = DArrayGetNext(g_array_007FA150,(byte *)&local_18);
     while (-1 < iVar4) {
       if (((local_18 != (STFishC *)0x0) &&
           (GVar2 = local_18->slot_2C(), GVar2 == param_1)) &&
@@ -95,7 +95,7 @@ FUN_004b1fb0(Global_sub_004B1FB0_param_1Enum param_1,int *param_2,int *param_3,i
           local_14 = local_14 + iVar4;
         }
       }
-      iVar4 = FUN_006b1190(g_dArray_007FA150,&local_18);
+      iVar4 = DArrayGetNext(g_array_007FA150,(byte *)&local_18);
     }
     if (param_2 != (int *)0x0) {
       *param_2 = local_1c;

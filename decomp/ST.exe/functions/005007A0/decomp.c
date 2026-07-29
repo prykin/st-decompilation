@@ -89,7 +89,7 @@ void __thiscall CPanelTy::SetNewDeep(CPanelTy *this,byte param_1,byte param_2)
               pbVar6 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)
                                             local_10->field_02A2,uVar7);
               iVar5 = (5 - uVar9) * 0xb;
-              pAVar11 = (AnonShape_006B5B10_E0D06CF1 *)pCVar4->field_018C;
+              pAVar11 = pCVar4->field_018C;
             }
             else {
               uVar7 = (uint)bVar10;

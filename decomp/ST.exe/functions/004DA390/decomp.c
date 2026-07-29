@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __thiscall FUN_004da390(void *this,uint param_1,byte *param_2,int param_3)
 
@@ -12,10 +14,10 @@ undefined4 __thiscall FUN_004da390(void *this,uint param_1,byte *param_2,int par
   byte *pbVar8;
   undefined4 uVar9;
   int iVar10;
-  undefined4 *puVar11;
+  byte *puVar11;
   int iVar12;
   byte playerId;
-  undefined4 *puVar13;
+  byte *puVar13;
   bool bVar14;
   undefined4 local_280 [78];
   undefined4 local_148 [3];
@@ -140,13 +142,9 @@ LAB_004da4d3:
           }
         }
         *(int *)(pbVar4 + (uint)*pbVar4 * 0x10 + 0x15) = iVar7;
-        puVar11 = (undefined4 *)thunk_FUN_0043e420(local_280,bVar1);
-        puVar13 = local_148;
-        for (iVar7 = 0x4e; iVar7 != 0; iVar7 = iVar7 + -1) {
-          *puVar13 = *puVar11;
-          puVar11 = puVar11 + 1;
-          puVar13 = puVar13 + 1;
-        }
+        puVar11 = (byte *)thunk_FUN_0043e420(local_280,bVar1);
+        puVar13 = (byte *)(local_148);
+        memmove(puVar13, puVar11, 0x138); /* compiler REP MOVS byte copy */
         sVar5 = (short)local_148[1] + (short)local_148[0];
         *(short *)(pbVar4 + (uint)*pbVar4 * 0x10 + 0x89) = sVar5 + (short)local_148[2];
         *(short *)(pbVar4 + (uint)*pbVar4 * 0x10 + 0x8b) = sVar5;
@@ -188,13 +186,9 @@ LAB_004da71f:
         }
       }
       *(int *)(pbVar4 + 0x85) = iVar12;
-      puVar11 = (undefined4 *)thunk_FUN_0043e420(local_280,playerId);
-      puVar13 = local_148;
-      for (iVar7 = 0x4e; iVar7 != 0; iVar7 = iVar7 + -1) {
-        *puVar13 = *puVar11;
-        puVar11 = puVar11 + 1;
-        puVar13 = puVar13 + 1;
-      }
+      puVar11 = (byte *)thunk_FUN_0043e420(local_280,playerId);
+      puVar13 = (byte *)(local_148);
+      memmove(puVar13, puVar11, 0x138); /* compiler REP MOVS byte copy */
       sVar5 = (short)local_148[1] + (short)local_148[0];
       *(short *)(pbVar4 + 0xfb) = sVar5;
       *(short *)(pbVar4 + 0xfd) = (short)local_148[2];

@@ -90,7 +90,7 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
       pSVar3 = GetObjPtr(local_34,objPtr,local_8[0],CASE_1);
       if ((pSVar3 == (STGameObjC *)0x0) || (iVar2 = pSVar3->vfunc_F8(), iVar2 == 0)
          ) {
-        FUN_006b0c70(local_18,uVar7);
+        DArrayRemoveAt(local_18,uVar7);
         uVar6 = uVar6 - 1;
         uVar7 = uVar7 - 1;
         local_10 = uVar6;
@@ -111,7 +111,7 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
       if (((pSVar3 == (STGameObjC *)0x0) || (iVar2 = thunk_FUN_00490d90(pSVar3), iVar2 == 0)) ||
          ((iVar2 = pSVar3->vfunc_F8(), iVar2 == 0 || (pSVar3->field_0030 == -1))))
       {
-        FUN_006b0c70(local_14,uVar6);
+        DArrayRemoveAt(local_14,uVar6);
         local_c = local_c - 1;
         uVar6 = uVar6 - 1;
       }
@@ -138,10 +138,10 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
               local_28 = pDVar4;
             }
             Library::DKW::TBL::FUN_006ae1c0(&pDVar4->flags,(undefined4 *)local_8);
-            FUN_006b0c70(local_18,uVar6);
+            DArrayRemoveAt(local_18,uVar6);
             local_10 = local_10 - 1;
             uVar6 = uVar6 - 1;
-            FUN_006b0c70(local_14,uVar7);
+            DArrayRemoveAt(local_14,uVar7);
             local_c = local_c - 1;
             uVar7 = uVar7 - 1;
             if ((local_10 == 0) || (local_c == 0)) {

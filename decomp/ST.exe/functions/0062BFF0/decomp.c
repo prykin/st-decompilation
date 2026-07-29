@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
@@ -78,11 +80,7 @@ FUN_0062bff0(int param_1,int param_2,int param_3,int param_4,int param_5,int par
     thunk_FUN_0062bec0(local_58,local_34,local_7c);
     pfVar3 = local_7c;
     pfVar4 = local_34;
-    for (iVar2 = 9; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *pfVar4 = *pfVar3;
-      pfVar3 = pfVar3 + 1;
-      pfVar4 = pfVar4 + 1;
-    }
+    memmove(pfVar4, pfVar3, 0x24); /* compiler REP MOVS byte copy */
   }
   iVar2 = thunk_FUN_0062ba50(local_34,param_7);
   if (iVar2 == 0) {

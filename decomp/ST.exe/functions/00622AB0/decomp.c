@@ -1,12 +1,14 @@
+#include "../../pseudocode_runtime.h"
+
 
 int __thiscall STAllPlayersC::FUN_00622ab0(STAllPlayersC *this,undefined4 *param_1)
 
 {
   int iVar1;
   int iVar2;
-  undefined4 *puVar3;
+  byte *puVar3;
   int *piVar4;
-  undefined4 *puVar5;
+  byte *puVar5;
   void *local_20;
   undefined4 local_1c;
   undefined4 local_18;
@@ -15,14 +17,9 @@ int __thiscall STAllPlayersC::FUN_00622ab0(STAllPlayersC *this,undefined4 *param
   undefined4 local_c;
   undefined4 local_8;
 
-  puVar3 = param_1;
-  puVar5 = (undefined4 *)&this->field_0x25e;
-  for (iVar2 = 0x42; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *puVar5 = *puVar3;
-    puVar3 = puVar3 + 1;
-    puVar5 = puVar5 + 1;
-  }
-  *(undefined1 *)puVar5 = *(undefined1 *)puVar3;
+  puVar3 = (byte *)(param_1);
+  puVar5 = (byte *)&this->field_0x25e;
+  memmove(puVar5, puVar3, 0x109); /* compiler REP MOVS byte copy */
   this->field_02BA = 0xffffffff;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar2 = *(int *)((int)param_1 + 0x109);

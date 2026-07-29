@@ -9,7 +9,7 @@ int __thiscall STBoatC::FUN_004803d0(STBoatC *this,int param_1)
   if ((param_1 == 0) || (param_1 == 1)) {
     memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
     this->field_02C4 = 0;
-    if (this->field_07CA != 0) {
+    if (this->field_07CA != (AnonShape_005EFAE0_B406B78B *)0x0) {
       return 0;
     }
     *(undefined2 *)&this->field_0x3ba = *(undefined2 *)&this->field_0x44b;
@@ -29,7 +29,7 @@ int __thiscall STBoatC::FUN_004803d0(STBoatC *this,int param_1)
     if (iVar1 != 0) {
       return iVar1;
     }
-    if (this->field_07CA == 0) {
+    if (this->field_07CA == (AnonShape_005EFAE0_B406B78B *)0x0) {
       return 0;
     }
     *(undefined4 *)((int)this->field_06CB + 0x24) = 1;
@@ -41,9 +41,7 @@ int __thiscall STBoatC::FUN_004803d0(STBoatC *this,int param_1)
       return -1;
     }
     if (g_playSystem_00802A38->field_00E4 % 0x25 == 0) {
-      iVar1 = STPlaySystemC::sub_006E62D0
-                        (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)this->field_07CA,
-                         &param_1);
+      iVar1 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,this->field_07CA,&param_1);
       if (iVar1 == -4) {
         return 0;
       }

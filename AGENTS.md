@@ -51,6 +51,9 @@ Original binaries are local under ignored `bin/` and must not be committed.
 - A runtime `DArrayTy::elementSize` stride cannot become a static C array type.
   Use a per-owner-field descriptor specialization whose `data` member points at
   the recovered element record; keep the runtime stride in the pseudocode.
+- A library loader returning heterogeneous serialized records must retain a
+  neutral `byte *` ABI. Recover a separate payload view at each consumer; do not
+  propagate one consumer's structure back into the loader return.
 - `Owner::sub_ADDRESS` is an automation-owned structural placeholder: method
   ownership is proven, but no original semantic method name has been recovered.
 - A fixed class-member array may be installed only from a proven bound or exact
@@ -62,9 +65,10 @@ Original binaries are local under ignored `bin/` and must not be committed.
   explicit for review.
 - Compiler optimization can merge several SSA lifetimes into one Listing local;
   avoid persistent whole-local typing when evidence shows mixed scalar/pointer
-  roles. `STLocalLifetimeAnalyzer/Applier` may split only distinct decompiler
-  merge groups with an address-stable exact type anchor; a fresh decompile must
-  reattach the database local to that same anchor before `applied` is reported.
+  roles. `STLocalLifetimeAnalyzer/Applier` may split distinct decompiler merge
+  groups or type a single raw-undefined group only from an address-stable exact
+  typed-call/copy anchor; a fresh decompile must reattach the database local to
+  that same anchor before `applied` is reported.
 - Non-leaf `void` is valid only when every direct-call CFG path kills EAX before
   an explicit read; an unresolved path is `unknown`, not ignored. A bare caller
   `RET` proves forwarding only when that caller already has a protected non-void

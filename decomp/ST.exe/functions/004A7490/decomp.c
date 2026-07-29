@@ -113,7 +113,7 @@ void __thiscall STGroupBoatC::ReMakePatrolPoints(STGroupBoatC *this,int param_1)
         uVar7 = local_c;
         iVar6 = iVar6 / 3;
         if (iVar6 < this->field_0242) {
-          FUN_006b0c70(array,local_c);
+          DArrayRemoveAt(array,local_c);
           local_8 = local_8 - 1;
           local_c = uVar7 - 1;
         }

@@ -72,7 +72,7 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
   uVar14 = local_10->field_1C9F->elementSize;
   if ((0 < (int)(local_10->field_1C97->elementSize + uVar14)) && (uVar14 <= param_1)) {
     uVar14 = 0xffffffff;
-    local_18 = &local_10->field_0x1faf;
+    local_18 = &local_10->field_1FAF;
     pcVar10 = &local_10->field_1DA7;
     do {
       pcVar18 = pcVar10;
@@ -175,8 +175,7 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
     iVar7 = Library::MSVCRT::__setjmp3(local_bc.jumpBuffer,0);
     pCVar17 = local_10;
     if (iVar7 == 0) {
-      local_14 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0
-                                    (0x345,&local_10->field_0x1faf,0,0,0);
+      local_14 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&local_10->field_1FAF,0,0,0);
     }
     pcVar11 = local_14;
     g_currentExceptionFrame = local_bc.previous;
@@ -200,7 +199,7 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
       pcVar10 = pcVar18;
     } while (cVar1 != '\0');
     uVar14 = ~uVar14;
-    local_18 = &local_10->field_0x1faf;
+    local_18 = &local_10->field_1FAF;
     pcVar10 = pcVar18 + -uVar14;
     pcVar18 = local_18;
     for (uVar15 = uVar14 >> 2; uVar15 != 0; uVar15 = uVar15 - 1) {
@@ -292,7 +291,7 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
     iVar7 = Library::MSVCRT::__setjmp3(local_100.jumpBuffer,0);
     pCVar17 = local_10;
     if (iVar7 == 0) {
-      pcVar11 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&local_10->field_0x1faf,0,0,0);
+      pcVar11 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&local_10->field_1FAF,0,0,0);
       local_14 = pcVar11;
       if (g_dArray_0080C4CB != (DArrayTy *)0x0) {
         FUN_006b5570(g_dArray_0080C4CB);
@@ -376,10 +375,10 @@ LAB_005ae53a:
     MMsgTy::StatePanel(pSVar5->field_02E6,(int)local_34);
   }
 LAB_005ae602:
-  if ((pCVar17->field_1A5F != CASE_3) && (-1 < g_startSystem_0081176C->field_02EC)) {
+  if ((pCVar17->field_1A5F != CASE_3) && (-1 < (int)g_startSystem_0081176C->field_02EC)) {
     FUN_006b35d0((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_02EC);
   }
-  if (-1 < g_startSystem_0081176C->field_0540) {
+  if (-1 < (int)g_startSystem_0081176C->field_0540) {
     FUN_006b35d0((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0540);
   }
   g_currentExceptionFrame = local_78.previous;

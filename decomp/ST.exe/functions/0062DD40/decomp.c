@@ -7,17 +7,17 @@
 void __thiscall STManRub3C::sub_0062DD40(STManRub3C *this)
 
 {
-  undefined4 *puVar1;
+  DArrayTy **ppDVar1;
   int iVar2;
 
-  puVar1 = &this->field_0050;
+  ppDVar1 = &this->field_0050;
   iVar2 = 8;
   do {
-    if ((DArrayTy *)*puVar1 != (DArrayTy *)0x0) {
-      DArrayDestroy((DArrayTy *)*puVar1);
-      *puVar1 = 0;
+    if (*ppDVar1 != (DArrayTy *)0x0) {
+      DArrayDestroy(*ppDVar1);
+      *ppDVar1 = (DArrayTy *)0x0;
     }
-    puVar1 = puVar1 + 1;
+    ppDVar1 = ppDVar1 + 1;
     iVar2 = iVar2 + -1;
   } while (iVar2 != 0);
   return;

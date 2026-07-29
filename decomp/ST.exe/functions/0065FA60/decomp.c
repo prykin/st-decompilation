@@ -1,5 +1,3 @@
-#include "../../pseudocode_runtime.h"
-
 
 /* [STHiddenThisApplier] Anonymous hidden receiver recovered as
    /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0065FA60.
@@ -19,8 +17,8 @@ AiFltClassTy::sub_0065FA60(AiFltClassTy *this,int param_1,int param_2,short *par
   AiFltClassTy *pAVar1;
   int iVar2;
   undefined4 *puVar3;
-  uint uVar4;
-  DArrayTy *groupContent;
+  uint index;
+  DArrayTy *array;
   InternalExceptionFrame local_5c;
   uint local_18;
   AiFltClassTy *local_14;
@@ -57,40 +55,40 @@ AiFltClassTy::sub_0065FA60(AiFltClassTy *this,int param_1,int param_2,short *par
                            (g_allPlayers_007FA174,*(char *)&local_14->field_0024,param_1,0,-1);
     }
   }
-  groupContent = local_10;
+  array = local_10;
   g_currentExceptionFrame = local_5c.previous;
   if (local_10 != (DArrayTy *)0x0) {
     if (local_10->count == 0) {
       DArrayDestroy(local_10);
       local_10 = (DArrayTy *)0x0;
     }
-    groupContent = local_10;
+    array = local_10;
     if ((((local_10 != (DArrayTy *)0x0) && (param_3 != (short *)0x0)) && (0 < param_3[3])) &&
        ((0 < param_3[4] && (0 < param_3[5])))) {
       local_18 = local_10->count;
-      while (uVar4 = local_18 - 1, -1 < (int)uVar4) {
-        if (uVar4 < groupContent->count) {
-          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(groupContent, uVar4) (runtime stride) */
-          puVar3 = (undefined4 *)(groupContent->elementSize * uVar4 + (int)groupContent->data);
+      while (index = local_18 - 1, -1 < (int)index) {
+        if (index < array->count) {
+          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime stride) */
+          puVar3 = (undefined4 *)(array->elementSize * index + (int)array->data);
         }
         else {
           puVar3 = (undefined4 *)0x0;
         }
-        local_18 = uVar4;
+        local_18 = index;
         if ((STFishC *)*puVar3 != (STFishC *)0x0) {
           STFishC::sub_004162B0((STFishC *)*puVar3,&local_6,&local_8,&local_a);
           if (((local_6 < *param_3) || (local_8 < param_3[1])) ||
-             ((uVar4 = local_18, local_a < param_3[2] ||
+             ((index = local_18, local_a < param_3[2] ||
               ((((int)*param_3 + (int)param_3[3] <= (int)local_6 ||
                 ((int)param_3[1] + (int)param_3[4] <= (int)local_8)) ||
                ((int)param_3[2] + (int)param_3[5] <= (int)local_a)))))) {
-            FUN_006b0c70(groupContent,uVar4);
-            local_18 = uVar4;
+            DArrayRemoveAt(array,index);
+            local_18 = index;
           }
         }
       }
     }
   }
-  return &groupContent->flags;
+  return &array->flags;
 }
 

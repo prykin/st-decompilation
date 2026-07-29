@@ -20,15 +20,16 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004EEFB0::FUN_005c8200
   byte bVar1;
   SettMapTy *this_00;
   int iVar2;
-  undefined4 *puVar3;
+  cMf32 *pcVar3;
   ushort *puVar4;
   DWORD DVar5;
   uint uVar6;
   uint uVar7;
-  byte *pbVar8;
-  uint *puVar9;
-  undefined4 *puVar10;
-  byte *pbVar11;
+  byte *puVar8;
+  byte *pbVar9;
+  uint *puVar10;
+  byte *puVar11;
+  byte *pbVar12;
   byte local_218 [336];
   undefined4 local_c8 [17];
   undefined4 local_84;
@@ -62,8 +63,8 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004EEFB0::FUN_005c8200
   }
   wsprintfA(&DAT_00853de4,"%s%s%s",&DAT_00807680,PTR_s_MISSIONS__0079c0e8,
             PTR_s_RANDOM_0079c0f4);
-  puVar3 = Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&DAT_00853de4,0,0,0);
-  this_00->field_1F3F = puVar3;
+  pcVar3 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&DAT_00853de4,0,0,0);
+  this_00->field_1F3F = pcVar3;
   if (g_startSystem_0081176C->field_02F4 != (ushort *)0x0) {
     FreeAndNull(&g_startSystem_0081176C->field_02F4);
   }
@@ -73,12 +74,12 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004EEFB0::FUN_005c8200
     FUN_006c7f90(g_startSystem_0081176C->field_02F4,(byte *)0x0,g_dDXContext_0080759C->field_04B4,0);
   }
   local_84 = DAT_0080995c;
-  puVar3 = &DAT_00809960;
-  puVar10 = local_c8;
+  puVar8 = (byte *)(&DAT_00809960);
+  puVar11 = (byte *)(local_c8);
   for (iVar2 = 8; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *puVar10 = *puVar3;
-    puVar3 = puVar3 + 1;
-    puVar10 = puVar10 + 1;
+    *puVar11 = *puVar8;
+    puVar8 = (byte *)(puVar8 + 1);
+    puVar11 = (byte *)(puVar11 + 1);
   }
   local_8 = &DAT_008087b6;
   puVar4 = cMf32::RecGet(this_00->field_1F3F,0,PTR_s_DESCRIPTOR_0079c110,(int *)&local_8,0);
@@ -97,13 +98,9 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004EEFB0::FUN_005c8200
   }
   DAT_00809958 = DAT_008087be;
   DAT_0080995c = local_84;
-  puVar3 = local_c8;
-  puVar10 = &DAT_00809960;
-  for (iVar2 = 8; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *puVar10 = *puVar3;
-    puVar3 = puVar3 + 1;
-    puVar10 = puVar10 + 1;
-  }
+  puVar8 = (byte *)(local_c8);
+  puVar11 = (byte *)(&DAT_00809960);
+  memmove(puVar11, puVar8, 0x20); /* compiler REP MOVS byte copy */
   if (g_dArray_0080C4C7 != (DArrayTy *)0x0) {
     FUN_006b5570(g_dArray_0080C4C7);
   }
@@ -129,27 +126,27 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004EEFB0::FUN_005c8200
   if ((puVar4 == (ushort *)0x0) || ((char)DAT_0080c3c3 == '\0')) {
     Library::MSVCRT::FUN_0072e730(&DAT_00853de4,(byte *)0x0,(byte *)0x0,local_218,(byte *)0x0);
     uVar6 = 0xffffffff;
-    pbVar8 = local_218;
+    pbVar9 = local_218;
     do {
-      pbVar11 = pbVar8;
+      pbVar12 = pbVar9;
       if (uVar6 == 0) break;
       uVar6 = uVar6 - 1;
-      pbVar11 = pbVar8 + 1;
-      bVar1 = *pbVar8;
-      pbVar8 = pbVar11;
+      pbVar12 = pbVar9 + 1;
+      bVar1 = *pbVar9;
+      pbVar9 = pbVar12;
     } while (bVar1 != 0);
     uVar6 = ~uVar6;
-    pbVar8 = pbVar11 + -uVar6;
-    pbVar11 = (byte *)&DAT_0080c3c3;
+    pbVar9 = pbVar12 + -uVar6;
+    pbVar12 = (byte *)&DAT_0080c3c3;
     for (uVar7 = uVar6 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *(undefined4 *)pbVar11 = *(undefined4 *)pbVar8;
-      pbVar8 = pbVar8 + 4;
-      pbVar11 = pbVar11 + 4;
+      *(undefined4 *)pbVar12 = *(undefined4 *)pbVar9;
+      pbVar9 = pbVar9 + 4;
+      pbVar12 = pbVar12 + 4;
     }
     for (uVar6 = uVar6 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
-      *pbVar11 = *pbVar8;
-      pbVar8 = pbVar8 + 1;
-      pbVar11 = pbVar11 + 1;
+      *pbVar12 = *pbVar9;
+      pbVar9 = pbVar9 + 1;
+      pbVar12 = pbVar12 + 1;
     }
   }
   local_8 = &DAT_00853de0;
@@ -176,22 +173,22 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004EEFB0::FUN_005c8200
     wsprintfA((LPSTR)&local_18,"%08x",DAT_0080995c);
     this_00->field_1A82 = local_18;
     this_00->field_1A86 = local_14;
-    Library::MSVCRT::_strncpy(&this_00->field_0x1a8a,(char *)&DAT_0080c3c3,0x1d5);
+    Library::MSVCRT::_strncpy(&this_00->field_1A8A,(char *)&DAT_0080c3c3,0x1d5);
     this_00->field_1C5E = 0;
     CFsgsConnection::UpdateGame((CFsgsConnection *)&DAT_00802a90,4,&this_00->field_0x1a5f);
   }
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (*(code *)this_00->field_0000->field_0028)();
   SettMapTy::PaintSettMap(this_00,'\0');
-  puVar9 = this_00->field_1F60;
+  puVar10 = this_00->field_1F60;
   memset(local_38, 0, 0x20); /* compiler bulk-zero initialization */
   local_28 = 5;
   iVar2 = 7;
   do {
-    if (*puVar9 != 0) {
-      FUN_006e6080(this_00,2,*puVar9,local_38);
+    if (*puVar10 != 0) {
+      FUN_006e6080(this_00,2,*puVar10,local_38);
     }
-    puVar9 = puVar9 + 1;
+    puVar10 = puVar10 + 1;
     iVar2 = iVar2 + -1;
   } while (iVar2 != 0);
   g_currentExceptionFrame = local_7c.previous;

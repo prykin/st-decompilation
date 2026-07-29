@@ -56,7 +56,7 @@ int __thiscall STRubbishC::GetMessage(STRubbishC *this,STMessage *message)
     }
     else if (SVar4 == MESS_SHARED_010F) {
       local_10 = (byte *)thunk_FUN_0062f940(this_00,(uint *)&local_c);
-      STPlaySystemC::SaveObjData(g_playSystem_00802A38,this_00->field_0018,local_10,local_c);
+      STPlaySystemC::SaveObjData(g_playSystem_00802A38,(int *)this_00->field_0018,local_10,local_c);
       FreeAndNull(&local_10);
       g_currentExceptionFrame = local_58.previous;
       return 0;

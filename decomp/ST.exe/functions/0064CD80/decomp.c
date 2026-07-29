@@ -12,14 +12,13 @@ int __thiscall AiEventClassTy::InitData(AiEventClassTy *this,int *param_1)
   AiEventClassTy *pAVar2;
   int iVar3;
   DArrayTy *pDVar4;
-  undefined4 *puVar5;
+  byte *puVar5;
   uint *puVar6;
   undefined4 uVar7;
   int iVar8;
-  uint uVar9;
   int *piVar10;
   uint uVar11;
-  undefined4 *puVar12;
+  byte *puVar12;
   void *pvVar13;
   int *piVar14;
   bool bVar15;
@@ -68,32 +67,23 @@ int __thiscall AiEventClassTy::InitData(AiEventClassTy *this,int *param_1)
       pAVar2->field_0088 = pAVar2->field_00DA;
     }
     iVar3 = pAVar2->field_0506;
-    puVar12 = &pAVar2->field_04FA;
-    if (puVar12 == (undefined4 *)0x0) {
+    piVar14 = &pAVar2->field_04FA;
+    if (piVar14 == (int *)0x0) {
       uVar11 = 0;
     }
     else {
-      uVar11 = *puVar12 * 5;
+      uVar11 = *piVar14 * 5;
     }
-    puVar5 = Library::DKW::LIB::FUN_006aac10(uVar11);
+    puVar5 = (byte *)(Library::DKW::LIB::FUN_006aac10(uVar11));
     pAVar2->field_0502 = puVar5;
-    if (puVar12 == (undefined4 *)0x0) {
+    if (piVar14 == (int *)0x0) {
       uVar11 = 0;
     }
     else {
-      uVar11 = *puVar12 * 5;
+      uVar11 = *piVar14 * 5;
     }
-    puVar12 = (undefined4 *)(iVar3 + 0x49e + (int)param_1);
-    for (uVar9 = uVar11 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
-      *puVar5 = *puVar12;
-      puVar12 = puVar12 + 1;
-      puVar5 = puVar5 + 1;
-    }
-    for (uVar11 = uVar11 & 3; uVar11 != 0; uVar11 = uVar11 - 1) {
-      *(undefined1 *)puVar5 = *(undefined1 *)puVar12;
-      puVar12 = (undefined4 *)((int)puVar12 + 1);
-      puVar5 = (undefined4 *)((int)puVar5 + 1);
-    }
+    puVar12 = (byte *)(iVar3 + 0x49e + (int)param_1);
+    memmove(puVar5, puVar12, uVar11); /* compiler REP MOVS byte copy */
     pDVar4 = (DArrayTy *)
              FUN_006b0060((uint *)0x0,(uint *)(pAVar2->field_04F2 + 0x49e + (int)param_1));
     pAVar2->field_04EE = pDVar4;

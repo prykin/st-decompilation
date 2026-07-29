@@ -48,7 +48,7 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
   if ((param_1 == 0) || (param_1 == 1)) {
     memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
     this->field_02C4 = 0;
-    if (this->field_07CA != 0) {
+    if (this->field_07CA != (AnonShape_005EFAE0_B406B78B *)0x0) {
       sVar4 = this->field_03CE;
       sVar13 = this->field_03D0;
       *(short *)&this->field_0x5ca = sVar4;
@@ -127,9 +127,7 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
     if (uVar6 != 0xffffffff) {
       if (uVar6 == 0) {
         this->field_05D6 = 1;
-        STPlaySystemC::sub_006E62D0
-                  (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)this->field_07CA,
-                   (int *)&local_c);
+        STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,this->field_07CA,(int *)&local_c);
         uVar1 = local_c->field_0062;
         uVar2 = local_c->field_0061;
         local_5 = local_c->field_0063;
@@ -155,7 +153,7 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
                    *(short *)&this->field_0x5d4,0,(RecoveredRecord_DumpClassC_00495EC0 *)this);
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         TLOEmbryoTy::sub_0041C3F0((TLOEmbryoTy *)this,*(undefined **)((int)this->field_06CB + 0x3f));
-        this->field_07CA = 0;
+        this->field_07CA = (AnonShape_005EFAE0_B406B78B *)0x0;
         this->field_07C6 = 0;
       }
       iVar5 = this->vfunc_D8();

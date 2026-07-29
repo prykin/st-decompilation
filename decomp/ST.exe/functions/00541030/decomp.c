@@ -12,34 +12,42 @@ void DelAllAccelerators(void)
   code *pcVar1;
   int iVar2;
   int iVar3;
-  undefined4 **ppuVar5;
-  undefined4 local_b4 [19];
+  byte *pbVar4;
+  byte **ppbVar5;
+  byte local_b4 [76];
   InternalExceptionFrame local_68;
-  undefined4 *local_24 [8];
+  byte *local_24 [8];
 
-  memset(local_b4, 0, 0x4c); /* compiler bulk-zero initialization */
+  pbVar4 = local_b4;
+  for (iVar3 = 0x13; iVar3 != 0; iVar3 = iVar3 + -1) {
+    pbVar4[0] = 0;
+    pbVar4[1] = 0;
+    pbVar4[2] = 0;
+    pbVar4[3] = 0;
+    pbVar4 = pbVar4 + 4;
+  }
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
   iVar3 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0);
   if (iVar3 == 0) {
-    if (g_dArray_008026F0 != (DArrayTy *)0x0) {
-      g_dArray_008026F0->iteratorIndex = 0;
-      iVar3 = FUN_006b1190(g_dArray_008026F0,local_b4);
+    if (g_array_008026F0 != (DArrayTy *)0x0) {
+      g_array_008026F0->iteratorIndex = 0;
+      iVar3 = DArrayGetNext(g_array_008026F0,local_b4);
       while (-1 < iVar3) {
-        ppuVar5 = local_24;
+        ppbVar5 = local_24;
         for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
-          *ppuVar5 = (undefined4 *)0x0;
-          ppuVar5 = ppuVar5 + 1;
+          *ppbVar5 = (byte *)0x0;
+          ppbVar5 = ppbVar5 + 1;
         }
         local_24[5] = local_b4;
-        local_24[2] = (undefined4 *)0x1;
-        local_24[3] = (undefined4 *)0x3;
-        local_24[4] = (undefined4 *)0x11;
+        local_24[2] = (byte *)0x1;
+        local_24[3] = (byte *)0x3;
+        local_24[4] = (byte *)0x11;
         FUN_006e3db0((int)local_24);
-        iVar3 = FUN_006b1190(g_dArray_008026F0,local_b4);
+        iVar3 = DArrayGetNext(g_array_008026F0,local_b4);
       }
-      DArrayDestroy(g_dArray_008026F0);
-      g_dArray_008026F0 = (DArrayTy *)0x0;
+      DArrayDestroy(g_array_008026F0);
+      g_array_008026F0 = (DArrayTy *)0x0;
     }
     g_currentExceptionFrame = local_68.previous;
     return;

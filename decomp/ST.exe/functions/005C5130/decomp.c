@@ -226,7 +226,7 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this,int *param_1)
     if ((this_00->field_0x21e1 != '\0') && (this_00->field_21E8 != (HoloTy *)0x0)) {
       iVar7 = HoloTy::NextFas(this_00->field_21E8);
       if (iVar7 == 0) {
-        uVar4 = this_00->field_21E8->field_0003;
+        uVar4 = *(uint *)&this_00->field_21E8->field_0x3;
         if (-1 < (int)uVar4) {
           FUN_006b3af0((int *)g_ddxContext_008075A8,uVar4);
         }
@@ -238,7 +238,7 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this,int *param_1)
     if ((this_00->field_0x21e5 != '\0') && (this_00->field_21F4 != (HoloTy *)0x0)) {
       iVar7 = HoloTy::NextFas(this_00->field_21F4);
       if (iVar7 == 0) {
-        uVar4 = this_00->field_21F4->field_0003;
+        uVar4 = *(uint *)&this_00->field_21F4->field_0x3;
         if (-1 < (int)uVar4) {
           FUN_006b3af0((int *)g_ddxContext_008075A8,uVar4);
         }
@@ -252,7 +252,7 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this,int *param_1)
        ((this_00->field_0x21e2 != '\0' && (this_00->field_21EC != (HoloTy *)0x0)))) {
       iVar7 = HoloTy::NextFas(this_00->field_21EC);
       if (iVar7 == 0) {
-        uVar4 = this_00->field_21EC->field_0003;
+        uVar4 = *(uint *)&this_00->field_21EC->field_0x3;
         if (-1 < (int)uVar4) {
           FUN_006b3af0((int *)g_ddxContext_008075A8,uVar4);
         }
@@ -266,7 +266,7 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this,int *param_1)
        ((this_00->field_0x21e3 != '\0' && (this_00->field_21F0 != (HoloTy *)0x0)))) {
       iVar7 = HoloTy::NextFas(this_00->field_21F0);
       if (iVar7 == 0) {
-        uVar4 = this_00->field_21F0->field_0003;
+        uVar4 = *(uint *)&this_00->field_21F0->field_0x3;
         if (-1 < (int)uVar4) {
           FUN_006b3af0((int *)g_ddxContext_008075A8,uVar4);
         }
@@ -280,7 +280,7 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this,int *param_1)
        ((this_00->field_0x21e6 != '\0' && (this_00->field_21F8 != (HoloTy *)0x0)))) {
       iVar7 = HoloTy::NextFas(this_00->field_21F8);
       if (iVar7 == 0) {
-        uVar4 = this_00->field_21F8->field_0003;
+        uVar4 = *(uint *)&this_00->field_21F8->field_0x3;
         if (-1 < (int)uVar4) {
           FUN_006b3af0((int *)g_ddxContext_008075A8,uVar4);
         }

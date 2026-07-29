@@ -10,7 +10,8 @@ VisibleClassTy * __thiscall VisibleClassTy::VisibleClassTy(VisibleClassTy *this)
 
 {
   int iVar1;
-  byte **ppbVar2;
+  void **ppvVar2;
+  byte **ppbVar3;
 
   sub_006E60E0(this);
   this->vtable = &VisibleClassTyVTable;
@@ -25,17 +26,20 @@ VisibleClassTy * __thiscall VisibleClassTy::VisibleClassTy(VisibleClassTy *this)
   this->field_0038 = (byte *)0x0;
   this->field_004C = (byte *)0x0;
   this->field_0050 = (ushort *)0x0;
-  memset(&this->field_0054, 0, 0x20); /* compiler bulk-zero initialization */
-  iVar1 = 0;
-  ppbVar2 = this->field_0074;
+  ppvVar2 = &this->field_0054;
   for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *ppbVar2 = (byte *)0x0;
-    ppbVar2 = ppbVar2 + 1;
+    *ppvVar2 = (void *)0x0;
+    ppvVar2 = ppvVar2 + 1;
   }
-  ppbVar2 = this->field_0094;
+  ppbVar3 = this->field_0074;
   for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *ppbVar2 = (byte *)0x0;
-    ppbVar2 = ppbVar2 + 1;
+    *ppbVar3 = (byte *)0x0;
+    ppbVar3 = ppbVar3 + 1;
+  }
+  ppbVar3 = this->field_0094;
+  for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {
+    *ppbVar3 = (byte *)0x0;
+    ppbVar3 = ppbVar3 + 1;
   }
   this->field_003C[0] = (void *)0x0;
   this->field_003C[1] = (void *)0x0;

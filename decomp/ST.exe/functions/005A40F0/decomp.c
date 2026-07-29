@@ -9,6 +9,7 @@ void __thiscall
 FSGSTy::SetLadder(FSGSTy *this,undefined4 param_1,uint param_2,int param_3,undefined4 *param_4)
 
 {
+  void **value;
   code *pcVar1;
   CursorClassTy *this_00;
   FSGSTy *this_01;
@@ -18,7 +19,6 @@ FSGSTy::SetLadder(FSGSTy *this,undefined4 param_1,uint param_2,int param_3,undef
   uint uVar5;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   int unaff_EDI;
-  undefined4 *puVar6;
   InternalExceptionFrame local_6c;
   undefined4 local_28 [4];
   undefined4 local_18;
@@ -41,15 +41,15 @@ FSGSTy::SetLadder(FSGSTy *this,undefined4 param_1,uint param_2,int param_3,undef
     iVar2 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0);
     this_01 = local_8;
     if (iVar2 == 0) {
-      puVar6 = &local_8->field_1EDB;
-      if (local_8->field_1EDB != 0) {
-        FreeAndNull((void **)puVar6);
+      value = &local_8->field_1EDB;
+      if (local_8->field_1EDB != (void *)0x0) {
+        FreeAndNull(value);
       }
       this_01->field_1EDF = param_2;
       this_01->field_1EE3 = param_3;
       puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(param_3 * 0x24);
       uVar5 = this_01->field_1EE3;
-      *puVar6 = puVar3;
+      *value = puVar3;
       for (uVar5 = uVar5 * 9 & 0x3fffffff; uVar5 != 0; uVar5 = uVar5 - 1) {
         *puVar3 = *param_4;
         param_4 = param_4 + 1;

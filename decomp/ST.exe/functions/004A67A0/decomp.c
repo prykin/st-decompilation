@@ -144,7 +144,7 @@ void __thiscall STGroupBoatC::RestoreGrpBData(STGroupBoatC *this,undefined4 *par
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   local_8->field_0176 = *(undefined2 *)((int)local_c + 0x151);
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  local_8->field_0178 = *(undefined4 *)((int)local_c + 0x153);
+  local_8->field_0178 = *(AnonShape_005EFAE0_B406B78B **)((int)local_c + 0x153);
   *(undefined2 *)&local_8->field_0x17c = *(undefined2 *)((int)local_c + 0x157);
   *(undefined2 *)&local_8->field_0x17e = *(undefined2 *)((int)local_c + 0x159);
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -186,7 +186,7 @@ void __thiscall STGroupBoatC::RestoreGrpBData(STGroupBoatC *this,undefined4 *par
   *(undefined4 *)&local_8->field_0x1bf = *(undefined4 *)((int)local_c + 0x19a);
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   local_8->field_01C3 = *(undefined2 *)((int)local_c + 0x19e);
-  local_8->field_01C5 = local_c[0x68];
+  local_8->field_01C5 = (AnonShape_005EFAE0_B406B78B *)local_c[0x68];
   puVar11 = (undefined4 *)((int)local_c + 0x1d5);
   puVar4 = (undefined4 *)&local_8->field_0x1e2;
   for (iVar3 = 10; iVar3 != 0; iVar3 = iVar3 + -1) {
@@ -228,7 +228,7 @@ void __thiscall STGroupBoatC::RestoreGrpBData(STGroupBoatC *this,undefined4 *par
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   local_8->field_025C = *(short *)((int)local_c + 0x263);
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  local_8->field_025E = *(undefined4 *)((int)local_c + 0x265);
+  local_8->field_025E = *(int *)((int)local_c + 0x265);
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   local_8->field_0262 = *(undefined4 *)((int)local_c + 0x269);
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */

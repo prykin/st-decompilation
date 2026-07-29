@@ -65,7 +65,7 @@ void __thiscall STBoatC::RestoreBoatData(STBoatC *this,int param_1)
   local_8->field_0461 = local_10->field_0368;
   local_8->field_0469 = local_10->field_036C;
   local_8->field_046F = local_10->field_036E;
-  local_8->field_0471 = local_10->field_0370;
+  local_8->field_0471 = (AnonShape_005EFAE0_B406B78B *)local_10->field_0370;
   local_8->field_0475 = local_10->field_0374;
   local_8->field_0477 = local_10->field_0376;
   local_8->field_0479 = local_10->field_0378;

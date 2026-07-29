@@ -828,7 +828,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 004025E5	STRubbishC::LoadImagSpr	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 004025EF	thunk_FUN_0054eb20	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 004025F4	thunk_FUN_005ddb40	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-004025F9	STPlaySystemC::SaveObjData	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 00402603	STGroupBoatC::MakePVec	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00402608	thunk_FUN_00492370	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00402612	STFishC::sub_0057D5F0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
@@ -2241,7 +2240,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00404A8E	SAMPanelTy::Update	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00404AA2	STAppC::ReadCmdPlay	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00404AAC	thunk_FUN_0062b300	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-00404AB6	thunk_FUN_004e1eb0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00404AC5	thunk_FUN_004b7350	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 00404ACF	StartSystemTy::OutBmpProc	parameter	2	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
 00404ACF	StartSystemTy::OutBmpProc	parameter	3	param_3	/undefined4	Stack[0xc]:4	DEFAULT		0	0	no_evidence		-
@@ -3706,7 +3704,7 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 004D7270	FUN_004d7270	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 004D7390	FUN_004d7390	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	/uint	1	1	width_mismatch	{/uint=1}	004D7390 returns zeroed full register at 004D7395 @ 004D7397
 004D73B0	FUN_004d73b0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-004D7480	FUN_004d7480	parameter	2	param_3	/undefined4	Stack[0xc]:4	DEFAULT	/uint	0	1	insufficient_independent_evidence	{/uint=1}	004749C0 -> 004D7480 @ 004751BF; /STBoatC+0x18
+004D7480	FUN_004d7480	parameter	2	param_3	/undefined4	Stack[0xc]:4	DEFAULT	/int	0	1	insufficient_independent_evidence	{/int=1}	004749C0 -> 004D7480 @ 004751BF; /STBoatC+0x18
 004D7480	FUN_004d7480	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 004D7570	FUN_004d7570	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 004D76E0	FUN_004d76e0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
@@ -3862,7 +3860,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 004E16D0	FUN_004e16d0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 004E18E0	FUN_004e18e0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 004E1E30	FUN_004e1e30	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-004E1EB0	FUN_004e1eb0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 004E2040	FUN_004e2040	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 004E20D0	FUN_004e20d0	parameter	4	param_4	/undefined4	Stack[0x10]:4	DEFAULT	/int	0	1	insufficient_independent_evidence	{/int=1}	0046F5C0 -> 004E20D0 @ 004706A7; /STBoatC+0x716
 004E20D0	FUN_004e20d0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
@@ -4338,7 +4335,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 0054CFA0	FUN_0054cfa0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0054CFC0	STPlaySystemC::InitSystem	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 0054D180	STPlaySystemC::DoneSystem	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-0054D430	STPlaySystemC::SaveObjData	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT	/uint	0	1	insufficient_independent_evidence	{/uint=1}	00621B50 -> 0054D430 @ 00622246; /STMineSetC+0x18
 0054D640	STPlaySystemC::Life	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 0054EB20	FUN_0054eb20	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 0054EBB0	STPlaySystemC::sub_0054EBB0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -5605,7 +5601,7 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00631510	STManRuinC::sub_00631510	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	/uint	1	1	width_mismatch	{/uint=1}	00631510 returns return of STManRuinC::sub_006308F0 @ 0063154D
 00631560	STManRuinC::sub_00631560	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 006315D0	FUN_006315d0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00631880	STManRuinC::sub_00631880	parameter	2	param_2	/undefined4	Stack[0x8]:4	DEFAULT	/int	0	1	insufficient_independent_evidence	{/int=1}	00631010 -> 00631880 @ 00631106; /STManRuinC+0x61
+00631880	STManRuinC::sub_00631880	parameter	2	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
 00631910	FUN_00631910	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 00631910	FUN_00631910	parameter	2	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
 00631910	FUN_00631910	parameter	3	param_3	/undefined4	Stack[0xc]:4	DEFAULT		0	0	no_evidence		-
@@ -6351,7 +6347,7 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 006AFF5B	FUN_006aff5b	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 006AFFC0	FUN_006affc0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 006B0020	FUN_006b0020	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-006B0060	FUN_006b0060	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		26	0	conflicting_evidence	{pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_JumpManagC_0062=1, pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_JumpManagC_0066=1, pointer:/SubmarineTitans/Recovered/DArraySpecializations/STBHEShellC_field_0169DArray=1, pointer:/SubmarineTitans/Recovered/DArraySpecializations/STFieldC_field_0234DArray=1, pointer:/SubmarineTitans/Recovered/DArraySpecializations/STLightC_field_00A3DArray=1, pointer:/SubmarineTitans/Recovered/DArraySpecializations/STManBasisC_field_0038DArray=1, pointer:/SubmarineTitans/Recovered/DArraySpecializations/STManRuinC_field_0038DArray=1, pointer:/SubmarineTitans/Recovered/DArrayTy=19}	006B0060 returns stored into /JumpManagC+0x5e @ 006181A8 | 006B0060 returns stored into /JumpManagC+0x62 @ 006181CC | 006B0060 returns stored into /JumpManagC+0x66 @ 006181EA | 006B0060 returns stored into /STBHEShellC+0x169 @ 005F5BB4 | 006B0060 returns stored into /STBoatC+0x47b @ 004903FC | 006B0060 returns stored into /STFieldC+0x234 @ 0060C1F3 | 006B0060 returns stored into /STGroupBoatC+0x103 @ 004A6EBA | 006B0060 returns stored into /STGroupBoatC+0x10f @ 004A6EE1 | 006B0060 returns stored into /STGroupBoatC+0x127 @ 004A6F08 | 006B0060 returns stored into /STGroupBoatC+0x160 @ 004A6F2F | 006B0060 returns stored into /STGroupBoatC+0x1ca @ 004A6F56 | 006B0060 returns stored into /STGroupBoatC+0x1ce @ 004A6F7D | 006B0060 returns stored into /STGroupBoatC+0x1d6 @ 004A6FCB | 006B0060 returns stored into /STGroupBoatC+0x1da @ 004A6FF2 | 006B0060 returns stored into /STGroupBoatC+0x20e @ 004A7040 | 006B0060 returns stored into /STGroupBoatC+0x226 @ 004A70B2 | 006B0060 returns stored into /STGroupBoatC+0x22a @ 004A70D9 | 006B0060 returns stored into /STGroupBoatC+0x22e @ 004A7100 | 006B0060 returns stored into /STGroupBoatC+0x24e @ 004A7127 | 006B0060 returns stored into /STGroupBoatC+0x266 @ 004A714E | 006B0060 returns stored into /STGroupBoatC+0xef @ 004A6E93 | 006B0060 returns stored into /STLightC+0xa3 @ 0061D974 | 006B0060 returns stored into /STManBasisC+0x38 @ 005F2147 | 006B0060 returns stored into /STManBasisC+0x3c @ 005F2160 | 006B0060 returns stored into /STManRuinC+0x38 @ 006313D5 | 006B0060 returns stored into /STTorpC+0x241 @ 00645740
+006B0060	FUN_006b0060	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		26	0	conflicting_evidence	{pointer:/SubmarineTitans/Recovered/DArraySpecializations/STBHEShellC_field_0169DArray=1, pointer:/SubmarineTitans/Recovered/DArraySpecializations/STFieldC_field_0234DArray=1, pointer:/SubmarineTitans/Recovered/DArraySpecializations/STLightC_field_00A3DArray=1, pointer:/SubmarineTitans/Recovered/DArraySpecializations/STManBasisC_field_0038DArray=1, pointer:/SubmarineTitans/Recovered/DArraySpecializations/STManRuinC_field_0038DArray=1, pointer:/SubmarineTitans/Recovered/DArrayTy=21}	006B0060 returns stored into /JumpManagC+0x5e @ 006181A8 | 006B0060 returns stored into /JumpManagC+0x62 @ 006181CC | 006B0060 returns stored into /JumpManagC+0x66 @ 006181EA | 006B0060 returns stored into /STBHEShellC+0x169 @ 005F5BB4 | 006B0060 returns stored into /STBoatC+0x47b @ 004903FC | 006B0060 returns stored into /STFieldC+0x234 @ 0060C1F3 | 006B0060 returns stored into /STGroupBoatC+0x103 @ 004A6EBA | 006B0060 returns stored into /STGroupBoatC+0x10f @ 004A6EE1 | 006B0060 returns stored into /STGroupBoatC+0x127 @ 004A6F08 | 006B0060 returns stored into /STGroupBoatC+0x160 @ 004A6F2F | 006B0060 returns stored into /STGroupBoatC+0x1ca @ 004A6F56 | 006B0060 returns stored into /STGroupBoatC+0x1ce @ 004A6F7D | 006B0060 returns stored into /STGroupBoatC+0x1d6 @ 004A6FCB | 006B0060 returns stored into /STGroupBoatC+0x1da @ 004A6FF2 | 006B0060 returns stored into /STGroupBoatC+0x20e @ 004A7040 | 006B0060 returns stored into /STGroupBoatC+0x226 @ 004A70B2 | 006B0060 returns stored into /STGroupBoatC+0x22a @ 004A70D9 | 006B0060 returns stored into /STGroupBoatC+0x22e @ 004A7100 | 006B0060 returns stored into /STGroupBoatC+0x24e @ 004A7127 | 006B0060 returns stored into /STGroupBoatC+0x266 @ 004A714E | 006B0060 returns stored into /STGroupBoatC+0xef @ 004A6E93 | 006B0060 returns stored into /STLightC+0xa3 @ 0061D974 | 006B0060 returns stored into /STManBasisC+0x38 @ 005F2147 | 006B0060 returns stored into /STManBasisC+0x3c @ 005F2160 | 006B0060 returns stored into /STManRuinC+0x38 @ 006313D5 | 006B0060 returns stored into /STTorpC+0x241 @ 00645740
 006B01D0	FUN_006b01d0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 006B0290	FUN_006b0290	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 006B0330	FUN_006b0330	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -6363,7 +6359,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 006B0BA0	FUN_006b0ba0	parameter	3	param_4	/undefined4	Stack[0x10]:4	DEFAULT		0	0	no_evidence		-
 006B0BA0	FUN_006b0ba0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 006B0BE0	FUN_006b0be0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-006B0C70	FUN_006b0c70	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 006B0CD0	FUN_006b0cd0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 006B0DC0	FUN_006b0dc0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 006B0E20	FUN_006b0e20	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -6653,7 +6648,6 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 006C8E20	Library::DKW::FIO::FUN_006c8e20	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 006C8E60	FUN_006c8e60	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 006C8EC0	FUN_006c8ec0	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-006CEA60	FUN_006cea60	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 006CEBE0	FUN_006cebe0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 006CEE60	FUN_006cee60	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 006CF415	FUN_006cf415	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-

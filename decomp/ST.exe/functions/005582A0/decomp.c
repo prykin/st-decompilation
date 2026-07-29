@@ -11,11 +11,11 @@ undefined4 * __thiscall VisibleClassTy::PrepareToSave(VisibleClassTy *this,uint 
   code *pcVar1;
   VisibleClassTy *pVVar2;
   int iVar3;
-  undefined4 *puVar4;
+  byte *puVar4;
   int iVar5;
   uint uVar6;
   uint uVar7;
-  undefined4 *puVar8;
+  byte *puVar8;
   undefined4 *puVar9;
   InternalExceptionFrame local_68;
   VisibleClassTy *local_24;
@@ -89,58 +89,49 @@ LAB_0055832e:
   local_8[0x13] = *(undefined4 *)(pVVar2->field_00FC + 4);
   if (pVVar2->field_0114 != 0) {
     local_1c = pVVar2->field_003C;
-    puVar4 = local_8 + 0x20;
+    puVar4 = (byte *)(local_8 + 0x20);
     local_20 = (undefined4 *)0x4;
     do {
       if (*local_1c != (undefined4 *)0x0) {
         uVar6 = pVVar2->field_0028 * pVVar2->field_002C;
-        puVar8 = *local_1c;
+        puVar8 = (byte *)(*local_1c);
         puVar9 = puVar4;
         for (uVar7 = uVar6 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
           *puVar9 = *puVar8;
-          puVar8 = puVar8 + 1;
+          puVar8 = (byte *)(puVar8 + 1);
           puVar9 = puVar9 + 1;
         }
         for (uVar6 = uVar6 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
           *(undefined1 *)puVar9 = *(undefined1 *)puVar8;
-          puVar8 = (undefined4 *)((int)puVar8 + 1);
+          puVar8 = (byte *)((int)puVar8 + 1);
           puVar9 = (undefined4 *)((int)puVar9 + 1);
         }
-        puVar4 = (undefined4 *)((int)puVar4 + pVVar2->field_0028 * pVVar2->field_002C);
+        puVar4 = (byte *)((int)puVar4 + pVVar2->field_0028 * pVVar2->field_002C);
       }
       local_1c = local_1c + 1;
       local_20 = (undefined4 *)((int)local_20 + -1);
     } while (local_20 != (undefined4 *)0x0);
     local_20 = (undefined4 *)0x0;
     if (local_c != (undefined4 *)0x0) {
-      puVar8 = local_c;
+      puVar8 = (byte *)(local_c);
       puVar9 = puVar4;
       for (uVar7 = local_10 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
         *puVar9 = *puVar8;
-        puVar8 = puVar8 + 1;
+        puVar8 = (byte *)(puVar8 + 1);
         puVar9 = puVar9 + 1;
       }
       for (uVar7 = local_10 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
         *(undefined1 *)puVar9 = *(undefined1 *)puVar8;
-        puVar8 = (undefined4 *)((int)puVar8 + 1);
+        puVar8 = (byte *)((int)puVar8 + 1);
         puVar9 = (undefined4 *)((int)puVar9 + 1);
       }
       local_20 = (undefined4 *)((int)puVar4 + local_10);
       FreeAndNull(&local_c);
-      puVar4 = local_20;
+      puVar4 = (byte *)(local_20);
     }
     if (local_14 != (undefined4 *)0x0) {
-      puVar8 = local_14;
-      for (uVar7 = local_18 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-        *puVar4 = *puVar8;
-        puVar8 = puVar8 + 1;
-        puVar4 = puVar4 + 1;
-      }
-      for (uVar7 = local_18 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-        *(undefined1 *)puVar4 = *(undefined1 *)puVar8;
-        puVar8 = (undefined4 *)((int)puVar8 + 1);
-        puVar4 = (undefined4 *)((int)puVar4 + 1);
-      }
+      puVar8 = (byte *)(local_14);
+      memmove(puVar4, puVar8, local_18); /* compiler REP MOVS byte copy */
       FreeAndNull(&local_14);
     }
   }

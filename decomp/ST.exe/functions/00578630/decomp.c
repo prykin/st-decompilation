@@ -103,11 +103,7 @@ int __thiscall STCrabC::GetMessage(STCrabC *this,STMessage *message)
     }
     pSVar12 = &this_00->field_0259;
     pSVar14 = local_c;
-    for (iVar7 = 10; iVar7 != 0; iVar7 = iVar7 + -1) {
-      *pSVar14 = *pSVar12;
-      pSVar12 = pSVar12 + 1;
-      pSVar14 = pSVar14 + 1;
-    }
+    memmove(pSVar14, pSVar12, 0x28); /* compiler REP MOVS byte copy */
     local_c[3] = 2;
     local_c[10] = *(STSprGameObjC_field_0259State *)&this_00->field_0x235;
     local_c[0xb] = *(STSprGameObjC_field_0259State *)&this_00->field_0x239;
@@ -159,7 +155,7 @@ int __thiscall STCrabC::GetMessage(STCrabC *this,STMessage *message)
       pbVar15 = pbVar15 + 1;
     }
     STPlaySystemC::SaveObjData
-              (g_playSystem_00802A38,this_00->field_0018,(byte *)local_c,
+              (g_playSystem_00802A38,(int *)this_00->field_0018,(byte *)local_c,
                (AnonShape_0060EA30_DCEB68AD *)(local_10 + 0x68 + local_8));
     FreeAndNull(&local_14);
     FreeAndNull(&local_18);
@@ -342,11 +338,7 @@ cf_error_exit_00578B5D:
   else if (local_20[3] == 2) {
     pSVar12 = local_20;
     pSVar14 = &this_00->field_0259;
-    for (iVar7 = 10; iVar7 != 0; iVar7 = iVar7 + -1) {
-      *pSVar14 = *pSVar12;
-      pSVar12 = pSVar12 + 1;
-      pSVar14 = pSVar14 + 1;
-    }
+    memmove(pSVar14, pSVar12, 0x28); /* compiler REP MOVS byte copy */
     local_8 = local_20[0x18];
     STAllPlayersC::RestoreGObjData
               ((STAllPlayersC *)this_00,(undefined4 *)(local_8 + 0x68 + (int)local_20));

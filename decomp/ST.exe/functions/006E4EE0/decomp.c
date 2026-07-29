@@ -33,7 +33,7 @@ LAB_006e4f26:
             param_1[7] = 1;
             return 0xffff;
           }
-          FUN_006b0c70((DArrayTy *)param_1[10],0);
+          DArrayRemoveAt((DArrayTy *)param_1[10],0);
           iVar1 = param_1[10];
           bVar3 = *(int *)(iVar1 + 0xc) == 0;
         } while (!bVar3);
@@ -54,7 +54,7 @@ LAB_006e4f26:
       param_1[7] = 1;
       goto LAB_006e4f26;
     }
-    FUN_006b0c70((DArrayTy *)param_1[0xb],0);
+    DArrayRemoveAt((DArrayTy *)param_1[0xb],0);
     iVar1 = param_1[0xb];
     iVar2 = *(int *)(iVar1 + 0xc);
   } while( true );

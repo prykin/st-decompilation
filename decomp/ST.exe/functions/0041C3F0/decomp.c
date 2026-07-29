@@ -20,7 +20,7 @@ void __thiscall TLOEmbryoTy::sub_0041C3F0(TLOEmbryoTy *this,undefined *param_1)
     if (this->field_0020 == 0x14) {
       iVar1 = thunk_FUN_004e60d0(this->field_0024,10);
       if (iVar1 < 1) {
-        this->field_0105 = this->field_0101;
+        this->field_0105 = (int)this->field_0101;
       }
       else {
         this->field_0105 = (int)this->field_0101 << 1;

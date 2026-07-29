@@ -99,9 +99,8 @@ cf_common_exit_00594615:
     FUN_006e5fe0(this_00,(undefined4 *)&this_00->field_0xa8);
     puVar3 = this_00->field_0104;
     Library::DKW::WGR::FUN_006b55f0
-              ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_00FC,0,(message->arg1).words.low + 5,
-               (message->arg1).words.high + 5,(byte *)puVar3,0,0,0,*(int *)(puVar3 + 2),
-               *(int *)(puVar3 + 4));
+              (this_00->field_00FC,0,(message->arg1).words.low + 5,(message->arg1).words.high + 5,
+               (byte *)puVar3,0,0,0,*(int *)(puVar3 + 2),*(int *)(puVar3 + 4));
     goto cf_common_exit_00594615;
   case 0x10002:
     if (local_c->field_0110 == 0) goto cf_common_exit_00594615;

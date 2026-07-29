@@ -57,16 +57,18 @@ switchD_00460024_caseD_1:
         if (this->field_0024 != (uint)DAT_0080874d) {
           return 2;
         }
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected STPackTagged24(2, this->field_0018) == (((uint32_t)(this->field_0018) & 0x00ffffffu) | ((uint32_t)(2) << 24)) */
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         ST3DSMAPContext::sub_006E6780
                   (this->field_0211,
-                   CONCAT22(CONCAT11(2,(char)(this->field_0018 >> 0x10)),(short)this->field_0018));
-        /* ST_PSEUDO[packed_or_unaligned_piece]: expected STPackTagged24(2, this->field_0018) == (((uint32_t)(this->field_0018) & 0x00ffffffu) | ((uint32_t)(2) << 24)) */
+                   CONCAT22(CONCAT11(2,(char)((uint)this->field_0018 >> 0x10)),
+                            (short)this->field_0018));
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         ST3DSMAPContext::sub_006E6710
                   (this->field_0211,(float)(int)this->field_0041 * _DAT_007904f8 * _DAT_007904f0,
                    (float)(int)this->field_0043 * _DAT_007904f8 * _DAT_007904f0,
                    (uint)((float)this->field_010D * _DAT_007904f8 + _DAT_007904f4),0x28,
-                   CONCAT22(CONCAT11(2,(char)(this->field_0018 >> 0x10)),(short)this->field_0018));
+                   CONCAT22(CONCAT11(2,(char)((uint)this->field_0018 >> 0x10)),
+                            (short)this->field_0018));
         return 2;
       case 1:
         goto switchD_00460024_caseD_1;

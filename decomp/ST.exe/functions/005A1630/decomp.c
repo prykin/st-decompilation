@@ -27,7 +27,7 @@ void __thiscall FSGSTy::Finished(FSGSTy *this,int param_1)
   FSGSTy *local_8;
 
   if (((this->field_1A5F == CASE_1) && (this->field_1AC0 != (ushort *)0x0)) &&
-     (-1 < this->field_1ABC)) {
+     (-1 < (int)this->field_1ABC)) {
     local_6c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_6c;
     local_8 = this;

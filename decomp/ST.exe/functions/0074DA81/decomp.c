@@ -17,7 +17,7 @@ undefined8 FUN_0074da81(uint param_1,uint param_2,uint param_3,uint param_4,uint
   bool bVar11;
   bool bVar12;
   longlong lVar13;
-  undefined8 local_14;
+  longlong local_14;
 
   uVar6 = param_2;
   if ((int)param_2 < 0) {
@@ -45,7 +45,7 @@ undefined8 FUN_0074da81(uint param_1,uint param_2,uint param_3,uint param_4,uint
   uVar5 = 0;
   if (uVar6 != 0) {
     lVar13 = Library::MSVCRT::__allmul(uVar6,0,uVar7,0);
-    lVar13 = lVar13 + (local_14 >> 0x20);
+    lVar13 = lVar13 + ((ulonglong)local_14 >> 0x20);
     uVar5 = (uint)((ulonglong)lVar13 >> 0x20);
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_14 = CONCAT44((int)lVar13,(uint)local_14);
@@ -98,7 +98,7 @@ undefined8 FUN_0074da81(uint param_1,uint param_2,uint param_3,uint param_4,uint
         local_14._4_4_ = (int)(CONCAT44(uVar5,local_14._4_4_) % (ulonglong)uVar2);
       }
     }
-    iVar8 = (int)(local_14 / uVar2);
+    iVar8 = (int)((ulonglong)local_14 / (ulonglong)uVar2);
     if (bVar11) {
       bVar11 = iVar8 != 0;
       iVar8 = -iVar8;

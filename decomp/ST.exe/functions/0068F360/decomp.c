@@ -13,18 +13,18 @@ void __thiscall AiTactClassTy::GiveObjByFltType(AiTactClassTy *this,uint *param_
 {
   ushort uVar1;
   short sVar2;
-  uint uVar3;
-  code *pcVar4;
-  bool bVar5;
-  AiTactClassTy *pAVar6;
-  int iVar7;
-  ushort *puVar8;
+  uint index;
+  code *pcVar3;
+  bool bVar4;
+  AiTactClassTy *pAVar5;
+  int iVar6;
+  ushort *puVar7;
   STGameObjC *objPtr;
-  AiFltClassTy *pAVar9;
-  int iVar10;
-  AiTactClassTy_field_00A5DArray *pAVar11;
+  AiFltClassTy *pAVar8;
+  int iVar9;
+  AiTactClassTy_field_00A5DArray *pAVar10;
+  uint uVar11;
   uint uVar12;
-  uint uVar13;
   InternalExceptionFrame local_5c;
   uint local_18;
   uint local_14;
@@ -35,16 +35,16 @@ void __thiscall AiTactClassTy::GiveObjByFltType(AiTactClassTy *this,uint *param_
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   local_8 = this;
-  iVar7 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
-  pAVar6 = local_8;
-  if (iVar7 != 0) {
+  iVar6 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
+  pAVar5 = local_8;
+  if (iVar6 != 0) {
     g_currentExceptionFrame = local_5c.previous;
-    iVar10 = ReportDebugMessage("E:\\__titans\\ai\\ai_tact.cpp",0x276,0,iVar7,"%s",
-                                "AiTactClassTy::GiveObjByFltType");
-    if (iVar10 != 0) {
+    iVar9 = ReportDebugMessage("E:\\__titans\\ai\\ai_tact.cpp",0x276,0,iVar6,"%s",
+                               "AiTactClassTy::GiveObjByFltType");
+    if (iVar9 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar7,0,"E:\\__titans\\ai\\ai_tact.cpp",0x277);
+    RaiseInternalException(iVar6,0,"E:\\__titans\\ai\\ai_tact.cpp",0x277);
     return;
   }
   if ((param_1 == (uint *)0x0) || (param_1[3] == 0)) {
@@ -52,119 +52,119 @@ void __thiscall AiTactClassTy::GiveObjByFltType(AiTactClassTy *this,uint *param_
     return;
   }
   local_c = sub_0068E480(local_8,1);
-  local_10 = sub_0068E480(pAVar6,2);
-  local_14 = sub_0068E480(pAVar6,4);
-  local_18 = sub_0068E480(pAVar6,0x10);
-  uVar3 = param_1[3];
+  local_10 = sub_0068E480(pAVar5,2);
+  local_14 = sub_0068E480(pAVar5,4);
+  local_18 = sub_0068E480(pAVar5,0x10);
+  index = param_1[3];
 joined_r0x0068f3e2:
   do {
     while( true ) {
       do {
-        uVar3 = uVar3 - 1;
-        if ((int)uVar3 < 0) {
+        index = index - 1;
+        if ((int)index < 0) {
           g_currentExceptionFrame = local_5c.previous;
           return;
         }
-        if (uVar3 < param_1[3]) {
-          puVar8 = (ushort *)(param_1[2] * uVar3 + param_1[7]);
+        if (index < param_1[3]) {
+          puVar7 = (ushort *)(param_1[2] * index + param_1[7]);
         }
         else {
-          puVar8 = (ushort *)0x0;
+          puVar7 = (ushort *)0x0;
         }
         if (g_allPlayers_007FA174 == (STAllPlayersC *)0x0) {
           objPtr = (STGameObjC *)0x0;
         }
         else {
           objPtr = STAllPlayersC::GetObjPtr
-                             (g_allPlayers_007FA174,*(char *)&pAVar6->field_0024,*puVar8,CASE_1);
+                             (g_allPlayers_007FA174,*(char *)&pAVar5->field_0024,*puVar7,CASE_1);
         }
-        pAVar6 = local_8;
+        pAVar5 = local_8;
       } while (objPtr == (STGameObjC *)0x0);
-      iVar7 = (*objPtr->vtable->vfunc_2C)();
-      if ((iVar7 != 0x78) || ((int)local_c < 0)) break;
-      pAVar11 = local_8->field_00A5;
-      if ((pAVar11 == (AiTactClassTy_field_00A5DArray *)0x0) ||
-         ((int)pAVar11->count <= (int)local_c)) {
-        pAVar9 = (AiFltClassTy *)0x0;
+      iVar6 = (*objPtr->vtable->vfunc_2C)();
+      if ((iVar6 != 0x78) || ((int)local_c < 0)) break;
+      pAVar10 = local_8->field_00A5;
+      if ((pAVar10 == (AiTactClassTy_field_00A5DArray *)0x0) ||
+         ((int)pAVar10->count <= (int)local_c)) {
+        pAVar8 = (AiFltClassTy *)0x0;
       }
       else {
-        pAVar9 = pARam00000004;
-        if (local_c < pAVar11->count) {
+        pAVar8 = pARam00000004;
+        if (local_c < pAVar10->count) {
           /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
-          pAVar9 = *(AiFltClassTy **)
-                    ((int)&pAVar11->data->field_0004 + pAVar11->elementSize * local_c);
+          pAVar8 = *(AiFltClassTy **)
+                    ((int)&pAVar10->data->field_0004 + pAVar10->elementSize * local_c);
         }
       }
-      uVar1 = pAVar9->field_007D;
-      iVar7 = (*objPtr->vtable->vfunc_2C)();
-      if (iVar7 == 0x78) {
+      uVar1 = pAVar8->field_007D;
+      iVar6 = (*objPtr->vtable->vfunc_2C)();
+      if (iVar6 == 0x78) {
         objPtr->field_0269 = (uint)uVar1;
       }
-      FUN_006b0c70((DArrayTy *)param_1,uVar3);
-      pAVar6 = local_8;
+      DArrayRemoveAt((DArrayTy *)param_1,index);
+      pAVar5 = local_8;
     }
-    if ((iVar7 < 0x32) || (0x73 < iVar7)) {
-      bVar5 = false;
+    if ((iVar6 < 0x32) || (0x73 < iVar6)) {
+      bVar4 = false;
     }
     else {
-      bVar5 = true;
+      bVar4 = true;
     }
-    uVar12 = local_c;
-    pAVar6 = local_8;
-    if ((bVar5) || (iVar7 == 0x78)) goto LAB_0068f509;
+    uVar11 = local_c;
+    pAVar5 = local_8;
+    if ((bVar4) || (iVar6 == 0x78)) goto LAB_0068f509;
     sVar2 = local_8->field_0039;
     if (sVar2 == 1) {
-      iVar10 = 8;
+      iVar9 = 8;
     }
     else if (sVar2 == 2) {
-      iVar10 = 0x14;
+      iVar9 = 0x14;
     }
     else if (sVar2 == 3) {
-      iVar10 = 0x1a;
+      iVar9 = 0x1a;
     }
     else {
-      iVar10 = 0;
+      iVar9 = 0;
     }
-    uVar13 = local_10;
-    if (iVar7 != iVar10) {
+    uVar12 = local_10;
+    if (iVar6 != iVar9) {
       if (sVar2 == 1) {
-        iVar10 = 0xc;
+        iVar9 = 0xc;
       }
       else if (sVar2 == 2) {
-        iVar10 = 0x18;
+        iVar9 = 0x18;
       }
       else if (sVar2 == 3) {
-        iVar10 = 0x19;
+        iVar9 = 0x19;
       }
       else {
-        iVar10 = 0;
+        iVar9 = 0;
       }
-      uVar13 = local_18;
-      uVar12 = local_14;
-      if (iVar7 == iVar10) goto LAB_0068f509;
+      uVar12 = local_18;
+      uVar11 = local_14;
+      if (iVar6 == iVar9) goto LAB_0068f509;
     }
-  } while ((int)uVar13 < 0);
-  pAVar11 = local_8->field_00A5;
-  uVar12 = uVar13;
+  } while ((int)uVar12 < 0);
+  pAVar10 = local_8->field_00A5;
+  uVar11 = uVar12;
   goto LAB_0068f516;
 LAB_0068f509:
-  if (-1 < (int)uVar12) {
-    pAVar11 = local_8->field_00A5;
+  if (-1 < (int)uVar11) {
+    pAVar10 = local_8->field_00A5;
 LAB_0068f516:
-    if ((pAVar11 == (AiTactClassTy_field_00A5DArray *)0x0) || ((int)pAVar11->count <= (int)uVar12))
+    if ((pAVar10 == (AiTactClassTy_field_00A5DArray *)0x0) || ((int)pAVar10->count <= (int)uVar11))
     {
-      pAVar9 = (AiFltClassTy *)0x0;
+      pAVar8 = (AiFltClassTy *)0x0;
     }
     else {
-      pAVar9 = pARam00000004;
-      if (uVar12 < pAVar11->count) {
+      pAVar8 = pARam00000004;
+      if (uVar11 < pAVar10->count) {
         /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
-        pAVar9 = *(AiFltClassTy **)((int)&pAVar11->data->field_0004 + pAVar11->elementSize * uVar12);
+        pAVar8 = *(AiFltClassTy **)((int)&pAVar10->data->field_0004 + pAVar10->elementSize * uVar11);
       }
     }
-    AiFltClassTy::_AddObjFlt(pAVar9,(uint)objPtr,0);
-    FUN_006b0c70((DArrayTy *)param_1,uVar3);
-    pAVar6 = local_8;
+    AiFltClassTy::_AddObjFlt(pAVar8,(uint)objPtr,0);
+    DArrayRemoveAt((DArrayTy *)param_1,index);
+    pAVar5 = local_8;
   }
   goto joined_r0x0068f3e2;
 }

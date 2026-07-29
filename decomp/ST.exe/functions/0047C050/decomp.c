@@ -33,12 +33,10 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
     iVar7 = *(int *)((int)this->field_06CB + 0x2c);
     this->field_02C4 = 0;
     if ((((iVar7 != 7) && (iVar7 != 0x13)) && (iVar7 != 0x1b)) ||
-       ((AnonShape_005EFAE0_B406B78B *)this->field_07CA == (AnonShape_005EFAE0_B406B78B *)0x0)) {
+       (this->field_07CA == (AnonShape_005EFAE0_B406B78B *)0x0)) {
       return 0;
     }
-    iVar7 = STPlaySystemC::sub_006E62D0
-                      (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)this->field_07CA,
-                       (int *)&param_1);
+    iVar7 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,this->field_07CA,(int *)&param_1);
     if (iVar7 == -4) {
       iVar7 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x3781,0,0,"%s",
                                  "STBoatC::Bring can not find object");
@@ -234,7 +232,8 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
     }
     if (SVar4 == CASE_3) {
       iVar7 = UnLoadObj(this,2);
-      if (((this->field_07CA != 0) && (this->field_07C6 != 0)) && (iVar7 == 0)) {
+      if (((this->field_07CA != (AnonShape_005EFAE0_B406B78B *)0x0) && (this->field_07C6 != 0)) &&
+         (iVar7 == 0)) {
         this->field_05D6 = 0;
         return 2;
       }
@@ -307,7 +306,7 @@ undefined4 __thiscall STBoatC::Bring(STBoatC *this,STBoatC *param_1)
         }
         goto cf_common_exit_0047C74D;
       }
-      if (this->field_07CA != 0) {
+      if (this->field_07CA != (AnonShape_005EFAE0_B406B78B *)0x0) {
         return 2;
       }
       if (this->field_07C6 != 0) {

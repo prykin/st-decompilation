@@ -42,9 +42,9 @@ FUN_004b1120(int param_1,Global_sub_004B1120_param_2Enum param_2,int *param_3,in
       param_1 = 0;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_6 = 0;
-      if (g_dArray_007FA150 != (DArrayTy *)0x0) {
-        g_dArray_007FA150->iteratorIndex = 0;
-        iVar2 = FUN_006b1190(g_dArray_007FA150,&local_18);
+      if (g_array_007FA150 != (DArrayTy *)0x0) {
+        g_array_007FA150->iteratorIndex = 0;
+        iVar2 = DArrayGetNext(g_array_007FA150,(byte *)&local_18);
         if (-1 < iVar2) {
           do {
             if (local_18 != (STFishC *)0x0) {
@@ -84,7 +84,7 @@ LAB_004b1226:
                 if (dVar3 == 0xe0) goto LAB_004b1226;
               }
             }
-            iVar2 = FUN_006b1190(g_dArray_007FA150,&local_18);
+            iVar2 = DArrayGetNext(g_array_007FA150,(byte *)&local_18);
           } while (-1 < iVar2);
           if (local_10 != 0) {
             *param_3 = param_6;

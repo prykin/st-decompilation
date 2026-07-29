@@ -13,13 +13,13 @@ undefined4 * __thiscall STBoatC::SaveBoatData(STBoatC *this,int *param_1)
   undefined4 *puVar3;
   STBoatC *pSVar4;
   int iVar5;
-  undefined4 *puVar6;
+  byte *puVar6;
   uint uVar7;
   uint uVar8;
   short *psVar9;
   ulonglong *puVar10;
   short *psVar11;
-  undefined4 *puVar12;
+  byte *puVar12;
   InternalExceptionFrame local_68;
   undefined4 *local_24;
   int local_20;
@@ -47,14 +47,14 @@ undefined4 * __thiscall STBoatC::SaveBoatData(STBoatC *this,int *param_1)
   }
   local_1c = (uint *)0x9;
   *param_1 = 0x606;
-  puVar6 = &local_14->field_0282;
+  puVar6 = (byte *)(&local_14->field_0282);
   do {
     if ((uint *)*puVar6 != (uint *)0x0) {
       local_c = (undefined4 *)FUN_006b0020((uint *)*puVar6,(int *)&local_8);
       FreeAndNull(&local_c);
       *param_1 = *param_1 + local_8;
     }
-    puVar6 = puVar6 + 1;
+    puVar6 = (byte *)(puVar6 + 1);
     local_1c = (uint *)((int)local_1c + -1);
   } while (local_1c != (uint *)0x0);
   if (pSVar4->field_047B != (DArrayTy *)0x0) {
@@ -69,20 +69,20 @@ undefined4 * __thiscall STBoatC::SaveBoatData(STBoatC *this,int *param_1)
   puVar3[3] = 2;
   puVar3[4] = pSVar4->field_002C;
   puVar10 = pSVar4->field_06CB + 5;
-  puVar6 = puVar3 + 0x17;
+  puVar6 = (byte *)(puVar3 + 0x17);
   for (iVar2 = 0x5a; iVar2 != 0; iVar2 = iVar2 + -1) {
     *puVar6 = (int)*puVar10;
     puVar10 = (ulonglong *)((int)puVar10 + 4);
-    puVar6 = puVar6 + 1;
+    puVar6 = (byte *)(puVar6 + 1);
   }
   *(short *)puVar6 = (short)*puVar10;
   *(undefined1 *)((int)puVar6 + 2) = *(undefined1 *)((int)puVar10 + 2);
-  puVar6 = &local_14->field_02C0;
-  puVar12 = (undefined4 *)((int)puVar3 + 0x1c7);
+  puVar6 = (byte *)(&local_14->field_02C0);
+  puVar12 = (byte *)((int)puVar3 + 0x1c7);
   for (iVar2 = 0x65; iVar2 != 0; iVar2 = iVar2 + -1) {
     *puVar12 = *puVar6;
-    puVar6 = puVar6 + 1;
-    puVar12 = puVar12 + 1;
+    puVar6 = (byte *)(puVar6 + 1);
+    puVar12 = (byte *)(puVar12 + 1);
   }
   *(undefined1 *)puVar12 = *(undefined1 *)puVar6;
   puVar3[0xd7] = local_14->field_0455;
@@ -96,7 +96,7 @@ undefined4 * __thiscall STBoatC::SaveBoatData(STBoatC *this,int *param_1)
   *(short *)((int)puVar3 + 0x376) = local_14->field_0477;
   *(short *)(puVar3 + 0xde) = local_14->field_0479;
   *(int *)((int)puVar3 + 0x382) = local_14->field_047F;
-  *(undefined4 *)((int)puVar3 + 0x386) = local_14->field_0483;
+  *(STAllPlayersC_GetObjPtr_param_3Enum *)((int)puVar3 + 0x386) = local_14->field_0483;
   *(undefined4 *)((int)puVar3 + 0x38a) = local_14->field_0487;
   *(undefined4 *)((int)puVar3 + 0x38e) = local_14->field_048B;
   *(undefined4 *)((int)puVar3 + 0x392) = local_14->field_048F;
@@ -119,47 +119,47 @@ undefined4 * __thiscall STBoatC::SaveBoatData(STBoatC *this,int *param_1)
   }
   *psVar11 = *psVar9;
   *(char *)(psVar11 + 1) = (char)psVar9[1];
-  puVar6 = (undefined4 *)&local_14->field_0510;
-  puVar12 = (undefined4 *)((int)puVar3 + 0x413);
+  puVar6 = (byte *)&local_14->field_0510;
+  puVar12 = (byte *)((int)puVar3 + 0x413);
   for (iVar2 = 7; iVar2 != 0; iVar2 = iVar2 + -1) {
     *puVar12 = *puVar6;
-    puVar6 = puVar6 + 1;
-    puVar12 = puVar12 + 1;
+    puVar6 = (byte *)(puVar6 + 1);
+    puVar12 = (byte *)(puVar12 + 1);
   }
   psVar9 = &local_14->field_052C;
-  puVar6 = (undefined4 *)((int)puVar3 + 0x42f);
+  puVar6 = (byte *)((int)puVar3 + 0x42f);
   for (iVar2 = 10; iVar2 != 0; iVar2 = iVar2 + -1) {
     *puVar6 = *(undefined4 *)psVar9;
     psVar9 = psVar9 + 2;
-    puVar6 = puVar6 + 1;
+    puVar6 = (byte *)(puVar6 + 1);
   }
   psVar9 = &local_14->field_0554;
-  puVar6 = (undefined4 *)((int)puVar3 + 0x457);
+  puVar6 = (byte *)((int)puVar3 + 0x457);
   for (iVar2 = 0xd; iVar2 != 0; iVar2 = iVar2 + -1) {
     *puVar6 = *(undefined4 *)psVar9;
     psVar9 = psVar9 + 2;
-    puVar6 = puVar6 + 1;
+    puVar6 = (byte *)(puVar6 + 1);
   }
-  puVar6 = (undefined4 *)&local_14->field_0588;
-  puVar12 = (undefined4 *)((int)puVar3 + 0x48b);
+  puVar6 = (byte *)&local_14->field_0588;
+  puVar12 = (byte *)((int)puVar3 + 0x48b);
   for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
     *puVar12 = *puVar6;
-    puVar6 = puVar6 + 1;
-    puVar12 = puVar12 + 1;
+    puVar6 = (byte *)(puVar6 + 1);
+    puVar12 = (byte *)(puVar12 + 1);
   }
-  puVar6 = (undefined4 *)&local_14->field_05A0;
-  puVar12 = (undefined4 *)((int)puVar3 + 0x4a3);
+  puVar6 = (byte *)&local_14->field_05A0;
+  puVar12 = (byte *)((int)puVar3 + 0x4a3);
   for (iVar2 = 10; iVar2 != 0; iVar2 = iVar2 + -1) {
     *puVar12 = *puVar6;
-    puVar6 = puVar6 + 1;
-    puVar12 = puVar12 + 1;
+    puVar6 = (byte *)(puVar6 + 1);
+    puVar12 = (byte *)(puVar12 + 1);
   }
   *(undefined2 *)puVar12 = *(undefined2 *)puVar6;
   *(undefined4 *)((int)puVar3 + 0x4a9) = 0;
   *(undefined4 *)((int)puVar3 + 0x4cd) = *(undefined4 *)&local_14->field_0x5ca;
   *(undefined4 *)((int)puVar3 + 0x4d1) = *(undefined4 *)&local_14->field_0x5ce;
   *(undefined4 *)((int)puVar3 + 0x4d5) = *(undefined4 *)&local_14->field_0x5d2;
-  *(undefined4 *)((int)puVar3 + 0x4d9) = local_14->field_05D6;
+  *(int *)((int)puVar3 + 0x4d9) = local_14->field_05D6;
   *(undefined2 *)((int)puVar3 + 0x4dd) = local_14->field_05DA;
   *(undefined4 *)((int)puVar3 + 0x4df) = *(undefined4 *)&local_14->field_0x5dc;
   *(undefined4 *)((int)puVar3 + 0x4e3) = *(undefined4 *)&local_14->field_0x5e0;
@@ -169,42 +169,42 @@ undefined4 * __thiscall STBoatC::SaveBoatData(STBoatC *this,int *param_1)
   *(undefined4 *)((int)puVar3 + 0x4f3) = *(undefined4 *)&local_14->field_0x5f0;
   *(undefined4 *)((int)puVar3 + 0x4f7) = *(undefined4 *)&local_14->field_0x5f4;
   *(undefined4 *)((int)puVar3 + 0x4fb) = local_14->field_05F8;
-  puVar6 = (undefined4 *)&local_14->field_05FC;
-  puVar12 = (undefined4 *)((int)puVar3 + 0x4ff);
+  puVar6 = (byte *)&local_14->field_05FC;
+  puVar12 = (byte *)((int)puVar3 + 0x4ff);
   for (iVar2 = 7; iVar2 != 0; iVar2 = iVar2 + -1) {
     *puVar12 = *puVar6;
-    puVar6 = puVar6 + 1;
-    puVar12 = puVar12 + 1;
+    puVar6 = (byte *)(puVar6 + 1);
+    puVar12 = (byte *)(puVar12 + 1);
   }
   *(undefined1 *)puVar12 = *(undefined1 *)puVar6;
-  puVar6 = &local_14->field_0619;
-  puVar12 = puVar3 + 0x147;
+  puVar6 = (byte *)(&local_14->field_0619);
+  puVar12 = (byte *)(puVar3 + 0x147);
   for (iVar2 = 7; iVar2 != 0; iVar2 = iVar2 + -1) {
     *puVar12 = *puVar6;
-    puVar6 = puVar6 + 1;
-    puVar12 = puVar12 + 1;
+    puVar6 = (byte *)(puVar6 + 1);
+    puVar12 = (byte *)(puVar12 + 1);
   }
-  puVar6 = &local_14->field_0635;
-  puVar12 = puVar3 + 0x14e;
+  puVar6 = (byte *)(&local_14->field_0635);
+  puVar12 = (byte *)(puVar3 + 0x14e);
   for (iVar2 = 0xd; iVar2 != 0; iVar2 = iVar2 + -1) {
     *puVar12 = *puVar6;
-    puVar6 = puVar6 + 1;
-    puVar12 = puVar12 + 1;
+    puVar6 = (byte *)(puVar6 + 1);
+    puVar12 = (byte *)(puVar12 + 1);
   }
   *(undefined2 *)puVar12 = *(undefined2 *)puVar6;
-  puVar6 = &local_14->field_066B;
-  puVar12 = (undefined4 *)((int)puVar3 + 0x56e);
+  puVar6 = (byte *)(&local_14->field_066B);
+  puVar12 = (byte *)((int)puVar3 + 0x56e);
   for (iVar2 = 8; iVar2 != 0; iVar2 = iVar2 + -1) {
     *puVar12 = *puVar6;
-    puVar6 = puVar6 + 1;
-    puVar12 = puVar12 + 1;
+    puVar6 = (byte *)(puVar6 + 1);
+    puVar12 = (byte *)(puVar12 + 1);
   }
-  puVar6 = (undefined4 *)&local_14->field_068B;
-  puVar12 = (undefined4 *)((int)puVar3 + 0x58e);
+  puVar6 = (byte *)&local_14->field_068B;
+  puVar12 = (byte *)((int)puVar3 + 0x58e);
   for (iVar2 = 7; iVar2 != 0; iVar2 = iVar2 + -1) {
     *puVar12 = *puVar6;
-    puVar6 = puVar6 + 1;
-    puVar12 = puVar12 + 1;
+    puVar6 = (byte *)(puVar6 + 1);
+    puVar12 = (byte *)(puVar12 + 1);
   }
   *(undefined2 *)puVar12 = *(undefined2 *)puVar6;
   psVar9 = &local_14->field_06A9;
@@ -216,11 +216,11 @@ undefined4 * __thiscall STBoatC::SaveBoatData(STBoatC *this,int *param_1)
   }
   *psVar11 = *psVar9;
   puVar10 = local_14->field_06CB;
-  puVar6 = (undefined4 *)((int)puVar3 + 0x5ce);
+  puVar6 = (byte *)((int)puVar3 + 0x5ce);
   for (iVar2 = 8; iVar2 != 0; iVar2 = iVar2 + -1) {
     *puVar6 = (int)*puVar10;
     puVar10 = (ulonglong *)((int)puVar10 + 4);
-    puVar6 = puVar6 + 1;
+    puVar6 = (byte *)(puVar6 + 1);
   }
   *(int *)((int)puVar3 + 0x5ee) = (int)local_14->field_06CB[4];
   *(undefined4 *)((int)puVar3 + 0x5f2) = *(undefined4 *)((int)local_14->field_06CB + 0x24);
@@ -239,17 +239,17 @@ undefined4 * __thiscall STBoatC::SaveBoatData(STBoatC *this,int *param_1)
     }
     else {
       local_c = (undefined4 *)FUN_006b0020((uint *)*local_18,(int *)&local_8);
-      puVar6 = local_c;
-      puVar12 = (undefined4 *)(uVar8 + (int)puVar3);
+      puVar6 = (byte *)(local_c);
+      puVar12 = (byte *)(uVar8 + (int)puVar3);
       for (uVar7 = local_8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
         *puVar12 = *puVar6;
-        puVar6 = puVar6 + 1;
-        puVar12 = puVar12 + 1;
+        puVar6 = (byte *)(puVar6 + 1);
+        puVar12 = (byte *)(puVar12 + 1);
       }
       for (uVar8 = local_8 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
         *(undefined1 *)puVar12 = *(undefined1 *)puVar6;
-        puVar6 = (undefined4 *)((int)puVar6 + 1);
-        puVar12 = (undefined4 *)((int)puVar12 + 1);
+        puVar6 = (byte *)((int)puVar6 + 1);
+        puVar12 = (byte *)((int)puVar12 + 1);
       }
       local_1c[-1] = local_10;
       *local_1c = local_8;
@@ -264,18 +264,9 @@ undefined4 * __thiscall STBoatC::SaveBoatData(STBoatC *this,int *param_1)
   } while (local_20 != 0);
   if (pSVar4->field_047B != (DArrayTy *)0x0) {
     local_c = (undefined4 *)FUN_006b0020(&pSVar4->field_047B->flags,(int *)&local_8);
-    puVar6 = local_c;
-    puVar12 = (undefined4 *)(uVar8 + (int)puVar3);
-    for (uVar7 = local_8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *puVar12 = *puVar6;
-      puVar6 = puVar6 + 1;
-      puVar12 = puVar12 + 1;
-    }
-    for (uVar8 = local_8 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
-      *(undefined1 *)puVar12 = *(undefined1 *)puVar6;
-      puVar6 = (undefined4 *)((int)puVar6 + 1);
-      puVar12 = (undefined4 *)((int)puVar12 + 1);
-    }
+    puVar6 = (byte *)(local_c);
+    puVar12 = (byte *)(uVar8 + (int)puVar3);
+    memmove(puVar12, puVar6, local_8); /* compiler REP MOVS byte copy */
     *(uint *)((int)puVar3 + 0x37a) = local_10;
     *(uint *)((int)puVar3 + 0x37e) = local_8;
     FreeAndNull(&local_c);

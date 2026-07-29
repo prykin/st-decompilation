@@ -136,7 +136,7 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this,int param_1)
         else {
           FUN_006c6fc0(this_02->field_1A9F);
           this_02->field_1A9F = (void *)0x0;
-          FreeAndNull((void **)&this_02->field_1A9B);
+          FreeAndNull(&this_02->field_1A9B);
         }
       }
       else {
@@ -150,7 +150,7 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this,int param_1)
   case CASE_7:
   case CASE_8:
   case CASE_A:
-    if ((0 < local_28->field_1A93) && (-1 < local_28->field_1A8F)) {
+    if ((0 < local_28->field_1A93) && (-1 < (int)local_28->field_1A8F)) {
       if (local_28->field_1A93 == 9) {
         uVar7 = MMObjTy::CreateSprBut((MMObjTy *)local_28,0,1,0x121,9,0x1d6,0x3c,0x694c,0);
         this_02->field_1AB3 = uVar7;
@@ -322,7 +322,7 @@ joined_r0x00597872:
     if (local_28->field_1F23 != (HoloTy *)0x0) {
       iVar6 = HoloTy::NextFas(local_28->field_1F23);
       if (iVar6 == 0) {
-        uVar15 = this_02->field_1F23->field_0003;
+        uVar15 = *(uint *)&this_02->field_1F23->field_0x3;
         if (-1 < (int)uVar15) {
           FUN_006b3af0((int *)g_ddxContext_008075A8,uVar15);
         }
@@ -334,7 +334,7 @@ joined_r0x00597872:
     if (this_02->field_1F27 != (HoloTy *)0x0) {
       iVar6 = HoloTy::NextFas(this_02->field_1F27);
       if (iVar6 == 0) {
-        uVar15 = this_02->field_1F27->field_0003;
+        uVar15 = *(uint *)&this_02->field_1F27->field_0x3;
         if (-1 < (int)uVar15) {
           FUN_006b3af0((int *)g_ddxContext_008075A8,uVar15);
         }
@@ -346,7 +346,7 @@ joined_r0x00597872:
     if (this_02->field_1F2B != (HoloTy *)0x0) {
       iVar6 = HoloTy::NextFas(this_02->field_1F2B);
       if (iVar6 == 0) {
-        uVar15 = this_02->field_1F2B->field_0003;
+        uVar15 = *(uint *)&this_02->field_1F2B->field_0x3;
         if (-1 < (int)uVar15) {
           FUN_006b3af0((int *)g_ddxContext_008075A8,uVar15);
         }
@@ -358,7 +358,7 @@ joined_r0x00597872:
     if (this_02->field_1F2F != (HoloTy *)0x0) {
       iVar6 = HoloTy::NextFas(this_02->field_1F2F);
       if (iVar6 == 0) {
-        uVar15 = this_02->field_1F2F->field_0003;
+        uVar15 = *(uint *)&this_02->field_1F2F->field_0x3;
         if (-1 < (int)uVar15) {
           FUN_006b3af0((int *)g_ddxContext_008075A8,uVar15);
         }
@@ -367,8 +367,8 @@ joined_r0x00597872:
         local_8 = 0;
       }
     }
-    if (((this_02->field_1A61 == '\0') && (this_02->field_1A93 < 9)) && (-1 < this_02->field_1A8F))
-    {
+    if (((this_02->field_1A61 == '\0') && (this_02->field_1A93 < 9)) &&
+       (-1 < (int)this_02->field_1A8F)) {
       if ((this_02->field_1A93 == 0) && (this_02->field_1AB3 != 0)) {
         StartSystemTy::sub_006E56B0(this_02->field_000C,this_02->field_1AB3);
         this_02->field_1AB3 = 0;

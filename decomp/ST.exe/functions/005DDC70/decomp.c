@@ -18,9 +18,9 @@ void __thiscall StartSystemTy::CreateBinDesc(StartSystemTy *this)
   StartSystemTy *this_00;
   int iVar4;
   int iVar5;
-  undefined4 *puVar6;
+  byte *puVar6;
   int *piVar7;
-  undefined4 *puVar8;
+  byte *puVar8;
   int local_8c4 [6];
   undefined4 local_8ac;
   undefined4 local_8a8;
@@ -103,13 +103,9 @@ void __thiscall StartSystemTy::CreateBinDesc(StartSystemTy *this)
     local_7a0 = 0x6334;
     local_88c = this_00->field_0014;
     local_7a8 = local_88c;
-    puVar6 = local_808;
-    puVar8 = local_688;
-    for (iVar5 = 0x5f; iVar5 != 0; iVar5 = iVar5 + -1) {
-      *puVar8 = *puVar6;
-      puVar6 = puVar6 + 1;
-      puVar8 = puVar8 + 1;
-    }
+    puVar6 = (byte *)(local_808);
+    puVar8 = (byte *)(local_688);
+    memmove(puVar8, puVar6, 0x17c); /* compiler REP MOVS byte copy */
     local_688[2] = this_00->field_03A9;
     local_674 = this_00->field_03B5;
     local_678 = this_00->field_03B1;

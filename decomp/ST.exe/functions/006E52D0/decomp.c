@@ -22,7 +22,7 @@ void __fastcall FUN_006e52d0(AnonShape_006E52D0_AF06BCD2 *param_1)
       puVar2 = *(undefined4 **)(iVar3 + 4);
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)*puVar2)(local_24);
-      FUN_006b0c70((DArrayTy *)param_1->field_0010,0);
+      DArrayRemoveAt((DArrayTy *)param_1->field_0010,0);
       AppClassTy::DeleteObject(param_1->field_0018,puVar2[2]);
       iVar3 = param_1->field_0010;
       iVar1 = *(int *)(iVar3 + 0xc);

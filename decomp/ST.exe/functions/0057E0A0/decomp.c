@@ -124,7 +124,7 @@ int __thiscall STDcResourcC::GetMessage(STDcResourcC *this,STMessage *message)
         pbVar21 = pbVar21 + 1;
       }
       STPlaySystemC::SaveObjData
-                (g_playSystem_00802A38,this_00->field_0018,(byte *)local_c,
+                (g_playSystem_00802A38,(int *)this_00->field_0018,(byte *)local_c,
                  (AnonShape_0060EA30_DCEB68AD *)(local_8 + 0x46));
       FreeAndNull(&local_10);
       FreeAndNull(&local_c);
@@ -252,11 +252,7 @@ int __thiscall STDcResourcC::GetMessage(STDcResourcC *this,STMessage *message)
       *(undefined4 *)&this_00->field_0x26d = 0;
       pSVar15 = (message->arg0).ptr;
       pSVar19 = &this_00->field_0231;
-      for (iVar9 = 10; iVar9 != 0; iVar9 = iVar9 + -1) {
-        *pSVar19 = *pSVar15;
-        pSVar15 = pSVar15 + 1;
-        pSVar19 = pSVar19 + 1;
-      }
+      memmove(pSVar19, pSVar15, 0x28); /* compiler REP MOVS byte copy */
       if (*(int *)&this_00->field_0x251 < 1) {
         thunk_FUN_00580380((STResourceC *)this_00);
         goto cf_common_exit_0057E624;
@@ -434,7 +430,7 @@ LAB_0057e6f0:
         uVar10 = 0xffffffff;
       }
       else {
-        if (((((int)local_18 < 0) || (pVVar6->field_0028 <= (int)local_18)) ||
+        if (((((int)local_18 < 0) || ((int)pVVar6->field_0028 <= (int)local_18)) ||
             (g_centeredOffsets5[iVar9] + local_14 < 0)) ||
            (pVVar6->field_002C <= g_centeredOffsets5[iVar9] + local_14)) {
           bVar5 = false;
@@ -503,7 +499,7 @@ LAB_0057e6f0:
         uVar10 = 0xffffffff;
       }
       else {
-        if ((((local_1c < 0) || (pVVar6->field_0028 <= local_1c)) ||
+        if ((((local_1c < 0) || ((int)pVVar6->field_0028 <= local_1c)) ||
             (g_centeredOffsets5[iVar9] + local_20 < 0)) ||
            (pVVar6->field_002C <= g_centeredOffsets5[iVar9] + local_20)) {
           bVar5 = false;

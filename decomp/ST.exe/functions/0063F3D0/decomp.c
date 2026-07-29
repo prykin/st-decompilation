@@ -9,7 +9,7 @@
 undefined4 __thiscall STTmMineC::LoadImagVacuum(STTmMineC *this,int param_1)
 
 {
-  undefined4 *puVar1;
+  uint *puVar1;
   code *pcVar2;
   STTmMineC *pSVar3;
   int errorCode;
@@ -56,13 +56,13 @@ undefined4 __thiscall STTmMineC::LoadImagVacuum(STTmMineC *this,int param_1)
       pSVar3->field_034F = 0;
     }
     puVar1 = &pSVar3->field_0363;
-    if ((pSVar3->field_0363 == -1) && (param_1 != 0)) {
+    if ((pSVar3->field_0363 == 0xffffffff) && (param_1 != 0)) {
       puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
                          (DAT_00806774,CASE_1D,"expl_vc1",0xffffffff,0,1,0,
                           (undefined4 *)0x0);
       pSVar3->field_035F = puVar4;
       ST3DSMAPContext::sub_006E8660
-                (pSVar3->field_0211,puVar1,1,0,*(uint *)((int)puVar4 + 9),
+                (pSVar3->field_0211,(int *)puVar1,1,0,*(uint *)((int)puVar4 + 9),
                  *(uint *)((int)puVar4 + 0xd),0xa8,0x43,0);
       ST3DSMAPContext::sub_006E98E0
                 (pSVar3->field_0211,*puVar1,0,*(int *)puVar4,*(int *)((int)puVar4 + 0x21),1);

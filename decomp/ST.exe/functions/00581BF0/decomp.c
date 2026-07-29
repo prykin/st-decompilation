@@ -23,9 +23,9 @@ int __thiscall STJellyManC::GetMessage(STJellyManC *this,STMessage *message)
   int *piVar9;
   int iVar10;
   uint uVar11;
-  undefined4 *puVar12;
-  undefined4 *puVar13;
-  undefined4 *puVar14;
+  byte *puVar12;
+  byte *puVar13;
+  byte *puVar14;
   byte *pbVar15;
   InternalExceptionFrame local_54;
   STGameObjC *local_10;
@@ -140,11 +140,11 @@ int __thiscall STJellyManC::GetMessage(STJellyManC *this,STMessage *message)
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }
-    puVar13 = (undefined4 *)&pSVar7->field_0x1d9;
+    puVar13 = (byte *)&pSVar7->field_0x1d9;
     pbVar15 = local_8;
     for (iVar8 = 0xb; iVar8 != 0; iVar8 = iVar8 + -1) {
       *(undefined4 *)pbVar15 = *puVar13;
-      puVar13 = puVar13 + 1;
+      puVar13 = (byte *)(puVar13 + 1);
       pbVar15 = pbVar15 + 4;
     }
     *(undefined2 *)pbVar15 = *(undefined2 *)puVar13;
@@ -171,7 +171,8 @@ int __thiscall STJellyManC::GetMessage(STJellyManC *this,STMessage *message)
     local_8[0x38] = 0;
     local_8[0x39] = 0;
     STPlaySystemC::SaveObjData
-              (g_playSystem_00802A38,pSVar7->field_0018,local_8,(AnonShape_0060EA30_DCEB68AD *)0x3a);
+              (g_playSystem_00802A38,(int *)pSVar7->field_0018,local_8,
+               (AnonShape_0060EA30_DCEB68AD *)0x3a);
     FreeAndNull(&local_8);
     g_currentExceptionFrame = local_54.previous;
     return 0;
@@ -204,14 +205,9 @@ int __thiscall STJellyManC::GetMessage(STJellyManC *this,STMessage *message)
   if (uVar11 < 2) {
     *(undefined4 *)&pSVar7->field_0x1d5 = 0;
     *(undefined4 *)&pSVar7->field_0x20f = 0;
-    puVar13 = (message->arg0).ptr;
-    puVar12 = (undefined4 *)&pSVar7->field_0x1d9;
-    for (iVar8 = 0xb; iVar8 != 0; iVar8 = iVar8 + -1) {
-      *puVar12 = *puVar13;
-      puVar13 = puVar13 + 1;
-      puVar12 = puVar12 + 1;
-    }
-    *(undefined2 *)puVar12 = *(undefined2 *)puVar13;
+    puVar13 = (byte *)((message->arg0).ptr);
+    puVar12 = (byte *)&pSVar7->field_0x1d9;
+    memmove(puVar12, puVar13, 0x2e); /* compiler REP MOVS byte copy */
     if (((((int)pSVar7->field_01ED < 0) || (*(int *)&pSVar7->field_0x1f1 < 0)) ||
         ((int)g_worldGrid.sizeX < *(int *)&pSVar7->field_0x1f5)) ||
        ((int)g_worldGrid.sizeY < *(int *)&pSVar7->field_0x1f9)) {
@@ -240,15 +236,10 @@ int __thiscall STJellyManC::GetMessage(STJellyManC *this,STMessage *message)
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }
-    puVar13 = (message->arg0).ptr;
-    puVar12 = puVar13;
-    puVar14 = (undefined4 *)&pSVar7->field_0x1d9;
-    for (iVar8 = 0xb; iVar8 != 0; iVar8 = iVar8 + -1) {
-      *puVar14 = *puVar12;
-      puVar12 = puVar12 + 1;
-      puVar14 = puVar14 + 1;
-    }
-    *(undefined2 *)puVar14 = *(undefined2 *)puVar12;
+    puVar13 = (byte *)((message->arg0).ptr);
+    puVar12 = (byte *)(puVar13);
+    puVar14 = (byte *)&pSVar7->field_0x1d9;
+    memmove(puVar14, puVar12, 0x2e); /* compiler REP MOVS byte copy */
     *(undefined4 *)&pSVar7->field_0x1d5 = *(undefined4 *)((int)puVar13 + 0x2e);
     *(undefined4 *)&pSVar7->field_0x20f = 0;
     iVar8 = Library::DKW::LIB::FUN_006aac70(*(int *)&pSVar7->field_0x1fd << 2);
@@ -266,23 +257,23 @@ int __thiscall STJellyManC::GetMessage(STJellyManC *this,STMessage *message)
   RaiseInternalException
             (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\to_jell_m.cpp",iVar8);
 cf_common_exit_00581D62:
-  puVar13 = *(undefined4 **)&pSVar7->field_0x207;
+  puVar13 = (byte *)(*(undefined4 **)&pSVar7->field_0x207);
   for (uVar11 = *(uint *)&pSVar7->field_0x1fd & 0x3fffffff; uVar11 != 0; uVar11 = uVar11 - 1) {
     *puVar13 = 0;
-    puVar13 = puVar13 + 1;
+    puVar13 = (byte *)(puVar13 + 1);
   }
   for (iVar8 = 0; iVar8 != 0; iVar8 = iVar8 + -1) {
     *(undefined1 *)puVar13 = 0;
-    puVar13 = (undefined4 *)((int)puVar13 + 1);
+    puVar13 = (byte *)((int)puVar13 + 1);
   }
-  puVar13 = *(undefined4 **)&pSVar7->field_0x20b;
+  puVar13 = (byte *)(*(undefined4 **)&pSVar7->field_0x20b);
   for (uVar11 = *(uint *)&pSVar7->field_0x1fd & 0x3fffffff; uVar11 != 0; uVar11 = uVar11 - 1) {
     *puVar13 = 0;
-    puVar13 = puVar13 + 1;
+    puVar13 = (byte *)(puVar13 + 1);
   }
   for (iVar8 = 0; iVar8 != 0; iVar8 = iVar8 + -1) {
     *(undefined1 *)puVar13 = 0;
-    puVar13 = (undefined4 *)((int)puVar13 + 1);
+    puVar13 = (byte *)((int)puVar13 + 1);
   }
   g_currentExceptionFrame = local_54.previous;
   return 0;

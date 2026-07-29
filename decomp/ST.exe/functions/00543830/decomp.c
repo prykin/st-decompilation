@@ -21,10 +21,10 @@ void __thiscall CursorClassTy::DoneCursor(CursorClassTy *this)
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pCVar2 = local_8;
   if (errorCode == 0) {
-    if (-1 < local_8->field_04D6) {
+    if (-1 < (int)local_8->field_04D6) {
       FUN_006b3bb0((int *)g_ddxContext_008075A8,local_8->field_04D6);
     }
-    pCVar2->field_04D6 = -1;
+    pCVar2->field_04D6 = 0xffffffff;
     if (pCVar2->field_04D2 != (ushort *)0x0) {
       FreeAndNull(&pCVar2->field_04D2);
     }

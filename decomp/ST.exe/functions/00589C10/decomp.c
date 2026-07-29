@@ -22,11 +22,11 @@ int __thiscall STOctopusC::GetMessage(STOctopusC *this,STMessage *message)
   undefined4 uVar7;
   int iVar8;
   uint uVar9;
-  undefined4 *puVar10;
+  byte *puVar10;
   byte *pbVar11;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   int unaff_EDI;
-  undefined4 *puVar12;
+  byte *puVar12;
   AnonShape_00589C10_CECA1FB4 *pAVar13;
   byte *pbVar14;
   InternalExceptionFrame local_88;
@@ -70,7 +70,7 @@ int __thiscall STOctopusC::GetMessage(STOctopusC *this,STMessage *message)
         g_currentExceptionFrame = local_88.previous;
         return 0;
       }
-      puVar10 = &this_00->field_01D5;
+      puVar10 = (byte *)(&this_00->field_01D5);
       if (DAT_0080732c == 0) {
         STT3DSprC::sub_004AD070((STT3DSprC *)puVar10,0xe);
         STT3DSprC::sub_004AD070((STT3DSprC *)puVar10,8);
@@ -155,11 +155,11 @@ int __thiscall STOctopusC::GetMessage(STOctopusC *this,STMessage *message)
       g_currentExceptionFrame = local_88.previous;
       return 0;
     }
-    puVar10 = (undefined4 *)&this_00->field_0x285;
+    puVar10 = (byte *)&this_00->field_0x285;
     pAVar13 = local_c;
     for (iVar6 = 10; iVar6 != 0; iVar6 = iVar6 + -1) {
       *(undefined4 *)pAVar13 = *puVar10;
-      puVar10 = puVar10 + 1;
+      puVar10 = (byte *)(puVar10 + 1);
       pAVar13 = (AnonShape_00589C10_CECA1FB4 *)&pAVar13->field_0x4;
     }
     *(undefined4 *)&local_c->field_0xc = 2;
@@ -223,7 +223,7 @@ int __thiscall STOctopusC::GetMessage(STOctopusC *this,STMessage *message)
       pbVar14 = pbVar14 + 1;
     }
     STPlaySystemC::SaveObjData
-              (g_playSystem_00802A38,this_00->field_0018,(byte *)local_c,
+              (g_playSystem_00802A38,(int *)this_00->field_0018,(byte *)local_c,
                (AnonShape_0060EA30_DCEB68AD *)(local_10 + 0x96 + local_8));
     FreeAndNull(&local_14);
     FreeAndNull(&local_18);
@@ -263,12 +263,12 @@ int __thiscall STOctopusC::GetMessage(STOctopusC *this,STMessage *message)
     *(undefined4 *)&this_00->field_0x269 = 0;
     *(undefined4 *)&this_00->field_0x281 = 0;
     *(undefined4 *)((int)&this_00->field_023E + 3) = 0;
-    puVar10 = (message->arg0).ptr;
-    puVar12 = (undefined4 *)&this_00->field_0x285;
+    puVar10 = (byte *)((message->arg0).ptr);
+    puVar12 = (byte *)&this_00->field_0x285;
     for (iVar6 = 10; iVar6 != 0; iVar6 = iVar6 + -1) {
       *puVar12 = *puVar10;
-      puVar10 = puVar10 + 1;
-      puVar12 = puVar12 + 1;
+      puVar10 = (byte *)(puVar10 + 1);
+      puVar12 = (byte *)(puVar12 + 1);
     }
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     Bad((STOctopusC *)this_00,unaff_EDI);
@@ -333,18 +333,14 @@ cf_error_exit_0058A005:
     this_00->field_0231 = CASE_0;
   }
   else if (local_1c[3] == 2) {
-    puVar10 = local_1c;
-    puVar12 = (undefined4 *)&this_00->field_0x285;
-    for (iVar6 = 10; iVar6 != 0; iVar6 = iVar6 + -1) {
-      *puVar12 = *puVar10;
-      puVar10 = puVar10 + 1;
-      puVar12 = puVar12 + 1;
-    }
+    puVar10 = (byte *)(local_1c);
+    puVar12 = (byte *)&this_00->field_0x285;
+    memmove(puVar12, puVar10, 0x28); /* compiler REP MOVS byte copy */
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     local_8 = *(uint *)((int)local_1c + 0x8e);
     STAllPlayersC::RestoreGObjData
               ((STAllPlayersC *)this_00,(undefined4 *)(local_8 + 0x96 + (int)local_1c));
-    puVar10 = local_1c;
+    puVar10 = (byte *)(local_1c);
     *(undefined4 *)&this_00->field_0x249 = local_1c[0xb];
     *(undefined4 *)&this_00->field_0x245 = local_1c[10];
     *(undefined2 *)&this_00->field_0x41 = *(undefined2 *)(local_1c + 0x1e);

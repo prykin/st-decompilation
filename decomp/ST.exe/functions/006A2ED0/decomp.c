@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STSourceProvenanceApplier begin]
@@ -19,10 +21,9 @@ byte * __cdecl FUN_006a2ed0(short *param_1)
   AnonShape_006DBCA0_EF06575F *pAVar6;
   ushort *puVar7;
   byte *pbVar8;
-  undefined4 *puVar9;
+  byte *puVar9;
   int iVar10;
   int iVar11;
-  uint uVar12;
   int *piVar13;
   int iVar14;
   undefined1 *puVar15;
@@ -65,7 +66,7 @@ LAB_006a2f2f:
   if (0 < *(int *)((int)param_1 + 0x455)) {
     piVar13 = (int *)((int)param_1 + 0x459);
     do {
-      puVar9 = (undefined4 *)*piVar13;
+      puVar9 = (byte *)*piVar13;
       if ((puVar9 != (undefined4 *)0x0) && (*(short *)(puVar9 + 2) != 0)) {
         *puVar9 = *(undefined4 *)((int)&local_14[6].field_000B + 3);
         *(undefined4 **)((int)&local_14[6].field_000B + 3) = puVar9;
@@ -88,13 +89,13 @@ LAB_006a2f2f:
   iVar14 = 0;
   iVar10 = 0;
   do {
-    puVar9 = (undefined4 *)
+    puVar9 = (byte *)
              (*(int *)((int)&local_14->field_0027 + 1) * iVar14 +
              *(int *)((int)&local_14->field_000B + 1));
     puVar17 = (undefined4 *)((int)local_8 + iVar10);
     for (iVar11 = 0x22; iVar11 != 0; iVar11 = iVar11 + -1) {
       *puVar17 = *puVar9;
-      puVar9 = puVar9 + 1;
+      puVar9 = (byte *)(puVar9 + 1);
       puVar17 = puVar17 + 1;
     }
     *(undefined2 *)puVar17 = *(undefined2 *)puVar9;
@@ -110,15 +111,8 @@ LAB_006a2f2f:
     uVar16 = ((uint)*(ushort *)(pbVar8 + 0xe) * *(int *)(pbVar8 + 4) + 0x1f >> 3 & 0x1ffffffc) *
              *(int *)(pbVar8 + 8);
   }
-  puVar9 = (undefined4 *)FUN_006b4fa0((int *)pbVar8);
-  for (uVar12 = uVar16 >> 2; uVar12 != 0; uVar12 = uVar12 - 1) {
-    *puVar9 = 0;
-    puVar9 = puVar9 + 1;
-  }
-  for (uVar16 = uVar16 & 3; uVar16 != 0; uVar16 = uVar16 - 1) {
-    *(undefined1 *)puVar9 = 0;
-    puVar9 = (undefined4 *)((int)puVar9 + 1);
-  }
+  puVar9 = (byte *)FUN_006b4fa0((int *)pbVar8);
+  memset(puVar9, 0, uVar16); /* compiler bulk-zero initialization */
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = local_8;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */

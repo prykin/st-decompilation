@@ -360,12 +360,12 @@ cf_common_exit_005BCD75:
       else {
         pHVar11->field_0002 = 1;
         pHVar11->field_0000 = 0;
-        pHVar11->field_0003 = -1;
+        *(undefined4 *)&pHVar11->field_0x3 = 0xffffffff;
         pHVar11->field_0001 = CASE_2;
-        pHVar11->field_0007 = 0;
+        pHVar11->field_0007 = (void *)0x0;
         pHVar11->field_000B = (void *)0x0;
         pHVar11->field_000F = 0;
-        pHVar11->field_001B = 1;
+        *(undefined4 *)&pHVar11->field_0x1b = 1;
         pHVar11->field_0013 = 1;
         pHVar11->field_0017 = -1;
         pHVar11->field_0027 = 0;
@@ -386,7 +386,7 @@ cf_common_exit_005BCD75:
           pHVar11 = this_00->field_1C9A;
           pHVar11->field_0002 = 1;
           pHVar11->field_0017 = pHVar11->field_0013;
-          uVar18 = this_00->field_1C9A->field_0003;
+          uVar18 = *(uint *)&this_00->field_1C9A->field_0x3;
           if (-1 < (int)uVar18) {
             Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar18);
           }

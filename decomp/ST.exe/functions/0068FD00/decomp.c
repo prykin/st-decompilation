@@ -126,7 +126,7 @@ int __thiscall AiTactClassTy::GetAiMess(AiTactClassTy *this,AnonShape_0068FD00_A
              (element_00a5->field_0004 != (AiFltClassTy *)0x0)) {
             AiFltClassTy::GetAiMess(element_00a5->field_0004,(uint *)param_1);
             thunk_FUN_0054cf70(g_playSystem_00802A38,*(uint *)(element_00a5->field_0004 + 8));
-            FUN_006b0c70((DArrayTy *)this_00->field_00A5,uVar7);
+            DArrayRemoveAt((DArrayTy *)this_00->field_00A5,uVar7);
           }
           uVar7 = uVar7 - 1;
         } while (-1 < (int)uVar7);

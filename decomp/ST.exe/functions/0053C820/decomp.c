@@ -65,8 +65,7 @@ ResearchPanelTy::PaintUpdBut(ResearchPanelTy *this,AnonShape_004EF320_444F9AB1 *
     iVar5 = local_18;
     DibPut((AnonShape_006B5B10_E0D06CF1 *)pRVar4->field_0068,local_18,local_14,'\x01',pbVar6);
     if ((param_1->field_0014 == 3) && (local_8 != (Global_sub_005276E0_param_1Enum *)0x0)) {
-      pbVar6 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pRVar4->field_0190,
-                                    7 - (uint)(local_8[8] != CASE_0));
+      pbVar6 = (byte *)FUN_0070b3a0(pRVar4->field_0190,7 - (uint)(local_8[8] != CASE_0));
       DibPut((AnonShape_006B5B10_E0D06CF1 *)pRVar4->field_0068,iVar5,iVar7,'\x06',pbVar6);
     }
     Library::DKW::DDX::FUN_006b3640

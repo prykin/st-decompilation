@@ -72,8 +72,8 @@ PanelTy::CreateBut(PanelTy *this,undefined4 param_1,int param_2,int param_3,int 
     memset(local_18c, 0, 0x17c); /* compiler bulk-zero initialization */
     local_18c[1] = param_1;
     local_18c[0] = param_2;
-    wsprintfA((LPSTR)(pPVar2 + 1),"%s0",param_8);
-    local_c = cMf32::RecGet(g_cMf32_00806790,param_7,(char *)(pPVar2 + 1),(int *)0x0,1);
+    wsprintfA(&pPVar2->field_006C,"%s0",param_8);
+    local_c = cMf32::RecGet(g_cMf32_00806790,param_7,&pPVar2->field_006C,(int *)0x0,1);
     local_17c = *(undefined4 *)(local_c + 2);
     local_178 = *(undefined4 *)(local_c + 4);
     if ((param_5 == 0) || (local_18c[2] = g_nWidth_00806730, pPVar2->field_005C != 0)) {

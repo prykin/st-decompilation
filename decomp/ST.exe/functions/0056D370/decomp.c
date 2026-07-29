@@ -16,7 +16,7 @@ void __thiscall STAppC::OpenGameDBs(STAppC *this)
   code *pcVar2;
   int errorCode;
   int iVar3;
-  undefined1 *puVar4;
+  byte *puVar4;
   InternalExceptionFrame local_4c;
   STAppC *local_8;
 
@@ -27,19 +27,19 @@ void __thiscall STAppC::OpenGameDBs(STAppC *this)
   if (errorCode == 0) {
     puVar1 = &local_8->field_0x470;
     puVar4 = &local_8->field_7D1A;
-    wsprintfA(puVar4,"%s%s",puVar1,"NATURE");
+    wsprintfA((LPSTR)puVar4,"%s%s",puVar1,"NATURE");
     DAT_00806768 = Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,puVar4,0,0,0);
     DAT_0080676c = Library::Ourlib::MFRLOAD::mfRLoadCreate((int)DAT_00806768);
-    wsprintfA(puVar4,"%s%s",puVar1,"OTHER");
+    wsprintfA((LPSTR)puVar4,"%s%s",puVar1,"OTHER");
     PTR_00806770 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,puVar4,0,0,0);
     DAT_00806774 = Library::Ourlib::MFRLOAD::mfRLoadCreate((int)PTR_00806770);
-    wsprintfA(puVar4,"%s%s",puVar1,&DAT_007ca15c);
+    wsprintfA((LPSTR)puVar4,"%s%s",puVar1,&DAT_007ca15c);
     DAT_00806778 = Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,puVar4,0,0,0);
     DAT_0080677c = Library::Ourlib::MFRLOAD::mfRLoadCreate((int)DAT_00806778);
-    wsprintfA(puVar4,"%s%s",puVar1,"CONTROLG");
+    wsprintfA((LPSTR)puVar4,"%s%s",puVar1,"CONTROLG");
     g_cMf32_00806790 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,puVar4,0,0,0);
     DAT_00806794 = Library::Ourlib::MFRLOAD::mfRLoadCreate((int)g_cMf32_00806790);
-    wsprintfA(puVar4,"%s%s",puVar1,"OBJECT");
+    wsprintfA((LPSTR)puVar4,"%s%s",puVar1,"OBJECT");
     DAT_00806788 = Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,puVar4,0,0,0);
     DAT_0080678c = Library::Ourlib::MFRLOAD::mfRLoadCreate((int)DAT_00806788);
     g_currentExceptionFrame = local_4c.previous;

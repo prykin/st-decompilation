@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STMethodOwnerApplier] Structural method owner recovered as CGenerate.
    Evidence: this_call_owners=[CGenerate]; agreed_this_calls=1; incoming_this_accesses=8;
@@ -106,17 +108,7 @@ CGenerate::sub_006991C0
   pbVar8 = (byte *)Library::DKW::LIB::FUN_006aac70(param_1 * param_2);
   this->field_584B = pbVar8;
   uVar13 = this->field_582F;
-  for (uVar12 = uVar13 >> 2; uVar12 != 0; uVar12 = uVar12 - 1) {
-    pbVar8[0] = 0;
-    pbVar8[1] = 0;
-    pbVar8[2] = 0;
-    pbVar8[3] = 0;
-    pbVar8 = pbVar8 + 4;
-  }
-  for (uVar13 = uVar13 & 3; uVar13 != 0; uVar13 = uVar13 - 1) {
-    *pbVar8 = 0;
-    pbVar8 = pbVar8 + 1;
-  }
+  memset(pbVar8, 0, uVar13); /* compiler bulk-zero initialization */
   sub_006948E0(this,this->field_5833);
   local_8 = 0;
   Library::MSVCRT::FUN_0072da40();

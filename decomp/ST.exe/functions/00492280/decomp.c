@@ -13,14 +13,14 @@ void __thiscall STBoatC::CancelLoading(STBoatC *this,int param_1)
   int iVar3;
 
   SVar1 = this->field_045D;
-  if ((((SVar1 == CASE_F) || (SVar1 == CASE_E)) && (this->field_058E == param_1)) &&
-     (this->field_0596 == 2)) {
+  if ((((SVar1 == CASE_F) || (SVar1 == CASE_E)) &&
+      (this->field_058E == (AnonShape_005EFAE0_B406B78B *)param_1)) && (this->field_0596 == 2)) {
     this->field_0596 = 1;
     this->field_0592 = 0;
     return;
   }
   if (((SVar1 == CASE_F) || (SVar1 == CASE_E)) &&
-     ((this->field_058E == param_1 && (this->field_0596 == 3)))) {
+     ((this->field_058E == (AnonShape_005EFAE0_B406B78B *)param_1 && (this->field_0596 == 3)))) {
     iVar3 = this->field_059A;
     if (((iVar3 == 0) || (iVar3 == 1)) || (iVar3 == 2)) {
       this->field_059A = 9;

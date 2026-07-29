@@ -8,7 +8,7 @@
 void __thiscall CursorClassTy::InitCursor(CursorClassTy *this,undefined4 param_1)
 
 {
-  int *piVar1;
+  undefined4 *puVar1;
   code *pcVar2;
   CursorClassTy *this_00;
   int iVar3;
@@ -45,10 +45,10 @@ void __thiscall CursorClassTy::InitCursor(CursorClassTy *this,undefined4 param_1
     puVar4 = (ushort *)FUN_006b50c0(800,0x96,(uint)local_8[7],uVar5,(undefined4 *)puVar4,iVar3);
     this_00->field_04D2 = puVar4;
     cMf32::RecMemFree(g_cMf32_00806780,(uint *)&local_8);
-    piVar1 = &this_00->field_04D6;
-    FUN_006b2330(g_ddxContext_008075A8,(uint *)piVar1,1,0x4047ff,0,0,this_00->field_04D2);
-    FUN_006b28c0(g_ddxContext_008075A8,*piVar1,1);
-    FUN_006b3af0((int *)g_ddxContext_008075A8,*piVar1);
+    puVar1 = &this_00->field_04D6;
+    FUN_006b2330(g_ddxContext_008075A8,puVar1,1,0x4047ff,0,0,this_00->field_04D2);
+    FUN_006b28c0(g_ddxContext_008075A8,*puVar1,1);
+    FUN_006b3af0((int *)g_ddxContext_008075A8,*puVar1);
     g_currentExceptionFrame = local_50.previous;
     return;
   }

@@ -13,9 +13,9 @@ undefined4 * __thiscall STTorpC::SaveTorpData(STTorpC *this,int *param_1)
   int iVar2;
   undefined4 *puVar3;
   int iVar4;
-  undefined4 *puVar5;
+  byte *puVar5;
   uint uVar6;
-  undefined4 *puVar7;
+  byte *puVar7;
   InternalExceptionFrame local_6c;
   undefined4 *local_28;
   int local_24;
@@ -48,12 +48,12 @@ undefined4 * __thiscall STTorpC::SaveTorpData(STTorpC *this,int *param_1)
     puVar3[2] = *(undefined4 *)&this_00->field_0x28;
     puVar3[3] = 2;
     puVar3[4] = *(undefined4 *)&this_00->field_0x2c;
-    puVar5 = (undefined4 *)&this_00->field_0x245;
-    puVar7 = puVar3 + 5;
+    puVar5 = (byte *)&this_00->field_0x245;
+    puVar7 = (byte *)(puVar3 + 5);
     for (iVar2 = 0x11; iVar2 != 0; iVar2 = iVar2 + -1) {
       *puVar7 = *puVar5;
-      puVar5 = puVar5 + 1;
-      puVar7 = puVar7 + 1;
+      puVar5 = (byte *)(puVar5 + 1);
+      puVar7 = (byte *)(puVar7 + 1);
     }
     puVar3[0x16] = *(undefined4 *)&local_20->field_0x231;
     puVar3[0x17] = *(undefined4 *)&local_20->field_0x235;
@@ -61,49 +61,40 @@ undefined4 * __thiscall STTorpC::SaveTorpData(STTorpC *this,int *param_1)
     puVar3[0x19] = *(undefined4 *)((int)&local_20->field_023A + 3);
     local_28 = puVar3;
     local_14 = (undefined4 *)FUN_006b0020(*(uint **)&local_20->field_0x241,(int *)&local_8);
-    puVar5 = local_14;
-    puVar7 = puVar3 + 0x20;
+    puVar5 = (byte *)(local_14);
+    puVar7 = (byte *)(puVar3 + 0x20);
     for (uVar6 = local_8 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
       *puVar7 = *puVar5;
-      puVar5 = puVar5 + 1;
-      puVar7 = puVar7 + 1;
+      puVar5 = (byte *)(puVar5 + 1);
+      puVar7 = (byte *)(puVar7 + 1);
     }
     for (uVar6 = local_8 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
       *(undefined1 *)puVar7 = *(undefined1 *)puVar5;
-      puVar5 = (undefined4 *)((int)puVar5 + 1);
-      puVar7 = (undefined4 *)((int)puVar7 + 1);
+      puVar5 = (byte *)((int)puVar5 + 1);
+      puVar7 = (byte *)((int)puVar7 + 1);
     }
     puVar3[0x1a] = 0x80;
     puVar3[0x1b] = local_8;
     FreeAndNull(&local_14);
     local_24 = local_8 + 0x80;
-    puVar5 = local_18;
-    puVar7 = (undefined4 *)(local_24 + (int)puVar3);
+    puVar5 = (byte *)(local_18);
+    puVar7 = (byte *)(local_24 + (int)puVar3);
     for (uVar6 = local_c >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
       *puVar7 = *puVar5;
-      puVar5 = puVar5 + 1;
-      puVar7 = puVar7 + 1;
+      puVar5 = (byte *)(puVar5 + 1);
+      puVar7 = (byte *)(puVar7 + 1);
     }
     for (uVar6 = local_c & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
       *(undefined1 *)puVar7 = *(undefined1 *)puVar5;
-      puVar5 = (undefined4 *)((int)puVar5 + 1);
-      puVar7 = (undefined4 *)((int)puVar7 + 1);
+      puVar5 = (byte *)((int)puVar5 + 1);
+      puVar7 = (byte *)((int)puVar7 + 1);
     }
     puVar3[0x1c] = local_24;
     puVar3[0x1d] = local_c;
     FreeAndNull(&local_18);
-    puVar5 = local_1c;
-    puVar7 = (undefined4 *)(local_24 + local_c + (int)puVar3);
-    for (uVar6 = local_10 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-      *puVar7 = *puVar5;
-      puVar5 = puVar5 + 1;
-      puVar7 = puVar7 + 1;
-    }
-    for (uVar6 = local_10 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
-      *(undefined1 *)puVar7 = *(undefined1 *)puVar5;
-      puVar5 = (undefined4 *)((int)puVar5 + 1);
-      puVar7 = (undefined4 *)((int)puVar7 + 1);
-    }
+    puVar5 = (byte *)(local_1c);
+    puVar7 = (byte *)(local_24 + local_c + (int)puVar3);
+    memmove(puVar7, puVar5, local_10); /* compiler REP MOVS byte copy */
     puVar3[0x1e] = local_24 + local_c;
     puVar3[0x1f] = local_10;
     FreeAndNull(&local_1c);

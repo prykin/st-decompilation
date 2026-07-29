@@ -61,7 +61,7 @@ void __thiscall StartSystemTy::ChatMessage(StartSystemTy *this,STMessage *param_
   SVar2 = param_1->id;
   if (SVar2 == MESS_STARTSYSTEMTY_633F) {
     if ((((local_8->field_067E != (ushort *)0x0) && (DAT_0080c4fa != 0)) &&
-        (-1 < local_8->field_0558)) &&
+        (-1 < (int)local_8->field_0558)) &&
        ((param_1 != (STMessage *)0x0 && (dVar4 = (param_1->arg2).u32, dVar4 != 0)))) {
       pcVar5 = local_8->field_0034;
       local_10 = dVar4;

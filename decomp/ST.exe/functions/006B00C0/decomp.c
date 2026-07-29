@@ -1,10 +1,11 @@
+#include "../../pseudocode_runtime.h"
+
 
 uint * FUN_006b00c0(uint *param_1,uint *param_2,undefined *param_3)
 
 {
   DArrayTy *pDVar1;
   uint uVar2;
-  uint uVar3;
   int iVar4;
   uint *puVar5;
   uint *puVar6;
@@ -19,16 +20,7 @@ uint * FUN_006b00c0(uint *param_1,uint *param_2,undefined *param_3)
   pDVar1->growCallback = param_3;
   puVar5 = param_2 + 7;
   puVar6 = pDVar1->data;
-  for (uVar3 = uVar2 >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {
-    *puVar6 = *puVar5;
-    puVar5 = puVar5 + 1;
-    puVar6 = puVar6 + 1;
-  }
-  for (uVar2 = uVar2 & 3; uVar2 != 0; uVar2 = uVar2 - 1) {
-    *(char *)puVar6 = (char)*puVar5;
-    puVar5 = (uint *)((int)puVar5 + 1);
-    puVar6 = (uint *)((int)puVar6 + 1);
-  }
+  memmove(puVar6, puVar5, uVar2); /* compiler REP MOVS byte copy */
   iVar4 = pDVar1->capacity - pDVar1->count;
   if (iVar4 != 0) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */

@@ -53,11 +53,7 @@ int __thiscall TLOFakeTy::GetMessage(TLOFakeTy *this,STMessage *message)
       pSVar9 = &pSVar4->field_0231;
     }
     pSVar7 = local_8;
-    for (iVar5 = 7; iVar5 != 0; iVar5 = iVar5 + -1) {
-      *pSVar9 = *pSVar7;
-      pSVar7 = pSVar7 + 1;
-      pSVar9 = pSVar9 + 1;
-    }
+    memmove(pSVar9, pSVar7, 0x1c); /* compiler REP MOVS byte copy */
     if (*(int *)&pSVar4->field_0x23d == 2) {
       if (*(int *)&pSVar4->field_0x249 != 0) {
         iVar5 = Library::DKW::LIB::FUN_006aac70(*(int *)&pSVar4->field_0x249 * 0xc);
@@ -137,7 +133,7 @@ int __thiscall TLOFakeTy::GetMessage(TLOFakeTy *this,STMessage *message)
       }
     }
     STPlaySystemC::SaveObjData
-              (g_playSystem_00802A38,pSVar4->field_0018,(byte *)local_8,
+              (g_playSystem_00802A38,(int *)pSVar4->field_0018,(byte *)local_8,
                (AnonShape_0060EA30_DCEB68AD *)(*(int *)&pSVar4->field_0x245 * 0xc + 0x1c));
     FreeAndNull(&local_8);
     g_currentExceptionFrame = local_50.previous;

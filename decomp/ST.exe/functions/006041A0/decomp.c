@@ -11,10 +11,9 @@ int __thiscall STExplosionC::CreateGroupPart(STExplosionC *this,int param_1)
   code *pcVar1;
   STExplosionC *pSVar2;
   int iVar3;
-  uint *puVar4;
+  HoloTy *pHVar4;
   int iVar5;
-  undefined4 *puVar6;
-  int *piVar7;
+  HoloTy **ppHVar6;
   InternalExceptionFrame local_50;
   STExplosionC *local_c;
   int local_8;
@@ -28,14 +27,14 @@ int __thiscall STExplosionC::CreateGroupPart(STExplosionC *this,int param_1)
   pSVar2 = local_c;
   if (iVar3 == 0) {
     if (0 < param_1) {
-      piVar7 = &local_c->field_0219;
+      ppHVar6 = &local_c->field_0219;
       do {
-        puVar4 = thunk_FUN_00629010();
-        *piVar7 = (int)puVar4;
-        *(STExplosionC **)((int)puVar4 + 0xce) = pSVar2;
-        iVar3 = *piVar7;
-        piVar7 = piVar7 + 1;
-        *(int *)(iVar3 + 0xd2) = iVar5;
+        pHVar4 = (HoloTy *)thunk_FUN_00629010();
+        *ppHVar6 = pHVar4;
+        *(STExplosionC **)&pHVar4[4].field_0002 = pSVar2;
+        pHVar4 = *ppHVar6;
+        ppHVar6 = ppHVar6 + 1;
+        *(int *)&pHVar4[4].field_0x6 = iVar5;
         local_8 = local_8 + 1;
         iVar5 = iVar5 + 1;
       } while (iVar5 < param_1);
@@ -45,11 +44,11 @@ int __thiscall STExplosionC::CreateGroupPart(STExplosionC *this,int param_1)
   }
   g_currentExceptionFrame = local_50.previous;
   if (0 < local_8) {
-    puVar6 = &local_c->field_0219;
+    ppHVar6 = &local_c->field_0219;
     iVar5 = local_8;
     do {
-      Library::MSVCRT::FUN_0072e2b0((HoloTy *)*puVar6);
-      puVar6 = puVar6 + 1;
+      Library::MSVCRT::FUN_0072e2b0(*ppHVar6);
+      ppHVar6 = ppHVar6 + 1;
       iVar5 = iVar5 + -1;
     } while (iVar5 != 0);
   }

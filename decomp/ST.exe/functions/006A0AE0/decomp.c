@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=11, used=0), and
@@ -10,10 +12,9 @@ FUN_006a0ae0(void *this,int param_1,int param_2,undefined4 param_3,int param_4,u
   uint *puVar1;
   uint uVar2;
   int iVar3;
-  int iVar4;
-  undefined4 *puVar5;
+  byte *puVar5;
   uint *puVar6;
-  undefined4 *puVar7;
+  byte *puVar7;
   undefined4 local_9c;
   undefined2 local_98;
   undefined4 local_8;
@@ -38,14 +39,9 @@ FUN_006a0ae0(void *this,int param_1,int param_2,undefined4 param_3,int param_4,u
   *(int *)((int)this + 4) = iVar3;
   iVar3 = Library::DKW::LIB::FUN_006acf50(*(int *)this,iVar3 * 0x92 + 0xaa);
   *(int *)this = iVar3;
-  puVar5 = &local_9c;
-  puVar7 = (undefined4 *)(iVar3 + -0x7a + *(int *)((int)this + 4) * 0x92);
-  for (iVar4 = 0x24; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *puVar7 = *puVar5;
-    puVar5 = puVar5 + 1;
-    puVar7 = puVar7 + 1;
-  }
-  *(undefined2 *)puVar7 = *(undefined2 *)puVar5;
+  puVar5 = (byte *)(&local_9c);
+  puVar7 = (byte *)(iVar3 + -0x7a + *(int *)((int)this + 4) * 0x92);
+  memmove(puVar7, puVar5, 0x92); /* compiler REP MOVS byte copy */
   return;
 }
 

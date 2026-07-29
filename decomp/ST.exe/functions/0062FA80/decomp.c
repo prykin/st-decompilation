@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 int __thiscall FUN_0062fa80(void *this,AnonShape_0062FA80_0B91B2B9 *param_1)
 
@@ -11,8 +13,8 @@ int __thiscall FUN_0062fa80(void *this,AnonShape_0062FA80_0B91B2B9 *param_1)
   int iVar7;
   int *piVar8;
   undefined4 *puVar9;
-  undefined4 *puVar10;
-  undefined4 *puVar11;
+  byte *puVar10;
+  byte *puVar11;
   int local_c;
   int local_8;
 
@@ -65,17 +67,12 @@ int __thiscall FUN_0062fa80(void *this,AnonShape_0062FA80_0B91B2B9 *param_1)
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (AnonShape_0062FA80_0B91B2B9 *)0x5;
       do {
-        puVar11 = (undefined4 *)*piVar8;
+        puVar11 = (byte *)*piVar8;
         if (puVar11 != (undefined4 *)0x0) {
           local_8 = local_8 + 0x3e;
           uVar4 = puVar11[4];
-          puVar10 = puVar9;
-          for (iVar7 = 0xf; iVar7 != 0; iVar7 = iVar7 + -1) {
-            *puVar11 = *puVar10;
-            puVar10 = puVar10 + 1;
-            puVar11 = puVar11 + 1;
-          }
-          *(undefined2 *)puVar11 = *(undefined2 *)puVar10;
+          puVar10 = (byte *)(puVar9);
+          memmove(puVar11, puVar10, 0x3e); /* compiler REP MOVS byte copy */
           puVar9 = (undefined4 *)((int)puVar9 + 0x3e);
           *(undefined4 *)(*piVar8 + 0x10) = uVar4;
         }

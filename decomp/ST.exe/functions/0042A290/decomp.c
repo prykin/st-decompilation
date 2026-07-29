@@ -26,10 +26,10 @@ short * __cdecl LoadLand(cMf32 *param_1,char *text)
   int iVar9;
   short *psVar10;
   uint uVar11;
-  undefined4 *puVar12;
+  byte *puVar12;
   ST3DSMAPContext *this;
   uint uVar13;
-  undefined4 *puVar14;
+  byte *puVar14;
   longlong lVar15;
   CHAR local_f4 [128];
   InternalExceptionFrame local_74;
@@ -141,18 +141,9 @@ short * __cdecl LoadLand(cMf32 *param_1,char *text)
             local_24 = puVar1[10];
             *(undefined2 *)(puVar1 + 2) = (undefined2)local_2c;
             local_20 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(uVar13);
-            puVar12 = *(undefined4 **)&this->field_0xc;
-            puVar14 = local_20;
-            for (uVar11 = uVar13 >> 2; uVar11 != 0; uVar11 = uVar11 - 1) {
-              *puVar14 = *puVar12;
-              puVar12 = puVar12 + 1;
-              puVar14 = puVar14 + 1;
-            }
-            for (uVar13 = uVar13 & 3; uVar13 != 0; uVar13 = uVar13 - 1) {
-              *(undefined1 *)puVar14 = *(undefined1 *)puVar12;
-              puVar12 = (undefined4 *)((int)puVar12 + 1);
-              puVar14 = (undefined4 *)((int)puVar14 + 1);
-            }
+            puVar12 = (byte *)(*(undefined4 **)&this->field_0xc);
+            puVar14 = (byte *)(local_20);
+            memmove(puVar14, puVar12, uVar13); /* compiler REP MOVS byte copy */
             puVar1[0x10] = local_20;
             Library::DKW::TBL::FUN_006ae1c0(&local_c->flags,&local_24);
             this = local_10;

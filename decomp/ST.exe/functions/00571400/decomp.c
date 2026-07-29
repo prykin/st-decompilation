@@ -40,7 +40,7 @@ void __thiscall STAppC::ReadCmdPlay(STAppC *this,int param_1)
     RaiseInternalException(iVar3,0,"E:\\__titans\\tapp.cpp",0x914);
     return;
   }
-  hFile = CreateFileA(&local_10->field_0x7b06,0x80000000,1,(LPSECURITY_ATTRIBUTES)0x0,3,0x80,
+  hFile = CreateFileA(&local_10->field_7B06,0x80000000,1,(LPSECURITY_ATTRIBUTES)0x0,3,0x80,
                       (HANDLE)0x0);
   if (hFile == (HANDLE)0xffffffff) {
     local_8 = 1;

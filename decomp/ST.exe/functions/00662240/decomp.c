@@ -65,9 +65,9 @@ int __thiscall AiFltClassTy::GetAiMess(AiFltClassTy *this,uint *param_1)
   int extraout_EDX_11;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   int extraout_EDX_12;
-  undefined4 *puVar20;
+  byte *puVar20;
   STWorldObject *this_02;
-  undefined4 *puVar21;
+  byte *puVar21;
   uint uVar22;
   bool bVar23;
   short *psVar24;
@@ -380,12 +380,12 @@ LAB_00663af0:
               *(undefined1 *)(param_1 + 2) = 1;
               *(ushort *)((int)param_1 + 0xe) = uVar3;
               if (*(char *)((int)param_1 + 9) != '\0') {
-                puVar20 = *(undefined4 **)((int)param_1 + 10);
-                puVar21 = &this_00->field_01AD;
+                puVar20 = (byte *)(*(undefined4 **)((int)param_1 + 10));
+                puVar21 = (byte *)(&this_00->field_01AD);
                 for (iVar11 = 0x12; iVar11 != 0; iVar11 = iVar11 + -1) {
                   *puVar21 = *puVar20;
-                  puVar20 = puVar20 + 1;
-                  puVar21 = puVar21 + 1;
+                  puVar20 = (byte *)(puVar20 + 1);
+                  puVar21 = (byte *)(puVar21 + 1);
                 }
                 *(undefined2 *)puVar21 = *(undefined2 *)puVar20;
                 if ((this_00->field_01EB != '\0') &&
@@ -551,12 +551,12 @@ LAB_0066263e:
         *(ushort *)(*(int *)((int)param_1 + 10) + 0x18) = this_00->field_0284[0x42];
         *(ushort *)(*(int *)((int)param_1 + 10) + 0x1a) = this_00->field_0284[0x43];
       }
-      puVar20 = *(undefined4 **)((int)param_1 + 10);
-      puVar21 = &this_00->field_01AD;
+      puVar20 = (byte *)(*(undefined4 **)((int)param_1 + 10));
+      puVar21 = (byte *)(&this_00->field_01AD);
       for (iVar11 = 0x12; iVar11 != 0; iVar11 = iVar11 + -1) {
         *puVar21 = *puVar20;
-        puVar20 = puVar20 + 1;
-        puVar21 = puVar21 + 1;
+        puVar20 = (byte *)(puVar20 + 1);
+        puVar21 = (byte *)(puVar21 + 1);
       }
       *(undefined2 *)puVar21 = *(undefined2 *)puVar20;
       if ((this_00->field_01EB != '\0') &&
@@ -708,14 +708,9 @@ LAB_0066263e:
             *(undefined1 *)(param_1 + 2) = 1;
             *(ushort *)((int)param_1 + 0xe) = uVar3;
             if (*(char *)((int)param_1 + 9) != '\0') {
-              puVar20 = *(undefined4 **)((int)param_1 + 10);
-              puVar21 = &this_00->field_01AD;
-              for (iVar11 = 0x12; iVar11 != 0; iVar11 = iVar11 + -1) {
-                *puVar21 = *puVar20;
-                puVar20 = puVar20 + 1;
-                puVar21 = puVar21 + 1;
-              }
-              *(undefined2 *)puVar21 = *(undefined2 *)puVar20;
+              puVar20 = (byte *)(*(undefined4 **)((int)param_1 + 10));
+              puVar21 = (byte *)(&this_00->field_01AD);
+              memmove(puVar21, puVar20, 0x4a); /* compiler REP MOVS byte copy */
               puVar6 = *(uint **)((int)param_1 + 10);
               TLOBaseTy::thunk_FUN_004c7cc0
                         (local_24,1,*puVar6,1,1,(uint)(ushort)puVar6[3],puVar6[2],
@@ -872,14 +867,9 @@ LAB_00663076:
               *(undefined1 *)(param_1 + 2) = 1;
               *(ushort *)((int)param_1 + 0xe) = uVar3;
               if (*(char *)((int)param_1 + 9) != '\0') {
-                puVar20 = *(undefined4 **)((int)param_1 + 10);
-                puVar21 = &this_00->field_01AD;
-                for (iVar11 = 0x12; iVar11 != 0; iVar11 = iVar11 + -1) {
-                  *puVar21 = *puVar20;
-                  puVar20 = puVar20 + 1;
-                  puVar21 = puVar21 + 1;
-                }
-                *(undefined2 *)puVar21 = *(undefined2 *)puVar20;
+                puVar20 = (byte *)(*(undefined4 **)((int)param_1 + 10));
+                puVar21 = (byte *)(&this_00->field_01AD);
+                memmove(puVar21, puVar20, 0x4a); /* compiler REP MOVS byte copy */
                 thunk_FUN_004ebab0(local_24,**(int **)((int)param_1 + 10),
                                    (*(int **)((int)param_1 + 10))[0xb]);
                 if (this_00->field_00B3 != 0) {
@@ -1033,14 +1023,9 @@ LAB_00662dbb:
       *(undefined1 *)(param_1 + 2) = 1;
       *(ushort *)((int)param_1 + 0xe) = uVar3;
       if (*(char *)((int)param_1 + 9) != '\0') {
-        puVar20 = *(undefined4 **)((int)param_1 + 10);
-        puVar21 = &this_00->field_01AD;
-        for (iVar11 = 0x12; iVar11 != 0; iVar11 = iVar11 + -1) {
-          *puVar21 = *puVar20;
-          puVar20 = puVar20 + 1;
-          puVar21 = puVar21 + 1;
-        }
-        *(undefined2 *)puVar21 = *(undefined2 *)puVar20;
+        puVar20 = (byte *)(*(undefined4 **)((int)param_1 + 10));
+        puVar21 = (byte *)(&this_00->field_01AD);
+        memmove(puVar21, puVar20, 0x4a); /* compiler REP MOVS byte copy */
         iVar11 = **(int **)((int)param_1 + 10);
         if (iVar11 == 0xa3) {
           iVar11 = 4;

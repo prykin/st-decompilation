@@ -20,7 +20,7 @@ undefined4 __fastcall FUN_004e2040(void *param_1)
     piVar2 = piVar2 + 10;
   } while (iVar3 < 2);
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  thunk_FUN_004d76e0(*(char *)((int)param_1 + 0x24),4,*(int *)((int)param_1 + 0x18),0,0,local_8,0);
+  thunk_FUN_004d76e0(*(char *)((int)param_1 + 0x24),4,*(int **)((int)param_1 + 0x18),0,0,local_8,0);
   return 0;
 }
 

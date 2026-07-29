@@ -6,21 +6,21 @@
 void FUN_006e4c90(int param_1,DArrayTy *param_2)
 
 {
-  uint uVar1;
-  undefined4 local_10;
+  uint index;
+  byte local_10 [4];
   int local_c;
   DArrayTy *local_8;
 
   param_2->iteratorIndex = 0;
-  uVar1 = FUN_006b1190(param_2,&local_10);
-  if (-1 < (int)uVar1) {
+  index = DArrayGetNext(param_2,local_10);
+  if (-1 < (int)index) {
     while( true ) {
       if (local_c == param_1) break;
       if (local_8 != (DArrayTy *)0x0) {
         FUN_006e4c90(param_1,local_8);
       }
-      uVar1 = FUN_006b1190(param_2,&local_10);
-      if ((int)uVar1 < 0) {
+      index = DArrayGetNext(param_2,local_10);
+      if ((int)index < 0) {
         return;
       }
     }
@@ -29,7 +29,7 @@ void FUN_006e4c90(int param_1,DArrayTy *param_2)
       DArrayDestroy(local_8);
       local_8 = (DArrayTy *)0x0;
     }
-    FUN_006b0c70(param_2,uVar1);
+    DArrayRemoveAt(param_2,index);
   }
   return;
 }

@@ -1172,6 +1172,15 @@ public class STDArrayElementAnalyzer extends GhidraScript {
             .toList();
         if (concrete.size() == 1) return concrete.get(0);
         if (concrete.isEmpty()) return "";
+        String role = dominant(field.roles, 2);
+        boolean opaqueHandle =
+            role.equals("handle") || role.endsWith("Handle");
+        if (width == 4 && opaqueHandle &&
+                field.types.getOrDefault("/uint", 0) >= 2 &&
+                concrete.stream().allMatch(type ->
+                    type.equals("/int") || type.equals("/uint") ||
+                    type.equals("/dword") || type.equals("/WinDef.h/DWORD")))
+            return "/uint";
         List<String> ranked = new ArrayList<>(concrete);
         ranked.sort(Comparator
             .<String>comparingInt(type -> field.types.getOrDefault(type, 0)).reversed()

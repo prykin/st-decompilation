@@ -45,7 +45,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00664540::FUN_00664540
       *param_2 = index;
     }
     DArrayGetElement(*(DArrayTy **)&this->field_0x217,index,param_1);
-    FUN_006b0c70(*(DArrayTy **)&this->field_0x217,index);
+    DArrayRemoveAt(*(DArrayTy **)&this->field_0x217,index);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     return *(undefined4 *)(*(int *)&this->field_0x217 + 0xc);
   }

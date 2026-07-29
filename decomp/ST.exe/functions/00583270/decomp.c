@@ -23,12 +23,12 @@ int __thiscall STJellyGunC::GetMessage(STJellyGunC *this,STMessage *message)
   uint uVar7;
   short sVar8;
   AnonShape_00583270_F758043B *pAVar9;
-  undefined4 *puVar10;
+  byte *puVar10;
   byte *pbVar11;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   int *unaff_EDI;
   int *piVar12;
-  undefined4 *puVar13;
+  byte *puVar13;
   char *pcVar14;
   AnonShape_00583270_0B8831C2 *pAVar15;
   byte *pbVar16;
@@ -75,7 +75,7 @@ int __thiscall STJellyGunC::GetMessage(STJellyGunC *this,STMessage *message)
     if (SVar2 == MESS_TORPHIT) {
       if ((this_00->field_0235 != CASE_2) && (this_00->field_0235 != CASE_4)) {
         sub_00582530(this_00);
-        puVar10 = &this_00->field_01D5;
+        puVar10 = (byte *)(&this_00->field_01D5);
         this_00->field_0241 = 0xff;
         *(undefined2 *)&this_00->field_0x245 = 0;
         *(undefined4 *)&this_00->field_0x252 = 0;
@@ -113,14 +113,9 @@ int __thiscall STJellyGunC::GetMessage(STJellyGunC *this,STMessage *message)
           this_00->field_023D = 0;
           this_00->field_0241 = 0xff;
           this_00->field_0231 = 0;
-          puVar10 = (message->arg0).ptr;
-          puVar13 = (undefined4 *)&this_00->field_0x256;
-          for (iVar5 = 0xf; iVar5 != 0; iVar5 = iVar5 + -1) {
-            *puVar13 = *puVar10;
-            puVar10 = puVar10 + 1;
-            puVar13 = puVar13 + 1;
-          }
-          *(undefined2 *)puVar13 = *(undefined2 *)puVar10;
+          puVar10 = (byte *)((message->arg0).ptr);
+          puVar13 = (byte *)&this_00->field_0x256;
+          memmove(puVar13, puVar10, 0x3e); /* compiler REP MOVS byte copy */
           iVar5 = this_00->field_026A;
           sVar8 = (short)(iVar5 >> 0x1f);
           if (iVar5 < 0) {
@@ -162,7 +157,7 @@ int __thiscall STJellyGunC::GetMessage(STJellyGunC *this,STMessage *message)
             if (iVar5 == 0) {
               iVar5 = thunk_FUN_00417ee0(this_00,0);
               if (iVar5 == 0) {
-                puVar10 = &this_00->field_01D5;
+                puVar10 = (byte *)(&this_00->field_01D5);
                 iVar5 = STT3DSprC::LoadSequence
                                   ((STT3DSprC *)puVar10,0xe,DAT_0080676c,"jellygun",0x1d);
                 if (iVar5 != 0) {
@@ -241,11 +236,11 @@ int __thiscall STJellyGunC::GetMessage(STJellyGunC *this,STMessage *message)
         }
         else if (*(uint *)&local_38->field_0xc == 2) {
           pAVar9 = local_38;
-          puVar10 = (undefined4 *)&this_00->field_0x256;
+          puVar10 = (byte *)&this_00->field_0x256;
           for (iVar5 = 0xf; iVar5 != 0; iVar5 = iVar5 + -1) {
             *puVar10 = *(undefined4 *)pAVar9;
             pAVar9 = (AnonShape_00583270_F758043B *)&pAVar9->field_0x4;
-            puVar10 = puVar10 + 1;
+            puVar10 = (byte *)(puVar10 + 1);
           }
           *(undefined2 *)puVar10 = *(undefined2 *)pAVar9;
           local_8 = local_38->field_0067;
@@ -310,11 +305,11 @@ int __thiscall STJellyGunC::GetMessage(STJellyGunC *this,STMessage *message)
                 Library::DKW::LIB::FUN_006aac70(local_10 + 0x6f + local_8);
       if (((local_14 != (byte *)0x0) && (local_18 != (byte *)0x0)) &&
          (local_c != (AnonShape_00583270_0B8831C2 *)0x0)) {
-        puVar10 = (undefined4 *)&this_00->field_0x256;
+        puVar10 = (byte *)&this_00->field_0x256;
         pAVar15 = local_c;
         for (iVar5 = 0xf; iVar5 != 0; iVar5 = iVar5 + -1) {
           *(undefined4 *)pAVar15 = *puVar10;
-          puVar10 = puVar10 + 1;
+          puVar10 = (byte *)(puVar10 + 1);
           pAVar15 = (AnonShape_00583270_0B8831C2 *)&pAVar15->field_0x4;
         }
         *(undefined2 *)pAVar15 = *(undefined2 *)puVar10;
@@ -359,7 +354,7 @@ int __thiscall STJellyGunC::GetMessage(STJellyGunC *this,STMessage *message)
           pbVar16 = pbVar16 + 1;
         }
         STPlaySystemC::SaveObjData
-                  (g_playSystem_00802A38,this_00->field_0018,(byte *)local_c,
+                  (g_playSystem_00802A38,(int *)this_00->field_0018,(byte *)local_c,
                    (AnonShape_0060EA30_DCEB68AD *)(local_10 + 0x6f + local_8));
         FreeAndNull(&local_14);
         FreeAndNull(&local_18);
@@ -382,7 +377,7 @@ int __thiscall STJellyGunC::GetMessage(STJellyGunC *this,STMessage *message)
     if (((SVar2 == MESS_HITKILL) && (this_00->field_0235 != CASE_2)) &&
        (this_00->field_0235 != CASE_4)) {
       sub_00582530(this_00);
-      puVar10 = &this_00->field_01D5;
+      puVar10 = (byte *)(&this_00->field_01D5);
       this_00->field_0241 = 0xff;
       *(undefined2 *)&this_00->field_0x245 = 0;
       *(undefined4 *)&this_00->field_0x252 = 0;

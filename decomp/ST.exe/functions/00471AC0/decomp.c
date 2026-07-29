@@ -467,7 +467,7 @@ LAB_00471cbd:
                   STTorpC::ClearDangerous(local_20,this->field_0018,local_24);
                   this->field_046B = (ushort *)local_20;
                   this->field_046F = local_20->field_026E;
-                  this->field_0471 = local_20->field_0018;
+                  this->field_0471 = (AnonShape_005EFAE0_B406B78B *)local_20->field_0018;
                   if (this->field_004B == 0) {
                     pSVar8 = this->vtable;
                     this->field_0469 = 1;

@@ -16,8 +16,8 @@ void FUN_006b0290(int param_1,int param_2,int param_3,int param_4,int *param_5,i
   local_14 = ExceptionList;
   local_8 = 0;
   ExceptionList = &local_14;
-  FUN_006cea60((undefined8 *)(param_2 * param_4 + param_1 + param_3),param_2,
-               (undefined8 *)((int)param_5 + param_7 + param_6 * param_8),param_6,param_9,param_10);
+  CopyRows((byte *)(param_2 * param_4 + param_1 + param_3),param_2,
+           (byte *)((int)param_5 + param_7 + param_6 * param_8),param_6,param_9,param_10);
   ExceptionList = local_14;
   return;
 }

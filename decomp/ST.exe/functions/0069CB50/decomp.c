@@ -24,7 +24,7 @@ uint __fastcall CGenerate::sub_0069CB50(int *param_1)
   int iVar13;
   uint uVar14;
   AnonShape_0069CB50_B339E56A *pAVar15;
-  undefined4 *puVar16;
+  byte *puVar16;
   uint uVar17;
   bool bVar18;
   undefined4 uVar19;
@@ -309,15 +309,8 @@ uint __fastcall CGenerate::sub_0069CB50(int *param_1)
           }
           else {
             local_164 = 0;
-            puVar16 = local_c0;
-            for (uVar14 = local_d8 >> 2; uVar14 != 0; uVar14 = uVar14 - 1) {
-              *puVar16 = 0;
-              puVar16 = puVar16 + 1;
-            }
-            for (uVar14 = local_d8 & 3; uVar14 != 0; uVar14 = uVar14 - 1) {
-              *(undefined1 *)puVar16 = 0;
-              puVar16 = (undefined4 *)((int)puVar16 + 1);
-            }
+            puVar16 = (byte *)(local_c0);
+            memset(puVar16, 0, local_d8); /* compiler bulk-zero initialization */
             local_e4 = 0;
             pDVar3 = local_30->field_000C;
             if (0 < (int)pDVar3->count) {

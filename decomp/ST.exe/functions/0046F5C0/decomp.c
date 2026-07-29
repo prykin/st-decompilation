@@ -374,8 +374,7 @@ LAB_00470071:
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         iVar6 = CONCAT22((short)((uint)iVar8 >> 0x10),this->field_0556 + 1) * 0xc9;
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        iVar11 = CONCAT22((short)((uint)iVar6 >> 0x10),
-                          *(short *)&this->field_0568 + this->field_0554);
+        iVar11 = CONCAT22((short)((uint)iVar6 >> 0x10),(short)this->field_0568 + this->field_0554);
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         uVar5 = (*this->vtable->vfunc_10)
                           (this->field_0041,this->field_0043,
@@ -406,7 +405,7 @@ LAB_004707ad:
       }
       if (*(int *)&this->field_0x584 == 2) {
         sub_00415B30(this,this->field_0041,this->field_0043,this->field_0045,
-                     (*(short *)&this->field_0568 + this->field_0554) * 0xc9 + 100,
+                     ((short)this->field_0568 + this->field_0554) * 0xc9 + 100,
                      (this->field_0556 + 1) * 0xc9,this->field_0558 * 200 + 300,this->field_0061);
         *(undefined4 *)&this->field_0x584 = 3;
       }

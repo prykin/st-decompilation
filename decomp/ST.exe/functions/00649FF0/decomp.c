@@ -10,7 +10,7 @@ FUN_00649ff0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param_4)
   int *piVar3;
   HINSTANCE module;
   char *pcVar4;
-  DArrayTy *groupContent;
+  DArrayTy *array;
   void *pvVar5;
   int iVar6;
   uint uVar7;
@@ -138,23 +138,23 @@ FUN_00649ff0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param_4)
     pcVar12 = pcVar12 + 1;
   }
   FUN_006b78c0(&stack0xfffffcd0,&stack0xfffffcd0);
-  groupContent = (DArrayTy *)
-                 thunk_FUN_00683c70((LPCSTR)param_1,(AnonShape_00683C70_22193481 *)&stack0xfffffcd0,
-                                    &local_14,param_4,(undefined *)0x0);
-  if (groupContent != (DArrayTy *)0x0) {
+  array = (DArrayTy *)
+          thunk_FUN_00683c70((LPCSTR)param_1,(AnonShape_00683C70_22193481 *)&stack0xfffffcd0,
+                             &local_14,param_4,(undefined *)0x0);
+  if (array != (DArrayTy *)0x0) {
     if (local_14 != CASE_A) {
-      local_8 = groupContent;
+      local_8 = array;
       thunk_FUN_0068cda0((int *)&local_8,local_14);
       return (undefined4 *)0x0;
     }
     local_8 = (DArrayTy *)0x0;
-    uVar7 = groupContent->count;
-    local_10 = groupContent;
+    uVar7 = array->count;
+    local_10 = array;
     if (uVar7 != 0) {
       while (uVar7 = uVar7 - 1, -1 < (int)uVar7) {
-        if (uVar7 < groupContent->count) {
-          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(groupContent, uVar7) (runtime stride) */
-          pcVar4 = (char *)(groupContent->elementSize * uVar7 + (int)groupContent->data);
+        if (uVar7 < array->count) {
+          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, uVar7) (runtime stride) */
+          pcVar4 = (char *)(array->elementSize * uVar7 + (int)array->data);
         }
         else {
           pcVar4 = (char *)0x0;
@@ -162,10 +162,10 @@ FUN_00649ff0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param_4)
         if (((*pcVar4 != '\0') &&
             (iVar6 = Library::MSVCRT::__strcmpi((char *)&DAT_008117c0,pcVar4), iVar6 != 0)) ||
            (uVar9 != *(uint *)(pcVar4 + 0x104))) {
-          FUN_006b0c70(groupContent,uVar7);
+          DArrayRemoveAt(array,uVar7);
         }
       }
-      uVar7 = groupContent->count;
+      uVar7 = array->count;
       if (uVar7 != 0) {
         uVar9 = 0xffffffff;
         uVar8 = 0;
@@ -176,9 +176,9 @@ FUN_00649ff0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param_4)
         if (0 < (int)uVar7) {
           bVar13 = uVar7 != 0;
           do {
-            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(groupContent, uVar8) (runtime stride) */
+            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, uVar8) (runtime stride) */
             if (((bVar13) &&
-                (pvVar5 = (void *)(groupContent->elementSize * uVar8 + (int)groupContent->data),
+                (pvVar5 = (void *)(array->elementSize * uVar8 + (int)array->data),
                 pvVar5 != (void *)0x0)) &&
                ((*(int *)((int)pvVar5 + 0x108) < 0 &&
                 ((puVar2 = *(uint **)((int)pvVar5 + 0x110), (int)local_c <= (int)puVar2 &&
@@ -194,13 +194,13 @@ FUN_00649ff0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param_4)
                 param_1 = puVar2;
               }
             }
-            uVar7 = groupContent->count;
+            uVar7 = array->count;
             uVar8 = uVar8 + 1;
             bVar13 = uVar8 < uVar7;
           } while ((int)uVar8 < (int)uVar7);
-          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(groupContent, uVar9) (runtime stride) */
+          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, uVar9) (runtime stride) */
           if (((-1 < (int)uVar9) && (uVar9 < uVar7)) &&
-             (pvVar5 = (void *)(groupContent->elementSize * uVar9 + (int)groupContent->data),
+             (pvVar5 = (void *)(array->elementSize * uVar9 + (int)array->data),
              pvVar5 != (void *)0x0)) {
             uVar7 = 0xffffffff;
             pcVar4 = (char *)((int)pvVar5 + 0x114);
@@ -243,9 +243,9 @@ FUN_00649ff0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param_4)
         if (0 < (int)uVar7) {
           bVar13 = uVar7 != 0;
           do {
-            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(groupContent, uVar8) (runtime stride) */
+            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, uVar8) (runtime stride) */
             if (((bVar13) &&
-                (pvVar5 = (void *)(groupContent->elementSize * uVar8 + (int)groupContent->data),
+                (pvVar5 = (void *)(array->elementSize * uVar8 + (int)array->data),
                 pvVar5 != (void *)0x0)) &&
                ((*(uint *)((int)pvVar5 + 0x108) == local_c &&
                 ((puVar2 = *(uint **)((int)pvVar5 + 0x110), (int)local_18 <= (int)puVar2 &&
@@ -261,13 +261,13 @@ FUN_00649ff0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param_4)
                 param_1 = puVar2;
               }
             }
-            uVar7 = groupContent->count;
+            uVar7 = array->count;
             uVar8 = uVar8 + 1;
             bVar13 = uVar8 < uVar7;
           } while ((int)uVar8 < (int)uVar7);
-          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(groupContent, uVar9) (runtime stride) */
+          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, uVar9) (runtime stride) */
           if (((-1 < (int)uVar9) && (uVar9 < uVar7)) &&
-             (pvVar5 = (void *)(groupContent->elementSize * uVar9 + (int)groupContent->data),
+             (pvVar5 = (void *)(array->elementSize * uVar9 + (int)array->data),
              pvVar5 != (void *)0x0)) {
             uVar7 = 0xffffffff;
             pcVar4 = (char *)((int)pvVar5 + 0x114);
@@ -305,12 +305,12 @@ LAB_0064a336:
             return &DAT_008117c0;
           }
         }
-        if (groupContent == (DArrayTy *)0x0) {
+        if (array == (DArrayTy *)0x0) {
           return (undefined4 *)0x0;
         }
       }
     }
-    DArrayDestroy(groupContent);
+    DArrayDestroy(array);
   }
   return (undefined4 *)0x0;
 }

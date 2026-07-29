@@ -11,8 +11,9 @@ undefined4 __thiscall STPlaySystemC::InitSystem(STPlaySystemC *this,int param_1)
   uint *puVar1;
   code *pcVar2;
   STPlaySystemC *pSVar3;
-  int iVar4;
-  AnonPointee_STPlaySystemC_003D *pAVar5;
+  int errorCode;
+  AnonPointee_STPlaySystemC_003D *pAVar4;
+  void *pvVar5;
   int iVar6;
   undefined4 uVar7;
   InternalExceptionFrame local_54;
@@ -25,17 +26,17 @@ undefined4 __thiscall STPlaySystemC::InitSystem(STPlaySystemC *this,int param_1)
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_8 = this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
+  errorCode = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   pSVar3 = local_8;
-  if (iVar4 == 0) {
+  if (errorCode == 0) {
     SystemClassTy::InitSystem((SystemClassTy *)local_8);
     pSVar3->field_0039 = (AnonPointee_STPlaySystemC_0039 *)0x0;
     pSVar3->field_0045 = 7;
-    pAVar5 = (AnonPointee_STPlaySystemC_003D *)Library::DKW::LIB::FUN_006aac70(7);
-    pSVar3->field_003D = pAVar5;
+    pAVar4 = (AnonPointee_STPlaySystemC_003D *)Library::DKW::LIB::FUN_006aac70(7);
+    pSVar3->field_003D = pAVar4;
     pSVar3->field_0053 = 0x1400;
-    iVar4 = Library::DKW::LIB::FUN_006aac70(0x1400);
-    pSVar3->field_004F = iVar4;
+    pvVar5 = (void *)Library::DKW::LIB::FUN_006aac70(0x1400);
+    pSVar3->field_004F = pvVar5;
     pSVar3->field_0041 = 0;
     pSVar3->field_0049 = 0;
     puVar1 = &pSVar3->field_00E4;
@@ -71,12 +72,12 @@ undefined4 __thiscall STPlaySystemC::InitSystem(STPlaySystemC *this,int param_1)
     return 0;
   }
   g_currentExceptionFrame = local_54.previous;
-  iVar6 = ReportDebugMessage("E:\\__titans\\Andrey\\tplaysys.cpp",0x18c,0,iVar4,"%s",
-                             "STPlaySystemC::InitSystem");
+  iVar6 = ReportDebugMessage("E:\\__titans\\Andrey\\tplaysys.cpp",0x18c,0,errorCode,
+                             "%s","STPlaySystemC::InitSystem");
   if (iVar6 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar4,0,"E:\\__titans\\Andrey\\tplaysys.cpp",0x18e);
+  RaiseInternalException(errorCode,0,"E:\\__titans\\Andrey\\tplaysys.cpp",0x18e);
   return 0xfffffffc;
 }
 

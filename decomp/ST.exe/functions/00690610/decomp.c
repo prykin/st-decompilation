@@ -6,11 +6,11 @@
 void __thiscall FUN_00690610(void *this,short param_1)
 
 {
-  uint uVar1;
+  uint index;
 
-  uVar1 = thunk_FUN_006905c0(this,param_1);
-  if (-1 < (int)uVar1) {
-    FUN_006b0c70(*(DArrayTy **)((int)this + 0xc9),uVar1);
+  index = thunk_FUN_006905c0(this,param_1);
+  if (-1 < (int)index) {
+    DArrayRemoveAt(*(DArrayTy **)((int)this + 0xc9),index);
   }
   return;
 }

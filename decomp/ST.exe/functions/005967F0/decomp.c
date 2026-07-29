@@ -28,9 +28,8 @@ void __thiscall FSGSTy::DoneFSGS(FSGSTy *this)
       if (g_cursorClass_00802A30->field_00A9 == 0) {
         Library::DKW::DDX::FUN_006b8b10((int *)g_cursorClass_00802A30->field_00AD);
       }
-      else if (g_cursorClass_00802A30->field_001C != (cLoadingTy *)0xffffffff) {
-        FUN_006b3af0((int *)g_cursorClass_00802A30->field_0060,
-                     (uint)g_cursorClass_00802A30->field_001C);
+      else if (g_cursorClass_00802A30->field_001C != 0xffffffff) {
+        FUN_006b3af0((int *)g_cursorClass_00802A30->field_0060,g_cursorClass_00802A30->field_001C);
       }
     }
     DarkScreen(g_dDXContext_0080759C,10,2);
@@ -79,16 +78,16 @@ void __thiscall FSGSTy::DoneFSGS(FSGSTy *this)
     if (this_01->field_1E92 != (tagBITMAPINFO *)0x0) {
       FreeAndNull(&this_01->field_1E92);
     }
-    if (this_01->field_1E96 != 0) {
-      FreeAndNull((void **)&this_01->field_1E96);
+    if (this_01->field_1E96 != (void *)0x0) {
+      FreeAndNull(&this_01->field_1E96);
     }
     if (this_01->field_1E9A != (tagBITMAPINFO *)0x0) {
       FreeAndNull(&this_01->field_1E9A);
     }
-    if (-1 < this_01->field_1ABC) {
+    if (-1 < (int)this_01->field_1ABC) {
       FUN_006b3bb0((int *)g_ddxContext_008075A8,this_01->field_1ABC);
     }
-    this_01->field_1ABC = -1;
+    this_01->field_1ABC = 0xffffffff;
     if (this_01->field_1AC0 != (ushort *)0x0) {
       FreeAndNull(&this_01->field_1AC0);
     }
@@ -103,13 +102,13 @@ void __thiscall FSGSTy::DoneFSGS(FSGSTy *this)
       FUN_006c6fc0(this_01->field_1A9F);
     }
     this_01->field_1A9F = (void *)0x0;
-    if (this_01->field_1A9B != 0) {
-      FreeAndNull((void **)&this_01->field_1A9B);
+    if (this_01->field_1A9B != (void *)0x0) {
+      FreeAndNull(&this_01->field_1A9B);
     }
-    if (-1 < this_01->field_1A8F) {
+    if (-1 < (int)this_01->field_1A8F) {
       FUN_006b3bb0((int *)g_ddxContext_008075A8,this_01->field_1A8F);
     }
-    this_01->field_1A8F = -1;
+    this_01->field_1A8F = 0xffffffff;
     if (this_01->field_1A97 != (AnonPointee_FSGSTy_1A97 *)0x0) {
       FreeAndNull(&this_01->field_1A97);
     }
@@ -117,9 +116,9 @@ void __thiscall FSGSTy::DoneFSGS(FSGSTy *this)
       ccFntTy::operator_delete((uint *)this_01->field_1A77);
       this_01->field_1A77 = (ccFntTy *)0x0;
     }
-    if (this_01->field_1A7B != (uint *)0x0) {
-      ccFntTy::operator_delete(this_01->field_1A7B);
-      this_01->field_1A7B = (void *)0x0;
+    if (this_01->field_1A7B != (ccFntTy *)0x0) {
+      ccFntTy::operator_delete((uint *)this_01->field_1A7B);
+      this_01->field_1A7B = (ccFntTy *)0x0;
     }
     if (this_01->field_1A7F != (StartServTy *)0x0) {
       ccFntTy::operator_delete((uint *)this_01->field_1A7F);

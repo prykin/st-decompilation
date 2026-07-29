@@ -96,10 +96,10 @@ void __thiscall CPanelTy::PaintWeap(CPanelTy *this,int param_1)
     DibPut(local_20,local_30,local_34,'\x06',(byte *)local_10);
     uVar2 = *(ushort *)(pAVar13 + 1);
     if (uVar2 != 0xffff) {
-      wsprintfA(&pCVar5->field_0x1e1,"%d",(uint)uVar2);
+      wsprintfA(&pCVar5->field_01E1,"%d",(uint)uVar2);
       ccFntTy::SetSurf(pCVar5->field_01B8,(int)local_20,0,iVar6 + 0x2f,
                        (local_10->field_0008 + -0xc) / 2 + local_1c + local_14,0x11,0xc);
-      ccFntTy::WrTxt(pCVar5->field_01B8,(uint *)&pCVar5->field_0x1e1,-3,-1,0,-1,-1);
+      ccFntTy::WrTxt(pCVar5->field_01B8,(uint *)&pCVar5->field_01E1,-3,-1,0,-1,-1);
       piVar11 = (int *)(local_24 + (local_c & 0xff) * 0x1c);
       *piVar11 = iVar6 + 0x2f + local_28;
       piVar11[1] = local_34 + local_2c;
@@ -197,7 +197,7 @@ LAB_004f27ff:
       } while (cVar1 != '\0');
       uVar7 = ~uVar7;
       pcVar12 = pcVar15 + -uVar7;
-      pcVar15 = &pCVar5->field_0x1e1;
+      pcVar15 = &pCVar5->field_01E1;
       for (uVar9 = uVar7 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
         *(undefined4 *)pcVar15 = *(undefined4 *)pcVar12;
         pcVar12 = pcVar12 + 4;
@@ -211,7 +211,7 @@ LAB_004f27ff:
     }
   }
   else {
-    wsprintfA(&pCVar5->field_0x1e1,"%d",*(short *)&pAVar13->field_0x26);
+    wsprintfA(&pCVar5->field_01E1,"%d",*(short *)&pAVar13->field_0x26);
   }
   if (local_5 != '\0') {
     local_34 = 0;
@@ -220,7 +220,7 @@ LAB_004f27ff:
     }
     ccFntTy::SetSurf(pCVar5->field_01B8,(int)local_20,0,iVar6 + 0x2f,
                      (local_10->field_0008 + -0xc) / 2 + local_34 + local_1c + local_14,0x11,0xc);
-    ccFntTy::WrTxt(pCVar5->field_01B8,(uint *)&pCVar5->field_0x1e1,-3,-1,0,-1,-1);
+    ccFntTy::WrTxt(pCVar5->field_01B8,(uint *)&pCVar5->field_01E1,-3,-1,0,-1,-1);
     piVar11 = (int *)(local_24 + (local_c & 0xff) * 0x1c);
     *piVar11 = iVar6 + 0x2f + local_28;
     piVar11[1] = (local_10->field_0008 + -0xc) / 2 + local_34 + local_1c + local_14 + local_2c;

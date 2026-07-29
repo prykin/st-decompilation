@@ -68,7 +68,7 @@ STAllPlayersC::_DeleteGuardBoat(STAllPlayersC *this,char param_1,short param_2,i
           do {
             DArrayGetElement(local_24,uVar7,local_c);
             if (local_c[0] == param_2) {
-              FUN_006b0c70(local_24,uVar7);
+              DArrayRemoveAt(local_24,uVar7);
               pSVar3 = (STBoatC *)GetObjPtr(local_1c,param_1,local_c[0],CASE_1);
               local_14 = g_playSystem_00802A38->field_00E4;
               STBoatC::CmdToObj(pSVar3,CASE_21,&local_14);
@@ -82,7 +82,7 @@ STAllPlayersC::_DeleteGuardBoat(STAllPlayersC *this,char param_1,short param_2,i
             DArrayDestroy(local_28);
             DArrayDestroy(local_24);
             DArrayDestroy(local_20);
-            FUN_006b0c70(local_10,uVar6);
+            DArrayRemoveAt(local_10,uVar6);
             local_8 = local_8 - 1;
           }
           local_18 = 0;
@@ -104,7 +104,7 @@ STAllPlayersC::_DeleteGuardBoat(STAllPlayersC *this,char param_1,short param_2,i
           do {
             DArrayGetElement(local_28,uVar7,local_c);
             if (local_c[0] == param_2) {
-              FUN_006b0c70(local_28,uVar7);
+              DArrayRemoveAt(local_28,uVar7);
               break;
             }
             uVar7 = uVar7 + 1;
@@ -126,7 +126,7 @@ STAllPlayersC::_DeleteGuardBoat(STAllPlayersC *this,char param_1,short param_2,i
             DArrayDestroy(local_28);
             DArrayDestroy(local_24);
             DArrayDestroy(local_20);
-            FUN_006b0c70(local_10,uVar6);
+            DArrayRemoveAt(local_10,uVar6);
             local_8 = local_8 - 1;
             uVar6 = uVar6 - 1;
           }

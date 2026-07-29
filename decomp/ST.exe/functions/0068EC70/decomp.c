@@ -160,7 +160,7 @@ void __thiscall AiTactClassTy::ExecClaim(AiTactClassTy *this,int param_1)
                 AiFltClassTy::GetAiMess(element_00a5_2->field_0004,local_44);
               }
             }
-            FUN_006b0c70((DArrayTy *)pAVar6->field_00BD,local_8);
+            DArrayRemoveAt((DArrayTy *)pAVar6->field_00BD,local_8);
             local_8 = local_8 - 1;
             cVar7 = cStack_3b;
           }

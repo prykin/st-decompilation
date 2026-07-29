@@ -22,11 +22,11 @@ void __thiscall CursorClassTy::DrawSprite(CursorClassTy *this,int param_1,int pa
   local_c = this;
   local_10 = STAppC::sub_006E51B0((STAppC *)this->field_0010);
   local_8 = 0;
-  if (this->field_001C == (cLoadingTy *)0xffffffff) {
+  if (this->field_001C == 0xffffffff) {
     iVar5 = 0;
   }
   else {
-    iVar5 = FUN_006b33f0((DDXContext_008075A8 *)this->field_0060,(uint)this->field_001C);
+    iVar5 = FUN_006b33f0(this->field_0060,this->field_001C);
   }
   if (iVar5 != 0) {
     local_54.previous = g_currentExceptionFrame;
@@ -56,7 +56,7 @@ void __thiscall CursorClassTy::DrawSprite(CursorClassTy *this,int param_1,int pa
         }
         else {
           Library::DKW::DDX::FUN_006b3640
-                    ((int *)g_ddxContext_008075A8,(uint)local_c->field_001C,local_c->field_0020,
+                    ((int *)g_ddxContext_008075A8,local_c->field_001C,local_c->field_0020,
                      local_c->field_00B9 + local_c->field_0034,
                      local_c->field_00BD + local_c->field_0038);
         }

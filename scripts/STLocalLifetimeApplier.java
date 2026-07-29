@@ -661,8 +661,9 @@ public class STLocalLifetimeApplier extends GhidraScript {
     }
 
     private void mark(Variable variable, Map<String, String> row) {
-        String marker = MARKER + " split merge group " +
-            row.get("merge_group") + " at " +
+        String action = integer(row.get("merge_group_count")) > 1 ?
+            "split merge group " : "typed local lifetime ";
+        String marker = MARKER + " " + action + row.get("merge_group") + " at " +
             unt(row.get("anchor_address")) + "; type=" +
             unt(row.get("proposed_type"));
         String old = text(variable.getComment());

@@ -23,7 +23,7 @@ void __thiscall FSGSTy::ConnectProc(FSGSTy *this,int param_1,int param_2)
   FSGSTy *local_8;
 
   if (((this->field_1A5F == CASE_1) && (this->field_1AC0 != (ushort *)0x0)) &&
-     (-1 < this->field_1ABC)) {
+     (-1 < (int)this->field_1ABC)) {
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
     local_8 = this;

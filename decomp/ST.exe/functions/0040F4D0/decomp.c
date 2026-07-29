@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=3, used=0), and
@@ -12,8 +14,8 @@ void FUN_0040f4d0(undefined4 *param_1,uint param_2,int param_3,int param_4)
   uint uVar4;
   char cVar5;
   char cVar6;
-  undefined4 *puVar7;
-  undefined4 *puVar8;
+  byte *puVar7;
+  byte *puVar8;
   int iVar9;
   char *pcVar10;
   char *pcVar11;
@@ -32,18 +34,9 @@ void FUN_0040f4d0(undefined4 *param_1,uint param_2,int param_3,int param_4)
   ExceptionList = &local_14;
   Library::MSVCRT::FUN_0072da40();
   local_8 = 0xffffffff;
-  puVar7 = param_1;
-  puVar8 = (undefined4 *)&stack0xffffffbc;
-  for (uVar4 = param_2 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
-    *puVar8 = *puVar7;
-    puVar7 = puVar7 + 1;
-    puVar8 = puVar8 + 1;
-  }
-  for (uVar4 = param_2 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
-    *(undefined1 *)puVar8 = *(undefined1 *)puVar7;
-    puVar7 = (undefined4 *)((int)puVar7 + 1);
-    puVar8 = (undefined4 *)((int)puVar8 + 1);
-  }
+  puVar7 = (byte *)(param_1);
+  puVar8 = (byte *)&stack0xffffffbc;
+  memmove(puVar8, puVar7, param_2); /* compiler REP MOVS byte copy */
   cVar1 = (char)param_2;
   if (param_4 == 0) {
     local_24 = param_3 / 2;

@@ -11,15 +11,15 @@ undefined4 __thiscall STManRuinC::sub_00631450(STManRuinC *this)
 {
   STManRuinC_field_0038DArray *pSVar1;
   ushort *puVar2;
-  uint uVar3;
+  uint index;
   STManRuinC_field_0038Element *element_0038;
 
   if ((this->field_0038 != (STManRuinC_field_0038DArray *)0x0) &&
-     (uVar3 = this->field_0038->count - 1, -1 < (int)uVar3)) {
+     (index = this->field_0038->count - 1, -1 < (int)index)) {
     do {
       pSVar1 = this->field_0038;
-      if (uVar3 < pSVar1->count) {
-        element_0038 = DArrayAt<STManRuinC_field_0038Element>(pSVar1, uVar3);
+      if (index < pSVar1->count) {
+        element_0038 = DArrayAt<STManRuinC_field_0038Element>(pSVar1, index);
       }
       else {
         element_0038 = (STManRuinC_field_0038Element *)0x0;
@@ -29,10 +29,10 @@ undefined4 __thiscall STManRuinC::sub_00631450(STManRuinC *this)
       puVar2 = sub_00630C50(this,this->field_0040,this->field_004C,0,1,element_0038->field_0014);
       element_0038->field_0010 = puVar2;
       if (puVar2 == (ushort *)0x0) {
-        FUN_006b0c70((DArrayTy *)this->field_0038,uVar3);
+        DArrayRemoveAt((DArrayTy *)this->field_0038,index);
       }
-      uVar3 = uVar3 - 1;
-    } while (-1 < (int)uVar3);
+      index = index - 1;
+    } while (-1 < (int)index);
     return 0;
   }
   return 0;

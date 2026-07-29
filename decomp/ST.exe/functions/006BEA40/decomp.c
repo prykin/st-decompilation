@@ -22,7 +22,7 @@ int FUN_006bea40(int *param_1,uint param_2)
   int local_80;
   int *local_7c;
   undefined1 *local_78;
-  undefined8 *local_74;
+  byte *local_74;
   int local_70;
   int *local_6c;
   int local_68;
@@ -294,30 +294,30 @@ LAB_006bed50:
             if (iVar5 == 0) goto switchD_006befc1_caseD_9;
             switch(*(undefined4 *)&pDVar1->field_0x24) {
             case 8:
-              FUN_006cea60((undefined8 *)(local_88 * local_70 + local_8c + (int)local_74),local_70,
-                           (undefined8 *)(local_88 * local_94 + local_8c + (int)local_90),local_94,
-                           local_84,local_80);
+              CopyRows(local_74 + local_88 * local_70 + local_8c,local_70,
+                       (byte *)(local_88 * local_94 + local_8c + (int)local_90),local_94,local_84,
+                       local_80);
               local_48 = iVar4 + 1;
               local_7c = local_7c + 4;
               break;
             case 0x10:
-              FUN_006d05b0((undefined4 *)((int)local_74 + local_8c * 2 + local_88 * local_70),
-                           local_70,(uint *)(local_88 * local_94 + local_8c + (int)local_90),
-                           local_94,local_84,local_80,*(int *)&pDVar1[1].field_0x8);
+              FUN_006d05b0((undefined4 *)(local_74 + local_8c * 2 + local_88 * local_70),local_70,
+                           (uint *)(local_88 * local_94 + local_8c + (int)local_90),local_94,
+                           local_84,local_80,*(int *)&pDVar1[1].field_0x8);
               local_48 = iVar4 + 1;
               local_7c = local_7c + 4;
               break;
             case 0x18:
-              FUN_006d3a50((undefined2 *)((int)local_74 + local_8c * 3 + local_88 * local_70),
-                           local_70,(byte *)(local_88 * local_94 + local_8c + (int)local_90),
-                           local_94,local_84,local_80,*(int *)&pDVar1[1].field_0x8);
+              FUN_006d3a50((undefined2 *)(local_74 + local_8c * 3 + local_88 * local_70),local_70,
+                           (byte *)(local_88 * local_94 + local_8c + (int)local_90),local_94,
+                           local_84,local_80,*(int *)&pDVar1[1].field_0x8);
               local_48 = iVar4 + 1;
               local_7c = local_7c + 4;
               break;
             case 0x20:
-              FUN_006d39f0((undefined4 *)((int)local_74 + local_8c * 4 + local_88 * local_70),
-                           local_70,(byte *)(local_88 * local_94 + local_8c + (int)local_90),
-                           local_94,local_84,local_80,*(int *)&pDVar1[1].field_0x8);
+              FUN_006d39f0((undefined4 *)(local_74 + local_8c * 4 + local_88 * local_70),local_70,
+                           (byte *)(local_88 * local_94 + local_8c + (int)local_90),local_94,
+                           local_84,local_80,*(int *)&pDVar1[1].field_0x8);
             default:
 switchD_006befc1_caseD_9:
               local_48 = iVar4 + 1;
@@ -339,30 +339,30 @@ switchD_006befc1_caseD_9:
           if (iVar5 == 0) goto switchD_006bedda_caseD_9;
           switch(*(undefined4 *)&pDVar1->field_0x24) {
           case 8:
-            FUN_006cea60((undefined8 *)(local_88 * local_70 + local_8c + (int)local_74),local_70,
-                         (undefined8 *)(local_88 * local_94 + local_8c + (int)local_90),local_94,
-                         local_84,local_80);
+            CopyRows(local_74 + local_88 * local_70 + local_8c,local_70,
+                     (byte *)(local_88 * local_94 + local_8c + (int)local_90),local_94,local_84,
+                     local_80);
             local_48 = iVar4 + 1;
             local_7c = local_7c + 4;
             break;
           case 0x10:
-            FUN_006d05b0((undefined4 *)((int)local_74 + local_8c * 2 + local_88 * local_70),local_70
-                         ,(uint *)(local_88 * local_94 + local_8c + (int)local_90),local_94,local_84
-                         ,local_80,*(int *)&pDVar1[1].field_0x8);
+            FUN_006d05b0((undefined4 *)(local_74 + local_8c * 2 + local_88 * local_70),local_70,
+                         (uint *)(local_88 * local_94 + local_8c + (int)local_90),local_94,local_84,
+                         local_80,*(int *)&pDVar1[1].field_0x8);
             local_48 = iVar4 + 1;
             local_7c = local_7c + 4;
             break;
           case 0x18:
-            FUN_006d3a50((undefined2 *)((int)local_74 + local_8c * 3 + local_88 * local_70),local_70
-                         ,(byte *)(local_88 * local_94 + local_8c + (int)local_90),local_94,local_84
-                         ,local_80,*(int *)&pDVar1[1].field_0x8);
+            FUN_006d3a50((undefined2 *)(local_74 + local_8c * 3 + local_88 * local_70),local_70,
+                         (byte *)(local_88 * local_94 + local_8c + (int)local_90),local_94,local_84,
+                         local_80,*(int *)&pDVar1[1].field_0x8);
             local_48 = iVar4 + 1;
             local_7c = local_7c + 4;
             break;
           case 0x20:
-            FUN_006d39f0((undefined4 *)((int)local_74 + local_8c * 4 + local_88 * local_70),local_70
-                         ,(byte *)(local_88 * local_94 + local_8c + (int)local_90),local_94,local_84
-                         ,local_80,*(int *)&pDVar1[1].field_0x8);
+            FUN_006d39f0((undefined4 *)(local_74 + local_8c * 4 + local_88 * local_70),local_70,
+                         (byte *)(local_88 * local_94 + local_8c + (int)local_90),local_94,local_84,
+                         local_80,*(int *)&pDVar1[1].field_0x8);
           default:
 switchD_006bedda_caseD_9:
             local_48 = iVar4 + 1;
@@ -378,30 +378,30 @@ switchD_006bedda_caseD_9:
       while (piVar7 = local_2c, local_4c < local_20) {
         switch(*(undefined4 *)&pDVar1->field_0x24) {
         case 8:
-          FUN_006cea60((undefined8 *)((int)local_74 + *local_2c + local_70 * local_2c[1]),local_70,
-                       (undefined8 *)((int)local_90 + *local_2c + local_94 * local_2c[1]),local_94,
-                       local_2c[2],local_2c[3]);
+          CopyRows(local_74 + *local_2c + local_70 * local_2c[1],local_70,
+                   (byte *)((int)local_90 + *local_2c + local_94 * local_2c[1]),local_94,local_2c[2]
+                   ,local_2c[3]);
           local_4c = local_4c + 1;
           local_2c = piVar7 + 4;
           break;
         case 0x10:
-          FUN_006d05b0((undefined4 *)((int)local_74 + *local_2c * 2 + local_70 * local_2c[1]),
-                       local_70,(uint *)((int)local_90 + *local_2c + local_94 * local_2c[1]),
-                       local_94,local_2c[2],local_2c[3],*(int *)&pDVar1[1].field_0x8);
+          FUN_006d05b0((undefined4 *)(local_74 + *local_2c * 2 + local_70 * local_2c[1]),local_70,
+                       (uint *)((int)local_90 + *local_2c + local_94 * local_2c[1]),local_94,
+                       local_2c[2],local_2c[3],*(int *)&pDVar1[1].field_0x8);
           local_4c = local_4c + 1;
           local_2c = piVar7 + 4;
           break;
         case 0x18:
-          FUN_006d3a50((undefined2 *)((int)local_74 + *local_2c * 3 + local_70 * local_2c[1]),
-                       local_70,(byte *)((int)local_90 + *local_2c + local_94 * local_2c[1]),
-                       local_94,local_2c[2],local_2c[3],*(int *)&pDVar1[1].field_0x8);
+          FUN_006d3a50((undefined2 *)(local_74 + *local_2c * 3 + local_70 * local_2c[1]),local_70,
+                       (byte *)((int)local_90 + *local_2c + local_94 * local_2c[1]),local_94,
+                       local_2c[2],local_2c[3],*(int *)&pDVar1[1].field_0x8);
           local_4c = local_4c + 1;
           local_2c = piVar7 + 4;
           break;
         case 0x20:
-          FUN_006d39f0((undefined4 *)((int)local_74 + *local_2c * 4 + local_70 * local_2c[1]),
-                       local_70,(byte *)((int)local_90 + *local_2c + local_94 * local_2c[1]),
-                       local_94,local_2c[2],local_2c[3],*(int *)&pDVar1[1].field_0x8);
+          FUN_006d39f0((undefined4 *)(local_74 + *local_2c * 4 + local_70 * local_2c[1]),local_70,
+                       (byte *)((int)local_90 + *local_2c + local_94 * local_2c[1]),local_94,
+                       local_2c[2],local_2c[3],*(int *)&pDVar1[1].field_0x8);
         default:
           local_4c = local_4c + 1;
           local_2c = piVar7 + 4;
@@ -411,7 +411,7 @@ switchD_006bedda_caseD_9:
     }
     switch(*(undefined4 *)&pDVar1->field_0x24) {
     case 8:
-      FUN_006cea60(local_74,local_70,(undefined8 *)local_90,local_94,param_1[3],param_1[4]);
+      CopyRows(local_74,local_70,(byte *)local_90,local_94,param_1[3],param_1[4]);
     default:
 switchD_006bf136_caseD_9:
       break;

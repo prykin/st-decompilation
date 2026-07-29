@@ -1,5 +1,3 @@
-#include "../../pseudocode_runtime.h"
-
 
 void __thiscall FUN_00695cd0(void *this,uint param_1,int param_2,int param_3)
 
@@ -8,7 +6,7 @@ void __thiscall FUN_00695cd0(void *this,uint param_1,int param_2,int param_3)
   uint uVar2;
   int iVar3;
   uint *puVar4;
-  DArrayTy *groupContent;
+  DArrayTy *array;
   uint uVar5;
   uint uVar6;
   int *piVar7;
@@ -37,7 +35,7 @@ void __thiscall FUN_00695cd0(void *this,uint param_1,int param_2,int param_3)
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = *piVar7;
     }
-    FUN_006b0c70(*(DArrayTy **)((int)this + 0x5853),param_1);
+    DArrayRemoveAt(*(DArrayTy **)((int)this + 0x5853),param_1);
     iVar8 = *(int *)((int)this + 0x5853);
     uVar6 = 0;
     if (0 < *(int *)(iVar8 + 0xc)) {
@@ -71,15 +69,15 @@ void __thiscall FUN_00695cd0(void *this,uint param_1,int param_2,int param_3)
             } while ((int)uVar5 < (int)*(uint *)(iVar3 + 0xc));
           }
         }
-        groupContent = *(DArrayTy **)(iVar8 + 0x19);
-        if (groupContent != (DArrayTy *)0x0) {
+        array = *(DArrayTy **)(iVar8 + 0x19);
+        if (array != (DArrayTy *)0x0) {
           uVar5 = 0;
-          if (0 < (int)groupContent->count) {
-            bVar9 = groupContent->count != 0;
+          if (0 < (int)array->count) {
+            bVar9 = array->count != 0;
             do {
               if (bVar9) {
-                /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(groupContent, uVar5) (runtime stride) */
-                puVar4 = (uint *)(groupContent->elementSize * uVar5 + (int)groupContent->data);
+                /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, uVar5) (runtime stride) */
+                puVar4 = (uint *)(array->elementSize * uVar5 + (int)array->data);
               }
               else {
                 puVar4 = (uint *)0x0;
@@ -90,16 +88,16 @@ void __thiscall FUN_00695cd0(void *this,uint param_1,int param_2,int param_3)
               }
               else if (uVar2 == param_1) {
                 if (param_3 < 0) {
-                  FUN_006b0c70(groupContent,uVar5);
+                  DArrayRemoveAt(array,uVar5);
                 }
                 else {
                   thunk_FUN_006960d0(this,uVar6,param_3);
                 }
               }
-              groupContent = *(DArrayTy **)(iVar8 + 0x19);
+              array = *(DArrayTy **)(iVar8 + 0x19);
               uVar5 = uVar5 + 1;
-              bVar9 = uVar5 < groupContent->count;
-            } while ((int)uVar5 < (int)groupContent->count);
+              bVar9 = uVar5 < array->count;
+            } while ((int)uVar5 < (int)array->count);
           }
         }
         uVar6 = uVar6 + 1;

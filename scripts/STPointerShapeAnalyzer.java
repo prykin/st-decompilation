@@ -126,6 +126,9 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         "\\[\\s*(0[xX][0-9A-Fa-f]+|[0-9]+)\\s*\\]");
     private static final Pattern CALL_HEAD = Pattern.compile(
         "(?<![A-Za-z0-9_$:])([A-Za-z_$][A-Za-z0-9_$:]*)\\s*\\(");
+    private static final Pattern FIELD_ARGUMENT_ACCESS = Pattern.compile(
+        "(?<![A-Za-z0-9_$:])([A-Za-z_$][A-Za-z0-9_$:]*)\\s*->\\s*" +
+        "([A-Za-z_$][A-Za-z0-9_$:]*)(?:\\s*\\[[^\\]\\r\\n]+\\])?");
     private static final Pattern SIMPLE_SWITCH = Pattern.compile(
         "\\bswitch\\s*\\(\\s*([A-Za-z_$][A-Za-z0-9_$:]*)\\s*\\)");
     private static final Pattern CASE_LABEL = Pattern.compile("(?m)^\\s*case\\s+[^:]+:");
@@ -170,6 +173,7 @@ public class STPointerShapeAnalyzer extends GhidraScript {
     private int redirectedAliasAccesses;
     private int globalRecordTypeHints;
     private int ownerThisSpillRepairs;
+    private int typedFieldConsumerHints;
 
     @Override
     protected void run() throws Exception {
@@ -227,7 +231,8 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             ", pointer aliases=" + pointerFieldAliases + ", alias accesses=" +
             redirectedAliasAccesses + ", global-record hints=" +
             globalRecordTypeHints + ", owner-this spill repairs=" +
-            ownerThisSpillRepairs + ", targets=" + analysis.targets.size() +
+            ownerThisSpillRepairs + ", typed-field consumers=" +
+            typedFieldConsumerHints + ", targets=" + analysis.targets.size() +
             ", target_apply=" + analysis.targets.stream().filter(row -> row.apply).count() +
             ", anonymous_types=" + analysis.types.stream().filter(row -> row.apply).count() +
             ", failures=" + failures.size());
@@ -1009,12 +1014,17 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             if (parameters.length == arguments.size()) {
                 for (int index = 0; index < parameters.length; index++) {
                     String type = structurePointer(parameters[index].getDataType());
-                    if (type.isBlank()) continue;
-                    int weight = parameters[index].getSource() == SourceType.USER_DEFINED ||
-                        parameters[index].getSource() == SourceType.IMPORTED ? 3 : 1;
-                    addTypeEvidence(arguments.get(index), containing, locals, stableStorages,
-                        functionTargets, type, weight, site + " parameter " +
-                        parameters[index].getName());
+                    if (!type.isBlank()) {
+                        int weight =
+                            parameters[index].getSource() == SourceType.USER_DEFINED ||
+                            parameters[index].getSource() == SourceType.IMPORTED ? 3 : 1;
+                        addTypeEvidence(arguments.get(index), containing, locals,
+                            stableStorages, functionTargets, type, weight,
+                            site + " parameter " + parameters[index].getName());
+                    }
+                    addFieldParameterEvidence(arguments.get(index), parameters[index],
+                        called, containing, locals, stableStorages, functionTargets,
+                        site);
                 }
             }
             if ("__thiscall".equals(called.getCallingConventionName())) {
@@ -1024,6 +1034,72 @@ public class STPointerShapeAnalyzer extends GhidraScript {
                     site + " typed this receiver");
             }
         }
+    }
+
+    /**
+     * A generated field used as an argument to a trusted typed API has stronger
+     * value-type evidence than the undefinedN cast with which Ghidra first
+     * rendered the access.  This is especially useful for flexible tables and
+     * integer handles:
+     *
+     *     api(record->entries[index]);   // API parameter is uint
+     *
+     * The relation is installed only into script-owned/refinable structures,
+     * requires one unambiguous field access in the argument, and preserves
+     * width exactly.  Integer promotion therefore cannot turn a short field
+     * into an int merely because the call expression contains an (int) cast.
+     */
+    private void addFieldParameterEvidence(String expression, Parameter parameter,
+            Function called, Function containing, Map<String, Variable> locals,
+            Set<String> stableStorages,
+            Map<String, TargetEvidence> functionTargets, String site) {
+        if (expression == null || expression.contains("&") ||
+                parameter == null ||
+                parameter.getSource() == SourceType.DEFAULT && !isLibrary(called))
+            return;
+        DataType parameterType = untypedef(parameter.getDataType());
+        if (!semanticFieldType(parameterType)) return;
+        Matcher matcher = FIELD_ARGUMENT_ACCESS.matcher(expression);
+        if (!matcher.find()) return;
+        String base = matcher.group(1);
+        String member = matcher.group(2);
+        if (matcher.find()) return;
+        TargetEvidence target = canonicalTarget(containing, locals, stableStorages,
+            functionTargets, base);
+        if (target == null || !target.scriptOwned) return;
+        Structure owner = structureFromPointer(target.expectedType);
+        if (owner == null || !generatedRefinablePath(owner.getPathName())) return;
+        DataTypeComponent component = componentNamed(owner, member);
+        if (component == null) return;
+        DataType fieldType = untypedef(component.getDataType());
+        int width = component.getLength();
+        if (fieldType instanceof Array array) {
+            fieldType = untypedef(array.getDataType());
+            width = array.getElementLength();
+        }
+        if (width < 1 || width > 16 || parameterType.getLength() != width) return;
+        String specification = typeSpecification(parameterType);
+        if (specification.isBlank()) return;
+        FieldEvidence field = target.fields.computeIfAbsent(
+            (long)component.getOffset(), FieldEvidence::new);
+        field.widths.merge(width, 1, Integer::sum);
+        field.types.merge(specification, 2, Integer::sum);
+        field.sites.add(site + " consumes " + base + "->" + member +
+            " as " + specification);
+        typedFieldConsumerHints++;
+    }
+
+    private boolean semanticFieldType(DataType type) {
+        type = untypedef(type);
+        if (type == null || type.getLength() < 1 ||
+                Undefined.isUndefined(type) || type.getPathName().equals("/void"))
+            return false;
+        if (type instanceof Pointer pointer) {
+            DataType pointed = untypedef(pointer.getDataType());
+            return pointed != null && !Undefined.isUndefined(pointed) &&
+                !pointed.getPathName().equals("/void");
+        }
+        return true;
     }
 
     private void addTypeEvidence(String expression, Function containing,
@@ -1622,7 +1698,7 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         for (FieldEvidence field : target.fields.values()) {
             int width = uniqueWidth(field);
             if (width < 1 || !mergeComponent(merged, field.offset, width,
-                    unique(field.types), "direct global access")) return false;
+                    selectedType(field, width), "direct global access")) return false;
         }
         for (Structure view : views) {
             for (DataTypeComponent component : view.getDefinedComponents()) {
@@ -1675,7 +1751,7 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         for (FieldEvidence field : target.fields.values()) {
             int width = uniqueWidth(field);
             if (width < 1 || !mergeComponent(merged, field.offset, width,
-                    unique(field.types), "direct global access"))
+                    selectedType(field, width), "direct global access"))
                 return false;
         }
         for (Structure view : views) {
@@ -1965,7 +2041,7 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             boolean exact = true;
             for (FieldEvidence field : fields) {
                 int width = uniqueWidth(field);
-                String specification = unique(field.types);
+                String specification = selectedType(field, width);
                 DataTypeComponent component = candidate.getComponentAt((int)field.offset);
                 if (width < 1 || specification.isBlank() || component == null ||
                         component.getOffset() != field.offset ||
@@ -2153,9 +2229,10 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             FieldEvidence field = target.fields.get((long)component.getOffset());
             int width = field == null ? -1 : uniqueWidth(field);
             if (field == null || width != component.getLength()) return false;
-            String observed = unique(field.types);
-            if (!Undefined.isUndefined(component.getDataType()) &&
-                    !observed.equals(typeSpecification(component.getDataType()))) return false;
+            String observed = selectedType(field, width);
+            DataType componentType = componentValueType(component, field, width);
+            if (!Undefined.isUndefined(componentType) && !observed.isBlank() &&
+                    !observed.equals(typeSpecification(componentType))) return false;
         }
         return true;
     }
@@ -2168,7 +2245,8 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             DataTypeComponent component = structure.getComponentAt((int)field.offset);
             if (component == null || component.getOffset() != field.offset ||
                     component.getLength() != width) return true;
-            String observed = unique(field.types);
+            String observed = selectedType(field, width);
+            DataType componentType = componentValueType(component, field, width);
             NestedEvidence nested = target.nested.get(field.offset);
             if (nested != null) {
                 Structure known = knownNestedType(nested);
@@ -2181,7 +2259,7 @@ public class STPointerShapeAnalyzer extends GhidraScript {
                     if (nestedSemanticNamesNeedRefinement(nested, path)) return true;
                 }
             }
-            if (Undefined.isUndefined(component.getDataType()) && !observed.isBlank() &&
+            if (Undefined.isUndefined(componentType) && !observed.isBlank() &&
                     !observed.matches("/undefined(?:1|2|4|8)?") &&
                     typeLength(observed) == width) return true;
             boolean inlineEntries = inlineEntries(field, width);
@@ -2196,6 +2274,14 @@ public class STPointerShapeAnalyzer extends GhidraScript {
                     !semanticName.equals(component.getFieldName())) return true;
         }
         return false;
+    }
+
+    private DataType componentValueType(DataTypeComponent component,
+            FieldEvidence field, int width) {
+        DataType type = untypedef(component.getDataType());
+        if (type instanceof Array array && inlineEntries(field, width))
+            return untypedef(array.getDataType());
+        return type;
     }
 
     private boolean nestedSemanticNamesNeedRefinement(NestedEvidence nested,
@@ -2234,13 +2320,22 @@ public class STPointerShapeAnalyzer extends GhidraScript {
     }
 
     private String selectedType(FieldEvidence field, int width) {
-        String result = "";
-        for (String specification : field.types.keySet()) {
-            if (typeLength(specification) != width) continue;
-            if (!result.isBlank() && !result.equals(specification)) return "";
-            result = specification;
-        }
-        return result;
+        List<String> concrete = field.types.keySet().stream()
+            .filter(specification -> typeLength(specification) == width)
+            .filter(specification ->
+                !specification.matches("/undefined(?:1|2|4|8)?"))
+            .toList();
+        if (concrete.size() == 1) return concrete.get(0);
+        if (concrete.isEmpty()) return "";
+        List<String> ranked = new ArrayList<>(concrete);
+        ranked.sort(Comparator
+            .<String>comparingInt(type ->
+                field.types.getOrDefault(type, 0)).reversed()
+            .thenComparing(type -> type));
+        int first = field.types.getOrDefault(ranked.get(0), 0);
+        int second = field.types.getOrDefault(ranked.get(1), 0);
+        return first >= 2 && first >= second * 2 ?
+            ranked.get(0) : "";
     }
 
     private String ownerType(Function function) {
@@ -2488,6 +2583,7 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             "redirected_alias_accesses=" + redirectedAliasAccesses,
             "global_record_type_hints=" + globalRecordTypeHints,
             "owner_this_spill_repairs=" + ownerThisSpillRepairs,
+            "typed_field_consumer_hints=" + typedFieldConsumerHints,
             "targets=" + analysis.targets.size(),
             "target_apply=" + analysis.targets.stream().filter(row -> row.apply).count(),
             "existing_type_targets=" + analysis.targets.stream()

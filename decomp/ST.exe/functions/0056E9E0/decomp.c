@@ -43,7 +43,7 @@ undefined4 __thiscall STAppC::sub_0056E9E0(STAppC *this,int param_1)
     g_currentExceptionFrame = local_5c.previous;
     return 0;
   }
-  local_c = &local_18->field_0x76f6;
+  local_c = &local_18->field_76F6;
   pcVar4 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,local_c,0,0,0);
   local_8 = pcVar4;
   if ((DArrayTy *)pSVar2->field_4EA7 != (DArrayTy *)0x0) {

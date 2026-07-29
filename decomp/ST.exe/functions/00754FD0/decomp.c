@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 2.
    Evidence: raw retained-width parameter lifetime: width=2, reads=1, sites=00754FF8 MOV DX,word ptr
@@ -11,7 +13,7 @@ uint FUN_00754fd0(AnonShape_00754FD0_6B521B56 *param_1,undefined4 param_2,ushort
   uint uVar3;
   uint uVar4;
   undefined4 *puVar5;
-  undefined4 *puVar6;
+  byte *puVar6;
 
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar2 = *(int *)(param_1->field_0008 + 0x50);
@@ -40,15 +42,8 @@ uint FUN_00754fd0(AnonShape_00754FD0_6B521B56 *param_1,undefined4 param_2,ushort
       puVar5 = (undefined4 *)(*(int *)(iVar2 + 0x34) + iVar1);
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       uVar4 = (uint)*(short *)(param_1->field_0008 + 0x16);
-      puVar6 = puVar5;
-      for (uVar3 = uVar4 >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {
-        *puVar6 = 0;
-        puVar6 = puVar6 + 1;
-      }
-      for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
-        *(undefined1 *)puVar6 = 0;
-        puVar6 = (undefined4 *)((int)puVar6 + 1);
-      }
+      puVar6 = (byte *)(puVar5);
+      memset(puVar6, 0, uVar4); /* compiler bulk-zero initialization */
       *puVar5 = 0xffffffff;
       puVar5[1] = 0xffffffff;
       *(undefined2 *)(puVar5 + 2) = 0;

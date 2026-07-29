@@ -215,7 +215,7 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
   *(undefined2 *)((int)puVar4 + 0x14d) = local_14->field_0172;
   *(undefined2 *)((int)puVar4 + 0x14f) = local_14->field_0174;
   *(undefined2 *)((int)puVar4 + 0x151) = local_14->field_0176;
-  *(undefined4 *)((int)puVar4 + 0x153) = local_14->field_0178;
+  *(AnonShape_005EFAE0_B406B78B **)((int)puVar4 + 0x153) = local_14->field_0178;
   *(undefined2 *)((int)puVar4 + 0x157) = *(undefined2 *)&local_14->field_0x17c;
   *(undefined2 *)((int)puVar4 + 0x159) = *(undefined2 *)&local_14->field_0x17e;
   *(undefined2 *)((int)puVar4 + 0x15b) = local_14->field_0180;
@@ -265,7 +265,7 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
   *(short *)((int)puVar4 + 0x25f) = local_14->field_0258;
   *(short *)((int)puVar4 + 0x261) = local_14->field_025A;
   *(short *)((int)puVar4 + 0x263) = local_14->field_025C;
-  *(undefined4 *)((int)puVar4 + 0x265) = local_14->field_025E;
+  *(int *)((int)puVar4 + 0x265) = local_14->field_025E;
   *(undefined4 *)((int)puVar4 + 0x269) = local_14->field_0262;
   *(undefined2 *)((int)puVar4 + 0x275) = local_14->field_026A;
   *(undefined2 *)((int)puVar4 + 0x277) = local_14->field_026C;

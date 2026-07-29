@@ -142,8 +142,8 @@ int __thiscall TLOEmbryoTy::GetMessage(TLOEmbryoTy *this,STMessage *message)
           if (iVar5 < 0) {
             iVar5 = 0;
           }
-          thunk_FUN_004d76e0(*(char *)&this_00->field_0024,0,this_00->field_0018,iVar6,iVar10,iVar14
-                             ,iVar5);
+          thunk_FUN_004d76e0(*(char *)&this_00->field_0024,0,(int *)this_00->field_0018,iVar6,iVar10
+                             ,iVar14,iVar5);
         }
         this_00->field_0348 = g_playSystem_00802A38->field_00E4;
         this_00->field_034C = local_8[2];

@@ -82,13 +82,13 @@ BldBoatPanelTy::PaintBldBut(BldBoatPanelTy *this,AnonShape_004EF320_444F9AB1 *pa
   else {
     iVar4 = 4;
   }
-  pbVar5 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pBVar2->field_0190,iVar4);
+  pbVar5 = (byte *)FUN_0070b3a0(pBVar2->field_0190,iVar4);
   DibPut((AnonShape_006B5B10_E0D06CF1 *)pBVar2->field_0068,iVar6,uVar3,'\x06',pbVar5);
   if ((((local_8 != (Global_sub_00526BA0_param_1Enum *)0x0) && (local_8[1] != 0)) &&
       ((char)local_8[2] != 0)) && (param_1->field_0014 != 0)) {
-    wsprintfA(&pBVar2->field_0x6c,"%d",local_8[1]);
+    wsprintfA(&pBVar2->field_006C,"%d",local_8[1]);
     ccFntTy::SetSurf(pBVar2->field_028A,pBVar2->field_0068,0,iVar6,uVar3,local_14[2],local_14[3]);
-    ccFntTy::WrStr(pBVar2->field_028A,(uint *)&pBVar2->field_0x6c,-2,-1,0);
+    ccFntTy::WrStr(pBVar2->field_028A,(uint *)&pBVar2->field_006C,-2,-1,0);
   }
 LAB_004ef4e9:
   Library::DKW::DDX::FUN_006b3640

@@ -34,11 +34,7 @@ void __thiscall UpgPanelTy::Update(UpgPanelTy *this)
     puVar8 = &local_14->field_01AB;
     puVar7 = puVar8;
     puVar9 = local_298;
-    for (iVar3 = 0x90; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar9 = *puVar7;
-      puVar7 = puVar7 + 1;
-      puVar9 = puVar9 + 1;
-    }
+    memmove(puVar9, puVar7, 0x240); /* compiler REP MOVS byte copy */
     STAllPlayersC::GetPanelInfo(g_allPlayers_007FA174,0x10,(AnonShape_0043BEB0_1C00EC12 *)puVar8);
     iVar3 = 0x19;
     puVar8 = &pUVar2->field_01AB;

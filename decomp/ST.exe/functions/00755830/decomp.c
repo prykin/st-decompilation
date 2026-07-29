@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STTypeFamilyApplier] EXACT_ANONYMOUS_LAYOUT.
    Evidence: exact anonymous structure fingerprint shared across functions */
@@ -13,20 +15,16 @@ uint FUN_00755830(AnonShape_00753C80_4C8E695D *param_1,uint *param_2,int param_3
   uint uVar5;
   uint uVar6;
   uint *puVar7;
-  undefined4 *puVar8;
+  byte *puVar8;
   uint *puVar9;
-  undefined4 *puVar10;
+  byte *puVar10;
   uint *puVar11;
   uint *puVar12;
 
   if (param_3 < 0) {
-    puVar8 = (undefined4 *)(param_1->field_000C + 0x40);
-    puVar10 = (undefined4 *)(param_1->field_000C + 0x48);
-    for (iVar4 = 0xe; iVar4 != 0; iVar4 = iVar4 + -1) {
-      *puVar10 = *puVar8;
-      puVar8 = puVar8 + 1;
-      puVar10 = puVar10 + 1;
-    }
+    puVar8 = (byte *)(param_1->field_000C + 0x40);
+    puVar10 = (byte *)(param_1->field_000C + 0x48);
+    memmove(puVar10, puVar8, 0x38); /* compiler REP MOVS byte copy */
     uVar3 = FUN_00753b40(param_1);
     if ((int)uVar3 < 0) {
       return uVar3;

@@ -25,8 +25,8 @@ int __thiscall STVolcanoC::GetMessage(STVolcanoC *this,STMessage *message)
   int iVar5;
   ushort *puVar6;
   int iVar7;
-  undefined4 *puVar8;
-  undefined4 *puVar9;
+  byte *puVar8;
+  byte *puVar9;
   InternalExceptionFrame local_54;
   byte *local_10;
   AnonShape_0060EA30_DCEB68AD *local_c;
@@ -137,8 +137,8 @@ int __thiscall STVolcanoC::GetMessage(STVolcanoC *this,STMessage *message)
             Library::Ourlib::ST3DSMAP::SprHide(g_sT3DSMAPContext_00807598,this_00->field_0086);
           }
         }
-        if ((((g_playSystem_00802A38->field_00E4 & 1) == 0) && (2 < this_00->field_0071)) &&
-           ((this_00->field_0071 < (this_00->field_0075 << 1) / 3 &&
+        if ((((g_playSystem_00802A38->field_00E4 & 1) == 0) && (2 < (int)this_00->field_0071)) &&
+           (((int)this_00->field_0071 < (this_00->field_0075 << 1) / 3 &&
             (uVar1 = this_00->field_00B1 * 0x41c64e6d + 0x3039, this_00->field_00B1 = uVar1,
             (uVar1 & 0x70000) == 0x10000)))) {
           thunk_FUN_006473e0(this_00,0);
@@ -246,7 +246,7 @@ int __thiscall STVolcanoC::GetMessage(STVolcanoC *this,STMessage *message)
       }
     }
     else if (SVar2 == MESS_ID_CREATE) {
-      puVar8 = (message->arg0).ptr;
+      puVar8 = (byte *)((message->arg0).ptr);
       if (puVar8[3] == 2) {
         sub_00646DB0(local_8,puVar8);
         this_00->field_00B1 = this_00->field_00AD;
@@ -254,12 +254,8 @@ int __thiscall STVolcanoC::GetMessage(STVolcanoC *this,STMessage *message)
         g_currentExceptionFrame = local_54.previous;
         return 0;
       }
-      puVar9 = (undefined4 *)&local_8->field_0x1c;
-      for (iVar5 = 0xe; iVar5 != 0; iVar5 = iVar5 + -1) {
-        *puVar9 = *puVar8;
-        puVar8 = puVar8 + 1;
-        puVar9 = puVar9 + 1;
-      }
+      puVar9 = (byte *)&local_8->field_0x1c;
+      memmove(puVar9, puVar8, 0x38); /* compiler REP MOVS byte copy */
       local_8->field_00B1 = DAT_00808754;
       iVar5 = sub_006472B0(local_8);
       if (iVar5 != 0) {

@@ -83,8 +83,8 @@ void __thiscall BldObjPanelTy::InitBldObjPanel(BldObjPanelTy *this)
   puVar5 = cMf32::RecGet(g_cMf32_00806790,1,pCVar4,piVar12,iVar7);
   this_00->field_0184 = puVar5;
   pCVar4 = thunk_FUN_00571240("BKG_BLDOBJBUT",0);
-  wsprintfA(&this_00->field_0x6c,"%s0",pCVar4);
-  puVar5 = cMf32::RecGet(g_cMf32_00806790,1,&this_00->field_0x6c,(int *)0x0,1);
+  wsprintfA(&this_00->field_006C,"%s0",pCVar4);
+  puVar5 = cMf32::RecGet(g_cMf32_00806790,1,&this_00->field_006C,(int *)0x0,1);
   this_00->field_027A = puVar5;
   puVar5 = Library::Ourlib::MFRLOAD::mfRLoad
                      (DAT_00806794,CASE_B,&DAT_007c1910,0xffffffff,0,1,0,(undefined4 *)0x0);

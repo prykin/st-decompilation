@@ -36,7 +36,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0066acc0
   int iVar16;
   byte *pbVar17;
   byte *pbVar18;
-  undefined4 *puVar19;
+  byte *puVar19;
   Global_sub_00677700_param_2Enum GVar20;
   Global_sub_006777D0_param_1Enum GVar21;
   int uVar12;
@@ -49,7 +49,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0066acc0
   char *pcVar27;
   uint uVar28;
   AiFltClassTy **ppAVar29;
-  undefined4 *puVar30;
+  byte *puVar30;
   undefined8 uVar31;
   code *pcVar32;
   undefined *puVar33;
@@ -1311,14 +1311,10 @@ cf_common_exit_0066DF5E:
         local_8 = (AiFltClassTy *)local_50;
         do {
           local_18 = pcVar27;
-          puVar19 = (undefined4 *)thunk_FUN_0043e420(local_4f0,*(char *)&local_8->vtable);
+          puVar19 = (byte *)thunk_FUN_0043e420(local_4f0,*(char *)&local_8->vtable);
           pcVar27 = local_c;
-          puVar30 = local_19c;
-          for (iVar11 = 0x4e; iVar11 != 0; iVar11 = iVar11 + -1) {
-            *puVar30 = *puVar19;
-            puVar19 = puVar19 + 1;
-            puVar30 = puVar30 + 1;
-          }
+          puVar30 = (byte *)(local_19c);
+          memmove(puVar30, puVar19, 0x138); /* compiler REP MOVS byte copy */
           uVar13 = (*this_00->vtable->slot_00)(pcVar27);
           iVar11 = 0;
           do {
@@ -1424,14 +1420,10 @@ cf_continue_loop_0066CACD:
         local_8 = (AiFltClassTy *)local_50;
         do {
           local_18 = pcVar27;
-          puVar19 = (undefined4 *)thunk_FUN_0043e420(local_3b8,*(char *)&local_8->vtable);
+          puVar19 = (byte *)thunk_FUN_0043e420(local_3b8,*(char *)&local_8->vtable);
           pcVar27 = local_c;
-          puVar30 = local_19c;
-          for (iVar11 = 0x4e; iVar11 != 0; iVar11 = iVar11 + -1) {
-            *puVar30 = *puVar19;
-            puVar19 = puVar19 + 1;
-            puVar30 = puVar30 + 1;
-          }
+          puVar30 = (byte *)(local_19c);
+          memmove(puVar30, puVar19, 0x138); /* compiler REP MOVS byte copy */
           uVar13 = (*this_00->vtable->slot_00)(pcVar27);
           iVar11 = 0;
           do {
@@ -1537,14 +1529,10 @@ cf_continue_loop_0066CD4A:
         local_8 = (AiFltClassTy *)local_50;
         do {
           local_18 = pcVar27;
-          puVar19 = (undefined4 *)thunk_FUN_0043e420(local_628,*(char *)&local_8->vtable);
+          puVar19 = (byte *)thunk_FUN_0043e420(local_628,*(char *)&local_8->vtable);
           pcVar27 = local_c;
-          puVar30 = local_19c;
-          for (iVar11 = 0x4e; iVar11 != 0; iVar11 = iVar11 + -1) {
-            *puVar30 = *puVar19;
-            puVar19 = puVar19 + 1;
-            puVar30 = puVar30 + 1;
-          }
+          puVar30 = (byte *)(local_19c);
+          memmove(puVar30, puVar19, 0x138); /* compiler REP MOVS byte copy */
           uVar13 = (*this_00->vtable->slot_00)(pcVar27);
           iVar11 = 0;
           do {
@@ -3127,10 +3115,10 @@ cf_common_exit_0066DCED:
     pcVar25 = (char *)(*this_00->vtable->slot_00)();
     iVar11 = sub_00668F50(this_00,pcVar25,(uint)pcVar27,puVar23);
     if (0 < iVar11) {
-      puVar19 = local_280;
+      puVar19 = (byte *)(local_280);
       do {
         uVar22 = *puVar19;
-        puVar19 = puVar19 + 1;
+        puVar19 = (byte *)(puVar19 + 1);
         iVar11 = iVar11 + -1;
         local_8 = (AiFltClassTy *)((uint)local_8 | 1 << ((byte)uVar22 & 0x1f));
       } while (iVar11 != 0);

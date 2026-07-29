@@ -71,7 +71,7 @@ void __thiscall SettMapMTy::PrepPlList(SettMapMTy *this,int *param_1)
   }
   SVar1 = local_10->field_1E26;
   if ((((SVar1 == CASE_5) || (SVar1 == CASE_F)) || (SVar1 == CASE_C)) || (SVar1 == CASE_10)) {
-    local_8 = (cMf32 *)local_10->field_1F3F;
+    local_8 = local_10->field_1F3F;
   }
   else {
     local_8 = local_10->field_1F43;

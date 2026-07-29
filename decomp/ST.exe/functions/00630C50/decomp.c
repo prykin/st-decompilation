@@ -16,7 +16,7 @@ STManRuinC::sub_00630C50
           (STManRuinC *this,undefined4 param_1,int param_2,int param_3,int param_4,int param_5)
 
 {
-  int *piVar1;
+  undefined4 *puVar1;
   STManRuinC *pSVar2;
   int iVar3;
   ushort *puVar4;
@@ -79,7 +79,7 @@ STManRuinC::sub_00630C50
     g_currentExceptionFrame = local_58.previous;
     return local_c;
   }
-  piVar1 = &pSVar2->field_0061;
+  puVar1 = &pSVar2->field_0061;
   if (param_2 == 1) {
     uVar7 = *(uint *)((int)puVar4 + 0xd);
     uVar6 = *(uint *)((int)puVar4 + 9);
@@ -92,12 +92,12 @@ STManRuinC::sub_00630C50
     uVar9 = 100;
     uVar8 = 0x78;
   }
-  ST3DSMAPContext::sub_006E8660(g_sT3DSMAPContext_00807598,piVar1,1,0,uVar6,uVar7,uVar8,uVar9,0);
+  ST3DSMAPContext::sub_006E8660(g_sT3DSMAPContext_00807598,puVar1,1,0,uVar6,uVar7,uVar8,uVar9,0);
   ST3DSMAPContext::sub_006E98E0
-            (g_sT3DSMAPContext_00807598,*piVar1,0,*(int *)puVar4,*(int *)((int)puVar4 + 0x21),1);
-  ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,*piVar1,0,0);
-  Library::Ourlib::ST3DSMAP::SprSetLevAfter(g_sT3DSMAPContext_00807598,*piVar1,-1);
-  Library::Ourlib::ST3DSMAP::SprSetSplit(g_sT3DSMAPContext_00807598,*piVar1);
+            (g_sT3DSMAPContext_00807598,*puVar1,0,*(int *)puVar4,*(int *)((int)puVar4 + 0x21),1);
+  ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,*puVar1,0,0);
+  Library::Ourlib::ST3DSMAP::SprSetLevAfter(g_sT3DSMAPContext_00807598,*puVar1,-1);
+  Library::Ourlib::ST3DSMAP::SprSetSplit(g_sT3DSMAPContext_00807598,*puVar1);
   if (param_2 == 1) {
     iVar3 = pSVar2->field_0058;
     iVar5 = pSVar2->field_0054;
@@ -108,11 +108,11 @@ STManRuinC::sub_00630C50
     local_14 = iVar5;
   }
   Library::Ourlib::ST3DSMAP::SprMove
-            (g_sT3DSMAPContext_00807598,*piVar1,(float)iVar5 * _DAT_007904f8 * _DAT_007904f0,
+            (g_sT3DSMAPContext_00807598,*puVar1,(float)iVar5 * _DAT_007904f8 * _DAT_007904f0,
              (float)iVar3 * _DAT_007904f8 * _DAT_007904f0,
              (float)pSVar2->field_005C * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
   if (param_4 != 0) {
-    Library::Ourlib::ST3DSMAP::SprShow(g_sT3DSMAPContext_00807598,*piVar1,0);
+    Library::Ourlib::ST3DSMAP::SprShow(g_sT3DSMAPContext_00807598,*puVar1,0);
   }
   g_currentExceptionFrame = local_58.previous;
   return puVar4;

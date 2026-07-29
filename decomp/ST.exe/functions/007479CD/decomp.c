@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 007479CD -> 00747F3B @ 007479EC */
@@ -9,8 +11,8 @@ uint FUN_007479cd(AnonShape_00747AA5_87CB4B56 *param_1,uint param_2,undefined4 *
   AnonShape_00747AA5_87CB4B56 *pAVar1;
   uint uVar2;
   int iVar3;
-  undefined4 *puVar4;
-  undefined4 *puVar5;
+  byte *puVar4;
+  byte *puVar5;
   undefined4 local_4c [15];
   undefined4 local_10;
   undefined4 local_c;
@@ -47,16 +49,12 @@ LAB_00747a71:
           FUN_0074b916((int)local_4c);
           break;
         }
-        puVar4 = CoTaskMemAlloc(0x48);
+        puVar4 = (byte *)(CoTaskMemAlloc(0x48));
         *param_3 = puVar4;
         if (puVar4 == (undefined4 *)0x0) goto LAB_00747a71;
         param_3 = param_3 + 1;
-        puVar5 = local_4c;
-        for (iVar3 = 0x12; iVar3 != 0; iVar3 = iVar3 + -1) {
-          *puVar4 = *puVar5;
-          puVar5 = puVar5 + 1;
-          puVar4 = puVar4 + 1;
-        }
+        puVar5 = (byte *)(local_4c);
+        memmove(puVar4, puVar5, 0x48); /* compiler REP MOVS byte copy */
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = (AnonShape_00747AA5_87CB4B56 *)&param_1->field_0x1;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */

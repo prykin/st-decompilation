@@ -8,7 +8,6 @@
 void __thiscall BldBoatPanelTy::InitBldBoatPanel(BldBoatPanelTy *this)
 
 {
-  undefined1 *text;
   code *pcVar1;
   BldBoatPanelTy *this_00;
   byte bVar2;
@@ -47,6 +46,7 @@ void __thiscall BldBoatPanelTy::InitBldBoatPanel(BldBoatPanelTy *this)
   int local_10;
   int local_c;
   uint local_8;
+  char *text;
 
   puVar11 = local_74;
   local_1c = this;
@@ -88,7 +88,7 @@ void __thiscall BldBoatPanelTy::InitBldBoatPanel(BldBoatPanelTy *this)
   pCVar5 = thunk_FUN_00571240("BKG_BLDBOATW",0);
   puVar6 = cMf32::RecGet(g_cMf32_00806790,1,pCVar5,piVar13,iVar8);
   this_00->field_0184 = puVar6;
-  text = &this_00->field_0x6c;
+  text = &this_00->field_006C;
   pCVar5 = thunk_FUN_00571240("BKG_BLDBOATBUT",0);
   wsprintfA(text,"%s0",pCVar5);
   puVar6 = cMf32::RecGet(g_cMf32_00806790,1,text,(int *)0x0,1);

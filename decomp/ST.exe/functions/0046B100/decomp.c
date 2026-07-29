@@ -72,7 +72,7 @@ int __thiscall STBoatC::Build(STBoatC *this,uint param_1)
   undefined4 local_9c;
   char local_98 [14];
   undefined1 local_8a;
-  uint local_89;
+  int local_89;
   undefined4 local_85;
   undefined4 local_81;
   int local_6d;

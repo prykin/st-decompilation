@@ -35,9 +35,9 @@ void __thiscall StartSystemTy::sub_005DB2A0(StartSystemTy *this)
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this->field_038D);
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this->field_041E);
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this->field_04AF);
-  if (-1 < this->field_02EC) {
+  if (-1 < (int)this->field_02EC) {
     FUN_006b3bb0((int *)g_ddxContext_008075A8,this->field_02EC);
-    this->field_02EC = -1;
+    this->field_02EC = 0xffffffff;
   }
   if (this->field_02F0 != (ushort *)0x0) {
     FreeAndNull(&this->field_02F0);
@@ -50,9 +50,9 @@ void __thiscall StartSystemTy::sub_005DB2A0(StartSystemTy *this)
     FUN_006b5570((DArrayTy *)this->field_0548);
   }
   this->field_0548 = (uint *)0x0;
-  if (-1 < this->field_0540) {
+  if (-1 < (int)this->field_0540) {
     FUN_006b3bb0((int *)g_ddxContext_008075A8,this->field_0540);
-    this->field_0540 = -1;
+    this->field_0540 = 0xffffffff;
   }
   if (this->field_0544 != (AnonPointee_StartSystemTy_0544 *)0x0) {
     FreeAndNull(&this->field_0544);
@@ -62,16 +62,16 @@ void __thiscall StartSystemTy::sub_005DB2A0(StartSystemTy *this)
   }
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this->field_055C);
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this->field_05ED);
-  if (-1 < this->field_0558) {
+  if (-1 < (int)this->field_0558) {
     FUN_006b3bb0((int *)g_ddxContext_008075A8,this->field_0558);
-    this->field_0558 = -1;
+    this->field_0558 = 0xffffffff;
   }
   if (this->field_0682 != (ushort *)0x0) {
     FreeAndNull(&this->field_0682);
   }
-  if (-1 < this->field_0554) {
+  if (-1 < (int)this->field_0554) {
     FUN_006b3bb0((int *)g_ddxContext_008075A8,this->field_0554);
-    this->field_0554 = -1;
+    this->field_0554 = 0xffffffff;
   }
   if (this->field_0686 != (DArrayTy *)0x0) {
     FUN_006b5570(this->field_0686);

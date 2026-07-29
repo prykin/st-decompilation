@@ -83,8 +83,7 @@ void __thiscall CPanelTy::Update2PanelSI(CPanelTy *this)
             do {
               pbVar6 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)
                                             this_00->field_02B6,1);
-              DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_018C,(local_8 & 0xff) * 4 + 0x3f,
-                     0x87,'\x01',pbVar6);
+              DibPut(this_00->field_018C,(local_8 & 0xff) * 4 + 0x3f,0x87,'\x01',pbVar6);
               bVar4 = (byte)local_8 + 1;
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               local_8 = CONCAT31(local_8._1_3_,bVar4);
@@ -96,7 +95,7 @@ void __thiscall CPanelTy::Update2PanelSI(CPanelTy *this)
             do {
               pbVar6 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)
                                             this_00->field_02B6,0);
-              DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_018C,iVar5,0x87,'\x01',pbVar6);
+              DibPut(this_00->field_018C,iVar5,0x87,'\x01',pbVar6);
               iVar5 = iVar5 + 4;
               iVar7 = iVar7 + -1;
             } while (iVar7 != 0);
@@ -153,8 +152,7 @@ switchD_005030a2_caseD_1a:
   if ((this_00->field_0BB6 & 0xfe) != 0) {
     do {
       pbVar6 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,3);
-      DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_018C,(local_8 & 0xff) * 4 + 0x3f,0x87,
-             '\x01',pbVar6);
+      DibPut(this_00->field_018C,(local_8 & 0xff) * 4 + 0x3f,0x87,'\x01',pbVar6);
       bVar4 = (byte)local_8 + 1;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_8 = CONCAT31(local_8._1_3_,bVar4);
@@ -165,7 +163,7 @@ switchD_005030a2_caseD_1a:
     iVar5 = (local_8 & 0xff) * 4 + 0x3f;
     do {
       pbVar6 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
-      DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_018C,iVar5,0x87,'\x01',pbVar6);
+      DibPut(this_00->field_018C,iVar5,0x87,'\x01',pbVar6);
       iVar5 = iVar5 + 4;
       iVar7 = iVar7 + -1;
     } while (iVar7 != 0);

@@ -15,10 +15,10 @@ int __thiscall AiTactClassTy::InitData(AiTactClassTy *this,undefined4 *param_1)
   DArrayTy *pDVar5;
   AiTactClassTy_field_00BDDArray *pAVar6;
   uint uVar7;
-  undefined4 *puVar8;
+  byte *puVar8;
   AiTactClassTy_field_00A5DArray **ppAVar9;
   int iVar10;
-  undefined4 *puVar11;
+  byte *puVar11;
   InternalExceptionFrame local_64;
   undefined4 local_20;
   AnonShape_0068DC80_4419198B *local_1c;
@@ -28,7 +28,7 @@ int __thiscall AiTactClassTy::InitData(AiTactClassTy *this,undefined4 *param_1)
   AnonShape_0068DC80_4419198B *local_c;
   byte *local_8;
 
-  puVar11 = (undefined4 *)0x0;
+  puVar11 = (byte *)0x0;
   local_c = (AnonShape_0068DC80_4419198B *)0x0;
   local_10 = (AnonShape_GLOBAL_008489C4_F7BABFAC *)0x0;
   local_8 = (byte *)0x0;
@@ -39,14 +39,10 @@ int __thiscall AiTactClassTy::InitData(AiTactClassTy *this,undefined4 *param_1)
   pAVar2 = local_18;
   if (iVar3 == 0) {
     if (local_18 != (AiTactClassTy *)0x0) {
-      puVar11 = &local_18->field_0020;
+      puVar11 = (byte *)(&local_18->field_0020);
     }
-    puVar8 = param_1;
-    for (iVar3 = 0x43; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar11 = *puVar8;
-      puVar8 = puVar8 + 1;
-      puVar11 = puVar11 + 1;
-    }
+    puVar8 = (byte *)(param_1);
+    memmove(puVar11, puVar8, 0x10c); /* compiler REP MOVS byte copy */
     local_18->field_0020 = 0x38e;
     local_18->field_0038 = 1;
     ppAVar9 = &local_18->field_00A5;

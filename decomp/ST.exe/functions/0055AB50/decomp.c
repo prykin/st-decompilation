@@ -44,7 +44,7 @@ void __thiscall VisibleClassTy::VisHoleExec(VisibleClassTy *this,void *param_1)
           uVar4 = element_00f4->field_000C - 1;
           element_00f4->field_000C = uVar4;
           if ((int)uVar4 < 0) {
-            FUN_006b0c70((DArrayTy *)this_00->field_00F4,local_8);
+            DArrayRemoveAt((DArrayTy *)this_00->field_00F4,local_8);
             local_8 = uVar3;
           }
           else {

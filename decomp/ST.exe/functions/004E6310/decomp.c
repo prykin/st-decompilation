@@ -56,10 +56,10 @@ LAB_004e63ab:
 LAB_004e645f:
       if (g_playerRuntime[(int)param_1].field2164_0x9ce != (DArrayTy *)0x0) {
         (g_playerRuntime[(int)param_1].field2164_0x9ce)->iteratorIndex = 0;
-        iVar11 = FUN_006b1190(g_playerRuntime[(int)param_1].field2164_0x9ce,&local_c);
+        iVar11 = DArrayGetNext(g_playerRuntime[(int)param_1].field2164_0x9ce,(byte *)&local_c);
         while (-1 < iVar11) {
           thunk_FUN_004dd880(local_c);
-          iVar11 = FUN_006b1190(g_playerRuntime[(int)param_1].field2164_0x9ce,&local_c);
+          iVar11 = DArrayGetNext(g_playerRuntime[(int)param_1].field2164_0x9ce,(byte *)&local_c);
         }
       }
       if (((((param_2 == 0x1d) || (param_2 == 0x89)) || (param_2 == 0x46)) ||
