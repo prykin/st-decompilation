@@ -1,4 +1,4 @@
-FUN_006ddb70:
+ST3DSMAPContext::sub_006DDB70:
 006DDB70  56                        PUSH ESI
 006DDB71  8B F1                     MOV ESI,ECX
 006DDB73  8B 86 74 01 00 00         MOV EAX,dword ptr [ESI + 0x174]

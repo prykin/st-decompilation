@@ -1,9 +1,15 @@
 #include "../../pseudocode_runtime.h"
 
 
+/* [STMethodOwnerApplier] Structural method owner recovered as ST3DSMAPContext.
+   Evidence: this_call_owners=[ST3DSMAPContext]; agreed_this_calls=31; incoming_this_accesses=10;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=10; direct_non_thunk_callers=34;
+   incoming_ecx_receiver_callers=3; attributed_named_callers=25; owner_evidence_coverage=adequate */
+
 undefined4 __thiscall
-FUN_006e8660(void *this,int *param_1,uint param_2,uint param_3,uint param_4,uint param_5,
-            uint param_6,uint param_7,uint param_8)
+ST3DSMAPContext::sub_006E8660
+          (ST3DSMAPContext *this,int *param_1,uint param_2,uint param_3,uint param_4,uint param_5,
+          uint param_6,uint param_7,uint param_8)
 
 {
   int iVar1;
@@ -13,21 +19,21 @@ FUN_006e8660(void *this,int *param_1,uint param_2,uint param_3,uint param_4,uint
   int local_8;
 
   *param_1 = -1;
-  pAVar5 = *(AnonShape_006E8840_CF3FA5BA **)((int)this + 0x2e8);
+  pAVar5 = *(AnonShape_006E8840_CF3FA5BA **)&this->field_0x2e8;
   pAVar4 = (AnonShape_006E8840_CF3FA5BA *)0x0;
   if (pAVar5 == (AnonShape_006E8840_CF3FA5BA *)0x0) {
-    local_8 = *(int *)((int)this + 0x314);
+    local_8 = *(int *)&this->field_0x314;
   }
   else {
-    *(undefined4 *)((int)this + 0x2e8) = *(undefined4 *)&pAVar5->field_0x8;
-    if (pAVar5 == *(AnonShape_006E8840_CF3FA5BA **)((int)this + 0x2ec)) {
-      *(undefined4 *)((int)this + 0x2ec) = 0;
-      *(undefined4 *)((int)this + 0x2e8) = 0;
+    *(undefined4 *)&this->field_0x2e8 = *(undefined4 *)&pAVar5->field_0x8;
+    if (pAVar5 == *(AnonShape_006E8840_CF3FA5BA **)&this->field_0x2ec) {
+      *(undefined4 *)&this->field_0x2ec = 0;
+      *(undefined4 *)&this->field_0x2e8 = 0;
     }
-    local_8 = ((int)pAVar5 - *(int *)((int)this + 0x31c)) / 0x114;
+    local_8 = ((int)pAVar5 - *(int *)&this->field_0x31c) / 0x114;
     pAVar4 = pAVar5;
   }
-  if (local_8 < *(int *)((int)this + 0x314)) {
+  if (local_8 < *(int *)&this->field_0x314) {
     pAVar5 = pAVar4;
     for (iVar1 = 0x45; iVar1 != 0; iVar1 = iVar1 + -1) {
       *(undefined4 *)pAVar5 = 0;
@@ -35,22 +41,22 @@ FUN_006e8660(void *this,int *param_1,uint param_2,uint param_3,uint param_4,uint
     }
   }
   else {
-    if (*(int *)((int)this + 0x318) <= *(int *)((int)this + 0x314)) {
+    if (*(int *)&this->field_0x318 <= *(int *)&this->field_0x314) {
       iVar1 = Library::DKW::LIB::FUN_006acf50
-                        (*(int *)((int)this + 0x31c),(*(int *)((int)this + 0x318) + 10) * 0x114);
+                        (*(int *)&this->field_0x31c,(*(int *)&this->field_0x318 + 10) * 0x114);
       if (iVar1 == 0) {
         return 0xfffffffe;
       }
-      *(int *)((int)this + 0x31c) = iVar1;
-      memset((void *)(iVar1 + *(int *)((int)this + 0x314) * 0x114), 0, 0xac8); /* compiler bulk-zero initialization */
-      *(int *)((int)this + 0x318) = *(int *)((int)this + 0x318) + 10;
+      *(int *)&this->field_0x31c = iVar1;
+      memset((void *)(iVar1 + *(int *)&this->field_0x314 * 0x114), 0, 0xac8); /* compiler bulk-zero initialization */
+      *(int *)&this->field_0x318 = *(int *)&this->field_0x318 + 10;
     }
-    local_8 = *(int *)((int)this + 0x314);
-    *(int *)((int)this + 0x314) = local_8 + 1;
-    pAVar4 = (AnonShape_006E8840_CF3FA5BA *)(*(int *)((int)this + 0x31c) + local_8 * 0x114);
+    local_8 = *(int *)&this->field_0x314;
+    *(int *)&this->field_0x314 = local_8 + 1;
+    pAVar4 = (AnonShape_006E8840_CF3FA5BA *)(*(int *)&this->field_0x31c + local_8 * 0x114);
   }
-  if (*(int *)((int)this + 0x310) <= local_8) {
-    *(int *)((int)this + 0x310) = local_8 + 1;
+  if (*(int *)&this->field_0x310 <= local_8) {
+    *(int *)&this->field_0x310 = local_8 + 1;
   }
   *(uint *)&pAVar4->field_0x84 = param_6;
   *(uint *)&pAVar4->field_0x88 = param_7;

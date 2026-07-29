@@ -1,18 +1,23 @@
 
 /* [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=8, used=0), and
-   decompilation contains no value return */
+   decompilation contains no value return
 
-void __fastcall FUN_006dbcf0(int *param_1)
+   [STMethodOwnerApplier] Structural method owner recovered as ST3DSMAPContext.
+   Evidence: this_call_owners=[ST3DSMAPContext]; agreed_this_calls=2; incoming_this_accesses=1;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=8;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=2; owner_evidence_coverage=adequate */
+
+void __thiscall ST3DSMAPContext::sub_006DBCF0(ST3DSMAPContext *this)
 
 {
-  HoloTy *pHVar1;
+  ST3DSMAPContext *this_00;
 
-  FUN_006dbab0((AnonShape_006DBAB0_2B877B8C *)param_1);
-  pHVar1 = (HoloTy *)param_1[0xd6];
-  if (pHVar1 != (HoloTy *)0x0) {
-    FUN_006dbcf0((int *)pHVar1);
-    Library::MSVCRT::FUN_0072e2b0(pHVar1);
+  sub_006DBAB0(this);
+  this_00 = *(ST3DSMAPContext **)&this->field_0x358;
+  if (this_00 != (ST3DSMAPContext *)0x0) {
+    sub_006DBCF0(this_00);
+    Library::MSVCRT::FUN_0072e2b0((HoloTy *)this_00);
   }
   return;
 }

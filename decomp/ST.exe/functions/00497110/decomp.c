@@ -34,8 +34,10 @@ void FUN_00497110(AnonShape_00497110_11FEE69C *param_1,AnonShape_00497110_465BC7
       local_8 = (int)(short)(((short)(local_10 / 200) + sVar1) -
                             (short)((longlong)local_10 * 0x51eb851f >> 0x3f));
     }
-    FUN_006e3310(PTR_00807598,(PTR_00807598->field_0380 * local_14) / 0xc9,
-                 (int *)((PTR_00807598->field_0380 * local_c) / 0xc9),local_8,&local_1c);
+    ST3DSMAPContext::sub_006E3310
+              (g_sT3DSMAPContext_00807598,(g_sT3DSMAPContext_00807598->field_0380 * local_14) / 0xc9
+               ,(int *)((g_sT3DSMAPContext_00807598->field_0380 * local_c) / 0xc9),local_8,&local_1c
+              );
     local_8 = local_8 + 1;
     if (local_8 < local_1c) {
       local_8 = local_1c;

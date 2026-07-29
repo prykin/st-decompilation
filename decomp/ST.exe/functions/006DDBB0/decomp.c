@@ -1,13 +1,18 @@
 
 /* [STPrototypeApplier] Propagated parameter 0.
-   Evidence: 0056DB80 -> 006DDBB0 @ 0056E453 */
+   Evidence: 0056DB80 -> 006DDBB0 @ 0056E453
 
-void __fastcall FUN_006ddbb0(AnonShape_GLOBAL_00807598_0C6808FB *param_1)
+   [STMethodOwnerApplier] Structural method owner recovered as ST3DSMAPContext.
+   Evidence: this_call_owners=[ST3DSMAPContext]; agreed_this_calls=1; incoming_this_accesses=2;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=2;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+void __thiscall ST3DSMAPContext::sub_006DDBB0(ST3DSMAPContext *this)
 
 {
-  *(undefined4 *)&param_1->field_0x144 = 0;
-  *(undefined4 *)&param_1->field_0x2d8 = 1;
-  FreeAndNull((void **)&param_1->field_0x1c);
+  this->field_0144 = 0;
+  this->field_02D8 = 1;
+  FreeAndNull((void **)&this->field_001C);
   return;
 }
 

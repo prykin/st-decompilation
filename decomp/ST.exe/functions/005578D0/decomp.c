@@ -16,12 +16,13 @@ void __thiscall VisibleClassTy::InitData(VisibleClassTy *this)
   byte *pbVar6;
   ushort *puVar7;
   undefined4 *puVar8;
-  DArrayTy *pDVar9;
-  uint uVar10;
+  VisibleClassTy_field_00F4DArray *pVVar9;
+  VisibleClassTy_field_0110DArray *pVVar10;
   uint uVar11;
   uint uVar12;
-  void **ppvVar13;
-  bool bVar14;
+  uint uVar13;
+  void **ppvVar14;
+  bool bVar15;
   InternalExceptionFrame local_50;
   VisibleClassTy *local_c;
   byte *local_8;
@@ -62,62 +63,64 @@ void __thiscall VisibleClassTy::InitData(VisibleClassTy *this)
     pVVar3->field_004C = pbVar6;
     puVar7 = (ushort *)Library::DKW::LIB::FUN_006aac10(pVVar3->field_0030 * pVVar3->field_0034 * 2);
     pVVar3->field_0050 = puVar7;
-    ppvVar13 = pVVar3->field_003C;
+    ppvVar14 = pVVar3->field_003C;
     iVar4 = 4;
     do {
       puVar8 = Library::DKW::LIB::FUN_006aac10(pVVar3->field_0028 * pVVar3->field_002C);
-      *ppvVar13 = puVar8;
-      ppvVar13 = ppvVar13 + 1;
+      *ppvVar14 = puVar8;
+      ppvVar14 = ppvVar14 + 1;
       iVar4 = iVar4 + -1;
     } while (iVar4 != 0);
-    pDVar9 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x1c,10);
-    pVVar3->field_00F4 = pDVar9;
-    pDVar9 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0xc,10);
-    pVVar3->field_0110 = pDVar9;
+    pVVar9 = (VisibleClassTy_field_00F4DArray *)
+             Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x1c,10);
+    pVVar3->field_00F4 = pVVar9;
+    pVVar10 = (VisibleClassTy_field_0110DArray *)
+              Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0xc,10);
+    pVVar3->field_0110 = pVVar10;
     pVVar3->field_00F8 = (uint)DAT_00808a95;
     pVVar3->field_00FC[DAT_0080874d] = 1;
     if (DAT_00808a94 != '\0') {
-      uVar12 = 0;
+      uVar13 = 0;
       local_8 = &DAT_008087e9;
       do {
         if ((g_playSystem_00802A38 == (STPlaySystemC *)0x0) || (*local_8 < 8)) {
-          uVar10 = (uint)DAT_0080874d;
-          if (uVar12 != uVar10) {
+          uVar11 = (uint)DAT_0080874d;
+          if (uVar13 != uVar11) {
             if (DAT_00808a8f == '\0') {
-              if (DAT_0080874d == (byte)uVar12) {
+              if (DAT_0080874d == (byte)uVar13) {
 LAB_00557b2d:
                 iVar4 = 0;
               }
               else {
-                uVar11 = uVar12 & 0xff;
-                bVar1 = g_playerRelationMatrix[uVar10][uVar11];
-                if ((bVar1 == 0) && (g_playerRelationMatrix[uVar11][uVar10] == 0)) {
+                uVar12 = uVar13 & 0xff;
+                bVar1 = g_playerRelationMatrix[uVar11][uVar12];
+                if ((bVar1 == 0) && (g_playerRelationMatrix[uVar12][uVar11] == 0)) {
                   iVar4 = -2;
                 }
-                else if ((bVar1 == 1) && (g_playerRelationMatrix[uVar11][uVar10] == 0)) {
+                else if ((bVar1 == 1) && (g_playerRelationMatrix[uVar12][uVar11] == 0)) {
                   iVar4 = -1;
                 }
-                else if ((bVar1 == 0) && (g_playerRelationMatrix[uVar11][uVar10] == 1)) {
+                else if ((bVar1 == 0) && (g_playerRelationMatrix[uVar12][uVar11] == 1)) {
                   iVar4 = 1;
                 }
                 else {
-                  if ((bVar1 != 1) || (g_playerRelationMatrix[uVar11][uVar10] != 1))
+                  if ((bVar1 != 1) || (g_playerRelationMatrix[uVar12][uVar11] != 1))
                   goto LAB_00557b2d;
                   iVar4 = 2;
                 }
               }
-              bVar14 = iVar4 < 0;
+              bVar15 = iVar4 < 0;
             }
             else {
-              bVar14 = (&DAT_008087ea)[(uVar12 & 0xff) * 0x51] != (&DAT_008087ea)[uVar10 * 0x51];
+              bVar15 = (&DAT_008087ea)[(uVar13 & 0xff) * 0x51] != (&DAT_008087ea)[uVar11 * 0x51];
             }
-            if (bVar14) goto LAB_00557b44;
+            if (bVar15) goto LAB_00557b44;
           }
-          pVVar3->field_00FC[uVar12] = 1;
+          pVVar3->field_00FC[uVar13] = 1;
         }
 LAB_00557b44:
         local_8 = local_8 + 0x51;
-        uVar12 = uVar12 + 1;
+        uVar13 = uVar13 + 1;
       } while ((int)local_8 < 0x808a71);
     }
   }

@@ -89,8 +89,7 @@ void __fastcall FUN_00660d40(AnonShape_00660D40_E58DF1E6 *param_1)
               else {
                 sVar3 = 0;
               }
-              AiTactClassTy::PrepareToSave(*(AiTactClassTy **)&pAVar2[4].field_0x74,&local_5c,sVar3)
-              ;
+              AiTactClassTy::PrepareToSave(*(AiTactClassTy **)&pAVar2[4].field_0x74,&local_5c,sVar3);
               uVar5 = local_c;
               param_1 = (AnonShape_00660D40_E58DF1E6 *)local_8;
             }

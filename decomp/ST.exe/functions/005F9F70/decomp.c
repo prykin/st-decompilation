@@ -14,7 +14,7 @@ void __fastcall FUN_005f9f70(AnonShape_005F9F70_43CA4DAC *param_1)
     }
     uVar2 = *(uint *)(param_1->field_02E6 + 4);
     if (-1 < (int)uVar2) {
-      FUN_006e8ba0(param_1->field_0211,uVar2);
+      Library::Ourlib::ST3DSMAP::SprClose(param_1->field_0211,uVar2);
       *(undefined4 *)(param_1->field_02E6 + 4) = 0xffffffff;
     }
   }

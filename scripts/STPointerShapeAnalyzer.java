@@ -32,6 +32,7 @@ import ghidra.program.model.address.Address;
 import ghidra.program.model.data.DataType;
 import ghidra.program.model.data.DataTypeComponent;
 import ghidra.program.model.data.DataTypeManager;
+import ghidra.program.model.data.Array;
 import ghidra.program.model.data.Pointer;
 import ghidra.program.model.data.PointerDataType;
 import ghidra.program.model.data.Structure;
@@ -78,6 +79,13 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         "\\*\\s*\\(\\s*([^()\\r\\n]{1,80}?)\\s*\\*\\s*\\)\\s*" +
         "\\(\\s*(?:\\(\\s*[^()\\r\\n]{1,40}\\s*\\)\\s*)?" +
         "([A-Za-z_$][A-Za-z0-9_$:]*)\\s*\\+\\s*" +
+        "(0[xX][0-9A-Fa-f]+|[0-9]+)\\s*\\)");
+    private static final Pattern RAW_INDEXED_ACCESS = Pattern.compile(
+        "\\*\\s*\\(\\s*([^()\\r\\n]{1,80}?)\\s*\\*\\s*\\)\\s*" +
+        "\\(\\s*(?:\\(\\s*[^()\\r\\n]{1,40}\\s*\\)\\s*)?" +
+        "([A-Za-z_$][A-Za-z0-9_$:]*)\\s*\\+\\s*" +
+        "(0[xX][0-9A-Fa-f]+|[0-9]+)\\s*\\+\\s*" +
+        "([^;\\r\\n]{1,240}?)\\s*\\*\\s*" +
         "(0[xX][0-9A-Fa-f]+|[0-9]+)\\s*\\)");
     private static final Pattern NESTED_ACCESS = Pattern.compile(
         "\\*\\s*\\(\\s*([^()\\r\\n]{1,80}?)\\s*\\*\\s*\\)\\s*" +
@@ -249,6 +257,7 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             stableStorages, functionTargets);
         collectCountedPointerTableRoles(function, c, locals, stableStorages,
             functionTargets);
+        collectRawIndexedAccesses(function, c, locals, stableStorages, functionTargets);
         Matcher matcher = RAW_ACCESS.matcher(c);
         int before = rawAccesses;
         while (matcher.find()) {
@@ -718,6 +727,48 @@ public class STPointerShapeAnalyzer extends GhidraScript {
                 functionTargets);
     }
 
+    /**
+     * Recover an inline variable-length/flexible-array tail without inventing a
+     * fixed element count:
+     *
+     *   *(uint *)(record + 0x30 + index * 4)
+     *
+     * A one-element array component is the conventional Ghidra/C model for this
+     * layout.  It preserves the proven element width and lets the decompiler spell
+     * later accesses as record->entries[index], while the containing record length
+     * remains only the observed fixed prefix plus one element.
+     */
+    private void collectRawIndexedAccesses(Function function, String c,
+            Map<String, Variable> locals, Set<String> stableStorages,
+            Map<String, TargetEvidence> functionTargets) {
+        Matcher matcher = RAW_INDEXED_ACCESS.matcher(c);
+        while (matcher.find()) {
+            String valueType = matcher.group(1).trim();
+            String name = matcher.group(2);
+            long offset = parseUnsigned(matcher.group(3));
+            int scale = (int)parseUnsigned(matcher.group(5));
+            int width = accessWidth(valueType);
+            if (offset < 0 || offset >= MAX_SHAPE_SIZE || width < 1 ||
+                    width > 16 || scale != width || offset + width > MAX_SHAPE_SIZE ||
+                    name.equals("this") || name.startsWith("this_")) continue;
+            TargetEvidence target = canonicalTarget(function, locals, stableStorages,
+                functionTargets, name);
+            if (target == null) continue;
+            FieldEvidence field = target.fields.computeIfAbsent(offset, FieldEvidence::new);
+            field.widths.merge(width, 1, Integer::sum);
+            String type = valueTypeSpecification(valueType, width);
+            if (!type.isBlank()) field.types.merge(type, 1, Integer::sum);
+            field.indexedStrides.merge(scale, 1, Integer::sum);
+            field.roles.merge("entries", 1, Integer::sum);
+            field.sites.add(addr(function.getEntryPoint()) + " indexed " + name +
+                "+0x" + Long.toHexString(offset).toUpperCase(Locale.ROOT) +
+                " stride=" + scale);
+            target.accessCount++;
+            target.functions.add(addr(function.getEntryPoint()));
+            rawAccesses++;
+        }
+    }
+
     private void collectCountedPointerTableRole(Function function, String c,
             int comparisonEnd, String baseName, String indexName, String countMember,
             Map<String, Variable> locals, Set<String> stableStorages,
@@ -1177,8 +1228,19 @@ public class STPointerShapeAnalyzer extends GhidraScript {
                     FieldEvidence field = value.fields.computeIfAbsent(
                         (long)component.getOffset(), FieldEvidence::new);
                     field.widths.merge(component.getLength(), 1, Integer::sum);
-                    field.types.merge(typeSpecification(component.getDataType()), 1,
-                        Integer::sum);
+                    DataType componentType = untypedef(component.getDataType());
+                    if (componentType instanceof Array array &&
+                            array.getNumElements() == 1) {
+                        field.types.merge(typeSpecification(array.getDataType()), 1,
+                            Integer::sum);
+                        field.indexedStrides.merge(array.getElementLength(), 1,
+                            Integer::sum);
+                        field.roles.merge("entries", 1, Integer::sum);
+                    }
+                    else {
+                        field.types.merge(typeSpecification(component.getDataType()), 1,
+                            Integer::sum);
+                    }
                     String name = component.getFieldName();
                     if ("flags".equals(name) || "entryCount".equals(name) ||
                             "entries".equals(name))
@@ -1214,6 +1276,9 @@ public class STPointerShapeAnalyzer extends GhidraScript {
                 target.widths.merge(width.getKey(), width.getValue(), Integer::sum);
             for (Map.Entry<String, Integer> type : found.types.entrySet())
                 target.types.merge(type.getKey(), type.getValue(), Integer::sum);
+            for (Map.Entry<Integer, Integer> stride : found.indexedStrides.entrySet())
+                target.indexedStrides.merge(stride.getKey(), stride.getValue(),
+                    Integer::sum);
             for (Map.Entry<String, Integer> role : found.roles.entrySet())
                 target.roles.merge(role.getKey(), role.getValue(), Integer::sum);
             target.sites.addAll(found.sites);
@@ -1359,6 +1424,9 @@ public class STPointerShapeAnalyzer extends GhidraScript {
                 destination.widths.merge(width.getKey(), width.getValue(), Integer::sum);
             for (Map.Entry<String, Integer> type : source.types.entrySet())
                 destination.types.merge(type.getKey(), type.getValue(), Integer::sum);
+            for (Map.Entry<Integer, Integer> stride : source.indexedStrides.entrySet())
+                destination.indexedStrides.merge(stride.getKey(), stride.getValue(),
+                    Integer::sum);
             destination.sites.addAll(source.sites);
             target.accessCount += source.sites.size();
             target.functions.addAll(source.sites.stream()
@@ -1801,7 +1869,7 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         List<FieldProposal> result = new ArrayList<>();
         for (FieldEvidence field : target.fields.values()) {
             int width = uniqueWidth(field);
-            String type = unique(field.types);
+            String type = selectedType(field, width);
             NestedEvidence nested = target.nested.get(field.offset);
             List<FieldEvidence> selected = nested == null ? List.of() :
                 selectedNestedFields(nested);
@@ -1813,18 +1881,40 @@ public class STPointerShapeAnalyzer extends GhidraScript {
                     nestedPath(target, field.offset, nested));
             else if (type.isBlank() || typeLength(type) != width)
                 type = "/undefined" + width;
-            String semanticName = unique(field.roles);
-            int semanticEvidence = semanticName.isBlank() ? 0 :
-                field.roles.getOrDefault(semanticName, 0);
-            String name = semanticEvidence >= 2 ? semanticName :
-                nested != null && nested.pointerDepth > 1 ?
-                    "entries_" + String.format("%04X", field.offset) :
-                    "field_" + String.format("%04X", field.offset);
+            boolean inlineEntries = inlineEntries(field, width);
+            if (inlineEntries) type = "array:1:" + type;
+            String name = proposedFieldName(field, width, nested);
             result.add(new FieldProposal(true, shapeId, field.offset, width, name, type,
                 field.sites.size(), "fixed-offset dereference; observed_types=" + field.types +
+                    "; indexed_strides=" + field.indexedStrides +
                     "; semantic_roles=" + field.roles));
         }
         return result;
+    }
+
+    private boolean inlineEntries(FieldEvidence field, int width) {
+        return width > 0 && field.indexedStrides.size() == 1 &&
+            field.indexedStrides.containsKey(width);
+    }
+
+    private String proposedFieldName(FieldEvidence field, int width,
+            NestedEvidence nested) {
+        boolean inlineEntries = inlineEntries(field, width);
+        String semanticName = unique(field.roles);
+        int semanticEvidence = semanticName.isBlank() ? 0 :
+            field.roles.getOrDefault(semanticName, 0);
+        if ("entries".equals(semanticName) && !inlineEntries) {
+            // A differently-strided indexed view must not rename the dominant
+            // scalar member at this offset.  Keep that scalar distinct from a
+            // later compatible flexible tail.
+            semanticName = "";
+            semanticEvidence = 0;
+        }
+        return inlineEntries ? "entries" :
+            semanticEvidence >= 2 ? semanticName :
+            nested != null && nested.pointerDepth > 1 ?
+                "entries_" + String.format("%04X", field.offset) :
+                "field_" + String.format("%04X", field.offset);
     }
 
     private List<FieldProposal> makeNestedFieldProposals(String shapeId,
@@ -1832,7 +1922,7 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         List<FieldProposal> result = new ArrayList<>();
         for (FieldEvidence field : selected) {
             int width = uniqueWidth(field);
-            String type = unique(field.types);
+            String type = selectedType(field, width);
             if (type.isBlank() || typeLength(type) != width) type = "/undefined" + width;
             String semanticName = unique(field.roles);
             int semanticEvidence = semanticName.isBlank() ? 0 :
@@ -2094,9 +2184,15 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             if (Undefined.isUndefined(component.getDataType()) && !observed.isBlank() &&
                     !observed.matches("/undefined(?:1|2|4|8)?") &&
                     typeLength(observed) == width) return true;
+            boolean inlineEntries = inlineEntries(field, width);
             String semanticName = unique(field.roles);
-            if (!semanticName.isBlank() &&
-                    field.roles.getOrDefault(semanticName, 0) >= 2 &&
+            int semanticEvidence = semanticName.isBlank() ? 0 :
+                field.roles.getOrDefault(semanticName, 0);
+            if ("entries".equals(component.getFieldName()) &&
+                    "entries".equals(semanticName) && !inlineEntries) return true;
+            if (inlineEntries && !"entries".equals(component.getFieldName())) return true;
+            if (!semanticName.isBlank() && semanticEvidence >= 2 &&
+                    !("entries".equals(semanticName) && !inlineEntries) &&
                     !semanticName.equals(component.getFieldName())) return true;
         }
         return false;
@@ -2120,8 +2216,31 @@ public class STPointerShapeAnalyzer extends GhidraScript {
     }
 
     private int uniqueWidth(FieldEvidence field) {
-        if (field.widths.size() != 1) return -1;
-        return field.widths.keySet().iterator().next();
+        if (field.widths.size() == 1)
+            return field.widths.keySet().iterator().next();
+        // Keep union-like alternatives unresolved unless one physical width is
+        // overwhelmingly the ordinary view.  This handles incidental low-byte
+        // loads from a repeatedly word-typed packed field without silently
+        // widening every mixed-width observation into one member.
+        List<Map.Entry<Integer, Integer>> ranked =
+            new ArrayList<>(field.widths.entrySet());
+        ranked.sort(Comparator
+            .<Map.Entry<Integer, Integer>>comparingInt(Map.Entry::getValue).reversed()
+            .thenComparingInt(Map.Entry::getKey));
+        Map.Entry<Integer, Integer> first = ranked.get(0);
+        Map.Entry<Integer, Integer> second = ranked.get(1);
+        return first.getValue() >= 3 &&
+            first.getValue() >= second.getValue() * 4 ? first.getKey() : -1;
+    }
+
+    private String selectedType(FieldEvidence field, int width) {
+        String result = "";
+        for (String specification : field.types.keySet()) {
+            if (typeLength(specification) != width) continue;
+            if (!result.isBlank() && !result.equals(specification)) return "";
+            result = specification;
+        }
+        return result;
     }
 
     private String ownerType(Function function) {
@@ -2219,6 +2338,17 @@ public class STPointerShapeAnalyzer extends GhidraScript {
     }
 
     private int typeLength(String specification) {
+        if (specification.startsWith("array:")) {
+            int separator = specification.indexOf(':', "array:".length());
+            if (separator < 0) return -1;
+            try {
+                int count = Integer.parseInt(
+                    specification.substring("array:".length(), separator));
+                int element = typeLength(specification.substring(separator + 1));
+                return count < 1 || element < 1 ? -1 : count * element;
+            }
+            catch (NumberFormatException ignored) { return -1; }
+        }
         if (specification.startsWith("pointer:")) return currentProgram.getDefaultPointerSize();
         DataType type = dataTypes.getDataType(specification);
         return type == null ? -1 : type.getLength();
@@ -2446,6 +2576,7 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         final long offset;
         final Map<Integer, Integer> widths = new TreeMap<>();
         final Map<String, Integer> types = new TreeMap<>();
+        final Map<Integer, Integer> indexedStrides = new TreeMap<>();
         final Map<String, Integer> roles = new TreeMap<>();
         final Set<String> sites = new TreeSet<>();
         FieldEvidence(long offset) { this.offset = offset; }

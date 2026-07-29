@@ -365,8 +365,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
       iVar9 = *(int *)((int)this + 0x80);
       pcVar4 = *(char **)((int)this + 0x8c);
     }
-    Library::MSVCRT::_strncpy(*(char **)((int)this + 0x88),pcVar4,*(int *)((int)this + 0xc) - iVar9)
-    ;
+    Library::MSVCRT::_strncpy(*(char **)((int)this + 0x88),pcVar4,*(int *)((int)this + 0xc) - iVar9);
     uVar7 = 0xffffffff;
     pcVar4 = &DAT_007c8ff4;
     do {

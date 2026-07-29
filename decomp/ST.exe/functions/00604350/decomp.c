@@ -61,8 +61,10 @@ int __thiscall STExplosion::sub_00604350(STExplosion *this)
   if (local_14 < 0) {
     iVar5 = iVar5 + -1;
   }
-  if ((((PTR_00807598->field_0048 <= iVar5 + 3) && (iVar5 + -3 <= PTR_00807598->field_0058)) &&
-      (PTR_00807598->field_0044 <= iVar6 + 3)) && (iVar6 + -3 <= PTR_00807598->field_0054)) {
+  if ((((g_sT3DSMAPContext_00807598->field_0048 <= iVar5 + 3) &&
+       (iVar5 + -3 <= g_sT3DSMAPContext_00807598->field_0058)) &&
+      (g_sT3DSMAPContext_00807598->field_0044 <= iVar6 + 3)) &&
+     (iVar6 + -3 <= g_sT3DSMAPContext_00807598->field_0054)) {
     iVar6 = FUN_006ddbd0();
     iVar1 = local_c;
     iVar5 = local_10;

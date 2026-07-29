@@ -13,11 +13,12 @@ void __thiscall SettMapMTy::InitSettMap(SettMapMTy *this,char param_1)
   code *pcVar3;
   SettMapMTy *this_00;
   int iVar4;
-  DArrayTy *pDVar5;
-  uint uVar6;
-  AnonPointee_SettMapMTy_2204 *pAVar7;
-  undefined4 *puVar8;
-  HoloTy *pHVar9;
+  SettMapMTy_field_2237DArray *pSVar5;
+  int uVar6;
+  AnonPointee_SettMapMTy_2204 *pAVar6;
+  undefined4 *puVar7;
+  HoloTy *pHVar8;
+  uint uVar9;
   uint uVar10;
   int iVar11;
   byte bVar12;
@@ -44,41 +45,42 @@ void __thiscall SettMapMTy::InitSettMap(SettMapMTy *this,char param_1)
       local_c->field_2121 = 0;
       DAT_00808aa8 = DAT_0080734b;
     }
-    puVar8 = &local_c->field_1A5B->field_069A;
+    puVar7 = &local_c->field_1A5B->field_069A;
     DAT_00808aab = DAT_00809958;
-    if (*puVar8 != 0) {
-      FreeAndNull((void **)puVar8);
+    if (*puVar7 != 0) {
+      FreeAndNull((void **)puVar7);
     }
-    pDVar5 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0x20,0xc,10);
-    this_00->field_2237 = pDVar5;
+    pSVar5 = (SettMapMTy_field_2237DArray *)
+             Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0x20,0xc,10);
+    this_00->field_2237 = pSVar5;
     iVar4 = 1;
     puVar2 = g_startSystem_0081176C->field_02F0;
     this_00->field_005D = puVar2;
     puVar14 = puVar2 + 0x14;
     uVar6 = FUN_006b4fe0((int)puVar2);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    pAVar7 = (AnonPointee_SettMapMTy_2204 *)
+    pAVar6 = (AnonPointee_SettMapMTy_2204 *)
              FUN_006b50c0(0xfa,0x16,(uint)*(ushort *)(this_00->field_005D + 0xe),uVar6,
                           (undefined4 *)puVar14,iVar4);
-    this_00->field_2204 = pAVar7;
-    uVar6 = pAVar7[1].field_0008;
-    if (uVar6 == 0) {
-      uVar6 = ((uint)*(ushort *)&pAVar7[1].field_0x2 * pAVar7->field_0004 + 0x1f >> 3 & 0x1ffffffc)
-              * pAVar7->field_0008;
+    this_00->field_2204 = pAVar6;
+    uVar10 = pAVar6[1].field_0008;
+    if (uVar10 == 0) {
+      uVar10 = ((uint)*(ushort *)&pAVar6[1].field_0x2 * pAVar6->field_0004 + 0x1f >> 3 & 0x1ffffffc)
+               * pAVar6->field_0008;
     }
-    puVar8 = (undefined4 *)FUN_006b4fa0((int *)pAVar7);
-    for (uVar10 = uVar6 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
-      *puVar8 = 0xffffffff;
-      puVar8 = puVar8 + 1;
+    puVar7 = (undefined4 *)FUN_006b4fa0((int *)pAVar6);
+    for (uVar9 = uVar10 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
+      *puVar7 = 0xffffffff;
+      puVar7 = puVar7 + 1;
     }
-    for (uVar6 = uVar6 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
-      *(undefined1 *)puVar8 = 0xff;
-      puVar8 = (undefined4 *)((int)puVar8 + 1);
+    for (uVar10 = uVar10 & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
+      *(undefined1 *)puVar7 = 0xff;
+      puVar7 = (undefined4 *)((int)puVar7 + 1);
     }
-    pAVar7 = this_00->field_2204;
+    pAVar6 = this_00->field_2204;
     piVar1 = &this_00->field_2200;
-    FUN_006b2330(g_ddxContext_008075A8,(uint *)piVar1,0x31,0x404acf,pAVar7->field_0004,
-                 pAVar7->field_0008,(ushort *)pAVar7);
+    FUN_006b2330(g_ddxContext_008075A8,(uint *)piVar1,0x31,0x404acf,pAVar6->field_0004,
+                 pAVar6->field_0008,(ushort *)pAVar6);
     Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,*piVar1,0xffffffff,200,0x1dc);
     FUN_006b3af0((int *)g_ddxContext_008075A8,*piVar1);
     sub_005C29B0(this_00,param_1);
@@ -90,50 +92,49 @@ void __thiscall SettMapMTy::InitSettMap(SettMapMTy *this,char param_1)
       if (g_startSystem_0081176C->field_0560 != 0xffffffff) {
         Library::DKW::DDX::FUN_006b34d0
                   ((uint *)g_startSystem_0081176C->field_05A4,g_startSystem_0081176C->field_0560,
-                   0xfffffffe,g_startSystem_0081176C->field_0578,g_startSystem_0081176C->field_057C)
-        ;
+                   0xfffffffe,g_startSystem_0081176C->field_0578,g_startSystem_0081176C->field_057C);
       }
       if (g_startSystem_0081176C->field_05F1 != 0xffffffff) {
         Library::DKW::DDX::FUN_006b34d0
                   ((uint *)g_startSystem_0081176C->field_0635,g_startSystem_0081176C->field_05F1,
-                   0xfffffffe,g_startSystem_0081176C->field_0609,g_startSystem_0081176C->field_060D)
-        ;
+                   0xfffffffe,g_startSystem_0081176C->field_0609,g_startSystem_0081176C->field_060D);
       }
-      pHVar9 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
-      if (pHVar9 == (HoloTy *)0x0) {
-        pHVar9 = (HoloTy *)0x0;
+      pHVar8 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
+      if (pHVar8 == (HoloTy *)0x0) {
+        pHVar8 = (HoloTy *)0x0;
       }
       else {
-        pHVar9->field_0002 = 1;
-        pHVar9->field_0000 = 0;
-        pHVar9->field_0003 = -1;
-        pHVar9->field_0001 = CASE_2;
-        pHVar9->field_0007 = 0;
-        pHVar9->field_000B = (void *)0x0;
-        pHVar9->field_000F = 0;
-        pHVar9->field_001B = 1;
-        pHVar9->field_0013 = 1;
-        pHVar9->field_0017 = -1;
-        pHVar9->field_0027 = 0;
-        pHVar9->field_0023 = 0;
-        pHVar9->field_002F = 1;
-        pHVar9->field_002B = 1;
+        pHVar8->field_0002 = 1;
+        pHVar8->field_0000 = 0;
+        pHVar8->field_0003 = -1;
+        pHVar8->field_0001 = CASE_2;
+        pHVar8->field_0007 = 0;
+        pHVar8->field_000B = (void *)0x0;
+        pHVar8->field_000F = 0;
+        pHVar8->field_001B = 1;
+        pHVar8->field_0013 = 1;
+        pHVar8->field_0017 = -1;
+        pHVar8->field_0027 = 0;
+        pHVar8->field_0023 = 0;
+        pHVar8->field_002F = 1;
+        pHVar8->field_002B = 1;
       }
-      this_00->field_21F8 = pHVar9;
-      if (pHVar9 != (HoloTy *)0x0) {
-        uVar6 = 0;
+      this_00->field_21F8 = pHVar8;
+      if (pHVar8 != (HoloTy *)0x0) {
+        uVar10 = 0;
         cVar13 = '\x01';
         bVar12 = 0x10;
         iVar11 = 1;
         iVar4 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,200,0x1f1,400,0x62);
-        uVar6 = HoloTy::Init(this_00->field_21F8,CASE_1,200,0x1f1,iVar4,iVar11,bVar12,cVar13,uVar6);
-        if (uVar6 != 0) {
-          pHVar9 = this_00->field_21F8;
-          pHVar9->field_0002 = 1;
-          pHVar9->field_0017 = pHVar9->field_0013;
-          uVar6 = this_00->field_21F8->field_0003;
-          if (-1 < (int)uVar6) {
-            Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar6);
+        uVar10 = HoloTy::Init(this_00->field_21F8,CASE_1,200,0x1f1,iVar4,iVar11,bVar12,cVar13,uVar10
+                             );
+        if (uVar10 != 0) {
+          pHVar8 = this_00->field_21F8;
+          pHVar8->field_0002 = 1;
+          pHVar8->field_0017 = pHVar8->field_0013;
+          uVar10 = this_00->field_21F8->field_0003;
+          if (-1 < (int)uVar10) {
+            Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar10);
           }
           if (g_startSystem_0081176C->field_0560 != 0xffffffff) {
             FUN_006b3af0((int *)g_startSystem_0081176C->field_05A4,
@@ -156,14 +157,12 @@ void __thiscall SettMapMTy::InitSettMap(SettMapMTy *this,char param_1)
       if (g_startSystem_0081176C->field_0560 != 0xffffffff) {
         Library::DKW::DDX::FUN_006b34d0
                   ((uint *)g_startSystem_0081176C->field_05A4,g_startSystem_0081176C->field_0560,
-                   0xfffffffe,g_startSystem_0081176C->field_0578,g_startSystem_0081176C->field_057C)
-        ;
+                   0xfffffffe,g_startSystem_0081176C->field_0578,g_startSystem_0081176C->field_057C);
       }
       if (g_startSystem_0081176C->field_05F1 != 0xffffffff) {
         Library::DKW::DDX::FUN_006b34d0
                   ((uint *)g_startSystem_0081176C->field_0635,g_startSystem_0081176C->field_05F1,
-                   0xfffffffe,g_startSystem_0081176C->field_0609,g_startSystem_0081176C->field_060D)
-        ;
+                   0xfffffffe,g_startSystem_0081176C->field_0609,g_startSystem_0081176C->field_060D);
       }
       Library::DKW::DDX::FUN_006b3430
                 ((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0558);

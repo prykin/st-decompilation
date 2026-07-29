@@ -29,7 +29,7 @@ undefined4 __fastcall FUN_004dc260(TLOBaseTy *param_1)
       }
     }
     uVar1 = g_playSystem_00802A38->field_00E4;
-    iVar2 = thunk_FUN_004e8230(param_1->field_0024,param_1->field_0235,0);
+    iVar2 = thunk_FUN_004e8230((int)param_1->field_0024,param_1->field_0235,0);
     if ((iVar2 + param_1->field_0271 <= uVar1) && (199 < param_1->field_04D4)) {
       param_1->field_0271 = uVar1;
       TLOBaseTy::fireFindCheckTarget(param_1,0,0);

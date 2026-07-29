@@ -43,8 +43,7 @@ undefined4 __fastcall FUN_005deb90(AnonShape_005DEB90_CA287120 *param_1)
     local_8 = (local_1c->field_069E - local_1c->field_06AE) - local_1c->field_06B2;
     Library::MSVCRT::_strncpy
               ((char *)(abStack_165 + 1),
-               (char *)(local_1c->field_06AE + local_1c->field_06B2 + local_1c->field_069A),local_8)
-    ;
+               (char *)(local_1c->field_06AE + local_1c->field_06B2 + local_1c->field_069A),local_8);
     uVar1 = local_14;
     abStack_165[local_8] = 0;
     iVar3 = local_10;

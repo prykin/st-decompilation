@@ -28,7 +28,7 @@ void __thiscall AiTactClassTy::ClaimSave(AiTactClassTy *this)
     if (local_8->field_0130 != 0) {
       FreeAndNull((void **)value);
     }
-    if (pAVar2->field_00BD != (DArrayTy *)0x0) {
+    if (pAVar2->field_00BD != (AiTactClassTy_field_00BDDArray *)0x0) {
       uVar3 = FUN_006b0020(&pAVar2->field_00BD->flags,&local_c);
       *value = uVar3;
     }

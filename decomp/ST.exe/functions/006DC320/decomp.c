@@ -68,7 +68,7 @@ void __fastcall FUN_006dc320(AnonShape_006DC320_0C876EFA *param_1)
   local_30 = 0.0;
   local_2c = 0.0;
   local_28 = 0.0;
-  FUN_006e25d0(param_1,&local_50);
+  ST3DSMAPContext::sub_006E25D0((ST3DSMAPContext *)param_1,&local_50);
   switch(param_1->field_00A8) {
   case 0:
     iStack_c = 0xffffffff;
@@ -90,40 +90,40 @@ void __fastcall FUN_006dc320(AnonShape_006DC320_0C876EFA *param_1)
     iStack_c = 0;
     local_8 = 0;
   }
-  FUN_006e25d0(param_1,&local_40);
+  ST3DSMAPContext::sub_006E25D0((ST3DSMAPContext *)param_1,&local_40);
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   _local_10 = CONCAT44(local_38 - local_48,local_10);
   param_1->field_02F8 = (double)(local_38 - local_48) * _DAT_0079b148;
-  FUN_006e25d0(param_1,&local_40);
+  ST3DSMAPContext::sub_006E25D0((ST3DSMAPContext *)param_1,&local_40);
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   _local_10 = CONCAT44(local_38 - local_48,local_10);
   param_1->field_0300 = (double)(local_38 - local_48) * _DAT_0079b148;
-  FUN_006e25d0(param_1,&local_40);
+  ST3DSMAPContext::sub_006E25D0((ST3DSMAPContext *)param_1,&local_40);
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   _local_10 = CONCAT44(local_38 - local_48,local_10);
   local_30 = 0.0;
   local_2c = 0.0;
   local_28 = 0.0;
   param_1->field_0308 = (double)(local_38 - local_48) * _DAT_0079b148;
-  FUN_006e25d0(param_1,&local_50);
+  ST3DSMAPContext::sub_006E25D0((ST3DSMAPContext *)param_1,&local_50);
   local_30 = (float)param_1->field_0368;
   local_2c = 0.0;
   local_28 = 0.0;
-  FUN_006e25d0(param_1,&local_40);
+  ST3DSMAPContext::sub_006E25D0((ST3DSMAPContext *)param_1,&local_40);
   param_1->field_03AC = local_40 - local_50;
   param_1->field_03B8 = local_3c - local_4c;
   param_1->field_03C4 = local_38 - local_48;
   local_2c = (float)param_1->field_0368;
   local_30 = 0.0;
   local_28 = 0.0;
-  FUN_006e25d0(param_1,&local_40);
+  ST3DSMAPContext::sub_006E25D0((ST3DSMAPContext *)param_1,&local_40);
   param_1->field_03B0 = local_40 - local_50;
   param_1->field_03BC = local_3c - local_4c;
   param_1->field_03C8 = local_38 - local_48;
   local_30 = 0.0;
   local_2c = 0.0;
   local_28 = (float)((float10)param_1->field_03A4 * (float10)_DAT_0079dfa8);
-  FUN_006e25d0(param_1,&local_40);
+  ST3DSMAPContext::sub_006E25D0((ST3DSMAPContext *)param_1,&local_40);
   param_1->field_03B4 = local_40 - local_50;
   param_1->field_03C0 = local_3c - local_4c;
   param_1->field_03CC = local_38 - local_48;
@@ -290,7 +290,9 @@ LAB_006dca21:
     param_1->field_0414 = iVar5;
   }
 LAB_006dcafd:
-  FUN_006e1c20(param_1,(float)param_1->field_0030,param_1->field_0034,0.0,&local_14,&local_18);
+  ST3DSMAPContext::sub_006E1C20
+            ((ST3DSMAPContext *)param_1,(float)param_1->field_0030,param_1->field_0034,0.0,&local_14
+             ,&local_18);
   lVar6 = Library::MSVCRT::__ftol();
   iVar5 = (int)lVar6;
   lVar6 = Library::MSVCRT::__ftol();
@@ -312,8 +314,9 @@ LAB_006dcafd:
     param_1->field_0050 = iVar5;
     param_1->field_0054 = iVar2 + 2;
   }
-  FUN_006e1c20(param_1,(float)(param_1->field_0038 + -1),param_1->field_0034,0.0,&local_14,&local_18
-              );
+  ST3DSMAPContext::sub_006E1C20
+            ((ST3DSMAPContext *)param_1,(float)(param_1->field_0038 + -1),param_1->field_0034,0.0,
+             &local_14,&local_18);
   lVar6 = Library::MSVCRT::__ftol();
   iVar5 = (int)lVar6;
   lVar6 = Library::MSVCRT::__ftol();
@@ -335,8 +338,9 @@ LAB_006dcafd:
     param_1->field_004C = iVar2;
     param_1->field_0048 = iVar5 + -2;
   }
-  FUN_006e1c20(param_1,(float)param_1->field_0030,param_1->field_003C + -1,
-               (float)((float10)param_1->field_00D0 * (float10)_DAT_0079df90),&local_14,&local_18);
+  ST3DSMAPContext::sub_006E1C20
+            ((ST3DSMAPContext *)param_1,(float)param_1->field_0030,param_1->field_003C + -1,
+             (float)((float10)param_1->field_00D0 * (float10)_DAT_0079df90),&local_14,&local_18);
   lVar6 = Library::MSVCRT::__ftol();
   iVar5 = (int)lVar6;
   lVar6 = Library::MSVCRT::__ftol();
@@ -358,8 +362,9 @@ LAB_006dcafd:
     param_1->field_005C = iVar2;
     param_1->field_0058 = iVar5 + 2;
   }
-  FUN_006e1c20(param_1,(float)(param_1->field_0038 + -1),param_1->field_003C + -1,
-               (float)((float10)param_1->field_00D0 * (float10)_DAT_0079df90),&local_14,&local_18);
+  ST3DSMAPContext::sub_006E1C20
+            ((ST3DSMAPContext *)param_1,(float)(param_1->field_0038 + -1),param_1->field_003C + -1,
+             (float)((float10)param_1->field_00D0 * (float10)_DAT_0079df90),&local_14,&local_18);
   lVar6 = Library::MSVCRT::__ftol();
   iVar5 = (int)lVar6;
   lVar6 = Library::MSVCRT::__ftol();

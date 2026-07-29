@@ -37,8 +37,10 @@ undefined4 __cdecl FUN_00635da0(int param_1,int param_2,int param_3)
     param_1 = (int)(short)(((short)(param_3 / 200) + sVar1) -
                           (short)((longlong)param_3 * 0x51eb851f >> 0x3f));
   }
-  if ((((iVar4 < PTR_00807598->field_0048) || (PTR_00807598->field_0058 < iVar4)) ||
-      (iVar5 < PTR_00807598->field_0044)) || (PTR_00807598->field_0054 < iVar5)) {
+  if ((((iVar4 < g_sT3DSMAPContext_00807598->field_0048) ||
+       (g_sT3DSMAPContext_00807598->field_0058 < iVar4)) ||
+      (iVar5 < g_sT3DSMAPContext_00807598->field_0044)) ||
+     (g_sT3DSMAPContext_00807598->field_0054 < iVar5)) {
     uVar3 = 0;
   }
   else {

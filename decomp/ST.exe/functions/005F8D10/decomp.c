@@ -29,7 +29,7 @@ undefined4 __fastcall FUN_005f8d10(int *param_1)
       }
       else {
         iVar3 = thunk_FUN_005fa180((AnonShape_005FA180_2D8671A3 *)param_1);
-        if (*(short *)(DAT_00806724 + 0x23) <= iVar3) {
+        if (PTR_00806724->entryCount <= iVar3) {
           *(undefined4 *)((int)param_1 + 0x2dd) = 2;
           return 5;
         }

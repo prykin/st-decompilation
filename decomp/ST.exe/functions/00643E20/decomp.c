@@ -77,18 +77,19 @@ undefined4 __fastcall FUN_00643e20(AnonShape_00643E20_B7FEAA75 *param_1,undefine
     pSVar4 = local_c;
     if ((((param_1->field_027D == '\0') && (param_1->field_0259 != 10)) &&
         (local_c != (STGameObjC *)0x0)) && (local_c->field_0018 == param_1->field_025E)) {
-      FUN_006ea3e0(param_1->field_0211,param_1->field_01ED,local_c->field_01ED);
+      Library::Ourlib::ST3DSMAP::SprSetLevAfter
+                (param_1->field_0211,param_1->field_01ED,local_c->field_01ED);
     }
     bVar7 = param_1->field_027D + 1;
     param_1->field_027D = bVar7;
     if (bVar7 < 8) {
       if ((pSVar4 == (STGameObjC *)0x0) || (pSVar4->field_0018 != param_1->field_025E)) {
-        FUN_006ea2f0(param_1->field_0211,param_1->field_01ED);
+        Library::Ourlib::ST3DSMAP::SprRstLev(param_1->field_0211,param_1->field_01ED);
       }
       bVar7 = param_1->field_027D;
     }
     if (bVar7 == 8) {
-      FUN_006ea2f0(param_1->field_0211,param_1->field_01ED);
+      Library::Ourlib::ST3DSMAP::SprRstLev(param_1->field_0211,param_1->field_01ED);
       uVar6 = thunk_FUN_0041da30((AnonShape_0041DA30_EF7DF530 *)param_1);
       return uVar6;
     }
@@ -140,12 +141,13 @@ undefined4 __fastcall FUN_00643e20(AnonShape_00643E20_B7FEAA75 *param_1,undefine
         param_1->field_0043 = (undefined2)local_14;
         if (local_24 == 0) {
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006EA050::sub_006EA460
+          Library::Ourlib::ST3DSMAP::SprSetLevBefore
                     (param_1->field_0211,param_1->field_01ED,*(int *)((int)local_8 + 0x1ed));
         }
         else {
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          FUN_006ea3e0(param_1->field_0211,param_1->field_01ED,*(int *)((int)local_8 + 0x1ed));
+          Library::Ourlib::ST3DSMAP::SprSetLevAfter
+                    (param_1->field_0211,param_1->field_01ED,*(int *)((int)local_8 + 0x1ed));
         }
         bVar7 = param_1->field_027C;
       }

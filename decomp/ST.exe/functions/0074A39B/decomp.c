@@ -10,7 +10,7 @@ undefined4 __thiscall FUN_0074a39b(void *this,int *param_1)
   lpCriticalSection = (LPCRITICAL_SECTION)((int)this + 0x7c);
   EnterCriticalSection(lpCriticalSection);
   *(undefined4 *)((int)this + 0xb4) = 1;
-  iVar1 = FUN_00748721(*(int *)((int)this + 0x78) + 0x98,param_1);
+  iVar1 = FUN_00748721((AnonShape_00748721_F11EED2A *)(*(int *)((int)this + 0x78) + 0x98),param_1);
   if (iVar1 == 0) {
     iVar1 = (*(int **)((int)this + 0x78))[0x33];
     if (iVar1 != 0) {

@@ -12,7 +12,7 @@ int __thiscall STT3DSprC::sub_004ACFE0(STT3DSprC *this,char param_1)
   int iVar3;
 
   iVar3 = (int)param_1;
-  FUN_006ea800(this->field_003C,this->field_0018,iVar3,1);
+  ST3DSMAPContext::sub_006EA800(this->field_003C,this->field_0018,iVar3,1);
   pAVar2 = this->field_0020;
   pbVar1 = &pAVar2->field_0xe + iVar3 * 0x24;
   *pbVar1 = *pbVar1 | 0x80;

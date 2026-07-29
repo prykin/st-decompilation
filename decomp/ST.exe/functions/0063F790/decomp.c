@@ -7,7 +7,7 @@ int __fastcall FUN_0063f790(AnonShape_0063F790_F83B8A8C *param_1)
   float fVar1;
   short sVar2;
   int iVar3;
-  AnonShape_GLOBAL_00807598_0C6808FB *pAVar4;
+  ST3DSMAPContext *pSVar4;
   int iVar5;
   int iVar6;
   int iVar7;
@@ -63,9 +63,10 @@ int __fastcall FUN_0063f790(AnonShape_0063F790_F83B8A8C *param_1)
       fVar1 = (float)iVar5 * _DAT_007904f8;
       *(int *)(iVar11 + 0xc) = iVar7;
       *(float *)(iVar11 + 0x10) = fVar1 * _DAT_007904f0;
-      pAVar4 = (AnonShape_GLOBAL_00807598_0C6808FB *)param_1->field_0211;
-      fVar13 = FUN_006e3210(pAVar4,(iVar8 * pAVar4->field_0380) / 0xc9,
-                            (iVar7 * pAVar4->field_0380) / 0xc9);
+      pSVar4 = (ST3DSMAPContext *)param_1->field_0211;
+      fVar13 = ST3DSMAPContext::sub_006E3210
+                         (pSVar4,(iVar8 * pSVar4->field_0380) / 0xc9,
+                          (iVar7 * pSVar4->field_0380) / 0xc9);
       fVar1 = (float)fVar13;
       if (*(float *)(iVar11 + 0x10) <= fVar1) {
         if (fVar1 <= *(float *)(iVar11 + 0x10)) {
@@ -77,7 +78,7 @@ int __fastcall FUN_0063f790(AnonShape_0063F790_F83B8A8C *param_1)
           }
         }
         else {
-          FUN_006e8ba0((void *)param_1->field_0211,*(uint *)(iVar11 + 0x38));
+          Library::Ourlib::ST3DSMAP::SprClose((void *)param_1->field_0211,*(uint *)(iVar11 + 0x38));
           *(undefined4 *)(iVar11 + 0x38) = 0xffffffff;
           *(undefined4 *)(iVar11 + 0x34) = 0xffffffff;
         }
@@ -106,9 +107,10 @@ int __fastcall FUN_0063f790(AnonShape_0063F790_F83B8A8C *param_1)
       fVar1 = (float)iVar5 * _DAT_007904f8;
       *(int *)(iVar11 + 0xc) = iVar7;
       *(float *)(iVar11 + 0x10) = fVar1 * _DAT_007904f0;
-      pAVar4 = (AnonShape_GLOBAL_00807598_0C6808FB *)param_1->field_0211;
-      fVar13 = FUN_006e3210(pAVar4,(iVar8 * pAVar4->field_0380) / 0xc9,
-                            (iVar7 * pAVar4->field_0380) / 0xc9);
+      pSVar4 = (ST3DSMAPContext *)param_1->field_0211;
+      fVar13 = ST3DSMAPContext::sub_006E3210
+                         (pSVar4,(iVar8 * pSVar4->field_0380) / 0xc9,
+                          (iVar7 * pSVar4->field_0380) / 0xc9);
       fVar1 = (float)fVar13;
       if (fVar1 < *(float *)(iVar11 + 0x10)) {
         local_10 = local_10 + 1;
@@ -119,7 +121,7 @@ int __fastcall FUN_0063f790(AnonShape_0063F790_F83B8A8C *param_1)
         }
       }
       else {
-        FUN_006e8ba0((void *)param_1->field_0211,*(uint *)(iVar11 + 0x38));
+        Library::Ourlib::ST3DSMAP::SprClose((void *)param_1->field_0211,*(uint *)(iVar11 + 0x38));
         *(undefined4 *)(iVar11 + 0x38) = 0xffffffff;
         *(undefined4 *)(iVar11 + 0x34) = 0xffffffff;
       }
@@ -139,8 +141,9 @@ int __fastcall FUN_0063f790(AnonShape_0063F790_F83B8A8C *param_1)
       uVar9 = *(uint *)param_1->field_037F;
       if (-1 < (int)uVar9) {
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        FUN_006e9720((void *)param_1->field_0211,uVar9,
-                     (uint)*(byte *)((int)param_1->field_037F + 0x15) * 0x100 + DAT_008032b8);
+        Library::Ourlib::ST3DSMAP::FUN_006e9720
+                  ((void *)param_1->field_0211,uVar9,
+                   (uint)*(byte *)((int)param_1->field_037F + 0x15) * 0x100 + DAT_008032b8);
       }
     }
   }
@@ -188,13 +191,15 @@ int __fastcall FUN_0063f790(AnonShape_0063F790_F83B8A8C *param_1)
                            ) * _DAT_007904f8;
             *(int *)(iVar11 + 0xc) = iVar7;
             *(float *)(iVar11 + 0x10) = fVar1 * _DAT_007904f0;
-            pAVar4 = (AnonShape_GLOBAL_00807598_0C6808FB *)param_1->field_0211;
-            fVar13 = FUN_006e3210(pAVar4,(iVar8 * pAVar4->field_0380) / 0xc9,
-                                  (iVar7 * pAVar4->field_0380) / 0xc9);
+            pSVar4 = (ST3DSMAPContext *)param_1->field_0211;
+            fVar13 = ST3DSMAPContext::sub_006E3210
+                               (pSVar4,(iVar8 * pSVar4->field_0380) / 0xc9,
+                                (iVar7 * pSVar4->field_0380) / 0xc9);
             fVar1 = (float)fVar13;
             if (*(float *)(iVar11 + 0x10) <= fVar1) {
               if (*(float *)(iVar11 + 0x10) < fVar1) {
-                FUN_006e8ba0((void *)param_1->field_0211,*(uint *)(iVar11 + 0x38));
+                Library::Ourlib::ST3DSMAP::SprClose
+                          ((void *)param_1->field_0211,*(uint *)(iVar11 + 0x38));
                 *(undefined4 *)(iVar11 + 0x38) = 0xffffffff;
                 *(undefined4 *)(iVar11 + 0x34) = 0xffffffff;
                 goto LAB_0063fc75;

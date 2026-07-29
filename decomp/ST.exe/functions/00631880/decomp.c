@@ -8,7 +8,7 @@ uint __thiscall STManRuinC::sub_00631880(STManRuinC *this,undefined4 *param_1,un
 
 {
   uint uVar1;
-  DArrayTy *pDVar2;
+  STManRuinC_field_003CDArray *pSVar2;
   int iVar3;
   undefined4 *puVar4;
   undefined4 local_2c [8];
@@ -24,11 +24,12 @@ uint __thiscall STManRuinC::sub_00631880(STManRuinC *this,undefined4 *param_1,un
     }
     *(undefined1 *)puVar4 = *(undefined1 *)param_1;
     local_b = param_2;
-    if (this->field_003C == (DArrayTy *)0x0) {
-      pDVar2 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x25,10);
-      this->field_003C = pDVar2;
+    if (this->field_003C == (STManRuinC_field_003CDArray *)0x0) {
+      pSVar2 = (STManRuinC_field_003CDArray *)
+               Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x25,10);
+      this->field_003C = pSVar2;
     }
-    if (this->field_003C == (DArrayTy *)0x0) {
+    if (this->field_003C == (STManRuinC_field_003CDArray *)0x0) {
       uVar1 = 0xffffffff;
     }
     else {

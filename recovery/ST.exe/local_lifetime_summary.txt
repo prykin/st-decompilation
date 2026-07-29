@@ -1,0 +1,12 @@
+program=ST.exe
+functions_seen=5712
+merged_locals=9839
+merge_groups=48791
+groups_with_evidence=9773
+proposals=9773
+auto_apply=363
+review_or_existing=9410
+conflicts=220
+decompile_failures=0
+policy=Only distinct decompiler merge groups are considered. One exact typed return or typed copy is sufficient; call-argument evidence requires two agreeing anchors. Competing exact types are review-only.
+manual_safety=USER_DEFINED and IMPORTED HighSymbols are never enabled.

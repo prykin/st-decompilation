@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STTypeFamilyApplier] EXACT_ANONYMOUS_LAYOUT.
    Evidence: exact anonymous structure fingerprint shared across functions */
@@ -82,7 +84,7 @@ LAB_00631713:
                 puVar10 = puVar10 + 1;
                 psVar3 = psVar3 + 2;
               }
-              FUN_006e91d0(PTR_00807598,(int *)puVar4[4]);
+              ST3DSMAPContext::sub_006E91D0(g_sT3DSMAPContext_00807598,(int *)puVar4[4]);
               this_00 = local_c;
               iVar7 = STManRuinC::sub_00630AC0(local_c,uVar9);
               if (iVar7 == 0) {
@@ -99,7 +101,7 @@ LAB_00631713:
               }
               uVar6 = STManRuinC::sub_00631880(this_00,&this_00->field_0040,this_00->field_0061);
               if (((uVar6 == 0) && (this_00->field_0048 != 0)) && (this_00->field_0061 != 0)) {
-                FUN_006e8ba0(PTR_00807598,this_00->field_0061);
+                Library::Ourlib::ST3DSMAP::SprClose(g_sT3DSMAPContext_00807598,this_00->field_0061);
               }
               this_00->field_0061 = -1;
               return;

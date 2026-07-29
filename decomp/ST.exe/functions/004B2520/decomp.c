@@ -14,10 +14,11 @@ FUN_004b2520(uint param_1,int param_2,int param_3,int param_4,int param_5,undefi
   short sVar4;
   short sVar5;
   int iVar6;
-  uint uVar7;
+  int uVar7;
+  int iVar7;
   int iVar8;
   int iVar9;
-  int iVar10;
+  uint uVar10;
   undefined4 uVar11;
   short sVar12;
   int iVar13;
@@ -67,19 +68,19 @@ FUN_004b2520(uint param_1,int param_2,int param_3,int param_4,int param_5,undefi
   }
   else {
     uVar7 = GetPlayerRaceId((byte)param_1);
-    local_2c = *(int *)(&DAT_007e3f20 + ((uVar7 & 0xff) + param_2 * 3) * 4);
+    local_2c = *(int *)(&DAT_007e3f20 + ((uVar7 & 0xffU) + param_2 * 3) * 4);
 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 LAB_004b266b:
     uVar11 = g_worldGrid._0_4_;
     for (iVar6 = param_3 + -8; this = local_30, iVar6 <= param_3 + 8; iVar6 = iVar6 + 1) {
       if ((-1 < iVar6) && (iVar6 < (short)uVar11)) {
-        for (iVar9 = param_4 + -8; iVar9 <= param_4 + 8; iVar9 = iVar9 + 1) {
-          if (((-1 < iVar9) && (iVar9 < g_worldGrid.sizeY)) &&
+        for (iVar8 = param_4 + -8; iVar8 <= param_4 + 8; iVar8 = iVar8 + 1) {
+          if (((-1 < iVar8) && (iVar8 < g_worldGrid.sizeY)) &&
              (iVar13 = 0, 0 < g_worldGrid.sizeZ + -1)) {
             do {
               sVar4 = (short)iVar6;
               if ((((sVar4 < 0) || ((short)uVar11 <= sVar4)) ||
-                  ((sVar5 = (short)iVar9, sVar5 < 0 ||
+                  ((sVar5 = (short)iVar8, sVar5 < 0 ||
                    ((g_worldGrid.sizeY <= sVar5 || (sVar12 = (short)iVar13, sVar12 < 0)))))) ||
                  (g_worldGrid.sizeZ <= sVar12)) {
                 this = (STWorldObject *)0x0;
@@ -93,33 +94,33 @@ LAB_004b266b:
               if (((this != (STWorldObject *)0x0) && (this[1].vtable < (STWorldObjectVTable *)0x8))
                  && (((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
                       ((byte)(&DAT_008087e9)[(int)this[1].vtable * 0x51] < 8)) &&
-                     (iVar8 = this->GetObjectTypeId(), uVar11 = g_worldGrid._0_4_,
-                     iVar8 == 0x6f)))) {
+                     (iVar7 = this->GetObjectTypeId(), uVar11 = g_worldGrid._0_4_,
+                     iVar7 == 0x6f)))) {
                 bVar2 = *(byte *)&this[1].vtable;
                 if (DAT_00808a8f == '\0') {
                   if (bVar2 == (byte)param_1) {
 LAB_004b281d:
-                    iVar8 = 0;
+                    iVar7 = 0;
                   }
                   else {
-                    uVar7 = param_1 & 0xff;
-                    bVar3 = g_playerRelationMatrix[bVar2][uVar7];
-                    if ((bVar3 == 0) && (g_playerRelationMatrix[uVar7][bVar2] == 0)) {
-                      iVar8 = -2;
+                    uVar10 = param_1 & 0xff;
+                    bVar3 = g_playerRelationMatrix[bVar2][uVar10];
+                    if ((bVar3 == 0) && (g_playerRelationMatrix[uVar10][bVar2] == 0)) {
+                      iVar7 = -2;
                     }
-                    else if ((bVar3 == 1) && (g_playerRelationMatrix[uVar7][bVar2] == 0)) {
-                      iVar8 = -1;
+                    else if ((bVar3 == 1) && (g_playerRelationMatrix[uVar10][bVar2] == 0)) {
+                      iVar7 = -1;
                     }
-                    else if ((bVar3 == 0) && (g_playerRelationMatrix[uVar7][bVar2] == 1)) {
-                      iVar8 = 1;
+                    else if ((bVar3 == 0) && (g_playerRelationMatrix[uVar10][bVar2] == 1)) {
+                      iVar7 = 1;
                     }
                     else {
-                      if ((bVar3 != 1) || (g_playerRelationMatrix[uVar7][bVar2] != 1))
+                      if ((bVar3 != 1) || (g_playerRelationMatrix[uVar10][bVar2] != 1))
                       goto LAB_004b281d;
-                      iVar8 = 2;
+                      iVar7 = 2;
                     }
                   }
-                  bVar15 = iVar8 < 0;
+                  bVar15 = iVar7 < 0;
                 }
                 else {
                   bVar15 = (&DAT_008087ea)[(param_1 & 0xff) * 0x51] !=
@@ -165,7 +166,7 @@ LAB_004b288e:
       sVar4 = (short)uVar11;
     }
     if (sVar4 <= local_28) break;
-    iVar9 = 0;
+    iVar8 = 0;
     if (0 < g_worldGrid.sizeZ + -1) {
       do {
         if (local_68 <= local_64) {
@@ -173,27 +174,27 @@ LAB_004b288e:
           iVar13 = local_68;
           do {
             if ((-1 < iVar13) && (iVar13 < (short)uVar11)) {
-              iVar8 = local_68 + iVar6;
+              iVar7 = local_68 + iVar6;
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              if ((-1 < iVar8) &&
-                 ((iVar8 < g_worldGrid.sizeY &&
-                  (iVar10 = thunk_FUN_004b2390(param_1,iVar13,iVar8,iVar9,param_10,local_48),
-                  uVar11 = g_worldGrid._0_4_, iVar10 != 0)))) {
+              if ((-1 < iVar7) &&
+                 ((iVar7 < g_worldGrid.sizeY &&
+                  (iVar9 = thunk_FUN_004b2390(param_1,iVar13,iVar7,iVar8,param_10,local_48),
+                  uVar11 = g_worldGrid._0_4_, iVar9 != 0)))) {
                 *piVar14 = iVar13;
-                piVar14[1] = iVar8;
-                piVar14[2] = iVar9;
+                piVar14[1] = iVar7;
+                piVar14[2] = iVar8;
                 local_34 = local_34 + 1;
                 piVar14 = piVar14 + 3;
                 if (0xe < local_34) goto cf_common_exit_004B2601;
               }
-              iVar8 = local_64 + iVar6;
+              iVar7 = local_64 + iVar6;
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              if (((-1 < iVar8) && (iVar8 < g_worldGrid.sizeY)) &&
-                 (iVar10 = thunk_FUN_004b2390(param_1,iVar13,iVar8,iVar9,param_10,local_48),
-                 uVar11 = g_worldGrid._0_4_, iVar10 != 0)) {
+              if (((-1 < iVar7) && (iVar7 < g_worldGrid.sizeY)) &&
+                 (iVar9 = thunk_FUN_004b2390(param_1,iVar13,iVar7,iVar8,param_10,local_48),
+                 uVar11 = g_worldGrid._0_4_, iVar9 != 0)) {
                 *piVar14 = iVar13;
-                piVar14[1] = iVar8;
-                piVar14[2] = iVar9;
+                piVar14[1] = iVar7;
+                piVar14[2] = iVar8;
                 local_34 = local_34 + 1;
                 piVar14 = piVar14 + 3;
                 if (0xe < local_34) goto cf_common_exit_004B2601;
@@ -203,40 +204,40 @@ LAB_004b288e:
           } while (iVar13 <= local_64);
         }
         iVar13 = iVar6 + 1 + local_68;
-        iVar8 = iVar6 + -1 + local_64;
-        if (iVar13 <= iVar8) {
+        iVar7 = iVar6 + -1 + local_64;
+        if (iVar13 <= iVar7) {
           piVar14 = (int *)(&stack0xffffff7c + local_34 * 0xc);
           do {
             if ((-1 < iVar13) && (iVar13 < g_worldGrid.sizeY)) {
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               if ((-1 < local_68) &&
                  ((local_68 < (short)uVar11 &&
-                  (iVar10 = thunk_FUN_004b2390(param_1,local_68,iVar13,iVar9,param_10,local_48),
-                  uVar11 = g_worldGrid._0_4_, iVar10 != 0)))) {
+                  (iVar9 = thunk_FUN_004b2390(param_1,local_68,iVar13,iVar8,param_10,local_48),
+                  uVar11 = g_worldGrid._0_4_, iVar9 != 0)))) {
                 *piVar14 = local_68;
                 piVar14[1] = iVar13;
-                piVar14[2] = iVar9;
+                piVar14[2] = iVar8;
                 local_34 = local_34 + 1;
                 piVar14 = piVar14 + 3;
                 if (0xe < local_34) goto cf_common_exit_004B2601;
               }
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               if (((-1 < local_64) && (local_64 < (short)uVar11)) &&
-                 (iVar10 = thunk_FUN_004b2390(param_1,local_64,iVar13,iVar9,param_10,local_48),
-                 uVar11 = g_worldGrid._0_4_, iVar10 != 0)) {
+                 (iVar9 = thunk_FUN_004b2390(param_1,local_64,iVar13,iVar8,param_10,local_48),
+                 uVar11 = g_worldGrid._0_4_, iVar9 != 0)) {
                 *piVar14 = local_64;
                 piVar14[1] = iVar13;
-                piVar14[2] = iVar9;
+                piVar14[2] = iVar8;
                 local_34 = local_34 + 1;
                 piVar14 = piVar14 + 3;
                 if (0xe < local_34) goto cf_common_exit_004B2601;
               }
             }
             iVar13 = iVar13 + 1;
-          } while (iVar13 <= iVar8);
+          } while (iVar13 <= iVar7);
         }
-        iVar9 = iVar9 + 1;
-      } while (iVar9 < g_worldGrid.sizeZ + -1);
+        iVar8 = iVar8 + 1;
+      } while (iVar8 < g_worldGrid.sizeZ + -1);
     }
     local_28 = local_28 + 1;
     param_3 = local_68;

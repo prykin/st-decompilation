@@ -122,7 +122,7 @@ LAB_0047d831:
         uVar1 = this->field_001C * 0x41c64e6d + 0x3039;
         this->field_001C = uVar1;
         local_8 = (uVar1 >> 0x10) % 7 - 3;
-        if ((this->field_074A <= (int)*(short *)(DAT_00806724 + 0x23) / 2) &&
+        if ((this->field_074A <= (int)PTR_00806724->entryCount / 2) &&
            (local_c = 0, this->field_02BF != '\0')) {
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_1 = (undefined4 *)&this->field_0x2b3;

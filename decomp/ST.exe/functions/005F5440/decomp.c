@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STReturnSemanticsApplier] ignored_eax_void.
@@ -73,21 +75,24 @@ void __fastcall FUN_005f5440(AnonShape_005F5440_D27C3BDE *param_1)
                             (pVVar4->field_0034 <= iVar6)) || (pVVar4->field_004C == (byte *)0x0))
                           || (pVVar4->field_004C[local_10 + iVar6 * pVVar4->field_0030] != 0)))))) {
               if (pcVar7[0x1e] == '\0') {
-                FUN_006eaaa0(PTR_00807598,*(uint *)(pcVar7 + 0x1f),0);
+                Library::Ourlib::ST3DSMAP::SprShow
+                          (g_sT3DSMAPContext_00807598,*(uint *)(pcVar7 + 0x1f),0);
                 pcVar7[0x1e] = '\x01';
               }
             }
             else if (pcVar7[0x1e] != '\0') {
-              FUN_006eab60(PTR_00807598,*(uint *)(pcVar7 + 0x1f));
+              Library::Ourlib::ST3DSMAP::SprHide
+                        (g_sT3DSMAPContext_00807598,*(uint *)(pcVar7 + 0x1f));
               pcVar7[0x1e] = '\0';
             }
           }
-          FUN_006ea270(PTR_00807598,*(uint *)(pcVar7 + 0x1f),0,*(uint *)(pcVar7 + 0xe));
-          FUN_006ea960(PTR_00807598,*(uint *)(pcVar7 + 0x1f),
-                       (float)*(int *)(pcVar7 + 2) * _DAT_007904f8 * _DAT_007904f0,
-                       (float)*(int *)(pcVar7 + 6) * _DAT_007904f8 * _DAT_007904f0,
-                       (float)*(int *)(pcVar7 + 10) * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc)
-          ;
+          ST3DSMAPContext::sub_006EA270
+                    (g_sT3DSMAPContext_00807598,*(uint *)(pcVar7 + 0x1f),0,*(uint *)(pcVar7 + 0xe));
+          Library::Ourlib::ST3DSMAP::SprMove
+                    (g_sT3DSMAPContext_00807598,*(uint *)(pcVar7 + 0x1f),
+                     (float)*(int *)(pcVar7 + 2) * _DAT_007904f8 * _DAT_007904f0,
+                     (float)*(int *)(pcVar7 + 6) * _DAT_007904f8 * _DAT_007904f0,
+                     (float)*(int *)(pcVar7 + 10) * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
         }
         local_c = local_c + 1;
       } while ((int)local_c < (int)dVar1);

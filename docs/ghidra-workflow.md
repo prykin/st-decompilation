@@ -91,6 +91,10 @@ hashes, stale baselines, and transaction boundaries. Optional curated/audit
 inputs are skipped when absent. A failing step stops the sequence before any
 downstream applier can consume stale output.
 
+The regression gate compares exported bodies by function address. A body may
+leave the corpus only when that same function is now explicitly classified as
+`LIBRARY`; all other per-address body losses remain hard regressions.
+
 Before the first pipeline mutation, Ghidra's configured Java script provider is
 asked to load every repository `ST*.java` source. Results and source hashes are
 appended immediately to `build_manifest.tsv`, with full provider diagnostics
@@ -555,9 +559,61 @@ structural until independent evidence names it.
    - File: `<repo>/recovery/ST.exe/class_layout_proposals.tsv`
    - The sibling `class_field_proposals.tsv` and, when present,
      `class_nested_{type,field}_proposals.tsv` files are loaded automatically.
-9. Rerun the class-array/class-layout sequence once. New constructor ownership can expose
+9. Run `STDArrayElementAnalyzer`.
+   - Directory: `<repo>/recovery`
+   - It combines an exact constant `DArrayCreate` element size with element
+     aliases formed by `array->elementSize * index + array->data`.
+   - When a creator receives `&owner->field_X` plus a closing adjacent owner
+     field whose extent exactly equals the element size, the analyzer also
+     treats the DArray element as a snapshot of that inline record. Existing
+     member types and compiler-independent consumer roles (`state`, index,
+     handle, and coordinate arguments) are propagated into the element
+     proposal; ambiguous roles retain offset-based names.
+10. Run `STDArrayElementApplier`.
+    - File: `<repo>/recovery/ST.exe/darray_element_proposals.tsv`
+    - The sibling `darray_element_field_proposals.tsv` and
+      `darray_element_local_proposals.tsv` are loaded automatically.
+   - A local proposal either covers one decompiler SSA lifetime whose
+     assignments are all matching runtime-stride element addresses or null, or
+     requests an exact merge-group split at the DArray-address assignment when
+     the same printed local is reused for unrelated pointer roles. The applier
+     persists only that HighSymbol as `Element *`, preserving any existing
+     user/imported local. Results are written separately to
+     `darray_element_local_apply_report.tsv`.
+   - `assignment_address` is the stable locator for a split proposal. The
+     `rendered_alias` column remains diagnostic only: names such as `puVar6`
+     and `puVar10` can change after any decompiler/type update.
+   - The applier commits element/descriptor layouts before it decompiles and
+     hashes local SSA lifetimes. It then commits locals in a second transaction
+     and verifies every reported `applied` row against another fresh
+     `HighFunction`. Obsolete script-owned dynamic locals left by an earlier
+     pre-layout hash are removed; a DB local which does not reattach is reported
+     as `conflict`, never as a successful application.
+      The generic `DArrayTy` ABI is not changed. One descriptor specialization
+      is created per owning class field, and only its `data` member becomes a
+      pointer to that field's recovered packed element record.
+11. Run `STLocalLifetimeAnalyzer`, then `STLocalLifetimeApplier`.
+    - Analyzer directory: `<repo>/recovery`
+    - Applier file:
+      `<repo>/recovery/ST.exe/local_lifetime_proposals.tsv`
+    - This is the general compiler-reuse pass. It considers only one rendered
+      local whose decompiler `HighVariable` contains several distinct merge
+      groups. A typed direct-call return or a copy from a typed
+      parameter/global is an exact anchor; call-argument evidence requires two
+      agreeing callsites because one argument can be an implicit conversion.
+    - Every proposal is anchored by function address, p-code address/time, and
+      operand. The applier invokes the same `splitOutMergeGroup` operation as
+      Ghidra's **Split Out As New Variable**, persists only the isolated
+      lifetime, and then performs a fresh decompile. It reports `applied` only
+      when the database symbol reattaches to that exact anchor and contains one
+      merge group. Competing types and inseparable groups remain review-only;
+      `USER_DEFINED` and `IMPORTED` locals are preserved.
+    - The DArray pair remains separate and runs first: a runtime stride and
+      recovered element layout are stronger type evidence than a generic
+      call/copy anchor.
+12. Rerun the class-array/class-layout/DArray-element sequence once. New constructor ownership can expose
    additional `this + offset` accesses even when no new class is created.
-10. Rerun `STObjectFactoryAnalyzer` and `STObjectFactoryApplier`. The completed
+13. Rerun `STObjectFactoryAnalyzer` and `STObjectFactoryApplier`. The completed
    class layouts can turn additional generic `void *` factories into exact
    `Owner *` results and stable `CreateOwner` names.
 
@@ -593,6 +649,14 @@ subsequently used as a memory base. Multiple consistent child offsets create a
 separate `ClassPointees/AnonPointee_*` structure and type the parent field as a
 pointer. The characteristic `DArrayTy` `+0x8`/`+0x0c`/`+0x1c` layout is mapped
 to the existing semantic type instead of creating an anonymous duplicate.
+The DArray-element pair then specializes only class fields backed by one exact
+factory element size and multiple non-overlapping uses. For example, a
+`void *` computed through the runtime stride can become
+`Owner_field_0038Element *`, so `*(T **)((int)value + 0x10)` folds to a named
+record member. The element count remains dynamic; the scripts never replace
+the container with a static C array. Generated descriptors, element records,
+and owner layouts are independently hash-protected, and the class pass treats a
+specialized descriptor as compatible with its generic `DArrayTy` evidence.
 
 Constructor convention recovery is deliberately conservative. A receiver-only
 `__fastcall` candidate is converted to `__thiscall` only when the body reads
@@ -981,6 +1045,13 @@ the decompiler can infer its SSA lifetimes independently. Manual/imported
 locals are preserved. The current pointer-shape analyzer will not auto-type
 locals in such unsettled functions again.
 
+`STLocalLifetimeAnalyzer/Applier` handles the complementary positive case. If
+Ghidra already separated reused storage into distinct merge groups and one
+group has an independent exact semantic type anchor, the pair persists a
+different type for only that lifetime. Physical register/stack reuse is not
+itself evidence: same-group values, competing anchors, and a dynamic local
+which reattaches anywhere except its original machine address are rejected.
+
 `STAbiConsistencyAnalyzer` separately repairs polluted incoming parameter roles.
 A generic `undefined *` parameter becomes `int`/`uint` only when its machine
 lifetime before the first write to the physical argument slot contains multiple
@@ -1170,6 +1241,16 @@ Source comments and names have independent flags. Diagnostic line numbers
 identify the location of the embedded report/assert site, not necessarily the
 original function definition line.
 
+A second strict path recovers free-function names even when the source literal
+is not referenced by every function. It requires one mixed-case identifier,
+one following call target, and at least four distinct name/function pairs
+feeding the same machine-verified diagnostic sink. The sink must consume a
+stack argument, clean it with `RET n`, and contain the terminal debug trap
+pattern; ordinary resource loaders therefore cannot qualify. A preceding
+source-file literal within the bounded string cluster supplies module
+provenance but never an invented line number. This recovers families such as
+`SprClose`, `SprSetMask`, and `SprMove` from their actual diagnostic arguments.
+
 Run this before the final library applier. Source-provenance analysis skips
 functions already tagged as libraries.
 
@@ -1229,6 +1310,12 @@ The switch analyzer is the exception: it continues to inspect internal
 `OURLIB_*` functions so their enum/state domains remain stable across reruns.
 Keep the richer pre-library proposal files for the other analyzers unless the
 purpose of the rerun is specifically to analyze only game-owned code.
+
+The pipeline makes one deliberate exception: immediately after final library
+classification it reruns global-data and pointer-shape propagation. Those passes
+inspect game-owned callers of the newly tagged callees and can therefore promote
+a high-fanout `PTR_*` singleton to the dominant generated library context in the
+same full run. They still skip the newly hidden library implementations.
 
 ### 12. Export the text corpus
 
@@ -1368,6 +1455,8 @@ a new conflict is what requires another iteration.
 | `STConstructorAnalyzer/Applier` | Recover constructors, allocation sizes, direct hierarchy evidence, receiver-only signatures, and ABI `Owner *` returns when EAX is proven to return `this`. |
 | `STClassLayoutAnalyzer/Applier` | Build and revalidate conservative class layouts, including fields reached after stable prologue `this` spills, dynamic byte/word buffers, nested class-field pointee layouts, semantic field-type/name proposals, and packed initialization writes between an allocator/factory return and its store into an already typed singleton. |
 | `STClassArrayAnalyzer` | Prove fixed arrays embedded in generated class layouts from bounded indexed accesses and exact pointer-walk loops, and recover a selected pointer element's pointee width from its subsequent dereference; `STClassLayoutAnalyzer/Applier` consumes the proposals. |
+| `STDArrayElementAnalyzer/Applier` | Recover one packed element record and one ABI-compatible descriptor specialization per generated class `DArrayTy` field from exact factory element sizes, runtime-stride aliases, exact inline-record snapshots, typed consumer parameters, and conservative state/index/handle/coordinate roles. |
+| `STLocalLifetimeAnalyzer/Applier` | Split compiler-reused decompiler locals at distinct merge groups and persist only independently type-anchored lifetimes; verify the exact machine anchor after a fresh decompile. |
 | `STMethodOwnerAnalyzer/Applier` | Assign structural class ownership to non-virtual methods, use typed global-singleton values passed in ECX as owner evidence, and repair weak script-owned assignments to high-fanout shared helpers; it participates in the deep fixed point after global typing. |
 | `STHiddenThisAnalyzer/Applier` | Recover anonymous `__thiscall` receivers from ECX/RET/call-site evidence with neutral structural owners required by Ghidra. |
 | `STDestructorAnalyzer/Applier` | Recover conservative destructor and scalar-deleting-destructor candidates. |
@@ -1389,12 +1478,12 @@ a new conflict is what requires another iteration.
 | `STTypeFamilyAnalyzer/Applier` | Promote anonymous layouts to one explicit semantic anchor, propagate named aggregate returns, and give complete one-owner generated records deterministic contextual names without geometry merging. Anonymous-to-anonymous consolidation is limited to exact HiddenThis layouts with one unique multi-function receiver namespace. |
 | `STTypeLifecycleAnalyzer/Applier` | Replace legacy views with one equivalent semantic anchor, consolidate an exact orphan HiddenThis duplicate into its unique namespace-backed receiver family, and remove unreferenced, hash-owned anonymous PointerShape/ClassPointee/HiddenThis types after zero-parent/signature/Listing-use revalidation. |
 | `STEvidenceLedger` | Record/verify a deterministic semantic Program fingerprint and hashes of every proposal/apply artifact plus monotonic enum state before export; retain the volatile modification counter for diagnostics only. |
-| `STSourceProvenanceAnalyzer/Applier` | Attach original source files and strict free-function names. |
+| `STSourceProvenanceAnalyzer/Applier` | Attach original source files and strict free-function names, including unique identifiers passed to repeated machine-verified diagnostic sinks and bounded source-string clusters. |
 | `STThunkPropagationAnalyzer/Applier` | Audit transparent direct-JMP thunks, preserve normal Ghidra target forwarding, and release only exact redundant manual `TargetName_thunk` symbols after full ABI and stale-baseline validation; delegated target signatures are never mutated. |
 | `STControlFlowLabelAnalyzer/Applier` | Give structural names to real decompiler goto targets. |
 | `STLibraryAnalyzer/Applier` | Classify linked CRT, DKW, and internal Ourlib implementations. |
 | `STExportRegressionGate` | Compare a fresh corpus with the prior central-index snapshot, report per-function quality deltas, reject exact structural/critical regressions, and write a reproducible export receipt. |
-| `STDecompExport` | Export the address-stable, dependency-fingerprinted LLM corpus, resolved thunk/call relations, and executable coverage gaps; inline proven immutable strings, normalize terminal traps, compiler bulk-zero loops, and exact C++ virtual-call sugar, and catalogue stage-aware pseudocode and quality debt. |
+| `STDecompExport` | Export the address-stable, dependency-fingerprinted LLM corpus, resolved thunk/call relations, and executable coverage gaps; inline proven immutable strings; normalize terminal traps, compiler bulk-zero loops, exact C++ virtual-call sugar, and exact recovered DArray element lifetimes without persistently typing reused SSA storage; catalogue stage-aware pseudocode and quality debt. |
 
 ## Git and Ghidra database hygiene
 

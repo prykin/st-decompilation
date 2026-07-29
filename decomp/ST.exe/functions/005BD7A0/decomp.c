@@ -17,12 +17,15 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,undefined1 param_1)
   ushort *puVar5;
   undefined4 uVar6;
   ccFntTy *pcVar7;
-  uint uVar8;
-  AnonPointee_MReportTy_0077 *pAVar9;
-  AnonShape_006B5B10_E0D06CF1 *pAVar10;
-  DArrayTy *pDVar11;
-  char *pcVar12;
-  HoloTy *pHVar13;
+  int local_EAX_485;
+  AnonPointee_MReportTy_0077 *pAVar8;
+  int uVar8;
+  int local_EAX_565;
+  AnonShape_006B5B10_E0D06CF1 *pAVar9;
+  DArrayTy *pDVar10;
+  char *pcVar11;
+  HoloTy *pHVar12;
+  uint uVar13;
   uint uVar14;
   uint *puVar15;
   int *piVar16;
@@ -109,11 +112,12 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,undefined1 param_1)
   pcVar7->field_005C = 0;
   iVar3 = 1;
   puVar19 = (undefined4 *)(this_01->field_005D + 0x28);
-  uVar8 = FUN_006b4fe0(this_01->field_005D);
+  local_EAX_485 = FUN_006b4fe0(this_01->field_005D);
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  pAVar9 = (AnonPointee_MReportTy_0077 *)
-           FUN_006b50c0(0x91,0x28,(uint)*(ushort *)(this_01->field_005D + 0xe),uVar8,puVar19,iVar3);
-  this_01->field_0077 = pAVar9;
+  pAVar8 = (AnonPointee_MReportTy_0077 *)
+           FUN_006b50c0(0x91,0x28,(uint)*(ushort *)(this_01->field_005D + 0xe),local_EAX_485,puVar19
+                        ,iVar3);
+  this_01->field_0077 = pAVar8;
   iVar3 = 1;
   puVar19 = (undefined4 *)(this_01->field_005D + 0x28);
   uVar8 = FUN_006b4fe0(this_01->field_005D);
@@ -122,13 +126,13 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,undefined1 param_1)
   this_01->field_007B = uVar6;
   iVar3 = 1;
   puVar19 = (undefined4 *)(this_01->field_005D + 0x28);
-  uVar8 = FUN_006b4fe0(this_01->field_005D);
+  local_EAX_565 = FUN_006b4fe0(this_01->field_005D);
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  pAVar10 = (AnonShape_006B5B10_E0D06CF1 *)
-            FUN_006b50c0(0x2e9,0x15e,(uint)*(ushort *)(this_01->field_005D + 0xe),uVar8,puVar19,
-                         iVar3);
-  this_01->field_0073 = (AnonPointee_MReportTy_0073 *)pAVar10;
-  FUN_006b4170(pAVar10,0,0,0,0x2e9,0x15e,0xff);
+  pAVar9 = (AnonShape_006B5B10_E0D06CF1 *)
+           FUN_006b50c0(0x2e9,0x15e,(uint)*(ushort *)(this_01->field_005D + 0xe),local_EAX_565,
+                        puVar19,iVar3);
+  this_01->field_0073 = (AnonPointee_MReportTy_0073 *)pAVar9;
+  FUN_006b4170(pAVar9,0,0,0,0x2e9,0x15e,0xff);
   FUN_006b5ee0((AnonShape_006B5B10_E0D06CF1 *)this_01->field_0073,0,0x2d,0,700,0x15e,0x18,0xd);
   Library::Ourlib::PALETTE::FUN_00718780
             ((int)local_6a4,0,0x100,0x1a,0x10,(undefined4 *)&this_01->field_0xa3);
@@ -153,8 +157,8 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,undefined1 param_1)
     ppDVar17 = &this_01->field_0347;
     iVar3 = 3;
     do {
-      pDVar11 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0x18,4,0x18);
-      *ppDVar17 = pDVar11;
+      pDVar10 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0x18,4,0x18);
+      *ppDVar17 = pDVar10;
       ppDVar17 = ppDVar17 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
@@ -171,44 +175,43 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,undefined1 param_1)
     g_currentExceptionFrame = local_a0.previous;
     if (local_14 != (cMf32 *)0x0) {
       memset((void *)local_2a4, 0, 0x201); /* compiler bulk-zero initialization */
-      uVar8 = 0xffffffff;
+      uVar13 = 0xffffffff;
       local_2a4[0] = 0xc;
-      pcVar12 = PTR_DAT_0079c0dc;
+      pcVar11 = PTR_DAT_0079c0dc;
       do {
-        pcVar20 = pcVar12;
-        if (uVar8 == 0) break;
-        uVar8 = uVar8 - 1;
-        pcVar20 = pcVar12 + 1;
-        cVar23 = *pcVar12;
-        pcVar12 = pcVar20;
+        pcVar20 = pcVar11;
+        if (uVar13 == 0) break;
+        uVar13 = uVar13 - 1;
+        pcVar20 = pcVar11 + 1;
+        cVar23 = *pcVar11;
+        pcVar11 = pcVar20;
       } while (cVar23 != '\0');
-      uVar8 = ~uVar8;
-      pcVar12 = pcVar20 + -uVar8;
+      uVar13 = ~uVar13;
+      pcVar11 = pcVar20 + -uVar13;
       ppDVar17 = (DArrayTy **)(local_2a4 + 1);
-      for (uVar14 = uVar8 >> 2; uVar14 != 0; uVar14 = uVar14 - 1) {
-        *ppDVar17 = *(DArrayTy **)pcVar12;
-        pcVar12 = pcVar12 + 4;
+      for (uVar14 = uVar13 >> 2; uVar14 != 0; uVar14 = uVar14 - 1) {
+        *ppDVar17 = *(DArrayTy **)pcVar11;
+        pcVar11 = pcVar11 + 4;
         ppDVar17 = ppDVar17 + 1;
       }
-      for (uVar8 = uVar8 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
-        *(char *)ppDVar17 = *pcVar12;
-        pcVar12 = pcVar12 + 1;
+      for (uVar13 = uVar13 & 3; uVar13 != 0; uVar13 = uVar13 - 1) {
+        *(char *)ppDVar17 = *pcVar11;
+        pcVar11 = pcVar11 + 1;
         ppDVar17 = (DArrayTy **)((int)ppDVar17 + 1);
       }
       local_c = (DArrayTy **)(local_2a4 + 1);
       cMf32::ToBeg(pcVar2,FUN_006f2d10,local_2a4);
       pcVar2 = local_14;
-      pcVar12 = (char *)cMf32::RecNameGetNext(local_14);
-      while (pcVar12 != (char *)0x0) {
+      pcVar11 = (char *)cMf32::RecNameGetNext(local_14);
+      while (pcVar11 != (char *)0x0) {
         local_10 = 0;
         local_c = (DArrayTy **)0x0;
         wsprintfA((LPSTR)&DAT_0080f33a,"%s%s",PTR_DAT_0079c0dc,"%01d%02d");
-        iVar3 = Library::MSVCRT::FUN_0072ee80(pcVar12,(byte *)&DAT_0080f33a);
+        iVar3 = Library::MSVCRT::FUN_0072ee80(pcVar11,(byte *)&DAT_0080f33a);
         if (((iVar3 == 2) && (local_10 != 0)) && (local_10 < 4)) {
-          Library::DKW::TBL::FUN_006ae1c0(*(uint **)(&this_01->field_0x343 + local_10 * 4),&local_c)
-          ;
+          Library::DKW::TBL::FUN_006ae1c0(*(uint **)(&this_01->field_0x343 + local_10 * 4),&local_c);
         }
-        pcVar12 = (char *)cMf32::RecNameGetNext(pcVar2);
+        pcVar11 = (char *)cMf32::RecNameGetNext(pcVar2);
       }
       cMf32::delete(pcVar2);
     }
@@ -217,30 +220,30 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,undefined1 param_1)
       local_8 = 0;
       local_10 = 3;
       do {
-        uVar8 = 0;
+        uVar13 = 0;
         if ((*local_c)->count != 1 && -1 < (int)((*local_c)->count - 1)) {
           do {
-            pDVar11 = *local_c;
-            if (uVar8 < pDVar11->count) {
-              /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar11, uVar8) (runtime stride) */
-              puVar18 = (uint *)(pDVar11->elementSize * uVar8 + (int)pDVar11->data);
+            pDVar10 = *local_c;
+            if (uVar13 < pDVar10->count) {
+              /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar10, uVar13) (runtime stride) */
+              puVar18 = (uint *)(pDVar10->elementSize * uVar13 + (int)pDVar10->data);
             }
             else {
               puVar18 = (uint *)0x0;
             }
-            uVar14 = uVar8 + 1;
-            if (uVar14 < pDVar11->count) {
-              /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar11, uVar14) (runtime stride) */
-              puVar15 = (uint *)(pDVar11->elementSize * uVar14 + (int)pDVar11->data);
+            uVar14 = uVar13 + 1;
+            if (uVar14 < pDVar10->count) {
+              /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar10, uVar14) (runtime stride) */
+              puVar15 = (uint *)(pDVar10->elementSize * uVar14 + (int)pDVar10->data);
             }
             else {
               puVar15 = (uint *)0x0;
             }
             if (*puVar15 < *puVar18) {
-              FUN_006b0cd0((AnonShape_00413AF0_B6B4EE9A *)pDVar11,uVar8,uVar14);
+              FUN_006b0cd0((AnonShape_00413AF0_B6B4EE9A *)pDVar10,uVar13,uVar14);
               local_8 = 1;
             }
-            uVar8 = uVar14;
+            uVar13 = uVar14;
           } while ((int)uVar14 < (int)((*local_c)->count - 1));
         }
         local_c = local_c + 1;
@@ -273,41 +276,41 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,undefined1 param_1)
   FUN_006b2330(g_ddxContext_008075A8,&local_8,0x32,0x403099,0x2bd,0x15e,
                (ushort *)&g_startSystem_0081176C->field_0140);
   Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,local_8,0xffffffff,0x47,0x46);
-  pHVar13 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
-  if (pHVar13 == (HoloTy *)0x0) {
-    pHVar13 = (HoloTy *)0x0;
+  pHVar12 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
+  if (pHVar12 == (HoloTy *)0x0) {
+    pHVar12 = (HoloTy *)0x0;
   }
   else {
-    pHVar13->field_0002 = 1;
-    pHVar13->field_0000 = 0;
-    pHVar13->field_0003 = -1;
-    pHVar13->field_0001 = CASE_2;
-    pHVar13->field_0007 = 0;
-    pHVar13->field_000B = (void *)0x0;
-    pHVar13->field_000F = 0;
-    pHVar13->field_001B = 1;
-    pHVar13->field_0013 = 1;
-    pHVar13->field_0017 = -1;
-    pHVar13->field_0027 = 0;
-    pHVar13->field_0023 = 0;
-    pHVar13->field_002F = 1;
-    pHVar13->field_002B = 1;
+    pHVar12->field_0002 = 1;
+    pHVar12->field_0000 = 0;
+    pHVar12->field_0003 = -1;
+    pHVar12->field_0001 = CASE_2;
+    pHVar12->field_0007 = 0;
+    pHVar12->field_000B = (void *)0x0;
+    pHVar12->field_000F = 0;
+    pHVar12->field_001B = 1;
+    pHVar12->field_0013 = 1;
+    pHVar12->field_0017 = -1;
+    pHVar12->field_0027 = 0;
+    pHVar12->field_0023 = 0;
+    pHVar12->field_002F = 1;
+    pHVar12->field_002B = 1;
   }
-  this_01->field_0453 = pHVar13;
-  if (pHVar13 != (HoloTy *)0x0) {
-    uVar8 = 0;
+  this_01->field_0453 = pHVar12;
+  if (pHVar12 != (HoloTy *)0x0) {
+    uVar13 = 0;
     cVar23 = '\x01';
     bVar22 = 0x10;
     iVar21 = 1;
     iVar3 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,0x47,0x46,0x2bd,0x15e);
-    uVar8 = HoloTy::Init(this_01->field_0453,CASE_2,0x47,0x46,iVar3,iVar21,bVar22,cVar23,uVar8);
-    if (uVar8 != 0) {
-      pHVar13 = this_01->field_0453;
-      pHVar13->field_0002 = 1;
-      pHVar13->field_0017 = pHVar13->field_0013;
-      uVar8 = this_01->field_0453->field_0003;
-      if (-1 < (int)uVar8) {
-        FUN_006b3af0((int *)g_ddxContext_008075A8,uVar8);
+    uVar13 = HoloTy::Init(this_01->field_0453,CASE_2,0x47,0x46,iVar3,iVar21,bVar22,cVar23,uVar13);
+    if (uVar13 != 0) {
+      pHVar12 = this_01->field_0453;
+      pHVar12->field_0002 = 1;
+      pHVar12->field_0017 = pHVar12->field_0013;
+      uVar13 = this_01->field_0453->field_0003;
+      if (-1 < (int)uVar13) {
+        FUN_006b3af0((int *)g_ddxContext_008075A8,uVar13);
       }
     }
   }
@@ -317,41 +320,41 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,undefined1 param_1)
   }
   FUN_006b2330(g_ddxContext_008075A8,&local_8,0x32,0x401217,0x2e9,0x32,(ushort *)this_01);
   Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,local_8,0xffffffff,0x1a,10);
-  pHVar13 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
-  if (pHVar13 == (HoloTy *)0x0) {
-    pHVar13 = (HoloTy *)0x0;
+  pHVar12 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
+  if (pHVar12 == (HoloTy *)0x0) {
+    pHVar12 = (HoloTy *)0x0;
   }
   else {
-    pHVar13->field_0002 = 1;
-    pHVar13->field_0000 = 0;
-    pHVar13->field_0003 = -1;
-    pHVar13->field_0001 = CASE_2;
-    pHVar13->field_0007 = 0;
-    pHVar13->field_000B = (void *)0x0;
-    pHVar13->field_000F = 0;
-    pHVar13->field_001B = 1;
-    pHVar13->field_0013 = 1;
-    pHVar13->field_0017 = -1;
-    pHVar13->field_0027 = 0;
-    pHVar13->field_0023 = 0;
-    pHVar13->field_002F = 1;
-    pHVar13->field_002B = 1;
+    pHVar12->field_0002 = 1;
+    pHVar12->field_0000 = 0;
+    pHVar12->field_0003 = -1;
+    pHVar12->field_0001 = CASE_2;
+    pHVar12->field_0007 = 0;
+    pHVar12->field_000B = (void *)0x0;
+    pHVar12->field_000F = 0;
+    pHVar12->field_001B = 1;
+    pHVar12->field_0013 = 1;
+    pHVar12->field_0017 = -1;
+    pHVar12->field_0027 = 0;
+    pHVar12->field_0023 = 0;
+    pHVar12->field_002F = 1;
+    pHVar12->field_002B = 1;
   }
-  this_01->field_0457 = pHVar13;
-  if (pHVar13 != (HoloTy *)0x0) {
-    uVar8 = 0;
+  this_01->field_0457 = pHVar12;
+  if (pHVar12 != (HoloTy *)0x0) {
+    uVar13 = 0;
     cVar23 = '\x01';
     bVar22 = 0x10;
     iVar21 = 1;
     iVar3 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,0x1a,10,0x2e9,0x32);
-    uVar8 = HoloTy::Init(this_01->field_0457,CASE_3,0x1a,10,iVar3,iVar21,bVar22,cVar23,uVar8);
-    if (uVar8 != 0) {
-      pHVar13 = this_01->field_0457;
-      pHVar13->field_0002 = 1;
-      pHVar13->field_0017 = pHVar13->field_0013;
-      uVar8 = this_01->field_0457->field_0003;
-      if (-1 < (int)uVar8) {
-        FUN_006b3af0((int *)g_ddxContext_008075A8,uVar8);
+    uVar13 = HoloTy::Init(this_01->field_0457,CASE_3,0x1a,10,iVar3,iVar21,bVar22,cVar23,uVar13);
+    if (uVar13 != 0) {
+      pHVar12 = this_01->field_0457;
+      pHVar12->field_0002 = 1;
+      pHVar12->field_0017 = pHVar12->field_0013;
+      uVar13 = this_01->field_0457->field_0003;
+      if (-1 < (int)uVar13) {
+        FUN_006b3af0((int *)g_ddxContext_008075A8,uVar13);
       }
     }
   }
@@ -361,13 +364,13 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,undefined1 param_1)
   this_01->field_0065 = 3;
   thunk_FUN_0055ddf0((undefined4 *)g_dDXContext_0080759C,(int *)g_ddxContext_008075A8,
                      (ushort *)this_01->field_005D,10,2);
-  pHVar13 = this_01->field_0457;
-  if (((pHVar13 != (HoloTy *)0x0) && (pHVar13->field_0000 != '\0')) && (-1 < pHVar13->field_0003)) {
-    Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,pHVar13->field_0003);
+  pHVar12 = this_01->field_0457;
+  if (((pHVar12 != (HoloTy *)0x0) && (pHVar12->field_0000 != '\0')) && (-1 < pHVar12->field_0003)) {
+    Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,pHVar12->field_0003);
   }
-  pHVar13 = this_01->field_0453;
-  if (((pHVar13 != (HoloTy *)0x0) && (pHVar13->field_0000 != '\0')) && (-1 < pHVar13->field_0003)) {
-    Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,pHVar13->field_0003);
+  pHVar12 = this_01->field_0453;
+  if (((pHVar12 != (HoloTy *)0x0) && (pHVar12->field_0000 != '\0')) && (-1 < pHVar12->field_0003)) {
+    Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,pHVar12->field_0003);
   }
   this_00 = g_cursorClass_00802A30;
   if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {

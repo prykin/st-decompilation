@@ -347,8 +347,7 @@ LAB_005d97ca:
           local_8 = (uint *)0x0;
         }
         FUN_006b4170((AnonShape_006B5B10_E0D06CF1 *)this_00->field_1CB8,0,
-                     (message->arg1).words.low + 3,(message->arg1).words.high + 0x15,0x142,0xe,0xff)
-        ;
+                     (message->arg1).words.low + 3,(message->arg1).words.high + 0x15,0x142,0xe,0xff);
         puVar6 = this_00->field_1CBC;
         local_c = *(dword *)(puVar6 + 10);
         if (local_c == 0) {

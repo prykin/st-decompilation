@@ -13,12 +13,12 @@ void __thiscall HelpPanelTy::TipProc(HelpPanelTy *this,void *param_1,int param_2
   code *pcVar3;
   HelpPanelTy *this_00;
   char *pcVar4;
+  int uVar10;
   LPSTR pCVar5;
-  uint uVar6;
-  uint *puVar7;
-  byte bVar8;
-  int iVar9;
-  uint uVar10;
+  uint *puVar6;
+  byte bVar7;
+  int iVar8;
+  uint uVar9;
   uint uVar11;
   char *pcVar12;
   int *piVar13;
@@ -37,14 +37,14 @@ void __thiscall HelpPanelTy::TipProc(HelpPanelTy *this,void *param_1,int param_2
   local_c = 0;
   local_78.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_78;
-  iVar9 = Library::MSVCRT::__setjmp3(local_78.jumpBuffer,0);
+  iVar8 = Library::MSVCRT::__setjmp3(local_78.jumpBuffer,0);
   this_00 = local_10;
-  if (iVar9 != 0) {
+  if (iVar8 != 0) {
     g_currentExceptionFrame = local_78.previous;
-    iVar14 = ReportDebugMessage("E:\\__titans\\Andrey\\helppan.cpp",0x973,0,iVar9,
+    iVar14 = ReportDebugMessage("E:\\__titans\\Andrey\\helppan.cpp",0x973,0,iVar8,
                                 "%s","HelpPanelTy::TipProc");
     if (iVar14 == 0) {
-      RaiseInternalException(iVar9,0,"E:\\__titans\\Andrey\\helppan.cpp",0x973);
+      RaiseInternalException(iVar8,0,"E:\\__titans\\Andrey\\helppan.cpp",0x973);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -74,42 +74,42 @@ void __thiscall HelpPanelTy::TipProc(HelpPanelTy *this,void *param_1,int param_2
       (**(code **)g_cursorClass_00802A30->field_0000)(&local_10->field_0x18);
     }
   }
-  bVar8 = (byte)param_1;
+  bVar7 = (byte)param_1;
   if (param_2 == 1) {
-    DAT_00807352 = DAT_00807352 | 1 << (bVar8 & 0x1f);
+    DAT_00807352 = DAT_00807352 | 1 << (bVar7 & 0x1f);
 LAB_0051d650:
-    DAT_00807356 = DAT_00807356 | 1 << (bVar8 & 0x1f);
+    DAT_00807356 = DAT_00807356 | 1 << (bVar7 & 0x1f);
 LAB_0051d665:
-    DAT_0080735a = DAT_0080735a | 1 << (bVar8 & 0x1f);
+    DAT_0080735a = DAT_0080735a | 1 << (bVar7 & 0x1f);
   }
   else {
     if (param_2 == 2) goto LAB_0051d650;
     if (param_2 == 3) goto LAB_0051d665;
   }
-  DAT_0080734e = DAT_0080734e | 1 << (bVar8 & 0x1f);
+  DAT_0080734e = DAT_0080734e | 1 << (bVar7 & 0x1f);
 LAB_0051d689:
   DrawTitle(this_00,0x55f2,0,0);
   uVar10 = local_c;
   if (local_14 != 10000) {
     pcVar4 = LoadResourceString(local_14,g_module_00807618);
-    uVar10 = 0xffffffff;
+    uVar9 = 0xffffffff;
     do {
       pcVar12 = pcVar4;
-      if (uVar10 == 0) break;
-      uVar10 = uVar10 - 1;
+      if (uVar9 == 0) break;
+      uVar9 = uVar9 - 1;
       pcVar12 = pcVar4 + 1;
       cVar1 = *pcVar4;
       pcVar4 = pcVar12;
     } while (cVar1 != '\0');
-    uVar10 = ~uVar10;
-    pcVar4 = pcVar12 + -uVar10;
+    uVar9 = ~uVar9;
+    pcVar4 = pcVar12 + -uVar9;
     pcVar12 = (char *)&DAT_0080f33a;
-    for (uVar11 = uVar10 >> 2; uVar11 != 0; uVar11 = uVar11 - 1) {
+    for (uVar11 = uVar9 >> 2; uVar11 != 0; uVar11 = uVar11 - 1) {
       *(undefined4 *)pcVar12 = *(undefined4 *)pcVar4;
       pcVar4 = pcVar4 + 4;
       pcVar12 = pcVar12 + 4;
     }
-    for (uVar10 = uVar10 & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
+    for (uVar9 = uVar9 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {
       *pcVar12 = *pcVar4;
       pcVar4 = pcVar4 + 1;
       pcVar12 = pcVar12 + 1;
@@ -126,37 +126,37 @@ LAB_0051d689:
   CheckBkView(this_00,uVar10,0x1e);
   iVar14 = 1;
   piVar13 = (int *)0x0;
-  uVar11 = (uint)(DAT_0080734d != '\0');
-  iVar9 = 1;
+  uVar9 = (uint)(DAT_0080734d != '\0');
+  iVar8 = 1;
   pCVar5 = thunk_FUN_00571240("BUT_HLPTDAY",0);
-  pCVar5 = FUN_006f2c00(pCVar5,iVar9,uVar11);
+  pCVar5 = FUN_006f2c00(pCVar5,iVar8,uVar9);
   local_8 = cMf32::RecGet(g_cMf32_00806790,1,pCVar5,piVar13,iVar14);
-  uVar11 = uVar10 + 10;
-  DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0218,0x50,uVar11,'\x01',(byte *)local_8);
+  uVar9 = uVar10 + 10;
+  DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0218,0x50,uVar9,'\x01',(byte *)local_8);
   local_18 = *(int *)(local_8 + 2);
-  ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,local_18 + 0x5f,uVar11,
+  ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,local_18 + 0x5f,uVar9,
                    0x13d - local_18,0xf);
-  uVar6 = (DAT_0080874e != '\x03') - 1 & 5;
+  uVar11 = (DAT_0080874e != '\x03') - 1 & 5;
   iVar14 = -1;
-  iVar9 = 1;
-  puVar7 = (uint *)LoadResourceString(0x5c93,g_module_00807618);
-  ccFntTy::WrStr(this_00->field_01E0,puVar7,iVar9,iVar14,uVar6);
+  iVar8 = 1;
+  puVar6 = (uint *)LoadResourceString(0x5c93,g_module_00807618);
+  ccFntTy::WrStr(this_00->field_01E0,puVar6,iVar8,iVar14,uVar11);
   local_34[0] = 0x50;
   local_34[2] = local_18;
   local_34[3] = *(uint *)(local_8 + 4);
-  local_34[1] = uVar11;
+  local_34[1] = uVar9;
   Library::DKW::TBL::FUN_006ae1c0((uint *)this_00->field_01D7,local_34);
   cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);
   CheckBkView(this_00,uVar10 + 0x1e,10);
-  local_c = (uVar10 / 10 + 1) * 10;
-  iVar9 = ((ushort)this_00->field_01AF - 0x118) + local_c;
-  if (iVar9 < 1) {
-    iVar9 = 0;
+  local_c = ((uint)uVar10 / 10 + 1) * 10;
+  iVar8 = ((ushort)this_00->field_01AF - 0x118) + local_c;
+  if (iVar8 < 1) {
+    iVar8 = 0;
   }
   else {
-    iVar9 = iVar9 / (int)(uint)(ushort)this_00->field_01B1 + 1;
+    iVar8 = iVar8 / (int)(uint)(ushort)this_00->field_01B1 + 1;
   }
-  CreateSlider(this_00,iVar9);
+  CreateSlider(this_00,iVar8);
   Library::DKW::WGR::FUN_006b5110
             ((int)this_00->field_0068,0,0x21,(ushort)this_00->field_01AF + 0x16,
              (int)this_00->field_0218,0,0,0,0x19c,0x117 - (uint)(ushort)this_00->field_01AF,0xff);

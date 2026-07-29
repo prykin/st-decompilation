@@ -54,8 +54,7 @@ int __thiscall TLOBaseTy::ReloadLogoPlane(TLOBaseTy *this)
       iVar5 = STT3DSprC::LoadSequence((STT3DSprC *)puVar1,0xd,DAT_0080678c,local_15c,0x1d);
       if (iVar5 != 0) {
         RaiseInternalException
-                  (iVar5,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_bspr.cpp",0xd3)
-        ;
+                  (iVar5,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_bspr.cpp",0xd3);
       }
       thunk_FUN_004abce0(puVar1,0xd,local_10,local_14,'\0');
       STT3DSprC::SetCurFase((STT3DSprC *)puVar1,'\r',local_c);
@@ -96,8 +95,7 @@ int __thiscall TLOBaseTy::ReloadLogoPlane(TLOBaseTy *this)
       iVar5 = STT3DSprC::LoadSequence((STT3DSprC *)puVar1,8,DAT_0080678c,local_15c,0x1d);
       if (iVar5 != 0) {
         RaiseInternalException
-                  (iVar5,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_bspr.cpp",0xea)
-        ;
+                  (iVar5,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_bspr.cpp",0xea);
       }
       thunk_FUN_004abce0(puVar1,8,local_10,local_14,'\0');
       STT3DSprC::SetCurFase((STT3DSprC *)puVar1,'\b',local_c);

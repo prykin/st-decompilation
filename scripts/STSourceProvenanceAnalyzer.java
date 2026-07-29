@@ -47,8 +47,11 @@ public class STSourceProvenanceAnalyzer extends GhidraScript {
     private static final String NAME_TAG = "RECOVERED_SOURCE_NAME";
     private static final String COMMENT_MARKER = "[STSourceProvenanceApplier begin]";
     private static final long NAME_PAIR_DISTANCE = 0x100L;
+    private static final long STRING_CLUSTER_DISTANCE = 0x500L;
+    private static final int DIAGNOSTIC_SINK_MIN_NAMES = 4;
 
     private Listing listing;
+    private final Map<Address, Boolean> diagnosticSinks = new TreeMap<>();
 
     @Override
     protected void run() throws Exception {
@@ -65,12 +68,21 @@ public class STSourceProvenanceAnalyzer extends GhidraScript {
         listing = currentProgram.getListing();
 
         Map<Address, FunctionEvidence> evidence = new TreeMap<>();
+        String clusterSource = "";
+        Address clusterSourceAddress = null;
         for (Data data : DefinedStringIterator.forProgram(currentProgram)) {
             monitor.checkCancelled();
             String value = stringValue(data);
             boolean source = SOURCE.matcher(value).matches();
             String freeName = source ? null : freeFunctionName(value);
+            if (source) {
+                clusterSource = value;
+                clusterSourceAddress = data.getMinAddress();
+            }
             if (!source && freeName == null) continue;
+            String precedingSource = !source && clusterSourceAddress != null &&
+                sameSpaceWithin(clusterSourceAddress, data.getMinAddress(),
+                    STRING_CLUSTER_DISTANCE) ? clusterSource : "";
 
             ReferenceIterator references = currentProgram.getReferenceManager()
                 .getReferencesTo(data.getMinAddress());
@@ -78,7 +90,7 @@ public class STSourceProvenanceAnalyzer extends GhidraScript {
                 Reference reference = references.next();
                 Function function = listing.getFunctionContaining(reference.getFromAddress());
                 if (function == null || function.isThunk() || function.isExternal() ||
-                        isLibrary(function)) continue;
+                        isUnownedLibrary(function)) continue;
                 FunctionEvidence item = evidence.computeIfAbsent(function.getEntryPoint(),
                     ignored -> new FunctionEvidence(function));
                 if (source) {
@@ -90,15 +102,24 @@ public class STSourceProvenanceAnalyzer extends GhidraScript {
                     item.names.add(freeName);
                     item.nameReferences.computeIfAbsent(freeName, ignored -> new TreeSet<>())
                         .add(reference.getFromAddress());
+                    Address sink = followingCallTarget(reference.getFromAddress());
+                    if (sink != null)
+                        item.nameSinks.computeIfAbsent(freeName,
+                            ignored -> new TreeSet<>()).add(sink);
+                    if (!precedingSource.isBlank())
+                        item.clusterSources.computeIfAbsent(freeName,
+                            ignored -> new TreeSet<>()).add(precedingSource);
                 }
             }
         }
 
+        Map<Address, Set<String>> sinkNameFunctions = diagnosticSinkFamilies(evidence);
         List<Proposal> rows = new ArrayList<>();
         for (FunctionEvidence item : evidence.values()) {
             monitor.checkCancelled();
-            if (item.sources.isEmpty()) continue;
-            rows.add(makeProposal(item));
+            if (item.sources.isEmpty() &&
+                    !diagnosticSinkName(item, sinkNameFunctions)) continue;
+            rows.add(makeProposal(item, sinkNameFunctions));
         }
         disableDuplicateNames(rows);
         rows.sort(Comparator.comparing(row -> row.address));
@@ -113,12 +134,27 @@ public class STSourceProvenanceAnalyzer extends GhidraScript {
             ", free_name_apply: " + nameApply);
     }
 
-    private Proposal makeProposal(FunctionEvidence item) {
+    private Proposal makeProposal(FunctionEvidence item,
+            Map<Address, Set<String>> sinkNameFunctions) {
         String address = addr(item.function.getEntryPoint());
         String current = item.function.getName(true);
-        boolean uniqueSource = item.sources.size() == 1;
-        String source = uniqueSource ? item.sources.iterator().next() : "";
-        Set<Long> lines = uniqueSource ? recoverLines(item.sourceReferences.get(source)) : Set.of();
+        String proposedName = item.names.size() == 1 ?
+            item.names.iterator().next() : "";
+        boolean sinkName = diagnosticSinkName(item, sinkNameFunctions);
+        Set<String> effectiveSources = new LinkedHashSet<>(item.sources);
+        boolean clusteredSource = false;
+        if (effectiveSources.isEmpty() && sinkName && !proposedName.isBlank()) {
+            Set<String> candidates =
+                item.clusterSources.getOrDefault(proposedName, Set.of());
+            if (candidates.size() == 1) {
+                effectiveSources.add(candidates.iterator().next());
+                clusteredSource = true;
+            }
+        }
+        boolean uniqueSource = effectiveSources.size() == 1;
+        String source = uniqueSource ? effectiveSources.iterator().next() : "";
+        Set<Long> lines = uniqueSource && !clusteredSource ?
+            recoverLines(item.sourceReferences.get(source)) : Set.of();
         String lineText = joinLongs(lines);
         String existingComment = item.function.getComment();
         boolean ownedComment = existingComment != null && existingComment.contains(COMMENT_MARKER);
@@ -127,15 +163,16 @@ public class STSourceProvenanceAnalyzer extends GhidraScript {
         boolean sourceApply = uniqueSource && !alreadyDocumented;
         String sourceConfidence = uniqueSource ? "high" : "conflict";
         String sourceReason = alreadyDocumented ? "source_already_present_in_function_comment" :
+            clusteredSource ?
+                "preceding_source_literal_in_verified_diagnostic_string_cluster" :
             uniqueSource ? "unique_embedded_source_path" :
-            "multiple_source_paths=" + String.join("|", item.sources);
+            "multiple_source_paths=" + String.join("|", effectiveSources);
 
-        String proposedName = item.names.size() == 1 ? item.names.iterator().next() : "";
         boolean paired = uniqueSource && !proposedName.isBlank() &&
-            referencesNear(item.sourceReferences.get(source),
+            !clusteredSource && referencesNear(item.sourceReferences.get(source),
                 item.nameReferences.get(proposedName), NAME_PAIR_DISTANCE);
         boolean replaceable = replaceableName(item.function, proposedName);
-        boolean nameApply = uniqueSource && item.names.size() == 1 && paired && replaceable;
+        boolean nameApply = item.names.size() == 1 && (paired || sinkName) && replaceable;
         String nameConfidence;
         String nameReason;
         if (item.names.isEmpty()) {
@@ -146,11 +183,11 @@ public class STSourceProvenanceAnalyzer extends GhidraScript {
             nameConfidence = "conflict";
             nameReason = "multiple_free_function_strings=" + String.join("|", item.names);
         }
-        else if (!uniqueSource) {
+        else if (!uniqueSource && !sinkName) {
             nameConfidence = "conflict";
             nameReason = "source_path_not_unique";
         }
-        else if (!paired) {
+        else if (!paired && !sinkName) {
             nameConfidence = "review";
             nameReason = "name_and_source_references_not_in_same_diagnostic_neighborhood";
         }
@@ -160,11 +197,98 @@ public class STSourceProvenanceAnalyzer extends GhidraScript {
         }
         else {
             nameConfidence = "high";
-            nameReason = "unique_nearby_name_and_source_metadata";
+            nameReason = sinkName ?
+                "unique_identifier_passed_to_common_diagnostic_name_sink" :
+                "unique_nearby_name_and_source_metadata";
         }
         return new Proposal(address, current, sourceApply, source, lineText,
             sourceConfidence, sourceReason, nameApply, proposedName, nameConfidence,
             nameReason, item.names);
+    }
+
+    private Map<Address, Set<String>> diagnosticSinkFamilies(
+            Map<Address, FunctionEvidence> evidence) {
+        Map<Address, Set<String>> result = new TreeMap<>();
+        for (FunctionEvidence item : evidence.values()) {
+            for (Map.Entry<String, Set<Address>> entry : item.nameSinks.entrySet()) {
+                if (entry.getValue().size() != 1) continue;
+                Address sink = entry.getValue().iterator().next();
+                if (!diagnosticSink(sink)) continue;
+                result.computeIfAbsent(sink, ignored -> new TreeSet<>())
+                    .add(addr(item.function.getEntryPoint()) + "|" + entry.getKey());
+            }
+        }
+        return result;
+    }
+
+    private boolean diagnosticSinkName(FunctionEvidence item,
+            Map<Address, Set<String>> sinkNameFunctions) {
+        if (item.names.size() != 1) return false;
+        String name = item.names.iterator().next();
+        Set<Address> sinks = item.nameSinks.getOrDefault(name, Set.of());
+        if (sinks.size() != 1) return false;
+        Address sink = sinks.iterator().next();
+        return sinkNameFunctions.getOrDefault(sink, Set.of()).size() >=
+            DIAGNOSTIC_SINK_MIN_NAMES;
+    }
+
+    private boolean diagnosticSink(Address address) {
+        return diagnosticSinks.computeIfAbsent(address, ignored -> {
+            Function function =
+                currentProgram.getFunctionManager().getFunctionAt(address);
+            if (function == null || function.isExternal()) return false;
+            boolean trap = false, stackArgument = false, calleeCleanup = false;
+            ghidra.program.model.listing.InstructionIterator instructions =
+                listing.getInstructions(function.getBody(), true);
+            while (instructions.hasNext()) {
+                Instruction instruction = instructions.next();
+                String mnemonic =
+                    instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+                if ("INT3".equals(mnemonic)) trap = true;
+                String rendered = instruction.toString().toUpperCase(Locale.ROOT);
+                if (rendered.matches(".*\\[(?:E|R)BP\\s*\\+\\s*(?:0X)?[89A-F][0-9A-F]*\\].*"))
+                    stackArgument = true;
+                if (mnemonic.startsWith("RET")) {
+                    Scalar pop = instruction.getScalar(0);
+                    if (pop != null && pop.getUnsignedValue() > 0)
+                        calleeCleanup = true;
+                }
+            }
+            return trap && stackArgument && calleeCleanup;
+        });
+    }
+
+    private Address followingCallTarget(Address referenceAddress) {
+        Instruction instruction = listing.getInstructionContaining(referenceAddress);
+        for (int inspected = 0; instruction != null && inspected < 5; inspected++) {
+            if (instruction.getAddress().subtract(referenceAddress) > 0x20) break;
+            if ("CALL".equalsIgnoreCase(instruction.getMnemonicString())) {
+                Address[] flows = instruction.getFlows();
+                if (flows.length != 1) return null;
+                Function called =
+                    currentProgram.getFunctionManager().getFunctionAt(flows[0]);
+                if (called == null) return null;
+                Set<Address> seen = new TreeSet<>();
+                while (called.isThunk() && seen.add(called.getEntryPoint())) {
+                    Function next = called.getThunkedFunction(false);
+                    if (next == null || next.equals(called)) break;
+                    called = next;
+                }
+                return called.getEntryPoint();
+            }
+            instruction = listing.getInstructionAfter(instruction.getAddress());
+        }
+        return null;
+    }
+
+    private boolean sameSpaceWithin(Address before, Address after, long distance) {
+        try {
+            return before.getAddressSpace().equals(after.getAddressSpace()) &&
+                after.subtract(before) >= 0 && after.subtract(before) <= distance;
+        }
+        catch (Exception ignored) {
+            return false;
+        }
     }
 
     private String freeFunctionName(String value) {
@@ -231,8 +355,7 @@ public class STSourceProvenanceAnalyzer extends GhidraScript {
             return true;
         boolean previouslyApplied = function.getTags().stream()
             .anyMatch(tag -> NAME_TAG.equals(tag.getName()));
-        return previouslyApplied && !proposedName.isBlank() && leaf.equals(proposedName) &&
-            function.getParentNamespace().isGlobal();
+        return previouslyApplied && !proposedName.isBlank() && leaf.equals(proposedName);
     }
 
     private void disableDuplicateNames(List<Proposal> rows) {
@@ -249,12 +372,18 @@ public class STSourceProvenanceAnalyzer extends GhidraScript {
         }
     }
 
-    private boolean isLibrary(Function function) {
+    private boolean isUnownedLibrary(Function function) {
+        boolean recoveredName = false;
+        boolean library = false;
         for (FunctionTag tag : function.getTags()) {
             String name = tag.getName();
-            if ("LIBRARY".equals(name) || name.startsWith("LIBRARY_")) return true;
+            if (NAME_TAG.equals(name)) recoveredName = true;
+            if ("LIBRARY".equals(name) || name.startsWith("LIBRARY_")) library = true;
         }
-        return false;
+        // Once this analyzer has recovered an exact diagnostic name, later library
+        // classification must not make the proposal disappear on the next run.
+        // Untagged linked-library bodies remain outside this analyzer's scope.
+        return library && !recoveredName;
     }
 
     private File outputDirectory() throws Exception {
@@ -309,7 +438,7 @@ public class STSourceProvenanceAnalyzer extends GhidraScript {
     private void writeSummary(Path path, List<Proposal> rows) throws Exception {
         Files.write(path, List.of(
             "program=" + currentProgram.getName(),
-            "functions_with_source_evidence=" + rows.size(),
+            "proposal_functions=" + rows.size(),
             "source_auto_apply=" + rows.stream().filter(row -> row.sourceApply).count(),
             "functions_with_free_name_candidates=" +
                 rows.stream().filter(row -> !row.proposedName.isBlank()).count(),
@@ -321,7 +450,10 @@ public class STSourceProvenanceAnalyzer extends GhidraScript {
                 .filter(row -> row.sourceConfidence.equals("conflict")).count(),
             "note=Source comments and function names have independent apply flags.",
             "note_lines=Diagnostic lines identify metadata/report sites, not function definitions.",
-            "note_names=Automatic names require one strict mixed-case identifier near one source path."
+            "note_names=Automatic names require either one strict mixed-case identifier near " +
+                "one source path or a unique identifier passed to a common diagnostic-name sink.",
+            "note_clusters=A source literal may flow to following diagnostic-name strings in " +
+                "the same bounded read-only string cluster; no source line is inferred."
         ), StandardCharsets.UTF_8);
     }
 
@@ -364,6 +496,8 @@ public class STSourceProvenanceAnalyzer extends GhidraScript {
         final Set<String> names = new LinkedHashSet<>();
         final Map<String, Set<Address>> sourceReferences = new LinkedHashMap<>();
         final Map<String, Set<Address>> nameReferences = new LinkedHashMap<>();
+        final Map<String, Set<Address>> nameSinks = new LinkedHashMap<>();
+        final Map<String, Set<String>> clusterSources = new LinkedHashMap<>();
         FunctionEvidence(Function function) { this.function = function; }
     }
 

@@ -53,7 +53,7 @@ void __thiscall STJellyGunC::LifeGun(STJellyGunC *this,int *param_1)
   if (iVar10 == 0) {
     iVar10 = 0;
     uVar11 = thunk_FUN_004ad650((STT3DSprC *)puVar1);
-    FUN_006eabf0(this->field_0211,uVar11,iVar10);
+    Library::Ourlib::ST3DSMAP::SprSetVisible(this->field_0211,uVar11,iVar10);
     iVar10 = thunk_FUN_0041caf0((AnonShape_0041CAF0_1630B9E0 *)this);
     if (iVar10 == 1) {
       iVar10 = 1;
@@ -65,7 +65,7 @@ void __thiscall STJellyGunC::LifeGun(STJellyGunC *this,int *param_1)
   else {
     iVar10 = 1;
     uVar11 = thunk_FUN_004ad650((STT3DSprC *)puVar1);
-    FUN_006eabf0(this->field_0211,uVar11,iVar10);
+    Library::Ourlib::ST3DSMAP::SprSetVisible(this->field_0211,uVar11,iVar10);
     iVar10 = 1;
   }
   iVar12 = thunk_FUN_004ad650((STT3DSprC *)puVar1);
@@ -202,8 +202,7 @@ LAB_00582bb0:
             }
             iVar10 = *(int *)&pSVar7[0xd].field_0x19;
 LAB_00582c9f:
-            SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006EA050::sub_006EA460
-                      (this->field_0211,this->field_01ED,iVar10);
+            Library::Ourlib::ST3DSMAP::SprSetLevBefore(this->field_0211,this->field_01ED,iVar10);
           }
         }
       }
@@ -330,7 +329,7 @@ LAB_005827b7:
       }
       iVar10 = pSVar13->field_01ED;
 LAB_00582cbd:
-      FUN_006ea3e0(this->field_0211,this->field_01ED,iVar10);
+      Library::Ourlib::ST3DSMAP::SprSetLevAfter(this->field_0211,this->field_01ED,iVar10);
     }
     break;
   default:

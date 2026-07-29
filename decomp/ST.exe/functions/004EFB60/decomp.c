@@ -11,7 +11,7 @@ void __thiscall BldLabPanelTy::InitBldLabPanel(BldLabPanelTy *this)
   code *pcVar1;
   BldLabPanelTy *this_00;
   int errorCode;
-  DArrayTy *pDVar2;
+  BldLabPanelTy_field_027ADArray *pBVar2;
   ushort *puVar3;
   int iVar4;
   InternalExceptionFrame local_4c;
@@ -24,8 +24,9 @@ void __thiscall BldLabPanelTy::InitBldLabPanel(BldLabPanelTy *this)
   this_00 = local_8;
   if (errorCode == 0) {
     g_prodPanel_00801680 = (ProdPanelTy *)local_8;
-    pDVar2 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0x28,0x30,10);
-    this_00->field_027A = pDVar2;
+    pBVar2 = (BldLabPanelTy_field_027ADArray *)
+             Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0x28,0x30,10);
+    this_00->field_027A = pBVar2;
     this_00->field_003C = this_00->field_003C + (g_nWidth_00806730 + -800) / 2;
     puVar3 = cMf32::RecGet(g_cMf32_00806790,1,"BKG_BUILDLABW",(int *)0x0,1);
     this_00->field_0184 = puVar3;

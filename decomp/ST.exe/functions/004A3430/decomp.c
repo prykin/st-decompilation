@@ -264,28 +264,24 @@ LAB_004a35b6:
         pSVar6 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,pSVar2->field_0024,local_3c,CASE_1);
         STFishC::sub_004162B0((STFishC *)pSVar6,&local_5c,&local_5a,&local_58);
         local_56 = pSVar6->field_0018;
-        pSVar6 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,pSVar2->field_0024,uStack_3a,CASE_1)
-        ;
+        pSVar6 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,pSVar2->field_0024,uStack_3a,CASE_1);
         STFishC::sub_004162B0((STFishC *)pSVar6,&local_52,&local_50,&local_4e);
         local_4c = pSVar6->field_0018;
         local_44 = local_32;
         pSVar4 = (STBoatC *)
-                 STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,pSVar2->field_0024,uStack_38,CASE_1)
-        ;
+                 STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,pSVar2->field_0024,uStack_38,CASE_1);
         STBoatC::CmdToObj(pSVar4,CASE_C,&local_60);
         local_20 = uVar10;
       }
       else {
         pSVar4 = (STBoatC *)
-                 STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,pSVar2->field_0024,uStack_38,CASE_1)
-        ;
+                 STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,pSVar2->field_0024,uStack_38,CASE_1);
         pSVar6 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,pSVar2->field_0024,local_3c,CASE_1);
         STFishC::sub_004162B0((STFishC *)pSVar6,local_c,local_14,local_10);
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         STBoatC::SetNewMD(pSVar4,1,local_c[0],local_14[0],local_10[0],pSVar6->field_0018,
                           CONCAT22(uStack_34,local_36));
-        pSVar6 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,pSVar2->field_0024,uStack_3a,CASE_1)
-        ;
+        pSVar6 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,pSVar2->field_0024,uStack_3a,CASE_1);
         STFishC::sub_004162B0((STFishC *)pSVar6,local_c,local_14,local_10);
         STBoatC::SetNewMD(pSVar4,0,local_c[0],local_14[0],local_10[0],pSVar6->field_0018,local_32);
       }
@@ -298,8 +294,7 @@ LAB_004a35b6:
             (g_allPlayers_007FA174,CONCAT31((int3)(local_64 >> 8),pSVar2->field_0024),
              &local_1c->flags,&local_24->flags);
   RaiseInternalException
-            (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",0x1165)
-  ;
+            (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",0x1165);
   g_currentExceptionFrame = local_b0.previous;
   return;
 }

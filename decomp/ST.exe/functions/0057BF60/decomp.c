@@ -86,7 +86,7 @@ int __thiscall STFishC::GetMessage(STFishC *this,STMessage *message)
         return 0;
       }
       uVar6 = thunk_FUN_004ad650((STT3DSprC *)&this_00->field_01D5);
-      FUN_006eab60((void *)this_00->field_0211,uVar6);
+      Library::Ourlib::ST3DSMAP::SprHide(this_00->field_0211,uVar6);
       sub_0057BF20((STFishC *)this_00);
       *(undefined4 *)&this_00->field_0x23b = 3;
       g_currentExceptionFrame = local_80.previous;

@@ -1,22 +1,27 @@
 
 /* [STPrototypeApplier] Propagated parameter 0.
-   Evidence: 00558840 -> 00717870 @ 005588CB */
+   Evidence: 00558840 -> 00717870 @ 005588CB
 
-void __fastcall FUN_00717870(AnonShape_GLOBAL_00807598_0C6808FB *param_1)
+   [STMethodOwnerApplier] Structural method owner recovered as ST3DSMAPContext.
+   Evidence: this_call_owners=[ST3DSMAPContext]; agreed_this_calls=1; incoming_this_accesses=4;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=1;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+void __thiscall ST3DSMAPContext::sub_00717870(ST3DSMAPContext *this)
 
 {
   int iVar1;
 
   iVar1 = 0;
-  *(undefined4 *)&param_1[1].field_0x4e = 0;
-  *(undefined4 *)&param_1[1].field_0x36 = 0;
+  *(undefined4 *)&this[1].field_0x4e = 0;
+  *(undefined4 *)&this[1].field_0x36 = 0;
   do {
-    FUN_006a5e90(*(short **)(*(int *)&param_1[1].field_0x6 + iVar1));
+    FUN_006a5e90(*(short **)(*(int *)&this[1].field_0x6 + iVar1));
     iVar1 = iVar1 + 4;
   } while (iVar1 < 0x140);
-  FreeAndNull((void **)&param_1[1].field_0x6);
-  FreeAndNull((void **)&param_1[1].field_0x2);
-  param_1->field_0466 = 0;
+  FreeAndNull((void **)&this[1].field_0x6);
+  FreeAndNull((void **)&this[1].field_0x2);
+  this->field_0466 = 0;
   return;
 }
 

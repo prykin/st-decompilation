@@ -90,7 +90,7 @@ void __fastcall FUN_00586af0(int *param_1)
     iVar7 = 0;
     uVar8 = thunk_FUN_004ad650(this);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    FUN_006eabf0(*(void **)((int)param_1 + 0x211),uVar8,iVar7);
+    Library::Ourlib::ST3DSMAP::SprSetVisible(*(void **)((int)param_1 + 0x211),uVar8,iVar7);
     iVar7 = thunk_FUN_0041caf0((AnonShape_0041CAF0_1630B9E0 *)param_1);
     if (iVar7 == 1) {
       iVar7 = 1;
@@ -103,7 +103,7 @@ void __fastcall FUN_00586af0(int *param_1)
     iVar7 = 1;
     uVar8 = thunk_FUN_004ad650(this);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    FUN_006eabf0(*(void **)((int)param_1 + 0x211),uVar8,iVar7);
+    Library::Ourlib::ST3DSMAP::SprSetVisible(*(void **)((int)param_1 + 0x211),uVar8,iVar7);
     iVar7 = 1;
   }
   iVar9 = thunk_FUN_004ad650(this);
@@ -116,16 +116,14 @@ void __fastcall FUN_00586af0(int *param_1)
     lVar4 = (longlong)*(int *)((int)param_1 + 0x235) * 0xeeff;
     uVar8 = (uint)lVar4;
     *(uint *)((int)param_1 + 0x235) =
-         (uVar8 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10) + (uint)((uVar8 >> 0xf & 1) != 0)
-    ;
+         (uVar8 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10) + (uint)((uVar8 >> 0xf & 1) != 0);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     lVar4 = (longlong)*(int *)((int)param_1 + 0x239) * 0xeeff;
     uVar8 = (uint)lVar4;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     local_4c = *(int *)((int)param_1 + 0x23d);
     *(uint *)((int)param_1 + 0x239) =
-         (uVar8 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10) + (uint)((uVar8 >> 0xf & 1) != 0)
-    ;
+         (uVar8 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10) + (uint)((uVar8 >> 0xf & 1) != 0);
     uVar8 = (uint)((longlong)local_4c * 0xeeff);
     *(uint *)((int)param_1 + 0x23d) =
          (uVar8 >> 0x10 | (int)((ulonglong)((longlong)local_4c * 0xeeff) >> 0x20) << 0x10) +
@@ -579,14 +577,15 @@ LAB_005882a0:
                 );
       if (local_24 == 0) {
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006EA050::sub_006EA460
-                  (*(AnonReceiver_006EA050 **)((int)param_1 + 0x211),*(uint *)((int)param_1 + 0x1ed)
-                   ,pSVar10->field_01ED);
+        Library::Ourlib::ST3DSMAP::SprSetLevBefore
+                  (*(void **)((int)param_1 + 0x211),*(uint *)((int)param_1 + 0x1ed),
+                   pSVar10->field_01ED);
       }
       else {
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        FUN_006ea3e0(*(void **)((int)param_1 + 0x211),*(uint *)((int)param_1 + 0x1ed),
-                     pSVar10->field_01ED);
+        Library::Ourlib::ST3DSMAP::SprSetLevAfter
+                  (*(void **)((int)param_1 + 0x211),*(uint *)((int)param_1 + 0x1ed),
+                   pSVar10->field_01ED);
       }
     }
   }
@@ -598,14 +597,12 @@ LAB_005882a0:
     lVar4 = (longlong)*(int *)((int)param_1 + 0x235) * 0xeeff;
     uVar8 = (uint)lVar4;
     *(uint *)((int)param_1 + 0x235) =
-         (uVar8 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10) + (uint)((uVar8 >> 0xf & 1) != 0)
-    ;
+         (uVar8 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10) + (uint)((uVar8 >> 0xf & 1) != 0);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     lVar4 = (longlong)*(int *)((int)param_1 + 0x239) * 0xeeff;
     uVar8 = (uint)lVar4;
     *(uint *)((int)param_1 + 0x239) =
-         (uVar8 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10) + (uint)((uVar8 >> 0xf & 1) != 0)
-    ;
+         (uVar8 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10) + (uint)((uVar8 >> 0xf & 1) != 0);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     lVar4 = (longlong)*(int *)((int)param_1 + 0x23d) * 0xeeff;
     uVar8 = (uint)lVar4;
@@ -873,8 +870,7 @@ LAB_005873a4:
                  (short)((longlong)local_c * 0x28c1979 >> 0x3f)) + -1;
       }
       else {
-        sVar14 = ((short)(local_c / 0xc9) + sVar14) - (short)((longlong)local_c * 0x28c1979 >> 0x3f)
-        ;
+        sVar14 = ((short)(local_c / 0xc9) + sVar14) - (short)((longlong)local_c * 0x28c1979 >> 0x3f);
       }
       sVar15 = (short)(local_1c >> 0x1f);
       if (local_1c < 0) {

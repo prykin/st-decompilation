@@ -31,17 +31,19 @@ undefined4 __thiscall STTmMineC::LoadImagNuclear(STTmMineC *this,int param_1)
       puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
                          (DAT_00806774,CASE_1D,"expl_nb0",0xffffffff,0,1,0,
                           (undefined4 *)0x0);
-      FUN_006e8660((void *)pSVar2->field_0211,(int *)&local_8,1,0,*(uint *)((int)puVar3 + 9),
-                   *(uint *)((int)puVar3 + 0xd),0x6f,0xf0,0);
-      FUN_006e98e0((void *)pSVar2->field_0211,local_8,0,*(int *)puVar3,*(int *)((int)puVar3 + 0x21),
-                   1);
-      FUN_006ea270((void *)pSVar2->field_0211,local_8,0,pSVar2->field_033E);
-      FUN_006ea960((void *)pSVar2->field_0211,local_8,
-                   (float)pSVar2->field_0266 * _DAT_007904f8 * _DAT_007904f0,
-                   (float)pSVar2->field_026A * _DAT_007904f8 * _DAT_007904f0,
-                   (float)pSVar2->field_026E * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
-      FUN_006eaaa0((void *)pSVar2->field_0211,local_8,0);
-      FUN_006eab60((void *)pSVar2->field_0211,local_8);
+      ST3DSMAPContext::sub_006E8660
+                (pSVar2->field_0211,(int *)&local_8,1,0,*(uint *)((int)puVar3 + 9),
+                 *(uint *)((int)puVar3 + 0xd),0x6f,0xf0,0);
+      ST3DSMAPContext::sub_006E98E0
+                (pSVar2->field_0211,local_8,0,*(int *)puVar3,*(int *)((int)puVar3 + 0x21),1);
+      ST3DSMAPContext::sub_006EA270(pSVar2->field_0211,local_8,0,pSVar2->field_033E);
+      Library::Ourlib::ST3DSMAP::SprMove
+                (pSVar2->field_0211,local_8,
+                 (float)pSVar2->field_0266 * _DAT_007904f8 * _DAT_007904f0,
+                 (float)pSVar2->field_026A * _DAT_007904f8 * _DAT_007904f0,
+                 (float)pSVar2->field_026E * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
+      Library::Ourlib::ST3DSMAP::SprShow(pSVar2->field_0211,local_8,0);
+      Library::Ourlib::ST3DSMAP::SprHide(pSVar2->field_0211,local_8);
       pSVar2->field_0346 = 0;
       pSVar2->field_033A = local_8;
       pSVar2->field_0342 = *(undefined4 *)puVar3;

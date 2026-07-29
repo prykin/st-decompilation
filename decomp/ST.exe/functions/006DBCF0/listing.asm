@@ -1,4 +1,4 @@
-FUN_006dbcf0:
+ST3DSMAPContext::sub_006DBCF0:
 006DBCF0  56                        PUSH ESI
 006DBCF1  8B F1                     MOV ESI,ECX
 006DBCF3  E8 B8 FD FF FF            CALL 0x006dbab0

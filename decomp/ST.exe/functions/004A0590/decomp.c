@@ -67,8 +67,7 @@ uint * __thiscall STGroupBoatC::Scout(STGroupBoatC *this,int param_1)
                            (pSVar4,(DArrayTy *)pSVar4->field_0029,
                             (int)*(short *)&pSVar4->field_0x2fe,(int)*(short *)puVar1,
                             (int)*(short *)puVar2,(int)*(short *)&pSVar4->field_0x2f8,
-                            (int)*(short *)&pSVar4->field_0x2fa,(int)*(short *)&pSVar4->field_0x2fc)
-      ;
+                            (int)*(short *)&pSVar4->field_0x2fa,(int)*(short *)&pSVar4->field_0x2fc);
       if (local_10 == (DArrayTy *)0x0) {
         return (uint *)0x0;
       }

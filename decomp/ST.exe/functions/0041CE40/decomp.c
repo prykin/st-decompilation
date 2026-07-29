@@ -18,12 +18,13 @@ void __thiscall FUN_0041ce40(void *this,int param_1)
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   iVar1 = (**(code **)(*(int *)this + 8))();
   if ((iVar1 == 1) && (*(uint *)((int)this + 0x24) == (uint)DAT_0080874d)) {
-    FUN_006e6710(PTR_00807598,
-                 (float)(int)*(short *)((int)this + 0x41) * _DAT_007904f8 * _DAT_007904f0,
-                 (float)(int)*(short *)((int)this + 0x43) * _DAT_007904f8 * _DAT_007904f0,
-                 (uint)((float)*(int *)((int)this + 0x105) * _DAT_007904f8 + _DAT_007904f4),0x16,
-                 (*(uint *)((int)this + 0x18) >> 0x10 & 0xff) << 0x10 |
-                 (uint)*(ushort *)((int)this + 0x18));
+    ST3DSMAPContext::sub_006E6710
+              (g_sT3DSMAPContext_00807598,
+               (float)(int)*(short *)((int)this + 0x41) * _DAT_007904f8 * _DAT_007904f0,
+               (float)(int)*(short *)((int)this + 0x43) * _DAT_007904f8 * _DAT_007904f0,
+               (uint)((float)*(int *)((int)this + 0x105) * _DAT_007904f8 + _DAT_007904f4),0x16,
+               (*(uint *)((int)this + 0x18) >> 0x10 & 0xff) << 0x10 |
+               (uint)*(ushort *)((int)this + 0x18));
   }
   return;
 }

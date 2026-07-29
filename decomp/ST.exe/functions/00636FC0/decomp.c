@@ -51,8 +51,10 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00636260::sub_00636FC0
     local_c = (int)(short)(((short)(iVar1 / 200) + sVar2) -
                           (short)((longlong)iVar1 * 0x51eb851f >> 0x3f));
   }
-  if ((((PTR_00807598->field_0048 <= iVar4) && (iVar4 <= PTR_00807598->field_0058)) &&
-      (PTR_00807598->field_0044 <= iVar5)) && (iVar5 <= PTR_00807598->field_0054)) {
+  if ((((g_sT3DSMAPContext_00807598->field_0048 <= iVar4) &&
+       (iVar4 <= g_sT3DSMAPContext_00807598->field_0058)) &&
+      (g_sT3DSMAPContext_00807598->field_0044 <= iVar5)) &&
+     (iVar5 <= g_sT3DSMAPContext_00807598->field_0054)) {
     local_8 = FUN_006ddbd0();
     pVVar3 = g_visibleClass_00802A88;
     if (local_8 == 0) {

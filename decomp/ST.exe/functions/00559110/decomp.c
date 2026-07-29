@@ -35,8 +35,7 @@ VisibleClassTy::sub_00559110
      ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 || ((byte)(&DAT_008087e9)[param_4 * 0x51] < 8))
      )) {
     if ((param_7 & 0x1000) != 0) {
-      sub_0055BBC0(this,0,(short)param_1,(short)param_2,(char)param_3,param_4,(byte)param_5,param_6)
-      ;
+      sub_0055BBC0(this,0,(short)param_1,(short)param_2,(char)param_3,param_4,(byte)param_5,param_6);
     }
     if (this->field_00FC[uVar5] != 0) {
       iVar9 = iVar8 * 2 + 1;
@@ -93,8 +92,7 @@ VisibleClassTy::sub_00559110
                       ((iVar11 < this->field_0034 && (iVar12 = uVar5 * iVar11 + iVar10, -1 < iVar12)
                        ))))) {
                     if (this->field_0050[iVar12] == 1) {
-                      thunk_FUN_00553a70(iVar10,iVar11,(int)this->field_004C,uVar5,this->field_0034)
-                      ;
+                      thunk_FUN_00553a70(iVar10,iVar11,(int)this->field_004C,uVar5,this->field_0034);
                       bVar6 = true;
                     }
                     uVar4 = this->field_0050[iVar12];

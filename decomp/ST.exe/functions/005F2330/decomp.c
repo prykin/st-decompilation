@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STMethodOwnerApplier] Structural method owner recovered as STManBasisC.
    Evidence: this_call_owners=[STManBasisC]; agreed_this_calls=1; incoming_this_accesses=6;
@@ -13,9 +15,9 @@ void __thiscall STManBasisC::sub_005F2330(STManBasisC *this)
   uint uVar4;
 
   uVar4 = 0;
-  if (this->field_0038 != (DArrayTy *)0x0) {
-    DArrayDestroy(this->field_0038);
-    this->field_0038 = (DArrayTy *)0x0;
+  if (this->field_0038 != (STManBasisC_field_0038DArray *)0x0) {
+    DArrayDestroy((DArrayTy *)this->field_0038);
+    this->field_0038 = (STManBasisC_field_0038DArray *)0x0;
   }
   if (this->field_003C != (DArrayTy *)0x0) {
     dVar1 = this->field_003C->count;
@@ -30,7 +32,8 @@ void __thiscall STManBasisC::sub_005F2330(STManBasisC *this)
           pvVar3 = (void *)0x0;
         }
         if (-1 < (int)*(uint *)((int)pvVar3 + 0x18)) {
-          FUN_006e8ba0(PTR_00807598,*(uint *)((int)pvVar3 + 0x18));
+          Library::Ourlib::ST3DSMAP::SprClose
+                    (g_sT3DSMAPContext_00807598,*(uint *)((int)pvVar3 + 0x18));
           *(undefined4 *)((int)pvVar3 + 0x18) = 0xffffffff;
         }
         uVar4 = uVar4 + 1;

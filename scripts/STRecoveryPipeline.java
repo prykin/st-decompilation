@@ -221,6 +221,8 @@ public class STRecoveryPipeline extends GhidraScript {
             analyzer("STClassArrayAnalyzer.java");
             changed += pair("STClassLayoutAnalyzer.java", "STClassLayoutApplier.java",
                 "class_layout_proposals.tsv", "class_layout_apply_report.tsv");
+            changed += pair("STDArrayElementAnalyzer.java", "STDArrayElementApplier.java",
+                "darray_element_proposals.tsv", "darray_element_apply_report.tsv");
             changed += pair("STSwitchEnumAnalyzer.java", "STSwitchEnumApplier.java",
                 "switch_enum_proposals.tsv", "switch_enum_apply_report.tsv");
             changed += pair("STObjectFactoryAnalyzer.java", "STObjectFactoryApplier.java",
@@ -253,6 +255,18 @@ public class STRecoveryPipeline extends GhidraScript {
             "control_flow_label_proposals.tsv", "control_flow_label_apply_report.tsv");
         pair("STLibraryAnalyzer.java", "STLibraryApplier.java",
             "library_proposals.tsv", null);
+        // Source-provenance can expose a whole linked-library diagnostic family
+        // only at finalization.  Consume those fresh callee tags immediately so
+        // high-fanout PTR_* contexts do not require a second full pipeline run.
+        pair("STGlobalDataAnalyzer.java", "STGlobalDataApplier.java",
+            "global_data_proposals.tsv", "global_data_apply_report.tsv");
+        pair("STPointerShapeAnalyzer.java", "STPointerShapeApplier.java",
+            "pointer_shape_target_proposals.tsv", "pointer_shape_apply_report.tsv");
+        // Compiler register/stack reuse can leave several independently typed
+        // SSA merge groups under one rendered local. Run this once after the
+        // structural/type fixed points, when exact call/copy anchors are strongest.
+        pair("STLocalLifetimeAnalyzer.java", "STLocalLifetimeApplier.java",
+            "local_lifetime_proposals.tsv", "local_lifetime_apply_report.tsv");
         runTypeLifecycleFixpoint();
     }
 
@@ -388,6 +402,8 @@ public class STRecoveryPipeline extends GhidraScript {
             analyzer("STClassArrayAnalyzer.java");
             changed += pair("STClassLayoutAnalyzer.java", "STClassLayoutApplier.java",
                 "class_layout_proposals.tsv", "class_layout_apply_report.tsv");
+            changed += pair("STDArrayElementAnalyzer.java", "STDArrayElementApplier.java",
+                "darray_element_proposals.tsv", "darray_element_apply_report.tsv");
             println("Structural pass " + pass + ": mutating report rows=" + changed);
             if (changed == 0) return;
         }

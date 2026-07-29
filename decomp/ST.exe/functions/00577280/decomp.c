@@ -29,8 +29,7 @@ void CreateGameSystem(void)
                      GameSystemC::GameSystemC(this_00,g_appClass_00806728);
     }
     if ((GameSystemC *)PTR_0081163c == (GameSystemC *)0x0) {
-      RaiseInternalException(-1,g_overwriteContext_007ED77C,"E:\\__titans\\tsystem.cpp",0xb1)
-      ;
+      RaiseInternalException(-1,g_overwriteContext_007ED77C,"E:\\__titans\\tsystem.cpp",0xb1);
     }
     *(undefined4 *)&PTR_0081163c->field_0x428 = 0;
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */

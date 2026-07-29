@@ -6,7 +6,7 @@ void FUN_00522810(char *param_1)
 {
   char *_Str1;
   char cVar1;
-  AnonShape_GLOBAL_00807598_0C6808FB *pAVar2;
+  ST3DSMAPContext *pSVar2;
   int iVar3;
   uint uVar4;
   uint uVar5;
@@ -137,17 +137,17 @@ LAB_00522b59:
     else {
       uVar4 = (uint)(g_visibleClass_00802A88->field_00F8 == 0);
       g_visibleClass_00802A88->field_00F8 = uVar4;
-      pAVar2 = PTR_00807598;
+      pSVar2 = g_sT3DSMAPContext_00807598;
       if (uVar4 != 0) {
-        PTR_00807598->field_0466 = 1;
-        pAVar2->field_02D8 = 1;
+        g_sT3DSMAPContext_00807598->field_0466 = 1;
+        pSVar2->field_02D8 = 1;
         g_currentExceptionFrame = local_4c.previous;
         return;
       }
     }
-    pAVar2 = PTR_00807598;
-    PTR_00807598->field_0466 = 0;
-    pAVar2->field_02D8 = 1;
+    pSVar2 = g_sT3DSMAPContext_00807598;
+    g_sT3DSMAPContext_00807598->field_0466 = 0;
+    pSVar2->field_02D8 = 1;
   }
   g_currentExceptionFrame = local_4c.previous;
   return;

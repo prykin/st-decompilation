@@ -9,7 +9,7 @@ void __thiscall GameSystemC::DoneSystem(GameSystemC *this,int param_1)
 
 {
   code *pcVar1;
-  AnonShape_GLOBAL_00807598_0C6808FB *pAVar2;
+  ST3DSMAPContext *pSVar2;
   GameSystemC *pGVar3;
   int errorCode;
   int iVar4;
@@ -26,7 +26,7 @@ void __thiscall GameSystemC::DoneSystem(GameSystemC *this,int param_1)
     if (local_8->field_0431 != (void *)0x0) {
       FUN_00725680((int *)&local_8->field_0431);
     }
-    FUN_0070b1d0(&DAT_00806724);
+    FUN_0070b1d0((int *)&PTR_00806724);
     if (PTR_00802a28 != (ccFntTy *)0x0) {
       thunk_FUN_005711d0(&DAT_00807620,(int *)&PTR_00802a28);
     }
@@ -34,12 +34,12 @@ void __thiscall GameSystemC::DoneSystem(GameSystemC *this,int param_1)
       thunk_FUN_005711d0(&DAT_00807620,(int *)&g_playSystem_00802A38);
     }
     thunk_FUN_0058d720();
-    pAVar2 = PTR_00807598;
+    pSVar2 = g_sT3DSMAPContext_00807598;
     DAT_0080674c = 0;
-    if (PTR_00807598 != (AnonShape_GLOBAL_00807598_0C6808FB *)0x0) {
-      FUN_006dbcf0((int *)PTR_00807598);
-      Library::MSVCRT::FUN_0072e2b0((HoloTy *)pAVar2);
-      PTR_00807598 = (AnonShape_GLOBAL_00807598_0C6808FB *)0x0;
+    if (g_sT3DSMAPContext_00807598 != (ST3DSMAPContext *)0x0) {
+      ST3DSMAPContext::sub_006DBCF0(g_sT3DSMAPContext_00807598);
+      Library::MSVCRT::FUN_0072e2b0((HoloTy *)pSVar2);
+      g_sT3DSMAPContext_00807598 = (ST3DSMAPContext *)0x0;
     }
     thunk_FUN_00578370();
     if (DAT_00806750 != 0) {

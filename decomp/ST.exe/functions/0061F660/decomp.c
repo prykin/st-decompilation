@@ -43,20 +43,21 @@ int __thiscall SndUnderAttMenegC::GetMessage(SndUnderAttMenegC *this,STMessage *
     piVar6 = (int *)&local_8->field_0x31;
     do {
       if (*(char *)((int)piVar6 + -0x11) != '\0') {
-        FUN_006e6780(PTR_00807598,iVar4);
+        ST3DSMAPContext::sub_006E6780(g_sT3DSMAPContext_00807598,iVar4);
         iVar5 = g_playSystem_00802A38->field_00E4 - piVar6[2];
         fVar3 = (float)iVar5;
         local_c = fVar3 * (float)piVar6[1] * fVar3 * _DAT_00790784 +
                   ((float)(piVar6[-1] - iVar5 * *piVar6) * _DAT_007904f8 + _DAT_007904f4) *
                   _DAT_0079070c;
         if (local_c <= _DAT_007904f8) {
-          FUN_006e6780(PTR_00807598,iVar4);
+          ST3DSMAPContext::sub_006E6780(g_sT3DSMAPContext_00807598,iVar4);
           *(undefined1 *)((int)piVar6 + -0x11) = 0;
         }
         else {
-          FUN_006e6710(PTR_00807598,(float)piVar6[-4] * _DAT_007904f8 + _DAT_007904f4,
-                       (float)piVar6[-3] * _DAT_007904f8 + _DAT_007904f4,(uint)local_c,piVar6[-2],
-                       iVar4);
+          ST3DSMAPContext::sub_006E6710
+                    (g_sT3DSMAPContext_00807598,(float)piVar6[-4] * _DAT_007904f8 + _DAT_007904f4,
+                     (float)piVar6[-3] * _DAT_007904f8 + _DAT_007904f4,(uint)local_c,piVar6[-2],
+                     iVar4);
         }
       }
       iVar4 = iVar4 + 0xffffff;

@@ -41,8 +41,8 @@ VisibleClassTy * __thiscall VisibleClassTy::VisibleClassTy(VisibleClassTy *this)
   this->field_003C[1] = (void *)0x0;
   this->field_003C[2] = (void *)0x0;
   this->field_003C[3] = (void *)0x0;
-  this->field_00F4 = (DArrayTy *)0x0;
-  this->field_0110 = (DArrayTy *)0x0;
+  this->field_00F4 = (VisibleClassTy_field_00F4DArray *)0x0;
+  this->field_0110 = (VisibleClassTy_field_0110DArray *)0x0;
   this->field_0114 = 0;
   this->field_00F8 = 1;
   memset(&this->field_0118, 0, 0xc0); /* compiler bulk-zero initialization */

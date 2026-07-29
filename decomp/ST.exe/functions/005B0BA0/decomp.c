@@ -639,16 +639,14 @@ LAB_005b2011:
       pcVar22 = pcVar22 + 1;
     }
     if (*(int *)&this_01->field_0x31 < (int)this_01->field_1C9F->elementSize) {
-      uVar18 = *(undefined4 *)(this_01->field_1C9F->growCapacity + *(int *)&this_01->field_0x31 * 4)
-      ;
+      uVar18 = *(undefined4 *)(this_01->field_1C9F->growCapacity + *(int *)&this_01->field_0x31 * 4);
     }
     else {
       uVar18 = 0;
     }
     wsprintfA(&DAT_0080ef1e,"%s%s\\%s",PTR_s_MISSIONS__0079c054,uVar18,&DAT_0080ed16);
     if (*(int *)&this_01->field_0x31 < (int)this_01->field_1C9F->elementSize) {
-      uVar18 = *(undefined4 *)(this_01->field_1C9F->growCapacity + *(int *)&this_01->field_0x31 * 4)
-      ;
+      uVar18 = *(undefined4 *)(this_01->field_1C9F->growCapacity + *(int *)&this_01->field_0x31 * 4);
     }
     else {
       uVar18 = 0;

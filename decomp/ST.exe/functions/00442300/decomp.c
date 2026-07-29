@@ -154,8 +154,7 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,char param_
                   do {
                     DArrayGetElement(local_8,uVar9,local_90);
                     if ((local_8a == -1) && (local_82 == -1)) {
-                      Library::DKW::TBL::FUN_006ae140(&local_8->flags,uVar9,(undefined4 *)&local_40)
-                      ;
+                      Library::DKW::TBL::FUN_006ae140(&local_8->flags,uVar9,(undefined4 *)&local_40);
                       local_10 = 1;
                       break;
                     }
@@ -245,8 +244,7 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,char param_
                   do {
                     DArrayGetElement(local_8,uVar9,local_90);
                     if ((local_8a == -1) && (local_82 == -1)) {
-                      Library::DKW::TBL::FUN_006ae140(&local_8->flags,uVar9,(undefined4 *)&local_40)
-                      ;
+                      Library::DKW::TBL::FUN_006ae140(&local_8->flags,uVar9,(undefined4 *)&local_40);
                       local_10 = 1;
                       break;
                     }

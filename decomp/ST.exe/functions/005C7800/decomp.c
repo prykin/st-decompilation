@@ -56,8 +56,7 @@ void FUN_005c7800(void)
   SettMapTy::PaintSettMap(this,'\0');
   Library::DKW::DDX::FUN_006bd740((int *)g_ddxContext_008075A8);
   Library::DKW::DDX::FUN_006c4630
-            (g_dDXContext_0080759C,g_dDXContext_0080759C->field_0044,(undefined4 *)&stack0xffffffb8)
-  ;
+            (g_dDXContext_0080759C,g_dDXContext_0080759C->field_0044,(undefined4 *)&stack0xffffffb8);
   PTR_00811758 = Library::DKW::DDX::FUN_006c4880
                            (g_dDXContext_0080759C,0,0,g_nWidth_00806730,DAT_00806734,DAT_00806738);
   Library::DKW::DDX::FUN_006c44e0(g_dDXContext_0080759C,(undefined4 *)&stack0xffffffb8);

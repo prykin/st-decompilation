@@ -47,7 +47,9 @@ TLOBldMark::sub_004C6440
   local_20 = g_centeredOffsets5 + 3;
   while( true ) {
     piVar8 = local_20;
-    FUN_006e1c20(PTR_00807598,param_1,param_2,(float)local_c * _DAT_00790504,&local_14,&local_18);
+    ST3DSMAPContext::sub_006E1C20
+              (g_sT3DSMAPContext_00807598,param_1,param_2,(float)local_c * _DAT_00790504,&local_14,
+               &local_18);
     if (local_14 < _DAT_0079034c) {
       lVar11 = Library::MSVCRT::__ftol();
       iVar9 = (short)lVar11 + -1;
@@ -145,8 +147,7 @@ cf_common_exit_004C6899:
                       );
     if (iVar5 != 0) {
       RaiseInternalException
-                (iVar5,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_BldMark.cpp",0x77)
-      ;
+                (iVar5,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_BldMark.cpp",0x77);
     }
     thunk_FUN_004abce0(this->field_002C,0,*(int *)(&DAT_00790f84 + this->field_001C * 4),
                        *(int *)(&DAT_00790f84 + this->field_001C * 4),'\0');

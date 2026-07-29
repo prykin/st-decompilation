@@ -238,8 +238,7 @@ LAB_0050a4e4:
              (byte *)this_00->field_09D9[0xe]);
       uVar6 = thunk_FUN_00526ba0(*(Global_sub_00526BA0_param_1Enum *)&this_00->field_0xc12,
                                  this_00->field_0C1A);
-      pbVar7 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02C2,uVar6)
-      ;
+      pbVar7 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02C2,uVar6);
       DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,0x2a,0x52,'\x01',pbVar7);
       pbVar7 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B2,1);
       DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,0x33,0x7b,'\x01',pbVar7);
@@ -249,8 +248,7 @@ LAB_0050a4e4:
         iVar5 = 0x35;
         local_14 = pbVar7;
         do {
-          pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,1)
-          ;
+          pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,1);
           DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,iVar5,0x7d,'\x01',pbVar8);
           iVar5 = iVar5 + 4;
           pbVar7 = pbVar7 + -1;
@@ -259,8 +257,7 @@ LAB_0050a4e4:
       if (local_14 < (byte *)0x21) {
         iVar5 = (int)local_14 * 4 + 0x35;
         do {
-          pbVar7 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0)
-          ;
+          pbVar7 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
           DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,iVar5,0x7d,'\x01',pbVar7);
           iVar5 = iVar5 + 4;
         } while (iVar5 < 0xb9);
@@ -330,8 +327,7 @@ LAB_0050af64:
         iVar5 = 0x35;
         local_8 = pbVar7;
         do {
-          pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,1)
-          ;
+          pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,1);
           DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,iVar5,0x7d,'\x01',pbVar8);
           iVar5 = iVar5 + 4;
           pbVar7 = pbVar7 + -1;
@@ -340,8 +336,7 @@ LAB_0050af64:
       if (local_8 < (byte *)0x21) {
         iVar5 = (int)local_8 * 4 + 0x35;
         do {
-          pbVar7 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0)
-          ;
+          pbVar7 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
           DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,iVar5,0x7d,'\x01',pbVar7);
           iVar5 = iVar5 + 4;
         } while (iVar5 < 0xb9);
@@ -408,8 +403,7 @@ cf_common_exit_0050B38B:
              (byte *)this_00->field_09D9[0xe]);
       uVar6 = thunk_FUN_00526ba0(*(Global_sub_00526BA0_param_1Enum *)&this_00->field_0xc12,
                                  this_00->field_0C1A);
-      pbVar7 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02BA,uVar6)
-      ;
+      pbVar7 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02BA,uVar6);
       DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,0x2a,0x52,'\x01',pbVar7);
       pbVar7 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B2,1);
       DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,0x33,0x7b,'\x01',pbVar7);
@@ -419,8 +413,7 @@ cf_common_exit_0050B38B:
         iVar5 = 0x35;
         local_14 = pbVar7;
         do {
-          pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,1)
-          ;
+          pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,1);
           DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,iVar5,0x7d,'\x01',pbVar8);
           iVar5 = iVar5 + 4;
           pbVar7 = pbVar7 + -1;
@@ -429,8 +422,7 @@ cf_common_exit_0050B38B:
       if (local_14 < (byte *)0x21) {
         iVar5 = (int)local_14 * 4 + 0x35;
         do {
-          pbVar7 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0)
-          ;
+          pbVar7 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
           DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,iVar5,0x7d,'\x01',pbVar7);
           iVar5 = iVar5 + 4;
         } while (iVar5 < 0xb9);
@@ -809,8 +801,7 @@ LAB_0050b386:
       DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,(int)(local_14 + -2),0x55,'\x01',
              (byte *)this_00->field_09D9[0xe]);
       uVar6 = thunk_FUN_00526ba0(*local_10,local_8[-10]);
-      pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02C2,uVar6)
-      ;
+      pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02C2,uVar6);
       DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,(int)pbVar7,0x57,'\x01',pbVar8);
       pbVar7 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B2,4);
       DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,iVar5 + -2,0x58,'\x01',pbVar7);
@@ -821,8 +812,7 @@ LAB_0050b386:
         local_18 = uVar6;
         local_c = uVar6;
         do {
-          pbVar7 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,7)
-          ;
+          pbVar7 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,7);
           DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,iVar5,iVar13,'\x01',pbVar7);
           iVar13 = iVar13 + -4;
           local_18 = local_18 - 1;
@@ -832,8 +822,7 @@ LAB_0050b386:
         iVar13 = local_c * -4 + 0x7e;
         local_18 = 10 - local_c;
         do {
-          pbVar7 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,8)
-          ;
+          pbVar7 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,8);
           DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,iVar5,iVar13,'\x01',pbVar7);
           iVar13 = iVar13 + -4;
           local_18 = local_18 - 1;

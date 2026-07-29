@@ -19,12 +19,12 @@ void __thiscall StartSystemTy::LoadMapData(StartSystemTy *this,cMf32 *param_1,ch
   StartSystemTy *this_01;
   int iVar3;
   ushort *puVar4;
-  undefined1 *puVar5;
-  DArrayTy *pDVar6;
-  char *pcVar7;
-  uint uVar8;
-  int iVar9;
-  uint uVar10;
+  undefined1 *puVar6;
+  DArrayTy *pDVar7;
+  char *pcVar8;
+  uint uVar9;
+  int iVar10;
+  uint uVar11;
   InternalExceptionFrame local_9c;
   undefined4 local_58;
   undefined1 local_3c [16];
@@ -38,6 +38,7 @@ void __thiscall StartSystemTy::LoadMapData(StartSystemTy *this,cMf32 *param_1,ch
   undefined1 local_e;
   undefined4 local_d;
   undefined4 *local_8;
+  char *puVar5;
 
   local_9c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_9c;
@@ -46,9 +47,9 @@ void __thiscall StartSystemTy::LoadMapData(StartSystemTy *this,cMf32 *param_1,ch
   this_01 = local_1c;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_9c.previous;
-    iVar9 = ReportDebugMessage("E:\\__titans\\Start\\startsys.cpp",0x231,0,iVar3,"%s"
-                               ,"StartSystemTy::LoadMapData");
-    if (iVar9 != 0) {
+    iVar10 = ReportDebugMessage("E:\\__titans\\Start\\startsys.cpp",0x231,0,iVar3,
+                                "%s","StartSystemTy::LoadMapData");
+    if (iVar10 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar3,0,"E:\\__titans\\Start\\startsys.cpp",0x231);
@@ -101,21 +102,21 @@ void __thiscall StartSystemTy::LoadMapData(StartSystemTy *this,cMf32 *param_1,ch
       iVar3 = 0;
       if (0 < (int)g_dArray_0080C4CB->elementSize) {
         if ((int)g_dArray_0080C4CB->elementSize < 1) {
-          pcVar7 = (char *)0x0;
+          pcVar8 = (char *)0x0;
           goto LAB_005dc22d;
         }
         do {
-          pcVar7 = *(char **)(g_dArray_0080C4CB->growCapacity + iVar3 * 4);
+          pcVar8 = *(char **)(g_dArray_0080C4CB->growCapacity + iVar3 * 4);
 LAB_005dc22d:
-          thunk_FUN_005411a0((DArrayTy *)this_01->field_0548,pcVar7,"@- %s");
+          thunk_FUN_005411a0((DArrayTy *)this_01->field_0548,pcVar8,"@- %s");
           iVar3 = iVar3 + 1;
         } while (iVar3 < (int)g_dArray_0080C4CB->elementSize);
       }
       pcVar1 = this_01->field_0034;
       pcVar1->field_007E = 1;
-      puVar5 = &pcVar1->field_0x9e;
-      *(undefined2 *)puVar5 = 0;
-      *puVar5 = DAT_007cc854;
+      puVar6 = &pcVar1->field_0x9e;
+      *(undefined2 *)puVar6 = 0;
+      *puVar6 = DAT_007cc854;
       local_14 = (DArrayTy *)
                  ccFntTy::FormIndentSarr
                            (this_01->field_0034,(DArrayTy *)this_01->field_0548,
@@ -124,23 +125,23 @@ LAB_005dc22d:
       if ((DArrayTy *)this_01->field_0548 != (DArrayTy *)0x0) {
         FUN_006b5570((DArrayTy *)this_01->field_0548);
       }
-      pDVar6 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
-      this_01->field_0548 = &pDVar6->flags;
+      pDVar7 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
+      this_01->field_0548 = &pDVar7->flags;
       puVar5 = &this_01->field_0x3c;
-      pcVar7 = LoadResourceString(0x2347,g_module_00807618);
-      wsprintfA(puVar5,"&2 %s:",pcVar7);
+      pcVar8 = LoadResourceString(0x2347,g_module_00807618);
+      wsprintfA(puVar5,"&2 %s:",pcVar8);
       Library::DKW::TBL::FUN_006b5aa0(this_01->field_0548,puVar5);
       wsprintfA(puVar5,"&0 %s",&DAT_0080c3c3);
       Library::DKW::TBL::FUN_006b5aa0(this_01->field_0548,puVar5);
       Library::DKW::TBL::FUN_006b5aa0(this_01->field_0548,&DAT_007c3b5c);
-      uVar8 = DAT_008087c4 & 0xffff;
-      uVar10 = (uint)DAT_008087c2;
-      pcVar7 = LoadResourceString(0x2344,g_module_00807618);
-      wsprintfA(puVar5,"&2 %s: &0%d&2x&0%d",pcVar7,uVar10,uVar8);
+      uVar9 = DAT_008087c4 & 0xffff;
+      uVar11 = (uint)DAT_008087c2;
+      pcVar8 = LoadResourceString(0x2344,g_module_00807618);
+      wsprintfA(puVar5,"&2 %s: &0%d&2x&0%d",pcVar8,uVar11,uVar9);
       Library::DKW::TBL::FUN_006b5aa0(this_01->field_0548,puVar5);
-      uVar8 = DAT_008087c4 >> 0x10 & 0xff;
-      pcVar7 = LoadResourceString(0x2345,g_module_00807618);
-      wsprintfA(puVar5,"&2 %s: &0%d",pcVar7,uVar8);
+      uVar9 = DAT_008087c4 >> 0x10 & 0xff;
+      pcVar8 = LoadResourceString(0x2345,g_module_00807618);
+      wsprintfA(puVar5,"&2 %s: &0%d",pcVar8,uVar9);
       Library::DKW::TBL::FUN_006b5aa0(this_01->field_0548,puVar5);
       Library::DKW::TBL::FUN_006b5aa0(this_01->field_0548,&DAT_007c3b5c);
       switch(param_2) {
@@ -157,30 +158,30 @@ LAB_005dc22d:
       case '\x0f':
       case '\x10':
       case '\x13':
-        pcVar7 = LoadResourceString(0x2346,g_module_00807618);
-        wsprintfA(puVar5,"&2 %s:",pcVar7);
+        pcVar8 = LoadResourceString(0x2346,g_module_00807618);
+        wsprintfA(puVar5,"&2 %s:",pcVar8);
         Library::DKW::TBL::FUN_006b5aa0(this_01->field_0548,puVar5);
         Library::DKW::TBL::FUN_006b5aa0(this_01->field_0548,&DAT_007c3b5c);
       }
-      pDVar6 = local_14;
+      pDVar7 = local_14;
       if (local_14 != (DArrayTy *)0x0) {
         if (local_14->elementSize != 0) {
           ccFntTy::SepColorStrInSarr(this_01->field_0034,&local_14->flags,&local_14->flags);
         }
         iVar3 = 0;
-        if (0 < (int)pDVar6->elementSize) {
-          if ((int)pDVar6->elementSize < 1) {
-            pcVar7 = (char *)0x0;
+        if (0 < (int)pDVar7->elementSize) {
+          if ((int)pDVar7->elementSize < 1) {
+            pcVar8 = (char *)0x0;
             goto LAB_005dc430;
           }
           do {
-            pcVar7 = *(char **)(pDVar6->growCapacity + iVar3 * 4);
+            pcVar8 = *(char **)(pDVar7->growCapacity + iVar3 * 4);
 LAB_005dc430:
-            Library::DKW::TBL::FUN_006b5aa0(this_01->field_0548,pcVar7);
+            Library::DKW::TBL::FUN_006b5aa0(this_01->field_0548,pcVar8);
             iVar3 = iVar3 + 1;
-          } while (iVar3 < (int)pDVar6->elementSize);
+          } while (iVar3 < (int)pDVar7->elementSize);
         }
-        FUN_006b5570(pDVar6);
+        FUN_006b5570(pDVar7);
       }
       if (((param_2 == '\f') || (param_2 == '\x10')) ||
          ((param_2 == '\x13' && (DAT_00803400 == '\f')))) {

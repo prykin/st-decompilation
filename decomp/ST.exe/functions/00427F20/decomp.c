@@ -61,28 +61,28 @@ FUN_00427f20(void *this,float param_1,float param_2,float param_3,int param_4,in
      (_DAT_007f4d70 = param_4, ExceptionList = &local_14, puVar2 = &stack0xffffff3c,
      param_4 - param_5 < 100)) goto cf_common_join_004286D0;
   ExceptionList = &local_14;
-  iVar3 = FUN_006e25d0(this,local_54);
+  iVar3 = ST3DSMAPContext::sub_006E25D0(this,local_54);
   iVar4 = 1;
   if (iVar3 != 1) {
-    iVar3 = FUN_006e25d0(this,local_54);
+    iVar3 = ST3DSMAPContext::sub_006E25D0(this,local_54);
     iVar4 = 1;
     if (iVar3 != 1) {
-      iVar3 = FUN_006e25d0(this,local_54);
+      iVar3 = ST3DSMAPContext::sub_006E25D0(this,local_54);
       iVar4 = 1;
       if (iVar3 != 1) {
-        iVar3 = FUN_006e25d0(this,local_54);
+        iVar3 = ST3DSMAPContext::sub_006E25D0(this,local_54);
         iVar4 = 1;
         if (iVar3 != 1) {
-          iVar3 = FUN_006e25d0(this,local_54);
+          iVar3 = ST3DSMAPContext::sub_006E25D0(this,local_54);
           iVar4 = 1;
           if (iVar3 != 1) {
-            iVar3 = FUN_006e25d0(this,local_54);
+            iVar3 = ST3DSMAPContext::sub_006E25D0(this,local_54);
             iVar4 = 1;
             if (iVar3 != 1) {
-              iVar3 = FUN_006e25d0(this,local_54);
+              iVar3 = ST3DSMAPContext::sub_006E25D0(this,local_54);
               iVar4 = 1;
               if (iVar3 != 1) {
-                iVar4 = FUN_006e25d0(this,local_54);
+                iVar4 = ST3DSMAPContext::sub_006E25D0(this,local_54);
               }
             }
           }

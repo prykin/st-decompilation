@@ -129,19 +129,20 @@ LAB_00600928:
             iVar4 = param_1->field_01E9;
             if (iVar4 != 0) {
               if (param_1->field_01F1 == 0) {
-                SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006EA050::sub_006EA460
-                          ((AnonReceiver_006EA050 *)PTR_00807598,pSVar2->field_0018,
-                           *(int *)(iVar4 + 0x1ed));
+                Library::Ourlib::ST3DSMAP::SprSetLevBefore
+                          (g_sT3DSMAPContext_00807598,pSVar2->field_0018,*(int *)(iVar4 + 0x1ed));
               }
               else {
-                FUN_006ea3e0(PTR_00807598,pSVar2->field_0018,*(int *)(iVar4 + 0x1ed));
+                Library::Ourlib::ST3DSMAP::SprSetLevAfter
+                          (g_sT3DSMAPContext_00807598,pSVar2->field_0018,*(int *)(iVar4 + 0x1ed));
               }
             }
             uVar10 = 0x53;
             uVar9 = 0x5a;
             iVar4 = 1;
             uVar8 = thunk_FUN_004ad650(pSVar2);
-            FUN_006ea4e0(PTR_00807598,uVar8,iVar4,uVar9,uVar10);
+            Library::Ourlib::ST3DSMAP::SprSetLevBeforeLand
+                      (g_sT3DSMAPContext_00807598,uVar8,iVar4,uVar9,uVar10);
           }
         }
         break;

@@ -10,27 +10,27 @@ void __thiscall VisibleClassTy::Init(VisibleClassTy *this)
 {
   undefined4 uVar1;
   code *pcVar2;
-  AnonShape_GLOBAL_00807598_0C6808FB *pAVar3;
+  ST3DSMAPContext *pSVar3;
   VisibleClassTy *this_00;
   int iVar4;
   LPSTR pCVar5;
   undefined4 *puVar6;
   undefined4 *puVar7;
-  undefined1 *puVar8;
-  DArrayTy *pDVar9;
-  undefined4 *puVar10;
-  int iVar11;
-  uint uVar12;
-  bool bVar13;
+  VisibleClassTy_field_0110Element *element_0110;
+  VisibleClassTy_field_0110DArray *pVVar8;
+  undefined4 *puVar9;
+  int iVar10;
+  uint uVar11;
+  bool bVar12;
+  byte bVar13;
   byte bVar14;
-  byte bVar15;
-  short *psVar16;
+  short *psVar15;
   InternalExceptionFrame local_54;
   VisibleClassTy *local_10;
   int local_c;
   short *local_8;
 
-  iVar11 = 0;
+  iVar10 = 0;
   local_8 = (short *)0x0;
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
@@ -39,9 +39,9 @@ void __thiscall VisibleClassTy::Init(VisibleClassTy *this)
   this_00 = local_10;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_54.previous;
-    iVar11 = ReportDebugMessage("E:\\__titans\\grig\\visible.cpp",0xaa,0,iVar4,"%s",
+    iVar10 = ReportDebugMessage("E:\\__titans\\grig\\visible.cpp",0xaa,0,iVar4,"%s",
                                 "VisibleClassTy::Init");
-    if (iVar11 == 0) {
+    if (iVar10 == 0) {
       FUN_0070b600((int *)&local_8);
       RaiseInternalException(iVar4,0,"E:\\__titans\\grig\\visible.cpp",0xac);
       return;
@@ -50,17 +50,17 @@ void __thiscall VisibleClassTy::Init(VisibleClassTy *this)
   }
   DAT_00802a50 = -(uint)(local_10->field_0114 != 0) & 0x403765;
   if (local_10->field_0114 != 0) {
-    puVar10 = &local_10->field_01D8;
+    puVar9 = &local_10->field_01D8;
     do {
-      psVar16 = (short *)0x1;
-      bVar15 = 0;
-      bVar14 = 0x1c;
-      pCVar5 = FUN_006f2c00(PTR_DAT_0079aec8,1,iVar11);
-      local_8 = Library::Ourlib::MFIMG::mfQmtLoad(PTR_00806770,pCVar5,bVar14,bVar15,psVar16);
-      (&DAT_007c9290)[iVar11] = (int)*(short *)((int)local_8 + 9);
-      puVar7 = puVar10 + -0x30;
+      psVar15 = (short *)0x1;
+      bVar14 = 0;
+      bVar13 = 0x1c;
+      pCVar5 = FUN_006f2c00(PTR_DAT_0079aec8,1,iVar10);
+      local_8 = Library::Ourlib::MFIMG::mfQmtLoad(PTR_00806770,pCVar5,bVar13,bVar14,psVar15);
+      (&DAT_007c9290)[iVar10] = (int)*(short *)((int)local_8 + 9);
+      puVar7 = puVar9 + -0x30;
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      (&DAT_007c929c)[iVar11] = (int)*(short *)((int)local_8 + 0xb);
+      (&DAT_007c929c)[iVar10] = (int)*(short *)((int)local_8 + 0xb);
       puVar6 = (undefined4 *)((int)local_8 + 0x11);
       local_c = 0x10;
       do {
@@ -71,80 +71,85 @@ void __thiscall VisibleClassTy::Init(VisibleClassTy *this)
         local_c = local_c + -1;
       } while (local_c != 0);
       FUN_0070b600((int *)&local_8);
-      psVar16 = (short *)0x1;
-      bVar15 = 0;
-      bVar14 = 0x1c;
-      pCVar5 = FUN_006f2c00(PTR_DAT_0079aecc,1,iVar11);
-      local_8 = Library::Ourlib::MFIMG::mfQmtLoad(PTR_00806770,pCVar5,bVar14,bVar15,psVar16);
+      psVar15 = (short *)0x1;
+      bVar14 = 0;
+      bVar13 = 0x1c;
+      pCVar5 = FUN_006f2c00(PTR_DAT_0079aecc,1,iVar10);
+      local_8 = Library::Ourlib::MFIMG::mfQmtLoad(PTR_00806770,pCVar5,bVar13,bVar14,psVar15);
       puVar7 = (undefined4 *)((int)local_8 + 0x11);
       iVar4 = 0x10;
       do {
         uVar1 = *puVar7;
         puVar7 = puVar7 + 1;
-        *puVar10 = uVar1;
-        puVar10 = puVar10 + 1;
+        *puVar9 = uVar1;
+        puVar9 = puVar9 + 1;
         iVar4 = iVar4 + -1;
       } while (iVar4 != 0);
       FUN_0070b600((int *)&local_8);
-      iVar11 = iVar11 + 1;
-    } while (iVar11 < 3);
+      iVar10 = iVar10 + 1;
+    } while (iVar10 < 3);
     Library::Ourlib::STDARK::FUN_007176f0
-              (PTR_00807598,this_00->field_003C,this_00->field_0028,this_00->field_002C,
-               (int)&this_00->field_0118,(int)this_00->field_004C,this_00->field_0030,
-               this_00->field_0034,(int)&this_00->field_01D8,3,0x10,&DAT_007c9290,&DAT_007c929c);
-    pDVar9 = this_00->field_0110;
-    uVar12 = 0;
-    if (0 < (int)pDVar9->count) {
-      bVar13 = pDVar9->count != 0;
+              (g_sT3DSMAPContext_00807598,this_00->field_003C,this_00->field_0028,
+               this_00->field_002C,(int)&this_00->field_0118,(int)this_00->field_004C,
+               this_00->field_0030,this_00->field_0034,(int)&this_00->field_01D8,3,0x10,
+               &DAT_007c9290,&DAT_007c929c);
+    pVVar8 = this_00->field_0110;
+    uVar11 = 0;
+    if (0 < (int)pVVar8->count) {
+      bVar12 = pVVar8->count != 0;
       do {
-        if (bVar13) {
-          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar9, uVar12) (runtime stride) */
-          puVar8 = (undefined1 *)(pDVar9->elementSize * uVar12 + (int)pDVar9->data);
+        if (bVar12) {
+          element_0110 = DArrayAt<VisibleClassTy_field_0110Element>(pVVar8, uVar11);
         }
         else {
-          puVar8 = (undefined1 *)0x0;
+          element_0110 = (VisibleClassTy_field_0110Element *)0x0;
         }
-        switch(*puVar8) {
-        case 0:
-          sub_00558DC0(this_00,(int)*(short *)(puVar8 + 2),(int)*(short *)(puVar8 + 4),
-                       (undefined *)(int)(char)puVar8[6],(int *)(uint)(byte)puVar8[1],
-                       (uint)(byte)puVar8[7],*(int **)(puVar8 + 8),0x4001);
+        switch(element_0110->field_0000) {
+        case '\0':
+          sub_00558DC0(this_00,(int)element_0110->field_0002,(int)element_0110->field_0004,
+                       (undefined *)(int)element_0110->field_0006,(int *)(uint)(byte)element_0110->field_0001,
+                       (uint)(byte)element_0110->field_0007,(int *)element_0110->field_0008,0x4001);
           break;
-        case 1:
-          sub_005594A0(this_00,(int)*(short *)(puVar8 + 2),(int)*(short *)(puVar8 + 4),puVar8[6],
-                       (undefined *)(uint)(byte)puVar8[1],(uint)(byte)puVar8[7],
-                       *(undefined4 *)(puVar8 + 8),2);
+        case '\x01':
+          sub_005594A0(this_00,(int)element_0110->field_0002,(int)element_0110->field_0004,element_0110->field_0006,
+                       (undefined *)(uint)(byte)element_0110->field_0001,(uint)(byte)element_0110->field_0007,
+                       element_0110->field_0008,2);
           break;
-        case 2:
-          SetZoneDes(this_00,(int)*(short *)(puVar8 + 2),(int)*(short *)(puVar8 + 4),puVar8[6],
-                     (uint)(byte)puVar8[1],(uint)(byte)puVar8[7],*(undefined4 *)(puVar8 + 8),4);
+        case '\x02':
+          SetZoneDes(this_00,(int)element_0110->field_0002,(int)element_0110->field_0004,element_0110->field_0006,
+                     (uint)(byte)element_0110->field_0001,(uint)(byte)element_0110->field_0007,
+                     element_0110->field_0008,4);
           break;
-        case 3:
-          SetZoneAst(this_00,(int)*(short *)(puVar8 + 2),(int)*(short *)(puVar8 + 4),puVar8[6],
-                     (uint)(byte)puVar8[1],(uint)(byte)puVar8[7],*(uint *)(puVar8 + 8),8);
+        case '\x03':
+          SetZoneAst(this_00,(int)element_0110->field_0002,(int)element_0110->field_0004,element_0110->field_0006,
+                     (uint)(byte)element_0110->field_0001,(uint)(byte)element_0110->field_0007,
+                     element_0110->field_0008,8);
           break;
-        case 4:
-          SetZoneTsh(this_00,(int)*(short *)(puVar8 + 2),(int)*(short *)(puVar8 + 4),puVar8[6],
-                     (uint)(byte)puVar8[1],(uint)(byte)puVar8[7],*(undefined4 *)(puVar8 + 8),0x10);
+        case '\x04':
+          SetZoneTsh(this_00,(int)element_0110->field_0002,(int)element_0110->field_0004,element_0110->field_0006,
+                     (uint)(byte)element_0110->field_0001,(uint)(byte)element_0110->field_0007,
+                     element_0110->field_0008,0x10);
           break;
-        case 5:
-          SetZoneMin1(this_00,(int)*(short *)(puVar8 + 2),(int)*(short *)(puVar8 + 4),puVar8[6],
-                      (uint)(byte)puVar8[1],(uint)(byte)puVar8[7],*(undefined4 *)(puVar8 + 8),0x20);
+        case '\x05':
+          SetZoneMin1(this_00,(int)element_0110->field_0002,(int)element_0110->field_0004,element_0110->field_0006,
+                      (uint)(byte)element_0110->field_0001,(uint)(byte)element_0110->field_0007,
+                      element_0110->field_0008,0x20);
           break;
-        case 6:
-          SetZoneMin2(this_00,(int)*(short *)(puVar8 + 2),(int)*(short *)(puVar8 + 4),puVar8[6],
-                      (uint)(byte)puVar8[1],(uint)(byte)puVar8[7],*(undefined4 *)(puVar8 + 8),0x40);
+        case '\x06':
+          SetZoneMin2(this_00,(int)element_0110->field_0002,(int)element_0110->field_0004,element_0110->field_0006,
+                      (uint)(byte)element_0110->field_0001,(uint)(byte)element_0110->field_0007,
+                      element_0110->field_0008,0x40);
         }
-        pDVar9 = this_00->field_0110;
-        uVar12 = uVar12 + 1;
-        bVar13 = uVar12 < pDVar9->count;
-      } while ((int)uVar12 < (int)pDVar9->count);
+        pVVar8 = this_00->field_0110;
+        uVar11 = uVar11 + 1;
+        bVar12 = uVar11 < pVVar8->count;
+      } while ((int)uVar11 < (int)pVVar8->count);
     }
-    pAVar3 = PTR_00807598;
+    pSVar3 = g_sT3DSMAPContext_00807598;
     if (this_00->field_0114 != 0) {
       if (this_00->field_00F8 != 0) {
-        PTR_00807598->field_0466 = 1;
-        pAVar3->field_02D8 = 1;
+        g_sT3DSMAPContext_00807598->field_0466 = 1;
+        pSVar3->field_02D8 = 1;
         g_currentExceptionFrame = local_54.previous;
         return;
       }
@@ -153,9 +158,9 @@ void __thiscall VisibleClassTy::Init(VisibleClassTy *this)
   }
   this_00->field_00F8 = 0;
 LAB_00557fbb:
-  pAVar3 = PTR_00807598;
-  PTR_00807598->field_0466 = 0;
-  pAVar3->field_02D8 = 1;
+  pSVar3 = g_sT3DSMAPContext_00807598;
+  g_sT3DSMAPContext_00807598->field_0466 = 0;
+  pSVar3->field_02D8 = 1;
   g_currentExceptionFrame = local_54.previous;
   return;
 }

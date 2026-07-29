@@ -21,9 +21,9 @@ AiTactClassTy::HelpOrganize(AiTactClassTy *this,AnonShape_00690650_F810CDF4 *par
   int iVar6;
   STGameObjC *pSVar7;
   uint uVar8;
-  DArrayTy *pDVar9;
+  AiTactClassTy_field_00A5DArray *pAVar9;
   int iVar10;
-  void *pvVar11;
+  AiTactClassTy_field_00A5Element *element_00a5;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined4 unaff_EDI;
   bool bVar13;
@@ -117,20 +117,19 @@ LAB_00690763:
         }
         uVar8 = thunk_FUN_00690550(this_01,*(short *)(iVar6 + 0x7d),sVar5);
         if ((int)uVar8 < 0) {
-          pDVar9 = this_01->field_00A5;
+          pAVar9 = this_01->field_00A5;
           local_8 = 0;
-          if (0 < (int)pDVar9->count) {
-            bVar13 = pDVar9->count != 0;
+          if (0 < (int)pAVar9->count) {
+            bVar13 = pAVar9->count != 0;
             do {
               if (bVar13) {
-                /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar9, local_8) (runtime stride) */
-                pvVar11 = (void *)(pDVar9->elementSize * local_8 + (int)pDVar9->data);
+                element_00a5 = DArrayAt<AiTactClassTy_field_00A5Element>(pAVar9, local_8);
               }
               else {
-                pvVar11 = (void *)0x0;
+                element_00a5 = (AiTactClassTy_field_00A5Element *)0x0;
               }
-              if ((pvVar11 != (void *)0x0) &&
-                 (this_00 = *(AiFltClassTy **)((int)pvVar11 + 4), this_00 != (AiFltClassTy *)0x0)) {
+              if (((undefined4 *)element_00a5 != (undefined4 *)0x0) &&
+                 (this_00 = element_00a5->field_0004, this_00 != (AiFltClassTy *)0x0)) {
                 memset(local_54, 0, 0x34); /* compiler bulk-zero initialization */
                 local_54[0] = 100;
                 local_4b = 1;
@@ -144,7 +143,7 @@ LAB_00690763:
                 if ('\0' < local_4c) {
                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   _local_1c = CONCAT22(*(undefined2 *)(iVar6 + 0x7d),
-                                       *(undefined2 *)(*(int *)((int)pvVar11 + 4) + 0x7d));
+                                       *(undefined2 *)(element_00a5->field_0004 + 0x7d));
                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   local_18 = CONCAT22(*(undefined2 *)(iVar6 + 0x7b),(short)local_10);
                   Library::DKW::TBL::FUN_006ae1c0
@@ -154,9 +153,9 @@ LAB_00690763:
                 }
               }
               local_8 = local_8 + 1;
-              pDVar9 = local_c->field_00A5;
-              bVar13 = local_8 < pDVar9->count;
-              if ((int)pDVar9->count <= (int)local_8) {
+              pAVar9 = local_c->field_00A5;
+              bVar13 = local_8 < pAVar9->count;
+              if ((int)pAVar9->count <= (int)local_8) {
                 g_currentExceptionFrame = local_98.previous;
                 return;
               }

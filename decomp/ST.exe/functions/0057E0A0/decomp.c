@@ -240,7 +240,7 @@ int __thiscall STDcResourcC::GetMessage(STDcResourcC *this,STMessage *message)
         g_currentExceptionFrame = local_68.previous;
         return 0;
       }
-      FUN_006e6580((void *)this_00->field_0211,*(int **)&this_00->field_0x273);
+      FUN_006e6580(this_00->field_0211,*(int **)&this_00->field_0x273);
       *(undefined4 *)&this_00->field_0x273 = 0;
       g_currentExceptionFrame = local_68.previous;
       return 0;
@@ -382,8 +382,7 @@ int __thiscall STDcResourcC::GetMessage(STDcResourcC *this,STMessage *message)
         iVar9 = 0xb1;
 LAB_0057e60c:
         RaiseInternalException
-                  (0xffff,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\To_gold.cpp",iVar9)
-        ;
+                  (0xffff,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\To_gold.cpp",iVar9);
       }
     }
     *(uint *)&this_00->field_0x261 = *(uint *)&this_00->field_0x261 & 0xfffffffb;
@@ -447,8 +446,7 @@ LAB_0057e6f0:
            (pVVar6->field_003C[pVVar6->field_010C] != (void *)0x0)) {
           uVar10 = (uint)*(byte *)((int)local_18 +
                                   (int)((int)pVVar6->field_003C[pVVar6->field_010C] +
-                                       (g_centeredOffsets5[iVar9] + local_14) * pVVar6->field_0028))
-          ;
+                                       (g_centeredOffsets5[iVar9] + local_14) * pVVar6->field_0028));
         }
         else {
           uVar10 = 0xffffffff;
@@ -553,7 +551,7 @@ LAB_0057e6f0:
     if (uVar10 != 2) goto cf_common_join_0057E9C2;
     piVar22 = *(int **)&this_00->field_0x273;
   }
-  FUN_006e6580((void *)this_00->field_0211,piVar22);
+  FUN_006e6580(this_00->field_0211,piVar22);
   *(undefined4 *)&this_00->field_0x273 = 0;
 cf_common_join_0057E9C2:
   this_00->vfunc_D8();
@@ -565,22 +563,21 @@ cf_common_join_0057E9C2:
     } while (iVar9 < *(int *)&this_00->field_0x265);
   }
   if (*(int *)&this_00->field_0x25d == 2) {
-    if ((this_00->field_0211 != 0) && (g_playSystem_00802A38->field_00E4 % 0xf == 0)) {
+    if ((this_00->field_0211 != (ST3DSMAPContext *)0x0) &&
+       (g_playSystem_00802A38->field_00E4 % 0xf == 0)) {
       bVar7 = this_00->field_0x272 + 1;
       this_00->field_0x272 = bVar7;
-      if ((short)(ushort)bVar7 < *(short *)(DAT_00806724 + 0x23)) {
+      if ((short)(ushort)bVar7 < PTR_00806724->entryCount) {
         STT3DSprC::sub_004ACE30
-                  ((STT3DSprC *)&this_00->field_01D5,
-                   *(uint *)(DAT_00806724 + 0x30 + (uint)bVar7 * 4),
-                   (int)*(short *)(DAT_00806724 + 0x2c));
+                  ((STT3DSprC *)&this_00->field_01D5,PTR_00806724->entries[bVar7],
+                   (int)PTR_00806724->field_002C);
         if ((*(int *)&this_00->field_0x255 != 0xe0) &&
            (iVar9 = 0, 0 < *(int *)&this_00->field_0x265)) {
           do {
-            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             STT3DSprC::sub_004ACE30
                       (*(STT3DSprC **)(*(int *)&this_00->field_0x26d + iVar9 * 4),
-                       *(uint *)(DAT_00806724 + 0x30 + (uint)(byte)this_00->field_0x272 * 4),
-                       (int)*(short *)(DAT_00806724 + 0x2c));
+                       PTR_00806724->entries[(byte)this_00->field_0x272],
+                       (int)PTR_00806724->field_002C);
             iVar9 = iVar9 + 1;
           } while (iVar9 < *(int *)&this_00->field_0x265);
         }
@@ -591,14 +588,12 @@ cf_common_join_0057E9C2:
     }
     if ((((this_00->field_0259 != 0) &&
          (iVar9 = thunk_FUN_00580dc0((STJellyGunC *)this_00), iVar9 != 0)) &&
-        (STT3DSprC::sub_004ACE30
-                   ((STT3DSprC *)&this_00->field_01D5,0,(int)*(short *)(DAT_00806724 + 0x2c)),
+        (STT3DSprC::sub_004ACE30((STT3DSprC *)&this_00->field_01D5,0,(int)PTR_00806724->field_002C),
         *(int *)&this_00->field_0x255 != 0xe0)) && (iVar9 = 0, 0 < *(int *)&this_00->field_0x265)) {
       do {
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         STT3DSprC::sub_004ACE30
                   (*(STT3DSprC **)(*(int *)&this_00->field_0x26d + iVar9 * 4),0,
-                   (int)*(short *)(DAT_00806724 + 0x2c));
+                   (int)PTR_00806724->field_002C);
         iVar9 = iVar9 + 1;
       } while (iVar9 < *(int *)&this_00->field_0x265);
       g_currentExceptionFrame = local_68.previous;

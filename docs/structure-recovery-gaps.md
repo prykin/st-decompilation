@@ -110,13 +110,16 @@ zero.
   address would begin before the observed pointer.
 - One decompiler local can represent several SSA values because the compiler reused a
   register. Assigning one persistent Listing type to that local can make unrelated
-  expressions worse. Only aliases traceable to one stable parameter/local/global are
-  auto-applied.
+  expressions worse. `STLocalLifetimeAnalyzer/Applier` can persist separate types only
+  when Ghidra exposes distinct merge groups and each enabled group has an independent
+  exact call/copy type anchor. The applier verifies the original p-code address after a
+  fresh decompile; physical-storage coincidence alone is never accepted.
   A concrete current example is `pDVar10` in `STAllPlayersC::CmdToPlsObj`: some
   SSA instances are genuine `DArrayTy *`, while a later instance is a polymorphic
   object and renders as `(**(code **)pDVar10->flags)(...)`. No ordinary C type can
-  make both instances correct; this needs a decompiler high-variable split, not a
-  larger or more permissive structure.
+  make both instances correct. If both roles remain in one inseparable merge group,
+  the database cannot safely express the source-level split and exporter-side
+  normalization remains necessary.
 - Raw virtual calls require both receiver type and vtable slot knowledge. A field-shape
   match alone cannot choose a class hierarchy or virtual signature.
 

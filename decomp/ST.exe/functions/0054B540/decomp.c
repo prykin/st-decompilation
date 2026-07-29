@@ -17,8 +17,8 @@ void __thiscall CursorClassTy::sub_0054B540(CursorClassTy *this)
   uVar1 = this->field_010B;
   if (-1 < (int)uVar1) {
     if (this->field_00DE == CASE_5) {
-      if (PTR_00807598 != (AnonShape_GLOBAL_00807598_0C6808FB *)0x0) {
-        FUN_006e8ba0(PTR_00807598,uVar1);
+      if (g_sT3DSMAPContext_00807598 != (ST3DSMAPContext *)0x0) {
+        Library::Ourlib::ST3DSMAP::SprClose(g_sT3DSMAPContext_00807598,uVar1);
       }
       if (this->field_00A9 == 0) {
         Library::DKW::DDX::FUN_006b8a60((byte *)this->field_00AD);

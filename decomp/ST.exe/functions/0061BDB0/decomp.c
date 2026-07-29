@@ -60,9 +60,11 @@ FUN_0061bdb0(void *this,Global_sub_0061BDB0_param_1Enum param_1,int param_2,int 
                           (short)((longlong)iVar5 * 0x51eb851f >> 0x3f));
     }
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    FUN_006e3310(PTR_00807598,(*(int *)((int)this + 0x9f) * PTR_00807598->field_0380) / 0xc9,
-                 (int *)((*(int *)((int)this + 0xa3) * PTR_00807598->field_0380) / 0xc9),iVar5,
-                 (int *)&param_1);
+    ST3DSMAPContext::sub_006E3310
+              (g_sT3DSMAPContext_00807598,
+               (*(int *)((int)this + 0x9f) * g_sT3DSMAPContext_00807598->field_0380) / 0xc9,
+               (int *)((*(int *)((int)this + 0xa3) * g_sT3DSMAPContext_00807598->field_0380) / 0xc9)
+               ,iVar5,(int *)&param_1);
     lVar6 = Library::MSVCRT::__ftol();
     if (*(int *)((int)this + 0xd7) < (int)(short)lVar6) {
       *(int *)((int)this + 0xd7) = (int)(short)lVar6;

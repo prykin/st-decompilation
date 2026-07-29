@@ -45,8 +45,7 @@ undefined4 * __thiscall STExplosionC::SaveObj(STExplosionC *this,uint *param_1)
   local_8c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_8c;
   ExceptionList = &local_14;
-  iVar3 = Library::MSVCRT::__setjmp3(local_8c.jumpBuffer,2,Library::MSVCRT::FUN_0072da21,0xffffffff)
-  ;
+  iVar3 = Library::MSVCRT::__setjmp3(local_8c.jumpBuffer,2,Library::MSVCRT::FUN_0072da21,0xffffffff);
   local_1c = &stack0xffffff40;
   if (iVar3 == 0) {
     *param_1 = 0;
@@ -82,8 +81,7 @@ undefined4 * __thiscall STExplosionC::SaveObj(STExplosionC *this,uint *param_1)
       local_3c[0] = (uint *)FUN_006b0020((uint *)this->field_0215,(int *)&local_20);
       uVar9 = *param_1 + local_20 + 4;
       *param_1 = uVar9;
-      local_48 = (AnonShape_00604A90_035626E6 *)Library::DKW::LIB::FUN_006acf50((int)local_48,uVar9)
-      ;
+      local_48 = (AnonShape_00604A90_035626E6 *)Library::DKW::LIB::FUN_006acf50((int)local_48,uVar9);
       *(uint *)((*param_1 - local_20) + -4 + (int)local_48) = local_20;
       puVar5 = local_3c[0];
       puVar11 = (uint *)((*param_1 - local_20) + (int)local_48);

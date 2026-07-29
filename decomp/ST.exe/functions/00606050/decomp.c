@@ -13,6 +13,7 @@ STExplosion::sub_00606050
 
 {
   byte bVar1;
+  int local_EAX_29;
   int iVar2;
   uint uVar3;
   uint uVar4;
@@ -52,8 +53,8 @@ STExplosion::sub_00606050
 
   iVar5 = 0;
   local_5 = '\0';
-  local_18 = GetPlayerRaceId((char)param_8);
-  local_18 = local_18 & 0xff;
+  local_EAX_29 = GetPlayerRaceId((char)param_8);
+  local_18 = local_EAX_29 & 0xff;
   if (param_4 == 0x21) {
     this->field_02B7 = param_7;
   }

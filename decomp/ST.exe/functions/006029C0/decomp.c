@@ -41,10 +41,10 @@ undefined4 FUN_006029c0(void)
         thunk_FUN_004ac610(this,'\f');
         STT3DSprC::ShowCurFase((STT3DSprC *)this,'\f');
         STT3DSprC::StartShow((STT3DSprC *)this,0xc,g_playSystem_00802A38->field_00E4);
-        FUN_006e9ef0(local_c->field_0211,local_c->field_01ED,0xc,1,0,0,30000);
+        ST3DSMAPContext::sub_006E9EF0(local_c->field_0211,local_c->field_01ED,0xc,1,0,0,30000);
       }
       local_c->field_036E = 2;
-      sVar1 = *(short *)(DAT_00806724 + 0x23);
+      sVar1 = PTR_00806724->entryCount;
       local_c->field_039F = 0xff;
       local_c->field_0397 = sVar1 + -1;
       iVar2 = thunk_FUN_004ad650((STT3DSprC *)this);

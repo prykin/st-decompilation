@@ -12,14 +12,15 @@ STJellyGunC_field_0235State __thiscall STJellyGunC::sub_00583E30(STJellyGunC *th
 {
   STJellyGunC_field_0235State SVar1;
   int iVar2;
-  uint uVar3;
+  int uVar3;
   uint uVar4;
-  int iVar5;
+  uint uVar5;
   int iVar6;
   int iVar7;
-  int *piVar8;
+  int iVar8;
   int *piVar9;
   int *piVar10;
+  int *piVar11;
   short local_20 [2];
   short local_1c [2];
   short local_18 [2];
@@ -63,18 +64,18 @@ STJellyGunC_field_0235State __thiscall STJellyGunC::sub_00583E30(STJellyGunC *th
       }
       uVar3 = FUN_006db910((int)this->field_0047,(int)this->field_0049,local_10,local_c);
       uVar4 = FUN_006db990(uVar3,8);
-      uVar3 = this->field_001C * 0x41c64e6d + 0x3039;
-      this->field_001C = uVar3;
-      uVar3 = uVar3 >> 0x10;
-      piVar10 = (int *)local_18;
-      iVar6 = (int)this->field_0049;
-      piVar9 = (int *)local_1c;
-      iVar7 = (int)this->field_0047;
-      piVar8 = (int *)local_20;
+      uVar5 = this->field_001C * 0x41c64e6d + 0x3039;
+      this->field_001C = uVar5;
+      uVar5 = uVar5 >> 0x10;
+      piVar11 = (int *)local_18;
+      iVar7 = (int)this->field_0049;
+      piVar10 = (int *)local_1c;
+      iVar8 = (int)this->field_0047;
+      piVar9 = (int *)local_20;
       iVar2 = (int)this->field_004B;
-      iVar5 = FUN_006acf90(iVar7,iVar6,local_10,local_c);
-      iVar2 = thunk_FUN_005845b0(uVar4,local_8 - this->field_004B,iVar5,iVar7,iVar6,iVar2,piVar8,
-                                 piVar9,piVar10,uVar3);
+      iVar6 = FUN_006acf90(iVar8,iVar7,local_10,local_c);
+      iVar2 = thunk_FUN_005845b0(uVar4,local_8 - this->field_004B,iVar6,iVar8,iVar7,iVar2,piVar9,
+                                 piVar10,piVar11,uVar5);
       if (iVar2 != 0) {
         thunk_FUN_00417ff0(this,6);
         thunk_FUN_00418010(this,5);

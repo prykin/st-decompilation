@@ -39,13 +39,15 @@ void __fastcall FUN_0063e410(AnonShape_0063E410_6FBC68F2 *param_1)
           if (*(int *)(iVar5 + 4) == 1) {
             if ((local_c <= (int)local_8) && ((int)local_8 < local_10)) {
               *(undefined4 *)(iVar5 + 4) = 0;
-              FUN_006ea270(param_1->field_0211,uVar2,0,
-                           *(uint *)(&DAT_007d1f98 + *(int *)(iVar5 + 0x20) * 4));
-              FUN_006ea960(param_1->field_0211,*(uint *)(iVar5 + 0x38),
-                           (float)*(int *)(iVar5 + 8) * _DAT_007904f8 * _DAT_007904f0,
-                           (float)*(int *)(iVar5 + 0xc) * _DAT_007904f8 * _DAT_007904f0,
-                           *(float *)(iVar5 + 0x10) + _DAT_007904fc);
-              FUN_006eaaa0(param_1->field_0211,*(uint *)(iVar5 + 0x38),0);
+              ST3DSMAPContext::sub_006EA270
+                        (param_1->field_0211,uVar2,0,
+                         *(uint *)(&DAT_007d1f98 + *(int *)(iVar5 + 0x20) * 4));
+              Library::Ourlib::ST3DSMAP::SprMove
+                        (param_1->field_0211,*(uint *)(iVar5 + 0x38),
+                         (float)*(int *)(iVar5 + 8) * _DAT_007904f8 * _DAT_007904f0,
+                         (float)*(int *)(iVar5 + 0xc) * _DAT_007904f8 * _DAT_007904f0,
+                         *(float *)(iVar5 + 0x10) + _DAT_007904fc);
+              Library::Ourlib::ST3DSMAP::SprShow(param_1->field_0211,*(uint *)(iVar5 + 0x38),0);
             }
           }
           else {
@@ -59,12 +61,14 @@ void __fastcall FUN_0063e410(AnonShape_0063E410_6FBC68F2 *param_1)
               else {
                 *(int *)(iVar5 + 0x20) = iVar4;
               }
-              FUN_006ea270(param_1->field_0211,uVar2,0,
-                           *(uint *)(&DAT_007d1f98 + *(int *)(iVar5 + 0x20) * 4));
-              FUN_006ea960(param_1->field_0211,*(uint *)(iVar5 + 0x38),
-                           (float)*(int *)(iVar5 + 8) * _DAT_007904f8 * _DAT_007904f0,
-                           (float)*(int *)(iVar5 + 0xc) * _DAT_007904f8 * _DAT_007904f0,
-                           *(float *)(iVar5 + 0x10) + _DAT_007904fc);
+              ST3DSMAPContext::sub_006EA270
+                        (param_1->field_0211,uVar2,0,
+                         *(uint *)(&DAT_007d1f98 + *(int *)(iVar5 + 0x20) * 4));
+              Library::Ourlib::ST3DSMAP::SprMove
+                        (param_1->field_0211,*(uint *)(iVar5 + 0x38),
+                         (float)*(int *)(iVar5 + 8) * _DAT_007904f8 * _DAT_007904f0,
+                         (float)*(int *)(iVar5 + 0xc) * _DAT_007904f8 * _DAT_007904f0,
+                         *(float *)(iVar5 + 0x10) + _DAT_007904fc);
             }
           }
         }

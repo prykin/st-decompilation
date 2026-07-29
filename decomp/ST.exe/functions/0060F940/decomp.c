@@ -81,12 +81,10 @@ FUN_0060f940(int param_1,int param_2,AnonShape_0060F940_1CCED7C8 *param_3,int pa
         iVar4 = (*(int *)(&DAT_007cfe74 + param_1 * 4) * 10000) / iVar4;
         param_3->field_000C =
              *psVar3 * 1000 -
-             ((&SHORT_007ed570)[param_2 * 4] * iVar4 * 1000) / *(int *)(&DAT_007cfe74 + param_2 * 4)
-        ;
+             ((&SHORT_007ed570)[param_2 * 4] * iVar4 * 1000) / *(int *)(&DAT_007cfe74 + param_2 * 4);
         param_3->field_0010 =
              *psVar2 * 1000 -
-             ((&SHORT_007ed572)[param_2 * 4] * iVar4 * 1000) / *(int *)(&DAT_007cfe74 + param_2 * 4)
-        ;
+             ((&SHORT_007ed572)[param_2 * 4] * iVar4 * 1000) / *(int *)(&DAT_007cfe74 + param_2 * 4);
         iVar6 = *psVar1 * 1000 -
                 ((&SHORT_007ed574)[param_2 * 4] * iVar4 * 1000) /
                 *(int *)(&DAT_007cfe74 + param_2 * 4);

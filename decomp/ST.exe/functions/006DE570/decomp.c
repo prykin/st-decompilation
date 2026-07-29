@@ -36,7 +36,7 @@ int __thiscall FUN_006de570(void *this,int param_1,int param_2)
   local_14 = 0;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_2 = 30000;
-  FUN_006e25d0(this,&local_2c);
+  ST3DSMAPContext::sub_006E25D0(this,&local_2c);
   iVar1 = local_2c >> 0x10;
   iVar4 = 30000;
   if (iVar1 < 30000) {
@@ -58,7 +58,7 @@ int __thiscall FUN_006de570(void *this,int param_1,int param_2)
       (*(int *)((int)this + 0x34) <= iVar2)) && (iVar2 < *(int *)((int)this + 0x3c))) {
     return 1;
   }
-  FUN_006e25d0(this,&local_2c);
+  ST3DSMAPContext::sub_006E25D0(this,&local_2c);
   iVar1 = local_2c >> 0x10;
   if (iVar1 < iVar4) {
     iVar4 = iVar1;
@@ -80,7 +80,7 @@ int __thiscall FUN_006de570(void *this,int param_1,int param_2)
     return 1;
   }
   local_10 = *(double *)((int)this + 200) + *(double *)((int)this + 200);
-  FUN_006e25d0(this,&local_2c);
+  ST3DSMAPContext::sub_006E25D0(this,&local_2c);
   iVar1 = local_2c >> 0x10;
   if (iVar1 < iVar4) {
     iVar4 = iVar1;
@@ -102,7 +102,7 @@ int __thiscall FUN_006de570(void *this,int param_1,int param_2)
     return 1;
   }
   local_10 = *(double *)((int)this + 200) + *(double *)((int)this + 200);
-  FUN_006e25d0(this,&local_2c);
+  ST3DSMAPContext::sub_006E25D0(this,&local_2c);
   iVar1 = local_2c >> 0x10;
   if (iVar1 < iVar4) {
     iVar4 = iVar1;
@@ -123,7 +123,7 @@ int __thiscall FUN_006de570(void *this,int param_1,int param_2)
       (*(int *)((int)this + 0x34) <= iVar2)) && (iVar2 < *(int *)((int)this + 0x3c))) {
     return 1;
   }
-  FUN_006e25d0(this,&local_2c);
+  ST3DSMAPContext::sub_006E25D0(this,&local_2c);
   iVar1 = local_2c >> 0x10;
   if (iVar1 < iVar4) {
     iVar4 = iVar1;
@@ -144,7 +144,7 @@ int __thiscall FUN_006de570(void *this,int param_1,int param_2)
      ((*(int *)((int)this + 0x34) <= iVar2 && (iVar2 < *(int *)((int)this + 0x3c))))) {
     return 1;
   }
-  FUN_006e25d0(this,&local_2c);
+  ST3DSMAPContext::sub_006E25D0(this,&local_2c);
   iVar1 = local_2c >> 0x10;
   if (iVar1 < iVar4) {
     iVar4 = iVar1;
@@ -165,7 +165,7 @@ int __thiscall FUN_006de570(void *this,int param_1,int param_2)
      ((*(int *)((int)this + 0x34) <= iVar2 && (iVar2 < *(int *)((int)this + 0x3c))))) {
     return 1;
   }
-  FUN_006e25d0(this,&local_2c);
+  ST3DSMAPContext::sub_006E25D0(this,&local_2c);
   iVar1 = local_2c >> 0x10;
   if (iVar1 < iVar4) {
     iVar4 = iVar1;
@@ -187,7 +187,7 @@ int __thiscall FUN_006de570(void *this,int param_1,int param_2)
       (*(int *)((int)this + 0x34) <= iVar2)) && (iVar2 < *(int *)((int)this + 0x3c))) {
     return 1;
   }
-  FUN_006e25d0(this,&local_2c);
+  ST3DSMAPContext::sub_006E25D0(this,&local_2c);
   local_2c = local_2c >> 0x10;
   if (local_2c < iVar4) {
     iVar4 = local_2c;

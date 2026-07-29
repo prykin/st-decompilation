@@ -86,8 +86,7 @@ uint * __thiscall FUN_0074b06d(void *this,int *param_1,uint *param_2,uint *param
   local_c = (local_10 + iVar5) / 4;
   piVar6 = (int *)(local_18 - *(uint *)((int)this + 0x120));
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  iVar5 = (local_14 - *(int *)((int)this + 0x124)) - (uint)(local_18 < *(uint *)((int)this + 0x120))
-  ;
+  iVar5 = (local_14 - *(int *)((int)this + 0x124)) - (uint)(local_18 < *(uint *)((int)this + 0x120));
   local_20 = piVar6;
   if ((-1 < iVar5) && ((0 < iVar5 || ((int *)0x989680 < piVar6)))) {
     local_20 = (int *)0x989680;

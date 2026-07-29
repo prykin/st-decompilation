@@ -130,8 +130,7 @@ LAB_006d7faf:
                 local_36 = CONCAT22((short)uVar8,
                                     (short)(char)*(undefined2 *)(&DAT_006d7d90 + local_52 * 2));
                 local_3a = (uint)(ushort)(short)(char)((ushort)*(undefined2 *)
-                                                                (&DAT_006d7d90 + local_52 * 2) >> 8)
-                ;
+                                                                (&DAT_006d7d90 + local_52 * 2) >> 8);
               }
             }
           }

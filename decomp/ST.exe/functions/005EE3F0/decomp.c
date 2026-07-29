@@ -32,7 +32,8 @@ FUN_005ee3f0(void *this,float param_1,short *param_2,short *param_3,short *param
     *param_2 = *(short *)((int)this + iVar4 * 6 + 0x2ea);
     *param_3 = *(short *)((int)this + iVar4 * 6 + 0x2ec);
     *param_4 = *(short *)((int)this + (iVar4 * 3 + 0x177) * 2);
-    FUN_006dd530(*(void **)((int)this + 0x211),&param_1,&local_8,&local_10);
+    ST3DSMAPContext::sub_006DD530
+              (*(ST3DSMAPContext **)((int)this + 0x211),&param_1,&local_8,&local_10);
     lVar14 = Library::MSVCRT::__ftol();
     uVar5 = (uint)(short)lVar14;
     lVar14 = Library::MSVCRT::__ftol();

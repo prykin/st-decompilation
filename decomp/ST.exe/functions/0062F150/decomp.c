@@ -38,11 +38,11 @@ LAB_0062f208:
         if (g_playSystem_00802A38->field_00E4 % 5 == 0) {
           if (this != (STT3DSprC *)0x0) {
             STT3DSprC::sub_004ACE30
-                      (this,*(uint *)(DAT_00806724 + 0x30 + (uint)*(byte *)(iVar1 + 0x34) * 4),
-                       (int)*(short *)(DAT_00806724 + 0x2c));
+                      (this,PTR_00806724->entries[*(byte *)(iVar1 + 0x34)],
+                       (int)PTR_00806724->field_002C);
           }
           *(char *)(*piVar3 + 0x34) = *(char *)(*piVar3 + 0x34) + '\x01';
-          if (*(short *)(DAT_00806724 + 0x23) <= (short)(ushort)*(byte *)(*piVar3 + 0x34)) {
+          if (PTR_00806724->entryCount <= (short)(ushort)*(byte *)(*piVar3 + 0x34)) {
             thunk_FUN_0062f6c0(param_1,local_8);
           }
         }

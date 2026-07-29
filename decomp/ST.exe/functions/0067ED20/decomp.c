@@ -19,7 +19,7 @@ int __cdecl FUN_0067ed20(byte *param_1)
       goto LAB_0067ed4b;
     }
     do {
-      pAVar5 = PTR_00848a1c->entries[iVar6];
+      pAVar5 = PTR_00848a1c->entries_0014[iVar6];
       pbVar3 = param_1;
 LAB_0067ed4b:
       do {

@@ -39,8 +39,7 @@ undefined4 __thiscall FUN_004abce0(void *this,byte param_1,int param_2,int param
           puVar3 = (undefined4 *)(iVar7 + *(int *)((int)this + 0x20));
           iVar6 = *(int *)(iVar7 + 0x18 + *(int *)((int)this + 0x20));
           if ((-1 < iVar6) && (piVar4 = (int *)*puVar3, iVar6 < *piVar4)) {
-            *(undefined4 *)(puVar3[1] + iVar6 * 4) = *(undefined4 *)((int)piVar4 + iVar6 * 4 + 0x31)
-            ;
+            *(undefined4 *)(puVar3[1] + iVar6 * 4) = *(undefined4 *)((int)piVar4 + iVar6 * 4 + 0x31);
           }
           iVar6 = *(int *)((int)this + 0x20) + iVar7;
           *(undefined4 *)(iVar6 + 0x18) = *(undefined4 *)(iVar6 + 0x10);

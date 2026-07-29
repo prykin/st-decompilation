@@ -19,7 +19,7 @@ void __thiscall FUN_0058c560(void *this,int param_1,int param_2)
   *(int *)((int)this + 0x24d) = param_2;
   if (iVar2 == 1) {
     *(undefined4 *)((int)this + 0x231) = 2;
-    *(int *)((int)this + 0x239) = *(short *)(DAT_00806724 + 0x23) + -1;
+    *(int *)((int)this + 0x239) = PTR_00806724->entryCount + -1;
     *(undefined4 *)((int)this + 0x235) = 1;
     *(undefined4 *)((int)this + 0x23d) = 0x4b6;
     iVar2 = FUN_006aced8(*(int *)((int)this + 0x251) << 7,*(int *)((int)this + 0x255) << 7,

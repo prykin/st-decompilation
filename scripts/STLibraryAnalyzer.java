@@ -36,6 +36,8 @@ public class STLibraryAnalyzer extends GhidraScript {
         "(?i)(?:[A-Z]:\\\\)?D?KW\\\\([A-Z0-9_]+)\\\\");
     private static final Pattern OURLIB_PATH = Pattern.compile(
         "(?i)(?:[A-Z]:\\\\)?OURLIB\\\\([^\\\\]+?)\\.(?:C|CC|CPP|CXX)(?:$|[^A-Z0-9_])");
+    private static final Pattern RECOVERED_SOURCE_COMMENT = Pattern.compile(
+        "(?m)^Recovered source file:\\s*([^\\r\\n]+)$");
     // Confirmed contiguous VC6 CRT block in this ST.exe image; end is exclusive.
     private static final String CRT_START = "0072D7F0";
     private static final String CRT_END = "00746BAB";
@@ -72,6 +74,21 @@ public class STLibraryAnalyzer extends GhidraScript {
         for (Function function : currentProgram.getFunctionManager().getFunctions(true)) {
             monitor.checkCancelled();
             if (function.isExternal()) continue;
+            String comment = function.getComment();
+            if (comment != null) {
+                java.util.regex.Matcher recovered =
+                    RECOVERED_SOURCE_COMMENT.matcher(comment);
+                while (recovered.find()) {
+                    String path = recovered.group(1).trim();
+                    Classification classification = classifyPath(path);
+                    if (classification == null) continue;
+                    Evidence evidence = found.computeIfAbsent(function.getEntryPoint(),
+                        ignored -> new Evidence(function));
+                    evidence.add(classification,
+                        "recovered source-provenance comment: " + path,
+                        function.getEntryPoint(), true);
+                }
+            }
             String address = addr(function.getEntryPoint());
             boolean inCrtBlock = address.compareTo(CRT_START) >= 0 && address.compareTo(CRT_END) < 0;
             boolean knownCrtName = CRT_NAME.matcher(function.getName()).matches();

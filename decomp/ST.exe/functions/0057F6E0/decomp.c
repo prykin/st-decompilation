@@ -91,7 +91,7 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
                   (pSVar6,(float)local_10 * _DAT_007904f8 + _DAT_007904f4,
                    (float)iVar10 * _DAT_007904f8 + _DAT_007904f4,
                    (float)this_00->field_024D * _DAT_00790504 + _DAT_00790500 + _DAT_007904fc);
-        FUN_006ea3e0((void *)this_00->field_0211,pSVar6->field_0018,-1);
+        Library::Ourlib::ST3DSMAP::SprSetLevAfter((void *)this_00->field_0211,pSVar6->field_0018,-1);
       }
       local_14 = local_14 + 4;
       local_c = local_c + 1;
@@ -135,7 +135,7 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
                   (pSVar6,(float)local_10 * _DAT_007904f8 + _DAT_007904f4,
                    (float)iVar10 * _DAT_007904f8 + _DAT_007904f4,
                    (float)this_00->field_024D * _DAT_00790504 + _DAT_00790500 + _DAT_007904fc);
-        FUN_006ea3e0((void *)this_00->field_0211,pSVar6->field_0018,-1);
+        Library::Ourlib::ST3DSMAP::SprSetLevAfter((void *)this_00->field_0211,pSVar6->field_0018,-1);
       }
       local_14 = local_14 + 4;
       local_c = local_c + 1;
@@ -178,9 +178,9 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
               STT3DSprC::sub_004AD3C0
                         (pSVar6,(float)local_14 * _DAT_007904f8 + _DAT_007904f4,
                          (float)(this_00->field_0249 + local_10) * _DAT_007904f8 + _DAT_007904f4,
-                         (float)this_00->field_024D * _DAT_00790504 + _DAT_00790500 + _DAT_007904fc)
-              ;
-              FUN_006ea3e0((void *)this_00->field_0211,pSVar6->field_0018,-1);
+                         (float)this_00->field_024D * _DAT_00790504 + _DAT_00790500 + _DAT_007904fc);
+              Library::Ourlib::ST3DSMAP::SprSetLevAfter
+                        ((void *)this_00->field_0211,pSVar6->field_0018,-1);
               goto LAB_0057fc59;
             }
           }

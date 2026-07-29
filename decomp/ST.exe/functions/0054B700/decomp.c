@@ -66,8 +66,7 @@ LAB_0054b7e0:
       goto LAB_0054b7e0;
     }
     if (DAT_0080874e != '\x03') goto LAB_0054b81b;
-    pBVar3 = (BITMAPINFO *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)local_8->field_04E3,5)
-    ;
+    pBVar3 = (BITMAPINFO *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)local_8->field_04E3,5);
     iVar2 = pCVar1->field_04DF * -0x13 + 0x136;
     iVar4 = g_nWidth_00806730 + -0x15;
   }

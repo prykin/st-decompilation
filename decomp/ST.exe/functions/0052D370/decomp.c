@@ -19,8 +19,9 @@ void __thiscall PopUpTy::AddStr(PopUpTy *this,char *param_1,byte param_2)
   DArrayTy *pDVar4;
   DArrayTy *pDVar5;
   char *pcVar6;
+  int uVar8;
   int iVar7;
-  uint uVar8;
+  uint uVar9;
   InternalExceptionFrame local_58;
   PopUpTy *local_14;
   DArrayTy *local_10;
@@ -36,15 +37,15 @@ void __thiscall PopUpTy::AddStr(PopUpTy *this,char *param_1,byte param_2)
     local_14 = this;
     iVar3 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
     if (iVar3 == 0) {
-      uVar8 = 0xffffffff;
+      uVar9 = 0xffffffff;
       pcVar6 = param_1;
       do {
-        if (uVar8 == 0) break;
-        uVar8 = uVar8 - 1;
+        if (uVar9 == 0) break;
+        uVar9 = uVar9 - 1;
         cVar1 = *pcVar6;
         pcVar6 = pcVar6 + 1;
       } while (cVar1 != '\0');
-      local_8 = Library::DKW::LIB::FUN_006aac10(~uVar8 + 4);
+      local_8 = Library::DKW::LIB::FUN_006aac10(~uVar9 + 4);
       this_00 = local_14;
       pDVar4 = local_c;
       if (local_8 != (uint *)0x0) {
@@ -86,7 +87,7 @@ LAB_0052d48d:
                 pcVar6 = (char *)0x0;
               }
               uVar8 = FUN_00711110(this_00->field_0094,pcVar6);
-              if ((int)*(uint *)(this_00->field_0090 + 2) <= (int)uVar8) {
+              if ((int)*(uint *)(this_00->field_0090 + 2) <= uVar8) {
                 uVar8 = *(uint *)(this_00->field_0090 + 2);
               }
               this_00->field_0018[(byte)this_00->field_009C + 0xe] = uVar8;

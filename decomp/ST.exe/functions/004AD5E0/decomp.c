@@ -6,8 +6,7 @@ void __fastcall FUN_004ad5e0(STT3DSprC *param_1)
 
 {
   param_1->field_0011 = 1;
-  SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_006e9520
-            (param_1->field_003C,param_1->field_0018,0,0,0);
+  Library::Ourlib::ST3DSMAP::SprSetShadow(param_1->field_003C,param_1->field_0018,0,0,0);
   return;
 }
 

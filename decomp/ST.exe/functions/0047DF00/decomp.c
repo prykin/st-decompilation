@@ -387,8 +387,7 @@ LAB_0047f1f7:
                          (local_1c >> 0x10) % 7 + (int)this->field_0041 + -3 + (int)(short)local_24,
                          (((uVar12 >> 0x10) % 7 + (int)this->field_0043) - (int)local_24._2_2_) + -3
                          ,(int)(short)lVar16 + (uVar10 >> 0x10) % 7 + (int)this->field_0045 + -3 +
-                          (int)local_20,sVar5,sVar15,sVar13,sVar7,sVar17,sVar18,iVar8,sVar20,bVar21)
-              ;
+                          (int)local_20,sVar5,sVar15,sVar13,sVar7,sVar17,sVar18,iVar8,sVar20,bVar21);
             }
             else {
               uVar12 = this->field_001C * 0x41c64e6d + 0x3039;
@@ -469,8 +468,7 @@ LAB_0047edd5:
                                 (this->field_0041,this->field_0043,
                                  CONCAT22((short)((uint)iVar8 >> 0x10),this->field_0045),
                                  this->field_06B3 * 0xc9 + 100,(short)iVar8,
-                                 CONCAT22((short)((uint)this >> 0x10),this->field_06B7 * 200) + 100)
-              ;
+                                 CONCAT22((short)((uint)this >> 0x10),this->field_06B7 * 200) + 100);
               this->field_06BD = uVar4;
               this->field_06C7 = 1;
             }
@@ -479,8 +477,7 @@ LAB_0047edd5:
               uVar10 = sub_00417910(this,(short)uVar10);
               if (uVar10 == 0xffffffff) {
                 iVar8 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x3aa0,0,0,
-                                           "%s","STBoatC::Dismant, DISMANT_OMOVE")
-                ;
+                                           "%s","STBoatC::Dismant, DISMANT_OMOVE");
                 if (iVar8 != 0) {
                   STDebugBreak(); /* noreturn in standalone pseudocode */
                 }
@@ -581,8 +578,7 @@ LAB_0047edd5:
                 sub_0048DFD0(this,this->field_06A9,this->field_06AB,uVar6,this->field_06A9,
                              this->field_06AB,(int *)(uint)uVar6,1,&this->field_06B3,
                              &this->field_06B5,&this->field_06B7);
-                sub_00481520(this,(int)this->field_06B3,(int)this->field_06B5,(int)this->field_06B7)
-                ;
+                sub_00481520(this,(int)this->field_06B3,(int)this->field_06B5,(int)this->field_06B7);
                 iVar8 = sub_0045FF50(this,0);
                 if (iVar8 == -1) {
                   return -1;

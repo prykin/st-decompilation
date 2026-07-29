@@ -47,8 +47,7 @@ void __cdecl FUN_00575640(short *param_1,undefined4 *param_2,short *param_3)
         local_14 = 0;
         psVar9 = (short *)((int)param_2 +
                           ((int)*(short *)(iVar13 + 6) * (int)*psVar2 +
-                           (*(short *)(iVar13 + 8) + -1) * iVar4 + (int)*(short *)(iVar13 + 4)) * 2)
-        ;
+                           (*(short *)(iVar13 + 8) + -1) * iVar4 + (int)*(short *)(iVar13 + 4)) * 2);
         if (*(char *)(iVar13 + 0x48) != '\0') {
           do {
             uVar1 = *(uint *)(iVar13 + 0x2c);

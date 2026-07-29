@@ -14,12 +14,13 @@ void __thiscall FSGSTy::JoinGameCtrls(FSGSTy *this)
   undefined4 uVar3;
   LPBITMAPINFO ptVar4;
   DArrayTy *pDVar5;
-  int iVar6;
+  FSGSTy_field_1EBEDArray *pFVar6;
   int iVar7;
-  undefined4 *puVar8;
-  undefined4 *puVar10;
-  ccFntTy **ppcVar11;
-  ushort *puVar12;
+  int iVar8;
+  undefined4 *puVar9;
+  undefined4 *puVar11;
+  ccFntTy **ppcVar12;
+  ushort *puVar13;
   ccFntTy *local_dac [8];
   DArrayTy *local_d8c;
   undefined4 local_d80;
@@ -79,29 +80,28 @@ void __thiscall FSGSTy::JoinGameCtrls(FSGSTy *this)
   InternalExceptionFrame local_4c;
   FSGSTy *local_8;
 
-  ppcVar11 = local_dac;
+  ppcVar12 = local_dac;
   local_8 = this;
-  for (iVar7 = 0x223; iVar7 != 0; iVar7 = iVar7 + -1) {
-    *ppcVar11 = (ccFntTy *)0x0;
-    ppcVar11 = ppcVar11 + 1;
+  for (iVar8 = 0x223; iVar8 != 0; iVar8 = iVar8 + -1) {
+    *ppcVar12 = (ccFntTy *)0x0;
+    ppcVar12 = ppcVar12 + 1;
   }
   memset(local_520, 0, 0x4d4); /* compiler bulk-zero initialization */
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  iVar7 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
+  iVar8 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
-  if (iVar7 == 0) {
+  if (iVar8 == 0) {
     if (local_8->field_1E8E != 0) {
       FreeAndNull((void **)&local_8->field_1E8E);
     }
     if (this_00->field_1E92 != (tagBITMAPINFO *)0x0) {
       FreeAndNull(&this_00->field_1E92);
     }
-    iVar7 = 1;
-    puVar12 = this_00->field_005D + 0x14;
+    iVar8 = 1;
+    puVar13 = this_00->field_005D + 0x14;
     uVar2 = FUN_006b4fe0((int)this_00->field_005D);
-    uVar3 = FUN_006b50c0(0x174,0x175,(uint)this_00->field_005D[7],uVar2,(undefined4 *)puVar12,iVar7)
-    ;
+    uVar3 = FUN_006b50c0(0x174,0x175,(uint)this_00->field_005D[7],uVar2,(undefined4 *)puVar13,iVar8);
     this_00->field_1E8E = uVar3;
     ptVar4 = Library::DKW::DDX::FUN_006c4880(g_dDXContext_0080759C,0x199,0x5e,0x174,0x175,8);
     this_00->field_1E92 = ptVar4;
@@ -113,8 +113,9 @@ void __thiscall FSGSTy::JoinGameCtrls(FSGSTy *this)
     pDVar5 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,1,1);
     this_00->field_1AEC = pDVar5;
     Library::DKW::TBL::FUN_006b5aa0(&pDVar5->flags,&DAT_008016a0);
-    pDVar5 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0x14,0x25c,10);
-    this_00->field_1EBE = pDVar5;
+    pFVar6 = (FSGSTy_field_1EBEDArray *)
+             Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0x14,0x25c,10);
+    this_00->field_1EBE = pFVar6;
     local_520[4] = 0x15b - this_00->field_1CFF;
     local_4f8 = this_00->field_0008;
     local_520[0] = 0;
@@ -147,12 +148,12 @@ void __thiscall FSGSTy::JoinGameCtrls(FSGSTy *this)
     local_38c = 2;
     local_388 = 0x8164;
     local_274 = 2;
-    puVar8 = local_3f0;
-    puVar10 = local_270;
-    for (iVar7 = 0x5f; iVar7 != 0; iVar7 = iVar7 + -1) {
-      *puVar10 = *puVar8;
-      puVar8 = puVar8 + 1;
-      puVar10 = puVar10 + 1;
+    puVar9 = local_3f0;
+    puVar11 = local_270;
+    for (iVar8 = 0x5f; iVar8 != 0; iVar8 = iVar8 + -1) {
+      *puVar11 = *puVar9;
+      puVar9 = puVar9 + 1;
+      puVar11 = puVar11 + 1;
     }
     local_270[2] = this_00->field_1D88;
     local_270[3] = this_00->field_1D8C;
@@ -191,10 +192,10 @@ void __thiscall FSGSTy::JoinGameCtrls(FSGSTy *this)
                  this_00->field_1E1D);
     }
     local_d8c = this_00->field_1AE8;
-    ppcVar11 = local_dac;
-    for (iVar7 = 0x223; iVar7 != 0; iVar7 = iVar7 + -1) {
-      *ppcVar11 = (ccFntTy *)0x0;
-      ppcVar11 = ppcVar11 + 1;
+    ppcVar12 = local_dac;
+    for (iVar8 = 0x223; iVar8 != 0; iVar8 = iVar8 + -1) {
+      *ppcVar12 = (ccFntTy *)0x0;
+      ppcVar12 = ppcVar12 + 1;
     }
     local_dac[2] = this_00->field_1A73;
     local_d80 = this_00->field_0008;
@@ -240,12 +241,12 @@ void __thiscall FSGSTy::JoinGameCtrls(FSGSTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar6 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x7f0,0,iVar7,"%s",
+  iVar7 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x7f0,0,iVar8,"%s",
                              "FSGSTy::JoinGameCtrls");
-  if (iVar6 != 0) {
+  if (iVar7 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar7,0,"E:\\__titans\\Start\\fsgs_obj.cpp",0x7f0);
+  RaiseInternalException(iVar8,0,"E:\\__titans\\Start\\fsgs_obj.cpp",0x7f0);
   return;
 }
 

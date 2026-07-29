@@ -450,8 +450,7 @@ LAB_005e91f7:
         Library::DKW::DDX::FUN_006b3430
                   ((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_02EC);
         if (g_startSystem_0081176C->field_02FC != 0xffffffff) {
-          FUN_006b3af0((int *)g_startSystem_0081176C->field_0340,g_startSystem_0081176C->field_02FC)
-          ;
+          FUN_006b3af0((int *)g_startSystem_0081176C->field_0340,g_startSystem_0081176C->field_02FC);
         }
       }
       SetAccelerator(1,this_01->field_0008,2,0xc0a1,2,0x1c,0,0,0,0,0,0);
@@ -473,34 +472,29 @@ LAB_005e91f7:
       if (g_startSystem_0081176C->field_0391 != 0xffffffff) {
         Library::DKW::DDX::FUN_006b34d0
                   ((uint *)g_startSystem_0081176C->field_03D5,g_startSystem_0081176C->field_0391,
-                   0xfffffffe,g_startSystem_0081176C->field_03A9,g_startSystem_0081176C->field_03AD)
-        ;
+                   0xfffffffe,g_startSystem_0081176C->field_03A9,g_startSystem_0081176C->field_03AD);
       }
       if (g_startSystem_0081176C->field_0422 != 0xffffffff) {
         Library::DKW::DDX::FUN_006b34d0
                   ((uint *)g_startSystem_0081176C->field_0466,g_startSystem_0081176C->field_0422,
-                   0xfffffffe,g_startSystem_0081176C->field_043A,g_startSystem_0081176C->field_043E)
-        ;
+                   0xfffffffe,g_startSystem_0081176C->field_043A,g_startSystem_0081176C->field_043E);
       }
       if (g_startSystem_0081176C->field_04B3 != 0xffffffff) {
         Library::DKW::DDX::FUN_006b34d0
                   ((uint *)g_startSystem_0081176C->field_04F7,g_startSystem_0081176C->field_04B3,
-                   0xfffffffe,g_startSystem_0081176C->field_04CB,g_startSystem_0081176C->field_04CF)
-        ;
+                   0xfffffffe,g_startSystem_0081176C->field_04CB,g_startSystem_0081176C->field_04CF);
       }
       Library::DKW::DDX::FUN_006b3430
                 ((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0540);
       if (g_startSystem_0081176C->field_0560 != 0xffffffff) {
         Library::DKW::DDX::FUN_006b34d0
                   ((uint *)g_startSystem_0081176C->field_05A4,g_startSystem_0081176C->field_0560,
-                   0xfffffffe,g_startSystem_0081176C->field_0578,g_startSystem_0081176C->field_057C)
-        ;
+                   0xfffffffe,g_startSystem_0081176C->field_0578,g_startSystem_0081176C->field_057C);
       }
       if (g_startSystem_0081176C->field_05F1 != 0xffffffff) {
         Library::DKW::DDX::FUN_006b34d0
                   ((uint *)g_startSystem_0081176C->field_0635,g_startSystem_0081176C->field_05F1,
-                   0xfffffffe,g_startSystem_0081176C->field_0609,g_startSystem_0081176C->field_060D)
-        ;
+                   0xfffffffe,g_startSystem_0081176C->field_0609,g_startSystem_0081176C->field_060D);
       }
       Library::DKW::DDX::FUN_006b3430
                 ((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0558);

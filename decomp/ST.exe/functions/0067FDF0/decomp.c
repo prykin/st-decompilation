@@ -5,38 +5,40 @@
 uint __cdecl FUN_0067fdf0(int *param_1,byte *param_2)
 
 {
-  uint uVar1;
-  undefined4 *puVar2;
+  int local_EAX_31;
+  int uVar1;
+  uint uVar2;
+  undefined4 *puVar3;
   InternalExceptionFrame local_48;
 
   local_48.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_48;
-  uVar1 = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0);
-  if (uVar1 != 0) {
+  local_EAX_31 = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0);
+  if (local_EAX_31 != 0) {
     g_currentExceptionFrame = local_48.previous;
-    if (-1 < (int)uVar1) {
-      uVar1 = 0xffffffff;
+    if (-1 < local_EAX_31) {
+      local_EAX_31 = 0xffffffff;
     }
-    return uVar1;
+    return local_EAX_31;
   }
   uVar1 = thunk_FUN_0067fc10(param_2);
-  if ((int)uVar1 < 0) {
-    uVar1 = thunk_FUN_0067fd20(param_1,(char *)param_2);
+  if (uVar1 < 0) {
+    uVar2 = thunk_FUN_0067fd20(param_1,(char *)param_2);
     g_currentExceptionFrame = local_48.previous;
-    return uVar1;
+    return uVar2;
   }
-  if (uVar1 < PTR_00848a38->count) {
+  if ((uint)uVar1 < PTR_00848a38->count) {
     /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(PTR_00848a38, uVar1) (runtime stride) */
-    puVar2 = (undefined4 *)(PTR_00848a38->elementSize * uVar1 + (int)PTR_00848a38->data);
+    puVar3 = (undefined4 *)(PTR_00848a38->elementSize * uVar1 + (int)PTR_00848a38->data);
   }
   else {
-    puVar2 = (undefined4 *)0x0;
+    puVar3 = (undefined4 *)0x0;
   }
-  if (puVar2 == (undefined4 *)0x0) {
+  if (puVar3 == (undefined4 *)0x0) {
     RaiseInternalException(-2,g_overwriteContext_007ED77C,".\\ai\\ai_script_v.inl",0x21a);
   }
-  thunk_FUN_0064a800(puVar2);
-  *puVar2 = param_1;
+  thunk_FUN_0064a800(puVar3);
+  *puVar3 = param_1;
   g_currentExceptionFrame = local_48.previous;
   return uVar1;
 }

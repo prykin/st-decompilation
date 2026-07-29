@@ -28,8 +28,7 @@ void __thiscall SettMapTy::CloseButtons(SettMapTy *this)
       if (g_startSystem_0081176C->field_02FC != 0xffffffff) {
         Library::DKW::DDX::FUN_006b34d0
                   ((uint *)g_startSystem_0081176C->field_0340,g_startSystem_0081176C->field_02FC,
-                   0xfffffffe,g_startSystem_0081176C->field_0314,g_startSystem_0081176C->field_0318)
-        ;
+                   0xfffffffe,g_startSystem_0081176C->field_0314,g_startSystem_0081176C->field_0318);
       }
       FUN_006b3af0((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_02EC);
     }

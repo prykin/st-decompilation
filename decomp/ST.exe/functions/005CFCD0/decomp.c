@@ -12,48 +12,46 @@
 void __thiscall SettMapMTy::UpdatePing(SettMapMTy *this,int param_1,undefined4 param_2)
 
 {
-  DArrayTy *pDVar1;
+  SettMapMTy_field_1F84DArray *pSVar1;
   uint uVar2;
   code *pcVar3;
   int iVar4;
-  void *pvVar5;
-  int iVar6;
-  uint uVar7;
-  bool bVar8;
+  SettMapMTy_field_1F84Element *element_1f84;
+  int iVar5;
+  uint uVar6;
+  bool bVar7;
   InternalExceptionFrame local_4c;
   SettMapMTy *local_8;
 
-  if (this->field_1F84 != (DArrayTy *)0x0) {
+  if (this->field_1F84 != (SettMapMTy_field_1F84DArray *)0x0) {
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
     local_8 = this;
     iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
     if (iVar4 == 0) {
-      uVar7 = 0;
-      pDVar1 = local_8->field_1F84;
-      uVar2 = pDVar1->count;
+      uVar6 = 0;
+      pSVar1 = local_8->field_1F84;
+      uVar2 = pSVar1->count;
       if (0 < (int)uVar2) {
-        bVar8 = uVar2 != 0;
+        bVar7 = uVar2 != 0;
         while( true ) {
-          if (bVar8) {
-            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar1, uVar7) (runtime stride) */
-            pvVar5 = (void *)(pDVar1->elementSize * uVar7 + (int)pDVar1->data);
+          if (bVar7) {
+            element_1f84 = DArrayAt<SettMapMTy_field_1F84Element>(pSVar1, uVar6);
           }
           else {
-            pvVar5 = (void *)0x0;
+            element_1f84 = (SettMapMTy_field_1F84Element *)0x0;
           }
-          if (((pvVar5 != (void *)0x0) && (*(int *)((int)pvVar5 + 6) == param_1)) &&
-             ((*(char *)((int)pvVar5 + 4) == '\x02' || (*(char *)((int)pvVar5 + 4) == '\x03'))))
-          break;
-          uVar7 = uVar7 + 1;
-          bVar8 = uVar7 < uVar2;
-          if ((int)uVar2 <= (int)uVar7) {
+          if (((element_1f84 != (SettMapMTy_field_1F84Element *)0x0) && (element_1f84->data == param_1)) &&
+             ((element_1f84->field_0004 == '\x02' || (element_1f84->field_0004 == '\x03')))) break;
+          uVar6 = uVar6 + 1;
+          bVar7 = uVar6 < uVar2;
+          if ((int)uVar2 <= (int)uVar6) {
             g_currentExceptionFrame = local_4c.previous;
             return;
           }
         }
-        *(undefined4 *)((int)pvVar5 + 0x4b) = param_2;
-        iVar4 = (uVar7 - local_8->field_1F88) * 0x20;
+        element_1f84->field_004B = param_2;
+        iVar4 = (uVar6 - local_8->field_1F88) * 0x20;
         if (*(int *)(iVar4 + 0x1fa4 + (int)local_8) != 0) {
           local_8->field_002D = 5;
           FUN_006e6080(local_8,2,*(undefined4 *)(iVar4 + 0x1fa4 + (int)local_8),
@@ -64,9 +62,9 @@ void __thiscall SettMapMTy::UpdatePing(SettMapMTy *this,int param_1,undefined4 p
       return;
     }
     g_currentExceptionFrame = local_4c.previous;
-    iVar6 = ReportDebugMessage("E:\\__titans\\Start\\settmobj.cpp",0x4bf,0,iVar4,"%s"
+    iVar5 = ReportDebugMessage("E:\\__titans\\Start\\settmobj.cpp",0x4bf,0,iVar4,"%s"
                                ,"SettMapMTy::UpdatePing");
-    if (iVar6 != 0) {
+    if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar4,0,"E:\\__titans\\Start\\settmobj.cpp",0x4bf);

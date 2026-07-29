@@ -385,8 +385,7 @@ LAB_00598221:
         uVar14 = (-(uint)(this_00->field_1ABB != '\0') & 0xffffffb4) + 0xaa;
         local_10 = (-(uint)(this_00->field_1ABB != '\0') & 0x74) + 0x106;
         FUN_006b2330(g_ddxContext_008075A8,&local_8,0x32,0x4035e9,0x1b8,local_10,local_c);
-        Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,local_8,0xffffffff,0xb4,uVar14)
-        ;
+        Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,local_8,0xffffffff,0xb4,uVar14);
         pHVar6 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
         if (pHVar6 == (HoloTy *)0x0) {
           pHVar6 = (HoloTy *)0x0;

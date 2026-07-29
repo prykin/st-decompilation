@@ -36,19 +36,21 @@ ChooseMapTy::InitChooseMap
   HANDLE pvVar7;
   ushort *puVar8;
   DArrayTy *pDVar9;
+  int uVar14;
   AnonPointee_ChooseMapTy_1C7B *pAVar10;
   undefined4 *puVar11;
   HoloTy *pHVar12;
+  int local_EAX_3379;
   AnonPointee_ChooseMapTy_1C8B *pAVar13;
-  uint uVar14;
   uint uVar15;
-  char *pcVar16;
+  uint uVar16;
   char *pcVar17;
-  uint *puVar18;
-  char *pcVar19;
-  int iVar20;
-  byte bVar21;
-  char cVar22;
+  char *pcVar18;
+  uint *puVar19;
+  char *pcVar20;
+  int iVar21;
+  byte bVar22;
+  char cVar23;
   undefined4 local_86c [256];
   char local_46c [32];
   undefined1 local_44c;
@@ -86,9 +88,9 @@ ChooseMapTy::InitChooseMap
   this_02 = local_10;
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_250.previous;
-    iVar20 = ReportDebugMessage("E:\\__titans\\Start\\load_obj.cpp",0x15a,0,iVar6,
+    iVar21 = ReportDebugMessage("E:\\__titans\\Start\\load_obj.cpp",0x15a,0,iVar6,
                                 "%s","ChooseMapTy::InitChooseMap");
-    if (iVar20 != 0) {
+    if (iVar21 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar6,0,"E:\\__titans\\Start\\load_obj.cpp",0x15a);
@@ -108,29 +110,29 @@ ChooseMapTy::InitChooseMap
                    (uint)g_cursorClass_00802A30->field_001C);
     }
   }
-  uVar14 = 0xffffffff;
-  pcVar17 = &this_02->field_1CA3;
-  pcVar16 = &DAT_00807680;
+  uVar15 = 0xffffffff;
+  pcVar18 = &this_02->field_1CA3;
+  pcVar17 = &DAT_00807680;
   do {
-    pcVar19 = pcVar16;
-    if (uVar14 == 0) break;
-    uVar14 = uVar14 - 1;
-    pcVar19 = pcVar16 + 1;
-    cVar22 = *pcVar16;
-    pcVar16 = pcVar19;
-  } while (cVar22 != '\0');
-  uVar14 = ~uVar14;
-  pcVar16 = pcVar19 + -uVar14;
-  pcVar19 = pcVar17;
-  for (uVar15 = uVar14 >> 2; uVar15 != 0; uVar15 = uVar15 - 1) {
-    *(undefined4 *)pcVar19 = *(undefined4 *)pcVar16;
-    pcVar16 = pcVar16 + 4;
-    pcVar19 = pcVar19 + 4;
+    pcVar20 = pcVar17;
+    if (uVar15 == 0) break;
+    uVar15 = uVar15 - 1;
+    pcVar20 = pcVar17 + 1;
+    cVar23 = *pcVar17;
+    pcVar17 = pcVar20;
+  } while (cVar23 != '\0');
+  uVar15 = ~uVar15;
+  pcVar17 = pcVar20 + -uVar15;
+  pcVar20 = pcVar18;
+  for (uVar16 = uVar15 >> 2; uVar16 != 0; uVar16 = uVar16 - 1) {
+    *(undefined4 *)pcVar20 = *(undefined4 *)pcVar17;
+    pcVar17 = pcVar17 + 4;
+    pcVar20 = pcVar20 + 4;
   }
-  for (uVar14 = uVar14 & 3; uVar14 != 0; uVar14 = uVar14 - 1) {
-    *pcVar19 = *pcVar16;
-    pcVar16 = pcVar16 + 1;
-    pcVar19 = pcVar19 + 1;
+  for (uVar15 = uVar15 & 3; uVar15 != 0; uVar15 = uVar15 - 1) {
+    *pcVar20 = *pcVar17;
+    pcVar17 = pcVar17 + 1;
+    pcVar20 = pcVar20 + 1;
   }
   switch(this_02->field_1A5F) {
   case CASE_1:
@@ -138,55 +140,55 @@ ChooseMapTy::InitChooseMap
   case CASE_4:
   case CASE_5:
     local_c = 0xffffffff;
-    pcVar16 = PTR_s_CUSTOM__0079c050;
+    pcVar17 = PTR_s_CUSTOM__0079c050;
     do {
-      pcVar19 = pcVar16;
+      pcVar20 = pcVar17;
       if (local_c == 0) break;
       local_c = local_c - 1;
-      pcVar19 = pcVar16 + 1;
-      cVar22 = *pcVar16;
-      pcVar16 = pcVar19;
-    } while (cVar22 != '\0');
+      pcVar20 = pcVar17 + 1;
+      cVar23 = *pcVar17;
+      pcVar17 = pcVar20;
+    } while (cVar23 != '\0');
     local_c = ~local_c;
-    pcVar19 = pcVar19 + -local_c;
+    pcVar20 = pcVar20 + -local_c;
     iVar6 = -1;
-    pcVar16 = pcVar17;
+    pcVar17 = pcVar18;
     do {
-      pcVar17 = pcVar16;
+      pcVar18 = pcVar17;
       if (iVar6 == 0) break;
       iVar6 = iVar6 + -1;
-      pcVar17 = pcVar16 + 1;
-      cVar22 = *pcVar16;
-      pcVar16 = pcVar17;
-    } while (cVar22 != '\0');
+      pcVar18 = pcVar17 + 1;
+      cVar23 = *pcVar17;
+      pcVar17 = pcVar18;
+    } while (cVar23 != '\0');
     goto LAB_005ab4dc;
   case CASE_3:
-    uVar14 = 0xffffffff;
-    pcVar16 = PTR_s_MISSIONS__0079c054;
+    uVar15 = 0xffffffff;
+    pcVar17 = PTR_s_MISSIONS__0079c054;
     do {
-      pcVar19 = pcVar16;
-      if (uVar14 == 0) break;
-      uVar14 = uVar14 - 1;
-      pcVar19 = pcVar16 + 1;
-      cVar22 = *pcVar16;
-      pcVar16 = pcVar19;
-    } while (cVar22 != '\0');
-    uVar14 = ~uVar14;
+      pcVar20 = pcVar17;
+      if (uVar15 == 0) break;
+      uVar15 = uVar15 - 1;
+      pcVar20 = pcVar17 + 1;
+      cVar23 = *pcVar17;
+      pcVar17 = pcVar20;
+    } while (cVar23 != '\0');
+    uVar15 = ~uVar15;
     iVar6 = -1;
     do {
-      pcVar16 = pcVar17;
+      pcVar17 = pcVar18;
       if (iVar6 == 0) break;
       iVar6 = iVar6 + -1;
-      pcVar16 = pcVar17 + 1;
-      cVar22 = *pcVar17;
-      pcVar17 = pcVar16;
-    } while (cVar22 != '\0');
-    pcVar19 = pcVar19 + -uVar14;
-    pcVar17 = pcVar16 + -1;
-    for (uVar15 = uVar14 >> 2; uVar15 != 0; uVar15 = uVar15 - 1) {
-      *(undefined4 *)pcVar17 = *(undefined4 *)pcVar19;
-      pcVar19 = pcVar19 + 4;
-      pcVar17 = pcVar17 + 4;
+      pcVar17 = pcVar18 + 1;
+      cVar23 = *pcVar18;
+      pcVar18 = pcVar17;
+    } while (cVar23 != '\0');
+    pcVar20 = pcVar20 + -uVar15;
+    pcVar18 = pcVar17 + -1;
+    for (uVar16 = uVar15 >> 2; uVar16 != 0; uVar16 = uVar16 - 1) {
+      *(undefined4 *)pcVar18 = *(undefined4 *)pcVar20;
+      pcVar20 = pcVar20 + 4;
+      pcVar18 = pcVar18 + 4;
     }
     goto LAB_005ab4e5;
   case CASE_9:
@@ -194,133 +196,133 @@ ChooseMapTy::InitChooseMap
   case CASE_B:
   case CASE_C:
 switchD_005ab3e3_caseD_9:
-    uVar14 = 0xffffffff;
-    pcVar17 = PTR_s_SAVEGAME__0079c04c;
+    uVar15 = 0xffffffff;
+    pcVar18 = PTR_s_SAVEGAME__0079c04c;
     do {
-      pcVar16 = pcVar17;
-      if (uVar14 == 0) break;
-      uVar14 = uVar14 - 1;
-      pcVar16 = pcVar17 + 1;
-      cVar22 = *pcVar17;
-      pcVar17 = pcVar16;
-    } while (cVar22 != '\0');
-    uVar14 = ~uVar14;
+      pcVar17 = pcVar18;
+      if (uVar15 == 0) break;
+      uVar15 = uVar15 - 1;
+      pcVar17 = pcVar18 + 1;
+      cVar23 = *pcVar18;
+      pcVar18 = pcVar17;
+    } while (cVar23 != '\0');
+    uVar15 = ~uVar15;
     iVar6 = -1;
-    pcVar17 = &this_02->field_1CA3;
+    pcVar18 = &this_02->field_1CA3;
     do {
-      pcVar19 = pcVar17;
+      pcVar20 = pcVar18;
       if (iVar6 == 0) break;
       iVar6 = iVar6 + -1;
-      pcVar19 = pcVar17 + 1;
-      cVar22 = *pcVar17;
-      pcVar17 = pcVar19;
-    } while (cVar22 != '\0');
-    pcVar17 = pcVar16 + -uVar14;
-    pcVar16 = pcVar19 + -1;
-    for (uVar15 = uVar14 >> 2; uVar15 != 0; uVar15 = uVar15 - 1) {
-      *(undefined4 *)pcVar16 = *(undefined4 *)pcVar17;
+      pcVar20 = pcVar18 + 1;
+      cVar23 = *pcVar18;
+      pcVar18 = pcVar20;
+    } while (cVar23 != '\0');
+    pcVar18 = pcVar17 + -uVar15;
+    pcVar17 = pcVar20 + -1;
+    for (uVar16 = uVar15 >> 2; uVar16 != 0; uVar16 = uVar16 - 1) {
+      *(undefined4 *)pcVar17 = *(undefined4 *)pcVar18;
+      pcVar18 = pcVar18 + 4;
       pcVar17 = pcVar17 + 4;
-      pcVar16 = pcVar16 + 4;
     }
-    for (uVar14 = uVar14 & 3; uVar14 != 0; uVar14 = uVar14 - 1) {
-      *pcVar16 = *pcVar17;
+    for (uVar15 = uVar15 & 3; uVar15 != 0; uVar15 = uVar15 - 1) {
+      *pcVar17 = *pcVar18;
+      pcVar18 = pcVar18 + 1;
       pcVar17 = pcVar17 + 1;
-      pcVar16 = pcVar16 + 1;
     }
-    uVar14 = 0xffffffff;
-    pcVar17 = (char *)&DAT_00807ddd;
+    uVar15 = 0xffffffff;
+    pcVar18 = (char *)&DAT_00807ddd;
     do {
-      pcVar16 = pcVar17;
-      if (uVar14 == 0) break;
-      uVar14 = uVar14 - 1;
-      pcVar16 = pcVar17 + 1;
-      cVar22 = *pcVar17;
-      pcVar17 = pcVar16;
-    } while (cVar22 != '\0');
-    uVar14 = ~uVar14;
+      pcVar17 = pcVar18;
+      if (uVar15 == 0) break;
+      uVar15 = uVar15 - 1;
+      pcVar17 = pcVar18 + 1;
+      cVar23 = *pcVar18;
+      pcVar18 = pcVar17;
+    } while (cVar23 != '\0');
+    uVar15 = ~uVar15;
     iVar6 = -1;
-    pcVar17 = &this_02->field_1CA3;
+    pcVar18 = &this_02->field_1CA3;
     do {
-      pcVar19 = pcVar17;
+      pcVar20 = pcVar18;
       if (iVar6 == 0) break;
       iVar6 = iVar6 + -1;
-      pcVar19 = pcVar17 + 1;
-      cVar22 = *pcVar17;
-      pcVar17 = pcVar19;
-    } while (cVar22 != '\0');
-    pcVar17 = pcVar16 + -uVar14;
-    pcVar16 = pcVar19 + -1;
-    for (uVar15 = uVar14 >> 2; uVar15 != 0; uVar15 = uVar15 - 1) {
-      *(undefined4 *)pcVar16 = *(undefined4 *)pcVar17;
+      pcVar20 = pcVar18 + 1;
+      cVar23 = *pcVar18;
+      pcVar18 = pcVar20;
+    } while (cVar23 != '\0');
+    pcVar18 = pcVar17 + -uVar15;
+    pcVar17 = pcVar20 + -1;
+    for (uVar16 = uVar15 >> 2; uVar16 != 0; uVar16 = uVar16 - 1) {
+      *(undefined4 *)pcVar17 = *(undefined4 *)pcVar18;
+      pcVar18 = pcVar18 + 4;
       pcVar17 = pcVar17 + 4;
-      pcVar16 = pcVar16 + 4;
     }
-    for (uVar14 = uVar14 & 3; uVar14 != 0; uVar14 = uVar14 - 1) {
-      *pcVar16 = *pcVar17;
+    for (uVar15 = uVar15 & 3; uVar15 != 0; uVar15 = uVar15 - 1) {
+      *pcVar17 = *pcVar18;
+      pcVar18 = pcVar18 + 1;
       pcVar17 = pcVar17 + 1;
-      pcVar16 = pcVar16 + 1;
     }
     FUN_006b8280(&this_02->field_1CA3,&this_02->field_1CA3);
     break;
   case CASE_13:
     if (DAT_00803400 == 0xc) goto switchD_005ab3e3_caseD_9;
     local_c = 0xffffffff;
-    pcVar16 = PTR_s_CUSTOM__0079c050;
+    pcVar17 = PTR_s_CUSTOM__0079c050;
     do {
-      pcVar19 = pcVar16;
+      pcVar20 = pcVar17;
       if (local_c == 0) break;
       local_c = local_c - 1;
-      pcVar19 = pcVar16 + 1;
-      cVar22 = *pcVar16;
-      pcVar16 = pcVar19;
-    } while (cVar22 != '\0');
+      pcVar20 = pcVar17 + 1;
+      cVar23 = *pcVar17;
+      pcVar17 = pcVar20;
+    } while (cVar23 != '\0');
     local_c = ~local_c;
-    pcVar19 = pcVar19 + -local_c;
+    pcVar20 = pcVar20 + -local_c;
     iVar6 = -1;
     do {
       if (iVar6 == 0) break;
       iVar6 = iVar6 + -1;
-      pcVar16 = pcVar17 + 1;
-      cVar22 = *pcVar17;
-      pcVar17 = pcVar16;
-    } while (cVar22 != '\0');
+      pcVar17 = pcVar18 + 1;
+      cVar23 = *pcVar18;
+      pcVar18 = pcVar17;
+    } while (cVar23 != '\0');
 LAB_005ab4dc:
-    pcVar17 = pcVar17 + -1;
-    for (uVar15 = local_c >> 2; uVar14 = local_c, uVar15 != 0; uVar15 = uVar15 - 1) {
-      *(undefined4 *)pcVar17 = *(undefined4 *)pcVar19;
-      pcVar19 = pcVar19 + 4;
-      pcVar17 = pcVar17 + 4;
+    pcVar18 = pcVar18 + -1;
+    for (uVar16 = local_c >> 2; uVar15 = local_c, uVar16 != 0; uVar16 = uVar16 - 1) {
+      *(undefined4 *)pcVar18 = *(undefined4 *)pcVar20;
+      pcVar20 = pcVar20 + 4;
+      pcVar18 = pcVar18 + 4;
     }
 LAB_005ab4e5:
-    for (uVar14 = uVar14 & 3; uVar14 != 0; uVar14 = uVar14 - 1) {
-      *pcVar17 = *pcVar19;
-      pcVar19 = pcVar19 + 1;
-      pcVar17 = pcVar17 + 1;
+    for (uVar15 = uVar15 & 3; uVar15 != 0; uVar15 = uVar15 - 1) {
+      *pcVar18 = *pcVar20;
+      pcVar20 = pcVar20 + 1;
+      pcVar18 = pcVar18 + 1;
     }
   }
-  uVar14 = 0xffffffff;
+  uVar15 = 0xffffffff;
   puVar1 = &this_02->field_1DA7;
-  pcVar17 = &this_02->field_1CA3;
+  pcVar18 = &this_02->field_1CA3;
   do {
-    pcVar16 = pcVar17;
-    if (uVar14 == 0) break;
-    uVar14 = uVar14 - 1;
-    pcVar16 = pcVar17 + 1;
-    cVar22 = *pcVar17;
-    pcVar17 = pcVar16;
-  } while (cVar22 != '\0');
-  uVar14 = ~uVar14;
-  pcVar17 = pcVar16 + -uVar14;
-  pcVar16 = puVar1;
-  for (uVar15 = uVar14 >> 2; uVar15 != 0; uVar15 = uVar15 - 1) {
-    *(undefined4 *)pcVar16 = *(undefined4 *)pcVar17;
+    pcVar17 = pcVar18;
+    if (uVar15 == 0) break;
+    uVar15 = uVar15 - 1;
+    pcVar17 = pcVar18 + 1;
+    cVar23 = *pcVar18;
+    pcVar18 = pcVar17;
+  } while (cVar23 != '\0');
+  uVar15 = ~uVar15;
+  pcVar18 = pcVar17 + -uVar15;
+  pcVar17 = puVar1;
+  for (uVar16 = uVar15 >> 2; uVar16 != 0; uVar16 = uVar16 - 1) {
+    *(undefined4 *)pcVar17 = *(undefined4 *)pcVar18;
+    pcVar18 = pcVar18 + 4;
     pcVar17 = pcVar17 + 4;
-    pcVar16 = pcVar16 + 4;
   }
-  for (uVar14 = uVar14 & 3; uVar14 != 0; uVar14 = uVar14 - 1) {
-    *pcVar16 = *pcVar17;
+  for (uVar15 = uVar15 & 3; uVar15 != 0; uVar15 = uVar15 - 1) {
+    *pcVar17 = *pcVar18;
+    pcVar18 = pcVar18 + 1;
     pcVar17 = pcVar17 + 1;
-    pcVar16 = pcVar16 + 1;
   }
   FUN_006b78c0(puVar1,puVar1);
   pvVar7 = FindFirstChangeNotificationA(&this_02->field_1DA7,0,1);
@@ -384,7 +386,7 @@ switchD_005ab66b_caseD_6:
         }
         pDVar9 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
         g_startSystem_0081176C->field_0548 = &pDVar9->flags;
-        uVar14 = param_2 - 1;
+        uVar15 = param_2 - 1;
         if (g_startSystem_0081176C->field_0389 != 0) {
           this_02->field_002D = 0x28;
           *(undefined2 *)&this_02->field_0x31 = 1;
@@ -396,9 +398,9 @@ switchD_005ab66b_caseD_6:
           *(undefined2 *)&this_02->field_0x33 = 0;
           FUN_006e6080(this_02,2,g_startSystem_0081176C->field_0389,
                        (undefined4 *)&this_02->field_0x1d);
-          uVar14 = local_c;
+          uVar15 = local_c;
         }
-        switch(uVar14) {
+        switch(uVar15) {
         case 0:
         case 1:
         case 3:
@@ -449,30 +451,30 @@ switchD_005ab66b_caseD_6:
                   FUN_006b50c0(0x1e4,399,(uint)this_02->field_005D[7],uVar14,(undefined4 *)puVar8,
                                iVar6);
         this_02->field_1C7B = pAVar10;
-        uVar14 = pAVar10[1].field_0008;
-        if (uVar14 == 0) {
-          uVar14 = ((uint)*(ushort *)&pAVar10[1].field_0x2 * pAVar10->field_0004 + 0x1f >> 3 &
+        uVar15 = pAVar10[1].field_0008;
+        if (uVar15 == 0) {
+          uVar15 = ((uint)*(ushort *)&pAVar10[1].field_0x2 * pAVar10->field_0004 + 0x1f >> 3 &
                    0x1ffffffc) * pAVar10->field_0008;
         }
         puVar11 = (undefined4 *)FUN_006b4fa0((int *)pAVar10);
-        for (uVar15 = uVar14 >> 2; uVar15 != 0; uVar15 = uVar15 - 1) {
+        for (uVar16 = uVar15 >> 2; uVar16 != 0; uVar16 = uVar16 - 1) {
           *puVar11 = 0;
           puVar11 = puVar11 + 1;
         }
-        puVar18 = this_02->field_1C23;
-        for (uVar14 = uVar14 & 3; uVar14 != 0; uVar14 = uVar14 - 1) {
+        puVar19 = this_02->field_1C23;
+        for (uVar15 = uVar15 & 3; uVar15 != 0; uVar15 = uVar15 - 1) {
           *(undefined1 *)puVar11 = 0;
           puVar11 = (undefined4 *)((int)puVar11 + 1);
         }
-        uVar14 = 0x3f;
+        uVar15 = 0x3f;
         do {
-          FUN_006b2330(g_ddxContext_008075A8,puVar18,0x31,0x40213a,this_02->field_1C7B->field_0004,
+          FUN_006b2330(g_ddxContext_008075A8,puVar19,0x31,0x40213a,this_02->field_1C7B->field_0004,
                        0x13,(ushort *)this_02);
           Library::DKW::DDX::FUN_006b3640
-                    ((int *)g_ddxContext_008075A8,*puVar18,0xffffffff,0x114,uVar14);
-          uVar14 = uVar14 + 0x13;
-          puVar18 = puVar18 + 1;
-        } while ((int)uVar14 < 0x1e1);
+                    ((int *)g_ddxContext_008075A8,*puVar19,0xffffffff,0x114,uVar15);
+          uVar15 = uVar15 + 0x13;
+          puVar19 = puVar19 + 1;
+        } while ((int)uVar15 < 0x1e1);
         CreateCtrls(this_02,'\0');
         PrepFiles(this_02,this_02->field_1C93);
         FUN_006b2330(g_ddxContext_008075A8,&local_8,0x32,0x4042d2,0x204,0x19d,
@@ -500,21 +502,21 @@ switchD_005ab66b_caseD_6:
         }
         this_02->field_20B8 = pHVar12;
         if (pHVar12 != (HoloTy *)0x0) {
-          uVar14 = 0;
-          cVar22 = '\x01';
-          bVar21 = 0x10;
-          iVar20 = 1;
+          uVar15 = 0;
+          cVar23 = '\x01';
+          bVar22 = 0x10;
+          iVar21 = 1;
           iVar6 = Library::DKW::DDX::FUN_006bf9f0
                             ((int *)g_ddxContext_008075A8,0x112,0x38,0x204,0x19d);
-          uVar14 = HoloTy::Init(this_02->field_20B8,CASE_2,0x112,0x38,iVar6,iVar20,bVar21,cVar22,
-                                uVar14);
-          if (uVar14 != 0) {
+          uVar15 = HoloTy::Init(this_02->field_20B8,CASE_2,0x112,0x38,iVar6,iVar21,bVar22,cVar23,
+                                uVar15);
+          if (uVar15 != 0) {
             pHVar12 = this_02->field_20B8;
             pHVar12->field_0002 = 1;
             pHVar12->field_0017 = pHVar12->field_0013;
-            uVar14 = this_02->field_20B8->field_0003;
-            if (-1 < (int)uVar14) {
-              FUN_006b3af0((int *)g_ddxContext_008075A8,uVar14);
+            uVar15 = this_02->field_20B8->field_0003;
+            if (-1 < (int)uVar15) {
+              FUN_006b3af0((int *)g_ddxContext_008075A8,uVar15);
             }
             if (this_02->field_1A74 != 0xffffffff) {
               FUN_006b3af0((int *)this_02->field_1AB8,this_02->field_1A74);
@@ -525,11 +527,11 @@ switchD_005ab66b_caseD_6:
             if (this_02->field_1B96 != 0xffffffff) {
               FUN_006b3af0((int *)this_02->field_1BDA,this_02->field_1B96);
             }
-            puVar18 = this_02->field_1C23;
+            puVar19 = this_02->field_1C23;
             iVar6 = 0x16;
             do {
-              FUN_006b3af0((int *)g_ddxContext_008075A8,*puVar18);
-              puVar18 = puVar18 + 1;
+              FUN_006b3af0((int *)g_ddxContext_008075A8,*puVar19);
+              puVar19 = puVar19 + 1;
               iVar6 = iVar6 + -1;
             } while (iVar6 != 0);
           }
@@ -586,21 +588,20 @@ switchD_005ab66b_caseD_6:
           }
           this_02->field_20BC = pHVar12;
           if (pHVar12 != (HoloTy *)0x0) {
-            uVar14 = 0;
-            cVar22 = '\x01';
-            bVar21 = 0x10;
-            iVar20 = 1;
-            iVar6 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,10,0xb4,0xf9,0x121)
-            ;
-            uVar14 = HoloTy::Init(this_02->field_20BC,CASE_4,10,0xb4,iVar6,iVar20,bVar21,cVar22,
-                                  uVar14);
-            if (uVar14 != 0) {
+            uVar15 = 0;
+            cVar23 = '\x01';
+            bVar22 = 0x10;
+            iVar21 = 1;
+            iVar6 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,10,0xb4,0xf9,0x121);
+            uVar15 = HoloTy::Init(this_02->field_20BC,CASE_4,10,0xb4,iVar6,iVar21,bVar22,cVar23,
+                                  uVar15);
+            if (uVar15 != 0) {
               pHVar12 = this_02->field_20BC;
               pHVar12->field_0002 = 1;
               pHVar12->field_0017 = pHVar12->field_0013;
-              uVar14 = this_02->field_20BC->field_0003;
-              if (-1 < (int)uVar14) {
-                FUN_006b3af0((int *)g_ddxContext_008075A8,uVar14);
+              uVar15 = this_02->field_20BC->field_0003;
+              if (-1 < (int)uVar15) {
+                FUN_006b3af0((int *)g_ddxContext_008075A8,uVar15);
               }
               if (g_startSystem_0081176C->field_0391 != 0xffffffff) {
                 FUN_006b3af0((int *)g_startSystem_0081176C->field_03D5,
@@ -659,8 +660,7 @@ switchD_005ab66b_caseD_6:
         else {
           FUN_006b2330(g_ddxContext_008075A8,&local_8,0x32,0x403b61,400,0x62,
                        (ushort *)&this_02->field_1A5B->field_0140);
-          Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,local_8,0xffffffff,200,0x1f1)
-          ;
+          Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,local_8,0xffffffff,200,0x1f1);
           if (g_startSystem_0081176C->field_0560 != 0xffffffff) {
             Library::DKW::DDX::FUN_006b34d0
                       ((uint *)g_startSystem_0081176C->field_05A4,g_startSystem_0081176C->field_0560
@@ -695,21 +695,20 @@ switchD_005ab66b_caseD_6:
           }
           this_02->field_20C0 = pHVar12;
           if (pHVar12 != (HoloTy *)0x0) {
-            uVar14 = 0;
-            cVar22 = '\x01';
-            bVar21 = 0x10;
-            iVar20 = 1;
-            iVar6 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,200,0x1f1,400,0x62)
-            ;
-            uVar14 = HoloTy::Init(this_02->field_20C0,CASE_1,200,0x1f1,iVar6,iVar20,bVar21,cVar22,
-                                  uVar14);
-            if (uVar14 != 0) {
+            uVar15 = 0;
+            cVar23 = '\x01';
+            bVar22 = 0x10;
+            iVar21 = 1;
+            iVar6 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,200,0x1f1,400,0x62);
+            uVar15 = HoloTy::Init(this_02->field_20C0,CASE_1,200,0x1f1,iVar6,iVar21,bVar22,cVar23,
+                                  uVar15);
+            if (uVar15 != 0) {
               pHVar12 = this_02->field_20C0;
               pHVar12->field_0002 = 1;
               pHVar12->field_0017 = pHVar12->field_0013;
-              uVar14 = this_02->field_20C0->field_0003;
-              if (-1 < (int)uVar14) {
-                FUN_006b3af0((int *)g_ddxContext_008075A8,uVar14);
+              uVar15 = this_02->field_20C0->field_0003;
+              if (-1 < (int)uVar15) {
+                FUN_006b3af0((int *)g_ddxContext_008075A8,uVar15);
               }
               if (g_startSystem_0081176C->field_0560 != 0xffffffff) {
                 FUN_006b3af0((int *)g_startSystem_0081176C->field_05A4,
@@ -730,22 +729,22 @@ switchD_005ab66b_caseD_6:
         }
         iVar6 = 1;
         puVar8 = this_02->field_005D + 0x14;
-        uVar14 = FUN_006b4fe0((int)this_02->field_005D);
+        local_EAX_3379 = FUN_006b4fe0((int)this_02->field_005D);
         pAVar13 = (AnonPointee_ChooseMapTy_1C8B *)
-                  FUN_006b50c0(0x172,0x18,(uint)this_02->field_005D[7],uVar14,(undefined4 *)puVar8,
-                               iVar6);
+                  FUN_006b50c0(0x172,0x18,(uint)this_02->field_005D[7],local_EAX_3379,
+                               (undefined4 *)puVar8,iVar6);
         this_02->field_1C8B = pAVar13;
-        uVar14 = pAVar13[1].field_0008;
-        if (uVar14 == 0) {
-          uVar14 = ((uint)*(ushort *)&pAVar13[1].field_0x2 * pAVar13->field_0004 + 0x1f >> 3 &
+        uVar15 = pAVar13[1].field_0008;
+        if (uVar15 == 0) {
+          uVar15 = ((uint)*(ushort *)&pAVar13[1].field_0x2 * pAVar13->field_0004 + 0x1f >> 3 &
                    0x1ffffffc) * pAVar13->field_0008;
         }
         puVar11 = (undefined4 *)FUN_006b4fa0((int *)pAVar13);
-        for (uVar15 = uVar14 >> 2; uVar15 != 0; uVar15 = uVar15 - 1) {
+        for (uVar16 = uVar15 >> 2; uVar16 != 0; uVar16 = uVar16 - 1) {
           *puVar11 = 0xffffffff;
           puVar11 = puVar11 + 1;
         }
-        for (uVar14 = uVar14 & 3; uVar14 != 0; uVar14 = uVar14 - 1) {
+        for (uVar15 = uVar15 & 3; uVar15 != 0; uVar15 = uVar15 - 1) {
           *(undefined1 *)puVar11 = 0xff;
           puVar11 = (undefined4 *)((int)puVar11 + 1);
         }
@@ -792,10 +791,10 @@ switchD_005ab66b_caseD_6:
         this_01 = g_cursorClass_00802A30;
         if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
           iVar6 = g_cursorClass_00802A30->field_00C9;
-          iVar20 = g_cursorClass_00802A30->field_00C5;
+          iVar21 = g_cursorClass_00802A30->field_00C5;
           g_cursorClass_00802A30->field_0493 = CASE_1;
           this_01->field_0494 = 0xffff;
-          CursorClassTy::SetGCType(this_01,CASE_0,iVar20,iVar6);
+          CursorClassTy::SetGCType(this_01,CASE_0,iVar21,iVar6);
           CursorClassTy::DrawSprite(this_01,this_01->field_00C5,this_01->field_00C9);
           this_01->field_00D2 = 0;
           this_01->field_04DF = -1;

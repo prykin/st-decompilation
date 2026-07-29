@@ -47,10 +47,10 @@ void __thiscall FSGSTy::sub_005A0AF0(FSGSTy *this)
     FUN_006b5570((DArrayTy *)this->field_1B04);
   }
   this->field_1B04 = (uint *)0x0;
-  if (this->field_1EBE != (DArrayTy *)0x0) {
-    DArrayDestroy(this->field_1EBE);
+  if (this->field_1EBE != (FSGSTy_field_1EBEDArray *)0x0) {
+    DArrayDestroy((DArrayTy *)this->field_1EBE);
   }
-  this->field_1EBE = (DArrayTy *)0x0;
+  this->field_1EBE = (FSGSTy_field_1EBEDArray *)0x0;
   if (this->field_1E8E != 0) {
     FreeAndNull((void **)&this->field_1E8E);
   }

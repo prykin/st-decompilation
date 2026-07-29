@@ -11,7 +11,7 @@ STManRuinC::sub_006308F0
 
 {
   char cVar1;
-  DArrayTy *pDVar2;
+  STManRuinC_field_0038DArray *pSVar2;
   int iVar3;
   int iVar4;
   uint uVar5;
@@ -46,12 +46,13 @@ STManRuinC::sub_006308F0
     cVar1 = *(char *)(iVar3 + 1 + local_8);
   }
   if (cVar1 == '\0') {
-    if (this->field_0038 == (DArrayTy *)0x0) {
-      pDVar2 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x75,10);
-      this->field_0038 = pDVar2;
+    if (this->field_0038 == (STManRuinC_field_0038DArray *)0x0) {
+      pSVar2 = (STManRuinC_field_0038DArray *)
+               Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x75,10);
+      this->field_0038 = pSVar2;
     }
-    pDVar2 = this->field_0038;
-    if ((pDVar2 != (DArrayTy *)0x0) && (pDVar2->count < 0xfe)) {
+    pSVar2 = this->field_0038;
+    if ((pSVar2 != (STManRuinC_field_0038DArray *)0x0) && (pSVar2->count < 0xfe)) {
       psVar6 = &local_20;
       for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
         psVar6[0] = 0;
@@ -65,7 +66,7 @@ STManRuinC::sub_006308F0
       local_1c = (short)param_3;
       local_1e = (short)param_2;
       local_c = param_6;
-      uVar5 = Library::DKW::TBL::FUN_006ae1c0(&pDVar2->flags,(undefined4 *)&local_20);
+      uVar5 = Library::DKW::TBL::FUN_006ae1c0(&pSVar2->flags,(undefined4 *)&local_20);
       if (-1 < (int)uVar5) {
         if (param_4 == 1) {
           *(undefined1 *)(this->field_0034 + iVar4) = 1;
@@ -79,7 +80,7 @@ STManRuinC::sub_006308F0
         iVar4 = thunk_FUN_00631190(this,uVar5,(short)param_1,(short)param_2,(short)param_3,param_4,
                                    param_5,param_6);
         if (iVar4 == 0) {
-          FUN_006b0c70(this->field_0038,uVar5);
+          FUN_006b0c70((DArrayTy *)this->field_0038,uVar5);
           uVar5 = 0xffffffff;
         }
       }

@@ -66,7 +66,6 @@ IMAGE_DOS_HEADER * __cdecl FUN_00674fb0(int param_1)
     return (IMAGE_DOS_HEADER *)0x80;
   }
   return (IMAGE_DOS_HEADER *)
-         ((-(uint)((1 << (bVar2 & 0x1f) & (&DAT_00800f60)[uVar1 >> 5]) != 0) & 0xffff8100) + 0x8000)
-  ;
+         ((-(uint)((1 << (bVar2 & 0x1f) & (&DAT_00800f60)[uVar1 >> 5]) != 0) & 0xffff8100) + 0x8000);
 }
 

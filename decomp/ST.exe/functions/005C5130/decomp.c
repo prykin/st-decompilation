@@ -169,8 +169,7 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this,int *param_1)
         Library::DKW::DDX::FUN_006b3430
                   ((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_02EC);
         if (g_startSystem_0081176C->field_02FC != 0xffffffff) {
-          FUN_006b3af0((int *)g_startSystem_0081176C->field_0340,g_startSystem_0081176C->field_02FC)
-          ;
+          FUN_006b3af0((int *)g_startSystem_0081176C->field_0340,g_startSystem_0081176C->field_02FC);
         }
       }
       if (this_00->field_21F8 != (HoloTy *)0x0) {

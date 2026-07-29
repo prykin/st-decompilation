@@ -1,9 +1,15 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* [STPrototypeApplier] Propagated parameter 0.
-   Evidence: 005F4FA0 -> 006E3210 @ 005F51FE | 0060AA00 -> 006E3210 @ 0060ABCD */
+/* [STMethodOwnerApplier] Structural method owner recovered as ST3DSMAPContext.
+   Evidence: this_call_owners=[ST3DSMAPContext]; agreed_this_calls=2; incoming_this_accesses=8;
+   incoming_edx_uses=2; incoming_stack_parameter_uses=11; direct_non_thunk_callers=6;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=2; owner_evidence_coverage=adequate
 
-float10 __thiscall FUN_006e3210(AnonShape_GLOBAL_00807598_0C6808FB *param_1,int param_2,int param_3)
+   [STPrototypeRepairApplier] Propagated parameter 0.
+   Evidence: 005F4FA0 -> 006E3210 @ 005F51FE; data at 00807598 | 0060AA00 -> 006E3210 @ 0060ABCD;
+   data at 00807598 */
+
+float10 __thiscall ST3DSMAPContext::sub_006E3210(ST3DSMAPContext *param_1,int param_2,int param_3)
 
 {
   int iVar1;

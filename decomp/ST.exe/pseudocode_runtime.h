@@ -8,6 +8,13 @@
 static inline uint32_t STPackTagged24(uint32_t tag, uint32_t value) {
     return (value & 0x00ffffffu) | ((tag & 0xffu) << 24);
 }
+#if defined(__cplusplus)
+template <typename Element, typename Array>
+static inline Element *DArrayAt(Array *array, uint32_t index) {
+    return reinterpret_cast<Element *>(
+        reinterpret_cast<uint8_t *>(array->data) + array->elementSize * index);
+}
+#endif
 #if defined(_MSC_VER)
 __declspec(noreturn) static __inline void STDebugBreak(void) { abort(); }
 #else

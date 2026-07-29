@@ -56,7 +56,8 @@ FUN_005fb1f0(void *this,short param_1,short param_2,short param_3,short param_4,
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       _param_4 = (int)(_param_3 * iVar5 + local_c * iVar4) / 10000;
       iVar4 = (int)(local_c * iVar5 - _param_3 * iVar4) / 10000;
-      FUN_006dd530(*(void **)((int)this + 0x211),&local_1c,&local_18,&local_14);
+      ST3DSMAPContext::sub_006DD530
+                (*(ST3DSMAPContext **)((int)this + 0x211),&local_1c,&local_18,&local_14);
       lVar10 = Library::MSVCRT::__ftol();
       sVar1 = *(short *)((int)this + 0x45);
       lVar11 = Library::MSVCRT::__ftol();

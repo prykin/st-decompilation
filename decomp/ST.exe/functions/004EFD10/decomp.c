@@ -8,7 +8,7 @@
 void __thiscall BldLabPanelTy::Update(BldLabPanelTy *this,void *param_1)
 
 {
-  DArrayTy **ppDVar1;
+  BldLabPanelTy_field_027ADArray **ppBVar1;
   code *pcVar2;
   BldLabPanelTy *this_00;
   int errorCode;
@@ -17,7 +17,7 @@ void __thiscall BldLabPanelTy::Update(BldLabPanelTy *this,void *param_1)
   dword local_c;
   BldLabPanelTy *local_8;
 
-  if (this->field_027A != (DArrayTy *)0x0) {
+  if (this->field_027A != (BldLabPanelTy_field_027ADArray *)0x0) {
     local_c = this->field_027A->count;
     local_50.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_50;
@@ -25,9 +25,9 @@ void __thiscall BldLabPanelTy::Update(BldLabPanelTy *this,void *param_1)
     errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
     this_00 = local_8;
     if (errorCode == 0) {
-      ppDVar1 = &local_8->field_027A;
-      STAllPlayersC::GetPanelInfo(g_allPlayers_007FA174,0xc,(AnonShape_0043BEB0_1C00EC12 *)ppDVar1);
-      thunk_FUN_0053f510(this_00,(*ppDVar1)->count,local_c);
+      ppBVar1 = &local_8->field_027A;
+      STAllPlayersC::GetPanelInfo(g_allPlayers_007FA174,0xc,(AnonShape_0043BEB0_1C00EC12 *)ppBVar1);
+      thunk_FUN_0053f510(this_00,(*ppBVar1)->count,local_c);
       sub_004EFE20(this_00);
       g_currentExceptionFrame = local_50.previous;
       return;

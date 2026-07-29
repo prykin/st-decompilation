@@ -16,11 +16,12 @@ int __thiscall HelpStringTy::GetMessage(HelpStringTy *this,STMessage *message)
   HelpStringTy *this_00;
   int iVar2;
   ccFntTy *pcVar3;
-  uint uVar4;
-  ushort *puVar5;
-  undefined4 *puVar6;
-  DWORD DVar7;
-  int iVar8;
+  int uVar4;
+  ushort *puVar4;
+  undefined4 *puVar5;
+  DWORD DVar6;
+  int iVar7;
+  uint uVar8;
   uint uVar9;
   InternalExceptionFrame local_4c;
   HelpStringTy *local_8;
@@ -34,8 +35,8 @@ int __thiscall HelpStringTy::GetMessage(HelpStringTy *this,STMessage *message)
     switch(message->id) {
     case MESS_ID_NONE:
       if ((local_8->field_012E != 0) &&
-         (DVar7 = STAppC::sub_006E51B0(local_8->field_0010),
-         this_00->field_0126 <= DVar7 - this_00->field_0122)) {
+         (DVar6 = STAppC::sub_006E51B0(local_8->field_0010),
+         this_00->field_0126 <= DVar6 - this_00->field_0122)) {
         memset(&this_00->field_0018, 0, 0x104); /* compiler bulk-zero initialization */
         OutStr(this_00);
         this_00->field_011C = 0;
@@ -47,27 +48,27 @@ int __thiscall HelpStringTy::GetMessage(HelpStringTy *this,STMessage *message)
       this_00->field_011E = pcVar3;
       pcVar3->field_0058 = 0;
       pcVar3->field_005C = 0;
-      puVar6 = (undefined4 *)(DAT_0080679c + 0x28);
+      puVar5 = (undefined4 *)(DAT_0080679c + 0x28);
       iVar2 = 1;
       uVar4 = FUN_006b4fe0(DAT_0080679c);
-      puVar5 = (ushort *)
+      puVar4 = (ushort *)
                FUN_006b50c0((g_nWidth_00806730 -
                             ((-(uint)(DAT_0080874e != '\x03') & 0xfffffff6) + 0x1e)) + -0x87,0x12,
-                            (uint)*(ushort *)(DAT_0080679c + 0xe),uVar4,puVar6,iVar2);
-      this_00->field_012A = puVar5;
-      uVar4 = *(uint *)(puVar5 + 10);
-      if (uVar4 == 0) {
-        uVar4 = ((uint)puVar5[7] * *(int *)(puVar5 + 2) + 0x1f >> 3 & 0x1ffffffc) *
-                *(int *)(puVar5 + 4);
+                            (uint)*(ushort *)(DAT_0080679c + 0xe),uVar4,puVar5,iVar2);
+      this_00->field_012A = puVar4;
+      uVar9 = *(uint *)(puVar4 + 10);
+      if (uVar9 == 0) {
+        uVar9 = ((uint)puVar4[7] * *(int *)(puVar4 + 2) + 0x1f >> 3 & 0x1ffffffc) *
+                *(int *)(puVar4 + 4);
       }
-      puVar6 = (undefined4 *)FUN_006b4fa0((int *)puVar5);
-      for (uVar9 = uVar4 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
-        *puVar6 = 0;
-        puVar6 = puVar6 + 1;
+      puVar5 = (undefined4 *)FUN_006b4fa0((int *)puVar4);
+      for (uVar8 = uVar9 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
+        *puVar5 = 0;
+        puVar5 = puVar5 + 1;
       }
-      for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
-        *(undefined1 *)puVar6 = 0;
-        puVar6 = (undefined4 *)((int)puVar6 + 1);
+      for (uVar9 = uVar9 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {
+        *(undefined1 *)puVar5 = 0;
+        puVar5 = (undefined4 *)((int)puVar5 + 1);
       }
       DAT_00801694 = this_00;
       break;
@@ -89,9 +90,9 @@ int __thiscall HelpStringTy::GetMessage(HelpStringTy *this,STMessage *message)
     return iVar2;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar8 = ReportDebugMessage("E:\\__titans\\Andrey\\helpstr.cpp",0x4d,0,iVar2,"%s",
+  iVar7 = ReportDebugMessage("E:\\__titans\\Andrey\\helpstr.cpp",0x4d,0,iVar2,"%s",
                              "HelpStringTy::GetMessage");
-  if (iVar8 != 0) {
+  if (iVar7 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar2,0,"E:\\__titans\\Andrey\\helpstr.cpp",0x4d);

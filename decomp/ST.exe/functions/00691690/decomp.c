@@ -23,7 +23,7 @@ FUN_00691690(void *this,cMf32 *param_1,cMf32 *param_2,int param_3,undefined *par
   undefined4 *puVar4;
   char *pcVar5;
   AnonShape_006DBCA0_EF06575F *pAVar6;
-  AnonShape_GLOBAL_00807598_0C6808FB *this_00;
+  ST3DSMAPContext *this_00;
   int iVar7;
   uint uVar8;
   ushort *puVar9;
@@ -93,23 +93,24 @@ FUN_00691690(void *this,cMf32 *param_1,cMf32 *param_2,int param_3,undefined *par
     }
     pAVar6 = (AnonShape_006DBCA0_EF06575F *)FUN_006b04d0(0x4f2);
     if (pAVar6 == (AnonShape_006DBCA0_EF06575F *)0x0) {
-      this_00 = (AnonShape_GLOBAL_00807598_0C6808FB *)0x0;
+      this_00 = (ST3DSMAPContext *)0x0;
 LAB_0069177d:
       RaiseInternalException
                 (-2,g_overwriteContext_007ED77C,"E:\\__titans\\Maps\\CntLib.cpp",0x4e);
     }
     else {
-      this_00 = (AnonShape_GLOBAL_00807598_0C6808FB *)FUN_006dbca0(pAVar6);
-      if (this_00 == (AnonShape_GLOBAL_00807598_0C6808FB *)0x0) goto LAB_0069177d;
+      this_00 = (ST3DSMAPContext *)FUN_006dbca0(pAVar6);
+      if (this_00 == (ST3DSMAPContext *)0x0) goto LAB_0069177d;
     }
     iVar11 = local_20;
     iVar14 = (int)(0x28 / (longlong)*(int *)(&DAT_007dfa90 + local_20 * 4));
-    FUN_006dc050(this_00,0,0,0,iVar14,iVar14,0,0xc0240000,0,0x40240000,0,0xc0240000,0,0x40240000,
-                 0x4024000000000000,0x4023ee97865e3540,0);
-    FUN_006dd610(this_00,4,0,0x40240000,0,0x40240000);
+    ST3DSMAPContext::sub_006DC050
+              (this_00,0,0,0,iVar14,iVar14,0,0xc0240000,0,0x40240000,0,0xc0240000,0,0x40240000,
+               0x4024000000000000,0x4023ee97865e3540,0);
+    ST3DSMAPContext::sub_006DD610(this_00,4,0,0x40240000,0,0x40240000);
     *(undefined4 *)&this_00->field_0x128 = 0;
-    FUN_006dd790(this_00,149.97069);
-    FUN_006dd800(this_00,200.19933);
+    ST3DSMAPContext::sub_006DD790(this_00,149.97069);
+    ST3DSMAPContext::sub_006DD800(this_00,200.19933);
     local_c = 0;
     do {
       local_8 = 0;
@@ -184,9 +185,9 @@ LAB_00691a65:
                   local_8c[0] = *(undefined4 *)&this_00->field_0x140;
                   *(int *)&this_00->field_0x13c = *(int *)&this_00->field_0x13c + 1;
                   *(undefined4 **)&this_00->field_0x140 = local_8c;
-                  FUN_006ddbe0(this_00);
+                  ST3DSMAPContext::sub_006DDBE0(this_00);
                   *(undefined4 *)&this_00->field_0x124 = 5;
-                  FUN_006ddd50((AnonShape_GLOBAL_0080760C_46D7AF7A *)this_00);
+                  ST3DSMAPContext::sub_006DDD50(this_00);
                   *(undefined4 *)&this_00->field_0x140 = 0;
                   *(undefined4 *)&this_00->field_0x13c = 0;
                   if (param_3 != 0) {
@@ -274,9 +275,9 @@ LAB_00691a65:
                 local_8c[0] = *(undefined4 *)&this_00->field_0x140;
                 *(int *)&this_00->field_0x13c = *(int *)&this_00->field_0x13c + 1;
                 *(undefined4 **)&this_00->field_0x140 = local_8c;
-                FUN_006ddbe0(this_00);
+                ST3DSMAPContext::sub_006DDBE0(this_00);
                 *(undefined4 *)&this_00->field_0x124 = 5;
-                FUN_006ddd50((AnonShape_GLOBAL_0080760C_46D7AF7A *)this_00);
+                ST3DSMAPContext::sub_006DDD50(this_00);
                 pvVar3 = local_14;
                 *(undefined4 *)&this_00->field_0x140 = 0;
                 *(undefined4 *)&this_00->field_0x13c = 0;
@@ -359,9 +360,9 @@ LAB_00691a65:
                 local_8c[0] = *(undefined4 *)&this_00->field_0x140;
                 *(int *)&this_00->field_0x13c = *(int *)&this_00->field_0x13c + 1;
                 *(undefined4 **)&this_00->field_0x140 = local_8c;
-                FUN_006ddbe0(this_00);
+                ST3DSMAPContext::sub_006DDBE0(this_00);
                 *(undefined4 *)&this_00->field_0x124 = 5;
-                FUN_006ddd50((AnonShape_GLOBAL_0080760C_46D7AF7A *)this_00);
+                ST3DSMAPContext::sub_006DDD50(this_00);
                 pvVar3 = local_14;
                 *(undefined4 *)&this_00->field_0x140 = 0;
                 *(undefined4 *)&this_00->field_0x13c = 0;
@@ -429,8 +430,8 @@ LAB_00691a65:
       *(char **)((int)pvVar3 + iVar11 * 0x248 + 0x1b04) = pcVar5;
       thunk_FUN_00692ba0(pcVar5);
     }
-    if (this_00 != (AnonShape_GLOBAL_00807598_0C6808FB *)0x0) {
-      FUN_006dbcf0((int *)this_00);
+    if (this_00 != (ST3DSMAPContext *)0x0) {
+      ST3DSMAPContext::sub_006DBCF0(this_00);
       Library::MSVCRT::FUN_0072e2b0((HoloTy *)this_00);
     }
     local_20 = iVar11 + 1;

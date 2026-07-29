@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void FUN_00413af0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int param_5)
 
@@ -105,8 +107,7 @@ void FUN_00413af0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int pa
           }
           else {
             uVar12 = iVar4 * iVar6 + iVar11 + iVar10 * DAT_007f4d2c ^ 7;
-            DAT_007f4cfc[(int)uVar12 >> 3] = DAT_007f4cfc[(int)uVar12 >> 3] | '\x01' << (uVar12 & 7)
-            ;
+            DAT_007f4cfc[(int)uVar12 >> 3] = DAT_007f4cfc[(int)uVar12 >> 3] | '\x01' << (uVar12 & 7);
           }
           DAT_007f4d24 = DAT_007f4d24 + 1;
         }

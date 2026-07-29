@@ -15,6 +15,7 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
   char cVar4;
   char cVar5;
   int iVar6;
+  int local_EAX_243;
   UINT UVar7;
   uint *puVar8;
   byte *pbVar9;
@@ -84,11 +85,11 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
           }
         }
       }
-      local_1c = thunk_FUN_004e8030(param_1);
-      cVar5 = (char)local_1c;
+      local_EAX_243 = thunk_FUN_004e8030(param_1);
+      cVar5 = (char)local_EAX_243;
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       _local_20 = CONCAT31(uStack_1f,cVar5);
-      local_1c = local_1c & 0xff;
+      local_1c = local_EAX_243 & 0xff;
       UVar7 = thunk_FUN_00523410(param_1,cVar5,0);
       DrawTitle(this_00,0x55fb,local_1c,UVar7);
       DrawObj(this_00,(int *)&local_8,(STAllPlayersC_GetTOBJImage_param_2Enum *)param_1,
@@ -168,8 +169,7 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
         local_c = *(UINT *)(&DAT_007e079c + param_1 * 4);
       }
       if (local_c != 0) {
-        ccFntTy::SetSurf(this_00->field_01E8,(int)this_00->field_0218,0,0x96,local_8 - 3,0x106,0x14)
-        ;
+        ccFntTy::SetSurf(this_00->field_01E8,(int)this_00->field_0218,0,0x96,local_8 - 3,0x106,0x14);
         wsprintfA((LPSTR)&DAT_0080f33a,"%4d",local_c);
         ccFntTy::WrStr(this_00->field_01E8,&DAT_0080f33a,1,-1,
                        (-(uint)(DAT_0080874e != '\x03') & 0xfffffffb) + 7);
@@ -189,8 +189,7 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
       }
       local_c = *(UINT *)(&DAT_007e055c + param_1 * 4);
       if (local_c != 0) {
-        ccFntTy::SetSurf(this_00->field_01E8,(int)this_00->field_0218,0,0x96,local_8 - 3,0x106,0x14)
-        ;
+        ccFntTy::SetSurf(this_00->field_01E8,(int)this_00->field_0218,0,0x96,local_8 - 3,0x106,0x14);
         wsprintfA((LPSTR)&DAT_0080f33a,"%4d",local_c);
         ccFntTy::WrStr(this_00->field_01E8,&DAT_0080f33a,1,-1,(DAT_0080874e != '\x03') - 1 & 4);
         local_14 = (AnonShape_00518C20_0B2995D2 *)
@@ -209,8 +208,7 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
       }
       local_c = *(UINT *)(&DAT_00854428 + param_1 * 4);
       if (local_c != 0) {
-        ccFntTy::SetSurf(this_00->field_01E8,(int)this_00->field_0218,0,0x96,local_8 - 3,0x106,0x14)
-        ;
+        ccFntTy::SetSurf(this_00->field_01E8,(int)this_00->field_0218,0,0x96,local_8 - 3,0x106,0x14);
         wsprintfA((LPSTR)&DAT_0080f33a,"%4d",local_c);
         ccFntTy::WrStr(this_00->field_01E8,&DAT_0080f33a,1,-1,
                        (-(uint)(DAT_0080874e != '\x03') & 0xfffffffb) + 6);

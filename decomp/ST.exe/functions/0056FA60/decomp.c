@@ -755,8 +755,7 @@ cf_common_exit_0057073B:
       if ((DAT_00807330 & 2) != 0) {
         memset(&stack0xfffff65c, 0, 0x318); /* compiler bulk-zero initialization */
         iVar12 = 0;
-        Library::MSVCRT::FUN_0072e730(&pSVar11->field_0x7c0a,local_14,local_24c,local_44c,local_54c)
-        ;
+        Library::MSVCRT::FUN_0072e730(&pSVar11->field_0x7c0a,local_14,local_24c,local_44c,local_54c);
         Library::MSVCRT::__makepath
                   (&pSVar11->field_7D1A,(char *)local_14,(char *)local_24c,
                    PTR_s_CAMPAIGN_VPS_0079b03c,(char *)0x0);
@@ -799,8 +798,7 @@ cf_common_exit_0057073B:
             }
             if (local_8 != (byte *)0x0) {
               do {
-                Library::MSVCRT::FUN_0072e730(local_8,(byte *)0x0,(byte *)0x0,local_34c,(byte *)0x0)
-                ;
+                Library::MSVCRT::FUN_0072e730(local_8,(byte *)0x0,(byte *)0x0,local_34c,(byte *)0x0);
                 FUN_006b77e0((char *)local_34c,local_34c);
                 FUN_006b77e0((char *)local_44c,local_44c);
                 pbVar22 = local_44c;

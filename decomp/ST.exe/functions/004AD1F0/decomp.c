@@ -32,8 +32,9 @@ STT3DSprC::Init(STT3DSprC *this,undefined4 param_1,uint param_2,uint param_3,STD
     local_8->field_0008 = param_3;
     local_8->field_0004 = param_2;
     local_8->field_0014 = param_7;
-    FUN_006e8660(local_8->field_003C,&local_8->field_0018,param_7,0,param_5,param_6,param_2,param_3,
-                 (uint)param_4);
+    ST3DSMAPContext::sub_006E8660
+              (local_8->field_003C,&local_8->field_0018,param_7,0,param_5,param_6,param_2,param_3,
+               (uint)param_4);
     pAVar4 = (AnonPointee_STT3DSprC_0020 *)
              Library::DKW::LIB::FUN_006aac70(pSVar2->field_0014 * 0x24);
     pSVar2->field_0020 = pAVar4;

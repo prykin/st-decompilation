@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STMethodOwnerApplier] Structural method owner recovered as STFieldC.
    Evidence: this_call_owners=[STFieldC]; agreed_this_calls=1; incoming_this_accesses=3;
@@ -8,24 +10,26 @@ void __thiscall STFieldC::sub_00609CD0(STFieldC *this)
 
 {
   dword dVar1;
-  DArrayTy *pDVar2;
-  void *pvVar3;
-  uint uVar4;
+  STFieldC_field_0234DArray *pSVar2;
+  STFieldC_field_0234Element *puVar3;
+  uint uVar3;
 
-  if (this->field_0234 != (DArrayTy *)0x0) {
+  if (this->field_0234 != (STFieldC_field_0234DArray *)0x0) {
     dVar1 = this->field_0234->count;
-    uVar4 = 0;
+    uVar3 = 0;
     if (0 < (int)dVar1) {
       do {
-        pDVar2 = this->field_0234;
-        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar2, uVar4) (runtime stride) */
-        if (((uVar4 < pDVar2->count) &&
-            (pvVar3 = (void *)(pDVar2->elementSize * uVar4 + (int)pDVar2->data),
-            pvVar3 != (void *)0x0)) && (LoadImagSpr(this,uVar4), this->field_020D == 6)) {
-          FUN_006eab60(PTR_00807598,*(uint *)((int)pvVar3 + 0x3c));
+        pSVar2 = this->field_0234;
+        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
+        if (((uVar3 < pSVar2->count) &&
+            (puVar3 = (STFieldC_field_0234Element *)
+                      ((int)&pSVar2->data->field_0000 + pSVar2->elementSize * uVar3),
+            puVar3 != (STFieldC_field_0234Element *)0x0)) &&
+           (LoadImagSpr(this,uVar3), this->field_020D == 6)) {
+          Library::Ourlib::ST3DSMAP::SprHide(g_sT3DSMAPContext_00807598,puVar3->field_003C);
         }
-        uVar4 = uVar4 + 1;
-      } while ((int)uVar4 < (int)dVar1);
+        uVar3 = uVar3 + 1;
+      } while ((int)uVar3 < (int)dVar1);
     }
   }
   return;

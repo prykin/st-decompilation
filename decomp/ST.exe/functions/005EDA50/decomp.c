@@ -44,8 +44,8 @@ undefined4 __fastcall FUN_005eda50(AnonShape_005EDA50_4BDBD797 *param_1)
         iVar6 = thunk_FUN_005ecd70(param_1,local_14,local_10,local_c,local_8,'\x01',0x3c);
         if (iVar6 != 0) {
           uVar7 = 1;
-          if (param_1->field_0211 != (AnonReceiver_006EA050 *)0x0) {
-            SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006EA050::sub_006EA460
+          if (param_1->field_0211 != (void *)0x0) {
+            Library::Ourlib::ST3DSMAP::SprSetLevBefore
                       (param_1->field_0211,param_1->field_01ED,this->field_01ED);
             return 1;
           }

@@ -15,10 +15,10 @@ void __thiscall TraksClassTy::PrepareAfterSave(TraksClassTy *this,ushort *param_
   code *pcVar1;
   TraksClassTy *pTVar2;
   int iVar3;
-  DArrayTy *pDVar4;
+  TraksClassTy_field_0024DArray *pTVar4;
   char *text;
   ushort *puVar5;
-  short *psVar6;
+  TraksClassTy_field_0024Element *element_0024;
   int *piVar7;
   uint uVar8;
   byte bVar9;
@@ -39,27 +39,27 @@ void __thiscall TraksClassTy::PrepareAfterSave(TraksClassTy *this,ushort *param_
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     local_c->field_001C = *(undefined4 *)(param_1 + 0xc);
     if ((char)param_1[0xe] == '\0') {
-      pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0x32,0x3c,0x32);
-      pTVar2->field_0024 = pDVar4;
+      pTVar4 = (TraksClassTy_field_0024DArray *)
+               Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0x32,0x3c,0x32);
+      pTVar2->field_0024 = pTVar4;
     }
     else {
-      pDVar4 = (DArrayTy *)FUN_006b0060((uint *)0x0,(uint *)(param_1 + 0x2e));
-      pTVar2->field_0024 = pDVar4;
-      pDVar4->iteratorIndex = 0;
+      pTVar4 = (TraksClassTy_field_0024DArray *)FUN_006b0060((uint *)0x0,(uint *)(param_1 + 0x2e));
+      pTVar2->field_0024 = pTVar4;
+      pTVar4->iteratorIndex = 0;
       while( true ) {
-        pDVar4 = pTVar2->field_0024;
-        uVar8 = pDVar4->iteratorIndex;
-        if (uVar8 < pDVar4->count) {
-          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar4, uVar8) (runtime stride) */
-          psVar6 = (short *)(pDVar4->elementSize * uVar8 + (int)pDVar4->data);
-          pDVar4->iteratorIndex = uVar8 + 1;
+        pTVar4 = pTVar2->field_0024;
+        uVar8 = pTVar4->iteratorIndex;
+        if (uVar8 < pTVar4->count) {
+          element_0024 = DArrayAt<TraksClassTy_field_0024Element>(pTVar4, uVar8);
+          pTVar4->iteratorIndex = uVar8 + 1;
         }
         else {
-          psVar6 = (short *)0x0;
+          element_0024 = (TraksClassTy_field_0024Element *)0x0;
         }
-        if (psVar6 == (short *)0x0) break;
+        if (element_0024 == (TraksClassTy_field_0024Element *)0x0) break;
         piVar7 = DAT_00806764;
-        if (*(int *)(&DAT_007c900c + *psVar6 * 0x18) != 1) {
+        if (*(int *)(&DAT_007c900c + element_0024->field_0000 * 0x18) != 1) {
           piVar7 = DAT_00806774;
         }
         puVar11 = (undefined4 *)0x0;
@@ -67,37 +67,44 @@ void __thiscall TraksClassTy::PrepareAfterSave(TraksClassTy *this,ushort *param_
         iVar3 = 1;
         bVar9 = 0;
         uVar8 = 0xffffffff;
-        text = thunk_FUN_00555840((int)*psVar6);
+        text = thunk_FUN_00555840((int)element_0024->field_0000);
         puVar5 = Library::Ourlib::MFRLOAD::mfRLoad
                            (piVar7,CASE_1D,text,uVar8,bVar9,iVar3,iVar10,puVar11);
-        psVar6[0x1b] = *puVar5;
-        iVar3 = *psVar6 * 0x18;
-        FUN_006e8660(PTR_00807598,(int *)&local_8,1,0,*(uint *)(&DAT_007c9000 + iVar3),
-                     *(uint *)(&DAT_007c9004 + iVar3),*(uint *)(&DAT_007c8ff8 + iVar3),
-                     *(uint *)(&DAT_007c8ffc + iVar3),0);
-        *(uint *)(psVar6 + 0x19) = local_8;
-        FUN_006e98e0(PTR_00807598,local_8,0,(int)psVar6[0x1b],*(int *)((int)puVar5 + 0x21),1);
-        FUN_006ea270(PTR_00807598,*(uint *)(psVar6 + 0x19),0,(int)psVar6[0x11]);
-        iVar3 = *(int *)(psVar6 + 0xb);
+        element_0024->field_0036 = *puVar5;
+        iVar3 = element_0024->field_0000 * 0x18;
+        ST3DSMAPContext::sub_006E8660
+                  (g_sT3DSMAPContext_00807598,(int *)&local_8,1,0,*(uint *)(&DAT_007c9000 + iVar3),
+                   *(uint *)(&DAT_007c9004 + iVar3),*(uint *)(&DAT_007c8ff8 + iVar3),
+                   *(uint *)(&DAT_007c8ffc + iVar3),0);
+        element_0024->spriteHandle = local_8;
+        ST3DSMAPContext::sub_006E98E0
+                  (g_sT3DSMAPContext_00807598,local_8,0,(int)element_0024->field_0036,
+                   *(int *)((int)puVar5 + 0x21),1);
+        ST3DSMAPContext::sub_006EA270
+                  (g_sT3DSMAPContext_00807598,element_0024->spriteHandle,0,(int)element_0024->field_0022);
+        iVar3 = element_0024->field_0016;
         if (-1 < iVar3) {
-          if (psVar6[0xd] == -1) {
-            FUN_006ea3e0(PTR_00807598,*(uint *)(psVar6 + 0x19),iVar3);
+          if (element_0024->field_001A == -1) {
+            Library::Ourlib::ST3DSMAP::SprSetLevAfter
+                      (g_sT3DSMAPContext_00807598,element_0024->spriteHandle,iVar3);
           }
-          else if (psVar6[0xd] == 1) {
-            SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006EA050::sub_006EA460
-                      ((AnonReceiver_006EA050 *)PTR_00807598,*(uint *)(psVar6 + 0x19),iVar3);
+          else if (element_0024->field_001A == 1) {
+            Library::Ourlib::ST3DSMAP::SprSetLevBefore
+                      (g_sT3DSMAPContext_00807598,element_0024->spriteHandle,iVar3);
           }
         }
-        FUN_006ea4e0(PTR_00807598,*(uint *)(psVar6 + 0x19),1,
-                     *(int *)(&DAT_007c9000 + *psVar6 * 0x18) / 2,
-                     *(int *)(&DAT_007c9004 + *psVar6 * 0x18) / 2);
-        local_10 = (int)psVar6[1];
-        FUN_006ea960(PTR_00807598,*(uint *)(psVar6 + 0x19),
-                     (float)local_10 * _DAT_007904f8 * _DAT_007904f0,
-                     (float)(int)psVar6[2] * _DAT_007904f8 * _DAT_007904f0,
-                     (float)(int)psVar6[3] * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
-        FUN_006eaaa0(PTR_00807598,*(uint *)(psVar6 + 0x19),0);
-        *(uint *)(psVar6 + 0x12) = pTVar2->field_0020;
+        Library::Ourlib::ST3DSMAP::SprSetLevBeforeLand
+                  (g_sT3DSMAPContext_00807598,element_0024->spriteHandle,1,
+                   *(int *)(&DAT_007c9000 + element_0024->field_0000 * 0x18) / 2,
+                   *(int *)(&DAT_007c9004 + element_0024->field_0000 * 0x18) / 2);
+        local_10 = (int)element_0024->field_0002;
+        Library::Ourlib::ST3DSMAP::SprMove
+                  (g_sT3DSMAPContext_00807598,element_0024->spriteHandle,
+                   (float)local_10 * _DAT_007904f8 * _DAT_007904f0,
+                   (float)(int)element_0024->positionY * _DAT_007904f8 * _DAT_007904f0,
+                   (float)(int)element_0024->positionZ * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
+        Library::Ourlib::ST3DSMAP::SprShow(g_sT3DSMAPContext_00807598,element_0024->spriteHandle,0);
+        element_0024->field_0024 = pTVar2->field_0020;
       }
     }
     g_currentExceptionFrame = local_54.previous;

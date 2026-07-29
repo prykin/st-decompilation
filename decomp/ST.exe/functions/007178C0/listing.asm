@@ -1,4 +1,4 @@
-FUN_007178c0:
+ST3DSMAPContext::sub_007178C0:
 007178C0  55                        PUSH EBP
 007178C1  8B EC                     MOV EBP,ESP
 007178C3  8B C1                     MOV EAX,ECX

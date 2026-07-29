@@ -51,8 +51,7 @@ int __cdecl FUN_006839d0(int param_1,int *param_2,ushort param_3,int param_4)
         iVar5 = iVar5 + 1;
         break;
       case '\x03':
-        thunk_FUN_006838b0(param_2,cVar1,&DAT_00812c24 + (DAT_008488b0 * 0xac5 + local_8) * 4,iVar3)
-        ;
+        thunk_FUN_006838b0(param_2,cVar1,&DAT_00812c24 + (DAT_008488b0 * 0xac5 + local_8) * 4,iVar3);
         local_8 = local_8 + 1;
         break;
       case '\x04':

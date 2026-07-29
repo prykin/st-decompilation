@@ -1,4 +1,4 @@
-FUN_006dd870:
+ST3DSMAPContext::sub_006DD870:
 006DD870  55                        PUSH EBP
 006DD871  8B EC                     MOV EBP,ESP
 006DD873  83 EC 1C                  SUB ESP,0x1c

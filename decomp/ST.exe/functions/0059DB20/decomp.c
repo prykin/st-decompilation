@@ -406,8 +406,7 @@ void __thiscall FSGSTy::ChatCtrls(FSGSTy *this)
     return;
   }
   g_currentExceptionFrame = pIVar13;
-  iVar14 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x758,0,iVar9,"%s")
-  ;
+  iVar14 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x758,0,iVar9,"%s");
   if (iVar14 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }

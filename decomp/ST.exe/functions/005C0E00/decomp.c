@@ -37,8 +37,7 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this)
       StartSystemTy::sub_006E56B0(local_c->field_000C,local_c->field_008F);
       this_00->field_008F = 0;
       FUN_006b5f80((int *)g_ddxContext_008075A8,0x262,0x226,0x91,0x28);
-      PutDDXClip(0x262,0x226,0x262,0x226,0x91,(byte *)0x28,'\x01',(BITMAPINFO *)this_00->field_005D)
-      ;
+      PutDDXClip(0x262,0x226,0x262,0x226,0x91,(byte *)0x28,'\x01',(BITMAPINFO *)this_00->field_005D);
     }
     if (this_00->field_009B != 0) {
       StartSystemTy::sub_006E56B0(this_00->field_000C,this_00->field_009B);
@@ -57,8 +56,7 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this)
       g_currentExceptionFrame = &local_98;
       iVar5 = Library::MSVCRT::__setjmp3(local_98.jumpBuffer,0);
       if (iVar5 == 0) {
-        local_8 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,(byte *)&DAT_0080f33a,0,0,0)
-        ;
+        local_8 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,(byte *)&DAT_0080f33a,0,0,0);
       }
       this_01 = local_8;
       this_00 = local_c;

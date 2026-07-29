@@ -101,8 +101,7 @@ HoloTy::Init(HoloTy *this,HoloTy_Init_param_1Enum param_1,int param_2,int param_
         default:
           goto switchD_005aadcd_default;
         }
-        Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,*piVar1,0xffffffff,uVar5,uVar6)
-        ;
+        Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,*piVar1,0xffffffff,uVar5,uVar6);
 switchD_005aadcd_default:
         FUN_006b3af0((int *)g_ddxContext_008075A8,*piVar1);
         this_00->field_0002 = param_7;

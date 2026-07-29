@@ -1,20 +1,25 @@
 
 /* [STPrototypeApplier] Propagated parameter 3.
    Evidence: 00556170 -> 006E98E0 @ 00556296; MOVSX at 00556284 establishes signed source width 2 |
-   00556760 -> 006E98E0 @ 00556AD6; MOVSX at 00556AC1 establishes signed source width 2 */
+   00556760 -> 006E98E0 @ 00556AD6; MOVSX at 00556AC1 establishes signed source width 2
+
+   [STMethodOwnerApplier] Structural method owner recovered as ST3DSMAPContext.
+   Evidence: this_call_owners=[ST3DSMAPContext]; agreed_this_calls=37; incoming_this_accesses=2;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=5; direct_non_thunk_callers=31;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=25; owner_evidence_coverage=adequate */
 
 undefined4 __thiscall
-FUN_006e98e0(void *this,uint param_1,uint param_2,int param_3,int param_4,int param_5)
+ST3DSMAPContext::sub_006E98E0
+          (ST3DSMAPContext *this,uint param_1,uint param_2,int param_3,int param_4,int param_5)
 
 {
   AnonShape_006E8840_CF3FA5BA *pAVar1;
   byte *pbVar2;
   int *piVar3;
 
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if ((param_1 < *(uint *)((int)this + 0x310)) &&
-     (pAVar1 = (AnonShape_006E8840_CF3FA5BA *)(*(int *)((int)this + 0x31c) + param_1 * 0x114),
-     (*(uint *)(*(int *)((int)this + 0x31c) + param_1 * 0x114) & 0x8000) != 0)) {
+  if ((param_1 < *(uint *)&this->field_0x310) &&
+     (pAVar1 = (AnonShape_006E8840_CF3FA5BA *)(*(int *)&this->field_0x31c + param_1 * 0x114),
+     (*(uint *)(*(int *)&this->field_0x31c + param_1 * 0x114) & 0x8000) != 0)) {
     if ((uint)pAVar1->field_0094 <= param_2) {
       FUN_006e91a0();
       return 0;

@@ -56,8 +56,10 @@ int FUN_00646e00(int param_1,int param_2,int param_3)
   if (iVar5 < 0) {
     iVar7 = iVar7 + -1;
   }
-  if ((((iVar7 + 3 < PTR_00807598->field_0048) || (PTR_00807598->field_0058 < iVar7 + -3)) ||
-      (iVar6 + 3 < PTR_00807598->field_0044)) || (PTR_00807598->field_0054 < iVar6 + -3)) {
+  if ((((iVar7 + 3 < g_sT3DSMAPContext_00807598->field_0048) ||
+       (g_sT3DSMAPContext_00807598->field_0058 < iVar7 + -3)) ||
+      (iVar6 + 3 < g_sT3DSMAPContext_00807598->field_0044)) ||
+     (g_sT3DSMAPContext_00807598->field_0054 < iVar6 + -3)) {
     return 0;
   }
   iVar7 = FUN_006ddbd0();

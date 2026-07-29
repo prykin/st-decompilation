@@ -198,8 +198,7 @@ LAB_005bccb9:
                    (uint)(message->arg1).words.high,
                    ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_1C82)->field_0004,0x13,0);
       ccFntTy::SetSurf(g_startSystem_0081176C->field_0030,(int)this_00->field_1C82,0,4,
-                       (uint)(message->arg1).words.high,*(int *)(this_00->field_1C82 + 2) + -4,0x13)
-      ;
+                       (uint)(message->arg1).words.high,*(int *)(this_00->field_1C82 + 2) + -4,0x13);
       if (this_00->field_1A5F == '\0') {
         iVar10 = g_startSystem_0081176C->field_068A;
       }
@@ -380,8 +379,7 @@ cf_common_exit_005BCD75:
         cVar17 = '\x01';
         bVar16 = 0x10;
         iVar13 = 1;
-        iVar10 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,0x79,0x197,0x22e,0x2e)
-        ;
+        iVar10 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,0x79,0x197,0x22e,0x2e);
         uVar18 = HoloTy::Init(this_00->field_1C9A,CASE_1,0x79,0x197,iVar10,iVar13,bVar16,cVar17,
                               uVar18);
         if (uVar18 != 0) {

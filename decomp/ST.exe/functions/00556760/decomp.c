@@ -67,7 +67,7 @@ TraksClassTy::TraksCreate
   if (((param_15 & 1) == 0) && (DAT_0080731e == 0)) {
     return 0;
   }
-  if (this->field_0024 == (DArrayTy *)0x0) {
+  if (this->field_0024 == (TraksClassTy_field_0024DArray *)0x0) {
     return 0;
   }
   if (param_4 < 0) {
@@ -92,10 +92,11 @@ TraksClassTy::TraksCreate
   local_14 = iVar7;
   if ((param_15 & 2) != 0) goto LAB_0055693a;
   sVar5 = (short)local_18;
-  if (PTR_00807598 != (AnonShape_GLOBAL_00807598_0C6808FB *)0x0) {
-    if (((((int)(short)local_10 < PTR_00807598->field_0048) ||
-         (PTR_00807598->field_0058 < (int)(short)local_10)) ||
-        ((int)sVar5 < PTR_00807598->field_0044)) || (PTR_00807598->field_0054 < (int)sVar5)) {
+  if (g_sT3DSMAPContext_00807598 != (ST3DSMAPContext *)0x0) {
+    if (((((int)(short)local_10 < g_sT3DSMAPContext_00807598->field_0048) ||
+         (g_sT3DSMAPContext_00807598->field_0058 < (int)(short)local_10)) ||
+        ((int)sVar5 < g_sT3DSMAPContext_00807598->field_0044)) ||
+       (g_sT3DSMAPContext_00807598->field_0054 < (int)sVar5)) {
       iVar3 = 0;
     }
     else {
@@ -192,36 +193,39 @@ LAB_0055693a:
   local_2a = local_54;
   local_28 = local_52;
   text = thunk_FUN_00555840((int)param_1);
-  puVar4 = Library::Ourlib::MFRLOAD::mfRLoad(piVar6,CASE_1D,text,uVar10,bVar11,iVar3,iVar12,puVar13)
-  ;
+  puVar4 = Library::Ourlib::MFRLOAD::mfRLoad(piVar6,CASE_1D,text,uVar10,bVar11,iVar3,iVar12,puVar13);
   local_22 = *puVar4;
   iVar3 = local_58 * 0x18;
-  FUN_006e8660(PTR_00807598,(int *)&local_c,1,0,*(uint *)(&DAT_007c9000 + iVar3),
-               *(uint *)(&DAT_007c9004 + iVar3),*(uint *)(&DAT_007c8ff8 + iVar3),
-               *(uint *)(&DAT_007c8ffc + iVar3),0);
+  ST3DSMAPContext::sub_006E8660
+            (g_sT3DSMAPContext_00807598,(int *)&local_c,1,0,*(uint *)(&DAT_007c9000 + iVar3),
+             *(uint *)(&DAT_007c9004 + iVar3),*(uint *)(&DAT_007c8ff8 + iVar3),
+             *(uint *)(&DAT_007c8ffc + iVar3),0);
   local_26 = local_c;
-  FUN_006e98e0(PTR_00807598,local_c,0,(int)(short)local_22,*(int *)((int)puVar4 + 0x21),1);
+  ST3DSMAPContext::sub_006E98E0
+            (g_sT3DSMAPContext_00807598,local_c,0,(int)(short)local_22,*(int *)((int)puVar4 + 0x21),
+             1);
   if (iVar7 == 0) {
-    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006EA050::FUN_006ea050
-              ((AnonReceiver_006EA050 *)PTR_00807598,local_26,(int)local_44,0xffffffff,0);
+    Library::Ourlib::ST3DSMAP::SprSetSeqAnim
+              (g_sT3DSMAPContext_00807598,local_26,(int)local_44,0xffffffff,0);
   }
-  FUN_006ea270(PTR_00807598,local_26,0,param_3);
+  ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,local_26,0,param_3);
   if (-1 < local_42) {
     if (local_3e == -1) {
-      FUN_006ea3e0(PTR_00807598,local_26,local_42);
+      Library::Ourlib::ST3DSMAP::SprSetLevAfter(g_sT3DSMAPContext_00807598,local_26,local_42);
     }
     else if (local_3e == 1) {
-      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006EA050::sub_006EA460
-                ((AnonReceiver_006EA050 *)PTR_00807598,local_26,local_42);
+      Library::Ourlib::ST3DSMAP::SprSetLevBefore(g_sT3DSMAPContext_00807598,local_26,local_42);
     }
   }
-  FUN_006ea4e0(PTR_00807598,local_26,1,*(int *)(&DAT_007c9000 + local_58 * 0x18) / 2,
-               *(int *)(&DAT_007c9004 + local_58 * 0x18) / 2);
+  Library::Ourlib::ST3DSMAP::SprSetLevBeforeLand
+            (g_sT3DSMAPContext_00807598,local_26,1,*(int *)(&DAT_007c9000 + local_58 * 0x18) / 2,
+             *(int *)(&DAT_007c9004 + local_58 * 0x18) / 2);
   local_8 = (int)local_56;
-  FUN_006ea960(PTR_00807598,local_26,(float)local_8 * _DAT_007904f8 * _DAT_007904f0,
-               (float)(int)local_54 * _DAT_007904f8 * _DAT_007904f0,
-               (float)(int)local_52 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
-  FUN_006eaaa0(PTR_00807598,local_26,0);
+  Library::Ourlib::ST3DSMAP::SprMove
+            (g_sT3DSMAPContext_00807598,local_26,(float)local_8 * _DAT_007904f8 * _DAT_007904f0,
+             (float)(int)local_54 * _DAT_007904f8 * _DAT_007904f0,
+             (float)(int)local_52 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
+  Library::Ourlib::ST3DSMAP::SprShow(g_sT3DSMAPContext_00807598,local_26,0);
   local_36 = (undefined2)param_3;
   local_34 = local_60->field_0020;
   if (iVar7 != 0) {

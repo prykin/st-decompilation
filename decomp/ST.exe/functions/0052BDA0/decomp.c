@@ -52,8 +52,7 @@ void __thiscall MoneyTy::sub_0052BDA0(MoneyTy *this,char param_1,int param_2)
       *(undefined1 *)puVar4 = uVar1;
       puVar4 = (undefined4 *)((int)puVar4 + 1);
     }
-    ccFntTy::SetSurf(this->field_006E,(int)this->field_007E,0,0,0,this->field_0060,this->field_0064)
-    ;
+    ccFntTy::SetSurf(this->field_006E,(int)this->field_007E,0,0,0,this->field_0060,this->field_0064);
     ccFntTy::WrStr(this->field_006E,local_c,-1,-1,(uint)bVar3);
     sub_0052BBE0(this);
   }

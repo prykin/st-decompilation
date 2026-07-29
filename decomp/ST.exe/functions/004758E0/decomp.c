@@ -154,8 +154,7 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
                   (*(short *)&this->field_0x5d0,*(short *)&this->field_0x5d2,
                    *(short *)&this->field_0x5d4,0,(RecoveredRecord_DumpClassC_00495EC0 *)this);
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        TLOEmbryoTy::sub_0041C3F0((TLOEmbryoTy *)this,*(undefined **)((int)this->field_06CB + 0x3f))
-        ;
+        TLOEmbryoTy::sub_0041C3F0((TLOEmbryoTy *)this,*(undefined **)((int)this->field_06CB + 0x3f));
         this->field_07CA = 0;
         this->field_07C6 = 0;
       }
@@ -250,7 +249,7 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
       return -1;
     }
     if (local_20 == 0) {
-      FUN_006ea2f0(this->field_0211,this->field_01ED);
+      Library::Ourlib::ST3DSMAP::SprRstLev(this->field_0211,this->field_01ED);
       iVar5 = this->vfunc_D8();
       return -(uint)(iVar5 != 0);
     }

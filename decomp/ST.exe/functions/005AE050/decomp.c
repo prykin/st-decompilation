@@ -292,8 +292,7 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
     iVar7 = Library::MSVCRT::__setjmp3(local_100.jumpBuffer,0);
     pCVar17 = local_10;
     if (iVar7 == 0) {
-      pcVar11 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&local_10->field_0x1faf,0,0,0)
-      ;
+      pcVar11 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&local_10->field_0x1faf,0,0,0);
       local_14 = pcVar11;
       if (g_dArray_0080C4CB != (DArrayTy *)0x0) {
         FUN_006b5570(g_dArray_0080C4CB);

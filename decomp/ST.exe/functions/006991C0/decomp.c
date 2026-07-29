@@ -865,10 +865,8 @@ LAB_00699f26:
           if (0 < (int)uVar13) {
             do {
               uStack_12a = (undefined2)*(undefined4 *)(&stack0xfffffe98 + iVar15 * 4);
-              local_128 = (undefined2)((uint)*(undefined4 *)(&stack0xfffffe98 + iVar15 * 4) >> 0x10)
-              ;
-              local_134 = *(uint *)(local_9c + (uint)*(ushort *)(local_120 + local_20[iVar15]) * 10)
-              ;
+              local_128 = (undefined2)((uint)*(undefined4 *)(&stack0xfffffe98 + iVar15 * 4) >> 0x10);
+              local_134 = *(uint *)(local_9c + (uint)*(ushort *)(local_120 + local_20[iVar15]) * 10);
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               local_130 = CONCAT22(local_130._2_2_,
                                    *(undefined2 *)

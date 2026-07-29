@@ -1,5 +1,11 @@
 
-int __thiscall FUN_006eb350(void *this,int param_1,int param_2,int param_3,int param_4)
+/* [STMethodOwnerApplier] Structural method owner recovered as ST3DSMAPContext.
+   Evidence: this_call_owners=[ST3DSMAPContext]; agreed_this_calls=4; incoming_this_accesses=1;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=6; direct_non_thunk_callers=3;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=3; owner_evidence_coverage=adequate */
+
+int __thiscall
+ST3DSMAPContext::sub_006EB350(ST3DSMAPContext *this,int param_1,int param_2,int param_3,int param_4)
 
 {
   byte *pbVar1;
@@ -29,7 +35,7 @@ int __thiscall FUN_006eb350(void *this,int param_1,int param_2,int param_3,int p
     local_18 = 0;
     do {
       local_8 = (AnonShape_006EB350_D4715C71 *)
-                (*(int *)((int)this + 0x31c) + *(int *)(local_18 + (int)local_c) * 0x114);
+                (*(int *)&this->field_0x31c + *(int *)(local_18 + (int)local_c) * 0x114);
       if (((local_8->field_00A0 != 0) && (param_3 < local_8->field_0094)) &&
          (iVar4 = *(int *)(local_8->field_00A0 + 4 + param_3 * 8), iVar4 != 0)) {
         pbVar1 = *(byte **)(iVar4 + *(short *)(local_8->field_00A4 + param_3 * 4) * 4);
@@ -58,7 +64,7 @@ int __thiscall FUN_006eb350(void *this,int param_1,int param_2,int param_3,int p
   FUN_006a5e90(local_c);
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   if (((local_1c != 0) && (param_4 != 0)) &&
-     (uVar3 = FUN_006e2d00(this,param_1,param_2),
+     (uVar3 = sub_006E2D00(this,param_1,param_2),
      CONCAT22(extraout_var,uVar3) < *(int *)&pAVar7->field_0x10)) {
     return 0;
   }

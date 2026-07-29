@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __fastcall FUN_005557b0(AnonShape_005557B0_28260162 *param_1)
 
@@ -17,7 +19,8 @@ void __fastcall FUN_005557b0(AnonShape_005557B0_28260162 *param_1)
       pDVar1->iteratorIndex = uVar2 + 1;
       if (pvVar3 == (void *)0x0) break;
       if (-1 < (int)*(uint *)((int)pvVar3 + 0x32)) {
-        FUN_006e8ba0(PTR_00807598,*(uint *)((int)pvVar3 + 0x32));
+        Library::Ourlib::ST3DSMAP::SprClose
+                  (g_sT3DSMAPContext_00807598,*(uint *)((int)pvVar3 + 0x32));
         *(undefined4 *)((int)pvVar3 + 0x32) = 0xffffffff;
       }
     }

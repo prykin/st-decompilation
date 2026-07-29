@@ -1132,8 +1132,7 @@ LAB_00463d56:
         if ((local_14 == (STFishC *)0x0) || (local_14->field_0018 != *(int *)((int)this + 0x7f4))) {
           iVar15 = STPlaySystemC::sub_006E62D0
                              (g_playSystem_00802A38,
-                              *(AnonShape_005EFAE0_B406B78B **)((int)this + 0x7f4),(int *)&local_14)
-          ;
+                              *(AnonShape_005EFAE0_B406B78B **)((int)this + 0x7f4),(int *)&local_14);
           if (((iVar15 != -4) && (iVar15 = (*local_14->vtable->vfunc_F8)(), iVar15 != 0)) &&
              ((*(int *)&local_14->field_0x20 != 0x1ae ||
               (iVar15 = (*local_14->vtable->vfunc_F4)(*(undefined4 *)((int)this + 0x24)),

@@ -86,8 +86,8 @@ int __thiscall STBHEShellC::GetMessage(STBHEShellC *this,STMessage *message)
       }
       pcVar12 = thunk_FUN_005f3530;
     }
-    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_006e9520
-              ((AnonReceiver_004248D0 *)PTR_00807598,uVar9,0,(uint)pcVar12,(uint)local_14);
+    Library::Ourlib::ST3DSMAP::SprSetShadow
+              (g_sT3DSMAPContext_00807598,uVar9,0,(uint)pcVar12,(uint)local_14);
     g_currentExceptionFrame = local_6c.previous;
     return 0;
   }
@@ -252,9 +252,10 @@ LAB_005f3027:
     }
     if (0x10 < local_14->field_00AB) {
       if (local_14->field_00AB == 0x11) {
-        FUN_006e9cb0(PTR_00807598,(uint *)local_14->field_008F,2);
+        ST3DSMAPContext::sub_006E9CB0(g_sT3DSMAPContext_00807598,(uint *)local_14->field_008F,2);
       }
-      FUN_006ea270(PTR_00807598,this_00->field_008F,2,this_00->field_00C0);
+      ST3DSMAPContext::sub_006EA270
+                (g_sT3DSMAPContext_00807598,this_00->field_008F,2,this_00->field_00C0);
       if (this_00->field_00C0 < this_00->field_00BC) {
         this_00->field_00C0 = this_00->field_00C0 + 1;
       }
@@ -262,32 +263,34 @@ LAB_005f3027:
     if (this_00->field_00BB != '\0') {
       if (this_00->field_00B7 == this_00->field_00B3) {
         this_00->field_00BB = 0;
-        FUN_006e9d40(PTR_00807598,(uint *)this_00->field_008F,1);
+        ST3DSMAPContext::sub_006E9D40(g_sT3DSMAPContext_00807598,(uint *)this_00->field_008F,1);
       }
       else {
-        FUN_006ea270(PTR_00807598,this_00->field_008F,1,this_00->field_00B7);
+        ST3DSMAPContext::sub_006EA270
+                  (g_sT3DSMAPContext_00807598,this_00->field_008F,1,this_00->field_00B7);
         this_00->field_00B7 = this_00->field_00B7 + 1;
       }
     }
     uVar9 = this_00->field_00AB;
     if ((int)uVar9 < this_00->field_00AF) {
-      FUN_006ea270(PTR_00807598,this_00->field_008F,0,uVar9);
+      ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,this_00->field_008F,0,uVar9);
 LAB_005f2d8b:
       this_00->field_00AB = this_00->field_00AB + 1;
     }
     else if (uVar9 == this_00->field_00AF) {
       if (-1 < this_00->field_008F) {
-        FUN_006e9d40(PTR_00807598,(uint *)this_00->field_008F,0);
+        ST3DSMAPContext::sub_006E9D40(g_sT3DSMAPContext_00807598,(uint *)this_00->field_008F,0);
       }
       goto LAB_005f2d8b;
     }
-    FUN_006ea960(PTR_00807598,this_00->field_008F,
-                 (float)this_00->field_0093 * _DAT_007904f8 * _DAT_007904f0,
-                 (float)this_00->field_0097 * _DAT_007904f8 * _DAT_007904f0,
-                 (float)(int)this_00->field_009B * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
+    Library::Ourlib::ST3DSMAP::SprMove
+              (g_sT3DSMAPContext_00807598,this_00->field_008F,
+               (float)this_00->field_0093 * _DAT_007904f8 * _DAT_007904f0,
+               (float)this_00->field_0097 * _DAT_007904f8 * _DAT_007904f0,
+               (float)(int)this_00->field_009B * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
     if (this_00->field_00C0 == this_00->field_00BC) {
       if (-1 < this_00->field_008F) {
-        FUN_006eab60(PTR_00807598,this_00->field_008F);
+        Library::Ourlib::ST3DSMAP::SprHide(g_sT3DSMAPContext_00807598,this_00->field_008F);
       }
       this_00->field_0104 = CASE_4;
     }
@@ -348,12 +351,12 @@ LAB_005f2d8b:
       }
       if (bVar11) {
         if (this_00->field_00C4 == '\0') {
-          FUN_006eaaa0(PTR_00807598,this_00->field_008F,0);
+          Library::Ourlib::ST3DSMAP::SprShow(g_sT3DSMAPContext_00807598,this_00->field_008F,0);
           this_00->field_00C4 = 1;
         }
       }
       else if (this_00->field_00C4 != '\0') {
-        FUN_006eab60(PTR_00807598,this_00->field_008F);
+        Library::Ourlib::ST3DSMAP::SprHide(g_sT3DSMAPContext_00807598,this_00->field_008F);
         this_00->field_00C4 = 0;
       }
     }

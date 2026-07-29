@@ -313,10 +313,8 @@ LAB_005aef44:
     local_f54 = 0;
     local_f50 = 0xc0a2;
     (*pSVar1->vtable->CreateObject)
-              ((SystemClassTy *)pSVar1,6,&g_startSystem_0081176C->field_054C,(int *)0x0,local_fe4,0)
-    ;
-    Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0554)
-    ;
+              ((SystemClassTy *)pSVar1,6,&g_startSystem_0081176C->field_054C,(int *)0x0,local_fe4,0);
+    Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0554);
   }
   pSVar1 = this_00->field_1A5B;
   if (pSVar1->field_02E6 != (MMsgTy *)0x0) {

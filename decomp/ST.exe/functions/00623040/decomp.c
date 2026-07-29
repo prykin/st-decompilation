@@ -32,8 +32,7 @@ int FUN_00623040(AnonReceiver_004248D0 *param_1,undefined4 param_2,int *param_3,
                       (param_1,*(int *)(iVar2 + (uint)param_4->field_0078 * 4),
                        (float)param_4->field_0064 * _DAT_007904f8 * _DAT_007904f0 - _DAT_007907a8,
                        (float)param_4->field_0068 * _DAT_007904f8 * _DAT_007904f0 - _DAT_007907a8,
-                       (float)param_4->field_006C * _DAT_007904f8 * _DAT_007904f0,0x20,0x20,param_3)
-    ;
+                       (float)param_4->field_006C * _DAT_007904f8 * _DAT_007904f0,0x20,0x20,param_3);
     return iVar2;
   }
   return -4;

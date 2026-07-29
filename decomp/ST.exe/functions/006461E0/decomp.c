@@ -91,12 +91,13 @@ int __thiscall STVolcanoC::GetMessage(STVolcanoC *this,STMessage *message)
           if (local_8->field_005C == '\0') {
             if (local_8->field_0061 != (ushort *)0x0) {
               /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-              FUN_006e9000(PTR_00807598,
-                           *(undefined4 *)(*(int *)((int)local_8->field_0061 + 0x21) + 0xa0),0x5a,
-                           0x2f,(float)local_8->field_0065 * _DAT_007904f8 * _DAT_007904f0,
-                           (float)local_8->field_0069 * _DAT_007904f8 * _DAT_007904f0,
-                           (float)local_8->field_006D * _DAT_007904f8 * _DAT_007904f0 +
-                           _DAT_007904fc,0);
+              ST3DSMAPContext::sub_006E9000
+                        (g_sT3DSMAPContext_00807598,
+                         *(undefined4 *)(*(int *)((int)local_8->field_0061 + 0x21) + 0xa0),0x5a,0x2f
+                         ,(float)local_8->field_0065 * _DAT_007904f8 * _DAT_007904f0,
+                         (float)local_8->field_0069 * _DAT_007904f8 * _DAT_007904f0,
+                         (float)local_8->field_006D * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc,
+                         0);
               this_00->field_005C = 1;
               sub_006479E0(this_00);
               g_currentExceptionFrame = local_54.previous;
@@ -107,11 +108,13 @@ int __thiscall STVolcanoC::GetMessage(STVolcanoC *this,STMessage *message)
                                 (undefined4 *)0x0);
             this_00->field_0061 = puVar6;
             if (puVar6 != (ushort *)0x0) {
-              FUN_006e9000(PTR_00807598,*(undefined4 *)(*(int *)((int)puVar6 + 0x21) + 0xa0),0x5a,
-                           0x2f,(float)this_00->field_0065 * _DAT_007904f8 * _DAT_007904f0,
-                           (float)this_00->field_0069 * _DAT_007904f8 * _DAT_007904f0,
-                           (float)this_00->field_006D * _DAT_007904f8 * _DAT_007904f0 +
-                           _DAT_007904fc,0);
+              ST3DSMAPContext::sub_006E9000
+                        (g_sT3DSMAPContext_00807598,
+                         *(undefined4 *)(*(int *)((int)puVar6 + 0x21) + 0xa0),0x5a,0x2f,
+                         (float)this_00->field_0065 * _DAT_007904f8 * _DAT_007904f0,
+                         (float)this_00->field_0069 * _DAT_007904f8 * _DAT_007904f0,
+                         (float)this_00->field_006D * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc,
+                         0);
               this_00->field_005C = 1;
               this_00->field_0061 = (ushort *)0x0;
             }
@@ -125,13 +128,13 @@ int __thiscall STVolcanoC::GetMessage(STVolcanoC *this,STMessage *message)
           local_8->field_007E = iVar5;
           if (local_8->field_0082 <= iVar5) {
             local_8->field_007E = 0;
-            FUN_006eab60(PTR_00807598,local_8->field_007A);
+            Library::Ourlib::ST3DSMAP::SprHide(g_sT3DSMAPContext_00807598,local_8->field_007A);
           }
           iVar5 = this_00->field_008A + 1;
           this_00->field_008A = iVar5;
           if (this_00->field_008E <= iVar5) {
             this_00->field_008A = 0;
-            FUN_006eab60(PTR_00807598,this_00->field_0086);
+            Library::Ourlib::ST3DSMAP::SprHide(g_sT3DSMAPContext_00807598,this_00->field_0086);
           }
         }
         if ((((g_playSystem_00802A38->field_00E4 & 1) == 0) && (2 < this_00->field_0071)) &&

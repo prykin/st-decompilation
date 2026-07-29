@@ -9,7 +9,7 @@ int __thiscall STLightC::sub_0061D8F0(STLightC *this,undefined4 *param_1)
 {
   int *piVar1;
   int *piVar2;
-  DArrayTy *pDVar3;
+  STLightC_field_00A3DArray *pSVar3;
   int iVar4;
   undefined4 *puVar5;
   int *piVar6;
@@ -46,8 +46,9 @@ int __thiscall STLightC::sub_0061D8F0(STLightC *this,undefined4 *param_1)
     piVar6 = (int *)((int)piVar6 + 1);
     piVar2 = (int *)((int)piVar2 + 1);
   }
-  pDVar3 = (DArrayTy *)FUN_006b0060((uint *)0x0,(uint *)((int)local_8 + *piVar1 + 4));
-  this->field_00A3 = pDVar3;
+  pSVar3 = (STLightC_field_00A3DArray *)
+           FUN_006b0060((uint *)0x0,(uint *)((int)local_8 + *piVar1 + 4));
+  this->field_00A3 = pSVar3;
   return local_c;
 }
 

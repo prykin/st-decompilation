@@ -16,16 +16,17 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,undefined1 param_2
   int iVar5;
   cMf32 *pcVar6;
   ushort *puVar7;
-  DArrayTy *pDVar8;
+  MTaskTy_field_0074DArray *pMVar8;
   LPSTR text;
   ccFntTy *pcVar9;
-  uint uVar10;
+  DArrayTy *pDVar10;
   uint uVar11;
-  byte *pbVar12;
-  byte *pbVar14;
-  uint *puVar15;
-  byte bVar16;
-  char *pcVar17;
+  uint uVar12;
+  byte *pbVar13;
+  byte *pbVar15;
+  uint *puVar16;
+  byte bVar17;
+  char *pcVar18;
   undefined4 local_5a8 [256];
   byte local_1a8 [260];
   undefined4 local_a4 [20];
@@ -99,48 +100,48 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,undefined1 param_2
     puVar7 = cMf32::RecGet(pMVar4->field_0070,0xc,PTR_s_TITLE_MISSION_0079c218,(int *)&local_8,0);
     if ((puVar7 == (ushort *)0x0) || ((char)DAT_0080c3c3 == '\0')) {
       Library::MSVCRT::FUN_0072e730(&DAT_0080ed16,(byte *)0x0,(byte *)0x0,local_1a8,(byte *)0x0);
-      uVar10 = 0xffffffff;
-      pbVar12 = local_1a8;
+      uVar11 = 0xffffffff;
+      pbVar13 = local_1a8;
       do {
-        pbVar14 = pbVar12;
-        if (uVar10 == 0) break;
-        uVar10 = uVar10 - 1;
-        pbVar14 = pbVar12 + 1;
-        bVar16 = *pbVar12;
-        pbVar12 = pbVar14;
-      } while (bVar16 != 0);
-      uVar10 = ~uVar10;
-      pbVar12 = pbVar14 + -uVar10;
-      pbVar14 = (byte *)&DAT_0080c3c3;
-      for (uVar11 = uVar10 >> 2; uVar11 != 0; uVar11 = uVar11 - 1) {
-        *(undefined4 *)pbVar14 = *(undefined4 *)pbVar12;
-        pbVar12 = pbVar12 + 4;
-        pbVar14 = pbVar14 + 4;
+        pbVar15 = pbVar13;
+        if (uVar11 == 0) break;
+        uVar11 = uVar11 - 1;
+        pbVar15 = pbVar13 + 1;
+        bVar17 = *pbVar13;
+        pbVar13 = pbVar15;
+      } while (bVar17 != 0);
+      uVar11 = ~uVar11;
+      pbVar13 = pbVar15 + -uVar11;
+      pbVar15 = (byte *)&DAT_0080c3c3;
+      for (uVar12 = uVar11 >> 2; uVar12 != 0; uVar12 = uVar12 - 1) {
+        *(undefined4 *)pbVar15 = *(undefined4 *)pbVar13;
+        pbVar13 = pbVar13 + 4;
+        pbVar15 = pbVar15 + 4;
       }
-      for (uVar10 = uVar10 & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
-        *pbVar14 = *pbVar12;
-        pbVar12 = pbVar12 + 1;
-        pbVar14 = pbVar14 + 1;
+      for (uVar11 = uVar11 & 3; uVar11 != 0; uVar11 = uVar11 - 1) {
+        *pbVar15 = *pbVar13;
+        pbVar13 = pbVar13 + 1;
+        pbVar15 = pbVar15 + 1;
       }
     }
   }
   if (pMVar4->field_006E == '\0') {
     pcVar6 = pMVar4->field_0070;
-    pcVar17 = PTR_s_TASKPLAY_0079c214;
+    pcVar18 = PTR_s_TASKPLAY_0079c214;
   }
   else {
     pcVar6 = pMVar4->field_0070;
-    pcVar17 = (char *)&DAT_0080e303;
+    pcVar18 = (char *)&DAT_0080e303;
   }
-  pDVar8 = (DArrayTy *)Library::Ourlib::MFDARR::mfDarLoad(pcVar6,pcVar17,0);
-  pMVar4->field_0074 = pDVar8;
-  if (pDVar8 == (DArrayTy *)0x0) {
-    pDVar8 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,0x50,1);
+  pMVar8 = (MTaskTy_field_0074DArray *)Library::Ourlib::MFDARR::mfDarLoad(pcVar6,pcVar18,0);
+  pMVar4->field_0074 = pMVar8;
+  if (pMVar8 == (MTaskTy_field_0074DArray *)0x0) {
+    pMVar8 = (MTaskTy_field_0074DArray *)Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,0x50,1);
     memset(local_a4, 0, 0x50); /* compiler bulk-zero initialization */
-    pMVar4->field_0074 = pDVar8;
+    pMVar4->field_0074 = pMVar8;
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_a4[0]._0_1_ = 8;
-    Library::DKW::TBL::FUN_006ae1c0(&pDVar8->flags,local_a4);
+    Library::DKW::TBL::FUN_006ae1c0((uint *)pMVar8,local_a4);
   }
   Library::DKW::TBL::FUN_006afe40(&pMVar4->field_0078,&pMVar4->field_0074->flags);
   if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
@@ -153,9 +154,9 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,undefined1 param_2
     }
   }
   iVar5 = 1;
-  bVar16 = 0;
+  bVar17 = 0;
   text = FUN_006f2c00("TASK_BKG",1,(uint)DAT_0080874e);
-  pcVar6 = (cMf32 *)FUN_0070a9f0(g_cMf32_00806780,text,bVar16,iVar5);
+  pcVar6 = (cMf32 *)FUN_0070a9f0(g_cMf32_00806780,text,bVar17,iVar5);
   pMVar4->field_005D = pcVar6;
   pMVar4->field_0080 = 1;
   puVar7 = Library::Ourlib::MFRLOAD::mfRLoad
@@ -174,25 +175,25 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,undefined1 param_2
   pcVar9 = (ccFntTy *)thunk_FUN_005df290((int)pMVar4->field_005D,(undefined *)0x0,DAT_00807dd9);
   local_c = (ushort *)&pMVar4->field_0653;
   pMVar4->field_008D = pcVar9;
-  puVar15 = pMVar4->field_02A5;
+  puVar16 = pMVar4->field_02A5;
   local_8 = (undefined4 *)0x5;
   do {
-    FUN_006b2330(g_ddxContext_008075A8,puVar15,0x31,0x402f63,0,0,local_c);
-    Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,*puVar15,0xffffffff,0,0);
-    FUN_006b3af0((int *)g_ddxContext_008075A8,*puVar15);
+    FUN_006b2330(g_ddxContext_008075A8,puVar16,0x31,0x402f63,0,0,local_c);
+    Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,*puVar16,0xffffffff,0,0);
+    FUN_006b3af0((int *)g_ddxContext_008075A8,*puVar16);
     local_c = local_c + 6;
-    puVar15 = puVar15 + 1;
+    puVar16 = puVar16 + 1;
     local_8 = (undefined4 *)((int)local_8 + -1);
   } while (local_8 != (undefined4 *)0x0);
   local_c = (ushort *)&pMVar4->field_0x68f;
-  puVar15 = pMVar4->field_02BD;
+  puVar16 = pMVar4->field_02BD;
   local_8 = (undefined4 *)0x5;
   do {
-    FUN_006b2330(g_ddxContext_008075A8,puVar15,0x31,0x402f63,0,0,local_c);
-    Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,*puVar15,0xffffffff,0,0);
-    FUN_006b3af0((int *)g_ddxContext_008075A8,*puVar15);
+    FUN_006b2330(g_ddxContext_008075A8,puVar16,0x31,0x402f63,0,0,local_c);
+    Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,*puVar16,0xffffffff,0,0);
+    FUN_006b3af0((int *)g_ddxContext_008075A8,*puVar16);
     local_c = local_c + 6;
-    puVar15 = puVar15 + 1;
+    puVar16 = puVar16 + 1;
     local_8 = (undefined4 *)((int)local_8 + -1);
   } while (local_8 != (undefined4 *)0x0);
   SpriteClassTy::InitSprite
@@ -229,8 +230,7 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,undefined1 param_2
     FUN_006b3af0((int *)pMVar4->field_043B,pMVar4->field_03F7);
   }
   piVar1 = &pMVar4->field_0484;
-  FUN_006b2330(g_ddxContext_008075A8,(uint *)piVar1,0x32,0x402f63,0,0,(ushort *)&pMVar4->field_06BF)
-  ;
+  FUN_006b2330(g_ddxContext_008075A8,(uint *)piVar1,0x32,0x402f63,0,0,(ushort *)&pMVar4->field_06BF);
   Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,*piVar1,0xffffffff,0,0);
   FUN_006b3af0((int *)g_ddxContext_008075A8,*piVar1);
   SpriteClassTy::InitSprite
@@ -267,16 +267,15 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,undefined1 param_2
     FUN_006b3af0((int *)pMVar4->field_05F6,pMVar4->field_05B2);
   }
   piVar1 = &pMVar4->field_063F;
-  FUN_006b2330(g_ddxContext_008075A8,(uint *)piVar1,0x32,0x402f63,0,0,(ushort *)&pMVar4->field_06CB)
-  ;
+  FUN_006b2330(g_ddxContext_008075A8,(uint *)piVar1,0x32,0x402f63,0,0,(ushort *)&pMVar4->field_06CB);
   Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,*piVar1,0xffffffff,0,0);
   FUN_006b3af0((int *)g_ddxContext_008075A8,*piVar1);
-  pDVar8 = (DArrayTy *)Library::DKW::TBL::FUN_006ae310((uint *)0x0,10,0x9e,10,0x405de4);
-  pMVar4->field_064B = pDVar8;
-  pDVar8 = (DArrayTy *)Library::DKW::TBL::FUN_006ae310((uint *)0x0,10,0x3e,10,0x40365c);
-  pMVar4->field_0647 = pDVar8;
-  pDVar8 = (DArrayTy *)Library::DKW::TBL::FUN_006ae310((uint *)0x0,10,0x3e,10,0x40365c);
-  pMVar4->field_064F = pDVar8;
+  pDVar10 = (DArrayTy *)Library::DKW::TBL::FUN_006ae310((uint *)0x0,10,0x9e,10,0x405de4);
+  pMVar4->field_064B = pDVar10;
+  pDVar10 = (DArrayTy *)Library::DKW::TBL::FUN_006ae310((uint *)0x0,10,0x3e,10,0x40365c);
+  pMVar4->field_0647 = pDVar10;
+  pDVar10 = (DArrayTy *)Library::DKW::TBL::FUN_006ae310((uint *)0x0,10,0x3e,10,0x40365c);
+  pMVar4->field_064F = pDVar10;
   if (g_startSystem_0081176C->field_02E6 != (MMsgTy *)0x0) {
     MMsgTy::HidePanel(g_startSystem_0081176C->field_02E6,0,0,1);
   }

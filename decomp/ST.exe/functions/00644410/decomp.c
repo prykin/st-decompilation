@@ -212,8 +212,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410::FUN_00644410
                         }
                         else {
                           iVar7 = (int)(short)((sVar2 / 200 + (sVar2 >> 0xf)) -
-                                              (short)((longlong)(int)local_30 * 0x51eb851f >> 0x3f))
-                          ;
+                                              (short)((longlong)(int)local_30 * 0x51eb851f >> 0x3f));
                         }
                         sVar2 = local_10->field_026A;
                         local_34 = (int)sVar2;

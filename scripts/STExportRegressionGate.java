@@ -133,8 +133,28 @@ public class STExportRegressionGate extends GhidraScript {
     private void regressionChecks(CorpusMetrics before, CorpusMetrics now) {
         compareNondecreasing("function_count", before.number("function_count"),
             now.number("function_count"));
-        compareNondecreasing("body_function_count", before.number("body_function_count"),
-            now.number("body_function_count"));
+        Set<String> removedBodies = new TreeSet<>(before.bodyFunctions);
+        removedBodies.removeAll(now.bodyFunctions);
+        Set<String> newlyExcludedLibraries = new TreeSet<>(removedBodies);
+        newlyExcludedLibraries.retainAll(now.libraryFunctions);
+        Set<String> unexpectedBodyLoss = new TreeSet<>(removedBodies);
+        unexpectedBodyLoss.removeAll(now.libraryFunctions);
+        long beforeBodies = before.number("body_function_count");
+        long afterBodies = now.number("body_function_count");
+        add(unexpectedBodyLoss.isEmpty() ? "info" : "error", "body_function_count",
+            beforeBodies, afterBodies,
+            unexpectedBodyLoss.isEmpty() ?
+                afterBodies < beforeBodies ? "stage_transition" :
+                    afterBodies > beforeBodies ? "improved" : "ok" :
+                "regressed",
+            unexpectedBodyLoss.isEmpty() ?
+                newlyExcludedLibraries.isEmpty() ? "policy=per-address nondecreasing" :
+                    "Bodies intentionally excluded after explicit LIBRARY classification: " +
+                        sample(newlyExcludedLibraries) :
+                "Non-library function bodies disappeared: " + sample(unexpectedBodyLoss));
+        add("info", "new_library_body_exclusions", 0, newlyExcludedLibraries.size(),
+            newlyExcludedLibraries.isEmpty() ? "ok" : "stage_transition",
+            sample(newlyExcludedLibraries));
         compareNondecreasing("covered_executable_bytes",
             before.number("function_covered_executable_byte_count"),
             now.number("function_covered_executable_byte_count"));
@@ -322,9 +342,12 @@ public class STExportRegressionGate extends GhidraScript {
                         line.contains("STMessage * message)"))
                     result.taggedMessageHandlers.add(functionAddress);
                 if (line.contains("\"body_exported\":true")) {
+                    result.bodyFunctions.add(functionAddress);
                     Matcher status = STATUS.matcher(line);
                     if (!status.find() || !"ok".equals(status.group(1))) result.failedBodies++;
                 }
+                if (line.contains("\"library\":true"))
+                    result.libraryFunctions.add(functionAddress);
             }
         }
     }
@@ -427,7 +450,8 @@ public class STExportRegressionGate extends GhidraScript {
             for (Check check : checks)
                 out.write(check.severity + "\t" + tsv(check.name) + "\t" + check.before +
                     "\t" + check.after + "\t" + check.delta + "\t" + check.status +
-                    "\t" + tsv(check.detail) + "\n");
+                    "\t" + tsv(check.detail == null || check.detail.isBlank() ?
+                        "-" : check.detail) + "\n");
         });
     }
 
@@ -534,6 +558,8 @@ public class STExportRegressionGate extends GhidraScript {
         final Map<String, String> thunkTargets = new HashMap<>();
         final Set<String> taggedMessageHandlers = new TreeSet<>();
         final Set<String> untypedTaggedMessageSlots = new TreeSet<>();
+        final Set<String> bodyFunctions = new TreeSet<>();
+        final Set<String> libraryFunctions = new TreeSet<>();
         long failedBodies;
         long typedVtableSlots;
         long voidVtableSlots;

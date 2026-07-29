@@ -75,12 +75,16 @@ undefined4 __fastcall FUN_0061e110(STLightC *param_1)
                            (short)((longlong)(int)sVar1 * 0x51eb851f >> 0x3f));
   }
   local_14 = iVar6;
-  if (((((((PTR_00807598->field_0048 <= local_8 + 1) && (local_8 + -1 <= PTR_00807598->field_0058))
-         && (PTR_00807598->field_0044 <= iVar5 + 1)) &&
-        ((iVar5 + -1 <= PTR_00807598->field_0054 && (iVar4 = FUN_006ddbd0(), iVar4 != 0)))) ||
-       (((PTR_00807598->field_0048 <= iVar6 + 1 &&
-         ((iVar6 + -1 <= PTR_00807598->field_0058 && (PTR_00807598->field_0044 <= iVar7 + 1)))) &&
-        ((iVar7 + -1 <= PTR_00807598->field_0054 && (iVar6 = FUN_006ddbd0(), iVar6 != 0)))))) &&
+  if (((((((g_sT3DSMAPContext_00807598->field_0048 <= local_8 + 1) &&
+          (local_8 + -1 <= g_sT3DSMAPContext_00807598->field_0058)) &&
+         (g_sT3DSMAPContext_00807598->field_0044 <= iVar5 + 1)) &&
+        ((iVar5 + -1 <= g_sT3DSMAPContext_00807598->field_0054 &&
+         (iVar4 = FUN_006ddbd0(), iVar4 != 0)))) ||
+       (((g_sT3DSMAPContext_00807598->field_0048 <= iVar6 + 1 &&
+         ((iVar6 + -1 <= g_sT3DSMAPContext_00807598->field_0058 &&
+          (g_sT3DSMAPContext_00807598->field_0044 <= iVar7 + 1)))) &&
+        ((iVar7 + -1 <= g_sT3DSMAPContext_00807598->field_0054 &&
+         (iVar6 = FUN_006ddbd0(), iVar6 != 0)))))) &&
       (((((pVVar2 = g_visibleClass_00802A88, local_c = 1,
           g_visibleClass_00802A88 != (VisibleClassTy *)0x0 && (DAT_0080874d != -1)) &&
          (g_visibleClass_00802A88->field_00F8 != 0)) &&

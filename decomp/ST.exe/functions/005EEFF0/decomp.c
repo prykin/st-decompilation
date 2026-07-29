@@ -76,8 +76,7 @@ void __thiscall FUN_005eeff0(void *this,int param_1)
                 ((STT3DSprC *)((int)this + 0x1d5),
                  (float)*(int *)((int)this + 0x2be) * _DAT_007904f8 * _DAT_007904f0,
                  (float)*(int *)((int)this + 0x2c2) * _DAT_007904f8 * _DAT_007904f0,
-                 (float)*(int *)((int)this + 0x2c6) * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc)
-      ;
+                 (float)*(int *)((int)this + 0x2c6) * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
       cVar1 = *(char *)((int)this + 0x2b9);
 joined_r0x005ef316:
       if (cVar1 != '\0') {

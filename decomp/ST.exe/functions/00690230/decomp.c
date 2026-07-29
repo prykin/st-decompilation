@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STMethodOwnerApplier] Structural method owner recovered as AiTactClassTy.
    Evidence: this_call_owners=[AiTactClassTy]; agreed_this_calls=3; incoming_this_accesses=2;
@@ -12,26 +14,27 @@ void __thiscall AiTactClassTy::sub_00690230(AiTactClassTy *this,uint *param_1)
 
 {
   AiFltClassTy *this_00;
-  void *pvVar1;
-  DArrayTy *pDVar2;
+  undefined1 *puVar1;
+  AiTactClassTy_field_00A5DArray *pAVar2;
   uint uVar3;
   bool bVar4;
 
   uVar3 = 0;
-  pDVar2 = this->field_00A5;
-  if (0 < (int)pDVar2->count) {
-    bVar4 = pDVar2->count != 0;
+  pAVar2 = this->field_00A5;
+  if (0 < (int)pAVar2->count) {
+    bVar4 = pAVar2->count != 0;
     do {
-      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar2, uVar3) (runtime stride) */
+      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
       if (((bVar4) &&
-          (pvVar1 = (void *)(pDVar2->elementSize * uVar3 + (int)pDVar2->data), pvVar1 != (void *)0x0
-          )) && (this_00 = *(AiFltClassTy **)((int)pvVar1 + 4), this_00 != (AiFltClassTy *)0x0)) {
+          (puVar1 = (undefined1 *)((int)&pAVar2->data->field_0000 + pAVar2->elementSize * uVar3),
+          (undefined4 *)puVar1 != (undefined4 *)0x0)) &&
+         (this_00 = *(AiFltClassTy **)(puVar1 + 4), this_00 != (AiFltClassTy *)0x0)) {
         AiFltClassTy::GetAiMess(this_00,param_1);
       }
-      pDVar2 = this->field_00A5;
+      pAVar2 = this->field_00A5;
       uVar3 = uVar3 + 1;
-      bVar4 = uVar3 < pDVar2->count;
-    } while ((int)uVar3 < (int)pDVar2->count);
+      bVar4 = uVar3 < pAVar2->count;
+    } while ((int)uVar3 < (int)pAVar2->count);
   }
   return;
 }

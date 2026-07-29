@@ -212,8 +212,7 @@ int __thiscall STSharkC::GetMessage(STSharkC *this,STMessage *message)
                             ((STT3DSprC *)puVar10,0xe,DAT_0080676c,"shark1",0x1d);
           if (iVar5 != 0) {
             RaiseInternalException
-                      (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\To_shark.cpp",0x9f)
-            ;
+                      (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\To_shark.cpp",0x9f);
           }
           thunk_FUN_004ac610(puVar10,'\x0e');
           STT3DSprC::StartShow((STT3DSprC *)puVar10,0xe,g_playSystem_00802A38->field_00E4);
@@ -226,7 +225,7 @@ int __thiscall STSharkC::GetMessage(STSharkC *this,STMessage *message)
             iVar5 = thunk_FUN_00417ee0(this_00,*(short *)&this_00->field_0x27b);
             if (iVar5 == 0) {
 LAB_0058dc72:
-              *(int *)&this_00->field_0x245 = (int)*(short *)(DAT_00806724 + 0x2c);
+              *(int *)&this_00->field_0x245 = (int)PTR_00806724->field_002C;
               uVar8 = *(undefined2 *)&this_00->field_0x4b;
               *(undefined2 *)&this_00->field_0231 = *(undefined2 *)&this_00->field_0x47;
               *(undefined2 *)((int)&this_00->field_0231 + 2) = *(undefined2 *)&this_00->field_0x49;
@@ -235,8 +234,7 @@ LAB_0058dc72:
             }
             else {
               iVar5 = ReportDebugMessage("E:\\__titans\\Igor\\To_shark.cpp",0xaa,0,0,
-                                         "%s","STSharkC::GetMessage Dir Object err")
-              ;
+                                         "%s","STSharkC::GetMessage Dir Object err");
               if (iVar5 != 0) {
                 STDebugBreak(); /* noreturn in standalone pseudocode */
               }
@@ -245,7 +243,7 @@ LAB_0058dc72:
           }
           else {
             local_1c = *(undefined4 **)&this_00->field_0x26f;
-            *(int *)((int)&this_00->field_023E + 3) = (int)*(short *)(DAT_00806724 + 0x23);
+            *(int *)((int)&this_00->field_023E + 3) = (int)PTR_00806724->entryCount;
             if (local_1c == (undefined4 *)0x0) {
               *(undefined4 *)&this_00->field_0x27b = 0;
             }
@@ -318,13 +316,14 @@ LAB_0058dc72:
           iVar5 = iVar5 + 4;
         } while (iVar5 < 0x44);
         iVar5 = *(int *)((int)&this_00->field_023E + 3);
-        if (((iVar5 < 1) || (DAT_00806724 == 0)) || (DAT_00806724 == -0x30)) {
+        if (((iVar5 < 1) || (PTR_00806724 == (AnonShape_GLOBAL_00806724_3210464F *)0x0)) ||
+           (PTR_00806724 == (AnonShape_GLOBAL_00806724_3210464F *)0xffffffd0)) {
           local_38 = 0;
         }
         else {
-          local_38 = *(undefined4 *)(DAT_00806724 + 0x2c + iVar5 * 4);
+          local_38 = PTR_00806724->entries[iVar5 + -1];
         }
-        local_34 = (int)*(short *)(DAT_00806724 + 0x2c);
+        local_34 = (int)PTR_00806724->field_002C;
         local_2c = 0;
         local_28 = 0;
         local_24 = 0;
@@ -411,7 +410,7 @@ LAB_0058e0f9:
       break;
     case MESS_HITKILL:
       uVar7 = thunk_FUN_004ad650((STT3DSprC *)&this_00->field_01D5);
-      FUN_006eab60((void *)this_00->field_0211,uVar7);
+      Library::Ourlib::ST3DSMAP::SprHide(this_00->field_0211,uVar7);
       goto LAB_0058e0f9;
     }
   }

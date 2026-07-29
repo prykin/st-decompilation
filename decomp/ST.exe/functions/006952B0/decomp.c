@@ -88,8 +88,7 @@ CGenerate::FUN_006952b0(CGenerate *this,AnonShape_006952B0_7A982E30 *param_1,byt
       if ((this->field_0008 == (int *)0x0) && (this->field_000C == (byte *)0x0)) {
         sub_006A0150(this);
       }
-      CteateField(this,*this->field_0008 + -2,this->field_0008[1] + -2,local_34,local_30,local_38,0)
-      ;
+      CteateField(this,*this->field_0008 + -2,this->field_0008[1] + -2,local_34,local_30,local_38,0);
       sub_0069FF90(this);
       sub_00696790(this);
       sub_0069FF90(this);
@@ -144,8 +143,7 @@ CGenerate::FUN_006952b0(CGenerate *this,AnonShape_006952B0_7A982E30 *param_1,byt
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_6c._8_4_ =
            sub_006991C0(this,*this->field_0008 << 1,this->field_0008[1] << 1,local_1c,local_18,
-                        local_28,(int)local_8,local_34 + -1,(AnonShape_006991C0_D95B9E4A *)local_6c)
-      ;
+                        local_28,(int)local_8,local_34 + -1,(AnonShape_006991C0_D95B9E4A *)local_6c);
       sub_0069FF90(this);
       _DAT_00853dd0 = Library::MSVCRT::FUN_0072e6c0();
       sub_00695EB0(this);
@@ -167,8 +165,7 @@ CGenerate::FUN_006952b0(CGenerate *this,AnonShape_006952B0_7A982E30 *param_1,byt
     if (local_c == 1) {
       sub_00694C80(this);
       DAT_00853dd4 = (undefined4 *)
-                     Library::DKW::LIB::FUN_006aac70(this->field_0008[1] * *this->field_0008 * 0x28)
-      ;
+                     Library::DKW::LIB::FUN_006aac70(this->field_0008[1] * *this->field_0008 * 0x28);
       thunk_FUN_00575640((short *)this->field_000C,DAT_00853dd4,(short *)0x1);
       _DAT_00853dd0 = Library::MSVCRT::FUN_0072e6c0();
       sub_00694CD0(this,(AnonShape_00694CD0_AC50FDB9 *)&stack0xffffff70);

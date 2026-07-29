@@ -212,8 +212,7 @@ void __thiscall InfocPanelTy::PaintInfoc(InfocPanelTy *this)
       if (0 < iVar4 + 0x14) {
         uVar9 = 1;
         do {
-          pbVar5 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_03CC,0)
-          ;
+          pbVar5 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_03CC,0);
           DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,uVar9 * 4 + 0xca,0x71,'\x01',
                  pbVar5);
           local_8 = local_8 + 1;
@@ -229,8 +228,7 @@ void __thiscall InfocPanelTy::PaintInfoc(InfocPanelTy *this)
         iVar11 = 0x15 - (uint)bVar3;
         iVar4 = (uint)bVar3 * 4 + 0xca;
         do {
-          pbVar5 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_03CC,4)
-          ;
+          pbVar5 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_03CC,4);
           DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,iVar4,0x71,'\x01',pbVar5);
           iVar4 = iVar4 + 4;
           iVar11 = iVar11 + -1;
@@ -259,8 +257,7 @@ void __thiscall InfocPanelTy::PaintInfoc(InfocPanelTy *this)
         iVar11 = 0x15 - (uint)bVar3;
         iVar4 = (uint)bVar3 * 4 + 0xca;
         do {
-          pbVar5 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_03CC,0)
-          ;
+          pbVar5 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_03CC,0);
           DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,iVar4,0x71,'\x01',pbVar5);
           iVar4 = iVar4 + 4;
           iVar11 = iVar11 + -1;

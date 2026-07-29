@@ -52,10 +52,11 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
   TLOBaseTy *this_01;
   short sVar8;
   int iVar9;
-  uint uVar10;
+  int local_EAX_497;
+  int uVar10;
+  int iVar10;
   int iVar11;
-  int iVar12;
-  short sVar13;
+  short sVar12;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   void *unaff_EDI;
   InternalExceptionFrame local_50;
@@ -69,9 +70,9 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
   this_01 = local_c;
   if (iVar9 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar12 = ReportDebugMessage("E:\\__titans\\Artem\\TLO_base.cpp",0xe1,0,iVar9,
+    iVar11 = ReportDebugMessage("E:\\__titans\\Artem\\TLO_base.cpp",0xe1,0,iVar9,
                                 "TLOBaseTy::SetState error _state == %i",param_1);
-    if (iVar12 != 0) {
+    if (iVar11 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar9,0,"E:\\__titans\\Artem\\TLO_base.cpp",0xe2);
@@ -95,13 +96,14 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
     if (param_2 != 0) {
       TVar3 = this_01->field_0245;
       if (TVar3 == CASE_1) {
-        uVar10 = GetPlayerRaceId(*(char *)&this_01->field_023D);
-        if (*(int *)(&DAT_007955d0 + ((uVar10 & 0xff) + this_01->field_0235 * 3) * 4) != 0) {
+        local_EAX_497 = GetPlayerRaceId(*(char *)&this_01->field_023D);
+        if (*(int *)(&DAT_007955d0 + ((local_EAX_497 & 0xffU) + this_01->field_0235 * 3) * 4) != 0)
+        {
           pTVar4 = this_01->vtable;
           uVar10 = GetPlayerRaceId(*(char *)&this_01->field_023D);
           (*pTVar4->vfunc_90)(this_01,3,
                               *(undefined4 *)
-                               (&DAT_007955d0 + ((uVar10 & 0xff) + this_01->field_0235 * 3) * 4));
+                               (&DAT_007955d0 + ((uVar10 & 0xffU) + this_01->field_0235 * 3) * 4));
         }
       }
       else if (TVar3 == CASE_2) {
@@ -122,14 +124,14 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
       }
       sVar8 = *(short *)&this_01->field_05B0;
       sVar1 = *(short *)&this_01->field_05B8;
-      sVar13 = *(short *)&this_01->field_05B4;
-      if (((((sVar8 < 0) || (g_worldGrid.sizeX <= sVar8)) || (sVar13 < 0)) ||
-          ((g_worldGrid.sizeY <= sVar13 || (sVar1 < 0)))) || (g_worldGrid.sizeZ <= sVar1)) {
+      sVar12 = *(short *)&this_01->field_05B4;
+      if (((((sVar8 < 0) || (g_worldGrid.sizeX <= sVar8)) || (sVar12 < 0)) ||
+          ((g_worldGrid.sizeY <= sVar12 || (sVar1 < 0)))) || (g_worldGrid.sizeZ <= sVar1)) {
         sVar8 = -1;
       }
       else {
         sVar8 = g_pathingGrid.cells
-                [(int)g_pathingGrid.sizeX * (int)sVar13 +
+                [(int)g_pathingGrid.sizeX * (int)sVar12 +
                  (int)g_pathingGrid.planeStride * (int)sVar1 + (int)sVar8];
       }
       if (sVar8 == 0) {
@@ -137,18 +139,18 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
         iVar9 = 2 - (uint)(*(int *)(&DAT_00791e30 + this_01->field_0235 * 4) != 1);
         if (local_8 < local_8 + iVar9) {
           do {
-            iVar12 = this_01->field_05B0;
-            if (iVar12 < iVar12 + iVar9) {
+            iVar11 = this_01->field_05B0;
+            if (iVar11 < iVar11 + iVar9) {
               do {
-                iVar11 = thunk_FUN_004960d0((short)iVar12,(short)local_8,
+                iVar10 = thunk_FUN_004960d0((short)iVar11,(short)local_8,
                                             *(short *)&this_01->field_05B8);
-                if (iVar11 != 0) {
+                if (iVar10 != 0) {
                   RaiseInternalException
                             (-5,g_overwriteContext_007ED77C,
                              "E:\\__titans\\Artem\\TLO_base.cpp",0x6a);
                 }
-                iVar12 = iVar12 + 1;
-              } while (iVar12 < iVar9 + this_01->field_05B0);
+                iVar11 = iVar11 + 1;
+              } while (iVar11 < iVar9 + this_01->field_05B0);
             }
             local_8 = local_8 + 1;
           } while (local_8 < this_01->field_05B4 + iVar9);
@@ -163,15 +165,15 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
       }
       sVar8 = *(short *)&this_01->field_05B0;
       sVar1 = *(short *)&this_01->field_05B8;
-      sVar13 = *(short *)&this_01->field_05B4;
+      sVar12 = *(short *)&this_01->field_05B4;
       if (((sVar8 < 0) || (g_worldGrid.sizeX <= sVar8)) ||
-         (((sVar13 < 0 || ((g_worldGrid.sizeY <= sVar13 || (sVar1 < 0)))) ||
+         (((sVar12 < 0 || ((g_worldGrid.sizeY <= sVar12 || (sVar1 < 0)))) ||
           (g_worldGrid.sizeZ <= sVar1)))) {
         sVar8 = -1;
       }
       else {
         sVar8 = g_pathingGrid.cells
-                [(int)g_pathingGrid.sizeX * (int)sVar13 +
+                [(int)g_pathingGrid.sizeX * (int)sVar12 +
                  (int)g_pathingGrid.planeStride * (int)sVar1 + (int)sVar8];
       }
       if (sVar8 != 0) {
@@ -179,18 +181,18 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
         iVar9 = 2 - (uint)(*(int *)(&DAT_00791e30 + this_01->field_0235 * 4) != 1);
         if (local_8 < local_8 + iVar9) {
           do {
-            iVar12 = this_01->field_05B0;
-            if (iVar12 < iVar12 + iVar9) {
+            iVar11 = this_01->field_05B0;
+            if (iVar11 < iVar11 + iVar9) {
               do {
-                iVar11 = thunk_FUN_00496140((short)iVar12,(short)local_8,
+                iVar10 = thunk_FUN_00496140((short)iVar11,(short)local_8,
                                             *(short *)&this_01->field_05B8);
-                if (iVar11 != 0) {
+                if (iVar10 != 0) {
                   RaiseInternalException
                             (-5,g_overwriteContext_007ED77C,
                              "E:\\__titans\\Artem\\TLO_base.cpp",0x87);
                 }
-                iVar12 = iVar12 + 1;
-              } while (iVar12 < iVar9 + this_01->field_05B0);
+                iVar11 = iVar11 + 1;
+              } while (iVar11 < iVar9 + this_01->field_05B0);
             }
             local_8 = local_8 + 1;
           } while (local_8 < this_01->field_05B4 + iVar9);
@@ -299,18 +301,18 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
     case CASE_4:
       sVar8 = *(short *)&this_01->field_05B0;
       sVar1 = *(short *)&this_01->field_05B8;
-      sVar13 = *(short *)&this_01->field_05B4;
+      sVar12 = *(short *)&this_01->field_05B4;
       if (((sVar8 < 0) || (g_worldGrid.sizeX <= sVar8)) ||
-         ((sVar13 < 0 ||
-          (((g_worldGrid.sizeY <= sVar13 || (sVar1 < 0)) || (g_worldGrid.sizeZ <= sVar1)))))) {
-        sVar13 = -1;
+         ((sVar12 < 0 ||
+          (((g_worldGrid.sizeY <= sVar12 || (sVar1 < 0)) || (g_worldGrid.sizeZ <= sVar1)))))) {
+        sVar12 = -1;
       }
       else {
-        sVar13 = g_pathingGrid.cells
-                 [(int)g_pathingGrid.sizeX * (int)sVar13 +
+        sVar12 = g_pathingGrid.cells
+                 [(int)g_pathingGrid.sizeX * (int)sVar12 +
                   (int)g_pathingGrid.planeStride * (int)sVar1 + (int)sVar8];
       }
-      if (sVar13 != 0) {
+      if (sVar12 != 0) {
         iVar9 = thunk_FUN_00496140(sVar8,*(short *)&this_01->field_05B4,sVar1);
         if (iVar9 != 0) {
           RaiseInternalException

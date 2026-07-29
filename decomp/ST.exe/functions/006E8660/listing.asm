@@ -1,4 +1,4 @@
-FUN_006e8660:
+ST3DSMAPContext::sub_006E8660:
 006E8660  55                        PUSH EBP
 006E8661  8B EC                     MOV EBP,ESP
 006E8663  51                        PUSH ECX

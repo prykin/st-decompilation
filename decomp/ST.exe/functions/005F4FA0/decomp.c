@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STMethodOwnerApplier] Structural method owner recovered as STBHEShellC.
    Evidence: this_call_owners=[STBHEShellC]; agreed_this_calls=1; incoming_this_accesses=15;
@@ -7,7 +9,7 @@
 int __thiscall STBHEShellC::sub_005F4FA0(STBHEShellC *this)
 
 {
-  DArrayTy *pDVar1;
+  STBHEShellC_field_0169DArray *pSVar1;
   int iVar2;
   int iVar3;
   bool bVar4;
@@ -25,7 +27,8 @@ int __thiscall STBHEShellC::sub_005F4FA0(STBHEShellC *this)
   local_c = 0;
   bVar4 = false;
   iVar5 = 0;
-  if ((this->field_0169 != (DArrayTy *)0x0) && (local_8 = 0, 0 < this->field_010D)) {
+  if ((this->field_0169 != (STBHEShellC_field_0169DArray *)0x0) &&
+     (local_8 = 0, 0 < this->field_010D)) {
     do {
       uVar7 = local_8 * this->field_0109;
       if (g_playSystem_00802A38->field_00E4 < (uint)(&this->field_0159)[local_8]) {
@@ -42,10 +45,10 @@ int __thiscall STBHEShellC::sub_005F4FA0(STBHEShellC *this)
         local_20 = 0;
         if (0 < this->field_0109) {
           do {
-            pDVar1 = this->field_0169;
-            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar1, uVar7) (runtime stride) */
-            if (((uVar7 < pDVar1->count) &&
-                (pcVar8 = (char *)(pDVar1->elementSize * uVar7 + (int)pDVar1->data),
+            pSVar1 = this->field_0169;
+            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
+            if (((uVar7 < pSVar1->count) &&
+                (pcVar8 = &pSVar1->data->field_0000 + pSVar1->elementSize * uVar7,
                 pcVar8 != (char *)0x0)) && (*pcVar8 != '\x02')) {
               *(int *)(pcVar8 + 2) =
                    (*(int *)(pcVar8 + 0x12) * (&this->field_0139)[local_8]) / 10000 +
@@ -88,23 +91,23 @@ int __thiscall STBHEShellC::sub_005F4FA0(STBHEShellC *this)
                   ((*(int *)(pcVar8 + 6) < 0 ||
                    (((int)g_worldGrid.sizeY <= *(int *)(pcVar8 + 6) || (iVar2 < 0)))))) ||
                  (iVar5 = thunk_FUN_004961b0(local_18,local_14,sVar6), iVar5 == 0)) {
-                FUN_006e3210(PTR_00807598,(*(int *)(pcVar8 + 2) * PTR_00807598->field_0380) / 0xc9,
-                             (*(int *)(pcVar8 + 6) * PTR_00807598->field_0380) / 0xc9);
+                ST3DSMAPContext::sub_006E3210
+                          (g_sT3DSMAPContext_00807598,
+                           (*(int *)(pcVar8 + 2) * g_sT3DSMAPContext_00807598->field_0380) / 0xc9,
+                           (*(int *)(pcVar8 + 6) * g_sT3DSMAPContext_00807598->field_0380) / 0xc9);
                 lVar9 = Library::MSVCRT::__ftol();
                 if (*(int *)(pcVar8 + 10) < (int)(short)lVar9) {
                   *pcVar8 = '\x02';
                   if (-1 < (int)*(uint *)(pcVar8 + 0x1f)) {
-                    FUN_006e8ba0(PTR_00807598,*(uint *)(pcVar8 + 0x1f));
-                    pcVar8[0x1f] = -1;
-                    pcVar8[0x20] = -1;
-                    pcVar8[0x21] = -1;
-                    pcVar8[0x22] = -1;
+                    Library::Ourlib::ST3DSMAP::SprClose
+                              (g_sT3DSMAPContext_00807598,*(uint *)(pcVar8 + 0x1f));
+                    *(uint *)(pcVar8 + 0x1f) = 0xffffffff;
                   }
                   goto LAB_005f528b;
                 }
               }
               if (*pcVar8 == '\0') {
-                if ((*(int *)(pcVar8 + 0x1f) == -1) && (this->field_0103 != '\0')) {
+                if ((*(uint *)(pcVar8 + 0x1f) == 0xffffffff) && (this->field_0103 != '\0')) {
                   thunk_FUN_005f4a30((int)pcVar8,pcVar8[1],0);
                 }
                 *pcVar8 = '\x01';

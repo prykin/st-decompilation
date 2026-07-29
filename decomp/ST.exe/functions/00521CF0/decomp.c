@@ -163,8 +163,7 @@ void __fastcall FUN_00521cf0(AnonShape_00521CF0_154649D2 *param_1)
             if (CONCAT31(extraout_var,bVar5) != 0) {
               if (0 < pAVar4->field_0198->field_0008) {
                 CFsgsConnection::SendChatMessage
-                          ((CFsgsConnection *)&DAT_00802a90,(char *)*pAVar4->field_0198->field_0014)
-                ;
+                          ((CFsgsConnection *)&DAT_00802a90,(char *)*pAVar4->field_0198->field_0014);
                 g_currentExceptionFrame = local_60.previous;
                 return;
               }

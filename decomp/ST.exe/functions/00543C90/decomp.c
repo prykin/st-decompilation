@@ -62,8 +62,8 @@ void __thiscall CursorClassTy::DrawSprite(CursorClassTy *this,int param_1,int pa
         }
       }
       pSVar1 = pCVar4->field_04EB;
-      if ((pSVar1 != (SpriteClassTy *)0x0) &&
-         (PTR_00807598 != (AnonShape_GLOBAL_00807598_0C6808FB *)0x0)) {
+      if ((pSVar1 != (SpriteClassTy *)0x0) && (g_sT3DSMAPContext_00807598 != (ST3DSMAPContext *)0x0)
+         ) {
         if (pSVar1->field_000C + -1 <= pSVar1->field_0008) {
           SpriteClassTy::CloseSprite(pSVar1);
           Library::MSVCRT::FUN_0072e2b0((HoloTy *)pCVar4->field_04EB);
@@ -74,8 +74,10 @@ void __thiscall CursorClassTy::DrawSprite(CursorClassTy *this,int param_1,int pa
         if ((uint)(pSVar1->field_0040 + pSVar1->field_0044) <= DVar3) {
           pSVar1->field_0044 = DVar3;
           pSVar1->field_0008 = pSVar1->field_0008 + 1;
-          FUN_006e2970(PTR_00807598,pCVar4->field_04EF,pCVar4->field_04F3,pCVar4->field_04F7,
-                       &pCVar4->field_04EB->field_001C,&pCVar4->field_04EB->field_0020);
+          ST3DSMAPContext::sub_006E2970
+                    (g_sT3DSMAPContext_00807598,(float)pCVar4->field_04EF,(float)pCVar4->field_04F3,
+                     pCVar4->field_04F7,&pCVar4->field_04EB->field_001C,
+                     &pCVar4->field_04EB->field_0020);
           pCVar4->field_04EB->field_001C =
                pCVar4->field_04EB->field_001C - *(int *)((int)pCVar4->field_04E7 + 9) / 2;
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */

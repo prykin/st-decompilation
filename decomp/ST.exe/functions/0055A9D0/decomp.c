@@ -11,7 +11,7 @@ VisibleClassTy::VisHoleCreate
           undefined *param_5,undefined4 param_6)
 
 {
-  DArrayTy *pDVar1;
+  VisibleClassTy_field_00F4DArray *pVVar1;
   code *pcVar2;
   VisibleClassTy *this_00;
   int iVar3;
@@ -35,8 +35,8 @@ VisibleClassTy::VisHoleCreate
     iVar3 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0);
     this_00 = local_c;
     if (iVar3 == 0) {
-      pDVar1 = local_c->field_00F4;
-      if (pDVar1 != (DArrayTy *)0x0) {
+      pVVar1 = local_c->field_00F4;
+      if (pVVar1 != (VisibleClassTy_field_00F4DArray *)0x0) {
         memset(local_28, 0, 0x1c); /* compiler bulk-zero initialization */
         local_28[1] = param_2;
         local_28[0] = param_1;
@@ -45,7 +45,7 @@ VisibleClassTy::VisHoleCreate
         local_10 = param_6;
         local_1c = param_5;
         local_14 = this_00->field_0108;
-        local_8 = Library::DKW::TBL::FUN_006ae1c0(&pDVar1->flags,local_28);
+        local_8 = Library::DKW::TBL::FUN_006ae1c0(&pVVar1->flags,local_28);
         sub_00558DC0(this_00,local_28[0],local_28[1],local_20,local_18,(uint)local_1c,
                      (int *)0xfffffffa,0xffffffff);
       }

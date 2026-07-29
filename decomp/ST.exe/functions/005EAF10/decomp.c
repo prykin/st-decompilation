@@ -322,7 +322,7 @@ int __thiscall STArtiafactC::GetMessage(STArtiafactC *this,STMessage *message)
             g_currentExceptionFrame = local_60.previous;
             return 0;
           }
-          this_00->field_02D2 = *(short *)(DAT_00806724 + 0x23) + -1;
+          this_00->field_02D2 = PTR_00806724->entryCount + -1;
           this_00->field_02B5 = 1;
           g_currentExceptionFrame = local_60.previous;
           return 0;
@@ -383,7 +383,7 @@ switchD_005eb627_caseD_2:
   }
   thunk_FUN_005ec9f0(1);
   if (*(int *)(dVar5 + 0x18) == 4) {
-    FUN_006e9d40((void *)this_00->field_0211,(uint *)this_00->field_01ED,8);
+    ST3DSMAPContext::sub_006E9D40(this_00->field_0211,(uint *)this_00->field_01ED,8);
   }
   this_00->field_030E = *(undefined1 *)(dVar5 + 8);
   this_00->field_030F = *(undefined2 *)(dVar5 + 0xc);

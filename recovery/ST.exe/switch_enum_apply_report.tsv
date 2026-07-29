@@ -317,7 +317,6 @@ function_address	enum_name	status	detail
 005532F0	Global_sub_005532F0_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_005532F0_param_1Enum; parameter already uses enum
 00553480	Global_sub_00553480_switch_0Enum	disabled	apply=0
 00555040	cLoadingTy_SetState_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/cLoadingTy_SetState_param_1Enum; parameter already uses enum
-00557C90	VisibleClassTy_Init_switch_0Enum	disabled	apply=0
 00558C00	VisibleClassTy_sub_00558C00_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/VisibleClassTy_sub_00558C00_param_1Enum; parameter already uses enum
 0055C830	Global_sub_0055C830_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_0055C830_param_1Enum; parameter already uses enum
 00562F50	Global_AiAiCalcMinesFields_switch_0Enum	disabled	apply=0
@@ -368,7 +367,7 @@ function_address	enum_name	status	detail
 00597120	FSGSTy_NoneFSGS_FVar1Enum	disabled	apply=0
 00597E70	FSGSTy_SetState_FVar1Enum	disabled	apply=0
 005A4350	FSGSTy_GetMessage_SVar6Enum	disabled	apply=0
-005A4350	FSGSTy_GetMessage_iVar18Enum	disabled	apply=0
+005A4350	FSGSTy_GetMessage_iVar21Enum	disabled	apply=0
 005A4350	FSGSTy_GetMessage_switch_14Enum	disabled	apply=0
 005A4350	FSGSTy_GetMessage_switch_15Enum	disabled	apply=0
 005A4350	FSGSTy_GetMessage_switch_8Enum	disabled	apply=0
@@ -401,16 +400,15 @@ function_address	enum_name	status	detail
 005CCE10	SettMapMTy_SetListCtrls_local_18Enum	disabled	apply=0
 005CE0E0	SettMapMTy_NoneSettMap_local_28Enum	disabled	apply=0
 005CE0E0	SettMapMTy_NoneSettMap_switch_3Enum	disabled	apply=0
-005D0BB0	SettMapMTy_ChangePlayerTeam_uVar6Enum	disabled	apply=0
+005D0BB0	SettMapMTy_ChangePlayerTeam_uVar5Enum	disabled	apply=0
 005D1400	SettMapMTy_GetMessage_switch_4Enum	disabled	apply=0
-005D1400	SettMapMTy_GetMessage_uVar37Enum	disabled	apply=0
+005D1400	SettMapMTy_GetMessage_uVar38Enum	disabled	apply=0
 005D4E90	SettMapSTy_SetListCtrls_iVar9Enum	disabled	apply=0
 005D5560	SettMapSTy_GetMessage_switch_3Enum	disabled	apply=0
 005D5560	SettMapSTy_GetMessage_uVar22Enum	disabled	apply=0
 005DB4F0	StartSystemTy_LoadGraph_iVar4Enum	disabled	apply=0
 005E0AC0	MTaskTy_NoneMTask_switch_0Enum	disabled	apply=0
-005E1330	MTaskTy_PlayScript_iVar7Enum	disabled	apply=0
-005E1330	MTaskTy_PlayScript_switch_0Enum	disabled	apply=0
+005E1330	MTaskTy_PlayScript_iVar8Enum	disabled	apply=0
 005E1330	MTaskTy_PlayScript_switch_1Enum	disabled	apply=0
 005E84D0	WaitTy_NoneWait_local_2cEnum	disabled	apply=0
 005E84D0	WaitTy_NoneWait_switch_1Enum	disabled	apply=0
@@ -549,21 +547,21 @@ function_address	enum_name	status	detail
 006DC320	AnonShape_006DC320_0C876EFA_field_00A8State	disabled	apply=0
 006DCD60	Global_sub_006DCD60_switch_0Enum	disabled	apply=0
 006DD050	Global_sub_006DD050_switch_0Enum	disabled	apply=0
-006DD050	Global_sub_006DD050_switch_1Enum	disabled	apply=0
-006DD530	Global_sub_006DD530_switch_0Enum	disabled	apply=0
-006E1C20	Global_sub_006E1C20_switch_0Enum	disabled	apply=0
+006DD050	Global_sub_006DD050_uVar2Enum	disabled	apply=0
+006DD530	ST3DSMAPContext_sub_006DD530_switch_0Enum	disabled	apply=0
+006E1C20	ST3DSMAPContext_sub_006E1C20_switch_0Enum	disabled	apply=0
 006E1EE0	AnonShape_006E1EE0_698AE49A_field_0024State	disabled	apply=0
-006E25D0	Global_sub_006E25D0_switch_1Enum	disabled	apply=0
-006E25D0	Global_sub_006E25D0_uVar1Enum	disabled	apply=0
+006E25D0	ST3DSMAPContext_sub_006E25D0_switch_1Enum	disabled	apply=0
+006E25D0	ST3DSMAPContext_sub_006E25D0_uVar1Enum	disabled	apply=0
 006E29D0	Global_sub_006E29D0_switch_0Enum	disabled	apply=0
 006E3DD0	AppClassTy_SendMessage_switch_0Enum	disabled	apply=0
 006E5970	SystemClassTy_SendMessage_switch_0Enum	disabled	apply=0
-006E68C0	Global_sub_006E68C0_switch_0Enum	disabled	apply=0
-006E6AF0	SubmarineTitans_Recovered_HiddenThis_AnonReceiver_006E6AF0_sub_006E6AF0_switch_0Enum	disabled	apply=0
-006E6FB0	Global_sub_006E6FB0_switch_0Enum	disabled	apply=0
-006E6FB0	Global_sub_006E6FB0_switch_1Enum	disabled	apply=0
-006E6FB0	Global_sub_006E6FB0_switch_2Enum	disabled	apply=0
-006E6FB0	Global_sub_006E6FB0_switch_3Enum	disabled	apply=0
+006E68C0	ST3DSMAPContext_sub_006E68C0_switch_0Enum	disabled	apply=0
+006E6AF0	ST3DSMAPContext_sub_006E6AF0_switch_0Enum	disabled	apply=0
+006E6FB0	ST3DSMAPContext_sub_006E6FB0_switch_0Enum	disabled	apply=0
+006E6FB0	ST3DSMAPContext_sub_006E6FB0_switch_1Enum	disabled	apply=0
+006E6FB0	ST3DSMAPContext_sub_006E6FB0_switch_2Enum	disabled	apply=0
+006E6FB0	ST3DSMAPContext_sub_006E6FB0_switch_3Enum	disabled	apply=0
 006F94D0	Global_sub_006F94D0_iVar5Enum	disabled	apply=0
 006F9AD0	Global_sub_006F9AD0_iVar7Enum	disabled	apply=0
 006FADC0	Global_sub_006FADC0_iVar8Enum	disabled	apply=0

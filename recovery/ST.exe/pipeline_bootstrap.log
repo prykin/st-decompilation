@@ -2,7 +2,7 @@ ST recovery launcher
 Ghidra version: 12.1.2
 Repository: <local-home>/st
 Pipeline source: <local-home>/st/scripts/STRecoveryPipeline.java
-Pipeline source SHA-256: 9cd076eba6ae09123c4f2d2988d7ee147d3f2e0491070fa5ba90069d0f33942e
+Pipeline source SHA-256: 7c730d3d9912e992409aa168472e76b84e32f91b4d113995c576814c615d781b
 Bootstrap log: <local-home>/st/recovery/ST.exe/pipeline_bootstrap.log
 ST recovery pipeline: mode=export, repository=<local-home>/st
 No proposal flags are changed by the pipeline. Review-only rows remain disabled.
@@ -12,7 +12,7 @@ No proposal flags are changed by the pipeline. Review-only rows remain disabled.
 == critical export ABI stabilization ==
 [01] STReturnSemanticsAnalyzer.java <- <repo>/recovery | repair-only
 Return-semantics analysis complete: <local-home>/st/recovery/ST.exe
-Mode=repair-only, functions=5741, proposals=0, apply=0, failures=0
+Mode=repair-only, functions=5712, proposals=0, apply=0, failures=0
 [02] STReturnSemanticsApplier.java <- <repo>/recovery/ST.exe/return_semantics_proposals.tsv
 Return semantics: applied=0, unchanged=0, preserved=0, conflicts=0, disabled=0
 Apply report: <local-home>/st/recovery/ST.exe/return_semantics_apply_report.tsv
@@ -30,20 +30,20 @@ Export indirect ABI stabilization pass 1: mutating rows=0
 == evidence checkpoint ==
 [05] STEvidenceLedger.java <- record | <repo>/recovery
 Computing semantic Program fingerprint...
-Evidence ledger recorded: program modification=3, semantic_sha256=f222eda18ed929cc5b13e4e3cec99b9b53a8826a508fac2fbdfdec00389dfdd5, artifacts=77
+Evidence ledger recorded: program modification=5165, semantic_sha256=f51d1259a6a998ea759b3282fef95c08bc4c6b079f512653ca29bc78fa5a5202, artifacts=84
 
 == LLM corpus export ==
 [06] STEvidenceLedger.java <- verify | <repo>/recovery
 Computing semantic Program fingerprint...
-Evidence ledger verified: program modification=3, semantic_sha256=f222eda18ed929cc5b13e4e3cec99b9b53a8826a508fac2fbdfdec00389dfdd5, artifacts=77
+Evidence ledger verified: program modification=5165, semantic_sha256=f51d1259a6a998ea759b3282fef95c08bc4c6b079f512653ca29bc78fa5a5202, artifacts=84
 [07] STDecompExport.java <- <repo>/decomp
 Exporting ST.exe to <local-home>/st/decomp/ST.exe
-Functions reused without decompilation: 10117/10392
+Functions reused without decompilation: 10258/10392
 STDecompExport complete: <local-home>/st/decomp/ST.exe
 [08] STExportRegressionGate.java <- <repo>/decomp/ST.exe | <repo>/recovery/ST.exe/runs/.current/pre_export | <repo>/recovery/ST.exe
-Export regression gate: status=passed, errors=0, warnings=4, report=<local-home>/st/recovery/ST.exe/export_regression_report.tsv
-ST recovery pipeline complete in 146 s.
+Export regression gate: status=passed, errors=0, warnings=3, report=<local-home>/st/recovery/ST.exe/export_regression_report.tsv
+ST recovery pipeline complete in 402 s.
 Pipeline report: <local-home>/st/recovery/ST.exe/pipeline_report.tsv
 Program changed after pipeline: false
-Latest archived run: c6b9ac0dde74e541678d41ff1ee1db6f7f025cd484d54b1f4fe5df08a407d7df
+Latest archived run: 2fd9e3ac35c325a23e40dc93cce85d62276c6174b4dd2d6e5fb612cd7544dd52
 ST recovery launcher completed.

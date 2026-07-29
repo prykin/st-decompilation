@@ -115,7 +115,7 @@ LAB_0054b366:
                                 this_00->field_00C9 - this_00->field_04B6);
     this_00->field_049A = pSVar6;
     if (pSVar6 == (STFishC *)0x0) {
-      FUN_006e1dd0(PTR_00807598,this_00->field_00C5 - this_00->field_04B2,
+      FUN_006e1dd0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
                    this_00->field_00C9 - this_00->field_04B6,(float *)0x0,(float *)0x0,&local_10);
       lVar16 = Library::MSVCRT::__ftol();
       local_c = (undefined4)lVar16;
@@ -197,8 +197,7 @@ LAB_0054b2a9:
                             (g_allPlayers_007FA174,this_00->field_04A2,
                              (AnonShape_00435930_AC276C8C *)this_00->field_049A,
                              this_00->field_00C5 - this_00->field_04B2,
-                             (int *)(this_00->field_00C9 - this_00->field_04B6),unaff_EDI,unaff_ESI)
-          ;
+                             (int *)(this_00->field_00C9 - this_00->field_04B6),unaff_EDI,unaff_ESI);
         }
         iVar5 = this_00->field_0038;
         iVar10 = this_00->field_0034;

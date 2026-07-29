@@ -11,8 +11,7 @@ void __cdecl FUN_006a5d60(int param_1)
   if (param_1 != 0) {
     ppuVar3 = &PTR_DAT_007ec188;
     do {
-      iVar2 = Library::MSVCRT::FUN_00730fa0(0,0,0,0,(byte *)"%ld bytes in %ld %hs Blocks.\n")
-      ;
+      iVar2 = Library::MSVCRT::FUN_00730fa0(0,0,0,0,(byte *)"%ld bytes in %ld %hs Blocks.\n");
       if (iVar2 == 1) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }

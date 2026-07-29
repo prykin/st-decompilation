@@ -25,6 +25,7 @@ import ghidra.program.model.data.DataType;
 import ghidra.program.model.data.DataTypeComponent;
 import ghidra.program.model.data.DataTypeConflictHandler;
 import ghidra.program.model.data.DataTypeManager;
+import ghidra.program.model.data.ArrayDataType;
 import ghidra.program.model.data.DataUtilities;
 import ghidra.program.model.data.Pointer;
 import ghidra.program.model.data.PointerDataType;
@@ -473,6 +474,21 @@ public class STPointerShapeApplier extends GhidraScript {
     }
 
     private DataType resolveFieldType(String specification, int size) {
+        if (specification.startsWith("array:")) {
+            int separator = specification.indexOf(':', "array:".length());
+            if (separator < 0)
+                throw new IllegalArgumentException("invalid array type " + specification);
+            int count = Integer.parseInt(
+                specification.substring("array:".length(), separator));
+            String elementSpecification = specification.substring(separator + 1);
+            int elementSize = size / count;
+            DataType element = resolveFieldType(elementSpecification, elementSize);
+            ArrayDataType array = new ArrayDataType(element, count, element.getLength(),
+                dataTypes);
+            if (count < 1 || size % count != 0 || array.getLength() != size)
+                throw new IllegalArgumentException("array size mismatch " + specification);
+            return array;
+        }
         if (specification.startsWith("pointer:")) {
             DataType pointer = resolvePointer(specification);
             if (pointer == null) throw new IllegalArgumentException("missing type " + specification);

@@ -19,7 +19,7 @@ int __thiscall STAlgaC::GetMessage(STAlgaC *this,STMessage *message)
   STMessageId SVar4;
   code *pcVar5;
   AnonShape_00575CB0_065D0A66 *pAVar6;
-  AnonShape_GLOBAL_00807598_0C6808FB *pAVar7;
+  ST3DSMAPContext *pSVar7;
   int iVar8;
   int iVar9;
   BOOL BVar10;
@@ -246,15 +246,13 @@ LAB_00576308:
           iVar9 = local_10->field_0086;
           if (iVar9 < 0) {
             if (local_28 <= pSVar17->field_0044) {
-              iVar9 = Library::DKW::LIB::FUN_006acf50(pSVar17->field_0048,(local_28 * 5 + 0x32) * 4)
-              ;
+              iVar9 = Library::DKW::LIB::FUN_006acf50(pSVar17->field_0048,(local_28 * 5 + 0x32) * 4);
               pSVar17->field_0048 = iVar9;
               local_28 = iVar8 + 10;
             }
             piVar1 = (int *)(pSVar17->field_0048 + pSVar17->field_0044 * 0x14);
             *piVar1 = *piVar20;
-            piVar1[1] = (int)((float)(int)*(short *)local_10 * _DAT_007904f8 * (float)_DAT_0079b168)
-            ;
+            piVar1[1] = (int)((float)(int)*(short *)local_10 * _DAT_007904f8 * (float)_DAT_0079b168);
             piVar1[2] = (int)((float)(int)local_10->field_0002 * _DAT_007904f8 *
                              (float)_DAT_0079b168);
             local_8 = (AnonShape_00575CB0_0408A0C4 *)(int)local_10->field_0004;
@@ -266,27 +264,39 @@ LAB_00576308:
             local_34 = (int)uVar14 % piVar20[1];
             local_3c = *(AnonShape_00575CB0_C367735D **)piVar20[2];
             lVar28 = Library::MSVCRT::__ftol();
-            FUN_006e8660(PTR_00807598,(int *)&local_c,(piVar20[4] != 0) + 1,0,local_3c->field_0004,
-                         local_3c->field_0008,piVar20[5],piVar20[6] - (int)lVar28,uVar15);
+            ST3DSMAPContext::sub_006E8660
+                      (g_sT3DSMAPContext_00807598,(int *)&local_c,(piVar20[4] != 0) + 1,0,
+                       local_3c->field_0004,local_3c->field_0008,piVar20[5],piVar20[6] - (int)lVar28
+                       ,uVar15);
             *(undefined2 *)(piVar1 + 4) = (undefined2)local_c;
-            FUN_006e98e0(PTR_00807598,local_c,0,piVar20[1],piVar20[2],1);
-            FUN_006e9ef0(PTR_00807598,local_c,0,1,(int)*(short *)((int)piVar1 + 0x12),0,30000);
-            FUN_006ea270(PTR_00807598,local_c,0,local_34);
+            ST3DSMAPContext::sub_006E98E0
+                      (g_sT3DSMAPContext_00807598,local_c,0,piVar20[1],piVar20[2],1);
+            ST3DSMAPContext::sub_006E9EF0
+                      (g_sT3DSMAPContext_00807598,local_c,0,1,(int)*(short *)((int)piVar1 + 0x12),0,
+                       30000);
+            ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,local_c,0,local_34);
             if (piVar20[4] != 0) {
-              FUN_006e98e0(PTR_00807598,local_c,1,piVar20[3],piVar20[4],1);
-              FUN_006e9ef0(PTR_00807598,local_c,1,1,(int)*(short *)((int)piVar1 + 0x12),0,30000);
-              FUN_006ea270(PTR_00807598,local_c,1,(int)local_34 % piVar20[3]);
-              FUN_006ea680(PTR_00807598,local_c,DAT_008032c0);
-              FUN_006ea6d0(PTR_00807598,local_c,1,1);
+              ST3DSMAPContext::sub_006E98E0
+                        (g_sT3DSMAPContext_00807598,local_c,1,piVar20[3],piVar20[4],1);
+              ST3DSMAPContext::sub_006E9EF0
+                        (g_sT3DSMAPContext_00807598,local_c,1,1,(int)*(short *)((int)piVar1 + 0x12),
+                         0,30000);
+              ST3DSMAPContext::sub_006EA270
+                        (g_sT3DSMAPContext_00807598,local_c,1,(int)local_34 % piVar20[3]);
+              Library::Ourlib::ST3DSMAP::SprSetShadowTbl
+                        (g_sT3DSMAPContext_00807598,local_c,DAT_008032c0);
+              ST3DSMAPContext::sub_006EA6D0(g_sT3DSMAPContext_00807598,local_c,1,1);
             }
             iVar9 = local_3c->field_0008 - piVar20[6];
             if (0xd < iVar9) {
-              local_24 = FUN_006db610(iVar9 * 0x10000,-PTR_00807598->field_0108);
-              FUN_006e9210(PTR_00807598,local_c);
+              local_24 = FUN_006db610(iVar9 * 0x10000,-g_sT3DSMAPContext_00807598->field_0108);
+              Library::Ourlib::ST3DSMAP::SprSetSplit(g_sT3DSMAPContext_00807598,local_c);
             }
-            FUN_006ea3e0(PTR_00807598,local_c,-1);
-            FUN_006ea960(PTR_00807598,local_c,(float)piVar1[1],(float)piVar1[2],(float)piVar1[3]);
-            FUN_006eaaa0(PTR_00807598,local_c,0);
+            Library::Ourlib::ST3DSMAP::SprSetLevAfter(g_sT3DSMAPContext_00807598,local_c,-1);
+            Library::Ourlib::ST3DSMAP::SprMove
+                      (g_sT3DSMAPContext_00807598,local_c,(float)piVar1[1],(float)piVar1[2],
+                       (float)piVar1[3]);
+            Library::Ourlib::ST3DSMAP::SprShow(g_sT3DSMAPContext_00807598,local_c,0);
             pSVar17->field_0044 = pSVar17->field_0044 + 1;
             array = local_14;
           }
@@ -323,7 +333,7 @@ LAB_00576308:
               puVar18[6] = 0;
             }
             else {
-              local_24 = FUN_006db610(iVar9 * 0x10000,-PTR_00807598->field_0108);
+              local_24 = FUN_006db610(iVar9 * 0x10000,-g_sT3DSMAPContext_00807598->field_0108);
               lVar28 = Library::MSVCRT::__ftol();
               puVar18[6] = (int)lVar28;
             }
@@ -338,20 +348,22 @@ LAB_00576308:
     if (0 < pSVar17->field_003C) {
       FUN_006accd0((undefined4 *)pSVar17->field_0040,(undefined4 *)pSVar17->field_003C,0x2c,
                    thunk_FUN_00575c80);
-      pAVar7 = PTR_00807598;
+      pSVar7 = g_sT3DSMAPContext_00807598;
       iVar9 = pSVar17->field_003C;
-      PTR_00807598->field_0290 = pSVar17->field_0040;
-      *(int *)&pAVar7->field_0x28c = iVar9;
+      g_sT3DSMAPContext_00807598->field_0290 = pSVar17->field_0040;
+      *(int *)&pSVar7->field_0x28c = iVar9;
     }
     DArrayDestroy(array);
   }
   else if (SVar4 == MESS_SHARED_0003) {
-    if (PTR_00807598 != (AnonShape_GLOBAL_00807598_0C6808FB *)0x0) {
+    if (g_sT3DSMAPContext_00807598 != (ST3DSMAPContext *)0x0) {
       iVar9 = 0;
       if (0 < pSVar17->field_0044) {
         iVar22 = 0;
         do {
-          FUN_006e8ba0(PTR_00807598,(int)*(short *)(iVar22 + 0x10 + pSVar17->field_0048));
+          Library::Ourlib::ST3DSMAP::SprClose
+                    (g_sT3DSMAPContext_00807598,(int)*(short *)(iVar22 + 0x10 + pSVar17->field_0048)
+                    );
           iVar9 = iVar9 + 1;
           iVar22 = iVar22 + 0x14;
         } while (iVar9 < pSVar17->field_0044);
@@ -367,9 +379,9 @@ LAB_00576308:
       FreeAndNull((void **)&pSVar17->field_0038);
       pSVar17->field_0034 = 0;
       pSVar17->field_0030 = 0;
-      pAVar7 = PTR_00807598;
-      PTR_00807598->field_0290 = 0;
-      *(undefined4 *)&pAVar7->field_0x28c = 0;
+      pSVar7 = g_sT3DSMAPContext_00807598;
+      g_sT3DSMAPContext_00807598->field_0290 = 0;
+      *(undefined4 *)&pSVar7->field_0x28c = 0;
       FreeAndNull((void **)&pSVar17->field_0040);
       FreeAndNull((void **)&pSVar17->field_0048);
       pSVar17->field_003C = 0;

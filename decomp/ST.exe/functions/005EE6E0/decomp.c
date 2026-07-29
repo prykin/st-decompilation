@@ -72,7 +72,7 @@ undefined4 __fastcall FUN_005ee6e0(AnonShape_005EE6E0_AB6798ED *param_1)
     if (g_playSystem_00802A38->field_00E4 < (uint)param_1->field_028F) {
       if (((g_playSystem_00802A38->field_00E4 == param_1->field_028F + 1) &&
           (param_1->field_0211 != (void *)0x0)) && (-1 < (int)param_1->field_01ED)) {
-        FUN_006ea2f0(param_1->field_0211,param_1->field_01ED);
+        Library::Ourlib::ST3DSMAP::SprRstLev(param_1->field_0211,param_1->field_01ED);
         return local_8;
       }
     }

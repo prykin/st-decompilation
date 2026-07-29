@@ -52,8 +52,11 @@ STJumpMineC::sub_0061B340
                       [(int)g_worldGrid.planeStride * (int)sVar12 +
                        (int)g_worldGrid.sizeX * (int)param_2 + (int)param_1].objects[0],
             pSVar4 == (STWorldObject *)0x0)))) {
-          FUN_006e3310(PTR_00807598,(PTR_00807598->field_0380 * param_4) / 0xc9,
-                       (int *)((PTR_00807598->field_0380 * param_5) / 0xc9),param_3,&local_14);
+          ST3DSMAPContext::sub_006E3310
+                    (g_sT3DSMAPContext_00807598,
+                     (g_sT3DSMAPContext_00807598->field_0380 * param_4) / 0xc9,
+                     (int *)((g_sT3DSMAPContext_00807598->field_0380 * param_5) / 0xc9),param_3,
+                     &local_14);
           lVar11 = Library::MSVCRT::__ftol();
           iVar9 = (int)(short)lVar11;
           iVar6 = param_3 + 1;

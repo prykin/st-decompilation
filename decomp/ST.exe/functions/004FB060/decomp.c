@@ -281,8 +281,7 @@ int __thiscall CPanelTy::GetMessage(CPanelTy *this,STMessage *message)
       pcVar30 = thunk_FUN_0052a320;
       iVar5 = 0;
       pcVar24 = thunk_FUN_00529590(*(Global_sub_00529590_param_1Enum *)
-                                    ((int)local_44->field_0B1F + uVar3 + 0x83),local_44->field_0B99)
-      ;
+                                    ((int)local_44->field_0B1F + uVar3 + 0x83),local_44->field_0B99);
       pCVar8 = thunk_FUN_00571240(pcVar24,iVar5);
       PaintBut(this_00,3,message,1,pCVar8,pcVar30);
       break;
@@ -349,8 +348,7 @@ int __thiscall CPanelTy::GetMessage(CPanelTy *this,STMessage *message)
       pcVar30 = thunk_FUN_0052a320;
       iVar5 = 0;
       pcVar24 = thunk_FUN_00529590(*(Global_sub_00529590_param_1Enum *)
-                                    ((int)local_44->field_0B1F + uVar3 + 0x83),local_44->field_0B99)
-      ;
+                                    ((int)local_44->field_0B1F + uVar3 + 0x83),local_44->field_0B99);
       pCVar8 = thunk_FUN_00571240(pcVar24,iVar5);
       PaintBut(this_00,3,message,6,pCVar8,pcVar30);
       break;
@@ -656,7 +654,7 @@ cf_common_exit_004FD1D2:
           else {
             DAT_00807327 = DAT_00807327 & 0xfd;
           }
-          PTR_00807598->field_0418 = (uint)DAT_00807327;
+          g_sT3DSMAPContext_00807598->field_0418 = (uint)DAT_00807327;
           thunk_FUN_005252c0(0xae);
           goto cf_common_exit_004FD60B;
         }
@@ -1092,8 +1090,9 @@ LAB_004fbaa0:
               bVar2 = true;
             }
             if (bVar2) {
-              iVar5 = FUN_006e68c0(PTR_00807598,(uVar7 - local_2c) + -5,
-                                   (uVar12 - this_00->field_00A4) + -7,(int *)&local_34,&local_38);
+              iVar5 = ST3DSMAPContext::sub_006E68C0
+                                (g_sT3DSMAPContext_00807598,(uVar7 - local_2c) + -5,
+                                 (uVar12 - this_00->field_00A4) + -7,(int *)&local_34,&local_38);
               if (this_00->field_013C != 0) {
                 if (iVar5 == 0) {
                   this_00->field_013C = 0;
@@ -1380,8 +1379,7 @@ LAB_004fbaa0:
         uVar12 = this_00->field_00EC;
         uVar22 = this_00->field_0174;
 LAB_004fb69f:
-        Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,uVar22,0xffffffff,uVar12,uVar7)
-        ;
+        Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,uVar22,0xffffffff,uVar12,uVar7);
       }
       else if (DAT_0080c4d3 == 4) {
         if (this_00->field_0120 - this_00->field_00F8 < this_00->field_00F0) {
@@ -1473,8 +1471,7 @@ LAB_004fb8d7:
         uVar12 = this_00->field_00FC;
         uVar22 = this_00->field_0178;
 LAB_004fb8ee:
-        Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,uVar22,0xffffffff,uVar12,uVar7)
-        ;
+        Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,uVar22,0xffffffff,uVar12,uVar7);
       }
       iVar5 = FUN_006b33f0(g_ddxContext_008075A8,this_00->field_0178);
       if ((iVar5 != 0) && (this_00->field_0247 + this_00->field_0243 <= this_00->field_09A0)) {
@@ -1544,15 +1541,15 @@ LAB_004fc9c0:
     break;
   case MESS_CPANELTY_B110|MESS_SHARED_0003:
     if ((message->arg0).u32 == 3) {
-      FUN_006e6500(PTR_00807598,local_44->field_0227);
+      ST3DSMAPContext::sub_006E6500(g_sT3DSMAPContext_00807598,local_44->field_0227);
       DAT_00807327 = DAT_00807327 | 8;
     }
     else {
-      FUN_006e6500(PTR_00807598,(undefined4 *)0x0);
+      ST3DSMAPContext::sub_006E6500(g_sT3DSMAPContext_00807598,(undefined4 *)0x0);
       DAT_00807327 = DAT_00807327 & 0xf7;
     }
 LAB_004fc53f:
-    PTR_00807598->field_0418 = (uint)DAT_00807327;
+    g_sT3DSMAPContext_00807598->field_0418 = (uint)DAT_00807327;
     thunk_FUN_005252c0(0xae);
     break;
   case 0xb114:

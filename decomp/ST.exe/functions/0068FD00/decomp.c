@@ -12,8 +12,8 @@ int __thiscall AiTactClassTy::GetAiMess(AiTactClassTy *this,AnonShape_0068FD00_A
   code *pcVar2;
   AiTactClassTy *this_00;
   int iVar3;
-  DArrayTy *pDVar4;
-  void *pvVar5;
+  AiTactClassTy_field_00A5DArray *pAVar4;
+  AiTactClassTy_field_00A5Element *element_00a5;
   int iVar6;
   uint uVar7;
   bool bVar9;
@@ -76,18 +76,17 @@ int __thiscall AiTactClassTy::GetAiMess(AiTactClassTy *this,AnonShape_0068FD00_A
       return 0;
     case 0x70:
       uVar7 = 0;
-      pDVar4 = local_8->field_00A5;
-      if (0 < (int)pDVar4->count) {
-        bVar9 = pDVar4->count != 0;
+      pAVar4 = local_8->field_00A5;
+      if (0 < (int)pAVar4->count) {
+        bVar9 = pAVar4->count != 0;
         do {
           if (bVar9) {
-            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar4, uVar7) (runtime stride) */
-            pvVar5 = (void *)(pDVar4->elementSize * uVar7 + (int)pDVar4->data);
+            element_00a5 = DArrayAt<AiTactClassTy_field_00A5Element>(pAVar4, uVar7);
           }
           else {
-            pvVar5 = (void *)0x0;
+            element_00a5 = (AiTactClassTy_field_00A5Element *)0x0;
           }
-          if ((pvVar5 != (void *)0x0) && (*(int *)((int)pvVar5 + 4) != 0)) {
+          if (((undefined4 *)element_00a5 != (undefined4 *)0x0) && (element_00a5->field_0004 != 0)) {
             memset(local_3c, 0, 0x34); /* compiler bulk-zero initialization */
             local_3c[1] = this_00->field_012C;
             local_3c[0] = 0x70;
@@ -95,17 +94,17 @@ int __thiscall AiTactClassTy::GetAiMess(AiTactClassTy *this,AnonShape_0068FD00_A
             local_30 = (undefined1)uVar1;
             uStack_2f = (undefined1)((uint)uVar1 >> 8);
             uStack_2e = (undefined2)((uint)uVar1 >> 0x10);
-            AiFltClassTy::GetAiMess(*(AiFltClassTy **)((int)pvVar5 + 4),local_3c);
+            AiFltClassTy::GetAiMess(element_00a5->field_0004,local_3c);
             if (0 < (int)local_3c[2]) {
               *(uint *)&param_1->field_0x8 = local_3c[2];
               g_currentExceptionFrame = local_80.previous;
               return 0;
             }
           }
-          pDVar4 = this_00->field_00A5;
+          pAVar4 = this_00->field_00A5;
           uVar7 = uVar7 + 1;
-          bVar9 = uVar7 < pDVar4->count;
-          if ((int)pDVar4->count <= (int)uVar7) {
+          bVar9 = uVar7 < pAVar4->count;
+          if ((int)pAVar4->count <= (int)uVar7) {
             g_currentExceptionFrame = local_80.previous;
             return 0;
           }
@@ -116,19 +115,18 @@ int __thiscall AiTactClassTy::GetAiMess(AiTactClassTy *this,AnonShape_0068FD00_A
       uVar7 = local_8->field_00A5->count - 1;
       if (-1 < (int)uVar7) {
         do {
-          pDVar4 = this_00->field_00A5;
-          if (uVar7 < pDVar4->count) {
-            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar4, uVar7) (runtime stride) */
-            pvVar5 = (void *)(pDVar4->elementSize * uVar7 + (int)pDVar4->data);
+          pAVar4 = this_00->field_00A5;
+          if (uVar7 < pAVar4->count) {
+            element_00a5 = DArrayAt<AiTactClassTy_field_00A5Element>(pAVar4, uVar7);
           }
           else {
-            pvVar5 = (void *)0x0;
+            element_00a5 = (AiTactClassTy_field_00A5Element *)0x0;
           }
-          if ((pvVar5 != (void *)0x0) &&
-             (*(AiFltClassTy **)((int)pvVar5 + 4) != (AiFltClassTy *)0x0)) {
-            AiFltClassTy::GetAiMess(*(AiFltClassTy **)((int)pvVar5 + 4),(uint *)param_1);
-            thunk_FUN_0054cf70(g_playSystem_00802A38,*(uint *)(*(int *)((int)pvVar5 + 4) + 8));
-            FUN_006b0c70(this_00->field_00A5,uVar7);
+          if (((undefined4 *)element_00a5 != (undefined4 *)0x0) &&
+             (element_00a5->field_0004 != (AiFltClassTy *)0x0)) {
+            AiFltClassTy::GetAiMess(element_00a5->field_0004,(uint *)param_1);
+            thunk_FUN_0054cf70(g_playSystem_00802A38,*(uint *)(element_00a5->field_0004 + 8));
+            FUN_006b0c70((DArrayTy *)this_00->field_00A5,uVar7);
           }
           uVar7 = uVar7 - 1;
         } while (-1 < (int)uVar7);
@@ -156,28 +154,27 @@ int __thiscall AiTactClassTy::GetAiMess(AiTactClassTy *this,AnonShape_0068FD00_A
       break;
     case 0x73:
       uVar7 = 0;
-      pDVar4 = local_8->field_00A5;
-      if (0 < (int)pDVar4->count) {
-        bVar9 = pDVar4->count != 0;
+      pAVar4 = local_8->field_00A5;
+      if (0 < (int)pAVar4->count) {
+        bVar9 = pAVar4->count != 0;
         do {
           if (bVar9) {
-            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar4, uVar7) (runtime stride) */
-            pvVar5 = (void *)(pDVar4->elementSize * uVar7 + (int)pDVar4->data);
+            element_00a5 = DArrayAt<AiTactClassTy_field_00A5Element>(pAVar4, uVar7);
           }
           else {
-            pvVar5 = (void *)0x0;
+            element_00a5 = (AiTactClassTy_field_00A5Element *)0x0;
           }
-          if (((pvVar5 != (void *)0x0) &&
-              (*(AiFltClassTy **)((int)pvVar5 + 4) != (AiFltClassTy *)0x0)) &&
-             (AiFltClassTy::GetAiMess(*(AiFltClassTy **)((int)pvVar5 + 4),(uint *)param_1),
+          if ((((undefined4 *)element_00a5 != (undefined4 *)0x0) &&
+              (element_00a5->field_0004 != (AiFltClassTy *)0x0)) &&
+             (AiFltClassTy::GetAiMess(element_00a5->field_0004,(uint *)param_1),
              '\0' < (char)param_1->field_0x8)) {
             g_currentExceptionFrame = local_80.previous;
             return 0;
           }
-          pDVar4 = this_00->field_00A5;
+          pAVar4 = this_00->field_00A5;
           uVar7 = uVar7 + 1;
-          bVar9 = uVar7 < pDVar4->count;
-        } while ((int)uVar7 < (int)pDVar4->count);
+          bVar9 = uVar7 < pAVar4->count;
+        } while ((int)uVar7 < (int)pAVar4->count);
       }
     }
   }

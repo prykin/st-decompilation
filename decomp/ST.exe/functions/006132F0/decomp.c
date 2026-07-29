@@ -85,13 +85,14 @@ undefined4 __thiscall STGenBombC::LoadImagSpr(STGenBombC *this,int param_1,int p
     iVar5 = 1;
     pSVar4->field_0251 = 1;
     uVar7 = thunk_FUN_004ad650(pSVar4->field_0252);
-    FUN_006ea4e0(PTR_00807598,uVar7,iVar5,uVar10,uVar12);
+    Library::Ourlib::ST3DSMAP::SprSetLevBeforeLand
+              (g_sT3DSMAPContext_00807598,uVar7,iVar5,uVar10,uVar12);
     thunk_FUN_004ac700(pSVar4->field_0252,'\x0f');
     STT3DSprC::StartShow(pSVar4->field_0252,0xd,g_playSystem_00802A38->field_00E4);
-    iVar5 = (int)*(short *)(DAT_00806724 + 0x2c);
+    iVar5 = (int)PTR_00806724->field_002C;
     uVar11 = 0;
     uVar7 = thunk_FUN_004ad650(pSVar4->field_0252);
-    FUN_006e9350(PTR_00807598,uVar7,uVar11,iVar5);
+    Library::Ourlib::ST3DSMAP::SprSetMask(g_sT3DSMAPContext_00807598,uVar7,uVar11,iVar5);
     pSVar4->field_0250 = 1;
     STT3DSprC::sub_004ACF20(pSVar4->field_0252,DAT_008032b8,0x10);
     pSVar4->field_0237 = 0;

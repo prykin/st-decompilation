@@ -173,8 +173,7 @@ LAB_005d8dbf:
                 if (this_00 != (cMf32 *)0x0) {
                   iVar4 = cMf32::RecChk(this_00,0xc,PTR_s_OPTIONS_PLAYER_0079c1a4);
                   if (iVar4 == 0) {
-                    Library::DKW::TBL::FUN_006b5aa0(&this_01->field_1CCC->flags,local_21c.cFileName)
-                    ;
+                    Library::DKW::TBL::FUN_006b5aa0(&this_01->field_1CCC->flags,local_21c.cFileName);
                   }
                   cMf32::delete(this_00);
                 }

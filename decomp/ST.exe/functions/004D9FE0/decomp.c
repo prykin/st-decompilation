@@ -4,21 +4,23 @@
 undefined4 __fastcall FUN_004d9fe0(TLOBaseTy *param_1)
 
 {
-  TLOBaseTy_field_04D0State TVar1;
-  int iVar2;
-  int iVar3;
+  uint uVar1;
+  short sVar2;
+  TLOBaseTy_field_04D0State TVar3;
   int iVar4;
+  uint uVar5;
+  int iVar6;
 
-  TVar1 = param_1->field_04D0;
-  if ((TVar1 == CASE_3) || (TVar1 == CASE_5)) {
-    iVar2 = thunk_FUN_004ac910(&param_1->field_01D5,'\f');
-    if (iVar2 != param_1->field_01F5->field_01C4) {
+  TVar3 = param_1->field_04D0;
+  if ((TVar3 == CASE_3) || (TVar3 == CASE_5)) {
+    iVar4 = thunk_FUN_004ac910(&param_1->field_01D5,'\f');
+    if (iVar4 != param_1->field_01F5->field_01C4) {
       return 0;
     }
     thunk_FUN_004d9c80((AnonShape_004D9C80_80F657D3 *)param_1);
   }
   else {
-    if (TVar1 != CASE_4) {
+    if (TVar3 != CASE_4) {
       return 0;
     }
     if (DAT_00798eb0 < 2) {
@@ -30,22 +32,24 @@ undefined4 __fastcall FUN_004d9fe0(TLOBaseTy *param_1)
     if (g_playSystem_00802A38->field_00E4 < param_1->field_04DC + param_1->field_04D8) {
       return 0;
     }
-    iVar4 = param_1->field_04D4 + 1;
+    iVar6 = param_1->field_04D4 + 1;
     param_1->field_04D8 = g_playSystem_00802A38->field_00E4;
-    param_1->field_04D4 = iVar4;
-    iVar2 = ((_UNK_00798f2c - _UNK_00798f20) * iVar4) / DAT_00798eb0 + _UNK_00798f20;
-    iVar3 = ((_UNK_00798f28 - _UNK_00798f1c) * iVar4) / DAT_00798eb0 + _UNK_00798f1c +
+    param_1->field_04D4 = iVar6;
+    iVar4 = ((_UNK_00798f2c - _UNK_00798f20) * iVar6) / DAT_00798eb0 + _UNK_00798f20;
+    uVar5 = ((_UNK_00798f28 - _UNK_00798f1c) * iVar6) / DAT_00798eb0 + _UNK_00798f1c +
             (int)param_1->field_0043;
-    param_1->field_04E0 =
+    param_1->field_04E0[0] =
          (int)param_1->field_0041 +
-         _UNK_00798f18 + ((_UNK_00798f24 - _UNK_00798f18) * iVar4) / DAT_00798eb0;
-    param_1->field_04E4 = iVar3;
-    iVar2 = param_1->field_0045 + iVar2;
-    param_1->field_04E8 = iVar2;
+         _UNK_00798f18 + ((_UNK_00798f24 - _UNK_00798f18) * iVar6) / DAT_00798eb0;
+    sVar2 = param_1->field_0045;
+    param_1->field_04E0[1] = uVar5;
+    uVar1 = sVar2 + iVar4;
+    param_1->field_04E0[2] = uVar1;
     STT3DSprC::sub_004AD3C0
-              (param_1->field_05FF,(float)param_1->field_04E0 * _DAT_007904f8 * _DAT_007904f0,
-               (float)iVar3 * _DAT_007904f8 * _DAT_007904f0,
-               (float)iVar2 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
+              (param_1->field_05FF,
+               (float)(int)param_1->field_04E0[0] * _DAT_007904f8 * _DAT_007904f0,
+               (float)(int)uVar5 * _DAT_007904f8 * _DAT_007904f0,
+               (float)(int)uVar1 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
     if (param_1->field_04D4 < *(int *)(&DAT_00798ea0 + param_1->field_04D0 * 4)) {
       return 0;
     }

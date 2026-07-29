@@ -917,8 +917,9 @@ cf_common_exit_0043A47C:
       iVar3 = GetCamPoint((short)*(undefined4 *)local_28,
                           CONCAT31((int3)(uVar5 >> 8),local_28->field_0x4),local_28->field_000A,
                           uVar5,&local_18,&local_14,&local_10,&local_1c), iVar3 == 0)) &&
-     (iVar3 = FUN_006eb230(PTR_00807598,local_1c,DAT_00807410,DAT_00807414,DAT_00807418,DAT_0080741c
-                          ), iVar3 != 1)) {
+     (iVar3 = Library::Ourlib::ST3DSPR::SprInRect
+                        (g_sT3DSMAPContext_00807598,local_1c,DAT_00807410,DAT_00807414,DAT_00807418,
+                         DAT_0080741c), iVar3 != 1)) {
     thunk_FUN_004a8e00(local_18,local_14,local_10);
     thunk_FUN_004a8f20(1);
     thunk_FUN_00567510(&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,DAT_0080743c & 0xff);

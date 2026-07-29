@@ -39,26 +39,27 @@ undefined4 __fastcall FUN_004e0830(TLOBaseTy *param_1)
   int iVar6;
   uint uVar7;
   uint uVar8;
+  int uVar10;
   TLOBaseTyVTable *pTVar9;
-  uint uVar10;
+  uint uVar11;
   STResourceC *this;
-  short sVar11;
   short sVar12;
-  uint uVar13;
+  short sVar13;
   uint uVar14;
-  ushort uVar15;
+  uint uVar15;
   ushort uVar16;
   ushort uVar17;
-  uint uVar18;
-  char *pcVar19;
-  char cVar20;
-  undefined4 uVar21;
+  ushort uVar18;
+  uint uVar19;
+  char *pcVar20;
+  char cVar21;
   undefined4 uVar22;
+  undefined4 uVar23;
 
   if (param_1->field_04D0 == CASE_1) {
     if (*(int *)&param_1->field_01F5->field_0x1a4 == *(int *)&param_1->field_01F5->field_0x1a0) {
-      uVar10 = param_1->field_04E0[2];
-      if (uVar10 == 1) {
+      uVar11 = param_1->field_04E0[2];
+      if (uVar11 == 1) {
         if (param_1->field_04E0[1] == 0) {
           param_1->field_04E0[2] = 3;
           thunk_FUN_004e04a0((AnonShape_004E04A0_3A5B2D2E *)param_1);
@@ -95,7 +96,7 @@ LAB_004e0a1f:
           thunk_FUN_004e04a0((AnonShape_004E04A0_3A5B2D2E *)param_1);
         }
       }
-      else if (uVar10 == 2) {
+      else if (uVar11 == 2) {
         if (param_1->field_04E0[1] == 0) {
           param_1->field_04E0[2] = 3;
           thunk_FUN_004e04a0((AnonShape_004E04A0_3A5B2D2E *)param_1);
@@ -122,7 +123,7 @@ LAB_004e0a1f:
           if (((TVar1 == CASE_3B) || (TVar1 == CASE_60)) || (TVar1 == CASE_52)) goto LAB_004e0a1f;
         }
       }
-      else if (uVar10 == 3) {
+      else if (uVar11 == 3) {
         param_1->field_04E0[2] = 0;
         goto LAB_004e0a1f;
       }
@@ -149,27 +150,27 @@ LAB_004e0a4f:
   goto switchD_004e0aad_default;
   switch(param_1->field_04D0) {
   case CASE_2:
-    uVar10 = param_1->field_05B4;
-    iVar5 = uVar10 + 2;
-    if ((int)uVar10 < iVar5) {
-      uVar18 = param_1->field_05B0;
+    uVar11 = param_1->field_05B4;
+    iVar5 = uVar11 + 2;
+    if ((int)uVar11 < iVar5) {
+      uVar19 = param_1->field_05B0;
       do {
-        if ((int)uVar18 < (int)(uVar18 + 2)) {
-          sVar12 = *(short *)&param_1->field_05B8 + 1;
-          uVar7 = uVar18;
+        if ((int)uVar19 < (int)(uVar19 + 2)) {
+          sVar13 = *(short *)&param_1->field_05B8 + 1;
+          uVar7 = uVar19;
           do {
             sVar4 = (short)uVar7;
             if (((sVar4 < 0) || (g_worldGrid.sizeX <= sVar4)) ||
-               ((sVar11 = (short)uVar10, sVar11 < 0 ||
-                ((((g_worldGrid.sizeY <= sVar11 || (sVar12 < 0)) || (g_worldGrid.sizeZ <= sVar12))
+               ((sVar12 = (short)uVar11, sVar12 < 0 ||
+                ((((g_worldGrid.sizeY <= sVar12 || (sVar13 < 0)) || (g_worldGrid.sizeZ <= sVar13))
                  || (g_worldGrid.cells
-                     [(int)sVar11 * (int)g_worldGrid.sizeX +
-                      (int)g_worldGrid.planeStride * (int)sVar12 + (int)sVar4].objects[0] ==
+                     [(int)sVar12 * (int)g_worldGrid.sizeX +
+                      (int)g_worldGrid.planeStride * (int)sVar13 + (int)sVar4].objects[0] ==
                      (STWorldObject *)0x0)))))) {
               param_1->field_04E0[4] = uVar7;
               iVar5 = param_1->field_05B8;
               param_1->field_04E0[3] = 1;
-              param_1->field_04E0[5] = uVar10;
+              param_1->field_04E0[5] = uVar11;
               param_1->field_04E0[6] = iVar5 + 1;
               if (DAT_00800bcc == (void *)0x0) {
                 thunk_FUN_004cf430();
@@ -187,20 +188,19 @@ LAB_004e0a4f:
               if (param_1->field_05AC == CASE_52) {
                 pTVar9 = param_1->vtable;
                 iVar5 = GetPlayerRaceId(*(char *)&param_1->field_023D);
-                (*pTVar9->vfunc_90)(param_1,3,(-(uint)((char)iVar5 != '\x02') & 0xffffff3b) + 0x35e)
-                ;
+                (*pTVar9->vfunc_90)(param_1,3,(-(uint)((char)iVar5 != '\x02') & 0xffffff3b) + 0x35e);
                 goto switchD_004e0aad_default;
               }
               if (param_1->field_05AC != CASE_5F) goto switchD_004e0aad_default;
               pTVar9 = param_1->vtable;
-              uVar22 = 0x3b1;
+              uVar23 = 0x3b1;
               goto LAB_004e0f14;
             }
             uVar7 = uVar7 + 1;
-          } while ((int)uVar7 < (int)(uVar18 + 2));
+          } while ((int)uVar7 < (int)(uVar19 + 2));
         }
-        uVar10 = uVar10 + 1;
-      } while ((int)uVar10 < iVar5);
+        uVar11 = uVar11 + 1;
+      } while ((int)uVar11 < iVar5);
     }
     break;
   case CASE_3:
@@ -222,38 +222,38 @@ LAB_004e0a4f:
     if ((int)param_1->field_04E0[0xc] < 0x1e) break;
     thunk_FUN_004d0a80(DAT_00800bcc,param_1->field_04E0[4],param_1->field_04E0[5],
                        param_1->field_04E0[6]);
-    uVar22 = param_1->field_0018;
-    uVar10 = param_1->field_04E0[6];
-    uVar18 = param_1->field_04E0[5];
-    uVar21 = 0x5a;
+    uVar23 = param_1->field_0018;
+    uVar11 = param_1->field_04E0[6];
+    uVar19 = param_1->field_04E0[5];
+    uVar22 = 0x5a;
     uVar7 = param_1->field_04E0[4];
-    pcVar19 = (char *)0x0;
-    uVar17 = (ushort)param_1->field_04E0[9];
-    uVar16 = (ushort)param_1->field_04E0[8];
-    uVar15 = (ushort)param_1->field_04E0[7];
-    uVar14 = param_1->field_04E0[0];
-    uVar13 = param_1->field_04DC;
-    cVar20 = *(char *)&param_1->field_0024;
+    pcVar20 = (char *)0x0;
+    uVar18 = (ushort)param_1->field_04E0[9];
+    uVar17 = (ushort)param_1->field_04E0[8];
+    uVar16 = (ushort)param_1->field_04E0[7];
+    uVar15 = param_1->field_04E0[0];
+    uVar14 = param_1->field_04DC;
+    cVar21 = *(char *)&param_1->field_0024;
     param_1->field_04E0[3] = 0;
-    uVar8 = GetPlayerRaceId(cVar20);
-    thunk_FUN_005fd1b0(param_1->field_0024,uVar8 & 0xff,uVar13,uVar14,uVar15,uVar16,uVar17,uVar7,
-                       uVar18,uVar10,pcVar19,uVar22,uVar21);
+    uVar8 = GetPlayerRaceId(cVar21);
+    thunk_FUN_005fd1b0(param_1->field_0024,uVar8 & 0xff,uVar14,uVar15,uVar16,uVar17,uVar18,uVar7,
+                       uVar19,uVar11,pcVar20,uVar23,uVar22);
     if (param_1->field_0024 == (byte *)(uint)(byte)param_1->field_0010->field_112D) {
       thunk_FUN_0052af50(0,(float)param_1->field_01F9,(float)param_1->field_01FD);
       uVar10 = GetPlayerRaceId(*(char *)&param_1->field_0024);
-      uVar10 = uVar10 & 0xff;
-      if (uVar10 == 1) {
+      uVar11 = uVar10 & 0xff;
+      if (uVar11 == 1) {
         pTVar9 = param_1->vtable;
-        uVar22 = 0x6b;
+        uVar23 = 0x6b;
 LAB_004e0de2:
-        (*pTVar9->vfunc_90)(param_1,6,uVar22);
+        (*pTVar9->vfunc_90)(param_1,6,uVar23);
       }
-      else if (uVar10 == 2) {
+      else if (uVar11 == 2) {
         param_1->vfunc_90(6,0x6c);
       }
-      else if (uVar10 == 3) {
+      else if (uVar11 == 3) {
         pTVar9 = param_1->vtable;
-        uVar22 = 0x6d;
+        uVar23 = 0x6d;
         goto LAB_004e0de2;
       }
     }
@@ -265,13 +265,13 @@ LAB_004e0de2:
 joined_r0x004e0f0b:
       if (TVar1 == CASE_5F) {
         pTVar9 = param_1->vtable;
-        uVar22 = 0x3b2;
+        uVar23 = 0x3b2;
 LAB_004e0f14:
-        (*pTVar9->vfunc_90)(param_1,3,uVar22);
+        (*pTVar9->vfunc_90)(param_1,3,uVar23);
       }
       break;
     }
-    cVar20 = *(char *)&param_1->field_023D;
+    cVar21 = *(char *)&param_1->field_023D;
     pTVar9 = param_1->vtable;
     goto LAB_004e0e15;
   case CASE_5:
@@ -292,31 +292,31 @@ LAB_004e0f14:
     TLOBaseTy::RotateSpr(param_1,0);
     TVar1 = param_1->field_05AC;
     if (TVar1 != CASE_52) goto joined_r0x004e0f0b;
-    cVar20 = *(char *)&param_1->field_023D;
+    cVar21 = *(char *)&param_1->field_023D;
     pTVar9 = param_1->vtable;
 LAB_004e0e15:
-    iVar5 = GetPlayerRaceId(cVar20);
+    iVar5 = GetPlayerRaceId(cVar21);
     (*pTVar9->vfunc_90)(param_1,3,(-(uint)((char)iVar5 != '\x02') & 0xffffff3b) + 0x35f);
   }
 switchD_004e0aad_default:
   if ((param_1->field_05AC == CASE_61) && (param_1->field_04E0[0] != 0)) {
     iVar5 = thunk_FUN_004e4180((int)param_1->field_0024);
-    uVar10 = thunk_FUN_004e41c0((int)param_1->field_0024);
-    if (((int)uVar10 < iVar5) &&
+    uVar11 = thunk_FUN_004e41c0((int)param_1->field_0024);
+    if (((int)uVar11 < iVar5) &&
        (param_1->field_04E0[0x12] + param_1->field_04E0[0x11] <= g_playSystem_00802A38->field_00E4))
     {
       param_1->field_04E0[0x11] = g_playSystem_00802A38->field_00E4;
       if ((int)DAT_007be8c4 <= (int)param_1->field_04E0[0xe]) {
         thunk_FUN_004e1310((AnonShape_004E1310_4FD56DAE *)param_1);
       }
-      uVar10 = param_1->field_04E0[0] - 5;
-      param_1->field_04E0[0] = uVar10;
-      if ((int)uVar10 < 0) {
+      uVar11 = param_1->field_04E0[0] - 5;
+      param_1->field_04E0[0] = uVar11;
+      if ((int)uVar11 < 0) {
         param_1->field_04E0[0] = 0;
       }
-      uVar10 = param_1->field_04E0[0xe] + 5;
-      param_1->field_04E0[0xe] = uVar10;
-      if ((int)DAT_007be8c4 < (int)uVar10) {
+      uVar11 = param_1->field_04E0[0xe] + 5;
+      param_1->field_04E0[0xe] = uVar11;
+      if ((int)DAT_007be8c4 < (int)uVar11) {
         param_1->field_04E0[0xe] = DAT_007be8c4;
       }
       this = (STResourceC *)

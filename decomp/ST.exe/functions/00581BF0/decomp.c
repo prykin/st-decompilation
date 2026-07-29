@@ -171,8 +171,7 @@ int __thiscall STJellyManC::GetMessage(STJellyManC *this,STMessage *message)
     local_8[0x38] = 0;
     local_8[0x39] = 0;
     STPlaySystemC::SaveObjData
-              (g_playSystem_00802A38,pSVar7->field_0018,local_8,(AnonShape_0060EA30_DCEB68AD *)0x3a)
-    ;
+              (g_playSystem_00802A38,pSVar7->field_0018,local_8,(AnonShape_0060EA30_DCEB68AD *)0x3a);
     FreeAndNull(&local_8);
     g_currentExceptionFrame = local_54.previous;
     return 0;

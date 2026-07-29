@@ -133,6 +133,16 @@ public class STDecompExport extends GhidraScript {
     private static final Pattern DARRAY_ELEMENT_ADDRESS = Pattern.compile(
         "\\b([A-Za-z_][A-Za-z0-9_]*)->elementSize\\s*\\*\\s*([^+;]+?)\\s*\\+\\s*" +
         "(?:\\(int\\)\\s*)?\\1->data\\b");
+    private static final Pattern SIMPLE_POINTER_DECLARATION = Pattern.compile(
+        "(?m)^(?<indent>[ \\t]*)(?<type>[A-Za-z_$][A-Za-z0-9_$: ]*)" +
+        "\\s*(?<stars>\\*+)\\s*(?<name>[A-Za-z_$][A-Za-z0-9_$]*)\\s*;$");
+    private static final Pattern DARRAY_DESCRIPTOR_DECLARATION = Pattern.compile(
+        "(?m)^\\s*(?<type>[A-Za-z_$][A-Za-z0-9_$:]*DArray)\\s*\\*+\\s*" +
+        "(?<name>[A-Za-z_$][A-Za-z0-9_$]*)\\s*;$");
+    private static final Pattern SIMPLE_IDENTIFIER = Pattern.compile(
+        "[A-Za-z_$][A-Za-z0-9_$]*");
+    private static final String DARRAY_DESCRIPTOR_MARKER =
+        "[STDArrayElementApplier] Generated DArray descriptor specialization";
     private static final Pattern RESIDUAL_STRING_SYMBOL = Pattern.compile(
         "\\bs_[A-Za-z0-9_$]*_[0-9A-Fa-f]{8}\\b");
     private static final Pattern STRING_BASED_AGGREGATE = Pattern.compile(
@@ -202,6 +212,7 @@ public class STDecompExport extends GhidraScript {
     private final List<String> qualityIssueRows = new ArrayList<>();
     private final Set<String> qualityIssueFunctions = new HashSet<>();
     private final Map<String, QualityAggregate> qualityAggregates = new TreeMap<>();
+    private Map<String, DArrayDescriptor> darrayDescriptors = Map.of();
 
     @Override
     protected void run() throws Exception {
@@ -227,6 +238,7 @@ public class STDecompExport extends GhidraScript {
         listing = currentProgram.getListing();
         references = currentProgram.getReferenceManager();
         symbols = currentProgram.getSymbolTable();
+        darrayDescriptors = recoveredDArrayDescriptors();
         programRoot = outputRoot.toPath().toAbsolutePath().normalize()
             .resolve(safeFileName(currentProgram.getName()));
         functionsRoot = programRoot.resolve("functions");
@@ -638,11 +650,14 @@ public class STDecompExport extends GhidraScript {
     private NormalizedCode normalizePseudocode(String code) {
         if (code == null || code.isEmpty()) return new NormalizedCode("", 0);
         NormalizedCode bulkZero = normalizeBulkZeroLoops(code);
-        NormalizedCode virtualCalls = normalizeExplicitThisVirtualCalls(bulkZero.code);
+        NormalizedCode darrayAliases = normalizeDArrayElementAliases(bulkZero.code);
+        NormalizedCode virtualCalls =
+            normalizeExplicitThisVirtualCalls(darrayAliases.code);
         code = virtualCalls.code;
         String[] lines = code.split("\\R", -1);
         List<String> output = new ArrayList<>();
-        int replacements = bulkZero.replacements + virtualCalls.replacements;
+        int replacements = bulkZero.replacements + darrayAliases.replacements +
+            virtualCalls.replacements;
         for (int index = 0; index < lines.length; index++) {
             Matcher assignment = INT3_ASSIGNMENT.matcher(lines[index]);
             if (!assignment.matches() || index + 1 >= lines.length) {
@@ -674,7 +689,548 @@ public class STDecompExport extends GhidraScript {
             }
         }
         String normalized = String.join(System.lineSeparator(), output);
+        NormalizedCode semicolons = normalizeDetachedSemicolons(normalized);
+        return new NormalizedCode(semicolons.code,
+            replacements + semicolons.replacements);
+    }
+
+    /**
+     * Ghidra occasionally wraps a completed call before its terminating
+     * semicolon.  Later identifier/type substitutions preserve that legal but
+     * very misleading spelling as a standalone empty-looking statement.
+     * Joining the semicolon to the preceding non-empty line is semantics
+     * preserving, including for an intentionally empty while/for body.
+     */
+    private NormalizedCode normalizeDetachedSemicolons(String code) {
+        String[] lines = code.split("\\R", -1);
+        List<String> output = new ArrayList<>();
+        int replacements = 0;
+        for (String line : lines) {
+            if (line.trim().equals(";")) {
+                int previous = output.size() - 1;
+                while (previous >= 0 && output.get(previous).trim().isEmpty())
+                    previous--;
+                if (previous >= 0 && output.get(previous).stripTrailing().endsWith(")")) {
+                    output.set(previous, output.get(previous).stripTrailing() + ";");
+                    replacements++;
+                    continue;
+                }
+            }
+            output.add(line);
+        }
+        return new NormalizedCode(
+            String.join(System.lineSeparator(), output), replacements);
+    }
+
+    /**
+     * A recovered descriptor specialization gives Ghidra the correct type for
+     * array->data, but the decompiler can still materialize the result of the
+     * runtime-stride expression in a primitive SSA temporary:
+     *
+     *     undefined4 *puVar;
+     *     puVar = (undefined4 *)(array->elementSize * i + (int)array->data);
+     *
+     * Listing cannot type one SSA lifetime independently when the same stack or
+     * register variable is reused later.  Keep the original variable for those
+     * other lifetimes and introduce an export-only typed alias for the bounded
+     * interval ending at its next non-DArray definition.  Only exact descriptor
+     * and element structures installed by STDArrayElementApplier participate.
+     */
+    private NormalizedCode normalizeDArrayElementAliases(String code) {
+        if (code == null || code.isEmpty() || darrayDescriptors.isEmpty() ||
+                !code.contains("->elementSize") || !code.contains("->data"))
+            return new NormalizedCode(code, 0);
+
+        Map<String, PointerDeclaration> pointers = pointerDeclarations(code);
+        Map<String, DArrayDescriptor> descriptorVariables =
+            darrayDescriptorVariables(code);
+        if (pointers.isEmpty() || descriptorVariables.isEmpty())
+            return new NormalizedCode(code, 0);
+
+        Set<String> usedNames = new HashSet<>();
+        Matcher words = SIMPLE_IDENTIFIER.matcher(code);
+        while (words.find()) usedNames.add(words.group());
+
+        String normalized = code;
+        int replacements = 0;
+        for (Map.Entry<String, PointerDeclaration> pointer : pointers.entrySet()) {
+            DArrayAliasNormalization result = normalizeDArrayAlias(normalized,
+                pointer.getKey(), pointer.getValue(), descriptorVariables, usedNames);
+            normalized = result.code;
+            replacements += result.replacements;
+        }
         return new NormalizedCode(normalized, replacements);
+    }
+
+    private Map<String, PointerDeclaration> pointerDeclarations(String code) {
+        Map<String, PointerDeclaration> result = new LinkedHashMap<>();
+        Matcher matcher = SIMPLE_POINTER_DECLARATION.matcher(code);
+        while (matcher.find()) {
+            String name = matcher.group("name");
+            String type = matcher.group("type").trim();
+            int width = pointerArithmeticWidth(type, matcher.group("stars").length());
+            if (width > 0 && !result.containsKey(name))
+                result.put(name, new PointerDeclaration(type, matcher.group("indent"), width));
+        }
+        return result;
+    }
+
+    private Map<String, DArrayDescriptor> darrayDescriptorVariables(String code) {
+        Map<String, DArrayDescriptor> result = new LinkedHashMap<>();
+        Matcher matcher = DARRAY_DESCRIPTOR_DECLARATION.matcher(code);
+        while (matcher.find()) {
+            DArrayDescriptor descriptor = darrayDescriptors.get(matcher.group("type"));
+            if (descriptor != null) result.put(matcher.group("name"), descriptor);
+        }
+        return result;
+    }
+
+    private DArrayAliasNormalization normalizeDArrayAlias(String code, String alias,
+            PointerDeclaration declaration,
+            Map<String, DArrayDescriptor> descriptorVariables, Set<String> usedNames) {
+        List<AliasAssignment> assignments = aliasAssignments(code, alias);
+        if (assignments.isEmpty()) return new DArrayAliasNormalization(code, 0);
+
+        List<DArrayAliasSegment> segments = new ArrayList<>();
+        int ordinal = 1;
+        for (int index = 0; index < assignments.size();) {
+            AliasAssignment assignment = assignments.get(index);
+            DArrayAccess access = "=".equals(assignment.operator) ?
+                darrayAccess(assignment.expression, descriptorVariables) : null;
+            if (access == null) { index++; continue; }
+            int end = code.length();
+            int next = index + 1;
+            while (next < assignments.size()) {
+                AliasAssignment candidate = assignments.get(next);
+                DArrayAccess nextAccess = "=".equals(candidate.operator) ?
+                    darrayAccess(candidate.expression, descriptorVariables) : null;
+                if (nextAccess != null &&
+                        nextAccess.descriptor.elementName.equals(
+                            access.descriptor.elementName)) {
+                    next++;
+                    continue;
+                }
+                if ("=".equals(candidate.operator) &&
+                        nullPointerExpression(candidate.expression)) {
+                    next++;
+                    continue;
+                }
+                end = candidate.start;
+                break;
+            }
+            String interval = code.substring(assignment.start, end);
+            int controlBoundary = firstRawControlBoundary(interval);
+            int lastUse = lastIdentifierEnd(interval, alias);
+            if (controlBoundary >= 0 && controlBoundary < lastUse) {
+                index = Math.max(index + 1, next);
+                continue;
+            }
+            if (controlBoundary >= 0) {
+                end = assignment.start + controlBoundary;
+                interval = code.substring(assignment.start, end);
+            }
+            String baseName = darrayElementAliasName(access.descriptor);
+            String typedName = uniqueIdentifier(baseName, ordinal++, usedNames);
+            segments.add(new DArrayAliasSegment(assignment.start, end, typedName,
+                access.descriptor));
+            index = Math.max(index + 1, next);
+        }
+        if (segments.isEmpty()) return new DArrayAliasNormalization(code, 0);
+
+        String normalized = code;
+        int replacements = 0;
+        List<TypedAlias> typedAliases = new ArrayList<>();
+        for (int index = segments.size() - 1; index >= 0; index--) {
+            DArrayAliasSegment segment = segments.get(index);
+            String interval = normalized.substring(segment.start, segment.end);
+            interval = replaceIdentifier(interval, alias, segment.typedName);
+            DArrayIntervalNormalization rewritten = normalizeDArrayInterval(interval,
+                segment.typedName, declaration, segment.descriptor, descriptorVariables);
+            if (rewritten.replacements == 0) continue;
+            normalized = normalized.substring(0, segment.start) + rewritten.code +
+                normalized.substring(segment.end);
+            replacements += rewritten.replacements;
+            typedAliases.add(new TypedAlias(segment.typedName,
+                segment.descriptor.elementName));
+        }
+        if (typedAliases.isEmpty()) return new DArrayAliasNormalization(code, 0);
+
+        typedAliases.sort(Comparator.comparing(aliasValue -> aliasValue.name));
+        String declarations = typedAliases.stream()
+            .map(value -> declaration.indent + value.elementName + " *" + value.name + ";")
+            .reduce((left, right) -> left + System.lineSeparator() + right).orElse("");
+        Pattern declarationLine = Pattern.compile("(?m)^" +
+            Pattern.quote(declaration.indent) +
+            Pattern.quote(declaration.type) + "\\s*\\*+\\s*" +
+            Pattern.quote(alias) + "\\s*;$");
+        Matcher declarationMatcher = declarationLine.matcher(normalized);
+        if (!declarationMatcher.find())
+            return new DArrayAliasNormalization(code, 0);
+        int remainingUses = identifierOccurrences(normalized, alias);
+        String replacement = remainingUses == 1 ? declarations :
+            declarationMatcher.group() + System.lineSeparator() + declarations;
+        normalized = declarationMatcher.replaceFirst(Matcher.quoteReplacement(replacement));
+        return new DArrayAliasNormalization(normalized, replacements + 1);
+    }
+
+    private String darrayElementAliasName(DArrayDescriptor descriptor) {
+        Matcher ownerField = Pattern.compile(
+            "_field_([0-9A-Fa-f]+)Element$").matcher(descriptor.elementName);
+        if (ownerField.find())
+            return "element_" + ownerField.group(1).toLowerCase(Locale.ROOT);
+        return "element";
+    }
+
+    private int firstRawControlBoundary(String text) {
+        Matcher matcher = Pattern.compile(
+            "(?m)^\\s*(?:goto\\s+LAB_[0-9A-Fa-f]+\\s*;|LAB_[0-9A-Fa-f]+:)").matcher(text);
+        return matcher.find() ? matcher.start() : -1;
+    }
+
+    private int lastIdentifierEnd(String text, String name) {
+        Matcher matcher = Pattern.compile("(?<![A-Za-z0-9_$])" +
+            Pattern.quote(name) + "(?![A-Za-z0-9_$])").matcher(text);
+        int result = -1;
+        while (matcher.find()) result = matcher.end();
+        return result;
+    }
+
+    private List<AliasAssignment> aliasAssignments(String code, String alias) {
+        Pattern pattern = Pattern.compile("(?s)(?<![A-Za-z0-9_$.>])" +
+            Pattern.quote(alias) + "\\s*" +
+            "(?<operator>(?:<<|>>|[+\\-*/&|^])?=)(?!=)\\s*" +
+            "(?<expression>[^;]{0,700});");
+        Matcher matcher = pattern.matcher(code);
+        List<AliasAssignment> result = new ArrayList<>();
+        while (matcher.find())
+            result.add(new AliasAssignment(matcher.start(), matcher.end(),
+                matcher.group("operator"), matcher.group("expression").trim()));
+        return result;
+    }
+
+    private DArrayIntervalNormalization normalizeDArrayInterval(String interval,
+            String alias, PointerDeclaration declaration, DArrayDescriptor descriptor,
+            Map<String, DArrayDescriptor> descriptorVariables) {
+        Pattern assignments = Pattern.compile("(?s)(?<![A-Za-z0-9_$.>])" +
+            Pattern.quote(alias) + "\\s*=(?!=)\\s*(?<expression>[^;]{0,700});");
+        Matcher matcher = assignments.matcher(interval);
+        StringBuffer assignmentsOut = new StringBuffer();
+        int replacements = 0;
+        while (matcher.find()) {
+            String expression = matcher.group("expression").trim();
+            DArrayAccess access = darrayAccess(expression, descriptorVariables);
+            String replacement = matcher.group();
+            if (access != null &&
+                    access.descriptor.elementName.equals(descriptor.elementName)) {
+                replacement = alias + " = DArrayAt<" + descriptor.elementName + ">(" +
+                    access.base + ", " + access.index + ");";
+                replacements++;
+            }
+            else if (nullPointerExpression(expression)) {
+                replacement = alias + " = (" + descriptor.elementName + " *)0x0;";
+                replacements++;
+            }
+            matcher.appendReplacement(assignmentsOut, Matcher.quoteReplacement(replacement));
+        }
+        matcher.appendTail(assignmentsOut);
+        FieldRewrite fields = rewriteDArrayFields(assignmentsOut.toString(), alias,
+            declaration, descriptor);
+        return new DArrayIntervalNormalization(fields.code,
+            replacements + fields.replacements);
+    }
+
+    private FieldRewrite rewriteDArrayFields(String code, String alias,
+            PointerDeclaration declaration, DArrayDescriptor descriptor) {
+        RewriteAccumulator result = new RewriteAccumulator(code);
+        int pointerWidth = declaration.width;
+
+        Pattern bare = Pattern.compile("(?<![A-Za-z0-9_$*])\\*\\s*" +
+            Pattern.quote(alias) +
+            "(?![A-Za-z0-9_$]|->|\\s*\\[)");
+        result.replace(bare, matcher -> {
+            DArrayElementField field = descriptor.field(0, pointerWidth);
+            return field == null ? null : alias + "->" + field.name;
+        });
+
+        Pattern raw = Pattern.compile("\\*\\s*\\(\\s*" +
+            "(?<type>[^()\\r\\n]{1,80}?)\\s*\\*\\s*\\)\\s*\\(\\s*" +
+            "(?<bytecast>\\(\\s*int\\s*\\)\\s*)?" + Pattern.quote(alias) +
+            "\\s*\\+\\s*(?<offset>0[xX][0-9A-Fa-f]+|[0-9]+)\\s*\\)");
+        result.replace(raw, matcher -> {
+            int width = renderedTypeWidth(matcher.group("type"));
+            long offset = unsignedNumber(matcher.group("offset"));
+            if (matcher.group("bytecast") == null) offset *= pointerWidth;
+            DArrayElementField field = descriptor.field(offset, width);
+            return field == null ? null : alias + "->" + field.name;
+        });
+
+        Pattern index = Pattern.compile("(?<![A-Za-z0-9_$:])" +
+            Pattern.quote(alias) + "\\s*\\[\\s*" +
+            "(?<index>0[xX][0-9A-Fa-f]+|[0-9]+)\\s*\\]");
+        result.replace(index, matcher -> {
+            long offset = unsignedNumber(matcher.group("index")) * pointerWidth;
+            DArrayElementField field = descriptor.field(offset, pointerWidth);
+            return field == null ? null : alias + "->" + field.name;
+        });
+
+        Pattern nullRight = Pattern.compile("(?<![A-Za-z0-9_$])" +
+            Pattern.quote(alias) + "\\s*(?<operator>==|!=)\\s*\\(\\s*" +
+            Pattern.quote(declaration.type) + "\\s*\\*+\\s*\\)\\s*0x0");
+        result.replace(nullRight, matcher -> alias + " " + matcher.group("operator") +
+            " (" + descriptor.elementName + " *)0x0");
+        Pattern nullLeft = Pattern.compile("\\(\\s*" +
+            Pattern.quote(declaration.type) + "\\s*\\*+\\s*\\)\\s*0x0\\s*" +
+            "(?<operator>==|!=)\\s*" + Pattern.quote(alias) +
+            "(?![A-Za-z0-9_$])");
+        result.replace(nullLeft, matcher -> "(" + descriptor.elementName + " *)0x0 " +
+            matcher.group("operator") + " " + alias);
+
+        // Do not rewrite arbitrary casts from the primitive lifetime: only the
+        // exact null comparisons tied to this alias are type-neutral.
+        return new FieldRewrite(result.code, result.replacements);
+    }
+
+    private DArrayAccess darrayAccess(String expression,
+            Map<String, DArrayDescriptor> descriptorVariables) {
+        for (Map.Entry<String, DArrayDescriptor> entry : descriptorVariables.entrySet()) {
+            String base = entry.getKey();
+            if (!expression.contains(base + "->elementSize") ||
+                    !expression.contains(base + "->data")) continue;
+            String value = stripExpressionWrappers(expression);
+            List<String> terms = splitTopLevel(value, '+');
+            if (terms.size() != 2) continue;
+            String data = null, index = null;
+            for (String term : terms) {
+                if (darrayDataTerm(term, base, entry.getValue())) data = term;
+                String candidate = darrayStrideIndex(term, base);
+                if (candidate != null) index = candidate;
+            }
+            if (data != null && index != null && !index.isBlank())
+                return new DArrayAccess(base, index, entry.getValue());
+        }
+        return null;
+    }
+
+    private boolean darrayDataTerm(String expression, String base,
+            DArrayDescriptor descriptor) {
+        String value = stripExpressionWrappers(expression);
+        while (true) {
+            String stripped = stripLeadingCast(value);
+            if (stripped.equals(value)) break;
+            value = stripExpressionWrappers(stripped);
+        }
+        value = value.replaceAll("\\s+", "");
+        if (value.equals(base + "->data") ||
+            value.equals("&" + base + "->data->field_0000") ||
+            value.equals("&(" + base + "->data->field_0000).field_0x0"))
+            return true;
+        // Once the element record itself is typed, Ghidra often canonicalizes
+        // the same byte address through its first named component:
+        //
+        //   (T *)((int)&array->data->firstMember + array->elementSize * index)
+        //
+        // This is still the address of the complete element iff firstMember is
+        // the exact offset-zero component.  Accept its generated/current name
+        // instead of regressing to the primitive pointer chosen for that member.
+        DArrayElementField first = descriptor.fields.get(0L);
+        return first != null &&
+            value.equals("&" + base + "->data->" + first.name);
+    }
+
+    private String darrayStrideIndex(String expression, String base) {
+        String value = stripOuterParentheses(expression).trim();
+        String token = base + "->elementSize";
+        if (value.startsWith(token)) {
+            String rest = value.substring(token.length()).stripLeading();
+            if (!rest.startsWith("*")) return null;
+            return stripOuterParentheses(rest.substring(1)).trim();
+        }
+        if (value.endsWith(token)) {
+            String rest = value.substring(0, value.length() - token.length()).stripTrailing();
+            if (!rest.endsWith("*")) return null;
+            return stripOuterParentheses(rest.substring(0, rest.length() - 1)).trim();
+        }
+        return null;
+    }
+
+    private String stripOuterParentheses(String expression) {
+        String result = expression == null ? "" : expression.trim();
+        while (result.startsWith("(")) {
+            int close = matchingParen(result, 0);
+            if (close != result.length() - 1) break;
+            result = result.substring(1, close).trim();
+        }
+        return result;
+    }
+
+    private String stripExpressionWrappers(String expression) {
+        String result = expression == null ? "" : expression.trim();
+        boolean changed;
+        do {
+            changed = false;
+            String castless = stripLeadingCast(result);
+            if (!castless.equals(result)) {
+                result = castless.trim();
+                changed = true;
+            }
+            if (result.startsWith("(")) {
+                int close = matchingParen(result, 0);
+                if (close == result.length() - 1) {
+                    result = result.substring(1, close).trim();
+                    changed = true;
+                }
+            }
+        } while (changed && !result.isEmpty());
+        return result;
+    }
+
+    private String stripLeadingCast(String expression) {
+        String value = expression.trim();
+        if (!value.startsWith("(")) return value;
+        int close = matchingParen(value, 0);
+        if (close < 1 || close == value.length() - 1) return value;
+        String inside = value.substring(1, close).trim();
+        if (!inside.matches("(?:const\\s+)?[A-Za-z_$][A-Za-z0-9_$: ]*(?:\\s*\\*+)?"))
+            return value;
+        return value.substring(close + 1).trim();
+    }
+
+    private List<String> splitTopLevel(String expression, char separator) {
+        List<String> result = new ArrayList<>();
+        int depth = 0, start = 0;
+        boolean string = false, character = false, escaped = false;
+        for (int index = 0; index < expression.length(); index++) {
+            char ch = expression.charAt(index);
+            if (string || character) {
+                if (escaped) { escaped = false; continue; }
+                if (ch == '\\') { escaped = true; continue; }
+                if (string && ch == '"') string = false;
+                else if (character && ch == '\'') character = false;
+                continue;
+            }
+            if (ch == '"') { string = true; continue; }
+            if (ch == '\'') { character = true; continue; }
+            if (ch == '(' || ch == '[' || ch == '{') depth++;
+            else if (ch == ')' || ch == ']' || ch == '}') depth--;
+            else if (ch == separator && depth == 0) {
+                result.add(expression.substring(start, index).trim());
+                start = index + 1;
+            }
+        }
+        result.add(expression.substring(start).trim());
+        return result;
+    }
+
+    private boolean nullPointerExpression(String expression) {
+        String value = stripExpressionWrappers(expression);
+        while (true) {
+            String stripped = stripLeadingCast(value);
+            if (stripped.equals(value)) break;
+            value = stripExpressionWrappers(stripped);
+        }
+        return Set.of("0", "0x0", "NULL", "nullptr").contains(value.trim());
+    }
+
+    private String replaceIdentifier(String text, String oldName, String newName) {
+        return Pattern.compile("(?<![A-Za-z0-9_$])" + Pattern.quote(oldName) +
+            "(?![A-Za-z0-9_$])").matcher(text)
+            .replaceAll(Matcher.quoteReplacement(newName));
+    }
+
+    private int identifierOccurrences(String text, String name) {
+        Matcher matcher = Pattern.compile("(?<![A-Za-z0-9_$])" +
+            Pattern.quote(name) + "(?![A-Za-z0-9_$])").matcher(text);
+        int result = 0;
+        while (matcher.find()) result++;
+        return result;
+    }
+
+    private String uniqueIdentifier(String base, int ordinal, Set<String> used) {
+        String candidate = ordinal <= 1 ? base : base + "_" + ordinal;
+        int suffix = Math.max(2, ordinal);
+        while (used.contains(candidate)) candidate = base + "_" + suffix++;
+        used.add(candidate);
+        return candidate;
+    }
+
+    private int pointerArithmeticWidth(String type, int stars) {
+        if (stars != 1) return currentProgram.getDefaultPointerSize();
+        return renderedTypeWidth(type);
+    }
+
+    private int renderedTypeWidth(String rendered) {
+        String value = rendered == null ? "" :
+            rendered.replaceAll("\\b(?:const|volatile|signed|unsigned)\\b", "")
+                .replaceAll("\\s+", " ").trim();
+        if (value.contains("*")) return currentProgram.getDefaultPointerSize();
+        if (Set.of("char", "byte", "undefined", "undefined1", "bool").contains(value))
+            return 1;
+        if (Set.of("short", "ushort", "word", "undefined2").contains(value))
+            return 2;
+        if (Set.of("int", "uint", "long", "ulong", "dword", "float",
+                "undefined4").contains(value)) return 4;
+        if (Set.of("long long", "ulonglong", "qword", "double",
+                "undefined8").contains(value)) return 8;
+        if (currentProgram == null) return -1;
+        List<DataType> matches = new ArrayList<>();
+        currentProgram.getDataTypeManager().findDataTypes(value, matches);
+        int result = -1;
+        for (DataType match : matches) {
+            int length = match.getLength();
+            if (length < 1) continue;
+            if (result >= 0 && result != length) return -1;
+            result = length;
+        }
+        return result;
+    }
+
+    private long unsignedNumber(String value) {
+        try {
+            String text = value.trim();
+            return text.startsWith("0x") || text.startsWith("0X") ?
+                Long.parseUnsignedLong(text.substring(2), 16) :
+                Long.parseLong(text);
+        }
+        catch (Exception ignored) { return Long.MIN_VALUE; }
+    }
+
+    private Map<String, DArrayDescriptor> recoveredDArrayDescriptors() {
+        Map<String, DArrayDescriptor> result = new LinkedHashMap<>();
+        Set<String> ambiguous = new HashSet<>();
+        Iterator<DataType> iterator =
+            currentProgram.getDataTypeManager().getAllDataTypes();
+        while (iterator.hasNext()) {
+            DataType type = iterator.next();
+            if (!(type instanceof Structure descriptor) ||
+                    !nullToEmpty(descriptor.getDescription())
+                        .startsWith(DARRAY_DESCRIPTOR_MARKER))
+                continue;
+            DataTypeComponent data = descriptor.getComponentAt(0x1c);
+            if (data == null || data.getOffset() != 0x1c ||
+                    !"data".equals(data.getFieldName())) continue;
+            DataType pointed = data.getDataType();
+            while (pointed instanceof TypeDef typedef)
+                pointed = typedef.getBaseDataType();
+            if (!(pointed instanceof Pointer pointer)) continue;
+            pointed = pointer.getDataType();
+            while (pointed instanceof TypeDef typedef)
+                pointed = typedef.getBaseDataType();
+            if (!(pointed instanceof Structure element)) continue;
+            Map<Long, DArrayElementField> fields = new TreeMap<>();
+            for (DataTypeComponent component : element.getDefinedComponents()) {
+                String name = nullToEmpty(component.getFieldName());
+                if (name.isBlank()) continue;
+                fields.put((long)component.getOffset(), new DArrayElementField(
+                    component.getOffset(), component.getLength(), name));
+            }
+            DArrayDescriptor value = new DArrayDescriptor(descriptor.getName(),
+                element.getName(), fields);
+            DArrayDescriptor old = result.putIfAbsent(descriptor.getName(), value);
+            if (old != null && !old.elementName.equals(value.elementName))
+                ambiguous.add(descriptor.getName());
+        }
+        for (String name : ambiguous) result.remove(name);
+        return result;
     }
 
     /**
@@ -1303,7 +1859,7 @@ public class STDecompExport extends GhidraScript {
         String[] lines = code.split("\\R", -1);
         List<String> clean = new ArrayList<>();
         boolean needsRuntime = code.contains("STDebugBreak()") ||
-            code.contains(BULK_ZERO_MARKER);
+            code.contains(BULK_ZERO_MARKER) || code.contains("DArrayAt<");
         boolean hasRuntimeInclude = false;
         for (String line : lines) {
             if (line.contains(PSEUDOCODE_COMMENT_MARKER)) continue;
@@ -1372,6 +1928,8 @@ public class STDecompExport extends GhidraScript {
                 addIdiom(evidence, "terminal_debug_trap", index + 1, line);
             if (line.contains(BULK_ZERO_MARKER))
                 addIdiom(evidence, "bulk_zero_initialization", index + 1, line);
+            if (line.contains("DArrayAt<"))
+                addIdiom(evidence, "dynamic_array_indexing", index + 1, line);
         }
 
         // The instruction listing is authoritative even when an older reused body
@@ -1390,7 +1948,9 @@ public class STDecompExport extends GhidraScript {
                 (kind.equals("terminal_debug_trap") && code != null &&
                     code.contains("STDebugBreak()")) ||
                 (kind.equals("bulk_zero_initialization") && code != null &&
-                    code.contains(BULK_ZERO_MARKER));
+                    code.contains(BULK_ZERO_MARKER)) ||
+                (kind.equals("dynamic_array_indexing") && code != null &&
+                    code.contains("DArrayAt<"));
             if (normalizedSite) pseudocodeNormalizationCount += value.occurrences;
             String status = normalizedSite ? "normalized" : "catalogued";
             List<String> hints = new TreeSet<>(value.addressHints).stream().toList();
@@ -1973,6 +2533,13 @@ public class STDecompExport extends GhidraScript {
             "static inline uint32_t STPackTagged24(uint32_t tag, uint32_t value) {\n" +
             "    return (value & 0x00ffffffu) | ((tag & 0xffu) << 24);\n" +
             "}\n" +
+            "#if defined(__cplusplus)\n" +
+            "template <typename Element, typename Array>\n" +
+            "static inline Element *DArrayAt(Array *array, uint32_t index) {\n" +
+            "    return reinterpret_cast<Element *>(\n" +
+            "        reinterpret_cast<uint8_t *>(array->data) + array->elementSize * index);\n" +
+            "}\n" +
+            "#endif\n" +
             "#if defined(_MSC_VER)\n" +
             "__declspec(noreturn) static __inline void STDebugBreak(void) { abort(); }\n" +
             "#else\n" +
@@ -2099,8 +2666,18 @@ public class STDecompExport extends GhidraScript {
             return;
         }
         // A structure's full layout is intentionally excluded here. Only components
-        // actually addressed by this function are added below.
-        if (type instanceof ghidra.program.model.data.Structure) return;
+        // actually addressed by this function are added below.  A specialized
+        // DArray descriptor is the deliberate exception: element accesses use the
+        // runtime elementSize/data pair, so instruction-level field tracking cannot
+        // see which components of the pointed record the decompiler will render.
+        // Include that one descriptor and its element layout only for functions
+        // whose own signature/locals already reference the specialization.
+        if (type instanceof ghidra.program.model.data.Structure structure) {
+            if (nullToEmpty(structure.getDescription())
+                    .startsWith(DARRAY_DESCRIPTOR_MARKER))
+                collectDArrayDescriptorLayoutIdentity(structure, result);
+            return;
+        }
         result.add(key + "\u0000" + type.getLength() + "\u0000" +
             nullToEmpty(type.getDescription()) + "\u0000" + dataTypeDetailJson(type));
         if (type instanceof ghidra.program.model.data.Pointer pointer) {
@@ -2116,6 +2693,39 @@ public class STDecompExport extends GhidraScript {
             collectTypeIdentity(definition.getReturnType(), result);
             for (ghidra.program.model.data.ParameterDefinition argument : definition.getArguments())
                 collectTypeIdentity(argument.getDataType(), result);
+        }
+    }
+
+    private void collectDArrayDescriptorLayoutIdentity(
+            ghidra.program.model.data.Structure descriptor, Set<String> result) {
+        collectStructureLayoutIdentity("darray_descriptor", descriptor, result);
+        ghidra.program.model.data.DataTypeComponent data =
+            descriptor.getComponentAt(0x1c);
+        if (data == null || data.getOffset() != 0x1c) return;
+        DataType element = data.getDataType();
+        while (element instanceof ghidra.program.model.data.TypeDef typedef)
+            element = typedef.getBaseDataType();
+        if (element instanceof ghidra.program.model.data.Pointer pointer)
+            element = pointer.getDataType();
+        while (element instanceof ghidra.program.model.data.TypeDef typedef)
+            element = typedef.getBaseDataType();
+        if (element instanceof ghidra.program.model.data.Structure structure)
+            collectStructureLayoutIdentity("darray_element", structure, result);
+    }
+
+    private void collectStructureLayoutIdentity(String kind,
+            ghidra.program.model.data.Structure structure, Set<String> result) {
+        String prefix = kind + "\u0000" + structure.getPathName();
+        result.add(prefix + "\u0000length=" + structure.getLength() +
+            "\u0000description=" + nullToEmpty(structure.getDescription()));
+        for (ghidra.program.model.data.DataTypeComponent component :
+                structure.getDefinedComponents()) {
+            result.add(prefix + "\u0000component=" + component.getOffset() +
+                "\u0000length=" + component.getLength() +
+                "\u0000name=" + nullToEmpty(component.getFieldName()) +
+                "\u0000type=" + component.getDataType().getPathName() +
+                "\u0000comment=" + nullToEmpty(component.getComment()));
+            collectTypeIdentity(component.getDataType(), result);
         }
     }
 
@@ -2619,6 +3229,45 @@ public class STDecompExport extends GhidraScript {
         int functions;
         int occurrences;
     }
+    private static class DArrayDescriptor {
+        final String descriptorName, elementName;
+        final Map<Long, DArrayElementField> fields;
+        DArrayDescriptor(String descriptorName, String elementName,
+                Map<Long, DArrayElementField> fields) {
+            this.descriptorName = descriptorName;
+            this.elementName = elementName;
+            this.fields = fields;
+        }
+        DArrayElementField field(long offset, int width) {
+            if (offset < 0 || width < 1) return null;
+            DArrayElementField field = fields.get(offset);
+            return field != null && field.width == width ? field : null;
+        }
+    }
+    private static class RewriteAccumulator {
+        String code;
+        int replacements;
+        RewriteAccumulator(String code) { this.code = code; }
+        void replace(Pattern pattern, ReplacementFunction function) {
+            Matcher matcher = pattern.matcher(code);
+            StringBuffer output = new StringBuffer();
+            boolean changed = false;
+            while (matcher.find()) {
+                String replacement = function.replacement(matcher);
+                if (replacement == null || replacement.equals(matcher.group())) {
+                    matcher.appendReplacement(output,
+                        Matcher.quoteReplacement(matcher.group()));
+                    continue;
+                }
+                matcher.appendReplacement(output, Matcher.quoteReplacement(replacement));
+                replacements++;
+                changed = true;
+            }
+            if (!changed) return;
+            matcher.appendTail(output);
+            code = output.toString();
+        }
+    }
     private static class BlockCoverage {
         final String name;
         final Address start, end;
@@ -2647,7 +3296,24 @@ public class STDecompExport extends GhidraScript {
         }
     }
     private record NormalizedCode(String code, int replacements) { }
+    private record PointerDeclaration(String type, String indent, int width) { }
+    private record AliasAssignment(int start, int end, String operator,
+        String expression) { }
+    private record DArrayAccess(String base, String index,
+        DArrayDescriptor descriptor) { }
+    private record DArrayAliasSegment(int start, int end, String typedName,
+        DArrayDescriptor descriptor) { }
+    private record DArrayAliasNormalization(String code, int replacements) { }
+    private record DArrayIntervalNormalization(String code, int replacements) { }
+    private record DArrayElementField(long offset, int width, String name) { }
+    private record TypedAlias(String name, String elementName) { }
+    private record FieldRewrite(String code, int replacements) { }
     private record StatementWindow(String text, int endIndex) { }
+
+    @FunctionalInterface
+    private interface ReplacementFunction {
+        String replacement(Matcher matcher);
+    }
 
     private static void updateDigest(MessageDigest digest, String value) {
         digest.update(value.getBytes(StandardCharsets.UTF_8));

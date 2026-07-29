@@ -32,17 +32,19 @@ undefined4 __thiscall STTmMineC::LoadImagVacuum(STTmMineC *this,int param_1)
       puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
                          (DAT_00806774,CASE_1D,"expl_vc0",0xffffffff,0,1,0,
                           (undefined4 *)0x0);
-      FUN_006e8660((void *)pSVar3->field_0211,(int *)&local_8,1,0,*(uint *)((int)puVar4 + 9),
-                   *(uint *)((int)puVar4 + 0xd),(int)*(uint *)((int)puVar4 + 9) / 2,0xa9,0);
-      FUN_006e98e0((void *)pSVar3->field_0211,local_8,0,*(int *)puVar4,*(int *)((int)puVar4 + 0x21),
-                   1);
-      FUN_006ea270((void *)pSVar3->field_0211,local_8,0,pSVar3->field_033E);
-      FUN_006ea960((void *)pSVar3->field_0211,local_8,
-                   (float)pSVar3->field_0266 * _DAT_007904f8 * _DAT_007904f0,
-                   (float)pSVar3->field_026A * _DAT_007904f8 * _DAT_007904f0,
-                   (float)pSVar3->field_026E * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
-      FUN_006eaaa0((void *)pSVar3->field_0211,local_8,0);
-      FUN_006eab60((void *)pSVar3->field_0211,local_8);
+      ST3DSMAPContext::sub_006E8660
+                (pSVar3->field_0211,(int *)&local_8,1,0,*(uint *)((int)puVar4 + 9),
+                 *(uint *)((int)puVar4 + 0xd),(int)*(uint *)((int)puVar4 + 9) / 2,0xa9,0);
+      ST3DSMAPContext::sub_006E98E0
+                (pSVar3->field_0211,local_8,0,*(int *)puVar4,*(int *)((int)puVar4 + 0x21),1);
+      ST3DSMAPContext::sub_006EA270(pSVar3->field_0211,local_8,0,pSVar3->field_033E);
+      Library::Ourlib::ST3DSMAP::SprMove
+                (pSVar3->field_0211,local_8,
+                 (float)pSVar3->field_0266 * _DAT_007904f8 * _DAT_007904f0,
+                 (float)pSVar3->field_026A * _DAT_007904f8 * _DAT_007904f0,
+                 (float)pSVar3->field_026E * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
+      Library::Ourlib::ST3DSMAP::SprShow(pSVar3->field_0211,local_8,0);
+      Library::Ourlib::ST3DSMAP::SprHide(pSVar3->field_0211,local_8);
       pSVar3->field_033A = local_8;
       pSVar3->field_0342 = *(undefined4 *)puVar4;
     }
@@ -59,16 +61,18 @@ undefined4 __thiscall STTmMineC::LoadImagVacuum(STTmMineC *this,int param_1)
                          (DAT_00806774,CASE_1D,"expl_vc1",0xffffffff,0,1,0,
                           (undefined4 *)0x0);
       pSVar3->field_035F = puVar4;
-      FUN_006e8660((void *)pSVar3->field_0211,puVar1,1,0,*(uint *)((int)puVar4 + 9),
-                   *(uint *)((int)puVar4 + 0xd),0xa8,0x43,0);
-      FUN_006e98e0((void *)pSVar3->field_0211,*puVar1,0,*(int *)puVar4,*(int *)((int)puVar4 + 0x21),
-                   1);
-      FUN_006ea270((void *)pSVar3->field_0211,*puVar1,0,pSVar3->field_0367);
-      FUN_006ea960((void *)pSVar3->field_0211,*puVar1,
-                   (float)pSVar3->field_0266 * _DAT_007904f8 * _DAT_007904f0,
-                   (float)pSVar3->field_026A * _DAT_007904f8 * _DAT_007904f0,
-                   (float)pSVar3->field_026E * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
-      FUN_006eaaa0((void *)pSVar3->field_0211,*puVar1,0);
+      ST3DSMAPContext::sub_006E8660
+                (pSVar3->field_0211,puVar1,1,0,*(uint *)((int)puVar4 + 9),
+                 *(uint *)((int)puVar4 + 0xd),0xa8,0x43,0);
+      ST3DSMAPContext::sub_006E98E0
+                (pSVar3->field_0211,*puVar1,0,*(int *)puVar4,*(int *)((int)puVar4 + 0x21),1);
+      ST3DSMAPContext::sub_006EA270(pSVar3->field_0211,*puVar1,0,pSVar3->field_0367);
+      Library::Ourlib::ST3DSMAP::SprMove
+                (pSVar3->field_0211,*puVar1,
+                 (float)pSVar3->field_0266 * _DAT_007904f8 * _DAT_007904f0,
+                 (float)pSVar3->field_026A * _DAT_007904f8 * _DAT_007904f0,
+                 (float)pSVar3->field_026E * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
+      Library::Ourlib::ST3DSMAP::SprShow(pSVar3->field_0211,*puVar1,0);
       pSVar3->field_036B = *(undefined4 *)puVar4;
     }
     g_currentExceptionFrame = local_54.previous;

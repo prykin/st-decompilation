@@ -2,10 +2,17 @@
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STPrototypeApplier] Propagated parameter 1.
    Evidence: 006E6FB0 -> 006B5B10 @ 006E77B4 | 006E6FB0 -> 006B5B10 @ 006E809F | 006E6FB0 ->
-   006B5B10 @ 006E80EC | 006E6FB0 -> 006B5B10 @ 006E812A | 006E6FB0 -> 006B5B10 @ 006E8169 */
+   006B5B10 @ 006E80EC | 006E6FB0 -> 006B5B10 @ 006E812A | 006E6FB0 -> 006B5B10 @ 006E8169
+
+   [STMethodOwnerApplier] Structural method owner recovered as ST3DSMAPContext.
+   Evidence: this_call_owners=[ST3DSMAPContext]; agreed_this_calls=2; incoming_this_accesses=95;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=19; direct_non_thunk_callers=2;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=2; owner_evidence_coverage=adequate */
 
 void __thiscall
-FUN_006e6fb0(void *this,AnonShape_006B5B10_E0D06CF1 *param_1,int param_2,int param_3,int param_4)
+ST3DSMAPContext::sub_006E6FB0
+          (ST3DSMAPContext *this,AnonShape_006B5B10_E0D06CF1 *param_1,int param_2,int param_3,
+          int param_4)
 
 {
   double dVar1;
@@ -42,27 +49,27 @@ FUN_006e6fb0(void *this,AnonShape_006B5B10_E0D06CF1 *param_1,int param_2,int par
   int local_c;
   int local_8;
 
-  if ((*(int *)((int)this + 0xa8) < 4) && (*(int *)((int)this + 0x280) != 0)) {
+  if ((*(int *)&this->field_0xa8 < 4) && (*(int *)&this->field_0x280 != 0)) {
     _DAT_00856d90 = 0;
     _DAT_00856d94 = 0;
-    _DAT_00856d98 = *(undefined4 *)((int)this + 0x3dc);
-    _DAT_00856d9c = *(undefined4 *)((int)this + 0x3dc);
+    _DAT_00856d98 = *(undefined4 *)&this->field_0x3dc;
+    _DAT_00856d9c = *(undefined4 *)&this->field_0x3dc;
     if (param_4 != 0) {
       iVar6 = param_1->field_0008;
       DAT_00856d8c = (uint)param_1->field_000E * param_1->field_0004 + 0x1f >> 3 & 0x1ffffffc;
       iVar5 = FUN_006b4fa0((int *)param_1);
       local_2c = ((iVar6 - param_3) + -1) * DAT_00856d8c + param_2 + iVar5;
-      local_4c = *(int *)((int)this + 0x41c);
-      if (*(int *)((int)this + 0x310) < *(int *)((int)this + 0x41c)) {
-        local_4c = *(int *)((int)this + 0x310);
+      local_4c = *(int *)&this->field_0x41c;
+      if (*(int *)&this->field_0x310 < *(int *)&this->field_0x41c) {
+        local_4c = *(int *)&this->field_0x310;
       }
-      local_1c = *(int *)((int)this + *(int *)((int)this + 0xa8) * 4 + 0x428);
+      local_1c = *(int *)(&this->field_0x428 + *(int *)&this->field_0xa8 * 4);
       DAT_00856d88 = local_2c;
       if (local_1c != 0) {
-        if ((*(int *)((int)this + 0x466) == 0) ||
-           (*(int *)((int)this + *(int *)((int)this + 0xa8) * 4 + 0x4a2) == 0)) {
+        if ((this->field_0466 == 0) ||
+           (*(int *)(&this[1].field_0x36 + *(int *)&this->field_0xa8 * 4) == 0)) {
           local_20 = 0;
-          iVar5 = *(int *)((int)this + 0x3dc) / 2;
+          iVar5 = *(int *)&this->field_0x3dc / 2;
           iVar6 = iVar5;
           DAT_00856d84 = iVar5;
           if (-1 < iVar5) {
@@ -79,7 +86,7 @@ FUN_006e6fb0(void *this,AnonShape_006B5B10_E0D06CF1 *param_1,int param_2,int par
                 } while (iVar10 != 0);
               }
               local_2c = local_2c - DAT_00856d8c;
-              local_1c = local_1c + *(int *)((int)this + 0x424);
+              local_1c = local_1c + *(int *)&this->field_0x424;
               iVar5 = iVar5 + -1;
               iVar6 = iVar6 + 1;
               local_40 = local_40 + -1;
@@ -87,7 +94,7 @@ FUN_006e6fb0(void *this,AnonShape_006B5B10_E0D06CF1 *param_1,int param_2,int par
           }
           iVar5 = iVar5 + 1;
           iVar6 = iVar6 + -1;
-          if (local_20 < *(int *)((int)this + 0x3dc)) {
+          if (local_20 < *(int *)&this->field_0x3dc) {
             do {
               iVar5 = iVar5 + 1;
               iVar6 = iVar6 + -1;
@@ -101,32 +108,33 @@ FUN_006e6fb0(void *this,AnonShape_006B5B10_E0D06CF1 *param_1,int param_2,int par
                 } while (iVar10 != 0);
               }
               local_2c = local_2c - DAT_00856d8c;
-              local_1c = local_1c + *(int *)((int)this + 0x424);
+              local_1c = local_1c + *(int *)&this->field_0x424;
               local_20 = local_20 + 1;
-            } while (local_20 < *(int *)((int)this + 0x3dc));
+            } while (local_20 < *(int *)&this->field_0x3dc);
           }
         }
         else {
-          iVar14 = *(int *)((int)this + 0x3dc) / 2;
-          iVar5 = (int)(*(short **)((int)this + 0x280))[1];
-          iVar10 = (int)**(short **)((int)this + 0x280);
-          iVar6 = ((iVar5 + iVar10) * 0xb505) / *(int *)((int)this + 0x3dc);
-          switch(*(undefined4 *)((int)this + 0xa8)) {
+          iVar14 = *(int *)&this->field_0x3dc / 2;
+          iVar5 = (int)(*(short **)&this->field_0x280)[1];
+          iVar10 = (int)**(short **)&this->field_0x280;
+          iVar6 = ((iVar5 + iVar10) * 0xb505) / *(int *)&this->field_0x3dc;
+          switch(*(undefined4 *)&this->field_0xa8) {
           case 0:
             iVar5 = 0x87c3c;
-            iVar11 = (*(int *)((int)this + 0x4b2) * 0x10000) / 2;
+            iVar11 = (*(int *)((int)&this[1].field_0044 + 2) * 0x10000) / 2;
             break;
           case 1:
             iVar11 = (iVar10 + 0xc) * 0xb505;
-            iVar5 = (*(int *)((int)this + 0x4b6) << 0x10) / 2 + iVar10 * -0xb505;
+            iVar5 = (*(int *)((int)&this[1].field_0048 + 2) << 0x10) / 2 + iVar10 * -0xb505;
             break;
           case 2:
-            iVar11 = (*(int *)((int)this + 0x4b2) * 0x10000) / 2;
-            iVar5 = *(int *)((int)this + 0x4b6) * 0x10000 + (iVar5 + iVar10) * -0xb505 + -0x97c3c;
+            iVar11 = (*(int *)((int)&this[1].field_0044 + 2) * 0x10000) / 2;
+            iVar5 = *(int *)((int)&this[1].field_0048 + 2) * 0x10000 + (iVar5 + iVar10) * -0xb505 +
+                    -0x97c3c;
             break;
           case 3:
-            iVar11 = *(int *)((int)this + 0x4b2) * 0x10000 + iVar5 * -0xb505 + -0x97c3c;
-            iVar5 = (*(int *)((int)this + 0x4b6) << 0x10) / 2 + iVar5 * -0xb505;
+            iVar11 = *(int *)((int)&this[1].field_0044 + 2) * 0x10000 + iVar5 * -0xb505 + -0x97c3c;
+            iVar5 = (*(int *)((int)&this[1].field_0048 + 2) << 0x10) / 2 + iVar5 * -0xb505;
             break;
           default:
             iVar11 = 0;
@@ -139,15 +147,15 @@ FUN_006e6fb0(void *this,AnonShape_006B5B10_E0D06CF1 *param_1,int param_2,int par
             local_20 = iVar14 + 1;
             local_3c = local_20;
             do {
-              iVar10 = *(int *)((int)this + 0x4b2);
-              iVar8 = *(int *)((int)this + *(int *)((int)this + 0xa8) * 4 + 0x4a2);
+              iVar10 = *(int *)((int)&this[1].field_0044 + 2);
+              iVar8 = *(int *)(&this[1].field_0x36 + *(int *)&this->field_0xa8 * 4);
               if (iVar14 <= local_8) {
                 local_38 = (undefined1 *)(local_2c + iVar14);
                 local_40 = (local_8 - iVar14) + 1;
                 local_28 = iVar11;
                 do {
                   if (*(char *)((local_28 >> 0x10) + iVar8 + (iVar5 >> 0x10) * iVar10) == '\0') {
-                    *local_38 = *(undefined1 *)((int)this + 0x49e);
+                    *local_38 = this[1].field_0x32;
                   }
                   else {
                     *local_38 = local_38[local_1c - local_2c];
@@ -159,7 +167,7 @@ FUN_006e6fb0(void *this,AnonShape_006B5B10_E0D06CF1 *param_1,int param_2,int par
               }
               iVar5 = iVar5 + iVar6;
               local_2c = local_2c - DAT_00856d8c;
-              local_1c = local_1c + *(int *)((int)this + 0x424);
+              local_1c = local_1c + *(int *)&this->field_0x424;
               iVar14 = iVar14 + -1;
               local_8 = local_8 + 1;
               iVar11 = iVar11 - iVar6;
@@ -169,20 +177,20 @@ FUN_006e6fb0(void *this,AnonShape_006B5B10_E0D06CF1 *param_1,int param_2,int par
           iVar14 = iVar14 + 1;
           local_8 = local_8 + -1;
           iVar11 = iVar11 + iVar6;
-          if (local_20 < *(int *)((int)this + 0x3dc)) {
+          if (local_20 < *(int *)&this->field_0x3dc) {
             do {
               iVar14 = iVar14 + 1;
               local_8 = local_8 + -1;
               iVar11 = iVar11 + iVar6;
-              iVar10 = *(int *)((int)this + 0x4b2);
-              iVar8 = *(int *)((int)this + *(int *)((int)this + 0xa8) * 4 + 0x4a2);
+              iVar10 = *(int *)((int)&this[1].field_0044 + 2);
+              iVar8 = *(int *)(&this[1].field_0x36 + *(int *)&this->field_0xa8 * 4);
               if (iVar14 <= local_8) {
                 local_38 = (undefined1 *)(local_2c + iVar14);
                 local_40 = (local_8 - iVar14) + 1;
                 local_28 = iVar11;
                 do {
                   if (*(char *)((local_28 >> 0x10) + iVar8 + (iVar5 >> 0x10) * iVar10) == '\0') {
-                    *local_38 = *(undefined1 *)((int)this + 0x49e);
+                    *local_38 = this[1].field_0x32;
                   }
                   else {
                     *local_38 = local_38[local_1c - local_2c];
@@ -194,33 +202,33 @@ FUN_006e6fb0(void *this,AnonShape_006B5B10_E0D06CF1 *param_1,int param_2,int par
               }
               iVar5 = iVar5 + iVar6;
               local_2c = local_2c - DAT_00856d8c;
-              local_1c = local_1c + *(int *)((int)this + 0x424);
+              local_1c = local_1c + *(int *)&this->field_0x424;
               local_20 = local_20 + 1;
-            } while (local_20 < *(int *)((int)this + 0x3dc));
+            } while (local_20 < *(int *)&this->field_0x3dc);
           }
         }
       }
-      for (pAVar2 = *(AnonShape_006E6AF0_D2F012A7 **)((int)this + 0x44a);
+      for (pAVar2 = *(AnonShape_006E6AF0_D2F012A7 **)&this->field_0x44a;
           pAVar2 != (AnonShape_006E6AF0_D2F012A7 *)0x0;
           pAVar2 = *(AnonShape_006E6AF0_D2F012A7 **)pAVar2) {
         if (pAVar2->field_0xc != '\0') {
-          SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006E6AF0::FUN_006e6af0(this,pAVar2);
+          sub_006E6AF0(this,pAVar2);
         }
       }
-      for (pAVar2 = *(AnonShape_006E6AF0_D2F012A7 **)((int)this + 0x446);
+      for (pAVar2 = (AnonShape_006E6AF0_D2F012A7 *)this->field_0446;
           pAVar2 != (AnonShape_006E6AF0_D2F012A7 *)0x0;
           pAVar2 = *(AnonShape_006E6AF0_D2F012A7 **)pAVar2) {
         if (pAVar2->field_0xc != '\0') {
-          SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006E6AF0::FUN_006e6af0(this,pAVar2);
+          sub_006E6AF0(this,pAVar2);
         }
       }
-      DAT_00856d84 = *(int *)((int)this + 0x3dc) / 2;
+      DAT_00856d84 = *(int *)&this->field_0x3dc / 2;
       _DAT_00856d80 =
            (float)_DAT_0079cd88 /
-           ((float)(int)**(short **)((int)this + 0x280) * (float)*(double *)((int)this + 200));
-      for (puVar3 = *(undefined4 **)((int)this + 0x452); puVar3 != (undefined4 *)0x0;
+           ((float)(int)**(short **)&this->field_0x280 * (float)*(double *)&this->field_0xc8);
+      for (puVar3 = *(undefined4 **)&this->field_0x452; puVar3 != (undefined4 *)0x0;
           puVar3 = (undefined4 *)*puVar3) {
-        switch(*(undefined4 *)((int)this + 0xa8)) {
+        switch(*(undefined4 *)&this->field_0xa8) {
         case 0:
           lVar16 = Library::MSVCRT::__ftol();
           local_18 = (int)lVar16;
@@ -267,7 +275,7 @@ FUN_006e6fb0(void *this,AnonShape_006B5B10_E0D06CF1 *param_1,int param_2,int par
         if (iVar6 < 1) {
           iVar6 = 1;
         }
-        iVar10 = *(int *)((int)this + 0x3dc);
+        iVar10 = *(int *)&this->field_0x3dc;
         if (iVar10 + -2 <= iVar6) {
           iVar6 = iVar10 + -3;
         }
@@ -317,16 +325,16 @@ FUN_006e6fb0(void *this,AnonShape_006B5B10_E0D06CF1 *param_1,int param_2,int par
                      local_8 + param_2,iVar5 + param_3,(byte)puVar3[6],0xd);
 switchD_006e74ad_default:
       }
-      for (puVar3 = *(undefined4 **)((int)this + 0x44e); puVar3 != (undefined4 *)0x0;
+      for (puVar3 = *(undefined4 **)&this->field_0x44e; puVar3 != (undefined4 *)0x0;
           puVar3 = (undefined4 *)*puVar3) {
-        if (*(double *)((int)this + 200) <= (double)(int)puVar3[2]) {
-          dVar1 = ((double)(int)puVar3[2] / *(double *)((int)this + 200)) *
-                  (((double)*(int *)((int)this + 0x3dc) * _DAT_0079df60) /
-                  (double)(int)**(short **)((int)this + 0x280));
+        if (*(double *)&this->field_0xc8 <= (double)(int)puVar3[2]) {
+          dVar1 = ((double)(int)puVar3[2] / *(double *)&this->field_0xc8) *
+                  (((double)*(int *)&this->field_0x3dc * _DAT_0079df60) /
+                  (double)(int)**(short **)&this->field_0x280);
           Library::MSVCRT::FUN_00730450(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
           lVar16 = Library::MSVCRT::__ftol();
           iVar6 = (int)lVar16;
-          switch(*(undefined4 *)((int)this + 0xa8)) {
+          switch(*(undefined4 *)&this->field_0xa8) {
           case 0:
             lVar16 = Library::MSVCRT::__ftol();
             local_30 = (int)lVar16;
@@ -372,16 +380,16 @@ switchD_006e74ad_default:
             local_c = iVar5 + DAT_00856d84 + local_48;
           }
           else {
-            local_8 = (DAT_00856d84 - *(int *)((int)this + 0x3dc)) + iVar5 + 1 + local_48;
-            local_c = (*(int *)((int)this + 0x3dc) - iVar5) + iVar6 + -1 + DAT_00856d84;
+            local_8 = (DAT_00856d84 - *(int *)&this->field_0x3dc) + iVar5 + 1 + local_48;
+            local_c = (*(int *)&this->field_0x3dc - iVar5) + iVar6 + -1 + DAT_00856d84;
           }
           if (local_40 < DAT_00856d84) {
             local_10 = (DAT_00856d84 - iVar5) + local_48;
             local_14 = DAT_00856d84 + iVar6 + iVar5;
           }
           else {
-            local_10 = (DAT_00856d84 - *(int *)((int)this + 0x3dc)) + iVar6 + 1 + iVar5;
-            local_14 = (*(int *)((int)this + 0x3dc) - iVar5) + DAT_00856d84 + -1 + local_48;
+            local_10 = (DAT_00856d84 - *(int *)&this->field_0x3dc) + iVar6 + 1 + iVar5;
+            local_14 = (*(int *)&this->field_0x3dc - iVar5) + DAT_00856d84 + -1 + local_48;
           }
           if (0 < local_2c) {
             do {
@@ -482,34 +490,34 @@ switchD_006e74ad_default:
           }
         }
       }
-      puVar12 = *(uint **)((int)this + 0x31c);
-      pbVar15 = *(byte **)((int)this + 0x420);
+      puVar12 = *(uint **)&this->field_0x31c;
+      pbVar15 = *(byte **)&this->field_0x420;
       if (0 < local_4c) {
         do {
-          if (((pbVar15[3] & 1) != 0) && ((*pbVar15 & *(byte *)((int)this + 0x418)) != 0)) {
-            if (((*puVar12 & 0x800000) != 0) || (*(int *)((int)this + 0x3e0) != 0)) {
-              dVar1 = (double)((float)puVar12[0x1d] / (float)*(double *)((int)this + 200));
+          if (((pbVar15[3] & 1) != 0) && ((*pbVar15 & (byte)this->field_0418) != 0)) {
+            if (((*puVar12 & 0x800000) != 0) || (*(int *)&this->field_0x3e0 != 0)) {
+              dVar1 = (double)((float)puVar12[0x1d] / (float)*(double *)&this->field_0xc8);
               Library::MSVCRT::FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
               lVar16 = Library::MSVCRT::__ftol();
               *(byte *)(puVar12 + 0x44) = (byte)lVar16;
-              if (**(short **)((int)this + 0x280) <= (short)(ushort)(byte)lVar16) {
-                *(char *)(puVar12 + 0x44) = (char)**(short **)((int)this + 0x280) + -1;
+              if (**(short **)&this->field_0x280 <= (short)(ushort)(byte)lVar16) {
+                *(char *)(puVar12 + 0x44) = (char)**(short **)&this->field_0x280 + -1;
               }
-              dVar1 = (double)((float)puVar12[0x1e] / (float)*(double *)((int)this + 200));
+              dVar1 = (double)((float)puVar12[0x1e] / (float)*(double *)&this->field_0xc8);
               Library::MSVCRT::FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
               lVar16 = Library::MSVCRT::__ftol();
               *(byte *)((int)puVar12 + 0x111) = (byte)lVar16;
-              if (*(short *)(*(int *)((int)this + 0x280) + 2) <= (short)(ushort)(byte)lVar16) {
-                *(char *)((int)puVar12 + 0x111) = *(char *)(*(int *)((int)this + 0x280) + 2) + -1;
+              if (*(short *)(*(int *)&this->field_0x280 + 2) <= (short)(ushort)(byte)lVar16) {
+                *(char *)((int)puVar12 + 0x111) = *(char *)(*(int *)&this->field_0x280 + 2) + -1;
               }
-              dVar1 = (double)((float)puVar12[0x1f] / (float)*(double *)((int)this + 0xd0));
+              dVar1 = (double)((float)puVar12[0x1f] / (float)*(double *)&this->field_0xd0);
               Library::MSVCRT::FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
               lVar16 = Library::MSVCRT::__ftol();
               *(byte *)((int)puVar12 + 0x112) = (byte)lVar16;
               if (4 < (byte)lVar16) {
                 *(undefined1 *)((int)puVar12 + 0x112) = 4;
               }
-              switch(*(undefined4 *)((int)this + 0xa8)) {
+              switch(*(undefined4 *)&this->field_0xa8) {
               case 0:
                 lVar16 = Library::MSVCRT::__ftol();
                 puVar12[0x42] = (uint)lVar16;
@@ -535,18 +543,18 @@ switchD_006e7e25_default:
               if ((int)puVar12[0x43] < 1) {
                 puVar12[0x43] = 1;
               }
-              if (*(int *)((int)this + 0x3dc) + -2 <= (int)puVar12[0x43]) {
-                puVar12[0x43] = *(int *)((int)this + 0x3dc) - 3;
+              if (*(int *)&this->field_0x3dc + -2 <= (int)puVar12[0x43]) {
+                puVar12[0x43] = *(int *)&this->field_0x3dc - 3;
               }
               uVar13 = puVar12[0x43];
               if (DAT_00856d84 < (int)uVar13) {
                 if ((int)puVar12[0x42] <=
-                    (int)((uVar13 - *(int *)((int)this + 0x3dc)) + 1 + DAT_00856d84)) {
-                  puVar12[0x42] = (puVar12[0x43] - *(int *)((int)this + 0x3dc)) + 2 + DAT_00856d84;
+                    (int)((uVar13 - *(int *)&this->field_0x3dc) + 1 + DAT_00856d84)) {
+                  puVar12[0x42] = (puVar12[0x43] - *(int *)&this->field_0x3dc) + 2 + DAT_00856d84;
                 }
-                if ((int)((*(int *)((int)this + 0x3dc) - puVar12[0x43]) + -2 + DAT_00856d84) <=
+                if ((int)((*(int *)&this->field_0x3dc - puVar12[0x43]) + -2 + DAT_00856d84) <=
                     (int)puVar12[0x42]) {
-                  uVar13 = (*(int *)((int)this + 0x3dc) - puVar12[0x43]) + -3 + DAT_00856d84;
+                  uVar13 = (*(int *)&this->field_0x3dc - puVar12[0x43]) + -3 + DAT_00856d84;
                   goto LAB_006e7ff9;
                 }
               }
@@ -573,44 +581,40 @@ LAB_006e7ff9:
           local_4c = local_4c + -1;
         } while (local_4c != 0);
       }
-      if (0 < *(int *)((int)this + 1000)) {
-        iVar6 = *(int *)((int)this + 0x3f0) + param_2;
-        iVar5 = *(int *)((int)this + 0x3ec) + param_2;
+      if (0 < *(int *)&this->field_0x3e8) {
+        iVar6 = *(int *)&this->field_0x3f0 + param_2;
+        iVar5 = *(int *)&this->field_0x3ec + param_2;
         if (iVar5 < iVar6) {
-          iVar10 = *(int *)((int)this + 1000) + param_3;
+          iVar10 = *(int *)&this->field_0x3e8 + param_3;
           FUN_006b5b10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar5,iVar10,iVar6,iVar10,
-                       (byte)*(undefined4 *)((int)this + 0x3e4),0xd);
+                       (byte)*(undefined4 *)&this->field_0x3e4,0xd);
         }
       }
-      if ((*(int *)((int)this + 0x3f4) < *(int *)((int)this + 0x3dc) + -1) &&
-         (*(int *)((int)this + 0x3f8) < *(int *)((int)this + 0x3fc))) {
-        iVar6 = *(int *)((int)this + 0x3f4) + param_3;
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        FUN_006b5b10((AnonShape_006E6FB0_BC494FEA *)param_1,0,*(int *)((int)this + 0x3f8) + param_2,
-                     iVar6,*(int *)((int)this + 0x3fc) + param_2,iVar6,
-                     (byte)*(undefined4 *)((int)this + 0x3e4),0xd);
+      if ((*(int *)&this->field_0x3f4 < *(int *)&this->field_0x3dc + -1) &&
+         (*(int *)&this->field_0x3f8 < *(int *)&this->field_0x3fc)) {
+        iVar6 = *(int *)&this->field_0x3f4 + param_3;
+        FUN_006b5b10((AnonShape_006E6FB0_BC494FEA *)param_1,0,*(int *)&this->field_0x3f8 + param_2,
+                     iVar6,*(int *)&this->field_0x3fc + param_2,iVar6,
+                     (byte)*(undefined4 *)&this->field_0x3e4,0xd);
       }
-      if ((0 < *(int *)((int)this + 0x400)) &&
-         (*(int *)((int)this + 0x404) < *(int *)((int)this + 0x408))) {
-        iVar6 = *(int *)((int)this + 0x400) + param_2;
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+      if ((0 < *(int *)&this->field_0x400) &&
+         (*(int *)&this->field_0x404 < *(int *)&this->field_0x408)) {
+        iVar6 = *(int *)&this->field_0x400 + param_2;
         FUN_006b5b10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar6,
-                     *(int *)((int)this + 0x404) + param_3,iVar6,
-                     *(int *)((int)this + 0x408) + param_3,(byte)*(undefined4 *)((int)this + 0x3e4),
-                     0xd);
+                     *(int *)&this->field_0x404 + param_3,iVar6,*(int *)&this->field_0x408 + param_3
+                     ,(byte)*(undefined4 *)&this->field_0x3e4,0xd);
       }
-      if (*(int *)((int)this + 0x40c) < *(int *)((int)this + 0x3dc) + -1) {
-        if (*(int *)((int)this + 0x410) < *(int *)((int)this + 0x414)) {
-          iVar6 = param_2 + *(int *)((int)this + 0x40c);
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+      if (*(int *)&this->field_0x40c < *(int *)&this->field_0x3dc + -1) {
+        if (*(int *)&this->field_0x410 < *(int *)&this->field_0x414) {
+          iVar6 = param_2 + *(int *)&this->field_0x40c;
           FUN_006b5b10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar6,
-                       *(int *)((int)this + 0x410) + param_3,iVar6,
-                       *(int *)((int)this + 0x414) + param_3,
-                       (byte)*(undefined4 *)((int)this + 0x3e4),0xd);
+                       *(int *)&this->field_0x410 + param_3,iVar6,
+                       *(int *)&this->field_0x414 + param_3,(byte)*(undefined4 *)&this->field_0x3e4,
+                       0xd);
         }
       }
-      uVar13 = -*(int *)((int)this + 0xa8) & 3;
-      iVar6 = *(int *)((int)this + uVar13 * 4 + 0x456);
+      uVar13 = -*(int *)&this->field_0xa8 & 3;
+      iVar6 = *(int *)(&this->field_0x456 + uVar13 * 4);
       if (iVar6 != 0) {
         FUN_006d25e0((byte *)((DAT_00856d84 -
                               (DAT_00856d8c + 1) * ((int)*(short *)(iVar6 + 0x12) / 2)) +
@@ -619,7 +623,7 @@ LAB_006e7ff9:
                      (int)*(short *)(iVar6 + 0x12),(int)*(short *)(iVar6 + 0x14));
       }
       uVar13 = uVar13 + 1 & 3;
-      iVar6 = *(int *)((int)this + uVar13 * 4 + 0x456);
+      iVar6 = *(int *)(&this->field_0x456 + uVar13 * 4);
       if (iVar6 != 0) {
         iVar5 = (int)*(short *)(iVar6 + 0x14) / 2;
         FUN_006d25e0((byte *)((DAT_00856d88 - (DAT_00856d84 - iVar5) * DAT_00856d8c) + iVar5),
@@ -627,29 +631,30 @@ LAB_006e7ff9:
                      (int)*(short *)(iVar6 + 0x12),(int)*(short *)(iVar6 + 0x14));
       }
       uVar13 = uVar13 + 1 & 3;
-      iVar6 = *(int *)((int)this + uVar13 * 4 + 0x456);
+      iVar6 = *(int *)(&this->field_0x456 + uVar13 * 4);
       if (iVar6 != 0) {
         iVar5 = (int)*(short *)(iVar6 + 0x12);
-        FUN_006d25e0((byte *)((-(((*(int *)((int)this + 0x3dc) - iVar5 / 2) -
+        FUN_006d25e0((byte *)((-(((*(int *)&this->field_0x3dc - iVar5 / 2) -
                                  (int)*(short *)(iVar6 + 0x14)) * DAT_00856d8c) - iVar5 / 2) +
                               DAT_00856d84 + DAT_00856d88),-DAT_00856d8c,
                      (byte *)((*(byte *)(iVar6 + 0xd) >> 1 & 0xe) + 0x16 + iVar6),iVar5,
                      (int)*(short *)(iVar6 + 0x14));
       }
-      iVar6 = *(int *)((int)this + (uVar13 + 1 & 3) * 4 + 0x456);
+      iVar6 = *(int *)(&this->field_0x456 + (uVar13 + 1 & 3) * 4);
       if (iVar6 != 0) {
         iVar5 = (int)*(short *)(iVar6 + 0x14);
+        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         FUN_006d25e0((byte *)(((-((DAT_00856d84 - iVar5 / 2) * DAT_00856d8c) - iVar5 / 2) -
                               (int)*(short *)(iVar6 + 0x12)) + DAT_00856d88 +
-                             *(int *)((int)this + 0x3dc)),-DAT_00856d8c,
+                             *(int *)&this->field_0x3dc),-DAT_00856d8c,
                      (byte *)((*(byte *)(iVar6 + 0xd) >> 1 & 0xe) + 0x16 + iVar6),
                      (int)*(short *)(iVar6 + 0x12),iVar5);
       }
     }
-    pAVar2 = *(AnonShape_006E6AF0_D2F012A7 **)((int)this + 0x442);
+    pAVar2 = (AnonShape_006E6AF0_D2F012A7 *)this->field_0442;
     while (pAVar2 != (AnonShape_006E6AF0_D2F012A7 *)0x0) {
       if (param_4 != 0) {
-        SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006E6AF0::FUN_006e6af0(this,pAVar2);
+        sub_006E6AF0(this,pAVar2);
       }
       *(short *)&pAVar2->field_0x14 = *(short *)&pAVar2->field_0x14 + -1;
       if (*(short *)&pAVar2->field_0x14 < 1) {
@@ -661,28 +666,28 @@ LAB_006e7ff9:
       }
       else {
         pAVar4 = *(AnonShape_006E6AF0_D2F012A7 **)pAVar2;
-        FUN_006b98c0((int *)((int)this + 0x442),(int *)pAVar2);
+        FUN_006b98c0(&this->field_0442,(int *)pAVar2);
         FUN_006a5e90((short *)pAVar2);
         pAVar2 = pAVar4;
       }
     }
     if (param_4 != 0) {
-      for (pAVar2 = *(AnonShape_006E6AF0_D2F012A7 **)((int)this + 0x44a);
+      for (pAVar2 = *(AnonShape_006E6AF0_D2F012A7 **)&this->field_0x44a;
           pAVar2 != (AnonShape_006E6AF0_D2F012A7 *)0x0;
           pAVar2 = *(AnonShape_006E6AF0_D2F012A7 **)pAVar2) {
         if (pAVar2->field_0xc == '\0') {
-          SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006E6AF0::FUN_006e6af0(this,pAVar2);
+          sub_006E6AF0(this,pAVar2);
         }
       }
-      for (pAVar2 = *(AnonShape_006E6AF0_D2F012A7 **)((int)this + 0x446);
+      for (pAVar2 = (AnonShape_006E6AF0_D2F012A7 *)this->field_0446;
           pAVar2 != (AnonShape_006E6AF0_D2F012A7 *)0x0;
           pAVar2 = *(AnonShape_006E6AF0_D2F012A7 **)pAVar2) {
         if (pAVar2->field_0xc == '\0') {
-          SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006E6AF0::FUN_006e6af0(this,pAVar2);
+          sub_006E6AF0(this,pAVar2);
         }
       }
     }
-    *(undefined4 *)((int)this + 0x3e0) = 0;
+    *(undefined4 *)&this->field_0x3e0 = 0;
   }
   return;
 }

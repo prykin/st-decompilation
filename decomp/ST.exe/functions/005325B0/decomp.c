@@ -15,13 +15,13 @@ void __thiscall OptPanelTy::PrepAsses(OptPanelTy *this,void *param_1)
   code *pcVar4;
   int iVar5;
   cMf32 *pcVar6;
-  DArrayTy *pDVar7;
+  OptPanelTy_field_02FDDArray *pOVar7;
   char *pcVar8;
   int iVar9;
   uint uVar10;
   uint uVar11;
   OptPanelTy *pOVar12;
-  byte *pbVar13;
+  uint *puVar13;
   char *pcVar14;
   byte *pbVar15;
   bool bVar16;
@@ -50,17 +50,18 @@ void __thiscall OptPanelTy::PrepAsses(OptPanelTy *this,void *param_1)
     RaiseInternalException(iVar5,0,"E:\\__titans\\Andrey\\optpanel.cpp",0x3ad);
     return;
   }
-  if (local_8->field_02FD != (DArrayTy *)0x0) {
-    DArrayDestroy(local_8->field_02FD);
+  if (local_8->field_02FD != (OptPanelTy_field_02FDDArray *)0x0) {
+    DArrayDestroy((DArrayTy *)local_8->field_02FD);
   }
-  pOVar12->field_02FD = (DArrayTy *)0x0;
+  pOVar12->field_02FD = (OptPanelTy_field_02FDDArray *)0x0;
   local_94.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_94;
   iVar5 = Library::MSVCRT::__setjmp3(local_94.jumpBuffer,0);
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_94.previous;
-    pDVar7 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,0x98,1);
-    local_8->field_02FD = pDVar7;
+    pOVar7 = (OptPanelTy_field_02FDDArray *)
+             Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,0x98,1);
+    local_8->field_02FD = pOVar7;
     pOVar12 = local_8;
     goto LAB_00532758;
   }
@@ -92,19 +93,21 @@ void __thiscall OptPanelTy::PrepAsses(OptPanelTy *this,void *param_1)
   case 0xd:
   case 0xe:
   case 0x13:
-    pDVar7 = (DArrayTy *)CreateAssistantList((int)pcVar6,(uint)DAT_0080874e,DAT_0080995c);
+    pOVar7 = (OptPanelTy_field_02FDDArray *)
+             CreateAssistantList((int)pcVar6,(uint)DAT_0080874e,DAT_0080995c);
     break;
   case 2:
   case 3:
   case 5:
   case 8:
   case 0xf:
-    pDVar7 = (DArrayTy *)CreateStrategList((int)pcVar6,(uint)DAT_0080874d,0xffffffff);
+    pOVar7 = (OptPanelTy_field_02FDDArray *)
+             CreateStrategList((int)pcVar6,(uint)DAT_0080874d,0xffffffff);
     break;
   default:
     goto switchD_005326e6_caseD_9;
   }
-  pOVar12->field_02FD = pDVar7;
+  pOVar12->field_02FD = pOVar7;
 switchD_005326e6_caseD_9:
   cMf32::delete(pcVar6);
   g_currentExceptionFrame = local_94.previous;
@@ -151,20 +154,20 @@ LAB_00532758:
     FUN_006e6080(pOVar12,2,pOVar12->field_01B5[0],(undefined4 *)puVar1);
   }
   else {
-    pDVar7 = pOVar12->field_02FD;
+    pOVar7 = pOVar12->field_02FD;
     local_c = 0;
-    if (pDVar7->count != 0) {
-      if (pDVar7->count == 0) {
-        pbVar13 = (byte *)0x0;
+    if (pOVar7->count != 0) {
+      if (pOVar7->count == 0) {
+        puVar13 = (uint *)0x0;
         goto LAB_00532855;
       }
       do {
-        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar7, local_c) (runtime stride) */
-        pbVar13 = (byte *)(pDVar7->elementSize * local_c + (int)pDVar7->data);
+        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
+        puVar13 = (uint *)((int)&pOVar7->data->field_0000 + pOVar7->elementSize * local_c);
 LAB_00532855:
         pbVar15 = (byte *)&DAT_0080f33a;
         do {
-          bVar3 = *pbVar13;
+          bVar3 = (byte)*puVar13;
           bVar16 = bVar3 < *pbVar15;
           if (bVar3 != *pbVar15) {
 LAB_0053287e:
@@ -172,10 +175,10 @@ LAB_0053287e:
             goto LAB_00532883;
           }
           if (bVar3 == 0) break;
-          bVar3 = pbVar13[1];
+          bVar3 = *(byte *)((int)puVar13 + 1);
           bVar16 = bVar3 < pbVar15[1];
           if (bVar3 != pbVar15[1]) goto LAB_0053287e;
-          pbVar13 = pbVar13 + 2;
+          puVar13 = (uint *)((int)puVar13 + 2);
           pbVar15 = pbVar15 + 2;
         } while (bVar3 != 0);
         iVar5 = 0;
@@ -185,9 +188,9 @@ LAB_00532883:
           pOVar12->field_0028 = 0x22;
           FUN_006e6080(pOVar12,2,pOVar12->field_01B5[0],(undefined4 *)&pOVar12->field_0x18);
         }
-        pDVar7 = pOVar12->field_02FD;
+        pOVar7 = pOVar12->field_02FD;
         local_c = local_c + 1;
-        if (pDVar7->count <= local_c) {
+        if (pOVar7->count <= local_c) {
           g_currentExceptionFrame = local_50.previous;
           return;
         }

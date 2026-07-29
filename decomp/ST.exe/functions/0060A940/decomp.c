@@ -18,7 +18,7 @@ void __fastcall FUN_0060a940(AnonShape_0060A940_933574B2 *param_1)
       if (((uVar4 < (uint)pAVar1->field_000C) &&
           (iVar3 = pAVar1->field_0008 * uVar4 + pAVar1->field_001C, iVar3 != 0)) &&
          (-1 < (int)*(uint *)(iVar3 + 0x3c))) {
-        FUN_006e8ba0(PTR_00807598,*(uint *)(iVar3 + 0x3c));
+        Library::Ourlib::ST3DSMAP::SprClose(g_sT3DSMAPContext_00807598,*(uint *)(iVar3 + 0x3c));
         *(undefined4 *)(iVar3 + 0x3c) = 0xffffffff;
       }
       uVar4 = uVar4 + 1;

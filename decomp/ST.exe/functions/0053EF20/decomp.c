@@ -79,8 +79,7 @@ ProdPanelTy::InitProdPanel
     }
     DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0,0,'\x01',(byte *)this_00->field_0184
           );
-    ccFntTy::SetSurf(this_00->field_017C,(int)this_00->field_0068,0,param_2,param_3,param_4,param_5)
-    ;
+    ccFntTy::SetSurf(this_00->field_017C,(int)this_00->field_0068,0,param_2,param_3,param_4,param_5);
     uVar9 = 0;
     iVar11 = -1;
     iVar2 = -2;

@@ -7,7 +7,7 @@
 uint __thiscall STManRuinC::sub_00631390(STManRuinC *this,undefined4 *param_1)
 
 {
-  DArrayTy *pDVar1;
+  STManRuinC_field_0038DArray *pSVar1;
   int iVar2;
   uint uVar3;
   uint uVar4;
@@ -30,11 +30,11 @@ uint __thiscall STManRuinC::sub_00631390(STManRuinC *this,undefined4 *param_1)
   }
   *(undefined1 *)puVar7 = *(undefined1 *)puVar5;
   piVar6 = (int *)((int)param_1 + 0x55);
-  this->field_003C = (DArrayTy *)0x0;
+  this->field_003C = (STManRuinC_field_003CDArray *)0x0;
   this->field_0061 = -1;
-  if (this->field_0038 != (DArrayTy *)0x0) {
-    pDVar1 = (DArrayTy *)FUN_006b0060((uint *)0x0,(uint *)((int)param_1 + 0x59));
-    this->field_0038 = pDVar1;
+  if (this->field_0038 != (STManRuinC_field_0038DArray *)0x0) {
+    pSVar1 = (STManRuinC_field_0038DArray *)FUN_006b0060((uint *)0x0,(uint *)((int)param_1 + 0x59));
+    this->field_0038 = pSVar1;
     piVar6 = (int *)((int)param_1 + 0x59 + *piVar6);
   }
   if (this->field_0034 != 0) {

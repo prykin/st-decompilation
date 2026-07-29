@@ -7,11 +7,17 @@
    Evidence: 00575CB0 -> 006E9EF0 @ 0057644C; literal 30000 at 00576436 | 00575CB0 -> 006E9EF0 @
    0057649F; literal 30000 at 0057648C | 005F6F60 -> 006E9EF0 @ 005F7D6A; literal 30000 at 005F7D51
    | 005FAA10 -> 006E9EF0 @ 005FAB6C; literal 30000 at 005FAB58 | 006029C0 -> 006E9EF0 @ 00602B0F;
-   literal 30000 at 00602B01 */
+   literal 30000 at 00602B01
+
+   [STMethodOwnerApplier] Structural method owner recovered as ST3DSMAPContext.
+   Evidence: this_call_owners=[ST3DSMAPContext]; agreed_this_calls=2; incoming_this_accesses=2;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=6; direct_non_thunk_callers=4;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
 
 void __thiscall
-FUN_006e9ef0(void *this,uint param_1,uint param_2,int param_3,int param_4,uint param_5,
-            ushort param_6)
+ST3DSMAPContext::sub_006E9EF0
+          (ST3DSMAPContext *this,uint param_1,uint param_2,int param_3,int param_4,uint param_5,
+          ushort param_6)
 
 {
   uint *puVar1;
@@ -21,9 +27,9 @@ FUN_006e9ef0(void *this,uint param_1,uint param_2,int param_3,int param_4,uint p
   byte *pbVar5;
   int iVar6;
 
-  if (param_1 < *(uint *)((int)this + 0x310)) {
-    puVar1 = (uint *)(*(int *)((int)this + 0x31c) + param_1 * 0x114);
-    uVar3 = *(uint *)(*(int *)((int)this + 0x31c) + param_1 * 0x114);
+  if (param_1 < *(uint *)&this->field_0x310) {
+    puVar1 = (uint *)(*(int *)&this->field_0x31c + param_1 * 0x114);
+    uVar3 = *(uint *)(*(int *)&this->field_0x31c + param_1 * 0x114);
     if ((uVar3 & 0x8000) != 0) {
       if (puVar1[0x25] <= param_2) {
         FUN_006e91a0();

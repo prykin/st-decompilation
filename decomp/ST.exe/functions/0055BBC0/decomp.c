@@ -61,7 +61,8 @@ VisibleClassTy::sub_0055BBC0
   uint uVar1;
   RecoveredRecord_VisibleClassTy_0055B9F0 local_10;
 
-  if ((((this->field_0114 != 0) && (this->field_0110 != (DArrayTy *)0x0)) && (param_5 < 8)) &&
+  if ((((this->field_0114 != 0) && (this->field_0110 != (VisibleClassTy_field_0110DArray *)0x0)) &&
+      (param_5 < 8)) &&
      ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 || ((byte)(&DAT_008087e9)[param_5 * 0x51] < 8))
      )) {
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -77,7 +78,7 @@ VisibleClassTy::sub_0055BBC0
     local_10.field_0008 = param_7;
     uVar1 = thunk_FUN_0055b9f0(this,&local_10);
     if (-1 < (int)uVar1) {
-      FUN_006b0c70(this->field_0110,uVar1);
+      FUN_006b0c70((DArrayTy *)this->field_0110,uVar1);
     }
   }
   return;

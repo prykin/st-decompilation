@@ -112,7 +112,7 @@ STAllPlayersC::GetTOBJImage
                           (undefined4 *)0x0);
       local_24 = *(undefined4 *)(*(int *)((int)puVar3 + 0x21) + param_2 * 4);
     }
-    uVar4 = FUN_00709470(PTR_00807598,local_54,0x11,1,10,0xff);
+    uVar4 = ST3DSMAPContext::sub_00709470(g_sT3DSMAPContext_00807598,local_54,0x11,1,10,0xff);
     return uVar4;
   default:
     iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x324e,0,0,"%s",
@@ -279,7 +279,7 @@ LAB_0044c44d:
     local_1c = *(undefined4 *)(*(int *)((int)puVar3 + 0x21) + param_2 * 4);
   }
 cf_common_exit_0044C477:
-  uVar4 = FUN_00709470(PTR_00807598,local_54,0x11,1,10,0xff);
+  uVar4 = ST3DSMAPContext::sub_00709470(g_sT3DSMAPContext_00807598,local_54,0x11,1,10,0xff);
   return uVar4;
 }
 

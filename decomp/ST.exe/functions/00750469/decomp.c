@@ -33,8 +33,7 @@ LAB_0075052c:
       return 0x80040216;
     }
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    iVar2 = *(int *)((int)this + 0x6c) + param_2 + (uint)CARRY4(*(uint *)((int)this + 0x68),param_1)
-    ;
+    iVar2 = *(int *)((int)this + 0x6c) + param_2 + (uint)CARRY4(*(uint *)((int)this + 0x68),param_1);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if ((iVar2 < *(int *)(iVar3 + 0x1c)) ||
        ((iVar2 <= *(int *)(iVar3 + 0x1c) &&

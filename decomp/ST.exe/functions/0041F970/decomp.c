@@ -7,8 +7,8 @@
 void __thiscall STSprGameObjC::sub_0041F970(STSprGameObjC *this)
 
 {
-  if (((void *)this->field_0211 != (void *)0x0) && (this->field_0229 == 1)) {
-    FUN_006e66f0((void *)this->field_0211,this->field_01ED);
+  if ((this->field_0211 != (ST3DSMAPContext *)0x0) && (this->field_0229 == 1)) {
+    FUN_006e66f0(this->field_0211,this->field_01ED);
     this->field_0229 = 0;
   }
   return;

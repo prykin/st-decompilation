@@ -2869,7 +2869,7 @@ thunk_address	status	proposed_qualified_name	details
 00404BC9	disabled	TLOEmbryoTy::sub_00419C70	apply=0
 00404BCE	disabled	FUN_00417f30	apply=0
 00404BD3	disabled	FUN_00553e20	apply=0
-00404BD8	applied	SoundClassTy::PlaySound	name=released_to_dynamic_target(SoundClassTy::PlaySound)
+00404BD8	disabled	SoundClassTy::PlaySound	apply=0
 00404BE2	disabled	FUN_004accd0	apply=0
 00404BE7	disabled	FUN_00681670	apply=0
 00404BEC	disabled	FUN_0062db10	apply=0

@@ -17,8 +17,7 @@ int FUN_006767d0(void)
               &DAT_00807ddd,PTR_s_PL_LOG_0079d6c4);
     this = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,local_150,2,0,0);
     local_8 = this;
-    wsprintfA((LPSTR)local_150,"%s%d%02d",PTR_DAT_0079d6c8,(uint)DAT_0080874e,DAT_0080c52a)
-    ;
+    wsprintfA((LPSTR)local_150,"%s%d%02d",PTR_DAT_0079d6c8,(uint)DAT_0080874e,DAT_0080c52a);
     cMf32::RecPut(this,0xc,(char *)local_150,(byte *)&DAT_0080c522,0x27f0,(undefined4 *)0x0,'\0',
                   (uint *)0x0);
     cMf32::delete(this);

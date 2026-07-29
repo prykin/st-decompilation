@@ -35,15 +35,97 @@ bool __thiscall TLOBaseTy::FUN_004bea70(TLOBaseTy *this,int *param_1)
   TLOBaseTy_field_05ACState TVar3;
   int *piVar4;
   char cVar5;
-  undefined1 uVar6;
   short sVar7;
   int iVar8;
   int iVar9;
   AiPlrClassTy *pAVar10;
   STGroupBoatC *pSVar11;
-  TLOBaseTy_field_04D0State TVar12;
-  uint uVar13;
-  uint uVar14;
+  int local_EAX_607;
+  uint uVar12;
+  int local_EAX_725;
+  int local_EAX_770;
+  int local_EAX_1167;
+  int local_EAX_1206;
+  int local_EAX_1349;
+  int local_EAX_1388;
+  int local_EAX_1496;
+  int local_EAX_1535;
+  int local_EAX_1613;
+  int local_EAX_1652;
+  int local_EAX_1739;
+  int local_EAX_1778;
+  int local_EAX_1848;
+  int local_EAX_1887;
+  int local_EAX_1973;
+  int local_EAX_2012;
+  int local_EAX_2098;
+  int local_EAX_2137;
+  int local_EAX_2207;
+  int local_EAX_2246;
+  int local_EAX_2318;
+  int local_EAX_2357;
+  int local_EAX_2427;
+  int local_EAX_2466;
+  int local_EAX_2535;
+  int local_EAX_2574;
+  int local_EAX_2652;
+  int local_EAX_2691;
+  int local_EAX_2781;
+  int local_EAX_2820;
+  int local_EAX_2898;
+  int local_EAX_2937;
+  int local_EAX_3027;
+  int local_EAX_3066;
+  int local_EAX_3144;
+  int local_EAX_3183;
+  int local_EAX_3286;
+  int local_EAX_3325;
+  int local_EAX_3424;
+  int local_EAX_3463;
+  int local_EAX_3527;
+  int local_EAX_3566;
+  int local_EAX_3635;
+  int local_EAX_3674;
+  int local_EAX_3752;
+  int local_EAX_3791;
+  int local_EAX_3860;
+  int local_EAX_3899;
+  int local_EAX_4004;
+  int local_EAX_4043;
+  int local_EAX_4145;
+  int local_EAX_4184;
+  TLOBaseTy_field_04D0State TVar13;
+  int local_EAX_4267;
+  int local_EAX_4306;
+  int local_EAX_4382;
+  int local_EAX_4421;
+  int local_EAX_4490;
+  int local_EAX_4529;
+  int local_EAX_4607;
+  int local_EAX_4646;
+  int local_EAX_4716;
+  int local_EAX_4755;
+  int local_EAX_4838;
+  int local_EAX_4877;
+  int local_EAX_4947;
+  int local_EAX_4986;
+  int local_EAX_5062;
+  int local_EAX_5101;
+  int local_EAX_5177;
+  int local_EAX_5216;
+  int local_EAX_5305;
+  int local_EAX_5344;
+  int local_EAX_5423;
+  int local_EAX_5462;
+  int local_EAX_5552;
+  int local_EAX_5591;
+  int uVar13;
+  int uVar14;
+  int local_EAX_5828;
+  int local_EAX_5867;
+  int local_EAX_5936;
+  int local_EAX_5975;
+  undefined1 uVar6;
   undefined4 uVar15;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined3 extraout_var;
@@ -53,6 +135,7 @@ bool __thiscall TLOBaseTy::FUN_004bea70(TLOBaseTy *this,int *param_1)
   undefined3 extraout_var_01;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined3 extraout_var_02;
+  int local_EAX_8404;
   uint *puVar16;
   AnonPointee_TLOBaseTy_061B *pAVar17;
   short sVar18;
@@ -156,22 +239,22 @@ LAB_004bf427:
       uVar6 = 1;
     }
     else {
-      uVar13 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_2427 = GetPlayerRaceId((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      uVar14 = GetPlayerRaceId(*(char *)&this->field_0024);
-      if ((&DAT_007e1984)[(uVar14 & 0xff) + ((uVar13 & 0xff) + iVar8 * 3) * 3] != '\0')
-      goto LAB_004bf427;
+      local_EAX_2466 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(local_EAX_2466 & 0xffU) + ((local_EAX_2427 & 0xffU) + iVar8 * 3) * 3] !=
+          '\0') goto LAB_004bf427;
 LAB_004bf438:
       uVar6 = 0;
     }
     *(undefined1 *)(param_1 + 4) = uVar6;
     *(undefined1 *)((int)param_1 + 0xb) = 0x26;
     if (this->field_0024 != (byte *)this->field_023D) {
-      uVar13 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_2535 = GetPlayerRaceId((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      uVar14 = GetPlayerRaceId(*(char *)&this->field_0024);
-      if ((&DAT_007e1984)[(uVar14 & 0xff) + ((uVar13 & 0xff) + iVar8 * 3) * 3] == '\0')
-      goto cf_common_join_004C01F3;
+      local_EAX_2574 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(local_EAX_2574 & 0xffU) + ((local_EAX_2535 & 0xffU) + iVar8 * 3) * 3] ==
+          '\0') goto cf_common_join_004C01F3;
     }
     if (this->field_0245 != CASE_0) goto cf_common_join_004C01F3;
     *(undefined1 *)((int)param_1 + 0x11) = 1;
@@ -179,22 +262,22 @@ LAB_004bf438:
   case CASE_33:
     *(undefined1 *)((int)param_1 + 10) = 0x26;
     if (this->field_0024 != (byte *)this->field_023D) {
-      uVar13 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_2318 = GetPlayerRaceId((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      uVar14 = GetPlayerRaceId(*(char *)&this->field_0024);
-      if ((&DAT_007e1984)[(uVar14 & 0xff) + ((uVar13 & 0xff) + iVar8 * 3) * 3] == '\0')
-      goto cf_common_join_004C0278;
+      local_EAX_2357 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(local_EAX_2357 & 0xffU) + ((local_EAX_2318 & 0xffU) + iVar8 * 3) * 3] ==
+          '\0') goto cf_common_join_004C0278;
     }
     pAVar17 = (AnonPointee_TLOBaseTy_061B *)this->field_0245;
     goto joined_r0x004bfcb7;
   case CASE_35:
     *(undefined1 *)((int)param_1 + 10) = 0x21;
     if (this->field_0024 != (byte *)this->field_023D) {
-      uVar13 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_1613 = GetPlayerRaceId((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      uVar14 = GetPlayerRaceId(*(char *)&this->field_0024);
-      if ((&DAT_007e1984)[(uVar14 & 0xff) + ((uVar13 & 0xff) + iVar8 * 3) * 3] == '\0')
-      goto cf_common_join_004C0278;
+      local_EAX_1652 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(local_EAX_1652 & 0xffU) + ((local_EAX_1613 & 0xffU) + iVar8 * 3) * 3] ==
+          '\0') goto cf_common_join_004C0278;
     }
     if (this->field_0245 == CASE_0) {
       bVar23 = *(int *)&this->field_0x361 == 0;
@@ -207,22 +290,22 @@ LAB_004bef54:
   case CASE_37:
     *(undefined1 *)((int)param_1 + 10) = 0x26;
     if (this->field_0024 != (byte *)this->field_023D) {
-      uVar13 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_2207 = GetPlayerRaceId((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      uVar14 = GetPlayerRaceId(*(char *)&this->field_0024);
-      if ((&DAT_007e1984)[(uVar14 & 0xff) + ((uVar13 & 0xff) + iVar8 * 3) * 3] == '\0')
-      goto cf_common_join_004C0278;
+      local_EAX_2246 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(local_EAX_2246 & 0xffU) + ((local_EAX_2207 & 0xffU) + iVar8 * 3) * 3] ==
+          '\0') goto cf_common_join_004C0278;
     }
     if (this->field_04D8 != 0xffff) goto cf_common_join_004C0278;
     goto cf_common_join_004BEF5A;
   case CASE_3A:
     *(undefined1 *)((int)param_1 + 10) = 0x22;
     if (this->field_0024 != (byte *)this->field_023D) {
-      uVar13 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_2098 = GetPlayerRaceId((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      uVar14 = GetPlayerRaceId(*(char *)&this->field_0024);
-      if ((&DAT_007e1984)[(uVar14 & 0xff) + ((uVar13 & 0xff) + iVar8 * 3) * 3] == '\0')
-      goto cf_common_join_004C0278;
+      local_EAX_2137 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(local_EAX_2137 & 0xffU) + ((local_EAX_2098 & 0xffU) + iVar8 * 3) * 3] ==
+          '\0') goto cf_common_join_004C0278;
     }
     pAVar17 = (AnonPointee_TLOBaseTy_061B *)this->field_0245;
     goto joined_r0x004bfcb7;
@@ -230,11 +313,11 @@ LAB_004bef54:
     *(undefined1 *)((int)param_1 + 10) = 0x28;
     if (this->field_0245 == CASE_0) {
       if (this->field_0024 != (byte *)this->field_023D) {
-        uVar13 = GetPlayerRaceId((char)(byte *)this->field_023D);
+        local_EAX_3286 = GetPlayerRaceId((char)(byte *)this->field_023D);
         iVar8 = this->field_0235;
-        uVar14 = GetPlayerRaceId(*(char *)&this->field_0024);
-        if ((&DAT_007e1984)[(uVar14 & 0xff) + ((uVar13 & 0xff) + iVar8 * 3) * 3] == '\0')
-        goto LAB_004bf7a5;
+        local_EAX_3325 = GetPlayerRaceId(*(char *)&this->field_0024);
+        if ((&DAT_007e1984)[(local_EAX_3325 & 0xffU) + ((local_EAX_3286 & 0xffU) + iVar8 * 3) * 3]
+            == '\0') goto LAB_004bf7a5;
       }
       if (g_playerRuntime[(int)this->field_0024].field2180_0xa0e != 0) goto LAB_004bf7a5;
       uVar6 = 1;
@@ -247,11 +330,11 @@ LAB_004bf7a5:
     *(undefined1 *)((int)param_1 + 0xb) = 0x29;
     if (this->field_0245 != CASE_0) goto cf_common_join_004C01F3;
     if (this->field_0024 != (byte *)this->field_023D) {
-      uVar13 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_3424 = GetPlayerRaceId((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      uVar14 = GetPlayerRaceId(*(char *)&this->field_0024);
-      if ((&DAT_007e1984)[(uVar14 & 0xff) + ((uVar13 & 0xff) + iVar8 * 3) * 3] == '\0')
-      goto cf_common_join_004C01F3;
+      local_EAX_3463 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(local_EAX_3463 & 0xffU) + ((local_EAX_3424 & 0xffU) + iVar8 * 3) * 3] ==
+          '\0') goto cf_common_join_004C01F3;
     }
     *(undefined1 *)((int)param_1 + 0x11) = 1;
     break;
@@ -293,15 +376,15 @@ LAB_004becaa:
     }
     *(undefined1 *)(param_1 + 4) = uVar6;
 switchD_004bec4d_caseD_36:
-    uVar13 = GetPlayerRaceId(*(char *)&this->field_0024);
-    uVar13 = uVar13 & 0xff;
-    if (uVar13 == 1) {
+    local_EAX_607 = GetPlayerRaceId(*(char *)&this->field_0024);
+    uVar12 = local_EAX_607 & 0xff;
+    if (uVar12 == 1) {
       iVar8 = 0x1d;
     }
-    else if (uVar13 == 2) {
+    else if (uVar12 == 2) {
       iVar8 = 0x89;
     }
-    else if (uVar13 == 3) {
+    else if (uVar12 == 3) {
       iVar8 = 0x46;
     }
     else {
@@ -318,18 +401,18 @@ switchD_004bec4d_caseD_36:
       }
       *(undefined1 *)(param_1 + 4) = uVar6;
     }
-    uVar13 = GetPlayerRaceId(*(char *)&this->field_0024);
-    if ((uVar13 & 0xff) == 1) {
+    local_EAX_725 = GetPlayerRaceId(*(char *)&this->field_0024);
+    if ((local_EAX_725 & 0xffU) == 1) {
       iVar8 = 0x10;
     }
-    else if ((uVar13 & 0xff) == 2) {
+    else if ((local_EAX_725 & 0xffU) == 2) {
       iVar8 = 0x85;
     }
     else {
       iVar8 = 0;
     }
-    uVar13 = GetPlayerRaceId(*(char *)&this->field_023D);
-    if (*(int *)(&DAT_00791b14 + ((uVar13 & 0xff) + this->field_0235 * 3) * 4) != 0) {
+    local_EAX_770 = GetPlayerRaceId(*(char *)&this->field_023D);
+    if (*(int *)(&DAT_00791b14 + ((local_EAX_770 & 0xffU) + this->field_0235 * 3) * 4) != 0) {
       if (((iVar8 == 0) || (iVar9 = thunk_FUN_004e60d0((int)this->field_0024,iVar8), iVar9 == 0)) ||
          (this->field_0245 != CASE_4)) {
         bVar23 = false;
@@ -401,22 +484,22 @@ LAB_004bf5fe:
       uVar6 = 1;
     }
     else {
-      uVar13 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_2898 = GetPlayerRaceId((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      uVar14 = GetPlayerRaceId(*(char *)&this->field_0024);
-      if ((&DAT_007e1984)[(uVar14 & 0xff) + ((uVar13 & 0xff) + iVar8 * 3) * 3] != '\0')
-      goto LAB_004bf5fe;
+      local_EAX_2937 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(local_EAX_2937 & 0xffU) + ((local_EAX_2898 & 0xffU) + iVar8 * 3) * 3] !=
+          '\0') goto LAB_004bf5fe;
 LAB_004bf624:
       uVar6 = 0;
     }
     *(undefined1 *)(param_1 + 4) = uVar6;
     *(undefined1 *)((int)param_1 + 0xb) = 0x26;
     if (this->field_0024 != (byte *)this->field_023D) {
-      uVar13 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_3027 = GetPlayerRaceId((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      uVar14 = GetPlayerRaceId(*(char *)&this->field_0024);
-      if ((&DAT_007e1984)[(uVar14 & 0xff) + ((uVar13 & 0xff) + iVar8 * 3) * 3] == '\0')
-      goto cf_common_join_004C01F3;
+      local_EAX_3066 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(local_EAX_3066 & 0xffU) + ((local_EAX_3027 & 0xffU) + iVar8 * 3) * 3] ==
+          '\0') goto cf_common_join_004C01F3;
     }
     if (this->field_0245 != CASE_0) goto cf_common_join_004C01F3;
     *(undefined1 *)((int)param_1 + 0x11) = 1;
@@ -424,11 +507,11 @@ LAB_004bf624:
   case CASE_43:
     *(undefined1 *)((int)param_1 + 10) = 0x23;
     if (this->field_0024 != (byte *)this->field_023D) {
-      uVar13 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_1973 = GetPlayerRaceId((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      uVar14 = GetPlayerRaceId(*(char *)&this->field_0024);
-      if ((&DAT_007e1984)[(uVar14 & 0xff) + ((uVar13 & 0xff) + iVar8 * 3) * 3] == '\0')
-      goto cf_common_join_004C0278;
+      local_EAX_2012 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(local_EAX_2012 & 0xffU) + ((local_EAX_1973 & 0xffU) + iVar8 * 3) * 3] ==
+          '\0') goto cf_common_join_004C0278;
     }
     if (this->field_0245 == CASE_0) {
       iVar8 = this->field_04D8;
@@ -439,11 +522,11 @@ joined_r0x004bf200:
   case CASE_44:
     *(undefined1 *)((int)param_1 + 10) = 0x1b;
     if (this->field_0024 != (byte *)this->field_023D) {
-      uVar13 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_3144 = GetPlayerRaceId((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      uVar14 = GetPlayerRaceId(*(char *)&this->field_0024);
-      if ((&DAT_007e1984)[(uVar14 & 0xff) + ((uVar13 & 0xff) + iVar8 * 3) * 3] == '\0')
-      goto cf_common_join_004C0278;
+      local_EAX_3183 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(local_EAX_3183 & 0xffU) + ((local_EAX_3144 & 0xffU) + iVar8 * 3) * 3] ==
+          '\0') goto cf_common_join_004C0278;
     }
     if (this->field_0245 == CASE_0) {
       iVar8 = 0x19;
@@ -455,11 +538,11 @@ LAB_004bf708:
   case CASE_45:
     *(undefined1 *)((int)param_1 + 10) = 0x1a;
     if (this->field_0024 != (byte *)this->field_023D) {
-      uVar13 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_1167 = GetPlayerRaceId((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      uVar14 = GetPlayerRaceId(*(char *)&this->field_0024);
-      if ((&DAT_007e1984)[(uVar14 & 0xff) + ((uVar13 & 0xff) + iVar8 * 3) * 3] == '\0')
-      goto cf_common_join_004C0278;
+      local_EAX_1206 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(local_EAX_1206 & 0xffU) + ((local_EAX_1167 & 0xffU) + iVar8 * 3) * 3] ==
+          '\0') goto cf_common_join_004C0278;
     }
     if (this->field_0245 == CASE_0) {
       bVar23 = this->field_04D0 == CASE_1;
@@ -475,22 +558,22 @@ LAB_004bf508:
       uVar6 = 1;
     }
     else {
-      uVar13 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_2652 = GetPlayerRaceId((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      uVar14 = GetPlayerRaceId(*(char *)&this->field_0024);
-      if ((&DAT_007e1984)[(uVar14 & 0xff) + ((uVar13 & 0xff) + iVar8 * 3) * 3] != '\0')
-      goto LAB_004bf508;
+      local_EAX_2691 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(local_EAX_2691 & 0xffU) + ((local_EAX_2652 & 0xffU) + iVar8 * 3) * 3] !=
+          '\0') goto LAB_004bf508;
 LAB_004bf52e:
       uVar6 = 0;
     }
     *(undefined1 *)(param_1 + 4) = uVar6;
     *(undefined1 *)((int)param_1 + 0xb) = 0x26;
     if (this->field_0024 != (byte *)this->field_023D) {
-      uVar13 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_2781 = GetPlayerRaceId((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      uVar14 = GetPlayerRaceId(*(char *)&this->field_0024);
-      if ((&DAT_007e1984)[(uVar14 & 0xff) + ((uVar13 & 0xff) + iVar8 * 3) * 3] == '\0')
-      goto cf_common_join_004C01F3;
+      local_EAX_2820 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(local_EAX_2820 & 0xffU) + ((local_EAX_2781 & 0xffU) + iVar8 * 3) * 3] ==
+          '\0') goto cf_common_join_004C01F3;
     }
     if (this->field_0245 != CASE_0) goto cf_common_join_004C01F3;
     *(undefined1 *)((int)param_1 + 0x11) = 1;
@@ -499,11 +582,11 @@ LAB_004bf52e:
     if (this->field_04D0 != CASE_1) {
       *(undefined1 *)((int)param_1 + 10) = 0x24;
       if (this->field_0024 != (byte *)this->field_023D) {
-        uVar13 = GetPlayerRaceId((char)(byte *)this->field_023D);
+        local_EAX_1848 = GetPlayerRaceId((char)(byte *)this->field_023D);
         iVar8 = this->field_0235;
-        uVar14 = GetPlayerRaceId(*(char *)&this->field_0024);
-        if ((&DAT_007e1984)[(uVar14 & 0xff) + ((uVar13 & 0xff) + iVar8 * 3) * 3] == '\0')
-        goto cf_common_join_004C0278;
+        local_EAX_1887 = GetPlayerRaceId(*(char *)&this->field_0024);
+        if ((&DAT_007e1984)[(local_EAX_1887 & 0xffU) + ((local_EAX_1848 & 0xffU) + iVar8 * 3) * 3]
+            == '\0') goto cf_common_join_004C0278;
       }
       if (this->field_0245 != CASE_0) goto cf_common_join_004C0278;
       iVar8 = this->field_04D8;
@@ -511,11 +594,11 @@ LAB_004bf52e:
     }
     *(undefined1 *)((int)param_1 + 10) = 0x25;
     if (this->field_0024 != (byte *)this->field_023D) {
-      uVar13 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_1739 = GetPlayerRaceId((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      uVar14 = GetPlayerRaceId(*(char *)&this->field_0024);
-      if ((&DAT_007e1984)[(uVar14 & 0xff) + ((uVar13 & 0xff) + iVar8 * 3) * 3] == '\0')
-      goto cf_common_join_004C0278;
+      local_EAX_1778 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(local_EAX_1778 & 0xffU) + ((local_EAX_1739 & 0xffU) + iVar8 * 3) * 3] ==
+          '\0') goto cf_common_join_004C0278;
     }
 LAB_004bf17b:
     pAVar17 = (AnonPointee_TLOBaseTy_061B *)this->field_0245;
@@ -530,22 +613,22 @@ LAB_004beff1:
       uVar6 = 1;
     }
     else {
-      uVar13 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_1349 = GetPlayerRaceId((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      uVar14 = GetPlayerRaceId(*(char *)&this->field_0024);
-      if ((&DAT_007e1984)[(uVar14 & 0xff) + ((uVar13 & 0xff) + iVar8 * 3) * 3] != '\0')
-      goto LAB_004beff1;
+      local_EAX_1388 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(local_EAX_1388 & 0xffU) + ((local_EAX_1349 & 0xffU) + iVar8 * 3) * 3] !=
+          '\0') goto LAB_004beff1;
 LAB_004bf02b:
       uVar6 = 0;
     }
     *(undefined1 *)(param_1 + 4) = uVar6;
     *(undefined1 *)((int)param_1 + 0xb) = 0x19;
     if (this->field_0024 != (byte *)this->field_023D) {
-      uVar13 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_1496 = GetPlayerRaceId((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      uVar14 = GetPlayerRaceId(*(char *)&this->field_0024);
-      if ((&DAT_007e1984)[(uVar14 & 0xff) + ((uVar13 & 0xff) + iVar8 * 3) * 3] == '\0')
-      goto cf_common_join_004C01F3;
+      local_EAX_1535 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(local_EAX_1535 & 0xffU) + ((local_EAX_1496 & 0xffU) + iVar8 * 3) * 3] ==
+          '\0') goto cf_common_join_004C01F3;
     }
     if (this->field_0261 == 0) goto cf_common_join_004C01F3;
     *(undefined1 *)((int)param_1 + 0x11) = 1;
@@ -558,22 +641,22 @@ LAB_004bf873:
       uVar6 = 1;
     }
     else {
-      uVar13 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_3527 = GetPlayerRaceId((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      uVar14 = GetPlayerRaceId(*(char *)&this->field_0024);
-      if ((&DAT_007e1984)[(uVar14 & 0xff) + ((uVar13 & 0xff) + iVar8 * 3) * 3] != '\0')
-      goto LAB_004bf873;
+      local_EAX_3566 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(local_EAX_3566 & 0xffU) + ((local_EAX_3527 & 0xffU) + iVar8 * 3) * 3] !=
+          '\0') goto LAB_004bf873;
 LAB_004bf884:
       uVar6 = 0;
     }
     *(undefined1 *)(param_1 + 4) = uVar6;
     *(undefined1 *)((int)param_1 + 0xb) = 0x31;
     if (this->field_0024 != (byte *)this->field_023D) {
-      uVar13 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_3635 = GetPlayerRaceId((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      uVar14 = GetPlayerRaceId(*(char *)&this->field_0024);
-      if ((&DAT_007e1984)[(uVar14 & 0xff) + ((uVar13 & 0xff) + iVar8 * 3) * 3] == '\0')
-      goto cf_common_join_004C01F3;
+      local_EAX_3674 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(local_EAX_3674 & 0xffU) + ((local_EAX_3635 & 0xffU) + iVar8 * 3) * 3] ==
+          '\0') goto cf_common_join_004C01F3;
     }
     if (this->field_0245 != CASE_0) goto cf_common_join_004C01F3;
     *(undefined1 *)((int)param_1 + 0x11) = 1;
@@ -586,11 +669,11 @@ LAB_004bf954:
       uVar6 = 1;
     }
     else {
-      uVar13 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_3752 = GetPlayerRaceId((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      uVar14 = GetPlayerRaceId(*(char *)&this->field_0024);
-      if ((&DAT_007e1984)[(uVar14 & 0xff) + ((uVar13 & 0xff) + iVar8 * 3) * 3] != '\0')
-      goto LAB_004bf954;
+      local_EAX_3791 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(local_EAX_3791 & 0xffU) + ((local_EAX_3752 & 0xffU) + iVar8 * 3) * 3] !=
+          '\0') goto LAB_004bf954;
 LAB_004bf965:
       uVar6 = 0;
     }
@@ -603,22 +686,22 @@ LAB_004bf9c0:
       uVar6 = 1;
     }
     else {
-      uVar13 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_3860 = GetPlayerRaceId((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      uVar14 = GetPlayerRaceId(*(char *)&this->field_0024);
-      if ((&DAT_007e1984)[(uVar14 & 0xff) + ((uVar13 & 0xff) + iVar8 * 3) * 3] != '\0')
-      goto LAB_004bf9c0;
+      local_EAX_3899 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(local_EAX_3899 & 0xffU) + ((local_EAX_3860 & 0xffU) + iVar8 * 3) * 3] !=
+          '\0') goto LAB_004bf9c0;
 LAB_004bf9f7:
       uVar6 = 0;
     }
     *(undefined1 *)((int)param_1 + 0x11) = uVar6;
     *(undefined1 *)(param_1 + 3) = 0x46;
     if (this->field_0024 != (byte *)this->field_023D) {
-      uVar13 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_4004 = GetPlayerRaceId((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      uVar14 = GetPlayerRaceId(*(char *)&this->field_0024);
-      if ((&DAT_007e1984)[(uVar14 & 0xff) + ((uVar13 & 0xff) + iVar8 * 3) * 3] == '\0')
-      goto LAB_004bfffc;
+      local_EAX_4043 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(local_EAX_4043 & 0xffU) + ((local_EAX_4004 & 0xffU) + iVar8 * 3) * 3] ==
+          '\0') goto LAB_004bfffc;
     }
     if ((this->field_0245 != CASE_0) || (*(int *)&this->field_0x361 != 0)) goto LAB_004bfffc;
     *(undefined1 *)((int)param_1 + 0x12) = 1;
@@ -632,11 +715,11 @@ LAB_004bf9f7:
   case CASE_5A:
     *(undefined1 *)((int)param_1 + 10) = 0x41;
     if (this->field_0024 != (byte *)this->field_023D) {
-      uVar13 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_4947 = GetPlayerRaceId((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      uVar14 = GetPlayerRaceId(*(char *)&this->field_0024);
-      if ((&DAT_007e1984)[(uVar14 & 0xff) + ((uVar13 & 0xff) + iVar8 * 3) * 3] == '\0')
-      goto cf_common_join_004C0278;
+      local_EAX_4986 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(local_EAX_4986 & 0xffU) + ((local_EAX_4947 & 0xffU) + iVar8 * 3) * 3] ==
+          '\0') goto cf_common_join_004C0278;
     }
     if (this->field_0245 == CASE_0) {
       pAVar17 = *(AnonPointee_TLOBaseTy_061B **)&this->field_0x361;
@@ -651,22 +734,22 @@ LAB_004bfbca:
       uVar6 = 1;
     }
     else {
-      uVar13 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_4382 = GetPlayerRaceId((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      uVar14 = GetPlayerRaceId(*(char *)&this->field_0024);
-      if ((&DAT_007e1984)[(uVar14 & 0xff) + ((uVar13 & 0xff) + iVar8 * 3) * 3] != '\0')
-      goto LAB_004bfbca;
+      local_EAX_4421 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(local_EAX_4421 & 0xffU) + ((local_EAX_4382 & 0xffU) + iVar8 * 3) * 3] !=
+          '\0') goto LAB_004bfbca;
 LAB_004bfbdb:
       uVar6 = 0;
     }
     *(undefined1 *)(param_1 + 4) = uVar6;
     *(undefined1 *)((int)param_1 + 0xb) = 0x37;
     if (this->field_0024 != (byte *)this->field_023D) {
-      uVar13 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_4490 = GetPlayerRaceId((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      uVar14 = GetPlayerRaceId(*(char *)&this->field_0024);
-      if ((&DAT_007e1984)[(uVar14 & 0xff) + ((uVar13 & 0xff) + iVar8 * 3) * 3] == '\0')
-      goto cf_common_join_004C01F3;
+      local_EAX_4529 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(local_EAX_4529 & 0xffU) + ((local_EAX_4490 & 0xffU) + iVar8 * 3) * 3] ==
+          '\0') goto cf_common_join_004C01F3;
     }
     if (this->field_0245 != CASE_0) goto cf_common_join_004C01F3;
     *(undefined1 *)((int)param_1 + 0x11) = 1;
@@ -674,11 +757,11 @@ LAB_004bfbdb:
   case CASE_5D:
     *(undefined1 *)((int)param_1 + 10) = 0x43;
     if (this->field_0024 != (byte *)this->field_023D) {
-      uVar13 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_4716 = GetPlayerRaceId((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      uVar14 = GetPlayerRaceId(*(char *)&this->field_0024);
-      if ((&DAT_007e1984)[(uVar14 & 0xff) + ((uVar13 & 0xff) + iVar8 * 3) * 3] == '\0')
-      goto cf_common_join_004C0278;
+      local_EAX_4755 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(local_EAX_4755 & 0xffU) + ((local_EAX_4716 & 0xffU) + iVar8 * 3) * 3] ==
+          '\0') goto cf_common_join_004C0278;
     }
     if ((0x27 < this->field_04D4) && (this->field_0245 == CASE_0)) {
       iVar8 = 0x46;
@@ -693,22 +776,22 @@ LAB_004c0170:
       uVar6 = 1;
     }
     else {
-      uVar13 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_5828 = GetPlayerRaceId((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      uVar14 = GetPlayerRaceId(*(char *)&this->field_0024);
-      if ((&DAT_007e1984)[(uVar14 & 0xff) + ((uVar13 & 0xff) + iVar8 * 3) * 3] != '\0')
-      goto LAB_004c0170;
+      local_EAX_5867 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(local_EAX_5867 & 0xffU) + ((local_EAX_5828 & 0xffU) + iVar8 * 3) * 3] !=
+          '\0') goto LAB_004c0170;
 LAB_004c0181:
       uVar6 = 0;
     }
     *(undefined1 *)(param_1 + 4) = uVar6;
     *(undefined1 *)((int)param_1 + 0xb) = 0x31;
     if (this->field_0024 != (byte *)this->field_023D) {
-      uVar13 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_5936 = GetPlayerRaceId((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      uVar14 = GetPlayerRaceId(*(char *)&this->field_0024);
-      if ((&DAT_007e1984)[(uVar14 & 0xff) + ((uVar13 & 0xff) + iVar8 * 3) * 3] == '\0')
-      goto cf_common_join_004C01F3;
+      local_EAX_5975 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(local_EAX_5975 & 0xffU) + ((local_EAX_5936 & 0xffU) + iVar8 * 3) * 3] ==
+          '\0') goto cf_common_join_004C01F3;
     }
     if (this->field_0245 != CASE_0) goto cf_common_join_004C01F3;
     *(undefined1 *)((int)param_1 + 0x11) = 1;
@@ -716,22 +799,22 @@ LAB_004c0181:
   case CASE_61:
     *(undefined1 *)((int)param_1 + 10) = 0x3b;
     if (this->field_0024 != (byte *)this->field_023D) {
-      uVar13 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_4838 = GetPlayerRaceId((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      uVar14 = GetPlayerRaceId(*(char *)&this->field_0024);
-      if ((&DAT_007e1984)[(uVar14 & 0xff) + ((uVar13 & 0xff) + iVar8 * 3) * 3] == '\0')
-      goto cf_common_join_004C0278;
+      local_EAX_4877 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(local_EAX_4877 & 0xffU) + ((local_EAX_4838 & 0xffU) + iVar8 * 3) * 3] ==
+          '\0') goto cf_common_join_004C0278;
     }
     if (0 < (int)this->field_04E0[0xe]) goto LAB_004bf17b;
     goto cf_common_join_004C0278;
   case CASE_64:
     *(undefined1 *)((int)param_1 + 10) = 0x40;
     if (this->field_0024 != (byte *)this->field_023D) {
-      uVar13 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_4607 = GetPlayerRaceId((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      uVar14 = GetPlayerRaceId(*(char *)&this->field_0024);
-      if ((&DAT_007e1984)[(uVar14 & 0xff) + ((uVar13 & 0xff) + iVar8 * 3) * 3] == '\0')
-      goto cf_common_join_004C0278;
+      local_EAX_4646 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(local_EAX_4646 & 0xffU) + ((local_EAX_4607 & 0xffU) + iVar8 * 3) * 3] ==
+          '\0') goto cf_common_join_004C0278;
     }
     pAVar17 = (AnonPointee_TLOBaseTy_061B *)this->field_0245;
 joined_r0x004bfcb7:
@@ -768,11 +851,11 @@ LAB_004c0261:
   case CASE_6C:
     *(undefined1 *)((int)param_1 + 10) = 0x3e;
     if (this->field_0024 != (byte *)this->field_023D) {
-      uVar13 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_5062 = GetPlayerRaceId((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      uVar14 = GetPlayerRaceId(*(char *)&this->field_0024);
-      if ((&DAT_007e1984)[(uVar14 & 0xff) + ((uVar13 & 0xff) + iVar8 * 3) * 3] == '\0')
-      goto cf_common_join_004C0278;
+      local_EAX_5101 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(local_EAX_5101 & 0xffU) + ((local_EAX_5062 & 0xffU) + iVar8 * 3) * 3] ==
+          '\0') goto cf_common_join_004C0278;
     }
     if (this->field_0245 == CASE_0) {
       pAVar17 = this->field_061B;
@@ -788,11 +871,11 @@ LAB_004bfee5:
       uVar6 = 1;
     }
     else {
-      uVar13 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_5177 = GetPlayerRaceId((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      uVar14 = GetPlayerRaceId(*(char *)&this->field_0024);
-      if ((&DAT_007e1984)[(uVar14 & 0xff) + ((uVar13 & 0xff) + iVar8 * 3) * 3] != '\0')
-      goto LAB_004bfee5;
+      local_EAX_5216 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(local_EAX_5216 & 0xffU) + ((local_EAX_5177 & 0xffU) + iVar8 * 3) * 3] !=
+          '\0') goto LAB_004bfee5;
 LAB_004bff0a:
       uVar6 = 0;
     }
@@ -804,11 +887,11 @@ LAB_004bff65:
       uVar6 = 1;
     }
     else {
-      uVar13 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_5305 = GetPlayerRaceId((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      uVar14 = GetPlayerRaceId(*(char *)&this->field_0024);
-      if ((&DAT_007e1984)[(uVar14 & 0xff) + ((uVar13 & 0xff) + iVar8 * 3) * 3] != '\0')
-      goto LAB_004bff65;
+      local_EAX_5344 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(local_EAX_5344 & 0xffU) + ((local_EAX_5305 & 0xffU) + iVar8 * 3) * 3] !=
+          '\0') goto LAB_004bff65;
 LAB_004bff80:
       uVar6 = 0;
     }
@@ -822,11 +905,11 @@ LAB_004bffdb:
       }
     }
     else {
-      uVar13 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_5423 = GetPlayerRaceId((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      uVar14 = GetPlayerRaceId(*(char *)&this->field_0024);
-      if ((&DAT_007e1984)[(uVar14 & 0xff) + ((uVar13 & 0xff) + iVar8 * 3) * 3] != '\0')
-      goto LAB_004bffdb;
+      local_EAX_5462 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(local_EAX_5462 & 0xffU) + ((local_EAX_5423 & 0xffU) + iVar8 * 3) * 3] !=
+          '\0') goto LAB_004bffdb;
     }
 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
 LAB_004bfffc:
@@ -836,27 +919,27 @@ LAB_004bfffc:
     if (this->field_04E0[4] == 0) {
       *(undefined1 *)((int)param_1 + 10) = 0x36;
       if (this->field_0024 != (byte *)this->field_023D) {
-        uVar13 = GetPlayerRaceId((char)(byte *)this->field_023D);
+        local_EAX_4267 = GetPlayerRaceId((char)(byte *)this->field_023D);
         iVar8 = this->field_0235;
-        uVar14 = GetPlayerRaceId(*(char *)&this->field_0024);
-        if ((&DAT_007e1984)[(uVar14 & 0xff) + ((uVar13 & 0xff) + iVar8 * 3) * 3] == '\0')
-        goto cf_common_join_004C0278;
+        local_EAX_4306 = GetPlayerRaceId(*(char *)&this->field_0024);
+        if ((&DAT_007e1984)[(local_EAX_4306 & 0xffU) + ((local_EAX_4267 & 0xffU) + iVar8 * 3) * 3]
+            == '\0') goto cf_common_join_004C0278;
       }
       if (this->field_0245 != CASE_0) goto cf_common_join_004C0278;
-      TVar12 = this->field_04D0;
+      TVar13 = this->field_04D0;
     }
     else {
       *(undefined1 *)((int)param_1 + 10) = 0x34;
       if (this->field_0024 != (byte *)this->field_023D) {
-        uVar13 = GetPlayerRaceId((char)(byte *)this->field_023D);
+        local_EAX_4145 = GetPlayerRaceId((char)(byte *)this->field_023D);
         iVar8 = this->field_0235;
-        uVar14 = GetPlayerRaceId(*(char *)&this->field_0024);
-        if ((&DAT_007e1984)[(uVar14 & 0xff) + ((uVar13 & 0xff) + iVar8 * 3) * 3] == '\0')
-        goto cf_common_join_004C0278;
+        local_EAX_4184 = GetPlayerRaceId(*(char *)&this->field_0024);
+        if ((&DAT_007e1984)[(local_EAX_4184 & 0xffU) + ((local_EAX_4145 & 0xffU) + iVar8 * 3) * 3]
+            == '\0') goto cf_common_join_004C0278;
       }
-      TVar12 = this->field_0245;
+      TVar13 = this->field_0245;
     }
-    if ((TVar12 == CASE_0) && (99 < (int)this->field_04E0[3])) goto cf_common_join_004BEF5A;
+    if ((TVar13 == CASE_0) && (99 < (int)this->field_04E0[3])) goto cf_common_join_004BEF5A;
 cf_common_join_004C0278:
     uVar6 = 0;
 LAB_004bef5f:
@@ -870,11 +953,11 @@ LAB_004c005c:
       uVar6 = 1;
     }
     else {
-      uVar13 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_5552 = GetPlayerRaceId((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      uVar14 = GetPlayerRaceId(*(char *)&this->field_0024);
-      if ((&DAT_007e1984)[(uVar14 & 0xff) + ((uVar13 & 0xff) + iVar8 * 3) * 3] != '\0')
-      goto LAB_004c005c;
+      local_EAX_5591 = GetPlayerRaceId(*(char *)&this->field_0024);
+      if ((&DAT_007e1984)[(local_EAX_5591 & 0xffU) + ((local_EAX_5552 & 0xffU) + iVar8 * 3) * 3] !=
+          '\0') goto LAB_004c005c;
 LAB_004c006d:
       uVar6 = 0;
     }
@@ -893,7 +976,7 @@ LAB_004c00cc:
       uVar13 = GetPlayerRaceId((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
       uVar14 = GetPlayerRaceId(*(char *)&this->field_0024);
-      if ((&DAT_007e1984)[(uVar14 & 0xff) + ((uVar13 & 0xff) + iVar8 * 3) * 3] != '\0')
+      if ((&DAT_007e1984)[(uVar14 & 0xffU) + ((uVar13 & 0xffU) + iVar8 * 3) * 3] != '\0')
       goto LAB_004c00cc;
     }
 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -917,8 +1000,7 @@ cf_common_join_004C01F3:
         sVar18 = (short)this->field_03B0;
       }
       *(short *)((int)param_1 + 0x27) = sVar7 - sVar18;
-      *(short *)((int)param_1 + 0x2b) = (short)((this->field_039C * (100 - this->field_0394)) / 100)
-      ;
+      *(short *)((int)param_1 + 0x2b) = (short)((this->field_039C * (100 - this->field_0394)) / 100);
       *(char *)((int)param_1 + 0x2f) = (char)this->field_0394;
       iVar8 = GetPlayerRaceId(*(char *)&this->field_0024);
       *(char *)((int)param_1 + 0x25) = (char)iVar8;
@@ -1192,15 +1274,15 @@ cf_common_join_004C01F3:
       *(undefined1 *)((int)param_1 + 0x47) = 3;
       break;
     case 1:
-      uVar13 = GetPlayerRaceId(*(char *)&this->field_0024);
-      uVar13 = uVar13 & 0xff;
-      if (uVar13 == 1) {
+      local_EAX_8404 = GetPlayerRaceId(*(char *)&this->field_0024);
+      uVar12 = local_EAX_8404 & 0xff;
+      if (uVar12 == 1) {
         iVar8 = 0x3d;
       }
-      else if (uVar13 == 2) {
+      else if (uVar12 == 2) {
         iVar8 = 0x8d;
       }
-      else if (uVar13 == 3) {
+      else if (uVar12 == 3) {
         iVar8 = 0x49;
       }
       else {
@@ -1208,11 +1290,11 @@ cf_common_join_004C01F3:
       }
       *(undefined1 *)((int)param_1 + 0x47) = 1;
       iVar8 = thunk_FUN_004e60d0((int)this->field_0024,iVar8);
-      uVar13 = (g_playSystem_00802A38->field_00E4 * 100 +
+      uVar12 = (g_playSystem_00802A38->field_00E4 * 100 +
                g_playerRuntime[(int)this->field_0024].field2183_0xa1a * -100) /
                *(uint *)(&DAT_00798f6c + iVar8 * 4);
-      param_1[0x12] = uVar13;
-      if (100 < uVar13) {
+      param_1[0x12] = uVar12;
+      if (100 < uVar12) {
         param_1[0x12] = 100;
       }
       break;
@@ -1252,9 +1334,9 @@ cf_common_join_004C01F3:
     break;
   case CASE_45:
     if (*(int *)&this->field_0x361 != 3) {
-      TVar12 = this->field_04D0;
+      TVar13 = this->field_04D0;
 LAB_004c0285:
-      if (TVar12 == CASE_1) {
+      if (TVar13 == CASE_1) {
         *(undefined1 *)(param_1 + 0xd) = 0x28;
       }
       else {
@@ -1262,7 +1344,7 @@ LAB_004c0285:
       }
       break;
     }
-    TVar12 = this->field_0394;
+    TVar13 = this->field_0394;
     goto LAB_004c0ae0;
   case CASE_48:
     iVar8 = this->field_04D0 * 0x28;
@@ -1274,8 +1356,8 @@ LAB_004c0285:
             (char)((longlong)iVar8 * 0x68db8bad >> 0x3f);
     goto LAB_004c0fcc;
   case CASE_4E:
-    TVar12 = this->field_04D0;
-    if ((TVar12 != CASE_0) || (*(int *)&this->field_0x361 != 4)) goto LAB_004c0285;
+    TVar13 = this->field_04D0;
+    if ((TVar13 != CASE_0) || (*(int *)&this->field_0x361 != 4)) goto LAB_004c0285;
     iVar8 = this->field_0394 * 0x28;
 LAB_004c0f8e:
     cVar5 = ((char)(iVar8 / 100) + (char)(iVar8 >> 0x1f)) -
@@ -1383,15 +1465,15 @@ switchD_004bef7c_caseD_52:
     }
     break;
   case CASE_62:
-    uVar13 = thunk_FUN_004e41c0((int)this->field_0024);
-    *(uint *)((int)param_1 + 0x1d) = uVar13;
+    uVar12 = thunk_FUN_004e41c0((int)this->field_0024);
+    *(uint *)((int)param_1 + 0x1d) = uVar12;
     iVar8 = thunk_FUN_004e4180((int)this->field_0024);
     *(int *)((int)param_1 + 0x21) = iVar8;
     break;
   case CASE_64:
-    TVar12 = this->field_04D0;
+    TVar13 = this->field_04D0;
     *(undefined4 *)((int)param_1 + 0x21) = 100;
-    *(TLOBaseTy_field_04D0State *)((int)param_1 + 0x1d) = TVar12;
+    *(TLOBaseTy_field_04D0State *)((int)param_1 + 0x1d) = TVar13;
     break;
   case CASE_68:
     *(undefined1 *)(param_1 + 7) = 0x21;
@@ -1442,9 +1524,9 @@ switchD_004bef7c_caseD_52:
     puVar16 = this->field_04E0;
     iVar8 = 0x28;
     do {
-      uVar13 = *puVar16;
+      uVar12 = *puVar16;
       puVar16 = puVar16 + 1;
-      *(short *)((int)param_1 + 0x3a) = *(short *)((int)param_1 + 0x3a) + (short)uVar13;
+      *(short *)((int)param_1 + 0x3a) = *(short *)((int)param_1 + 0x3a) + (short)uVar12;
       iVar8 = iVar8 + -1;
     } while (iVar8 != 0);
     break;
@@ -1558,14 +1640,14 @@ LAB_004c0fcc:
   bVar23 = SUB41(pAVar17,0);
   switch(this->field_05AC) {
   case CASE_33:
-    uVar13 = thunk_FUN_004e22f0(this,0);
-    if (uVar13 == 0) {
-      uVar13 = thunk_FUN_004e22f0(this,1);
+    uVar12 = thunk_FUN_004e22f0(this,0);
+    if (uVar12 == 0) {
+      uVar12 = thunk_FUN_004e22f0(this,1);
       pAVar17 = (AnonPointee_TLOBaseTy_061B *)0x0;
-      if (uVar13 == 0) break;
+      if (uVar12 == 0) break;
     }
     piVar4[0x16] = 0xbc5;
-    return SUB41(uVar13,0);
+    return SUB41(uVar12,0);
   case CASE_34:
     piVar4[0x16] = 0xbc6;
     return bVar23;
@@ -1661,9 +1743,9 @@ LAB_004c12d3:
 switchD_004c107c_default:
   return SUB41(pAVar17,0);
 switchD_004bef7c_caseD_37:
-  TVar12 = this->field_04D0;
+  TVar13 = this->field_04D0;
 LAB_004c0ae0:
-  iVar8 = (int)(TVar12 * 0x28) / 100 + ((int)(TVar12 * 0x28) >> 0x1f);
+  iVar8 = (int)(TVar13 * 0x28) / 100 + ((int)(TVar13 * 0x28) >> 0x1f);
   goto cf_common_join_004C0FC5;
 }
 

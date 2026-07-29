@@ -354,8 +354,7 @@ cf_common_join_006C0E05:
             }
           }
           if (local_18 != 0) {
-            PostMessageA(g_hWnd_00854FF0,0x3b9,(-(uint)bVar2 & 7) + 1,local_c & 0xffff | 0x44530000)
-            ;
+            PostMessageA(g_hWnd_00854FF0,0x3b9,(-(uint)bVar2 & 7) + 1,local_c & 0xffff | 0x44530000);
           }
         }
       }

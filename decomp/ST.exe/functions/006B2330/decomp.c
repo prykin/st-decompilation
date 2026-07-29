@@ -47,7 +47,7 @@ void FUN_006b2330(DDXContext_008075A8 *param_1,uint *param_2,uint param_3,uint p
   iVar2 = Library::DKW::DDX::FUN_006b1d50
                     ((uint)param_1,param_2,param_3,0,(int *)0x0,0,0xffffffff,0xffffffff,0,1);
   if (iVar2 == 0) {
-    pDVar1 = param_1->entries[*param_2];
+    pDVar1 = param_1->entries_01B0[*param_2];
     pDVar1->field_0038 = param_5;
     pDVar1->field_0030 = param_5;
     pDVar1->field_0020 = param_5;

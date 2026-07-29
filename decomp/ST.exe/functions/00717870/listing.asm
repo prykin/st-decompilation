@@ -1,4 +1,4 @@
-FUN_00717870:
+ST3DSMAPContext::sub_00717870:
 00717870  53                        PUSH EBX
 00717871  56                        PUSH ESI
 00717872  57                        PUSH EDI

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STMethodOwnerApplier] Structural method owner recovered as BldLabPanelTy.
    Evidence: this_call_owners=[BldLabPanelTy]; agreed_this_calls=1; incoming_this_accesses=18;
@@ -7,11 +9,11 @@
 void __thiscall BldLabPanelTy::sub_004EFE20(BldLabPanelTy *this)
 
 {
-  DArrayTy *pDVar1;
+  BldLabPanelTy_field_027ADArray *pBVar1;
   UINT UVar2;
   uint uVar3;
   int iVar4;
-  Global_sub_00523410_param_1Enum *pGVar5;
+  Global_sub_00526BA0_param_1Enum *pGVar5;
   byte *pbVar6;
   undefined4 *puVar7;
   undefined4 *puVar8;
@@ -20,7 +22,7 @@ void __thiscall BldLabPanelTy::sub_004EFE20(BldLabPanelTy *this)
   undefined4 *local_c;
   int local_8;
 
-  if (this->field_027A != (DArrayTy *)0x0) {
+  if (this->field_027A != (BldLabPanelTy_field_027ADArray *)0x0) {
     local_c = &this->field_01BE;
     puVar7 = &this->field_01A1;
     local_8 = 0;
@@ -44,12 +46,13 @@ LAB_004eff2c:
         uVar9 = *puVar7;
       }
       FUN_006e6080(this,2,uVar9,(undefined4 *)&this->field_0x18);
-      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar1, uVar3) (runtime stride) */
-      if ((((this->field_002C != 0) && (pDVar1 = this->field_027A, pDVar1 != (DArrayTy *)0x0)) &&
-          (uVar3 = this->field_0199 + local_8, uVar3 < pDVar1->count)) &&
-         (pGVar5 = (Global_sub_00523410_param_1Enum *)
-                   (pDVar1->elementSize * uVar3 + (int)pDVar1->data),
-         pGVar5 != (Global_sub_00523410_param_1Enum *)0x0)) {
+      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
+      if ((((this->field_002C != 0) &&
+           (pBVar1 = this->field_027A, pBVar1 != (BldLabPanelTy_field_027ADArray *)0x0)) &&
+          (uVar3 = this->field_0199 + local_8, uVar3 < pBVar1->count)) &&
+         (pGVar5 = (Global_sub_00526BA0_param_1Enum *)
+                   ((int)&pBVar1->data->field_0000 + pBVar1->elementSize * uVar3),
+         pGVar5 != (Global_sub_00526BA0_param_1Enum *)0x0)) {
         *(char *)((int)local_c + -9) = ((char)pGVar5[2] == 0) + '\x03';
         UVar2 = thunk_FUN_00523410(*pGVar5,'\x03',0);
         local_c[-2] = UVar2;

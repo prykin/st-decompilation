@@ -71,8 +71,7 @@ FSGSTy::SetBanner(FSGSTy *this,char *param_1,undefined4 param_2,int param_3,uint
             local_10 = 0x40;
             do {
               puVar1 = (undefined1 *)((int)&local_8e0 + iVar4 + 1);
-              (&pFVar13->field_1A97[1].field_0x12)[iVar4] = *(undefined1 *)((int)&local_8e0 + iVar4)
-              ;
+              (&pFVar13->field_1A97[1].field_0x12)[iVar4] = *(undefined1 *)((int)&local_8e0 + iVar4);
               (&pFVar13->field_1A97[1].field_0x11)[iVar4] = *puVar1;
               iVar10 = iVar4 + 2;
               iVar4 = iVar4 + 4;

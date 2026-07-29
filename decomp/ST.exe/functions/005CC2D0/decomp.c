@@ -11,10 +11,10 @@ void __thiscall SettMapMTy::DoneSettMap(SettMapMTy *this)
   code *pcVar1;
   SettMapMTy *this_00;
   int errorCode;
-  void *pvVar2;
-  int iVar3;
-  DArrayTy *pDVar4;
-  uint uVar5;
+  SettMapMTy_field_2237Element *piVar2;
+  int iVar2;
+  SettMapMTy_field_2237DArray *pSVar3;
+  uint uVar4;
   InternalExceptionFrame local_4c;
   SettMapMTy *local_8;
 
@@ -25,9 +25,9 @@ void __thiscall SettMapMTy::DoneSettMap(SettMapMTy *this)
   this_00 = local_8;
   if (errorCode != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar3 = ReportDebugMessage("E:\\__titans\\Start\\settmobj.cpp",0x65,0,errorCode,
+    iVar2 = ReportDebugMessage("E:\\__titans\\Start\\settmobj.cpp",0x65,0,errorCode,
                                "%s","SettMapMTy::DoneSettMap");
-    if (iVar3 != 0) {
+    if (iVar2 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(errorCode,0,"E:\\__titans\\Start\\settmobj.cpp",0x65);
@@ -37,28 +37,29 @@ void __thiscall SettMapMTy::DoneSettMap(SettMapMTy *this)
     FreeAndNull(&local_8->field_2204);
   }
   FUN_006b3bb0((int *)g_ddxContext_008075A8,this_00->field_2200);
-  pDVar4 = this_00->field_2237;
+  pSVar3 = this_00->field_2237;
   this_00->field_2200 = -1;
-  if (pDVar4 != (DArrayTy *)0x0) {
-    uVar5 = 0;
-    if (pDVar4->count != 0) {
-      if (pDVar4->count == 0) {
-        pvVar2 = (void *)0x0;
+  if (pSVar3 != (SettMapMTy_field_2237DArray *)0x0) {
+    uVar4 = 0;
+    if (pSVar3->count != 0) {
+      if (pSVar3->count == 0) {
+        piVar2 = (SettMapMTy_field_2237Element *)0x0;
         goto LAB_005cc360;
       }
       do {
-        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar4, uVar5) (runtime stride) */
-        pvVar2 = (void *)(pDVar4->elementSize * uVar5 + (int)pDVar4->data);
+        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
+        piVar2 = (SettMapMTy_field_2237Element *)
+                 ((int)&pSVar3->data->field_0000 + pSVar3->elementSize * uVar4);
 LAB_005cc360:
-        if ((pvVar2 != (void *)0x0) && (*(int *)((int)pvVar2 + 8) != 0)) {
-          FreeAndNull((void **)((int)pvVar2 + 8));
+        if ((piVar2 != (SettMapMTy_field_2237Element *)0x0) && (piVar2->field_0008 != 0)) {
+          FreeAndNull((void **)&piVar2->field_0008);
         }
-        pDVar4 = this_00->field_2237;
-        uVar5 = uVar5 + 1;
-      } while (uVar5 < pDVar4->count);
+        pSVar3 = this_00->field_2237;
+        uVar4 = uVar4 + 1;
+      } while (uVar4 < pSVar3->count);
     }
-    DArrayDestroy(this_00->field_2237);
-    this_00->field_2237 = (DArrayTy *)0x0;
+    DArrayDestroy((DArrayTy *)this_00->field_2237);
+    this_00->field_2237 = (SettMapMTy_field_2237DArray *)0x0;
   }
   SettMapTy::DoneSettMap((SettMapTy *)this_00);
   g_currentExceptionFrame = local_4c.previous;

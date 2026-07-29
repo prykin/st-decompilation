@@ -5,6 +5,7 @@ int __thiscall FUN_00605b60(void *this,uint param_1,uint param_2,int *param_3,in
 
 {
   void *this_00;
+  int local_EAX_24;
   uint uVar1;
   int *piVar2;
   int iVar3;
@@ -45,8 +46,8 @@ int __thiscall FUN_00605b60(void *this,uint param_1,uint param_2,int *param_3,in
   int local_8;
 
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  local_24 = GetPlayerRaceId(in_stack_00000020);
-  local_24 = local_24 & 0xff;
+  local_EAX_24 = GetPlayerRaceId(in_stack_00000020);
+  local_24 = local_EAX_24 & 0xff;
   local_c = (uint)param_3 & 0xffff;
   uVar5 = (uint)param_3 >> 0x10;
   local_18 = param_2 & 0xffff;

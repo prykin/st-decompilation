@@ -88,7 +88,7 @@ int __thiscall STOctopusC::GetMessage(STOctopusC *this,STMessage *message)
         return 0;
       }
       uVar9 = thunk_FUN_004ad650((STT3DSprC *)&this_00->field_01D5);
-      FUN_006eab60((void *)this_00->field_0211,uVar9);
+      Library::Ourlib::ST3DSMAP::SprHide(this_00->field_0211,uVar9);
       thunk_FUN_005899e0(this_00);
       *(undefined4 *)&this_00->field_0x249 = 2;
       g_currentExceptionFrame = local_88.previous;
@@ -303,8 +303,7 @@ cf_error_exit_0058A005:
       break;
     case 0xfa:
       iVar6 = STT3DSprC::LoadSequence
-                        ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_0080676c,"medusa2",0x1d)
-      ;
+                        ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_0080676c,"medusa2",0x1d);
       if (iVar6 != 0) {
         iVar6 = 0xf3;
         goto cf_error_exit_0058A005;
@@ -312,8 +311,7 @@ cf_error_exit_0058A005:
       break;
     case 0xfb:
       iVar6 = STT3DSprC::LoadSequence
-                        ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_0080676c,"medusa1",0x1d)
-      ;
+                        ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_0080676c,"medusa1",0x1d);
       if (iVar6 != 0) {
         iVar6 = 0xee;
         goto cf_error_exit_0058A005;

@@ -15,7 +15,7 @@ CGenerate::sub_00695C10
           undefined4 param_5)
 
 {
-  DArrayTy *pDVar1;
+  CGenerate_field_5853DArray *pCVar1;
   uint uVar2;
   uint local_24;
   undefined1 local_20;
@@ -32,11 +32,12 @@ CGenerate::sub_00695C10
   local_20 = (undefined1)param_3;
   local_1b = param_4;
   local_17 = param_5;
-  if (this->field_5853 == (DArrayTy *)0x0) {
-    pDVar1 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x1d,10);
-    this->field_5853 = pDVar1;
+  if (this->field_5853 == (CGenerate_field_5853DArray *)0x0) {
+    pCVar1 = (CGenerate_field_5853DArray *)
+             Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x1d,10);
+    this->field_5853 = pCVar1;
   }
-  if (this->field_5853 != (DArrayTy *)0x0) {
+  if (this->field_5853 != (CGenerate_field_5853DArray *)0x0) {
     uVar2 = Library::DKW::TBL::FUN_006ae1c0(&this->field_5853->flags,&local_24);
     return uVar2;
   }

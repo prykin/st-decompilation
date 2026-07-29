@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __cdecl FUN_00575460(AnonShape_00575460_06C413C6 *param_1)
 
@@ -5,7 +7,7 @@ void __cdecl FUN_00575460(AnonShape_00575460_06C413C6 *param_1)
   void **value;
   int iVar1;
   uint uVar2;
-  AnonShape_GLOBAL_0080760C_46D7AF7A *pAVar3;
+  ST3DSMAPContext *pSVar3;
   AnonShape_00575460_06C413C6 *pAVar4;
   DArrayTy *array;
   int iVar5;
@@ -13,11 +15,11 @@ void __cdecl FUN_00575460(AnonShape_00575460_06C413C6 *param_1)
   int local_8;
 
   pAVar4 = param_1;
-  pAVar3 = PTR_0080760c;
-  if (PTR_0080760c != (AnonShape_GLOBAL_0080760C_46D7AF7A *)0x0) {
-    FUN_006dbcf0((int *)PTR_0080760c);
-    Library::MSVCRT::FUN_0072e2b0((HoloTy *)pAVar3);
-    PTR_0080760c = (AnonShape_GLOBAL_0080760C_46D7AF7A *)0x0;
+  pSVar3 = g_sT3DSMAPContext_0080760C;
+  if (g_sT3DSMAPContext_0080760C != (ST3DSMAPContext *)0x0) {
+    ST3DSMAPContext::sub_006DBCF0(g_sT3DSMAPContext_0080760C);
+    Library::MSVCRT::FUN_0072e2b0((HoloTy *)pSVar3);
+    g_sT3DSMAPContext_0080760C = (ST3DSMAPContext *)0x0;
   }
   if (param_1 != (AnonShape_00575460_06C413C6 *)0x0) {
     array = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0x14,4,0x14);

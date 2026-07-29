@@ -23,18 +23,22 @@ void __thiscall STSharkC::LifeShark(STSharkC *this,int *param_1)
   short sVar3;
   code *pcVar4;
   int iVar5;
-  uint uVar6;
-  STGameObjC *pSVar7;
+  uint uVar7;
+  int SVar9;
   STGameObjC *pSVar8;
-  STSharkC_field_0257State SVar9;
+  int local_EAX_1222;
+  int local_EAX_1250;
+  STGameObjC *pSVar9;
+  STSharkC_field_0257State SVar10;
+  int uVar6;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_00;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   int *unaff_EDI;
-  AnonShape_0041AF40_F59F8577 *pAVar11;
-  int iVar12;
+  AnonShape_0041AF40_F59F8577 *pAVar12;
+  int iVar13;
   AnonShape_0041AF40_F59F8577 local_30;
   uint local_10;
   undefined4 local_c;
@@ -44,26 +48,25 @@ void __thiscall STSharkC::LifeShark(STSharkC *this,int *param_1)
   this_00 = &this->field_01D5;
   if (iVar5 == 0) {
     iVar5 = 0;
-    uVar6 = thunk_FUN_004ad650((STT3DSprC *)this_00);
-    FUN_006eabf0((void *)this->field_0211,uVar6,iVar5);
+    uVar7 = thunk_FUN_004ad650((STT3DSprC *)this_00);
+    Library::Ourlib::ST3DSMAP::SprSetVisible((void *)this->field_0211,uVar7,iVar5);
     iVar5 = thunk_FUN_0041caf0((AnonShape_0041CAF0_1630B9E0 *)this);
-    uVar6 = (uint)(iVar5 == 1);
+    uVar7 = (uint)(iVar5 == 1);
     iVar5 = thunk_FUN_004ad650((STT3DSprC *)this_00);
-    FUN_006e6870((void *)this->field_0211,iVar5,uVar6);
+    FUN_006e6870((void *)this->field_0211,iVar5,uVar7);
   }
   else {
     iVar5 = 1;
-    uVar6 = thunk_FUN_004ad650((STT3DSprC *)this_00);
-    FUN_006eabf0((void *)this->field_0211,uVar6,iVar5);
-    iVar12 = 1;
+    uVar7 = thunk_FUN_004ad650((STT3DSprC *)this_00);
+    Library::Ourlib::ST3DSMAP::SprSetVisible((void *)this->field_0211,uVar7,iVar5);
+    iVar13 = 1;
     iVar5 = thunk_FUN_004ad650((STT3DSprC *)this_00);
-    FUN_006e6870((void *)this->field_0211,iVar5,iVar12);
+    FUN_006e6870((void *)this->field_0211,iVar5,iVar13);
   }
   if (0 < this->field_0241) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     STT3DSprC::sub_004ACE30
-              ((STT3DSprC *)this_00,*(uint *)(DAT_00806724 + 0x2c + this->field_0241 * 4),
-               (int)*(short *)(DAT_00806724 + 0x2c));
+              ((STT3DSprC *)this_00,PTR_00806724->entries[this->field_0241 + -1],
+               (int)PTR_00806724->field_002C);
     if ((g_playSystem_00802A38->field_00E4 % 3 == 0) &&
        (iVar5 = this->field_0241 + -1, this->field_0241 = iVar5, iVar5 < 1)) {
       thunk_FUN_004aceb0(this_00,'\x0e');
@@ -84,8 +87,8 @@ void __thiscall STSharkC::LifeShark(STSharkC *this,int *param_1)
                 (0xffff,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\To_shark.cpp",0x2dd);
     }
     else if (iVar5 == 1) {
-      SVar9 = thunk_FUN_0058f1e0(this,(uint)(0x1d < this->field_0253));
-      this->field_0257 = SVar9;
+      SVar10 = thunk_FUN_0058f1e0(this,(uint)(0x1d < this->field_0253));
+      this->field_0257 = SVar10;
       this->field_0253 = this->field_0253 + 1;
     }
     break;
@@ -106,8 +109,8 @@ LAB_0058ea68:
           iVar5 = this->vfunc_20();
           if (iVar5 == 1) {
             this->field_0253 = 0;
-            SVar9 = thunk_FUN_0058f1e0(this,1);
-            this->field_0257 = SVar9;
+            SVar10 = thunk_FUN_0058f1e0(this,1);
+            this->field_0257 = SVar10;
           }
         }
       }
@@ -118,18 +121,18 @@ LAB_0058ea68:
         if (((((-1 < sVar1) && (sVar1 < g_worldGrid.sizeX)) &&
              ((-1 < sVar3 && ((sVar3 < g_worldGrid.sizeY && (-1 < sVar2)))))) &&
             (sVar2 < g_worldGrid.sizeZ)) &&
-           ((((pSVar7 = (STGameObjC *)
+           ((((pSVar8 = (STGameObjC *)
                         g_worldGrid.cells
                         [(int)g_worldGrid.planeStride * (int)sVar2 +
                          (int)g_worldGrid.sizeX * (int)sVar3 + (int)sVar1].objects[0],
-              local_8 = pSVar7, pSVar7 != (STGameObjC *)0x0 &&
+              local_8 = pSVar8, pSVar8 != (STGameObjC *)0x0 &&
               (STFishC::sub_004162B0
-                         ((STFishC *)pSVar7,&this->field_0231,&this->field_0233,&this->field_0235),
+                         ((STFishC *)pSVar8,&this->field_0231,&this->field_0233,&this->field_0235),
               this->field_0047 == this->field_0231)) && (this->field_0049 == this->field_0233)) &&
             ((this->field_004B == this->field_0235 &&
-             (pSVar8 = STAllPlayersC::GetObjPtr
+             (pSVar9 = STAllPlayersC::GetObjPtr
                                  (g_allPlayers_007FA174,*(char *)&this->field_0249,this->field_024D,
-                                  CASE_1), pSVar7 == pSVar8)))))) goto LAB_0058e87e;
+                                  CASE_1), pSVar8 == pSVar9)))))) goto LAB_0058e87e;
       }
     }
     else {
@@ -147,8 +150,8 @@ LAB_0058ea68:
       if (this->field_0257 == CASE_4) break;
       SVar9 = sub_0058F430(this);
       if (this->field_023D == 0) {
-        uVar6 = sub_0058FF70(this);
-        this->field_024F = uVar6;
+        local_EAX_1250 = sub_0058FF70(this);
+        this->field_024F = local_EAX_1250;
         this->field_0257 = CASE_0;
         break;
       }
@@ -173,17 +176,17 @@ LAB_0058ea68:
       }
       if (((this->field_0047 != sVar3) || (this->field_0049 != sVar2)) ||
          ((this->field_004B != sVar1 ||
-          (pSVar7 = STAllPlayersC::GetObjPtr
+          (pSVar8 = STAllPlayersC::GetObjPtr
                               (g_allPlayers_007FA174,*(char *)&this->field_0249,this->field_024D,
-                               CASE_1), local_8 != pSVar7)))) {
+                               CASE_1), local_8 != pSVar8)))) {
         iVar5 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004167A0::thunk_FUN_00418030
                           ((AnonReceiver_004167A0 *)this,this->field_0231,this->field_0233,
                            this->field_0235);
         thunk_FUN_00417ff0(this,8);
         thunk_FUN_00418010(this,6);
         if (iVar5 != 0) {
-          uVar6 = sub_0058FF70(this);
-          this->field_024F = uVar6;
+          local_EAX_1222 = sub_0058FF70(this);
+          this->field_024F = local_EAX_1222;
           this->field_0257 = CASE_0;
         }
         break;
@@ -192,10 +195,10 @@ LAB_0058ea68:
       iVar5 = 0;
 LAB_0058e87e:
       DAT_00811728 = 1000;
-      pAVar11 = &local_30;
+      pAVar12 = &local_30;
       for (iVar5 = 8; iVar5 != 0; iVar5 = iVar5 + -1) {
-        *(undefined4 *)pAVar11 = 0;
-        pAVar11 = (AnonShape_0041AF40_F59F8577 *)&pAVar11->field_0x4;
+        *(undefined4 *)pAVar12 = 0;
+        pAVar12 = (AnonShape_0041AF40_F59F8577 *)&pAVar12->field_0x4;
       }
       _DAT_00811730 = 0xff;
       _DAT_00811734 = 0xffff;
@@ -219,8 +222,8 @@ LAB_0058e87e:
     break;
   case CASE_4:
     iVar5 = STT3DSprC::sub_004ACD30((STT3DSprC *)this_00,'\b');
-    iVar12 = thunk_FUN_004ac910(this_00,'\b');
-    if (iVar12 == iVar5 + -1) {
+    iVar13 = thunk_FUN_004ac910(this_00,'\b');
+    if (iVar13 == iVar5 + -1) {
       this->field_0257 = CASE_7;
       STT3DSprC::StopShow((STT3DSprC *)this_00,8);
       sub_0058EFE0(this);
@@ -263,11 +266,11 @@ LAB_0058e87e:
 cf_common_exit_0058E925:
   if ((this->field_0257 != CASE_4) && (this->field_0257 != CASE_7)) {
     iVar5 = (0x18 - (int)this->field_006C / 0xf) % 0x18;
-    uVar6 = g_playSystem_00802A38->field_00E4 % 0x1e;
-    local_10 = uVar6 + (iVar5 / 3) * 0x1e;
+    uVar7 = g_playSystem_00802A38->field_00E4 % 0x1e;
+    local_10 = uVar7 + (iVar5 / 3) * 0x1e;
     STT3DSprC::SetCurFase
               ((STT3DSprC *)this_00,'\x0e',
-               uVar6 + (((iVar5 + (4 - DAT_008073fc) * 6) % 0x18) / 3) * 0x1e);
+               uVar7 + (((iVar5 + (4 - DAT_008073fc) * 6) % 0x18) / 3) * 0x1e);
     STT3DSprC::SetCurShad((STT3DSprC *)this_00,'\x0e',local_10);
     STT3DSprC::ShowCurFase((STT3DSprC *)this_00,'\x0e');
   }

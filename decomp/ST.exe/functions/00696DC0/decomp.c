@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STMethodOwnerApplier] Structural method owner recovered as CGenerate.
    Evidence: this_call_owners=[CGenerate]; agreed_this_calls=1; incoming_this_accesses=2;
@@ -7,56 +9,59 @@
 void __thiscall CGenerate::sub_00696DC0(CGenerate *this,int param_1,int param_2)
 
 {
-  int *piVar1;
-  uint uVar2;
-  DArrayTy *pDVar3;
-  int iVar4;
-  uint uVar5;
-  AnonShape_00696D00_CB3CB395 *pAVar6;
-  int iVar7;
-  bool bVar8;
+  CGenerate_field_5853Element *piVar1;
+  uint uVar1;
+  CGenerate_field_5853DArray *pCVar2;
+  int iVar3;
+  uint uVar4;
+  CGenerate_field_5853Element *pAVar6;
+  int iVar5;
+  bool bVar6;
 
-  pDVar3 = this->field_5853;
-  if (pDVar3 == (DArrayTy *)0x0) {
+  pCVar2 = this->field_5853;
+  if (pCVar2 == (CGenerate_field_5853DArray *)0x0) {
     return;
   }
-  uVar2 = pDVar3->count;
-  iVar7 = 0;
-  uVar5 = 0;
-  if (0 < (int)uVar2) {
-    bVar8 = uVar2 != 0;
+  uVar1 = pCVar2->count;
+  iVar5 = 0;
+  uVar4 = 0;
+  if (0 < (int)uVar1) {
+    bVar6 = uVar1 != 0;
     do {
-      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar3, uVar5) (runtime stride) */
-      if ((((bVar8) &&
-           (piVar1 = (int *)(pDVar3->elementSize * uVar5 + (int)pDVar3->data), piVar1 != (int *)0x0)
-           ) && (*(int *)((int)piVar1 + 0x11) <= param_2)) && (*piVar1 == param_1)) {
-        iVar7 = iVar7 + 1;
+      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
+      if ((((bVar6) &&
+           (piVar1 = (CGenerate_field_5853Element *)
+                     ((int)&pCVar2->data->field_0000 + pCVar2->elementSize * uVar4),
+           piVar1 != (CGenerate_field_5853Element *)0x0)) && (piVar1->field_0011 <= param_2)) &&
+         (piVar1->field_0000 == param_1)) {
+        iVar5 = iVar5 + 1;
       }
-      uVar5 = uVar5 + 1;
-      bVar8 = uVar5 < uVar2;
-    } while ((int)uVar5 < (int)uVar2);
-    iVar4 = 4;
-    if (3 < iVar7) goto LAB_00696e1a;
+      uVar4 = uVar4 + 1;
+      bVar6 = uVar4 < uVar1;
+    } while ((int)uVar4 < (int)uVar1);
+    iVar3 = 4;
+    if (3 < iVar5) goto LAB_00696e1a;
   }
-  iVar4 = 1;
+  iVar3 = 1;
 LAB_00696e1a:
-  uVar5 = 0;
-  if (0 < (int)uVar2) {
-    bVar8 = uVar2 != 0;
+  uVar4 = 0;
+  if (0 < (int)uVar1) {
+    bVar6 = uVar1 != 0;
     do {
-      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar3, uVar5) (runtime stride) */
-      if (((bVar8) &&
-          (pAVar6 = (AnonShape_00696D00_CB3CB395 *)(pDVar3->elementSize * uVar5 + (int)pDVar3->data)
-          , pAVar6 != (AnonShape_00696D00_CB3CB395 *)0x0)) &&
-         ((*(int *)&pAVar6->field_0x11 <= param_2 &&
-          ((*(int *)pAVar6 == param_1 &&
-           (uVar2 = Library::MSVCRT::FUN_0072e6c0(), (int)uVar2 % (iVar4 + 1) != 0)))))) {
-        thunk_FUN_00696d00(this,pAVar6,uVar5);
+      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
+      if (((bVar6) &&
+          (pAVar6 = (CGenerate_field_5853Element *)
+                    ((int)&pCVar2->data->field_0000 + pCVar2->elementSize * uVar4),
+          pAVar6 != (CGenerate_field_5853Element *)0x0)) &&
+         ((pAVar6->field_0011 <= param_2 &&
+          ((pAVar6->field_0000 == param_1 &&
+           (uVar1 = Library::MSVCRT::FUN_0072e6c0(), (int)uVar1 % (iVar3 + 1) != 0)))))) {
+        thunk_FUN_00696d00(this,(AnonShape_00696D00_CB3CB395 *)pAVar6,uVar4);
       }
-      uVar5 = uVar5 + 1;
-      pDVar3 = this->field_5853;
-      bVar8 = uVar5 < pDVar3->count;
-    } while ((int)uVar5 < (int)pDVar3->count);
+      uVar4 = uVar4 + 1;
+      pCVar2 = this->field_5853;
+      bVar6 = uVar4 < pCVar2->count;
+    } while ((int)uVar4 < (int)pCVar2->count);
   }
   return;
 }

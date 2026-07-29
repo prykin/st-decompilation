@@ -102,7 +102,8 @@ public class STSourceProvenanceApplier extends GhidraScript {
                     details.add("name_apply=1 but proposed_name is empty");
                 }
                 else if (function.getName().equals(proposedName) &&
-                        function.getParentNamespace().isGlobal()) {
+                        (function.getParentNamespace().isGlobal() ||
+                         hasTag(function, NAME_TAG))) {
                     nameStatus = "unchanged";
                     function.addTag(NAME_TAG);
                 }
@@ -163,8 +164,11 @@ public class STSourceProvenanceApplier extends GhidraScript {
         if (function.getSymbol().getSource() == SourceType.DEFAULT) return true;
         boolean previouslyApplied = function.getTags().stream()
             .anyMatch(tag -> NAME_TAG.equals(tag.getName()));
-        return previouslyApplied && function.getName().equals(proposedName) &&
-            function.getParentNamespace().isGlobal();
+        return previouslyApplied && function.getName().equals(proposedName);
+    }
+
+    private boolean hasTag(Function function, String name) {
+        return function.getTags().stream().anyMatch(tag -> name.equals(tag.getName()));
     }
 
     private File inputFile() throws Exception {

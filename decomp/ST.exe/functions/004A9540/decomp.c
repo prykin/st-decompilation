@@ -67,20 +67,22 @@ void __thiscall OpticClassC::ReInitOptic(OpticClassC *this,int param_1)
   _DAT_00807459 = 0;
   DAT_00807424 = (float)((float10)local_14 * ((float10)_DAT_00790580 / fVar5));
   _DAT_0080742c = DAT_00807424;
-  FUN_006dbd20(PTR_00807598,g_dDXContext_0080759C,(&DAT_00807568)[param_1 * 4],
-               (&DAT_0080756c)[param_1 * 4],(&DAT_00807570)[param_1 * 4],local_14,
-               SUB84((double)(DAT_00807420 * _DAT_00790780),0),
-               (int)((ulonglong)(double)(DAT_00807420 * _DAT_00790780) >> 0x20),
-               SUB84((double)(DAT_00807420 * _DAT_00790784),0),
-               (int)((ulonglong)(double)(DAT_00807420 * _DAT_00790784) >> 0x20),
-               (double)(DAT_00807424 * _DAT_00790780),(double)(DAT_00807424 * _DAT_00790784));
-  FUN_006dd530(PTR_00807598,&local_10,&local_c,&local_8);
-  FUN_006dd790(PTR_00807598,
-               ((local_8 - _DAT_0079077c) * (float)_DAT_00790770 - _DAT_0080742c * _DAT_00790784) -
-               _DAT_0080742c * _DAT_0079070c);
-  FUN_006dd800(PTR_00807598,
-               _DAT_0080742c * _DAT_00790784 + local_8 * (float)_DAT_00790770 + (float)_DAT_00790760
-              );
+  ST3DSMAPContext::sub_006DBD20
+            (g_sT3DSMAPContext_00807598,g_dDXContext_0080759C,(&DAT_00807568)[param_1 * 4],
+             (&DAT_0080756c)[param_1 * 4],(&DAT_00807570)[param_1 * 4],local_14,
+             SUB84((double)(DAT_00807420 * _DAT_00790780),0),
+             (int)((ulonglong)(double)(DAT_00807420 * _DAT_00790780) >> 0x20),
+             SUB84((double)(DAT_00807420 * _DAT_00790784),0),
+             (int)((ulonglong)(double)(DAT_00807420 * _DAT_00790784) >> 0x20),
+             (double)(DAT_00807424 * _DAT_00790780),(double)(DAT_00807424 * _DAT_00790784));
+  ST3DSMAPContext::sub_006DD530(g_sT3DSMAPContext_00807598,&local_10,&local_c,&local_8);
+  ST3DSMAPContext::sub_006DD790
+            (g_sT3DSMAPContext_00807598,
+             ((local_8 - _DAT_0079077c) * (float)_DAT_00790770 - _DAT_0080742c * _DAT_00790784) -
+             _DAT_0080742c * _DAT_0079070c);
+  ST3DSMAPContext::sub_006DD800
+            (g_sT3DSMAPContext_00807598,
+             _DAT_0080742c * _DAT_00790784 + local_8 * (float)_DAT_00790770 + (float)_DAT_00790760);
   thunk_FUN_004a9b60(DAT_00807410,DAT_00807414,DAT_00807418,DAT_0080741c);
   thunk_FUN_004a8f20(1);
   DAT_0080674c = 2;

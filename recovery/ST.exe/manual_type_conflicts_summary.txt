@@ -1,6 +1,6 @@
 program=ST.exe
-candidates=16
-likely_stale=12
+candidates=18
+likely_stale=14
 approved_overrides=0
 review=4
 note=This report is deliberately read-only. USER_DEFINED/IMPORTED types are never silently replaced.

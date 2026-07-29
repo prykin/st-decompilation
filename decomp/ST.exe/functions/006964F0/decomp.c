@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STMethodOwnerApplier] Structural method owner recovered as CGenerate.
    Evidence: this_call_owners=[CGenerate]; agreed_this_calls=1; incoming_this_accesses=6;
@@ -7,7 +9,7 @@
 void __thiscall CGenerate::sub_006964F0(CGenerate *this,uint param_1,int param_2)
 
 {
-  DArrayTy *pDVar1;
+  CGenerate_field_5853DArray *pCVar1;
   int iVar2;
   uint uVar3;
   undefined1 *puVar4;
@@ -26,10 +28,11 @@ void __thiscall CGenerate::sub_006964F0(CGenerate *this,uint param_1,int param_2
   int local_8;
 
   local_8 = 0;
-  pDVar1 = this->field_5853;
-  /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar1, param_1) (runtime stride) */
-  if (((pDVar1 != (DArrayTy *)0x0) && (param_1 < pDVar1->count)) &&
-     (piVar5 = (int *)(pDVar1->elementSize * param_1 + (int)pDVar1->data), piVar5 != (int *)0x0)) {
+  pCVar1 = this->field_5853;
+  /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
+  if (((pCVar1 != (CGenerate_field_5853DArray *)0x0) && (param_1 < pCVar1->count)) &&
+     (piVar5 = (int *)((int)&pCVar1->data->field_0000 + pCVar1->elementSize * param_1),
+     piVar5 != (int *)0x0)) {
     if (param_2 != 0) {
       local_8 = *piVar5;
     }

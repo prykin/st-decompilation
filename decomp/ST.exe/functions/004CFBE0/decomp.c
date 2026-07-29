@@ -16,12 +16,13 @@ FUN_004cfbe0(void *this,Global_sub_004CFBE0_param_1Enum param_1,int param_2,uint
 {
   int iVar1;
   int iVar2;
-  uint uVar3;
-  int iVar4;
+  int uVar3;
+  int iVar3;
+  uint uVar4;
 
   uVar3 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
   iVar1 = *(int *)((int)this + 0x245);
-  iVar4 = (uVar3 & 0xff) - 1;
+  iVar3 = (uVar3 & 0xffU) - 1;
   switch(param_1) {
   case CASE_8:
   case CASE_9:
@@ -29,25 +30,25 @@ FUN_004cfbe0(void *this,Global_sub_004CFBE0_param_1Enum param_1,int param_2,uint
     if (iVar2 != 3) {
       if (iVar2 == 4) {
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        uVar3 = *(uint *)((&PTR_DAT_007b5170)[iVar1] +
-                         (param_2 + (iVar4 + *(int *)((int)this + 0x235) * 3) * 4) * 8 + 4);
-        *param_4 = uVar3;
-        *param_3 = uVar3;
+        uVar4 = *(uint *)((&PTR_DAT_007b5170)[iVar1] +
+                         (param_2 + (iVar3 + *(int *)((int)this + 0x235) * 3) * 4) * 8 + 4);
+        *param_4 = uVar4;
+        *param_3 = uVar4;
         return;
       }
 joined_r0x004cfc7d:
       if (iVar2 == 5) {
         *param_4 = *(uint *)((&PTR_DAT_007b5170)[iVar1] +
-                            (param_2 + (iVar4 + *(int *)((int)this + 0x235) * 3) * 4) * 8);
+                            (param_2 + (iVar3 + *(int *)((int)this + 0x235) * 3) * 4) * 8);
         *param_3 = *(uint *)((&PTR_DAT_007b5170)[iVar1] +
-                            (param_2 + (iVar4 + *(int *)((int)this + 0x235) * 3) * 4) * 8 + 4);
+                            (param_2 + (iVar3 + *(int *)((int)this + 0x235) * 3) * 4) * 8 + 4);
         return;
       }
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      uVar3 = *(uint *)((&PTR_DAT_007b5170)[iVar1] +
-                       (param_2 + (iVar4 + *(int *)((int)this + 0x235) * 3) * 4) * 8);
-      *param_4 = uVar3;
-      *param_3 = uVar3;
+      uVar4 = *(uint *)((&PTR_DAT_007b5170)[iVar1] +
+                       (param_2 + (iVar3 + *(int *)((int)this + 0x235) * 3) * 4) * 8);
+      *param_4 = uVar4;
+      *param_3 = uVar4;
 switchD_004cfc1d_caseD_a:
       return;
     }
@@ -60,20 +61,20 @@ switchD_004cfc1d_caseD_a:
     if (iVar2 != 3) {
       if (iVar2 == 4) {
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        uVar3 = *(uint *)((&PTR_DAT_007b5170)[iVar1] +
-                         (param_2 + (iVar4 + *(int *)((int)this + 0x235) * 3) * 4) * 8 + 4);
+        uVar4 = *(uint *)((&PTR_DAT_007b5170)[iVar1] +
+                         (param_2 + (iVar3 + *(int *)((int)this + 0x235) * 3) * 4) * 8 + 4);
         goto LAB_004cfc50;
       }
       goto joined_r0x004cfc7d;
     }
   }
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  uVar3 = *(uint *)((&PTR_DAT_007b5170)[iVar1] +
-                   (param_2 + (iVar4 + *(int *)((int)this + 0x235) * 3) * 4) * 8);
+  uVar4 = *(uint *)((&PTR_DAT_007b5170)[iVar1] +
+                   (param_2 + (iVar3 + *(int *)((int)this + 0x235) * 3) * 4) * 8);
 LAB_004cfc50:
-  *param_3 = uVar3;
+  *param_3 = uVar4;
   *param_4 = *(uint *)((&PTR_DAT_007b5170)[iVar1] +
-                      (param_2 + (iVar4 + *(int *)((int)this + 0x235) * 3) * 4) * 8 + 4);
+                      (param_2 + (iVar3 + *(int *)((int)this + 0x235) * 3) * 4) * 8 + 4);
   return;
 }
 

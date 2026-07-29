@@ -12,8 +12,7 @@ undefined4 __fastcall FUN_00639990(AnonShape_00639990_2135AB0A *param_1)
     if (iVar2 != 0) {
       return 0xffff;
     }
-    iVar2 = STT3DSprC::LoadSequence((STT3DSprC *)puVar1,0xf,DAT_00806764,(char *)&DAT_007d1db8,0x1d)
-    ;
+    iVar2 = STT3DSprC::LoadSequence((STT3DSprC *)puVar1,0xf,DAT_00806764,(char *)&DAT_007d1db8,0x1d);
     if (iVar2 != 0) {
       return 0xffff;
     }

@@ -99,7 +99,7 @@ LAB_0047ddc3:
       uVar1 = this->field_001C * 0x41c64e6d + 0x3039;
       this->field_001C = uVar1;
       local_c = (uVar1 >> 0x10) % 7 - 3;
-      if ((this->field_074A <= (int)*(short *)(DAT_00806724 + 0x23) / 2) &&
+      if ((this->field_074A <= (int)PTR_00806724->entryCount / 2) &&
          (local_10 = 0, this->field_02BF != '\0')) {
         local_8 = (undefined4 *)&this->field_0x2b3;
         do {

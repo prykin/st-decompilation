@@ -16,9 +16,10 @@ uint __thiscall STJumpMineC::sub_006191A0(STJumpMineC *this,uint param_1,int par
   STJumpMineC *local_8;
 
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  if ((((PTR_00807598->field_0048 <= (int)param_1) && ((int)param_1 <= PTR_00807598->field_0058)) &&
-      (in_EAX = param_2, PTR_00807598->field_0044 <= param_2)) &&
-     (param_2 <= PTR_00807598->field_0054)) {
+  if ((((g_sT3DSMAPContext_00807598->field_0048 <= (int)param_1) &&
+       ((int)param_1 <= g_sT3DSMAPContext_00807598->field_0058)) &&
+      (in_EAX = param_2, g_sT3DSMAPContext_00807598->field_0044 <= param_2)) &&
+     (param_2 <= g_sT3DSMAPContext_00807598->field_0054)) {
     local_8 = this;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = FUN_006ddbd0();

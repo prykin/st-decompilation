@@ -16,15 +16,18 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   int iVar4;
   ushort *puVar5;
   HGDIOBJ pvVar6;
-  DArrayTy *pDVar7;
+  FSGSTy_field_1FB3DArray *pFVar7;
   ccFntTy *pcVar8;
   undefined4 *puVar9;
   StartServTy *pSVar10;
-  uint uVar11;
-  AnonPointee_FSGSTy_1A97 *pAVar12;
+  int local_EAX_679;
+  AnonPointee_FSGSTy_1A97 *pAVar11;
   LPSTR text;
+  int uVar11;
+  DArrayTy *pDVar12;
   int iVar13;
-  byte bVar14;
+  uint uVar14;
+  byte bVar15;
   undefined4 local_450 [256];
   InternalExceptionFrame local_50;
   FSGSTy *local_c;
@@ -92,8 +95,8 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   this_01->field_1F87 = 0xf;
   this_01->field_1F8B = 1;
   this_01->field_1F83 = 0x4d;
-  pDVar7 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,5,0x10c,5);
-  this_01->field_1FB3 = pDVar7;
+  pFVar7 = (FSGSTy_field_1FB3DArray *)Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,5,0x10c,5);
+  this_01->field_1FB3 = pFVar7;
   this_01->field_1A6F = this_01->field_1A5B->field_0030;
   this_01->field_1A73 = this_01->field_1A5B->field_0034;
   pcVar8 = (ccFntTy *)thunk_FUN_00594850((int)this_01->field_005D,(undefined *)0x0,DAT_00807dd9);
@@ -111,32 +114,33 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   *(undefined4 *)(pSVar10 + 0x5c) = 0;
   puVar5 = this_01->field_005D + 0x14;
   iVar4 = 1;
-  uVar11 = FUN_006b4fe0((int)this_01->field_005D);
-  pAVar12 = (AnonPointee_FSGSTy_1A97 *)
-            FUN_006b50c0(0x24d,0x59,(uint)this_01->field_005D[7],uVar11,(undefined4 *)puVar5,iVar4);
-  this_01->field_1A97 = pAVar12;
-  local_8 = pAVar12->field_0014;
+  local_EAX_679 = FUN_006b4fe0((int)this_01->field_005D);
+  pAVar11 = (AnonPointee_FSGSTy_1A97 *)
+            FUN_006b50c0(0x24d,0x59,(uint)this_01->field_005D[7],local_EAX_679,(undefined4 *)puVar5,
+                         iVar4);
+  this_01->field_1A97 = pAVar11;
+  local_8 = pAVar11->field_0014;
   if (local_8 == 0) {
-    local_8 = ((uint)(ushort)pAVar12->field_000E * pAVar12->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
-              pAVar12->field_0008;
+    local_8 = ((uint)(ushort)pAVar11->field_000E * pAVar11->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
+              pAVar11->field_0008;
   }
-  puVar9 = (undefined4 *)FUN_006b4fa0((int *)pAVar12);
-  for (uVar11 = local_8 >> 2; uVar11 != 0; uVar11 = uVar11 - 1) {
+  puVar9 = (undefined4 *)FUN_006b4fa0((int *)pAVar11);
+  for (uVar14 = local_8 >> 2; uVar14 != 0; uVar14 = uVar14 - 1) {
     *puVar9 = 0xffffffff;
     puVar9 = puVar9 + 1;
   }
   iVar4 = 0;
-  bVar14 = 0;
-  for (uVar11 = local_8 & 3; uVar11 != 0; uVar11 = uVar11 - 1) {
+  bVar15 = 0;
+  for (uVar14 = local_8 & 3; uVar14 != 0; uVar14 = uVar14 - 1) {
     *(undefined1 *)puVar9 = 0xff;
     puVar9 = (undefined4 *)((int)puVar9 + 1);
   }
   text = FUN_006f2c00("MM_BAN_",2,this_01->field_1A93);
-  puVar5 = Library::Ourlib::MFIMG::mfImgLoad(g_cMf32_00806780,6,text,bVar14,iVar4);
+  puVar5 = Library::Ourlib::MFIMG::mfImgLoad(g_cMf32_00806780,6,text,bVar15,iVar4);
   DibPut((AnonShape_006B5B10_E0D06CF1 *)this_01->field_1A97,0,0,'\x06',(byte *)puVar5);
-  pAVar12 = this_01->field_1A97;
-  FUN_006b2330(g_ddxContext_008075A8,(uint *)&this_01->field_1A8F,0x31,0x4023f6,pAVar12->field_0004,
-               pAVar12->field_0008,(ushort *)pAVar12);
+  pAVar11 = this_01->field_1A97;
+  FUN_006b2330(g_ddxContext_008075A8,(uint *)&this_01->field_1A8F,0x31,0x4023f6,pAVar11->field_0004,
+               pAVar11->field_0008,(ushort *)pAVar11);
   Library::DKW::DDX::FUN_006b3640
             ((int *)g_ddxContext_008075A8,this_01->field_1A8F,0xffffffff,g_nWidth_00806730 - 0x24d,0
             );
@@ -218,25 +222,25 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   this_01->field_1E19 = 0;
   this_01->field_1C6A = 0;
   this_01->field_1C66 = 0;
-  pDVar7 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
-  this_01->field_1B08 = pDVar7;
-  Library::DKW::TBL::FUN_006b5aa0(&pDVar7->flags,"License agreement");
+  pDVar12 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
+  this_01->field_1B08 = pDVar12;
+  Library::DKW::TBL::FUN_006b5aa0(&pDVar12->flags,"License agreement");
   Library::DKW::TBL::FUN_006b5aa0(&this_01->field_1B08->flags,"Nothing to do");
   PaintFSGS(this_01,'\x01');
   thunk_FUN_0055ddf0((undefined4 *)g_dDXContext_0080759C,(int *)g_ddxContext_008075A8,
                      this_01->field_005D,10,2);
   if ((5 < param_1) && (param_1 < 9)) {
-    pDVar7 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,100,100);
-    this_01->field_1E9E = &pDVar7->flags;
+    pDVar12 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,100,100);
+    this_01->field_1E9E = &pDVar12->flags;
   }
   this_01->field_1A62 = 0;
   if (param_1 == 6) {
     this_01->field_1A5F = CASE_6;
-    bVar14 = 8;
+    bVar15 = 8;
   }
   else if (param_1 == 7) {
     this_01->field_1A5F = CASE_7;
-    bVar14 = 7;
+    bVar15 = 7;
   }
   else {
     if (param_1 != 8) {
@@ -245,9 +249,9 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
       goto LAB_00596510;
     }
     this_01->field_1A5F = CASE_8;
-    bVar14 = 10;
+    bVar15 = 10;
   }
-  SetState(this_01,bVar14);
+  SetState(this_01,bVar15);
 LAB_00596510:
   this_00 = g_cursorClass_00802A30;
   if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {

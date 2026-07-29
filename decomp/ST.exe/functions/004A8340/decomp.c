@@ -54,8 +54,7 @@ STGroupBoatC::GetDepotForAttack
       do {
         DArrayGetElement(pSVar5->field_020E,index,&local_24);
         if (uStack_22 != 0xffff) {
-          pSVar3 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,local_24,uStack_22,(int)cStack_23)
-          ;
+          pSVar3 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,local_24,uStack_22,(int)cStack_23);
           iVar4 = (*pSVar3->vtable->vfunc_2C)();
           if ((iVar4 == 0x3b) ||
              (iVar4 = (*pSVar3->vtable->vfunc_2C)(), pSVar5 = local_14, iVar4 == 0x60)) {

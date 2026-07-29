@@ -349,8 +349,7 @@ LAB_00509ddd:
             uVar16 = thunk_FUN_00525ef0(GVar4,(Global_sub_00525EF0_param_2Enum)local_c);
             *(undefined4 *)(puVar15 + 1) = uVar16;
             uVar8 = CreateBut(this_00,5,0,(uint)(this_00->field_0BFC != '\0'),local_14,local_10,0,
-                              (char *)0x0,iVar5,iVar5 + 0x10,1,0,(int)puVar15,(char *)0x0,0x11,10,0)
-            ;
+                              (char *)0x0,iVar5,iVar5 + 0x10,1,0,(int)puVar15,(char *)0x0,0x11,10,0);
             puVar15 = puVar15 + 0x27;
             local_10 = local_10 + 0xb;
             *local_8 = uVar8;

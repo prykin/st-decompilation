@@ -37,8 +37,7 @@ FUN_0056a2a0(void *this,cMf32 *param_1,char *param_2,int param_3,undefined4 *par
               *(undefined4 *)((int)pvVar2 + 0xe07) = uVar6;
             }
             else {
-              iVar3 = Library::DKW::SND::FUN_006c2530(uVar1,(DWORD)puVar4,0,0x48,DAT_0080730a,0,0,1)
-              ;
+              iVar3 = Library::DKW::SND::FUN_006c2530(uVar1,(DWORD)puVar4,0,0x48,DAT_0080730a,0,0,1);
               *(int *)((int)pvVar2 + 0xe07) = iVar3;
             }
           }

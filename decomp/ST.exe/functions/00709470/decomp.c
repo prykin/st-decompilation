@@ -2,10 +2,16 @@
 /* [STPrototypeApplier] Propagated parameter 5.
    Evidence: 0044C130 -> 00709470 @ 0044C2AB; literal 255 at 0044C29C | 0044C130 -> 00709470 @
    0044C48C; literal 255 at 0044C47D | 00709670 -> 00709470 @ 0070976B; FUN_00709670 parameter
-   param_4 */
+   param_4
+
+   [STMethodOwnerApplier] Structural method owner recovered as ST3DSMAPContext.
+   Evidence: this_call_owners=[ST3DSMAPContext]; agreed_this_calls=2; incoming_this_accesses=1;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=21; direct_non_thunk_callers=2;
+   incoming_ecx_receiver_callers=1; attributed_named_callers=1; owner_evidence_coverage=adequate */
 
 uint __thiscall
-FUN_00709470(void *this,int *param_1,int param_2,int param_3,int param_4,byte param_5)
+ST3DSMAPContext::sub_00709470
+          (ST3DSMAPContext *this,int *param_1,int param_2,int param_3,int param_4,byte param_5)
 
 {
   undefined1 uVar1;
@@ -22,7 +28,7 @@ FUN_00709470(void *this,int *param_1,int param_2,int param_3,int param_4,byte pa
   uint uVar12;
   int iVar13;
   undefined4 local_414;
-  void *local_14;
+  ST3DSMAPContext *local_14;
   undefined4 local_10;
   int local_c;
   int local_8;
@@ -98,7 +104,7 @@ FUN_00709470(void *this,int *param_1,int param_2,int param_3,int param_4,byte pa
     iVar11 = iVar11 - param_3;
   }
   local_14 = this;
-  FUN_006b0ba0(*(int *)((int)this + 4),&local_414,0,0x100);
+  FUN_006b0ba0(*(int *)&this->field_0x4,&local_414,0,0x100);
   puVar4 = (undefined1 *)((int)&local_414 + 2);
   iVar13 = 0x100;
   do {

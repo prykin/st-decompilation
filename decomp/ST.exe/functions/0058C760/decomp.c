@@ -33,7 +33,7 @@ int __thiscall STSatC::GetMessage(STSatC *this,STMessage *message)
   byte *pbVar18;
   InternalExceptionFrame local_80;
   void *local_3c;
-  int local_38;
+  AnonShape_GLOBAL_00806724_3210464F *local_38;
   int local_34;
   undefined4 local_30;
   undefined4 local_2c;
@@ -182,7 +182,7 @@ int __thiscall STSatC::GetMessage(STSatC *this,STMessage *message)
           sub_00416240(this_00,*(ushort *)&this_00->field_0x289,*(short *)&this_00->field_0x28d,
                        *(ushort *)&this_00->field_0x291);
           sVar12 = *(short *)&this_00->field_0x41;
-          *(int *)&this_00->field_0x245 = (int)*(short *)(DAT_00806724 + 0x2c);
+          *(int *)&this_00->field_0x245 = (int)PTR_00806724->field_002C;
           this_00->field_0231 = CASE_0;
           if (sVar12 < 0) {
             iVar9 = (short)((sVar12 / 0xc9 + (sVar12 >> 0xf)) -
@@ -246,14 +246,15 @@ int __thiscall STSatC::GetMessage(STSatC *this,STMessage *message)
               *(int **)(iVar9 + (int)local_3c) = DAT_00806774;
               iVar9 = iVar9 + 4;
             } while (iVar9 < 0x44);
-            if (((*(int *)&this_00->field_0x239 < 1) || (DAT_00806724 == 0)) ||
-               (DAT_00806724 == -0x30)) {
-              local_38 = 0;
+            if (((*(int *)&this_00->field_0x239 < 1) ||
+                (PTR_00806724 == (AnonShape_GLOBAL_00806724_3210464F *)0x0)) ||
+               (PTR_00806724 == (AnonShape_GLOBAL_00806724_3210464F *)0xffffffd0)) {
+              local_38 = (AnonShape_GLOBAL_00806724_3210464F *)0x0;
             }
             else {
-              local_38 = DAT_00806724 + *(int *)&this_00->field_0x239 * 0x34;
+              local_38 = PTR_00806724 + *(int *)&this_00->field_0x239;
             }
-            local_34 = (int)*(short *)(DAT_00806724 + 0x2c);
+            local_34 = (int)PTR_00806724->field_002C;
             local_30 = DAT_008073cc;
             local_2c = 0;
             local_28 = 0;

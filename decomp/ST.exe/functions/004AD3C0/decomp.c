@@ -10,7 +10,7 @@ void __thiscall STT3DSprC::sub_004AD3C0(STT3DSprC *this,float param_1,float para
   this->field_0024 = param_1;
   this->field_0028 = param_2;
   this->field_002C = param_3;
-  FUN_006ea960(this->field_003C,this->field_0018,param_1,param_2,param_3);
+  Library::Ourlib::ST3DSMAP::SprMove(this->field_003C,this->field_0018,param_1,param_2,param_3);
   return;
 }
 

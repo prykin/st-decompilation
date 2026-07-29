@@ -22,21 +22,20 @@ void __thiscall STDestC::sub_00602BE0(STDestC *this)
   }
   if (this->field_036E == 2) {
     if (this->field_037A == '\x01') {
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      FUN_006e9350((void *)this->field_0211,this->field_01ED,
-                   *(uint *)(DAT_00806724 + 0x30 + this->field_0397 * 4),
-                   (int)*(short *)(DAT_00806724 + 0x2c));
+      Library::Ourlib::ST3DSMAP::SprSetMask
+                (this->field_0211,this->field_01ED,PTR_00806724->entries[this->field_0397],
+                 (int)PTR_00806724->field_002C);
     }
     if ((g_playSystem_00802A38->field_00E4 & 3) == 0) {
       this->field_0397 = this->field_0397 + (int)this->field_039F;
     }
     if (this->field_039F < '\x01') {
       if (this->field_0397 < 0) {
-        FUN_006e9350((void *)this->field_0211,this->field_01ED,0,0);
+        Library::Ourlib::ST3DSMAP::SprSetMask(this->field_0211,this->field_01ED,0,0);
         this->field_036E = 1;
       }
     }
-    else if (((int)*(short *)(DAT_00806724 + 0x23) <= this->field_0397) &&
+    else if (((int)PTR_00806724->entryCount <= this->field_0397) &&
             (this->field_036E = 0, this->field_037A == '\x01')) {
       thunk_FUN_004ad430((STT3DSprC *)&this->field_01D5);
       this->field_037A = 0;

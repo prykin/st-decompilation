@@ -18,8 +18,9 @@ void __thiscall FUN_00493110(void *this,int *param_1)
           )))) {
         *(int *)((int)this + 0x7ca) = param_1[6];
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        FUN_006ea3e0(*(void **)((int)this + 0x211),*(uint *)((int)this + 0x1ed),
-                     *(int *)((int)param_1 + 0x1ed));
+        Library::Ourlib::ST3DSMAP::SprSetLevAfter
+                  (*(void **)((int)this + 0x211),*(uint *)((int)this + 0x1ed),
+                   *(int *)((int)param_1 + 0x1ed));
       }
     }
     else if (((iVar2 == 7) || (iVar2 == 0x13)) || (iVar2 == 0x1b)) {

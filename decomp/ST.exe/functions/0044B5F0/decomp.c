@@ -172,7 +172,7 @@ STAllPlayersC::SelectObjects
     }
     break;
   case CASE_6:
-    piVar5 = (int *)FUN_006eb350(PTR_00807598,param_2,param_3,0xe,1);
+    piVar5 = (int *)ST3DSMAPContext::sub_006EB350(g_sT3DSMAPContext_00807598,param_2,param_3,0xe,1);
     if (((piVar5 != (int *)0x0) && (piVar5[9] == uVar4)) && (piVar5[8] == 0x14)) {
       DArrayDestroy(local_8);
       GetGObjFromZone(this,objPtr,DAT_00807410,DAT_00807414,DAT_00807418,DAT_0080741c,
@@ -208,7 +208,7 @@ STAllPlayersC::SelectObjects
     }
     break;
   case CASE_7:
-    iVar8 = FUN_006eb350(PTR_00807598,param_2,param_3,0xe,1);
+    iVar8 = ST3DSMAPContext::sub_006EB350(g_sT3DSMAPContext_00807598,param_2,param_3,0xe,1);
     if ((((iVar8 != 0) && (*(uint *)(iVar8 + 0x24) == uVar4)) && (*(int *)(iVar8 + 0x20) == 0x14))
        && ((*(ushort *)(iVar8 + 0x30) != 0xffff &&
            (this_00 = thunk_FUN_0042b760(objPtr,*(ushort *)(iVar8 + 0x30)),

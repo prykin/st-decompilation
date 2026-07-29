@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 int __fastcall
 FUN_0065dd30(AiFltClassTy *param_1,undefined4 param_2,uint param_3,uint param_4,char param_5,

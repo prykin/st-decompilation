@@ -183,10 +183,10 @@ int __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,STMessage *message)
                                   (STDcResourcC *)this_00,0xf0,0xbe,0x11);
           if (iVar4 != 0) {
             RaiseInternalException
-                      (-1,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\Tc_gobj.cpp",0x9d2)
-            ;
+                      (-1,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\Tc_gobj.cpp",0x9d2);
           }
-          FUN_006e9210(*(void **)&this_00->field_0x211,this_00->field_01ED);
+          Library::Ourlib::ST3DSMAP::SprSetSplit
+                    (*(void **)&this_00->field_0x211,this_00->field_01ED);
           g_currentExceptionFrame = local_54.previous;
           return 0;
         }
@@ -439,7 +439,8 @@ LAB_0041ec79:
       return 0;
     }
     *(undefined4 *)&this_00->field_0x22d = 1;
-    FUN_006e97c0(*(void **)&this_00->field_0x211,this_00->field_01ED,DAT_008032c0);
+    Library::Ourlib::ST3DSMAP::SprSetShadedColorsTbl
+              (*(void **)&this_00->field_0x211,this_00->field_01ED,DAT_008032c0);
     g_currentExceptionFrame = local_54.previous;
     return 0;
   }
@@ -451,7 +452,8 @@ LAB_0041eccc:
     return 0;
   }
   *(undefined4 *)&this_00->field_0x22d = 0;
-  FUN_006e97c0(*(void **)&this_00->field_0x211,this_00->field_01ED,0);
+  Library::Ourlib::ST3DSMAP::SprSetShadedColorsTbl
+            (*(void **)&this_00->field_0x211,this_00->field_01ED,0);
   g_currentExceptionFrame = local_54.previous;
   return 0;
 }

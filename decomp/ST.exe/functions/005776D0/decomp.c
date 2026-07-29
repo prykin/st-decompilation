@@ -78,7 +78,7 @@ int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
           DAT_00808784 = (void *)piVar18[1];
           this_01[0x21].objectLock = DAT_00808784;
           Library::Ourlib::ST3DPAUS::FUN_00725760
-                    (PTR_00807598,(int)DAT_00808784,
+                    (g_sT3DSMAPContext_00807598,(int)DAT_00808784,
                      -(uint)(DAT_00808784 != (void *)0x0) & DAT_008032b4);
           if (g_pausePanel_008016E0 != (PausePanelTy *)0x0) {
             PausePanelTy::SwitchPausePanel(g_pausePanel_008016E0,(int)DAT_00808784);
@@ -91,7 +91,7 @@ int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
         if (this_01[0x21].objectLock == (void *)0x0) {
           DAT_00808784 = (void *)piVar18[1];
           Library::Ourlib::ST3DPAUS::FUN_00725760
-                    (PTR_00807598,(int)DAT_00808784,
+                    (g_sT3DSMAPContext_00807598,(int)DAT_00808784,
                      -(uint)(DAT_00808784 != (void *)0x0) & DAT_008032b4);
           g_currentExceptionFrame = local_8c.previous;
           return 0;
@@ -101,7 +101,7 @@ int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
         if ((DAT_0080878c == 0) && (DAT_00808790 == 0)) {
           DAT_00808784 = (void *)piVar18[1];
           Library::Ourlib::ST3DPAUS::FUN_00725760
-                    (PTR_00807598,(int)DAT_00808784,
+                    (g_sT3DSMAPContext_00807598,(int)DAT_00808784,
                      -(uint)(DAT_00808784 != (void *)0x0) & DAT_008032b4);
         }
         pvVar3 = (void *)piVar18[1];
@@ -125,9 +125,11 @@ int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
           iVar5 = (uVar10 & 0xff) * 0x18;
           DAT_00807654 = *(undefined4 *)(s_FrmPanelTy__GetMessage_007c2ae0 + iVar5 + 8);
         }
-        if (PTR_00807598 != (AnonShape_GLOBAL_00807598_0C6808FB *)0x0) {
-          FUN_006e8640(PTR_00807598,*(char **)(s_FrmPanelTy__GetMessage_007c2ae0 + iVar5 + 0x10),
-                       *(char **)(s_FrmPanelTy__GetMessage_007c2ae0 + iVar5 + 4));
+        if (g_sT3DSMAPContext_00807598 != (ST3DSMAPContext *)0x0) {
+          ST3DSMAPContext::sub_006E8640
+                    (g_sT3DSMAPContext_00807598,
+                     *(char **)(s_FrmPanelTy__GetMessage_007c2ae0 + iVar5 + 0x10),
+                     *(char **)(s_FrmPanelTy__GetMessage_007c2ae0 + iVar5 + 4));
           g_currentExceptionFrame = local_8c.previous;
           return 0;
         }

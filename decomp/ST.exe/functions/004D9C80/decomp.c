@@ -11,7 +11,7 @@ undefined4 __fastcall FUN_004d9c80(AnonShape_004D9C80_80F657D3 *param_1)
   AnonShape_004AB810_8E5693D5 *pAVar1;
   STT3DSprC *this;
   int iVar2;
-  uint uVar3;
+  int uVar3;
   uint uVar4;
   CHAR local_108 [256];
   int local_8;
@@ -79,10 +79,10 @@ undefined4 __fastcall FUN_004d9c80(AnonShape_004D9C80_80F657D3 *param_1)
     FUN_006ea340(param_1->field_0211,uVar3,iVar2,uVar4);
     STT3DSprC::StartShow((STT3DSprC *)param_1->field_05FF,0xe,g_playSystem_00802A38->field_00E4);
     *(undefined4 *)&param_1->field_0x4d4 = 0;
-    uVar3 = g_playSystem_00802A38->field_00E4;
+    uVar4 = g_playSystem_00802A38->field_00E4;
     *(undefined4 *)&param_1->field_0x4dc = 1;
     iVar2 = *(int *)&param_1->field_0x4d0 * 0x18;
-    *(uint *)&param_1->field_0x4d8 = uVar3;
+    *(uint *)&param_1->field_0x4d8 = uVar4;
     local_8 = *(int *)(&DAT_00798eb8 + iVar2) + (int)param_1->field_0041;
     STT3DSprC::sub_004AD3C0
               ((STT3DSprC *)param_1->field_05FF,(float)local_8 * _DAT_007904f8 * _DAT_007904f0,

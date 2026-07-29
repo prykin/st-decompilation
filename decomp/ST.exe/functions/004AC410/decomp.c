@@ -43,7 +43,7 @@ undefined4 __thiscall STT3DSprC::StopShow(STT3DSprC *this,byte param_1)
     g_currentExceptionFrame = local_4c.previous;
     return 0;
   }
-  FUN_006e9d40(pSVar2->field_003C,(uint *)pSVar2->field_0018,(int)(char)param_1);
+  ST3DSMAPContext::sub_006E9D40(pSVar2->field_003C,(uint *)pSVar2->field_0018,(int)(char)param_1);
   pSVar2->field_001C = pSVar2->field_001C & ~uVar5;
   if (param_1 == 0xe) {
     if (pSVar2->field_0011 == '\x01') {

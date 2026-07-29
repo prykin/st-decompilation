@@ -44,7 +44,7 @@ void __fastcall FUN_00579350(AnonShape_00579350_2E014C47 *param_1)
   if (iVar1 == 0) {
     iVar1 = 0;
     uVar2 = thunk_FUN_004ad650((STT3DSprC *)this);
-    FUN_006eabf0(param_1->field_0211,uVar2,iVar1);
+    Library::Ourlib::ST3DSMAP::SprSetVisible(param_1->field_0211,uVar2,iVar1);
     iVar1 = thunk_FUN_0041caf0((AnonShape_0041CAF0_1630B9E0 *)param_1);
     if (iVar1 == 1) {
       iVar1 = 1;
@@ -56,7 +56,7 @@ void __fastcall FUN_00579350(AnonShape_00579350_2E014C47 *param_1)
   else {
     iVar1 = 1;
     uVar2 = thunk_FUN_004ad650((STT3DSprC *)this);
-    FUN_006eabf0(param_1->field_0211,uVar2,iVar1);
+    Library::Ourlib::ST3DSMAP::SprSetVisible(param_1->field_0211,uVar2,iVar1);
     iVar1 = 1;
   }
   iVar3 = thunk_FUN_004ad650((STT3DSprC *)this);

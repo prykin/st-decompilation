@@ -559,7 +559,7 @@ void __thiscall STSprGameObjC::LoadLifeFrame(STSprGameObjC *this,int *param_1)
   }
   this_00 = &this->field_01D5;
   STT3DSprC::LoadSequence((STT3DSprC *)this_00,1,DAT_00806774,local_24,0x1d);
-  FUN_006ea5e0((void *)this->field_0211,this->field_01ED,1,0);
+  ST3DSMAPContext::sub_006EA5E0(this->field_0211,this->field_01ED,1,0);
   thunk_FUN_004ac610(this_00,'\x01');
   STT3DSprC::StartShow((STT3DSprC *)this_00,1,g_playSystem_00802A38->field_00E4);
   iVar6 = this->vfunc_0C();
@@ -567,7 +567,7 @@ void __thiscall STSprGameObjC::LoadLifeFrame(STSprGameObjC *this,int *param_1)
     return;
   }
   STT3DSprC::LoadSequence((STT3DSprC *)this_00,2,DAT_00806774,local_38,0x1d);
-  FUN_006ea5e0((void *)this->field_0211,this->field_01ED,2,0);
+  ST3DSMAPContext::sub_006EA5E0(this->field_0211,this->field_01ED,2,0);
   thunk_FUN_004ac610(this_00,'\x02');
   STT3DSprC::StartShow((STT3DSprC *)this_00,2,g_playSystem_00802A38->field_00E4);
   return;

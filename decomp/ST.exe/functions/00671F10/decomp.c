@@ -148,8 +148,7 @@ cf_continue_loop_006721A4:
     }
     if (local_8 == (float *)0x0) {
       RaiseInternalException
-                (local_1c,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_interp.cpp",0x56c)
-      ;
+                (local_1c,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_interp.cpp",0x56c);
       goto cf_continue_loop_006721A4;
     }
     iVar3 = thunk_FUN_0064a940(local_c,iVar3);

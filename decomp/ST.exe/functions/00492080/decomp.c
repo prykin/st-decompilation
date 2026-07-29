@@ -35,8 +35,7 @@ void __thiscall STBoatC::NotReadyForLoading(STBoatC *this,int param_1)
     STFishC::sub_004162F0(local_14,&this->field_0588,&this->field_058A,&this->field_058C);
     iVar2 = GetCellForLoading(this,this->field_005B,this->field_005D,this->field_005F,
                               this->field_0588,this->field_058A,this->field_058C,&local_6,
-                              (undefined2 *)((int)&param_1 + 2),&local_8,&local_e,&local_c,&local_a)
-    ;
+                              (undefined2 *)((int)&param_1 + 2),&local_8,&local_e,&local_c,&local_a);
     if (iVar2 != -2) {
       this->field_0596 = 0;
       if (iVar2 != -1) {

@@ -38,7 +38,7 @@ undefined4 __thiscall TraksClassTy::TraksCreateCollection(TraksClassTy *this,int
 
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (((((*(byte *)(param_1 + 0x1b) & 1) == 0) && (DAT_0080731e == 0)) ||
-      (this->field_0024 == (DArrayTy *)0x0)) ||
+      (this->field_0024 == (TraksClassTy_field_0024DArray *)0x0)) ||
      ((param_1 == (int *)0x0 || (PTR_00806770 == (cMf32 *)0x0)))) {
     return 0;
   }

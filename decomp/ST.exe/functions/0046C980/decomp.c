@@ -85,8 +85,7 @@ int __thiscall STBoatC::BackBuild(STBoatC *this,int *param_1,undefined4 param_2,
         iVar5 = 0x2555;
 cf_error_exit_0046CBE2:
         RaiseInternalException
-                  (0xffff,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",iVar5)
-        ;
+                  (0xffff,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",iVar5);
         return 0xffff;
       }
       if ((short)uVar4 == 0) {

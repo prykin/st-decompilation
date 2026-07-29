@@ -32,14 +32,14 @@ void __fastcall AiFltClassTy::sub_00664960(AiFltClassTy *param_1)
   undefined2 extraout_var_02;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_03;
-  uint uVar12;
+  uint uVar13;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_04;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_05;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_06;
-  uint uVar13;
+  uint uVar14;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_07;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -59,24 +59,26 @@ void __fastcall AiFltClassTy::sub_00664960(AiFltClassTy *param_1)
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_15;
   STGameObjC *this_00;
-  ushort *puVar14;
+  int uVar12;
+  int local_EAX_9844;
+  ushort *puVar15;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   int extraout_EDX;
-  int iVar15;
+  int iVar16;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   int extraout_EDX_00;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   int extraout_EDX_01;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_16;
-  undefined4 uVar16;
+  undefined4 uVar17;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   int unaff_ESI;
-  int iVar17;
-  uint *puVar18;
+  int iVar18;
   uint *puVar19;
-  bool bVar21;
+  uint *puVar20;
   bool bVar22;
+  bool bVar23;
   undefined4 local_9c;
   uint local_98;
   undefined4 local_94;
@@ -209,7 +211,7 @@ void __fastcall AiFltClassTy::sub_00664960(AiFltClassTy *param_1)
           else {
             psVar10 = (short *)0x0;
           }
-          iVar15 = (int)psVar10[1];
+          iVar16 = (int)psVar10[1];
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_50 = iVar11 + -1 + (int)CONCAT11(uStack_35,uStack_36);
           iVar9 = (int)*psVar10;
@@ -221,26 +223,26 @@ void __fastcall AiFltClassTy::sub_00664960(AiFltClassTy *param_1)
           iVar11 = (int)CONCAT11(local_3c._1_1_,(undefined1)local_3c);
           local_10 = (DArrayTy *)(int)psVar10[3];
           local_58 = (int)psVar10[4];
-          local_54 = iVar15 + -1 + local_58;
+          local_54 = iVar16 + -1 + local_58;
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           if (((iVar9 <= iVar11) && (iVar11 <= iVar9 + -1 + (int)local_10)) &&
-             (((iVar15 <= CONCAT11(local_3c._3_1_,local_3c._2_1_) &&
+             (((iVar16 <= CONCAT11(local_3c._3_1_,local_3c._2_1_) &&
                (((CONCAT11(local_3c._3_1_,local_3c._2_1_) <= local_54 && (iVar9 <= local_50)) &&
                 (local_50 <= iVar9 + -1 + (int)local_10)))) &&
-              ((iVar15 <= (int)local_48 && ((int)local_48 <= iVar15 + -1 + local_58))))))
+              ((iVar16 <= (int)local_48 && ((int)local_48 <= iVar16 + -1 + local_58))))))
           goto LAB_00665047;
           local_50 = iVar9 + -1 + (int)local_10;
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          iVar17 = (int)CONCAT11(local_3c._3_1_,local_3c._2_1_);
-          local_54 = iVar15 + -1 + local_58;
+          iVar18 = (int)CONCAT11(local_3c._3_1_,local_3c._2_1_);
+          local_54 = iVar16 + -1 + local_58;
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_48 = (STGameObjC *)(iVar17 + -1 + (int)CONCAT11(uStack_33,uStack_34));
+          local_48 = (STGameObjC *)(iVar18 + -1 + (int)CONCAT11(uStack_33,uStack_34));
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           if ((iVar11 <= iVar9) &&
              (((iVar1 = iVar11 + -1 + (int)CONCAT11(uStack_35,uStack_36), iVar9 <= iVar1 &&
-               (iVar17 <= iVar15)) &&
-              ((iVar15 <= (int)local_48 &&
-               ((((iVar11 <= local_50 && (local_50 <= iVar1)) && (iVar17 <= local_54)) &&
+               (iVar18 <= iVar16)) &&
+              ((iVar16 <= (int)local_48 &&
+               ((((iVar11 <= local_50 && (local_50 <= iVar1)) && (iVar18 <= local_54)) &&
                 (local_54 <= (int)local_48)))))))) {
             Library::DKW::TBL::FUN_006ae140((uint *)param_1->field_022F,local_c,&local_3c);
             goto cf_common_join_00665024;
@@ -316,13 +318,13 @@ void __fastcall AiFltClassTy::sub_00664960(AiFltClassTy *param_1)
                          CONCAT11(uStack_37,uStack_38),(short *)&local_3c,
                          (short *)((int)&local_3c + 2),(short *)&uStack_38,0);
       pAVar5 = param_1->field_0223;
-      uVar12 = 0;
+      uVar13 = 0;
       local_4c = *(uint *)&pAVar5->field_0xc;
       if (0 < (int)local_4c) {
-        bVar21 = local_4c != 0;
+        bVar22 = local_4c != 0;
         do {
-          if (bVar21) {
-            psVar10 = (short *)(pAVar5->field_0008 * uVar12 + pAVar5->field_001C);
+          if (bVar22) {
+            psVar10 = (short *)(pAVar5->field_0008 * uVar13 + pAVar5->field_001C);
           }
           else {
             psVar10 = (short *)0x0;
@@ -334,9 +336,9 @@ void __fastcall AiFltClassTy::sub_00664960(AiFltClassTy *param_1)
              (((CONCAT11(uStack_31,uStack_32) == psVar10[5] &&
                (CONCAT11(uStack_2f,uStack_30) == psVar10[6])) &&
               (CONCAT11(uStack_2d,uStack_2e) == psVar10[7])))) goto cf_common_join_00665024;
-          uVar12 = uVar12 + 1;
-          bVar21 = uVar12 < local_4c;
-        } while ((int)uVar12 < (int)local_4c);
+          uVar13 = uVar13 + 1;
+          bVar22 = uVar13 < local_4c;
+        } while ((int)uVar13 < (int)local_4c);
       }
       if (pAVar5 != (AnonPointee_AiFltClassTy_0223 *)0x0) {
         Library::DKW::TBL::FUN_006b11d0((uint *)pAVar5,0,&local_3c);
@@ -357,140 +359,140 @@ void __fastcall AiFltClassTy::sub_00664960(AiFltClassTy *param_1)
       if (iVar11 < 1) goto cf_common_join_00665024;
       break;
     case 0x32:
-      puVar18 = local_44;
-      puVar19 = (uint *)&param_1->field_0xb7;
+      puVar19 = local_44;
+      puVar20 = (uint *)&param_1->field_0xb7;
       for (iVar11 = 0xd; iVar11 != 0; iVar11 = iVar11 + -1) {
-        *puVar19 = *puVar18;
-        puVar18 = puVar18 + 1;
+        *puVar20 = *puVar19;
         puVar19 = puVar19 + 1;
+        puVar20 = puVar20 + 1;
       }
       if (param_1->field_00B3 != 0) {
         sub_0065F980(param_1);
       }
-      uVar12 = 500;
+      uVar13 = 500;
       goto cf_common_join_00664FF6;
     case 0x33:
-      puVar18 = local_44;
-      puVar19 = (uint *)&param_1->field_0xb7;
+      puVar19 = local_44;
+      puVar20 = (uint *)&param_1->field_0xb7;
       for (iVar11 = 0xd; iVar11 != 0; iVar11 = iVar11 + -1) {
-        *puVar19 = *puVar18;
-        puVar18 = puVar18 + 1;
+        *puVar20 = *puVar19;
         puVar19 = puVar19 + 1;
+        puVar20 = puVar20 + 1;
       }
       if (param_1->field_00B3 != 0) {
         sub_0065F980(param_1);
       }
-      uVar12 = 0x1fe;
+      uVar13 = 0x1fe;
       goto cf_common_join_00664FF6;
     case 0x34:
-      puVar18 = local_44;
-      puVar19 = (uint *)&param_1->field_0xb7;
+      puVar19 = local_44;
+      puVar20 = (uint *)&param_1->field_0xb7;
       for (iVar11 = 0xd; iVar11 != 0; iVar11 = iVar11 + -1) {
-        *puVar19 = *puVar18;
-        puVar18 = puVar18 + 1;
+        *puVar20 = *puVar19;
         puVar19 = puVar19 + 1;
+        puVar20 = puVar20 + 1;
       }
       if (param_1->field_00B3 != 0) {
         sub_0065F980(param_1);
       }
-      uVar12 = 0x208;
+      uVar13 = 0x208;
       goto cf_common_join_00664FF6;
     case 0x35:
-      puVar18 = local_44;
-      puVar19 = (uint *)&param_1->field_0xb7;
+      puVar19 = local_44;
+      puVar20 = (uint *)&param_1->field_0xb7;
       for (iVar11 = 0xd; iVar11 != 0; iVar11 = iVar11 + -1) {
-        *puVar19 = *puVar18;
-        puVar18 = puVar18 + 1;
+        *puVar20 = *puVar19;
         puVar19 = puVar19 + 1;
+        puVar20 = puVar20 + 1;
       }
       if (param_1->field_00B3 != 0) {
         sub_0065F980(param_1);
       }
-      uVar12 = 0x212;
+      uVar13 = 0x212;
       goto cf_common_join_00664FF6;
     case 0x36:
-      puVar18 = local_44;
-      puVar19 = (uint *)&param_1->field_0xb7;
+      puVar19 = local_44;
+      puVar20 = (uint *)&param_1->field_0xb7;
       for (iVar11 = 0xd; iVar11 != 0; iVar11 = iVar11 + -1) {
-        *puVar19 = *puVar18;
-        puVar18 = puVar18 + 1;
+        *puVar20 = *puVar19;
         puVar19 = puVar19 + 1;
+        puVar20 = puVar20 + 1;
       }
       if (param_1->field_00B3 != 0) {
         sub_0065F980(param_1);
       }
-      uVar12 = 0x21c;
+      uVar13 = 0x21c;
       goto cf_common_join_00664FF6;
     case 0x37:
-      puVar18 = local_44;
-      puVar19 = (uint *)&param_1->field_0xb7;
+      puVar19 = local_44;
+      puVar20 = (uint *)&param_1->field_0xb7;
       for (iVar11 = 0xd; iVar11 != 0; iVar11 = iVar11 + -1) {
-        *puVar19 = *puVar18;
-        puVar18 = puVar18 + 1;
+        *puVar20 = *puVar19;
         puVar19 = puVar19 + 1;
+        puVar20 = puVar20 + 1;
       }
       if (param_1->field_00B3 != 0) {
         sub_0065F980(param_1);
       }
-      uVar12 = 0x226;
+      uVar13 = 0x226;
       goto cf_common_join_00664FF6;
     case 0x38:
-      puVar18 = local_44;
-      puVar19 = (uint *)&param_1->field_0xb7;
+      puVar19 = local_44;
+      puVar20 = (uint *)&param_1->field_0xb7;
       for (iVar11 = 0xd; iVar11 != 0; iVar11 = iVar11 + -1) {
-        *puVar19 = *puVar18;
-        puVar18 = puVar18 + 1;
+        *puVar20 = *puVar19;
         puVar19 = puVar19 + 1;
+        puVar20 = puVar20 + 1;
       }
       if (param_1->field_00B3 != 0) {
         sub_0065F980(param_1);
       }
-      uVar12 = 0x230;
+      uVar13 = 0x230;
       goto cf_common_join_00664FF6;
     case 0x39:
-      puVar18 = local_44;
-      puVar19 = (uint *)&param_1->field_0xb7;
+      puVar19 = local_44;
+      puVar20 = (uint *)&param_1->field_0xb7;
       for (iVar11 = 0xd; iVar11 != 0; iVar11 = iVar11 + -1) {
-        *puVar19 = *puVar18;
-        puVar18 = puVar18 + 1;
+        *puVar20 = *puVar19;
         puVar19 = puVar19 + 1;
+        puVar20 = puVar20 + 1;
       }
       if (param_1->field_00B3 != 0) {
         sub_0065F980(param_1);
       }
-      uVar12 = 0x23a;
+      uVar13 = 0x23a;
       goto cf_common_join_00664FF6;
     case 0x3a:
-      puVar18 = local_44;
-      puVar19 = (uint *)&param_1->field_0xb7;
+      puVar19 = local_44;
+      puVar20 = (uint *)&param_1->field_0xb7;
       for (iVar11 = 0xd; iVar11 != 0; iVar11 = iVar11 + -1) {
-        *puVar19 = *puVar18;
-        puVar18 = puVar18 + 1;
+        *puVar20 = *puVar19;
         puVar19 = puVar19 + 1;
+        puVar20 = puVar20 + 1;
       }
       if (param_1->field_00B3 != 0) {
         sub_0065F980(param_1);
       }
-      uVar12 = 0x244;
+      uVar13 = 0x244;
       goto cf_common_join_00664FF6;
     case 0x3b:
-      puVar18 = local_44;
-      puVar19 = (uint *)&param_1->field_0xb7;
+      puVar19 = local_44;
+      puVar20 = (uint *)&param_1->field_0xb7;
       for (iVar11 = 0xd; iVar11 != 0; iVar11 = iVar11 + -1) {
-        *puVar19 = *puVar18;
-        puVar18 = puVar18 + 1;
+        *puVar20 = *puVar19;
         puVar19 = puVar19 + 1;
+        puVar20 = puVar20 + 1;
       }
       if (param_1->field_00B3 != 0) {
         sub_0065F980(param_1);
       }
-      uVar12 = 0x24e;
+      uVar13 = 0x24e;
 cf_common_join_00664FF6:
-      param_1->field_009B = uVar12;
+      param_1->field_009B = uVar13;
       param_1->field_009F = 0;
       param_1->field_00A3 = 0;
       param_1->field_00A7 = 0;
-      param_1->field_00B3 = uVar12;
+      param_1->field_00B3 = uVar13;
 cf_common_join_00665024:
       if ((local_44[0] < 0x32) || (99 < local_44[0])) {
         if ((local_44[0] == 0) || (0x31 < local_44[0])) {
@@ -514,10 +516,10 @@ LAB_00665047:
 LAB_00665067:
   this = local_8;
   param_1->field_00EB = 0;
-  uVar12 = param_1->field_009B;
-  if (0x82 < uVar12) {
-    if (uVar12 < 0x201) {
-      if (uVar12 == 0x200) {
+  uVar13 = param_1->field_009B;
+  if (0x82 < uVar13) {
+    if (uVar13 < 0x201) {
+      if (uVar13 == 0x200) {
         param_1->field_00EB = 0x40;
         if (param_1->field_00A3 != 0) {
           if (param_1->field_00A7 != 0) {
@@ -557,10 +559,10 @@ LAB_00666901:
         param_1->field_009B = 0x201;
         goto cf_common_join_00667054;
       }
-      if (uVar12 < 0x1f6) {
-        if (uVar12 != 0x1f5) {
-          if (uVar12 < 0x86) {
-            if (uVar12 == 0x85) {
+      if (uVar13 < 0x1f6) {
+        if (uVar13 != 0x1f5) {
+          if (uVar13 < 0x86) {
+            if (uVar13 == 0x85) {
               param_1->field_00EB = 0x40;
               if (param_1->field_00A3 == 0) {
                 param_1->field_00A3 = 1;
@@ -594,7 +596,7 @@ LAB_00666901:
                 }
               }
             }
-            else if (uVar12 == 0x83) {
+            else if (uVar13 == 0x83) {
               param_1->field_00EB = 0x40;
               if (param_1->field_00A3 == 0) {
                 param_1->field_00A3 = 1;
@@ -623,13 +625,13 @@ LAB_00665eba:
               }
             }
             else {
-              if (uVar12 != 0x84) goto cf_common_exit_00667066;
+              if (uVar13 != 0x84) goto cf_common_exit_00667066;
               param_1->field_00EB = 0x40;
               if (param_1->field_00A3 == 0) {
                 param_1->field_00A3 = 1;
                 if (((param_1->field_00EF == 0x200) || (param_1->field_00EF == 0x400)) &&
-                   (uVar12 = param_1->field_001C * 0x41c64e6d + 0x3039, param_1->field_001C = uVar12
-                   , (uVar12 & 0x10000) != 0)) {
+                   (uVar13 = param_1->field_001C * 0x41c64e6d + 0x3039, param_1->field_001C = uVar13
+                   , (uVar13 & 0x10000) != 0)) {
                   iVar11 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065ED90::
                            thunk_FUN_0065ed90((AnonReceiver_0065ED90 *)param_1,
                                               (short *)&param_1->field_0x195,&param_1->field_01A1,
@@ -666,34 +668,34 @@ LAB_00665eba:
             }
           }
           else {
-            if (uVar12 != 0x8c) {
-              if (uVar12 != 500) goto cf_common_exit_00667066;
+            if (uVar13 != 0x8c) {
+              if (uVar13 != 500) goto cf_common_exit_00667066;
               param_1->field_00EB = 0x40;
               param_1->field_00AB = param_1->field_00E6;
               param_1->field_00AF = param_1->field_0280;
               thunk_FUN_0065fa10((AnonShape_0065FA10_37C5A4D3 *)param_1,param_1->field_0280,0,0,0);
-              uVar12 = *(uint *)&param_1->field_0xbf & 1;
-              param_1->field_00F3 = uVar12;
-              if (uVar12 == 0) {
+              uVar13 = *(uint *)&param_1->field_0xbf & 1;
+              param_1->field_00F3 = uVar13;
+              if (uVar13 == 0) {
                 param_1->field_00F3 = *(uint *)&param_1->field_0xbf & 2;
               }
               if (param_1->field_00F3 == 0) {
-                uVar13 = param_1->field_001C * 0x41c64e6d + 0x3039;
-                param_1->field_001C = uVar13;
-                param_1->field_00F3 = (uVar13 >> 0x10 & 1) + 1;
+                uVar14 = param_1->field_001C * 0x41c64e6d + 0x3039;
+                param_1->field_001C = uVar14;
+                param_1->field_00F3 = (uVar14 >> 0x10 & 1) + 1;
               }
-              uVar13 = *(uint *)&param_1->field_0xc3;
-              if ((uVar13 & 0x100) == 0) {
-                uVar12 = uVar13 & 0x200;
-                param_1->field_00EF = uVar12;
-                if (uVar12 == 0) {
-                  uVar12 = uVar13 & 0x400;
-                  param_1->field_00EF = uVar12;
+              uVar14 = *(uint *)&param_1->field_0xc3;
+              if ((uVar14 & 0x100) == 0) {
+                uVar13 = uVar14 & 0x200;
+                param_1->field_00EF = uVar13;
+                if (uVar13 == 0) {
+                  uVar13 = uVar14 & 0x400;
+                  param_1->field_00EF = uVar13;
                 }
-                if ((param_1->field_00EF == 0) && ((uVar13 & 0x800) != 0)) {
-                  uVar13 = param_1->field_001C * 0x41c64e6d + 0x3039;
-                  param_1->field_001C = uVar13;
-                  param_1->field_00EF = (-(uint)((uVar13 & 0x10000) != 0) & 0xfffffe00) + 0x400;
+                if ((param_1->field_00EF == 0) && ((uVar14 & 0x800) != 0)) {
+                  uVar14 = param_1->field_001C * 0x41c64e6d + 0x3039;
+                  param_1->field_001C = uVar14;
+                  param_1->field_00EF = (-(uint)((uVar14 & 0x10000) != 0) & 0xfffffe00) + 0x400;
                 }
               }
               else {
@@ -708,7 +710,7 @@ LAB_00665eba:
                                             (short *)&param_1->field_0x195,
                                             *(uint *)&param_1->field_0xcb,
                                             *(uint *)&param_1->field_0xcf,&param_1->field_0xd5,
-                                            CONCAT31((int3)(uVar12 >> 8),param_1->field_0xd3),1);
+                                            CONCAT31((int3)(uVar13 >> 8),param_1->field_0xd3),1);
                 if (iVar11 != 0) goto cf_common_join_00667047;
                 iVar11 = param_1->field_00EF;
                 if (((iVar11 == 0x200) || (iVar11 == 0x400)) &&
@@ -779,7 +781,7 @@ LAB_0066641b:
         param_1->field_009B = 0x1f6;
         goto cf_common_join_00667054;
       }
-      switch(uVar12) {
+      switch(uVar13) {
       case 0x1f6:
         param_1->field_00EB = 0x40;
         if (param_1->field_00A3 != 0) {
@@ -857,15 +859,15 @@ LAB_006664d8:
         }
         param_1->field_00A3 = 1;
         param_1->field_023B->count = 0;
-        uVar12 = param_1->field_001C * 0x41c64e6d + 0x3039;
-        param_1->field_001C = uVar12;
+        uVar13 = param_1->field_001C * 0x41c64e6d + 0x3039;
+        param_1->field_001C = uVar13;
         uVar6 = sub_0065D9C0(param_1);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-        uVar12 = CONCAT22(extraout_var_10,uVar6) / ((uVar12 >> 0x10) % 3 + 5);
-        if (uVar12 == 0) {
-          uVar12 = 1;
+        uVar13 = CONCAT22(extraout_var_10,uVar6) / ((uVar13 >> 0x10) % 3 + 5);
+        if (uVar13 == 0) {
+          uVar13 = 1;
         }
-        iVar11 = thunk_FUN_0065eb70(param_1,*(uint *)&param_1->field_0xc7,uVar12,
+        iVar11 = thunk_FUN_0065eb70(param_1,*(uint *)&param_1->field_0xc7,uVar13,
                                     &param_1->field_023B->flags,*(uint *)&param_1->field_0xcb,
                                     *(uint *)&param_1->field_0xcf,&param_1->field_0xd5,
                                     (uint)(byte)param_1->field_0xd3);
@@ -895,26 +897,26 @@ LAB_006664d8:
         thunk_FUN_006757c0((short *)&param_1->field_0x195,(short *)&param_1->field_0x197,
                            (short *)&param_1->field_0x199,(short *)&param_1->field_0x19b,
                            (short *)&param_1->field_0x19d,(short *)&param_1->field_0x19f);
-        uVar12 = *(uint *)&param_1->field_0xbf & 1;
-        param_1->field_00F3 = uVar12;
-        if (uVar12 == 0) {
+        uVar13 = *(uint *)&param_1->field_0xbf & 1;
+        param_1->field_00F3 = uVar13;
+        if (uVar13 == 0) {
           param_1->field_00F3 = *(uint *)&param_1->field_0xbf & 2;
         }
         if (param_1->field_00F3 == 0) {
-          uVar12 = param_1->field_001C * 0x41c64e6d + 0x3039;
-          param_1->field_001C = uVar12;
-          param_1->field_00F3 = (uVar12 >> 0x10 & 1) + 1;
+          uVar13 = param_1->field_001C * 0x41c64e6d + 0x3039;
+          param_1->field_001C = uVar13;
+          param_1->field_00F3 = (uVar13 >> 0x10 & 1) + 1;
         }
-        uVar12 = *(uint *)&param_1->field_0xc3;
-        if ((uVar12 & 0x100) == 0) {
-          param_1->field_00EF = uVar12 & 0x200;
-          if ((uVar12 & 0x200) == 0) {
-            param_1->field_00EF = uVar12 & 0x400;
+        uVar13 = *(uint *)&param_1->field_0xc3;
+        if ((uVar13 & 0x100) == 0) {
+          param_1->field_00EF = uVar13 & 0x200;
+          if ((uVar13 & 0x200) == 0) {
+            param_1->field_00EF = uVar13 & 0x400;
           }
-          if ((param_1->field_00EF == 0) && ((uVar12 & 0x800) != 0)) {
-            uVar12 = param_1->field_001C * 0x41c64e6d + 0x3039;
-            param_1->field_001C = uVar12;
-            param_1->field_00EF = (-(uint)((uVar12 & 0x10000) != 0) & 0xfffffe00) + 0x400;
+          if ((param_1->field_00EF == 0) && ((uVar13 & 0x800) != 0)) {
+            uVar13 = param_1->field_001C * 0x41c64e6d + 0x3039;
+            param_1->field_001C = uVar13;
+            param_1->field_00EF = (-(uint)((uVar13 & 0x10000) != 0) & 0xfffffe00) + 0x400;
           }
           param_1->field_00EF = 0x100;
           param_1->field_009B = 0x201;
@@ -951,9 +953,9 @@ LAB_006668f9:
       }
       goto cf_common_join_00667054;
     }
-    if (0x4d < uVar12 - 0x201) goto cf_common_exit_00667066;
-    bVar2 = *(byte *)(uVar12 + 0x667073);
-    switch(uVar12) {
+    if (0x4d < uVar13 - 0x201) goto cf_common_exit_00667066;
+    bVar2 = *(byte *)(uVar13 + 0x667073);
+    switch(uVar13) {
     case 0x201:
       param_1->field_00EB = 0x40;
       if (param_1->field_00A3 == 0) {
@@ -993,11 +995,11 @@ LAB_006668f9:
       }
       if (param_1->field_00A7 != 0) break;
       if (param_1->field_00AB == 0) goto cf_common_exit_00667066;
-      uVar12 = param_1->field_00AF + param_1->field_00AB;
-      bVar21 = param_1->field_0280 < uVar12;
-      bVar22 = param_1->field_0280 == uVar12;
+      uVar13 = param_1->field_00AF + param_1->field_00AB;
+      bVar22 = param_1->field_0280 < uVar13;
+      bVar23 = param_1->field_0280 == uVar13;
 LAB_00666ddf:
-      if (bVar21 || bVar22) goto cf_common_exit_00667066;
+      if (bVar22 || bVar23) goto cf_common_exit_00667066;
       break;
     case 0x212:
       param_1->field_00EB = 0x20;
@@ -1007,8 +1009,8 @@ LAB_00666ddf:
         param_1->field_00AF = param_1->field_0280;
         thunk_FUN_0065fa10((AnonShape_0065FA10_37C5A4D3 *)param_1,(uint)bVar2,0,0,0);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-        uVar16 = CONCAT22(extraout_var_16,*(undefined2 *)&param_1->field_0xc3);
-        iVar11 = thunk_FUN_00660620((AnonShape_00660620_6BCED4D7 *)param_1,uVar16,uVar16);
+        uVar17 = CONCAT22(extraout_var_16,*(undefined2 *)&param_1->field_0xc3);
+        iVar11 = thunk_FUN_00660620((AnonShape_00660620_6BCED4D7 *)param_1,uVar17,uVar17);
         goto joined_r0x00666ceb;
       }
       if (param_1->field_00A7 == 0) {
@@ -1019,9 +1021,9 @@ LAB_00666ddf:
 LAB_006664e6:
         if (sVar7 < iVar11) {
           if (param_1->field_00AB == 0) goto cf_common_exit_00667066;
-          uVar12 = param_1->field_00AF + param_1->field_00AB;
-          bVar21 = param_1->field_0280 < uVar12;
-          bVar22 = param_1->field_0280 == uVar12;
+          uVar13 = param_1->field_00AF + param_1->field_00AB;
+          bVar22 = param_1->field_0280 < uVar13;
+          bVar23 = param_1->field_0280 == uVar13;
           goto LAB_00666ddf;
         }
       }
@@ -1040,9 +1042,9 @@ LAB_00666db5:
       if (param_1->field_00A7 == 0) {
 cf_common_join_00666DC1:
         if (param_1->field_00AB == 0) goto cf_common_exit_00667066;
-        uVar12 = param_1->field_00AF + param_1->field_00AB;
-        bVar21 = param_1->field_0280 < uVar12;
-        bVar22 = param_1->field_0280 == uVar12;
+        uVar13 = param_1->field_00AF + param_1->field_00AB;
+        bVar22 = param_1->field_0280 < uVar13;
+        bVar23 = param_1->field_0280 == uVar13;
         goto LAB_00666ddf;
       }
       break;
@@ -1147,28 +1149,28 @@ joined_r0x00666ceb:
         }
         local_10 = (DArrayTy *)sub_0065E360(param_1,(uint)bVar2,iVar11);
         if (local_10 != (DArrayTy *)0x0) {
-          uVar12 = local_10->count;
+          uVar13 = local_10->count;
           local_c = 0;
-          if (0 < (int)uVar12) {
+          if (0 < (int)uVar13) {
             do {
-              if (local_c < uVar12) {
+              if (local_c < uVar13) {
                 /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(local_10, local_c) (runtime stride) */
-                puVar14 = (ushort *)(local_10->elementSize * local_c + (int)local_10->data);
+                puVar15 = (ushort *)(local_10->elementSize * local_c + (int)local_10->data);
               }
               else {
-                puVar14 = (ushort *)0x0;
+                puVar15 = (ushort *)0x0;
               }
               this_00 = STAllPlayersC::GetObjPtr
-                                  (g_allPlayers_007FA174,*(char *)&param_1->field_0024,*puVar14,
+                                  (g_allPlayers_007FA174,*(char *)&param_1->field_0024,*puVar15,
                                    CASE_1);
               local_48 = this_00;
               switch(*(undefined4 *)&param_1->field_0xc3) {
               case 0xa3:
               case 0xa8:
               case 0xbe:
-                uVar12 = thunk_FUN_004c5350(this_00,0,(int *)0x0,(int)*(short *)&param_1->field_0xc7
+                uVar13 = thunk_FUN_004c5350(this_00,0,(int *)0x0,(int)*(short *)&param_1->field_0xc7
                                             ,(int)*(short *)&param_1->field_0xc9,0,0,0);
-                if (uVar12 != 0) {
+                if (uVar13 != 0) {
                   sVar7 = *(short *)&param_1->field_0xc7;
                   sVar4 = *(short *)&param_1->field_0xc9;
                   this_00->field_0265 = this_00->field_0265 | 2;
@@ -1182,9 +1184,9 @@ joined_r0x00666ceb:
               case 0xb2:
                 if (this_00->field_0024 != this_00->field_023D) {
                   uVar12 = GetPlayerRaceId((char)this_00->field_023D);
-                  local_4c = ((uVar12 & 0xff) + this_00->field_0235 * 3) * 3;
-                  uVar12 = GetPlayerRaceId(*(char *)&this_00->field_0024);
-                  if ((&DAT_007e1984)[(uVar12 & 0xff) + local_4c] == '\0') break;
+                  local_4c = ((uVar12 & 0xffU) + this_00->field_0235 * 3) * 3;
+                  local_EAX_9844 = GetPlayerRaceId(*(char *)&this_00->field_0024);
+                  if ((&DAT_007e1984)[(local_EAX_9844 & 0xffU) + local_4c] == '\0') break;
                 }
                 if ((local_48->field_0245 == 0) && (99 < local_48->field_04EC)) {
                   thunk_FUN_004d8e70(local_48,(int)*(short *)&param_1->field_0xc7,
@@ -1194,8 +1196,8 @@ joined_r0x00666ceb:
                 }
               }
               local_c = local_c + 1;
-              uVar12 = local_10->count;
-            } while ((int)local_c < (int)uVar12);
+              uVar13 = local_10->count;
+            } while ((int)local_c < (int)uVar13);
           }
 cf_break_loop_0066703E:
           DArrayDestroy(local_10);
@@ -1206,7 +1208,7 @@ cf_common_join_00667047:
     sub_0065F980(param_1);
     goto cf_common_join_0066704E;
   }
-  if (uVar12 == 0x82) {
+  if (uVar13 == 0x82) {
     param_1->field_00EB = 0x40;
     param_1->field_00AB = param_1->field_0190;
     param_1->field_00AF = param_1->field_0280;
@@ -1224,7 +1226,7 @@ cf_common_join_00667047:
     }
     goto cf_common_join_00667054;
   }
-  switch(uVar12) {
+  switch(uVar13) {
   case 0:
     uVar3 = param_1->field_007B;
     if (0x10 < uVar3) {
@@ -1374,12 +1376,12 @@ LAB_00665607:
     param_1->field_00EB = 8;
 LAB_00665327:
     if (param_1->field_0139 != '\0') {
-      uVar12 = param_1->field_014E + param_1->field_014A;
-      bVar21 = param_1->field_0280 < uVar12;
-      bVar22 = param_1->field_0280 == uVar12;
+      uVar13 = param_1->field_014E + param_1->field_014A;
+      bVar22 = param_1->field_0280 < uVar13;
+      bVar23 = param_1->field_0280 == uVar13;
 /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
 LAB_0066534b:
-      if ((!bVar21 && !bVar22) &&
+      if ((!bVar22 && !bVar23) &&
          (uVar6 = sub_0065D9C0(param_1), (int)param_1->field_013E <= CONCAT22(extraout_var,uVar6)))
       {
 LAB_0066586a:
@@ -1459,13 +1461,13 @@ LAB_006655ba:
       uVar6 = sub_0065D9C0(param_1);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       if (CONCAT22(extraout_var_00,uVar6) != 0 && -1 < extraout_var_00) {
-        uVar12 = param_1->field_0280;
+        uVar13 = param_1->field_0280;
         memset(&stack0xffffff64, 0, 0x34); /* compiler bulk-zero initialization */
         iVar11 = 0;
         local_9c = 0x72;
         local_94 = 2;
-        local_98 = uVar12;
-        local_90 = (DArrayTy *)sub_0065DA10(param_1,uVar12);
+        local_98 = uVar13;
+        local_90 = (DArrayTy *)sub_0065DA10(param_1,uVar13);
         if ((AiTactClassTy *)param_1->field_0284 != (AiTactClassTy *)0x0) {
           AiTactClassTy::GetAiMess
                     ((AiTactClassTy *)param_1->field_0284,
@@ -1493,9 +1495,9 @@ LAB_006655ba:
       param_1->field_00EB = 1;
     }
     if (param_1->field_0139 != '\0') {
-      uVar12 = param_1->field_014E + param_1->field_014A;
-      bVar21 = param_1->field_0280 < uVar12;
-      bVar22 = param_1->field_0280 == uVar12;
+      uVar13 = param_1->field_014E + param_1->field_014A;
+      bVar22 = param_1->field_0280 < uVar13;
+      bVar23 = param_1->field_0280 == uVar13;
       goto LAB_0066534b;
     }
     goto LAB_00665886;
@@ -1506,8 +1508,7 @@ LAB_006655ba:
       param_1->field_00AB = param_1->field_0107;
       param_1->field_00AF = param_1->field_0280;
       thunk_FUN_0065fa10((AnonShape_0065FA10_37C5A4D3 *)param_1,(int)param_1->field_010D,
-                         (int)param_1->field_010B,(int)param_1->field_010D,(int)param_1->field_010F)
-      ;
+                         (int)param_1->field_010B,(int)param_1->field_010D,(int)param_1->field_010F);
       thunk_FUN_0065fd50(param_1,(int)param_1->field_0101,(int)param_1->field_0103,
                          param_1->field_0105,0);
       goto cf_common_exit_00667066;
@@ -1551,9 +1552,9 @@ LAB_006655ba:
                                   (short *)&param_1->field_0x195,0,param_1->field_013A,(byte *)0x0,
                                   0xffffffff,0);
       if (iVar11 == 0) {
-        uVar12 = param_1->field_001C * 0x41c64e6d + 0x3039;
-        param_1->field_001C = uVar12;
-        if ((uVar12 & 0x10000) == 0) {
+        uVar13 = param_1->field_001C * 0x41c64e6d + 0x3039;
+        param_1->field_001C = uVar13;
+        if ((uVar13 & 0x10000) == 0) {
           iVar11 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065ED90::thunk_FUN_0065ed90
                              ((AnonReceiver_0065ED90 *)param_1,(short *)&param_1->field_0x195,
                               &param_1->field_01A1,0);
@@ -1625,8 +1626,8 @@ LAB_00665b57:
     }
     param_1->field_00A3 = 1;
     if (((param_1->field_00EF != 0x200) && (param_1->field_00EF != 0x400)) ||
-       (uVar12 = param_1->field_001C * 0x41c64e6d + 0x3039, param_1->field_001C = uVar12,
-       (uVar12 & 0x10000) == 0)) goto LAB_00665b57;
+       (uVar13 = param_1->field_001C * 0x41c64e6d + 0x3039, param_1->field_001C = uVar13,
+       (uVar13 & 0x10000) == 0)) goto LAB_00665b57;
     iVar11 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065ED90::thunk_FUN_0065ed90
                        ((AnonReceiver_0065ED90 *)param_1,(short *)&param_1->field_0x195,
                         &param_1->field_01A1,param_1->field_00EF);

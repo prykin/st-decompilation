@@ -1,12 +1,18 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* [STPrototypeApplier] Propagated parameter 0.
-   Evidence: 004A8920 -> 006E1050 @ 004A89F8 */
+/* [STMethodOwnerApplier] Structural method owner recovered as ST3DSMAPContext.
+   Evidence: this_call_owners=[ST3DSMAPContext]; agreed_this_calls=1; incoming_this_accesses=52;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=3;
+   incoming_ecx_receiver_callers=2; attributed_named_callers=1; owner_evidence_coverage=adequate
 
-void __fastcall FUN_006e1050(AnonShape_GLOBAL_00807598_0C6808FB *param_1)
+   [STPrototypeRepairApplier] Propagated parameter 0.
+   Evidence: 004A8920 -> 006E1050 @ 004A89F8; data at 00807598 | 006E1460 -> 006E1050 @ 006E15DE;
+   ST3DSMAPContext::sub_006E1460 this; stable alias ESI */
+
+void __fastcall ST3DSMAPContext::sub_006E1050(ST3DSMAPContext *param_1)
 
 {
-  void *this;
+  ST3DSMAPContext *this;
   double dVar1;
   double dVar2;
   int iVar3;
@@ -54,7 +60,7 @@ void __fastcall FUN_006e1050(AnonShape_GLOBAL_00807598_0C6808FB *param_1)
   local_18 = ((float)local_8 + (float)_DAT_007901c0) * (float)*(double *)&param_1->field_0xc8;
   local_10 = 0;
   local_14 = ((float)local_c + (float)_DAT_007901c0) * (float)*(double *)&param_1->field_0xc8;
-  FUN_006e25d0(param_1,&local_28);
+  sub_006E25D0(param_1,&local_28);
   iVar4 = (local_28 >> 0x10) % *(int *)&param_1->field_0x2c0;
   *(int *)&param_1->field_0x2c8 = iVar4;
   if (iVar4 != 0) {
@@ -66,7 +72,7 @@ void __fastcall FUN_006e1050(AnonShape_GLOBAL_00807598_0C6808FB *param_1)
     *(int *)&param_1->field_0x2cc = iVar4 - *(int *)&param_1->field_0x2c4;
   }
   FUN_006ce6c0(*(ushort **)&param_1->field_0x2b0,*(uint *)&param_1->field_0x2b4,30000);
-  FUN_006de9c0((AnonShape_006DE9C0_E5D1D3B8 *)param_1);
+  sub_006DE9C0(param_1);
   if (*(int *)&param_1->field_0x358 != 0) {
     *(undefined4 *)(*(int *)&param_1->field_0x358 + 0x280) = *(undefined4 *)&param_1->field_0x280;
     iVar4 = *(int *)&param_1->field_0x358;
@@ -84,16 +90,16 @@ void __fastcall FUN_006e1050(AnonShape_GLOBAL_00807598_0C6808FB *param_1)
     *(int *)&param_1->field_0x378 = iVar5;
     *(int *)(iVar4 + 0x374) = iVar3;
     *(int *)(*(int *)&param_1->field_0x358 + 0x378) = iVar5;
-    this = *(void **)&param_1->field_0x358;
+    this = *(ST3DSMAPContext **)&param_1->field_0x358;
     dVar1 = ((double)*(int *)&param_1->field_0x378 + _DAT_0079b168) *
-            *(double *)&param_1->field_0x368 + *(double *)((int)this + 0x78);
+            *(double *)&param_1->field_0x368 + *(double *)&this->field_0x78;
     dVar2 = *(double *)&param_1->field_0x368 * _DAT_0079b168 +
             ((double)*(int *)&param_1->field_0x374 * *(double *)&param_1->field_0x368 -
-            *(double *)((int)this + 0x60));
-    FUN_006dd610(this,4,SUB84(dVar2,0),(int)((ulonglong)dVar2 >> 0x20),SUB84(dVar1,0),
+            *(double *)&this->field_0x60);
+    sub_006DD610(this,4,SUB84(dVar2,0),(int)((ulonglong)dVar2 >> 0x20),SUB84(dVar1,0),
                  (int)((ulonglong)dVar1 >> 0x20));
-    FUN_006ddbe0(*(AnonShape_GLOBAL_00807598_0C6808FB **)&param_1->field_0x358);
-    FUN_006de9c0(*(AnonShape_006DE9C0_E5D1D3B8 **)&param_1->field_0x358);
+    sub_006DDBE0(*(ST3DSMAPContext **)&param_1->field_0x358);
+    sub_006DE9C0(*(ST3DSMAPContext **)&param_1->field_0x358);
     *(undefined4 *)(*(int *)&param_1->field_0x358 + 0x134) = 0;
     *(undefined4 *)&param_1->field_0x140 = 0;
     *(undefined4 *)&param_1->field_0x13c = 0;

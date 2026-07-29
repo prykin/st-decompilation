@@ -87,9 +87,10 @@ FUN_00624140(void *this,int param_1,int param_2,Global_sub_0061BDB0_param_1Enum 
         *param_7 = iVar4;
         return 2;
       }
-      iVar4 = *(int *)((int)*(void **)((int)this + 0x211) + 0x380);
-      FUN_006e3310(*(void **)((int)this + 0x211),(iVar4 * param_4) / 0xc9,
-                   (int *)((iVar4 * param_5) / 0xc9),(int)pGVar3,(int *)&param_3);
+      iVar4 = (*(ST3DSMAPContext **)((int)this + 0x211))->field_0380;
+      ST3DSMAPContext::sub_006E3310
+                (*(ST3DSMAPContext **)((int)this + 0x211),(iVar4 * param_4) / 0xc9,
+                 (int *)((iVar4 * param_5) / 0xc9),(int)pGVar3,(int *)&param_3);
       lVar6 = Library::MSVCRT::__ftol();
       iVar4 = (int)(short)lVar6;
       pGVar1 = (Global_sub_0061BDB0_param_1Enum *)((int)pGVar3 + 1);

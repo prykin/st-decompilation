@@ -225,6 +225,8 @@ The current work focuses on recovering what the binary can prove:
   returns, plus unanimous propagation of already recovered structure pointers through EAX;
 - conservative class layouts, field types, and fixed member arrays proven by
   bounded indexing or exact pointer-walk loops;
+- per-owner-field `DArrayTy` specializations whose runtime stride is proven by
+  `DArrayCreate`, with separately recovered packed element records;
 - packed global record arrays recovered from x86 stride, range, and field-access evidence;
 - bounded indexed global aggregates such as the player relation matrix;
 - typed global data recovered from class-receiver and trusted-argument use;
@@ -236,6 +238,8 @@ The current work focuses on recovering what the binary can prove:
   `__cdecl` correction, with ambiguous callsites retained for review;
 - statically linked CRT, DKW, and internal `Ourlib` modules;
 - structured control-flow labels where the decompiler emits unavoidable gotos.
+- strict free-function names passed to repeated diagnostic sinks, with bounded
+  source-string-cluster provenance for statically linked modules.
 
 The next stage is to move stable subsystems into `src/`, validate their behavior
 against the original executable, and define portable boundaries for platform

@@ -211,8 +211,7 @@ LAB_00516eb8:
         iVar6 = 3;
       }
 LAB_00516f08:
-      pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_0248,iVar6)
-      ;
+      pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_0248,iVar6);
       pAVar14 = this_00->field_0068;
       goto LAB_00516f6b;
     }

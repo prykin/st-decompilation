@@ -13,11 +13,12 @@ int __thiscall BldLabPanelTy::GetMessage(BldLabPanelTy *this,STMessage *message)
 
 {
   STMessageId SVar1;
-  DArrayTy *pDVar2;
+  BldLabPanelTy_field_027ADArray *pBVar2;
   code *pcVar3;
   BldLabPanelTy *this_00;
   int iVar4;
-  undefined4 *puVar5;
+  Global_sub_00526BA0_param_1Enum *pGVar5;
+  BldLabPanelTy_field_027AElement *element_027a;
   int iVar6;
   InternalExceptionFrame local_4c;
   BldLabPanelTy *local_8;
@@ -53,32 +54,31 @@ int __thiscall BldLabPanelTy::GetMessage(BldLabPanelTy *this,STMessage *message)
         g_currentExceptionFrame = local_4c.previous;
         return 0;
       }
-      if (this_00->field_027A != (DArrayTy *)0x0) {
-        DArrayDestroy(this_00->field_027A);
+      if (this_00->field_027A != (BldLabPanelTy_field_027ADArray *)0x0) {
+        DArrayDestroy((DArrayTy *)this_00->field_027A);
       }
-      this_00->field_027A = (DArrayTy *)0x0;
+      this_00->field_027A = (BldLabPanelTy_field_027ADArray *)0x0;
       g_prodPanel_00801680 = (ProdPanelTy *)0x0;
       g_currentExceptionFrame = local_4c.previous;
       return 0;
     }
-    pDVar2 = this_00->field_027A;
-    if ((pDVar2 == (DArrayTy *)0x0) ||
-       (iVar4 = SVar1 + this_00->field_0199, pDVar2->count <= iVar4 - 0xc09fU)) {
-      puVar5 = (undefined4 *)0x0;
+    pBVar2 = this_00->field_027A;
+    if ((pBVar2 == (BldLabPanelTy_field_027ADArray *)0x0) ||
+       (iVar4 = SVar1 + this_00->field_0199, pBVar2->count <= iVar4 - 0xc09fU)) {
+      pGVar5 = (Global_sub_00526BA0_param_1Enum *)0x0;
     }
     else {
-      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
-      puVar5 = (undefined4 *)((iVar4 + -0xc09f) * pDVar2->elementSize + (int)pDVar2->data);
+      element_027a = DArrayAt<BldLabPanelTy_field_027AElement>(pBVar2, iVar4 + -0xc09f);
     }
-    if (puVar5 == (undefined4 *)0x0) {
+    if (element_027a == (BldLabPanelTy_field_027AElement *)0x0) {
       g_currentExceptionFrame = local_4c.previous;
       return 0;
     }
-    if (*(char *)(puVar5 + 2) == '\0') {
+    if ((char)element_027a->field_0008 == '\0') {
       g_currentExceptionFrame = local_4c.previous;
       return 0;
     }
-    CursorClassTy::sub_0054B630(g_cursorClass_00802A30,0xe,*puVar5);
+    CursorClassTy::sub_0054B630(g_cursorClass_00802A30,0xe,element_027a->field_0000);
     ProdPanelTy::SetPanel((ProdPanelTy *)this_00,'\0');
   }
   else {

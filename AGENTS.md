@@ -49,6 +49,10 @@ Original binaries are local under ignored `bin/` and must not be committed.
 - Named `GetMessage` methods share the recovered `STMessage *` envelope. Its
   three argument slots are ID-dependent unions, not three globally fixed types.
 - A runtime `DArrayTy::elementSize` stride cannot become a static C array type.
+  Use a per-owner-field descriptor specialization whose `data` member points at
+  the recovered element record; keep the runtime stride in the pseudocode.
+- `Owner::sub_ADDRESS` is an automation-owned structural placeholder: method
+  ownership is proven, but no original semantic method name has been recovered.
 - A fixed class-member array may be installed only from a proven bound or exact
   pointer-walk extent; run `STClassArrayAnalyzer` before the class-layout pair.
 - Typed vtable function pointers retain an explicit receiver in Ghidra's own C
@@ -57,7 +61,10 @@ Original binaries are local under ignored `bin/` and must not be committed.
   `obj->slot(...)`; adjusted, cast, missing, and secondary-base receivers stay
   explicit for review.
 - Compiler optimization can merge several SSA lifetimes into one Listing local;
-  avoid persistent local typing when evidence shows mixed scalar/pointer roles.
+  avoid persistent whole-local typing when evidence shows mixed scalar/pointer
+  roles. `STLocalLifetimeAnalyzer/Applier` may split only distinct decompiler
+  merge groups with an address-stable exact type anchor; a fresh decompile must
+  reattach the database local to that same anchor before `applied` is reported.
 - Non-leaf `void` is valid only when every direct-call CFG path kills EAX before
   an explicit read; an unresolved path is `unknown`, not ignored. A bare caller
   `RET` proves forwarding only when that caller already has a protected non-void

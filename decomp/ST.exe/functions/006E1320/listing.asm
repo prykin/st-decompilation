@@ -1,4 +1,4 @@
-FUN_006e1320:
+ST3DSMAPContext::sub_006E1320:
 006E1320  55                        PUSH EBP
 006E1321  8B EC                     MOV EBP,ESP
 006E1323  83 EC 3C                  SUB ESP,0x3c

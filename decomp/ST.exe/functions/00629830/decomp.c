@@ -16,8 +16,7 @@ void __thiscall STParticleC::sub_00629830(STParticleC *this)
     this->field_00BA = 0x23;
   }
   if (-1 < this->field_00C6) {
-    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_006e9520
-              ((AnonReceiver_004248D0 *)PTR_00807598,this->field_00C6,0,0,0);
+    Library::Ourlib::ST3DSMAP::SprSetShadow(g_sT3DSMAPContext_00807598,this->field_00C6,0,0,0);
   }
   return;
 }

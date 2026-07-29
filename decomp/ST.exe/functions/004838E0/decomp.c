@@ -75,14 +75,12 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004603B0::FUN_004838e0
       }
       uVar25 = Library::MSVCRT::__alldiv(uVar11,uVar15,uVar6,uVar21);
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      uVar25 = CONCAT44(-((int)((ulonglong)uVar25 >> 0x20) + (uint)((int)uVar25 != 0)),-(int)uVar25)
-      ;
+      uVar25 = CONCAT44(-((int)((ulonglong)uVar25 >> 0x20) + (uint)((int)uVar25 != 0)),-(int)uVar25);
     }
     else {
       local_60 = (longlong)(int)uVar18;
       lVar24 = Library::MSVCRT::__allmul(uVar18,(int)uVar18 >> 0x1f,uVar6,uVar21);
-      lVar24 = Library::MSVCRT::__allmul((uint)lVar24,(int)((ulonglong)lVar24 >> 0x20),uVar6,uVar21)
-      ;
+      lVar24 = Library::MSVCRT::__allmul((uint)lVar24,(int)((ulonglong)lVar24 >> 0x20),uVar6,uVar21);
       lVar22 = Library::MSVCRT::__allmul(uVar11,uVar15,uVar5,uVar19);
       lVar23 = Library::MSVCRT::__allmul(uVar6,uVar21,uVar6,uVar21);
       lVar26 = Library::MSVCRT::__allmul(uVar5,uVar19,uVar5,uVar19);

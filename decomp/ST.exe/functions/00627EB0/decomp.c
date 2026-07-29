@@ -81,7 +81,7 @@ int __thiscall STParticleC::GetMessage(STParticleC *this,STMessage *message)
         g_currentExceptionFrame = local_7c.previous;
         return 0;
       }
-      FUN_006e8ba0(PTR_00807598,local_10->field_00C6);
+      Library::Ourlib::ST3DSMAP::SprClose(g_sT3DSMAPContext_00807598,local_10->field_00C6);
       this_00->field_00C6 = -1;
       g_currentExceptionFrame = local_7c.previous;
       return 0;
@@ -104,7 +104,7 @@ int __thiscall STParticleC::GetMessage(STParticleC *this,STMessage *message)
           g_currentExceptionFrame = local_7c.previous;
           return 0;
         }
-        FUN_006eab60(PTR_00807598,this_00->field_00C6);
+        Library::Ourlib::ST3DSMAP::SprHide(g_sT3DSMAPContext_00807598,this_00->field_00C6);
         g_currentExceptionFrame = local_7c.previous;
         return 0;
       }
@@ -113,7 +113,7 @@ int __thiscall STParticleC::GetMessage(STParticleC *this,STMessage *message)
         g_currentExceptionFrame = local_7c.previous;
         return 0;
       }
-      FUN_006eaaa0(PTR_00807598,this_00->field_00C6,0);
+      Library::Ourlib::ST3DSMAP::SprShow(g_sT3DSMAPContext_00807598,this_00->field_00C6,0);
       this_00->field_00C1 = 1;
       g_currentExceptionFrame = local_7c.previous;
       return 0;
@@ -165,16 +165,18 @@ int __thiscall STParticleC::GetMessage(STParticleC *this,STMessage *message)
       g_currentExceptionFrame = local_7c.previous;
       return 0;
     }
-    FUN_006eaaa0(PTR_00807598,this_00->field_00C6,0);
+    Library::Ourlib::ST3DSMAP::SprShow(g_sT3DSMAPContext_00807598,this_00->field_00C6,0);
     this_00->field_00C1 = 1;
-    FUN_006ea270(PTR_00807598,this_00->field_00C6,0,this_00->field_00B2);
+    ST3DSMAPContext::sub_006EA270
+              (g_sT3DSMAPContext_00807598,this_00->field_00C6,0,this_00->field_00B2);
     local_c = (float)this_00->field_0046 * _DAT_007904f8 * _DAT_007904f0;
     this_00->field_006A = local_c;
     local_8 = (float)this_00->field_004A * _DAT_007904f8 * _DAT_007904f0;
     this_00->field_006E = local_8;
     fVar5 = (float)this_00->field_004E * _DAT_007904f8 * _DAT_007904f0;
     this_00->field_0072 = fVar5;
-    FUN_006ea960(PTR_00807598,this_00->field_00C6,local_c,local_8,fVar5 + _DAT_007904fc);
+    Library::Ourlib::ST3DSMAP::SprMove
+              (g_sT3DSMAPContext_00807598,this_00->field_00C6,local_c,local_8,fVar5 + _DAT_007904fc);
     pVVar11 = g_visibleClass_00802A88;
     if (g_visibleClass_00802A88 == (VisibleClassTy *)0x0) {
       g_currentExceptionFrame = local_7c.previous;
@@ -242,7 +244,7 @@ LAB_00628286:
       if ((char)uVar7 == '\0') {
         InitVisibelDeton(this_00,0);
         if (-1 < this_00->field_00C6) {
-          FUN_006e8ba0(PTR_00807598,this_00->field_00C6);
+          Library::Ourlib::ST3DSMAP::SprClose(g_sT3DSMAPContext_00807598,this_00->field_00C6);
           this_00->field_00C6 = -1;
         }
       }
@@ -287,14 +289,16 @@ LAB_006283bd:
       g_currentExceptionFrame = local_7c.previous;
       return 0;
     }
-    FUN_006ea270(PTR_00807598,this_00->field_00C6,0,this_00->field_00B2);
+    ST3DSMAPContext::sub_006EA270
+              (g_sT3DSMAPContext_00807598,this_00->field_00C6,0,this_00->field_00B2);
     local_c = (float)this_00->field_0046 * _DAT_007904f8 * _DAT_007904f0;
     this_00->field_006A = local_c;
     local_8 = (float)this_00->field_004A * _DAT_007904f8 * _DAT_007904f0;
     this_00->field_006E = local_8;
     fVar5 = (float)this_00->field_004E * _DAT_007904f8 * _DAT_007904f0;
     this_00->field_0072 = fVar5;
-    FUN_006ea960(PTR_00807598,this_00->field_00C6,local_c,local_8,fVar5 + _DAT_007904fc);
+    Library::Ourlib::ST3DSMAP::SprMove
+              (g_sT3DSMAPContext_00807598,this_00->field_00C6,local_c,local_8,fVar5 + _DAT_007904fc);
     pVVar11 = g_visibleClass_00802A88;
     if (g_visibleClass_00802A88 == (VisibleClassTy *)0x0) {
       g_currentExceptionFrame = local_7c.previous;
@@ -343,11 +347,11 @@ LAB_006282e0:
     this_00->field_00B2 = iVar6;
     if ((((this_00->field_00BF != '\0') && (iVar6 == 0xf)) && (this_00->field_00D6 != '\0')) &&
        (-1 < this_00->field_00C6)) {
-      FUN_006e9cb0(PTR_00807598,(uint *)this_00->field_00C6,1);
+      ST3DSMAPContext::sub_006E9CB0(g_sT3DSMAPContext_00807598,(uint *)this_00->field_00C6,1);
     }
     if (((this_00->field_00B2 == this_00->field_00B6) && (this_00->field_00D6 != '\0')) &&
        (-1 < this_00->field_00C6)) {
-      FUN_006e9d40(PTR_00807598,(uint *)this_00->field_00C6,0);
+      ST3DSMAPContext::sub_006E9D40(g_sT3DSMAPContext_00807598,(uint *)this_00->field_00C6,0);
     }
     if (((this_00->field_00B2 == 5) && (iVar6 = thunk_FUN_0062b300((int)this_00), iVar6 != 0)) &&
        (this_00->field_0076 != 2)) {
@@ -365,14 +369,16 @@ LAB_006282e0:
       return 0;
     }
     if ((int)uVar7 < this_00->field_00B6) {
-      FUN_006ea270(PTR_00807598,this_00->field_00C6,0,uVar7);
+      ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,this_00->field_00C6,0,uVar7);
       local_c = (float)this_00->field_0046 * _DAT_007904f8 * _DAT_007904f0;
       this_00->field_006A = local_c;
       local_8 = (float)this_00->field_004A * _DAT_007904f8 * _DAT_007904f0;
       this_00->field_006E = local_8;
       fVar5 = (float)this_00->field_004E * _DAT_007904f8 * _DAT_007904f0;
       this_00->field_0072 = fVar5;
-      FUN_006ea960(PTR_00807598,this_00->field_00C6,local_c,local_8,fVar5 + _DAT_007904fc);
+      Library::Ourlib::ST3DSMAP::SprMove
+                (g_sT3DSMAPContext_00807598,this_00->field_00C6,local_c,local_8,
+                 fVar5 + _DAT_007904fc);
       pVVar11 = g_visibleClass_00802A88;
       if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
         iVar6 = this_00->field_004E;
@@ -428,12 +434,12 @@ LAB_006282e0:
         }
         if (bVar12) {
           if (this_00->field_00C1 == '\0') {
-            FUN_006eaaa0(PTR_00807598,this_00->field_00C6,0);
+            Library::Ourlib::ST3DSMAP::SprShow(g_sT3DSMAPContext_00807598,this_00->field_00C6,0);
             this_00->field_00C1 = 1;
           }
         }
         else if (this_00->field_00C1 == '\x01') {
-          FUN_006eab60(PTR_00807598,this_00->field_00C6);
+          Library::Ourlib::ST3DSMAP::SprHide(g_sT3DSMAPContext_00807598,this_00->field_00C6);
           this_00->field_00C1 = 0;
         }
       }
@@ -469,7 +475,8 @@ LAB_006282e0:
     this_00->field_006E = local_8;
     fVar5 = (float)this_00->field_004E * _DAT_007904f8 * _DAT_007904f0;
     this_00->field_0072 = fVar5;
-    FUN_006ea960(PTR_00807598,this_00->field_00C6,local_c,local_8,fVar5 + _DAT_007904fc);
+    Library::Ourlib::ST3DSMAP::SprMove
+              (g_sT3DSMAPContext_00807598,this_00->field_00C6,local_c,local_8,fVar5 + _DAT_007904fc);
     pVVar11 = g_visibleClass_00802A88;
     if (g_visibleClass_00802A88 == (VisibleClassTy *)0x0) {
       g_currentExceptionFrame = local_7c.previous;
@@ -538,14 +545,14 @@ LAB_006282e0:
 joined_r0x00628af1:
   if (bVar12) {
     if (cVar1 == '\0') {
-      FUN_006eaaa0(PTR_00807598,this_00->field_00C6,0);
+      Library::Ourlib::ST3DSMAP::SprShow(g_sT3DSMAPContext_00807598,this_00->field_00C6,0);
       this_00->field_00C1 = 1;
       g_currentExceptionFrame = local_7c.previous;
       return 0;
     }
   }
   else if (cVar1 == '\x01') {
-    FUN_006eab60(PTR_00807598,this_00->field_00C6);
+    Library::Ourlib::ST3DSMAP::SprHide(g_sT3DSMAPContext_00807598,this_00->field_00C6);
     this_00->field_00C1 = 0;
     g_currentExceptionFrame = local_7c.previous;
     return 0;
@@ -555,11 +562,11 @@ switchD_006280c4_default:
   return 0;
 switchD_006288e6_caseD_0:
   if (*(byte *)&this_00->field_0014 < 4) {
-    FUN_006ea270(PTR_00807598,this_00->field_00C6,1,iVar6 + 3);
+    ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,this_00->field_00C6,1,iVar6 + 3);
     g_currentExceptionFrame = local_7c.previous;
     return 0;
   }
-  FUN_006ea270(PTR_00807598,this_00->field_00C6,1,iVar6 - 0xf);
+  ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,this_00->field_00C6,1,iVar6 - 0xf);
   g_currentExceptionFrame = local_7c.previous;
   return 0;
 }

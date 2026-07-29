@@ -12,7 +12,7 @@ undefined4 __fastcall FUN_004dce00(int *param_1)
   AnonShape_004AB810_8E5693D5 *pAVar2;
   STT3DSprC *this;
   int iVar3;
-  uint uVar4;
+  int uVar4;
   uint uVar5;
   CHAR local_108 [256];
   int local_8;
@@ -63,10 +63,10 @@ undefined4 __fastcall FUN_004dce00(int *param_1)
     param_1[0x135] = 0;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     fVar1 = (float)(int)*(short *)((int)param_1 + 0x45) * _DAT_007904f8;
-    uVar4 = g_playSystem_00802A38->field_00E4;
+    uVar5 = g_playSystem_00802A38->field_00E4;
     param_1[0x137] = 1;
     fVar1 = fVar1 * _DAT_007904f0;
-    param_1[0x136] = uVar4;
+    param_1[0x136] = uVar5;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     local_8 = (int)*(short *)((int)param_1 + 0x41);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */

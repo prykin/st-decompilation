@@ -18,17 +18,18 @@ StartSystemTy::SetObjectives(StartSystemTy *this,int param_1,char *param_2,int p
   StartSystemTy *this_00;
   int iVar3;
   DArrayTy *pDVar4;
-  undefined1 *puVar5;
-  char *pcVar6;
-  uint uVar7;
-  int iVar8;
-  uint uVar9;
+  undefined1 *puVar6;
+  char *pcVar7;
+  uint uVar8;
+  int iVar9;
+  uint uVar10;
   InternalExceptionFrame local_70;
   undefined1 local_2c [16];
   undefined4 local_1c;
   undefined4 local_18;
   DArrayTy *local_c;
   StartSystemTy *local_8;
+  char *puVar5;
 
   local_70.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_70;
@@ -36,9 +37,9 @@ StartSystemTy::SetObjectives(StartSystemTy *this,int param_1,char *param_2,int p
   iVar3 = Library::MSVCRT::__setjmp3(local_70.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_70.previous;
-    iVar8 = ReportDebugMessage("E:\\__titans\\Start\\startsys.cpp",0x26b,0,iVar3,"%s"
+    iVar9 = ReportDebugMessage("E:\\__titans\\Start\\startsys.cpp",0x26b,0,iVar3,"%s"
                                ,"StartSystemTy::SetObjectives");
-    if (iVar8 != 0) {
+    if (iVar9 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar3,0,"E:\\__titans\\Start\\startsys.cpp",0x26b);
@@ -58,8 +59,7 @@ StartSystemTy::SetObjectives(StartSystemTy *this,int param_1,char *param_2,int p
       FUN_006b5570(g_dArray_0080C4CB);
     }
     if (param_2 != (char *)0x0) {
-      g_dArray_0080C4CB = (DArrayTy *)Library::Ourlib::MFSARR::mfSarLoad((cMf32 *)param_1,param_2,0)
-      ;
+      g_dArray_0080C4CB = (DArrayTy *)Library::Ourlib::MFSARR::mfSarLoad((cMf32 *)param_1,param_2,0);
     }
     if (g_dArray_0080C4CB == (DArrayTy *)0x0) {
       g_dArray_0080C4CB = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
@@ -73,21 +73,21 @@ StartSystemTy::SetObjectives(StartSystemTy *this,int param_1,char *param_2,int p
     iVar3 = 0;
     if (0 < (int)g_dArray_0080C4CB->elementSize) {
       if ((int)g_dArray_0080C4CB->elementSize < 1) {
-        pcVar6 = (char *)0x0;
+        pcVar7 = (char *)0x0;
         goto LAB_005dc828;
       }
       do {
-        pcVar6 = *(char **)(g_dArray_0080C4CB->growCapacity + iVar3 * 4);
+        pcVar7 = *(char **)(g_dArray_0080C4CB->growCapacity + iVar3 * 4);
 LAB_005dc828:
-        thunk_FUN_005411a0((DArrayTy *)this_00->field_0548,pcVar6,"@- %s");
+        thunk_FUN_005411a0((DArrayTy *)this_00->field_0548,pcVar7,"@- %s");
         iVar3 = iVar3 + 1;
       } while (iVar3 < (int)g_dArray_0080C4CB->elementSize);
     }
     pcVar1 = this_00->field_0034;
     pcVar1->field_007E = 1;
-    puVar5 = &pcVar1->field_0x9e;
-    *(undefined2 *)puVar5 = 0;
-    *puVar5 = DAT_007cc854;
+    puVar6 = &pcVar1->field_0x9e;
+    *(undefined2 *)puVar6 = 0;
+    *puVar6 = DAT_007cc854;
     local_c = (DArrayTy *)
               ccFntTy::FormIndentSarr
                         (this_00->field_0034,(DArrayTy *)this_00->field_0548,
@@ -99,24 +99,24 @@ LAB_005dc828:
     pDVar4 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,10,10);
     this_00->field_0548 = &pDVar4->flags;
     puVar5 = &this_00->field_0x3c;
-    pcVar6 = LoadResourceString(0x2347,g_module_00807618);
-    wsprintfA(puVar5,"&2 %s:",pcVar6);
+    pcVar7 = LoadResourceString(0x2347,g_module_00807618);
+    wsprintfA(puVar5,"&2 %s:",pcVar7);
     Library::DKW::TBL::FUN_006b5aa0(this_00->field_0548,puVar5);
     wsprintfA(puVar5,"&0 %s",&DAT_0080c3c3);
     Library::DKW::TBL::FUN_006b5aa0(this_00->field_0548,puVar5);
     Library::DKW::TBL::FUN_006b5aa0(this_00->field_0548,&DAT_007c3b5c);
-    uVar7 = DAT_008087c4 & 0xffff;
-    uVar9 = (uint)DAT_008087c2;
-    pcVar6 = LoadResourceString(0x2344,g_module_00807618);
-    wsprintfA(puVar5,"&2 %s: &0%d&2x&0%d",pcVar6,uVar9,uVar7);
+    uVar8 = DAT_008087c4 & 0xffff;
+    uVar10 = (uint)DAT_008087c2;
+    pcVar7 = LoadResourceString(0x2344,g_module_00807618);
+    wsprintfA(puVar5,"&2 %s: &0%d&2x&0%d",pcVar7,uVar10,uVar8);
     Library::DKW::TBL::FUN_006b5aa0(this_00->field_0548,puVar5);
-    uVar7 = DAT_008087c4 >> 0x10 & 0xff;
-    pcVar6 = LoadResourceString(0x2345,g_module_00807618);
-    wsprintfA(puVar5,"&2 %s: &0%d",pcVar6,uVar7);
+    uVar8 = DAT_008087c4 >> 0x10 & 0xff;
+    pcVar7 = LoadResourceString(0x2345,g_module_00807618);
+    wsprintfA(puVar5,"&2 %s: &0%d",pcVar7,uVar8);
     Library::DKW::TBL::FUN_006b5aa0(this_00->field_0548,puVar5);
     Library::DKW::TBL::FUN_006b5aa0(this_00->field_0548,&DAT_007c3b5c);
-    pcVar6 = LoadResourceString(0x2346,g_module_00807618);
-    wsprintfA(puVar5,"&2 %s:",pcVar6);
+    pcVar7 = LoadResourceString(0x2346,g_module_00807618);
+    wsprintfA(puVar5,"&2 %s:",pcVar7);
     Library::DKW::TBL::FUN_006b5aa0(this_00->field_0548,puVar5);
     Library::DKW::TBL::FUN_006b5aa0(this_00->field_0548,&DAT_007c3b5c);
     pDVar4 = local_c;
@@ -127,13 +127,13 @@ LAB_005dc828:
       iVar3 = 0;
       if (0 < (int)pDVar4->elementSize) {
         if ((int)pDVar4->elementSize < 1) {
-          pcVar6 = (char *)0x0;
+          pcVar7 = (char *)0x0;
           goto LAB_005dca07;
         }
         do {
-          pcVar6 = *(char **)(pDVar4->growCapacity + iVar3 * 4);
+          pcVar7 = *(char **)(pDVar4->growCapacity + iVar3 * 4);
 LAB_005dca07:
-          Library::DKW::TBL::FUN_006b5aa0(this_00->field_0548,pcVar6);
+          Library::DKW::TBL::FUN_006b5aa0(this_00->field_0548,pcVar7);
           iVar3 = iVar3 + 1;
         } while (iVar3 < (int)pDVar4->elementSize);
       }

@@ -10,16 +10,16 @@ void __thiscall STManRuinC::sub_00631560(STManRuinC *this)
   if (this->field_0034 != 0) {
     FreeAndNull((void **)&this->field_0034);
   }
-  if (this->field_0038 != (DArrayTy *)0x0) {
-    DArrayDestroy(this->field_0038);
-    this->field_0038 = (DArrayTy *)0x0;
+  if (this->field_0038 != (STManRuinC_field_0038DArray *)0x0) {
+    DArrayDestroy((DArrayTy *)this->field_0038);
+    this->field_0038 = (STManRuinC_field_0038DArray *)0x0;
   }
   if (-1 < this->field_0061) {
-    FUN_006e8ba0(PTR_00807598,this->field_0061);
+    Library::Ourlib::ST3DSMAP::SprClose(g_sT3DSMAPContext_00807598,this->field_0061);
   }
-  if (this->field_003C != (DArrayTy *)0x0) {
-    DArrayDestroy(this->field_003C);
-    this->field_003C = (DArrayTy *)0x0;
+  if (this->field_003C != (STManRuinC_field_003CDArray *)0x0) {
+    DArrayDestroy((DArrayTy *)this->field_003C);
+    this->field_003C = (STManRuinC_field_003CDArray *)0x0;
   }
   return;
 }

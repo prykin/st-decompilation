@@ -41,8 +41,7 @@ VisibleClassTy::sub_00559620
       ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
        ((byte)(&DAT_008087e9)[(int)param_4 * 0x51] < 8)))))) {
     if ((param_7 & 0x1000) != 0) {
-      sub_0055BBC0(this,1,(short)param_1,(short)param_2,param_3,(uint)param_4,(byte)param_5,param_6)
-      ;
+      sub_0055BBC0(this,1,(short)param_1,(short)param_2,param_3,(uint)param_4,(byte)param_5,param_6);
     }
     if (((param_4 + 0xfc)[(int)this] != '\0') && ((param_7 & 2) != 0)) {
       iVar1 = param_5 * 2 + 1;

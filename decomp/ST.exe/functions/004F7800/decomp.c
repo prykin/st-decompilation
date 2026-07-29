@@ -164,13 +164,13 @@ void __thiscall CPanelTy::DoneCPanel(CPanelTy *this)
       puVar7 = puVar7 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
-    if ((PTR_00807598 != (AnonShape_GLOBAL_00807598_0C6808FB *)0x0) &&
+    if ((g_sT3DSMAPContext_00807598 != (ST3DSMAPContext *)0x0) &&
        (this_00->field_0DB3 != (int *)0x0)) {
-      FUN_006e6580(PTR_00807598,this_00->field_0DB3);
+      FUN_006e6580(g_sT3DSMAPContext_00807598,this_00->field_0DB3);
     }
     this_00->field_0DB3 = (void *)0x0;
-    if (PTR_00807598 != (AnonShape_GLOBAL_00807598_0C6808FB *)0x0) {
-      FUN_006e6500(PTR_00807598,(undefined4 *)0x0);
+    if (g_sT3DSMAPContext_00807598 != (ST3DSMAPContext *)0x0) {
+      ST3DSMAPContext::sub_006E6500(g_sT3DSMAPContext_00807598,(undefined4 *)0x0);
     }
     ppvVar8 = this_00->field_0227;
     iVar3 = 4;

@@ -53,7 +53,7 @@ int __thiscall STBoatC::BackLoadObj(STBoatC *this,int *param_1)
     iVar2 = this->vfunc_D8();
     return (-(uint)(iVar2 != 0) & 0xfffffffd) + 2;
   }
-  FUN_006ea2f0(this->field_0211,this->field_01ED);
+  Library::Ourlib::ST3DSMAP::SprRstLev(this->field_0211,this->field_01ED);
   iVar2 = this->vfunc_D8();
   return -(uint)(iVar2 != 0);
 }

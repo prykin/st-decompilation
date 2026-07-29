@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STTypeFamilyApplier] EXACT_ANONYMOUS_LAYOUT.
    Evidence: exact anonymous structure fingerprint shared across functions

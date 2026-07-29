@@ -25,12 +25,15 @@ void __thiscall FUN_0063fe70(void *this,char param_1)
           if ((iVar4 == 1) || (iVar4 == 3)) {
             if ((param_1 != '\0') || (iVar4 == 3)) {
               *(undefined4 *)(iVar5 + 4) = 0;
-              FUN_006ea270(*(void **)((int)this + 0x211),uVar2,0,*(uint *)(iVar5 + 0x20));
-              FUN_006ea960(*(void **)((int)this + 0x211),*(uint *)(iVar5 + 0x38),
-                           (float)*(int *)(iVar5 + 8) * _DAT_007904f8 * _DAT_007904f0,
-                           (float)*(int *)(iVar5 + 0xc) * _DAT_007904f8 * _DAT_007904f0,
-                           *(float *)(iVar5 + 0x10) + _DAT_007904fc);
-              FUN_006eaaa0(*(void **)((int)this + 0x211),*(uint *)(iVar5 + 0x38),0);
+              ST3DSMAPContext::sub_006EA270
+                        (*(ST3DSMAPContext **)((int)this + 0x211),uVar2,0,*(uint *)(iVar5 + 0x20));
+              Library::Ourlib::ST3DSMAP::SprMove
+                        (*(void **)((int)this + 0x211),*(uint *)(iVar5 + 0x38),
+                         (float)*(int *)(iVar5 + 8) * _DAT_007904f8 * _DAT_007904f0,
+                         (float)*(int *)(iVar5 + 0xc) * _DAT_007904f8 * _DAT_007904f0,
+                         *(float *)(iVar5 + 0x10) + _DAT_007904fc);
+              Library::Ourlib::ST3DSMAP::SprShow
+                        (*(void **)((int)this + 0x211),*(uint *)(iVar5 + 0x38),0);
             }
           }
           else if (iVar4 != 2) {
@@ -43,11 +46,13 @@ void __thiscall FUN_0063fe70(void *this,char param_1)
               else {
                 *(int *)(iVar5 + 0x20) = iVar4;
               }
-              FUN_006ea270(*(void **)((int)this + 0x211),uVar2,0,*(uint *)(iVar5 + 0x20));
-              FUN_006ea960(*(void **)((int)this + 0x211),*(uint *)(iVar5 + 0x38),
-                           (float)*(int *)(iVar5 + 8) * _DAT_007904f8 * _DAT_007904f0,
-                           (float)*(int *)(iVar5 + 0xc) * _DAT_007904f8 * _DAT_007904f0,
-                           *(float *)(iVar5 + 0x10) + _DAT_007904fc);
+              ST3DSMAPContext::sub_006EA270
+                        (*(ST3DSMAPContext **)((int)this + 0x211),uVar2,0,*(uint *)(iVar5 + 0x20));
+              Library::Ourlib::ST3DSMAP::SprMove
+                        (*(void **)((int)this + 0x211),*(uint *)(iVar5 + 0x38),
+                         (float)*(int *)(iVar5 + 8) * _DAT_007904f8 * _DAT_007904f0,
+                         (float)*(int *)(iVar5 + 0xc) * _DAT_007904f8 * _DAT_007904f0,
+                         *(float *)(iVar5 + 0x10) + _DAT_007904fc);
             }
             else {
               uVar3 = g_playSystem_00802A38->field_00E4;
@@ -60,12 +65,14 @@ void __thiscall FUN_0063fe70(void *this,char param_1)
                 else {
                   *(int *)(iVar5 + 0x20) = iVar4;
                 }
-                FUN_006ea270(*(void **)((int)this + 0x211),uVar2,0,*(uint *)(iVar5 + 0x20));
+                ST3DSMAPContext::sub_006EA270
+                          (*(ST3DSMAPContext **)((int)this + 0x211),uVar2,0,*(uint *)(iVar5 + 0x20));
               }
-              FUN_006ea960(*(void **)((int)this + 0x211),*(uint *)(iVar5 + 0x38),
-                           (float)*(int *)(iVar5 + 8) * _DAT_007904f8 * _DAT_007904f0,
-                           (float)*(int *)(iVar5 + 0xc) * _DAT_007904f8 * _DAT_007904f0,
-                           *(float *)(iVar5 + 0x10) + _DAT_007904fc);
+              Library::Ourlib::ST3DSMAP::SprMove
+                        (*(void **)((int)this + 0x211),*(uint *)(iVar5 + 0x38),
+                         (float)*(int *)(iVar5 + 8) * _DAT_007904f8 * _DAT_007904f0,
+                         (float)*(int *)(iVar5 + 0xc) * _DAT_007904f8 * _DAT_007904f0,
+                         *(float *)(iVar5 + 0x10) + _DAT_007904fc);
             }
           }
         }
@@ -74,7 +81,7 @@ void __thiscall FUN_0063fe70(void *this,char param_1)
     }
     if ((*(uint **)((int)this + 0x37f) != (uint *)0x0) &&
        (uVar2 = **(uint **)((int)this + 0x37f), -1 < (int)uVar2)) {
-      FUN_006e96d0(*(void **)((int)this + 0x211),uVar2);
+      Library::Ourlib::ST3DSMAP::FUN_006e96d0(*(void **)((int)this + 0x211),uVar2);
     }
   }
   return;

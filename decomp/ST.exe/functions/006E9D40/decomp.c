@@ -1,15 +1,20 @@
 
-uint * __thiscall FUN_006e9d40(void *this,uint *param_1,uint param_2)
+/* [STMethodOwnerApplier] Structural method owner recovered as ST3DSMAPContext.
+   Evidence: this_call_owners=[ST3DSMAPContext]; agreed_this_calls=8; incoming_this_accesses=2;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=2; direct_non_thunk_callers=10;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=6; owner_evidence_coverage=adequate */
+
+uint * __thiscall ST3DSMAPContext::sub_006E9D40(ST3DSMAPContext *this,uint *param_1,uint param_2)
 
 {
   ushort *puVar1;
   uint uVar2;
   uint *puVar3;
 
-  puVar3 = *(uint **)((int)this + 0x310);
+  puVar3 = *(uint **)&this->field_0x310;
   if ((param_1 < puVar3) &&
-     (puVar3 = (uint *)(*(int *)((int)this + 0x31c) + (int)param_1 * 0x114), (*puVar3 & 0x8000) != 0
-     )) {
+     (puVar3 = (uint *)(*(int *)&this->field_0x31c + (int)param_1 * 0x114), (*puVar3 & 0x8000) != 0)
+     ) {
     if (puVar3[0x28] != 0) {
       if (puVar3[0x25] <= param_2) {
         puVar3 = (uint *)FUN_006e91a0();

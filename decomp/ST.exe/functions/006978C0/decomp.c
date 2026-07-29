@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STMethodOwnerApplier] Structural method owner recovered as CGenerate.
    Evidence: this_call_owners=[CGenerate]; agreed_this_calls=1; incoming_this_accesses=5;
@@ -8,40 +10,39 @@ uint __thiscall CGenerate::sub_006978C0(CGenerate *this)
 
 {
   dword dVar1;
-  DArrayTy *pDVar2;
+  CGenerate_field_5853DArray *pCVar2;
   int iVar3;
   int iVar4;
   byte *pbVar5;
   uint uVar6;
-  DArrayTy *pDVar7;
-  DArrayTy *pDVar8;
+  CGenerate_field_5853DArray *pCVar7;
+  CGenerate_field_5853DArray *pCVar8;
+  CGenerate_field_5853Element *element_5853;
   uint uVar9;
   int iVar10;
   bool bVar11;
   uint local_18;
   uint local_10;
-  AnonShape_006978C0_CB24540D *local_8;
+  CGenerate_field_5853Element *element_5853_2;
 
-  pDVar7 = this->field_5853;
-  if (pDVar7 != (DArrayTy *)0x0) {
-    dVar1 = pDVar7->count;
+  pCVar7 = this->field_5853;
+  if (pCVar7 != (CGenerate_field_5853DArray *)0x0) {
+    dVar1 = pCVar7->count;
     local_18 = 0;
     if (0 < (int)dVar1) {
       do {
-        pDVar7 = this->field_5853;
-        if (local_18 < pDVar7->count) {
-          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar7, local_18) (runtime stride) */
-          local_8 = (AnonShape_006978C0_CB24540D *)
-                    (pDVar7->elementSize * local_18 + (int)pDVar7->data);
+        pCVar7 = this->field_5853;
+        if (local_18 < pCVar7->count) {
+          element_5853_2 = DArrayAt<CGenerate_field_5853Element>(pCVar7, local_18);
         }
         else {
-          local_8 = (AnonShape_006978C0_CB24540D *)0x0;
+          element_5853_2 = (CGenerate_field_5853Element *)0x0;
         }
-        pDVar2 = *(DArrayTy **)local_8;
-        pDVar7 = pDVar2;
-        if ((((0 < (int)pDVar2) && ((int)pDVar2 <= this->field_5847 + -1)) &&
-            (local_8->field_0009 == 4)) && (0xb < local_8->field_0011)) {
-          iVar3 = local_8->field_0015;
+        pCVar2 = (CGenerate_field_5853DArray *)element_5853_2->field_0000;
+        pCVar7 = pCVar2;
+        if ((((0 < (int)pCVar2) && ((int)pCVar2 <= this->field_5847 + -1)) &&
+            (*(int *)&element_5853_2->field_0x9 == 4)) && (0xb < element_5853_2->field_0011)) {
+          iVar3 = element_5853_2->field_0015;
           iVar10 = 0;
           if (iVar3 != 0) {
             uVar6 = *(uint *)(iVar3 + 0xc);
@@ -64,45 +65,45 @@ uint __thiscall CGenerate::sub_006978C0(CGenerate *this)
             }
           }
           uVar6 = Library::MSVCRT::FUN_0072e6c0();
-          pDVar7 = (DArrayTy *)(uVar6 & 0x80000001);
-          if ((int)pDVar7 < 0) {
-            pDVar7 = (DArrayTy *)(((uint)((int)&pDVar7[-1].data + 3U) | 0xfffffffe) + 1);
+          pCVar7 = (CGenerate_field_5853DArray *)(uVar6 & 0x80000001);
+          if ((int)pCVar7 < 0) {
+            pCVar7 = (CGenerate_field_5853DArray *)
+                     (((uint)((int)&pCVar7[-1].data + 3U) | 0xfffffffe) + 1);
           }
-          pDVar8 = (DArrayTy *)((int)&pDVar7->flags + 1);
-          if (this->field_5847 < (int)&pDVar8->flags + *(int *)local_8) {
-            pDVar8 = pDVar7;
+          pCVar8 = (CGenerate_field_5853DArray *)((int)&pCVar7->flags + 1);
+          if (this->field_5847 < (int)&pCVar8->flags + element_5853_2->field_0000) {
+            pCVar8 = pCVar7;
           }
-          pDVar7 = pDVar8;
-          if ((pDVar8 != (DArrayTy *)0x0) && (0 < iVar10)) {
+          pCVar7 = pCVar8;
+          if ((pCVar8 != (CGenerate_field_5853DArray *)0x0) && (0 < iVar10)) {
             uVar6 = Library::MSVCRT::FUN_0072e6c0();
-            pDVar7 = (DArrayTy *)((int)uVar6 / (iVar10 + 1));
+            pCVar7 = (CGenerate_field_5853DArray *)((int)uVar6 / (iVar10 + 1));
             if (-1 < (int)uVar6 % (iVar10 + 1)) {
-              pDVar7 = (DArrayTy *)local_8->field_0015;
+              pCVar7 = (CGenerate_field_5853DArray *)element_5853_2->field_0015;
               local_10 = 0;
-              if (0 < (int)pDVar7->count) {
-                bVar11 = pDVar7->count != 0;
+              if (0 < (int)pCVar7->count) {
+                bVar11 = pCVar7->count != 0;
                 do {
                   if (bVar11) {
-                    /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar7, local_10) (runtime stride) */
-                    pbVar5 = (byte *)(pDVar7->elementSize * local_10 + (int)pDVar7->data);
+                    element_5853 = DArrayAt<CGenerate_field_5853Element>(pCVar7, local_10);
                   }
                   else {
-                    pbVar5 = (byte *)0x0;
+                    element_5853 = (CGenerate_field_5853Element *)0x0;
                   }
-                  if (pbVar5[1] == 0) {
-                    iVar3 = *(int *)(pbVar5 + 2);
+                  if (*(char *)((int)&element_5853->field_0000 + 1) == '\0') {
+                    iVar3 = *(int *)((int)&element_5853->field_0000 + 2);
                     iVar4 = this->field_5833;
-                    if (((*pbVar5 & 2) != 0) &&
+                    if (((element_5853->field_0000 & 2) != 0) &&
                        (uVar6 = Library::MSVCRT::FUN_0072e6c0(),
                        (int)uVar6 % (int)(((iVar10 < 3) - 1 & 2) + 2) == 1)) {
-                      thunk_FUN_006a0c90(iVar3 % iVar4,iVar3 / iVar4,(int)((int)&pDVar2->flags + 1),
-                                         (uint)pDVar8,0xff,1,1);
+                      thunk_FUN_006a0c90(iVar3 % iVar4,iVar3 / iVar4,(int)((int)&pCVar2->flags + 1),
+                                         (uint)pCVar8,0xff,1,1);
                     }
                   }
-                  pDVar7 = (DArrayTy *)local_8->field_0015;
+                  pCVar7 = (CGenerate_field_5853DArray *)element_5853_2->field_0015;
                   local_10 = local_10 + 1;
-                  bVar11 = local_10 < pDVar7->count;
-                } while ((int)local_10 < (int)pDVar7->count);
+                  bVar11 = local_10 < pCVar7->count;
+                } while ((int)local_10 < (int)pCVar7->count);
               }
             }
           }
@@ -111,6 +112,6 @@ uint __thiscall CGenerate::sub_006978C0(CGenerate *this)
       } while ((int)local_18 < (int)dVar1);
     }
   }
-  return (uint)pDVar7;
+  return (uint)pCVar7;
 }
 

@@ -9,9 +9,9 @@ float10 FUN_006c8990(byte *param_1,int *param_2,undefined4 *param_3)
   bool bVar3;
   bool bVar4;
   byte *pbVar5;
+  int uVar8;
   uint uVar6;
   uint uVar7;
-  uint uVar8;
   uint uVar9;
   double *pdVar10;
   int iVar11;
@@ -38,11 +38,11 @@ float10 FUN_006c8990(byte *param_1,int *param_2,undefined4 *param_3)
   local_30 = 0.0;
   while( true ) {
     if (DAT_007f148c < 2) {
-      uVar8 = (uint)*local_c;
+      uVar8 = (int)*local_c;
       uVar6 = (byte)PTR_DAT_007f1280[uVar8 * 2] & 8;
     }
     else {
-      uVar8 = (uint)*local_c;
+      uVar8 = (int)*local_c;
       uVar6 = Library::MSVCRT::FUN_00730610(uVar8,8);
     }
     if (uVar6 == 0) break;
@@ -51,12 +51,12 @@ float10 FUN_006c8990(byte *param_1,int *param_2,undefined4 *param_3)
   if (uVar8 != 0) {
     if (uVar8 == 0x2b) {
       local_c = local_c + 1;
-      uVar8 = (uint)*local_c;
+      uVar8 = (int)*local_c;
     }
     else if (uVar8 == 0x2d) {
       local_c = local_c + 1;
       bVar4 = true;
-      uVar8 = (uint)*local_c;
+      uVar8 = (int)*local_c;
     }
     uVar6 = 0;
     uVar9 = 1;
@@ -77,31 +77,31 @@ float10 FUN_006c8990(byte *param_1,int *param_2,undefined4 *param_3)
         if (uVar7 == 0) break;
         bVar3 = true;
         if (uVar6 < 0xccccccb) {
-          uVar6 = (uVar8 - 0x30) + uVar6 * 10;
+          uVar6 = (uVar8 - 0x30U) + uVar6 * 10;
           iVar11 = iVar11 - local_5;
           local_c = local_c + 1;
-          uVar8 = (uint)*local_c;
+          uVar8 = (int)*local_c;
           uStack_1c = uVar6;
         }
         else if (uVar9 < 0xccccccb) {
           uVar9 = uVar9 * 10;
-          local_28 = (uVar8 - 0x30) + local_28 * 10;
+          local_28 = (uVar8 - 0x30U) + local_28 * 10;
           iVar11 = iVar11 - local_5;
           local_c = local_c + 1;
-          uVar8 = (uint)*local_c;
+          uVar8 = (int)*local_c;
           local_18 = uVar9;
         }
         else {
           iVar11 = (iVar11 + 1) - (int)local_5;
           local_c = local_c + 1;
-          uVar8 = (uint)*local_c;
+          uVar8 = (int)*local_c;
         }
       }
       if ((uVar8 != 0x2e) || (local_5 != '\0')) break;
       local_c = local_c + 1;
       local_5 = '\x01';
       local_24 = 1;
-      uVar8 = (uint)*local_c;
+      uVar8 = (int)*local_c;
     }
     if (bVar3) {
       if ((uVar8 == 0x65) || (uVar8 == 0x45)) {
@@ -125,12 +125,12 @@ float10 FUN_006c8990(byte *param_1,int *param_2,undefined4 *param_3)
         bVar3 = false;
         while( true ) {
           if (DAT_007f148c < 2) {
-            uVar8 = (byte)PTR_DAT_007f1280[uVar6 * 2] & 4;
+            uVar9 = (byte)PTR_DAT_007f1280[uVar6 * 2] & 4;
           }
           else {
-            uVar8 = Library::MSVCRT::FUN_00730610(uVar6,4);
+            uVar9 = Library::MSVCRT::FUN_00730610(uVar6,4);
           }
-          if (uVar8 == 0) {
+          if (uVar9 == 0) {
             if (bVar2) {
               iVar13 = -iVar13;
             }

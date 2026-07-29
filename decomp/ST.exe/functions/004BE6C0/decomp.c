@@ -6,16 +6,17 @@ void __thiscall FUN_004be6c0(void *this,undefined4 *param_1)
 {
   short sVar1;
   undefined1 uVar2;
+  int uVar4;
   undefined4 uVar3;
-  uint uVar4;
-  int iVar5;
-  int iVar7;
+  int local_EAX_571;
+  int iVar4;
+  int iVar6;
 
   memset(param_1, 0, 0x36); /* compiler bulk-zero initialization */
   *(undefined1 *)param_1 = 1;
   *(undefined1 *)((int)param_1 + 1) = *(undefined1 *)((int)this + 0x21d);
-  iVar5 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
-  *(char *)((int)param_1 + 7) = (char)iVar5;
+  iVar4 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
+  *(char *)((int)param_1 + 7) = (char)iVar4;
   if (((*(byte *)((int)this + 0x1d1) & 4) == 0) && (*(int *)((int)this + 0x420) == 0)) {
     uVar2 = 1;
   }
@@ -55,24 +56,24 @@ void __thiscall FUN_004be6c0(void *this,undefined4 *param_1)
   if (sVar1 == 0xa0) {
     *(undefined2 *)((int)param_1 + 0x1e) = 0x9f;
   }
-  iVar5 = (&DAT_00792ca0)[*(int *)((int)this + 0x235) * 6];
-  if (((iVar5 == 0x96) || (iVar5 == 0x97)) || (iVar5 == 0x98)) {
+  iVar4 = (&DAT_00792ca0)[*(int *)((int)this + 0x235) * 6];
+  if (((iVar4 == 0x96) || (iVar4 == 0x97)) || (iVar4 == 0x98)) {
     uVar4 = GetPlayerRaceId(*(char *)((int)this + 0x24));
-    if ((uVar4 & 0xff) == 1) {
-      iVar5 = 6;
+    if ((uVar4 & 0xffU) == 1) {
+      iVar4 = 6;
       goto LAB_004be7f7;
     }
-    if ((uVar4 & 0xff) != 2) goto LAB_004be80a;
-    iVar7 = *(int *)((int)this + 0x24);
-    iVar5 = 0x83;
+    if ((uVar4 & 0xffU) != 2) goto LAB_004be80a;
+    iVar6 = *(int *)((int)this + 0x24);
+    iVar4 = 0x83;
 LAB_004be7fb:
-    uVar3 = thunk_FUN_004e60d0(iVar7,iVar5);
+    uVar3 = thunk_FUN_004e60d0(iVar6,iVar4);
     *(short *)((int)param_1 + 0x22) = (short)uVar3;
   }
-  else if (iVar5 == 0xa0) {
-    iVar5 = 0xb;
+  else if (iVar4 == 0xa0) {
+    iVar4 = 0xb;
 LAB_004be7f7:
-    iVar7 = *(int *)((int)this + 0x24);
+    iVar6 = *(int *)((int)this + 0x24);
     goto LAB_004be7fb;
   }
 LAB_004be80a:
@@ -104,24 +105,24 @@ LAB_004be80a:
   if (sVar1 == 0xa0) {
     *(undefined2 *)(param_1 + 8) = 0x9f;
   }
-  iVar5 = (&DAT_00792cac)[*(int *)((int)this + 0x235) * 6];
-  if (((iVar5 == 0x96) || (iVar5 == 0x97)) || (iVar5 == 0x98)) {
-    uVar4 = GetPlayerRaceId(*(char *)((int)this + 0x24));
-    if ((uVar4 & 0xff) == 1) {
-      iVar5 = 6;
+  iVar4 = (&DAT_00792cac)[*(int *)((int)this + 0x235) * 6];
+  if (((iVar4 == 0x96) || (iVar4 == 0x97)) || (iVar4 == 0x98)) {
+    local_EAX_571 = GetPlayerRaceId(*(char *)((int)this + 0x24));
+    if ((local_EAX_571 & 0xffU) == 1) {
+      iVar4 = 6;
       goto LAB_004be918;
     }
-    if ((uVar4 & 0xff) != 2) goto LAB_004be92b;
-    iVar7 = *(int *)((int)this + 0x24);
-    iVar5 = 0x83;
+    if ((local_EAX_571 & 0xffU) != 2) goto LAB_004be92b;
+    iVar6 = *(int *)((int)this + 0x24);
+    iVar4 = 0x83;
 LAB_004be91c:
-    uVar3 = thunk_FUN_004e60d0(iVar7,iVar5);
+    uVar3 = thunk_FUN_004e60d0(iVar6,iVar4);
     *(short *)(param_1 + 9) = (short)uVar3;
   }
-  else if (iVar5 == 0xa0) {
-    iVar5 = 0xb;
+  else if (iVar4 == 0xa0) {
+    iVar4 = 0xb;
 LAB_004be918:
-    iVar7 = *(int *)((int)this + 0x24);
+    iVar6 = *(int *)((int)this + 0x24);
     goto LAB_004be91c;
   }
 LAB_004be92b:

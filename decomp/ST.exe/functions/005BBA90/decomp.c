@@ -215,8 +215,7 @@ LAB_005bbb22:
     local_234 = local_51c;
     local_c4 = local_51c;
     (*local_10->field_000C->vtable->CreateObject)
-              ((SystemClassTy *)local_10->field_000C,7,&local_10->field_1A73,(int *)0x0,local_544,0)
-    ;
+              ((SystemClassTy *)local_10->field_000C,7,&local_10->field_1A73,(int *)0x0,local_544,0);
   }
   this_00->field_0031 = 0;
   puVar1 = &this_00->field_0x1d;

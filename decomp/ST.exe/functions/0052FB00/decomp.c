@@ -1548,8 +1548,7 @@ switchD_005311ec_caseD_3:
     local_10d8 = 0x8165;
     local_10e0 = local_11c4;
     local_101c = FUN_0070aa70(g_cMf32_00806790,"BUT_MSLDN",0,1);
-    local_1018 = Library::Ourlib::MFIMG::mfImgGetWidth(g_cMf32_00806790,0x12,"BUT_MSLDN",1)
-    ;
+    local_1018 = Library::Ourlib::MFIMG::mfImgGetWidth(g_cMf32_00806790,0x12,"BUT_MSLDN",1);
     iVar6 = this_00->field_005C;
     local_1038 = 1;
     local_1034 = 1;

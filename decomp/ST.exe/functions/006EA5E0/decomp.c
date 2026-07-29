@@ -1,5 +1,11 @@
 
-byte __thiscall FUN_006ea5e0(void *this,uint param_1,int param_2,int param_3)
+/* [STMethodOwnerApplier] Structural method owner recovered as ST3DSMAPContext.
+   Evidence: this_call_owners=[ST3DSMAPContext]; agreed_this_calls=2; incoming_this_accesses=2;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=3; direct_non_thunk_callers=5;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=2; owner_evidence_coverage=adequate */
+
+byte __thiscall
+ST3DSMAPContext::sub_006EA5E0(ST3DSMAPContext *this,uint param_1,int param_2,int param_3)
 
 {
   uint *puVar1;
@@ -7,9 +13,8 @@ byte __thiscall FUN_006ea5e0(void *this,uint param_1,int param_2,int param_3)
   ushort uVar3;
   byte bVar4;
 
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if ((*(uint *)((int)this + 0x310) <= param_1) ||
-     (puVar1 = (uint *)(*(int *)((int)this + 0x31c) + param_1 * 0x114), (*puVar1 & 0x8000) == 0)) {
+  if ((*(uint *)&this->field_0x310 <= param_1) ||
+     (puVar1 = (uint *)(*(int *)&this->field_0x31c + param_1 * 0x114), (*puVar1 & 0x8000) == 0)) {
     if (param_1 != 0xffffffff) {
       FUN_006e8c50();
     }

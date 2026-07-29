@@ -65,7 +65,7 @@ uint __thiscall STBoatC::CreateGame(STBoatC *this,int *param_1,undefined4 param_
                                   (AnonShape_005EFAE0_B406B78B *)this->field_0524,(int *)&local_8),
               iVar6 != -4)) {
           thunk_FUN_004cf3e0(local_8,this->field_0018);
-          FUN_006ea2f0(this->field_0211,this->field_01ED);
+          Library::Ourlib::ST3DSMAP::SprRstLev(this->field_0211,this->field_01ED);
         }
         iVar6 = thunk_FUN_0048fa80(this);
         if (iVar6 == 1) {

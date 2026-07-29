@@ -43,9 +43,10 @@ switchD_007179c7_default:
     return 0;
   }
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  FUN_006e1c20(param_1,(float)param_1[0xc],param_1[0xd],
-               (float)((float10)*(double *)(param_1 + 0x34) + (float10)*(double *)(param_1 + 0x34)),
-               &local_8,&local_c);
+  ST3DSMAPContext::sub_006E1C20
+            ((ST3DSMAPContext *)param_1,(float)param_1[0xc],param_1[0xd],
+             (float)((float10)*(double *)(param_1 + 0x34) + (float10)*(double *)(param_1 + 0x34)),
+             &local_8,&local_c);
   switch(param_1[0x2a]) {
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   case 0:
@@ -205,8 +206,7 @@ LAB_00717b22:
                 iVar7 = param_1[0xf] - iVar13;
               }
               if ((0 < iVar10) && (0 < iVar7)) {
-                FUN_006b5f80((int *)*param_1,param_1[8] + local_5c,param_1[9] + iVar13,iVar10,iVar7)
-                ;
+                FUN_006b5f80((int *)*param_1,param_1[8] + local_5c,param_1[9] + iVar13,iVar10,iVar7);
               }
             }
             else {

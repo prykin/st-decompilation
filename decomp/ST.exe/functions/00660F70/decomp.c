@@ -146,8 +146,7 @@ switchD_0066104e_caseD_9:
               *(undefined2 *)(param_1 + 4) = (undefined2)local_18;
               *(undefined2 *)((int)param_1 + 0x12) = (undefined2)local_1c;
             }
-            iVar8 = _GetEmbrGrpTobjGrpExch(this->field_0024,*local_8,(uint)(ushort)this->field_007D)
-            ;
+            iVar8 = _GetEmbrGrpTobjGrpExch(this->field_0024,*local_8,(uint)(ushort)this->field_007D);
             if (0 < iVar8) {
               return;
             }

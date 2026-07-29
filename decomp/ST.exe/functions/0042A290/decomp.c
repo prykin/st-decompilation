@@ -27,7 +27,7 @@ short * __cdecl LoadLand(cMf32 *param_1,char *text)
   short *psVar10;
   uint uVar11;
   undefined4 *puVar12;
-  AnonShape_GLOBAL_00807598_0C6808FB *this;
+  ST3DSMAPContext *this;
   uint uVar13;
   undefined4 *puVar14;
   longlong lVar15;
@@ -41,7 +41,7 @@ short * __cdecl LoadLand(cMf32 *param_1,char *text)
   short *local_1c;
   int local_18;
   int *local_14;
-  AnonShape_GLOBAL_00807598_0C6808FB *local_10;
+  ST3DSMAPContext *local_10;
   DArrayTy *local_c;
   uint local_8;
 
@@ -80,26 +80,27 @@ short * __cdecl LoadLand(cMf32 *param_1,char *text)
     *(undefined1 *)((int)psVar4 + 0x40b) = 0xff;
     pAVar7 = (AnonShape_006DBCA0_EF06575F *)FUN_006b04d0(0x4f2);
     if (pAVar7 == (AnonShape_006DBCA0_EF06575F *)0x0) {
-      local_10 = (AnonShape_GLOBAL_00807598_0C6808FB *)0x0;
+      local_10 = (ST3DSMAPContext *)0x0;
     }
     else {
-      local_10 = (AnonShape_GLOBAL_00807598_0C6808FB *)FUN_006dbca0(pAVar7);
+      local_10 = (ST3DSMAPContext *)FUN_006dbca0(pAVar7);
     }
     this = local_10;
-    if (local_10 == (AnonShape_GLOBAL_00807598_0C6808FB *)0x0) {
+    if (local_10 == (ST3DSMAPContext *)0x0) {
       RaiseInternalException(-2,g_overwriteContext_007ED77C,"E:\\__titans\\tload.cpp",0x48e);
     }
     Library::MSVCRT::FUN_0072e150(0xc0000000,0x403ccccc);
     lVar15 = Library::MSVCRT::__ftol();
     iVar3 = (int)lVar15;
     local_30 = iVar3;
-    FUN_006dc050(this,0,0,0,iVar3,iVar3,0,0xc0240000,0,0x40240000,0,0xc0240000,0,0x40240000,
-                 0x4024000000000000,0x4023ee97865e3540,0);
+    ST3DSMAPContext::sub_006DC050
+              (this,0,0,0,iVar3,iVar3,0,0xc0240000,0,0x40240000,0,0xc0240000,0,0x40240000,
+               0x4024000000000000,0x4023ee97865e3540,0);
     *(undefined4 *)&this->field_0x128 = 0;
-    FUN_006dd790(this,140.204);
-    FUN_006dd800(this,219.932);
+    ST3DSMAPContext::sub_006DD790(this,140.204);
+    ST3DSMAPContext::sub_006DD800(this,219.932);
     *(undefined4 *)&this->field_0x124 = 5;
-    FUN_006dd610(this,4,0,0x40240000,0,0x40240000);
+    ST3DSMAPContext::sub_006DD610(this,4,0,0x40240000,0,0x40240000);
     local_c = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,100,8,100);
     local_18 = 0;
     if (0 < *(int *)((int)psVar4 + 0x455)) {
@@ -130,8 +131,8 @@ short * __cdecl LoadLand(cMf32 *param_1,char *text)
             *puVar1 = *(undefined4 *)&this->field_0x140;
             *(undefined4 **)&this->field_0x140 = puVar1;
             *(int *)&this->field_0x13c = *(int *)&this->field_0x13c + 1;
-            FUN_006ddbe0(this);
-            FUN_006ddd50((AnonShape_GLOBAL_0080760C_46D7AF7A *)this);
+            ST3DSMAPContext::sub_006DDBE0(this);
+            ST3DSMAPContext::sub_006DDD50(this);
             uVar13 = iVar3 * iVar3;
             *(undefined4 *)&this->field_0x140 = 0;
             *(undefined4 *)&this->field_0x13c = 0;
@@ -167,8 +168,8 @@ short * __cdecl LoadLand(cMf32 *param_1,char *text)
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       } while (local_18 < *(int *)((int)local_1c + 0x455));
     }
-    if (this != (AnonShape_GLOBAL_00807598_0C6808FB *)0x0) {
-      FUN_006dbcf0((int *)this);
+    if (this != (ST3DSMAPContext *)0x0) {
+      ST3DSMAPContext::sub_006DBCF0(this);
       Library::MSVCRT::FUN_0072e2b0((HoloTy *)this);
     }
     DArrayDestroy(local_c);

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=4, used=0), and
@@ -22,7 +24,7 @@ void __fastcall FUN_006366d0(AnonShape_006366D0_80B1100F *param_1)
         if (((uVar5 < pDVar2->count) &&
             (pvVar4 = (void *)(pDVar2->elementSize * uVar5 + (int)pDVar2->data),
             pvVar4 != (void *)0x0)) && (uVar3 = *(uint *)((int)pvVar4 + 4), -1 < (int)uVar3)) {
-          FUN_006e8ba0(PTR_00807598,uVar3);
+          Library::Ourlib::ST3DSMAP::SprClose(g_sT3DSMAPContext_00807598,uVar3);
         }
         uVar5 = uVar5 + 1;
       } while ((int)uVar5 < (int)dVar1);

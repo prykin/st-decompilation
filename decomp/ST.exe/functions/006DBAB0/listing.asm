@@ -1,4 +1,4 @@
-FUN_006dbab0:
+ST3DSMAPContext::sub_006DBAB0:
 006DBAB0  53                        PUSH EBX
 006DBAB1  56                        PUSH ESI
 006DBAB2  57                        PUSH EDI

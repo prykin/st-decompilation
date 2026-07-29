@@ -129,10 +129,10 @@ void __thiscall FSGSTy::DoneFSGS(FSGSTy *this)
       DeleteObject(this_01->field_1A67);
     }
     this_01->field_1A67 = (HGDIOBJ)0x0;
-    if (this_01->field_1FB3 != (DArrayTy *)0x0) {
-      DArrayDestroy(this_01->field_1FB3);
+    if (this_01->field_1FB3 != (FSGSTy_field_1FB3DArray *)0x0) {
+      DArrayDestroy((DArrayTy *)this_01->field_1FB3);
     }
-    this_01->field_1FB3 = (DArrayTy *)0x0;
+    this_01->field_1FB3 = (FSGSTy_field_1FB3DArray *)0x0;
     if (this_01->field_004D != 0) {
       AppClassTy::PostNextMessage((AppClassTy *)&DAT_00807620,(undefined4 *)&this_01->field_0x3d);
     }

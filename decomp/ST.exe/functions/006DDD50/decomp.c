@@ -1,9 +1,15 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* [STPrototypeApplier] Propagated parameter 0.
-   Evidence: 005745E0 -> 006DDD50 @ 005746B4 | 005745E0 -> 006DDD50 @ 005746CF */
+/* [STPrototypeRepairApplier] Propagated parameter 0.
+   Evidence: 005745E0 -> 006DDD50 @ 005746B4; data at 0080760C | 005745E0 -> 006DDD50 @ 005746CF;
+   data at 0080760C
 
-void __fastcall FUN_006ddd50(AnonShape_GLOBAL_0080760C_46D7AF7A *param_1)
+   [STMethodOwnerApplier] Structural method owner recovered as ST3DSMAPContext.
+   Evidence: this_call_owners=[ST3DSMAPContext]; agreed_this_calls=2; incoming_this_accesses=52;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=88; direct_non_thunk_callers=7;
+   incoming_ecx_receiver_callers=1; attributed_named_callers=1; owner_evidence_coverage=adequate */
+
+void __fastcall ST3DSMAPContext::sub_006DDD50(ST3DSMAPContext *param_1)
 
 {
   undefined4 ******ppppppuVar1;
@@ -72,8 +78,9 @@ void __fastcall FUN_006ddd50(AnonShape_GLOBAL_0080760C_46D7AF7A *param_1)
   local_14 = ExceptionList;
   local_1c = &stack0xfffffed4;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (((param_1->field_0004 == 0) || ((*(uint *)(param_1->field_0004 + 0xc) & 0x1100) != 0x100)) &&
-     ((param_1->field_02DC == 0 || (param_1->field_02D8 != 0)))) {
+  if (((*(int *)&param_1->field_0x4 == 0) ||
+      ((*(uint *)(*(int *)&param_1->field_0x4 + 0xc) & 0x1100) != 0x100)) &&
+     ((*(int *)&param_1->field_0x2dc == 0 || (param_1->field_02D8 != 0)))) {
     ExceptionList = &local_14;
     param_1->field_02D8 = 1;
     local_8 = 0;
@@ -82,11 +89,11 @@ void __fastcall FUN_006ddd50(AnonShape_GLOBAL_0080760C_46D7AF7A *param_1)
     local_1c = &stack0xfffffed4;
     Library::MSVCRT::FUN_0072da40();
     local_8 = 0xffffffff;
-    if ((param_1->field_00A8 < 0) || (3 < param_1->field_00A8)) {
-      local_90 = param_1->field_013C;
+    if ((*(int *)&param_1->field_0xa8 < 0) || (3 < *(int *)&param_1->field_0xa8)) {
+      local_90 = *(int *)&param_1->field_0x13c;
       while (local_90 = local_90 + -1, local_cc = &stack0xfffffed4, local_1c = &stack0xfffffed4,
             0 < local_90) {
-        piVar21 = &param_1->field_0140;
+        piVar21 = (int *)&param_1->field_0x140;
         piVar16 = (int *)*piVar21;
         local_11c = local_90;
         if (0 < local_90) {
@@ -109,8 +116,8 @@ void __fastcall FUN_006ddd50(AnonShape_GLOBAL_0080760C_46D7AF7A *param_1)
       }
     }
     else {
-      local_44 = (undefined4 *****)&param_1->field_0140;
-      for (ppppppuVar1 = (undefined4 ******)param_1->field_0140;
+      local_44 = (undefined4 *****)&param_1->field_0x140;
+      for (ppppppuVar1 = *(undefined4 *******)&param_1->field_0x140;
           ((ppppppuVar1 != (undefined4 ******)0x0 && (*(short *)(ppppppuVar1 + 2) == 0)) &&
           ((int)ppppppuVar1[9] < 3)); ppppppuVar1 = (undefined4 ******)*ppppppuVar1) {
         local_44 = ppppppuVar1;
@@ -124,10 +131,10 @@ void __fastcall FUN_006ddd50(AnonShape_GLOBAL_0080760C_46D7AF7A *param_1)
       local_cc = &stack0xfffffed4;
       for (ppppppuVar2 = ppppppuVar1; ppppppuVar2 != (undefined4 ******)0x0;
           ppppppuVar2 = (undefined4 ******)*ppppppuVar2) {
-        FUN_006e25d0(param_1,local_7c);
+        sub_006E25D0(param_1,local_7c);
         ppppppuVar2[0x11] = (undefined4 *****)local_74;
       }
-      FUN_006dd530(param_1,local_ec,&local_40,local_58);
+      sub_006DD530(param_1,local_ec,&local_40,local_58);
       while (ppppppuVar1 != (undefined4 ******)0x0) {
         ppppppuVar2 = local_68;
         for (ppppppuVar6 = ppppppuVar1; ppppppuVar6 != (undefined4 ******)0x0;
@@ -152,12 +159,12 @@ void __fastcall FUN_006ddd50(AnonShape_GLOBAL_0080760C_46D7AF7A *param_1)
         }
       }
     }
-    if (param_1->field_0124 == 0) {
-      for (pAVar4 = (AnonShape_006E1EE0_698AE49A *)param_1->field_0140;
+    if (*(int *)&param_1->field_0x124 == 0) {
+      for (pAVar4 = *(AnonShape_006E1EE0_698AE49A **)&param_1->field_0x140;
           pAVar4 != (AnonShape_006E1EE0_698AE49A *)0x0;
           pAVar4 = *(AnonShape_006E1EE0_698AE49A **)pAVar4) {
-        SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_006e1ee0
-                  ((AnonReceiver_004248D0 *)param_1,pAVar4,local_3c,(int)local_cc,local_a0);
+        SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006E1EE0::FUN_006e1ee0
+                  ((AnonReceiver_006E1EE0 *)param_1,pAVar4,local_3c,(int)local_cc,local_a0);
         FUN_00726ce0(param_1,(int)pAVar4);
         iVar23 = 0;
         if (0 < local_a0[0]) {
@@ -168,16 +175,16 @@ void __fastcall FUN_006ddd50(AnonShape_GLOBAL_0080760C_46D7AF7A *param_1)
         }
       }
     }
-    else if (param_1->field_0124 == 1) {
-      local_38 = param_1->field_0374;
-      local_34 = param_1->field_0378;
-      local_30 = param_1->field_0370;
+    else if (*(int *)&param_1->field_0x124 == 1) {
+      local_38 = *(int *)&param_1->field_0x374;
+      local_34 = *(int *)&param_1->field_0x378;
+      local_30 = *(undefined4 *)&param_1->field_0x370;
       local_2c = local_30;
-      for (pAVar5 = (AnonShape_007282B0_AFD740A9 *)param_1->field_0140;
+      for (pAVar5 = *(AnonShape_007282B0_AFD740A9 **)&param_1->field_0x140;
           pAVar5 != (AnonShape_007282B0_AFD740A9 *)0x0;
           pAVar5 = *(AnonShape_007282B0_AFD740A9 **)pAVar5) {
-        SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_006e1ee0
-                  ((AnonReceiver_004248D0 *)param_1,(AnonShape_006E1EE0_698AE49A *)pAVar5,local_3c,
+        SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006E1EE0::FUN_006e1ee0
+                  ((AnonReceiver_006E1EE0 *)param_1,(AnonShape_006E1EE0_698AE49A *)pAVar5,local_3c,
                    (int)local_cc,local_a0);
         FUN_00726ce0(param_1,(int)pAVar5);
         iVar23 = 0;
@@ -203,13 +210,13 @@ void __fastcall FUN_006ddd50(AnonShape_GLOBAL_0080760C_46D7AF7A *param_1)
         iVar23 = FUN_006b0460(&local_b4,&local_c4,&local_38);
         if (iVar23 != 0) {
           if (local_e4 == 0) {
-            FUN_006b0330(param_1->field_0014,param_1->field_0028,local_b4 - local_38,
+            FUN_006b0330(*(int *)&param_1->field_0x14,param_1->field_0028,local_b4 - local_38,
                          local_b0 - local_34,*(int *)&pAVar5->field_0x40,local_bc,
                          local_b4 - local_c4,local_b0 - local_c0,local_ac,local_a8,'\0');
           }
           else {
-            pcVar13 = (char *)((((local_b0 - local_34) * param_1->field_0028 + param_1->field_0014)
-                               - local_38) + local_b4);
+            pcVar13 = (char *)((((local_b0 - local_34) * param_1->field_0028 +
+                                *(int *)&param_1->field_0x14) - local_38) + local_b4);
             pcVar18 = (char *)((((local_b0 - local_c0) * local_bc + *(int *)&pAVar5->field_0x40) -
                                local_c4) + local_b4);
             while (local_a8 = local_a8 + -1, -1 < local_a8) {
@@ -232,16 +239,16 @@ void __fastcall FUN_006ddd50(AnonShape_GLOBAL_0080760C_46D7AF7A *param_1)
       }
     }
     else {
-      for (pAVar4 = (AnonShape_006E1EE0_698AE49A *)param_1->field_0140;
+      for (pAVar4 = *(AnonShape_006E1EE0_698AE49A **)&param_1->field_0x140;
           pAVar4 != (AnonShape_006E1EE0_698AE49A *)0x0;
           pAVar4 = *(AnonShape_006E1EE0_698AE49A **)pAVar4) {
-        if (param_1->field_0124 == 3) {
+        if (*(int *)&param_1->field_0x124 == 3) {
           FUN_006e2b60(param_1,(AnonShape_006E2B60_E36B924C *)pAVar4,(int)local_3c,(int)local_cc,
                        local_a0);
         }
         else {
-          SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_006e1ee0
-                    ((AnonReceiver_004248D0 *)param_1,pAVar4,local_3c,(int)local_cc,local_a0);
+          SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006E1EE0::FUN_006e1ee0
+                    ((AnonReceiver_006E1EE0 *)param_1,pAVar4,local_3c,(int)local_cc,local_a0);
         }
         FUN_00726ce0(param_1,(int)pAVar4);
         iVar23 = 0;
@@ -255,11 +262,11 @@ void __fastcall FUN_006ddd50(AnonShape_GLOBAL_0080760C_46D7AF7A *param_1)
         }
       }
     }
-    if (param_1->field_0124 == 5) {
-      local_50 = (char *)param_1->field_000C;
-      puVar24 = (ushort *)param_1->field_0014;
+    if (*(int *)&param_1->field_0x124 == 5) {
+      local_50 = *(char **)&param_1->field_0xc;
+      puVar24 = *(ushort **)&param_1->field_0x14;
       local_8c = 0;
-      if (0 < param_1->field_002C) {
+      if (0 < *(int *)&param_1->field_0x2c) {
         do {
           iVar23 = 0;
           if (0 < param_1->field_0028) {
@@ -280,29 +287,29 @@ void __fastcall FUN_006ddd50(AnonShape_GLOBAL_0080760C_46D7AF7A *param_1)
             } while (iVar23 < param_1->field_0028);
           }
           local_8c = local_8c + 1;
-        } while (local_8c < param_1->field_002C);
+        } while (local_8c < *(int *)&param_1->field_0x2c);
       }
     }
-    else if (param_1->field_0124 == 2) {
+    else if (*(int *)&param_1->field_0x124 == 2) {
       local_88 = 0;
       local_84 = 0;
       local_80 = 0;
-      FUN_006e25d0(param_1,local_7c);
+      sub_006E25D0(param_1,local_7c);
       ppppuVar7 = local_74;
-      FUN_006e25d0(param_1,local_7c);
+      sub_006E25D0(param_1,local_7c);
       ppppuVar8 = local_74;
-      FUN_006e25d0(param_1,local_7c);
+      sub_006E25D0(param_1,local_7c);
       ppppuVar9 = local_74;
-      FUN_006e25d0(param_1,local_7c);
+      sub_006E25D0(param_1,local_7c);
       ppppuVar10 = local_74;
-      FUN_006e25d0(param_1,local_7c);
+      sub_006E25D0(param_1,local_7c);
       ppppuVar11 = local_74;
-      FUN_006e25d0(param_1,local_7c);
+      sub_006E25D0(param_1,local_7c);
       iVar23 = ((int)local_74 - (int)ppppuVar11) / 10;
-      puVar20 = (undefined1 *)param_1->field_000C;
-      puVar24 = (ushort *)param_1->field_0014;
+      puVar20 = *(undefined1 **)&param_1->field_0xc;
+      puVar24 = *(ushort **)&param_1->field_0x14;
       local_8c = 0;
-      if (0 < param_1->field_002C) {
+      if (0 < *(int *)&param_1->field_0x2c) {
         do {
           iVar19 = 0;
           if (0 < param_1->field_0028) {
@@ -310,28 +317,28 @@ void __fastcall FUN_006ddd50(AnonShape_GLOBAL_0080760C_46D7AF7A *param_1)
               uVar14 = (uint)*puVar24;
               if ((int)uVar14 < (int)local_74 - iVar23) {
                 if ((int)ppppuVar11 - iVar23 <= (int)uVar14) {
-                  uVar12 = param_1->field_0439;
+                  uVar12 = param_1->field_0x439;
                   goto cf_common_join_006DE503;
                 }
                 if ((int)ppppuVar10 - iVar23 <= (int)uVar14) {
-                  uVar12 = param_1->field_043A;
+                  uVar12 = param_1->field_0x43a;
                   goto cf_common_join_006DE503;
                 }
                 if ((int)ppppuVar9 - iVar23 <= (int)uVar14) {
-                  uVar12 = param_1->field_043B;
+                  uVar12 = param_1->field_0x43b;
                   goto cf_common_join_006DE503;
                 }
                 if ((int)ppppuVar8 - iVar23 <= (int)uVar14) {
-                  uVar12 = param_1->field_043C;
+                  uVar12 = param_1->field_0x43c;
                   goto cf_common_join_006DE503;
                 }
                 if ((int)ppppuVar7 - iVar23 <= (int)uVar14) {
-                  uVar12 = param_1->field_043D;
+                  uVar12 = param_1->field_0x43d;
                   goto cf_common_join_006DE503;
                 }
               }
               else {
-                uVar12 = param_1->field_0438;
+                uVar12 = param_1->field_0x438;
 cf_common_join_006DE503:
                 *puVar20 = uVar12;
               }
@@ -341,7 +348,7 @@ cf_common_join_006DE503:
             } while (iVar19 < param_1->field_0028);
           }
           local_8c = local_8c + 1;
-        } while (local_8c < param_1->field_002C);
+        } while (local_8c < *(int *)&param_1->field_0x2c);
       }
     }
   }

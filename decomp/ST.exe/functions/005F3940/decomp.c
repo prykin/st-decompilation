@@ -38,8 +38,10 @@ int FUN_005f3940(int param_1,int param_2,int param_3)
     param_2 = (int)(short)(((short)(param_3 / 200) + sVar1) -
                           (short)((longlong)param_3 * 0x51eb851f >> 0x3f));
   }
-  if ((((PTR_00807598->field_0048 <= iVar4) && (iVar4 <= PTR_00807598->field_0058)) &&
-      (PTR_00807598->field_0044 <= iVar5)) && (iVar5 <= PTR_00807598->field_0054)) {
+  if ((((g_sT3DSMAPContext_00807598->field_0048 <= iVar4) &&
+       (iVar4 <= g_sT3DSMAPContext_00807598->field_0058)) &&
+      (g_sT3DSMAPContext_00807598->field_0044 <= iVar5)) &&
+     (iVar5 <= g_sT3DSMAPContext_00807598->field_0054)) {
     iVar3 = FUN_006ddbd0();
     pVVar2 = g_visibleClass_00802A88;
     if (iVar3 == 0) {

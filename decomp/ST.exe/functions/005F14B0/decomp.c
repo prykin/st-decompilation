@@ -9,7 +9,7 @@ STManBasisC::sub_005F14B0
           (STManBasisC *this,short param_1,short param_2,short param_3,byte param_4,short param_5)
 
 {
-  DArrayTy *pDVar1;
+  STManBasisC_field_0038DArray *pSVar1;
   uint uVar2;
   int iVar3;
   short *psVar4;
@@ -22,10 +22,11 @@ STManBasisC::sub_005F14B0
   undefined4 *local_13;
   int local_f;
 
-  if (this->field_0038 == (DArrayTy *)0x0) {
-    pDVar1 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x19,10);
-    this->field_0038 = pDVar1;
-    if (pDVar1 == (DArrayTy *)0x0) {
+  if (this->field_0038 == (STManBasisC_field_0038DArray *)0x0) {
+    pSVar1 = (STManBasisC_field_0038DArray *)
+             Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x19,10);
+    this->field_0038 = pSVar1;
+    if (pSVar1 == (STManBasisC_field_0038DArray *)0x0) {
       return -1;
     }
   }

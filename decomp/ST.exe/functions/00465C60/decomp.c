@@ -1777,8 +1777,7 @@ LAB_004685d3:
                              &this->field_04AF,&this->field_04B1,&this->field_04B3);
                 *(undefined4 *)&this->field_0x4d5 = 8;
                 this->field_00B7 = 0;
-                sub_00481520(this,(int)this->field_04AF,(int)this->field_04B1,(int)this->field_04B3)
-                ;
+                sub_00481520(this,(int)this->field_04AF,(int)this->field_04B1,(int)this->field_04B3);
                 break;
               }
             }

@@ -1,4 +1,4 @@
-FUN_006e3210:
+ST3DSMAPContext::sub_006E3210:
 006E3210  55                        PUSH EBP
 006E3211  8B EC                     MOV EBP,ESP
 006E3213  83 EC 08                  SUB ESP,0x8

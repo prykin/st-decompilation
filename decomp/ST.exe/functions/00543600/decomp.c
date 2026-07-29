@@ -32,8 +32,7 @@ void __thiscall CursorClassTy::InitCursor(CursorClassTy *this,undefined4 param_1
                (BITMAPINFO *)0x0,0);
     SetImages(this_00,param_1,"CUR_MENU",0x32,(BITMAPINFO *)0x0,0,-1,-1);
     puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
-                       (DAT_00806784,CASE_B,"INF_DEEPS",0xffffffff,0,1,0,(undefined4 *)0x0)
-    ;
+                       (DAT_00806784,CASE_B,"INF_DEEPS",0xffffffff,0,1,0,(undefined4 *)0x0);
     this_00->field_04E3 = puVar4;
     puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
                        (DAT_00806784,CASE_13,"CUR_CONFIRM",0xffffffff,0,1,0,

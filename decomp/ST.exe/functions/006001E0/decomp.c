@@ -64,8 +64,7 @@ LAB_0060033c:
     if (uVar4 == 1) {
       *(undefined2 *)(iVar5 + 6 + *(int *)((int)this + 0x233)) = *(undefined2 *)((int)this + 0x1f5);
       *(undefined2 *)(iVar5 + 8 + *(int *)((int)this + 0x233)) = *(undefined2 *)((int)this + 0x1f9);
-      *(undefined2 *)(iVar5 + 10 + *(int *)((int)this + 0x233)) = *(undefined2 *)((int)this + 0x1fd)
-      ;
+      *(undefined2 *)(iVar5 + 10 + *(int *)((int)this + 0x233)) = *(undefined2 *)((int)this + 0x1fd);
       *(undefined4 *)((int)this + 0x1e9) = 0;
       return 1;
     }

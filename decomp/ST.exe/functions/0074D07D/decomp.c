@@ -23,8 +23,7 @@ int __thiscall FUN_0074d07d(void *this,int *param_1,int *param_2)
     iVar4 = -0x7ffbfdf6;
     if (*(int *)((int)this + 0x18) != 0) {
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      iVar4 = (**(code **)(**(int **)((int)this + 0x9c) + 0xc))(*(int **)((int)this + 0x9c),param_2)
-      ;
+      iVar4 = (**(code **)(**(int **)((int)this + 0x9c) + 0xc))(*(int **)((int)this + 0x9c),param_2);
       bVar2 = true;
     }
   }

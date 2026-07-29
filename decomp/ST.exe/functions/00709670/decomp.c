@@ -49,7 +49,7 @@ void __thiscall FUN_00709670(void *this,uint param_1,int param_2,int param_3,byt
         iVar5 = iVar5 + 1;
       } while (iVar5 < (int)puVar1[0x25]);
     }
-    FUN_00709470(this,(int *)&stack0xffffffc4,puVar1[0x25],param_2,param_3,param_4);
+    ST3DSMAPContext::sub_00709470(this,(int *)&stack0xffffffc4,puVar1[0x25],param_2,param_3,param_4);
   }
   ExceptionList = local_14;
   return;

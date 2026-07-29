@@ -34,8 +34,9 @@ undefined4 __thiscall FUN_00495750(void *this,float param_1)
     }
   }
   else if ((uVar2 != 0x61) && (uVar2 == 0x8102)) {
-    FUN_006e1c20(PTR_00807598,*(float *)((int)this + 0x1c),*(int *)((int)this + 0x20),0.0,&local_8,
-                 &param_1);
+    ST3DSMAPContext::sub_006E1C20
+              (g_sT3DSMAPContext_00807598,*(float *)((int)this + 0x1c),*(int *)((int)this + 0x20),
+               0.0,&local_8,&param_1);
     lVar5 = Library::MSVCRT::__ftol();
     uVar4 = (undefined4)lVar5;
     lVar5 = Library::MSVCRT::__ftol();

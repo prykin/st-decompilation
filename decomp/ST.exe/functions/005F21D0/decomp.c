@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STMethodOwnerApplier] Structural method owner recovered as STManBasisC.
    Evidence: this_call_owners=[STManBasisC]; agreed_this_calls=1; incoming_this_accesses=4;
@@ -8,47 +10,48 @@ int __thiscall STManBasisC::sub_005F21D0(STManBasisC *this)
 
 {
   dword dVar1;
-  DArrayTy *pDVar2;
-  undefined4 *puVar3;
-  short *psVar4;
-  uint uVar5;
+  STManBasisC_field_0038DArray *pSVar2;
+  DArrayTy *pDVar3;
+  undefined4 *puVar4;
+  short *psVar5;
+  uint uVar6;
 
-  if (this->field_0038 != (DArrayTy *)0x0) {
+  if (this->field_0038 != (STManBasisC_field_0038DArray *)0x0) {
     dVar1 = this->field_0038->count;
-    uVar5 = 0;
+    uVar6 = 0;
     if (0 < (int)dVar1) {
       do {
-        pDVar2 = this->field_0038;
-        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar2, uVar5) (runtime stride) */
-        if ((uVar5 < pDVar2->count) &&
-           (psVar4 = (short *)(pDVar2->elementSize * uVar5 + (int)pDVar2->data),
-           psVar4 != (short *)0x0)) {
-          puVar3 = thunk_FUN_005f1e40((uint)*(byte *)(psVar4 + 3),(int)*(short *)((int)psVar4 + 7),
-                                      (int)(short)(*psVar4 * 0xc9 + 100),
-                                      (int)(short)(psVar4[1] * 0xc9 + 100),
-                                      (int)(short)(psVar4[2] * 200 + 100));
-          *(undefined4 **)((int)psVar4 + 0xd) = puVar3;
+        pSVar2 = this->field_0038;
+        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
+        if ((uVar6 < pSVar2->count) &&
+           (psVar5 = (short *)((int)&pSVar2->data->field_0000 + pSVar2->elementSize * uVar6),
+           psVar5 != (short *)0x0)) {
+          puVar4 = thunk_FUN_005f1e40((uint)*(byte *)(psVar5 + 3),(int)*(short *)((int)psVar5 + 7),
+                                      (int)(short)(*psVar5 * 0xc9 + 100),
+                                      (int)(short)(psVar5[1] * 0xc9 + 100),
+                                      (int)(short)(psVar5[2] * 200 + 100));
+          *(undefined4 **)((int)psVar5 + 0xd) = puVar4;
         }
-        uVar5 = uVar5 + 1;
-      } while ((int)uVar5 < (int)dVar1);
+        uVar6 = uVar6 + 1;
+      } while ((int)uVar6 < (int)dVar1);
     }
   }
   if (this->field_003C != (DArrayTy *)0x0) {
     dVar1 = this->field_003C->count;
-    uVar5 = 0;
+    uVar6 = 0;
     if (0 < (int)dVar1) {
       do {
-        pDVar2 = this->field_003C;
-        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar2, uVar5) (runtime stride) */
-        if (((uVar5 < pDVar2->count) &&
-            (psVar4 = (short *)(pDVar2->elementSize * uVar5 + (int)pDVar2->data),
-            psVar4 != (short *)0x0)) && (*(int *)(psVar4 + 0xc) != -1)) {
-          thunk_FUN_005f1700((uint)*(byte *)(psVar4 + 3),(int)*(short *)((int)psVar4 + 7),0,
-                             (int)(short)(*psVar4 * 0xc9 + 100),(int)(short)(psVar4[1] * 0xc9 + 100)
-                             ,(int)(short)(psVar4[2] * 200 + 100),uVar5);
+        pDVar3 = this->field_003C;
+        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar3, uVar6) (runtime stride) */
+        if (((uVar6 < pDVar3->count) &&
+            (psVar5 = (short *)(pDVar3->elementSize * uVar6 + (int)pDVar3->data),
+            psVar5 != (short *)0x0)) && (*(int *)(psVar5 + 0xc) != -1)) {
+          thunk_FUN_005f1700((uint)*(byte *)(psVar5 + 3),(int)*(short *)((int)psVar5 + 7),0,
+                             (int)(short)(*psVar5 * 0xc9 + 100),(int)(short)(psVar5[1] * 0xc9 + 100)
+                             ,(int)(short)(psVar5[2] * 200 + 100),uVar6);
         }
-        uVar5 = uVar5 + 1;
-      } while ((int)uVar5 < (int)dVar1);
+        uVar6 = uVar6 + 1;
+      } while ((int)uVar6 < (int)dVar1);
     }
     return dVar1;
   }

@@ -42,10 +42,10 @@ void __thiscall OptPanelTy::DoneOptPanel(OptPanelTy *this)
       FUN_006b5570((DArrayTy *)pOVar2->field_02F9);
     }
     pOVar2->field_02F9 = (uint *)0x0;
-    if (pOVar2->field_02FD != (DArrayTy *)0x0) {
-      DArrayDestroy(pOVar2->field_02FD);
+    if (pOVar2->field_02FD != (OptPanelTy_field_02FDDArray *)0x0) {
+      DArrayDestroy((DArrayTy *)pOVar2->field_02FD);
     }
-    pOVar2->field_02FD = (DArrayTy *)0x0;
+    pOVar2->field_02FD = (OptPanelTy_field_02FDDArray *)0x0;
     if (pOVar2->field_01DD != (HANDLE)0x0) {
       FindCloseChangeNotification(pOVar2->field_01DD);
       pOVar2->field_01DD = (HANDLE)0x0;

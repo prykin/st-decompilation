@@ -165,8 +165,7 @@ LAB_006259bf:
                 if (DAT_00811798 != (void *)0x0) {
                   iVar5 = this->vfunc_2C();
                   iVar6 = this_00->GetObjectTypeId();
-                  thunk_FUN_0061fe80(DAT_00811798,iVar12,iVar13,(uint)this_00[1].vtable,iVar6,iVar5)
-                  ;
+                  thunk_FUN_0061fe80(DAT_00811798,iVar12,iVar13,(uint)this_00[1].vtable,iVar6,iVar5);
                 }
               }
 LAB_00625ad5:

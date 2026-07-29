@@ -125,8 +125,6 @@ function_address	target	status	detail
 006D3300	parameter:1	disabled	apply flags are 0
 006D7830	parameter:5	disabled	apply flags are 0
 006D86E0	parameter:2	disabled	apply flags are 0
-006E2970	parameter:1	disabled	apply flags are 0
-006E2970	parameter:2	disabled	apply flags are 0
 006E2970	parameter:3	disabled	apply flags are 0
 006E6200	parameter:5	disabled	apply flags are 0
 006E6460	parameter:3	disabled	apply flags are 0

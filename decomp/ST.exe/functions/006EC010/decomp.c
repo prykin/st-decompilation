@@ -250,8 +250,7 @@ int __fastcall FUN_006ec010(undefined4 *param_1)
                   *puVar14 = *puVar14 | 2;
                 }
                 iVar12 = FUN_006d1ad0((int *)(puVar6 + 6),4,local_78,local_74,local_70,local_6c,
-                                      *(int *)(puVar6[0x19] + 0x6c),*(int *)(puVar6[0x19] + 0x70),0)
-                ;
+                                      *(int *)(puVar6[0x19] + 0x6c),*(int *)(puVar6[0x19] + 0x70),0);
                 if ((iVar12 < 0) && ((puVar6[1] & 0x40) != 0)) {
                   *(undefined4 *)(param_1[0xcc] + 0x18 + iVar13 * 0x68) = 5;
                 }
@@ -297,8 +296,7 @@ LAB_006ec68d:
                   *puVar14 = *puVar14 | 2;
                 }
                 iVar12 = FUN_006d1ad0((int *)(puVar6 + 6),4,local_78,local_74,local_70,local_6c,
-                                      *(int *)(puVar6[0x19] + 0x6c),*(int *)(puVar6[0x19] + 0x70),0)
-                ;
+                                      *(int *)(puVar6[0x19] + 0x6c),*(int *)(puVar6[0x19] + 0x70),0);
                 if ((iVar12 < 0) && ((puVar6[1] & 0x40) != 0)) {
                   *(undefined4 *)(param_1[0xcc] + 0x18 + iVar13 * 0x68) = 5;
                 }

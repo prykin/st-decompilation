@@ -122,17 +122,21 @@ void __thiscall STTeamLissagC::InitVisibelSystem(STTeamLissagC *this)
               puVar4 = local_14;
               local_8 = local_14;
             }
-            FUN_006e8660(PTR_00807598,(int *)&local_c,1,0,*(uint *)((int)puVar4 + 9),
-                         *(uint *)((int)puVar4 + 0xd),(int)*(uint *)((int)puVar4 + 9) / 2,
-                         (int)*(uint *)((int)puVar4 + 0xd) / 2 - 0xe,0);
-            FUN_006e98e0(PTR_00807598,local_c,0,*(int *)puVar4,*(int *)((int)puVar4 + 0x21),1);
-            FUN_006ea270(PTR_00807598,local_c,0,0);
-            FUN_006ea5e0(PTR_00807598,local_c,0,0);
-            FUN_006ea960(PTR_00807598,local_c,
-                         (float)*(int *)((int)piVar7 + 0xd) * _DAT_007904f8 * _DAT_007904f0,
-                         (float)*(int *)((int)piVar7 + 0x11) * _DAT_007904f8 * _DAT_007904f0,
-                         (float)*(int *)((int)piVar7 + 0x15) * _DAT_007904f8 * _DAT_007904f0 +
-                         _DAT_007904fc);
+            ST3DSMAPContext::sub_006E8660
+                      (g_sT3DSMAPContext_00807598,(int *)&local_c,1,0,*(uint *)((int)puVar4 + 9),
+                       *(uint *)((int)puVar4 + 0xd),(int)*(uint *)((int)puVar4 + 9) / 2,
+                       (int)*(uint *)((int)puVar4 + 0xd) / 2 - 0xe,0);
+            ST3DSMAPContext::sub_006E98E0
+                      (g_sT3DSMAPContext_00807598,local_c,0,*(int *)puVar4,
+                       *(int *)((int)puVar4 + 0x21),1);
+            ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,local_c,0,0);
+            ST3DSMAPContext::sub_006EA5E0(g_sT3DSMAPContext_00807598,local_c,0,0);
+            Library::Ourlib::ST3DSMAP::SprMove
+                      (g_sT3DSMAPContext_00807598,local_c,
+                       (float)*(int *)((int)piVar7 + 0xd) * _DAT_007904f8 * _DAT_007904f0,
+                       (float)*(int *)((int)piVar7 + 0x11) * _DAT_007904f8 * _DAT_007904f0,
+                       (float)*(int *)((int)piVar7 + 0x15) * _DAT_007904f8 * _DAT_007904f0 +
+                       _DAT_007904fc);
             piVar7[1] = local_c;
             *(undefined1 *)(piVar7 + 3) = 0;
             pSVar6 = local_18;

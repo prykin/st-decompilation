@@ -17,7 +17,7 @@ void __fastcall FUN_00584b10(AnonShape_00584B10_33997544 *param_1)
   uVar3 = 0x5a;
   iVar2 = 1;
   uVar1 = thunk_FUN_004ad650((STT3DSprC *)this);
-  FUN_006ea4e0(param_1->field_0211,uVar1,iVar2,uVar3,uVar4);
+  Library::Ourlib::ST3DSMAP::SprSetLevBeforeLand(param_1->field_0211,uVar1,iVar2,uVar3,uVar4);
   STT3DSprC::sub_004ACFE0((STT3DSprC *)this,'\n');
   STT3DSprC::sub_004ACF20((STT3DSprC *)this,DAT_008032b8,0x10);
   STT3DSprC::StartShow((STT3DSprC *)this,10,g_playSystem_00802A38->field_00E4);

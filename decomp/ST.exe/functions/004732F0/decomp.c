@@ -371,7 +371,8 @@ cf_common_exit_0047405D:
                  [(int)sVar16 * (int)g_worldGrid.planeStride + (int)sVar17 * (int)g_worldGrid.sizeX
                   + (int)sVar15].objects[0];
       }
-      FUN_006ea3e0(this->field_0211,this->field_01ED,*(int *)&pSVar6[0xd].field_0x19);
+      Library::Ourlib::ST3DSMAP::SprSetLevAfter
+                (this->field_0211,this->field_01ED,*(int *)&pSVar6[0xd].field_0x19);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       iVar10 = CONCAT22(extraout_var_05,this->field_058A * 0xc9) + 100;
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -530,8 +531,7 @@ cf_common_exit_0047405D:
                   (this->field_0588,this->field_058A,this->field_058C,0,
                    (RecoveredRecord_DumpClassC_00495EC0 *)this);
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        TLOEmbryoTy::sub_0041C3F0((TLOEmbryoTy *)this,*(undefined **)((int)this->field_06CB + 0x3f))
-        ;
+        TLOEmbryoTy::sub_0041C3F0((TLOEmbryoTy *)this,*(undefined **)((int)this->field_06CB + 0x3f));
         iVar10 = this->vfunc_D8();
         return -(uint)(iVar10 != 0);
       }
@@ -649,7 +649,7 @@ switchD_004734db_caseD_2:
         return -1;
       }
       if (local_24 == 0) {
-        FUN_006ea2f0(this->field_0211,this->field_01ED);
+        Library::Ourlib::ST3DSMAP::SprRstLev(this->field_0211,this->field_01ED);
         iVar10 = this->vfunc_D8();
         return -(uint)(iVar10 != 0);
       }

@@ -15,7 +15,7 @@ undefined4 __thiscall TLOBaseTy::sub_004CC900(TLOBaseTy *this)
     STT3DSprC::StopShow(this->field_0603,0xe);
     thunk_FUN_004ad430(this->field_0603);
     uVar1 = thunk_FUN_004ad650(this->field_0603);
-    FUN_006ea2f0((void *)this->field_0211,uVar1);
+    Library::Ourlib::ST3DSMAP::SprRstLev((void *)this->field_0211,uVar1);
     STT3DSprC::UnLoadSequence(this->field_0603,0xe);
     this->field_044C = -1;
     uVar1 = g_playSystem_00802A38->field_00E4;

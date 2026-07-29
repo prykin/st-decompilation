@@ -34,18 +34,22 @@ undefined4 FUN_005f4a30(int param_1,byte param_2,int param_3)
                Library::Ourlib::MFRLOAD::mfRLoad
                          (DAT_00806764,CASE_1D,local_10[uVar2],0xffffffff,0,1,0,(undefined4 *)0x0);
     puVar1 = (uint *)(iVar3 + 0x1f);
-    FUN_006e8660(PTR_00807598,(int *)puVar1,1,0,local_14->field_0009,local_14->field_000D,
-                 *(int *)(&DAT_007ce5b0 + uVar2 * 8) / 2,
-                 *(int *)(&DAT_007ce5b4 + uVar2 * 8) / 2 - 0xe,0);
-    FUN_006e98e0(PTR_00807598,*puVar1,0,*(int *)local_14,local_14->field_0021,1);
-    FUN_006ea270(PTR_00807598,*puVar1,0,*(uint *)(iVar3 + 0xe));
-    FUN_006ea960(PTR_00807598,*puVar1,(float)*(int *)(iVar3 + 2) * _DAT_007904f8 * _DAT_007904f0,
-                 (float)*(int *)(iVar3 + 6) * _DAT_007904f8 * _DAT_007904f0,
-                 (float)*(int *)(iVar3 + 10) * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
-    FUN_006eaaa0(PTR_00807598,*puVar1,0);
+    ST3DSMAPContext::sub_006E8660
+              (g_sT3DSMAPContext_00807598,(int *)puVar1,1,0,local_14->field_0009,
+               local_14->field_000D,*(int *)(&DAT_007ce5b0 + uVar2 * 8) / 2,
+               *(int *)(&DAT_007ce5b4 + uVar2 * 8) / 2 - 0xe,0);
+    ST3DSMAPContext::sub_006E98E0
+              (g_sT3DSMAPContext_00807598,*puVar1,0,*(int *)local_14,local_14->field_0021,1);
+    ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,*puVar1,0,*(uint *)(iVar3 + 0xe));
+    Library::Ourlib::ST3DSMAP::SprMove
+              (g_sT3DSMAPContext_00807598,*puVar1,
+               (float)*(int *)(iVar3 + 2) * _DAT_007904f8 * _DAT_007904f0,
+               (float)*(int *)(iVar3 + 6) * _DAT_007904f8 * _DAT_007904f0,
+               (float)*(int *)(iVar3 + 10) * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
+    Library::Ourlib::ST3DSMAP::SprShow(g_sT3DSMAPContext_00807598,*puVar1,0);
     *(undefined1 *)(iVar3 + 0x1e) = 1;
     if (param_3 != 0) {
-      FUN_006eab60(PTR_00807598,*puVar1);
+      Library::Ourlib::ST3DSMAP::SprHide(g_sT3DSMAPContext_00807598,*puVar1);
       *(undefined1 *)(iVar3 + 0x1e) = 0;
     }
     g_currentExceptionFrame = local_58.previous;

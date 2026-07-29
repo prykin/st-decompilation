@@ -64,7 +64,7 @@ void __thiscall STBHEShellC::sub_005F4680(STBHEShellC *this)
       if (this->field_00C4 == '\0') {
         return;
       }
-      FUN_006eab60(PTR_00807598,this->field_008F);
+      Library::Ourlib::ST3DSMAP::SprHide(g_sT3DSMAPContext_00807598,this->field_008F);
       this->field_00C4 = 0;
       return;
     }
@@ -73,11 +73,12 @@ void __thiscall STBHEShellC::sub_005F4680(STBHEShellC *this)
     if (this->field_00AF <= iVar5) {
       this->field_00AB = 0;
     }
-    FUN_006ea960(PTR_00807598,this->field_008F,
-                 (float)this->field_0093 * _DAT_007904f8 * _DAT_007904f0,
-                 (float)this->field_0097 * _DAT_007904f8 * _DAT_007904f0,
-                 (float)(int)this->field_009B * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
-    FUN_006ea270(PTR_00807598,this->field_008F,0,this->field_00AB);
+    Library::Ourlib::ST3DSMAP::SprMove
+              (g_sT3DSMAPContext_00807598,this->field_008F,
+               (float)this->field_0093 * _DAT_007904f8 * _DAT_007904f0,
+               (float)this->field_0097 * _DAT_007904f8 * _DAT_007904f0,
+               (float)(int)this->field_009B * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
+    ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,this->field_008F,0,this->field_00AB);
     local_8 = FUN_006acf0d(this->field_009F,this->field_00A3,this->field_00A7,this->field_0093,
                            this->field_0097,this->field_009B);
     if (local_8 == 0) {
@@ -92,7 +93,7 @@ void __thiscall STBHEShellC::sub_005F4680(STBHEShellC *this)
     }
     TraksClassTy::TraksCreate(g_traksClass_00802A7C,1,1,0,iVar5,iVar3,iVar4,0,0,0,0,0,0,-1,0,0);
     if (this->field_00C4 == '\0') {
-      FUN_006eaaa0(PTR_00807598,this->field_008F,0);
+      Library::Ourlib::ST3DSMAP::SprShow(g_sT3DSMAPContext_00807598,this->field_008F,0);
       this->field_00C4 = 1;
       return;
     }

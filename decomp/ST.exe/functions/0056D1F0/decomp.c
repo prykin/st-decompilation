@@ -34,7 +34,7 @@ undefined4 __thiscall STAppC::CommonFunction(STAppC *this,int param_1)
          (g_cursorClass_00802A30->field_00A9 == 0)) {
         Library::DKW::DDX::FUN_006b8d50((int *)g_cursorClass_00802A30->field_00AD,0,0,0,0);
       }
-      Library::Ourlib::ST3DSPR::FUN_006ed100(PTR_00807598);
+      Library::Ourlib::ST3DSPR::FUN_006ed100(g_sT3DSMAPContext_00807598);
       Library::DKW::DDX::FUN_006bd740((int *)g_ddxContext_008075A8);
     }
     g_currentExceptionFrame = local_4c.previous;

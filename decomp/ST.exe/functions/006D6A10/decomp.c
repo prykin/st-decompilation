@@ -58,8 +58,7 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
       local_8 = iVar9;
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       Library::DKW::DDX::FUN_006bb370
-                (*(DDXContext **)(*(int *)&((AnonReceiver_006CEC40 *)this)->field_0x288 + 0x28),0,0)
-      ;
+                (*(DDXContext **)(*(int *)&((AnonReceiver_006CEC40 *)this)->field_0x288 + 0x28),0,0);
       g_currentExceptionFrame = local_98.previous;
     }
     else {

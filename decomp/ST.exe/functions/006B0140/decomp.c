@@ -18,8 +18,7 @@ char * LoadResourceString(UINT resourceId,HINSTANCE module)
   if (module == (HINSTANCE)0x0) {
     module = GetModuleHandleA((LPCSTR)0x0);
   }
-  uVar1 = LoadStringA(module,resourceId,g_resourceStringBuffer + g_resourceStringBufferOffset,0x800)
-  ;
+  uVar1 = LoadStringA(module,resourceId,g_resourceStringBuffer + g_resourceStringBufferOffset,0x800);
   pcVar2 = g_resourceStringBuffer + g_resourceStringBufferOffset;
   if ((uVar1 != 0) && (uVar1 < 0x800)) {
     g_resourceStringBufferOffset = g_resourceStringBufferOffset + 1 + uVar1;

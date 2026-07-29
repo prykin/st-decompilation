@@ -86,20 +86,22 @@ undefined4 __thiscall FUN_00638ca0(void *this,STMessage *param_1)
       iVar5 = *(int *)((int)this + 0x2bf);
       if (iVar5 != 0) {
         if (*(int *)((int)this + 0x2c7) == 0) {
-          SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006EA050::sub_006EA460
-                    (*(AnonReceiver_006EA050 **)((int)this + 0x211),*(uint *)((int)this + 0x1ed),
+          Library::Ourlib::ST3DSMAP::SprSetLevBefore
+                    (*(void **)((int)this + 0x211),*(uint *)((int)this + 0x1ed),
                      *(int *)(iVar5 + 0x1ed));
         }
         else {
-          FUN_006ea3e0(*(void **)((int)this + 0x211),*(uint *)((int)this + 0x1ed),
-                       *(int *)(iVar5 + 0x1ed));
+          Library::Ourlib::ST3DSMAP::SprSetLevAfter
+                    (*(void **)((int)this + 0x211),*(uint *)((int)this + 0x1ed),
+                     *(int *)(iVar5 + 0x1ed));
         }
       }
       uVar12 = 0x53;
       uVar11 = 0x5a;
       iVar5 = 1;
       uVar6 = thunk_FUN_004ad650((STT3DSprC *)((int)this + 0x1d5));
-      FUN_006ea4e0(*(void **)((int)this + 0x211),uVar6,iVar5,uVar11,uVar12);
+      Library::Ourlib::ST3DSMAP::SprSetLevBeforeLand
+                (*(void **)((int)this + 0x211),uVar6,iVar5,uVar11,uVar12);
       *(undefined1 *)((int)this + 0x26f) = 2;
       thunk_FUN_00639990(this);
       return 0;

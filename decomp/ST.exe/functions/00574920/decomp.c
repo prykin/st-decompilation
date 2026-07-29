@@ -49,8 +49,7 @@ void __cdecl FUN_00574920(short *param_1,int param_2,int param_3,undefined4 *par
   iVar2 = (int)param_1[1] * (int)*param_1;
   local_24 = (int)(iVar2 + (iVar2 >> 0x1f & 3U)) >> 2;
   local_40 = 1;
-  local_2c = (int *)((int)param_1 + (local_24 * 5 + param_2 + (*param_1 * param_3) / 2) * 4 + 0x459)
-  ;
+  local_2c = (int *)((int)param_1 + (local_24 * 5 + param_2 + (*param_1 * param_3) / 2) * 4 + 0x459);
   local_34 = 5;
   ExceptionList = &local_14;
   do {

@@ -139,17 +139,18 @@ undefined4 __thiscall STT3DSprC::StartShow(STT3DSprC *this,byte param_1,uint par
     RaiseInternalException
               (-1,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\Tspr3d.cpp",0xd1);
   }
-  FUN_006e9cb0(pSVar1->field_003C,(uint *)pSVar1->field_0018,uVar5);
+  ST3DSMAPContext::sub_006E9CB0(pSVar1->field_003C,(uint *)pSVar1->field_0018,uVar5);
   pSVar1->field_001C = pSVar1->field_001C | local_c;
   if (*(int *)(&pSVar1->field_0020->field_0x20 + iVar2) == 0) {
-    FUN_006ea270(pSVar1->field_003C,pSVar1->field_0018,uVar5,
-                 *(uint *)(&pSVar1->field_0020->field_0x18 + iVar2));
+    ST3DSMAPContext::sub_006EA270
+              (pSVar1->field_003C,pSVar1->field_0018,uVar5,
+               *(uint *)(&pSVar1->field_0020->field_0x18 + iVar2));
   }
   else {
-    FUN_006e9d40(pSVar1->field_003C,(uint *)pSVar1->field_0018,uVar5);
+    ST3DSMAPContext::sub_006E9D40(pSVar1->field_003C,(uint *)pSVar1->field_0018,uVar5);
   }
   if (pSVar1->field_0012 == '\0') {
-    FUN_006eaaa0(pSVar1->field_003C,pSVar1->field_0018,0);
+    Library::Ourlib::ST3DSMAP::SprShow(pSVar1->field_003C,pSVar1->field_0018,0);
   }
   if (pSVar1->field_0011 == '\0') {
     if (pSVar1->field_0010 == '\0') {
@@ -168,7 +169,7 @@ undefined4 __thiscall STT3DSprC::StartShow(STT3DSprC *this,byte param_1,uint par
       pSVar1->field_0030 = piVar3[6];
       pcVar6 = thunk_FUN_004ad740;
     }
-    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_006e9520
+    Library::Ourlib::ST3DSMAP::SprSetShadow
               (pSVar1->field_003C,pSVar1->field_0018,pSVar1->field_0034,(uint)pcVar6,(uint)pSVar1);
   }
 cf_common_exit_004AC330:

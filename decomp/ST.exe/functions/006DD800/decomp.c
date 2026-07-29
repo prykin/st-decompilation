@@ -1,18 +1,22 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* [STMethodOwnerApplier] Structural method owner recovered as ST3DSMAPContext.
+   Evidence: this_call_owners=[ST3DSMAPContext]; agreed_this_calls=3; incoming_this_accesses=6;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=6;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=3; owner_evidence_coverage=adequate */
 
-void __thiscall FUN_006dd800(void *this,float param_1)
+void __thiscall ST3DSMAPContext::sub_006DD800(ST3DSMAPContext *this,float param_1)
 
 {
   longlong lVar1;
 
-  *(double *)((int)this + 0x11c) = (double)param_1;
-  if ((float)*(double *)((int)this + 0x114) < param_1) {
-    *(double *)((int)this + 0x10c) =
-         (double)((float)_DAT_0079df78 / (param_1 - (float)*(double *)((int)this + 0x114)));
+  *(double *)&this->field_0x11c = (double)param_1;
+  if ((float)*(double *)&this->field_0x114 < param_1) {
+    *(double *)&this->field_0x10c =
+         (double)((float)_DAT_0079df78 / (param_1 - (float)*(double *)&this->field_0x114));
     lVar1 = Library::MSVCRT::__ftol();
-    *(int *)((int)this + 0x2e4) = (int)lVar1;
-    FUN_006dd870(this);
+    *(int *)&this->field_0x2e4 = (int)lVar1;
+    sub_006DD870(this);
     return;
   }
   return;

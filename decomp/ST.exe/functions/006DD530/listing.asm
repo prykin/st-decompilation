@@ -1,4 +1,4 @@
-FUN_006dd530:
+ST3DSMAPContext::sub_006DD530:
 006DD530  55                        PUSH EBP
 006DD531  8B EC                     MOV EBP,ESP
 006DD533  DD 81 80 00 00 00         FLD double ptr [ECX + 0x80]

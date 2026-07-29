@@ -36,14 +36,14 @@ undefined4 __fastcall FUN_00480600(void *param_1)
     iVar2 = 1;
     uVar3 = thunk_FUN_004ad650(this);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    FUN_006eabf0(*(void **)((int)param_1 + 0x211),uVar3,iVar2);
+    Library::Ourlib::ST3DSMAP::SprSetVisible(*(void **)((int)param_1 + 0x211),uVar3,iVar2);
     iVar2 = 1;
   }
   else {
     iVar2 = 0;
     uVar3 = thunk_FUN_004ad650(this);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    FUN_006eabf0(*(void **)((int)param_1 + 0x211),uVar3,iVar2);
+    Library::Ourlib::ST3DSMAP::SprSetVisible(*(void **)((int)param_1 + 0x211),uVar3,iVar2);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     iVar2 = thunk_FUN_004e60d0(*(int *)((int)param_1 + 0x24),0x24);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -168,16 +168,16 @@ switchD_004806bc_caseD_a:
                                (int)*(short *)((int)param_1 + 0x49),(uint)DAT_0080874d);
           }
         }
-        else if ((iVar2 < 0) || ((int)*(short *)(DAT_00806724 + 0x23) / 2 <= iVar2)) {
-          if ((int)*(short *)(DAT_00806724 + 0x23) / 2 < iVar2) {
+        else if ((iVar2 < 0) || ((int)PTR_00806724->entryCount / 2 <= iVar2)) {
+          if ((int)PTR_00806724->entryCount / 2 < iVar2) {
             *(int *)((int)param_1 + 0x74a) = iVar2 + -1;
           }
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          if (*(int *)((int)param_1 + 0x74a) == (int)*(short *)(DAT_00806724 + 0x23) / 2 + 1) {
+          if (*(int *)((int)param_1 + 0x74a) == (int)PTR_00806724->entryCount / 2 + 1) {
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (*(code *)**(undefined4 **)this)();
           }
-          sVar13 = *(short *)(DAT_00806724 + 0x23);
+          sVar13 = PTR_00806724->entryCount;
 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
 LAB_00480bfa:
           if ((int)sVar13 / 2 < *(int *)((int)param_1 + 0x74a)) goto LAB_00480c6a;
@@ -192,7 +192,7 @@ LAB_00480bfa:
           *(undefined4 *)((int)param_1 + 0x74a) = 0;
         }
         else {
-          if ((iVar2 < 0) || ((int)*(short *)(DAT_00806724 + 0x23) / 2 <= iVar2)) {
+          if ((iVar2 < 0) || ((int)PTR_00806724->entryCount / 2 <= iVar2)) {
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             bVar20 = *(byte *)((int)param_1 + 0x24);
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -230,11 +230,11 @@ LAB_00480a79:
 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
 LAB_00480b80:
               local_c = (undefined4 *)CONCAT31(local_c._1_3_,bVar20);
-              if (iVar2 < *(short *)(DAT_00806724 + 0x23) + -1) {
+              if (iVar2 < PTR_00806724->entryCount + -1) {
                 *(int *)((int)param_1 + 0x74a) = iVar2 + 1;
               }
               /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-              if (*(int *)((int)param_1 + 0x74a) == (int)*(short *)(DAT_00806724 + 0x23) / 2 + 1) {
+              if (*(int *)((int)param_1 + 0x74a) == (int)PTR_00806724->entryCount / 2 + 1) {
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 STAllPlayersC::DelObjFromTmps
                           (g_allPlayers_007FA174,DAT_0080874d,*(int *)((int)param_1 + 0x20),bVar20,
@@ -280,16 +280,16 @@ LAB_00480b30:
                          (&DAT_008087ea)[(uint)bVar20 * 0x51];
               }
               if (bVar11) goto LAB_00480b80;
-              if ((int)*(short *)(DAT_00806724 + 0x23) / 2 < iVar2) {
+              if ((int)PTR_00806724->entryCount / 2 < iVar2) {
                 *(int *)((int)param_1 + 0x74a) = iVar2 + -1;
               }
               /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-              if (*(int *)((int)param_1 + 0x74a) == (int)*(short *)(DAT_00806724 + 0x23) / 2 + 1) {
+              if (*(int *)((int)param_1 + 0x74a) == (int)PTR_00806724->entryCount / 2 + 1) {
                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                 (*(code *)**(undefined4 **)this)();
               }
             }
-            sVar13 = *(short *)(DAT_00806724 + 0x23);
+            sVar13 = PTR_00806724->entryCount;
             goto LAB_00480bfa;
           }
           *(int *)((int)param_1 + 0x74a) = iVar2 + 1;
@@ -306,13 +306,12 @@ LAB_00480b30:
         STT3DSprC::sub_004ACE30(this,0,0);
       }
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      if (*(int *)((int)param_1 + 0x74a) == (int)*(short *)(DAT_00806724 + 0x23) / 2 + 1) {
+      if (*(int *)((int)param_1 + 0x74a) == (int)PTR_00806724->entryCount / 2 + 1) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (*(code *)**(undefined4 **)this)();
       }
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      if (*(int *)((int)param_1 + 0x74a) <= (int)*(short *)(DAT_00806724 + 0x23) / 2)
-      goto LAB_00480c7f;
+      if (*(int *)((int)param_1 + 0x74a) <= (int)PTR_00806724->entryCount / 2) goto LAB_00480c7f;
 LAB_00480c6a:
       iVar4 = 0;
       iVar2 = thunk_FUN_004ad650(this);
@@ -324,8 +323,8 @@ LAB_00480c7f:
     if (-1 < *(int *)((int)param_1 + 0x74a)) {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       STT3DSprC::sub_004ACE30
-                (this,*(uint *)(DAT_00806724 + 0x30 + *(int *)((int)param_1 + 0x74a) * 4),
-                 (int)*(short *)(DAT_00806724 + 0x2c));
+                (this,PTR_00806724->entries[*(int *)((int)param_1 + 0x74a)],
+                 (int)PTR_00806724->field_002C);
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       bVar20 = *(byte *)((int)param_1 + 0x24);
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -452,7 +451,7 @@ LAB_00480f12:
   if ((((*(char *)((int)param_1 + 0xe3) == '\x01') && (*(short *)((int)param_1 + 0xfa) == 0)) &&
       (*(int *)((int)param_1 + 0xe8) != 1)) &&
      (((*(char *)((int)param_1 + 99) == *(char *)((int)param_1 + 0x61) &&
-       (*(int *)((int)param_1 + 0x74a) <= (int)*(short *)(DAT_00806724 + 0x23) / 2)) &&
+       (*(int *)((int)param_1 + 0x74a) <= (int)PTR_00806724->entryCount / 2)) &&
       (local_8 = 0, *(char *)((int)param_1 + 0x2bf) != '\0')))) {
     local_c = (undefined4 *)((int)param_1 + 0x2b3);
     do {

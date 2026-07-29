@@ -198,8 +198,24 @@ The readable form needs a helper or a typed wrapper, for example:
 DArrayAt<DArrayElementHeader>(array, index)
 ```
 
-Such sites are catalogued as `dynamic_array_indexing`. A static Ghidra array
-cannot represent them because `elementSize` is not part of the datatype.
+When `STDArrayElementApplier` has installed an exact per-owner-field descriptor
+whose `data` member points to a recovered element record, the exporter performs
+this rendering automatically. If Ghidra reused the primitive temporary for
+another SSA lifetime, the exporter creates a separate `darray_<temporary>`
+alias only for the interval ending at the next non-DArray definition. Exact
+constant element accesses in that interval become named record fields:
+
+```c
+STManRuinC_field_003CElement *darray_puVar6;
+darray_puVar6 = DArrayAt<STManRuinC_field_003CElement>(array, index);
+darray_puVar6->field_0021 = value;
+```
+
+The transformation is deliberately withheld for a generic `DArrayTy`, an
+unknown element record, control flow containing raw labels/gotos, a non-exact
+field offset/width, or an address expression with an additional constant.
+Those sites remain catalogued as `dynamic_array_indexing`. A static Ghidra
+array cannot represent them because `elementSize` is not part of the datatype.
 
 ### Packed and unaligned fields
 

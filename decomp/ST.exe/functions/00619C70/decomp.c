@@ -507,9 +507,9 @@ cf_common_exit_0061A55D:
     }
     if (0x10 < this->field_00AB) {
       if (this->field_00AB == 0x11) {
-        FUN_006e9cb0(PTR_00807598,(uint *)this->field_0097,2);
+        ST3DSMAPContext::sub_006E9CB0(g_sT3DSMAPContext_00807598,(uint *)this->field_0097,2);
       }
-      FUN_006ea270(PTR_00807598,this->field_0097,2,this->field_00B7);
+      ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,this->field_0097,2,this->field_00B7);
       if (this->field_00B7 < this->field_00B3) {
         this->field_00B7 = this->field_00B7 + 1;
       }
@@ -517,32 +517,34 @@ cf_common_exit_0061A55D:
     if (this->field_00BB != '\0') {
       if (this->field_00BC == this->field_00C0) {
         this->field_00BB = 0;
-        FUN_006e9d40(PTR_00807598,(uint *)this->field_0097,1);
+        ST3DSMAPContext::sub_006E9D40(g_sT3DSMAPContext_00807598,(uint *)this->field_0097,1);
       }
       else {
-        FUN_006ea270(PTR_00807598,this->field_0097,1,this->field_00BC);
+        ST3DSMAPContext::sub_006EA270
+                  (g_sT3DSMAPContext_00807598,this->field_0097,1,this->field_00BC);
         this->field_00BC = this->field_00BC + 1;
       }
     }
     uVar11 = this->field_00AB;
     if ((int)uVar11 < this->field_00AF) {
-      FUN_006ea270(PTR_00807598,this->field_0097,0,uVar11);
+      ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,this->field_0097,0,uVar11);
 LAB_0061acc2:
       this->field_00AB = this->field_00AB + 1;
     }
     else if (uVar11 == this->field_00AF) {
       if (-1 < this->field_0097) {
-        FUN_006e9d40(PTR_00807598,(uint *)this->field_0097,0);
+        ST3DSMAPContext::sub_006E9D40(g_sT3DSMAPContext_00807598,(uint *)this->field_0097,0);
       }
       goto LAB_0061acc2;
     }
-    FUN_006ea960(PTR_00807598,this->field_0097,
-                 (float)this->field_009F * _DAT_007904f8 * _DAT_007904f0,
-                 (float)this->field_00A3 * _DAT_007904f8 * _DAT_007904f0,
-                 (float)this->field_00A7 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
+    Library::Ourlib::ST3DSMAP::SprMove
+              (g_sT3DSMAPContext_00807598,this->field_0097,
+               (float)this->field_009F * _DAT_007904f8 * _DAT_007904f0,
+               (float)this->field_00A3 * _DAT_007904f8 * _DAT_007904f0,
+               (float)this->field_00A7 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
     if (this->field_00B7 == this->field_00B3) {
       if (-1 < this->field_0097) {
-        FUN_006eab60(PTR_00807598,this->field_0097);
+        Library::Ourlib::ST3DSMAP::SprHide(g_sT3DSMAPContext_00807598,this->field_0097);
       }
       this->field_0093 = CASE_6;
     }
@@ -559,13 +561,13 @@ LAB_0061acc2:
           ((pVVar1->field_004C == (byte *)0x0 ||
            (pVVar1->field_004C[local_24 * pVVar1->field_0030 + local_28] != 0)))))) {
         if (this->field_00C4 == '\0') {
-          FUN_006eaaa0(PTR_00807598,this->field_0097,0);
+          Library::Ourlib::ST3DSMAP::SprShow(g_sT3DSMAPContext_00807598,this->field_0097,0);
           this->field_00C4 = 1;
           return local_2c;
         }
       }
       else if (this->field_00C4 != '\0') {
-        FUN_006eab60(PTR_00807598,this->field_0097);
+        Library::Ourlib::ST3DSMAP::SprHide(g_sT3DSMAPContext_00807598,this->field_0097);
         this->field_00C4 = 0;
         return local_2c;
       }
@@ -581,7 +583,7 @@ switchD_00619c92_default:
   return local_2c;
 cf_common_exit_0061AB3A:
   if (-1 < this->field_0097) {
-    FUN_006eab60(PTR_00807598,this->field_0097);
+    Library::Ourlib::ST3DSMAP::SprHide(g_sT3DSMAPContext_00807598,this->field_0097);
     this->field_00C4 = 0;
   }
   this->field_0093 = CASE_6;

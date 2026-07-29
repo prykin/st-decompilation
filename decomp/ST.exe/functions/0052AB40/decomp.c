@@ -20,7 +20,7 @@ void __cdecl CreateMiniMap(short *param_1,int *param_2,uint param_3,byte *param_
   byte bVar8;
   int iVar9;
   AnonShape_006DBCA0_EF06575F *pAVar10;
-  AnonShape_GLOBAL_00807598_0C6808FB *this;
+  ST3DSMAPContext *this;
   undefined4 *puVar11;
   uint uVar12;
   int *piVar13;
@@ -32,14 +32,14 @@ void __cdecl CreateMiniMap(short *param_1,int *param_2,uint param_3,byte *param_
   uint local_1c;
   int local_18;
   uint local_14;
-  AnonShape_GLOBAL_00807598_0C6808FB *local_10;
+  ST3DSMAPContext *local_10;
   int *local_c;
   float local_8;
 
   *param_2 = 0;
   param_2[1] = 0;
   local_8 = 1.4142135;
-  local_10 = (AnonShape_GLOBAL_00807598_0C6808FB *)0x0;
+  local_10 = (ST3DSMAPContext *)0x0;
   local_20 = 0;
   param_2[2] = 0;
   local_14 = 0;
@@ -53,13 +53,13 @@ void __cdecl CreateMiniMap(short *param_1,int *param_2,uint param_3,byte *param_
     }
     pAVar10 = (AnonShape_006DBCA0_EF06575F *)FUN_006b04d0(0x4f2);
     if (pAVar10 == (AnonShape_006DBCA0_EF06575F *)0x0) {
-      this = (AnonShape_GLOBAL_00807598_0C6808FB *)0x0;
+      this = (ST3DSMAPContext *)0x0;
     }
     else {
-      this = (AnonShape_GLOBAL_00807598_0C6808FB *)FUN_006dbca0(pAVar10);
+      this = (ST3DSMAPContext *)FUN_006dbca0(pAVar10);
     }
     local_10 = this;
-    if (this == (AnonShape_GLOBAL_00807598_0C6808FB *)0x0) {
+    if (this == (ST3DSMAPContext *)0x0) {
       RaiseInternalException
                 (-2,g_overwriteContext_007ED77C,"E:\\__titans\\Andrey\\minimap.cpp",0x16);
     }
@@ -70,10 +70,11 @@ void __cdecl CreateMiniMap(short *param_1,int *param_2,uint param_3,byte *param_
     dVar2 = (double)((float)-(int)param_1[1] * local_8 * _DAT_007904f4);
     dVar3 = (double)((float)local_18 * local_8 * _DAT_007904f4);
     dVar4 = (double)((float)(int)local_1c * local_8 * _DAT_007904f4);
-    FUN_006dc050(this,g_dDXContext_0080759C,0,0,uVar12,uVar12,SUB84(dVar4,0),
-                 (int)((ulonglong)dVar4 >> 0x20),SUB84(dVar3,0),(int)((ulonglong)dVar3 >> 0x20),
-                 SUB84(dVar2,0),(int)((ulonglong)dVar2 >> 0x20),SUB84(dVar1,0),
-                 (int)((ulonglong)dVar1 >> 0x20),0x4024000000000000,0x4023ee97865e3540,0);
+    ST3DSMAPContext::sub_006DC050
+              (this,g_dDXContext_0080759C,0,0,uVar12,uVar12,SUB84(dVar4,0),
+               (int)((ulonglong)dVar4 >> 0x20),SUB84(dVar3,0),(int)((ulonglong)dVar3 >> 0x20),
+               SUB84(dVar2,0),(int)((ulonglong)dVar2 >> 0x20),SUB84(dVar1,0),
+               (int)((ulonglong)dVar1 >> 0x20),0x4024000000000000,0x4023ee97865e3540,0);
     *(uint *)&this->field_0x128 = (uint)*param_4;
     *(undefined4 *)&this->field_0x124 = 2;
     bVar6 = param_4[1];
@@ -112,12 +113,13 @@ void __cdecl CreateMiniMap(short *param_1,int *param_2,uint param_3,byte *param_
       }
       local_14 = local_14 + 1;
       local_18 = (int)*param_1;
-      FUN_006dd610(this,uVar12 | 8,SUB84((double)((float)local_18 * _DAT_007904f4),0),
-                   (int)((ulonglong)(double)((float)local_18 * _DAT_007904f4) >> 0x20),
-                   SUB84((double)((float)(int)param_1[1] * _DAT_007904f4),0),
-                   (int)((ulonglong)(double)((float)(int)param_1[1] * _DAT_007904f4) >> 0x20));
-      FUN_006ddbe0(this);
-      FUN_006ddd50((AnonShape_GLOBAL_0080760C_46D7AF7A *)this);
+      ST3DSMAPContext::sub_006DD610
+                (this,uVar12 | 8,SUB84((double)((float)local_18 * _DAT_007904f4),0),
+                 (int)((ulonglong)(double)((float)local_18 * _DAT_007904f4) >> 0x20),
+                 SUB84((double)((float)(int)param_1[1] * _DAT_007904f4),0),
+                 (int)((ulonglong)(double)((float)(int)param_1[1] * _DAT_007904f4) >> 0x20));
+      ST3DSMAPContext::sub_006DDBE0(this);
+      ST3DSMAPContext::sub_006DDD50(this);
       puVar11 = Library::DKW::LIB::FUN_006aac10(local_24);
       *local_c = (int)puVar11;
       if (puVar11 == (undefined4 *)0x0) {
@@ -161,8 +163,8 @@ void __cdecl CreateMiniMap(short *param_1,int *param_2,uint param_3,byte *param_
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
   }
-  if (this != (AnonShape_GLOBAL_00807598_0C6808FB *)0x0) {
-    FUN_006dbcf0((int *)this);
+  if (this != (ST3DSMAPContext *)0x0) {
+    ST3DSMAPContext::sub_006DBCF0(this);
     Library::MSVCRT::FUN_0072e2b0((HoloTy *)this);
   }
   if (iVar9 != 0) {

@@ -27,7 +27,8 @@ FUN_004c5bd0(void *this,float param_1,short *param_2,short *param_3,short *param
   *param_4 = *(short *)(iVar7 + 8 + *(int *)((int)this + 0x5fb)) +
              *(short *)((int)this + 0x5b8) * 200;
   *param_5 = 0;
-  FUN_006dd530(*(void **)((int)this + 0x211),&param_1,(float *)&param_2,(float *)&param_3);
+  ST3DSMAPContext::sub_006DD530
+            (*(ST3DSMAPContext **)((int)this + 0x211),&param_1,(float *)&param_2,(float *)&param_3);
   lVar8 = Library::MSVCRT::__ftol();
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = (float)(int)(short)lVar8;

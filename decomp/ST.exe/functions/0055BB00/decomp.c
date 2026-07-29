@@ -55,7 +55,8 @@ VisibleClassTy::sub_0055BB00
   byte bStack_9;
   undefined4 local_8;
 
-  if ((((this->field_0114 != 0) && (this->field_0110 != (DArrayTy *)0x0)) && (param_5 < 8)) &&
+  if ((((this->field_0114 != 0) && (this->field_0110 != (VisibleClassTy_field_0110DArray *)0x0)) &&
+      (param_5 < 8)) &&
      ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 || ((byte)(&DAT_008087e9)[param_5 * 0x51] < 8))
      )) {
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */

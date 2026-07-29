@@ -28,7 +28,7 @@ void __fastcall FUN_0041f3b0(STSprGameObjC *param_1)
       iVar2 = STT3DSprC::sub_004ACD30((STT3DSprC *)&param_1->field_01D5,'\x01');
       param_1->field_0225 = iVar2 + -1;
     }
-    uVar3 = (*param_1->vtable->vfunc_7C)();
+    uVar3 = param_1->vfunc_7C();
     if (1 < (int)uVar3) {
       uVar3 = (int)(uVar3 * param_1->field_0225) / 100;
     }
@@ -49,7 +49,7 @@ void __fastcall FUN_0041f3b0(STSprGameObjC *param_1)
       if (iVar2 != 0x3e9) goto LAB_0041f51a;
       SVar5 = param_1->field_0259;
     }
-    if (((SVar5 != 0xffffffff) && (iVar2 = (*param_1->vtable->vfunc_0C)(), iVar2 == 3)) &&
+    if (((SVar5 != 0xffffffff) && (iVar2 = param_1->vfunc_0C(), iVar2 == 3)) &&
        ((param_1->field_0020 != 0x172 && (param_1->field_0020 != 0x1a4)))) {
       uVar3 = (*param_1->vtable->vfunc_C4)();
       if (1 < (int)uVar3) {
@@ -82,7 +82,7 @@ LAB_0041f51a:
     if (iVar2 != 0x3e9) goto LAB_0041f5a0;
     SVar5 = param_1->field_0259;
   }
-  if ((SVar5 != 0xffffffff) && (iVar2 = (*param_1->vtable->vfunc_0C)(), iVar2 == 3)) {
+  if ((SVar5 != 0xffffffff) && (iVar2 = param_1->vfunc_0C(), iVar2 == 3)) {
     STT3DSprC::SetCurFase((STT3DSprC *)puVar1,'\x02',0);
     STT3DSprC::ShowCurFase((STT3DSprC *)puVar1,'\x02');
   }

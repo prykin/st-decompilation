@@ -8,15 +8,15 @@ void __thiscall STVolcanoC::sub_006479E0(STVolcanoC *this)
 
 {
   if (-1 < this->field_005D) {
-    FUN_006e8ba0(PTR_00807598,this->field_005D);
+    Library::Ourlib::ST3DSMAP::SprClose(g_sT3DSMAPContext_00807598,this->field_005D);
     this->field_005D = -1;
   }
   if (-1 < this->field_007A) {
-    FUN_006e8ba0(PTR_00807598,this->field_007A);
+    Library::Ourlib::ST3DSMAP::SprClose(g_sT3DSMAPContext_00807598,this->field_007A);
     this->field_007A = -1;
   }
   if (-1 < this->field_0086) {
-    FUN_006e8ba0(PTR_00807598,this->field_0086);
+    Library::Ourlib::ST3DSMAP::SprClose(g_sT3DSMAPContext_00807598,this->field_0086);
     this->field_0086 = -1;
   }
   return;

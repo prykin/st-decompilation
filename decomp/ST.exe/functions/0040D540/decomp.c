@@ -79,8 +79,7 @@ int FUN_0040d540(AnonShape_0040D540_1BB7A4CF *param_1,uint param_2)
     do {
       if (*psVar13 == -1) break;
       local_10 = FUN_006a5eb0((int)pAVar6->field_0047,(int)pAVar6->field_0049,
-                              (int)pAVar6->field_004B,(int)*psVar13,(int)psVar13[1],(int)psVar13[2])
-      ;
+                              (int)pAVar6->field_004B,(int)*psVar13,(int)psVar13[1],(int)psVar13[2]);
       if ((local_10 != 0xffe) && (local_8 = (int)psVar13[3], local_8 < local_38)) {
         local_44 = local_10 & 0x6000;
         if (local_44 == 0) {

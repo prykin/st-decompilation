@@ -30,7 +30,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::FUN_0054a9b0
   AnonShape_0054A9B0_643B0813 *local_c;
   uint local_8;
 
-  if ((PTR_00807598 == (AnonShape_GLOBAL_00807598_0C6808FB *)0x0) ||
+  if ((g_sT3DSMAPContext_00807598 == (ST3DSMAPContext *)0x0) ||
      (g_visibleClass_00802A88 == (VisibleClassTy *)0x0)) {
     return;
   }
@@ -148,8 +148,9 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::FUN_0054a9b0
     pAVar4->field_04EF = param_1;
     pAVar4->field_04F3 = param_2;
     pAVar4->field_04F7 = param_3;
-    FUN_006e2970(PTR_00807598,param_1,param_2,param_3,(int *)(pAVar4->field_04EB + 0x1c),
-                 (int *)(pAVar4->field_04EB + 0x20));
+    ST3DSMAPContext::sub_006E2970
+              (g_sT3DSMAPContext_00807598,param_1,param_2,param_3,(int *)(pAVar4->field_04EB + 0x1c)
+               ,(int *)(pAVar4->field_04EB + 0x20));
     *(int *)(pAVar4->field_04EB + 0x1c) =
          *(int *)(pAVar4->field_04EB + 0x1c) - *(int *)(pAVar4->field_04E7 + 9) / 2;
     *(int *)(pAVar4->field_04EB + 0x20) =
@@ -171,15 +172,18 @@ cf_common_exit_0054ACFD:
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   uVar6 = *(uint *)(local_c->field_04E7 + 0xd);
   uVar1 = *(uint *)(local_c->field_04E7 + 9);
-  FUN_006e8660(PTR_00807598,(int *)&local_8,1,0,uVar1,uVar6,(int)uVar1 / 2,(int)uVar6 / 2 - 0xe,0);
+  ST3DSMAPContext::sub_006E8660
+            (g_sT3DSMAPContext_00807598,(int *)&local_8,1,0,uVar1,uVar6,(int)uVar1 / 2,
+             (int)uVar6 / 2 - 0xe,0);
   if (-1 < (int)local_8) {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    FUN_006e98e0(PTR_00807598,local_8,0,*(int *)pAVar4->field_04E7,
-                 *(int *)((int)pAVar4->field_04E7 + 0x21),1);
-    FUN_006eaaa0(PTR_00807598,local_8,0);
-    FUN_006ea960(PTR_00807598,local_8,param_1,param_2,param_3 + _DAT_007904fc);
-    AnonReceiver_006EA050::FUN_006ea050
-              ((AnonReceiver_006EA050 *)PTR_00807598,local_8,1,0xffffffff,0);
+    ST3DSMAPContext::sub_006E98E0
+              (g_sT3DSMAPContext_00807598,local_8,0,*(int *)pAVar4->field_04E7,
+               *(int *)((int)pAVar4->field_04E7 + 0x21),1);
+    Library::Ourlib::ST3DSMAP::SprShow(g_sT3DSMAPContext_00807598,local_8,0);
+    Library::Ourlib::ST3DSMAP::SprMove
+              (g_sT3DSMAPContext_00807598,local_8,param_1,param_2,param_3 + _DAT_007904fc);
+    Library::Ourlib::ST3DSMAP::SprSetSeqAnim(g_sT3DSMAPContext_00807598,local_8,1,0xffffffff,0);
   }
   g_currentExceptionFrame = local_58.previous;
   return;

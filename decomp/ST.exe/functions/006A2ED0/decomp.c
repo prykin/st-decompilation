@@ -51,10 +51,11 @@ LAB_006a2f2f:
   dVar3 = (double)((float)-(int)param_1[1] * _DAT_0079d84c);
   dVar4 = (double)((float)(int)*param_1 * _DAT_0079d84c);
   dVar5 = (double)((float)-(int)*param_1 * _DAT_0079d84c);
-  FUN_006dc050((AnonShape_GLOBAL_00807598_0C6808FB *)local_14,0,0,0,0x8c,0x8c,SUB84(dVar5,0),
-               (int)((ulonglong)dVar5 >> 0x20),SUB84(dVar4,0),(int)((ulonglong)dVar4 >> 0x20),
-               SUB84(dVar3,0),(int)((ulonglong)dVar3 >> 0x20),SUB84(dVar2,0),
-               (int)((ulonglong)dVar2 >> 0x20),0x4024000000000000,0x4023ee97865e3540,0);
+  ST3DSMAPContext::sub_006DC050
+            ((ST3DSMAPContext *)local_14,0,0,0,0x8c,0x8c,SUB84(dVar5,0),
+             (int)((ulonglong)dVar5 >> 0x20),SUB84(dVar4,0),(int)((ulonglong)dVar4 >> 0x20),
+             SUB84(dVar3,0),(int)((ulonglong)dVar3 >> 0x20),SUB84(dVar2,0),
+             (int)((ulonglong)dVar2 >> 0x20),0x4024000000000000,0x4023ee97865e3540,0);
   *(undefined4 *)((int)&local_14[5].field_0027 + 2) = 0xe0;
   *(undefined4 *)((int)&local_14[5].field_0023 + 2) = 2;
   *(undefined4 *)((int)&local_14[0x15].field_0007 + 2) = 0xe6e4e2e0;
@@ -76,12 +77,13 @@ LAB_006a2f2f:
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     } while (iVar10 < *(int *)((int)param_1 + 0x455));
   }
-  FUN_006dd610(local_14,8,SUB84((double)((float)(int)*param_1 * _DAT_007904f4),0),
-               (int)((ulonglong)(double)((float)(int)*param_1 * _DAT_007904f4) >> 0x20),
-               SUB84((double)((float)(int)param_1[1] * _DAT_007904f4),0),
-               (int)((ulonglong)(double)((float)(int)param_1[1] * _DAT_007904f4) >> 0x20));
-  FUN_006ddbe0((AnonShape_GLOBAL_00807598_0C6808FB *)local_14);
-  FUN_006ddd50((AnonShape_GLOBAL_0080760C_46D7AF7A *)local_14);
+  ST3DSMAPContext::sub_006DD610
+            ((ST3DSMAPContext *)local_14,8,SUB84((double)((float)(int)*param_1 * _DAT_007904f4),0),
+             (int)((ulonglong)(double)((float)(int)*param_1 * _DAT_007904f4) >> 0x20),
+             SUB84((double)((float)(int)param_1[1] * _DAT_007904f4),0),
+             (int)((ulonglong)(double)((float)(int)param_1[1] * _DAT_007904f4) >> 0x20));
+  ST3DSMAPContext::sub_006DDBE0((ST3DSMAPContext *)local_14);
+  ST3DSMAPContext::sub_006DDD50((ST3DSMAPContext *)local_14);
   local_8 = (short *)Library::DKW::LIB::FUN_006aac10(0x4b79);
   iVar14 = 0;
   iVar10 = 0;
@@ -175,7 +177,7 @@ LAB_006a2f2f:
     local_18 = local_18 + -1;
   } while (local_18 != 0);
   if (local_14 != (HoloTy *)0x0) {
-    FUN_006dbcf0((int *)local_14);
+    ST3DSMAPContext::sub_006DBCF0((ST3DSMAPContext *)local_14);
     Library::MSVCRT::FUN_0072e2b0(local_14);
   }
   if (local_8 != (short *)0x0) {

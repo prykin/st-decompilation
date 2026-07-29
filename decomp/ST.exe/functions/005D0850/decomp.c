@@ -15,58 +15,56 @@ void __thiscall SettMapMTy::ChangePlayerColor(SettMapMTy *this,uint param_1,char
   code *pcVar1;
   SettMapMTy *this_00;
   int errorCode;
-  int iVar2;
-  DArrayTy *pDVar3;
-  uint uVar4;
-  char *pcVar5;
+  SettMapMTy_field_1F84Element *element_1f84;
+  int iVar3;
+  SettMapMTy_field_1F84DArray *pSVar4;
+  uint uVar5;
   bool bVar6;
   InternalExceptionFrame local_4c;
   SettMapMTy *local_8;
 
-  if (this->field_1F84 != (DArrayTy *)0x0) {
+  if (this->field_1F84 != (SettMapMTy_field_1F84DArray *)0x0) {
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
     local_8 = this;
     errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
     this_00 = local_8;
     if (errorCode == 0) {
-      pDVar3 = local_8->field_1F84;
-      if (param_1 < pDVar3->count) {
-        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar3, param_1) (runtime stride) */
-        pcVar5 = (char *)(pDVar3->elementSize * param_1 + (int)pDVar3->data);
+      pSVar4 = local_8->field_1F84;
+      if (param_1 < pSVar4->count) {
+        element_1f84 = DArrayAt<SettMapMTy_field_1F84Element>(pSVar4, param_1);
       }
       else {
-        pcVar5 = (char *)0x0;
+        element_1f84 = (SettMapMTy_field_1F84Element *)0x0;
       }
-      if ((pcVar5 != (char *)0x0) && (*pcVar5 != '\0')) {
-        if (pcVar5[2] != 0xff) {
-          thunk_FUN_0056a840(&DAT_00807620,pcVar5[2]);
+      if ((element_1f84 != (SettMapMTy_field_1F84Element *)0x0) && (element_1f84->field_0000 != '\0')) {
+        if (element_1f84->state != 0xff) {
+          thunk_FUN_0056a840(&DAT_00807620,element_1f84->state);
         }
-        pcVar5[2] = param_2;
-        if ((pcVar5[4] == '\x02') && (*(int *)(pcVar5 + 6) == DAT_0080877f)) {
+        element_1f84->state = param_2;
+        if ((element_1f84->field_0004 == '\x02') && (element_1f84->data == DAT_0080877f)) {
           DAT_0080874d = param_2;
         }
-        pDVar3 = this_00->field_1F84;
-        uVar4 = param_1 + 1;
-        bVar6 = uVar4 < pDVar3->count;
-        if ((int)uVar4 < (int)pDVar3->count) {
+        pSVar4 = this_00->field_1F84;
+        uVar5 = param_1 + 1;
+        bVar6 = uVar5 < pSVar4->count;
+        if ((int)uVar5 < (int)pSVar4->count) {
           do {
             if (bVar6) {
-              /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar3, uVar4) (runtime stride) */
-              pcVar5 = (char *)(pDVar3->elementSize * uVar4 + (int)pDVar3->data);
+              element_1f84 = DArrayAt<SettMapMTy_field_1F84Element>(pSVar4, uVar5);
             }
             else {
-              pcVar5 = (char *)0x0;
+              element_1f84 = (SettMapMTy_field_1F84Element *)0x0;
             }
-            if ((pcVar5 == (char *)0x0) || (*pcVar5 != '\0')) break;
-            pcVar5[2] = param_2;
-            if (*(int *)(pcVar5 + 6) == DAT_0080877f) {
+            if ((element_1f84 == (SettMapMTy_field_1F84Element *)0x0) || (element_1f84->field_0000 != '\0')) break;
+            element_1f84->state = param_2;
+            if (element_1f84->data == DAT_0080877f) {
               DAT_0080874d = param_2;
             }
-            pDVar3 = this_00->field_1F84;
-            uVar4 = uVar4 + 1;
-            bVar6 = uVar4 < pDVar3->count;
-          } while ((int)uVar4 < (int)pDVar3->count);
+            pSVar4 = this_00->field_1F84;
+            uVar5 = uVar5 + 1;
+            bVar6 = uVar5 < pSVar4->count;
+          } while ((int)uVar5 < (int)pSVar4->count);
         }
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (*(code *)this_00->field_0000->field_002C)();
@@ -77,9 +75,9 @@ void __thiscall SettMapMTy::ChangePlayerColor(SettMapMTy *this,uint param_1,char
       return;
     }
     g_currentExceptionFrame = local_4c.previous;
-    iVar2 = ReportDebugMessage("E:\\__titans\\Start\\settmobj.cpp",0x598,0,errorCode,
+    iVar3 = ReportDebugMessage("E:\\__titans\\Start\\settmobj.cpp",0x598,0,errorCode,
                                "%s","SettMapMTy::ChangePlayerColor");
-    if (iVar2 != 0) {
+    if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(errorCode,0,"E:\\__titans\\Start\\settmobj.cpp",0x598);

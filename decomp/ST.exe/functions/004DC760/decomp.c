@@ -10,12 +10,12 @@ undefined4 __fastcall FUN_004dc760(TLOBaseTy *param_1)
 
   TVar1 = param_1->field_04D0;
   if (TVar1 == CASE_0) {
-    if ((param_1->field_04E0 != 0) || (param_1->field_04D4 == 1)) {
+    if ((param_1->field_04E0[0] != 0) || (param_1->field_04D4 == 1)) {
       param_1->field_04D0 = CASE_1;
       param_1->field_04D4 = 0;
       TLOBaseTy::RotateSpr(param_1,0);
       thunk_FUN_004c2c10((AnonShape_004C2C10_59B6D93C *)param_1);
-      (*param_1->vtable->vfunc_90)(4,0x339);
+      param_1->vfunc_90(4,0x339);
     }
   }
   else if (TVar1 == CASE_1) {
@@ -30,7 +30,7 @@ undefined4 __fastcall FUN_004dc760(TLOBaseTy *param_1)
         dVar4 = param_1->slot_2C();
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         thunk_FUN_004b76d0(CONCAT31((int3)(dVar4 >> 8),*(undefined1 *)&param_1->field_0024),dVar4);
-        if (param_1->field_0024 == (uint)(byte)param_1->field_0010->field_112D) {
+        if (param_1->field_0024 == (byte *)(uint)(byte)param_1->field_0010->field_112D) {
           thunk_FUN_004d8b70((char)param_1->field_0024);
         }
         thunk_FUN_004c2d40((AnonShape_004C2D40_7C578146 *)param_1);
@@ -40,7 +40,7 @@ undefined4 __fastcall FUN_004dc760(TLOBaseTy *param_1)
     else {
       if (param_1->field_0408 == 0) {
         thunk_FUN_004c2c10((AnonShape_004C2C10_59B6D93C *)param_1);
-        (*param_1->vtable->vfunc_90)(4,0x339);
+        param_1->vfunc_90(4,0x339);
       }
       if (param_1->field_04DC + 0x2d <= g_playSystem_00802A38->field_00E4) {
         param_1->field_04DC = g_playSystem_00802A38->field_00E4;
@@ -65,7 +65,7 @@ undefined4 __fastcall FUN_004dc760(TLOBaseTy *param_1)
         dVar4 = param_1->slot_2C();
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         thunk_FUN_004b7710(CONCAT31((int3)(dVar4 >> 8),*(undefined1 *)&param_1->field_0024),dVar4);
-        if (param_1->field_0024 == (uint)(byte)param_1->field_0010->field_112D) {
+        if (param_1->field_0024 == (byte *)(uint)(byte)param_1->field_0010->field_112D) {
           thunk_FUN_004d8b70((char)param_1->field_0024);
         }
       }
@@ -76,11 +76,11 @@ undefined4 __fastcall FUN_004dc760(TLOBaseTy *param_1)
       param_1->field_04D4 = 0;
       TLOBaseTy::RotateSpr(param_1,0);
       thunk_FUN_004c2c10((AnonShape_004C2C10_59B6D93C *)param_1);
-      (*param_1->vtable->vfunc_90)(4,0x339);
+      param_1->vfunc_90(4,0x339);
       dVar4 = param_1->slot_2C();
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       thunk_FUN_004b7710(CONCAT31((int3)(dVar4 >> 8),*(undefined1 *)&param_1->field_0024),dVar4);
-      if (param_1->field_0024 == (uint)(byte)param_1->field_0010->field_112D) {
+      if (param_1->field_0024 == (byte *)(uint)(byte)param_1->field_0010->field_112D) {
         thunk_FUN_004d8b70((char)param_1->field_0024);
         return 0;
       }

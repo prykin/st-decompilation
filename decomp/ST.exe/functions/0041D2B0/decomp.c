@@ -17,8 +17,9 @@ void __thiscall STMineSetC::sub_0041D2B0(STMineSetC *this)
   iVar1 = this->vfunc_08();
   if ((iVar1 == 1) && (this->field_0024 == (uint)DAT_0080874d)) {
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected STPackTagged24(2, this->field_0018) == (((uint32_t)(this->field_0018) & 0x00ffffffu) | ((uint32_t)(2) << 24)) */
-    FUN_006e6780(PTR_00807598,
-                 CONCAT22(CONCAT11(2,(char)(this->field_0018 >> 0x10)),(short)this->field_0018));
+    ST3DSMAPContext::sub_006E6780
+              (g_sT3DSMAPContext_00807598,
+               CONCAT22(CONCAT11(2,(char)(this->field_0018 >> 0x10)),(short)this->field_0018));
   }
   this->field_010D = 0xffffffff;
   return;

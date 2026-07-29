@@ -50,8 +50,7 @@ void __thiscall FSGSTy::CreateGame(FSGSTy *this,int param_1)
       g_currentExceptionFrame = local_4c.previous;
       return;
     }
-    MMsgTy::SetMessage(pMVar2,0x2594,'\0',(undefined4 *)0x0,(undefined4 *)0x0,(undefined4 *)0x0,0,0)
-    ;
+    MMsgTy::SetMessage(pMVar2,0x2594,'\0',(undefined4 *)0x0,(undefined4 *)0x0,(undefined4 *)0x0,0,0);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }

@@ -9,16 +9,16 @@ undefined4 __fastcall FUN_004cbad0(AnonShape_004CBAD0_DCDD6BA9 *param_1)
   if (iVar1 == 0) {
     iVar1 = 0;
     uVar2 = thunk_FUN_004ad650((STT3DSprC *)&param_1->field_0x1d5);
-    FUN_006eabf0(param_1->field_0211,uVar2,iVar1);
+    Library::Ourlib::ST3DSMAP::SprSetVisible(param_1->field_0211,uVar2,iVar1);
     if ((STT3DSprC *)param_1->field_05FF != (STT3DSprC *)0x0) {
       iVar1 = 0;
       uVar2 = thunk_FUN_004ad650((STT3DSprC *)param_1->field_05FF);
-      FUN_006eabf0(param_1->field_0211,uVar2,iVar1);
+      Library::Ourlib::ST3DSMAP::SprSetVisible(param_1->field_0211,uVar2,iVar1);
     }
     if ((STT3DSprC *)param_1->field_0603 != (STT3DSprC *)0x0) {
       iVar1 = 0;
       uVar2 = thunk_FUN_004ad650((STT3DSprC *)param_1->field_0603);
-      FUN_006eabf0(param_1->field_0211,uVar2,iVar1);
+      Library::Ourlib::ST3DSMAP::SprSetVisible(param_1->field_0211,uVar2,iVar1);
     }
     iVar1 = thunk_FUN_0041caf0((AnonShape_0041CAF0_1630B9E0 *)param_1);
     uVar2 = (uint)(iVar1 != 0);
@@ -27,16 +27,16 @@ undefined4 __fastcall FUN_004cbad0(AnonShape_004CBAD0_DCDD6BA9 *param_1)
     if ((param_1->field_046C != 4) || (param_1->field_0490 == 0)) {
       iVar1 = 1;
       uVar2 = thunk_FUN_004ad650((STT3DSprC *)&param_1->field_0x1d5);
-      FUN_006eabf0(param_1->field_0211,uVar2,iVar1);
+      Library::Ourlib::ST3DSMAP::SprSetVisible(param_1->field_0211,uVar2,iVar1);
       if ((STT3DSprC *)param_1->field_05FF != (STT3DSprC *)0x0) {
         iVar1 = 1;
         uVar2 = thunk_FUN_004ad650((STT3DSprC *)param_1->field_05FF);
-        FUN_006eabf0(param_1->field_0211,uVar2,iVar1);
+        Library::Ourlib::ST3DSMAP::SprSetVisible(param_1->field_0211,uVar2,iVar1);
       }
       if ((STT3DSprC *)param_1->field_0603 != (STT3DSprC *)0x0) {
         iVar1 = 1;
         uVar2 = thunk_FUN_004ad650((STT3DSprC *)param_1->field_0603);
-        FUN_006eabf0(param_1->field_0211,uVar2,iVar1);
+        Library::Ourlib::ST3DSMAP::SprSetVisible(param_1->field_0211,uVar2,iVar1);
       }
     }
     uVar2 = 1;

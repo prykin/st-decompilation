@@ -216,11 +216,11 @@ LAB_005450ca:
         }
         break;
       case CASE_1:
-        if (PTR_00807598 != (AnonShape_GLOBAL_00807598_0C6808FB *)0x0) {
+        if (g_sT3DSMAPContext_00807598 != (ST3DSMAPContext *)0x0) {
           local_7c = this_00->field_00EF;
           local_78 = this_00->field_00F3;
           local_74 = 0;
-          FUN_006e25d0(PTR_00807598,&local_9c);
+          ST3DSMAPContext::sub_006E25D0(g_sT3DSMAPContext_00807598,&local_9c);
           this_00->field_00DF = local_9c >> 0x10;
           this_00->field_00E3 = local_98 >> 0x10;
         }
@@ -298,7 +298,7 @@ switchD_00544d44_default:
         local_70 = this_00->field_00EF;
         local_6c = this_00->field_00F3;
         local_68 = 0;
-        FUN_006e25d0(PTR_00807598,&local_8c);
+        ST3DSMAPContext::sub_006E25D0(g_sT3DSMAPContext_00807598,&local_8c);
         this_00->field_00E3 = local_88 >> 0x10;
         this_00->field_00DF = local_8c >> 0x10;
         if (this_00->field_00CD == CASE_0) {
@@ -317,7 +317,7 @@ switchD_00544d44_default:
                                      this_00->field_04BA,this_00->field_04BE,*piVar1,*piVar25,
                                      (uint)(iVar9 == 0));
           if (iVar9 != 0) {
-            FUN_006e1440(PTR_00807598);
+            FUN_006e1440(g_sT3DSMAPContext_00807598);
             iVar9 = *piVar25;
             uVar21 = (*piVar1 - this_00->field_00DF) - this_00->field_04B2;
             this_00->field_00E7 = uVar21;
@@ -334,7 +334,7 @@ switchD_00544d44_default:
           }
         }
         else {
-          FUN_006e1440(PTR_00807598);
+          FUN_006e1440(g_sT3DSMAPContext_00807598);
           iVar9 = this_00->field_00C9;
           uVar21 = (this_00->field_00C5 - this_00->field_04B2) - this_00->field_00DF;
           this_00->field_00E7 = uVar21;
@@ -368,10 +368,11 @@ LAB_0054506b:
         this_00->field_00DE = CASE_0;
         break;
       case CASE_5:
-        if (PTR_00807598 != (AnonShape_GLOBAL_00807598_0C6808FB *)0x0) {
-          FUN_006e1c20(PTR_00807598,(float)(this_00->field_00C5 - this_00->field_04B2),
-                       this_00->field_00C9 - this_00->field_04B6,this_00->field_0107,
-                       (float *)&local_8,&local_c);
+        if (g_sT3DSMAPContext_00807598 != (ST3DSMAPContext *)0x0) {
+          ST3DSMAPContext::sub_006E1C20
+                    (g_sT3DSMAPContext_00807598,(float)(this_00->field_00C5 - this_00->field_04B2),
+                     this_00->field_00C9 - this_00->field_04B6,this_00->field_0107,(float *)&local_8
+                     ,&local_c);
           lVar29 = Library::MSVCRT::__ftol();
           this_00->field_00FB = (int)lVar29;
           if ((int)lVar29 < 1) {
@@ -386,8 +387,9 @@ LAB_0054506b:
           lVar29 = Library::MSVCRT::__ftol();
           iVar9 = FUN_006db910((int)(short)lVar29,iVar23,iVar18,iVar9);
           this_00->field_00F7 = iVar9;
-          FUN_006e8df0(PTR_00807598,this_00->field_010B,this_00->field_00FF,this_00->field_0103,
-                       this_00->field_0107,iVar9,this_00->field_00FB,1);
+          Library::Ourlib::ST3DSMAP::SprWireObjMove
+                    (g_sT3DSMAPContext_00807598,this_00->field_010B,this_00->field_00FF,
+                     this_00->field_0103,this_00->field_0107,iVar9,this_00->field_00FB,1);
         }
       }
       if ((this_00->field_04A6 != 0) && (this_00->field_04A2 != 0)) {
@@ -819,8 +821,7 @@ switchD_0054679d_default:
       iVar9 = Library::MSVCRT::__setjmp3(local_124.jumpBuffer,0);
       this_01 = local_14;
       if (iVar9 == 0) {
-        this_01 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,(byte *)&DAT_0080ee1a,0,0,0)
-        ;
+        this_01 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,(byte *)&DAT_0080ee1a,0,0,0);
         local_14 = this_01;
         puVar17 = cMf32::RecGet(this_01,0x80,PTR_s_SAVE_DESC_0079adec,(int *)&local_58,0);
         if (puVar17 != (ushort *)0x0) {
@@ -2133,8 +2134,9 @@ switchD_00546ac9_caseD_a506:
       this_00->field_00DF = this_00->field_00C5 - this_00->field_04B2;
       iVar9 = this_00->field_00C9 - this_00->field_04B6;
       this_00->field_00E3 = iVar9;
-      FUN_006e1c20(PTR_00807598,(float)this_00->field_00DF,iVar9,0.0,(float *)&this_00->field_00EF,
-                   (float *)&this_00->field_00F3);
+      ST3DSMAPContext::sub_006E1C20
+                (g_sT3DSMAPContext_00807598,(float)this_00->field_00DF,iVar9,0.0,
+                 (float *)&this_00->field_00EF,(float *)&this_00->field_00F3);
       this_00->field_010F = local_1c;
       g_currentExceptionFrame = local_e0.previous;
       return 0;
@@ -2145,8 +2147,9 @@ switchD_00546ac9_caseD_a506:
       this_00->field_00DF = this_00->field_00C5 - this_00->field_04B2;
       iVar9 = this_00->field_00C9 - this_00->field_04B6;
       this_00->field_00E3 = iVar9;
-      FUN_006e1c20(PTR_00807598,(float)this_00->field_00DF,iVar9,0.0,(float *)&this_00->field_00EF,
-                   (float *)&this_00->field_00F3);
+      ST3DSMAPContext::sub_006E1C20
+                (g_sT3DSMAPContext_00807598,(float)this_00->field_00DF,iVar9,0.0,
+                 (float *)&this_00->field_00EF,(float *)&this_00->field_00F3);
       this_00->field_010F = local_1c;
       g_currentExceptionFrame = local_e0.previous;
       return 0;
@@ -2155,11 +2158,11 @@ switchD_00546ac9_caseD_a506:
       g_currentExceptionFrame = local_e0.previous;
       return 0;
     }
-    if (PTR_00807598 == (AnonShape_GLOBAL_00807598_0C6808FB *)0x0) {
+    if (g_sT3DSMAPContext_00807598 == (ST3DSMAPContext *)0x0) {
       g_currentExceptionFrame = local_e0.previous;
       return 0;
     }
-    iVar9 = FUN_006e1dd0(PTR_00807598,this_00->field_00C5 - this_00->field_04B2,
+    iVar9 = FUN_006e1dd0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
                          this_00->field_00C9 - this_00->field_04B6,&this_00->field_00FF,
                          &this_00->field_0103,&this_00->field_0107);
     if (iVar9 == 0) {
@@ -2168,14 +2171,13 @@ switchD_00546ac9_caseD_a506:
     }
     piVar25 = &this_00->field_010B;
     this_00->field_00DE = CASE_5;
-    if ((-1 < this_00->field_010B) && (PTR_00807598 != (AnonShape_GLOBAL_00807598_0C6808FB *)0x0)) {
-      FUN_006e8ba0(PTR_00807598,this_00->field_010B);
+    if ((-1 < this_00->field_010B) && (g_sT3DSMAPContext_00807598 != (ST3DSMAPContext *)0x0)) {
+      Library::Ourlib::ST3DSMAP::SprClose(g_sT3DSMAPContext_00807598,this_00->field_010B);
     }
-    FUN_006e89b0(PTR_00807598,piVar25,&DAT_007c7cd8,8,2,0x45,this_00->field_00FF,this_00->field_0103
-                 ,this_00->field_0107,0,1,1);
-    FUN_006eaaa0(PTR_00807598,*piVar25,0);
-    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006EA050::sub_006EA460
-              ((AnonReceiver_006EA050 *)PTR_00807598,*piVar25,-1);
+    FUN_006e89b0(g_sT3DSMAPContext_00807598,piVar25,&DAT_007c7cd8,8,2,0x45,this_00->field_00FF,
+                 this_00->field_0103,this_00->field_0107,0,1,1);
+    Library::Ourlib::ST3DSMAP::SprShow(g_sT3DSMAPContext_00807598,*piVar25,0);
+    Library::Ourlib::ST3DSMAP::SprSetLevBefore(g_sT3DSMAPContext_00807598,*piVar25,-1);
     if (this_00->field_00A9 != 0) {
       if (this_00->field_001C == (cLoadingTy *)0xffffffff) {
         g_currentExceptionFrame = local_e0.previous;
@@ -2369,10 +2371,10 @@ LAB_00546f1c:
                this_00->field_0038);
   }
   DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
-  if (PTR_00807598 != (AnonShape_GLOBAL_00807598_0C6808FB *)0x0) {
+  if (g_sT3DSMAPContext_00807598 != (ST3DSMAPContext *)0x0) {
     uVar21 = this_00->field_010B;
 LAB_0054708b:
-    FUN_006e8ba0(PTR_00807598,uVar21);
+    Library::Ourlib::ST3DSMAP::SprClose(g_sT3DSMAPContext_00807598,uVar21);
   }
 LAB_00547090:
   this_00->field_00DE = CASE_0;
@@ -2400,7 +2402,7 @@ switchD_00546e07_caseD_5:
                this_00->field_0038);
   }
   DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
-  if (PTR_00807598 != (AnonShape_GLOBAL_00807598_0C6808FB *)0x0) {
+  if (g_sT3DSMAPContext_00807598 != (ST3DSMAPContext *)0x0) {
     uVar21 = this_00->field_010B;
     goto LAB_0054708b;
   }

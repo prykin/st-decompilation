@@ -32,8 +32,7 @@ void __thiscall MMsgTy::StatePanel(MMsgTy *this,int param_1)
         uVar4 = local_8 & 0xff;
         if (((&this_00->field_0066)[uVar4] == 0) ||
            (sVar1 = *(short *)(param_1 + uVar4 * 2), sVar1 == 0)) {
-          *(undefined2 *)(&this_00->field_0x1c82 + uVar4 * 2) = *(undefined2 *)(param_1 + uVar4 * 2)
-          ;
+          *(undefined2 *)(&this_00->field_0x1c82 + uVar4 * 2) = *(undefined2 *)(param_1 + uVar4 * 2);
         }
         else {
           if (sVar1 < 1) {

@@ -68,7 +68,8 @@ undefined4 __fastcall FUN_0060dab0(AnonShape_0060DAB0_7A3B9916 *param_1)
               if (iVar5 - (iVar4 * sVar2) / 10000 < param_1->field_01F9) {
                 if ((*(int *)(iVar9 + 4) == 0) && (-1 < (int)*(uint *)(iVar9 + 0x3c))) {
                   *(int *)(iVar9 + 0x24) = *(int *)(param_1->field_0244 + 0x20) + local_c;
-                  FUN_006eaaa0(PTR_00807598,*(uint *)(iVar9 + 0x3c),0);
+                  Library::Ourlib::ST3DSMAP::SprShow
+                            (g_sT3DSMAPContext_00807598,*(uint *)(iVar9 + 0x3c),0);
                   *(undefined4 *)(iVar9 + 4) = 1;
                 }
                 if (*(int *)(iVar9 + 0x28) < *(int *)(iVar9 + 0x24)) {
@@ -76,7 +77,8 @@ undefined4 __fastcall FUN_0060dab0(AnonShape_0060DAB0_7A3B9916 *param_1)
                 }
               }
               else if ((*(int *)(iVar9 + 4) != 0) && (-1 < (int)*(uint *)(iVar9 + 0x3c))) {
-                FUN_006eab60(PTR_00807598,*(uint *)(iVar9 + 0x3c));
+                Library::Ourlib::ST3DSMAP::SprHide
+                          (g_sT3DSMAPContext_00807598,*(uint *)(iVar9 + 0x3c));
                 *(undefined4 *)(iVar9 + 4) = 0xffffffff;
               }
             }

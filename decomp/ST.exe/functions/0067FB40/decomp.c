@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void FUN_0067fb40(void)
 

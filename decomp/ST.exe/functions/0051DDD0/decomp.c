@@ -89,8 +89,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
     if (SVar3 == MESS_SHARED_C000) {
       UVar24 = 0x274e;
       pCVar14 = thunk_FUN_00571240("BUT_MEDIUM",0);
-      UPanelTy::PaintIBut((UPanelTy *)this_00,(AnonShape_0053DAF0_3BDC2979 *)message,pCVar14,UVar24)
-      ;
+      UPanelTy::PaintIBut((UPanelTy *)this_00,(AnonShape_0053DAF0_3BDC2979 *)message,pCVar14,UVar24);
       g_currentExceptionFrame = local_84.previous;
       return 0;
     }
@@ -559,8 +558,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
         iVar8 = (message->arg1).words.high + 0x16;
         Library::DKW::WGR::FUN_006b55f0
                   ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0,0x21,iVar8,
-                   (byte *)this_00->field_01DC,0,0x21,iVar8,0x19c,*(int *)(this_00->field_01EC + 8))
-        ;
+                   (byte *)this_00->field_01DC,0,0x21,iVar8,0x19c,*(int *)(this_00->field_01EC + 8));
         piVar9 = (int *)this_00->field_01EC;
         uVar16 = piVar9[5];
         if (uVar16 == 0) {

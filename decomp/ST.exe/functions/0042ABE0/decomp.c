@@ -102,7 +102,7 @@ STAllPlayersC::GetGObjFromZone2
     *param_17 = (int)pDVar4;
   }
   Library::Ourlib::ST3DSPR::FUN_006ead90
-            (PTR_00807598,param_2,param_3,param_4,param_5,&local_c,&local_8);
+            (g_sT3DSMAPContext_00807598,param_2,param_3,param_4,param_5,&local_c,&local_8);
   iVar3 = 0;
   if (0 < local_8) {
     local_10 = 0;
@@ -127,8 +127,7 @@ LAB_0042b01f:
             if (piVar7[9] != (int)param_1) {
               piVar6 = param_8;
               if (param_7 != (int *)0x0) {
-                Library::DKW::TBL::FUN_006ae1c0((uint *)*param_7,(undefined4 *)((int)piVar7 + 0x32))
-                ;
+                Library::DKW::TBL::FUN_006ae1c0((uint *)*param_7,(undefined4 *)((int)piVar7 + 0x32));
               }
               goto joined_r0x0042b01c;
             }

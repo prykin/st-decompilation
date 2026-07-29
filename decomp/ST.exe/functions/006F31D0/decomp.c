@@ -673,8 +673,7 @@ LAB_006f3a60:
                                                    *(int *)&local_24->field_0x28 * 2,param_1,
                                                    (byte *)local_18,(int)pbVar14,iVar13,
                                                    iVar12 - iVar13,iVar4 - local_14,local_10,local_c
-                                                   ,local_30,*(int *)&local_24->field_0x28,local_28)
-                                      ;
+                                                   ,local_30,*(int *)&local_24->field_0x28,local_28);
                                     }
                                   }
                                   else if (local_28 == 0) {

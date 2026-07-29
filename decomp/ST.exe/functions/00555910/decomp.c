@@ -125,12 +125,15 @@ TraksClassTy::DrawTrakSprite(TraksClassTy *this,RecoveredRecord_TraksClassTy_005
     if (((((short)param_1->field_0002 != local_c) || ((short)param_1->field_0004 != local_10)) ||
         (((short)param_1->field_0006 != local_14 || (param_1->field_0022 != local_20)))) &&
        (param_1->field_0038 == 0)) {
-      FUN_006ea270(PTR_00807598,param_1->field_0032,0,(int)param_1->field_0022);
+      ST3DSMAPContext::sub_006EA270
+                (g_sT3DSMAPContext_00807598,param_1->field_0032,0,(int)param_1->field_0022);
       local_20 = (int)(short)param_1->field_0002;
-      FUN_006ea960(PTR_00807598,param_1->field_0032,(float)local_20 * _DAT_007904f8 * _DAT_007904f0,
-                   (float)(int)(short)param_1->field_0004 * _DAT_007904f8 * _DAT_007904f0,
-                   (float)(int)(short)param_1->field_0006 * _DAT_007904f8 * _DAT_007904f0 +
-                   _DAT_007904fc);
+      Library::Ourlib::ST3DSMAP::SprMove
+                (g_sT3DSMAPContext_00807598,param_1->field_0032,
+                 (float)local_20 * _DAT_007904f8 * _DAT_007904f0,
+                 (float)(int)(short)param_1->field_0004 * _DAT_007904f8 * _DAT_007904f0,
+                 (float)(int)(short)param_1->field_0006 * _DAT_007904f8 * _DAT_007904f0 +
+                 _DAT_007904fc);
     }
     g_currentExceptionFrame = local_64.previous;
     return;

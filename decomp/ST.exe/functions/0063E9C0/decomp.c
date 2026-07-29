@@ -223,9 +223,10 @@ cf_common_join_0063EACD:
         *(uint *)((int)this + 0x1c) = uVar7;
         iVar5 = *(int *)(iVar10 + 0xc) + (uVar7 >> 0x10) % 6;
         *(int *)(iVar10 + 0xc) = iVar5;
-        iVar4 = (*(AnonShape_GLOBAL_00807598_0C6808FB **)((int)this + 0x211))->field_0380;
-        fVar11 = FUN_006e3210(*(AnonShape_GLOBAL_00807598_0C6808FB **)((int)this + 0x211),
-                              (*(int *)(iVar10 + 8) * iVar4) / 0xc9,(iVar5 * iVar4) / 0xc9);
+        iVar4 = (*(ST3DSMAPContext **)((int)this + 0x211))->field_0380;
+        fVar11 = ST3DSMAPContext::sub_006E3210
+                           (*(ST3DSMAPContext **)((int)this + 0x211),
+                            (*(int *)(iVar10 + 8) * iVar4) / 0xc9,(iVar5 * iVar4) / 0xc9);
         fVar1 = (float)fVar11;
         if (*(float *)(iVar10 + 0x10) != fVar1) {
           if (fVar1 <= *(float *)(iVar10 + 0x10)) {
@@ -240,7 +241,8 @@ cf_common_join_0063EACD:
             *(float *)(iVar10 + 0x10) = fVar1;
           }
           else {
-            FUN_006e8ba0(*(void **)((int)this + 0x211),*(uint *)(iVar10 + 0x38));
+            Library::Ourlib::ST3DSMAP::SprClose
+                      (*(void **)((int)this + 0x211),*(uint *)(iVar10 + 0x38));
             *(undefined4 *)(iVar10 + 0x38) = 0xffffffff;
           }
         }

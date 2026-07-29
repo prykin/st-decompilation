@@ -1,27 +1,27 @@
 severity	check	before	after	delta	status	detail
 info	decompile_failures	0	0	0	ok	Every body_exported function must have decompile_status=ok
 info	generated_enum_bitwise_composition	0	0	0	ok	Strict internal invariant, not a baseline delta: generated enum CASE_*|CASE_* compositions must be repaired before export
-info	tagged_message_vtable_slot_untyped	0	0	0	ok	
+info	tagged_message_vtable_slot_untyped	0	0	0	ok	-
 info	function_count	10392	10392	0	ok	policy=nondecreasing
-info	body_function_count	5741	5741	0	ok	policy=nondecreasing
+info	body_function_count	5712	5712	0	ok	policy=per-address nondecreasing
+info	new_library_body_exclusions	0	0	0	ok	-
 info	covered_executable_bytes	2825113	2825113	0	ok	policy=nondecreasing
 info	unclaimed_meaningful_bytes	98872	98872	0	ok	policy=nonincreasing
 info	typed_vtable_slots	2419	2419	0	ok	Exact per-slot type erasure is the hard regression criterion
 info	dispatch_vtable_count	1	1	0	ok	Physical vtable layouts and polymorphic dispatch interfaces are counted separately
-info	typed_vtable_slot_erasure	0	0	0	ok	
-info	function_addresses_removed	0	0	0	ok	
-info	semantic_name_downgrades	0	0	0	ok	
-warning	quality:anonymous_shape_type	5810	5845	35	stage_transition	A later recovery stage may expose more named layout debt without losing structure; changed_functions=<detail unavailable>
-warning	quality:casted_generic_field	5184	5187	3	stage_transition	A later recovery stage may expose more named layout debt without losing structure; changed_functions=<detail unavailable>
-info	quality:dynamic_array_indexing	397	397	0	ok	policy=nonincreasing; blocking=false
-info	quality:flattened_global_record_array	92	87	-5	improved	policy=nonincreasing; blocking=false
-warning	quality:generic_field_name	56921	56979	58	stage_transition	A later recovery stage may expose more named layout debt without losing structure; changed_functions=<detail unavailable>
-info	quality:generic_global_aggregate	236	232	-4	improved	policy=nonincreasing; blocking=false
+info	typed_vtable_slot_erasure	0	0	0	ok	-
+info	function_addresses_removed	0	0	0	ok	-
+info	semantic_name_downgrades	0	0	0	ok	-
+warning	quality:casted_generic_field	5547	5544	-3	stage_transition	A later recovery stage may expose more named layout debt without losing structure; changed_functions=<detail unavailable>
+info	quality:dynamic_array_indexing	313	311	-2	improved	policy=nonincreasing; blocking=false
+info	quality:flattened_global_record_array	87	87	0	ok	policy=nonincreasing; blocking=false
+warning	quality:generic_data_symbol	16646	16645	-1	stage_transition	A later recovery stage may expose more named layout debt without losing structure; changed_functions=<detail unavailable>
+info	quality:generic_global_aggregate	172	172	0	ok	policy=nonincreasing; blocking=false
 info	quality:packed_or_unaligned_piece	1781	1781	0	ok	policy=nonincreasing; blocking=false
 info	quality:raw_indirect_call	2104	2104	0	ok	policy=nonincreasing; blocking=true
-info	quality:raw_pointer_offset	3078	3073	-5	improved	policy=nonincreasing; blocking=false
+info	quality:raw_pointer_offset	3049	3048	-1	improved	policy=nonincreasing; blocking=false
 info	quality:return_width_artifact	1078	1078	0	ok	policy=nonincreasing; blocking=true
-info	quality:stack_slot_reuse	4299	4299	0	ok	policy=nonincreasing; blocking=false
-info	quality:string_based_aggregate_address	9	9	0	ok	policy=nonincreasing; blocking=false
-warning	quality:undefined_type	19373	19375	2	regressed	policy=nonincreasing; blocking=false; increased_functions=<detail unavailable>
+info	quality:stack_slot_reuse	4297	4297	0	ok	policy=nonincreasing; blocking=false
+info	quality:string_based_aggregate_address	7	7	0	ok	policy=nonincreasing; blocking=false
+warning	quality:undefined_type	19309	19316	7	regressed	policy=nonincreasing; blocking=false; increased_functions=<detail unavailable>
 info	quality:unresolved_register_input	766	766	0	ok	policy=nonincreasing; blocking=true

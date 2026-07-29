@@ -12,9 +12,10 @@ void __thiscall FSGSTy::PrepBkgMess(FSGSTy *this,char param_1)
   code *pcVar1;
   FSGSTy *pFVar2;
   int iVar3;
-  uint uVar4;
-  ushort *puVar5;
-  int iVar6;
+  int uVar4;
+  ushort *puVar4;
+  int iVar5;
+  uint uVar6;
   InternalExceptionFrame local_54;
   FSGSTy *local_10;
   int local_c;
@@ -39,24 +40,24 @@ void __thiscall FSGSTy::PrepBkgMess(FSGSTy *this,char param_1)
       local_c = (-(uint)(param_1 != '\x01') & 0x129) + 0x1b8;
     }
     iVar3 = 1;
-    puVar5 = pFVar2->field_005D + 0x14;
+    puVar4 = pFVar2->field_005D + 0x14;
     uVar4 = FUN_006b4fe0((int)pFVar2->field_005D);
-    puVar5 = (ushort *)
-             FUN_006b50c0(local_c,local_8,(uint)pFVar2->field_005D[7],uVar4,(undefined4 *)puVar5,
+    puVar4 = (ushort *)
+             FUN_006b50c0(local_c,local_8,(uint)pFVar2->field_005D[7],uVar4,(undefined4 *)puVar4,
                           iVar3);
-    uVar4 = pFVar2->field_1ABC;
-    *value = puVar5;
-    FUN_006b2410(g_ddxContext_008075A8,uVar4,(uint)puVar5);
+    uVar6 = pFVar2->field_1ABC;
+    *value = puVar4;
+    FUN_006b2410(g_ddxContext_008075A8,uVar6,(uint)puVar4);
     FUN_006b2800(g_ddxContext_008075A8,pFVar2->field_1ABC,*(uint *)(*value + 2),
                  *(uint *)(*value + 4));
     if (param_1 == '\0') {
-      uVar4 = 0xb4;
+      uVar6 = 0xb4;
     }
     else {
-      uVar4 = (-(uint)(param_1 != '\x01') & 0xffffff6e) + 0xb4;
+      uVar6 = (-(uint)(param_1 != '\x01') & 0xffffff6e) + 0xb4;
     }
     Library::DKW::DDX::FUN_006b3640
-              ((int *)g_ddxContext_008075A8,pFVar2->field_1ABC,0xffffffff,uVar4,
+              ((int *)g_ddxContext_008075A8,pFVar2->field_1ABC,0xffffffff,uVar6,
                (-(uint)(param_1 != '\0') & 0xffffffb4) + 0xaa);
     FUN_006b3af0((int *)g_ddxContext_008075A8,pFVar2->field_1ABC);
     pFVar2->field_1ABB = param_1;
@@ -64,9 +65,9 @@ void __thiscall FSGSTy::PrepBkgMess(FSGSTy *this,char param_1)
     return;
   }
   g_currentExceptionFrame = local_54.previous;
-  iVar6 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x3a8,0,iVar3,"%s",
+  iVar5 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x3a8,0,iVar3,"%s",
                              "FSGSTy::PrepBkgMess");
-  if (iVar6 == 0) {
+  if (iVar5 == 0) {
     RaiseInternalException(iVar3,0,"E:\\__titans\\Start\\fsgs_obj.cpp",0x3a8);
     return;
   }

@@ -19,11 +19,10 @@ int __fastcall FUN_005fa180(AnonShape_005FA180_2D8671A3 *param_1)
   if (param_1->field_02BB == '\x02') {
     puVar1 = &param_1->field_0x1d5;
     STT3DSprC::sub_004ACE30
-              ((STT3DSprC *)puVar1,*(uint *)(DAT_00806724 + 0x30 + iVar3 * 4),
-               (int)*(short *)(DAT_00806724 + 0x2c));
+              ((STT3DSprC *)puVar1,PTR_00806724->entries[iVar3],(int)PTR_00806724->field_002C);
     iVar3 = param_1->field_02D1 + -1;
     param_1->field_02D1 = iVar3;
-    if (iVar3 == (int)*(short *)(DAT_00806724 + 0x23) / 2) {
+    if (iVar3 == (int)PTR_00806724->entryCount / 2) {
       cVar2 = thunk_FUN_004ad610((int)puVar1);
       if (cVar2 != '\0') {
         thunk_FUN_005fa0b0((STColl3C *)param_1);
@@ -34,18 +33,17 @@ int __fastcall FUN_005fa180(AnonShape_005FA180_2D8671A3 *param_1)
     iVar3 = param_1->field_02D1;
     if (iVar3 < 0) {
       param_1->field_02D1 = 0;
-      STT3DSprC::sub_004ACE30((STT3DSprC *)puVar1,0,(int)*(short *)(DAT_00806724 + 0x2c));
+      STT3DSprC::sub_004ACE30((STT3DSprC *)puVar1,0,(int)PTR_00806724->field_002C);
     }
     return iVar3;
   }
   puVar1 = &param_1->field_0x1d5;
   STT3DSprC::sub_004ACE30
-            ((STT3DSprC *)puVar1,*(uint *)(DAT_00806724 + 0x30 + iVar3 * 4),
-             (int)*(short *)(DAT_00806724 + 0x2c));
+            ((STT3DSprC *)puVar1,PTR_00806724->entries[iVar3],(int)PTR_00806724->field_002C);
   iVar3 = param_1->field_02D1;
   iVar6 = iVar3 + 1;
   param_1->field_02D1 = iVar6;
-  if (*(short *)(DAT_00806724 + 0x23) <= iVar6) {
+  if (PTR_00806724->entryCount <= iVar6) {
     param_1->field_02D1 = iVar3;
     thunk_FUN_00495ff0((short)param_1->field_025D,(short)param_1->field_0261,
                        (short)param_1->field_0265,0,(AnonShape_00495FF0_59081BDD *)param_1);
@@ -54,7 +52,7 @@ int __fastcall FUN_005fa180(AnonShape_005FA180_2D8671A3 *param_1)
     sub_0041C5A0(param_1);
     return iVar6;
   }
-  if (iVar6 == (int)*(short *)(DAT_00806724 + 0x23) / 2) {
+  if (iVar6 == (int)PTR_00806724->entryCount / 2) {
     thunk_FUN_004ad5e0((STT3DSprC *)puVar1);
     iVar5 = (int)param_1->field_0045;
     iVar7 = (int)param_1->field_0043;

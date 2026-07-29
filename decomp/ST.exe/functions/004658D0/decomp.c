@@ -18,8 +18,7 @@ int __thiscall FUN_004658d0(void *this,int param_1)
     *(undefined4 *)((int)this + 0x2c4) = 0;
     *(undefined4 *)((int)this + 0x497) = 0;
     STBoatC::sub_00481520
-              (this,*(int *)((int)this + 199),*(int *)((int)this + 0xcb),*(int *)((int)this + 0xcf))
-    ;
+              (this,*(int *)((int)this + 199),*(int *)((int)this + 0xcb),*(int *)((int)this + 0xcf));
     thunk_FUN_004601f0(this,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar1 = (**(code **)(*(int *)this + 0xd8))();

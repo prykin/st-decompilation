@@ -2908,7 +2908,6 @@ function_address	label_address	proposed_name	status	detail
 006E6FB0	006E77B9	cf_join_006E77B9	disabled	apply=0
 006E6FB0	006E7F2D	cf_join_006E7F2D	disabled	apply=0
 006E6FB0	006E7FF9	cf_join_006E7FF9	disabled	apply=0
-006EA050	006EA174	cf_join_006EA174	disabled	apply=0
 006EA340	006EA3CA	cf_join_006EA3CA	disabled	apply=0
 006EB570	006EB763	cf_break_loop_006EB763	disabled	apply=0
 006EB570	006EB7D3	cf_join_006EB7D3	disabled	apply=0

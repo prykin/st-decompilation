@@ -608,8 +608,7 @@ LAB_006842d6:
                           thunk_FUN_0064a830(piVar20,(undefined4 *)&local_5c);
                           Library::DKW::TBL::FUN_006ae1c0
                                     ((uint *)PTR_008489cc->field_000F,&local_c8);
-                          pcVar7 = thunk_FUN_0064a910(piVar20,(&DAT_00814590)[DAT_008488b0 * 0xac5])
-                          ;
+                          pcVar7 = thunk_FUN_0064a910(piVar20,(&DAT_00814590)[DAT_008488b0 * 0xac5]);
                           if (pcVar7 == (char *)0x0) {
                             RaiseInternalException
                                       (-0x6c,g_overwriteContext_007ED77C,
@@ -2748,8 +2747,7 @@ cf_common_join_006895D5:
         }
         if (PTR_008489c4 == (AnonShape_GLOBAL_008489C4_F7BABFAC *)0x0) {
           RaiseInternalException
-                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",2000)
-          ;
+                    (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",2000);
         }
         PTR_008489c4->field_0119 = *(undefined1 *)(&DAT_00811c80 + DAT_008488b0 * 0xac5);
         PTR_008489c4->field_011A = (&DAT_00811c84)[DAT_008488b0 * 0xac5];
@@ -3639,8 +3637,7 @@ cf_common_join_00687805:
         iVar10 = 0x8a3;
 cf_error_exit_0068821F:
         RaiseInternalException
-                  (-0x8f,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",iVar10)
-        ;
+                  (-0x8f,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",iVar10);
       }
       goto LAB_00688235;
     default:
@@ -3666,8 +3663,7 @@ cf_error_exit_0068821F:
         iVar10 = 0x8a7;
 cf_error_exit_006882E6:
         RaiseInternalException
-                  (-0x8f,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",iVar10)
-        ;
+                  (-0x8f,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",iVar10);
       }
       goto cf_common_join_006882FC;
     case 0x57a:
@@ -3702,8 +3698,7 @@ cf_error_exit_006882E6:
         iVar10 = 0x8ab;
 LAB_006883ac:
         RaiseInternalException
-                  (-0x8f,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",iVar10)
-        ;
+                  (-0x8f,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",iVar10);
       }
       goto LAB_006883c2;
     case 0x583:
@@ -3740,8 +3735,7 @@ LAB_00688235:
         iVar10 = 0x8a4;
 cf_error_exit_006876FE:
         RaiseInternalException
-                  (-0x8f,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",iVar10)
-        ;
+                  (-0x8f,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",iVar10);
       }
       goto LAB_00687714;
     case 0x58c:
@@ -3799,8 +3793,7 @@ cf_error_exit_006876FE:
         iVar10 = 0x8b5;
 LAB_006895b5:
         RaiseInternalException
-                  (-0x8f,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",iVar10)
-        ;
+                  (-0x8f,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",iVar10);
       }
 LAB_006895cb:
       iVar10 = 7;
@@ -3875,8 +3868,7 @@ LAB_00687714:
         iVar10 = 0x8af;
 cf_error_exit_006876AB:
         RaiseInternalException
-                  (-0x8f,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",iVar10)
-        ;
+                  (-0x8f,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",iVar10);
       }
       goto LAB_006876c1;
     case 0x597:

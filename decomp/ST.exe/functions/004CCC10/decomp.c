@@ -9,11 +9,20 @@ void __thiscall FUN_004ccc10(void *this,int *param_1,int *param_2)
 
 {
   int *piVar1;
-  uint uVar2;
-  int iVar3;
+  int local_EAX_120;
+  int iVar2;
+  int uVar2;
+  uint uVar3;
+  int local_EAX_374;
+  int local_EAX_512;
   undefined *puVar4;
-  uint uVar5;
-  int iVar6;
+  int local_EAX_654;
+  int local_EAX_691;
+  int local_EAX_948;
+  int uVar5;
+  int local_EAX_1346;
+  int local_EAX_1385;
+  int iVar5;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_EDX;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -22,9 +31,9 @@ void __thiscall FUN_004ccc10(void *this,int *param_1,int *param_2)
   undefined4 extraout_EDX_01;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_EDX_02;
-  undefined4 *puVar8;
+  undefined4 *puVar7;
   char playerId;
-  undefined4 uVar9;
+  undefined4 uVar8;
   int local_294 [155];
   undefined4 local_28 [4];
   undefined4 local_18;
@@ -43,41 +52,40 @@ void __thiscall FUN_004ccc10(void *this,int *param_1,int *param_2)
     memset(local_294, 0, 0x26c); /* compiler bulk-zero initialization */
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = local_294;
-    iVar6 = 0;
+    iVar5 = 0;
     do {
-      uVar2 = GetPlayerRaceId(*(char *)((int)this + 0x24));
-      if (*(char *)(*(int *)(&DAT_007bfc00 + (uVar2 & 0xff) * 4) + iVar6) == '\0') {
-        iVar3 = thunk_FUN_004e60d0((int)piVar1,iVar6);
-        iVar3 = thunk_FUN_004e7f20((int)piVar1,iVar6,iVar3 + 1);
-        if (iVar3 != 0) {
+      local_EAX_120 = GetPlayerRaceId(*(char *)((int)this + 0x24));
+      if (*(char *)(*(int *)(&DAT_007bfc00 + (local_EAX_120 & 0xffU) * 4) + iVar5) == '\0') {
+        iVar2 = thunk_FUN_004e60d0((int)piVar1,iVar5);
+        iVar2 = thunk_FUN_004e7f20((int)piVar1,iVar5,iVar2 + 1);
+        if (iVar2 != 0) {
           *param_1 = 1;
         }
       }
-      iVar6 = iVar6 + 1;
+      iVar5 = iVar5 + 1;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = param_1 + 1;
-    } while (iVar6 < 0x9b);
+    } while (iVar5 < 0x9b);
     thunk_FUN_004e7eb0((int)piVar1,*(int *)((int)this + 0x24),
                        *(int *)(&DAT_007e1218 +
-                               (*(int *)((int)this + 0x235) * 3 + *(int *)((int)this + 0x239)) * 4))
-    ;
+                               (*(int *)((int)this + 0x235) * 3 + *(int *)((int)this + 0x239)) * 4));
     if (piVar1 == (int *)(uint)DAT_0080874d) {
       uVar2 = GetPlayerRaceId(playerId);
-      uVar2 = uVar2 & 0xff;
-      if (uVar2 == 1) {
-        iVar6 = *(int *)this;
-        uVar9 = 0x74;
+      uVar3 = uVar2 & 0xff;
+      if (uVar3 == 1) {
+        iVar5 = *(int *)this;
+        uVar8 = 0x74;
 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_004ccd43:
-        (**(code **)(iVar6 + 0x90))(6,uVar9);
+        (**(code **)(iVar5 + 0x90))(6,uVar8);
       }
-      else if (uVar2 == 2) {
+      else if (uVar3 == 2) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*(int *)this + 0x90))(6,0x75);
       }
-      else if (uVar2 == 3) {
-        iVar6 = *(int *)this;
-        uVar9 = 0x76;
+      else if (uVar3 == 3) {
+        iVar5 = *(int *)this;
+        uVar8 = 0x76;
         goto LAB_004ccd43;
       }
     }
@@ -87,40 +95,40 @@ LAB_004ccd43:
       param_1 = local_294;
       local_18 = 0x5de9;
       local_14 = SUB42(piVar1,0);
-      iVar6 = 0;
+      iVar5 = 0;
       do {
-        uVar2 = GetPlayerRaceId(*(char *)((int)this + 0x24));
+        local_EAX_374 = GetPlayerRaceId(*(char *)((int)this + 0x24));
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-        if ((*(char *)(*(int *)(&DAT_007bfc00 + (uVar2 & 0xff) * 4) + iVar6) == '\0') &&
+        if ((*(char *)(*(int *)(&DAT_007bfc00 + (local_EAX_374 & 0xffU) * 4) + iVar5) == '\0') &&
            (*param_1 == 0)) {
-          iVar3 = thunk_FUN_004e60d0((int)piVar1,iVar6);
-          iVar3 = thunk_FUN_004e7f20((int)piVar1,iVar6,iVar3 + 1);
-          if (iVar3 != 0) {
-            local_10 = (undefined2)iVar6;
-            uVar9 = thunk_FUN_004e60d0((int)piVar1,iVar6);
-            local_e = (short)uVar9 + 1;
+          iVar2 = thunk_FUN_004e60d0((int)piVar1,iVar5);
+          iVar2 = thunk_FUN_004e7f20((int)piVar1,iVar5,iVar2 + 1);
+          if (iVar2 != 0) {
+            local_10 = (undefined2)iVar5;
+            uVar8 = thunk_FUN_004e60d0((int)piVar1,iVar5);
+            local_e = (short)uVar8 + 1;
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (**(code **)*DAT_008117bc)(local_28);
           }
         }
-        iVar6 = iVar6 + 1;
+        iVar5 = iVar5 + 1;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = param_1 + 1;
-      } while (iVar6 < 0x9b);
+      } while (iVar5 < 0x9b);
     }
   }
   *(int **)((int)this + 0x24) = piVar1;
   *(int **)((int)this + 0x5c0) = param_2;
-  uVar2 = GetPlayerRaceId(playerId);
-  *(uint *)((int)this + 0x239) = (uVar2 & 0xff) - 1;
+  local_EAX_512 = GetPlayerRaceId(playerId);
+  *(uint *)((int)this + 0x239) = (local_EAX_512 & 0xffU) - 1;
   thunk_FUN_004b9920(this);
-  iVar6 = 0;
+  iVar5 = 0;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   TLOEmbryoTy::sub_00419C70(this,extraout_EDX,0);
   thunk_FUN_0041f630(this);
   if ((*(int *)(&DAT_00792778 + *(int *)((int)this + 0x235) * 4) == 0) ||
-     (iVar3 = thunk_FUN_004e81b0(*(int *)((int)this + 0x24),*(int *)((int)this + 0x235),0),
-     iVar3 == 0)) {
+     (iVar2 = thunk_FUN_004e81b0(*(int *)((int)this + 0x24),*(int *)((int)this + 0x235),0),
+     iVar2 == 0)) {
     puVar4 = (undefined *)0x5;
   }
   else {
@@ -129,27 +137,27 @@ LAB_004ccd43:
   }
   TLOEmbryoTy::sub_0041C3F0(this,puVar4);
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  uVar9 = extraout_EDX_00;
+  uVar8 = extraout_EDX_00;
   if (*(int *)((int)this + 0x5ac) == 0x34) {
     thunk_FUN_004dd880(this);
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-    uVar9 = extraout_EDX_01;
+    uVar8 = extraout_EDX_01;
   }
   if (*(int *)((int)this + 0x24) == *(int *)((int)this + 0x23d)) {
 LAB_004ccedc:
     if (*(int *)((int)this + 0x5ac) == 0x50) {
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      thunk_FUN_004b7080(CONCAT31((int3)((uint)uVar9 >> 8),*(undefined1 *)((int)this + 0x24)),0x28);
+      thunk_FUN_004b7080(CONCAT31((int3)((uint)uVar8 >> 8),*(undefined1 *)((int)this + 0x24)),0x28);
     }
     if ((*(int *)((int)this + 0x5ac) == 0x6f) || (*(int *)((int)this + 0x5ac) == 0x73)) {
       thunk_FUN_004ecc70(this);
     }
     if ((*(int *)((int)this + 0x5ac) == 0x36) || (*(int *)((int)this + 0x5ac) == 0x5d)) {
-      iVar3 = thunk_FUN_004e60d0(*(int *)((int)this + 0x24),
+      iVar2 = thunk_FUN_004e60d0(*(int *)((int)this + 0x24),
                                  *(int *)(&DAT_00798fb0 + *(int *)((int)this + 0x239) * 4));
-      iVar3 = *(int *)(&DAT_00798f98 + (iVar3 + *(int *)((int)this + 0x239) * 2) * 4);
-      *(int *)((int)this + 0x4d0) = iVar3;
-      thunk_FUN_0041ce40(this,iVar3);
+      iVar2 = *(int *)(&DAT_00798f98 + (iVar2 + *(int *)((int)this + 0x239) * 2) * 4);
+      *(int *)((int)this + 0x4d0) = iVar2;
+      thunk_FUN_0041ce40(this,iVar2);
       *(undefined4 *)((int)this + 0x4dc) = 1;
     }
     if ((*(int *)((int)this + 0x5ac) == 0x3d) || (*(int *)((int)this + 0x5ac) == 0x5d)) {
@@ -157,13 +165,13 @@ LAB_004ccedc:
     }
   }
   else {
-    uVar2 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
-    iVar3 = *(int *)((int)this + 0x235);
-    uVar5 = GetPlayerRaceId(*(char *)((int)this + 0x24));
+    local_EAX_654 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
+    iVar2 = *(int *)((int)this + 0x235);
+    local_EAX_691 = GetPlayerRaceId(*(char *)((int)this + 0x24));
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-    uVar9 = extraout_EDX_02;
-    if ((&DAT_007e1984)[(uVar5 & 0xff) + (iVar3 * 3 + (uVar2 & 0xff)) * 3] != '\0')
-    goto LAB_004ccedc;
+    uVar8 = extraout_EDX_02;
+    if ((&DAT_007e1984)[(local_EAX_691 & 0xffU) + (iVar2 * 3 + (local_EAX_654 & 0xffU)) * 3] != '\0'
+       ) goto LAB_004ccedc;
     *(undefined4 *)((int)this + 0x261) = 0;
     *(undefined4 *)((int)this + 0x2e1) = 0;
     if (*(int *)((int)this + 0x5ac) == 0x3c) {
@@ -174,18 +182,18 @@ LAB_004ccedc:
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = (int *)0x0;
     if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-      uVar2 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
-      iVar3 = *(int *)((int)this + 0x235);
+      local_EAX_948 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
+      iVar2 = *(int *)((int)this + 0x235);
       uVar5 = GetPlayerRaceId(*(char *)((int)this + 0x24));
-      if ((&DAT_007e1984)[(uVar5 & 0xff) + ((uVar2 & 0xff) + iVar3 * 3) * 3] == '\0') {
+      if ((&DAT_007e1984)[(uVar5 & 0xffU) + ((local_EAX_948 & 0xffU) + iVar2 * 3) * 3] == '\0') {
         thunk_FUN_004c2d40(this);
         goto LAB_004cd038;
       }
     }
-    iVar3 = STPlaySystemC::sub_006E62D0
+    iVar2 = STPlaySystemC::sub_006E62D0
                       (g_playSystem_00802A38,*(AnonShape_005EFAE0_B406B78B **)((int)this + 0x40c),
                        (int *)&param_2);
-    if ((iVar3 == 0) && (param_2 != (int *)0x0)) {
+    if ((iVar2 == 0) && (param_2 != (int *)0x0)) {
       thunk_FUN_0060bc80(param_2,*(undefined4 *)((int)this + 0x24),*(ushort *)((int)this + 0x32));
     }
   }
@@ -193,53 +201,53 @@ LAB_004ccedc:
 LAB_004cd038:
   if (((*(int *)((int)this + 0x5ac) == 0x6a) &&
       (*(uint *)((int)this + 0x4d4) <= g_playSystem_00802A38->field_00E4)) &&
-     (iVar3 = STPlaySystemC::sub_006E62D0
+     (iVar2 = STPlaySystemC::sub_006E62D0
                         (g_playSystem_00802A38,*(AnonShape_005EFAE0_B406B78B **)((int)this + 0x4d0),
-                         (int *)&param_2), iVar3 == 0)) {
+                         (int *)&param_2), iVar2 == 0)) {
     thunk_FUN_005822b0(param_2,*(undefined4 *)((int)this + 0x24),*(ushort *)((int)this + 0x32));
   }
   if ((*(int *)((int)this + 0x5ac) == 0x41) && (0 < *(int *)((int)this + 0x4e4))) {
-    puVar8 = (undefined4 *)((int)this + 0x4d0);
+    puVar7 = (undefined4 *)((int)this + 0x4d0);
     do {
-      if (((AnonShape_005EFAE0_B406B78B *)*puVar8 != (AnonShape_005EFAE0_B406B78B *)0x0) &&
-         (iVar3 = STPlaySystemC::sub_006E62D0
-                            (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)*puVar8,
-                             (int *)&param_2), iVar3 == 0)) {
+      if (((AnonShape_005EFAE0_B406B78B *)*puVar7 != (AnonShape_005EFAE0_B406B78B *)0x0) &&
+         (iVar2 = STPlaySystemC::sub_006E62D0
+                            (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)*puVar7,
+                             (int *)&param_2), iVar2 == 0)) {
         thunk_FUN_00590130(param_2,*(undefined4 *)((int)this + 0x24));
       }
-      iVar6 = iVar6 + 1;
-      puVar8 = puVar8 + 1;
-    } while (iVar6 < *(int *)((int)this + 0x4e4));
+      iVar5 = iVar5 + 1;
+      puVar7 = puVar7 + 1;
+    } while (iVar5 < *(int *)((int)this + 0x4e4));
   }
   if ((*(int *)((int)this + 0x5ac) == 0x69) &&
-     (iVar6 = STPlaySystemC::sub_006E62D0
+     (iVar5 = STPlaySystemC::sub_006E62D0
                         (g_playSystem_00802A38,*(AnonShape_005EFAE0_B406B78B **)((int)this + 0x4ec),
-                         (int *)&param_2), iVar6 == 0)) {
+                         (int *)&param_2), iVar5 == 0)) {
     thunk_FUN_00618b40(param_2,*(undefined4 *)((int)this + 0x24),*(undefined2 *)((int)this + 0x32));
   }
   if (((*(int *)((int)this + 0x5ac) == 0x70) &&
       (*(AnonShape_005EFAE0_B406B78B **)((int)this + 0x4f0) != (AnonShape_005EFAE0_B406B78B *)0x0))
-     && (iVar6 = STPlaySystemC::sub_006E62D0
+     && (iVar5 = STPlaySystemC::sub_006E62D0
                            (g_playSystem_00802A38,
                             *(AnonShape_005EFAE0_B406B78B **)((int)this + 0x4f0),(int *)&param_2),
-        iVar6 == 0)) {
+        iVar5 == 0)) {
     thunk_FUN_0058cf90(param_2,*(undefined4 *)((int)this + 0x24),*(undefined2 *)((int)this + 0x32));
   }
   if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-    uVar2 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
-    iVar6 = *(int *)((int)this + 0x235);
-    uVar5 = GetPlayerRaceId(*(char *)((int)this + 0x24));
-    if ((&DAT_007e1984)[(uVar5 & 0xff) + ((uVar2 & 0xff) + iVar6 * 3) * 3] == '\0')
-    goto LAB_004cd1d7;
+    local_EAX_1346 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
+    iVar5 = *(int *)((int)this + 0x235);
+    local_EAX_1385 = GetPlayerRaceId(*(char *)((int)this + 0x24));
+    if ((&DAT_007e1984)[(local_EAX_1385 & 0xffU) + ((local_EAX_1346 & 0xffU) + iVar5 * 3) * 3] ==
+        '\0') goto LAB_004cd1d7;
   }
-  iVar6 = *(int *)((int)this + 0x5ac);
-  if ((((iVar6 != 0x4d) || (*(int *)((int)this + 0x4d0) == 2)) &&
-      ((iVar6 != 0x4c || (*(int *)((int)this + 0x4d0) == 2)))) &&
-     ((iVar6 != 0x43 || (*(int *)((int)this + 0x4d0) == 2)))) {
+  iVar5 = *(int *)((int)this + 0x5ac);
+  if ((((iVar5 != 0x4d) || (*(int *)((int)this + 0x4d0) == 2)) &&
+      ((iVar5 != 0x4c || (*(int *)((int)this + 0x4d0) == 2)))) &&
+     ((iVar5 != 0x43 || (*(int *)((int)this + 0x4d0) == 2)))) {
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    iVar6 = (**(code **)(*(int *)this + 0x2c))();
+    iVar5 = (**(code **)(*(int *)this + 0x2c))();
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    thunk_FUN_004b76d0(CONCAT31((int3)((uint)iVar6 >> 8),*(undefined1 *)((int)this + 0x24)),iVar6);
+    thunk_FUN_004b76d0(CONCAT31((int3)((uint)iVar5 >> 8),*(undefined1 *)((int)this + 0x24)),iVar5);
   }
 LAB_004cd1d7:
   TLOBaseTy::ReloadLogoPlane(this);

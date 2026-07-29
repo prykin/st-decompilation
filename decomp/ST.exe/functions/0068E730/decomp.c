@@ -1,10 +1,12 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __thiscall AiTactClassTy::FUN_0068e730(AiTactClassTy *this,int param_1)
 
 {
-  DArrayTy *pDVar1;
+  AiTactClassTy_field_00A5DArray *pAVar1;
   uint uVar2;
-  undefined4 *puVar3;
+  AiTactClassTy_field_00A5Element *element_00a5;
 
   if (param_1 == 0) {
     return 0xfffffffc;
@@ -14,16 +16,15 @@ undefined4 __thiscall AiTactClassTy::FUN_0068e730(AiTactClassTy *this,int param_
   if ((int)uVar2 < 0) {
     return 0xfffffffc;
   }
-  pDVar1 = this->field_00A5;
-  if (uVar2 < pDVar1->count) {
-    /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar1, uVar2) (runtime stride) */
-    puVar3 = (undefined4 *)(pDVar1->elementSize * uVar2 + (int)pDVar1->data);
+  pAVar1 = this->field_00A5;
+  if (uVar2 < pAVar1->count) {
+    element_00a5 = DArrayAt<AiTactClassTy_field_00A5Element>(pAVar1, uVar2);
   }
   else {
-    puVar3 = (undefined4 *)0x0;
+    element_00a5 = (AiTactClassTy_field_00A5Element *)0x0;
   }
-  puVar3[1] = 0;
-  *puVar3 = 0;
+  element_00a5->field_0004 = 0;
+  element_00a5->field_0000 = (AiTactClassTy_field_00A5Element *)0x0;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   BackFromRepair(this,*(short *)(param_1 + 0x7d));
   thunk_FUN_0065d590(param_1);

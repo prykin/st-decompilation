@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STMethodOwnerApplier] Structural method owner recovered as SettMapMTy.
    Evidence: this_call_owners=[SettMapMTy]; agreed_this_calls=3; incoming_this_accesses=1;
@@ -11,32 +13,33 @@
 void __thiscall SettMapMTy::sub_005D1380(SettMapMTy *this)
 
 {
-  DArrayTy *pDVar1;
+  SettMapMTy_field_1F84DArray *pSVar1;
   uint uVar2;
-  void *pvVar3;
-  uint uVar4;
-  bool bVar5;
+  SettMapMTy_field_1F84Element *pcVar3;
+  uint uVar3;
+  bool bVar4;
 
-  DAT_0080874d = 0xff;
-  pDVar1 = this->field_1F84;
-  if (pDVar1 != (DArrayTy *)0x0) {
-    uVar2 = pDVar1->count;
-    uVar4 = 0;
+  DAT_0080874d = -1;
+  pSVar1 = this->field_1F84;
+  if (pSVar1 != (SettMapMTy_field_1F84DArray *)0x0) {
+    uVar2 = pSVar1->count;
+    uVar3 = 0;
     if (0 < (int)uVar2) {
-      bVar5 = uVar2 != 0;
-      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar1, uVar4) (runtime stride) */
-      while ((((!bVar5 ||
-               (pvVar3 = (void *)(pDVar1->elementSize * uVar4 + (int)pDVar1->data),
-               pvVar3 == (void *)0x0)) || (*(char *)((int)pvVar3 + 4) != '\x02')) ||
-             (*(int *)((int)pvVar3 + 6) != DAT_0080877f))) {
-        uVar4 = uVar4 + 1;
-        bVar5 = uVar4 < uVar2;
-        if ((int)uVar2 <= (int)uVar4) {
+      bVar4 = uVar2 != 0;
+      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
+      while ((((!bVar4 ||
+               (pcVar3 = (SettMapMTy_field_1F84Element *)
+                         (&pSVar1->data->field_0000 + pSVar1->elementSize * uVar3),
+               pcVar3 == (SettMapMTy_field_1F84Element *)0x0)) || (pcVar3->field_0004 != '\x02')) ||
+             (pcVar3->data != DAT_0080877f))) {
+        uVar3 = uVar3 + 1;
+        bVar4 = uVar3 < uVar2;
+        if ((int)uVar2 <= (int)uVar3) {
           return;
         }
       }
-      DAT_0080874d = *(undefined1 *)((int)pvVar3 + 2);
-      DAT_0080874e = *(undefined1 *)((int)pvVar3 + 3);
+      DAT_0080874d = pcVar3->state;
+      DAT_0080874e = pcVar3->field_0003;
     }
   }
   return;

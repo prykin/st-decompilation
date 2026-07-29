@@ -1,4 +1,4 @@
-FUN_006eb310:
+ST3DSMAPContext::sub_006EB310:
 006EB310  55                        PUSH EBP
 006EB311  8B EC                     MOV EBP,ESP
 006EB313  8B 55 08                  MOV EDX,dword ptr [EBP + 0x8]

@@ -3,8 +3,10 @@ undefined4 __thiscall FUN_004e96c0(void *this,int *param_1)
 
 {
   int iVar1;
-  uint uVar2;
-  undefined4 uVar3;
+  int uVar2;
+  int local_EAX_378;
+  uint uVar3;
+  undefined4 uVar4;
 
   if (*(int **)((int)this + 0x4d8) != param_1) {
     return 0;
@@ -33,7 +35,7 @@ undefined4 __thiscall FUN_004e96c0(void *this,int *param_1)
         uVar2 = GetPlayerRaceId((char)param_1[9]);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         iVar1 = (**(code **)(*param_1 + 0x2c))();
-        iVar1 = *(int *)(&DAT_007e37b0 + ((uVar2 & 0xff) + iVar1 * 3) * 4);
+        iVar1 = *(int *)(&DAT_007e37b0 + ((uVar2 & 0xffU) + iVar1 * 3) * 4);
       }
     }
     else {
@@ -50,24 +52,24 @@ undefined4 __thiscall FUN_004e96c0(void *this,int *param_1)
   if (*(int *)((int)this + 0x4f0) != 0) {
     if (DAT_00811798 == (void *)0x0) {
       if (*(uint *)((int)this + 0x24) == (uint)*(byte *)(*(int *)((int)this + 0x10) + 0x112d)) {
-        uVar2 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
-        uVar2 = uVar2 & 0xff;
-        if (uVar2 == 1) {
+        local_EAX_378 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
+        uVar3 = local_EAX_378 & 0xff;
+        if (uVar3 == 1) {
           iVar1 = *(int *)this;
-          uVar3 = 0x218;
+          uVar4 = 0x218;
         }
         else {
-          if (uVar2 == 2) {
+          if (uVar3 == 2) {
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (**(code **)(*(int *)this + 0x90))(4,0x2de);
             goto cf_common_exit_004E987A;
           }
-          if (uVar2 != 3) goto cf_common_exit_004E987A;
+          if (uVar3 != 3) goto cf_common_exit_004E987A;
           iVar1 = *(int *)this;
-          uVar3 = 0x405;
+          uVar4 = 0x405;
         }
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (**(code **)(iVar1 + 0x90))(4,uVar3);
+        (**(code **)(iVar1 + 0x90))(4,uVar4);
       }
     }
     else {

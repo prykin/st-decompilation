@@ -90,7 +90,8 @@ STExplosionC::LoadImagSpr(STExplosionC *this,undefined4 param_1,undefined4 param
                 (-1,g_overwriteContext_007ED77C,"E:\\__titans\\nick\\to_Expl.cpp",0x370);
       return 0xffff;
     }
-    FUN_006e9210(PTR_00807598,pSVar4->field_02AF->field_0018);
+    Library::Ourlib::ST3DSMAP::SprSetSplit
+              (g_sT3DSMAPContext_00807598,pSVar4->field_02AF->field_0018);
   }
   iVar5 = STT3DSprC::LoadSequence(pSVar4->field_02AF,0xd,DAT_00806774,local_8,0x1d);
   if (iVar5 == 0) {

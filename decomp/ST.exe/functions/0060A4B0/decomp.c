@@ -72,12 +72,13 @@ undefined4 __fastcall FUN_0060a4b0(AnonShape_0060A4B0_7BF9A20C *param_1)
                             (pVVar4->field_0034 <= iVar6)) || (pVVar4->field_004C == (byte *)0x0))
                           || (pVVar4->field_004C[local_1c + iVar6 * pVVar4->field_0030] != 0)))))) {
               if (*(int *)(iVar7 + 4) == 0) {
-                FUN_006eaaa0(PTR_00807598,*(uint *)(iVar7 + 0x3c),0);
+                Library::Ourlib::ST3DSMAP::SprShow
+                          (g_sT3DSMAPContext_00807598,*(uint *)(iVar7 + 0x3c),0);
                 *(undefined4 *)(iVar7 + 4) = 1;
               }
             }
             else if (*(int *)(iVar7 + 4) == 1) {
-              FUN_006eab60(PTR_00807598,*(uint *)(iVar7 + 0x3c));
+              Library::Ourlib::ST3DSMAP::SprHide(g_sT3DSMAPContext_00807598,*(uint *)(iVar7 + 0x3c));
               *(undefined4 *)(iVar7 + 4) = 0;
               local_c = 0;
             }
@@ -94,17 +95,21 @@ undefined4 __fastcall FUN_0060a4b0(AnonShape_0060A4B0_7BF9A20C *param_1)
           if (local_c != 0) {
             if (*(int *)&local_10[1].field_0x10 == 1) {
               if (*(int *)(iVar7 + 4) != 0) {
-                FUN_006eab60(PTR_00807598,*(uint *)(iVar7 + 0x3c));
+                Library::Ourlib::ST3DSMAP::SprHide
+                          (g_sT3DSMAPContext_00807598,*(uint *)(iVar7 + 0x3c));
                 *(undefined4 *)(iVar7 + 4) = 0;
               }
             }
             else {
-              FUN_006ea270(PTR_00807598,*(uint *)(iVar7 + 0x3c),0,*(uint *)(iVar7 + 0x24));
-              FUN_006ea960(PTR_00807598,*(uint *)(iVar7 + 0x3c),
-                           (float)*(int *)(iVar7 + 0xc) * _DAT_007904f8 * _DAT_007904f0,
-                           (float)*(int *)(iVar7 + 0x10) * _DAT_007904f8 * _DAT_007904f0,
-                           (float)*(int *)(iVar7 + 0x14) * _DAT_007904f8 * _DAT_007904f0 +
-                           _DAT_007904fc);
+              ST3DSMAPContext::sub_006EA270
+                        (g_sT3DSMAPContext_00807598,*(uint *)(iVar7 + 0x3c),0,
+                         *(uint *)(iVar7 + 0x24));
+              Library::Ourlib::ST3DSMAP::SprMove
+                        (g_sT3DSMAPContext_00807598,*(uint *)(iVar7 + 0x3c),
+                         (float)*(int *)(iVar7 + 0xc) * _DAT_007904f8 * _DAT_007904f0,
+                         (float)*(int *)(iVar7 + 0x10) * _DAT_007904f8 * _DAT_007904f0,
+                         (float)*(int *)(iVar7 + 0x14) * _DAT_007904f8 * _DAT_007904f0 +
+                         _DAT_007904fc);
               local_18 = 1;
             }
           }

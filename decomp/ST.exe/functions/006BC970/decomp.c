@@ -5,12 +5,13 @@ uint FUN_006bc970(int *param_1,int param_2,int *param_3,int param_4)
   uint *puVar1;
   int *piVar2;
   int iVar3;
-  uint uVar4;
-  int *piVar5;
-  uint uVar6;
+  int uVar4;
+  uint uVar5;
+  int *piVar6;
   uint uVar7;
   uint uVar8;
-  int iVar9;
+  uint uVar9;
+  int iVar10;
   uint local_20;
   uint local_1c;
   uint local_18;
@@ -23,7 +24,7 @@ uint FUN_006bc970(int *param_1,int param_2,int *param_3,int param_4)
   local_10 = 0;
   local_c = (int *)(param_2 * 0x10 + 8 + param_1[0x70]);
   local_8 = 0x7fff;
-  uVar4 = 0x7fff;
+  uVar5 = 0x7fff;
   if (0 < param_4) {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = param_3;
@@ -40,37 +41,37 @@ uint FUN_006bc970(int *param_1,int param_2,int *param_3,int param_4)
             else {
               iVar3 = -1;
             }
-            uVar4 = *puVar1;
-            *puVar1 = uVar4 | 2;
-            if (((uVar4 & 0x3000) != 0) || (((uVar4 & 0x4000) != 0 && ((uVar4 & 0x20000) == 0)))) {
-              *puVar1 = uVar4 | 6;
-              if (((uVar4 & 0x2000) == 0) || (iVar3 == -1)) {
+            uVar5 = *puVar1;
+            *puVar1 = uVar5 | 2;
+            if (((uVar5 & 0x3000) != 0) || (((uVar5 & 0x4000) != 0 && ((uVar5 & 0x20000) == 0)))) {
+              *puVar1 = uVar5 | 6;
+              if (((uVar5 & 0x2000) == 0) || (iVar3 == -1)) {
                 iVar3 = piVar2[4];
-                iVar9 = piVar2[3];
-                uVar4 = puVar1[4];
-                uVar8 = puVar1[3];
-                uVar7 = puVar1[2];
-                uVar6 = puVar1[1];
-                piVar5 = (int *)piVar2[0x70];
+                iVar10 = piVar2[3];
+                uVar5 = puVar1[4];
+                uVar9 = puVar1[3];
+                uVar8 = puVar1[2];
+                uVar7 = puVar1[1];
+                piVar6 = (int *)piVar2[0x70];
               }
               else {
                 iVar3 = piVar2[4];
-                iVar9 = piVar2[3];
-                piVar5 = (int *)piVar2[0x70];
-                uVar6 = local_20;
-                uVar7 = local_1c;
-                uVar8 = local_18;
-                uVar4 = local_14;
+                iVar10 = piVar2[3];
+                piVar6 = (int *)piVar2[0x70];
+                uVar7 = local_20;
+                uVar8 = local_1c;
+                uVar9 = local_18;
+                uVar5 = local_14;
               }
-              uVar4 = FUN_006d1ad0(piVar5,100,uVar6,uVar7,uVar8,uVar4,iVar9,iVar3,1);
-              if (uVar4 == 0xffffffff) {
+              uVar4 = FUN_006d1ad0(piVar6,100,uVar7,uVar8,uVar9,uVar5,iVar10,iVar3,1);
+              if (uVar4 == -1) {
                 return 0xffffffff;
               }
               if (uVar4 != 0) {
-                if ((int)(uVar4 - 1) <= param_2) {
+                if (uVar4 + -1 <= param_2) {
                   return uVar4;
                 }
-                if ((int)uVar4 < (int)local_8) {
+                if (uVar4 < (int)local_8) {
                   local_8 = uVar4;
                 }
               }
@@ -87,9 +88,9 @@ uint FUN_006bc970(int *param_1,int param_2,int *param_3,int param_4)
       local_10 = local_10 + 1;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = param_1 + 1;
-      uVar4 = local_8;
+      uVar5 = local_8;
     } while (local_10 < param_4);
   }
-  return -(uint)(uVar4 != 0x7fff) & uVar4;
+  return -(uint)(uVar5 != 0x7fff) & uVar5;
 }
 

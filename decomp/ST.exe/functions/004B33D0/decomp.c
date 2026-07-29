@@ -1107,8 +1107,7 @@ LAB_004b50f4:
                               piVar17 = aiStack_314 + local_108[0];
                               if (*piVar17 == 0) {
                                 piVar17 = aiStack_314 + local_108[0];
-                                pDVar11 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0xc,10)
-                                ;
+                                pDVar11 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0xc,10);
                                 *piVar17 = (int)pDVar11;
                               }
                               local_144 = local_11c;

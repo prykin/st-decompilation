@@ -24,8 +24,9 @@ void __thiscall CPanelTy::sub_004FAD60(CPanelTy *this,uint *param_1,uint param_2
     if (((((iVar3 <= (int)uVar2) && ((int)uVar2 < this->field_0078 + iVar3)) &&
          (iVar1 <= (int)uVar4)) && (((int)uVar4 < this->field_00D0 + iVar1 && (DAT_00808784 == 0))))
        && ((DAT_00808788 == 0 && ((DAT_0080878c == 0 && (DAT_00808790 == 0)))))) {
-      iVar3 = FUN_006e68c0(PTR_00807598,(uVar2 - iVar3) + -5,(uVar4 - iVar1) + -7,(int *)&param_1,
-                           (int *)&param_2);
+      iVar3 = ST3DSMAPContext::sub_006E68C0
+                        (g_sT3DSMAPContext_00807598,(uVar2 - iVar3) + -5,(uVar4 - iVar1) + -7,
+                         (int *)&param_1,(int *)&param_2);
       if (iVar3 != 0) {
         this->field_013C = 1;
         thunk_FUN_004ab530((uint)DAT_00807349,param_1,param_2);

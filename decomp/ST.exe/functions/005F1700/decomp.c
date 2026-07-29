@@ -54,22 +54,25 @@ ushort * FUN_005f1700(int param_1,int param_2,int param_3,int param_4,int param_
         uVar5 = 100;
         uVar4 = 0x78;
       }
-      FUN_006e8660(PTR_00807598,(int *)&local_8,1,0,*(uint *)((int)puVar3 + 9),
-                   *(uint *)((int)puVar3 + 0xd),uVar4,uVar5,0);
+      ST3DSMAPContext::sub_006E8660
+                (g_sT3DSMAPContext_00807598,(int *)&local_8,1,0,*(uint *)((int)puVar3 + 9),
+                 *(uint *)((int)puVar3 + 0xd),uVar4,uVar5,0);
       *(uint *)(iVar2 + 0x18) = local_8;
-      FUN_006e98e0(PTR_00807598,local_8,0,*(int *)puVar3,*(int *)((int)puVar3 + 0x21),1);
-      FUN_006ea270(PTR_00807598,local_8,0,*(uint *)(iVar2 + 0xe));
-      FUN_006ea3e0(PTR_00807598,local_8,-1);
-      FUN_006e9210(PTR_00807598,local_8);
+      ST3DSMAPContext::sub_006E98E0
+                (g_sT3DSMAPContext_00807598,local_8,0,*(int *)puVar3,*(int *)((int)puVar3 + 0x21),1);
+      ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,local_8,0,*(uint *)(iVar2 + 0xe));
+      Library::Ourlib::ST3DSMAP::SprSetLevAfter(g_sT3DSMAPContext_00807598,local_8,-1);
+      Library::Ourlib::ST3DSMAP::SprSetSplit(g_sT3DSMAPContext_00807598,local_8);
       if (param_1 != 0) {
         param_5 = param_5 + 100;
         param_4 = param_4 + 100;
         local_18 = param_4;
       }
-      FUN_006ea960(PTR_00807598,local_8,(float)param_4 * _DAT_007904f8 * _DAT_007904f0,
-                   (float)param_5 * _DAT_007904f8 * _DAT_007904f0,
-                   (float)param_6 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
-      FUN_006eaaa0(PTR_00807598,local_8,0);
+      Library::Ourlib::ST3DSMAP::SprMove
+                (g_sT3DSMAPContext_00807598,local_8,(float)param_4 * _DAT_007904f8 * _DAT_007904f0,
+                 (float)param_5 * _DAT_007904f8 * _DAT_007904f0,
+                 (float)param_6 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
+      Library::Ourlib::ST3DSMAP::SprShow(g_sT3DSMAPContext_00807598,local_8,0);
       *(undefined1 *)(iVar2 + 6) = 1;
       g_currentExceptionFrame = local_5c.previous;
       return puVar3;

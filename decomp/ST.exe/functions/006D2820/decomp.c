@@ -39,8 +39,7 @@ void FUN_006d2820(byte *param_1,AnonShape_006B5B10_E0D06CF1 *param_2,byte *param
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_8 == 0) {
       if (param_9 != (byte *)0x0) {
-        FUN_006da660(param_1,param_2,(char *)param_12,param_9,param_10,param_11 & 7,param_6,param_7)
-        ;
+        FUN_006da660(param_1,param_2,(char *)param_12,param_9,param_10,param_11 & 7,param_6,param_7);
         return;
       }
       FUN_006d25e0(param_1,(int)param_2,param_12,param_6,param_7);

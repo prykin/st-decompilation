@@ -18,7 +18,7 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
   byte bVar1;
   AnonShape_006B7830_769CA2DF *pAVar2;
   PlayPanelTy *pPVar3;
-  AnonShape_GLOBAL_00807598_0C6808FB *pAVar4;
+  ST3DSMAPContext *pSVar4;
   AiEventClassTy *this_00;
   char cVar5;
   short sVar6;
@@ -3440,8 +3440,7 @@ LAB_00659a1c:
                                         pAVar37 = local_10->vtable;
                                         uVar17 = uVar32;
                                         pcVar9 = thunk_FUN_00674af0(iVar7);
-                                        thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar17,(int)pAVar37)
-                                        ;
+                                        thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar17,(int)pAVar37);
                                       }
                                       else {
                                         thunk_FUN_00675dc0((uint)local_10->vtable,local_c);
@@ -3486,8 +3485,7 @@ LAB_00659a1c:
                                         pAVar37 = local_10->vtable;
                                         uVar17 = uVar32;
                                         pcVar9 = thunk_FUN_00674af0(iVar7);
-                                        thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar17,(int)pAVar37)
-                                        ;
+                                        thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar17,(int)pAVar37);
                                       }
                                       else {
                                         thunk_FUN_00675dc0((uint)local_10->vtable,local_c);
@@ -3533,8 +3531,7 @@ LAB_00659a1c:
                                         pAVar37 = local_10->vtable;
                                         uVar17 = uVar32;
                                         pcVar9 = thunk_FUN_00674af0(iVar7);
-                                        thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar17,(int)pAVar37)
-                                        ;
+                                        thunk_FUN_0064d0e0(this_00,-0xab,pcVar9,uVar17,(int)pAVar37);
                                       }
                                       else {
                                         thunk_FUN_00675dc0((uint)local_10->vtable,local_c);
@@ -4284,8 +4281,7 @@ LAB_006536dd:
                                 if (iVar7 == 8) {
 LAB_00653778:
                                   if (g_cPanel_00801688 != (CPanelTy *)0x0) {
-                                    CPanelTy::OutText(g_cPanel_00801688,(char *)local_158,local_15c)
-                                    ;
+                                    CPanelTy::OutText(g_cPanel_00801688,(char *)local_158,local_15c);
                                   }
                                   break;
                                 }
@@ -4442,16 +4438,16 @@ LAB_00653778:
                                         else {
                                           g_visibleClass_00802A88->field_00F8 =
                                                (uint)(iVar7 == 0x547);
-                                          pAVar4 = PTR_00807598;
+                                          pSVar4 = g_sT3DSMAPContext_00807598;
                                           if ((iVar7 == 0x547) != 0) {
-                                            PTR_00807598->field_0466 = 1;
-                                            pAVar4->field_02D8 = 1;
+                                            g_sT3DSMAPContext_00807598->field_0466 = 1;
+                                            pSVar4->field_02D8 = 1;
                                             break;
                                           }
                                         }
-                                        pAVar4 = PTR_00807598;
-                                        PTR_00807598->field_0466 = 0;
-                                        pAVar4->field_02D8 = 1;
+                                        pSVar4 = g_sT3DSMAPContext_00807598;
+                                        g_sT3DSMAPContext_00807598->field_0466 = 0;
+                                        pSVar4->field_02D8 = 1;
                                         break;
                                       }
                                       iVar36 = iVar36 + 1;

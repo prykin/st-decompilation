@@ -448,8 +448,7 @@ cf_common_exit_00472CB0:
         DArrayGetElement(PTR_007fa130,uVar9,&local_20);
         if (local_20 != (STTorpC *)0x0) {
           iVar7 = iVar7 + -1;
-          STFishC::sub_004162B0((STFishC *)local_20,(short *)((int)&local_10 + 2),&local_c,&local_a)
-          ;
+          STFishC::sub_004162B0((STFishC *)local_20,(short *)((int)&local_10 + 2),&local_c,&local_a);
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_2c[0] = FUN_006aadd0((int)this->field_0047,(int)this->field_0049,
                                      (int)this->field_004B,(int)local_10._2_2_,(int)local_c,

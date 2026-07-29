@@ -32,7 +32,7 @@ byte * __thiscall STBHEShellC::sub_005F5A90(STBHEShellC *this,int *param_1)
   pbVar1[0xd] = 0;
   pbVar1[0xe] = 0;
   pbVar1[0xf] = 0;
-  if (this->field_0169 != (DArrayTy *)0x0) {
+  if (this->field_0169 != (STBHEShellC_field_0169DArray *)0x0) {
     local_c = (byte *)FUN_006b0020(&this->field_0169->flags,(int *)&local_8);
     pbVar2 = (byte *)Library::DKW::LIB::FUN_006acf50((int)pbVar1,local_8 + 300);
     *(uint *)(pbVar2 + 0x128) = local_8;

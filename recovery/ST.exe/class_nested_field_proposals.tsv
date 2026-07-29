@@ -244,6 +244,78 @@ apply	type_path	offset	size	proposed_name	proposed_type	evidence_count	reason
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SIDTy_1CCC	20	4	field_0014	/undefined4	2	nested reads=7, writes=0
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SIDTy_1CD0	8	4	field_0008	/undefined4	1	nested reads=3, writes=0
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_SIDTy_1CD0	20	4	field_0014	/undefined4	1	nested reads=3, writes=0
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0000	556	4	field_022C	/undefined4	3	nested reads=0, writes=3
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0000	560	4	field_0230	/undefined4	2	nested reads=0, writes=2
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0000	564	4	field_0234	/undefined4	2	nested reads=0, writes=2
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0004	12	4	field_000C	/undefined4	6	nested reads=6, writes=0
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0004	24	4	field_0018	/undefined4	2	nested reads=2, writes=0
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0004	28	4	field_001C	/undefined4	2	nested reads=4, writes=0
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0280	1037	4	field_040D	/undefined4	1	nested reads=1, writes=0
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0280	1041	4	field_0411	/undefined4	1	nested reads=1, writes=0
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0280	1045	4	field_0415	/undefined4	1	nested reads=1, writes=0
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0280	1049	4	field_0419	/undefined4	1	nested reads=1, writes=0
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0280	1053	4	field_041D	/undefined4	1	nested reads=1, writes=0
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0280	1057	4	field_0421	/undefined4	1	nested reads=1, writes=0
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0280	1061	4	field_0425	/undefined4	1	nested reads=1, writes=0
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0280	1065	4	field_0429	/undefined4	1	nested reads=1, writes=0
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0280	1069	4	field_042D	/undefined4	1	nested reads=1, writes=0
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0280	1073	4	field_0431	/undefined4	1	nested reads=1, writes=0
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0280	1077	4	field_0435	/undefined4	1	nested reads=1, writes=0
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0280	1081	4	field_0439	/undefined4	1	nested reads=1, writes=0
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0280	1085	4	field_043D	/undefined4	1	nested reads=3, writes=0
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0280	1089	4	field_0441	/undefined4	1	nested reads=3, writes=0
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0280	1093	4	field_0445	/undefined4	1	nested reads=3, writes=0
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0280	1097	4	field_0449	/undefined4	1	nested reads=3, writes=0
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_031C	0	4	field_0000	/undefined4	2	nested reads=2, writes=2
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_031C	116	4	field_0074	/float	2	nested reads=0, writes=18; type_evidence=/float <= 006E7D6F FLD establishes /float; 006E7E2C FLD establishes /float; 006E7E49 FLD establishes /float; 006E7E66 FLD establishes /float; 006E7E80 FSUB establishes /float; 006E7E9A FLD establishes /float; 006E7EC3 FLD establishes /float; 006E7EE5 FLD establishes /float; 006E7F07 FSUB establishes /float
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_031C	120	4	field_0078	/float	2	nested reads=0, writes=18; type_evidence=/float <= 006E7DAB FLD establishes /float; 006E7E2F FSUB establishes /float; 006E7E4C FADD establishes /float; 006E7E69 FADD establishes /float; 006E7E7D FLD establishes /float; 006E7E9D FSUB establishes /float; 006E7EC6 FADD establishes /float; 006E7EE8 FADD establishes /float; 006E7F04 FLD establishes /float
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_031C	124	4	field_007C	/float	2	nested reads=0, writes=2; type_evidence=/float <= 006E7DE9 FLD establishes /float
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_031C	264	4	field_0108	/undefined4	2	nested reads=10, writes=14
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_031C	268	4	field_010C	/undefined4	2	nested reads=20, writes=6
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_031C	272	1	field_0110	/undefined1	2	nested reads=0, writes=4
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_031C	273	1	field_0111	/undefined1	2	nested reads=0, writes=4
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_031C	274	1	field_0112	/undefined1	2	nested reads=0, writes=4
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0358	12	4	field_000C	/undefined4	2	nested reads=2, writes=0
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0358	20	4	field_0014	/undefined4	2	nested reads=2, writes=0
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0358	40	4	field_0028	/undefined4	2	nested reads=2, writes=0
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0358	96	4	field_0060	/undefined4	1	nested reads=0, writes=2
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0358	120	4	field_0078	/undefined4	1	nested reads=0, writes=2
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0358	208	4	field_00D0	/undefined4	2	nested reads=0, writes=2
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0358	212	4	field_00D4	/undefined4	2	nested reads=0, writes=2
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0358	292	4	field_0124	/undefined4	2	nested reads=0, writes=2
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0358	296	4	field_0128	/undefined4	2	nested reads=0, writes=4
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0358	308	4	field_0134	/undefined4	3	nested reads=1, writes=3
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0358	640	4	field_0280	/undefined4	3	nested reads=0, writes=3
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0358	880	4	field_0370	/undefined4	4	nested reads=0, writes=4
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0358	884	4	field_0374	/undefined4	3	nested reads=2, writes=1
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0358	888	4	field_0378	/undefined4	3	nested reads=2, writes=1
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0358	896	4	field_0380	/undefined4	2	nested reads=0, writes=2
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0358	900	4	field_0384	/undefined4	2	nested reads=0, writes=2
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0358	1052	4	field_041C	/undefined4	2	nested reads=0, writes=2
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0420	0	1	field_0000	/undefined1	2	nested reads=2, writes=0
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0420	1	1	field_0001	/undefined1	2	nested reads=8, writes=0
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0420	3	1	field_0003	/undefined1	2	nested reads=2, writes=0
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0442	0	4	field_0000	/undefined4	1	nested reads=1, writes=0
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0442	18	2	field_0012	/undefined2	1	nested reads=1, writes=0
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0442	20	2	field_0014	/undefined2	1	nested reads=1, writes=2
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0442	22	1	field_0016	/undefined1	1	nested reads=2, writes=1
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0442	23	1	field_0017	/undefined1	1	nested reads=1, writes=0
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0446	0	4	field_0000	/undefined4	1	nested reads=2, writes=0
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0446	12	1	field_000C	/undefined1	1	nested reads=2, writes=0
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_044A	0	4	field_0000	/undefined4	1	nested reads=2, writes=0
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_044A	12	1	field_000C	/undefined1	1	nested reads=2, writes=0
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_044E	0	4	field_0000	/undefined4	3	nested reads=3, writes=0
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_044E	4	4	field_0004	/undefined4	2	nested reads=2, writes=0
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_044E	8	4	field_0008	/int	1	nested reads=0, writes=1; type_evidence=/int <= 006E77D4 FILD establishes /int
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_044E	12	4	field_000C	/float	1	nested reads=0, writes=8; type_evidence=/float <= 006E7843 FLD establishes /float; 006E785C FLD establishes /float; 006E7882 FLD establishes /float; 006E7898 FSUB establishes /float; 006E78C1 FLD establishes /float; 006E78E0 FLD establishes /float; 006E7911 FLD establishes /float; 006E792F FSUB establishes /float
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_044E	16	4	field_0010	/float	1	nested reads=0, writes=8; type_evidence=/float <= 006E7846 FSUB establishes /float; 006E785F FADD establishes /float; 006E7885 FADD establishes /float; 006E7895 FLD establishes /float; 006E78C4 FSUB establishes /float; 006E78E3 FADD establishes /float; 006E7914 FADD establishes /float; 006E792C FLD establishes /float
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_044E	20	1	field_0014	/undefined1	1	nested reads=8, writes=0
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0452	0	4	field_0000	/undefined4	1	nested reads=1, writes=0
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0452	8	4	field_0008	/float	1	nested reads=0, writes=8; type_evidence=/float <= 006E74BA FLD establishes /float; 006E74D6 FADD establishes /float; 006E752A FADD establishes /float; 006E753D FSUB establishes /float; 006E7594 FLD establishes /float; 006E75B6 FADD establishes /float; 006E7625 FADD establishes /float; 006E7641 FSUB establishes /float
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0452	12	4	field_000C	/float	1	nested reads=0, writes=8; type_evidence=/float <= 006E74BD FSUB establishes /float; 006E74D3 FLD establishes /float; 006E7527 FLD establishes /float; 006E753A FLD establishes /float; 006E7597 FSUB establishes /float; 006E75B3 FLD establishes /float; 006E7622 FLD establishes /float; 006E763E FLD establishes /float
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0452	16	4	field_0010	/float	1	nested reads=0, writes=8; type_evidence=/float <= 006E74E9 FLD establishes /float; 006E7507 FADD establishes /float; 006E7559 FADD establishes /float; 006E756E FSUB establishes /float; 006E75D1 FLD establishes /float; 006E75EF FADD establishes /float; 006E765E FADD establishes /float; 006E767E FSUB establishes /float
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0452	20	4	field_0014	/float	1	nested reads=0, writes=8; type_evidence=/float <= 006E74EC FSUB establishes /float; 006E7504 FLD establishes /float; 006E7556 FLD establishes /float; 006E756B FLD establishes /float; 006E75D4 FSUB establishes /float; 006E75EC FLD establishes /float; 006E765B FLD establishes /float; 006E767B FLD establishes /float
+0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_ST3DSMAPContext_0452	24	4	field_0018	/undefined4	1	nested reads=1, writes=0
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STAllPlayersC_018D	0	4	field_0000	/undefined4	1	nested reads=1, writes=0
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STAllPlayersC_018D	4	4	field_0004	/undefined4	1	nested reads=1, writes=0
 0	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STAllPlayersC_018D	8	4	field_0008	/undefined4	1	nested reads=1, writes=0

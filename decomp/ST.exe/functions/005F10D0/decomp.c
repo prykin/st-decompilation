@@ -54,8 +54,7 @@ int __thiscall STManBasisC::GetMessage(STManBasisC *this,STMessage *message)
     if (SVar1 == MESS_ID_CREATE) {
       local_c->field_001C = local_c->field_0018 * DAT_00808754;
       if (g_cMf32_00806754 != (cMf32 *)0x0) {
-        local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad(g_cMf32_00806754,PTR_s_BASIS_MAN_0079c57c,0,0)
-        ;
+        local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad(g_cMf32_00806754,PTR_s_BASIS_MAN_0079c57c,0,0);
       }
       if (local_8 == (ushort *)0x0) {
         this_00->field_0020 = (ushort *)0x0;
@@ -80,8 +79,7 @@ int __thiscall STManBasisC::GetMessage(STManBasisC *this,STMessage *message)
   }
   else if (SVar1 == MESS_SHARED_010F) {
     local_14 = sub_005F1FA0(local_c,(int *)&local_10);
-    STPlaySystemC::SaveObjData(g_playSystem_00802A38,PTR_s_BASIS_MAN_0079c57c,local_14,local_10,0xc)
-    ;
+    STPlaySystemC::SaveObjData(g_playSystem_00802A38,PTR_s_BASIS_MAN_0079c57c,local_14,local_10,0xc);
     FreeAndNull(&local_14);
   }
   g_currentExceptionFrame = local_58.previous;

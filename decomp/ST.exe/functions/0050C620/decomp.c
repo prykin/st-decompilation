@@ -599,8 +599,7 @@ LAB_0050ce3f:
         iVar6 = 0x35;
         local_8 = uVar7;
         do {
-          pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,1)
-          ;
+          pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,1);
           DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,iVar6,0x5d,'\x01',pbVar8);
           iVar6 = iVar6 + 4;
           uVar7 = uVar7 - 1;
@@ -609,8 +608,7 @@ LAB_0050ce3f:
       if (local_8 < 0x21) {
         iVar6 = local_8 * 4 + 0x35;
         do {
-          pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0)
-          ;
+          pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
           DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,iVar6,0x5d,'\x01',pbVar8);
           iVar6 = iVar6 + 4;
         } while (iVar6 < 0xb9);
@@ -636,8 +634,7 @@ LAB_0050ce3f:
         iVar6 = 0x35;
         local_8 = uVar7;
         do {
-          pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,1)
-          ;
+          pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,1);
           DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,iVar6,0x7d,'\x01',pbVar8);
           iVar6 = iVar6 + 4;
           uVar7 = uVar7 - 1;
@@ -646,8 +643,7 @@ LAB_0050ce3f:
       if (local_8 < 0x21) {
         iVar6 = local_8 * 4 + 0x35;
         do {
-          pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0)
-          ;
+          pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
           DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,iVar6,0x7d,'\x01',pbVar8);
           iVar6 = iVar6 + 4;
         } while (iVar6 < 0xb9);
@@ -693,8 +689,7 @@ LAB_0050ce3f:
         iVar6 = 0x35;
         local_8 = uVar7;
         do {
-          pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,1)
-          ;
+          pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,1);
           DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,iVar6,0x7d,'\x01',pbVar8);
           iVar6 = iVar6 + 4;
           uVar7 = uVar7 - 1;
@@ -703,8 +698,7 @@ LAB_0050ce3f:
       if (local_8 < 0x21) {
         iVar6 = local_8 * 4 + 0x35;
         do {
-          pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0)
-          ;
+          pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
           DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,iVar6,0x7d,'\x01',pbVar8);
           iVar6 = iVar6 + 4;
         } while (iVar6 < 0xb9);
@@ -734,8 +728,7 @@ LAB_0050ce3f:
         iVar6 = 0x35;
         local_8 = uVar7;
         do {
-          pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,1)
-          ;
+          pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,1);
           DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,iVar6,0x7d,'\x01',pbVar8);
           iVar6 = iVar6 + 4;
           uVar7 = uVar7 - 1;
@@ -744,8 +737,7 @@ LAB_0050ce3f:
       if (local_8 < 0x21) {
         iVar6 = local_8 * 4 + 0x35;
         do {
-          pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0)
-          ;
+          pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
           DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,iVar6,0x7d,'\x01',pbVar8);
           iVar6 = iVar6 + 4;
         } while (iVar6 < 0xb9);
@@ -799,8 +791,7 @@ LAB_0050ce3f:
         iVar6 = 0x35;
         local_8 = uVar7;
         do {
-          pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,1)
-          ;
+          pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,1);
           DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,iVar6,0x7d,'\x01',pbVar8);
           iVar6 = iVar6 + 4;
           uVar7 = uVar7 - 1;
@@ -809,8 +800,7 @@ LAB_0050ce3f:
       if (local_8 < 0x21) {
         iVar6 = local_8 * 4 + 0x35;
         do {
-          pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0)
-          ;
+          pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
           DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,iVar6,0x7d,'\x01',pbVar8);
           iVar6 = iVar6 + 4;
         } while (iVar6 < 0xb9);
@@ -829,8 +819,7 @@ LAB_0050ce3f:
       if (this_00->field_0C11 != CASE_0) {
         iVar6 = 0x35;
         do {
-          pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,1)
-          ;
+          pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,1);
           DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,iVar6,0x52,'\x01',pbVar8);
           uVar7 = uVar7 + 1;
           iVar6 = iVar6 + 4;
@@ -839,8 +828,7 @@ LAB_0050ce3f:
       if (uVar7 < 0x21) {
         iVar6 = uVar7 * 4 + 0x35;
         do {
-          pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0)
-          ;
+          pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
           DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,iVar6,0x52,'\x01',pbVar8);
           iVar6 = iVar6 + 4;
         } while (iVar6 < 0xb9);
@@ -856,8 +844,7 @@ LAB_0050ce3f:
       if (*(Global_sub_00526BA0_param_1Enum *)&this_00->field_0xc12 != 0) {
         iVar6 = 0x35;
         do {
-          pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,1)
-          ;
+          pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,1);
           DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,iVar6,0x73,'\x01',pbVar8);
           uVar7 = uVar7 + 1;
           iVar6 = iVar6 + 4;
@@ -866,8 +853,7 @@ LAB_0050ce3f:
       if (uVar7 < 0x21) {
         iVar6 = uVar7 * 4 + 0x35;
         do {
-          pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0)
-          ;
+          pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
           DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,iVar6,0x73,'\x01',pbVar8);
           iVar6 = iVar6 + 4;
         } while (iVar6 < 0xb9);
@@ -1007,8 +993,7 @@ LAB_0050dfdc:
         iVar6 = 0x35;
         local_8 = uVar7;
         do {
-          pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,1)
-          ;
+          pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,1);
           DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,iVar6,0x7d,'\x01',pbVar8);
           iVar6 = iVar6 + 4;
           uVar7 = uVar7 - 1;
@@ -1017,8 +1002,7 @@ LAB_0050dfdc:
       if (local_8 < 0x21) {
         iVar6 = local_8 * 4 + 0x35;
         do {
-          pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0)
-          ;
+          pbVar8 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
           DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0194,iVar6,0x7d,'\x01',pbVar8);
           iVar6 = iVar6 + 4;
         } while (iVar6 < 0xb9);

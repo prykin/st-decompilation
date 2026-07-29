@@ -119,10 +119,10 @@ undefined4 __fastcall FUN_005ebd80(void *param_1)
     *(undefined1 *)((int)param_1 + 0x24f) = 1;
     *(undefined4 *)((int)param_1 + 0x23a) = 4;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if (*(AnonReceiver_006EA050 **)((int)param_1 + 0x211) != (AnonReceiver_006EA050 *)0x0) {
+    if (*(void **)((int)param_1 + 0x211) != (void *)0x0) {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006EA050::sub_006EA460
-                (*(AnonReceiver_006EA050 **)((int)param_1 + 0x211),*(uint *)((int)param_1 + 0x1ed),
+      Library::Ourlib::ST3DSMAP::SprSetLevBefore
+                (*(void **)((int)param_1 + 0x211),*(uint *)((int)param_1 + 0x1ed),
                  *(int *)&this[0xd].field_0x19);
     }
     bVar4 = false;

@@ -109,8 +109,7 @@ LAB_0075c512:
           if ((int)uVar5 < *(int *)(&DAT_007a2054 + uVar3 * 4)) {
             uVar5 = *(int *)(&DAT_007a2094 + uVar3 * 4) + uVar5;
           }
-          *(uint *)(local_1c + (&DAT_007a1e94)[(int)param_2] * 4) = uVar5 << ((byte)local_18 & 0x1f)
-          ;
+          *(uint *)(local_1c + (&DAT_007a1e94)[(int)param_2] * 4) = uVar5 << ((byte)local_18 & 0x1f);
         }
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_2 = (int *)((int)param_2 + 1);

@@ -478,8 +478,8 @@ LAB_00420678:
                 (-0x5001fff8,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\Tc_gobj.cpp",
                  0xc4b);
     }
-    FUN_006ea5e0((void *)this->field_0211,this->field_01ED,0xf,0);
-    FUN_006ea5e0((void *)this->field_0211,this->field_01ED,0,0);
+    ST3DSMAPContext::sub_006EA5E0(this->field_0211,this->field_01ED,0xf,0);
+    ST3DSMAPContext::sub_006EA5E0(this->field_0211,this->field_01ED,0,0);
     if (DAT_0080732c != 1) {
       STT3DSprC::StopShow((STT3DSprC *)this_00,0xf);
       STT3DSprC::StopShow((STT3DSprC *)this_00,0);

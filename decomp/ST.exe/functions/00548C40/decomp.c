@@ -179,11 +179,11 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  if (PTR_00807598 != (AnonShape_GLOBAL_00807598_0C6808FB *)0x0) {
+  if (g_sT3DSMAPContext_00807598 != (ST3DSMAPContext *)0x0) {
     local_148 = local_124->field_00EF;
     local_144 = local_124->field_00F3;
     local_140 = iVar5;
-    FUN_006e25d0(PTR_00807598,&local_218);
+    ST3DSMAPContext::sub_006E25D0(g_sT3DSMAPContext_00807598,&local_218);
     this_00->field_00DF = local_218 >> 0x10;
     this_00->field_00E7 = (this_00->field_00C5 - this_00->field_04B2) - (local_218 >> 0x10);
     this_00->field_00E3 = local_214 >> 0x10;
@@ -309,7 +309,8 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
           }
           if (g_tLOBldMark_007FB2AC->field_0024 != 0) {
             thunk_FUN_0054edf0((undefined4 *)0x23,&local_b8,0,0xffffffff);
-            iVar5 = FUN_006e1dd0(PTR_00807598,this_00->field_00C5 - this_00->field_04B2,
+            iVar5 = FUN_006e1dd0(g_sT3DSMAPContext_00807598,
+                                 this_00->field_00C5 - this_00->field_04B2,
                                  this_00->field_00C9 - this_00->field_04B6,&local_10,&local_c,
                                  (float *)&local_8);
             if (iVar5 != 0) {
@@ -425,7 +426,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     }
     memset((void *)local_120, 0, 0x18); /* compiler bulk-zero initialization */
     if (this_00->field_049A == (STFishC *)0x0) {
-      iVar5 = FUN_006e1dd0(PTR_00807598,this_00->field_00C5 - this_00->field_04B2,
+      iVar5 = FUN_006e1dd0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
                            this_00->field_00C9 - this_00->field_04B6,&local_10,&local_c,
                            (float *)&local_8);
       if (iVar5 == 0) break;
@@ -458,7 +459,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     goto cf_common_join_0054A19A;
   case 5:
   case 6:
-    iVar5 = FUN_006e1dd0(PTR_00807598,this_00->field_00C5 - this_00->field_04B2,
+    iVar5 = FUN_006e1dd0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
                          this_00->field_00C9 - this_00->field_04B6,&local_10,&local_c,
                          (float *)&local_8);
     if (iVar5 != 0) {
@@ -488,7 +489,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     }
     break;
   case 8:
-    iVar5 = FUN_006e1dd0(PTR_00807598,this_00->field_00C5 - this_00->field_04B2,
+    iVar5 = FUN_006e1dd0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
                          this_00->field_00C9 - this_00->field_04B6,&local_10,&local_c,
                          (float *)&local_8);
     if (iVar5 != 0) {
@@ -529,7 +530,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_160._1_4_ = this_00->field_049A->field_0018;
     thunk_FUN_0054edf0((undefined4 *)0x16,(uint *)local_160,0,0xffffffff);
-    iVar5 = FUN_006e1dd0(PTR_00807598,this_00->field_00C5 - this_00->field_04B2,
+    iVar5 = FUN_006e1dd0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
                          this_00->field_00C9 - this_00->field_04B6,&local_10,&local_c,
                          (float *)&local_8);
     if (iVar5 == 0) break;
@@ -590,7 +591,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     goto cf_common_join_0054A19A;
   case 0xf:
   case 0x10:
-    iVar5 = FUN_006e1dd0(PTR_00807598,this_00->field_00C5 - this_00->field_04B2,
+    iVar5 = FUN_006e1dd0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
                          this_00->field_00C9 - this_00->field_04B6,&local_10,&local_c,
                          (float *)&local_8);
     if (iVar5 != 0) {
@@ -621,7 +622,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     }
     break;
   case 0x11:
-    iVar5 = FUN_006e1dd0(PTR_00807598,this_00->field_00C5 - this_00->field_04B2,
+    iVar5 = FUN_006e1dd0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
                          this_00->field_00C9 - this_00->field_04B6,&local_10,&local_c,
                          (float *)&local_8);
     if (iVar5 != 0) {
@@ -676,7 +677,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
         }
         if (g_tLOBldMark_007FB2AC->field_0024 != 0) {
           thunk_FUN_0054edf0((undefined4 *)0x23,&local_c8,0,0xffffffff);
-          iVar5 = FUN_006e1dd0(PTR_00807598,this_00->field_00C5 - this_00->field_04B2,
+          iVar5 = FUN_006e1dd0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
                                this_00->field_00C9 - this_00->field_04B6,&local_10,&local_c,
                                (float *)&local_8);
           if (iVar5 != 0) {
@@ -719,7 +720,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     puVar14 = (undefined4 *)0x21;
     goto cf_common_join_0054A19A;
   case 0x19:
-    iVar5 = FUN_006e1dd0(PTR_00807598,this_00->field_00C5 - this_00->field_04B2,
+    iVar5 = FUN_006e1dd0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
                          this_00->field_00C9 - this_00->field_04B6,&local_10,&local_c,
                          (float *)&local_8);
     if (iVar5 != 0) {
@@ -803,7 +804,7 @@ LAB_0054a196:
     goto cf_common_join_0054A19A;
   case 0x1d:
     if (this_00->field_04A2 == 0x18) {
-      iVar5 = FUN_006e1dd0(PTR_00807598,this_00->field_00C5 - this_00->field_04B2,
+      iVar5 = FUN_006e1dd0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
                            this_00->field_00C9 - this_00->field_04B6,&local_10,&local_c,
                            (float *)&local_8);
       if (iVar5 == 0) break;
@@ -864,7 +865,7 @@ LAB_0054a196:
     local_d8._1_3_ = (int3)local_7a;
     local_d4 = (char)(local_7a >> 0xf);
     thunk_FUN_0054edf0((undefined4 *)0x1a,&local_e0,0,0xffffffff);
-    iVar5 = FUN_006e1dd0(PTR_00807598,this_00->field_00C5 - this_00->field_04B2,
+    iVar5 = FUN_006e1dd0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
                          this_00->field_00C9 - this_00->field_04B6,&local_10,&local_c,
                          (float *)&local_8);
     if (iVar5 == 0) break;
@@ -906,7 +907,7 @@ cf_common_join_0054A19A:
     local_284[0]._0_1_ = 0x19;
     local_267 = pSVar2->field_0018;
     thunk_FUN_0054edf0((undefined4 *)0x17,local_284,0,0xffffffff);
-    iVar5 = FUN_006e1dd0(PTR_00807598,this_00->field_00C5 - this_00->field_04B2,
+    iVar5 = FUN_006e1dd0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
                          this_00->field_00C9 - this_00->field_04B6,&local_10,&local_c,
                          (float *)&local_8);
     if (iVar5 == 0) break;

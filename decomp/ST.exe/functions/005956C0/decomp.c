@@ -61,8 +61,7 @@ FSGSTy::OutLadProc(FSGSTy *this,int param_1,MMMObjTy *param_2,MMMObjTy *param_3,
     uVar6 = 0xffffffff;
     uVar5 = 0xffffffff;
     puVar3 = (uint *)LoadResourceString(0x25a8,g_module_00807618);
-    StartServTy::WrTextDDX(this_01,0,param_4 + 0x2d,iVar2,0xeb,0x23,puVar3,uVar5,uVar6,pcVar7,uVar8)
-    ;
+    StartServTy::WrTextDDX(this_01,0,param_4 + 0x2d,iVar2,0xeb,0x23,puVar3,uVar5,uVar6,pcVar7,uVar8);
     Library::DKW::DDX::FUN_006c53b0
               (param_1,param_4 + 0x118,param_5 + 0x78,param_4 + 0x118,local_8,
                g_startSystem_0081176C->field_0140);

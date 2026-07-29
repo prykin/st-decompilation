@@ -336,8 +336,7 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
           lVar25 = Library::MSVCRT::__ftol();
           iVar14 = (int)lVar25;
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-          fVar1 = (float)(extraout_ST0_01 - (float10)iVar14 * (float10)*(float *)((int)this + 0x75))
-          ;
+          fVar1 = (float)(extraout_ST0_01 - (float10)iVar14 * (float10)*(float *)((int)this + 0x75));
           if (iVar14 < 1) {
             if (*(int *)(*(int *)this + 0xc) == 0) {
               iVar14 = 0;
@@ -1146,8 +1145,7 @@ void __thiscall FUN_00633770(void *this,int param_1,int param_2)
             if (((uVar10 < *(uint *)(iVar18 + 0xc)) &&
                 (iVar18 = *(int *)(iVar18 + 8) * uVar10 + *(int *)(iVar18 + 0x1c), iVar18 != 0)) &&
                (*(int *)(iVar18 + 8) == 1)) {
-              fVar24 = (float10)((float)uVar13 * fVar1 + fVar6) + (float10)*(float *)(iVar18 + 0x21)
-              ;
+              fVar24 = (float10)((float)uVar13 * fVar1 + fVar6) + (float10)*(float *)(iVar18 + 0x21);
               fVar23 = (float10)*(float *)(iVar18 + 0x25) + (float10)*(float *)((int)this + 0x45);
               fsin(fVar23);
               fcos(fVar24);

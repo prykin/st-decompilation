@@ -30,7 +30,7 @@ int __thiscall STLBombC::GetMessage(STLBombC *this,STMessage *message)
   byte *pbVar15;
   InternalExceptionFrame local_80;
   void *local_3c;
-  int local_38;
+  AnonShape_GLOBAL_00806724_3210464F *local_38;
   int local_34;
   undefined4 local_30;
   undefined4 local_2c;
@@ -171,7 +171,7 @@ int __thiscall STLBombC::GetMessage(STLBombC *this,STMessage *message)
                     ((STT3DSprC *)&this_00->field_01D5,0xe,g_playSystem_00802A38->field_00E4);
           sub_00416240(this_00,*(ushort *)&this_00->field_0x26c,*(short *)&this_00->field_0x270,
                        *(ushort *)&this_00->field_0x274);
-          *(int *)&this_00->field_0x245 = (int)*(short *)(DAT_00806724 + 0x2c);
+          *(int *)&this_00->field_0x245 = (int)PTR_00806724->field_002C;
           this_00->field_0231 = CASE_0;
           thunk_FUN_005860d0(this_00,*(int *)&this_00->field_0x26c,*(int *)&this_00->field_0x270,
                              0x463);
@@ -213,13 +213,14 @@ int __thiscall STLBombC::GetMessage(STLBombC *this,STMessage *message)
             } while (iVar6 < 0x44);
             *(undefined4 *)((int)local_3c + 0x24) = DAT_00806764;
             iVar6 = *(int *)((int)&this_00->field_023E + 3);
-            if (((iVar6 < 1) || (DAT_00806724 == 0)) || (DAT_00806724 == -0x30)) {
-              local_38 = 0;
+            if (((iVar6 < 1) || (PTR_00806724 == (AnonShape_GLOBAL_00806724_3210464F *)0x0)) ||
+               (PTR_00806724 == (AnonShape_GLOBAL_00806724_3210464F *)0xffffffd0)) {
+              local_38 = (AnonShape_GLOBAL_00806724_3210464F *)0x0;
             }
             else {
-              local_38 = DAT_00806724 + iVar6 * 0x34;
+              local_38 = PTR_00806724 + iVar6;
             }
-            local_34 = (int)*(short *)(DAT_00806724 + 0x2c);
+            local_34 = (int)PTR_00806724->field_002C;
             local_30 = DAT_008073cc;
             local_2c = 0;
             local_28 = 0;

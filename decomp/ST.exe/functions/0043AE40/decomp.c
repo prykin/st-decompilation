@@ -49,8 +49,9 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint *param_1,int param_2,int 
             STFishC::sub_004162B0
                       ((STFishC *)pSVar7,(short *)&local_10,(undefined2 *)&local_c,
                        (undefined2 *)&local_8);
-            iVar5 = FUN_006eb230(PTR_00807598,pSVar7->field_01ED,DAT_00807410,DAT_00807414,
-                                 DAT_00807418,DAT_0080741c);
+            iVar5 = Library::Ourlib::ST3DSPR::SprInRect
+                              (g_sT3DSMAPContext_00807598,pSVar7->field_01ED,DAT_00807410,
+                               DAT_00807414,DAT_00807418,DAT_0080741c);
             if (iVar5 != 1) {
               thunk_FUN_004a8e00(local_10,local_c,local_8);
               thunk_FUN_004a8f20(1);
@@ -77,8 +78,9 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint *param_1,int param_2,int 
                                *(DArrayTy **)((int)piVar1 + 10),
                                CONCAT22((short)((uint)&local_c >> 0x10),(short)piVar1[2]),&local_10,
                                &local_c,&local_8,(uint *)&param_1), iVar6 == 0)) &&
-         (iVar6 = FUN_006eb230(PTR_00807598,(uint)param_1,DAT_00807410,DAT_00807414,DAT_00807418,
-                               DAT_0080741c), iVar6 != 1)) {
+         (iVar6 = Library::Ourlib::ST3DSPR::SprInRect
+                            (g_sT3DSMAPContext_00807598,(uint)param_1,DAT_00807410,DAT_00807414,
+                             DAT_00807418,DAT_0080741c), iVar6 != 1)) {
         thunk_FUN_004a8e00(local_10,local_c,local_8);
         thunk_FUN_004a8f20(1);
         thunk_FUN_00567510(&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,DAT_0080743c & 0xff);
@@ -109,8 +111,9 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint *param_1,int param_2,int 
             iVar6 = GetCamPoint(0x3c,CONCAT31((int3)(uVar8 >> 8),*(undefined1 *)(iVar6 + 4)),
                                 *(DArrayTy **)(iVar6 + 10),uVar8,&local_10,&local_c,&local_8,
                                 (uint *)&param_1), iVar6 == 0)) &&
-           (iVar6 = FUN_006eb230(PTR_00807598,(uint)param_1,DAT_00807410,DAT_00807414,DAT_00807418,
-                                 DAT_0080741c), iVar6 != 1)) {
+           (iVar6 = Library::Ourlib::ST3DSPR::SprInRect
+                              (g_sT3DSMAPContext_00807598,(uint)param_1,DAT_00807410,DAT_00807414,
+                               DAT_00807418,DAT_0080741c), iVar6 != 1)) {
           thunk_FUN_004a8e00(local_10,local_c,local_8);
           thunk_FUN_004a8f20(1);
           thunk_FUN_00567510(&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,DAT_0080743c & 0xff);
@@ -137,8 +140,9 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint *param_1,int param_2,int 
         STFishC::sub_004162B0
                   ((STFishC *)pSVar7,(short *)&local_10,(undefined2 *)&local_c,
                    (undefined2 *)&local_8);
-        iVar5 = FUN_006eb230(PTR_00807598,pSVar7->field_01ED,DAT_00807410,DAT_00807414,DAT_00807418,
-                             DAT_0080741c);
+        iVar5 = Library::Ourlib::ST3DSPR::SprInRect
+                          (g_sT3DSMAPContext_00807598,pSVar7->field_01ED,DAT_00807410,DAT_00807414,
+                           DAT_00807418,DAT_0080741c);
         if (iVar5 != 1) {
           thunk_FUN_004a8e00(local_10,local_c,local_8);
           thunk_FUN_004a8f20(1);
@@ -190,8 +194,9 @@ LAB_0043aee4:
             iVar6 = GetCamPoint(0x19a,CONCAT31((int3)(uVar8 >> 8),(char)piVar1[1]),
                                 *(DArrayTy **)((int)piVar1 + 10),uVar8,&local_10,&local_c,&local_8,
                                 (uint *)&param_1), iVar6 == 0)) &&
-           (iVar6 = FUN_006eb230(PTR_00807598,(uint)param_1,DAT_00807410,DAT_00807414,DAT_00807418,
-                                 DAT_0080741c), iVar6 != 1)) {
+           (iVar6 = Library::Ourlib::ST3DSPR::SprInRect
+                              (g_sT3DSMAPContext_00807598,(uint)param_1,DAT_00807410,DAT_00807414,
+                               DAT_00807418,DAT_0080741c), iVar6 != 1)) {
           thunk_FUN_004a8e00(local_10,local_c,local_8);
           thunk_FUN_004a8f20(1);
           thunk_FUN_00567510(&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,DAT_0080743c & 0xff);
@@ -213,8 +218,9 @@ LAB_0043b0f1:
           STFishC::sub_004162B0
                     ((STFishC *)pSVar7,(short *)&local_10,(undefined2 *)&local_c,
                      (undefined2 *)&local_8);
-          iVar5 = FUN_006eb230(PTR_00807598,pSVar7->field_01ED,DAT_00807410,DAT_00807414,
-                               DAT_00807418,DAT_0080741c);
+          iVar5 = Library::Ourlib::ST3DSPR::SprInRect
+                            (g_sT3DSMAPContext_00807598,pSVar7->field_01ED,DAT_00807410,DAT_00807414
+                             ,DAT_00807418,DAT_0080741c);
           if (iVar5 != 1) {
             thunk_FUN_004a8e00(local_10,local_c,local_8);
             thunk_FUN_004a8f20(1);
@@ -256,8 +262,9 @@ LAB_0043b0af:
     pSVar7 = GetObjPtr(this,(char)piVar1[1],*(ushort *)(piVar1 + 2),SVar9);
     STFishC::sub_004162B0
               ((STFishC *)pSVar7,(short *)&local_10,(undefined2 *)&local_c,(undefined2 *)&local_8);
-    iVar5 = FUN_006eb230(PTR_00807598,pSVar7->field_01ED,DAT_00807410,DAT_00807414,DAT_00807418,
-                         DAT_0080741c);
+    iVar5 = Library::Ourlib::ST3DSPR::SprInRect
+                      (g_sT3DSMAPContext_00807598,pSVar7->field_01ED,DAT_00807410,DAT_00807414,
+                       DAT_00807418,DAT_0080741c);
     if (iVar5 != 1) {
       thunk_FUN_004a8e00(local_10,local_c,local_8);
       thunk_FUN_004a8f20(1);
@@ -280,8 +287,9 @@ cf_common_exit_0043B294:
           iVar6 = GetCamPoint(0x19a,CONCAT31((int3)(uVar8 >> 8),(char)piVar1[1]),
                               *(DArrayTy **)((int)piVar1 + 10),uVar8,&local_10,&local_c,&local_8,
                               (uint *)&param_1), iVar6 == 0)) &&
-         (iVar6 = FUN_006eb230(PTR_00807598,(uint)param_1,DAT_00807410,DAT_00807414,DAT_00807418,
-                               DAT_0080741c), iVar6 != 1)) {
+         (iVar6 = Library::Ourlib::ST3DSPR::SprInRect
+                            (g_sT3DSMAPContext_00807598,(uint)param_1,DAT_00807410,DAT_00807414,
+                             DAT_00807418,DAT_0080741c), iVar6 != 1)) {
         thunk_FUN_004a8e00(local_10,local_c,local_8);
         thunk_FUN_004a8f20(1);
         thunk_FUN_00567510(&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,DAT_0080743c & 0xff);
@@ -306,8 +314,9 @@ LAB_0043b2fe:
         STFishC::sub_004162B0
                   ((STFishC *)pSVar7,(short *)&local_10,(undefined2 *)&local_c,
                    (undefined2 *)&local_8);
-        iVar5 = FUN_006eb230(PTR_00807598,pSVar7->field_01ED,DAT_00807410,DAT_00807414,DAT_00807418,
-                             DAT_0080741c);
+        iVar5 = Library::Ourlib::ST3DSPR::SprInRect
+                          (g_sT3DSMAPContext_00807598,pSVar7->field_01ED,DAT_00807410,DAT_00807414,
+                           DAT_00807418,DAT_0080741c);
 joined_r0x0043b5ec:
         if (iVar5 != 1) {
           thunk_FUN_004a8e00(local_10,local_c,local_8);
@@ -340,10 +349,10 @@ LAB_0043b4a2:
     if (param_3 == 1) {
       pSVar7 = GetObjPtr(this,(char)piVar1[1],*(ushort *)(piVar1 + 2),CASE_5);
       STFishC::sub_004162B0
-                ((STFishC *)pSVar7,(short *)&local_10,(undefined2 *)&local_c,(undefined2 *)&local_8)
-      ;
-      iVar5 = FUN_006eb230(PTR_00807598,pSVar7->field_01ED,DAT_00807410,DAT_00807414,DAT_00807418,
-                           DAT_0080741c);
+                ((STFishC *)pSVar7,(short *)&local_10,(undefined2 *)&local_c,(undefined2 *)&local_8);
+      iVar5 = Library::Ourlib::ST3DSPR::SprInRect
+                        (g_sT3DSMAPContext_00807598,pSVar7->field_01ED,DAT_00807410,DAT_00807414,
+                         DAT_00807418,DAT_0080741c);
       goto joined_r0x0043b5ec;
     }
   }
@@ -352,10 +361,10 @@ LAB_0043b4a2:
     if (param_3 == 1) {
       pSVar7 = GetObjPtr(this,(char)piVar1[1],*(ushort *)(piVar1 + 2),CASE_6);
       STFishC::sub_004162B0
-                ((STFishC *)pSVar7,(short *)&local_10,(undefined2 *)&local_c,(undefined2 *)&local_8)
-      ;
-      iVar5 = FUN_006eb230(PTR_00807598,pSVar7->field_01ED,DAT_00807410,DAT_00807414,DAT_00807418,
-                           DAT_0080741c);
+                ((STFishC *)pSVar7,(short *)&local_10,(undefined2 *)&local_c,(undefined2 *)&local_8);
+      iVar5 = Library::Ourlib::ST3DSPR::SprInRect
+                        (g_sT3DSMAPContext_00807598,pSVar7->field_01ED,DAT_00807410,DAT_00807414,
+                         DAT_00807418,DAT_0080741c);
       if (iVar5 != 1) {
         thunk_FUN_004a8e00(local_10,local_c,local_8);
         thunk_FUN_004a8f20(1);

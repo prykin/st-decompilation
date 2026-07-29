@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STMethodOwnerApplier] Structural method owner recovered as STLightC.
    Evidence: this_call_owners=[STLightC]; agreed_this_calls=1; incoming_this_accesses=4;
@@ -7,35 +9,34 @@
 void __thiscall STLightC::sub_0061F530(STLightC *this)
 
 {
-  DArrayTy *pDVar1;
-  void *pvVar2;
-  uint uVar3;
-  bool bVar4;
+  STLightC_field_00A3DArray *pSVar1;
+  STLightC_field_00A3Element *element_00a3;
+  uint uVar2;
+  bool bVar3;
 
-  pDVar1 = this->field_00A3;
-  if (pDVar1 != (DArrayTy *)0x0) {
-    uVar3 = 0;
-    if (0 < (int)pDVar1->count) {
-      bVar4 = pDVar1->count != 0;
+  pSVar1 = this->field_00A3;
+  if (pSVar1 != (STLightC_field_00A3DArray *)0x0) {
+    uVar2 = 0;
+    if (0 < (int)pSVar1->count) {
+      bVar3 = pSVar1->count != 0;
       do {
-        if (bVar4) {
-          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar1, uVar3) (runtime stride) */
-          pvVar2 = (void *)(pDVar1->elementSize * uVar3 + (int)pDVar1->data);
+        if (bVar3) {
+          element_00a3 = DArrayAt<STLightC_field_00A3Element>(pSVar1, uVar2);
         }
         else {
-          pvVar2 = (void *)0x0;
+          element_00a3 = (STLightC_field_00A3Element *)0x0;
         }
-        if (-1 < (int)*(uint *)((int)pvVar2 + 0x26)) {
-          FUN_006e8ba0(PTR_00807598,*(uint *)((int)pvVar2 + 0x26));
-          *(undefined4 *)((int)pvVar2 + 0x26) = 0xffffffff;
+        if (-1 < (int)element_00a3->spriteHandle) {
+          Library::Ourlib::ST3DSMAP::SprClose(g_sT3DSMAPContext_00807598,element_00a3->spriteHandle);
+          element_00a3->spriteHandle = 0xffffffff;
         }
-        pDVar1 = this->field_00A3;
-        uVar3 = uVar3 + 1;
-        bVar4 = uVar3 < pDVar1->count;
-      } while ((int)uVar3 < (int)pDVar1->count);
+        pSVar1 = this->field_00A3;
+        uVar2 = uVar2 + 1;
+        bVar3 = uVar2 < pSVar1->count;
+      } while ((int)uVar2 < (int)pSVar1->count);
     }
-    DArrayDestroy(this->field_00A3);
-    this->field_00A3 = (DArrayTy *)0x0;
+    DArrayDestroy((DArrayTy *)this->field_00A3);
+    this->field_00A3 = (STLightC_field_00A3DArray *)0x0;
   }
   return;
 }

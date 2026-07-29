@@ -29,20 +29,21 @@ void __cdecl LandInit(short *param_1)
   if (iVar4 == 0) {
     pAVar5 = (AnonShape_006DBCA0_EF06575F *)FUN_006b04d0(0x4f2);
     if (pAVar5 == (AnonShape_006DBCA0_EF06575F *)0x0) {
-      PTR_0080760c = (AnonShape_GLOBAL_0080760C_46D7AF7A *)0x0;
+      g_sT3DSMAPContext_0080760C = (ST3DSMAPContext *)0x0;
     }
     else {
-      PTR_0080760c = (AnonShape_GLOBAL_0080760C_46D7AF7A *)FUN_006dbca0(pAVar5);
+      g_sT3DSMAPContext_0080760C = (ST3DSMAPContext *)FUN_006dbca0(pAVar5);
     }
-    if (PTR_0080760c == (AnonShape_GLOBAL_0080760C_46D7AF7A *)0x0) {
+    if (g_sT3DSMAPContext_0080760C == (ST3DSMAPContext *)0x0) {
       RaiseInternalException
                 (-2,g_overwriteContext_007ED77C,"E:\\__titans\\tinittxt.cpp",0x160);
     }
-    FUN_006dc050((AnonShape_GLOBAL_00807598_0C6808FB *)PTR_0080760c,g_dDXContext_0080759C,0,0,
-                 (uint)*(byte *)(param_1 + 2) << 1,(uint)*(byte *)(param_1 + 2) << 1,0,0xc0240000,0,
-                 0x40240000,0,0xc0240000,0,0x40240000,0x4024000000000000,0x4023ee97865e3540,0);
-    *(undefined4 *)&PTR_0080760c->field_0x128 = 0;
-    FUN_006dd610(PTR_0080760c,4,0,0x40240000,0,0x40240000);
+    ST3DSMAPContext::sub_006DC050
+              (g_sT3DSMAPContext_0080760C,g_dDXContext_0080759C,0,0,
+               (uint)*(byte *)(param_1 + 2) << 1,(uint)*(byte *)(param_1 + 2) << 1,0,0xc0240000,0,
+               0x40240000,0,0xc0240000,0,0x40240000,0x4024000000000000,0x4023ee97865e3540,0);
+    *(undefined4 *)&g_sT3DSMAPContext_0080760C->field_0x128 = 0;
+    ST3DSMAPContext::sub_006DD610(g_sT3DSMAPContext_0080760C,4,0,0x40240000,0,0x40240000);
     pDVar6 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0x14,8,0x14);
     *(DArrayTy **)((int)param_1 + 0x44d) = pDVar6;
     pDVar6 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0x14,0xc,0x14);

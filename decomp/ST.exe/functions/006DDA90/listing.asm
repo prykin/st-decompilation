@@ -1,4 +1,4 @@
-FUN_006dda90:
+ST3DSMAPContext::sub_006DDA90:
 006DDA90  55                        PUSH EBP
 006DDA91  8B EC                     MOV EBP,ESP
 006DDA93  D9 45 08                  FLD float ptr [EBP + 0x8]

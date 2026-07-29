@@ -14,8 +14,7 @@ void FUN_004353b0(uint param_1,uint param_2,uint param_3)
   if (((g_playerRuntime[uVar2].field324_0x203 == 1) &&
       (g_playerRuntime[uVar2].tempSlots[1][0].objectType == 0x19a)) &&
      (objPtr = (char)param_1, g_playerRuntime[uVar2].tempSlots[1][0].playerId == (int)objPtr)) {
-    DArrayGetElement(g_playerRuntime[uVar2].tempSlots[1][0].objectIds,0,(void *)((int)&param_1 + 2))
-    ;
+    DArrayGetElement(g_playerRuntime[uVar2].tempSlots[1][0].objectIds,0,(void *)((int)&param_1 + 2));
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     if (param_1._2_2_ == (ushort)param_2) {
       /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */

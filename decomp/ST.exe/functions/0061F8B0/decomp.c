@@ -19,9 +19,11 @@ void __thiscall FUN_0061f8b0(void *this,int param_1,int param_2,uint param_3)
 
   local_8 = g_playSystem_00802A38->field_00E4;
   if ((((DAT_0080874d == param_3) && (*(uint *)((int)this + 0xb5) <= local_8)) &&
-      (((param_1 + 1 < PTR_00807598->field_0048 ||
-        (((PTR_00807598->field_0058 < param_1 + -1 || (param_2 + 1 < PTR_00807598->field_0044)) ||
-         (PTR_00807598->field_0054 < param_2 + -1)))) || (iVar1 = FUN_006ddbd0(), iVar1 == 0)))) &&
+      (((param_1 + 1 < g_sT3DSMAPContext_00807598->field_0048 ||
+        (((g_sT3DSMAPContext_00807598->field_0058 < param_1 + -1 ||
+          (param_2 + 1 < g_sT3DSMAPContext_00807598->field_0044)) ||
+         (g_sT3DSMAPContext_00807598->field_0054 < param_2 + -1)))) ||
+       (iVar1 = FUN_006ddbd0(), iVar1 == 0)))) &&
      (((uVar2 = thunk_FUN_0061fa40(this,local_8,param_1,param_2), (int)uVar2 < 0 &&
        (uVar2 = thunk_FUN_0061fb70(this,local_8,param_1,param_2,param_3), -1 < (int)uVar2)) ||
       (uVar2 == 2)))) {

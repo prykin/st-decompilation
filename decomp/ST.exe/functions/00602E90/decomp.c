@@ -39,18 +39,20 @@ undefined4 * __thiscall STDestC::sub_00602E90(STDestC *this)
                        (DAT_00806774,CASE_1D,text,0xffffffff,0,1,0,(undefined4 *)0x0);
     if (puVar3 != (ushort *)0x0) {
       if (pSVar1->field_0241 == 0) {
-        local_8 = FUN_006e9000((void *)pSVar1->field_0211,**(undefined4 **)((int)puVar3 + 0x21),0x5a
-                               ,0x45,(float)pSVar1->field_037B * _DAT_007904f8 * _DAT_007904f0,
-                               (float)pSVar1->field_037F * _DAT_007904f8 * _DAT_007904f0,
-                               (float)pSVar1->field_0383 * _DAT_007904f8 * _DAT_007904f0 +
-                               _DAT_007904fc,0);
+        local_8 = ST3DSMAPContext::sub_006E9000
+                            (pSVar1->field_0211,**(undefined4 **)((int)puVar3 + 0x21),0x5a,0x45,
+                             (float)pSVar1->field_037B * _DAT_007904f8 * _DAT_007904f0,
+                             (float)pSVar1->field_037F * _DAT_007904f8 * _DAT_007904f0,
+                             (float)pSVar1->field_0383 * _DAT_007904f8 * _DAT_007904f0 +
+                             _DAT_007904fc,0);
       }
       if (pSVar1->field_0241 == 1) {
-        local_8 = FUN_006e9000((void *)pSVar1->field_0211,**(undefined4 **)((int)puVar3 + 0x21),0x78
-                               ,0x56,(float)pSVar1->field_037B * _DAT_007904f8 * _DAT_007904f0,
-                               (float)pSVar1->field_037F * _DAT_007904f8 * _DAT_007904f0,
-                               (float)pSVar1->field_0383 * _DAT_007904f8 * _DAT_007904f0 +
-                               _DAT_007904fc,0);
+        local_8 = ST3DSMAPContext::sub_006E9000
+                            (pSVar1->field_0211,**(undefined4 **)((int)puVar3 + 0x21),0x78,0x56,
+                             (float)pSVar1->field_037B * _DAT_007904f8 * _DAT_007904f0,
+                             (float)pSVar1->field_037F * _DAT_007904f8 * _DAT_007904f0,
+                             (float)pSVar1->field_0383 * _DAT_007904f8 * _DAT_007904f0 +
+                             _DAT_007904fc,0);
       }
     }
     g_currentExceptionFrame = local_50.previous;

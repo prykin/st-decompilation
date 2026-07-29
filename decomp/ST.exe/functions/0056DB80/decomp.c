@@ -12,7 +12,7 @@ void __thiscall STAppC::StartGame(STAppC *this)
   STAppC_field_1180State SVar1;
   undefined4 uVar2;
   code *pcVar3;
-  AnonShape_GLOBAL_00807598_0C6808FB *pAVar4;
+  ST3DSMAPContext *pSVar4;
   InternalExceptionFrame *pIVar5;
   uint *puVar6;
   ushort *puVar7;
@@ -297,19 +297,20 @@ void __thiscall STAppC::StartGame(STAppC *this)
     local_8 = (STAppC_field_1180State *)&pSVar12->field_1134;
     cMf32::RecGet(g_cMf32_00806754,0xc,PTR_s_RND_INIT_0079b05c,(int *)&local_8,0);
     CreateGameSystem();
-    FUN_006e8640(PTR_00807598,
-                 *(char **)(s_FrmPanelTy__GetMessage_007c2ae0 + (uint)DAT_0080733b * 0x18 + 0x10),
-                 *(char **)(s_FrmPanelTy__GetMessage_007c2ae0 + (uint)DAT_0080733b * 0x18 + 4));
-    FUN_006dda90(PTR_00807598,0.7,0.95);
-    FUN_006ddae0(PTR_00807598,0x10,4,4,DAT_008032c8);
+    ST3DSMAPContext::sub_006E8640
+              (g_sT3DSMAPContext_00807598,
+               *(char **)(s_FrmPanelTy__GetMessage_007c2ae0 + (uint)DAT_0080733b * 0x18 + 0x10),
+               *(char **)(s_FrmPanelTy__GetMessage_007c2ae0 + (uint)DAT_0080733b * 0x18 + 4));
+    ST3DSMAPContext::sub_006DDA90(g_sT3DSMAPContext_00807598,0.7,0.95);
+    ST3DSMAPContext::sub_006DDAE0(g_sT3DSMAPContext_00807598,0x10,4,4,DAT_008032c8);
     if (DAT_00807328 == 0) {
-      FUN_006ddbb0(PTR_00807598);
+      ST3DSMAPContext::sub_006DDBB0(g_sT3DSMAPContext_00807598);
     }
-    pAVar4 = PTR_00807598;
+    pSVar4 = g_sT3DSMAPContext_00807598;
     uVar2 = DAT_008032c0;
-    PTR_00807598->field_0278 = 0x10;
-    *(undefined4 *)&pAVar4->field_0x27c = uVar2;
-    FUN_006e8630(PTR_00807598,DAT_0080732c);
+    g_sT3DSMAPContext_00807598->field_0278 = 0x10;
+    *(undefined4 *)&pSVar4->field_0x27c = uVar2;
+    ST3DSMAPContext::sub_006E8630(g_sT3DSMAPContext_00807598,DAT_0080732c);
     thunk_FUN_005782d0();
     CreatePlaySystem();
     cMf32::delete(g_cMf32_00806754);

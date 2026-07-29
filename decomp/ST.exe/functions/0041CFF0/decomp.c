@@ -18,12 +18,13 @@ void __thiscall FUN_0041cff0(void *this,int param_1)
   iVar1 = (**(code **)(*(int *)this + 8))();
   if ((iVar1 == 1) && (*(uint *)((int)this + 0x24) == (uint)DAT_0080874d)) {
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    FUN_006e6710(PTR_00807598,
-                 (float)(int)*(short *)((int)this + 0x41) * _DAT_007904f8 * _DAT_007904f0,
-                 (float)(int)*(short *)((int)this + 0x43) * _DAT_007904f8 * _DAT_007904f0,
-                 (uint)((float)*(int *)((int)this + 0x109) * _DAT_007904f8 + _DAT_007904f4),0x10,
-                 CONCAT22(CONCAT11(1,(char)((uint)*(undefined4 *)((int)this + 0x18) >> 0x10)),
-                          *(undefined2 *)((int)this + 0x18)));
+    ST3DSMAPContext::sub_006E6710
+              (g_sT3DSMAPContext_00807598,
+               (float)(int)*(short *)((int)this + 0x41) * _DAT_007904f8 * _DAT_007904f0,
+               (float)(int)*(short *)((int)this + 0x43) * _DAT_007904f8 * _DAT_007904f0,
+               (uint)((float)*(int *)((int)this + 0x109) * _DAT_007904f8 + _DAT_007904f4),0x10,
+               CONCAT22(CONCAT11(1,(char)((uint)*(undefined4 *)((int)this + 0x18) >> 0x10)),
+                        *(undefined2 *)((int)this + 0x18)));
   }
   return;
 }

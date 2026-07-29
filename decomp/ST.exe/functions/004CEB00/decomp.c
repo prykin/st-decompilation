@@ -23,15 +23,16 @@ undefined4 __thiscall TLOBaseTy::sub_004CEB00(TLOBaseTy *this,int param_1)
   TLOBaseTy_field_05ACState TVar2;
   short sVar3;
   int iVar4;
+  int uVar7;
   int iVar5;
   short sVar6;
-  uint uVar7;
   uint uVar8;
-  short sVar9;
-  TLOBaseTyVTable *pTVar10;
-  char *pcVar11;
-  byte **ppbVar12;
-  char *pcVar13;
+  uint uVar9;
+  short sVar10;
+  TLOBaseTyVTable *pTVar11;
+  char *pcVar12;
+  byte **ppbVar13;
+  char *pcVar14;
   undefined4 arg_2;
   byte *local_6c [5];
   byte *local_58;
@@ -103,15 +104,15 @@ switchD_004ceb68_caseD_32:
     local_14 = local_14 + local_18;
     do {
       if ((int)local_18 < local_14) {
-        sVar9 = *(short *)&this->field_05B8 + 1;
+        sVar10 = *(short *)&this->field_05B8 + 1;
         local_8 = local_18;
         do {
           sVar3 = (short)local_8;
           if ((((sVar3 < 0) || (g_worldGrid.sizeX <= sVar3)) || (sVar6 = (short)local_c, sVar6 < 0))
-             || (((g_worldGrid.sizeY <= sVar6 || (sVar9 < 0)) ||
-                 ((g_worldGrid.sizeZ <= sVar9 ||
+             || (((g_worldGrid.sizeY <= sVar6 || (sVar10 < 0)) ||
+                 ((g_worldGrid.sizeZ <= sVar10 ||
                   (g_worldGrid.cells
-                   [(int)sVar9 * (int)g_worldGrid.planeStride + (int)g_worldGrid.sizeX * (int)sVar6
+                   [(int)sVar10 * (int)g_worldGrid.planeStride + (int)g_worldGrid.sizeX * (int)sVar6
                     + (int)sVar3].objects[0] == (STWorldObject *)0x0)))))) {
             this->field_04E0[0] = local_8;
             iVar5 = this->field_05B8;
@@ -173,14 +174,14 @@ switchD_004ceb68_caseD_32:
     }
     thunk_FUN_004d0a80(DAT_00800bcc,this->field_04E0[0],this->field_04E0[1],this->field_04E0[2]);
     iVar5 = 0x11;
-    ppbVar12 = local_6c;
+    ppbVar13 = local_6c;
     while( true ) {
       if (iVar5 == 0) break;
       iVar5 = iVar5 + -1;
-      *ppbVar12 = (byte *)0x0;
-      ppbVar12 = ppbVar12 + 1;
+      *ppbVar13 = (byte *)0x0;
+      ppbVar13 = ppbVar13 + 1;
     }
-    *(undefined1 *)ppbVar12 = 0;
+    *(undefined1 *)ppbVar13 = 0;
     this->field_04DC = 0;
     thunk_FUN_004ce9e0(this,(int *)&local_8,(int *)&local_c,(int *)local_20);
     local_50 = (undefined2)this->field_04E0[0];
@@ -199,7 +200,7 @@ switchD_004ceb68_caseD_32:
     if (-1 < (int)this->field_0371) {
       local_42 = (undefined2)this->field_0371;
     }
-    uVar7 = 0xffffffff;
+    uVar8 = 0xffffffff;
     if (this->field_042C == 0) {
       local_3c = 0xffff;
       local_3e = 0xffff;
@@ -214,27 +215,27 @@ switchD_004ceb68_caseD_32:
     if ((byte *)this->field_0379 != (byte *)0xff) {
       local_58 = (byte *)this->field_0379;
     }
-    pcVar11 = (char *)&this->field_037D;
+    pcVar12 = (char *)&this->field_037D;
     do {
-      pcVar13 = pcVar11;
-      if (uVar7 == 0) break;
-      uVar7 = uVar7 - 1;
-      pcVar13 = pcVar11 + 1;
-      cVar1 = *pcVar11;
-      pcVar11 = pcVar13;
+      pcVar14 = pcVar12;
+      if (uVar8 == 0) break;
+      uVar8 = uVar8 - 1;
+      pcVar14 = pcVar12 + 1;
+      cVar1 = *pcVar12;
+      pcVar12 = pcVar14;
     } while (cVar1 != '\0');
-    uVar7 = ~uVar7;
-    pcVar11 = pcVar13 + -uVar7;
-    pcVar13 = local_3a;
-    for (uVar8 = uVar7 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
-      *(undefined4 *)pcVar13 = *(undefined4 *)pcVar11;
-      pcVar11 = pcVar11 + 4;
-      pcVar13 = pcVar13 + 4;
+    uVar8 = ~uVar8;
+    pcVar12 = pcVar14 + -uVar8;
+    pcVar14 = local_3a;
+    for (uVar9 = uVar8 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
+      *(undefined4 *)pcVar14 = *(undefined4 *)pcVar12;
+      pcVar12 = pcVar12 + 4;
+      pcVar14 = pcVar14 + 4;
     }
-    for (uVar7 = uVar7 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *pcVar13 = *pcVar11;
-      pcVar11 = pcVar11 + 1;
-      pcVar13 = pcVar13 + 1;
+    for (uVar8 = uVar8 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
+      *pcVar14 = *pcVar12;
+      pcVar12 = pcVar12 + 1;
+      pcVar14 = pcVar14 + 1;
     }
     local_2b = this->field_0375;
     STPlaySystemC::CreateGameObject(g_playSystem_00802A38,0x14,0,&local_24,local_6c,0);
@@ -245,21 +246,21 @@ switchD_004ceb68_caseD_32:
     goto cf_common_exit_004CF029;
     thunk_FUN_0052af50(0,(float)this->field_01F9,(float)this->field_01FD);
     uVar7 = GetPlayerRaceId(*(char *)&this->field_0024);
-    uVar7 = uVar7 & 0xff;
-    if (uVar7 == 1) {
-      pTVar10 = this->vtable;
+    uVar8 = uVar7 & 0xff;
+    if (uVar8 == 1) {
+      pTVar11 = this->vtable;
       arg_2 = 0x65;
     }
     else {
-      if (uVar7 == 2) {
+      if (uVar8 == 2) {
         this->vfunc_90(6,0x66);
         goto cf_common_exit_004CF029;
       }
-      if (uVar7 != 3) goto cf_common_exit_004CF029;
-      pTVar10 = this->vtable;
+      if (uVar8 != 3) goto cf_common_exit_004CF029;
+      pTVar11 = this->vtable;
       arg_2 = 0x67;
     }
-    (*pTVar10->vfunc_90)(this,6,arg_2);
+    (*pTVar11->vfunc_90)(this,6,arg_2);
 cf_common_exit_004CF029:
     this->field_04D0 = CASE_4;
     this->field_03D0 = 5;

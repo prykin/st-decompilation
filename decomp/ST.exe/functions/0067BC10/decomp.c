@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 int __cdecl FUN_0067bc10(DArrayTy *param_1)
 

@@ -64,7 +64,8 @@ STT3DSprC::RestoreSpr(STT3DSprC *this,int *param_1,AnonShape_004AD790_77673787 *
   local_24->field_0038 = param_1[6];
   sub_004AD3C0(local_24,(float)local_24->field_0024,(float)local_24->field_0028,
                (float)local_24->field_002C);
-  FUN_006e9830(this_00->field_003C,this_00->field_0018,this_00->field_0004,this_00->field_0008);
+  Library::Ourlib::ST3DSMAP::SprSetHotSpot
+            (this_00->field_003C,this_00->field_0018,this_00->field_0004,this_00->field_0008);
   if (param_1[1] != 0) {
     sub_004ACE30(this_00,param_1[1],param_1[2]);
   }

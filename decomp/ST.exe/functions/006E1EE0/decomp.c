@@ -6,8 +6,8 @@
    expected_stack=16; receiver_family_members=21; adopt_untyped_existing_thiscall */
 
 bool __thiscall
-SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_006e1ee0
-          (AnonReceiver_004248D0 *this,AnonShape_006E1EE0_698AE49A *param_1,undefined4 *param_2,
+SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006E1EE0::FUN_006e1ee0
+          (AnonReceiver_006E1EE0 *this,AnonShape_006E1EE0_698AE49A *param_1,undefined4 *param_2,
           int param_3,int *param_4)
 
 {
@@ -89,15 +89,18 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_006e1ee0
           (('\x02' << ((byte)(iVar10 << 1) & 0x1f) & *(byte *)(local_48 + local_50)) != 0)))) {
         iVar2 = (param_2 + (uint)pbVar12[1] * 4)[3];
         if (iVar2 == -1) {
-          iVar2 = FUN_006e25d0(this,param_2 + (uint)pbVar12[1] * 4);
+          iVar2 = ST3DSMAPContext::sub_006E25D0
+                            ((ST3DSMAPContext *)this,param_2 + (uint)pbVar12[1] * 4);
         }
         iVar3 = (param_2 + (uint)pbVar12[2] * 4)[3];
         if (iVar3 == -1) {
-          iVar3 = FUN_006e25d0(this,param_2 + (uint)pbVar12[2] * 4);
+          iVar3 = ST3DSMAPContext::sub_006E25D0
+                            ((ST3DSMAPContext *)this,param_2 + (uint)pbVar12[2] * 4);
         }
         iVar4 = (param_2 + (uint)pbVar12[3] * 4)[3];
         if (iVar4 == -1) {
-          iVar4 = FUN_006e25d0(this,param_2 + (uint)pbVar12[3] * 4);
+          iVar4 = ST3DSMAPContext::sub_006E25D0
+                            ((ST3DSMAPContext *)this,param_2 + (uint)pbVar12[3] * 4);
         }
         local_2c = param_2[(uint)pbVar12[1] * 4 + 1];
         piVar11 = param_2 + (uint)pbVar12[2] * 4;

@@ -78,13 +78,13 @@ void __thiscall VisibleClassTy::sub_00558140(VisibleClassTy *this)
     ppvVar3 = ppvVar3 + 1;
     iVar1 = iVar1 + -1;
   } while (iVar1 != 0);
-  if (this->field_00F4 != (DArrayTy *)0x0) {
-    DArrayDestroy(this->field_00F4);
-    this->field_00F4 = (DArrayTy *)0x0;
+  if (this->field_00F4 != (VisibleClassTy_field_00F4DArray *)0x0) {
+    DArrayDestroy((DArrayTy *)this->field_00F4);
+    this->field_00F4 = (VisibleClassTy_field_00F4DArray *)0x0;
   }
-  if (this->field_0110 != (DArrayTy *)0x0) {
-    DArrayDestroy(this->field_0110);
-    this->field_0110 = (DArrayTy *)0x0;
+  if (this->field_0110 != (VisibleClassTy_field_0110DArray *)0x0) {
+    DArrayDestroy((DArrayTy *)this->field_0110);
+    this->field_0110 = (VisibleClassTy_field_0110DArray *)0x0;
   }
   return;
 }

@@ -22,7 +22,7 @@ void __thiscall AiTactClassTy::GiveObjByFltType(AiTactClassTy *this,uint *param_
   STGameObjC *objPtr;
   AiFltClassTy *pAVar9;
   int iVar10;
-  DArrayTy *pDVar11;
+  AiTactClassTy_field_00A5DArray *pAVar11;
   uint uVar12;
   uint uVar13;
   InternalExceptionFrame local_5c;
@@ -82,15 +82,17 @@ joined_r0x0068f3e2:
       } while (objPtr == (STGameObjC *)0x0);
       iVar7 = (*objPtr->vtable->vfunc_2C)();
       if ((iVar7 != 0x78) || ((int)local_c < 0)) break;
-      pDVar11 = local_8->field_00A5;
-      if ((pDVar11 == (DArrayTy *)0x0) || ((int)pDVar11->count <= (int)local_c)) {
+      pAVar11 = local_8->field_00A5;
+      if ((pAVar11 == (AiTactClassTy_field_00A5DArray *)0x0) ||
+         ((int)pAVar11->count <= (int)local_c)) {
         pAVar9 = (AiFltClassTy *)0x0;
       }
       else {
         pAVar9 = pARam00000004;
-        if (local_c < pDVar11->count) {
+        if (local_c < pAVar11->count) {
           /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
-          pAVar9 = *(AiFltClassTy **)((int)pDVar11->data + pDVar11->elementSize * local_c + 4);
+          pAVar9 = *(AiFltClassTy **)
+                    ((int)&pAVar11->data->field_0004 + pAVar11->elementSize * local_c);
         }
       }
       uVar1 = pAVar9->field_007D;
@@ -142,21 +144,22 @@ joined_r0x0068f3e2:
       if (iVar7 == iVar10) goto LAB_0068f509;
     }
   } while ((int)uVar13 < 0);
-  pDVar11 = local_8->field_00A5;
+  pAVar11 = local_8->field_00A5;
   uVar12 = uVar13;
   goto LAB_0068f516;
 LAB_0068f509:
   if (-1 < (int)uVar12) {
-    pDVar11 = local_8->field_00A5;
+    pAVar11 = local_8->field_00A5;
 LAB_0068f516:
-    if ((pDVar11 == (DArrayTy *)0x0) || ((int)pDVar11->count <= (int)uVar12)) {
+    if ((pAVar11 == (AiTactClassTy_field_00A5DArray *)0x0) || ((int)pAVar11->count <= (int)uVar12))
+    {
       pAVar9 = (AiFltClassTy *)0x0;
     }
     else {
       pAVar9 = pARam00000004;
-      if (uVar12 < pDVar11->count) {
+      if (uVar12 < pAVar11->count) {
         /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
-        pAVar9 = *(AiFltClassTy **)((int)pDVar11->data + pDVar11->elementSize * uVar12 + 4);
+        pAVar9 = *(AiFltClassTy **)((int)&pAVar11->data->field_0004 + pAVar11->elementSize * uVar12);
       }
     }
     AiFltClassTy::_AddObjFlt(pAVar9,(uint)objPtr,0);

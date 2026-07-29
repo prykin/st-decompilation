@@ -41,16 +41,17 @@ void __thiscall STJumpMineC::sub_00619A20(STJumpMineC *this)
       if (this->field_00AF <= iVar2) {
         this->field_00AB = 0;
       }
-      FUN_006ea960(PTR_00807598,this->field_0097,
-                   (float)this->field_009F * _DAT_007904f8 * _DAT_007904f0,
-                   (float)this->field_00A3 * _DAT_007904f8 * _DAT_007904f0,
-                   (float)this->field_00A7 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
-      FUN_006ea270(PTR_00807598,this->field_0097,0,this->field_00AB);
-      FUN_006e96d0(PTR_00807598,this->field_0097);
+      Library::Ourlib::ST3DSMAP::SprMove
+                (g_sT3DSMAPContext_00807598,this->field_0097,
+                 (float)this->field_009F * _DAT_007904f8 * _DAT_007904f0,
+                 (float)this->field_00A3 * _DAT_007904f8 * _DAT_007904f0,
+                 (float)this->field_00A7 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
+      ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,this->field_0097,0,this->field_00AB);
+      Library::Ourlib::ST3DSMAP::FUN_006e96d0(g_sT3DSMAPContext_00807598,this->field_0097);
       if (this->field_00C4 != '\0') {
         return;
       }
-      FUN_006eaaa0(PTR_00807598,this->field_0097,0);
+      Library::Ourlib::ST3DSMAP::SprShow(g_sT3DSMAPContext_00807598,this->field_0097,0);
       this->field_00C4 = 1;
       return;
     }
@@ -59,7 +60,7 @@ void __thiscall STJumpMineC::sub_00619A20(STJumpMineC *this)
     }
     uVar3 = this->field_0097;
   }
-  FUN_006eab60(PTR_00807598,uVar3);
+  Library::Ourlib::ST3DSMAP::SprHide(g_sT3DSMAPContext_00807598,uVar3);
   this->field_00C4 = 0;
   return;
 }

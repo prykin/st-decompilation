@@ -129,8 +129,7 @@ FUN_0068cec0(LPCSTR lpFileName,AnonShape_00683C70_22193481 *param_2,int *param_3
       GetFullPathNameA(lpFileName,0x104,&DAT_0084868c,(LPSTR *)0x0);
       Library::MSVCRT::FUN_0072e730
                 (&DAT_0084868c,&DAT_008478a8,&DAT_00848790,&DAT_0084858c,(byte *)&DAT_00811990);
-      Library::MSVCRT::__makepath(&DAT_0084868c,&DAT_008478a8,&DAT_00848790,(char *)0x0,(char *)0x0)
-      ;
+      Library::MSVCRT::__makepath(&DAT_0084868c,&DAT_008478a8,&DAT_00848790,(char *)0x0,(char *)0x0);
       iStackY_48 = 0x68d160;
       iVar3 = thunk_FUN_0067f030("_curr_path",&DAT_0084868c,(uint *)0x0);
       if (iVar3 == 0) {

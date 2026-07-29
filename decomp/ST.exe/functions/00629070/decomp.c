@@ -155,14 +155,16 @@ LAB_00629242:
   }
   local_1c->field_00CA = puVar10;
   piVar1 = &local_1c->field_00C6;
-  FUN_006e8660(PTR_00807598,piVar1,2,0,*(uint *)((int)puVar10 + 9),*(uint *)((int)puVar10 + 0xd),
-               local_10,local_c,0);
+  ST3DSMAPContext::sub_006E8660
+            (g_sT3DSMAPContext_00807598,piVar1,2,0,*(uint *)((int)puVar10 + 9),
+             *(uint *)((int)puVar10 + 0xd),local_10,local_c,0);
   if (DAT_00807326 != '\0') {
-    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_006e9520
-              ((AnonReceiver_004248D0 *)PTR_00807598,*piVar1,0,0x4049f8,(uint)pSVar8);
+    Library::Ourlib::ST3DSMAP::SprSetShadow
+              (g_sT3DSMAPContext_00807598,*piVar1,0,0x4049f8,(uint)pSVar8);
   }
-  FUN_006e98e0(PTR_00807598,*piVar1,0,*(int *)puVar10,*(int *)((int)puVar10 + 0x21),1);
-  FUN_006ea270(PTR_00807598,*piVar1,0,0);
+  ST3DSMAPContext::sub_006E98E0
+            (g_sT3DSMAPContext_00807598,*piVar1,0,*(int *)puVar10,*(int *)((int)puVar10 + 0x21),1);
+  ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,*piVar1,0,0);
   uVar3 = *piVar1;
   local_20 = (float)pSVar8->field_0046 * _DAT_007904f8 * _DAT_007904f0;
   pSVar8->field_006A = local_20;
@@ -170,14 +172,16 @@ LAB_00629242:
   pSVar8->field_006E = local_14;
   fVar6 = (float)pSVar8->field_004E * _DAT_007904f8 * _DAT_007904f0;
   pSVar8->field_0072 = fVar6;
-  FUN_006ea960(PTR_00807598,uVar3,local_20,local_14,fVar6 + _DAT_007904fc);
-  FUN_006eaaa0(PTR_00807598,*piVar1,0);
+  Library::Ourlib::ST3DSMAP::SprMove
+            (g_sT3DSMAPContext_00807598,uVar3,local_20,local_14,fVar6 + _DAT_007904fc);
+  Library::Ourlib::ST3DSMAP::SprShow(g_sT3DSMAPContext_00807598,*piVar1,0);
   pSVar8->field_00C1 = 1;
   if (local_24 == 4) {
-    FUN_006ea4e0(PTR_00807598,*piVar1,1,0xffffffff,0xffffffff);
+    Library::Ourlib::ST3DSMAP::SprSetLevBeforeLand
+              (g_sT3DSMAPContext_00807598,*piVar1,1,0xffffffff,0xffffffff);
     if (pSVar8->field_0018 != 0) {
-      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006EA050::sub_006EA460
-                ((AnonReceiver_006EA050 *)PTR_00807598,*piVar1,pSVar8->field_0018);
+      Library::Ourlib::ST3DSMAP::SprSetLevBefore
+                (g_sT3DSMAPContext_00807598,*piVar1,pSVar8->field_0018);
     }
   }
   pVVar7 = g_visibleClass_00802A88;
@@ -238,14 +242,14 @@ LAB_00629242:
     }
     if (bVar14) {
       if (pSVar8->field_00C1 == '\0') {
-        FUN_006eaaa0(PTR_00807598,pSVar8->field_00C6,0);
+        Library::Ourlib::ST3DSMAP::SprShow(g_sT3DSMAPContext_00807598,pSVar8->field_00C6,0);
         pSVar8->field_00C1 = 1;
         g_currentExceptionFrame = local_70.previous;
         return 0;
       }
     }
     else if (pSVar8->field_00C1 == '\x01') {
-      FUN_006eab60(PTR_00807598,pSVar8->field_00C6);
+      Library::Ourlib::ST3DSMAP::SprHide(g_sT3DSMAPContext_00807598,pSVar8->field_00C6);
       pSVar8->field_00C1 = 0;
     }
   }

@@ -19,8 +19,7 @@ void __cdecl FUN_00716db0(int *param_1)
         iVar2 = 0;
         if (0 < *piVar1) {
           do {
-            cMf32::RecMemFree((cMf32 *)piVar1[1],(uint *)(*(int *)((int)piVar1 + 0x21) + iVar2 * 4))
-            ;
+            cMf32::RecMemFree((cMf32 *)piVar1[1],(uint *)(*(int *)((int)piVar1 + 0x21) + iVar2 * 4));
             piVar1 = (int *)*param_1;
             iVar2 = iVar2 + 1;
           } while (iVar2 < *piVar1);
@@ -37,8 +36,7 @@ void __cdecl FUN_00716db0(int *param_1)
         iVar2 = 0;
         if (0 < *piVar1) {
           do {
-            cMf32::RecMemFree((cMf32 *)piVar1[1],(uint *)(*(int *)((int)piVar1 + 0x29) + iVar2 * 4))
-            ;
+            cMf32::RecMemFree((cMf32 *)piVar1[1],(uint *)(*(int *)((int)piVar1 + 0x29) + iVar2 * 4));
             piVar1 = (int *)*param_1;
             iVar2 = iVar2 + 1;
           } while (iVar2 < *piVar1);

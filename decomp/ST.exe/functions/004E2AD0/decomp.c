@@ -10,9 +10,10 @@ undefined4 __thiscall TLOBaseTy::sub_004E2AD0(TLOBaseTy *this,int param_1,uint p
 
 {
   byte *pbVar1;
-  uint uVar2;
-  TLOBaseTyVTable *pTVar4;
-  undefined4 uVar6;
+  int uVar2;
+  uint uVar3;
+  TLOBaseTyVTable *pTVar5;
+  undefined4 uVar7;
   undefined4 local_24 [4];
   undefined4 local_14;
   undefined2 local_10;
@@ -29,21 +30,21 @@ undefined4 __thiscall TLOBaseTy::sub_004E2AD0(TLOBaseTy *this,int param_1,uint p
   if (this->field_0024 != (byte *)(uint)(byte)this->field_0010->field_112D)
   goto cf_common_exit_004E2B69;
   uVar2 = GetPlayerRaceId(*(char *)&this->field_023D);
-  uVar2 = uVar2 & 0xff;
-  if (uVar2 == 1) {
-    pTVar4 = this->vtable;
-    uVar6 = 0x20c;
+  uVar3 = uVar2 & 0xff;
+  if (uVar3 == 1) {
+    pTVar5 = this->vtable;
+    uVar7 = 0x20c;
   }
   else {
-    if (uVar2 == 2) {
+    if (uVar3 == 2) {
       this->vfunc_90(4,0x2d4);
       goto cf_common_exit_004E2B69;
     }
-    if (uVar2 != 3) goto cf_common_exit_004E2B69;
-    pTVar4 = this->vtable;
-    uVar6 = 0x38f;
+    if (uVar3 != 3) goto cf_common_exit_004E2B69;
+    pTVar5 = this->vtable;
+    uVar7 = 0x38f;
   }
-  (*pTVar4->vfunc_90)(this,4,uVar6);
+  (*pTVar5->vfunc_90)(this,4,uVar7);
 cf_common_exit_004E2B69:
   if (DAT_008117bc == (undefined4 *)0x0) {
     return 0;
@@ -54,8 +55,8 @@ cf_common_exit_004E2B69:
   local_10 = *(undefined2 *)&this->field_0024;
   local_14 = 0x5de6;
   local_c = (undefined2)param_2;
-  uVar6 = thunk_FUN_004e60d0((int)pbVar1,param_2);
-  local_a = (short)uVar6 + 1;
+  uVar7 = thunk_FUN_004e60d0((int)pbVar1,param_2);
+  local_a = (short)uVar7 + 1;
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   (**(code **)*DAT_008117bc)(local_24);
   return 0;

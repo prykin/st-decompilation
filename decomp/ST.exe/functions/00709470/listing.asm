@@ -1,4 +1,4 @@
-FUN_00709470:
+ST3DSMAPContext::sub_00709470:
 00709470  55                        PUSH EBP
 00709471  8B EC                     MOV EBP,ESP
 00709473  81 EC 10 04 00 00         SUB ESP,0x410

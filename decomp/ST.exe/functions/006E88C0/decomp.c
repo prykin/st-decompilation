@@ -1,20 +1,27 @@
 
 /* [STPrototypeApplier] Propagated parameter 9.
    Evidence: 0061DFE0 -> 006E88C0 @ 0061E082; unproven partial register write at 0061E054 | 0061E7F0
-   -> 006E88C0 @ 0061EDAF; literal 172 at 0061ED7C */
+   -> 006E88C0 @ 0061EDAF; literal 172 at 0061ED7C
+
+   [STMethodOwnerApplier] Structural method owner recovered as ST3DSMAPContext.
+   Evidence: this_call_owners=[ST3DSMAPContext]; agreed_this_calls=2; incoming_this_accesses=1;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=12; direct_non_thunk_callers=2;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=2; owner_evidence_coverage=adequate */
 
 int __thiscall
-FUN_006e88c0(void *this,int *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
-            undefined4 param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8,byte param_9
-            ,undefined4 param_10,undefined4 param_11,undefined4 param_12)
+ST3DSMAPContext::sub_006E88C0
+          (ST3DSMAPContext *this,int *param_1,undefined4 param_2,undefined4 param_3,
+          undefined4 param_4,undefined4 param_5,undefined4 param_6,undefined4 param_7,
+          undefined4 param_8,byte param_9,undefined4 param_10,undefined4 param_11,
+          undefined4 param_12)
 
 {
   int iVar1;
   undefined4 *puVar2;
 
-  iVar1 = FUN_006e8660(this,param_1,0,0,0,0,0,0,0);
+  iVar1 = sub_006E8660(this,param_1,0,0,0,0,0,0,0);
   if (iVar1 == 0) {
-    iVar1 = *(int *)((int)this + 0x31c) + *param_1 * 0x114;
+    iVar1 = *(int *)&this->field_0x31c + *param_1 * 0x114;
     puVar2 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0x49);
     *(undefined4 **)(iVar1 + 0xa0) = puVar2;
     if (puVar2 == (undefined4 *)0x0) {

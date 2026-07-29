@@ -10,16 +10,19 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
   int iVar1;
   int *piVar2;
   int iVar3;
-  uint uVar4;
+  int uVar4;
+  int local_EAX_1150;
+  uint uVar5;
+  int local_EAX_1394;
   void *this_00;
-  undefined4 *puVar5;
-  short sVar6;
+  undefined4 *puVar6;
   short sVar7;
   short sVar8;
-  int *piVar9;
-  int iVar10;
-  byte **ppbVar11;
-  int iVar12;
+  short sVar9;
+  int *piVar10;
+  int iVar11;
+  byte **ppbVar12;
+  int iVar13;
   undefined4 local_c0 [2];
   undefined4 local_b8 [2];
   byte *local_b0 [5];
@@ -58,23 +61,23 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
   uint local_8;
 
   piVar2 = param_1;
-  sVar6 = 0;
+  sVar7 = 0;
   local_c = 0;
   local_8 = 0;
   iVar3 = (int)param_1 + this->field_0235 * 2;
   local_10 = 0;
-  iVar10 = *(int *)(&DAT_00792a90 + iVar3 * 4);
-  if (iVar10 == 1) {
-    iVar10 = (int)param_1 * 0x80;
+  iVar11 = *(int *)(&DAT_00792a90 + iVar3 * 4);
+  if (iVar11 == 1) {
+    iVar11 = (int)param_1 * 0x80;
     if ((&this->field_0291)[(int)param_1 * 0x20] != (AnonPointee_TLOBaseTy_0291 *)0x0) {
       if ((&DAT_00792ca0)[iVar3 * 3] == 0xb1) {
-        ppbVar11 = local_b0;
+        ppbVar12 = local_b0;
         for (iVar3 = 10; iVar3 != 0; iVar3 = iVar3 + -1) {
-          *ppbVar11 = (byte *)0x0;
-          ppbVar11 = ppbVar11 + 1;
+          *ppbVar12 = (byte *)0x0;
+          ppbVar12 = ppbVar12 + 1;
         }
-        *(undefined4 *)(&this->field_0x29d + iVar10) = 1;
-        *(undefined2 *)ppbVar11 = 0;
+        *(undefined4 *)(&this->field_0x29d + iVar11) = 1;
+        *(undefined2 *)ppbVar12 = 0;
         local_b0[1] = this->field_0024;
         local_b0[3] = (byte *)0x1;
         local_b0[0] = (byte *)0x168;
@@ -92,19 +95,19 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
           local_10 = CONCAT22(local_10._2_2_,this->field_0045);
         }
         local_9c = (short)local_c;
-        local_96 = *(undefined2 *)(&this->field_0x2a5 + iVar10);
+        local_96 = *(undefined2 *)(&this->field_0x2a5 + iVar11);
         local_9a = (short)local_8;
         local_94 = *(undefined2 *)(&this->field_02A9 + (int)param_1 * 0x20);
         local_98 = (undefined2)local_10;
-        local_92 = *(undefined2 *)(&this->field_0x2ad + iVar10);
+        local_92 = *(undefined2 *)(&this->field_0x2ad + iVar11);
         STPlaySystemC::CreateGameObject(g_playSystem_00802A38,0x168,0,0,local_b0,0);
         return 0;
       }
-      *(undefined4 *)(&this->field_0x29d + iVar10) = 1;
-      ppbVar11 = local_84;
+      *(undefined4 *)(&this->field_0x29d + iVar11) = 1;
+      ppbVar12 = local_84;
       for (iVar3 = 0x16; iVar3 != 0; iVar3 = iVar3 + -1) {
-        *ppbVar11 = (byte *)0x0;
-        ppbVar11 = ppbVar11 + 1;
+        *ppbVar12 = (byte *)0x0;
+        ppbVar12 = ppbVar12 + 1;
       }
       local_18 = *(int *)(&DAT_007932d0 + ((int)param_1 + this->field_0235 * 2) * 0x16);
       if (local_18 == 0) {
@@ -133,10 +136,10 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
           local_10 = CONCAT22(local_10._2_2_,this->field_0045);
         }
       }
-      local_64 = *(short *)(&this->field_0x2a5 + iVar10);
+      local_64 = *(short *)(&this->field_0x2a5 + iVar11);
       local_58 = 0;
       local_62 = *(short *)(&this->field_02A9 + (int)param_1 * 0x20);
-      local_60 = *(short *)(&this->field_0x2ad + iVar10);
+      local_60 = *(short *)(&this->field_0x2ad + iVar11);
       local_5e = (undefined2)this->field_0259;
       local_57 = this->field_0018;
       local_53 = this->field_0032;
@@ -146,38 +149,38 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
       local_84[0] = (byte *)0x28;
       local_14 = 0;
       iVar3 = local_18;
-      piVar9 = param_1;
+      piVar10 = param_1;
       if (0 < local_18) {
-        iVar12 = 0;
+        iVar13 = 0;
         do {
-          if (((int)piVar9 < 1) || (local_14 == *(int *)(&this->field_0x2c1 + iVar10))) {
-            iVar3 = ((int)piVar9 + this->field_0235 * 2) * 0x16;
+          if (((int)piVar10 < 1) || (local_14 == *(int *)(&this->field_0x2c1 + iVar11))) {
+            iVar3 = ((int)piVar10 + this->field_0235 * 2) * 0x16;
             if (*(int *)(&DAT_007932d0 + iVar3) != 0) {
-              puVar5 = (undefined4 *)
+              puVar6 = (undefined4 *)
                        thunk_FUN_0041dc40(local_b8,(short)*(undefined4 *)
-                                                           (&DAT_007932d4 + iVar3 + iVar12),
-                                          *(ushort *)((int)(&DAT_007932d4 + iVar3 + iVar12) + 4),
+                                                           (&DAT_007932d4 + iVar3 + iVar13),
+                                          *(ushort *)((int)(&DAT_007932d4 + iVar3 + iVar13) + 4),
                                           -(short)this->field_0259);
-              local_2c = (short)*puVar5;
-              sStack_2a = (short)((uint)*puVar5 >> 0x10);
-              local_28 = *(short *)(puVar5 + 1);
+              local_2c = (short)*puVar6;
+              sStack_2a = (short)((uint)*puVar6 >> 0x10);
+              local_28 = *(short *)(puVar6 + 1);
               local_6a = local_2c + (short)local_c;
               local_68 = sStack_2a + (short)local_8;
               local_66 = local_28 + (short)local_10;
               iVar3 = (int)param_1 + this->field_0235 * 2;
-              local_20 = *(undefined2 *)(&DAT_007932d8 + iVar12 + iVar3 * 0x16);
+              local_20 = *(undefined2 *)(&DAT_007932d8 + iVar13 + iVar3 * 0x16);
               local_24 = (STJellyManC *)
-                         (*(uint *)(&DAT_007932d4 + iVar3 * 0x16 + iVar12) & 0xffff0000);
-              puVar5 = (undefined4 *)thunk_FUN_0041dc40(local_c0,0,0,-(short)this->field_0259);
-              local_2c = (short)*puVar5;
-              sStack_2a = (short)((uint)*puVar5 >> 0x10);
-              local_64 = local_2c + *(short *)(&this->field_0x2a5 + iVar10);
+                         (*(uint *)(&DAT_007932d4 + iVar3 * 0x16 + iVar13) & 0xffff0000);
+              puVar6 = (undefined4 *)thunk_FUN_0041dc40(local_c0,0,0,-(short)this->field_0259);
+              local_2c = (short)*puVar6;
+              sStack_2a = (short)((uint)*puVar6 >> 0x10);
+              local_64 = local_2c + *(short *)(&this->field_0x2a5 + iVar11);
               local_62 = *(short *)(&this->field_02A9 + (int)piVar2 * 0x20) + sStack_2a;
-              local_60 = *(short *)(&this->field_0x2ad + iVar10) + *(short *)(puVar5 + 1);
+              local_60 = *(short *)(&this->field_0x2ad + iVar11) + *(short *)(puVar6 + 1);
             }
             iVar1 = (int)param_1 + this->field_0235 * 2;
             if ((*(int *)(&DAT_00793e28 + iVar1 * 4) == 0) ||
-               (iVar3 = local_18, piVar9 = param_1, *(int *)(&this->field_0x2c5 + iVar10) != 0)) {
+               (iVar3 = local_18, piVar10 = param_1, *(int *)(&this->field_0x2c5 + iVar11) != 0)) {
               iVar3 = (&DAT_00792ca0)[local_14 + iVar1 * 3];
               if (iVar3 == 0xab) {
                 thunk_FUN_00586240((int)local_6a,(int)local_68,(int)local_66,
@@ -208,79 +211,79 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
                 }
                 STPlaySystemC::CreateGameObject(g_playSystem_00802A38,iVar3,0,0,local_84,0);
               }
-              *(int *)(&this->field_0x2c5 + iVar10) = *(int *)(&this->field_0x2c5 + iVar10) + -1;
-              *(uint *)(&this->field_0x2c9 + iVar10) = g_playSystem_00802A38->field_00E4;
+              *(int *)(&this->field_0x2c5 + iVar11) = *(int *)(&this->field_0x2c5 + iVar11) + -1;
+              *(uint *)(&this->field_0x2c9 + iVar11) = g_playSystem_00802A38->field_00E4;
               iVar3 = local_18;
-              piVar9 = param_1;
+              piVar10 = param_1;
             }
           }
           local_14 = local_14 + 1;
-          iVar12 = iVar12 + 6;
+          iVar13 = iVar13 + 6;
         } while (local_14 < iVar3);
       }
-      if ((0 < (int)piVar9) &&
-         (iVar12 = *(int *)(&this->field_0x2c1 + iVar10) + 1,
-         *(int *)(&this->field_0x2c1 + iVar10) = iVar12, iVar3 <= iVar12)) {
-        *(undefined4 *)(&this->field_0x2c1 + iVar10) = 0;
+      if ((0 < (int)piVar10) &&
+         (iVar13 = *(int *)(&this->field_0x2c1 + iVar11) + 1,
+         *(int *)(&this->field_0x2c1 + iVar11) = iVar13, iVar3 <= iVar13)) {
+        *(undefined4 *)(&this->field_0x2c1 + iVar11) = 0;
       }
     }
   }
-  else if (iVar10 == 2) {
+  else if (iVar11 == 2) {
     *(undefined4 *)(&this->field_0x29d + (int)param_1 * 0x80) = 1;
     switch((&DAT_00792ca0)[((int)param_1 + this->field_0235 * 2) * 3]) {
     case 0xa3:
       iVar3 = (int)param_1 * 0x20;
-      iVar12 = (int)param_1 * 0x80;
-      iVar10 = (int)param_1 * 0x80;
+      iVar11 = (int)param_1 * 0x80;
+      iVar13 = (int)param_1 * 0x80;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_1 = (int *)(&this->field_0x2a5 + iVar12);
+      param_1 = (int *)(&this->field_0x2a5 + iVar11);
       STAllPlayersC::sub_004DB160
                 (g_allPlayers_007FA174,(int)this->field_0024,0xa8,
-                 (int *)(&this->field_0x2a5 + iVar12),&this->field_02A9 + iVar3,
-                 (int *)(&this->field_0x2ad + iVar10),&local_1c);
+                 (int *)(&this->field_0x2a5 + iVar11),&this->field_02A9 + iVar3,
+                 (int *)(&this->field_0x2ad + iVar13),&local_1c);
       thunk_FUN_00584a30(this->field_04E0[0],this->field_04E0[1],this->field_04E0[2],
                          *param_1 * 0xc9 + 100,(&this->field_02A9)[iVar3] * 0xc9 + 100,
                          this->field_0024,local_1c,this->field_0018,this->field_0032);
-      uVar4 = GetPlayerRaceId(DAT_0080874d);
-      uVar4 = uVar4 & 0xff;
-      if (uVar4 == 1) {
+      local_EAX_1394 = GetPlayerRaceId(DAT_0080874d);
+      uVar5 = local_EAX_1394 & 0xff;
+      if (uVar5 == 1) {
         this->vfunc_90(6,0x9e);
         return 0;
       }
-      if (uVar4 == 2) {
+      if (uVar5 == 2) {
         this->vfunc_90(6,0x9f);
         return 0;
       }
-      if (uVar4 == 3) {
+      if (uVar5 == 3) {
         this->vfunc_90(6,0xa0);
         return 0;
       }
       break;
     case 0xa8:
       iVar3 = (int)param_1 * 0x20;
-      iVar10 = (int)param_1 * 0x80;
-      iVar12 = (int)param_1 * 0x80;
+      iVar13 = (int)param_1 * 0x80;
+      iVar11 = (int)param_1 * 0x80;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_1 = (int *)(&this->field_0x2a5 + iVar10);
+      param_1 = (int *)(&this->field_0x2a5 + iVar13);
       STAllPlayersC::sub_004DB160
                 (g_allPlayers_007FA174,(int)this->field_0024,0xa8,
-                 (int *)(&this->field_0x2a5 + iVar10),&this->field_02A9 + iVar3,
-                 (int *)(&this->field_0x2ad + iVar12),&local_1c);
+                 (int *)(&this->field_0x2a5 + iVar13),&this->field_02A9 + iVar3,
+                 (int *)(&this->field_0x2ad + iVar11),&local_1c);
       thunk_FUN_006405f0(0xa8,this->field_0024,this->field_0018,this->field_0032,
                          (ushort)this->field_04E0[0],(ushort)this->field_04E0[1],
                          (ushort)this->field_04E0[2],(short)*param_1 * 0xc9 + 100,
                          (short)(&this->field_02A9)[iVar3] * 0xc9 + 100,(ushort)local_1c);
       uVar4 = GetPlayerRaceId(DAT_0080874d);
-      uVar4 = uVar4 & 0xff;
-      if (uVar4 == 1) {
+      uVar5 = uVar4 & 0xff;
+      if (uVar5 == 1) {
         this->vfunc_90(6,0x98);
         return 0;
       }
-      if (uVar4 == 2) {
+      if (uVar5 == 2) {
         this->vfunc_90(6,0x99);
         return 0;
       }
-      if (uVar4 == 3) {
+      if (uVar5 == 3) {
         this->vfunc_90(6,0x9a);
         return 0;
       }
@@ -301,35 +304,35 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
       break;
     case 0xbe:
       iVar3 = (int)param_1 * 0x20;
-      iVar12 = (int)param_1 * 0x80;
-      iVar10 = (int)param_1 * 0x80;
+      iVar11 = (int)param_1 * 0x80;
+      iVar13 = (int)param_1 * 0x80;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_1 = (int *)(&this->field_0x2a5 + iVar12);
+      param_1 = (int *)(&this->field_0x2a5 + iVar11);
       STAllPlayersC::sub_004DB160
                 (g_allPlayers_007FA174,(int)this->field_0024,0xa8,
-                 (int *)(&this->field_0x2a5 + iVar12),&this->field_02A9 + iVar3,
-                 (int *)(&this->field_0x2ad + iVar10),&local_1c);
+                 (int *)(&this->field_0x2a5 + iVar11),&this->field_02A9 + iVar3,
+                 (int *)(&this->field_0x2ad + iVar13),&local_1c);
       thunk_FUN_006405f0(0xbe,this->field_0024,this->field_0018,this->field_0032,
                          (ushort)this->field_04E0[0],(ushort)this->field_04E0[1],
                          (ushort)this->field_04E0[2],(short)*param_1 * 0xc9 + 100,
                          (short)(&this->field_02A9)[iVar3] * 0xc9 + 100,(ushort)local_1c);
-      uVar4 = GetPlayerRaceId(DAT_0080874d);
-      uVar4 = uVar4 & 0xff;
-      if (uVar4 == 1) {
+      local_EAX_1150 = GetPlayerRaceId(DAT_0080874d);
+      uVar5 = local_EAX_1150 & 0xff;
+      if (uVar5 == 1) {
         this->vfunc_90(6,0x9b);
         return 0;
       }
-      if (uVar4 == 2) {
+      if (uVar5 == 2) {
         this->vfunc_90(6,0x9c);
         return 0;
       }
-      if (uVar4 == 3) {
+      if (uVar5 == 3) {
         this->vfunc_90(6,0x9d);
         return 0;
       }
     }
   }
-  else if (iVar10 == 3) {
+  else if (iVar11 == 3) {
     if ((&DAT_00792ca0)[iVar3 * 3] == 0xbc) {
       if (&stack0x00000000 != &DAT_0000000c) {
         local_c = (uint)(ushort)this->field_0041;
@@ -338,7 +341,7 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
         local_8 = (uint)(ushort)this->field_0043;
       }
       if (&stack0x00000000 != (undefined1 *)0x10) {
-        sVar6 = this->field_0045;
+        sVar7 = this->field_0045;
       }
       if ((AnonShape_005EFAE0_B406B78B *)this->field_04D0 != (AnonShape_005EFAE0_B406B78B *)0x0) {
         iVar3 = STPlaySystemC::sub_006E62D0
@@ -350,43 +353,43 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
           return 0;
         }
         iVar3 = ((int)piVar2 + this->field_0235 * 2) * 0x16;
-        local_10 = (int)*(short *)(&DAT_007932d8 + iVar3) + (int)sVar6;
-        sVar6 = (short)(local_10 >> 0x1f);
+        local_10 = (int)*(short *)(&DAT_007932d8 + iVar3) + (int)sVar7;
+        sVar7 = (short)(local_10 >> 0x1f);
         if (local_10 < 0) {
-          local_14 = (short)(((short)(local_10 / 200) + sVar6) -
+          local_14 = (short)(((short)(local_10 / 200) + sVar7) -
                             (short)((longlong)local_10 * 0x51eb851f >> 0x3f)) + -1;
         }
         else {
-          local_14 = (int)(short)(((short)(local_10 / 200) + sVar6) -
+          local_14 = (int)(short)(((short)(local_10 / 200) + sVar7) -
                                  (short)((longlong)local_10 * 0x51eb851f >> 0x3f));
         }
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = (int *)((int)(short)local_8 + (int)*(short *)(&DAT_007932d6 + iVar3));
-        sVar6 = (short)((int)param_1 >> 0x1f);
+        sVar7 = (short)((int)param_1 >> 0x1f);
         if ((int)param_1 < 0) {
-          sVar6 = (((short)((int)param_1 / 0xc9) + sVar6) -
+          sVar7 = (((short)((int)param_1 / 0xc9) + sVar7) -
                   (short)((longlong)(int)param_1 * 0x28c1979 >> 0x3f)) + -1;
         }
         else {
-          sVar6 = ((short)((int)param_1 / 0xc9) + sVar6) -
+          sVar7 = ((short)((int)param_1 / 0xc9) + sVar7) -
                   (short)((longlong)(int)param_1 * 0x28c1979 >> 0x3f);
         }
         local_18 = (int)*(short *)(&DAT_007932d4 + iVar3) + (int)(short)local_c;
-        sVar7 = (short)(local_18 >> 0x1f);
+        sVar8 = (short)(local_18 >> 0x1f);
         if (local_18 < 0) {
-          sVar7 = (((short)(local_18 / 0xc9) + sVar7) -
+          sVar8 = (((short)(local_18 / 0xc9) + sVar8) -
                   (short)((longlong)local_18 * 0x28c1979 >> 0x3f)) + -1;
         }
         else {
-          sVar7 = ((short)(local_18 / 0xc9) + sVar7) -
+          sVar8 = ((short)(local_18 / 0xc9) + sVar8) -
                   (short)((longlong)local_18 * 0x28c1979 >> 0x3f);
         }
-        if ((((sVar7 < 0) || (g_worldGrid.sizeX <= sVar7)) || (sVar6 < 0)) ||
-           (((g_worldGrid.sizeY <= sVar6 || (sVar8 = (short)local_14, sVar8 < 0)) ||
-            ((g_worldGrid.sizeZ <= sVar8 ||
+        if ((((sVar8 < 0) || (g_worldGrid.sizeX <= sVar8)) || (sVar7 < 0)) ||
+           (((g_worldGrid.sizeY <= sVar7 || (sVar9 = (short)local_14, sVar9 < 0)) ||
+            ((g_worldGrid.sizeZ <= sVar9 ||
              (g_worldGrid.cells
-              [(int)sVar6 * (int)g_worldGrid.sizeX + (int)sVar8 * (int)g_worldGrid.planeStride +
-               (int)sVar7].objects[1] == (STWorldObject *)0x0)))))) {
+              [(int)sVar7 * (int)g_worldGrid.sizeX + (int)sVar9 * (int)g_worldGrid.planeStride +
+               (int)sVar8].objects[1] == (STWorldObject *)0x0)))))) {
           STJellyManC::Error(local_24,local_18,param_1,local_10);
           *(undefined4 *)(&this->field_0x29d + (int)piVar2 * 0x80) = 1;
           *(int *)(&this->field_0x2c5 + (int)piVar2 * 0x80) =

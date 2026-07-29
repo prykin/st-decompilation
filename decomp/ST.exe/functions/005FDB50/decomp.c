@@ -54,8 +54,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005FDB50::FUN_005fdb50
           this_00 != (STT3DSprC *)0x0)) && (-1 < param_2 || iVar5 != 2)) {
         local_8 = iVar8;
         if ((iVar5 == 1) || (iVar5 == 2)) {
-          iVar5 = STT3DSprC::Init(this_00,DAT_008073cc,0x5a,0x45,(STDcResourcC *)0x0,0xb4,0x8c,0x11)
-          ;
+          iVar5 = STT3DSprC::Init(this_00,DAT_008073cc,0x5a,0x45,(STDcResourcC *)0x0,0xb4,0x8c,0x11);
           if (iVar5 != 0) {
             RaiseInternalException
                       (-1,g_overwriteContext_007ED77C,"E:\\__titans\\nick\\to_DcBom.cpp",0x13d

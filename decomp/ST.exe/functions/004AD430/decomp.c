@@ -6,7 +6,7 @@
 void __fastcall FUN_004ad430(STT3DSprC *param_1)
 
 {
-  FUN_006eab60(param_1->field_003C,param_1->field_0018);
+  Library::Ourlib::ST3DSMAP::SprHide(param_1->field_003C,param_1->field_0018);
   param_1->field_0012 = 1;
   return;
 }

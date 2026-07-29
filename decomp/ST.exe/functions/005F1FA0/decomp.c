@@ -29,11 +29,11 @@ byte * __thiscall STManBasisC::sub_005F1FA0(STManBasisC *this,int *param_1)
   local_14 = (uint *)0x0;
   local_8 = 0;
   local_c = 0;
-  if (this->field_0038 != (DArrayTy *)0x0) {
+  if (this->field_0038 != (STManBasisC_field_0038DArray *)0x0) {
     local_10 = (byte *)FUN_006b0020(&this->field_0038->flags,(int *)&local_8);
     if (local_8 == 0) {
-      DArrayDestroy(this->field_0038);
-      this->field_0038 = (DArrayTy *)0x0;
+      DArrayDestroy((DArrayTy *)this->field_0038);
+      this->field_0038 = (STManBasisC_field_0038DArray *)0x0;
     }
   }
   if (this->field_003C != (DArrayTy *)0x0) {

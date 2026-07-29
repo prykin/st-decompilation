@@ -80,11 +80,13 @@ switchD_00639e3d_caseD_d:
   if (SVar4 == MESS_SHARED_0003) {
     thunk_FUN_004ad310((STT3DSprC *)((int)this + 0x1d5));
     if (-1 < (int)*(uint *)((int)this + 0x33a)) {
-      FUN_006e8ba0(*(void **)((int)this + 0x211),*(uint *)((int)this + 0x33a));
+      Library::Ourlib::ST3DSMAP::SprClose
+                (*(void **)((int)this + 0x211),*(uint *)((int)this + 0x33a));
       *(undefined4 *)((int)this + 0x33a) = 0xffffffff;
     }
     if (-1 < (int)*(uint *)((int)this + 0x353)) {
-      FUN_006e8ba0(*(void **)((int)this + 0x211),*(uint *)((int)this + 0x353));
+      Library::Ourlib::ST3DSMAP::SprClose
+                (*(void **)((int)this + 0x211),*(uint *)((int)this + 0x353));
       *(undefined4 *)((int)this + 0x353) = 0xffffffff;
     }
     thunk_FUN_0063e660(this);
@@ -161,8 +163,8 @@ LAB_00639dab:
           sub_00416240(this,*(ushort *)((int)this + 0x266),*(short *)((int)this + 0x26a),
                        *(ushort *)((int)this + 0x26e));
           if ((*(int *)((int)this + 0x397) != 0) && (*(int *)((int)this + 0x39f) == 0)) {
-            SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006EA050::sub_006EA460
-                      (*(AnonReceiver_006EA050 **)((int)this + 0x211),*(uint *)((int)this + 0x1ed),
+            Library::Ourlib::ST3DSMAP::SprSetLevBefore
+                      (*(void **)((int)this + 0x211),*(uint *)((int)this + 0x1ed),
                        *(int *)(*(int *)((int)this + 0x397) + 0x1ed));
           }
           *(undefined1 *)((int)this + 0x265) = 8;
@@ -620,7 +622,8 @@ LAB_0063a728:
         STTmMineC::thunk_FUN_0063ddb0(this,1);
       }
       if ((-1 < (int)*(uint *)((int)this + 0x33a)) && (*(char *)((int)this + 0x346) == '\0')) {
-        FUN_006eaaa0(*(void **)((int)this + 0x211),*(uint *)((int)this + 0x33a),0);
+        Library::Ourlib::ST3DSMAP::SprShow
+                  (*(void **)((int)this + 0x211),*(uint *)((int)this + 0x33a),0);
         *(undefined1 *)((int)this + 0x346) = 1;
         thunk_FUN_00640390(this,1);
       }
@@ -782,7 +785,8 @@ LAB_0063a728:
         thunk_FUN_0063de20(this,0x462);
       }
       if ((*(int *)((int)this + 0x34f) == 3) && (-1 < (int)*(uint *)((int)this + 0x33a))) {
-        FUN_006eaaa0(*(void **)((int)this + 0x211),*(uint *)((int)this + 0x33a),0);
+        Library::Ourlib::ST3DSMAP::SprShow
+                  (*(void **)((int)this + 0x211),*(uint *)((int)this + 0x33a),0);
       }
       iVar8 = *(int *)((int)this + 0x34f) + 1;
       *(int *)((int)this + 0x34f) = iVar8;
@@ -806,10 +810,10 @@ LAB_0063a728:
       uVar13 = *(int *)((int)this + 0x33e) + 1;
       *(uint *)((int)this + 0x33e) = uVar13;
       if ((int)uVar13 < *(int *)((int)this + 0x342)) {
-        FUN_006ea270(*(void **)((int)this + 0x211),uVar10,0,uVar13);
+        ST3DSMAPContext::sub_006EA270(*(ST3DSMAPContext **)((int)this + 0x211),uVar10,0,uVar13);
       }
       else {
-        FUN_006e8ba0(*(void **)((int)this + 0x211),uVar10);
+        Library::Ourlib::ST3DSMAP::SprClose(*(void **)((int)this + 0x211),uVar10);
         *(undefined4 *)((int)this + 0x33a) = 0xffffffff;
       }
     }
@@ -818,10 +822,10 @@ LAB_0063a728:
       uVar13 = *(int *)((int)this + 0x357) + 1;
       *(uint *)((int)this + 0x357) = uVar13;
       if ((int)uVar13 < *(int *)((int)this + 0x35b)) {
-        FUN_006ea270(*(void **)((int)this + 0x211),uVar10,0,uVar13);
+        ST3DSMAPContext::sub_006EA270(*(ST3DSMAPContext **)((int)this + 0x211),uVar10,0,uVar13);
       }
       else {
-        FUN_006e8ba0(*(void **)((int)this + 0x211),uVar10);
+        Library::Ourlib::ST3DSMAP::SprClose(*(void **)((int)this + 0x211),uVar10);
         *(undefined4 *)((int)this + 0x353) = 0xffffffff;
       }
     }
@@ -847,10 +851,11 @@ LAB_0063a728:
       if (*(int *)((int)this + 0x367) == 0) {
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_c = CONCAT31((int3)uVar10,1);
-        iVar8 = (*(AnonShape_GLOBAL_00807598_0C6808FB **)((int)this + 0x211))->field_0380;
-        FUN_006e3210(*(AnonShape_GLOBAL_00807598_0C6808FB **)((int)this + 0x211),
-                     (*(int *)((int)this + 0x2a4) * iVar8) / 0xc9,
-                     (*(int *)((int)this + 0x2a8) * iVar8) / 0xc9);
+        iVar8 = (*(ST3DSMAPContext **)((int)this + 0x211))->field_0380;
+        ST3DSMAPContext::sub_006E3210
+                  (*(ST3DSMAPContext **)((int)this + 0x211),
+                   (*(int *)((int)this + 0x2a4) * iVar8) / 0xc9,
+                   (*(int *)((int)this + 0x2a8) * iVar8) / 0xc9);
         lVar17 = Library::MSVCRT::__ftol();
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = (STMessage *)((short)lVar17 + 0x2d);
@@ -858,10 +863,12 @@ LAB_0063a728:
       uVar10 = *(int *)((int)this + 0x367) + 1;
       *(uint *)((int)this + 0x367) = uVar10;
       if ((int)uVar10 < *(int *)((int)this + 0x36b)) {
-        FUN_006ea270(*(void **)((int)this + 0x211),*(uint *)((int)this + 0x363),0,uVar10);
+        ST3DSMAPContext::sub_006EA270
+                  (*(ST3DSMAPContext **)((int)this + 0x211),*(uint *)((int)this + 0x363),0,uVar10);
       }
       else {
-        FUN_006e8ba0(*(void **)((int)this + 0x211),*(uint *)((int)this + 0x363));
+        Library::Ourlib::ST3DSMAP::SprClose
+                  (*(void **)((int)this + 0x211),*(uint *)((int)this + 0x363));
         *(undefined4 *)((int)this + 0x363) = 0xffffffff;
       }
     }
@@ -878,10 +885,12 @@ LAB_0063a728:
             *(char *)(iVar8 + 0x15) = *(char *)(iVar8 + 0x15) + -1;
             uVar10 = **(uint **)((int)this + 0x37f);
             if (-1 < (int)uVar10) {
-              FUN_006e9720(*(void **)((int)this + 0x211),uVar10,
-                           (uint)*(byte *)((int)*(uint **)((int)this + 0x37f) + 0x15) * 0x100 +
-                           DAT_008032b8);
-              FUN_006e96d0(*(void **)((int)this + 0x211),**(uint **)((int)this + 0x37f));
+              Library::Ourlib::ST3DSMAP::FUN_006e9720
+                        (*(void **)((int)this + 0x211),uVar10,
+                         (uint)*(byte *)((int)*(uint **)((int)this + 0x37f) + 0x15) * 0x100 +
+                         DAT_008032b8);
+              Library::Ourlib::ST3DSMAP::FUN_006e96d0
+                        (*(void **)((int)this + 0x211),**(uint **)((int)this + 0x37f));
             }
           }
           else {
@@ -952,10 +961,12 @@ LAB_0063a728:
         *(char *)(iVar8 + 0x15) = *(char *)(iVar8 + 0x15) + -1;
         uVar10 = **(uint **)((int)this + 0x37f);
         if (-1 < (int)uVar10) {
-          FUN_006e9720(*(void **)((int)this + 0x211),uVar10,
-                       (uint)*(byte *)((int)*(uint **)((int)this + 0x37f) + 0x15) * 0x100 +
-                       DAT_008032b8);
-          FUN_006e96d0(*(void **)((int)this + 0x211),**(uint **)((int)this + 0x37f));
+          Library::Ourlib::ST3DSMAP::FUN_006e9720
+                    (*(void **)((int)this + 0x211),uVar10,
+                     (uint)*(byte *)((int)*(uint **)((int)this + 0x37f) + 0x15) * 0x100 +
+                     DAT_008032b8);
+          Library::Ourlib::ST3DSMAP::FUN_006e96d0
+                    (*(void **)((int)this + 0x211),**(uint **)((int)this + 0x37f));
         }
       }
       else {

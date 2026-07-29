@@ -71,8 +71,7 @@ void __thiscall InfocPanelTy::InitInfocPanel(InfocPanelTy *this)
                         (undefined4 *)0x0);
     this_00->field_03C4 = puVar4;
     puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
-                       (DAT_00806794,CASE_B,"GAME_ALLY",0xffffffff,0,1,0,(undefined4 *)0x0)
-    ;
+                       (DAT_00806794,CASE_B,"GAME_ALLY",0xffffffff,0,1,0,(undefined4 *)0x0);
     this_00->field_03C8 = puVar4;
     puVar16 = (undefined4 *)0x0;
     iVar9 = 0;

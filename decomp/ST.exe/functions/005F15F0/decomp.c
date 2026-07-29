@@ -57,7 +57,7 @@ FUN_005f15f0(void *this,ushort param_1,short param_2,undefined2 param_3,undefine
     uVar3 = Library::DKW::TBL::FUN_006ae1c0(puVar1,(undefined4 *)&local_24);
     return uVar3 + 1;
   }
-  local_e = *(undefined1 *)(DAT_00806724 + 0x23);
+  local_e = (undefined1)PTR_00806724->entryCount;
   uVar3 = Library::DKW::TBL::FUN_006ae1c0(puVar1,(undefined4 *)&local_24);
   return uVar3 + 1;
 }

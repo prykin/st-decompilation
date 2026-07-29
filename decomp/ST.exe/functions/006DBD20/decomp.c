@@ -1,16 +1,23 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* [STPrototypeApplier] Propagated parameter 0.
-   Evidence: 004A9540 -> 006DBD20 @ 004A9724
-
-   [STReturnSemanticsApplier] ignored_eax_void.
+/* [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=3, used=0), and
-   decompilation contains no value return */
+   decompilation contains no value return
+
+   [STMethodOwnerApplier] Structural method owner recovered as ST3DSMAPContext.
+   Evidence: this_call_owners=[ST3DSMAPContext]; agreed_this_calls=1; incoming_this_accesses=59;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=29; direct_non_thunk_callers=3;
+   incoming_ecx_receiver_callers=1; attributed_named_callers=1; owner_evidence_coverage=adequate
+
+   [STPrototypeRepairApplier] Propagated parameter 0.
+   Evidence: 004A9540 -> 006DBD20 @ 004A9724; data at 00807598 | 006DC050 -> 006DBD20 @ 006DC10A;
+   ST3DSMAPContext::sub_006DC050 this */
 
 void __thiscall
-FUN_006dbd20(AnonShape_GLOBAL_00807598_0C6808FB *param_1,undefined4 param_2,uint param_3,
-            undefined4 param_4,int param_5,int param_6,undefined4 param_7,undefined4 param_8,
-            undefined4 param_9,undefined4 param_10,double param_11,double param_12)
+ST3DSMAPContext::sub_006DBD20
+          (ST3DSMAPContext *param_1,undefined4 param_2,uint param_3,undefined4 param_4,int param_5,
+          int param_6,undefined4 param_7,undefined4 param_8,undefined4 param_9,undefined4 param_10,
+          double param_11,double param_12)
 
 {
   double dVar1;
@@ -72,15 +79,15 @@ FUN_006dbd20(AnonShape_GLOBAL_00807598_0C6808FB *param_1,undefined4 param_2,uint
   Library::Ourlib::STREND::FUN_006dd6e0
             (param_1,param_7,param_8,param_9,param_10,param_11._0_4_,param_11._4_4_,param_12._0_4_,
              param_12._4_4_);
-  FUN_006dd610(param_1,(-(uint)(*(int *)&param_1->field_0x124 != 1) & 0xfffffffc) + 4,
+  sub_006DD610(param_1,(-(uint)(*(int *)&param_1->field_0x124 != 1) & 0xfffffffc) + 4,
                *(uint *)&param_1->field_0098,*(undefined4 *)((int)&param_1->field_0098 + 4),
                *(uint *)&param_1->field_00A0,*(undefined4 *)((int)&param_1->field_00A0 + 4));
   if ((*(int *)&param_1->field_0x124 == 0) || (*(int *)&param_1->field_0x124 == 10)) {
     local_20 = 0;
     local_1c = 0;
     local_18 = 0;
-    FUN_006e25d0(param_1,&local_40);
-    FUN_006e25d0(param_1,&local_30);
+    sub_006E25D0(param_1,&local_40);
+    sub_006E25D0(param_1,&local_30);
     param_1->field_0108 = local_2c - local_3c;
   }
   param_1->field_02D8 = 1;
@@ -108,8 +115,8 @@ FUN_006dbd20(AnonShape_GLOBAL_00807598_0C6808FB *param_1,undefined4 param_2,uint
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     param_11._0_4_ = SUB84(dVar2,0);
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    FUN_006dbd20(*(AnonShape_GLOBAL_00807598_0C6808FB **)&param_1->field_0x358,0,0,0,iVar3,iVar3,
-                 param_11._0_4_,param_11._4_4_,param_12._0_4_,param_12._4_4_,dVar2,dVar1);
+    sub_006DBD20(*(ST3DSMAPContext **)&param_1->field_0x358,0,0,0,iVar3,iVar3,param_11._0_4_,
+                 param_11._4_4_,param_12._0_4_,param_12._4_4_,dVar2,dVar1);
     iVar3 = *(int *)&param_1->field_0x358;
     *(undefined4 *)&param_1->field_0x38c = *(undefined4 *)(iVar3 + 0xc);
     *(undefined4 *)&param_1->field_0x390 = *(undefined4 *)(iVar3 + 0x14);

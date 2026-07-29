@@ -22,12 +22,13 @@ void __fastcall FUN_005f9e40(AnonShape_005F9E40_7E333F34 *param_1)
       return;
     }
     if (-1 < (int)puVar1[1]) {
-      FUN_006ea270(param_1->field_0211,puVar1[1],0,puVar1[8]);
+      ST3DSMAPContext::sub_006EA270(param_1->field_0211,puVar1[1],0,puVar1[8]);
       iVar2 = param_1->field_02E6;
-      FUN_006ea960(param_1->field_0211,*(uint *)(iVar2 + 4),
-                   (float)*(int *)(iVar2 + 0x14) * _DAT_007904f8 * _DAT_007904f0,
-                   (float)*(int *)(iVar2 + 0x18) * _DAT_007904f8 * _DAT_007904f0,
-                   (float)*(int *)(iVar2 + 0x1c) * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
+      Library::Ourlib::ST3DSMAP::SprMove
+                (param_1->field_0211,*(uint *)(iVar2 + 4),
+                 (float)*(int *)(iVar2 + 0x14) * _DAT_007904f8 * _DAT_007904f0,
+                 (float)*(int *)(iVar2 + 0x18) * _DAT_007904f8 * _DAT_007904f0,
+                 (float)*(int *)(iVar2 + 0x1c) * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
     }
   }
   return;

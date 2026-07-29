@@ -11,10 +11,10 @@ uint __thiscall STTmMineC::CreatePart(STTmMineC *this,uint param_1)
   code *pcVar1;
   STTmMineC *pSVar2;
   int iVar3;
-  DArrayTy *pDVar4;
+  STTmMineC_field_0336DArray *pSVar4;
   int iVar5;
-  void *pvVar6;
-  uint uVar7;
+  STTmMineC_field_0336Element *element_0336;
+  uint uVar6;
   undefined4 local_8c [15];
   InternalExceptionFrame local_50;
   STTmMineC *local_c;
@@ -36,33 +36,33 @@ uint __thiscall STTmMineC::CreatePart(STTmMineC *this,uint param_1)
     RaiseInternalException(iVar3,0,"E:\\__titans\\nick\\to_TmMin.cpp",0x4a8);
     return 0xffff;
   }
-  if (local_c->field_0336 == (DArrayTy *)0x0) {
-    pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,param_1,0x3c,10);
-    pSVar2->field_0336 = pDVar4;
-    if (pDVar4 == (DArrayTy *)0x0) {
+  if (local_c->field_0336 == (STTmMineC_field_0336DArray *)0x0) {
+    pSVar4 = (STTmMineC_field_0336DArray *)
+             Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,param_1,0x3c,10);
+    pSVar2->field_0336 = pSVar4;
+    if (pSVar4 == (STTmMineC_field_0336DArray *)0x0) {
       g_currentExceptionFrame = local_50.previous;
       return local_8;
     }
   }
   if (param_1 != 0) {
-    uVar7 = 0;
+    uVar6 = 0;
     memset(local_8c, 0, 0x3c); /* compiler bulk-zero initialization */
     if (0 < (int)param_1) {
       do {
         local_8 = Library::DKW::TBL::FUN_006ae1c0(&pSVar2->field_0336->flags,local_8c);
-        pDVar4 = pSVar2->field_0336;
-        if (uVar7 < pDVar4->count) {
-          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar4, uVar7) (runtime stride) */
-          pvVar6 = (void *)(pDVar4->elementSize * uVar7 + (int)pDVar4->data);
+        pSVar4 = pSVar2->field_0336;
+        if (uVar6 < pSVar4->count) {
+          element_0336 = DArrayAt<STTmMineC_field_0336Element>(pSVar4, uVar6);
         }
         else {
-          pvVar6 = (void *)0x0;
+          element_0336 = (STTmMineC_field_0336Element *)0x0;
         }
-        if (pvVar6 != (void *)0x0) {
-          *(undefined4 *)((int)pvVar6 + 0x38) = 0xffffffff;
+        if (element_0336 != (STTmMineC_field_0336Element *)0x0) {
+          element_0336->field_0038 = -1;
         }
-        uVar7 = uVar7 + 1;
-      } while ((int)uVar7 < (int)param_1);
+        uVar6 = uVar6 + 1;
+      } while ((int)uVar6 < (int)param_1);
     }
     if (-1 < (int)local_8) {
       g_currentExceptionFrame = local_50.previous;

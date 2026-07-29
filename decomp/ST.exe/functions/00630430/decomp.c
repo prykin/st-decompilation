@@ -14,15 +14,17 @@ int __thiscall STManRuinC::GetMessage(STManRuinC *this,STMessage *message)
 {
   STMessageId SVar1;
   uint uVar2;
-  DArrayTy *pDVar3;
+  STManRuinC_field_003CDArray *pSVar3;
   code *pcVar4;
   STManRuinC *this_00;
   int iVar5;
-  undefined4 *puVar6;
+  STManRuinC_field_003CElement *puVar6;
   ushort *puVar7;
   int iVar8;
   uint uVar9;
-  undefined4 *puVar10;
+  undefined4 *puVar11;
+  STManRuinC_field_003CElement *element_003c;
+  undefined4 *puVar12;
   InternalExceptionFrame local_58;
   byte *local_14;
   uint local_10;
@@ -63,44 +65,43 @@ int __thiscall STManRuinC::GetMessage(STManRuinC *this,STMessage *message)
     return 0;
   }
   if (SVar1 == MESS_ID_NONE) {
-    if ((local_c->field_003C != (DArrayTy *)0x0) && (uVar2 = local_c->field_003C->count, uVar2 != 0)
-       ) {
+    if ((local_c->field_003C != (STManRuinC_field_003CDArray *)0x0) &&
+       (uVar2 = local_c->field_003C->count, uVar2 != 0)) {
       while (uVar2 = uVar2 - 1, -1 < (int)uVar2) {
-        pDVar3 = this_00->field_003C;
-        if (uVar2 < pDVar3->count) {
-          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar3, uVar2) (runtime stride) */
-          puVar6 = (undefined4 *)(pDVar3->elementSize * uVar2 + (int)pDVar3->data);
+        pSVar3 = this_00->field_003C;
+        if (uVar2 < pSVar3->count) {
+          element_003c = DArrayAt<STManRuinC_field_003CElement>(pSVar3, uVar2);
         }
         else {
-          puVar6 = (undefined4 *)0x0;
+          element_003c = (STManRuinC_field_003CElement *)0x0;
         }
-        if (puVar6 != (undefined4 *)0x0) {
-          if ((puVar6[1] == 1) && (puVar6[2] == 0)) {
+        if (element_003c != (STManRuinC_field_003CElement *)0x0) {
+          if ((element_003c->state == 1) && (element_003c->statusFlag == 0)) {
             iVar5 = thunk_FUN_00630ff0();
-            puVar6[2] = iVar5;
+            element_003c->statusFlag = iVar5;
             if (iVar5 != 0) {
-              puVar7 = sub_00630C50(this_00,*puVar6,puVar6[3],1,1,0);
+              puVar7 = sub_00630C50(this_00,element_003c->field_0000,element_003c->variant,1,1,0);
               if (puVar7 == (ushort *)0x0) {
-                puVar6[2] = 0;
+                element_003c->statusFlag = 0;
               }
               else {
-                puVar6[1] = 2;
+                element_003c->state = 2;
               }
             }
           }
-          iVar5 = puVar6[1];
+          iVar5 = element_003c->state;
           if ((iVar5 == 2) || (iVar5 == 1)) {
-            if ((puVar6[2] != 0) || (iVar5 == 2)) {
-              FUN_006e9350(PTR_00807598,*(uint *)((int)puVar6 + 0x21),
-                           *(uint *)(DAT_00806724 + 0x30 + (uint)*(byte *)(puVar6 + 8) * 4),
-                           (int)*(short *)(DAT_00806724 + 0x2c));
+            if ((element_003c->statusFlag != 0) || (iVar5 == 2)) {
+              Library::Ourlib::ST3DSMAP::SprSetMask
+                        (g_sT3DSMAPContext_00807598,element_003c->spriteHandle,
+                         PTR_00806724->entries[element_003c->maskIndex],(int)PTR_00806724->field_002C);
             }
             if (g_playSystem_00802A38->field_00E4 % 6 == 0) {
-              *(char *)(puVar6 + 8) = *(char *)(puVar6 + 8) + '\x01';
+              element_003c->maskIndex = element_003c->maskIndex + 1;
             }
-            if (*(short *)(DAT_00806724 + 0x23) <= (short)(ushort)*(byte *)(puVar6 + 8)) {
-              FUN_006e8ba0(PTR_00807598,*(uint *)((int)puVar6 + 0x21));
-              FUN_006b0c70(this_00->field_003C,uVar2);
+            if (PTR_00806724->entryCount <= (short)(ushort)element_003c->maskIndex) {
+              Library::Ourlib::ST3DSMAP::SprClose(g_sT3DSMAPContext_00807598,element_003c->spriteHandle);
+              FUN_006b0c70((DArrayTy *)this_00->field_003C,uVar2);
             }
           }
         }
@@ -133,29 +134,29 @@ LAB_006304e7:
       goto LAB_00630558;
     }
     if (local_8 == (ushort *)0x0) goto LAB_006304e7;
-    puVar6 = (message->arg0).ptr;
-    puVar10 = &this_00->field_001C;
+    puVar11 = (message->arg0).ptr;
+    puVar12 = &this_00->field_001C;
     for (iVar5 = 5; iVar5 != 0; iVar5 = iVar5 + -1) {
-      *puVar10 = *puVar6;
-      puVar6 = puVar6 + 1;
-      puVar10 = puVar10 + 1;
+      *puVar12 = *puVar11;
+      puVar11 = puVar11 + 1;
+      puVar12 = puVar12 + 1;
     }
   }
   if (this_00->field_0034 == 0) {
     uVar2 = (int)g_worldGrid.sizeX * (int)g_worldGrid.sizeY * 5;
-    puVar6 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(uVar2);
+    puVar6 = (STManRuinC_field_003CElement *)Library::DKW::LIB::FUN_006aac70(uVar2);
     this_00->field_0034 = puVar6;
-    if (puVar6 == (undefined4 *)0x0) {
+    if (puVar6 == (STManRuinC_field_003CElement *)0x0) {
       thunk_FUN_006308b0(this_00);
     }
     else {
       for (uVar9 = uVar2 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
-        *puVar6 = 0;
-        puVar6 = puVar6 + 1;
+        puVar6->field_0000 = 0;
+        puVar6 = (STManRuinC_field_003CElement *)&puVar6->state;
       }
       for (uVar9 = uVar2 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {
-        *(undefined1 *)puVar6 = 0;
-        puVar6 = (undefined4 *)((int)puVar6 + 1);
+        *(undefined1 *)&puVar6->field_0000 = 0;
+        puVar6 = (STManRuinC_field_003CElement *)((int)&puVar6->field_0000 + 1);
       }
       this_00->field_0030 = uVar2;
     }

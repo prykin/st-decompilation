@@ -16,10 +16,11 @@ int __thiscall AiTactClassTy::GetMessage(AiTactClassTy *this,STMessage *message)
   code *pcVar2;
   AiTactClassTy *this_00;
   int iVar3;
-  DArrayTy *pDVar4;
+  AiTactClassTy_field_00A5DArray *pAVar4;
   int iVar5;
   uint uVar6;
   undefined4 *puVar7;
+  AiTactClassTy_field_00A5Element *element_00a5;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   int unaff_EDI;
   bool bVar8;
@@ -80,33 +81,32 @@ int __thiscall AiTactClassTy::GetMessage(AiTactClassTy *this,STMessage *message)
       }
     }
     else if (SVar1 == MESS_ID_ALLCREATE) {
-      pDVar4 = local_14->field_00A5;
-      if (0 < (int)pDVar4->count) {
-        bVar8 = pDVar4->count != 0;
+      pAVar4 = local_14->field_00A5;
+      if (0 < (int)pAVar4->count) {
+        bVar8 = pAVar4->count != 0;
         do {
           if (bVar8) {
-            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar4, uVar6) (runtime stride) */
-            puVar7 = (undefined4 *)(pDVar4->elementSize * uVar6 + (int)pDVar4->data);
+            element_00a5 = DArrayAt<AiTactClassTy_field_00A5Element>(pAVar4, uVar6);
           }
           else {
-            puVar7 = (undefined4 *)0x0;
+            element_00a5 = (AiTactClassTy_field_00A5Element *)0x0;
           }
           local_8 = 0;
-          if ((((AnonShape_005EFAE0_B406B78B *)*puVar7 == (AnonShape_005EFAE0_B406B78B *)0x0) ||
+          if ((((AnonShape_005EFAE0_B406B78B *)element_00a5->field_0000 == (AnonShape_005EFAE0_B406B78B *)0x0) ||
               (iVar3 = STPlaySystemC::sub_006E62D0
-                                 (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)*puVar7,
+                                 (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)element_00a5->field_0000,
                                   &local_8), iVar3 != 0)) || (local_8 == 0)) {
-            puVar7[1] = 0;
-            *puVar7 = 0;
+            element_00a5->field_0004 = 0;
+            element_00a5->field_0000 = (AiTactClassTy_field_00A5Element *)0x0;
           }
           else {
-            puVar7[1] = local_8;
+            element_00a5->field_0004 = local_8;
             *(AiTactClassTy **)(local_8 + 0x284) = this_00;
           }
-          pDVar4 = this_00->field_00A5;
+          pAVar4 = this_00->field_00A5;
           uVar6 = uVar6 + 1;
-          bVar8 = uVar6 < pDVar4->count;
-        } while ((int)uVar6 < (int)pDVar4->count);
+          bVar8 = uVar6 < pAVar4->count;
+        } while ((int)uVar6 < (int)pAVar4->count);
       }
     }
     else if (SVar1 == MESS_SHARED_5DD5) {

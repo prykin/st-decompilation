@@ -1274,8 +1274,7 @@ LAB_004a2897:
                          (this_00,(DArrayTy *)this_00->field_002D,
                           (int)*(short *)&this_00->field_0x2fe,(int)*(short *)&this_00->field_0x300,
                           (int)*(short *)&this_00->field_0x302,(int)*(short *)&this_00->field_0x2f8,
-                          (int)*(short *)&this_00->field_0x2fa,(int)*(short *)&this_00->field_0x2fc)
-    ;
+                          (int)*(short *)&this_00->field_0x2fa,(int)*(short *)&this_00->field_0x2fc);
     if (local_28 == (DArrayTy *)0x0) {
       return;
     }

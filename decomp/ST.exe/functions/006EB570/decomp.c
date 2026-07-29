@@ -219,8 +219,7 @@ LAB_006eb87f:
           local_74 = local_4c;
           local_24 = local_70;
           while( true ) {
-            puVar5 = (undefined8 *)(param_2->field_04EE * local_3c + param_2->field_04EA + local_24)
-            ;
+            puVar5 = (undefined8 *)(param_2->field_04EE * local_3c + param_2->field_04EA + local_24);
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             local_54 = (byte *)(*(int *)(iVar8 + 0x478) * local_3c + *(int *)(iVar8 + 0x474) +
                                local_24);

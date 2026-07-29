@@ -15,7 +15,7 @@ void __fastcall FUN_004ab810(AnonShape_004AB810_8E5693D5 *param_1)
   *(undefined4 *)&param_1[2].field_0004 = 0;
   *(undefined4 *)(param_1 + 2) = 0;
   *(undefined4 *)&param_1[1].field_0x10 = 0;
-  *(AnonShape_GLOBAL_00807598_0C6808FB **)(param_1 + 3) = PTR_00807598;
+  *(ST3DSMAPContext **)(param_1 + 3) = g_sT3DSMAPContext_00807598;
   param_1->field_0013 = 0;
   *(undefined4 *)&param_1[2].field_0x8 = 0;
   *(undefined4 *)&param_1[2].field_0x10 = 0;

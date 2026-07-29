@@ -1,4 +1,4 @@
-FUN_006de9c0:
+ST3DSMAPContext::sub_006DE9C0:
 006DE9C0  55                        PUSH EBP
 006DE9C1  8B EC                     MOV EBP,ESP
 006DE9C3  6A FF                     PUSH -0x1

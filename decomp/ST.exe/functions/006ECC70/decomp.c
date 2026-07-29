@@ -51,7 +51,7 @@ undefined4 __thiscall FUN_006ecc70(void *this,int *param_1,uint *param_2)
         local_1c = (int)psVar1[2];
         local_48 = (float)local_1c * (float)*(double *)((int)this + 0x3a4) * (float)_DAT_0079dfa8 +
                    (float)*(double *)((int)this + 0x394);
-        FUN_006e25d0(this,&local_60);
+        ST3DSMAPContext::sub_006E25D0(this,&local_60);
         iVar3 = *(int *)((int)this + 0x2e4);
         local_3c = local_60;
         local_40 = local_5c;

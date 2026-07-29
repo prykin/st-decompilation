@@ -1350,8 +1350,7 @@ cf_error_exit_004334DF:
   g_playerRuntime[playerId].tempSlots[1][0].objectType = 0x19a;
 cf_error_exit_004334F5:
   RaiseInternalException
-            (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",0xdce)
-  ;
+            (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",0xdce);
   g_currentExceptionFrame = local_90.previous;
   return;
 }

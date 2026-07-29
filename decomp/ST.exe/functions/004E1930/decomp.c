@@ -5,8 +5,10 @@ int __thiscall FUN_004e1930(void *this,int *param_1,int param_2)
   int iVar1;
   STResourceC *this_00;
   STGroupBoatC *pSVar2;
-  uint uVar3;
-  int iVar4;
+  int local_EAX_269;
+  int uVar3;
+  uint uVar4;
+  int iVar5;
   undefined1 local_24 [16];
   undefined4 local_14;
   undefined2 local_10;
@@ -46,31 +48,31 @@ int __thiscall FUN_004e1930(void *this,int *param_1,int param_2)
         iVar1 = *(int *)((int)this + 0x5ac);
         if ((iVar1 == 0x39) || (iVar1 == 0x5e)) {
           uVar3 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
-          uVar3 = uVar3 & 0xff;
-          if (uVar3 == 1) {
+          uVar4 = uVar3 & 0xff;
+          if (uVar4 == 1) {
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (**(code **)(*(int *)this + 0x90))(4,0x21e);
             return param_2;
           }
-          if (uVar3 == 2) {
+          if (uVar4 == 2) {
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (**(code **)(*(int *)this + 0x90))(4,0x2e4);
             return param_2;
           }
-          if (uVar3 == 3) {
+          if (uVar4 == 3) {
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (**(code **)(*(int *)this + 0x90))(4,0x3a5);
             return param_2;
           }
         }
         else if (iVar1 == 0x4f) {
-          uVar3 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
-          if ((uVar3 & 0xff) == 1) {
+          local_EAX_269 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
+          if ((local_EAX_269 & 0xffU) == 1) {
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (**(code **)(*(int *)this + 0x90))(4,0x27c);
             return param_2;
           }
-          if ((uVar3 & 0xff) == 2) {
+          if ((local_EAX_269 & 0xffU) == 2) {
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (**(code **)(*(int *)this + 0x90))(4,0x34b);
             return param_2;
@@ -82,27 +84,27 @@ int __thiscall FUN_004e1930(void *this,int *param_1,int param_2)
       switch(*(undefined4 *)((int)this + 0x5ac)) {
       case 0x39:
         iVar1 = *(int *)this;
-        iVar4 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
+        iVar5 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (**(code **)(iVar1 + 0x90))(3,(-(uint)((char)iVar4 != '\x02') & 0xffffff3a) + 0x2ea);
+        (**(code **)(iVar1 + 0x90))(3,(-(uint)((char)iVar5 != '\x02') & 0xffffff3a) + 0x2ea);
         return param_2;
       case 0x3b:
         iVar1 = *(int *)this;
-        iVar4 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
+        iVar5 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (**(code **)(iVar1 + 0x90))(3,(-(uint)((char)iVar4 != '\x02') & 0xffffff3a) + 0x2f7);
+        (**(code **)(iVar1 + 0x90))(3,(-(uint)((char)iVar5 != '\x02') & 0xffffff3a) + 0x2f7);
         return param_2;
       case 0x4f:
         iVar1 = *(int *)this;
-        iVar4 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
+        iVar5 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (**(code **)(iVar1 + 0x90))(3,(-(uint)((char)iVar4 != '\x02') & 0xffffff32) + 0x350);
+        (**(code **)(iVar1 + 0x90))(3,(-(uint)((char)iVar5 != '\x02') & 0xffffff32) + 0x350);
         return param_2;
       case 0x52:
         iVar1 = *(int *)this;
-        iVar4 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
+        iVar5 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        (**(code **)(iVar1 + 0x90))(3,(-(uint)((char)iVar4 != '\x02') & 0xffffff3b) + 0x35d);
+        (**(code **)(iVar1 + 0x90))(3,(-(uint)((char)iVar5 != '\x02') & 0xffffff3b) + 0x35d);
         return param_2;
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       case 0x5e:

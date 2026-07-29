@@ -1,7 +1,11 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* [STMethodOwnerApplier] Structural method owner recovered as ST3DSMAPContext.
+   Evidence: this_call_owners=[ST3DSMAPContext]; agreed_this_calls=19; incoming_this_accesses=32;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=61; direct_non_thunk_callers=21;
+   incoming_ecx_receiver_callers=14; attributed_named_callers=7; owner_evidence_coverage=adequate */
 
-int __thiscall FUN_006e25d0(void *this,int *param_1)
+int __thiscall ST3DSMAPContext::sub_006E25D0(ST3DSMAPContext *this,int *param_1)
 
 {
   uint uVar1;
@@ -9,7 +13,7 @@ int __thiscall FUN_006e25d0(void *this,int *param_1)
   int iVar3;
   longlong lVar4;
 
-  uVar1 = *(uint *)((int)this + 0xa8);
+  uVar1 = *(uint *)&this->field_0xa8;
   if ((uVar1 & 8) == 0) {
     switch(uVar1) {
     case 0:
@@ -38,17 +42,17 @@ int __thiscall FUN_006e25d0(void *this,int *param_1)
   }
   iVar3 = 1;
   lVar4 = Library::MSVCRT::__ftol();
-  iVar2 = (int)lVar4 + *(int *)((int)this + 0x30) * 0x10000;
+  iVar2 = (int)lVar4 + *(int *)&this->field_0x30 * 0x10000;
   *param_1 = iVar2;
-  if ((iVar2 < *(int *)((int)this + 0x30) * 0x10000) ||
-     (*(int *)((int)this + 0x38) * 0x10000 <= iVar2)) {
+  if ((iVar2 < *(int *)&this->field_0x30 * 0x10000) ||
+     (*(int *)&this->field_0x38 * 0x10000 <= iVar2)) {
     iVar3 = 0;
   }
   lVar4 = Library::MSVCRT::__ftol();
-  iVar2 = (int)lVar4 + *(int *)((int)this + 0x34) * 0x10000;
+  iVar2 = (int)lVar4 + *(int *)&this->field_0x34 * 0x10000;
   param_1[1] = iVar2;
-  if ((iVar2 < *(int *)((int)this + 0x34) * 0x10000) ||
-     (*(int *)((int)this + 0x3c) * 0x10000 <= iVar2)) {
+  if ((iVar2 < *(int *)&this->field_0x34 * 0x10000) ||
+     (*(int *)&this->field_0x3c * 0x10000 <= iVar2)) {
     iVar3 = 0;
   }
   lVar4 = Library::MSVCRT::__ftol();

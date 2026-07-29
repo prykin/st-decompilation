@@ -1690,7 +1690,8 @@ public class STPrototypeAnalyzer extends GhidraScript {
                     tsv(row.storage) + "\t" + row.source + "\t" + row.candidateType +
                     "\t" + row.strongEvidence + "\t" + row.candidateSites + "\t" +
                     row.status + "\t" + tsv(row.typeEvidence) + "\t" +
-                    tsv(row.evidenceSites) + "\n");
+                    tsv(row.evidenceSites == null || row.evidenceSites.isBlank() ?
+                        "-" : row.evidenceSites) + "\n");
         }
     }
     private void writeSummary(Path path, List<Proposal> rows, int functions, int calls,

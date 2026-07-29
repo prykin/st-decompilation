@@ -22,7 +22,8 @@ FUN_004c21a0(void *this,Global_sub_004C21A0_param_1Enum param_1,int *param_2,flo
 
   sVar4 = 0;
   local_8 = this;
-  FUN_006e1c20(*(void **)((int)this + 0x211),param_3,param_4,0.0,&param_3,&local_c);
+  ST3DSMAPContext::sub_006E1C20
+            (*(ST3DSMAPContext **)((int)this + 0x211),param_3,param_4,0.0,&param_3,&local_c);
   if (param_3 < _DAT_0079034c) {
     lVar6 = Library::MSVCRT::__ftol();
     iVar5 = (short)lVar6 + -1;

@@ -16,11 +16,11 @@ int __thiscall VisibleClassTy::GetMessage(VisibleClassTy *this,STMessage *messag
   code *pcVar2;
   VisibleClassTy *this_00;
   int iVar3;
-  char *pcVar4;
+  VisibleClassTy_field_0110Element *element_0110;
   int iVar5;
   uint uVar6;
   uint uVar7;
-  DArrayTy *pDVar8;
+  VisibleClassTy_field_0110DArray *pVVar8;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   void *unaff_EDI;
   ushort *puVar9;
@@ -69,27 +69,26 @@ int __thiscall VisibleClassTy::GetMessage(VisibleClassTy *this,STMessage *messag
             *pbVar10 = 0;
             pbVar10 = pbVar10 + 1;
           }
-          pDVar8 = this_00->field_0110;
+          pVVar8 = this_00->field_0110;
           uVar6 = 0;
-          if (0 < (int)pDVar8->count) {
-            bVar11 = pDVar8->count != 0;
+          if (0 < (int)pVVar8->count) {
+            bVar11 = pVVar8->count != 0;
             do {
               if (bVar11) {
-                /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar8, uVar6) (runtime stride) */
-                pcVar4 = (char *)(pDVar8->elementSize * uVar6 + (int)pDVar8->data);
+                element_0110 = DArrayAt<VisibleClassTy_field_0110Element>(pVVar8, uVar6);
               }
               else {
-                pcVar4 = (char *)0x0;
+                element_0110 = (VisibleClassTy_field_0110Element *)0x0;
               }
-              if (*pcVar4 == '\0') {
-                sub_00558DC0(this_00,(int)*(short *)(pcVar4 + 2),(int)*(short *)(pcVar4 + 4),
-                             (undefined *)(int)pcVar4[6],(int *)(uint)(byte)pcVar4[1],
-                             (uint)(byte)pcVar4[7],*(int **)(pcVar4 + 8),0x4000);
+              if (element_0110->field_0000 == '\0') {
+                sub_00558DC0(this_00,(int)element_0110->field_0002,(int)element_0110->field_0004,
+                             (undefined *)(int)element_0110->field_0006,(int *)(uint)(byte)element_0110->field_0001,
+                             (uint)(byte)element_0110->field_0007,element_0110->field_0008,0x4000);
               }
-              pDVar8 = this_00->field_0110;
+              pVVar8 = this_00->field_0110;
               uVar6 = uVar6 + 1;
-              bVar11 = uVar6 < pDVar8->count;
-            } while ((int)uVar6 < (int)pDVar8->count);
+              bVar11 = uVar6 < pVVar8->count;
+            } while ((int)uVar6 < (int)pVVar8->count);
           }
         }
       }
@@ -119,7 +118,7 @@ int __thiscall VisibleClassTy::GetMessage(VisibleClassTy *this,STMessage *messag
       else if (SVar1 == MESS_SHARED_0003) {
         sub_00558140(local_14);
         if (this_00->field_0114 != 0) {
-          FUN_00717870(PTR_00807598);
+          ST3DSMAPContext::sub_00717870(g_sT3DSMAPContext_00807598);
         }
         thunk_FUN_00553270();
         g_visibleClass_00802A88 = (VisibleClassTy *)0x0;

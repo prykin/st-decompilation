@@ -193,10 +193,10 @@ LAB_005e072b:
     FUN_006c1e20();
     memset(&DAT_00808463, 0, 0x180); /* compiler bulk-zero initialization */
   }
-  if (this_00->field_0074 != (DArrayTy *)0x0) {
-    DArrayDestroy(this_00->field_0074);
+  if (this_00->field_0074 != (MTaskTy_field_0074DArray *)0x0) {
+    DArrayDestroy((DArrayTy *)this_00->field_0074);
   }
-  this_00->field_0074 = (DArrayTy *)0x0;
+  this_00->field_0074 = (MTaskTy_field_0074DArray *)0x0;
   if ((DArrayTy *)this_00->field_0078 != (DArrayTy *)0x0) {
     DArrayDestroy((DArrayTy *)this_00->field_0078);
   }

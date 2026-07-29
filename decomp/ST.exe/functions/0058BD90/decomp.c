@@ -51,7 +51,7 @@ void __fastcall FUN_0058bd90(AnonShape_0058BD90_DCBCF849 *param_1)
   if (iVar2 == 0) {
     iVar2 = 0;
     uVar3 = thunk_FUN_004ad650((STT3DSprC *)puVar1);
-    FUN_006eabf0(param_1->field_0211,uVar3,iVar2);
+    Library::Ourlib::ST3DSMAP::SprSetVisible(param_1->field_0211,uVar3,iVar2);
     iVar2 = thunk_FUN_0041caf0((AnonShape_0041CAF0_1630B9E0 *)param_1);
     if (iVar2 == 1) {
       iVar2 = 1;
@@ -63,7 +63,7 @@ void __fastcall FUN_0058bd90(AnonShape_0058BD90_DCBCF849 *param_1)
   else {
     iVar2 = 1;
     uVar3 = thunk_FUN_004ad650((STT3DSprC *)puVar1);
-    FUN_006eabf0(param_1->field_0211,uVar3,iVar2);
+    Library::Ourlib::ST3DSMAP::SprSetVisible(param_1->field_0211,uVar3,iVar2);
     iVar2 = 1;
   }
   iVar4 = thunk_FUN_004ad650((STT3DSprC *)puVar1);
@@ -99,24 +99,23 @@ switchD_0058bec9_caseD_2:
         if (param_1->field_023D < param_1->field_0241) {
           iVar2 = param_1->field_0239 + 1;
           param_1->field_0239 = iVar2;
-          if (*(short *)(DAT_00806724 + 0x23) <= iVar2) {
+          if (PTR_00806724->entryCount <= iVar2) {
             param_1->field_0231 = 1;
             param_1->field_0251 = param_1->field_0249 * 2 - param_1->field_0251;
             param_1->field_0255 = param_1->field_024D * 2 - param_1->field_0255;
             goto cf_common_exit_0058C391;
           }
           STT3DSprC::sub_004ACE60((STT3DSprC *)&param_1->field_0x1d5,'\x0e');
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           STT3DSprC::sub_004ACE30
-                    ((STT3DSprC *)&param_1->field_0x1d5,
-                     *(uint *)(DAT_00806724 + 0x30 + param_1->field_0239 * 4),
-                     (int)*(short *)(DAT_00806724 + 0x2c));
+                    ((STT3DSprC *)&param_1->field_0x1d5,PTR_00806724->entries[param_1->field_0239],
+                     (int)PTR_00806724->field_002C);
         }
       }
       else {
-        iVar2 = param_1->field_0239 + -1;
-        param_1->field_0239 = iVar2;
-        if (iVar2 < 1) {
+        iVar2 = param_1->field_0239;
+        iVar4 = iVar2 + -1;
+        param_1->field_0239 = iVar4;
+        if (iVar4 < 1) {
           param_1->field_0239 = 0;
           param_1->field_0235 = 0;
           thunk_FUN_004aceb0(&param_1->field_0x1d5,'\x0e');
@@ -124,8 +123,8 @@ switchD_0058bec9_caseD_2:
         }
         else {
           STT3DSprC::sub_004ACE30
-                    ((STT3DSprC *)&param_1->field_0x1d5,*(uint *)(DAT_00806724 + 0x30 + iVar2 * 4),
-                     (int)*(short *)(DAT_00806724 + 0x2c));
+                    ((STT3DSprC *)&param_1->field_0x1d5,PTR_00806724->entries[iVar2 + -1],
+                     (int)PTR_00806724->field_002C);
           param_1->field_0241 = -param_1->field_023D;
         }
       }
@@ -195,9 +194,10 @@ switchD_0058bec9_caseD_0:
          [(int)g_worldGrid.planeStride * (int)sVar7 + (int)g_worldGrid.sizeX * (int)sVar6 +
           (int)sVar5].objects[0]->value_20 == 400)))))))) {
     if ((5 < iVar2) && ((g_playSystem_00802A38->field_00E4 & 3) == 0)) {
-      iVar2 = param_1->field_0239 + 1;
-      param_1->field_0239 = iVar2;
-      if (*(short *)(DAT_00806724 + 0x23) <= iVar2) {
+      iVar2 = param_1->field_0239;
+      iVar4 = iVar2 + 1;
+      param_1->field_0239 = iVar4;
+      if (PTR_00806724->entryCount <= iVar4) {
         iVar2 = param_1->field_0231;
         param_1->field_0239 = 0;
         param_1->field_0231 = 1;
@@ -207,8 +207,8 @@ switchD_0058bec9_caseD_0:
         goto cf_common_exit_0058C391;
       }
       STT3DSprC::sub_004ACE30
-                ((STT3DSprC *)&param_1->field_0x1d5,*(uint *)(DAT_00806724 + 0x30 + iVar2 * 4),
-                 (int)*(short *)(DAT_00806724 + 0x2c));
+                ((STT3DSprC *)&param_1->field_0x1d5,PTR_00806724[1].entries[iVar2 + -0xc],
+                 (int)PTR_00806724->field_002C);
     }
     if ((g_playSystem_00802A38->field_00E4 & 1) == 0) {
       iVar2 = thunk_FUN_004ac910(&param_1->field_0x1d5,'\x0e');

@@ -15,8 +15,8 @@ void __thiscall CursorClassTy::sub_0054A8D0(CursorClassTy *this)
     TLOBldMark::sub_004C63F0(g_tLOBldMark_007FB2AC);
   }
   if ((this->field_00DE == CASE_5) && (-1 < this->field_010B)) {
-    if (PTR_00807598 != (AnonShape_GLOBAL_00807598_0C6808FB *)0x0) {
-      FUN_006e8ba0(PTR_00807598,this->field_010B);
+    if (g_sT3DSMAPContext_00807598 != (ST3DSMAPContext *)0x0) {
+      Library::Ourlib::ST3DSMAP::SprClose(g_sT3DSMAPContext_00807598,this->field_010B);
     }
     this->field_010B = -1;
     if (this->field_00A9 == 0) {

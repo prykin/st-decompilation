@@ -119,14 +119,12 @@ void __thiscall SettMapMTy::CreateCtrls(SettMapMTy *this,char param_1)
       if (g_startSystem_0081176C->field_0560 != 0xffffffff) {
         Library::DKW::DDX::FUN_006b34d0
                   ((uint *)g_startSystem_0081176C->field_05A4,g_startSystem_0081176C->field_0560,
-                   0xfffffffe,g_startSystem_0081176C->field_0578,g_startSystem_0081176C->field_057C)
-        ;
+                   0xfffffffe,g_startSystem_0081176C->field_0578,g_startSystem_0081176C->field_057C);
       }
       if (g_startSystem_0081176C->field_05F1 != 0xffffffff) {
         Library::DKW::DDX::FUN_006b34d0
                   ((uint *)g_startSystem_0081176C->field_0635,g_startSystem_0081176C->field_05F1,
-                   0xfffffffe,g_startSystem_0081176C->field_0609,g_startSystem_0081176C->field_060D)
-        ;
+                   0xfffffffe,g_startSystem_0081176C->field_0609,g_startSystem_0081176C->field_060D);
       }
       Library::DKW::DDX::FUN_006b3430
                 ((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0554);

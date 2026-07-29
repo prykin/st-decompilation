@@ -523,8 +523,7 @@ cf_error_exit_0064B368:
           pcVar12 = (char *)(**(code **)(*local_38 + 8))(pcVar12);
           if (pcVar12 == (char *)0x0) {
             RaiseInternalException
-                      (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x182)
-            ;
+                      (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x182);
           }
           uVar13 = 0xffffffff;
           pcVar10 = pcVar12;
@@ -671,8 +670,7 @@ cf_error_exit_0064B368:
           pbVar6 = (byte *)(**(code **)(*local_38 + 8))(param_1 + 5);
           if ((pbVar7 == (byte *)0x0) || (pbVar6 == (byte *)0x0)) {
             RaiseInternalException
-                      (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x11c)
-            ;
+                      (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x11c);
           }
           local_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
           do {
@@ -802,8 +800,7 @@ LAB_0064b80a:
           if (iVar5 != 0x388) goto cf_common_exit_0064C271;
           if (param_2 != 2) {
             RaiseInternalException
-                      (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x1ac)
-            ;
+                      (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x1ac);
           }
           if ((*param_1 == '\x04') || (*param_1 == '\x01')) {
             if ((param_1[5] == '\x04') || (param_1[5] == '\x01')) {
@@ -1088,8 +1085,7 @@ LAB_0064bd33:
           local_78 = pcVar10;
           if (pcVar10 == (char *)0x0) {
             RaiseInternalException
-                      (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x220)
-            ;
+                      (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x220);
           }
           if ((int)pcVar12 <= local_2c) {
             local_28 = (char *)((int)pcVar12 + 0x200);

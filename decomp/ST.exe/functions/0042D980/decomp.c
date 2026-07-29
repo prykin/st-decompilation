@@ -101,8 +101,7 @@ joined_r0x0042de37:
       pSVar6 = GetObjPtr(g_allPlayers_007FA174,(char)g_playerRuntime[uVar7].tempSlots[0][0].playerId
                          ,g_playerRuntime[uVar7].tempSlots[0][0].objectId,CASE_3);
       STFishC::sub_004162B0
-                ((STFishC *)pSVar6,(short *)&local_8,(undefined2 *)&local_c,(undefined2 *)&local_10)
-      ;
+                ((STFishC *)pSVar6,(short *)&local_8,(undefined2 *)&local_c,(undefined2 *)&local_10);
       if (param_1 != (undefined2 *)0x0) {
         *param_1 = (undefined2)local_8;
       }

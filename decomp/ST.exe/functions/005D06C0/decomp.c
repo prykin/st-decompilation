@@ -15,55 +15,53 @@ void __thiscall SettMapMTy::ChangePlayerCiv(SettMapMTy *this,uint param_1,char p
   code *pcVar1;
   SettMapMTy *pSVar2;
   int errorCode;
-  char *pcVar3;
+  SettMapMTy_field_1F84Element *element_1f84;
   int iVar4;
-  DArrayTy *pDVar5;
+  SettMapMTy_field_1F84DArray *pSVar5;
   uint uVar6;
   bool bVar7;
   InternalExceptionFrame local_4c;
   SettMapMTy *local_8;
 
-  if (this->field_1F84 != (DArrayTy *)0x0) {
+  if (this->field_1F84 != (SettMapMTy_field_1F84DArray *)0x0) {
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
     local_8 = this;
     errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
     pSVar2 = local_8;
     if (errorCode == 0) {
-      pDVar5 = local_8->field_1F84;
-      if (param_1 < pDVar5->count) {
-        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar5, param_1) (runtime stride) */
-        pcVar3 = (char *)(pDVar5->elementSize * param_1 + (int)pDVar5->data);
+      pSVar5 = local_8->field_1F84;
+      if (param_1 < pSVar5->count) {
+        element_1f84 = DArrayAt<SettMapMTy_field_1F84Element>(pSVar5, param_1);
       }
       else {
-        pcVar3 = (char *)0x0;
+        element_1f84 = (SettMapMTy_field_1F84Element *)0x0;
       }
-      if ((pcVar3 != (char *)0x0) && (*pcVar3 != '\0')) {
-        pcVar3[3] = param_2;
-        if ((pcVar3[4] == '\x02') && (*(int *)(pcVar3 + 6) == DAT_0080877f)) {
+      if ((element_1f84 != (SettMapMTy_field_1F84Element *)0x0) && (element_1f84->field_0000 != '\0')) {
+        element_1f84->field_0003 = param_2;
+        if ((element_1f84->field_0004 == '\x02') && (element_1f84->data == DAT_0080877f)) {
           DAT_0080874e = param_2;
         }
-        pDVar5 = local_8->field_1F84;
+        pSVar5 = local_8->field_1F84;
         uVar6 = param_1 + 1;
-        bVar7 = uVar6 < pDVar5->count;
-        if ((int)uVar6 < (int)pDVar5->count) {
+        bVar7 = uVar6 < pSVar5->count;
+        if ((int)uVar6 < (int)pSVar5->count) {
           do {
             if (bVar7) {
-              /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar5, uVar6) (runtime stride) */
-              pcVar3 = (char *)(pDVar5->elementSize * uVar6 + (int)pDVar5->data);
+              element_1f84 = DArrayAt<SettMapMTy_field_1F84Element>(pSVar5, uVar6);
             }
             else {
-              pcVar3 = (char *)0x0;
+              element_1f84 = (SettMapMTy_field_1F84Element *)0x0;
             }
-            if ((pcVar3 == (char *)0x0) || (*pcVar3 != '\0')) break;
-            pcVar3[3] = param_2;
-            if (*(int *)(pcVar3 + 6) == DAT_0080877f) {
+            if ((element_1f84 == (SettMapMTy_field_1F84Element *)0x0) || (element_1f84->field_0000 != '\0')) break;
+            element_1f84->field_0003 = param_2;
+            if (element_1f84->data == DAT_0080877f) {
               DAT_0080874e = param_2;
             }
-            pDVar5 = local_8->field_1F84;
+            pSVar5 = local_8->field_1F84;
             uVar6 = uVar6 + 1;
-            bVar7 = uVar6 < pDVar5->count;
-          } while ((int)uVar6 < (int)pDVar5->count);
+            bVar7 = uVar6 < pSVar5->count;
+          } while ((int)uVar6 < (int)pSVar5->count);
         }
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (*(code *)local_8->field_0000->field_002C)();

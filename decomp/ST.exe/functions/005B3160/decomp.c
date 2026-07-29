@@ -14,15 +14,16 @@ void __thiscall MainMenuTy::PaintMainMenu(MainMenuTy *this)
 {
   code *pcVar1;
   MainMenuTy *pMVar2;
-  uint uVar3;
-  uint *puVar4;
+  int uVar3;
+  uint *puVar3;
   char *text;
   StartServTy *this_00;
   StartServTy *this_01;
-  int iVar5;
+  int iVar4;
+  uint uVar5;
   uint uVar6;
-  uint uVar7;
-  ccFntTy *pcVar8;
+  ccFntTy *pcVar7;
+  uint uVar8;
   InternalExceptionFrame local_4c;
   MainMenuTy *local_8;
 
@@ -35,63 +36,63 @@ void __thiscall MainMenuTy::PaintMainMenu(MainMenuTy *this)
     PutDDX(0,0,'\x01',(BITMAPINFO *)g_startSystem_0081176C->field_002C);
     pMVar2 = local_8;
     if (local_8->field_1EE3 == '\0') {
-      uVar7 = 0;
-      pcVar8 = g_startSystem_0081176C->field_0030;
+      uVar8 = 0;
+      pcVar7 = g_startSystem_0081176C->field_0030;
       uVar6 = 0xffffffff;
-      uVar3 = 0xfffffffe;
-      puVar4 = (uint *)LoadResourceString(0x26ac,g_module_00807618);
-      StartServTy::WrTextDDX(this_01,0,0xe9,0x14,0x14c,0x18,puVar4,uVar3,uVar6,pcVar8,uVar7);
+      uVar5 = 0xfffffffe;
+      puVar3 = (uint *)LoadResourceString(0x26ac,g_module_00807618);
+      StartServTy::WrTextDDX(this_01,0,0xe9,0x14,0x14c,0x18,puVar3,uVar5,uVar6,pcVar7,uVar8);
       uVar6 = DAT_00807dd5 >> 0x10 & 0xff;
-      uVar7 = DAT_00807dd5 & 0xffff;
-      uVar3 = DAT_00807dd5 >> 0x18;
+      uVar8 = DAT_00807dd5 & 0xffff;
+      uVar5 = DAT_00807dd5 >> 0x18;
       text = LoadResourceString(0x2329,g_module_00807618);
-      wsprintfA((LPSTR)(pMVar2->field_1A5B + 0x3c),text,uVar3,uVar6,uVar7);
+      wsprintfA((LPSTR)(pMVar2->field_1A5B + 0x3c),text,uVar5,uVar6,uVar8);
       StartServTy::WrTextDDX
                 ((StartServTy *)g_startSystem_0081176C,0,0,0x240,800,0x18,
                  (uint *)(pMVar2->field_1A5B + 0x3c),0xfffffffe,0xffffffff,
                  g_startSystem_0081176C->field_0034,0);
     }
     else if (local_8->field_1EE3 == '\x01') {
-      pcVar8 = g_startSystem_0081176C->field_0030;
-      uVar7 = 0xffffffff;
-      uVar6 = 0xfffffffe;
-      puVar4 = (uint *)LoadResourceString(0x26b0,g_module_00807618);
-      StartServTy::WrTextDDX(this_00,0,0xe9,0x14,0x14c,0x18,puVar4,uVar6,uVar7,pcVar8,uVar3);
+      pcVar7 = g_startSystem_0081176C->field_0030;
+      uVar6 = 0xffffffff;
+      uVar5 = 0xfffffffe;
+      puVar3 = (uint *)LoadResourceString(0x26b0,g_module_00807618);
+      StartServTy::WrTextDDX(this_00,0,0xe9,0x14,0x14c,0x18,puVar3,uVar5,uVar6,pcVar7,uVar3);
     }
-    puVar4 = pMVar2->field_1AA7;
-    iVar5 = 10;
+    puVar3 = pMVar2->field_1AA7;
+    iVar4 = 10;
     do {
-      if ((AnonShape_006C4AA0_6E9A3AA4 *)*puVar4 != (AnonShape_006C4AA0_6E9A3AA4 *)0x0) {
-        FUN_006c4aa0((AnonShape_006C4AA0_6E9A3AA4 *)*puVar4);
+      if ((AnonShape_006C4AA0_6E9A3AA4 *)*puVar3 != (AnonShape_006C4AA0_6E9A3AA4 *)0x0) {
+        FUN_006c4aa0((AnonShape_006C4AA0_6E9A3AA4 *)*puVar3);
       }
-      puVar4 = puVar4 + 1;
-      iVar5 = iVar5 + -1;
-    } while (iVar5 != 0);
-    iVar5 = 0;
+      puVar3 = puVar3 + 1;
+      iVar4 = iVar4 + -1;
+    } while (iVar4 != 0);
+    iVar4 = 0;
     if (pMVar2->field_009A != 0) {
-      puVar4 = &pMVar2->field_00FF;
+      puVar3 = &pMVar2->field_00FF;
       do {
-        if (puVar4[-6] != 0xffffffff) {
+        if (puVar3[-6] != 0xffffffff) {
           Library::DKW::DDX::FUN_006b3730
-                    ((uint *)puVar4[0xb],puVar4[-6],puVar4[-5],*puVar4,puVar4[1]);
+                    ((uint *)puVar3[0xb],puVar3[-6],puVar3[-5],*puVar3,puVar3[1]);
         }
-        if ((pMVar2->field_0065 == '\x01') && (*(uint *)((int)puVar4 + 0x79) != 0xffffffff)) {
+        if ((pMVar2->field_0065 == '\x01') && (*(uint *)((int)puVar3 + 0x79) != 0xffffffff)) {
           Library::DKW::DDX::FUN_006b3730
-                    (*(uint **)((int)puVar4 + 0xbd),*(uint *)((int)puVar4 + 0x79),
-                     *(uint *)((int)puVar4 + 0x7d),*(uint *)((int)puVar4 + 0x91),
-                     *(uint *)((int)puVar4 + 0x95));
+                    (*(uint **)((int)puVar3 + 0xbd),*(uint *)((int)puVar3 + 0x79),
+                     *(uint *)((int)puVar3 + 0x7d),*(uint *)((int)puVar3 + 0x91),
+                     *(uint *)((int)puVar3 + 0x95));
         }
-        iVar5 = iVar5 + 1;
-        puVar4 = (uint *)((int)puVar4 + 0x1fb);
-      } while (iVar5 < (int)(uint)pMVar2->field_009A);
+        iVar4 = iVar4 + 1;
+        puVar3 = (uint *)((int)puVar3 + 0x1fb);
+      } while (iVar4 < (int)(uint)pMVar2->field_009A);
     }
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar5 = ReportDebugMessage("E:\\__titans\\Start\\main_obj.cpp",0x7e,0,uVar3,"%s",
+  iVar4 = ReportDebugMessage("E:\\__titans\\Start\\main_obj.cpp",0x7e,0,uVar3,"%s",
                              "MainMenuTy::PaintMainMenu");
-  if (iVar5 != 0) {
+  if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(uVar3,0,"E:\\__titans\\Start\\main_obj.cpp",0x7e);

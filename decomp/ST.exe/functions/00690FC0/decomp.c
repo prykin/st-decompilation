@@ -39,8 +39,7 @@ undefined4 * __cdecl FUN_00690fc0(undefined4 *param_1)
       if (*(int *)((int)&pAVar2->field_0085 + iVar1) != 0) {
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         uVar3 = FUN_006b0060((uint *)0x0,
-                             (uint *)(*(int *)(&pAVar2->field_0x89 + iVar1) + 0x10b + (int)param_1))
-        ;
+                             (uint *)(*(int *)(&pAVar2->field_0x89 + iVar1) + 0x10b + (int)param_1));
         *(undefined4 *)((int)&local_8->field_0085 + iVar1) = uVar3;
         pAVar2 = local_8;
       }

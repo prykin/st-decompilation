@@ -92,8 +92,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
       UVar5 = thunk_FUN_00524fe0(GVar19);
       DrawTitle(this_00,0x55fd,param_2,UVar5);
       uVar6 = thunk_FUN_005259b0(GVar19,0,'\x01');
-      pbVar7 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_0244,uVar6)
-      ;
+      pbVar7 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_0244,uVar6);
       if (pbVar7 != (byte *)0x0) {
         DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0x35,
                (0x1e - *(int *)(pbVar7 + 8)) / 2 + 0x2a,'\x06',pbVar7);
@@ -194,8 +193,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
         iVar17 = -3;
         puVar8 = (uint *)LoadResourceString(0x55f7,g_module_00807618);
         ccFntTy::WrStr(this_00->field_01E0,puVar8,iVar17,iVar18,uVar6);
-        ccFntTy::SetSurf(this_00->field_01E8,(int)this_00->field_0218,0,0x96,local_8 - 3,0x106,0x14)
-        ;
+        ccFntTy::SetSurf(this_00->field_01E8,(int)this_00->field_0218,0,0x96,local_8 - 3,0x106,0x14);
         wsprintfA((LPSTR)&DAT_0080f33a,"%4d",iVar4);
         ccFntTy::WrStr(this_00->field_01E8,&DAT_0080f33a,1,-1,(DAT_0080874e != '\x03') - 1 & 4);
         uVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_0238,0);

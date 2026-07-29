@@ -48,9 +48,10 @@ int __fastcall FUN_0060dd70(AnonShape_0060DD70_701DD710 *param_1)
                           (short)((longlong)iVar4 * 0x51eb851f >> 0x3f));
   }
   iVar4 = param_1->field_024C;
-  if ((((PTR_00807598->field_0048 <= iVar4 + iVar5) && (iVar5 - iVar4 <= PTR_00807598->field_0058))
-      && (PTR_00807598->field_0044 <= iVar4 + iVar6)) && (iVar6 - iVar4 <= PTR_00807598->field_0054)
-     ) {
+  if ((((g_sT3DSMAPContext_00807598->field_0048 <= iVar4 + iVar5) &&
+       (iVar5 - iVar4 <= g_sT3DSMAPContext_00807598->field_0058)) &&
+      (g_sT3DSMAPContext_00807598->field_0044 <= iVar4 + iVar6)) &&
+     (iVar6 - iVar4 <= g_sT3DSMAPContext_00807598->field_0054)) {
     local_14 = FUN_006ddbd0();
     pVVar2 = g_visibleClass_00802A88;
     if (local_14 == 0) {

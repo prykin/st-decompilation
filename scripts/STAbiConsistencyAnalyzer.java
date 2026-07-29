@@ -860,7 +860,8 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
                     row.directReads + "\t" + row.scalarOperations + "\t" +
                     row.signedComparisons + "\t" + row.unsignedBounds + "\t" +
                     row.pointerDereferences + "\t" + (row.slotReused ? "1" : "0") +
-                    "\t" + tsv(row.evidence) + "\n");
+                    "\t" + tsv(row.evidence == null || row.evidence.isBlank() ?
+                        "-" : row.evidence) + "\n");
         }
     }
 

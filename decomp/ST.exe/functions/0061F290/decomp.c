@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STMethodOwnerApplier] Structural method owner recovered as STLightC.
@@ -9,11 +11,12 @@ undefined4 __thiscall STLightC::sub_0061F290(STLightC *this,int param_1)
 
 {
   dword dVar1;
-  DArrayTy *pDVar2;
+  STLightC_field_00A3DArray *pSVar2;
   VisibleClassTy *this_00;
   int iVar3;
   int iVar4;
   int *piVar5;
+  STLightC_field_00A3Element *element_00a3;
   longlong lVar6;
   int local_1c;
   int local_18;
@@ -23,25 +26,24 @@ undefined4 __thiscall STLightC::sub_0061F290(STLightC *this,int param_1)
   int local_8;
 
   local_10 = 0;
-  if (this->field_00A3 != (DArrayTy *)0x0) {
+  if (this->field_00A3 != (STLightC_field_00A3DArray *)0x0) {
     dVar1 = this->field_00A3->count;
     if ((dVar1 != 0) && (local_c = 0, local_14 = this, 0 < (int)dVar1)) {
       do {
         this_00 = g_visibleClass_00802A88;
-        pDVar2 = local_14->field_00A3;
-        if (local_c < pDVar2->count) {
-          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar2, local_c) (runtime stride) */
-          piVar5 = (int *)(pDVar2->elementSize * local_c + (int)pDVar2->data);
+        pSVar2 = local_14->field_00A3;
+        if (local_c < pSVar2->count) {
+          element_00a3 = DArrayAt<STLightC_field_00A3Element>(pSVar2, local_c);
         }
         else {
-          piVar5 = (int *)0x0;
+          element_00a3 = (STLightC_field_00A3Element *)0x0;
         }
-        if ((-1 < (int)*(uint *)((int)piVar5 + 0x26)) && (-1 < *piVar5)) {
-          if ((int)(g_playSystem_00802A38->field_00E4 - *(int *)((int)piVar5 + 0x2a)) <
+        if ((-1 < (int)element_00a3->spriteHandle) && (-1 < element_00a3->field_0000)) {
+          if ((int)(g_playSystem_00802A38->field_00E4 - element_00a3->field_002A) <
               local_14->field_005F) {
             local_10 = 1;
             if ((param_1 != 0) && (g_visibleClass_00802A88 != (VisibleClassTy *)0x0)) {
-              if ((float)piVar5[3] < _DAT_0079034c) {
+              if ((float)element_00a3->field_000C < _DAT_0079034c) {
                 lVar6 = Library::MSVCRT::__ftol();
                 iVar4 = (short)lVar6 + -1;
               }
@@ -49,7 +51,7 @@ undefined4 __thiscall STLightC::sub_0061F290(STLightC *this,int param_1)
                 lVar6 = Library::MSVCRT::__ftol();
                 iVar4 = (int)(short)lVar6;
               }
-              if ((float)piVar5[2] < _DAT_0079034c) {
+              if ((float)element_00a3->field_0008 < _DAT_0079034c) {
                 lVar6 = Library::MSVCRT::__ftol();
                 local_8 = (short)lVar6 + -1;
               }
@@ -57,7 +59,7 @@ undefined4 __thiscall STLightC::sub_0061F290(STLightC *this,int param_1)
                 lVar6 = Library::MSVCRT::__ftol();
                 local_8 = (int)(short)lVar6;
               }
-              if ((float)piVar5[1] < _DAT_0079034c) {
+              if ((float)element_00a3->field_0004 < _DAT_0079034c) {
                 lVar6 = Library::MSVCRT::__ftol();
                 iVar3 = (short)lVar6 + -1;
               }
@@ -74,20 +76,23 @@ undefined4 __thiscall STLightC::sub_0061F290(STLightC *this,int param_1)
                     (this_00->field_0034 <= iVar4)))))) ||
                  ((this_00->field_004C == (byte *)0x0 ||
                   (this_00->field_004C[local_18 + iVar4 * this_00->field_0030] != 0)))) {
-                if (*(char *)((int)piVar5 + 0x2f) == '\0') {
-                  FUN_006eaaa0(PTR_00807598,*(uint *)((int)piVar5 + 0x26),0);
-                  *(undefined1 *)((int)piVar5 + 0x2f) = 1;
+                if (element_00a3->state == 0) {
+                  Library::Ourlib::ST3DSMAP::SprShow
+                            (g_sT3DSMAPContext_00807598,element_00a3->spriteHandle,0);
+                  element_00a3->state = 1;
                 }
               }
-              else if (*(char *)((int)piVar5 + 0x2f) == '\x01') {
-                FUN_006eab60(PTR_00807598,*(uint *)((int)piVar5 + 0x26));
-                *(undefined1 *)((int)piVar5 + 0x2f) = 0;
+              else if (element_00a3->state == 1) {
+                Library::Ourlib::ST3DSMAP::SprHide
+                          (g_sT3DSMAPContext_00807598,element_00a3->spriteHandle);
+                element_00a3->state = 0;
               }
             }
           }
           else {
-            FUN_006e8ba0(PTR_00807598,*(uint *)((int)piVar5 + 0x26));
-            *(undefined4 *)((int)piVar5 + 0x26) = 0xffffffff;
+            Library::Ourlib::ST3DSMAP::SprClose
+                      (g_sT3DSMAPContext_00807598,element_00a3->spriteHandle);
+            element_00a3->spriteHandle = 0xffffffff;
             *piVar5 = -1;
           }
         }

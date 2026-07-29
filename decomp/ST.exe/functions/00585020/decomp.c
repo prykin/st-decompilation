@@ -49,7 +49,7 @@ void __fastcall FUN_00585020(AnonShape_00585020_1C9B1418 *param_1)
   if (iVar3 == 0) {
     iVar3 = 0;
     uVar4 = thunk_FUN_004ad650((STT3DSprC *)this);
-    FUN_006eabf0(param_1->field_0211,uVar4,iVar3);
+    Library::Ourlib::ST3DSMAP::SprSetVisible(param_1->field_0211,uVar4,iVar3);
     iVar3 = thunk_FUN_0041caf0((AnonShape_0041CAF0_1630B9E0 *)param_1);
     if (iVar3 == 1) {
       iVar3 = 1;
@@ -61,7 +61,7 @@ void __fastcall FUN_00585020(AnonShape_00585020_1C9B1418 *param_1)
   else {
     iVar3 = 1;
     uVar4 = thunk_FUN_004ad650((STT3DSprC *)this);
-    FUN_006eabf0(param_1->field_0211,uVar4,iVar3);
+    Library::Ourlib::ST3DSMAP::SprSetVisible(param_1->field_0211,uVar4,iVar3);
     iVar3 = 1;
   }
   iVar5 = thunk_FUN_004ad650((STT3DSprC *)this);
@@ -115,19 +115,18 @@ void __fastcall FUN_00585020(AnonShape_00585020_1C9B1418 *param_1)
     }
     iVar7 = DAT_007cb8e4 >> 1;
     if (iVar7 < iVar5) {
-      iVar1 = *(short *)(DAT_00806724 + 0x23) + -1;
+      iVar1 = PTR_00806724->entryCount + -1;
       iVar7 = ((iVar5 - iVar7) * iVar1) / iVar7;
       if (iVar7 < 0) {
         iVar7 = 0;
       }
-      if (*(short *)(DAT_00806724 + 0x23) <= iVar7) {
+      if (PTR_00806724->entryCount <= iVar7) {
         STT3DSprC::sub_004ACE30((STT3DSprC *)this,0,0);
         iVar7 = iVar1;
       }
       param_1->field_0241 = iVar7;
       STT3DSprC::sub_004ACE30
-                ((STT3DSprC *)this,*(uint *)(DAT_00806724 + 0x30 + iVar7 * 4),
-                 (int)*(short *)(DAT_00806724 + 0x2c));
+                ((STT3DSprC *)this,PTR_00806724->entries[iVar7],(int)PTR_00806724->field_002C);
     }
     sVar6 = (short)iVar3;
     if (iVar3 + 0x28 < 0) {
@@ -208,7 +207,7 @@ void __fastcall FUN_00585020(AnonShape_00585020_1C9B1418 *param_1)
     if (iVar7 == 1) {
       thunk_FUN_00585890(param_1,iVar3,iVar5,param_1->field_0286);
     }
-    iVar3 = *(short *)(DAT_00806724 + 0x23) + -1;
+    iVar3 = PTR_00806724->entryCount + -1;
     iVar3 = iVar3 - (iVar3 * iVar7) / (DAT_007cb8e4 >> 1);
     if (iVar3 < 1) {
       param_1->field_0241 = 0;
@@ -218,8 +217,8 @@ void __fastcall FUN_00585020(AnonShape_00585020_1C9B1418 *param_1)
     else {
       param_1->field_0241 = iVar3;
       STT3DSprC::sub_004ACE30
-                ((STT3DSprC *)this,*(uint *)(DAT_00806724 + 0x30 + iVar3 * 4),
-                 (int)*(short *)(DAT_00806724 + 0x2c));
+                ((STT3DSprC *)this,*(uint *)((int)PTR_00806724 + iVar3 * 4 + 0x30),
+                 (int)PTR_00806724->field_002C);
     }
     uVar4 = (int)param_1->field_0045 - 5;
     if ((param_1->field_0045 < 0x44c) && (0x1b < (int)(param_1->field_0235 - uVar4))) {

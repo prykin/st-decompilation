@@ -59,6 +59,8 @@ public class STClassLayoutAnalyzer extends GhidraScript {
     private static final String HASH_MARKER = "generated_layout_sha256=";
     private static final String SWITCH_ENUM_MARKER = "[STSwitchEnumApplier]";
     private static final String DARRAY_PATH = "/SubmarineTitans/Recovered/DArrayTy";
+    private static final String DARRAY_SPECIALIZATION_ROOT =
+        "/SubmarineTitans/Recovered/DArraySpecializations/";
     private static final String CLASS_POINTEE_ROOT =
         "/SubmarineTitans/Recovered/ClassPointees/";
     private static final long MAX_CLASS_SIZE = 0x1000000L;
@@ -1615,7 +1617,17 @@ public class STClassLayoutAnalyzer extends GhidraScript {
                 type = typeSpecification(existing.getDataType());
                 if (existing.getFieldName() != null) name = existing.getFieldName();
                 existingConcreteType = true;
-                if (isOwnedUnchangedCandidate(structure) && !inferredType.isBlank() &&
+                boolean retainedDArraySpecialization =
+                    inferredType.equals("pointer:" + DARRAY_PATH) &&
+                    darraySpecialization(type);
+                if (retainedDArraySpecialization) {
+                    // STDArrayElementApplier refines only DArrayTy::data.  The
+                    // generic descriptor evidence remains true and must not
+                    // bounce the owner field back on the next fixed-point pass.
+                    inferredType = type;
+                    typeApply = false;
+                }
+                else if (isOwnedUnchangedCandidate(structure) && !inferredType.isBlank() &&
                         !inferredType.equals(type)) {
                     generatedTypeRevision = true;
                     typeApply = typeLength(inferredType) == size;
@@ -1640,6 +1652,8 @@ public class STClassLayoutAnalyzer extends GhidraScript {
                 field.thisAccesses == 0 && field.cfgRecovered == 0 && field.crossRecovered > 0 ?
                     "consistent_typed_class_pointer_access" :
                     "consistent_this_relative_access";
+            if (inferredType.equals(type) && darraySpecialization(type))
+                reason += "; compatible_DArray_element_specialization_preserved";
             if (field.sizes.size() > 1 && consistent)
                 reason += "; compatible_subwidth_views=" + field.sizeText();
             if (generatedTypeRevision)
@@ -1699,6 +1713,10 @@ public class STClassLayoutAnalyzer extends GhidraScript {
         }
         result.sort(Comparator.comparingLong(field -> field.offset));
         return result;
+    }
+
+    private boolean darraySpecialization(String specification) {
+        return specification.startsWith("pointer:" + DARRAY_SPECIALIZATION_ROOT);
     }
 
     private void disableDuplicateSuggestedNames(List<FieldProposal> fields) {

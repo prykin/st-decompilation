@@ -89,8 +89,7 @@ LAB_00478373:
         iVar5 = 0x334c;
 LAB_0047848a:
         RaiseInternalException
-                  (0xffff,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",iVar5)
-        ;
+                  (0xffff,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",iVar5);
         return 0xffff;
       }
       if (iVar5 == 0) {

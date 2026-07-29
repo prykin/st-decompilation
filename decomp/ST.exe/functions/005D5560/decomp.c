@@ -418,8 +418,7 @@ LAB_005d5ff8:
             local_14 = (AnonShape_005D5560_9031BF1B *)
                        (&DAT_008087c8 + (uint)(byte)pcVar16[2] * 0x51);
             pcVar32 = pcVar31 + -uVar29;
-            pAVar30 = (AnonShape_005D5560_9031BF1B *)(&DAT_008087c8 + (uint)(byte)pcVar16[2] * 0x51)
-            ;
+            pAVar30 = (AnonShape_005D5560_9031BF1B *)(&DAT_008087c8 + (uint)(byte)pcVar16[2] * 0x51);
             for (uVar28 = uVar29 >> 2; uVar28 != 0; uVar28 = uVar28 - 1) {
               cVar26 = pcVar32[1];
               cVar10 = pcVar32[2];
@@ -820,8 +819,7 @@ LAB_005d5b7e:
     }
     else {
       /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar18, uVar29) (runtime stride) */
-      local_14 = (AnonShape_005D5560_9031BF1B *)(pDVar18->elementSize * uVar29 + (int)pDVar18->data)
-      ;
+      local_14 = (AnonShape_005D5560_9031BF1B *)(pDVar18->elementSize * uVar29 + (int)pDVar18->data);
     }
     uVar29 = 0;
     if (local_14 != (AnonShape_005D5560_9031BF1B *)0x0) {
@@ -1520,8 +1518,7 @@ LAB_005d6c37:
     pDVar18 = pAVar34->field_0050;
     if ((uint)(byte)pAVar34->field_0x5 < pDVar18->count) {
       /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar18, (uint)(byte)pAVar34->field_0x5) (runtime stride) */
-      puVar20 = (uint *)(pDVar18->elementSize * (uint)(byte)pAVar34->field_0x5 + (int)pDVar18->data)
-      ;
+      puVar20 = (uint *)(pDVar18->elementSize * (uint)(byte)pAVar34->field_0x5 + (int)pDVar18->data);
     }
     else {
       puVar20 = (uint *)0x0;

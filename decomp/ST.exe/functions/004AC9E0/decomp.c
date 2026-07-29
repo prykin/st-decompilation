@@ -60,11 +60,11 @@ cf_continue_loop_004ACA23:
         }
         if (iVar1 != 0) {
           *(undefined4 *)(iVar3 + 0x20) = 0;
-          FUN_006e9cb0(*(void **)((int)this + 0x3c),*(uint **)((int)this + 0x18),local_28);
+          ST3DSMAPContext::sub_006E9CB0
+                    (*(ST3DSMAPContext **)((int)this + 0x3c),*(uint **)((int)this + 0x18),local_28);
         }
         piVar4 = (int *)(*(int *)((int)this + 0x20) + iVar5);
-        *(undefined4 *)(piVar4[1] + piVar4[6] * 4) = *(undefined4 *)(piVar4[6] * 4 + 0x31 + *piVar4)
-        ;
+        *(undefined4 *)(piVar4[1] + piVar4[6] * 4) = *(undefined4 *)(piVar4[6] * 4 + 0x31 + *piVar4);
         iVar3 = *(int *)((int)this + 0x20) + iVar5;
         if (*(int *)(iVar3 + 0x18) == *(int *)(iVar3 + 0x14)) {
           if (*(char *)(iVar3 + 0xd) == '\x02') {
@@ -102,8 +102,9 @@ LAB_004acb87:
           }
         }
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        FUN_006ea270(*(void **)((int)this + 0x3c),*(uint *)((int)this + 0x18),local_28,
-                     *(uint *)(*(int *)((int)this + 0x20) + 0x18 + iVar5));
+        ST3DSMAPContext::sub_006EA270
+                  (*(ST3DSMAPContext **)((int)this + 0x3c),*(uint *)((int)this + 0x18),local_28,
+                   *(uint *)(*(int *)((int)this + 0x20) + 0x18 + iVar5));
       }
     }
 LAB_004acbdc:

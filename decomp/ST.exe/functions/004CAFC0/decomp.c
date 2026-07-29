@@ -23,74 +23,75 @@ TLOBaseTy::sub_004CAFC0
           uint *param_4)
 
 {
-  uint uVar1;
-  int iVar2;
+  uint uVar2;
+  int uVar1;
   int iVar3;
-  TLOBaseTy_field_05ACState TVar4;
-  TLOBaseTy_field_0245State TVar5;
+  int iVar4;
+  TLOBaseTy_field_05ACState TVar5;
+  TLOBaseTy_field_0245State TVar6;
 
   uVar1 = GetPlayerRaceId(*(char *)&this->field_023D);
-  iVar2 = (uVar1 & 0xff) - 1;
-  TVar4 = this->field_05AC;
-  if (TVar4 == CASE_32) {
+  iVar3 = (uVar1 & 0xffU) - 1;
+  TVar5 = this->field_05AC;
+  if (TVar5 == CASE_32) {
     sub_004CFA00(this,param_1,param_2,(int *)param_3,(int *)param_4);
     return;
   }
-  if (TVar4 == CASE_5C) {
+  if (TVar5 == CASE_5C) {
     thunk_FUN_004cfbe0(this,param_1,param_2,param_3,param_4);
     return;
   }
-  if (TVar4 == CASE_40) {
+  if (TVar5 == CASE_40) {
     thunk_FUN_004cfff0(this,param_1,param_2,(int *)param_3,(int *)param_4);
     return;
   }
-  if (TVar4 == CASE_49) {
+  if (TVar5 == CASE_49) {
     thunk_FUN_004cfde0(this,param_1,param_2,param_3,param_4);
     return;
   }
-  if (TVar4 == CASE_4D) {
+  if (TVar5 == CASE_4D) {
     thunk_FUN_004deeb0(this,param_1,param_2,param_3,param_4);
     return;
   }
-  if (TVar4 == CASE_4C) {
+  if (TVar5 == CASE_4C) {
     thunk_FUN_004dcaa0(this,param_1,param_2,param_3,param_4);
     return;
   }
-  if (TVar4 == CASE_43) {
+  if (TVar5 == CASE_43) {
     thunk_FUN_004df6f0(this,param_1,param_2,param_3,param_4);
     return;
   }
-  if (TVar4 == CASE_44) {
+  if (TVar5 == CASE_44) {
     thunk_FUN_004dea90(this,param_1,param_2,(int *)param_3,(int *)param_4);
     return;
   }
-  if (TVar4 == CASE_52) {
+  if (TVar5 == CASE_52) {
     thunk_FUN_004ec700(this,param_1,param_2,param_3,param_4);
     return;
   }
-  if (TVar4 == CASE_5F) {
+  if (TVar5 == CASE_5F) {
     thunk_FUN_004ec900(this,param_1,param_2,param_3,param_4);
     return;
   }
-  if (TVar4 == CASE_68) {
+  if (TVar5 == CASE_68) {
     thunk_FUN_004dc4b0(this,param_1,param_2,param_3,param_4);
     return;
   }
-  if (TVar4 == CASE_37) {
+  if (TVar5 == CASE_37) {
     thunk_FUN_004e8e50(this,param_1,param_2,param_3,param_4);
     return;
   }
-  if (TVar4 == CASE_63) {
+  if (TVar5 == CASE_63) {
     thunk_FUN_004b7b20(this,param_1,param_2,param_3,param_4);
     return;
   }
-  TVar5 = this->field_0245;
-  if ((TVar5 == CASE_1) && (this->field_024D == 4)) {
-    TVar5 = CASE_4;
+  TVar6 = this->field_0245;
+  if ((TVar6 == CASE_1) && (this->field_024D == 4)) {
+    TVar6 = CASE_4;
   }
   switch(param_1) {
   case CASE_7:
-    if (TVar4 == CASE_4E) {
+    if (TVar5 == CASE_4E) {
       switch(this->field_04D0) {
       case CASE_0:
       case CASE_2:
@@ -116,10 +117,10 @@ TLOBaseTy::sub_004CAFC0
         *param_3 = 0;
         break;
       case CASE_1:
-        *param_3 = *(uint *)((&PTR_DAT_007b8310)[TVar5] +
-                            (param_2 + (iVar2 + this->field_0235 * 3) * 4) * 8);
-        *param_4 = *(uint *)((&PTR_DAT_007b8310)[TVar5] +
-                            (param_2 + (iVar2 + this->field_0235 * 3) * 4) * 8 + 4);
+        *param_3 = *(uint *)((&PTR_DAT_007b8310)[TVar6] +
+                            (param_2 + (iVar3 + this->field_0235 * 3) * 4) * 8);
+        *param_4 = *(uint *)((&PTR_DAT_007b8310)[TVar6] +
+                            (param_2 + (iVar3 + this->field_0235 * 3) * 4) * 8 + 4);
       }
     }
     if (this->field_05AC != CASE_70) {
@@ -147,14 +148,14 @@ TLOBaseTy::sub_004CAFC0
   default:
     goto cf_common_exit_004CB6D2;
   case CASE_C:
-    switch(TVar4) {
+    switch(TVar5) {
     case CASE_33:
       if (this->field_04E0[0x10] == 0) {
 cf_common_exit_004CB489:
-        uVar1 = *(uint *)((&PTR_DAT_007b8310)[TVar5] +
-                         (param_2 + (iVar2 + this->field_0235 * 3) * 4) * 8);
-        *param_4 = uVar1;
-        *param_3 = uVar1;
+        uVar2 = *(uint *)((&PTR_DAT_007b8310)[TVar6] +
+                         (param_2 + (iVar3 + this->field_0235 * 3) * 4) * 8);
+        *param_4 = uVar2;
+        *param_3 = uVar2;
         return;
       }
       break;
@@ -168,17 +169,17 @@ cf_common_exit_004CB489:
     case CASE_59:
     case CASE_5A:
       if (this->field_04D0 != CASE_0) {
-        *param_3 = *(uint *)((&PTR_DAT_007b8310)[TVar5] +
-                            (param_2 + (iVar2 + this->field_0235 * 3) * 4) * 8);
-        *param_4 = *(uint *)((&PTR_DAT_007b8310)[TVar5] +
-                            (param_2 + (iVar2 + this->field_0235 * 3) * 4) * 8 + 4);
+        *param_3 = *(uint *)((&PTR_DAT_007b8310)[TVar6] +
+                            (param_2 + (iVar3 + this->field_0235 * 3) * 4) * 8);
+        *param_4 = *(uint *)((&PTR_DAT_007b8310)[TVar6] +
+                            (param_2 + (iVar3 + this->field_0235 * 3) * 4) * 8 + 4);
         return;
       }
 cf_common_exit_004CB504:
-      uVar1 = *(uint *)((&PTR_DAT_007b8310)[TVar5] +
-                       (param_2 + (iVar2 + this->field_0235 * 3) * 4) * 8);
-      *param_4 = uVar1;
-      *param_3 = uVar1;
+      uVar2 = *(uint *)((&PTR_DAT_007b8310)[TVar6] +
+                       (param_2 + (iVar3 + this->field_0235 * 3) * 4) * 8);
+      *param_4 = uVar2;
+      *param_3 = uVar2;
       return;
     case CASE_38:
     case CASE_39:
@@ -204,17 +205,17 @@ switchD_004cb5c6_caseD_0:
         break;
       case CASE_4:
 switchD_004cb5c6_caseD_4:
-        uVar1 = *(uint *)((&PTR_DAT_007b8310)[TVar5] +
-                         (param_2 + (iVar2 + this->field_0235 * 3) * 4) * 8 + 4);
-        *param_4 = uVar1;
-        *param_3 = uVar1;
+        uVar2 = *(uint *)((&PTR_DAT_007b8310)[TVar6] +
+                         (param_2 + (iVar3 + this->field_0235 * 3) * 4) * 8 + 4);
+        *param_4 = uVar2;
+        *param_3 = uVar2;
         return;
       case CASE_5:
 switchD_004cb5c6_caseD_5:
-        *param_3 = *(uint *)((&PTR_DAT_007b8310)[TVar5] +
-                            (param_2 + (iVar2 + this->field_0235 * 3) * 4) * 8 + 4);
-        *param_4 = *(uint *)((&PTR_DAT_007b8310)[TVar5] +
-                            (param_2 + (iVar2 + this->field_0235 * 3) * 4) * 8);
+        *param_3 = *(uint *)((&PTR_DAT_007b8310)[TVar6] +
+                            (param_2 + (iVar3 + this->field_0235 * 3) * 4) * 8 + 4);
+        *param_4 = *(uint *)((&PTR_DAT_007b8310)[TVar6] +
+                            (param_2 + (iVar3 + this->field_0235 * 3) * 4) * 8);
         return;
       default:
         goto cf_common_exit_004CB6D2;
@@ -237,58 +238,58 @@ switchD_004cb5c6_caseD_5:
         goto cf_common_exit_004CB6D2;
       }
     }
-    *param_3 = *(uint *)((&PTR_DAT_007b8310)[TVar5] +
-                        (param_2 + (iVar2 + this->field_0235 * 3) * 4) * 8);
-    *param_4 = *(uint *)((&PTR_DAT_007b8310)[TVar5] +
-                        (param_2 + (iVar2 + this->field_0235 * 3) * 4) * 8 + 4);
+    *param_3 = *(uint *)((&PTR_DAT_007b8310)[TVar6] +
+                        (param_2 + (iVar3 + this->field_0235 * 3) * 4) * 8);
+    *param_4 = *(uint *)((&PTR_DAT_007b8310)[TVar6] +
+                        (param_2 + (iVar3 + this->field_0235 * 3) * 4) * 8 + 4);
     return;
   case CASE_D:
     break;
   case CASE_E:
     goto switchD_004cb1d7_caseD_e;
   }
-  if ((TVar4 == CASE_4F) &&
-     (iVar3 = GetPlayerRaceId(*(char *)&this->field_023D), (char)iVar3 == '\x02')) {
+  if ((TVar5 == CASE_4F) &&
+     (iVar4 = GetPlayerRaceId(*(char *)&this->field_023D), (char)iVar4 == '\x02')) {
     *param_4 = 0;
     *param_3 = 0;
     return;
   }
 switchD_004cb1d7_caseD_e:
   if ((this->field_05AC == CASE_4F) &&
-     (iVar3 = GetPlayerRaceId(*(char *)&this->field_023D), (char)iVar3 == '\x02')) {
+     (iVar4 = GetPlayerRaceId(*(char *)&this->field_023D), (char)iVar4 == '\x02')) {
     if (this->field_04D0 != CASE_1) {
-      uVar1 = *(uint *)((&PTR_DAT_007b5170)[TVar5] +
-                       (param_2 + (iVar2 + this->field_0235 * 3) * 4) * 8);
-      *param_4 = uVar1;
-      *param_3 = uVar1;
+      uVar2 = *(uint *)((&PTR_DAT_007b5170)[TVar6] +
+                       (param_2 + (iVar3 + this->field_0235 * 3) * 4) * 8);
+      *param_4 = uVar2;
+      *param_3 = uVar2;
       return;
     }
   }
   else {
-    TVar4 = this->field_05AC;
-    if (TVar4 == CASE_6E) {
+    TVar5 = this->field_05AC;
+    if (TVar5 == CASE_6E) {
       switch(this->field_04D0) {
       case CASE_0:
         goto switchD_004cb2cd_caseD_0;
       case CASE_1:
 switchD_004cb2cd_caseD_1:
-        *param_3 = *(uint *)((&PTR_DAT_007b5170)[TVar5] +
-                            (param_2 + (iVar2 + this->field_0235 * 3) * 4) * 8);
-        *param_4 = *(uint *)((&PTR_DAT_007b5170)[TVar5] +
-                            (param_2 + (iVar2 + this->field_0235 * 3) * 4) * 8 + 4);
+        *param_3 = *(uint *)((&PTR_DAT_007b5170)[TVar6] +
+                            (param_2 + (iVar3 + this->field_0235 * 3) * 4) * 8);
+        *param_4 = *(uint *)((&PTR_DAT_007b5170)[TVar6] +
+                            (param_2 + (iVar3 + this->field_0235 * 3) * 4) * 8 + 4);
         return;
       case CASE_2:
 switchD_004cb2cd_caseD_2:
-        uVar1 = *(uint *)((&PTR_DAT_007b5170)[TVar5] +
-                         (param_2 + (iVar2 + this->field_0235 * 3) * 4) * 8 + 4);
-        *param_4 = uVar1;
-        *param_3 = uVar1;
+        uVar2 = *(uint *)((&PTR_DAT_007b5170)[TVar6] +
+                         (param_2 + (iVar3 + this->field_0235 * 3) * 4) * 8 + 4);
+        *param_4 = uVar2;
+        *param_3 = uVar2;
         return;
       case CASE_3:
-        *param_3 = *(uint *)((&PTR_DAT_007b5170)[TVar5] +
-                            (param_2 + (iVar2 + this->field_0235 * 3) * 4) * 8 + 4);
-        *param_4 = *(uint *)((&PTR_DAT_007b5170)[TVar5] +
-                            (param_2 + (iVar2 + this->field_0235 * 3) * 4) * 8);
+        *param_3 = *(uint *)((&PTR_DAT_007b5170)[TVar6] +
+                            (param_2 + (iVar3 + this->field_0235 * 3) * 4) * 8 + 4);
+        *param_4 = *(uint *)((&PTR_DAT_007b5170)[TVar6] +
+                            (param_2 + (iVar3 + this->field_0235 * 3) * 4) * 8);
         return;
       default:
 cf_common_exit_004CB6D2:
@@ -296,36 +297,36 @@ cf_common_exit_004CB6D2:
       }
     }
 switchD_004cb1d7_caseD_8:
-    if (TVar4 == CASE_72) {
+    if (TVar5 == CASE_72) {
       switch(this->field_04D0) {
       case CASE_0:
       case CASE_1:
       case CASE_2:
 switchD_004cb2cd_caseD_0:
-        uVar1 = *(uint *)((&PTR_DAT_007b5170)[TVar5] +
-                         (param_2 + (iVar2 + this->field_0235 * 3) * 4) * 8);
-        *param_4 = uVar1;
-        *param_3 = uVar1;
+        uVar2 = *(uint *)((&PTR_DAT_007b5170)[TVar6] +
+                         (param_2 + (iVar3 + this->field_0235 * 3) * 4) * 8);
+        *param_4 = uVar2;
+        *param_3 = uVar2;
         return;
       case CASE_3:
         goto switchD_004cb2cd_caseD_1;
       case CASE_4:
         goto switchD_004cb2cd_caseD_2;
       case CASE_5:
-        *param_3 = *(uint *)((&PTR_DAT_007b5170)[TVar5] +
-                            (param_2 + (iVar2 + this->field_0235 * 3) * 4) * 8 + 4);
-        *param_4 = *(uint *)((&PTR_DAT_007b5170)[TVar5] +
-                            (param_2 + (iVar2 + this->field_0235 * 3) * 4) * 8);
+        *param_3 = *(uint *)((&PTR_DAT_007b5170)[TVar6] +
+                            (param_2 + (iVar3 + this->field_0235 * 3) * 4) * 8 + 4);
+        *param_4 = *(uint *)((&PTR_DAT_007b5170)[TVar6] +
+                            (param_2 + (iVar3 + this->field_0235 * 3) * 4) * 8);
         return;
       default:
         goto cf_common_exit_004CB6D2;
       }
     }
   }
-  *param_3 = *(uint *)((&PTR_DAT_007b5170)[TVar5] +
-                      (param_2 + (iVar2 + this->field_0235 * 3) * 4) * 8);
-  *param_4 = *(uint *)((&PTR_DAT_007b5170)[TVar5] +
-                      (param_2 + (iVar2 + this->field_0235 * 3) * 4) * 8 + 4);
+  *param_3 = *(uint *)((&PTR_DAT_007b5170)[TVar6] +
+                      (param_2 + (iVar3 + this->field_0235 * 3) * 4) * 8);
+  *param_4 = *(uint *)((&PTR_DAT_007b5170)[TVar6] +
+                      (param_2 + (iVar3 + this->field_0235 * 3) * 4) * 8 + 4);
   return;
 }
 

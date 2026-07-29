@@ -384,8 +384,7 @@ LAB_005e496b:
         local_20 = CONCAT31(local_20._1_3_,(-(local_1c->field_000A != '\x01') & 0xecU) + 0x2c);
         if (local_c[1] == 3) {
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_14 = (uint *)CONCAT31(local_14._1_3_,(-(local_1c->field_0x8 != '\x01') & 0xfeU) + 3)
-          ;
+          local_14 = (uint *)CONCAT31(local_14._1_3_,(-(local_1c->field_0x8 != '\x01') & 0xfeU) + 3);
         }
         else {
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */

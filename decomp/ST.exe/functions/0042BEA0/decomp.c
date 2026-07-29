@@ -119,8 +119,7 @@ LAB_0042bf8b:
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException
-            (-0x5001ffff,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",0x24a)
-  ;
+            (-0x5001ffff,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",0x24a);
 cf_common_exit_0042C072:
   this_00 = GetObjPtr(local_c,objPtr,(ushort)param_6,local_8);
   this_00->vfunc_E8(1);

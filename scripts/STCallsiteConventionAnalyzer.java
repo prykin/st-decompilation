@@ -371,7 +371,8 @@ public class STCallsiteConventionAnalyzer extends GhidraScript {
                 row.noEcx + "\t" + row.cleanupCalls + "\t" + set(row.cleanupValues) +
                 "\t" + set(row.retPops) + "\t" + row.expectedStack + "\t" +
                 row.classification + "\t" + row.suggestedConvention + "\t" +
-                row.confidence + "\t" + tsv(row.reason) + "\t" + tsv(row.error) + "\n");
+                row.confidence + "\t" + tsv(row.reason) + "\t" +
+                tsv(row.error.isBlank() ? "-" : row.error) + "\n");
         }
     }
 

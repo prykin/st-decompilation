@@ -52,7 +52,7 @@ AiPlrClassTy::SetTech(AiPlrClassTy *this,int param_1,int param_2,int param_3,cha
     local_14 = iVar3;
     local_10 = iVar3;
     Library::DKW::TBL::FUN_006ae1c0(&local_8->field_06A1->flags,(undefined4 *)&local_1c);
-    thunk_FUN_00676c40(pAVar2->field_06A1,thunk_FUN_0067b350);
+    thunk_FUN_00676c40((DArrayTy *)pAVar2->field_06A1,thunk_FUN_0067b350);
     g_currentExceptionFrame = local_60.previous;
     return 0;
   }

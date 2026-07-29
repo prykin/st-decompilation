@@ -28,13 +28,15 @@ TLOBaseTy::FUN_004c7cc0
   TLOBaseTyVTable *pTVar3;
   bool bVar4;
   int iVar5;
+  int uVar9;
+  int local_EAX_1031;
   AnonPointee_TLOBaseTy_0607 *pAVar6;
   int *piVar7;
   uint uVar8;
-  uint uVar9;
-  int iVar10;
-  undefined4 *puVar11;
+  uint uVar10;
+  int iVar11;
   undefined4 *puVar12;
+  undefined4 *puVar13;
 
   if ((int)param_3 < 0) {
     iVar5 = (param_3 ^ (int)param_3 >> 0x1f) - ((int)param_3 >> 0x1f);
@@ -42,34 +44,34 @@ TLOBaseTy::FUN_004c7cc0
       do {
         iVar1 = this->field_03D4;
         bVar4 = false;
-        iVar10 = iVar1 + -1;
-        if (-1 < iVar10) {
-          piVar7 = (int *)(iVar10 * 0x27 + (int)this->field_0607);
+        iVar11 = iVar1 + -1;
+        if (-1 < iVar11) {
+          piVar7 = (int *)(iVar11 * 0x27 + (int)this->field_0607);
 LAB_004c7d1c:
           if ((*piVar7 != param_1) || (piVar7[1] != param_2)) goto LAB_004c7d2b;
           bVar4 = true;
-          puVar12 = (undefined4 *)(iVar10 * 0x27 + (int)this->field_0607);
-          iVar2 = puVar12[2];
+          puVar13 = (undefined4 *)(iVar11 * 0x27 + (int)this->field_0607);
+          iVar2 = puVar13[2];
           if (iVar2 <= iVar5) {
             iVar5 = iVar5 - iVar2;
-            if (iVar10 < iVar1 + -1) {
-              uVar9 = ((iVar1 - iVar10) + -1) * 0x27;
-              puVar11 = (undefined4 *)((iVar10 + 1) * 0x27 + (int)this->field_0607);
-              for (uVar8 = uVar9 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
-                *puVar12 = *puVar11;
-                puVar11 = puVar11 + 1;
+            if (iVar11 < iVar1 + -1) {
+              uVar10 = ((iVar1 - iVar11) + -1) * 0x27;
+              puVar12 = (undefined4 *)((iVar11 + 1) * 0x27 + (int)this->field_0607);
+              for (uVar8 = uVar10 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
+                *puVar13 = *puVar12;
                 puVar12 = puVar12 + 1;
+                puVar13 = puVar13 + 1;
               }
-              for (uVar9 = uVar9 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {
-                *(undefined1 *)puVar12 = *(undefined1 *)puVar11;
-                puVar11 = (undefined4 *)((int)puVar11 + 1);
+              for (uVar10 = uVar10 & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
+                *(undefined1 *)puVar13 = *(undefined1 *)puVar12;
                 puVar12 = (undefined4 *)((int)puVar12 + 1);
+                puVar13 = (undefined4 *)((int)puVar13 + 1);
               }
             }
             this->field_03D4 = this->field_03D4 + -1;
             goto LAB_004c7d8c;
           }
-          piVar7 = (int *)(iVar10 * 0x27 + 8 + (int)this->field_0607);
+          piVar7 = (int *)(iVar11 * 0x27 + 8 + (int)this->field_0607);
           *piVar7 = *piVar7 - iVar5;
           goto cf_common_exit_004C8287;
         }
@@ -133,12 +135,12 @@ LAB_004c7d8c:
             *(uint *)(this->field_03D4 * 0x27 + 0xc + (int)this->field_0607) = param_5;
             *(undefined4 *)(this->field_03D4 * 0x27 + 0x10 + (int)this->field_0607) = param_6;
             *(int *)(this->field_03D4 * 0x27 + 0x14 + (int)this->field_0607) = param_7;
-            puVar12 = (undefined4 *)(this->field_03D4 * 0x27 + 0x18 + (int)this->field_0607);
-            *puVar12 = 0;
-            puVar12[1] = 0;
-            puVar12[2] = 0;
-            *(undefined2 *)(puVar12 + 3) = 0;
-            *(undefined1 *)((int)puVar12 + 0xe) = 0;
+            puVar13 = (undefined4 *)(this->field_03D4 * 0x27 + 0x18 + (int)this->field_0607);
+            *puVar13 = 0;
+            puVar13[1] = 0;
+            puVar13[2] = 0;
+            *(undefined2 *)(puVar13 + 3) = 0;
+            *(undefined1 *)((int)puVar13 + 0xe) = 0;
             if (param_8 != (char *)0x0) {
               Library::MSVCRT::_strncpy
                         ((char *)(this->field_03D4 * 0x27 + 0x18 + (int)this->field_0607),param_8,
@@ -154,8 +156,8 @@ LAB_004c7d8c:
           *(int *)&this->field_0x361 = param_1;
           *(uint *)&this->field_0x369 = param_2;
           this->field_038C = g_playSystem_00802A38->field_00E4;
-          uVar9 = thunk_FUN_004c7730(this,param_1,param_2);
-          this->field_0390 = uVar9;
+          uVar10 = thunk_FUN_004c7730(this,param_1,param_2);
+          this->field_0390 = uVar10;
           this->field_0394 = 0;
           this->field_03CC = 0;
           *(undefined4 *)&this->field_0x36d = 0;
@@ -212,12 +214,12 @@ LAB_004c7d8c:
         if (*(int *)&this->field_0x361 == 5) {
           sub_004CC880(this,3);
           uVar9 = GetPlayerRaceId(*(char *)&this->field_023D);
-          if (*(int *)(&DAT_00796230 + ((uVar9 & 0xff) + this->field_0235 * 3) * 4) != 0) {
+          if (*(int *)(&DAT_00796230 + ((uVar9 & 0xffU) + this->field_0235 * 3) * 4) != 0) {
             pTVar3 = this->vtable;
-            uVar9 = GetPlayerRaceId(*(char *)&this->field_023D);
+            local_EAX_1031 = GetPlayerRaceId(*(char *)&this->field_023D);
             (*pTVar3->vfunc_90)(this,3,*(undefined4 *)
-                                        (&DAT_00796230 + ((uVar9 & 0xff) + this->field_0235 * 3) * 4
-                                        ));
+                                        (&DAT_00796230 +
+                                        ((local_EAX_1031 & 0xffU) + this->field_0235 * 3) * 4));
           }
         }
         else if (*(int *)&this->field_0x361 == 6) {
@@ -232,9 +234,9 @@ cf_common_exit_004C8287:
   }
   return 0;
 LAB_004c7d2b:
-  iVar10 = iVar10 + -1;
+  iVar11 = iVar11 + -1;
   piVar7 = (int *)((int)piVar7 + -0x27);
-  if (iVar10 < 0) goto LAB_004c7d8c;
+  if (iVar11 < 0) goto LAB_004c7d8c;
   goto LAB_004c7d1c;
 }
 

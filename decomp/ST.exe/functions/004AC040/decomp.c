@@ -34,8 +34,9 @@ undefined4 __thiscall STT3DSprC::ShowCurFase(STT3DSprC *this,char param_1)
       RaiseInternalException
                 (-1,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\Tspr3d.cpp",0xbc);
     }
-    FUN_006ea270(pSVar2->field_003C,pSVar2->field_0018,(int)param_1,
-                 *(uint *)(&pSVar2->field_0020->field_0x18 + iVar3));
+    ST3DSMAPContext::sub_006EA270
+              (pSVar2->field_003C,pSVar2->field_0018,(int)param_1,
+               *(uint *)(&pSVar2->field_0020->field_0x18 + iVar3));
     g_currentExceptionFrame = local_4c.previous;
     return 0;
   }

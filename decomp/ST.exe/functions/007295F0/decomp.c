@@ -66,8 +66,7 @@ int __fastcall FUN_007295f0(AnonShape_007295F0_722683CC *param_1)
           }
         }
       }
-      iVar8 = FUN_00728da0(param_1,local_2c,local_24,(short *)puVar9[3],puVar9[2],*puVar9 & 1,uVar5)
-      ;
+      iVar8 = FUN_00728da0(param_1,local_2c,local_24,(short *)puVar9[3],puVar9[2],*puVar9 & 1,uVar5);
       local_28 = iVar8;
       if (iVar8 != 0) break;
       *local_20 = *local_20 | 0x10;

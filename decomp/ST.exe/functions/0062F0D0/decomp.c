@@ -11,7 +11,7 @@ void __thiscall FUN_0062f0d0(void *this,int param_1)
     thunk_FUN_004ac610(this_00,'\x0e');
     STT3DSprC::StartShow(this_00,0xe,g_playSystem_00802A38->field_00E4);
     *(undefined1 *)(*(int *)((int)this + param_1 * 4 + 0x1e5) + 0x3d) = 1;
-    FUN_006ea3e0(PTR_00807598,this_00->field_0018,-1);
+    Library::Ourlib::ST3DSMAP::SprSetLevAfter(g_sT3DSMAPContext_00807598,this_00->field_0018,-1);
   }
   return;
 }

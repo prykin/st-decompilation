@@ -15,7 +15,7 @@ int FUN_006b33f0(DDXContext_008075A8 *param_1,uint param_2)
 
   uVar1 = 0;
   if (param_2 < param_1->entryCount) {
-    uVar1 = (uint)((param_1->entries[param_2]->flags & 0x8020) == 0x8020);
+    uVar1 = (uint)((param_1->entries_01B0[param_2]->flags & 0x8020) == 0x8020);
   }
   return uVar1;
 }

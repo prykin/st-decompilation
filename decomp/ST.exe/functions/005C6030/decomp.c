@@ -120,8 +120,7 @@ void __thiscall SettMapTy::CreateCtrls(SettMapTy *this,char param_1)
     local_5bc = local_5d0[4];
     local_4a8 = local_5d0[4];
     (*local_1c->field_000C->vtable->CreateObject)
-              ((SystemClassTy *)local_1c->field_000C,2,&local_1c->field_215D,(int *)0x0,local_5d0,0)
-    ;
+              ((SystemClassTy *)local_1c->field_000C,2,&local_1c->field_215D,(int *)0x0,local_5d0,0);
     goto LAB_005c69ed;
   }
   if (local_1c->field_1C6F != 0xffffffff) {

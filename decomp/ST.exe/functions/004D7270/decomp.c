@@ -4,7 +4,9 @@ undefined4 __fastcall FUN_004d7270(AnonShape_004D7270_8F0A3C37 *param_1)
 {
   int iVar1;
   int iVar2;
-  uint uVar3;
+  int local_EAX_94;
+  int uVar3;
+  int local_EAX_171;
   uint uVar4;
 
   if (param_1->field_0245 == 0) {
@@ -18,17 +20,17 @@ undefined4 __fastcall FUN_004d7270(AnonShape_004D7270_8F0A3C37 *param_1)
       if (iVar1 < iVar2) {
         iVar1 = 0;
         uVar4 = (uint)(*(int *)&param_1->field_0x2c == 1);
-        uVar3 = thunk_FUN_004ad650((STT3DSprC *)&param_1->field_0x1d5);
-        thunk_FUN_00637c50(uVar3,uVar4,iVar1);
+        local_EAX_94 = thunk_FUN_004ad650((STT3DSprC *)&param_1->field_0x1d5);
+        thunk_FUN_00637c50(local_EAX_94,uVar4,iVar1);
       }
       uVar3 = GetPlayerRaceId(param_1->field_023D);
-      if (*(int *)(&DAT_00796230 + ((uVar3 & 0xff) + param_1->field_0235 * 3) * 4) != 0) {
+      if (*(int *)(&DAT_00796230 + ((uVar3 & 0xffU) + param_1->field_0235 * 3) * 4) != 0) {
         iVar1 = *(int *)param_1;
-        uVar3 = GetPlayerRaceId(param_1->field_023D);
+        local_EAX_171 = GetPlayerRaceId(param_1->field_023D);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(iVar1 + 0x90))
-                  (3,*(undefined4 *)(&DAT_00796230 + ((uVar3 & 0xff) + param_1->field_0235 * 3) * 4)
-                  );
+                  (3,*(undefined4 *)
+                      (&DAT_00796230 + ((local_EAX_171 & 0xffU) + param_1->field_0235 * 3) * 4));
       }
     }
   }

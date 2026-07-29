@@ -21,23 +21,23 @@ int __thiscall STContainerC::GetMessage(STContainerC *this,STMessage *message)
   bool bVar7;
   STContainerC *this_00;
   int iVar8;
-  uint uVar9;
-  undefined4 uVar10;
+  uint uVar10;
+  undefined4 uVar11;
   STGameObjC *this_01;
-  int iVar11;
-  byte bVar12;
+  int uVar9;
+  int iVar12;
+  byte bVar13;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_00;
-  undefined2 uVar13;
-  undefined4 *puVar14;
+  undefined2 uVar14;
   undefined4 *puVar15;
   undefined4 *puVar16;
-  STWorldObject *pSVar17;
-  int iVar18;
+  undefined4 *puVar17;
+  STWorldObject *pSVar18;
   int iVar19;
-  uint uVar20;
+  int iVar20;
   InternalExceptionFrame local_60;
   int local_1c;
   int local_18;
@@ -94,18 +94,18 @@ int __thiscall STContainerC::GetMessage(STContainerC *this,STMessage *message)
           case 4:
             goto switchD_005fbd82_caseD_2;
           case 3:
-            uVar20 = 0;
+            uVar10 = 0;
             this_00->field_030E = *(undefined1 *)(dVar5 + 8);
             this_00->field_030F = *(undefined2 *)(dVar5 + 0xc);
             iVar8 = this_00->field_02C6;
             this_00->field_030D = 1;
             this_00->field_023A = 5;
-            iVar11 = this_00->field_02C2;
+            iVar12 = this_00->field_02C2;
             this_00->field_02E0 = g_playSystem_00802A38->field_00E4 + 0x15;
-            iVar19 = this_00->field_02BE;
-            iVar18 = 1;
+            iVar20 = this_00->field_02BE;
+            iVar19 = 1;
             uVar9 = thunk_FUN_004ad650((STT3DSprC *)&this_00->field_01D5);
-            thunk_FUN_006377b0(uVar9,iVar18,iVar19,iVar11,iVar8,uVar20);
+            thunk_FUN_006377b0(uVar9,iVar19,iVar20,iVar12,iVar8,uVar10);
             g_currentExceptionFrame = local_60.previous;
             return 0;
           case 5:
@@ -119,7 +119,7 @@ int __thiscall STContainerC::GetMessage(STContainerC *this,STMessage *message)
             this_00->field_030F = *(undefined2 *)(dVar5 + 0xc);
             this_00->field_030D = 1;
             if (-1 < this_00->field_02D6) {
-              FUN_006eab60(this_00->field_0211,this_00->field_02D6);
+              Library::Ourlib::ST3DSMAP::SprHide(this_00->field_0211,this_00->field_02D6);
             }
             sub_005FC3E0(this_00);
             g_currentExceptionFrame = local_60.previous;
@@ -130,7 +130,7 @@ int __thiscall STContainerC::GetMessage(STContainerC *this,STMessage *message)
         }
       }
       if (SVar4 == MESS_TORPHIT) {
-        puVar15 = (message->arg0).ptr;
+        puVar16 = (message->arg0).ptr;
         if (local_8->field_023A == 5) {
           g_currentExceptionFrame = local_60.previous;
           return 0;
@@ -140,14 +140,14 @@ int __thiscall STContainerC::GetMessage(STContainerC *this,STMessage *message)
           return 0;
         }
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-        iVar8 = (*(code *)local_8->field_0000->field_0124)(*puVar15);
+        iVar8 = (*(code *)local_8->field_0000->field_0124)(*puVar16);
         if (iVar8 == 0) {
           g_currentExceptionFrame = local_60.previous;
           return 0;
         }
         thunk_FUN_005ec9f0(1);
-        this_00->field_030E = *(undefined1 *)(puVar15 + 2);
-        this_00->field_030F = *(undefined2 *)(puVar15 + 3);
+        this_00->field_030E = *(undefined1 *)(puVar16 + 2);
+        this_00->field_030F = *(undefined2 *)(puVar16 + 3);
         this_00->field_030D = 1;
         this_00->field_023A = 5;
         g_currentExceptionFrame = local_60.previous;
@@ -186,15 +186,15 @@ int __thiscall STContainerC::GetMessage(STContainerC *this,STMessage *message)
           return 0;
         }
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-        uVar13 = extraout_var;
+        uVar14 = extraout_var;
         if (this_00->field_0250 != '\x03') {
           sub_005F0D90(this_00);
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-          uVar13 = extraout_var_00;
+          uVar14 = extraout_var_00;
         }
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         STAllPlayersC::UnRegisterContainer
-                  (g_allPlayers_007FA174,CONCAT22(uVar13,this_00->field_0032),
+                  (g_allPlayers_007FA174,CONCAT22(uVar14,this_00->field_0032),
                    (AnonShape_0044A730_DBE673B2 *)this_00);
         g_currentExceptionFrame = local_60.previous;
         return 0;
@@ -205,9 +205,9 @@ int __thiscall STContainerC::GetMessage(STContainerC *this,STMessage *message)
           g_currentExceptionFrame = local_60.previous;
           return 0;
         }
-        uVar10 = thunk_FUN_005ee6e0((AnonShape_005EE6E0_AB6798ED *)local_8);
-        this_00->field_02DE = (char)uVar10;
-        if ((char)uVar10 == '\0') {
+        uVar11 = thunk_FUN_005ee6e0((AnonShape_005EE6E0_AB6798ED *)local_8);
+        this_00->field_02DE = (char)uVar11;
+        if ((char)uVar11 == '\0') {
           if (this_00->field_023A != 6) {
             g_currentExceptionFrame = local_60.previous;
             return 0;
@@ -232,17 +232,17 @@ int __thiscall STContainerC::GetMessage(STContainerC *this,STMessage *message)
         g_currentExceptionFrame = local_60.previous;
         return 0;
       }
-      puVar15 = (message->arg0).ptr;
-      if (puVar15[3] != 2) {
-        puVar14 = puVar15;
-        puVar16 = (undefined4 *)&local_8->field_0x326;
+      puVar16 = (message->arg0).ptr;
+      if (puVar16[3] != 2) {
+        puVar15 = puVar16;
+        puVar17 = (undefined4 *)&local_8->field_0x326;
         for (iVar8 = 0x55; iVar8 != 0; iVar8 = iVar8 + -1) {
-          *puVar16 = *puVar14;
-          puVar14 = puVar14 + 1;
-          puVar16 = puVar16 + 1;
+          *puVar17 = *puVar15;
+          puVar15 = puVar15 + 1;
+          puVar17 = puVar17 + 1;
         }
-        *(undefined1 *)puVar16 = *(undefined1 *)puVar14;
-        if (puVar15[3] == 0) {
+        *(undefined1 *)puVar17 = *(undefined1 *)puVar15;
+        if (puVar16[3] == 0) {
           local_8->field_046F = (int)local_8->field_034E;
           local_8->field_0473 = (int)local_8->field_0350;
           local_8->field_0477 = (int)local_8->field_0352;
@@ -262,9 +262,9 @@ int __thiscall STContainerC::GetMessage(STContainerC *this,STMessage *message)
             (iVar8 = STPlaySystemC::sub_006E62D0
                                (g_playSystem_00802A38,
                                 (AnonShape_005EFAE0_B406B78B *)this_00->field_0358,&local_18),
-            iVar8 != -4)) && (this_00->field_0211 != (AnonReceiver_006EA050 *)0x0)) {
+            iVar8 != -4)) && (this_00->field_0211 != (ST3DSMAPContext *)0x0)) {
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006EA050::sub_006EA460
+          Library::Ourlib::ST3DSMAP::SprSetLevBefore
                     (this_00->field_0211,this_00->field_01ED,*(int *)(local_18 + 0x1ed));
         }
         if (g_allPlayers_007FA174 != (STAllPlayersC *)0x0) {
@@ -277,13 +277,13 @@ int __thiscall STContainerC::GetMessage(STContainerC *this,STMessage *message)
           this_00->field_02E4 = 1;
           thunk_FUN_005fceb0((AnonShape_005FCEB0_FA1F7938 *)this_00);
         }
-        uVar9 = this_00->field_0342 >> 0x10;
-        if (uVar9 != 3) {
-          if (uVar9 != 5) {
+        uVar10 = this_00->field_0342 >> 0x10;
+        if (uVar10 != 3) {
+          if (uVar10 != 5) {
             g_currentExceptionFrame = local_60.previous;
             return 0;
           }
-          this_00->field_02D2 = *(short *)(DAT_00806724 + 0x23) + -1;
+          this_00->field_02D2 = PTR_00806724->entryCount + -1;
           this_00->field_02B5 = 1;
           g_currentExceptionFrame = local_60.previous;
           return 0;
@@ -293,7 +293,7 @@ int __thiscall STContainerC::GetMessage(STContainerC *this,STMessage *message)
         g_currentExceptionFrame = local_60.previous;
         return 0;
       }
-      iVar8 = thunk_FUN_005fcc00(local_8,puVar15);
+      iVar8 = thunk_FUN_005fcc00(local_8,puVar16);
       if (iVar8 < 0) {
         g_currentExceptionFrame = local_60.previous;
         return 0;
@@ -307,15 +307,15 @@ int __thiscall STContainerC::GetMessage(STContainerC *this,STMessage *message)
         if ((((sVar1 < 0) || (g_worldGrid.sizeX <= sVar1)) ||
             ((sVar2 < 0 || ((g_worldGrid.sizeY <= sVar2 || (sVar3 < 0)))))) ||
            (g_worldGrid.sizeZ <= sVar3)) {
-          pSVar17 = (STWorldObject *)0x0;
+          pSVar18 = (STWorldObject *)0x0;
         }
         else {
-          pSVar17 = g_worldGrid.cells
+          pSVar18 = g_worldGrid.cells
                     [(int)g_worldGrid.planeStride * (int)sVar3 + (int)g_worldGrid.sizeX * (int)sVar2
                      + (int)sVar1].objects[0];
         }
         bVar7 = true;
-        if ((pSVar17 == (STWorldObject *)0x0) &&
+        if ((pSVar18 == (STWorldObject *)0x0) &&
            (iVar8 = DumpClassC::WritePtr
                               (sVar1,sVar2,sVar3,0,(RecoveredRecord_DumpClassC_00495EC0 *)this_00),
            iVar8 == 0)) {
@@ -329,9 +329,9 @@ int __thiscall STContainerC::GetMessage(STContainerC *this,STMessage *message)
           g_currentExceptionFrame = local_60.previous;
           return 0;
         }
-        bVar12 = this_00->field_0252 - 1;
-        this_00->field_0252 = bVar12;
-        if (1 < bVar12) {
+        bVar13 = this_00->field_0252 - 1;
+        this_00->field_0252 = bVar13;
+        if (1 < bVar13) {
           sVar1 = this_00->field_0248;
           sVar2 = this_00->field_024A;
           local_c = (STGameObjC *)(int)sVar2;
@@ -339,15 +339,15 @@ int __thiscall STContainerC::GetMessage(STContainerC *this,STMessage *message)
           local_1c = 1;
           if ((((sVar1 < 0) || (g_worldGrid.sizeX <= sVar1)) || (sVar2 < 0)) ||
              (((g_worldGrid.sizeY <= sVar2 || (sVar3 < 0)) || (g_worldGrid.sizeZ <= sVar3)))) {
-            pSVar17 = (STWorldObject *)0x0;
+            pSVar18 = (STWorldObject *)0x0;
           }
           else {
-            pSVar17 = g_worldGrid.cells
+            pSVar18 = g_worldGrid.cells
                       [(int)g_worldGrid.planeStride * (int)sVar3 +
                        (int)g_worldGrid.sizeX * (int)sVar2 + (int)sVar1].objects[0];
           }
           bVar7 = true;
-          if ((pSVar17 == (STWorldObject *)0x0) &&
+          if ((pSVar18 == (STWorldObject *)0x0) &&
              (iVar8 = DumpClassC::WritePtr
                                 (sVar1,sVar2,sVar3,0,(RecoveredRecord_DumpClassC_00495EC0 *)this_00)
              , iVar8 == 0)) {
@@ -380,9 +380,9 @@ int __thiscall STContainerC::GetMessage(STContainerC *this,STMessage *message)
       return 0;
     }
     g_currentExceptionFrame = local_60.previous;
-    iVar11 = ReportDebugMessage("E:\\__titans\\nick\\to_cont.cpp",0x139,0,iVar8,"%s",
+    iVar12 = ReportDebugMessage("E:\\__titans\\nick\\to_cont.cpp",0x139,0,iVar8,"%s",
                                 "STContainerC::GetMessage");
-    if (iVar11 != 0) {
+    if (iVar12 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar8,0,"E:\\__titans\\nick\\to_cont.cpp",0x13b);
@@ -397,7 +397,7 @@ switchD_005fbd82_caseD_2:
   }
   thunk_FUN_005ec9f0(1);
   if (*(int *)(dVar5 + 0x18) == 4) {
-    FUN_006e9d40(this_00->field_0211,(uint *)this_00->field_01ED,8);
+    ST3DSMAPContext::sub_006E9D40(this_00->field_0211,(uint *)this_00->field_01ED,8);
   }
   this_00->field_030E = *(undefined1 *)(dVar5 + 8);
   this_00->field_030F = *(undefined2 *)(dVar5 + 0xc);
@@ -428,15 +428,15 @@ switchD_005fbd08_caseD_129:
     this_00->field_027B = (int)*(short *)&local_c->field_0x43;
     this_00->field_027F = *(short *)&local_c->field_0x45 + 5;
     this_00->field_02BA = (int)(short)local_c->field_006C / 0xf;
-    puVar15 = (undefined4 *)&local_c->field_0x34;
-    puVar14 = (undefined4 *)&this_00->field_0x34;
+    puVar16 = (undefined4 *)&local_c->field_0x34;
+    puVar15 = (undefined4 *)&this_00->field_0x34;
     for (iVar8 = 0x17; iVar8 != 0; iVar8 = iVar8 + -1) {
-      *puVar14 = *puVar15;
+      *puVar15 = *puVar16;
+      puVar16 = puVar16 + 1;
       puVar15 = puVar15 + 1;
-      puVar14 = puVar14 + 1;
     }
-    *(undefined2 *)puVar14 = *(undefined2 *)puVar15;
-    *(undefined1 *)((int)puVar14 + 2) = *(undefined1 *)((int)puVar15 + 2);
+    *(undefined2 *)puVar15 = *(undefined2 *)puVar16;
+    *(undefined1 *)((int)puVar15 + 2) = *(undefined1 *)((int)puVar16 + 2);
     this_00->field_0076 = 0;
     this_00->field_006E = local_c->field_006E;
     this_00->field_02BE = this_00->field_0277;

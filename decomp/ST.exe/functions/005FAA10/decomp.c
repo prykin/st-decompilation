@@ -51,16 +51,18 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00416270::FUN_005faa10
       uVar7 = 0x2f;
       uVar6 = 0x5a;
     }
-    FUN_006e8660(pAVar1->field_0211,(int *)&local_8,1,0,uVar4,uVar5,uVar6,uVar7,0);
-    FUN_006e98e0(pAVar1->field_0211,local_8,0,*(int *)puVar3,*(int *)((int)puVar3 + 0x21),1);
-    FUN_006ea270(pAVar1->field_0211,local_8,0,0);
+    ST3DSMAPContext::sub_006E8660(pAVar1->field_0211,(int *)&local_8,1,0,uVar4,uVar5,uVar6,uVar7,0);
+    ST3DSMAPContext::sub_006E98E0
+              (pAVar1->field_0211,local_8,0,*(int *)puVar3,*(int *)((int)puVar3 + 0x21),1);
+    ST3DSMAPContext::sub_006EA270(pAVar1->field_0211,local_8,0,0);
     iVar2 = pAVar1->field_02E6;
-    FUN_006ea960(pAVar1->field_0211,local_8,
-                 (float)*(int *)(iVar2 + 0x14) * _DAT_007904f8 * _DAT_007904f0,
-                 (float)*(int *)(iVar2 + 0x18) * _DAT_007904f8 * _DAT_007904f0,
-                 (float)*(int *)(iVar2 + 0x1c) * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
-    FUN_006e9ef0(pAVar1->field_0211,local_8,0,1,0,0,30000);
-    FUN_006eaaa0(pAVar1->field_0211,local_8,0);
+    Library::Ourlib::ST3DSMAP::SprMove
+              (pAVar1->field_0211,local_8,
+               (float)*(int *)(iVar2 + 0x14) * _DAT_007904f8 * _DAT_007904f0,
+               (float)*(int *)(iVar2 + 0x18) * _DAT_007904f8 * _DAT_007904f0,
+               (float)*(int *)(iVar2 + 0x1c) * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
+    ST3DSMAPContext::sub_006E9EF0(pAVar1->field_0211,local_8,0,1,0,0,30000);
+    Library::Ourlib::ST3DSMAP::SprShow(pAVar1->field_0211,local_8,0);
     *(uint *)(pAVar1->field_02E6 + 4) = local_8;
     g_currentExceptionFrame = local_54.previous;
     return 1;

@@ -11,7 +11,7 @@
 void __thiscall STT3DSprC::sub_004ACEF0(STT3DSprC *this,uint param_1)
 
 {
-  FUN_006ea680(this->field_003C,this->field_0018,param_1);
+  Library::Ourlib::ST3DSMAP::SprSetShadowTbl(this->field_003C,this->field_0018,param_1);
   return;
 }
 

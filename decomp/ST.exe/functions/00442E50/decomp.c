@@ -335,8 +335,7 @@ LAB_0044326c:
             uVar11 = (undefined2)((uint)pSVar10 >> 0x10);
             if (local_40 == (STFishC *)0x0) goto cf_common_join_004435CD;
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            local_8 = CONCAT22((short)((uint)local_40 >> 0x10),*(undefined2 *)&local_40->field_0x32)
-            ;
+            local_8 = CONCAT22((short)((uint)local_40 >> 0x10),*(undefined2 *)&local_40->field_0x32);
             uVar13 = 0;
             if (0 < (int)local_3c) {
               do {

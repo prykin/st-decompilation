@@ -7,7 +7,7 @@
 void __thiscall STManRuinC::sub_00631220(STManRuinC *this,int *param_1)
 
 {
-  DArrayTy *pDVar1;
+  STManRuinC_field_0038DArray *pSVar1;
   undefined4 *puVar2;
   int iVar3;
   uint uVar4;
@@ -19,12 +19,12 @@ void __thiscall STManRuinC::sub_00631220(STManRuinC *this,int *param_1)
   undefined4 *local_c;
   uint local_8;
 
-  pDVar1 = this->field_0038;
+  pSVar1 = this->field_0038;
   local_c = (undefined4 *)0x0;
   local_8 = 0;
   local_10 = 0x55;
-  if (pDVar1 != (DArrayTy *)0x0) {
-    local_10 = pDVar1->count * pDVar1->elementSize;
+  if (pSVar1 != (STManRuinC_field_0038DArray *)0x0) {
+    local_10 = pSVar1->count * pSVar1->elementSize;
     local_8 = local_10 + 0x20;
     local_10 = local_10 + 0x75;
   }
@@ -53,7 +53,7 @@ void __thiscall STManRuinC::sub_00631220(STManRuinC *this,int *param_1)
   }
   *(undefined1 *)puVar7 = *(undefined1 *)puVar6;
   this->field_0061 = -1;
-  if (this->field_0038 != (DArrayTy *)0x0) {
+  if (this->field_0038 != (STManRuinC_field_0038DArray *)0x0) {
     local_14 = (undefined4 *)FUN_006b0020(&this->field_0038->flags,(int *)&local_8);
     *(uint *)((int)puVar2 + 0x55) = local_8;
     local_c = (undefined4 *)((int)puVar2 + 0x59);

@@ -13,7 +13,7 @@ undefined4 __thiscall GameSystemC::InitSystem(GameSystemC *this)
   GameSystemC *pGVar3;
   int iVar4;
   AnonShape_006DBCA0_EF06575F *pAVar5;
-  AnonShape_GLOBAL_00807598_0C6808FB *pAVar6;
+  ST3DSMAPContext *pSVar6;
   undefined4 *puVar7;
   int iVar8;
   undefined4 uVar9;
@@ -29,20 +29,21 @@ undefined4 __thiscall GameSystemC::InitSystem(GameSystemC *this)
     DAT_00806750 = LoadLand(g_cMf32_00806754,"3D_MAP");
     pAVar5 = (AnonShape_006DBCA0_EF06575F *)FUN_006b04d0(0x4f2);
     if (pAVar5 == (AnonShape_006DBCA0_EF06575F *)0x0) {
-      pAVar6 = (AnonShape_GLOBAL_00807598_0C6808FB *)0x0;
+      pSVar6 = (ST3DSMAPContext *)0x0;
     }
     else {
-      pAVar6 = (AnonShape_GLOBAL_00807598_0C6808FB *)FUN_006dbca0(pAVar5);
+      pSVar6 = (ST3DSMAPContext *)FUN_006dbca0(pAVar5);
     }
     psVar2 = DAT_00806750;
-    PTR_00807598 = pAVar6;
-    *(short **)&pAVar6->field_0x280 = DAT_00806750;
+    g_sT3DSMAPContext_00807598 = pSVar6;
+    *(short **)&pSVar6->field_0x280 = DAT_00806750;
     iVar4 = (int)*psVar2 / 2;
-    *(int *)&pAVar6->field_0x284 = iVar4;
-    *(int *)&pAVar6->field_0x288 = iVar4 * iVar4;
+    *(int *)&pSVar6->field_0x284 = iVar4;
+    *(int *)&pSVar6->field_0x288 = iVar4 * iVar4;
     SystemClassTy::InitSystem((SystemClassTy *)local_8);
-    FUN_006e8580(PTR_00807598,(int *)g_ddxContext_008075A8);
-    DAT_00806724 = Library::Ourlib::MFIMG::mfImtLoad
+    ST3DSMAPContext::sub_006E8580(g_sT3DSMAPContext_00807598,(int *)g_ddxContext_008075A8);
+    PTR_00806724 = (AnonShape_GLOBAL_00806724_3210464F *)
+                   Library::Ourlib::MFIMG::mfImtLoad
                              (PTR_00806770,"scmask",0,0,(undefined4 *)0x0,1);
     local_90.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_90;

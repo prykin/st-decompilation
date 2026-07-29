@@ -294,8 +294,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
         *ppAVar24 = (AnonShape_00683C70_22193481 *)0x0;
         ppAVar24 = ppAVar24 + 1;
       }
-      wsprintfA(&pSVar20->field_7D1A,"%s%s",&pSVar20->field_0x164,PTR_s_STARTUP_VPS_0079b040)
-      ;
+      wsprintfA(&pSVar20->field_7D1A,"%s%s",&pSVar20->field_0x164,PTR_s_STARTUP_VPS_0079b040);
       pDVar11 = (DArrayTy *)
                 thunk_FUN_00683c70(&pSVar20->field_7D1A,(AnonShape_00683C70_22193481 *)&local_560,
                                    &local_38,(int *)0x0,(undefined *)0x0);

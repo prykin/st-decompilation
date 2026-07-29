@@ -95,8 +95,7 @@ int __fastcall FUN_006101b0(AnonReceiver_0060EF40 *param_1)
                      *(int *)(&DAT_007cfe74 + iVar14 * 4);
           }
           else {
-            psVar1 = (short *)(*(int *)&param_1->field_0x2dd + *(int *)&param_1->field_0x2d9 * 0x1c)
-            ;
+            psVar1 = (short *)(*(int *)&param_1->field_0x2dd + *(int *)&param_1->field_0x2d9 * 0x1c);
             *(int *)&param_1->field_0x27c =
                  (((int)*(short *)&param_1->field_0x272 - (int)*psVar1) * 10000) /
                  *(int *)(psVar1 + 4);
@@ -274,12 +273,12 @@ LAB_00610969:
         local_3c = (float)(int)*(short *)&param_1->field_0x260 * _DAT_007904f8 * _DAT_007904f0;
         local_38 = (float)(int)*(short *)&param_1->field_0x262 * _DAT_007904f8 * _DAT_007904f0;
         local_34 = (float)(int)local_24 * _DAT_007904f8 * _DAT_007904f0;
-        FUN_006e25d0(PTR_00807598,&local_68);
+        ST3DSMAPContext::sub_006E25D0(g_sT3DSMAPContext_00807598,&local_68);
         local_24 = (uint)*(short *)&param_1->field_0x25e;
         local_48 = (float)(int)*(short *)&param_1->field_0x25a * _DAT_007904f8 * _DAT_007904f0;
         local_44 = (float)(int)*(short *)&param_1->field_0x25c * _DAT_007904f8 * _DAT_007904f0;
         local_40 = (float)(int)local_24 * _DAT_007904f8 * _DAT_007904f0;
-        FUN_006e25d0(PTR_00807598,&local_58);
+        ST3DSMAPContext::sub_006E25D0(g_sT3DSMAPContext_00807598,&local_58);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         sVar8 = (**(code **)(*(int *)param_1 + 0x14))
                           (local_68 >> 0x10,local_64 >> 0x10,local_60 >> 0x10,local_58 >> 0x10,
@@ -368,8 +367,8 @@ LAB_00611039:
       else {
         uVar5 = g_playSystem_00802A38->field_00E4 - *(int *)&param_1->field_0x24c >> 2;
         *(uint *)&param_1->field_0x248 = uVar5;
-        if ((int)*(short *)(DAT_00806724 + 0x23) <= (int)uVar5) {
-          *(int *)&param_1->field_0x248 = *(short *)(DAT_00806724 + 0x23) + -1;
+        if ((int)PTR_00806724->entryCount <= (int)uVar5) {
+          *(int *)&param_1->field_0x248 = PTR_00806724->entryCount + -1;
           goto cf_common_exit_006121E1;
         }
         if ((g_playSystem_00802A38->field_00E4 & 1) == 0) {
@@ -417,12 +416,12 @@ LAB_00610d9f:
         local_48 = (float)(int)*(short *)&param_1->field_0x260 * _DAT_007904f8 * _DAT_007904f0;
         local_44 = (float)(int)*(short *)&param_1->field_0x262 * _DAT_007904f8 * _DAT_007904f0;
         local_40 = (float)(int)local_24 * _DAT_007904f8 * _DAT_007904f0;
-        FUN_006e25d0(PTR_00807598,&local_58);
+        ST3DSMAPContext::sub_006E25D0(g_sT3DSMAPContext_00807598,&local_58);
         local_24 = (uint)*(short *)&param_1->field_0x25e;
         local_3c = (float)(int)*(short *)&param_1->field_0x25a * _DAT_007904f8 * _DAT_007904f0;
         local_38 = (float)(int)*(short *)&param_1->field_0x25c * _DAT_007904f8 * _DAT_007904f0;
         local_34 = (float)(int)local_24 * _DAT_007904f8 * _DAT_007904f0;
-        FUN_006e25d0(PTR_00807598,&local_68);
+        ST3DSMAPContext::sub_006E25D0(g_sT3DSMAPContext_00807598,&local_68);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         sVar8 = (**(code **)(*(int *)param_1 + 0x14))
                           (local_58 >> 0x10,local_54 >> 0x10,local_50 >> 0x10,local_68 >> 0x10,
@@ -604,12 +603,12 @@ LAB_00611304:
       local_48 = (float)(int)*(short *)&param_1->field_0x260 * _DAT_007904f8 * _DAT_007904f0;
       local_44 = (float)(int)*(short *)&param_1->field_0x262 * _DAT_007904f8 * _DAT_007904f0;
       local_40 = (float)(int)local_24 * _DAT_007904f8 * _DAT_007904f0;
-      FUN_006e25d0(PTR_00807598,&local_58);
+      ST3DSMAPContext::sub_006E25D0(g_sT3DSMAPContext_00807598,&local_58);
       local_24 = (uint)*(short *)&param_1->field_0x25e;
       local_3c = (float)(int)*(short *)&param_1->field_0x25a * _DAT_007904f8 * _DAT_007904f0;
       local_38 = (float)(int)*(short *)&param_1->field_0x25c * _DAT_007904f8 * _DAT_007904f0;
       local_34 = (float)(int)local_24 * _DAT_007904f8 * _DAT_007904f0;
-      FUN_006e25d0(PTR_00807598,&local_68);
+      ST3DSMAPContext::sub_006E25D0(g_sT3DSMAPContext_00807598,&local_68);
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       sVar8 = (**(code **)(*(int *)param_1 + 0x14))
                         (local_58 >> 0x10,local_54 >> 0x10,local_50 >> 0x10,local_68 >> 0x10,
@@ -633,8 +632,7 @@ LAB_00611304:
               (*(STT3DSprC **)&param_1->field_0x252,
                (float)*(int *)&param_1->field_0x22b * _DAT_007904f8 * _DAT_007904f0,
                (float)*(int *)&param_1->field_0x22f * _DAT_007904f8 * _DAT_007904f0,
-               (float)*(int *)&param_1->field_0x233 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc)
-    ;
+               (float)*(int *)&param_1->field_0x233 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
     pVVar13 = g_visibleClass_00802A88;
     if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
       iVar14 = *(int *)&param_1->field_0x233;
@@ -784,12 +782,12 @@ LAB_0061196b:
       local_48 = (float)(int)*(short *)&param_1->field_0x260 * _DAT_007904f8 * _DAT_007904f0;
       local_44 = (float)(int)*(short *)&param_1->field_0x262 * _DAT_007904f8 * _DAT_007904f0;
       local_40 = (float)(int)local_24 * _DAT_007904f8 * _DAT_007904f0;
-      FUN_006e25d0(PTR_00807598,&local_58);
+      ST3DSMAPContext::sub_006E25D0(g_sT3DSMAPContext_00807598,&local_58);
       local_24 = (uint)*(short *)&param_1->field_0x25e;
       local_3c = (float)(int)*(short *)&param_1->field_0x25a * _DAT_007904f8 * _DAT_007904f0;
       local_38 = (float)(int)*(short *)&param_1->field_0x25c * _DAT_007904f8 * _DAT_007904f0;
       local_34 = (float)(int)local_24 * _DAT_007904f8 * _DAT_007904f0;
-      FUN_006e25d0(PTR_00807598,&local_68);
+      ST3DSMAPContext::sub_006E25D0(g_sT3DSMAPContext_00807598,&local_68);
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       sVar8 = (**(code **)(*(int *)param_1 + 0x14))
                         (local_58 >> 0x10,local_54 >> 0x10,local_50 >> 0x10,local_68 >> 0x10,
@@ -813,8 +811,7 @@ LAB_0061196b:
               (*(STT3DSprC **)&param_1->field_0x252,
                (float)*(int *)&param_1->field_0x22b * _DAT_007904f8 * _DAT_007904f0,
                (float)*(int *)&param_1->field_0x22f * _DAT_007904f8 * _DAT_007904f0,
-               (float)*(int *)&param_1->field_0x233 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc)
-    ;
+               (float)*(int *)&param_1->field_0x233 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
     pVVar13 = g_visibleClass_00802A88;
     if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
       iVar14 = *(int *)&param_1->field_0x233;
@@ -1131,12 +1128,12 @@ LAB_00612459:
       local_48 = (float)(int)*(short *)&param_1->field_0x260 * _DAT_007904f8 * _DAT_007904f0;
       local_44 = (float)(int)*(short *)&param_1->field_0x262 * _DAT_007904f8 * _DAT_007904f0;
       local_40 = (float)(int)local_24 * _DAT_007904f8 * _DAT_007904f0;
-      FUN_006e25d0(PTR_00807598,&local_58);
+      ST3DSMAPContext::sub_006E25D0(g_sT3DSMAPContext_00807598,&local_58);
       local_24 = (uint)*(short *)&param_1->field_0x25e;
       local_3c = (float)(int)*(short *)&param_1->field_0x25a * _DAT_007904f8 * _DAT_007904f0;
       local_38 = (float)(int)*(short *)&param_1->field_0x25c * _DAT_007904f8 * _DAT_007904f0;
       local_34 = (float)(int)local_24 * _DAT_007904f8 * _DAT_007904f0;
-      FUN_006e25d0(PTR_00807598,&local_68);
+      ST3DSMAPContext::sub_006E25D0(g_sT3DSMAPContext_00807598,&local_68);
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       sVar8 = (**(code **)(*(int *)param_1 + 0x14))
                         (local_58 >> 0x10,local_54 >> 0x10,local_50 >> 0x10,local_68 >> 0x10,
@@ -1160,8 +1157,7 @@ LAB_00612459:
               (*(STT3DSprC **)&param_1->field_0x252,
                (float)*(int *)&param_1->field_0x22b * _DAT_007904f8 * _DAT_007904f0,
                (float)*(int *)&param_1->field_0x22f * _DAT_007904f8 * _DAT_007904f0,
-               (float)*(int *)&param_1->field_0x233 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc)
-    ;
+               (float)*(int *)&param_1->field_0x233 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
     pVVar13 = g_visibleClass_00802A88;
     if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
       iVar14 = *(int *)&param_1->field_0x233;
@@ -1210,10 +1206,10 @@ LAB_00612459:
     goto switchD_006101d2_default;
   }
   if ((-1 < *(int *)&param_1->field_0x248) && (param_1->field_0x250 != '\0')) {
-    iVar14 = (int)*(short *)(DAT_00806724 + 0x2c);
-    uVar6 = *(uint *)(DAT_00806724 + 0x30 + *(int *)&param_1->field_0x248 * 4);
+    iVar14 = (int)PTR_00806724->field_002C;
+    uVar6 = PTR_00806724->entries[*(int *)&param_1->field_0x248];
     uVar5 = thunk_FUN_004ad650(*(STT3DSprC **)&param_1->field_0x252);
-    FUN_006e9350(PTR_00807598,uVar5,uVar6,iVar14);
+    Library::Ourlib::ST3DSMAP::SprSetMask(g_sT3DSMAPContext_00807598,uVar5,uVar6,iVar14);
     return local_1c;
   }
 switchD_006101d2_default:

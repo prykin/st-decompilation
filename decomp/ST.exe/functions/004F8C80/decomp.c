@@ -45,7 +45,8 @@ uint __thiscall CPanelTy::PaintSMap(CPanelTy *this)
     return extraout_EAX;
   }
   if ((uint)(local_8->field_0038 - local_8->field_0998) < 100) {
-    if ((PTR_00807598->field_0442 == 0) && (PTR_00807598->field_0446 == 0)) {
+    if ((g_sT3DSMAPContext_00807598->field_0442 == 0) &&
+       (g_sT3DSMAPContext_00807598->field_0446 == 0)) {
       uVar4 = 0;
     }
     else {
@@ -62,8 +63,9 @@ uint __thiscall CPanelTy::PaintSMap(CPanelTy *this)
   }
   local_8->field_0998 = local_8->field_0038;
   sub_0052B330(local_8);
-  FUN_006e6fb0(PTR_00807598,(AnonShape_006B5B10_E0D06CF1 *)pCVar3->field_0190,5,7,
-               (uint)(pCVar3->field_023F != CASE_2));
+  ST3DSMAPContext::sub_006E6FB0
+            (g_sT3DSMAPContext_00807598,(AnonShape_006B5B10_E0D06CF1 *)pCVar3->field_0190,5,7,
+             (uint)(pCVar3->field_023F != CASE_2));
   puVar5 = (ushort *)(g_playSystem_00802A38->field_00E4 * 0x51eb851f);
   uVar4 = g_playSystem_00802A38->field_00E4 / 0x19;
   if (300 < uVar4 - DAT_0080c4cf) {

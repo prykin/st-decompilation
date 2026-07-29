@@ -15,7 +15,7 @@ CGenerate::CteateField
   int iVar3;
   byte *pbVar4;
   ushort *puVar5;
-  DArrayTy *pDVar6;
+  CGenerate_field_5853DArray *pCVar6;
   undefined4 uVar7;
   int iVar8;
   InternalExceptionFrame local_50;
@@ -43,11 +43,12 @@ CGenerate::CteateField
              Library::DKW::LIB::FUN_006aac70
                        (pCVar2->field_582F * ((-(uint)(param_6 != 0) & 7) + 1) * 2);
     pCVar2->field_584F = puVar5;
-    pDVar6 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x1d,10);
-    pCVar2->field_5853 = pDVar6;
+    pCVar6 = (CGenerate_field_5853DArray *)
+             Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x1d,10);
+    pCVar2->field_5853 = pCVar6;
     g_currentExceptionFrame = local_50.previous;
     if (((pCVar2->field_584B == (byte *)0x0) || (pCVar2->field_584F == (ushort *)0x0)) ||
-       (uVar7 = 1, pCVar2->field_5853 == (DArrayTy *)0x0)) {
+       (uVar7 = 1, pCVar2->field_5853 == (CGenerate_field_5853DArray *)0x0)) {
       return local_c;
     }
   }

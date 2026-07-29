@@ -103,18 +103,15 @@ LAB_0059d780:
       local_890 = local_8b0;
       local_6c = local_8b0;
       (*this_00->field_000C->vtable->CreateObject)
-                ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1AD8,(int *)0x0,local_8dc,0)
-      ;
+                ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1AD8,(int *)0x0,local_8dc,0);
       local_8bc = this_00->field_1AFC;
       local_8dc[3] = (ccFntTy *)0x15e;
       (*this_00->field_000C->vtable->CreateObject)
-                ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1ADC,(int *)0x0,local_8dc,0)
-      ;
+                ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1ADC,(int *)0x0,local_8dc,0);
       local_8bc = this_00->field_1B00;
       local_8dc[3] = (ccFntTy *)0x1ea;
       (*this_00->field_000C->vtable->CreateObject)
-                ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1AE0,(int *)0x0,local_8dc,0)
-      ;
+                ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1AE0,(int *)0x0,local_8dc,0);
       local_8dc[1] = (ccFntTy *)0xc8;
       if (iVar5 != 0) {
         local_8dc[1] = (ccFntTy *)0xcc;
@@ -126,8 +123,7 @@ LAB_0059d780:
       local_8dc[6] = (ccFntTy *)0x4b;
       local_888 = 0x6981;
       (*this_00->field_000C->vtable->CreateObject)
-                ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1AE4,(int *)0x0,local_8dc,0)
-      ;
+                ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1AE4,(int *)0x0,local_8dc,0);
       this_00->field_002D = 0x61;
       *(undefined4 *)&this_00->field_0x35 = 0;
       FUN_006e6080(this_00,0xf,0,(undefined4 *)&this_00->field_0x1d);

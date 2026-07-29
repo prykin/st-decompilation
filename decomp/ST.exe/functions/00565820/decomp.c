@@ -461,8 +461,7 @@ cf_common_exit_0056623F:
     return &local_24->flags;
   }
   FreeAndNull(&local_24);
-  RaiseInternalException(iVar5,g_overwriteContext_007ED77C,"E:\\__titans\\scoreai.cpp",0xf0f)
-  ;
+  RaiseInternalException(iVar5,g_overwriteContext_007ED77C,"E:\\__titans\\scoreai.cpp",0xf0f);
   return (uint *)0x0;
 }
 

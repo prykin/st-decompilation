@@ -141,8 +141,7 @@ int __thiscall InfocPanelTy::GetMessage(InfocPanelTy *this,STMessage *message)
     else if ((piVar2[1] == 1) && (bVar7 != 0xff)) {
       uVar12 = bVar7 + 9;
     }
-    pbVar10 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_03C4,uVar12)
-    ;
+    pbVar10 = (byte *)FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_03C4,uVar12);
     DibPut((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,iVar8 - iVar11,iVar3 - iVar6,'\x01',
            pbVar10);
     Library::DKW::DDX::FUN_006b3640

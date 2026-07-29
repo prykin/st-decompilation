@@ -28,7 +28,7 @@ void __thiscall STFishC::LifeFish(STFishC *this,int *param_1)
   if (iVar2 == 0) {
     iVar2 = 0;
     uVar3 = thunk_FUN_004ad650((STT3DSprC *)this_00);
-    FUN_006eabf0((void *)this->field_0211,uVar3,iVar2);
+    Library::Ourlib::ST3DSMAP::SprSetVisible((void *)this->field_0211,uVar3,iVar2);
     iVar2 = thunk_FUN_0041caf0((AnonShape_0041CAF0_1630B9E0 *)this);
     if (iVar2 == 1) {
       iVar2 = 1;
@@ -40,7 +40,7 @@ void __thiscall STFishC::LifeFish(STFishC *this,int *param_1)
   else {
     iVar2 = 1;
     uVar3 = thunk_FUN_004ad650((STT3DSprC *)this_00);
-    FUN_006eabf0((void *)this->field_0211,uVar3,iVar2);
+    Library::Ourlib::ST3DSMAP::SprSetVisible((void *)this->field_0211,uVar3,iVar2);
     iVar2 = 1;
   }
   iVar4 = thunk_FUN_004ad650((STT3DSprC *)this_00);
@@ -127,8 +127,7 @@ void __thiscall STFishC::LifeFish(STFishC *this,int *param_1)
 LAB_0057cfe0:
   switch(this->field_0267) {
   case CASE_E7:
-    STT3DSprC::SetCurFase((STT3DSprC *)this_00,'\x0e',g_playSystem_00802A38->field_00E4 % 0x78 >> 1)
-    ;
+    STT3DSprC::SetCurFase((STT3DSprC *)this_00,'\x0e',g_playSystem_00802A38->field_00E4 % 0x78 >> 1);
     break;
   case CASE_E8:
     iVar2 = (0x18 - (int)this->field_006C / 0xf) % 0x18;
