@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STMethodOwnerApplier] Structural method owner recovered as STManRuinC.
    Evidence: this_call_owners=[STManRuinC]; agreed_this_calls=1; incoming_this_accesses=3;
@@ -9,20 +11,14 @@ uint __thiscall STManRuinC::sub_00631880(STManRuinC *this,undefined4 *param_1,un
 {
   uint uVar1;
   STManRuinC_field_003CDArray *pSVar2;
-  int iVar3;
-  undefined4 *puVar4;
+  byte *puVar4;
   undefined4 local_2c [8];
   undefined4 local_b;
 
   uVar1 = 0xffffffff;
   if (param_1 != (undefined4 *)0x0) {
-    puVar4 = local_2c;
-    for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar4 = *param_1;
-      param_1 = param_1 + 1;
-      puVar4 = puVar4 + 1;
-    }
-    *(undefined1 *)puVar4 = *(undefined1 *)param_1;
+    puVar4 = (byte *)(local_2c);
+    memmove(puVar4, param_1, 0x21); /* compiler REP MOVS byte copy */
     local_b = param_2;
     if (this->field_003C == (STManRuinC_field_003CDArray *)0x0) {
       pSVar2 = (STManRuinC_field_003CDArray *)

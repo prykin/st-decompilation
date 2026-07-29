@@ -703,16 +703,7 @@ LAB_00534654:
         } while (cVar2 != '\0');
         pcVar18 = pcVar21 + -uVar11;
         pcVar21 = pcVar20 + -1;
-        for (uVar16 = uVar11 >> 2; uVar16 != 0; uVar16 = uVar16 - 1) {
-          *(undefined4 *)pcVar21 = *(undefined4 *)pcVar18;
-          pcVar18 = pcVar18 + 4;
-          pcVar21 = pcVar21 + 4;
-        }
-        for (uVar11 = uVar11 & 3; uVar11 != 0; uVar11 = uVar11 - 1) {
-          *pcVar21 = *pcVar18;
-          pcVar18 = pcVar18 + 1;
-          pcVar21 = pcVar21 + 1;
-        }
+        memmove(pcVar21, pcVar18, uVar11); /* compiler REP MOVS byte copy */
         SwitchOptPanel(this_00,-1);
         this_00->field_019C = 0x6100;
         DAT_0080879c = 1;
@@ -735,16 +726,7 @@ LAB_00534654:
         uVar11 = ~uVar11;
         pcVar18 = pcVar21 + -uVar11;
         pcVar21 = &DAT_0080ed16;
-        for (uVar16 = uVar11 >> 2; uVar16 != 0; uVar16 = uVar16 - 1) {
-          *(undefined4 *)pcVar21 = *(undefined4 *)pcVar18;
-          pcVar18 = pcVar18 + 4;
-          pcVar21 = pcVar21 + 4;
-        }
-        for (uVar11 = uVar11 & 3; uVar11 != 0; uVar11 = uVar11 - 1) {
-          *pcVar21 = *pcVar18;
-          pcVar18 = pcVar18 + 1;
-          pcVar21 = pcVar21 + 1;
-        }
+        memmove(pcVar21, pcVar18, uVar11); /* compiler REP MOVS byte copy */
         STAppC::sub_0056E9E0((STAppC *)&DAT_00807620,0);
         puVar12 = &DAT_0080a14f;
         puVar19 = &DAT_008087b6;
@@ -1172,16 +1154,7 @@ LAB_00534654:
         } while (cVar2 != '\0');
         pcVar18 = pcVar21 + -uVar11;
         pcVar21 = pcVar20 + -1;
-        for (uVar16 = uVar11 >> 2; uVar16 != 0; uVar16 = uVar16 - 1) {
-          *(undefined4 *)pcVar21 = *(undefined4 *)pcVar18;
-          pcVar18 = pcVar18 + 4;
-          pcVar21 = pcVar21 + 4;
-        }
-        for (uVar11 = uVar11 & 3; uVar11 != 0; uVar11 = uVar11 - 1) {
-          *pcVar21 = *pcVar18;
-          pcVar18 = pcVar18 + 1;
-          pcVar21 = pcVar21 + 1;
-        }
+        memmove(pcVar21, pcVar18, uVar11); /* compiler REP MOVS byte copy */
         DeleteFileA(&this_00->field_006C);
         OVar3 = this_00->field_01A9;
         this_00->field_01A9 = this_00->field_01AA;
@@ -1481,16 +1454,7 @@ LAB_00535271:
       puVar1 = &this_00->field_0x1f5;
       pcVar18 = pcVar21 + -uVar11;
       pcVar21 = puVar1;
-      for (uVar16 = uVar11 >> 2; uVar16 != 0; uVar16 = uVar16 - 1) {
-        *(undefined4 *)pcVar21 = *(undefined4 *)pcVar18;
-        pcVar18 = pcVar18 + 4;
-        pcVar21 = pcVar21 + 4;
-      }
-      for (uVar11 = uVar11 & 3; uVar11 != 0; uVar11 = uVar11 - 1) {
-        *pcVar21 = *pcVar18;
-        pcVar18 = pcVar18 + 1;
-        pcVar21 = pcVar21 + 1;
-      }
+      memmove(pcVar21, pcVar18, uVar11); /* compiler REP MOVS byte copy */
       pbVar22 = &DAT_008016a0;
       pbVar15 = puVar1;
       do {
@@ -1555,16 +1519,7 @@ switchD_00534835_caseD_1:
       uVar11 = ~uVar11;
       pcVar18 = pcVar21 + -uVar11;
       pcVar21 = &this_00->field_0x1f5;
-      for (uVar16 = uVar11 >> 2; uVar16 != 0; uVar16 = uVar16 - 1) {
-        *(undefined4 *)pcVar21 = *(undefined4 *)pcVar18;
-        pcVar18 = pcVar18 + 4;
-        pcVar21 = pcVar21 + 4;
-      }
-      for (uVar11 = uVar11 & 3; uVar11 != 0; uVar11 = uVar11 - 1) {
-        *pcVar21 = *pcVar18;
-        pcVar18 = pcVar18 + 1;
-        pcVar21 = pcVar21 + 1;
-      }
+      memmove(pcVar21, pcVar18, uVar11); /* compiler REP MOVS byte copy */
       this_00->field_01E1 = *(undefined4 *)&this_00->field_0x2c;
       this_00->field_01A5 = 0x3f48;
       this_00->field_01AA = this_00->field_01A9;
@@ -1747,16 +1702,7 @@ switchD_00534835_caseD_1:
       uVar11 = ~uVar11;
       pcVar18 = pcVar21 + -uVar11;
       pcVar21 = &this_00->field_0x1f5;
-      for (uVar16 = uVar11 >> 2; uVar16 != 0; uVar16 = uVar16 - 1) {
-        *(undefined4 *)pcVar21 = *(undefined4 *)pcVar18;
-        pcVar18 = pcVar18 + 4;
-        pcVar21 = pcVar21 + 4;
-      }
-      for (uVar11 = uVar11 & 3; uVar11 != 0; uVar11 = uVar11 - 1) {
-        *pcVar21 = *pcVar18;
-        pcVar18 = pcVar18 + 1;
-        pcVar21 = pcVar21 + 1;
-      }
+      memmove(pcVar21, pcVar18, uVar11); /* compiler REP MOVS byte copy */
       this_00->field_01E1 = *(undefined4 *)&this_00->field_0x2c;
       this_00->field_01A5 = 0x3f4a;
       this_00->field_01AA = this_00->field_01A9;

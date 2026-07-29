@@ -177,16 +177,7 @@ void __thiscall InfocPanelTy::PaintInfoc(InfocPanelTy *this)
     uVar9 = ~uVar9;
     pcVar8 = pcVar10 + -uVar9;
     pcVar10 = &this_00->field_018D;
-    for (uVar7 = uVar9 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *(undefined4 *)pcVar10 = *(undefined4 *)pcVar8;
-      pcVar8 = pcVar8 + 4;
-      pcVar10 = pcVar10 + 4;
-    }
-    for (uVar9 = uVar9 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {
-      *pcVar10 = *pcVar8;
-      pcVar8 = pcVar8 + 1;
-      pcVar10 = pcVar10 + 1;
-    }
+    memmove(pcVar10, pcVar8, uVar9); /* compiler REP MOVS byte copy */
   }
   else {
     wsprintfA(&this_00->field_018D,"%6d",

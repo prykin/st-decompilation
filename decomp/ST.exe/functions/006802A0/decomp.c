@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\ai\ai_script.cpp
@@ -17,7 +19,6 @@ void __cdecl FUN_006802a0(int exceptionCode,char *resourceString)
 {
   char cVar1;
   uint uVar2;
-  uint uVar3;
   char *pcVar4;
   char *pcVar5;
 
@@ -34,16 +35,7 @@ void __cdecl FUN_006802a0(int exceptionCode,char *resourceString)
     uVar2 = ~uVar2;
     pcVar4 = pcVar4 + -uVar2;
     pcVar5 = (char *)&DAT_008488b4;
-    for (uVar3 = uVar2 >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {
-      *(undefined4 *)pcVar5 = *(undefined4 *)pcVar4;
-      pcVar4 = pcVar4 + 4;
-      pcVar5 = pcVar5 + 4;
-    }
-    for (uVar2 = uVar2 & 3; uVar2 != 0; uVar2 = uVar2 - 1) {
-      *pcVar5 = *pcVar4;
-      pcVar4 = pcVar4 + 1;
-      pcVar5 = pcVar5 + 1;
-    }
+    memmove(pcVar5, pcVar4, uVar2); /* compiler REP MOVS byte copy */
   }
   RaiseInternalException
             (exceptionCode,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x74);

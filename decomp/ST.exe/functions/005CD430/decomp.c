@@ -286,16 +286,7 @@ code_r0x005cd7da:
   uVar12 = ~uVar12;
   pcVar15 = pcVar16 + -uVar12;
   pcVar7 = pcVar7 + 10;
-  for (uVar10 = uVar12 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
-    *(undefined4 *)pcVar7 = *(undefined4 *)pcVar15;
-    pcVar15 = pcVar15 + 4;
-    pcVar7 = pcVar7 + 4;
-  }
-  for (uVar12 = uVar12 & 3; uVar12 != 0; uVar12 = uVar12 - 1) {
-    *pcVar7 = *pcVar15;
-    pcVar15 = pcVar15 + 1;
-    pcVar7 = pcVar7 + 1;
-  }
+  memmove(pcVar7, pcVar15, uVar12); /* compiler REP MOVS byte copy */
   goto LAB_005cd7f2;
 }
 

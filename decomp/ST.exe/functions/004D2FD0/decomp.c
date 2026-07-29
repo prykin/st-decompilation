@@ -118,16 +118,7 @@ undefined4 __fastcall FUN_004d2fd0(int param_1)
   }
   pbVar5 = local_14;
   pbVar7 = local_8 + local_49;
-  for (uVar3 = local_4d >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {
-    *(undefined4 *)pbVar7 = *(undefined4 *)pbVar5;
-    pbVar5 = pbVar5 + 4;
-    pbVar7 = pbVar7 + 4;
-  }
-  for (local_4d = local_4d & 3; local_4d != 0; local_4d = local_4d - 1) {
-    *pbVar7 = *pbVar5;
-    pbVar5 = pbVar5 + 1;
-    pbVar7 = pbVar7 + 1;
-  }
+  memmove(pbVar7, pbVar5, local_4d); /* compiler REP MOVS byte copy */
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (*(int *)(param_1 + 0x370) == 0) {
     iVar2 = 0;

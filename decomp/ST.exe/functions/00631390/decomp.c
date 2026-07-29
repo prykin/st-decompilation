@@ -11,7 +11,6 @@ uint __thiscall STManRuinC::sub_00631390(STManRuinC *this,undefined4 *param_1)
 {
   STManRuinC_field_0038DArray *pSVar1;
   byte *pbVar2;
-  uint uVar4;
   uint uVar5;
   byte *puVar6;
   byte *pbVar7;
@@ -40,16 +39,7 @@ uint __thiscall STManRuinC::sub_00631390(STManRuinC *this,undefined4 *param_1)
   if (this->field_0034 != (byte *)0x0) {
     uVar5 = this->field_0030;
     pbVar2 = this->field_0034;
-    for (uVar4 = uVar5 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
-      *(int *)pbVar2 = *(int *)pbVar7;
-      pbVar7 = pbVar7 + 4;
-      pbVar2 = pbVar2 + 4;
-    }
-    for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-      *pbVar2 = *pbVar7;
-      pbVar7 = pbVar7 + 1;
-      pbVar2 = pbVar2 + 1;
-    }
+    memmove(pbVar2, pbVar7, uVar5); /* compiler REP MOVS byte copy */
   }
   return this->field_0030;
 }

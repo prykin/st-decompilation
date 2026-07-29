@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 006807D0 -> 00674EF0 @ 006807F0
@@ -64,16 +66,7 @@ void __cdecl FUN_00674ef0(char *resourceString)
     } while (cVar1 != '\0');
     pcVar5 = pcVar7 + -uVar2;
     pcVar7 = pcVar6 + -1;
-    for (uVar3 = uVar2 >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {
-      *(undefined4 *)pcVar7 = *(undefined4 *)pcVar5;
-      pcVar5 = pcVar5 + 4;
-      pcVar7 = pcVar7 + 4;
-    }
-    for (uVar2 = uVar2 & 3; uVar2 != 0; uVar2 = uVar2 - 1) {
-      *pcVar7 = *pcVar5;
-      pcVar5 = pcVar5 + 1;
-      pcVar7 = pcVar7 + 1;
-    }
+    memmove(pcVar7, pcVar5, uVar2); /* compiler REP MOVS byte copy */
     Library::MSVCRT::FUN_0072eb70(local_108,DAT_00811978);
   }
   return;

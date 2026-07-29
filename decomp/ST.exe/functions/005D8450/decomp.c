@@ -152,16 +152,7 @@ void __thiscall SIDTy::CreateCtrls(SIDTy *this)
   } while (cVar1 != '\0');
   pcVar8 = pcVar10 + -uVar6;
   pcVar10 = pcVar9 + -1;
-  for (uVar7 = uVar6 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-    *(undefined4 *)pcVar10 = *(undefined4 *)pcVar8;
-    pcVar8 = pcVar8 + 4;
-    pcVar10 = pcVar10 + 4;
-  }
-  for (uVar6 = uVar6 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
-    *pcVar10 = *pcVar8;
-    pcVar8 = pcVar8 + 1;
-    pcVar10 = pcVar10 + 1;
-  }
+  memmove(pcVar10, pcVar8, uVar6); /* compiler REP MOVS byte copy */
   lpPathName = &this_00->field_1CD4;
   FUN_006b78c0(lpPathName,lpPathName);
   pvVar4 = FindFirstChangeNotificationA(lpPathName,0,2);

@@ -14,14 +14,13 @@ FSGSTy::SetBanner(FSGSTy *this,char *param_1,undefined4 param_2,int param_3,uint
   char cVar2;
   code *pcVar3;
   int iVar4;
-  undefined4 *puVar5;
+  byte *puVar5;
   AnonShape_006C7D20_41F6C243 *pAVar6;
   DWORD DVar7;
   int *piVar8;
   char *pcVar9;
   int iVar10;
   uint uVar11;
-  uint uVar12;
   FSGSTy *pFVar13;
   char *pcVar14;
   undefined4 local_8e0;
@@ -104,20 +103,11 @@ FSGSTy::SetBanner(FSGSTy *this,char *param_1,undefined4 param_2,int param_3,uint
         iVar4 = Library::MSVCRT::__setjmp3(local_e0.jumpBuffer,0);
         pFVar13 = local_c;
         if (iVar4 == 0) {
-          puVar5 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(param_4);
+          puVar5 = (byte *)Library::DKW::LIB::FUN_006aac70(param_4);
           pFVar13 = local_c;
           local_c->field_1A9B = puVar5;
           if (puVar5 != (undefined4 *)0x0) {
-            for (uVar11 = param_4 >> 2; uVar11 != 0; uVar11 = uVar11 - 1) {
-              *puVar5 = *param_5;
-              param_5 = param_5 + 1;
-              puVar5 = puVar5 + 1;
-            }
-            for (uVar11 = param_4 & 3; uVar11 != 0; uVar11 = uVar11 - 1) {
-              *(undefined1 *)puVar5 = *(undefined1 *)param_5;
-              param_5 = (undefined4 *)((int)param_5 + 1);
-              puVar5 = (undefined4 *)((int)puVar5 + 1);
-            }
+            memmove(puVar5, param_5, param_4); /* compiler REP MOVS byte copy */
             pAVar6 = (AnonShape_006C7D20_41F6C243 *)
                      Library::DKW::GPC::FUN_006c7dc0(local_c->field_1A9B);
             pFVar13->field_1A9F = pAVar6;
@@ -202,16 +192,7 @@ LAB_005a1cfd:
           } while (cVar2 != '\0');
           uVar11 = ~uVar11;
           pcVar14 = pcVar14 + -uVar11;
-          for (uVar12 = uVar11 >> 2; uVar12 != 0; uVar12 = uVar12 - 1) {
-            *(undefined4 *)pcVar9 = *(undefined4 *)pcVar14;
-            pcVar14 = pcVar14 + 4;
-            pcVar9 = pcVar9 + 4;
-          }
-          for (uVar11 = uVar11 & 3; uVar11 != 0; uVar11 = uVar11 - 1) {
-            *pcVar9 = *pcVar14;
-            pcVar14 = pcVar14 + 1;
-            pcVar9 = pcVar9 + 1;
-          }
+          memmove(pcVar9, pcVar14, uVar11); /* compiler REP MOVS byte copy */
         }
         pFVar13->field_1AAF = param_2;
       }

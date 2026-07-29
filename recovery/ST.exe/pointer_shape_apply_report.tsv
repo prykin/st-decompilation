@@ -2335,6 +2335,7 @@ target	00652540	Stack[0x4]:4	disabled	apply=0
 target	006525E0	Stack[0x4]:4	disabled	apply=0
 target	00652670	Stack[0x4]:4	disabled	apply=0
 target	00652700	Stack[0x4]:4	disabled	apply=0
+target	00652810	ECX:4 (auto)	disabled	apply=0
 target	0065D2A0	Stack[-0xc]:4	disabled	apply=0
 target	0065D4B0	Stack[-0x8]:4	disabled	apply=0
 target	0065D590	ECX:4	disabled	apply=0

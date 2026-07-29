@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 int FUN_006736f0(void)
 
@@ -185,16 +187,7 @@ LAB_006739cd:
         uVar8 = ~uVar8;
         pbVar4 = (byte *)(pcVar10 + -uVar8);
         pbVar9 = DAT_00811948;
-        for (uVar7 = uVar8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-          *(undefined4 *)pbVar9 = *(undefined4 *)pbVar4;
-          pbVar4 = pbVar4 + 4;
-          pbVar9 = pbVar9 + 4;
-        }
-        for (uVar8 = uVar8 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
-          *pbVar9 = *pbVar4;
-          pbVar4 = pbVar4 + 1;
-          pbVar9 = pbVar9 + 1;
-        }
+        memmove(pbVar9, pbVar4, uVar8); /* compiler REP MOVS byte copy */
       }
       uVar7 = 0xffffffff;
       pbVar4 = DAT_00811948;

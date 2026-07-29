@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=2, used=0), and
@@ -143,16 +145,7 @@ LAB_0055c414:
       pbVar7 = (byte *)0x0;
     }
     pbVar10 = param_1;
-    for (uVar4 = uVar3 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
-      *(undefined4 *)pbVar10 = *(undefined4 *)pbVar7;
-      pbVar7 = pbVar7 + 4;
-      pbVar10 = pbVar10 + 4;
-    }
-    for (uVar4 = uVar3 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
-      *pbVar10 = *pbVar7;
-      pbVar7 = pbVar7 + 1;
-      pbVar10 = pbVar10 + 1;
-    }
+    memmove(pbVar10, pbVar7, uVar3); /* compiler REP MOVS byte copy */
     param_1[uVar3] = -(iVar6 != param_4->field_0008 + -1) & 10;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = param_1 + uVar3 + 1;

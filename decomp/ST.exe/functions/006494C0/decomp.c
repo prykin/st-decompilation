@@ -187,16 +187,7 @@ undefined4 * CreatePlrDataForWS(void)
   } while (cVar1 != '\0');
   pcVar8 = pcVar11 + -uVar6;
   pcVar11 = pcVar10 + -1;
-  for (uVar7 = uVar6 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-    *(undefined4 *)pcVar11 = *(undefined4 *)pcVar8;
-    pcVar8 = pcVar8 + 4;
-    pcVar11 = pcVar11 + 4;
-  }
-  for (uVar6 = uVar6 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
-    *pcVar11 = *pcVar8;
-    pcVar8 = pcVar8 + 1;
-    pcVar11 = pcVar11 + 1;
-  }
+  memmove(pcVar11, pcVar8, uVar6); /* compiler REP MOVS byte copy */
   local_8 = (AnonShape_0067D3B0_B421D52F *)
             thunk_FUN_00683c70(local_17c,(AnonShape_00683C70_22193481 *)&stack0xfffffb6c,&local_1c,
                                local_34,(undefined *)0x0);

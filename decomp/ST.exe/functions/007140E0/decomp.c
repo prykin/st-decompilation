@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
 
@@ -439,16 +441,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
       } while (cVar1 != '\0');
       pcVar4 = pcVar13 + -uVar7;
       pcVar13 = pcVar12 + -1;
-      for (uVar6 = uVar7 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-        *(undefined4 *)pcVar13 = *(undefined4 *)pcVar4;
-        pcVar4 = pcVar4 + 4;
-        pcVar13 = pcVar13 + 4;
-      }
-      for (uVar7 = uVar7 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-        *pcVar13 = *pcVar4;
-        pcVar4 = pcVar4 + 1;
-        pcVar13 = pcVar13 + 1;
-      }
+      memmove(pcVar13, pcVar4, uVar7); /* compiler REP MOVS byte copy */
       Library::MSVCRT::_strncat
                 (*(char **)((int)this + 0x88),
                  (char *)(*(int *)((int)this + 0x58) + *(int *)((int)this + 0xc)),1);

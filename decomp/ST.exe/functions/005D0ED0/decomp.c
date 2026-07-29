@@ -22,7 +22,6 @@ SettMapMTy::ChangePlayerList
   SettMapMTy_field_1F84Element *element_1f84;
   int iVar5;
   uint uVar6;
-  uint uVar7;
   SettMapMTy_field_1F84Element *element_1f84_2;
   char *pcVar9;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
@@ -77,16 +76,7 @@ SettMapMTy::ChangePlayerList
         uVar6 = ~uVar6;
         pcVar9 = pcVar9 + -uVar6;
         pcVar10 = &element_1f84_2->field_0xa;
-        for (uVar7 = uVar6 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-          *(undefined4 *)pcVar10 = *(undefined4 *)pcVar9;
-          pcVar9 = pcVar9 + 4;
-          pcVar10 = pcVar10 + 4;
-        }
-        for (uVar6 = uVar6 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
-          *pcVar10 = *pcVar9;
-          pcVar9 = pcVar9 + 1;
-          pcVar10 = pcVar10 + 1;
-        }
+        memmove(pcVar10, pcVar9, uVar6); /* compiler REP MOVS byte copy */
         if (element_1f84_2->field_0004 == '\0') {
           if (element_1f84_2->state != 0xff) {
             thunk_FUN_0056a840(&DAT_00807620,element_1f84_2->state);

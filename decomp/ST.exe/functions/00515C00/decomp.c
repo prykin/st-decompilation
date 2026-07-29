@@ -18,7 +18,6 @@ void __thiscall HelpPanelTy::DrawDescription(HelpPanelTy *this,int *param_1,UINT
   int iVar3;
   uint *resourceString;
   char *pcVar4;
-  uint uVar5;
   char *pcVar6;
   int iVar7;
   uint uVar8;
@@ -61,16 +60,7 @@ void __thiscall HelpPanelTy::DrawDescription(HelpPanelTy *this,int *param_1,UINT
     uVar8 = ~uVar8;
     pcVar4 = pcVar6 + -uVar8;
     pcVar6 = (char *)&DAT_0080f33a;
-    for (uVar5 = uVar8 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
-      *(undefined4 *)pcVar6 = *(undefined4 *)pcVar4;
-      pcVar4 = pcVar4 + 4;
-      pcVar6 = pcVar6 + 4;
-    }
-    for (uVar8 = uVar8 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
-      *pcVar6 = *pcVar4;
-      pcVar4 = pcVar4 + 1;
-      pcVar6 = pcVar6 + 1;
-    }
+    memmove(pcVar6, pcVar4, uVar8); /* compiler REP MOVS byte copy */
     ccFntTy::FormIndentText
               (this_00->field_01E0,(char *)&DAT_0080f33a,&DAT_0080f33a," ,.;:!?/\\()[]{}",
                (uint *)&DAT_007c21ec,0x19c,&DAT_007c2198,1);

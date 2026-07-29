@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 * __cdecl FUN_0052a970(uint param_1,int param_2)
 
@@ -79,16 +81,7 @@ undefined4 * __cdecl FUN_0052a970(uint param_1,int param_2)
     uVar4 = ~uVar4;
     pcVar3 = pcVar7 + -uVar4;
     pcVar7 = (char *)&DAT_008016a4;
-    for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
-      *(undefined4 *)pcVar7 = *(undefined4 *)pcVar3;
-      pcVar3 = pcVar3 + 4;
-      pcVar7 = pcVar7 + 4;
-    }
-    for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
-      *pcVar7 = *pcVar3;
-      pcVar3 = pcVar3 + 1;
-      pcVar7 = pcVar7 + 1;
-    }
+    memmove(pcVar7, pcVar3, uVar4); /* compiler REP MOVS byte copy */
   }
   return &DAT_008016a4;
 }

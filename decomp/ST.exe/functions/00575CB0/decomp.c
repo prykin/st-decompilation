@@ -525,16 +525,7 @@ LAB_00576308:
         uVar14 = ~uVar14;
         pcVar13 = pcVar21 + -uVar14;
         pcVar21 = (char *)local_8;
-        for (uVar15 = uVar14 >> 2; uVar15 != 0; uVar15 = uVar15 - 1) {
-          *(undefined4 *)pcVar21 = *(undefined4 *)pcVar13;
-          pcVar13 = pcVar13 + 4;
-          pcVar21 = pcVar21 + 4;
-        }
-        for (uVar14 = uVar14 & 3; uVar14 != 0; uVar14 = uVar14 - 1) {
-          *pcVar21 = *pcVar13;
-          pcVar13 = pcVar13 + 1;
-          pcVar21 = pcVar21 + 1;
-        }
+        memmove(pcVar21, pcVar13, uVar14); /* compiler REP MOVS byte copy */
         local_14 = (DArrayTy *)&local_14[1].count;
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         local_10->field_0086 = *(undefined4 *)(local_38 + 0x28);

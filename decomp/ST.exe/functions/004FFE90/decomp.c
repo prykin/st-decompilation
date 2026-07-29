@@ -15,7 +15,7 @@ void __thiscall CPanelTy::Update5Panel(CPanelTy *this)
   byte bVar4;
   int iVar5;
   int iVar6;
-  undefined4 *puVar7;
+  byte *puVar7;
   byte *pbVar8;
   char *pcVar9;
   byte *pbVar10;
@@ -59,14 +59,9 @@ void __thiscall CPanelTy::Update5Panel(CPanelTy *this)
     return;
   }
   puVar1 = &local_c->field_0C51;
-  puVar7 = (undefined4 *)puVar1;
+  puVar7 = (byte *)puVar1;
   pcVar9 = &local_44;
-  for (iVar5 = 0xd; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *(undefined4 *)pcVar9 = *puVar7;
-    puVar7 = puVar7 + 1;
-    pcVar9 = pcVar9 + 4;
-  }
-  *(undefined2 *)pcVar9 = *(undefined2 *)puVar7;
+  memmove(pcVar9, puVar7, 0x36); /* compiler REP MOVS byte copy */
   memset((void *)puVar1, 0, 0x32); /* compiler bulk-zero initialization */
   STAllPlayersC::GetPanelInfo(g_allPlayers_007FA174,5,(AnonShape_0043BEB0_1C00EC12 *)puVar1);
   if (local_44 != this_00->field_0C51) {

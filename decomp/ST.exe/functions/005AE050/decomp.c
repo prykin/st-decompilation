@@ -276,16 +276,7 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
     } while (cVar1 != '\0');
     pcVar10 = pcVar20 + -uVar14;
     pcVar18 = pcVar18 + -1;
-    for (uVar15 = uVar14 >> 2; uVar15 != 0; uVar15 = uVar15 - 1) {
-      *(undefined4 *)pcVar18 = *(undefined4 *)pcVar10;
-      pcVar10 = pcVar10 + 4;
-      pcVar18 = pcVar18 + 4;
-    }
-    for (uVar14 = uVar14 & 3; uVar14 != 0; uVar14 = uVar14 - 1) {
-      *pcVar18 = *pcVar10;
-      pcVar10 = pcVar10 + 1;
-      pcVar18 = pcVar18 + 1;
-    }
+    memmove(pcVar18, pcVar10, uVar14); /* compiler REP MOVS byte copy */
     local_100.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_100;
     iVar7 = Library::MSVCRT::__setjmp3(local_100.jumpBuffer,0);

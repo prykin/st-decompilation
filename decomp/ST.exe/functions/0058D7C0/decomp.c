@@ -23,7 +23,7 @@ int __thiscall STSharkC::GetMessage(STSharkC *this,STMessage *message)
   uint uVar7;
   undefined2 uVar8;
   short sVar9;
-  undefined4 *puVar10;
+  byte *puVar10;
   byte *pbVar11;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   int *unaff_EDI;
@@ -71,7 +71,7 @@ int __thiscall STSharkC::GetMessage(STSharkC *this,STMessage *message)
         g_currentExceptionFrame = local_80.previous;
         return 0;
       }
-      puVar10 = &this_00->field_01D5;
+      puVar10 = (byte *)(&this_00->field_01D5);
       *(undefined4 *)&this_00->field_0x23d = 0;
       STT3DSprC::StopShow((STT3DSprC *)puVar10,0xe);
       thunk_FUN_004ad5e0((STT3DSprC *)puVar10);
@@ -141,16 +141,7 @@ int __thiscall STSharkC::GetMessage(STSharkC *this,STMessage *message)
       *(uint *)(&local_c->field_0x62 + local_8) = local_10;
       pbVar11 = local_14;
       pbVar13 = &local_c[1].field_0x2 + local_8;
-      for (uVar7 = local_10 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-        *(undefined4 *)pbVar13 = *(undefined4 *)pbVar11;
-        pbVar11 = pbVar11 + 4;
-        pbVar13 = pbVar13 + 4;
-      }
-      for (uVar7 = local_10 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-        *pbVar13 = *pbVar11;
-        pbVar11 = pbVar11 + 1;
-        pbVar13 = pbVar13 + 1;
-      }
+      memmove(pbVar13, pbVar11, local_10); /* compiler REP MOVS byte copy */
       STPlaySystemC::SaveObjData
                 (g_playSystem_00802A38,(int *)this_00->field_0018,(byte *)local_c,
                  (AnonShape_0060EA30_DCEB68AD *)(local_10 + 0x66 + local_8));
@@ -190,13 +181,9 @@ int __thiscall STSharkC::GetMessage(STSharkC *this,STMessage *message)
       *(undefined4 *)&this_00->field_0x249 = 0xff;
       iVar5 = sub_0058FF70((STSharkC *)this_00);
       *(int *)&this_00->field_0x24f = iVar5;
-      puVar10 = (message->arg0).ptr;
+      puVar10 = (byte *)((message->arg0).ptr);
       pbVar11 = (byte *)((int)&this_00->field_0259 + 2);
-      for (iVar5 = 0xd; iVar5 != 0; iVar5 = iVar5 + -1) {
-        *(undefined4 *)pbVar11 = *puVar10;
-        puVar10 = puVar10 + 1;
-        pbVar11 = pbVar11 + 4;
-      }
+      memmove(pbVar11, puVar10, 0x34); /* compiler REP MOVS byte copy */
       thunk_FUN_0058eeb0((AnonShape_0058EEB0_904026FD *)this_00);
       *(undefined2 *)&this_00->field_0x5b = 0xffff;
       *(undefined2 *)&this_00->field_0x5d = 0xffff;
@@ -207,7 +194,7 @@ int __thiscall STSharkC::GetMessage(STSharkC *this,STMessage *message)
       if (iVar5 == 0) {
         iVar5 = thunk_FUN_00417e70(this_00,8);
         if (iVar5 == 0) {
-          puVar10 = &this_00->field_01D5;
+          puVar10 = (byte *)(&this_00->field_01D5);
           iVar5 = STT3DSprC::LoadSequence
                             ((STT3DSprC *)puVar10,0xe,DAT_0080676c,"shark1",0x1d);
           if (iVar5 != 0) {
@@ -284,18 +271,14 @@ LAB_0058dc72:
       }
     }
     else if (local_1c[3] == 2) {
-      puVar10 = local_1c;
+      puVar10 = (byte *)(local_1c);
       pbVar11 = (byte *)((int)&this_00->field_0259 + 2);
-      for (iVar5 = 0xd; iVar5 != 0; iVar5 = iVar5 + -1) {
-        *(undefined4 *)pbVar11 = *puVar10;
-        puVar10 = puVar10 + 1;
-        pbVar11 = pbVar11 + 4;
-      }
+      memmove(pbVar11, puVar10, 0x34); /* compiler REP MOVS byte copy */
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       local_8 = *(uint *)((int)local_1c + 0x5e);
       STAllPlayersC::RestoreGObjData
                 ((STAllPlayersC *)this_00,(undefined4 *)(local_8 + 0x66 + (int)local_1c));
-      puVar10 = local_1c;
+      puVar10 = (byte *)(local_1c);
       *(undefined2 *)&this_00->field_0231 = *(undefined2 *)(local_1c + 0xd);
       *(undefined2 *)((int)&this_00->field_0231 + 2) = *(undefined2 *)((int)local_1c + 0x36);
       *(undefined2 *)&this_00->field_0x235 = *(undefined2 *)(local_1c + 0xe);

@@ -20,7 +20,6 @@ uint * __cdecl _CreateStgListByRoot(cMf32 *param_1,int param_2,char *param_3,uin
   uint *puVar5;
   int iVar6;
   uint uVar7;
-  uint uVar8;
   undefined1 *_Source;
   char *pcVar10;
   undefined1 local_2ec [516];
@@ -71,16 +70,7 @@ uint * __cdecl _CreateStgListByRoot(cMf32 *param_1,int param_2,char *param_3,uin
   local_2ec[0] = 0xc;
   pcVar3 = pcVar3 + -uVar7;
   pcVar10 = local_2ec + 1;
-  for (uVar8 = uVar7 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
-    *(undefined4 *)pcVar10 = *(undefined4 *)pcVar3;
-    pcVar3 = pcVar3 + 4;
-    pcVar10 = pcVar10 + 4;
-  }
-  for (uVar7 = uVar7 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-    *pcVar10 = *pcVar3;
-    pcVar3 = pcVar3 + 1;
-    pcVar10 = pcVar10 + 1;
-  }
+  memmove(pcVar10, pcVar3, uVar7); /* compiler REP MOVS byte copy */
   cMf32::ToBeg(param_1,FUN_006f2d10,local_2ec);
   pcVar3 = (char *)cMf32::RecNameGetNext(param_1);
   while (pcVar3 != (char *)0x0) {

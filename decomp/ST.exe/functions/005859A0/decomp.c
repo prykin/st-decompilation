@@ -116,16 +116,7 @@ int __thiscall STLBombC::GetMessage(STLBombC *this,STMessage *message)
         *(uint *)(&local_c->field_0x63 + local_8) = local_10;
         pbVar12 = local_14;
         pbVar15 = &local_c[1].field_0x3 + local_8;
-        for (uVar8 = local_10 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
-          *(undefined4 *)pbVar15 = *(undefined4 *)pbVar12;
-          pbVar12 = pbVar12 + 4;
-          pbVar15 = pbVar15 + 4;
-        }
-        for (uVar8 = local_10 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
-          *pbVar15 = *pbVar12;
-          pbVar12 = pbVar12 + 1;
-          pbVar15 = pbVar15 + 1;
-        }
+        memmove(pbVar15, pbVar12, local_10); /* compiler REP MOVS byte copy */
         STPlaySystemC::SaveObjData
                   (g_playSystem_00802A38,(int *)this_00->field_0018,(byte *)local_c,
                    (AnonShape_0060EA30_DCEB68AD *)(local_10 + 0x67 + local_8));

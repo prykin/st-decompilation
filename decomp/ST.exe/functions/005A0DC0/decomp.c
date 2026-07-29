@@ -65,16 +65,7 @@ void __thiscall FSGSTy::ConnectProc(FSGSTy *this,int param_1,int param_2)
         uVar10 = ~uVar10;
         pcVar7 = pcVar11 + -uVar10;
         pcVar11 = (char *)&DAT_0080f33a;
-        for (uVar9 = uVar10 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
-          *(undefined4 *)pcVar11 = *(undefined4 *)pcVar7;
-          pcVar7 = pcVar7 + 4;
-          pcVar11 = pcVar11 + 4;
-        }
-        for (uVar10 = uVar10 & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
-          *pcVar11 = *pcVar7;
-          pcVar7 = pcVar7 + 1;
-          pcVar11 = pcVar11 + 1;
-        }
+        memmove(pcVar11, pcVar7, uVar10); /* compiler REP MOVS byte copy */
       }
       ccFntTy::WrTxt(pFVar4->field_1A73,&DAT_0080f33a,-1,-1,2,-1,-1);
       FUN_006b35d0((int *)g_ddxContext_008075A8,pFVar4->field_1ABC);

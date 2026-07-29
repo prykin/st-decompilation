@@ -1027,6 +1027,112 @@ function_address	original_name	merge_group	anchor_address	anchor_kind	status	det
 0044E980	iVar3	0	0044EC2A	call_return	disabled	apply=0
 0044E980	pcVar6	4	0044EBCC	typed_copy	disabled	apply=0
 0044E980	pcVar7	9	0044EBF6	typed_copy	disabled	apply=0
+0044EE30	iVar13	0	0044EE6C	call_return	disabled	apply=0
+0044EE30	iVar13	3	0045A95E	call_return	disabled	apply=0
+0044EE30	iVar13	9	0045AD24	call_return	disabled	apply=0
+0044EE30	iVar13	13	0045AEE8	call_argument	disabled	apply=0
+0044EE30	iVar13	27	0045A319	call_return	disabled	apply=0
+0044EE30	iVar13	39	00450770	call_return	disabled	apply=0
+0044EE30	iVar13	42	004507F3	call_return	disabled	apply=0
+0044EE30	iVar13	43	0045082B	call_return	disabled	apply=0
+0044EE30	iVar13	61	00450E2D	call_argument	disabled	apply=0
+0044EE30	iVar13	63	00450F2C	call_return	disabled	apply=0
+0044EE30	iVar13	71	00459AF5	call_return	disabled	apply=0
+0044EE30	iVar13	72	004599A9	call_return	disabled	apply=0
+0044EE30	iVar13	73	00459A2E	call_return	disabled	apply=0
+0044EE30	iVar13	74	00459A59	call_return	disabled	apply=0
+0044EE30	iVar13	75	00459A97	call_return	disabled	apply=0
+0044EE30	iVar13	76	004597B2	call_return	disabled	apply=0
+0044EE30	iVar13	77	004597F1	call_return	disabled	apply=0
+0044EE30	iVar13	78	004595B4	call_return	disabled	apply=0
+0044EE30	iVar13	79	00459B89	call_return	disabled	apply=0
+0044EE30	iVar13	80	00459BC7	call_return	disabled	apply=0
+0044EE30	iVar13	81	0045950C	call_return	disabled	apply=0
+0044EE30	iVar13	82	0045954B	call_return	disabled	apply=0
+0044EE30	iVar13	83	0045981C	call_return	disabled	apply=0
+0044EE30	iVar13	84	0045985A	call_return	disabled	apply=0
+0044EE30	iVar13	85	00459749	call_return	disabled	apply=0
+0044EE30	iVar13	86	00459788	call_return	disabled	apply=0
+0044EE30	iVar13	87	00459C4F	call_return	disabled	apply=0
+0044EE30	iVar13	88	00459C8E	call_return	disabled	apply=0
+0044EE30	iVar13	89	004595DF	call_return	disabled	apply=0
+0044EE30	iVar13	90	0045961D	call_return	disabled	apply=0
+0044EE30	iVar13	91	004594AF	call_return	disabled	apply=0
+0044EE30	iVar13	92	004594ED	call_return	disabled	apply=0
+0044EE30	iVar13	93	00459B1F	call_return	disabled	apply=0
+0044EE30	iVar13	94	00459B5E	call_return	disabled	apply=0
+0044EE30	iVar13	95	004598E2	call_return	disabled	apply=0
+0044EE30	iVar13	96	00459921	call_return	disabled	apply=0
+0044EE30	iVar13	97	0045994C	call_return	disabled	apply=0
+0044EE30	iVar13	98	0045998A	call_return	disabled	apply=0
+0044EE30	iVar13	99	00459BE6	call_return	disabled	apply=0
+0044EE30	iVar13	100	00459C25	call_return	disabled	apply=0
+0044EE30	iVar13	101	00459879	call_return	disabled	apply=0
+0044EE30	iVar13	102	004598B8	call_return	disabled	apply=0
+0044EE30	iVar13	103	00459445	call_return	disabled	apply=0
+0044EE30	iVar13	104	00459484	call_return	disabled	apply=0
+0044EE30	iVar13	105	004596EC	call_return	disabled	apply=0
+0044EE30	iVar13	106	0045972A	call_return	disabled	apply=0
+0044EE30	iVar13	107	0045963C	call_return	disabled	apply=0
+0044EE30	iVar13	108	004596C1	call_return	disabled	apply=0
+0044EE30	iVar13	109	004592B3	call_return	disabled	apply=0
+0044EE30	iVar13	110	004592DE	call_return	disabled	apply=0
+0044EE30	iVar13	112	0045934B	call_return	disabled	apply=0
+0044EE30	iVar13	115	00459233	call_return	disabled	apply=0
+0044EE30	iVar13	116	0045924A	call_return	disabled	apply=0
+0044EE30	iVar13	117	0045920D	call_return	disabled	apply=0
+0044EE30	iVar13	118	00459163	call_return	disabled	apply=0
+0044EE30	iVar13	120	00458BE7	call_return	disabled	apply=0
+0044EE30	iVar13	121	00458C56	call_argument	disabled	apply=0
+0044EE30	iVar13	123	00458649	call_return	disabled	apply=0
+0044EE30	iVar13	124	00458688	call_return	disabled	apply=0
+0044EE30	iVar13	126	004580B8	call_return	disabled	apply=0
+0044EE30	iVar13	127	004580F6	call_return	disabled	apply=0
+0044EE30	iVar13	129	00457B0F	call_return	disabled	apply=0
+0044EE30	iVar13	130	00457B4E	call_return	disabled	apply=0
+0044EE30	iVar13	132	00457571	call_return	disabled	apply=0
+0044EE30	iVar13	133	004575B0	call_return	disabled	apply=0
+0044EE30	iVar13	136	0045701E	call_return	disabled	apply=0
+0044EE30	iVar13	138	00456A37	call_return	disabled	apply=0
+0044EE30	iVar13	139	00456A76	call_return	disabled	apply=0
+0044EE30	iVar13	141	00456499	call_return	disabled	apply=0
+0044EE30	iVar13	142	004564D8	call_return	disabled	apply=0
+0044EE30	iVar13	144	00455F08	call_return	disabled	apply=0
+0044EE30	iVar13	145	00455F46	call_return	disabled	apply=0
+0044EE30	iVar13	147	0045595F	call_return	disabled	apply=0
+0044EE30	iVar13	148	0045599E	call_return	disabled	apply=0
+0044EE30	iVar13	150	004553C1	call_return	disabled	apply=0
+0044EE30	iVar13	151	00455400	call_return	disabled	apply=0
+0044EE30	iVar13	153	00454E6E	call_return	disabled	apply=0
+0044EE30	iVar13	155	0045491B	call_return	disabled	apply=0
+0044EE30	iVar13	157	004543C8	call_return	disabled	apply=0
+0044EE30	iVar13	159	00453E75	call_return	disabled	apply=0
+0044EE30	iVar13	161	00453922	call_return	disabled	apply=0
+0044EE30	iVar13	163	004533CF	call_return	disabled	apply=0
+0044EE30	iVar13	165	00452E3E	call_return	disabled	apply=0
+0044EE30	iVar13	166	00452E7C	call_return	disabled	apply=0
+0044EE30	iVar13	168	004528D4	call_return	disabled	apply=0
+0044EE30	iVar13	171	0045236A	call_return	disabled	apply=0
+0044EE30	iVar13	173	00451DCC	call_return	disabled	apply=0
+0044EE30	iVar13	175	0045182E	call_return	disabled	apply=0
+0044EE30	iVar13	176	0045186D	call_return	disabled	apply=0
+0044EE30	iVar13	183	0044F083	call_return	disabled	apply=0
+0044EE30	iVar13	207	004502B8	call_return	disabled	apply=0
+0044EE30	iVar13	210	00450347	call_return	disabled	apply=0
+0044EE30	iVar29	2	0045AF75	call_return	disabled	apply=0
+0044EE30	iVar29	6	0045055E	call_return	disabled	apply=0
+0044EE30	pAVar22	0	004599E5	call_return	disabled	apply=0
+0044EE30	pAVar22	1	00459678	call_return	disabled	apply=0
+0044EE30	pDVar19	0	00450441	call_argument	disabled	apply=0
+0044EE30	pDVar19	1	0045063D	call_return	disabled	apply=0
+0044EE30	pDVar19	2	004505AA	call_return	disabled	apply=0
+0044EE30	pSVar20	4	004503C6	call_return	disabled	apply=0
+0044EE30	pSVar20	5	004505E8	call_return	disabled	apply=0
+0044EE30	uVar16	0	0045A9CC	call_return	disabled	apply=0
+0044EE30	uVar16	14	0045061A	call_return	disabled	apply=0
+0044EE30	uVar16	15	0045057F	call_return	disabled	apply=0
+0044EE30	uVar16	17	00450CEA	call_return	disabled	apply=0
+0044EE30	uVar16	21	00459575	call_return	disabled	apply=0
 0045EF00	iVar2	1	0045F262	call_return	disabled	apply=0
 0045F6C0	uVar7	4	0045F8CF	call_return	disabled	apply=0
 0045F980	iVar2	0	0045F9A2	call_return	disabled	apply=0
@@ -5145,38 +5251,38 @@ function_address	original_name	merge_group	anchor_address	anchor_kind	status	det
 0056A2A0	iVar3	1	0056A409	call_argument	disabled	apply=0
 0056A2A0	iVar3	2	0056A3C8	call_return	disabled	apply=0
 0056A2A0	iVar3	3	0056A36E	call_return	disabled	apply=0
-0056ADC0	DVar10	0	0056B345	call_argument	disabled	apply=0
-0056ADC0	iVar8	0	0056ADEF	call_return	disabled	apply=0
-0056ADC0	iVar8	1	0056AE04	call_return	disabled	apply=0
-0056ADC0	iVar8	3	0056AF8A	call_return	disabled	apply=0
-0056ADC0	iVar8	6	0056B025	call_return	disabled	apply=0
-0056ADC0	iVar8	7	0056B277	call_return	disabled	apply=0
-0056ADC0	iVar8	8	0056B37E	call_return	disabled	apply=0
-0056ADC0	iVar8	9	0056B398	call_return	disabled	apply=0
-0056ADC0	iVar8	14	0056B5BB	call_return	disabled	apply=0
-0056ADC0	iVar8	28	0056BC91	call_return	disabled	apply=0
+0056ADC0	DVar9	0	0056B345	call_argument	disabled	apply=0
+0056ADC0	iVar7	0	0056ADEF	call_return	disabled	apply=0
+0056ADC0	iVar7	1	0056AE04	call_return	disabled	apply=0
+0056ADC0	iVar7	3	0056AF8A	call_return	disabled	apply=0
+0056ADC0	iVar7	6	0056B025	call_return	disabled	apply=0
+0056ADC0	iVar7	7	0056B277	call_return	disabled	apply=0
+0056ADC0	iVar7	8	0056B37E	call_return	disabled	apply=0
+0056ADC0	iVar7	9	0056B398	call_return	disabled	apply=0
+0056ADC0	iVar7	14	0056B5BB	call_return	disabled	apply=0
+0056ADC0	iVar7	28	0056BC91	call_return	disabled	apply=0
 0056ADC0	local_30	0	0056BD75	call_argument	disabled	apply=0
-0056ADC0	pDVar11	0	0056B478	call_return	disabled	apply=0
-0056ADC0	pSVar14	0	0056BDC8	call_argument	disabled	apply=0
-0056ADC0	pSVar14	1	0056B905	call_argument	disabled	apply=0
-0056ADC0	pSVar20	1	0056B80A	call_argument	disabled	apply=0
-0056ADC0	pcVar12	0	0056B600	call_argument	disabled	apply=0
-0056ADC0	pcVar12	1	0056BCD6	call_argument	disabled	apply=0
-0056ADC0	pcVar13	0	0056B3E4	call_argument	disabled	apply=0
-0056ADC0	pcVar13	2	0056BE45	call_return	disabled	apply=0
-0056ADC0	pcVar13	3	0056BE6E	call_return	disabled	apply=0
-0056ADC0	pcVar13	4	0056BE8A	call_return	disabled	apply=0
-0056ADC0	pcVar13	5	0056BEF8	call_return	disabled	apply=0
-0056ADC0	pcVar13	7	0056BF21	call_return	disabled	apply=0
-0056ADC0	pcVar13	8	0056BF43	call_return	disabled	apply=0
-0056ADC0	pcVar13	43	0056BBAF	call_return	disabled	apply=0
-0056ADC0	pcVar13	55	0056C08D	call_return	disabled	apply=0
-0056ADC0	pcVar13	56	0056C0BC	call_return	disabled	apply=0
-0056ADC0	pcVar15	1	0056B3E4	call_argument	disabled	apply=0
-0056ADC0	pcVar15	39	0056C09F	call_return	disabled	apply=0
-0056ADC0	pcVar15	40	0056C0CE	call_return	disabled	apply=0
-0056ADC0	puVar9	0	0056B0E0	call_return	disabled	apply=0
-0056ADC0	puVar9	1	0056B0F4	call_return	disabled	apply=0
+0056ADC0	pDVar10	0	0056B478	call_return	disabled	apply=0
+0056ADC0	pSVar13	0	0056BDC8	call_argument	disabled	apply=0
+0056ADC0	pSVar13	1	0056B905	call_argument	disabled	apply=0
+0056ADC0	pSVar19	1	0056B80A	call_argument	disabled	apply=0
+0056ADC0	pcVar11	0	0056B600	call_argument	disabled	apply=0
+0056ADC0	pcVar11	1	0056BCD6	call_argument	disabled	apply=0
+0056ADC0	pcVar12	0	0056B3E4	call_argument	disabled	apply=0
+0056ADC0	pcVar12	2	0056BE45	call_return	disabled	apply=0
+0056ADC0	pcVar12	3	0056BE6E	call_return	disabled	apply=0
+0056ADC0	pcVar12	4	0056BE8A	call_return	disabled	apply=0
+0056ADC0	pcVar12	5	0056BEF8	call_return	disabled	apply=0
+0056ADC0	pcVar12	7	0056BF21	call_return	disabled	apply=0
+0056ADC0	pcVar12	8	0056BF43	call_return	disabled	apply=0
+0056ADC0	pcVar12	43	0056BBAF	call_return	disabled	apply=0
+0056ADC0	pcVar12	55	0056C08D	call_return	disabled	apply=0
+0056ADC0	pcVar12	56	0056C0BC	call_return	disabled	apply=0
+0056ADC0	pcVar14	1	0056B3E4	call_argument	disabled	apply=0
+0056ADC0	pcVar14	39	0056C09F	call_return	disabled	apply=0
+0056ADC0	pcVar14	40	0056C0CE	call_return	disabled	apply=0
+0056ADC0	puVar8	0	0056B0E0	call_return	disabled	apply=0
+0056ADC0	puVar8	1	0056B0F4	call_return	disabled	apply=0
 0056C750	iVar4	0	0056C776	call_return	disabled	apply=0
 0056C750	iVar4	1	0056C9E1	call_return	disabled	apply=0
 0056C750	pSVar3	0	0056C7D6	call_argument	disabled	apply=0
@@ -9331,20 +9437,13 @@ function_address	original_name	merge_group	anchor_address	anchor_kind	status	det
 00481560	local_5c	0	004817E1	call_return	unchanged	anchor lifetime already has the proposed type
 00481560	local_68	0	00481641	call_return	unchanged	anchor lifetime already has the proposed type
 00481560	local_78	0	00481B2F	call_return	unchanged	anchor lifetime already has the proposed type
-00482450	local_20	0	004825EA	call_return	applied	/ulonglong -> /longlong; fresh HighFunction attached as local_20
 004B33D0	local_2c0	1	004B33FE	typed_copy	unchanged	anchor lifetime already has the proposed type
-004EEA40	text	0	004EEB55	call_argument	applied	pointer:/undefined1 -> pointer:/char; fresh HighFunction attached as text
 00521CF0	_Str1	0	00521DAB	call_argument	conflict	pointer:/undefined1 -> pointer:/char; verification failed: fresh lifetime type/groups are pointer:/undefined1/1, expected pointer:/char/1
 00538690	local_18c	1	0053874E	typed_copy	unchanged	anchor lifetime already has the proposed type
 0055F410	local_1b8	1	0055F5C7	typed_copy	unchanged	anchor lifetime already has the proposed type
 0055F410	local_6c	1	00560849	call_return	unchanged	anchor lifetime already has the proposed type
 00562F50	local_1b8	1	00563137	typed_copy	unchanged	anchor lifetime already has the proposed type
 00562F50	local_6c	1	0056439A	call_return	unchanged	anchor lifetime already has the proposed type
-0056ADC0	puVar2	0	0056B065	call_argument	applied	pointer:/undefined1 -> pointer:/byte; fresh HighFunction attached as puVar2
-0056D370	puVar4	0	0056D3D4	call_argument	applied	pointer:/undefined1 -> pointer:/byte; fresh HighFunction attached as puVar4
-00652810	local_16c	0	00652EB4	call_argument	conflict	typed lifetime did not persist in the Program database
 00660B50	local_c	0	00660C78	typed_copy	unchanged	anchor lifetime already has the proposed type
-00683C70	pcVar7	2	0068A939	typed_copy	conflict	pointer:/char -> /winnt.h/LPCSTR; verification failed: fresh lifetime type/groups are pointer:/char/1, expected /winnt.h/LPCSTR/1
-0068CEC0	pcVar13	2	0068D82E	typed_copy	conflict	pointer:/char -> /winnt.h/LPCSTR; verification failed: fresh lifetime type/groups are pointer:/char/1, expected /winnt.h/LPCSTR/1
-006952B0	local_6c	0	0069563A	call_return	conflict	typed lifetime did not persist in the Program database
-0074DA81	local_14	0	0074DAE8	call_return	applied	/ulonglong -> /longlong; fresh HighFunction attached as local_14
+00683C70	pcVar7	2	0068A939	typed_copy	unchanged	anchor lifetime already has the proposed type
+0068CEC0	pcVar13	2	0068D82E	typed_copy	unchanged	anchor lifetime already has the proposed type

@@ -10,7 +10,6 @@ FUN_00693b20(void *param_1,int param_2,undefined1 param_3,undefined4 param_4,und
   char cVar2;
   int iVar3;
   uint uVar4;
-  uint uVar5;
   byte *puVar6;
   char *pcVar7;
   byte *puVar8;
@@ -47,16 +46,7 @@ FUN_00693b20(void *param_1,int param_2,undefined1 param_3,undefined4 param_4,und
     uVar4 = ~uVar4;
     pcVar7 = pcVar7 + -uVar4;
     pcVar9 = (char *)((int)param_1 + param_2 * 0x51 + 0x12);
-    for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
-      *(undefined4 *)pcVar9 = *(undefined4 *)pcVar7;
-      pcVar7 = pcVar7 + 4;
-      pcVar9 = pcVar9 + 4;
-    }
-    for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
-      *pcVar9 = *pcVar7;
-      pcVar7 = pcVar7 + 1;
-      pcVar9 = pcVar9 + 1;
-    }
+    memmove(pcVar9, pcVar7, uVar4); /* compiler REP MOVS byte copy */
   }
   *(char *)((int)param_1 + 0x10) = *(char *)((int)param_1 + 0x10) + '\x01';
   return puVar1;

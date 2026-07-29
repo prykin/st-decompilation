@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 1.
    Evidence: 005BAE00 -> 00725910 @ 005BB365 | 005BAE00 -> 00725910 @ 005BB3D4 | 005E7FE0 ->
@@ -268,16 +270,7 @@ FUN_00725910(HANDLE hFindFile,char *text,undefined4 param_3,undefined *param_4,u
           } while (cVar1 != '\0');
           pCVar8 = pCVar10 + -uVar5;
           pcVar7 = pcVar11 + -1;
-          for (uVar6 = uVar5 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-            *(undefined4 *)pcVar7 = *(undefined4 *)pCVar8;
-            pCVar8 = pCVar8 + 4;
-            pcVar7 = pcVar7 + 4;
-          }
-          for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-            *pcVar7 = *pCVar8;
-            pCVar8 = pCVar8 + 1;
-            pcVar7 = pcVar7 + 1;
-          }
+          memmove(pcVar7, pCVar8, uVar5); /* compiler REP MOVS byte copy */
           iVar2 = FUN_00725910(local_108,text,&local_248,param_4,param_5,0);
           if (iVar2 != 0) {
             FindClose(pvVar3);

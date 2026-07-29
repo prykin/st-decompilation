@@ -129,7 +129,6 @@ public class STTypeBootstrapAnalyzer extends GhidraScript {
         rows.sort(Comparator.comparing((Row row) -> row.action)
             .thenComparing(row -> row.target));
         writeTsv(directory.resolve("type_bootstrap_proposals.tsv"), rows);
-        writeJsonl(directory.resolve("type_bootstrap_proposals.jsonl"), rows);
         writeSummary(directory.resolve("type_bootstrap_summary.txt"), rows);
         println("Heuristic type bootstrap: proposals=" + rows.size() + ", apply=" +
             rows.stream().filter(row -> row.apply).count() + ", output=" + directory);

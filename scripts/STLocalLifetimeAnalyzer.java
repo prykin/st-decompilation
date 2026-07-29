@@ -23,6 +23,7 @@ import ghidra.app.decompiler.DecompInterface;
 import ghidra.app.decompiler.DecompileResults;
 import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
+import ghidra.program.model.data.Array;
 import ghidra.program.model.data.DataType;
 import ghidra.program.model.data.Pointer;
 import ghidra.program.model.data.TypeDef;
@@ -489,6 +490,10 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
      */
     private boolean genericUnknown(DataType type) {
         type = untypedef(type);
+        // An undefined-element array still carries a proven aggregate extent
+        // and address identity.  A 4-byte use of one piece must not collapse
+        // the complete stack object to the consumer's scalar type.
+        if (type instanceof Array) return false;
         if (type == null || Undefined.isUndefined(type)) return true;
         if (!(type instanceof Pointer pointer)) return false;
         DataType pointed = untypedef(pointer.getDataType());

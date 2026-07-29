@@ -62,7 +62,7 @@ int __thiscall SettMapMTy::GetMessage(SettMapMTy *this,STMessage *message)
   uint uVar29;
   SettMapMTy_field_1F84Element *element_1f84_4;
   char *pcVar31;
-  undefined4 *puVar32;
+  byte *puVar32;
   char *pcVar33;
   AnonShape_005CBBE0_2D1CAA09 *pAVar34;
   bool bVar35;
@@ -564,16 +564,7 @@ LAB_005d2018:
               uVar28 = ~uVar28;
               pcVar27 = pcVar31 + -uVar28;
               pcVar31 = (char *)&DAT_0080ee1a;
-              for (uVar29 = uVar28 >> 2; uVar29 != 0; uVar29 = uVar29 - 1) {
-                *(undefined4 *)pcVar31 = *(undefined4 *)pcVar27;
-                pcVar27 = pcVar27 + 4;
-                pcVar31 = pcVar31 + 4;
-              }
-              for (uVar28 = uVar28 & 3; uVar28 != 0; uVar28 = uVar28 - 1) {
-                *pcVar31 = *pcVar27;
-                pcVar27 = pcVar27 + 1;
-                pcVar31 = pcVar31 + 1;
-              }
+              memmove(pcVar31, pcVar27, uVar28); /* compiler REP MOVS byte copy */
               uVar28 = 0xffffffff;
               pcVar27 = &DAT_00807680;
               do {
@@ -697,12 +688,8 @@ LAB_005d24b8:
                                                           (undefined2)local_1e8)) & 0xff02ffff;
                         }
                         pcVar27 = local_22c;
-                        puVar32 = &DAT_00808ab0 + (uint)DAT_00808aaf * 0x27;
-                        for (iVar15 = 0x27; iVar15 != 0; iVar15 = iVar15 + -1) {
-                          *puVar32 = *(undefined4 *)pcVar27;
-                          pcVar27 = pcVar27 + 4;
-                          puVar32 = puVar32 + 1;
-                        }
+                        puVar32 = (byte *)(&DAT_00808ab0 + (uint)DAT_00808aaf * 0x27);
+                        memmove(puVar32, pcVar27, 0x9c); /* compiler REP MOVS byte copy */
                         if ((byte)local_1e8 < 8) {
                           iVar38 = 0;
                           iVar15 = (local_1e8 & 0xff) * 0x51;
@@ -884,12 +871,8 @@ LAB_005d22dd:
                                                           (undefined2)local_14c)) & 0xff02ffff;
                         }
                         pcVar27 = local_190;
-                        puVar32 = &DAT_00808ab0 + (uint)DAT_00808aaf * 0x27;
-                        for (iVar15 = 0x27; iVar15 != 0; iVar15 = iVar15 + -1) {
-                          *puVar32 = *(undefined4 *)pcVar27;
-                          pcVar27 = pcVar27 + 4;
-                          puVar32 = puVar32 + 1;
-                        }
+                        puVar32 = (byte *)(&DAT_00808ab0 + (uint)DAT_00808aaf * 0x27);
+                        memmove(puVar32, pcVar27, 0x9c); /* compiler REP MOVS byte copy */
                         if ((byte)local_14c < 8) {
                           iVar38 = 0;
                           iVar15 = (local_14c & 0xff) * 0x51;
@@ -1084,16 +1067,7 @@ LAB_005d1b17:
         uVar28 = ~uVar28;
         pcVar27 = pcVar31 + -uVar28;
         pcVar31 = local_640;
-        for (uVar29 = uVar28 >> 2; uVar29 != 0; uVar29 = uVar29 - 1) {
-          *(undefined4 *)pcVar31 = *(undefined4 *)pcVar27;
-          pcVar27 = pcVar27 + 4;
-          pcVar31 = pcVar31 + 4;
-        }
-        for (uVar28 = uVar28 & 3; uVar28 != 0; uVar28 = uVar28 - 1) {
-          *pcVar31 = *pcVar27;
-          pcVar27 = pcVar27 + 1;
-          pcVar31 = pcVar31 + 1;
-        }
+        memmove(pcVar31, pcVar27, uVar28); /* compiler REP MOVS byte copy */
         local_10 = local_640;
         StartSystemTy::AddToChat(pSVar8,(int)local_680);
         if (this_00->field_2208 == '\0') {
@@ -1676,16 +1650,7 @@ LAB_005d3188:
                 uVar28 = ~uVar28;
                 pcVar27 = pcVar31 + -uVar28;
                 pcVar31 = &this_00->field_0x1e33;
-                for (uVar29 = uVar28 >> 2; uVar29 != 0; uVar29 = uVar29 - 1) {
-                  *(undefined4 *)pcVar31 = *(undefined4 *)pcVar27;
-                  pcVar27 = pcVar27 + 4;
-                  pcVar31 = pcVar31 + 4;
-                }
-                for (uVar28 = uVar28 & 3; uVar28 != 0; uVar28 = uVar28 - 1) {
-                  *pcVar31 = *pcVar27;
-                  pcVar27 = pcVar27 + 1;
-                  pcVar31 = pcVar31 + 1;
-                }
+                memmove(pcVar31, pcVar27, uVar28); /* compiler REP MOVS byte copy */
                 this_00->field_1F37 = 4;
                 this_00->field_1F3B = local_c;
                 Library::DKW::TBL::FUN_006ae1c0

@@ -90,16 +90,7 @@ int __thiscall STGroupBoatC::GetMessage(STGroupBoatC *this,STMessage *message)
     }
     pbVar8 = local_18;
     pbVar9 = local_8 + local_c;
-    for (uVar7 = local_10 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *(undefined4 *)pbVar9 = *(undefined4 *)pbVar8;
-      pbVar8 = pbVar8 + 4;
-      pbVar9 = pbVar9 + 4;
-    }
-    for (uVar7 = local_10 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *pbVar9 = *pbVar8;
-      pbVar8 = pbVar8 + 1;
-      pbVar9 = pbVar9 + 1;
-    }
+    memmove(pbVar9, pbVar8, local_10); /* compiler REP MOVS byte copy */
     *(uint *)(local_8 + 0x38) = local_c;
     *(uint *)(local_8 + 0x3c) = local_10;
     STPlaySystemC::SaveObjData

@@ -27,7 +27,6 @@ int __thiscall CampaignTy::GetMessage(CampaignTy *this,STMessage *message)
   int iVar11;
   int iVar12;
   uint uVar13;
-  uint uVar14;
   char *pcVar15;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   void *unaff_EDI;
@@ -153,16 +152,7 @@ int __thiscall CampaignTy::GetMessage(CampaignTy *this,STMessage *message)
       uVar13 = ~uVar13;
       pcVar15 = pcVar16 + -uVar13;
       pcVar16 = (char *)&DAT_0080ee1a;
-      for (uVar14 = uVar13 >> 2; uVar14 != 0; uVar14 = uVar14 - 1) {
-        *(undefined4 *)pcVar16 = *(undefined4 *)pcVar15;
-        pcVar15 = pcVar15 + 4;
-        pcVar16 = pcVar16 + 4;
-      }
-      for (uVar13 = uVar13 & 3; uVar13 != 0; uVar13 = uVar13 - 1) {
-        *pcVar16 = *pcVar15;
-        pcVar15 = pcVar15 + 1;
-        pcVar16 = pcVar16 + 1;
-      }
+      memmove(pcVar16, pcVar15, uVar13); /* compiler REP MOVS byte copy */
       DAT_008087a0 = 8;
       iVar7 = STAppC::sub_0056E9E0((STAppC *)&DAT_00807620,1);
       if (iVar7 != 0) {

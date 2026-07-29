@@ -9,7 +9,6 @@ FUN_00627850(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
   char cVar1;
   short sVar2;
   uint uVar4;
-  uint uVar5;
   short sVar6;
   short sVar7;
   char *pcVar8;
@@ -97,16 +96,7 @@ FUN_00627850(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
       uVar4 = ~uVar4;
       pcVar8 = pcVar8 + -uVar4;
       pcVar10 = local_2c;
-      for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
-        *(undefined4 *)pcVar10 = *(undefined4 *)pcVar8;
-        pcVar8 = pcVar8 + 4;
-        pcVar10 = pcVar10 + 4;
-      }
-      for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
-        *pcVar10 = *pcVar8;
-        pcVar8 = pcVar8 + 1;
-        pcVar10 = pcVar10 + 1;
-      }
+      memmove(pcVar10, pcVar8, uVar4); /* compiler REP MOVS byte copy */
       sVar7 = (short)local_8;
     }
     else {

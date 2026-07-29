@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeRepairApplier] Propagated return.
    Evidence: 006025D0 returns used as parameter 2 of STPlaySystemC::SaveObjData @ 006021E2
@@ -11,8 +13,7 @@ byte * __thiscall STDestC::sub_006025D0(STDestC *this,undefined4 *param_1)
 
 {
   byte *pbVar1;
-  int iVar2;
-  undefined4 *puVar3;
+  byte *puVar3;
   byte *pbVar4;
 
   if (this->field_036E != 3) {
@@ -21,14 +22,9 @@ byte * __thiscall STDestC::sub_006025D0(STDestC *this,undefined4 *param_1)
       this->field_036E = (uint)(this->field_039F < '\x01');
     }
     this->field_023D = 2;
-    puVar3 = (undefined4 *)&this->field_0x231;
+    puVar3 = (byte *)&this->field_0x231;
     pbVar4 = pbVar1;
-    for (iVar2 = 0x5f; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *(undefined4 *)pbVar4 = *puVar3;
-      puVar3 = puVar3 + 1;
-      pbVar4 = pbVar4 + 4;
-    }
-    *(undefined2 *)pbVar4 = *(undefined2 *)puVar3;
+    memmove(pbVar4, puVar3, 0x17e); /* compiler REP MOVS byte copy */
     *param_1 = 0x17e;
     return pbVar1;
   }

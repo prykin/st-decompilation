@@ -17,7 +17,7 @@ void __thiscall FSGSTy::DelPlayer(FSGSTy *this,byte *param_1)
   int iVar6;
   uint index;
   uint uVar7;
-  undefined4 *puVar8;
+  byte *puVar8;
   byte *pbVar9;
   byte *pbVar10;
   bool bVar11;
@@ -48,14 +48,9 @@ void __thiscall FSGSTy::DelPlayer(FSGSTy *this,byte *param_1)
       }
       local_c = uVar7;
       if (local_8 != (undefined4 *)0x0) {
-        puVar8 = local_8;
+        puVar8 = (byte *)(local_8);
         pbVar9 = local_40;
-        for (iVar4 = 0xb; iVar4 != 0; iVar4 = iVar4 + -1) {
-          *(undefined4 *)pbVar9 = *puVar8;
-          puVar8 = puVar8 + 1;
-          pbVar9 = pbVar9 + 4;
-        }
-        *(undefined2 *)pbVar9 = *(undefined2 *)puVar8;
+        memmove(pbVar9, puVar8, 0x2e); /* compiler REP MOVS byte copy */
       }
       index = 0;
       if (uVar7 != 0) {

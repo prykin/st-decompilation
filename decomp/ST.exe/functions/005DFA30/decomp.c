@@ -20,7 +20,6 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,undefined1 param_2
   ccFntTy *pcVar8;
   DArrayTy *pDVar9;
   uint uVar10;
-  uint uVar11;
   byte *pbVar12;
   undefined4 *puVar13;
   byte *pbVar14;
@@ -113,16 +112,7 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,undefined1 param_2
       uVar10 = ~uVar10;
       pbVar12 = pbVar14 + -uVar10;
       pbVar14 = (byte *)&DAT_0080c3c3;
-      for (uVar11 = uVar10 >> 2; uVar11 != 0; uVar11 = uVar11 - 1) {
-        *(undefined4 *)pbVar14 = *(undefined4 *)pbVar12;
-        pbVar12 = pbVar12 + 4;
-        pbVar14 = pbVar14 + 4;
-      }
-      for (uVar10 = uVar10 & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
-        *pbVar14 = *pbVar12;
-        pbVar12 = pbVar12 + 1;
-        pbVar14 = pbVar14 + 1;
-      }
+      memmove(pbVar14, pbVar12, uVar10); /* compiler REP MOVS byte copy */
     }
   }
   if (pMVar3->field_006E == '\0') {

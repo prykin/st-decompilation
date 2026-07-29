@@ -186,16 +186,7 @@ switchD_0064aa67_caseD_1:
           } while (cVar3 != '\0');
           pbVar7 = pbVar6 + -uVar13;
           pbVar6 = (byte *)((int)pfVar16 + -1);
-          for (uVar14 = uVar13 >> 2; uVar14 != 0; uVar14 = uVar14 - 1) {
-            *(undefined4 *)pbVar6 = *(undefined4 *)pbVar7;
-            pbVar7 = pbVar7 + 4;
-            pbVar6 = pbVar6 + 4;
-          }
-          for (uVar13 = uVar13 & 3; uVar13 != 0; uVar13 = uVar13 - 1) {
-            *pbVar6 = *pbVar7;
-            pbVar7 = pbVar7 + 1;
-            pbVar6 = pbVar6 + 1;
-          }
+          memmove(pbVar6, pbVar7, uVar13); /* compiler REP MOVS byte copy */
 cf_common_exit_0064BBB1:
           if (param_3 == (int *)0x0) {
             g_currentExceptionFrame = local_c0.previous;

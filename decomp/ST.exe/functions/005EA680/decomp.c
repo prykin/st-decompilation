@@ -267,16 +267,7 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
     uVar9 = ~uVar9;
     pcVar11 = pcVar12 + -uVar9;
     pcVar12 = local_464;
-    for (uVar10 = uVar9 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
-      *(undefined4 *)pcVar12 = *(undefined4 *)pcVar11;
-      pcVar11 = pcVar11 + 4;
-      pcVar12 = pcVar12 + 4;
-    }
-    for (uVar9 = uVar9 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {
-      *pcVar12 = *pcVar11;
-      pcVar11 = pcVar11 + 1;
-      pcVar12 = pcVar12 + 1;
-    }
+    memmove(pcVar12, pcVar11, uVar9); /* compiler REP MOVS byte copy */
     local_8 = local_464;
     StartSystemTy::AddToChat(this_01,(int)local_4a4);
     FUN_00715360(g_int_00811764,0,'\x1b',local_4a4,0x451,1,0xffffffff);

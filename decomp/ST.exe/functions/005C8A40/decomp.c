@@ -1701,16 +1701,7 @@ LAB_005cab38:
       uVar18 = ~uVar18;
       pcVar14 = pcVar22 + -uVar18;
       pcVar22 = (char *)&DAT_0080f33a;
-      for (uVar19 = uVar18 >> 2; uVar19 != 0; uVar19 = uVar19 - 1) {
-        *(undefined4 *)pcVar22 = *(undefined4 *)pcVar14;
-        pcVar14 = pcVar14 + 4;
-        pcVar22 = pcVar22 + 4;
-      }
-      for (uVar18 = uVar18 & 3; uVar18 != 0; uVar18 = uVar18 - 1) {
-        *pcVar22 = *pcVar14;
-        pcVar14 = pcVar14 + 1;
-        pcVar22 = pcVar22 + 1;
-      }
+      memmove(pcVar22, pcVar14, uVar18); /* compiler REP MOVS byte copy */
     }
     else {
       wsprintfA((LPSTR)&DAT_0080f33a,"%d",DAT_00808a97);

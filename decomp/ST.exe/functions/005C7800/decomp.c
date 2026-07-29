@@ -259,16 +259,7 @@ LAB_005c7ae0:
       uVar6 = ~uVar6;
       pbVar12 = pbVar17 + -uVar6;
       pbVar17 = (byte *)&DAT_0080c3c3;
-      for (uVar9 = uVar6 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
-        *(undefined4 *)pbVar17 = *(undefined4 *)pbVar12;
-        pbVar12 = pbVar12 + 4;
-        pbVar17 = pbVar17 + 4;
-      }
-      for (uVar6 = uVar6 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
-        *pbVar17 = *pbVar12;
-        pbVar12 = pbVar12 + 1;
-        pbVar17 = pbVar17 + 1;
-      }
+      memmove(pbVar17, pbVar12, uVar6); /* compiler REP MOVS byte copy */
     }
     this->field_1F47 = 1;
     if (((DAT_0080877e != '\0') && (DAT_008067a0 != '\0')) && (g_int_00811764 != (int *)0x0)) {

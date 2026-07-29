@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __fastcall FUN_0067be20(int param_1,undefined4 param_2,DArrayTy *param_3)
 

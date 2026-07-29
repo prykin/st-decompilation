@@ -85,7 +85,6 @@ public class STPointerRoleRepairAnalyzer extends GhidraScript {
         proposals.sort(Comparator.comparing((Proposal row) -> row.functionAddress)
             .thenComparing(row -> row.locator));
         writeTsv(directory.resolve("pointer_role_repair_proposals.tsv"));
-        writeJson(directory.resolve("pointer_role_repair_proposals.jsonl"));
         writeFailures(directory.resolve("pointer_role_repair_failures.tsv"));
         writeSummary(directory.resolve("pointer_role_repair_summary.txt"));
         println("Pointer-role repair analysis complete: " + directory.toAbsolutePath().normalize());

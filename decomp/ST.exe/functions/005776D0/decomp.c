@@ -31,7 +31,7 @@ int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
   int *piVar12;
   char *pcVar13;
   char *pcVar14;
-  undefined4 *puVar15;
+  byte *puVar15;
   bool bVar16;
   undefined1 local_1d90 [8];
   int *local_1d88;
@@ -232,12 +232,8 @@ int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
             local_124 = timeGetTime();
             if (bVar2 < 8) {
               pcVar13 = local_16c;
-              puVar15 = &DAT_00808ab0 + (uint)DAT_00808aaf * 0x27;
-              for (iVar5 = 0x27; iVar5 != 0; iVar5 = iVar5 + -1) {
-                *puVar15 = *(undefined4 *)pcVar13;
-                pcVar13 = pcVar13 + 4;
-                puVar15 = puVar15 + 1;
-              }
+              puVar15 = (byte *)(&DAT_00808ab0 + (uint)DAT_00808aaf * 0x27);
+              memmove(puVar15, pcVar13, 0x9c); /* compiler REP MOVS byte copy */
               DAT_00808aaf = DAT_00808aaf + 1;
               if (g_playPanel_008016E4 != (PlayPanelTy *)0x0) {
                 PlayPanelTy::sub_0053A540(g_playPanel_008016E4);

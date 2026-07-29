@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __cdecl FUN_00553e20(int param_1,undefined *param_2,byte param_3)
 
@@ -5,7 +7,6 @@ void __cdecl FUN_00553e20(int param_1,undefined *param_2,byte param_3)
   char cVar1;
   int iVar2;
   uint uVar3;
-  uint uVar4;
   char *pcVar5;
   LOGFONTA *pLVar6;
   char *pcVar7;
@@ -44,16 +45,7 @@ void __cdecl FUN_00553e20(int param_1,undefined *param_2,byte param_3)
   local_98.lfPitchAndFamily = '\"';
   pcVar5 = pcVar7 + -uVar3;
   pCVar8 = local_98.lfFaceName;
-  for (uVar4 = uVar3 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
-    *(undefined4 *)pCVar8 = *(undefined4 *)pcVar5;
-    pcVar5 = pcVar5 + 4;
-    pCVar8 = pCVar8 + 4;
-  }
-  for (uVar3 = uVar3 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
-    *pCVar8 = *pcVar5;
-    pcVar5 = pcVar5 + 1;
-    pCVar8 = pCVar8 + 1;
-  }
+  memmove(pCVar8, pcVar5, uVar3); /* compiler REP MOVS byte copy */
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   _param_3 = 0xe4fae200;
   local_5c[0] = 0x20;

@@ -18,7 +18,6 @@ byte * __cdecl TactDataPack(undefined4 *param_1,uint *param_2)
   AnonShape_GLOBAL_008489C4_F7BABFAC *pAVar4;
   byte *pbVar5;
   int *piVar6;
-  uint uVar7;
   undefined4 *puVar8;
   int iVar9;
   AnonShape_00691190_783A1B6D *pAVar10;
@@ -110,16 +109,7 @@ byte * __cdecl TactDataPack(undefined4 *param_1,uint *param_2)
                       Library::DKW::LIB::FUN_006acf50((int)local_8,local_8->field_0014 + local_10);
             pbVar5 = local_1c;
             pbVar12 = &local_8[1].field_0x3 + iVar2;
-            for (uVar7 = local_10 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-              *(undefined4 *)pbVar12 = *(undefined4 *)pbVar5;
-              pbVar5 = pbVar5 + 4;
-              pbVar12 = pbVar12 + 4;
-            }
-            for (uVar7 = local_10 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-              *pbVar12 = *pbVar5;
-              pbVar5 = pbVar5 + 1;
-              pbVar12 = pbVar12 + 1;
-            }
+            memmove(pbVar12, pbVar5, local_10); /* compiler REP MOVS byte copy */
             iVar2 = iVar2 + local_10;
             local_8->field_0014 = local_8->field_0014 + local_10;
             local_8->field_0105 = local_8->field_0105 + 1;

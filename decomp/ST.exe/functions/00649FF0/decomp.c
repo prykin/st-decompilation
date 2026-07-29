@@ -127,16 +127,7 @@ FUN_00649ff0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param_4)
   uVar7 = ~uVar7;
   pcVar4 = pcVar12 + -uVar7;
   pcVar12 = &stack0xfffffcd0;
-  for (uVar8 = uVar7 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
-    *(undefined4 *)pcVar12 = *(undefined4 *)pcVar4;
-    pcVar4 = pcVar4 + 4;
-    pcVar12 = pcVar12 + 4;
-  }
-  for (uVar7 = uVar7 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-    *pcVar12 = *pcVar4;
-    pcVar4 = pcVar4 + 1;
-    pcVar12 = pcVar12 + 1;
-  }
+  memmove(pcVar12, pcVar4, uVar7); /* compiler REP MOVS byte copy */
   FUN_006b78c0(&stack0xfffffcd0,&stack0xfffffcd0);
   array = (DArrayTy *)
           thunk_FUN_00683c70((LPCSTR)param_1,(AnonShape_00683C70_22193481 *)&stack0xfffffcd0,
@@ -282,16 +273,7 @@ FUN_00649ff0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param_4)
             uVar7 = ~uVar7;
             pcVar4 = pcVar12 + -uVar7;
             pcVar12 = (char *)&DAT_008117c0;
-            for (uVar9 = uVar7 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
-              *(undefined4 *)pcVar12 = *(undefined4 *)pcVar4;
-              pcVar4 = pcVar4 + 4;
-              pcVar12 = pcVar12 + 4;
-            }
-            for (uVar7 = uVar7 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-              *pcVar12 = *pcVar4;
-              pcVar4 = pcVar4 + 1;
-              pcVar12 = pcVar12 + 1;
-            }
+            memmove(pcVar12, pcVar4, uVar7); /* compiler REP MOVS byte copy */
             if (param_2 != (undefined4 *)0x0) {
               *param_2 = *(undefined4 *)((int)pvVar5 + 0x218);
             }

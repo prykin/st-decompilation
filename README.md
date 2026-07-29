@@ -52,7 +52,7 @@ files under [`recovery/ST.exe/`](recovery/ST.exe/).
 | `ghidra/` | Verified packed Ghidra Program checkpoint tracked through Git LFS. |
 | `proj/` | Ignored local expanded Ghidra working project, hydrated from `ghidra/`. |
 | `scripts/` | Ghidra Java analyzers, review/apply scripts, and the LLM corpus exporter. |
-| `recovery/` | Reviewable TSV/JSONL proposals, conflicts, summaries, and apply reports. |
+| `recovery/` | Reviewable TSV proposals, conflicts, summaries, and apply reports. |
 | `decomp/` | Address-stable text export of functions, types, globals, strings, and call graphs. |
 | `src/` | Reconstructed source code as it becomes ready to leave the Ghidra corpus. |
 | `docs/` | Recovery workflow and deferred porting notes. |
@@ -177,14 +177,14 @@ has not reached a fixed point. Each loop continues from the current
 proposal/apply state only while an enabled row both reports a mutation and
 changes the Ghidra Program; review, conflict, error, preserved, and unchanged
 rows are terminal for that automatic pass. The 24-pass structural and 12-pass
-deep bounds are emergency cycle guards. `automation_state.tsv` and
-`automation_evidence.jsonl` bind an export to a deterministic semantic Program
-fingerprint, monotonic enum-domain state, and proposal/apply hashes. Ghidra's
+deep bounds are emergency cycle guards. `automation_state.tsv` binds an export
+to a deterministic semantic Program fingerprint, monotonic enum-domain state,
+and proposal/apply hashes. Ghidra's
 volatile modification number is retained only as a diagnostic. Each run is staged
 in `recovery/ST.exe/runs/.current` and finalized as
 `runs/<overall-sha256>/`; directory names contain no timestamp. Only the three most
 recent hashes are retained. `build_manifest.tsv`, per-script provider load logs,
-per-step stdout/stderr and exceptions, `pipeline.log`, `events.jsonl`, per-pass TSV
+per-step stdout/stderr and exceptions, `pipeline.log`, `events.tsv`, per-pass TSV
 snapshots, and the export receipt make failures inspectable, while
 `pipeline_report.tsv` remains the latest-run compatibility view. Export mode first
 snapshots the prior corpus and then runs a stage-aware regression gate.

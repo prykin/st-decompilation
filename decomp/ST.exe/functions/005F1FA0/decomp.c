@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated return.
    Evidence: 005F1FA0 returns used as parameter 2 of STPlaySystemC::SaveObjData @ 005F1236
@@ -13,7 +15,6 @@ byte * __thiscall STManBasisC::sub_005F1FA0(STManBasisC *this,int *param_1)
   int iVar1;
   undefined4 uVar2;
   byte *pbVar3;
-  int iVar4;
   uint uVar5;
   uint *puVar6;
   ushort **ppuVar7;
@@ -50,11 +51,7 @@ byte * __thiscall STManBasisC::sub_005F1FA0(STManBasisC *this,int *param_1)
   this->field_0034 = uVar2;
   ppuVar7 = &this->field_0020;
   pbVar8 = pbVar3;
-  for (iVar4 = 10; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *(ushort **)pbVar8 = *ppuVar7;
-    ppuVar7 = ppuVar7 + 1;
-    pbVar8 = pbVar8 + 4;
-  }
+  memmove(pbVar8, ppuVar7, 0x28); /* compiler REP MOVS byte copy */
   puVar6 = (uint *)(pbVar3 + 0x28);
   if (local_8 != 0) {
     *puVar6 = local_8;

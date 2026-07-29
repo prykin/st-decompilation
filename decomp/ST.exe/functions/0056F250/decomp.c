@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __thiscall FUN_0056f250(void *this,char param_1,byte param_2,char *param_3)
 
@@ -275,16 +277,7 @@ LAB_0056f325:
     } while (bVar1 != 0);
     pbVar9 = (byte *)(pcVar11 + -uVar5);
     pbVar12 = pbVar12 + -1;
-    for (uVar6 = uVar5 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-      *(undefined4 *)pbVar12 = *(undefined4 *)pbVar9;
-      pbVar9 = pbVar9 + 4;
-      pbVar12 = pbVar12 + 4;
-    }
-    for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-      *pbVar12 = *pbVar9;
-      pbVar9 = pbVar9 + 1;
-      pbVar12 = pbVar12 + 1;
-    }
+    memmove(pbVar12, pbVar9, uVar5); /* compiler REP MOVS byte copy */
     DeleteFileA((LPCSTR)pbVar7);
     if (g_optPanel_008016DC != (OptPanelTy *)0x0) {
       OptPanelTy::Notification(g_optPanel_008016DC,'\f',0);

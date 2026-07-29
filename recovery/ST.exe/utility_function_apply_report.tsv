@@ -6,7 +6,7 @@ function_address	semantic_id	status	detail
 006B0140	load_resource_string	unchanged	desired name and prototype already present
 006ACC70	darray_get_element	unchanged	desired name and prototype already present
 004406C0	player_race_id	unchanged	desired name and prototype already present
-006B0C70	darray_remove_at	applied	DArrayRemoveAt __stdcall
-006B1190	darray_get_next	applied	DArrayGetNext __fastcall
-006CEA60	copy_rows	applied	CopyRows __stdcall
+006B0C70	darray_remove_at	unchanged	desired name and prototype already present
+006B1190	darray_get_next	unchanged	desired name and prototype already present
+006CEA60	copy_rows	unchanged	desired name and prototype already present
 006F2D90	mfaobj_load_payload	preserved	stale baseline or manual function identity

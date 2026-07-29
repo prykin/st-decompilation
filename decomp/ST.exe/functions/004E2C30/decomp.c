@@ -19,7 +19,7 @@ undefined4 __thiscall TLOBaseTy::FUN_004e2c30(TLOBaseTy *this,uint param_1)
   int local_EAX_816;
   int local_EAX_884;
   TLOBaseTyVTable *pTVar7;
-  undefined4 *puVar8;
+  byte *puVar8;
   undefined4 *puVar9;
   byte *pbVar10;
   int *piVar11;
@@ -48,20 +48,16 @@ undefined4 __thiscall TLOBaseTy::FUN_004e2c30(TLOBaseTy *this,uint param_1)
   }
   local_10 = thunk_FUN_004e60d0((int)this->field_0024,param_1);
   pbVar1 = this->field_0024;
-  puVar8 = &g_playerRuntime[(int)pbVar1].field480_0x2eb;
+  puVar8 = (byte *)(&g_playerRuntime[(int)pbVar1].field480_0x2eb);
   puVar9 = local_2c;
   for (iVar3 = 5; iVar3 != 0; iVar3 = iVar3 + -1) {
     *puVar9 = *puVar8;
-    puVar8 = puVar8 + 1;
+    puVar8 = (byte *)(puVar8 + 1);
     puVar9 = puVar9 + 1;
   }
-  puVar8 = &g_playerRuntime[(int)pbVar1].field494_0x2ff;
+  puVar8 = (byte *)(&g_playerRuntime[(int)pbVar1].field494_0x2ff);
   pbVar10 = local_40;
-  for (iVar3 = 5; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *(undefined4 *)pbVar10 = *puVar8;
-    puVar8 = puVar8 + 1;
-    pbVar10 = pbVar10 + 4;
-  }
+  memmove(pbVar10, puVar8, 0x14); /* compiler REP MOVS byte copy */
   thunk_FUN_004e6310(pbVar1,param_1,local_10 + 1);
   thunk_FUN_004e5f20(this->field_0024,param_1);
   if (DAT_008117bc != (undefined4 *)0x0) {

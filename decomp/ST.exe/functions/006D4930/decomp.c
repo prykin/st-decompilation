@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeRepairApplier] Propagated parameter 1.
    Evidence: 006D4930 -> EXTERNAL:0000004F @ 006D496E
@@ -11,27 +13,17 @@ DWORD FUN_006d4930(AnonShape_006D4930_676532DD *param_1,LPDWORD lpNumberOfBytesR
 {
   DWORD DVar1;
   BOOL BVar2;
-  uint uVar3;
-  undefined4 *puVar4;
+  byte *puVar4;
 
-  puVar4 = param_3;
+  puVar4 = (byte *)(param_3);
   if ((param_1->field_0008 & 0x100000) == 0) {
     if (param_1->field_0034 == 0) {
       return 0xffffffaf;
     }
     if ((int)lpNumberOfBytesRead + nNumberOfBytesToRead <= param_1->field_0038) {
       if (param_3 != (undefined4 *)0x0) {
-        puVar4 = (undefined4 *)(param_1->field_0034 + (int)lpNumberOfBytesRead);
-        for (uVar3 = nNumberOfBytesToRead >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {
-          *param_3 = *puVar4;
-          puVar4 = puVar4 + 1;
-          param_3 = param_3 + 1;
-        }
-        for (uVar3 = nNumberOfBytesToRead & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
-          *(undefined1 *)param_3 = *(undefined1 *)puVar4;
-          puVar4 = (undefined4 *)((int)puVar4 + 1);
-          param_3 = (undefined4 *)((int)param_3 + 1);
-        }
+        puVar4 = (byte *)(param_1->field_0034 + (int)lpNumberOfBytesRead);
+        memmove(param_3, puVar4, nNumberOfBytesToRead); /* compiler REP MOVS byte copy */
       }
       return 0;
     }

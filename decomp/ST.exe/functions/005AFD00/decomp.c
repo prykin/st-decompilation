@@ -610,16 +610,7 @@ LAB_005b01f3:
           } while (cVar1 != '\0');
           pbVar20 = pbVar24 + -uVar19;
           pbVar24 = (byte *)(pcVar12 + -1);
-          for (uVar15 = uVar19 >> 2; uVar15 != 0; uVar15 = uVar15 - 1) {
-            *(undefined4 *)pbVar24 = *(undefined4 *)pbVar20;
-            pbVar20 = pbVar20 + 4;
-            pbVar24 = pbVar24 + 4;
-          }
-          for (uVar19 = uVar19 & 3; uVar19 != 0; uVar19 = uVar19 - 1) {
-            *pbVar24 = *pbVar20;
-            pbVar20 = pbVar20 + 1;
-            pbVar24 = pbVar24 + 1;
-          }
+          memmove(pbVar24, pbVar20, uVar19); /* compiler REP MOVS byte copy */
           pcVar8 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0
                                       (0x345,&local_28->field_1FAF,0,0,0);
           bVar25 = false;

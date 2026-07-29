@@ -13,7 +13,6 @@ void __thiscall STManRuinC::sub_00631220(STManRuinC *this,int *param_1)
   undefined4 *puVar2;
   int iVar3;
   uint uVar4;
-  uint uVar5;
   byte *puVar6;
   byte *pbVar7;
   byte *puVar8;
@@ -76,16 +75,7 @@ void __thiscall STManRuinC::sub_00631220(STManRuinC *this,int *param_1)
     }
     uVar4 = this->field_0030;
     pbVar7 = this->field_0034;
-    for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
-      *(undefined4 *)local_c = *(undefined4 *)pbVar7;
-      pbVar7 = pbVar7 + 4;
-      local_c = local_c + 4;
-    }
-    for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
-      *local_c = *pbVar7;
-      pbVar7 = pbVar7 + 1;
-      local_c = local_c + 1;
-    }
+    memmove(local_c, pbVar7, uVar4); /* compiler REP MOVS byte copy */
   }
   *param_1 = local_10;
   return;

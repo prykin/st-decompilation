@@ -215,16 +215,7 @@ void __thiscall HelpPanelTy::SpecProc(HelpPanelTy *this,int param_1,int param_2,
       uVar15 = ~uVar15;
       pcVar8 = pcVar11 + -uVar15;
       pcVar11 = (char *)&DAT_0080f33a;
-      for (uVar10 = uVar15 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
-        *(undefined4 *)pcVar11 = *(undefined4 *)pcVar8;
-        pcVar8 = pcVar8 + 4;
-        pcVar11 = pcVar11 + 4;
-      }
-      for (uVar15 = uVar15 & 3; uVar15 != 0; uVar15 = uVar15 - 1) {
-        *pcVar11 = *pcVar8;
-        pcVar8 = pcVar8 + 1;
-        pcVar11 = pcVar11 + 1;
-      }
+      memmove(pcVar11, pcVar8, uVar15); /* compiler REP MOVS byte copy */
       for (puVar7 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar7 != (uint *)0x0;
           puVar7 = Library::MSVCRT::FUN_0072e560(puVar7,'\n')) {
         *(undefined1 *)puVar7 = 0x20;

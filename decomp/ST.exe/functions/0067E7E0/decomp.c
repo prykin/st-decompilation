@@ -230,16 +230,7 @@ uint * __cdecl CreateArbList(cMf32 *param_1,int param_2)
         } while (bVar2 != 0);
         pbVar12 = (byte *)(pcVar15 + -uVar9);
         pbVar16 = pbVar16 + -1;
-        for (uVar10 = uVar9 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
-          *(undefined4 *)pbVar16 = *(undefined4 *)pbVar12;
-          pbVar12 = pbVar12 + 4;
-          pbVar16 = pbVar16 + 4;
-        }
-        for (uVar9 = uVar9 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {
-          *pbVar16 = *pbVar12;
-          pbVar12 = pbVar12 + 1;
-          pbVar16 = pbVar16 + 1;
-        }
+        memmove(pbVar16, pbVar12, uVar9); /* compiler REP MOVS byte copy */
         wsprintfA(local_c8,(char *)local_5c,iVar8);
       }
       uVar9 = 0;

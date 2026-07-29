@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeRepairApplier] Propagated parameter 0.
    Evidence: 004AF080 -> 006B1190 @ 004AF371 | 004AF080 -> 006B1190 @ 004AF3C6 | 004AFFA0 ->
@@ -20,23 +22,13 @@ int __fastcall DArrayGetNext(DArrayTy *array,byte *outElement)
 
 {
   dword dVar1;
-  uint uVar2;
   uint uVar3;
   byte *pbVar4;
 
   if (array->iteratorIndex < array->count) {
     uVar3 = array->elementSize;
     pbVar4 = (byte *)(uVar3 * array->iteratorIndex + (int)array->data);
-    for (uVar2 = uVar3 >> 2; uVar2 != 0; uVar2 = uVar2 - 1) {
-      *(undefined4 *)outElement = *(undefined4 *)pbVar4;
-      pbVar4 = pbVar4 + 4;
-      outElement = outElement + 4;
-    }
-    for (uVar3 = uVar3 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
-      *outElement = *pbVar4;
-      pbVar4 = pbVar4 + 1;
-      outElement = outElement + 1;
-    }
+    memmove(outElement, pbVar4, uVar3); /* compiler REP MOVS byte copy */
     dVar1 = array->iteratorIndex;
     array->iteratorIndex = dVar1 + 1;
     return dVar1;

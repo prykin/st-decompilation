@@ -90,7 +90,8 @@ public class STExportRegressionGate extends GhidraScript {
         boolean hasBaseline = baseline != null &&
             Files.isRegularFile(baseline.resolve("manifest.json")) &&
             Files.isRegularFile(baseline.resolve("functions.json")) &&
-            Files.isRegularFile(baseline.resolve("types.jsonl"));
+            Files.isRegularFile(regressionArtifact(baseline, "types.jsonl",
+                "types.snapshot"));
         CorpusMetrics before = hasBaseline ? metrics(baseline) : null;
 
         internalChecks(now);
@@ -264,7 +265,7 @@ public class STExportRegressionGate extends GhidraScript {
                 "function_covered_executable_byte_count", "unclaimed_meaningful_byte_count"))
             result.numbers.put(key, jsonLong(manifest, key));
         readFunctions(root.resolve("functions.json"), result);
-        readVtables(root.resolve("types.jsonl"), result);
+        readVtables(regressionArtifact(root, "types.jsonl", "types.snapshot"), result);
         Path quality = root.resolve("decomp_quality_summary.json");
         if (Files.isRegularFile(quality)) {
             String text = Files.readString(quality, StandardCharsets.UTF_8);
@@ -272,9 +273,15 @@ public class STExportRegressionGate extends GhidraScript {
             while (matcher.find())
                 result.quality.put(matcher.group(1), Long.parseLong(matcher.group(2)));
         }
-        Path idioms = root.resolve("pseudocode_idioms.jsonl");
+        Path idioms = regressionArtifact(root, "pseudocode_idioms.jsonl",
+            "pseudocode_idioms.snapshot");
         if (Files.isRegularFile(idioms)) readQualityByFunction(idioms, result);
         return result;
+    }
+
+    private Path regressionArtifact(Path root, String primary, String snapshot) {
+        Path direct = root.resolve(primary);
+        return Files.isRegularFile(direct) ? direct : root.resolve(snapshot);
     }
 
     private void readQualityByFunction(Path path, CorpusMetrics result) throws Exception {

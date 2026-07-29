@@ -136,16 +136,7 @@ uint __thiscall CPanelTy::PaintSMap(CPanelTy *this)
         uVar4 = ~uVar4;
         pcVar11 = pcVar10 + -uVar4;
         pcVar10 = &pCVar3->field_01E1;
-        for (uVar7 = uVar4 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-          *(undefined4 *)pcVar10 = *(undefined4 *)pcVar11;
-          pcVar11 = pcVar11 + 4;
-          pcVar10 = pcVar10 + 4;
-        }
-        for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
-          *pcVar10 = *pcVar11;
-          pcVar11 = pcVar11 + 1;
-          pcVar10 = pcVar10 + 1;
-        }
+        memmove(pcVar10, pcVar11, uVar4); /* compiler REP MOVS byte copy */
       }
       puVar5 = (ushort *)
                ccFntTy::WrTxt(pCVar3->field_01BC,(uint *)&pCVar3->field_01E1,0,0,

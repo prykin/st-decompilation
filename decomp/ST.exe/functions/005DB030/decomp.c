@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __cdecl FUN_005db030(byte *param_1,undefined4 param_2,char param_3)
 
@@ -8,7 +10,6 @@ undefined4 __cdecl FUN_005db030(byte *param_1,undefined4 param_2,char param_3)
   cMf32 *this;
   ushort *puVar4;
   uint uVar5;
-  uint uVar6;
   byte *pbVar7;
   byte *pbVar8;
   int local_1e18;
@@ -90,16 +91,7 @@ joined_r0x005db18e:
     uVar5 = ~uVar5;
     pbVar7 = pbVar8 + -uVar5;
     pbVar8 = &DAT_0080ed16;
-    for (uVar6 = uVar5 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-      *(undefined4 *)pbVar8 = *(undefined4 *)pbVar7;
-      pbVar7 = pbVar7 + 4;
-      pbVar8 = pbVar8 + 4;
-    }
-    for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-      *pbVar8 = *pbVar7;
-      pbVar7 = pbVar7 + 1;
-      pbVar8 = pbVar8 + 1;
-    }
+    memmove(pbVar8, pbVar7, uVar5); /* compiler REP MOVS byte copy */
   }
 cf_common_exit_005DB1E1:
   cMf32::delete(this);

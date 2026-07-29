@@ -18,7 +18,7 @@ void __thiscall STPlaySystemC::AddToRep(STPlaySystemC *this,undefined4 *param_1,
   undefined4 *puVar4;
   int iVar5;
   uint uVar6;
-  undefined4 *puVar7;
+  byte *puVar7;
   InternalExceptionFrame local_50;
   STPlaySystemC *local_c;
   int *local_8;
@@ -32,18 +32,9 @@ void __thiscall STPlaySystemC::AddToRep(STPlaySystemC *this,undefined4 *param_1,
       puVar4 = Library::DKW::LIB::FUN_006aac10(param_2 + 8);
       pSVar2 = local_c;
       puVar4[1] = param_2;
-      puVar7 = puVar4 + 2;
-      for (uVar6 = param_2 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-        *puVar7 = *param_1;
-        param_1 = param_1 + 1;
-        puVar7 = puVar7 + 1;
-      }
-      for (uVar6 = param_2 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
-        *(undefined1 *)puVar7 = *(undefined1 *)param_1;
-        param_1 = (undefined4 *)((int)param_1 + 1);
-        puVar7 = (undefined4 *)((int)puVar7 + 1);
-      }
-      puVar7 = &local_c->field_0065;
+      puVar7 = (byte *)(puVar4 + 2);
+      memmove(puVar7, param_1, param_2); /* compiler REP MOVS byte copy */
+      puVar7 = (byte *)(&local_c->field_0065);
       FUN_006b9910(puVar7,(int)puVar4);
       uVar6 = pSVar2->field_0069 + 1;
       pSVar2->field_0069 = uVar6;

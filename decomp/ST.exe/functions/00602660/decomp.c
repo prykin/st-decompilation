@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STMethodOwnerApplier] Structural method owner recovered as STDestC.
    Evidence: this_call_owners=[STDestC]; agreed_this_calls=1; incoming_this_accesses=14;
@@ -7,16 +9,10 @@
 undefined4 __thiscall STDestC::sub_00602660(STDestC *this,undefined4 *param_1)
 
 {
-  int iVar1;
-  undefined4 *puVar2;
+  byte *puVar2;
 
-  puVar2 = (undefined4 *)&this->field_0x231;
-  for (iVar1 = 0x5f; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar2 = *param_1;
-    param_1 = param_1 + 1;
-    puVar2 = puVar2 + 1;
-  }
-  *(undefined2 *)puVar2 = *(undefined2 *)param_1;
+  puVar2 = (byte *)&this->field_0x231;
+  memmove(puVar2, param_1, 0x17e); /* compiler REP MOVS byte copy */
   this->field_039B = -1;
   if (this->field_0241 == 1) {
     this->field_0047 = this->field_0255;

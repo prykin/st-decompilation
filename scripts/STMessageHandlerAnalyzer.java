@@ -98,7 +98,6 @@ public class STMessageHandlerAnalyzer extends GhidraScript {
             selected.resolve(programDirectory);
         Files.createDirectories(dir);
         writeTsv(dir.resolve("message_handler_proposals.tsv"), proposals);
-        writeJsonl(dir.resolve("message_handler_proposals.jsonl"), proposals);
         long automatic = proposals.stream().filter(p -> p.apply).count();
         long alreadyTyped = proposals.stream().filter(p -> "already_typed".equals(p.reason)).count();
         long tagRepairs = proposals.stream()

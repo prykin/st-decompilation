@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
@@ -13,7 +15,6 @@ int FUN_00673d20(void)
   bool bVar7;
   int iVar8;
   byte bVar9;
-  uint uVar10;
   uint uVar11;
   uint uVar12;
   ushort *puVar13;
@@ -227,16 +228,7 @@ LAB_00674068:
               uVar12 = ~uVar12;
               pbVar15 = pbVar16 + -uVar12;
               pbVar16 = DAT_00857528;
-              for (uVar10 = uVar12 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
-                *(undefined4 *)pbVar16 = *(undefined4 *)pbVar15;
-                pbVar15 = pbVar15 + 4;
-                pbVar16 = pbVar16 + 4;
-              }
-              for (uVar12 = uVar12 & 3; uVar12 != 0; uVar12 = uVar12 - 1) {
-                *pbVar16 = *pbVar15;
-                pbVar15 = pbVar15 + 1;
-                pbVar16 = pbVar16 + 1;
-              }
+              memmove(pbVar16, pbVar15, uVar12); /* compiler REP MOVS byte copy */
             }
           }
         }
@@ -384,16 +376,7 @@ code_r0x006744e7:
   uVar11 = ~uVar11;
   pbVar15 = (byte *)(pcVar18 + -uVar11);
   pbVar16 = DAT_00857528;
-  for (uVar12 = uVar11 >> 2; uVar12 != 0; uVar12 = uVar12 - 1) {
-    *(undefined4 *)pbVar16 = *(undefined4 *)pbVar15;
-    pbVar15 = pbVar15 + 4;
-    pbVar16 = pbVar16 + 4;
-  }
-  for (uVar11 = uVar11 & 3; uVar11 != 0; uVar11 = uVar11 - 1) {
-    *pbVar16 = *pbVar15;
-    pbVar15 = pbVar15 + 1;
-    pbVar16 = pbVar16 + 1;
-  }
+  memmove(pbVar16, pbVar15, uVar11); /* compiler REP MOVS byte copy */
 cf_common_exit_00674521:
   DAT_00857528[DAT_00811914 - DAT_0081190c] = 0;
   *(undefined1 *)(DAT_0085755c + DAT_00811914) = uVar5;

@@ -25,7 +25,7 @@ void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
   int iVar11;
   uint uVar12;
   char cVar13;
-  undefined4 *puVar14;
+  byte *puVar14;
   byte *pbVar15;
   byte *pbVar16;
   char *pcVar17;
@@ -69,14 +69,9 @@ void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  puVar14 = (undefined4 *)&local_4c->field_0B63;
+  puVar14 = (byte *)&local_4c->field_0B63;
   pcVar8 = &local_48;
-  for (iVar6 = 0xd; iVar6 != 0; iVar6 = iVar6 + -1) {
-    *(undefined4 *)pcVar8 = *puVar14;
-    puVar14 = puVar14 + 1;
-    pcVar8 = pcVar8 + 4;
-  }
-  *(undefined2 *)pcVar8 = *(undefined2 *)puVar14;
+  memmove(pcVar8, puVar14, 0x36); /* compiler REP MOVS byte copy */
   memset(&local_4c->field_0B63, 0, 0x32); /* compiler bulk-zero initialization */
   local_16 = local_4c->field_0B4B;
   Library::DKW::TBL::FUN_006afe40((int *)&local_16,&local_4c->field_0B95->flags);

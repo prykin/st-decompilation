@@ -1248,16 +1248,7 @@ LAB_005458df:
           uVar21 = ~uVar21;
           pcVar12 = pcVar13 + -uVar21;
           pcVar13 = (char *)&DAT_0080f33a;
-          for (uVar22 = uVar21 >> 2; uVar22 != 0; uVar22 = uVar22 - 1) {
-            *(undefined4 *)pcVar13 = *(undefined4 *)pcVar12;
-            pcVar12 = pcVar12 + 4;
-            pcVar13 = pcVar13 + 4;
-          }
-          for (uVar21 = uVar21 & 3; uVar21 != 0; uVar21 = uVar21 - 1) {
-            *pcVar13 = *pcVar12;
-            pcVar12 = pcVar12 + 1;
-            pcVar13 = pcVar13 + 1;
-          }
+          memmove(pcVar13, pcVar12, uVar21); /* compiler REP MOVS byte copy */
           for (puVar14 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar14 != (uint *)0x0;
               puVar14 = Library::MSVCRT::FUN_0072e560(puVar14,'\n')) {
             *(undefined1 *)puVar14 = 0x20;

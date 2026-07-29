@@ -127,12 +127,7 @@ int __thiscall STGameObjC::GetMessage(STGameObjC *this,STMessage *message)
         if (!bVar35) {
           pbVar21 = this_00->field_0121;
           pbVar16 = this_00->field_011D;
-          for (iVar13 = 0xd; iVar13 != 0; iVar13 = iVar13 + -1) {
-            *(undefined4 *)pbVar16 = *(undefined4 *)pbVar21;
-            pbVar21 = pbVar21 + 4;
-            pbVar16 = pbVar16 + 4;
-          }
-          *(short *)pbVar16 = *(short *)pbVar21;
+          memmove(pbVar16, pbVar21, 0x36); /* compiler REP MOVS byte copy */
           thunk_FUN_0043fc50(CASE_1,0);
         }
       }
@@ -573,12 +568,7 @@ LAB_0041bdb3:
       if (!bVar35) {
         pbVar21 = this_00->field_0121;
         pbVar16 = this_00->field_011D;
-        for (iVar13 = 0xd; iVar13 != 0; iVar13 = iVar13 + -1) {
-          *(undefined4 *)pbVar16 = *(undefined4 *)pbVar21;
-          pbVar21 = pbVar21 + 4;
-          pbVar16 = pbVar16 + 4;
-        }
-        *(short *)pbVar16 = *(short *)pbVar21;
+        memmove(pbVar16, pbVar21, 0x36); /* compiler REP MOVS byte copy */
         thunk_FUN_0043fc50(CASE_5,0);
       }
     }
@@ -668,12 +658,7 @@ LAB_0041bdb3:
     }
     pbVar21 = this_00->field_0121;
     pbVar16 = this_00->field_011D;
-    for (iVar13 = 0xd; iVar13 != 0; iVar13 = iVar13 + -1) {
-      *(undefined4 *)pbVar16 = *(undefined4 *)pbVar21;
-      pbVar21 = pbVar21 + 4;
-      pbVar16 = pbVar16 + 4;
-    }
-    *(short *)pbVar16 = *(short *)pbVar21;
+    memmove(pbVar16, pbVar21, 0x36); /* compiler REP MOVS byte copy */
     GVar36 = CASE_5;
     goto cf_common_exit_0041BE5F;
   }
@@ -723,12 +708,7 @@ LAB_0041bdb3:
     if (!bVar35) {
       pbVar21 = this_00->field_0121;
       pbVar16 = this_00->field_011D;
-      for (iVar13 = 0xd; iVar13 != 0; iVar13 = iVar13 + -1) {
-        *(undefined4 *)pbVar16 = *(undefined4 *)pbVar21;
-        pbVar21 = pbVar21 + 4;
-        pbVar16 = pbVar16 + 4;
-      }
-      *(short *)pbVar16 = *(short *)pbVar21;
+      memmove(pbVar16, pbVar21, 0x36); /* compiler REP MOVS byte copy */
       thunk_FUN_0043fc50(CASE_5,0);
     }
   }
@@ -972,12 +952,7 @@ LAB_0041bac6:
     if (!bVar35) {
       pcVar17 = (char *)this_00->field_0189;
       pcVar26 = (char *)this_00->field_0185;
-      for (iVar13 = 0x4a; iVar13 != 0; iVar13 = iVar13 + -1) {
-        *(undefined4 *)pcVar26 = *(undefined4 *)pcVar17;
-        pcVar17 = pcVar17 + 4;
-        pcVar26 = pcVar26 + 4;
-      }
-      *pcVar26 = *pcVar17;
+      memmove(pcVar26, pcVar17, 0x129); /* compiler REP MOVS byte copy */
       thunk_FUN_0043fc50(CASE_9,0);
     }
   }

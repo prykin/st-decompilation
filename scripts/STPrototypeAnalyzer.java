@@ -86,7 +86,6 @@ public class STPrototypeAnalyzer extends GhidraScript {
         seedPreviouslyAppliedTargets();
         List<Proposal> proposals = makeProposals();
         writeTsv(directory.resolve("prototype_proposals.tsv"), proposals);
-        writeJson(directory.resolve("prototype_proposals.jsonl"), proposals);
         writeCallSiteAudit(directory.resolve("prototype_callsite_audit.tsv"));
         writeUndefinedBoundaryAudit(
             directory.resolve("prototype_undefined_boundary_audit.tsv"));

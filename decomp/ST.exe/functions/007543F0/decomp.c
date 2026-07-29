@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4
 FUN_007543f0(AnonShape_007543F0_E9DD5DAA *param_1,undefined4 *param_2,undefined4 *param_3)
@@ -8,8 +10,7 @@ FUN_007543f0(AnonShape_007543F0_E9DD5DAA *param_1,undefined4 *param_2,undefined4
   int iVar3;
   int iVar4;
   uint uVar5;
-  uint uVar6;
-  undefined4 *puVar7;
+  byte *puVar7;
 
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   param_1->field_000C = *(undefined4 *)(param_1->field_0008 + 0x50);
@@ -69,17 +70,8 @@ FUN_007543f0(AnonShape_007543F0_E9DD5DAA *param_1,undefined4 *param_2,undefined4
     else {
       uVar5 = (uint)sVar1;
     }
-    puVar7 = (undefined4 *)(iVar3 + 8);
-    for (uVar6 = uVar5 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-      *param_2 = *puVar7;
-      puVar7 = puVar7 + 1;
-      param_2 = param_2 + 1;
-    }
-    for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-      *(undefined1 *)param_2 = *(undefined1 *)puVar7;
-      puVar7 = (undefined4 *)((int)puVar7 + 1);
-      param_2 = (undefined4 *)((int)param_2 + 1);
-    }
+    puVar7 = (byte *)(iVar3 + 8);
+    memmove(param_2, puVar7, uVar5); /* compiler REP MOVS byte copy */
   }
   return 0;
 }

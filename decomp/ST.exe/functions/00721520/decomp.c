@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __thiscall FUN_00721520(void *this,int param_1,uint param_2)
 
@@ -6,7 +8,6 @@ void __thiscall FUN_00721520(void *this,int param_1,uint param_2)
   int iVar2;
   uint uVar3;
   uint uVar4;
-  uint uVar5;
   uint uVar6;
   char *pcVar7;
   char *pcVar8;
@@ -72,16 +73,7 @@ void __thiscall FUN_00721520(void *this,int param_1,uint param_2)
           uVar3 = ~uVar3;
           pcVar7 = pcVar8 + -uVar3;
           pcVar8 = local_c;
-          for (uVar4 = uVar3 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
-            *(undefined4 *)pcVar8 = *(undefined4 *)pcVar7;
-            pcVar7 = pcVar7 + 4;
-            pcVar8 = pcVar8 + 4;
-          }
-          for (uVar3 = uVar3 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
-            *pcVar8 = *pcVar7;
-            pcVar7 = pcVar7 + 1;
-            pcVar8 = pcVar8 + 1;
-          }
+          memmove(pcVar8, pcVar7, uVar3); /* compiler REP MOVS byte copy */
           uVar3 = 0xffffffff;
           pcVar7 = local_8;
           do {
@@ -102,16 +94,7 @@ void __thiscall FUN_00721520(void *this,int param_1,uint param_2)
           uVar4 = ~uVar4;
           pcVar7 = pcVar7 + -uVar4;
           pcVar8 = local_c + (~uVar3 - 1);
-          for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
-            *(undefined4 *)pcVar8 = *(undefined4 *)pcVar7;
-            pcVar7 = pcVar7 + 4;
-            pcVar8 = pcVar8 + 4;
-          }
-          for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
-            *pcVar8 = *pcVar7;
-            pcVar7 = pcVar7 + 1;
-            pcVar8 = pcVar8 + 1;
-          }
+          memmove(pcVar8, pcVar7, uVar4); /* compiler REP MOVS byte copy */
           FUN_006b7830(*(AnonShape_006B7830_769CA2DF **)((int)this + 0x138),uVar6);
           Library::DKW::TBL::FUN_006b6020(*(uint **)((int)this + 0x138),uVar6 - 1,local_c);
           FreeAndNull(&local_c);
@@ -157,16 +140,7 @@ void __thiscall FUN_00721520(void *this,int param_1,uint param_2)
           uVar3 = ~uVar3;
           pcVar7 = pcVar8 + -uVar3;
           pcVar8 = local_c;
-          for (uVar4 = uVar3 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
-            *(undefined4 *)pcVar8 = *(undefined4 *)pcVar7;
-            pcVar7 = pcVar7 + 4;
-            pcVar8 = pcVar8 + 4;
-          }
-          for (uVar3 = uVar3 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
-            *pcVar8 = *pcVar7;
-            pcVar7 = pcVar7 + 1;
-            pcVar8 = pcVar8 + 1;
-          }
+          memmove(pcVar8, pcVar7, uVar3); /* compiler REP MOVS byte copy */
           uVar3 = 0xffffffff;
           do {
             if (uVar3 == 0) break;
@@ -187,16 +161,7 @@ void __thiscall FUN_00721520(void *this,int param_1,uint param_2)
           uVar4 = ~uVar4;
           pcVar7 = pcVar8 + -uVar4;
           pcVar8 = local_c + (~uVar3 - 1);
-          for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
-            *(undefined4 *)pcVar8 = *(undefined4 *)pcVar7;
-            pcVar7 = pcVar7 + 4;
-            pcVar8 = pcVar8 + 4;
-          }
-          for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
-            *pcVar8 = *pcVar7;
-            pcVar7 = pcVar7 + 1;
-            pcVar8 = pcVar8 + 1;
-          }
+          memmove(pcVar8, pcVar7, uVar4); /* compiler REP MOVS byte copy */
           FUN_006b7830(*(AnonShape_006B7830_769CA2DF **)((int)this + 0x138),uVar6 + 1);
           Library::DKW::TBL::FUN_006b6020(*(uint **)((int)this + 0x138),uVar6,local_c);
           FreeAndNull(&local_c);

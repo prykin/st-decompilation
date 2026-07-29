@@ -243,11 +243,7 @@ LAB_005d045a:
                   DArrayDestroy(*(DArrayTy **)(pcVar8 + 0x50));
                 }
                 pcVar14 = pcVar8;
-                for (iVar6 = 0x18; iVar6 != 0; iVar6 = iVar6 + -1) {
-                  *(undefined4 *)pcVar14 = *(undefined4 *)pcVar13;
-                  pcVar13 = pcVar13 + 4;
-                  pcVar14 = pcVar14 + 4;
-                }
+                memmove(pcVar14, pcVar13, 0x60); /* compiler REP MOVS byte copy */
                 pcVar8[1] = '\0';
                 *pcVar8 = '\x01';
                 DArrayRemoveAt((DArrayTy *)local_c->field_1F84,local_14);

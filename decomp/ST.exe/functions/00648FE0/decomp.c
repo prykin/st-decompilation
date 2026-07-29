@@ -187,16 +187,7 @@ LAB_00649255:
                 uVar5 = ~uVar5;
                 pcVar10 = pcVar12 + -uVar5;
                 pcVar12 = local_20;
-                for (uVar6 = uVar5 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-                  *(undefined4 *)pcVar12 = *(undefined4 *)pcVar10;
-                  pcVar10 = pcVar10 + 4;
-                  pcVar12 = pcVar12 + 4;
-                }
-                for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-                  *pcVar12 = *pcVar10;
-                  pcVar10 = pcVar10 + 1;
-                  pcVar12 = pcVar12 + 1;
-                }
+                memmove(pcVar12, pcVar10, uVar5); /* compiler REP MOVS byte copy */
               }
               local_14 = local_14 + 1;
               pcVar7 = pcVar7 + 0x9c;

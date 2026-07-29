@@ -166,6 +166,10 @@ public class STDecompExport extends GhidraScript {
     private static final Pattern SIMPLE_POINTER_DECLARATION = Pattern.compile(
         "(?m)^(?<indent>[ \\t]*)(?<type>[A-Za-z_$][A-Za-z0-9_$: ]*)" +
         "\\s*(?<stars>\\*+)\\s*(?<name>[A-Za-z_$][A-Za-z0-9_$]*)\\s*;$");
+    private static final Pattern SIMPLE_POINTER_PARAMETER = Pattern.compile(
+        "(?:\\(|,)\\s*(?<type>[A-Za-z_$][A-Za-z0-9_$: ]*)" +
+        "\\s*(?<stars>\\*+)\\s*(?<name>[A-Za-z_$][A-Za-z0-9_$]*)" +
+        "(?=\\s*[,\\)])");
     private static final Pattern DARRAY_DESCRIPTOR_DECLARATION = Pattern.compile(
         "(?m)^\\s*(?<type>[A-Za-z_$][A-Za-z0-9_$:]*DArray)\\s*\\*+\\s*" +
         "(?<name>[A-Za-z_$][A-Za-z0-9_$]*)\\s*;$");
@@ -802,6 +806,17 @@ public class STDecompExport extends GhidraScript {
             int width = pointerArithmeticWidth(type, matcher.group("stars").length());
             if (width > 0 && !result.containsKey(name))
                 result.put(name, new PointerDeclaration(type, matcher.group("indent"), width));
+        }
+        int body = code.indexOf('{');
+        String signature = body < 0 ? code : code.substring(0, body);
+        matcher = SIMPLE_POINTER_PARAMETER.matcher(signature);
+        while (matcher.find()) {
+            String name = matcher.group("name");
+            String type = matcher.group("type").trim();
+            int width = pointerArithmeticWidth(type,
+                matcher.group("stars").length());
+            if (width > 0 && !result.containsKey(name))
+                result.put(name, new PointerDeclaration(type, "", width));
         }
         return result;
     }
@@ -1756,7 +1771,8 @@ public class STDecompExport extends GhidraScript {
         Set<String> increments = new LinkedHashSet<>();
         for (int index = start; index < start + 3; index++) {
             String statement = lines[index].trim();
-            String increment = incrementedPointer(statement, byteIncrements);
+            String increment = incrementedPointer(statement, width,
+                declarations, byteIncrements);
             if (increment != null) {
                 increments.add(increment);
                 continue;
@@ -1770,6 +1786,21 @@ public class STDecompExport extends GhidraScript {
                 !increments.contains(copy.source))
             return null;
         return copy;
+    }
+
+    private String incrementedPointer(String statement, int transferWidth,
+            Map<String, PointerDeclaration> declarations,
+            boolean allowByteCast) {
+        String direct = incrementedPointer(statement, allowByteCast);
+        if (direct != null) return direct;
+        if (transferWidth <= 1) return null;
+        Matcher bytes = Pattern.compile(
+            "^(?<name>[A-Za-z_$][A-Za-z0-9_$]*)[ \\t]*=[ \\t]*\\k<name>" +
+            "[ \\t]*\\+[ \\t]*" + transferWidth + ";$").matcher(statement);
+        if (!bytes.matches()) return null;
+        PointerDeclaration declaration = declarations.get(bytes.group("name"));
+        return declaration != null && declaration.width == 1 ?
+            bytes.group("name") : null;
     }
 
     private String incrementedPointer(String statement,

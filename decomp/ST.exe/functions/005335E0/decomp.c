@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void FUN_005335e0(void)
 
@@ -216,16 +218,7 @@ void FUN_005335e0(void)
     } while (cVar1 != '\0');
     pcVar7 = pcVar9 + -uVar5;
     pcVar9 = pcVar8 + -1;
-    for (uVar6 = uVar5 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-      *(undefined4 *)pcVar9 = *(undefined4 *)pcVar7;
-      pcVar7 = pcVar7 + 4;
-      pcVar9 = pcVar9 + 4;
-    }
-    for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-      *pcVar9 = *pcVar7;
-      pcVar7 = pcVar7 + 1;
-      pcVar9 = pcVar9 + 1;
-    }
+    memmove(pcVar9, pcVar7, uVar5); /* compiler REP MOVS byte copy */
     DAT_00808794 = 1;
   }
   local_8[10] = 0xc001;

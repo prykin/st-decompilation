@@ -1029,9 +1029,12 @@ public class STRecoveryPipeline extends GhidraScript {
         Files.createDirectories(activeRun.resolve("artifacts"));
         Files.createDirectories(activeRun.resolve("build"));
         Files.createDirectories(activeRun.resolve("steps"));
-        eventsPath = activeRun.resolve("events.jsonl");
+        eventsPath = activeRun.resolve("events.tsv");
         logPath = activeRun.resolve("pipeline.log");
-        Files.writeString(eventsPath, "", StandardCharsets.UTF_8,
+        Files.writeString(eventsPath,
+            "elapsed_ms\tkind\tsection\tsequence\tscript\tstatus\tduration_ms\t" +
+                "program_modification_before\tprogram_modification_after\tdetail\n",
+            StandardCharsets.UTF_8,
             StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
         Files.writeString(logPath, "", StandardCharsets.UTF_8,
             StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
@@ -1060,7 +1063,7 @@ public class STRecoveryPipeline extends GhidraScript {
             runModificationBefore, currentProgram.getModificationNumber(),
             failure == null ? "" : message(failure));
         snapshotRunArtifact(reportPath, "pipeline_report.tsv");
-        for (String name : List.of("automation_state.tsv", "automation_evidence.jsonl",
+        for (String name : List.of("automation_state.tsv",
                 "switch_enum_domains.tsv", "export_regression_report.tsv",
                 "export_receipt.json"))
             snapshotRunArtifact(recoveryProgram.resolve(name), name);
@@ -1164,12 +1167,27 @@ public class STRecoveryPipeline extends GhidraScript {
         Files.createDirectories(baseline);
         for (String name : List.of("manifest.json", "functions.json", "types.jsonl",
                 "decomp_quality_summary.json", "pseudocode_idioms.jsonl")) {
-            Path source = sourceDirectory.resolve(name);
+            Path source = regressionArtifact(sourceDirectory, name);
             if (Files.isRegularFile(source))
-                Files.copy(source, baseline.resolve(name), StandardCopyOption.REPLACE_EXISTING);
+                Files.copy(source, baseline.resolve(snapshotName(name)),
+                    StandardCopyOption.REPLACE_EXISTING);
         }
         logLine("export_baseline_snapshot path=" + portableArgument(baseline.toString()));
         return baseline;
+    }
+
+    private Path regressionArtifact(Path directory, String name) {
+        Path direct = directory.resolve(name);
+        if (Files.isRegularFile(direct)) return direct;
+        return directory.resolve(snapshotName(name));
+    }
+
+    private String snapshotName(String name) {
+        return switch (name) {
+            case "types.jsonl" -> "types.snapshot";
+            case "pseudocode_idioms.jsonl" -> "pseudocode_idioms.snapshot";
+            default -> name;
+        };
     }
 
     /**
@@ -1253,18 +1271,10 @@ public class STRecoveryPipeline extends GhidraScript {
             long duration, long modificationBefore, long modificationAfter, String detail)
             throws Exception {
         if (eventsPath == null) return;
-        String row = "{" +
-            "\"elapsed_ms\":" + elapsedMilliseconds() + "," +
-            "\"kind\":" + q(kind) + "," +
-            "\"section\":" + q(currentSection) + "," +
-            "\"sequence\":" + ordinal + "," +
-            "\"script\":" + q(script) + "," +
-            "\"status\":" + q(status) + "," +
-            "\"duration_ms\":" + duration + "," +
-            "\"program_modification_before\":" + modificationBefore + "," +
-            "\"program_modification_after\":" + modificationAfter + "," +
-            "\"detail\":" + q(detail) +
-            "}\n";
+        String row = elapsedMilliseconds() + "\t" + tsv(kind) + "\t" +
+            tsv(currentSection) + "\t" + ordinal + "\t" + tsv(script) + "\t" +
+            tsv(status) + "\t" + duration + "\t" + modificationBefore + "\t" +
+            modificationAfter + "\t" + tsv(detail) + "\n";
         Files.writeString(eventsPath, row, StandardCharsets.UTF_8,
             StandardOpenOption.CREATE, StandardOpenOption.APPEND);
     }

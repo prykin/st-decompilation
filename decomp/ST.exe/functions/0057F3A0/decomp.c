@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STMethodOwnerApplier] Structural method owner recovered as STDcResourcC.
    Evidence: this_call_owners=[STDcResourcC]; agreed_this_calls=2; incoming_this_accesses=1;
@@ -9,7 +11,6 @@ undefined4 * __thiscall STDcResourcC::sub_0057F3A0(STDcResourcC *this,int param_
 {
   char cVar1;
   uint uVar2;
-  uint uVar3;
   int iVar4;
   char *pcVar5;
   char *pcVar6;
@@ -51,16 +52,7 @@ undefined4 * __thiscall STDcResourcC::sub_0057F3A0(STDcResourcC *this,int param_
   } while (cVar1 != '\0');
   pcVar5 = pcVar7 + -uVar2;
   pcVar7 = pcVar6 + -1;
-  for (uVar3 = uVar2 >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {
-    *(undefined4 *)pcVar7 = *(undefined4 *)pcVar5;
-    pcVar5 = pcVar5 + 4;
-    pcVar7 = pcVar7 + 4;
-  }
-  for (uVar2 = uVar2 & 3; uVar2 != 0; uVar2 = uVar2 - 1) {
-    *pcVar7 = *pcVar5;
-    pcVar5 = pcVar5 + 1;
-    pcVar7 = pcVar7 + 1;
-  }
+  memmove(pcVar7, pcVar5, uVar2); /* compiler REP MOVS byte copy */
   return &DAT_00811650;
 }
 

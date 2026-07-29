@@ -8,7 +8,6 @@ int __cdecl FUN_006adb90(char *param_1,int param_2,int param_3,byte *param_4)
   code *pcVar2;
   int iVar3;
   uint uVar4;
-  uint uVar5;
   char *pcVar6;
   char *pcVar7;
   char *pcVar8;
@@ -41,16 +40,7 @@ int __cdecl FUN_006adb90(char *param_1,int param_2,int param_3,byte *param_4)
     } while (cVar1 != '\0');
     pcVar6 = pcVar8 + -uVar4;
     pcVar8 = pcVar7 + -1;
-    for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
-      *(undefined4 *)pcVar8 = *(undefined4 *)pcVar6;
-      pcVar6 = pcVar6 + 4;
-      pcVar8 = pcVar8 + 4;
-    }
-    for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
-      *pcVar8 = *pcVar6;
-      pcVar6 = pcVar6 + 1;
-      pcVar8 = pcVar8 + 1;
-    }
+    memmove(pcVar8, pcVar6, uVar4); /* compiler REP MOVS byte copy */
   }
   iVar3 = ReportDebugMessage(param_1,param_2,0,param_3,"%s",local_204);
   if (iVar3 == 0) {

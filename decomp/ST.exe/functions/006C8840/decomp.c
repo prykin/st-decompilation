@@ -53,16 +53,7 @@ uint * FUN_006c8840(uint *param_1,uint *param_2,int *param_3)
         uVar6 = ~uVar6;
         local_c = local_c + uVar6;
         pcVar10 = local_8;
-        for (uVar4 = uVar6 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
-          *(undefined4 *)pcVar10 = *(undefined4 *)pcVar8;
-          pcVar8 = pcVar8 + 4;
-          pcVar10 = pcVar10 + 4;
-        }
-        for (uVar4 = uVar6 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
-          *pcVar10 = *pcVar8;
-          pcVar8 = pcVar8 + 1;
-          pcVar10 = pcVar10 + 1;
-        }
+        memmove(pcVar10, pcVar8, uVar6); /* compiler REP MOVS byte copy */
         local_8 = local_8 + uVar6;
         pbVar2 = (byte *)((int)puVar7 + ((int)((uint)param_2 ^ 7) >> 3));
         *pbVar2 = *pbVar2 | '\x01' << (((uint)param_2 ^ 7) & 7);

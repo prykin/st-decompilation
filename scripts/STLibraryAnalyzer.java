@@ -110,11 +110,11 @@ public class STLibraryAnalyzer extends GhidraScript {
         }
 
         List<Proposal> proposals = new ArrayList<>();
-        List<String> conflicts = new ArrayList<>();
+        int conflicts = 0;
         for (Evidence evidence : found.values()) {
             monitor.checkCancelled();
             if (evidence.libraries.size() != 1 || evidence.namespaces.size() != 1) {
-                conflicts.add(conflictJson(evidence));
+                conflicts++;
                 continue;
             }
             String library = evidence.libraries.iterator().next();
@@ -129,18 +129,16 @@ public class STLibraryAnalyzer extends GhidraScript {
             .resolve(safe(currentProgram.getName()));
         Files.createDirectories(dir);
         writeTsv(dir.resolve("library_proposals.tsv"), proposals);
-        writeJsonl(dir.resolve("library_proposals.jsonl"), proposals);
-        Files.write(dir.resolve("library_conflicts.jsonl"), conflicts, StandardCharsets.UTF_8);
         Files.write(dir.resolve("library_summary.txt"), List.of(
             "program=" + currentProgram.getName(),
             "proposals=" + proposals.size(),
-            "conflicts=" + conflicts.size(),
+            "conflicts=" + conflicts,
             "ourlib_proposals=" + proposals.stream()
                 .filter(proposal -> proposal.library.startsWith("OURLIB_")).count(),
             "note=Only rows with apply=1 are consumed by STLibraryApplier."),
             StandardCharsets.UTF_8);
         println("Library analysis complete: " + dir);
-        println("Proposals: " + proposals.size() + ", conflicts: " + conflicts.size());
+        println("Proposals: " + proposals.size() + ", conflicts: " + conflicts);
     }
 
     private Classification classifyPath(String value) {

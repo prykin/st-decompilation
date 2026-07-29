@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STReturnSemanticsApplier] typed_pointer_return.
    Evidence: all 1 value-return path(s) forward Listing variable param_1 with evidence-backed
@@ -9,7 +11,6 @@ AnonShape_00571CD0_C1ECCB3F * __fastcall FUN_00571cd0(AnonShape_00571CD0_C1ECCB3
 {
   char cVar1;
   uint uVar2;
-  uint uVar3;
   char *pcVar4;
   char *pcVar5;
 
@@ -39,16 +40,7 @@ AnonShape_00571CD0_C1ECCB3F * __fastcall FUN_00571cd0(AnonShape_00571CD0_C1ECCB3
   uVar2 = ~uVar2;
   pcVar4 = pcVar5 + -uVar2;
   pcVar5 = &param_1->field_0x749;
-  for (uVar3 = uVar2 >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {
-    *(undefined4 *)pcVar5 = *(undefined4 *)pcVar4;
-    pcVar4 = pcVar4 + 4;
-    pcVar5 = pcVar5 + 4;
-  }
-  for (uVar2 = uVar2 & 3; uVar2 != 0; uVar2 = uVar2 - 1) {
-    *pcVar5 = *pcVar4;
-    pcVar4 = pcVar4 + 1;
-    pcVar5 = pcVar5 + 1;
-  }
+  memmove(pcVar5, pcVar4, uVar2); /* compiler REP MOVS byte copy */
   param_1->field_0DEE = 0;
   param_1->field_0781 = 1;
   param_1->field_0DAE = 0;

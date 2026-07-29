@@ -138,16 +138,7 @@ code_r0x00516013:
   uVar7 = ~uVar7;
   pcVar6 = pcVar8 + -uVar7;
   pcVar8 = (char *)&DAT_0080f33a;
-  for (uVar10 = uVar7 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
-    *(undefined4 *)pcVar8 = *(undefined4 *)pcVar6;
-    pcVar6 = pcVar6 + 4;
-    pcVar8 = pcVar8 + 4;
-  }
-  for (uVar7 = uVar7 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-    *pcVar8 = *pcVar6;
-    pcVar6 = pcVar6 + 1;
-    pcVar8 = pcVar8 + 1;
-  }
+  memmove(pcVar8, pcVar6, uVar7); /* compiler REP MOVS byte copy */
   for (puVar4 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar4 != (uint *)0x0;
       puVar4 = Library::MSVCRT::FUN_0072e560(puVar4,'\n')) {
     *(undefined1 *)puVar4 = 0x20;

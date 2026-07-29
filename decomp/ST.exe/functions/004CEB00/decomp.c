@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STMethodOwnerApplier] Structural method owner recovered as TLOBaseTy.
    Evidence: this_call_owners=[TLOBaseTy]; agreed_this_calls=1; incoming_this_accesses=8;
@@ -27,7 +29,6 @@ undefined4 __thiscall TLOBaseTy::sub_004CEB00(TLOBaseTy *this,int param_1)
   int iVar5;
   short sVar6;
   uint uVar8;
-  uint uVar9;
   short sVar10;
   TLOBaseTyVTable *pTVar11;
   char *pcVar12;
@@ -227,16 +228,7 @@ switchD_004ceb68_caseD_32:
     uVar8 = ~uVar8;
     pcVar12 = pcVar14 + -uVar8;
     pcVar14 = local_3a;
-    for (uVar9 = uVar8 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
-      *(undefined4 *)pcVar14 = *(undefined4 *)pcVar12;
-      pcVar12 = pcVar12 + 4;
-      pcVar14 = pcVar14 + 4;
-    }
-    for (uVar8 = uVar8 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
-      *pcVar14 = *pcVar12;
-      pcVar12 = pcVar12 + 1;
-      pcVar14 = pcVar14 + 1;
-    }
+    memmove(pcVar14, pcVar12, uVar8); /* compiler REP MOVS byte copy */
     local_2b = this->field_0375;
     STPlaySystemC::CreateGameObject(g_playSystem_00802A38,0x14,0,&local_24,local_6c,0);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */

@@ -64,7 +64,6 @@ public class STSpatialGridAnalyzer extends GhidraScript {
         }
         proposals.sort(Comparator.comparing(row -> row.address));
         writeTsv(directory.resolve("spatial_grid_proposals.tsv"), proposals);
-        writeJson(directory.resolve("spatial_grid_proposals.jsonl"), proposals);
         writeSummary(directory.resolve("spatial_grid_summary.txt"), proposals);
         println("Spatial-grid analysis complete: " + directory.toAbsolutePath().normalize());
         println("Descriptors=" + proposals.size() + ", apply=" +

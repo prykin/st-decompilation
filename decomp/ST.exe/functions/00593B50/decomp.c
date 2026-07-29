@@ -15,7 +15,7 @@ void __thiscall ComboTy::InitCombo(ComboTy *this,undefined4 *param_1)
   int iVar4;
   int local_EAX_159;
   AnonShape_006B5B10_E0D06CF1 *pAVar5;
-  undefined4 *puVar6;
+  byte *puVar6;
   int uVar4;
   int *piVar7;
   int local_EAX_427;
@@ -61,12 +61,8 @@ void __thiscall ComboTy::InitCombo(ComboTy *this,undefined4 *param_1)
     RaiseInternalException(iVar4,0,"E:\\__titans\\Start\\combo.cpp",99);
     return;
   }
-  puVar6 = (undefined4 *)&local_10->field_0088;
-  for (iVar4 = 0x20; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *puVar6 = *param_1;
-    param_1 = param_1 + 1;
-    puVar6 = puVar6 + 1;
-  }
+  puVar6 = (byte *)&local_10->field_0088;
+  memmove(puVar6, param_1, 0x80); /* compiler REP MOVS byte copy */
   iVar4 = local_10->field_00D4;
   local_10->field_009C = 0xffffffff;
   if ((iVar4 != 0) && (iVar10 = local_10->field_00D0, iVar10 != 0)) {
@@ -75,7 +71,7 @@ void __thiscall ComboTy::InitCombo(ComboTy *this,undefined4 *param_1)
     }
     iVar13 = 1;
     local_10->field_00F8 = iVar10 * local_10->field_00CC + 10;
-    puVar6 = (undefined4 *)(iVar4 + 0x28);
+    puVar6 = (byte *)(iVar4 + 0x28);
     local_EAX_159 = FUN_006b4fe0(iVar4);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     pAVar5 = (AnonShape_006B5B10_E0D06CF1 *)
@@ -88,17 +84,17 @@ void __thiscall ComboTy::InitCombo(ComboTy *this,undefined4 *param_1)
                pAVar5->field_0008;
     }
     local_5 = this_00->field_00D8;
-    puVar6 = (undefined4 *)FUN_006b4fa0((int *)pAVar5);
+    puVar6 = (byte *)FUN_006b4fa0((int *)pAVar5);
     iVar4 = 1;
     for (uVar9 = uVar11 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
       *puVar6 = CONCAT22(CONCAT11(local_5,local_5),CONCAT11(local_5,local_5));
-      puVar6 = puVar6 + 1;
+      puVar6 = (byte *)(puVar6 + 1);
     }
     for (uVar11 = uVar11 & 3; uVar11 != 0; uVar11 = uVar11 - 1) {
       *(undefined1 *)puVar6 = local_5;
-      puVar6 = (undefined4 *)((int)puVar6 + 1);
+      puVar6 = (byte *)((int)puVar6 + 1);
     }
-    puVar6 = (undefined4 *)(this_00->field_00D4 + 0x28);
+    puVar6 = (byte *)(this_00->field_00D4 + 0x28);
     uVar4 = FUN_006b4fe0(this_00->field_00D4);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     piVar7 = (int *)FUN_006b50c0(this_00->field_00F4,this_00->field_00F8,
@@ -110,17 +106,17 @@ void __thiscall ComboTy::InitCombo(ComboTy *this,undefined4 *param_1)
                piVar7[2];
     }
     local_5 = this_00->field_00E0;
-    puVar6 = (undefined4 *)FUN_006b4fa0(piVar7);
+    puVar6 = (byte *)FUN_006b4fa0(piVar7);
     iVar4 = 1;
     for (uVar9 = uVar11 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
       *puVar6 = CONCAT22(CONCAT11(local_5,local_5),CONCAT11(local_5,local_5));
-      puVar6 = puVar6 + 1;
+      puVar6 = (byte *)(puVar6 + 1);
     }
     for (uVar11 = uVar11 & 3; uVar11 != 0; uVar11 = uVar11 - 1) {
       *(undefined1 *)puVar6 = local_5;
-      puVar6 = (undefined4 *)((int)puVar6 + 1);
+      puVar6 = (byte *)((int)puVar6 + 1);
     }
-    puVar6 = (undefined4 *)(this_00->field_00D4 + 0x28);
+    puVar6 = (byte *)(this_00->field_00D4 + 0x28);
     local_EAX_427 = FUN_006b4fe0(this_00->field_00D4);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     puVar8 = (ushort *)
@@ -133,14 +129,14 @@ void __thiscall ComboTy::InitCombo(ComboTy *this,undefined4 *param_1)
                *(int *)(puVar8 + 4);
     }
     local_5 = this_00->field_00D8;
-    puVar6 = (undefined4 *)FUN_006b4fa0((int *)puVar8);
+    puVar6 = (byte *)FUN_006b4fa0((int *)puVar8);
     for (uVar9 = uVar11 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
       *puVar6 = CONCAT22(CONCAT11(local_5,local_5),CONCAT11(local_5,local_5));
-      puVar6 = puVar6 + 1;
+      puVar6 = (byte *)(puVar6 + 1);
     }
     for (uVar11 = uVar11 & 3; uVar11 != 0; uVar11 = uVar11 - 1) {
       *(undefined1 *)puVar6 = local_5;
-      puVar6 = (undefined4 *)((int)puVar6 + 1);
+      puVar6 = (byte *)((int)puVar6 + 1);
     }
     this_00->field_00C0 = this_00->field_0104;
     FUN_006b5ee0(this_00->field_00FC,0,2,2,this_00->field_00F4 + -4,this_00->field_00F8 + -4,
@@ -170,7 +166,7 @@ void __thiscall ComboTy::InitCombo(ComboTy *this,undefined4 *param_1)
     iVar4 = 0;
     this_00->field_0028 = 0x65;
     FUN_006e6000(this_00,3,1,(undefined4 *)puVar1);
-    puVar6 = &this_00->field_0038;
+    puVar6 = (byte *)(&this_00->field_0038);
     this_00->field_0084 = &this_00->field_002C->field_0x1;
     memset(puVar6, 0, 0x4c); /* compiler bulk-zero initialization */
     iVar4 = 0;

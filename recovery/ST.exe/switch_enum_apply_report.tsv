@@ -325,7 +325,7 @@ function_address	enum_name	status	detail
 00567510	Global_sub_00567510_switch_0Enum	disabled	apply=0
 00568010	Global_sub_00568010_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00568010_param_1Enum; parameter already uses enum
 00568940	Global_sub_00568940_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00568940_param_1Enum; parameter already uses enum
-0056ADC0	STAppC_InitApp_iVar8Enum	disabled	apply=0
+0056ADC0	STAppC_InitApp_iVar7Enum	disabled	apply=0
 0056ADC0	STAppC_InitApp_switch_2Enum	disabled	apply=0
 0056ADC0	STAppC_InitApp_switch_3Enum	disabled	apply=0
 0056CBD0	STAppC_MainWindowProc_param_2Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STAppC_MainWindowProc_param_2Enum; parameter already uses enum

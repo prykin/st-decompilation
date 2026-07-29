@@ -124,9 +124,7 @@ public class STGlobalRecordAnalyzer extends GhidraScript {
             scan.strideFunctions.size(), scan.fieldSites, fields.size(), typedFields,
             namedFields, apply ? "high" : "review", String.join("; ", reasons));
         writeRecords(directory.resolve("global_record_proposals.tsv"), List.of(record));
-        writeRecordJson(directory.resolve("global_record_proposals.jsonl"), List.of(record));
         writeFields(directory.resolve("global_record_field_proposals.tsv"), fields);
-        writeFieldJson(directory.resolve("global_record_field_proposals.jsonl"), fields);
         writeEvidence(directory.resolve("global_record_evidence.tsv"), scan);
         writeSummary(directory.resolve("global_record_summary.txt"), record, scan,
             layout, range, evidenceStrong, darrayPresent, tempSlotPresent);

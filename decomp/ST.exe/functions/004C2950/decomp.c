@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSwitchEnumApplier] Switch target param_3 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_004C2950_param_3Enum. Cases:
@@ -14,7 +16,6 @@ FUN_004c2950(int param_1,int param_2,Global_sub_004C2950_param_3Enum param_3,und
   int iVar1;
   char cVar2;
   uint uVar3;
-  uint uVar4;
   char *pcVar5;
   char *pcVar6;
 
@@ -66,16 +67,7 @@ FUN_004c2950(int param_1,int param_2,Global_sub_004C2950_param_3Enum param_3,und
       } while (cVar2 != '\0');
       uVar3 = ~uVar3;
       pcVar5 = pcVar6 + -uVar3;
-      for (uVar4 = uVar3 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
-        *(undefined4 *)param_5 = *(undefined4 *)pcVar5;
-        pcVar5 = pcVar5 + 4;
-        param_5 = param_5 + 4;
-      }
-      for (uVar3 = uVar3 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
-        *param_5 = *pcVar5;
-        pcVar5 = pcVar5 + 1;
-        param_5 = param_5 + 1;
-      }
+      memmove(param_5, pcVar5, uVar3); /* compiler REP MOVS byte copy */
       *param_4 = DAT_0080678c;
       *param_6 = 0x1d;
       *param_7 = *(STAllPlayersC_GetTOBJImage_param_2Enum *)(PTR_DAT_007b8310 + iVar1 * 0x20);
@@ -112,16 +104,7 @@ LAB_004c2b44:
       } while (cVar2 != '\0');
       uVar3 = ~uVar3;
       pcVar5 = pcVar6 + -uVar3;
-      for (uVar4 = uVar3 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
-        *(undefined4 *)param_5 = *(undefined4 *)pcVar5;
-        pcVar5 = pcVar5 + 4;
-        param_5 = param_5 + 4;
-      }
-      for (uVar3 = uVar3 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
-        *param_5 = *pcVar5;
-        pcVar5 = pcVar5 + 1;
-        param_5 = param_5 + 1;
-      }
+      memmove(param_5, pcVar5, uVar3); /* compiler REP MOVS byte copy */
       *param_4 = DAT_0080678c;
       *param_6 = 0x1d;
       *param_7 = *(STAllPlayersC_GetTOBJImage_param_2Enum *)(PTR_DAT_007b5170 + iVar1 * 0x20);

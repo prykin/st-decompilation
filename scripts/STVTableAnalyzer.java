@@ -101,11 +101,8 @@ public class STVTableAnalyzer extends GhidraScript {
             .resolve(safe(currentProgram.getName()));
         Files.createDirectories(dir);
         writeProposalsTsv(dir.resolve("vtable_proposals.tsv"), candidates);
-        writeProposalsJsonl(dir.resolve("vtable_proposals.jsonl"), candidates);
         writeSlotsTsv(dir.resolve("vtable_slots.tsv"), candidates);
-        writeSlotsJsonl(dir.resolve("vtable_slots.jsonl"), candidates);
         writeRelations(dir.resolve("vtable_relations.tsv"), relations);
-        writeConflicts(dir.resolve("vtable_conflicts.jsonl"), candidates);
         writeSummary(dir.resolve("vtable_summary.txt"), candidates);
 
         long high = candidates.stream().filter(candidate -> candidate.apply).count();

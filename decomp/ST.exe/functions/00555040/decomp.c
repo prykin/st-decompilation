@@ -90,16 +90,7 @@ cLoadingTy::SetState
     } while ((char)uVar9 != '\0');
     pcVar5 = pcVar13 + -uVar8;
     pcVar13 = (char *)((int)puVar12 + -1);
-    for (uVar9 = uVar8 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
-      *(undefined4 *)pcVar13 = *(undefined4 *)pcVar5;
-      pcVar5 = pcVar5 + 4;
-      pcVar13 = pcVar13 + 4;
-    }
-    for (uVar8 = uVar8 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
-      *pcVar13 = *pcVar5;
-      pcVar5 = pcVar5 + 1;
-      pcVar13 = pcVar13 + 1;
-    }
+    memmove(pcVar13, pcVar5, uVar8); /* compiler REP MOVS byte copy */
     DrawLine(local_8,local_450);
     g_currentExceptionFrame = local_50.previous;
     return;
@@ -262,16 +253,7 @@ cLoadingTy::SetState
     } while ((char)uVar9 != '\0');
     pcVar5 = pcVar13 + -uVar8;
     pcVar13 = (char *)((int)puVar12 + -1);
-    for (uVar9 = uVar8 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
-      *(undefined4 *)pcVar13 = *(undefined4 *)pcVar5;
-      pcVar5 = pcVar5 + 4;
-      pcVar13 = pcVar13 + 4;
-    }
-    for (uVar8 = uVar8 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
-      *pcVar13 = *pcVar5;
-      pcVar5 = pcVar5 + 1;
-      pcVar13 = pcVar13 + 1;
-    }
+    memmove(pcVar13, pcVar5, uVar8); /* compiler REP MOVS byte copy */
     goto joined_r0x00555393;
   case CASE_3:
     local_8->field_003C = -1;
@@ -312,16 +294,7 @@ cLoadingTy::SetState
     } while ((char)uVar9 != '\0');
     pcVar5 = pcVar13 + -uVar8;
     pcVar13 = (char *)((int)puVar12 + -1);
-    for (uVar9 = uVar8 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
-      *(undefined4 *)pcVar13 = *(undefined4 *)pcVar5;
-      pcVar5 = pcVar5 + 4;
-      pcVar13 = pcVar13 + 4;
-    }
-    for (uVar8 = uVar8 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
-      *pcVar13 = *pcVar5;
-      pcVar5 = pcVar5 + 1;
-      pcVar13 = pcVar13 + 1;
-    }
+    memmove(pcVar13, pcVar5, uVar8); /* compiler REP MOVS byte copy */
 joined_r0x00555393:
     if (param_3 != (char *)0x0) {
       uVar8 = 0xffffffff;
@@ -346,16 +319,7 @@ joined_r0x00555393:
       } while ((char)uVar9 != '\0');
       pcVar5 = pcVar5 + -uVar8;
       pcVar13 = (char *)((int)puVar12 + -1);
-      for (uVar9 = uVar8 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
-        *(undefined4 *)pcVar13 = *(undefined4 *)pcVar5;
-        pcVar5 = pcVar5 + 4;
-        pcVar13 = pcVar13 + 4;
-      }
-      for (uVar8 = uVar8 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
-        *pcVar13 = *pcVar5;
-        pcVar5 = pcVar5 + 1;
-        pcVar13 = pcVar13 + 1;
-      }
+      memmove(pcVar13, pcVar5, uVar8); /* compiler REP MOVS byte copy */
     }
     DrawLineCR(pcVar10,(char *)local_450);
     g_currentExceptionFrame = local_50.previous;

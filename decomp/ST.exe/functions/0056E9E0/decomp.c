@@ -17,7 +17,6 @@ undefined4 __thiscall STAppC::sub_0056E9E0(STAppC *this,int param_1)
   DArrayTy *pDVar6;
   ushort *puVar7;
   uint uVar8;
-  uint uVar9;
   byte *pbVar10;
   byte *pbVar12;
   byte *pbVar13;
@@ -82,16 +81,7 @@ undefined4 __thiscall STAppC::sub_0056E9E0(STAppC *this,int param_1)
     } while (bVar1 != 0);
     uVar8 = ~uVar8;
     pbVar10 = pbVar12 + -uVar8;
-    for (uVar9 = uVar8 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
-      *(undefined4 *)pbVar13 = *(undefined4 *)pbVar10;
-      pbVar10 = pbVar10 + 4;
-      pbVar13 = pbVar13 + 4;
-    }
-    for (uVar8 = uVar8 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
-      *pbVar13 = *pbVar10;
-      pbVar10 = pbVar10 + 1;
-      pbVar13 = pbVar13 + 1;
-    }
+    memmove(pbVar13, pbVar10, uVar8); /* compiler REP MOVS byte copy */
   }
   cMf32::delete(local_8);
   g_currentExceptionFrame = local_5c.previous;

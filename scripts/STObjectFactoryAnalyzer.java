@@ -80,7 +80,6 @@ public class STObjectFactoryAnalyzer extends GhidraScript {
         writeRegistry(directory.resolve("object_factory_registry.tsv"), registry, allocator,
             dispatch);
         writeFactories(directory.resolve("object_factory_proposals.tsv"), rows);
-        writeFactoriesJson(directory.resolve("object_factory_proposals.jsonl"), rows);
         writeConsumers(directory.resolve("object_type_consumer_proposals.tsv"), consumers);
         writeSummary(directory.resolve("object_factory_summary.txt"), registry, rows, consumers,
             allocator, dispatch);

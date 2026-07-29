@@ -57,16 +57,7 @@ STBoatC::GetVisualInfo
         } while (cVar1 != '\0');
         uVar4 = ~uVar4;
         pcVar7 = pcVar6 + -uVar4;
-        for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
-          *(undefined4 *)param_5 = *(undefined4 *)pcVar7;
-          pcVar7 = pcVar7 + 4;
-          param_5 = param_5 + 4;
-        }
-        for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
-          *param_5 = *pcVar7;
-          pcVar7 = pcVar7 + 1;
-          param_5 = param_5 + 1;
-        }
+        memmove(param_5, pcVar7, uVar4); /* compiler REP MOVS byte copy */
         return;
       }
       if (param_2 == CASE_16) {
@@ -82,16 +73,7 @@ STBoatC::GetVisualInfo
         } while (cVar1 != '\0');
         uVar4 = ~uVar4;
         pcVar7 = pcVar6 + -uVar4;
-        for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
-          *(undefined4 *)param_5 = *(undefined4 *)pcVar7;
-          pcVar7 = pcVar7 + 4;
-          param_5 = param_5 + 4;
-        }
-        for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
-          *param_5 = *pcVar7;
-          pcVar7 = pcVar7 + 1;
-          param_5 = param_5 + 1;
-        }
+        memmove(param_5, pcVar7, uVar4); /* compiler REP MOVS byte copy */
         return;
       }
       if (param_2 == CASE_23) {
@@ -107,16 +89,7 @@ STBoatC::GetVisualInfo
         } while (cVar1 != '\0');
         uVar4 = ~uVar4;
         pcVar7 = pcVar6 + -uVar4;
-        for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
-          *(undefined4 *)param_5 = *(undefined4 *)pcVar7;
-          pcVar7 = pcVar7 + 4;
-          param_5 = param_5 + 4;
-        }
-        for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
-          *param_5 = *pcVar7;
-          pcVar7 = pcVar7 + 1;
-          param_5 = param_5 + 1;
-        }
+        memmove(param_5, pcVar7, uVar4); /* compiler REP MOVS byte copy */
         return;
       }
     }
@@ -300,16 +273,7 @@ STBoatC::GetVisualInfo
   } while (cVar1 != '\0');
   pcVar6 = pcVar6 + -uVar4;
   pcVar7 = pcVar7 + -1;
-  for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
-    *(undefined4 *)pcVar7 = *(undefined4 *)pcVar6;
-    pcVar6 = pcVar6 + 4;
-    pcVar7 = pcVar7 + 4;
-  }
-  for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
-    *pcVar7 = *pcVar6;
-    pcVar6 = pcVar6 + 1;
-    pcVar7 = pcVar7 + 1;
-  }
+  memmove(pcVar7, pcVar6, uVar4); /* compiler REP MOVS byte copy */
   return;
 }
 

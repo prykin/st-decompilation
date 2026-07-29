@@ -20,7 +20,6 @@ SettMapMTy::ChgPlList
   int errorCode;
   int iVar3;
   uint uVar4;
-  uint uVar5;
   char *pcVar6;
   char *pcVar7;
   undefined4 local_15c;
@@ -63,16 +62,7 @@ SettMapMTy::ChgPlList
   uVar4 = ~uVar4;
   pcVar6 = pcVar7 + -uVar4;
   pcVar7 = local_14c;
-  for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
-    *(undefined4 *)pcVar7 = *(undefined4 *)pcVar6;
-    pcVar6 = pcVar6 + 4;
-    pcVar7 = pcVar7 + 4;
-  }
-  for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
-    *pcVar7 = *pcVar6;
-    pcVar6 = pcVar6 + 1;
-    pcVar7 = pcVar7 + 1;
-  }
+  memmove(pcVar7, pcVar6, uVar4); /* compiler REP MOVS byte copy */
   FUN_006b6500(g_int_00811764,1);
   FUN_00715360(g_int_00811764,1,'$',(char *)&local_15c,0x114,1,0xffffffff);
   FUN_006b6500(g_int_00811764,DAT_0080733c);

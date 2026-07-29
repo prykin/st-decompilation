@@ -113,16 +113,7 @@ int __thiscall STDcResourcC::GetMessage(STDcResourcC *this,STMessage *message)
       *(short *)pSVar19 = (short)*pSVar15;
       pbVar18 = local_10;
       pbVar21 = (byte *)((int)local_c + 0x46);
-      for (uVar10 = local_8 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
-        *(undefined4 *)pbVar21 = *(undefined4 *)pbVar18;
-        pbVar18 = pbVar18 + 4;
-        pbVar21 = pbVar21 + 4;
-      }
-      for (uVar10 = local_8 & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
-        *pbVar21 = *pbVar18;
-        pbVar18 = pbVar18 + 1;
-        pbVar21 = pbVar21 + 1;
-      }
+      memmove(pbVar21, pbVar18, local_8); /* compiler REP MOVS byte copy */
       STPlaySystemC::SaveObjData
                 (g_playSystem_00802A38,(int *)this_00->field_0018,(byte *)local_c,
                  (AnonShape_0060EA30_DCEB68AD *)(local_8 + 0x46));

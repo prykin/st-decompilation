@@ -92,11 +92,7 @@ LAB_0045f0e0:
   case CASE_C:
     this->field_02F8 = 1;
     puVar3 = &this->field_034F;
-    for (iVar2 = 8; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *puVar3 = *param_2;
-      param_2 = param_2 + 1;
-      puVar3 = puVar3 + 1;
-    }
+    memmove(puVar3, param_2, 0x20); /* compiler REP MOVS byte copy */
     return;
   case CASE_D:
     this->field_02FC = 1;
@@ -157,11 +153,7 @@ cf_common_exit_0045F1A9:
   case CASE_15:
     this->field_0318 = 1;
     puVar3 = &this->field_0401;
-    for (iVar2 = 5; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *puVar3 = *param_2;
-      param_2 = param_2 + 1;
-      puVar3 = puVar3 + 1;
-    }
+    memmove(puVar3, param_2, 0x14); /* compiler REP MOVS byte copy */
     return;
   case CASE_16:
     this->field_031C = 1;

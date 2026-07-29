@@ -104,7 +104,6 @@ public class STDestructorAnalyzer extends GhidraScript {
         }
         proposals.sort(Comparator.comparing(row -> row.address));
         writeTsv(directory.resolve("destructor_proposals.tsv"), proposals);
-        writeJson(directory.resolve("destructor_proposals.jsonl"), proposals);
         writeLifetimeTsv(directory.resolve("destructor_lifetime_candidates.tsv"));
         writeSummary(directory.resolve("destructor_summary.txt"), proposals,
             deleteThisFunctions);

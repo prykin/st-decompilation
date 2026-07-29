@@ -17,7 +17,6 @@ undefined4 __thiscall CGenerate::CreateMap(CGenerate *this)
   int *piVar6;
   undefined4 uVar7;
   uint uVar8;
-  uint uVar9;
   char *pcVar10;
   char *pcVar11;
   InternalExceptionFrame local_64;
@@ -58,16 +57,7 @@ undefined4 __thiscall CGenerate::CreateMap(CGenerate *this)
   uVar8 = ~uVar8;
   pcVar10 = pcVar11 + -uVar8;
   pcVar11 = &local_10->field_0x53f3;
-  for (uVar9 = uVar8 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
-    *(undefined4 *)pcVar11 = *(undefined4 *)pcVar10;
-    pcVar10 = pcVar10 + 4;
-    pcVar11 = pcVar11 + 4;
-  }
-  for (uVar8 = uVar8 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
-    *pcVar11 = *pcVar10;
-    pcVar10 = pcVar10 + 1;
-    pcVar11 = pcVar11 + 1;
-  }
+  memmove(pcVar11, pcVar10, uVar8); /* compiler REP MOVS byte copy */
   local_8 = (Global_sub_00693710_param_1Enum *)0x0;
   cMf32::RecGet(local_10->field_0234,0xc,"TEXTURE_DSCR",(int *)&local_8,1);
   thunk_FUN_00693710(*local_8);

@@ -124,16 +124,7 @@ void __thiscall STAppC::sub_0056EBE0(STAppC *this)
       uVar8 = ~uVar8;
       pcVar11 = pcVar12 + -uVar8;
       pcVar12 = pcVar9 + 1;
-      for (uVar5 = uVar8 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
-        *(undefined4 *)pcVar12 = *(undefined4 *)pcVar11;
-        pcVar11 = pcVar11 + 4;
-        pcVar12 = pcVar12 + 4;
-      }
-      for (uVar8 = uVar8 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
-        *pcVar12 = *pcVar11;
-        pcVar11 = pcVar11 + 1;
-        pcVar12 = pcVar12 + 1;
-      }
+      memmove(pcVar12, pcVar11, uVar8); /* compiler REP MOVS byte copy */
     }
     pcVar9 = pcVar9 + 0x51;
     local_8 = local_8 + -1;

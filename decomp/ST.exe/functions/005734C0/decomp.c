@@ -286,16 +286,7 @@ LAB_0057366c:
   uVar2 = ~uVar2;
   pcVar6 = pcVar8 + -uVar2;
   pcVar8 = (char *)((int)this + 0x645);
-  for (uVar5 = uVar2 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
-    *(undefined4 *)pcVar8 = *(undefined4 *)pcVar6;
-    pcVar6 = pcVar6 + 4;
-    pcVar8 = pcVar8 + 4;
-  }
-  for (uVar2 = uVar2 & 3; uVar2 != 0; uVar2 = uVar2 - 1) {
-    *pcVar8 = *pcVar6;
-    pcVar6 = pcVar6 + 1;
-    pcVar8 = pcVar8 + 1;
-  }
+  memmove(pcVar8, pcVar6, uVar2); /* compiler REP MOVS byte copy */
 LAB_005737e5:
   SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00573260::thunk_FUN_00573260(this);
   return;

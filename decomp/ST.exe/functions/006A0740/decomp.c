@@ -13,7 +13,6 @@ int __thiscall CGenerate::SaveMap(CGenerate *this)
   int iVar2;
   char *pcVar3;
   uint uVar4;
-  uint uVar5;
   char *pcVar6;
   undefined4 *puVar7;
   char cVar8;
@@ -58,16 +57,7 @@ int __thiscall CGenerate::SaveMap(CGenerate *this)
   uVar4 = ~uVar4;
   pcVar3 = pcVar6 + -uVar4;
   pcVar6 = &this_00->field_0x55fb;
-  for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
-    *(undefined4 *)pcVar6 = *(undefined4 *)pcVar3;
-    pcVar3 = pcVar3 + 4;
-    pcVar6 = pcVar6 + 4;
-  }
-  for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
-    *pcVar6 = *pcVar3;
-    pcVar3 = pcVar3 + 1;
-    pcVar6 = pcVar6 + 1;
-  }
+  memmove(pcVar6, pcVar3, uVar4); /* compiler REP MOVS byte copy */
   cMf32::RecPut(this_00->field_0018,0,PTR_s_TITLE_MISSION_0079d838,&this_00->field_0x55fb,0x104,
                 (undefined4 *)0x0,'\0',(uint *)0x0);
   cMf32::RecPut(this_00->field_0018,0,PTR_s_TEXTURE_0079d83c,&this_00->field_0x53f3,0x104,

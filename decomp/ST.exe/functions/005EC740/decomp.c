@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 6.
    Evidence: 0044C130 -> 005EC740 @ 0044C3BB */
@@ -9,7 +11,6 @@ FUN_005ec740(int param_1,undefined4 param_2,int param_3,undefined4 *param_4,char
 {
   char cVar1;
   uint uVar2;
-  uint uVar3;
   char *pcVar4;
   char *pcVar5;
 
@@ -41,16 +42,7 @@ FUN_005ec740(int param_1,undefined4 param_2,int param_3,undefined4 *param_4,char
     } while (cVar1 != '\0');
     uVar2 = ~uVar2;
     pcVar4 = pcVar5 + -uVar2;
-    for (uVar3 = uVar2 >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {
-      *(undefined4 *)param_5 = *(undefined4 *)pcVar4;
-      pcVar4 = pcVar4 + 4;
-      param_5 = param_5 + 4;
-    }
-    for (uVar2 = uVar2 & 3; uVar2 != 0; uVar2 = uVar2 - 1) {
-      *param_5 = *pcVar4;
-      pcVar4 = pcVar4 + 1;
-      param_5 = param_5 + 1;
-    }
+    memmove(param_5, pcVar4, uVar2); /* compiler REP MOVS byte copy */
     *param_4 = DAT_00806774;
   }
   return;

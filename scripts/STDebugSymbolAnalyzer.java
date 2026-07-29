@@ -101,13 +101,13 @@ public class STDebugSymbolAnalyzer extends GhidraScript {
             .resolve(safe(currentProgram.getName()));
         Files.createDirectories(dir);
         List<Proposal> proposals = new ArrayList<>();
-        List<String> conflicts = new ArrayList<>();
+        int conflicts = 0;
 
         for (FunctionEvidence item : evidence.values()) {
             monitor.checkCancelled();
             String qualified = selectMethod(item);
             if (qualified == null) {
-                if (!item.methods.isEmpty()) conflicts.add(conflictJson(item, "multiple_method_strings"));
+                if (!item.methods.isEmpty()) conflicts++;
                 continue;
             }
             int split = qualified.lastIndexOf("::");
@@ -136,14 +136,12 @@ public class STDebugSymbolAnalyzer extends GhidraScript {
         proposals.sort(Comparator.comparing(p -> p.function.getEntryPoint()));
 
         writeTsv(dir.resolve("proposals.tsv"), proposals);
-        writeJsonl(dir.resolve("proposals.jsonl"), proposals);
-        writeLines(dir.resolve("conflicts.jsonl"), conflicts);
         List<ShortStringProposal> shortStrings = recoverShortDiagnosticStrings();
         writeShortStrings(dir.resolve("debug_string_proposals.tsv"), shortStrings);
         writeConventionReview(dir.resolve("debug_calling_convention_review.tsv"), proposals);
-        writeSummary(dir.resolve("summary.txt"), proposals, conflicts.size(), shortStrings);
+        writeSummary(dir.resolve("summary.txt"), proposals, conflicts, shortStrings);
         println("Debug-symbol analysis complete: " + dir);
-        println("Proposals: " + proposals.size() + ", conflicts: " + conflicts.size() +
+        println("Proposals: " + proposals.size() + ", conflicts: " + conflicts +
             ", short diagnostic strings: " + shortStrings.size());
     }
 

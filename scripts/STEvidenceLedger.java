@@ -95,17 +95,6 @@ public class STEvidenceLedger extends GhidraScript {
                 out.write("artifact\t" + clean(item.name) + "\t" + item.hash + "\t" +
                     item.size + "\n");
         }
-        List<String> json = new ArrayList<>();
-        json.add("{\"kind\":\"program\",\"name\":" + q(currentProgram.getName()) +
-            ",\"executable_sha256\":" + q(currentProgram.getExecutableSHA256()) +
-            ",\"modification_number\":" + modification +
-            ",\"semantic_fingerprint_schema\":" + q(SEMANTIC_FINGERPRINT_SCHEMA) +
-            ",\"semantic_sha256\":" + q(semanticFingerprint) + "}");
-        for (Artifact item : artifacts)
-            json.add("{\"kind\":\"artifact\",\"name\":" + q(item.name) +
-                ",\"sha256\":" + q(item.hash) + ",\"size\":" + item.size + "}");
-        Files.write(directory.resolve("automation_evidence.jsonl"), json,
-            StandardCharsets.UTF_8);
     }
 
     private void verify(Path directory) throws Exception {
@@ -467,9 +456,6 @@ public class STEvidenceLedger extends GhidraScript {
     private static String clean(String value) {
         return value == null ? "" : value.replace('\t', ' ')
             .replace('\r', ' ').replace('\n', ' ');
-    }
-    private static String q(String value) {
-        return "\"" + clean(value).replace("\\", "\\\\").replace("\"", "\\\"") + "\"";
     }
     private record Artifact(String name, String hash, long size) { }
 }

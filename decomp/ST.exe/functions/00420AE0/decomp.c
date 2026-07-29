@@ -547,16 +547,7 @@ void __thiscall STSprGameObjC::LoadLifeFrame(STSprGameObjC *this,int *param_1)
   } while (cVar1 != '\0');
   pcVar8 = pcVar10 + -uVar5;
   pcVar10 = pcVar9 + -1;
-  for (uVar7 = uVar5 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-    *(undefined4 *)pcVar10 = *(undefined4 *)pcVar8;
-    pcVar8 = pcVar8 + 4;
-    pcVar10 = pcVar10 + 4;
-  }
-  for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-    *pcVar10 = *pcVar8;
-    pcVar8 = pcVar8 + 1;
-    pcVar10 = pcVar10 + 1;
-  }
+  memmove(pcVar10, pcVar8, uVar5); /* compiler REP MOVS byte copy */
   this_00 = &this->field_01D5;
   STT3DSprC::LoadSequence((STT3DSprC *)this_00,1,DAT_00806774,local_24,0x1d);
   ST3DSMAPContext::sub_006EA5E0(this->field_0211,this->field_01ED,1,0);

@@ -16,7 +16,7 @@ void __thiscall FSGSTy::AddPlayer(FSGSTy *this,undefined4 *param_1)
   undefined4 uVar5;
   int iVar6;
   uint uVar7;
-  undefined4 *puVar8;
+  byte *puVar8;
   byte *pbVar9;
   byte *pbVar10;
   bool bVar11;
@@ -46,22 +46,17 @@ void __thiscall FSGSTy::AddPlayer(FSGSTy *this,undefined4 *param_1)
         local_8 = (undefined4 *)0x0;
       }
       if (local_8 != (undefined4 *)0x0) {
-        puVar8 = local_8;
+        puVar8 = (byte *)(local_8);
         pbVar9 = local_b0;
         for (iVar4 = 0xb; iVar4 != 0; iVar4 = iVar4 + -1) {
           *(undefined4 *)pbVar9 = *puVar8;
-          puVar8 = puVar8 + 1;
+          puVar8 = (byte *)(puVar8 + 1);
           pbVar9 = pbVar9 + 4;
         }
         *(undefined2 *)pbVar9 = *(undefined2 *)puVar8;
       }
-      puVar8 = local_3c;
-      for (iVar4 = 0xb; iVar4 != 0; iVar4 = iVar4 + -1) {
-        *puVar8 = *param_1;
-        param_1 = param_1 + 1;
-        puVar8 = puVar8 + 1;
-      }
-      *(undefined1 *)puVar8 = *(undefined1 *)param_1;
+      puVar8 = (byte *)(local_3c);
+      memmove(puVar8, param_1, 0x2d); /* compiler REP MOVS byte copy */
       local_f = 0;
       Library::DKW::TBL::FUN_006ae1c0(&pDVar2->flags,local_3c);
       FUN_006b5f80((int *)g_ddxContext_008075A8,0x1e9,0x5e,0x124,0xf3);

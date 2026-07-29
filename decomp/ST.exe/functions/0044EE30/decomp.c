@@ -539,16 +539,7 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
       local_20->field_0602 = local_2c;
       pbVar30 = local_44;
       pbVar36 = &local_20->field_0x0 + local_34 + local_2c;
-      for (uVar16 = local_38 >> 2; uVar16 != 0; uVar16 = uVar16 - 1) {
-        *(undefined4 *)pbVar36 = *(undefined4 *)pbVar30;
-        pbVar30 = pbVar30 + 4;
-        pbVar36 = pbVar36 + 4;
-      }
-      for (uVar16 = local_38 & 3; uVar16 != 0; uVar16 = uVar16 - 1) {
-        *pbVar36 = *pbVar30;
-        pbVar30 = pbVar30 + 1;
-        pbVar36 = pbVar36 + 1;
-      }
+      memmove(pbVar36, pbVar30, local_38); /* compiler REP MOVS byte copy */
       local_20->field_05F6 = local_34 + local_2c;
       local_20->field_05FA = local_38;
       STPlaySystemC::SaveObjData
@@ -7975,16 +7966,7 @@ switchD_0044fb10_default:
   } while (cVar1 != '\0');
   pcVar33 = pcVar32 + -uVar16;
   pcVar32 = pcVar31 + -1;
-  for (uVar27 = uVar16 >> 2; uVar27 != 0; uVar27 = uVar27 - 1) {
-    *(undefined4 *)pcVar32 = *(undefined4 *)pcVar33;
-    pcVar33 = pcVar33 + 4;
-    pcVar32 = pcVar32 + 4;
-  }
-  for (uVar16 = uVar16 & 3; uVar16 != 0; uVar16 = uVar16 - 1) {
-    *pcVar32 = *pcVar33;
-    pcVar33 = pcVar33 + 1;
-    pcVar32 = pcVar32 + 1;
-  }
+  memmove(pcVar32, pcVar33, uVar16); /* compiler REP MOVS byte copy */
 switchD_0044fe4c_default:
   puVar21 = &this_00->field_01D5;
   iVar13 = STT3DSprC::LoadSequence((STT3DSprC *)puVar21,0xc,DAT_0080677c,local_74,0x1d);

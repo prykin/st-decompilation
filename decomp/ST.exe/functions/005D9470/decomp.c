@@ -29,7 +29,6 @@ int __thiscall SIDTy::GetMessage(SIDTy *this,STMessage *message)
   undefined4 *puVar14;
   uint *puVar15;
   uint uVar16;
-  uint uVar17;
   uint *puVar18;
   UINT resourceId;
   byte *pbVar19;
@@ -116,16 +115,7 @@ int __thiscall SIDTy::GetMessage(SIDTy *this,STMessage *message)
         puVar1 = &this_00->field_1CD4;
         pcVar13 = pcVar20 + -uVar16;
         pcVar20 = puVar1;
-        for (uVar17 = uVar16 >> 2; uVar17 != 0; uVar17 = uVar17 - 1) {
-          *(undefined4 *)pcVar20 = *(undefined4 *)pcVar13;
-          pcVar13 = pcVar13 + 4;
-          pcVar20 = pcVar20 + 4;
-        }
-        for (uVar16 = uVar16 & 3; uVar16 != 0; uVar16 = uVar16 - 1) {
-          *pcVar20 = *pcVar13;
-          pcVar13 = pcVar13 + 1;
-          pcVar20 = pcVar20 + 1;
-        }
+        memmove(pcVar20, pcVar13, uVar16); /* compiler REP MOVS byte copy */
         FUN_006b7780(puVar1,puVar1);
         if (this_00->field_1CD4 != '\0') {
           if (this_00->field_1A5F == '\0') {

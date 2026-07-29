@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __fastcall FUN_00521cf0(AnonShape_00521CF0_154649D2 *param_1)
 
@@ -62,16 +64,7 @@ void __fastcall FUN_00521cf0(AnonShape_00521CF0_154649D2 *param_1)
         uVar10 = ~uVar10;
         pcVar7 = pcVar8 + -uVar10;
         pcVar8 = _Str1;
-        for (uVar11 = uVar10 >> 2; uVar11 != 0; uVar11 = uVar11 - 1) {
-          *(undefined4 *)pcVar8 = *(undefined4 *)pcVar7;
-          pcVar7 = pcVar7 + 4;
-          pcVar8 = pcVar8 + 4;
-        }
-        for (uVar10 = uVar10 & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
-          *pcVar8 = *pcVar7;
-          pcVar7 = pcVar7 + 1;
-          pcVar8 = pcVar8 + 1;
-        }
+        memmove(pcVar8, pcVar7, uVar10); /* compiler REP MOVS byte copy */
         FUN_006b77e0(_Str1,_Str1);
         FUN_006b7780(_Str1,_Str1);
         iVar6 = Library::MSVCRT::_strncmp(_Str1,"/WAITING",8);
@@ -313,16 +306,7 @@ void __fastcall FUN_00521cf0(AnonShape_00521CF0_154649D2 *param_1)
               uVar10 = ~uVar10;
               pcVar7 = pcVar8 + -uVar10;
               pcVar8 = local_474;
-              for (uVar11 = uVar10 >> 2; uVar11 != 0; uVar11 = uVar11 - 1) {
-                *(undefined4 *)pcVar8 = *(undefined4 *)pcVar7;
-                pcVar7 = pcVar7 + 4;
-                pcVar8 = pcVar8 + 4;
-              }
-              for (uVar10 = uVar10 & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
-                *pcVar8 = *pcVar7;
-                pcVar7 = pcVar7 + 1;
-                pcVar8 = pcVar8 + 1;
-              }
+              memmove(pcVar8, pcVar7, uVar10); /* compiler REP MOVS byte copy */
               FUN_006b60b0(local_474,local_474);
             }
             bVar12 = 0;

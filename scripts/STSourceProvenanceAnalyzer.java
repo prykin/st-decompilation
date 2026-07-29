@@ -125,7 +125,6 @@ public class STSourceProvenanceAnalyzer extends GhidraScript {
         rows.sort(Comparator.comparing(row -> row.address));
 
         writeTsv(directory.resolve("source_provenance_proposals.tsv"), rows);
-        writeJsonl(directory.resolve("source_provenance_proposals.jsonl"), rows);
         writeSummary(directory.resolve("source_provenance_summary.txt"), rows);
         long sourceApply = rows.stream().filter(row -> row.sourceApply).count();
         long nameApply = rows.stream().filter(row -> row.nameApply).count();

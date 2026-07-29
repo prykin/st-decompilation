@@ -20,7 +20,6 @@ void __thiscall STAppC::sub_0056F040(STAppC *this)
   char cVar1;
   char *pcVar2;
   uint uVar3;
-  uint uVar4;
   int iVar5;
   char *pcVar6;
   char *pcVar8;
@@ -62,16 +61,7 @@ void __thiscall STAppC::sub_0056F040(STAppC *this)
           uVar3 = ~uVar3;
           pcVar6 = pcVar8 + -uVar3;
           pcVar8 = &this->field_0x1490 + (uint)(byte)this->field_148F * 0x9c;
-          for (uVar4 = uVar3 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
-            *(undefined4 *)pcVar8 = *(undefined4 *)pcVar6;
-            pcVar6 = pcVar6 + 4;
-            pcVar8 = pcVar8 + 4;
-          }
-          for (uVar3 = uVar3 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
-            *pcVar8 = *pcVar6;
-            pcVar6 = pcVar6 + 1;
-            pcVar8 = pcVar8 + 1;
-          }
+          memmove(pcVar8, pcVar6, uVar3); /* compiler REP MOVS byte copy */
         }
         (&this->field_0x14d4)[(uint)(byte)this->field_148F * 0x9c] = *pcVar2;
         (&this->field_0x14d5)[(uint)(byte)this->field_148F * 0x9c] = 1;

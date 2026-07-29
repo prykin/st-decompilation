@@ -1,7 +1,7 @@
 action	target	status	detail
 canonical_system	/SystemClassTy	unchanged	named_methods=11; canonical_type=/SystemClassTy
 ensure_control_command	/SubmarineTitans/Recovered/STControlCommand	unchanged	functions=2; offsets=[1, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14, 15, 16, 17, 19, 20, 23, 24, 27, 28, 29, 32, 36, 41, 44, 50, 136, 228]; operations=[call, ret]; examples=[STAllPlayersC::CmdToPlsObj, STPlaySystemC::SetCtrlCmd]
-ensure_darray	/SubmarineTitans/Recovered/DArrayTy	disabled	apply=0
+ensure_darray	/SubmarineTitans/Recovered/DArrayTy	unchanged	functions=5; offsets=[4, 8, 12, 16, 20, 28]; operations=[helper_calls, runtime_stride]; examples=[DArrayDestroy, DArrayGetElement, DArrayGetNext, DArrayRemoveAt, Library::DKW::TBL::DArrayCreate]
 ensure_message	/SubmarineTitans/Recovered/STMessage	unchanged	functions=105; offsets=[16, 20, 24, 28]; operations=[argument_slots, id_dispatch, ret_4]; examples=[AiBossClassTy::GetMessage, AiEventClassTy::GetMessage, AiFltClassTy::GetMessage, AiPlrClassTy::GetMessage, AiTactClassTy::GetMessage, BehPanelTy::GetMessage, BldBoatPanelTy::GetMessage, BldLabPanelTy::GetMessage]
 ensure_player_temp	/SubmarineTitans/Recovered/GlobalRecords/STPlayerTempSlot	unchanged	functions=6; offsets=[4, 8, 10, 12, 14, 16, 20, 24, 28, 32, 36, 50, 232]; operations=[call, mov]; examples=[STAllPlayersC::AddObjToTmp, STAllPlayersC::AddObjToTmp2, STAllPlayersC::DelObjFromTmps, STAllPlayersC::ResetActivityFromTmp, STAllPlayersC::RestoreTmp, STAllPlayersC::SaveTmp]
 ensure_spatial_descriptors	/SubmarineTitans/Recovered/GlobalRecords/STSpatialGrid16	unchanged	descriptor_candidates=34; required layout is four adjacent 16-bit bounds followed by a pointer

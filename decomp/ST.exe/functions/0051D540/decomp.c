@@ -104,16 +104,7 @@ LAB_0051d689:
     uVar9 = ~uVar9;
     pcVar4 = pcVar12 + -uVar9;
     pcVar12 = (char *)&DAT_0080f33a;
-    for (uVar11 = uVar9 >> 2; uVar11 != 0; uVar11 = uVar11 - 1) {
-      *(undefined4 *)pcVar12 = *(undefined4 *)pcVar4;
-      pcVar4 = pcVar4 + 4;
-      pcVar12 = pcVar12 + 4;
-    }
-    for (uVar9 = uVar9 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {
-      *pcVar12 = *pcVar4;
-      pcVar4 = pcVar4 + 1;
-      pcVar12 = pcVar12 + 1;
-    }
+    memmove(pcVar12, pcVar4, uVar9); /* compiler REP MOVS byte copy */
     ccFntTy::FormIndentText
               (this_00->field_01E0,(char *)&DAT_0080f33a,&DAT_0080f33a," ,.;:!?/\\()[]{}",
                (uint *)&DAT_007c21ec,0x19c,&DAT_007c2198,1);

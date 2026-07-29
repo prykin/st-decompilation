@@ -733,8 +733,20 @@ public class STLocalLifetimeApplier extends GhidraScript {
 
     private boolean equivalentType(DataType left, DataType right) {
         if (left == null || right == null) return left == right;
-        return left.isEquivalent(right) ||
-            typeSpecification(left).equals(typeSpecification(right));
+        if (left.isEquivalent(right) ||
+                typeSpecification(left).equals(typeSpecification(right)))
+            return true;
+        left = untypedef(left);
+        right = untypedef(right);
+        if (left == null || right == null) return left == right;
+        if (left.isEquivalent(right) ||
+                left.getPathName().equals(right.getPathName()))
+            return true;
+        if (left instanceof Pointer leftPointer &&
+                right instanceof Pointer rightPointer)
+            return equivalentType(leftPointer.getDataType(),
+                rightPointer.getDataType());
+        return false;
     }
 
     private boolean trustedReturn(Function function) {

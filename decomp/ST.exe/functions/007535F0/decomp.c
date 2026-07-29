@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeRepairApplier] Propagated parameter 0.
    Evidence: 007535F0 -> 0072F110 @ 007536C3 | 007535F0 -> 0072F110 @ 00753784
@@ -77,16 +79,7 @@ int FUN_007535f0(char *_Drive)
     } while (cVar1 != '\0');
     pcVar6 = pcVar9 + -uVar4;
     pcVar9 = pcVar8 + -1;
-    for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
-      *(undefined4 *)pcVar9 = *(undefined4 *)pcVar6;
-      pcVar6 = pcVar6 + 4;
-      pcVar9 = pcVar9 + 4;
-    }
-    for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
-      *pcVar9 = *pcVar6;
-      pcVar6 = pcVar6 + 1;
-      pcVar9 = pcVar9 + 1;
-    }
+    memmove(pcVar9, pcVar6, uVar4); /* compiler REP MOVS byte copy */
   }
   iVar2 = FUN_00754f40(local_108);
   if (iVar2 == 0) {
@@ -144,16 +137,7 @@ int FUN_007535f0(char *_Drive)
     } while (cVar1 != '\0');
     pcVar7 = pcVar6 + -uVar4;
     pcVar6 = pcVar9 + -1;
-    for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
-      *(undefined4 *)pcVar6 = *(undefined4 *)pcVar7;
-      pcVar7 = pcVar7 + 4;
-      pcVar6 = pcVar6 + 4;
-    }
-    for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
-      *pcVar6 = *pcVar7;
-      pcVar7 = pcVar7 + 1;
-      pcVar6 = pcVar6 + 1;
-    }
+    memmove(pcVar6, pcVar7, uVar4); /* compiler REP MOVS byte copy */
   }
   DVar3 = GetFileAttributesA(local_108);
   return (uint)(DVar3 != 0xffffffff);

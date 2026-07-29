@@ -221,7 +221,6 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         writeTypes(directory.resolve("pointer_shape_type_proposals.tsv"), analysis.types);
         writeFields(directory.resolve("pointer_shape_field_proposals.tsv"), analysis.fields);
         writeTargets(directory.resolve("pointer_shape_target_proposals.tsv"), analysis.targets);
-        writeTargetJson(directory.resolve("pointer_shape_target_proposals.jsonl"), analysis.targets);
         writeFailures(directory.resolve("pointer_shape_decompile_failures.tsv"));
         writeSummary(directory.resolve("pointer_shape_summary.txt"), analysis);
 

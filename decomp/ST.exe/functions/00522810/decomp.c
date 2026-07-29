@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
@@ -9,7 +11,6 @@ void FUN_00522810(char *param_1)
   ST3DSMAPContext *pSVar2;
   int iVar3;
   uint uVar4;
-  uint uVar5;
   char *pcVar6;
   char *pcVar7;
   InternalExceptionFrame local_4c;
@@ -35,16 +36,7 @@ void FUN_00522810(char *param_1)
   uVar4 = ~uVar4;
   pcVar6 = pcVar6 + -uVar4;
   pcVar7 = _Str1;
-  for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
-    *(undefined4 *)pcVar7 = *(undefined4 *)pcVar6;
-    pcVar6 = pcVar6 + 4;
-    pcVar7 = pcVar7 + 4;
-  }
-  for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
-    *pcVar7 = *pcVar6;
-    pcVar6 = pcVar6 + 1;
-    pcVar7 = pcVar7 + 1;
-  }
+  memmove(pcVar7, pcVar6, uVar4); /* compiler REP MOVS byte copy */
   FUN_006b77e0(_Str1,(byte *)_Str1);
   FUN_006b7780(_Str1,_Str1);
   if (_DAT_008087a1 != 0) {

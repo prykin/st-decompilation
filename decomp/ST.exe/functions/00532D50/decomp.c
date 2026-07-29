@@ -360,16 +360,7 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
           } while (cVar1 != '\0');
           pbVar14 = pbVar17 + -uVar12;
           pbVar17 = (byte *)(pcVar16 + -1);
-          for (uVar13 = uVar12 >> 2; uVar13 != 0; uVar13 = uVar13 - 1) {
-            *(undefined4 *)pbVar17 = *(undefined4 *)pbVar14;
-            pbVar14 = pbVar14 + 4;
-            pbVar17 = pbVar17 + 4;
-          }
-          for (uVar12 = uVar12 & 3; uVar12 != 0; uVar12 = uVar12 - 1) {
-            *pbVar17 = *pbVar14;
-            pbVar14 = pbVar14 + 1;
-            pbVar17 = pbVar17 + 1;
-          }
+          memmove(pbVar17, pbVar14, uVar12); /* compiler REP MOVS byte copy */
           this_00 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0
                                        (0x345,&local_10->field_006C,0,0,0);
           puVar7 = cMf32::RecGet(this_00,0x80,PTR_s_SAVE_DESC_0079ad04,(int *)&local_1c,0);

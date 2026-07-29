@@ -179,16 +179,7 @@ cf_continue_loop_0068D1EB:
           uVar7 = ~uVar7;
           pbVar4 = pbVar16 + -uVar7;
           pbVar16 = (byte *)&DAT_0084790c;
-          for (uVar8 = uVar7 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
-            *(undefined4 *)pbVar16 = *(undefined4 *)pbVar4;
-            pbVar4 = pbVar4 + 4;
-            pbVar16 = pbVar16 + 4;
-          }
-          for (uVar7 = uVar7 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-            *pbVar16 = *pbVar4;
-            pbVar4 = pbVar4 + 1;
-            pbVar16 = pbVar16 + 1;
-          }
+          memmove(pbVar16, pbVar4, uVar7); /* compiler REP MOVS byte copy */
         }
         iVar15 = 0x3fe;
         Library::MSVCRT::_strncpy((char *)&DAT_00847d0c,DAT_0085755c,0x3fe);
@@ -492,16 +483,7 @@ cf_continue_loop_0068D1EB:
         uVar7 = ~uVar7;
         pbVar4 = pbVar4 + -uVar7;
         pbVar16 = (byte *)&DAT_0084790c;
-        for (uVar8 = uVar7 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
-          *(undefined4 *)pbVar16 = *(undefined4 *)pbVar4;
-          pbVar4 = pbVar4 + 4;
-          pbVar16 = pbVar16 + 4;
-        }
-        for (uVar7 = uVar7 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-          *pbVar16 = *pbVar4;
-          pbVar4 = pbVar4 + 1;
-          pbVar16 = pbVar16 + 1;
-        }
+        memmove(pbVar16, pbVar4, uVar7); /* compiler REP MOVS byte copy */
       }
       param_3[1] = (int)&DAT_0084790c;
       Library::MSVCRT::_strncpy((char *)&DAT_00847d0c,DAT_0085755c,0x3fe);
@@ -562,16 +544,7 @@ cf_continue_loop_0068D1EB:
       uVar7 = ~uVar7;
       pcVar13 = pcVar11 + -uVar7;
       pcVar11 = (char *)&DAT_00847d0c;
-      for (uVar8 = uVar7 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
-        *(undefined4 *)pcVar11 = *(undefined4 *)pcVar13;
-        pcVar13 = pcVar13 + 4;
-        pcVar11 = pcVar11 + 4;
-      }
-      for (uVar7 = uVar7 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-        *pcVar11 = *pcVar13;
-        pcVar13 = pcVar13 + 1;
-        pcVar11 = pcVar11 + 1;
-      }
+      memmove(pcVar11, pcVar13, uVar7); /* compiler REP MOVS byte copy */
       param_3[3] = (int)&DAT_00847d0c;
       param_3[4] = (int)&DAT_008488b4;
     }

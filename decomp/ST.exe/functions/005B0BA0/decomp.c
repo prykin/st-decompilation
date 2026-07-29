@@ -946,16 +946,7 @@ LAB_005b1644:
     uVar26 = ~uVar26;
     pcVar18 = pcVar21 + -uVar26;
     pcVar21 = (char *)&DAT_0080ee1a;
-    for (uVar16 = uVar26 >> 2; uVar16 != 0; uVar16 = uVar16 - 1) {
-      *(undefined4 *)pcVar21 = *(undefined4 *)pcVar18;
-      pcVar18 = pcVar18 + 4;
-      pcVar21 = pcVar21 + 4;
-    }
-    for (uVar26 = uVar26 & 3; uVar26 != 0; uVar26 = uVar26 - 1) {
-      *pcVar21 = *pcVar18;
-      pcVar18 = pcVar18 + 1;
-      pcVar21 = pcVar21 + 1;
-    }
+    memmove(pcVar21, pcVar18, uVar26); /* compiler REP MOVS byte copy */
     uVar26 = 0xffffffff;
     pcVar18 = &DAT_00807680;
     do {
@@ -1296,16 +1287,7 @@ LAB_005b1644:
     uVar26 = ~uVar26;
     pcVar18 = pcVar21 + -uVar26;
     pcVar21 = (char *)&DAT_0080ee1a;
-    for (uVar16 = uVar26 >> 2; uVar16 != 0; uVar16 = uVar16 - 1) {
-      *(undefined4 *)pcVar21 = *(undefined4 *)pcVar18;
-      pcVar18 = pcVar18 + 4;
-      pcVar21 = pcVar21 + 4;
-    }
-    for (uVar26 = uVar26 & 3; uVar26 != 0; uVar26 = uVar26 - 1) {
-      *pcVar21 = *pcVar18;
-      pcVar18 = pcVar18 + 1;
-      pcVar21 = pcVar21 + 1;
-    }
+    memmove(pcVar21, pcVar18, uVar26); /* compiler REP MOVS byte copy */
     if (this_01->field_1A64 != 0) {
       ShowDescription(this_01,this_01->field_1C93);
       this_01->field_1A64 = 0;

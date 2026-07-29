@@ -588,16 +588,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
         uVar16 = ~uVar16;
         pcVar12 = pcVar21 + -uVar16;
         pcVar21 = (char *)&DAT_0080f33a;
-        for (uVar18 = uVar16 >> 2; uVar18 != 0; uVar18 = uVar18 - 1) {
-          *(undefined4 *)pcVar21 = *(undefined4 *)pcVar12;
-          pcVar12 = pcVar12 + 4;
-          pcVar21 = pcVar21 + 4;
-        }
-        for (uVar16 = uVar16 & 3; uVar16 != 0; uVar16 = uVar16 - 1) {
-          *pcVar21 = *pcVar12;
-          pcVar12 = pcVar12 + 1;
-          pcVar21 = pcVar21 + 1;
-        }
+        memmove(pcVar21, pcVar12, uVar16); /* compiler REP MOVS byte copy */
         puVar13 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n');
         pUVar7 = local_8;
         while (local_8 = pUVar7, puVar13 != (uint *)0x0) {

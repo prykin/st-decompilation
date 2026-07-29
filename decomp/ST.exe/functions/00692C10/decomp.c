@@ -129,16 +129,7 @@ FUN_00692c10(Global_sub_00692C10_param_1Enum param_1,int param_2,undefined4 *par
             uVar3 = ~uVar3;
             pcVar8 = pcVar9 + -uVar3;
             pcVar9 = (char *)&DAT_00853d32;
-            for (uVar6 = uVar3 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-              *(undefined4 *)pcVar9 = *(undefined4 *)pcVar8;
-              pcVar8 = pcVar8 + 4;
-              pcVar9 = pcVar9 + 4;
-            }
-            for (uVar3 = uVar3 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
-              *pcVar9 = *pcVar8;
-              pcVar8 = pcVar8 + 1;
-              pcVar9 = pcVar9 + 1;
-            }
+            memmove(pcVar9, pcVar8, uVar3); /* compiler REP MOVS byte copy */
           }
           return &DAT_00853cd8;
         }
@@ -178,16 +169,7 @@ FUN_00692c10(Global_sub_00692C10_param_1Enum param_1,int param_2,undefined4 *par
         uVar3 = ~uVar3;
         pcVar8 = pcVar9 + -uVar3;
         pcVar9 = (char *)&DAT_00853d32;
-        for (uVar6 = uVar3 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-          *(undefined4 *)pcVar9 = *(undefined4 *)pcVar8;
-          pcVar8 = pcVar8 + 4;
-          pcVar9 = pcVar9 + 4;
-        }
-        for (uVar3 = uVar3 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
-          *pcVar9 = *pcVar8;
-          pcVar8 = pcVar8 + 1;
-          pcVar9 = pcVar9 + 1;
-        }
+        memmove(pcVar9, pcVar8, uVar3); /* compiler REP MOVS byte copy */
         _DAT_00853d72 = param_5;
         return &DAT_00853cd8;
       case CASE_14:

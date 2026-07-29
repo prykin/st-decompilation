@@ -95,7 +95,6 @@ public class STConstructorAnalyzer extends GhidraScript {
 
         Path directory = proposalsFile.getAbsoluteFile().getParentFile().toPath();
         writeConstructors(directory.resolve("constructor_proposals.tsv"), constructors);
-        writeConstructorsJson(directory.resolve("constructor_proposals.jsonl"), constructors);
         writeHierarchy(directory.resolve("constructor_hierarchy.tsv"), hierarchy);
         writeSizes(directory.resolve("constructor_class_sizes.tsv"), sizes);
         writeSummary(directory.resolve("constructor_summary.txt"), constructors, hierarchy, sizes,

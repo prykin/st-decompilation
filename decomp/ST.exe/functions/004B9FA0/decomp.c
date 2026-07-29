@@ -1082,12 +1082,7 @@ int __thiscall TLOBaseTy::GetMessage(TLOBaseTy *this,STMessage *message)
       local_10 = (byte *)Library::DKW::LIB::FUN_006aac10((uint)local_18);
       ppbVar35 = local_4bc;
       pbVar36 = local_10;
-      for (iVar17 = 0xfd; iVar17 != 0; iVar17 = iVar17 + -1) {
-        *(byte **)pbVar36 = *ppbVar35;
-        ppbVar35 = ppbVar35 + 1;
-        pbVar36 = pbVar36 + 4;
-      }
-      *(undefined2 *)pbVar36 = *(undefined2 *)ppbVar35;
+      memmove(pbVar36, ppbVar35, 0x3f6); /* compiler REP MOVS byte copy */
       uVar30 = this_00->field_03D4 * 0x27;
       pAVar19 = this_00->field_0607;
       pbVar36 = local_10 + local_ea;
@@ -1141,16 +1136,7 @@ int __thiscall TLOBaseTy::GetMessage(TLOBaseTy *this,STMessage *message)
       }
       pbVar36 = local_8;
       pbVar42 = local_10 + local_ca;
-      for (uVar27 = local_ce >> 2; uVar27 != 0; uVar27 = uVar27 - 1) {
-        *(undefined4 *)pbVar42 = *(undefined4 *)pbVar36;
-        pbVar36 = pbVar36 + 4;
-        pbVar42 = pbVar42 + 4;
-      }
-      for (local_ce = local_ce & 3; local_ce != 0; local_ce = local_ce - 1) {
-        *pbVar42 = *pbVar36;
-        pbVar36 = pbVar36 + 1;
-        pbVar42 = pbVar42 + 1;
-      }
+      memmove(pbVar42, pbVar36, local_ce); /* compiler REP MOVS byte copy */
       STPlaySystemC::SaveObjData(g_playSystem_00802A38,this_00->field_0018,local_10,local_18);
       if (local_40 != (byte *)0x0) {
         FreeAndNull(&local_40);

@@ -75,7 +75,6 @@ public class STGlobalDataAnalyzer extends GhidraScript {
         List<Proposal> proposals = makeProposals();
         List<PointerAudit> pointerAudit = pointerAudit(proposals);
         writeTsv(directory.resolve("global_data_proposals.tsv"), proposals);
-        writeJson(directory.resolve("global_data_proposals.jsonl"), proposals);
         writePointerAudit(directory.resolve("global_pointer_audit.tsv"), pointerAudit);
         writePointerSummary(directory.resolve("global_pointer_summary.txt"), pointerAudit);
         writeSummary(directory.resolve("global_data_summary.txt"), proposals,

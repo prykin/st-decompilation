@@ -83,7 +83,6 @@ public class STCallsiteConventionAnalyzer extends GhidraScript {
 
         Path directory = input.getParent();
         writeProposals(directory.resolve("callsite_convention_proposals.tsv"), proposals);
-        writeJson(directory.resolve("callsite_convention_proposals.jsonl"), proposals);
         writeCallsites(directory.resolve("callsite_convention_calls.tsv"), callsites);
         writeSummary(directory.resolve("callsite_convention_summary.txt"), proposals, callsites);
         println("Callsite convention analysis complete: " + directory);

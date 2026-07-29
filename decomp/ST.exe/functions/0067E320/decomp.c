@@ -15,7 +15,6 @@ LPSTR __cdecl GetStrategNameDB(int param_1,int param_2)
   LPSTR pCVar4;
   int iVar5;
   uint uVar6;
-  uint uVar7;
   char *pcVar8;
   char *pcVar9;
   char local_88 [64];
@@ -51,16 +50,7 @@ LPSTR __cdecl GetStrategNameDB(int param_1,int param_2)
   uVar6 = ~uVar6;
   pcVar8 = pcVar8 + -uVar6;
   pcVar9 = local_88;
-  for (uVar7 = uVar6 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-    *(undefined4 *)pcVar9 = *(undefined4 *)pcVar8;
-    pcVar8 = pcVar8 + 4;
-    pcVar9 = pcVar9 + 4;
-  }
-  for (uVar6 = uVar6 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
-    *pcVar9 = *pcVar8;
-    pcVar8 = pcVar8 + 1;
-    pcVar9 = pcVar9 + 1;
-  }
+  memmove(pcVar9, pcVar8, uVar6); /* compiler REP MOVS byte copy */
   iVar3 = 0;
   do {
     pCVar4 = FUN_006f2c00(local_88,3,iVar3);

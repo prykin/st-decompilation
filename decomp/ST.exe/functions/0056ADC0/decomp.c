@@ -1173,16 +1173,7 @@ switchD_0056b4ce_caseD_57:
         } while (cVar2 != '\0');
         pcVar12 = pcVar14 + -uVar17;
         pcVar14 = pcVar22 + -1;
-        for (uVar18 = uVar17 >> 2; uVar18 != 0; uVar18 = uVar18 - 1) {
-          *(undefined4 *)pcVar14 = *(undefined4 *)pcVar12;
-          pcVar12 = pcVar12 + 4;
-          pcVar14 = pcVar14 + 4;
-        }
-        for (uVar17 = uVar17 & 3; uVar17 != 0; uVar17 = uVar17 - 1) {
-          *pcVar14 = *pcVar12;
-          pcVar12 = pcVar12 + 1;
-          pcVar14 = pcVar14 + 1;
-        }
+        memmove(pcVar14, pcVar12, uVar17); /* compiler REP MOVS byte copy */
         hFile = CreateFileA(&pSVar19->field_7B06,0x40000000,1,(LPSECURITY_ATTRIBUTES)0x0,2,0x80,
                             (HANDLE)0x0);
         if ((hFile != (HANDLE)0xffffffff) &&

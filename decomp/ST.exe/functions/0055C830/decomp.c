@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_0055C830_param_1Enum. Cases:
@@ -329,16 +331,7 @@ LAB_0055c9c5:
         uVar6 = ~uVar6;
         pcVar4 = pcVar3 + -uVar6;
         pcVar3 = local_488;
-        for (uVar7 = uVar6 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-          *(undefined4 *)pcVar3 = *(undefined4 *)pcVar4;
-          pcVar4 = pcVar4 + 4;
-          pcVar3 = pcVar3 + 4;
-        }
-        for (uVar6 = uVar6 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
-          *pcVar3 = *pcVar4;
-          pcVar4 = pcVar4 + 1;
-          pcVar3 = pcVar3 + 1;
-        }
+        memmove(pcVar3, pcVar4, uVar6); /* compiler REP MOVS byte copy */
         Library::MSVCRT::_strncpy(local_448,param_5,0x410);
         local_345 = 0;
         StartSystemTy::AddToChat(g_startSystem_0081176C,(int)local_488);

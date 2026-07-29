@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STMethodOwnerApplier] Structural method owner recovered as BldObjPanelTy.
    Evidence: this_call_owners=[BldObjPanelTy]; agreed_this_calls=1; incoming_this_accesses=18;
@@ -17,7 +19,7 @@ void __thiscall BldObjPanelTy::sub_004F0C80(BldObjPanelTy *this)
   Global_sub_00523410_param_1Enum *pGVar4;
   byte *pbVar5;
   undefined4 *puVar6;
-  undefined4 *puVar7;
+  byte *puVar7;
   undefined4 uVar8;
   int local_14;
   undefined4 *local_c;
@@ -61,13 +63,8 @@ LAB_004f0da7:
         local_c[-2] = UVar1;
         if ((char)pGVar4[2] == 0) {
           pbVar5 = (byte *)((int)pGVar4 + 0x12);
-          puVar7 = local_c;
-          for (iVar3 = 7; iVar3 != 0; iVar3 = iVar3 + -1) {
-            *puVar7 = *(undefined4 *)pbVar5;
-            pbVar5 = pbVar5 + 4;
-            puVar7 = puVar7 + 1;
-          }
-          *(undefined2 *)puVar7 = *(undefined2 *)pbVar5;
+          puVar7 = (byte *)(local_c);
+          memmove(puVar7, pbVar5, 0x1e); /* compiler REP MOVS byte copy */
         }
         else {
           *local_c = *(undefined4 *)((int)pGVar4 + 10);

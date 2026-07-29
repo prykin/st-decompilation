@@ -267,16 +267,7 @@ switchD_0056fad2_caseD_6105:
       uVar25 = ~uVar25;
       pbVar22 = (byte *)(pcVar23 + -uVar25);
       pbVar26 = &pSVar11->field_76F6;
-      for (uVar19 = uVar25 >> 2; uVar19 != 0; uVar19 = uVar19 - 1) {
-        *(undefined4 *)pbVar26 = *(undefined4 *)pbVar22;
-        pbVar22 = pbVar22 + 4;
-        pbVar26 = pbVar26 + 4;
-      }
-      for (uVar25 = uVar25 & 3; uVar25 != 0; uVar25 = uVar25 - 1) {
-        *pbVar26 = *pbVar22;
-        pbVar22 = pbVar22 + 1;
-        pbVar26 = pbVar26 + 1;
-      }
+      memmove(pbVar26, pbVar22, uVar25); /* compiler REP MOVS byte copy */
       OpenGameDBs(pSVar11);
       StartGame(pSVar11);
       g_currentExceptionFrame = local_a4.previous;
@@ -445,16 +436,7 @@ switchD_0056fad2_caseD_6102:
             uVar25 = ~uVar25;
             pbVar22 = pbVar26 + -uVar25;
             pbVar26 = &pSVar11->field_0x77fa;
-            for (uVar19 = uVar25 >> 2; uVar19 != 0; uVar19 = uVar19 - 1) {
-              *(undefined4 *)pbVar26 = *(undefined4 *)pbVar22;
-              pbVar22 = pbVar22 + 4;
-              pbVar26 = pbVar26 + 4;
-            }
-            for (uVar25 = uVar25 & 3; uVar25 != 0; uVar25 = uVar25 - 1) {
-              *pbVar26 = *pbVar22;
-              pbVar22 = pbVar22 + 1;
-              pbVar26 = pbVar26 + 1;
-            }
+            memmove(pbVar26, pbVar22, uVar25); /* compiler REP MOVS byte copy */
             if ((pSVar11->field_1180 == CASE_3) || (pSVar11->field_1180 == CASE_B)) {
               pSVar11->field_1180 = CASE_3;
             }

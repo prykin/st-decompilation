@@ -190,16 +190,7 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,undefined1 param_1)
       uVar14 = ~uVar14;
       pcVar12 = pcVar21 + -uVar14;
       ppDVar18 = (DArrayTy **)(local_2a4 + 1);
-      for (uVar15 = uVar14 >> 2; uVar15 != 0; uVar15 = uVar15 - 1) {
-        *ppDVar18 = *(DArrayTy **)pcVar12;
-        pcVar12 = pcVar12 + 4;
-        ppDVar18 = ppDVar18 + 1;
-      }
-      for (uVar14 = uVar14 & 3; uVar14 != 0; uVar14 = uVar14 - 1) {
-        *(char *)ppDVar18 = *pcVar12;
-        pcVar12 = pcVar12 + 1;
-        ppDVar18 = (DArrayTy **)((int)ppDVar18 + 1);
-      }
+      memmove(ppDVar18, pcVar12, uVar14); /* compiler REP MOVS byte copy */
       local_c = (DArrayTy **)(local_2a4 + 1);
       cMf32::ToBeg(pcVar2,FUN_006f2d10,local_2a4);
       pcVar2 = local_14;

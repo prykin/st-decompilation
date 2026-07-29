@@ -24,7 +24,6 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004EEFB0::FUN_005c8200
   ushort *puVar4;
   DWORD DVar5;
   uint uVar6;
-  uint uVar7;
   byte *puVar8;
   byte *pbVar9;
   uint *puVar10;
@@ -138,16 +137,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004EEFB0::FUN_005c8200
     uVar6 = ~uVar6;
     pbVar9 = pbVar12 + -uVar6;
     pbVar12 = (byte *)&DAT_0080c3c3;
-    for (uVar7 = uVar6 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *(undefined4 *)pbVar12 = *(undefined4 *)pbVar9;
-      pbVar9 = pbVar9 + 4;
-      pbVar12 = pbVar12 + 4;
-    }
-    for (uVar6 = uVar6 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
-      *pbVar12 = *pbVar9;
-      pbVar9 = pbVar9 + 1;
-      pbVar12 = pbVar12 + 1;
-    }
+    memmove(pbVar12, pbVar9, uVar6); /* compiler REP MOVS byte copy */
   }
   local_8 = &DAT_00853de0;
   puVar4 = cMf32::RecGet(this_00->field_1F3F,0xc,PTR_s_GENERATE_RND_0079c0f8,(int *)&local_8,0);

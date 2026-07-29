@@ -25,7 +25,6 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
   DArrayTy *pDVar8;
   int iVar9;
   uint uVar10;
-  uint uVar11;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
   char *pcVar12;
@@ -94,16 +93,7 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
         uVar10 = ~uVar10;
         pcVar12 = pcVar12 + -uVar10;
         pcVar13 = &DAT_008087c8 + this_00->field_05D7 * 0x51;
-        for (uVar11 = uVar10 >> 2; uVar11 != 0; uVar11 = uVar11 - 1) {
-          *(undefined4 *)pcVar13 = *(undefined4 *)pcVar12;
-          pcVar12 = pcVar12 + 4;
-          pcVar13 = pcVar13 + 4;
-        }
-        for (uVar10 = uVar10 & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
-          *pcVar13 = *pcVar12;
-          pcVar12 = pcVar12 + 1;
-          pcVar13 = pcVar13 + 1;
-        }
+        memmove(pcVar13, pcVar12, uVar10); /* compiler REP MOVS byte copy */
         if (local_18 != (byte *)0x0) {
           FreeAndNull(&local_18);
         }

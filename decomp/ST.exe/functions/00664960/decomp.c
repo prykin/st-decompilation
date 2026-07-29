@@ -452,11 +452,7 @@ void __fastcall AiFltClassTy::sub_00664960(AiFltClassTy *param_1)
     case 0x39:
       puVar19 = local_44;
       puVar20 = (uint *)&param_1->field_0xb7;
-      for (iVar11 = 0xd; iVar11 != 0; iVar11 = iVar11 + -1) {
-        *puVar20 = *puVar19;
-        puVar19 = puVar19 + 1;
-        puVar20 = puVar20 + 1;
-      }
+      memmove(puVar20, puVar19, 0x34); /* compiler REP MOVS byte copy */
       if (param_1->field_00B3 != 0) {
         sub_0065F980(param_1);
       }

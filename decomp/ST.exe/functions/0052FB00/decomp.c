@@ -859,16 +859,7 @@ cf_common_join_005305BC:
       } while (cVar1 != '\0');
       pcVar8 = pcVar7 + -uVar38;
       pcVar7 = pcVar20 + -1;
-      for (uVar18 = uVar38 >> 2; uVar18 != 0; uVar18 = uVar18 - 1) {
-        *(undefined4 *)pcVar7 = *(undefined4 *)pcVar8;
-        pcVar8 = pcVar8 + 4;
-        pcVar7 = pcVar7 + 4;
-      }
-      for (uVar38 = uVar38 & 3; uVar38 != 0; uVar38 = uVar38 - 1) {
-        *pcVar7 = *pcVar8;
-        pcVar8 = pcVar8 + 1;
-        pcVar7 = pcVar7 + 1;
-      }
+      memmove(pcVar7, pcVar8, uVar38); /* compiler REP MOVS byte copy */
       FUN_006b78c0(&this_00->field_006C,&this_00->field_006C);
       pvVar14 = FindFirstChangeNotificationA(&this_00->field_006C,0,1);
       this_00->field_01DD = pvVar14;

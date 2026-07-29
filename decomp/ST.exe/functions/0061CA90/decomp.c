@@ -216,11 +216,7 @@ LAB_0061cd61:
     if (0 < iVar12) {
       local_38 = 1;
       piVar17 = local_800 + local_34 * 0xb;
-      for (iVar16 = 0xb; iVar16 != 0; iVar16 = iVar16 + -1) {
-        *param_4 = *piVar17;
-        piVar17 = piVar17 + 1;
-        param_4 = param_4 + 1;
-      }
+      memmove(param_4, piVar17, 0x2c); /* compiler REP MOVS byte copy */
     }
   }
   return local_38;

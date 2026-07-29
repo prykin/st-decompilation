@@ -14,9 +14,8 @@ byte * __thiscall STManRub3C::sub_0062D670(STManRub3C *this,uint *param_1)
 {
   uint *puVar1;
   DArrayTy **ppDVar2;
-  int iVar3;
   uint uVar4;
-  undefined4 *puVar5;
+  byte *puVar5;
   uint *puVar6;
   byte *pbVar7;
   uint *puVar8;
@@ -32,17 +31,13 @@ byte * __thiscall STManRub3C::sub_0062D670(STManRub3C *this,uint *param_1)
   local_10 = (byte *)Library::DKW::LIB::FUN_006aac70(0x98);
   this->field_0028 = 2;
   if (this == (STManRub3C *)0x0) {
-    puVar5 = (undefined4 *)0x0;
+    puVar5 = (byte *)0x0;
   }
   else {
-    puVar5 = &this->field_001C;
+    puVar5 = (byte *)(&this->field_001C);
   }
   pbVar7 = local_10;
-  for (iVar3 = 0x26; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *(undefined4 *)pbVar7 = *puVar5;
-    puVar5 = puVar5 + 1;
-    pbVar7 = pbVar7 + 4;
-  }
+  memmove(pbVar7, puVar5, 0x98); /* compiler REP MOVS byte copy */
   *param_1 = 0x98;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_1 = (uint *)0x0;

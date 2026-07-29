@@ -108,7 +108,6 @@ public class STDiscriminatedPayloadAnalyzer extends GhidraScript {
             .thenComparingInt(row -> row.stackOffset));
 
         writeCases(directory.resolve("discriminated_payload_proposals.tsv"), cases);
-        writeCaseJson(directory.resolve("discriminated_payload_proposals.jsonl"), cases);
         writeStacks(directory.resolve("discriminated_stack_proposals.tsv"), stacks);
         writeSummary(directory.resolve("discriminated_payload_summary.txt"),
             families, cases, stacks);

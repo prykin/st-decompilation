@@ -155,16 +155,7 @@ int __thiscall STFishC::GetMessage(STFishC *this,STMessage *message)
     *(uint *)(&local_c->field_0x42 + local_8) = local_10;
     pbVar9 = local_18;
     pbVar12 = &local_c[1].field_0x2 + local_8;
-    for (uVar6 = local_10 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-      *(undefined4 *)pbVar12 = *(undefined4 *)pbVar9;
-      pbVar9 = pbVar9 + 4;
-      pbVar12 = pbVar12 + 4;
-    }
-    for (uVar6 = local_10 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
-      *pbVar12 = *pbVar9;
-      pbVar9 = pbVar9 + 1;
-      pbVar12 = pbVar12 + 1;
-    }
+    memmove(pbVar12, pbVar9, local_10); /* compiler REP MOVS byte copy */
     STPlaySystemC::SaveObjData
               (g_playSystem_00802A38,(int *)this_00->field_0018,(byte *)local_c,
                (AnonShape_0060EA30_DCEB68AD *)(local_10 + 0x46 + local_8));

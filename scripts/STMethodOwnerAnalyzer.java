@@ -103,7 +103,6 @@ public class STMethodOwnerAnalyzer extends GhidraScript {
         }
         proposals.sort(Comparator.comparing(row -> row.address));
         writeTsv(directory.resolve("method_owner_proposals.tsv"), proposals);
-        writeJson(directory.resolve("method_owner_proposals.jsonl"), proposals);
         writeSummary(directory.resolve("method_owner_summary.txt"), proposals, callerMethods,
             typedSingletonCalls);
 
@@ -317,6 +316,8 @@ public class STMethodOwnerAnalyzer extends GhidraScript {
         boolean conventionApply = (strong || alreadyApplied) && !manualSignature &&
             !"__thiscall".equals(function.getCallingConventionName()) && parameterApply;
         boolean thisTypeApply = (strong || alreadyApplied) && !manualSignature &&
+            ("__thiscall".equals(function.getCallingConventionName()) ||
+                conventionApply) &&
             !receiverTypeMatches(function, ownerTypePath);
         String confidence = strong || alreadyApplied ? "high" :
             owners.size() == 1 ? "medium" : "conflict";
@@ -332,6 +333,11 @@ public class STMethodOwnerAnalyzer extends GhidraScript {
         reasons.add("owner_evidence_coverage=" + (adequateCoverage ? "adequate" : "weak"));
         if (ownerTypePath.isBlank()) reasons.add("owner_data_type_missing");
         if (!conventionCandidate) reasons.add("calling_convention_not_receiver_compatible");
+        if ((strong || alreadyApplied) &&
+                !"__thiscall".equals(function.getCallingConventionName()) &&
+                !conventionApply &&
+                !receiverTypeMatches(function, ownerTypePath))
+            reasons.add("receiver_type_review_requires_thiscall_conversion");
         if (manualName) reasons.add("manual_name_preserved");
         if (manualSignature) reasons.add("manual_signature_preserved");
         if (alreadyApplied) reasons.add("previously_applied");

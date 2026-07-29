@@ -358,16 +358,7 @@ switchD_005c1b14_caseD_5:
     uVar17 = ~uVar17;
     pcVar13 = pcVar21 + -uVar17;
     pcVar21 = (char *)&DAT_0080ee1a;
-    for (uVar18 = uVar17 >> 2; uVar18 != 0; uVar18 = uVar18 - 1) {
-      *(undefined4 *)pcVar21 = *(undefined4 *)pcVar13;
-      pcVar13 = pcVar13 + 4;
-      pcVar21 = pcVar21 + 4;
-    }
-    for (uVar17 = uVar17 & 3; uVar17 != 0; uVar17 = uVar17 - 1) {
-      *pcVar21 = *pcVar13;
-      pcVar13 = pcVar13 + 1;
-      pcVar21 = pcVar21 + 1;
-    }
+    memmove(pcVar21, pcVar13, uVar17); /* compiler REP MOVS byte copy */
     DAT_008087a0 = 8;
     iVar12 = STAppC::sub_0056E9E0((STAppC *)&DAT_00807620,1);
     if (iVar12 != 0) {

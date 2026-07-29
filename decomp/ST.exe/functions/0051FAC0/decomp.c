@@ -11,7 +11,6 @@ void __thiscall FUN_0051fac0(void *this,char *param_1,byte param_2,char param_3,
   char cVar1;
   DWORD DVar2;
   uint uVar3;
-  uint uVar4;
   char *pcVar6;
   char *pcVar7;
 
@@ -29,16 +28,7 @@ void __thiscall FUN_0051fac0(void *this,char *param_1,byte param_2,char param_3,
       uVar3 = ~uVar3;
       pcVar6 = pcVar6 + -uVar3;
       pcVar7 = (char *)((int)this + 0x18);
-      for (uVar4 = uVar3 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
-        *(undefined4 *)pcVar7 = *(undefined4 *)pcVar6;
-        pcVar6 = pcVar6 + 4;
-        pcVar7 = pcVar7 + 4;
-      }
-      for (uVar3 = uVar3 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
-        *pcVar7 = *pcVar6;
-        pcVar6 = pcVar6 + 1;
-        pcVar7 = pcVar7 + 1;
-      }
+      memmove(pcVar7, pcVar6, uVar3); /* compiler REP MOVS byte copy */
       *(byte *)((int)this + 0x11c) = param_2;
       *(byte *)((int)this + 0x11d) = param_3 - 1U;
       if (1 < (byte)(param_3 - 1U)) {

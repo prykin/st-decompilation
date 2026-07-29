@@ -814,16 +814,7 @@ LAB_00507784:
     uVar5 = ~uVar5;
     pcVar8 = pcVar15 + -uVar5;
     pcVar15 = &this_00->field_01E1;
-    for (uVar12 = uVar5 >> 2; uVar12 != 0; uVar12 = uVar12 - 1) {
-      *(undefined4 *)pcVar15 = *(undefined4 *)pcVar8;
-      pcVar8 = pcVar8 + 4;
-      pcVar15 = pcVar15 + 4;
-    }
-    for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-      *pcVar15 = *pcVar8;
-      pcVar8 = pcVar8 + 1;
-      pcVar15 = pcVar15 + 1;
-    }
+    memmove(pcVar15, pcVar8, uVar5); /* compiler REP MOVS byte copy */
     for (puVar9 = Library::MSVCRT::FUN_0072e560((uint *)&this_00->field_01E1,'\n');
         puVar9 != (uint *)0x0; puVar9 = Library::MSVCRT::FUN_0072e560(puVar9,'\n')) {
       *(undefined1 *)puVar9 = 0x20;

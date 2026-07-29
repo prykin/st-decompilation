@@ -455,16 +455,7 @@ LAB_00420678:
     } while (cVar1 != '\0');
     pcVar10 = pcVar12 + -uVar6;
     pcVar12 = pcVar11 + -1;
-    for (uVar8 = uVar6 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
-      *(undefined4 *)pcVar12 = *(undefined4 *)pcVar10;
-      pcVar10 = pcVar10 + 4;
-      pcVar12 = pcVar12 + 4;
-    }
-    for (uVar6 = uVar6 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
-      *pcVar12 = *pcVar10;
-      pcVar10 = pcVar10 + 1;
-      pcVar12 = pcVar12 + 1;
-    }
+    memmove(pcVar12, pcVar10, uVar6); /* compiler REP MOVS byte copy */
     this_00 = &this->field_01D5;
     iVar7 = STT3DSprC::LoadSequence((STT3DSprC *)this_00,0xf,DAT_00806774,local_24,0x1d);
     if (iVar7 != 0) {
@@ -642,16 +633,7 @@ switchD_00420436_caseD_2:
     } while (cVar1 != '\0');
     pcVar10 = pcVar12 + -uVar6;
     pcVar12 = pcVar11 + -1;
-    for (uVar8 = uVar6 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
-      *(undefined4 *)pcVar12 = *(undefined4 *)pcVar10;
-      pcVar10 = pcVar10 + 4;
-      pcVar12 = pcVar12 + 4;
-    }
-    for (uVar6 = uVar6 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
-      *pcVar12 = *pcVar10;
-      pcVar10 = pcVar10 + 1;
-      pcVar12 = pcVar12 + 1;
-    }
+    memmove(pcVar12, pcVar10, uVar6); /* compiler REP MOVS byte copy */
     pcVar10 = &DAT_007a4fb4;
     goto LAB_00420678;
   }

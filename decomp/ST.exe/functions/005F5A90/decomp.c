@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeRepairApplier] Propagated return.
    Evidence: 005F5A90 returns used as parameter 2 of STPlaySystemC::SaveObjData @ 005F3098
@@ -12,22 +14,16 @@ byte * __thiscall STBHEShellC::sub_005F5A90(STBHEShellC *this,int *param_1)
 {
   byte *pbVar1;
   byte *pbVar2;
-  int iVar3;
-  uint uVar4;
-  undefined4 *puVar5;
+  byte *puVar5;
   byte *pbVar6;
   byte *local_c;
   uint local_8;
 
   pbVar1 = (byte *)Library::DKW::LIB::FUN_006aac70(0x128);
   this->field_016D = this->field_001C;
-  puVar5 = (undefined4 *)&this->field_0x4d;
+  puVar5 = (byte *)&this->field_0x4d;
   pbVar6 = pbVar1;
-  for (iVar3 = 0x4a; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *(undefined4 *)pbVar6 = *puVar5;
-    puVar5 = puVar5 + 1;
-    pbVar6 = pbVar6 + 4;
-  }
+  memmove(pbVar6, puVar5, 0x128); /* compiler REP MOVS byte copy */
   pbVar1[0xc] = 2;
   pbVar1[0xd] = 0;
   pbVar1[0xe] = 0;
@@ -38,16 +34,7 @@ byte * __thiscall STBHEShellC::sub_005F5A90(STBHEShellC *this,int *param_1)
     *(uint *)(pbVar2 + 0x128) = local_8;
     pbVar6 = local_c;
     pbVar1 = pbVar2 + 300;
-    for (uVar4 = local_8 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
-      *(undefined4 *)pbVar1 = *(undefined4 *)pbVar6;
-      pbVar6 = pbVar6 + 4;
-      pbVar1 = pbVar1 + 4;
-    }
-    for (uVar4 = local_8 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
-      *pbVar1 = *pbVar6;
-      pbVar6 = pbVar6 + 1;
-      pbVar1 = pbVar1 + 1;
-    }
+    memmove(pbVar1, pbVar6, local_8); /* compiler REP MOVS byte copy */
     if (local_c != (byte *)0x0) {
       FreeAndNull(&local_c);
     }

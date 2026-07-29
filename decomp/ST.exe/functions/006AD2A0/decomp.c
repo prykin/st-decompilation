@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __cdecl FUN_006ad2a0(byte *param_1)
 
@@ -6,7 +8,6 @@ void __cdecl FUN_006ad2a0(byte *param_1)
   DWORD DVar2;
   int iVar3;
   uint uVar4;
-  uint uVar5;
   char *pcVar6;
   char *pcVar7;
   char *pcVar8;
@@ -74,16 +75,7 @@ void __cdecl FUN_006ad2a0(byte *param_1)
     } while (cVar1 != '\0');
     pcVar6 = pcVar8 + -uVar4;
     pcVar8 = pcVar7 + -1;
-    for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
-      *(undefined4 *)pcVar8 = *(undefined4 *)pcVar6;
-      pcVar6 = pcVar6 + 4;
-      pcVar8 = pcVar8 + 4;
-    }
-    for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
-      *pcVar8 = *pcVar6;
-      pcVar6 = pcVar6 + 1;
-      pcVar8 = pcVar8 + 1;
-    }
+    memmove(pcVar8, pcVar6, uVar4); /* compiler REP MOVS byte copy */
   }
   FUN_006ad3a0(local_30c,local_10c,0x40);
   return;

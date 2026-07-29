@@ -146,16 +146,7 @@ int __thiscall AiBossClassTy::GetMessage(AiBossClassTy *this,STMessage *message)
     uVar6 = ~uVar6;
     pcVar8 = pcVar12 + -uVar6;
     pcVar12 = (char *)&DAT_0080c736;
-    for (uVar7 = uVar6 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *(undefined4 *)pcVar12 = *(undefined4 *)pcVar8;
-      pcVar8 = pcVar8 + 4;
-      pcVar12 = pcVar12 + 4;
-    }
-    for (uVar6 = uVar6 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
-      *pcVar12 = *pcVar8;
-      pcVar8 = pcVar8 + 1;
-      pcVar12 = pcVar12 + 1;
-    }
+    memmove(pcVar12, pcVar8, uVar6); /* compiler REP MOVS byte copy */
     if (DAT_008087a0 == '\b') {
       thunk_FUN_006767d0();
     }

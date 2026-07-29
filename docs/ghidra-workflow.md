@@ -148,13 +148,12 @@ loop alive. A remaining changing count after the bound is a hard failure, so an
 unconverged database cannot be exported accidentally.
 Successful mutating modes record a deterministic semantic Program
 fingerprint, the diagnostic Ghidra modification number, the monotonic enum-domain
-state, and hashes of every proposal/apply TSV in `automation_state.tsv` and
-`automation_evidence.jsonl`; export verifies all of them before invoking
-`STDecompExport`. The fingerprint covers loaded memory, disassembly, references,
-comments, functions, symbols, data types, imports/exports, defined data, and
-bookmarks. The volatile modification number is not used as cross-run identity. A
-legacy ledger with the expected one-step counter drift is upgraded once after all
-TSV hashes verify.
+state, and hashes of every proposal/apply TSV in `automation_state.tsv`; export
+verifies all of them before invoking `STDecompExport`. The fingerprint
+covers loaded memory, disassembly, references, comments, functions, symbols,
+data types, imports/exports, defined data, and bookmarks. The volatile
+modification number is not used as cross-run identity. A legacy ledger with the
+expected one-step counter drift is upgraded once after all TSV hashes verify.
 
 Every invocation is staged under `<repo>/recovery/ST.exe/runs/.current` and
 finalized under `runs/<overall-sha256>/`. The directory name has no timestamp; the
@@ -162,7 +161,7 @@ hash covers the semantic state, mode, outcome, and deterministic step results.
 Only the three most recently finalized hash directories are retained, and
 `latest_run.txt` points at the newest hash. An interrupted `.current` directory is
 archived by its content hash on the next invocation. Each retained run contains
-`pipeline.log`, structured `events.jsonl`, `run.json`, `build_manifest.tsv`,
+`pipeline.log`, structured `events.tsv`, `run.json`, `build_manifest.tsv`,
 per-script provider logs, per-step stdout/stderr/metadata, per-pass proposal/apply
 snapshots, final evidence/export artifacts, and full exception traces after a failure.
 The root `pipeline_report.tsv` remains a latest-run compatibility view.
@@ -176,7 +175,7 @@ regressions, critical ABI/decompiler-quality regressions, and any generated
 message-slot regression when the immediately prior corpus already contains it.
 Expected changes between layout and semantic-naming stages are warnings. It writes
 `export_regression_report.tsv` and an atomic `export_receipt.json`. The baseline
-also retains `pseudocode_idioms.jsonl`, so every changed quality row includes a
+also retains the pseudocode-idiom snapshot, so every changed quality row includes a
 sample of the function addresses and signed per-function deltas instead of only
 the corpus-wide total.
 
@@ -303,9 +302,8 @@ appliers.
      projections are marked `ST_VIEW_ONLY`, never semantic anchors.
 2. Run `STDebugSymbolAnalyzer`.
    - Directory: `<repo>/recovery`
-   - Output: `proposals.tsv`, `proposals.jsonl`, `conflicts.jsonl`,
-     `debug_string_proposals.tsv`, `debug_calling_convention_review.tsv`,
-     `summary.txt`
+   - Output: `proposals.tsv`, `debug_string_proposals.tsv`,
+     `debug_calling_convention_review.tsv`, `summary.txt`
 3. Review `proposals.tsv` and run `STDebugSymbolApplier`.
    - File: `<repo>/recovery/ST.exe/proposals.tsv`
    - The sibling `debug_string_proposals.tsv` is loaded automatically. It

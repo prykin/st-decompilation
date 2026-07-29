@@ -18,8 +18,8 @@ address	status	proposed_name	detail
 00417FF0	disabled		all apply flags are 0
 00418010	disabled		all apply flags are 0
 00418030	disabled		all apply flags are 0
-00419C70	conflict	TLOEmbryoTy::sub_00419C70	this_type=conflict(no auto this parameter)
-00419CF0	conflict	TLOEmbryoTy::sub_00419CF0	this_type=conflict(no auto this parameter)
+00419C70	disabled	TLOEmbryoTy::sub_00419C70	all apply flags are 0
+00419CF0	disabled	TLOEmbryoTy::sub_00419CF0	all apply flags are 0
 00419D30	disabled	TLOBaseTy::sub_00419D30	all apply flags are 0
 0041C3F0	disabled	TLOEmbryoTy::sub_0041C3F0	all apply flags are 0
 0041C5A0	disabled		all apply flags are 0
@@ -281,7 +281,7 @@ address	status	proposed_name	detail
 004E80F0	disabled	STAllPlayersC::sub_004E80F0	all apply flags are 0
 004EA620	disabled	TLOBaseTy::sub_004EA620	all apply flags are 0
 004EA6E0	disabled	STAllPlayersC::sub_004EA6E0	all apply flags are 0
-004EAA20	conflict	TLOBaseTy::sub_004EAA20	this_type=conflict(no auto this parameter)
+004EAA20	disabled	TLOBaseTy::sub_004EAA20	all apply flags are 0
 004EB010	disabled	STAllPlayersC::sub_004EB010	all apply flags are 0
 004EB300	disabled	STAllPlayersC::sub_004EB300	all apply flags are 0
 004EF140	disabled	BldBoatPanelTy::sub_004EF140	all apply flags are 0
@@ -663,8 +663,8 @@ address	status	proposed_name	detail
 0065D0F0	disabled	InternalExceptionFrame::sub_0065D0F0	all apply flags are 0
 0065D480	disabled	AiFltClassTy::sub_0065D480	all apply flags are 0
 0065D6A0	disabled	AiFltClassTy::sub_0065D6A0	all apply flags are 0
-0065D6E0	conflict	AiFltClassTy::sub_0065D6E0	this_type=conflict(no auto this parameter)
-0065D720	conflict	AiFltClassTy::sub_0065D720	this_type=conflict(no auto this parameter)
+0065D6E0	disabled	AiFltClassTy::sub_0065D6E0	all apply flags are 0
+0065D720	disabled	AiFltClassTy::sub_0065D720	all apply flags are 0
 0065D940	disabled	AiFltClassTy::sub_0065D940	all apply flags are 0
 0065D9C0	disabled	AiFltClassTy::sub_0065D9C0	all apply flags are 0
 0065DA10	disabled	AiFltClassTy::sub_0065DA10	all apply flags are 0
@@ -676,8 +676,8 @@ address	status	proposed_name	detail
 0065FA60	disabled	AiFltClassTy::sub_0065FA60	all apply flags are 0
 00660F70	disabled	AiFltClassTy::sub_00660F70	all apply flags are 0
 00661580	disabled	AiFltClassTy::sub_00661580	all apply flags are 0
-00661800	conflict	AiFltClassTy::sub_00661800	this_type=conflict(no auto this parameter)
-00661CA0	conflict	AiFltClassTy::sub_00661CA0	this_type=conflict(no auto this parameter)
+00661800	disabled	AiFltClassTy::sub_00661800	all apply flags are 0
+00661CA0	disabled	AiFltClassTy::sub_00661CA0	all apply flags are 0
 00664760	disabled	AiFltClassTy::sub_00664760	all apply flags are 0
 00664960	disabled	AiFltClassTy::sub_00664960	all apply flags are 0
 006686C0	disabled	InternalExceptionFrame::sub_006686C0	all apply flags are 0
@@ -751,7 +751,7 @@ address	status	proposed_name	detail
 0069B910	disabled	CGenerate::sub_0069B910	all apply flags are 0
 0069BC10	disabled	CGenerate::sub_0069BC10	all apply flags are 0
 0069BDC0	disabled	CGenerate::sub_0069BDC0	all apply flags are 0
-0069CB50	conflict	CGenerate::sub_0069CB50	this_type=conflict(no auto this parameter)
+0069CB50	disabled	CGenerate::sub_0069CB50	all apply flags are 0
 0069F160	disabled	CGenerate::sub_0069F160	all apply flags are 0
 0069FF90	disabled	CGenerate::sub_0069FF90	all apply flags are 0
 006A0150	disabled	CGenerate::sub_006A0150	all apply flags are 0

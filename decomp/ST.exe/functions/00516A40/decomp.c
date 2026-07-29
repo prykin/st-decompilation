@@ -377,16 +377,7 @@ LAB_00516f6b:
       uVar12 = ~uVar12;
       pcVar10 = pcVar13 + -uVar12;
       pcVar13 = (char *)&DAT_0080f33a;
-      for (uVar11 = uVar12 >> 2; uVar11 != 0; uVar11 = uVar11 - 1) {
-        *(undefined4 *)pcVar13 = *(undefined4 *)pcVar10;
-        pcVar10 = pcVar10 + 4;
-        pcVar13 = pcVar13 + 4;
-      }
-      for (uVar12 = uVar12 & 3; uVar12 != 0; uVar12 = uVar12 - 1) {
-        *pcVar13 = *pcVar10;
-        pcVar10 = pcVar10 + 1;
-        pcVar13 = pcVar13 + 1;
-      }
+      memmove(pcVar13, pcVar10, uVar12); /* compiler REP MOVS byte copy */
       for (puVar9 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar9 != (uint *)0x0;
           puVar9 = Library::MSVCRT::FUN_0072e560(puVar9,'\n')) {
         *(undefined1 *)puVar9 = 0x20;

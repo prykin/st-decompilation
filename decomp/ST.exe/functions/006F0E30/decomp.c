@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 int __cdecl FUN_006f0e30(byte *param_1,byte *param_2)
 
@@ -38,11 +40,7 @@ int __cdecl FUN_006f0e30(byte *param_1,byte *param_2)
     iVar2 = (1 - (uint)bVar6) - (uint)(bVar6 != 0);
   }
   if (iVar2 == 0) {
-    for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *(undefined4 *)param_1 = *(undefined4 *)param_2;
-      param_2 = param_2 + 4;
-      param_1 = param_1 + 4;
-    }
+    memmove(param_1, param_2, 0x18); /* compiler REP MOVS byte copy */
   }
   return iVar2;
 }

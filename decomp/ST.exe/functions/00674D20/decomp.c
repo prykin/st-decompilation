@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=3, used=0), and
@@ -61,16 +63,7 @@ void __cdecl FUN_00674d20(char *param_1)
     } while (cVar1 != '\0');
     pcVar5 = pcVar7 + -uVar2;
     pcVar7 = pcVar6 + -1;
-    for (uVar3 = uVar2 >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {
-      *(undefined4 *)pcVar7 = *(undefined4 *)pcVar5;
-      pcVar5 = pcVar5 + 4;
-      pcVar7 = pcVar7 + 4;
-    }
-    for (uVar2 = uVar2 & 3; uVar2 != 0; uVar2 = uVar2 - 1) {
-      *pcVar7 = *pcVar5;
-      pcVar5 = pcVar5 + 1;
-      pcVar7 = pcVar7 + 1;
-    }
+    memmove(pcVar7, pcVar5, uVar2); /* compiler REP MOVS byte copy */
     Library::MSVCRT::FUN_0072eb70(local_108,DAT_00811970);
   }
   return;

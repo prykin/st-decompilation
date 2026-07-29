@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __thiscall
 FUN_00618240(void *this,int param_1,int param_2,int param_3,undefined4 *param_4)
@@ -15,7 +17,7 @@ FUN_00618240(void *this,int param_1,int param_2,int param_3,undefined4 *param_4)
   int iVar10;
   int iVar11;
   short sVar12;
-  undefined4 *puVar13;
+  byte *puVar13;
   int iVar14;
   STWorldObject *this_00;
   int *piVar15;
@@ -175,7 +177,7 @@ LAB_0061856a:
                      (iVar10 = (*this_00->vtable[5].slots_00_28[2])(), iVar4 = local_38,
                      iVar8 = local_34, iVar10 != 0)) {
                     thunk_FUN_00416270(this_00,local_50,(int *)local_84,(int *)local_20);
-                    puVar13 = (undefined4 *)(local_60 + iVar14 * 0x2c);
+                    puVar13 = (byte *)(local_60 + iVar14 * 0x2c);
                     *puVar13 = this_00[1].vtable;
                     iVar8 = this_00->GetObjectTypeId();
                     puVar13[1] = iVar8;
@@ -242,12 +244,8 @@ LAB_0061856a:
             else {
 LAB_0061871c:
               if (local_58[0] < 3) {
-                puVar13 = (undefined4 *)(local_60 + piVar15[iVar8] * 0x2c);
-                for (iVar14 = 0xb; iVar14 != 0; iVar14 = iVar14 + -1) {
-                  *param_4 = *puVar13;
-                  puVar13 = puVar13 + 1;
-                  param_4 = param_4 + 1;
-                }
+                puVar13 = (byte *)(local_60 + piVar15[iVar8] * 0x2c);
+                memmove(param_4, puVar13, 0x2c); /* compiler REP MOVS byte copy */
                 ExceptionList = local_14;
                 return 1;
               }

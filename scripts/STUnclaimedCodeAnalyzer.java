@@ -80,10 +80,8 @@ public class STUnclaimedCodeAnalyzer extends GhidraScript {
                 .thenComparing(row -> row.kind)).toList();
 
         Path tsv = directory.resolve("unclaimed_code_proposals.tsv");
-        Path jsonl = directory.resolve("unclaimed_code_proposals.jsonl");
         Path summary = directory.resolve("unclaimed_code_summary.txt");
         writeTsv(tsv, rows);
-        writeJsonl(jsonl, rows);
         writeSummary(summary, rows);
 
         long enabled = rows.stream().filter(row -> row.createApply).count();

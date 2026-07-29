@@ -182,7 +182,6 @@ public class STSwitchEnumAnalyzer extends GhidraScript {
         writeDomains(domainStatePath, storedDomains, proposals);
 
         writeTsv(directory.resolve("switch_enum_proposals.tsv"), proposals);
-        writeJson(directory.resolve("switch_enum_proposals.jsonl"), proposals);
         writeRetries(directory.resolve("switch_enum_decompile_retries.tsv"), retries);
         writeFailures(directory.resolve("switch_enum_decompile_failures.tsv"), failures);
         writeSummary(directory.resolve("switch_enum_summary.txt"), proposals,

@@ -16,7 +16,7 @@ void __thiscall BldLabPanelTy::sub_004EFE20(BldLabPanelTy *this)
   Global_sub_00526BA0_param_1Enum *pGVar5;
   byte *pbVar6;
   undefined4 *puVar7;
-  undefined4 *puVar8;
+  byte *puVar8;
   undefined4 uVar9;
   int local_14;
   undefined4 *local_c;
@@ -58,13 +58,8 @@ LAB_004eff2c:
         local_c[-2] = UVar2;
         if ((char)pGVar5[2] == 0) {
           pbVar6 = (byte *)((int)pGVar5 + 0x12);
-          puVar8 = local_c;
-          for (iVar4 = 7; iVar4 != 0; iVar4 = iVar4 + -1) {
-            *puVar8 = *(undefined4 *)pbVar6;
-            pbVar6 = pbVar6 + 4;
-            puVar8 = puVar8 + 1;
-          }
-          *(undefined2 *)puVar8 = *(undefined2 *)pbVar6;
+          puVar8 = (byte *)(local_c);
+          memmove(puVar8, pbVar6, 0x1e); /* compiler REP MOVS byte copy */
         }
         else {
           *local_c = *(undefined4 *)((int)pGVar5 + 10);

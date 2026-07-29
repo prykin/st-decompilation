@@ -45,7 +45,7 @@ int __thiscall SettMapSTy::GetMessage(SettMapSTy *this,STMessage *message)
   AnonShape_005D5560_9031BF1B *pAVar30;
   char *pcVar31;
   char *pcVar32;
-  undefined4 *puVar33;
+  byte *puVar33;
   AnonShape_005CBBE0_2D1CAA09 *pAVar34;
   bool bVar35;
   uint *puVar36;
@@ -595,12 +595,8 @@ LAB_005d5b7e:
                             0xff02ffff;
               }
               pcVar16 = local_164;
-              puVar33 = &DAT_00808ab0 + (uint)DAT_00808aaf * 0x27;
-              for (iVar14 = 0x27; iVar14 != 0; iVar14 = iVar14 + -1) {
-                *puVar33 = *(undefined4 *)pcVar16;
-                pcVar16 = pcVar16 + 4;
-                puVar33 = puVar33 + 1;
-              }
+              puVar33 = (byte *)(&DAT_00808ab0 + (uint)DAT_00808aaf * 0x27);
+              memmove(puVar33, pcVar16, 0x9c); /* compiler REP MOVS byte copy */
               if ((byte)local_120 < 8) {
                 iVar14 = 0;
                 do {
@@ -680,16 +676,7 @@ LAB_005d5b7e:
           uVar29 = ~uVar29;
           pcVar16 = pcVar32 + -uVar29;
           pcVar32 = (char *)&DAT_0080ee1a;
-          for (uVar28 = uVar29 >> 2; uVar28 != 0; uVar28 = uVar28 - 1) {
-            *(undefined4 *)pcVar32 = *(undefined4 *)pcVar16;
-            pcVar16 = pcVar16 + 4;
-            pcVar32 = pcVar32 + 4;
-          }
-          for (uVar29 = uVar29 & 3; uVar29 != 0; uVar29 = uVar29 - 1) {
-            *pcVar32 = *pcVar16;
-            pcVar16 = pcVar16 + 1;
-            pcVar32 = pcVar32 + 1;
-          }
+          memmove(pcVar32, pcVar16, uVar29); /* compiler REP MOVS byte copy */
           uVar29 = 0xffffffff;
           pcVar16 = &DAT_00807680;
           do {
@@ -752,16 +739,7 @@ LAB_005d5b7e:
         pcVar16 = pcVar32 + -uVar29;
         pcVar32 = (char *)&DAT_0080ee1a;
         DAT_008087a0 = this_00->field_1E26;
-        for (uVar28 = uVar29 >> 2; uVar28 != 0; uVar28 = uVar28 - 1) {
-          *(undefined4 *)pcVar32 = *(undefined4 *)pcVar16;
-          pcVar16 = pcVar16 + 4;
-          pcVar32 = pcVar32 + 4;
-        }
-        for (uVar29 = uVar29 & 3; uVar29 != 0; uVar29 = uVar29 - 1) {
-          *pcVar32 = *pcVar16;
-          pcVar16 = pcVar16 + 1;
-          pcVar32 = pcVar32 + 1;
-        }
+        memmove(pcVar32, pcVar16, uVar29); /* compiler REP MOVS byte copy */
         uVar29 = 0xffffffff;
         pcVar16 = &DAT_00807680;
         do {
@@ -967,16 +945,7 @@ LAB_005d619b:
           uVar29 = ~uVar29;
           pcVar16 = pcVar32 + -uVar29;
           pcVar32 = &this_00->field_0x1e33;
-          for (uVar28 = uVar29 >> 2; uVar28 != 0; uVar28 = uVar28 - 1) {
-            *(undefined4 *)pcVar32 = *(undefined4 *)pcVar16;
-            pcVar16 = pcVar16 + 4;
-            pcVar32 = pcVar32 + 4;
-          }
-          for (uVar29 = uVar29 & 3; uVar29 != 0; uVar29 = uVar29 - 1) {
-            *pcVar32 = *pcVar16;
-            pcVar16 = pcVar16 + 1;
-            pcVar32 = pcVar32 + 1;
-          }
+          memmove(pcVar32, pcVar16, uVar29); /* compiler REP MOVS byte copy */
           for (puVar20 = Library::MSVCRT::FUN_0072e560((uint *)&this_00->field_0x1e33,'\n');
               puVar20 != (uint *)0x0; puVar20 = Library::MSVCRT::FUN_0072e560(puVar20,'\n')) {
             *(undefined1 *)puVar20 = 0x20;
@@ -1115,16 +1084,7 @@ LAB_005d6676:
               uVar29 = ~uVar29;
               pcVar16 = pcVar32 + -uVar29;
               pcVar32 = &this_00->field_0x1e33;
-              for (uVar28 = uVar29 >> 2; uVar28 != 0; uVar28 = uVar28 - 1) {
-                *(undefined4 *)pcVar32 = *(undefined4 *)pcVar16;
-                pcVar16 = pcVar16 + 4;
-                pcVar32 = pcVar32 + 4;
-              }
-              for (uVar29 = uVar29 & 3; uVar29 != 0; uVar29 = uVar29 - 1) {
-                *pcVar32 = *pcVar16;
-                pcVar16 = pcVar16 + 1;
-                pcVar32 = pcVar32 + 1;
-              }
+              memmove(pcVar32, pcVar16, uVar29); /* compiler REP MOVS byte copy */
               this_00->field_1F37 = 4;
               *(char **)&this_00->field_0x1f3b = local_8;
               Library::DKW::TBL::FUN_006ae1c0

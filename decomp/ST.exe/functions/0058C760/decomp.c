@@ -131,16 +131,7 @@ int __thiscall STSatC::GetMessage(STSatC *this,STMessage *message)
         *(uint *)(&local_c[1].field_0x0 + local_8) = local_10;
         pbVar15 = local_14;
         pbVar18 = &local_c[1].field_0x4 + local_8;
-        for (uVar11 = local_10 >> 2; uVar11 != 0; uVar11 = uVar11 - 1) {
-          *(undefined4 *)pbVar18 = *(undefined4 *)pbVar15;
-          pbVar15 = pbVar15 + 4;
-          pbVar18 = pbVar18 + 4;
-        }
-        for (uVar11 = local_10 & 3; uVar11 != 0; uVar11 = uVar11 - 1) {
-          *pbVar18 = *pbVar15;
-          pbVar15 = pbVar15 + 1;
-          pbVar18 = pbVar18 + 1;
-        }
+        memmove(pbVar18, pbVar15, local_10); /* compiler REP MOVS byte copy */
         STPlaySystemC::SaveObjData
                   (g_playSystem_00802A38,(int *)this_00->field_0018,(byte *)local_c,
                    (AnonShape_0060EA30_DCEB68AD *)(local_10 + 0x7c + local_8));

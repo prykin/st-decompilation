@@ -1,6 +1,6 @@
 program=ST.exe
 proposals=9
-auto_apply=7
+auto_apply=8
 actions={canonical_system=1, ensure_control_command=1, ensure_darray=1, ensure_message=1, ensure_player_temp=1, ensure_spatial_descriptors=1, mark_view_only=2, replace_duplicate=1}
 note=no executable address, enum value, or stack offset is seeded by this pass
 note=types are structural consequences of independently observed families

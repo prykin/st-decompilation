@@ -585,16 +585,7 @@ switchD_00640ad9_caseD_a2:
     } while (cVar1 != '\0');
     pcVar22 = pcVar24 + -uVar17;
     pcVar24 = pcVar23 + -1;
-    for (uVar26 = uVar17 >> 2; uVar26 != 0; uVar26 = uVar26 - 1) {
-      *(undefined4 *)pcVar24 = *(undefined4 *)pcVar22;
-      pcVar22 = pcVar22 + 4;
-      pcVar24 = pcVar24 + 4;
-    }
-    for (uVar17 = uVar17 & 3; uVar17 != 0; uVar17 = uVar17 - 1) {
-      *pcVar24 = *pcVar22;
-      pcVar22 = pcVar22 + 1;
-      pcVar24 = pcVar24 + 1;
-    }
+    memmove(pcVar24, pcVar22, uVar17); /* compiler REP MOVS byte copy */
 switchD_00640c2d_caseD_a2:
     puVar14 = (byte *)(&this_00->field_01D5);
     iVar10 = STT3DSprC::LoadSequence((STT3DSprC *)puVar14,0,DAT_00806774,local_60,0x1d);
@@ -3089,16 +3080,7 @@ LAB_00642561:
     } while (cVar1 != '\0');
     pcVar22 = pcVar24 + -uVar17;
     pcVar24 = pcVar23 + -1;
-    for (uVar26 = uVar17 >> 2; uVar26 != 0; uVar26 = uVar26 - 1) {
-      *(undefined4 *)pcVar24 = *(undefined4 *)pcVar22;
-      pcVar22 = pcVar22 + 4;
-      pcVar24 = pcVar24 + 4;
-    }
-    for (uVar17 = uVar17 & 3; uVar17 != 0; uVar17 = uVar17 - 1) {
-      *pcVar24 = *pcVar22;
-      pcVar22 = pcVar22 + 1;
-      pcVar24 = pcVar24 + 1;
-    }
+    memmove(pcVar24, pcVar22, uVar17); /* compiler REP MOVS byte copy */
     pcVar22 = &DAT_007d0564;
     goto LAB_00642561;
   }

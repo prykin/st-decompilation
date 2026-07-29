@@ -107,7 +107,6 @@ public class STHiddenThisAnalyzer extends GhidraScript {
         }
         proposals.sort(Comparator.comparing(row -> row.address));
         writeTsv(proposalPath, proposals);
-        writeJson(directory.resolve("hidden_this_proposals.jsonl"), proposals);
         writeSummary(directory.resolve("hidden_this_summary.txt"), proposals);
 
         println("Hidden-this analysis complete: " + directory.toAbsolutePath().normalize());

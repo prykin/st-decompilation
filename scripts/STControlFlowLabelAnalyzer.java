@@ -157,7 +157,6 @@ public class STControlFlowLabelAnalyzer extends GhidraScript {
         unresolved.sort(Comparator.comparing((Unresolved row) -> row.function.getEntryPoint())
             .thenComparing(row -> row.label));
         writeTsv(directory.resolve("control_flow_label_proposals.tsv"), proposals);
-        writeJson(directory.resolve("control_flow_label_proposals.jsonl"), proposals);
         writeUnresolved(directory.resolve("control_flow_label_unresolved.tsv"), unresolved);
         writeSummary(directory.resolve("control_flow_label_summary.txt"), proposals,
             unresolved, functionsSeen, candidates, withGotos, failures, gotoStatements);

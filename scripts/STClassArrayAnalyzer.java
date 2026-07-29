@@ -81,7 +81,6 @@ public class STClassArrayAnalyzer extends GhidraScript {
 
         List<Proposal> proposals = makeProposals();
         writeTsv(directory.resolve("class_array_proposals.tsv"), proposals);
-        writeJson(directory.resolve("class_array_proposals.jsonl"), proposals);
         writeSummary(directory.resolve("class_array_summary.txt"), functionsSeen, proposals);
         println("Class-array analysis complete: " +
             directory.toAbsolutePath().normalize());

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated return.
    Evidence: 0062CA70 returns literal 1 at 0062CA95 @ 0062CA9C */
@@ -5,18 +7,12 @@
 uint __cdecl FUN_0062ca70(undefined4 *param_1,undefined4 *param_2)
 
 {
-  undefined4 *puVar1;
-  int iVar2;
+  byte *puVar1;
 
-  puVar1 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0x6d);
+  puVar1 = (byte *)Library::DKW::LIB::FUN_006aac70(0x6d);
   *param_1 = puVar1;
   if (puVar1 != (undefined4 *)0x0) {
-    for (iVar2 = 0x1b; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *puVar1 = *param_2;
-      param_2 = param_2 + 1;
-      puVar1 = puVar1 + 1;
-    }
-    *(undefined1 *)puVar1 = *(undefined1 *)param_2;
+    memmove(puVar1, param_2, 0x6d); /* compiler REP MOVS byte copy */
     return 1;
   }
   return 0;

@@ -21,7 +21,6 @@ byte * __cdecl BossDataPack(uint *param_1,undefined4 *param_2,int param_3,uint *
   uint *puVar3;
   int iVar4;
   byte *pbVar5;
-  uint uVar6;
   uint uVar7;
   uint *puVar8;
   InternalExceptionFrame local_4c;
@@ -35,27 +34,13 @@ byte * __cdecl BossDataPack(uint *param_1,undefined4 *param_2,int param_3,uint *
     *param_4 = param_3 + 0x85U;
     puVar3 = Library::DKW::LIB::FUN_006aac10(param_3 + 0x85U);
     puVar8 = puVar3;
-    for (iVar2 = 0x21; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *puVar8 = *param_1;
-      param_1 = param_1 + 1;
-      puVar8 = puVar8 + 1;
-    }
-    *(byte *)puVar8 = (byte)*param_1;
+    memmove(puVar8, param_1, 0x85); /* compiler REP MOVS byte copy */
     *(uint *)((int)puVar3 + 1) = *param_4;
     *(int *)((int)puVar3 + 0x4a) = param_3;
     *(byte *)((int)puVar3 + 5) = 0;
     uVar7 = *(uint *)((int)puVar3 + 0x4a);
     puVar8 = puVar3 + 0x21;
-    for (uVar6 = uVar7 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-      *puVar8 = *param_2;
-      param_2 = param_2 + 1;
-      puVar8 = puVar8 + 1;
-    }
-    for (uVar7 = uVar7 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *(byte *)puVar8 = (byte)*param_2;
-      param_2 = (uint *)((int)param_2 + 1);
-      puVar8 = (uint *)((int)puVar8 + 1);
-    }
+    memmove(puVar8, param_2, uVar7); /* compiler REP MOVS byte copy */
     *(byte **)((int)puVar3 + 0x46) = (byte *)((int)(puVar3 + 0x21) + (-0x84 - (int)puVar3));
     g_currentExceptionFrame = local_4c.previous;
     return (byte *)puVar3;

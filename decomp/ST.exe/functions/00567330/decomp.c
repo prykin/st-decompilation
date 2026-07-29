@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void __fastcall FUN_00567330(int param_1)
 
@@ -72,16 +74,7 @@ void __fastcall FUN_00567330(int param_1)
       } while (bVar2 != 0);
       pbVar9 = (byte *)(pcVar11 + -uVar7);
       pbVar12 = pbVar12 + -1;
-      for (uVar8 = uVar7 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
-        *(undefined4 *)pbVar12 = *(undefined4 *)pbVar9;
-        pbVar9 = pbVar9 + 4;
-        pbVar12 = pbVar12 + 4;
-      }
-      for (uVar7 = uVar7 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-        *pbVar12 = *pbVar9;
-        pbVar9 = pbVar9 + 1;
-        pbVar12 = pbVar12 + 1;
-      }
+      memmove(pbVar12, pbVar9, uVar7); /* compiler REP MOVS byte copy */
       puVar5 = Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,local_150,0,0,0);
       *(undefined4 **)(iVar3 + 0xdef) = puVar5;
       piVar6 = Library::Ourlib::MFWAV::mfSndTblLoad((int)puVar5,"SOUNDLIST",0);

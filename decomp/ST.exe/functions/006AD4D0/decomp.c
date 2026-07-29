@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Restarted to delay deadcode elimination for space: stack */
 
@@ -401,11 +403,7 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
       else {
         pcVar8 = "Debug Error Message";
         pcVar9 = debugMessage;
-        for (iVar2 = 5; iVar2 != 0; iVar2 = iVar2 + -1) {
-          *(undefined4 *)pcVar9 = *(undefined4 *)pcVar8;
-          pcVar8 = pcVar8 + 4;
-          pcVar9 = pcVar9 + 4;
-        }
+        memmove(pcVar9, pcVar8, 0x14); /* compiler REP MOVS byte copy */
       }
       if ((g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8 ==
            (AnonShape_GLOBAL_0080759C_9638EF10 *)0x0) ||

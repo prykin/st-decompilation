@@ -176,7 +176,6 @@ public class STMessageIdAnalyzer extends GhidraScript {
         Path dir = root.toPath().toAbsolutePath().normalize().resolve(safe(currentProgram.getName()));
         Files.createDirectories(dir);
         writeTsv(dir.resolve("message_id_proposals.tsv"), proposals);
-        writeJsonl(dir.resolve("message_id_proposals.jsonl"), proposals);
         writeCatalog(dir.resolve("message_id_catalog.tsv"), handlersByValue, existing);
         int staleEnumValues = writeStaleEnumValues(
             dir.resolve("message_id_stale_enum_values.tsv"), handlersByValue.keySet(), existing);

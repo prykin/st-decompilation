@@ -16,7 +16,7 @@ uint __thiscall TraksClassTy::sub_00555D90(TraksClassTy *this,undefined4 *param_
   TraksClassTy_field_0024Element *element_0024_2;
   int iVar4;
   uint uVar5;
-  undefined4 *puVar6;
+  byte *puVar6;
   bool bVar7;
 
   iVar4 = this->field_0828;
@@ -35,12 +35,8 @@ uint __thiscall TraksClassTy::sub_00555D90(TraksClassTy *this,undefined4 *param_
         return 0;
       }
 LAB_00555e34:
-      puVar6 = (undefined4 *)0x0;
-      for (iVar4 = 0xf; iVar4 != 0; iVar4 = iVar4 + -1) {
-        *puVar6 = *param_1;
-        param_1 = param_1 + 1;
-        puVar6 = puVar6 + 1;
-      }
+      puVar6 = (byte *)0x0;
+      memmove(puVar6, param_1, 0x3c); /* compiler REP MOVS byte copy */
       return 0;
     }
   }

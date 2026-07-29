@@ -94,7 +94,6 @@ public class STVirtualMethodAnalyzer extends GhidraScript {
         List<HierarchyProposal> hierarchy = buildHierarchyProposals(relations.rows);
         Path output = directory.toPath().toAbsolutePath().normalize();
         writeMethodTsv(output.resolve("virtual_method_proposals.tsv"), methodProposals);
-        writeMethodJsonl(output.resolve("virtual_method_proposals.jsonl"), methodProposals);
         writeFamilies(output.resolve("virtual_method_families.tsv"));
         writeHierarchy(output.resolve("class_hierarchy_proposals.tsv"), hierarchy);
         writeSummary(output.resolve("virtual_method_summary.txt"), methodProposals, hierarchy);

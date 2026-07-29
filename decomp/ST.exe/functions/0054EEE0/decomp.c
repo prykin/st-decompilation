@@ -28,7 +28,7 @@ STPlaySystemC::SetCtrlCmd
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   int unaff_EDI;
   uint *puVar8;
-  undefined4 *puVar9;
+  byte *puVar9;
   InternalExceptionFrame local_54;
   int local_10;
   uint local_c;
@@ -116,17 +116,8 @@ STPlaySystemC::SetCtrlCmd
       }
     }
     if ((param_6 != (undefined4 *)0x0) && (param_7 != 0)) {
-      puVar9 = (undefined4 *)(*(int *)((int)puVar4 + 0x17) + *(int *)((int)puVar4 + 0xf));
-      for (uVar7 = param_7 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-        *puVar9 = *param_6;
-        param_6 = param_6 + 1;
-        puVar9 = puVar9 + 1;
-      }
-      for (uVar7 = param_7 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-        *(undefined1 *)puVar9 = *(undefined1 *)param_6;
-        param_6 = (undefined4 *)((int)param_6 + 1);
-        puVar9 = (undefined4 *)((int)puVar9 + 1);
-      }
+      puVar9 = (byte *)(*(int *)((int)puVar4 + 0x17) + *(int *)((int)puVar4 + 0xf));
+      memmove(puVar9, param_6, param_7); /* compiler REP MOVS byte copy */
     }
     if (DAT_0080877e == '\0') {
       bVar2 = true;

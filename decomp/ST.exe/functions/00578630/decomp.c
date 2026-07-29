@@ -144,16 +144,7 @@ int __thiscall STCrabC::GetMessage(STCrabC *this,STMessage *message)
     *(uint *)((int)local_c + local_8 + 100) = local_10;
     pbVar13 = local_18;
     pbVar15 = (byte *)((int)local_c + local_8 + 0x68);
-    for (uVar10 = local_10 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
-      *(undefined4 *)pbVar15 = *(undefined4 *)pbVar13;
-      pbVar13 = pbVar13 + 4;
-      pbVar15 = pbVar15 + 4;
-    }
-    for (uVar10 = local_10 & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
-      *pbVar15 = *pbVar13;
-      pbVar13 = pbVar13 + 1;
-      pbVar15 = pbVar15 + 1;
-    }
+    memmove(pbVar15, pbVar13, local_10); /* compiler REP MOVS byte copy */
     STPlaySystemC::SaveObjData
               (g_playSystem_00802A38,(int *)this_00->field_0018,(byte *)local_c,
                (AnonShape_0060EA30_DCEB68AD *)(local_10 + 0x68 + local_8));

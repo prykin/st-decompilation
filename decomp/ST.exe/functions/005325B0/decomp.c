@@ -19,7 +19,6 @@ void __thiscall OptPanelTy::PrepAsses(OptPanelTy *this,void *param_1)
   char *pcVar8;
   int iVar9;
   uint uVar10;
-  uint uVar11;
   OptPanelTy *pOVar12;
   uint *puVar13;
   char *pcVar14;
@@ -127,16 +126,7 @@ LAB_00532758:
     uVar10 = ~uVar10;
     pcVar8 = pcVar14 + -uVar10;
     pcVar14 = local_12c;
-    for (uVar11 = uVar10 >> 2; uVar11 != 0; uVar11 = uVar11 - 1) {
-      *(undefined4 *)pcVar14 = *(undefined4 *)pcVar8;
-      pcVar8 = pcVar8 + 4;
-      pcVar14 = pcVar14 + 4;
-    }
-    for (uVar10 = uVar10 & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
-      *pcVar14 = *pcVar8;
-      pcVar8 = pcVar8 + 1;
-      pcVar14 = pcVar14 + 1;
-    }
+    memmove(pcVar14, pcVar8, uVar10); /* compiler REP MOVS byte copy */
   }
   local_c0 = 1;
   Library::DKW::TBL::FUN_006b11d0(&pOVar12->field_02FD->flags,0,(undefined4 *)local_12c);

@@ -212,16 +212,7 @@ int __thiscall STOctopusC::GetMessage(STOctopusC *this,STMessage *message)
     *(uint *)(&local_c->field_0x92 + local_8) = local_10;
     pbVar11 = local_18;
     pbVar14 = &local_c[1].field_0x2 + local_8;
-    for (uVar9 = local_10 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
-      *(undefined4 *)pbVar14 = *(undefined4 *)pbVar11;
-      pbVar11 = pbVar11 + 4;
-      pbVar14 = pbVar14 + 4;
-    }
-    for (uVar9 = local_10 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {
-      *pbVar14 = *pbVar11;
-      pbVar11 = pbVar11 + 1;
-      pbVar14 = pbVar14 + 1;
-    }
+    memmove(pbVar14, pbVar11, local_10); /* compiler REP MOVS byte copy */
     STPlaySystemC::SaveObjData
               (g_playSystem_00802A38,(int *)this_00->field_0018,(byte *)local_c,
                (AnonShape_0060EA30_DCEB68AD *)(local_10 + 0x96 + local_8));

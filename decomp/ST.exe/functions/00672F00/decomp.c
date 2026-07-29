@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STAbiConsistencyApplier] full_eax_return: return=/int Evidence: all observed callers consume
    full EAX (8), none consume AL/AX, and every RET path defines full EAX; sites=00683C70 @ 0068A720
@@ -91,16 +93,7 @@ int FUN_00672f00(void)
       uVar4 = ~uVar4;
       pcVar6 = pcVar7 + -uVar4;
       pcVar7 = DAT_0085753c;
-      for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
-        *(undefined4 *)pcVar7 = *(undefined4 *)pcVar6;
-        pcVar6 = pcVar6 + 4;
-        pcVar7 = pcVar7 + 4;
-      }
-      for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
-        *pcVar7 = *pcVar6;
-        pcVar6 = pcVar6 + 1;
-        pcVar7 = pcVar7 + 1;
-      }
+      memmove(pcVar7, pcVar6, uVar4); /* compiler REP MOVS byte copy */
     }
     FUN_006a5e90((short *)piVar3[7]);
     DAT_007d2d24 = piVar3[3];

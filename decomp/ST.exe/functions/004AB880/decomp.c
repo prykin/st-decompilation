@@ -57,7 +57,6 @@ STT3DSprC::LoadSequence(STT3DSprC *this,byte param_1,int *param_2,char *text,byt
   int *piVar9;
   uint uVar10;
   uint uVar11;
-  uint uVar12;
   undefined4 *puVar13;
   char *pcVar14;
   char *pcVar15;
@@ -135,16 +134,7 @@ STT3DSprC::LoadSequence(STT3DSprC *this,byte param_1,int *param_2,char *text,byt
   uVar11 = ~uVar11;
   pcVar14 = pcVar14 + -uVar11;
   pcVar15 = *(char **)(&this_00->field_0020->field_0x8 + local_8);
-  for (uVar12 = uVar11 >> 2; uVar12 != 0; uVar12 = uVar12 - 1) {
-    *(undefined4 *)pcVar15 = *(undefined4 *)pcVar14;
-    pcVar14 = pcVar14 + 4;
-    pcVar15 = pcVar15 + 4;
-  }
-  for (uVar11 = uVar11 & 3; uVar11 != 0; uVar11 = uVar11 - 1) {
-    *pcVar15 = *pcVar14;
-    pcVar14 = pcVar14 + 1;
-    pcVar15 = pcVar15 + 1;
-  }
+  memmove(pcVar15, pcVar14, uVar11); /* compiler REP MOVS byte copy */
   (&this_00->field_0020->field_0xc)[local_8] = param_4;
   *(undefined4 *)(&this_00->field_0020->field_0x18 + local_8) = 0;
   *(undefined4 *)(&this_00->field_0020->field_0x10 + local_8) = 0;

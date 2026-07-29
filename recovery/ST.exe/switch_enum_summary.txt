@@ -1,7 +1,7 @@
 program=ST.exe
 candidate_functions=1315
 switches_seen=1080
-decompile_retries=2
+decompile_retries=1
 decompile_failures=0
 proposals=597
 auto_apply=180

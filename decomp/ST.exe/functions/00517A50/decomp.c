@@ -451,16 +451,7 @@ void __thiscall HelpPanelTy::RCProc(HelpPanelTy *this,int param_1,uint param_2,c
         uVar18 = ~uVar18;
         pcVar7 = pcVar14 + -uVar18;
         pcVar14 = (char *)&DAT_0080f33a;
-        for (uVar10 = uVar18 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
-          *(undefined4 *)pcVar14 = *(undefined4 *)pcVar7;
-          pcVar7 = pcVar7 + 4;
-          pcVar14 = pcVar14 + 4;
-        }
-        for (uVar18 = uVar18 & 3; uVar18 != 0; uVar18 = uVar18 - 1) {
-          *pcVar14 = *pcVar7;
-          pcVar7 = pcVar7 + 1;
-          pcVar14 = pcVar14 + 1;
-        }
+        memmove(pcVar14, pcVar7, uVar18); /* compiler REP MOVS byte copy */
         for (puVar6 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar6 != (uint *)0x0;
             puVar6 = Library::MSVCRT::FUN_0072e560(puVar6,'\n')) {
           *(undefined1 *)puVar6 = 0x20;
