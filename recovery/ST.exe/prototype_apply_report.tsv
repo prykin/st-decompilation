@@ -137,3 +137,5 @@ function_address	target	status	detail
 0074E337	parameter:1	disabled	apply flags are 0
 00753300	parameter:2	disabled	apply flags are 0
 00753F10	parameter:1	disabled	apply flags are 0
+0075E7D0	parameter:0	disabled	apply flags are 0
+0075EC80	parameter:0	disabled	apply flags are 0

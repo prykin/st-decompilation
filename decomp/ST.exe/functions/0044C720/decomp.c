@@ -150,9 +150,9 @@ LAB_0044c94c:
                   (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                    0x327d);
       }
-      iVar6 = pDVar7->count * 4 + 3;
-      *param_6 = iVar6;
-      local_14 = (ushort *)Library::DKW::LIB::FUN_006aac70(iVar6);
+      uVar9 = pDVar7->count * 4 + 3;
+      *param_6 = uVar9;
+      local_14 = Library::DKW::LIB::MemAlloc(uVar9);
       *local_14 = (ushort)pDVar7->count;
       *(undefined1 *)(local_14 + 1) = (undefined1)param_1;
       puVar11 = (byte *)(pDVar7->data);
@@ -190,9 +190,9 @@ LAB_0044c94c:
                   (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                    0x32a1);
       }
-      iVar6 = pDVar7->count * 2 + 3;
-      *param_6 = iVar6;
-      local_14 = (ushort *)Library::DKW::LIB::FUN_006aac70(iVar6);
+      uVar9 = pDVar7->count * 2 + 3;
+      *param_6 = uVar9;
+      local_14 = Library::DKW::LIB::MemAlloc(uVar9);
       *local_14 = (ushort)pDVar7->count;
       *(undefined1 *)(local_14 + 1) = 3;
       puVar11 = (byte *)(pDVar7->data);

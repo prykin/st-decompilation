@@ -51,7 +51,7 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
   undefined2 extraout_var;
   DArrayTy *pDVar19;
   STGroupBoatC *pSVar20;
-  undefined4 *puVar21;
+  byte *puVar21;
   int local_EAX_10888;
   AiPlrClassTy *pAVar22;
   int local_EAX_44850;
@@ -127,7 +127,7 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
   int *piVar34;
   AnonShape_0044EE30_F343D8F0 *pAVar35;
   byte *pbVar36;
-  undefined4 *puVar37;
+  byte *puVar37;
   Global_sub_00498D20_param_1Enum orderType;
   short sVar38;
   CHAR local_284;
@@ -401,7 +401,7 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
         thunk_FUN_004d8b70((char)this_00->field_0024);
       }
       if (pSVar20->field_0018 != 2) {
-        puVar21 = &this_00->field_01D5;
+        puVar21 = (byte *)(&this_00->field_01D5);
         STT3DSprC::StopShow((STT3DSprC *)puVar21,0xf);
         STT3DSprC::StopShow((STT3DSprC *)puVar21,0);
         STT3DSprC::StopShow((STT3DSprC *)puVar21,1);
@@ -475,8 +475,8 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
     local_9d = this_00->field_0x63;
     uVar2 = this_00->field_0x61;
     uVar3 = this_00->field_0x62;
-    puVar21 = (undefined4 *)(*(int *)&this_00[1].field_0x297 + 0x34);
-    puVar37 = (undefined4 *)&this_00->field_0x34;
+    puVar21 = (byte *)(*(int *)&this_00[1].field_0x297 + 0x34);
+    puVar37 = (byte *)&this_00->field_0x34;
     memmove(puVar37, puVar21, 0x5f); /* compiler REP MOVS byte copy */
     *(undefined4 *)&this_00->field_0x76 = 0;
     *(undefined2 *)&this_00->field_0x6e = 0x2f;
@@ -498,7 +498,7 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
       local_3c = (byte *)STAllPlayersC::SaveGObjData((STAllPlayersC *)this_00,(int *)&local_2c);
       local_40 = (byte *)SaveBoatData((STBoatC *)this_00,(int *)&local_34);
       local_7c = (AnonShape_0060EA30_DCEB68AD *)(local_2c + local_34 + local_38);
-      local_20 = (AnonShape_0044EE30_F343D8F0 *)Library::DKW::LIB::FUN_006aac70((int)local_7c);
+      local_20 = Library::DKW::LIB::MemAlloc((uint)local_7c);
       pbVar30 = local_40;
       pAVar35 = local_20;
       for (uVar16 = local_34 >> 2; uVar16 != 0; uVar16 = uVar16 - 1) {
@@ -520,6 +520,7 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
       pbVar30 = local_3c;
       pbVar36 = &local_20->field_0x0 + local_34;
       memmove(pbVar36, pbVar30, local_2c); /* compiler REP MOVS byte copy */
+      uVar16 = 0;
       local_20->field_05FE = local_34;
       local_20->field_0602 = local_2c;
       pbVar30 = local_44;
@@ -1101,7 +1102,7 @@ LAB_0045048a:
                     );
           DArrayDestroy(pDVar19);
           pSVar20 = thunk_FUN_0042b760((char)this_00->field_0024,local_60[0]);
-          puVar21 = local_b4;
+          puVar21 = (byte *)(local_b4);
           local_b4[0] = 1;
           pSVar26 = pSVar20->vtable;
           orderType = CASE_11;
@@ -1116,7 +1117,7 @@ LAB_0045048a:
                   (g_allPlayers_007FA174,(char)this_00->field_0024,0xfffe,&pDVar19->flags,local_50);
         DArrayDestroy(pDVar19);
         pSVar20 = thunk_FUN_0042b760((char)this_00->field_0024,local_50[0]);
-        puVar21 = &local_a8;
+        puVar21 = (byte *)(&local_a8);
         local_a8 = 1;
         local_a4 = 0;
         pSVar26 = pSVar20->vtable;
@@ -1271,7 +1272,7 @@ joined_r0x00450a10:
         ))) {
       uVar16 = iVar13 % 0x7d;
       if (uVar16 == 0) {
-        puVar21 = &this_00->field_01D5;
+        puVar21 = (byte *)(&this_00->field_01D5);
         iVar13 = STT3DSprC::LoadSequence
                            ((STT3DSprC *)puVar21,0xb,DAT_00806774,"forcef0",0x1d);
         if (iVar13 != 0) {
@@ -1304,7 +1305,7 @@ joined_r0x00450a10:
     if (0 < *(int *)&this_00[2].field_0x11c) {
       pvVar23 = *(void **)((int)&this_00[1].field_0155 + 1);
       if (pvVar23 == (void *)0x0) {
-        puVar21 = thunk_FUN_00631fd0();
+        puVar21 = (byte *)(thunk_FUN_00631fd0());
         *(undefined4 **)((int)&this_00[1].field_0155 + 1) = puVar21;
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         uVar16 = extraout_EDX_07;
@@ -1397,7 +1398,7 @@ LAB_00450e28:
         if (6 < (int)uVar16) {
           *(undefined4 *)&this_00[2].field_0x20c = 0;
         }
-        puVar21 = &this_00->field_01D5;
+        puVar21 = (byte *)(&this_00->field_01D5);
         STT3DSprC::LoadSequence
                   ((STT3DSprC *)puVar21,8,DAT_00806774,
                    "expl_bt0" + *(int *)&this_00[2].field_0x20c * 0x45,0x1d);
@@ -1427,7 +1428,7 @@ LAB_00450e28:
     }
     if (*(int *)((int)&this_00[1].field_0145 + 1) == 1) {
       this_00->vfunc_D8();
-      puVar21 = &this_00->field_01D5;
+      puVar21 = (byte *)(&this_00->field_01D5);
       local_c = thunk_FUN_004ac910(puVar21,'\b');
       if (local_c == 2) {
         STT3DSprC::StopShow((STT3DSprC *)puVar21,0xf);
@@ -6079,7 +6080,7 @@ LAB_0045ad7b:
         iVar13 = *(int *)((int)&this_00[1].field_014D + 1);
         if (iVar13 == 0) {
           *(undefined4 *)((int)&this_00[1].field_014D + 1) = 0xe;
-          iVar13 = thunk_FUN_004803d0((STBoatC *)this_00,0);
+          iVar13 = thunk_FUN_004803d0((STBoatC *)this_00,(AnonShape_004803D0_350EB461 *)0x0);
           local_8 = iVar13;
           if (iVar13 == -1) {
             RaiseInternalException
@@ -6847,7 +6848,7 @@ LAB_0045910d:
       local_8 = -1;
       break;
     case 0xe:
-      iVar13 = thunk_FUN_004803d0((STBoatC *)this_00,2);
+      iVar13 = thunk_FUN_004803d0((STBoatC *)this_00,(AnonShape_004803D0_350EB461 *)0x2);
       local_8 = iVar13;
       if (iVar13 == -1) {
         RaiseInternalException
@@ -7548,7 +7549,7 @@ cf_error_exit_0045AEE3:
   }
   if (*(int *)&local_1c->field_0xc == 2) {
     iVar13 = (message->arg0).i32;
-    local_d0 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0x44);
+    local_d0 = Library::DKW::LIB::MemAlloc(0x44);
     do {
       *(int **)(iVar29 + (int)local_d0) = DAT_0080677c;
       iVar29 = iVar29 + 4;
@@ -7878,6 +7879,7 @@ cf_error_exit_0045AEE3:
   pcVar33 = pcVar31 + -uVar16;
   pcVar32 = pcVar32 + -1;
   memmove(pcVar32, pcVar33, uVar16); /* compiler REP MOVS byte copy */
+  uVar27 = 0;
 switchD_0044fb10_default:
   iVar13 = STT3DSprC::LoadSequence((STT3DSprC *)&this_00->field_01D5,0xe,DAT_0080677c,local_74,0x1d);
   if (iVar13 != 0) {
@@ -7944,7 +7946,7 @@ switchD_0044fb10_default:
   pcVar32 = pcVar31 + -1;
   memmove(pcVar32, pcVar33, uVar16); /* compiler REP MOVS byte copy */
 switchD_0044fe4c_default:
-  puVar21 = &this_00->field_01D5;
+  puVar21 = (byte *)(&this_00->field_01D5);
   iVar13 = STT3DSprC::LoadSequence((STT3DSprC *)puVar21,0xc,DAT_0080677c,local_74,0x1d);
   if (iVar13 != 0) {
     RaiseInternalException

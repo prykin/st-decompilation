@@ -10,13 +10,14 @@ int __thiscall STGroupC::SaveGrpData(STGroupC *this,int *param_1)
 {
   code *pcVar1;
   int iVar2;
-  int iVar3;
-  uint uVar4;
-  STGroupC *pSVar5;
-  byte *puVar6;
+  void *pvVar3;
+  int iVar4;
+  uint uVar5;
+  STGroupC *pSVar6;
   byte *puVar7;
+  byte *puVar8;
   InternalExceptionFrame local_5c;
-  int local_18;
+  void *local_18;
   int local_14;
   STGroupC *local_10;
   undefined4 *local_c;
@@ -26,7 +27,7 @@ int __thiscall STGroupC::SaveGrpData(STGroupC *this,int *param_1)
   g_currentExceptionFrame = &local_5c;
   local_10 = this;
   iVar2 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
-  pSVar5 = local_10;
+  pSVar6 = local_10;
   if (iVar2 == 0) {
     *param_1 = 0x40;
     if (local_10->field_0029 != (uint *)0x0) {
@@ -34,73 +35,65 @@ int __thiscall STGroupC::SaveGrpData(STGroupC *this,int *param_1)
       FreeAndNull(&local_c);
       *param_1 = *param_1 + local_8;
     }
-    if (pSVar5->field_002D != (uint *)0x0) {
-      local_c = (undefined4 *)FUN_006b0020(pSVar5->field_002D,(int *)&local_8);
+    if (pSVar6->field_002D != (uint *)0x0) {
+      local_c = (undefined4 *)FUN_006b0020(pSVar6->field_002D,(int *)&local_8);
       FreeAndNull(&local_c);
       *param_1 = *param_1 + local_8;
     }
-    iVar2 = Library::DKW::LIB::FUN_006aac70(*param_1);
+    pvVar3 = Library::DKW::LIB::MemAlloc(*param_1);
     local_8 = 0;
-    *(int *)(iVar2 + 4) = (int)pSVar5->field_0024;
-    *(undefined4 *)(iVar2 + 0xc) = 2;
-    *(undefined4 *)(iVar2 + 0x14) = pSVar5->field_0020;
-    *(undefined2 *)(iVar2 + 0x18) = pSVar5->field_0025;
-    *(undefined2 *)(iVar2 + 0x1a) = pSVar5->field_0027;
-    *(undefined4 *)(iVar2 + 0x2c) = pSVar5->field_0031;
-    *(undefined4 *)(iVar2 + 0x30) = pSVar5->field_0035;
-    *(undefined4 *)(iVar2 + 0x34) = pSVar5->field_0039;
-    local_18 = iVar2;
-    if (pSVar5->field_0029 == (uint *)0x0) {
+    *(int *)((int)pvVar3 + 4) = (int)pSVar6->field_0024;
+    *(undefined4 *)((int)pvVar3 + 0xc) = 2;
+    *(undefined4 *)((int)pvVar3 + 0x14) = pSVar6->field_0020;
+    *(undefined2 *)((int)pvVar3 + 0x18) = pSVar6->field_0025;
+    *(undefined2 *)((int)pvVar3 + 0x1a) = pSVar6->field_0027;
+    *(undefined4 *)((int)pvVar3 + 0x2c) = pSVar6->field_0031;
+    *(undefined4 *)((int)pvVar3 + 0x30) = pSVar6->field_0035;
+    *(undefined4 *)((int)pvVar3 + 0x34) = pSVar6->field_0039;
+    local_18 = pvVar3;
+    if (pSVar6->field_0029 == (uint *)0x0) {
       local_8 = 0;
-      *(undefined4 *)(iVar2 + 0x1c) = 0xffffffff;
-      *(undefined4 *)(iVar2 + 0x20) = 0;
+      *(undefined4 *)((int)pvVar3 + 0x1c) = 0xffffffff;
+      *(undefined4 *)((int)pvVar3 + 0x20) = 0;
     }
     else {
-      local_c = (undefined4 *)FUN_006b0020(pSVar5->field_0029,(int *)&local_8);
-      puVar6 = (byte *)(local_c);
-      puVar7 = (byte *)(iVar2 + 0x40);
-      for (uVar4 = local_8 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
-        *puVar7 = *puVar6;
-        puVar6 = (byte *)(puVar6 + 1);
-        puVar7 = (byte *)(puVar7 + 1);
-      }
-      for (uVar4 = local_8 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
-        *(undefined1 *)puVar7 = *(undefined1 *)puVar6;
-        puVar6 = (byte *)((int)puVar6 + 1);
-        puVar7 = (byte *)((int)puVar7 + 1);
-      }
-      *(undefined4 *)(iVar2 + 0x1c) = 0x40;
-      *(uint *)(iVar2 + 0x20) = local_8;
+      local_c = (undefined4 *)FUN_006b0020(pSVar6->field_0029,(int *)&local_8);
+      puVar7 = (byte *)(local_c);
+      puVar8 = (byte *)((int)pvVar3 + 0x40);
+      memmove(puVar8, puVar7, local_8); /* compiler REP MOVS byte copy */
+      uVar5 = 0;
+      *(undefined4 *)((int)pvVar3 + 0x1c) = 0x40;
+      *(uint *)((int)pvVar3 + 0x20) = local_8;
       FreeAndNull(&local_c);
-      pSVar5 = local_10;
+      pSVar6 = local_10;
     }
-    iVar3 = local_8 + 0x40;
-    if (pSVar5->field_002D == (uint *)0x0) {
-      *(undefined4 *)(iVar2 + 0x24) = 0xffffffff;
-      *(uint *)(iVar2 + 0x28) = local_8;
+    iVar2 = local_8 + 0x40;
+    if (pSVar6->field_002D == (uint *)0x0) {
+      *(undefined4 *)((int)pvVar3 + 0x24) = 0xffffffff;
+      *(uint *)((int)pvVar3 + 0x28) = local_8;
     }
     else {
-      local_14 = iVar3;
-      local_c = (undefined4 *)FUN_006b0020(pSVar5->field_002D,(int *)&local_8);
-      puVar6 = (byte *)(local_c);
-      puVar7 = (byte *)(iVar3 + iVar2);
-      memmove(puVar7, puVar6, local_8); /* compiler REP MOVS byte copy */
-      *(int *)(iVar2 + 0x24) = local_14;
-      *(uint *)(iVar2 + 0x28) = local_8;
+      local_14 = iVar2;
+      local_c = (undefined4 *)FUN_006b0020(pSVar6->field_002D,(int *)&local_8);
+      puVar7 = (byte *)(local_c);
+      puVar8 = (byte *)(iVar2 + (int)pvVar3);
+      memmove(puVar8, puVar7, local_8); /* compiler REP MOVS byte copy */
+      *(int *)((int)pvVar3 + 0x24) = local_14;
+      *(uint *)((int)pvVar3 + 0x28) = local_8;
       FreeAndNull(&local_c);
     }
-    *(undefined4 *)(iVar2 + 0x38) = 0xffffffff;
-    *(undefined4 *)(iVar2 + 0x3c) = 0;
+    *(undefined4 *)((int)pvVar3 + 0x38) = 0xffffffff;
+    *(undefined4 *)((int)pvVar3 + 0x3c) = 0;
     g_currentExceptionFrame = local_5c.previous;
-    return iVar2;
+    return (int)pvVar3;
   }
   g_currentExceptionFrame = local_5c.previous;
-  iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\tc_grp.cpp",0x1b9,0,iVar2,"%s",
+  iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\tc_grp.cpp",0x1b9,0,iVar2,"%s",
                              "STGroupC::SaveGrpData");
-  if (iVar3 != 0) {
+  if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar2,0,"E:\\__titans\\wlad\\tc_grp.cpp",0x1ba);
-  return local_18;
+  return (int)local_18;
 }
 

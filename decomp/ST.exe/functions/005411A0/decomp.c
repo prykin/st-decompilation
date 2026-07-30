@@ -53,7 +53,7 @@ void __cdecl FUN_005411a0(DArrayTy *param_1,char *param_2,char *text)
       cVar1 = *pcVar6;
       pcVar6 = pcVar6 + 1;
     } while (cVar1 != '\0');
-    local_8 = (uint *)Library::DKW::LIB::FUN_006aac70(~uVar4 + ~uVar5 + 2);
+    local_8 = Library::DKW::LIB::MemAlloc(~uVar4 + ~uVar5 + 2);
     if (local_8 != (uint *)0x0) {
       wsprintfA((LPSTR)local_8,text,param_2);
       for (puVar3 = Library::MSVCRT::FUN_0072e560(local_8,'\n'); puVar3 != (uint *)0x0;

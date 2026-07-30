@@ -31,14 +31,14 @@ The checked-in corpus is generated with Ghidra 12.1.2 from `ST.exe`:
 
 | Item | Count |
 | --- | ---: |
-| Program functions, including externals | 10,225 |
-| Exported internal functions | 9,944 |
-| Functions with exported bodies | 5,630 |
-| Recognized library functions | 823 |
-| Thunks | 3,491 |
-| Source-file evidence records | 1,258 |
-| Candidate vtables | 131 |
-| Classes with recovered layout evidence | 126 |
+| Program functions, including externals | 10,673 |
+| Exported internal functions | 10,392 |
+| Functions with exported bodies | 5,712 |
+| Recognized library functions | 854 |
+| Thunks | 3,826 |
+| Source-file evidence records | 1,149 |
+| Candidate vtables | 180 |
+| Classes with recovered layout evidence | 145 |
 | Recovered message IDs | 260 |
 
 The live values are recorded in
@@ -188,6 +188,12 @@ per-step stdout/stderr and exceptions, `pipeline.log`, `events.tsv`, per-pass TS
 snapshots, and the export receipt make failures inspectable, while
 `pipeline_report.tsv` remains the latest-run compatibility view. Export mode first
 snapshots the prior corpus and then runs a stage-aware regression gate.
+`STDecompExport` builds the complete program corpus in an ignored sibling
+staging directory and promotes it only after every function and root index has
+been written. A decompiler, normalizer, cancellation, or I/O exception therefore
+leaves the preceding `decomp/ST.exe` tree intact instead of mixing two Program
+states. The pipeline marks the root export receipt `incomplete` before starting;
+only the regression gate may replace it with `passed` or `failed`.
 
 Detailed installation instructions, script dependencies, review flags, and the
 canonical run order are documented in

@@ -243,8 +243,9 @@ type	AnonShape_00568850_A20B8306	/SubmarineTitans/Recovered/PointerShapes/AnonSh
 type	AnonShape_0056A130_3026AB89	/SubmarineTitans/Recovered/PointerShapes/AnonShape_0056A130_3026AB89	disabled	apply=0
 type	AnonShape_0056A4D0_88DA6D2B	/SubmarineTitans/Recovered/PointerShapes/AnonShape_0056A4D0_88DA6D2B	disabled	apply=0
 type	AnonShape_005718D0_5EB10456	/SubmarineTitans/Recovered/PointerShapes/AnonShape_005718D0_5EB10456	disabled	apply=0
-type	AnonShape_00574920_7507981E	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00574920_7507981E	disabled	apply=0
+type	AnonShape_00574920_7507981E	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00574920_7507981E	unchanged	length=1109; fields=2
 type	AnonShape_00575030_3480E3A1	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00575030_3480E3A1	disabled	apply=0
+type	AnonShape_005751F0_0FFC949A	/SubmarineTitans/Recovered/PointerShapes/AnonShape_005751F0_0FFC949A	unchanged	length=1113; fields=5
 type	AnonShape_00575640_E6D414E2	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00575640_E6D414E2	disabled	apply=0
 type	AnonShape_00575C80_4DEA529C	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00575C80_4DEA529C	disabled	apply=0
 type	AnonShape_00575C80_99224805	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00575C80_99224805	disabled	apply=0
@@ -285,7 +286,6 @@ type	AnonShape_005DD470_5015C87C	/SubmarineTitans/Recovered/PointerShapes/AnonSh
 type	AnonShape_005DE050_07B1DC2A	/SubmarineTitans/Recovered/PointerShapes/AnonShape_005DE050_07B1DC2A	disabled	apply=0
 type	AnonShape_005E4300_441EBD84	/SubmarineTitans/Recovered/PointerShapes/AnonShape_005E4300_441EBD84	disabled	apply=0
 type	AnonShape_005EAF10_E9FE21EE	/SubmarineTitans/Recovered/PointerShapes/AnonShape_005EAF10_E9FE21EE	disabled	apply=0
-type	AnonShape_005EC370_2858412B	/SubmarineTitans/Recovered/PointerShapes/AnonShape_005EC370_2858412B	disabled	apply=0
 type	AnonShape_005EC6A0_91FF94F1	/SubmarineTitans/Recovered/PointerShapes/AnonShape_005EC6A0_91FF94F1	disabled	apply=0
 type	AnonShape_005EC850_D3866F46	/SubmarineTitans/Recovered/PointerShapes/AnonShape_005EC850_D3866F46	disabled	apply=0
 type	AnonShape_005ED1C0_48166455	/SubmarineTitans/Recovered/PointerShapes/AnonShape_005ED1C0_48166455	disabled	apply=0
@@ -304,7 +304,6 @@ type	AnonShape_005FAC40_2F17653E	/SubmarineTitans/Recovered/PointerShapes/AnonSh
 type	AnonShape_005FADA0_CF669872	/SubmarineTitans/Recovered/PointerShapes/AnonShape_005FADA0_CF669872	disabled	apply=0
 type	AnonShape_005FB600_0B8C3724	/SubmarineTitans/Recovered/PointerShapes/AnonShape_005FB600_0B8C3724	disabled	apply=0
 type	AnonShape_005FB640_B21A0A22	/SubmarineTitans/Recovered/PointerShapes/AnonShape_005FB640_B21A0A22	disabled	apply=0
-type	AnonShape_005FCAD0_6622BF93	/SubmarineTitans/Recovered/PointerShapes/AnonShape_005FCAD0_6622BF93	disabled	apply=0
 type	AnonShape_005FCEB0_459612F8	/SubmarineTitans/Recovered/PointerShapes/AnonShape_005FCEB0_459612F8	disabled	apply=0
 type	AnonShape_005FD1B0_83293629	/SubmarineTitans/Recovered/PointerShapes/AnonShape_005FD1B0_83293629	disabled	apply=0
 type	AnonShape_005FD6A0_EC193285	/SubmarineTitans/Recovered/PointerShapes/AnonShape_005FD6A0_EC193285	disabled	apply=0
@@ -367,7 +366,6 @@ type	AnonShape_00621300_56117F47	/SubmarineTitans/Recovered/PointerShapes/AnonSh
 type	AnonShape_006214C0_5DA82DAD	/SubmarineTitans/Recovered/PointerShapes/AnonShape_006214C0_5DA82DAD	disabled	apply=0
 type	AnonShape_00621640_E6E15AC5	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00621640_E6E15AC5	disabled	apply=0
 type	AnonShape_00621780_F78B7EC0	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00621780_F78B7EC0	disabled	apply=0
-type	AnonShape_00622990_96866BE5	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00622990_96866BE5	disabled	apply=0
 type	AnonShape_00622AB0_330E12AF	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00622AB0_330E12AF	disabled	apply=0
 type	AnonShape_00622AB0_C45DC960	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00622AB0_C45DC960	disabled	apply=0
 type	AnonShape_006255B0_DBDA84F8	/SubmarineTitans/Recovered/PointerShapes/AnonShape_006255B0_DBDA84F8	disabled	apply=0
@@ -413,7 +411,7 @@ type	AnonShape_00647BA0_86AA90F7	/SubmarineTitans/Recovered/PointerShapes/AnonSh
 type	AnonShape_00647BA0_F0CA3D39	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00647BA0_F0CA3D39	disabled	apply=0
 type	AnonShape_00647D50_CD712BA5	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00647D50_CD712BA5	disabled	apply=0
 type	AnonShape_006488C0_E0029B58	/SubmarineTitans/Recovered/PointerShapes/AnonShape_006488C0_E0029B58	disabled	apply=0
-type	AnonShape_00648C10_30A1BBFD	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00648C10_30A1BBFD	disabled	apply=0
+type	AnonShape_00648C10_30A1BBFD	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00648C10_30A1BBFD	unchanged	length=109; fields=4
 type	AnonShape_00649B90_1C9308B0	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00649B90_1C9308B0	disabled	apply=0
 type	AnonShape_00649EB0_8CDE5DA9	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00649EB0_8CDE5DA9	disabled	apply=0
 type	AnonShape_0064A830_2AFFF1FE	/SubmarineTitans/Recovered/PointerShapes/AnonShape_0064A830_2AFFF1FE	disabled	apply=0
@@ -439,51 +437,51 @@ type	AnonShape_0064EF10_0181E150	/SubmarineTitans/Recovered/PointerShapes/AnonSh
 type	AnonShape_0064F0C0_EC627629	/SubmarineTitans/Recovered/PointerShapes/AnonShape_0064F0C0_EC627629	disabled	apply=0
 type	AnonShape_0064F110_056D040B	/SubmarineTitans/Recovered/PointerShapes/AnonShape_0064F110_056D040B	disabled	apply=0
 type	AnonShape_0064F160_1D0EC978	/SubmarineTitans/Recovered/PointerShapes/AnonShape_0064F160_1D0EC978	disabled	apply=0
-type	AnonShape_0064F1B0_7494B956	/SubmarineTitans/Recovered/PointerShapes/AnonShape_0064F1B0_7494B956	disabled	apply=0
+type	AnonShape_0064F1B0_7494B956	/SubmarineTitans/Recovered/PointerShapes/AnonShape_0064F1B0_7494B956	unchanged	length=220; fields=5
 type	AnonShape_0064F360_F7C216AE	/SubmarineTitans/Recovered/PointerShapes/AnonShape_0064F360_F7C216AE	disabled	apply=0
 type	AnonShape_0064F430_6891D71C	/SubmarineTitans/Recovered/PointerShapes/AnonShape_0064F430_6891D71C	disabled	apply=0
 type	AnonShape_0064F470_8E2B40ED	/SubmarineTitans/Recovered/PointerShapes/AnonShape_0064F470_8E2B40ED	disabled	apply=0
 type	AnonShape_0064F4C0_88F508D2	/SubmarineTitans/Recovered/PointerShapes/AnonShape_0064F4C0_88F508D2	disabled	apply=0
-type	AnonShape_0064F500_A59E916F	/SubmarineTitans/Recovered/PointerShapes/AnonShape_0064F500_A59E916F	disabled	apply=0
+type	AnonShape_0064F500_A59E916F	/SubmarineTitans/Recovered/PointerShapes/AnonShape_0064F500_A59E916F	unchanged	length=214; fields=3
 type	AnonShape_0064F620_E51BA62D	/SubmarineTitans/Recovered/PointerShapes/AnonShape_0064F620_E51BA62D	disabled	apply=0
 type	AnonShape_0064F700_5DCE0275	/SubmarineTitans/Recovered/PointerShapes/AnonShape_0064F700_5DCE0275	disabled	apply=0
-type	AnonShape_0064F780_BB085AB5	/SubmarineTitans/Recovered/PointerShapes/AnonShape_0064F780_BB085AB5	disabled	apply=0
-type	AnonShape_0064F950_8D921461	/SubmarineTitans/Recovered/PointerShapes/AnonShape_0064F950_8D921461	disabled	apply=0
+type	AnonShape_0064F780_BB085AB5	/SubmarineTitans/Recovered/PointerShapes/AnonShape_0064F780_BB085AB5	unchanged	length=220; fields=5
+type	AnonShape_0064F950_8D921461	/SubmarineTitans/Recovered/PointerShapes/AnonShape_0064F950_8D921461	unchanged	length=220; fields=5
 type	AnonShape_0064FB00_42E58B4A	/SubmarineTitans/Recovered/PointerShapes/AnonShape_0064FB00_42E58B4A	disabled	apply=0
-type	AnonShape_0064FB80_C24FD84C	/SubmarineTitans/Recovered/PointerShapes/AnonShape_0064FB80_C24FD84C	disabled	apply=0
+type	AnonShape_0064FB80_C24FD84C	/SubmarineTitans/Recovered/PointerShapes/AnonShape_0064FB80_C24FD84C	unchanged	length=218; fields=4
 type	AnonShape_0064FCE0_70CB9801	/SubmarineTitans/Recovered/PointerShapes/AnonShape_0064FCE0_70CB9801	disabled	apply=0
-type	AnonShape_0064FD80_D0EF9E6E	/SubmarineTitans/Recovered/PointerShapes/AnonShape_0064FD80_D0EF9E6E	disabled	apply=0
+type	AnonShape_0064FD80_D0EF9E6E	/SubmarineTitans/Recovered/PointerShapes/AnonShape_0064FD80_D0EF9E6E	unchanged	length=216; fields=4
 type	AnonShape_0064FEF0_DD304A9A	/SubmarineTitans/Recovered/PointerShapes/AnonShape_0064FEF0_DD304A9A	disabled	apply=0
-type	AnonShape_0064FF70_ABF5F4C4	/SubmarineTitans/Recovered/PointerShapes/AnonShape_0064FF70_ABF5F4C4	disabled	apply=0
-type	AnonShape_00650090_96AA9A18	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00650090_96AA9A18	disabled	apply=0
-type	AnonShape_006501A0_62625B3D	/SubmarineTitans/Recovered/PointerShapes/AnonShape_006501A0_62625B3D	disabled	apply=0
-type	AnonShape_00650240_0B686EC9	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00650240_0B686EC9	disabled	apply=0
+type	AnonShape_0064FF70_ABF5F4C4	/SubmarineTitans/Recovered/PointerShapes/AnonShape_0064FF70_ABF5F4C4	unchanged	length=216; fields=4
+type	AnonShape_00650090_96AA9A18	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00650090_96AA9A18	unchanged	length=216; fields=3
+type	AnonShape_006501A0_62625B3D	/SubmarineTitans/Recovered/PointerShapes/AnonShape_006501A0_62625B3D	unchanged	length=216; fields=3
+type	AnonShape_00650240_0B686EC9	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00650240_0B686EC9	unchanged	length=216; fields=4
 type	AnonShape_006503B0_3B1FB22E	/SubmarineTitans/Recovered/PointerShapes/AnonShape_006503B0_3B1FB22E	disabled	apply=0
-type	AnonShape_00650480_02BC599C	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00650480_02BC599C	disabled	apply=0
-type	AnonShape_00650600_34B54EB0	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00650600_34B54EB0	disabled	apply=0
-type	AnonShape_00650A20_4A198923	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00650A20_4A198923	disabled	apply=0
-type	AnonShape_00650B10_EE623C41	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00650B10_EE623C41	disabled	apply=0
-type	AnonShape_00650BD0_75D71395	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00650BD0_75D71395	disabled	apply=0
-type	AnonShape_00650CF0_62453E33	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00650CF0_62453E33	disabled	apply=0
-type	AnonShape_00650E10_EFFBA4CA	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00650E10_EFFBA4CA	disabled	apply=0
+type	AnonShape_00650480_02BC599C	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00650480_02BC599C	unchanged	length=220; fields=5
+type	AnonShape_00650600_34B54EB0	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00650600_34B54EB0	unchanged	length=220; fields=5
+type	AnonShape_00650A20_4A198923	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00650A20_4A198923	unchanged	length=212; fields=2
+type	AnonShape_00650B10_EE623C41	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00650B10_EE623C41	unchanged	length=214; fields=3
+type	AnonShape_00650BD0_75D71395	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00650BD0_75D71395	unchanged	length=218; fields=4
+type	AnonShape_00650CF0_62453E33	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00650CF0_62453E33	unchanged	length=218; fields=4
+type	AnonShape_00650E10_EFFBA4CA	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00650E10_EFFBA4CA	unchanged	length=218; fields=5
 type	AnonShape_00650F50_B7B27450	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00650F50_B7B27450	disabled	apply=0
 type	AnonShape_00651120_F461859C	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00651120_F461859C	disabled	apply=0
 type	AnonShape_00651160_26346523	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00651160_26346523	disabled	apply=0
 type	AnonShape_006511A0_EA666092	/SubmarineTitans/Recovered/PointerShapes/AnonShape_006511A0_EA666092	disabled	apply=0
 type	AnonShape_006511E0_D143FD4C	/SubmarineTitans/Recovered/PointerShapes/AnonShape_006511E0_D143FD4C	disabled	apply=0
 type	AnonShape_00651250_A6EBE57F	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00651250_A6EBE57F	disabled	apply=0
-type	AnonShape_006515B0_C597180E	/SubmarineTitans/Recovered/PointerShapes/AnonShape_006515B0_C597180E	disabled	apply=0
+type	AnonShape_006515B0_C597180E	/SubmarineTitans/Recovered/PointerShapes/AnonShape_006515B0_C597180E	unchanged	length=220; fields=7
 type	AnonShape_00651730_E89B8086	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00651730_E89B8086	disabled	apply=0
 type	AnonShape_00651880_B0B7072C	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00651880_B0B7072C	disabled	apply=0
 type	AnonShape_006518C0_AF8C168C	/SubmarineTitans/Recovered/PointerShapes/AnonShape_006518C0_AF8C168C	disabled	apply=0
 type	AnonShape_00651DB0_B471A58B	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00651DB0_B471A58B	disabled	apply=0
-type	AnonShape_00651ED0_D900F83D	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00651ED0_D900F83D	disabled	apply=0
-type	AnonShape_00652300_CCF8F417	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00652300_CCF8F417	disabled	apply=0
-type	AnonShape_00652460_1222B12A	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00652460_1222B12A	disabled	apply=0
+type	AnonShape_00651ED0_D900F83D	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00651ED0_D900F83D	unchanged	length=218; fields=5
+type	AnonShape_00652300_CCF8F417	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00652300_CCF8F417	unchanged	length=220; fields=5
+type	AnonShape_00652460_1222B12A	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00652460_1222B12A	unchanged	length=218; fields=3
 type	AnonShape_00652540_D5E27A07	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00652540_D5E27A07	disabled	apply=0
-type	AnonShape_006525E0_52237033	/SubmarineTitans/Recovered/PointerShapes/AnonShape_006525E0_52237033	disabled	apply=0
-type	AnonShape_00652670_DFEA616F	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00652670_DFEA616F	disabled	apply=0
-type	AnonShape_00652700_9F96C451	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00652700_9F96C451	disabled	apply=0
+type	AnonShape_006525E0_52237033	/SubmarineTitans/Recovered/PointerShapes/AnonShape_006525E0_52237033	unchanged	length=216; fields=2
+type	AnonShape_00652670_DFEA616F	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00652670_DFEA616F	unchanged	length=216; fields=2
+type	AnonShape_00652700_9F96C451	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00652700_9F96C451	unchanged	length=218; fields=4
 type	AnonShape_0065D600_57681C41	/SubmarineTitans/Recovered/PointerShapes/AnonShape_0065D600_57681C41	disabled	apply=0
 type	AnonShape_0065D760_A4BF8285	/SubmarineTitans/Recovered/PointerShapes/AnonShape_0065D760_A4BF8285	disabled	apply=0
 type	AnonShape_0065E9A0_9C4BAF6B	/SubmarineTitans/Recovered/PointerShapes/AnonShape_0065E9A0_9C4BAF6B	disabled	apply=0
@@ -673,6 +671,7 @@ type	AnonShape_0070B3C0_68B37622	/SubmarineTitans/Recovered/PointerShapes/AnonSh
 type	AnonShape_0070B3D0_A2BA8A38	/SubmarineTitans/Recovered/PointerShapes/AnonShape_0070B3D0_A2BA8A38	disabled	apply=0
 type	AnonShape_0070B670_4073A4BF	/SubmarineTitans/Recovered/PointerShapes/AnonShape_0070B670_4073A4BF	disabled	apply=0
 type	AnonShape_0070CB20_44158EDF	/SubmarineTitans/Recovered/PointerShapes/AnonShape_0070CB20_44158EDF	disabled	apply=0
+type	AnonShape_00710FB0_18E70042	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00710FB0_18E70042	unchanged	length=172; fields=7
 type	AnonShape_007111C0_C04D120D	/SubmarineTitans/Recovered/PointerShapes/AnonShape_007111C0_C04D120D	disabled	apply=0
 type	AnonShape_00711260_5F344EA1	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00711260_5F344EA1	disabled	apply=0
 type	AnonShape_007121A0_1B02775B	/SubmarineTitans/Recovered/PointerShapes/AnonShape_007121A0_1B02775B	disabled	apply=0
@@ -870,6 +869,8 @@ target		008075A8	disabled	apply=0
 target		0080760C	disabled	apply=0
 target		00807618	disabled	apply=0
 target		0080877A	disabled	apply=0
+target		00811718	disabled	apply=0
+target		0081171C	disabled	apply=0
 target		00811764	disabled	apply=0
 target		0081176C	disabled	apply=0
 target		008489B4	disabled	apply=0
@@ -1023,8 +1024,6 @@ target	0047DA50	ECX:4 (auto)	disabled	apply=0
 target	0047DF00	Stack[-0xc]:4	disabled	apply=0
 target	0047DF00	ECX:4 (auto)	disabled	apply=0
 target	0047DF00	Stack[0x4]:4	disabled	apply=0
-target	004803D0	ECX:4 (auto)	disabled	apply=0
-target	004803D0	Stack[0x4]:4	disabled	apply=0
 target	00480600	Stack[-0xc]:4	disabled	apply=0
 target	00480600	ECX:4	disabled	apply=0
 target	00481560	Stack[-0x60]:4	disabled	apply=0
@@ -1049,14 +1048,12 @@ target	0048CEA0	Stack[-0x10]:4	disabled	apply=0
 target	0048DFD0	Stack[-0x2c]:4	disabled	apply=0
 target	0048FAC0	Stack[-0x14]:4	disabled	apply=0
 target	004900E0	Stack[-0x8]:4	disabled	apply=0
-target	00491600	ECX:4	disabled	apply=0
 target	004919C0	Stack[-0xc]:4	disabled	apply=0
 target	00492390	Stack[-0x8]:4	disabled	apply=0
 target	00492420	Stack[-0x8]:4	disabled	apply=0
 target	004924A0	Stack[-0x8]:4	disabled	apply=0
 target	004924A0	ECX:4	disabled	apply=0
 target	004926C0	Stack[-0x1c]:4	disabled	apply=0
-target	00493110	Stack[0x4]:4	disabled	apply=0
 target	00493D10	ECX:4	disabled	apply=0
 target	00495980	Stack[-0x8]:4	disabled	apply=0
 target	00497CD0	Stack[-0xc]:4	disabled	apply=0
@@ -1170,7 +1167,6 @@ target	004CA3C0	Stack[-0x18]:4	disabled	apply=0
 target	004CABB0	Stack[-0x8]:4	disabled	apply=0
 target	004CBC10	Stack[-0x8]:4	disabled	apply=0
 target	004CBFB0	ECX:4	disabled	apply=0
-target	004CC130	ECX:4	disabled	apply=0
 target	004CC7F0	ECX:4	disabled	apply=0
 target	004CCC10	ECX:4 (auto)	disabled	apply=0
 target	004CD390	ECX:4	disabled	apply=0
@@ -1244,7 +1240,6 @@ target	004E4480	ECX:4	disabled	apply=0
 target	004E4670	ECX:4	disabled	apply=0
 target	004E46F0	ECX:4	disabled	apply=0
 target	004E48F0	ECX:4	disabled	apply=0
-target	004E4D60	ECX:4	disabled	apply=0
 target	004E6B40	Stack[0xc]:4	disabled	apply=0
 target	004E6D00	Stack[0xc]:4	disabled	apply=0
 target	004E76E0	Stack[-0xc]:4	disabled	apply=0
@@ -1689,12 +1684,8 @@ target	0056FA60	Stack[-0x18]:4	disabled	apply=0
 target	00571400	Stack[-0x10]:4	disabled	apply=0
 target	005718D0	Stack[-0xc]:4	disabled	apply=0
 target	00571A30	Stack[0x8]:4	disabled	apply=0
-target	005738D0	ECX:4	disabled	apply=0
 target	005745E0	Stack[0x8]:4	disabled	apply=0
-target	00574920	Stack[0x4]:4	disabled	apply=0
 target	00575030	Stack[0x4]:4	disabled	apply=0
-target	00575120	Stack[0x4]:4	disabled	apply=0
-target	005751F0	Stack[0x4]:4	disabled	apply=0
 target	00575640	Stack[0x4]:4	disabled	apply=0
 target	00575C80	Stack[0x4]:4	disabled	apply=0
 target	00575C80	Stack[0x8]:4	disabled	apply=0
@@ -1914,7 +1905,6 @@ target	005CBD00	Stack[-0xc]:4	disabled	apply=0
 target	005CC2D0	Stack[-0x8]:4	disabled	apply=0
 target	005CC440	Stack[-0x8]:4	disabled	apply=0
 target	005CC840	Stack[-0x8]:4	disabled	apply=0
-target	005CCD00	ECX:4	disabled	apply=0
 target	005CCE10	Stack[-0x14]:4	disabled	apply=0
 target	005CD430	Stack[-0x10]:4	disabled	apply=0
 target	005CDB20	Stack[-0xc]:4	disabled	apply=0
@@ -1992,9 +1982,6 @@ target	005EAF10	Stack[-0x8]:4	disabled	apply=0
 target	005EAF10	Stack[-0xc]:4	disabled	apply=0
 target	005EAF10	ECX:4 (auto)	disabled	apply=0
 target	005EAF10	Stack[0x4]:4	disabled	apply=0
-target	005EBD80	ECX:4	disabled	apply=0
-target	005EC370	Stack[-0x10]:4	disabled	apply=0
-target	005EC370	ECX:4 (auto)	disabled	apply=0
 target	005EC6A0	Stack[-0x8]:4	disabled	apply=0
 target	005EC850	Stack[-0x24]:4	disabled	apply=0
 target	005EC850	ECX:4 (auto)	disabled	apply=0
@@ -2032,9 +2019,6 @@ target	005FB640	Stack[-0x18]:4	disabled	apply=0
 target	005FB640	Stack[-0x8]:4	disabled	apply=0
 target	005FB640	ECX:4 (auto)	disabled	apply=0
 target	005FB640	Stack[0x4]:4	disabled	apply=0
-target	005FC4A0	ECX:4	disabled	apply=0
-target	005FCAD0	Stack[-0x10]:4	disabled	apply=0
-target	005FCAD0	ECX:4 (auto)	disabled	apply=0
 target	005FCEB0	Stack[-0x8]:4	disabled	apply=0
 target	005FD1B0	Stack[-0x8]:4	disabled	apply=0
 target	005FD6A0	ECX:4	disabled	apply=0
@@ -2140,8 +2124,6 @@ target	00621640	ECX:4 (auto)	disabled	apply=0
 target	00621780	ECX:4 (auto)	disabled	apply=0
 target	00621B50	Stack[-0x8]:4	disabled	apply=0
 target	006226C0	Stack[-0x8]:4	disabled	apply=0
-target	00622990	Stack[-0x10]:4	disabled	apply=0
-target	00622990	ECX:4 (auto)	disabled	apply=0
 target	00622AB0	Stack[-0x20]:4	disabled	apply=0
 target	00622AB0	ECX:4 (auto)	disabled	apply=0
 target	00622AB0	Stack[0x4]:4	disabled	apply=0
@@ -2196,6 +2178,7 @@ target	00638CA0	ECX:4 (auto)	disabled	apply=0
 target	00638CA0	Stack[0x4]:4	disabled	apply=0
 target	00639630	ECX:4	disabled	apply=0
 target	00639670	ECX:4 (auto)	disabled	apply=0
+target	00639C90	Stack[-0x8]:4	disabled	apply=0
 target	00639C90	ECX:4 (auto)	disabled	apply=0
 target	00639C90	Stack[0x4]:4	disabled	apply=0
 target	0063C170	ECX:4 (auto)	disabled	apply=0
@@ -2238,11 +2221,11 @@ target	00647DC0	Stack[-0x8]:4	disabled	apply=0
 target	00647EF0	Stack[-0x14]:4	disabled	apply=0
 target	00648030	Stack[-0x10]:4	disabled	apply=0
 target	006488C0	Stack[0xc]:4	disabled	apply=0
-target	00648C10	Stack[0x4]:4	disabled	apply=0
 target	00649B90	Stack[-0x8]:4	disabled	apply=0
 target	00649EB0	Stack[-0x8]:4	disabled	apply=0
 target	0064A830	Stack[0x8]:4	disabled	apply=0
 target	0064A970	Stack[-0x10]:4	disabled	apply=0
+target	0064A970	Stack[-0x1c]:4	disabled	apply=0
 target	0064CC90	ECX:4	disabled	apply=0
 target	0064CD30	ECX:4	disabled	apply=0
 target	0064CD80	Stack[-0x8]:4	disabled	apply=0
@@ -2270,37 +2253,20 @@ target	0064EF10	Stack[0x4]:4	disabled	apply=0
 target	0064F0C0	Stack[0x4]:4	disabled	apply=0
 target	0064F110	Stack[0x4]:4	disabled	apply=0
 target	0064F160	Stack[0x4]:4	disabled	apply=0
-target	0064F1B0	Stack[0x4]:4	disabled	apply=0
 target	0064F360	Stack[0x4]:4	disabled	apply=0
 target	0064F430	Stack[0x4]:4	disabled	apply=0
 target	0064F470	Stack[0x4]:4	disabled	apply=0
 target	0064F4C0	Stack[0x4]:4	disabled	apply=0
-target	0064F500	Stack[0x4]:4	disabled	apply=0
 target	0064F620	Stack[0x4]:4	disabled	apply=0
 target	0064F700	Stack[0x4]:4	disabled	apply=0
-target	0064F780	Stack[0x4]:4	disabled	apply=0
-target	0064F950	Stack[0x4]:4	disabled	apply=0
 target	0064FB00	Stack[0x4]:4	disabled	apply=0
-target	0064FB80	Stack[0x4]:4	disabled	apply=0
 target	0064FCE0	Stack[0x4]:4	disabled	apply=0
-target	0064FD80	Stack[0x4]:4	disabled	apply=0
 target	0064FEF0	Stack[0x4]:4	disabled	apply=0
-target	0064FF70	Stack[0x4]:4	disabled	apply=0
-target	00650090	Stack[0x4]:4	disabled	apply=0
-target	006501A0	Stack[0x4]:4	disabled	apply=0
-target	00650240	Stack[0x4]:4	disabled	apply=0
 target	006503B0	Stack[0x4]:4	disabled	apply=0
-target	00650480	Stack[0x4]:4	disabled	apply=0
-target	00650600	Stack[0x4]:4	disabled	apply=0
 target	00650760	Stack[0x4]:4	disabled	apply=0
 target	00650820	Stack[0x4]:4	disabled	apply=0
 target	006508C0	Stack[0x4]:4	disabled	apply=0
 target	00650940	Stack[0x4]:4	disabled	apply=0
-target	00650A20	Stack[0x4]:4	disabled	apply=0
-target	00650B10	Stack[0x4]:4	disabled	apply=0
-target	00650BD0	Stack[0x4]:4	disabled	apply=0
-target	00650CF0	Stack[0x4]:4	disabled	apply=0
-target	00650E10	Stack[0x4]:4	disabled	apply=0
 target	00650F50	Stack[0x4]:4	disabled	apply=0
 target	00650F90	Stack[0x4]:4	disabled	apply=0
 target	00651010	Stack[0x4]:4	disabled	apply=0
@@ -2312,7 +2278,6 @@ target	00651250	Stack[0x4]:4	disabled	apply=0
 target	00651290	Stack[0x4]:4	disabled	apply=0
 target	006513C0	Stack[0x4]:4	disabled	apply=0
 target	006514D0	Stack[0x4]:4	disabled	apply=0
-target	006515B0	Stack[0x4]:4	disabled	apply=0
 target	00651730	Stack[0x4]:4	disabled	apply=0
 target	006517C0	Stack[0x4]:4	disabled	apply=0
 target	00651880	Stack[0x4]:4	disabled	apply=0
@@ -2325,16 +2290,11 @@ target	00651C60	Stack[0x4]:4	disabled	apply=0
 target	00651CD0	Stack[0x4]:4	disabled	apply=0
 target	00651DB0	Stack[0x4]:4	disabled	apply=0
 target	00651DF0	Stack[0x4]:4	disabled	apply=0
-target	00651ED0	Stack[0x4]:4	disabled	apply=0
 target	00652030	Stack[0x4]:4	disabled	apply=0
 target	00652100	Stack[0x4]:4	disabled	apply=0
 target	006521C0	Stack[0x4]:4	disabled	apply=0
-target	00652300	Stack[0x4]:4	disabled	apply=0
-target	00652460	Stack[0x4]:4	disabled	apply=0
 target	00652540	Stack[0x4]:4	disabled	apply=0
-target	006525E0	Stack[0x4]:4	disabled	apply=0
-target	00652670	Stack[0x4]:4	disabled	apply=0
-target	00652700	Stack[0x4]:4	disabled	apply=0
+target	00652810	ECX:4 (auto)	disabled	apply=0
 target	0065D2A0	Stack[-0xc]:4	disabled	apply=0
 target	0065D4B0	Stack[-0x8]:4	disabled	apply=0
 target	0065D590	ECX:4	disabled	apply=0
@@ -2404,7 +2364,6 @@ target	0067BE20	Stack[0x4]:4	disabled	apply=0
 target	0067BFD0	Stack[-0xc]:4	disabled	apply=0
 target	0067C180	Stack[-0x20]:4	disabled	apply=0
 target	0067C7E0	Stack[-0x10]:4	disabled	apply=0
-target	0067D9C0	Stack[0xc]:4	disabled	apply=0
 target	0067E7E0	Stack[-0x10]:4	disabled	apply=0
 target	0067E7E0	Stack[-0x8]:4	disabled	apply=0
 target	0067E7E0	Stack[-0xc]:4	disabled	apply=0
@@ -2462,6 +2421,7 @@ target	00690B90	Stack[-0xc]:4	disabled	apply=0
 target	00690B90	Stack[0x4]:4	disabled	apply=0
 target	00690FC0	Stack[-0x8]:4	disabled	apply=0
 target	00690FC0	Stack[0x4]:4	disabled	apply=0
+target	00691190	Stack[-0x8]:4	disabled	apply=0
 target	00691190	Stack[0x4]:4	disabled	apply=0
 target	00692BA0	Stack[0x4]:4	disabled	apply=0
 target	00693C10	Stack[0x4]:4	disabled	apply=0
@@ -2654,7 +2614,6 @@ target	0070CB20	Stack[0x24]:4	disabled	apply=0
 target	0070CB20	Stack[0xc]:4	disabled	apply=0
 target	00710790	Stack[0x4]:4	disabled	apply=0
 target	007109F0	Stack[0x4]:4	disabled	apply=0
-target	00710FB0	ECX:4 (auto)	disabled	apply=0
 target	007111C0	Stack[0x4]:4	disabled	apply=0
 target	00711260	Stack[0x4]:4	disabled	apply=0
 target	007115E0	Stack[0x4]:4	disabled	apply=0
@@ -2758,10 +2717,7 @@ target	0074C434	ECX:4 (auto)	disabled	apply=0
 target	0074C45B	ECX:4 (auto)	disabled	apply=0
 target	0074C49C	ECX:4 (auto)	disabled	apply=0
 target	0074C4BF	Stack[0x4]:4	disabled	apply=0
-target	0074C5D2	Stack[0x4]:4	disabled	apply=0
-target	0074C613	Stack[0x4]:4	disabled	apply=0
 target	0074C77C	ECX:4 (auto)	disabled	apply=0
-target	0074C7B6	ECX:4	disabled	apply=0
 target	0074C7CF	ECX:4 (auto)	disabled	apply=0
 target	0074C81F	ECX:4 (auto)	disabled	apply=0
 target	0074C96C	ECX:4 (auto)	disabled	apply=0
@@ -2845,7 +2801,6 @@ target	0075E0C0	Stack[0x4]:4	disabled	apply=0
 target	0075E100	Stack[0x4]:4	disabled	apply=0
 target	0075E260	Stack[0x4]:4	disabled	apply=0
 target	0075E580	Stack[0x4]:4	disabled	apply=0
-target	0075E890	Stack[0x4]:4	disabled	apply=0
 target	0075E980	Stack[0x4]:4	disabled	apply=0
 target	0075EFE0	Stack[0x4]:4	disabled	apply=0
 target	0075F720	Stack[0x4]:4	disabled	apply=0
@@ -2861,3 +2816,32 @@ target	00761550	Stack[0x4]:4	disabled	apply=0
 target	00761550	Stack[0x8]:4	disabled	apply=0
 target	00761770	Stack[0x4]:4	disabled	apply=0
 target	00761770	Stack[0x8]:4	disabled	apply=0
+target	00574920:param_1	Stack[0x4]:4	preserved	concrete non-generic variable type
+target	00575120:param_1	Stack[0x4]:4	preserved	concrete non-generic variable type
+target	005751F0:param_1	Stack[0x4]:4	preserved	concrete non-generic variable type
+target	00648C10:strategData	Stack[0x4]:4	preserved	concrete non-generic variable type
+target	0064F1B0:param_1	Stack[0x4]:4	preserved	concrete non-generic variable type
+target	0064F500:param_1	Stack[0x4]:4	preserved	concrete non-generic variable type
+target	0064F780:param_1	Stack[0x4]:4	preserved	concrete non-generic variable type
+target	0064F950:param_1	Stack[0x4]:4	preserved	concrete non-generic variable type
+target	0064FB80:param_1	Stack[0x4]:4	preserved	concrete non-generic variable type
+target	0064FD80:param_1	Stack[0x4]:4	preserved	concrete non-generic variable type
+target	0064FF70:param_1	Stack[0x4]:4	preserved	concrete non-generic variable type
+target	00650090:param_1	Stack[0x4]:4	preserved	concrete non-generic variable type
+target	006501A0:param_1	Stack[0x4]:4	preserved	concrete non-generic variable type
+target	00650240:param_1	Stack[0x4]:4	preserved	concrete non-generic variable type
+target	00650480:param_1	Stack[0x4]:4	preserved	concrete non-generic variable type
+target	00650600:param_1	Stack[0x4]:4	preserved	concrete non-generic variable type
+target	00650A20:param_1	Stack[0x4]:4	preserved	concrete non-generic variable type
+target	00650B10:param_1	Stack[0x4]:4	preserved	concrete non-generic variable type
+target	00650BD0:param_1	Stack[0x4]:4	preserved	concrete non-generic variable type
+target	00650CF0:param_1	Stack[0x4]:4	preserved	concrete non-generic variable type
+target	00650E10:param_1	Stack[0x4]:4	preserved	concrete non-generic variable type
+target	006515B0:param_1	Stack[0x4]:4	preserved	concrete non-generic variable type
+target	00651ED0:param_1	Stack[0x4]:4	preserved	concrete non-generic variable type
+target	00652300:param_1	Stack[0x4]:4	preserved	concrete non-generic variable type
+target	00652460:param_1	Stack[0x4]:4	preserved	concrete non-generic variable type
+target	006525E0:param_1	Stack[0x4]:4	preserved	concrete non-generic variable type
+target	00652670:param_1	Stack[0x4]:4	preserved	concrete non-generic variable type
+target	00652700:param_1	Stack[0x4]:4	preserved	concrete non-generic variable type
+target	00710FB0:this	ECX:4 (auto)	conflict	anonymous auto-this ownership must be handled by STHiddenThisAnalyzer

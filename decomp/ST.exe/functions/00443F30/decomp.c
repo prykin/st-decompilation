@@ -33,7 +33,7 @@ undefined4 * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *pa
   AnonShape_00443F30_9F0248D4 *local_34;
   DArrayTy **local_30;
   undefined4 *local_2c;
-  int local_28;
+  uint local_28;
   AnonShape_00443F30_5DF553AC *local_24;
   DArrayTy *local_20;
   DArrayTy *local_1c;
@@ -144,7 +144,7 @@ undefined4 * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *pa
       local_14 = (AnonShape_00443F30_5DF553AC *)&local_14[1].field_0x225;
     } while ((int)local_14 < 0x7fa2ed);
     local_28 = iVar2 + g_worldGrid.planeStride;
-    puVar3 = (byte *)Library::DKW::LIB::FUN_006aac70(local_28);
+    puVar3 = (byte *)(Library::DKW::LIB::MemAlloc(local_28));
     pdVar4 = puVar3 + 2;
     *puVar3 = local_44->field_001C;
     ppDVar9 = &g_playerRuntime[0].objects;

@@ -23,12 +23,13 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
   AnonPointee_STAllPlayersC_01B1 *pAVar13;
   AnonPointee_STAllPlayersC_01B5 *pAVar14;
   AnonPointee_STAllPlayersC_01B9 *pAVar15;
-  int iVar16;
-  uint uVar17;
+  ushort *puVar16;
+  int iVar17;
   uint uVar18;
-  STAllPlayersC *pSVar19;
-  byte *puVar20;
-  int *piVar21;
+  uint uVar19;
+  STAllPlayersC *pSVar20;
+  byte *puVar21;
+  int *piVar22;
   InternalExceptionFrame local_54;
   AnonShape_00422210_9D5BEAD8 *local_10;
   int local_c;
@@ -42,9 +43,9 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
   pAVar2 = local_10;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_54.previous;
-    iVar16 = ReportDebugMessage("E:\\__titans\\wlad\\Tc_gobj.cpp",0xf0b,0,iVar3,"%s",
+    iVar17 = ReportDebugMessage("E:\\__titans\\wlad\\Tc_gobj.cpp",0xf0b,0,iVar3,"%s",
                                 "STAllPlayersC::RestoreGObjData");
-    if (iVar16 == 0) {
+    if (iVar17 == 0) {
       RaiseInternalException(iVar3,0,"E:\\__titans\\wlad\\Tc_gobj.cpp",0xf0c);
       return;
     }
@@ -53,23 +54,23 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
   local_8->field_001C = *(undefined4 *)local_10;
   local_8->field_0030 = *(undefined2 *)&local_10->field_0x4;
   local_8->field_0032 = local_10->field_0006;
-  puVar20 = (byte *)&local_10->field_0x8;
+  puVar21 = (byte *)&local_10->field_0x8;
   puVar4 = (byte *)&local_8->field_0x34;
   for (iVar3 = 0x17; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar4 = *puVar20;
-    puVar20 = (byte *)(puVar20 + 1);
+    *puVar4 = *puVar21;
+    puVar21 = (byte *)(puVar21 + 1);
     puVar4 = (byte *)(puVar4 + 1);
   }
-  *(undefined2 *)puVar4 = *(undefined2 *)puVar20;
-  *(undefined1 *)((int)puVar4 + 2) = *(undefined1 *)((int)puVar20 + 2);
-  puVar20 = (byte *)&local_10->field_0x67;
+  *(undefined2 *)puVar4 = *(undefined2 *)puVar21;
+  *(undefined1 *)((int)puVar4 + 2) = *(undefined1 *)((int)puVar21 + 2);
+  puVar21 = (byte *)&local_10->field_0x67;
   puVar4 = (byte *)&local_8->field_0x93;
   for (iVar3 = 0x1b; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar4 = *puVar20;
-    puVar20 = (byte *)(puVar20 + 1);
+    *puVar4 = *puVar21;
+    puVar21 = (byte *)(puVar21 + 1);
     puVar4 = (byte *)(puVar4 + 1);
   }
-  *(undefined2 *)puVar4 = *(undefined2 *)puVar20;
+  *(undefined2 *)puVar4 = *(undefined2 *)puVar21;
   local_8->field_01CD = local_10->field_00D5;
   local_8->field_0101 = local_10->field_00D9;
   local_8->field_0105 = local_10->field_00DD;
@@ -86,240 +87,175 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
   local_8->field_0225 = local_10->field_0109;
   local_8->field_0229 = local_10->field_010D;
   if (local_10->field_0275 < 1) {
-    local_8->field_0097 = 0;
+    local_8->field_0097 = (void *)0x0;
   }
   else {
-    puVar4 = (byte *)Library::DKW::LIB::FUN_006aac70(local_10->field_0275);
+    puVar4 = (byte *)(Library::DKW::LIB::MemAlloc(local_10->field_0275));
     local_8->field_0097 = puVar4;
-    uVar18 = pAVar2->field_0275;
-    puVar20 = (byte *)(*(int *)&pAVar2->field_0x271 + (int)param_1);
-    for (uVar17 = uVar18 >> 2; uVar17 != 0; uVar17 = uVar17 - 1) {
-      *puVar4 = *puVar20;
-      puVar20 = (byte *)(puVar20 + 1);
-      puVar4 = (byte *)(puVar4 + 1);
-    }
-    for (uVar18 = uVar18 & 3; uVar18 != 0; uVar18 = uVar18 - 1) {
-      *(undefined1 *)puVar4 = *(undefined1 *)puVar20;
-      puVar20 = (byte *)((int)puVar20 + 1);
-      puVar4 = (byte *)((int)puVar4 + 1);
-    }
+    uVar19 = pAVar2->field_0275;
+    puVar21 = (byte *)(*(int *)&pAVar2->field_0x271 + (int)param_1);
+    memmove(puVar4, puVar21, uVar19); /* compiler REP MOVS byte copy */
+    uVar18 = 0;
   }
-  if (*(int *)&pAVar2[1].field_0001 < 1) {
-    local_8->field_009F = 0;
+  if ((int)*(uint *)&pAVar2[1].field_0001 < 1) {
+    local_8->field_009F = (void *)0x0;
   }
   else {
-    puVar4 = (byte *)Library::DKW::LIB::FUN_006aac70(*(int *)&pAVar2[1].field_0001);
+    puVar4 = (byte *)(Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2[1].field_0001));
     local_8->field_009F = puVar4;
-    uVar18 = *(uint *)&pAVar2[1].field_0001;
-    puVar20 = (byte *)(*(int *)&pAVar2->field_0x279 + (int)param_1);
-    for (uVar17 = uVar18 >> 2; uVar17 != 0; uVar17 = uVar17 - 1) {
-      *puVar4 = *puVar20;
-      puVar20 = (byte *)(puVar20 + 1);
-      puVar4 = (byte *)(puVar4 + 1);
-    }
-    for (uVar18 = uVar18 & 3; uVar18 != 0; uVar18 = uVar18 - 1) {
-      *(undefined1 *)puVar4 = *(undefined1 *)puVar20;
-      puVar20 = (byte *)((int)puVar20 + 1);
-      puVar4 = (byte *)((int)puVar4 + 1);
-    }
+    uVar19 = *(uint *)&pAVar2[1].field_0001;
+    puVar21 = (byte *)(*(int *)&pAVar2->field_0x279 + (int)param_1);
+    memmove(puVar4, puVar21, uVar19); /* compiler REP MOVS byte copy */
+    uVar18 = 0;
   }
   if (*(int *)&pAVar2->field_0x111 == -1) {
-    local_8->field_011D = 0;
+    local_8->field_011D = (void *)0x0;
   }
   else {
-    puVar4 = (byte *)Library::DKW::LIB::FUN_006aac70(*(int *)&pAVar2->field_0x115);
+    puVar4 = (byte *)(Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2->field_0x115));
     local_8->field_011D = puVar4;
-    uVar18 = *(uint *)&pAVar2->field_0x115;
-    puVar20 = (byte *)(*(int *)&pAVar2->field_0x111 + (int)param_1);
-    for (uVar17 = uVar18 >> 2; uVar17 != 0; uVar17 = uVar17 - 1) {
-      *puVar4 = *puVar20;
-      puVar20 = (byte *)(puVar20 + 1);
-      puVar4 = (byte *)(puVar4 + 1);
-    }
-    for (uVar18 = uVar18 & 3; uVar18 != 0; uVar18 = uVar18 - 1) {
-      *(undefined1 *)puVar4 = *(undefined1 *)puVar20;
-      puVar20 = (byte *)((int)puVar20 + 1);
-      puVar4 = (byte *)((int)puVar4 + 1);
-    }
+    uVar19 = *(uint *)&pAVar2->field_0x115;
+    puVar21 = (byte *)(*(int *)&pAVar2->field_0x111 + (int)param_1);
+    memmove(puVar4, puVar21, uVar19); /* compiler REP MOVS byte copy */
+    uVar18 = 0;
   }
   if (*(int *)&pAVar2->field_0x119 == -1) {
-    local_8->field_0121 = 0;
+    local_8->field_0121 = (void *)0x0;
   }
   else {
-    puVar4 = (byte *)Library::DKW::LIB::FUN_006aac70(*(int *)&pAVar2->field_0x11d);
+    puVar4 = (byte *)(Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2->field_0x11d));
     local_8->field_0121 = puVar4;
-    uVar18 = *(uint *)&pAVar2->field_0x11d;
-    puVar20 = (byte *)(*(int *)&pAVar2->field_0x119 + (int)param_1);
-    for (uVar17 = uVar18 >> 2; uVar17 != 0; uVar17 = uVar17 - 1) {
-      *puVar4 = *puVar20;
-      puVar20 = (byte *)(puVar20 + 1);
-      puVar4 = (byte *)(puVar4 + 1);
-    }
-    for (uVar18 = uVar18 & 3; uVar18 != 0; uVar18 = uVar18 - 1) {
-      *(undefined1 *)puVar4 = *(undefined1 *)puVar20;
-      puVar20 = (byte *)((int)puVar20 + 1);
-      puVar4 = (byte *)((int)puVar4 + 1);
-    }
+    uVar19 = *(uint *)&pAVar2->field_0x11d;
+    puVar21 = (byte *)(*(int *)&pAVar2->field_0x119 + (int)param_1);
+    memmove(puVar4, puVar21, uVar19); /* compiler REP MOVS byte copy */
+    uVar18 = 0;
   }
   if (*(int *)&pAVar2->field_0x121 == -1) {
-    local_8->field_0125 = 0;
+    local_8->field_0125 = (void *)0x0;
   }
   else {
-    puVar4 = (byte *)Library::DKW::LIB::FUN_006aac70(*(int *)&pAVar2->field_0x125);
+    puVar4 = (byte *)(Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2->field_0x125));
     local_8->field_0125 = puVar4;
-    uVar18 = *(uint *)&pAVar2->field_0x125;
-    puVar20 = (byte *)(*(int *)&pAVar2->field_0x121 + (int)param_1);
-    for (uVar17 = uVar18 >> 2; uVar17 != 0; uVar17 = uVar17 - 1) {
-      *puVar4 = *puVar20;
-      puVar20 = (byte *)(puVar20 + 1);
-      puVar4 = (byte *)(puVar4 + 1);
-    }
-    for (uVar18 = uVar18 & 3; uVar18 != 0; uVar18 = uVar18 - 1) {
-      *(undefined1 *)puVar4 = *(undefined1 *)puVar20;
-      puVar20 = (byte *)((int)puVar20 + 1);
-      puVar4 = (byte *)((int)puVar4 + 1);
-    }
+    uVar19 = *(uint *)&pAVar2->field_0x125;
+    puVar21 = (byte *)(*(int *)&pAVar2->field_0x121 + (int)param_1);
+    memmove(puVar4, puVar21, uVar19); /* compiler REP MOVS byte copy */
+    uVar18 = 0;
   }
   if (*(int *)&pAVar2->field_0x129 == -1) {
-    local_8->field_0129 = 0;
+    local_8->field_0129 = (void *)0x0;
   }
   else {
-    puVar4 = (byte *)Library::DKW::LIB::FUN_006aac70(*(int *)&pAVar2->field_0x12d);
+    puVar4 = (byte *)(Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2->field_0x12d));
     local_8->field_0129 = puVar4;
-    uVar18 = *(uint *)&pAVar2->field_0x12d;
-    puVar20 = (byte *)((int)param_1 + *(int *)&pAVar2->field_0x129);
-    for (uVar17 = uVar18 >> 2; uVar17 != 0; uVar17 = uVar17 - 1) {
-      *puVar4 = *puVar20;
-      puVar20 = (byte *)(puVar20 + 1);
-      puVar4 = (byte *)(puVar4 + 1);
-    }
-    for (uVar18 = uVar18 & 3; uVar18 != 0; uVar18 = uVar18 - 1) {
-      *(undefined1 *)puVar4 = *(undefined1 *)puVar20;
-      puVar20 = (byte *)((int)puVar20 + 1);
-      puVar4 = (byte *)((int)puVar4 + 1);
-    }
+    uVar19 = *(uint *)&pAVar2->field_0x12d;
+    puVar21 = (byte *)((int)param_1 + *(int *)&pAVar2->field_0x129);
+    memmove(puVar4, puVar21, uVar19); /* compiler REP MOVS byte copy */
+    uVar18 = 0;
   }
-  puVar20 = (byte *)(&local_8->field_0135);
-  piVar21 = (int *)&pAVar2->field_0x141;
+  puVar21 = (byte *)(&local_8->field_0135);
+  piVar22 = (int *)&pAVar2->field_0x141;
   local_c = 2;
   do {
-    if (piVar21[-4] == -1) {
-      puVar20[-2] = 0;
+    if (piVar22[-4] == -1) {
+      puVar21[-2] = 0;
     }
     else {
-      uVar5 = FUN_006b0060((uint *)0x0,(uint *)(piVar21[-4] + (int)param_1));
-      puVar20[-2] = uVar5;
+      uVar5 = FUN_006b0060((uint *)0x0,(uint *)(piVar22[-4] + (int)param_1));
+      puVar21[-2] = uVar5;
     }
-    if (*piVar21 == -1) {
-      *puVar20 = 0;
+    if (*piVar22 == -1) {
+      *puVar21 = 0;
     }
     else {
-      uVar5 = FUN_006b0060((uint *)0x0,(uint *)(*piVar21 + (int)param_1));
-      *puVar20 = uVar5;
+      uVar5 = FUN_006b0060((uint *)0x0,(uint *)(*piVar22 + (int)param_1));
+      *puVar21 = uVar5;
     }
-    piVar21 = piVar21 + 2;
-    puVar20 = (byte *)(puVar20 + 1);
+    piVar22 = piVar22 + 2;
+    puVar21 = (byte *)(puVar21 + 1);
     local_c = local_c + -1;
   } while (local_c != 0);
-  piVar21 = (int *)&pAVar2->field_0x171;
+  piVar22 = (int *)&pAVar2->field_0x171;
   local_c = 4;
-  puVar20 = (byte *)(&local_8->field_014D);
+  puVar21 = (byte *)(&local_8->field_014D);
   do {
-    if (piVar21[-8] == -1) {
-      puVar20[-4] = 0;
+    if (piVar22[-8] == -1) {
+      puVar21[-4] = 0;
     }
     else {
-      uVar5 = FUN_006b0060((uint *)0x0,(uint *)(piVar21[-8] + (int)param_1));
-      puVar20[-4] = uVar5;
+      uVar5 = FUN_006b0060((uint *)0x0,(uint *)(piVar22[-8] + (int)param_1));
+      puVar21[-4] = uVar5;
     }
-    if (*piVar21 == -1) {
-      *puVar20 = 0;
+    if (*piVar22 == -1) {
+      *puVar21 = 0;
     }
     else {
-      uVar5 = FUN_006b0060((uint *)0x0,(uint *)(*piVar21 + (int)param_1));
-      *puVar20 = uVar5;
+      uVar5 = FUN_006b0060((uint *)0x0,(uint *)(*piVar22 + (int)param_1));
+      *puVar21 = uVar5;
     }
-    piVar21 = piVar21 + 2;
-    puVar20 = (byte *)(puVar20 + 1);
+    piVar22 = piVar22 + 2;
+    puVar21 = (byte *)(puVar21 + 1);
     local_c = local_c + -1;
   } while (local_c != 0);
-  piVar21 = (int *)&pAVar2->field_0x1b9;
+  piVar22 = (int *)&pAVar2->field_0x1b9;
   local_c = 5;
-  puVar20 = (byte *)(&local_8->field_0171);
+  puVar21 = (byte *)(&local_8->field_0171);
   do {
-    if (piVar21[-10] == -1) {
-      puVar20[-5] = 0;
+    if (piVar22[-10] == -1) {
+      puVar21[-5] = 0;
     }
     else {
-      uVar5 = FUN_006b0060((uint *)0x0,(uint *)(piVar21[-10] + (int)param_1));
-      puVar20[-5] = uVar5;
+      uVar5 = FUN_006b0060((uint *)0x0,(uint *)(piVar22[-10] + (int)param_1));
+      puVar21[-5] = uVar5;
     }
-    if (*piVar21 == -1) {
-      *puVar20 = 0;
+    if (*piVar22 == -1) {
+      *puVar21 = 0;
     }
     else {
-      uVar5 = FUN_006b0060((uint *)0x0,(uint *)(*piVar21 + (int)param_1));
-      *puVar20 = uVar5;
+      uVar5 = FUN_006b0060((uint *)0x0,(uint *)(*piVar22 + (int)param_1));
+      *puVar21 = uVar5;
     }
-    piVar21 = piVar21 + 2;
-    puVar20 = (byte *)(puVar20 + 1);
+    piVar22 = piVar22 + 2;
+    puVar21 = (byte *)(puVar21 + 1);
     local_c = local_c + -1;
   } while (local_c != 0);
   if (*(int *)&pAVar2->field_0x1e1 == -1) {
-    local_8->field_0185 = 0;
+    local_8->field_0185 = (void *)0x0;
   }
   else {
-    puVar4 = (byte *)Library::DKW::LIB::FUN_006aac70(*(int *)&pAVar2->field_0x1e5);
+    puVar4 = (byte *)(Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2->field_0x1e5));
     local_8->field_0185 = puVar4;
-    uVar18 = *(uint *)&pAVar2->field_0x1e5;
-    puVar20 = (byte *)((int)param_1 + *(int *)&pAVar2->field_0x1e1);
-    for (uVar17 = uVar18 >> 2; uVar17 != 0; uVar17 = uVar17 - 1) {
-      *puVar4 = *puVar20;
-      puVar20 = (byte *)(puVar20 + 1);
-      puVar4 = (byte *)(puVar4 + 1);
-    }
-    for (uVar18 = uVar18 & 3; uVar18 != 0; uVar18 = uVar18 - 1) {
-      *(undefined1 *)puVar4 = *(undefined1 *)puVar20;
-      puVar20 = (byte *)((int)puVar20 + 1);
-      puVar4 = (byte *)((int)puVar4 + 1);
-    }
+    uVar19 = *(uint *)&pAVar2->field_0x1e5;
+    puVar21 = (byte *)((int)param_1 + *(int *)&pAVar2->field_0x1e1);
+    memmove(puVar4, puVar21, uVar19); /* compiler REP MOVS byte copy */
+    uVar18 = 0;
   }
   if (*(int *)&pAVar2->field_0x1e9 == -1) {
-    local_8->field_0189 = 0;
+    local_8->field_0189 = (void *)0x0;
   }
   else {
-    puVar4 = (byte *)Library::DKW::LIB::FUN_006aac70(*(int *)&pAVar2->field_0x1ed);
+    puVar4 = (byte *)(Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2->field_0x1ed));
     local_8->field_0189 = puVar4;
-    uVar18 = *(uint *)&pAVar2->field_0x1ed;
-    puVar20 = (byte *)(*(int *)&pAVar2->field_0x1e9 + (int)param_1);
-    for (uVar17 = uVar18 >> 2; uVar17 != 0; uVar17 = uVar17 - 1) {
-      *puVar4 = *puVar20;
-      puVar20 = (byte *)(puVar20 + 1);
-      puVar4 = (byte *)(puVar4 + 1);
-    }
-    for (uVar18 = uVar18 & 3; uVar18 != 0; uVar18 = uVar18 - 1) {
-      *(undefined1 *)puVar4 = *(undefined1 *)puVar20;
-      puVar20 = (byte *)((int)puVar20 + 1);
-      puVar4 = (byte *)((int)puVar4 + 1);
-    }
+    uVar19 = *(uint *)&pAVar2->field_0x1ed;
+    puVar21 = (byte *)(*(int *)&pAVar2->field_0x1e9 + (int)param_1);
+    memmove(puVar4, puVar21, uVar19); /* compiler REP MOVS byte copy */
+    uVar18 = 0;
   }
   if (*(int *)&pAVar2->field_0x1f1 == -1) {
     local_8->field_018D = (AnonPointee_STAllPlayersC_018D *)0x0;
   }
   else {
-    pAVar6 = (AnonPointee_STAllPlayersC_018D *)
-             Library::DKW::LIB::FUN_006aac70(*(int *)&pAVar2->field_0x1f5);
+    pAVar6 = Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2->field_0x1f5);
     local_8->field_018D = pAVar6;
-    uVar18 = *(uint *)&pAVar2->field_0x1f5;
-    puVar20 = (byte *)(*(int *)&pAVar2->field_0x1f1 + (int)param_1);
-    for (uVar17 = uVar18 >> 2; uVar17 != 0; uVar17 = uVar17 - 1) {
-      pAVar6->field_0000 = *puVar20;
-      puVar20 = (byte *)(puVar20 + 1);
+    uVar19 = *(uint *)&pAVar2->field_0x1f5;
+    puVar21 = (byte *)(*(int *)&pAVar2->field_0x1f1 + (int)param_1);
+    for (uVar18 = uVar19 >> 2; uVar18 != 0; uVar18 = uVar18 - 1) {
+      pAVar6->field_0000 = *puVar21;
+      puVar21 = (byte *)(puVar21 + 1);
       pAVar6 = (AnonPointee_STAllPlayersC_018D *)&pAVar6->field_0004;
     }
-    for (uVar18 = uVar18 & 3; uVar18 != 0; uVar18 = uVar18 - 1) {
-      *(undefined1 *)&pAVar6->field_0000 = *(undefined1 *)puVar20;
-      puVar20 = (byte *)((int)puVar20 + 1);
+    for (uVar19 = uVar19 & 3; uVar19 != 0; uVar19 = uVar19 - 1) {
+      *(undefined1 *)&pAVar6->field_0000 = *(undefined1 *)puVar21;
+      puVar21 = (byte *)((int)puVar21 + 1);
       pAVar6 = (AnonPointee_STAllPlayersC_018D *)((int)&pAVar6->field_0000 + 1);
     }
   }
@@ -327,19 +263,18 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     local_8->field_0191 = (AnonPointee_STAllPlayersC_0191 *)0x0;
   }
   else {
-    pAVar7 = (AnonPointee_STAllPlayersC_0191 *)
-             Library::DKW::LIB::FUN_006aac70(*(int *)&pAVar2->field_0x1fd);
+    pAVar7 = Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2->field_0x1fd);
     local_8->field_0191 = pAVar7;
-    uVar18 = *(uint *)&pAVar2->field_0x1fd;
-    puVar20 = (byte *)(*(int *)&pAVar2->field_0x1f9 + (int)param_1);
-    for (uVar17 = uVar18 >> 2; uVar17 != 0; uVar17 = uVar17 - 1) {
-      pAVar7->field_0000 = *puVar20;
-      puVar20 = (byte *)(puVar20 + 1);
+    uVar19 = *(uint *)&pAVar2->field_0x1fd;
+    puVar21 = (byte *)(*(int *)&pAVar2->field_0x1f9 + (int)param_1);
+    for (uVar18 = uVar19 >> 2; uVar18 != 0; uVar18 = uVar18 - 1) {
+      pAVar7->field_0000 = *puVar21;
+      puVar21 = (byte *)(puVar21 + 1);
       pAVar7 = (AnonPointee_STAllPlayersC_0191 *)&pAVar7->field_0004;
     }
-    for (uVar18 = uVar18 & 3; uVar18 != 0; uVar18 = uVar18 - 1) {
-      *(undefined1 *)&pAVar7->field_0000 = *(undefined1 *)puVar20;
-      puVar20 = (byte *)((int)puVar20 + 1);
+    for (uVar19 = uVar19 & 3; uVar19 != 0; uVar19 = uVar19 - 1) {
+      *(undefined1 *)&pAVar7->field_0000 = *(undefined1 *)puVar21;
+      puVar21 = (byte *)((int)puVar21 + 1);
       pAVar7 = (AnonPointee_STAllPlayersC_0191 *)((int)&pAVar7->field_0000 + 1);
     }
   }
@@ -347,19 +282,18 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     local_8->field_0195 = (AnonPointee_STAllPlayersC_0195 *)0x0;
   }
   else {
-    pAVar8 = (AnonPointee_STAllPlayersC_0195 *)
-             Library::DKW::LIB::FUN_006aac70(*(int *)&pAVar2->field_0x205);
+    pAVar8 = Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2->field_0x205);
     local_8->field_0195 = pAVar8;
-    uVar18 = *(uint *)&pAVar2->field_0x205;
-    puVar20 = (byte *)((int)param_1 + *(int *)&pAVar2->field_0x201);
-    for (uVar17 = uVar18 >> 2; uVar17 != 0; uVar17 = uVar17 - 1) {
-      pAVar8->field_0000 = *puVar20;
-      puVar20 = (byte *)(puVar20 + 1);
+    uVar19 = *(uint *)&pAVar2->field_0x205;
+    puVar21 = (byte *)((int)param_1 + *(int *)&pAVar2->field_0x201);
+    for (uVar18 = uVar19 >> 2; uVar18 != 0; uVar18 = uVar18 - 1) {
+      pAVar8->field_0000 = *puVar21;
+      puVar21 = (byte *)(puVar21 + 1);
       pAVar8 = (AnonPointee_STAllPlayersC_0195 *)&pAVar8->field_0004;
     }
-    for (uVar18 = uVar18 & 3; uVar18 != 0; uVar18 = uVar18 - 1) {
-      *(undefined1 *)&pAVar8->field_0000 = *(undefined1 *)puVar20;
-      puVar20 = (byte *)((int)puVar20 + 1);
+    for (uVar19 = uVar19 & 3; uVar19 != 0; uVar19 = uVar19 - 1) {
+      *(undefined1 *)&pAVar8->field_0000 = *(undefined1 *)puVar21;
+      puVar21 = (byte *)((int)puVar21 + 1);
       pAVar8 = (AnonPointee_STAllPlayersC_0195 *)((int)&pAVar8->field_0000 + 1);
     }
   }
@@ -367,224 +301,226 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     local_8->field_0199 = (AnonPointee_STAllPlayersC_0199 *)0x0;
   }
   else {
-    pAVar9 = (AnonPointee_STAllPlayersC_0199 *)
-             Library::DKW::LIB::FUN_006aac70(*(int *)&pAVar2->field_0x20d);
+    pAVar9 = Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2->field_0x20d);
     local_8->field_0199 = pAVar9;
-    uVar18 = *(uint *)&pAVar2->field_0x20d;
-    puVar20 = (byte *)(*(int *)&pAVar2->field_0x209 + (int)param_1);
-    for (uVar17 = uVar18 >> 2; uVar17 != 0; uVar17 = uVar17 - 1) {
-      pAVar9->field_0000 = *puVar20;
-      puVar20 = (byte *)(puVar20 + 1);
+    uVar19 = *(uint *)&pAVar2->field_0x20d;
+    puVar21 = (byte *)(*(int *)&pAVar2->field_0x209 + (int)param_1);
+    for (uVar18 = uVar19 >> 2; uVar18 != 0; uVar18 = uVar18 - 1) {
+      pAVar9->field_0000 = *puVar21;
+      puVar21 = (byte *)(puVar21 + 1);
       pAVar9 = (AnonPointee_STAllPlayersC_0199 *)&pAVar9->field_0004;
     }
-    for (uVar18 = uVar18 & 3; uVar18 != 0; uVar18 = uVar18 - 1) {
-      *(undefined1 *)&pAVar9->field_0000 = *(undefined1 *)puVar20;
-      puVar20 = (byte *)((int)puVar20 + 1);
+    for (uVar19 = uVar19 & 3; uVar19 != 0; uVar19 = uVar19 - 1) {
+      *(undefined1 *)&pAVar9->field_0000 = *(undefined1 *)puVar21;
+      puVar21 = (byte *)((int)puVar21 + 1);
       pAVar9 = (AnonPointee_STAllPlayersC_0199 *)((int)&pAVar9->field_0000 + 1);
     }
   }
-  pSVar19 = local_8;
+  pSVar20 = local_8;
   if (*(int *)&pAVar2->field_0x211 == -1) {
     local_8->field_019D = 0;
   }
   else {
     uVar5 = FUN_006b0060((uint *)0x0,(uint *)(*(int *)&pAVar2->field_0x211 + (int)param_1));
-    pSVar19->field_019D = uVar5;
+    pSVar20->field_019D = uVar5;
   }
   if (*(int *)&pAVar2->field_0x219 == -1) {
-    pSVar19->field_01A1 = 0;
+    pSVar20->field_01A1 = 0;
   }
   else {
     uVar5 = FUN_006b0060((uint *)0x0,(uint *)(*(int *)&pAVar2->field_0x219 + (int)param_1));
-    pSVar19->field_01A1 = uVar5;
+    pSVar20->field_01A1 = uVar5;
   }
   if (*(int *)&pAVar2->field_0x221 == -1) {
-    pSVar19->field_01A5 = (AnonPointee_STAllPlayersC_01A5 *)0x0;
+    pSVar20->field_01A5 = (AnonPointee_STAllPlayersC_01A5 *)0x0;
   }
   else {
-    pAVar10 = (AnonPointee_STAllPlayersC_01A5 *)
-              Library::DKW::LIB::FUN_006aac70(*(int *)&pAVar2->field_0x225);
+    pAVar10 = Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2->field_0x225);
     local_8->field_01A5 = pAVar10;
-    uVar18 = *(uint *)&pAVar2->field_0x225;
-    puVar20 = (byte *)((int)param_1 + *(int *)&pAVar2->field_0x221);
-    for (uVar17 = uVar18 >> 2; uVar17 != 0; uVar17 = uVar17 - 1) {
-      pAVar10->field_0000 = *puVar20;
-      puVar20 = (byte *)(puVar20 + 1);
+    uVar19 = *(uint *)&pAVar2->field_0x225;
+    puVar21 = (byte *)((int)param_1 + *(int *)&pAVar2->field_0x221);
+    for (uVar18 = uVar19 >> 2; uVar18 != 0; uVar18 = uVar18 - 1) {
+      pAVar10->field_0000 = *puVar21;
+      puVar21 = (byte *)(puVar21 + 1);
       pAVar10 = (AnonPointee_STAllPlayersC_01A5 *)&pAVar10->field_0004;
     }
-    for (uVar18 = uVar18 & 3; pSVar19 = local_8, uVar18 != 0; uVar18 = uVar18 - 1) {
-      *(undefined1 *)&pAVar10->field_0000 = *(undefined1 *)puVar20;
-      puVar20 = (byte *)((int)puVar20 + 1);
+    for (uVar19 = uVar19 & 3; pSVar20 = local_8, uVar19 != 0; uVar19 = uVar19 - 1) {
+      *(undefined1 *)&pAVar10->field_0000 = *(undefined1 *)puVar21;
+      puVar21 = (byte *)((int)puVar21 + 1);
       pAVar10 = (AnonPointee_STAllPlayersC_01A5 *)((int)&pAVar10->field_0000 + 1);
     }
   }
   if (*(int *)&pAVar2->field_0x229 == -1) {
-    pSVar19->field_01A9 = (AnonPointee_STAllPlayersC_01A9 *)0x0;
+    pSVar20->field_01A9 = (AnonPointee_STAllPlayersC_01A9 *)0x0;
   }
   else {
-    pAVar11 = (AnonPointee_STAllPlayersC_01A9 *)
-              Library::DKW::LIB::FUN_006aac70(*(int *)&pAVar2->field_0x22d);
+    pAVar11 = Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2->field_0x22d);
     local_8->field_01A9 = pAVar11;
-    uVar18 = *(uint *)&pAVar2->field_0x22d;
-    puVar20 = (byte *)(*(int *)&pAVar2->field_0x229 + (int)param_1);
-    for (uVar17 = uVar18 >> 2; uVar17 != 0; uVar17 = uVar17 - 1) {
-      pAVar11->field_0000 = *puVar20;
-      puVar20 = (byte *)(puVar20 + 1);
+    uVar19 = *(uint *)&pAVar2->field_0x22d;
+    puVar21 = (byte *)(*(int *)&pAVar2->field_0x229 + (int)param_1);
+    for (uVar18 = uVar19 >> 2; uVar18 != 0; uVar18 = uVar18 - 1) {
+      pAVar11->field_0000 = *puVar21;
+      puVar21 = (byte *)(puVar21 + 1);
       pAVar11 = (AnonPointee_STAllPlayersC_01A9 *)&pAVar11->field_0004;
     }
-    for (uVar18 = uVar18 & 3; pSVar19 = local_8, uVar18 != 0; uVar18 = uVar18 - 1) {
-      *(undefined1 *)&pAVar11->field_0000 = *(undefined1 *)puVar20;
-      puVar20 = (byte *)((int)puVar20 + 1);
+    for (uVar19 = uVar19 & 3; pSVar20 = local_8, uVar19 != 0; uVar19 = uVar19 - 1) {
+      *(undefined1 *)&pAVar11->field_0000 = *(undefined1 *)puVar21;
+      puVar21 = (byte *)((int)puVar21 + 1);
       pAVar11 = (AnonPointee_STAllPlayersC_01A9 *)((int)&pAVar11->field_0000 + 1);
     }
   }
   if (*(int *)&pAVar2->field_0x231 == -1) {
-    pSVar19->field_01AD = (AnonPointee_STAllPlayersC_01AD *)0x0;
+    pSVar20->field_01AD = (AnonPointee_STAllPlayersC_01AD *)0x0;
   }
   else {
-    pAVar12 = (AnonPointee_STAllPlayersC_01AD *)
-              Library::DKW::LIB::FUN_006aac70(*(int *)&pAVar2->field_0x235);
+    pAVar12 = Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2->field_0x235);
     local_8->field_01AD = pAVar12;
-    uVar18 = *(uint *)&pAVar2->field_0x235;
-    puVar20 = (byte *)(*(int *)&pAVar2->field_0x231 + (int)param_1);
-    for (uVar17 = uVar18 >> 2; uVar17 != 0; uVar17 = uVar17 - 1) {
-      pAVar12->field_0000 = *puVar20;
-      puVar20 = (byte *)(puVar20 + 1);
+    uVar19 = *(uint *)&pAVar2->field_0x235;
+    puVar21 = (byte *)(*(int *)&pAVar2->field_0x231 + (int)param_1);
+    for (uVar18 = uVar19 >> 2; uVar18 != 0; uVar18 = uVar18 - 1) {
+      pAVar12->field_0000 = *puVar21;
+      puVar21 = (byte *)(puVar21 + 1);
       pAVar12 = (AnonPointee_STAllPlayersC_01AD *)&pAVar12->field_0004;
     }
-    for (uVar18 = uVar18 & 3; pSVar19 = local_8, uVar18 != 0; uVar18 = uVar18 - 1) {
-      *(undefined1 *)&pAVar12->field_0000 = *(undefined1 *)puVar20;
-      puVar20 = (byte *)((int)puVar20 + 1);
+    for (uVar19 = uVar19 & 3; pSVar20 = local_8, uVar19 != 0; uVar19 = uVar19 - 1) {
+      *(undefined1 *)&pAVar12->field_0000 = *(undefined1 *)puVar21;
+      puVar21 = (byte *)((int)puVar21 + 1);
       pAVar12 = (AnonPointee_STAllPlayersC_01AD *)((int)&pAVar12->field_0000 + 1);
     }
   }
   if (*(int *)&pAVar2->field_0x239 == -1) {
-    pSVar19->field_01B1 = (AnonPointee_STAllPlayersC_01B1 *)0x0;
+    pSVar20->field_01B1 = (AnonPointee_STAllPlayersC_01B1 *)0x0;
   }
   else {
-    pAVar13 = (AnonPointee_STAllPlayersC_01B1 *)
-              Library::DKW::LIB::FUN_006aac70(*(int *)&pAVar2->field_0x23d);
+    pAVar13 = Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2->field_0x23d);
     local_8->field_01B1 = pAVar13;
-    uVar18 = *(uint *)&pAVar2->field_0x23d;
-    puVar20 = (byte *)(*(int *)&pAVar2->field_0x239 + (int)param_1);
-    for (uVar17 = uVar18 >> 2; uVar17 != 0; uVar17 = uVar17 - 1) {
-      pAVar13->field_0000 = *puVar20;
-      puVar20 = (byte *)(puVar20 + 1);
+    uVar19 = *(uint *)&pAVar2->field_0x23d;
+    puVar21 = (byte *)(*(int *)&pAVar2->field_0x239 + (int)param_1);
+    for (uVar18 = uVar19 >> 2; uVar18 != 0; uVar18 = uVar18 - 1) {
+      pAVar13->field_0000 = *puVar21;
+      puVar21 = (byte *)(puVar21 + 1);
       pAVar13 = (AnonPointee_STAllPlayersC_01B1 *)&pAVar13->field_0004;
     }
-    for (uVar18 = uVar18 & 3; pSVar19 = local_8, uVar18 != 0; uVar18 = uVar18 - 1) {
-      *(undefined1 *)&pAVar13->field_0000 = *(undefined1 *)puVar20;
-      puVar20 = (byte *)((int)puVar20 + 1);
+    for (uVar19 = uVar19 & 3; pSVar20 = local_8, uVar19 != 0; uVar19 = uVar19 - 1) {
+      *(undefined1 *)&pAVar13->field_0000 = *(undefined1 *)puVar21;
+      puVar21 = (byte *)((int)puVar21 + 1);
       pAVar13 = (AnonPointee_STAllPlayersC_01B1 *)((int)&pAVar13->field_0000 + 1);
     }
   }
   if (*(int *)&pAVar2->field_0x241 == -1) {
-    pSVar19->field_01B5 = (AnonPointee_STAllPlayersC_01B5 *)0x0;
+    pSVar20->field_01B5 = (AnonPointee_STAllPlayersC_01B5 *)0x0;
   }
   else {
-    pAVar14 = (AnonPointee_STAllPlayersC_01B5 *)
-              Library::DKW::LIB::FUN_006aac70(*(int *)&pAVar2->field_0x245);
+    pAVar14 = Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2->field_0x245);
     local_8->field_01B5 = pAVar14;
-    uVar18 = *(uint *)&pAVar2->field_0x245;
-    puVar20 = (byte *)((int)param_1 + *(int *)&pAVar2->field_0x241);
-    for (uVar17 = uVar18 >> 2; uVar17 != 0; uVar17 = uVar17 - 1) {
-      pAVar14->field_0000 = *puVar20;
-      puVar20 = (byte *)(puVar20 + 1);
+    uVar19 = *(uint *)&pAVar2->field_0x245;
+    puVar21 = (byte *)((int)param_1 + *(int *)&pAVar2->field_0x241);
+    for (uVar18 = uVar19 >> 2; uVar18 != 0; uVar18 = uVar18 - 1) {
+      pAVar14->field_0000 = *puVar21;
+      puVar21 = (byte *)(puVar21 + 1);
       pAVar14 = (AnonPointee_STAllPlayersC_01B5 *)&pAVar14->field_0004;
     }
-    for (uVar18 = uVar18 & 3; pSVar19 = local_8, uVar18 != 0; uVar18 = uVar18 - 1) {
-      *(undefined1 *)&pAVar14->field_0000 = *(undefined1 *)puVar20;
-      puVar20 = (byte *)((int)puVar20 + 1);
+    for (uVar19 = uVar19 & 3; pSVar20 = local_8, uVar19 != 0; uVar19 = uVar19 - 1) {
+      *(undefined1 *)&pAVar14->field_0000 = *(undefined1 *)puVar21;
+      puVar21 = (byte *)((int)puVar21 + 1);
       pAVar14 = (AnonPointee_STAllPlayersC_01B5 *)((int)&pAVar14->field_0000 + 1);
     }
   }
   if (*(int *)&pAVar2->field_0x249 == -1) {
-    pSVar19->field_01B9 = (AnonPointee_STAllPlayersC_01B9 *)0x0;
+    pSVar20->field_01B9 = (AnonPointee_STAllPlayersC_01B9 *)0x0;
   }
   else {
-    pAVar15 = (AnonPointee_STAllPlayersC_01B9 *)
-              Library::DKW::LIB::FUN_006aac70(*(int *)&pAVar2->field_0x24d);
+    pAVar15 = Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2->field_0x24d);
     local_8->field_01B9 = pAVar15;
-    uVar18 = *(uint *)&pAVar2->field_0x24d;
-    puVar20 = (byte *)(*(int *)&pAVar2->field_0x249 + (int)param_1);
-    for (uVar17 = uVar18 >> 2; uVar17 != 0; uVar17 = uVar17 - 1) {
-      pAVar15->field_0000 = *puVar20;
-      puVar20 = (byte *)(puVar20 + 1);
+    uVar19 = *(uint *)&pAVar2->field_0x24d;
+    puVar21 = (byte *)(*(int *)&pAVar2->field_0x249 + (int)param_1);
+    for (uVar18 = uVar19 >> 2; uVar18 != 0; uVar18 = uVar18 - 1) {
+      pAVar15->field_0000 = *puVar21;
+      puVar21 = (byte *)(puVar21 + 1);
       pAVar15 = (AnonPointee_STAllPlayersC_01B9 *)&pAVar15->field_0004;
     }
-    for (uVar18 = uVar18 & 3; pSVar19 = local_8, uVar18 != 0; uVar18 = uVar18 - 1) {
-      *(undefined1 *)&pAVar15->field_0000 = *(undefined1 *)puVar20;
-      puVar20 = (byte *)((int)puVar20 + 1);
+    for (uVar19 = uVar19 & 3; pSVar20 = local_8, uVar19 != 0; uVar19 = uVar19 - 1) {
+      *(undefined1 *)&pAVar15->field_0000 = *(undefined1 *)puVar21;
+      puVar21 = (byte *)((int)puVar21 + 1);
       pAVar15 = (AnonPointee_STAllPlayersC_01B9 *)((int)&pAVar15->field_0000 + 1);
     }
   }
   if (*(int *)&pAVar2->field_0x251 == -1) {
-    pSVar19->field_01BD = 0;
+    pSVar20->field_01BD = (void *)0x0;
   }
   else {
-    puVar4 = (byte *)Library::DKW::LIB::FUN_006aac70(*(int *)&pAVar2->field_0x255);
+    puVar4 = (byte *)(Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2->field_0x255));
     local_8->field_01BD = puVar4;
-    uVar18 = *(uint *)&pAVar2->field_0x255;
-    puVar20 = (byte *)(*(int *)&pAVar2->field_0x251 + (int)param_1);
-    for (uVar17 = uVar18 >> 2; uVar17 != 0; uVar17 = uVar17 - 1) {
-      *puVar4 = *puVar20;
-      puVar20 = (byte *)(puVar20 + 1);
+    uVar19 = *(uint *)&pAVar2->field_0x255;
+    puVar21 = (byte *)(*(int *)&pAVar2->field_0x251 + (int)param_1);
+    for (uVar18 = uVar19 >> 2; uVar18 != 0; uVar18 = uVar18 - 1) {
+      *puVar4 = *puVar21;
+      puVar21 = (byte *)(puVar21 + 1);
       puVar4 = (byte *)(puVar4 + 1);
     }
-    for (uVar18 = uVar18 & 3; pSVar19 = local_8, uVar18 != 0; uVar18 = uVar18 - 1) {
-      *(undefined1 *)puVar4 = *(undefined1 *)puVar20;
-      puVar20 = (byte *)((int)puVar20 + 1);
+    for (uVar19 = uVar19 & 3; pSVar20 = local_8, uVar19 != 0; uVar19 = uVar19 - 1) {
+      *(undefined1 *)puVar4 = *(undefined1 *)puVar21;
+      puVar21 = (byte *)((int)puVar21 + 1);
       puVar4 = (byte *)((int)puVar4 + 1);
     }
   }
   if (*(int *)&pAVar2->field_0x259 == -1) {
-    pSVar19->field_01C1 = 0;
+    pSVar20->field_01C1 = (void *)0x0;
   }
   else {
-    puVar4 = (byte *)Library::DKW::LIB::FUN_006aac70(*(int *)&pAVar2->field_0x25d);
+    puVar4 = (byte *)(Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2->field_0x25d));
     local_8->field_01C1 = puVar4;
-    uVar18 = *(uint *)&pAVar2->field_0x25d;
-    puVar20 = (byte *)(*(int *)&pAVar2->field_0x259 + (int)param_1);
-    for (uVar17 = uVar18 >> 2; uVar17 != 0; uVar17 = uVar17 - 1) {
-      *puVar4 = *puVar20;
-      puVar20 = (byte *)(puVar20 + 1);
+    uVar19 = *(uint *)&pAVar2->field_0x25d;
+    puVar21 = (byte *)(*(int *)&pAVar2->field_0x259 + (int)param_1);
+    for (uVar18 = uVar19 >> 2; uVar18 != 0; uVar18 = uVar18 - 1) {
+      *puVar4 = *puVar21;
+      puVar21 = (byte *)(puVar21 + 1);
       puVar4 = (byte *)(puVar4 + 1);
     }
-    for (uVar18 = uVar18 & 3; pSVar19 = local_8, uVar18 != 0; uVar18 = uVar18 - 1) {
-      *(undefined1 *)puVar4 = *(undefined1 *)puVar20;
-      puVar20 = (byte *)((int)puVar20 + 1);
+    for (uVar19 = uVar19 & 3; pSVar20 = local_8, uVar19 != 0; uVar19 = uVar19 - 1) {
+      *(undefined1 *)puVar4 = *(undefined1 *)puVar21;
+      puVar21 = (byte *)((int)puVar21 + 1);
       puVar4 = (byte *)((int)puVar4 + 1);
     }
   }
   if (*(int *)&pAVar2->field_0x261 == -1) {
-    pSVar19->field_01C5 = 0;
+    pSVar20->field_01C5 = (ushort *)0x0;
   }
   else {
-    puVar4 = (byte *)Library::DKW::LIB::FUN_006aac70(*(int *)&pAVar2->field_0x265);
-    local_8->field_01C5 = puVar4;
-    uVar18 = *(uint *)&pAVar2->field_0x265;
-    puVar20 = (byte *)((int)param_1 + *(int *)&pAVar2->field_0x261);
-    for (uVar17 = uVar18 >> 2; uVar17 != 0; uVar17 = uVar17 - 1) {
-      *puVar4 = *puVar20;
-      puVar20 = (byte *)(puVar20 + 1);
-      puVar4 = (byte *)(puVar4 + 1);
+    puVar16 = Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2->field_0x265);
+    local_8->field_01C5 = puVar16;
+    uVar19 = *(uint *)&pAVar2->field_0x265;
+    puVar21 = (byte *)((int)param_1 + *(int *)&pAVar2->field_0x261);
+    for (uVar18 = uVar19 >> 2; uVar18 != 0; uVar18 = uVar18 - 1) {
+      *(undefined4 *)puVar16 = *puVar21;
+      puVar21 = (byte *)(puVar21 + 1);
+      puVar16 = puVar16 + 2;
     }
-    for (uVar18 = uVar18 & 3; pSVar19 = local_8, uVar18 != 0; uVar18 = uVar18 - 1) {
-      *(undefined1 *)puVar4 = *(undefined1 *)puVar20;
-      puVar20 = (byte *)((int)puVar20 + 1);
-      puVar4 = (byte *)((int)puVar4 + 1);
+    for (uVar19 = uVar19 & 3; pSVar20 = local_8, uVar19 != 0; uVar19 = uVar19 - 1) {
+      *(undefined1 *)puVar16 = *(undefined1 *)puVar21;
+      puVar21 = (byte *)((int)puVar21 + 1);
+      puVar16 = (ushort *)((int)puVar16 + 1);
     }
   }
   if (*(int *)&pAVar2->field_0x269 == -1) {
-    pSVar19->field_01C9 = 0;
+    pSVar20->field_01C9 = (ushort *)0x0;
     g_currentExceptionFrame = local_54.previous;
     return;
   }
-  puVar4 = (byte *)Library::DKW::LIB::FUN_006aac70(*(int *)&pAVar2->field_0x26d);
-  local_8->field_01C9 = puVar4;
-  uVar18 = *(uint *)&pAVar2->field_0x26d;
-  puVar20 = (byte *)(*(int *)&pAVar2->field_0x269 + (int)param_1);
-  memmove(puVar4, puVar20, uVar18); /* compiler REP MOVS byte copy */
+  puVar16 = Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2->field_0x26d);
+  local_8->field_01C9 = puVar16;
+  uVar19 = *(uint *)&pAVar2->field_0x26d;
+  puVar21 = (byte *)(*(int *)&pAVar2->field_0x269 + (int)param_1);
+  for (uVar18 = uVar19 >> 2; uVar18 != 0; uVar18 = uVar18 - 1) {
+    *(undefined4 *)puVar16 = *puVar21;
+    puVar21 = (byte *)(puVar21 + 1);
+    puVar16 = puVar16 + 2;
+  }
+  for (uVar19 = uVar19 & 3; uVar19 != 0; uVar19 = uVar19 - 1) {
+    *(undefined1 *)puVar16 = *(undefined1 *)puVar21;
+    puVar21 = (byte *)((int)puVar21 + 1);
+    puVar16 = (ushort *)((int)puVar16 + 1);
+  }
   g_currentExceptionFrame = local_54.previous;
   return;
 }

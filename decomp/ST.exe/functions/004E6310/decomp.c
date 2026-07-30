@@ -73,7 +73,7 @@ LAB_004e645f:
              (((iVar11 = (**(code **)(*(int *)local_8 + 0x2c))(), iVar11 == 0x36 ||
                (iVar11 = (**(code **)(*(int *)local_8 + 0x2c))(), iVar11 == 0x5d)) ||
               (iVar11 = (**(code **)(*(int *)local_8 + 0x2c))(), iVar11 == 0x3d)))) {
-            thunk_FUN_004e4d60((int *)local_8);
+            thunk_FUN_004e4d60((AnonShape_004E4D60_C16F78E8 *)local_8);
             thunk_FUN_004e4f30((STMineSetC *)local_8);
           }
           pDVar7 = g_playerRuntime[(int)param_1].objects;

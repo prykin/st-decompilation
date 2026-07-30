@@ -5,10 +5,11 @@ undefined4 FUN_004137f0(AnonShape_004137F0_350C8AE0 *param_1,int param_2,uint pa
   AnonShape_004137F0_350C8AE0 *this;
   uint uVar1;
   int iVar2;
-  int iVar3;
+  void *pvVar3;
   short *psVar4;
   int iVar5;
   int *piVar6;
+  int iVar7;
 
   this = param_1;
   if ((int)param_3 < 0) {
@@ -43,10 +44,10 @@ undefined4 FUN_004137f0(AnonShape_004137F0_350C8AE0 *param_1,int param_2,uint pa
     param_4 = 0;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = 0;
-    iVar3 = Library::DKW::LIB::FUN_006aac70(iVar5 * 0x10 + 0xc);
-    *(int *)&this->field_0x59 = iVar3;
-    piVar6 = (int *)(iVar3 + 0xc);
-    *(int *)(iVar3 + 4) = iVar2;
+    pvVar3 = Library::DKW::LIB::MemAlloc(iVar5 * 0x10 + 0xc);
+    *(void **)&this->field_0x59 = pvVar3;
+    piVar6 = (int *)((int)pvVar3 + 0xc);
+    *(int *)((int)pvVar3 + 4) = iVar2;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_3 = 0;
     *(uint *)(*(int *)&this->field_0x59 + 8) = uVar1;
@@ -62,20 +63,20 @@ undefined4 FUN_004137f0(AnonShape_004137F0_350C8AE0 *param_1,int param_2,uint pa
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           iVar2 = thunk_FUN_00423e70(this,CONCAT22((short)((uint)psVar4 >> 0x10),*psVar4));
           if (iVar2 != 0) {
-            iVar3 = *(int *)(iVar2 + 199);
-            if ((((iVar3 < 0) || (g_pathingGrid.sizeX <= iVar3)) || (*(int *)(iVar2 + 0xcb) < 0)) ||
+            iVar7 = *(int *)(iVar2 + 199);
+            if ((((iVar7 < 0) || (g_pathingGrid.sizeX <= iVar7)) || (*(int *)(iVar2 + 0xcb) < 0)) ||
                ((((int)g_pathingGrid.sizeY <= *(int *)(iVar2 + 0xcb) || (*(int *)(iVar2 + 0xcf) < 0)
                  ) || ((int)g_pathingGrid.sizeZ <= *(int *)(iVar2 + 0xcf))))) {
               *piVar6 = *(short *)(iVar2 + 0x5b) * 4 + 2;
               piVar6[1] = *(short *)(iVar2 + 0x5d) * 4 + 2;
-              iVar3 = (int)*(short *)(iVar2 + 0x5f);
+              iVar7 = (int)*(short *)(iVar2 + 0x5f);
             }
             else {
-              *piVar6 = iVar3 * 4 + 2;
+              *piVar6 = iVar7 * 4 + 2;
               piVar6[1] = *(int *)(iVar2 + 0xcb) * 4 + 2;
-              iVar3 = *(int *)(iVar2 + 0xcf);
+              iVar7 = *(int *)(iVar2 + 0xcf);
             }
-            piVar6[2] = iVar3 * 4 + 2;
+            piVar6[2] = iVar7 * 4 + 2;
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_1 = (AnonShape_004137F0_350C8AE0 *)(&param_1->field_0x0 + *piVar6);
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -94,15 +95,15 @@ undefined4 FUN_004137f0(AnonShape_004137F0_350C8AE0 *param_1,int param_2,uint pa
     iVar2 = **(int **)&this->field_0x59;
     iVar5 = iVar2 / 2;
     piVar6 = *(int **)&this->field_0x59 + 3;
-    iVar3 = 0;
+    iVar7 = 0;
     if (0 < iVar2) {
       do {
         *piVar6 = *piVar6 - (int)(&param_1->field_0x0 + iVar5) / iVar2;
         piVar6[1] = piVar6[1] - (iVar5 + param_4) / iVar2;
         piVar6[2] = piVar6[2] - (param_2 + iVar5) / iVar2;
-        iVar3 = iVar3 + 1;
+        iVar7 = iVar7 + 1;
         piVar6 = piVar6 + 4;
-      } while (iVar3 < **(int **)&this->field_0x59);
+      } while (iVar7 < **(int **)&this->field_0x59);
     }
   }
   return 0;

@@ -255,7 +255,7 @@ cf_common_join_004D1763:
       }
       puVar13 = (byte *)&param_1->field_0x6f;
       memmove(puVar14, puVar13, 0xb0); /* compiler REP MOVS byte copy */
-      local_28 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0x44);
+      local_28 = Library::DKW::LIB::MemAlloc(0x44);
       local_28[1] = DAT_00806774;
       local_28[2] = DAT_00806774;
       *local_28 = DAT_00806774;

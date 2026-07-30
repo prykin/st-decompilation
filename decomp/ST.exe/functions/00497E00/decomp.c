@@ -75,10 +75,11 @@ int __thiscall STGroupBoatC::GetMessage(STGroupBoatC *this,STMessage *message)
     local_1c[2] = 0;
     local_1c[3] = 0;
     local_18 = (byte *)SaveGrpBData(this_00,(int *)&local_10);
-    local_8 = (byte *)Library::DKW::LIB::FUN_006aac70(local_10 + local_c);
+    local_8 = Library::DKW::LIB::MemAlloc(local_10 + local_c);
     pbVar8 = local_1c;
     pbVar9 = local_8;
     memmove(pbVar9, pbVar8, local_c); /* compiler REP MOVS byte copy */
+    uVar7 = 0;
     pbVar8 = local_18;
     pbVar9 = local_8 + local_c;
     memmove(pbVar9, pbVar8, local_10); /* compiler REP MOVS byte copy */

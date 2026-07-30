@@ -17,13 +17,13 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
   short sVar4;
   int iVar5;
   uint uVar6;
-  undefined4 *puVar7;
+  byte *puVar7;
   uint uVar8;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
   int iVar9;
   uint uVar10;
-  undefined4 *puVar11;
+  byte *puVar11;
   longlong lVar12;
   short sVar13;
   short sVar14;
@@ -131,8 +131,8 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
         uVar1 = local_c->field_0062;
         uVar2 = local_c->field_0061;
         local_5 = local_c->field_0063;
-        puVar7 = (undefined4 *)&this->field_0034;
-        puVar11 = (undefined4 *)&local_c->field_0x34;
+        puVar7 = (byte *)&this->field_0034;
+        puVar11 = (byte *)&local_c->field_0x34;
         memmove(puVar11, puVar7, 0x5f); /* compiler REP MOVS byte copy */
         local_c->field_0061 = uVar2;
         local_c->field_0062 = uVar1;
@@ -173,7 +173,7 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = (int)&this->field_0x2b3;
       do {
-        puVar7 = (undefined4 *)
+        puVar7 = (byte *)
                  thunk_FUN_0041dc40(local_30,(short)*(undefined4 *)param_1,*(ushort *)(param_1 + 4),
                                     this->field_006C);
         local_28 = *puVar7;

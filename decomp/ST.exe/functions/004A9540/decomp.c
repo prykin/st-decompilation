@@ -13,6 +13,8 @@ void __thiscall OpticClassC::ReInitOptic(OpticClassC *this,int param_1)
   code *pcVar2;
   int errorCode;
   int iVar3;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+  undefined4 unaff_EDI;
   uint uVar4;
   float10 fVar5;
   InternalExceptionFrame local_5c;
@@ -29,7 +31,7 @@ void __thiscall OpticClassC::ReInitOptic(OpticClassC *this,int param_1)
   if (errorCode != 0) {
     g_currentExceptionFrame = local_5c.previous;
     iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\To_optic.cpp",0x13c,0,errorCode,
-                               "%s");
+                               "%s","OpticClassC::ReInitOptic");
     if (iVar3 == 0) {
       RaiseInternalException(errorCode,0,"E:\\__titans\\wlad\\To_optic.cpp",0x13d);
       return;
@@ -67,14 +69,19 @@ void __thiscall OpticClassC::ReInitOptic(OpticClassC *this,int param_1)
   _DAT_00807459 = 0;
   DAT_00807424 = (float)((float10)local_14 * ((float10)_DAT_00790580 / fVar5));
   _DAT_0080742c = DAT_00807424;
+  /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
   ST3DSMAPContext::sub_006DBD20
-            (g_sT3DSMAPContext_00807598,g_dDXContext_0080759C,(&DAT_00807568)[param_1 * 4],
-             (&DAT_0080756c)[param_1 * 4],(&DAT_00807570)[param_1 * 4],local_14,
-             SUB84((double)(DAT_00807420 * _DAT_00790780),0),
-             (int)((ulonglong)(double)(DAT_00807420 * _DAT_00790780) >> 0x20),
-             SUB84((double)(DAT_00807420 * _DAT_00790784),0),
-             (int)((ulonglong)(double)(DAT_00807420 * _DAT_00790784) >> 0x20),
-             (double)(DAT_00807424 * _DAT_00790780),(double)(DAT_00807424 * _DAT_00790784));
+            (g_sT3DSMAPContext_00807598,(ST3DSMAPContext *)g_dDXContext_0080759C,
+             (&DAT_00807568)[param_1 * 4],(&DAT_0080756c)[param_1 * 4],(&DAT_00807570)[param_1 * 4],
+             local_14,SUB84((double)(DAT_00807420 * _DAT_00790780),0),
+             (double)CONCAT44(SUB84((double)(DAT_00807420 * _DAT_00790784),0),
+                              (int)((ulonglong)(double)(DAT_00807420 * _DAT_00790780) >> 0x20)),
+             (double)CONCAT44(SUB84((double)(DAT_00807424 * _DAT_00790780),0),
+                              (int)((ulonglong)(double)(DAT_00807420 * _DAT_00790784) >> 0x20)),
+             (double)CONCAT44(SUB84((double)(DAT_00807424 * _DAT_00790784),0),
+                              (int)((ulonglong)(double)(DAT_00807424 * _DAT_00790780) >> 0x20)),
+             (double)CONCAT44(unaff_EDI,
+                              (int)((ulonglong)(double)(DAT_00807424 * _DAT_00790784) >> 0x20)));
   ST3DSMAPContext::sub_006DD530(g_sT3DSMAPContext_00807598,&local_10,&local_c,&local_8);
   ST3DSMAPContext::sub_006DD790
             (g_sT3DSMAPContext_00807598,

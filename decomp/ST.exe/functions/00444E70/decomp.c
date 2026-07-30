@@ -327,7 +327,7 @@ void __thiscall FUN_00444e70(void *this,ushort *param_1)
     Library::DKW::TBL::FUN_006ae140(&PTR_007fa164->flags,*(int *)(param_1 + 0x2ac2) - 1,&local_c);
   }
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  DAT_007fa168 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(*(int *)(param_1 + 0x2ac6));
+  DAT_007fa168 = Library::DKW::LIB::MemAlloc(*(uint *)(param_1 + 0x2ac6));
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   uVar8 = *(uint *)(param_1 + 0x2ac6);
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */

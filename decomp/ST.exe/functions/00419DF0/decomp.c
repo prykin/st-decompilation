@@ -11,49 +11,46 @@ void __thiscall STGameObjC::SetSelfCheckFlag(STGameObjC *this,int *param_1)
   DArrayTy **arg_1;
   uint uVar1;
   ushort *puVar2;
-  code *pcVar3;
-  byte *pbVar4;
-  void *pvVar5;
-  AnonPointee_STGameObjC_0195 *pAVar6;
-  AnonPointee_STGameObjC_0199 *pAVar7;
-  AnonPointee_STGameObjC_01AD *pAVar8;
-  AnonPointee_STGameObjC_01B1 *pAVar9;
-  ushort *puVar10;
-  int iVar11;
-  AnonPointee_STGameObjC_018D *pAVar12;
-  AnonPointee_STGameObjC_0191 *pAVar13;
-  AnonPointee_STGameObjC_01A5 *pAVar14;
-  AnonPointee_STGameObjC_01A9 *pAVar15;
-  AnonPointee_STGameObjC_01B5 *pAVar16;
-  AnonPointee_STGameObjC_01B9 *pAVar17;
-  byte *puVar18;
-  byte *pbVar19;
-  byte *puVar20;
+  undefined4 *puVar3;
+  code *pcVar4;
+  byte *pbVar5;
+  void *pvVar6;
+  AnonPointee_STGameObjC_0195 *pAVar7;
+  AnonPointee_STGameObjC_0199 *pAVar8;
+  AnonPointee_STGameObjC_01AD *pAVar9;
+  AnonPointee_STGameObjC_01B1 *pAVar10;
+  ushort *puVar11;
+  int iVar12;
+  AnonPointee_STGameObjC_01B5 *pAVar13;
+  AnonPointee_STGameObjC_01B9 *pAVar14;
+  byte *puVar15;
+  byte *pbVar16;
+  byte *puVar17;
 
   if (this->field_01CD == 1) {
     return;
   }
   if (this->field_01CD == 0) {
     this->field_01CD = 1;
-    pbVar4 = (byte *)Library::DKW::LIB::FUN_006aac70(0x36);
-    this->field_011D = pbVar4;
-    pbVar4 = (byte *)Library::DKW::LIB::FUN_006aac70(0x36);
-    this->field_0121 = pbVar4;
-    pvVar5 = (void *)Library::DKW::LIB::FUN_006aac70(0x5c);
-    this->field_0125 = pvVar5;
-    pvVar5 = (void *)Library::DKW::LIB::FUN_006aac70(0x5c);
-    this->field_0129 = pvVar5;
+    pbVar5 = Library::DKW::LIB::MemAlloc(0x36);
+    this->field_011D = pbVar5;
+    pbVar5 = Library::DKW::LIB::MemAlloc(0x36);
+    this->field_0121 = pbVar5;
+    pvVar6 = Library::DKW::LIB::MemAlloc(0x5c);
+    this->field_0125 = pvVar6;
+    pvVar6 = Library::DKW::LIB::MemAlloc(0x5c);
+    this->field_0129 = pvVar6;
     uVar1 = this->field_0020;
     if (uVar1 < 0x1af) {
       if (uVar1 == 0x1ae) {
-        pAVar8 = (AnonPointee_STGameObjC_01AD *)Library::DKW::LIB::FUN_006aac70(0xb);
-        this->field_01AD = pAVar8;
-        pAVar9 = (AnonPointee_STGameObjC_01B1 *)Library::DKW::LIB::FUN_006aac70(0xb);
-        this->field_01B1 = pAVar9;
-        puVar10 = (ushort *)Library::DKW::LIB::FUN_006aac70(6);
-        this->field_01C5 = puVar10;
-        puVar10 = (ushort *)Library::DKW::LIB::FUN_006aac70(6);
-        this->field_01C9 = puVar10;
+        pAVar9 = Library::DKW::LIB::MemAlloc(0xb);
+        this->field_01AD = pAVar9;
+        pAVar10 = Library::DKW::LIB::MemAlloc(0xb);
+        this->field_01B1 = pAVar10;
+        puVar11 = Library::DKW::LIB::MemAlloc(6);
+        this->field_01C5 = puVar11;
+        puVar11 = Library::DKW::LIB::MemAlloc(6);
+        this->field_01C9 = puVar11;
       }
       else if (uVar1 < 0x173) {
         if (uVar1 != 0x172) {
@@ -68,27 +65,27 @@ void __thiscall STGameObjC::SetSelfCheckFlag(STGameObjC *this,int *param_1)
             this->field_0179 = (DArrayTy *)0x0;
             this->field_017D = (DArrayTy *)0x0;
             this->field_0181 = (DArrayTy *)0x0;
-            pAVar6 = (AnonPointee_STGameObjC_0195 *)Library::DKW::LIB::FUN_006aac70(0x13);
-            this->field_0195 = pAVar6;
-            pAVar7 = (AnonPointee_STGameObjC_0199 *)Library::DKW::LIB::FUN_006aac70(0x13);
-            this->field_0199 = pAVar7;
-            pAVar8 = (AnonPointee_STGameObjC_01AD *)Library::DKW::LIB::FUN_006aac70(0xb);
-            this->field_01AD = pAVar8;
-            pAVar9 = (AnonPointee_STGameObjC_01B1 *)Library::DKW::LIB::FUN_006aac70(0xb);
-            this->field_01B1 = pAVar9;
-            pvVar5 = (void *)Library::DKW::LIB::FUN_006aac70(0x240);
-            this->field_01BD = pvVar5;
-            pvVar5 = (void *)Library::DKW::LIB::FUN_006aac70(0x240);
-            this->field_01C1 = pvVar5;
+            pAVar7 = Library::DKW::LIB::MemAlloc(0x13);
+            this->field_0195 = pAVar7;
+            pAVar8 = Library::DKW::LIB::MemAlloc(0x13);
+            this->field_0199 = pAVar8;
+            pAVar9 = Library::DKW::LIB::MemAlloc(0xb);
+            this->field_01AD = pAVar9;
+            pAVar10 = Library::DKW::LIB::MemAlloc(0xb);
+            this->field_01B1 = pAVar10;
+            pvVar6 = Library::DKW::LIB::MemAlloc(0x240);
+            this->field_01BD = pvVar6;
+            pvVar6 = Library::DKW::LIB::MemAlloc(0x240);
+            this->field_01C1 = pvVar6;
           }
           else if (uVar1 != 0x5a) goto cf_common_exit_00419F6C;
         }
       }
       else if (uVar1 != 0x1a4) {
 cf_common_exit_00419F6C:
-        iVar11 = ReportDebugMessage("E:\\__titans\\wlad\\Tc_gobj.cpp",0x54d,0,0,"%s",
+        iVar12 = ReportDebugMessage("E:\\__titans\\wlad\\Tc_gobj.cpp",0x54d,0,0,"%s",
                                     "STGameObjC::SetSelfCheckFlag unknown game type");
-        if (iVar11 == 0) {
+        if (iVar12 == 0) {
           return;
         }
         STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -108,56 +105,53 @@ cf_common_exit_00419F6C:
         this->field_0151 = 0;
         this->field_0155 = 0;
         this->field_0159 = 0;
-        iVar11 = Library::DKW::LIB::FUN_006aac70(0x129);
-        this->field_0185 = iVar11;
-        iVar11 = Library::DKW::LIB::FUN_006aac70(0x129);
-        this->field_0189 = iVar11;
-        pAVar12 = (AnonPointee_STGameObjC_018D *)Library::DKW::LIB::FUN_006aac70(0x10);
-        this->field_018D = pAVar12;
-        pAVar13 = (AnonPointee_STGameObjC_0191 *)Library::DKW::LIB::FUN_006aac70(0x10);
-        this->field_0191 = pAVar13;
+        pvVar6 = Library::DKW::LIB::MemAlloc(0x129);
+        this->field_0185 = pvVar6;
+        pvVar6 = Library::DKW::LIB::MemAlloc(0x129);
+        this->field_0189 = pvVar6;
+        pvVar6 = Library::DKW::LIB::MemAlloc(0x10);
+        this->field_018D = pvVar6;
+        pvVar6 = Library::DKW::LIB::MemAlloc(0x10);
+        this->field_0191 = pvVar6;
         this->field_019D = 0;
         this->field_01A1 = 0;
-        pAVar14 = (AnonPointee_STGameObjC_01A5 *)Library::DKW::LIB::FUN_006aac70(0xc);
-        this->field_01A5 = pAVar14;
-        pAVar15 = (AnonPointee_STGameObjC_01A9 *)Library::DKW::LIB::FUN_006aac70(0xc);
-        this->field_01A9 = pAVar15;
-        pAVar16 = (AnonPointee_STGameObjC_01B5 *)Library::DKW::LIB::FUN_006aac70(0xb);
-        this->field_01B5 = pAVar16;
-        pAVar17 = (AnonPointee_STGameObjC_01B9 *)Library::DKW::LIB::FUN_006aac70(0xb);
-        this->field_01B9 = pAVar17;
+        pvVar6 = Library::DKW::LIB::MemAlloc(0xc);
+        this->field_01A5 = pvVar6;
+        pvVar6 = Library::DKW::LIB::MemAlloc(0xc);
+        this->field_01A9 = pvVar6;
+        pAVar13 = Library::DKW::LIB::MemAlloc(0xb);
+        this->field_01B5 = pAVar13;
+        pAVar14 = Library::DKW::LIB::MemAlloc(0xb);
+        this->field_01B9 = pAVar14;
       }
       else if (uVar1 != 0x3e9) goto cf_common_exit_00419F6C;
     }
   }
   (*this->vtable->vfunc_30)(this->field_0121);
-  pbVar4 = this->field_0121;
-  pbVar19 = this->field_011D;
-  memmove(pbVar19, pbVar4, 0x36); /* compiler REP MOVS byte copy */
-  iVar11 = 0;
+  pbVar5 = this->field_0121;
+  pbVar16 = this->field_011D;
+  memmove(pbVar16, pbVar5, 0x36); /* compiler REP MOVS byte copy */
+  iVar12 = 0;
   (*this->vtable->vfunc_34)(this->field_0129);
-  puVar18 = (byte *)(this->field_0129);
-  puVar20 = (byte *)(this->field_0125);
-  for (iVar11 = 0x17; iVar11 != 0; iVar11 = iVar11 + -1) {
-    *puVar20 = *puVar18;
-    puVar18 = (byte *)(puVar18 + 1);
-    puVar20 = (byte *)(puVar20 + 1);
-  }
+  puVar15 = (byte *)(this->field_0129);
+  puVar17 = (byte *)(this->field_0125);
+  memmove(puVar17, puVar15, 0x5c); /* compiler REP MOVS byte copy */
+  iVar12 = 0;
   uVar1 = this->field_0020;
   if (uVar1 < 0x1af) {
     if (uVar1 == 0x1ae) {
       (*this->vtable->vfunc_58)(this->field_01B1);
-      pAVar9 = this->field_01B1;
-      pAVar8 = this->field_01AD;
-      pAVar8->field_0000 = pAVar9->field_0000;
-      pAVar8->field_0004 = pAVar9->field_0004;
-      pAVar8->field_0008 = pAVar9->field_0008;
-      pAVar8->field_000A = pAVar9->field_000A;
+      pAVar10 = this->field_01B1;
+      pAVar9 = this->field_01AD;
+      pAVar9->field_0000 = pAVar10->field_0000;
+      pAVar9->field_0004 = pAVar10->field_0004;
+      pAVar9->field_0008 = pAVar10->field_0008;
+      pAVar9->field_000A = pAVar10->field_000A;
       (*this->vtable->vfunc_64)(this->field_01C9);
-      puVar10 = this->field_01C9;
+      puVar11 = this->field_01C9;
       puVar2 = this->field_01C5;
-      *(undefined4 *)puVar2 = *(undefined4 *)puVar10;
-      puVar2[2] = puVar10[2];
+      *(undefined4 *)puVar2 = *(undefined4 *)puVar11;
+      puVar2[2] = puVar11[2];
       return;
     }
     if (uVar1 < 0x173) {
@@ -193,25 +187,25 @@ cf_common_exit_00419F6C:
         Library::DKW::TBL::FUN_006afe40((int *)&this->field_0169,&this->field_017D->flags);
         Library::DKW::TBL::FUN_006afe40((int *)&this->field_016D,&this->field_0181->flags);
         (*this->vtable->vfunc_4C)(this->field_0199);
-        pAVar7 = this->field_0199;
-        pAVar6 = this->field_0195;
-        pAVar6->field_0000 = pAVar7->field_0000;
-        pAVar6->field_0004 = pAVar7->field_0004;
-        pAVar6->field_0008 = pAVar7->field_0008;
-        pAVar6->field_000C = pAVar7->field_000C;
-        pAVar6->field_0010 = pAVar7->field_0010;
-        pAVar6->field_0012 = pAVar7->field_0012;
+        pAVar8 = this->field_0199;
+        pAVar7 = this->field_0195;
+        pAVar7->field_0000 = pAVar8->field_0000;
+        pAVar7->field_0004 = pAVar8->field_0004;
+        pAVar7->field_0008 = pAVar8->field_0008;
+        pAVar7->field_000C = pAVar8->field_000C;
+        pAVar7->field_0010 = pAVar8->field_0010;
+        pAVar7->field_0012 = pAVar8->field_0012;
         (*this->vtable->vfunc_58)(this->field_01B1);
-        pAVar9 = this->field_01B1;
-        pAVar8 = this->field_01AD;
-        pAVar8->field_0000 = pAVar9->field_0000;
-        pAVar8->field_0004 = pAVar9->field_0004;
-        pAVar8->field_0008 = pAVar9->field_0008;
-        pAVar8->field_000A = pAVar9->field_000A;
+        pAVar10 = this->field_01B1;
+        pAVar9 = this->field_01AD;
+        pAVar9->field_0000 = pAVar10->field_0000;
+        pAVar9->field_0004 = pAVar10->field_0004;
+        pAVar9->field_0008 = pAVar10->field_0008;
+        pAVar9->field_000A = pAVar10->field_000A;
         (*this->vtable->vfunc_60)(this->field_01C1);
-        puVar18 = (byte *)(this->field_01C1);
-        puVar20 = (byte *)(this->field_01BD);
-        memmove(puVar20, puVar18, 0x240); /* compiler REP MOVS byte copy */
+        puVar15 = (byte *)(this->field_01C1);
+        puVar17 = (byte *)(this->field_01BD);
+        memmove(puVar17, puVar15, 0x240); /* compiler REP MOVS byte copy */
         return;
       }
       if (uVar1 == 0x5a) {
@@ -227,19 +221,19 @@ cf_common_exit_00419F6C:
       return;
     }
     if (uVar1 == 1000) {
-      puVar18 = (byte *)(&this->field_0135);
+      puVar15 = (byte *)(&this->field_0135);
       if ((DArrayTy *)this->field_0135 != (DArrayTy *)0x0) {
         DArrayDestroy((DArrayTy *)this->field_0135);
       }
       if ((DArrayTy *)this->field_0139 != (DArrayTy *)0x0) {
         DArrayDestroy((DArrayTy *)this->field_0139);
       }
-      *puVar18 = 0;
+      *puVar15 = 0;
       this->field_0139 = 0;
-      (*this->vtable->vfunc_38)(puVar18);
-      Library::DKW::TBL::FUN_006afe40(&this->field_012D,(uint *)*puVar18);
+      (*this->vtable->vfunc_38)(puVar15);
+      Library::DKW::TBL::FUN_006afe40(&this->field_012D,(uint *)*puVar15);
       Library::DKW::TBL::FUN_006afe40(&this->field_0131,(uint *)this->field_0139);
-      puVar18 = (byte *)(&this->field_014D);
+      puVar15 = (byte *)(&this->field_014D);
       if ((DArrayTy *)this->field_014D != (DArrayTy *)0x0) {
         DArrayDestroy((DArrayTy *)this->field_014D);
       }
@@ -252,59 +246,59 @@ cf_common_exit_00419F6C:
       if ((DArrayTy *)this->field_0159 != (DArrayTy *)0x0) {
         DArrayDestroy((DArrayTy *)this->field_0159);
       }
-      *puVar18 = 0;
+      *puVar15 = 0;
       this->field_0151 = 0;
       this->field_0155 = 0;
       this->field_0159 = 0;
-      (*this->vtable->vfunc_3C)(puVar18);
-      Library::DKW::TBL::FUN_006afe40(&this->field_013D,(uint *)*puVar18);
+      (*this->vtable->vfunc_3C)(puVar15);
+      Library::DKW::TBL::FUN_006afe40(&this->field_013D,(uint *)*puVar15);
       Library::DKW::TBL::FUN_006afe40(&this->field_0141,(uint *)this->field_0151);
       Library::DKW::TBL::FUN_006afe40(&this->field_0145,(uint *)this->field_0155);
       Library::DKW::TBL::FUN_006afe40(&this->field_0149,(uint *)this->field_0159);
       (*this->vtable->vfunc_44)(this->field_0189);
-      puVar18 = (byte *)this->field_0189;
-      puVar20 = (byte *)this->field_0185;
-      memmove(puVar20, puVar18, 0x129); /* compiler REP MOVS byte copy */
+      puVar15 = (byte *)(this->field_0189);
+      puVar17 = (byte *)(this->field_0185);
+      memmove(puVar17, puVar15, 0x129); /* compiler REP MOVS byte copy */
       (*this->vtable->vfunc_48)(this->field_0191);
-      pAVar13 = this->field_0191;
-      pAVar12 = this->field_018D;
-      puVar18 = (byte *)(&this->field_01A1);
-      pAVar12->field_0000 = pAVar13->field_0000;
-      pAVar12->field_0004 = pAVar13->field_0004;
-      pAVar12->field_0008 = pAVar13->field_0008;
-      pAVar12->field_000C = pAVar13->field_000C;
-      if ((DArrayTy *)*puVar18 != (DArrayTy *)0x0) {
-        DArrayDestroy((DArrayTy *)*puVar18);
-        *puVar18 = 0;
+      puVar17 = (byte *)(this->field_0191);
+      puVar3 = this->field_018D;
+      puVar15 = (byte *)(&this->field_01A1);
+      *puVar3 = *puVar17;
+      puVar3[1] = puVar17[1];
+      puVar3[2] = puVar17[2];
+      puVar3[3] = puVar17[3];
+      if ((DArrayTy *)*puVar15 != (DArrayTy *)0x0) {
+        DArrayDestroy((DArrayTy *)*puVar15);
+        *puVar15 = 0;
       }
       if ((DArrayTy *)this->field_019D != (DArrayTy *)0x0) {
         DArrayDestroy((DArrayTy *)this->field_019D);
         this->field_019D = 0;
       }
-      (*this->vtable->vfunc_50)(puVar18);
-      Library::DKW::TBL::FUN_006afe40(&this->field_019D,(uint *)*puVar18);
+      (*this->vtable->vfunc_50)(puVar15);
+      Library::DKW::TBL::FUN_006afe40(&this->field_019D,(uint *)*puVar15);
       (*this->vtable->vfunc_54)(this->field_01A9);
-      pAVar15 = this->field_01A9;
-      pAVar14 = this->field_01A5;
-      pAVar14->field_0000 = pAVar15->field_0000;
-      pAVar14->field_0004 = pAVar15->field_0004;
-      pAVar14->field_0008 = pAVar15->field_0008;
+      puVar15 = (byte *)(this->field_01A9);
+      puVar17 = (byte *)(this->field_01A5);
+      *puVar17 = *puVar15;
+      puVar17[1] = puVar15[1];
+      puVar17[2] = puVar15[2];
       (*this->vtable->vfunc_5C)(this->field_01B9);
-      pAVar17 = this->field_01B9;
-      pAVar16 = this->field_01B5;
-      pAVar16->field_0000 = pAVar17->field_0000;
-      pAVar16->field_0004 = pAVar17->field_0004;
-      pAVar16->field_0008 = pAVar17->field_0008;
-      pAVar16->field_000A = pAVar17->field_000A;
+      pAVar14 = this->field_01B9;
+      pAVar13 = this->field_01B5;
+      pAVar13->field_0000 = pAVar14->field_0000;
+      pAVar13->field_0004 = pAVar14->field_0004;
+      pAVar13->field_0008 = pAVar14->field_0008;
+      pAVar13->field_000A = pAVar14->field_000A;
       return;
     }
     if (uVar1 == 0x3e9) {
       return;
     }
   }
-  iVar11 = ReportDebugMessage("E:\\__titans\\wlad\\Tc_gobj.cpp",0x5a5,0,0,"%s",
+  iVar12 = ReportDebugMessage("E:\\__titans\\wlad\\Tc_gobj.cpp",0x5a5,0,0,"%s",
                               "STGameObjC::SetSelfCheckFlag unknown game type");
-  if (iVar11 == 0) {
+  if (iVar12 == 0) {
     return;
   }
   STDebugBreak(); /* noreturn in standalone pseudocode */

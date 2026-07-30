@@ -25,6 +25,8 @@ void __cdecl CreateMiniMap(short *param_1,int *param_2,uint param_3,byte *param_
   uint uVar12;
   int *piVar13;
   int iVar14;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+  int unaff_EDI;
   undefined4 *puVar15;
   InternalExceptionFrame local_68;
   uint local_24;
@@ -70,11 +72,13 @@ void __cdecl CreateMiniMap(short *param_1,int *param_2,uint param_3,byte *param_
     dVar2 = (double)((float)-(int)param_1[1] * local_8 * _DAT_007904f4);
     dVar3 = (double)((float)local_18 * local_8 * _DAT_007904f4);
     dVar4 = (double)((float)(int)local_1c * local_8 * _DAT_007904f4);
+    /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
     ST3DSMAPContext::sub_006DC050
-              (this,g_dDXContext_0080759C,0,0,uVar12,uVar12,SUB84(dVar4,0),
-               (int)((ulonglong)dVar4 >> 0x20),SUB84(dVar3,0),(int)((ulonglong)dVar3 >> 0x20),
-               SUB84(dVar2,0),(int)((ulonglong)dVar2 >> 0x20),SUB84(dVar1,0),
-               (int)((ulonglong)dVar1 >> 0x20),0x4024000000000000,0x4023ee97865e3540,0);
+              (this,(ST3DSMAPContext *)g_dDXContext_0080759C,0,0,uVar12,uVar12,SUB84(dVar4,0),
+               (double)CONCAT44(SUB84(dVar3,0),(int)((ulonglong)dVar4 >> 0x20)),
+               (double)CONCAT44(SUB84(dVar2,0),(int)((ulonglong)dVar3 >> 0x20)),
+               (double)CONCAT44(SUB84(dVar1,0),(int)((ulonglong)dVar2 >> 0x20)),
+               (double)((ulonglong)dVar1 >> 0x20),0x865e354040240000,0x4023ee97,unaff_EDI);
     *(uint *)&this->field_0x128 = (uint)*param_4;
     *(undefined4 *)&this->field_0x124 = 2;
     bVar6 = param_4[1];
@@ -157,7 +161,7 @@ void __cdecl CreateMiniMap(short *param_1,int *param_2,uint param_3,byte *param_
     g_currentExceptionFrame = local_68.previous;
     local_20 = iVar9;
     iVar14 = ReportDebugMessage("E:\\__titans\\Andrey\\minimap.cpp",0x3a,0,iVar9,"%s"
-                                ,"CreateMiniMap");
+                               );
     this = local_10;
     if (iVar14 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */

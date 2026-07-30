@@ -1306,7 +1306,8 @@ public class STClassLayoutAnalyzer extends GhidraScript {
             if (size == 4) type = "/float";
             else if (size == 8) type = "/double";
         }
-        else if (Set.of("FILD", "FIST", "FISTP", "FICOM", "FICOMP")
+        else if (Set.of("FILD", "FIST", "FISTP", "FICOM", "FICOMP",
+                "FIADD", "FISUB", "FISUBR", "FIMUL", "FIDIV", "FIDIVR")
                 .contains(mnemonic)) {
             type = signedIntegerType(size);
         }
@@ -1328,7 +1329,8 @@ public class STClassLayoutAnalyzer extends GhidraScript {
             if (size == 4) type = "/float";
             else if (size == 8) type = "/double";
         }
-        else if (Set.of("FILD", "FIST", "FISTP", "FICOM", "FICOMP")
+        else if (Set.of("FILD", "FIST", "FISTP", "FICOM", "FICOMP",
+                "FIADD", "FISUB", "FISUBR", "FIMUL", "FIDIV", "FIDIVR")
                 .contains(mnemonic) || "MOVSX".equals(mnemonic) ||
                 "MOVSXD".equals(mnemonic)) type = signedIntegerType(size);
         else if ("MOVZX".equals(mnemonic)) type = unsignedIntegerType(size);
@@ -1603,8 +1605,20 @@ public class STClassLayoutAnalyzer extends GhidraScript {
             String inferred = field.uniqueType();
             if (!inferred.isBlank()) inferredTypeCounts.merge(inferred, 1, Integer::sum);
         }
+        Set<Long> doubleHighHalves = new HashSet<>();
+        for (FieldEvidence field : evidence.fields.values())
+            if ("/double".equals(field.uniqueType()) && field.layoutSize() == 8)
+                doubleHighHalves.add(field.offset + 4);
         boolean hasOffsetZero = false;
         for (FieldEvidence field : evidence.fields.values()) {
+            // MSVC copies a by-value double as two dword MOVs even when x87 reads
+            // the same member as one qword.  The +4 store is the high half, not
+            // an independent overlapping structure member.
+            if (doubleHighHalves.contains(field.offset) &&
+                    field.layoutSize() <= 4 && field.uniqueType().isBlank() &&
+                    field.inferredNames.isEmpty() && field.pointeeFields.isEmpty() &&
+                    field.pointerUses == 0)
+                continue;
             if (activeArrays.stream().anyMatch(array ->
                     field.offset >= array.offset &&
                     field.offset < array.offset + array.size)) continue;
@@ -2156,10 +2170,18 @@ public class STClassLayoutAnalyzer extends GhidraScript {
     }
 
     private boolean isWriteMnemonic(String mnemonic) {
-        return !Set.of("CMP", "TEST", "PUSH", "CALL", "JMP", "LEA").contains(mnemonic);
+        return !Set.of("CMP", "TEST", "PUSH", "CALL", "JMP", "LEA",
+            "FLD", "FILD", "FADD", "FADDP", "FSUB", "FSUBR", "FSUBP",
+            "FSUBRP", "FMUL", "FMULP", "FDIV", "FDIVR", "FDIVP", "FDIVRP",
+            "FCOM", "FCOMP", "FICOM", "FICOMP", "FUCOM", "FUCOMP",
+            "FIADD", "FISUB", "FISUBR", "FIMUL", "FIDIV", "FIDIVR",
+            "FLDCW", "FLDENV", "FRSTOR")
+            .contains(mnemonic);
     }
 
     private int accessSize(String text, String[] operands) {
+        if (text.contains("DOUBLE PTR")) return 8;
+        if (text.contains("FLOAT PTR")) return 4;
         if (text.contains("QWORD PTR")) return 8;
         if (text.contains("DWORD PTR")) return 4;
         if (text.contains("WORD PTR")) return 2;

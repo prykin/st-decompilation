@@ -59,7 +59,7 @@ FUN_004b0250(uint param_1,int param_2,int *param_3,int *param_4,int *param_5,int
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   local_88[9] = (int)sVar14 / (int)(uint)DAT_008087c4._2_1_;
   local_40 = thunk_FUN_004e81b0(param_1,param_2 + -0x32,0);
-  local_10 = (short *)Library::DKW::LIB::FUN_006aac70(g_worldGrid.planeStride * 5);
+  local_10 = Library::DKW::LIB::MemAlloc(g_worldGrid.planeStride * 5);
   local_2c = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,4,10);
   local_18 = 0;
   do {

@@ -44,7 +44,7 @@ uint __thiscall STAllPlayersC::PrepareToCmd(STAllPlayersC *this,undefined4 *para
             *puVar3 = uVar5;
           }
           if (param_1 != (undefined4 *)0x0) {
-            puVar7 = (byte *)Library::DKW::LIB::FUN_006aac70(uVar5);
+            puVar7 = (byte *)(Library::DKW::LIB::MemAlloc(uVar5));
             *param_1 = puVar7;
             puVar9 = (byte *)(local_8->data);
             memmove(puVar7, puVar9, uVar5); /* compiler REP MOVS byte copy */

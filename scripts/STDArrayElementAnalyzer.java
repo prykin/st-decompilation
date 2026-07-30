@@ -43,6 +43,8 @@ import ghidra.program.model.listing.Parameter;
 
 public class STDArrayElementAnalyzer extends GhidraScript {
     private static final int DECOMPILE_TIMEOUT = 30;
+    private static final int LARGE_DECOMPILE_TIMEOUT = 120;
+    private static final long LARGE_FUNCTION_BYTES = 0x4000;
     private static final int MAX_ELEMENT_SIZE = 0x4000;
     private static final long DARRAY_CREATE_ADDRESS = 0x006AE290L;
     private static final String DARRAY_PATH = "/SubmarineTitans/Recovered/DArrayTy";
@@ -181,10 +183,15 @@ public class STDArrayElementAnalyzer extends GhidraScript {
         }
     }
 
+    private int decompileTimeout(Function function) {
+        return function.getBody().getNumAddresses() >= LARGE_FUNCTION_BYTES ?
+            LARGE_DECOMPILE_TIMEOUT : DECOMPILE_TIMEOUT;
+    }
+
     private void decompile(Function function, Structure owner) throws Exception {
         functionsSeen++;
         DecompileResults result =
-            decompiler.decompileFunction(function, DECOMPILE_TIMEOUT, monitor);
+            decompiler.decompileFunction(function, decompileTimeout(function), monitor);
         if (!result.decompileCompleted() || result.getDecompiledFunction() == null) {
             failures.add(new Failure(function, result == null ? "no result" :
                 result.getErrorMessage()));

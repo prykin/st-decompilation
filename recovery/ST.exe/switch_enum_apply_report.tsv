@@ -246,8 +246,7 @@ function_address	enum_name	status	detail
 004CAFC0	TLOBaseTy_sub_004CAFC0_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/TLOBaseTy_sub_004CAFC0_param_1Enum; parameter already uses enum
 004CBFB0	Global_sub_004CBFB0_switch_0Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_004CBFB0_switch_0Enum; generated enum domain already current
 004CBFB0	Global_sub_004CBFB0_switch_0Enum	disabled	apply=0
-004CC130	Global_sub_004CC130_switch_0Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_004CC130_switch_0Enum; generated enum domain already current
-004CC130	Global_sub_004CC130_switch_0Enum	disabled	apply=0
+004CC130	AnonShape_004CC130_08293212_field_05ACState	disabled	apply=0
 004CE9E0	Global_sub_004CE9E0_switch_0Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_004CE9E0_switch_0Enum; generated enum domain already current
 004CE9E0	Global_sub_004CE9E0_switch_0Enum	disabled	apply=0
 004CEB00	TLOBaseTy_sub_004CEB00_TVar2Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/TLOBaseTy_sub_004CEB00_TVar2Enum; generated enum domain already current

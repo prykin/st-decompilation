@@ -81,8 +81,8 @@ Only one mode is selected; no file or directory dialogs follow:
 | `core` | Baseline/debug/message recovery followed by bounded unclaimed-code and factory/vtable/constructor/class fixpoint loops. This is the default. |
 | `deep` | Slower ownership, ABI, prototype, global, pointer-shape, enum, provenance, control-flow, and library propagation. Requires current core outputs. |
 | `full` | Run `core` and then `deep`; does not start the expensive corpus export. |
-| `export` | Repair stale script-owned return rollbacks, stabilize the final indirect/vtable ABI layer, record and verify the current Program plus recovery artifacts, snapshot the last accepted corpus, export into `<repo>/decomp`, and run the regression gate. |
-| `full-export` | Run the complete recovery pipeline, perform the same final ABI synchronization/evidence checkpoint, export, and run the regression gate. |
+| `export` | Repair stale script-owned return rollbacks, stabilize the final indirect/vtable ABI layer, record and verify the current Program plus recovery artifacts, snapshot the last accepted corpus, transactionally export into `<repo>/decomp`, and run the regression gate. |
+| `full-export` | Run the complete recovery pipeline, perform the same final ABI synchronization/evidence checkpoint, transactionally export, and run the regression gate. |
 
 The pipeline invokes ordinary Ghidra scripts through `runScript`; it does not
 bypass any analyzer/applier validation. In particular, it never changes an
@@ -166,24 +166,42 @@ per-script provider logs, per-step stdout/stderr/metadata, per-pass proposal/app
 snapshots, final evidence/export artifacts, and full exception traces after a failure.
 The root `pipeline_report.tsv` remains a latest-run compatibility view.
 
-Before export the pipeline snapshots the previous central corpus indexes, writes
-the new corpus, and runs `STExportRegressionGate`. The gate hard-fails incomplete
+Before export the pipeline snapshots the previous central corpus indexes and
+atomically marks `export_receipt.json` as `incomplete`. `STDecompExport` seeds an
+ignored sibling staging tree from the preceding corpus, reuses matching
+per-function fingerprints there, writes every root index and function artifact,
+and only then swaps the complete tree into `decomp/ST.exe`. A script exception,
+cancellation, or I/O error deletes the staging tree and leaves the preceding
+corpus intact. Hard links are used when the local filesystem supports them;
+otherwise staging falls back to ordinary file copies. Stale staging/rollback
+directories from a killed JVM match `decomp/.*.export-*` or
+`decomp/.*.previous-*` and are ignored by Git.
+
+After promotion the pipeline runs `STExportRegressionGate`. The gate hard-fails incomplete
 decompilation, a tagged `GetMessage` slot left as `void *`, erased per-slot
 vtable function types, lost functions, semantic name downgrades, coverage
 regressions, critical ABI/decompiler-quality regressions, and any generated
 `CASE_*|CASE_*` enum expression. This invariant also catches the known
 message-slot regression when the immediately prior corpus already contains it.
 Expected changes between layout and semantic-naming stages are warnings. It writes
-`export_regression_report.tsv` and an atomic `export_receipt.json`. The baseline
+`export_regression_report.tsv` and replaces the incomplete marker with an atomic
+`export_receipt.json` whose status is `passed` or `failed`. The baseline
 also retains the pseudocode-idiom snapshot, so every changed quality row includes a
 sample of the function addresses and signed per-function deltas instead of only
 the corpus-wide total.
 
 A failed gate does not promote the just-written corpus to the next baseline.
-The pipeline retains that failed run's `pre_export/` snapshot (even when ordinary
-run-history pruning would remove it) and reuses the snapshot on the next export.
-If the failed receipt survives but its accepted snapshot does not, export stops
-instead of silently blessing the rejected corpus.
+An exporter/gate exception leaves the receipt `incomplete`; a gate rejection
+writes `failed`. In both cases the pipeline retains that run's `pre_export/`
+snapshot (even when ordinary run-history pruning would remove it) and reuses
+the snapshot on the next export. If an unaccepted receipt survives but its
+accepted snapshot does not, export stops instead of silently blessing the
+rejected or interrupted corpus.
+
+For compatibility with runs made before the `incomplete` marker existed, the
+pipeline also checks the run named by `latest_run.txt`. If its `run.json` says
+`failed` and it contains `pre_export/manifest.json`, that coherent snapshot
+wins even when the stale root receipt still says `passed`.
 
 The export safety pass does not perform ordinary return-semantic discovery.
 It only repairs a stale mutation carrying the analyzer's exact rollback marker;
@@ -1103,6 +1121,15 @@ dynamic local which reattaches anywhere except its original machine address are
 rejected.
 
 `STAbiConsistencyAnalyzer` separately repairs polluted incoming parameter roles.
+A direct x87 `double ptr [EBP+offset]` operand also proves an eight-byte
+parameter boundary when it reads the slot before any overlapping stack write.
+The analyzer may therefore merge two adjacent generic
+32-bit parameters, or retype one generic `undefined8`, as `double` while
+preserving the total stack byte count. It emits one full-prototype row and
+defers all other repairs for that function until the next fixed-point pass.
+For an already eight-byte generic parameter, an exact low/high dword copy into
+an independently recovered `double` class member is equivalent evidence; the
+two halves must originate from the same incoming qword before stack reuse.
 A generic `undefined *` parameter becomes `int`/`uint` only when its machine
 lifetime before the first write to the physical argument slot contains multiple
 scalar operations, a signed/range comparison, and no pointer dereference. The
@@ -1503,16 +1530,16 @@ a new conflict is what requires another iteration.
 | `STVTableAnalyzer/Applier` | Find long and strongly referenced short vtables, resolve direct-JMP thunks, preserve tagged owner-specific message signatures, apply physical layouts separately from semantic owners, type safe owner vptrs, and record owner conflicts. |
 | `STVirtualMethodAnalyzer/Applier` | Propagate reviewed virtual slot names, conventions, and compatible signatures. |
 | `STConstructorAnalyzer/Applier` | Recover constructors, allocation sizes, direct hierarchy evidence, receiver-only signatures, and ABI `Owner *` returns when EAX is proven to return `this`. |
-| `STClassLayoutAnalyzer/Applier` | Build and revalidate conservative class layouts, including fields reached after stable prologue `this` spills, exact address-of-field consumer types, dynamic byte/word buffers, nested class-field pointee layouts, semantic field-type/name proposals, and packed initialization writes between an allocator/factory return and its store into an already typed singleton. |
+| `STClassLayoutAnalyzer/Applier` | Build and revalidate conservative class layouts, including fields reached after stable prologue `this` spills, exact x87 float/double operand widths with split dword high halves folded into the qword member, exact address-of-field consumer types, dynamic byte/word buffers, nested class-field pointee layouts, semantic field-type/name proposals, and packed initialization writes between an allocator/factory return and its store into an already typed singleton. |
 | `STClassArrayAnalyzer` | Prove fixed arrays embedded in generated class layouts from bounded indexed accesses and exact pointer-walk loops, and recover a selected pointer element's pointee width from its subsequent dereference; `STClassLayoutAnalyzer/Applier` consumes the proposals. |
-| `STDArrayElementAnalyzer/Applier` | Recover one packed element record and one ABI-compatible descriptor specialization per generated class `DArrayTy` field from exact factory element sizes, runtime-stride aliases, exact inline-record snapshots, typed consumer parameters, and conservative state/index/handle/coordinate roles. |
+| `STDArrayElementAnalyzer/Applier` | Recover one packed element record and one ABI-compatible descriptor specialization per generated class `DArrayTy` field from exact factory element sizes, runtime-stride aliases, exact inline-record snapshots, typed consumer parameters, and conservative state/index/handle/coordinate roles; use an adaptive 120-second decompiler budget only for very large bodies. |
 | `STLocalLifetimeAnalyzer/Applier` | Split compiler-reused decompiler locals at distinct merge groups, type single-group raw-undefined locals from exact call/copy evidence, and recover scalar roles only from role-bearing p-code; verify the exact machine anchor after a fresh decompile. |
 | `STMethodOwnerAnalyzer/Applier` | Assign structural class ownership to non-virtual methods, use typed global-singleton values passed in ECX as owner evidence, and repair weak script-owned assignments to high-fanout shared helpers; it participates in the deep fixed point after global typing. |
 | `STHiddenThisAnalyzer/Applier` | Recover anonymous `__thiscall` receivers from ECX/RET/call-site evidence with neutral structural owners required by Ghidra. |
 | `STDestructorAnalyzer/Applier` | Recover conservative destructor and scalar-deleting-destructor candidates. |
 | `STSwitchEnumAnalyzer/Applier` | Turn repeated switch/state domains into enums, decode exact OR-composed cases, retain an evidence-generated monotonic domain state, and materialize exact local domains without typing reused locals. |
-| `STUtilityFunctionAnalyzer/Applier` | Verify and name high-fanout runtime helpers, discover generic DArray erase/iterator and pitched row-copy implementations, retain heterogeneous object-loader payloads as `byte *`, and install their exact prototypes. |
-| `STAbiConsistencyAnalyzer/Applier` | Repair machine-proven x86 calling/return widths, `_setjmp3` varargs, and other ABI details that otherwise create `unaff_*`/`extraout_*` artifacts. |
+| `STUtilityFunctionAnalyzer/Applier` | Verify and name high-fanout runtime helpers, discover generic DArray erase/iterator and pitched row-copy implementations, recover source- and machine-verified DKW allocate/zero-allocate/reallocate contracts with neutral `void *` results, retain heterogeneous object-loader payloads as `byte *`, and install their exact prototypes. |
+| `STAbiConsistencyAnalyzer/Applier` | Repair machine-proven x86 calling/return widths, merge exact x87 double-width stack slots (including a qword copied into an owner field independently read as `double`), preserve Ghidra's unsized one-byte `/undefined` baseline during unrelated full-prototype repairs, `_setjmp3` varargs, and other ABI details that otherwise create `unaff_*`/`extraout_*` artifacts. |
 | `STReturnSemanticsAnalyzer/Applier` | Recover conservative leaf and CFG-proven non-leaf `void`, boolean, terminal `noreturn`, and unanimous evidence-backed structure-pointer returns; retain contradictory EAX reads for review and repair the short-lived unsafe automatic `void` rollback. |
 | `STPrototypeAnalyzer/Applier` | Propagate compatible parameter/return types and reviewed parameter names across direct calls, including externally anchored SCCs of unchanged wrapper boundaries. |
 | `STPrototypeRepairAnalyzer/Applier` | Isolate and safely correct stale types/names previously written by prototype propagation. |
@@ -1521,10 +1548,10 @@ a new conflict is what requires another iteration.
 | `STSpatialGridAnalyzer/Applier` | Collapse the shared world/pathing x-y-z-stride globals into typed runtime grid descriptors. |
 | `STDiscriminatedPayloadAnalyzer/Applier` | Infer per-case payload layouts and caller stack aggregates from switch discriminators, plus equality-guarded per-message-ID views of a common envelope without changing its ABI. |
 | `STGlobalAggregateAnalyzer/Applier` | Audit indexed global ranges and install only bounded arrays/matrices with a proven extent/indexing formula, including behavior-proven Win32 resource-string scratch arenas. |
-| `STGlobalDataAnalyzer/Applier` | Type generic globals from receiver/argument use and named-constructor stores, promote script-owned anonymous singleton pointers to named classes or dominant statically linked library contexts, name literal-backed module handles, assign address-stable structural names, and audit every `PTR_*` symbol by pointer role. |
+| `STGlobalDataAnalyzer/Applier` | Type generic globals from receiver/argument use and named-constructor stores, follow the constructor-result edge through MSVC new/null join blocks, accept ordinary `T **` address-taking when an unambiguous named-constructor store proves the singleton's `T *` value, promote script-owned anonymous singleton pointers to named classes or dominant statically linked library contexts, name literal-backed module handles, assign address-stable structural names, and audit every `PTR_*` symbol by pointer role. |
 | `STIndirectCallAnalyzer/Applier` | Audit raw indirect calls; refine trusted slots, install machine-proven neutral thiscall/stdcall definitions, and propagate an ABI only across unanimous typed vtable occurrences of the same resolved target. |
 | `STPointerRoleRepairAnalyzer/Applier` | Remove prior script-owned pointer constraints from stack slots with proven scalar lifetimes in unsettled functions. |
-| `STPointerShapeAnalyzer/Applier` | Recover and fixed-point-refine known or anonymous pointer-backed structures from fixed, nested, alias-mediated dereferences, typed calls, and field-by-field stack aggregate construction; merge non-conflicting generated partial views only when their identity is proven by one global singleton value; for an untyped singleton, materialize a target-local superset instead of widening helper-local views; apply auto-`this` types through the owning class namespace. |
+| `STPointerShapeAnalyzer/Applier` | Recover and fixed-point-refine known or anonymous pointer-backed structures from fixed, nested, alias-mediated dereferences, typed calls, and field-by-field stack aggregate construction; analyzer and applier both treat weak scalar pointers such as default `short *`, `ushort *`, and `word *` as replaceable only after the normal multi-field/typed-call thresholds pass; grant very large functions the same 120-second decompiler budget as the exporter while retaining 30 seconds for ordinary bodies; merge non-conflicting generated partial views only when identity is proven; materialize a target-local exact-call superset instead of widening helper-local views; apply auto-`this` types through the owning class namespace. |
 | `STTypeFamilyAnalyzer/Applier` | Promote anonymous layouts to an explicit semantic anchor, propagate named aggregate returns, and give complete one-owner records deterministic generated names. Anonymous consolidation requires a semantic/HiddenThis anchor or exact direct-call pointer dataflow plus complete-layout, one-owner, no-alias agreement; geometry alone never merges types. |
 | `STTypeLifecycleAnalyzer/Applier` | Replace legacy views with one equivalent semantic anchor, consolidate an exact orphan HiddenThis duplicate into its unique namespace-backed receiver family, and remove unreferenced, hash-owned anonymous PointerShape/ClassPointee/HiddenThis types after zero-parent/signature/Listing-use revalidation. |
 | `STEvidenceLedger` | Record/verify a deterministic semantic Program fingerprint and hashes of every proposal/apply artifact plus monotonic enum state before export; retain the volatile modification counter for diagnostics only. |
@@ -1533,7 +1560,7 @@ a new conflict is what requires another iteration.
 | `STControlFlowLabelAnalyzer/Applier` | Give structural names to real decompiler goto targets. |
 | `STLibraryAnalyzer/Applier` | Classify linked CRT, DKW, and internal Ourlib implementations. |
 | `STExportRegressionGate` | Compare a fresh corpus with the prior central-index snapshot, report per-function quality deltas, reject exact structural/critical regressions, and write a reproducible export receipt. |
-| `STDecompExport` | Export the address-stable, dependency-fingerprinted LLM corpus, resolved thunk/call relations, and executable coverage gaps; inline proven immutable strings; normalize terminal traps, compiler bulk-zero and `REP MOVS` loops while reproducing live-out pointers/counters, exact C++ virtual-call sugar, and exact recovered DArray element lifetimes without persistently typing reused SSA storage; catalogue stage-aware pseudocode and quality debt. |
+| `STDecompExport` | Transactionally stage and promote the address-stable, dependency-fingerprinted LLM corpus so a failed long export cannot partially overwrite the accepted tree; export resolved thunk/call relations and executable coverage gaps; inline proven immutable strings; normalize terminal traps, compiler bulk-zero and `REP MOVS` loops while reproducing constant or symbolic live-out pointer advances/counters, exact same-base affine cancellation, guarded partial-AL returns, exact C++ virtual-call sugar, and exact recovered DArray element lifetimes without persistently typing reused SSA storage; catalogue stage-aware pseudocode and quality debt. |
 
 ## Git and Ghidra database hygiene
 
@@ -1594,3 +1621,19 @@ as a failure.
 Check whether a shared type, namespace, library tag, or signature changed. Those
 facts can legitimately affect many functions. On a no-op rerun, unchanged
 functions should be reused through their fingerprints.
+
+### Export stops before the regression gate
+
+Inspect the last `STDecompExport` exception in `pipeline_bootstrap.log` and the
+newest retained run. With the current pipeline `export_receipt.json` must say
+`incomplete`; an older `passed` receipt is never valid evidence for an
+interrupted attempt made by an earlier pipeline version. The
+exporter writes under an ignored sibling `.ST.exe.export-<uuid>/` tree and does
+not promote it until `manifest.json`, all central indexes, and all function
+directories are complete. The accepted `decomp/ST.exe` therefore remains
+usable. A hard JVM kill can leave the staging directory behind; it is safe to
+remove after Ghidra has stopped, but it is already ignored by Git.
+
+The next `export`/`full-export` recovers its regression baseline from the failed
+run's `pre_export/` snapshot. Do not update a hash, delete `decomp/`, or use the
+interrupted tree as a new baseline.

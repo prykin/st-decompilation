@@ -52,14 +52,15 @@ STT3DSprC::LoadSequence(STT3DSprC *this,byte param_1,int *param_2,char *text,byt
   int iVar4;
   int iVar5;
   ushort *puVar6;
-  int iVar7;
-  undefined4 uVar8;
-  int *piVar9;
-  uint uVar10;
+  void *pvVar7;
+  int iVar8;
+  undefined4 uVar9;
+  int *piVar10;
   uint uVar11;
-  undefined4 *puVar13;
-  char *pcVar14;
+  uint uVar12;
+  undefined4 *puVar14;
   char *pcVar15;
+  char *pcVar16;
   InternalExceptionFrame local_58;
   uint local_14;
   STT3DSprC *local_c;
@@ -101,55 +102,55 @@ STT3DSprC::LoadSequence(STT3DSprC *this,byte param_1,int *param_2,char *text,byt
                      (param_2,param_4,text,0xffffffff,0,1,0,(undefined4 *)0x0);
   *(ushort **)(&this_00->field_0020->field_0x0 + iVar4) = puVar6;
   iVar5 = **(int **)(&this_00->field_0020->field_0x0 + iVar4);
-  iVar7 = Library::DKW::LIB::FUN_006aac70(iVar5 * 4);
-  *(int *)(&this_00->field_0020->field_0x4 + iVar4) = iVar7;
-  iVar7 = 0;
+  pvVar7 = Library::DKW::LIB::MemAlloc(iVar5 * 4);
+  *(void **)(&this_00->field_0020->field_0x4 + iVar4) = pvVar7;
+  iVar8 = 0;
   if (0 < iVar5) {
     do {
-      piVar9 = (int *)(&this_00->field_0020->field_0x0 + iVar4);
-      iVar7 = iVar7 + 1;
-      *(undefined4 *)(piVar9[1] + -4 + iVar7 * 4) = *(undefined4 *)(*piVar9 + 0x2d + iVar7 * 4);
-    } while (iVar7 < iVar5);
+      piVar10 = (int *)(&this_00->field_0020->field_0x0 + iVar4);
+      iVar8 = iVar8 + 1;
+      *(undefined4 *)(piVar10[1] + -4 + iVar8 * 4) = *(undefined4 *)(*piVar10 + 0x2d + iVar8 * 4);
+    } while (iVar8 < iVar5);
   }
-  uVar10 = 0xffffffff;
-  pcVar14 = text;
-  do {
-    if (uVar10 == 0) break;
-    uVar10 = uVar10 - 1;
-    cVar2 = *pcVar14;
-    pcVar14 = pcVar14 + 1;
-  } while (cVar2 != '\0');
-  iVar5 = Library::DKW::LIB::FUN_006aac70(~uVar10);
-  uVar10 = local_14;
-  *(int *)(&this_00->field_0020->field_0x8 + iVar4) = iVar5;
   uVar11 = 0xffffffff;
+  pcVar15 = text;
   do {
-    pcVar14 = text;
     if (uVar11 == 0) break;
     uVar11 = uVar11 - 1;
-    pcVar14 = text + 1;
-    cVar2 = *text;
-    text = pcVar14;
+    cVar2 = *pcVar15;
+    pcVar15 = pcVar15 + 1;
   } while (cVar2 != '\0');
-  uVar11 = ~uVar11;
-  pcVar14 = pcVar14 + -uVar11;
-  pcVar15 = *(char **)(&this_00->field_0020->field_0x8 + local_8);
-  memmove(pcVar15, pcVar14, uVar11); /* compiler REP MOVS byte copy */
+  pvVar7 = Library::DKW::LIB::MemAlloc(~uVar11);
+  uVar11 = local_14;
+  *(void **)(&this_00->field_0020->field_0x8 + iVar4) = pvVar7;
+  uVar12 = 0xffffffff;
+  do {
+    pcVar15 = text;
+    if (uVar12 == 0) break;
+    uVar12 = uVar12 - 1;
+    pcVar15 = text + 1;
+    cVar2 = *text;
+    text = pcVar15;
+  } while (cVar2 != '\0');
+  uVar12 = ~uVar12;
+  pcVar15 = pcVar15 + -uVar12;
+  pcVar16 = *(char **)(&this_00->field_0020->field_0x8 + local_8);
+  memmove(pcVar16, pcVar15, uVar12); /* compiler REP MOVS byte copy */
   (&this_00->field_0020->field_0xc)[local_8] = param_4;
   *(undefined4 *)(&this_00->field_0020->field_0x18 + local_8) = 0;
   *(undefined4 *)(&this_00->field_0020->field_0x10 + local_8) = 0;
-  puVar13 = (undefined4 *)(&this_00->field_0020->field_0x0 + local_8);
-  puVar13[5] = *(int *)*puVar13 + -1;
+  puVar14 = (undefined4 *)(&this_00->field_0020->field_0x0 + local_8);
+  puVar14[5] = *(int *)*puVar14 + -1;
   *(undefined4 *)(&this_00->field_0020->field_0x20 + local_8) = 0;
-  piVar9 = *(int **)(&this_00->field_0020->field_0x0 + local_8);
+  piVar10 = *(int **)(&this_00->field_0020->field_0x0 + local_8);
   ST3DSMAPContext::sub_006E98E0
-            (this_00->field_003C,this_00->field_0018,local_14,*piVar9,*(int *)((int)piVar9 + 0x21),0
-            );
+            (this_00->field_003C,this_00->field_0018,local_14,*piVar10,*(int *)((int)piVar10 + 0x21)
+             ,0);
   puVar6 = (ushort *)(&this_00->field_0020->field_0xe + local_8);
   *puVar6 = *puVar6 & 0xfe37;
   pbVar1 = &this_00->field_0020->field_0xe + local_8;
   *pbVar1 = *pbVar1 | 0x20;
-  this_00->field_001C = this_00->field_001C & ~(1 << ((byte)uVar10 & 0x1f));
+  this_00->field_001C = this_00->field_001C & ~(1 << ((byte)uVar11 & 0x1f));
   g_currentExceptionFrame = local_58.previous;
   return 0;
 }

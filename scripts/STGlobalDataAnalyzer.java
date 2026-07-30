@@ -126,6 +126,8 @@ public class STGlobalDataAnalyzer extends GhidraScript {
                 boolean constructorResult = !returnType.isBlank();
                 if (returnType.isBlank() && called != null)
                     returnType = namedStructurePointer(called.getReturnType());
+                if (constructorResult)
+                    collectConstructorGlobal(function, called, instruction, returnType);
                 if (!returnType.isBlank()) typedRegisters.put("EAX",
                     new TypedValue(returnType, called.getName(true) + " return",
                         constructorResult));
@@ -173,9 +175,38 @@ public class STGlobalDataAnalyzer extends GhidraScript {
         return "";
     }
 
+    /**
+     * MSVC's scalar-new ternary commonly has the shape
+     *
+     *   call Constructor
+     *   jmp join
+     * null:
+     *   xor eax,eax
+     * join:
+     *   mov [global],eax
+     *
+     * A linear register tracker drops EAX at the JMP and misses the strongest
+     * possible type evidence.  Follow only the constructor-return edge through
+     * unconditional jumps; never choose a conditional successor.
+     */
+    private void collectConstructorGlobal(Function containing, Function constructor,
+            Instruction call, String returnType) {
+        Address global = forwardEaxGlobalStore(call);
+        if (global == null) return;
+        String site = addr(containing.getEntryPoint()) + " stores direct result of " +
+            constructor.getName(true) + " @ " + addr(call.getAddress()) +
+            " in global " + addr(global);
+        add(global, returnType, "", true, false, site);
+        Evidence ev = evidence.get(global);
+        ev.typedStores++;
+        ev.constructorStores.merge(returnType, 1, Integer::sum);
+    }
+
     private Address forwardEaxGlobalStore(Instruction call) {
         Instruction next = call.getNext();
-        for (int count = 0; next != null && count < 24; count++, next = next.getNext()) {
+        Set<Address> seen = new HashSet<>();
+        for (int count = 0; next != null && count < 24 &&
+                seen.add(next.getAddress()); count++) {
             String mnemonic = next.getMnemonicString().toUpperCase(Locale.ROOT);
             String[] operands = splitOperands(next.toString().toUpperCase(Locale.ROOT));
             if ("CALL".equals(mnemonic)) return null;
@@ -189,6 +220,15 @@ public class STGlobalDataAnalyzer extends GhidraScript {
                     isFullRegister(operands[0]) &&
                     !Set.of("CMP", "TEST", "PUSH", "JMP", "RET").contains(mnemonic))
                 return null;
+            if ("JMP".equals(mnemonic)) {
+                Address[] flows = next.getFlows();
+                if (flows.length != 1) return null;
+                next = currentProgram.getListing().getInstructionAt(flows[0]);
+                continue;
+            }
+            if (next.getFlowType().isJump() || next.getFlowType().isTerminal())
+                return null;
+            next = next.getNext();
         }
         return null;
     }
@@ -404,8 +444,16 @@ public class STGlobalDataAnalyzer extends GhidraScript {
             // data, but allow a hash/comment-owned anonymous pointer produced by our earlier
             // shape passes to graduate to a named type when repeated call ABI evidence agrees.
             boolean generatedAnonymous = scriptOwned && anonymousPointer(data.getDataType());
+            // A direct named-constructor result stored in a synthetic pointer global
+            // is stronger than an old DEFAULT/ANALYSIS concrete pointer propagated
+            // from one weak consumer.  Preserve all manually/imported symbols and
+            // require one unambiguous constructor type.
+            boolean constructorConcreteOverride = constructorDominates &&
+                data.getDataType() instanceof Pointer &&
+                symbol.getSource() != SourceType.USER_DEFINED &&
+                symbol.getSource() != SourceType.IMPORTED;
             boolean currentReplaceable = Undefined.isUndefined(data.getDataType()) ||
-                generatedAnonymous;
+                generatedAnonymous || constructorConcreteOverride;
             DataType currentBase = data.getDataType() instanceof Pointer pointer ?
                 pointer.getDataType() : null;
             DataType proposedBase = resolveBaseType(proposedType);
@@ -425,7 +473,8 @@ public class STGlobalDataAnalyzer extends GhidraScript {
                 ev.addressEvidence > 0 &&
                 context.count >= ev.addressEvidence * 16;
             boolean addressEvidenceCompatible =
-                ev.addressEvidence == 0 || contextualAddressSafe;
+                ev.addressEvidence == 0 || contextualAddressSafe ||
+                constructorDominates && proposedType.startsWith("pointer:");
             boolean typeApply = !typeConflict && typeChange && smallSafeType &&
                 currentReplaceable && extentCompatible && addressEvidenceCompatible &&
                 (contextualAnonymous || constructorDominates || ev.typedStores >= 1 ||
@@ -474,9 +523,16 @@ public class STGlobalDataAnalyzer extends GhidraScript {
                 reasons.add("address_of_pointer_global_compatible=" +
                     ev.addressEvidence + "; context_to_address_quorum=" +
                     context.count + ":" + ev.addressEvidence);
+            else if (ev.addressEvidence > 0 && constructorDominates &&
+                    proposedType.startsWith("pointer:"))
+                reasons.add(
+                    "address_of_pointer_global_compatible_with_constructor_store=" +
+                    ev.addressEvidence);
             else if (ev.addressEvidence > 0)
                 reasons.add("address_of_global_requires_review");
             if (generatedAnonymous) reasons.add("script_owned_anonymous_pointer_upgrade");
+            if (constructorConcreteOverride && !generatedAnonymous)
+                reasons.add("direct_constructor_store_overrides_non_manual_pointer_type");
             if (!extentCompatible) reasons.add("named_type_shorter_than_observed_anonymous_extent");
             if (!currentReplaceable) reasons.add("concrete_existing_data_preserved");
             result.add(new Proposal(address, symbol, data, proposedType, proposedName,

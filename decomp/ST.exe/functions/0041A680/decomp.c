@@ -143,8 +143,8 @@ void __thiscall STGameObjC::ResetSelfCheckFlag(STGameObjC *this,int param_1)
       this->field_0141 = 0;
       this->field_0145 = 0;
       this->field_0149 = 0;
-      FreeAndNull((void **)&this->field_0185);
-      FreeAndNull((void **)&this->field_0189);
+      FreeAndNull(&this->field_0185);
+      FreeAndNull(&this->field_0189);
       FreeAndNull(&this->field_018D);
       FreeAndNull(&this->field_0191);
       if ((DArrayTy *)this->field_01A1 != (DArrayTy *)0x0) {

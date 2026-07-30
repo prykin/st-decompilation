@@ -21,6 +21,10 @@ Original binaries are local under ignored `bin/` and must not be committed.
   `IMPORTED`, stale baselines, edited generated types, and explicit conflicts.
 - Run `STDecompExport` with the repository's `decomp/` directory only after the
   database is current. Per-function address is the stable identity; names are not.
+- Treat the corpus as accepted only when `recovery/ST.exe/export_receipt.json`
+  says `passed`. Export is whole-corpus transactional; `incomplete` means the
+  exporter or gate stopped, and the retained `pre_export/` snapshot—not a hash
+  update—is the next regression baseline.
 - `ST_PSEUDO[...]` comments and `pseudocode_idioms.jsonl` describe presentation
   gaps which Ghidra could not safely fold. They are exporter-owned and
   regenerated; do not treat them as recovered semantic facts.

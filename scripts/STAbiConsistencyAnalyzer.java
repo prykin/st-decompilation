@@ -25,7 +25,9 @@ import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
 import ghidra.program.model.data.AbstractIntegerDataType;
 import ghidra.program.model.data.DataType;
+import ghidra.program.model.data.DataTypeComponent;
 import ghidra.program.model.data.Pointer;
+import ghidra.program.model.data.Structure;
 import ghidra.program.model.data.TypeDef;
 import ghidra.program.model.data.Undefined;
 import ghidra.program.model.lang.OperandType;
@@ -33,6 +35,7 @@ import ghidra.program.model.lang.Register;
 import ghidra.program.model.listing.Function;
 import ghidra.program.model.listing.FunctionIterator;
 import ghidra.program.model.listing.FunctionTag;
+import ghidra.program.model.listing.GhidraClass;
 import ghidra.program.model.listing.Instruction;
 import ghidra.program.model.listing.InstructionIterator;
 import ghidra.program.model.listing.Listing;
@@ -49,6 +52,9 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
     private static final int PARAMETER_MASK_SCAN_LIMIT = 8;
     private static final Pattern STACK_MEMORY = Pattern.compile(
         "^\\[EBP(?:([+-])(0X[0-9A-F]+|[0-9]+))?\\]$");
+    private static final Pattern BASE_MEMORY = Pattern.compile(
+        ".*\\[(EAX|EBX|ECX|EDX|ESI|EDI|EBP|ESP)" +
+        "(?:\\s*([+-])\\s*(0X[0-9A-F]+|[0-9]+))?\\].*");
 
     private Listing listing;
     private int pointerSize;
@@ -83,6 +89,9 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
             Function function = functions.next();
             if (function.isExternal() || function.isThunk() || isLibrary(function)) continue;
             functionsSeen++;
+            // A full prototype rewrite changes ordinals.  Do not emit stale
+            // per-parameter rows for the same baseline in this pass.
+            if (addX87DoubleParameterRepair(function, rows)) continue;
             addReturnWidthRepair(function, rows);
             addParameterWidthRepairs(function, rows);
             addParameterScalarRoleRepairs(function, rows);
@@ -194,6 +203,335 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
             "", "/int", "high", "all observed callers consume full EAX (" + use.full +
             "), none consume AL/AX, and every RET path defines full EAX; sites=" +
             String.join(" | ", use.sites)));
+    }
+
+    /**
+     * Recover double parameters from the physical x87 operand width.  Old
+     * prototypes often split one eight-byte ABI slot into two undefined4/int
+     * parameters, which makes every caller print the low/high IEEE-754 halves.
+     * An exact `double ptr [EBP+positive_offset]` access proves both the width
+     * and the slot boundary, so adjacent generic dwords may be merged without
+     * guessing from constants or names.
+     */
+    private boolean addX87DoubleParameterRepair(Function function, List<Row> rows) {
+        if (pointerSize != 4 || function.hasVarArgs() ||
+                manual(function.getSignatureSource()) ||
+                manual(function.getReturn().getSource())) return false;
+        List<Parameter> parameters = explicitParameters(function).stream()
+            .sorted(Comparator.comparingInt(Parameter::getOrdinal)).toList();
+        if (parameters.isEmpty() || parameters.stream().anyMatch(parameter ->
+                manual(parameter.getSource()))) return false;
+
+        List<ParameterSlot> slots = new ArrayList<>();
+        Map<Long, Integer> slotAt = new TreeMap<>();
+        long frameOffset = pointerSize * 2L;
+        for (int index = 0; index < parameters.size(); index++) {
+            Parameter parameter = parameters.get(index);
+            int span = parameterSpan(parameter);
+            if (parameter.hasStackStorage()) {
+                slots.add(new ParameterSlot(parameter, frameOffset, span));
+                slotAt.put(frameOffset, index);
+                frameOffset += span;
+            }
+            else {
+                // Explicit ECX/EDX parameters in thiscall/fastcall consume no
+                // incoming EBP stack slot.  Retain their prototype ordinal but
+                // exclude them from the physical stack map.
+                slots.add(new ParameterSlot(parameter, -1, span));
+            }
+        }
+
+        Map<Long, List<String>> evidence = new TreeMap<>();
+        Set<Long> writtenStackBytes = new HashSet<>();
+        InstructionIterator instructions = listing.getInstructions(function.getBody(), true);
+        while (instructions.hasNext()) {
+            Instruction instruction = instructions.next();
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+            if (x87MemoryRead(mnemonic)) {
+                for (int operand = 0; operand < instruction.getNumOperands(); operand++) {
+                    String rendered = instruction.getDefaultOperandRepresentation(operand)
+                        .toUpperCase(Locale.ROOT);
+                    if (!rendered.contains("DOUBLE PTR") && !rendered.contains("QWORD PTR"))
+                        continue;
+                    Long offset = stackOffset(instruction, operand);
+                    if (offset == null || offset < pointerSize * 2L ||
+                            stackRangeWritten(writtenStackBytes, offset, 8)) continue;
+                    evidence.computeIfAbsent(offset, ignored -> new ArrayList<>())
+                        .add(addr(instruction.getAddress()) + " " + instruction);
+                }
+            }
+            if (writesStackMemory(mnemonic) && instruction.getNumOperands() > 0) {
+                Long offset = stackOffset(instruction, 0);
+                int width = memoryWidth(
+                    instruction.getDefaultOperandRepresentation(0));
+                if (offset != null && width > 0)
+                    for (int byteOffset = 0; byteOffset < width; byteOffset++)
+                        writtenStackBytes.add(offset + byteOffset);
+            }
+        }
+        Map<Long, List<String>> typedStores =
+            typedDoubleStoreEvidence(function, slots);
+        for (Map.Entry<Long, List<String>> entry : typedStores.entrySet())
+            evidence.computeIfAbsent(entry.getKey(), ignored -> new ArrayList<>())
+                .addAll(entry.getValue());
+        if (evidence.isEmpty()) return false;
+
+        Map<Integer, Integer> merges = new TreeMap<>();
+        List<String> selectedEvidence = new ArrayList<>();
+        for (Map.Entry<Long, List<String>> entry : evidence.entrySet()) {
+            Integer index = slotAt.get(entry.getKey());
+            if (index == null) continue;
+            ParameterSlot first = slots.get(index);
+            DataType firstType = first.parameter.getFormalDataType();
+            if (first.span == 8 && genericQword(firstType)) {
+                merges.put(index, 1);
+                selectedEvidence.addAll(entry.getValue());
+                continue;
+            }
+            if (first.span != 4 || !genericDword(firstType) ||
+                    index + 1 >= slots.size()) continue;
+            ParameterSlot second = slots.get(index + 1);
+            if (second.offset != first.offset + 4 || second.span != 4 ||
+                    !genericDword(second.parameter.getFormalDataType())) continue;
+            merges.put(index, 2);
+            selectedEvidence.addAll(entry.getValue());
+        }
+        if (merges.isEmpty()) return false;
+
+        // Reject overlapping selections rather than making the result dependent
+        // on instruction order.
+        for (Map.Entry<Integer, Integer> merge : merges.entrySet())
+            if (merge.getValue() == 2 && merges.containsKey(merge.getKey() + 1))
+                return false;
+
+        List<String> types = new ArrayList<>();
+        List<String> names = new ArrayList<>();
+        for (int index = 0; index < parameters.size();) {
+            Integer consumed = merges.get(index);
+            Parameter parameter = parameters.get(index);
+            if (consumed != null) {
+                types.add("/double");
+                names.add(parameter.getName());
+                index += consumed;
+            }
+            else {
+                types.add(typeSpec(parameter.getFormalDataType()));
+                names.add(parameter.getName());
+                index++;
+            }
+        }
+        rows.add(Row.full(function, "x87_double_parameter_slots", true,
+            typeSpec(function.getReturnType()), function.getCallingConventionName(),
+            function.hasVarArgs(), String.join(";", types), String.join(";", names),
+            "high", "x87 double-width accesses or exact split stores into an " +
+            "owner field independently typed or consumed as double prove physical " +
+            "EBP slot boundaries; " +
+            "merged_slots=" + merges + "; sites=" +
+            String.join(" | ", selectedEvidence)));
+        return true;
+    }
+
+    private boolean x87MemoryRead(String mnemonic) {
+        return Set.of("FLD", "FADD", "FADDP", "FSUB", "FSUBR", "FSUBP",
+            "FSUBRP", "FMUL", "FMULP", "FDIV", "FDIVR", "FDIVP", "FDIVRP",
+            "FCOM", "FCOMP", "FUCOM", "FUCOMP").contains(mnemonic);
+    }
+
+    private boolean writesStackMemory(String mnemonic) {
+        return writesFirstOperand(mnemonic) ||
+            Set.of("FST", "FSTP", "FIST", "FISTP", "FISTTP").contains(mnemonic);
+    }
+
+    private boolean stackRangeWritten(Set<Long> written, long offset, int length) {
+        for (int byteOffset = 0; byteOffset < length; byteOffset++)
+            if (written.contains(offset + byteOffset)) return true;
+        return false;
+    }
+
+    private int parameterSpan(Parameter parameter) {
+        int length = Math.max(pointerSize,
+            Math.max(parameter.getLength(), parameter.getFormalDataType().getLength()));
+        return (length + pointerSize - 1) / pointerSize * pointerSize;
+    }
+
+    private boolean genericQword(DataType type) {
+        DataType current = unwrap(type);
+        if (current == null || current.getLength() != 8 || current instanceof Pointer)
+            return false;
+        String name = current.getName().toLowerCase(Locale.ROOT);
+        return Undefined.isUndefined(current) || Set.of("undefined8", "qword").contains(name);
+    }
+
+    /**
+     * A compiler may copy a by-value double into a typed object field with two
+     * integer MOVs. Once class-layout recovery has independently established
+     * that destination as `/double`, or the same complete eight-byte component
+     * is independently consumed by an x87 double operation, matching low/high
+     * stores prove the source qword parameter without relying on floating
+     * constants at callers.
+     */
+    private Map<Long, List<String>> typedDoubleStoreEvidence(Function function,
+            List<ParameterSlot> slots) {
+        Map<Long, List<String>> result = new TreeMap<>();
+        Structure owner = ownerStructure(function);
+        if (owner == null || !"__thiscall".equals(function.getCallingConventionName()))
+            return result;
+        Set<Long> qwordStarts = new HashSet<>();
+        for (ParameterSlot slot : slots)
+            if (slot.offset >= pointerSize * 2L && slot.span == 8 &&
+                    genericQword(slot.parameter.getFormalDataType()))
+                qwordStarts.add(slot.offset);
+        if (qwordStarts.isEmpty()) return result;
+
+        Set<String> thisAliases = new HashSet<>();
+        thisAliases.add("ECX");
+        Map<String, ParameterHalf> halves = new TreeMap<>();
+        Map<Long, ParameterHalf[]> fieldHalves = new TreeMap<>();
+        Map<Long, List<String>> fieldSites = new TreeMap<>();
+        Set<Long> doubleFieldOffsets = new HashSet<>();
+        for (DataTypeComponent component : owner.getComponents()) {
+            DataType componentType = unwrap(component.getDataType());
+            if (component.getLength() == 8 && componentType != null &&
+                    "/double".equals(componentType.getPathName()))
+                doubleFieldOffsets.add((long)component.getOffset());
+        }
+        Set<Long> writtenStackBytes = new HashSet<>();
+        InstructionIterator instructions = listing.getInstructions(function.getBody(), true);
+        while (instructions.hasNext()) {
+            Instruction instruction = instructions.next();
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+            List<String> operands = operandRepresentations(instruction);
+            if (x87MemoryRead(mnemonic)) {
+                for (String operand : operands) {
+                    if (!operand.contains("DOUBLE PTR") &&
+                            !operand.contains("QWORD PTR")) continue;
+                    BaseMemory memory = baseMemory(operand);
+                    if (memory == null || !thisAliases.contains(memory.base)) continue;
+                    DataTypeComponent component =
+                        owner.getComponentContaining((int)memory.offset);
+                    if (component != null && component.getLength() == 8 &&
+                            memory.offset == component.getOffset()) {
+                        doubleFieldOffsets.add((long)component.getOffset());
+                        fieldSites.computeIfAbsent((long)component.getOffset(),
+                            ignored -> new ArrayList<>()).add(
+                            addr(instruction.getAddress()) +
+                            " reads owner field as double");
+                    }
+                }
+            }
+            if ("MOV".equals(mnemonic) && operands.size() >= 2) {
+                String destination = fullRegister(operands.get(0));
+                String source = fullRegister(operands.get(1));
+                if (!destination.isBlank()) {
+                    thisAliases.remove(destination);
+                    halves.remove(destination);
+                    if (!source.isBlank() && thisAliases.contains(source))
+                        thisAliases.add(destination);
+                    ParameterHalf half = !source.isBlank() ? halves.get(source) :
+                        incomingParameterHalf(instruction, 1, qwordStarts,
+                            writtenStackBytes);
+                    if (half != null) halves.put(destination, half);
+                }
+                else {
+                    BaseMemory memory = baseMemory(operands.get(0));
+                    ParameterHalf half = source.isBlank() ? null : halves.get(source);
+                    if (memory != null && thisAliases.contains(memory.base) && half != null) {
+                        DataTypeComponent component =
+                            owner.getComponentContaining((int)memory.offset);
+                        if (component != null && component.getLength() == 8) {
+                            int piece = memory.offset == component.getOffset() ? 0 :
+                                memory.offset == component.getOffset() + 4 ? 1 : -1;
+                            if (piece == half.half) {
+                                ParameterHalf[] pieces = fieldHalves.computeIfAbsent(
+                                    (long)component.getOffset(),
+                                    ignored -> new ParameterHalf[2]);
+                                pieces[piece] = half;
+                                fieldSites.computeIfAbsent(
+                                    (long)component.getOffset(),
+                                    ignored -> new ArrayList<>()).add(
+                                    addr(instruction.getAddress()) +
+                                    " stores incoming qword half " + piece);
+                            }
+                        }
+                    }
+                }
+            }
+            else if ("CALL".equals(mnemonic)) {
+                for (String volatileRegister : List.of("EAX", "ECX", "EDX")) {
+                    thisAliases.remove(volatileRegister);
+                    halves.remove(volatileRegister);
+                }
+            }
+            else if (!operands.isEmpty()) {
+                String destination = fullRegister(operands.get(0));
+                if (!destination.isBlank() && writesFirstOperand(mnemonic)) {
+                    thisAliases.remove(destination);
+                    halves.remove(destination);
+                }
+            }
+            if (writesStackMemory(mnemonic) && instruction.getNumOperands() > 0) {
+                Long offset = stackOffset(instruction, 0);
+                int width = memoryWidth(
+                    instruction.getDefaultOperandRepresentation(0));
+                if (offset != null && width > 0)
+                    for (int byteOffset = 0; byteOffset < width; byteOffset++)
+                        writtenStackBytes.add(offset + byteOffset);
+            }
+        }
+        for (Map.Entry<Long, ParameterHalf[]> entry : fieldHalves.entrySet()) {
+            ParameterHalf[] pieces = entry.getValue();
+            if (!doubleFieldOffsets.contains(entry.getKey()) ||
+                    pieces[0] == null || pieces[1] == null ||
+                    pieces[0].parameterOffset != pieces[1].parameterOffset)
+                continue;
+            result.computeIfAbsent(pieces[0].parameterOffset,
+                ignored -> new ArrayList<>()).add(
+                "incoming qword stored into " + owner.getPathName() + "+0x" +
+                Long.toHexString(entry.getKey()) +
+                " and independently consumed as double; sites=" +
+                String.join(", ",
+                    fieldSites.getOrDefault(entry.getKey(), List.of())));
+        }
+        return result;
+    }
+
+    private ParameterHalf incomingParameterHalf(Instruction instruction, int operand,
+            Set<Long> qwordStarts, Set<Long> writtenStackBytes) {
+        Long offset = stackOffset(instruction, operand);
+        if (offset == null || stackRangeWritten(writtenStackBytes, offset, 4)) return null;
+        if (qwordStarts.contains(offset)) return new ParameterHalf(offset, 0);
+        if (qwordStarts.contains(offset - 4)) return new ParameterHalf(offset - 4, 1);
+        return null;
+    }
+
+    private Structure ownerStructure(Function function) {
+        if (!(function.getParentNamespace() instanceof GhidraClass owner)) return null;
+        DataType exact = currentProgram.getDataTypeManager()
+            .getDataType("/" + owner.getName());
+        if (unwrap(exact) instanceof Structure structure) return structure;
+        List<DataType> matches = new ArrayList<>();
+        currentProgram.getDataTypeManager().findDataTypes(owner.getName(), matches);
+        Structure found = null;
+        for (DataType match : matches) {
+            DataType unwrapped = unwrap(match);
+            if (!(unwrapped instanceof Structure structure)) continue;
+            if (found != null && !found.getPathName().equals(structure.getPathName()))
+                return null;
+            found = structure;
+        }
+        return found;
+    }
+
+    private BaseMemory baseMemory(String operand) {
+        Matcher matcher = BASE_MEMORY.matcher(operand.toUpperCase(Locale.ROOT));
+        if (!matcher.matches()) return null;
+        long offset = 0;
+        if (matcher.group(3) != null) {
+            Long parsed = immediate(matcher.group(3));
+            if (parsed == null) return null;
+            offset = "-".equals(matcher.group(2)) ? -parsed : parsed;
+        }
+        return new BaseMemory(matcher.group(1), offset);
     }
 
     private boolean allReturnsDefineFullAccumulator(Function function) {
@@ -765,6 +1103,8 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
                 !upper.contains("QWORD PTR")) return 2;
         if (upper.contains("DWORD PTR")) return 4;
         if (upper.contains("QWORD PTR")) return 8;
+        if (upper.contains("FLOAT PTR")) return 4;
+        if (upper.contains("DOUBLE PTR")) return 8;
         return 0;
     }
 
@@ -871,13 +1211,14 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
                 "\nProposals: " + rows.size() + "\nAutomatic: " +
                 rows.stream().filter(row -> row.apply).count() + "\n");
             for (String kind : List.of("known_setjmp3", "known_load_resource_string",
-                    "full_eax_return", "stack_parameter_width",
+                    "x87_double_parameter_slots", "full_eax_return", "stack_parameter_width",
                     "stack_parameter_scalar_role", "pointer_return_element_width"))
                 out.write(kind + ": " + rows.stream().filter(row ->
                     row.repairKind.equals(kind)).count() + "\n");
             out.write("note=USER_DEFINED and IMPORTED target types are never selected for automatic repair.\n");
             out.write("note_returns=Full-EAX repairs require full-width caller use and a full EAX definition on every RET path.\n");
             out.write("note_parameters=Narrow stack parameters require consistent MOVSX/MOVZX or an immediate AND mask and no unmasked dword reads.\n");
+            out.write("note_x87_doubles=An exact x87 double-width EBP read before any overlapping stack write may merge adjacent generic dwords; one generic qword may also be retyped when its exact halves are stored into an independently typed double class field. Stack byte count is preserved.\n");
             out.write("note_scalar_roles=Generic pointer parameters become int/uint only when their incoming lifetime has multiple scalar operations, a signed/range comparison, and no pointer dereference before the first argument-slot overwrite.\n");
             out.write("note_pointer_returns=Generic pointer returns gain only a byte/word/dword element width when at least two caller dereferences agree; no semantic table type is guessed.\n");
         }
@@ -921,6 +1262,9 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
         final List<String> sites = new ArrayList<>();
     }
     private record RegisterUse(int width, String evidence) { }
+    private record ParameterSlot(Parameter parameter, long offset, int span) { }
+    private record ParameterHalf(long parameterOffset, int half) { }
+    private record BaseMemory(String base, long offset) { }
     private record WidthEvidence(String proposedType, boolean conflict, String reason) { }
     private record ScalarAuditRow(String functionAddress, String function,
         int parameterOrdinal, String parameterName, String parameterType, String storage,

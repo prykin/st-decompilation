@@ -30,6 +30,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
+import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
@@ -153,6 +154,15 @@ public class STDecompExport extends GhidraScript {
         "(?<source>[A-Za-z_$][A-Za-z0-9_$]*),[ \\t]*" +
         "(?<bytes>0x[0-9A-Fa-f]+|[0-9]+)\\);[ \\t]*" +
         Pattern.quote(BULK_COPY_MARKER) + "$");
+    private static final Pattern AFFINE_SELF_CANCELLATION = Pattern.compile(
+        "(?<cast>\\([A-Za-z_$][A-Za-z0-9_$: ]*\\s*\\*+\\))\\s*" +
+        "\\(\\s*\\(int\\)\\s*\\(\\s*(?<base>[A-Za-z_$][A-Za-z0-9_$]*)\\s*" +
+        "\\+\\s*(?<index>0x[0-9A-Fa-f]+|[0-9]+)\\s*\\)\\s*\\+\\s*" +
+        "\\(\\s*-(?<bytes>0x[0-9A-Fa-f]+|[0-9]+)\\s*-\\s*" +
+        "\\(int\\)\\s*\\k<base>\\s*\\)\\s*\\)");
+    private static final Pattern PARTIAL_AL_ZERO_RETURN = Pattern.compile(
+        "(?m)^(?<indent>[ \\t]*)return\\s+\\(uint\\)\\(uint3\\)" +
+        "\\([^;\\r\\n]+>>\\s*(?:7|0x7)\\s*\\)\\s*<<\\s*(?:8|0x8)\\s*;[ \\t]*$");
     private static final Pattern HEX_ADDRESS = Pattern.compile("0x([0-9A-Fa-f]{6,8})");
     private static final Pattern RAW_INDIRECT_CALL = Pattern.compile(
         "\\(\\*\\*?\\(code \\*\\*?\\)|\\(\\*\\(code \\*\\)");
@@ -279,20 +289,27 @@ public class STDecompExport extends GhidraScript {
         references = currentProgram.getReferenceManager();
         symbols = currentProgram.getSymbolTable();
         darrayDescriptors = recoveredDArrayDescriptors();
-        programRoot = outputRoot.toPath().toAbsolutePath().normalize()
-            .resolve(safeFileName(currentProgram.getName()));
+        Path outputDirectory = outputRoot.toPath().toAbsolutePath().normalize();
+        Path finalProgramRoot =
+            outputDirectory.resolve(safeFileName(currentProgram.getName()));
+        Path stagingProgramRoot = outputDirectory.resolve("." +
+            safeFileName(currentProgram.getName()) + ".export-" +
+            UUID.randomUUID());
+        prepareStagingCorpus(finalProgramRoot, stagingProgramRoot);
+        programRoot = stagingProgramRoot;
         functionsRoot = programRoot.resolve("functions");
         Files.createDirectories(functionsRoot);
 
         decompiler = new DecompInterface();
         decompiler.toggleCCode(true);
         decompiler.toggleSyntaxTree(true);
-        if (!decompiler.openProgram(currentProgram)) {
-            throw new IOException("Decompiler could not open " + currentProgram.getName());
-        }
-
+        boolean promoted = false;
         try {
-            println("Exporting " + currentProgram.getName() + " to " + programRoot);
+            if (!decompiler.openProgram(currentProgram))
+                throw new IOException(
+                    "Decompiler could not open " + currentProgram.getName());
+            println("Exporting " + currentProgram.getName() + " to " +
+                finalProgramRoot + " via transactional staging");
             exportProgram();
             exportMemoryMap();
             exportImports();
@@ -305,10 +322,112 @@ public class STDecompExport extends GhidraScript {
             exportFunctions();
             exportCoverage();
             exportManifest();
-            println("STDecompExport complete: " + programRoot);
+            promoteStagingCorpus(stagingProgramRoot, finalProgramRoot);
+            promoted = true;
+            programRoot = finalProgramRoot;
+            functionsRoot = programRoot.resolve("functions");
+            println("STDecompExport complete: " + finalProgramRoot);
         }
         finally {
             decompiler.dispose();
+            if (!promoted) {
+                try {
+                    deleteTree(stagingProgramRoot);
+                }
+                catch (IOException cleanup) {
+                    printerr("Could not remove failed export staging tree " +
+                        stagingProgramRoot + ": " + cleanup.getMessage());
+                }
+            }
+        }
+    }
+
+    /**
+     * A function-by-function export may run for hours. Per-file atomic writes
+     * are not sufficient: an exception near the end otherwise leaves a corpus
+     * containing a mixture of old and new Program states. Seed a sibling
+     * staging tree with hard links to the accepted corpus so unchanged
+     * fingerprints remain reusable without duplicating its disk footprint.
+     * Exporter writes replace paths atomically and therefore never mutate a
+     * linked source file in place. Fall back to a copy when links are not
+     * supported by the filesystem.
+     */
+    private void prepareStagingCorpus(Path source, Path staging)
+            throws IOException {
+        deleteTree(staging);
+        Files.createDirectories(staging);
+        if (!Files.isDirectory(source)) return;
+        try (Stream<Path> stream = Files.walk(source)) {
+            for (Path item : stream.toList()) {
+                Path destination = staging.resolve(source.relativize(item));
+                if (Files.isDirectory(item)) {
+                    Files.createDirectories(destination);
+                    continue;
+                }
+                if (!Files.isRegularFile(item)) continue;
+                Files.createDirectories(destination.getParent());
+                try {
+                    Files.createLink(destination, item);
+                }
+                catch (UnsupportedOperationException | IOException exception) {
+                    Files.copy(item, destination,
+                        StandardCopyOption.REPLACE_EXISTING,
+                        StandardCopyOption.COPY_ATTRIBUTES);
+                }
+            }
+        }
+    }
+
+    /**
+     * Promote a complete staging tree only after every corpus artifact has
+     * been written. If the second rename fails, restore the preceding corpus.
+     */
+    private void promoteStagingCorpus(Path staging, Path destination)
+            throws IOException {
+        Path backup = destination.resolveSibling("." +
+            destination.getFileName() + ".previous-" + UUID.randomUUID());
+        boolean hadDestination = Files.exists(destination);
+        if (hadDestination) movePath(destination, backup);
+        try {
+            movePath(staging, destination);
+        }
+        catch (IOException exception) {
+            if (hadDestination && !Files.exists(destination) &&
+                    Files.exists(backup)) {
+                try {
+                    movePath(backup, destination);
+                }
+                catch (IOException restore) {
+                    exception.addSuppressed(restore);
+                }
+            }
+            throw exception;
+        }
+        if (hadDestination) {
+            try {
+                deleteTree(backup);
+            }
+            catch (IOException cleanup) {
+                printerr("Export succeeded, but the preceding corpus backup " +
+                    backup + " could not be removed: " + cleanup.getMessage());
+            }
+        }
+    }
+
+    private void movePath(Path source, Path destination) throws IOException {
+        try {
+            Files.move(source, destination, StandardCopyOption.ATOMIC_MOVE);
+        }
+        catch (java.nio.file.AtomicMoveNotSupportedException exception) {
+            Files.move(source, destination);
+        }
+    }
+
+    private void deleteTree(Path root) throws IOException {
+        if (root == null || !Files.exists(root)) return;
+        try (Stream<Path> stream = Files.walk(root)) {
+            for (Path item : stream.sorted(Comparator.reverseOrder()).toList())
+                Files.deleteIfExists(item);
         }
     }
 
@@ -596,8 +715,10 @@ public class STDecompExport extends GhidraScript {
                 }
                 cCode = literalizeReferencedStrings(function, cCode);
                 NormalizedCode normalized = normalizePseudocode(cCode);
+                NormalizedCode machineNormalized =
+                    normalizeMachinePseudocode(function, normalized.code);
                 NormalizedCode enumNormalized =
-                    normalizeKnownEnumCompositions(function, normalized.code);
+                    normalizeKnownEnumCompositions(function, machineNormalized.code);
                 cCode = annotatePseudocode(function, enumNormalized.code);
                 writeText(dir.resolve("decomp.c"), cCode);
                 catalogPseudocodeIdioms(function, cCode);
@@ -673,8 +794,10 @@ public class STDecompExport extends GhidraScript {
         String original = Files.readString(path, StandardCharsets.UTF_8);
         String literalized = literalizeReferencedStrings(function, original);
         NormalizedCode normalized = normalizePseudocode(literalized);
+        NormalizedCode machineNormalized =
+            normalizeMachinePseudocode(function, normalized.code);
         NormalizedCode enumNormalized =
-            normalizeKnownEnumCompositions(function, normalized.code);
+            normalizeKnownEnumCompositions(function, machineNormalized.code);
         String annotated = annotatePseudocode(function, enumNormalized.code);
         if (!annotated.equals(original)) writeText(path, annotated);
         catalogPseudocodeIdioms(function, annotated);
@@ -696,12 +819,15 @@ public class STDecompExport extends GhidraScript {
         NormalizedCode darrayAliases = normalizeDArrayElementAliases(bulkCopy.code);
         NormalizedCode virtualCalls =
             normalizeExplicitThisVirtualCalls(darrayAliases.code);
-        code = virtualCalls.code;
+        NormalizedCode affineCancellation =
+            normalizeAffineSelfCancellation(virtualCalls.code);
+        code = affineCancellation.code;
         String[] lines = code.split("\\R", -1);
         List<String> output = new ArrayList<>();
         int replacements = legacyBulkCopy.replacements +
             bulkZero.replacements + bulkCopy.replacements +
-            darrayAliases.replacements + virtualCalls.replacements;
+            darrayAliases.replacements + virtualCalls.replacements +
+            affineCancellation.replacements;
         for (int index = 0; index < lines.length; index++) {
             Matcher assignment = INT3_ASSIGNMENT.matcher(lines[index]);
             if (!assignment.matches() || index + 1 >= lines.length) {
@@ -736,6 +862,114 @@ public class STDecompExport extends GhidraScript {
         NormalizedCode semicolons = normalizeDetachedSemicolons(normalized);
         return new NormalizedCode(semicolons.code,
             replacements + semicolons.replacements);
+    }
+
+    /**
+     * Fold only an exact same-base cancellation:
+     *
+     *   (T *)((int)(p + N) + (-BYTES - (int)p))
+     *
+     * when N*sizeof(*p) == BYTES.  Similar expressions involving two distinct
+     * pointers encode relative offsets and must remain intact.
+     */
+    private NormalizedCode normalizeAffineSelfCancellation(String code) {
+        Map<String, PointerDeclaration> declarations = pointerDeclarations(code);
+        if (declarations.isEmpty()) return new NormalizedCode(code, 0);
+        Matcher matcher = AFFINE_SELF_CANCELLATION.matcher(code);
+        StringBuffer output = new StringBuffer();
+        int replacements = 0;
+        while (matcher.find()) {
+            PointerDeclaration declaration = declarations.get(matcher.group("base"));
+            Long index = fingerprintImmediate(matcher.group("index"));
+            Long bytes = fingerprintImmediate(matcher.group("bytes"));
+            if (declaration == null || declaration.width <= 0 ||
+                    index == null || bytes == null ||
+                    index > Long.MAX_VALUE / declaration.width ||
+                    index * declaration.width != bytes) {
+                matcher.appendReplacement(output, Matcher.quoteReplacement(matcher.group()));
+                continue;
+            }
+            matcher.appendReplacement(output,
+                Matcher.quoteReplacement(matcher.group("cast") + "0x0"));
+            replacements++;
+        }
+        matcher.appendTail(output);
+        return new NormalizedCode(output.toString(), replacements);
+    }
+
+    /**
+     * Ghidra represents an x86 `xor al,al` return while preserving the upper
+     * EAX bytes as a uint3 shift.  Under an immediately preceding `cmp eax,0xff`
+     * guard those upper bytes are proven zero.  Require the exact machine-code
+     * pattern before replacing the presentation artifact with `return 0`.
+     */
+    private NormalizedCode normalizeMachinePseudocode(Function function, String code) {
+        if (function == null || code == null || code.isEmpty() ||
+                !code.contains("(uint3)") ||
+                !hasGuardedPartialAlZeroReturn(function))
+            return new NormalizedCode(code, 0);
+        Matcher matcher = PARTIAL_AL_ZERO_RETURN.matcher(code);
+        int candidates = 0;
+        while (matcher.find()) candidates++;
+        if (candidates != 1) return new NormalizedCode(code, 0);
+        matcher.reset();
+        StringBuffer output = new StringBuffer();
+        int replacements = 0;
+        while (matcher.find()) {
+            matcher.appendReplacement(output, Matcher.quoteReplacement(
+                matcher.group("indent") +
+                "return 0; /* cmp eax,0xff; xor al,al */"));
+            replacements++;
+        }
+        matcher.appendTail(output);
+        return new NormalizedCode(output.toString(), replacements);
+    }
+
+    private boolean hasGuardedPartialAlZeroReturn(Function function) {
+        InstructionIterator instructions = listing.getInstructions(function.getBody(), true);
+        while (instructions.hasNext()) {
+            Instruction compare = instructions.next();
+            if (!"CMP".equalsIgnoreCase(compare.getMnemonicString()) ||
+                    compare.getNumOperands() < 2 ||
+                    !"EAX".equalsIgnoreCase(
+                        compare.getDefaultOperandRepresentation(0).trim()))
+                continue;
+            Long immediate = fingerprintImmediate(
+                compare.getDefaultOperandRepresentation(1));
+            if (immediate == null || immediate != 0xffL) continue;
+            Instruction branch = listing.getInstructionAfter(compare.getAddress());
+            if (branch == null || !branch.getFlowType().isConditional()) continue;
+            Instruction clear = listing.getInstructionAfter(branch.getAddress());
+            if (clear == null || !"XOR".equalsIgnoreCase(clear.getMnemonicString()) ||
+                    clear.getNumOperands() < 2 ||
+                    !"AL".equalsIgnoreCase(
+                        clear.getDefaultOperandRepresentation(0).trim()) ||
+                    !"AL".equalsIgnoreCase(
+                        clear.getDefaultOperandRepresentation(1).trim()))
+                continue;
+            Instruction next = listing.getInstructionAfter(clear.getAddress());
+            for (int count = 0; count < 4 && next != null &&
+                    function.getBody().contains(next.getAddress()); count++) {
+                String mnemonic = next.getMnemonicString().toUpperCase(Locale.ROOT);
+                if (mnemonic.startsWith("RET")) return true;
+                if ("CALL".equals(mnemonic) || next.getFlowType().isJump() ||
+                        accumulatorResultWidth(next) > 0) break;
+                next = listing.getInstructionAfter(next.getAddress());
+            }
+        }
+        return false;
+    }
+
+    private int accumulatorResultWidth(Instruction instruction) {
+        int width = 0;
+        for (Object object : instruction.getResultObjects()) {
+            if (!(object instanceof Register register)) continue;
+            String name = register.getName().toUpperCase(Locale.ROOT);
+            if (Set.of("EAX", "RAX").contains(name)) width = Math.max(width, 4);
+            else if ("AX".equals(name)) width = Math.max(width, 2);
+            else if (Set.of("AL", "AH").contains(name)) width = Math.max(width, 1);
+        }
+        return width;
     }
 
     /**
@@ -2045,9 +2279,10 @@ public class STDecompExport extends GhidraScript {
         if (value == null) return null;
         String text = value.trim();
         try {
-            return text.regionMatches(true, 0, "0x", 0, 2) ?
-                Long.parseUnsignedLong(text.substring(2), 16) :
-                text.matches("[0-9]+") ? Long.parseLong(text) : null;
+            if (text.regionMatches(true, 0, "0x", 0, 2))
+                return Long.parseUnsignedLong(text.substring(2), 16);
+            if (text.matches("[0-9]+")) return Long.parseLong(text);
+            return null;
         }
         catch (NumberFormatException ignored) {
             return null;

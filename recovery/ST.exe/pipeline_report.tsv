@@ -1,9 +1,251 @@
 sequence	script	status	duration_ms	argument	detail
-1	STReturnSemanticsAnalyzer.java	completed	665	<repo>/recovery | repair-only	-
-2	STReturnSemanticsApplier.java	completed	20	<repo>/recovery/ST.exe/return_semantics_proposals.tsv	recovery_state: proposals_enabled=0, proposals_review=0, changed=0, unchanged=0, review=0, conflict=0, error=0
-3	STIndirectCallAnalyzer.java	completed	3234	<repo>/recovery	-
-4	STIndirectCallApplier.java	completed	88	<repo>/recovery/ST.exe/indirect_call_proposals.tsv	recovery_state: proposals_enabled=2146, proposals_review=489, changed=0, unchanged=2146, review=489, conflict=0, error=0
-5	STEvidenceLedger.java	completed	6093	record | <repo>/recovery	-
-6	STEvidenceLedger.java	completed	4834	verify | <repo>/recovery	-
-7	STDecompExport.java	completed	45121	<repo>/decomp	-
-8	STExportRegressionGate.java	completed	846	<repo>/decomp/ST.exe | <repo>/recovery/ST.exe/runs/.current/pre_export | <repo>/recovery/ST.exe	-
+1	STTypeBootstrapAnalyzer.java	completed	12634	<repo>/recovery	-
+2	STTypeBootstrapApplier.java	completed	132	<repo>/recovery/ST.exe/type_bootstrap_proposals.tsv	program_modification=3->24; recovery_state: proposals_enabled=15, proposals_review=1, changed=9, unchanged=6, review=1, conflict=0, error=0
+3	STTypeBootstrapAnalyzer.java	completed	11623	<repo>/recovery	-
+4	STTypeBootstrapApplier.java	completed	43	<repo>/recovery/ST.exe/type_bootstrap_proposals.tsv	recovery_state: proposals_enabled=8, proposals_review=1, changed=2, unchanged=6, review=1, conflict=0, error=0
+5	STDebugSymbolAnalyzer.java	completed	866	<repo>/recovery	-
+6	STDebugSymbolApplier.java	completed	59	<repo>/recovery/ST.exe/proposals.tsv	-
+7	STCuratedRecoveryApplier.java	completed	22	<repo>/recovery/ST.exe/curated_recovery.tsv	-
+8	STCallsiteConventionAnalyzer.java	completed	246	<repo>/recovery/ST.exe/debug_calling_convention_review.tsv	-
+9	STCallsiteConventionApplier.java	completed	21	<repo>/recovery/ST.exe/callsite_convention_proposals.tsv	recovery_state: proposals_enabled=0, proposals_review=81, changed=0, unchanged=0, review=81, conflict=0, error=0
+10	STMessageIdAnalyzer.java	completed	974	<repo>/recovery	-
+11	STMessageIdApplier.java	completed	31	<repo>/recovery/ST.exe/message_id_proposals.tsv	-
+12	STMessageHandlerAnalyzer.java	completed	780	<repo>/recovery	-
+13	STMessageHandlerApplier.java	completed	22	<repo>/recovery/ST.exe/message_handler_proposals.tsv	recovery_state: proposals_enabled=0, proposals_review=106, changed=0, unchanged=0, review=106, conflict=0, error=0
+14	STUnclaimedCodeAnalyzer.java	completed	939	<repo>/recovery	-
+15	STUnclaimedCodeApplier.java	completed	80	<repo>/recovery/ST.exe/unclaimed_code_proposals.tsv	recovery_state: proposals_enabled=0, proposals_review=166, changed=0, unchanged=0, review=166, conflict=0, error=0
+16	STMessageHandlerAnalyzer.java	completed	869	<repo>/recovery	-
+17	STMessageHandlerApplier.java	completed	21	<repo>/recovery/ST.exe/message_handler_proposals.tsv	recovery_state: proposals_enabled=0, proposals_review=106, changed=0, unchanged=0, review=106, conflict=0, error=0
+18	STObjectFactoryAnalyzer.java	completed	269	<repo>/recovery	-
+19	STObjectFactoryApplier.java	completed	41	<repo>/recovery/ST.exe/object_factory_proposals.tsv	recovery_state: proposals_enabled=94, proposals_review=2, changed=0, unchanged=96, review=2, conflict=0, error=0
+20	STVTableAnalyzer.java	completed	479	<repo>/recovery	-
+21	STVTableApplier.java	completed	161	<repo>/recovery/ST.exe/vtable_proposals.tsv	recovery_state: proposals_enabled=158, proposals_review=22, changed=0, unchanged=206, review=30, conflict=0, error=0
+22	STVirtualMethodAnalyzer.java	completed	86	<repo>/recovery/ST.exe/vtable_proposals.tsv	-
+23	STVirtualMethodApplier.java	completed	21	<repo>/recovery/ST.exe/virtual_method_proposals.tsv	recovery_state: proposals_enabled=0, proposals_review=365, changed=0, unchanged=0, review=365, conflict=0, error=0
+24	STConstructorAnalyzer.java	completed	78	<repo>/recovery/ST.exe/vtable_proposals.tsv	-
+25	STConstructorApplier.java	completed	21	<repo>/recovery/ST.exe/constructor_proposals.tsv	recovery_state: proposals_enabled=0, proposals_review=58, changed=0, unchanged=0, review=58, conflict=0, error=0
+26	STClassArrayAnalyzer.java	completed	2060	<repo>/recovery	-
+27	STClassLayoutAnalyzer.java	completed	20413	<repo>/recovery	-
+28	STClassLayoutApplier.java	completed	155	<repo>/recovery/ST.exe/class_layout_proposals.tsv	program_modification=24->81; recovery_state: proposals_enabled=109, proposals_review=36, changed=19, unchanged=90, review=189, conflict=0, error=0
+29	STDArrayElementAnalyzer.java	completed	127931	<repo>/recovery	-
+30	STDArrayElementApplier.java	completed	21457	<repo>/recovery/ST.exe/darray_element_proposals.tsv	program_modification=81->99; recovery_state: proposals_enabled=22, proposals_review=28, changed=0, unchanged=22, review=28, conflict=0, error=0
+31	STMessageHandlerAnalyzer.java	completed	811	<repo>/recovery	-
+32	STMessageHandlerApplier.java	completed	22	<repo>/recovery/ST.exe/message_handler_proposals.tsv	recovery_state: proposals_enabled=0, proposals_review=106, changed=0, unchanged=0, review=106, conflict=0, error=0
+33	STObjectFactoryAnalyzer.java	completed	295	<repo>/recovery	-
+34	STObjectFactoryApplier.java	completed	30	<repo>/recovery/ST.exe/object_factory_proposals.tsv	recovery_state: proposals_enabled=94, proposals_review=2, changed=0, unchanged=96, review=2, conflict=0, error=0
+35	STVTableAnalyzer.java	completed	498	<repo>/recovery	-
+36	STVTableApplier.java	completed	119	<repo>/recovery/ST.exe/vtable_proposals.tsv	recovery_state: proposals_enabled=158, proposals_review=22, changed=0, unchanged=206, review=30, conflict=0, error=0
+37	STVirtualMethodAnalyzer.java	completed	78	<repo>/recovery/ST.exe/vtable_proposals.tsv	-
+38	STVirtualMethodApplier.java	completed	26	<repo>/recovery/ST.exe/virtual_method_proposals.tsv	recovery_state: proposals_enabled=0, proposals_review=365, changed=0, unchanged=0, review=365, conflict=0, error=0
+39	STConstructorAnalyzer.java	completed	56	<repo>/recovery/ST.exe/vtable_proposals.tsv	-
+40	STConstructorApplier.java	completed	18	<repo>/recovery/ST.exe/constructor_proposals.tsv	recovery_state: proposals_enabled=0, proposals_review=58, changed=0, unchanged=0, review=58, conflict=0, error=0
+41	STClassArrayAnalyzer.java	completed	2327	<repo>/recovery	-
+42	STClassLayoutAnalyzer.java	completed	20485	<repo>/recovery	-
+43	STClassLayoutApplier.java	completed	86	<repo>/recovery/ST.exe/class_layout_proposals.tsv	recovery_state: proposals_enabled=109, proposals_review=36, changed=0, unchanged=109, review=189, conflict=0, error=0
+44	STDArrayElementAnalyzer.java	completed	129230	<repo>/recovery	-
+45	STDArrayElementApplier.java	completed	130516	<repo>/recovery/ST.exe/darray_element_proposals.tsv	program_modification=99->117; recovery_state: proposals_enabled=22, proposals_review=28, changed=0, unchanged=22, review=28, conflict=0, error=0
+46	STHiddenThisAnalyzer.java	completed	41631	<repo>/recovery	-
+47	STHiddenThisApplier.java	completed	541	<repo>/recovery/ST.exe/hidden_this_proposals.tsv	recovery_state: proposals_enabled=0, proposals_review=582, changed=0, unchanged=0, review=582, conflict=0, error=0
+48	STMethodOwnerAnalyzer.java	completed	22143	<repo>/recovery	-
+49	STMethodOwnerApplier.java	completed	166	<repo>/recovery/ST.exe/method_owner_proposals.tsv	recovery_state: proposals_enabled=0, proposals_review=883, changed=0, unchanged=0, review=883, conflict=0, error=0
+50	STDestructorAnalyzer.java	completed	6104	<repo>/recovery	-
+51	STDestructorApplier.java	completed	54	<repo>/recovery/ST.exe/destructor_proposals.tsv	recovery_state: proposals_enabled=0, proposals_review=0, changed=0, unchanged=0, review=0, conflict=0, error=0
+52	STSwitchEnumAnalyzer.java	completed	213643	<repo>/recovery	-
+53	STSwitchEnumApplier.java	completed	111	<repo>/recovery/ST.exe/switch_enum_proposals.tsv	recovery_state: proposals_enabled=563, proposals_review=424, changed=0, unchanged=562, review=425, conflict=0, error=0
+54	STUtilityFunctionAnalyzer.java	completed	2621	<repo>/recovery	-
+55	STUtilityFunctionApplier.java	completed	241	<repo>/recovery/ST.exe/utility_function_proposals.tsv	program_modification=117->157; recovery_state: proposals_enabled=13, proposals_review=0, changed=2, unchanged=10, review=1, conflict=0, error=0
+56	STAbiConsistencyAnalyzer.java	completed	10943	<repo>/recovery	-
+57	STAbiConsistencyApplier.java	completed	147	<repo>/recovery/ST.exe/abi_consistency_proposals.tsv	program_modification=157->744; recovery_state: proposals_enabled=11, proposals_review=0, changed=10, unchanged=0, review=0, conflict=1, error=0
+58	STReturnSemanticsAnalyzer.java	completed	26128	<repo>/recovery	-
+59	STReturnSemanticsApplier.java	completed	54	<repo>/recovery/ST.exe/return_semantics_proposals.tsv	recovery_state: proposals_enabled=0, proposals_review=93, changed=0, unchanged=0, review=93, conflict=0, error=0
+60	STPrototypeAnalyzer.java	completed	39873	<repo>/recovery	-
+61	STPrototypeRepairAnalyzer.java	completed	51	<repo>/recovery/ST.exe/prototype_proposals.tsv	-
+62	STPrototypeRepairApplier.java	completed	82	<repo>/recovery/ST.exe/prototype_repair_proposals.tsv	program_modification=744->751; recovery_state: proposals_enabled=1, proposals_review=3, changed=1, unchanged=0, review=3, conflict=0, error=0
+63	STPrototypeAnalyzer.java	completed	38810	<repo>/recovery	-
+64	STPrototypeApplier.java	completed	165	<repo>/recovery/ST.exe/prototype_proposals.tsv	program_modification=751->759; recovery_state: proposals_enabled=1, proposals_review=138, changed=1, unchanged=0, review=138, conflict=0, error=0
+65	STGlobalRecordAnalyzer.java	completed	1970	<repo>/recovery	-
+66	STGlobalRecordApplier.java	completed	203	<repo>/recovery/ST.exe/global_record_proposals.tsv	recovery_state: proposals_enabled=1, proposals_review=0, changed=0, unchanged=1, review=0, conflict=0, error=0
+67	STDiscriminatedPayloadAnalyzer.java	completed	163064	<repo>/recovery	-
+68	STDiscriminatedPayloadApplier.java	completed	69	<repo>/recovery/ST.exe/discriminated_payload_proposals.tsv	recovery_state: proposals_enabled=31, proposals_review=1, changed=0, unchanged=36, review=3, conflict=0, error=0
+69	STSpatialGridAnalyzer.java	completed	1609	<repo>/recovery	-
+70	STSpatialGridApplier.java	completed	22	<repo>/recovery/ST.exe/spatial_grid_proposals.tsv	recovery_state: proposals_enabled=0, proposals_review=3, changed=0, unchanged=0, review=3, conflict=0, error=0
+71	STGlobalAggregateAnalyzer.java	completed	5300	<repo>/recovery	-
+72	STGlobalAggregateApplier.java	completed	33	<repo>/recovery/ST.exe/global_aggregate_proposals.tsv	recovery_state: proposals_enabled=0, proposals_review=73, changed=0, unchanged=0, review=73, conflict=0, error=0
+73	STGlobalDataAnalyzer.java	completed	4051	<repo>/recovery	-
+74	STGlobalDataApplier.java	completed	182	<repo>/recovery/ST.exe/global_data_proposals.tsv	program_modification=759->773; recovery_state: proposals_enabled=2, proposals_review=112, changed=2, unchanged=0, review=112, conflict=0, error=0
+75	STMethodOwnerAnalyzer.java	completed	7348	<repo>/recovery	-
+76	STMethodOwnerApplier.java	completed	39	<repo>/recovery/ST.exe/method_owner_proposals.tsv	recovery_state: proposals_enabled=0, proposals_review=883, changed=0, unchanged=0, review=883, conflict=0, error=0
+77	STIndirectCallAnalyzer.java	completed	2542	<repo>/recovery	-
+78	STIndirectCallApplier.java	completed	104	<repo>/recovery/ST.exe/indirect_call_proposals.tsv	program_modification=773->914; recovery_state: proposals_enabled=2146, proposals_review=489, changed=13, unchanged=2133, review=489, conflict=0, error=0
+79	STPointerRoleRepairAnalyzer.java	completed	127149	<repo>/recovery	-
+80	STPointerRoleRepairApplier.java	completed	44	<repo>/recovery/ST.exe/pointer_role_repair_proposals.tsv	recovery_state: proposals_enabled=0, proposals_review=1, changed=0, unchanged=0, review=1, conflict=0, error=0
+81	STPointerShapeAnalyzer.java	completed	250886	<repo>/recovery	-
+82	STPointerShapeApplier.java	completed	254	<repo>/recovery/ST.exe/pointer_shape_target_proposals.tsv	program_modification=914->1187; recovery_state: proposals_enabled=49, proposals_review=1978, changed=66, unchanged=0, review=2817, conflict=1, error=0
+83	STTypeFamilyAnalyzer.java	completed	3645	<repo>/recovery	-
+84	STTypeFamilyApplier.java	completed	30	<repo>/recovery/ST.exe/type_family_proposals.tsv	recovery_state: proposals_enabled=0, proposals_review=2, changed=0, unchanged=0, review=2, conflict=0, error=0
+85	STClassArrayAnalyzer.java	completed	2553	<repo>/recovery	-
+86	STClassLayoutAnalyzer.java	completed	26798	<repo>/recovery	-
+87	STClassLayoutApplier.java	completed	225	<repo>/recovery/ST.exe/class_layout_proposals.tsv	program_modification=1187->1244; recovery_state: proposals_enabled=109, proposals_review=36, changed=19, unchanged=90, review=189, conflict=0, error=0
+88	STDArrayElementAnalyzer.java	completed	136209	<repo>/recovery	-
+89	STDArrayElementApplier.java	completed	24324	<repo>/recovery/ST.exe/darray_element_proposals.tsv	program_modification=1244->1262; recovery_state: proposals_enabled=22, proposals_review=28, changed=0, unchanged=22, review=28, conflict=0, error=0
+90	STSwitchEnumAnalyzer.java	completed	219925	<repo>/recovery	-
+91	STSwitchEnumApplier.java	completed	97	<repo>/recovery/ST.exe/switch_enum_proposals.tsv	recovery_state: proposals_enabled=562, proposals_review=424, changed=0, unchanged=561, review=425, conflict=0, error=0
+92	STObjectFactoryAnalyzer.java	completed	466	<repo>/recovery	-
+93	STObjectFactoryApplier.java	completed	29	<repo>/recovery/ST.exe/object_factory_proposals.tsv	recovery_state: proposals_enabled=94, proposals_review=2, changed=0, unchanged=96, review=2, conflict=0, error=0
+94	STAbiConsistencyAnalyzer.java	completed	14089	<repo>/recovery	-
+95	STAbiConsistencyApplier.java	completed	47	<repo>/recovery/ST.exe/abi_consistency_proposals.tsv	recovery_state: proposals_enabled=1, proposals_review=0, changed=0, unchanged=0, review=0, conflict=1, error=0
+96	STReturnSemanticsAnalyzer.java	completed	26919	<repo>/recovery	-
+97	STReturnSemanticsApplier.java	completed	31	<repo>/recovery/ST.exe/return_semantics_proposals.tsv	recovery_state: proposals_enabled=0, proposals_review=96, changed=0, unchanged=0, review=96, conflict=0, error=0
+98	STPrototypeAnalyzer.java	completed	45581	<repo>/recovery	-
+99	STPrototypeRepairAnalyzer.java	completed	126	<repo>/recovery/ST.exe/prototype_proposals.tsv	-
+100	STPrototypeRepairApplier.java	completed	37	<repo>/recovery/ST.exe/prototype_repair_proposals.tsv	recovery_state: proposals_enabled=0, proposals_review=3, changed=0, unchanged=0, review=3, conflict=0, error=0
+101	STPrototypeAnalyzer.java	completed	46886	<repo>/recovery	-
+102	STPrototypeApplier.java	completed	240	<repo>/recovery/ST.exe/prototype_proposals.tsv	program_modification=1262->1278; recovery_state: proposals_enabled=2, proposals_review=140, changed=2, unchanged=0, review=140, conflict=0, error=0
+103	STGlobalRecordAnalyzer.java	completed	2192	<repo>/recovery	-
+104	STGlobalRecordApplier.java	completed	277	<repo>/recovery/ST.exe/global_record_proposals.tsv	recovery_state: proposals_enabled=1, proposals_review=0, changed=0, unchanged=1, review=0, conflict=0, error=0
+105	STDiscriminatedPayloadAnalyzer.java	completed	181890	<repo>/recovery	-
+106	STDiscriminatedPayloadApplier.java	completed	63	<repo>/recovery/ST.exe/discriminated_payload_proposals.tsv	recovery_state: proposals_enabled=31, proposals_review=1, changed=0, unchanged=36, review=3, conflict=0, error=0
+107	STSpatialGridAnalyzer.java	completed	1672	<repo>/recovery	-
+108	STSpatialGridApplier.java	completed	36	<repo>/recovery/ST.exe/spatial_grid_proposals.tsv	recovery_state: proposals_enabled=0, proposals_review=3, changed=0, unchanged=0, review=3, conflict=0, error=0
+109	STGlobalAggregateAnalyzer.java	completed	5890	<repo>/recovery	-
+110	STGlobalAggregateApplier.java	completed	37	<repo>/recovery/ST.exe/global_aggregate_proposals.tsv	recovery_state: proposals_enabled=0, proposals_review=73, changed=0, unchanged=0, review=73, conflict=0, error=0
+111	STGlobalDataAnalyzer.java	completed	5770	<repo>/recovery	-
+112	STGlobalDataApplier.java	completed	39	<repo>/recovery/ST.exe/global_data_proposals.tsv	recovery_state: proposals_enabled=0, proposals_review=112, changed=0, unchanged=0, review=112, conflict=0, error=0
+113	STMethodOwnerAnalyzer.java	completed	8400	<repo>/recovery	-
+114	STMethodOwnerApplier.java	completed	36	<repo>/recovery/ST.exe/method_owner_proposals.tsv	recovery_state: proposals_enabled=0, proposals_review=883, changed=0, unchanged=0, review=883, conflict=0, error=0
+115	STIndirectCallAnalyzer.java	completed	3388	<repo>/recovery	-
+116	STIndirectCallApplier.java	completed	121	<repo>/recovery/ST.exe/indirect_call_proposals.tsv	recovery_state: proposals_enabled=2146, proposals_review=489, changed=0, unchanged=2146, review=489, conflict=0, error=0
+117	STPointerRoleRepairAnalyzer.java	completed	140422	<repo>/recovery	-
+118	STPointerRoleRepairApplier.java	completed	97	<repo>/recovery/ST.exe/pointer_role_repair_proposals.tsv	recovery_state: proposals_enabled=0, proposals_review=1, changed=0, unchanged=0, review=1, conflict=0, error=0
+119	STPointerShapeAnalyzer.java	completed	241335	<repo>/recovery	-
+120	STPointerShapeApplier.java	completed	79	<repo>/recovery/ST.exe/pointer_shape_target_proposals.tsv	recovery_state: proposals_enabled=29, proposals_review=1977, changed=0, unchanged=28, review=2816, conflict=1, error=0
+121	STTypeFamilyAnalyzer.java	completed	3398	<repo>/recovery	-
+122	STTypeFamilyApplier.java	completed	32	<repo>/recovery/ST.exe/type_family_proposals.tsv	recovery_state: proposals_enabled=0, proposals_review=2, changed=0, unchanged=0, review=2, conflict=0, error=0
+123	STClassArrayAnalyzer.java	completed	2859	<repo>/recovery	-
+124	STClassLayoutAnalyzer.java	completed	24165	<repo>/recovery	-
+125	STClassLayoutApplier.java	completed	202	<repo>/recovery/ST.exe/class_layout_proposals.tsv	program_modification=1278->1305; recovery_state: proposals_enabled=109, proposals_review=36, changed=9, unchanged=100, review=189, conflict=0, error=0
+126	STDArrayElementAnalyzer.java	completed	136492	<repo>/recovery	-
+127	STDArrayElementApplier.java	completed	23807	<repo>/recovery/ST.exe/darray_element_proposals.tsv	program_modification=1305->1323; recovery_state: proposals_enabled=22, proposals_review=28, changed=0, unchanged=22, review=28, conflict=0, error=0
+128	STSwitchEnumAnalyzer.java	completed	296365	<repo>/recovery	-
+129	STSwitchEnumApplier.java	completed	536	<repo>/recovery/ST.exe/switch_enum_proposals.tsv	recovery_state: proposals_enabled=562, proposals_review=424, changed=0, unchanged=561, review=425, conflict=0, error=0
+130	STObjectFactoryAnalyzer.java	completed	588	<repo>/recovery	-
+131	STObjectFactoryApplier.java	completed	64	<repo>/recovery/ST.exe/object_factory_proposals.tsv	recovery_state: proposals_enabled=94, proposals_review=2, changed=0, unchanged=96, review=2, conflict=0, error=0
+132	STAbiConsistencyAnalyzer.java	completed	18744	<repo>/recovery	-
+133	STAbiConsistencyApplier.java	completed	86	<repo>/recovery/ST.exe/abi_consistency_proposals.tsv	recovery_state: proposals_enabled=1, proposals_review=0, changed=0, unchanged=0, review=0, conflict=1, error=0
+134	STReturnSemanticsAnalyzer.java	completed	31929	<repo>/recovery	-
+135	STReturnSemanticsApplier.java	completed	58	<repo>/recovery/ST.exe/return_semantics_proposals.tsv	recovery_state: proposals_enabled=0, proposals_review=96, changed=0, unchanged=0, review=96, conflict=0, error=0
+136	STPrototypeAnalyzer.java	completed	58123	<repo>/recovery	-
+137	STPrototypeRepairAnalyzer.java	completed	49	<repo>/recovery/ST.exe/prototype_proposals.tsv	-
+138	STPrototypeRepairApplier.java	completed	24	<repo>/recovery/ST.exe/prototype_repair_proposals.tsv	recovery_state: proposals_enabled=0, proposals_review=3, changed=0, unchanged=0, review=3, conflict=0, error=0
+139	STPrototypeAnalyzer.java	completed	70658	<repo>/recovery	-
+140	STPrototypeApplier.java	completed	66	<repo>/recovery/ST.exe/prototype_proposals.tsv	recovery_state: proposals_enabled=0, proposals_review=140, changed=0, unchanged=0, review=140, conflict=0, error=0
+141	STGlobalRecordAnalyzer.java	completed	3487	<repo>/recovery	-
+142	STGlobalRecordApplier.java	completed	433	<repo>/recovery/ST.exe/global_record_proposals.tsv	recovery_state: proposals_enabled=1, proposals_review=0, changed=0, unchanged=1, review=0, conflict=0, error=0
+143	STDiscriminatedPayloadAnalyzer.java	completed	187020	<repo>/recovery	-
+144	STDiscriminatedPayloadApplier.java	completed	90	<repo>/recovery/ST.exe/discriminated_payload_proposals.tsv	recovery_state: proposals_enabled=31, proposals_review=1, changed=0, unchanged=36, review=3, conflict=0, error=0
+145	STSpatialGridAnalyzer.java	completed	2495	<repo>/recovery	-
+146	STSpatialGridApplier.java	completed	43	<repo>/recovery/ST.exe/spatial_grid_proposals.tsv	recovery_state: proposals_enabled=0, proposals_review=3, changed=0, unchanged=0, review=3, conflict=0, error=0
+147	STGlobalAggregateAnalyzer.java	completed	6867	<repo>/recovery	-
+148	STGlobalAggregateApplier.java	completed	57	<repo>/recovery/ST.exe/global_aggregate_proposals.tsv	recovery_state: proposals_enabled=0, proposals_review=73, changed=0, unchanged=0, review=73, conflict=0, error=0
+149	STGlobalDataAnalyzer.java	completed	8286	<repo>/recovery	-
+150	STGlobalDataApplier.java	completed	61	<repo>/recovery/ST.exe/global_data_proposals.tsv	recovery_state: proposals_enabled=0, proposals_review=112, changed=0, unchanged=0, review=112, conflict=0, error=0
+151	STMethodOwnerAnalyzer.java	completed	18834	<repo>/recovery	-
+152	STMethodOwnerApplier.java	completed	64	<repo>/recovery/ST.exe/method_owner_proposals.tsv	recovery_state: proposals_enabled=0, proposals_review=883, changed=0, unchanged=0, review=883, conflict=0, error=0
+153	STIndirectCallAnalyzer.java	completed	6824	<repo>/recovery	-
+154	STIndirectCallApplier.java	completed	916	<repo>/recovery/ST.exe/indirect_call_proposals.tsv	recovery_state: proposals_enabled=2146, proposals_review=489, changed=0, unchanged=2146, review=489, conflict=0, error=0
+155	STPointerRoleRepairAnalyzer.java	completed	138524	<repo>/recovery	-
+156	STPointerRoleRepairApplier.java	completed	76	<repo>/recovery/ST.exe/pointer_role_repair_proposals.tsv	recovery_state: proposals_enabled=0, proposals_review=1, changed=0, unchanged=0, review=1, conflict=0, error=0
+157	STPointerShapeAnalyzer.java	completed	242148	<repo>/recovery	-
+158	STPointerShapeApplier.java	completed	127	<repo>/recovery/ST.exe/pointer_shape_target_proposals.tsv	recovery_state: proposals_enabled=29, proposals_review=1977, changed=0, unchanged=28, review=2816, conflict=1, error=0
+159	STTypeFamilyAnalyzer.java	completed	3493	<repo>/recovery	-
+160	STTypeFamilyApplier.java	completed	23	<repo>/recovery/ST.exe/type_family_proposals.tsv	recovery_state: proposals_enabled=0, proposals_review=2, changed=0, unchanged=0, review=2, conflict=0, error=0
+161	STClassArrayAnalyzer.java	completed	2367	<repo>/recovery	-
+162	STClassLayoutAnalyzer.java	completed	24664	<repo>/recovery	-
+163	STClassLayoutApplier.java	completed	402	<repo>/recovery/ST.exe/class_layout_proposals.tsv	program_modification=1323->1332; recovery_state: proposals_enabled=109, proposals_review=36, changed=3, unchanged=106, review=189, conflict=0, error=0
+164	STDArrayElementAnalyzer.java	completed	134518	<repo>/recovery	-
+165	STDArrayElementApplier.java	completed	23787	<repo>/recovery/ST.exe/darray_element_proposals.tsv	program_modification=1332->1350; recovery_state: proposals_enabled=22, proposals_review=28, changed=0, unchanged=22, review=28, conflict=0, error=0
+166	STSwitchEnumAnalyzer.java	completed	246977	<repo>/recovery	-
+167	STSwitchEnumApplier.java	completed	166	<repo>/recovery/ST.exe/switch_enum_proposals.tsv	recovery_state: proposals_enabled=562, proposals_review=424, changed=0, unchanged=561, review=425, conflict=0, error=0
+168	STObjectFactoryAnalyzer.java	completed	391	<repo>/recovery	-
+169	STObjectFactoryApplier.java	completed	27	<repo>/recovery/ST.exe/object_factory_proposals.tsv	recovery_state: proposals_enabled=94, proposals_review=2, changed=0, unchanged=96, review=2, conflict=0, error=0
+170	STAbiConsistencyAnalyzer.java	completed	18248	<repo>/recovery	-
+171	STAbiConsistencyApplier.java	completed	56	<repo>/recovery/ST.exe/abi_consistency_proposals.tsv	recovery_state: proposals_enabled=1, proposals_review=0, changed=0, unchanged=0, review=0, conflict=1, error=0
+172	STReturnSemanticsAnalyzer.java	completed	30211	<repo>/recovery	-
+173	STReturnSemanticsApplier.java	completed	41	<repo>/recovery/ST.exe/return_semantics_proposals.tsv	recovery_state: proposals_enabled=0, proposals_review=96, changed=0, unchanged=0, review=96, conflict=0, error=0
+174	STPrototypeAnalyzer.java	completed	45475	<repo>/recovery	-
+175	STPrototypeRepairAnalyzer.java	completed	75	<repo>/recovery/ST.exe/prototype_proposals.tsv	-
+176	STPrototypeRepairApplier.java	completed	22	<repo>/recovery/ST.exe/prototype_repair_proposals.tsv	recovery_state: proposals_enabled=0, proposals_review=3, changed=0, unchanged=0, review=3, conflict=0, error=0
+177	STPrototypeAnalyzer.java	completed	44354	<repo>/recovery	-
+178	STPrototypeApplier.java	completed	84	<repo>/recovery/ST.exe/prototype_proposals.tsv	recovery_state: proposals_enabled=0, proposals_review=140, changed=0, unchanged=0, review=140, conflict=0, error=0
+179	STGlobalRecordAnalyzer.java	completed	2581	<repo>/recovery	-
+180	STGlobalRecordApplier.java	completed	268	<repo>/recovery/ST.exe/global_record_proposals.tsv	recovery_state: proposals_enabled=1, proposals_review=0, changed=0, unchanged=1, review=0, conflict=0, error=0
+181	STDiscriminatedPayloadAnalyzer.java	completed	172663	<repo>/recovery	-
+182	STDiscriminatedPayloadApplier.java	completed	93	<repo>/recovery/ST.exe/discriminated_payload_proposals.tsv	recovery_state: proposals_enabled=31, proposals_review=1, changed=0, unchanged=36, review=3, conflict=0, error=0
+183	STSpatialGridAnalyzer.java	completed	1826	<repo>/recovery	-
+184	STSpatialGridApplier.java	completed	29	<repo>/recovery/ST.exe/spatial_grid_proposals.tsv	recovery_state: proposals_enabled=0, proposals_review=3, changed=0, unchanged=0, review=3, conflict=0, error=0
+185	STGlobalAggregateAnalyzer.java	completed	6994	<repo>/recovery	-
+186	STGlobalAggregateApplier.java	completed	32	<repo>/recovery/ST.exe/global_aggregate_proposals.tsv	recovery_state: proposals_enabled=0, proposals_review=73, changed=0, unchanged=0, review=73, conflict=0, error=0
+187	STGlobalDataAnalyzer.java	completed	6465	<repo>/recovery	-
+188	STGlobalDataApplier.java	completed	31	<repo>/recovery/ST.exe/global_data_proposals.tsv	recovery_state: proposals_enabled=0, proposals_review=112, changed=0, unchanged=0, review=112, conflict=0, error=0
+189	STMethodOwnerAnalyzer.java	completed	9848	<repo>/recovery	-
+190	STMethodOwnerApplier.java	completed	63	<repo>/recovery/ST.exe/method_owner_proposals.tsv	recovery_state: proposals_enabled=0, proposals_review=883, changed=0, unchanged=0, review=883, conflict=0, error=0
+191	STIndirectCallAnalyzer.java	completed	4182	<repo>/recovery	-
+192	STIndirectCallApplier.java	completed	110	<repo>/recovery/ST.exe/indirect_call_proposals.tsv	recovery_state: proposals_enabled=2146, proposals_review=489, changed=0, unchanged=2146, review=489, conflict=0, error=0
+193	STPointerRoleRepairAnalyzer.java	completed	129009	<repo>/recovery	-
+194	STPointerRoleRepairApplier.java	completed	66	<repo>/recovery/ST.exe/pointer_role_repair_proposals.tsv	recovery_state: proposals_enabled=0, proposals_review=1, changed=0, unchanged=0, review=1, conflict=0, error=0
+195	STPointerShapeAnalyzer.java	completed	239465	<repo>/recovery	-
+196	STPointerShapeApplier.java	completed	99	<repo>/recovery/ST.exe/pointer_shape_target_proposals.tsv	recovery_state: proposals_enabled=29, proposals_review=1978, changed=0, unchanged=28, review=2817, conflict=1, error=0
+197	STTypeFamilyAnalyzer.java	completed	3170	<repo>/recovery	-
+198	STTypeFamilyApplier.java	completed	27	<repo>/recovery/ST.exe/type_family_proposals.tsv	recovery_state: proposals_enabled=0, proposals_review=2, changed=0, unchanged=0, review=2, conflict=0, error=0
+199	STClassArrayAnalyzer.java	completed	2086	<repo>/recovery	-
+200	STClassLayoutAnalyzer.java	completed	22553	<repo>/recovery	-
+201	STClassLayoutApplier.java	completed	154	<repo>/recovery/ST.exe/class_layout_proposals.tsv	recovery_state: proposals_enabled=109, proposals_review=36, changed=0, unchanged=109, review=189, conflict=0, error=0
+202	STDArrayElementAnalyzer.java	completed	132701	<repo>/recovery	-
+203	STDArrayElementApplier.java	completed	23624	<repo>/recovery/ST.exe/darray_element_proposals.tsv	program_modification=1350->1368; recovery_state: proposals_enabled=22, proposals_review=28, changed=0, unchanged=22, review=28, conflict=0, error=0
+204	STSwitchEnumAnalyzer.java	completed	213399	<repo>/recovery	-
+205	STSwitchEnumApplier.java	completed	88	<repo>/recovery/ST.exe/switch_enum_proposals.tsv	recovery_state: proposals_enabled=562, proposals_review=424, changed=0, unchanged=561, review=425, conflict=0, error=0
+206	STObjectFactoryAnalyzer.java	completed	286	<repo>/recovery	-
+207	STObjectFactoryApplier.java	completed	23	<repo>/recovery/ST.exe/object_factory_proposals.tsv	recovery_state: proposals_enabled=94, proposals_review=2, changed=0, unchanged=96, review=2, conflict=0, error=0
+208	STMessageHandlerAnalyzer.java	completed	727	<repo>/recovery	-
+209	STMessageHandlerApplier.java	completed	21	<repo>/recovery/ST.exe/message_handler_proposals.tsv	recovery_state: proposals_enabled=0, proposals_review=106, changed=0, unchanged=0, review=106, conflict=0, error=0
+210	STObjectFactoryAnalyzer.java	completed	230	<repo>/recovery	-
+211	STObjectFactoryApplier.java	completed	20	<repo>/recovery/ST.exe/object_factory_proposals.tsv	recovery_state: proposals_enabled=94, proposals_review=2, changed=0, unchanged=96, review=2, conflict=0, error=0
+212	STVTableAnalyzer.java	completed	438	<repo>/recovery	-
+213	STVTableApplier.java	completed	81	<repo>/recovery/ST.exe/vtable_proposals.tsv	recovery_state: proposals_enabled=158, proposals_review=22, changed=0, unchanged=206, review=30, conflict=0, error=0
+214	STVirtualMethodAnalyzer.java	completed	65	<repo>/recovery/ST.exe/vtable_proposals.tsv	-
+215	STVirtualMethodApplier.java	completed	18	<repo>/recovery/ST.exe/virtual_method_proposals.tsv	recovery_state: proposals_enabled=0, proposals_review=365, changed=0, unchanged=0, review=365, conflict=0, error=0
+216	STConstructorAnalyzer.java	completed	49	<repo>/recovery/ST.exe/vtable_proposals.tsv	-
+217	STConstructorApplier.java	completed	18	<repo>/recovery/ST.exe/constructor_proposals.tsv	recovery_state: proposals_enabled=0, proposals_review=58, changed=0, unchanged=0, review=58, conflict=0, error=0
+218	STClassArrayAnalyzer.java	completed	2211	<repo>/recovery	-
+219	STClassLayoutAnalyzer.java	completed	23010	<repo>/recovery	-
+220	STClassLayoutApplier.java	completed	145	<repo>/recovery/ST.exe/class_layout_proposals.tsv	recovery_state: proposals_enabled=109, proposals_review=36, changed=0, unchanged=109, review=189, conflict=0, error=0
+221	STDArrayElementAnalyzer.java	completed	136889	<repo>/recovery	-
+222	STDArrayElementApplier.java	completed	22200	<repo>/recovery/ST.exe/darray_element_proposals.tsv	program_modification=1368->1386; recovery_state: proposals_enabled=22, proposals_review=28, changed=0, unchanged=22, review=28, conflict=0, error=0
+223	STIndirectCallAnalyzer.java	completed	3270	<repo>/recovery	-
+224	STIndirectCallApplier.java	completed	75	<repo>/recovery/ST.exe/indirect_call_proposals.tsv	recovery_state: proposals_enabled=2146, proposals_review=489, changed=0, unchanged=2146, review=489, conflict=0, error=0
+225	STSourceProvenanceAnalyzer.java	completed	485	<repo>/recovery	-
+226	STSourceProvenanceApplier.java	completed	89	<repo>/recovery/ST.exe/source_provenance_proposals.tsv	recovery_state: proposals_enabled=271, proposals_review=878, changed=0, unchanged=439, review=1859, conflict=0, error=0
+227	STThunkPropagationAnalyzer.java	completed	243	<repo>/recovery	-
+228	STThunkPropagationApplier.java	completed	44	<repo>/recovery/ST.exe/thunk_proposals.tsv	recovery_state: proposals_enabled=0, proposals_review=3826, changed=0, unchanged=0, review=3826, conflict=0, error=0
+229	STManualTypeAuditAnalyzer.java	completed	76	<repo>/recovery	-
+230	STControlFlowLabelAnalyzer.java	completed	216344	<repo>/recovery	-
+231	STControlFlowLabelApplier.java	completed	161	<repo>/recovery/ST.exe/control_flow_label_proposals.tsv	recovery_state: proposals_enabled=433, proposals_review=3024, changed=0, unchanged=433, review=3024, conflict=0, error=0
+232	STLibraryAnalyzer.java	completed	527	<repo>/recovery	-
+233	STLibraryApplier.java	completed	39	<repo>/recovery/ST.exe/library_proposals.tsv	-
+234	STGlobalDataAnalyzer.java	completed	4405	<repo>/recovery	-
+235	STGlobalDataApplier.java	completed	28	<repo>/recovery/ST.exe/global_data_proposals.tsv	recovery_state: proposals_enabled=0, proposals_review=112, changed=0, unchanged=0, review=112, conflict=0, error=0
+236	STPointerShapeAnalyzer.java	completed	232753	<repo>/recovery	-
+237	STPointerShapeApplier.java	completed	90	<repo>/recovery/ST.exe/pointer_shape_target_proposals.tsv	recovery_state: proposals_enabled=29, proposals_review=1978, changed=0, unchanged=28, review=2817, conflict=1, error=0
+238	STLocalLifetimeAnalyzer.java	completed	230893	<repo>/recovery	-
+239	STLocalLifetimeApplier.java	completed	59710	<repo>/recovery/ST.exe/local_lifetime_proposals.tsv	program_modification=1386->1431; recovery_state: proposals_enabled=42, proposals_review=23621, changed=1, unchanged=16, review=23621, conflict=25, error=0
+240	STTypeLifecycleAnalyzer.java	completed	383565	<repo>/recovery	-
+241	STTypeLifecycleApplier.java	completed	10390	<repo>/recovery/ST.exe/type_lifecycle_proposals.tsv	program_modification=1431->1501; recovery_state: proposals_enabled=35, proposals_review=1350, changed=35, unchanged=0, review=1350, conflict=0, error=0
+242	STTypeLifecycleAnalyzer.java	completed	331631	<repo>/recovery	-
+243	STTypeLifecycleApplier.java	completed	313	<repo>/recovery/ST.exe/type_lifecycle_proposals.tsv	recovery_state: proposals_enabled=0, proposals_review=1350, changed=0, unchanged=0, review=1350, conflict=0, error=0
+244	STReturnSemanticsAnalyzer.java	completed	695	<repo>/recovery | repair-only	-
+245	STReturnSemanticsApplier.java	completed	19	<repo>/recovery/ST.exe/return_semantics_proposals.tsv	recovery_state: proposals_enabled=0, proposals_review=0, changed=0, unchanged=0, review=0, conflict=0, error=0
+246	STIndirectCallAnalyzer.java	completed	3024	<repo>/recovery	-
+247	STIndirectCallApplier.java	completed	76	<repo>/recovery/ST.exe/indirect_call_proposals.tsv	recovery_state: proposals_enabled=2146, proposals_review=489, changed=0, unchanged=2146, review=489, conflict=0, error=0
+248	STEvidenceLedger.java	completed	5758	record | <repo>/recovery	-
+249	STEvidenceLedger.java	completed	5129	verify | <repo>/recovery	-
+250	STDecompExport.java	failed	82677	<repo>/decomp	Cannot invoke "java.lang.Long.longValue()"

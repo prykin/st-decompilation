@@ -55,7 +55,7 @@ FUN_004af080(uint param_1,int param_2,int *param_3,int *param_4,int *param_5,int
     local_28 = 2;
     local_2c = 2;
   }
-  psVar8 = (short *)Library::DKW::LIB::FUN_006aac70(g_worldGrid.planeStride * 5);
+  psVar8 = Library::DKW::LIB::MemAlloc(g_worldGrid.planeStride * 5);
   local_14 = 0;
   do {
     iVar9 = g_worldGrid.planeStride * local_14;

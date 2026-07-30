@@ -126,7 +126,7 @@ int __thiscall FUN_0040ae40(void *this,uint param_1,char param_2)
   iVar12 = local_8 * g_pathingGrid.planeStride;
   iVar7 = local_c * g_pathingGrid.sizeX;
   if (g_pathingGrid.cells[*(int *)&local_48[1].field_0x57 + iVar7 + iVar12] < 0) {
-    puVar8 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0x90);
+    puVar8 = Library::DKW::LIB::MemAlloc(0x90);
     *(undefined4 **)&pAVar6[1].field_0x3b = puVar8;
     for (iVar7 = 0x24; iVar7 != 0; iVar7 = iVar7 + -1) {
       *puVar8 = 0xffffffff;
@@ -245,7 +245,7 @@ joined_r0x0040b258:
     }
 LAB_0040b481:
     if (psVar10 == (short *)0x0) goto LAB_0040b56a;
-    puVar8 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0x90);
+    puVar8 = Library::DKW::LIB::MemAlloc(0x90);
     *(undefined4 **)&pAVar6[1].field_0x3b = puVar8;
     for (iVar7 = 0x24; iVar7 != 0; iVar7 = iVar7 + -1) {
       *puVar8 = 0xffffffff;
@@ -376,8 +376,7 @@ LAB_0040b56a:
     if (psVar10 == (short *)0x0) {
       psVar15 = (short *)((int)g_pathingGrid.sizeY * (int)g_pathingGrid.sizeX);
       local_40 = psVar15;
-      local_2c = (short *)Library::DKW::LIB::FUN_006aac70
-                                    ((int)g_pathingGrid.sizeZ * (int)psVar15 * 2);
+      local_2c = Library::DKW::LIB::MemAlloc((int)g_pathingGrid.sizeZ * (int)psVar15 * 2);
       iVar7 = (int)g_pathingGrid.sizeZ;
       psVar10 = g_pathingGrid.cells;
       psVar11 = local_2c;

@@ -67,13 +67,13 @@ undefined4 * __thiscall FUN_0040c080(void *this,uint param_1,uint *param_2)
   if (uVar9 == 0) {
     ExceptionList = &local_14;
     local_1c = &stack0xffffff34;
-    psVar4 = (short *)Library::DKW::LIB::FUN_006aac70(4);
+    psVar4 = Library::DKW::LIB::MemAlloc(4);
     psVar4[0] = -4;
     psVar4[1] = -1;
   }
   else {
     ExceptionList = &local_14;
-    psVar4 = (short *)Library::DKW::LIB::FUN_006aac70(uVar9 * 4);
+    psVar4 = Library::DKW::LIB::MemAlloc(uVar9 * 4);
     if (psVar4 != (short *)0x0) {
       pAVar5 = (AnonShape_00497920_894F87D6 *)thunk_FUN_00423e70(this,param_1);
       if (pAVar5 == (AnonShape_00497920_894F87D6 *)0x0) {
@@ -187,7 +187,7 @@ undefined4 * __thiscall FUN_0040c080(void *this,uint param_1,uint *param_2)
         local_68 = (local_30 - local_20) + 1;
         local_64 = local_70 * local_2c;
         local_84 = iVar8;
-        local_54 = (short *)Library::DKW::LIB::FUN_006aac70(local_64 * local_68 * 2);
+        local_54 = Library::DKW::LIB::MemAlloc(local_64 * local_68 * 2);
         for (local_8c = iVar7; local_8c < local_5c; local_8c = local_8c + 1) {
           psVar11 = g_pathingGrid.cells +
                     g_pathingGrid.planeStride * local_8c + g_pathingGrid.sizeX * local_9c;

@@ -303,10 +303,10 @@ void __thiscall STGroupBoatC::RestoreGrpBData(STGroupBoatC *this,undefined4 *par
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   local_8->field_030E = *(undefined4 *)((int)local_c + 0x31d);
   if (local_c[7] == -1) {
-    local_8->field_0059 = 0;
+    local_8->field_0059 = (void *)0x0;
   }
   else {
-    puVar4 = (byte *)Library::DKW::LIB::FUN_006aac70(local_c[8]);
+    puVar4 = (byte *)(Library::DKW::LIB::MemAlloc(local_c[8]));
     local_8->field_0059 = puVar4;
     uVar10 = puVar2[8];
     puVar11 = (byte *)(puVar2[7] + (int)puVar2);
@@ -413,7 +413,7 @@ void __thiscall STGroupBoatC::RestoreGrpBData(STGroupBoatC *this,undefined4 *par
     local_8->field_021E = (ushort *)0x0;
   }
   else {
-    puVar7 = (ushort *)Library::DKW::LIB::FUN_006aac70(uVar10);
+    puVar7 = Library::DKW::LIB::MemAlloc(uVar10);
     local_8->field_021E = puVar7;
     puVar11 = (byte *)((int)puVar2 + *(int *)((int)puVar2 + 0x211));
     for (uVar9 = uVar10 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {

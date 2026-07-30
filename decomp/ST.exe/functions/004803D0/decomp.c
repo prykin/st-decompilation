@@ -1,12 +1,13 @@
 #include "../../pseudocode_runtime.h"
 
 
-int __thiscall STBoatC::FUN_004803d0(STBoatC *this,int param_1)
+int __thiscall STBoatC::FUN_004803d0(STBoatC *this,AnonShape_004803D0_350EB461 *param_1)
 
 {
   int iVar1;
 
-  if ((param_1 == 0) || (param_1 == 1)) {
+  if ((param_1 == (AnonShape_004803D0_350EB461 *)0x0) ||
+     (param_1 == (AnonShape_004803D0_350EB461 *)0x1)) {
     memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
     this->field_02C4 = 0;
     if (this->field_07CA != (AnonShape_005EFAE0_B406B78B *)0x0) {
@@ -41,12 +42,11 @@ int __thiscall STBoatC::FUN_004803d0(STBoatC *this,int param_1)
       return -1;
     }
     if (g_playSystem_00802A38->field_00E4 % 0x25 == 0) {
-      iVar1 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,this->field_07CA,&param_1);
+      iVar1 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,this->field_07CA,(int *)&param_1);
       if (iVar1 == -4) {
         return 0;
       }
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      if (*(int *)(param_1 + 0x716) == *(int *)(param_1 + 0x712)) {
+      if (param_1->field_0716 == param_1->field_0712) {
         this->field_03D2 = 0xffff;
         this->field_03D0 = 0xffff;
         this->field_03CE = 0xffff;

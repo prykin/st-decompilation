@@ -11,107 +11,108 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_00427bb0
 
 {
   byte bVar1;
-  int iVar2;
-  int *piVar3;
-  int iVar4;
-  byte bVar5;
-  int iVar6;
+  AnonPointee_TLOBaseTy_0607 *pAVar2;
+  void *pvVar3;
+  int *piVar4;
+  int iVar5;
+  byte bVar6;
   int iVar7;
   int iVar8;
+  int iVar9;
   int local_14;
   int local_8;
 
-  piVar3 = (int *)(param_1 * 0x10 + DAT_007f4d74);
-  iVar6 = (DAT_007f4d80 + param_1) * *(int *)&this->field_0x37c + *(int *)&this->field_0x38c;
+  piVar4 = (int *)(param_1 * 0x10 + DAT_007f4d74);
+  iVar7 = (DAT_007f4d80 + param_1) * *(int *)&this->field_0x37c + *(int *)&this->field_0x38c;
   bVar1 = 0;
   local_8 = 0x7fffffff;
   if (param_1 <= param_2) {
     do {
-      iVar4 = param_1;
-      local_14 = *piVar3;
+      iVar5 = param_1;
+      local_14 = *piVar4;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_1 = piVar3[3];
+      param_1 = piVar4[3];
       if (param_3 == -1) {
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-        param_1 = piVar3[1];
+        param_1 = piVar4[1];
       }
       else if (param_3 == 1) {
-        local_14 = piVar3[2];
+        local_14 = piVar4[2];
       }
       if (param_1 < local_14) {
         if (local_8 != 0x7fffffff) {
-          sub_00427090(this,local_8,iVar4 + -1,param_3);
+          sub_00427090(this,local_8,iVar5 + -1,param_3);
           local_8 = 0x7fffffff;
         }
       }
       else {
-        bVar5 = *(byte *)(local_14 + DAT_007f4d7c + iVar6);
-        iVar7 = local_14 + 1;
-        if (iVar7 <= param_1) {
+        bVar6 = *(byte *)(local_14 + DAT_007f4d7c + iVar7);
+        iVar8 = local_14 + 1;
+        if (iVar8 <= param_1) {
           do {
-            if (*(byte *)(DAT_007f4d7c + iVar6 + iVar7) != bVar5) break;
-            iVar7 = iVar7 + 1;
-          } while (iVar7 <= param_1);
+            if (*(byte *)(DAT_007f4d7c + iVar7 + iVar8) != bVar6) break;
+            iVar8 = iVar8 + 1;
+          } while (iVar8 <= param_1);
         }
-        if ((local_8 != 0x7fffffff) && ((iVar7 <= param_1 || (bVar5 != bVar1)))) {
-          sub_00427090(this,local_8,iVar4 + -1,param_3);
+        if ((local_8 != 0x7fffffff) && ((iVar8 <= param_1 || (bVar6 != bVar1)))) {
+          sub_00427090(this,local_8,iVar5 + -1,param_3);
           local_8 = 0x7fffffff;
         }
-        if (param_1 < iVar7) {
+        if (param_1 < iVar8) {
           if (local_8 == 0x7fffffff) {
-            local_8 = iVar4;
-            bVar1 = bVar5;
+            local_8 = iVar5;
+            bVar1 = bVar6;
           }
         }
         else {
 LAB_00427cca:
-          iVar8 = iVar7;
+          iVar9 = iVar8;
           if (DAT_007f4d84 <= DAT_007f4d78) {
-            iVar7 = Library::DKW::LIB::FUN_006acf50(DAT_007f4d6c,(DAT_007f4d84 * 3 + 0x1e) * 4);
-            if (iVar7 == 0) {
+            pAVar2 = Library::DKW::LIB::MemRealloc(DAT_007f4d6c,(DAT_007f4d84 * 3 + 0x1e) * 4);
+            if (pAVar2 == (AnonPointee_TLOBaseTy_0607 *)0x0) {
               return 0;
             }
             DAT_007f4d84 = DAT_007f4d84 + 10;
-            DAT_007f4d6c = iVar7;
+            DAT_007f4d6c = pAVar2;
           }
-          iVar7 = Library::DKW::LIB::FUN_006aac70(0x20);
-          if (iVar7 == 0) {
+          pvVar3 = Library::DKW::LIB::MemAlloc(0x20);
+          if (pvVar3 == (void *)0x0) {
             return 0;
           }
-          *(int *)(DAT_007f4d6c + 8 + DAT_007f4d78 * 0xc) = iVar7;
-          iVar2 = sub_004248D0(this,iVar7,0,DAT_007f4d7c + local_14,DAT_007f4d80 + iVar4,CASE_0,
-                               CASE_1);
-          iVar7 = sub_004248D0(this,iVar7,iVar2,DAT_007f4d7c + -1 + iVar8,DAT_007f4d80 + iVar4,
-                               CASE_3,CASE_2);
-          *(int *)(DAT_007f4d6c + 4 + DAT_007f4d78 * 0xc) = iVar7;
-          if ((bVar5 & 0x80) == 0) {
-            *(undefined4 *)(DAT_007f4d6c + DAT_007f4d78 * 0xc) = 0;
+          (&DAT_007f4d6c->field_0008)[DAT_007f4d78 * 3] = pvVar3;
+          iVar8 = sub_004248D0(this,(int)pvVar3,0,DAT_007f4d7c + local_14,DAT_007f4d80 + iVar5,
+                               CASE_0,CASE_1);
+          iVar8 = sub_004248D0(this,(int)pvVar3,iVar8,DAT_007f4d7c + -1 + iVar9,DAT_007f4d80 + iVar5
+                               ,CASE_3,CASE_2);
+          (&DAT_007f4d6c->field_0004)[DAT_007f4d78 * 3] = iVar8;
+          if ((bVar6 & 0x80) == 0) {
+            (&DAT_007f4d6c->field_0000)[DAT_007f4d78 * 3] = 0;
           }
           else {
-            *(undefined4 *)(DAT_007f4d6c + DAT_007f4d78 * 0xc) = 1;
+            (&DAT_007f4d6c->field_0000)[DAT_007f4d78 * 3] = 1;
           }
           DAT_007f4d78 = DAT_007f4d78 + 1;
-          if (iVar8 <= param_1) {
-            iVar7 = iVar8 + 1;
-            bVar5 = *(byte *)(DAT_007f4d7c + iVar8 + iVar6);
-            local_14 = iVar8;
-            if (iVar7 <= param_1) {
+          if (iVar9 <= param_1) {
+            iVar8 = iVar9 + 1;
+            bVar6 = *(byte *)(DAT_007f4d7c + iVar9 + iVar7);
+            local_14 = iVar9;
+            if (iVar8 <= param_1) {
               do {
-                if (*(byte *)(DAT_007f4d7c + iVar6 + iVar7) != bVar5) break;
-                iVar7 = iVar7 + 1;
-              } while (iVar7 <= param_1);
+                if (*(byte *)(DAT_007f4d7c + iVar7 + iVar8) != bVar6) break;
+                iVar8 = iVar8 + 1;
+              } while (iVar8 <= param_1);
             }
             goto LAB_00427cca;
           }
         }
       }
-      piVar3 = piVar3 + 4;
-      iVar6 = iVar6 + *(int *)&this->field_0x37c;
+      piVar4 = piVar4 + 4;
+      iVar7 = iVar7 + *(int *)&this->field_0x37c;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_1 = iVar4 + 1;
-    } while (iVar4 + 1 <= param_2);
+      param_1 = iVar5 + 1;
+    } while (iVar5 + 1 <= param_2);
     if (local_8 != 0x7fffffff) {
-      sub_00427090(this,local_8,iVar4,param_3);
+      sub_00427090(this,local_8,iVar5,param_3);
     }
   }
   return 0;

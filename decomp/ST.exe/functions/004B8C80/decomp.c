@@ -252,7 +252,7 @@ cf_common_exit_004B8F5A:
         param_1->vfunc_90(3,0x3d9);
       }
       if (*(int *)(&DAT_00791a10 + param_1->field_0235 * 4) != 0) {
-        local_8 = thunk_FUN_004cc130((int)param_1);
+        local_8 = thunk_FUN_004cc130((AnonShape_004CC130_08293212 *)param_1);
       }
       goto cf_common_join_004B92EE;
     }

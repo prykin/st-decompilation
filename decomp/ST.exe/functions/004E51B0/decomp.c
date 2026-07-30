@@ -56,8 +56,8 @@ undefined4 FUN_004e51b0(int *param_1,uint *param_2,uint *param_3)
   puVar10 = &DAT_00798fd8;
   puVar14 = &g_playerRuntime[(int)param_1].field1554_0x73b;
   memmove(puVar14, puVar10, 0x9a); /* compiler REP MOVS byte copy */
-  puVar14 = (undefined4 *)((byte *)puVar14 + 0x98);
-  puVar10 = (undefined4 *)((byte *)puVar10 + 0x98);
+  puVar14 = puVar14 + 0x26;
+  puVar10 = puVar10 + 0x26;
   iVar7 = local_c * 0x10;
   *(undefined1 *)((int)puVar14 + 2) = *(undefined1 *)((int)puVar10 + 2);
   local_30 = (&DAT_00800f30)[local_c * 4] | *(uint *)(&DAT_00800fb0 + iVar7);
@@ -257,7 +257,7 @@ LAB_004e5655:
               iVar9 = (**(code **)(*param_1 + 0x2c))();
               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
               if ((iVar9 == 0x36) || (iVar9 = (**(code **)(*param_1 + 0x2c))(), iVar9 == 0x5d)) {
-                thunk_FUN_004e4d60(param_1);
+                thunk_FUN_004e4d60((AnonShape_004E4D60_C16F78E8 *)param_1);
               }
               if (param_1 != (int *)0x0) {
                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */

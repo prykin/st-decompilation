@@ -1,5 +1,3 @@
-#include "../../pseudocode_runtime.h"
-
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STSourceProvenanceApplier begin]
@@ -25,6 +23,8 @@ void __cdecl FUN_00428e50(short *param_1)
   int iVar12;
   int *piVar13;
   void *pvVar14;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+  int unaff_EDI;
   int iVar15;
   undefined4 *puVar16;
   bool bVar17;
@@ -121,10 +121,12 @@ LAB_00428e95:
   dVar4 = ((double)(int)(uVar11 - iVar12) * (_DAT_00790590 / (double)local_14) + _DAT_00790590) -
           _DAT_00790560;
   local_14 = uVar11 - iVar12;
+  /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
   ST3DSMAPContext::sub_006DC050
-            (pSVar6,0,0,0,uVar11,local_c4,0x1f08a9,0xc02c48c6,SUB84(dVar4,0),
-             (int)((ulonglong)dVar4 >> 0x20),0,0xc0240000,SUB84(dVar1,0),
-             (int)((ulonglong)dVar1 >> 0x20),0x4024000000000000,0x4023ee97865e3540,0);
+            (pSVar6,(ST3DSMAPContext *)0x0,0,0,uVar11,local_c4,0x1f08a9,
+             (double)CONCAT44(SUB84(dVar4,0),0xc02c48c6),(double)((ulonglong)dVar4 >> 0x20),
+             (double)CONCAT44(SUB84(dVar1,0),0xc0240000),(double)((ulonglong)dVar1 >> 0x20),
+             0x865e354040240000,0x4023ee97,unaff_EDI);
   *(undefined4 *)&pSVar6->field_0x128 = 0xff;
   *(undefined4 *)&pSVar6->field_0x124 = 6;
   iVar12 = 0;

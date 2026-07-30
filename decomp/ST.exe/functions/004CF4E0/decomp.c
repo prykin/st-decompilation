@@ -14,8 +14,7 @@ TLOBaseTy::FUN_004cf4e0
   if (this->field_03D8 <= this->field_03D4 + 1) {
     iVar1 = this->field_03D8 + 0x14;
     this->field_03D8 = iVar1;
-    pAVar2 = (AnonPointee_TLOBaseTy_0607 *)
-             Library::DKW::LIB::FUN_006acf50((int)this->field_0607,iVar1 * 0x27);
+    pAVar2 = Library::DKW::LIB::MemRealloc(this->field_0607,iVar1 * 0x27);
     this->field_0607 = pAVar2;
   }
   Library::MSVCRT::FUN_0072da70

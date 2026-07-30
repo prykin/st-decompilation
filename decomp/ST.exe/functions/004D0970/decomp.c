@@ -20,12 +20,14 @@ undefined4 __thiscall FUN_004d0970(void *this,int param_1,int param_2,int param_
 
 {
   int iVar1;
+  void *pvVar2;
 
   if (*(int *)((int)this + 0x249) <= *(int *)((int)this + 0x245) + 1) {
     iVar1 = *(int *)((int)this + 0x249) + 10;
     *(int *)((int)this + 0x249) = iVar1;
-    iVar1 = Library::DKW::LIB::FUN_006acf50(*(int *)((int)this + 0x24d),iVar1 * 0xc);
-    *(int *)((int)this + 0x24d) = iVar1;
+    pvVar2 = Library::DKW::LIB::MemRealloc
+                       (*(AnonPointee_TLOBaseTy_0607 **)((int)this + 0x24d),iVar1 * 0xc);
+    *(void **)((int)this + 0x24d) = pvVar2;
   }
   *(int *)(*(int *)((int)this + 0x24d) + *(int *)((int)this + 0x245) * 0xc) = param_1;
   *(int *)(*(int *)((int)this + 0x24d) + 4 + *(int *)((int)this + 0x245) * 0xc) = param_2;

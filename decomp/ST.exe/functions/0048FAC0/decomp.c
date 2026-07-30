@@ -62,7 +62,7 @@ undefined4 * __thiscall STBoatC::SaveBoatData(STBoatC *this,int *param_1)
     FreeAndNull(&local_c);
     *param_1 = *param_1 + local_8;
   }
-  puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(*param_1);
+  puVar3 = Library::DKW::LIB::MemAlloc(*param_1);
   *puVar3 = pSVar4->field_0020;
   puVar3[1] = pSVar4->field_0024;
   puVar3[2] = pSVar4->field_0028;
@@ -241,16 +241,8 @@ undefined4 * __thiscall STBoatC::SaveBoatData(STBoatC *this,int *param_1)
       local_c = (undefined4 *)FUN_006b0020((uint *)*local_18,(int *)&local_8);
       puVar6 = (byte *)(local_c);
       puVar12 = (byte *)(uVar8 + (int)puVar3);
-      for (uVar7 = local_8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-        *puVar12 = *puVar6;
-        puVar6 = (byte *)(puVar6 + 1);
-        puVar12 = (byte *)(puVar12 + 1);
-      }
-      for (uVar8 = local_8 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
-        *(undefined1 *)puVar12 = *(undefined1 *)puVar6;
-        puVar6 = (byte *)((int)puVar6 + 1);
-        puVar12 = (byte *)((int)puVar12 + 1);
-      }
+      memmove(puVar12, puVar6, local_8); /* compiler REP MOVS byte copy */
+      uVar7 = 0;
       local_1c[-1] = local_10;
       *local_1c = local_8;
       FreeAndNull(&local_c);

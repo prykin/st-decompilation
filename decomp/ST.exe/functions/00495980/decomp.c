@@ -49,8 +49,7 @@ LAB_00495c27:
     g_pathingGrid.sizeZ = 5;
     g_pathingGrid.planeStride = *DAT_00806750 * DAT_00806750[1];
     g_pathingGrid.cells =
-         (short *)Library::DKW::LIB::FUN_006aac70
-                            ((int)g_pathingGrid.sizeY * (int)g_pathingGrid.sizeX * 10);
+         Library::DKW::LIB::MemAlloc((int)g_pathingGrid.sizeY * (int)g_pathingGrid.sizeX * 10);
     if (g_pathingGrid.cells == (short *)0x0) {
       RaiseInternalException
                 (-1,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_dump.cpp",0x2b);
@@ -71,9 +70,9 @@ LAB_00495c27:
     g_pathingScratchGrid.sizeX = g_pathingGrid.sizeX;
     g_pathingScratchGrid.planeStride = g_pathingGrid.planeStride;
     g_pathingScratchGrid.cells =
-         (short *)Library::DKW::LIB::FUN_006aac70
-                            ((int)g_pathingGrid.sizeZ * (int)g_pathingGrid.sizeY *
-                             (int)g_pathingGrid.sizeX * 2);
+         Library::DKW::LIB::MemAlloc
+                   ((int)g_pathingGrid.sizeZ * (int)g_pathingGrid.sizeY * (int)g_pathingGrid.sizeX *
+                    2);
     if (g_pathingScratchGrid.cells == (short *)0x0) {
       RaiseInternalException
                 (-1,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_dump.cpp",0x30);
@@ -83,8 +82,7 @@ LAB_00495c27:
     g_worldGrid.sizeX = g_pathingGrid.sizeX;
     g_worldGrid.planeStride = g_pathingGrid.planeStride;
     g_worldGrid.cells =
-         (STWorldCell *)
-         Library::DKW::LIB::FUN_006aac70
+         Library::DKW::LIB::MemAlloc
                    ((int)g_pathingGrid.sizeZ * (int)g_pathingGrid.sizeY * (int)g_pathingGrid.sizeX *
                     8);
     if (g_worldGrid.cells == (STWorldCell *)0x0) {
@@ -102,8 +100,7 @@ LAB_00495c27:
       *(undefined1 *)ppSVar8 = 0;
       ppSVar8 = (STWorldObject **)((int)ppSVar8 + 1);
     }
-    DAT_007fb26c = (undefined4 *)
-                   Library::DKW::LIB::FUN_006aac70
+    DAT_007fb26c = Library::DKW::LIB::MemAlloc
                              ((int)g_pathingScratchGrid.sizeY * (int)g_pathingScratchGrid.sizeX);
     iVar3 = (int)g_pathingScratchGrid.sizeY;
     iVar5 = (int)g_pathingScratchGrid.sizeX;

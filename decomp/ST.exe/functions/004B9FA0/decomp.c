@@ -89,12 +89,12 @@ int __thiscall TLOBaseTy::GetMessage(TLOBaseTy *this,STMessage *message)
   undefined2 extraout_var;
   STWorldObject *pSVar31;
   TLOBaseTy_field_05ACState *pTVar32;
-  undefined4 *puVar33;
+  byte *puVar33;
   TLOBaseTy_field_0231State *pTVar34;
   byte **ppbVar35;
   byte *pbVar36;
   TLOBaseTy_field_05ACState *pTVar37;
-  undefined4 *puVar38;
+  byte *puVar38;
   int iVar39;
   int *piVar40;
   TLOBaseTy_field_0231State *pTVar41;
@@ -741,7 +741,7 @@ int __thiscall TLOBaseTy::GetMessage(TLOBaseTy *this,STMessage *message)
                                local_EAX_1961 & 0xff);
           }
           if (this_00->field_05DF != 0) {
-            puVar33 = &this_00->field_01D5;
+            puVar33 = (byte *)(&this_00->field_01D5);
             this_00->field_04C8 = PTR_00806724->entryCount + -1;
             this_00->field_04CC = g_playSystem_00802A38->field_00E4;
             STT3DSprC::sub_004ACE60((STT3DSprC *)puVar33,'\x0e');
@@ -762,33 +762,32 @@ int __thiscall TLOBaseTy::GetMessage(TLOBaseTy *this,STMessage *message)
           break;
         case CASE_2:
           local_c = (message->arg0).ptr;
-          puVar33 = (undefined4 *)&local_c->field_0x57;
-          puVar38 = (undefined4 *)
+          puVar33 = (byte *)&local_c->field_0x57;
+          puVar38 = (byte *)
                     (-(uint)(this_00 != (TLOBaseTy *)0x0) & (uint)&this_00->field_0231);
           memmove(puVar38, puVar33, 0x37b); /* compiler REP MOVS byte copy */
           this_00->field_0231 = CASE_2;
           if (this_00->field_03D8 != 0) {
-            pAVar19 = (AnonPointee_TLOBaseTy_0607 *)
-                      Library::DKW::LIB::FUN_006aac70(this_00->field_03D8 * 0x27);
+            pAVar19 = Library::DKW::LIB::MemAlloc(this_00->field_03D8 * 0x27);
             this_00->field_0607 = pAVar19;
           }
           if (this_00->field_03D4 != 0) {
             uVar30 = this_00->field_03D4 * 0x27;
-            puVar33 = (undefined4 *)(&local_c->field_0x0 + local_c->field_03D2);
+            puVar33 = (byte *)(&local_c->field_0x0 + local_c->field_03D2);
             pAVar19 = this_00->field_0607;
             for (uVar27 = uVar30 >> 2; uVar27 != 0; uVar27 = uVar27 - 1) {
               pAVar19->field_0000 = *puVar33;
-              puVar33 = puVar33 + 1;
+              puVar33 = (byte *)(puVar33 + 1);
               pAVar19 = (AnonPointee_TLOBaseTy_0607 *)&pAVar19->field_0004;
             }
             for (uVar30 = uVar30 & 3; uVar30 != 0; uVar30 = uVar30 - 1) {
               *(undefined1 *)&pAVar19->field_0000 = *(undefined1 *)puVar33;
-              puVar33 = (undefined4 *)((int)puVar33 + 1);
+              puVar33 = (byte *)((int)puVar33 + 1);
               pAVar19 = (AnonPointee_TLOBaseTy_0607 *)((int)&pAVar19->field_0000 + 1);
             }
           }
           sub_004C96E0(this_00);
-          local_34 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0x44);
+          local_34 = Library::DKW::LIB::MemAlloc(0x44);
           pAVar26 = local_c;
           local_28 = DAT_008073cc;
           local_30 = 0;
@@ -1038,6 +1037,7 @@ int __thiscall TLOBaseTy::GetMessage(TLOBaseTy *this,STMessage *message)
       }
       pTVar41 = &local_465;
       memmove(pTVar41, pTVar34, 0x37b); /* compiler REP MOVS byte copy */
+      iVar17 = 0;
       local_ea = 0x3f6;
       local_4bc[1] = pbVar36;
       local_4bc[4] = (byte *)uVar25;
@@ -1086,6 +1086,7 @@ int __thiscall TLOBaseTy::GetMessage(TLOBaseTy *this,STMessage *message)
       pbVar36 = local_38;
       pbVar42 = local_10 + local_d2;
       memmove(pbVar42, pbVar36, local_d6); /* compiler REP MOVS byte copy */
+      uVar27 = 0;
       pbVar36 = local_8;
       pbVar42 = local_10 + local_ca;
       memmove(pbVar42, pbVar36, local_ce); /* compiler REP MOVS byte copy */

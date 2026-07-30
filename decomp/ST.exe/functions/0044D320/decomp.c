@@ -27,7 +27,7 @@ byte * FUN_0044d320(Global_sub_0044D320_param_1Enum param_1)
   local_8 = 0;
   local_14 = g_playerRuntime[DAT_0080874d].tempSlots[0][0].objectIds;
   local_10 = local_14->count;
-  pbVar3 = (byte *)Library::DKW::LIB::FUN_006aac70(0xc);
+  pbVar3 = Library::DKW::LIB::MemAlloc(0xc);
   if (param_1 < 0x1001) {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_1 == 0x1000) {

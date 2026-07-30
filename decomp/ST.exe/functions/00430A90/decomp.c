@@ -304,7 +304,7 @@ int __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,STMessage *message)
         } while ((int)ppDVar13 < 0x7fa135);
         thunk_FUN_004d8110(0);
         thunk_FUN_004d8760(DAT_00808a90 & 0xff);
-        DAT_007fa168 = (undefined4 *)Library::DKW::LIB::FUN_006aac70((int)g_worldGrid.planeStride);
+        DAT_007fa168 = Library::DKW::LIB::MemAlloc((int)g_worldGrid.planeStride);
         uVar10 = (uint)g_worldGrid.planeStride;
         puVar14 = DAT_007fa168;
         for (uVar11 = uVar10 >> 2; uVar11 != 0; uVar11 = uVar11 - 1) {

@@ -19,6 +19,7 @@ import ghidra.program.model.data.DataType;
 import ghidra.program.model.data.DataTypeManager;
 import ghidra.program.model.data.Pointer;
 import ghidra.program.model.data.PointerDataType;
+import ghidra.program.model.data.Undefined1DataType;
 import ghidra.program.model.listing.Function;
 import ghidra.program.model.listing.Function.FunctionUpdateType;
 import ghidra.program.model.listing.FunctionTag;
@@ -206,6 +207,12 @@ public class STAbiConsistencyApplier extends GhidraScript {
             DataType base = requireType(specification.substring("pointer:".length()));
             return new PointerDataType(base, currentProgram.getDefaultPointerSize(), dataTypes);
         }
+        // Ghidra's unsized DefaultDataType reports the path "/undefined",
+        // although a Function parameter/return storage slot still has one byte.
+        // Preserve that baseline while a full-prototype repair changes an
+        // unrelated parameter.
+        if ("/undefined".equals(specification))
+            return Undefined1DataType.dataType;
         DataType type = dataTypes.getDataType(specification);
         if (type == null) throw new IllegalArgumentException("Missing data type: " + specification);
         return type;

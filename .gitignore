@@ -32,5 +32,10 @@
 recovery/*/runs/
 recovery/*/latest_run.txt
 
+# Transactional corpus-exporter staging/rollback directories. They normally
+# exist only during STDecompExport, but may survive a killed Ghidra process.
+decomp/.*.export-*/
+decomp/.*.previous-*/
+
 # Local Java/Ghidra script compilation output.
 *.class

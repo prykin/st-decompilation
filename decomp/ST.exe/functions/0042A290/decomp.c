@@ -28,6 +28,8 @@ short * __cdecl LoadLand(cMf32 *param_1,char *text)
   uint uVar11;
   byte *puVar12;
   ST3DSMAPContext *this;
+  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
+  int unaff_EDI;
   uint uVar13;
   byte *puVar14;
   longlong lVar15;
@@ -93,9 +95,11 @@ short * __cdecl LoadLand(cMf32 *param_1,char *text)
     lVar15 = Library::MSVCRT::__ftol();
     iVar3 = (int)lVar15;
     local_30 = iVar3;
+    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     ST3DSMAPContext::sub_006DC050
-              (this,0,0,0,iVar3,iVar3,0,0xc0240000,0,0x40240000,0,0xc0240000,0,0x40240000,
-               0x4024000000000000,0x4023ee97865e3540,0);
+              (this,(ST3DSMAPContext *)0x0,0,0,iVar3,iVar3,0,1.59266249032592e-314,
+               5.31664594843289e-315,1.59266249032592e-314,5.31664594843289e-315,0x865e354040240000,
+               0x4023ee97,unaff_EDI);
     *(undefined4 *)&this->field_0x128 = 0;
     ST3DSMAPContext::sub_006DD790(this,140.204);
     ST3DSMAPContext::sub_006DD800(this,219.932);
@@ -140,7 +144,7 @@ short * __cdecl LoadLand(cMf32 *param_1,char *text)
             *(undefined2 *)(puVar1 + 1) = (undefined2)local_8;
             local_24 = puVar1[10];
             *(undefined2 *)(puVar1 + 2) = (undefined2)local_2c;
-            local_20 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(uVar13);
+            local_20 = Library::DKW::LIB::MemAlloc(uVar13);
             puVar12 = (byte *)(*(undefined4 **)&this->field_0xc);
             puVar14 = (byte *)(local_20);
             memmove(puVar14, puVar12, uVar13); /* compiler REP MOVS byte copy */

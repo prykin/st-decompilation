@@ -41,7 +41,7 @@ undefined4 __thiscall STGroupBoatC::MakePVec(STGroupBoatC *this)
     uVar9 = pSVar3->field_020E->count;
     pSVar3->field_021A = uVar9;
     local_c = uVar9;
-    puVar5 = (ushort *)Library::DKW::LIB::FUN_006aac70(uVar9 * 8);
+    puVar5 = Library::DKW::LIB::MemAlloc(uVar9 * 8);
     uVar2 = local_c;
     pSVar3->field_021E = puVar5;
     for (iVar4 = (uVar9 & 0x1fffffff) << 1; iVar4 != 0; iVar4 = iVar4 + -1) {

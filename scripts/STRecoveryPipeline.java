@@ -274,6 +274,7 @@ public class STRecoveryPipeline extends GhidraScript {
         section("LLM corpus export");
         step("STEvidenceLedger.java", "verify", recoveryRoot.toString());
         Path baseline = snapshotPreviousExport();
+        markExportIncomplete(baseline);
         step("STDecompExport.java", decompRoot.toString());
         Path current = decompRoot.resolve(currentProgram.getName());
         step("STExportRegressionGate.java", current.toString(),
@@ -1118,8 +1119,9 @@ public class STRecoveryPipeline extends GhidraScript {
                 .sorted(Comparator.comparingLong(this::modifiedTime).reversed())
                 .toList();
         }
-        Path rejectedBaseline = lastRejectedBaseline();
-        Path protectedRun = rejectedBaseline == null ? null : rejectedBaseline.getParent();
+        Path unacceptedBaseline = lastUnacceptedBaseline();
+        Path protectedRun = unacceptedBaseline == null ? null :
+            unacceptedBaseline.getParent();
         int ordinaryKept = 0;
         for (Path run : runs) {
             if (run.equals(protectedRun) || ordinaryKept++ < MAX_RUN_HISTORY) continue;
@@ -1147,20 +1149,23 @@ public class STRecoveryPipeline extends GhidraScript {
     private Path snapshotPreviousExport() throws Exception {
         if (activeRun == null) return null;
         Path current = decompRoot.resolve(currentProgram.getName());
-        if (!Files.isRegularFile(current.resolve("manifest.json"))) return null;
-        Path sourceDirectory = current;
-        Path rejectedBaseline = lastRejectedBaseline();
-        if (rejectedBaseline != null) {
-            sourceDirectory = rejectedBaseline;
-            println("Preserving the last accepted export baseline after a failed gate: " +
-                rejectedBaseline);
+        Path unacceptedBaseline = lastUnacceptedBaseline();
+        Path sourceDirectory;
+        if (unacceptedBaseline != null) {
+            sourceDirectory = unacceptedBaseline;
+            println("Preserving the last accepted export baseline after an unaccepted export: " +
+                unacceptedBaseline);
             logLine("export_baseline_recovered_from_failed_run path=" +
-                portableArgument(rejectedBaseline.toString()));
+                portableArgument(unacceptedBaseline.toString()));
         }
-        else if (lastReceiptFailed()) {
-            throw new IllegalStateException("The preceding export failed its regression gate, " +
+        else if (lastReceiptUnaccepted()) {
+            throw new IllegalStateException("The preceding export was not accepted, " +
                 "but its accepted pre-export baseline is no longer available under " +
                 runsRoot + "; refusing to promote the rejected corpus as a new baseline");
+        }
+        else {
+            if (!Files.isRegularFile(current.resolve("manifest.json"))) return null;
+            sourceDirectory = current;
         }
         Path baseline = activeRun.resolve("pre_export");
         if (Files.exists(baseline)) deleteTree(baseline);
@@ -1191,17 +1196,21 @@ public class STRecoveryPipeline extends GhidraScript {
     }
 
     /**
-     * A failed gate has already overwritten decomp/ with the rejected corpus.  Recover the
-     * pre-export snapshot from that failed run instead of allowing the next invocation to make
-     * the regression its own baseline.
+     * A failed gate may have promoted a rejected corpus, while an exporter
+     * exception in an older non-transactional version may have left a partial
+     * tree. Recover the accepted pre-export snapshot from either kind of
+     * unaccepted run instead of allowing it to become the next baseline.
      */
-    private Path lastRejectedBaseline() throws Exception {
+    private Path lastUnacceptedBaseline() throws Exception {
+        Path legacyInterrupted = latestFailedExportBaseline();
+        if (legacyInterrupted != null) return legacyInterrupted;
         Path receipt = recoveryProgram == null ? null :
             recoveryProgram.resolve("export_receipt.json");
         if (receipt == null || !Files.isRegularFile(receipt) ||
                 runsRoot == null || !Files.isDirectory(runsRoot)) return null;
         String rootReceipt = Files.readString(receipt, StandardCharsets.UTF_8);
-        if (!"failed".equals(jsonStringField(rootReceipt, "status"))) return null;
+        String status = jsonStringField(rootReceipt, "status");
+        if (!Set.of("failed", "incomplete").contains(status)) return null;
         String expectedManifest = jsonStringField(rootReceipt,
             "previous_manifest_sha256");
         if (!expectedManifest.matches("[0-9a-f]{64}")) return null;
@@ -1221,12 +1230,64 @@ public class STRecoveryPipeline extends GhidraScript {
         return null;
     }
 
-    private boolean lastReceiptFailed() throws Exception {
+    /**
+     * Compatibility for an export interrupted before incomplete receipts were
+     * introduced. Such a run leaves the preceding passed receipt at the root,
+     * but its archived run.json is failed and its pre_export/ snapshot is the
+     * only coherent accepted baseline.
+     */
+    private Path latestFailedExportBaseline() throws Exception {
+        if (recoveryProgram == null || runsRoot == null ||
+                !Files.isDirectory(runsRoot)) return null;
+        Path latestFile = recoveryProgram.resolve("latest_run.txt");
+        if (!Files.isRegularFile(latestFile)) return null;
+        String runId = Files.readString(latestFile, StandardCharsets.UTF_8).trim();
+        if (!runId.matches("[0-9a-f]{64}")) return null;
+        Path run = runsRoot.resolve(runId).normalize();
+        if (!run.getParent().equals(runsRoot.normalize())) return null;
+        Path metadata = run.resolve("run.json");
+        Path candidate = run.resolve("pre_export");
+        Path manifest = candidate.resolve("manifest.json");
+        if (!Files.isRegularFile(metadata) || !Files.isRegularFile(manifest))
+            return null;
+        String json = Files.readString(metadata, StandardCharsets.UTF_8);
+        if (!"failed".equals(jsonStringField(json, "status"))) return null;
+        return candidate;
+    }
+
+    private boolean lastReceiptUnaccepted() throws Exception {
         Path receipt = recoveryProgram == null ? null :
             recoveryProgram.resolve("export_receipt.json");
-        return receipt != null && Files.isRegularFile(receipt) &&
-            "failed".equals(jsonStringField(
-                Files.readString(receipt, StandardCharsets.UTF_8), "status"));
+        if (receipt == null || !Files.isRegularFile(receipt)) return false;
+        String status = jsonStringField(
+            Files.readString(receipt, StandardCharsets.UTF_8), "status");
+        return Set.of("failed", "incomplete").contains(status);
+    }
+
+    /**
+     * Invalidate the previous successful receipt before invoking the exporter.
+     * The regression gate replaces this marker with passed/failed. If export or
+     * the gate throws first, the root receipt can no longer misleadingly
+     * describe an older successful run.
+     */
+    private void markExportIncomplete(Path baseline) throws Exception {
+        Path receipt = recoveryProgram.resolve("export_receipt.json");
+        String previousManifest = baseline != null &&
+            Files.isRegularFile(baseline.resolve("manifest.json")) ?
+                sha256(baseline.resolve("manifest.json")) : "";
+        String json = "{\"schema\":\"st-export-receipt\"," +
+            "\"schema_version\":1,\"status\":\"incomplete\"," +
+            "\"previous_manifest_sha256\":\"" + previousManifest + "\"," +
+            "\"detail\":\"export started but has not passed the regression gate\"}\n";
+        Path temporary = receipt.resolveSibling(receipt.getFileName() + ".tmp");
+        Files.writeString(temporary, json, StandardCharsets.UTF_8);
+        try {
+            Files.move(temporary, receipt, StandardCopyOption.REPLACE_EXISTING,
+                StandardCopyOption.ATOMIC_MOVE);
+        }
+        catch (java.nio.file.AtomicMoveNotSupportedException exception) {
+            Files.move(temporary, receipt, StandardCopyOption.REPLACE_EXISTING);
+        }
     }
 
     private String jsonStringField(String json, String field) {

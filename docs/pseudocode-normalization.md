@@ -156,6 +156,17 @@ otherwise dead advanced pointers disappear instead of becoming byte-cast
 assignments. If a pointer or exhausted counter is genuinely used later, the
 exporter reproduces its exact live-out value; constant pointer advances are
 rendered in native element units when the declared pointee width is known.
+For a symbolic byte count, the source-level equivalent is deliberately byte
+based:
+
+```c
+destination = (T *)((byte *)destination + byteCount);
+source = (T *)((byte *)source + byteCount);
+```
+
+The byte count is not necessarily an integer literal. Literal parsing is only
+an optional presentation optimization; an identifier or arithmetic expression
+must retain the byte-cast form and must never abort the export.
 Reused cached bodies are passed through the same presentation normalization:
 the exporter recognizes its older `memmove` plus byte-cast pointer advances and
 an exact contiguous tail, then migrates that form without changing the semantic
@@ -308,6 +319,33 @@ and `CONCAT*` artifacts.
 Run `STAbiConsistencyAnalyzer`/`STAbiConsistencyApplier` before export. Residue
 is catalogued as `unresolved_register_input` or `return_width_artifact` rather
 than rewritten without a database-level proof.
+
+### Exact affine cancellation and partial-register returns
+
+Ghidra can preserve pointer arithmetic after all terms cancel:
+
+```c
+(byte *)((int)(p + 0x21) + (-0x84 - (int)p))
+```
+
+The exporter renders this as `(byte *)0x0` only when both occurrences are the
+same pointer variable and `0x21 * sizeof(*p) == 0x84`. Expressions involving
+two different bases remain untouched because they commonly encode a real
+relative offset.
+
+Likewise, x86 code such as:
+
+```asm
+CMP EAX,0xff
+JNZ other
+XOR AL,AL
+RET
+```
+
+may decompile as a `uint3` shift which merely spells the preserved upper three
+bytes of EAX. The guarded value proves those bytes are zero, so the exporter
+uses `return 0;`. The textual shape alone is insufficient: the exact
+machine-code guard, partial-register clear, and return path are required.
 
 ## Safety rule for future normalization
 

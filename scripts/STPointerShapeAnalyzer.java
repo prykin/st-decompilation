@@ -49,6 +49,8 @@ import ghidra.program.model.symbol.Symbol;
 
 public class STPointerShapeAnalyzer extends GhidraScript {
     private static final int DECOMPILE_TIMEOUT = 30;
+    private static final int LARGE_DECOMPILE_TIMEOUT = 120;
+    private static final long LARGE_FUNCTION_BYTES = 0x4000;
     private static final int MAX_SHAPE_SIZE = 0x4000;
     private static final String DARRAY_PATH = "/SubmarineTitans/Recovered/DArrayTy";
     private static final String PLAYER_TEMP_SLOT_PATH =
@@ -237,11 +239,17 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             ", failures=" + failures.size());
     }
 
+    private int decompileTimeout(Function function) {
+        return function.getBody().getNumAddresses() >= LARGE_FUNCTION_BYTES ?
+            LARGE_DECOMPILE_TIMEOUT : DECOMPILE_TIMEOUT;
+    }
+
     private void analyzeFunction(Function function) throws Exception {
         if (function == null || function.isExternal() || function.isThunk() || isLibrary(function))
             return;
         functionsSeen++;
-        DecompileResults result = decompiler.decompileFunction(function, DECOMPILE_TIMEOUT, monitor);
+        DecompileResults result = decompiler.decompileFunction(function,
+            decompileTimeout(function), monitor);
         if (!result.decompileCompleted() || result.getDecompiledFunction() == null) {
             failures.add(new Failure(function, result == null ? "no result" :
                 result.getErrorMessage()));
@@ -1567,10 +1575,31 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             if (generatedAnonymous && currentStructure.equals(structure.getPathName()))
                 return new TargetDecision(false, false, currentStructure, "existing",
                     "semantic evidence confirms the current anonymous structure");
-            if (!target.fields.isEmpty() && !semanticCompatible(structure, target))
+            if (!target.fields.isEmpty() && !semanticCompatible(structure, target)) {
+                /*
+                 * A helper-local generated view can be a strict prefix of the same value
+                 * observed by its caller.  The exact typed-call edge proves identity for
+                 * this target, but does not license widening the helper's shared type.
+                 * Materialize a complete one-owner superset instead.  This is deliberately
+                 * not a geometry merge: every old component is imported from the exact
+                 * semantic type and every overlap must agree byte-for-byte.
+                 */
+                boolean semanticSuperset = anonymousTypePath(structure.getPathName()) &&
+                    generatedAnonymousOwned(structure) &&
+                    replaceable(target.expectedType) && automaticTarget(target) &&
+                    seedSemanticAnonymousView(target, structure);
+                if (semanticSuperset) {
+                    String path = anonymousPath(target);
+                    return new TargetDecision(true, true, path, "layout",
+                        choice.reason + "=" + target.typeEvidence +
+                        "; exact typed-call view is a strict generated prefix; " +
+                        "materialized a target-local non-conflicting superset instead of " +
+                        "widening the helper-owned type");
+                }
                 return new TargetDecision(false, false, "",
-                "conflict", "semantic type " + choice.specification +
+                    "conflict", "semantic type " + choice.specification +
                     " is shorter than or conflicts with offsets");
+            }
             boolean replaceable = replaceable(target.expectedType) || target.scriptOwned;
             boolean safeAutoThis = !autoThis(target) || namedReceiverType(structure);
             boolean apply = replaceable && automaticTarget(target) && safeAutoThis;
@@ -1769,6 +1798,58 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             if (!component.type.isBlank()) field.types.put(component.type, 1);
             field.sites.add("global singleton superset: " +
                 String.join(" | ", component.sources));
+            target.fields.put(component.offset, field);
+        }
+        target.accessCount = Math.max(target.accessCount, merged.size());
+        return true;
+    }
+
+    /**
+     * Seed a target-local semantic superset with every component of the exact
+     * generated type which reached this value through a typed call.  Partial
+     * overlap is rejected because it would require a union/packed interpretation
+     * which an ordinary Structure cannot express safely.
+     */
+    private boolean seedSemanticAnonymousView(TargetEvidence target, Structure view) {
+        Map<Long, MergedComponent> merged = new TreeMap<>();
+        for (FieldEvidence field : target.fields.values()) {
+            int width = uniqueWidth(field);
+            if (width < 1 || !mergeComponent(merged, field.offset, width,
+                    selectedType(field, width), "direct target access"))
+                return false;
+        }
+        for (DataTypeComponent component : view.getDefinedComponents()) {
+            String specification = typeSpecification(component.getDataType());
+            DataType componentType = untypedef(component.getDataType());
+            if (componentType instanceof Array array && array.getNumElements() == 1)
+                specification = typeSpecification(array.getDataType());
+            if (!mergeComponent(merged, component.getOffset(), component.getLength(),
+                    specification, view.getPathName()))
+                return false;
+        }
+        if (merged.isEmpty()) return false;
+
+        Map<Long, FieldEvidence> original = new TreeMap<>(target.fields);
+        target.fields.clear();
+        for (MergedComponent component : merged.values()) {
+            FieldEvidence field = original.get(component.offset);
+            if (field == null) field = new FieldEvidence(component.offset);
+            field.widths.clear();
+            field.widths.put(component.width, 1);
+            field.types.clear();
+            if (!component.type.isBlank()) field.types.put(component.type, 1);
+            field.sites.add("exact semantic view baseline: " +
+                String.join(" | ", component.sources));
+            DataTypeComponent source = view.getComponentAt((int)component.offset);
+            if (source != null && source.getOffset() == component.offset) {
+                String name = source.getFieldName();
+                if ("flags".equals(name) || "entryCount".equals(name) ||
+                        "entries".equals(name))
+                    field.roles.merge(name, 1, Integer::sum);
+                DataType sourceType = untypedef(source.getDataType());
+                if (sourceType instanceof Array array && array.getNumElements() == 1)
+                    field.indexedStrides.merge(array.getElementLength(), 1, Integer::sum);
+            }
             target.fields.put(component.offset, field);
         }
         target.accessCount = Math.max(target.accessCount, merged.size());
@@ -2383,7 +2464,8 @@ public class STPointerShapeAnalyzer extends GhidraScript {
                 lower.matches("/(?:u?int|long|ulong|dword|word|qword)")) return true;
         if (!lower.startsWith("pointer:")) return false;
         String pointed = lower.substring("pointer:".length());
-        return pointed.matches("/(?:void|byte|char|uchar|undefined(?:1|2|4|8)?|u?int|long|ulong)");
+        return pointed.matches(
+            "/(?:void|byte|char|uchar|short|ushort|word|undefined(?:1|2|4|8)?|u?int|long|ulong)");
     }
 
     private int accessWidth(String valueType) {

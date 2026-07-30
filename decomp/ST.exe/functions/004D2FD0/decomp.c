@@ -41,13 +41,8 @@ undefined4 __fastcall FUN_004d2fd0(int param_1)
     puVar1 = (byte *)(param_1 + 0x231);
   }
   puVar6 = (byte *)(&local_17c);
-  for (iVar2 = 0x1b; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *puVar6 = *puVar1;
-    puVar1 = (byte *)(puVar1 + 1);
-    puVar6 = (byte *)(puVar6 + 1);
-  }
-  *(undefined2 *)puVar6 = *(undefined2 *)puVar1;
-  *(undefined1 *)((int)puVar6 + 2) = *(undefined1 *)((int)puVar1 + 2);
+  memmove(puVar6, puVar1, 0x6f); /* compiler REP MOVS byte copy */
+  iVar2 = 0;
   local_170 = 2;
   if (param_1 == 0) {
     puVar1 = (byte *)0x0;
@@ -82,16 +77,10 @@ undefined4 __fastcall FUN_004d2fd0(int param_1)
     } while (iVar2 < 0xc);
   }
   local_c = (AnonShape_0060EA30_DCEB68AD *)(local_18 + local_4d + local_55 + 0x14f + local_5d);
-  local_8 = (byte *)Library::DKW::LIB::FUN_006aac70((int)local_c);
+  local_8 = Library::DKW::LIB::MemAlloc((uint)local_c);
   puVar1 = (byte *)(&local_17c);
   pbVar5 = local_8;
-  for (iVar2 = 0x53; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *(undefined4 *)pbVar5 = *puVar1;
-    puVar1 = (byte *)(puVar1 + 1);
-    pbVar5 = pbVar5 + 4;
-  }
-  *(undefined2 *)pbVar5 = *(undefined2 *)puVar1;
-  pbVar5[2] = *(byte *)((int)puVar1 + 2);
+  memmove(pbVar5, puVar1, 0x14f); /* compiler REP MOVS byte copy */
   pbVar5 = local_20;
   pbVar7 = local_8 + local_59;
   memmove(pbVar7, pbVar5, local_5d); /* compiler REP MOVS byte copy */
@@ -99,6 +88,7 @@ undefined4 __fastcall FUN_004d2fd0(int param_1)
   pbVar5 = local_10;
   pbVar7 = local_8 + local_51;
   memmove(pbVar7, pbVar5, local_55); /* compiler REP MOVS byte copy */
+  uVar3 = 0;
   pbVar5 = local_14;
   pbVar7 = local_8 + local_49;
   memmove(pbVar7, pbVar5, local_4d); /* compiler REP MOVS byte copy */

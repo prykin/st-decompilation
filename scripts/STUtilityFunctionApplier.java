@@ -81,6 +81,10 @@ public class STUtilityFunctionApplier extends GhidraScript {
                 typeSpec(function.getReturnType()).equals(row.get("proposed_return_type")) &&
                 proposedParametersPresent(function, row);
             if (already) {
+                // Semantic descriptions evolve independently of the stable
+                // prototype.  Refresh our owned block even when no type/name
+                // mutation is necessary so stale claims do not survive forever.
+                replaceComment(function, row);
                 report.add(new Report(addressText, row.get("semantic_id"), "unchanged",
                     "desired name and prototype already present")); return;
             }

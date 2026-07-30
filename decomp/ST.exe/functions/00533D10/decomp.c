@@ -711,7 +711,7 @@ LAB_00534654:
         if (DAT_0080ed12 != (undefined4 *)0x0) {
           FreeAndNull(&DAT_0080ed12);
         }
-        DAT_0080ed12 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0x8db);
+        DAT_0080ed12 = Library::DKW::LIB::MemAlloc(0x8db);
         puVar13 = (byte *)(&DAT_0080bae8);
         puVar20 = (byte *)(DAT_0080ed12);
         memmove(puVar20, puVar13, 0x8db); /* compiler REP MOVS byte copy */

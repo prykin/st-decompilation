@@ -31,9 +31,9 @@ FUN_0040bc90(void *this,uint param_1,short *param_2,short *param_3,short *param_
   local_28 = this;
   pAVar1 = (AnonShape_00497920_894F87D6 *)thunk_FUN_00423e70(this,param_1);
   if (pAVar1 != (AnonShape_00497920_894F87D6 *)0x0) {
-    local_8 = (short *)Library::DKW::LIB::FUN_006aac70
-                                 ((int)g_pathingGrid.sizeZ * (int)g_pathingGrid.sizeY *
-                                  (int)g_pathingGrid.sizeX * 2);
+    local_8 = Library::DKW::LIB::MemAlloc
+                        ((int)g_pathingGrid.sizeZ * (int)g_pathingGrid.sizeY *
+                         (int)g_pathingGrid.sizeX * 2);
     uVar4 = (int)g_pathingGrid.sizeZ * (int)g_pathingGrid.sizeY * (int)g_pathingGrid.sizeX;
     psVar7 = g_pathingGrid.cells;
     psVar3 = local_8;

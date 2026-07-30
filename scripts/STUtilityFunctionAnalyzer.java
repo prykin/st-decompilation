@@ -19,12 +19,14 @@ import ghidra.app.decompiler.DecompInterface;
 import ghidra.app.decompiler.DecompileResults;
 import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
+import ghidra.program.model.listing.Data;
 import ghidra.program.model.listing.Function;
 import ghidra.program.model.listing.FunctionIterator;
 import ghidra.program.model.listing.FunctionTag;
 import ghidra.program.model.listing.Instruction;
 import ghidra.program.model.listing.InstructionIterator;
 import ghidra.program.model.listing.Parameter;
+import ghidra.program.model.symbol.Reference;
 
 public class STUtilityFunctionAnalyzer extends GhidraScript {
     private static final int TIMEOUT = 60;
@@ -65,7 +67,8 @@ public class STUtilityFunctionAnalyzer extends GhidraScript {
         new Rule(0x004406c0L, "player_race_id", "GetPlayerRaceId", "__stdcall", "/int",
             new String[] { "/char" }, new String[] { "playerId" },
             new String[] { "g_playerRuntime", ".raceId", "0xff" },
-            "maps a player id to its race id and preserves the -1 sentinel")
+            "maps a player id to its race id; the explicit EAX==0xff machine guard " +
+            "clears AL and returns zero")
     );
 
     @Override
@@ -167,7 +170,92 @@ public class STUtilityFunctionAnalyzer extends GhidraScript {
                 new String[0],
                 "loads a heterogeneous binary object payload; byte pointer is " +
                     "the neutral ABI type and each consumer owns its payload layout"));
+
+        for (Rule allocator : discoverMemoryAllocators()) {
+            if (occupied.add(allocator.address)) result.add(allocator);
+        }
         return result;
+    }
+
+    /**
+     * Recover the DKW allocation family without relying on ST image addresses.
+     * The embedded source filename establishes the library role while the
+     * instruction shape distinguishes plain allocation, zeroed allocation, and
+     * reallocation.  A neutral void pointer is deliberately retained at the ABI:
+     * each caller owns the concrete allocated-object view.
+     */
+    private List<Rule> discoverMemoryAllocators() throws Exception {
+        List<Rule> result = new ArrayList<>();
+        FunctionIterator iterator =
+            currentProgram.getFunctionManager().getFunctions(true);
+        while (iterator.hasNext()) {
+            monitor.checkCancelled();
+            Function function = iterator.next();
+            if (function.isThunk() || function.isExternal()) continue;
+            String lower = sourceEvidence(function);
+            if (!allocatorSource(lower)) continue;
+            List<Parameter> parameters = explicitParameters(function);
+            int directCalls = function.getCalledFunctions(monitor).size();
+            boolean failureChecked = hasTestOfEax(function) &&
+                hasZeroEax(function) && directCalls >= 2;
+            if (!failureChecked) continue;
+
+            if (lower.contains("memallcl.c") && parameters.size() == 1 &&
+                    hasZeroFillStore(function)) {
+                result.add(new Rule(function.getEntryPoint().getOffset(),
+                    "memory_allocate_zeroed", "MemAllocClear", "__stdcall",
+                    "pointer:/void", new String[] { "/uint" },
+                    new String[] { "size" }, new String[0],
+                    "allocates at least one byte, clears the requested byte " +
+                        "extent, reports allocation failure, and returns a " +
+                        "neutral pointer"));
+            }
+            else if (lower.contains("memalloc.c") &&
+                    parameters.size() == 1) {
+                result.add(new Rule(function.getEntryPoint().getOffset(),
+                    "memory_allocate", "MemAlloc", "__stdcall",
+                    "pointer:/void", new String[] { "/uint" },
+                    new String[] { "size" }, new String[0],
+                    "allocates at least one byte, reports allocation failure, " +
+                        "and returns a neutral pointer"));
+            }
+            else if (lower.contains("memreall.c") &&
+                    parameters.size() == 2) {
+                result.add(new Rule(function.getEntryPoint().getOffset(),
+                    "memory_reallocate", "MemRealloc", "__stdcall",
+                    "pointer:/void",
+                    new String[] { "pointer:/void", "/uint" },
+                    new String[] { "allocation", "newSize" }, new String[0],
+                    "resizes an allocation to at least one byte, reports " +
+                        "allocation failure, and returns a neutral pointer"));
+            }
+        }
+        return result;
+    }
+
+    private String sourceEvidence(Function function) {
+        String comment = function.getComment() == null ? "" :
+            function.getComment().toLowerCase(Locale.ROOT);
+        if (allocatorSource(comment)) return comment;
+        InstructionIterator instructions =
+            currentProgram.getListing().getInstructions(function.getBody(), true);
+        while (instructions.hasNext()) {
+            Instruction instruction = instructions.next();
+            for (Reference reference : instruction.getReferencesFrom()) {
+                Data data = currentProgram.getListing()
+                    .getDefinedDataAt(reference.getToAddress());
+                if (data == null || !data.hasStringValue() || data.getValue() == null)
+                    continue;
+                String value = data.getValue().toString().toLowerCase(Locale.ROOT);
+                if (allocatorSource(value)) return value;
+            }
+        }
+        return comment;
+    }
+
+    private boolean allocatorSource(String value) {
+        return value.contains("memallcl.c") || value.contains("memalloc.c") ||
+            value.contains("memreall.c");
     }
 
     private Function discoverDArrayRemoveAt(DecompInterface decompiler)
@@ -306,6 +394,55 @@ public class STUtilityFunctionAnalyzer extends GhidraScript {
                     mnemonic.contains("MOVSB"))) bytes = true;
         }
         return dwords && bytes;
+    }
+
+    private boolean hasZeroFillStore(Function function) {
+        boolean store = false, repeat = false;
+        InstructionIterator iterator =
+            currentProgram.getListing().getInstructions(function.getBody(), true);
+        while (iterator.hasNext()) {
+            Instruction instruction = iterator.next();
+            String rendered = instruction.toString().toUpperCase(Locale.ROOT);
+            String mnemonic =
+                instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+            boolean stringStore = rendered.contains("STOS") ||
+                mnemonic.contains("STOS");
+            store |= stringStore;
+            repeat |= stringStore &&
+                (rendered.contains("REP") || mnemonic.contains("REP"));
+        }
+        // The exact memallcl.c provenance distinguishes this family member.
+        // Optimized MSVC tails may be an ordinary byte store rather than a
+        // second REP instruction, while some Ghidra x86 renderings attach the
+        // prefix outside the mnemonic. Require a real repeated string store,
+        // but do not require two particular textual spellings.
+        return store && repeat;
+    }
+
+    private boolean hasTestOfEax(Function function) {
+        InstructionIterator iterator =
+            currentProgram.getListing().getInstructions(function.getBody(), true);
+        while (iterator.hasNext()) {
+            Instruction instruction = iterator.next();
+            String rendered = instruction.toString().toUpperCase(Locale.ROOT);
+            if ((rendered.startsWith("TEST ") || rendered.startsWith("CMP ")) &&
+                    rendered.contains("EAX")) return true;
+        }
+        return false;
+    }
+
+    private boolean hasZeroEax(Function function) {
+        InstructionIterator iterator =
+            currentProgram.getListing().getInstructions(function.getBody(), true);
+        while (iterator.hasNext()) {
+            Instruction instruction = iterator.next();
+            String rendered = instruction.toString().toUpperCase(Locale.ROOT);
+            if ((rendered.startsWith("XOR ") || rendered.startsWith("SUB ")) &&
+                    rendered.contains("EAX") &&
+                    rendered.lastIndexOf("EAX") != rendered.indexOf("EAX"))
+                return true;
+        }
+        return false;
     }
 
     private Function discoverMfAObjLoad() {

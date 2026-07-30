@@ -420,7 +420,7 @@ STBoatC::sub_0048DFD0
   local_a = sStack_e * local_10;
   local_30 = (undefined4 *)0x0;
   local_2c = this;
-  local_8 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(local_a * 10);
+  local_8 = Library::DKW::LIB::MemAlloc(local_a * 10);
   iVar14 = local_20;
   local_14 = 0;
   do {
@@ -463,8 +463,7 @@ STBoatC::sub_0048DFD0
     local_34 = g_pathingGrid.sizeZ;
     local_38 = g_pathingGrid.sizeX;
     local_32 = g_pathingGrid.planeStride;
-    local_30 = (undefined4 *)
-               Library::DKW::LIB::FUN_006aac70
+    local_30 = Library::DKW::LIB::MemAlloc
                          ((int)g_pathingGrid.sizeZ * (int)g_pathingGrid.sizeY *
                           (int)g_pathingGrid.sizeX * 2);
     uVar6 = (int)local_34 * (int)local_36 * (int)local_38;
@@ -486,8 +485,7 @@ STBoatC::sub_0048DFD0
     sStack_c = g_pathingGrid.sizeZ;
     local_10 = g_pathingGrid.sizeX;
     local_a = g_pathingGrid.planeStride;
-    local_8 = (undefined4 *)
-              Library::DKW::LIB::FUN_006aac70
+    local_8 = Library::DKW::LIB::MemAlloc
                         ((int)g_pathingGrid.sizeZ * (int)g_pathingGrid.sizeY *
                          (int)g_pathingGrid.sizeX * 2);
     uVar6 = (int)sStack_c * (int)sStack_e * (int)local_10;

@@ -42,7 +42,7 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
     return local_18;
   }
   *param_1 = 0x321;
-  if ((int *)local_14->field_0059 != (int *)0x0) {
+  if (local_14->field_0059 != (int *)0x0) {
     iVar3 = *(int *)local_14->field_0059 * 0x10;
     local_8 = iVar3 + 0xc;
     *param_1 = iVar3 + 0x32d;
@@ -143,7 +143,7 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
     FreeAndNull(&local_c);
     *param_1 = *param_1 + local_8;
   }
-  puVar4 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(*param_1);
+  puVar4 = Library::DKW::LIB::MemAlloc(*param_1);
   *puVar4 = local_14->field_003D;
   puVar4[1] = local_14->field_0041;
   puVar4[2] = local_14->field_0045;
@@ -299,7 +299,7 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
   *(undefined4 *)((int)puVar4 + 0x317) = *(undefined4 *)&local_14->field_0x308;
   *(undefined2 *)((int)puVar4 + 0x31b) = local_14->field_030C;
   *(undefined4 *)((int)puVar4 + 0x31d) = local_14->field_030E;
-  piVar8 = (int *)local_14->field_0059;
+  piVar8 = local_14->field_0059;
   if (piVar8 == (int *)0x0) {
     local_8 = 0;
     puVar4[7] = 0xffffffff;

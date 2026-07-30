@@ -117,8 +117,7 @@ LAB_004c7d8c:
             if (this->field_03D8 <= this->field_03D4 + 1) {
               iVar5 = this->field_03D8 + 0x14;
               this->field_03D8 = iVar5;
-              pAVar6 = (AnonPointee_TLOBaseTy_0607 *)
-                       Library::DKW::LIB::FUN_006acf50((int)this->field_0607,iVar5 * 0x27);
+              pAVar6 = Library::DKW::LIB::MemRealloc(this->field_0607,iVar5 * 0x27);
               this->field_0607 = pAVar6;
             }
             *(int *)(this->field_03D4 * 0x27 + (int)this->field_0607) = param_1;

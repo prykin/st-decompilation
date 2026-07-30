@@ -12,220 +12,224 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::sub_00427090
 
 {
   int iVar1;
-  int iVar2;
-  int iVar3;
+  AnonPointee_TLOBaseTy_0607 *pAVar2;
+  void *pvVar3;
   int iVar4;
   int iVar5;
   int iVar6;
   int iVar7;
   int iVar8;
+  int iVar9;
   int local_c;
   int local_8;
 
-  iVar5 = param_2;
+  iVar6 = param_2;
   if (DAT_007f4d84 <= DAT_007f4d78) {
-    iVar2 = Library::DKW::LIB::FUN_006acf50(DAT_007f4d6c,(DAT_007f4d84 * 3 + 0x1e) * 4);
-    if (iVar2 == 0) {
+    pAVar2 = Library::DKW::LIB::MemRealloc(DAT_007f4d6c,(DAT_007f4d84 * 3 + 0x1e) * 4);
+    if (pAVar2 == (AnonPointee_TLOBaseTy_0607 *)0x0) {
       return 0;
     }
     DAT_007f4d84 = DAT_007f4d84 + 10;
-    DAT_007f4d6c = iVar2;
+    DAT_007f4d6c = pAVar2;
   }
-  iVar2 = Library::DKW::LIB::FUN_006aac70((param_1 * 0xfffffff + 2 + param_2) * 0x10);
-  if (iVar2 == 0) {
+  pvVar3 = Library::DKW::LIB::MemAlloc((param_1 * 0xfffffff + 2 + param_2) * 0x10);
+  if (pvVar3 == (void *)0x0) {
     return 0;
   }
-  *(int *)(DAT_007f4d6c + 8 + DAT_007f4d78 * 0xc) = iVar2;
-  *(undefined4 *)(DAT_007f4d6c + DAT_007f4d78 * 0xc) = 0;
+  (&DAT_007f4d6c->field_0008)[DAT_007f4d78 * 3] = pvVar3;
+  (&DAT_007f4d6c->field_0000)[DAT_007f4d78 * 3] = 0;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_3 == 0) {
-    iVar3 = param_1 * 0x10;
-    *(uint *)(DAT_007f4d6c + DAT_007f4d78 * 0xc) =
-         (uint)(*(byte *)((*(int *)(iVar3 + DAT_007f4d74) + DAT_007f4d7c) *
+    iVar4 = param_1 * 0x10;
+    (&DAT_007f4d6c->field_0000)[DAT_007f4d78 * 3] =
+         (uint)(*(byte *)((*(int *)(iVar4 + DAT_007f4d74) + DAT_007f4d7c) *
                           *(int *)&this->field_0x37c + *(int *)&this->field_0x38c + DAT_007f4d80 +
                          param_1) >> 7);
-    iVar4 = sub_004248D0(this,iVar2,0,*(int *)(iVar3 + DAT_007f4d74) + DAT_007f4d7c,
+    iVar5 = sub_004248D0(this,(int)pvVar3,0,*(int *)(iVar4 + DAT_007f4d74) + DAT_007f4d7c,
                          DAT_007f4d80 + param_1,CASE_0,~CASE_0);
-    iVar6 = *(int *)(iVar3 + DAT_007f4d74);
-    iVar8 = iVar3;
-    for (iVar7 = param_1; iVar7 <= param_2; iVar7 = iVar7 + 1) {
-      if (*(int *)(iVar8 + DAT_007f4d74) < iVar6) {
-        iVar4 = sub_004248D0(this,iVar2,iVar4,*(int *)(iVar8 + DAT_007f4d74) + DAT_007f4d7c,
-                             DAT_007f4d80 + iVar7,CASE_0,~CASE_0);
+    iVar7 = *(int *)(iVar4 + DAT_007f4d74);
+    iVar9 = iVar4;
+    for (iVar8 = param_1; iVar8 <= param_2; iVar8 = iVar8 + 1) {
+      if (*(int *)(iVar9 + DAT_007f4d74) < iVar7) {
+        iVar5 = sub_004248D0(this,(int)pvVar3,iVar5,*(int *)(iVar9 + DAT_007f4d74) + DAT_007f4d7c,
+                             DAT_007f4d80 + iVar8,CASE_0,~CASE_0);
       }
-      if ((iVar7 < param_2) &&
-         (iVar6 = *(int *)(iVar8 + DAT_007f4d74) + DAT_007f4d7c,
-         iVar6 < *(int *)(iVar8 + 0x10 + DAT_007f4d74) + DAT_007f4d7c)) {
-        iVar4 = sub_004248D0(this,iVar2,iVar4,iVar6,DAT_007f4d80 + iVar7,CASE_1,~CASE_0);
+      if ((iVar8 < param_2) &&
+         (iVar7 = *(int *)(iVar9 + DAT_007f4d74) + DAT_007f4d7c,
+         iVar7 < *(int *)(iVar9 + 0x10 + DAT_007f4d74) + DAT_007f4d7c)) {
+        iVar5 = sub_004248D0(this,(int)pvVar3,iVar5,iVar7,DAT_007f4d80 + iVar8,CASE_1,~CASE_0);
       }
-      iVar6 = *(int *)(iVar8 + DAT_007f4d74);
-      iVar8 = iVar8 + 0x10;
+      iVar7 = *(int *)(iVar9 + DAT_007f4d74);
+      iVar9 = iVar9 + 0x10;
     }
     local_c = param_2 * 0x10;
-    iVar6 = sub_004248D0(this,iVar2,iVar4,*(int *)(local_c + DAT_007f4d74) + DAT_007f4d7c,
+    iVar7 = sub_004248D0(this,(int)pvVar3,iVar5,*(int *)(local_c + DAT_007f4d74) + DAT_007f4d7c,
                          DAT_007f4d80 + param_2,CASE_1,~CASE_0);
     /* ST_PSEUDO[stack_slot_reuse,raw_pointer_offset]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; candidate structure field after proof; otherwise retain buffer arithmetic */
-    param_3 = sub_004248D0(this,iVar2,iVar6,*(int *)(local_c + 0xc + DAT_007f4d74) + DAT_007f4d7c,
+    param_3 = sub_004248D0(this,(int)pvVar3,iVar7,
+                           *(int *)(local_c + 0xc + DAT_007f4d74) + DAT_007f4d7c,
                            DAT_007f4d80 + param_2,CASE_3,~CASE_0);
-    iVar6 = DAT_007f4d74;
+    iVar7 = DAT_007f4d74;
     if (param_1 < param_2) {
       do {
-        iVar8 = *(int *)(iVar6 + 0xc + local_c);
-        if ((iVar8 < *(int *)(iVar6 + -4 + local_c)) && (param_2 != iVar5)) {
+        iVar9 = *(int *)(iVar7 + 0xc + local_c);
+        if ((iVar9 < *(int *)(iVar7 + -4 + local_c)) && (param_2 != iVar6)) {
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-          param_3 = sub_004248D0(this,iVar2,param_3,iVar8 + DAT_007f4d7c,DAT_007f4d80 + param_2,
-                                 CASE_3,~CASE_0);
-          iVar6 = DAT_007f4d74;
+          param_3 = sub_004248D0(this,(int)pvVar3,param_3,iVar9 + DAT_007f4d7c,
+                                 DAT_007f4d80 + param_2,CASE_3,~CASE_0);
+          iVar7 = DAT_007f4d74;
         }
-        iVar8 = *(int *)(iVar6 + 0xc + local_c);
-        if (*(int *)(iVar6 + -4 + local_c) < iVar8) {
+        iVar9 = *(int *)(iVar7 + 0xc + local_c);
+        if (*(int *)(iVar7 + -4 + local_c) < iVar9) {
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-          param_3 = sub_004248D0(this,iVar2,param_3,iVar8 + DAT_007f4d7c,DAT_007f4d80 + param_2,
-                                 CASE_2,~CASE_0);
-          iVar6 = DAT_007f4d74;
+          param_3 = sub_004248D0(this,(int)pvVar3,param_3,iVar9 + DAT_007f4d7c,
+                                 DAT_007f4d80 + param_2,CASE_2,~CASE_0);
+          iVar7 = DAT_007f4d74;
         }
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_2 = param_2 + -1;
         local_c = local_c + -0x10;
       } while (param_1 < param_2);
-      iVar5 = *(int *)(iVar3 + 0xc + iVar6);
-      if (*(int *)(iVar3 + 0x1c + iVar6) < iVar5) {
+      iVar6 = *(int *)(iVar4 + 0xc + iVar7);
+      if (*(int *)(iVar4 + 0x1c + iVar7) < iVar6) {
 /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
 LAB_004278f1:
-        param_3 = sub_004248D0(this,iVar2,param_3,iVar5 + DAT_007f4d7c,DAT_007f4d80 + param_1,CASE_3
-                               ,~CASE_0);
-        iVar6 = DAT_007f4d74;
+        param_3 = sub_004248D0(this,(int)pvVar3,param_3,iVar6 + DAT_007f4d7c,DAT_007f4d80 + param_1,
+                               CASE_3,~CASE_0);
+        iVar7 = DAT_007f4d74;
       }
     }
   }
   else {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_3 == -1) {
-      iVar3 = param_1 * 0x10;
-      *(uint *)(DAT_007f4d6c + DAT_007f4d78 * 0xc) =
-           (uint)(*(byte *)((*(int *)(iVar3 + DAT_007f4d74) + DAT_007f4d7c) *
+      iVar4 = param_1 * 0x10;
+      (&DAT_007f4d6c->field_0000)[DAT_007f4d78 * 3] =
+           (uint)(*(byte *)((*(int *)(iVar4 + DAT_007f4d74) + DAT_007f4d7c) *
                             *(int *)&this->field_0x37c + *(int *)&this->field_0x38c + DAT_007f4d80 +
                            param_1) >> 7);
-      iVar4 = sub_004248D0(this,iVar2,0,*(int *)(iVar3 + DAT_007f4d74) + DAT_007f4d7c,
+      iVar5 = sub_004248D0(this,(int)pvVar3,0,*(int *)(iVar4 + DAT_007f4d74) + DAT_007f4d7c,
                            DAT_007f4d80 + param_1,CASE_0,~CASE_0);
-      iVar6 = *(int *)(iVar3 + DAT_007f4d74);
-      iVar8 = iVar3;
-      for (iVar7 = param_1; iVar7 <= param_2; iVar7 = iVar7 + 1) {
-        if (*(int *)(iVar8 + DAT_007f4d74) < iVar6) {
-          iVar4 = sub_004248D0(this,iVar2,iVar4,*(int *)(iVar8 + DAT_007f4d74) + DAT_007f4d7c,
-                               DAT_007f4d80 + iVar7,CASE_0,~CASE_0);
+      iVar7 = *(int *)(iVar4 + DAT_007f4d74);
+      iVar9 = iVar4;
+      for (iVar8 = param_1; iVar8 <= param_2; iVar8 = iVar8 + 1) {
+        if (*(int *)(iVar9 + DAT_007f4d74) < iVar7) {
+          iVar5 = sub_004248D0(this,(int)pvVar3,iVar5,*(int *)(iVar9 + DAT_007f4d74) + DAT_007f4d7c,
+                               DAT_007f4d80 + iVar8,CASE_0,~CASE_0);
         }
-        if ((iVar7 < param_2) &&
-           (iVar6 = *(int *)(iVar8 + DAT_007f4d74) + DAT_007f4d7c,
-           iVar6 < *(int *)(iVar8 + 0x10 + DAT_007f4d74) + DAT_007f4d7c)) {
-          iVar4 = sub_004248D0(this,iVar2,iVar4,iVar6,DAT_007f4d80 + iVar7,CASE_1,~CASE_0);
+        if ((iVar8 < param_2) &&
+           (iVar7 = *(int *)(iVar9 + DAT_007f4d74) + DAT_007f4d7c,
+           iVar7 < *(int *)(iVar9 + 0x10 + DAT_007f4d74) + DAT_007f4d7c)) {
+          iVar5 = sub_004248D0(this,(int)pvVar3,iVar5,iVar7,DAT_007f4d80 + iVar8,CASE_1,~CASE_0);
         }
-        iVar6 = *(int *)(iVar8 + DAT_007f4d74);
-        iVar8 = iVar8 + 0x10;
+        iVar7 = *(int *)(iVar9 + DAT_007f4d74);
+        iVar9 = iVar9 + 0x10;
       }
       local_c = param_2 * 0x10;
-      iVar6 = sub_004248D0(this,iVar2,iVar4,*(int *)(local_c + DAT_007f4d74) + DAT_007f4d7c,
+      iVar7 = sub_004248D0(this,(int)pvVar3,iVar5,*(int *)(local_c + DAT_007f4d74) + DAT_007f4d7c,
                            DAT_007f4d80 + param_2,CASE_1,~CASE_0);
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_3 = sub_004248D0(this,iVar2,iVar6,*(int *)(local_c + 4 + DAT_007f4d74) + DAT_007f4d7c,
+      param_3 = sub_004248D0(this,(int)pvVar3,iVar7,
+                             *(int *)(local_c + 4 + DAT_007f4d74) + DAT_007f4d7c,
                              DAT_007f4d80 + param_2,CASE_3,~CASE_0);
-      iVar6 = DAT_007f4d74;
+      iVar7 = DAT_007f4d74;
       if (param_1 < param_2) {
         do {
-          iVar8 = *(int *)(local_c + 4 + iVar6);
+          iVar9 = *(int *)(local_c + 4 + iVar7);
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          if ((iVar8 < *(int *)(local_c + -0xc + iVar6)) && (param_2 != iVar5)) {
+          if ((iVar9 < *(int *)(local_c + -0xc + iVar7)) && (param_2 != iVar6)) {
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-            param_3 = sub_004248D0(this,iVar2,param_3,iVar8 + DAT_007f4d7c,DAT_007f4d80 + param_2,
-                                   CASE_3,~CASE_0);
-            iVar6 = DAT_007f4d74;
+            param_3 = sub_004248D0(this,(int)pvVar3,param_3,iVar9 + DAT_007f4d7c,
+                                   DAT_007f4d80 + param_2,CASE_3,~CASE_0);
+            iVar7 = DAT_007f4d74;
           }
-          iVar8 = *(int *)(local_c + 4 + iVar6);
+          iVar9 = *(int *)(local_c + 4 + iVar7);
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          if (*(int *)(local_c + -0xc + iVar6) < iVar8) {
+          if (*(int *)(local_c + -0xc + iVar7) < iVar9) {
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-            param_3 = sub_004248D0(this,iVar2,param_3,iVar8 + DAT_007f4d7c,DAT_007f4d80 + param_2,
-                                   CASE_2,~CASE_0);
-            iVar6 = DAT_007f4d74;
+            param_3 = sub_004248D0(this,(int)pvVar3,param_3,iVar9 + DAT_007f4d7c,
+                                   DAT_007f4d80 + param_2,CASE_2,~CASE_0);
+            iVar7 = DAT_007f4d74;
           }
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_2 = param_2 + -1;
           local_c = local_c + -0x10;
         } while (param_1 < param_2);
-        iVar5 = *(int *)(iVar3 + 4 + iVar6);
-        if (*(int *)(iVar3 + 0x14 + iVar6) < iVar5) {
+        iVar6 = *(int *)(iVar4 + 4 + iVar7);
+        if (*(int *)(iVar4 + 0x14 + iVar7) < iVar6) {
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-          param_3 = sub_004248D0(this,iVar2,param_3,iVar5 + DAT_007f4d7c,DAT_007f4d80 + param_1,
-                                 CASE_3,~CASE_0);
-          iVar6 = DAT_007f4d74;
+          param_3 = sub_004248D0(this,(int)pvVar3,param_3,iVar6 + DAT_007f4d7c,
+                                 DAT_007f4d80 + param_1,CASE_3,~CASE_0);
+          iVar7 = DAT_007f4d74;
         }
       }
-      iVar5 = *(int *)(iVar3 + 4 + iVar6);
+      iVar6 = *(int *)(iVar4 + 4 + iVar7);
       goto LAB_00427930;
     }
-    iVar3 = param_1 * 0x10;
-    *(uint *)(DAT_007f4d6c + DAT_007f4d78 * 0xc) =
-         (uint)(*(byte *)((*(int *)(iVar3 + 8 + DAT_007f4d74) + DAT_007f4d7c) *
+    iVar4 = param_1 * 0x10;
+    (&DAT_007f4d6c->field_0000)[DAT_007f4d78 * 3] =
+         (uint)(*(byte *)((*(int *)(iVar4 + 8 + DAT_007f4d74) + DAT_007f4d7c) *
                           *(int *)&this->field_0x37c + *(int *)&this->field_0x38c + DAT_007f4d80 +
                          param_1) >> 7);
-    iVar4 = sub_004248D0(this,iVar2,0,*(int *)(iVar3 + 8 + DAT_007f4d74) + DAT_007f4d7c,
+    iVar5 = sub_004248D0(this,(int)pvVar3,0,*(int *)(iVar4 + 8 + DAT_007f4d74) + DAT_007f4d7c,
                          DAT_007f4d80 + param_1,CASE_0,~CASE_0);
-    iVar6 = *(int *)(iVar3 + 8 + DAT_007f4d74);
-    iVar8 = iVar3;
-    for (iVar7 = param_1; iVar7 <= param_2; iVar7 = iVar7 + 1) {
-      iVar1 = *(int *)(iVar8 + 8 + DAT_007f4d74);
-      if (iVar1 < iVar6) {
-        iVar4 = sub_004248D0(this,iVar2,iVar4,iVar1 + DAT_007f4d7c,DAT_007f4d80 + iVar7,CASE_0,
-                             ~CASE_0);
+    iVar7 = *(int *)(iVar4 + 8 + DAT_007f4d74);
+    iVar9 = iVar4;
+    for (iVar8 = param_1; iVar8 <= param_2; iVar8 = iVar8 + 1) {
+      iVar1 = *(int *)(iVar9 + 8 + DAT_007f4d74);
+      if (iVar1 < iVar7) {
+        iVar5 = sub_004248D0(this,(int)pvVar3,iVar5,iVar1 + DAT_007f4d7c,DAT_007f4d80 + iVar8,CASE_0
+                             ,~CASE_0);
       }
-      if ((iVar7 < param_2) &&
-         (iVar6 = *(int *)(iVar8 + 8 + DAT_007f4d74) + DAT_007f4d7c,
-         iVar6 < *(int *)(iVar8 + 0x18 + DAT_007f4d74) + DAT_007f4d7c)) {
-        iVar4 = sub_004248D0(this,iVar2,iVar4,iVar6,DAT_007f4d80 + iVar7,CASE_1,~CASE_0);
+      if ((iVar8 < param_2) &&
+         (iVar7 = *(int *)(iVar9 + 8 + DAT_007f4d74) + DAT_007f4d7c,
+         iVar7 < *(int *)(iVar9 + 0x18 + DAT_007f4d74) + DAT_007f4d7c)) {
+        iVar5 = sub_004248D0(this,(int)pvVar3,iVar5,iVar7,DAT_007f4d80 + iVar8,CASE_1,~CASE_0);
       }
-      iVar6 = *(int *)(iVar8 + 8 + DAT_007f4d74);
-      iVar8 = iVar8 + 0x10;
+      iVar7 = *(int *)(iVar9 + 8 + DAT_007f4d74);
+      iVar9 = iVar9 + 0x10;
     }
     local_c = param_2 * 0x10;
-    iVar6 = sub_004248D0(this,iVar2,iVar4,*(int *)(local_c + 8 + DAT_007f4d74) + DAT_007f4d7c,
+    iVar7 = sub_004248D0(this,(int)pvVar3,iVar5,*(int *)(local_c + 8 + DAT_007f4d74) + DAT_007f4d7c,
                          DAT_007f4d80 + param_2,CASE_1,~CASE_0);
     /* ST_PSEUDO[stack_slot_reuse,raw_pointer_offset]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; candidate structure field after proof; otherwise retain buffer arithmetic */
-    param_3 = sub_004248D0(this,iVar2,iVar6,*(int *)(local_c + 0xc + DAT_007f4d74) + DAT_007f4d7c,
+    param_3 = sub_004248D0(this,(int)pvVar3,iVar7,
+                           *(int *)(local_c + 0xc + DAT_007f4d74) + DAT_007f4d7c,
                            DAT_007f4d80 + param_2,CASE_3,~CASE_0);
-    iVar6 = DAT_007f4d74;
+    iVar7 = DAT_007f4d74;
     if (param_1 < param_2) {
       do {
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        iVar8 = *(int *)(local_c + 0xc + iVar6);
-        if ((iVar8 < *(int *)(local_c + -4 + iVar6)) && (param_2 != iVar5)) {
+        iVar9 = *(int *)(local_c + 0xc + iVar7);
+        if ((iVar9 < *(int *)(local_c + -4 + iVar7)) && (param_2 != iVar6)) {
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-          param_3 = sub_004248D0(this,iVar2,param_3,iVar8 + DAT_007f4d7c,DAT_007f4d80 + param_2,
-                                 CASE_3,~CASE_0);
-          iVar6 = DAT_007f4d74;
+          param_3 = sub_004248D0(this,(int)pvVar3,param_3,iVar9 + DAT_007f4d7c,
+                                 DAT_007f4d80 + param_2,CASE_3,~CASE_0);
+          iVar7 = DAT_007f4d74;
         }
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        iVar8 = *(int *)(local_c + 0xc + iVar6);
-        if (*(int *)(local_c + -4 + iVar6) < iVar8) {
+        iVar9 = *(int *)(local_c + 0xc + iVar7);
+        if (*(int *)(local_c + -4 + iVar7) < iVar9) {
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-          param_3 = sub_004248D0(this,iVar2,param_3,iVar8 + DAT_007f4d7c,DAT_007f4d80 + param_2,
-                                 CASE_2,~CASE_0);
-          iVar6 = DAT_007f4d74;
+          param_3 = sub_004248D0(this,(int)pvVar3,param_3,iVar9 + DAT_007f4d7c,
+                                 DAT_007f4d80 + param_2,CASE_2,~CASE_0);
+          iVar7 = DAT_007f4d74;
         }
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_2 = param_2 + -1;
         local_c = local_c + -0x10;
       } while (param_1 < param_2);
-      iVar5 = *(int *)(iVar3 + 0xc + iVar6);
-      if (*(int *)(iVar3 + 0x1c + iVar6) < iVar5) goto LAB_004278f1;
+      iVar6 = *(int *)(iVar4 + 0xc + iVar7);
+      if (*(int *)(iVar4 + 0x1c + iVar7) < iVar6) goto LAB_004278f1;
     }
   }
   local_8 = param_1 * 0x10;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  iVar5 = *(int *)(local_8 + 0xc + iVar6);
+  iVar6 = *(int *)(local_8 + 0xc + iVar7);
 LAB_00427930:
-  iVar5 = sub_004248D0(this,iVar2,param_3,iVar5 + DAT_007f4d7c,DAT_007f4d80 + param_1,CASE_2,~CASE_0
-                      );
-  *(int *)(DAT_007f4d6c + 4 + DAT_007f4d78 * 0xc) = iVar5;
+  iVar6 = sub_004248D0(this,(int)pvVar3,param_3,iVar6 + DAT_007f4d7c,DAT_007f4d80 + param_1,CASE_2,
+                       ~CASE_0);
+  (&DAT_007f4d6c->field_0004)[DAT_007f4d78 * 3] = iVar6;
   DAT_007f4d78 = DAT_007f4d78 + 1;
   return 0;
 }

@@ -1,4 +1,5 @@
-// Apply reviewed global_data_proposals.tsv. Only undefined/script-owned data may be replaced.
+// Apply reviewed global_data_proposals.tsv. Concrete data is preserved except for an
+// exact non-manual pointer global proven by a direct named-constructor result store.
 // @author OpenAI
 // @category SubmarineTitans.Recovery
 // @menupath Tools.Submarine Titans.Apply Global Data
@@ -98,6 +99,11 @@ public class STGlobalDataApplier extends GhidraScript {
             // There is no SourceType on Data itself. Preserve every concrete current type;
             // a reviewer can clear it explicitly before applying a replacement proposal.
             boolean concreteData = !Undefined.isUndefined(data.getDataType());
+            boolean constructorOverride = baseline && !manualSymbol &&
+                data.getDataType() instanceof Pointer &&
+                unt(row.get("proposed_type")).startsWith("pointer:") &&
+                unt(row.get("reason")).contains(
+                    "direct_constructor_store_overrides_non_manual_pointer_type");
             List<String> details = new ArrayList<>();
             boolean changed = false, preserved = false, conflict = false;
             if (typeApply) {
@@ -108,15 +114,16 @@ public class STGlobalDataApplier extends GhidraScript {
                     details.add("type=conflict(missing proposed type)"); conflict = true;
                 }
                 else if (proposed.isEquivalent(data.getDataType())) details.add("type=unchanged");
-                else if (!baseline || concreteData && !scriptOwned) {
+                else if (!baseline || concreteData && !scriptOwned && !constructorOverride) {
                     details.add("type=preserved(stale/concrete data)"); preserved = true;
                 }
-                else if (!safeRange(address, proposed.getLength())) {
+                else if (!safeRange(address, proposed.getLength(), constructorOverride)) {
                     details.add("type=conflict(range contains non-default data or code)"); conflict = true;
                 }
                 else {
                     DataUtilities.createData(currentProgram, address, proposed, proposed.getLength(),
-                        scriptOwned ? DataUtilities.ClearDataMode.CLEAR_ALL_CONFLICT_DATA :
+                        scriptOwned || constructorOverride ?
+                            DataUtilities.ClearDataMode.CLEAR_ALL_CONFLICT_DATA :
                             DataUtilities.ClearDataMode.CLEAR_ALL_UNDEFINED_CONFLICT_DATA);
                     data = listing.getDefinedDataAt(address);
                     details.add("type=applied(" + proposed.getPathName() + ")"); changed = true;
@@ -318,14 +325,20 @@ public class STGlobalDataApplier extends GhidraScript {
         }
     }
 
-    private boolean safeRange(Address address, int length) {
+    private boolean safeRange(Address address, int length,
+            boolean allowExactConcretePointer) {
         if (length < 1 || length > 8) return false;
         for (int offset = 0; offset < length; offset++) {
             Address current = address.add(offset);
             if (listing.getInstructionContaining(current) != null) return false;
             Data existing = listing.getDefinedDataContaining(current);
             if (existing == null) continue;
-            if (!Undefined.isUndefined(existing.getDataType()) && !owned(existing.getMinAddress()))
+            boolean exactAllowed = allowExactConcretePointer &&
+                existing.getMinAddress().equals(address) &&
+                existing.getLength() == length &&
+                existing.getDataType() instanceof Pointer;
+            if (!Undefined.isUndefined(existing.getDataType()) &&
+                    !owned(existing.getMinAddress()) && !exactAllowed)
                 return false;
             Symbol symbol = symbols.getPrimarySymbol(current);
             if (symbol != null && !current.equals(address) &&

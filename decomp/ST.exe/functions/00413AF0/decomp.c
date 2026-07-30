@@ -110,8 +110,7 @@ void FUN_00413af0(void *param_1,DArrayTy *param_2,int param_3,int param_4,int pa
     }
   }
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  DAT_007f4d04 = (int *)Library::DKW::LIB::FUN_006aac70
-                                  ((uint)*(ushort *)((int)param_1 + 0x27) * 0x1c);
+  DAT_007f4d04 = Library::DKW::LIB::MemAlloc((uint)*(ushort *)((int)param_1 + 0x27) * 0x1c);
   DAT_007f4d40 = 0;
   DAT_007f4cf8 = 0;
   local_30 = 0;

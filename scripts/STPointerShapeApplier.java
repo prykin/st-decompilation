@@ -513,7 +513,12 @@ public class STPointerShapeApplier extends GhidraScript {
         DataType pointed = untypedef(pointer.getDataType());
         if (pointed instanceof Structure) return false;
         String name = pointed.getName().toLowerCase(Locale.ROOT);
-        return name.matches("(?:void|byte|char|uchar|u?int|long|ulong|undefined[1248]?)");
+        // Keep this in lock-step with STPointerShapeAnalyzer. A default
+        // short*/ushort*/word* often reflects only the first observed access;
+        // it is replaceable only after the analyzer has already satisfied the
+        // ordinary multi-field/typed-call ownership proof.
+        return name.matches(
+            "(?:void|byte|char|uchar|short|ushort|word|u?int|long|ulong|undefined[1248]?)");
     }
 
     private DataType untypedef(DataType type) {

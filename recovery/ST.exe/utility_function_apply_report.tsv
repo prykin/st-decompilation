@@ -10,3 +10,5 @@ function_address	semantic_id	status	detail
 006B1190	darray_get_next	unchanged	desired name and prototype already present
 006CEA60	copy_rows	unchanged	desired name and prototype already present
 006F2D90	mfaobj_load_payload	preserved	stale baseline or manual function identity
+006AAC70	memory_allocate	applied	MemAlloc __stdcall
+006ACF50	memory_reallocate	applied	MemRealloc __stdcall

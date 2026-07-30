@@ -24,7 +24,7 @@ void FUN_00414a70(int param_1,int param_2)
     local_10 = 0x14;
     local_1c = DAT_007f4d54;
   }
-  DAT_007f4d18 = Library::DKW::LIB::FUN_006aac70(param_2 * 0x18);
+  DAT_007f4d18 = Library::DKW::LIB::MemAlloc(param_2 * 0x18);
   iVar10 = 1;
   DAT_007f4d44 = 0;
   if (0 < DAT_007f4d2c / 2) {
@@ -184,10 +184,10 @@ cf_break_loop_00414E8A:
     do {
       local_1c = puVar7 + 4;
       iVar10 = iVar10 + 1;
-      *local_1c = *(undefined1 *)(iVar1 + DAT_007f4d18);
-      puVar7[5] = *(undefined1 *)(iVar1 + 4 + DAT_007f4d18);
-      puVar7[6] = *(undefined1 *)(iVar1 + 8 + DAT_007f4d18);
-      puVar7[7] = *(undefined1 *)(iVar1 + 0x10 + DAT_007f4d18);
+      *local_1c = *(undefined1 *)(iVar1 + (int)DAT_007f4d18);
+      puVar7[5] = *(undefined1 *)(iVar1 + 4 + (int)DAT_007f4d18);
+      puVar7[6] = *(undefined1 *)(iVar1 + 8 + (int)DAT_007f4d18);
+      puVar7[7] = *(undefined1 *)(iVar1 + 0x10 + (int)DAT_007f4d18);
       puVar7 = local_1c;
       iVar1 = iVar1 + 0x18;
     } while (iVar10 < DAT_007f4d44);
@@ -196,7 +196,7 @@ cf_break_loop_00414E8A:
   local_1c[5] = 0x7f;
   local_1c[6] = 0x7f;
   local_1c[7] = 0xff;
-  FreeAndNull((void **)&DAT_007f4d18);
+  FreeAndNull(&DAT_007f4d18);
   return;
 }
 
