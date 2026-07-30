@@ -4,9 +4,10 @@
 undefined4 __cdecl FUN_006adc30(int *param_1)
 
 {
-  uint *puVar1;
-  uint uVar2;
-  bool bVar3;
+  uint *puVar2;
+  uint puVar1;
+  uint uVar3;
+  bool bVar4;
 
   DAT_00854eb0 = ExceptionList;
   if (*(int *)*param_1 == -0x7ffffffd) {
@@ -14,17 +15,17 @@ undefined4 __cdecl FUN_006adc30(int *param_1)
   }
   g_int_00854A9C = g_int_00854EB4;
   if (g_int_00854EB4 != (int *)0x0) {
-    puVar1 = ExceptionList;
+    puVar2 = ExceptionList;
     if (DAT_007ed79c != 0) {
       Library::MSVCRT::FUN_00733f70(g_int_00854EB4,"\n%d ===========================================  %02d.%02d.%d  %d:%02d:%02d.%03d\n");
       DAT_007ed79c = 0;
-      puVar1 = DAT_00854eb0;
+      puVar2 = DAT_00854eb0;
     }
     do {
-      DAT_00854eb0 = puVar1;
+      DAT_00854eb0 = puVar2;
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if ((DAT_00854eb0 == (uint *)0x0) || (*(uint **)(param_1[1] + 0xc4) <= DAT_00854eb0)) break;
-      puVar1 = (uint *)*DAT_00854eb0;
+      puVar2 = (uint *)*DAT_00854eb0;
     } while (DAT_00854eb0 < (uint *)*DAT_00854eb0);
     Library::MSVCRT::FUN_00733f70(g_int_00854A9C,"\n=============================== Exception %X\n");
     Library::MSVCRT::FUN_00733f70(g_int_00854A9C,"%08X ");
@@ -56,35 +57,35 @@ undefined4 __cdecl FUN_006adc30(int *param_1)
       DAT_00854aa0 = 0;
       Library::MSVCRT::FUN_00733f70(g_int_00854A9C,"%08X  ");
       _DAT_00854ea8 = DAT_00854ea4;
-      puVar1 = (uint *)*DAT_00854ea4;
-      bVar3 = DAT_00854ea4 < puVar1;
-      DAT_00854ea4 = puVar1;
-      if (bVar3) {
+      puVar1 = *DAT_00854ea4;
+      bVar4 = DAT_00854ea4 < puVar1;
+      DAT_00854ea4 = (uint *)puVar1;
+      if (bVar4) {
         do {
-          DAT_00854ea4 = puVar1;
+          DAT_00854ea4 = (uint *)puVar1;
           if (DAT_00854eb0 <= puVar1) break;
           DAT_00854aa0 = DAT_00854aa0 + 1;
-          uVar2 = DAT_00854aa0 & 0x80000007;
-          bVar3 = uVar2 == 0;
-          if ((int)uVar2 < 0) {
-            bVar3 = (uVar2 - 1 | 0xfffffff8) == 0xffffffff;
+          uVar3 = DAT_00854aa0 & 0x80000007;
+          bVar4 = uVar3 == 0;
+          if ((int)uVar3 < 0) {
+            bVar4 = (uVar3 - 1 | 0xfffffff8) == 0xffffffff;
           }
-          if (bVar3) {
+          if (bVar4) {
             Library::MSVCRT::FUN_00733f70(g_int_00854A9C,&DAT_007c8ff4);
           }
           Library::MSVCRT::FUN_00733f70(g_int_00854A9C,"%08X  ");
           _DAT_00854ea8 = DAT_00854ea4;
-          puVar1 = (uint *)*DAT_00854ea4;
-          bVar3 = DAT_00854ea4 < puVar1;
-          DAT_00854ea4 = puVar1;
-        } while (bVar3);
+          puVar1 = *DAT_00854ea4;
+          bVar4 = DAT_00854ea4 < puVar1;
+          DAT_00854ea4 = (uint *)puVar1;
+        } while (bVar4);
       }
-      uVar2 = DAT_00854aa0 & 0x80000007;
-      bVar3 = uVar2 == 0;
-      if ((int)uVar2 < 0) {
-        bVar3 = (uVar2 - 1 | 0xfffffff8) == 0xffffffff;
+      uVar3 = DAT_00854aa0 & 0x80000007;
+      bVar4 = uVar3 == 0;
+      if ((int)uVar3 < 0) {
+        bVar4 = (uVar3 - 1 | 0xfffffff8) == 0xffffffff;
       }
-      if (!bVar3) {
+      if (!bVar4) {
         Library::MSVCRT::FUN_00733f70(g_int_00854A9C,&DAT_007c8ff4);
       }
     }
@@ -97,21 +98,21 @@ undefined4 __cdecl FUN_006adc30(int *param_1)
       Library::MSVCRT::FUN_00733f70(g_int_00854A9C,"%08X  ");
       DAT_00854a80 = DAT_00854a80 + 1;
       DAT_00854aa0 = DAT_00854aa0 + 1;
-      uVar2 = DAT_00854aa0 & 0x80000007;
-      bVar3 = uVar2 == 0;
-      if ((int)uVar2 < 0) {
-        bVar3 = (uVar2 - 1 | 0xfffffff8) == 0xffffffff;
+      uVar3 = DAT_00854aa0 & 0x80000007;
+      bVar4 = uVar3 == 0;
+      if ((int)uVar3 < 0) {
+        bVar4 = (uVar3 - 1 | 0xfffffff8) == 0xffffffff;
       }
-      if (bVar3) {
+      if (bVar4) {
         Library::MSVCRT::FUN_00733f70(g_int_00854A9C,&DAT_007c8ff4);
       }
     } while ((int)DAT_00854aa0 < 400);
-    uVar2 = DAT_00854aa0 & 0x80000007;
-    bVar3 = uVar2 == 0;
-    if ((int)uVar2 < 0) {
-      bVar3 = (uVar2 - 1 | 0xfffffff8) == 0xffffffff;
+    uVar3 = DAT_00854aa0 & 0x80000007;
+    bVar4 = uVar3 == 0;
+    if ((int)uVar3 < 0) {
+      bVar4 = (uVar3 - 1 | 0xfffffff8) == 0xffffffff;
     }
-    if (!bVar3) {
+    if (!bVar4) {
       Library::MSVCRT::FUN_00733f70(g_int_00854A9C,&DAT_007c8ff4);
     }
     Library::MSVCRT::FUN_00733f70(g_int_00854A9C,"----------------\n");
@@ -120,22 +121,22 @@ undefined4 __cdecl FUN_006adc30(int *param_1)
       do {
         Library::MSVCRT::FUN_00733f70(g_int_00854A9C,"%08X  ");
         DAT_00854aa0 = DAT_00854aa0 + 1;
-        uVar2 = DAT_00854aa0 & 0x80000007;
-        bVar3 = uVar2 == 0;
-        if ((int)uVar2 < 0) {
-          bVar3 = (uVar2 - 1 | 0xfffffff8) == 0xffffffff;
+        uVar3 = DAT_00854aa0 & 0x80000007;
+        bVar4 = uVar3 == 0;
+        if ((int)uVar3 < 0) {
+          bVar4 = (uVar3 - 1 | 0xfffffff8) == 0xffffffff;
         }
-        if (bVar3) {
+        if (bVar4) {
           Library::MSVCRT::FUN_00733f70(g_int_00854A9C,&DAT_007c8ff4);
         }
       } while ((int)DAT_00854aa0 < DAT_00858ddc);
     }
-    uVar2 = DAT_00854aa0 & 0x80000007;
-    bVar3 = uVar2 == 0;
-    if ((int)uVar2 < 0) {
-      bVar3 = (uVar2 - 1 | 0xfffffff8) == 0xffffffff;
+    uVar3 = DAT_00854aa0 & 0x80000007;
+    bVar4 = uVar3 == 0;
+    if ((int)uVar3 < 0) {
+      bVar4 = (uVar3 - 1 | 0xfffffff8) == 0xffffffff;
     }
-    if (!bVar3) {
+    if (!bVar4) {
       Library::MSVCRT::FUN_00733f70(g_int_00854A9C,&DAT_007c8ff4);
     }
     DAT_00858ddc = 0;

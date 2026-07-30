@@ -7,7 +7,11 @@
 
    [STMessageHandlerApplier] Recovered common GetMessage envelope/signature.
    Evidence: family_entries=004034EA|00423EC0; family_names=STGroupC::GetMessage; ret4=4;
-   direct_offsets={10:1,14:2,18:2,1c:1} */
+   direct_offsets={10:1,14:2,18:2,1c:1}
+
+   [STDiscriminatedPayloadApplier] Case-local payload view: message->id == MESS_ID_CREATE uses
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/STGroupC_GetMessage_00423EC0_MessagePayload_Case_MESS_ID_CREATE.
+   The carrier ABI remains pointer:/SubmarineTitans/Recovered/STMessage. */
 
 int __thiscall STGroupC::GetMessage(STGroupC *this,STMessage *message)
 

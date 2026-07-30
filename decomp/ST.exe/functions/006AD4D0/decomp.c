@@ -67,16 +67,8 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
     } while (cVar1 != '\0');
     pcVar8 = pcVar9 + -uVar5;
     pcVar9 = pcVar13 + -1;
-    for (uVar6 = uVar5 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-      *(undefined4 *)pcVar9 = *(undefined4 *)pcVar8;
-      pcVar8 = pcVar8 + 4;
-      pcVar9 = pcVar9 + 4;
-    }
-    for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-      *pcVar9 = *pcVar8;
-      pcVar8 = pcVar8 + 1;
-      pcVar9 = pcVar9 + 1;
-    }
+    memmove(pcVar9, pcVar8, uVar5); /* compiler REP MOVS byte copy */
+    uVar6 = 0;
   }
   if ((DAT_007ed79c != 0) && (g_int_00854EB4 != (int *)0x0)) {
     Library::MSVCRT::FUN_00733f70(g_int_00854EB4,"\n%d ========================================  %02d.%02d.%d  %d:%02d:%02d.%03d\n");
@@ -146,16 +138,8 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
       puVar7 = (uint *)((int)&uStack_743 + iVar2);
       puVar11 = (uint *)(pcVar9 + -uVar5);
       puVar12 = &uStack_743;
-      for (uVar6 = uVar5 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-        *puVar12 = *puVar11;
-        puVar11 = puVar11 + 1;
-        puVar12 = puVar12 + 1;
-      }
-      for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-        *(char *)puVar12 = (char)*puVar11;
-        puVar11 = (uint *)((int)puVar11 + 1);
-        puVar12 = (uint *)((int)puVar12 + 1);
-      }
+      memmove(puVar12, puVar11, uVar5); /* compiler REP MOVS byte copy */
+      uVar6 = 0;
     }
   }
   *(undefined1 *)puVar7 = 10;
@@ -187,16 +171,8 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
       uVar5 = ~uVar5;
       pcVar8 = pcVar8 + -uVar5;
       pcVar13 = pcVar9;
-      for (uVar6 = uVar5 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-        *(undefined4 *)pcVar13 = *(undefined4 *)pcVar8;
-        pcVar8 = pcVar8 + 4;
-        pcVar13 = pcVar13 + 4;
-      }
-      for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-        *pcVar13 = *pcVar8;
-        pcVar8 = pcVar8 + 1;
-        pcVar13 = pcVar13 + 1;
-      }
+      memmove(pcVar13, pcVar8, uVar5); /* compiler REP MOVS byte copy */
+      uVar5 = 0;
     }
     else {
       uVar6 = 0xffffffff;
@@ -212,16 +188,8 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
       uVar6 = ~uVar6;
       pcVar8 = pcVar13 + -uVar6;
       pcVar13 = pcVar9;
-      for (uVar5 = uVar6 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
-        *(undefined4 *)pcVar13 = *(undefined4 *)pcVar8;
-        pcVar8 = pcVar8 + 4;
-        pcVar13 = pcVar13 + 4;
-      }
-      for (uVar6 = uVar6 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
-        *pcVar13 = *pcVar8;
-        pcVar8 = pcVar8 + 1;
-        pcVar13 = pcVar13 + 1;
-      }
+      memmove(pcVar13, pcVar8, uVar6); /* compiler REP MOVS byte copy */
+      uVar6 = 0;
       Library::MSVCRT::_strncpy(pcVar9,&DAT_007c7274,3);
       iVar2 = 0x40;
     }
@@ -283,16 +251,8 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
       uVar5 = ~uVar5;
       pcVar8 = pcVar13 + -uVar5;
       pcVar13 = pcVar9;
-      for (uVar6 = uVar5 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-        *(undefined4 *)pcVar13 = *(undefined4 *)pcVar8;
-        pcVar8 = pcVar8 + 4;
-        pcVar13 = pcVar13 + 4;
-      }
-      for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-        *pcVar13 = *pcVar8;
-        pcVar8 = pcVar8 + 1;
-        pcVar13 = pcVar13 + 1;
-      }
+      memmove(pcVar13, pcVar8, uVar5); /* compiler REP MOVS byte copy */
+      uVar5 = 0;
     }
     else {
       uVar6 = 0xffffffff;
@@ -308,16 +268,8 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
       uVar6 = ~uVar6;
       pcVar8 = pcVar13 + -uVar6;
       pcVar13 = pcVar9;
-      for (uVar5 = uVar6 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
-        *(undefined4 *)pcVar13 = *(undefined4 *)pcVar8;
-        pcVar8 = pcVar8 + 4;
-        pcVar13 = pcVar13 + 4;
-      }
-      for (uVar6 = uVar6 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
-        *pcVar13 = *pcVar8;
-        pcVar8 = pcVar8 + 1;
-        pcVar13 = pcVar13 + 1;
-      }
+      memmove(pcVar13, pcVar8, uVar6); /* compiler REP MOVS byte copy */
+      uVar6 = 0;
       Library::MSVCRT::_strncpy(pcVar9,&DAT_007c7274,3);
       iVar2 = 0x36;
     }
@@ -351,16 +303,8 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
     uVar5 = ~uVar5;
     pcVar8 = pcVar13 + -uVar5;
     pcVar13 = pcVar9;
-    for (uVar6 = uVar5 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-      *(undefined4 *)pcVar13 = *(undefined4 *)pcVar8;
-      pcVar8 = pcVar8 + 4;
-      pcVar13 = pcVar13 + 4;
-    }
-    for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-      *pcVar13 = *pcVar8;
-      pcVar8 = pcVar8 + 1;
-      pcVar13 = pcVar13 + 1;
-    }
+    memmove(pcVar13, pcVar8, uVar5); /* compiler REP MOVS byte copy */
+    uVar6 = 0;
     uVar5 = 0xffffffff;
     pcVar8 = local_34c;
     do {
@@ -377,13 +321,7 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
       *pcVar9 = '\n';
       pcVar8 = "(Press Retry to debug the application)";
       pcVar9 = pcVar9 + 1;
-      for (iVar2 = 9; iVar2 != 0; iVar2 = iVar2 + -1) {
-        *(undefined4 *)pcVar9 = *(undefined4 *)pcVar8;
-        pcVar8 = pcVar8 + 4;
-        pcVar9 = pcVar9 + 4;
-      }
-      *(undefined2 *)pcVar9 = *(undefined2 *)pcVar8;
-      pcVar9[2] = pcVar8[2];
+      memmove(pcVar9, pcVar8, 0x27); /* compiler REP MOVS byte copy */
       if (isFatal == 0) {
         debugMessage[0] = "Debug Message"[0];
         debugMessage[1] = "Debug Message"[1];
@@ -437,16 +375,8 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
         } while (cVar1 != '\0');
         pcVar8 = pcVar9 + -uVar5;
         pcVar9 = pcVar13 + -1;
-        for (uVar6 = uVar5 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-          *(undefined4 *)pcVar9 = *(undefined4 *)pcVar8;
-          pcVar8 = pcVar8 + 4;
-          pcVar9 = pcVar9 + 4;
-        }
-        for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-          *pcVar9 = *pcVar8;
-          pcVar8 = pcVar8 + 1;
-          pcVar9 = pcVar9 + 1;
-        }
+        memmove(pcVar9, pcVar8, uVar5); /* compiler REP MOVS byte copy */
+        pcVar9 = (char *)((byte *)pcVar9 + uVar5);
       }
       if ((g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8 !=
            (AnonShape_GLOBAL_0080759C_9638EF10 *)0x0) &&

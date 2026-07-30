@@ -26,7 +26,6 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
   undefined3 extraout_var;
   int iVar8;
   uint uVar9;
-  uint uVar10;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   int *unaff_EDI;
   char *pcVar11;
@@ -238,16 +237,7 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
     this_01 = this_02->field_1A5B;
     pcVar11 = pcVar12 + -uVar9;
     pcVar12 = local_4a4;
-    for (uVar10 = uVar9 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
-      *(undefined4 *)pcVar12 = *(undefined4 *)pcVar11;
-      pcVar11 = pcVar11 + 4;
-      pcVar12 = pcVar12 + 4;
-    }
-    for (uVar9 = uVar9 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {
-      *pcVar12 = *pcVar11;
-      pcVar11 = pcVar11 + 1;
-      pcVar12 = pcVar12 + 1;
-    }
+    memmove(pcVar12, pcVar11, uVar9); /* compiler REP MOVS byte copy */
     pDVar3 = this_01->field_0686;
     if ((int)pDVar3->elementSize < 1) {
       pcVar11 = (char *)0x0;

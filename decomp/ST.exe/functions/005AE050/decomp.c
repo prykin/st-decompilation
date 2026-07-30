@@ -85,16 +85,8 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
     uVar14 = ~uVar14;
     pcVar10 = pcVar18 + -uVar14;
     pcVar18 = local_18;
-    for (uVar15 = uVar14 >> 2; uVar15 != 0; uVar15 = uVar15 - 1) {
-      *(undefined4 *)pcVar18 = *(undefined4 *)pcVar10;
-      pcVar10 = pcVar10 + 4;
-      pcVar18 = pcVar18 + 4;
-    }
-    for (uVar14 = uVar14 & 3; uVar14 != 0; uVar14 = uVar14 - 1) {
-      *pcVar18 = *pcVar10;
-      pcVar10 = pcVar10 + 1;
-      pcVar18 = pcVar18 + 1;
-    }
+    memmove(pcVar18, pcVar10, uVar14); /* compiler REP MOVS byte copy */
+    uVar15 = 0;
     CVar2 = local_10->field_1A5F;
     if ((8 < CVar2) && ((CVar2 < CASE_D || ((CVar2 == CASE_13 && (DAT_00803400 == '\f')))))) {
       uVar14 = 0xffffffff;
@@ -120,16 +112,8 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
       } while (cVar1 != '\0');
       pcVar10 = pcVar18 + -uVar14;
       pcVar18 = pcVar20 + -1;
-      for (uVar15 = uVar14 >> 2; uVar15 != 0; uVar15 = uVar15 - 1) {
-        *(undefined4 *)pcVar18 = *(undefined4 *)pcVar10;
-        pcVar10 = pcVar10 + 4;
-        pcVar18 = pcVar18 + 4;
-      }
-      for (uVar14 = uVar14 & 3; uVar14 != 0; uVar14 = uVar14 - 1) {
-        *pcVar18 = *pcVar10;
-        pcVar10 = pcVar10 + 1;
-        pcVar18 = pcVar18 + 1;
-      }
+      memmove(pcVar18, pcVar10, uVar14); /* compiler REP MOVS byte copy */
+      uVar15 = 0;
     }
     iVar7 = param_1 - local_10->field_1C9F->elementSize;
     if (iVar7 < (int)local_10->field_1C97->elementSize) {
@@ -160,16 +144,8 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
     } while (cVar1 != '\0');
     pcVar10 = pcVar18 + -uVar14;
     pcVar18 = pcVar20 + -1;
-    for (uVar15 = uVar14 >> 2; uVar15 != 0; uVar15 = uVar15 - 1) {
-      *(undefined4 *)pcVar18 = *(undefined4 *)pcVar10;
-      pcVar10 = pcVar10 + 4;
-      pcVar18 = pcVar18 + 4;
-    }
-    for (uVar14 = uVar14 & 3; uVar14 != 0; uVar14 = uVar14 - 1) {
-      *pcVar18 = *pcVar10;
-      pcVar10 = pcVar10 + 1;
-      pcVar18 = pcVar18 + 1;
-    }
+    memmove(pcVar18, pcVar10, uVar14); /* compiler REP MOVS byte copy */
+    uVar15 = 0;
     local_bc.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_bc;
     iVar7 = Library::MSVCRT::__setjmp3(local_bc.jumpBuffer,0);
@@ -243,16 +219,7 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
     } while (cVar1 != '\0');
     pcVar18 = pcVar20 + -uVar14;
     pcVar20 = pcVar19 + -1;
-    for (uVar15 = uVar14 >> 2; uVar15 != 0; uVar15 = uVar15 - 1) {
-      *(undefined4 *)pcVar20 = *(undefined4 *)pcVar18;
-      pcVar18 = pcVar18 + 4;
-      pcVar20 = pcVar20 + 4;
-    }
-    for (uVar14 = uVar14 & 3; uVar14 != 0; uVar14 = uVar14 - 1) {
-      *pcVar20 = *pcVar18;
-      pcVar18 = pcVar18 + 1;
-      pcVar20 = pcVar20 + 1;
-    }
+    memmove(pcVar20, pcVar18, uVar14); /* compiler REP MOVS byte copy */
     FUN_006b8280(local_18,local_18);
     uVar14 = 0xffffffff;
     pcVar18 = PTR_s_ADDON_0079c060;

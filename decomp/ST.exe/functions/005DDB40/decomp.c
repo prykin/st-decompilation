@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 __fastcall FUN_005ddb40(int param_1)
 
@@ -60,16 +62,8 @@ undefined4 __fastcall FUN_005ddb40(int param_1)
       uVar5 = ~uVar5;
       pcVar8 = pcVar9 + -uVar5;
       pcVar9 = local_c;
-      for (uVar6 = uVar5 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-        *(undefined4 *)pcVar9 = *(undefined4 *)pcVar8;
-        pcVar8 = pcVar8 + 4;
-        pcVar9 = pcVar9 + 4;
-      }
-      for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-        *pcVar9 = *pcVar8;
-        pcVar8 = pcVar8 + 1;
-        pcVar9 = pcVar9 + 1;
-      }
+      memmove(pcVar9, pcVar8, uVar5); /* compiler REP MOVS byte copy */
+      uVar6 = 0;
       if (iVar4 < *(int *)(iVar7 + 8)) {
         pcVar8 = *(char **)(*(int *)(iVar7 + 0x14) + iVar4 * 4);
       }

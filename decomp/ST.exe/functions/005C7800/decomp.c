@@ -15,7 +15,6 @@ void FUN_005c7800(void)
   cMf32 *pcVar7;
   ushort *puVar8;
   SettMapTy *this;
-  uint uVar9;
   int iVar10;
   byte *puVar11;
   byte *pbVar12;
@@ -155,16 +154,7 @@ LAB_005c7ae0:
   uVar6 = ~uVar6;
   pcVar14 = pcVar15 + -uVar6;
   pcVar15 = (char *)&DAT_00853ee8;
-  for (uVar9 = uVar6 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
-    *(undefined4 *)pcVar15 = *(undefined4 *)pcVar14;
-    pcVar14 = pcVar14 + 4;
-    pcVar15 = pcVar15 + 4;
-  }
-  for (uVar6 = uVar6 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
-    *pcVar15 = *pcVar14;
-    pcVar14 = pcVar14 + 1;
-    pcVar15 = pcVar15 + 1;
-  }
+  memmove(pcVar15, pcVar14, uVar6); /* compiler REP MOVS byte copy */
   _DAT_0085400e = thunk_FUN_005c2760;
   wsprintfA((LPSTR)&DAT_0080f33a,"%s%s%s");
   PTR_00853ff8 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,(byte *)&DAT_0080f33a,0,0,0);

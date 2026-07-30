@@ -22,6 +22,8 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
@@ -46,6 +48,10 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
     private static final String CLASS_POINTEES = "/SubmarineTitans/Recovered/ClassPointees/";
     private static final String VIEW_MARKER = "[ST_VIEW_ONLY]";
     private static final String ANCHOR_MARKER = "[ST_SEMANTIC_ANCHOR]";
+    private static final Pattern AUDIT_POINTER_ARGUMENT = Pattern.compile(
+        "^p([0-9]+)=pointer:(/\\S*(?:AnonShape|AnonPointee|AnonReceiver)\\S*)\\b");
+    private static final Pattern ANON_ADDRESS =
+        Pattern.compile("(?i)Anon(?:Shape|Receiver)_([0-9a-f]{8})");
     private Map<String, Integer> receiverOwnerCounts;
 
     @Override
@@ -122,6 +128,10 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
         List<AnonAuditRow> anonymousAudit = anonymousAudit(namedMatches);
         List<ContextualPromotion> contextualPromotions =
             contextualRecordPromotions(redirects);
+        contextualPromotions.addAll(flowLinkedRecordPromotions(directory,
+            redirects, contextualPromotions));
+        contextualPromotions.sort(
+            Comparator.comparing(row -> row.sourceType));
         for (ContextualPromotion promotion : contextualPromotions)
             redirects.putIfAbsent(promotion.sourceType, promotion.targetType);
         List<Row> rows = variableRows(redirects);
@@ -496,6 +506,202 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
         return rows;
     }
 
+    /**
+     * Two anonymous pointer shapes are the same runtime record when an exact
+     * direct call passes one as the other's parameter, their complete layouts
+     * match, and every function-typed use belongs to one owner context. This is
+     * dataflow identity, not a geometry-only merge. Globals, containing fields,
+     * manual types, cross-owner families, and partial layouts remain excluded.
+     */
+    private List<ContextualPromotion> flowLinkedRecordPromotions(Path directory,
+            Map<String, String> redirects,
+            List<ContextualPromotion> existingPromotions) throws Exception {
+        Path audit = directory.resolve("prototype_callsite_audit.tsv");
+        if (!Files.isRegularFile(audit)) return List.of();
+        Map<String, Structure> structures = new TreeMap<>();
+        Iterator<Structure> iterator =
+            currentProgram.getDataTypeManager().getAllStructures();
+        while (iterator.hasNext()) {
+            Structure structure = iterator.next();
+            if (scriptOwnedPointerShape(structure))
+                structures.put(structure.getPathName(), structure);
+        }
+        if (structures.size() < 2) return List.of();
+
+        Map<String, Set<String>> graph = new TreeMap<>();
+        for (Map<String, String> row : readTsv(audit)) {
+            if (!safeText(row.get("status")).startsWith("exact_address_match"))
+                continue;
+            Address address = currentProgram.getAddressFactory()
+                .getAddress(safeText(row.get("resolved_address")));
+            Function target = address == null ? null :
+                currentProgram.getFunctionManager().getFunctionAt(address);
+            if (target == null) continue;
+            for (String argument :
+                    safeText(row.get("stack_arguments")).split("\\s*\\|\\s*")) {
+                Matcher matcher = AUDIT_POINTER_ARGUMENT.matcher(argument);
+                if (!matcher.find()) continue;
+                int ordinal = Integer.parseInt(matcher.group(1));
+                String source = matcher.group(2);
+                Parameter parameter = null;
+                for (Parameter candidate : target.getParameters())
+                    if (!candidate.isAutoParameter() &&
+                            candidate.getOrdinal() == ordinal) {
+                        parameter = candidate;
+                        break;
+                    }
+                if (parameter == null || !structures.containsKey(source))
+                    continue;
+                DataType targetType = parameter.getDataType();
+                if (!(targetType instanceof Pointer pointer) ||
+                        pointer.getDataType() == null)
+                    continue;
+                String destination = pointer.getDataType().getPathName();
+                if (source.equals(destination) ||
+                        !structures.containsKey(destination))
+                    continue;
+                if (!fingerprint(structures.get(source)).equals(
+                        fingerprint(structures.get(destination))))
+                    continue;
+                graph.computeIfAbsent(source, ignored -> new TreeSet<>())
+                    .add(destination);
+                graph.computeIfAbsent(destination, ignored -> new TreeSet<>())
+                    .add(source);
+            }
+        }
+        if (graph.isEmpty()) return List.of();
+
+        Map<String, Usage> usage = anonymousUsage();
+        Map<String, Set<String>> owners = typeOwnerContexts();
+        Set<String> already = new TreeSet<>();
+        for (ContextualPromotion promotion : existingPromotions)
+            already.add(promotion.sourceType);
+        List<ContextualPromotion> result = new ArrayList<>();
+        Set<String> visited = new TreeSet<>();
+        for (String start : graph.keySet()) {
+            if (!visited.add(start)) continue;
+            Set<String> component = new TreeSet<>();
+            List<String> pending = new ArrayList<>();
+            pending.add(start);
+            while (!pending.isEmpty()) {
+                String value = pending.remove(pending.size() - 1);
+                component.add(value);
+                for (String next : graph.getOrDefault(value, Set.of()))
+                    if (visited.add(next)) pending.add(next);
+            }
+            if (component.size() < 2) continue;
+            Set<String> familyOwners = new TreeSet<>();
+            boolean safe = true;
+            String fingerprint = null;
+            int functionTargets = 0;
+            for (String source : component) {
+                Structure structure = structures.get(source);
+                Usage targets = usage.getOrDefault(source, new Usage());
+                Set<String> typeOwners =
+                    owners.getOrDefault(source, Set.of());
+                String currentFingerprint = fingerprint(structure);
+                if (redirects.containsKey(source) || already.contains(source) ||
+                        targets.globals != 0 || targets.fields != 0 ||
+                        targets.functions < 1 || typeOwners.size() != 1 ||
+                        concreteFields(structure) < 2 ||
+                        (fingerprint != null &&
+                            !fingerprint.equals(currentFingerprint))) {
+                    safe = false;
+                    break;
+                }
+                fingerprint = currentFingerprint;
+                familyOwners.addAll(typeOwners);
+                functionTargets += targets.functions;
+            }
+            if (!safe || familyOwners.size() != 1) continue;
+            String owner = familyOwners.iterator().next();
+            String anchor = component.stream().map(this::anonymousAddress)
+                .filter(value -> !value.isBlank()).min(String::compareTo)
+                .orElse(fingerprint.substring(0, 8).toUpperCase(Locale.ROOT));
+            String target = POINTER_SHAPES + "RecoveredRecord_" +
+                sanitizeLeaf(owner) + "_" + anchor;
+            Structure prototype = structures.get(component.iterator().next());
+            DataType occupied =
+                currentProgram.getDataTypeManager().getDataType(target);
+            if (occupied != null && (!(occupied instanceof Structure existing) ||
+                    !existing.isEquivalent(prototype)))
+                continue;
+            for (String source : component) {
+                Structure structure = structures.get(source);
+                result.add(new ContextualPromotion(source, target, owner,
+                    anchor, structure.getLength(), concreteFields(structure),
+                    usage.getOrDefault(source, new Usage()).functions,
+                    "exact complete layout plus address-authoritative direct-call " +
+                        "pointer flow links " + component.size() +
+                        " script-owned shapes; every function use has owner " +
+                        owner + "; no global or containing-field aliases"));
+                redirects.put(source, target);
+            }
+        }
+        return result;
+    }
+
+    private boolean scriptOwnedPointerShape(Structure structure) {
+        String description = structure.getDescription();
+        return structure.getPathName().startsWith(POINTER_SHAPES) &&
+            structure.getName().startsWith("AnonShape_") &&
+            description != null &&
+            description.contains("[STPointerShapeApplier]") &&
+            description.contains("generated_layout_sha256=");
+    }
+
+    private Map<String, Set<String>> typeOwnerContexts() {
+        Map<String, Set<String>> result = new TreeMap<>();
+        FunctionIterator functions =
+            currentProgram.getFunctionManager().getFunctions(true);
+        while (functions.hasNext()) {
+            Function function = functions.next();
+            String owner = functionOwner(function);
+            if (owner.isBlank()) continue;
+            addTypeOwner(result, function.getReturn().getDataType(), owner);
+            for (Parameter parameter : function.getParameters())
+                addTypeOwner(result, parameter.getDataType(), owner);
+            for (Variable local : function.getLocalVariables())
+                addTypeOwner(result, local.getDataType(), owner);
+        }
+        return result;
+    }
+
+    private void addTypeOwner(Map<String, Set<String>> result, DataType type,
+            String owner) {
+        if (!(type instanceof Pointer pointer) ||
+                pointer.getDataType() == null) return;
+        String path = pointer.getDataType().getPathName();
+        if (!path.startsWith(POINTER_SHAPES)) return;
+        result.computeIfAbsent(path, ignored -> new TreeSet<>()).add(owner);
+    }
+
+    private String anonymousAddress(String path) {
+        Matcher matcher = ANON_ADDRESS.matcher(path);
+        return matcher.find() ? matcher.group(1).toUpperCase(Locale.ROOT) : "";
+    }
+
+    private List<Map<String, String>> readTsv(Path path) throws Exception {
+        List<String> lines = Files.readAllLines(path, StandardCharsets.UTF_8);
+        if (lines.isEmpty()) return List.of();
+        String[] header = lines.get(0).split("\\t", -1);
+        List<Map<String, String>> result = new ArrayList<>();
+        for (int line = 1; line < lines.size(); line++) {
+            if (lines.get(line).isBlank()) continue;
+            String[] values = lines.get(line).split("\\t", -1);
+            if (values.length != header.length) continue;
+            Map<String, String> row = new LinkedHashMap<>();
+            for (int column = 0; column < header.length; column++)
+                row.put(header[column], values[column]);
+            result.add(row);
+        }
+        return result;
+    }
+
+    private String safeText(String value) {
+        return value == null ? "" : value;
+    }
+
     private void collectFunctionType(Map<String, List<Function>> result,
             Function function, DataType type) {
         if (!(type instanceof Pointer pointer) || pointer.getDataType() == null ||
@@ -813,7 +1019,10 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
                 "generated HiddenThis member uniquely owns a multi-function receiver namespace. " +
                 "Generated field_XXXX names are not semantic evidence. Exact named layouts are " +
                 "automatic only for evidence-qualified semantic anchors; [ST_VIEW_ONLY] types " +
-                "are never anchors.\n");
+                "are never anchors. Anonymous pointer shapes may also consolidate when exact " +
+                "direct-call dataflow links the same pointer across their boundaries, every " +
+                "complete layout agrees, all uses have one owner, and no global/field aliases " +
+                "exist.\n");
         }
     }
     private String typeSpec(DataType type) {

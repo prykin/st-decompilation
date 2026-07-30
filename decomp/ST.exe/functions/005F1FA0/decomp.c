@@ -57,16 +57,9 @@ byte * __thiscall STManBasisC::sub_005F1FA0(STManBasisC *this,int *param_1)
     *puVar6 = local_8;
     pbVar8 = local_10;
     pbVar10 = pbVar3 + 0x2c;
-    for (uVar5 = local_8 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
-      *(undefined4 *)pbVar10 = *(undefined4 *)pbVar8;
-      pbVar8 = pbVar8 + 4;
-      pbVar10 = pbVar10 + 4;
-    }
-    for (uVar5 = local_8 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-      *pbVar10 = *pbVar8;
-      pbVar8 = pbVar8 + 1;
-      pbVar10 = pbVar10 + 1;
-    }
+    memmove(pbVar10, pbVar8, local_8); /* compiler REP MOVS byte copy */
+    uVar5 = 0;
+    uVar5 = 0;
     FreeAndNull(&local_10);
     puVar6 = (uint *)(pbVar3 + 0x2c + local_8);
   }

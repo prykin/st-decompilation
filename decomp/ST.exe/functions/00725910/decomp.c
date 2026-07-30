@@ -43,16 +43,8 @@ FUN_00725910(HANDLE hFindFile,char *text,undefined4 param_3,undefined *param_4,u
     uVar5 = ~uVar5;
     pcVar7 = pcVar11 + -uVar5;
     pcVar11 = local_108;
-    for (uVar6 = uVar5 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-      *(undefined4 *)pcVar11 = *(undefined4 *)pcVar7;
-      pcVar7 = pcVar7 + 4;
-      pcVar11 = pcVar11 + 4;
-    }
-    for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-      *pcVar11 = *pcVar7;
-      pcVar7 = pcVar7 + 1;
-      pcVar11 = pcVar11 + 1;
-    }
+    memmove(pcVar11, pcVar7, uVar5); /* compiler REP MOVS byte copy */
+    uVar6 = 0;
     FUN_006b8280(local_108,local_108);
     uVar5 = 0xffffffff;
     pcVar7 = text;
@@ -77,16 +69,8 @@ FUN_00725910(HANDLE hFindFile,char *text,undefined4 param_3,undefined *param_4,u
     } while (cVar1 != '\0');
     pcVar7 = pcVar11 + -uVar5;
     pcVar11 = pcVar9 + -1;
-    for (uVar6 = uVar5 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-      *(undefined4 *)pcVar11 = *(undefined4 *)pcVar7;
-      pcVar7 = pcVar7 + 4;
-      pcVar11 = pcVar11 + 4;
-    }
-    for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-      *pcVar11 = *pcVar7;
-      pcVar7 = pcVar7 + 1;
-      pcVar11 = pcVar11 + 1;
-    }
+    memmove(pcVar11, pcVar7, uVar5); /* compiler REP MOVS byte copy */
+    uVar6 = 0;
     pvVar3 = FindFirstFileA(local_108,&local_248);
     if (pvVar3 != (HANDLE)0xffffffff) {
       do {
@@ -104,16 +88,8 @@ FUN_00725910(HANDLE hFindFile,char *text,undefined4 param_3,undefined *param_4,u
           uVar5 = ~uVar5;
           pcVar7 = pcVar11 + -uVar5;
           pcVar11 = local_108;
-          for (uVar6 = uVar5 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-            *(undefined4 *)pcVar11 = *(undefined4 *)pcVar7;
-            pcVar7 = pcVar7 + 4;
-            pcVar11 = pcVar11 + 4;
-          }
-          for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-            *pcVar11 = *pcVar7;
-            pcVar7 = pcVar7 + 1;
-            pcVar11 = pcVar11 + 1;
-          }
+          memmove(pcVar11, pcVar7, uVar5); /* compiler REP MOVS byte copy */
+          uVar6 = 0;
           FUN_006b8280(local_108,local_108);
           uVar5 = 0xffffffff;
           pCVar8 = local_248.cFileName;
@@ -138,16 +114,8 @@ FUN_00725910(HANDLE hFindFile,char *text,undefined4 param_3,undefined *param_4,u
           } while (cVar1 != '\0');
           pCVar8 = pCVar10 + -uVar5;
           pcVar7 = pcVar11 + -1;
-          for (uVar6 = uVar5 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-            *(undefined4 *)pcVar7 = *(undefined4 *)pCVar8;
-            pCVar8 = pCVar8 + 4;
-            pcVar7 = pcVar7 + 4;
-          }
-          for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-            *pcVar7 = *pCVar8;
-            pCVar8 = pCVar8 + 1;
-            pcVar7 = pcVar7 + 1;
-          }
+          memmove(pcVar7, pCVar8, uVar5); /* compiler REP MOVS byte copy */
+          uVar6 = 0;
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           iVar2 = (*(code *)param_4)(local_108,&local_248,0,param_5);
           if (iVar2 != 0) {
@@ -173,16 +141,8 @@ FUN_00725910(HANDLE hFindFile,char *text,undefined4 param_3,undefined *param_4,u
       uVar5 = ~uVar5;
       pcVar7 = pcVar11 + -uVar5;
       pcVar11 = local_108;
-      for (uVar6 = uVar5 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-        *(undefined4 *)pcVar11 = *(undefined4 *)pcVar7;
-        pcVar7 = pcVar7 + 4;
-        pcVar11 = pcVar11 + 4;
-      }
-      for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-        *pcVar11 = *pcVar7;
-        pcVar7 = pcVar7 + 1;
-        pcVar11 = pcVar11 + 1;
-      }
+      memmove(pcVar11, pcVar7, uVar5); /* compiler REP MOVS byte copy */
+      uVar6 = 0;
       FUN_006b8280(local_108,local_108);
       uVar5 = 0xffffffff;
       pcVar7 = &DAT_007cc8bc;
@@ -207,16 +167,8 @@ FUN_00725910(HANDLE hFindFile,char *text,undefined4 param_3,undefined *param_4,u
       } while (cVar1 != '\0');
       pcVar7 = pcVar11 + -uVar5;
       pcVar11 = pcVar9 + -1;
-      for (uVar6 = uVar5 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-        *(undefined4 *)pcVar11 = *(undefined4 *)pcVar7;
-        pcVar7 = pcVar7 + 4;
-        pcVar11 = pcVar11 + 4;
-      }
-      for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-        *pcVar11 = *pcVar7;
-        pcVar7 = pcVar7 + 1;
-        pcVar11 = pcVar11 + 1;
-      }
+      memmove(pcVar11, pcVar7, uVar5); /* compiler REP MOVS byte copy */
+      uVar6 = 0;
       pvVar3 = FindFirstFileA(local_108,&local_248);
       if (pvVar3 == (HANDLE)0xffffffff) {
         return -0x6f;
@@ -236,16 +188,7 @@ FUN_00725910(HANDLE hFindFile,char *text,undefined4 param_3,undefined *param_4,u
           uVar5 = ~uVar5;
           pcVar7 = pcVar11 + -uVar5;
           pcVar11 = local_108;
-          for (uVar6 = uVar5 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-            *(undefined4 *)pcVar11 = *(undefined4 *)pcVar7;
-            pcVar7 = pcVar7 + 4;
-            pcVar11 = pcVar11 + 4;
-          }
-          for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-            *pcVar11 = *pcVar7;
-            pcVar7 = pcVar7 + 1;
-            pcVar11 = pcVar11 + 1;
-          }
+          memmove(pcVar11, pcVar7, uVar5); /* compiler REP MOVS byte copy */
           FUN_006b8280(local_108,local_108);
           uVar5 = 0xffffffff;
           pCVar8 = local_248.cFileName;

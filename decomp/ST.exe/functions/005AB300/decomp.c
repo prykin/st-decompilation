@@ -122,16 +122,8 @@ ChooseMapTy::InitChooseMap
   uVar13 = ~uVar13;
   pcVar17 = pcVar19 + -uVar13;
   pcVar19 = pcVar16;
-  for (uVar15 = uVar13 >> 2; uVar15 != 0; uVar15 = uVar15 - 1) {
-    *(undefined4 *)pcVar19 = *(undefined4 *)pcVar17;
-    pcVar17 = pcVar17 + 4;
-    pcVar19 = pcVar19 + 4;
-  }
-  for (uVar13 = uVar13 & 3; uVar13 != 0; uVar13 = uVar13 - 1) {
-    *pcVar19 = *pcVar17;
-    pcVar17 = pcVar17 + 1;
-    pcVar19 = pcVar19 + 1;
-  }
+  memmove(pcVar19, pcVar17, uVar13); /* compiler REP MOVS byte copy */
+  uVar15 = 0;
   switch(this_02->field_1A5F) {
   case CASE_1:
   case CASE_2:
@@ -217,16 +209,8 @@ switchD_005ab3e3_caseD_9:
     } while (cVar22 != '\0');
     pcVar16 = pcVar17 + -uVar13;
     pcVar17 = pcVar19 + -1;
-    for (uVar15 = uVar13 >> 2; uVar15 != 0; uVar15 = uVar15 - 1) {
-      *(undefined4 *)pcVar17 = *(undefined4 *)pcVar16;
-      pcVar16 = pcVar16 + 4;
-      pcVar17 = pcVar17 + 4;
-    }
-    for (uVar13 = uVar13 & 3; uVar13 != 0; uVar13 = uVar13 - 1) {
-      *pcVar17 = *pcVar16;
-      pcVar16 = pcVar16 + 1;
-      pcVar17 = pcVar17 + 1;
-    }
+    memmove(pcVar17, pcVar16, uVar13); /* compiler REP MOVS byte copy */
+    uVar15 = 0;
     uVar13 = 0xffffffff;
     pcVar16 = (char *)&DAT_00807ddd;
     do {
@@ -250,16 +234,10 @@ switchD_005ab3e3_caseD_9:
     } while (cVar22 != '\0');
     pcVar16 = pcVar17 + -uVar13;
     pcVar17 = pcVar19 + -1;
-    for (uVar15 = uVar13 >> 2; uVar15 != 0; uVar15 = uVar15 - 1) {
-      *(undefined4 *)pcVar17 = *(undefined4 *)pcVar16;
-      pcVar16 = pcVar16 + 4;
-      pcVar17 = pcVar17 + 4;
-    }
-    for (uVar13 = uVar13 & 3; uVar13 != 0; uVar13 = uVar13 - 1) {
-      *pcVar17 = *pcVar16;
-      pcVar16 = pcVar16 + 1;
-      pcVar17 = pcVar17 + 1;
-    }
+    memmove(pcVar17, pcVar16, uVar13); /* compiler REP MOVS byte copy */
+    pcVar16 = (char *)((byte *)pcVar16 + uVar13);
+    uVar15 = 0;
+    uVar13 = 0;
     FUN_006b8280(&this_02->field_1CA3,&this_02->field_1CA3);
     break;
   case CASE_13:
@@ -312,16 +290,8 @@ LAB_005ab4e5:
   uVar13 = ~uVar13;
   pcVar17 = pcVar19 + -uVar13;
   pcVar19 = pcVar16;
-  for (uVar15 = uVar13 >> 2; uVar15 != 0; uVar15 = uVar15 - 1) {
-    *(undefined4 *)pcVar19 = *(undefined4 *)pcVar17;
-    pcVar17 = pcVar17 + 4;
-    pcVar19 = pcVar19 + 4;
-  }
-  for (uVar13 = uVar13 & 3; uVar13 != 0; uVar13 = uVar13 - 1) {
-    *pcVar19 = *pcVar17;
-    pcVar17 = pcVar17 + 1;
-    pcVar19 = pcVar19 + 1;
-  }
+  memmove(pcVar19, pcVar17, uVar13); /* compiler REP MOVS byte copy */
+  uVar15 = 0;
   FUN_006b78c0(pcVar16,pcVar16);
   pvVar6 = FindFirstChangeNotificationA(&this_02->field_1DA7,0,1);
   this_02->field_1C8F = pvVar6;

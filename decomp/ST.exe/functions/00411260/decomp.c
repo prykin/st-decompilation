@@ -12,12 +12,13 @@ int FUN_00411260(int param_1,int param_2,int param_3,int param_4,int param_5,uin
   short *psVar1;
   int uVar2;
   int iVar2;
-  uint uVar3;
-  bool bVar4;
-  uint uVar5;
-  int iVar6;
-  byte *pbVar7;
-  int iVar8;
+  uint uVar4;
+  bool bVar5;
+  uint uVar6;
+  int uVar3;
+  int iVar7;
+  byte *pbVar8;
+  int iVar9;
   int local_b8;
   int local_b0;
   uint local_ac;
@@ -103,27 +104,27 @@ int FUN_00411260(int param_1,int param_2,int param_3,int param_4,int param_5,uin
           local_24 = &stack0xffffff3c;
           local_1c = &stack0xffffff3c;
         }
-        pbVar7 = local_24;
-        memset(pbVar7, 0, uVar2); /* compiler bulk-zero initialization */
+        pbVar8 = local_24;
+        memset(pbVar8, 0, uVar2); /* compiler bulk-zero initialization */
         local_74 = 0;
-        iVar6 = DAT_007f4d2c;
-        uVar3 = local_3c;
+        iVar7 = DAT_007f4d2c;
+        uVar4 = local_3c;
         iVar2 = local_60;
         if (0 < uVar2) {
           do {
-            local_50 = (char)psVar1[uVar3 * 2] + param_1;
-            local_58 = *(char *)((int)psVar1 + uVar3 * 4 + 1) + param_2;
-            if ((((-1 < local_50) && (local_50 < iVar6)) && (-1 < local_58)) &&
+            local_50 = (char)psVar1[uVar4 * 2] + param_1;
+            local_58 = *(char *)((int)psVar1 + uVar4 * 4 + 1) + param_2;
+            if ((((-1 < local_50) && (local_50 < iVar7)) && (-1 < local_58)) &&
                ((local_58 < DAT_007f4d30 &&
-                (uVar5 = local_60 * local_38 + local_50 + iVar6 * local_58 ^ 7, iVar6 = DAT_007f4d2c
-                , (*(byte *)(DAT_007f4cfc + ((int)uVar5 >> 3)) >> (uVar5 & 7) & 1) != 0)))) {
+                (uVar6 = local_60 * local_38 + local_50 + iVar7 * local_58 ^ 7, iVar7 = DAT_007f4d2c
+                , (*(byte *)(DAT_007f4cfc + ((int)uVar6 >> 3)) >> (uVar6 & 7) & 1) != 0)))) {
               local_68 = local_68 + 1;
               local_24[local_74] = 1;
-              iVar6 = DAT_007f4d2c;
+              iVar7 = DAT_007f4d2c;
             }
-            uVar3 = uVar3 + 1;
-            if (uVar2 <= (int)uVar3) {
-              uVar3 = 0;
+            uVar4 = uVar4 + 1;
+            if (uVar2 <= (int)uVar4) {
+              uVar4 = 0;
             }
             local_74 = local_74 + 1;
             psVar1 = local_54;
@@ -133,30 +134,30 @@ int FUN_00411260(int param_1,int param_2,int param_3,int param_4,int param_5,uin
       if (local_68 < uVar2) {
         if (local_68 + local_28 < uVar2) {
           if (local_68 < 1) {
-            iVar6 = local_3c << 0x10;
+            iVar7 = local_3c << 0x10;
             if (0 < local_28) {
-              iVar8 = local_2c * 0x14;
+              iVar9 = local_2c * 0x14;
               local_b8 = local_28;
               local_2c = local_2c + local_28;
               uVar3 = local_3c;
               do {
                 local_50 = (char)local_54[uVar3 * 2] + param_1;
                 local_58 = *(char *)((int)local_54 + uVar3 * 4 + 1) + param_2;
-                *(int *)(iVar8 + DAT_007f4d3c) = local_50;
-                *(int *)(iVar8 + 4 + DAT_007f4d3c) = local_58;
-                *(int *)(iVar8 + 8 + DAT_007f4d3c) = local_60;
-                iVar8 = iVar8 + 0x14;
+                *(int *)(iVar9 + DAT_007f4d3c) = local_50;
+                *(int *)(iVar9 + 4 + DAT_007f4d3c) = local_58;
+                *(int *)(iVar9 + 8 + DAT_007f4d3c) = local_60;
+                iVar9 = iVar9 + 0x14;
                 if (((-1 < local_50) && (local_50 < DAT_007f4d2c)) &&
                    ((-1 < local_58 && (local_58 < DAT_007f4d30)))) {
-                  uVar3 = local_60 * local_38 + local_50 + DAT_007f4d2c * local_58 ^ 7;
-                  pbVar7 = (byte *)(DAT_007f4cfc + ((int)uVar3 >> 3));
-                  *pbVar7 = *pbVar7 | '\x01' << (uVar3 & 7);
+                  uVar4 = local_60 * local_38 + local_50 + DAT_007f4d2c * local_58 ^ 7;
+                  pbVar8 = (byte *)(DAT_007f4cfc + ((int)uVar4 >> 3));
+                  *pbVar8 = *pbVar8 | '\x01' << (uVar4 & 7);
                 }
-                iVar6 = iVar6 + (uVar2 * 0x10000) / local_28;
-                uVar3 = iVar6 >> 0x10;
-                if (uVar2 <= (int)uVar3) {
-                  iVar6 = iVar6 + uVar2 * -0x10000;
-                  uVar3 = iVar6 >> 0x10;
+                iVar7 = iVar7 + (uVar2 * 0x10000) / local_28;
+                uVar3 = iVar7 >> 0x10;
+                if (uVar2 <= uVar3) {
+                  iVar7 = iVar7 + uVar2 * -0x10000;
+                  uVar3 = iVar7 >> 0x10;
                 }
                 local_b8 = local_b8 + -1;
                 iVar2 = local_60;
@@ -167,7 +168,7 @@ int FUN_00411260(int param_1,int param_2,int param_3,int param_4,int param_5,uin
             FUN_0040f4d0((undefined4 *)local_24,uVar2,local_4c,1);
             iVar2 = local_60;
             if (0 < local_28) {
-              iVar6 = local_2c * 0x14;
+              iVar7 = local_2c * 0x14;
               local_b0 = local_28;
               local_2c = local_2c + local_28;
               psVar1 = local_54;
@@ -176,15 +177,15 @@ int FUN_00411260(int param_1,int param_2,int param_3,int param_4,int param_5,uin
                 iVar2 = (int)(iVar2 + local_3c) % uVar2;
                 local_50 = (char)psVar1[iVar2 * 2] + param_1;
                 local_58 = *(char *)((int)psVar1 + iVar2 * 4 + 1) + param_2;
-                *(int *)(iVar6 + DAT_007f4d3c) = local_50;
-                *(int *)(iVar6 + 4 + DAT_007f4d3c) = local_58;
-                *(int *)(iVar6 + 8 + DAT_007f4d3c) = local_60;
-                iVar6 = iVar6 + 0x14;
+                *(int *)(iVar7 + DAT_007f4d3c) = local_50;
+                *(int *)(iVar7 + 4 + DAT_007f4d3c) = local_58;
+                *(int *)(iVar7 + 8 + DAT_007f4d3c) = local_60;
+                iVar7 = iVar7 + 0x14;
                 if ((((-1 < local_50) && (local_50 < DAT_007f4d2c)) && (-1 < local_58)) &&
                    (local_58 < DAT_007f4d30)) {
-                  uVar3 = local_60 * local_38 + local_50 + DAT_007f4d2c * local_58 ^ 7;
-                  pbVar7 = (byte *)(DAT_007f4cfc + ((int)uVar3 >> 3));
-                  *pbVar7 = *pbVar7 | '\x01' << (uVar3 & 7);
+                  uVar4 = local_60 * local_38 + local_50 + DAT_007f4d2c * local_58 ^ 7;
+                  pbVar8 = (byte *)(DAT_007f4cfc + ((int)uVar4 >> 3));
+                  *pbVar8 = *pbVar8 | '\x01' << (uVar4 & 7);
                   psVar1 = local_54;
                 }
                 local_b0 = local_b0 + -1;
@@ -196,53 +197,53 @@ int FUN_00411260(int param_1,int param_2,int param_3,int param_4,int param_5,uin
         }
         else if (0 < uVar2) {
           local_a8 = local_2c * 0x14;
-          uVar3 = local_3c;
+          uVar4 = local_3c;
           local_ac = uVar2;
           do {
-            local_50 = (char)local_54[uVar3 * 2] + param_1;
-            local_58 = *(char *)((int)local_54 + uVar3 * 4 + 1) + param_2;
+            local_50 = (char)local_54[uVar4 * 2] + param_1;
+            local_58 = *(char *)((int)local_54 + uVar4 * 4 + 1) + param_2;
             if (((local_50 < 0) || (DAT_007f4d2c <= local_50)) ||
                ((local_58 < 0 || (DAT_007f4d30 <= local_58)))) {
-              bVar4 = false;
+              bVar5 = false;
             }
             else {
-              bVar4 = true;
+              bVar5 = true;
             }
-            if ((!bVar4) ||
-               (uVar5 = iVar2 * local_38 + local_50 + DAT_007f4d2c * local_58 ^ 7,
-               (*(byte *)(DAT_007f4cfc + ((int)uVar5 >> 3)) >> (uVar5 & 7) & 1) == 0)) {
+            if ((!bVar5) ||
+               (uVar6 = iVar2 * local_38 + local_50 + DAT_007f4d2c * local_58 ^ 7,
+               (*(byte *)(DAT_007f4cfc + ((int)uVar6 >> 3)) >> (uVar6 & 7) & 1) == 0)) {
               *(int *)(local_a8 + DAT_007f4d3c) = local_50;
               *(int *)(local_a8 + 4 + DAT_007f4d3c) = local_58;
               *(int *)(local_a8 + 8 + DAT_007f4d3c) = local_60;
               local_2c = local_2c + 1;
               local_a8 = local_a8 + 0x14;
               local_28 = local_28 + -1;
-              if (bVar4) {
-                uVar5 = local_60 * local_38 + local_50 + DAT_007f4d2c * local_58 ^ 7;
-                pbVar7 = (byte *)(DAT_007f4cfc + ((int)uVar5 >> 3));
-                *pbVar7 = *pbVar7 | '\x01' << (uVar5 & 7);
+              if (bVar5) {
+                uVar6 = local_60 * local_38 + local_50 + DAT_007f4d2c * local_58 ^ 7;
+                pbVar8 = (byte *)(DAT_007f4cfc + ((int)uVar6 >> 3));
+                *pbVar8 = *pbVar8 | '\x01' << (uVar6 & 7);
               }
             }
-            uVar3 = uVar3 + 1;
-            if (uVar2 <= (int)uVar3) {
-              uVar3 = 0;
+            uVar4 = uVar4 + 1;
+            if (uVar2 <= (int)uVar4) {
+              uVar4 = 0;
             }
             local_ac = local_ac - 1;
             iVar2 = local_60;
           } while (local_ac != 0);
         }
       }
-      iVar6 = 0;
+      iVar7 = 0;
       if (local_28 < 1) break;
-      uVar3 = local_64 << 5;
+      uVar4 = local_64 << 5;
       do {
         local_20 = local_20 + 1;
         if (8 < local_20) {
           local_20 = 0;
           local_60 = param_3;
           local_64 = local_64 + 1;
-          uVar3 = uVar3 + 0x20;
-          local_54 = (short *)Library::DKW::LIB::FUN_006acf50((int)local_54,uVar3);
+          uVar4 = uVar4 + 0x20;
+          local_54 = (short *)Library::DKW::LIB::FUN_006acf50((int)local_54,uVar4);
           uVar2 = FUN_00411cf0((char *)local_54,local_64);
           local_3c = (int)(uVar2 * param_6 + 0xb4) / 0x168;
           if (local_3c == uVar2) {
@@ -290,9 +291,9 @@ int FUN_00411260(int param_1,int param_2,int param_3,int param_4,int param_5,uin
     iVar2 = DAT_007f4d3c;
     if (0 < DAT_007f4d20) {
       do {
-        local_50 = *(int *)(iVar6 + iVar2);
-        local_58 = *(int *)(iVar6 + 4 + iVar2);
-        local_60 = *(int *)(iVar6 + 8 + iVar2);
+        local_50 = *(int *)(iVar7 + iVar2);
+        local_58 = *(int *)(iVar7 + 4 + iVar2);
+        local_60 = *(int *)(iVar7 + 8 + iVar2);
         if ((((local_50 < 0) || (DAT_007f4d2c <= local_50)) || (local_58 < 0)) ||
            ((DAT_007f4d30 <= local_58 ||
             (*(short *)(DAT_007f4cf0 +
@@ -303,16 +304,16 @@ int FUN_00411260(int param_1,int param_2,int param_3,int param_4,int param_5,uin
             iVar2 = -4;
             goto LAB_00411975;
           }
-          uVar3 = local_60 * local_38 + local_50 + DAT_007f4d2c * local_58 ^ 7;
-          pbVar7 = (byte *)(DAT_007f4cfc + ((int)uVar3 >> 3));
-          *pbVar7 = *pbVar7 | '\x01' << (uVar3 & 7);
-          *(int *)(iVar6 + DAT_007f4d3c) = local_50;
-          *(int *)(iVar6 + 4 + DAT_007f4d3c) = local_58;
-          *(int *)(iVar6 + 8 + DAT_007f4d3c) = local_60;
+          uVar4 = local_60 * local_38 + local_50 + DAT_007f4d2c * local_58 ^ 7;
+          pbVar8 = (byte *)(DAT_007f4cfc + ((int)uVar4 >> 3));
+          *pbVar8 = *pbVar8 | '\x01' << (uVar4 & 7);
+          *(int *)(iVar7 + DAT_007f4d3c) = local_50;
+          *(int *)(iVar7 + 4 + DAT_007f4d3c) = local_58;
+          *(int *)(iVar7 + 8 + DAT_007f4d3c) = local_60;
           iVar2 = DAT_007f4d3c;
         }
         local_2c = local_2c + 1;
-        iVar6 = iVar6 + 0x14;
+        iVar7 = iVar7 + 0x14;
       } while (local_2c < DAT_007f4d20);
     }
     FUN_0040eb90();

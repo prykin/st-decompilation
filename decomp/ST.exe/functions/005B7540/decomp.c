@@ -248,26 +248,15 @@ LAB_005b7655:
           local_14 = 0;
           puVar8 = (undefined4 *)&this_00->field_0x1a60;
           puVar14 = &this_00->field_1CD0;
-          for (iVar6 = 9; iVar6 != 0; iVar6 = iVar6 + -1) {
-            *puVar14 = *puVar8;
-            puVar8 = puVar8 + 1;
-            puVar14 = puVar14 + 1;
-          }
-          *(undefined2 *)puVar14 = *(undefined2 *)puVar8;
-          *(undefined1 *)((int)puVar14 + 2) = *(undefined1 *)((int)puVar8 + 2);
+          memmove(puVar14, puVar8, 0x27); /* compiler REP MOVS byte copy */
+          iVar6 = 0;
           if (this_00->field_009A != 0) {
             local_8 = (UINT *)&this_00->field_0xbc;
             local_10 = (UINT *)&this_00->field_0x1a87;
             do {
               pUVar11 = local_10;
               pUVar15 = local_8;
-              for (iVar6 = 9; iVar6 != 0; iVar6 = iVar6 + -1) {
-                *pUVar15 = *pUVar11;
-                pUVar11 = pUVar11 + 1;
-                pUVar15 = pUVar15 + 1;
-              }
-              *(short *)pUVar15 = (short)*pUVar11;
-              *(undefined1 *)((int)pUVar15 + 2) = *(undefined1 *)((int)pUVar11 + 2);
+              memmove(pUVar15, pUVar11, 0x27); /* compiler REP MOVS byte copy */
               if (*local_8 != 0) {
                 uVar21 = 0xffffffff;
                 uVar20 = 7;

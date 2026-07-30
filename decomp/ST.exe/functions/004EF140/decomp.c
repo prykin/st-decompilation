@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STMethodOwnerApplier] Structural method owner recovered as BldBoatPanelTy.
    Evidence: this_call_owners=[BldBoatPanelTy]; agreed_this_calls=1; incoming_this_accesses=19;
@@ -63,12 +65,7 @@ LAB_004ef270:
         if ((char)pGVar4[2] == 0) {
           pUVar5 = (UINT *)((int)pGVar4 + 0x12);
           pUVar7 = local_c + 2;
-          for (iVar3 = 7; iVar3 != 0; iVar3 = iVar3 + -1) {
-            *pUVar7 = *pUVar5;
-            pUVar5 = pUVar5 + 1;
-            pUVar7 = pUVar7 + 1;
-          }
-          *(short *)pUVar7 = (short)*pUVar5;
+          memmove(pUVar7, pUVar5, 0x1e); /* compiler REP MOVS byte copy */
         }
         else {
           local_c[2] = *(UINT *)((int)pGVar4 + 10);

@@ -240,16 +240,8 @@ LAB_005bf156:
         uVar12 = ~uVar12;
         pcVar8 = pcVar20 + -uVar12;
         pcVar20 = local_898;
-        for (uVar13 = uVar12 >> 2; uVar13 != 0; uVar13 = uVar13 - 1) {
-          *(undefined4 *)pcVar20 = *(undefined4 *)pcVar8;
-          pcVar8 = pcVar8 + 4;
-          pcVar20 = pcVar20 + 4;
-        }
-        for (uVar12 = uVar12 & 3; uVar12 != 0; uVar12 = uVar12 - 1) {
-          *pcVar20 = *pcVar8;
-          pcVar8 = pcVar8 + 1;
-          pcVar20 = pcVar20 + 1;
-        }
+        memmove(pcVar20, pcVar8, uVar12); /* compiler REP MOVS byte copy */
+        uVar13 = 0;
         memset(&DAT_0080f33a, 0, 0x834); /* compiler bulk-zero initialization */
         uVar12 = 0xffffffff;
         pcVar1 = this_00->field_0083;
@@ -298,16 +290,8 @@ LAB_005bf156:
           } while (cVar16 != '\0');
           pcVar8 = pcVar20 + -uVar12;
           pcVar20 = pcVar19 + -1;
-          for (uVar13 = uVar12 >> 2; uVar13 != 0; uVar13 = uVar13 - 1) {
-            *(undefined4 *)pcVar20 = *(undefined4 *)pcVar8;
-            pcVar8 = pcVar8 + 4;
-            pcVar20 = pcVar20 + 4;
-          }
-          for (uVar12 = uVar12 & 3; uVar12 != 0; uVar12 = uVar12 - 1) {
-            *pcVar20 = *pcVar8;
-            pcVar8 = pcVar8 + 1;
-            pcVar20 = pcVar20 + 1;
-          }
+          memmove(pcVar20, pcVar8, uVar12); /* compiler REP MOVS byte copy */
+          uVar13 = 0;
         }
       }
       ccFntTy::WrStr(this_00->field_0083,&DAT_0080f33a,-1,-1,0);
@@ -455,16 +439,8 @@ LAB_005bf156:
       uVar12 = ~uVar12;
       pcVar8 = pcVar20 + -uVar12;
       pcVar20 = (char *)&DAT_0080f33a;
-      for (uVar13 = uVar12 >> 2; uVar13 != 0; uVar13 = uVar13 - 1) {
-        *(undefined4 *)pcVar20 = *(undefined4 *)pcVar8;
-        pcVar8 = pcVar8 + 4;
-        pcVar20 = pcVar20 + 4;
-      }
-      for (uVar12 = uVar12 & 3; uVar12 != 0; uVar12 = uVar12 - 1) {
-        *pcVar20 = *pcVar8;
-        pcVar8 = pcVar8 + 1;
-        pcVar20 = pcVar20 + 1;
-      }
+      memmove(pcVar20, pcVar8, uVar12); /* compiler REP MOVS byte copy */
+      uVar13 = 0;
       for (puVar9 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar9 != (uint *)0x0;
           puVar9 = Library::MSVCRT::FUN_0072e560(puVar9,'\n')) {
         *(undefined1 *)puVar9 = 0x20;

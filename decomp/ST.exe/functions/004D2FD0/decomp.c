@@ -94,28 +94,11 @@ undefined4 __fastcall FUN_004d2fd0(int param_1)
   pbVar5[2] = *(byte *)((int)puVar1 + 2);
   pbVar5 = local_20;
   pbVar7 = local_8 + local_59;
-  for (uVar3 = local_5d >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {
-    *(undefined4 *)pbVar7 = *(undefined4 *)pbVar5;
-    pbVar5 = pbVar5 + 4;
-    pbVar7 = pbVar7 + 4;
-  }
-  for (local_5d = local_5d & 3; local_5d != 0; local_5d = local_5d - 1) {
-    *pbVar7 = *pbVar5;
-    pbVar5 = pbVar5 + 1;
-    pbVar7 = pbVar7 + 1;
-  }
+  memmove(pbVar7, pbVar5, local_5d); /* compiler REP MOVS byte copy */
+  uVar3 = 0;
   pbVar5 = local_10;
   pbVar7 = local_8 + local_51;
-  for (uVar3 = local_55 >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {
-    *(undefined4 *)pbVar7 = *(undefined4 *)pbVar5;
-    pbVar5 = pbVar5 + 4;
-    pbVar7 = pbVar7 + 4;
-  }
-  for (local_55 = local_55 & 3; local_55 != 0; local_55 = local_55 - 1) {
-    *pbVar7 = *pbVar5;
-    pbVar5 = pbVar5 + 1;
-    pbVar7 = pbVar7 + 1;
-  }
+  memmove(pbVar7, pbVar5, local_55); /* compiler REP MOVS byte copy */
   pbVar5 = local_14;
   pbVar7 = local_8 + local_49;
   memmove(pbVar7, pbVar5, local_4d); /* compiler REP MOVS byte copy */

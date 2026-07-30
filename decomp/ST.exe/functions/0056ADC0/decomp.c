@@ -258,16 +258,10 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
       } while (cVar2 != '\0');
       uVar17 = ~uVar17;
       pcVar14 = pcVar22 + -uVar17;
-      for (uVar18 = uVar17 >> 2; uVar18 != 0; uVar18 = uVar18 - 1) {
-        *(undefined4 *)pcVar12 = *(undefined4 *)pcVar14;
-        pcVar14 = pcVar14 + 4;
-        pcVar12 = pcVar12 + 4;
-      }
-      for (uVar17 = uVar17 & 3; uVar17 != 0; uVar17 = uVar17 - 1) {
-        *pcVar12 = *pcVar14;
-        pcVar14 = pcVar14 + 1;
-        pcVar12 = pcVar12 + 1;
-      }
+      memmove(pcVar12, pcVar14, uVar17); /* compiler REP MOVS byte copy */
+      pcVar12 = (char *)((byte *)pcVar12 + uVar17);
+      pcVar14 = (char *)((byte *)pcVar14 + uVar17);
+      uVar18 = 0;
     }
     else {
       Library::MSVCRT::_strncpy(pcVar12,pcVar14,0x3f);
@@ -344,16 +338,8 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
       pcVar12 = &pSVar19->field_7B06;
       pcVar14 = pcVar14 + -uVar17;
       pcVar22 = pcVar12;
-      for (uVar18 = uVar17 >> 2; uVar18 != 0; uVar18 = uVar18 - 1) {
-        *(undefined4 *)pcVar22 = *(undefined4 *)pcVar14;
-        pcVar14 = pcVar14 + 4;
-        pcVar22 = pcVar22 + 4;
-      }
-      for (uVar17 = uVar17 & 3; uVar17 != 0; uVar17 = uVar17 - 1) {
-        *pcVar22 = *pcVar14;
-        pcVar14 = pcVar14 + 1;
-        pcVar22 = pcVar22 + 1;
-      }
+      memmove(pcVar22, pcVar14, uVar17); /* compiler REP MOVS byte copy */
+      uVar18 = 0;
       FUN_006b60b0(pcVar12,pcVar12);
       pcVar12 = &pSVar19->field_7B06;
       FUN_006c2980(pcVar12,pcVar12);
@@ -378,16 +364,8 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
         uVar17 = ~uVar17;
         pbVar20 = (byte *)(pcVar14 + -uVar17);
         pbVar23 = &pSVar19->field_76F6;
-        for (uVar18 = uVar17 >> 2; uVar18 != 0; uVar18 = uVar18 - 1) {
-          *(undefined4 *)pbVar23 = *(undefined4 *)pbVar20;
-          pbVar20 = pbVar20 + 4;
-          pbVar23 = pbVar23 + 4;
-        }
-        for (uVar17 = uVar17 & 3; uVar17 != 0; uVar17 = uVar17 - 1) {
-          *pbVar23 = *pbVar20;
-          pbVar20 = pbVar20 + 1;
-          pbVar23 = pbVar23 + 1;
-        }
+        memmove(pbVar23, pbVar20, uVar17); /* compiler REP MOVS byte copy */
+        uVar18 = 0;
         uVar17 = 0xffffffff;
         pcVar12 = PTR_s_SAVEGAME__0079b02c;
         do {
@@ -411,16 +389,8 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
         } while (bVar5 != 0);
         pcVar12 = pcVar14 + -uVar17;
         pcVar14 = (char *)(pbVar23 + -1);
-        for (uVar18 = uVar17 >> 2; uVar18 != 0; uVar18 = uVar18 - 1) {
-          *(undefined4 *)pcVar14 = *(undefined4 *)pcVar12;
-          pcVar12 = pcVar12 + 4;
-          pcVar14 = pcVar14 + 4;
-        }
-        for (uVar17 = uVar17 & 3; uVar17 != 0; uVar17 = uVar17 - 1) {
-          *pcVar14 = *pcVar12;
-          pcVar12 = pcVar12 + 1;
-          pcVar14 = pcVar14 + 1;
-        }
+        memmove(pcVar14, pcVar12, uVar17); /* compiler REP MOVS byte copy */
+        uVar18 = 0;
         uVar17 = 0xffffffff;
         pcVar12 = &pSVar19->field_07BD;
         do {
@@ -444,16 +414,8 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
         } while (bVar5 != 0);
         pcVar12 = pcVar14 + -uVar17;
         pcVar14 = (char *)(pbVar23 + -1);
-        for (uVar18 = uVar17 >> 2; uVar18 != 0; uVar18 = uVar18 - 1) {
-          *(undefined4 *)pcVar14 = *(undefined4 *)pcVar12;
-          pcVar12 = pcVar12 + 4;
-          pcVar14 = pcVar14 + 4;
-        }
-        for (uVar17 = uVar17 & 3; uVar17 != 0; uVar17 = uVar17 - 1) {
-          *pcVar14 = *pcVar12;
-          pcVar12 = pcVar12 + 1;
-          pcVar14 = pcVar14 + 1;
-        }
+        memmove(pcVar14, pcVar12, uVar17); /* compiler REP MOVS byte copy */
+        uVar18 = 0;
         FUN_006b8280((char *)&pSVar19->field_76F6,(char *)&pSVar19->field_76F6);
         uVar17 = 0xffffffff;
         pcVar12 = PTR_DAT_0079b050;
@@ -478,16 +440,8 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
         } while (bVar5 != 0);
         pcVar12 = pcVar14 + -uVar17;
         pcVar14 = (char *)(pbVar23 + -1);
-        for (uVar18 = uVar17 >> 2; uVar18 != 0; uVar18 = uVar18 - 1) {
-          *(undefined4 *)pcVar14 = *(undefined4 *)pcVar12;
-          pcVar12 = pcVar12 + 4;
-          pcVar14 = pcVar14 + 4;
-        }
-        for (uVar17 = uVar17 & 3; uVar17 != 0; uVar17 = uVar17 - 1) {
-          *pcVar14 = *pcVar12;
-          pcVar12 = pcVar12 + 1;
-          pcVar14 = pcVar14 + 1;
-        }
+        memmove(pcVar14, pcVar12, uVar17); /* compiler REP MOVS byte copy */
+        uVar18 = 0;
         uVar17 = 0xffffffff;
         pcVar12 = &pSVar19->field_7B06;
         do {
@@ -511,16 +465,8 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
         } while (bVar5 != 0);
         pcVar12 = pcVar14 + -uVar17;
         pcVar14 = (char *)(pbVar23 + -1);
-        for (uVar18 = uVar17 >> 2; uVar18 != 0; uVar18 = uVar18 - 1) {
-          *(undefined4 *)pcVar14 = *(undefined4 *)pcVar12;
-          pcVar12 = pcVar12 + 4;
-          pcVar14 = pcVar14 + 4;
-        }
-        for (uVar17 = uVar17 & 3; uVar17 != 0; uVar17 = uVar17 - 1) {
-          *pcVar14 = *pcVar12;
-          pcVar12 = pcVar12 + 1;
-          pcVar14 = pcVar14 + 1;
-        }
+        memmove(pcVar14, pcVar12, uVar17); /* compiler REP MOVS byte copy */
+        uVar18 = 0;
         uVar17 = 0xffffffff;
         pbVar20 = &pSVar19->field_76F6;
         do {
@@ -534,16 +480,8 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
         uVar17 = ~uVar17;
         pbVar20 = pbVar23 + -uVar17;
         pcVar12 = &pSVar19->field_7B06;
-        for (uVar18 = uVar17 >> 2; uVar18 != 0; uVar18 = uVar18 - 1) {
-          *(undefined4 *)pcVar12 = *(undefined4 *)pbVar20;
-          pbVar20 = pbVar20 + 4;
-          pcVar12 = pcVar12 + 4;
-        }
-        for (uVar17 = uVar17 & 3; uVar17 != 0; uVar17 = uVar17 - 1) {
-          *pcVar12 = *pbVar20;
-          pbVar20 = pbVar20 + 1;
-          pcVar12 = pcVar12 + 1;
-        }
+        memmove(pcVar12, pbVar20, uVar17); /* compiler REP MOVS byte copy */
+        uVar18 = 0;
         uVar17 = 0xffffffff;
         pcVar12 = &DAT_007ca0b8;
         do {
@@ -567,16 +505,8 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
         } while (cVar2 != '\0');
         pcVar12 = pcVar14 + -uVar17;
         pcVar14 = pcVar22 + -1;
-        for (uVar18 = uVar17 >> 2; uVar18 != 0; uVar18 = uVar18 - 1) {
-          *(undefined4 *)pcVar14 = *(undefined4 *)pcVar12;
-          pcVar12 = pcVar12 + 4;
-          pcVar14 = pcVar14 + 4;
-        }
-        for (uVar17 = uVar17 & 3; uVar17 != 0; uVar17 = uVar17 - 1) {
-          *pcVar14 = *pcVar12;
-          pcVar12 = pcVar12 + 1;
-          pcVar14 = pcVar14 + 1;
-        }
+        memmove(pcVar14, pcVar12, uVar17); /* compiler REP MOVS byte copy */
+        uVar18 = 0;
         pSVar19->field_1185 = 1;
         ReadCmdPlay(pSVar19,1);
         if (pSVar19->field_1185 != 0) {
@@ -597,16 +527,8 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
           uVar17 = ~uVar17;
           pcVar12 = pcVar14 + -uVar17;
           pcVar14 = &pSVar19->field_78FE;
-          for (uVar18 = uVar17 >> 2; uVar18 != 0; uVar18 = uVar18 - 1) {
-            *(undefined4 *)pcVar14 = *(undefined4 *)pcVar12;
-            pcVar12 = pcVar12 + 4;
-            pcVar14 = pcVar14 + 4;
-          }
-          for (uVar17 = uVar17 & 3; uVar17 != 0; uVar17 = uVar17 - 1) {
-            *pcVar14 = *pcVar12;
-            pcVar12 = pcVar12 + 1;
-            pcVar14 = pcVar14 + 1;
-          }
+          memmove(pcVar14, pcVar12, uVar17); /* compiler REP MOVS byte copy */
+          uVar18 = 0;
           uVar17 = 0xffffffff;
           pcVar12 = &pSVar19->field_07BD;
           do {
@@ -630,16 +552,8 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
           } while (cVar2 != '\0');
           pcVar12 = pcVar14 + -uVar17;
           pcVar14 = pcVar22 + -1;
-          for (uVar18 = uVar17 >> 2; uVar18 != 0; uVar18 = uVar18 - 1) {
-            *(undefined4 *)pcVar14 = *(undefined4 *)pcVar12;
-            pcVar12 = pcVar12 + 4;
-            pcVar14 = pcVar14 + 4;
-          }
-          for (uVar17 = uVar17 & 3; uVar17 != 0; uVar17 = uVar17 - 1) {
-            *pcVar14 = *pcVar12;
-            pcVar12 = pcVar12 + 1;
-            pcVar14 = pcVar14 + 1;
-          }
+          memmove(pcVar14, pcVar12, uVar17); /* compiler REP MOVS byte copy */
+          uVar18 = 0;
           FUN_006b8280(&pSVar19->field_78FE,&pSVar19->field_78FE);
           uVar17 = 0xffffffff;
           pcVar12 = PTR_DAT_0079b050;
@@ -664,16 +578,8 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
           } while (cVar2 != '\0');
           pcVar12 = pcVar14 + -uVar17;
           pcVar14 = pcVar22 + -1;
-          for (uVar18 = uVar17 >> 2; uVar18 != 0; uVar18 = uVar18 - 1) {
-            *(undefined4 *)pcVar14 = *(undefined4 *)pcVar12;
-            pcVar12 = pcVar12 + 4;
-            pcVar14 = pcVar14 + 4;
-          }
-          for (uVar17 = uVar17 & 3; uVar17 != 0; uVar17 = uVar17 - 1) {
-            *pcVar14 = *pcVar12;
-            pcVar12 = pcVar12 + 1;
-            pcVar14 = pcVar14 + 1;
-          }
+          memmove(pcVar14, pcVar12, uVar17); /* compiler REP MOVS byte copy */
+          uVar18 = 0;
           uVar17 = 0xffffffff;
           pcVar12 = &pSVar19->field_7B06;
           do {
@@ -697,16 +603,9 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
           } while (cVar2 != '\0');
           pcVar12 = pcVar14 + -uVar17;
           pcVar14 = pcVar22 + -1;
-          for (uVar18 = uVar17 >> 2; uVar18 != 0; uVar18 = uVar18 - 1) {
-            *(undefined4 *)pcVar14 = *(undefined4 *)pcVar12;
-            pcVar12 = pcVar12 + 4;
-            pcVar14 = pcVar14 + 4;
-          }
-          for (uVar17 = uVar17 & 3; uVar17 != 0; uVar17 = uVar17 - 1) {
-            *pcVar14 = *pcVar12;
-            pcVar12 = pcVar12 + 1;
-            pcVar14 = pcVar14 + 1;
-          }
+          memmove(pcVar14, pcVar12, uVar17); /* compiler REP MOVS byte copy */
+          pcVar12 = (char *)((byte *)pcVar12 + uVar17);
+          uVar18 = 0;
           pSVar13 = (StartSystemTy *)Library::MSVCRT::FUN_0072e530(0x6b6);
           if (pSVar13 != (StartSystemTy *)0x0) {
             StartSystemTy::StartSystemTy(pSVar13,pSVar19);
@@ -770,16 +669,8 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
       uVar17 = ~uVar17;
       pcVar12 = pcVar14 + -uVar17;
       pcVar14 = &pSVar19->field_0x6ce3;
-      for (uVar18 = uVar17 >> 2; uVar18 != 0; uVar18 = uVar18 - 1) {
-        *(undefined4 *)pcVar14 = *(undefined4 *)pcVar12;
-        pcVar12 = pcVar12 + 4;
-        pcVar14 = pcVar14 + 4;
-      }
-      for (uVar17 = uVar17 & 3; uVar17 != 0; uVar17 = uVar17 - 1) {
-        *pcVar14 = *pcVar12;
-        pcVar12 = pcVar12 + 1;
-        pcVar14 = pcVar14 + 1;
-      }
+      memmove(pcVar14, pcVar12, uVar17); /* compiler REP MOVS byte copy */
+      uVar18 = 0;
     }
     break;
   case 'F':
@@ -950,16 +841,8 @@ switchD_0056b4ce_caseD_57:
       pcVar12 = &pSVar19->field_7B06;
       pcVar14 = pcVar14 + -uVar17;
       pcVar22 = pcVar12;
-      for (uVar18 = uVar17 >> 2; uVar18 != 0; uVar18 = uVar18 - 1) {
-        *(undefined4 *)pcVar22 = *(undefined4 *)pcVar14;
-        pcVar14 = pcVar14 + 4;
-        pcVar22 = pcVar22 + 4;
-      }
-      for (uVar17 = uVar17 & 3; uVar17 != 0; uVar17 = uVar17 - 1) {
-        *pcVar22 = *pcVar14;
-        pcVar14 = pcVar14 + 1;
-        pcVar22 = pcVar22 + 1;
-      }
+      memmove(pcVar22, pcVar14, uVar17); /* compiler REP MOVS byte copy */
+      uVar18 = 0;
       FUN_006b60b0(pcVar12,pcVar12);
       pcVar12 = &pSVar19->field_7B06;
       FUN_006c2980(pcVar12,pcVar12);
@@ -984,16 +867,8 @@ switchD_0056b4ce_caseD_57:
         uVar17 = ~uVar17;
         pbVar20 = (byte *)(pcVar14 + -uVar17);
         pbVar23 = &pSVar19->field_76F6;
-        for (uVar18 = uVar17 >> 2; uVar18 != 0; uVar18 = uVar18 - 1) {
-          *(undefined4 *)pbVar23 = *(undefined4 *)pbVar20;
-          pbVar20 = pbVar20 + 4;
-          pbVar23 = pbVar23 + 4;
-        }
-        for (uVar17 = uVar17 & 3; uVar17 != 0; uVar17 = uVar17 - 1) {
-          *pbVar23 = *pbVar20;
-          pbVar20 = pbVar20 + 1;
-          pbVar23 = pbVar23 + 1;
-        }
+        memmove(pbVar23, pbVar20, uVar17); /* compiler REP MOVS byte copy */
+        uVar18 = 0;
         uVar17 = 0xffffffff;
         pcVar12 = PTR_s_SAVEGAME__0079b02c;
         do {
@@ -1017,16 +892,8 @@ switchD_0056b4ce_caseD_57:
         } while (bVar5 != 0);
         pcVar12 = pcVar14 + -uVar17;
         pcVar14 = (char *)(pbVar23 + -1);
-        for (uVar18 = uVar17 >> 2; uVar18 != 0; uVar18 = uVar18 - 1) {
-          *(undefined4 *)pcVar14 = *(undefined4 *)pcVar12;
-          pcVar12 = pcVar12 + 4;
-          pcVar14 = pcVar14 + 4;
-        }
-        for (uVar17 = uVar17 & 3; uVar17 != 0; uVar17 = uVar17 - 1) {
-          *pcVar14 = *pcVar12;
-          pcVar12 = pcVar12 + 1;
-          pcVar14 = pcVar14 + 1;
-        }
+        memmove(pcVar14, pcVar12, uVar17); /* compiler REP MOVS byte copy */
+        uVar18 = 0;
         uVar17 = 0xffffffff;
         pcVar12 = &pSVar19->field_07BD;
         do {
@@ -1050,16 +917,8 @@ switchD_0056b4ce_caseD_57:
         } while (bVar5 != 0);
         pcVar12 = pcVar14 + -uVar17;
         pcVar14 = (char *)(pbVar23 + -1);
-        for (uVar18 = uVar17 >> 2; uVar18 != 0; uVar18 = uVar18 - 1) {
-          *(undefined4 *)pcVar14 = *(undefined4 *)pcVar12;
-          pcVar12 = pcVar12 + 4;
-          pcVar14 = pcVar14 + 4;
-        }
-        for (uVar17 = uVar17 & 3; uVar17 != 0; uVar17 = uVar17 - 1) {
-          *pcVar14 = *pcVar12;
-          pcVar12 = pcVar12 + 1;
-          pcVar14 = pcVar14 + 1;
-        }
+        memmove(pcVar14, pcVar12, uVar17); /* compiler REP MOVS byte copy */
+        uVar18 = 0;
         FUN_006b8280((char *)&pSVar19->field_76F6,(char *)&pSVar19->field_76F6);
         uVar17 = 0xffffffff;
         pcVar12 = PTR_DAT_0079b050;
@@ -1084,16 +943,8 @@ switchD_0056b4ce_caseD_57:
         } while (bVar5 != 0);
         pcVar12 = pcVar14 + -uVar17;
         pcVar14 = (char *)(pbVar23 + -1);
-        for (uVar18 = uVar17 >> 2; uVar18 != 0; uVar18 = uVar18 - 1) {
-          *(undefined4 *)pcVar14 = *(undefined4 *)pcVar12;
-          pcVar12 = pcVar12 + 4;
-          pcVar14 = pcVar14 + 4;
-        }
-        for (uVar17 = uVar17 & 3; uVar17 != 0; uVar17 = uVar17 - 1) {
-          *pcVar14 = *pcVar12;
-          pcVar12 = pcVar12 + 1;
-          pcVar14 = pcVar14 + 1;
-        }
+        memmove(pcVar14, pcVar12, uVar17); /* compiler REP MOVS byte copy */
+        uVar18 = 0;
         uVar17 = 0xffffffff;
         pcVar12 = &pSVar19->field_7B06;
         do {
@@ -1117,16 +968,8 @@ switchD_0056b4ce_caseD_57:
         } while (bVar5 != 0);
         pcVar12 = pcVar14 + -uVar17;
         pcVar14 = (char *)(pbVar23 + -1);
-        for (uVar18 = uVar17 >> 2; uVar18 != 0; uVar18 = uVar18 - 1) {
-          *(undefined4 *)pcVar14 = *(undefined4 *)pcVar12;
-          pcVar12 = pcVar12 + 4;
-          pcVar14 = pcVar14 + 4;
-        }
-        for (uVar17 = uVar17 & 3; uVar17 != 0; uVar17 = uVar17 - 1) {
-          *pcVar14 = *pcVar12;
-          pcVar12 = pcVar12 + 1;
-          pcVar14 = pcVar14 + 1;
-        }
+        memmove(pcVar14, pcVar12, uVar17); /* compiler REP MOVS byte copy */
+        uVar18 = 0;
         uVar17 = 0xffffffff;
         pbVar20 = &pSVar19->field_76F6;
         do {
@@ -1140,16 +983,7 @@ switchD_0056b4ce_caseD_57:
         uVar17 = ~uVar17;
         pbVar20 = pbVar23 + -uVar17;
         pcVar12 = &pSVar19->field_7B06;
-        for (uVar18 = uVar17 >> 2; uVar18 != 0; uVar18 = uVar18 - 1) {
-          *(undefined4 *)pcVar12 = *(undefined4 *)pbVar20;
-          pbVar20 = pbVar20 + 4;
-          pcVar12 = pcVar12 + 4;
-        }
-        for (uVar17 = uVar17 & 3; uVar17 != 0; uVar17 = uVar17 - 1) {
-          *pcVar12 = *pbVar20;
-          pbVar20 = pbVar20 + 1;
-          pcVar12 = pcVar12 + 1;
-        }
+        memmove(pcVar12, pbVar20, uVar17); /* compiler REP MOVS byte copy */
         uVar17 = 0xffffffff;
         pcVar12 = &DAT_007ca0b8;
         do {

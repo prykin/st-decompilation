@@ -210,16 +210,8 @@ void __thiscall STSprGameObjC::LoadLifeFrame(STSprGameObjC *this,int *param_1)
     } while (cVar1 != '\0');
     pcVar8 = pcVar10 + -uVar5;
     pcVar10 = pcVar9 + -1;
-    for (uVar7 = uVar5 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *(undefined4 *)pcVar10 = *(undefined4 *)pcVar8;
-      pcVar8 = pcVar8 + 4;
-      pcVar10 = pcVar10 + 4;
-    }
-    for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-      *pcVar10 = *pcVar8;
-      pcVar8 = pcVar8 + 1;
-      pcVar10 = pcVar10 + 1;
-    }
+    memmove(pcVar10, pcVar8, uVar5); /* compiler REP MOVS byte copy */
+    uVar7 = 0;
     uVar5 = 0xffffffff;
     pcVar8 = &DAT_007a4fb4;
     do {
@@ -243,16 +235,8 @@ void __thiscall STSprGameObjC::LoadLifeFrame(STSprGameObjC *this,int *param_1)
     } while (cVar1 != '\0');
     pcVar8 = pcVar10 + -uVar5;
     pcVar10 = pcVar9 + -1;
-    for (uVar7 = uVar5 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *(undefined4 *)pcVar10 = *(undefined4 *)pcVar8;
-      pcVar8 = pcVar8 + 4;
-      pcVar10 = pcVar10 + 4;
-    }
-    for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-      *pcVar10 = *pcVar8;
-      pcVar8 = pcVar8 + 1;
-      pcVar10 = pcVar10 + 1;
-    }
+    memmove(pcVar10, pcVar8, uVar5); /* compiler REP MOVS byte copy */
+    uVar7 = 0;
     uVar5 = 0xffffffff;
     pcVar8 = local_10;
     do {
@@ -276,16 +260,8 @@ void __thiscall STSprGameObjC::LoadLifeFrame(STSprGameObjC *this,int *param_1)
     } while (cVar1 != '\0');
     pcVar8 = pcVar10 + -uVar5;
     pcVar10 = pcVar9 + -1;
-    for (uVar7 = uVar5 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *(undefined4 *)pcVar10 = *(undefined4 *)pcVar8;
-      pcVar8 = pcVar8 + 4;
-      pcVar10 = pcVar10 + 4;
-    }
-    for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-      *pcVar10 = *pcVar8;
-      pcVar8 = pcVar8 + 1;
-      pcVar10 = pcVar10 + 1;
-    }
+    memmove(pcVar10, pcVar8, uVar5); /* compiler REP MOVS byte copy */
+    uVar7 = 0;
     pcVar8 = &DAT_007a4fb4;
     break;
   default:
@@ -326,16 +302,8 @@ void __thiscall STSprGameObjC::LoadLifeFrame(STSprGameObjC *this,int *param_1)
     } while (cVar1 != '\0');
     pcVar8 = pcVar10 + -uVar5;
     pcVar10 = pcVar9 + -1;
-    for (uVar7 = uVar5 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *(undefined4 *)pcVar10 = *(undefined4 *)pcVar8;
-      pcVar8 = pcVar8 + 4;
-      pcVar10 = pcVar10 + 4;
-    }
-    for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-      *pcVar10 = *pcVar8;
-      pcVar8 = pcVar8 + 1;
-      pcVar10 = pcVar10 + 1;
-    }
+    memmove(pcVar10, pcVar8, uVar5); /* compiler REP MOVS byte copy */
+    uVar7 = 0;
     uVar5 = 0xffffffff;
     pcVar8 = &DAT_007a4ff8;
     do {
@@ -359,16 +327,8 @@ void __thiscall STSprGameObjC::LoadLifeFrame(STSprGameObjC *this,int *param_1)
     } while (cVar1 != '\0');
     pcVar8 = pcVar10 + -uVar5;
     pcVar10 = pcVar9 + -1;
-    for (uVar7 = uVar5 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *(undefined4 *)pcVar10 = *(undefined4 *)pcVar8;
-      pcVar8 = pcVar8 + 4;
-      pcVar10 = pcVar10 + 4;
-    }
-    for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-      *pcVar10 = *pcVar8;
-      pcVar8 = pcVar8 + 1;
-      pcVar10 = pcVar10 + 1;
-    }
+    memmove(pcVar10, pcVar8, uVar5); /* compiler REP MOVS byte copy */
+    uVar7 = 0;
     uVar5 = 0xffffffff;
     pcVar8 = local_10;
     do {
@@ -392,16 +352,8 @@ void __thiscall STSprGameObjC::LoadLifeFrame(STSprGameObjC *this,int *param_1)
     } while (cVar1 != '\0');
     pcVar8 = pcVar10 + -uVar5;
     pcVar10 = pcVar9 + -1;
-    for (uVar7 = uVar5 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *(undefined4 *)pcVar10 = *(undefined4 *)pcVar8;
-      pcVar8 = pcVar8 + 4;
-      pcVar10 = pcVar10 + 4;
-    }
-    for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-      *pcVar10 = *pcVar8;
-      pcVar8 = pcVar8 + 1;
-      pcVar10 = pcVar10 + 1;
-    }
+    memmove(pcVar10, pcVar8, uVar5); /* compiler REP MOVS byte copy */
+    uVar7 = 0;
     pcVar8 = &DAT_007a4ff8;
     break;
   case 0x3b:
@@ -447,16 +399,8 @@ void __thiscall STSprGameObjC::LoadLifeFrame(STSprGameObjC *this,int *param_1)
     } while (cVar1 != '\0');
     pcVar8 = pcVar10 + -uVar5;
     pcVar10 = pcVar9 + -1;
-    for (uVar7 = uVar5 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *(undefined4 *)pcVar10 = *(undefined4 *)pcVar8;
-      pcVar8 = pcVar8 + 4;
-      pcVar10 = pcVar10 + 4;
-    }
-    for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-      *pcVar10 = *pcVar8;
-      pcVar8 = pcVar8 + 1;
-      pcVar10 = pcVar10 + 1;
-    }
+    memmove(pcVar10, pcVar8, uVar5); /* compiler REP MOVS byte copy */
+    uVar7 = 0;
     uVar5 = 0xffffffff;
     pcVar8 = &DAT_007a4ff4;
     do {
@@ -480,16 +424,8 @@ void __thiscall STSprGameObjC::LoadLifeFrame(STSprGameObjC *this,int *param_1)
     } while (cVar1 != '\0');
     pcVar8 = pcVar10 + -uVar5;
     pcVar10 = pcVar9 + -1;
-    for (uVar7 = uVar5 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *(undefined4 *)pcVar10 = *(undefined4 *)pcVar8;
-      pcVar8 = pcVar8 + 4;
-      pcVar10 = pcVar10 + 4;
-    }
-    for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-      *pcVar10 = *pcVar8;
-      pcVar8 = pcVar8 + 1;
-      pcVar10 = pcVar10 + 1;
-    }
+    memmove(pcVar10, pcVar8, uVar5); /* compiler REP MOVS byte copy */
+    uVar7 = 0;
     uVar5 = 0xffffffff;
     pcVar8 = local_10;
     do {
@@ -513,16 +449,7 @@ void __thiscall STSprGameObjC::LoadLifeFrame(STSprGameObjC *this,int *param_1)
     } while (cVar1 != '\0');
     pcVar8 = pcVar10 + -uVar5;
     pcVar10 = pcVar9 + -1;
-    for (uVar7 = uVar5 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *(undefined4 *)pcVar10 = *(undefined4 *)pcVar8;
-      pcVar8 = pcVar8 + 4;
-      pcVar10 = pcVar10 + 4;
-    }
-    for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-      *pcVar10 = *pcVar8;
-      pcVar8 = pcVar8 + 1;
-      pcVar10 = pcVar10 + 1;
-    }
+    memmove(pcVar10, pcVar8, uVar5); /* compiler REP MOVS byte copy */
     pcVar8 = &DAT_007a4ff4;
   }
   uVar5 = 0xffffffff;

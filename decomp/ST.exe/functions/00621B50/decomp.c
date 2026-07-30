@@ -272,13 +272,7 @@ int __thiscall STMineSetC::GetMessage(STMineSetC *this,STMessage *message)
   }
   puVar14 = (message->arg0).ptr;
   puVar16 = (undefined4 *)&local_8->field_0x25e;
-  for (iVar9 = 0x13; iVar9 != 0; iVar9 = iVar9 + -1) {
-    *puVar16 = *puVar14;
-    puVar14 = puVar14 + 1;
-    puVar16 = puVar16 + 1;
-  }
-  *(undefined2 *)puVar16 = *(undefined2 *)puVar14;
-  *(undefined1 *)((int)puVar16 + 2) = *(undefined1 *)((int)puVar14 + 2);
+  memmove(puVar16, puVar14, 0x4f); /* compiler REP MOVS byte copy */
   if (*(int *)(dVar6 + 0xc) == 0) {
     local_8->field_0276 = (int)(short)(*(short *)&local_8->field_0276 * 0xc9 + 100);
     local_8->field_027A = (int)(short)(*(short *)&local_8->field_027A * 0xc9 + 100);

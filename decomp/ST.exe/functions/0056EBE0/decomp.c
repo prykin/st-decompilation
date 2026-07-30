@@ -17,7 +17,6 @@ void __thiscall STAppC::sub_0056EBE0(STAppC *this)
   DArrayTy *array_00;
   DArrayTy *pDVar4;
   uint uVar5;
-  uint uVar6;
   uint uVar8;
   char *pcVar9;
   char *pcVar11;
@@ -49,16 +48,8 @@ void __thiscall STAppC::sub_0056EBE0(STAppC *this)
     uVar5 = ~uVar5;
     pcVar9 = pcVar11 + -uVar5;
     pcVar11 = &this->field_0x2340;
-    for (uVar6 = uVar5 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-      *(undefined4 *)pcVar11 = *(undefined4 *)pcVar9;
-      pcVar9 = pcVar9 + 4;
-      pcVar11 = pcVar11 + 4;
-    }
-    for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-      *pcVar11 = *pcVar9;
-      pcVar9 = pcVar9 + 1;
-      pcVar11 = pcVar11 + 1;
-    }
+    memmove(pcVar11, pcVar9, uVar5); /* compiler REP MOVS byte copy */
+    uVar5 = 0;
     puVar2 = Library::Ourlib::MFSARR::mfSarLoad(g_cMf32_0080675C,(char *)(uVar8 + 0x70),0);
     this->field_4EAB = puVar2;
   }
@@ -91,16 +82,7 @@ void __thiscall STAppC::sub_0056EBE0(STAppC *this)
     uVar8 = ~uVar8;
     pcVar11 = pcVar12 + -uVar8;
     pcVar12 = pcVar9 + 1;
-    for (uVar5 = uVar8 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
-      *(undefined4 *)pcVar12 = *(undefined4 *)pcVar11;
-      pcVar11 = pcVar11 + 4;
-      pcVar12 = pcVar12 + 4;
-    }
-    for (uVar8 = uVar8 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
-      *pcVar12 = *pcVar11;
-      pcVar11 = pcVar11 + 1;
-      pcVar12 = pcVar12 + 1;
-    }
+    memmove(pcVar12, pcVar11, uVar8); /* compiler REP MOVS byte copy */
     if ((pcVar9[0x22] != -1) && (*pcVar9 == '\x01')) {
       pDVar4 = pDVar3;
       if ((pcVar9[0x21] != '\x01') && (pDVar4 = array, pcVar9[0x21] != '\x02')) {

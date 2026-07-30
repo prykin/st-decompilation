@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\snd_mngr.cpp
@@ -57,16 +59,8 @@ int FUN_00566600(int param_1)
   uVar6 = ~uVar6;
   pbVar8 = (byte *)(pcVar11 + -uVar6);
   pbVar10 = local_164;
-  for (uVar7 = uVar6 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-    *(undefined4 *)pbVar10 = *(undefined4 *)pbVar8;
-    pbVar8 = pbVar8 + 4;
-    pbVar10 = pbVar10 + 4;
-  }
-  for (uVar6 = uVar6 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
-    *pbVar10 = *pbVar8;
-    pbVar8 = pbVar8 + 1;
-    pbVar10 = pbVar10 + 1;
-  }
+  memmove(pbVar10, pbVar8, uVar6); /* compiler REP MOVS byte copy */
+  uVar7 = 0;
   FUN_006b8280((char *)local_164,(char *)local_164);
   uVar6 = 0xffffffff;
   pcVar9 = PTR_s_music_0079b00c;
@@ -91,16 +85,8 @@ int FUN_00566600(int param_1)
   } while (bVar12 != 0);
   pbVar8 = (byte *)(pcVar11 + -uVar6);
   pbVar10 = pbVar10 + -1;
-  for (uVar7 = uVar6 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-    *(undefined4 *)pbVar10 = *(undefined4 *)pbVar8;
-    pbVar8 = pbVar8 + 4;
-    pbVar10 = pbVar10 + 4;
-  }
-  for (uVar6 = uVar6 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
-    *pbVar10 = *pbVar8;
-    pbVar8 = pbVar8 + 1;
-    pbVar10 = pbVar10 + 1;
-  }
+  memmove(pbVar10, pbVar8, uVar6); /* compiler REP MOVS byte copy */
+  uVar7 = 0;
   pcVar3 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,local_164,3,0,0);
   uVar6 = 0xffffffff;
   local_10->field_0018 = pcVar3;

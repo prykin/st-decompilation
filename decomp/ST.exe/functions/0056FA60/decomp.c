@@ -35,7 +35,6 @@ int __thiscall STAppC::GetMessage(STAppC *this,STMessage *message)
   byte *puVar16;
   HANDLE pvVar17;
   STMessageId *pSVar18;
-  uint uVar19;
   int iVar20;
   STAppCVTable *pSVar21;
   byte *pbVar22;
@@ -158,16 +157,7 @@ switchD_0056fad2_caseD_6105:
       uVar25 = ~uVar25;
       pcVar15 = pcVar23 + -uVar25;
       pcVar23 = &pSVar11->field_0x7a02;
-      for (uVar19 = uVar25 >> 2; uVar19 != 0; uVar19 = uVar19 - 1) {
-        *(undefined4 *)pcVar23 = *(undefined4 *)pcVar15;
-        pcVar15 = pcVar15 + 4;
-        pcVar23 = pcVar23 + 4;
-      }
-      for (uVar25 = uVar25 & 3; uVar25 != 0; uVar25 = uVar25 - 1) {
-        *pcVar23 = *pcVar15;
-        pcVar15 = pcVar15 + 1;
-        pcVar23 = pcVar23 + 1;
-      }
+      memmove(pcVar23, pcVar15, uVar25); /* compiler REP MOVS byte copy */
       OpenGameDBs(pSVar11);
       StartGame(pSVar11);
       SVar2 = pSVar11->field_1180;

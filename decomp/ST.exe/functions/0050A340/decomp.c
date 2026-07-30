@@ -279,16 +279,8 @@ LAB_0050a4e4:
       uVar6 = ~uVar6;
       pcVar10 = pcVar15 + -uVar6;
       pcVar15 = &this_00->field_01E1;
-      for (uVar14 = uVar6 >> 2; uVar14 != 0; uVar14 = uVar14 - 1) {
-        *(undefined4 *)pcVar15 = *(undefined4 *)pcVar10;
-        pcVar10 = pcVar10 + 4;
-        pcVar15 = pcVar15 + 4;
-      }
-      for (uVar6 = uVar6 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
-        *pcVar15 = *pcVar10;
-        pcVar10 = pcVar10 + 1;
-        pcVar15 = pcVar15 + 1;
-      }
+      memmove(pcVar15, pcVar10, uVar6); /* compiler REP MOVS byte copy */
+      uVar14 = 0;
       for (puVar11 = Library::MSVCRT::FUN_0072e560((uint *)&this_00->field_01E1,'\n');
           puVar11 != (uint *)0x0; puVar11 = Library::MSVCRT::FUN_0072e560(puVar11,'\n')) {
         *(undefined1 *)puVar11 = 0x20;
@@ -444,16 +436,7 @@ cf_common_exit_0050B38B:
       uVar6 = ~uVar6;
       pcVar10 = pcVar15 + -uVar6;
       pcVar15 = &this_00->field_01E1;
-      for (uVar14 = uVar6 >> 2; uVar14 != 0; uVar14 = uVar14 - 1) {
-        *(undefined4 *)pcVar15 = *(undefined4 *)pcVar10;
-        pcVar10 = pcVar10 + 4;
-        pcVar15 = pcVar15 + 4;
-      }
-      for (uVar6 = uVar6 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
-        *pcVar15 = *pcVar10;
-        pcVar10 = pcVar10 + 1;
-        pcVar15 = pcVar15 + 1;
-      }
+      memmove(pcVar15, pcVar10, uVar6); /* compiler REP MOVS byte copy */
       for (puVar11 = Library::MSVCRT::FUN_0072e560((uint *)&this_00->field_01E1,'\n');
           puVar11 != (uint *)0x0; puVar11 = Library::MSVCRT::FUN_0072e560(puVar11,'\n')) {
         *(undefined1 *)puVar11 = 0x20;

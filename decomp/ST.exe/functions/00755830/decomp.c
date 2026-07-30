@@ -43,16 +43,8 @@ uint FUN_00755830(AnonShape_00753C80_4C8E695D *param_1,uint *param_2,int param_3
       uVar5 = (uint)*(short *)(param_1->field_0008 + 0x16);
       puVar9 = puVar7;
       puVar11 = puVar12;
-      for (uVar6 = uVar5 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-        *puVar11 = *puVar9;
-        puVar9 = puVar9 + 1;
-        puVar11 = puVar11 + 1;
-      }
-      for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-        *(char *)puVar11 = (char)*puVar9;
-        puVar9 = (uint *)((int)puVar9 + 1);
-        puVar11 = (uint *)((int)puVar11 + 1);
-      }
+      memmove(puVar11, puVar9, uVar5); /* compiler REP MOVS byte copy */
+      uVar5 = 0;
       *puVar12 = uVar3;
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       sVar2 = *(short *)(param_1->field_000C + 0x34);

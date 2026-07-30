@@ -49,6 +49,8 @@ public class STIndirectCallAnalyzer extends GhidraScript {
         "^\\[EBP\\+(0X[0-9A-F]+|[0-9]+)\\]$");
     private static final int RETURN_DEFINITION_SCAN_LIMIT = 20;
     private final List<Site> sites = new ArrayList<>();
+    private final Map<String, FunctionPointerFamily> targetFamilies =
+        new TreeMap<>();
 
     @Override
     protected void run() throws Exception {
@@ -59,6 +61,7 @@ public class STIndirectCallAnalyzer extends GhidraScript {
         Path directory = programDirectory(selected); Files.createDirectories(directory);
         List<Row> rows = new ArrayList<>();
         collectSites();
+        collectTargetFamilies();
         addDispatchVtables(rows, directory);
         addExistingVtableSlots(rows);
         rows.sort(Comparator.comparingInt((Row row) ->
@@ -275,7 +278,10 @@ public class STIndirectCallAnalyzer extends GhidraScript {
                 Function target = resolveThunk(entry);
                 boolean trusted = trusted(target);
                 Synthetic synthetic = trusted ? null : syntheticSignature(target, structure);
-                if (generated && !trusted && synthetic == null) {
+                FunctionPointerFamily family = target == null ? null :
+                    targetFamilies.get(addr(target.getEntryPoint()));
+                if (generated && !trusted && synthetic == null &&
+                        family == null) {
                     rows.add(new Row(true, "revert_generated_slot", structure.getPathName(),
                         component.getOffset(), name(component),
                         typeSpec(component.getDataType()), safeText(component.getComment()),
@@ -286,22 +292,81 @@ public class STIndirectCallAnalyzer extends GhidraScript {
                         "generated indirect ABI no longer has sufficient machine evidence"));
                     continue;
                 }
-                boolean apply = trusted || synthetic != null;
+                boolean apply = trusted || synthetic != null || family != null;
                 rows.add(new Row(apply, "vtable_slot", structure.getPathName(),
                     component.getOffset(), name(component), typeSpec(component.getDataType()),
                     safeText(component.getComment()), structure.getPathName(), name(component), 0, 0,
                     target == null ? "" : addr(target.getEntryPoint()),
                     target == null ? "" : target.getName(true),
-                    trusted ? "target" : synthetic == null ? "" : synthetic.mode,
+                    trusted ? "target" : synthetic != null ? synthetic.mode :
+                        family != null ? "family_target" : "",
                     synthetic == null ? "" : synthetic.receiverType,
                     synthetic == null ? -1 : synthetic.stackParameters,
                     synthetic == null ? "" : synthetic.parameterTypes,
                     synthetic == null ? "" : synthetic.returnType,
-                    trusted ? "high" : synthetic == null ? "review" : "layout",
+                    trusted ? "high" : synthetic != null ? "layout" :
+                        family != null ? "family" : "review",
                     trusted ? "slot target has a reviewed function signature" :
-                        synthetic == null ? "slot target lacks consistent indirect ABI evidence" :
-                        synthetic.evidence));
+                        synthetic != null ? synthetic.evidence :
+                        family != null ?
+                            family.occurrences + " independently typed vtable " +
+                            "component(s) for resolved target " +
+                            addr(target.getEntryPoint()) +
+                            " agree on " + family.pointerType :
+                            "slot target lacks consistent indirect ABI evidence"));
             }
+        }
+    }
+
+    /**
+     * The same implementation address is frequently reused in several physical
+     * vtables (base implementations, shared empty overrides, thunk aliases).
+     * If every already-typed component naming that resolved target has one
+     * equivalent function-pointer ABI, that ABI is an exact family anchor for
+     * still-generic occurrences of the same target. Conflicting receiver or
+     * parameter types invalidate the family instead of being majority-voted.
+     */
+    private void collectTargetFamilies() {
+        Map<String, List<TypedTargetComponent>> grouped = new TreeMap<>();
+        Iterator<Structure> structures =
+            currentProgram.getDataTypeManager().getAllStructures();
+        while (structures.hasNext()) {
+            Structure structure = structures.next();
+            if (!structure.getPathName().startsWith(VTABLE_ROOT)) continue;
+            for (DataTypeComponent component : structure.getDefinedComponents()) {
+                if (!(component.getDataType() instanceof Pointer pointer) ||
+                        !(pointer.getDataType() instanceof FunctionDefinition))
+                    continue;
+                Matcher matcher = TARGET.matcher(safeText(component.getComment()));
+                if (!matcher.find()) continue;
+                Address raw =
+                    currentProgram.getAddressFactory().getAddress(matcher.group(1));
+                Function entry = raw == null ? null :
+                    currentProgram.getFunctionManager().getFunctionAt(raw);
+                Function resolved = resolveThunk(entry);
+                if (resolved == null) continue;
+                String key = addr(resolved.getEntryPoint());
+                grouped.computeIfAbsent(key, ignored -> new ArrayList<>())
+                    .add(new TypedTargetComponent(pointer,
+                        structure.getPathName(), component.getOffset()));
+            }
+        }
+        for (Map.Entry<String, List<TypedTargetComponent>> entry :
+                grouped.entrySet()) {
+            List<TypedTargetComponent> candidates = entry.getValue();
+            Pointer agreed = null;
+            boolean conflict = false;
+            for (TypedTargetComponent candidate : candidates) {
+                if (agreed != null && !agreed.isEquivalent(candidate.pointer)) {
+                    conflict = true;
+                    break;
+                }
+                if (agreed == null) agreed = candidate.pointer;
+            }
+            if (!conflict && agreed != null)
+                targetFamilies.put(entry.getKey(),
+                    new FunctionPointerFamily(typeSpec(agreed),
+                        candidates.size()));
         }
     }
 
@@ -712,7 +777,10 @@ public class STIndirectCallAnalyzer extends GhidraScript {
                 "\nDispatch tail ABI prototypes: " + rows.stream().filter(row ->
                     row.signatureMode.startsWith("synthetic_dispatch_")).count() +
                 "\nSynthetic ABI prototypes: " + rows.stream().filter(row ->
-                    row.signatureMode.startsWith("synthetic_")).count() + "\n");
+                    row.signatureMode.startsWith("synthetic_")).count() +
+                "\nResolved-target ABI families: " + targetFamilies.size() +
+                "\nFamily-propagated slots: " + rows.stream().filter(row ->
+                    row.signatureMode.equals("family_target")).count() + "\n");
         }
     }
     private String typeSpec(DataType type) {
@@ -747,4 +815,7 @@ public class STIndirectCallAnalyzer extends GhidraScript {
     private record Site(String functionAddress, String function, String callAddress,
         String register, int slot, int pushes, String ecx, String instruction) {}
     private record DispatchTable(Structure structure, int slots, String address) {}
+    private record TypedTargetComponent(Pointer pointer, String structurePath,
+        int offset) {}
+    private record FunctionPointerFamily(String pointerType, int occurrences) {}
 }

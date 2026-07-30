@@ -98,16 +98,8 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
   uVar12 = ~uVar12;
   pcVar8 = pcVar16 + -uVar12;
   pcVar16 = &this_01->field_006C;
-  for (uVar13 = uVar12 >> 2; uVar13 != 0; uVar13 = uVar13 - 1) {
-    *(undefined4 *)pcVar16 = *(undefined4 *)pcVar8;
-    pcVar8 = pcVar8 + 4;
-    pcVar16 = pcVar16 + 4;
-  }
-  for (uVar12 = uVar12 & 3; uVar12 != 0; uVar12 = uVar12 - 1) {
-    *pcVar16 = *pcVar8;
-    pcVar8 = pcVar8 + 1;
-    pcVar16 = pcVar16 + 1;
-  }
+  memmove(pcVar16, pcVar8, uVar12); /* compiler REP MOVS byte copy */
+  uVar13 = 0;
   uVar12 = 0xffffffff;
   pcVar8 = PTR_s_SAVEGAME__0079acec;
   do {
@@ -131,16 +123,8 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
   } while (cVar1 != '\0');
   pcVar8 = pcVar16 + -uVar12;
   pcVar16 = pcVar15 + -1;
-  for (uVar13 = uVar12 >> 2; uVar13 != 0; uVar13 = uVar13 - 1) {
-    *(undefined4 *)pcVar16 = *(undefined4 *)pcVar8;
-    pcVar8 = pcVar8 + 4;
-    pcVar16 = pcVar16 + 4;
-  }
-  for (uVar12 = uVar12 & 3; uVar12 != 0; uVar12 = uVar12 - 1) {
-    *pcVar16 = *pcVar8;
-    pcVar8 = pcVar8 + 1;
-    pcVar16 = pcVar16 + 1;
-  }
+  memmove(pcVar16, pcVar8, uVar12); /* compiler REP MOVS byte copy */
+  uVar13 = 0;
   uVar12 = 0xffffffff;
   pcVar8 = (char *)&DAT_00807ddd;
   do {
@@ -164,16 +148,8 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
   } while (cVar1 != '\0');
   pcVar8 = pcVar16 + -uVar12;
   pcVar16 = pcVar15 + -1;
-  for (uVar13 = uVar12 >> 2; uVar13 != 0; uVar13 = uVar13 - 1) {
-    *(undefined4 *)pcVar16 = *(undefined4 *)pcVar8;
-    pcVar8 = pcVar8 + 4;
-    pcVar16 = pcVar16 + 4;
-  }
-  for (uVar12 = uVar12 & 3; uVar12 != 0; uVar12 = uVar12 - 1) {
-    *pcVar16 = *pcVar8;
-    pcVar8 = pcVar8 + 1;
-    pcVar16 = pcVar16 + 1;
-  }
+  memmove(pcVar16, pcVar8, uVar12); /* compiler REP MOVS byte copy */
+  uVar13 = 0;
   pcVar8 = &this_01->field_006C;
   FUN_006b8280(pcVar8,pcVar8);
   uVar12 = 0xffffffff;
@@ -188,16 +164,8 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
   uVar12 = ~uVar12;
   pcVar8 = pcVar16 + -uVar12;
   pcVar16 = local_3fc;
-  for (uVar13 = uVar12 >> 2; uVar13 != 0; uVar13 = uVar13 - 1) {
-    *(undefined4 *)pcVar16 = *(undefined4 *)pcVar8;
-    pcVar8 = pcVar8 + 4;
-    pcVar16 = pcVar16 + 4;
-  }
-  for (uVar12 = uVar12 & 3; uVar12 != 0; uVar12 = uVar12 - 1) {
-    *pcVar16 = *pcVar8;
-    pcVar8 = pcVar8 + 1;
-    pcVar16 = pcVar16 + 1;
-  }
+  memmove(pcVar16, pcVar8, uVar12); /* compiler REP MOVS byte copy */
+  uVar13 = 0;
   uVar12 = 0xffffffff;
   pcVar8 = PTR_DAT_0079ad00;
   do {
@@ -221,16 +189,8 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
   } while (cVar1 != '\0');
   pcVar8 = pcVar16 + -uVar12;
   pcVar16 = pcVar15 + -1;
-  for (uVar13 = uVar12 >> 2; uVar13 != 0; uVar13 = uVar13 - 1) {
-    *(undefined4 *)pcVar16 = *(undefined4 *)pcVar8;
-    pcVar8 = pcVar8 + 4;
-    pcVar16 = pcVar16 + 4;
-  }
-  for (uVar12 = uVar12 & 3; uVar12 != 0; uVar12 = uVar12 - 1) {
-    *pcVar16 = *pcVar8;
-    pcVar8 = pcVar8 + 1;
-    pcVar16 = pcVar16 + 1;
-  }
+  memmove(pcVar16, pcVar8, uVar12); /* compiler REP MOVS byte copy */
+  uVar13 = 0;
   uVar12 = 0xffffffff;
   pcVar8 = &DAT_007c72d8;
   do {
@@ -254,16 +214,8 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
   } while (cVar1 != '\0');
   pcVar8 = pcVar16 + -uVar12;
   pcVar16 = pcVar15 + -1;
-  for (uVar13 = uVar12 >> 2; uVar13 != 0; uVar13 = uVar13 - 1) {
-    *(undefined4 *)pcVar16 = *(undefined4 *)pcVar8;
-    pcVar8 = pcVar8 + 4;
-    pcVar16 = pcVar16 + 4;
-  }
-  for (uVar12 = uVar12 & 3; uVar12 != 0; uVar12 = uVar12 - 1) {
-    *pcVar16 = *pcVar8;
-    pcVar8 = pcVar8 + 1;
-    pcVar16 = pcVar16 + 1;
-  }
+  memmove(pcVar16, pcVar8, uVar12); /* compiler REP MOVS byte copy */
+  uVar13 = 0;
   uVar12 = 0xffffffff;
   pcVar8 = PTR_DAT_0079acf4;
   do {
@@ -287,16 +239,8 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
   } while (cVar1 != '\0');
   pcVar8 = pcVar16 + -uVar12;
   pcVar16 = pcVar15 + -1;
-  for (uVar13 = uVar12 >> 2; uVar13 != 0; uVar13 = uVar13 - 1) {
-    *(undefined4 *)pcVar16 = *(undefined4 *)pcVar8;
-    pcVar8 = pcVar8 + 4;
-    pcVar16 = pcVar16 + 4;
-  }
-  for (uVar12 = uVar12 & 3; uVar12 != 0; uVar12 = uVar12 - 1) {
-    *pcVar16 = *pcVar8;
-    pcVar8 = pcVar8 + 1;
-    pcVar16 = pcVar16 + 1;
-  }
+  memmove(pcVar16, pcVar8, uVar12); /* compiler REP MOVS byte copy */
+  uVar13 = 0;
   hFindFile = FindFirstFileA(&this_01->field_006C,&local_1f4);
   local_18 = hFindFile;
   if (hFindFile != (HANDLE)0xffffffff) {
@@ -327,16 +271,7 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
           uVar12 = ~uVar12;
           pcVar8 = pcVar16 + -uVar12;
           pcVar16 = &local_10->field_006C;
-          for (uVar13 = uVar12 >> 2; uVar13 != 0; uVar13 = uVar13 - 1) {
-            *(undefined4 *)pcVar16 = *(undefined4 *)pcVar8;
-            pcVar8 = pcVar8 + 4;
-            pcVar16 = pcVar16 + 4;
-          }
-          for (uVar12 = uVar12 & 3; uVar12 != 0; uVar12 = uVar12 - 1) {
-            *pcVar16 = *pcVar8;
-            pcVar8 = pcVar8 + 1;
-            pcVar16 = pcVar16 + 1;
-          }
+          memmove(pcVar16, pcVar8, uVar12); /* compiler REP MOVS byte copy */
           uVar12 = 0xffffffff;
           pbVar14 = local_2f8;
           do {

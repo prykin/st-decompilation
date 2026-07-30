@@ -78,16 +78,7 @@ int __thiscall STGroupBoatC::GetMessage(STGroupBoatC *this,STMessage *message)
     local_8 = (byte *)Library::DKW::LIB::FUN_006aac70(local_10 + local_c);
     pbVar8 = local_1c;
     pbVar9 = local_8;
-    for (uVar7 = local_c >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *(undefined4 *)pbVar9 = *(undefined4 *)pbVar8;
-      pbVar8 = pbVar8 + 4;
-      pbVar9 = pbVar9 + 4;
-    }
-    for (uVar7 = local_c & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *pbVar9 = *pbVar8;
-      pbVar8 = pbVar8 + 1;
-      pbVar9 = pbVar9 + 1;
-    }
+    memmove(pbVar9, pbVar8, local_c); /* compiler REP MOVS byte copy */
     pbVar8 = local_18;
     pbVar9 = local_8 + local_c;
     memmove(pbVar9, pbVar8, local_10); /* compiler REP MOVS byte copy */

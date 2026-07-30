@@ -309,16 +309,8 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
         uVar6 = ~uVar6;
         pcVar9 = pcVar10 + -uVar6;
         pcVar10 = (char *)&DAT_0080f33a;
-        for (uVar11 = uVar6 >> 2; uVar11 != 0; uVar11 = uVar11 - 1) {
-          *(undefined4 *)pcVar10 = *(undefined4 *)pcVar9;
-          pcVar9 = pcVar9 + 4;
-          pcVar10 = pcVar10 + 4;
-        }
-        for (uVar6 = uVar6 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
-          *pcVar10 = *pcVar9;
-          pcVar9 = pcVar9 + 1;
-          pcVar10 = pcVar10 + 1;
-        }
+        memmove(pcVar10, pcVar9, uVar6); /* compiler REP MOVS byte copy */
+        uVar11 = 0;
         for (puVar8 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar8 != (uint *)0x0;
             puVar8 = Library::MSVCRT::FUN_0072e560(puVar8,'\n')) {
           *(undefined1 *)puVar8 = 0x20;
@@ -370,16 +362,8 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
           uVar6 = ~uVar6;
           pcVar9 = pcVar10 + -uVar6;
           pcVar10 = (char *)&DAT_0080f33a;
-          for (uVar11 = uVar6 >> 2; uVar11 != 0; uVar11 = uVar11 - 1) {
-            *(undefined4 *)pcVar10 = *(undefined4 *)pcVar9;
-            pcVar9 = pcVar9 + 4;
-            pcVar10 = pcVar10 + 4;
-          }
-          for (uVar6 = uVar6 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
-            *pcVar10 = *pcVar9;
-            pcVar9 = pcVar9 + 1;
-            pcVar10 = pcVar10 + 1;
-          }
+          memmove(pcVar10, pcVar9, uVar6); /* compiler REP MOVS byte copy */
+          uVar11 = 0;
           for (puVar8 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar8 != (uint *)0x0;
               puVar8 = Library::MSVCRT::FUN_0072e560(puVar8,'\n')) {
             *(undefined1 *)puVar8 = 0x20;
@@ -429,16 +413,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
           uVar6 = ~uVar6;
           pcVar9 = pcVar10 + -uVar6;
           pcVar10 = (char *)&DAT_0080f33a;
-          for (uVar11 = uVar6 >> 2; uVar11 != 0; uVar11 = uVar11 - 1) {
-            *(undefined4 *)pcVar10 = *(undefined4 *)pcVar9;
-            pcVar9 = pcVar9 + 4;
-            pcVar10 = pcVar10 + 4;
-          }
-          for (uVar6 = uVar6 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
-            *pcVar10 = *pcVar9;
-            pcVar9 = pcVar9 + 1;
-            pcVar10 = pcVar10 + 1;
-          }
+          memmove(pcVar10, pcVar9, uVar6); /* compiler REP MOVS byte copy */
           for (puVar8 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar8 != (uint *)0x0;
               puVar8 = Library::MSVCRT::FUN_0072e560(puVar8,'\n')) {
             *(undefined1 *)puVar8 = 0x20;

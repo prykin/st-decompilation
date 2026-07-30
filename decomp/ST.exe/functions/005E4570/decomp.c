@@ -119,16 +119,7 @@ int __thiscall MTaskTy::GetMessage(MTaskTy *this,STMessage *message)
             uVar18 = ~uVar18;
             pcVar19 = pcVar20 + -uVar18;
             pcVar20 = (char *)&DAT_0080ee1a;
-            for (uVar15 = uVar18 >> 2; uVar15 != 0; uVar15 = uVar15 - 1) {
-              *(undefined4 *)pcVar20 = *(undefined4 *)pcVar19;
-              pcVar19 = pcVar19 + 4;
-              pcVar20 = pcVar20 + 4;
-            }
-            for (uVar18 = uVar18 & 3; uVar18 != 0; uVar18 = uVar18 - 1) {
-              *pcVar20 = *pcVar19;
-              pcVar19 = pcVar19 + 1;
-              pcVar20 = pcVar20 + 1;
-            }
+            memmove(pcVar20, pcVar19, uVar18); /* compiler REP MOVS byte copy */
             this_00->field_004D = 0x60ff;
             this_00->field_0049 = 1;
           }

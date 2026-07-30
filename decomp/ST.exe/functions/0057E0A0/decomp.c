@@ -105,12 +105,7 @@ int __thiscall STDcResourcC::GetMessage(STDcResourcC *this,STMessage *message)
       *(undefined4 *)&this_00->field_0x23d = 2;
       pSVar15 = &this_00->field_0231;
       pSVar19 = local_c;
-      for (iVar9 = 0x11; iVar9 != 0; iVar9 = iVar9 + -1) {
-        *pSVar19 = *pSVar15;
-        pSVar15 = pSVar15 + 1;
-        pSVar19 = pSVar19 + 1;
-      }
-      *(short *)pSVar19 = (short)*pSVar15;
+      memmove(pSVar19, pSVar15, 0x46); /* compiler REP MOVS byte copy */
       pbVar18 = local_10;
       pbVar21 = (byte *)((int)local_c + 0x46);
       memmove(pbVar21, pbVar18, local_8); /* compiler REP MOVS byte copy */
@@ -309,12 +304,8 @@ int __thiscall STDcResourcC::GetMessage(STDcResourcC *this,STMessage *message)
       if (local_18[3] != CASE_2) goto cf_common_exit_0057E624;
       pSVar15 = local_18;
       pSVar19 = &this_00->field_0231;
-      for (iVar9 = 0x11; iVar9 != 0; iVar9 = iVar9 + -1) {
-        *pSVar19 = *pSVar15;
-        pSVar15 = pSVar15 + 1;
-        pSVar19 = pSVar19 + 1;
-      }
-      *(short *)pSVar19 = (short)*pSVar15;
+      memmove(pSVar19, pSVar15, 0x46); /* compiler REP MOVS byte copy */
+      iVar9 = 0;
       *(undefined4 *)&this_00->field_0x273 = 0;
       *(undefined4 *)&this_00->field_0x265 = 0;
       *(undefined4 *)&this_00->field_0x26d = 0;

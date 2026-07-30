@@ -153,16 +153,8 @@ LAB_0054f52c:
                 puVar10 = Library::DKW::LIB::FUN_006aac10(uVar9);
                 puVar20 = puVar19;
                 puVar23 = puVar10;
-                for (uVar17 = uVar9 >> 2; uVar17 != 0; uVar17 = uVar17 - 1) {
-                  *puVar23 = *puVar20;
-                  puVar20 = puVar20 + 1;
-                  puVar23 = puVar23 + 1;
-                }
-                for (uVar9 = uVar9 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {
-                  *(char *)puVar23 = (char)*puVar20;
-                  puVar20 = (uint *)((int)puVar20 + 1);
-                  puVar23 = (uint *)((int)puVar23 + 1);
-                }
+                memmove(puVar23, puVar20, uVar9); /* compiler REP MOVS byte copy */
+                uVar17 = 0;
                 FUN_006b9910(&local_c->field_0039,(int)puVar10);
                 puVar19 = (uint *)((int)puVar19 + (int)local_2c + 0x1b);
                 local_24 = local_24 + 1;

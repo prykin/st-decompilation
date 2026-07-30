@@ -120,6 +120,7 @@ public class STDiscriminatedPayloadApplier extends GhidraScript {
                 String description = structure.getDescription();
                 if (description != null && description.contains(MARKER) &&
                         description.contains("layout_sha256=" + expectedHash)) {
+                    annotateCaseView(family, row, structure);
                     report.add(new Report("case_type", path, "unchanged",
                         "generated layout already current"));
                     return structure;
@@ -151,9 +152,11 @@ public class STDiscriminatedPayloadApplier extends GhidraScript {
             desired.setDescription(MARKER + " " + ANCHOR +
                 " discriminator_family=" + row.get("family_id") +
                 "; case_value=" + row.get("case_value") +
+                "; case_label=" + unt(row.getOrDefault("case_label", "")) +
                 "; layout_sha256=" + expectedHash +
                 "; evidence=" + unt(row.get("evidence")));
             DataType installed = dataTypes.resolve(desired, DataTypeConflictHandler.KEEP_HANDLER);
+            annotateCaseView(family, row, installed);
             report.add(new Report("case_type", path, "applied",
                 "size=" + size + "; case=" + row.get("case_value")));
             return installed;
@@ -162,6 +165,21 @@ public class STDiscriminatedPayloadApplier extends GhidraScript {
             report.add(new Report("case_type", path, "conflict", message(exception)));
             return null;
         }
+    }
+
+    private void annotateCaseView(Function function, Map<String, String> row,
+            DataType type) {
+        if (function == null || type == null) return;
+        String discriminator = unt(row.getOrDefault("discriminator_name", ""));
+        String label = unt(row.getOrDefault("case_label", ""));
+        if (label.isBlank()) label = row.get("case_value");
+        String block = MARKER + " Case-local payload view: " +
+            discriminator + " == " + label + " uses " +
+            type.getPathName() + ". The carrier ABI remains " +
+            unt(row.getOrDefault("carrier_type", "")) + ".";
+        String old = function.getComment();
+        if (old == null || old.isBlank()) function.setComment(block);
+        else if (!old.contains(block)) function.setComment(old + "\n\n" + block);
     }
 
     private void ensureUnion(String family, List<DataType> members) {

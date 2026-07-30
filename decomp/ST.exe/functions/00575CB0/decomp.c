@@ -430,16 +430,8 @@ LAB_00576308:
         uVar14 = ~uVar14;
         pcVar13 = pcVar21 + -uVar14;
         pcVar21 = &pAVar6->field_0x6;
-        for (uVar15 = uVar14 >> 2; uVar15 != 0; uVar15 = uVar15 - 1) {
-          *(undefined4 *)pcVar21 = *(undefined4 *)pcVar13;
-          pcVar13 = pcVar13 + 4;
-          pcVar21 = pcVar21 + 4;
-        }
-        for (uVar14 = uVar14 & 3; uVar14 != 0; uVar14 = uVar14 - 1) {
-          *pcVar21 = *pcVar13;
-          pcVar13 = pcVar13 + 1;
-          pcVar21 = pcVar21 + 1;
-        }
+        memmove(pcVar21, pcVar13, uVar14); /* compiler REP MOVS byte copy */
+        uVar15 = 0;
         puVar26 = &local_10->field_0x46;
         pAVar6 = local_10 + 1;
         uVar14 = 0xffffffff;
@@ -500,16 +492,7 @@ LAB_00576308:
         uVar14 = ~uVar14;
         pcVar13 = pcVar21 + -uVar14;
         pcVar21 = &pAVar6->field_0x6;
-        for (uVar15 = uVar14 >> 2; uVar15 != 0; uVar15 = uVar15 - 1) {
-          *(undefined4 *)pcVar21 = *(undefined4 *)pcVar13;
-          pcVar13 = pcVar13 + 4;
-          pcVar21 = pcVar21 + 4;
-        }
-        for (uVar14 = uVar14 & 3; uVar14 != 0; uVar14 = uVar14 - 1) {
-          *pcVar21 = *pcVar13;
-          pcVar13 = pcVar13 + 1;
-          pcVar21 = pcVar21 + 1;
-        }
+        memmove(pcVar21, pcVar13, uVar14); /* compiler REP MOVS byte copy */
         local_8 = (AnonShape_00575CB0_0408A0C4 *)&local_10->field_0x46;
         pAVar6 = local_10 + 1;
         uVar14 = 0xffffffff;

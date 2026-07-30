@@ -9,7 +9,75 @@
    Source: E:\__titans\wlad\to_grpb.cpp
    Copies discriminator-specific group-order payloads into STGroupBoatC state, deep-copying
    DArray-backed variants and marking the corresponding order data dirty. Name is descriptive;
-   original spelling is not confirmed. */
+   original spelling is not confirmed.
+
+   [STDiscriminatedPayloadApplier] Case-local payload view: orderType == 2 uses
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/STGroupBoatC_SetOrderData_00498D20_Case_2. The
+   carrier ABI remains pointer:/void.
+
+   [STDiscriminatedPayloadApplier] Case-local payload view: orderType == 4 uses
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/STGroupBoatC_SetOrderData_00498D20_Case_4. The
+   carrier ABI remains pointer:/void.
+
+   [STDiscriminatedPayloadApplier] Case-local payload view: orderType == 5 uses
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/STGroupBoatC_SetOrderData_00498D20_Case_5. The
+   carrier ABI remains pointer:/void.
+
+   [STDiscriminatedPayloadApplier] Case-local payload view: orderType == 6 uses
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/STGroupBoatC_SetOrderData_00498D20_Case_6. The
+   carrier ABI remains pointer:/void.
+
+   [STDiscriminatedPayloadApplier] Case-local payload view: orderType == 7 uses
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/STGroupBoatC_SetOrderData_00498D20_Case_7. The
+   carrier ABI remains pointer:/void.
+
+   [STDiscriminatedPayloadApplier] Case-local payload view: orderType == 8 uses
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/STGroupBoatC_SetOrderData_00498D20_Case_8. The
+   carrier ABI remains pointer:/void.
+
+   [STDiscriminatedPayloadApplier] Case-local payload view: orderType == 10 uses
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/STGroupBoatC_SetOrderData_00498D20_Case_A. The
+   carrier ABI remains pointer:/void.
+
+   [STDiscriminatedPayloadApplier] Case-local payload view: orderType == 12 uses
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/STGroupBoatC_SetOrderData_00498D20_Case_C. The
+   carrier ABI remains pointer:/void.
+
+   [STDiscriminatedPayloadApplier] Case-local payload view: orderType == 13 uses
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/STGroupBoatC_SetOrderData_00498D20_Case_D. The
+   carrier ABI remains pointer:/void.
+
+   [STDiscriminatedPayloadApplier] Case-local payload view: orderType == 14 uses
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/STGroupBoatC_SetOrderData_00498D20_Case_E. The
+   carrier ABI remains pointer:/void.
+
+   [STDiscriminatedPayloadApplier] Case-local payload view: orderType == 15 uses
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/STGroupBoatC_SetOrderData_00498D20_Case_F. The
+   carrier ABI remains pointer:/void.
+
+   [STDiscriminatedPayloadApplier] Case-local payload view: orderType == 16 uses
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/STGroupBoatC_SetOrderData_00498D20_Case_10. The
+   carrier ABI remains pointer:/void.
+
+   [STDiscriminatedPayloadApplier] Case-local payload view: orderType == 17 uses
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/STGroupBoatC_SetOrderData_00498D20_Case_11. The
+   carrier ABI remains pointer:/void.
+
+   [STDiscriminatedPayloadApplier] Case-local payload view: orderType == 18 uses
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/STGroupBoatC_SetOrderData_00498D20_Case_12. The
+   carrier ABI remains pointer:/void.
+
+   [STDiscriminatedPayloadApplier] Case-local payload view: orderType == 19 uses
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/STGroupBoatC_SetOrderData_00498D20_Case_13. The
+   carrier ABI remains pointer:/void.
+
+   [STDiscriminatedPayloadApplier] Case-local payload view: orderType == 20 uses
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/STGroupBoatC_SetOrderData_00498D20_Case_14. The
+   carrier ABI remains pointer:/void.
+
+   [STDiscriminatedPayloadApplier] Case-local payload view: orderType == 101 uses
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/STGroupBoatC_SetOrderData_00498D20_Case_65. The
+   carrier ABI remains pointer:/void. */
 
 void __thiscall
 STGroupBoatC::SetOrderData(STGroupBoatC *this,Global_sub_00498D20_param_1Enum orderType,void *data)

@@ -16,7 +16,6 @@ FUN_005f0ec0(int param_1,int param_2,undefined4 param_3,undefined4 param_4,undef
 {
   char cVar1;
   uint uVar3;
-  uint uVar4;
   char *pcVar5;
   char *pcVar7;
   int local_158 [7];
@@ -75,16 +74,7 @@ FUN_005f0ec0(int param_1,int param_2,undefined4 param_3,undefined4 param_4,undef
       uVar3 = ~uVar3;
       pcVar5 = pcVar5 + -uVar3;
       pcVar7 = local_126;
-      for (uVar4 = uVar3 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
-        *(undefined4 *)pcVar7 = *(undefined4 *)pcVar5;
-        pcVar5 = pcVar5 + 4;
-        pcVar7 = pcVar7 + 4;
-      }
-      for (uVar3 = uVar3 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
-        *pcVar7 = *pcVar5;
-        pcVar5 = pcVar5 + 1;
-        pcVar7 = pcVar7 + 1;
-      }
+      memmove(pcVar7, pcVar5, uVar3); /* compiler REP MOVS byte copy */
     }
     else {
       Library::MSVCRT::_strncpy(local_126,param_6,0xe);

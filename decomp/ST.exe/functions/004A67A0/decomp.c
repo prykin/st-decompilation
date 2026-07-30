@@ -11,14 +11,14 @@ void __thiscall STGroupBoatC::RestoreGrpBData(STGroupBoatC *this,undefined4 *par
   code *pcVar1;
   undefined4 *puVar2;
   int iVar3;
-  undefined4 *puVar4;
+  byte *puVar4;
   DArrayTy *pDVar5;
   undefined4 uVar6;
   ushort *puVar7;
   int iVar8;
   uint uVar9;
   uint uVar10;
-  undefined4 *puVar11;
+  byte *puVar11;
   InternalExceptionFrame local_50;
   undefined4 *local_c;
   STGroupBoatC *local_8;
@@ -49,19 +49,19 @@ void __thiscall STGroupBoatC::RestoreGrpBData(STGroupBoatC *this,undefined4 *par
   local_8->field_005D = local_c[9];
   local_8->field_0061 = local_c[10];
   local_8->field_0065 = local_c[0xb];
-  puVar11 = local_c + 0xc;
-  puVar4 = (undefined4 *)&local_8->field_0x69;
+  puVar11 = (byte *)(local_c + 0xc);
+  puVar4 = (byte *)&local_8->field_0x69;
   for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
     *puVar4 = *puVar11;
-    puVar11 = puVar11 + 1;
-    puVar4 = puVar4 + 1;
+    puVar11 = (byte *)(puVar11 + 1);
+    puVar4 = (byte *)(puVar4 + 1);
   }
-  puVar11 = local_c + 0x14;
-  puVar4 = &local_8->field_0089;
+  puVar11 = (byte *)(local_c + 0x14);
+  puVar4 = (byte *)(&local_8->field_0089);
   for (iVar3 = 0x15; iVar3 != 0; iVar3 = iVar3 + -1) {
     *puVar4 = *puVar11;
-    puVar11 = puVar11 + 1;
-    puVar4 = puVar4 + 1;
+    puVar11 = (byte *)(puVar11 + 1);
+    puVar4 = (byte *)(puVar4 + 1);
   }
   *(undefined4 *)&local_8->field_0xdd = local_c[0x29];
   *(undefined4 *)&local_8->field_0xe1 = local_c[0x2a];
@@ -115,12 +115,12 @@ void __thiscall STGroupBoatC::RestoreGrpBData(STGroupBoatC *this,undefined4 *par
   local_8->field_0133 = *(undefined2 *)((int)local_c + 0x106);
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   local_8->field_0135 = *(undefined2 *)(local_c + 0x42);
-  puVar11 = (undefined4 *)((int)local_c + 0x10a);
-  puVar4 = (undefined4 *)&local_8->field_0137;
+  puVar11 = (byte *)((int)local_c + 0x10a);
+  puVar4 = (byte *)&local_8->field_0137;
   for (iVar3 = 7; iVar3 != 0; iVar3 = iVar3 + -1) {
     *puVar4 = *puVar11;
-    puVar11 = puVar11 + 1;
-    puVar4 = puVar4 + 1;
+    puVar11 = (byte *)(puVar11 + 1);
+    puVar4 = (byte *)(puVar4 + 1);
   }
   *(undefined2 *)puVar4 = *(undefined2 *)puVar11;
   *(undefined1 *)((int)puVar4 + 2) = *(undefined1 *)((int)puVar11 + 2);
@@ -187,12 +187,12 @@ void __thiscall STGroupBoatC::RestoreGrpBData(STGroupBoatC *this,undefined4 *par
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   local_8->field_01C3 = *(undefined2 *)((int)local_c + 0x19e);
   local_8->field_01C5 = (AnonShape_005EFAE0_B406B78B *)local_c[0x68];
-  puVar11 = (undefined4 *)((int)local_c + 0x1d5);
-  puVar4 = (undefined4 *)&local_8->field_0x1e2;
+  puVar11 = (byte *)((int)local_c + 0x1d5);
+  puVar4 = (byte *)&local_8->field_0x1e2;
   for (iVar3 = 10; iVar3 != 0; iVar3 = iVar3 + -1) {
     *puVar4 = *puVar11;
-    puVar11 = puVar11 + 1;
-    puVar4 = puVar4 + 1;
+    puVar11 = (byte *)(puVar11 + 1);
+    puVar4 = (byte *)(puVar4 + 1);
   }
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   local_8->field_0212 = *(undefined4 *)((int)local_c + 0x205);
@@ -243,12 +243,12 @@ void __thiscall STGroupBoatC::RestoreGrpBData(STGroupBoatC *this,undefined4 *par
   local_8->field_0272 = *(short *)((int)local_c + 0x27d);
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   local_8->field_0274 = *(short *)((int)local_c + 0x27f);
-  puVar11 = (undefined4 *)((int)local_c + 0x281);
-  puVar4 = (undefined4 *)&local_8->field_0276;
+  puVar11 = (byte *)((int)local_c + 0x281);
+  puVar4 = (byte *)&local_8->field_0276;
   for (iVar3 = 7; iVar3 != 0; iVar3 = iVar3 + -1) {
     *puVar4 = *puVar11;
-    puVar11 = puVar11 + 1;
-    puVar4 = puVar4 + 1;
+    puVar11 = (byte *)(puVar11 + 1);
+    puVar4 = (byte *)(puVar4 + 1);
   }
   *(undefined2 *)puVar4 = *(undefined2 *)puVar11;
   *(undefined1 *)((int)puVar4 + 2) = *(undefined1 *)((int)puVar11 + 2);
@@ -306,20 +306,13 @@ void __thiscall STGroupBoatC::RestoreGrpBData(STGroupBoatC *this,undefined4 *par
     local_8->field_0059 = 0;
   }
   else {
-    puVar4 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(local_c[8]);
+    puVar4 = (byte *)Library::DKW::LIB::FUN_006aac70(local_c[8]);
     local_8->field_0059 = puVar4;
     uVar10 = puVar2[8];
-    puVar11 = (undefined4 *)(puVar2[7] + (int)puVar2);
-    for (uVar9 = uVar10 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
-      *puVar4 = *puVar11;
-      puVar11 = puVar11 + 1;
-      puVar4 = puVar4 + 1;
-    }
-    for (uVar10 = uVar10 & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
-      *(undefined1 *)puVar4 = *(undefined1 *)puVar11;
-      puVar11 = (undefined4 *)((int)puVar11 + 1);
-      puVar4 = (undefined4 *)((int)puVar4 + 1);
-    }
+    puVar11 = (byte *)(puVar2[7] + (int)puVar2);
+    memmove(puVar4, puVar11, uVar10); /* compiler REP MOVS byte copy */
+    uVar9 = 0;
+    uVar10 = 0;
   }
   if (*(int *)((int)puVar2 + 0xb2) == -1) {
     local_8->field_00EF = (DArrayTy *)0x0;
@@ -422,15 +415,15 @@ void __thiscall STGroupBoatC::RestoreGrpBData(STGroupBoatC *this,undefined4 *par
   else {
     puVar7 = (ushort *)Library::DKW::LIB::FUN_006aac70(uVar10);
     local_8->field_021E = puVar7;
-    puVar11 = (undefined4 *)((int)puVar2 + *(int *)((int)puVar2 + 0x211));
+    puVar11 = (byte *)((int)puVar2 + *(int *)((int)puVar2 + 0x211));
     for (uVar9 = uVar10 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
       *(undefined4 *)puVar7 = *puVar11;
-      puVar11 = puVar11 + 1;
+      puVar11 = (byte *)(puVar11 + 1);
       puVar7 = puVar7 + 2;
     }
     for (uVar10 = uVar10 & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
       *(undefined1 *)puVar7 = *(undefined1 *)puVar11;
-      puVar11 = (undefined4 *)((int)puVar11 + 1);
+      puVar11 = (byte *)((int)puVar11 + 1);
       puVar7 = (ushort *)((int)puVar7 + 1);
     }
   }

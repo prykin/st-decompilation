@@ -6,3 +6,5 @@ Automatic: 2146
 Dispatch interfaces: 1
 Dispatch tail ABI prototypes: 12
 Synthetic ABI prototypes: 2130
+Resolved-target ABI families: 703
+Family-propagated slots: 0

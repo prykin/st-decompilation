@@ -256,12 +256,8 @@ int __thiscall STGameObjC::GetMessage(STGameObjC *this,STMessage *message)
                 }
               }
               pbVar16 = this_00->field_011D;
-              for (iVar13 = 0xd; iVar13 != 0; iVar13 = iVar13 + -1) {
-                *(undefined4 *)pbVar16 = *(undefined4 *)pbVar21;
-                pbVar21 = pbVar21 + 4;
-                pbVar16 = pbVar16 + 4;
-              }
-              *(undefined2 *)pbVar16 = *(undefined2 *)pbVar21;
+              memmove(pbVar16, pbVar21, 0x36); /* compiler REP MOVS byte copy */
+              iVar13 = 0;
               thunk_FUN_0043fc50(CASE_1,0);
             }
           }
@@ -283,11 +279,8 @@ LAB_0041b128:
             if (!bVar35) {
               piVar19 = this_00->field_0129;
               piVar29 = this_00->field_0125;
-              for (iVar13 = 0x17; iVar13 != 0; iVar13 = iVar13 + -1) {
-                *piVar29 = *piVar19;
-                piVar19 = piVar19 + 1;
-                piVar29 = piVar29 + 1;
-              }
+              memmove(piVar29, piVar19, 0x5c); /* compiler REP MOVS byte copy */
+              iVar13 = 0;
               thunk_FUN_0043fc50(CASE_2,0);
             }
           }

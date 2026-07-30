@@ -103,16 +103,7 @@ int __thiscall STLBombC::GetMessage(STLBombC *this,STMessage *message)
         local_c->field_005F = local_8;
         pbVar12 = local_18;
         pbVar15 = &local_c->field_0x63;
-        for (uVar8 = local_8 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
-          *(undefined4 *)pbVar15 = *(undefined4 *)pbVar12;
-          pbVar12 = pbVar12 + 4;
-          pbVar15 = pbVar15 + 4;
-        }
-        for (uVar8 = local_8 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
-          *pbVar15 = *pbVar12;
-          pbVar12 = pbVar12 + 1;
-          pbVar15 = pbVar15 + 1;
-        }
+        memmove(pbVar15, pbVar12, local_8); /* compiler REP MOVS byte copy */
         *(uint *)(&local_c->field_0x63 + local_8) = local_10;
         pbVar12 = local_14;
         pbVar15 = &local_c[1].field_0x3 + local_8;

@@ -5,7 +5,11 @@
    [STMethodOwnerApplier] Structural method owner recovered as STAppC.
    Evidence: this_call_owners=[STAppC]; agreed_this_calls=1; incoming_this_accesses=2;
    incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=1;
-   incoming_ecx_receiver_callers=1; attributed_named_callers=1; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=1; attributed_named_callers=1; owner_evidence_coverage=adequate
+
+   [STDiscriminatedPayloadApplier] Case-local payload view: param_1->id == 4 uses
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/STAppC_sub_006E5150_006E5150_MessagePayload_Case_4.
+   The carrier ABI remains pointer:/SubmarineTitans/Recovered/STMessage. */
 
 undefined4 __thiscall STAppC::sub_006E5150(STAppC *this,STMessage *param_1)
 

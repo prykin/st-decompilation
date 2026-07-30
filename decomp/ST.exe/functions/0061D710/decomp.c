@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated return.
    Evidence: 0061D710 returns used as parameter 2 of STPlaySystemC::SaveObjData @ 0061D499
@@ -18,7 +20,7 @@ byte * __thiscall STLightC::sub_0061D710(STLightC *this,int *param_1)
   uint uVar6;
   int *piVar7;
   int iVar8;
-  undefined4 *puVar9;
+  byte *puVar9;
   byte *pbVar10;
   int iVar11;
   byte *pbVar12;
@@ -48,17 +50,14 @@ byte * __thiscall STLightC::sub_0061D710(STLightC *this,int *param_1)
   iVar4 = iVar11 + 0x20 + this->field_00A3->count * this->field_00A3->elementSize;
   pbVar2 = (byte *)Library::DKW::LIB::FUN_006aac70(iVar4);
   if (this == (STLightC *)0x0) {
-    puVar9 = (undefined4 *)0x0;
+    puVar9 = (byte *)0x0;
   }
   else {
-    puVar9 = (undefined4 *)&this->field_0x1c;
+    puVar9 = (byte *)&this->field_0x1c;
   }
   pbVar12 = pbVar2;
-  for (iVar8 = 0x24; iVar8 != 0; iVar8 = iVar8 + -1) {
-    *(undefined4 *)pbVar12 = *puVar9;
-    puVar9 = puVar9 + 1;
-    pbVar12 = pbVar12 + 4;
-  }
+  memmove(pbVar12, puVar9, 0x90); /* compiler REP MOVS byte copy */
+  iVar8 = 0;
   uVar6 = this->field_0093;
   pbVar12 = this->field_009B;
   pbVar10 = pbVar2 + 0x90;

@@ -14,7 +14,7 @@ byte * __thiscall STColl3C::sub_005F66F0(STColl3C *this,uint *param_1)
 {
   uint uVar1;
   STAllPlayersC *pSVar2;
-  undefined4 *puVar3;
+  byte *puVar3;
   byte *pbVar4;
   byte *pbVar5;
   int iVar6;
@@ -33,7 +33,7 @@ byte * __thiscall STColl3C::sub_005F66F0(STColl3C *this,uint *param_1)
   uint local_8;
 
   local_14 = (STAllPlayersC *)this;
-  puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0xc2);
+  puVar3 = (byte *)Library::DKW::LIB::FUN_006aac70(0xc2);
   pSVar2 = local_14;
   if (this == (STColl3C *)0x0) {
     puVar10 = (byte *)0x0;
@@ -51,16 +51,9 @@ byte * __thiscall STColl3C::sub_005F66F0(STColl3C *this,uint *param_1)
   *(uint *)(pbVar4 + 0xc2) = local_c;
   pbVar12 = local_18;
   pbVar5 = pbVar4 + 0xc6;
-  for (uVar7 = local_c >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-    *(undefined4 *)pbVar5 = *(undefined4 *)pbVar12;
-    pbVar12 = pbVar12 + 4;
-    pbVar5 = pbVar5 + 4;
-  }
-  for (uVar7 = local_c & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-    *pbVar5 = *pbVar12;
-    pbVar12 = pbVar12 + 1;
-    pbVar5 = pbVar5 + 1;
-  }
+  memmove(pbVar5, pbVar12, local_c); /* compiler REP MOVS byte copy */
+  uVar7 = 0;
+  uVar7 = 0;
   FreeAndNull(&local_18);
   puVar9 = (uint *)(pbVar4 + 0xc6 + local_c);
   *puVar9 = local_10;
@@ -87,13 +80,10 @@ byte * __thiscall STColl3C::sub_005F66F0(STColl3C *this,uint *param_1)
     uVar1 = local_8 + 0x6c + uVar7;
     local_8 = uVar1;
     pbVar5 = (byte *)Library::DKW::LIB::FUN_006acf50((int)pbVar4,uVar1);
-    puVar3 = *(undefined4 **)&pSVar2->field_0x2e6;
+    puVar3 = (byte *)(*(undefined4 **)&pSVar2->field_0x2e6);
     pbVar12 = pbVar5 + (uVar1 - uVar7) + -0x6c;
-    for (iVar6 = 0x1b; iVar6 != 0; iVar6 = iVar6 + -1) {
-      *(undefined4 *)pbVar12 = *puVar3;
-      puVar3 = puVar3 + 1;
-      pbVar12 = pbVar12 + 4;
-    }
+    memmove(pbVar12, puVar3, 0x6c); /* compiler REP MOVS byte copy */
+    iVar6 = 0;
     if (uVar7 != 0) {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       pbVar12 = *(byte **)(*(int *)&local_14->field_0x2e6 + 0x58);

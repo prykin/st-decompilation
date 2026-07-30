@@ -97,11 +97,8 @@ void __thiscall CPanelTy::Update4PanelWB(CPanelTy *this)
   pCVar1 = &local_80->field_0BF5;
   pCVar16 = pCVar1;
   pCVar21 = &local_7c;
-  for (iVar8 = 0x17; iVar8 != 0; iVar8 = iVar8 + -1) {
-    *pCVar21 = *pCVar16;
-    pCVar16 = pCVar16 + 1;
-    pCVar21 = pCVar21 + 1;
-  }
+  memmove(pCVar21, pCVar16, 0x5c); /* compiler REP MOVS byte copy */
+  iVar8 = 0;
   pCVar16 = pCVar1;
   for (iVar8 = 0x17; iVar8 != 0; iVar8 = iVar8 + -1) {
     *pCVar16 = CASE_0;

@@ -77,41 +77,23 @@ void CreateAi(void)
         DAT_0080c52a = *DAT_0080ed12;
         piVar9 = DAT_0080ed12 + 0x101;
         piVar11 = &g_playerRuntime[DAT_0080874d].field480_0x2eb;
-        for (iVar3 = 5; iVar3 != 0; iVar3 = iVar3 + -1) {
-          *piVar11 = *piVar9;
-          piVar9 = piVar9 + 1;
-          piVar11 = piVar11 + 1;
-        }
+        memmove(piVar11, piVar9, 0x14); /* compiler REP MOVS byte copy */
+        iVar3 = 0;
         piVar9 = DAT_0080ed12 + 0x106;
         piVar11 = &g_playerRuntime[DAT_0080874d].field494_0x2ff;
-        for (iVar3 = 5; iVar3 != 0; iVar3 = iVar3 + -1) {
-          *piVar11 = *piVar9;
-          piVar9 = piVar9 + 1;
-          piVar11 = piVar11 + 1;
-        }
+        memmove(piVar11, piVar9, 0x14); /* compiler REP MOVS byte copy */
+        iVar3 = 0;
         piVar9 = DAT_0080ed12 + 0x10b;
         piVar11 = &g_playerRuntime[DAT_0080874d].field522_0x327;
-        for (iVar3 = 0x9b; iVar3 != 0; iVar3 = iVar3 + -1) {
-          *piVar11 = *piVar9;
-          piVar9 = piVar9 + 1;
-          piVar11 = piVar11 + 1;
-        }
+        memmove(piVar11, piVar9, 0x26c); /* compiler REP MOVS byte copy */
+        iVar3 = 0;
         piVar9 = DAT_0080ed12 + 0x1a6;
         piVar11 = &g_playerRuntime[DAT_0080874d].field1136_0x593;
-        for (iVar3 = 0x6a; iVar3 != 0; iVar3 = iVar3 + -1) {
-          *piVar11 = *piVar9;
-          piVar9 = piVar9 + 1;
-          piVar11 = piVar11 + 1;
-        }
+        memmove(piVar11, piVar9, 0x1a8); /* compiler REP MOVS byte copy */
+        iVar3 = 0;
         piVar9 = DAT_0080ed12 + 0x210;
         piVar11 = &g_playerRuntime[DAT_0080874d].field1554_0x73b;
-        for (iVar3 = 0x26; iVar3 != 0; iVar3 = iVar3 + -1) {
-          *piVar11 = *piVar9;
-          piVar9 = piVar9 + 1;
-          piVar11 = piVar11 + 1;
-        }
-        *(short *)piVar11 = (short)*piVar9;
-        *(undefined1 *)((int)piVar11 + 2) = *(undefined1 *)((int)piVar9 + 2);
+        memmove(piVar11, piVar9, 0x9b); /* compiler REP MOVS byte copy */
         if (DAT_0080ed12 != (int *)0x0) {
           FreeAndNull(&DAT_0080ed12);
           local_c = g_cMf32_00806754;

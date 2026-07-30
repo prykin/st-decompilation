@@ -65,16 +65,8 @@ undefined4 * CreatePlrDataForWS(void)
   uVar6 = ~uVar6;
   pcVar8 = pcVar11 + -uVar6;
   pcVar11 = local_390;
-  for (uVar7 = uVar6 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-    *(undefined4 *)pcVar11 = *(undefined4 *)pcVar8;
-    pcVar8 = pcVar8 + 4;
-    pcVar11 = pcVar11 + 4;
-  }
-  for (uVar6 = uVar6 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
-    *pcVar11 = *pcVar8;
-    pcVar8 = pcVar8 + 1;
-    pcVar11 = pcVar11 + 1;
-  }
+  memmove(pcVar11, pcVar8, uVar6); /* compiler REP MOVS byte copy */
+  uVar7 = 0;
   uVar6 = 0xffffffff;
   pcVar8 = PTR_DAT_0079d65c;
   do {
@@ -98,16 +90,8 @@ undefined4 * CreatePlrDataForWS(void)
   } while (cVar1 != '\0');
   pcVar8 = pcVar11 + -uVar6;
   pcVar11 = pcVar10 + -1;
-  for (uVar7 = uVar6 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-    *(undefined4 *)pcVar11 = *(undefined4 *)pcVar8;
-    pcVar8 = pcVar8 + 4;
-    pcVar11 = pcVar11 + 4;
-  }
-  for (uVar6 = uVar6 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
-    *pcVar11 = *pcVar8;
-    pcVar8 = pcVar8 + 1;
-    pcVar11 = pcVar11 + 1;
-  }
+  memmove(pcVar11, pcVar8, uVar6); /* compiler REP MOVS byte copy */
+  uVar7 = 0;
   uVar6 = 0xffffffff;
   pcVar8 = &DAT_00807680;
   do {
@@ -121,16 +105,8 @@ undefined4 * CreatePlrDataForWS(void)
   uVar6 = ~uVar6;
   pcVar8 = pcVar11 + -uVar6;
   pcVar11 = local_17c;
-  for (uVar7 = uVar6 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-    *(undefined4 *)pcVar11 = *(undefined4 *)pcVar8;
-    pcVar8 = pcVar8 + 4;
-    pcVar11 = pcVar11 + 4;
-  }
-  for (uVar6 = uVar6 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
-    *pcVar11 = *pcVar8;
-    pcVar8 = pcVar8 + 1;
-    pcVar11 = pcVar11 + 1;
-  }
+  memmove(pcVar11, pcVar8, uVar6); /* compiler REP MOVS byte copy */
+  uVar7 = 0;
   uVar6 = 0xffffffff;
   pcVar8 = PTR_DAT_0079d65c;
   do {
@@ -154,16 +130,7 @@ undefined4 * CreatePlrDataForWS(void)
   } while (cVar1 != '\0');
   pcVar8 = pcVar11 + -uVar6;
   pcVar11 = pcVar10 + -1;
-  for (uVar7 = uVar6 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-    *(undefined4 *)pcVar11 = *(undefined4 *)pcVar8;
-    pcVar8 = pcVar8 + 4;
-    pcVar11 = pcVar11 + 4;
-  }
-  for (uVar6 = uVar6 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
-    *pcVar11 = *pcVar8;
-    pcVar8 = pcVar8 + 1;
-    pcVar11 = pcVar11 + 1;
-  }
+  memmove(pcVar11, pcVar8, uVar6); /* compiler REP MOVS byte copy */
   uVar6 = 0xffffffff;
   pcVar8 = "WS_Opponent_00.stg";
   do {

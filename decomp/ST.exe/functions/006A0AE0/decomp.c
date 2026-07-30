@@ -23,12 +23,7 @@ FUN_006a0ae0(void *this,int param_1,int param_2,undefined4 param_3,int param_4,u
   puVar1 = thunk_FUN_00692c10(CASE_A,param_4,&local_8,0,param_5);
   puVar1 = puVar1 + 5;
   puVar6 = &local_9c;
-  for (iVar3 = 0x24; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar6 = *puVar1;
-    puVar1 = puVar1 + 1;
-    puVar6 = puVar6 + 1;
-  }
-  *(short *)puVar6 = (short)*puVar1;
+  memmove(puVar6, puVar1, 0x92); /* compiler REP MOVS byte copy */
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   local_9c._2_2_ = (undefined2)param_2;
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */

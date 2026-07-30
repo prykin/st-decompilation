@@ -467,16 +467,8 @@ LAB_005a63ec:
         uVar35 = ~uVar35;
         pcVar39 = pcVar28 + -uVar35;
         pcVar28 = (char *)&DAT_00807e5d;
-        for (uVar32 = uVar35 >> 2; uVar32 != 0; uVar32 = uVar32 - 1) {
-          *(undefined4 *)pcVar28 = *(undefined4 *)pcVar39;
-          pcVar39 = pcVar39 + 4;
-          pcVar28 = pcVar28 + 4;
-        }
-        for (uVar35 = uVar35 & 3; uVar35 != 0; uVar35 = uVar35 - 1) {
-          *pcVar28 = *pcVar39;
-          pcVar39 = pcVar39 + 1;
-          pcVar28 = pcVar28 + 1;
-        }
+        memmove(pcVar28, pcVar39, uVar35); /* compiler REP MOVS byte copy */
+        uVar32 = 0;
         iVar21 = -1;
         pcVar39 = (char *)&DAT_00807e5d;
         do {
@@ -1070,16 +1062,8 @@ LAB_005a6e50:
           } while (cVar2 != '\0');
           uVar35 = ~uVar35;
           pbVar36 = (byte *)(pcVar28 + -uVar35);
-          for (uVar32 = uVar35 >> 2; uVar32 != 0; uVar32 = uVar32 - 1) {
-            *(undefined4 *)pbVar40 = *(undefined4 *)pbVar36;
-            pbVar36 = pbVar36 + 4;
-            pbVar40 = pbVar40 + 4;
-          }
-          for (uVar35 = uVar35 & 3; uVar35 != 0; uVar35 = uVar35 - 1) {
-            *pbVar40 = *pbVar36;
-            pbVar36 = pbVar36 + 1;
-            pbVar40 = pbVar40 + 1;
-          }
+          memmove(pbVar40, pbVar36, uVar35); /* compiler REP MOVS byte copy */
+          uVar32 = 0;
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (*(code *)this_00->field_0000->field_0008)();
           this_00->field_1A61 = 10;
@@ -1598,16 +1582,8 @@ LAB_005a7656:
           uVar35 = ~uVar35;
           pcVar39 = pcVar28 + -uVar35;
           pcVar28 = (char *)&DAT_0080f33a;
-          for (uVar32 = uVar35 >> 2; uVar32 != 0; uVar32 = uVar32 - 1) {
-            *(undefined4 *)pcVar28 = *(undefined4 *)pcVar39;
-            pcVar39 = pcVar39 + 4;
-            pcVar28 = pcVar28 + 4;
-          }
-          for (uVar35 = uVar35 & 3; uVar35 != 0; uVar35 = uVar35 - 1) {
-            *pcVar28 = *pcVar39;
-            pcVar39 = pcVar39 + 1;
-            pcVar28 = pcVar28 + 1;
-          }
+          memmove(pcVar28, pcVar39, uVar35); /* compiler REP MOVS byte copy */
+          uVar32 = 0;
         }
         else {
           if (this_00->field_1ECA < PTR_0080c502->count) {
@@ -1633,16 +1609,8 @@ LAB_005a7656:
           uVar35 = ~uVar35;
           pcVar39 = pcVar28 + -uVar35;
           pcVar28 = (char *)&DAT_0080f33a;
-          for (uVar32 = uVar35 >> 2; uVar32 != 0; uVar32 = uVar32 - 1) {
-            *(undefined4 *)pcVar28 = *(undefined4 *)pcVar39;
-            pcVar39 = pcVar39 + 4;
-            pcVar28 = pcVar28 + 4;
-          }
-          for (uVar35 = uVar35 & 3; uVar35 != 0; uVar35 = uVar35 - 1) {
-            *pcVar28 = *pcVar39;
-            pcVar39 = pcVar39 + 1;
-            pcVar28 = pcVar28 + 1;
-          }
+          memmove(pcVar28, pcVar39, uVar35); /* compiler REP MOVS byte copy */
+          uVar32 = 0;
         }
         break;
       case MESS_CURSORCLASSTY_0009:
@@ -1914,16 +1882,8 @@ cf_common_exit_005A7F3B:
         uVar35 = ~uVar35;
         pcVar39 = pcVar28 + -uVar35;
         pcVar28 = &this_00->field_0x1fb7;
-        for (uVar32 = uVar35 >> 2; uVar32 != 0; uVar32 = uVar32 - 1) {
-          *(undefined4 *)pcVar28 = *(undefined4 *)pcVar39;
-          pcVar39 = pcVar39 + 4;
-          pcVar28 = pcVar28 + 4;
-        }
-        for (uVar35 = uVar35 & 3; uVar35 != 0; uVar35 = uVar35 - 1) {
-          *pcVar28 = *pcVar39;
-          pcVar39 = pcVar39 + 1;
-          pcVar28 = pcVar28 + 1;
-        }
+        memmove(pcVar28, pcVar39, uVar35); /* compiler REP MOVS byte copy */
+        uVar32 = 0;
         Library::DKW::TBL::FUN_006ae1c0
                   (&this_00->field_1FB3->flags,(undefined4 *)&this_00->field_0x1fb7);
         this_00->field_20BB = 2;
@@ -1940,16 +1900,8 @@ cf_common_exit_005A7F3B:
         uVar35 = ~uVar35;
         pcVar39 = pcVar28 + -uVar35;
         pcVar28 = &this_00->field_0x1fb7;
-        for (uVar32 = uVar35 >> 2; uVar32 != 0; uVar32 = uVar32 - 1) {
-          *(undefined4 *)pcVar28 = *(undefined4 *)pcVar39;
-          pcVar39 = pcVar39 + 4;
-          pcVar28 = pcVar28 + 4;
-        }
-        for (uVar35 = uVar35 & 3; uVar35 != 0; uVar35 = uVar35 - 1) {
-          *pcVar28 = *pcVar39;
-          pcVar39 = pcVar39 + 1;
-          pcVar28 = pcVar28 + 1;
-        }
+        memmove(pcVar28, pcVar39, uVar35); /* compiler REP MOVS byte copy */
+        uVar32 = 0;
         Library::DKW::TBL::FUN_006ae1c0
                   (&this_00->field_1FB3->flags,(undefined4 *)&this_00->field_0x1fb7);
         pFVar9 = this_00->field_1FB3;
@@ -2164,16 +2116,8 @@ cf_common_exit_005A5634:
             uVar35 = ~uVar35;
             pcVar39 = pcVar28 + -uVar35;
             pcVar28 = &this_00->field_0x1fb7;
-            for (uVar32 = uVar35 >> 2; uVar32 != 0; uVar32 = uVar32 - 1) {
-              *(undefined4 *)pcVar28 = *(undefined4 *)pcVar39;
-              pcVar39 = pcVar39 + 4;
-              pcVar28 = pcVar28 + 4;
-            }
-            for (uVar35 = uVar35 & 3; uVar35 != 0; uVar35 = uVar35 - 1) {
-              *pcVar28 = *pcVar39;
-              pcVar39 = pcVar39 + 1;
-              pcVar28 = pcVar28 + 1;
-            }
+            memmove(pcVar28, pcVar39, uVar35); /* compiler REP MOVS byte copy */
+            uVar32 = 0;
             Library::DKW::TBL::FUN_006ae1c0
                       (&this_00->field_1FB3->flags,(undefined4 *)&this_00->field_0x1fb7);
           }
@@ -2191,16 +2135,8 @@ cf_common_exit_005A5634:
           uVar35 = ~uVar35;
           pcVar39 = pcVar28 + -uVar35;
           pcVar28 = &this_00->field_0x1fb7;
-          for (uVar32 = uVar35 >> 2; uVar32 != 0; uVar32 = uVar32 - 1) {
-            *(undefined4 *)pcVar28 = *(undefined4 *)pcVar39;
-            pcVar39 = pcVar39 + 4;
-            pcVar28 = pcVar28 + 4;
-          }
-          for (uVar35 = uVar35 & 3; uVar35 != 0; uVar35 = uVar35 - 1) {
-            *pcVar28 = *pcVar39;
-            pcVar39 = pcVar39 + 1;
-            pcVar28 = pcVar28 + 1;
-          }
+          memmove(pcVar28, pcVar39, uVar35); /* compiler REP MOVS byte copy */
+          uVar32 = 0;
           Library::DKW::TBL::FUN_006ae1c0
                     (&this_00->field_1FB3->flags,(undefined4 *)&this_00->field_0x1fb7);
           this_00->field_20BB = 0x501;
@@ -2217,16 +2153,8 @@ cf_common_exit_005A5634:
           uVar35 = ~uVar35;
           pcVar39 = pcVar28 + -uVar35;
           pcVar28 = &this_00->field_0x1fb7;
-          for (uVar32 = uVar35 >> 2; uVar32 != 0; uVar32 = uVar32 - 1) {
-            *(undefined4 *)pcVar28 = *(undefined4 *)pcVar39;
-            pcVar39 = pcVar39 + 4;
-            pcVar28 = pcVar28 + 4;
-          }
-          for (uVar35 = uVar35 & 3; uVar35 != 0; uVar35 = uVar35 - 1) {
-            *pcVar28 = *pcVar39;
-            pcVar39 = pcVar39 + 1;
-            pcVar28 = pcVar28 + 1;
-          }
+          memmove(pcVar28, pcVar39, uVar35); /* compiler REP MOVS byte copy */
+          uVar32 = 0;
           Library::DKW::TBL::FUN_006ae1c0
                     (&this_00->field_1FB3->flags,(undefined4 *)&this_00->field_0x1fb7);
           this_00->field_20BB = 0x200;
@@ -2243,16 +2171,8 @@ cf_common_exit_005A5634:
           uVar35 = ~uVar35;
           pcVar39 = pcVar28 + -uVar35;
           pcVar28 = &this_00->field_0x1fb7;
-          for (uVar32 = uVar35 >> 2; uVar32 != 0; uVar32 = uVar32 - 1) {
-            *(undefined4 *)pcVar28 = *(undefined4 *)pcVar39;
-            pcVar39 = pcVar39 + 4;
-            pcVar28 = pcVar28 + 4;
-          }
-          for (uVar35 = uVar35 & 3; uVar35 != 0; uVar35 = uVar35 - 1) {
-            *pcVar28 = *pcVar39;
-            pcVar39 = pcVar39 + 1;
-            pcVar28 = pcVar28 + 1;
-          }
+          memmove(pcVar28, pcVar39, uVar35); /* compiler REP MOVS byte copy */
+          uVar32 = 0;
           Library::DKW::TBL::FUN_006ae1c0
                     (&this_00->field_1FB3->flags,(undefined4 *)&this_00->field_0x1fb7);
           this_00->field_20BB = 0x400;
@@ -2269,16 +2189,8 @@ cf_common_exit_005A5634:
           uVar35 = ~uVar35;
           pcVar39 = pcVar28 + -uVar35;
           pcVar28 = &this_00->field_0x1fb7;
-          for (uVar32 = uVar35 >> 2; uVar32 != 0; uVar32 = uVar32 - 1) {
-            *(undefined4 *)pcVar28 = *(undefined4 *)pcVar39;
-            pcVar39 = pcVar39 + 4;
-            pcVar28 = pcVar28 + 4;
-          }
-          for (uVar35 = uVar35 & 3; uVar35 != 0; uVar35 = uVar35 - 1) {
-            *pcVar28 = *pcVar39;
-            pcVar39 = pcVar39 + 1;
-            pcVar28 = pcVar28 + 1;
-          }
+          memmove(pcVar28, pcVar39, uVar35); /* compiler REP MOVS byte copy */
+          uVar32 = 0;
           Library::DKW::TBL::FUN_006ae1c0
                     (&this_00->field_1FB3->flags,(undefined4 *)&this_00->field_0x1fb7);
           this_00->field_20BB = 0x502;
@@ -2295,16 +2207,8 @@ cf_common_exit_005A5634:
           uVar35 = ~uVar35;
           pcVar39 = pcVar28 + -uVar35;
           pcVar28 = &this_00->field_0x1fb7;
-          for (uVar32 = uVar35 >> 2; uVar32 != 0; uVar32 = uVar32 - 1) {
-            *(undefined4 *)pcVar28 = *(undefined4 *)pcVar39;
-            pcVar39 = pcVar39 + 4;
-            pcVar28 = pcVar28 + 4;
-          }
-          for (uVar35 = uVar35 & 3; uVar35 != 0; uVar35 = uVar35 - 1) {
-            *pcVar28 = *pcVar39;
-            pcVar39 = pcVar39 + 1;
-            pcVar28 = pcVar28 + 1;
-          }
+          memmove(pcVar28, pcVar39, uVar35); /* compiler REP MOVS byte copy */
+          uVar32 = 0;
           Library::DKW::TBL::FUN_006ae1c0
                     (&this_00->field_1FB3->flags,(undefined4 *)&this_00->field_0x1fb7);
           pFVar9 = this_00->field_1FB3;
@@ -2345,16 +2249,8 @@ cf_common_exit_005A5634:
           uVar35 = ~uVar35;
           pcVar39 = pcVar28 + -uVar35;
           pcVar28 = &this_00->field_0x1fb7;
-          for (uVar32 = uVar35 >> 2; uVar32 != 0; uVar32 = uVar32 - 1) {
-            *(undefined4 *)pcVar28 = *(undefined4 *)pcVar39;
-            pcVar39 = pcVar39 + 4;
-            pcVar28 = pcVar28 + 4;
-          }
-          for (uVar35 = uVar35 & 3; uVar35 != 0; uVar35 = uVar35 - 1) {
-            *pcVar28 = *pcVar39;
-            pcVar39 = pcVar39 + 1;
-            pcVar28 = pcVar28 + 1;
-          }
+          memmove(pcVar28, pcVar39, uVar35); /* compiler REP MOVS byte copy */
+          uVar32 = 0;
           this_00->field_20BF = 0;
           Library::DKW::TBL::FUN_006ae1c0
                     (&this_00->field_1FB3->flags,(undefined4 *)&this_00->field_0x1fb7);
@@ -2383,16 +2279,8 @@ LAB_005a5859:
                 uVar35 = ~uVar35;
                 pcVar39 = pcVar28 + -uVar35;
                 pcVar28 = &this_00->field_0x1fb7;
-                for (uVar32 = uVar35 >> 2; uVar32 != 0; uVar32 = uVar32 - 1) {
-                  *(undefined4 *)pcVar28 = *(undefined4 *)pcVar39;
-                  pcVar39 = pcVar39 + 4;
-                  pcVar28 = pcVar28 + 4;
-                }
-                for (uVar35 = uVar35 & 3; uVar35 != 0; uVar35 = uVar35 - 1) {
-                  *pcVar28 = *pcVar39;
-                  pcVar39 = pcVar39 + 1;
-                  pcVar28 = pcVar28 + 1;
-                }
+                memmove(pcVar28, pcVar39, uVar35); /* compiler REP MOVS byte copy */
+                uVar32 = 0;
                 this_00->field_20BF = local_8;
                 Library::DKW::TBL::FUN_006ae1c0
                           (&this_00->field_1FB3->flags,(undefined4 *)&this_00->field_0x1fb7);
@@ -2457,16 +2345,8 @@ joined_r0x005a5b89:
       uVar35 = ~uVar35;
       pcVar39 = pcVar28 + -uVar35;
       pcVar28 = &this_00->field_0x1fb7;
-      for (uVar32 = uVar35 >> 2; uVar32 != 0; uVar32 = uVar32 - 1) {
-        *(undefined4 *)pcVar28 = *(undefined4 *)pcVar39;
-        pcVar39 = pcVar39 + 4;
-        pcVar28 = pcVar28 + 4;
-      }
-      for (uVar35 = uVar35 & 3; uVar35 != 0; uVar35 = uVar35 - 1) {
-        *pcVar28 = *pcVar39;
-        pcVar39 = pcVar39 + 1;
-        pcVar28 = pcVar28 + 1;
-      }
+      memmove(pcVar28, pcVar39, uVar35); /* compiler REP MOVS byte copy */
+      uVar32 = 0;
       Library::DKW::TBL::FUN_006ae1c0
                 (&this_00->field_1FB3->flags,(undefined4 *)&this_00->field_0x1fb7);
       this_00->field_20BB = 1;
@@ -2483,16 +2363,8 @@ joined_r0x005a5b89:
       uVar35 = ~uVar35;
       pcVar39 = pcVar28 + -uVar35;
       pcVar28 = &this_00->field_0x1fb7;
-      for (uVar32 = uVar35 >> 2; uVar32 != 0; uVar32 = uVar32 - 1) {
-        *(undefined4 *)pcVar28 = *(undefined4 *)pcVar39;
-        pcVar39 = pcVar39 + 4;
-        pcVar28 = pcVar28 + 4;
-      }
-      for (uVar35 = uVar35 & 3; uVar35 != 0; uVar35 = uVar35 - 1) {
-        *pcVar28 = *pcVar39;
-        pcVar39 = pcVar39 + 1;
-        pcVar28 = pcVar28 + 1;
-      }
+      memmove(pcVar28, pcVar39, uVar35); /* compiler REP MOVS byte copy */
+      uVar32 = 0;
       Library::DKW::TBL::FUN_006ae1c0
                 (&this_00->field_1FB3->flags,(undefined4 *)&this_00->field_0x1fb7);
       this_00->field_20BB = 2;
@@ -2509,16 +2381,8 @@ joined_r0x005a5b89:
       uVar35 = ~uVar35;
       pcVar39 = pcVar28 + -uVar35;
       pcVar28 = &this_00->field_0x1fb7;
-      for (uVar32 = uVar35 >> 2; uVar32 != 0; uVar32 = uVar32 - 1) {
-        *(undefined4 *)pcVar28 = *(undefined4 *)pcVar39;
-        pcVar39 = pcVar39 + 4;
-        pcVar28 = pcVar28 + 4;
-      }
-      for (uVar35 = uVar35 & 3; uVar35 != 0; uVar35 = uVar35 - 1) {
-        *pcVar28 = *pcVar39;
-        pcVar39 = pcVar39 + 1;
-        pcVar28 = pcVar28 + 1;
-      }
+      memmove(pcVar28, pcVar39, uVar35); /* compiler REP MOVS byte copy */
+      uVar32 = 0;
       Library::DKW::TBL::FUN_006ae1c0
                 (&this_00->field_1FB3->flags,(undefined4 *)&this_00->field_0x1fb7);
       pFVar9 = this_00->field_1FB3;
@@ -2661,16 +2525,8 @@ cf_common_exit_005A52AA:
       } while (cVar2 != '\0');
       uVar35 = ~uVar35;
       pbVar36 = (byte *)(pcVar28 + -uVar35);
-      for (uVar32 = uVar35 >> 2; uVar32 != 0; uVar32 = uVar32 - 1) {
-        *(undefined4 *)pbVar40 = *(undefined4 *)pbVar36;
-        pbVar36 = pbVar36 + 4;
-        pbVar40 = pbVar40 + 4;
-      }
-      for (uVar35 = uVar35 & 3; uVar35 != 0; uVar35 = uVar35 - 1) {
-        *pbVar40 = *pbVar36;
-        pbVar36 = pbVar36 + 1;
-        pbVar40 = pbVar40 + 1;
-      }
+      memmove(pbVar40, pbVar36, uVar35); /* compiler REP MOVS byte copy */
+      uVar32 = 0;
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (*(code *)this_00->field_0000->field_0008)();
       this_00->field_1A61 = 10;

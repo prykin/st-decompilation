@@ -8,7 +8,7 @@ undefined4 __thiscall FUN_005fd3a0(void *this,int param_1)
   int iVar2;
   int iVar3;
   undefined4 *puVar4;
-  undefined4 *puVar5;
+  byte *puVar5;
   byte *local_10;
   AnonShape_0060EA30_DCEB68AD *local_c;
   short local_8;
@@ -36,12 +36,9 @@ LAB_005fd4eb:
     else if (uVar1 == 2) {
       puVar4 = *(undefined4 **)(iVar3 + 0x14);
       if (puVar4[3] != 2) {
-        puVar5 = (undefined4 *)((int)this + 0x206);
-        for (iVar3 = 0xb; iVar3 != 0; iVar3 = iVar3 + -1) {
-          *puVar5 = *puVar4;
-          puVar4 = puVar4 + 1;
-          puVar5 = puVar5 + 1;
-        }
+        puVar5 = (byte *)((int)this + 0x206);
+        memmove(puVar5, puVar4, 0x2c); /* compiler REP MOVS byte copy */
+        puVar4 = (undefined4 *)((byte *)puVar4 + 0x2c);
         *(undefined4 *)((int)this + 0x22a) = DAT_007e65e4;
         iVar3 = thunk_FUN_005fd830();
         if (iVar3 != 0) {

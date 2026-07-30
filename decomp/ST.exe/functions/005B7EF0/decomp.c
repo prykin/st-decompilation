@@ -55,13 +55,7 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
       this_00->field_1CA9 = 1;
       puVar6 = &this_00->field_1CD0;
       puVar11 = (undefined4 *)&this_00->field_0x1a60;
-      for (iVar3 = 9; iVar3 != 0; iVar3 = iVar3 + -1) {
-        *puVar11 = *puVar6;
-        puVar6 = puVar6 + 1;
-        puVar11 = puVar11 + 1;
-      }
-      *(undefined2 *)puVar11 = *(undefined2 *)puVar6;
-      *(undefined1 *)((int)puVar11 + 2) = *(undefined1 *)((int)puVar6 + 2);
+      memmove(puVar11, puVar6, 0x27); /* compiler REP MOVS byte copy */
       this_00->field_1A5F = this_00->field_0065;
       this_00->field_002D = 0x21;
       memset(&this_00->field_0x1c82, 0, 0x1a); /* compiler bulk-zero initialization */
@@ -78,13 +72,7 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
           }
           puVar6 = (undefined4 *)(&this_00->field_0xbc + uVar10 * 0x1fb);
           puVar11 = (undefined4 *)(&this_00->field_0x1a87 + uVar10 * 0x27);
-          for (iVar3 = 9; iVar3 != 0; iVar3 = iVar3 + -1) {
-            *puVar11 = *puVar6;
-            puVar6 = puVar6 + 1;
-            puVar11 = puVar11 + 1;
-          }
-          *(undefined2 *)puVar11 = *(undefined2 *)puVar6;
-          *(undefined1 *)((int)puVar11 + 2) = *(undefined1 *)((int)puVar6 + 2);
+          memmove(puVar11, puVar6, 0x27); /* compiler REP MOVS byte copy */
           bVar2 = (char)local_8 + 1;
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_8 = CONCAT31(local_8._1_3_,bVar2);

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STTypeFamilyApplier] EXACT_ANONYMOUS_LAYOUT.
    Evidence: exact anonymous structure fingerprint shared across functions
@@ -242,16 +244,11 @@ LAB_007522a2:
                   *pbVar11 = 0xbf;
                   pbVar6 = local_18;
                   pbVar16 = pbVar11 + 1;
-                  for (iVar8 = 0xf; iVar8 != 0; iVar8 = iVar8 + -1) {
-                    *(undefined4 *)pbVar16 = *(undefined4 *)pbVar6;
-                    pbVar6 = pbVar6 + 4;
-                    pbVar16 = pbVar16 + 4;
-                  }
-                  *(undefined2 *)pbVar16 = *(undefined2 *)pbVar6;
+                  memmove(pbVar16, pbVar6, 0x3f); /* compiler REP MOVS byte copy */
+                  iVar8 = 0;
                   pbVar11 = pbVar11 + 0x40;
                   local_18 = local_18 + 0x3f;
                   uVar7 = uVar7 - 1;
-                  pbVar16[2] = pbVar6[2];
                 } while (uVar7 != 0);
               }
               pbVar6 = pbVar14;
@@ -285,16 +282,10 @@ LAB_007522a2:
                 *pbVar11 = 0xbf;
                 pbVar14 = local_18;
                 pbVar16 = pbVar11 + 1;
-                for (iVar8 = 0xf; iVar8 != 0; iVar8 = iVar8 + -1) {
-                  *(undefined4 *)pbVar16 = *(undefined4 *)pbVar14;
-                  pbVar14 = pbVar14 + 4;
-                  pbVar16 = pbVar16 + 4;
-                }
-                *(undefined2 *)pbVar16 = *(undefined2 *)pbVar14;
+                memmove(pbVar16, pbVar14, 0x3f); /* compiler REP MOVS byte copy */
                 pbVar11 = pbVar11 + 0x40;
                 local_18 = local_18 + 0x3f;
                 uVar7 = uVar7 - 1;
-                pbVar16[2] = pbVar14[2];
               } while (uVar7 != 0);
             }
             if (0 < (int)param_3) {

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STMethodOwnerApplier] Structural method owner recovered as ResearchPanelTy.
    Evidence: this_call_owners=[ResearchPanelTy]; agreed_this_calls=1; incoming_this_accesses=19;
@@ -17,7 +19,7 @@ void __thiscall ResearchPanelTy::sub_0053C620(ResearchPanelTy *this)
   int iVar4;
   Global_sub_00528060_param_1Enum *pGVar5;
   undefined4 *puVar6;
-  undefined4 *puVar7;
+  byte *puVar7;
   int local_14;
   int local_c;
   undefined4 *local_8;
@@ -62,13 +64,9 @@ LAB_0053c75b:
         local_8[1] = UVar2;
         if (pGVar5[8] == CASE_0) {
           pGVar5 = pGVar5 + 0x12;
-          puVar7 = local_8 + 2;
-          for (iVar4 = 7; iVar4 != 0; iVar4 = iVar4 + -1) {
-            *puVar7 = *(undefined4 *)pGVar5;
-            pGVar5 = pGVar5 + 4;
-            puVar7 = puVar7 + 1;
-          }
-          *(undefined2 *)puVar7 = *(undefined2 *)pGVar5;
+          puVar7 = (byte *)(local_8 + 2);
+          memmove(puVar7, pGVar5, 0x1e); /* compiler REP MOVS byte copy */
+          pGVar5 = (Global_sub_00528060_param_1Enum *)((byte *)pGVar5 + 0x1c);
         }
         else {
           local_8[2] = *(undefined4 *)(pGVar5 + 10);

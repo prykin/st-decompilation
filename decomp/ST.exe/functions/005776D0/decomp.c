@@ -7,7 +7,17 @@
 
    [STMessageHandlerApplier] Recovered common GetMessage envelope/signature.
    Evidence: family_entries=0040482C|005776D0; family_names=GameSystemC::GetMessage; ret4=10;
-   direct_offsets={10:1,14:2,18:1,1c:1} */
+   direct_offsets={10:1,14:2,18:1,1c:1}
+
+   [STDiscriminatedPayloadApplier] Case-local payload view: message->id == MESS_GAMESYSTEMC_43FF
+   uses
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/GameSystemC_GetMessage_005776D0_MessagePayload_Case_MESS_GAMESYSTEMC_43FF.
+   The carrier ABI remains pointer:/SubmarineTitans/Recovered/STMessage.
+
+   [STDiscriminatedPayloadApplier] Case-local payload view: message->id == MESS_GAMESYSTEMC_4400
+   uses
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/GameSystemC_GetMessage_005776D0_MessagePayload_Case_MESS_GAMESYSTEMC_4400.
+   The carrier ABI remains pointer:/SubmarineTitans/Recovered/STMessage. */
 
 int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
 

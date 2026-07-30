@@ -7,4 +7,4 @@ Named anonymous matches: 174
 Automatic named matches: 0
 Contextual generated records: 0
 Automatic targets: 0
-Note: anonymous-to-anonymous geometry matches are review-only unless one generated HiddenThis member uniquely owns a multi-function receiver namespace. Generated field_XXXX names are not semantic evidence. Exact named layouts are automatic only for evidence-qualified semantic anchors; [ST_VIEW_ONLY] types are never anchors.
+Note: anonymous-to-anonymous geometry matches are review-only unless one generated HiddenThis member uniquely owns a multi-function receiver namespace. Generated field_XXXX names are not semantic evidence. Exact named layouts are automatic only for evidence-qualified semantic anchors; [ST_VIEW_ONLY] types are never anchors. Anonymous pointer shapes may also consolidate when exact direct-call dataflow links the same pointer across their boundaries, every complete layout agrees, all uses have one owner, and no global/field aliases exist.

@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\wlad\Grpway3d.cpp
@@ -105,17 +107,9 @@ int FUN_0040e0f0(int param_1,int param_2,int param_3,int param_4,int param_5)
           local_1c = &stack0xffffff34;
         }
         pbVar9 = local_24;
-        for (uVar6 = uVar7 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-          pbVar9[0] = 0;
-          pbVar9[1] = 0;
-          pbVar9[2] = 0;
-          pbVar9[3] = 0;
-          pbVar9 = pbVar9 + 4;
-        }
-        for (uVar6 = uVar7 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
-          *pbVar9 = 0;
-          pbVar9 = pbVar9 + 1;
-        }
+        memset(pbVar9, 0, uVar7); /* compiler bulk-zero initialization */
+        uVar6 = 0;
+        uVar6 = 0;
         iVar10 = 0;
         if (0 < (int)uVar7) {
           local_a8 = iVar4 + 0x8000;

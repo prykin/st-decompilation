@@ -23,7 +23,7 @@ function_address	owner	field_offset	rendered_alias	status	detail
 00690B90	AiTactClassTy	165	puVar7	disabled	apply=0
 004F0210	BldLabPanelTy	634	pGVar5	conflict	merge-group split failed: mixed rendered local belongs to one inseparable merge group
 005325B0	OptPanelTy	765	puVar13	conflict	merge-group split failed: mixed rendered local belongs to one inseparable merge group
-00533D10	OptPanelTy	765	puVar25	conflict	merge-group split failed: multiple DArray assignment varnodes
+00533D10	OptPanelTy	765	puVar26	conflict	merge-group split failed: multiple DArray assignment varnodes
 00555D90	TraksClassTy	36	psVar3	conflict	merge-group split failed: multiple DArray assignment varnodes
 00556170	TraksClassTy	36	psVar6	conflict	merge-group split failed: mixed rendered local belongs to one inseparable merge group
 00558840	VisibleClassTy	272	pcVar4	conflict	merge-group split failed: mixed rendered local belongs to one inseparable merge group
@@ -40,8 +40,8 @@ function_address	owner	field_offset	rendered_alias	status	detail
 005D0A20	SettMapMTy	8068	pcVar4	conflict	merge-group split failed: mixed rendered local belongs to one inseparable merge group
 005D0BB0	SettMapMTy	8068	pcVar4	conflict	merge-group split failed: multiple DArray assignment varnodes
 005D1100	SettMapMTy	8068	pcVar6	conflict	merge-group split failed: multiple DArray assignment varnodes
-005D1400	SettMapMTy	7727	puVar16	conflict	merge-group split failed: multiple DArray assignment varnodes
-005D1400	SettMapMTy	8068	pcVar27	conflict	merge-group split failed: multiple DArray assignment varnodes
+005D1400	SettMapMTy	7727	puVar18	conflict	merge-group split failed: multiple DArray assignment varnodes
+005D1400	SettMapMTy	8068	pcVar28	conflict	merge-group split failed: multiple DArray assignment varnodes
 005E1330	MTaskTy	116	piVar22	conflict	merge-group split failed: multiple DArray assignment varnodes
 005F4FA0	STBHEShellC	361	pcVar8	conflict	merge-group split failed: mixed rendered local belongs to one inseparable merge group
 0061F290	STLightC	163	piVar5	conflict	merge-group split failed: mixed rendered local belongs to one inseparable merge group

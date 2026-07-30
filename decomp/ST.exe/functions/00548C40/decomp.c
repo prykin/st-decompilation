@@ -24,10 +24,10 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
   uint uVar8;
   ushort *puVar9;
   uint *puVar10;
-  undefined4 *puVar11;
+  byte *puVar11;
   uint *puVar12;
   longlong lVar13;
-  undefined4 *puVar14;
+  byte *puVar14;
   InternalExceptionFrame local_2c8;
   uint local_284 [7];
   undefined4 local_267;
@@ -227,16 +227,16 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
           if (local_94 != (uint *)0x0) {
             *(char *)local_94 = (this_00->field_04A2 == CASE_A) + '\x01';
             puVar9 = local_4c;
-            puVar14 = (undefined4 *)((int)local_94 + 1);
+            puVar14 = (byte *)((int)local_94 + 1);
             for (uVar8 = local_9c >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
               *puVar14 = *(undefined4 *)puVar9;
               puVar9 = puVar9 + 2;
-              puVar14 = puVar14 + 1;
+              puVar14 = (byte *)(puVar14 + 1);
             }
             for (local_9c = local_9c & 3; local_9c != 0; local_9c = local_9c - 1) {
               *(char *)puVar14 = (char)*puVar9;
               puVar9 = (ushort *)((int)puVar9 + 1);
-              puVar14 = (undefined4 *)((int)puVar14 + 1);
+              puVar14 = (byte *)((int)puVar14 + 1);
             }
             thunk_FUN_0054edf0((undefined4 *)0x31,local_94,0,(uint)local_18);
             FreeAndNull(&local_94);
@@ -261,16 +261,8 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
             *(undefined1 *)local_18 = 3;
             puVar10 = local_1c;
             puVar12 = (uint *)((int)local_18 + 1);
-            for (uVar8 = local_a8 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
-              *puVar12 = *puVar10;
-              puVar10 = puVar10 + 1;
-              puVar12 = puVar12 + 1;
-            }
-            for (local_a8 = local_a8 & 3; local_a8 != 0; local_a8 = local_a8 - 1) {
-              *(char *)puVar12 = (char)*puVar10;
-              puVar10 = (uint *)((int)puVar10 + 1);
-              puVar12 = (uint *)((int)puVar12 + 1);
-            }
+            memmove(puVar12, puVar10, local_a8); /* compiler REP MOVS byte copy */
+            uVar8 = 0;
             thunk_FUN_0054edf0((undefined4 *)0x31,local_18,0,(uint)local_24);
             FreeAndNull(&local_18);
           }
@@ -289,7 +281,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
       local_1e4[0] = 1;
       local_1c7 = this_00->field_049A->field_0018;
       puVar10 = (uint *)local_1e4;
-      puVar14 = (undefined4 *)0x17;
+      puVar14 = (byte *)0x17;
       goto cf_common_join_0054A19A;
     case CASE_E:
       if (g_tLOBldMark_007FB2AC != (TLOBldMark *)0x0) {
@@ -340,18 +332,10 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
           local_24 = Library::DKW::LIB::FUN_006aac10((uint)local_18);
           if (local_24 != (uint *)0x0) {
             *(undefined1 *)local_24 = 4;
-            puVar14 = local_54;
-            puVar11 = (undefined4 *)((int)local_24 + 1);
-            for (uVar8 = local_a4 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
-              *puVar11 = *puVar14;
-              puVar14 = puVar14 + 1;
-              puVar11 = puVar11 + 1;
-            }
-            for (local_a4 = local_a4 & 3; local_a4 != 0; local_a4 = local_a4 - 1) {
-              *(undefined1 *)puVar11 = *(undefined1 *)puVar14;
-              puVar14 = (undefined4 *)((int)puVar14 + 1);
-              puVar11 = (undefined4 *)((int)puVar11 + 1);
-            }
+            puVar14 = (byte *)(local_54);
+            puVar11 = (byte *)((int)local_24 + 1);
+            memmove(puVar11, puVar14, local_a4); /* compiler REP MOVS byte copy */
+            uVar8 = 0;
             thunk_FUN_0054edf0((undefined4 *)0x31,local_24,0,(uint)local_18);
             FreeAndNull(&local_24);
           }
@@ -406,16 +390,16 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
         if (local_20 != (uint *)0x0) {
           *(char *)local_20 = (this_00->field_0494 == 0xc) + '\x01';
           puVar9 = local_3c;
-          puVar14 = (undefined4 *)((int)local_20 + 1);
+          puVar14 = (byte *)((int)local_20 + 1);
           for (uVar8 = local_98 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
             *puVar14 = *(undefined4 *)puVar9;
             puVar9 = puVar9 + 2;
-            puVar14 = puVar14 + 1;
+            puVar14 = (byte *)(puVar14 + 1);
           }
           for (local_98 = local_98 & 3; local_98 != 0; local_98 = local_98 - 1) {
             *(char *)puVar14 = (char)*puVar9;
             puVar9 = (ushort *)((int)puVar9 + 1);
-            puVar14 = (undefined4 *)((int)puVar14 + 1);
+            puVar14 = (byte *)((int)puVar14 + 1);
           }
           thunk_FUN_0054edf0((undefined4 *)0x31,local_20,0,(uint)local_18);
           FreeAndNull(&local_20);
@@ -441,7 +425,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
       }
       puVar10 = (uint *)local_120;
       local_120[0] = 3;
-      puVar14 = (undefined4 *)0x16;
+      puVar14 = (byte *)0x16;
     }
     else {
       STFishC::sub_004162B0
@@ -454,7 +438,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_120._1_4_ = this_00->field_049A->field_0018;
       puVar10 = (uint *)local_120;
-      puVar14 = (undefined4 *)0x16;
+      puVar14 = (byte *)0x16;
     }
     goto cf_common_join_0054A19A;
   case 5:
@@ -557,16 +541,16 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
           if (local_14 != (uint *)0x0) {
             *(undefined1 *)local_14 = 3;
             puVar9 = local_44;
-            puVar14 = (undefined4 *)((int)local_14 + 1);
+            puVar14 = (byte *)((int)local_14 + 1);
             for (uVar8 = local_a0 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
               *puVar14 = *(undefined4 *)puVar9;
               puVar9 = puVar9 + 2;
-              puVar14 = puVar14 + 1;
+              puVar14 = (byte *)(puVar14 + 1);
             }
             for (local_a0 = local_a0 & 3; local_a0 != 0; local_a0 = local_a0 - 1) {
               *(char *)puVar14 = (char)*puVar9;
               puVar9 = (ushort *)((int)puVar9 + 1);
-              puVar14 = (undefined4 *)((int)puVar14 + 1);
+              puVar14 = (byte *)((int)puVar14 + 1);
             }
             thunk_FUN_0054edf0((undefined4 *)0x31,local_14,0,(uint)local_18);
             FreeAndNull(&local_14);
@@ -587,7 +571,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     local_1c0[0] = 1;
     local_1a3 = this_00->field_049A->field_0018;
     puVar10 = (uint *)local_1c0;
-    puVar14 = (undefined4 *)0x17;
+    puVar14 = (byte *)0x17;
     goto cf_common_join_0054A19A;
   case 0xf:
   case 0x10:
@@ -657,7 +641,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     local_d0 = (sVar1 != 0x12) + '\x01';
     STFishC::sub_004162B0(this_00->field_049A,&local_cf,&local_cd,&local_cb);
     puVar10 = (uint *)&local_d0;
-    puVar14 = (undefined4 *)0x1f;
+    puVar14 = (byte *)0x1f;
     goto cf_common_join_0054A19A;
   case 0x14:
     if (g_tLOBldMark_007FB2AC != (TLOBldMark *)0x0) {
@@ -708,7 +692,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     local_257 = (int)local_6a;
     local_260[0] = ((this_00->field_0494 != 0x18) - 1U & 0xeb) + 0x18;
     puVar10 = (uint *)local_260;
-    puVar14 = (undefined4 *)0x17;
+    puVar14 = (byte *)0x17;
     goto cf_common_join_0054A19A;
   case 0x17:
     if (this_00->field_049A == (STFishC *)0x0) break;
@@ -717,7 +701,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     _local_78 = CONCAT31((int3)uVar3,1);
     local_74 = (undefined1)((uint)uVar3 >> 0x18);
-    puVar14 = (undefined4 *)0x21;
+    puVar14 = (byte *)0x21;
     goto cf_common_join_0054A19A;
   case 0x19:
     iVar5 = FUN_006e1dd0(g_sT3DSMAPContext_00807598,this_00->field_00C5 - this_00->field_04B2,
@@ -757,7 +741,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     _local_80 = CONCAT31((int3)uVar3,4);
     local_7c = (undefined1)((uint)uVar3 >> 0x18);
-    puVar14 = (undefined4 *)0x21;
+    puVar14 = (byte *)0x21;
     goto cf_common_join_0054A19A;
   case 0x1b:
     pSVar2 = this_00->field_049A;
@@ -770,7 +754,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     local_233 = (int)local_60;
     puVar10 = (uint *)local_23c;
     local_23c[0] = 0x13;
-    puVar14 = (undefined4 *)0x17;
+    puVar14 = (byte *)0x17;
     goto cf_common_join_0054A19A;
   case 0x1c:
     local_108 = (uint)*(byte *)&this_00->field_04AA;
@@ -800,7 +784,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     local_fc = CONCAT31(local_fc._1_3_,(char)((ulonglong)lVar13 >> 0x18));
     local_f8 = (undefined1)((uint)this_00->field_00F7 >> 0x18);
 LAB_0054a196:
-    puVar14 = (undefined4 *)0x18;
+    puVar14 = (byte *)0x18;
     goto cf_common_join_0054A19A;
   case 0x1d:
     if (this_00->field_04A2 == 0x18) {
@@ -895,7 +879,7 @@ LAB_00549b36:
     uStack_27 = (undefined1)local_34;
     local_26 = (undefined1)((ushort)local_34 >> 8);
     local_2c = 3;
-    puVar14 = (undefined4 *)0x1f;
+    puVar14 = (byte *)0x1f;
 cf_common_join_0054A19A:
     thunk_FUN_0054edf0(puVar14,puVar10,0,0xffffffff);
     break;

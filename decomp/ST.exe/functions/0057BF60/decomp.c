@@ -142,16 +142,7 @@ int __thiscall STFishC::GetMessage(STFishC *this,STMessage *message)
     local_c->field_003E = local_8;
     pbVar9 = local_14;
     pbVar12 = &local_c->field_0x42;
-    for (uVar6 = local_8 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-      *(undefined4 *)pbVar12 = *(undefined4 *)pbVar9;
-      pbVar9 = pbVar9 + 4;
-      pbVar12 = pbVar12 + 4;
-    }
-    for (uVar6 = local_8 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
-      *pbVar12 = *pbVar9;
-      pbVar9 = pbVar9 + 1;
-      pbVar12 = pbVar12 + 1;
-    }
+    memmove(pbVar12, pbVar9, local_8); /* compiler REP MOVS byte copy */
     *(uint *)(&local_c->field_0x42 + local_8) = local_10;
     pbVar9 = local_18;
     pbVar12 = &local_c[1].field_0x2 + local_8;

@@ -123,13 +123,7 @@ cf_common_exit_0045F1A9:
   case CASE_11:
     this->field_030C = 1;
     puVar3 = &this->field_036F;
-    for (iVar2 = 8; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *puVar3 = *param_2;
-      param_2 = param_2 + 1;
-      puVar3 = puVar3 + 1;
-    }
-    *(short *)puVar3 = (short)*param_2;
-    *(undefined1 *)((int)puVar3 + 2) = *(undefined1 *)((int)param_2 + 2);
+    memmove(puVar3, param_2, 0x23); /* compiler REP MOVS byte copy */
     return;
   case CASE_12:
     this->field_0310 = 1;

@@ -55,12 +55,9 @@ undefined4 FUN_004e51b0(int *param_1,uint *param_2,uint *param_3)
   iVar7 = 0;
   puVar10 = &DAT_00798fd8;
   puVar14 = &g_playerRuntime[(int)param_1].field1554_0x73b;
-  for (iVar7 = 0x26; iVar7 != 0; iVar7 = iVar7 + -1) {
-    *puVar14 = *puVar10;
-    puVar10 = puVar10 + 1;
-    puVar14 = puVar14 + 1;
-  }
-  *(undefined2 *)puVar14 = *(undefined2 *)puVar10;
+  memmove(puVar14, puVar10, 0x9a); /* compiler REP MOVS byte copy */
+  puVar14 = (undefined4 *)((byte *)puVar14 + 0x98);
+  puVar10 = (undefined4 *)((byte *)puVar10 + 0x98);
   iVar7 = local_c * 0x10;
   *(undefined1 *)((int)puVar14 + 2) = *(undefined1 *)((int)puVar10 + 2);
   local_30 = (&DAT_00800f30)[local_c * 4] | *(uint *)(&DAT_00800fb0 + iVar7);

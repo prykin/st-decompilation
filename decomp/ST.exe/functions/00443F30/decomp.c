@@ -157,11 +157,8 @@ undefined4 * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *pa
       pdVar4[0xb] = *(dword *)((int)ppDVar9 + 0x1e);
       pdVar11 = (dword *)((int)ppDVar9 + 0x22);
       pdVar7 = pdVar4 + 0xc;
-      for (iVar2 = 0x4e; iVar2 != 0; iVar2 = iVar2 + -1) {
-        *pdVar7 = *pdVar11;
-        pdVar11 = pdVar11 + 1;
-        pdVar7 = pdVar7 + 1;
-      }
+      memmove(pdVar7, pdVar11, 0x138); /* compiler REP MOVS byte copy */
+      iVar2 = 0;
       pdVar4[0xc] = 0;
       pdVar4[0xd] = 0;
       pdVar4[0xe] = 0;
@@ -233,48 +230,28 @@ undefined4 * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *pa
       pdVar4[0xce] = *(dword *)((int)ppDVar9 + 0x2da);
       pdVar11 = (dword *)((int)ppDVar9 + 0x2e2);
       pdVar7 = pdVar4 + 0xcf;
-      for (iVar2 = 5; iVar2 != 0; iVar2 = iVar2 + -1) {
-        *pdVar7 = *pdVar11;
-        pdVar11 = pdVar11 + 1;
-        pdVar7 = pdVar7 + 1;
-      }
+      memmove(pdVar7, pdVar11, 0x14); /* compiler REP MOVS byte copy */
+      iVar2 = 0;
       pdVar11 = (dword *)((int)ppDVar9 + 0x2f6);
       pdVar7 = pdVar4 + 0xd4;
-      for (iVar2 = 5; iVar2 != 0; iVar2 = iVar2 + -1) {
-        *pdVar7 = *pdVar11;
-        pdVar11 = pdVar11 + 1;
-        pdVar7 = pdVar7 + 1;
-      }
+      memmove(pdVar7, pdVar11, 0x14); /* compiler REP MOVS byte copy */
+      iVar2 = 0;
       pdVar11 = (dword *)((int)ppDVar9 + 0x30a);
       pdVar7 = pdVar4 + 0xd9;
-      for (iVar2 = 5; iVar2 != 0; iVar2 = iVar2 + -1) {
-        *pdVar7 = *pdVar11;
-        pdVar11 = pdVar11 + 1;
-        pdVar7 = pdVar7 + 1;
-      }
+      memmove(pdVar7, pdVar11, 0x14); /* compiler REP MOVS byte copy */
+      iVar2 = 0;
       pdVar11 = (dword *)((int)ppDVar9 + 0x31e);
       pdVar7 = pdVar4 + 0xde;
-      for (iVar2 = 0x9b; iVar2 != 0; iVar2 = iVar2 + -1) {
-        *pdVar7 = *pdVar11;
-        pdVar11 = pdVar11 + 1;
-        pdVar7 = pdVar7 + 1;
-      }
+      memmove(pdVar7, pdVar11, 0x26c); /* compiler REP MOVS byte copy */
+      iVar2 = 0;
       pdVar11 = (dword *)((int)ppDVar9 + 0x58a);
       pdVar7 = pdVar4 + 0x179;
-      for (iVar2 = 0x6a; iVar2 != 0; iVar2 = iVar2 + -1) {
-        *pdVar7 = *pdVar11;
-        pdVar11 = pdVar11 + 1;
-        pdVar7 = pdVar7 + 1;
-      }
+      memmove(pdVar7, pdVar11, 0x1a8); /* compiler REP MOVS byte copy */
+      iVar2 = 0;
       pdVar11 = (dword *)((int)ppDVar9 + 0x732);
       pdVar7 = pdVar4 + 0x1e3;
-      for (iVar2 = 0x26; iVar2 != 0; iVar2 = iVar2 + -1) {
-        *pdVar7 = *pdVar11;
-        pdVar11 = pdVar11 + 1;
-        pdVar7 = pdVar7 + 1;
-      }
-      *(short *)pdVar7 = (short)*pdVar11;
-      *(undefined1 *)((int)pdVar7 + 2) = *(undefined1 *)((int)pdVar11 + 2);
+      memmove(pdVar7, pdVar11, 0x9b); /* compiler REP MOVS byte copy */
+      iVar2 = 0;
       *(undefined4 *)((int)pdVar4 + 0x827) = *(undefined4 *)((int)ppDVar9 + 0x7cd);
       puVar10 = (byte *)((int)ppDVar9 + 0x7d1);
       puVar12 = (byte *)((int)pdVar4 + 0x82b);

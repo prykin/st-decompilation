@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 undefined4 FUN_006b4b20(int *param_1,AnonShape_006B4B20_3D4F4412 *param_2,int param_3,byte param_4)
 
@@ -189,16 +191,10 @@ LAB_006b4c1b:
               *pbVar13 = 0xbf;
               pbVar16 = local_30;
               pbVar18 = pbVar13 + 1;
-              for (iVar9 = 0xf; iVar9 != 0; iVar9 = iVar9 + -1) {
-                *(undefined4 *)pbVar18 = *(undefined4 *)pbVar16;
-                pbVar16 = pbVar16 + 4;
-                pbVar18 = pbVar18 + 4;
-              }
-              *(undefined2 *)pbVar18 = *(undefined2 *)pbVar16;
+              memmove(pbVar18, pbVar16, 0x3f); /* compiler REP MOVS byte copy */
               pbVar13 = pbVar13 + 0x40;
               local_30 = local_30 + 0x3f;
               uVar10 = uVar10 - 1;
-              pbVar18[2] = pbVar16[2];
             } while (uVar10 != 0);
           }
           if (0 < (int)uVar12) {

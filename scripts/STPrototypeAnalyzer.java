@@ -1,5 +1,5 @@
 // Propagate conservative parameter/return types and parameter names across direct calls.
-// Read-only: writes prototype_proposals.tsv/jsonl and prototype_summary.txt.
+// Read-only: writes prototype_proposals.tsv and prototype_summary.txt.
 // @author OpenAI
 // @category SubmarineTitans.Recovery
 // @menupath Tools.Submarine Titans.Analyze Prototypes
@@ -56,10 +56,12 @@ public class STPrototypeAnalyzer extends GhidraScript {
     private static final int MAX_TYPE_PROPAGATION_PASSES = 8;
 
     private final Map<TargetKey, Evidence> evidence = new TreeMap<>();
+    private final Map<TargetKey, Set<TargetKey>> boundaryEdges = new TreeMap<>();
     private final List<CallSiteAudit> callSiteAudits = new ArrayList<>();
     private Map<TargetKey, String> inferredSeeds = Map.of();
     private DataTypeManager dataTypes;
     private int reverseReturnEvidence;
+    private int sccComponents, sccTargets;
 
     @Override
     protected void run() throws Exception {
@@ -72,12 +74,16 @@ public class STPrototypeAnalyzer extends GhidraScript {
         int functionsSeen = 0, callSites = 0, propagationPasses = 0;
         for (int pass = 1; pass <= MAX_TYPE_PROPAGATION_PASSES; pass++) {
             evidence.clear();
+            boundaryEdges.clear();
             callSiteAudits.clear();
             reverseReturnEvidence = 0;
+            sccComponents = 0;
+            sccTargets = 0;
             ScanCounts counts = scanAllFunctions();
             functionsSeen = counts.functions;
             callSites = counts.callSites;
             addNarrowRawStorageFallbacks();
+            addStronglyConnectedBoundaryEvidence();
             Map<TargetKey, String> nextSeeds = qualifiedInferredSeeds();
             propagationPasses = pass;
             if (nextSeeds.equals(inferredSeeds)) break;
@@ -479,6 +485,12 @@ public class STPrototypeAnalyzer extends GhidraScript {
                         addReturnEvidence(caller, returned, instruction.getAddress(), wrapper);
                     if (returned.producer != null && !returned.producer.equals(caller) &&
                             !scriptAppliedTarget(caller, "return", -1)) {
+                        if (wrapper)
+                            addBoundaryEdge(
+                                new TargetKey(returned.producer.getEntryPoint(),
+                                    "return", -1),
+                                new TargetKey(caller.getEntryPoint(),
+                                    "return", -1));
                         String callerType = meaningfulType(caller.getReturnType());
                         boolean trusted = trustedReturn(caller);
                         if (trusted || wrapper)
@@ -554,6 +566,14 @@ public class STPrototypeAnalyzer extends GhidraScript {
         if (value.parameterOrdinal < 0) return;
         Parameter source = explicitParameter(caller, value.parameterOrdinal);
         if (source == null) return;
+        if (value.extension == Extension.NONE && !value.literal &&
+                effectiveLength(source.getFormalDataType()) ==
+                    effectiveLength(target.getFormalDataType()))
+            addBoundaryEdge(
+                new TargetKey(caller.getEntryPoint(), "parameter",
+                    source.getOrdinal()),
+                new TargetKey(called.getEntryPoint(), "parameter",
+                    target.getOrdinal()));
         String inferredTarget = inferredSeeds.getOrDefault(
             new TargetKey(called.getEntryPoint(), "parameter", target.getOrdinal()), "");
         String type = !inferredTarget.isBlank() ? inferredTarget :
@@ -614,6 +634,95 @@ public class STPrototypeAnalyzer extends GhidraScript {
         if (producer == null || producer.isExternal() || isLibrary(producer) || type.isBlank()) return;
         addReturnEvidence(producer, new Value(-1, type, "", strong, relation), site, false);
         reverseReturnEvidence++;
+    }
+
+    private void addBoundaryEdge(TargetKey source, TargetKey target) {
+        if (source == null || target == null) return;
+        boundaryEdges.computeIfAbsent(source, ignored -> new TreeSet<>())
+            .add(target);
+        boundaryEdges.computeIfAbsent(target, ignored -> new TreeSet<>());
+    }
+
+    /**
+     * Iterative call propagation handles ordinary chains, but a mutually
+     * recursive wrapper family can otherwise spend all of its evidence
+     * validating itself. Collapse only true strongly-connected boundary
+     * components. A component is typed when it has one unambiguous external
+     * anchor: a protected/semantic current boundary or a type already qualified
+     * by non-SCC machine/call evidence in an earlier pass. Generic members of an
+     * unanchored cycle never bootstrap one another.
+     */
+    private void addStronglyConnectedBoundaryEvidence() {
+        Tarjan tarjan = new Tarjan(boundaryEdges);
+        for (List<TargetKey> component : tarjan.components()) {
+            if (component.size() < 2) continue;
+            Set<String> anchors = new TreeSet<>();
+            for (TargetKey key : component) {
+                String seed = authoritativeBoundarySeed(key);
+                if (!seed.isBlank()) anchors.add(seed);
+                String inferred = inferredSeeds.getOrDefault(key, "");
+                if (!inferred.isBlank()) anchors.add(inferred);
+            }
+            if (anchors.size() != 1) continue;
+            String type = anchors.iterator().next();
+            int width = typeLength(type);
+            if (width <= 0) continue;
+            boolean compatible = true;
+            for (TargetKey key : component) {
+                Parameter target = boundaryTarget(key);
+                if (target == null ||
+                        effectiveLength(target.getFormalDataType()) != width) {
+                    compatible = false;
+                    break;
+                }
+            }
+            if (!compatible) continue;
+            sccComponents++;
+            String identity = component.stream()
+                .map(this::boundaryIdentity)
+                .reduce((left, right) -> left + "," + right).orElse("");
+            String site = "SCC boundary component [" + identity +
+                "] anchored as " + type;
+            for (TargetKey key : component) {
+                Evidence value = evidence.computeIfAbsent(key,
+                    ignored -> new Evidence());
+                Set<String> sites = value.typeSites.computeIfAbsent(type,
+                    ignored -> new TreeSet<>());
+                if (sites.add(site)) value.types.put(type, sites.size());
+                value.strongTypeSites.computeIfAbsent(type,
+                    ignored -> new TreeSet<>()).add(site);
+                if (value.strongSites.add(site))
+                    value.strongCount = value.strongSites.size();
+                value.sites.add(site);
+                sccTargets++;
+            }
+        }
+    }
+
+    private String authoritativeBoundarySeed(TargetKey key) {
+        Function function = currentProgram.getFunctionManager()
+            .getFunctionAt(key.address);
+        Parameter target = boundaryTarget(key);
+        if (function == null || target == null) return "";
+        boolean authoritative = protectedSource(target.getSource()) ||
+            semanticType(target.getFormalDataType()) ||
+            abiMachineTarget(function, key.kind, key.ordinal) ||
+            ("parameter".equals(key.kind) &&
+                trustedNamedLibraryParameter(function, target));
+        return authoritative ? meaningfulType(target.getFormalDataType()) : "";
+    }
+
+    private Parameter boundaryTarget(TargetKey key) {
+        Function function = currentProgram.getFunctionManager()
+            .getFunctionAt(key.address);
+        if (function == null) return null;
+        return "return".equals(key.kind) ? function.getReturn() :
+            explicitParameter(function, key.ordinal);
+    }
+
+    private String boundaryIdentity(TargetKey key) {
+        return addr(key.address) + ":" + key.kind +
+            ("parameter".equals(key.kind) ? ":" + key.ordinal : "");
     }
 
     private void observeProducedStore(Instruction instruction, String[] operands,
@@ -1704,6 +1813,8 @@ public class STPrototypeAnalyzer extends GhidraScript {
             "type_auto_apply=" + rows.stream().filter(r -> r.typeApply).count(),
             "name_auto_apply=" + rows.stream().filter(r -> r.nameApply).count(),
             "reverse_return_evidence=" + reverseReturnEvidence,
+            "scc_components_anchored=" + sccComponents,
+            "scc_targets_anchored=" + sccTargets,
             "repair_proposals=" + rows.stream().filter(r -> r.repair).count(),
             "repair_auto_apply=" + rows.stream().filter(r -> r.repair &&
                 (r.typeApply || r.nameApply)).count(),
@@ -1718,6 +1829,9 @@ public class STPrototypeAnalyzer extends GhidraScript {
                 "including no-evidence and conflicting rows which cannot be auto-applied.",
             "note_fixed_point=Qualified machine/callsite types are propagated through " +
                 "parameter-forwarding wrappers inside one analyzer run.",
+            "note_scc=Mutually recursive boundary components require one unambiguous " +
+                "protected, semantic, ABI, or previously machine-qualified anchor; " +
+                "unanchored generic cycles cannot validate themselves.",
             "note_narrow_raw=Unobservable signedness on retained 1/2-byte parameters " +
                 "falls back to byte/ushort; undefined4 never receives a raw fallback.",
             "note_returns=Unknown EAX producers are traced into trusted arguments, this receivers, typed stores, and return-forwarding wrappers.",
@@ -1828,6 +1942,54 @@ public class STPrototypeAnalyzer extends GhidraScript {
             if (result != 0) return result;
             result = kind.compareTo(other.kind);
             return result != 0 ? result : Integer.compare(ordinal, other.ordinal);
+        }
+        @Override public boolean equals(Object other) {
+            return other instanceof TargetKey key && compareTo(key) == 0;
+        }
+        @Override public int hashCode() {
+            return java.util.Objects.hash(address, kind, ordinal);
+        }
+    }
+    private static class Tarjan {
+        private final Map<TargetKey, Set<TargetKey>> graph;
+        private final Map<TargetKey, Integer> index = new TreeMap<>();
+        private final Map<TargetKey, Integer> low = new TreeMap<>();
+        private final List<TargetKey> stack = new ArrayList<>();
+        private final Set<TargetKey> onStack = new TreeSet<>();
+        private final List<List<TargetKey>> components = new ArrayList<>();
+        private int next;
+        Tarjan(Map<TargetKey, Set<TargetKey>> graph) {
+            this.graph = graph;
+        }
+        List<List<TargetKey>> components() {
+            for (TargetKey node : graph.keySet())
+                if (!index.containsKey(node)) visit(node);
+            return components;
+        }
+        private void visit(TargetKey node) {
+            index.put(node, next);
+            low.put(node, next);
+            next++;
+            stack.add(node);
+            onStack.add(node);
+            for (TargetKey target : graph.getOrDefault(node, Set.of())) {
+                if (!index.containsKey(target)) {
+                    visit(target);
+                    low.put(node, Math.min(low.get(node), low.get(target)));
+                }
+                else if (onStack.contains(target))
+                    low.put(node, Math.min(low.get(node), index.get(target)));
+            }
+            if (!low.get(node).equals(index.get(node))) return;
+            List<TargetKey> component = new ArrayList<>();
+            while (!stack.isEmpty()) {
+                TargetKey value = stack.remove(stack.size() - 1);
+                onStack.remove(value);
+                component.add(value);
+                if (value.equals(node)) break;
+            }
+            component.sort(Comparator.naturalOrder());
+            components.add(component);
         }
     }
     private static class Evidence {

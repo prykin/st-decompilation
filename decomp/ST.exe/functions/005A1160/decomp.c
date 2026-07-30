@@ -64,16 +64,8 @@ void __thiscall FSGSTy::CheckUpdate(FSGSTy *this)
   uVar8 = ~uVar8;
   pcVar6 = pcVar10 + -uVar8;
   pcVar10 = (char *)&DAT_0080f126;
-  for (uVar9 = uVar8 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
-    *(undefined4 *)pcVar10 = *(undefined4 *)pcVar6;
-    pcVar6 = pcVar6 + 4;
-    pcVar10 = pcVar10 + 4;
-  }
-  for (uVar8 = uVar8 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
-    *pcVar10 = *pcVar6;
-    pcVar6 = pcVar6 + 1;
-    pcVar10 = pcVar10 + 1;
-  }
+  memmove(pcVar10, pcVar6, uVar8); /* compiler REP MOVS byte copy */
+  uVar9 = 0;
   puVar2 = local_c->field_1AC0;
   uVar8 = *(uint *)(puVar2 + 10);
   if (uVar8 == 0) {

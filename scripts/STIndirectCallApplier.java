@@ -10,10 +10,13 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.security.MessageDigest;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
@@ -36,6 +39,10 @@ import ghidra.program.model.listing.Function;
 public class STIndirectCallApplier extends GhidraScript {
     private static final String MARKER = "[STIndirectCallApplier]";
     private static final String HASH_MARKER = "; generated_layout_sha256=";
+    private static final String VTABLE_ROOT =
+        "/SubmarineTitans/Recovered/VTables/";
+    private static final Pattern TARGET =
+        Pattern.compile("(?i)->\\s*([0-9a-f]{8,16})\\b");
     private static final CategoryPath VTABLES =
         new CategoryPath("/SubmarineTitans/Recovered/VTables");
     private static final CategoryPath FUNCTIONS =
@@ -99,6 +106,8 @@ public class STIndirectCallApplier extends GhidraScript {
             String mode = row.get("signature_mode");
             DataType desired;
             if ("target".equals(mode)) desired = functionPointer(signature);
+            else if ("family_target".equals(mode))
+                desired = familyTargetFunctionPointer(signature);
             else if ("synthetic_thiscall".equals(mode) ||
                     "synthetic_dispatch_thiscall".equals(mode))
                 desired = syntheticThiscallFunctionPointer(row);
@@ -132,6 +141,10 @@ public class STIndirectCallApplier extends GhidraScript {
                     ", stack_parameters=" + row.get("stack_parameter_count") +
                     ", parameter_types=" + row.get("proposed_parameter_types") +
                     ", return=" + row.get("proposed_return_type") :
+                mode.equals("family_target") ?
+                    "copied unanimous function-pointer ABI from other typed " +
+                    "vtable components for resolved target " +
+                    row.get("signature_function_address") :
                     signature.getPrototypeString(true, true)));
         }
         catch (Exception exception) { conflict(target, row, message(exception)); }
@@ -362,6 +375,44 @@ public class STIndirectCallApplier extends GhidraScript {
         }
         else return new PointerDataType(VoidDataType.dataType, pointerSize, dataTypes);
         return new PointerDataType(definition, pointerSize, dataTypes);
+    }
+
+    /**
+     * Re-resolve the analyzer's same-target family inside the transaction. This
+     * avoids trusting a stale serialized type path: every currently typed
+     * vtable component for the resolved implementation must still carry an
+     * equivalent FunctionDefinition pointer.
+     */
+    private DataType familyTargetFunctionPointer(Function wanted) {
+        Function resolvedWanted = resolveThunk(wanted);
+        if (resolvedWanted == null) return null;
+        Pointer agreed = null;
+        Iterator<Structure> structures = dataTypes.getAllStructures();
+        while (structures.hasNext()) {
+            Structure structure = structures.next();
+            if (!structure.getPathName().startsWith(VTABLE_ROOT)) continue;
+            for (DataTypeComponent component : structure.getDefinedComponents()) {
+                if (!(component.getDataType() instanceof Pointer pointer) ||
+                        !(pointer.getDataType() instanceof FunctionDefinition))
+                    continue;
+                Matcher matcher =
+                    TARGET.matcher(text(component.getComment()));
+                if (!matcher.find()) continue;
+                Address raw = currentProgram.getAddressFactory()
+                    .getAddress(matcher.group(1));
+                Function entry = raw == null ? null :
+                    currentProgram.getFunctionManager().getFunctionAt(raw);
+                Function target = resolveThunk(entry);
+                if (target == null ||
+                        !target.getEntryPoint().equals(
+                            resolvedWanted.getEntryPoint()))
+                    continue;
+                if (agreed != null && !agreed.isEquivalent(pointer))
+                    return null;
+                if (agreed == null) agreed = pointer;
+            }
+        }
+        return agreed;
     }
 
     private DataType syntheticThiscallFunctionPointer(Map<String, String> row) throws Exception {

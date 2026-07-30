@@ -13,15 +13,14 @@
 int __thiscall MainMenuTy::GetMessage(MainMenuTy *this,STMessage *message)
 
 {
-  STMessageId SVar1;
-  StartServTy *pSVar2;
-  code *pcVar3;
+  StartServTy *pSVar1;
+  code *pcVar2;
   MainMenuTy *this_00;
-  DWORD DVar4;
-  int iVar5;
-  undefined3 uVar8;
-  uint uVar6;
-  int iVar7;
+  DWORD DVar3;
+  int iVar4;
+  undefined3 uVar7;
+  uint uVar5;
+  int iVar6;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_ECX;
   MMsgTy *this_01;
@@ -29,70 +28,72 @@ int __thiscall MainMenuTy::GetMessage(MainMenuTy *this,STMessage *message)
   undefined4 extraout_EDX;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   void *unaff_EDI;
-  char cVar10;
+  char cVar9;
   InternalExceptionFrame local_8c;
   undefined4 local_48 [8];
   undefined4 local_28 [8];
   MainMenuTy *local_8;
+  uint SVar1;
+  uint temp_5f8d1d2a76;
 
   local_8 = this;
-  DVar4 = STAppC::sub_006E51B0(this->field_0010);
-  this->field_0061 = DVar4;
+  DVar3 = STAppC::sub_006E51B0(this->field_0010);
+  this->field_0061 = DVar3;
   local_8c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_8c;
-  iVar5 = Library::MSVCRT::__setjmp3(local_8c.jumpBuffer,0);
+  iVar4 = Library::MSVCRT::__setjmp3(local_8c.jumpBuffer,0);
   this_00 = local_8;
-  if (iVar5 != 0) {
+  if (iVar4 != 0) {
     g_currentExceptionFrame = local_8c.previous;
-    iVar7 = ReportDebugMessage("E:\\__titans\\Start\\main_obj.cpp",0x241,0,iVar5,"%s"
+    iVar6 = ReportDebugMessage("E:\\__titans\\Start\\main_obj.cpp",0x241,0,iVar4,"%s"
                                ,"MainMenuTy::GetMessage");
-    if (iVar7 != 0) {
+    if (iVar6 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar5,0,"E:\\__titans\\Start\\main_obj.cpp",0x241);
+    RaiseInternalException(iVar4,0,"E:\\__titans\\Start\\main_obj.cpp",0x241);
     return 0xffff;
   }
   thunk_FUN_005b6450(local_8,message);
-  SVar1 = message->id;
-  if ((SVar1 < MESS_SHARED_697F) || (0x69fe < SVar1)) goto switchD_005b4c27_default;
-  uVar8 = (undefined3)(SVar1 - MESS_SHARED_697F >> 8);
-  switch(SVar1 - MESS_SHARED_697F) {
-  case MESS_ID_NONE:
-    iVar5 = -2;
-    iVar7 = 1;
+  temp_5f8d1d2a76 = message->id;
+  if ((temp_5f8d1d2a76 < 0x697f) || (0x69fe < temp_5f8d1d2a76)) goto switchD_005b4c27_default;
+  uVar7 = (undefined3)(temp_5f8d1d2a76 - 0x697f >> 8);
+  switch(temp_5f8d1d2a76 - 0x697f) {
+  case 0:
+    iVar4 = -2;
+    iVar6 = 1;
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    uVar6 = CONCAT31(uVar8,(char)message->id + 0x81);
+    uVar5 = CONCAT31(uVar7,(char)message->id + 0x81);
     break;
   case 1:
-    iVar5 = -2;
+    iVar4 = -2;
     goto LAB_005b4c5f;
-  case MESS_ID_CREATE:
-    iVar5 = -2;
-    iVar7 = 2;
+  case 2:
+    iVar4 = -2;
+    iVar6 = 2;
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-    uVar6 = CONCAT31((int3)((uint)extraout_EDX >> 8),(char)message->id + 0x81);
+    uVar5 = CONCAT31((int3)((uint)extraout_EDX >> 8),(char)message->id + 0x81);
     break;
-  case MESS_SHARED_0003:
-    iVar5 = -2;
-    iVar7 = 0;
+  case 3:
+    iVar4 = -2;
+    iVar6 = 0;
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    uVar6 = CONCAT31(uVar8,(char)message->id + 0x81);
+    uVar5 = CONCAT31(uVar7,(char)message->id + 0x81);
     break;
   case 4:
-    iVar5 = -3;
+    iVar4 = -3;
 LAB_005b4c5f:
-    iVar7 = 0;
+    iVar6 = 0;
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-    uVar6 = CONCAT31((int3)((uint)extraout_ECX >> 8),(char)message->id + 0x81);
+    uVar5 = CONCAT31((int3)((uint)extraout_ECX >> 8),(char)message->id + 0x81);
     break;
   default:
     goto switchD_005b4c27_default;
   }
-  MMObjTy::PaintSprBut((MMObjTy *)this_00,(int)message,uVar6,1,iVar7,iVar5);
+  MMObjTy::PaintSprBut((MMObjTy *)this_00,(int)message,uVar5,1,iVar6,iVar4);
 switchD_005b4c27_default:
   SVar1 = message->id;
-  if (SVar1 < MESS_FSGSTY_6903) {
-    if (SVar1 == MESS_MAINMENUTY_6902) {
+  if (SVar1 < 0x6903) {
+    if (SVar1 == 0x6902) {
       if (this_00->field_1EE3 == '\0') {
         sub_005B4860(this_00);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -104,36 +105,36 @@ switchD_005b4c27_default:
     }
     else {
       if (SVar1 < 6) {
-        if (SVar1 == MESS_SHARED_0005) {
+        if (SVar1 == 5) {
           PaintMainMenu(this_00);
         }
-        else if (SVar1 == MESS_ID_NONE) {
+        else if (SVar1 == 0) {
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           NoneMainMenu(this_00,unaff_EDI);
         }
-        else if (SVar1 == MESS_ID_CREATE) {
+        else if (SVar1 == 2) {
           InitMainMenu(this_00,*(char *)&message->arg0);
         }
-        else if (SVar1 == MESS_SHARED_0003) {
+        else if (SVar1 == 3) {
           DoneMainMenu(this_00);
         }
         goto cf_common_exit_005B4EEC;
       }
-      if (SVar1 == MESS_MMSGTY_68FF) {
+      if (SVar1 == 0x68ff) {
         if (this_00->field_1EE3 != '\0') {
           if (this_00->field_1EE3 != '\x01') goto cf_common_exit_005B4EEC;
           _DAT_0080f32e = 1;
         }
         this_00->field_1A5A = 0;
       }
-      else if (SVar1 == MESS_SHARED_6900) {
+      else if (SVar1 == 0x6900) {
         if ((this_00->field_1EE3 == '\0') &&
            ((g_startSystem_0081176C == (StartSystemTy *)0x0 ||
             (g_startSystem_0081176C->field_068A == 0)))) goto cf_common_exit_005B4EEC;
         this_00->field_1A5A = 1;
       }
       else {
-        if (SVar1 != MESS_FSGSTY_6901) goto cf_common_exit_005B4EEC;
+        if (SVar1 != 0x6901) goto cf_common_exit_005B4EEC;
         if (this_00->field_1EE3 == '\0') {
           this_00->field_1A5A = 2;
         }
@@ -155,17 +156,17 @@ LAB_005b4df8:
     goto cf_common_exit_005B4EEC;
   }
   switch(SVar1) {
-  case MESS_FSGSTY_6903:
+  case 0x6903:
     if (this_00->field_1EE3 != '\0') {
       if (this_00->field_1EE3 != '\x01') break;
       _DAT_0080f32e = 1;
       this_00->field_1A5A = 4;
       goto LAB_005b4de5;
     }
-    pSVar2 = this_00->field_1A5B;
-    if (*(int *)(pSVar2 + 0x2e6) == 0) break;
+    pSVar1 = this_00->field_1A5B;
+    if (*(int *)(pSVar1 + 0x2e6) == 0) break;
     memset(local_48, 0, 0x20); /* compiler bulk-zero initialization */
-    iVar5 = 0;
+    iVar4 = 0;
     memset(local_28, 0, 0x20); /* compiler bulk-zero initialization */
     local_48[2] = this_00->field_0008;
     local_48[3] = 2;
@@ -173,16 +174,16 @@ LAB_005b4df8:
     local_48[4] = 0x6941;
     local_28[4] = 0x693f;
     local_28[2] = local_48[2];
-    iVar5 = MMsgTy::SetMessage(*(MMsgTy **)(pSVar2 + 0x2e6),0x251d,'\x01',local_48,local_28,
+    iVar4 = MMsgTy::SetMessage(*(MMsgTy **)(pSVar1 + 0x2e6),0x251d,'\x01',local_48,local_28,
                                (undefined4 *)0x0,0,0);
-    if (iVar5 == 0) break;
-  case MESS_SHARED_6940:
+    if (iVar4 == 0) break;
+  case 0x6940:
     sub_005B4860(this_00);
     break;
-  case MESS_PRIVIDERTY_693F:
+  case 0x693f:
     sub_005B47E0(this_00);
     break;
-  case MESS_FSGSTY_6941:
+  case 0x6941:
     if (this_00->field_1EE3 == '\0') {
       sub_005B47E0(this_00);
       this_00->field_1A5A = 4;
@@ -190,24 +191,24 @@ LAB_005b4df8:
       (**(code **)(this_00->field_0000 + 8))();
     }
     break;
-  case MESS_CHOOSEMAPTY_6942:
-    cVar10 = '\0';
+  case 0x6942:
+    cVar9 = '\0';
     goto LAB_005b4ee5;
-  case MESS_WAITTY_6943:
+  case 0x6943:
     thunk_FUN_005b6350(this_00,0x6942,0,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(this_00->field_0000 + 8))();
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     this_01 = *(MMsgTy **)(this_00->field_1A5B + 0x2e6);
     goto LAB_005b4df8;
-  case MESS_MAINMENUTY_6944:
-    cVar10 = '\x01';
+  case 0x6944:
+    cVar9 = '\x01';
 LAB_005b4ee5:
-    SetMode(this_00,cVar10,0);
+    SetMode(this_00,cVar9,0);
   }
 cf_common_exit_005B4EEC:
   g_currentExceptionFrame = local_8c.previous;
-  iVar5 = MMObjTy::GetMessage((MMObjTy *)this_00,message);
-  return iVar5;
+  iVar4 = MMObjTy::GetMessage((MMObjTy *)this_00,message);
+  return iVar4;
 }
 

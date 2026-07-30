@@ -199,16 +199,7 @@ int __thiscall STOctopusC::GetMessage(STOctopusC *this,STMessage *message)
     local_c->field_008E = local_8;
     pbVar11 = local_14;
     pbVar14 = &local_c->field_0x92;
-    for (uVar9 = local_8 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
-      *(undefined4 *)pbVar14 = *(undefined4 *)pbVar11;
-      pbVar11 = pbVar11 + 4;
-      pbVar14 = pbVar14 + 4;
-    }
-    for (uVar9 = local_8 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {
-      *pbVar14 = *pbVar11;
-      pbVar11 = pbVar11 + 1;
-      pbVar14 = pbVar14 + 1;
-    }
+    memmove(pbVar14, pbVar11, local_8); /* compiler REP MOVS byte copy */
     *(uint *)(&local_c->field_0x92 + local_8) = local_10;
     pbVar11 = local_18;
     pbVar14 = &local_c[1].field_0x2 + local_8;

@@ -38,13 +38,7 @@ int __thiscall AiEventClassTy::InitData(AiEventClassTy *this,int *param_1)
       piVar14 = (int *)&local_8->field_008C;
     }
     piVar10 = param_1;
-    for (iVar3 = 0x127; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *piVar14 = *piVar10;
-      piVar10 = piVar10 + 1;
-      piVar14 = piVar14 + 1;
-    }
-    *(short *)piVar14 = (short)*piVar10;
-    *(undefined1 *)((int)piVar14 + 2) = *(undefined1 *)((int)piVar10 + 2);
+    memmove(piVar14, piVar10, 0x49f); /* compiler REP MOVS byte copy */
     local_8->field_0091 = 1;
     pDVar4 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,5,5);
     pAVar2->field_05B3 = pDVar4;

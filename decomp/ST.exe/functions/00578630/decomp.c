@@ -131,16 +131,7 @@ int __thiscall STCrabC::GetMessage(STCrabC *this,STMessage *message)
     local_c[0x18] = local_8;
     pSVar12 = local_14;
     pSVar14 = local_c + 0x19;
-    for (uVar10 = local_8 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
-      *pSVar14 = *pSVar12;
-      pSVar12 = pSVar12 + 1;
-      pSVar14 = pSVar14 + 1;
-    }
-    for (SVar11 = local_8 & 3; SVar11 != 0; SVar11 = SVar11 - 1) {
-      *(char *)pSVar14 = (char)*pSVar12;
-      pSVar12 = (STSprGameObjC_field_0259State *)((int)pSVar12 + 1);
-      pSVar14 = (STSprGameObjC_field_0259State *)((int)pSVar14 + 1);
-    }
+    memmove(pSVar14, pSVar12, local_8); /* compiler REP MOVS byte copy */
     *(uint *)((int)local_c + local_8 + 100) = local_10;
     pbVar13 = local_18;
     pbVar15 = (byte *)((int)local_c + local_8 + 0x68);
@@ -182,11 +173,8 @@ int __thiscall STCrabC::GetMessage(STCrabC *this,STMessage *message)
     *(uint *)&this_00->field_0x235 = uVar10 - 3;
     pSVar12 = (message->arg0).ptr;
     pSVar14 = &this_00->field_0259;
-    for (iVar7 = 10; iVar7 != 0; iVar7 = iVar7 + -1) {
-      *pSVar14 = *pSVar12;
-      pSVar12 = pSVar12 + 1;
-      pSVar14 = pSVar14 + 1;
-    }
+    memmove(pSVar14, pSVar12, 0x28); /* compiler REP MOVS byte copy */
+    iVar7 = 0;
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     Bad((STCrabC *)this_00,unaff_EDI);
     if (((((*(int *)&this_00->field_0x26d < 0) ||

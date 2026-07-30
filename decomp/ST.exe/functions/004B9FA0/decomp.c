@@ -470,13 +470,7 @@ int __thiscall TLOBaseTy::GetMessage(TLOBaseTy *this,STMessage *message)
           pTVar37 = &this_00->field_05AC;
         }
         pTVar32 = (TLOBaseTy_field_05ACState *)(dVar23 + 0x14);
-        for (iVar17 = 0x10; iVar17 != 0; iVar17 = iVar17 + -1) {
-          *pTVar37 = *pTVar32;
-          pTVar32 = pTVar32 + 1;
-          pTVar37 = pTVar37 + 1;
-        }
-        *(short *)pTVar37 = (short)*pTVar32;
-        *(byte *)((int)pTVar37 + 2) = *(byte *)((int)pTVar32 + 2);
+        memmove(pTVar37, pTVar32, 0x43); /* compiler REP MOVS byte copy */
         this_00->field_0231 = *(TLOBaseTy_field_0231State *)(dVar23 + 0xc);
         this_00->field_0235 = this_00->field_05AC - CASE_32;
         local_EAX_394 = GetPlayerRaceId(*(char *)&this_00->field_0024);
@@ -771,13 +765,7 @@ int __thiscall TLOBaseTy::GetMessage(TLOBaseTy *this,STMessage *message)
           puVar33 = (undefined4 *)&local_c->field_0x57;
           puVar38 = (undefined4 *)
                     (-(uint)(this_00 != (TLOBaseTy *)0x0) & (uint)&this_00->field_0231);
-          for (iVar17 = 0xde; iVar17 != 0; iVar17 = iVar17 + -1) {
-            *puVar38 = *puVar33;
-            puVar33 = puVar33 + 1;
-            puVar38 = puVar38 + 1;
-          }
-          *(undefined2 *)puVar38 = *(undefined2 *)puVar33;
-          *(undefined1 *)((int)puVar38 + 2) = *(undefined1 *)((int)puVar33 + 2);
+          memmove(puVar38, puVar33, 0x37b); /* compiler REP MOVS byte copy */
           this_00->field_0231 = CASE_2;
           if (this_00->field_03D8 != 0) {
             pAVar19 = (AnonPointee_TLOBaseTy_0607 *)
@@ -1040,13 +1028,8 @@ int __thiscall TLOBaseTy::GetMessage(TLOBaseTy *this,STMessage *message)
         pTVar37 = &this_00->field_05AC;
       }
       pTVar32 = &local_4a8;
-      for (iVar17 = 0x10; iVar17 != 0; iVar17 = iVar17 + -1) {
-        *pTVar32 = *pTVar37;
-        pTVar37 = pTVar37 + 1;
-        pTVar32 = pTVar32 + 1;
-      }
-      *(short *)pTVar32 = (short)*pTVar37;
-      *(byte *)((int)pTVar32 + 2) = *(byte *)((int)pTVar37 + 2);
+      memmove(pTVar32, pTVar37, 0x43); /* compiler REP MOVS byte copy */
+      iVar17 = 0;
       if (this_00 == (TLOBaseTy *)0x0) {
         pTVar34 = (TLOBaseTy_field_0231State *)0x0;
       }
@@ -1054,13 +1037,7 @@ int __thiscall TLOBaseTy::GetMessage(TLOBaseTy *this,STMessage *message)
         pTVar34 = &this_00->field_0231;
       }
       pTVar41 = &local_465;
-      for (iVar17 = 0xde; iVar17 != 0; iVar17 = iVar17 + -1) {
-        *pTVar41 = *pTVar34;
-        pTVar34 = pTVar34 + 1;
-        pTVar41 = pTVar41 + 1;
-      }
-      *(short *)pTVar41 = (short)*pTVar34;
-      *(byte *)((int)pTVar41 + 2) = *(byte *)((int)pTVar34 + 2);
+      memmove(pTVar41, pTVar34, 0x37b); /* compiler REP MOVS byte copy */
       local_ea = 0x3f6;
       local_4bc[1] = pbVar36;
       local_4bc[4] = (byte *)uVar25;
@@ -1098,42 +1075,17 @@ int __thiscall TLOBaseTy::GetMessage(TLOBaseTy *this,STMessage *message)
       }
       pbVar36 = local_40;
       pbVar42 = local_10 + local_e2;
-      for (uVar27 = local_e6 >> 2; uVar27 != 0; uVar27 = uVar27 - 1) {
-        *(undefined4 *)pbVar42 = *(undefined4 *)pbVar36;
-        pbVar36 = pbVar36 + 4;
-        pbVar42 = pbVar42 + 4;
-      }
-      for (local_e6 = local_e6 & 3; local_e6 != 0; local_e6 = local_e6 - 1) {
-        *pbVar42 = *pbVar36;
-        pbVar36 = pbVar36 + 1;
-        pbVar42 = pbVar42 + 1;
-      }
+      memmove(pbVar42, pbVar36, local_e6); /* compiler REP MOVS byte copy */
+      uVar27 = 0;
       if (local_de != 0) {
         pbVar36 = local_3c;
         pbVar42 = local_10 + local_da;
-        for (uVar27 = local_de >> 2; uVar27 != 0; uVar27 = uVar27 - 1) {
-          *(undefined4 *)pbVar42 = *(undefined4 *)pbVar36;
-          pbVar36 = pbVar36 + 4;
-          pbVar42 = pbVar42 + 4;
-        }
-        for (local_de = local_de & 3; local_de != 0; local_de = local_de - 1) {
-          *pbVar42 = *pbVar36;
-          pbVar36 = pbVar36 + 1;
-          pbVar42 = pbVar42 + 1;
-        }
+        memmove(pbVar42, pbVar36, local_de); /* compiler REP MOVS byte copy */
+        uVar27 = 0;
       }
       pbVar36 = local_38;
       pbVar42 = local_10 + local_d2;
-      for (uVar27 = local_d6 >> 2; uVar27 != 0; uVar27 = uVar27 - 1) {
-        *(undefined4 *)pbVar42 = *(undefined4 *)pbVar36;
-        pbVar36 = pbVar36 + 4;
-        pbVar42 = pbVar42 + 4;
-      }
-      for (local_d6 = local_d6 & 3; local_d6 != 0; local_d6 = local_d6 - 1) {
-        *pbVar42 = *pbVar36;
-        pbVar36 = pbVar36 + 1;
-        pbVar42 = pbVar42 + 1;
-      }
+      memmove(pbVar42, pbVar36, local_d6); /* compiler REP MOVS byte copy */
       pbVar36 = local_8;
       pbVar42 = local_10 + local_ca;
       memmove(pbVar42, pbVar36, local_ce); /* compiler REP MOVS byte copy */

@@ -128,16 +128,7 @@ int __thiscall STSharkC::GetMessage(STSharkC *this,STMessage *message)
       local_c->field_005E = local_8;
       pbVar11 = local_18;
       pbVar13 = &local_c->field_0x62;
-      for (uVar7 = local_8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-        *(undefined4 *)pbVar13 = *(undefined4 *)pbVar11;
-        pbVar11 = pbVar11 + 4;
-        pbVar13 = pbVar13 + 4;
-      }
-      for (uVar7 = local_8 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-        *pbVar13 = *pbVar11;
-        pbVar11 = pbVar11 + 1;
-        pbVar13 = pbVar13 + 1;
-      }
+      memmove(pbVar13, pbVar11, local_8); /* compiler REP MOVS byte copy */
       *(uint *)(&local_c->field_0x62 + local_8) = local_10;
       pbVar11 = local_14;
       pbVar13 = &local_c[1].field_0x2 + local_8;

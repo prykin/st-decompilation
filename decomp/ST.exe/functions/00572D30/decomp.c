@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 1.
    Evidence: 00572D30 -> EXTERNAL:000000C6 @ 00573032
@@ -60,16 +62,8 @@ undefined4 __thiscall FUN_00572d30(void *this,BYTE *param_1,BYTE *param_2)
           uVar4 = ~uVar4;
           pcVar9 = pcVar11 + -uVar4;
           pcVar11 = (char *)local_1c;
-          for (uVar7 = uVar4 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-            *(undefined4 *)pcVar11 = *(undefined4 *)pcVar9;
-            pcVar9 = pcVar9 + 4;
-            pcVar11 = pcVar11 + 4;
-          }
-          for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
-            *pcVar11 = *pcVar9;
-            pcVar9 = pcVar9 + 1;
-            pcVar11 = pcVar11 + 1;
-          }
+          memmove(pcVar11, pcVar9, uVar4); /* compiler REP MOVS byte copy */
+          uVar7 = 0;
         }
         FUN_006b78c0((char *)local_1c,(char *)local_1c);
         uVar4 = 0xffffffff;

@@ -563,11 +563,8 @@ LAB_005e24c5:
               local_8fc = 2;
               piVar22 = local_a78;
               piVar19 = local_8f8;
-              for (iVar9 = 0x5f; iVar9 != 0; iVar9 = iVar9 + -1) {
-                *piVar19 = *piVar22;
-                piVar22 = piVar22 + 1;
-                piVar19 = piVar19 + 1;
-              }
+              memmove(piVar19, piVar22, 0x17c); /* compiler REP MOVS byte copy */
+              piVar22 = (int *)((byte *)piVar22 + 0x17c);
               local_764 = *(int *)&this_01->field_0x417;
               local_8f8[2] = local_b24 + 0xf + local_b14;
               local_8e4 = *(int *)&this_01->field_0x2f9;

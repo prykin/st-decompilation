@@ -57,16 +57,8 @@ void FUN_005335e0(void)
       uVar5 = ~uVar5;
       pcVar7 = pcVar9 + -uVar5;
       pcVar9 = (char *)((int)puVar3 + 0xd);
-      for (uVar6 = uVar5 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-        *(undefined4 *)pcVar9 = *(undefined4 *)pcVar7;
-        pcVar7 = pcVar7 + 4;
-        pcVar9 = pcVar9 + 4;
-      }
-      for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-        *pcVar9 = *pcVar7;
-        pcVar7 = pcVar7 + 1;
-        pcVar9 = pcVar9 + 1;
-      }
+      memmove(pcVar9, pcVar7, uVar5); /* compiler REP MOVS byte copy */
+      uVar6 = 0;
       thunk_FUN_0054edf0((undefined4 *)0x32,local_c,1,local_10);
       FreeAndNull(&local_c);
     }
@@ -85,16 +77,8 @@ void FUN_005335e0(void)
     uVar5 = ~uVar5;
     pcVar7 = pcVar9 + -uVar5;
     pcVar9 = (char *)&DAT_0080f022;
-    for (uVar6 = uVar5 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-      *(undefined4 *)pcVar9 = *(undefined4 *)pcVar7;
-      pcVar7 = pcVar7 + 4;
-      pcVar9 = pcVar9 + 4;
-    }
-    for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-      *pcVar9 = *pcVar7;
-      pcVar7 = pcVar7 + 1;
-      pcVar9 = pcVar9 + 1;
-    }
+    memmove(pcVar9, pcVar7, uVar5); /* compiler REP MOVS byte copy */
+    uVar6 = 0;
     uVar5 = 0xffffffff;
     pcVar7 = PTR_s_SAVEGAME__0079acec;
     do {
@@ -118,16 +102,8 @@ void FUN_005335e0(void)
     } while (cVar1 != '\0');
     pcVar7 = pcVar9 + -uVar5;
     pcVar9 = pcVar8 + -1;
-    for (uVar6 = uVar5 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-      *(undefined4 *)pcVar9 = *(undefined4 *)pcVar7;
-      pcVar7 = pcVar7 + 4;
-      pcVar9 = pcVar9 + 4;
-    }
-    for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-      *pcVar9 = *pcVar7;
-      pcVar7 = pcVar7 + 1;
-      pcVar9 = pcVar9 + 1;
-    }
+    memmove(pcVar9, pcVar7, uVar5); /* compiler REP MOVS byte copy */
+    uVar6 = 0;
     uVar5 = 0xffffffff;
     pcVar7 = (char *)&DAT_00807ddd;
     do {
@@ -151,16 +127,8 @@ void FUN_005335e0(void)
     } while (cVar1 != '\0');
     pcVar7 = pcVar9 + -uVar5;
     pcVar9 = pcVar8 + -1;
-    for (uVar6 = uVar5 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-      *(undefined4 *)pcVar9 = *(undefined4 *)pcVar7;
-      pcVar7 = pcVar7 + 4;
-      pcVar9 = pcVar9 + 4;
-    }
-    for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-      *pcVar9 = *pcVar7;
-      pcVar7 = pcVar7 + 1;
-      pcVar9 = pcVar9 + 1;
-    }
+    memmove(pcVar9, pcVar7, uVar5); /* compiler REP MOVS byte copy */
+    uVar6 = 0;
     FUN_006b8280((char *)&DAT_0080f022,(char *)&DAT_0080f022);
     uVar5 = 0xffffffff;
     pcVar7 = PTR_DAT_0079ad00;
@@ -185,16 +153,7 @@ void FUN_005335e0(void)
     } while (cVar1 != '\0');
     pcVar7 = pcVar9 + -uVar5;
     pcVar9 = pcVar8 + -1;
-    for (uVar6 = uVar5 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-      *(undefined4 *)pcVar9 = *(undefined4 *)pcVar7;
-      pcVar7 = pcVar7 + 4;
-      pcVar9 = pcVar9 + 4;
-    }
-    for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-      *pcVar9 = *pcVar7;
-      pcVar7 = pcVar7 + 1;
-      pcVar9 = pcVar9 + 1;
-    }
+    memmove(pcVar9, pcVar7, uVar5); /* compiler REP MOVS byte copy */
     uVar5 = 0xffffffff;
     pcVar7 = (char *)((int)local_8 + 0x1f5);
     do {

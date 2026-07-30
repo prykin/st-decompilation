@@ -112,11 +112,8 @@ int __thiscall TLOFakeTy::GetMessage(TLOFakeTy *this,STMessage *message)
       pSVar9 = &pSVar4->field_0231;
     }
     pSVar7 = local_8;
-    for (iVar5 = 7; iVar5 != 0; iVar5 = iVar5 + -1) {
-      *pSVar7 = *pSVar9;
-      pSVar9 = pSVar9 + 1;
-      pSVar7 = pSVar7 + 1;
-    }
+    memmove(pSVar7, pSVar9, 0x1c); /* compiler REP MOVS byte copy */
+    iVar5 = 0;
     local_8[3] = CASE_2;
     if (*(int *)&pSVar4->field_0x245 != 0) {
       pSVar9 = *(STSprGameObjC_field_0231State **)&pSVar4->field_0x24d;

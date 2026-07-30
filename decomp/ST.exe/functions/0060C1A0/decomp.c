@@ -23,13 +23,7 @@ int __thiscall STFieldC::FUN_0060c1a0(STFieldC *this,undefined4 *param_1)
       puVar7 = (undefined4 *)&this->field_0x1d5;
     }
     puVar6 = param_1;
-    for (iVar1 = 0x20; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *puVar7 = *puVar6;
-      puVar6 = puVar6 + 1;
-      puVar7 = puVar7 + 1;
-    }
-    *(undefined2 *)puVar7 = *(undefined2 *)puVar6;
-    *(undefined1 *)((int)puVar7 + 2) = *(undefined1 *)((int)puVar6 + 2);
+    memmove(puVar7, puVar6, 0x83); /* compiler REP MOVS byte copy */
     iVar1 = 0x83;
     if (this->field_0234 == (STFieldC_field_0234DArray *)0x0) {
       piVar3 = (int *)((int)param_1 + 0x83);

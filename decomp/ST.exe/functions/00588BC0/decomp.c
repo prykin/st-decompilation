@@ -142,16 +142,7 @@ int __thiscall STMBombC::GetMessage(STMBombC *this,STMessage *message)
     local_14->field_007F = local_10;
     pbVar11 = local_20;
     pbVar14 = &local_14->field_0x83;
-    for (uVar8 = local_10 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
-      *(undefined4 *)pbVar14 = *(undefined4 *)pbVar11;
-      pbVar11 = pbVar11 + 4;
-      pbVar14 = pbVar14 + 4;
-    }
-    for (uVar8 = local_10 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
-      *pbVar14 = *pbVar11;
-      pbVar11 = pbVar11 + 1;
-      pbVar14 = pbVar14 + 1;
-    }
+    memmove(pbVar14, pbVar11, local_10); /* compiler REP MOVS byte copy */
     *(uint *)(&local_14->field_0x83 + local_10) = local_18;
     pbVar11 = local_1c;
     pbVar14 = &local_14[1].field_0x3 + local_10;

@@ -23,22 +23,29 @@ import ghidra.app.decompiler.DecompInterface;
 import ghidra.app.decompiler.DecompileResults;
 import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
+import ghidra.program.model.data.AbstractIntegerDataType;
 import ghidra.program.model.data.Array;
 import ghidra.program.model.data.DataType;
+import ghidra.program.model.data.Enum;
 import ghidra.program.model.data.Pointer;
 import ghidra.program.model.data.TypeDef;
 import ghidra.program.model.data.Undefined;
 import ghidra.program.model.listing.Function;
 import ghidra.program.model.listing.FunctionIterator;
 import ghidra.program.model.listing.Parameter;
+import ghidra.program.model.listing.Variable;
 import ghidra.program.model.symbol.SourceType;
 import ghidra.program.model.symbol.Symbol;
 
 public class STLocalLifetimeAnalyzer extends GhidraScript {
+    private static final String APPLIER_MARKER = "[STLocalLifetimeApplier]";
     private static final int DECOMPILE_TIMEOUT = 45;
     private static final int RETURN_WEIGHT = 12;
     private static final int COPY_WEIGHT = 10;
     private static final int ARGUMENT_WEIGHT = 4;
+    private static final int EXTENSION_ROLE_WEIGHT = 10;
+    private static final int ARITHMETIC_ROLE_WEIGHT = 4;
+    private static final int BOOLEAN_ROLE_WEIGHT = 10;
 
     private final List<Row> rows = new ArrayList<>();
     private final List<Failure> failures = new ArrayList<>();
@@ -164,7 +171,9 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
         String currentSpecification = typeSpecification(currentType);
         SourceType symbolSource = symbolSource(highSymbol);
         boolean merged = groups.size() > 1;
-        if (!merged && !genericUnknown(currentType)) return;
+        if (!merged && !genericUnknown(currentType) &&
+                !scriptOwnedScalarLocal(highSymbol, currentType))
+            return;
         if (merged) {
             mergedLocals++;
             mergeGroups += groups.size();
@@ -175,7 +184,8 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
         for (Map.Entry<Short, List<Object>> entry : groups.entrySet()) {
             Map<String, TypeEvidence> evidence = new TreeMap<>();
             for (Object varnode : entry.getValue())
-                collectEvidence(varnode, evidence);
+                collectEvidence(varnode, evidence,
+                    scalarRoleEligible(currentType));
             if (!evidence.isEmpty()) groupsWithEvidence++;
             Decision decision = decide(evidence);
             decisions.put(entry.getKey(), decision);
@@ -236,8 +246,19 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
 
     private Decision decide(Map<String, TypeEvidence> evidence) {
         if (evidence.isEmpty()) return new Decision(null, false, evidence);
-        if (evidence.size() != 1)
+        if (evidence.size() != 1) {
+            List<TypeEvidence> exact = evidence.values().stream()
+                .filter(value -> value.sources.stream()
+                    .anyMatch(source -> !source.startsWith("scalar_") &&
+                        !source.equals("boolean_role")))
+                .toList();
+            // A direct typed copy/call is stronger than the machine operation
+            // used on that value. Comparisons and extensions describe how an
+            // enum or typedef is consumed; they must not erase its nominal type.
+            if (exact.size() == 1)
+                return new Decision(exact.get(0), false, evidence);
             return new Decision(null, true, evidence);
+        }
         return new Decision(evidence.values().iterator().next(), false, evidence);
     }
 
@@ -248,7 +269,7 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
     }
 
     private void collectEvidence(Object varnode,
-            Map<String, TypeEvidence> evidence) {
+            Map<String, TypeEvidence> evidence, boolean scalarEligible) {
         try {
             Object definition = varnode.getClass().getMethod("getDef").invoke(varnode);
             if (definition != null) {
@@ -257,6 +278,8 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
                     collectCallReturn(definition, varnode, evidence);
                 else if (mnemonic.equals("COPY"))
                     collectTypedCopy(definition, varnode, evidence);
+                if (scalarEligible)
+                    collectScalarRole(definition, varnode, evidence);
             }
             @SuppressWarnings("unchecked")
             Iterator<Object> descendants = (Iterator<Object>)varnode.getClass()
@@ -265,11 +288,101 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
                 Object op = descendants.next();
                 if (mnemonic(op).equals("CALL"))
                     collectCallArgument(op, varnode, evidence);
+                if (scalarEligible)
+                    collectScalarRole(op, varnode, evidence);
             }
         }
         catch (Exception ignored) {
             // One malformed p-code edge does not invalidate other independent anchors.
         }
+    }
+
+    /**
+     * Recover scalar meaning from p-code operations whose semantics explicitly
+     * distinguish signed, unsigned, or boolean values. Width alone is never
+     * enough: INT_SEXT/INT_ZEXT and BOOL_* are strong anchors, while arithmetic
+     * and comparisons need two agreeing observations through the normal score
+     * threshold. Equality, COPY, generic arithmetic, and constants deliberately
+     * contribute no signedness vote.
+     */
+    private void collectScalarRole(Object op, Object varnode,
+            Map<String, TypeEvidence> evidence) throws Exception {
+        ScalarRole role = scalarRole(op, varnode);
+        if (role == null) return;
+        int size = ((Number)varnode.getClass().getMethod("getSize")
+            .invoke(varnode)).intValue();
+        String specification = scalarSpecification(role.kind, size);
+        if (specification == null) return;
+        Evidence anchor = anchor(op, role.kind, role.operand, null,
+            mnemonic(op));
+        TypeEvidence value = evidence.computeIfAbsent(specification,
+            ignored -> new TypeEvidence(specification));
+        if (!value.anchorKeys.add(anchor.key())) return;
+        value.score += role.weight;
+        value.sources.add(role.source);
+        value.anchors.add(anchor);
+    }
+
+    private ScalarRole scalarRole(Object op, Object varnode) throws Exception {
+        String mnemonic = mnemonic(op);
+        int operand = operandOf(op, varnode);
+        boolean output = sameLifetime(op.getClass().getMethod("getOutput")
+            .invoke(op), varnode);
+        if (mnemonic.equals("INT_SEXT") && operand == 0)
+            return new ScalarRole("signed_scalar_role", operand,
+                EXTENSION_ROLE_WEIGHT, "scalar_extension");
+        if (mnemonic.equals("INT_ZEXT") && operand == 0)
+            return new ScalarRole("unsigned_scalar_role", operand,
+                EXTENSION_ROLE_WEIGHT, "scalar_extension");
+        if (mnemonic.startsWith("BOOL_") && (operand >= 0 || output))
+            return new ScalarRole("boolean_scalar_role",
+                output ? -1 : operand, BOOLEAN_ROLE_WEIGHT, "boolean_role");
+        if (output && Set.of("INT_EQUAL", "INT_NOTEQUAL", "INT_LESS",
+                "INT_LESSEQUAL", "INT_SLESS", "INT_SLESSEQUAL",
+                "INT_CARRY", "INT_SCARRY", "INT_SBORROW")
+                .contains(mnemonic))
+            return new ScalarRole("boolean_scalar_role", -1,
+                BOOLEAN_ROLE_WEIGHT, "boolean_role");
+
+        boolean signed = Set.of("INT_SLESS", "INT_SLESSEQUAL", "INT_SDIV",
+            "INT_SREM", "INT_SRIGHT").contains(mnemonic);
+        boolean unsigned = Set.of("INT_LESS", "INT_LESSEQUAL", "INT_DIV",
+            "INT_REM", "INT_RIGHT").contains(mnemonic);
+        if ((!signed && !unsigned) || (operand < 0 && !output)) return null;
+        return new ScalarRole(signed ? "signed_scalar_role" :
+            "unsigned_scalar_role", output ? -1 : operand,
+            ARITHMETIC_ROLE_WEIGHT, "scalar_arithmetic");
+    }
+
+    private int operandOf(Object op, Object varnode) throws Exception {
+        int count = ((Number)op.getClass().getMethod("getNumInputs")
+            .invoke(op)).intValue();
+        for (int index = 0; index < count; index++) {
+            Object input = op.getClass().getMethod("getInput", int.class)
+                .invoke(op, index);
+            if (sameLifetime(input, varnode)) return index;
+        }
+        return -1;
+    }
+
+    private String scalarSpecification(String kind, int size) {
+        if (kind.equals("boolean_scalar_role"))
+            return size == 1 ? "/bool" : null;
+        if (kind.equals("signed_scalar_role"))
+            return switch (size) {
+                case 1 -> "/char";
+                case 2 -> "/short";
+                case 4 -> "/int";
+                default -> null;
+            };
+        if (kind.equals("unsigned_scalar_role"))
+            return switch (size) {
+                case 1 -> "/byte";
+                case 2 -> "/ushort";
+                case 4 -> "/uint";
+                default -> null;
+            };
+        return null;
     }
 
     private void collectCallReturn(Object op, Object output,
@@ -322,21 +435,30 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
         if (input == null || input == output) return;
         Object sourceHigh = input.getClass().getMethod("getHigh").invoke(input);
         if (sourceHigh == null) return;
-        Object sourceSymbol = sourceHigh.getClass()
-            .getMethod("getSymbol").invoke(sourceHigh);
-        if (sourceSymbol == null) return;
-        boolean parameter = (boolean)sourceSymbol.getClass()
-            .getMethod("isParameter").invoke(sourceSymbol);
-        boolean global = (boolean)sourceSymbol.getClass()
-            .getMethod("isGlobal").invoke(sourceSymbol);
-        if (!parameter && !global) return;
+        Object outputHigh =
+            output.getClass().getMethod("getHigh").invoke(output);
+        if (sourceHigh == outputHigh) return;
         DataType type = (DataType)sourceHigh.getClass()
             .getMethod("getDataType").invoke(sourceHigh);
         int size = ((Number)output.getClass().getMethod("getSize")
             .invoke(output)).intValue();
         if (!usableType(type, size)) return;
+        Object sourceSymbol = sourceHigh.getClass()
+            .getMethod("getSymbol").invoke(sourceHigh);
+        if (sourceSymbol == null) {
+            if (!nominalType(type)) return;
+            Evidence anchor = anchor(op, "typed_copy", 0, null,
+                "decompiler_nominal_type");
+            addEvidence(evidence, type, COPY_WEIGHT, "typed_copy", anchor);
+            return;
+        }
+        boolean parameter = (boolean)sourceSymbol.getClass()
+            .getMethod("isParameter").invoke(sourceSymbol);
+        boolean global = (boolean)sourceSymbol.getClass()
+            .getMethod("isGlobal").invoke(sourceSymbol);
+        if (!parameter && !global && !nominalType(type)) return;
         SourceType source = symbolSource(sourceSymbol);
-        if (source == SourceType.DEFAULT && !semanticPointer(type)) return;
+        if (source == SourceType.DEFAULT && !nominalType(type)) return;
         Evidence anchor = anchor(op, "typed_copy", 0, null,
             source.toString());
         addEvidence(evidence, type, COPY_WEIGHT, "typed_copy", anchor);
@@ -482,6 +604,43 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
     }
 
     /**
+     * Scalar p-code roles refine raw machine integers only. A pointer, enum, or
+     * typedef can legally participate in the same INT_* operations, so using
+     * those operations to replace an already nominal type loses information.
+     */
+    private boolean scalarRoleEligible(DataType type) {
+        DataType base = untypedef(type);
+        return base != null && !(type instanceof TypeDef) &&
+            !(base instanceof Enum) && !(base instanceof Pointer) &&
+            (Undefined.isUndefined(base) ||
+                base instanceof AbstractIntegerDataType);
+    }
+
+    private boolean nominalType(DataType type) {
+        if (type instanceof TypeDef || type instanceof Enum) return true;
+        return semanticPointer(type);
+    }
+
+    /**
+     * Revisit a scalar local created by this applier. A later exact nominal copy
+     * (for example STMessage::id) must be able to restore an enum/typedef after
+     * an earlier scalar-only pass split the lifetime.
+     */
+    private boolean scriptOwnedScalarLocal(Object highSymbol, DataType type) {
+        if (!scalarRoleEligible(type)) return false;
+        try {
+            Symbol symbol = (Symbol)highSymbol.getClass()
+                .getMethod("getSymbol").invoke(highSymbol);
+            Object object = symbol == null ? null : symbol.getObject();
+            return object instanceof Variable variable &&
+                text(variable.getComment()).contains(APPLIER_MARKER);
+        }
+        catch (Exception ignored) {
+            return false;
+        }
+    }
+
+    /**
      * A one-lifetime HighSymbol is eligible only when its current type carries
      * no semantic information. In particular, do not reinterpret void * or an
      * already named integer merely because one consumer accepts something more
@@ -623,7 +782,9 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
             "policy=Distinct decompiler merge groups are split independently. A " +
                 "single-group raw undefined local is also eligible, but only from " +
                 "the same exact typed return/copy evidence or two agreeing typed " +
-                "call arguments. Competing exact types are review-only.",
+                "call arguments. Script-owned scalar splits are revisited so an " +
+                "exact nominal copy can restore an enum, typedef, or pointer. " +
+                "Competing exact types are review-only.",
             "manual_safety=USER_DEFINED and IMPORTED HighSymbols are never enabled."
         ), StandardCharsets.UTF_8);
     }
@@ -657,6 +818,8 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
     private record CallTarget(Function direct, Function resolved) {}
     private record SignatureParameters(Function function,
         Parameter[] parameters) {}
+    private record ScalarRole(String kind, int operand, int weight,
+        String source) {}
     private record Evidence(String address, int time, String kind, int operand,
         String directTarget, String resolvedTarget, String source) {
         static final Comparator<Evidence> ORDER =

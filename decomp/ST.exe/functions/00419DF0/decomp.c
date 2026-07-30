@@ -133,12 +133,8 @@ cf_common_exit_00419F6C:
   (*this->vtable->vfunc_30)(this->field_0121);
   pbVar4 = this->field_0121;
   pbVar19 = this->field_011D;
-  for (iVar11 = 0xd; iVar11 != 0; iVar11 = iVar11 + -1) {
-    *(undefined4 *)pbVar19 = *(undefined4 *)pbVar4;
-    pbVar4 = pbVar4 + 4;
-    pbVar19 = pbVar19 + 4;
-  }
-  *(undefined2 *)pbVar19 = *(undefined2 *)pbVar4;
+  memmove(pbVar19, pbVar4, 0x36); /* compiler REP MOVS byte copy */
+  iVar11 = 0;
   (*this->vtable->vfunc_34)(this->field_0129);
   puVar18 = (byte *)(this->field_0129);
   puVar20 = (byte *)(this->field_0125);

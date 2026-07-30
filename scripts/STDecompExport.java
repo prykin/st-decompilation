@@ -147,6 +147,12 @@ public class STDecompExport extends GhidraScript {
         "[ \\t]*=[ \\t]*(?:\\([^)]*\\)[ \\t]*)?0;$");
     private static final String BULK_COPY_MARKER =
         "/* compiler REP MOVS byte copy */";
+    private static final Pattern LEGACY_BULK_COPY = Pattern.compile(
+        "^(?<indent>[ \\t]*)memmove\\(" +
+        "(?<destination>[A-Za-z_$][A-Za-z0-9_$]*),[ \\t]*" +
+        "(?<source>[A-Za-z_$][A-Za-z0-9_$]*),[ \\t]*" +
+        "(?<bytes>0x[0-9A-Fa-f]+|[0-9]+)\\);[ \\t]*" +
+        Pattern.quote(BULK_COPY_MARKER) + "$");
     private static final Pattern HEX_ADDRESS = Pattern.compile("0x([0-9A-Fa-f]{6,8})");
     private static final Pattern RAW_INDIRECT_CALL = Pattern.compile(
         "\\(\\*\\*?\\(code \\*\\*?\\)|\\(\\*\\(code \\*\\)");
@@ -683,7 +689,9 @@ public class STDecompExport extends GhidraScript {
      */
     private NormalizedCode normalizePseudocode(String code) {
         if (code == null || code.isEmpty()) return new NormalizedCode("", 0);
-        NormalizedCode bulkZero = normalizeBulkZeroLoops(code);
+        NormalizedCode legacyBulkCopy =
+            normalizeLegacyBulkCopyLiveouts(code);
+        NormalizedCode bulkZero = normalizeBulkZeroLoops(legacyBulkCopy.code);
         NormalizedCode bulkCopy = normalizeBulkCopyLoops(bulkZero.code);
         NormalizedCode darrayAliases = normalizeDArrayElementAliases(bulkCopy.code);
         NormalizedCode virtualCalls =
@@ -691,7 +699,8 @@ public class STDecompExport extends GhidraScript {
         code = virtualCalls.code;
         String[] lines = code.split("\\R", -1);
         List<String> output = new ArrayList<>();
-        int replacements = bulkZero.replacements + bulkCopy.replacements +
+        int replacements = legacyBulkCopy.replacements +
+            bulkZero.replacements + bulkCopy.replacements +
             darrayAliases.replacements + virtualCalls.replacements;
         for (int index = 0; index < lines.length; index++) {
             Matcher assignment = INT3_ASSIGNMENT.matcher(lines[index]);
@@ -803,9 +812,11 @@ public class STDecompExport extends GhidraScript {
         while (matcher.find()) {
             String name = matcher.group("name");
             String type = matcher.group("type").trim();
-            int width = pointerArithmeticWidth(type, matcher.group("stars").length());
+            int stars = matcher.group("stars").length();
+            int width = pointerArithmeticWidth(type, stars);
             if (width > 0 && !result.containsKey(name))
-                result.put(name, new PointerDeclaration(type, matcher.group("indent"), width));
+                result.put(name, new PointerDeclaration(type,
+                    matcher.group("indent"), stars, width));
         }
         int body = code.indexOf('{');
         String signature = body < 0 ? code : code.substring(0, body);
@@ -813,10 +824,10 @@ public class STDecompExport extends GhidraScript {
         while (matcher.find()) {
             String name = matcher.group("name");
             String type = matcher.group("type").trim();
-            int width = pointerArithmeticWidth(type,
-                matcher.group("stars").length());
+            int stars = matcher.group("stars").length();
+            int width = pointerArithmeticWidth(type, stars);
             if (width > 0 && !result.containsKey(name))
-                result.put(name, new PointerDeclaration(type, "", width));
+                result.put(name, new PointerDeclaration(type, "", stars, width));
         }
         return result;
     }
@@ -1564,6 +1575,151 @@ public class STDecompExport extends GhidraScript {
     }
 
     /**
+     * Migrate cached output produced by older exporter revisions.  Those
+     * revisions sometimes folded the REP MOVSD loop but retained its artificial
+     * pointer live-outs and the final one-to-three byte copy:
+     *
+     *   memmove(dst, src, 0x40);
+     *   dst = (T *)((byte *)dst + 0x40);
+     *   src = (T *)((byte *)src + 0x40);
+     *   *(short *)dst = (short)*src;
+     *   *((byte *)dst + 2) = *((byte *)src + 2);
+     *
+     * Reused function bodies are normalized again without being decompiled, so
+     * recognize that exporter-owned representation and extend the memmove over
+     * the exact contiguous tail.  The marker byte count from some intermediate
+     * revisions already includes a prefix of the tail; therefore the new size
+     * is the maximum of that count and advance+tail, never their sum.
+     */
+    private NormalizedCode normalizeLegacyBulkCopyLiveouts(String code) {
+        if (code == null || code.isEmpty() ||
+                !code.contains(BULK_COPY_MARKER) ||
+                !code.contains("((byte *)"))
+            return new NormalizedCode(code, 0);
+        String[] lines = code.split("\\R", -1);
+        Map<String, PointerDeclaration> declarations = pointerDeclarations(code);
+        List<String> output = new ArrayList<>();
+        int replacements = 0;
+        for (int index = 0; index < lines.length; index++) {
+            Matcher copy = LEGACY_BULK_COPY.matcher(lines[index]);
+            if (!copy.matches() || index + 3 >= lines.length) {
+                output.add(lines[index]);
+                continue;
+            }
+            String indent = copy.group("indent");
+            String destinationName = copy.group("destination");
+            String sourceName = copy.group("source");
+            Long copiedBytes = unsignedLiteral(copy.group("bytes"));
+            Long destinationAdvance = legacyPointerAdvanceBytes(
+                lines[index + 1], indent, destinationName);
+            Long sourceAdvance = legacyPointerAdvanceBytes(
+                lines[index + 2], indent, sourceName);
+            if (copiedBytes == null || destinationAdvance == null ||
+                    sourceAdvance == null ||
+                    copiedBytes <= 0 || copiedBytes > 0x1000000L ||
+                    destinationAdvance <= 0 ||
+                    destinationAdvance > 0x1000000L ||
+                    !destinationAdvance.equals(sourceAdvance) ||
+                    copiedBytes < destinationAdvance ||
+                    copiedBytes - destinationAdvance > 3) {
+                output.add(lines[index]);
+                continue;
+            }
+
+            CopyBody body = new CopyBody(destinationName, sourceName);
+            long coveredTail = copiedBytes - destinationAdvance;
+            int cursor = index + 3;
+            List<String> interstitial = new ArrayList<>();
+            while (cursor < lines.length && interstitial.size() < 4 &&
+                    safeLegacyCopyInterstitial(lines[cursor], indent,
+                        destinationName, sourceName)) {
+                interstitial.add(lines[cursor]);
+                cursor++;
+            }
+            int lastTail = cursor - 1;
+            boolean consumedTail = false;
+            while (cursor < lines.length && coveredTail < 3) {
+                String line = lines[cursor];
+                String stripped = line.stripLeading();
+                String tailIndent =
+                    line.substring(0, line.length() - stripped.length());
+                if (!tailIndent.equals(indent)) break;
+                TailCopy tail = fixedTailCopy(stripped, body, declarations);
+                if (tail == null || tail.offset != coveredTail ||
+                        coveredTail + tail.width > 3)
+                    break;
+                coveredTail += tail.width;
+                lastTail = cursor++;
+                consumedTail = true;
+            }
+            if (!consumedTail) {
+                output.add(lines[index]);
+                continue;
+            }
+
+            String after = String.join(System.lineSeparator(),
+                Arrays.copyOfRange(lines, lastTail + 1, lines.length));
+            boolean destinationLive = identifierValueLiveAfter(after,
+                destinationName, 0, indent.length());
+            boolean sourceLive = identifierValueLiveAfter(after,
+                sourceName, 0, indent.length());
+            PointerDeclaration destination = declarations.get(destinationName);
+            PointerDeclaration source = declarations.get(sourceName);
+            if ((destinationLive && destination == null) ||
+                    (sourceLive && source == null)) {
+                output.add(lines[index]);
+                continue;
+            }
+
+            long totalBytes = Math.max(copiedBytes,
+                destinationAdvance + coveredTail);
+            output.add(indent + "memmove(" + destinationName + ", " +
+                sourceName + ", " + hexLiteral(totalBytes) + "); " +
+                BULK_COPY_MARKER);
+            if (destinationLive)
+                output.add(pointerAdvance(indent, destinationName, destination,
+                    hexLiteral(destinationAdvance)));
+            if (sourceLive)
+                output.add(pointerAdvance(indent, sourceName, source,
+                    hexLiteral(sourceAdvance)));
+            output.addAll(interstitial);
+            index = lastTail;
+            replacements++;
+        }
+        return replacements == 0 ? new NormalizedCode(code, 0) :
+            new NormalizedCode(
+                String.join(System.lineSeparator(), output), replacements);
+    }
+
+    private Long legacyPointerAdvanceBytes(String line, String indent,
+            String name) {
+        String literal = "(?<bytes>0x[0-9A-Fa-f]+|[0-9]+)";
+        Pattern pattern = Pattern.compile("^" + Pattern.quote(indent) +
+            Pattern.quote(name) + "[ \\t]*=[ \\t]*\\([^;]+\\)[ \\t]*" +
+            "\\(\\(byte[ \\t]*\\*\\)[ \\t]*" + Pattern.quote(name) +
+            "[ \\t]*\\+[ \\t]*" + literal + "\\);[ \\t]*$");
+        Matcher matcher = pattern.matcher(line);
+        return matcher.matches() ? unsignedLiteral(matcher.group("bytes")) :
+            null;
+    }
+
+    private boolean safeLegacyCopyInterstitial(String line, String indent,
+            String destination, String source) {
+        if (!line.startsWith(indent)) return false;
+        String statement = line.substring(indent.length());
+        if (!statement.matches(
+                "[A-Za-z_$][A-Za-z0-9_$]*(?:\\[[^]]+\\])?[ \\t]*=" +
+                "[ \\t]*[^;]+;[ \\t]*"))
+            return false;
+        if (statement.contains("*") || statement.contains("(") ||
+                statement.contains("->") ||
+                containsExportIdentifier(statement, destination) ||
+                containsExportIdentifier(statement, source))
+            return false;
+        return true;
+    }
+
+    /**
      * MSVC lowers many fixed-direction byte copies to REP MOVSD followed by
      * REP MOVSB.  Ghidra expands those two instructions into a pair of source
      * loops whose counters are byte_count >> 2 and byte_count & 3.  Those
@@ -1571,10 +1727,12 @@ public class STDecompExport extends GhidraScript {
      * undefined1 pointer spelling creates a large amount of false type debt.
      *
      * Fold only the exact two-loop form with one copy plus the matching source
-     * and destination increments in each body.  All four temporaries must be
-     * dead after the pair, so replacing the advanced pointers/counters cannot
-     * change later pseudocode.  memmove is deliberately used instead of memcpy:
-     * the DArray erase helper copies an overlapping tail toward a lower address.
+     * and destination increments in each body.  If an advanced pointer or
+     * exhausted counter remains live, reproduce that exact live-out state after
+     * the memmove.  This admits row/pitch copy loops without silently changing
+     * later pointer arithmetic.  memmove is deliberately used instead of
+     * memcpy: the DArray erase helper copies an overlapping tail toward a lower
+     * address.
      */
     private NormalizedCode normalizeBulkCopyLoops(String code) {
         if (code == null || code.isEmpty())
@@ -1605,6 +1763,7 @@ public class STDecompExport extends GhidraScript {
                 declarations, true);
             int tailClose = tailHeaderIndex + 4;
             boolean exact = wordBody != null && byteBody != null &&
+                !wordCounter.equals(byteCounter) &&
                 lines[wordClose].equals(indent + "}") &&
                 tail.matches() && tail.group("indent").equals(indent) &&
                 tail.group("bytes").equals(byteCounter) &&
@@ -1618,29 +1777,44 @@ public class STDecompExport extends GhidraScript {
             String tailCounter = tail.group("counter");
             String after = String.join(System.lineSeparator(),
                 Arrays.copyOfRange(lines, tailClose + 1, lines.length));
-            if (identifierValueLiveAfter(after, wordCounter, 0,
-                        indent.length()) ||
-                    identifierValueLiveAfter(after, tailCounter, 0,
-                        indent.length()) ||
-                    identifierValueLiveAfter(after, wordBody.destination, 0,
-                        indent.length()) ||
-                    identifierValueLiveAfter(after, wordBody.source, 0,
-                        indent.length())) {
+            boolean wordCounterLive = identifierValueLiveAfter(after,
+                wordCounter, 0, indent.length());
+            boolean tailCounterLive = identifierValueLiveAfter(after,
+                tailCounter, 0, indent.length());
+            boolean destinationLive = identifierValueLiveAfter(after,
+                wordBody.destination, 0, indent.length());
+            boolean sourceLive = identifierValueLiveAfter(after,
+                wordBody.source, 0, indent.length());
+            PointerDeclaration destination =
+                declarations.get(wordBody.destination);
+            PointerDeclaration source = declarations.get(wordBody.source);
+            if ((destinationLive && destination == null) ||
+                    (sourceLive && source == null)) {
                 output.add(lines[index]);
                 continue;
             }
             output.add(indent + "memmove(" + wordBody.destination + ", " +
                 wordBody.source + ", " + byteCounter + "); " + BULK_COPY_MARKER);
-            deadLocals.add(wordCounter);
-            if (!tailCounter.equals(byteCounter))
-                deadLocals.add(tailCounter);
-            PointerDeclaration destination =
-                declarations.get(wordBody.destination);
-            PointerDeclaration source = declarations.get(wordBody.source);
-            if (destination != null && destination.width == 4 &&
+            if (destinationLive)
+                output.add(pointerAdvance(indent, wordBody.destination,
+                    destination, byteCounter));
+            if (sourceLive)
+                output.add(pointerAdvance(indent, wordBody.source, source,
+                    byteCounter));
+            if (wordCounterLive)
+                output.add(indent + wordCounter + " = 0;");
+            else deadLocals.add(wordCounter);
+            if (!tailCounter.equals(wordCounter)) {
+                if (tailCounterLive)
+                    output.add(indent + tailCounter + " = 0;");
+                else if (!tailCounter.equals(byteCounter))
+                    deadLocals.add(tailCounter);
+            }
+            if (!destinationLive && destination != null &&
+                    destination.width == 4 &&
                     destination.type.trim().equals("undefined4"))
                 bytePointers.add(wordBody.destination);
-            if (source != null && source.width == 4 &&
+            if (!sourceLive && source != null && source.width == 4 &&
                     source.type.trim().equals("undefined4"))
                 bytePointers.add(wordBody.source);
             index = tailClose;
@@ -1684,26 +1858,20 @@ public class STDecompExport extends GhidraScript {
                 output.add(lines[index]);
                 continue;
             }
-            int tailWidth = 0;
+            long tailWidth = 0;
             int end = close;
-            if (close + 1 < lines.length) {
-                String tailLine = lines[close + 1];
+            while (end + 1 < lines.length && tailWidth < 3) {
+                String tailLine = lines[end + 1];
                 String stripped = tailLine.stripLeading();
                 String tailIndent = tailLine.substring(
                     0, tailLine.length() - stripped.length());
-                if (tailIndent.equals(indent)) {
-                    for (int width : List.of(1, 2, 4, 8)) {
-                        CopyBody tail =
-                            copyStatement(stripped, width, declarations);
-                        if (tail != null &&
-                                tail.destination.equals(body.destination) &&
-                                tail.source.equals(body.source)) {
-                            tailWidth = width;
-                            end = close + 1;
-                            break;
-                        }
-                    }
-                }
+                if (!tailIndent.equals(indent)) break;
+                TailCopy tail = fixedTailCopy(stripped, body, declarations);
+                if (tail == null || tail.offset != tailWidth ||
+                        tailWidth + tail.width > 3)
+                    break;
+                tailWidth += tail.width;
+                end++;
             }
             long count;
             try {
@@ -1732,26 +1900,38 @@ public class STDecompExport extends GhidraScript {
             String after = String.join(System.lineSeparator(),
                 Arrays.copyOfRange(lines, end + 1, lines.length));
             String counter = header.group("counter");
-            if (identifierValueLiveAfter(after, counter, 0,
-                        indent.length()) ||
-                    identifierValueLiveAfter(after, body.destination, 0,
-                        indent.length()) ||
-                    identifierValueLiveAfter(after, body.source, 0,
-                        indent.length())) {
+            boolean counterLive = identifierValueLiveAfter(after, counter, 0,
+                indent.length());
+            boolean destinationLive = identifierValueLiveAfter(after,
+                body.destination, 0, indent.length());
+            boolean sourceLive = identifierValueLiveAfter(after, body.source,
+                0, indent.length());
+            PointerDeclaration destination =
+                declarations.get(body.destination);
+            PointerDeclaration source = declarations.get(body.source);
+            if ((destinationLive && destination == null) ||
+                    (sourceLive && source == null)) {
                 output.add(lines[index]);
                 continue;
             }
             output.add(indent + "memmove(" + body.destination + ", " +
                 body.source + ", " + hexLiteral(bytes) + "); " +
                 BULK_COPY_MARKER);
-            deadLocals.add(counter);
-            PointerDeclaration destination =
-                declarations.get(body.destination);
-            PointerDeclaration source = declarations.get(body.source);
-            if (destination != null && destination.width == 4 &&
+            long advancedBytes = count * 4L;
+            if (destinationLive)
+                output.add(pointerAdvance(indent, body.destination,
+                    destination, hexLiteral(advancedBytes)));
+            if (sourceLive)
+                output.add(pointerAdvance(indent, body.source, source,
+                    hexLiteral(advancedBytes)));
+            if (counterLive)
+                output.add(indent + counter + " = 0;");
+            else deadLocals.add(counter);
+            if (!destinationLive && destination != null &&
+                    destination.width == 4 &&
                     destination.type.trim().equals("undefined4"))
                 bytePointers.add(body.destination);
-            if (source != null && source.width == 4 &&
+            if (!sourceLive && source != null && source.width == 4 &&
                     source.type.trim().equals("undefined4"))
                 bytePointers.add(body.source);
             index = end;
@@ -1762,6 +1942,116 @@ public class STDecompExport extends GhidraScript {
         for (String pointer : bytePointers)
             normalized = normalizeBulkCopyBytePointer(normalized, pointer);
         return new NormalizedCode(normalized, replacements);
+    }
+
+    private String pointerAdvance(String indent, String name,
+            PointerDeclaration declaration, String byteCount) {
+        Long bytes = unsignedLiteral(byteCount);
+        if (bytes != null && declaration.width > 0 &&
+                bytes % declaration.width == 0) {
+            long elements = bytes / declaration.width;
+            return indent + name + " = " + name + " + " +
+                hexLiteral(elements) + ";";
+        }
+        String stars = "*".repeat(Math.max(1, declaration.stars));
+        return indent + name + " = (" + declaration.type + " " + stars +
+            ")((byte *)" + name + " + " + byteCount + ");";
+    }
+
+    /**
+     * MSVC's fixed REP MOVSD expansion commonly leaves a two-byte and/or
+     * one-byte tail after the dword loop. Ghidra spells those accesses through
+     * the already advanced source/destination temporaries. Treat a contiguous
+     * exact tail as part of the same byte copy so the export does not invent
+     * otherwise dead live-out pointer arithmetic.
+     */
+    private TailCopy fixedTailCopy(String statement, CopyBody body,
+            Map<String, PointerDeclaration> declarations) {
+        Matcher assignment =
+            Pattern.compile("^(.+?)[ \\t]*=[ \\t]*(.+);$").matcher(statement);
+        if (!assignment.matches()) return null;
+        for (int width : List.of(2, 1)) {
+            TailAccess destination =
+                fixedTailAccess(assignment.group(1), width, declarations);
+            TailAccess source =
+                fixedTailAccess(assignment.group(2), width, declarations);
+            if (destination == null || source == null ||
+                    destination.offset != source.offset ||
+                    !destination.pointer.equals(body.destination) ||
+                    !source.pointer.equals(body.source))
+                continue;
+            return new TailCopy(destination.offset, width);
+        }
+        return null;
+    }
+
+    private TailAccess fixedTailAccess(String expression, int width,
+            Map<String, PointerDeclaration> declarations) {
+        String value = expression.trim();
+        boolean explicitlyNarrowed = false;
+        Matcher narrowed = Pattern.compile(
+            "^\\((char|byte|undefined1|short|ushort|undefined2)\\)" +
+            "[ \\t]*(.+)$").matcher(value);
+        if (narrowed.matches()) {
+            if (renderedTypeWidth(narrowed.group(1)) != width) return null;
+            value = narrowed.group(2).trim();
+            explicitlyNarrowed = true;
+        }
+        Matcher cast = Pattern.compile(
+            "^\\*\\(([^)]+)\\*\\)[ \\t]*(.+)$").matcher(value);
+        if (cast.matches()) {
+            if (pointerArithmeticWidth(cast.group(1).trim(), 1) != width)
+                return null;
+            return fixedTailAddress(cast.group(2));
+        }
+        Matcher direct = Pattern.compile(
+            "^\\*([A-Za-z_$][A-Za-z0-9_$]*)$").matcher(value);
+        if (direct.matches()) {
+            PointerDeclaration declaration = declarations.get(direct.group(1));
+            return explicitlyNarrowed ||
+                    (declaration != null && declaration.width == width) ?
+                new TailAccess(direct.group(1), 0) : null;
+        }
+        Matcher indexed = Pattern.compile(
+            "^([A-Za-z_$][A-Za-z0-9_$]*)\\[" +
+            "(0x[0-9A-Fa-f]+|[0-9]+)\\]$").matcher(value);
+        if (!indexed.matches()) return null;
+        PointerDeclaration declaration = declarations.get(indexed.group(1));
+        Long element = unsignedLiteral(indexed.group(2));
+        if (declaration == null || declaration.width != width ||
+                element == null || element > 3)
+            return null;
+        long offset = element * declaration.width;
+        return offset <= 3 ?
+            new TailAccess(indexed.group(1), (int)offset) : null;
+    }
+
+    private TailAccess fixedTailAddress(String expression) {
+        String value = expression.trim();
+        Matcher direct = Pattern.compile(
+            "^([A-Za-z_$][A-Za-z0-9_$]*)$").matcher(value);
+        if (direct.matches()) return new TailAccess(direct.group(1), 0);
+        Matcher offset = Pattern.compile(
+            "^\\(\\(int\\)[ \\t]*(?<name>[A-Za-z_$][A-Za-z0-9_$]*)" +
+            "[ \\t]*\\+[ \\t]*(?<offset>0x[0-9A-Fa-f]+|[0-9]+)\\)$")
+            .matcher(value);
+        if (!offset.matches()) return null;
+        Long amount = unsignedLiteral(offset.group("offset"));
+        return amount != null && amount <= 3 ?
+            new TailAccess(offset.group("name"), amount.intValue()) : null;
+    }
+
+    private Long unsignedLiteral(String value) {
+        if (value == null) return null;
+        String text = value.trim();
+        try {
+            return text.regionMatches(true, 0, "0x", 0, 2) ?
+                Long.parseUnsignedLong(text.substring(2), 16) :
+                text.matches("[0-9]+") ? Long.parseLong(text) : null;
+        }
+        catch (NumberFormatException ignored) {
+            return null;
+        }
     }
 
     private CopyBody copyBody(String[] lines, int start, int width,
@@ -1904,8 +2194,8 @@ public class STDecompExport extends GhidraScript {
     /**
      * Dynamic allocation sizes produce the same REP STOSD/REP STOSB pair as
      * fixed object tails, but the fill length is a variable.  Fold only the
-     * exact two-loop form and require the advanced pointer and loop counters to
-     * be dead.  The original byte count remains live and is passed to memset.
+     * exact two-loop form.  When the advanced pointer or exhausted counters are
+     * live, reproduce their exact post-loop values after memset.
      */
     private NormalizedCode normalizeDynamicBulkZeroLoops(String code,
             Set<String> deadLocals) {
@@ -1950,6 +2240,7 @@ public class STDecompExport extends GhidraScript {
             String bytePointer = tailBody.pointer;
             int tailClose = tailHeaderIndex + tailBody.lineCount + 1;
             boolean exact = tailClose < lines.length &&
+                !wordCounter.equals(byteCount) &&
                 pointer.equals(bytePointer) &&
                 lines[wordClose].equals(indent + "}") &&
                 tail.matches() && tail.group("indent").equals(indent) &&
@@ -1962,21 +2253,33 @@ public class STDecompExport extends GhidraScript {
             String tailCounter = tail.group("counter");
             String after = String.join(System.lineSeparator(),
                 Arrays.copyOfRange(lines, tailClose + 1, lines.length));
-            if (identifierValueLiveAfter(after, pointer, 0,
-                        indent.length()) ||
-                    identifierValueLiveAfter(after, wordCounter, 0,
-                        indent.length()) ||
-                    identifierValueLiveAfter(after, tailCounter, 0,
-                        indent.length())) {
+            boolean pointerLive = identifierValueLiveAfter(after, pointer, 0,
+                indent.length());
+            boolean wordCounterLive = identifierValueLiveAfter(after,
+                wordCounter, 0, indent.length());
+            boolean tailCounterLive = identifierValueLiveAfter(after,
+                tailCounter, 0, indent.length());
+            PointerDeclaration declaration = declarations.get(pointer);
+            if (pointerLive && declaration == null) {
                 output.add(lines[index]);
                 continue;
             }
             output.add(indent + "memset(" + pointer + ", 0, " +
                 byteCount + "); " + BULK_ZERO_MARKER);
-            deadLocals.add(wordCounter);
-            deadLocals.add(tailCounter);
-            PointerDeclaration declaration = declarations.get(pointer);
-            if (declaration != null && declaration.width == 4 &&
+            if (pointerLive)
+                output.add(pointerAdvance(indent, pointer, declaration,
+                    byteCount));
+            if (wordCounterLive)
+                output.add(indent + wordCounter + " = 0;");
+            else deadLocals.add(wordCounter);
+            if (!tailCounter.equals(wordCounter)) {
+                if (tailCounterLive)
+                    output.add(indent + tailCounter + " = 0;");
+                else if (!tailCounter.equals(byteCount))
+                    deadLocals.add(tailCounter);
+            }
+            if (!pointerLive && declaration != null &&
+                    declaration.width == 4 &&
                     declaration.type.trim().equals("undefined4"))
                 bytePointers.add(pointer);
             index = tailClose;
@@ -3804,8 +4107,11 @@ public class STDecompExport extends GhidraScript {
         }
     }
     private record NormalizedCode(String code, int replacements) { }
-    private record PointerDeclaration(String type, String indent, int width) { }
+    private record PointerDeclaration(String type, String indent, int stars,
+        int width) { }
     private record CopyBody(String destination, String source) { }
+    private record TailAccess(String pointer, int offset) { }
+    private record TailCopy(int offset, int width) { }
     private record ZeroLoopBody(String pointer, int lineCount) { }
     private record AliasAssignment(int start, int end, String operator,
         String expression) { }

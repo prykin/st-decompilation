@@ -41,16 +41,8 @@ int FUN_00672f00(void)
       uVar4 = ~uVar4;
       pcVar6 = pcVar7 + -uVar4;
       pcVar7 = DAT_00857528;
-      for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
-        *(undefined4 *)pcVar7 = *(undefined4 *)pcVar6;
-        pcVar6 = pcVar6 + 4;
-        pcVar7 = pcVar7 + 4;
-      }
-      for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
-        *pcVar7 = *pcVar6;
-        pcVar6 = pcVar6 + 1;
-        pcVar7 = pcVar7 + 1;
-      }
+      memmove(pcVar7, pcVar6, uVar4); /* compiler REP MOVS byte copy */
+      uVar5 = 0;
     }
     FUN_006a5e90((short *)piVar3[6]);
     if ((DAT_00811948 != (char *)0x0) && ((char *)piVar3[0xb] != (char *)0x0)) {
@@ -67,16 +59,7 @@ int FUN_00672f00(void)
       uVar4 = ~uVar4;
       pcVar6 = pcVar7 + -uVar4;
       pcVar7 = DAT_00811948;
-      for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
-        *(undefined4 *)pcVar7 = *(undefined4 *)pcVar6;
-        pcVar6 = pcVar6 + 4;
-        pcVar7 = pcVar7 + 4;
-      }
-      for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
-        *pcVar7 = *pcVar6;
-        pcVar6 = pcVar6 + 1;
-        pcVar7 = pcVar7 + 1;
-      }
+      memmove(pcVar7, pcVar6, uVar4); /* compiler REP MOVS byte copy */
     }
     FUN_006a5e90((short *)piVar3[0xb]);
     if ((DAT_0085753c != (char *)0x0) && ((char *)piVar3[7] != (char *)0x0)) {

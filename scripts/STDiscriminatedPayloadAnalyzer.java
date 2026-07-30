@@ -31,8 +31,11 @@ import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
 import ghidra.program.model.data.AbstractIntegerDataType;
 import ghidra.program.model.data.DataType;
+import ghidra.program.model.data.DataTypeComponent;
 import ghidra.program.model.data.Enum;
 import ghidra.program.model.data.Pointer;
+import ghidra.program.model.data.Structure;
+import ghidra.program.model.data.TypeDef;
 import ghidra.program.model.lang.Register;
 import ghidra.program.model.listing.Function;
 import ghidra.program.model.listing.FunctionIterator;
@@ -85,10 +88,14 @@ public class STDiscriminatedPayloadAnalyzer extends GhidraScript {
             while (functions.hasNext()) {
                 monitor.checkCancelled();
                 Function function = functions.next();
-                if (function.isExternal() || function.isThunk() || !hasComputedJump(function))
+                if (function.isExternal() || function.isThunk() ||
+                        (!hasComputedJump(function) &&
+                            messageCarrier(function) == null))
                     continue;
                 Family family = analyze(function);
-                if (family != null && family.cases.size() >= 2) families.add(family);
+                if (family != null && (family.cases.size() >= 2 ||
+                        family.messageEnvelope && !family.cases.isEmpty()))
+                    families.add(family);
             }
         }
         finally {
@@ -120,6 +127,8 @@ public class STDiscriminatedPayloadAnalyzer extends GhidraScript {
         DecompileResults results = decompiler.decompileFunction(function, 90, monitor);
         if (!results.decompileCompleted() || results.getDecompiledFunction() == null) return null;
         String c = results.getDecompiledFunction().getC();
+        Family messageFamily = analyzeMessageBranches(function, c);
+        if (messageFamily != null) return messageFamily;
         Matcher switchMatcher = SWITCH.matcher(c);
         List<Parameter> explicit = explicitParameters(function);
         while (switchMatcher.find()) {
@@ -146,10 +155,119 @@ public class STDiscriminatedPayloadAnalyzer extends GhidraScript {
             String owner = owner(function);
             String id = sanitize((owner.isBlank() ? "Global" : owner) + "_" +
                 function.getName()) + "_" + addr(function.getEntryPoint());
-            return new Family(function, id, discriminator, carrier, layouts,
+            return new Family(function, id, discriminator, discriminator.getName(),
+                discriminator.getDataType(), carrier, layouts, false,
                 "switch_expression=" + expression + "; decompiler_case_reads");
         }
         return null;
+    }
+
+    /**
+     * GetMessage-style envelopes carry a discriminator and three union slots in
+     * one parameter. Assigning one global meaning to arg0/arg1/arg2 would be
+     * wrong, so mine only equality-guarded branch bodies and create a separate
+     * payload view for each exact message id. The STMessage parameter itself is
+     * never retyped.
+     */
+    private Family analyzeMessageBranches(Function function, String c) {
+        MessageCarrier message = messageCarrier(function);
+        if (message == null) return null;
+        String carrier = message.parameter.getName();
+        String token = "[A-Za-z_][A-Za-z0-9_:]*|-?(?:0[xX][0-9a-fA-F]+|[0-9]+)";
+        Pattern branch = Pattern.compile(
+            "(?:else\\s+)?if\\s*\\(\\s*" + Pattern.quote(carrier) +
+            "\\s*->\\s*id\\s*==\\s*(" + token + ")\\s*\\)\\s*\\{");
+        Matcher matcher = branch.matcher(c);
+        Map<Long, CaseLayout> layouts = new TreeMap<>();
+        while (matcher.find()) {
+            Long value = caseValue(matcher.group(1), message.discriminatorType);
+            int open = c.indexOf('{', matcher.start());
+            int close = matching(c, open);
+            if (value == null || open < 0 || close < 0) continue;
+            String segment = c.substring(open + 1, close);
+            CaseLayout layout = inferMessageLayout(value, matcher.group(1),
+                carrier, segment);
+            if (layout.fields.isEmpty()) continue;
+            CaseLayout current = layouts.get(value);
+            if (current == null) layouts.put(value, layout);
+            else current.merge(layout);
+        }
+        if (layouts.isEmpty()) return null;
+        String owner = owner(function);
+        String id = sanitize((owner.isBlank() ? "Global" : owner) + "_" +
+            function.getName()) + "_" + addr(function.getEntryPoint()) +
+            "_MessagePayload";
+        return new Family(function, id, message.parameter,
+            carrier + "->id", message.discriminatorType, message.parameter,
+            layouts, true,
+            "message_envelope=" + message.structure.getPathName() +
+                "; equality_guarded_case_local_argument_views");
+    }
+
+    private CaseLayout inferMessageLayout(long value, String label,
+            String carrier, String segment) {
+        CaseLayout result = new CaseLayout(value, label);
+        Pattern member = Pattern.compile("\\(?\\s*" + Pattern.quote(carrier) +
+            "\\s*->\\s*arg([012])\\s*\\)?\\s*\\.\\s*" +
+            "(u32|i32|ptr|words)\\b");
+        Map<Integer, Set<String>> views = new TreeMap<>();
+        Matcher matcher = member.matcher(segment);
+        while (matcher.find())
+            views.computeIfAbsent(Integer.parseInt(matcher.group(1)),
+                ignored -> new TreeSet<>()).add(matcher.group(2));
+        for (Map.Entry<Integer, Set<String>> entry : views.entrySet()) {
+            String type;
+            if (entry.getValue().size() != 1)
+                type = "/SubmarineTitans/Recovered/STMessageArg";
+            else type = switch (entry.getValue().iterator().next()) {
+                case "u32" -> "/uint";
+                case "i32" -> "/int";
+                case "ptr" -> "pointer:/void";
+                case "words" ->
+                    "/SubmarineTitans/Recovered/STMessageArgWords";
+                default -> "/undefined4";
+            };
+            int offset = entry.getKey() * currentProgram.getDefaultPointerSize();
+            result.add(offset, currentProgram.getDefaultPointerSize(), type,
+                "guard " + label + " uses arg" + entry.getKey() +
+                    " as " + entry.getValue());
+        }
+        // The view is the complete three-slot payload even when only one slot is
+        // read in this handler. Undefined gaps remain gaps, not invented fields.
+        if (!result.fields.isEmpty())
+            result.size = 3 * currentProgram.getDefaultPointerSize();
+        return result;
+    }
+
+    private MessageCarrier messageCarrier(Function function) {
+        for (Parameter parameter : explicitParameters(function)) {
+            DataType type = unwrap(parameter.getDataType());
+            if (!(type instanceof Pointer pointer)) continue;
+            DataType pointed = unwrap(pointer.getDataType());
+            if (!(pointed instanceof Structure structure)) continue;
+            DataTypeComponent id = namedComponent(structure, "id");
+            if (id == null || namedComponent(structure, "arg0") == null ||
+                    namedComponent(structure, "arg1") == null ||
+                    namedComponent(structure, "arg2") == null)
+                continue;
+            DataType discriminator = unwrap(id.getDataType());
+            if (!(discriminator instanceof Enum) &&
+                    !(discriminator instanceof AbstractIntegerDataType))
+                continue;
+            return new MessageCarrier(parameter, structure, discriminator);
+        }
+        return null;
+    }
+
+    private DataTypeComponent namedComponent(Structure structure, String name) {
+        for (DataTypeComponent component : structure.getDefinedComponents())
+            if (name.equals(component.getFieldName())) return component;
+        return null;
+    }
+
+    private DataType unwrap(DataType type) {
+        while (type instanceof TypeDef value) type = value.getBaseDataType();
+        return type;
     }
 
     private boolean decompilerTreatsAsCarrier(String c, String name) {
@@ -228,8 +346,9 @@ public class STDiscriminatedPayloadAnalyzer extends GhidraScript {
     }
 
     private CaseRow caseRow(Family family, CaseLayout layout) throws Exception {
-        String suffix = layout.value < 0 ? "NEG_" + Long.toHexString(-layout.value) :
-            Long.toHexString(layout.value).toUpperCase(Locale.ROOT);
+        String suffix = !layout.label.isBlank() ? sanitize(layout.label) :
+            layout.value < 0 ? "NEG_" + Long.toHexString(-layout.value) :
+                Long.toHexString(layout.value).toUpperCase(Locale.ROOT);
         String typePath = CATEGORY + "/" + family.id + "_Case_" + suffix;
         String serialized = layout.serialized();
         String fingerprint = sha256(layout.size + "|" + serialized);
@@ -238,15 +357,19 @@ public class STDiscriminatedPayloadAnalyzer extends GhidraScript {
         String evidence = family.evidence + "; " + String.join(" | ", layout.evidence);
         return new CaseRow(apply, family.id, addr(family.function.getEntryPoint()),
             family.function.getName(true), family.function.getPrototypeString(true, true),
-            family.discriminator.getOrdinal(), family.discriminator.getName(),
-            typeSpec(family.discriminator.getDataType()), family.carrier.getOrdinal(),
+            family.discriminator.getOrdinal(), family.discriminatorName,
+            typeSpec(family.discriminatorType), family.carrier.getOrdinal(),
             family.carrier.getName(), typeSpec(family.carrier.getDataType()), layout.value,
-            typePath, layout.size, serialized, fingerprint,
+            layout.label, typePath, layout.size, serialized, fingerprint,
             layout.conflict ? "review" : "high", evidence);
     }
 
     private List<StackRow> stackRows(Family family) {
         List<StackRow> result = new ArrayList<>();
+        if (family.messageEnvelope ||
+                family.discriminator.getOrdinal() ==
+                    family.carrier.getOrdinal())
+            return result;
         FunctionIterator callers = currentProgram.getFunctionManager().getFunctions(true);
         while (callers.hasNext()) {
             Function caller = callers.next();
@@ -461,13 +584,15 @@ public class STDiscriminatedPayloadAnalyzer extends GhidraScript {
             out.write("apply\tfamily_id\tfunction_address\texpected_function\t" +
                 "expected_signature\tdiscriminator_ordinal\tdiscriminator_name\t" +
                 "discriminator_type\tcarrier_ordinal\tcarrier_name\tcarrier_type\t" +
-                "case_value\ttype_path\tsize\tlayout\tlayout_sha256\tconfidence\tevidence\n");
+                "case_value\tcase_label\ttype_path\tsize\tlayout\tlayout_sha256\t" +
+                "confidence\tevidence\n");
             for (CaseRow row : rows) out.write(bit(row.apply) + "\t" + row.familyId + "\t" +
                 row.functionAddress + "\t" + clean(row.function) + "\t" +
                 clean(row.signature) + "\t" + row.discriminatorOrdinal + "\t" +
                 clean(row.discriminatorName) + "\t" + row.discriminatorType + "\t" +
                 row.carrierOrdinal + "\t" + clean(row.carrierName) + "\t" +
-                row.carrierType + "\t" + row.value + "\t" + row.typePath + "\t" +
+                row.carrierType + "\t" + row.value + "\t" +
+                clean(row.label) + "\t" + row.typePath + "\t" +
                 row.size + "\t" + row.layout + "\t" + row.hash + "\t" +
                 row.confidence + "\t" + clean(row.evidence) + "\n");
         }
@@ -556,25 +681,38 @@ public class STDiscriminatedPayloadAnalyzer extends GhidraScript {
         final Function function;
         final String id;
         final Parameter discriminator, carrier;
+        final String discriminatorName;
+        final DataType discriminatorType;
         final Map<Long, CaseLayout> cases;
+        final boolean messageEnvelope;
         final String evidence;
-        Family(Function function, String id, Parameter discriminator, Parameter carrier,
-                Map<Long, CaseLayout> cases, String evidence) {
+        Family(Function function, String id, Parameter discriminator,
+                String discriminatorName, DataType discriminatorType,
+                Parameter carrier, Map<Long, CaseLayout> cases,
+                boolean messageEnvelope, String evidence) {
             this.function = function;
             this.id = id;
             this.discriminator = discriminator;
+            this.discriminatorName = discriminatorName;
+            this.discriminatorType = discriminatorType;
             this.carrier = carrier;
             this.cases = cases;
+            this.messageEnvelope = messageEnvelope;
             this.evidence = evidence;
         }
     }
     private static class CaseLayout {
         final long value;
+        String label;
         int size;
         boolean conflict;
         final Map<Long, Field> fields = new TreeMap<>();
         final List<String> evidence = new ArrayList<>();
-        CaseLayout(long value) { this.value = value; }
+        CaseLayout(long value) { this(value, ""); }
+        CaseLayout(long value, String label) {
+            this.value = value;
+            this.label = label == null ? "" : label;
+        }
         void add(long offset, int length, String type, String reason) {
             Field current = fields.get(offset);
             if (current != null &&
@@ -600,6 +738,7 @@ public class STDiscriminatedPayloadAnalyzer extends GhidraScript {
         }
         void merge(CaseLayout other) {
             conflict |= other.conflict;
+            if (label.isBlank()) label = other.label;
             for (Field field : other.fields.values())
                 add(field.offset, field.length, field.type, "merged fall-through case access");
             size = Math.max(size, other.size);
@@ -614,6 +753,8 @@ public class STDiscriminatedPayloadAnalyzer extends GhidraScript {
     }
     private record Field(long offset, int length, String type) { }
     private record TypeWidth(int length, String type) { }
+    private record MessageCarrier(Parameter parameter, Structure structure,
+        DataType discriminatorType) { }
     private record CaseMark(long value, int start) { }
     private static class Value {
         final Long constant;
@@ -630,7 +771,7 @@ public class STDiscriminatedPayloadAnalyzer extends GhidraScript {
     private record CaseRow(boolean apply, String familyId, String functionAddress,
         String function, String signature, int discriminatorOrdinal, String discriminatorName,
         String discriminatorType, int carrierOrdinal, String carrierName, String carrierType,
-        long value, String typePath, int size, String layout, String hash,
+        long value, String label, String typePath, int size, String layout, String hash,
         String confidence, String evidence) { }
     private record StackRow(boolean apply, String familyId, String functionAddress,
         String function, String signature, String callAddress, int stackOffset, int length,

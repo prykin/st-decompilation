@@ -21,53 +21,36 @@ void __thiscall CPanelTy::SetCmdObj(CPanelTy *this,byte param_1)
   CPanelTy *this_00;
   int iVar4;
   int iVar5;
-  uint *puVar6;
-  uint *puVar7;
+  bool *pbVar6;
+  bool *pbVar7;
   undefined4 *puVar8;
-  uint local_19c [9];
-  uint local_178 [9];
-  uint local_154 [9];
-  uint local_130 [9];
-  uint local_10c [9];
+  bool local_19c [36];
+  bool local_178 [36];
+  bool local_154 [36];
+  bool local_130 [36];
+  bool local_10c [36];
   InternalExceptionFrame local_e8;
-  uint local_a4 [7];
+  bool local_a4 [29];
   uint local_87;
-  uint local_80 [7];
+  bool local_80 [29];
   uint local_63;
-  uint local_5c [6];
+  bool local_5c [24];
   CPanelTy *local_44;
-  uint local_40;
-  undefined2 local_3c;
-  undefined1 local_3a;
-  uint local_38;
-  undefined1 local_34;
-  undefined2 uStack_33;
-  undefined1 uStack_31;
-  undefined2 local_30;
-  undefined1 local_2e;
-  uint local_2c;
-  undefined1 local_28;
-  undefined2 uStack_27;
-  undefined1 uStack_25;
-  undefined2 local_24;
-  undefined1 local_22;
-  uint local_20;
-  undefined1 local_1c;
-  undefined2 uStack_1b;
-  undefined1 uStack_19;
-  undefined2 local_18;
-  undefined1 local_16;
-  undefined1 local_14;
+  bool local_40 [8];
+  bool local_38 [12];
+  bool local_2c [12];
+  bool local_20 [12];
+  bool local_14;
   int3 iStack_13;
   undefined1 local_10;
   undefined2 uStack_f;
   undefined1 uStack_d;
   undefined2 local_c;
   undefined1 local_a;
-  undefined1 local_8;
-  undefined1 local_7;
-  undefined1 local_6;
-  undefined1 local_5;
+  bool local_8;
+  bool local_7;
+  bool local_6;
+  bool local_5;
 
   if (DAT_00808784 != 0) {
     return;
@@ -141,8 +124,8 @@ void __thiscall CPanelTy::SetCmdObj(CPanelTy *this,byte param_1)
   bVar1 = (&this_00->field_0BFE)[param_1];
   switch((uint)bVar1) {
   case 1:
-    puVar6 = (uint *)&local_6;
-    local_6 = 0;
+    pbVar6 = &local_6;
+    local_6 = false;
     puVar8 = (undefined4 *)0x8;
     break;
   case 2:
@@ -165,27 +148,37 @@ void __thiscall CPanelTy::SetCmdObj(CPanelTy *this,byte param_1)
   case 0x15:
   case 0x16:
     local_5 = bVar1 != 0x15;
-    puVar6 = (uint *)&local_5;
+    pbVar6 = &local_5;
     puVar8 = (undefined4 *)0x28;
     break;
   case 0x1b:
-    puVar6 = &local_38;
-    local_34 = 0;
-    local_38 = 6;
-    uStack_33 = 1;
-    uStack_31 = 0xff;
-    local_30 = 0xffff;
-    local_2e = 0xff;
+    pbVar6 = local_38;
+    local_38[4] = false;
+    local_38[0] = true;
+    local_38[1] = false;
+    local_38[2] = false;
+    local_38[3] = false;
+    local_38[5] = true;
+    local_38[6] = false;
+    local_38[7] = true;
+    local_38[8] = true;
+    local_38[9] = true;
+    local_38[10] = true;
     puVar8 = (undefined4 *)0x1e;
     break;
   case 0x1c:
-    puVar6 = &local_2c;
-    local_28 = 0;
-    local_2c = 4;
-    uStack_27 = 1;
-    uStack_25 = 0xff;
-    local_24 = 0xffff;
-    local_22 = 0xff;
+    pbVar6 = local_2c;
+    local_2c[4] = false;
+    local_2c[0] = true;
+    local_2c[1] = false;
+    local_2c[2] = false;
+    local_2c[3] = false;
+    local_2c[5] = true;
+    local_2c[6] = false;
+    local_2c[7] = true;
+    local_2c[8] = true;
+    local_2c[9] = true;
+    local_2c[10] = true;
     puVar8 = (undefined4 *)0x1e;
     break;
   case 0x1d:
@@ -198,7 +191,7 @@ void __thiscall CPanelTy::SetCmdObj(CPanelTy *this,byte param_1)
     return;
   case 0x1e:
   case 0x1f:
-    puVar6 = (uint *)&local_14;
+    pbVar6 = &local_14;
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     _local_14 = CONCAT31((-(uint3)(bVar1 != 0x1e) & 0xc) + 9,1);
     local_10 = 0;
@@ -210,8 +203,8 @@ void __thiscall CPanelTy::SetCmdObj(CPanelTy *this,byte param_1)
     break;
   case 0x20:
   case 0x33:
-    puVar6 = (uint *)&local_7;
-    local_7 = 0;
+    pbVar6 = &local_7;
+    local_7 = false;
     puVar8 = (undefined4 *)0x22;
     break;
   case 0x21:
@@ -225,45 +218,65 @@ void __thiscall CPanelTy::SetCmdObj(CPanelTy *this,byte param_1)
   case 0x22:
   case 0x3b:
   case 0x40:
-    puVar6 = &local_40;
-    local_3c = 0;
-    local_3a = 0;
-    local_40 = 2;
+    pbVar6 = local_40;
+    local_40[4] = false;
+    local_40[5] = false;
+    local_40[6] = false;
+    local_40[0] = true;
+    local_40[1] = false;
+    local_40[2] = false;
+    local_40[3] = false;
     puVar8 = (undefined4 *)0x1f;
     break;
   case 0x23:
-    memset(local_10c, 0, 0x21); /* compiler bulk-zero initialization */
-    iVar4 = 0;
-    puVar6 = local_10c;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_10c[0]._0_1_ = 9;
+    pbVar6 = local_10c;
+    for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
+      pbVar6[0] = false;
+      pbVar6[1] = false;
+      pbVar6[2] = false;
+      pbVar6[3] = false;
+      pbVar6 = pbVar6 + 4;
+    }
+    *pbVar6 = false;
+    pbVar6 = local_10c;
+    local_10c[0] = true;
     puVar8 = (undefined4 *)0x17;
     break;
   case 0x24:
   case 0x25:
-    puVar7 = local_a4;
-    memset(puVar7, 0, 0x20); /* compiler bulk-zero initialization */
-    puVar7 = (undefined4 *)((byte *)puVar7 + 0x20);
-    iVar4 = 0;
-    puVar6 = local_a4;
-    *(undefined1 *)puVar7 = 0;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_a4[0]._0_1_ = 8;
+    pbVar7 = local_a4;
+    for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
+      pbVar7[0] = false;
+      pbVar7[1] = false;
+      pbVar7[2] = false;
+      pbVar7[3] = false;
+      pbVar7 = pbVar7 + 4;
+    }
+    pbVar6 = local_a4;
+    *pbVar7 = false;
+    local_a4[0] = true;
     puVar8 = (undefined4 *)0x17;
     local_87 = (uint)(bVar1 == 0x24);
     break;
   case 0x27:
   case 0x32:
-    puVar6 = (uint *)&local_8;
-    local_8 = 0;
+    pbVar6 = &local_8;
+    local_8 = false;
     puVar8 = (undefined4 *)0x9;
     break;
   case 0x28:
   case 0x29:
-    memset(local_178, 0, 0x21); /* compiler bulk-zero initialization */
-    puVar6 = local_178;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_178[0]._0_1_ = (bVar1 != 0x28) + '\f';
+    pbVar6 = local_178;
+    for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
+      pbVar6[0] = false;
+      pbVar6[1] = false;
+      pbVar6[2] = false;
+      pbVar6[3] = false;
+      pbVar6 = pbVar6 + 4;
+    }
+    *pbVar6 = false;
+    pbVar6 = local_178;
+    local_178[0] = (bool)((bVar1 != 0x28) + '\f');
     puVar8 = (undefined4 *)0x17;
     break;
   case 0x30:
@@ -284,36 +297,49 @@ void __thiscall CPanelTy::SetCmdObj(CPanelTy *this,byte param_1)
     g_currentExceptionFrame = local_e8.previous;
     return;
   case 0x36:
-    memset(local_130, 0, 0x21); /* compiler bulk-zero initialization */
-    iVar4 = 0;
-    puVar6 = local_130;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_130[0]._0_1_ = 0x12;
+    pbVar6 = local_130;
+    for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
+      pbVar6[0] = false;
+      pbVar6[1] = false;
+      pbVar6[2] = false;
+      pbVar6[3] = false;
+      pbVar6 = pbVar6 + 4;
+    }
+    *pbVar6 = false;
+    pbVar6 = local_130;
+    local_130[0] = true;
     puVar8 = (undefined4 *)0x17;
     break;
   case 0x38:
   case 0x45:
-    puVar7 = local_80;
-    memset(puVar7, 0, 0x20); /* compiler bulk-zero initialization */
-    puVar7 = (undefined4 *)((byte *)puVar7 + 0x20);
-    iVar4 = 0;
-    puVar6 = local_80;
-    *(undefined1 *)puVar7 = 0;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_80[0]._0_1_ = 0x1a;
+    pbVar7 = local_80;
+    for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
+      pbVar7[0] = false;
+      pbVar7[1] = false;
+      pbVar7[2] = false;
+      pbVar7[3] = false;
+      pbVar7 = pbVar7 + 4;
+    }
+    pbVar6 = local_80;
+    *pbVar7 = false;
+    local_80[0] = true;
     puVar8 = (undefined4 *)0x17;
     local_63 = (uint)(bVar1 != 0x38);
     break;
   case 0x39:
   case 0x46:
-    puVar7 = local_19c;
-    memset(puVar7, 0, 0x20); /* compiler bulk-zero initialization */
-    puVar7 = (undefined4 *)((byte *)puVar7 + 0x20);
-    puVar6 = local_19c;
-    *(undefined1 *)puVar7 = 0;
+    pbVar7 = local_19c;
+    for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
+      pbVar7[0] = false;
+      pbVar7[1] = false;
+      pbVar7[2] = false;
+      pbVar7[3] = false;
+      pbVar7 = pbVar7 + 4;
+    }
+    pbVar6 = local_19c;
+    *pbVar7 = false;
     puVar8 = (undefined4 *)0x17;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_19c[0]._0_1_ = (bVar1 != 0x39) + '\f';
+    local_19c[0] = (bool)((bVar1 != 0x39) + '\f');
     break;
   case 0x3e:
     CursorClassTy::sub_0054B630(g_cursorClass_00802A30,0xe,0x6c);
@@ -327,32 +353,49 @@ void __thiscall CPanelTy::SetCmdObj(CPanelTy *this,byte param_1)
     g_currentExceptionFrame = local_e8.previous;
     return;
   case 0x4f:
-    puVar6 = &local_20;
-    local_1c = 0;
-    local_20 = 8;
-    uStack_1b = 1;
-    uStack_19 = 0xff;
-    local_18 = 0xffff;
-    local_16 = 0xff;
+    pbVar6 = local_20;
+    local_20[4] = false;
+    local_20[0] = true;
+    local_20[1] = false;
+    local_20[2] = false;
+    local_20[3] = false;
+    local_20[5] = true;
+    local_20[6] = false;
+    local_20[7] = true;
+    local_20[8] = true;
+    local_20[9] = true;
+    local_20[10] = true;
     puVar8 = (undefined4 *)0x1e;
     break;
   case 0x50:
   case 0x51:
-    memset(local_154, 0, 0x21); /* compiler bulk-zero initialization */
-    iVar4 = 0;
-    puVar6 = local_154;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_154[0]._0_1_ = (bVar1 != 0x50) + '\x1b';
+    pbVar6 = local_154;
+    for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
+      pbVar6[0] = false;
+      pbVar6[1] = false;
+      pbVar6[2] = false;
+      pbVar6[3] = false;
+      pbVar6 = pbVar6 + 4;
+    }
+    *pbVar6 = false;
+    pbVar6 = local_154;
+    local_154[0] = (bool)((bVar1 != 0x50) + '\x1b');
     puVar8 = (undefined4 *)0x17;
     break;
   case 0x52:
-    puVar6 = local_5c;
-    memset(local_5c, 0, 0x18); /* compiler bulk-zero initialization */
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_5c[0]._0_1_ = 7;
+    pbVar6 = local_5c;
+    pbVar7 = local_5c;
+    for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
+      pbVar7[0] = false;
+      pbVar7[1] = false;
+      pbVar7[2] = false;
+      pbVar7[3] = false;
+      pbVar7 = pbVar7 + 4;
+    }
+    local_5c[0] = true;
     puVar8 = (undefined4 *)0x16;
   }
-  thunk_FUN_0054edf0(puVar8,puVar6,0,0xffffffff);
+  thunk_FUN_0054edf0(puVar8,(uint *)pbVar6,0,0xffffffff);
 switchD_0050f5b2_caseD_4:
   g_currentExceptionFrame = local_e8.previous;
   return;

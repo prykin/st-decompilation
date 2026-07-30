@@ -48,16 +48,8 @@ FUN_00649ff0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param_4)
   uVar7 = ~uVar7;
   pcVar4 = pcVar12 + -uVar7;
   pcVar12 = (char *)&DAT_008117c0;
-  for (uVar8 = uVar7 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
-    *(undefined4 *)pcVar12 = *(undefined4 *)pcVar4;
-    pcVar4 = pcVar4 + 4;
-    pcVar12 = pcVar12 + 4;
-  }
-  for (uVar7 = uVar7 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-    *pcVar12 = *pcVar4;
-    pcVar4 = pcVar4 + 1;
-    pcVar12 = pcVar12 + 1;
-  }
+  memmove(pcVar12, pcVar4, uVar7); /* compiler REP MOVS byte copy */
+  uVar8 = 0;
   uVar7 = 0xffffffff;
   pcVar4 = &DAT_00807680;
   do {
@@ -71,16 +63,8 @@ FUN_00649ff0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param_4)
   uVar7 = ~uVar7;
   pcVar4 = pcVar12 + -uVar7;
   pcVar12 = local_22c;
-  for (uVar8 = uVar7 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
-    *(undefined4 *)pcVar12 = *(undefined4 *)pcVar4;
-    pcVar4 = pcVar4 + 4;
-    pcVar12 = pcVar12 + 4;
-  }
-  for (uVar7 = uVar7 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-    *pcVar12 = *pcVar4;
-    pcVar4 = pcVar4 + 1;
-    pcVar12 = pcVar12 + 1;
-  }
+  memmove(pcVar12, pcVar4, uVar7); /* compiler REP MOVS byte copy */
+  uVar8 = 0;
   uVar7 = 0xffffffff;
   pcVar4 = PTR_DAT_0079d65c;
   do {
@@ -104,16 +88,7 @@ FUN_00649ff0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param_4)
   } while (cVar1 != '\0');
   pcVar4 = pcVar12 + -uVar7;
   pcVar12 = pcVar11 + -1;
-  for (uVar8 = uVar7 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
-    *(undefined4 *)pcVar12 = *(undefined4 *)pcVar4;
-    pcVar4 = pcVar4 + 4;
-    pcVar12 = pcVar12 + 4;
-  }
-  for (uVar7 = uVar7 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-    *pcVar12 = *pcVar4;
-    pcVar4 = pcVar4 + 1;
-    pcVar12 = pcVar12 + 1;
-  }
+  memmove(pcVar12, pcVar4, uVar7); /* compiler REP MOVS byte copy */
   uVar7 = 0xffffffff;
   pcVar4 = &DAT_00807680;
   do {
@@ -206,16 +181,8 @@ FUN_00649ff0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param_4)
             uVar7 = ~uVar7;
             pcVar4 = pcVar12 + -uVar7;
             pcVar12 = (char *)&DAT_008117c0;
-            for (uVar9 = uVar7 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
-              *(undefined4 *)pcVar12 = *(undefined4 *)pcVar4;
-              pcVar4 = pcVar4 + 4;
-              pcVar12 = pcVar12 + 4;
-            }
-            for (uVar7 = uVar7 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-              *pcVar12 = *pcVar4;
-              pcVar4 = pcVar4 + 1;
-              pcVar12 = pcVar12 + 1;
-            }
+            memmove(pcVar12, pcVar4, uVar7); /* compiler REP MOVS byte copy */
+            uVar7 = 0;
             if (param_2 != (undefined4 *)0x0) {
               *param_2 = *(undefined4 *)((int)pvVar5 + 0x218);
             }

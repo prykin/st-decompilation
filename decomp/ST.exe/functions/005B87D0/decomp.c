@@ -123,25 +123,14 @@ MMsgTy::SetPanel(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
                    *(int *)(&this_00->field_0x180 + iVar9) + -3;
               pUVar11 = local_10;
               pUVar12 = (UINT *)(&this_00->field_0xbc + iVar9);
-              for (iVar4 = 9; iVar4 != 0; iVar4 = iVar4 + -1) {
-                *pUVar12 = *pUVar11;
-                pUVar11 = pUVar11 + 1;
-                pUVar12 = pUVar12 + 1;
-              }
-              *(short *)pUVar12 = (short)*pUVar11;
-              *(undefined1 *)((int)pUVar12 + 2) = *(undefined1 *)((int)pUVar11 + 2);
+              memmove(pUVar12, pUVar11, 0x27); /* compiler REP MOVS byte copy */
+              iVar4 = 0;
             }
             else {
               *(undefined4 *)((int)&this_00->field_017C + iVar9) = 0;
               pUVar11 = local_10;
               pUVar12 = (UINT *)(&this_00->field_0xbc + iVar9);
-              for (iVar4 = 9; iVar4 != 0; iVar4 = iVar4 + -1) {
-                *pUVar12 = *pUVar11;
-                pUVar11 = pUVar11 + 1;
-                pUVar12 = pUVar12 + 1;
-              }
-              *(short *)pUVar12 = (short)*pUVar11;
-              *(undefined1 *)((int)pUVar12 + 2) = *(undefined1 *)((int)pUVar11 + 2);
+              memmove(pUVar12, pUVar11, 0x27); /* compiler REP MOVS byte copy */
             }
           }
           bVar3 = (char)local_8 + 1;

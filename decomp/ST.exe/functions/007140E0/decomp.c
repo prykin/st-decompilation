@@ -15,7 +15,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
   int iVar8;
   int iVar9;
   int iVar10;
-  undefined4 *puVar11;
+  byte *puVar11;
   char *pcVar12;
   char *pcVar13;
   AnonShape_007109F0_BD33A2FF local_6c;
@@ -95,15 +95,9 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
       }
     }
     uVar7 = *(int *)((int)this + 8) * 2 + 10;
-    puVar11 = *(undefined4 **)((int)this + 0x88);
-    for (uVar6 = uVar7 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-      *puVar11 = 0;
-      puVar11 = puVar11 + 1;
-    }
-    for (uVar7 = uVar7 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *(undefined1 *)puVar11 = 0;
-      puVar11 = (undefined4 *)((int)puVar11 + 1);
-    }
+    puVar11 = (byte *)(*(undefined4 **)((int)this + 0x88));
+    memset(puVar11, 0, uVar7); /* compiler bulk-zero initialization */
+    uVar6 = 0;
     Library::MSVCRT::_strncpy
               (*(char **)((int)this + 0x88),*(char **)((int)this + 0x58),
                *(size_t *)((int)this + 0xc));
@@ -146,16 +140,8 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
         } while (cVar1 != '\0');
         pcVar4 = pcVar13 + -uVar7;
         pcVar13 = pcVar12 + -1;
-        for (uVar6 = uVar7 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-          *(undefined4 *)pcVar13 = *(undefined4 *)pcVar4;
-          pcVar4 = pcVar4 + 4;
-          pcVar13 = pcVar13 + 4;
-        }
-        for (uVar7 = uVar7 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-          *pcVar13 = *pcVar4;
-          pcVar4 = pcVar4 + 1;
-          pcVar13 = pcVar13 + 1;
-        }
+        memmove(pcVar13, pcVar4, uVar7); /* compiler REP MOVS byte copy */
+        uVar6 = 0;
       }
       pcVar4 = Library::MSVCRT::__itoa(*(int *)((int)this + 0x98),local_24,0x10);
       uVar7 = 0xffffffff;
@@ -180,16 +166,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
       } while (cVar1 != '\0');
       pcVar4 = pcVar13 + -uVar7;
       pcVar13 = pcVar12 + -1;
-      for (uVar6 = uVar7 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-        *(undefined4 *)pcVar13 = *(undefined4 *)pcVar4;
-        pcVar4 = pcVar4 + 4;
-        pcVar13 = pcVar13 + 4;
-      }
-      for (uVar7 = uVar7 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-        *pcVar13 = *pcVar4;
-        pcVar4 = pcVar4 + 1;
-        pcVar13 = pcVar13 + 1;
-      }
+      memmove(pcVar13, pcVar4, uVar7); /* compiler REP MOVS byte copy */
       Library::MSVCRT::_strncat
                 (*(char **)((int)this + 0x88),
                  (char *)(*(int *)((int)this + 0x58) + *(int *)((int)this + 0xc)),1);
@@ -299,15 +276,9 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         if (param_2 == '\0') {
           uVar7 = *(int *)((int)this + 8) * 2 + 10;
-          puVar11 = *(undefined4 **)((int)this + 0x88);
-          for (uVar6 = uVar7 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-            *puVar11 = 0;
-            puVar11 = puVar11 + 1;
-          }
-          for (uVar7 = uVar7 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-            *(undefined1 *)puVar11 = 0;
-            puVar11 = (undefined4 *)((int)puVar11 + 1);
-          }
+          puVar11 = (byte *)(*(undefined4 **)((int)this + 0x88));
+          memset(puVar11, 0, uVar7); /* compiler bulk-zero initialization */
+          uVar6 = 0;
           Library::MSVCRT::_strncpy
                     (*(char **)((int)this + 0x88),*(char **)((int)this + 0x90),
                      *(int *)((int)this + 0xc) - *(int *)((int)this + 0x84));
@@ -349,15 +320,9 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
       }
     }
     uVar7 = *(int *)((int)this + 8) * 2 + 10;
-    puVar11 = *(undefined4 **)((int)this + 0x88);
-    for (uVar6 = uVar7 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-      *puVar11 = 0;
-      puVar11 = puVar11 + 1;
-    }
-    for (uVar7 = uVar7 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *(undefined1 *)puVar11 = 0;
-      puVar11 = (undefined4 *)((int)puVar11 + 1);
-    }
+    puVar11 = (byte *)(*(undefined4 **)((int)this + 0x88));
+    memset(puVar11, 0, uVar7); /* compiler bulk-zero initialization */
+    uVar6 = 0;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_2 == '\x01') {
       iVar9 = *(int *)((int)this + 0x84);
@@ -407,16 +372,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
         } while (cVar1 != '\0');
         pcVar4 = pcVar13 + -uVar7;
         pcVar13 = pcVar12 + -1;
-        for (uVar6 = uVar7 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-          *(undefined4 *)pcVar13 = *(undefined4 *)pcVar4;
-          pcVar4 = pcVar4 + 4;
-          pcVar13 = pcVar13 + 4;
-        }
-        for (uVar7 = uVar7 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-          *pcVar13 = *pcVar4;
-          pcVar4 = pcVar4 + 1;
-          pcVar13 = pcVar13 + 1;
-        }
+        memmove(pcVar13, pcVar4, uVar7); /* compiler REP MOVS byte copy */
       }
       pcVar4 = Library::MSVCRT::__itoa(*(int *)((int)this + 0x98),local_24,0x10);
       uVar7 = 0xffffffff;

@@ -89,16 +89,8 @@ int __thiscall MReportTy::GetMessage(MReportTy *this,STMessage *message)
           uVar17 = ~uVar17;
           pcVar13 = pcVar21 + -uVar17;
           pcVar21 = (char *)&DAT_0080f33a;
-          for (uVar18 = uVar17 >> 2; uVar18 != 0; uVar18 = uVar18 - 1) {
-            *(undefined4 *)pcVar21 = *(undefined4 *)pcVar13;
-            pcVar13 = pcVar13 + 4;
-            pcVar21 = pcVar21 + 4;
-          }
-          for (uVar17 = uVar17 & 3; uVar17 != 0; uVar17 = uVar17 - 1) {
-            *pcVar21 = *pcVar13;
-            pcVar13 = pcVar13 + 1;
-            pcVar21 = pcVar21 + 1;
-          }
+          memmove(pcVar21, pcVar13, uVar17); /* compiler REP MOVS byte copy */
+          uVar18 = 0;
           for (puVar14 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar14 != (uint *)0x0;
               puVar14 = Library::MSVCRT::FUN_0072e560(puVar14,'\n')) {
             *(undefined1 *)puVar14 = 0x20;
@@ -229,16 +221,8 @@ switchD_005c1b14_caseD_5:
     uVar17 = ~uVar17;
     pcVar13 = pcVar21 + -uVar17;
     pcVar21 = (char *)&DAT_0080f33a;
-    for (uVar18 = uVar17 >> 2; uVar18 != 0; uVar18 = uVar18 - 1) {
-      *(undefined4 *)pcVar21 = *(undefined4 *)pcVar13;
-      pcVar13 = pcVar13 + 4;
-      pcVar21 = pcVar21 + 4;
-    }
-    for (uVar17 = uVar17 & 3; uVar17 != 0; uVar17 = uVar17 - 1) {
-      *pcVar21 = *pcVar13;
-      pcVar13 = pcVar13 + 1;
-      pcVar21 = pcVar21 + 1;
-    }
+    memmove(pcVar21, pcVar13, uVar17); /* compiler REP MOVS byte copy */
+    uVar18 = 0;
     for (puVar14 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar14 != (uint *)0x0;
         puVar14 = Library::MSVCRT::FUN_0072e560(puVar14,'\n')) {
       *(undefined1 *)puVar14 = 0x20;
@@ -335,16 +319,7 @@ switchD_005c1b14_caseD_5:
     uVar17 = ~uVar17;
     pcVar13 = pcVar21 + -uVar17;
     pcVar21 = &DAT_0080ef1e;
-    for (uVar18 = uVar17 >> 2; uVar18 != 0; uVar18 = uVar18 - 1) {
-      *(undefined4 *)pcVar21 = *(undefined4 *)pcVar13;
-      pcVar13 = pcVar13 + 4;
-      pcVar21 = pcVar21 + 4;
-    }
-    for (uVar17 = uVar17 & 3; uVar17 != 0; uVar17 = uVar17 - 1) {
-      *pcVar21 = *pcVar13;
-      pcVar13 = pcVar13 + 1;
-      pcVar21 = pcVar21 + 1;
-    }
+    memmove(pcVar21, pcVar13, uVar17); /* compiler REP MOVS byte copy */
     uVar17 = 0xffffffff;
     pcVar13 = &DAT_0080ed16;
     do {

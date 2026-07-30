@@ -35,16 +35,9 @@ byte * __thiscall STAllPlayersC::FUN_00622990(STAllPlayersC *this,uint *param_1)
   pbVar4 = local_10 + 0x10d;
   pbVar7 = local_14;
   pbVar10 = pbVar4;
-  for (uVar3 = local_8 >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {
-    *(undefined4 *)pbVar10 = *(undefined4 *)pbVar7;
-    pbVar7 = pbVar7 + 4;
-    pbVar10 = pbVar10 + 4;
-  }
-  for (uVar3 = local_8 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
-    *pbVar10 = *pbVar7;
-    pbVar7 = pbVar7 + 1;
-    pbVar10 = pbVar10 + 1;
-  }
+  memmove(pbVar10, pbVar7, local_8); /* compiler REP MOVS byte copy */
+  uVar3 = 0;
+  uVar3 = 0;
   FreeAndNull(&local_14);
   puVar5 = (uint *)(pbVar4 + local_8);
   *puVar5 = local_c;

@@ -141,8 +141,9 @@ arithmetic.
 
 MSVC similarly lowers byte copies to `REP MOVSD` followed by `REP MOVSB`.
 When the exporter sees the exact dynamic pair, or a constant-count dword loop
-with an exact same-pointer tail transfer, one source and destination increment
-in each loop body, and all advanced temporaries are dead, it emits:
+with an exact contiguous zero-to-three-byte tail through the same advanced
+source and destination, and one source and destination increment in each loop
+body, it emits:
 
 ```c
 memmove(destination, source, byteCount); /* compiler REP MOVS byte copy */
@@ -150,8 +151,16 @@ memmove(destination, source, byteCount); /* compiler REP MOVS byte copy */
 
 `memmove` is intentional. Generic DArray erase shifts a tail toward a lower
 address, so the ranges overlap even though the forward machine copy is safe for
-that direction. The exporter does not fold adjusted pointers, extra statements,
-or later uses of the post-copy pointer/counter values. Normalized sites are
+that direction. A contiguous fixed tail is included in the byte count, so the
+otherwise dead advanced pointers disappear instead of becoming byte-cast
+assignments. If a pointer or exhausted counter is genuinely used later, the
+exporter reproduces its exact live-out value; constant pointer advances are
+rendered in native element units when the declared pointee width is known.
+Reused cached bodies are passed through the same presentation normalization:
+the exporter recognizes its older `memmove` plus byte-cast pointer advances and
+an exact contiguous tail, then migrates that form without changing the semantic
+function fingerprint or forcing a new Ghidra decompilation. Adjusted copies and
+extra observable loop statements remain untouched. Normalized sites are
 recorded as `bulk_byte_copy` in `pseudocode_idioms.jsonl`.
 
 ## Catalogued forms awaiting typed rewriting

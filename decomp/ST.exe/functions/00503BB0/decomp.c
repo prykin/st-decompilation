@@ -27,7 +27,7 @@ void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,byte param_1)
   CPanelTy *local_10;
   uint local_c;
   undefined1 local_8;
-  undefined1 local_6;
+  bool local_6;
   undefined1 local_5;
 
   if (DAT_00808784 != 0) {
@@ -104,7 +104,7 @@ void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,byte param_1)
   switch((uint)bVar1) {
   case 1:
     local_5 = 0;
-    thunk_FUN_0054edf0((undefined4 *)0xa,(uint *)&local_5,0,0xffffffff);
+    thunk_FUN_0054edf0((undefined4 *)0xa,(uint *)&stack0xfffffffb,0,0xffffffff);
     g_currentExceptionFrame = local_54.previous;
     return;
   case 2:

@@ -16,7 +16,6 @@ undefined4 * __thiscall STT3DSprC::SaveSpr(STT3DSprC *this,uint *param_1)
   undefined4 uVar5;
   undefined4 *puVar6;
   uint uVar7;
-  uint uVar8;
   uint uVar9;
   char *pcVar10;
   char *pcVar11;
@@ -157,16 +156,8 @@ undefined4 * __thiscall STT3DSprC::SaveSpr(STT3DSprC *this,uint *param_1)
         uVar7 = ~uVar7;
         pcVar10 = pcVar11 + -uVar7;
         pcVar11 = local_c;
-        for (uVar8 = uVar7 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
-          *(undefined4 *)pcVar11 = *(undefined4 *)pcVar10;
-          pcVar10 = pcVar10 + 4;
-          pcVar11 = pcVar11 + 4;
-        }
-        for (uVar7 = uVar7 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-          *pcVar11 = *pcVar10;
-          pcVar10 = pcVar10 + 1;
-          pcVar11 = pcVar11 + 1;
-        }
+        memmove(pcVar11, pcVar10, uVar7); /* compiler REP MOVS byte copy */
+        uVar7 = 0;
       }
       local_c = local_c + uVar9;
       local_8 = local_8 + 1;

@@ -15,9 +15,8 @@ uint __thiscall STAllPlayersC::PrepareToCmd(STAllPlayersC *this,undefined4 *para
   int iVar4;
   uint uVar5;
   STGameObjC *pSVar6;
-  undefined4 *puVar7;
-  uint uVar8;
-  undefined4 *puVar9;
+  byte *puVar7;
+  byte *puVar9;
   uint *local_10;
   int local_c;
   DArrayTy *local_8;
@@ -45,19 +44,11 @@ uint __thiscall STAllPlayersC::PrepareToCmd(STAllPlayersC *this,undefined4 *para
             *puVar3 = uVar5;
           }
           if (param_1 != (undefined4 *)0x0) {
-            puVar7 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(uVar5);
+            puVar7 = (byte *)Library::DKW::LIB::FUN_006aac70(uVar5);
             *param_1 = puVar7;
-            puVar9 = local_8->data;
-            for (uVar8 = uVar5 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
-              *puVar7 = *puVar9;
-              puVar9 = puVar9 + 1;
-              puVar7 = puVar7 + 1;
-            }
-            for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-              *(undefined1 *)puVar7 = *(undefined1 *)puVar9;
-              puVar9 = (undefined4 *)((int)puVar9 + 1);
-              puVar7 = (undefined4 *)((int)puVar7 + 1);
-            }
+            puVar9 = (byte *)(local_8->data);
+            memmove(puVar7, puVar9, uVar5); /* compiler REP MOVS byte copy */
+            uVar5 = 0;
           }
         }
         DArrayDestroy(local_8);

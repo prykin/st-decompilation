@@ -24,8 +24,10 @@ import ghidra.app.decompiler.DecompInterface;
 import ghidra.app.decompiler.DecompileResults;
 import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
+import ghidra.program.model.data.AbstractIntegerDataType;
 import ghidra.program.model.data.DataType;
 import ghidra.program.model.data.DataTypeManager;
+import ghidra.program.model.data.Enum;
 import ghidra.program.model.data.Pointer;
 import ghidra.program.model.data.PointerDataType;
 import ghidra.program.model.data.TypeDef;
@@ -180,6 +182,14 @@ public class STLocalLifetimeApplier extends GhidraScript {
                                 "manual/imported HighSymbol"));
                             continue;
                         }
+                        DataType current = (DataType)high.getClass()
+                            .getMethod("getDataType").invoke(high);
+                        if (unt(row.get("anchor_kind")).endsWith(
+                                "_scalar_role") &&
+                                !scalarRoleEligible(current))
+                            throw new IllegalArgumentException(
+                                "scalar-role target is already nominal: " +
+                                    typeSpecification(current));
                         int targetGroup = ((Number)anchor.varnode.getClass()
                             .getMethod("getMergeGroup")
                             .invoke(anchor.varnode)).intValue();
@@ -336,7 +346,9 @@ public class STLocalLifetimeApplier extends GhidraScript {
             throw new IllegalArgumentException("invalid anchor address");
         int expectedTime = integer(row.get("anchor_time"));
         String kind = unt(row.get("anchor_kind"));
-        String expectedMnemonic =
+        boolean scalarRole = kind.endsWith("_scalar_role");
+        String expectedMnemonic = scalarRole ?
+            unt(row.get("anchor_source")) :
             kind.equals("typed_copy") ? "COPY" : "CALL";
         @SuppressWarnings("unchecked")
         Iterator<Object> iterator = (Iterator<Object>)highFunction.getClass()
@@ -368,6 +380,13 @@ public class STLocalLifetimeApplier extends GhidraScript {
             varnode = op.getClass().getMethod("getInput", int.class)
                 .invoke(op, operand + 1);
         }
+        else if (scalarRole) {
+            int operand = integer(row.get("anchor_operand"));
+            varnode = operand < 0 ?
+                op.getClass().getMethod("getOutput").invoke(op) :
+                op.getClass().getMethod("getInput", int.class)
+                    .invoke(op, operand);
+        }
         else throw new IllegalArgumentException(
             "unknown anchor kind: " + kind);
         if (varnode == null)
@@ -391,6 +410,16 @@ public class STLocalLifetimeApplier extends GhidraScript {
 
     private DataType anchoredType(Anchor anchor,
             Map<String, String> row) throws Exception {
+        if (anchor.kind.endsWith("_scalar_role")) {
+            int size = ((Number)anchor.varnode.getClass()
+                .getMethod("getSize").invoke(anchor.varnode)).intValue();
+            String mnemonic = mnemonic(anchor.op);
+            int operand = integer(row.get("anchor_operand"));
+            if (!validScalarRole(anchor.kind, mnemonic, operand))
+                return null;
+            return dataTypes.getDataType(
+                scalarSpecification(anchor.kind, size));
+        }
         if (anchor.kind.equals("typed_copy")) {
             Object input = anchor.op.getClass()
                 .getMethod("getInput", int.class).invoke(anchor.op, 0);
@@ -432,6 +461,55 @@ public class STLocalLifetimeApplier extends GhidraScript {
         Parameter parameter = parameters[operand];
         return trustedParameter(signature.function, parameter) ?
             parameter.getDataType() : null;
+    }
+
+    private boolean validScalarRole(String kind, String mnemonic,
+            int operand) {
+        if (kind.equals("boolean_scalar_role"))
+            return mnemonic.startsWith("BOOL_") ||
+                Set.of("INT_EQUAL", "INT_NOTEQUAL", "INT_LESS",
+                    "INT_LESSEQUAL", "INT_SLESS", "INT_SLESSEQUAL",
+                    "INT_CARRY", "INT_SCARRY", "INT_SBORROW")
+                    .contains(mnemonic);
+        if (kind.equals("signed_scalar_role")) {
+            if (mnemonic.equals("INT_SEXT")) return operand == 0;
+            return Set.of("INT_SLESS", "INT_SLESSEQUAL", "INT_SDIV",
+                "INT_SREM", "INT_SRIGHT").contains(mnemonic);
+        }
+        if (kind.equals("unsigned_scalar_role")) {
+            if (mnemonic.equals("INT_ZEXT")) return operand == 0;
+            return Set.of("INT_LESS", "INT_LESSEQUAL", "INT_DIV",
+                "INT_REM", "INT_RIGHT").contains(mnemonic);
+        }
+        return false;
+    }
+
+    private String scalarSpecification(String kind, int size) {
+        if (kind.equals("boolean_scalar_role"))
+            return size == 1 ? "/bool" : "";
+        if (kind.equals("signed_scalar_role"))
+            return switch (size) {
+                case 1 -> "/char";
+                case 2 -> "/short";
+                case 4 -> "/int";
+                default -> "";
+            };
+        if (kind.equals("unsigned_scalar_role"))
+            return switch (size) {
+                case 1 -> "/byte";
+                case 2 -> "/ushort";
+                case 4 -> "/uint";
+                default -> "";
+            };
+        return "";
+    }
+
+    private boolean scalarRoleEligible(DataType type) {
+        DataType base = untypedef(type);
+        return base != null && !(type instanceof TypeDef) &&
+            !(base instanceof Enum) && !(base instanceof Pointer) &&
+            (Undefined.isUndefined(base) ||
+                base instanceof AbstractIntegerDataType);
     }
 
     private SignatureParameters signatureParameters(Function function,

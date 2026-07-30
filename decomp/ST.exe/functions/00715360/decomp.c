@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 00521CF0 -> 00715360 @ 00522425 | 00521CF0 -> 00715360 @ 005224DC | 0054D640 ->
@@ -56,16 +58,8 @@ FUN_00715360(int *param_1,int param_2,char param_3,char *param_4,uint param_5,in
     local_27 = param_7;
     if ((0 < (int)param_5) && (param_4 != (char *)0x0)) {
       pcVar5 = local_23;
-      for (uVar2 = param_5 >> 2; uVar2 != 0; uVar2 = uVar2 - 1) {
-        *(undefined4 *)pcVar5 = *(undefined4 *)param_4;
-        param_4 = param_4 + 4;
-        pcVar5 = pcVar5 + 4;
-      }
-      for (uVar2 = param_5 & 3; uVar2 != 0; uVar2 = uVar2 - 1) {
-        *pcVar5 = *param_4;
-        param_4 = param_4 + 1;
-        pcVar5 = pcVar5 + 1;
-      }
+      memmove(pcVar5, param_4, param_5); /* compiler REP MOVS byte copy */
+      param_4 = (char *)((byte *)param_4 + param_5);
     }
     Library::DKW::DDX::FUN_006b7650(param_1,param_2,&local_28,param_5 + 5);
   }

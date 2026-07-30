@@ -133,13 +133,7 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
         local_5 = local_c->field_0063;
         puVar7 = (undefined4 *)&this->field_0034;
         puVar11 = (undefined4 *)&local_c->field_0x34;
-        for (iVar5 = 0x17; iVar5 != 0; iVar5 = iVar5 + -1) {
-          *puVar11 = *puVar7;
-          puVar7 = puVar7 + 1;
-          puVar11 = puVar11 + 1;
-        }
-        *(undefined2 *)puVar11 = *(undefined2 *)puVar7;
-        *(undefined1 *)((int)puVar11 + 2) = *(undefined1 *)((int)puVar7 + 2);
+        memmove(puVar11, puVar7, 0x5f); /* compiler REP MOVS byte copy */
         local_c->field_0061 = uVar2;
         local_c->field_0062 = uVar1;
         local_c->field_0063 = local_5;

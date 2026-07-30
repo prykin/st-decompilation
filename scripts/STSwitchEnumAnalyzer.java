@@ -1,7 +1,7 @@
 // Recover anonymous enum/state domains from decompiled switch statements and exact
-// typed uses of script-generated enums. Read-only: emits switch_enum_proposals.tsv/jsonl.
-// New parameter/generated-field targets and existing generated domains can be
-// auto-applied; locals/globals remain review-only.
+// typed uses of script-generated enums. Read-only: emits switch_enum_proposals.tsv.
+// New parameter/generated-field targets and generated domains can be auto-applied;
+// persistent local/global typing remains review-only.
 // @author OpenAI
 // @category SubmarineTitans.Recovery
 // @menupath Tools.Submarine Titans.Analyze Switch Enums
@@ -171,6 +171,7 @@ public class STSwitchEnumAnalyzer extends GhidraScript {
             .thenComparing(p -> p.targetKind).thenComparing(p -> p.targetName));
         makeEnumNamesUnique(proposals);
         mergeObservedEnums(proposals, observedEnums);
+        addLocalDomainMaterialization(proposals);
         proposals.sort(Comparator.comparing((Proposal p) -> p.functionAddress)
             .thenComparing(p -> p.targetKind).thenComparing(p -> p.targetName));
         for (Proposal proposal : proposals) {
@@ -192,6 +193,40 @@ public class STSwitchEnumAnalyzer extends GhidraScript {
             ", proposals: " + proposals.size() + ", auto_apply: " + auto +
             ", decompile retries: " + decompileRetries +
             ", failures: " + decompileFailures);
+    }
+
+    /**
+     * A decompiler local is not safe to type persistently without an
+     * address-stable HighVariable anchor.  The numeric domain itself is still
+     * exact and useful, however.  Emit a separate enabled generated_enum row so
+     * the script-owned enum exists for signatures, later lifetime analysis, and
+     * source reconstruction while the local target row remains review-only.
+     */
+    private void addLocalDomainMaterialization(List<Proposal> proposals) {
+        List<Proposal> generated = new ArrayList<>();
+        Set<String> existing = new TreeSet<>();
+        for (Proposal proposal : proposals)
+            if (proposal.targetKind.equals("generated_enum"))
+                existing.add(proposal.enumName);
+        for (Proposal local : proposals) {
+            if (!local.targetKind.equals("local") ||
+                    existing.contains(local.enumName)) continue;
+            Proposal domain = new Proposal(local.functionAddress,
+                local.expectedFunction, local.expectedSignature,
+                "generated_enum", local.enumName, -1, -1,
+                "/SubmarineTitans/Recovered/Enums/" + local.enumName,
+                local.owner, "", SourceType.ANALYSIS.toString(),
+                local.enumName, local.enumLength, true, "high",
+                "exact_local_switch_domain; script_owned_domain_materialization;" +
+                    " persistent_local_typing_requires_address_stable_anchor");
+            domain.values.addAll(local.values);
+            domain.expressions.addAll(local.expressions);
+            domain.switchSites.addAll(local.switchSites);
+            domain.evidenceFunctions.addAll(local.evidenceFunctions);
+            generated.add(domain);
+            existing.add(local.enumName);
+        }
+        proposals.addAll(generated);
     }
 
     private boolean isCandidate(Function function) {

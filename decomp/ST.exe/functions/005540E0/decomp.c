@@ -110,16 +110,7 @@ uint * __thiscall cLoadingTy::new(cLoadingTy *this,uint param_1,char *text,uint 
       local_254 = 1;
       pcVar10 = pcVar9 + -uVar4;
       pcVar9 = local_253;
-      for (uVar8 = uVar4 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
-        *(undefined4 *)pcVar9 = *(undefined4 *)pcVar10;
-        pcVar10 = pcVar10 + 4;
-        pcVar9 = pcVar9 + 4;
-      }
-      for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
-        *pcVar9 = *pcVar10;
-        pcVar10 = pcVar10 + 1;
-        pcVar9 = pcVar9 + 1;
-      }
+      memmove(pcVar9, pcVar10, uVar4); /* compiler REP MOVS byte copy */
       cMf32::ToBeg(g_cMf32_00806780,FUN_006f2d10,&local_254);
       puVar5 = cMf32::RecNameGetNext(this_00);
       while (puVar5 != (undefined4 *)0x0) {

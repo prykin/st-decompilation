@@ -17,8 +17,8 @@ void __thiscall FSGSTy::JoinGameCtrls(FSGSTy *this)
   FSGSTy_field_1EBEDArray *pFVar6;
   int iVar7;
   int iVar8;
-  undefined4 *puVar9;
-  undefined4 *puVar11;
+  byte *puVar9;
+  byte *puVar11;
   ccFntTy **ppcVar12;
   ushort *puVar13;
   ccFntTy *local_dac [8];
@@ -148,13 +148,10 @@ void __thiscall FSGSTy::JoinGameCtrls(FSGSTy *this)
     local_38c = 2;
     local_388 = 0x8164;
     local_274 = 2;
-    puVar9 = local_3f0;
-    puVar11 = local_270;
-    for (iVar8 = 0x5f; iVar8 != 0; iVar8 = iVar8 + -1) {
-      *puVar11 = *puVar9;
-      puVar9 = puVar9 + 1;
-      puVar11 = puVar11 + 1;
-    }
+    puVar9 = (byte *)(local_3f0);
+    puVar11 = (byte *)(local_270);
+    memmove(puVar11, puVar9, 0x17c); /* compiler REP MOVS byte copy */
+    iVar8 = 0;
     local_270[2] = this_00->field_1D88;
     local_270[3] = this_00->field_1D8C;
     local_260 = this_00->field_1D90;

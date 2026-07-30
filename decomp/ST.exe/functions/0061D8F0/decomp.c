@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STMethodOwnerApplier] Structural method owner recovered as STLightC.
    Evidence: this_call_owners=[STLightC]; agreed_this_calls=1; incoming_this_accesses=4;
@@ -11,25 +13,22 @@ int __thiscall STLightC::sub_0061D8F0(STLightC *this,undefined4 *param_1)
   int *piVar2;
   STLightC_field_00A3DArray *pSVar3;
   int iVar4;
-  undefined4 *puVar5;
+  byte *puVar5;
   int *piVar6;
-  undefined4 *puVar7;
+  byte *puVar7;
   int local_10;
   int local_c;
   int *local_8;
 
   if (this == (STLightC *)0x0) {
-    puVar7 = (undefined4 *)0x0;
+    puVar7 = (byte *)0x0;
   }
   else {
-    puVar7 = (undefined4 *)&this->field_0x1c;
+    puVar7 = (byte *)&this->field_0x1c;
   }
-  puVar5 = param_1;
-  for (iVar4 = 0x24; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *puVar7 = *puVar5;
-    puVar5 = puVar5 + 1;
-    puVar7 = puVar7 + 1;
-  }
+  puVar5 = (byte *)(param_1);
+  memmove(puVar7, puVar5, 0x90); /* compiler REP MOVS byte copy */
+  iVar4 = 0;
   local_c = sub_0061D9C0(this,(ushort *)(param_1 + 0x24),&local_10,1);
   piVar1 = (int *)(local_c + (int)(param_1 + 0x24));
   piVar6 = piVar1 + 1;

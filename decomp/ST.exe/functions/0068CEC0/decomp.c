@@ -60,16 +60,8 @@ FUN_0068cec0(LPCSTR lpFileName,AnonShape_00683C70_22193481 *param_2,int *param_3
   uVar7 = ~uVar7;
   pcVar13 = pcVar11 + -uVar7;
   pcVar11 = (char *)&DAT_008488b4;
-  for (uVar8 = uVar7 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
-    *(undefined4 *)pcVar11 = *(undefined4 *)pcVar13;
-    pcVar13 = pcVar13 + 4;
-    pcVar11 = pcVar11 + 4;
-  }
-  for (uVar7 = uVar7 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-    *pcVar11 = *pcVar13;
-    pcVar13 = pcVar13 + 1;
-    pcVar11 = pcVar11 + 1;
-  }
+  memmove(pcVar11, pcVar13, uVar7); /* compiler REP MOVS byte copy */
+  uVar8 = 0;
   local_b8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_b8;
   iVar3 = Library::MSVCRT::__setjmp3(local_b8.jumpBuffer,0);
@@ -297,16 +289,8 @@ cf_continue_loop_0068D1EB:
           } while (cVar1 != '\0');
           pcVar13 = pcVar11 + -uVar7;
           pcVar11 = pcVar10 + -1;
-          for (uVar8 = uVar7 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
-            *(undefined4 *)pcVar11 = *(undefined4 *)pcVar13;
-            pcVar13 = pcVar13 + 4;
-            pcVar11 = pcVar11 + 4;
-          }
-          for (uVar7 = uVar7 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-            *pcVar11 = *pcVar13;
-            pcVar13 = pcVar13 + 1;
-            pcVar11 = pcVar11 + 1;
-          }
+          memmove(pcVar11, pcVar13, uVar7); /* compiler REP MOVS byte copy */
+          uVar8 = 0;
           Library::DKW::TBL::FUN_006b5aa0(&pDVar5->flags,local_10bc);
           Library::DKW::TBL::FUN_006b5aa0(&pDVar5->flags,&DAT_008016a0);
           iVar17 = 0;
@@ -404,16 +388,8 @@ cf_continue_loop_0068D1EB:
         } while (cVar1 != '\0');
         pcVar13 = pcVar11 + -uVar7;
         pcVar11 = pcVar10 + -1;
-        for (uVar8 = uVar7 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
-          *(undefined4 *)pcVar11 = *(undefined4 *)pcVar13;
-          pcVar13 = pcVar13 + 4;
-          pcVar11 = pcVar11 + 4;
-        }
-        for (uVar7 = uVar7 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-          *pcVar11 = *pcVar13;
-          pcVar13 = pcVar13 + 1;
-          pcVar11 = pcVar11 + 1;
-        }
+        memmove(pcVar11, pcVar13, uVar7); /* compiler REP MOVS byte copy */
+        uVar8 = 0;
         uVar7 = 0xffffffff;
         pcVar13 = &DAT_007d5684;
         do {
@@ -437,16 +413,7 @@ cf_continue_loop_0068D1EB:
         } while (cVar1 != '\0');
         pcVar13 = pcVar11 + -uVar7;
         pcVar11 = pcVar10 + -1;
-        for (uVar8 = uVar7 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
-          *(undefined4 *)pcVar11 = *(undefined4 *)pcVar13;
-          pcVar13 = pcVar13 + 4;
-          pcVar11 = pcVar11 + 4;
-        }
-        for (uVar7 = uVar7 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-          *pcVar11 = *pcVar13;
-          pcVar13 = pcVar13 + 1;
-          pcVar11 = pcVar11 + 1;
-        }
+        memmove(pcVar11, pcVar13, uVar7); /* compiler REP MOVS byte copy */
         Library::DKW::TBL::FUN_006b5aa0(&pDVar5->flags,local_10bc);
         Library::DKW::TBL::FUN_006b5aa0(&pDVar5->flags,&DAT_008016a0);
         iVar17 = 0;
@@ -519,16 +486,7 @@ cf_continue_loop_0068D1EB:
         uVar7 = ~uVar7;
         pcVar13 = pcVar13 + -uVar7;
         pcVar11 = (char *)&DAT_0084790c;
-        for (uVar8 = uVar7 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
-          *(undefined4 *)pcVar11 = *(undefined4 *)pcVar13;
-          pcVar13 = pcVar13 + 4;
-          pcVar11 = pcVar11 + 4;
-        }
-        for (uVar7 = uVar7 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-          *pcVar11 = *pcVar13;
-          pcVar13 = pcVar13 + 1;
-          pcVar11 = pcVar11 + 1;
-        }
+        memmove(pcVar11, pcVar13, uVar7); /* compiler REP MOVS byte copy */
       }
       param_3[1] = (int)&DAT_0084790c;
       uVar7 = 0xffffffff;

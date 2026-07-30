@@ -330,16 +330,7 @@ int __thiscall STJellyGunC::GetMessage(STJellyGunC *this,STMessage *message)
         local_c->field_0067 = local_8;
         pbVar11 = local_14;
         pbVar16 = &local_c->field_0x6b;
-        for (uVar7 = local_8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-          *(undefined4 *)pbVar16 = *(undefined4 *)pbVar11;
-          pbVar11 = pbVar11 + 4;
-          pbVar16 = pbVar16 + 4;
-        }
-        for (uVar7 = local_8 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-          *pbVar16 = *pbVar11;
-          pbVar11 = pbVar11 + 1;
-          pbVar16 = pbVar16 + 1;
-        }
+        memmove(pbVar16, pbVar11, local_8); /* compiler REP MOVS byte copy */
         *(uint *)(&local_c->field_0x6b + local_8) = local_10;
         pbVar11 = local_18;
         pbVar16 = &local_c[1].field_0x3 + local_8;

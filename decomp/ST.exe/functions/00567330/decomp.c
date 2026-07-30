@@ -11,7 +11,6 @@ void __fastcall FUN_00567330(int param_1)
   undefined4 *puVar5;
   int *piVar6;
   uint uVar7;
-  uint uVar8;
   byte *pbVar9;
   char *pcVar10;
   char *pcVar11;
@@ -41,16 +40,7 @@ void __fastcall FUN_00567330(int param_1)
       uVar7 = ~uVar7;
       pbVar9 = (byte *)(pcVar11 + -uVar7);
       pbVar12 = local_150;
-      for (uVar8 = uVar7 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
-        *(undefined4 *)pbVar12 = *(undefined4 *)pbVar9;
-        pbVar9 = pbVar9 + 4;
-        pbVar12 = pbVar12 + 4;
-      }
-      for (uVar7 = uVar7 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-        *pbVar12 = *pbVar9;
-        pbVar9 = pbVar9 + 1;
-        pbVar12 = pbVar12 + 1;
-      }
+      memmove(pbVar12, pbVar9, uVar7); /* compiler REP MOVS byte copy */
       uVar7 = 0xffffffff;
       pcVar10 = PTR_s_sounds_0079b028;
       do {

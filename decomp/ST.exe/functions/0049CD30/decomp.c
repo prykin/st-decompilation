@@ -70,13 +70,7 @@ undefined4 __thiscall STGroupBoatC::GrpBuild(STGroupBoatC *this,int param_1)
     local_24->field_0065 = 0;
     puVar13 = (undefined4 *)&local_24->field_0137;
     puVar14 = (undefined4 *)&local_24->field_0276;
-    for (iVar6 = 7; iVar6 != 0; iVar6 = iVar6 + -1) {
-      *puVar14 = *puVar13;
-      puVar13 = puVar13 + 1;
-      puVar14 = puVar14 + 1;
-    }
-    *(undefined2 *)puVar14 = *(undefined2 *)puVar13;
-    *(undefined1 *)((int)puVar14 + 2) = *(undefined1 *)((int)puVar13 + 2);
+    memmove(puVar14, puVar13, 0x1f); /* compiler REP MOVS byte copy */
     local_20 = g_playSystem_00802A38->field_00E4;
     local_44 = local_24->field_0137;
     local_48 = g_playSystem_00802A38->field_00E4;

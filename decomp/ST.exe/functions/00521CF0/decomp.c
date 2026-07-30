@@ -191,16 +191,8 @@ void __fastcall FUN_00521cf0(AnonShape_00521CF0_154649D2 *param_1)
           uVar10 = ~uVar10;
           pcVar7 = pcVar8 + -uVar10;
           pcVar8 = local_4b4;
-          for (uVar11 = uVar10 >> 2; uVar11 != 0; uVar11 = uVar11 - 1) {
-            *(undefined4 *)pcVar8 = *(undefined4 *)pcVar7;
-            pcVar7 = pcVar7 + 4;
-            pcVar8 = pcVar8 + 4;
-          }
-          for (uVar10 = uVar10 & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
-            *pcVar8 = *pcVar7;
-            pcVar7 = pcVar7 + 1;
-            pcVar8 = pcVar8 + 1;
-          }
+          memmove(pcVar8, pcVar7, uVar10); /* compiler REP MOVS byte copy */
+          uVar11 = 0;
           local_64 = DAT_0080874d;
           if ((bVar12 == 0) && (bVar2 = pAVar4[1].field_0x8, bVar2 != 0)) {
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -281,16 +273,7 @@ void __fastcall FUN_00521cf0(AnonShape_00521CF0_154649D2 *param_1)
               uVar10 = ~uVar10;
               pcVar7 = pcVar8 + -uVar10;
               pcVar8 = local_474;
-              for (uVar11 = uVar10 >> 2; uVar11 != 0; uVar11 = uVar11 - 1) {
-                *(undefined4 *)pcVar8 = *(undefined4 *)pcVar7;
-                pcVar7 = pcVar7 + 4;
-                pcVar8 = pcVar8 + 4;
-              }
-              for (uVar10 = uVar10 & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
-                *pcVar8 = *pcVar7;
-                pcVar7 = pcVar7 + 1;
-                pcVar8 = pcVar8 + 1;
-              }
+              memmove(pcVar8, pcVar7, uVar10); /* compiler REP MOVS byte copy */
             }
             else {
               uVar10 = 0xffffffff;

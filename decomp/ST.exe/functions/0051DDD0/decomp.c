@@ -56,7 +56,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
   HelpPanelTy *local_20;
   uint *local_1c;
   uint local_18;
-  undefined4 *local_14;
+  uint local_14;
   undefined4 *local_10;
   uint local_c;
   UINT *local_8;
@@ -121,8 +121,8 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
           case CASE_C:
             local_1c = (uint *)0x0;
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-            local_14 = *(undefined4 **)(this_00->field_01D7 + 0xc);
-            if (local_14 == (undefined4 *)0x0) {
+            local_14 = *(uint *)(this_00->field_01D7 + 0xc);
+            if (local_14 == 0) {
               g_currentExceptionFrame = local_84.previous;
               return 0;
             }
@@ -306,11 +306,11 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
         local_18 = *(uint *)&pcVar4->field_0x8a;
         if (DAT_0080874e == '\x03') {
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_14 = (undefined4 *)CONCAT31(local_14._1_3_,5);
+          local_14 = CONCAT31(local_14._1_3_,5);
         }
         else {
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_14 = (undefined4 *)CONCAT31(local_14._1_3_,(-(DAT_0080874e != '\x01') & 6U) + 1);
+          local_14 = CONCAT31(local_14._1_3_,(-(DAT_0080874e != '\x01') & 6U) + 1);
         }
         Library::DKW::WGR::FUN_006b55f0
                   ((AnonShape_006B5B10_E0D06CF1 *)this_00->field_0068,0,0x21,0x16,
@@ -345,7 +345,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
               ccFntTy::SetSurf(this_00->field_01E4,(int)this_00->field_0218,0,0,
                                (uVar16 - uVar18) * local_18,this_00->field_0218->field_0004,local_18
                               );
-              ccFntTy::WrStr(this_00->field_01E4,local_1c,0,-1,(uint)local_14 & 0xff);
+              ccFntTy::WrStr(this_00->field_01E4,local_1c,0,-1,local_14 & 0xff);
             }
             uVar18 = (uint)(message->arg0).words.high;
             uVar16 = uVar16 + 1;
@@ -422,8 +422,8 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
         case CASE_C:
           local_8 = (undefined4 *)0x0;
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          local_14 = *(undefined4 **)(this_00->field_01D7 + 0xc);
-          if (local_14 != (undefined4 *)0x0) {
+          local_14 = *(undefined4 *)(this_00->field_01D7 + 0xc);
+          if ((undefined4 *)local_14 != (undefined4 *)0x0) {
             do {
               if (local_8 < local_14) {
                 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -455,15 +455,15 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
         case CASE_6:
           if (this_00->field_01A3 == 1) {
             local_8 = (UINT *)&DAT_007c2b58;
-            local_14 = (undefined4 *)0x33;
+            local_14 = 0x33;
           }
           else if (this_00->field_01A3 == 2) {
             local_8 = (UINT *)&DAT_007c2df0;
-            local_14 = (undefined4 *)0x39;
+            local_14 = 0x39;
           }
           else {
             local_8 = &DAT_007c30d8;
-            local_14 = (undefined4 *)0x46;
+            local_14 = 0x46;
           }
           uVar19 = 0;
           if ((ushort)local_14 != 0) {
@@ -620,7 +620,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
           iVar15 = (uint)*(byte *)((int)local_8 + 0x11) * 0x14;
           FUN_006b5b10((AnonShape_006E6FB0_BC494FEA *)this_00->field_01EC,0,iVar15,0,iVar15,iVar8,
                        (byte)local_10,0xd);
-          local_14 = (undefined4 *)0x0;
+          local_14 = 0;
           local_c = (uint)(message->arg0).words.low;
           local_18 = *(uint *)&this_00->field_01B3->field_0xc;
           local_1c = (uint *)local_c;
@@ -651,7 +651,7 @@ joined_r0x0051eec7:
                 if ((iVar8 == 0) || (*(byte *)(iVar8 + 0x11) == 0)) goto joined_r0x0051eec7;
               } while (*(byte *)(iVar8 + 0x11) != bVar20);
               if (*(char *)(iVar8 + 0x13) == '\0') {
-                local_14 = (undefined4 *)((uint)local_14 | 1 << (bVar20 & 0x1f));
+                local_14 = local_14 | 1 << (bVar20 & 0x1f);
               }
             }
             goto joined_r0x0051eec7;
@@ -660,7 +660,7 @@ LAB_0051ef61:
           bVar20 = 0;
           iVar8 = 0;
           do {
-            if (((uint)local_14 & 1 << (bVar20 & 0x1f)) != 0) {
+            if ((local_14 & 1 << (bVar20 & 0x1f)) != 0) {
               FUN_006b5b10((AnonShape_006E6FB0_BC494FEA *)this_00->field_01EC,0,iVar8,0,iVar8,
                            (int)((AnonShape_006E6FB0_BC494FEA *)this_00->field_01EC)->field_0008,
                            (byte)local_10,0xd);

@@ -13,11 +13,11 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
   int iVar3;
   undefined4 *puVar4;
   int iVar5;
-  undefined4 *puVar6;
+  byte *puVar6;
   uint uVar7;
   int *piVar8;
   ushort *puVar9;
-  undefined4 *puVar10;
+  byte *puVar10;
   int *piVar11;
   InternalExceptionFrame local_5c;
   undefined4 *local_18;
@@ -154,20 +154,14 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
   puVar4[9] = local_14->field_005D;
   puVar4[10] = local_14->field_0061;
   puVar4[0xb] = local_14->field_0065;
-  puVar6 = (undefined4 *)&local_14->field_0x69;
-  puVar10 = puVar4 + 0xc;
-  for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar10 = *puVar6;
-    puVar6 = puVar6 + 1;
-    puVar10 = puVar10 + 1;
-  }
-  puVar6 = &local_14->field_0089;
-  puVar10 = puVar4 + 0x14;
-  for (iVar3 = 0x15; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar10 = *puVar6;
-    puVar6 = puVar6 + 1;
-    puVar10 = puVar10 + 1;
-  }
+  puVar6 = (byte *)&local_14->field_0x69;
+  puVar10 = (byte *)(puVar4 + 0xc);
+  memmove(puVar10, puVar6, 0x20); /* compiler REP MOVS byte copy */
+  iVar3 = 0;
+  puVar6 = (byte *)(&local_14->field_0089);
+  puVar10 = (byte *)(puVar4 + 0x14);
+  memmove(puVar10, puVar6, 0x54); /* compiler REP MOVS byte copy */
+  iVar3 = 0;
   puVar4[0x29] = *(undefined4 *)&local_14->field_0xdd;
   puVar4[0x2a] = *(undefined4 *)&local_14->field_0xe1;
   *(undefined2 *)(puVar4 + 0x2b) = local_14->field_00E5;
@@ -195,15 +189,10 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
   *(undefined2 *)(puVar4 + 0x41) = local_14->field_0131;
   *(undefined2 *)((int)puVar4 + 0x106) = local_14->field_0133;
   *(undefined2 *)(puVar4 + 0x42) = local_14->field_0135;
-  puVar6 = (undefined4 *)&local_14->field_0137;
-  puVar10 = (undefined4 *)((int)puVar4 + 0x10a);
-  for (iVar3 = 7; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar10 = *puVar6;
-    puVar6 = puVar6 + 1;
-    puVar10 = puVar10 + 1;
-  }
-  *(undefined2 *)puVar10 = *(undefined2 *)puVar6;
-  *(undefined1 *)((int)puVar10 + 2) = *(undefined1 *)((int)puVar6 + 2);
+  puVar6 = (byte *)&local_14->field_0137;
+  puVar10 = (byte *)((int)puVar4 + 0x10a);
+  memmove(puVar10, puVar6, 0x1f); /* compiler REP MOVS byte copy */
+  iVar3 = 0;
   *(undefined4 *)((int)puVar4 + 0x129) = *(undefined4 *)&local_14->field_0x156;
   *(undefined2 *)((int)puVar4 + 0x12d) = local_14->field_015A;
   *(undefined1 *)(puVar4 + 0x69) = local_14->field_01C9;
@@ -241,13 +230,10 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
   *(undefined4 *)((int)puVar4 + 0x19a) = *(undefined4 *)&local_14->field_0x1bf;
   *(undefined2 *)((int)puVar4 + 0x19e) = local_14->field_01C3;
   puVar4[0x68] = local_14->field_01C5;
-  puVar6 = (undefined4 *)&local_14->field_0x1e2;
-  puVar10 = (undefined4 *)((int)puVar4 + 0x1d5);
-  for (iVar3 = 10; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar10 = *puVar6;
-    puVar6 = puVar6 + 1;
-    puVar10 = puVar10 + 1;
-  }
+  puVar6 = (byte *)&local_14->field_0x1e2;
+  puVar10 = (byte *)((int)puVar4 + 0x1d5);
+  memmove(puVar10, puVar6, 0x28); /* compiler REP MOVS byte copy */
+  iVar3 = 0;
   *(undefined4 *)((int)puVar4 + 0x205) = local_14->field_0212;
   *(undefined4 *)((int)puVar4 + 0x209) = local_14->field_0216;
   *(int *)((int)puVar4 + 0x20d) = local_14->field_021A;
@@ -273,15 +259,10 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
   *(short *)((int)puVar4 + 0x27b) = local_14->field_0270;
   *(short *)((int)puVar4 + 0x27d) = local_14->field_0272;
   *(short *)((int)puVar4 + 0x27f) = local_14->field_0274;
-  puVar6 = (undefined4 *)&local_14->field_0276;
-  puVar10 = (undefined4 *)((int)puVar4 + 0x281);
-  for (iVar3 = 7; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar10 = *puVar6;
-    puVar6 = puVar6 + 1;
-    puVar10 = puVar10 + 1;
-  }
-  *(undefined2 *)puVar10 = *(undefined2 *)puVar6;
-  *(undefined1 *)((int)puVar10 + 2) = *(undefined1 *)((int)puVar6 + 2);
+  puVar6 = (byte *)&local_14->field_0276;
+  puVar10 = (byte *)((int)puVar4 + 0x281);
+  memmove(puVar10, puVar6, 0x1f); /* compiler REP MOVS byte copy */
+  iVar3 = 0;
   puVar4[0xa8] = *(undefined4 *)&local_14->field_0x295;
   *(undefined2 *)(puVar4 + 0xa9) = local_14->field_0299;
   *(undefined4 *)((int)puVar4 + 0x2a6) = local_14->field_029B;
@@ -350,16 +331,16 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
   else {
     local_c = (ushort *)FUN_006b0020(&local_14->field_00EF->flags,(int *)&local_8);
     puVar9 = local_c;
-    puVar6 = (undefined4 *)(local_10 + (int)puVar4);
+    puVar6 = (byte *)(local_10 + (int)puVar4);
     for (uVar7 = local_8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
       *puVar6 = *(undefined4 *)puVar9;
       puVar9 = puVar9 + 2;
-      puVar6 = puVar6 + 1;
+      puVar6 = (byte *)(puVar6 + 1);
     }
     for (uVar7 = local_8 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
       *(char *)puVar6 = (char)*puVar9;
       puVar9 = (ushort *)((int)puVar9 + 1);
-      puVar6 = (undefined4 *)((int)puVar6 + 1);
+      puVar6 = (byte *)((int)puVar6 + 1);
     }
     *(int *)((int)puVar4 + 0xb2) = local_10;
     *(uint *)((int)puVar4 + 0xb6) = local_8;
@@ -374,16 +355,16 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
   else {
     local_c = (ushort *)FUN_006b0020(&local_14->field_0103->flags,(int *)&local_8);
     puVar9 = local_c;
-    puVar6 = (undefined4 *)(local_10 + (int)puVar4);
+    puVar6 = (byte *)(local_10 + (int)puVar4);
     for (uVar7 = local_8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
       *puVar6 = *(undefined4 *)puVar9;
       puVar9 = puVar9 + 2;
-      puVar6 = puVar6 + 1;
+      puVar6 = (byte *)(puVar6 + 1);
     }
     for (uVar7 = local_8 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
       *(char *)puVar6 = (char)*puVar9;
       puVar9 = (ushort *)((int)puVar9 + 1);
-      puVar6 = (undefined4 *)((int)puVar6 + 1);
+      puVar6 = (byte *)((int)puVar6 + 1);
     }
     *(int *)((int)puVar4 + 0xca) = local_10;
     *(uint *)((int)puVar4 + 0xce) = local_8;
@@ -398,16 +379,16 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
   else {
     local_c = (ushort *)FUN_006b0020(&local_14->field_010F->flags,(int *)&local_8);
     puVar9 = local_c;
-    puVar6 = (undefined4 *)(local_10 + (int)puVar4);
+    puVar6 = (byte *)(local_10 + (int)puVar4);
     for (uVar7 = local_8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
       *puVar6 = *(undefined4 *)puVar9;
       puVar9 = puVar9 + 2;
-      puVar6 = puVar6 + 1;
+      puVar6 = (byte *)(puVar6 + 1);
     }
     for (uVar7 = local_8 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
       *(char *)puVar6 = (char)*puVar9;
       puVar9 = (ushort *)((int)puVar9 + 1);
-      puVar6 = (undefined4 *)((int)puVar6 + 1);
+      puVar6 = (byte *)((int)puVar6 + 1);
     }
     *(int *)((int)puVar4 + 0xda) = local_10;
     *(uint *)((int)puVar4 + 0xde) = local_8;
@@ -422,16 +403,16 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
   else {
     local_c = (ushort *)FUN_006b0020(&local_14->field_0127->flags,(int *)&local_8);
     puVar9 = local_c;
-    puVar6 = (undefined4 *)(local_10 + (int)puVar4);
+    puVar6 = (byte *)(local_10 + (int)puVar4);
     for (uVar7 = local_8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
       *puVar6 = *(undefined4 *)puVar9;
       puVar9 = puVar9 + 2;
-      puVar6 = puVar6 + 1;
+      puVar6 = (byte *)(puVar6 + 1);
     }
     for (uVar7 = local_8 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
       *(char *)puVar6 = (char)*puVar9;
       puVar9 = (ushort *)((int)puVar9 + 1);
-      puVar6 = (undefined4 *)((int)puVar6 + 1);
+      puVar6 = (byte *)((int)puVar6 + 1);
     }
     *(int *)((int)puVar4 + 0xf6) = local_10;
     *(uint *)((int)puVar4 + 0xfa) = local_8;
@@ -446,16 +427,16 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
   else {
     local_c = (ushort *)FUN_006b0020(&local_14->field_0160->flags,(int *)&local_8);
     puVar9 = local_c;
-    puVar6 = (undefined4 *)(local_10 + (int)puVar4);
+    puVar6 = (byte *)(local_10 + (int)puVar4);
     for (uVar7 = local_8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
       *puVar6 = *(undefined4 *)puVar9;
       puVar9 = puVar9 + 2;
-      puVar6 = puVar6 + 1;
+      puVar6 = (byte *)(puVar6 + 1);
     }
     for (uVar7 = local_8 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
       *(char *)puVar6 = (char)*puVar9;
       puVar9 = (ushort *)((int)puVar9 + 1);
-      puVar6 = (undefined4 *)((int)puVar6 + 1);
+      puVar6 = (byte *)((int)puVar6 + 1);
     }
     *(int *)((int)puVar4 + 0x133) = local_10;
     *(uint *)((int)puVar4 + 0x137) = local_8;
@@ -470,16 +451,16 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
   else {
     local_c = (ushort *)FUN_006b0020(&local_14->field_0168->flags,(int *)&local_8);
     puVar9 = local_c;
-    puVar6 = (undefined4 *)(local_10 + (int)puVar4);
+    puVar6 = (byte *)(local_10 + (int)puVar4);
     for (uVar7 = local_8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
       *puVar6 = *(undefined4 *)puVar9;
       puVar9 = puVar9 + 2;
-      puVar6 = puVar6 + 1;
+      puVar6 = (byte *)(puVar6 + 1);
     }
     for (uVar7 = local_8 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
       *(char *)puVar6 = (char)*puVar9;
       puVar9 = (ushort *)((int)puVar9 + 1);
-      puVar6 = (undefined4 *)((int)puVar6 + 1);
+      puVar6 = (byte *)((int)puVar6 + 1);
     }
     *(int *)((int)puVar4 + 0x13f) = local_10;
     *(uint *)((int)puVar4 + 0x143) = local_8;
@@ -494,16 +475,16 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
   else {
     local_c = (ushort *)FUN_006b0020(&local_14->field_01CA->flags,(int *)&local_8);
     puVar9 = local_c;
-    puVar6 = (undefined4 *)(local_10 + (int)puVar4);
+    puVar6 = (byte *)(local_10 + (int)puVar4);
     for (uVar7 = local_8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
       *puVar6 = *(undefined4 *)puVar9;
       puVar9 = puVar9 + 2;
-      puVar6 = puVar6 + 1;
+      puVar6 = (byte *)(puVar6 + 1);
     }
     for (uVar7 = local_8 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
       *(char *)puVar6 = (char)*puVar9;
       puVar9 = (ushort *)((int)puVar9 + 1);
-      puVar6 = (undefined4 *)((int)puVar6 + 1);
+      puVar6 = (byte *)((int)puVar6 + 1);
     }
     *(int *)((int)puVar4 + 0x1a5) = local_10;
     *(uint *)((int)puVar4 + 0x1a9) = local_8;
@@ -518,16 +499,16 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
   else {
     local_c = (ushort *)FUN_006b0020(&local_14->field_01CE->flags,(int *)&local_8);
     puVar9 = local_c;
-    puVar6 = (undefined4 *)(local_10 + (int)puVar4);
+    puVar6 = (byte *)(local_10 + (int)puVar4);
     for (uVar7 = local_8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
       *puVar6 = *(undefined4 *)puVar9;
       puVar9 = puVar9 + 2;
-      puVar6 = puVar6 + 1;
+      puVar6 = (byte *)(puVar6 + 1);
     }
     for (uVar7 = local_8 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
       *(char *)puVar6 = (char)*puVar9;
       puVar9 = (ushort *)((int)puVar9 + 1);
-      puVar6 = (undefined4 *)((int)puVar6 + 1);
+      puVar6 = (byte *)((int)puVar6 + 1);
     }
     *(int *)((int)puVar4 + 0x1ad) = local_10;
     *(uint *)((int)puVar4 + 0x1b1) = local_8;
@@ -542,16 +523,16 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
   else {
     local_c = (ushort *)FUN_006b0020(*(uint **)&local_14->field_0x1d2,(int *)&local_8);
     puVar9 = local_c;
-    puVar6 = (undefined4 *)(local_10 + (int)puVar4);
+    puVar6 = (byte *)(local_10 + (int)puVar4);
     for (uVar7 = local_8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
       *puVar6 = *(undefined4 *)puVar9;
       puVar9 = puVar9 + 2;
-      puVar6 = puVar6 + 1;
+      puVar6 = (byte *)(puVar6 + 1);
     }
     for (uVar7 = local_8 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
       *(char *)puVar6 = (char)*puVar9;
       puVar9 = (ushort *)((int)puVar9 + 1);
-      puVar6 = (undefined4 *)((int)puVar6 + 1);
+      puVar6 = (byte *)((int)puVar6 + 1);
     }
     *(int *)((int)puVar4 + 0x1b5) = local_10;
     *(uint *)((int)puVar4 + 0x1b9) = local_8;
@@ -566,16 +547,16 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
   else {
     local_c = (ushort *)FUN_006b0020(&local_14->field_01D6->flags,(int *)&local_8);
     puVar9 = local_c;
-    puVar6 = (undefined4 *)(local_10 + (int)puVar4);
+    puVar6 = (byte *)(local_10 + (int)puVar4);
     for (uVar7 = local_8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
       *puVar6 = *(undefined4 *)puVar9;
       puVar9 = puVar9 + 2;
-      puVar6 = puVar6 + 1;
+      puVar6 = (byte *)(puVar6 + 1);
     }
     for (uVar7 = local_8 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
       *(char *)puVar6 = (char)*puVar9;
       puVar9 = (ushort *)((int)puVar9 + 1);
-      puVar6 = (undefined4 *)((int)puVar6 + 1);
+      puVar6 = (byte *)((int)puVar6 + 1);
     }
     *(int *)((int)puVar4 + 0x1bd) = local_10;
     *(uint *)((int)puVar4 + 0x1c1) = local_8;
@@ -590,16 +571,16 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
   else {
     local_c = (ushort *)FUN_006b0020(&local_14->field_01DA->flags,(int *)&local_8);
     puVar9 = local_c;
-    puVar6 = (undefined4 *)(local_10 + (int)puVar4);
+    puVar6 = (byte *)(local_10 + (int)puVar4);
     for (uVar7 = local_8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
       *puVar6 = *(undefined4 *)puVar9;
       puVar9 = puVar9 + 2;
-      puVar6 = puVar6 + 1;
+      puVar6 = (byte *)(puVar6 + 1);
     }
     for (uVar7 = local_8 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
       *(char *)puVar6 = (char)*puVar9;
       puVar9 = (ushort *)((int)puVar9 + 1);
-      puVar6 = (undefined4 *)((int)puVar6 + 1);
+      puVar6 = (byte *)((int)puVar6 + 1);
     }
     *(int *)((int)puVar4 + 0x1c5) = local_10;
     *(uint *)((int)puVar4 + 0x1c9) = local_8;
@@ -614,16 +595,16 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
   else {
     local_c = (ushort *)FUN_006b0020((uint *)local_14->field_01DE,(int *)&local_8);
     puVar9 = local_c;
-    puVar6 = (undefined4 *)(local_10 + (int)puVar4);
+    puVar6 = (byte *)(local_10 + (int)puVar4);
     for (uVar7 = local_8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
       *puVar6 = *(undefined4 *)puVar9;
       puVar9 = puVar9 + 2;
-      puVar6 = puVar6 + 1;
+      puVar6 = (byte *)(puVar6 + 1);
     }
     for (uVar7 = local_8 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
       *(char *)puVar6 = (char)*puVar9;
       puVar9 = (ushort *)((int)puVar9 + 1);
-      puVar6 = (undefined4 *)((int)puVar6 + 1);
+      puVar6 = (byte *)((int)puVar6 + 1);
     }
     *(int *)((int)puVar4 + 0x1cd) = local_10;
     *(uint *)((int)puVar4 + 0x1d1) = local_8;
@@ -638,16 +619,16 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
   else {
     local_c = (ushort *)FUN_006b0020(&local_14->field_020E->flags,(int *)&local_8);
     puVar9 = local_c;
-    puVar6 = (undefined4 *)(local_10 + (int)puVar4);
+    puVar6 = (byte *)(local_10 + (int)puVar4);
     for (uVar7 = local_8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
       *puVar6 = *(undefined4 *)puVar9;
       puVar9 = puVar9 + 2;
-      puVar6 = puVar6 + 1;
+      puVar6 = (byte *)(puVar6 + 1);
     }
     for (uVar7 = local_8 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
       *(char *)puVar6 = (char)*puVar9;
       puVar9 = (ushort *)((int)puVar9 + 1);
-      puVar6 = (undefined4 *)((int)puVar6 + 1);
+      puVar6 = (byte *)((int)puVar6 + 1);
     }
     *(int *)((int)puVar4 + 0x1fd) = local_10;
     *(uint *)((int)puVar4 + 0x201) = local_8;
@@ -663,16 +644,16 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
   else {
     local_8 = local_14->field_021A << 3;
     puVar9 = local_c;
-    puVar6 = (undefined4 *)(local_10 + (int)puVar4);
+    puVar6 = (byte *)(local_10 + (int)puVar4);
     for (iVar3 = (local_14->field_021A & 0x1fffffffU) << 1; iVar3 != 0; iVar3 = iVar3 + -1) {
       *puVar6 = *(undefined4 *)puVar9;
       puVar9 = puVar9 + 2;
-      puVar6 = puVar6 + 1;
+      puVar6 = (byte *)(puVar6 + 1);
     }
     for (iVar3 = 0; iVar3 != 0; iVar3 = iVar3 + -1) {
       *(char *)puVar6 = (char)*puVar9;
       puVar9 = (ushort *)((int)puVar9 + 1);
-      puVar6 = (undefined4 *)((int)puVar6 + 1);
+      puVar6 = (byte *)((int)puVar6 + 1);
     }
     *(int *)((int)puVar4 + 0x211) = local_10;
     *(uint *)((int)puVar4 + 0x215) = local_8;
@@ -686,16 +667,16 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
   else {
     local_c = (ushort *)FUN_006b0020(&local_14->field_0226->flags,(int *)&local_8);
     puVar9 = local_c;
-    puVar6 = (undefined4 *)(local_10 + (int)puVar4);
+    puVar6 = (byte *)(local_10 + (int)puVar4);
     for (uVar7 = local_8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
       *puVar6 = *(undefined4 *)puVar9;
       puVar9 = puVar9 + 2;
-      puVar6 = puVar6 + 1;
+      puVar6 = (byte *)(puVar6 + 1);
     }
     for (uVar7 = local_8 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
       *(char *)puVar6 = (char)*puVar9;
       puVar9 = (ushort *)((int)puVar9 + 1);
-      puVar6 = (undefined4 *)((int)puVar6 + 1);
+      puVar6 = (byte *)((int)puVar6 + 1);
     }
     *(int *)((int)puVar4 + 0x21d) = local_10;
     *(uint *)((int)puVar4 + 0x221) = local_8;
@@ -710,16 +691,16 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
   else {
     local_c = (ushort *)FUN_006b0020(&local_14->field_022A->flags,(int *)&local_8);
     puVar9 = local_c;
-    puVar6 = (undefined4 *)(local_10 + (int)puVar4);
+    puVar6 = (byte *)(local_10 + (int)puVar4);
     for (uVar7 = local_8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
       *puVar6 = *(undefined4 *)puVar9;
       puVar9 = puVar9 + 2;
-      puVar6 = puVar6 + 1;
+      puVar6 = (byte *)(puVar6 + 1);
     }
     for (uVar7 = local_8 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
       *(char *)puVar6 = (char)*puVar9;
       puVar9 = (ushort *)((int)puVar9 + 1);
-      puVar6 = (undefined4 *)((int)puVar6 + 1);
+      puVar6 = (byte *)((int)puVar6 + 1);
     }
     *(int *)((int)puVar4 + 0x225) = local_10;
     *(uint *)((int)puVar4 + 0x229) = local_8;
@@ -734,16 +715,16 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
   else {
     local_c = (ushort *)FUN_006b0020(&local_14->field_022E->flags,(int *)&local_8);
     puVar9 = local_c;
-    puVar6 = (undefined4 *)(local_10 + (int)puVar4);
+    puVar6 = (byte *)(local_10 + (int)puVar4);
     for (uVar7 = local_8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
       *puVar6 = *(undefined4 *)puVar9;
       puVar9 = puVar9 + 2;
-      puVar6 = puVar6 + 1;
+      puVar6 = (byte *)(puVar6 + 1);
     }
     for (uVar7 = local_8 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
       *(char *)puVar6 = (char)*puVar9;
       puVar9 = (ushort *)((int)puVar9 + 1);
-      puVar6 = (undefined4 *)((int)puVar6 + 1);
+      puVar6 = (byte *)((int)puVar6 + 1);
     }
     *(int *)((int)puVar4 + 0x22d) = local_10;
     *(uint *)((int)puVar4 + 0x231) = local_8;
@@ -758,16 +739,16 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
   else {
     local_c = (ushort *)FUN_006b0020(&local_14->field_024E->flags,(int *)&local_8);
     puVar9 = local_c;
-    puVar6 = (undefined4 *)(local_10 + (int)puVar4);
+    puVar6 = (byte *)(local_10 + (int)puVar4);
     for (uVar7 = local_8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
       *puVar6 = *(undefined4 *)puVar9;
       puVar9 = puVar9 + 2;
-      puVar6 = puVar6 + 1;
+      puVar6 = (byte *)(puVar6 + 1);
     }
     for (uVar7 = local_8 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
       *(char *)puVar6 = (char)*puVar9;
       puVar9 = (ushort *)((int)puVar9 + 1);
-      puVar6 = (undefined4 *)((int)puVar6 + 1);
+      puVar6 = (byte *)((int)puVar6 + 1);
     }
     *(int *)((int)puVar4 + 0x251) = local_10;
     *(uint *)((int)puVar4 + 0x255) = local_8;
@@ -782,16 +763,16 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
   else {
     local_c = (ushort *)FUN_006b0020(&local_14->field_0266->flags,(int *)&local_8);
     puVar9 = local_c;
-    puVar6 = (undefined4 *)(local_10 + (int)puVar4);
+    puVar6 = (byte *)(local_10 + (int)puVar4);
     for (uVar7 = local_8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
       *puVar6 = *(undefined4 *)puVar9;
       puVar9 = puVar9 + 2;
-      puVar6 = puVar6 + 1;
+      puVar6 = (byte *)(puVar6 + 1);
     }
     for (uVar7 = local_8 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
       *(char *)puVar6 = (char)*puVar9;
       puVar9 = (ushort *)((int)puVar9 + 1);
-      puVar6 = (undefined4 *)((int)puVar6 + 1);
+      puVar6 = (byte *)((int)puVar6 + 1);
     }
     *(int *)((int)puVar4 + 0x26d) = local_10;
     *(uint *)((int)puVar4 + 0x271) = local_8;
@@ -801,16 +782,16 @@ undefined4 * __thiscall STGroupBoatC::SaveGrpBData(STGroupBoatC *this,int *param
   if (*(uint **)&local_14->field_0x29f != (uint *)0x0) {
     local_c = (ushort *)FUN_006b0020(*(uint **)&local_14->field_0x29f,(int *)&local_8);
     puVar9 = local_c;
-    puVar6 = (undefined4 *)(local_10 + (int)puVar4);
+    puVar6 = (byte *)(local_10 + (int)puVar4);
     for (uVar7 = local_8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
       *puVar6 = *(undefined4 *)puVar9;
       puVar9 = puVar9 + 2;
-      puVar6 = puVar6 + 1;
+      puVar6 = (byte *)(puVar6 + 1);
     }
     for (uVar7 = local_8 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
       *(char *)puVar6 = (char)*puVar9;
       puVar9 = (ushort *)((int)puVar9 + 1);
-      puVar6 = (undefined4 *)((int)puVar6 + 1);
+      puVar6 = (byte *)((int)puVar6 + 1);
     }
     *(int *)((int)puVar4 + 0x2aa) = local_10;
     *(uint *)((int)puVar4 + 0x2ae) = local_8;

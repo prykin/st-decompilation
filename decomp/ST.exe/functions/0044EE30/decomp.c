@@ -477,13 +477,7 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
     uVar3 = this_00->field_0x62;
     puVar21 = (undefined4 *)(*(int *)&this_00[1].field_0x297 + 0x34);
     puVar37 = (undefined4 *)&this_00->field_0x34;
-    for (iVar13 = 0x17; iVar13 != 0; iVar13 = iVar13 + -1) {
-      *puVar37 = *puVar21;
-      puVar21 = puVar21 + 1;
-      puVar37 = puVar37 + 1;
-    }
-    *(undefined2 *)puVar37 = *(undefined2 *)puVar21;
-    *(undefined1 *)((int)puVar37 + 2) = *(undefined1 *)((int)puVar21 + 2);
+    memmove(puVar37, puVar21, 0x5f); /* compiler REP MOVS byte copy */
     *(undefined4 *)&this_00->field_0x76 = 0;
     *(undefined2 *)&this_00->field_0x6e = 0x2f;
     this_00->field_0x61 = uVar2;
@@ -525,16 +519,7 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
       }
       pbVar30 = local_3c;
       pbVar36 = &local_20->field_0x0 + local_34;
-      for (uVar16 = local_2c >> 2; uVar16 != 0; uVar16 = uVar16 - 1) {
-        *(undefined4 *)pbVar36 = *(undefined4 *)pbVar30;
-        pbVar30 = pbVar30 + 4;
-        pbVar36 = pbVar36 + 4;
-      }
-      for (uVar16 = local_2c & 3; uVar16 != 0; uVar16 = uVar16 - 1) {
-        *pbVar36 = *pbVar30;
-        pbVar30 = pbVar30 + 1;
-        pbVar36 = pbVar36 + 1;
-      }
+      memmove(pbVar36, pbVar30, local_2c); /* compiler REP MOVS byte copy */
       local_20->field_05FE = local_34;
       local_20->field_0602 = local_2c;
       pbVar30 = local_44;
@@ -7892,16 +7877,7 @@ cf_error_exit_0045AEE3:
   } while (cVar1 != '\0');
   pcVar33 = pcVar31 + -uVar16;
   pcVar32 = pcVar32 + -1;
-  for (uVar27 = uVar16 >> 2; uVar27 != 0; uVar27 = uVar27 - 1) {
-    *(undefined4 *)pcVar32 = *(undefined4 *)pcVar33;
-    pcVar33 = pcVar33 + 4;
-    pcVar32 = pcVar32 + 4;
-  }
-  for (uVar16 = uVar16 & 3; uVar16 != 0; uVar16 = uVar16 - 1) {
-    *pcVar32 = *pcVar33;
-    pcVar33 = pcVar33 + 1;
-    pcVar32 = pcVar32 + 1;
-  }
+  memmove(pcVar32, pcVar33, uVar16); /* compiler REP MOVS byte copy */
 switchD_0044fb10_default:
   iVar13 = STT3DSprC::LoadSequence((STT3DSprC *)&this_00->field_01D5,0xe,DAT_0080677c,local_74,0x1d);
   if (iVar13 != 0) {
