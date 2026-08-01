@@ -61,7 +61,8 @@ public class STManualTypeAuditAnalyzer extends GhidraScript {
             String ordinal = value(row, "target_ordinal");
             String locator = value(row, "function_address") + ":" + kind +
                 (ordinal.isBlank() ? "" : ":" + ordinal);
-            String status = genericType(current) && !genericType(candidate) ?
+            String status = "1".equals(value(row, "protected_override")) ?
+                "approved_override" : genericType(current) && !genericType(candidate) ?
                 "likely_stale" : "review";
             rows.add(new AuditRow("prototype", locator, value(row, "expected_function"),
                 current, candidate, source, status, value(row, "confidence"),
@@ -72,8 +73,11 @@ public class STManualTypeAuditAnalyzer extends GhidraScript {
     private void auditClassFields(Path path) throws Exception {
         for (Map<String, String> row : readTsv(path)) {
             String reason = value(row, "reason");
-            if (!reason.contains("existing_concrete_type_preserved") &&
-                    !reason.contains("inferred_type_conflict")) continue;
+            // A conflict between two inferred candidates is not evidence that the
+            // installed field was manually protected or stale.  Class-layout owns that
+            // review queue; this audit reports only a concrete installed type which
+            // rejected one unambiguous inference.
+            if (!reason.contains("existing_concrete_type_preserved")) continue;
             String current = value(row, "proposed_type");
             String candidate = value(row, "inferred_type");
             if (candidate.isBlank() || sameType(current, candidate)) continue;

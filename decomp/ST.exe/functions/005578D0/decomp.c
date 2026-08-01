@@ -21,7 +21,7 @@ void __thiscall VisibleClassTy::InitData(VisibleClassTy *this)
   uint uVar11;
   uint uVar12;
   uint uVar13;
-  void **ppvVar14;
+  uint *puVar14;
   bool bVar15;
   InternalExceptionFrame local_50;
   VisibleClassTy *local_c;
@@ -63,12 +63,12 @@ void __thiscall VisibleClassTy::InitData(VisibleClassTy *this)
     pVVar3->field_004C = pbVar6;
     puVar7 = (ushort *)Library::DKW::LIB::FUN_006aac10(pVVar3->field_0030 * pVVar3->field_0034 * 2);
     pVVar3->field_0050 = puVar7;
-    ppvVar14 = pVVar3->field_003C;
+    puVar14 = pVVar3->field_003C;
     iVar4 = 4;
     do {
       puVar8 = Library::DKW::LIB::FUN_006aac10(pVVar3->field_0028 * pVVar3->field_002C);
-      *ppvVar14 = puVar8;
-      ppvVar14 = ppvVar14 + 1;
+      *puVar14 = (uint)puVar8;
+      puVar14 = puVar14 + 1;
       iVar4 = iVar4 + -1;
     } while (iVar4 != 0);
     pVVar9 = (VisibleClassTy_field_00F4DArray *)

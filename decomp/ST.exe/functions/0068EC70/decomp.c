@@ -8,7 +8,8 @@
 void __thiscall AiTactClassTy::ExecClaim(AiTactClassTy *this,int param_1)
 
 {
-  AiFltClassTy *pAVar1;
+  AiFltClassTy *this_00;
+  uint uVar1;
   code *pcVar2;
   char cVar3;
   undefined1 uVar4;
@@ -64,7 +65,8 @@ void __thiscall AiTactClassTy::ExecClaim(AiTactClassTy *this,int param_1)
           switch(element_00bd->state) {
           case 0:
             if ((element_00bd->field_0012 == 0) ||
-               ((uint)(element_00bd->field_003A + element_00bd->field_0012) <= pAVar6->field_012C)) {
+               ((uint)(element_00bd->field_003A + element_00bd->field_0012) <= pAVar6->field_012C))
+            {
               pAVar12 = pAVar6->field_00A5;
               local_c = 0;
               if (0 < (int)pAVar12->count) {
@@ -77,8 +79,8 @@ void __thiscall AiTactClassTy::ExecClaim(AiTactClassTy *this,int param_1)
                   else {
                     element_00a5 = (AiTactClassTy_field_00A5Element *)0x0;
                   }
-                  pAVar1 = (AiFltClassTy *)element_00a5->field_0004;
-                  if (pAVar1 != (AiFltClassTy *)0x0) {
+                  this_00 = (AiFltClassTy *)element_00a5->field_0004;
+                  if (this_00 != (AiFltClassTy *)0x0) {
                     memset(local_44, 0, 0x34); /* compiler bulk-zero initialization */
                     iVar8 = 0;
                     local_44[1] = pAVar6->field_012C;
@@ -87,7 +89,7 @@ void __thiscall AiTactClassTy::ExecClaim(AiTactClassTy *this,int param_1)
                     uStack_38 = (undefined1)((uint)element_00bd >> 0x10);
                     cStack_3b = '\x01';
                     uStack_37 = uVar5;
-                    AiFltClassTy::GetAiMess(pAVar1,local_44);
+                    AiFltClassTy::GetAiMess(this_00,local_44);
                     if ('\0' < local_3c) {
                       element_00bd->state = 1;
                       element_00bd->field_0034 = local_c;
@@ -140,12 +142,12 @@ void __thiscall AiTactClassTy::ExecClaim(AiTactClassTy *this,int param_1)
             break;
           case 2:
           case 3:
-            pAVar1 = element_00bd->field_0030;
+            uVar1 = element_00bd->field_0030;
             cStack_3b = cVar7;
-            if (-1 < (int)pAVar1) {
+            if (-1 < (int)uVar1) {
               pAVar12 = pAVar6->field_00A5;
-              if (pAVar1 < (AiFltClassTy *)pAVar12->count) {
-                element_00a5_2 = DArrayAt<AiTactClassTy_field_00A5Element>(pAVar12, (int)pAVar1);
+              if (uVar1 < pAVar12->count) {
+                element_00a5_2 = DArrayAt<AiTactClassTy_field_00A5Element>(pAVar12, uVar1);
               }
               else {
                 element_00a5_2 = (AiTactClassTy_field_00A5Element *)0x0;

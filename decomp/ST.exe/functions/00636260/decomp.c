@@ -15,11 +15,11 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00636260::FUN_00636260
 
 {
   int iVar1;
-  DArrayTy *pDVar2;
-  uint uVar3;
-  int *piVar4;
-  uint uVar6;
-  longlong lVar7;
+  DArrayTy *array;
+  uint uVar2;
+  int *piVar3;
+  uint uVar5;
+  longlong lVar6;
   undefined4 local_50 [13];
   undefined4 local_1c;
   undefined4 local_18;
@@ -47,13 +47,13 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00636260::FUN_00636260
   }
   *(undefined4 *)&this->field_0x20 = 0x16;
 LAB_006362c5:
-  pDVar2 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,param_5 * param_6,0x32,10);
-  *(DArrayTy **)&this->field_0x2c = pDVar2;
-  if ((pDVar2 != (DArrayTy *)0x0) && (0 < param_4)) {
+  array = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,param_5 * param_6,0x32,10);
+  *(DArrayTy **)&this->field_0x2c = array;
+  if ((array != (DArrayTy *)0x0) && (0 < param_4)) {
     *(int *)this = param_5;
     *(int *)&this->field_0x8 = param_6;
     memset(local_50, 0, 0x32); /* compiler bulk-zero initialization */
-    Library::DKW::TBL::FUN_006ae140(&pDVar2->flags,param_5 * param_6 - 1,local_50);
+    Library::DKW::TBL::DArrayPut(array,param_5 * param_6 - 1,local_50);
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = 0;
     local_c = _DAT_0079c5a4 / (float)param_5;
@@ -61,48 +61,48 @@ LAB_006362c5:
       do {
         fcos((float10)(int)param_1 * (float10)local_c);
         fsin((float10)(int)param_1 * (float10)local_c);
-        lVar7 = Library::MSVCRT::__ftol();
-        local_18 = (undefined4)lVar7;
-        lVar7 = Library::MSVCRT::__ftol();
-        local_1c = (undefined4)lVar7;
-        lVar7 = Library::MSVCRT::__ftol();
-        local_10 = (undefined4)lVar7;
-        lVar7 = Library::MSVCRT::__ftol();
-        local_14 = (undefined4)lVar7;
+        lVar6 = Library::MSVCRT::__ftol();
+        local_18 = (undefined4)lVar6;
+        lVar6 = Library::MSVCRT::__ftol();
+        local_1c = (undefined4)lVar6;
+        lVar6 = Library::MSVCRT::__ftol();
+        local_10 = (undefined4)lVar6;
+        lVar6 = Library::MSVCRT::__ftol();
+        local_14 = (undefined4)lVar6;
         if (0 < param_6) {
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_4 = param_6;
-          uVar6 = param_1;
+          uVar5 = param_1;
           do {
             iVar1 = *(int *)&this->field_0x2c;
-            if (uVar6 < *(uint *)(iVar1 + 0xc)) {
-              piVar4 = (int *)(*(int *)(iVar1 + 8) * uVar6 + *(int *)(iVar1 + 0x1c));
+            if (uVar5 < *(uint *)(iVar1 + 0xc)) {
+              piVar3 = (int *)(*(int *)(iVar1 + 8) * uVar5 + *(int *)(iVar1 + 0x1c));
             }
             else {
-              piVar4 = (int *)0x0;
+              piVar3 = (int *)0x0;
             }
-            *piVar4 = param_7;
+            *piVar3 = param_7;
             if (*(int *)&local_8->field_0x28 == 0) {
-              piVar4[1] = -1;
+              piVar3[1] = -1;
             }
             else {
-              uVar3 = thunk_FUN_006364b0(*(int *)&local_8->field_0x4);
-              piVar4[1] = uVar3;
+              uVar2 = thunk_FUN_006364b0(*(int *)&local_8->field_0x4);
+              piVar3[1] = uVar2;
             }
-            *(undefined4 *)((int)piVar4 + 0x12) = local_14;
-            *(undefined4 *)((int)piVar4 + 0xe) = local_10;
-            *(undefined4 *)((int)piVar4 + 0x26) = local_18;
-            *(int *)((int)piVar4 + 0x22) = param_6;
-            *(int *)((int)piVar4 + 0x16) = param_3;
-            uVar6 = uVar6 + param_5;
+            *(undefined4 *)((int)piVar3 + 0x12) = local_14;
+            *(undefined4 *)((int)piVar3 + 0xe) = local_10;
+            *(undefined4 *)((int)piVar3 + 0x26) = local_18;
+            *(int *)((int)piVar3 + 0x22) = param_6;
+            *(int *)((int)piVar3 + 0x16) = param_3;
+            uVar5 = uVar5 + param_5;
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_4 = param_4 + -1;
-            piVar4[2] = 0;
-            *(undefined1 *)((int)piVar4 + 0xd) = 0;
-            *(undefined4 *)((int)piVar4 + 0x1a) = 0;
-            *(undefined4 *)((int)piVar4 + 0x1e) = 0;
-            *(undefined4 *)((int)piVar4 + 0x2a) = local_1c;
-            *(undefined4 *)((int)piVar4 + 0x2e) = 0;
+            piVar3[2] = 0;
+            *(undefined1 *)((int)piVar3 + 0xd) = 0;
+            *(undefined4 *)((int)piVar3 + 0x1a) = 0;
+            *(undefined4 *)((int)piVar3 + 0x1e) = 0;
+            *(undefined4 *)((int)piVar3 + 0x2a) = local_1c;
+            *(undefined4 *)((int)piVar3 + 0x2e) = 0;
             this = local_8;
           } while (param_4 != 0);
         }

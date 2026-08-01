@@ -60,7 +60,7 @@ undefined4 STAllPlayersC::_SubMDObject(undefined4 *param_1,uint param_2)
     local_10 = 0;
     do {
       if (uVar4 == *(int *)((int)local_2c + local_10)) {
-        /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
+        /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
         pDVar2 = *(DArrayTy **)(local_10 + 0x7f4e2f + objPtr * 0xa62);
         uVar1 = (ushort)pDVar2->count;
         if (uVar1 != 0) {
@@ -76,7 +76,7 @@ undefined4 STAllPlayersC::_SubMDObject(undefined4 *param_1,uint param_2)
                  (((local_4e == local_6 && (local_4c == local_8)) && (local_4a == local_1c)))) {
                 local_42 = -1;
                 local_4a = -1;
-                Library::DKW::TBL::FUN_006ae140(&pDVar2->flags,uVar4,(undefined4 *)&local_50);
+                Library::DKW::TBL::DArrayPut(pDVar2,uVar4,&local_50);
                 local_c = 1;
               }
               uVar4 = uVar4 + 1;
@@ -94,7 +94,7 @@ undefined4 STAllPlayersC::_SubMDObject(undefined4 *param_1,uint param_2)
   local_1c = this->field_0032;
   local_14 = (STGameObjC *)0x4;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  param_1 = &g_playerRuntime[objPtr].field6_0xf;
+  param_1 = &g_playerRuntime[objPtr].field9_0xf;
   do {
     pDVar2 = (DArrayTy *)*param_1;
     if ((pDVar2 != (DArrayTy *)0x0) && (uVar1 = (ushort)pDVar2->count, uVar1 != 0)) {
@@ -108,7 +108,7 @@ undefined4 STAllPlayersC::_SubMDObject(undefined4 *param_1,uint param_2)
               ((local_46 == local_6 && (local_44 == local_8)))) && (local_42 == local_1c)) {
             local_42 = -1;
             local_4a = -1;
-            Library::DKW::TBL::FUN_006ae140((uint *)pDVar2,uVar4,(undefined4 *)&local_50);
+            Library::DKW::TBL::DArrayPut(pDVar2,uVar4,&local_50);
             local_c = 1;
           }
           uVar4 = uVar4 + 1;

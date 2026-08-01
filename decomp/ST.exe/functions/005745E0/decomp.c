@@ -115,7 +115,7 @@ cf_break_loop_00574651:
         local_c = 0;
       }
       local_18 = local_24;
-      Library::DKW::TBL::FUN_006ae1c0((uint *)param_1->field_044D,&local_28);
+      Library::DKW::TBL::DArrayAppend((DArrayTy *)param_1->field_044D,&local_28);
       param_2[6] = local_18;
       return;
     }

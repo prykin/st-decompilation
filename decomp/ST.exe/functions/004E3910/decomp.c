@@ -65,7 +65,7 @@ undefined4 __fastcall FUN_004e3910(int *param_1)
                       local_20 = (STSharkC *)0x0;
                       local_1c = iVar9;
                       local_18 = iVar3;
-                      Library::DKW::TBL::FUN_006ae1c0(&local_8->flags,&local_20);
+                      Library::DKW::TBL::DArrayAppend(local_8,&local_20);
                     }
                     iVar4 = thunk_FUN_004961b0(g_worldGrid.sizeX + -1,sVar1,sVar12);
                     if (iVar4 != 0) {
@@ -87,7 +87,7 @@ undefined4 __fastcall FUN_004e3910(int *param_1)
                         local_20 = (STSharkC *)(sVar2 + -1);
                         local_1c = iVar9;
                         local_18 = iVar3;
-                        Library::DKW::TBL::FUN_006ae1c0(&local_8->flags,&local_20);
+                        Library::DKW::TBL::DArrayAppend(local_8,&local_20);
                       }
                     }
                     iVar3 = iVar3 + 1;
@@ -124,7 +124,7 @@ undefined4 __fastcall FUN_004e3910(int *param_1)
                         local_1c = 0;
                         local_20 = pSVar10;
                         local_18 = iVar9;
-                        Library::DKW::TBL::FUN_006ae1c0(&local_8->flags,&local_20);
+                        Library::DKW::TBL::DArrayAppend(local_8,&local_20);
                       }
                     }
                     iVar3 = thunk_FUN_004961b0(sVar1,g_worldGrid.sizeY + -1,sVar12);
@@ -148,7 +148,7 @@ undefined4 __fastcall FUN_004e3910(int *param_1)
                         local_1c = g_worldGrid.sizeY + -1;
                         local_20 = pSVar10;
                         local_18 = iVar9;
-                        Library::DKW::TBL::FUN_006ae1c0(&local_8->flags,&local_20);
+                        Library::DKW::TBL::DArrayAppend(local_8,&local_20);
                       }
                     }
                     iVar9 = iVar9 + 1;

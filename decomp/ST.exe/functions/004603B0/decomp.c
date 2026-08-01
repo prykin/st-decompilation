@@ -46,10 +46,10 @@ int __thiscall FUN_004603b0(void *this,STTorpC *param_1)
     if ((int)uVar2 < 0) {
       bVar9 = (uVar2 - 1 | 0xfffffffe) == 0xffffffff;
     }
-    if ((((bVar9) && (DAT_007fa134 != 0)) && (uVar2 = PTR_007fa130->count, uVar2 != 0)) &&
+    if ((((bVar9) && (DAT_007fa134 != 0)) && (uVar2 = g_array_007FA130->count, uVar2 != 0)) &&
        (index = 0, iVar6 = DAT_007fa134, uVar2 != 0)) {
       do {
-        DArrayGetElement(PTR_007fa130,index,&param_1);
+        DArrayGetElement(g_array_007FA130,index,&param_1);
         if (param_1 != (STTorpC *)0x0) {
           iVar6 = iVar6 + -1;
           iVar3 = STTorpC::IsDangerous(param_1,*(int *)((int)this + 0x18),&local_8);

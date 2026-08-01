@@ -78,7 +78,7 @@ LAB_006737e7:
           if (iVar3 == 0) break;
         }
         if (local_8 != (int *)0x0) goto LAB_0067383b;
-        piVar5 = (int *)Library::DKW::LIB::FUN_006aac70(0xc);
+        piVar5 = Library::DKW::LIB::MemAlloc(0xc);
         if (piVar5 != (int *)0x0) {
           local_8 = piVar5;
           pcVar6 = FUN_006c49b0((char *)local_c);

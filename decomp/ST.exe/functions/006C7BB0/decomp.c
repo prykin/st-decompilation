@@ -15,7 +15,7 @@ undefined1 * FUN_006c7bb0(int *param_1,undefined1 *param_2,int *param_3)
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   iVar4 = *(int *)((int)param_1 + 0x1e);
   if (param_2 == (undefined1 *)0x0) {
-    param_2 = (undefined1 *)Library::DKW::LIB::FUN_006aac70(iVar1 * 4);
+    param_2 = Library::DKW::LIB::MemAlloc(iVar1 * 4);
     if (param_2 == (undefined1 *)0x0) {
       return (undefined1 *)0x0;
     }

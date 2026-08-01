@@ -50,7 +50,7 @@ STGroupBoatC::DistributeMD
   undefined2 local_14 [2];
   undefined2 local_10 [2];
   short local_c [2];
-  undefined4 local_8;
+  undefined1 local_8 [4];
 
   uVar10 = 0;
   local_40 = (DArrayTy *)0x0;
@@ -102,11 +102,13 @@ STGroupBoatC::DistributeMD
   pSVar2 = local_6c;
   if (0 < (int)dVar5) {
     do {
-      DArrayGetElement(param_4,uVar10,&local_8);
-      if ((ushort)local_8 != 0xffff) {
+      DArrayGetElement(param_4,uVar10,local_8);
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+      if (local_8._0_2_ != 0xffff) {
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         pSVar4 = (STBoatC *)
                  STAllPlayersC::GetObjPtr
-                           (g_allPlayers_007FA174,pSVar2->field_0024,(ushort)local_8,CASE_1);
+                           (g_allPlayers_007FA174,pSVar2->field_0024,local_8._0_2_,CASE_1);
         if (pSVar4 == (STBoatC *)0x0) {
           iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x10fc,0,0,
                                      "%s","STGroupBoatC::DistributeMD ptr==NULL");
@@ -134,7 +136,7 @@ STGroupBoatC::DistributeMD
             local_24 = pDVar7;
           }
         }
-        Library::DKW::TBL::FUN_006ae1c0(&pDVar7->flags,&local_8);
+        Library::DKW::TBL::DArrayAppend(pDVar7,local_8);
       }
 LAB_004a35b6:
       uVar10 = uVar10 + 1;
@@ -151,12 +153,13 @@ LAB_004a35b6:
     uVar10 = 0;
     if (0 < (int)dVar5) {
       do {
-        DArrayGetElement(param_2,uVar10,&local_8);
-        if (((ushort)local_8 != 0xffff) &&
+        DArrayGetElement(param_2,uVar10,local_8);
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+        if ((local_8._0_2_ != 0xffff) &&
            (pSVar6 = STAllPlayersC::GetObjPtr
-                               (g_allPlayers_007FA174,pSVar2->field_0024,(ushort)local_8,CASE_1),
+                               (g_allPlayers_007FA174,pSVar2->field_0024,local_8._0_2_,CASE_1),
            pSVar6 != (STGameObjC *)0x0)) {
-          Library::DKW::TBL::FUN_006ae1c0(&local_2c->flags,&local_8);
+          Library::DKW::TBL::DArrayAppend(local_2c,local_8);
         }
         uVar10 = uVar10 + 1;
       } while ((int)uVar10 < (int)dVar5);
@@ -167,10 +170,11 @@ LAB_004a35b6:
     uVar9 = 0;
     if (0 < (int)local_20) {
       do {
-        DArrayGetElement(local_1c,uVar9,&local_8);
+        DArrayGetElement(local_1c,uVar9,local_8);
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         pSVar4 = (STBoatC *)
                  STAllPlayersC::GetObjPtr
-                           (g_allPlayers_007FA174,pSVar2->field_0024,(ushort)local_8,CASE_1);
+                           (g_allPlayers_007FA174,pSVar2->field_0024,local_8._0_2_,CASE_1);
         if (param_1 == 1) {
           local_60 = g_playSystem_00802A38->field_00E4;
           local_4c = 0xffffffff;
@@ -192,12 +196,13 @@ LAB_004a35b6:
     uVar10 = 0;
     if (0 < (int)dVar5) {
       do {
-        DArrayGetElement(param_3,uVar10,&local_8);
-        if (((ushort)local_8 != 0xffff) &&
+        DArrayGetElement(param_3,uVar10,local_8);
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+        if ((local_8._0_2_ != 0xffff) &&
            (pSVar6 = STAllPlayersC::GetObjPtr
-                               (g_allPlayers_007FA174,pSVar2->field_0024,(ushort)local_8,CASE_1),
+                               (g_allPlayers_007FA174,pSVar2->field_0024,local_8._0_2_,CASE_1),
            pSVar6 != (STGameObjC *)0x0)) {
-          Library::DKW::TBL::FUN_006ae1c0(&local_28->flags,&local_8);
+          Library::DKW::TBL::DArrayAppend(local_28,local_8);
         }
         uVar10 = uVar10 + 1;
       } while ((int)uVar10 < (int)dVar5);
@@ -208,10 +213,11 @@ LAB_004a35b6:
     uVar9 = 0;
     if (0 < (int)local_20) {
       do {
-        DArrayGetElement(local_1c,uVar9,&local_8);
+        DArrayGetElement(local_1c,uVar9,local_8);
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         pSVar4 = (STBoatC *)
                  STAllPlayersC::GetObjPtr
-                           (g_allPlayers_007FA174,pSVar2->field_0024,(ushort)local_8,CASE_1);
+                           (g_allPlayers_007FA174,pSVar2->field_0024,local_8._0_2_,CASE_1);
         if (param_1 == 1) {
           local_60 = g_playSystem_00802A38->field_00E4;
           local_4c = 0xffffffff;

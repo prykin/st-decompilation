@@ -19,7 +19,7 @@ undefined4 __fastcall FUN_006604b0(AiFltClassTy *param_1,undefined4 param_2,unde
     if ((param_1->field_007D != 0xfffe) && (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) {
       this = thunk_FUN_0042b760(*(char *)&param_1->field_0024,param_1->field_007D);
       if (this != (STGroupBoatC *)0x0) {
-        this->SetOrderData(CASE_6,&local_c);
+        this->sub_00498D20(6,&local_c);
         return 0;
       }
     }

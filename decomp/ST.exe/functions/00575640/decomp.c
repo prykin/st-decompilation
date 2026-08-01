@@ -100,7 +100,7 @@ void __cdecl FUN_00575640(short *param_1,undefined4 *param_2,short *param_3)
   }
   if (param_3 != (short *)0x0) {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_1 = (short *)Library::DKW::LIB::FUN_006aac70(uVar10);
+    param_1 = Library::DKW::LIB::MemAlloc(uVar10);
     puVar11 = (byte *)(param_2);
     psVar9 = param_1;
     for (uVar8 = uVar10 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {

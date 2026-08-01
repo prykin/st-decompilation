@@ -69,7 +69,7 @@ STAppC::MainWindowProc
       if (g_ddxContext_008075A8 != (DDXContext_008075A8 *)0x0) {
         FUN_006b5f80((int *)g_ddxContext_008075A8,0,0,g_nWidth_00806730,DAT_00806734);
       }
-      if ((PTR_0081163c != (AnonShape_00577690_10255A81 *)0x0) &&
+      if ((g_parentSystem_0081163C != (GameSystemC *)0x0) &&
          (g_sT3DSMAPContext_00807598 != (ST3DSMAPContext *)0x0)) {
         DAT_0080674c = 2;
         DAT_0080745d = 0;

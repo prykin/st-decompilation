@@ -3,7 +3,6 @@ address	function	owner	vtable_slots	deallocates_this	this_field_writes	zeroed_th
 004189D0	STGameObjC::MoveStep	STGameObjC	0x1C | 0x20	0	0	0	1	0	18
 0041AF40	STGameObjC::GetMessage	STGameObjC	0x0	0	0	0	0	0	107
 0041E530	STSprGameObjC::GetMessage	STSprGameObjC	0x0	0	0	0	0	0	84
-00423C70	FUN_00423c70	STGroupC	0x4	0	0	0	0	0	5
 00423EC0	STGroupC::GetMessage	STGroupC	0x0	0	0	0	0	0	13
 00430A90	STAllPlayersC::GetMessage	STAllPlayersC	0x0	0	0	0	0	0	82
 0044EDE0	FUN_0044ede0	STBoatC	0xC8	0	3	1	0	0	0
@@ -38,7 +37,7 @@ address	function	owner	vtable_slots	deallocates_this	this_field_writes	zeroed_th
 00494F00	FUN_00494f00	STBoatC	0x98	0	2	2	0	0	2
 00495980	DumpClassC::GetMessage	DumpClassC	0x0	0	0	0	1	0	23
 00497E00	STGroupBoatC::GetMessage	STGroupBoatC	0x0	0	0	0	0	0	111
-00498D20	STGroupBoatC::SetOrderData	STGroupBoatC	0x8	0	4	0	0	0	27
+00498D20	STGroupBoatC::sub_00498D20	STGroupBoatC	0x8	0	4	0	0	0	27
 004A0EE0	FUN_004a0ee0	STGroupBoatC	0x4	0	0	0	2	0	4
 004A4240	STGroupBoatC::ChangeMDNotify	STGroupBoatC	0x10	0	0	0	0	0	47
 004A4D60	STGroupBoatC::ChangeMDNotify	STGroupBoatC	0x14	0	0	0	0	0	7

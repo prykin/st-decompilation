@@ -42,7 +42,7 @@ int __thiscall AiTactClassTy::GetMessage(AiTactClassTy *this,STMessage *message)
     if (SVar1 < MESS_TORPHIT) {
       if (SVar1 == MESS_SHARED_010F) {
         local_c = (AnonShape_0060EA30_DCEB68AD *)0x0;
-        local_10 = (byte *)PrepareToSave(local_14,(uint *)&local_c);
+        local_10 = PrepareToSave(local_14,(uint *)&local_c);
         STPlaySystemC::SaveObjData(g_playSystem_00802A38,this_00->field_0018,local_10,local_c);
         if (local_10 != (byte *)0x0) {
           FreeAndNull(&local_10);

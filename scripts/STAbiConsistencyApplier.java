@@ -27,6 +27,7 @@ import ghidra.program.model.listing.Parameter;
 import ghidra.program.model.listing.ParameterImpl;
 import ghidra.program.model.listing.ReturnParameterImpl;
 import ghidra.program.model.listing.Variable;
+import ghidra.program.model.listing.VariableStorage;
 import ghidra.program.model.symbol.SourceType;
 
 public class STAbiConsistencyApplier extends GhidraScript {
@@ -47,7 +48,8 @@ public class STAbiConsistencyApplier extends GhidraScript {
             "expected_signature", "expected_signature_source", "target_kind", "target_ordinal",
             "expected_target_name", "expected_target_type", "expected_target_source",
             "proposed_name", "proposed_type", "proposed_convention", "proposed_varargs",
-            "proposed_parameter_types", "proposed_parameter_names", "confidence", "evidence");
+            "proposed_parameter_types", "proposed_parameter_names",
+            "proposed_parameter_storages", "confidence", "evidence");
         dataTypes = currentProgram.getDataTypeManager();
 
         int tx = currentProgram.startTransaction("Apply x86 ABI consistency repairs");
@@ -99,13 +101,23 @@ public class STAbiConsistencyApplier extends GhidraScript {
         boolean varargs = enabled(row.get("proposed_varargs"));
         String[] typePaths = split(row.get("proposed_parameter_types"));
         String[] names = split(row.get("proposed_parameter_names"));
+        String[] storages = split(row.get("proposed_parameter_storages"));
+        boolean customStorage = storages.length > 0;
         if (typePaths.length != names.length)
             throw new IllegalArgumentException("parameter type/name count mismatch");
+        if (customStorage && typePaths.length != storages.length)
+            throw new IllegalArgumentException("parameter type/storage count mismatch");
         DataType returnType = requireType(returnPath);
         List<Variable> parameters = new ArrayList<>();
-        for (int index = 0; index < typePaths.length; index++)
-            parameters.add(new ParameterImpl(names[index], requireType(typePaths[index]),
-                currentProgram, SourceType.ANALYSIS));
+        for (int index = 0; index < typePaths.length; index++) {
+            DataType type = requireType(typePaths[index]);
+            parameters.add(customStorage ?
+                new ParameterImpl(names[index], type,
+                    VariableStorage.deserialize(currentProgram, storages[index]),
+                    currentProgram, SourceType.ANALYSIS) :
+                new ParameterImpl(names[index], type,
+                    currentProgram, SourceType.ANALYSIS));
+        }
         if (fullPrototypeMatches(function, returnType, convention, varargs, parameters)) {
             report.add(new Report(addr(function.getEntryPoint()), row.get("repair_kind"),
                 "unchanged", "desired prototype already present"));
@@ -124,8 +136,13 @@ public class STAbiConsistencyApplier extends GhidraScript {
                 "preserved", "USER_DEFINED signature"));
             return;
         }
-        function.updateFunction(convention, new ReturnParameterImpl(returnType, currentProgram),
-            parameters, FunctionUpdateType.DYNAMIC_STORAGE_FORMAL_PARAMS, true,
+        ReturnParameterImpl returned = customStorage ?
+            new ReturnParameterImpl(returnType,
+                function.getReturn().getVariableStorage(), true, currentProgram) :
+            new ReturnParameterImpl(returnType, currentProgram);
+        function.updateFunction(convention, returned, parameters,
+            customStorage ? FunctionUpdateType.CUSTOM_STORAGE :
+                FunctionUpdateType.DYNAMIC_STORAGE_FORMAL_PARAMS, true,
             SourceType.ANALYSIS);
         function.setVarArgs(varargs);
         function.setSignatureSource(SourceType.ANALYSIS);
@@ -187,7 +204,10 @@ public class STAbiConsistencyApplier extends GhidraScript {
         if (actual.size() != desired.size()) return false;
         for (int index = 0; index < actual.size(); index++)
             if (!actual.get(index).getFormalDataType().isEquivalent(
-                    desired.get(index).getDataType())) return false;
+                    desired.get(index).getDataType()) ||
+                    desired.get(index).hasAssignedStorage() &&
+                        !actual.get(index).getVariableStorage().equals(
+                            desired.get(index).getVariableStorage())) return false;
         return true;
     }
 

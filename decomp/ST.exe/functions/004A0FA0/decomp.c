@@ -292,7 +292,7 @@ void __thiscall STGroupBoatC::RechargeNewCmd(STGroupBoatC *this,void *param_1)
           local_110 = (short)local_8;
           local_114 = 0;
           local_102 = 0;
-          Library::DKW::TBL::FUN_006ae140(&this_00->field_022E->flags,uVar11,&local_114);
+          Library::DKW::TBL::DArrayPut(this_00->field_022E,uVar11,&local_114);
           local_48 = uVar11;
           pSVar5 = (STBoatC *)
                    STAllPlayersC::GetObjPtr
@@ -307,7 +307,7 @@ void __thiscall STGroupBoatC::RechargeNewCmd(STGroupBoatC *this,void *param_1)
                       (-0x5001fffc,g_overwriteContext_007ED77C,
                        "E:\\__titans\\wlad\\to_grpb.cpp",0xe78);
           }
-          Library::DKW::TBL::FUN_006ae1c0(&local_28->flags,&local_8);
+          Library::DKW::TBL::DArrayAppend(local_28,&local_8);
           STBoatC::CmdToObj(pSVar5,CASE_6,&local_4c);
           uVar11 = uVar11 + 1;
           local_18 = local_18 + 1;
@@ -333,7 +333,7 @@ void __thiscall STGroupBoatC::RechargeNewCmd(STGroupBoatC *this,void *param_1)
           local_114 = 0;
           local_102 = 0;
           local_110 = (short)local_8;
-          Library::DKW::TBL::FUN_006ae140(&this_00->field_022E->flags,uVar11,&local_114);
+          Library::DKW::TBL::DArrayPut(this_00->field_022E,uVar11,&local_114);
           local_48 = uVar11;
           pSVar5 = (STBoatC *)
                    STAllPlayersC::GetObjPtr
@@ -348,7 +348,7 @@ void __thiscall STGroupBoatC::RechargeNewCmd(STGroupBoatC *this,void *param_1)
                       (-0x5001fffc,g_overwriteContext_007ED77C,
                        "E:\\__titans\\wlad\\to_grpb.cpp",0xe65);
           }
-          Library::DKW::TBL::FUN_006ae1c0(&local_28->flags,&local_8);
+          Library::DKW::TBL::DArrayAppend(local_28,&local_8);
           STBoatC::CmdToObj(pSVar5,CASE_6,&local_4c);
           local_18 = uVar2 + 1;
         } while ((local_18 & 0xffff) < local_14);
@@ -419,7 +419,7 @@ void __thiscall STGroupBoatC::RechargeNewCmd(STGroupBoatC *this,void *param_1)
               if (local_c == (DArrayTy *)0x0) {
                 local_c = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
               }
-              Library::DKW::TBL::FUN_006ae1c0(&local_c->flags,&local_8);
+              Library::DKW::TBL::DArrayAppend(local_c,&local_8);
             }
             DArrayRemoveAt(this_00->field_002D,uVar12);
             local_18 = local_18 + 0xffff;
@@ -450,7 +450,7 @@ void __thiscall STGroupBoatC::RechargeNewCmd(STGroupBoatC *this,void *param_1)
             if (local_10 == (DArrayTy *)0x0) {
               local_10 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
             }
-            Library::DKW::TBL::FUN_006ae1c0(&local_10->flags,&local_8);
+            Library::DKW::TBL::DArrayAppend(local_10,&local_8);
           }
         }
         uVar12 = uVar12 + 1;
@@ -512,7 +512,7 @@ void __thiscall STGroupBoatC::RechargeNewCmd(STGroupBoatC *this,void *param_1)
               if (local_c == (DArrayTy *)0x0) {
                 local_c = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
               }
-              Library::DKW::TBL::FUN_006ae1c0(&local_c->flags,&local_8);
+              Library::DKW::TBL::DArrayAppend(local_c,&local_8);
               goto LAB_004a1878;
             }
             puVar14 = &local_1c;
@@ -546,7 +546,7 @@ LAB_004a1878:
             if (local_10 == (DArrayTy *)0x0) {
               local_10 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
             }
-            Library::DKW::TBL::FUN_006ae1c0(&local_10->flags,&local_8);
+            Library::DKW::TBL::DArrayAppend(local_10,&local_8);
           }
         }
         uVar12 = uVar12 + 1;
@@ -603,7 +603,7 @@ LAB_004a1878:
               if (local_c == (DArrayTy *)0x0) {
                 local_c = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
               }
-              Library::DKW::TBL::FUN_006ae1c0(&local_c->flags,&local_8);
+              Library::DKW::TBL::DArrayAppend(local_c,&local_8);
               goto LAB_004a1a74;
             }
             puVar14 = &local_1c;
@@ -637,7 +637,7 @@ LAB_004a1a74:
             if (local_10 == (DArrayTy *)0x0) {
               local_10 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
             }
-            Library::DKW::TBL::FUN_006ae1c0(&local_10->flags,&local_8);
+            Library::DKW::TBL::DArrayAppend(local_10,&local_8);
           }
         }
         uVar12 = uVar12 + 1;
@@ -695,7 +695,7 @@ LAB_004a1a74:
             if (local_c == (DArrayTy *)0x0) {
               local_c = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
             }
-            Library::DKW::TBL::FUN_006ae1c0(&local_c->flags,&local_8);
+            Library::DKW::TBL::DArrayAppend(local_c,&local_8);
             /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
             SVar10 = extraout_ECX_14;
           }
@@ -734,7 +734,8 @@ LAB_004a1a74:
       } while (uVar11 < local_18);
     }
     if (local_e8 != 0xffffffff) {
-      DArrayGetElement(g_playerRuntime[this_00->field_0024].pgPairs,local_e8,local_130);
+      DArrayGetElement((DArrayTy *)g_playerRuntime[this_00->field_0024].field2377_0x9f6,local_e8,
+                       local_130);
       Library::DKW::TBL::FUN_006afe40((int *)&local_10,local_130[0]);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       STAllPlayersC::RegisterPGPair
@@ -808,7 +809,7 @@ LAB_004a1a74:
                 local_c = pDVar8;
               }
             }
-            Library::DKW::TBL::FUN_006ae1c0(&pDVar7->flags,&local_8);
+            Library::DKW::TBL::DArrayAppend(pDVar7,&local_8);
             /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
             SVar10 = extraout_ECX_25;
           }
@@ -884,7 +885,7 @@ LAB_004a1ede:
                   local_10 = pDVar8;
                 }
 LAB_004a2089:
-                Library::DKW::TBL::FUN_006ae1c0(&pDVar8->flags,&local_8);
+                Library::DKW::TBL::DArrayAppend(pDVar8,&local_8);
               }
             }
             else {
@@ -1160,7 +1161,7 @@ LAB_004a221d:
               local_c = pDVar8;
             }
           }
-          Library::DKW::TBL::FUN_006ae1c0(&pDVar7->flags,&local_8);
+          Library::DKW::TBL::DArrayAppend(pDVar7,&local_8);
         }
 LAB_004a26bb:
         local_18 = local_18 + 1;
@@ -1231,7 +1232,7 @@ LAB_004a26f5:
             if (local_10 == (DArrayTy *)0x0) {
               local_10 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
             }
-            Library::DKW::TBL::FUN_006ae1c0(&local_10->flags,&local_8);
+            Library::DKW::TBL::DArrayAppend(local_10,&local_8);
             puVar14 = &local_b8;
             SVar13 = CASE_12;
           }
@@ -1241,7 +1242,7 @@ LAB_004a26f5:
               if (local_c == (DArrayTy *)0x0) {
                 local_c = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
               }
-              Library::DKW::TBL::FUN_006ae1c0(&local_c->flags,&local_8);
+              Library::DKW::TBL::DArrayAppend(local_c,&local_8);
               goto LAB_004a2897;
             }
             puVar14 = &local_1c;
@@ -1370,7 +1371,7 @@ LAB_004a2897:
               local_c = pDVar8;
             }
 LAB_004a2bcf:
-            Library::DKW::TBL::FUN_006ae1c0(&pDVar8->flags,&local_8);
+            Library::DKW::TBL::DArrayAppend(pDVar8,&local_8);
           }
         }
       }

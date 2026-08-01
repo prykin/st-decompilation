@@ -3,9 +3,12 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_tact.cpp
-   AiTactClassTy::PrepareToSave */
+   AiTactClassTy::PrepareToSave
 
-undefined4 * __thiscall AiTactClassTy::PrepareToSave(AiTactClassTy *this,uint *param_1)
+   [STPrototypeApplier] Propagated return.
+   Evidence: 0068E050 returns used as parameter 2 of STPlaySystemC::SaveObjData @ 00690CB3 */
+
+byte * __thiscall AiTactClassTy::PrepareToSave(AiTactClassTy *this,uint *param_1)
 
 {
   code *pcVar1;
@@ -42,7 +45,7 @@ undefined4 * __thiscall AiTactClassTy::PrepareToSave(AiTactClassTy *this,uint *p
     pbVar4[0x105] = 0;
     pbVar4[0x106] = 0;
     g_currentExceptionFrame = local_4c.previous;
-    return (undefined4 *)pbVar4;
+    return pbVar4;
   }
   g_currentExceptionFrame = local_4c.previous;
   iVar5 = ReportDebugMessage("E:\\__titans\\ai\\ai_tact.cpp",0x81,0,errorCode,"%s",
@@ -51,6 +54,6 @@ undefined4 * __thiscall AiTactClassTy::PrepareToSave(AiTactClassTy *this,uint *p
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(errorCode,0,"E:\\__titans\\ai\\ai_tact.cpp",0x82);
-  return (undefined4 *)0x0;
+  return (byte *)0x0;
 }
 

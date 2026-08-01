@@ -1,6 +1,6 @@
 program=ST.exe
 vptr_writer_functions=106
-constructor_candidates=58
+constructor_candidates=57
 constructor_name_auto_apply=0
 constructor_convention_auto_apply=0
 constructor_parameter_auto_apply=0

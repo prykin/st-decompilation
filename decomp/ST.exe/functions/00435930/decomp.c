@@ -39,35 +39,33 @@ STAllPlayersC::GetCursorType
     in_EDX = extraout_EDX;
   }
   uVar4 = (uint)DAT_0080874d;
-  if (g_playerRuntime[uVar4].field324_0x203 == 0) {
-    iVar5 = g_playerRuntime[uVar4].tempSlots[0][0].objectType;
-    if (iVar5 != 0) {
-      if (iVar5 != 0x3c) {
+  if (g_playerRuntime[uVar4].field448_0x203 == 0) {
+    if (g_playerRuntime[uVar4].field332_0x163 != 0) {
+      if (g_playerRuntime[uVar4].field332_0x163 != 0x3c) {
         return 0;
       }
-      if (g_playerRuntime[uVar4].tempSlots[0][0].playerId != uVar4) {
+      if (g_playerRuntime[uVar4].field333_0x167 != uVar4) {
         return 0;
       }
       /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
       sVar3 = thunk_FUN_00435b90(CONCAT31((int3)((uint)in_EDX >> 8),DAT_0080874d),
-                                 g_playerRuntime[uVar4].tempSlots[0][0].objectIds,param_1,
+                                 (DArrayTy *)g_playerRuntime[uVar4].field335_0x16d,param_1,
                                  (int *)param_2,param_3,param_4);
       return sVar3;
     }
   }
-  else if (g_playerRuntime[uVar4].field324_0x203 == 1) {
-    iVar5 = g_playerRuntime[uVar4].tempSlots[1][0].objectType;
-    if (iVar5 != 0) {
-      if (iVar5 != 0x19a) {
+  else if (g_playerRuntime[uVar4].field448_0x203 == 1) {
+    if (g_playerRuntime[uVar4].field390_0x1b3 != 0) {
+      if (g_playerRuntime[uVar4].field390_0x1b3 != 0x19a) {
         return 0;
       }
-      if (g_playerRuntime[uVar4].tempSlots[1][0].playerId != uVar4) {
+      if (g_playerRuntime[uVar4].field391_0x1b7 != uVar4) {
         return 0;
       }
-      if (g_playerRuntime[uVar4].tempSlots[1][0].activityCount != 1) {
+      if (g_playerRuntime[uVar4].field394_0x1c1 != 1) {
         return 0;
       }
-      array = g_playerRuntime[uVar4].tempSlots[1][0].objectIds;
+      array = (DArrayTy *)g_playerRuntime[uVar4].field393_0x1bd;
       index = 0;
       dVar1 = array->count;
       if ((int)dVar1 < 1) {
@@ -78,8 +76,8 @@ STAllPlayersC::GetCursorType
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         if (local_8._0_2_ != 0xffff) {
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          pSVar6 = GetObjPtr(this,(char)g_playerRuntime[uVar4].tempSlots[1][0].playerId,
-                             local_8._0_2_,CASE_1);
+          pSVar6 = GetObjPtr(this,*(char *)&g_playerRuntime[uVar4].field391_0x1b7,local_8._0_2_,
+                             CASE_1);
           uVar7 = (*pSVar6->vtable->vfunc_28)(param_1,param_2,param_3,param_4);
           return (short)uVar7;
         }

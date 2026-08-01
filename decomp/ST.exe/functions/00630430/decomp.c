@@ -21,9 +21,9 @@ int __thiscall STManRuinC::GetMessage(STManRuinC *this,STMessage *message)
   byte *pbVar6;
   ushort *puVar7;
   int iVar8;
-  byte *puVar11;
+  byte *puVar10;
   STManRuinC_field_003CElement *element_003c;
-  byte *puVar12;
+  byte *puVar11;
   InternalExceptionFrame local_58;
   byte *local_14;
   uint local_10;
@@ -74,32 +74,34 @@ int __thiscall STManRuinC::GetMessage(STManRuinC *this,STMessage *message)
         else {
           element_003c = (STManRuinC_field_003CElement *)0x0;
         }
-        if (element_003c != (STManRuinC_field_003CElement *)0x0) {
-          if ((element_003c->state == 1) && (element_003c->statusFlag == 0)) {
+        if (element_003c != (undefined4 *)0x0) {
+          if ((element_003c[1] == 1) && (element_003c[2] == 0)) {
             iVar5 = thunk_FUN_00630ff0();
-            element_003c->statusFlag = iVar5;
+            element_003c[2] = iVar5;
             if (iVar5 != 0) {
-              puVar7 = sub_00630C50(this_00,element_003c->field_0000,element_003c->variant,1,1,0);
+              puVar7 = sub_00630C50(this_00,*element_003c,element_003c[3],1,1,0);
               if (puVar7 == (ushort *)0x0) {
-                element_003c->statusFlag = 0;
+                element_003c[2] = 0;
               }
               else {
-                element_003c->state = 2;
+                element_003c[1] = 2;
               }
             }
           }
-          iVar5 = element_003c->state;
+          iVar5 = element_003c[1];
           if ((iVar5 == 2) || (iVar5 == 1)) {
-            if ((element_003c->statusFlag != 0) || (iVar5 == 2)) {
+            if ((element_003c[2] != 0) || (iVar5 == 2)) {
               Library::Ourlib::ST3DSMAP::SprSetMask
                         (g_sT3DSMAPContext_00807598,element_003c->spriteHandle,
-                         PTR_00806724->entries[element_003c->maskIndex],(int)PTR_00806724->field_002C);
+                         PTR_00806724->entries[*(byte *)(element_003c + 8)],(int)PTR_00806724->field_002C
+                        );
             }
             if (g_playSystem_00802A38->field_00E4 % 6 == 0) {
-              element_003c->maskIndex = element_003c->maskIndex + 1;
+              *(char *)(element_003c + 8) = *(char *)(element_003c + 8) + '\x01';
             }
-            if (PTR_00806724->entryCount <= (short)(ushort)element_003c->maskIndex) {
-              Library::Ourlib::ST3DSMAP::SprClose(g_sT3DSMAPContext_00807598,element_003c->spriteHandle);
+            if (PTR_00806724->entryCount <= (short)(ushort)*(byte *)(element_003c + 8)) {
+              Library::Ourlib::ST3DSMAP::SprClose
+                        (g_sT3DSMAPContext_00807598,element_003c->spriteHandle);
               DArrayRemoveAt((DArrayTy *)this_00->field_003C,uVar2);
             }
           }
@@ -133,13 +135,13 @@ LAB_006304e7:
       goto LAB_00630558;
     }
     if (local_8 == (ushort *)0x0) goto LAB_006304e7;
-    puVar11 = (byte *)((message->arg0).ptr);
-    puVar12 = (byte *)(&this_00->field_001C);
-    memmove(puVar12, puVar11, 0x14); /* compiler REP MOVS byte copy */
+    puVar10 = (byte *)((message->arg0).ptr);
+    puVar11 = (byte *)(&this_00->field_001C);
+    memmove(puVar11, puVar10, 0x14); /* compiler REP MOVS byte copy */
   }
   if (this_00->field_0034 == (byte *)0x0) {
     uVar2 = (int)g_worldGrid.sizeX * (int)g_worldGrid.sizeY * 5;
-    pbVar6 = (byte *)Library::DKW::LIB::FUN_006aac70(uVar2);
+    pbVar6 = Library::DKW::LIB::MemAlloc(uVar2);
     this_00->field_0034 = pbVar6;
     if (pbVar6 == (byte *)0x0) {
       thunk_FUN_006308b0(this_00);

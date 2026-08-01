@@ -152,7 +152,7 @@ LAB_0051607e:
   local_33 = *local_c;
   local_2f = local_c[1];
   local_44 = 0x50;
-  Library::DKW::TBL::FUN_006ae1c0((uint *)this_00->field_01D7,&local_44);
+  Library::DKW::TBL::DArrayAppend((DArrayTy *)this_00->field_01D7,&local_44);
   local_1c = local_1c + 1;
   local_c = (int *)((int)local_c + 9);
   *param_1 = *param_1 + 0xf;

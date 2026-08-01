@@ -6,59 +6,59 @@
 int FUN_006d10f0(int param_1,int param_2,int param_3,uint param_4,int param_5)
 
 {
-  uint uVar1;
-  undefined4 *puVar2;
-  uint uVar3;
+  uint size;
+  undefined4 *puVar1;
+  uint uVar2;
+  int iVar3;
   int iVar4;
-  int iVar5;
-  undefined4 *puVar6;
+  undefined4 *puVar5;
 
   if (0x100 < (int)param_4) {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_4 = 0;
   }
-  uVar3 = param_4 * 4 + 0x28;
-  iVar5 = (param_1 * param_3 + 0x1fU >> 3 & 0x1ffffffc) * param_2;
-  uVar1 = uVar3;
+  uVar2 = param_4 * 4 + 0x28;
+  iVar4 = (param_1 * param_3 + 0x1fU >> 3 & 0x1ffffffc) * param_2;
+  size = uVar2;
   if (param_5 != 0) {
-    uVar1 = uVar3 + iVar5;
+    size = uVar2 + iVar4;
   }
-  puVar2 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(uVar1);
-  if (puVar2 != (undefined4 *)0x0) {
-    puVar6 = puVar2;
-    for (uVar3 = uVar3 >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {
-      *puVar6 = 0;
-      puVar6 = puVar6 + 1;
+  puVar1 = Library::DKW::LIB::MemAlloc(size);
+  if (puVar1 != (undefined4 *)0x0) {
+    puVar5 = puVar1;
+    for (uVar2 = uVar2 >> 2; uVar2 != 0; uVar2 = uVar2 - 1) {
+      *puVar5 = 0;
+      puVar5 = puVar5 + 1;
     }
-    for (iVar4 = 0; iVar4 != 0; iVar4 = iVar4 + -1) {
-      *(undefined1 *)puVar6 = 0;
-      puVar6 = (undefined4 *)((int)puVar6 + 1);
+    for (iVar3 = 0; iVar3 != 0; iVar3 = iVar3 + -1) {
+      *(undefined1 *)puVar5 = 0;
+      puVar5 = (undefined4 *)((int)puVar5 + 1);
     }
-    puVar2[2] = param_2;
-    puVar2[1] = param_1;
-    puVar2[5] = iVar5;
-    *puVar2 = 0x28;
-    *(undefined2 *)(puVar2 + 3) = 1;
-    *(short *)((int)puVar2 + 0xe) = (short)param_3;
-    puVar2[4] = 0;
-    puVar2[8] = (0xf < param_3) - 1 & param_4;
+    puVar1[2] = param_2;
+    puVar1[1] = param_1;
+    puVar1[5] = iVar4;
+    *puVar1 = 0x28;
+    *(undefined2 *)(puVar1 + 3) = 1;
+    *(short *)((int)puVar1 + 0xe) = (short)param_3;
+    puVar1[4] = 0;
+    puVar1[8] = (0xf < param_3) - 1 & param_4;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_4 == 3) {
       if (param_3 == 0x10) {
-        puVar2[10] = 0xf800;
-        puVar2[0xb] = 0x7e0;
-        puVar2[0xc] = 0x1f;
-        puVar2[4] = 3;
-        return (int)puVar2;
+        puVar1[10] = 0xf800;
+        puVar1[0xb] = 0x7e0;
+        puVar1[0xc] = 0x1f;
+        puVar1[4] = 3;
+        return (int)puVar1;
       }
       if (param_3 == 0x20) {
-        puVar2[10] = 0xff0000;
-        puVar2[0xb] = 0xff00;
-        puVar2[0xc] = 0xff;
-        puVar2[4] = 3;
+        puVar1[10] = 0xff0000;
+        puVar1[0xb] = 0xff00;
+        puVar1[0xc] = 0xff;
+        puVar1[4] = 3;
       }
     }
   }
-  return (int)puVar2;
+  return (int)puVar1;
 }
 

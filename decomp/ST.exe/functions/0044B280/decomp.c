@@ -53,11 +53,11 @@ STAllPlayersC::CalibrateTmp
                0x3075);
   }
   if (param_2 == 0) {
-    /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
+    /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
     local_18 = *(DArrayTy **)(param_3 * 0x10 + 0x7f4f8d + param_1 * 0xa62);
   }
   else if (param_2 == 1) {
-    /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[(char)param_1].tempSlots[param_2][param_3].objectIds */
+    /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
     local_18 = *(DArrayTy **)(param_3 * 0x10 + 0x7f4fdd + param_1 * 0xa62);
   }
   else {
@@ -104,7 +104,7 @@ STAllPlayersC::CalibrateTmp
           DArrayGetElement(local_c,index,&local_6);
           if (local_8 == local_6) {
             if (param_6 != (int *)0x0) {
-              Library::DKW::TBL::FUN_006ae1c0((uint *)*param_6,(undefined4 *)&local_6);
+              Library::DKW::TBL::DArrayAppend((DArrayTy *)*param_6,&local_6);
             }
             DArrayRemoveAt(local_10,index_00);
             dVar5 = dVar5 - 1;

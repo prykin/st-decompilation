@@ -196,7 +196,7 @@ LAB_005d5350:
       local_18 = *(undefined4 *)(pcVar10 + 0xb);
       local_29 = 0;
       local_25 = 1;
-      Library::DKW::TBL::FUN_006ae1c0(&local_8->field_1F84->flags,(undefined4 *)&local_74);
+      Library::DKW::TBL::DArrayAppend(local_8->field_1F84,&local_74);
       this_00 = local_8;
     }
     local_c = pcVar10 + 0x51;

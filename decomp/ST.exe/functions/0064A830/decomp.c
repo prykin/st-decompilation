@@ -8,7 +8,8 @@ int __cdecl FUN_0064a830(int *param_1,undefined4 *param_2)
 
 {
   int iVar1;
-  undefined4 *puVar2;
+  void *pvVar2;
+  undefined4 *puVar3;
   InternalExceptionFrame local_48;
 
   local_48.previous = g_currentExceptionFrame;
@@ -18,12 +19,12 @@ int __cdecl FUN_0064a830(int *param_1,undefined4 *param_2)
     if (*param_1 <= param_1[1]) {
       iVar1 = *param_1 + 10;
       *param_1 = iVar1;
-      iVar1 = Library::DKW::LIB::FUN_006acf50(param_1[2],iVar1 * 5);
-      param_1[2] = iVar1;
+      pvVar2 = Library::DKW::LIB::MemRealloc((AnonPointee_TLOBaseTy_0607 *)param_1[2],iVar1 * 5);
+      param_1[2] = (int)pvVar2;
     }
-    puVar2 = (undefined4 *)(param_1[1] * 5 + param_1[2]);
-    *puVar2 = *param_2;
-    *(undefined1 *)(puVar2 + 1) = *(undefined1 *)(param_2 + 1);
+    puVar3 = (undefined4 *)(param_1[1] * 5 + param_1[2]);
+    *puVar3 = *param_2;
+    *(undefined1 *)(puVar3 + 1) = *(undefined1 *)(param_2 + 1);
     iVar1 = param_1[1];
     param_1[1] = iVar1 + 1;
     g_currentExceptionFrame = local_48.previous;

@@ -206,7 +206,7 @@ LAB_005cd675:
         local_18 = *(undefined4 *)(pcVar7 + 0xb);
         local_29 = 0;
         local_25 = 1;
-        Library::DKW::TBL::FUN_006ae1c0(&pSVar11->field_1F84->flags,&local_74);
+        Library::DKW::TBL::DArrayAppend((DArrayTy *)pSVar11->field_1F84,&local_74);
       }
       local_c = pcVar7 + 0x51;
     } while ((int)local_c < 0x808a70);

@@ -4,19 +4,21 @@
 void __thiscall FUN_0060d810(void *this,undefined4 param_1,undefined4 param_2)
 
 {
-  int iVar1;
-  byte *puVar2;
+  void *pvVar1;
+  int iVar2;
   byte *puVar3;
+  byte *puVar4;
 
   if (*(undefined4 **)((int)this + 0x244) != (undefined4 *)0x0) {
     memset(*(undefined4 **)((int)this + 0x244), 0, 0x2c); /* compiler bulk-zero initialization */
+    iVar2 = 0;
     **(undefined4 **)((int)this + 0x244) = 0;
     *(undefined4 *)(*(int *)((int)this + 0x244) + 4) = 0x33;
-    iVar1 = Library::DKW::LIB::FUN_006aac70(0xcc);
-    *(int *)(*(int *)((int)this + 0x244) + 8) = iVar1;
-    puVar2 = (byte *)(&DAT_007cf730);
-    puVar3 = (byte *)(*(undefined4 **)(*(int *)((int)this + 0x244) + 8));
-    memmove(puVar3, puVar2, 0xcc); /* compiler REP MOVS byte copy */
+    pvVar1 = Library::DKW::LIB::MemAlloc(0xcc);
+    *(void **)(*(int *)((int)this + 0x244) + 8) = pvVar1;
+    puVar3 = (byte *)(&DAT_007cf730);
+    puVar4 = (byte *)(*(undefined4 **)(*(int *)((int)this + 0x244) + 8));
+    memmove(puVar4, puVar3, 0xcc); /* compiler REP MOVS byte copy */
     *(undefined4 *)(*(int *)((int)this + 0x244) + 0xc) = param_1;
     *(undefined4 *)(*(int *)((int)this + 0x244) + 0x10) = param_2;
     *(undefined4 *)(*(int *)((int)this + 0x244) + 0x14) = *(undefined4 *)((int)this + 0x1fd);

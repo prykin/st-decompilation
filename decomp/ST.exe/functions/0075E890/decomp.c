@@ -1,5 +1,5 @@
 
-void FUN_0075e890(int param_1,int param_2,int param_3,int param_4)
+void FUN_0075e890(AnonShape_0075E890_C23EB446 *param_1,int param_2,int param_3,int param_4)
 
 {
   int iVar1;
@@ -13,15 +13,15 @@ void FUN_0075e890(int param_1,int param_2,int param_3,int param_4)
   int local_8;
 
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  local_8 = *(int *)(*(int *)(param_1 + 0x1ba) + 0x18);
+  local_8 = *(int *)(param_1->field_01BA + 0x18);
   iVar4 = (param_4 >> 2) * 0x20 + 4;
   piVar6 = (int *)((param_3 >> 3) * 0x20 + 2);
   iVar5 = (param_2 >> 2) * 0x20 + 4;
-  iVar1 = FUN_0075e980(param_1,iVar5,piVar6,iVar4,(int)local_188);
+  iVar1 = FUN_0075e980((int)param_1,iVar5,piVar6,iVar4,(int)local_188);
   FUN_0075eb40((AnonShape_0075EB40_977462DD *)param_1,iVar5,(int)piVar6,iVar4,iVar1,(int)local_188,
                local_88);
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  param_1 = 4;
+  param_1 = (AnonShape_0075E890_C23EB446 *)0x4;
   pbVar3 = local_88;
   piVar6 = (int *)(local_8 + (param_2 >> 2) * 0x10);
   do {
@@ -43,8 +43,8 @@ void FUN_0075e890(int param_1,int param_2,int param_3,int param_4)
     } while (param_2 != 0);
     piVar6 = piVar6 + 1;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_1 = param_1 + -1;
-  } while (param_1 != 0);
+    param_1 = (AnonShape_0075E890_C23EB446 *)((int)&param_1[-1].field_01BA + 3);
+  } while (param_1 != (AnonShape_0075E890_C23EB446 *)0x0);
   return;
 }
 

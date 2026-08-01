@@ -40,7 +40,7 @@ int __thiscall STRubbishC::RubbishCreatePart(STRubbishC *this)
   do {
     if (*piVar3 == 0) {
       local_8 = iVar7;
-      puVar4 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0x3e);
+      puVar4 = Library::DKW::LIB::MemAlloc(0x3e);
       (&local_c->field_01E5)[iVar2] = puVar4;
       if (puVar4 != (undefined4 *)0x0) {
         for (iVar7 = 0xf; iVar7 != 0; iVar7 = iVar7 + -1) {

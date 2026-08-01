@@ -102,8 +102,7 @@ undefined4 __thiscall STGroupBoatC::GrpAttack(STGroupBoatC *this,int param_1)
               ((iVar6 = pSVar8->vfunc_F8(), pSVar13 = local_8, iVar6 == 1 &&
                (iVar6 = (*pSVar8->vtable->vfunc_F4)((int)local_8->field_0024), pSVar13 = local_8,
                iVar6 == 1)))))) {
-            Library::DKW::TBL::FUN_006ae140
-                      (&local_8->field_020E->flags,uVar15,(undefined4 *)&local_2c);
+            Library::DKW::TBL::DArrayPut(local_8->field_020E,uVar15,&local_2c);
             pSVar13 = local_8;
           }
           sVar5 = sVar5 + 1;
@@ -218,8 +217,7 @@ LAB_0049b073:
                            (dVar10 = (*pSVar12->vtable[5].slots_00_28[1])((int)pSVar13->field_0024),
                            dVar10 == 1)) {
                           local_18 = dVar10;
-                          Library::DKW::TBL::FUN_006ae1c0
-                                    (&pSVar13->field_020E->flags,(undefined4 *)&local_2c);
+                          Library::DKW::TBL::DArrayAppend(pSVar13->field_020E,&local_2c);
                         }
                       }
                     }
@@ -272,8 +270,7 @@ LAB_0049aec9:
                            (dVar10 = (*pSVar12->vtable[5].slots_00_28[1])((int)local_8->field_0024),
                            dVar10 == 1)) {
                           local_18 = dVar10;
-                          Library::DKW::TBL::FUN_006ae1c0
-                                    (&pSVar13->field_020E->flags,(undefined4 *)&local_2c);
+                          Library::DKW::TBL::DArrayAppend(pSVar13->field_020E,&local_2c);
                         }
                         sVar5 = (short)local_c;
                         goto LAB_0049af27;

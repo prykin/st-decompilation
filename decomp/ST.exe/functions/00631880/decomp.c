@@ -29,7 +29,7 @@ uint __thiscall STManRuinC::sub_00631880(STManRuinC *this,undefined4 *param_1,un
       uVar1 = 0xffffffff;
     }
     else {
-      uVar1 = Library::DKW::TBL::FUN_006ae1c0(&this->field_003C->flags,local_2c);
+      uVar1 = Library::DKW::TBL::DArrayAppend((DArrayTy *)this->field_003C,local_2c);
       if (-1 < (int)uVar1) {
         return uVar1 + 1;
       }

@@ -9,7 +9,7 @@ undefined4 __fastcall FUN_004dd350(TLOBaseTy *param_1)
   uint index;
   TLOBaseTy *local_8;
 
-  array = g_playerRuntime[(int)param_1->field_0024].field2168_0x9de;
+  array = *(DArrayTy **)&g_playerRuntime[(int)param_1->field_0024].field_0x9de;
   if (array != (DArrayTy *)0x0) {
     index = 0;
     local_8 = param_1;
@@ -17,16 +17,16 @@ undefined4 __fastcall FUN_004dd350(TLOBaseTy *param_1)
       do {
         DArrayGetElement(array,index,&local_8);
         if (local_8 == param_1) {
-          DArrayRemoveAt(g_playerRuntime[(int)param_1->field_0024].field2168_0x9de,index);
+          DArrayRemoveAt(*(DArrayTy **)&g_playerRuntime[(int)param_1->field_0024].field_0x9de,index);
           break;
         }
         index = index + 1;
-        array = g_playerRuntime[(int)param_1->field_0024].field2168_0x9de;
+        array = *(DArrayTy **)&g_playerRuntime[(int)param_1->field_0024].field_0x9de;
       } while ((int)index < (int)array->count);
     }
-    if ((g_playerRuntime[(int)param_1->field_0024].field2168_0x9de)->count == 0) {
-      DArrayDestroy(g_playerRuntime[(int)param_1->field_0024].field2168_0x9de);
-      g_playerRuntime[(int)param_1->field_0024].field2168_0x9de = (DArrayTy *)0x0;
+    if ((*(DArrayTy **)&g_playerRuntime[(int)param_1->field_0024].field_0x9de)->count == 0) {
+      DArrayDestroy(*(DArrayTy **)&g_playerRuntime[(int)param_1->field_0024].field_0x9de);
+      *(undefined4 *)&g_playerRuntime[(int)param_1->field_0024].field_0x9de = 0;
     }
   }
   return 0;

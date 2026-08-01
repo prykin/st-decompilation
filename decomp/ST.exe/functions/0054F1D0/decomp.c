@@ -239,8 +239,8 @@ LAB_0054f531:
     local_34 = uVar9;
     local_2c = ppAVar1;
     if ((uint)pSVar21->field_0045 < uVar9) {
-      pAVar11 = (AnonPointee_STPlaySystemC_003D *)
-                Library::DKW::LIB::FUN_006acf50((int)pSVar21->field_003D,uVar9);
+      pAVar11 = Library::DKW::LIB::MemRealloc
+                          ((AnonPointee_TLOBaseTy_0607 *)pSVar21->field_003D,uVar9);
       pSVar21->field_003D = pAVar11;
       pSVar21->field_0045 = uVar9;
     }
@@ -488,8 +488,8 @@ LAB_0054f98b:
       goto switchD_0054fb75_caseD_12;
     case 0x31:
       if ((int)pSVar21->field_0045 < (int)local_18) {
-        pAVar11 = (AnonPointee_STPlaySystemC_003D *)
-                  Library::DKW::LIB::FUN_006acf50((int)pSVar21->field_003D,local_18);
+        pAVar11 = Library::DKW::LIB::MemRealloc
+                            ((AnonPointee_TLOBaseTy_0607 *)pSVar21->field_003D,local_18);
         pSVar21->field_003D = pAVar11;
         pSVar21->field_0045 = local_18;
       }

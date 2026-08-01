@@ -38,7 +38,7 @@ void __thiscall FUN_004ce0f0(void *this,int *param_1)
         local_2e = *(undefined2 *)(&DAT_007e19f4 + ((uVar3 & 0xffU) + iVar3) * 4);
         local_EAX_200 = GetPlayerRaceId(*(char *)((int)this + 0x24));
         local_2c = *(undefined2 *)(&DAT_007e2f04 + ((local_EAX_200 & 0xffU) + iVar3) * 4);
-        Library::DKW::TBL::FUN_006ae1c0((uint *)*param_1,local_38);
+        Library::DKW::TBL::DArrayAppend((DArrayTy *)*param_1,local_38);
       }
       iVar3 = iVar3 + 3;
       local_8 = local_8 + 1;

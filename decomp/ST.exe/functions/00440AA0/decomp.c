@@ -74,7 +74,7 @@ STAllPlayersC::_AssignDocks(STAllPlayersC *this,char param_1,DArrayTy *param_2,D
 
   local_70 = (DArrayTy *)0x0;
   local_c8.previous = g_currentExceptionFrame;
-  local_80 = g_playerRuntime[param_1].groups;
+  local_80 = (DArrayTy *)g_playerRuntime[param_1].field5_0x5;
   g_currentExceptionFrame = &local_c8;
   local_40 = this;
   iVar4 = Library::MSVCRT::__setjmp3(local_c8.jumpBuffer,0);
@@ -162,7 +162,7 @@ LAB_00440c19:
       local_10 = (DArrayTy *)0x0;
       local_8 = (DArrayTy *)0x0;
       local_c = (DArrayTy *)0x0;
-      Library::DKW::TBL::FUN_006ae140(&pDVar6->flags,uVar13,&local_10);
+      Library::DKW::TBL::DArrayPut(pDVar6,uVar13,&local_10);
       uVar13 = uVar13 + 1;
     } while ((int)uVar13 < (int)uVar15);
   }
@@ -243,10 +243,10 @@ LAB_00440c19:
                         DArrayGetElement(local_44,uVar13,&local_10);
                         if (local_10 == (DArrayTy *)0x0) {
                           local_10 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,6,1);
-                          Library::DKW::TBL::FUN_006ae140(&pDVar6->flags,uVar13,&local_10);
+                          Library::DKW::TBL::DArrayPut(pDVar6,uVar13,&local_10);
                         }
                         local_3c = local_28[0];
-                        Library::DKW::TBL::FUN_006ae1c0(&local_10->flags,(undefined4 *)&local_3c);
+                        Library::DKW::TBL::DArrayAppend(local_10,&local_3c);
                       }
                     }
                   }
@@ -268,7 +268,7 @@ LAB_00440c19:
   if (0 < (int)dVar1) {
     do {
       local_54 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,local_20,4,1);
-      Library::DKW::TBL::FUN_006ae140(&pDVar6->flags,uVar15,&local_54);
+      Library::DKW::TBL::DArrayPut(pDVar6,uVar15,&local_54);
       uVar15 = uVar15 + 1;
     } while ((int)uVar15 < (int)dVar1);
   }
@@ -308,7 +308,7 @@ LAB_00440c19:
                         [(int)local_16 * (int)g_pathingGrid.planeStride +
                          (int)local_14 * (int)g_pathingGrid.sizeX + (int)local_12] * 0xc9 + -0xc9) /
                       3) / (int)(uint)bVar3;
-          Library::DKW::TBL::FUN_006ae140(&local_10->flags,uVar15,(undefined4 *)&local_3c);
+          Library::DKW::TBL::DArrayPut(local_10,uVar15,&local_3c);
           uVar15 = uVar15 + 1;
         } while ((int)uVar15 < (int)local_64);
       }
@@ -331,7 +331,7 @@ LAB_00440c19:
             local_68 = ((local_68 * 0xc9 + -0xc9) / 3) / (int)(uint)bVar3;
           }
           DArrayGetElement(local_78,uVar15,&local_54);
-          Library::DKW::TBL::FUN_006ae140(&local_54->flags,local_1c,&local_68);
+          Library::DKW::TBL::DArrayPut(local_54,local_1c,&local_68);
           uVar15 = uVar15 + 1;
         } while ((int)uVar15 < (int)local_48);
       }
@@ -358,7 +358,7 @@ LAB_00440c19:
           iVar10 = (*pSVar5->vtable->vfunc_2C)();
           local_c = (DArrayTy *)
                     ((int)(*(int *)(&DAT_007e049c + iVar10 * 4) * local_60) / iVar4 + uStack_3a);
-          Library::DKW::TBL::FUN_006ae140(&pDVar6->flags,local_1c,&local_10);
+          Library::DKW::TBL::DArrayPut(pDVar6,local_1c,&local_10);
           uVar15 = local_20;
         }
         else {
@@ -371,8 +371,8 @@ LAB_00440c19:
                 DArrayGetElement(local_10,uVar13,&local_5c);
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 if (CONCAT22(uStack_58,uStack_5a) < CONCAT22(uStack_30,uStack_32)) {
-                  Library::DKW::TBL::FUN_006ae140(&local_10->flags,uVar15,(undefined4 *)&local_5c);
-                  Library::DKW::TBL::FUN_006ae140(&local_10->flags,uVar13,(undefined4 *)&local_34);
+                  Library::DKW::TBL::DArrayPut(local_10,uVar15,&local_5c);
+                  Library::DKW::TBL::DArrayPut(local_10,uVar13,&local_34);
                 }
                 array = local_10;
                 uVar15 = uVar13;
@@ -418,7 +418,7 @@ LAB_00440c19:
             } while ((int)local_2c < (int)local_64);
           }
           local_c = local_50;
-          Library::DKW::TBL::FUN_006ae140(&local_44->flags,local_1c,&local_10);
+          Library::DKW::TBL::DArrayPut(local_44,local_1c,&local_10);
           uVar15 = local_20;
           pDVar6 = local_44;
         }
@@ -443,10 +443,10 @@ LAB_00440c19:
             if (local_10 == (DArrayTy *)0x0) {
               local_10 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,6,1);
             }
-            Library::DKW::TBL::FUN_006ae1c0(&local_10->flags,(undefined4 *)&local_3c);
+            Library::DKW::TBL::DArrayAppend(local_10,&local_3c);
             local_8 = (DArrayTy *)0x0;
           }
-          Library::DKW::TBL::FUN_006ae140(&pDVar6->flags,uVar13,&local_10);
+          Library::DKW::TBL::DArrayPut(pDVar6,uVar13,&local_10);
           uVar13 = uVar13 + 1;
         } while ((int)uVar13 < (int)uVar15);
       }
@@ -479,10 +479,8 @@ LAB_00440c19:
                     DArrayGetElement(local_10,uVar13,&local_5c);
                     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                     if (CONCAT22(uStack_58,uStack_5a) < CONCAT22(uStack_30,uStack_32)) {
-                      Library::DKW::TBL::FUN_006ae140
-                                (&local_10->flags,uVar15,(undefined4 *)&local_5c);
-                      Library::DKW::TBL::FUN_006ae140
-                                (&local_10->flags,uVar13,(undefined4 *)&local_34);
+                      Library::DKW::TBL::DArrayPut(local_10,uVar15,&local_5c);
+                      Library::DKW::TBL::DArrayPut(local_10,uVar13,&local_34);
                     }
                     uVar15 = uVar13;
                   } while ((int)uVar13 < (int)dVar1);
@@ -528,7 +526,7 @@ LAB_00440c19:
               }
               local_8 = local_50;
             }
-            Library::DKW::TBL::FUN_006ae140(&local_44->flags,local_2c,&local_10);
+            Library::DKW::TBL::DArrayPut(local_44,local_2c,&local_10);
             uVar15 = local_20;
             pDVar6 = local_44;
           }
@@ -549,13 +547,13 @@ LAB_00440c19:
       }
       if (uVar13 == uVar15) {
         local_4a = 0xffff;
-        Library::DKW::TBL::FUN_006ae1c0(&local_70->flags,(undefined4 *)&local_4c);
+        Library::DKW::TBL::DArrayAppend(local_70,&local_4c);
       }
       else if (uVar13 == uVar15 - 1) {
         DArrayGetElement(param_2,uVar13,&local_4a);
-        Library::DKW::TBL::FUN_006ae1c0(&local_70->flags,(undefined4 *)&local_4c);
+        Library::DKW::TBL::DArrayAppend(local_70,&local_4c);
         local_c = local_8;
-        Library::DKW::TBL::FUN_006ae140(&pDVar6->flags,uVar13,&local_10);
+        Library::DKW::TBL::DArrayPut(pDVar6,uVar13,&local_10);
       }
       else {
         uVar15 = uVar13 + 1;
@@ -573,10 +571,10 @@ LAB_00440c19:
         }
         local_60 = uVar13;
         DArrayGetElement(param_2,uVar13,&local_4a);
-        Library::DKW::TBL::FUN_006ae1c0(&local_70->flags,(undefined4 *)&local_4c);
+        Library::DKW::TBL::DArrayAppend(local_70,&local_4c);
         DArrayGetElement(pDVar6,uVar13,&local_10);
         local_c = local_8;
-        Library::DKW::TBL::FUN_006ae140(&pDVar6->flags,uVar13,&local_10);
+        Library::DKW::TBL::DArrayPut(pDVar6,uVar13,&local_10);
         local_2c = 0;
         if (0 < (int)local_20) {
           do {

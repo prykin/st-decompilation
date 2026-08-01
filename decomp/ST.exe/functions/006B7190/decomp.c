@@ -4,13 +4,14 @@ int FUN_006b7190(int *param_1)
 {
   int *piVar1;
   int iVar2;
-  undefined4 *puVar3;
-  uint uVar4;
+  void *pvVar3;
+  undefined4 *puVar4;
   uint uVar5;
-  AnonShape_006B7190_816EEFBC *pAVar6;
+  uint uVar6;
+  AnonShape_006B7190_816EEFBC *pAVar7;
   undefined1 local_14 [4];
   int local_10;
-  int local_c;
+  uint local_c;
   AnonShape_006B7190_816EEFBC *local_8;
 
   piVar1 = param_1;
@@ -25,7 +26,7 @@ LAB_006b719c:
         }
         return iVar2;
       }
-      local_8 = (AnonShape_006B7190_816EEFBC *)Library::DKW::LIB::FUN_006aac70(local_c);
+      local_8 = Library::DKW::LIB::MemAlloc(local_c);
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       iVar2 = (**(code **)(*(int *)*piVar1 + 100))
                         ((int *)*piVar1,&local_10,local_14,0,local_8,&local_c);
@@ -42,7 +43,7 @@ LAB_006b719c:
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_1 == (int *)0x0) {
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_1 = (int *)Library::DKW::LIB::FUN_006aac70(0x18);
+      param_1 = Library::DKW::LIB::MemAlloc(0x18);
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       if (param_1 == (int *)0x0) {
         return -2;
@@ -55,21 +56,21 @@ LAB_006b719c:
     param_1[1] = local_10;
     param_1[2] = (uint)(byte)local_8->field_0001;
     param_1[3] = (int)(short)local_8->field_0002;
-    param_1[4] = local_c + -8;
-    iVar2 = Library::DKW::LIB::FUN_006aac70(*(int *)((int)&local_8->field_0002 + 2));
-    param_1[5] = iVar2;
-    uVar5 = param_1[4];
-    pAVar6 = local_8 + 1;
-    puVar3 = (undefined4 *)param_1[5];
-    for (uVar4 = uVar5 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
-      *puVar3 = *(undefined4 *)pAVar6;
-      pAVar6 = (AnonShape_006B7190_816EEFBC *)((int)&pAVar6->field_0002 + 2);
-      puVar3 = puVar3 + 1;
+    param_1[4] = local_c - 8;
+    pvVar3 = Library::DKW::LIB::MemAlloc(*(uint *)((int)&local_8->field_0002 + 2));
+    param_1[5] = (int)pvVar3;
+    uVar6 = param_1[4];
+    pAVar7 = local_8 + 1;
+    puVar4 = (undefined4 *)param_1[5];
+    for (uVar5 = uVar6 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
+      *puVar4 = *(undefined4 *)pAVar7;
+      pAVar7 = (AnonShape_006B7190_816EEFBC *)((int)&pAVar7->field_0002 + 2);
+      puVar4 = puVar4 + 1;
     }
-    for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-      *(undefined1 *)puVar3 = *(undefined1 *)pAVar6;
-      pAVar6 = (AnonShape_006B7190_816EEFBC *)&pAVar6->field_0001;
-      puVar3 = (undefined4 *)((int)puVar3 + 1);
+    for (uVar6 = uVar6 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
+      *(undefined1 *)puVar4 = *(undefined1 *)pAVar7;
+      pAVar7 = (AnonShape_006B7190_816EEFBC *)&pAVar7->field_0001;
+      puVar4 = (undefined4 *)((int)puVar4 + 1);
     }
   }
   if (*(char *)local_8 == '\x06') goto code_r0x006b72b1;
@@ -81,19 +82,19 @@ code_r0x006b72b1:
     if (((char)param_1[2] == local_8->field_0001) &&
        ((int)(short)local_8->field_0002 == param_1[3] + -1)) {
       param_1[3] = param_1[3] + -1;
-      pAVar6 = local_8 + 1;
-      puVar3 = (undefined4 *)(param_1[5] + param_1[4]);
-      for (uVar5 = local_c - 8U >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
-        *puVar3 = *(undefined4 *)pAVar6;
-        pAVar6 = (AnonShape_006B7190_816EEFBC *)((int)&pAVar6->field_0002 + 2);
-        puVar3 = puVar3 + 1;
+      pAVar7 = local_8 + 1;
+      puVar4 = (undefined4 *)(param_1[5] + param_1[4]);
+      for (uVar6 = local_c - 8 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
+        *puVar4 = *(undefined4 *)pAVar7;
+        pAVar7 = (AnonShape_006B7190_816EEFBC *)((int)&pAVar7->field_0002 + 2);
+        puVar4 = puVar4 + 1;
       }
-      for (uVar5 = local_c - 8U & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-        *(undefined1 *)puVar3 = *(undefined1 *)pAVar6;
-        pAVar6 = (AnonShape_006B7190_816EEFBC *)&pAVar6->field_0001;
-        puVar3 = (undefined4 *)((int)puVar3 + 1);
+      for (uVar6 = local_c - 8 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
+        *(undefined1 *)puVar4 = *(undefined1 *)pAVar7;
+        pAVar7 = (AnonShape_006B7190_816EEFBC *)&pAVar7->field_0001;
+        puVar4 = (undefined4 *)((int)puVar4 + 1);
       }
-      param_1[4] = param_1[4] + local_c + -8;
+      param_1[4] = param_1[4] + (local_c - 8);
       if (param_1[3] == 0) {
         FreeAndNull(&local_8);
         local_8 = (AnonShape_006B7190_816EEFBC *)param_1[5];
@@ -101,14 +102,14 @@ code_r0x006b72b1:
         FUN_006b98c0(piVar1 + 0x14,param_1);
         FreeAndNull(&param_1);
 LAB_006b7373:
-        puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0x14);
-        if (puVar3 == (undefined4 *)0x0) {
+        puVar4 = Library::DKW::LIB::MemAlloc(0x14);
+        if (puVar4 == (undefined4 *)0x0) {
           return -2;
         }
-        puVar3[2] = local_10;
-        puVar3[4] = local_8;
-        puVar3[3] = local_c;
-        FUN_006d2530(piVar1 + 0x11,puVar3);
+        puVar4[2] = local_10;
+        puVar4[4] = local_8;
+        puVar4[3] = local_c;
+        FUN_006d2530(piVar1 + 0x11,puVar4);
       }
     }
     else {

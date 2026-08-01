@@ -128,7 +128,7 @@ LAB_00661a96:
                         array = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,2,10);
                         local_10 = array;
                       }
-                      Library::DKW::TBL::FUN_006ae1c0(&array->flags,&local_24);
+                      Library::DKW::TBL::DArrayAppend(array,&local_24);
                       local_c = local_c + 1;
                     }
                   }

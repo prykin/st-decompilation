@@ -15,7 +15,7 @@ void __thiscall SettMapTy::DoneSettMap(SettMapTy *this)
   int iVar5;
   DArrayTy *pDVar6;
   uint uVar7;
-  void **value;
+  uint *value;
   bool bVar8;
   InternalExceptionFrame local_4c;
   SettMapTy *local_8;
@@ -135,8 +135,8 @@ void __thiscall SettMapTy::DoneSettMap(SettMapTy *this)
     iVar3 = 10;
     do {
       FUN_006b3bb0((int *)g_ddxContext_008075A8,(uint)value[-10]);
-      if (*value != (void *)0x0) {
-        FreeAndNull(value);
+      if ((void *)*value != (void *)0x0) {
+        FreeAndNull((void **)value);
       }
       value = value + 1;
       iVar3 = iVar3 + -1;

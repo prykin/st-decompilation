@@ -1,5 +1,5 @@
-// Find script-owned pointer locals whose stack slot is reused for scalar values.
-// Read-only: only strong conflicts in functions with unsettled type propagation are enabled.
+// Find stale script-owned pointer locals: mixed scalar lifetimes or retired pointees.
+// Read-only: only strong role conflicts or exact [ST_VIEW_ONLY] pointees are enabled.
 // @author OpenAI
 // @category SubmarineTitans.Recovery
 // @menupath Tools.Submarine Titans.Analyze Pointer Role Repairs
@@ -18,14 +18,16 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import ghidra.app.decompiler.DecompInterface;
 import ghidra.app.decompiler.DecompileResults;
+import ghidra.app.decompiler.parallel.DecompilerCallback;
+import ghidra.app.decompiler.parallel.ParallelDecompiler;
 import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
 import ghidra.program.model.data.Pointer;
 import ghidra.program.model.listing.Function;
 import ghidra.program.model.listing.FunctionIterator;
 import ghidra.program.model.listing.Variable;
+import ghidra.util.task.TaskMonitor;
 
 public class STPointerRoleRepairAnalyzer extends GhidraScript {
     private static final String POINTER_MARKER = "[STPointerShapeApplier]";
@@ -50,38 +52,22 @@ public class STPointerRoleRepairAnalyzer extends GhidraScript {
         Path directory = programDirectory(selected);
         Files.createDirectories(directory);
 
-        DecompInterface decompiler = new DecompInterface();
-        decompiler.toggleCCode(true);
-        decompiler.toggleSyntaxTree(true);
-        if (!decompiler.openProgram(currentProgram))
-            throw new IllegalStateException("Decompiler could not open the current program");
-        try {
-            Address only = onlyFunction();
-            if (only != null) {
-                Function function = currentProgram.getFunctionManager().getFunctionAt(only);
-                if (function == null)
-                    throw new IllegalArgumentException("No function at " + addr(only));
-                List<Variable> candidates = candidates(function);
-                if (!candidates.isEmpty()) {
-                    candidateFunctions++;
-                    analyze(function, candidates, decompiler);
-                }
-            }
-            else {
-                FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
-                while (functions.hasNext()) {
-                    monitor.checkCancelled();
-                    Function function = functions.next();
-                    List<Variable> candidates = candidates(function);
-                    if (candidates.isEmpty()) continue;
-                    candidateFunctions++;
-                    analyze(function, candidates, decompiler);
-                }
+        List<Work> work = new ArrayList<>();
+        Address only = onlyFunction();
+        if (only != null) {
+            Function function = currentProgram.getFunctionManager().getFunctionAt(only);
+            if (function == null)
+                throw new IllegalArgumentException("No function at " + addr(only));
+            queue(function, work);
+        }
+        else {
+            FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
+            while (functions.hasNext()) {
+                monitor.checkCancelled();
+                queue(functions.next(), work);
             }
         }
-        finally {
-            decompiler.dispose();
-        }
+        analyzeParallel(work);
         proposals.sort(Comparator.comparing((Proposal row) -> row.functionAddress)
             .thenComparing(row -> row.locator));
         writeTsv(directory.resolve("pointer_role_repair_proposals.tsv"));
@@ -108,19 +94,80 @@ public class STPointerRoleRepairAnalyzer extends GhidraScript {
         return result;
     }
 
-    private void analyze(Function function, List<Variable> candidates,
-            DecompInterface decompiler) {
-        DecompileResults result = decompiler.decompileFunction(function, DECOMPILE_TIMEOUT, monitor);
-        if (!result.decompileCompleted() || result.getDecompiledFunction() == null) {
-            failures.add(addr(function.getEntryPoint()) + "\t" + tsv(function.getName(true)) +
-                "\t" + tsv(result == null ? "no result" : result.getErrorMessage()));
+    private void queue(Function function, List<Work> work) {
+        List<Variable> candidates = candidates(function);
+        if (candidates.isEmpty()) return;
+        candidateFunctions++;
+        List<Variable> roleCandidates = new ArrayList<>();
+        for (Variable variable : candidates) {
+            if (!viewOnlyPointee(variable)) {
+                roleCandidates.add(variable);
+                continue;
+            }
+            String reason = "pointer-shape-owned local targets a datatype retired as " +
+                "[ST_VIEW_ONLY]; reset the persistent pointer so generated type lifecycle " +
+                "can revalidate and remove the projection after its final live use disappears";
+            proposals.add(new Proposal(true, function, variable, "high", 0, 0, 0,
+                0, 0, reason));
+        }
+        if (!roleCandidates.isEmpty())
+            work.add(new Work(function, roleCandidates));
+    }
+
+    private void analyzeParallel(List<Work> work) throws Exception {
+        if (work.isEmpty()) return;
+        Map<Address, Work> byAddress = new HashMap<>();
+        List<Function> functions = new ArrayList<>();
+        for (Work item : work) {
+            byAddress.put(item.function.getEntryPoint(), item);
+            functions.add(item.function);
+        }
+        DecompilerCallback<Decompiled> callback = new DecompilerCallback<>(
+                currentProgram, dec -> {
+                    dec.toggleCCode(true);
+                    dec.toggleSyntaxTree(true);
+                }) {
+            @Override
+            public Decompiled process(DecompileResults result,
+                    TaskMonitor callbackMonitor) {
+                Function function = result.getFunction();
+                if (!result.decompileCompleted() ||
+                        result.getDecompiledFunction() == null)
+                    return new Decompiled(function, "",
+                        result.getErrorMessage() == null ?
+                            "decompile failed" : result.getErrorMessage());
+                return new Decompiled(function,
+                    result.getDecompiledFunction().getC(), "");
+            }
+        };
+        callback.setTimeout(DECOMPILE_TIMEOUT);
+        try {
+            List<Decompiled> results = ParallelDecompiler.decompileFunctions(
+                callback, functions, monitor);
+            results.removeIf(value -> value == null || value.function == null);
+            results.sort(Comparator.comparing(value -> value.function.getEntryPoint()));
+            for (Decompiled result : results)
+                analyze(byAddress.get(result.function.getEntryPoint()), result);
+        }
+        finally {
+            callback.dispose();
+        }
+    }
+
+    private void analyze(Work work, Decompiled result) {
+        if (work == null || result.function == null) return;
+        Function function = work.function;
+        List<Variable> roleCandidates = work.candidates;
+        if (!result.error.isBlank()) {
+            failures.add(addr(function.getEntryPoint()) + "\t" +
+                tsv(function.getName(true)) + "\t" + tsv(result.error));
             return;
         }
-        String c = result.getDecompiledFunction().getC();
+        String c = result.c;
         if (!c.contains("Type propagation algorithm not settling")) return;
         unsettledFunctions++;
         Map<String, String> scalarVariables = scalarVariables(c);
-        for (Variable variable : candidates) {
+        for (Variable variable : roleCandidates) {
             String name = variable.getName();
             int scalarCasts = count(c, Pattern.compile(
                 "\\((?:u?int|u?short|u?char|byte|undefined[1248]|long|ulong)\\)\\s*" +
@@ -146,6 +193,13 @@ public class STPointerRoleRepairAnalyzer extends GhidraScript {
             proposals.add(new Proposal(apply, function, variable, confidence, scalarCasts,
                 assignments.all, assignments.narrow, addressMember, memberUses, reason));
         }
+    }
+
+    private boolean viewOnlyPointee(Variable variable) {
+        if (!(variable.getDataType() instanceof Pointer pointer) ||
+                pointer.getDataType() == null) return false;
+        String description = pointer.getDataType().getDescription();
+        return description != null && description.contains("[ST_VIEW_ONLY]");
     }
 
     private Map<String, String> scalarVariables(String c) {
@@ -255,9 +309,11 @@ public class STPointerRoleRepairAnalyzer extends GhidraScript {
             "auto_apply=" + proposals.stream().filter(row -> row.apply).count(),
             "review_only=" + proposals.stream().filter(row -> !row.apply).count(),
             "decompile_failures=" + failures.size(),
-            "policy=Only STPointerShapeApplier-owned four-byte locals in unsettled functions are considered.",
+            "policy=STPointerShapeApplier-owned four-byte locals are considered; a view-only " +
+                "pointee is retired without requiring decompiler instability.",
             "policy_apply=Automatic reset requires a narrow scalar source, or both a scalar source " +
-                "and an explicit scalar cast. Address-of-member use alone remains review-only.",
+                "and an explicit scalar cast. A view-only pointee is the independent retirement " +
+                "case. Address-of-member use alone remains review-only.",
             "effect=Reset to undefined4 removes a function-wide pointer constraint; it does not rename or split variables."),
             StandardCharsets.UTF_8);
     }
@@ -282,6 +338,8 @@ public class STPointerRoleRepairAnalyzer extends GhidraScript {
             .replace("\r", "\\r").replace("\n", "\\n").replace("\t", "\\t") + "\"";
     }
 
+    private record Work(Function function, List<Variable> candidates) { }
+    private record Decompiled(Function function, String c, String error) { }
     private record AssignmentEvidence(int all, int narrow) {}
     private class Proposal {
         final boolean apply;

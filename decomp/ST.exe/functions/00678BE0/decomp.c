@@ -3,16 +3,19 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_plr.cpp
-   AiPlrClassTy::PrepareToSave */
+   AiPlrClassTy::PrepareToSave
 
-undefined4 * __thiscall AiPlrClassTy::PrepareToSave(AiPlrClassTy *this,uint *param_1)
+   [STPrototypeApplier] Propagated return.
+   Evidence: 00678BE0 returns used as parameter 2 of STPlaySystemC::SaveObjData @ 0067CA5F */
+
+byte * __thiscall AiPlrClassTy::PrepareToSave(AiPlrClassTy *this,uint *param_1)
 
 {
   code *pcVar1;
   AiPlrClassTy *pAVar2;
   int errorCode;
   int iVar3;
-  undefined4 *puVar4;
+  byte *pbVar4;
   AnonShape_0067D3B0_B421D52F *pAVar5;
   InternalExceptionFrame local_58;
   AiPlrClassTy *local_14;
@@ -44,7 +47,7 @@ undefined4 * __thiscall AiPlrClassTy::PrepareToSave(AiPlrClassTy *this,uint *par
       FreeAndNull(&local_8);
     }
     g_currentExceptionFrame = local_58.previous;
-    return (undefined4 *)local_c;
+    return local_c;
   }
   g_currentExceptionFrame = local_58.previous;
   if (local_8 != (undefined4 *)0x0) {
@@ -59,6 +62,6 @@ undefined4 * __thiscall AiPlrClassTy::PrepareToSave(AiPlrClassTy *this,uint *par
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(errorCode,0,"E:\\__titans\\ai\\ai_plr.cpp",0x62);
-  return (undefined4 *)0x0;
+  return (byte *)0x0;
 }
 

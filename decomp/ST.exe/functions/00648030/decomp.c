@@ -19,6 +19,7 @@ int __thiscall AiBossClassTy::GetMessage(AiBossClassTy *this,STMessage *message)
   AiPlrClassTy *pAVar4;
   int iVar5;
   uint uVar6;
+  uint uVar7;
   char *pcVar8;
   byte *puVar9;
   char cVar10;
@@ -51,7 +52,7 @@ int __thiscall AiBossClassTy::GetMessage(AiBossClassTy *this,STMessage *message)
   if (SVar1 < MESS_TORPHIT) {
     if (SVar1 == MESS_SHARED_010F) {
       local_8 = 0;
-      local_c = (byte *)PrepareToSave(local_10,&local_8);
+      local_c = PrepareToSave(local_10,&local_8);
       STPlaySystemC::SaveObjData(g_playSystem_00802A38,PTR_s_AIBOSS_0079d614,local_c,local_8,0xc);
       if (local_c != (byte *)0x0) {
         FreeAndNull(&local_c);
@@ -123,6 +124,7 @@ int __thiscall AiBossClassTy::GetMessage(AiBossClassTy *this,STMessage *message)
     pcVar8 = pcVar12 + -uVar6;
     pcVar12 = (char *)&DAT_0080c52e;
     memmove(pcVar12, pcVar8, uVar6); /* compiler REP MOVS byte copy */
+    uVar7 = 0;
     uVar6 = 0xffffffff;
     pcVar8 = (char *)&DAT_0080c3c3;
     do {

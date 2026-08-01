@@ -27,6 +27,7 @@ void __thiscall HelpPanelTy::TechProc(HelpPanelTy *this,uint param_1,byte param_
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined3 extraout_var_01;
   char *pcVar10;
+  uint uVar11;
   uint uVar12;
   char *pcVar13;
   AnonPointee_HelpPanelTy_0068 *pAVar14;
@@ -265,7 +266,7 @@ LAB_00516f6b:
     local_23 = (-(uint)((char)local_c != '\x03') & 0xfffffffc) + 0xe0;
     local_24 = 1;
     local_1f = local_18;
-    Library::DKW::TBL::FUN_006ae1c0((uint *)this_00->field_01D7,&local_34);
+    Library::DKW::TBL::DArrayAppend((DArrayTy *)this_00->field_01D7,&local_34);
   }
   local_8 = local_8 + 0xf;
   ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
@@ -328,6 +329,7 @@ LAB_00516f6b:
       pcVar10 = pcVar13 + -uVar12;
       pcVar13 = (char *)&DAT_0080f33a;
       memmove(pcVar13, pcVar10, uVar12); /* compiler REP MOVS byte copy */
+      uVar11 = 0;
       for (puVar9 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar9 != (uint *)0x0;
           puVar9 = Library::MSVCRT::FUN_0072e560(puVar9,'\n')) {
         *(undefined1 *)puVar9 = 0x20;
@@ -347,7 +349,7 @@ LAB_00516f6b:
       local_23 = local_10;
       local_24 = 2;
       local_1f = local_18;
-      Library::DKW::TBL::FUN_006ae1c0((uint *)this_00->field_01D7,&local_34);
+      Library::DKW::TBL::DArrayAppend((DArrayTy *)this_00->field_01D7,&local_34);
       local_8 = local_8 + *(int *)(pbVar8 + 8);
     }
     if (local_14 != 0) {
@@ -387,7 +389,7 @@ LAB_00516f6b:
       local_23 = local_14;
       local_24 = 3;
       local_1f = local_18;
-      Library::DKW::TBL::FUN_006ae1c0((uint *)this_00->field_01D7,&local_34);
+      Library::DKW::TBL::DArrayAppend((DArrayTy *)this_00->field_01D7,&local_34);
       local_8 = local_8 + *(int *)(pbVar8 + 8);
     }
   }

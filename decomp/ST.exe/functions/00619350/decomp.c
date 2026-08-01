@@ -13,7 +13,7 @@ void __thiscall STJumpMineC::sub_00619350(STJumpMineC *this,undefined4 *param_1)
   byte *puVar3;
   byte *puVar4;
 
-  puVar1 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0x104);
+  puVar1 = Library::DKW::LIB::MemAlloc(0x104);
   this->field_014C = this->field_001C;
   puVar3 = (byte *)&this->field_0x4d;
   puVar4 = (byte *)(puVar1);

@@ -91,8 +91,7 @@ int __thiscall STCrabC::GetMessage(STCrabC *this,STMessage *message)
   if (SVar2 == MESS_SHARED_010F) {
     local_14 = STT3DSprC::SaveSpr((STT3DSprC *)&this_00->field_01D5,&local_8);
     local_18 = (byte *)STAllPlayersC::SaveGObjData((STAllPlayersC *)this_00,(int *)&local_10);
-    local_c = (STSprGameObjC_field_0259State *)
-              Library::DKW::LIB::FUN_006aac70(local_10 + 0x68 + local_8);
+    local_c = Library::DKW::LIB::MemAlloc(local_10 + 0x68 + local_8);
     if (local_14 == (STSprGameObjC_field_0259State *)0x0) {
       g_currentExceptionFrame = local_80.previous;
       return 0;
@@ -132,6 +131,7 @@ int __thiscall STCrabC::GetMessage(STCrabC *this,STMessage *message)
     pSVar12 = local_14;
     pSVar14 = local_c + 0x19;
     memmove(pSVar14, pSVar12, local_8); /* compiler REP MOVS byte copy */
+    uVar10 = 0;
     *(uint *)((int)local_c + local_8 + 100) = local_10;
     pbVar13 = local_18;
     pbVar15 = (byte *)((int)local_c + local_8 + 0x68);
@@ -344,7 +344,7 @@ cf_error_exit_00578B5D:
     this_00->field_0x6c = ((byte *)((int)local_20 + 0x5a))[0];
     this_00->field_0x6d = bVar4;
     *(STSprGameObjC_field_0259State *)&this_00->field_0x23d = local_20[0xc];
-    local_3c = (void *)Library::DKW::LIB::FUN_006aac70(0x44);
+    local_3c = Library::DKW::LIB::MemAlloc(0x44);
     if (local_3c != (void *)0x0) {
       iVar7 = 0;
       do {

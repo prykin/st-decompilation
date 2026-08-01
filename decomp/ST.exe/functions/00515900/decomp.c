@@ -87,7 +87,7 @@ HelpPanelTy::DrawWeapon
       local_17 = param_3;
       local_13 = (uint)param_5;
       local_18 = 4;
-      Library::DKW::TBL::FUN_006ae1c0((uint *)local_8->field_01D7,&local_28);
+      Library::DKW::TBL::DArrayAppend((DArrayTy *)local_8->field_01D7,&local_28);
       iVar2 = *(int *)(pbVar4 + 8);
       if (iVar2 < 0x10) {
         iVar2 = 0xf;

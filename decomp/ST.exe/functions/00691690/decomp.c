@@ -105,8 +105,8 @@ LAB_0069177d:
     iVar11 = local_20;
     iVar14 = (int)(0x28 / (longlong)*(int *)(&DAT_007dfa90 + local_20 * 4));
     ST3DSMAPContext::sub_006DC050
-              (this_00,0,0,0,iVar14,iVar14,0,0xc0240000,0,0x40240000,0,0xc0240000,0,0x40240000,
-               0x4024000000000000,0x4023ee97865e3540,0);
+              (this_00,0,0,0,iVar14,iVar14,-10.0,10.0,-10.0,10.0,0x4024000000000000,
+               0x4023ee97865e3540,0);
     ST3DSMAPContext::sub_006DD610(this_00,4,0,0x40240000,0,0x40240000);
     *(undefined4 *)&this_00->field_0x128 = 0;
     ST3DSMAPContext::sub_006DD790(this_00,149.97069);
@@ -127,7 +127,7 @@ LAB_0069177d:
           pcVar5 = thunk_FUN_006a2d00(1,local_c,uVar8,1,0);
           puVar9 = Library::Ourlib::MFSTMAP::FUN_006f0cd0(param_1,pcVar5,0);
           if (puVar9 != (ushort *)0x0) {
-            puVar4 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0xa9);
+            puVar4 = Library::DKW::LIB::MemAlloc(0xa9);
             local_1c = (int *)(local_c * 6);
             local_28 = (int *)((int)local_14 +
                               ((int)local_1c + local_8 + iVar11 * 0x49) * 8 + 0x1954);
@@ -203,7 +203,7 @@ LAB_00691a65:
                     *(undefined4 *)(*piVar2 + 0x25) = 0;
                   }
                   if (iVar11 == 0) {
-                    puVar10 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0x640);
+                    puVar10 = Library::DKW::LIB::MemAlloc(0x640);
                     *(undefined4 **)
                      ((int)local_14 +
                      (int)local_10 * 4 + (local_18 + ((int)local_1c + local_8) * 2) * 0x3c) =
@@ -229,7 +229,7 @@ LAB_00691a65:
           pcVar5 = thunk_FUN_006a2d00(0,local_c,uVar8,0,1);
           puVar9 = Library::Ourlib::MFSTMAP::FUN_006f0cd0(param_1,pcVar5,0);
           if (puVar9 != (ushort *)0x0) {
-            puVar4 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0x59);
+            puVar4 = Library::DKW::LIB::MemAlloc(0x59);
             local_18 = local_c * 6 + iVar11 * 0x92;
             piVar2 = (int *)((int)local_14 + (local_18 + local_8) * 4 + 0x1a74);
             *piVar2 = (int)puVar4;
@@ -293,7 +293,7 @@ LAB_00691a65:
                   *psVar1 = *psVar1 + 1;
                 }
                 if (iVar11 == 0) {
-                  puVar10 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0x640);
+                  puVar10 = Library::DKW::LIB::MemAlloc(0x640);
                   *(undefined4 **)
                    ((int)local_14 + ((int)local_10 + (local_8 + (local_c * 3 + 0x36) * 2) * 10) * 4)
                        = puVar10;
@@ -315,7 +315,7 @@ LAB_00691a65:
           pcVar5 = thunk_FUN_006a2d00(3,local_c,uVar8,1,1);
           puVar9 = Library::Ourlib::MFSTMAP::FUN_006f0cd0(param_1,pcVar5,0);
           if (puVar9 != (ushort *)0x0) {
-            puVar4 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0x45);
+            puVar4 = Library::DKW::LIB::MemAlloc(0x45);
             local_18 = local_c * 6 + iVar11 * 0x92;
             local_1c = (int *)((int)local_14 + (local_18 + local_8) * 4 + 0x1b08);
             *local_1c = (int)puVar4;
@@ -378,7 +378,7 @@ LAB_00691a65:
                   *psVar1 = *psVar1 + 1;
                 }
                 if (iVar11 == 0) {
-                  puVar10 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0x640);
+                  puVar10 = Library::DKW::LIB::MemAlloc(0x640);
                   *(undefined4 **)
                    ((int)local_14 + ((int)local_10 + (local_8 + (local_c * 3 + 0x90) * 2) * 5) * 4)
                        = puVar10;

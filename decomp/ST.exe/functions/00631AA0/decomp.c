@@ -7,7 +7,7 @@ FUN_00631aa0(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
 
 {
   DArrayTy *pDVar1;
-  uint uVar2;
+  int iVar2;
   undefined4 local_30 [4];
   undefined4 local_20;
   undefined4 local_1c;
@@ -27,9 +27,9 @@ FUN_00631aa0(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
     pDVar1 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x29,10);
     *(DArrayTy **)((int)this + 0x6d) = pDVar1;
   }
-  if (*(uint **)((int)this + 0x6d) != (uint *)0x0) {
-    uVar2 = Library::DKW::TBL::FUN_006ae1c0(*(uint **)((int)this + 0x6d),local_30);
-    return uVar2 + 1;
+  if (*(DArrayTy **)((int)this + 0x6d) != (DArrayTy *)0x0) {
+    iVar2 = Library::DKW::TBL::DArrayAppend(*(DArrayTy **)((int)this + 0x6d),local_30);
+    return iVar2 + 1;
   }
   return 1;
 }

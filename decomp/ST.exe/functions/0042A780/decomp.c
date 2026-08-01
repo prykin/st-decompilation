@@ -29,7 +29,7 @@ void __cdecl FUN_0042a780(int *param_1)
         } while (*(int *)(iVar2 + 0x40) != *piVar3);
         if (piVar3 == (int *)0x0) {
 LAB_0042a7e7:
-          Library::DKW::TBL::FUN_006ae1c0(&array->flags,(void **)(iVar2 + 0x40));
+          Library::DKW::TBL::DArrayAppend(array,(void **)(iVar2 + 0x40));
           FreeAndNull((void **)(iVar2 + 0x40));
         }
       }

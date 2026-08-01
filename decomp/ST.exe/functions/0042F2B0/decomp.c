@@ -40,9 +40,9 @@ STAllPlayersC::UnRegisterObject
 
   iVar9 = (int)param_1;
   local_c = 0;
-  local_14 = g_playerRuntime[iVar9].objects;
-  local_1c = g_playerRuntime[iVar9].groups;
-  local_20 = (DArrayTy *)g_playerRuntime[iVar9].field479_0x2e7;
+  local_14 = (DArrayTy *)g_playerRuntime[iVar9].field6_0x9;
+  local_1c = (DArrayTy *)g_playerRuntime[iVar9].field5_0x5;
+  local_20 = (DArrayTy *)g_playerRuntime[iVar9].field603_0x2e7;
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
   local_18 = this;
@@ -78,21 +78,23 @@ STAllPlayersC::UnRegisterObject
         iVar9 = (**(code **)(*param_4 + 0x2c))();
         if ((*(uint *)(&DAT_00801450 + (iVar9 + 0x41U >> 5) * 4) &
             1 << ((byte)(iVar9 + 0x41U) & 0x1f)) == 0) goto LAB_0042f42f;
-        /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
+        /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
         iVar9 = param_1 * 0xa62;
         *(int *)&g_playerRuntime[param_1].field_0x33 =
              *(int *)&g_playerRuntime[param_1].field_0x33 + -1;
       }
       else {
-        /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
+        /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
         iVar9 = param_1 * 0xa62;
-        g_playerRuntime[param_1].field20_0x2f = g_playerRuntime[param_1].field20_0x2f + -1;
+        *(int *)&g_playerRuntime[param_1].field_0x2f =
+             *(int *)&g_playerRuntime[param_1].field_0x2f + -1;
       }
     }
     else {
-      /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
+      /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
       iVar9 = param_1 * 0xa62;
-      g_playerRuntime[param_1].field19_0x2b = g_playerRuntime[param_1].field19_0x2b + -1;
+      *(int *)&g_playerRuntime[param_1].field_0x2b =
+           *(int *)&g_playerRuntime[param_1].field_0x2b + -1;
     }
     *(int *)(&g_playerRuntime[0].field_0x37 + iVar9) =
          *(int *)(&g_playerRuntime[0].field_0x37 + iVar9) + 1;
@@ -115,20 +117,20 @@ LAB_0042f42f:
            (iVar9 = (**(code **)(*param_4 + 0x2c))(),
            (*(uint *)(&DAT_00800f80 + (iVar9 - 0x32U >> 5) * 4) &
            1 << ((byte)(iVar9 - 0x32U) & 0x1f)) == 0)) goto LAB_0042f547;
-        /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
+        /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
         iVar9 = param_1 * 0xa62;
         *(int *)&g_playerRuntime[param_1].field_0x43 =
              *(int *)&g_playerRuntime[param_1].field_0x43 + -1;
       }
       else {
-        /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
+        /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
         iVar9 = param_1 * 0xa62;
         *(int *)&g_playerRuntime[param_1].field_0x3f =
              *(int *)&g_playerRuntime[param_1].field_0x3f + -1;
       }
     }
     else {
-      /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
+      /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
       iVar9 = param_1 * 0xa62;
       *(int *)&g_playerRuntime[param_1].field_0x3b =
            *(int *)&g_playerRuntime[param_1].field_0x3b + -1;
@@ -281,12 +283,12 @@ LAB_0042f547:
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar5 = (**(code **)(*param_4 + 0x2c))();
     if (iVar5 == 0x33) {
-      *(int *)&g_playerRuntime[iVar9].field317_0x15b =
-           *(int *)&g_playerRuntime[iVar9].field317_0x15b + -1;
+      *(int *)&g_playerRuntime[iVar9].field326_0x15b =
+           *(int *)&g_playerRuntime[iVar9].field326_0x15b + -1;
     }
     else if (iVar5 == 0x62) {
-      *(int *)&g_playerRuntime[iVar9].field320_0x15f =
-           *(int *)&g_playerRuntime[iVar9].field320_0x15f + -1;
+      *(int *)&g_playerRuntime[iVar9].field329_0x15f =
+           *(int *)&g_playerRuntime[iVar9].field329_0x15f + -1;
     }
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar5 = (**(code **)(*param_4 + 0x2c))();
@@ -452,15 +454,16 @@ LAB_0042f547:
   pDVar8 = local_14;
   uVar10 = param_3;
   if ((ushort)param_2 != 0xffff) {
-    local_10->vfunc_04(param_3);
-    Library::DKW::TBL::FUN_006ae140(&local_14->flags,param_3 & 0xffff,&local_c);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (**(code **)(local_10->vtable + 4))(param_3);
+    Library::DKW::TBL::DArrayPut(local_14,param_3 & 0xffff,&local_c);
     sVar4 = thunk_FUN_004233c0(pSVar3);
     if ((sVar4 != 0) || (iVar9 = thunk_FUN_004233a0((int)pSVar3), iVar9 != 0)) goto LAB_00430018;
     thunk_FUN_0054cf70(g_playSystem_00802A38,pSVar3->field_0008);
     pDVar8 = local_1c;
     uVar10 = param_2;
   }
-  Library::DKW::TBL::FUN_006ae140(&pDVar8->flags,uVar10 & 0xffff,&local_c);
+  Library::DKW::TBL::DArrayPut(pDVar8,uVar10 & 0xffff,&local_c);
 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
 LAB_00430018:
   iVar9 = (**(code **)(*param_4 + 0x2c))();
@@ -479,7 +482,7 @@ LAB_00430018:
         }
       }
       local_8 = 0xffff;
-      Library::DKW::TBL::FUN_006ae140(&pDVar8->flags,uVar10,&local_8);
+      Library::DKW::TBL::DArrayPut(pDVar8,uVar10,&local_8);
     }
   }
   g_currentExceptionFrame = local_68.previous;

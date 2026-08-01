@@ -1,2 +1,0 @@
-apply	id	address	expected_name	expected_signature	owner	method	calling_convention	return_type	parameters	confidence	source_file	comment
-1	ai_event_get_message_v1	00652810	FUN_00652810	uint * __thiscall FUN_00652810(void * this, int param_1)	AiEventClassTy	GetMessage	__thiscall	/void	message=/SubmarineTitans/Recovered/STMessage *	high	E:\\__titans\\ai\\ai_event.cpp	Handles an STMessage for AiEventClassTy. Maps the external message ID to an internal AI event trigger, finds matching event records, evaluates their conditions, and interprets their action lists.

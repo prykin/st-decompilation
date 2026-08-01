@@ -18,7 +18,7 @@ int __thiscall STLightC::sub_0061D9C0(STLightC *this,ushort *param_1,int *param_
   uint uVar6;
   int iVar7;
   ushort *puVar8;
-  int local_c;
+  uint local_c;
   int local_8;
 
   local_8 = 0;
@@ -39,7 +39,7 @@ int __thiscall STLightC::sub_0061D9C0(STLightC *this,ushort *param_1,int *param_
     param_3 = 0;
   }
   uVar6 = this->field_0093;
-  puVar1 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(uVar6 * 4);
+  puVar1 = Library::DKW::LIB::MemAlloc(uVar6 * 4);
   this->field_009B = puVar1;
   puVar8 = param_1;
   for (uVar3 = uVar6 & 0x3fffffff; uVar3 != 0; uVar3 = uVar3 - 1) {
@@ -68,7 +68,7 @@ int __thiscall STLightC::sub_0061D9C0(STLightC *this,ushort *param_1,int *param_
     } while (iVar4 != 0);
   }
   *param_2 = local_8;
-  pvVar2 = (void *)Library::DKW::LIB::FUN_006aac70(local_c);
+  pvVar2 = Library::DKW::LIB::MemAlloc(local_c);
   this->field_009F = pvVar2;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_2 = (int *)((int)pvVar2 + this->field_0093 * 4);
@@ -96,7 +96,7 @@ int __thiscall STLightC::sub_0061D9C0(STLightC *this,ushort *param_1,int *param_
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = param_2 + iVar4 * 5;
       local_c = local_c + 1;
-    } while (local_c < this->field_0093);
+    } while ((int)local_c < this->field_0093);
   }
   return param_3;
 }

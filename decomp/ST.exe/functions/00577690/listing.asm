@@ -1,4 +1,4 @@
-FUN_00577690:
+GameSystemC::sub_00577690:
 00577690  56                        PUSH ESI
 00577691  8B F1                     MOV ESI,ECX
 00577693  8B 4E 18                  MOV ECX,dword ptr [ESI + 0x18]

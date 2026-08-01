@@ -16,9 +16,9 @@ uint __cdecl FUN_0067f740(char *text,undefined4 param_2)
   if ((int)uVar1 < 0) {
     return uVar1;
   }
-  /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(PTR_00848a28, uVar1) (runtime stride) */
-  if ((uVar1 < PTR_00848a28->count) &&
-     (puVar2 = (undefined4 *)(PTR_00848a28->elementSize * uVar1 + (int)PTR_00848a28->data),
+  /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(g_array_00848A28, uVar1) (runtime stride) */
+  if ((uVar1 < g_array_00848A28->count) &&
+     (puVar2 = (undefined4 *)(g_array_00848A28->elementSize * uVar1 + (int)g_array_00848A28->data),
      puVar2 != (undefined4 *)0x0)) {
     *puVar2 = param_2;
     return uVar1;

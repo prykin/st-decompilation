@@ -409,6 +409,7 @@ address	status	proposed_name	detail
 005711D0	disabled	STAppC::sub_005711D0	all apply flags are 0
 00571240	disabled	InternalExceptionFrame::sub_00571240	all apply flags are 0
 005713B0	disabled	STAppC::sub_005713B0	all apply flags are 0
+00577690	disabled	GameSystemC::sub_00577690	all apply flags are 0
 0057BF20	disabled	STFishC::sub_0057BF20	all apply flags are 0
 0057CB30	disabled	STFishC::sub_0057CB30	all apply flags are 0
 0057D420	disabled	STFishC::sub_0057D420	all apply flags are 0

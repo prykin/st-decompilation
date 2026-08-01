@@ -193,7 +193,22 @@ public class STGlobalAggregateApplier extends GhidraScript {
         String block = MARKER + " " + row.get("aggregate_id") + ".\nEvidence: " + row.get("evidence");
         String old = listing.getComment(CommentType.PLATE, address);
         if (old == null || old.isBlank()) listing.setComment(address, CommentType.PLATE, block);
-        else if (!old.contains(MARKER)) listing.setComment(address, CommentType.PLATE, old + "\n\n" + block);
+        else {
+            List<String> retained = new ArrayList<>();
+            boolean markerLine = false;
+            for (String line : old.split("\\R")) {
+                if (line.contains(MARKER)) { markerLine = true; continue; }
+                if (markerLine && line.startsWith("Evidence:")) {
+                    markerLine = false; continue;
+                }
+                markerLine = false;
+                retained.add(line);
+            }
+            while (!retained.isEmpty() && retained.get(retained.size() - 1).isBlank())
+                retained.remove(retained.size() - 1);
+            listing.setComment(address, CommentType.PLATE,
+                retained.isEmpty() ? block : String.join("\n", retained) + "\n\n" + block);
+        }
     }
     private void conflict(Map<String, String> row, String detail) {
         report.add(new Report(row.get("address"), row.get("aggregate_id"), "conflict", detail));

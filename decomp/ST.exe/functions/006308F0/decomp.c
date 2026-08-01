@@ -67,7 +67,7 @@ STManRuinC::sub_006308F0
       local_1c = (short)param_3;
       local_1e = (short)param_2;
       local_c = param_6;
-      index = Library::DKW::TBL::FUN_006ae1c0(&pSVar3->flags,(undefined4 *)&local_20);
+      index = Library::DKW::TBL::DArrayAppend((DArrayTy *)pSVar3,&local_20);
       if (-1 < (int)index) {
         if (param_4 == 1) {
           this->field_0034[iVar5] = 1;

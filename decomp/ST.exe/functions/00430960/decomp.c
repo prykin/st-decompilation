@@ -20,15 +20,15 @@ STAllPlayersC::UnRegisterTorpedo(STAllPlayersC *this,short param_1,int param_2)
   g_currentExceptionFrame = &local_4c;
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (errorCode == 0) {
-    if (PTR_007fa130 != (DArrayTy *)0x0) {
-      DArrayGetElement(PTR_007fa130,(int)param_1,&local_8);
+    if (g_array_007FA130 != (DArrayTy *)0x0) {
+      DArrayGetElement(g_array_007FA130,(int)param_1,&local_8);
       if (local_8 != param_2) {
         RaiseInternalException
                   (-0x5001fffe,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                    0x883);
       }
       local_8 = 0;
-      Library::DKW::TBL::FUN_006ae140(&PTR_007fa130->flags,(int)param_1,&local_8);
+      Library::DKW::TBL::DArrayPut(g_array_007FA130,(int)param_1,&local_8);
       DAT_007fa134 = DAT_007fa134 + -1;
     }
     g_currentExceptionFrame = local_4c.previous;

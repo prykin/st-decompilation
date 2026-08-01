@@ -86,11 +86,9 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::FUN_0054a9b0
       else {
         bVar2 = true;
       }
-      if (((bVar2) && (pVVar3->field_010C < 4)) &&
-         (pVVar3->field_003C[pVVar3->field_010C] != (void *)0x0)) {
-        uVar6 = (uint)*(byte *)((int)pVVar3->field_003C[pVVar3->field_010C] +
-                               local_10 +
-                               (g_centeredOffsets5[iVar8] + local_14) * pVVar3->field_0028);
+      if (((bVar2) && (pVVar3->field_010C < 4)) && (pVVar3->field_003C[pVVar3->field_010C] != 0)) {
+        uVar6 = (uint)*(byte *)((g_centeredOffsets5[iVar8] + local_14) * pVVar3->field_0028 +
+                                pVVar3->field_003C[pVVar3->field_010C] + local_10);
       }
       else {
         uVar6 = 0xffffffff;

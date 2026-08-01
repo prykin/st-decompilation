@@ -6,7 +6,7 @@
    Diagnostic line evidence: 267 | 274 | 277 (metadata/report site, not the function definition)
    [STSourceProvenanceApplier end] */
 
-int __cdecl SavePlrEdit(int param_1,char *param_2,undefined4 *param_3,char param_4)
+int __cdecl SavePlrEdit(int param_1,char *param_2,AnonShape_0067D9C0_2E8A2257 *param_3,char param_4)
 
 {
   code *pcVar1;
@@ -24,12 +24,11 @@ int __cdecl SavePlrEdit(int param_1,char *param_2,undefined4 *param_3,char param
   g_currentExceptionFrame = &local_58;
   iVar2 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   if (iVar2 == 0) {
-    if (((param_1 == 0) || (param_2 == (char *)0x0)) || (*(char *)(param_3 + 6) != '\x02')) {
+    if (((param_1 == 0) || (param_2 == (char *)0x0)) || (param_3->field_0x18 != '\x02')) {
       RaiseInternalException
                 (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_plr_d.cpp",0x10b);
     }
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    local_c = EventDataPack(*(AnonShape_0065CD10_BA40DE58 **)((int)param_3 + 0x106),&local_14);
+    local_c = EventDataPack(param_3->field_0106,&local_14);
     local_8 = PlrDataPack((AnonShape_0067D3B0_B421D52F *)param_3,(undefined4 *)local_c,local_14,
                           &local_10);
     thunk_FUN_0065d0f0((int *)&local_c);

@@ -32,10 +32,9 @@ uint __thiscall STAllPlayersC::PrepareToCmd(STAllPlayersC *this,undefined4 *para
     *param_2 = 0;
   }
   uVar5 = (uint)DAT_0080874d;
-  if (g_playerRuntime[uVar5].field324_0x203 == 0) {
-    if (g_playerRuntime[uVar5].tempSlots[0][0].playerId == uVar5) {
-      iVar4 = g_playerRuntime[uVar5].tempSlots[0][0].objectType;
-      if (iVar4 == 0x3c) {
+  if (g_playerRuntime[uVar5].field448_0x203 == 0) {
+    if (g_playerRuntime[uVar5].field333_0x167 == uVar5) {
+      if (g_playerRuntime[uVar5].field332_0x163 == 0x3c) {
         local_10 = (uint *)thunk_FUN_0042d770(DAT_0080874d,(int *)&local_8);
         local_c = 0;
         if ((short)local_10 == 0x7fff) {
@@ -53,16 +52,16 @@ uint __thiscall STAllPlayersC::PrepareToCmd(STAllPlayersC *this,undefined4 *para
         }
         DArrayDestroy(local_8);
       }
-      else if (iVar4 == 0x1ae) {
+      else if (g_playerRuntime[uVar5].field332_0x163 == 0x1ae) {
         local_c = 2;
-        local_10 = (uint *)(uint)(ushort)g_playerRuntime[uVar5].tempSlots[0][0].objectId;
+        local_10 = (uint *)(uint)(ushort)g_playerRuntime[uVar5].field334_0x16b;
       }
     }
   }
-  else if (g_playerRuntime[uVar5].field324_0x203 == 1) {
-    if ((g_playerRuntime[uVar5].tempSlots[1][0].playerId == uVar5) &&
-       (g_playerRuntime[uVar5].tempSlots[1][0].objectType == 0x19a)) {
-      array = g_playerRuntime[uVar5].tempSlots[1][0].objectIds;
+  else if (g_playerRuntime[uVar5].field448_0x203 == 1) {
+    if ((g_playerRuntime[uVar5].field391_0x1b7 == uVar5) &&
+       (g_playerRuntime[uVar5].field390_0x1b3 == 0x19a)) {
+      array = (DArrayTy *)g_playerRuntime[uVar5].field393_0x1bd;
       uVar5 = 0;
       dVar1 = array->count;
       if (0 < (int)dVar1) {

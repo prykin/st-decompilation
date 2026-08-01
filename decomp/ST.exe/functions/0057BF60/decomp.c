@@ -114,8 +114,7 @@ int __thiscall STFishC::GetMessage(STFishC *this,STMessage *message)
     }
     local_14 = (byte *)STT3DSprC::SaveSpr((STT3DSprC *)&this_00->field_01D5,&local_8);
     local_18 = (byte *)STAllPlayersC::SaveGObjData((STAllPlayersC *)this_00,(int *)&local_10);
-    local_c = (AnonShape_0057BF60_C1393638 *)
-              Library::DKW::LIB::FUN_006aac70(local_10 + 0x46 + local_8);
+    local_c = Library::DKW::LIB::MemAlloc(local_10 + 0x46 + local_8);
     if (local_14 == (byte *)0x0) {
       g_currentExceptionFrame = local_80.previous;
       return 0;
@@ -143,6 +142,7 @@ int __thiscall STFishC::GetMessage(STFishC *this,STMessage *message)
     pbVar9 = local_14;
     pbVar12 = &local_c->field_0x42;
     memmove(pbVar12, pbVar9, local_8); /* compiler REP MOVS byte copy */
+    uVar6 = 0;
     *(uint *)(&local_c->field_0x42 + local_8) = local_10;
     pbVar9 = local_18;
     pbVar12 = &local_c[1].field_0x2 + local_8;
@@ -197,7 +197,7 @@ int __thiscall STFishC::GetMessage(STFishC *this,STMessage *message)
       *(undefined2 *)&this_00->field_0x235 = *(undefined2 *)(local_20 + 0xc);
       *(undefined2 *)&this_00->field_0x237 = *(undefined2 *)((int)local_20 + 0x32);
       *(undefined2 *)&this_00->field_0x239 = *(undefined2 *)(local_20 + 0xd);
-      local_3c = (void *)Library::DKW::LIB::FUN_006aac70(0x44);
+      local_3c = Library::DKW::LIB::MemAlloc(0x44);
       if (local_3c != (void *)0x0) {
         iVar4 = 0;
         do {
@@ -232,11 +232,8 @@ int __thiscall STFishC::GetMessage(STFishC *this,STMessage *message)
   *(undefined4 *)((int)&this_00->field_023E + 1) = 0;
   puVar8 = (byte *)((message->arg0).ptr);
   puVar10 = (byte *)&this_00->field_0x243;
-  for (iVar4 = 10; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *puVar10 = *puVar8;
-    puVar8 = (byte *)(puVar8 + 1);
-    puVar10 = (byte *)(puVar10 + 1);
-  }
+  memmove(puVar10, puVar8, 0x28); /* compiler REP MOVS byte copy */
+  iVar4 = 0;
   thunk_FUN_0057cb30((AnonShape_0057CB30_71092CE7 *)this_00);
   thunk_FUN_00417a00(this_00,1);
   *(undefined2 *)&this_00->field_0x5f = 0xffff;

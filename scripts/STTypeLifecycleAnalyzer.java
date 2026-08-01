@@ -11,15 +11,18 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Set;
 
 import ghidra.app.script.GhidraScript;
 import ghidra.program.model.data.DataType;
 import ghidra.program.model.data.DataTypeManager;
+import ghidra.program.model.data.Array;
 import ghidra.program.model.data.Pointer;
 import ghidra.program.model.data.Structure;
 import ghidra.program.model.listing.Data;
@@ -46,31 +49,43 @@ public class STTypeLifecycleAnalyzer extends GhidraScript {
         Iterator<DataType> iterator = manager.getAllDataTypes();
         while (iterator.hasNext()) types.add(iterator.next());
 
-        List<Row> rows = new ArrayList<>();
+        List<DataType> candidates = new ArrayList<>();
+        List<DataType> semanticAnchors = new ArrayList<>();
+        List<DataType> receiverAnchors = new ArrayList<>();
         for (DataType type : types) {
+            String description = text(type.getDescription());
+            boolean derivedView = derivedFromView(type);
+            if (description.contains(ANCHOR)) semanticAnchors.add(type);
+            if (hiddenThis(type, description) && ownedReceiverFunctions(type) >= 2)
+                receiverAnchors.add(type);
+            if (type.getPathName().startsWith(ROOT) &&
+                    !(description.contains(ANCHOR) && !derivedView) &&
+                    (scriptOwned(description) || derivedView))
+                candidates.add(type);
+        }
+        UsageIndex usage = usageIndex(candidates);
+        List<Row> rows = new ArrayList<>();
+        for (DataType type : candidates) {
             monitor.checkCancelled();
             String description = text(type.getDescription());
-            if (!type.getPathName().startsWith(ROOT) || description.contains(ANCHOR) ||
-                    !scriptOwned(description)) continue;
+            boolean derivedView = derivedFromView(type);
             List<DataType> anchors = new ArrayList<>();
-            for (DataType candidate : types) {
+            for (DataType candidate : semanticAnchors) {
                 if (candidate == type || !candidate.isEquivalent(type)) continue;
-                if (text(candidate.getDescription()).contains(ANCHOR))
-                    anchors.add(candidate);
+                anchors.add(candidate);
             }
-            int functionUses = functionUses(type);
-            int listingUses = listingUses(type);
+            int functionUses = usage.functionUses.getOrDefault(type, 0);
+            int listingUses = usage.listingUses.getOrDefault(type, 0);
             int parents = type.getParents().size();
-            List<DataType> receiverAnchors = new ArrayList<>();
+            List<DataType> matchingReceivers = new ArrayList<>();
             if (hiddenThis(type, description) && ownedReceiverFunctions(type) == 0) {
-                for (DataType candidate : types)
+                for (DataType candidate : receiverAnchors)
                     if (candidate != type && candidate.isEquivalent(type) &&
-                            hiddenThis(candidate, text(candidate.getDescription())) &&
-                            ownedReceiverFunctions(candidate) >= 2)
-                        receiverAnchors.add(candidate);
+                            hiddenThis(candidate, text(candidate.getDescription())))
+                        matchingReceivers.add(candidate);
             }
-            if (receiverAnchors.size() == 1) {
-                DataType replacement = receiverAnchors.get(0);
+            if (matchingReceivers.size() == 1) {
+                DataType replacement = matchingReceivers.get(0);
                 rows.add(new Row(true, "replace", type.getPathName(),
                     replacement.getPathName(), type.getLength(), parents, functionUses,
                     listingUses, description,
@@ -84,16 +99,19 @@ public class STTypeLifecycleAnalyzer extends GhidraScript {
                     listingUses, description, "unique equivalent semantic anchor"));
             }
             else if (anchors.isEmpty() &&
-                    (description.contains(VIEW) || disposableAnonymous(type, description)) &&
-                    removalProvenance(description) && parents == 0 &&
+                    (description.contains(VIEW) || derivedView ||
+                        disposableAnonymous(type, description)) &&
+                    (removalProvenance(description) || derivedView) && parents == 0 &&
                     functionUses == 0 && listingUses == 0) {
                 rows.add(new Row(true, "remove", type.getPathName(), "", type.getLength(),
                     parents, functionUses, listingUses, description,
                     disposableAnonymous(type, description) ?
                         "unreferenced hash/script-owned anonymous type" :
+                        derivedView ? "unreferenced Pointer/Array derivative of view type" :
                         "unreferenced script-owned view type"));
             }
-            else if (description.contains(VIEW) || disposableAnonymous(type, description)) {
+            else if (description.contains(VIEW) || derivedView ||
+                    disposableAnonymous(type, description)) {
                 rows.add(new Row(false, "retain", type.getPathName(), "", type.getLength(),
                     parents, functionUses, listingUses, description,
                     anchors.size() > 1 ? "ambiguous equivalent anchors=" + anchors.size() :
@@ -111,45 +129,70 @@ public class STTypeLifecycleAnalyzer extends GhidraScript {
                 .filter(row -> row.apply && row.action.equals("remove")).count(),
             "retained_review=" + rows.stream().filter(row -> !row.apply).count(),
             "note=Deletion requires an original script-owner marker and zero " +
-                "parents/signature/Listing uses. Non-view deletion is limited to generated " +
-                "anonymous PointerShapes/ClassPointees/HiddenThis types. Equivalent types " +
-                "migrate only to one semantic anchor or one exact namespace-backed " +
-                "HiddenThis receiver family."),
+                "parents/signature/Listing uses. Direct Pointer/Array chains inherit " +
+                "view-only retirement without crossing through an owning structure. " +
+                "Non-view deletion is limited to generated anonymous PointerShapes/" +
+                "ClassPointees/HiddenThis types. Equivalent types migrate only to one " +
+                "semantic anchor or one exact namespace-backed HiddenThis receiver family."),
             StandardCharsets.UTF_8);
         println("Type lifecycle: candidates=" + rows.size() + ", automatic=" +
             rows.stream().filter(row -> row.apply).count() + ", output=" + directory);
     }
 
-    private int functionUses(DataType wanted) {
-        int result = 0;
+    /** Index all live uses in two whole-program scans instead of two scans per type. */
+    private UsageIndex usageIndex(List<DataType> candidates) throws Exception {
+        Map<DataType, Set<DataType>> wantedByActual = new HashMap<>();
+        for (DataType wanted : candidates) {
+            monitor.checkCancelled();
+            Set<DataType> seen = new HashSet<>();
+            List<DataType> pending = new ArrayList<>();
+            pending.add(wanted);
+            for (int index = 0; index < pending.size(); index++) {
+                DataType actual = pending.get(index);
+                if (actual == null || !seen.add(actual)) continue;
+                wantedByActual.computeIfAbsent(actual, unused -> new HashSet<>()).add(wanted);
+                pending.addAll(actual.getParents());
+            }
+        }
+        Map<DataType, Integer> functionUses = new HashMap<>();
         FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
         while (functions.hasNext()) {
+            monitor.checkCancelled();
             Function function = functions.next();
-            if (uses(function.getReturnType(), wanted)) result++;
+            addUses(functionUses, wantedByActual, function.getReturnType());
             for (Parameter parameter : function.getParameters())
-                if (uses(parameter.getDataType(), wanted)) result++;
+                addUses(functionUses, wantedByActual, parameter.getDataType());
             for (Variable variable : function.getLocalVariables())
-                if (uses(variable.getDataType(), wanted)) result++;
+                addUses(functionUses, wantedByActual, variable.getDataType());
         }
-        return result;
-    }
-
-    private int listingUses(DataType wanted) {
-        int result = 0;
+        Map<DataType, Integer> listingUses = new HashMap<>();
         DataIterator data = currentProgram.getListing().getDefinedData(true);
         while (data.hasNext()) {
+            monitor.checkCancelled();
             Data item = data.next();
-            if (uses(item.getDataType(), wanted)) result++;
+            addUses(listingUses, wantedByActual, item.getDataType());
         }
-        return result;
+        return new UsageIndex(functionUses, listingUses);
     }
 
-    private boolean uses(DataType actual, DataType wanted) {
-        if (actual == null) return false;
-        if (actual.equals(wanted)) return true;
-        if (actual instanceof Pointer pointer && pointer.getDataType() != null)
-            return uses(pointer.getDataType(), wanted);
-        return actual.dependsOn(wanted);
+    private void addUses(Map<DataType, Integer> counts,
+            Map<DataType, Set<DataType>> wantedByActual, DataType actual) {
+        Set<DataType> wanted = wantedByActual.get(actual);
+        if (wanted == null) return;
+        for (DataType type : wanted) counts.merge(type, 1, Integer::sum);
+    }
+
+    private boolean derivedFromView(DataType type) {
+        if (type instanceof Array array)
+            return viewOrDerivative(array.getDataType());
+        if (type instanceof Pointer pointer && pointer.getDataType() != null)
+            return viewOrDerivative(pointer.getDataType());
+        return false;
+    }
+
+    private boolean viewOrDerivative(DataType type) {
+        if (text(type.getDescription()).contains(VIEW)) return true;
+        return derivedFromView(type);
     }
 
     private boolean hiddenThis(DataType type, String description) {
@@ -234,4 +277,6 @@ public class STTypeLifecycleAnalyzer extends GhidraScript {
     private record Row(boolean apply, String action, String typePath, String replacementPath,
         int length, int parents, int functionUses, int listingUses, String description,
         String reason) { }
+    private record UsageIndex(Map<DataType, Integer> functionUses,
+        Map<DataType, Integer> listingUses) { }
 }

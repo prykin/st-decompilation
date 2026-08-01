@@ -22,7 +22,7 @@ void __thiscall STAllPlayersC::SelfCheckObjControl(STAllPlayersC *this)
 
   if (DAT_0080874d != 0xff) {
     local_8 = 4;
-    /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
+    /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
     iVar1 = (uint)DAT_0080874d * 0xa62 + 0x7f4f83;
     do {
       iVar2 = *(int *)(local_8 * 0x10 + iVar1);
@@ -76,7 +76,7 @@ void __thiscall STAllPlayersC::SelfCheckObjControl(STAllPlayersC *this)
       local_8 = local_8 + -1;
     } while (-1 < local_8);
     local_8 = 4;
-    /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
+    /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
     iVar1 = (uint)DAT_0080874d * 0xa62 + 0x7f4fd3;
     do {
       iVar7 = local_8;

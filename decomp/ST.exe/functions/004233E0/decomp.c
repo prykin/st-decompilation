@@ -41,7 +41,7 @@ uint * __thiscall STGroupC::GetGroupContent(STGroupC *this,int param_1)
       do {
         DArrayGetElement((DArrayTy *)local_10->field_0029,index,&local_6);
         if (local_6 != -1) {
-          Library::DKW::TBL::FUN_006ae140(&local_c->flags,uVar6 & 0xffff,(undefined4 *)&local_6);
+          Library::DKW::TBL::DArrayPut(local_c,uVar6 & 0xffff,&local_6);
           uVar6 = uVar6 + 1;
           local_14 = uVar6;
         }

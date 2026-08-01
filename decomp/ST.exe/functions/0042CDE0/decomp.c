@@ -21,7 +21,7 @@ undefined4 STAllPlayersC::PushTV(char param_1,int param_2,int param_3,char param
   short in_stack_00000006;
 
   if (param_2 == 0) {
-    /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
+    /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
     iVar3 = param_1 * 0xa62 + 0x7f4f83;
   }
   else {
@@ -33,7 +33,7 @@ undefined4 STAllPlayersC::PushTV(char param_1,int param_2,int param_3,char param
       }
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
+    /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
     iVar3 = param_1 * 0xa62 + 0x7f4fd3;
   }
   iVar3 = iVar3 + param_3 * 0x10;

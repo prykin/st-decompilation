@@ -12,7 +12,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,shor
   STGroupBoatC *this_00;
   int iVar2;
   int iVar3;
-  short *psVar4;
+  short *element;
   uint index;
   InternalExceptionFrame local_50;
   STGroupBoatC *local_c;
@@ -54,9 +54,9 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,shor
         index = index + 1;
       } while ((int)index < iVar2);
     }
-    psVar4 = &param_2;
+    element = &param_2;
 LAB_004a4e27:
-    Library::DKW::TBL::FUN_006ae140(*(uint **)&this_00->field_0x29f,index,(undefined4 *)psVar4);
+    Library::DKW::TBL::DArrayPut(*(DArrayTy **)&this_00->field_0x29f,index,element);
   }
   else {
     if (*(int *)&local_c->field_0x29f == 0) {
@@ -72,7 +72,7 @@ LAB_004a4e27:
         if (local_8[0] == param_2) {
           local_8[0] = -1;
           local_8[1] = 0;
-          psVar4 = local_8;
+          element = local_8;
           goto LAB_004a4e27;
         }
         index = index + 1;

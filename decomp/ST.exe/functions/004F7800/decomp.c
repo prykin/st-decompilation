@@ -172,13 +172,13 @@ void __thiscall CPanelTy::DoneCPanel(CPanelTy *this)
     if (g_sT3DSMAPContext_00807598 != (ST3DSMAPContext *)0x0) {
       ST3DSMAPContext::sub_006E6500(g_sT3DSMAPContext_00807598,(undefined4 *)0x0);
     }
-    ppvVar8 = this_00->field_0227;
+    puVar7 = this_00->field_0227;
     iVar3 = 4;
     do {
-      if (*ppvVar8 != (void *)0x0) {
-        FreeAndNull(ppvVar8);
+      if (*puVar7 != 0) {
+        FreeAndNull((void **)puVar7);
       }
-      ppvVar8 = ppvVar8 + 1;
+      puVar7 = puVar7 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
     cMf32::RecMemFree(g_cMf32_00806790,(uint *)&this_00->field_0994);

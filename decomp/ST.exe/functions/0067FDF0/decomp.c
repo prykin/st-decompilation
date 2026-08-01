@@ -29,9 +29,9 @@ uint __cdecl FUN_0067fdf0(int *param_1,byte *param_2)
     g_currentExceptionFrame = local_48.previous;
     return uVar2;
   }
-  if ((uint)uVar1 < PTR_00848a38->count) {
-    /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(PTR_00848a38, uVar1) (runtime stride) */
-    puVar3 = (undefined4 *)(PTR_00848a38->elementSize * uVar1 + (int)PTR_00848a38->data);
+  if ((uint)uVar1 < g_array_00848A38->count) {
+    /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(g_array_00848A38, uVar1) (runtime stride) */
+    puVar3 = (undefined4 *)(g_array_00848A38->elementSize * uVar1 + (int)g_array_00848A38->data);
   }
   else {
     puVar3 = (undefined4 *)0x0;

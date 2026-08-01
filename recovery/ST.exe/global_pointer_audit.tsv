@@ -393,19 +393,10 @@ address	name	current_type	raw_target	classification	target_name	target_data_type
 007F2730	PTR_PTR_007f2730	/pointer	007F2700	initialized_data_pointer	PTR_DAT_007f2700	/pointer		0	0	0		0
 007F27CC	PTR_DAT_007f27cc	/pointer	007F274C	initialized_data_pointer	DAT_007f274c	/undefined1		0	0	0		0
 007F27D0	PTR_DAT_007f27d0	/pointer	007F278C	initialized_data_pointer	DAT_007f278c	/undefined1		0	0	0		0
-007FA130	PTR_007fa130	pointer:/SubmarineTitans/Recovered/DArrayTy	00000000	zero_initialized_global			/SubmarineTitans/Recovered/DArrayTy	0	1	3		0
-007FA154	PTR_007fa154	pointer:/SubmarineTitans/Recovered/DArrayTy	00000000	zero_initialized_global			/SubmarineTitans/Recovered/DArrayTy	0	1	4		0
-007FA158	PTR_007fa158	pointer:/SubmarineTitans/Recovered/DArrayTy	00000000	zero_initialized_global			/SubmarineTitans/Recovered/DArrayTy	0	1	4		0
-007FA15C	PTR_007fa15c	pointer:/SubmarineTitans/Recovered/DArrayTy	00000000	zero_initialized_global			/SubmarineTitans/Recovered/DArrayTy	0	1	4		0
-007FA160	PTR_007fa160	pointer:/SubmarineTitans/Recovered/DArrayTy	00000000	zero_initialized_global			/SubmarineTitans/Recovered/DArrayTy	0	1	4		0
-007FA164	PTR_007fa164	pointer:/SubmarineTitans/Recovered/DArrayTy	00000000	zero_initialized_global			/SubmarineTitans/Recovered/DArrayTy	0	1	4		0
-00802A28	PTR_00802a28	pointer:/ccFntTy	00000000	zero_initialized_global			/ccFntTy	0	1	6	pointer:/InterSystemC	0
-00802A4C	PTR_00802a4c	pointer:/SubmarineTitans/Recovered/DArrayTy	00000000	zero_initialized_global			/SubmarineTitans/Recovered/DArrayTy	0	1	3		0
 00806724	PTR_00806724	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_00806724_3210464F	00000000	zero_initialized_global			/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_00806724_3210464F	1	1	1	/int	0
 00806740	PTR_00806740	pointer:/SubmarineTitans/Recovered/DArrayTy	00000000	zero_initialized_global			/SubmarineTitans/Recovered/DArrayTy	0	1	1		0
 00806770	PTR_00806770	pointer:/cMf32	00000000	zero_initialized_global			/cMf32	0	1	2		0
 0080C502	PTR_0080c502	pointer:/SubmarineTitans/Recovered/DArrayTy	00000000	zero_initialized_global			/SubmarineTitans/Recovered/DArrayTy	0	1	0		0
-0081163C	PTR_0081163c	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_00577690_10255A81	00000000	zero_initialized_global			/SubmarineTitans/Recovered/PointerShapes/AnonShape_00577690_10255A81	1	1	8	pointer:/GameSystemC	0
 00811718	PTR_00811718	pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOBaseTy_0607	00000000	zero_initialized_global			/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOBaseTy_0607	1	1	3		0
 0081171C	PTR_0081171c	pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOBaseTy_0607	00000000	zero_initialized_global			/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOBaseTy_0607	1	1	2		0
 00811758	PTR_00811758	pointer:/wingdi.h/tagBITMAPINFO	00000000	zero_initialized_global			/wingdi.h/tagBITMAPINFO	0	1	3		0
@@ -413,14 +404,10 @@ address	name	current_type	raw_target	classification	target_name	target_data_type
 0081194C	PTR_0081194c	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_0081194C_4D1525E6	00000000	zero_initialized_global			/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_0081194C_4D1525E6	1	1	1		0
 008489C4	PTR_008489c4	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_008489C4_F7BABFAC	00000000	zero_initialized_global			/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_008489C4_F7BABFAC	1	1	4		0
 008489CC	PTR_008489cc	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_008489CC_CDF8C3F4	00000000	zero_initialized_global			/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_008489CC_CDF8C3F4	1	1	3		0
-008489D8	PTR_008489d8	pointer:/SubmarineTitans/Recovered/DArrayTy	00000000	zero_initialized_global			/SubmarineTitans/Recovered/DArrayTy	0	1	2		0
 00848A18	PTR_00848a18	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_00848A18_1B9B27FE	00000000	zero_initialized_global			/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_00848A18_1B9B27FE	1	1	4		0
 00848A1C	PTR_00848a1c	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_00848A1C_B6E50991	00000000	zero_initialized_global			/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_00848A1C_B6E50991	1	1	3		0
-00848A28	PTR_00848a28	pointer:/SubmarineTitans/Recovered/DArrayTy	00000000	zero_initialized_global			/SubmarineTitans/Recovered/DArrayTy	0	1	3		0
 00848A2C	PTR_00848a2c	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_00848A2C_50EB5CD1	00000000	zero_initialized_global			/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_00848A2C_50EB5CD1	1	1	3		0
-00848A30	PTR_00848a30	pointer:/SubmarineTitans/Recovered/DArrayTy	00000000	zero_initialized_global			/SubmarineTitans/Recovered/DArrayTy	0	1	3		0
 00848A34	PTR_00848a34	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_00848A34_1A834A18	00000000	zero_initialized_global			/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_00848A34_1A834A18	1	1	3		0
-00848A38	PTR_00848a38	pointer:/SubmarineTitans/Recovered/DArrayTy	00000000	zero_initialized_global			/SubmarineTitans/Recovered/DArrayTy	0	1	3		0
 00853FF8	PTR_00853ff8	pointer:/cMf32	00000000	zero_initialized_global			/cMf32	0	1	1		0
 00854EE8	PTR_00854ee8	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_00854EE8_A19F58CE	00000000	zero_initialized_global			/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_00854EE8_A19F58CE	1	1	1	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006CEC40_BB23E716	0
 00857168	PTR_00857168	pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_00857168_D75747E9	00000000	zero_initialized_global			/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_00857168_D75747E9	1	1	0		0

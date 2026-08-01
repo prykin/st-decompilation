@@ -32,7 +32,7 @@ void __thiscall FUN_0063d100(void *this,undefined4 *param_1)
     *(undefined4 *)((int)this + 0x336) = uVar1;
     pAVar4 = (AnonShape_004AD790_77673787 *)((int)param_1 + 0x156 + *(int *)pAVar4);
   }
-  local_20 = (void *)Library::DKW::LIB::FUN_006aac70(0x44);
+  local_20 = Library::DKW::LIB::MemAlloc(0x44);
   iVar2 = 0;
   do {
     *(undefined4 *)(iVar2 + (int)local_20) = DAT_00806774;

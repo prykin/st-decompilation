@@ -360,7 +360,7 @@ void __thiscall STAppC::StartGame(STAppC *this)
     local_34[4] = 5;
     FUN_006e3db0((int)local_34);
     thunk_FUN_0056a500();
-    thunk_FUN_00577690(PTR_0081163c);
+    GameSystemC::sub_00577690(g_parentSystem_0081163C);
     SoundClassTy::PlaySound
               ((SoundClassTy *)&pSVar12->field_0038,SOUND_MODE_1,(char *)0x0,0x4b7,
                (SoundPosition *)0x0,0);

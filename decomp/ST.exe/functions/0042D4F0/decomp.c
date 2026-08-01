@@ -21,7 +21,7 @@ STAllPlayersC::ResetActivityFromTmp
   uint uVar5;
 
   if (param_2 == 0) {
-    /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
+    /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
     iVar2 = param_1 * 0xa62 + 0x7f4f83;
   }
   else {
@@ -33,7 +33,7 @@ STAllPlayersC::ResetActivityFromTmp
       }
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
+    /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
     iVar2 = param_1 * 0xa62 + 0x7f4fd3;
   }
   piVar3 = (int *)(param_3 * 0x10 + iVar2);

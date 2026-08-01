@@ -19,8 +19,9 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
 
-import ghidra.app.decompiler.DecompInterface;
 import ghidra.app.decompiler.DecompileResults;
+import ghidra.app.decompiler.parallel.DecompilerCallback;
+import ghidra.app.decompiler.parallel.ParallelDecompiler;
 import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
 import ghidra.program.model.data.AbstractIntegerDataType;
@@ -36,10 +37,12 @@ import ghidra.program.model.listing.Parameter;
 import ghidra.program.model.listing.Variable;
 import ghidra.program.model.symbol.SourceType;
 import ghidra.program.model.symbol.Symbol;
+import ghidra.util.task.TaskMonitor;
 
 public class STLocalLifetimeAnalyzer extends GhidraScript {
     private static final String APPLIER_MARKER = "[STLocalLifetimeApplier]";
     private static final int DECOMPILE_TIMEOUT = 45;
+    private static final int DECOMPILE_CHUNK_SIZE = 256;
     private static final int RETURN_WEIGHT = 12;
     private static final int COPY_WEIGHT = 10;
     private static final int ARGUMENT_WEIGHT = 4;
@@ -70,32 +73,23 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
         Path directory = programDirectory(selected);
         Files.createDirectories(directory);
 
-        DecompInterface decompiler = new DecompInterface();
-        decompiler.toggleCCode(true);
-        decompiler.toggleSyntaxTree(true);
-        if (!decompiler.openProgram(currentProgram))
-            throw new IllegalStateException("Decompiler could not open current program");
-        try {
-            Address only = onlyFunction();
-            if (only != null) {
-                Function function =
-                    currentProgram.getFunctionManager().getFunctionAt(only);
-                if (function == null)
-                    throw new IllegalArgumentException("No function at " + addr(only));
-                analyze(function, decompiler);
-            }
-            else {
-                FunctionIterator functions =
-                    currentProgram.getFunctionManager().getFunctions(true);
-                while (functions.hasNext()) {
-                    monitor.checkCancelled();
-                    analyze(functions.next(), decompiler);
-                }
+        List<Function> candidates = new ArrayList<>();
+        Address only = onlyFunction();
+        if (only != null) {
+            Function function = currentProgram.getFunctionManager().getFunctionAt(only);
+            if (function == null)
+                throw new IllegalArgumentException("No function at " + addr(only));
+            if (candidate(function)) candidates.add(function);
+        }
+        else {
+            FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
+            while (functions.hasNext()) {
+                monitor.checkCancelled();
+                Function function = functions.next();
+                if (candidate(function)) candidates.add(function);
             }
         }
-        finally {
-            decompiler.dispose();
-        }
+        analyzeParallel(candidates);
 
         rows.sort(Comparator.comparing((Row row) -> row.functionAddress)
             .thenComparing(row -> row.originalName)
@@ -116,13 +110,48 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
             conflicts + ", failures=" + failures.size());
     }
 
-    private void analyze(Function function, DecompInterface decompiler)
-            throws Exception {
-        if (function == null || function.isExternal() || function.isThunk() ||
-                library(function)) return;
+    private boolean candidate(Function function) {
+        return function != null && !function.isExternal() && !function.isThunk() &&
+            !library(function);
+    }
+
+    private void analyzeParallel(List<Function> functions) throws Exception {
+        if (functions.isEmpty()) return;
+        DecompilerCallback<DecompileResults> callback = new DecompilerCallback<>(
+                currentProgram, dec -> {
+                    dec.toggleCCode(true);
+                    dec.toggleSyntaxTree(true);
+                }) {
+            @Override
+            public DecompileResults process(DecompileResults result,
+                    TaskMonitor callbackMonitor) {
+                return result;
+            }
+        };
+        callback.setTimeout(DECOMPILE_TIMEOUT);
+        try {
+            for (int start = 0; start < functions.size();
+                    start += DECOMPILE_CHUNK_SIZE) {
+                monitor.checkCancelled();
+                int end = Math.min(functions.size(), start + DECOMPILE_CHUNK_SIZE);
+                List<DecompileResults> results = ParallelDecompiler.decompileFunctions(
+                    callback, functions.subList(start, end), monitor);
+                results.removeIf(result -> result == null ||
+                    result.getFunction() == null);
+                results.sort(Comparator.comparing(result ->
+                    result.getFunction().getEntryPoint()));
+                for (DecompileResults result : results) analyze(result);
+            }
+        }
+        finally {
+            callback.dispose();
+        }
+    }
+
+    private void analyze(DecompileResults result) throws Exception {
+        Function function = result.getFunction();
+        if (!candidate(function)) return;
         functionsSeen++;
-        DecompileResults result =
-            decompiler.decompileFunction(function, DECOMPILE_TIMEOUT, monitor);
         if (!result.decompileCompleted()) {
             failures.add(new Failure(function, text(result.getErrorMessage())));
             return;

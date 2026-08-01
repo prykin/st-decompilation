@@ -25,17 +25,17 @@ undefined4 __thiscall STAllPlayersC::RegisterMine(STAllPlayersC *this,ushort par
                  0x2f05);
     }
     if (param_1 == 0xffff) {
-      param_1 = (ushort)PTR_007fa158->count;
+      param_1 = (ushort)g_array_007FA158->count;
     }
     else {
-      iVar2 = DArrayGetElement(PTR_007fa158,(uint)param_1,&local_8);
+      iVar2 = DArrayGetElement(g_array_007FA158,(uint)param_1,&local_8);
       if ((iVar2 != -4) && (local_8 != 0)) {
         RaiseInternalException
                   (-0x5001fffa,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                    0x2f07);
       }
     }
-    Library::DKW::TBL::FUN_006ae140(&PTR_007fa158->flags,(uint)param_1,&param_2);
+    Library::DKW::TBL::DArrayPut(g_array_007FA158,(uint)param_1,&param_2);
     thunk_FUN_00419c50(param_2,param_1);
     g_currentExceptionFrame = local_4c.previous;
     return 0;

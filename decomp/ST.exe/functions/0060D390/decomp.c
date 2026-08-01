@@ -69,8 +69,7 @@ void __thiscall FUN_0060d390(void *this,uint *param_1)
       } while (iVar11 < *(int *)((int)this + 0x23c));
     }
     if ((uVar7 != 0) &&
-       (local_3c = (undefined4 *)Library::DKW::LIB::FUN_006aac70(local_30),
-       local_3c != (undefined4 *)0x0)) {
+       (local_3c = Library::DKW::LIB::MemAlloc(local_30), local_3c != (undefined4 *)0x0)) {
       puVar10 = *(undefined4 **)((int)this + 0x244);
       puVar12 = local_3c;
       for (uVar7 = *(int *)((int)this + 0x23c) * 0x11 & 0x3fffffff; uVar7 != 0; uVar7 = uVar7 - 1) {
@@ -97,7 +96,6 @@ void __thiscall FUN_0060d390(void *this,uint *param_1)
             if (piVar9 != (int *)0x0) {
               piVar4 = piVar5 + 1;
               memmove(piVar4, piVar9, uVar1); /* compiler REP MOVS byte copy */
-              uVar7 = 0;
               uVar7 = 0;
               iVar11 = *(int *)((int)this + 0x244) + local_58;
               puVar10 = *(undefined4 **)(iVar11 + 8);

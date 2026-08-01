@@ -83,7 +83,7 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
   this_00 = local_14;
   if (iVar8 == 0) {
     g_playPanel_008016E4 = local_14;
-    pcVar3 = (ccFntTy *)ccFntTy::operator_new(0x19d,*(int *)&PTR_00802a28->field_0x28);
+    pcVar3 = (ccFntTy *)ccFntTy::operator_new(0x19d,g_interSystem_00802A28->field_0028);
     this_00->field_01DD = pcVar3;
     pcVar3->field_0058 = 0;
     pcVar3->field_005C = 0;

@@ -28,7 +28,7 @@ uint FUN_0042d770(char param_1,int *param_2)
   short local_6;
 
   local_18 = 0xffff;
-  array = g_playerRuntime[param_1].tempSlots[0][0].objectIds;
+  array = (DArrayTy *)g_playerRuntime[param_1].field335_0x16d;
   local_1c = 1;
   local_20 = 1;
   pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1);
@@ -53,8 +53,8 @@ uint FUN_0042d770(char param_1,int *param_2)
            (local_28 = CONCAT22((short)((uint)objPtr >> 0x10),objPtr->field_0030),
            objPtr->field_0030 != -1)) {
           local_1c = iVar5;
-          Library::DKW::TBL::FUN_006ae1c0(&local_10->flags,&local_28);
-          Library::DKW::TBL::FUN_006ae1c0((uint *)*param_2,&local_c);
+          Library::DKW::TBL::DArrayAppend(local_10,&local_28);
+          Library::DKW::TBL::DArrayAppend((DArrayTy *)*param_2,&local_c);
           pDVar4 = local_10;
         }
       }

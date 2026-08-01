@@ -15,31 +15,29 @@ void __thiscall SettMapMTy::sub_005D1380(SettMapMTy *this)
 {
   SettMapMTy_field_1F84DArray *pSVar1;
   uint uVar2;
-  SettMapMTy_field_1F84Element *pcVar3;
-  uint uVar3;
-  bool bVar4;
+  SettMapMTy_field_1F84Element *element_1f84;
+  uint uVar4;
+  bool bVar5;
 
   DAT_0080874d = -1;
   pSVar1 = this->field_1F84;
   if (pSVar1 != (SettMapMTy_field_1F84DArray *)0x0) {
     uVar2 = pSVar1->count;
-    uVar3 = 0;
+    uVar4 = 0;
     if (0 < (int)uVar2) {
-      bVar4 = uVar2 != 0;
-      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
-      while ((((!bVar4 ||
-               (pcVar3 = (SettMapMTy_field_1F84Element *)
-                         (&pSVar1->data->field_0000 + pSVar1->elementSize * uVar3),
-               pcVar3 == (SettMapMTy_field_1F84Element *)0x0)) || (pcVar3->field_0004 != '\x02')) ||
-             (pcVar3->data != DAT_0080877f))) {
-        uVar3 = uVar3 + 1;
-        bVar4 = uVar3 < uVar2;
-        if ((int)uVar2 <= (int)uVar3) {
+      bVar5 = uVar2 != 0;
+      while ((((!bVar5 ||
+               (element_1f84 = DArrayAt<SettMapMTy_field_1F84Element>(pSVar1, uVar4,
+               element_1f84 == (SettMapMTy_field_1F84Element *)0x0)) || (element_1f84->field_0004 != '\x02')) ||
+             (element_1f84->element != DAT_0080877f))) {
+        uVar4 = uVar4 + 1);
+        bVar5 = uVar4 < uVar2;
+        if ((int)uVar2 <= (int)uVar4) {
           return;
         }
       }
-      DAT_0080874d = pcVar3->state;
-      DAT_0080874e = pcVar3->field_0003;
+      DAT_0080874d = element_1f84->state;
+      DAT_0080874e = element_1f84->field_0003;
     }
   }
   return;

@@ -141,8 +141,7 @@ int __thiscall STOctopusC::GetMessage(STOctopusC *this,STMessage *message)
     }
     local_14 = (byte *)STT3DSprC::SaveSpr((STT3DSprC *)&this_00->field_01D5,&local_8);
     local_18 = (byte *)STAllPlayersC::SaveGObjData((STAllPlayersC *)this_00,(int *)&local_10);
-    local_c = (AnonShape_00589C10_CECA1FB4 *)
-              Library::DKW::LIB::FUN_006aac70(local_10 + 0x96 + local_8);
+    local_c = Library::DKW::LIB::MemAlloc(local_10 + 0x96 + local_8);
     if (local_14 == (byte *)0x0) {
       g_currentExceptionFrame = local_88.previous;
       return 0;
@@ -200,6 +199,7 @@ int __thiscall STOctopusC::GetMessage(STOctopusC *this,STMessage *message)
     pbVar11 = local_14;
     pbVar14 = &local_c->field_0x92;
     memmove(pbVar14, pbVar11, local_8); /* compiler REP MOVS byte copy */
+    uVar9 = 0;
     *(uint *)(&local_c->field_0x92 + local_8) = local_10;
     pbVar11 = local_18;
     pbVar14 = &local_c[1].field_0x2 + local_8;
@@ -247,11 +247,8 @@ int __thiscall STOctopusC::GetMessage(STOctopusC *this,STMessage *message)
     *(undefined4 *)((int)&this_00->field_023E + 3) = 0;
     puVar10 = (byte *)((message->arg0).ptr);
     puVar12 = (byte *)&this_00->field_0x285;
-    for (iVar6 = 10; iVar6 != 0; iVar6 = iVar6 + -1) {
-      *puVar12 = *puVar10;
-      puVar10 = (byte *)(puVar10 + 1);
-      puVar12 = (byte *)(puVar12 + 1);
-    }
+    memmove(puVar12, puVar10, 0x28); /* compiler REP MOVS byte copy */
+    iVar6 = 0;
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     Bad((STOctopusC *)this_00,unaff_EDI);
     if (((((*(int *)&this_00->field_0x299 < 0) ||
@@ -351,7 +348,7 @@ cf_error_exit_0058A005:
     *(undefined2 *)&this_00->field_0x52 = *(undefined2 *)((int)local_1c + 0x82);
     *(undefined2 *)&this_00->field_0x6c = *(undefined2 *)(local_1c + 0x21);
     *(undefined4 *)&this_00->field_0x24d = local_1c[0xc];
-    local_44 = (void *)Library::DKW::LIB::FUN_006aac70(0x44);
+    local_44 = Library::DKW::LIB::MemAlloc(0x44);
     if (local_44 != (void *)0x0) {
       iVar6 = 0;
       do {

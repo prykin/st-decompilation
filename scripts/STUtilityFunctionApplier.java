@@ -11,6 +11,7 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 import ghidra.app.script.GhidraScript;
@@ -25,6 +26,7 @@ import ghidra.program.model.symbol.SourceType;
 public class STUtilityFunctionApplier extends GhidraScript {
     private static final String MARKER = "[STUtilityFunctionApplier]";
     private static final String TAG = "RECOVERED_UTILITY_SEMANTICS";
+    private static final String TAG_PREFIX = "RECOVERED_UTILITY_";
     private final List<Report> report = new ArrayList<>();
     private DataTypeManager dataTypes;
 
@@ -85,6 +87,8 @@ public class STUtilityFunctionApplier extends GhidraScript {
                 // prototype.  Refresh our owned block even when no type/name
                 // mutation is necessary so stale claims do not survive forever.
                 replaceComment(function, row);
+                function.addTag(TAG);
+                function.addTag(semanticTag(row));
                 report.add(new Report(addressText, row.get("semantic_id"), "unchanged",
                     "desired name and prototype already present")); return;
             }
@@ -120,6 +124,7 @@ public class STUtilityFunctionApplier extends GhidraScript {
             }
             function.getSymbol().setName(row.get("proposed_name"), SourceType.ANALYSIS);
             function.addTag(TAG);
+            function.addTag(semanticTag(row));
             replaceComment(function, row);
             report.add(new Report(addressText, row.get("semantic_id"), "applied",
                 row.get("proposed_name") + " " + row.get("proposed_convention")));
@@ -146,6 +151,11 @@ public class STUtilityFunctionApplier extends GhidraScript {
         if (old != null) for (String item : old.split("\\n\\s*\\n"))
             if (!item.trim().startsWith(MARKER) && !item.isBlank()) kept.add(item.trim());
         kept.add(block); function.setComment(String.join("\n\n", kept));
+    }
+
+    private String semanticTag(Map<String, String> row) {
+        return TAG_PREFIX + row.get("semantic_id").toUpperCase(Locale.ROOT)
+            .replaceAll("[^A-Z0-9]+", "_");
     }
 
     private DataType resolve(String specification) {

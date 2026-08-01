@@ -28,7 +28,7 @@ void __thiscall STAllPlayersC::_MakeMDPairs(STAllPlayersC *this,char param_1)
   short *psVar14;
   DArrayTy *pDVar15;
   InternalExceptionFrame local_e8;
-  undefined4 local_a4;
+  undefined1 local_a4 [6];
   undefined2 local_9e;
   undefined2 local_96;
   dword local_80 [5];
@@ -81,7 +81,7 @@ void __thiscall STAllPlayersC::_MakeMDPairs(STAllPlayersC *this,char param_1)
   iVar3 = (int)param_1;
   if (0 < (int)local_24) {
     local_c = local_24;
-    puVar11 = &g_playerRuntime[iVar3].field6_0xf;
+    puVar11 = &g_playerRuntime[iVar3].field9_0xf;
     do {
       if ((DArrayTy *)*puVar11 != (DArrayTy *)0x0) {
         DArrayDestroy((DArrayTy *)*puVar11);
@@ -96,11 +96,11 @@ void __thiscall STAllPlayersC::_MakeMDPairs(STAllPlayersC *this,char param_1)
   local_60[1] = 0;
   local_60[0] = 0;
   local_10 = (DArrayTy *)0x0;
-  /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
+  /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
   local_20 = iVar3 * 0xa62;
-  if (g_playerRuntime[iVar3].raceId != 0) {
+  if (g_playerRuntime[iVar3].field0_0x0 != '\0') {
     if (0 < (int)pDVar9) {
-      puVar11 = &g_playerRuntime[iVar3].field6_0xf;
+      puVar11 = &g_playerRuntime[iVar3].field9_0xf;
       pDVar15 = pDVar9;
       do {
         pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,0x24,1);
@@ -109,7 +109,7 @@ void __thiscall STAllPlayersC::_MakeMDPairs(STAllPlayersC *this,char param_1)
         pDVar15 = (DArrayTy *)((int)&pDVar15[-1].data + 3);
       } while (pDVar15 != (DArrayTy *)0x0);
     }
-    local_18 = *(DArrayTy **)((int)&g_playerRuntime[0].objects + local_20);
+    local_18 = *(DArrayTy **)((int)&g_playerRuntime[0].field6_0x9 + local_20);
     if ((local_18 != (DArrayTy *)0x0) &&
        (local_c = (DArrayTy *)local_18->count, local_c != (DArrayTy *)0x0)) {
       local_10 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,4,1);
@@ -132,7 +132,7 @@ void __thiscall STAllPlayersC::_MakeMDPairs(STAllPlayersC *this,char param_1)
             pDVar15 = local_10;
             if ((dVar5 == 0x3b) || (dVar5 == 0x60)) {
 LAB_00441e92:
-              Library::DKW::TBL::FUN_006ae1c0(&pDVar15->flags,&local_8);
+              Library::DKW::TBL::DArrayAppend(pDVar15,&local_8);
             }
             else {
               iVar3 = 0;
@@ -161,10 +161,10 @@ LAB_00441e92:
       local_3a = 0xffff;
       local_42 = 0xffff;
       if (0 < (int)pDVar9) {
-        puVar11 = (undefined4 *)((int)&g_playerRuntime[0].field6_0xf + local_20);
+        puVar11 = (undefined4 *)((int)&g_playerRuntime[0].field9_0xf + local_20);
         pDVar15 = pDVar9;
         do {
-          Library::DKW::TBL::FUN_006ae1c0((uint *)*puVar11,(undefined4 *)&local_48);
+          Library::DKW::TBL::DArrayAppend((DArrayTy *)*puVar11,&local_48);
           puVar11 = puVar11 + 1;
           pDVar15 = (DArrayTy *)((int)&pDVar15[-1].data + 3);
         } while (pDVar15 != (DArrayTy *)0x0);
@@ -196,15 +196,15 @@ LAB_00441e92:
           if (0 < (int)local_24) {
             local_1c = local_60;
             local_18 = local_24;
-            local_14 = (undefined4 *)((int)&g_playerRuntime[0].field6_0xf + local_20);
+            local_14 = (undefined4 *)((int)&g_playerRuntime[0].field9_0xf + local_20);
             do {
               pDVar9 = (DArrayTy *)*local_1c;
               local_68 = pDVar9;
               if ((pDVar9 == (DArrayTy *)0x0) || (local_80[4] = pDVar9->count, local_80[4] == 0)) {
-                if (((uint *)*local_14)[3] == 0) {
+                if (((DArrayTy *)*local_14)->count == 0) {
                   local_96 = 0xffff;
                   local_9e = 0xffff;
-                  Library::DKW::TBL::FUN_006ae1c0((uint *)*local_14,&local_a4);
+                  Library::DKW::TBL::DArrayAppend((DArrayTy *)*local_14,local_a4);
                 }
               }
               else {
@@ -229,7 +229,7 @@ LAB_00441e92:
                       pDVar9 = local_68;
                     }
                     local_34 = local_30;
-                    Library::DKW::TBL::FUN_006ae1c0((uint *)*local_14,(undefined4 *)&local_48);
+                    Library::DKW::TBL::DArrayAppend((DArrayTy *)*local_14,&local_48);
                     uVar13 = uVar13 + 1;
                   } while ((int)uVar13 < (int)local_80[4]);
                 }

@@ -12,14 +12,14 @@ int __thiscall STBHEShellC::sub_005F5B80(STBHEShellC *this,undefined4 *param_1)
   dword dVar1;
   STBHEShellC_field_0169DArray *pSVar2;
   int iVar3;
-  STBHEShellC_field_0169Element *pcVar4;
-  byte *puVar4;
-  uint uVar5;
-  byte *puVar6;
+  char *pcVar4;
+  byte *puVar5;
+  uint uVar6;
+  byte *puVar7;
 
-  puVar4 = (byte *)(param_1);
-  puVar6 = (byte *)&this->field_0x4d;
-  memmove(puVar6, puVar4, 0x128); /* compiler REP MOVS byte copy */
+  puVar5 = (byte *)(param_1);
+  puVar7 = (byte *)&this->field_0x4d;
+  memmove(puVar7, puVar5, 0x128); /* compiler REP MOVS byte copy */
   iVar3 = 0x128;
   if (this->field_0169 != (STBHEShellC_field_0169DArray *)0x0) {
     pSVar2 = (STBHEShellC_field_0169DArray *)FUN_006b0060((uint *)0x0,param_1 + 0x4b);
@@ -29,19 +29,18 @@ int __thiscall STBHEShellC::sub_005F5B80(STBHEShellC *this,undefined4 *param_1)
   this->field_008F = 0xffffffff;
   if (this->field_0169 != (STBHEShellC_field_0169DArray *)0x0) {
     dVar1 = this->field_0169->count;
-    uVar5 = 0;
+    uVar6 = 0;
     if (0 < (int)dVar1) {
       do {
         pSVar2 = this->field_0169;
         /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
-        if ((uVar5 < pSVar2->count) &&
-           (pcVar4 = (STBHEShellC_field_0169Element *)
-                     (&pSVar2->data->field_0000 + pSVar2->elementSize * uVar5),
-           pcVar4 != (STBHEShellC_field_0169Element *)0x0)) {
-          pcVar4->spriteHandle = 0xffffffff;
+        if ((uVar6 < pSVar2->count) &&
+           (pcVar4 = &pSVar2->data->field_0000 + pSVar2->elementSize * uVar6, pcVar4 != (char *)0x0)
+           ) {
+          *(uint *)(pcVar4 + 0x1f) = 0xffffffff;
         }
-        uVar5 = uVar5 + 1;
-      } while ((int)uVar5 < (int)dVar1);
+        uVar6 = uVar6 + 1;
+      } while ((int)uVar6 < (int)dVar1);
     }
   }
   return iVar3;

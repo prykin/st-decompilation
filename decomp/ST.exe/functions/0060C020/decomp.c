@@ -7,11 +7,12 @@
 int __thiscall FUN_0060c020(void *this,uint *param_1)
 
 {
-  undefined4 *puVar1;
-  int iVar2;
-  uint uVar3;
-  byte *puVar4;
-  uint *puVar5;
+  AnonPointee_TLOBaseTy_0607 *allocation;
+  int iVar1;
+  uint uVar2;
+  byte *puVar3;
+  uint *puVar4;
+  AnonPointee_TLOBaseTy_0607 *pAVar5;
   byte *puVar6;
   uint *puVar7;
   uint *local_1c;
@@ -23,48 +24,48 @@ int __thiscall FUN_0060c020(void *this,uint *param_1)
 
   local_8 = 0x83;
   local_18 = this;
-  puVar1 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0x83);
+  allocation = Library::DKW::LIB::MemAlloc(0x83);
   *(undefined4 *)((int)this + 0x1e1) = 2;
   if (this == (void *)0x0) {
-    puVar4 = (byte *)0x0;
+    puVar3 = (byte *)0x0;
   }
   else {
-    puVar4 = (byte *)((int)this + 0x1d5);
+    puVar3 = (byte *)((int)this + 0x1d5);
   }
-  puVar6 = (byte *)(puVar1);
-  for (iVar2 = 0x20; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *puVar6 = *puVar4;
-    puVar4 = (byte *)(puVar4 + 1);
-    puVar6 = (byte *)(puVar6 + 1);
+  pAVar5 = allocation;
+  for (iVar1 = 0x20; iVar1 != 0; iVar1 = iVar1 + -1) {
+    pAVar5->field_0000 = *puVar3;
+    puVar3 = (byte *)(puVar3 + 1);
+    pAVar5 = (AnonPointee_TLOBaseTy_0607 *)&pAVar5->field_0004;
   }
-  *(undefined2 *)puVar6 = *(undefined2 *)puVar4;
-  *(undefined1 *)((int)puVar6 + 2) = *(undefined1 *)((int)puVar4 + 2);
+  *(undefined2 *)&pAVar5->field_0000 = *(undefined2 *)puVar3;
+  *(undefined1 *)((int)&pAVar5->field_0000 + 2) = *(undefined1 *)((int)puVar3 + 2);
   if (local_18->field_0234 != (uint *)0x0) {
     local_14 = (undefined4 *)FUN_006b0020(local_18->field_0234,(int *)&local_c);
-    uVar3 = local_c + 0x87;
-    local_8 = uVar3;
-    puVar1 = (undefined4 *)Library::DKW::LIB::FUN_006acf50((int)puVar1,uVar3);
-    *(uint *)((int)puVar1 + uVar3 + (-4 - local_c)) = local_c;
-    puVar4 = (byte *)(local_14);
-    puVar6 = (byte *)((int)puVar1 + (local_8 - local_c));
-    memmove(puVar6, puVar4, local_c); /* compiler REP MOVS byte copy */
+    uVar2 = local_c + 0x87;
+    local_8 = uVar2;
+    allocation = Library::DKW::LIB::MemRealloc(allocation,uVar2);
+    *(uint *)((int)allocation + uVar2 + (-4 - local_c)) = local_c;
+    puVar3 = (byte *)(local_14);
+    puVar6 = (byte *)((int)allocation + (local_8 - local_c));
+    memmove(puVar6, puVar3, local_c); /* compiler REP MOVS byte copy */
     FreeAndNull(&local_14);
     if ((local_18->field_023C != 0) && (local_18->field_0244 != 0)) {
       local_1c = (uint *)thunk_FUN_0060d390(local_18,&local_10);
       if (local_1c != (uint *)0x0) {
-        uVar3 = local_8 + 4 + local_10;
-        local_8 = uVar3;
-        puVar1 = (undefined4 *)Library::DKW::LIB::FUN_006acf50((int)puVar1,uVar3);
-        puVar7 = (uint *)((int)puVar1 + uVar3 + (-4 - local_10));
+        uVar2 = local_8 + 4 + local_10;
+        local_8 = uVar2;
+        allocation = Library::DKW::LIB::MemRealloc(allocation,uVar2);
+        puVar7 = (uint *)((int)allocation + uVar2 + (-4 - local_10));
         *puVar7 = local_10;
-        puVar5 = local_1c;
-        for (uVar3 = local_10 >> 2; puVar7 = puVar7 + 1, uVar3 != 0; uVar3 = uVar3 - 1) {
-          *puVar7 = *puVar5;
-          puVar5 = puVar5 + 1;
+        puVar4 = local_1c;
+        for (uVar2 = local_10 >> 2; puVar7 = puVar7 + 1, uVar2 != 0; uVar2 = uVar2 - 1) {
+          *puVar7 = *puVar4;
+          puVar4 = puVar4 + 1;
         }
         for (local_10 = local_10 & 3; local_10 != 0; local_10 = local_10 - 1) {
-          *(char *)puVar7 = (char)*puVar5;
-          puVar5 = (uint *)((int)puVar5 + 1);
+          *(char *)puVar7 = (char)*puVar4;
+          puVar4 = (uint *)((int)puVar4 + 1);
           puVar7 = (uint *)((int)puVar7 + 1);
         }
         FreeAndNull(&local_1c);
@@ -74,6 +75,6 @@ int __thiscall FUN_0060c020(void *this,uint *param_1)
   if (param_1 != (uint *)0x0) {
     *param_1 = local_8;
   }
-  return (int)puVar1;
+  return (int)allocation;
 }
 

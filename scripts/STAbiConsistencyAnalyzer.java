@@ -40,12 +40,11 @@ import ghidra.program.model.listing.Instruction;
 import ghidra.program.model.listing.InstructionIterator;
 import ghidra.program.model.listing.Listing;
 import ghidra.program.model.listing.Parameter;
+import ghidra.program.model.listing.VariableStorage;
 import ghidra.program.model.scalar.Scalar;
 import ghidra.program.model.symbol.SourceType;
 
 public class STAbiConsistencyAnalyzer extends GhidraScript {
-    private static final String SETJMP3 = "0072D7F0";
-    private static final String LOAD_RESOURCE_STRING = "006B0140";
     private static final int CALL_USE_SCAN_LIMIT = 8;
     private static final int POINTER_RETURN_SCAN_LIMIT = 32;
     private static final int RETURN_DEFINITION_SCAN_LIMIT = 12;
@@ -169,8 +168,8 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
         return width;
     }
 
-    private void addKnownRepairs(List<Row> rows) {
-        Function setjmp = functionAt(SETJMP3);
+    private void addKnownRepairs(List<Row> rows) throws Exception {
+        Function setjmp = uniqueNamedFunction("__setjmp3");
         if (setjmp != null && !matchesFullPrototype(setjmp, "/int", "__cdecl", true,
                 List.of("pointer:/int", "/int"))) {
             rows.add(Row.full(setjmp, "known_setjmp3", true, "/int", "__cdecl", true,
@@ -179,12 +178,14 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
                 "call sites push env and count only"));
         }
 
-        Function loadString = functionAt(LOAD_RESOURCE_STRING);
+        Function loadString = uniqueTaggedFunction(
+            "RECOVERED_UTILITY_LOAD_RESOURCE_STRING");
         if (loadString != null && !"pointer:/char".equals(typeSpec(loadString.getReturnType()))) {
+            int callers = loadString.getCallingFunctions(monitor).size();
             rows.add(Row.target(loadString, "known_load_resource_string", true, "return", -1,
                 loadString.getReturn(), "", "pointer:/char", "high",
                 "the helper computes the ring-buffer address in EAX and callers consume that " +
-                "address immediately; 572 exported calls depend on the value"));
+                "address immediately; observed callers=" + callers));
         }
     }
 
@@ -213,14 +214,17 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
      * and the slot boundary, so adjacent generic dwords may be merged without
      * guessing from constants or names.
      */
-    private boolean addX87DoubleParameterRepair(Function function, List<Row> rows) {
+    private boolean addX87DoubleParameterRepair(Function function, List<Row> rows)
+            throws Exception {
+        boolean scriptOwnedX87 = scriptOwnedX87Prototype(function);
         if (pointerSize != 4 || function.hasVarArgs() ||
-                manual(function.getSignatureSource()) ||
-                manual(function.getReturn().getSource())) return false;
+                !scriptOwnedX87 && (manual(function.getSignatureSource()) ||
+                    manual(function.getReturn().getSource()))) return false;
         List<Parameter> parameters = explicitParameters(function).stream()
             .sorted(Comparator.comparingInt(Parameter::getOrdinal)).toList();
-        if (parameters.isEmpty() || parameters.stream().anyMatch(parameter ->
-                manual(parameter.getSource()))) return false;
+        if (parameters.isEmpty() || !scriptOwnedX87 &&
+                parameters.stream().anyMatch(parameter -> manual(parameter.getSource())))
+            return false;
 
         List<ParameterSlot> slots = new ArrayList<>();
         Map<Long, Integer> slotAt = new TreeMap<>();
@@ -276,6 +280,11 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
                 .addAll(entry.getValue());
         if (evidence.isEmpty()) return false;
 
+        // Retire x87 prototypes created with dynamic storage. On 32-bit x86
+        // doubles are stack-aligned to four bytes; dynamic storage may insert
+        // padding or duplicate a legacy explicit ECX receiver.
+        if (addX87StorageMigration(function, parameters, evidence, rows)) return true;
+
         Map<Integer, Integer> merges = new TreeMap<>();
         List<String> selectedEvidence = new ArrayList<>();
         for (Map.Entry<Long, List<String>> entry : evidence.entrySet()) {
@@ -306,29 +315,170 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
 
         List<String> types = new ArrayList<>();
         List<String> names = new ArrayList<>();
+        List<String> storages = new ArrayList<>();
         for (int index = 0; index < parameters.size();) {
             Integer consumed = merges.get(index);
             Parameter parameter = parameters.get(index);
             if (consumed != null) {
                 types.add("/double");
                 names.add(parameter.getName());
+                if (consumed == 1)
+                    storages.add(parameter.getVariableStorage().getSerializationString());
+                else
+                    storages.add(new VariableStorage(currentProgram,
+                        parameter.getStackOffset(), 8).getSerializationString());
                 index += consumed;
             }
             else {
                 types.add(typeSpec(parameter.getFormalDataType()));
                 names.add(parameter.getName());
+                storages.add(parameter.getVariableStorage().getSerializationString());
                 index++;
             }
         }
-        rows.add(Row.full(function, "x87_double_parameter_slots", true,
+        StoragePlan customPlan = withAutoParameters(function,
+            new StoragePlan(types, names, storages));
+        rows.add(Row.fullCustom(function, "x87_double_parameter_slots", true,
             typeSpec(function.getReturnType()), function.getCallingConventionName(),
-            function.hasVarArgs(), String.join(";", types), String.join(";", names),
+            function.hasVarArgs(), String.join(";", customPlan.types),
+            String.join(";", customPlan.names), String.join(";", customPlan.storages),
             "high", "x87 double-width accesses or exact split stores into an " +
             "owner field independently typed or consumed as double prove physical " +
             "EBP slot boundaries; " +
             "merged_slots=" + merges + "; sites=" +
             String.join(" | ", selectedEvidence)));
         return true;
+    }
+
+    private boolean scriptOwnedX87Prototype(Function function) {
+        if (!hasTag(function, "RECOVERED_ABI_CONSISTENCY")) return false;
+        String comment = function.getComment();
+        if (comment == null) return false;
+        String marker = "[STAbiConsistencyApplier] x87_double_parameter_slots " +
+            "target=function:-1: prototype=";
+        int start = comment.indexOf(marker);
+        if (start < 0) return false;
+        start += marker.length();
+        int end = comment.indexOf(" Evidence:", start);
+        if (end < 0) return false;
+        String installedPrototype = comment.substring(start, end).trim();
+        return installedPrototype.equals(function.getSignature().getPrototypeString(true));
+    }
+
+    private boolean addX87StorageMigration(Function function,
+            List<Parameter> parameters, Map<Long, List<String>> evidence,
+            List<Row> rows) throws Exception {
+        String comment = function.getComment();
+        if (!hasTag(function, "RECOVERED_ABI_CONSISTENCY") || comment == null ||
+                !comment.contains("[STAbiConsistencyApplier] x87_double_parameter_slots") ||
+                parameters.stream().noneMatch(parameter ->
+                    "/double".equals(typeSpec(parameter.getFormalDataType()))))
+            return false;
+
+        StoragePlan fullPlan = packedStoragePlan(parameters);
+        boolean fullPlanMatches = x87OffsetsMatch(fullPlan, evidence.keySet());
+
+        Parameter autoThis = null;
+        for (Parameter parameter : function.getParameters())
+            if (parameter.isAutoParameter()) { autoThis = parameter; break; }
+        // Do not identify the duplicate by datatype identity: later generated-type
+        // replacement may leave two same-role receiver pointers non-equivalent. The
+        // one-slot removal is selected only when the current layout contradicts the
+        // observed x87 boundaries and the projected layout matches all of them.
+        if (autoThis != null && parameters.size() > 1 &&
+                parameters.get(0).hasStackStorage() && !fullPlanMatches) {
+            StoragePlan projectedPlan = packedStoragePlan(
+                parameters.subList(1, parameters.size()));
+            if (x87OffsetsMatch(projectedPlan, evidence.keySet())) {
+                StoragePlan customPlan = withAutoParameters(function, projectedPlan);
+                rows.add(Row.fullCustom(function, "x87_stack_storage_migration", true,
+                    typeSpec(function.getReturnType()), function.getCallingConventionName(),
+                    function.hasVarArgs(), String.join(";", customPlan.types),
+                    String.join(";", customPlan.names),
+                    String.join(";", customPlan.storages),
+                    "high", "retire script-owned dynamic x87 storage; " +
+                        "observed_ebp_offsets=" + evidence.keySet() +
+                        "; current_layout_mismatch=1; custom_storage=" +
+                        projectedPlan.storages +
+                        "; removed duplicated auto-this projection"));
+                return true;
+            }
+        }
+
+        if (!fullPlanMatches) return false;
+        boolean already = true;
+        for (int index = 0; index < parameters.size(); index++)
+            if (!parameters.get(index).getVariableStorage()
+                    .getSerializationString().equals(fullPlan.storages.get(index))) {
+                already = false;
+                break;
+            }
+        if (!already) {
+            StoragePlan customPlan = withAutoParameters(function, fullPlan);
+            rows.add(Row.fullCustom(function, "x87_stack_storage_migration", true,
+                typeSpec(function.getReturnType()), function.getCallingConventionName(),
+                function.hasVarArgs(), String.join(";", customPlan.types),
+                String.join(";", customPlan.names),
+                String.join(";", customPlan.storages),
+                "high", "retire script-owned dynamic x87 storage; observed_ebp_offsets=" +
+                    evidence.keySet() + "; custom_storage=" + fullPlan.storages));
+            return true;
+        }
+        return false;
+    }
+
+    private StoragePlan packedStoragePlan(List<Parameter> parameters) throws Exception {
+        List<String> types = new ArrayList<>();
+        List<String> names = new ArrayList<>();
+        List<String> storages = new ArrayList<>();
+        // Incoming x86 stack parameters begin immediately after the return
+        // address. Auto this/fastcall registers consume no stack slot; using the
+        // shifted minimum from a broken dynamic signature would preserve its gap.
+        int stackOffset = pointerSize;
+        for (Parameter parameter : parameters) {
+            DataType type = parameter.getFormalDataType();
+            types.add(typeSpec(type));
+            names.add(parameter.getName());
+            if (parameter.hasStackStorage()) {
+                int span = parameterSpan(parameter);
+                int storageLength = type.getLength() > 0 ? type.getLength() :
+                    parameter.getLength();
+                storages.add(new VariableStorage(currentProgram, stackOffset, storageLength)
+                    .getSerializationString());
+                stackOffset += span;
+            }
+            else storages.add(parameter.getVariableStorage().getSerializationString());
+        }
+        return new StoragePlan(types, names, storages);
+    }
+
+    private StoragePlan withAutoParameters(Function function, StoragePlan plan) {
+        List<String> types = new ArrayList<>();
+        List<String> names = new ArrayList<>();
+        List<String> storages = new ArrayList<>();
+        for (Parameter parameter : function.getParameters()) {
+            if (!parameter.isAutoParameter()) continue;
+            types.add(typeSpec(parameter.getFormalDataType()));
+            names.add(parameter.getName());
+            storages.add(parameter.getVariableStorage().getSerializationString());
+        }
+        types.addAll(plan.types);
+        names.addAll(plan.names);
+        storages.addAll(plan.storages);
+        return new StoragePlan(types, names, storages);
+    }
+
+    private boolean x87OffsetsMatch(StoragePlan plan, Set<Long> observed) throws Exception {
+        Set<Long> doubles = new HashSet<>();
+        for (int index = 0; index < plan.types.size(); index++) {
+            if (!"/double".equals(plan.types.get(index))) continue;
+            VariableStorage storage = VariableStorage.deserialize(
+                currentProgram, plan.storages.get(index));
+            if (!storage.hasStackStorage()) return false;
+            doubles.add((long)storage.getStackOffset() + pointerSize);
+        }
+        return !doubles.isEmpty() && !observed.isEmpty() &&
+            observed.stream().allMatch(doubles::contains);
     }
 
     private boolean x87MemoryRead(String mnemonic) {
@@ -958,9 +1108,10 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
     }
 
     private Long stackOffset(String operand) {
-        String value = operand.toUpperCase(Locale.ROOT).replace("BYTE PTR", "")
-            .replace("WORD PTR", "").replace("DWORD PTR", "")
-            .replace("QWORD PTR", "").replace(" ", "");
+        String value = operand.toUpperCase(Locale.ROOT).replace("DOUBLE PTR", "")
+            .replace("QWORD PTR", "").replace("DWORD PTR", "")
+            .replace("FLOAT PTR", "").replace("WORD PTR", "")
+            .replace("BYTE PTR", "").replace(" ", "");
         Matcher matcher = STACK_MEMORY.matcher(value);
         if (!matcher.matches()) return null;
         if (matcher.group(2) == null) return 0L;
@@ -1029,9 +1180,28 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
         return function;
     }
 
-    private Function functionAt(String address) {
-        Address parsed = currentProgram.getAddressFactory().getAddress(address);
-        return parsed == null ? null : currentProgram.getFunctionManager().getFunctionAt(parsed);
+    private Function uniqueNamedFunction(String leaf) {
+        Function match = null;
+        FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
+        while (functions.hasNext()) {
+            Function candidate = functions.next();
+            if (!leaf.equals(candidate.getName())) continue;
+            if (match != null) return null;
+            match = candidate;
+        }
+        return match;
+    }
+
+    private Function uniqueTaggedFunction(String tagName) {
+        Function match = null;
+        FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
+        while (functions.hasNext()) {
+            Function candidate = functions.next();
+            if (!hasTag(candidate, tagName)) continue;
+            if (match != null) return null;
+            match = candidate;
+        }
+        return match;
     }
 
     private boolean matchesFullPrototype(Function function, String returnType, String convention,
@@ -1168,7 +1338,8 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
                 "expected_signature\texpected_signature_source\ttarget_kind\ttarget_ordinal\t" +
                 "expected_target_name\texpected_target_type\texpected_target_source\t" +
                 "proposed_name\tproposed_type\tproposed_convention\tproposed_varargs\t" +
-                "proposed_parameter_types\tproposed_parameter_names\tconfidence\tevidence\n");
+                "proposed_parameter_types\tproposed_parameter_names\t" +
+                "proposed_parameter_storages\tconfidence\tevidence\n");
             for (Row row : rows) out.write((row.apply ? "1" : "0") + "\t" + row.repairKind +
                 "\t" + row.functionAddress + "\t" + tsv(row.expectedFunction) + "\t" +
                 tsv(row.expectedSignature) + "\t" + row.expectedSignatureSource + "\t" +
@@ -1177,7 +1348,8 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
                 row.expectedTargetSource + "\t" + tsv(row.proposedName) + "\t" +
                 row.proposedType + "\t" + row.proposedConvention + "\t" +
                 row.proposedVarargs + "\t" + row.proposedParameterTypes + "\t" +
-                tsv(row.proposedParameterNames) + "\t" + row.confidence + "\t" +
+                tsv(row.proposedParameterNames) + "\t" +
+                row.proposedParameterStorages + "\t" + row.confidence + "\t" +
                 tsv(row.evidence) + "\n");
         }
     }
@@ -1211,7 +1383,8 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
                 "\nProposals: " + rows.size() + "\nAutomatic: " +
                 rows.stream().filter(row -> row.apply).count() + "\n");
             for (String kind : List.of("known_setjmp3", "known_load_resource_string",
-                    "x87_double_parameter_slots", "full_eax_return", "stack_parameter_width",
+                    "x87_double_parameter_slots", "x87_stack_storage_migration",
+                    "full_eax_return", "stack_parameter_width",
                     "stack_parameter_scalar_role", "pointer_return_element_width"))
                 out.write(kind + ": " + rows.stream().filter(row ->
                     row.repairKind.equals(kind)).count() + "\n");
@@ -1263,6 +1436,8 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
     }
     private record RegisterUse(int width, String evidence) { }
     private record ParameterSlot(Parameter parameter, long offset, int span) { }
+    private record StoragePlan(List<String> types, List<String> names,
+        List<String> storages) { }
     private record ParameterHalf(long parameterOffset, int half) { }
     private record BaseMemory(String base, long offset) { }
     private record WidthEvidence(String proposedType, boolean conflict, String reason) { }
@@ -1279,14 +1454,15 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
         final String expectedTargetName, expectedTargetType, expectedTargetSource;
         final String proposedName, proposedType, proposedConvention;
         final boolean proposedVarargs;
-        final String proposedParameterTypes, proposedParameterNames, confidence, evidence;
+        final String proposedParameterTypes, proposedParameterNames;
+        final String proposedParameterStorages, confidence, evidence;
 
         Row(boolean apply, String repairKind, Function function, String targetKind,
                 int targetOrdinal, String expectedTargetName, String expectedTargetType,
                 String expectedTargetSource, String proposedName, String proposedType,
                 String proposedConvention, boolean proposedVarargs,
                 String proposedParameterTypes, String proposedParameterNames,
-                String confidence, String evidence) {
+                String proposedParameterStorages, String confidence, String evidence) {
             this.apply = apply; this.repairKind = repairKind;
             this.functionAddress = addr(function.getEntryPoint());
             this.expectedFunction = function.getName(true);
@@ -1301,6 +1477,7 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
             this.proposedVarargs = proposedVarargs;
             this.proposedParameterTypes = proposedParameterTypes;
             this.proposedParameterNames = proposedParameterNames;
+            this.proposedParameterStorages = proposedParameterStorages;
             this.confidence = confidence; this.evidence = evidence;
         }
 
@@ -1309,14 +1486,22 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
                 String confidence, String evidence) {
             return new Row(apply, kind, function, targetKind, ordinal, target.getName(),
                 typeSpecStatic(target.getFormalDataType()), target.getSource().toString(),
-                proposedName, proposedType, "", false, "", "", confidence, evidence);
+                proposedName, proposedType, "", false, "", "", "", confidence, evidence);
         }
         static Row full(Function function, String kind, boolean apply, String returnType,
                 String convention, boolean varargs, String parameterTypes,
                 String parameterNames, String confidence, String evidence) {
             return new Row(apply, kind, function, "function", -1, "", "", "",
                 "", returnType, convention, varargs, parameterTypes, parameterNames,
-                confidence, evidence);
+                "", confidence, evidence);
+        }
+        static Row fullCustom(Function function, String kind, boolean apply,
+                String returnType, String convention, boolean varargs,
+                String parameterTypes, String parameterNames, String parameterStorages,
+                String confidence, String evidence) {
+            return new Row(apply, kind, function, "function", -1, "", "", "",
+                "", returnType, convention, varargs, parameterTypes, parameterNames,
+                parameterStorages, confidence, evidence);
         }
         private static String typeSpecStatic(DataType type) {
             if (type instanceof Pointer pointer && pointer.getDataType() != null)

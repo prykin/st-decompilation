@@ -174,6 +174,7 @@ uint * __cdecl CreateArbList(cMf32 *param_1,int param_2)
         pbVar12 = (byte *)(pcVar15 + -uVar9);
         pbVar16 = local_5c;
         memmove(pbVar16, pbVar12, uVar9); /* compiler REP MOVS byte copy */
+        uVar10 = 0;
         uVar9 = 0xffffffff;
         pcVar5 = "%03d";
         do {
@@ -247,7 +248,7 @@ uint * __cdecl CreateArbList(cMf32 *param_1,int param_2)
         }
       }
       if (bVar4) {
-        Library::DKW::TBL::FUN_006ae1c0(&local_8->flags,(undefined4 *)local_138);
+        Library::DKW::TBL::DArrayAppend(local_8,local_138);
       }
       cMf32::RecMemFree(param_1,(uint *)&local_c);
     }

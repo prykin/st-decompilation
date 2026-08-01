@@ -38,7 +38,8 @@ public class STPrototypeApplier extends GhidraScript {
         if (currentProgram == null) { printerr("Open the analyzed ST program first."); return; }
         File file = inputFile(); if (file == null) return;
         Tsv tsv = readTsv(file.toPath());
-        requireColumns(tsv, "type_apply", "name_apply", "repair", "function_address",
+        requireColumns(tsv, "type_apply", "name_apply", "repair", "protected_override",
+            "function_address",
             "expected_function", "target_kind", "target_ordinal", "expected_target_name",
             "expected_target_type", "expected_target_source", "proposed_name",
             "proposed_type", "confidence", "reason");
@@ -101,6 +102,8 @@ public class STPrototypeApplier extends GhidraScript {
                 currentName.equals(unt(row.get("expected_target_name"))) &&
                 currentSource.equals(row.get("expected_target_source"));
             boolean manual = protectedSource(target.getSource());
+            boolean protectedOverride = eligibleProtectedOverride(function, target, row,
+                currentType);
             List<String> details = new ArrayList<>();
             boolean changed = false, preserved = false, conflict = false;
             if (typeApply) {
@@ -110,7 +113,7 @@ public class STPrototypeApplier extends GhidraScript {
                 }
                 else if (proposedType.isEquivalent(target.getDataType()))
                     details.add("type=unchanged");
-                else if (manual || !baseline) {
+                else if ((manual && !protectedOverride) || !baseline) {
                     details.add("type=preserved(stale/manual target)"); preserved = true;
                 }
                 else {
@@ -179,6 +182,21 @@ public class STPrototypeApplier extends GhidraScript {
     }
     private boolean protectedSource(SourceType source) {
         return source == SourceType.USER_DEFINED || source == SourceType.IMPORTED;
+    }
+    private boolean eligibleProtectedOverride(Function function, Parameter target,
+            Map<String, String> row, String currentType) {
+        String proposed = unt(row.get("proposed_type"));
+        return enabled(row.get("protected_override")) &&
+            "return".equals(row.get("target_kind")) &&
+            target.getSource() == SourceType.USER_DEFINED &&
+            function.getSignatureSource() == SourceType.USER_DEFINED &&
+            hasTag(function, "RECOVERED_DEBUG_NAME") &&
+            currentType.toLowerCase(Locale.ROOT).matches("pointer:/undefined(?:[1248])?") &&
+            proposed.startsWith("pointer:") &&
+            !proposed.toLowerCase(Locale.ROOT).contains("undefined") &&
+            !proposed.equals("pointer:/void") &&
+            "high".equals(row.get("confidence")) &&
+            unt(row.get("reason")).contains("legacy_debug_signature_source_override");
     }
     private long count(String status) {
         return report.stream().filter(row -> row.status.equals(status)).count();

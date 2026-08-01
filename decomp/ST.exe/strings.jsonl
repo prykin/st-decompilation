@@ -3566,8 +3566,8 @@
 {"address":"007ED988","type":"string","length":6,"value":"\"%08X \"","referenced_from":["006ADC30 FUN_006adc30"]}
 {"address":"007ED990","type":"string","length":47,"value":"\"\\n=============================== Exception %X\\n\"","referenced_from":["006ADC30 FUN_006adc30"]}
 {"address":"007ED9C0","type":"string","length":82,"value":"\"\\n%d ===========================================  %02d.%02d.%d  %d:%02d:%02d.%03d\\n\"","referenced_from":["006ADC30 FUN_006adc30"]}
-{"address":"007EDA14","type":"string","length":23,"value":"\"E:\\\\DKW\\\\TBL\\\\C\\\\darrput.c\"","referenced_from":["006AE140 Library::DKW::TBL::FUN_006ae140"]}
-{"address":"007EDA2C","type":"string","length":24,"value":"\"E:\\\\DKW\\\\TBL\\\\C\\\\darrappe.c\"","referenced_from":["006AE1C0 Library::DKW::TBL::FUN_006ae1c0"]}
+{"address":"007EDA14","type":"string","length":23,"value":"\"E:\\\\DKW\\\\TBL\\\\C\\\\darrput.c\"","referenced_from":["006AE140 Library::DKW::TBL::DArrayPut"]}
+{"address":"007EDA2C","type":"string","length":24,"value":"\"E:\\\\DKW\\\\TBL\\\\C\\\\darrappe.c\"","referenced_from":["006AE1C0 Library::DKW::TBL::DArrayAppend"]}
 {"address":"007EDA44","type":"string","length":24,"value":"\"E:\\\\DKW\\\\TBL\\\\C\\\\darrcrea.c\"","referenced_from":["006AE290 Library::DKW::TBL::DArrayCreate","006AE310 Library::DKW::TBL::FUN_006ae310"]}
 {"address":"007EDA5C","type":"string","length":24,"value":"\"E:\\\\DKW\\\\WAY\\\\C\\\\sway3d.cpp\"","referenced_from":["006AE7D0 Library::DKW::WAY::FUN_006ae7d0","006AFBA0 Library::DKW::WAY::FUN_006afba0"]}
 {"address":"007EDA74","type":"string","length":23,"value":"\"E:\\\\DKW\\\\TBL\\\\C\\\\darrcpy.c\"","referenced_from":["006AFE40 Library::DKW::TBL::FUN_006afe40"]}

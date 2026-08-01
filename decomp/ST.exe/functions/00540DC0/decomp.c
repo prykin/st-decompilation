@@ -97,7 +97,7 @@ SetAccelerator(int param_1,undefined4 param_2,undefined4 param_3,undefined4 para
     if (g_array_008026F0 == (DArrayTy *)0x0) {
       g_array_008026F0 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x4c,10);
     }
-    Library::DKW::TBL::FUN_006ae1c0(&g_array_008026F0->flags,local_50);
+    Library::DKW::TBL::DArrayAppend(g_array_008026F0,local_50);
     g_currentExceptionFrame = local_b4.previous;
     return;
   }

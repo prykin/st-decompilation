@@ -17,14 +17,14 @@ STAllPlayersC::GetPanelInfo
   STGroupBoatC *pSVar5;
   Global_sub_0044D320_param_1Enum GVar6;
   byte *pbVar7;
-  STGameObjC *pSVar8;
-  undefined4 uVar9;
-  AnonShape_0043BEB0_1C00EC12 *pAVar10;
-  byte *pbVar11;
-  uint uVar12;
+  dword dVar8;
+  STGameObjC *pSVar9;
+  undefined4 uVar10;
+  AnonShape_0043BEB0_1C00EC12 *pAVar11;
+  byte *pbVar12;
   uint uVar13;
-  short *psVar14;
-  dword dVar15;
+  ushort *puVar14;
+  uint uVar15;
   AnonShape_0043BEB0_1C00EC12 *pAVar16;
   char cVar17;
   STAllPlayersC_GetObjPtr_param_3Enum SVar18;
@@ -35,7 +35,7 @@ STAllPlayersC::GetPanelInfo
   undefined4 local_34;
   undefined4 local_30;
   undefined1 local_2c;
-  STPlayerTempSlot *local_28;
+  int local_28;
   uint local_24;
   uint local_20;
   DArrayTy *local_1c;
@@ -50,8 +50,8 @@ STAllPlayersC::GetPanelInfo
   local_20 = 0;
   local_10 = this;
   if ((char)param_1 == '\x01') {
-    uVar12 = (uint)DAT_0080874d;
-    iVar4 = g_playerRuntime[uVar12].tempSlots[0][0].objectType;
+    uVar15 = (uint)DAT_0080874d;
+    iVar4 = g_playerRuntime[uVar15].field332_0x163;
     if (iVar4 == 0) {
       return;
     }
@@ -64,19 +64,18 @@ STAllPlayersC::GetPanelInfo
         }
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      uVar3 = g_playerRuntime[uVar12].tempSlots[0][0].objectId;
+      uVar3 = g_playerRuntime[uVar15].field334_0x16b;
       SVar18 = CASE_3;
       cVar17 = -1;
       goto cf_common_exit_0043CB5C;
     }
-    uVar3 = g_playerRuntime[uVar12].tempSlots[0][0].activityCount;
-    if (uVar3 != 1) {
-      if (uVar3 < 2) {
+    if (g_playerRuntime[uVar15].field336_0x171 != 1) {
+      if ((ushort)g_playerRuntime[uVar15].field336_0x171 < 2) {
         *(undefined1 *)param_2 = 0;
         return;
       }
       *(undefined1 *)param_2 = 2;
-      if (g_playerRuntime[DAT_0080874d].field324_0x203 == 0) {
+      if (g_playerRuntime[DAT_0080874d].field448_0x203 == 0) {
         param_2->field_0001 = 1;
       }
       else {
@@ -85,7 +84,7 @@ STAllPlayersC::GetPanelInfo
       param_2->field_0002 = 1;
       iVar4 = GetPlayerRaceId(DAT_0080874d);
       pAVar16->field_0007 = (char)iVar4;
-      local_1c = g_playerRuntime[uVar12].tempSlots[0][0].objectIds;
+      local_1c = (DArrayTy *)g_playerRuntime[uVar15].field335_0x16d;
       local_14 = local_1c->count;
       pAVar16[2].field_0002 = 0;
       pAVar16[2].field_0003 = 0;
@@ -103,23 +102,23 @@ STAllPlayersC::GetPanelInfo
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         if (local_c._0_2_ != 0xffff) {
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          pSVar8 = GetObjPtr(local_10,(char)g_playerRuntime[uVar12].tempSlots[0][0].playerId,
-                             local_c._0_2_,CASE_1);
+          pSVar9 = GetObjPtr(local_10,*(char *)&g_playerRuntime[uVar15].field333_0x167,local_c._0_2_
+                             ,CASE_1);
           STFishC::sub_004162B0
-                    ((STFishC *)pSVar8,&local_6,&local_8,(undefined2 *)((int)&param_1 + 2));
+                    ((STFishC *)pSVar9,&local_6,&local_8,(undefined2 *)((int)&param_1 + 2));
           *(undefined1 *)((int)pAVar16 + (0x2e - param_1._2_2_)) = 1;
-          (*pSVar8->vtable->vfunc_30)(local_6c);
+          (*pSVar9->vtable->vfunc_30)(local_6c);
           local_34 = local_64;
           local_30 = local_69;
           local_2c = local_51;
-          Library::DKW::TBL::FUN_006ae1c0(*(uint **)&pAVar16[2].field_000A,&local_34);
+          Library::DKW::TBL::DArrayAppend(*(DArrayTy **)&pAVar16[2].field_000A,&local_34);
           uVar13 = local_24;
         }
         local_24 = uVar13 + 1;
       } while ((int)local_24 < (int)local_14);
       return;
     }
-    pDVar1 = g_playerRuntime[uVar12].tempSlots[0][0].objectIds;
+    pDVar1 = (DArrayTy *)g_playerRuntime[uVar15].field335_0x16d;
     uVar13 = 0;
     local_14 = pDVar1->count;
     if ((int)local_14 < 1) {
@@ -135,12 +134,12 @@ STAllPlayersC::GetPanelInfo
         return;
       }
     }
-    cVar17 = (char)g_playerRuntime[uVar12].tempSlots[0][0].playerId;
+    cVar17 = *(char *)&g_playerRuntime[uVar15].field333_0x167;
   }
   else {
     if ((char)param_1 == '\x02') {
-      uVar12 = (uint)DAT_0080874d;
-      iVar4 = g_playerRuntime[uVar12].tempSlots[0][0].objectType;
+      uVar15 = (uint)DAT_0080874d;
+      iVar4 = g_playerRuntime[uVar15].field332_0x163;
       if (iVar4 == 0) {
         return;
       }
@@ -153,14 +152,13 @@ STAllPlayersC::GetPanelInfo
           }
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
-        uVar3 = g_playerRuntime[uVar12].tempSlots[0][0].objectId;
+        uVar3 = g_playerRuntime[uVar15].field334_0x16b;
         SVar18 = CASE_3;
         cVar17 = -1;
         goto cf_common_exit_0043CA35;
       }
-      uVar3 = g_playerRuntime[uVar12].tempSlots[0][0].activityCount;
-      if (uVar3 == 1) {
-        pDVar1 = g_playerRuntime[uVar12].tempSlots[0][0].objectIds;
+      if (g_playerRuntime[uVar15].field336_0x171 == 1) {
+        pDVar1 = (DArrayTy *)g_playerRuntime[uVar15].field335_0x16d;
         uVar13 = 0;
         local_14 = pDVar1->count;
         if ((int)local_14 < 1) {
@@ -176,61 +174,61 @@ STAllPlayersC::GetPanelInfo
             return;
           }
         }
-        cVar17 = (char)g_playerRuntime[uVar12].tempSlots[0][0].playerId;
+        cVar17 = *(char *)&g_playerRuntime[uVar15].field333_0x167;
         goto LAB_0043ca31;
       }
-      if (uVar3 < 2) {
+      if ((ushort)g_playerRuntime[uVar15].field336_0x171 < 2) {
         param_2->field_0005 = 0;
         return;
       }
       param_2->field_0005 = 2;
       iVar4 = GetPlayerRaceId(DAT_0080874d);
       pAVar16->field_0004 = (char)iVar4;
-      local_1c = g_playerRuntime[uVar12].tempSlots[0][0].objectIds;
+      local_1c = (DArrayTy *)g_playerRuntime[uVar15].field335_0x16d;
       local_14 = local_1c->count;
-      dVar15 = 0;
+      uVar15 = 0;
       if (0 < (int)local_14) {
         do {
-          DArrayGetElement(local_1c,dVar15,local_c);
+          DArrayGetElement(local_1c,uVar15,local_c);
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           if (local_c._0_2_ != 0xffff) {
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            pSVar8 = GetObjPtr(this,DAT_0080874d,local_c._0_2_,CASE_1);
-            iVar4 = thunk_FUN_00493cd0(pSVar8);
+            pSVar9 = GetObjPtr(this,DAT_0080874d,local_c._0_2_,CASE_1);
+            iVar4 = thunk_FUN_00493cd0(pSVar9);
             if (iVar4 == 0) break;
           }
-          dVar15 = dVar15 + 1;
-        } while ((int)dVar15 < (int)local_14);
+          uVar15 = uVar15 + 1;
+        } while ((int)uVar15 < (int)local_14);
       }
-      if (dVar15 == local_14) {
+      if (uVar15 == local_14) {
         pAVar16[1].field_0001 = 0;
         pAVar16->field_0x8 = 0;
         pAVar16->field_0007 = 0;
         return;
       }
       pAVar16->field_0x8 = 1;
-      if (g_playerRuntime[DAT_0080874d].aiPlayer == (AiPlrClassTy *)0x0) {
+      if (*(int *)&g_playerRuntime[DAT_0080874d].field_0x1 == 0) {
 LAB_0043c293:
         pAVar16[1].field_0001 = 0;
       }
       else {
-        dVar15 = 0;
+        uVar15 = 0;
         pAVar16[1].field_0001 = 3;
         if (0 < (int)local_14) {
           do {
-            DArrayGetElement(local_1c,dVar15,local_c);
+            DArrayGetElement(local_1c,uVar15,local_c);
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             if (local_c._0_2_ != 0xffff) {
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              pSVar8 = GetObjPtr(this,DAT_0080874d,local_c._0_2_,CASE_1);
-              pSVar5 = thunk_FUN_0042b760(DAT_0080874d,pSVar8->field_0030);
+              pSVar9 = GetObjPtr(this,DAT_0080874d,local_c._0_2_,CASE_1);
+              pSVar5 = thunk_FUN_0042b760(DAT_0080874d,pSVar9->field_0030);
               if ((pSVar5 != (STGroupBoatC *)0x0) &&
                  (pAVar16[1].field_0001 = 1, pSVar5->field_001C == 0)) break;
             }
-            dVar15 = dVar15 + 1;
-          } while ((int)dVar15 < (int)local_14);
+            uVar15 = uVar15 + 1;
+          } while ((int)uVar15 < (int)local_14);
         }
-        if (dVar15 == local_14) {
+        if (uVar15 == local_14) {
           if (pAVar16[1].field_0001 == '\x03') goto LAB_0043c293;
           if (pAVar16[1].field_0001 == '\x01') {
             pAVar16[1].field_0001 = 3;
@@ -243,30 +241,30 @@ LAB_0043c293:
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = (AnonShape_0043BEB0_1C00EC12 *)&pAVar16->field_000F;
       pbVar7 = local_18;
-      pbVar11 = (byte *)param_2;
+      pbVar12 = (byte *)param_2;
       do {
-        pbVar11[-6] = pbVar7[1];
-        *pbVar11 = *pbVar7;
-        pbVar11 = pbVar11 + 1;
+        pbVar12[-6] = pbVar7[1];
+        *pbVar12 = *pbVar7;
+        pbVar12 = pbVar12 + 1;
         pbVar7 = pbVar7 + 2;
-      } while ((int)(pbVar11 + (-0xf - (int)pAVar16)) < 6);
+      } while ((int)(pbVar12 + (-0xf - (int)pAVar16)) < 6);
       FreeAndNull(&local_18);
-      uVar12 = 0;
+      uVar15 = 0;
       pAVar16[2].field_0011 = 1;
       pAVar16[2].field_0x10 = 1;
       pAVar16[2].field_000F = 1;
       pAVar16[2].field_000E = 1;
       if (0 < (int)local_14) {
         do {
-          DArrayGetElement(local_1c,uVar12,local_c);
+          DArrayGetElement(local_1c,uVar15,local_c);
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           if (local_c._0_2_ != 0xffff) {
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            pSVar8 = GetObjPtr(local_10,DAT_0080874d,local_c._0_2_,CASE_1);
-            (&pAVar16[2].field_000E)[pSVar8->field_07EE] = 3;
+            pSVar9 = GetObjPtr(local_10,DAT_0080874d,local_c._0_2_,CASE_1);
+            (&pAVar16[2].field_000E)[pSVar9->field_07EE] = 3;
           }
-          uVar12 = uVar12 + 1;
-        } while ((int)uVar12 < (int)local_14);
+          uVar15 = uVar15 + 1;
+        } while ((int)uVar15 < (int)local_14);
       }
       if (GVar6 < 0x40001) {
         if (GVar6 == 0x40000) {
@@ -316,37 +314,37 @@ LAB_0043c293:
       else if (GVar6 == 0x1000000) {
         *(undefined4 *)pAVar16 = 0x24;
       }
-      local_28 = (STPlayerTempSlot *)0x0;
+      local_28 = 0;
       local_24 = 0;
-      uVar12 = local_20;
+      uVar15 = local_20;
       if (0 < (int)local_14) {
         do {
           DArrayGetElement(local_1c,local_24,local_c);
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           if (local_c._0_2_ != 0xffff) {
-            local_28 = (STPlayerTempSlot *)((int)&local_28->objectType + 1);
+            local_28 = local_28 + 1;
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            pSVar8 = GetObjPtr(local_10,DAT_0080874d,local_c._0_2_,CASE_1);
-            if (local_28 == (STPlayerTempSlot *)0x1) {
-              uVar12 = (uint)(ushort)pSVar8->field_0030;
+            pSVar9 = GetObjPtr(local_10,DAT_0080874d,local_c._0_2_,CASE_1);
+            if (local_28 == 1) {
+              uVar15 = (uint)(ushort)pSVar9->field_0030;
             }
-            else if (uVar12 != (ushort)pSVar8->field_0030) {
+            else if (uVar15 != (ushort)pSVar9->field_0030) {
               return;
             }
           }
           local_24 = local_24 + 1;
         } while ((int)local_24 < (int)local_14);
-        if (uVar12 == 0xffff) {
+        if (uVar15 == 0xffff) {
           return;
         }
       }
-      uVar3 = (ushort)uVar12;
+      uVar3 = (ushort)uVar15;
       if (0x1000 < GVar6) {
         if (GVar6 < 0x100001) {
           if (GVar6 == 0x100000) {
             pSVar5 = thunk_FUN_0042b760(DAT_0080874d,uVar3);
-            dVar15 = pSVar5->slot_0C();
-            switch(dVar15) {
+            dVar8 = pSVar5->slot_0C();
+            switch(dVar8) {
             case 1:
             case 7:
               goto cf_common_exit_0043C94C;
@@ -363,8 +361,8 @@ LAB_0043c293:
           if (GVar6 < 0x20001) {
             if (GVar6 == 0x20000) {
               pSVar5 = thunk_FUN_0042b760(DAT_0080874d,uVar3);
-              dVar15 = pSVar5->slot_0C();
-              switch(dVar15) {
+              dVar8 = pSVar5->slot_0C();
+              switch(dVar8) {
               case 1:
               case 7:
                 goto cf_common_exit_0043C94C;
@@ -382,8 +380,8 @@ LAB_0043c293:
             }
             if (GVar6 == 0x2000) {
               pSVar5 = thunk_FUN_0042b760(DAT_0080874d,uVar3);
-              dVar15 = pSVar5->slot_0C();
-              switch(dVar15) {
+              dVar8 = pSVar5->slot_0C();
+              switch(dVar8) {
               case 1:
               case 7:
                 goto cf_common_exit_0043C72D;
@@ -403,8 +401,8 @@ LAB_0043c293:
               return;
             }
             pSVar5 = thunk_FUN_0042b760(DAT_0080874d,uVar3);
-            dVar15 = pSVar5->slot_0C();
-            switch(dVar15) {
+            dVar8 = pSVar5->slot_0C();
+            switch(dVar8) {
             case 1:
             case 7:
               goto cf_common_exit_0043C94C;
@@ -422,8 +420,8 @@ LAB_0043c293:
           }
           if (GVar6 == 0x40000) {
             pSVar5 = thunk_FUN_0042b760(DAT_0080874d,uVar3);
-            dVar15 = pSVar5->slot_0C();
-            switch(dVar15) {
+            dVar8 = pSVar5->slot_0C();
+            switch(dVar8) {
             case 1:
             case 7:
               goto cf_common_exit_0043C94C;
@@ -441,8 +439,8 @@ LAB_0043c293:
             return;
           }
           pSVar5 = thunk_FUN_0042b760(DAT_0080874d,uVar3);
-          dVar15 = pSVar5->slot_0C();
-          switch(dVar15) {
+          dVar8 = pSVar5->slot_0C();
+          switch(dVar8) {
           case 1:
           case 7:
             goto cf_common_exit_0043C94C;
@@ -459,8 +457,8 @@ LAB_0043c293:
         if (GVar6 < 0x800001) {
           if (GVar6 == 0x800000) {
             pSVar5 = thunk_FUN_0042b760(DAT_0080874d,uVar3);
-            dVar15 = pSVar5->slot_0C();
-            switch(dVar15) {
+            dVar8 = pSVar5->slot_0C();
+            switch(dVar8) {
             case 1:
             case 7:
               goto cf_common_exit_0043C94C;
@@ -476,8 +474,8 @@ LAB_0043c293:
           }
           if (GVar6 == 0x200000) {
             pSVar5 = thunk_FUN_0042b760(DAT_0080874d,uVar3);
-            dVar15 = pSVar5->slot_0C();
-            switch(dVar15) {
+            dVar8 = pSVar5->slot_0C();
+            switch(dVar8) {
             case 1:
             case 7:
               goto cf_common_exit_0043C94C;
@@ -496,8 +494,8 @@ LAB_0043c293:
             return;
           }
           pSVar5 = thunk_FUN_0042b760(DAT_0080874d,uVar3);
-          dVar15 = pSVar5->slot_0C();
-          switch(dVar15) {
+          dVar8 = pSVar5->slot_0C();
+          switch(dVar8) {
           case 1:
           case 7:
             goto cf_common_exit_0043C94C;
@@ -515,8 +513,8 @@ LAB_0043c293:
         }
         if (GVar6 == 0x1000000) {
           pSVar5 = thunk_FUN_0042b760(DAT_0080874d,uVar3);
-          dVar15 = pSVar5->slot_0C();
-          switch(dVar15) {
+          dVar8 = pSVar5->slot_0C();
+          switch(dVar8) {
           case 1:
           case 7:
             goto cf_common_exit_0043C94C;
@@ -532,8 +530,8 @@ LAB_0043c293:
           return;
         }
         pSVar5 = thunk_FUN_0042b760(DAT_0080874d,uVar3);
-        dVar15 = pSVar5->slot_0C();
-        switch(dVar15) {
+        dVar8 = pSVar5->slot_0C();
+        switch(dVar8) {
         case 1:
         case 7:
           goto cf_common_exit_0043C94C;
@@ -552,8 +550,8 @@ LAB_0043c293:
         if (0x200 < GVar6) {
           if (GVar6 == 0x400) {
             pSVar5 = thunk_FUN_0042b760(DAT_0080874d,uVar3);
-            dVar15 = pSVar5->slot_0C();
-            switch(dVar15) {
+            dVar8 = pSVar5->slot_0C();
+            switch(dVar8) {
             case 1:
             case 7:
               goto cf_common_exit_0043C94C;
@@ -574,8 +572,8 @@ LAB_0043c293:
             return;
           }
           pSVar5 = thunk_FUN_0042b760(DAT_0080874d,uVar3);
-          dVar15 = pSVar5->slot_0C();
-          switch(dVar15) {
+          dVar8 = pSVar5->slot_0C();
+          switch(dVar8) {
           case 1:
           case 7:
             goto cf_common_exit_0043C94C;
@@ -593,8 +591,8 @@ LAB_0043c293:
         }
         if (GVar6 == 0x200) {
           pSVar5 = thunk_FUN_0042b760(DAT_0080874d,uVar3);
-          dVar15 = pSVar5->slot_0C();
-          switch(dVar15) {
+          dVar8 = pSVar5->slot_0C();
+          switch(dVar8) {
           case 1:
           case 7:
             goto cf_common_exit_0043C72D;
@@ -614,8 +612,8 @@ LAB_0043c293:
           return;
         }
         pSVar5 = thunk_FUN_0042b760(DAT_0080874d,uVar3);
-        dVar15 = pSVar5->slot_0C();
-        switch(dVar15) {
+        dVar8 = pSVar5->slot_0C();
+        switch(dVar8) {
         case 1:
         case 7:
           goto cf_common_exit_0043C72D;
@@ -629,8 +627,8 @@ LAB_0043c293:
       }
       if (GVar6 == 0x40) {
         pSVar5 = thunk_FUN_0042b760(DAT_0080874d,uVar3);
-        dVar15 = pSVar5->slot_0C();
-        switch(dVar15) {
+        dVar8 = pSVar5->slot_0C();
+        switch(dVar8) {
         case 1:
         case 7:
           goto cf_common_exit_0043C94C;
@@ -649,8 +647,8 @@ LAB_0043c293:
       switch(GVar6) {
       case CASE_1:
         pSVar5 = thunk_FUN_0042b760(DAT_0080874d,uVar3);
-        dVar15 = pSVar5->slot_0C();
-        switch(dVar15) {
+        dVar8 = pSVar5->slot_0C();
+        switch(dVar8) {
         case 1:
         case 7:
           goto cf_common_exit_0043C94C;
@@ -670,8 +668,8 @@ cf_common_exit_0043C508:
       case CASE_4:
       case CASE_8:
         pSVar5 = thunk_FUN_0042b760(DAT_0080874d,uVar3);
-        dVar15 = pSVar5->slot_0C();
-        switch(dVar15) {
+        dVar8 = pSVar5->slot_0C();
+        switch(dVar8) {
         case 1:
         case 7:
           goto cf_common_exit_0043C94C;
@@ -687,8 +685,8 @@ cf_common_exit_0043C508:
         break;
       case CASE_10:
         pSVar5 = thunk_FUN_0042b760(DAT_0080874d,uVar3);
-        dVar15 = pSVar5->slot_0C();
-        switch(dVar15) {
+        dVar8 = pSVar5->slot_0C();
+        switch(dVar8) {
         case 1:
         case 7:
           goto cf_common_exit_0043C72D;
@@ -703,8 +701,8 @@ cf_common_exit_0043C508:
       case CASE_28:
 switchD_0043c4d2_caseD_28:
         pSVar5 = thunk_FUN_0042b760(DAT_0080874d,uVar3);
-        dVar15 = pSVar5->slot_0C();
-        switch(dVar15) {
+        dVar8 = pSVar5->slot_0C();
+        switch(dVar8) {
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         case 1:
         case 7:
@@ -728,11 +726,11 @@ cf_common_exit_0043C86F:
       return;
     }
     if ((char)param_1 == '\x04') {
-      uVar12 = (uint)DAT_0080874d;
-      iVar4 = g_playerRuntime[uVar12].tempSlots[1][0].objectType;
+      uVar15 = (uint)DAT_0080874d;
+      iVar4 = g_playerRuntime[uVar15].field390_0x1b3;
       if (0x19a < iVar4) {
         if (iVar4 == 0x1a4) {
-          uVar3 = g_playerRuntime[uVar12].tempSlots[1][0].objectId;
+          uVar3 = g_playerRuntime[uVar15].field392_0x1bb;
           SVar18 = CASE_5;
           cVar17 = -1;
         }
@@ -746,7 +744,7 @@ LAB_0043ca5a:
             }
             STDebugBreak(); /* noreturn in standalone pseudocode */
           }
-          uVar3 = g_playerRuntime[uVar12].tempSlots[1][0].objectId;
+          uVar3 = g_playerRuntime[uVar15].field392_0x1bb;
           SVar18 = CASE_6;
           cVar17 = -1;
         }
@@ -757,22 +755,22 @@ LAB_0043ca5a:
           return;
         }
         if (iVar4 == 0x5a) {
-          uVar3 = g_playerRuntime[uVar12].tempSlots[1][0].objectId;
+          uVar3 = g_playerRuntime[uVar15].field392_0x1bb;
           SVar18 = CASE_4;
           cVar17 = -1;
         }
         else {
           if (iVar4 != 0x172) goto LAB_0043ca5a;
-          uVar3 = g_playerRuntime[uVar12].tempSlots[1][0].objectId;
+          uVar3 = g_playerRuntime[uVar15].field392_0x1bb;
           SVar18 = CASE_2;
           cVar17 = -1;
         }
         goto cf_common_exit_0043CA35;
       }
-      if (g_playerRuntime[uVar12].tempSlots[1][0].activityCount != 1) {
+      if (g_playerRuntime[uVar15].field394_0x1c1 != 1) {
         return;
       }
-      pDVar1 = g_playerRuntime[uVar12].tempSlots[1][0].objectIds;
+      pDVar1 = (DArrayTy *)g_playerRuntime[uVar15].field393_0x1bd;
       uVar13 = 0;
       local_14 = pDVar1->count;
       if ((int)local_14 < 1) {
@@ -788,12 +786,12 @@ LAB_0043ca5a:
           return;
         }
       }
-      cVar17 = (char)g_playerRuntime[uVar12].tempSlots[1][0].playerId;
+      cVar17 = *(char *)&g_playerRuntime[uVar15].field391_0x1b7;
 LAB_0043ca31:
       SVar18 = CASE_1;
 cf_common_exit_0043CA35:
-      pSVar8 = GetObjPtr(local_10,cVar17,uVar3,SVar18);
-      (*pSVar8->vtable->vfunc_34)(param_2);
+      pSVar9 = GetObjPtr(local_10,cVar17,uVar3,SVar18);
+      (*pSVar9->vtable->vfunc_34)(param_2);
       return;
     }
     if ((char)param_1 != '\x05') {
@@ -801,12 +799,11 @@ cf_common_exit_0043CA35:
         if (*(int *)param_2 != 0) {
           *(undefined4 *)(*(int *)param_2 + 0xc) = 0;
         }
-        uVar12 = (uint)DAT_0080874d;
-        iVar4 = g_playerRuntime[uVar12].tempSlots[1][0].objectType;
-        if (iVar4 == 0) {
+        uVar15 = (uint)DAT_0080874d;
+        if (g_playerRuntime[uVar15].field390_0x1b3 == 0) {
           return;
         }
-        if (iVar4 != 0x19a) {
+        if (g_playerRuntime[uVar15].field390_0x1b3 != 0x19a) {
           iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1d95,0,0,
                                      "%s","STAllPlayersC::GetPanelInfo (6) unknown game type");
           if (iVar4 == 0) {
@@ -814,10 +811,10 @@ cf_common_exit_0043CA35:
           }
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
-        if (g_playerRuntime[uVar12].tempSlots[1][0].activityCount != 1) {
+        if (g_playerRuntime[uVar15].field394_0x1c1 != 1) {
           return;
         }
-        pDVar1 = g_playerRuntime[uVar12].tempSlots[1][0].objectIds;
+        pDVar1 = (DArrayTy *)g_playerRuntime[uVar15].field393_0x1bd;
         uVar13 = 0;
         local_14 = pDVar1->count;
         if ((int)local_14 < 1) {
@@ -828,9 +825,9 @@ cf_common_exit_0043CA35:
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           if (local_c._0_2_ != 0xffff) {
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            pSVar8 = GetObjPtr(local_10,(char)g_playerRuntime[uVar12].tempSlots[1][0].playerId,
+            pSVar9 = GetObjPtr(local_10,*(char *)&g_playerRuntime[uVar15].field391_0x1b7,
                                local_c._0_2_,CASE_1);
-            (*pSVar8->vtable->vfunc_38)(param_2);
+            (*pSVar9->vtable->vfunc_38)(param_2);
             return;
           }
           uVar13 = uVar13 + 1;
@@ -842,12 +839,11 @@ cf_common_exit_0043CA35:
         *(undefined4 *)(*(int *)&param_2->field_0004 + 0xc) = 0;
         *(undefined4 *)(*(int *)&param_2->field_0x8 + 0xc) = 0;
         *(undefined4 *)(*(int *)&param_2->field_0xc + 0xc) = 0;
-        uVar12 = (uint)DAT_0080874d;
-        iVar4 = g_playerRuntime[uVar12].tempSlots[1][0].objectType;
-        if (iVar4 == 0) {
+        uVar15 = (uint)DAT_0080874d;
+        if (g_playerRuntime[uVar15].field390_0x1b3 == 0) {
           return;
         }
-        if (iVar4 != 0x19a) {
+        if (g_playerRuntime[uVar15].field390_0x1b3 != 0x19a) {
           iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1db2,0,0,
                                      "%s","STAllPlayersC::GetPanelInfo (7) unknown game type");
           if (iVar4 == 0) {
@@ -855,10 +851,10 @@ cf_common_exit_0043CA35:
           }
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
-        if (g_playerRuntime[uVar12].tempSlots[1][0].activityCount != 1) {
+        if (g_playerRuntime[uVar15].field394_0x1c1 != 1) {
           return;
         }
-        pDVar1 = g_playerRuntime[uVar12].tempSlots[1][0].objectIds;
+        pDVar1 = (DArrayTy *)g_playerRuntime[uVar15].field393_0x1bd;
         uVar13 = 0;
         local_14 = pDVar1->count;
         if ((int)local_14 < 1) {
@@ -869,9 +865,9 @@ cf_common_exit_0043CA35:
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           if (local_c._0_2_ != 0xffff) {
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            pSVar8 = GetObjPtr(local_10,(char)g_playerRuntime[uVar12].tempSlots[1][0].playerId,
+            pSVar9 = GetObjPtr(local_10,*(char *)&g_playerRuntime[uVar15].field391_0x1b7,
                                local_c._0_2_,CASE_1);
-            (*pSVar8->vtable->vfunc_3C)(param_2);
+            (*pSVar9->vtable->vfunc_3C)(param_2);
             return;
           }
           uVar13 = uVar13 + 1;
@@ -879,17 +875,16 @@ cf_common_exit_0043CA35:
         return;
       }
       if ((char)param_1 == '\b') {
-        uVar12 = (uint)DAT_0080874d;
+        uVar15 = (uint)DAT_0080874d;
         *(undefined4 *)(*(int *)param_2 + 0xc) = 0;
         *(undefined4 *)(*(int *)&param_2->field_0004 + 0xc) = 0;
         *(undefined4 *)(*(int *)&param_2->field_0x8 + 0xc) = 0;
         *(undefined4 *)(*(int *)&param_2->field_0xc + 0xc) = 0;
         *(undefined4 *)(*(int *)&param_2->field_0x10 + 0xc) = 0;
-        iVar4 = g_playerRuntime[uVar12].tempSlots[0][0].objectType;
-        if (iVar4 == 0) {
+        if (g_playerRuntime[uVar15].field332_0x163 == 0) {
           return;
         }
-        if (iVar4 != 0x3c) {
+        if (g_playerRuntime[uVar15].field332_0x163 != 0x3c) {
           iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1dd0,0,0,
                                      "%s","STAllPlayersC::GetPanelInfo (8) unknown game type");
           if (iVar4 == 0) {
@@ -897,10 +892,10 @@ cf_common_exit_0043CA35:
           }
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
-        if (g_playerRuntime[uVar12].tempSlots[0][0].activityCount == 0) {
+        if (g_playerRuntime[uVar15].field336_0x171 == 0) {
           return;
         }
-        local_1c = g_playerRuntime[uVar12].tempSlots[0][0].objectIds;
+        local_1c = (DArrayTy *)g_playerRuntime[uVar15].field335_0x16d;
         uVar13 = 0;
         local_14 = local_1c->count;
         if ((int)local_14 < 1) {
@@ -911,9 +906,9 @@ cf_common_exit_0043CA35:
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           if (local_c._0_2_ != 0xffff) {
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            pSVar8 = GetObjPtr(local_10,(char)g_playerRuntime[uVar12].tempSlots[0][0].playerId,
+            pSVar9 = GetObjPtr(local_10,*(char *)&g_playerRuntime[uVar15].field333_0x167,
                                local_c._0_2_,CASE_1);
-            (*pSVar8->vtable->vfunc_40)(pAVar16);
+            (*pSVar9->vtable->vfunc_40)(pAVar16);
             return;
           }
           uVar13 = uVar13 + 1;
@@ -921,12 +916,11 @@ cf_common_exit_0043CA35:
         return;
       }
       if ((char)param_1 == '\t') {
-        uVar12 = (uint)DAT_0080874d;
-        iVar4 = g_playerRuntime[uVar12].tempSlots[1][0].objectType;
-        if (iVar4 == 0) {
+        uVar15 = (uint)DAT_0080874d;
+        if (g_playerRuntime[uVar15].field390_0x1b3 == 0) {
           return;
         }
-        if (iVar4 != 0x19a) {
+        if (g_playerRuntime[uVar15].field390_0x1b3 != 0x19a) {
           iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1dec,0,0,
                                      "%s","STAllPlayersC::GetPanelInfo (9) unknown game type");
           if (iVar4 == 0) {
@@ -934,10 +928,10 @@ cf_common_exit_0043CA35:
           }
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
-        if (g_playerRuntime[uVar12].tempSlots[1][0].activityCount != 1) {
+        if (g_playerRuntime[uVar15].field394_0x1c1 != 1) {
           return;
         }
-        pDVar1 = g_playerRuntime[uVar12].tempSlots[1][0].objectIds;
+        pDVar1 = (DArrayTy *)g_playerRuntime[uVar15].field393_0x1bd;
         uVar13 = 0;
         local_14 = pDVar1->count;
         if ((int)local_14 < 1) {
@@ -948,9 +942,9 @@ cf_common_exit_0043CA35:
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           if (local_c._0_2_ != 0xffff) {
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            pSVar8 = GetObjPtr(local_10,(char)g_playerRuntime[uVar12].tempSlots[1][0].playerId,
+            pSVar9 = GetObjPtr(local_10,*(char *)&g_playerRuntime[uVar15].field391_0x1b7,
                                local_c._0_2_,CASE_1);
-            (*pSVar8->vtable->vfunc_44)(param_2);
+            (*pSVar9->vtable->vfunc_44)(param_2);
             return;
           }
           uVar13 = uVar13 + 1;
@@ -958,31 +952,32 @@ cf_common_exit_0043CA35:
         return;
       }
       if ((char)param_1 == '\n') {
-        uVar12 = (uint)DAT_0080874d;
-        local_28 = g_playerRuntime[uVar12].tempSlots[1];
-        if (g_playerRuntime[uVar12].tempSlots[1][0].objectType != 0x19a) {
+        uVar15 = (uint)DAT_0080874d;
+        /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
+        local_28 = uVar15 * 0xa62 + 0x7f4fd3;
+        if (g_playerRuntime[uVar15].field390_0x1b3 != 0x19a) {
           return;
         }
-        if (g_playerRuntime[uVar12].tempSlots[1][0].activityCount != 1) {
+        if (g_playerRuntime[uVar15].field394_0x1c1 != 1) {
           return;
         }
-        pDVar1 = g_playerRuntime[uVar12].tempSlots[1][0].objectIds;
-        uVar12 = 0;
-        dVar15 = pDVar1->count;
-        if ((int)dVar15 < 1) {
+        pDVar1 = (DArrayTy *)g_playerRuntime[uVar15].field393_0x1bd;
+        uVar15 = 0;
+        dVar8 = pDVar1->count;
+        if ((int)dVar8 < 1) {
           return;
         }
         do {
-          DArrayGetElement(pDVar1,uVar12,local_c);
+          DArrayGetElement(pDVar1,uVar15,local_c);
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           if (local_c._0_2_ != 0xffff) {
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            pSVar8 = GetObjPtr(local_10,(char)local_28->playerId,local_c._0_2_,CASE_1);
-            (*pSVar8->vtable->vfunc_48)(param_2);
+            pSVar9 = GetObjPtr(local_10,*(char *)(local_28 + 4),local_c._0_2_,CASE_1);
+            (*pSVar9->vtable->vfunc_48)(param_2);
             return;
           }
-          uVar12 = uVar12 + 1;
-        } while ((int)uVar12 < (int)dVar15);
+          uVar15 = uVar15 + 1;
+        } while ((int)uVar15 < (int)dVar8);
         return;
       }
       if ((char)param_1 != '\v') {
@@ -990,12 +985,11 @@ cf_common_exit_0043CA35:
           if (*(int *)param_2 != 0) {
             *(undefined4 *)(*(int *)param_2 + 0xc) = 0;
           }
-          uVar12 = (uint)DAT_0080874d;
-          iVar4 = g_playerRuntime[uVar12].tempSlots[1][0].objectType;
-          if (iVar4 == 0) {
+          uVar15 = (uint)DAT_0080874d;
+          if (g_playerRuntime[uVar15].field390_0x1b3 == 0) {
             return;
           }
-          if (iVar4 != 0x19a) {
+          if (g_playerRuntime[uVar15].field390_0x1b3 != 0x19a) {
             iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1ea3,0,0,
                                        "%s","STAllPlayersC::GetPanelInfo (12) unknown game type");
             if (iVar4 == 0) {
@@ -1003,10 +997,10 @@ cf_common_exit_0043CA35:
             }
             STDebugBreak(); /* noreturn in standalone pseudocode */
           }
-          if (g_playerRuntime[uVar12].tempSlots[1][0].activityCount != 1) {
+          if (g_playerRuntime[uVar15].field394_0x1c1 != 1) {
             return;
           }
-          pDVar1 = g_playerRuntime[uVar12].tempSlots[1][0].objectIds;
+          pDVar1 = (DArrayTy *)g_playerRuntime[uVar15].field393_0x1bd;
           uVar13 = 0;
           local_14 = pDVar1->count;
           if ((int)local_14 < 1) {
@@ -1017,9 +1011,9 @@ cf_common_exit_0043CA35:
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             if (local_c._0_2_ != 0xffff) {
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              pSVar8 = GetObjPtr(local_10,(char)g_playerRuntime[uVar12].tempSlots[1][0].playerId,
+              pSVar9 = GetObjPtr(local_10,*(char *)&g_playerRuntime[uVar15].field391_0x1b7,
                                  local_c._0_2_,CASE_1);
-              (*pSVar8->vtable->vfunc_50)(param_2);
+              (*pSVar9->vtable->vfunc_50)(param_2);
               return;
             }
             uVar13 = uVar13 + 1;
@@ -1027,32 +1021,35 @@ cf_common_exit_0043CA35:
           return;
         }
         if ((char)param_1 == '\x0e') {
-          local_28 = (STPlayerTempSlot *)0x4;
-          pAVar10 = (AnonShape_0043BEB0_1C00EC12 *)
-                    &g_playerRuntime[DAT_0080874d].tempSlots[0][1].objectIds;
+          local_28 = 4;
+          pAVar11 = (AnonShape_0043BEB0_1C00EC12 *)&g_playerRuntime[DAT_0080874d].field340_0x17d;
           do {
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            iVar4._0_1_ = pAVar10[-0xffffffff00000001].field_000A;
+            iVar4._0_1_ = pAVar11[-0xffffffff00000001].field_000A;
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            iVar4._1_1_ = pAVar10[-0xffffffff00000001].field_000B;
+            iVar4._1_1_ = pAVar11[-0xffffffff00000001].field_000B;
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            iVar4._2_1_ = pAVar10[-0xffffffff00000001].field_0xc;
+            iVar4._2_1_ = pAVar11[-0xffffffff00000001].field_0xc;
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            iVar4._3_1_ = pAVar10[-0xffffffff00000001].field_000D;
+            iVar4._3_1_ = pAVar11[-0xffffffff00000001].field_000D;
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-            param_2 = pAVar10;
+            param_2 = pAVar11;
             if (iVar4 == 0) {
 LAB_0043d41d:
               *(undefined1 *)pAVar16 = 0;
             }
             else if (iVar4 == 0x3c) {
-              if (*(ushort *)&pAVar10->field_0004 == 1) {
-                uVar12 = 0;
-                pDVar1 = *(DArrayTy **)pAVar10;
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+              uVar3._0_1_ = pAVar11->field_0004;
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+              uVar3._1_1_ = pAVar11->field_0005;
+              if (uVar3 == 1) {
+                uVar15 = 0;
+                pDVar1 = *(DArrayTy **)pAVar11;
                 local_14 = pDVar1->count;
                 if (0 < (int)local_14) {
                   do {
-                    DArrayGetElement(pDVar1,uVar12,local_c);
+                    DArrayGetElement(pDVar1,uVar15,local_c);
                     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                     uVar3 = local_c._0_2_;
                     if (uVar3 != 0xffff) {
@@ -1060,15 +1057,15 @@ LAB_0043d41d:
                       cVar17 = param_2[-1].field_000E;
                       goto LAB_0043d447;
                     }
-                    uVar12 = uVar12 + 1;
-                  } while ((int)uVar12 < (int)local_14);
+                    uVar15 = uVar15 + 1;
+                  } while ((int)uVar15 < (int)local_14);
                 }
               }
               else {
-                if (*(ushort *)&pAVar10->field_0004 < 2) goto LAB_0043d41d;
+                if (uVar3 < 2) goto LAB_0043d41d;
                 *(undefined1 *)pAVar16 = 2;
                 pAVar16->field_0001 = 1;
-                pAVar16->field_0006 = g_playerRuntime[DAT_0080874d].raceId;
+                pAVar16->field_0006 = g_playerRuntime[DAT_0080874d].field0_0x0;
               }
             }
             else {
@@ -1081,17 +1078,17 @@ LAB_0043d41d:
                 }
                 goto LAB_0043d41d;
               }
-              uVar3 = *(ushort *)&pAVar10[-1].field_0012;
+              uVar3 = *(ushort *)&pAVar11[-1].field_0012;
               SVar18 = CASE_3;
               cVar17 = -1;
 LAB_0043d447:
-              pSVar8 = GetObjPtr(local_10,cVar17,uVar3,SVar18);
-              (*pSVar8->vtable->vfunc_58)(pAVar16);
+              pSVar9 = GetObjPtr(local_10,cVar17,uVar3,SVar18);
+              (*pSVar9->vtable->vfunc_58)(pAVar16);
             }
-            pAVar10 = (AnonShape_0043BEB0_1C00EC12 *)&param_2->field_0x10;
+            pAVar11 = (AnonShape_0043BEB0_1C00EC12 *)&param_2->field_0x10;
             pAVar16 = (AnonShape_0043BEB0_1C00EC12 *)&pAVar16->field_000B;
-            local_28 = (STPlayerTempSlot *)((int)&local_28[-1].activityCount + 1);
-            if (local_28 == (STPlayerTempSlot *)0x0) {
+            local_28 = local_28 + -1;
+            if (local_28 == 0) {
               return;
             }
           } while( true );
@@ -1099,27 +1096,27 @@ LAB_0043d447:
         if ((char)param_1 == '\x0f') {
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_2 = (AnonShape_0043BEB0_1C00EC12 *)0x4;
-          psVar14 = &g_playerRuntime[DAT_0080874d].tempSlots[1][1].objectId;
+          puVar14 = &g_playerRuntime[DAT_0080874d].field397_0x1cb;
           do {
-            iVar4 = ((STPlayerTempSlot *)(psVar14 + -4))->objectType;
+            iVar4 = *(int *)(puVar14 + -4);
             if (iVar4 < 0x19b) {
               if (iVar4 == 0x19a) {
-                if (psVar14[3] == 1) {
-                  local_1c = *(DArrayTy **)(psVar14 + 1);
-                  uVar12 = 0;
+                if (puVar14[3] == 1) {
+                  local_1c = *(DArrayTy **)(puVar14 + 1);
+                  uVar15 = 0;
                   local_14 = local_1c->count;
                   if (0 < (int)local_14) {
                     do {
-                      DArrayGetElement(local_1c,uVar12,local_c);
+                      DArrayGetElement(local_1c,uVar15,local_c);
                       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                       uVar3 = local_c._0_2_;
                       if (uVar3 != 0xffff) {
-                        cVar17 = (char)*(int *)(psVar14 + -2);
+                        cVar17 = (char)puVar14[-2];
                         SVar18 = CASE_1;
                         goto LAB_0043d5b7;
                       }
-                      uVar12 = uVar12 + 1;
-                    } while ((int)uVar12 < (int)local_14);
+                      uVar15 = uVar15 + 1;
+                    } while ((int)uVar15 < (int)local_14);
                   }
                   goto LAB_0043d5c4;
                 }
@@ -1155,14 +1152,14 @@ LAB_0043d581:
                 SVar18 = CASE_6;
               }
 LAB_0043d5b1:
-              uVar3 = *psVar14;
+              uVar3 = *puVar14;
               cVar17 = -1;
 LAB_0043d5b7:
-              pSVar8 = GetObjPtr(local_10,cVar17,uVar3,SVar18);
-              (*pSVar8->vtable->vfunc_5C)(pAVar16);
+              pSVar9 = GetObjPtr(local_10,cVar17,uVar3,SVar18);
+              (*pSVar9->vtable->vfunc_5C)(pAVar16);
             }
 LAB_0043d5c4:
-            psVar14 = psVar14 + 8;
+            puVar14 = puVar14 + 8;
             pAVar16 = (AnonShape_0043BEB0_1C00EC12 *)&pAVar16->field_000B;
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_2 = (AnonShape_0043BEB0_1C00EC12 *)&param_2[-1].field_0x13;
@@ -1174,12 +1171,11 @@ LAB_0043d5c4:
         }
         if ((char)param_1 != '\x10') {
           if ((char)param_1 == '\x11') {
-            uVar12 = (uint)DAT_0080874d;
-            iVar4 = g_playerRuntime[uVar12].tempSlots[0][0].objectType;
-            if (iVar4 == 0) {
+            uVar15 = (uint)DAT_0080874d;
+            if (g_playerRuntime[uVar15].field332_0x163 == 0) {
               return;
             }
-            if (iVar4 != 0x3c) {
+            if (g_playerRuntime[uVar15].field332_0x163 != 0x3c) {
               iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1f4c,0,0,
                                          "%s","STAllPlayersC::GetPanelInfo (17) invalid game type");
               if (iVar4 == 0) {
@@ -1187,37 +1183,37 @@ LAB_0043d5c4:
               }
               STDebugBreak(); /* noreturn in standalone pseudocode */
             }
-            if ((ushort)g_playerRuntime[uVar12].tempSlots[0][0].activityCount < 2) {
+            if ((ushort)g_playerRuntime[uVar15].field336_0x171 < 2) {
               return;
             }
-            pDVar1 = g_playerRuntime[uVar12].tempSlots[0][0].objectIds;
+            pDVar1 = (DArrayTy *)g_playerRuntime[uVar15].field335_0x16d;
             iVar4 = 0;
-            uVar12 = 0;
+            uVar15 = 0;
             local_14 = pDVar1->count;
             if (0 < (int)local_14) {
               do {
-                DArrayGetElement(pDVar1,uVar12,local_c);
+                DArrayGetElement(pDVar1,uVar15,local_c);
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 if (local_c._0_2_ != 0xffff) {
                   iVar4 = iVar4 + 1;
                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                  pSVar8 = GetObjPtr(local_10,DAT_0080874d,local_c._0_2_,CASE_1);
+                  pSVar9 = GetObjPtr(local_10,DAT_0080874d,local_c._0_2_,CASE_1);
                   if (iVar4 == 1) {
-                    local_20 = (uint)(ushort)pSVar8->field_0030;
+                    local_20 = (uint)(ushort)pSVar9->field_0030;
                   }
-                  else if (local_20 != (ushort)pSVar8->field_0030) {
+                  else if (local_20 != (ushort)pSVar9->field_0030) {
                     return;
                   }
                 }
-                uVar12 = uVar12 + 1;
-              } while ((int)uVar12 < (int)local_14);
+                uVar15 = uVar15 + 1;
+              } while ((int)uVar15 < (int)local_14);
               if (local_20 == 0xffff) {
                 return;
               }
             }
             pSVar5 = thunk_FUN_0042b760(DAT_0080874d,(ushort)local_20);
-            dVar15 = pSVar5->slot_1C();
-            switch(dVar15) {
+            dVar8 = pSVar5->slot_1C();
+            switch(dVar8) {
             case 0:
               param_2->field_0007 = 1;
               return;
@@ -1250,14 +1246,12 @@ LAB_0043d5c4:
           if ((char)param_1 != '\x12') {
             return;
           }
-          iVar4 = g_playerRuntime[DAT_0080874d].tempSlots[0][0].objectType;
-          if (iVar4 == 0) {
+          if (g_playerRuntime[DAT_0080874d].field332_0x163 == 0) {
             return;
           }
-          if (iVar4 == 0x1ae) {
-            pSVar8 = GetObjPtr(this,-1,g_playerRuntime[DAT_0080874d].tempSlots[0][0].objectId,CASE_3
-                              );
-            (*pSVar8->vtable->vfunc_64)(param_2);
+          if (g_playerRuntime[DAT_0080874d].field332_0x163 == 0x1ae) {
+            pSVar9 = GetObjPtr(this,-1,g_playerRuntime[DAT_0080874d].field334_0x16b,CASE_3);
+            (*pSVar9->vtable->vfunc_64)(param_2);
             return;
           }
           iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1f5d,0,0,
@@ -1267,8 +1261,8 @@ LAB_0043d5c4:
           }
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
-        uVar12 = (uint)DAT_0080874d;
-        iVar4 = g_playerRuntime[uVar12].tempSlots[0][0].objectType;
+        uVar15 = (uint)DAT_0080874d;
+        iVar4 = g_playerRuntime[uVar15].field332_0x163;
         if (iVar4 == 0) {
           return;
         }
@@ -1283,10 +1277,10 @@ LAB_0043d5c4:
           }
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
-        if (g_playerRuntime[uVar12].tempSlots[0][0].activityCount == 0) {
+        if (g_playerRuntime[uVar15].field336_0x171 == 0) {
           return;
         }
-        pDVar1 = g_playerRuntime[uVar12].tempSlots[0][0].objectIds;
+        pDVar1 = (DArrayTy *)g_playerRuntime[uVar15].field335_0x16d;
         uVar13 = 0;
         local_14 = pDVar1->count;
         if (0 < (int)local_14) {
@@ -1295,15 +1289,15 @@ LAB_0043d5c4:
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             if (local_c._0_2_ != 0xffff) {
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              pSVar8 = GetObjPtr(local_10,(char)g_playerRuntime[uVar12].tempSlots[0][0].playerId,
+              pSVar9 = GetObjPtr(local_10,*(char *)&g_playerRuntime[uVar15].field333_0x167,
                                  local_c._0_2_,CASE_1);
-              (*pSVar8->vtable->vfunc_60)(param_2);
+              (*pSVar9->vtable->vfunc_60)(param_2);
               break;
             }
             uVar13 = uVar13 + 1;
           } while ((int)uVar13 < (int)local_14);
         }
-        if ((ushort)g_playerRuntime[uVar12].tempSlots[0][0].activityCount < 2) {
+        if ((ushort)g_playerRuntime[uVar15].field336_0x171 < 2) {
           return;
         }
         *(undefined4 *)&param_2[0x15].field_0xc = 0xffffffff;
@@ -1311,12 +1305,11 @@ LAB_0043d5c4:
         *(undefined4 *)&param_2[0x1a].field_0x8 = 0xffffffff;
         return;
       }
-      uVar12 = (uint)DAT_0080874d;
-      iVar4 = g_playerRuntime[uVar12].tempSlots[0][0].objectType;
-      if (iVar4 == 0) {
+      uVar15 = (uint)DAT_0080874d;
+      if (g_playerRuntime[uVar15].field332_0x163 == 0) {
         return;
       }
-      if (iVar4 != 0x3c) {
+      if (g_playerRuntime[uVar15].field332_0x163 != 0x3c) {
         iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1e85,0,0,"%s"
                                    ,"STAllPlayersC::GetPanelInfo (11) invalid game type");
         if (iVar4 == 0) {
@@ -1324,9 +1317,8 @@ LAB_0043d5c4:
         }
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      uVar3 = g_playerRuntime[uVar12].tempSlots[0][0].activityCount;
-      if (uVar3 == 1) {
-        pDVar1 = g_playerRuntime[uVar12].tempSlots[0][0].objectIds;
+      if (g_playerRuntime[uVar15].field336_0x171 == 1) {
+        pDVar1 = (DArrayTy *)g_playerRuntime[uVar15].field335_0x16d;
         uVar13 = 0;
         local_14 = pDVar1->count;
         if ((int)local_14 < 1) {
@@ -1337,16 +1329,16 @@ LAB_0043d5c4:
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           if (local_c._0_2_ != 0xffff) {
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            pSVar8 = GetObjPtr(local_10,(char)g_playerRuntime[uVar12].tempSlots[0][0].playerId,
+            pSVar9 = GetObjPtr(local_10,*(char *)&g_playerRuntime[uVar15].field333_0x167,
                                local_c._0_2_,CASE_1);
-            (*pSVar8->vtable->vfunc_4C)(param_2);
+            (*pSVar9->vtable->vfunc_4C)(param_2);
             return;
           }
           uVar13 = uVar13 + 1;
         } while ((int)uVar13 < (int)local_14);
         return;
       }
-      if (uVar3 < 2) {
+      if ((ushort)g_playerRuntime[uVar15].field336_0x171 < 2) {
         return;
       }
       *(undefined4 *)param_2 = 0;
@@ -1362,8 +1354,8 @@ LAB_0043d5c4:
       param_2->field_000E = 1;
       param_2->field_000F = 1;
       param_2->field_000B = 0;
-      pDVar1 = g_playerRuntime[uVar12].tempSlots[0][0].objectIds;
-      uVar12 = 0;
+      pDVar1 = (DArrayTy *)g_playerRuntime[uVar15].field335_0x16d;
+      uVar15 = 0;
       local_14 = pDVar1->count;
       param_2->field_0011 = 1;
       param_2->field_0x10 = 1;
@@ -1371,34 +1363,34 @@ LAB_0043d5c4:
       local_1c = pDVar1;
       if (0 < (int)local_14) {
         do {
-          DArrayGetElement(pDVar1,uVar12,local_c);
+          DArrayGetElement(pDVar1,uVar15,local_c);
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           if (local_c._0_2_ != 0xffff) {
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            pSVar8 = GetObjPtr(local_10,DAT_0080874d,local_c._0_2_,CASE_1);
-            if (pSVar8->field_07E6 == 0) {
+            pSVar9 = GetObjPtr(local_10,DAT_0080874d,local_c._0_2_,CASE_1);
+            if (pSVar9->field_07E6 == 0) {
               pAVar16->field_0011 = 3;
             }
             else {
               pAVar16->field_0x10 = 3;
             }
-            if ((pAVar16->field_0012 == '\x03') && (pSVar8->field_07EA == 0)) {
+            if ((pAVar16->field_0012 == '\x03') && (pSVar9->field_07EA == 0)) {
               pAVar16->field_0012 = 1;
             }
           }
-          uVar12 = uVar12 + 1;
-        } while ((int)uVar12 < (int)local_14);
+          uVar15 = uVar15 + 1;
+        } while ((int)uVar15 < (int)local_14);
       }
-      dVar15 = 0;
+      dVar8 = 0;
       if (0 < (int)local_14) {
         do {
-          DArrayGetElement(pDVar1,dVar15,local_c);
+          DArrayGetElement(pDVar1,dVar8,local_c);
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           if (local_c._0_2_ != 0xffff) {
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            pSVar8 = GetObjPtr(local_10,DAT_0080874d,local_c._0_2_,CASE_1);
-            uVar9 = (*pSVar8->vtable->vfunc_2C)();
-            switch(uVar9) {
+            pSVar9 = GetObjPtr(local_10,DAT_0080874d,local_c._0_2_,CASE_1);
+            uVar10 = (*pSVar9->vtable->vfunc_2C)();
+            switch(uVar10) {
             case 7:
             case 8:
             case 9:
@@ -1414,37 +1406,37 @@ LAB_0043d5c4:
               goto switchD_0043d1bf_caseD_a;
             }
           }
-          dVar15 = dVar15 + 1;
-        } while ((int)dVar15 < (int)local_14);
+          dVar8 = dVar8 + 1;
+        } while ((int)dVar8 < (int)local_14);
       }
 switchD_0043d1bf_caseD_a:
-      if (dVar15 == local_14) {
+      if (dVar8 == local_14) {
         pAVar16->field_000A = 0;
         pAVar16->field_000B = 0;
         pAVar16->field_0xc = 0;
         pAVar16->field_000D = 0;
       }
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_2 = (AnonShape_0043BEB0_1C00EC12 *)(uint)(dVar15 == local_14);
+      param_2 = (AnonShape_0043BEB0_1C00EC12 *)(uint)(dVar8 == local_14);
       iVar4 = 0;
-      uVar12 = 0;
+      uVar15 = 0;
       if (0 < (int)local_14) {
         do {
-          DArrayGetElement(local_1c,uVar12,local_c);
+          DArrayGetElement(local_1c,uVar15,local_c);
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           if (local_c._0_2_ != 0xffff) {
             iVar4 = iVar4 + 1;
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            pSVar8 = GetObjPtr(local_10,DAT_0080874d,local_c._0_2_,CASE_1);
+            pSVar9 = GetObjPtr(local_10,DAT_0080874d,local_c._0_2_,CASE_1);
             if (iVar4 == 1) {
-              local_20 = (uint)(ushort)pSVar8->field_0030;
+              local_20 = (uint)(ushort)pSVar9->field_0030;
             }
-            else if (local_20 != (ushort)pSVar8->field_0030) {
+            else if (local_20 != (ushort)pSVar9->field_0030) {
               return;
             }
           }
-          uVar12 = uVar12 + 1;
-        } while ((int)uVar12 < (int)local_14);
+          uVar15 = uVar15 + 1;
+        } while ((int)uVar15 < (int)local_14);
       }
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       if (param_2 == (AnonShape_0043BEB0_1C00EC12 *)0x1) {
@@ -1454,8 +1446,8 @@ switchD_0043d1bf_caseD_a:
         return;
       }
       pSVar5 = thunk_FUN_0042b760(DAT_0080874d,(ushort)local_20);
-      dVar15 = pSVar5->slot_0C();
-      switch(dVar15) {
+      dVar8 = pSVar5->slot_0C();
+      switch(dVar8) {
       case 5:
         pAVar16->field_0xc = 3;
         return;
@@ -1472,11 +1464,11 @@ switchD_0043d1bf_caseD_a:
         return;
       }
     }
-    uVar12 = (uint)DAT_0080874d;
-    iVar4 = g_playerRuntime[uVar12].tempSlots[1][0].objectType;
+    uVar15 = (uint)DAT_0080874d;
+    iVar4 = g_playerRuntime[uVar15].field390_0x1b3;
     if (0x19a < iVar4) {
       if (iVar4 == 0x1a4) {
-        uVar3 = g_playerRuntime[uVar12].tempSlots[1][0].objectId;
+        uVar3 = g_playerRuntime[uVar15].field392_0x1bb;
         SVar18 = CASE_5;
         cVar17 = -1;
       }
@@ -1490,7 +1482,7 @@ LAB_0043cb81:
           }
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
-        uVar3 = g_playerRuntime[uVar12].tempSlots[1][0].objectId;
+        uVar3 = g_playerRuntime[uVar15].field392_0x1bb;
         SVar18 = CASE_6;
         cVar17 = -1;
       }
@@ -1501,22 +1493,22 @@ LAB_0043cb81:
         return;
       }
       if (iVar4 == 0x5a) {
-        uVar3 = g_playerRuntime[uVar12].tempSlots[1][0].objectId;
+        uVar3 = g_playerRuntime[uVar15].field392_0x1bb;
         SVar18 = CASE_4;
         cVar17 = -1;
       }
       else {
         if (iVar4 != 0x172) goto LAB_0043cb81;
-        uVar3 = g_playerRuntime[uVar12].tempSlots[1][0].objectId;
+        uVar3 = g_playerRuntime[uVar15].field392_0x1bb;
         SVar18 = CASE_2;
         cVar17 = -1;
       }
       goto cf_common_exit_0043CB5C;
     }
-    if (g_playerRuntime[uVar12].tempSlots[1][0].activityCount != 1) {
+    if (g_playerRuntime[uVar15].field394_0x1c1 != 1) {
       return;
     }
-    pDVar1 = g_playerRuntime[uVar12].tempSlots[1][0].objectIds;
+    pDVar1 = (DArrayTy *)g_playerRuntime[uVar15].field393_0x1bd;
     uVar13 = 0;
     local_14 = pDVar1->count;
     if ((int)local_14 < 1) {
@@ -1532,12 +1524,12 @@ LAB_0043cb81:
         return;
       }
     }
-    cVar17 = (char)g_playerRuntime[uVar12].tempSlots[1][0].playerId;
+    cVar17 = *(char *)&g_playerRuntime[uVar15].field391_0x1b7;
   }
   SVar18 = CASE_1;
 cf_common_exit_0043CB5C:
-  pSVar8 = GetObjPtr(local_10,cVar17,uVar3,SVar18);
-  (*pSVar8->vtable->vfunc_30)(param_2);
+  pSVar9 = GetObjPtr(local_10,cVar17,uVar3,SVar18);
+  (*pSVar9->vtable->vfunc_30)(param_2);
   return;
 /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
 cf_common_exit_0043C94C:

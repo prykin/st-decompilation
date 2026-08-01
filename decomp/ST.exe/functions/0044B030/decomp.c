@@ -66,7 +66,7 @@ void __thiscall STAllPlayersC::ActivateTV(STAllPlayersC *this,char param_1,int p
   AnonPointee_TLOBaseTy_0607 *pAVar9;
 
   if (param_2 == 0) {
-    pAVar10 = (AnonPointee_TLOBaseTy_0607 *)g_playerRuntime[param_1].tempSlots;
+    pAVar10 = (AnonPointee_TLOBaseTy_0607 *)&g_playerRuntime[param_1].field332_0x163;
   }
   else {
     if (param_2 != 1) {
@@ -77,7 +77,7 @@ void __thiscall STAllPlayersC::ActivateTV(STAllPlayersC *this,char param_1,int p
       }
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    pAVar10 = (AnonPointee_TLOBaseTy_0607 *)(g_playerRuntime[param_1].tempSlots + 1);
+    pAVar10 = (AnonPointee_TLOBaseTy_0607 *)&g_playerRuntime[param_1].field390_0x1b3;
   }
   pAVar9 = (AnonPointee_TLOBaseTy_0607 *)(int)param_1;
   if (0 < objPtr) {

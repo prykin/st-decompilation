@@ -270,7 +270,8 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
   g_currentExceptionFrame = local_f4.previous;
   thunk_FUN_00572510((AnonShape_00572510_F06DC155 *)&pSVar19->field_0038);
   if (((DAT_00811768 != '\0') && (pSVar19->field_0E26 == '\0')) &&
-     (iVar7 = thunk_FUN_005738d0(&pSVar19->field_0038), iVar7 == 0)) {
+     (iVar7 = thunk_FUN_005738d0((AnonShape_005738D0_F693E267 *)&pSVar19->field_0038), iVar7 == 0))
+  {
     DAT_00811768 = '\0';
   }
   FUN_006c18b0((uint)DAT_00807363);
@@ -984,6 +985,7 @@ switchD_0056b4ce_caseD_57:
         pbVar20 = pbVar23 + -uVar17;
         pcVar12 = &pSVar19->field_7B06;
         memmove(pcVar12, pbVar20, uVar17); /* compiler REP MOVS byte copy */
+        uVar18 = 0;
         uVar17 = 0xffffffff;
         pcVar12 = &DAT_007ca0b8;
         do {

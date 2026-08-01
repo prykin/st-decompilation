@@ -17,9 +17,9 @@ void __thiscall SettMapMTy::DeletePlayer(SettMapMTy *this,int param_1)
   code *pcVar3;
   int errorCode;
   SettMapMTy_field_1F84Element *element_1f84;
-  int iVar4;
-  uint uVar5;
-  bool bVar6;
+  int iVar5;
+  uint uVar6;
+  bool bVar7;
   InternalExceptionFrame local_4c;
   SettMapMTy *local_8;
 
@@ -29,29 +29,29 @@ void __thiscall SettMapMTy::DeletePlayer(SettMapMTy *this,int param_1)
     local_8 = this;
     errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
     if (errorCode == 0) {
-      uVar5 = 0;
+      uVar6 = 0;
       pSVar1 = local_8->field_1F84;
       uVar2 = pSVar1->count;
       if (0 < (int)uVar2) {
-        bVar6 = uVar2 != 0;
+        bVar7 = uVar2 != 0;
         while( true ) {
-          if (bVar6) {
-            element_1f84 = DArrayAt<SettMapMTy_field_1F84Element>(pSVar1, uVar5);
+          if (bVar7) {
+            element_1f84 = DArrayAt<SettMapMTy_field_1F84Element>(pSVar1, uVar6);
           }
           else {
             element_1f84 = (SettMapMTy_field_1F84Element *)0x0;
           }
           if ((element_1f84 != (SettMapMTy_field_1F84Element *)0x0) &&
-             (((element_1f84->field_0004 == '\x02' || (element_1f84->field_0004 == '\x03')) &&
-              (element_1f84->data == param_1)))) break;
-          uVar5 = uVar5 + 1;
-          bVar6 = uVar5 < uVar2;
-          if ((int)uVar2 <= (int)uVar5) {
+             (((element_1f84->field_0004 == '\x02' || (element_1f84->field_0004 == '\x03')) && (element_1f84->element == param_1)))
+             ) break;
+          uVar6 = uVar6 + 1;
+          bVar7 = uVar6 < uVar2;
+          if ((int)uVar2 <= (int)uVar6) {
             g_currentExceptionFrame = local_4c.previous;
             return;
           }
         }
-        element_1f84->data = 0;
+        element_1f84->element = 0;
         element_1f84->field_0004 = '\x01';
         element_1f84->field_0001 = '\x01';
         if ((element_1f84->field_0000 != '\0') && ((byte)element_1f84->state < 8)) {
@@ -62,9 +62,9 @@ void __thiscall SettMapMTy::DeletePlayer(SettMapMTy *this,int param_1)
       return;
     }
     g_currentExceptionFrame = local_4c.previous;
-    iVar4 = ReportDebugMessage("E:\\__titans\\Start\\settmobj.cpp",0x4dc,0,errorCode,
+    iVar5 = ReportDebugMessage("E:\\__titans\\Start\\settmobj.cpp",0x4dc,0,errorCode,
                                "%s","SettMapMTy::DeletePlayer");
-    if (iVar4 != 0) {
+    if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(errorCode,0,"E:\\__titans\\Start\\settmobj.cpp",0x4dc);

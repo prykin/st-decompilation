@@ -34,6 +34,7 @@ int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
   cMf32 *pcVar8;
   ushort *puVar9;
   DArrayTy *array;
+  AnonShape_00648C10_30A1BBFD *strategData;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   SystemClassTy *extraout_ECX;
   uint uVar10;
@@ -209,8 +210,9 @@ int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
             pcVar13 = (char *)0x0;
           }
           if ((pcVar13 + 0x4c != (char *)0x0) &&
-             (puVar9 = LoadStrategData((int)pcVar8,pcVar13 + 0x4c,(int *)0x0),
-             puVar9 != (ushort *)0x0)) {
+             (strategData = (AnonShape_00648C10_30A1BBFD *)
+                            LoadStrategData((int)pcVar8,pcVar13 + 0x4c,(int *)0x0),
+             strategData != (AnonShape_00648C10_30A1BBFD *)0x0)) {
             uVar10 = 0xffffffff;
             do {
               pcVar14 = pcVar13;
@@ -250,7 +252,7 @@ int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
               }
             }
             pcVar8 = (cMf32 *)0x577e83;
-            StartStrateg(puVar9,piVar18[2]);
+            StartStrateg(strategData,piVar18[2]);
             *(undefined1 *)((int)&DAT_008087c4 + piVar18[2] * 0x51 + 3) = 1;
             array = (DArrayTy *)0x577e9d;
             FreeAndNull((void **)&stack0xffffffdc);
@@ -353,7 +355,7 @@ LAB_00577956:
         return 0;
       }
       thunk_FUN_00648dd0(uVar10);
-      StartStrateg((ushort *)(pcVar13 + 2),uVar10);
+      StartStrateg((AnonShape_00648C10_30A1BBFD *)(pcVar13 + 2),uVar10);
     }
     if (g_optPanel_008016DC != (OptPanelTy *)0x0) {
       OptPanelTy::sub_00532CE0(g_optPanel_008016DC);

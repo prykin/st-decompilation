@@ -53,7 +53,7 @@ void __thiscall FUN_004cf640(void *this,int *param_1)
     local_10 = (undefined *)((uVar3 & 0xffU) - 1);
     memset(local_fc, 0, 0xa0); /* compiler bulk-zero initialization */
     if (((*(int *)((int)this + 0x5ac) == 0x5c) &&
-        (pDVar2 = g_playerRuntime[*(int *)((int)this + 0x24)].field2168_0x9de,
+        (pDVar2 = *(DArrayTy **)&g_playerRuntime[*(int *)((int)this + 0x24)].field_0x9de,
         pDVar2 != (DArrayTy *)0x0)) && (index = 0, 0 < (int)pDVar2->count)) {
       do {
         DArrayGetElement(pDVar2,index,&local_28);
@@ -68,7 +68,7 @@ void __thiscall FUN_004cf640(void *this,int *param_1)
           iVar5 = iVar5 + -1;
         } while (iVar5 != 0);
         index = index + 1;
-        pDVar2 = g_playerRuntime[*(int *)((int)this + 0x24)].field2168_0x9de;
+        pDVar2 = *(DArrayTy **)&g_playerRuntime[*(int *)((int)this + 0x24)].field_0x9de;
       } while ((int)index < (int)pDVar2->count);
     }
     local_2c = (int)local_10 << 4;
@@ -127,7 +127,7 @@ void __thiscall FUN_004cf640(void *this,int *param_1)
             if (local_54 == '\0') {
               thunk_FUN_004e6b40(*(byte **)((int)this + 0x24),iVar5,local_4a);
             }
-            Library::DKW::TBL::FUN_006ae1c0((uint *)param_1[local_8],local_5c);
+            Library::DKW::TBL::DArrayAppend((DArrayTy *)param_1[local_8],local_5c);
           }
         }
         local_14 = local_14 + 1;

@@ -96,7 +96,7 @@ uint * __cdecl _CreateStgListByRoot(cMf32 *param_1,int param_2,char *param_3,uin
         Library::MSVCRT::_strncpy(local_78,PTR_s_OBJECTIVES_0079d718,0x1f);
         local_54 = (int)local_8->field_0019;
         local_58 = uVar7;
-        Library::DKW::TBL::FUN_006ae1c0(&local_c->flags,(undefined4 *)local_e8);
+        Library::DKW::TBL::DArrayAppend(local_c,local_e8);
       }
       cMf32::RecMemFree(param_1,(uint *)&local_8);
     }

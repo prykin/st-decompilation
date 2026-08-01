@@ -285,7 +285,7 @@ int __thiscall STTorpC::GetMessage(STTorpC *this,STMessage *message)
         g_currentExceptionFrame = local_28c.previous;
         return 0;
       }
-      local_158 = (void *)Library::DKW::LIB::FUN_006aac70(0x44);
+      local_158 = Library::DKW::LIB::MemAlloc(0x44);
       iVar11 = 0;
       do {
         *(int **)(iVar11 + (int)local_158) = DAT_00806774;
@@ -2610,6 +2610,7 @@ LAB_00642561:
     pcVar22 = pcVar24 + -uVar17;
     pcVar24 = pcVar23 + -1;
     memmove(pcVar24, pcVar22, uVar17); /* compiler REP MOVS byte copy */
+    uVar26 = 0;
     uVar17 = 0xffffffff;
     pcVar22 = &DAT_007d0588;
     do {

@@ -44,7 +44,7 @@ void __thiscall FSGSTy::SetChannelList(FSGSTy *this,int param_1,undefined4 *para
       this_01 = local_c;
       local_c->field_1EAA->count = 0;
       for (; param_1 != 0; param_1 = param_1 + -1) {
-        Library::DKW::TBL::FUN_006ae1c0(&this_01->field_1EAA->flags,param_2);
+        Library::DKW::TBL::DArrayAppend(this_01->field_1EAA,param_2);
         param_2 = param_2 + 0x1a;
       }
       do {

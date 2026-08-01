@@ -146,8 +146,7 @@ LAB_00690763:
                                        *(undefined2 *)(element_00a5->field_0004 + 0x7d));
                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   local_18 = CONCAT22(*(undefined2 *)(iVar6 + 0x7b),(short)local_10);
-                  Library::DKW::TBL::FUN_006ae1c0
-                            (&local_c->field_00C9->flags,(undefined4 *)&local_1c);
+                  Library::DKW::TBL::DArrayAppend(local_c->field_00C9,&local_1c);
                   g_currentExceptionFrame = local_98.previous;
                   return;
                 }

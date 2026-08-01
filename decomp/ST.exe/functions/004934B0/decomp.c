@@ -16,7 +16,7 @@ FUN_004934b0(void *this,short *param_1,short *param_2,short *param_3,int *param_
 
   uVar3 = 0;
   iVar4 = 1000000;
-  array = g_playerRuntime[*(int *)((int)this + 0x24)].field2167_0x9da;
+  array = *(DArrayTy **)&g_playerRuntime[*(int *)((int)this + 0x24)].field_0x9da;
   *param_3 = -1;
   *param_2 = -1;
   *param_1 = -1;

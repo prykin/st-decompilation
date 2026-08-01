@@ -1,5 +1,5 @@
 
-undefined4 __cdecl FUN_0064f500(short *param_1)
+undefined4 __cdecl FUN_0064f500(RecoveredRecord_AiEventClassTy_0064F500 *param_1)
 
 {
   short sVar1;
@@ -7,35 +7,29 @@ undefined4 __cdecl FUN_0064f500(short *param_1)
 
   iVar2 = 0;
   do {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if (*(char *)((int)param_1 + iVar2 + 0xd0) != '\b') {
+    if ((&param_1->field_0xd0)[iVar2] != '\b') {
       return 0;
     }
     iVar2 = iVar2 + 1;
   } while (iVar2 < 3);
-  if (*(int *)(param_1 + 8) < 3) {
-    sVar1 = *param_1;
+  if (*(int *)&param_1->field_0x10 < 3) {
+    sVar1 = *(short *)param_1;
     if (sVar1 < 4) {
-      param_1[10] = -1;
-      param_1[0xb] = -1;
+      *(undefined4 *)&param_1->field_0x14 = 0xffffffff;
     }
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    else if (*(char *)((int)param_1 + 0xd3) != '\b') {
+    else if (param_1->field_00D3 != '\b') {
       return 0;
     }
     if (sVar1 < 5) {
-      param_1[0xc] = -1;
-      param_1[0xd] = -1;
+      *(undefined4 *)&param_1->field_0x18 = 0xffffffff;
     }
-    else if ((char)param_1[0x6a] != '\b') {
+    else if (param_1->field_0xd4 != '\b') {
       return 0;
     }
     if (sVar1 < 6) {
-      param_1[0xe] = -1;
-      param_1[0xf] = -1;
+      *(undefined4 *)&param_1->field_0x1c = 0xffffffff;
     }
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    else if (*(char *)((int)param_1 + 0xd5) != '\b') {
+    else if (param_1->field_00D5 != '\b') {
       return 0;
     }
     return 1;

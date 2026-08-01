@@ -33,7 +33,7 @@ undefined4 __thiscall AiFltClassTy::sub_0065F5C0(AiFltClassTy *this,short *param
       bVar5 = uVar4 < *(uint *)&pAVar3->field_0xc;
     } while ((int)uVar4 < (int)*(uint *)&pAVar3->field_0xc);
   }
-  Library::DKW::TBL::FUN_006ae1c0((uint *)this->field_0223,(undefined4 *)param_1);
+  Library::DKW::TBL::DArrayAppend((DArrayTy *)this->field_0223,param_1);
   return 1;
 }
 

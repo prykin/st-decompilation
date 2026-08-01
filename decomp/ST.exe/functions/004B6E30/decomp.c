@@ -38,11 +38,11 @@ undefined4 __thiscall FUN_004b6e30(void *this,int param_1,Global_sub_004B6E30_pa
     return 0;
   }
   iVar4 = iVar4 * 4;
-  /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
+  /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
   iVar3 = *(int *)((int)this + 0x24) * 0xa62;
   if (*(int *)(iVar4 + 0x7f579a + iVar3) == 0) {
     iVar2 = 0;
-    piVar5 = &g_playerRuntime[*(int *)((int)this + 0x24)].field2110_0x97a;
+    piVar5 = (int *)&g_playerRuntime[*(int *)((int)this + 0x24)].field_0x97a;
     iVar1 = 6;
     do {
       if (iVar2 < *piVar5) {
@@ -59,7 +59,7 @@ undefined4 __thiscall FUN_004b6e30(void *this,int param_1,Global_sub_004B6E30_pa
   else {
     iVar3 = 0;
     do {
-      /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
+      /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
       iVar1 = *(int *)((int)this + 0x24) * 0xa62;
       iVar2 = *(int *)(iVar3 + 0x7f579a + iVar1);
       if (*(int *)(iVar4 + 0x7f579a + iVar1) < iVar2) {

@@ -34,7 +34,7 @@ int __cdecl FUN_0058d480(int param_1,int param_2,int param_3,int param_4,int par
       if (iVar2 < 0) {
         return local_8;
       }
-      iVar1 = *(int *)(DAT_0081171c + iVar2 * 4);
+      iVar1 = (&PTR_0081171c->field_0000)[iVar2];
     } while (((((int)*(short *)(iVar1 + 0x41) < iVar4 * 0xc9) ||
               (iVar5 * 0xc9 < (int)*(short *)(iVar1 + 0x41))) ||
              ((int)*(short *)(iVar1 + 0x43) < iVar6 * 0xc9)) ||

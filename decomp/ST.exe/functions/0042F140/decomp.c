@@ -13,43 +13,43 @@ STAllPlayersC::UnRegisterGroup(STAllPlayersC *this,char param_1,ushort param_2,i
 
 {
   code *pcVar1;
-  DArrayTy *pDVar2;
+  DArrayTy *array;
+  int iVar2;
   int iVar3;
-  int iVar4;
-  undefined4 uVar5;
+  undefined4 uVar4;
   InternalExceptionFrame local_50;
   DArrayTy *local_c;
   int local_8;
 
   local_50.previous = g_currentExceptionFrame;
-  local_c = g_playerRuntime[param_1].groups;
+  local_c = (DArrayTy *)g_playerRuntime[param_1].field5_0x5;
   g_currentExceptionFrame = &local_50;
-  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
-  if (iVar3 == 0) {
+  iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
+  if (iVar2 == 0) {
     if (param_3 == 0) {
       RaiseInternalException
                 (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                  0x6a7);
     }
-    pDVar2 = local_c;
-    iVar3 = DArrayGetElement(local_c,(uint)param_2,&local_8);
-    if ((iVar3 == -4) || (local_8 != param_3)) {
+    array = local_c;
+    iVar2 = DArrayGetElement(local_c,(uint)param_2,&local_8);
+    if ((iVar2 == -4) || (local_8 != param_3)) {
       RaiseInternalException
                 (-0x5001fffe,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                  0x6a9);
     }
     local_8 = 0;
-    Library::DKW::TBL::FUN_006ae140(&pDVar2->flags,(uint)param_2,&local_8);
+    Library::DKW::TBL::DArrayPut(array,(uint)param_2,&local_8);
     g_currentExceptionFrame = local_50.previous;
     return 0;
   }
   g_currentExceptionFrame = local_50.previous;
-  iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x6ad,0,iVar3,"%s",
+  iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x6ad,0,iVar2,"%s",
                              "STAllPlayersC::UnRegisterGroup");
-  if (iVar4 != 0) {
+  if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  RaiseInternalException(iVar3,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x6ae);
+  RaiseInternalException(iVar2,0,"E:\\__titans\\wlad\\to_allpl.cpp",0x6ae);
   return 0xffffffff;
 }
 

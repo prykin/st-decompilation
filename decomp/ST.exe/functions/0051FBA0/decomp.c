@@ -43,7 +43,7 @@ int __thiscall HelpStringTy::GetMessage(HelpStringTy *this,STMessage *message)
       }
       break;
     case MESS_ID_CREATE:
-      pcVar3 = (ccFntTy *)ccFntTy::operator_new(0x19d,*(int *)&PTR_00802a28->field_0x30);
+      pcVar3 = (ccFntTy *)ccFntTy::operator_new(0x19d,(ccFntTy *)g_interSystem_00802A28->field_0030);
       this_00->field_011E = pcVar3;
       pcVar3->field_0058 = 0;
       pcVar3->field_005C = 0;

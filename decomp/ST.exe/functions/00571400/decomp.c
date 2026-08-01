@@ -8,14 +8,14 @@
 void __thiscall STAppC::ReadCmdPlay(STAppC *this,int param_1)
 
 {
-  uint nNumberOfBytesToRead;
+  uint newSize;
   code *pcVar1;
   STAppC *pSVar2;
   int iVar3;
   HANDLE hFile;
   DWORD DVar4;
   BOOL BVar5;
-  LPVOID pvVar6;
+  void *pvVar6;
   int iVar7;
   InternalExceptionFrame local_70;
   undefined1 local_2c [14];
@@ -102,22 +102,21 @@ void __thiscall STAppC::ReadCmdPlay(STAppC *this,int param_1)
       case 0x27:
         iVar3 = 2;
       }
-      nNumberOfBytesToRead = iVar3 + 0x1b;
-      if (pSVar2->field_118D < nNumberOfBytesToRead) {
-        pSVar2->field_118D = nNumberOfBytesToRead;
-        pvVar6 = (LPVOID)Library::DKW::LIB::FUN_006acf50
-                                   ((int)pSVar2->field_1189,nNumberOfBytesToRead);
+      newSize = iVar3 + 0x1b;
+      if (pSVar2->field_118D < newSize) {
+        pSVar2->field_118D = newSize;
+        pvVar6 = Library::DKW::LIB::MemRealloc(pSVar2->field_1189,newSize);
         pSVar2->field_1189 = pvVar6;
       }
       DVar4 = SetFilePointer(hFile,pSVar2->field_1191,(PLONG)0x0,0);
       if (((DVar4 == 0xffffffff) ||
-          (BVar5 = ReadFile(hFile,pSVar2->field_1189,nNumberOfBytesToRead,&local_c,(LPOVERLAPPED)0x0
-                           ), BVar5 == 0)) || (local_c != nNumberOfBytesToRead)) {
+          (BVar5 = ReadFile(hFile,pSVar2->field_1189,newSize,&local_c,(LPOVERLAPPED)0x0), BVar5 == 0
+          )) || (local_c != newSize)) {
         local_8 = 1;
         CloseHandle(hFile);
       }
       else {
-        pSVar2->field_1191 = pSVar2->field_1191 + nNumberOfBytesToRead;
+        pSVar2->field_1191 = pSVar2->field_1191 + newSize;
         CloseHandle(hFile);
       }
       goto cf_common_exit_00571620;

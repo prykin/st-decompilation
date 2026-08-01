@@ -12,15 +12,16 @@ undefined4 __thiscall InterSystemC::CreateInterfObjects(InterSystemC *this)
   bool bVar2;
   InterSystemC *this_00;
   int iVar3;
-  LPSTR pCVar4;
-  ushort *puVar5;
+  ccFntTy *pcVar4;
+  LPSTR pCVar5;
+  ushort *puVar6;
   char *text;
-  undefined4 uVar7;
-  uint uVar8;
-  byte bVar9;
-  int iVar10;
+  undefined4 uVar8;
+  uint uVar9;
+  byte bVar10;
   int iVar11;
-  undefined4 *puVar12;
+  int iVar12;
+  undefined4 *puVar13;
   InternalExceptionFrame local_1c8;
   uint local_184 [4];
   undefined4 local_174;
@@ -56,21 +57,21 @@ undefined4 __thiscall InterSystemC::CreateInterfObjects(InterSystemC *this)
   this_00 = local_8;
   if (iVar3 == 0) {
     if (DAT_0080874e == '\x01') {
-      iVar3 = thunk_FUN_00541cf0(DAT_0080679c,(undefined *)0x0,DAT_00807dd9);
+      pcVar4 = (ccFntTy *)thunk_FUN_00541cf0(DAT_0080679c,(undefined *)0x0,DAT_00807dd9);
     }
     else if (DAT_0080874e == '\x02') {
-      iVar3 = thunk_FUN_00541f60(DAT_0080679c,(undefined *)0x0,DAT_00807dd9);
+      pcVar4 = (ccFntTy *)thunk_FUN_00541f60(DAT_0080679c,(undefined *)0x0,DAT_00807dd9);
     }
     else {
-      iVar3 = thunk_FUN_005421d0(DAT_0080679c,(undefined *)0x0,DAT_00807dd9);
+      pcVar4 = (ccFntTy *)thunk_FUN_005421d0(DAT_0080679c,(undefined *)0x0,DAT_00807dd9);
     }
-    this_00->field_0024 = iVar3;
-    *(undefined4 *)(iVar3 + 0x58) = 1;
-    *(undefined4 *)(iVar3 + 0x5c) = 0;
-    iVar3 = thunk_FUN_005412b0(DAT_0080679c,(undefined *)0x0,DAT_00807dd9);
-    this_00->field_0028 = iVar3;
-    *(undefined4 *)(iVar3 + 0x58) = 0;
-    *(undefined4 *)(iVar3 + 0x5c) = 0;
+    this_00->field_0024 = pcVar4;
+    pcVar4->field_0058 = 1;
+    pcVar4->field_005C = 0;
+    pcVar4 = (ccFntTy *)thunk_FUN_005412b0(DAT_0080679c,(undefined *)0x0,DAT_00807dd9);
+    this_00->field_0028 = pcVar4;
+    pcVar4->field_0058 = 0;
+    pcVar4->field_005C = 0;
     iVar3 = thunk_FUN_005416a0(DAT_0080679c,(undefined *)0x0,DAT_00807dd9);
     this_00->field_002C = iVar3;
     *(undefined4 *)(iVar3 + 0x58) = 1;
@@ -81,24 +82,24 @@ undefined4 __thiscall InterSystemC::CreateInterfObjects(InterSystemC *this)
     *(undefined4 *)(iVar3 + 0x5c) = 0;
     thunk_FUN_0056a500();
     memset(local_184, 0, 0x17c); /* compiler bulk-zero initialization */
-    puVar12 = (undefined4 *)0x0;
-    iVar11 = 0;
-    iVar10 = 1;
-    bVar9 = 0;
-    uVar8 = 0xffffffff;
-    uVar7 = 0;
+    puVar13 = (undefined4 *)0x0;
+    iVar12 = 0;
+    iVar11 = 1;
+    bVar10 = 0;
+    uVar9 = 0xffffffff;
+    uVar8 = 0;
     iVar3 = 1;
     local_184[1] = 1;
     local_184[0] = 1;
-    pCVar4 = thunk_FUN_00571240("BUT_FILEOPT",0);
-    pCVar4 = FUN_006f2c00(pCVar4,iVar3,uVar7);
-    puVar5 = Library::Ourlib::MFRLOAD::mfRLoad
-                       (DAT_00806794,CASE_1,pCVar4,uVar8,bVar9,iVar10,iVar11,puVar12);
+    pCVar5 = thunk_FUN_00571240("BUT_FILEOPT",0);
+    pCVar5 = FUN_006f2c00(pCVar5,iVar3,uVar8);
+    puVar6 = Library::Ourlib::MFRLOAD::mfRLoad
+                       (DAT_00806794,CASE_1,pCVar5,uVar9,bVar10,iVar11,iVar12,puVar13);
     local_184[2] = (-(uint)(DAT_0080874e != '\x03') & 5) + 0x26;
-    local_174 = *(undefined4 *)(puVar5 + 2);
+    local_174 = *(undefined4 *)(puVar6 + 2);
     local_164 = this_00->field_0014;
     local_184[3] = (DAT_0080874e != '\x03') + 7;
-    local_170 = *(undefined4 *)(puVar5 + 4);
+    local_170 = *(undefined4 *)(puVar6 + 4);
     local_e0 = 0x101;
     local_104 = 0x101;
     local_dc = 3;
@@ -147,12 +148,12 @@ undefined4 __thiscall InterSystemC::CreateInterfObjects(InterSystemC *this)
               ((SystemClassTy *)this_00,2,(undefined4 *)0x0,(int *)0x0,local_184,1);
     if ((*(char *)((int)&DAT_008087c4 + (uint)DAT_0080874d * 0x51 + 3) == '\0') &&
        (DAT_0080874f == '\0')) {
-      bVar9 = 1;
+      bVar10 = 1;
     }
     else {
-      bVar9 = 0;
+      bVar10 = 0;
     }
-    local_184[0] = (uint)bVar9;
+    local_184[0] = (uint)bVar10;
     local_d0 = 0x2719;
     local_f4 = 0x2719;
     local_184[2] = (-(uint)(DAT_0080874e != '\x03') & 2) + 0x128;
@@ -243,17 +244,17 @@ undefined4 __thiscall InterSystemC::CreateInterfObjects(InterSystemC *this)
     }
     thunk_FUN_0056a500();
     if ((DAT_0080877e == '\0') && (g_popUp_008016D8 != (PopUpTy *)0x0)) {
-      uVar8 = 8;
+      uVar9 = 8;
       text = LoadResourceString(0x4275,g_module_00807618);
-      thunk_FUN_0052d320(g_popUp_008016D8,text,uVar8);
+      thunk_FUN_0052d320(g_popUp_008016D8,text,uVar9);
     }
     g_currentExceptionFrame = local_1c8.previous;
     return 0;
   }
   g_currentExceptionFrame = local_1c8.previous;
-  iVar10 = ReportDebugMessage("E:\\__titans\\Andrey\\tintersys.cpp",0xb3,0,iVar3,"%s"
+  iVar11 = ReportDebugMessage("E:\\__titans\\Andrey\\tintersys.cpp",0xb3,0,iVar3,"%s"
                               ,"InterSystemC::CreateInterfObjects");
-  if (iVar10 != 0) {
+  if (iVar11 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\tintersys.cpp",0xb3);

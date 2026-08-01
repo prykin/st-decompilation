@@ -33,7 +33,7 @@ int __thiscall STLightC::sub_0061D8F0(STLightC *this,undefined4 *param_1)
   piVar1 = (int *)(local_c + (int)(param_1 + 0x24));
   piVar6 = piVar1 + 1;
   local_8 = piVar6;
-  piVar2 = (int *)Library::DKW::LIB::FUN_006aac70(this->field_0093 << 4);
+  piVar2 = Library::DKW::LIB::MemAlloc(this->field_0093 << 4);
   this->field_0057 = piVar2;
   for (iVar4 = (this->field_0093 & 0xfffffffU) << 2; iVar4 != 0; iVar4 = iVar4 + -1) {
     *piVar2 = *piVar6;

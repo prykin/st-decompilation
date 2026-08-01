@@ -11,25 +11,23 @@ void __thiscall STFieldC::sub_00609CD0(STFieldC *this)
 {
   dword dVar1;
   STFieldC_field_0234DArray *pSVar2;
-  STFieldC_field_0234Element *puVar3;
-  uint uVar3;
+  uint *puVar3;
+  uint uVar4;
 
   if (this->field_0234 != (STFieldC_field_0234DArray *)0x0) {
     dVar1 = this->field_0234->count;
-    uVar3 = 0;
+    uVar4 = 0;
     if (0 < (int)dVar1) {
       do {
         pSVar2 = this->field_0234;
         /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
-        if (((uVar3 < pSVar2->count) &&
-            (puVar3 = (STFieldC_field_0234Element *)
-                      ((int)&pSVar2->data->field_0000 + pSVar2->elementSize * uVar3),
-            puVar3 != (STFieldC_field_0234Element *)0x0)) &&
-           (LoadImagSpr(this,uVar3), this->field_020D == 6)) {
-          Library::Ourlib::ST3DSMAP::SprHide(g_sT3DSMAPContext_00807598,puVar3->field_003C);
+        if (((uVar4 < pSVar2->count) &&
+            (puVar3 = (uint *)((int)&pSVar2->data->field_0000 + pSVar2->elementSize * uVar4),
+            puVar3 != (uint *)0x0)) && (LoadImagSpr(this,uVar4), this->field_020D == 6)) {
+          Library::Ourlib::ST3DSMAP::SprHide(g_sT3DSMAPContext_00807598,puVar3[0xf]);
         }
-        uVar3 = uVar3 + 1;
-      } while ((int)uVar3 < (int)dVar1);
+        uVar4 = uVar4 + 1;
+      } while ((int)uVar4 < (int)dVar1);
     }
   }
   return;

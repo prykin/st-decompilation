@@ -136,7 +136,7 @@ LAB_0051d689:
   local_34[2] = local_18;
   local_34[3] = *(uint *)(local_8 + 4);
   local_34[1] = uVar9;
-  Library::DKW::TBL::FUN_006ae1c0((uint *)this_00->field_01D7,local_34);
+  Library::DKW::TBL::DArrayAppend((DArrayTy *)this_00->field_01D7,local_34);
   cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);
   CheckBkView(this_00,uVar10 + 0x1e,10);
   local_c = ((uint)uVar10 / 10 + 1) * 10;

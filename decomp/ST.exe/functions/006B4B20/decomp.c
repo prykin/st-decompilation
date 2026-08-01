@@ -42,8 +42,7 @@ undefined4 FUN_006b4b20(int *param_1,AnonShape_006B4B20_3D4F4412 *param_2,int pa
   pAVar3 = (AnonShape_006B4B20_3D4F4412 *)param_2->field_0004;
   uVar4 = param_2->field_0008;
   uVar14 = (uint)param_2->field_000E * (int)pAVar3 + 0x1f >> 3 & 0x1ffffffc;
-  puVar5 = (uint *)Library::DKW::LIB::FUN_006aac70
-                             ((int)((int)&pAVar3->field_0x1 * uVar4 * 3) / 2 + 0x16);
+  puVar5 = Library::DKW::LIB::MemAlloc((int)((int)&pAVar3->field_0x1 * uVar4 * 3) / 2 + 0x16);
   if (puVar5 == (uint *)0x0) {
     return 0xfffffffe;
   }
@@ -191,10 +190,13 @@ LAB_006b4c1b:
               *pbVar13 = 0xbf;
               pbVar16 = local_30;
               pbVar18 = pbVar13 + 1;
-              memmove(pbVar18, pbVar16, 0x3f); /* compiler REP MOVS byte copy */
+              memmove(pbVar18, pbVar16, 0x3e); /* compiler REP MOVS byte copy */
+              pbVar18 = pbVar18 + 0x3c;
+              pbVar16 = pbVar16 + 0x3c;
               pbVar13 = pbVar13 + 0x40;
               local_30 = local_30 + 0x3f;
               uVar10 = uVar10 - 1;
+              pbVar18[2] = pbVar16[2];
             } while (uVar10 != 0);
           }
           if (0 < (int)uVar12) {

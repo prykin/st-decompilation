@@ -102,8 +102,8 @@ STAllPlayersC::PointPick(STAllPlayersC *this,uint *objectIds,int param_2,int par
       if (param_4 == 1) {
         return;
       }
-      if (g_playerRuntime[playerId].field324_0x203 == 0) {
-        iVar3 = g_playerRuntime[playerId].tempSlots[0][0].objectType;
+      if (g_playerRuntime[playerId].field448_0x203 == 0) {
+        iVar3 = g_playerRuntime[playerId].field332_0x163;
         if (iVar3 != 0) {
           if (iVar3 == 0x3c) {
             iVar3 = CheckTmps(playerId,0,0x1ae,(char)piVar2[9],(DArrayTy *)0x0,
@@ -166,7 +166,7 @@ LAB_004345b4:
         }
       }
       else {
-        if (g_playerRuntime[playerId].field324_0x203 != 1) {
+        if (g_playerRuntime[playerId].field448_0x203 != 1) {
           iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x102e,0,0,
                                      "%s","STAllPlayersC::PointPick GAMETYPE_MINESET wrong panel number");
           if (iVar3 == 0) {
@@ -174,9 +174,9 @@ LAB_004345b4:
           }
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
-        g_playerRuntime[playerId].field324_0x203 = 0;
+        g_playerRuntime[playerId].field448_0x203 = 0;
         ResetActivityFromTmp(this,playerId,1,0,0);
-        iVar3 = g_playerRuntime[playerId].tempSlots[0][0].objectType;
+        iVar3 = g_playerRuntime[playerId].field332_0x163;
         if (iVar3 == 0) {
           objectId = *(short *)((int)piVar2 + 0x32);
           ownerPlayerId = (char)piVar2[9];
@@ -231,14 +231,14 @@ cf_common_exit_0043440E:
     if (param_4 == 1) {
       return;
     }
-    if (g_playerRuntime[playerId].field324_0x203 == 0) {
-      g_playerRuntime[playerId].field324_0x203 = 1;
+    if (g_playerRuntime[playerId].field448_0x203 == 0) {
+      g_playerRuntime[playerId].field448_0x203 = 1;
       ResetActivityFromTmp(this,playerId,0,0,0);
-      iVar3 = g_playerRuntime[playerId].tempSlots[1][0].objectType;
+      iVar3 = g_playerRuntime[playerId].field390_0x1b3;
       if (iVar3 < 0x19b) {
         if (iVar3 == 0x19a) {
           objectIds = &Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1)->flags;
-          Library::DKW::TBL::FUN_006ae1c0(objectIds,(undefined4 *)((int)piVar2 + 0x32));
+          Library::DKW::TBL::DArrayAppend((DArrayTy *)objectIds,(void *)((int)piVar2 + 0x32));
           iVar3 = CheckTmps(playerId,1,0x19a,(char)piVar2[9],(DArrayTy *)objectIds,0);
           if (-1 < iVar3) {
             ActivateTV(this,playerId,1,iVar3);
@@ -252,7 +252,7 @@ cf_common_exit_0043440E:
         }
 LAB_004349ac:
         objectIds = &Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1)->flags;
-        Library::DKW::TBL::FUN_006ae1c0(objectIds,(undefined4 *)((int)piVar2 + 0x32));
+        Library::DKW::TBL::DArrayAppend((DArrayTy *)objectIds,(void *)((int)piVar2 + 0x32));
         iVar3 = CheckTmps(playerId,1,0x19a,(char)piVar2[9],(DArrayTy *)objectIds,0);
         if (iVar3 < 1) goto LAB_00434c92;
         ActivateTV(this,playerId,1,iVar3);
@@ -269,7 +269,7 @@ LAB_00434c12:
         }
 LAB_00434c44:
         objectIds = &Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1)->flags;
-        Library::DKW::TBL::FUN_006ae1c0(objectIds,(undefined4 *)((int)piVar2 + 0x32));
+        Library::DKW::TBL::DArrayAppend((DArrayTy *)objectIds,(void *)((int)piVar2 + 0x32));
         iVar3 = CheckTmps(playerId,1,0x19a,(char)piVar2[9],(DArrayTy *)objectIds,0);
         if (0 < iVar3) {
           ActivateTV(this,playerId,1,iVar3);
@@ -284,10 +284,10 @@ LAB_00434c92:
         AddObjToTmp(this,playerId,1,0,(char)piVar2[9],
                     CONCAT22((short)((uint)iVar3 >> 0x10),*(undefined2 *)((int)piVar2 + 0x32)));
       }
-      g_playerRuntime[playerId].tempSlots[1][0].objectType = 0x19a;
+      g_playerRuntime[playerId].field390_0x1b3 = 0x19a;
     }
     else {
-      if (g_playerRuntime[playerId].field324_0x203 != 1) {
+      if (g_playerRuntime[playerId].field448_0x203 != 1) {
         iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xfd5,0,0,"%s",
                                    "STAllPlayersC::PointPick GAMETYPE_OBJECT wrong panel number");
         if (iVar3 == 0) {
@@ -295,7 +295,7 @@ LAB_00434c92:
         }
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
-      iVar3 = g_playerRuntime[playerId].tempSlots[1][0].objectType;
+      iVar3 = g_playerRuntime[playerId].field390_0x1b3;
       if (iVar3 < 0x19b) {
         if (iVar3 != 0x19a) {
           if (iVar3 == 0) goto LAB_004349ac;
@@ -303,7 +303,7 @@ LAB_00434c92:
           goto LAB_00434ae2;
         }
         objectIds = &Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1)->flags;
-        Library::DKW::TBL::FUN_006ae1c0(objectIds,(undefined4 *)((int)piVar2 + 0x32));
+        Library::DKW::TBL::DArrayAppend((DArrayTy *)objectIds,(void *)((int)piVar2 + 0x32));
         iVar3 = CheckTmps(playerId,1,0x19a,(char)piVar2[9],(DArrayTy *)objectIds,0);
         if (0 < iVar3) {
           ActivateTV(this,playerId,1,iVar3);
@@ -311,7 +311,7 @@ LAB_00434c92:
         }
         if (-1 < iVar3) goto cf_common_exit_00434CB8;
         PushTV(playerId,1);
-        if (g_playerRuntime[playerId].tempSlots[1][1].playerId != piVar2[9]) goto LAB_00434b39;
+        if (g_playerRuntime[playerId].field396_0x1c7 != piVar2[9]) goto LAB_00434b39;
         CalibrateTmp(this,playerId,1,1,objectIds,(int *)&local_8,(int *)0x0,(int *)0x0);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         ResetActivityFromObjs
@@ -333,7 +333,7 @@ LAB_00434ab0:
         }
 LAB_00434ae2:
         objectIds = &Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1)->flags;
-        Library::DKW::TBL::FUN_006ae1c0(objectIds,(undefined4 *)((int)piVar2 + 0x32));
+        Library::DKW::TBL::DArrayAppend((DArrayTy *)objectIds,(void *)((int)piVar2 + 0x32));
         iVar3 = CheckTmps(playerId,1,0x19a,(char)piVar2[9],(DArrayTy *)objectIds,0);
         if (0 < iVar3) {
           ActivateTV(this,playerId,1,iVar3);
@@ -348,7 +348,7 @@ LAB_00434b39:
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       AddObjToTmp(this,playerId,1,0,(char)piVar2[9],
                   CONCAT22(uVar8,*(undefined2 *)((int)piVar2 + 0x32)));
-      g_playerRuntime[playerId].tempSlots[1][0].objectType = 0x19a;
+      g_playerRuntime[playerId].field390_0x1b3 = 0x19a;
     }
 cf_common_exit_00434CB8:
     DArrayDestroy((DArrayTy *)objectIds);
@@ -360,13 +360,13 @@ cf_common_exit_00434CB8:
       if ((param_4 == 1) && (playerId != (char)piVar2[9])) {
         return;
       }
-      if (g_playerRuntime[playerId].field324_0x203 == 0) {
-        iVar3 = g_playerRuntime[playerId].tempSlots[0][0].objectType;
+      if (g_playerRuntime[playerId].field448_0x203 == 0) {
+        iVar3 = g_playerRuntime[playerId].field332_0x163;
         if (iVar3 != 0) {
           if (iVar3 == 0x3c) {
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             if (param_4 == 1) {
-              if (g_playerRuntime[playerId].tempSlots[0][0].playerId != (int)(char)piVar2[9]) {
+              if (g_playerRuntime[playerId].field333_0x167 != (int)(char)piVar2[9]) {
                 return;
               }
               iVar3 = PushTV(playerId,0,0,playerId,*(short *)((int)piVar2 + 0x32));
@@ -382,13 +382,12 @@ cf_common_exit_00434CB8:
               return;
             }
             objectIds = &Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1)->flags;
-            Library::DKW::TBL::FUN_006ae1c0(objectIds,(undefined4 *)((int)piVar2 + 0x32));
+            Library::DKW::TBL::DArrayAppend((DArrayTy *)objectIds,(void *)((int)piVar2 + 0x32));
             iVar3 = CheckTmps(playerId,0,0x3c,(char)piVar2[9],(DArrayTy *)objectIds,0);
             if (iVar3 < 1) {
               if (iVar3 < 0) {
                 PushTV(playerId,0);
-                if (g_playerRuntime[playerId].tempSlots[0][1].playerId != piVar2[9])
-                goto LAB_0043414f;
+                if (g_playerRuntime[playerId].field338_0x177 != piVar2[9]) goto LAB_0043414f;
                 CalibrateTmp(this,playerId,0,1,objectIds,(int *)&local_8,(int *)0x0,(int *)0x0);
                 /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
                 ResetActivityFromObjs
@@ -418,7 +417,7 @@ cf_common_exit_00434CB8:
               return;
             }
             objectIds = &Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1)->flags;
-            Library::DKW::TBL::FUN_006ae1c0(objectIds,(undefined4 *)((int)piVar2 + 0x32));
+            Library::DKW::TBL::DArrayAppend((DArrayTy *)objectIds,(void *)((int)piVar2 + 0x32));
             iVar3 = CheckTmps(playerId,0,0x3c,(char)piVar2[9],(DArrayTy *)objectIds,0);
             if (iVar3 < 1) {
               PushTV(playerId,0);
@@ -434,7 +433,7 @@ LAB_0043414f:
         }
 LAB_0043429d:
         objectIds = &Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1)->flags;
-        Library::DKW::TBL::FUN_006ae1c0(objectIds,(undefined4 *)((int)piVar2 + 0x32));
+        Library::DKW::TBL::DArrayAppend((DArrayTy *)objectIds,(void *)((int)piVar2 + 0x32));
         iVar3 = CheckTmps(playerId,0,0x3c,(char)piVar2[9],(DArrayTy *)objectIds,0);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         uVar8 = extraout_var_10;
@@ -442,7 +441,7 @@ LAB_0043429d:
         ActivateTV(this,playerId,0,iVar3);
       }
       else {
-        if (g_playerRuntime[playerId].field324_0x203 != 1) {
+        if (g_playerRuntime[playerId].field448_0x203 != 1) {
           iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xf56,0,0,
                                      "%s","STAllPlayersC::PointPick GAMETYPE_BOAT wrong panel number");
           if (iVar3 == 0) {
@@ -454,13 +453,13 @@ LAB_0043429d:
         if (param_4 == 1) {
           return;
         }
-        g_playerRuntime[playerId].field324_0x203 = 0;
+        g_playerRuntime[playerId].field448_0x203 = 0;
         ResetActivityFromTmp(this,playerId,1,0,0);
-        iVar3 = g_playerRuntime[playerId].tempSlots[0][0].objectType;
+        iVar3 = g_playerRuntime[playerId].field332_0x163;
         if (iVar3 == 0) goto LAB_0043429d;
         if (iVar3 == 0x3c) {
           objectIds = &Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1)->flags;
-          Library::DKW::TBL::FUN_006ae1c0(objectIds,(undefined4 *)((int)piVar2 + 0x32));
+          Library::DKW::TBL::DArrayAppend((DArrayTy *)objectIds,(void *)((int)piVar2 + 0x32));
           iVar3 = CheckTmps(playerId,0,0x3c,(char)piVar2[9],(DArrayTy *)objectIds,0);
           if (iVar3 < 0) goto LAB_0043404a;
           ActivateTV(this,playerId,0,iVar3);
@@ -475,7 +474,7 @@ LAB_0043429d:
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
         objectIds = &Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1)->flags;
-        Library::DKW::TBL::FUN_006ae1c0(objectIds,(undefined4 *)((int)piVar2 + 0x32));
+        Library::DKW::TBL::DArrayAppend((DArrayTy *)objectIds,(void *)((int)piVar2 + 0x32));
         iVar3 = CheckTmps(playerId,0,0x3c,(char)piVar2[9],(DArrayTy *)objectIds,0);
         if (0 < iVar3) {
           ActivateTV(this,playerId,0,iVar3);
@@ -490,7 +489,7 @@ LAB_0043415b:
         AddObjToTmp(this,playerId,0,0,(char)piVar2[9],
                     CONCAT22(uVar8,*(undefined2 *)((int)piVar2 + 0x32)));
       }
-      g_playerRuntime[playerId].tempSlots[0][0].objectType = 0x3c;
+      g_playerRuntime[playerId].field332_0x163 = 0x3c;
       goto cf_common_exit_00434CB8;
     }
     if ((uVar4 != 0x5a) && (uVar4 != 0x172)) {
@@ -502,8 +501,8 @@ LAB_004345cf:
   if (param_4 == 1) {
     return;
   }
-  if (g_playerRuntime[playerId].field324_0x203 != 0) {
-    if (g_playerRuntime[playerId].field324_0x203 != 1) {
+  if (g_playerRuntime[playerId].field448_0x203 != 0) {
+    if (g_playerRuntime[playerId].field448_0x203 != 1) {
       iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1090,0,0,"%s",
                                  "STAllPlayersC::PointPick GAMETYPE_MINESET wrong panel number");
       if (iVar3 == 0) {
@@ -511,7 +510,7 @@ LAB_004345cf:
       }
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    iVar3 = g_playerRuntime[playerId].tempSlots[1][0].objectType;
+    iVar3 = g_playerRuntime[playerId].field390_0x1b3;
     if (iVar3 < 0x19b) {
       if (iVar3 != 0x19a) {
         if (iVar3 == 0) {
@@ -574,9 +573,9 @@ LAB_00434768:
     SelfCheckObjControl(this);
     return;
   }
-  g_playerRuntime[playerId].field324_0x203 = 1;
+  g_playerRuntime[playerId].field448_0x203 = 1;
   ResetActivityFromTmp(this,playerId,0,0,0);
-  iVar3 = g_playerRuntime[playerId].tempSlots[1][0].objectType;
+  iVar3 = g_playerRuntime[playerId].field390_0x1b3;
   if (iVar3 < 0x19b) {
     if (iVar3 != 0x19a) {
       if (iVar3 == 0) {

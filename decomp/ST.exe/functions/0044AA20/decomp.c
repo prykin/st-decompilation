@@ -34,7 +34,7 @@ STAllPlayersC::UnRegisterBlot(STAllPlayersC *this,uint param_1,AnonShape_0044AA2
     }
     DelObjFromTmps(this_00,DAT_0080874d,param_2->field_0020,param_2->field_0024,param_1);
     DelObjFromSaveTmps(this_00,param_2->field_0020,param_2->field_0024,(ushort)param_1);
-    Library::DKW::TBL::FUN_006ae140(&PTR_007fa164->flags,param_1 & 0xffff,&local_8);
+    Library::DKW::TBL::DArrayPut(g_array_007FA164,param_1 & 0xffff,&local_8);
     g_currentExceptionFrame = local_50.previous;
   }
   else {

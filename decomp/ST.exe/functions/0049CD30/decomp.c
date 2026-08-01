@@ -22,8 +22,8 @@ undefined4 __thiscall STGroupBoatC::GrpBuild(STGroupBoatC *this,int param_1)
   undefined4 uVar10;
   uint uVar11;
   uint uVar12;
-  undefined4 *puVar13;
-  undefined4 *puVar14;
+  byte *puVar13;
+  byte *puVar14;
   STBoatC_CmdToObj_param_1Enum SVar15;
   uint *puVar16;
   InternalExceptionFrame local_8c;
@@ -43,7 +43,7 @@ undefined4 __thiscall STGroupBoatC::GrpBuild(STGroupBoatC *this,int param_1)
   uint local_14;
   DArrayTy *local_10;
   uint local_c;
-  undefined4 local_8;
+  undefined1 local_8 [4];
 
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   local_14 = *(uint *)(this->field_0029 + 0xc);
@@ -68,8 +68,8 @@ undefined4 __thiscall STGroupBoatC::GrpBuild(STGroupBoatC *this,int param_1)
     memset(&local_24->field_0089, 0, 0x54); /* compiler bulk-zero initialization */
     iVar6 = 0;
     local_24->field_0065 = 0;
-    puVar13 = (undefined4 *)&local_24->field_0137;
-    puVar14 = (undefined4 *)&local_24->field_0276;
+    puVar13 = (byte *)&local_24->field_0137;
+    puVar14 = (byte *)&local_24->field_0276;
     memmove(puVar14, puVar13, 0x1f); /* compiler REP MOVS byte copy */
     local_20 = g_playSystem_00802A38->field_00E4;
     local_44 = local_24->field_0137;
@@ -86,11 +86,13 @@ undefined4 __thiscall STGroupBoatC::GrpBuild(STGroupBoatC *this,int param_1)
     array_00 = local_1c;
     if (local_14 != 0) {
       do {
-        DArrayGetElement((DArrayTy *)pSVar4->field_0029,uVar11,&local_8);
-        if ((ushort)local_8 != 0xffff) {
+        DArrayGetElement((DArrayTy *)pSVar4->field_0029,uVar11,local_8);
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+        if (local_8._0_2_ != 0xffff) {
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           pSVar7 = (STBoatC *)
                    STAllPlayersC::GetObjPtr
-                             (g_allPlayers_007FA174,pSVar4->field_0024,(ushort)local_8,CASE_1);
+                             (g_allPlayers_007FA174,pSVar4->field_0024,local_8._0_2_,CASE_1);
           if (pSVar7 == (STBoatC *)0x0) {
             RaiseInternalException
                       (-0x5001fffc,g_overwriteContext_007ED77C,
@@ -103,7 +105,7 @@ undefined4 __thiscall STGroupBoatC::GrpBuild(STGroupBoatC *this,int param_1)
               array_00 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
               local_1c = array_00;
             }
-            Library::DKW::TBL::FUN_006ae1c0(&array_00->flags,&local_8);
+            Library::DKW::TBL::DArrayAppend(array_00,local_8);
             puVar16 = &local_48;
             SVar15 = CASE_11;
           }
@@ -113,7 +115,7 @@ undefined4 __thiscall STGroupBoatC::GrpBuild(STGroupBoatC *this,int param_1)
               if (local_10 == (DArrayTy *)0x0) {
                 local_10 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
               }
-              Library::DKW::TBL::FUN_006ae1c0(&local_10->flags,&local_8);
+              Library::DKW::TBL::DArrayAppend(local_10,local_8);
               goto LAB_0049cf10;
             }
             puVar16 = &local_20;
@@ -162,11 +164,13 @@ LAB_0049cf10:
     if (local_14 != 0) {
       uVar12 = 0;
       do {
-        DArrayGetElement((DArrayTy *)pSVar4->field_0029,uVar12,&local_8);
-        if ((ushort)local_8 != 0xffff) {
+        DArrayGetElement((DArrayTy *)pSVar4->field_0029,uVar12,local_8);
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+        if (local_8._0_2_ != 0xffff) {
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           pSVar7 = (STBoatC *)
                    STAllPlayersC::GetObjPtr
-                             (g_allPlayers_007FA174,pSVar4->field_0024,(ushort)local_8,CASE_1);
+                             (g_allPlayers_007FA174,pSVar4->field_0024,local_8._0_2_,CASE_1);
           if (pSVar7 == (STBoatC *)0x0) {
             RaiseInternalException
                       (-0x5001fffc,g_overwriteContext_007ED77C,

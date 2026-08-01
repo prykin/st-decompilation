@@ -22,20 +22,18 @@ void CreateGameSystem(void)
   if (iVar2 == 0) {
     this_00 = (GameSystemC *)Library::MSVCRT::FUN_0072e530(0x435);
     if (this_00 == (GameSystemC *)0x0) {
-      PTR_0081163c = (AnonShape_00577690_10255A81 *)0x0;
+      g_parentSystem_0081163C = (GameSystemC *)0x0;
     }
     else {
-      PTR_0081163c = (AnonShape_00577690_10255A81 *)
-                     GameSystemC::GameSystemC(this_00,g_appClass_00806728);
+      g_parentSystem_0081163C = GameSystemC::GameSystemC(this_00,g_appClass_00806728);
     }
-    if ((GameSystemC *)PTR_0081163c == (GameSystemC *)0x0) {
+    if (g_parentSystem_0081163C == (GameSystemC *)0x0) {
       RaiseInternalException(-1,g_overwriteContext_007ED77C,"E:\\__titans\\tsystem.cpp",0xb1);
     }
-    *(undefined4 *)&PTR_0081163c->field_0x428 = 0;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)**(undefined4 **)PTR_0081163c)();
-    AppClassTy::AddSystem((AppClassTy *)&DAT_00807620,(int *)PTR_0081163c,0);
-    *(undefined4 *)&PTR_0081163c->field_0x428 = 1;
+    g_parentSystem_0081163C->field_0428 = 0;
+    g_parentSystem_0081163C->InitSystem();
+    AppClassTy::AddSystem((AppClassTy *)&DAT_00807620,(int *)g_parentSystem_0081163C,0);
+    g_parentSystem_0081163C->field_0428 = 1;
     this = g_cursorClass_00802A30;
     iVar2 = g_cursorClass_00802A30->field_00C9;
     iVar3 = g_cursorClass_00802A30->field_00C5;

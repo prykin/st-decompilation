@@ -10,15 +10,16 @@ int __thiscall FUN_005feb60(void *this,int param_1,int param_2,int param_3)
   int iVar6;
   int iVar7;
   uint uVar8;
-  short sVar9;
-  int iVar10;
+  void *pvVar9;
+  short sVar10;
   int iVar11;
-  short sVar12;
-  int iVar13;
-  undefined4 *puVar14;
-  STWorldObject *this_00;
+  int iVar12;
+  short sVar13;
+  int iVar14;
   undefined4 *puVar15;
-  bool bVar16;
+  STWorldObject *this_00;
+  undefined4 *puVar16;
+  bool bVar17;
   uint local_90 [11];
   int local_64;
   int local_60;
@@ -39,37 +40,37 @@ int __thiscall FUN_005feb60(void *this,int param_1,int param_2,int param_3)
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;
   local_1c = &stack0xffffff64;
-  iVar11 = 0;
-  sVar12 = (short)(param_3 >> 0x1f);
+  iVar12 = 0;
+  sVar13 = (short)(param_3 >> 0x1f);
   if (param_3 < 0) {
-    local_50 = (short)(((short)(param_3 / 200) + sVar12) -
+    local_50 = (short)(((short)(param_3 / 200) + sVar13) -
                       (short)((longlong)param_3 * 0x51eb851f >> 0x3f)) + -1;
   }
   else {
-    local_50 = (int)(short)(((short)(param_3 / 200) + sVar12) -
+    local_50 = (int)(short)(((short)(param_3 / 200) + sVar13) -
                            (short)((longlong)param_3 * 0x51eb851f >> 0x3f));
   }
   if (local_50 < 1) {
-    iVar11 = 0;
+    iVar12 = 0;
   }
   else {
-    sVar12 = *(short *)((int)this + 0x21a);
-    if (sVar12 < 0) {
-      local_64 = (short)((sVar12 / 0xc9 + (sVar12 >> 0xf)) -
-                        (short)((longlong)(int)sVar12 * 0x28c1979 >> 0x3f)) + -1;
+    sVar13 = *(short *)((int)this + 0x21a);
+    if (sVar13 < 0) {
+      local_64 = (short)((sVar13 / 0xc9 + (sVar13 >> 0xf)) -
+                        (short)((longlong)(int)sVar13 * 0x28c1979 >> 0x3f)) + -1;
     }
     else {
-      local_64 = (int)(short)((sVar12 / 0xc9 + (sVar12 >> 0xf)) -
-                             (short)((longlong)(int)sVar12 * 0x28c1979 >> 0x3f));
+      local_64 = (int)(short)((sVar13 / 0xc9 + (sVar13 >> 0xf)) -
+                             (short)((longlong)(int)sVar13 * 0x28c1979 >> 0x3f));
     }
-    sVar12 = *(short *)((int)this + 0x21c);
-    if (sVar12 < 0) {
-      iVar13 = (short)((sVar12 / 0xc9 + (sVar12 >> 0xf)) -
-                      (short)((longlong)(int)sVar12 * 0x28c1979 >> 0x3f)) + -1;
+    sVar13 = *(short *)((int)this + 0x21c);
+    if (sVar13 < 0) {
+      iVar14 = (short)((sVar13 / 0xc9 + (sVar13 >> 0xf)) -
+                      (short)((longlong)(int)sVar13 * 0x28c1979 >> 0x3f)) + -1;
     }
     else {
-      iVar13 = (int)(short)((sVar12 / 0xc9 + (sVar12 >> 0xf)) -
-                           (short)((longlong)(int)sVar12 * 0x28c1979 >> 0x3f));
+      iVar14 = (int)(short)((sVar13 / 0xc9 + (sVar13 >> 0xf)) -
+                           (short)((longlong)(int)sVar13 * 0x28c1979 >> 0x3f));
     }
     local_8 = 0;
     ExceptionList = &local_14;
@@ -81,12 +82,12 @@ int __thiscall FUN_005feb60(void *this,int param_1,int param_2,int param_3)
     if (0 < local_50) {
       do {
         iVar6 = local_50 - local_44;
-        iVar10 = iVar13 - iVar6;
+        iVar11 = iVar14 - iVar6;
         local_24 = local_64 - iVar6;
-        local_60 = iVar6 + 1 + iVar13;
+        local_60 = iVar6 + 1 + iVar14;
         local_58 = iVar6 + 1 + local_64;
-        if (iVar10 < 0) {
-          iVar10 = 0;
+        if (iVar11 < 0) {
+          iVar11 = 0;
         }
         if (local_24 < 0) {
           local_24 = 0;
@@ -97,19 +98,19 @@ int __thiscall FUN_005feb60(void *this,int param_1,int param_2,int param_3)
         if (g_worldGrid.sizeX < local_58) {
           local_58 = (int)g_worldGrid.sizeX;
         }
-        for (; iVar6 = local_24, iVar10 < local_60; iVar10 = iVar10 + 1) {
+        for (; iVar6 = local_24, iVar11 < local_60; iVar11 = iVar11 + 1) {
           for (; iVar6 < local_58; iVar6 = iVar6 + 1) {
-            sVar12 = (short)iVar6;
-            if (((((sVar12 < 0) || (g_worldGrid.sizeX <= sVar12)) ||
-                 (sVar5 = (short)iVar10, sVar5 < 0)) ||
-                ((g_worldGrid.sizeY <= sVar5 || (sVar9 = (short)local_44, sVar9 < 0)))) ||
-               (g_worldGrid.sizeZ <= sVar9)) {
+            sVar13 = (short)iVar6;
+            if (((((sVar13 < 0) || (g_worldGrid.sizeX <= sVar13)) ||
+                 (sVar5 = (short)iVar11, sVar5 < 0)) ||
+                ((g_worldGrid.sizeY <= sVar5 || (sVar10 = (short)local_44, sVar10 < 0)))) ||
+               (g_worldGrid.sizeZ <= sVar10)) {
               this_00 = (STWorldObject *)0x0;
             }
             else {
               this_00 = g_worldGrid.cells
-                        [(int)g_worldGrid.planeStride * (int)sVar9 +
-                         (int)g_worldGrid.sizeX * (int)sVar5 + (int)sVar12].objects[0];
+                        [(int)g_worldGrid.planeStride * (int)sVar10 +
+                         (int)g_worldGrid.sizeX * (int)sVar5 + (int)sVar13].objects[0];
             }
             if (((this_00 != (STWorldObject *)0x0) &&
                 (iVar7 = (*this_00->vtable[5].slots_00_28[0])(), iVar7 != 0)) &&
@@ -140,32 +141,32 @@ LAB_005fee45:
                     iVar7 = 2;
                   }
                 }
-                bVar16 = iVar7 < 0;
+                bVar17 = iVar7 < 0;
               }
               else {
-                bVar16 = (&DAT_008087ea)[(uint)bVar2 * 0x51] != (&DAT_008087ea)[(uint)bVar1 * 0x51];
+                bVar17 = (&DAT_008087ea)[(uint)bVar2 * 0x51] != (&DAT_008087ea)[(uint)bVar1 * 0x51];
               }
-              if ((bVar16) && (iVar7 = (*this_00->vtable[5].slots_00_28[2])(), iVar7 != 0)) {
+              if ((bVar17) && (iVar7 = (*this_00->vtable[5].slots_00_28[2])(), iVar7 != 0)) {
                 thunk_FUN_00416270(this_00,local_20,(int *)local_30,(int *)local_2c);
                 iVar7 = FUN_006acf90(param_1,param_2,(int)local_20[0],(int)local_30[0]);
                 iVar7 = thunk_FUN_005fe990(param_3 - local_2c[0],iVar7);
                 if (iVar7 != 0) {
                   iVar7 = 0;
-                  if (0 < iVar11) {
+                  if (0 < iVar12) {
                     do {
                       if (((uint)*(ushort *)&this_00[1].field_0xe == local_90[iVar7 * 6 + -3]) &&
                          (this_00[1].vtable == (STWorldObjectVTable *)local_90[iVar7 * 6 + -1]))
                       goto LAB_005fef0e;
                       iVar7 = iVar7 + 1;
-                    } while (iVar7 < iVar11);
+                    } while (iVar7 < iVar12);
                   }
-                  local_90[iVar11 * 6 + -1] = (uint)this_00[1].vtable;
-                  local_90[iVar11 * 6 + -3] = (uint)*(ushort *)&this_00[1].field_0xe;
+                  local_90[iVar12 * 6 + -1] = (uint)this_00[1].vtable;
+                  local_90[iVar12 * 6 + -3] = (uint)*(ushort *)&this_00[1].field_0xe;
                   uVar8 = this_00->GetObjectTypeId();
-                  local_90[iVar11 * 6 + -2] = uVar8;
-                  local_90[iVar11 * 6] = *(uint *)&this_00[0xe].field_0x1d;
-                  local_90[iVar11 * 6 + 1] = *(uint *)((int)&this_00[0xe].value_20 + 1);
-                  iVar11 = iVar11 + 1;
+                  local_90[iVar12 * 6 + -2] = uVar8;
+                  local_90[iVar12 * 6] = *(uint *)&this_00[0xe].field_0x1d;
+                  local_90[iVar12 * 6 + 1] = *(uint *)((int)&this_00[0xe].value_20 + 1);
+                  iVar12 = iVar12 + 1;
                 }
               }
             }
@@ -177,37 +178,37 @@ LAB_005fef0e:
       } while (local_44 < local_50);
     }
     local_1c = puVar4;
-    if (iVar11 != 0) {
-      *(int *)((int)this + 0x237) = iVar11;
-      iVar13 = Library::DKW::LIB::FUN_006aac70(iVar11 * 0x18);
-      *(int *)((int)this + 0x23b) = iVar13;
-      iVar13 = Library::DKW::LIB::FUN_006aac70(iVar11 * 4);
-      *(int *)((int)this + 0x23f) = iVar13;
-      puVar14 = (undefined4 *)&stack0xffffff64;
-      puVar15 = *(undefined4 **)((int)this + 0x23b);
-      for (iVar13 = (iVar11 * 3 & 0x1fffffffU) << 1; iVar13 != 0; iVar13 = iVar13 + -1) {
-        *puVar15 = *puVar14;
-        puVar14 = puVar14 + 1;
+    if (iVar12 != 0) {
+      *(int *)((int)this + 0x237) = iVar12;
+      pvVar9 = Library::DKW::LIB::MemAlloc(iVar12 * 0x18);
+      *(void **)((int)this + 0x23b) = pvVar9;
+      pvVar9 = Library::DKW::LIB::MemAlloc(iVar12 * 4);
+      *(void **)((int)this + 0x23f) = pvVar9;
+      puVar15 = (undefined4 *)&stack0xffffff64;
+      puVar16 = *(undefined4 **)((int)this + 0x23b);
+      for (iVar14 = (iVar12 * 3 & 0x1fffffffU) << 1; iVar14 != 0; iVar14 = iVar14 + -1) {
+        *puVar16 = *puVar15;
         puVar15 = puVar15 + 1;
+        puVar16 = puVar16 + 1;
       }
-      for (iVar13 = 0; iVar13 != 0; iVar13 = iVar13 + -1) {
-        *(undefined1 *)puVar15 = *(undefined1 *)puVar14;
-        puVar14 = (undefined4 *)((int)puVar14 + 1);
+      for (iVar14 = 0; iVar14 != 0; iVar14 = iVar14 + -1) {
+        *(undefined1 *)puVar16 = *(undefined1 *)puVar15;
         puVar15 = (undefined4 *)((int)puVar15 + 1);
+        puVar16 = (undefined4 *)((int)puVar16 + 1);
       }
-      iVar13 = 0;
-      if (0 < iVar11) {
+      iVar14 = 0;
+      if (0 < iVar12) {
         do {
-          *(int *)(*(int *)((int)this + 0x23f) + iVar13 * 4) = iVar13;
-          iVar13 = iVar13 + 1;
-        } while (iVar13 < iVar11);
+          *(int *)(*(int *)((int)this + 0x23f) + iVar14 * 4) = iVar14;
+          iVar14 = iVar14 + 1;
+        } while (iVar14 < iVar12);
       }
-      if (*(int *)((int)this + 0x226) < iVar11) {
-        thunk_FUN_005ff150(*(int *)((int)this + 0x23b),*(int **)((int)this + 0x23f),iVar11);
+      if (*(int *)((int)this + 0x226) < iVar12) {
+        thunk_FUN_005ff150(*(int *)((int)this + 0x23b),*(int **)((int)this + 0x23f),iVar12);
       }
     }
   }
   ExceptionList = local_14;
-  return iVar11;
+  return iVar12;
 }
 

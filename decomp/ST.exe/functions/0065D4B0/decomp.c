@@ -3,9 +3,12 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_flt.cpp
-   AiFltClassTy::PrepareToSave */
+   AiFltClassTy::PrepareToSave
 
-undefined4 * __thiscall AiFltClassTy::PrepareToSave(AiFltClassTy *this,uint *param_1)
+   [STPrototypeApplier] Propagated return.
+   Evidence: 0065D4B0 returns used as parameter 2 of STPlaySystemC::SaveObjData @ 00667FC7 */
+
+byte * __thiscall AiFltClassTy::PrepareToSave(AiFltClassTy *this,uint *param_1)
 
 {
   code *pcVar1;
@@ -14,7 +17,6 @@ undefined4 * __thiscall AiFltClassTy::PrepareToSave(AiFltClassTy *this,uint *par
   AnonShape_GLOBAL_008489C4_F7BABFAC *pAVar3;
   byte *pbVar4;
   int iVar5;
-  undefined4 *puVar6;
   InternalExceptionFrame local_4c;
   AiFltClassTy *local_8;
 
@@ -41,7 +43,7 @@ undefined4 * __thiscall AiFltClassTy::PrepareToSave(AiFltClassTy *this,uint *par
     pbVar4[0xf] = 0;
     *(undefined4 *)(pbVar4 + 0x66) = pAVar2->field_001C;
     g_currentExceptionFrame = local_4c.previous;
-    return (undefined4 *)pbVar4;
+    return pbVar4;
   }
   g_currentExceptionFrame = local_4c.previous;
   iVar5 = ReportDebugMessage("E:\\__titans\\ai\\ai_flt.cpp",0x4f,0,errorCode,"%s",
@@ -50,6 +52,6 @@ undefined4 * __thiscall AiFltClassTy::PrepareToSave(AiFltClassTy *this,uint *par
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(errorCode,0,"E:\\__titans\\ai\\ai_flt.cpp",0x50);
-  return (undefined4 *)0x0;
+  return (byte *)0x0;
 }
 

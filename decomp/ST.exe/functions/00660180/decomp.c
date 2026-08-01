@@ -65,7 +65,8 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00660180::FUN_00660180
       if (pSVar3 == (STGroupBoatC *)0x0) {
         return 0xffffffff;
       }
-      pSVar3->SetOrderData(CASE_2,local_34);
+      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+      (**(code **)(pSVar3->vtable + 8))(2,local_34);
       return 0;
     }
   }
@@ -90,7 +91,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00660180::FUN_00660180
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   thunk_FUN_00675950(CONCAT22(sStack_12,local_14),CONCAT22(asStack_10[0],sStack_12),asStack_10[0],
                      &local_14,&sStack_12,asStack_10,0);
-  Library::DKW::TBL::FUN_006ae1c0(&array->flags,(undefined4 *)&local_14);
+  Library::DKW::TBL::DArrayAppend(array,&local_14);
   local_18 = 1;
   local_1c = array;
   if ((local_c->field_007D == 0xfffe) || (g_allPlayers_007FA174 == (STAllPlayersC *)0x0)) {
@@ -104,7 +105,8 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00660180::FUN_00660180
               (-1,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_flt.cpp",0x467);
   }
   else {
-    pSVar3->SetOrderData(CASE_6,&local_1c);
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
+    (**(code **)(pSVar3->vtable + 8))(6,&local_1c);
   }
   if (array != (DArrayTy *)0x0) {
     DArrayDestroy(array);

@@ -1,6 +1,7 @@
 address	aggregate_id	status	detail
 00792CA0	indexed_global_candidate	disabled	apply=0
 0079A3FC	indexed_global_candidate	disabled	apply=0
+0079AED0	centered_offset_lookup	unchanged	desired aggregate already present
 007A1E94	indexed_global_candidate	disabled	apply=0
 007BF678	indexed_global_candidate	disabled	apply=0
 007C30D8	indexed_global_candidate	disabled	apply=0
@@ -38,7 +39,7 @@ address	aggregate_id	status	detail
 008087EF	indexed_global_candidate	disabled	apply=0
 008087F3	indexed_global_candidate	disabled	apply=0
 0080883B	indexed_global_candidate	disabled	apply=0
-00808A4F	player_relation_matrix	disabled	apply=0
+00808A4F	binary_relation_matrix	conflict	Could not create Data at address 00808a4f
 00808AB0	indexed_global_candidate	disabled	apply=0
 00808AF0	indexed_global_candidate	disabled	apply=0
 00808AF4	indexed_global_candidate	disabled	apply=0

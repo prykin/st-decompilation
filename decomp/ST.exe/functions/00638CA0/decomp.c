@@ -30,7 +30,7 @@ undefined4 __thiscall FUN_00638ca0(void *this,STMessage *param_1)
     if (SVar2 != MESS_SHARED_010F) {
       return 0;
     }
-    local_8 = (byte *)Library::DKW::LIB::FUN_006aac70(0x7a);
+    local_8 = Library::DKW::LIB::MemAlloc(0x7a);
     thunk_FUN_00639bf0(this,(undefined4 *)local_8);
     STPlaySystemC::SaveObjData
               (g_playSystem_00802A38,*(int **)((int)this + 0x18),local_8,

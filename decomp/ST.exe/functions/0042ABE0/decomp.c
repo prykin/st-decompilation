@@ -23,7 +23,6 @@ STAllPlayersC::GetGObjFromZone2
   int iVar5;
   int *piVar6;
   int *piVar7;
-  uint *puVar8;
   InternalExceptionFrame local_54;
   int local_10;
   short *local_c;
@@ -116,7 +115,7 @@ STAllPlayersC::GetGObjFromZone2
             piVar7 = (int *)((int)piVar7 + 0x32);
             piVar6 = param_16;
 LAB_0042b01f:
-            puVar8 = (uint *)*piVar6;
+            pDVar4 = (DArrayTy *)*piVar6;
             goto cf_common_join_0042B022;
           }
         }
@@ -127,13 +126,13 @@ LAB_0042b01f:
             if (piVar7[9] != (int)param_1) {
               piVar6 = param_8;
               if (param_7 != (int *)0x0) {
-                Library::DKW::TBL::FUN_006ae1c0((uint *)*param_7,(undefined4 *)((int)piVar7 + 0x32));
+                Library::DKW::TBL::DArrayAppend((DArrayTy *)*param_7,(void *)((int)piVar7 + 0x32));
               }
               goto joined_r0x0042b01c;
             }
             if (param_6 != (int *)0x0) {
               piVar7 = (int *)((int)piVar7 + 0x32);
-              puVar8 = (uint *)*param_6;
+              pDVar4 = (DArrayTy *)*param_6;
               goto cf_common_join_0042B022;
             }
           }
@@ -144,7 +143,7 @@ LAB_0042b01f:
               (*(int *)(iVar3 + (int)local_c) == *(int *)((int)piVar7 + 0x1ed))) &&
              (iVar5 = (**(code **)(*piVar7 + 0xec))(), iVar5 == 1)) {
             piVar7 = (int *)((int)piVar7 + 0x32);
-            puVar8 = (uint *)*param_14;
+            pDVar4 = (DArrayTy *)*param_14;
             goto cf_common_join_0042B022;
           }
         }
@@ -161,7 +160,7 @@ LAB_0042b01f:
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           if ((param_17 != (int *)0x0) && (iVar5 = (**(code **)(*piVar7 + 0xec))(), iVar5 == 1)) {
             piVar7 = (int *)((int)piVar7 + 0x32);
-            puVar8 = (uint *)*param_17;
+            pDVar4 = (DArrayTy *)*param_17;
             goto cf_common_join_0042B022;
           }
         }
@@ -170,16 +169,16 @@ LAB_0042b01f:
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             if ((param_12 != (int *)0x0) && (iVar5 = (**(code **)(*piVar7 + 0xec))(), iVar5 == 1)) {
               piVar7 = (int *)((int)piVar7 + 0x32);
-              puVar8 = (uint *)*param_12;
+              pDVar4 = (DArrayTy *)*param_12;
 cf_common_join_0042B022:
-              Library::DKW::TBL::FUN_006ae1c0(puVar8,piVar7);
+              Library::DKW::TBL::DArrayAppend(pDVar4,piVar7);
             }
           }
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           else if ((param_13 != (int *)0x0) && (iVar5 = (**(code **)(*piVar7 + 0xec))(), iVar5 == 1)
                   ) {
             piVar7 = (int *)((int)piVar7 + 0x32);
-            puVar8 = (uint *)*param_13;
+            pDVar4 = (DArrayTy *)*param_13;
             goto cf_common_join_0042B022;
           }
         }
@@ -190,14 +189,14 @@ cf_common_join_0042B022:
         if (piVar7[9] == (int)param_1) {
           if (param_9 != (int *)0x0) {
             piVar7 = (int *)((int)piVar7 + 0x32);
-            puVar8 = (uint *)*param_9;
+            pDVar4 = (DArrayTy *)*param_9;
             goto cf_common_join_0042B022;
           }
         }
         else {
           piVar6 = param_11;
           if (param_10 != (int *)0x0) {
-            Library::DKW::TBL::FUN_006ae1c0((uint *)*param_10,(undefined4 *)((int)piVar7 + 0x32));
+            Library::DKW::TBL::DArrayAppend((DArrayTy *)*param_10,(void *)((int)piVar7 + 0x32));
           }
 joined_r0x0042b01c:
           piVar7 = piVar7 + 9;

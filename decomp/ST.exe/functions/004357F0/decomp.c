@@ -8,6 +8,6 @@
 AiPlrClassTy * FUN_004357f0(char playerId)
 
 {
-  return g_playerRuntime[playerId].aiPlayer;
+  return *(AiPlrClassTy **)&g_playerRuntime[playerId].field_0x1;
 }
 

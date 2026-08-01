@@ -878,7 +878,7 @@ switchD_0054679d_default:
         return 0;
       }
       local_54 = 1;
-      if (PTR_0081163c == (AnonShape_00577690_10255A81 *)0x0) {
+      if (g_parentSystem_0081163C == (GameSystemC *)0x0) {
         local_4c = 1;
         puVar14 = &local_54;
         local_50 = (uint)(DAT_00808784 == 0);
@@ -886,7 +886,7 @@ switchD_0054679d_default:
       else {
         local_4c = 1;
         puVar14 = &local_54;
-        local_50 = (uint)(*(int *)&PTR_0081163c->field_0x42c == 0);
+        local_50 = (uint)(g_parentSystem_0081163C->field_042C == 0);
       }
       goto LAB_00547c2d;
     }
@@ -1197,6 +1197,7 @@ LAB_005458df:
         pcVar12 = pcVar13 + -uVar21;
         pcVar13 = (char *)&DAT_0080f33a;
         memmove(pcVar13, pcVar12, uVar21); /* compiler REP MOVS byte copy */
+        uVar22 = 0;
         for (puVar14 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar14 != (uint *)0x0;
             puVar14 = Library::MSVCRT::FUN_0072e560(puVar14,'\n')) {
           *(undefined1 *)puVar14 = 0x20;
@@ -1312,11 +1313,11 @@ switchD_00545816_default:
       bVar32 = 0x18;
     }
     else {
-      if ((PTR_00802a28 == (ccFntTy *)0x0) || (*(void **)&PTR_00802a28->field_0x28 == (void *)0x0))
-      goto cf_common_exit_00545FF6;
-      iVar9 = FUN_00711370(*(void **)&PTR_00802a28->field_0x28,local_524);
+      if ((g_interSystem_00802A28 == (InterSystemC *)0x0) ||
+         (g_interSystem_00802A28->field_0028 == (ccFntTy *)0x0)) goto cf_common_exit_00545FF6;
+      iVar9 = FUN_00711370(g_interSystem_00802A28->field_0028,local_524);
       this_00->field_04CA = iVar9 + 0xc;
-      iVar9 = FUN_007113e0(*(void **)&PTR_00802a28->field_0x28,local_524);
+      iVar9 = FUN_007113e0(g_interSystem_00802A28->field_0028,local_524);
       iVar9 = iVar9 + 10;
       this_00->field_04CE = iVar9;
       if ((800 < this_00->field_04CA) || (0x96 < iVar9)) goto cf_common_exit_00545FF6;
@@ -1352,9 +1353,9 @@ switchD_00545816_default:
         *(undefined1 *)puVar16 = 0x3a;
         puVar16 = (undefined4 *)((int)puVar16 + 1);
       }
-      ccFntTy::SetSurf(*(ccFntTy **)&PTR_00802a28->field_0x28,(int)this_00->field_04D2,0,5,5,
+      ccFntTy::SetSurf(g_interSystem_00802A28->field_0028,(int)this_00->field_04D2,0,5,5,
                        this_00->field_04CA + -10,this_00->field_04CE + -10);
-      ccFntTy::WrTxt(*(ccFntTy **)&PTR_00802a28->field_0x28,local_524,-2,-1,
+      ccFntTy::WrTxt(g_interSystem_00802A28->field_0028,local_524,-2,-1,
                      (uint)(message->arg0).words.low,-1,-1);
       FUN_006b5ee0((AnonShape_006B5B10_E0D06CF1 *)this_00->field_04D2,0,0,0,this_00->field_04CA,
                    this_00->field_04CE,0x6f,0xd);

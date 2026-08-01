@@ -113,7 +113,7 @@ LAB_0043f9bd:
                   iVar7 = (**(code **)(*piVar3 + 0xf8))();
                 }
                 if (iVar7 == 1) {
-                  Library::DKW::TBL::FUN_006ae1c0(&array->flags,&param_6);
+                  Library::DKW::TBL::DArrayAppend(array,&param_6);
                 }
               }
 LAB_0043f9fa:
@@ -163,7 +163,7 @@ LAB_0043fad9:
                   iVar7 = (**(code **)(*piVar3 + 0xf8))();
                 }
                 if (iVar7 == 1) {
-                  Library::DKW::TBL::FUN_006ae1c0(&array->flags,&param_6);
+                  Library::DKW::TBL::DArrayAppend(array,&param_6);
                 }
               }
 /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */

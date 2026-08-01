@@ -17,41 +17,40 @@ int FUN_004b33d0(uint param_1,int *param_2)
 
 {
   uint uVar1;
-  DArrayTy **ppDVar2;
-  byte bVar3;
-  char cVar4;
+  byte bVar2;
+  char cVar3;
   STWorldObject *this;
-  code *pcVar5;
-  DArrayTy *pDVar6;
-  STFishC *pSVar7;
-  DArrayTy *pDVar8;
-  short sVar9;
-  int iVar10;
-  DArrayTy *pDVar11;
-  byte *pbVar12;
-  int iVar13;
-  dword dVar14;
-  int iVar15;
-  Global_sub_004B1120_param_2Enum GVar16;
-  int *piVar17;
-  short sVar18;
-  uint uVar19;
-  short sVar20;
-  int iVar21;
-  uint uVar22;
-  DArrayTy *pDVar23;
+  code *pcVar4;
+  DArrayTy *pDVar5;
+  STFishC *pSVar6;
+  DArrayTy *pDVar7;
+  short sVar8;
+  int iVar9;
+  DArrayTy *pDVar10;
+  byte *pbVar11;
+  int iVar12;
+  dword dVar13;
+  int iVar14;
+  Global_sub_004B1120_param_2Enum GVar15;
+  int *piVar16;
+  short sVar17;
+  uint uVar18;
+  short sVar19;
+  int iVar20;
+  uint uVar21;
+  DArrayTy *pDVar22;
+  byte *pbVar23;
   byte *pbVar24;
-  byte *pbVar25;
-  undefined4 *puVar26;
-  int iVar27;
-  undefined1 *puVar28;
-  bool bVar29;
+  undefined4 *puVar25;
+  int iVar26;
+  undefined1 *puVar27;
+  bool bVar28;
   byte playerId;
   int local_35c;
   int local_358;
   int local_354;
   dword local_34c;
-  undefined4 local_320 [3];
+  undefined1 local_320 [12];
   int aiStack_314 [4];
   Global_sub_004B1120_param_2Enum local_304 [4];
   undefined4 local_2f4;
@@ -133,17 +132,17 @@ int FUN_004b33d0(uint param_1,int *param_2)
   local_2c0.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_2c0;
   ExceptionList = &local_14;
-  iVar10 = Library::MSVCRT::__setjmp3
-                     (local_2c0.jumpBuffer,2,Library::MSVCRT::FUN_0072da21,0xffffffff);
+  iVar9 = Library::MSVCRT::__setjmp3
+                    (local_2c0.jumpBuffer,2,Library::MSVCRT::FUN_0072da21,0xffffffff);
   local_1c = &stack0xfffffc94;
-  if (iVar10 != 0) {
+  if (iVar9 != 0) {
     g_currentExceptionFrame = local_2c0.previous;
-    iVar27 = ReportDebugMessage("E:\\__titans\\Artem\\TLO_ai_fnd.cpp",0x3c1,0,iVar10,
+    iVar26 = ReportDebugMessage("E:\\__titans\\Artem\\TLO_ai_fnd.cpp",0x3c1,0,iVar9,
                                 "%s","TLOAiBldPlacesFind error !");
-    if (iVar27 == 0) {
-      RaiseInternalException(iVar10,0,"E:\\__titans\\Artem\\TLO_ai_fnd.cpp",0x3c2);
+    if (iVar26 == 0) {
+      RaiseInternalException(iVar9,0,"E:\\__titans\\Artem\\TLO_ai_fnd.cpp",0x3c2);
       ExceptionList = local_14;
-      return iVar10;
+      return iVar9;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
@@ -154,80 +153,80 @@ int FUN_004b33d0(uint param_1,int *param_2)
               (-5,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_ai_fnd.cpp",0x5d);
   }
   if (param_2[3] == 0) {
-    pDVar11 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x14,10);
-    param_2[3] = (int)pDVar11;
+    pDVar10 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x14,10);
+    param_2[3] = (int)pDVar10;
   }
   if (param_2[5] == 0) {
-    pDVar11 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x14,10);
-    param_2[5] = (int)pDVar11;
+    pDVar10 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x14,10);
+    param_2[5] = (int)pDVar10;
   }
   memset(local_24c, 0, 0x108); /* compiler bulk-zero initialization */
-  iVar10 = 0;
+  iVar9 = 0;
   memset(local_4c, 0, 0x2c); /* compiler bulk-zero initialization */
-  iVar27 = 0;
+  iVar26 = 0;
   local_10c = 0;
   *(undefined4 *)(param_2[3] + 4) = 0;
-  iVar10 = DArrayGetNext((DArrayTy *)param_2[3],(byte *)local_108);
-  if (-1 < iVar10) {
+  iVar9 = DArrayGetNext((DArrayTy *)param_2[3],(byte *)local_108);
+  if (-1 < iVar9) {
     do {
       local_4c[*(int *)(&DAT_00790888 + local_108[0] * 4)] =
            local_4c[*(int *)(&DAT_00790888 + local_108[0] * 4)] + 1;
       if (*(int *)(&DAT_00791d68 + local_108[0] * 4) == 1) {
-        iVar27 = iVar27 + 1;
+        iVar26 = iVar26 + 1;
       }
-      iVar10 = DArrayGetNext((DArrayTy *)param_2[3],(byte *)local_108);
-    } while (-1 < iVar10);
-    local_10c = iVar27;
+      iVar9 = DArrayGetNext((DArrayTy *)param_2[3],(byte *)local_108);
+    } while (-1 < iVar9);
+    local_10c = iVar26;
   }
-  uVar22 = 0;
-  pDVar11 = (DArrayTy *)param_2[5];
-  if (0 < (int)pDVar11->count) {
+  uVar21 = 0;
+  pDVar10 = (DArrayTy *)param_2[5];
+  if (0 < (int)pDVar10->count) {
     do {
-      DArrayGetElement(pDVar11,uVar22,&local_a0);
-      iVar10 = thunk_FUN_004ae0b0((short)local_9c,local_98,local_94,local_a0,param_1,
-                                  (undefined4 *)0x0,(int *)0x0,(int *)0x0,0,(int *)0x0);
-      if (iVar10 == 0) {
+      DArrayGetElement(pDVar10,uVar21,&local_a0);
+      iVar9 = thunk_FUN_004ae0b0((short)local_9c,local_98,local_94,local_a0,param_1,
+                                 (undefined4 *)0x0,(int *)0x0,(int *)0x0,0,(int *)0x0);
+      if (iVar9 == 0) {
         local_304[0] = local_a0;
         local_2f4 = local_90;
         if (param_2[3] == 0) {
-          pDVar11 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x14,10);
-          param_2[3] = (int)pDVar11;
+          pDVar10 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x14,10);
+          param_2[3] = (int)pDVar10;
         }
-        Library::DKW::TBL::FUN_006ae1c0((uint *)param_2[3],local_304);
-        DArrayRemoveAt((DArrayTy *)param_2[5],uVar22);
+        Library::DKW::TBL::DArrayAppend((DArrayTy *)param_2[3],local_304);
+        DArrayRemoveAt((DArrayTy *)param_2[5],uVar21);
       }
       else {
-        bVar29 = true;
+        bVar28 = true;
         *(undefined4 *)(param_2[4] + 4) = 0;
-        iVar10 = DArrayGetNext((DArrayTy *)param_2[4],(byte *)&local_70);
-        while (-1 < iVar10) {
+        iVar9 = DArrayGetNext((DArrayTy *)param_2[4],(byte *)&local_70);
+        while (-1 < iVar9) {
           if (((local_70 == local_9c) && (local_6c == local_98)) && (local_68 == local_94)) {
-            bVar29 = false;
+            bVar28 = false;
           }
-          iVar10 = DArrayGetNext((DArrayTy *)param_2[4],(byte *)&local_70);
+          iVar9 = DArrayGetNext((DArrayTy *)param_2[4],(byte *)&local_70);
         }
-        if (bVar29) {
-          uVar22 = uVar22 + 1;
+        if (bVar28) {
+          uVar21 = uVar21 + 1;
         }
         else {
           if (param_2[3] == 0) {
-            pDVar11 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x14,10);
-            param_2[3] = (int)pDVar11;
+            pDVar10 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x14,10);
+            param_2[3] = (int)pDVar10;
           }
-          Library::DKW::TBL::FUN_006ae1c0((uint *)param_2[3],local_320);
-          DArrayRemoveAt((DArrayTy *)param_2[5],uVar22);
+          Library::DKW::TBL::DArrayAppend((DArrayTy *)param_2[3],local_320);
+          DArrayRemoveAt((DArrayTy *)param_2[5],uVar21);
         }
       }
-      pDVar11 = (DArrayTy *)param_2[5];
-    } while ((int)uVar22 < (int)pDVar11->count);
+      pDVar10 = (DArrayTy *)param_2[5];
+    } while ((int)uVar21 < (int)pDVar10->count);
   }
   playerId = (byte)param_1;
   if (((local_4c[0] != 0) || (local_4c[1] != 0)) && (g_array_007FA150 != (DArrayTy *)0x0)) {
-    pDVar11 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x1d,10);
+    pDVar10 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x1d,10);
     g_array_007FA150->iteratorIndex = 0;
-    local_a4 = pDVar11;
-    iVar10 = DArrayGetNext(g_array_007FA150,(byte *)&local_58);
-    while (-1 < iVar10) {
+    local_a4 = pDVar10;
+    iVar9 = DArrayGetNext(g_array_007FA150,(byte *)&local_58);
+    while (-1 < iVar9) {
       if (local_58 != (STFishC *)0x0) {
         STFishC::sub_004162B0(local_58,local_7c,local_8c,local_a8);
         this = g_worldGrid.cells
@@ -235,15 +234,15 @@ int FUN_004b33d0(uint param_1,int *param_2)
                 (int)g_worldGrid.planeStride * (int)local_a8[0] + (int)local_7c[0]].objects[0];
         local_110 = this;
         if (this == (STWorldObject *)0x0) {
-          pbVar25 = &local_2ec;
-          for (iVar10 = 7; iVar10 != 0; iVar10 = iVar10 + -1) {
-            pbVar25[0] = 0;
-            pbVar25[1] = 0;
-            pbVar25[2] = 0;
-            pbVar25[3] = 0;
-            pbVar25 = pbVar25 + 4;
+          pbVar24 = &local_2ec;
+          for (iVar9 = 7; iVar9 != 0; iVar9 = iVar9 + -1) {
+            pbVar24[0] = 0;
+            pbVar24[1] = 0;
+            pbVar24[2] = 0;
+            pbVar24[3] = 0;
+            pbVar24 = pbVar24 + 4;
           }
-          *pbVar25 = 0;
+          *pbVar24 = 0;
           local_2ec = 1;
           local_2e7 = local_58->slot_2C();
           local_2e3 = (int)local_7c[0];
@@ -253,33 +252,33 @@ int FUN_004b33d0(uint param_1,int *param_2)
           local_2d3 = 0xffffffff;
           if (param_2[4] != 0) {
             *(undefined4 *)(param_2[4] + 4) = 0;
-            iVar10 = DArrayGetNext((DArrayTy *)param_2[4],(byte *)&local_70);
-            while (-1 < iVar10) {
+            iVar9 = DArrayGetNext((DArrayTy *)param_2[4],(byte *)&local_70);
+            while (-1 < iVar9) {
               if (((local_70 == local_2e3) && (local_6c == local_2df)) && (local_68 == local_2db)) {
                 local_2ec = local_2ec | 0x20;
                 break;
               }
-              iVar10 = DArrayGetNext((DArrayTy *)param_2[4],(byte *)&local_70);
+              iVar9 = DArrayGetNext((DArrayTy *)param_2[4],(byte *)&local_70);
             }
           }
         }
         else {
           if ((this[1].vtable != (STWorldObjectVTable *)param_1) ||
              (((this->value_20 != 1000 ||
-               (iVar10 = this->GetObjectTypeId(),
-               *(int *)(&DAT_00790888 + iVar10 * 4) != 0)) &&
+               (iVar9 = this->GetObjectTypeId(),
+               *(int *)(&DAT_00790888 + iVar9 * 4) != 0)) &&
               ((this->value_20 != 0x3e9 ||
                (*(int *)(&DAT_00790888 + *(int *)&local_110[0x10].field_0x19 * 4) != 0))))))
           goto LAB_004b3895;
-          pbVar25 = &local_2ec;
-          for (iVar10 = 7; iVar10 != 0; iVar10 = iVar10 + -1) {
-            pbVar25[0] = 0;
-            pbVar25[1] = 0;
-            pbVar25[2] = 0;
-            pbVar25[3] = 0;
-            pbVar25 = pbVar25 + 4;
+          pbVar24 = &local_2ec;
+          for (iVar9 = 7; iVar9 != 0; iVar9 = iVar9 + -1) {
+            pbVar24[0] = 0;
+            pbVar24[1] = 0;
+            pbVar24[2] = 0;
+            pbVar24[3] = 0;
+            pbVar24 = pbVar24 + 4;
           }
-          *pbVar25 = 0;
+          *pbVar24 = 0;
           local_2ec = 2;
           local_2eb = local_110->GetObjectTypeId();
           if (local_2eb == 0x61) {
@@ -291,445 +290,444 @@ int FUN_004b33d0(uint param_1,int *param_2)
           local_2db = (int)local_a8[0];
           local_2d3 = 0xffffffff;
         }
-        Library::DKW::TBL::FUN_006ae1c0(&pDVar11->flags,(undefined4 *)&local_2ec);
+        Library::DKW::TBL::DArrayAppend(pDVar10,&local_2ec);
       }
 LAB_004b3895:
-      iVar10 = DArrayGetNext(g_array_007FA150,(byte *)&local_58);
+      iVar9 = DArrayGetNext(g_array_007FA150,(byte *)&local_58);
     }
     if (local_4c[0] != 0) {
       *(undefined4 *)(param_2[3] + 4) = 0;
-      iVar10 = DArrayGetNext((DArrayTy *)param_2[3],(byte *)local_108);
-      while (-1 < iVar10) {
+      iVar9 = DArrayGetNext((DArrayTy *)param_2[3],(byte *)local_108);
+      while (-1 < iVar9) {
         switch(local_108[0]) {
         case CASE_39:
         case CASE_5E:
-          iVar10 = 0xdd;
-          pDVar11->iteratorIndex = 0;
-          pbVar25 = (byte *)0x0;
+          iVar9 = 0xdd;
+          pDVar10->iteratorIndex = 0;
+          pbVar24 = (byte *)0x0;
           break;
         default:
           goto switchD_004b38f0_caseD_3a;
         case CASE_4F:
         case CASE_61:
-          iVar10 = 0xde;
-          pDVar11->iteratorIndex = 0;
-          pbVar25 = (byte *)0x0;
+          iVar9 = 0xde;
+          pDVar10->iteratorIndex = 0;
+          pbVar24 = (byte *)0x0;
         }
         while( true ) {
-          pbVar24 = pbVar25;
-          uVar22 = pDVar11->iteratorIndex;
-          if (uVar22 < pDVar11->count) {
-            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar11, uVar22) (runtime stride) */
-            pbVar12 = (byte *)(pDVar11->elementSize * uVar22 + (int)pDVar11->data);
-            pDVar11->iteratorIndex = uVar22 + 1;
+          pbVar23 = pbVar24;
+          uVar21 = pDVar10->iteratorIndex;
+          if (uVar21 < pDVar10->count) {
+            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar10, uVar21) (runtime stride) */
+            pbVar11 = (byte *)(pDVar10->elementSize * uVar21 + (int)pDVar10->data);
+            pDVar10->iteratorIndex = uVar21 + 1;
           }
           else {
-            pbVar12 = (byte *)0x0;
+            pbVar11 = (byte *)0x0;
           }
-          if (pbVar12 == (byte *)0x0) break;
-          bVar3 = *pbVar12;
-          pbVar25 = pbVar24;
+          if (pbVar11 == (byte *)0x0) break;
+          bVar2 = *pbVar11;
+          pbVar24 = pbVar23;
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          if ((((((bVar3 & 1) != 0) && ((bVar3 & 4) == 0)) && (*(int *)(pbVar12 + 5) == iVar10)) &&
-              (pbVar25 = pbVar12, pbVar24 != (byte *)0x0)) &&
-             ((pDVar11 = local_a4, (bVar3 & 0x20) < (*pbVar24 & 0x20) ||
-              ((pbVar25 = pbVar24, ((*pbVar24 ^ *pbVar12) & 0x20) == 0 &&
-               (*(int *)(pbVar12 + 0x15) < *(int *)(pbVar24 + 0x15))))))) {
-            pbVar25 = pbVar12;
+          if ((((((bVar2 & 1) != 0) && ((bVar2 & 4) == 0)) && (*(int *)(pbVar11 + 5) == iVar9)) &&
+              (pbVar24 = pbVar11, pbVar23 != (byte *)0x0)) &&
+             ((pDVar10 = local_a4, (bVar2 & 0x20) < (*pbVar23 & 0x20) ||
+              ((pbVar24 = pbVar23, ((*pbVar23 ^ *pbVar11) & 0x20) == 0 &&
+               (*(int *)(pbVar11 + 0x15) < *(int *)(pbVar23 + 0x15))))))) {
+            pbVar24 = pbVar11;
           }
         }
-        if (pbVar24 != (byte *)0x0) {
-          *pbVar24 = *pbVar24 | 4;
+        if (pbVar23 != (byte *)0x0) {
+          *pbVar23 = *pbVar23 | 4;
           if (local_108[0] == CASE_61) {
-            *pbVar24 = *pbVar24 | 8;
+            *pbVar23 = *pbVar23 | 8;
           }
-          local_9c = *(int *)(pbVar24 + 9);
-          local_98 = *(int *)(pbVar24 + 0xd);
-          local_94 = *(int *)(pbVar24 + 0x11);
+          local_9c = *(int *)(pbVar23 + 9);
+          local_98 = *(int *)(pbVar23 + 0xd);
+          local_94 = *(int *)(pbVar23 + 0x11);
           local_a0 = local_108[0];
           local_90 = local_f8;
-          Library::DKW::TBL::FUN_006ae1c0((uint *)param_2[5],&local_a0);
+          Library::DKW::TBL::DArrayAppend((DArrayTy *)param_2[5],&local_a0);
           local_4c[0] = local_4c[0] + -1;
           DArrayRemoveAt((DArrayTy *)param_2[3],((DArrayTy *)param_2[3])->iteratorIndex - 1);
         }
         if (local_4c[0] == 0) break;
 switchD_004b38f0_caseD_3a:
-        iVar10 = DArrayGetNext((DArrayTy *)param_2[3],(byte *)local_108);
+        iVar9 = DArrayGetNext((DArrayTy *)param_2[3],(byte *)local_108);
       }
     }
-    ppDVar2 = &g_playerRuntime[param_1].field2171_0x9ea;
-    if (*ppDVar2 != (DArrayTy *)0x0) {
-      (*ppDVar2)->iteratorIndex = 0;
-      iVar10 = DArrayGetNext(*ppDVar2,(byte *)&local_58);
-      while (iVar10 != 0) {
+    puVar27 = &g_playerRuntime[param_1].field_0x9ea;
+    if (*(int *)puVar27 != 0) {
+      *(undefined4 *)(*(int *)puVar27 + 4) = 0;
+      iVar9 = DArrayGetNext(*(DArrayTy **)puVar27,(byte *)&local_58);
+      while (iVar9 != 0) {
         STFishC::sub_004162B0(local_58,local_7c,local_8c,local_a8);
         local_88 = -1;
-        pDVar11->iteratorIndex = 0;
-        pbVar25 = (byte *)0x0;
+        pDVar10->iteratorIndex = 0;
+        pbVar24 = (byte *)0x0;
         while( true ) {
-          uVar22 = pDVar11->iteratorIndex;
-          if (uVar22 < pDVar11->count) {
-            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar11, uVar22) (runtime stride) */
-            pbVar24 = (byte *)(pDVar11->elementSize * uVar22 + (int)pDVar11->data);
-            pDVar11->iteratorIndex = uVar22 + 1;
+          uVar21 = pDVar10->iteratorIndex;
+          if (uVar21 < pDVar10->count) {
+            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar10, uVar21) (runtime stride) */
+            pbVar23 = (byte *)(pDVar10->elementSize * uVar21 + (int)pDVar10->data);
+            pDVar10->iteratorIndex = uVar21 + 1;
+          }
+          else {
+            pbVar23 = (byte *)0x0;
+          }
+          if (pbVar23 == (byte *)0x0) break;
+          if ((((*pbVar23 & 6) != 0) && ((*pbVar23 & 0x18) == 0)) &&
+             ((iVar9 = FUN_006aced8((int)local_7c[0],(int)local_8c[0],*(int *)(pbVar23 + 9),
+                                    *(int *)(pbVar23 + 0xd)), pbVar24 == (byte *)0x0 ||
+              (iVar9 < local_88)))) {
+            pbVar24 = pbVar23;
+            local_88 = iVar9;
+          }
+        }
+        if (pbVar24 != (byte *)0x0) {
+          if (local_88 < 0xf) {
+            *pbVar24 = *pbVar24 | 0x10;
+          }
+          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+          else if ((*(int *)(pbVar24 + 0x19) < 0) || (local_88 < *(int *)(pbVar24 + 0x19))) {
+            *(int *)(pbVar24 + 0x19) = local_88;
+          }
+        }
+        iVar9 = DArrayGetNext(*(DArrayTy **)puVar27,(byte *)&local_58);
+      }
+    }
+    if (local_4c[1] != 0) {
+      uVar21 = 0;
+      if (0 < (int)pDVar10->count) {
+        do {
+          DArrayGetElement(pDVar10,uVar21,&local_2ec);
+          if (((local_2ec & 0x18) == 0) && (((local_2ec & 1) == 0 || ((local_2ec & 4) != 0)))) {
+            uVar21 = uVar21 + 1;
+          }
+          else {
+            DArrayRemoveAt(pDVar10,uVar21);
+          }
+        } while ((int)uVar21 < (int)pDVar10->count);
+      }
+      uVar21 = pDVar10->count;
+      if (local_4c[1] < (int)uVar21) {
+        do {
+          local_50 = 0;
+          pDVar22 = pDVar10;
+          uVar18 = 0;
+          if (uVar21 != 1 && -1 < (int)(uVar21 - 1)) {
+            do {
+              pDVar10 = local_a4;
+              if (uVar18 < uVar21) {
+                /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar22, uVar18) (runtime stride) */
+                pbVar24 = (byte *)(pDVar22->elementSize * uVar18 + (int)pDVar22->data);
+              }
+              else {
+                pbVar24 = (byte *)0x0;
+              }
+              uVar1 = uVar18 + 1;
+              if (uVar1 < uVar21) {
+                /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar22, uVar1) (runtime stride) */
+                pbVar23 = (byte *)(pDVar22->elementSize * uVar1 + (int)pDVar22->data);
+              }
+              else {
+                pbVar23 = (byte *)0x0;
+              }
+              if (((*pbVar23 & 0x20) < (*pbVar24 & 0x20)) ||
+                 ((((*pbVar24 ^ *pbVar23) & 0x20) == 0 &&
+                  (*(int *)(pbVar23 + 0x15) < *(int *)(pbVar24 + 0x15))))) {
+                FUN_006b0cd0((AnonShape_00413AF0_B6B4EE9A *)local_a4,uVar18,uVar1);
+                local_50 = 1;
+              }
+              uVar21 = pDVar10->count;
+              pDVar22 = pDVar10;
+              uVar18 = uVar1;
+            } while ((int)uVar1 < (int)(uVar21 - 1));
+          }
+        } while (local_50 != 0);
+      }
+      pDVar10->iteratorIndex = 0;
+      iVar9 = GetPlayerRaceId(playerId);
+      local_134 = (-(uint)((char)iVar9 != '\x03') & 0xffffffdb) + 0x60;
+      *(undefined4 *)(param_2[3] + 4) = 0;
+      iVar9 = DArrayGetNext((DArrayTy *)param_2[3],(byte *)local_108);
+      while (-1 < iVar9) {
+        if (local_108[0] == local_134) {
+          uVar21 = pDVar10->iteratorIndex;
+          if (uVar21 < pDVar10->count) {
+            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar10, uVar21) (runtime stride) */
+            pbVar24 = (byte *)(pDVar10->elementSize * uVar21 + (int)pDVar10->data);
+            pDVar10->iteratorIndex = uVar21 + 1;
           }
           else {
             pbVar24 = (byte *)0x0;
           }
           if (pbVar24 == (byte *)0x0) break;
-          if ((((*pbVar24 & 6) != 0) && ((*pbVar24 & 0x18) == 0)) &&
-             ((iVar10 = FUN_006aced8((int)local_7c[0],(int)local_8c[0],*(int *)(pbVar24 + 9),
-                                     *(int *)(pbVar24 + 0xd)), pbVar25 == (byte *)0x0 ||
-              (iVar10 < local_88)))) {
-            pbVar25 = pbVar24;
-            local_88 = iVar10;
-          }
-        }
-        if (pbVar25 != (byte *)0x0) {
-          if (local_88 < 0xf) {
-            *pbVar25 = *pbVar25 | 0x10;
-          }
+          local_11c = *(int *)(pbVar24 + 9);
+          local_138 = *(int *)(pbVar24 + 0xd);
+          local_254[0] = *(int *)(pbVar24 + 0x11);
+          iVar9 = thunk_FUN_004b1120(param_1,local_134,&local_11c,&local_138,local_254,0,1);
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          else if ((*(int *)(pbVar25 + 0x19) < 0) || (local_88 < *(int *)(pbVar25 + 0x19))) {
-            *(int *)(pbVar25 + 0x19) = local_88;
-          }
-        }
-        iVar10 = DArrayGetNext(*ppDVar2,(byte *)&local_58);
-      }
-    }
-    if (local_4c[1] != 0) {
-      uVar22 = 0;
-      if (0 < (int)pDVar11->count) {
-        do {
-          DArrayGetElement(pDVar11,uVar22,&local_2ec);
-          if (((local_2ec & 0x18) == 0) && (((local_2ec & 1) == 0 || ((local_2ec & 4) != 0)))) {
-            uVar22 = uVar22 + 1;
-          }
-          else {
-            DArrayRemoveAt(pDVar11,uVar22);
-          }
-        } while ((int)uVar22 < (int)pDVar11->count);
-      }
-      uVar22 = pDVar11->count;
-      if (local_4c[1] < (int)uVar22) {
-        do {
-          local_50 = 0;
-          pDVar23 = pDVar11;
-          uVar19 = 0;
-          if (uVar22 != 1 && -1 < (int)(uVar22 - 1)) {
-            do {
-              pDVar11 = local_a4;
-              if (uVar19 < uVar22) {
-                /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar23, uVar19) (runtime stride) */
-                pbVar25 = (byte *)(pDVar23->elementSize * uVar19 + (int)pDVar23->data);
-              }
-              else {
-                pbVar25 = (byte *)0x0;
-              }
-              uVar1 = uVar19 + 1;
-              if (uVar1 < uVar22) {
-                /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar23, uVar1) (runtime stride) */
-                pbVar24 = (byte *)(pDVar23->elementSize * uVar1 + (int)pDVar23->data);
-              }
-              else {
-                pbVar24 = (byte *)0x0;
-              }
-              if (((*pbVar24 & 0x20) < (*pbVar25 & 0x20)) ||
-                 ((((*pbVar25 ^ *pbVar24) & 0x20) == 0 &&
-                  (*(int *)(pbVar24 + 0x15) < *(int *)(pbVar25 + 0x15))))) {
-                FUN_006b0cd0((AnonShape_00413AF0_B6B4EE9A *)local_a4,uVar19,uVar1);
-                local_50 = 1;
-              }
-              uVar22 = pDVar11->count;
-              pDVar23 = pDVar11;
-              uVar19 = uVar1;
-            } while ((int)uVar1 < (int)(uVar22 - 1));
-          }
-        } while (local_50 != 0);
-      }
-      pDVar11->iteratorIndex = 0;
-      iVar10 = GetPlayerRaceId(playerId);
-      local_134 = (-(uint)((char)iVar10 != '\x03') & 0xffffffdb) + 0x60;
-      *(undefined4 *)(param_2[3] + 4) = 0;
-      iVar10 = DArrayGetNext((DArrayTy *)param_2[3],(byte *)local_108);
-      while (-1 < iVar10) {
-        if (local_108[0] == local_134) {
-          uVar22 = pDVar11->iteratorIndex;
-          if (uVar22 < pDVar11->count) {
-            /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar11, uVar22) (runtime stride) */
-            pbVar25 = (byte *)(pDVar11->elementSize * uVar22 + (int)pDVar11->data);
-            pDVar11->iteratorIndex = uVar22 + 1;
-          }
-          else {
-            pbVar25 = (byte *)0x0;
-          }
-          if (pbVar25 == (byte *)0x0) break;
-          local_11c = *(int *)(pbVar25 + 9);
-          local_138 = *(int *)(pbVar25 + 0xd);
-          local_254[0] = *(int *)(pbVar25 + 0x11);
-          iVar10 = thunk_FUN_004b1120(param_1,local_134,&local_11c,&local_138,local_254,0,1);
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          if ((iVar10 != 0) &&
-             ((*(int *)(pbVar25 + 0x19) < 0 ||
-              (iVar10 = FUN_006aced8(local_11c,local_138,*(int *)(pbVar25 + 9),
-                                     *(int *)(pbVar25 + 0xd)), iVar10 < *(int *)(pbVar25 + 0x19)))))
-          {
-            *pbVar25 = *pbVar25 | 0x10;
+          if ((iVar9 != 0) &&
+             ((*(int *)(pbVar24 + 0x19) < 0 ||
+              (iVar9 = FUN_006aced8(local_11c,local_138,*(int *)(pbVar24 + 9),
+                                    *(int *)(pbVar24 + 0xd)), iVar9 < *(int *)(pbVar24 + 0x19))))) {
+            *pbVar24 = *pbVar24 | 0x10;
             local_a0 = local_108[0];
             local_90 = local_f8;
             local_9c = local_11c;
             local_98 = local_138;
             local_94 = local_254[0];
-            Library::DKW::TBL::FUN_006ae1c0((uint *)param_2[5],&local_a0);
+            Library::DKW::TBL::DArrayAppend((DArrayTy *)param_2[5],&local_a0);
             local_4c[1] = local_4c[1] + -1;
             DArrayRemoveAt((DArrayTy *)param_2[3],((DArrayTy *)param_2[3])->iteratorIndex - 1);
           }
           if (local_4c[1] == 0) break;
         }
-        iVar10 = DArrayGetNext((DArrayTy *)param_2[3],(byte *)local_108);
+        iVar9 = DArrayGetNext((DArrayTy *)param_2[3],(byte *)local_108);
       }
     }
-    DArrayDestroy(pDVar11);
+    DArrayDestroy(pDVar10);
   }
-  iVar10 = 0;
+  iVar9 = 0;
 LAB_004b3d9a:
-  if (10 < iVar10) {
+  if (10 < iVar9) {
 cf_break_loop_004B60CD:
     if (local_20 != (DArrayTy *)0x0) {
       DArrayDestroy(local_20);
     }
-    puVar26 = local_24c;
-    iVar10 = 0x42;
+    puVar25 = local_24c;
+    iVar9 = 0x42;
     do {
-      if ((DArrayTy *)*puVar26 != (DArrayTy *)0x0) {
-        DArrayDestroy((DArrayTy *)*puVar26);
+      if ((DArrayTy *)*puVar25 != (DArrayTy *)0x0) {
+        DArrayDestroy((DArrayTy *)*puVar25);
       }
-      puVar26 = puVar26 + 1;
-      iVar10 = iVar10 + -1;
-    } while (iVar10 != 0);
+      puVar25 = puVar25 + 1;
+      iVar9 = iVar9 + -1;
+    } while (iVar9 != 0);
     g_currentExceptionFrame = local_2c0.previous;
     ExceptionList = local_14;
     return 0;
   }
-  if (local_4c[iVar10] == 0) {
-    iVar10 = iVar10 + 1;
+  if (local_4c[iVar9] == 0) {
+    iVar9 = iVar9 + 1;
     goto LAB_004b3d9a;
   }
   local_8 = 0;
   Library::MSVCRT::FUN_0072da40();
   local_8 = 0xffffffff;
-  puVar26 = (undefined4 *)&stack0xfffffc94;
-  for (uVar22 = ((int)g_worldGrid.sizeZ * (int)g_worldGrid.planeStride & 0x7fffffffU) >> 1;
-      uVar22 != 0; uVar22 = uVar22 - 1) {
-    *puVar26 = 0xffffffff;
-    puVar26 = puVar26 + 1;
+  puVar25 = (undefined4 *)&stack0xfffffc94;
+  for (uVar21 = ((int)g_worldGrid.sizeZ * (int)g_worldGrid.planeStride & 0x7fffffffU) >> 1;
+      uVar21 != 0; uVar21 = uVar21 - 1) {
+    *puVar25 = 0xffffffff;
+    puVar25 = puVar25 + 1;
   }
-  for (uVar22 = (int)g_worldGrid.sizeZ * (int)g_worldGrid.planeStride * 2 & 3; uVar22 != 0;
-      uVar22 = uVar22 - 1) {
-    *(undefined1 *)puVar26 = 0xff;
-    puVar26 = (undefined4 *)((int)puVar26 + 1);
+  for (uVar21 = (int)g_worldGrid.sizeZ * (int)g_worldGrid.planeStride * 2 & 3; uVar21 != 0;
+      uVar21 = uVar21 - 1) {
+    *(undefined1 *)puVar25 = 0xff;
+    puVar25 = (undefined4 *)((int)puVar25 + 1);
   }
   local_27c = &stack0xfffffc94;
-  iVar10 = local_144;
-  iVar27 = local_140;
-  iVar21 = local_13c;
+  iVar9 = local_144;
+  iVar26 = local_140;
+  iVar20 = local_13c;
   local_1c = &stack0xfffffc94;
   if (local_4c[2] != 0) {
     local_27c = &stack0xfffffc94;
     local_1c = &stack0xfffffc94;
-    pDVar11 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0xc,10);
-    local_22c = pDVar11;
-    if ((g_array_007FA16C != (DArrayTy *)0x0) && (uVar22 = 0, 0 < (int)g_array_007FA16C->count)) {
+    pDVar10 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0xc,10);
+    local_22c = pDVar10;
+    if ((g_array_007FA16C != (DArrayTy *)0x0) && (uVar21 = 0, 0 < (int)g_array_007FA16C->count)) {
       do {
-        DArrayGetElement(g_array_007FA16C,uVar22,&local_58);
+        DArrayGetElement(g_array_007FA16C,uVar21,&local_58);
         STFishC::sub_004162B0(local_58,local_7c,local_8c,local_a8);
         local_144 = (int)local_7c[0];
         local_140 = (int)local_8c[0];
         local_13c = (int)local_a8[0];
-        Library::DKW::TBL::FUN_006ae1c0(&pDVar11->flags,&local_144);
-        uVar22 = uVar22 + 1;
-      } while ((int)uVar22 < (int)g_array_007FA16C->count);
+        Library::DKW::TBL::DArrayAppend(pDVar10,&local_144);
+        uVar21 = uVar21 + 1;
+      } while ((int)uVar21 < (int)g_array_007FA16C->count);
     }
-    iVar13 = param_2[5];
-    iVar10 = local_144;
-    iVar27 = local_140;
-    iVar21 = local_13c;
-    if ((iVar13 != 0) && (*(int *)(iVar13 + 0xc) != 0)) {
-      *(undefined4 *)(iVar13 + 4) = 0;
-      iVar13 = DArrayGetNext((DArrayTy *)param_2[5],(byte *)&local_a0);
-      iVar10 = local_144;
-      iVar27 = local_140;
-      iVar21 = local_13c;
+    iVar12 = param_2[5];
+    iVar9 = local_144;
+    iVar26 = local_140;
+    iVar20 = local_13c;
+    if ((iVar12 != 0) && (*(int *)(iVar12 + 0xc) != 0)) {
+      *(undefined4 *)(iVar12 + 4) = 0;
+      iVar12 = DArrayGetNext((DArrayTy *)param_2[5],(byte *)&local_a0);
+      iVar9 = local_144;
+      iVar26 = local_140;
+      iVar20 = local_13c;
       local_144 = local_9c;
       local_140 = local_98;
       local_13c = local_94;
-      while (local_9c = local_144, local_98 = local_140, local_94 = local_13c, -1 < iVar13) {
+      while (local_9c = local_144, local_98 = local_140, local_94 = local_13c, -1 < iVar12) {
         if (local_a0 == 0x3a) {
-          Library::DKW::TBL::FUN_006ae1c0(&pDVar11->flags,&local_144);
-          iVar10 = local_144;
-          iVar27 = local_140;
-          iVar21 = local_13c;
+          Library::DKW::TBL::DArrayAppend(pDVar10,&local_144);
+          iVar9 = local_144;
+          iVar26 = local_140;
+          iVar20 = local_13c;
         }
-        local_13c = iVar21;
-        local_140 = iVar27;
-        local_144 = iVar10;
-        iVar13 = DArrayGetNext((DArrayTy *)param_2[5],(byte *)&local_a0);
-        iVar10 = local_144;
-        iVar27 = local_140;
-        iVar21 = local_13c;
+        local_13c = iVar20;
+        local_140 = iVar26;
+        local_144 = iVar9;
+        iVar12 = DArrayGetNext((DArrayTy *)param_2[5],(byte *)&local_a0);
+        iVar9 = local_144;
+        iVar26 = local_140;
+        iVar20 = local_13c;
         local_144 = local_9c;
         local_140 = local_98;
         local_13c = local_94;
       }
     }
   }
-  local_13c = iVar21;
-  local_140 = iVar27;
-  local_144 = iVar10;
-  iVar10 = local_144;
-  iVar27 = local_140;
-  iVar21 = local_13c;
+  local_13c = iVar20;
+  local_140 = iVar26;
+  local_144 = iVar9;
+  iVar9 = local_144;
+  iVar26 = local_140;
+  iVar20 = local_13c;
   if (local_4c[3] != 0) {
     local_184 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0xc,10);
-    pDVar11 = g_playerRuntime[param_1].field2166_0x9d6;
-    if ((pDVar11 != (DArrayTy *)0x0) && (uVar22 = 0, 0 < (int)pDVar11->count)) {
+    pDVar10 = *(DArrayTy **)&g_playerRuntime[param_1].field_0x9d6;
+    if ((pDVar10 != (DArrayTy *)0x0) && (uVar21 = 0, 0 < (int)pDVar10->count)) {
       do {
-        DArrayGetElement(pDVar11,uVar22,&local_58);
+        DArrayGetElement(pDVar10,uVar21,&local_58);
         STFishC::sub_004162B0(local_58,local_7c,local_8c,local_a8);
         local_144 = (int)local_7c[0];
         local_140 = (int)local_8c[0];
         local_13c = (int)local_a8[0];
-        Library::DKW::TBL::FUN_006ae1c0(&local_184->flags,&local_144);
-        uVar22 = uVar22 + 1;
-        pDVar11 = g_playerRuntime[param_1].field2166_0x9d6;
-      } while ((int)uVar22 < (int)pDVar11->count);
+        Library::DKW::TBL::DArrayAppend(local_184,&local_144);
+        uVar21 = uVar21 + 1;
+        pDVar10 = *(DArrayTy **)&g_playerRuntime[param_1].field_0x9d6;
+      } while ((int)uVar21 < (int)pDVar10->count);
     }
-    iVar13 = param_2[5];
-    iVar10 = local_144;
-    iVar27 = local_140;
-    iVar21 = local_13c;
-    if ((iVar13 != 0) && (*(int *)(iVar13 + 0xc) != 0)) {
-      *(undefined4 *)(iVar13 + 4) = 0;
-      iVar13 = DArrayGetNext((DArrayTy *)param_2[5],(byte *)&local_a0);
-      iVar10 = local_144;
-      iVar27 = local_140;
-      iVar21 = local_13c;
+    iVar12 = param_2[5];
+    iVar9 = local_144;
+    iVar26 = local_140;
+    iVar20 = local_13c;
+    if ((iVar12 != 0) && (*(int *)(iVar12 + 0xc) != 0)) {
+      *(undefined4 *)(iVar12 + 4) = 0;
+      iVar12 = DArrayGetNext((DArrayTy *)param_2[5],(byte *)&local_a0);
+      iVar9 = local_144;
+      iVar26 = local_140;
+      iVar20 = local_13c;
       local_144 = local_9c;
       local_140 = local_98;
       local_13c = local_94;
-      while (local_9c = local_144, local_98 = local_140, local_94 = local_13c, -1 < iVar13) {
+      while (local_9c = local_144, local_98 = local_140, local_94 = local_13c, -1 < iVar12) {
         if (local_a0 == 100) {
-          Library::DKW::TBL::FUN_006ae1c0(&local_184->flags,&local_144);
-          iVar10 = local_144;
-          iVar27 = local_140;
-          iVar21 = local_13c;
+          Library::DKW::TBL::DArrayAppend(local_184,&local_144);
+          iVar9 = local_144;
+          iVar26 = local_140;
+          iVar20 = local_13c;
         }
-        local_13c = iVar21;
-        local_140 = iVar27;
-        local_144 = iVar10;
-        iVar13 = DArrayGetNext((DArrayTy *)param_2[5],(byte *)&local_a0);
-        iVar10 = local_144;
-        iVar27 = local_140;
-        iVar21 = local_13c;
+        local_13c = iVar20;
+        local_140 = iVar26;
+        local_144 = iVar9;
+        iVar12 = DArrayGetNext((DArrayTy *)param_2[5],(byte *)&local_a0);
+        iVar9 = local_144;
+        iVar26 = local_140;
+        iVar20 = local_13c;
         local_144 = local_9c;
         local_140 = local_98;
         local_13c = local_94;
       }
     }
   }
-  local_13c = iVar21;
-  local_140 = iVar27;
-  local_144 = iVar10;
+  local_13c = iVar20;
+  local_140 = iVar26;
+  local_144 = iVar9;
   local_54 = local_4c[10] + local_4c[8] + local_4c[9] + local_4c[7] + local_4c[4] + 5 + local_4c[6];
   local_20 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x30,10);
   local_64 = 0;
   local_114 = 0;
 LAB_004b40f9:
   do {
-    sVar18 = g_worldGrid.sizeX;
+    sVar17 = g_worldGrid.sizeX;
     if (g_worldGrid.sizeX <= g_worldGrid.sizeY) {
-      sVar18 = g_worldGrid.sizeY;
+      sVar17 = g_worldGrid.sizeY;
     }
-    if (sVar18 <= local_64) {
+    if (sVar17 <= local_64) {
 LAB_004b4689:
       *(undefined4 *)(param_2[5] + 4) = 0;
-      iVar13 = DArrayGetNext((DArrayTy *)param_2[5],(byte *)&local_a0);
-      puVar28 = local_27c;
-      pDVar11 = local_22c;
-      pDVar23 = local_184;
-      pDVar6 = local_a4;
-      GVar16 = local_a0;
-      iVar10 = local_9c;
-      iVar27 = local_98;
-      iVar21 = local_94;
-      pSVar7 = local_58;
-      pDVar8 = local_20;
-      while (local_27c = puVar28, local_22c = pDVar11, local_184 = pDVar23, local_a4 = pDVar6,
-            local_a0 = GVar16, local_9c = iVar10, local_98 = iVar27, local_94 = iVar21,
-            local_58 = pSVar7, local_20 = pDVar8, -1 < iVar13) {
-        if (*(int *)(&DAT_00791d68 + GVar16 * 4) == 1) {
-          uVar22 = 0;
+      iVar12 = DArrayGetNext((DArrayTy *)param_2[5],(byte *)&local_a0);
+      puVar27 = local_27c;
+      pDVar10 = local_22c;
+      pDVar22 = local_184;
+      pDVar5 = local_a4;
+      GVar15 = local_a0;
+      iVar9 = local_9c;
+      iVar26 = local_98;
+      iVar20 = local_94;
+      pSVar6 = local_58;
+      pDVar7 = local_20;
+      while (local_27c = puVar27, local_22c = pDVar10, local_184 = pDVar22, local_a4 = pDVar5,
+            local_a0 = GVar15, local_9c = iVar9, local_98 = iVar26, local_94 = iVar20,
+            local_58 = pSVar6, local_20 = pDVar7, -1 < iVar12) {
+        if (*(int *)(&DAT_00791d68 + GVar15 * 4) == 1) {
+          uVar21 = 0;
           do {
-            uVar19 = uVar22 & 0x80000001;
-            if ((int)uVar19 < 0) {
-              uVar19 = (uVar19 - 1 | 0xfffffffe) + 1;
+            uVar18 = uVar21 & 0x80000001;
+            if ((int)uVar18 < 0) {
+              uVar18 = (uVar18 - 1 | 0xfffffffe) + 1;
             }
-            iVar13 = (int)uVar22 / 2 + iVar27;
+            iVar12 = (int)uVar21 / 2 + iVar26;
             *(ushort *)
-             (puVar28 +
-             (g_worldGrid.sizeX * iVar13 + uVar19 + iVar10 + g_worldGrid.planeStride * iVar21) * 2)
-                 = *(ushort *)(&DAT_00790888 + GVar16 * 4) | 0x200;
-            uVar22 = uVar22 + 1;
-            local_138 = iVar13;
-            local_11c = uVar19 + iVar10;
-          } while ((int)uVar22 < 4);
+             (puVar27 +
+             (g_worldGrid.sizeX * iVar12 + uVar18 + iVar9 + g_worldGrid.planeStride * iVar20) * 2) =
+                 *(ushort *)(&DAT_00790888 + GVar15 * 4) | 0x200;
+            uVar21 = uVar21 + 1;
+            local_138 = iVar12;
+            local_11c = uVar18 + iVar9;
+          } while ((int)uVar21 < 4);
         }
         else {
           *(ushort *)
-           (puVar28 + (g_worldGrid.planeStride * iVar21 + iVar10 + g_worldGrid.sizeX * iVar27) * 2)
-               = *(ushort *)(&DAT_00790888 + GVar16 * 4) | 0x200;
-          local_138 = iVar27;
-          local_11c = iVar10;
+           (puVar27 + (g_worldGrid.planeStride * iVar20 + iVar9 + g_worldGrid.sizeX * iVar26) * 2) =
+               *(ushort *)(&DAT_00790888 + GVar15 * 4) | 0x200;
+          local_138 = iVar26;
+          local_11c = iVar9;
         }
-        local_254[0] = iVar21;
-        iVar13 = DArrayGetNext((DArrayTy *)param_2[5],(byte *)&local_a0);
-        puVar28 = local_27c;
-        pDVar11 = local_22c;
-        pDVar23 = local_184;
-        pDVar6 = local_a4;
-        GVar16 = local_a0;
-        iVar10 = local_9c;
-        iVar27 = local_98;
-        iVar21 = local_94;
-        pSVar7 = local_58;
-        pDVar8 = local_20;
+        local_254[0] = iVar20;
+        iVar12 = DArrayGetNext((DArrayTy *)param_2[5],(byte *)&local_a0);
+        puVar27 = local_27c;
+        pDVar10 = local_22c;
+        pDVar22 = local_184;
+        pDVar5 = local_a4;
+        GVar15 = local_a0;
+        iVar9 = local_9c;
+        iVar26 = local_98;
+        iVar20 = local_94;
+        pSVar6 = local_58;
+        pDVar7 = local_20;
       }
-      iVar27 = 0;
+      iVar26 = 0;
       g_array_007FA150->iteratorIndex = 0;
-      iVar10 = DArrayGetNext(g_array_007FA150,(byte *)&local_58);
-      puVar28 = local_27c;
-      while (-1 < iVar10) {
+      iVar9 = DArrayGetNext(g_array_007FA150,(byte *)&local_58);
+      puVar27 = local_27c;
+      while (-1 < iVar9) {
         if (local_58 != (STFishC *)0x0) {
           STFishC::sub_004162B0(local_58,local_7c,local_8c,local_a8);
-          iVar10 = (int)local_8c[0] * (int)g_worldGrid.sizeX +
-                   (int)g_worldGrid.planeStride * (int)local_a8[0] + (int)local_7c[0];
-          sVar18 = *(short *)(puVar28 + iVar10 * 2);
-          if ((sVar18 == 0) || (sVar18 == -1)) {
-            *(undefined2 *)(puVar28 + iVar10 * 2) = 0x80;
+          iVar9 = (int)local_8c[0] * (int)g_worldGrid.sizeX +
+                  (int)g_worldGrid.planeStride * (int)local_a8[0] + (int)local_7c[0];
+          sVar17 = *(short *)(puVar27 + iVar9 * 2);
+          if ((sVar17 == 0) || (sVar17 == -1)) {
+            *(undefined2 *)(puVar27 + iVar9 * 2) = 0x80;
           }
         }
-        iVar10 = DArrayGetNext(g_array_007FA150,(byte *)&local_58);
+        iVar9 = DArrayGetNext(g_array_007FA150,(byte *)&local_58);
       }
       if ((local_4c[4] != 0) || (local_4c[5] != 0)) {
         *(undefined4 *)(param_2[3] + 4) = 0;
-        iVar10 = DArrayGetNext((DArrayTy *)param_2[3],(byte *)local_108);
-        while (-1 < iVar10) {
+        iVar9 = DArrayGetNext((DArrayTy *)param_2[3],(byte *)local_108);
+        while (-1 < iVar9) {
           if (*(int *)(&DAT_00790888 + local_108[0] * 4) == 4) {
             memset(local_f4, 0, 0x30); /* compiler bulk-zero initialization */
             local_f4[0] = 0;
-            Library::DKW::TBL::FUN_006ae1c0(&local_20->flags,local_f4);
+            Library::DKW::TBL::DArrayAppend(local_20,local_f4);
           }
-          iVar10 = DArrayGetNext((DArrayTy *)param_2[3],(byte *)local_108);
+          iVar9 = DArrayGetNext((DArrayTy *)param_2[3],(byte *)local_108);
         }
       }
       local_5c = 0;
@@ -737,12 +735,12 @@ LAB_004b4689:
       local_274 = 0;
       local_60 = 0;
       while( true ) {
-        local_64 = iVar27;
-        sVar18 = g_worldGrid.sizeX;
+        local_64 = iVar26;
+        sVar17 = g_worldGrid.sizeX;
         if (g_worldGrid.sizeX <= g_worldGrid.sizeY) {
-          sVar18 = g_worldGrid.sizeY;
+          sVar17 = g_worldGrid.sizeY;
         }
-        if (sVar18 <= iVar27) break;
+        if (sVar17 <= iVar26) break;
 cf_continue_loop_004B48CC:
         for (local_74 = 0; local_74 < local_64 * 8; local_74 = local_74 + 1) {
           if (local_74 < local_64 * 2) {
@@ -770,241 +768,240 @@ LAB_004b4958:
             local_254[0] = 0;
             if (g_worldGrid.sizeZ != 1 && -1 < g_worldGrid.sizeZ + -1) {
 LAB_004b49b4:
-              iVar21 = (int)g_worldGrid.planeStride;
-              iVar13 = iVar21 * local_254[0];
-              iVar10 = g_worldGrid.sizeX * local_138;
-              iVar27 = iVar10 + iVar13 + local_11c;
-              if (*(short *)(local_27c + iVar27 * 2) != -1) {
-                if ((*(short *)(local_27c + iVar27 * 2) == 0) &&
-                   (*(short *)(local_27c + ((local_254[0] + 1) * iVar21 + iVar10 + local_11c) * 2)
-                    == 0)) {
+              iVar20 = (int)g_worldGrid.planeStride;
+              iVar12 = iVar20 * local_254[0];
+              iVar9 = g_worldGrid.sizeX * local_138;
+              iVar26 = iVar9 + iVar12 + local_11c;
+              if (*(short *)(local_27c + iVar26 * 2) != -1) {
+                if ((*(short *)(local_27c + iVar26 * 2) == 0) &&
+                   (*(short *)(local_27c + ((local_254[0] + 1) * iVar20 + iVar9 + local_11c) * 2) ==
+                    0)) {
                   local_124 = 0;
                   if ((local_10c != 0) &&
-                     (local_118 = iVar27 + 1, *(short *)(local_27c + local_118 * 2) == 0)) {
-                    iVar27 = (local_138 + 1) * (int)g_worldGrid.sizeX + iVar13 + local_11c;
-                    local_118 = iVar27;
-                    if ((*(short *)(local_27c + iVar27 * 2) == 0) &&
-                       (local_118 = iVar27 + 1, *(short *)(local_27c + (iVar27 + 1) * 2) == 0)) {
+                     (local_118 = iVar26 + 1, *(short *)(local_27c + local_118 * 2) == 0)) {
+                    iVar26 = (local_138 + 1) * (int)g_worldGrid.sizeX + iVar12 + local_11c;
+                    local_118 = iVar26;
+                    if ((*(short *)(local_27c + iVar26 * 2) == 0) &&
+                       (local_118 = iVar26 + 1, *(short *)(local_27c + (iVar26 + 1) * 2) == 0)) {
                       local_124 = 1;
                     }
                   }
                   if (local_254[0] < 1) {
-                    bVar29 = true;
+                    bVar28 = true;
                   }
                   else {
-                    iVar21 = (local_254[0] + -1) * iVar21;
-                    iVar10 = iVar21 + iVar10 + local_11c;
-                    local_118 = iVar10;
-                    bVar29 = *(short *)(local_27c + iVar10 * 2) == 0x20;
-                    if (!bVar29) goto cf_continue_loop_004B5FB6;
+                    iVar20 = (local_254[0] + -1) * iVar20;
+                    iVar9 = iVar20 + iVar9 + local_11c;
+                    local_118 = iVar9;
+                    bVar28 = *(short *)(local_27c + iVar9 * 2) == 0x20;
+                    if (!bVar28) goto cf_continue_loop_004B5FB6;
                     if ((local_10c != 0) && (local_124 != 0)) {
                       local_124 = 0;
-                      local_118 = iVar10 + 1;
-                      if (*(short *)(local_27c + (iVar10 + 1) * 2) == 0x20) {
-                        iVar10 = (local_138 + 1) * (int)g_worldGrid.sizeX + iVar21 + local_11c;
-                        local_118 = iVar10;
-                        if ((*(short *)(local_27c + iVar10 * 2) == 0x20) &&
-                           (local_118 = iVar10 + 1, *(short *)(local_27c + (iVar10 + 1) * 2) == 0x20
-                           )) {
+                      local_118 = iVar9 + 1;
+                      if (*(short *)(local_27c + (iVar9 + 1) * 2) == 0x20) {
+                        iVar9 = (local_138 + 1) * (int)g_worldGrid.sizeX + iVar20 + local_11c;
+                        local_118 = iVar9;
+                        if ((*(short *)(local_27c + iVar9 * 2) == 0x20) &&
+                           (local_118 = iVar9 + 1, *(short *)(local_27c + (iVar9 + 1) * 2) == 0x20))
+                        {
                           local_124 = 1;
                         }
                       }
                     }
                   }
-                  iVar10 = local_118;
-                  if (bVar29) {
+                  iVar9 = local_118;
+                  if (bVar28) {
                     local_80 = 1;
-                    iVar27 = 0;
+                    iVar26 = 0;
                     do {
-                      if (iVar27 != 4) {
-                        iVar21 = iVar27 / 3 + -1 + local_138;
-                        iVar15 = iVar27 % 3 + -1 + local_11c;
-                        if ((((-1 < iVar21) && (iVar21 < g_worldGrid.sizeY)) && (-1 < iVar15)) &&
-                           (((iVar15 < g_worldGrid.sizeX &&
-                             (sVar18 = *(short *)(local_27c +
-                                                 (iVar21 * g_worldGrid.sizeX + iVar15 + iVar13) * 2)
-                             , sVar18 != 0)) && ((sVar18 != 0x10 && (sVar18 != 0x20)))))) {
-                          bVar29 = false;
+                      if (iVar26 != 4) {
+                        iVar20 = iVar26 / 3 + -1 + local_138;
+                        iVar14 = iVar26 % 3 + -1 + local_11c;
+                        if ((((-1 < iVar20) && (iVar20 < g_worldGrid.sizeY)) && (-1 < iVar14)) &&
+                           (((iVar14 < g_worldGrid.sizeX &&
+                             (sVar17 = *(short *)(local_27c +
+                                                 (iVar20 * g_worldGrid.sizeX + iVar14 + iVar12) * 2)
+                             , sVar17 != 0)) && ((sVar17 != 0x10 && (sVar17 != 0x20)))))) {
+                          bVar28 = false;
                           goto LAB_004b4bd1;
                         }
                       }
-                      iVar27 = iVar27 + 1;
-                    } while (iVar27 < 9);
-                    bVar29 = true;
+                      iVar26 = iVar26 + 1;
+                    } while (iVar26 < 9);
+                    bVar28 = true;
 LAB_004b4bd1:
-                    if (bVar29) {
-                      iVar27 = GetPlayerRaceId(playerId);
-                      pDVar23 = local_184;
-                      pDVar11 = local_22c;
+                    if (bVar28) {
+                      iVar26 = GetPlayerRaceId(playerId);
+                      pDVar22 = local_184;
+                      pDVar10 = local_22c;
                       local_270 = 0;
-                      if ((char)iVar27 == '\x03') {
+                      if ((char)iVar26 == '\x03') {
                         if (local_4c[3] != 0) {
                           if ((local_184 == (DArrayTy *)0x0) || (local_184->count == 0)) {
                             local_270 = 1;
                           }
                           else {
                             local_270 = 1;
-                            uVar22 = 0;
+                            uVar21 = 0;
                             if (0 < (int)local_184->count) {
                               do {
-                                DArrayGetElement(pDVar23,uVar22,&local_144);
-                                uVar19 = local_144 - local_11c >> 0x1f;
-                                if (((int)((local_144 - local_11c ^ uVar19) - uVar19) < 0x10) ||
-                                   (uVar19 = local_140 - local_138 >> 0x1f,
-                                   (int)((local_140 - local_138 ^ uVar19) - uVar19) < 0x10)) {
+                                DArrayGetElement(pDVar22,uVar21,&local_144);
+                                uVar18 = local_144 - local_11c >> 0x1f;
+                                if (((int)((local_144 - local_11c ^ uVar18) - uVar18) < 0x10) ||
+                                   (uVar18 = local_140 - local_138 >> 0x1f,
+                                   (int)((local_140 - local_138 ^ uVar18) - uVar18) < 0x10)) {
                                   local_270 = 0;
                                   break;
                                 }
-                                uVar22 = uVar22 + 1;
-                              } while ((int)uVar22 < (int)pDVar23->count);
+                                uVar21 = uVar21 + 1;
+                              } while ((int)uVar21 < (int)pDVar22->count);
                             }
                           }
                         }
                       }
                       else if (local_4c[2] != 0) {
                         if ((local_22c != (DArrayTy *)0x0) && (local_22c->count != 0)) {
-                          iVar27 = -1;
-                          uVar22 = 0;
+                          iVar26 = -1;
+                          uVar21 = 0;
                           if (0 < (int)local_22c->count) {
                             do {
-                              DArrayGetElement(pDVar11,uVar22,&local_144);
-                              iVar10 = FUN_006aced8(local_11c,local_138,local_144,local_140);
-                              if ((iVar27 < 0) || (iVar10 < iVar27)) {
-                                iVar27 = iVar10;
+                              DArrayGetElement(pDVar10,uVar21,&local_144);
+                              iVar9 = FUN_006aced8(local_11c,local_138,local_144,local_140);
+                              if ((iVar26 < 0) || (iVar9 < iVar26)) {
+                                iVar26 = iVar9;
                               }
-                              uVar22 = uVar22 + 1;
-                            } while ((int)uVar22 < (int)pDVar11->count);
+                              uVar21 = uVar21 + 1;
+                            } while ((int)uVar21 < (int)pDVar10->count);
                           }
-                          if ((-1 < iVar27) && (iVar10 = local_118, iVar27 < 0xe))
-                          goto LAB_004b4c78;
+                          if ((-1 < iVar26) && (iVar9 = local_118, iVar26 < 0xe)) goto LAB_004b4c78;
                         }
                         local_270 = 1;
-                        iVar10 = local_118;
+                        iVar9 = local_118;
                       }
 LAB_004b4c78:
                       if (((local_270 == 0) ||
-                          (iVar27 = GetPlayerRaceId(playerId), (char)iVar27 == '\x03')) &&
+                          (iVar26 = GetPlayerRaceId(playerId), (char)iVar26 == '\x03')) &&
                          (local_10c != 0)) {
                         if (local_124 != 0) {
-                          uVar22 = 0;
+                          uVar21 = 0;
                           do {
-                            if (((uVar22 != 4) && (uVar22 != 5)) && ((uVar22 != 8 && (uVar22 != 9)))
+                            if (((uVar21 != 4) && (uVar21 != 5)) && ((uVar21 != 8 && (uVar21 != 9)))
                                ) {
-                              iVar27 = ((int)(uVar22 + ((int)uVar22 >> 0x1f & 3U)) >> 2) + -1 +
+                              iVar26 = ((int)(uVar21 + ((int)uVar21 >> 0x1f & 3U)) >> 2) + -1 +
                                        local_138;
-                              uVar19 = uVar22 & 0x80000003;
-                              if ((int)uVar19 < 0) {
-                                uVar19 = (uVar19 - 1 | 0xfffffffc) + 1;
+                              uVar18 = uVar21 & 0x80000003;
+                              if ((int)uVar18 < 0) {
+                                uVar18 = (uVar18 - 1 | 0xfffffffc) + 1;
                               }
-                              iVar21 = (uVar19 - 1) + local_11c;
-                              if (((-1 < iVar27) && (iVar27 < g_worldGrid.sizeY)) && (-1 < iVar21))
+                              iVar20 = (uVar18 - 1) + local_11c;
+                              if (((-1 < iVar26) && (iVar26 < g_worldGrid.sizeY)) && (-1 < iVar20))
                               {
-                                if ((((iVar21 < g_worldGrid.sizeX) &&
-                                     (sVar18 = *(short *)(local_27c +
-                                                         (iVar27 * g_worldGrid.sizeX +
-                                                         iVar21 + g_worldGrid.planeStride *
-                                                                  local_254[0]) * 2), sVar18 != 0))
-                                    && (sVar18 != 0x10)) && (sVar18 != 0x20)) {
+                                if ((((iVar20 < g_worldGrid.sizeX) &&
+                                     (sVar17 = *(short *)(local_27c +
+                                                         (iVar26 * g_worldGrid.sizeX +
+                                                         iVar20 + g_worldGrid.planeStride *
+                                                                  local_254[0]) * 2), sVar17 != 0))
+                                    && (sVar17 != 0x10)) && (sVar17 != 0x20)) {
                                   local_124 = 0;
                                   break;
                                 }
                               }
                             }
-                            uVar22 = uVar22 + 1;
-                          } while ((int)uVar22 < 0x10);
+                            uVar21 = uVar21 + 1;
+                          } while ((int)uVar21 < 0x10);
                           goto LAB_004b4e09;
                         }
 LAB_004b4f55:
-                        uVar22 = 0;
+                        uVar21 = 0;
                       }
                       else {
 LAB_004b4e09:
                         if ((local_124 == 0) || (local_4c[4] == 0)) goto LAB_004b4f55;
-                        iVar27 = 0;
+                        iVar26 = 0;
                         local_12c = 0;
                         do {
-                          iVar21 = iVar27 / 6;
-                          if (((iVar21 == 0) || (iVar21 == 5)) ||
-                             ((iVar27 % 6 == 0 || (iVar27 % 6 == 5)))) {
-                            iVar21 = iVar21 + -2 + local_138;
-                            iVar13 = iVar27 % 6 + -2 + local_11c;
-                            if (((-1 < iVar21) && (iVar21 < g_worldGrid.sizeY)) && (-1 < iVar13)) {
-                              if (iVar13 < g_worldGrid.sizeX) {
-                                iVar21 = iVar21 * g_worldGrid.sizeX;
-                                iVar15 = g_worldGrid.planeStride * local_254[0] + iVar21 + iVar13;
+                          iVar20 = iVar26 / 6;
+                          if (((iVar20 == 0) || (iVar20 == 5)) ||
+                             ((iVar26 % 6 == 0 || (iVar26 % 6 == 5)))) {
+                            iVar20 = iVar20 + -2 + local_138;
+                            iVar12 = iVar26 % 6 + -2 + local_11c;
+                            if (((-1 < iVar20) && (iVar20 < g_worldGrid.sizeY)) && (-1 < iVar12)) {
+                              if (iVar12 < g_worldGrid.sizeX) {
+                                iVar20 = iVar20 * g_worldGrid.sizeX;
+                                iVar14 = g_worldGrid.planeStride * local_254[0] + iVar20 + iVar12;
                                 if (0 < local_254[0]) {
-                                  iVar10 = (local_254[0] + -1) * (int)g_worldGrid.planeStride +
-                                           iVar21 + iVar13;
-                                  local_118 = iVar10;
+                                  iVar9 = (local_254[0] + -1) * (int)g_worldGrid.planeStride +
+                                          iVar20 + iVar12;
+                                  local_118 = iVar9;
                                 }
-                                if ((*(short *)(local_27c + iVar15 * 2) == 0) &&
+                                if ((*(short *)(local_27c + iVar14 * 2) == 0) &&
                                    ((local_254[0] == 0 ||
-                                    (*(short *)(local_27c + iVar10 * 2) == 0x20)))) {
+                                    (*(short *)(local_27c + iVar9 * 2) == 0x20)))) {
 LAB_004b4f35:
                                   local_12c = local_12c + 1;
                                 }
-                                else if (*(short *)(local_27c + iVar15 * 2) == 0x205) {
-                                  local_58 = (STFishC *)g_worldGrid.cells[iVar15].objects[0];
+                                else if (*(short *)(local_27c + iVar14 * 2) == 0x205) {
+                                  local_58 = (STFishC *)g_worldGrid.cells[iVar14].objects[0];
                                   if (((local_58 != (STFishC *)0x0) &&
-                                      (dVar14 = local_58->slot_2C(),
-                                      0x53 < (int)dVar14)) &&
-                                     ((dVar14 = local_58->slot_2C(),
-                                      (int)dVar14 < 0x5b && (*(int *)&local_58[2].field_0xfd == 0)))
+                                      (dVar13 = local_58->slot_2C(),
+                                      0x53 < (int)dVar13)) &&
+                                     ((dVar13 = local_58->slot_2C(),
+                                      (int)dVar13 < 0x5b && (*(int *)&local_58[2].field_0xfd == 0)))
                                      ) goto LAB_004b4f35;
                                 }
                               }
                             }
                           }
-                          iVar27 = iVar27 + 1;
-                        } while (iVar27 < 0x24);
-                        uVar22 = (uint)(6 < local_12c);
+                          iVar26 = iVar26 + 1;
+                        } while (iVar26 < 0x24);
+                        uVar21 = (uint)(6 < local_12c);
                       }
-                      local_268 = uVar22;
-                      if ((local_4c[4] == 0) || (uVar22 != 0)) {
+                      local_268 = uVar21;
+                      if ((local_4c[4] == 0) || (uVar21 != 0)) {
                         if ((local_124 == 0) || (local_10c == 0)) {
-                          iVar10 = 0;
+                          iVar9 = 0;
                         }
                         else {
-                          iVar10 = 1;
+                          iVar9 = 1;
                         }
                         *(undefined4 *)(param_2[3] + 4) = 0;
-                        local_ac = iVar10;
-                        iVar27 = DArrayGetNext((DArrayTy *)param_2[3],(byte *)local_108);
-                        pDVar11 = local_20;
-                        while (local_20 = pDVar11, -1 < iVar27) {
-                          iVar27 = *(int *)(&DAT_00790888 + local_108[0] * 4);
-                          if (iVar27 == 4) {
-                            if ((uVar22 == 0) ||
-                               (*(int *)(&DAT_00791d68 + local_108[0] * 4) != iVar10))
+                        local_ac = iVar9;
+                        iVar26 = DArrayGetNext((DArrayTy *)param_2[3],(byte *)local_108);
+                        pDVar10 = local_20;
+                        while (local_20 = pDVar10, -1 < iVar26) {
+                          iVar26 = *(int *)(&DAT_00790888 + local_108[0] * 4);
+                          if (iVar26 == 4) {
+                            if ((uVar21 == 0) ||
+                               (*(int *)(&DAT_00791d68 + local_108[0] * 4) != iVar9))
                             goto cf_common_join_004B5648;
                             local_a0 = local_108[0];
                             local_9c = local_11c;
                             local_98 = local_138;
                             local_94 = local_254[0];
                             local_90 = local_f8;
-                            Library::DKW::TBL::FUN_006ae1c0((uint *)param_2[5],&local_a0);
+                            Library::DKW::TBL::DArrayAppend((DArrayTy *)param_2[5],&local_a0);
                             DArrayRemoveAt((DArrayTy *)param_2[3],
                                            ((DArrayTy *)param_2[3])->iteratorIndex - 1);
-                            pDVar11->iteratorIndex = 0;
+                            pDVar10->iteratorIndex = 0;
                             goto LAB_004b56e4;
                           }
                           if (local_4c[4] != 0) goto cf_common_join_004B5648;
-                          if (((iVar27 == 1) || (iVar27 == 6)) || ((iVar27 == 2 || (iVar27 == 3))))
+                          if (((iVar26 == 1) || (iVar26 == 6)) || ((iVar26 == 2 || (iVar26 == 3))))
                           {
-                            iVar27 = GetPlayerRaceId(playerId);
-                            GVar16 = (-(uint)((char)iVar27 != '\x03') & 0xffffffd6) + 100;
+                            iVar26 = GetPlayerRaceId(playerId);
+                            GVar15 = (-(uint)((char)iVar26 != '\x03') & 0xffffffd6) + 100;
                             if (local_270 == 0) {
-                              if (local_108[0] == GVar16) goto cf_common_join_004B5648;
+                              if (local_108[0] == GVar15) goto cf_common_join_004B5648;
 LAB_004b5614:
                               if (((local_270 != 0) &&
-                                  (iVar27 = GetPlayerRaceId(playerId), (char)iVar27 != '\x03')) ||
-                                 (*(int *)(&DAT_00791d68 + local_108[0] * 4) == iVar10)) {
+                                  (iVar26 = GetPlayerRaceId(playerId), (char)iVar26 != '\x03')) ||
+                                 (*(int *)(&DAT_00791d68 + local_108[0] * 4) == iVar9)) {
                                 local_a0 = local_108[0];
                                 local_90 = local_f8;
                                 local_9c = local_11c;
                                 local_98 = local_138;
                                 local_94 = local_254[0];
-                                Library::DKW::TBL::FUN_006ae1c0((uint *)param_2[5],&local_a0);
+                                Library::DKW::TBL::DArrayAppend((DArrayTy *)param_2[5],&local_a0);
                                 DArrayRemoveAt((DArrayTy *)param_2[3],
                                                ((DArrayTy *)param_2[3])->iteratorIndex - 1);
                                 if (local_108[0] == 0x3a) {
@@ -1012,14 +1009,14 @@ LAB_004b5614:
                                   local_144 = local_11c;
                                   local_140 = local_138;
                                   local_13c = local_254[0];
-                                  Library::DKW::TBL::FUN_006ae1c0(&local_22c->flags,&local_144);
+                                  Library::DKW::TBL::DArrayAppend(local_22c,&local_144);
                                 }
                                 else if (local_108[0] == 100) {
                                   local_4c[3] = local_4c[3] + -1;
                                   local_144 = local_11c;
                                   local_140 = local_138;
                                   local_13c = local_254[0];
-                                  Library::DKW::TBL::FUN_006ae1c0(&local_184->flags,&local_144);
+                                  Library::DKW::TBL::DArrayAppend(local_184,&local_144);
                                 }
                                 else if ((*(int *)(&DAT_00790888 + local_108[0] * 4) == 1) &&
                                         (local_4c[1] != 0)) {
@@ -1030,20 +1027,20 @@ LAB_004b5614:
                                 }
                                 if (*(int *)(&DAT_00791d68 + local_108[0] * 4) == 1) {
                                   local_10c = local_10c + -1;
-                                  uVar22 = 0;
+                                  uVar21 = 0;
                                   do {
-                                    uVar19 = uVar22 & 0x80000001;
-                                    if ((int)uVar19 < 0) {
-                                      uVar19 = (uVar19 - 1 | 0xfffffffe) + 1;
+                                    uVar18 = uVar21 & 0x80000001;
+                                    if ((int)uVar18 < 0) {
+                                      uVar18 = (uVar18 - 1 | 0xfffffffe) + 1;
                                     }
                                     *(ushort *)
                                      (local_27c +
-                                     (uVar19 + g_worldGrid.planeStride * local_254[0] + local_11c +
-                                               ((int)uVar22 / 2 + local_138) *
+                                     (uVar18 + g_worldGrid.planeStride * local_254[0] + local_11c +
+                                               ((int)uVar21 / 2 + local_138) *
                                                (int)g_worldGrid.sizeX) * 2) =
                                          *(ushort *)(&DAT_00790888 + local_108[0] * 4) | 0x200;
-                                    uVar22 = uVar22 + 1;
-                                  } while ((int)uVar22 < 4);
+                                    uVar21 = uVar21 + 1;
+                                  } while ((int)uVar21 < 4);
                                   break;
                                 }
 LAB_004b5f7b:
@@ -1055,7 +1052,7 @@ LAB_004b5f7b:
                                 break;
                               }
                             }
-                            else if (local_108[0] == GVar16) goto LAB_004b5614;
+                            else if (local_108[0] == GVar15) goto LAB_004b5614;
                           }
                           else {
                             if ((local_4c[6] != 0) || (local_4c[1] != 0))
@@ -1068,69 +1065,69 @@ LAB_004b5f7b:
                               local_60 = 1;
                               goto cf_continue_loop_004B48CC;
                             }
-                            if (iVar27 == 7) {
-                              if (*(int *)(&DAT_00791d68 + local_108[0] * 4) != iVar10)
+                            if (iVar26 == 7) {
+                              if (*(int *)(&DAT_00791d68 + local_108[0] * 4) != iVar9)
                               goto cf_common_join_004B5648;
-                              pDVar11 = (DArrayTy *)aiStack_314[local_108[0]];
-                              if ((pDVar11 == (DArrayTy *)0x0) || (pDVar11->count == 0)) {
+                              pDVar10 = (DArrayTy *)aiStack_314[local_108[0]];
+                              if ((pDVar10 == (DArrayTy *)0x0) || (pDVar10->count == 0)) {
 LAB_004b50f4:
-                                bVar29 = true;
+                                bVar28 = true;
                               }
                               else {
-                                bVar29 = false;
-                                iVar10 = -1;
-                                uVar22 = 0;
-                                if (0 < (int)pDVar11->count) {
+                                bVar28 = false;
+                                iVar9 = -1;
+                                uVar21 = 0;
+                                if (0 < (int)pDVar10->count) {
                                   do {
-                                    DArrayGetElement(pDVar11,uVar22,&local_144);
-                                    iVar27 = FUN_006aced8(local_11c,local_138,local_144,local_140);
-                                    if ((iVar10 < 0) || (iVar27 < iVar10)) {
-                                      iVar10 = iVar27;
+                                    DArrayGetElement(pDVar10,uVar21,&local_144);
+                                    iVar26 = FUN_006aced8(local_11c,local_138,local_144,local_140);
+                                    if ((iVar9 < 0) || (iVar26 < iVar9)) {
+                                      iVar9 = iVar26;
                                     }
-                                    uVar22 = uVar22 + 1;
-                                    pDVar11 = (DArrayTy *)aiStack_314[local_108[0]];
-                                  } while ((int)uVar22 < (int)pDVar11->count);
+                                    uVar21 = uVar21 + 1;
+                                    pDVar10 = (DArrayTy *)aiStack_314[local_108[0]];
+                                  } while ((int)uVar21 < (int)pDVar10->count);
                                 }
-                                if ((iVar10 < 0) ||
-                                   ((*(int *)(&DAT_00794fe4 + local_108[0] * 4) * 3) / 0x192 <
-                                    iVar10)) goto LAB_004b50f4;
+                                if ((iVar9 < 0) ||
+                                   ((*(int *)(&DAT_00794fe4 + local_108[0] * 4) * 3) / 0x192 < iVar9
+                                   )) goto LAB_004b50f4;
                               }
-                              if (!bVar29) goto LAB_004b5101;
+                              if (!bVar28) goto LAB_004b5101;
                               local_90 = local_f8;
                               local_9c = local_11c;
                               local_98 = local_138;
                               local_94 = local_254[0];
                               local_a0 = local_108[0];
-                              Library::DKW::TBL::FUN_006ae1c0((uint *)param_2[5],&local_a0);
+                              Library::DKW::TBL::DArrayAppend((DArrayTy *)param_2[5],&local_a0);
                               DArrayRemoveAt((DArrayTy *)param_2[3],
                                              ((DArrayTy *)param_2[3])->iteratorIndex - 1);
-                              piVar17 = aiStack_314 + local_108[0];
-                              if (*piVar17 == 0) {
-                                piVar17 = aiStack_314 + local_108[0];
-                                pDVar11 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0xc,10);
-                                *piVar17 = (int)pDVar11;
+                              piVar16 = aiStack_314 + local_108[0];
+                              if (*piVar16 == 0) {
+                                piVar16 = aiStack_314 + local_108[0];
+                                pDVar10 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0xc,10);
+                                *piVar16 = (int)pDVar10;
                               }
                               local_144 = local_11c;
                               local_140 = local_138;
                               local_13c = local_254[0];
-                              Library::DKW::TBL::FUN_006ae1c0((uint *)*piVar17,&local_144);
+                              Library::DKW::TBL::DArrayAppend((DArrayTy *)*piVar16,&local_144);
                               local_4c[7] = local_4c[7] + -1;
                               if (*(int *)(&DAT_00791d68 + local_108[0] * 4) != 1)
                               goto LAB_004b5f7b;
                               local_10c = local_10c + -1;
-                              uVar22 = 0;
+                              uVar21 = 0;
                               do {
-                                uVar19 = uVar22 & 0x80000001;
-                                if ((int)uVar19 < 0) {
-                                  uVar19 = (uVar19 - 1 | 0xfffffffe) + 1;
+                                uVar18 = uVar21 & 0x80000001;
+                                if ((int)uVar18 < 0) {
+                                  uVar18 = (uVar18 - 1 | 0xfffffffe) + 1;
                                 }
                                 *(ushort *)
                                  (local_27c +
-                                 (uVar19 + g_worldGrid.planeStride * local_254[0] + local_11c +
-                                           ((int)uVar22 / 2 + local_138) * (int)g_worldGrid.sizeX) *
+                                 (uVar18 + g_worldGrid.planeStride * local_254[0] + local_11c +
+                                           ((int)uVar21 / 2 + local_138) * (int)g_worldGrid.sizeX) *
                                  2) = *(ushort *)(&DAT_00790888 + local_108[0] * 4) | 0x200;
-                                uVar22 = uVar22 + 1;
-                              } while ((int)uVar22 < 4);
+                                uVar21 = uVar21 + 1;
+                              } while ((int)uVar21 < 4);
                               break;
                             }
 LAB_004b5101:
@@ -1146,67 +1143,67 @@ LAB_004b5101:
                             if (*(int *)(&DAT_00790888 + local_108[0] * 4) == 8) {
                               if (*(int *)(&DAT_00791d68 + local_108[0] * 4) != local_ac)
                               goto cf_common_join_004B5648;
-                              pDVar11 = (DArrayTy *)aiStack_314[local_108[0]];
-                              if ((pDVar11 == (DArrayTy *)0x0) || (pDVar11->count == 0)) {
+                              pDVar10 = (DArrayTy *)aiStack_314[local_108[0]];
+                              if ((pDVar10 == (DArrayTy *)0x0) || (pDVar10->count == 0)) {
 LAB_004b51da:
-                                bVar29 = true;
+                                bVar28 = true;
                               }
                               else {
-                                bVar29 = false;
-                                iVar10 = -1;
-                                uVar22 = 0;
-                                if (0 < (int)pDVar11->count) {
+                                bVar28 = false;
+                                iVar9 = -1;
+                                uVar21 = 0;
+                                if (0 < (int)pDVar10->count) {
                                   do {
-                                    DArrayGetElement(pDVar11,uVar22,&local_144);
-                                    iVar27 = FUN_006aced8(local_11c,local_138,local_144,local_140);
-                                    if ((iVar10 < 0) || (iVar27 < iVar10)) {
-                                      iVar10 = iVar27;
+                                    DArrayGetElement(pDVar10,uVar21,&local_144);
+                                    iVar26 = FUN_006aced8(local_11c,local_138,local_144,local_140);
+                                    if ((iVar9 < 0) || (iVar26 < iVar9)) {
+                                      iVar9 = iVar26;
                                     }
-                                    uVar22 = uVar22 + 1;
-                                    pDVar11 = (DArrayTy *)aiStack_314[local_108[0]];
-                                  } while ((int)uVar22 < (int)pDVar11->count);
+                                    uVar21 = uVar21 + 1;
+                                    pDVar10 = (DArrayTy *)aiStack_314[local_108[0]];
+                                  } while ((int)uVar21 < (int)pDVar10->count);
                                 }
-                                if ((iVar10 < 0) ||
-                                   ((*(int *)(&DAT_00794fe4 + local_108[0] * 4) * 3) / 0x192 <
-                                    iVar10)) goto LAB_004b51da;
+                                if ((iVar9 < 0) ||
+                                   ((*(int *)(&DAT_00794fe4 + local_108[0] * 4) * 3) / 0x192 < iVar9
+                                   )) goto LAB_004b51da;
                               }
-                              if (bVar29) {
+                              if (bVar28) {
                                 local_90 = local_f8;
                                 local_9c = local_11c;
                                 local_98 = local_138;
                                 local_94 = local_254[0];
                                 local_a0 = local_108[0];
-                                Library::DKW::TBL::FUN_006ae1c0((uint *)param_2[5],&local_a0);
+                                Library::DKW::TBL::DArrayAppend((DArrayTy *)param_2[5],&local_a0);
                                 DArrayRemoveAt((DArrayTy *)param_2[3],
                                                ((DArrayTy *)param_2[3])->iteratorIndex - 1);
-                                piVar17 = aiStack_314 + local_108[0];
-                                if (*piVar17 == 0) {
-                                  piVar17 = aiStack_314 + local_108[0];
-                                  pDVar11 = Library::DKW::TBL::DArrayCreate
+                                piVar16 = aiStack_314 + local_108[0];
+                                if (*piVar16 == 0) {
+                                  piVar16 = aiStack_314 + local_108[0];
+                                  pDVar10 = Library::DKW::TBL::DArrayCreate
                                                       ((DArrayTy *)0x0,10,0xc,10);
-                                  *piVar17 = (int)pDVar11;
+                                  *piVar16 = (int)pDVar10;
                                 }
                                 local_144 = local_11c;
                                 local_140 = local_138;
                                 local_13c = local_254[0];
-                                Library::DKW::TBL::FUN_006ae1c0((uint *)*piVar17,&local_144);
+                                Library::DKW::TBL::DArrayAppend((DArrayTy *)*piVar16,&local_144);
                                 local_4c[8] = local_4c[8] + -1;
                                 if (*(int *)(&DAT_00791d68 + local_108[0] * 4) != 1)
                                 goto LAB_004b5f7b;
                                 local_10c = local_10c + -1;
-                                uVar22 = 0;
+                                uVar21 = 0;
                                 do {
-                                  uVar19 = uVar22 & 0x80000001;
-                                  if ((int)uVar19 < 0) {
-                                    uVar19 = (uVar19 - 1 | 0xfffffffe) + 1;
+                                  uVar18 = uVar21 & 0x80000001;
+                                  if ((int)uVar18 < 0) {
+                                    uVar18 = (uVar18 - 1 | 0xfffffffe) + 1;
                                   }
                                   *(ushort *)
                                    (local_27c +
-                                   (uVar19 + g_worldGrid.planeStride * local_254[0] + local_11c +
-                                             ((int)uVar22 / 2 + local_138) * (int)g_worldGrid.sizeX)
+                                   (uVar18 + g_worldGrid.planeStride * local_254[0] + local_11c +
+                                             ((int)uVar21 / 2 + local_138) * (int)g_worldGrid.sizeX)
                                    * 2) = *(ushort *)(&DAT_00790888 + local_108[0] * 4) | 0x200;
-                                  uVar22 = uVar22 + 1;
-                                } while ((int)uVar22 < 4);
+                                  uVar21 = uVar21 + 1;
+                                } while ((int)uVar21 < 4);
                                 break;
                               }
                             }
@@ -1222,72 +1219,72 @@ LAB_004b51da:
                             if (*(int *)(&DAT_00790888 + local_108[0] * 4) == 9) {
                               if (*(int *)(&DAT_00791d68 + local_108[0] * 4) != local_ac)
                               goto cf_common_join_004B5648;
-                              pDVar11 = (DArrayTy *)aiStack_314[local_108[0]];
-                              if ((pDVar11 == (DArrayTy *)0x0) || (pDVar11->count == 0)) {
+                              pDVar10 = (DArrayTy *)aiStack_314[local_108[0]];
+                              if ((pDVar10 == (DArrayTy *)0x0) || (pDVar10->count == 0)) {
 LAB_004b52b6:
-                                bVar29 = true;
+                                bVar28 = true;
                               }
                               else {
-                                bVar29 = false;
-                                iVar10 = -1;
-                                uVar22 = 0;
-                                if (0 < (int)pDVar11->count) {
+                                bVar28 = false;
+                                iVar9 = -1;
+                                uVar21 = 0;
+                                if (0 < (int)pDVar10->count) {
                                   do {
-                                    DArrayGetElement(pDVar11,uVar22,&local_144);
-                                    iVar27 = FUN_006aced8(local_11c,local_138,local_144,local_140);
-                                    if ((iVar10 < 0) || (iVar27 < iVar10)) {
-                                      iVar10 = iVar27;
+                                    DArrayGetElement(pDVar10,uVar21,&local_144);
+                                    iVar26 = FUN_006aced8(local_11c,local_138,local_144,local_140);
+                                    if ((iVar9 < 0) || (iVar26 < iVar9)) {
+                                      iVar9 = iVar26;
                                     }
-                                    uVar22 = uVar22 + 1;
-                                    pDVar11 = (DArrayTy *)aiStack_314[local_108[0]];
-                                  } while ((int)uVar22 < (int)pDVar11->count);
+                                    uVar21 = uVar21 + 1;
+                                    pDVar10 = (DArrayTy *)aiStack_314[local_108[0]];
+                                  } while ((int)uVar21 < (int)pDVar10->count);
                                 }
                                 if ((local_108[0] == 0x69) || (local_108[0] == 0x6a)) {
-                                  iVar27 = 10;
+                                  iVar26 = 10;
                                 }
                                 else {
-                                  iVar27 = 0;
+                                  iVar26 = 0;
                                 }
-                                if ((iVar10 < 0) || ((int)((uint)(iVar27 * 3) / 2) < iVar10))
+                                if ((iVar9 < 0) || ((int)((uint)(iVar26 * 3) / 2) < iVar9))
                                 goto LAB_004b52b6;
                               }
-                              if (bVar29) {
+                              if (bVar28) {
                                 local_90 = local_f8;
                                 local_9c = local_11c;
                                 local_98 = local_138;
                                 local_94 = local_254[0];
                                 local_a0 = local_108[0];
-                                Library::DKW::TBL::FUN_006ae1c0((uint *)param_2[5],&local_a0);
+                                Library::DKW::TBL::DArrayAppend((DArrayTy *)param_2[5],&local_a0);
                                 DArrayRemoveAt((DArrayTy *)param_2[3],
                                                ((DArrayTy *)param_2[3])->iteratorIndex - 1);
-                                piVar17 = aiStack_314 + local_108[0];
-                                if (*piVar17 == 0) {
-                                  piVar17 = aiStack_314 + local_108[0];
-                                  pDVar11 = Library::DKW::TBL::DArrayCreate
+                                piVar16 = aiStack_314 + local_108[0];
+                                if (*piVar16 == 0) {
+                                  piVar16 = aiStack_314 + local_108[0];
+                                  pDVar10 = Library::DKW::TBL::DArrayCreate
                                                       ((DArrayTy *)0x0,10,0xc,10);
-                                  *piVar17 = (int)pDVar11;
+                                  *piVar16 = (int)pDVar10;
                                 }
                                 local_144 = local_11c;
                                 local_140 = local_138;
                                 local_13c = local_254[0];
-                                Library::DKW::TBL::FUN_006ae1c0((uint *)*piVar17,&local_144);
+                                Library::DKW::TBL::DArrayAppend((DArrayTy *)*piVar16,&local_144);
                                 local_4c[9] = local_4c[9] + -1;
                                 if (*(int *)(&DAT_00791d68 + local_108[0] * 4) != 1)
                                 goto LAB_004b5f7b;
                                 local_10c = local_10c + -1;
-                                uVar22 = 0;
+                                uVar21 = 0;
                                 do {
-                                  uVar19 = uVar22 & 0x80000001;
-                                  if ((int)uVar19 < 0) {
-                                    uVar19 = (uVar19 - 1 | 0xfffffffe) + 1;
+                                  uVar18 = uVar21 & 0x80000001;
+                                  if ((int)uVar18 < 0) {
+                                    uVar18 = (uVar18 - 1 | 0xfffffffe) + 1;
                                   }
                                   *(ushort *)
                                    (local_27c +
-                                   (uVar19 + g_worldGrid.planeStride * local_254[0] + local_11c +
-                                             ((int)uVar22 / 2 + local_138) * (int)g_worldGrid.sizeX)
+                                   (uVar18 + g_worldGrid.planeStride * local_254[0] + local_11c +
+                                             ((int)uVar21 / 2 + local_138) * (int)g_worldGrid.sizeX)
                                    * 2) = *(ushort *)(&DAT_00790888 + local_108[0] * 4) | 0x200;
-                                  uVar22 = uVar22 + 1;
-                                } while ((int)uVar22 < 4);
+                                  uVar21 = uVar21 + 1;
+                                } while ((int)uVar21 < 4);
                                 break;
                               }
                             }
@@ -1302,29 +1299,29 @@ LAB_004b52b6:
                             }
                             if (*(int *)(&DAT_00790888 + local_108[0] * 4) == 10) {
                               local_128 = 0;
-                              iVar10 = -1;
+                              iVar9 = -1;
                               local_354 = 0;
-                              GVar16 = local_108[0];
+                              GVar15 = local_108[0];
                               do {
                                 if (((*(int *)(&DAT_00790950 + local_354) == 10) &&
-                                    (pDVar11 = *(DArrayTy **)((int)local_24c + local_354),
-                                    pDVar11 != (DArrayTy *)0x0)) &&
-                                   (uVar22 = 0, 0 < (int)pDVar11->count)) {
+                                    (pDVar10 = *(DArrayTy **)((int)local_24c + local_354),
+                                    pDVar10 != (DArrayTy *)0x0)) &&
+                                   (uVar21 = 0, 0 < (int)pDVar10->count)) {
                                   do {
-                                    DArrayGetElement(pDVar11,uVar22,&local_144);
-                                    iVar27 = FUN_006aced8(local_11c,local_138,local_144,local_140);
-                                    if ((iVar10 < 0) || (iVar27 < iVar10)) {
-                                      iVar10 = iVar27;
+                                    DArrayGetElement(pDVar10,uVar21,&local_144);
+                                    iVar26 = FUN_006aced8(local_11c,local_138,local_144,local_140);
+                                    if ((iVar9 < 0) || (iVar26 < iVar9)) {
+                                      iVar9 = iVar26;
                                     }
-                                    uVar22 = uVar22 + 1;
-                                    GVar16 = local_108[0];
-                                  } while ((int)uVar22 < (int)pDVar11->count);
+                                    uVar21 = uVar21 + 1;
+                                    GVar15 = local_108[0];
+                                  } while ((int)uVar21 < (int)pDVar10->count);
                                 }
                                 local_354 = local_354 + 4;
                               } while (local_354 < 0x108);
-                              local_78 = thunk_FUN_004e81b0(param_1,GVar16 - 0x32,0);
-                              puVar28 = local_27c;
-                              if ((iVar10 < 0) || (uVar22 = local_128, local_78 < iVar10)) {
+                              local_78 = thunk_FUN_004e81b0(param_1,GVar15 - 0x32,0);
+                              puVar27 = local_27c;
+                              if ((iVar9 < 0) || (uVar21 = local_128, local_78 < iVar9)) {
                                 local_258 = 0;
                                 local_264 = 0;
                                 local_260 = 0;
@@ -1332,7 +1329,7 @@ LAB_004b52b6:
                                 local_12c = 0;
                                 local_120 = 1;
                                 if (local_78 < 1) {
-                                  uVar22 = (uint)(local_78 * 2 < 1);
+                                  uVar21 = (uint)(local_78 * 2 < 1);
                                 }
                                 else {
                                   local_35c = local_138;
@@ -1390,50 +1387,50 @@ LAB_004b52b6:
                                     }
                                     local_120 = local_120 + 1;
                                   } while (local_120 <= local_78);
-                                  uVar22 = (uint)(local_78 * 2 <= local_12c);
+                                  uVar21 = (uint)(local_78 * 2 <= local_12c);
                                 }
                               }
-                              if (uVar22 != 0) {
+                              if (uVar21 != 0) {
                                 local_a0 = local_108[0];
                                 local_90 = local_f8;
                                 local_9c = local_11c;
                                 local_98 = local_138;
                                 local_94 = local_254[0];
-                                Library::DKW::TBL::FUN_006ae1c0((uint *)param_2[5],&local_a0);
+                                Library::DKW::TBL::DArrayAppend((DArrayTy *)param_2[5],&local_a0);
                                 DArrayRemoveAt((DArrayTy *)param_2[3],
                                                ((DArrayTy *)param_2[3])->iteratorIndex - 1);
-                                piVar17 = aiStack_314 + local_108[0];
-                                if (*piVar17 == 0) {
-                                  piVar17 = aiStack_314 + local_108[0];
-                                  pDVar11 = Library::DKW::TBL::DArrayCreate
+                                piVar16 = aiStack_314 + local_108[0];
+                                if (*piVar16 == 0) {
+                                  piVar16 = aiStack_314 + local_108[0];
+                                  pDVar10 = Library::DKW::TBL::DArrayCreate
                                                       ((DArrayTy *)0x0,10,0xc,10);
-                                  *piVar17 = (int)pDVar11;
+                                  *piVar16 = (int)pDVar10;
                                 }
                                 local_144 = local_11c;
                                 local_140 = local_138;
                                 local_13c = local_254[0];
-                                Library::DKW::TBL::FUN_006ae1c0((uint *)*piVar17,&local_144);
+                                Library::DKW::TBL::DArrayAppend((DArrayTy *)*piVar16,&local_144);
                                 local_4c[10] = local_4c[10] + -1;
                                 if (*(int *)(&DAT_00791d68 + local_108[0] * 4) == 1) {
                                   local_10c = local_10c + -1;
-                                  uVar22 = 0;
+                                  uVar21 = 0;
                                   do {
-                                    uVar19 = uVar22 & 0x80000001;
-                                    if ((int)uVar19 < 0) {
-                                      uVar19 = (uVar19 - 1 | 0xfffffffe) + 1;
+                                    uVar18 = uVar21 & 0x80000001;
+                                    if ((int)uVar18 < 0) {
+                                      uVar18 = (uVar18 - 1 | 0xfffffffe) + 1;
                                     }
                                     *(ushort *)
                                      (local_27c +
-                                     (uVar19 + g_worldGrid.planeStride * local_254[0] + local_11c +
-                                               ((int)uVar22 / 2 + local_138) *
+                                     (uVar18 + g_worldGrid.planeStride * local_254[0] + local_11c +
+                                               ((int)uVar21 / 2 + local_138) *
                                                (int)g_worldGrid.sizeX) * 2) =
                                          *(ushort *)(&DAT_00790888 + local_108[0] * 4) | 0x200;
-                                    uVar22 = uVar22 + 1;
-                                  } while ((int)uVar22 < 4);
+                                    uVar21 = uVar21 + 1;
+                                  } while ((int)uVar21 < 4);
                                 }
                                 else {
                                   *(ushort *)
-                                   (puVar28 +
+                                   (puVar27 +
                                    (g_worldGrid.sizeX * local_138 +
                                    local_11c + g_worldGrid.planeStride * local_254[0]) * 2) =
                                        *(ushort *)(&DAT_00790888 + local_108[0] * 4) | 0x200;
@@ -1443,10 +1440,10 @@ LAB_004b52b6:
                             }
                           }
 cf_common_join_004B5648:
-                          iVar27 = DArrayGetNext((DArrayTy *)param_2[3],(byte *)local_108);
-                          iVar10 = local_ac;
-                          uVar22 = local_268;
-                          pDVar11 = local_20;
+                          iVar26 = DArrayGetNext((DArrayTy *)param_2[3],(byte *)local_108);
+                          iVar9 = local_ac;
+                          uVar21 = local_268;
+                          pDVar10 = local_20;
                         }
                       }
                     }
@@ -1465,7 +1462,7 @@ LAB_004b5fd6:
                ((local_4c[9] == 0 && (local_4c[10] == 0)))) goto cf_break_loop_004B60CD;
           }
         }
-        iVar27 = local_64 + 1;
+        iVar26 = local_64 + 1;
       }
       goto cf_break_loop_004B60CD;
     }
@@ -1490,41 +1487,41 @@ LAB_004b5fd6:
         }
         if ((((-1 < local_11c) && (local_11c < g_worldGrid.sizeX)) && (-1 < local_138)) &&
            ((local_138 < g_worldGrid.sizeY &&
-            (local_254[0] = 0, puVar28 = local_27c, 0 < g_worldGrid.sizeZ)))) {
+            (local_254[0] = 0, puVar27 = local_27c, 0 < g_worldGrid.sizeZ)))) {
           do {
-            iVar10 = g_worldGrid.sizeX * local_138 +
-                     local_11c + g_worldGrid.planeStride * local_254[0];
-            local_58 = (STFishC *)g_worldGrid.cells[iVar10].objects[0];
+            iVar9 = g_worldGrid.sizeX * local_138 +
+                    local_11c + g_worldGrid.planeStride * local_254[0];
+            local_58 = (STFishC *)g_worldGrid.cells[iVar9].objects[0];
             if (local_58 == (STFishC *)0x0) {
-              sVar18 = (short)local_11c;
-              if (((((sVar18 < 0) || (g_worldGrid.sizeX <= sVar18)) ||
-                   (sVar9 = (short)local_138, sVar9 < 0)) ||
-                  ((g_worldGrid.sizeY <= sVar9 || (sVar20 = (short)local_254[0], sVar20 < 0)))) ||
-                 (g_worldGrid.sizeZ <= sVar20)) {
-                sVar18 = -1;
+              sVar17 = (short)local_11c;
+              if (((((sVar17 < 0) || (g_worldGrid.sizeX <= sVar17)) ||
+                   (sVar8 = (short)local_138, sVar8 < 0)) ||
+                  ((g_worldGrid.sizeY <= sVar8 || (sVar19 = (short)local_254[0], sVar19 < 0)))) ||
+                 (g_worldGrid.sizeZ <= sVar19)) {
+                sVar17 = -1;
               }
               else {
-                sVar18 = g_pathingGrid.cells
-                         [(int)sVar9 * (int)g_pathingGrid.sizeX +
-                          (int)sVar20 * (int)g_pathingGrid.planeStride + (int)sVar18];
+                sVar17 = g_pathingGrid.cells
+                         [(int)sVar8 * (int)g_pathingGrid.sizeX +
+                          (int)sVar19 * (int)g_pathingGrid.planeStride + (int)sVar17];
               }
-              if (sVar18 == 0) {
-                local_58 = (STFishC *)g_worldGrid.cells[iVar10].objects[1];
+              if (sVar17 == 0) {
+                local_58 = (STFishC *)g_worldGrid.cells[iVar9].objects[1];
                 if ((local_58 == (STFishC *)0x0) ||
-                   (((dVar14 = local_58->slot_2C(), dVar14 != 0xa6 &&
-                     (dVar14 = local_58->slot_2C(), dVar14 != 0xbd)) &&
-                    ((dVar14 = local_58->slot_2C(), dVar14 != 0xa7 &&
-                     (dVar14 = local_58->slot_2C(), dVar14 != 0xaf)))))) {
+                   (((dVar13 = local_58->slot_2C(), dVar13 != 0xa6 &&
+                     (dVar13 = local_58->slot_2C(), dVar13 != 0xbd)) &&
+                    ((dVar13 = local_58->slot_2C(), dVar13 != 0xa7 &&
+                     (dVar13 = local_58->slot_2C(), dVar13 != 0xaf)))))) {
 LAB_004b432d:
-                  *(undefined2 *)(puVar28 + iVar10 * 2) = 0;
+                  *(undefined2 *)(puVar27 + iVar9 * 2) = 0;
                 }
                 else {
-                  *(undefined2 *)(puVar28 + iVar10 * 2) = 0x40;
+                  *(undefined2 *)(puVar27 + iVar9 * 2) = 0x40;
                 }
               }
               else {
-                if (sVar18 != -1) goto LAB_004b4634;
-                *(undefined2 *)(puVar28 + iVar10 * 2) = 0x20;
+                if (sVar17 != -1) goto LAB_004b4634;
+                *(undefined2 *)(puVar27 + iVar9 * 2) = 0x20;
               }
             }
             else {
@@ -1535,94 +1532,94 @@ LAB_004b432d:
                 if (*(int *)&local_58->field_0x20 != 0x3e9) goto LAB_004b432d;
                 local_34c = *(dword *)&local_58->field_0x259;
               }
-              uVar22 = local_58->field_0024;
-              if (uVar22 == param_1) {
-                *(ushort *)(puVar28 + iVar10 * 2) =
+              uVar21 = local_58->field_0024;
+              if (uVar21 == param_1) {
+                *(ushort *)(puVar27 + iVar9 * 2) =
                      *(ushort *)(&DAT_00790888 + local_34c * 4) | 0x200;
                 local_114 = local_64;
-                iVar10 = *(int *)(&DAT_00790888 + local_34c * 4);
-                if (((iVar10 == 7) || (iVar10 == 8)) || (iVar10 == 9)) {
+                iVar9 = *(int *)(&DAT_00790888 + local_34c * 4);
+                if (((iVar9 == 7) || (iVar9 == 8)) || (iVar9 == 9)) {
                   STFishC::sub_004162B0(local_58,local_7c,local_8c,local_a8);
                   if (((local_7c[0] == local_11c) && (local_8c[0] == local_138)) &&
                      (local_a8[0] == local_254[0])) {
-                    piVar17 = aiStack_314 + local_34c;
-                    if (*piVar17 == 0) {
-                      pDVar11 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0xc,10);
-                      *piVar17 = (int)pDVar11;
+                    piVar16 = aiStack_314 + local_34c;
+                    if (*piVar16 == 0) {
+                      pDVar10 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0xc,10);
+                      *piVar16 = (int)pDVar10;
                     }
                     local_144 = (int)local_7c[0];
                     local_140 = (int)local_8c[0];
                     local_13c = (int)local_a8[0];
-                    Library::DKW::TBL::FUN_006ae1c0((uint *)*piVar17,&local_144);
+                    Library::DKW::TBL::DArrayAppend((DArrayTy *)*piVar16,&local_144);
                   }
                 }
-                else if (iVar10 == 4) {
+                else if (iVar9 == 4) {
                   STFishC::sub_004162B0(local_58,local_7c,local_8c,local_a8);
-                  iVar10 = (int)local_7c[0];
-                  if (((iVar10 == local_11c) && (iVar27 = (int)local_8c[0], iVar27 == local_138)) &&
-                     (iVar21 = (int)local_a8[0], iVar21 == local_254[0])) {
-                    piVar17 = local_f4;
-                    memset(piVar17, 0, 0x30); /* compiler bulk-zero initialization */
-                    piVar17 = (undefined4 *)((byte *)piVar17 + 0x30);
+                  iVar9 = (int)local_7c[0];
+                  if (((iVar9 == local_11c) && (iVar26 = (int)local_8c[0], iVar26 == local_138)) &&
+                     (iVar20 = (int)local_a8[0], iVar20 == local_254[0])) {
+                    piVar16 = local_f4;
+                    memset(piVar16, 0, 0x30); /* compiler bulk-zero initialization */
+                    piVar16 = (undefined4 *)((byte *)piVar16 + 0x30);
                     local_f4[0] = 1;
-                    local_f4[1] = iVar10;
-                    local_f4[2] = iVar27;
-                    local_f4[3] = iVar21;
-                    Library::DKW::TBL::FUN_006ae1c0(&local_20->flags,local_f4);
-                    puVar28 = local_27c;
+                    local_f4[1] = iVar9;
+                    local_f4[2] = iVar26;
+                    local_f4[3] = iVar20;
+                    Library::DKW::TBL::DArrayAppend(local_20,local_f4);
+                    puVar27 = local_27c;
                   }
                 }
               }
               else {
-                if ((uVar22 < 8) &&
+                if ((uVar21 < 8) &&
                    ((g_playSystem_00802A38 == (STPlaySystemC *)0x0 ||
-                    ((byte)(&DAT_008087e9)[uVar22 * 0x51] < 8)))) {
-                  bVar3 = *(byte *)&local_58->field_0024;
+                    ((byte)(&DAT_008087e9)[uVar21 * 0x51] < 8)))) {
+                  bVar2 = *(byte *)&local_58->field_0024;
                   if (g_appClass_00806728->field_146F == '\0') {
-                    if (bVar3 == playerId) {
-                      iVar27 = 0;
+                    if (bVar2 == playerId) {
+                      iVar26 = 0;
                     }
                     else {
-                      uVar22 = (uint)bVar3;
-                      uVar19 = param_1 & 0xff;
-                      cVar4 = (&g_appClass_00806728->field_0x142f)[uVar19 + uVar22 * 8];
-                      puVar28 = local_27c;
-                      if ((cVar4 == '\0') &&
-                         ((&g_appClass_00806728->field_0x142f)[uVar22 + uVar19 * 8] == '\0')) {
-                        iVar27 = -2;
+                      uVar21 = (uint)bVar2;
+                      uVar18 = param_1 & 0xff;
+                      cVar3 = (&g_appClass_00806728->field_0x142f)[uVar18 + uVar21 * 8];
+                      puVar27 = local_27c;
+                      if ((cVar3 == '\0') &&
+                         ((&g_appClass_00806728->field_0x142f)[uVar21 + uVar18 * 8] == '\0')) {
+                        iVar26 = -2;
                       }
-                      else if ((cVar4 == '\x01') &&
-                              ((&g_appClass_00806728->field_0x142f)[uVar22 + uVar19 * 8] == '\0')) {
-                        iVar27 = -1;
+                      else if ((cVar3 == '\x01') &&
+                              ((&g_appClass_00806728->field_0x142f)[uVar21 + uVar18 * 8] == '\0')) {
+                        iVar26 = -1;
                       }
-                      else if ((cVar4 == '\0') &&
-                              ((&g_appClass_00806728->field_0x142f)[uVar22 + uVar19 * 8] == '\x01'))
+                      else if ((cVar3 == '\0') &&
+                              ((&g_appClass_00806728->field_0x142f)[uVar21 + uVar18 * 8] == '\x01'))
                       {
-                        iVar27 = 1;
+                        iVar26 = 1;
                       }
-                      else if ((cVar4 == '\x01') &&
-                              ((&g_appClass_00806728->field_0x142f)[uVar22 + uVar19 * 8] == '\x01'))
+                      else if ((cVar3 == '\x01') &&
+                              ((&g_appClass_00806728->field_0x142f)[uVar21 + uVar18 * 8] == '\x01'))
                       {
-                        iVar27 = 2;
+                        iVar26 = 2;
                       }
                       else {
-                        iVar27 = 0;
+                        iVar26 = 0;
                       }
                     }
-                    bVar29 = iVar27 < 0;
+                    bVar28 = iVar26 < 0;
                   }
                   else {
-                    bVar29 = (&g_appClass_00806728->field_0x11ca)[(param_1 & 0xff) * 0x51] !=
-                             (&g_appClass_00806728->field_0x11ca)[(uint)bVar3 * 0x51];
+                    bVar28 = (&g_appClass_00806728->field_0x11ca)[(param_1 & 0xff) * 0x51] !=
+                             (&g_appClass_00806728->field_0x11ca)[(uint)bVar2 * 0x51];
                   }
-                  if (bVar29) {
-                    *(ushort *)(puVar28 + iVar10 * 2) =
+                  if (bVar28) {
+                    *(ushort *)(puVar27 + iVar9 * 2) =
                          *(ushort *)(&DAT_00790888 + local_34c * 4) | 0x100;
                     goto LAB_004b463a;
                   }
                 }
 LAB_004b4634:
-                *(undefined2 *)(puVar28 + iVar10 * 2) = 0x10;
+                *(undefined2 *)(puVar27 + iVar9 * 2) = 0x10;
               }
             }
 LAB_004b463a:
@@ -1635,41 +1632,41 @@ LAB_004b463a:
     if (local_54 < local_64 - local_114) goto LAB_004b4689;
     local_64 = local_64 + 1;
   } while( true );
-  while (*piVar17 != 0) {
+  while (*piVar16 != 0) {
 LAB_004b56e4:
-    uVar22 = pDVar11->iteratorIndex;
-    if (uVar22 < pDVar11->count) {
-      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar11, uVar22) (runtime stride) */
-      piVar17 = (int *)(pDVar11->elementSize * uVar22 + (int)pDVar11->data);
-      pDVar11->iteratorIndex = uVar22 + 1;
+    uVar21 = pDVar10->iteratorIndex;
+    if (uVar21 < pDVar10->count) {
+      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar10, uVar21) (runtime stride) */
+      piVar16 = (int *)(pDVar10->elementSize * uVar21 + (int)pDVar10->data);
+      pDVar10->iteratorIndex = uVar21 + 1;
     }
     else {
-      piVar17 = (int *)0x0;
+      piVar16 = (int *)0x0;
     }
-    if (piVar17 == (int *)0x0) goto LAB_004b5727;
+    if (piVar16 == (int *)0x0) goto LAB_004b5727;
   }
-  *piVar17 = 1;
-  piVar17[1] = local_11c;
-  piVar17[2] = local_138;
-  piVar17[3] = local_254[0];
+  *piVar16 = 1;
+  piVar16[1] = local_11c;
+  piVar16[2] = local_138;
+  piVar16[3] = local_254[0];
 LAB_004b5727:
-  iVar10 = local_4c[4] + -1;
-  local_4c[4] = iVar10;
+  iVar9 = local_4c[4] + -1;
+  local_4c[4] = iVar9;
   local_10c = local_10c + -1;
-  iVar27 = 0;
+  iVar26 = 0;
   do {
-    iVar21 = iVar27 / 6 + -2 + local_138;
-    iVar13 = iVar27 % 6 + -2 + local_11c;
-    if (((-1 < iVar21) && (iVar21 < g_worldGrid.sizeY)) && (-1 < iVar13)) {
-      if ((iVar13 < g_worldGrid.sizeX) &&
-         (iVar21 = iVar21 * g_worldGrid.sizeX + iVar13 + g_worldGrid.planeStride * local_254[0],
-         *(short *)(local_27c + iVar21 * 2) == 0)) {
-        *(ushort *)(local_27c + iVar21 * 2) = *(ushort *)(&DAT_00790888 + local_108[0] * 4) | 0x200;
+    iVar20 = iVar26 / 6 + -2 + local_138;
+    iVar12 = iVar26 % 6 + -2 + local_11c;
+    if (((-1 < iVar20) && (iVar20 < g_worldGrid.sizeY)) && (-1 < iVar12)) {
+      if ((iVar12 < g_worldGrid.sizeX) &&
+         (iVar20 = iVar20 * g_worldGrid.sizeX + iVar12 + g_worldGrid.planeStride * local_254[0],
+         *(short *)(local_27c + iVar20 * 2) == 0)) {
+        *(ushort *)(local_27c + iVar20 * 2) = *(ushort *)(&DAT_00790888 + local_108[0] * 4) | 0x200;
       }
     }
-    iVar27 = iVar27 + 1;
-  } while (iVar27 < 0x24);
-  if (iVar10 == 0) {
+    iVar26 = iVar26 + 1;
+  } while (iVar26 < 0x24);
+  if (iVar9 == 0) {
     local_64 = 0;
     goto cf_continue_loop_004B48CC;
   }

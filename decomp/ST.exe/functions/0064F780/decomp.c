@@ -1,5 +1,5 @@
 
-undefined4 __cdecl FUN_0064f780(short *param_1)
+undefined4 __cdecl FUN_0064f780(RecoveredRecord_AiEventClassTy_0064F780 *param_1)
 
 {
   short sVar1;
@@ -7,89 +7,73 @@ undefined4 __cdecl FUN_0064f780(short *param_1)
 
   iVar2 = 0;
   do {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if (*(char *)((int)param_1 + iVar2 + 0xd0) != '\b') {
+    if ((&param_1->field_0xd0)[iVar2] != '\b') {
       return 0;
     }
     iVar2 = iVar2 + 1;
   } while (iVar2 < 3);
-  sVar1 = *param_1;
+  sVar1 = *(short *)param_1;
   if (sVar1 < 4) {
-    param_1[10] = -1;
-    param_1[0xb] = -1;
+    *(undefined4 *)&param_1->field_0x14 = 0xffffffff;
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  else if (*(char *)((int)param_1 + 0xd3) != '\b') {
+  else if (param_1->field_00D3 != '\b') {
     return 0;
   }
   if (sVar1 < 5) {
-    param_1[0xc] = -1;
-    param_1[0xd] = -1;
+    *(undefined4 *)&param_1->field_0x18 = 0xffffffff;
   }
-  else if ((char)param_1[0x6a] != '\b') {
+  else if (param_1->field_0xd4 != '\b') {
     return 0;
   }
   if (sVar1 < 6) {
-    param_1[0xe] = -1;
-    param_1[0xf] = -1;
+    *(undefined4 *)&param_1->field_0x1c = 0xffffffff;
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  else if (*(char *)((int)param_1 + 0xd5) != '\b') {
+  else if (param_1->field_00D5 != '\b') {
     return 0;
   }
   if (sVar1 < 7) {
-    param_1[0x10] = -1;
-    param_1[0x11] = -1;
+    *(undefined4 *)&param_1->field_0x20 = 0xffffffff;
   }
-  else if ((char)param_1[0x6b] != '\b') {
+  else if (param_1->field_0xd6 != '\b') {
     return 0;
   }
   if (sVar1 < 8) {
-    param_1[0x12] = 0;
-    param_1[0x13] = 0;
+    *(undefined4 *)&param_1->field_0x24 = 0;
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  else if (*(char *)((int)param_1 + 0xd7) != '\n') {
+  else if (param_1->field_00D7 != '\n') {
     return 0;
   }
   if (sVar1 < 9) {
-    param_1[0x14] = -1;
-    param_1[0x15] = -1;
+    *(undefined4 *)&param_1->field_0x28 = 0xffffffff;
   }
-  else if ((char)param_1[0x6c] != '\b') {
+  else if (param_1->field_0xd8 != '\b') {
     return 0;
   }
   if (sVar1 < 10) {
-    param_1[0x16] = 100;
-    param_1[0x17] = 0;
+    *(undefined4 *)&param_1->field_0x2c = 100;
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  else if (*(char *)((int)param_1 + 0xd9) != '\b') {
+  else if (param_1->field_00D9 != '\b') {
     return 0;
   }
   if (sVar1 < 0xb) {
-    param_1[0x18] = 1;
-    param_1[0x19] = 0;
+    *(undefined4 *)&param_1->field_0x30 = 1;
   }
-  else if ((char)param_1[0x6d] != '\b') {
+  else if (param_1->field_0xda != '\b') {
     return 0;
   }
   if (sVar1 < 0xc) {
-    param_1[0x1a] = 0;
-    param_1[0x1b] = 0;
+    *(undefined4 *)&param_1->field_0x34 = 0;
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  else if (*(char *)((int)param_1 + 0xdb) != '\b') {
+  else if (param_1->field_00DB != '\b') {
     return 0;
   }
   if (0xc < sVar1) {
-    if ((char)param_1[0x6e] != '\b') {
+    if (*(char *)(param_1 + 1) != '\b') {
       return 0;
     }
     return 1;
   }
-  param_1[0x1c] = 0;
-  param_1[0x1d] = 0;
+  *(undefined4 *)&param_1->field_0x38 = 0;
   return 1;
 }
 

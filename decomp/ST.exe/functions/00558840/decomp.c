@@ -116,7 +116,7 @@ int __thiscall VisibleClassTy::GetMessage(VisibleClassTy *this,STMessage *messag
     }
     else if (SVar1 == MESS_SHARED_010F) {
       local_c = 0;
-      local_10 = (byte *)PrepareToSave(local_14,&local_c);
+      local_10 = PrepareToSave(local_14,&local_c);
       STPlaySystemC::SaveObjData
                 (g_playSystem_00802A38,PTR_s_VISIBILITY_0079aec4,local_10,local_c,0xc);
       if (local_10 != (byte *)0x0) {

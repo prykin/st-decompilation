@@ -29,7 +29,7 @@ int __thiscall STArtiafactC::GetMessage(STArtiafactC *this,STMessage *message)
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
   byte *puVar14;
-  undefined4 *puVar15;
+  byte *puVar15;
   byte *puVar16;
   STWorldObject *pSVar17;
   int iVar18;
@@ -127,7 +127,7 @@ int __thiscall STArtiafactC::GetMessage(STArtiafactC *this,STMessage *message)
         }
       }
       if (SVar4 == MESS_TORPHIT) {
-        puVar15 = (message->arg0).ptr;
+        puVar15 = (byte *)((message->arg0).ptr);
         if (local_8->field_023A == 5) {
           g_currentExceptionFrame = local_60.previous;
           return 0;
@@ -195,7 +195,7 @@ int __thiscall STArtiafactC::GetMessage(STArtiafactC *this,STMessage *message)
           g_currentExceptionFrame = local_60.previous;
           return 0;
         }
-        puVar15 = (message->arg0).ptr;
+        puVar15 = (byte *)((message->arg0).ptr);
         if (puVar15[3] == 2) {
           iVar8 = thunk_FUN_005ec4a0(local_8,puVar15);
           if (iVar8 < 0) {
@@ -295,7 +295,7 @@ int __thiscall STArtiafactC::GetMessage(STArtiafactC *this,STMessage *message)
           local_8->field_034C = local_8->field_034C * 0xc9 + 100;
           local_8->field_034E = local_8->field_034E * 200 + 100;
         }
-        iVar8 = thunk_FUN_005ebd80(local_8);
+        iVar8 = thunk_FUN_005ebd80((AnonShape_005EBD80_1A4ED01F *)local_8);
         if (iVar8 == 0) {
           sub_005EBCB0(this_00);
           g_currentExceptionFrame = local_60.previous;
@@ -418,15 +418,9 @@ switchD_005eb5ad_caseD_129:
     this_00->field_027B = (int)*(short *)&pSVar11->field_0x43;
     this_00->field_027F = (int)*(short *)&pSVar11->field_0x45;
     this_00->field_02BA = (int)(short)pSVar11->field_006C / 0xf;
-    puVar15 = (undefined4 *)&pSVar11->field_0x34;
+    puVar15 = (byte *)&pSVar11->field_0x34;
     puVar14 = (byte *)&this_00->field_0x34;
-    for (iVar8 = 0x17; iVar8 != 0; iVar8 = iVar8 + -1) {
-      *puVar14 = *puVar15;
-      puVar15 = puVar15 + 1;
-      puVar14 = (byte *)(puVar14 + 1);
-    }
-    *(undefined2 *)puVar14 = *(undefined2 *)puVar15;
-    *(undefined1 *)((int)puVar14 + 2) = *(undefined1 *)((int)puVar15 + 2);
+    memmove(puVar14, puVar15, 0x5f); /* compiler REP MOVS byte copy */
     this_00->field_0076 = 0;
     this_00->field_006E = 0x2f;
     this_00->field_02BE = this_00->field_0277;

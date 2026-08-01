@@ -11,7 +11,8 @@ FUN_006a0ae0(void *this,int param_1,int param_2,undefined4 param_3,int param_4,u
 {
   uint *puVar1;
   uint uVar2;
-  int iVar3;
+  void *pvVar3;
+  int iVar4;
   byte *puVar5;
   uint *puVar6;
   byte *puVar7;
@@ -30,12 +31,12 @@ FUN_006a0ae0(void *this,int param_1,int param_2,undefined4 param_3,int param_4,u
   local_9c._0_2_ = (undefined2)param_1;
   uVar2 = thunk_FUN_006a06d0(this,(param_1 * 0x14) / 100,(param_2 * 0x14) / 100);
   local_98 = (undefined2)uVar2;
-  iVar3 = *(int *)((int)this + 4) + 1;
-  *(int *)((int)this + 4) = iVar3;
-  iVar3 = Library::DKW::LIB::FUN_006acf50(*(int *)this,iVar3 * 0x92 + 0xaa);
-  *(int *)this = iVar3;
+  iVar4 = *(int *)((int)this + 4) + 1;
+  *(int *)((int)this + 4) = iVar4;
+  pvVar3 = Library::DKW::LIB::MemRealloc(*(AnonPointee_TLOBaseTy_0607 **)this,iVar4 * 0x92 + 0xaa);
+  *(void **)this = pvVar3;
   puVar5 = (byte *)(&local_9c);
-  puVar7 = (byte *)(iVar3 + -0x7a + *(int *)((int)this + 4) * 0x92);
+  puVar7 = (byte *)((int)pvVar3 + *(int *)((int)this + 4) * 0x92 + -0x7a);
   memmove(puVar7, puVar5, 0x92); /* compiler REP MOVS byte copy */
   return;
 }

@@ -33,7 +33,7 @@ int __thiscall STContainerC::GetMessage(STContainerC *this,STMessage *message)
   undefined2 extraout_var_00;
   undefined2 uVar14;
   byte *puVar15;
-  undefined4 *puVar16;
+  byte *puVar16;
   byte *puVar17;
   STWorldObject *pSVar18;
   int iVar19;
@@ -130,7 +130,7 @@ int __thiscall STContainerC::GetMessage(STContainerC *this,STMessage *message)
         }
       }
       if (SVar4 == MESS_TORPHIT) {
-        puVar16 = (message->arg0).ptr;
+        puVar16 = (byte *)((message->arg0).ptr);
         if (local_8->field_023A == 5) {
           g_currentExceptionFrame = local_60.previous;
           return 0;
@@ -232,7 +232,7 @@ int __thiscall STContainerC::GetMessage(STContainerC *this,STMessage *message)
         g_currentExceptionFrame = local_60.previous;
         return 0;
       }
-      puVar16 = (message->arg0).ptr;
+      puVar16 = (byte *)((message->arg0).ptr);
       if (puVar16[3] != 2) {
         puVar15 = (byte *)(puVar16);
         puVar17 = (byte *)&local_8->field_0x326;
@@ -245,7 +245,7 @@ int __thiscall STContainerC::GetMessage(STContainerC *this,STMessage *message)
           local_8->field_0350 = local_8->field_0350 * 0xc9 + 100;
           local_8->field_0352 = local_8->field_0352 * 200 + 100;
         }
-        iVar8 = thunk_FUN_005fc4a0(local_8);
+        iVar8 = thunk_FUN_005fc4a0((AnonShape_005FC4A0_70B17F95 *)local_8);
         if (iVar8 == 0) {
           sub_005FC3E0(this_00);
           g_currentExceptionFrame = local_60.previous;
@@ -423,15 +423,9 @@ switchD_005fbd08_caseD_129:
     this_00->field_027B = (int)*(short *)&local_c->field_0x43;
     this_00->field_027F = *(short *)&local_c->field_0x45 + 5;
     this_00->field_02BA = (int)(short)local_c->field_006C / 0xf;
-    puVar16 = (undefined4 *)&local_c->field_0x34;
+    puVar16 = (byte *)&local_c->field_0x34;
     puVar15 = (byte *)&this_00->field_0x34;
-    for (iVar8 = 0x17; iVar8 != 0; iVar8 = iVar8 + -1) {
-      *puVar15 = *puVar16;
-      puVar16 = puVar16 + 1;
-      puVar15 = (byte *)(puVar15 + 1);
-    }
-    *(undefined2 *)puVar15 = *(undefined2 *)puVar16;
-    *(undefined1 *)((int)puVar15 + 2) = *(undefined1 *)((int)puVar16 + 2);
+    memmove(puVar15, puVar16, 0x5f); /* compiler REP MOVS byte copy */
     this_00->field_0076 = 0;
     this_00->field_006E = local_c->field_006E;
     this_00->field_02BE = this_00->field_0277;

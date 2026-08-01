@@ -8,10 +8,10 @@ uint * FUN_0065f840(DArrayTy *param_1,uint param_2,int param_3)
 
 {
   int iVar1;
-  DArrayTy *pDVar2;
-  uint uVar3;
-  undefined4 *puVar4;
-  uint uVar5;
+  DArrayTy *array;
+  uint uVar2;
+  undefined4 *puVar3;
+  uint uVar4;
   InternalExceptionFrame local_54;
   undefined4 local_10;
   undefined2 local_c;
@@ -30,32 +30,32 @@ uint * FUN_0065f840(DArrayTy *param_1,uint param_2,int param_3)
       }
       return (uint *)0x0;
     }
-    pDVar2 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,5,6,5);
-    uVar3 = param_1->count;
-    uVar5 = param_2;
-    local_8 = pDVar2;
-    if ((int)param_2 < (int)uVar3) {
+    array = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,5,6,5);
+    uVar2 = param_1->count;
+    uVar4 = param_2;
+    local_8 = array;
+    if ((int)param_2 < (int)uVar2) {
       do {
-        if (param_3 <= (int)(uVar5 - param_2)) {
+        if (param_3 <= (int)(uVar4 - param_2)) {
           g_currentExceptionFrame = local_54.previous;
-          return &pDVar2->flags;
+          return &array->flags;
         }
-        if (uVar5 < uVar3) {
-          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(param_1, uVar5) (runtime stride) */
-          puVar4 = (undefined4 *)(param_1->elementSize * uVar5 + (int)param_1->data);
+        if (uVar4 < uVar2) {
+          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(param_1, uVar4) (runtime stride) */
+          puVar3 = (undefined4 *)(param_1->elementSize * uVar4 + (int)param_1->data);
         }
         else {
-          puVar4 = (undefined4 *)0x0;
+          puVar3 = (undefined4 *)0x0;
         }
-        local_10 = *puVar4;
-        local_c = *(undefined2 *)(puVar4 + 1);
-        Library::DKW::TBL::FUN_006ae1c0(&pDVar2->flags,&local_10);
-        uVar3 = param_1->count;
-        uVar5 = uVar5 + 1;
-      } while ((int)uVar5 < (int)uVar3);
+        local_10 = *puVar3;
+        local_c = *(undefined2 *)(puVar3 + 1);
+        Library::DKW::TBL::DArrayAppend(array,&local_10);
+        uVar2 = param_1->count;
+        uVar4 = uVar4 + 1;
+      } while ((int)uVar4 < (int)uVar2);
     }
     g_currentExceptionFrame = local_54.previous;
-    return &pDVar2->flags;
+    return &array->flags;
   }
   return (uint *)0x0;
 }

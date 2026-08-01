@@ -41,8 +41,8 @@ void __thiscall STAllPlayersC::OptimizeGuardBoats(STAllPlayersC *this,char param
   uint local_c;
   short local_6;
 
-  local_1c = g_playerRuntime[param_1].pgPairs;
-  local_40 = g_playerRuntime[param_1].field2175_0x9fa;
+  local_1c = (DArrayTy *)g_playerRuntime[param_1].field2377_0x9f6;
+  local_40 = (DArrayTy *)g_playerRuntime[param_1].field2378_0x9fa;
   if (local_1c != (DArrayTy *)0x0) {
     local_90.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_90;
@@ -86,7 +86,7 @@ void __thiscall STAllPlayersC::OptimizeGuardBoats(STAllPlayersC *this,char param
                     if (0 < (int)local_48->count) {
                       do {
                         DArrayGetElement(local_48,uVar6,&local_12);
-                        Library::DKW::TBL::FUN_006ae1c0(&local_38->flags,(undefined4 *)&local_12);
+                        Library::DKW::TBL::DArrayAppend(local_38,&local_12);
                         uVar6 = uVar6 + 1;
                       } while ((int)uVar6 < (int)local_48->count);
                     }
@@ -130,7 +130,7 @@ void __thiscall STAllPlayersC::OptimizeGuardBoats(STAllPlayersC *this,char param
       DArrayGetElement(array,0,&local_3c);
       uVar6 = local_3c->count;
       pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,uVar6,10,1);
-      g_playerRuntime[param_1].field2175_0x9fa = pDVar4;
+      g_playerRuntime[param_1].field2378_0x9fa = pDVar4;
       local_10 = 0;
       local_c = 0;
       local_40 = pDVar4;
@@ -140,8 +140,8 @@ void __thiscall STAllPlayersC::OptimizeGuardBoats(STAllPlayersC *this,char param
           local_28 = local_6;
           local_26 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,4,1);
           local_22 = 0;
-          Library::DKW::TBL::FUN_006ae1c0(&local_26->flags,&local_10);
-          Library::DKW::TBL::FUN_006ae1c0(&pDVar4->flags,(undefined4 *)&local_28);
+          Library::DKW::TBL::DArrayAppend(local_26,&local_10);
+          Library::DKW::TBL::DArrayAppend(pDVar4,&local_28);
           local_c = local_c + 1;
         } while ((int)local_c < (int)uVar6);
       }
@@ -159,7 +159,7 @@ void __thiscall STAllPlayersC::OptimizeGuardBoats(STAllPlayersC *this,char param
                 do {
                   DArrayGetElement(pDVar4,index_01,&local_28);
                   if (local_28 == local_6) {
-                    Library::DKW::TBL::FUN_006ae1c0(&local_26->flags,&local_c);
+                    Library::DKW::TBL::DArrayAppend(local_26,&local_c);
                     break;
                   }
                   index_01 = index_01 + 1;
@@ -169,8 +169,8 @@ void __thiscall STAllPlayersC::OptimizeGuardBoats(STAllPlayersC *this,char param
                 local_28 = local_6;
                 local_26 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,4,1);
                 local_22 = 0;
-                Library::DKW::TBL::FUN_006ae1c0(&local_26->flags,&local_c);
-                Library::DKW::TBL::FUN_006ae1c0(&pDVar4->flags,(undefined4 *)&local_28);
+                Library::DKW::TBL::DArrayAppend(local_26,&local_c);
+                Library::DKW::TBL::DArrayAppend(pDVar4,&local_28);
               }
               local_10 = local_10 + 1;
             } while ((int)local_10 < (int)local_2c);

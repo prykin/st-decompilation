@@ -11,12 +11,12 @@ VisibleClassTy::VisHoleCreate
           undefined *param_5,undefined4 param_6)
 
 {
-  VisibleClassTy_field_00F4DArray *pVVar1;
-  code *pcVar2;
+  VisibleClassTy_field_00F4DArray *array;
+  code *pcVar1;
   VisibleClassTy *this_00;
+  int iVar2;
   int iVar3;
-  int iVar4;
-  uint uVar5;
+  uint uVar4;
   InternalExceptionFrame local_6c;
   int local_28 [2];
   undefined *local_20;
@@ -32,11 +32,11 @@ VisibleClassTy::VisHoleCreate
     local_6c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_6c;
     local_c = this;
-    iVar3 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0);
+    iVar2 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0);
     this_00 = local_c;
-    if (iVar3 == 0) {
-      pVVar1 = local_c->field_00F4;
-      if (pVVar1 != (VisibleClassTy_field_00F4DArray *)0x0) {
+    if (iVar2 == 0) {
+      array = local_c->field_00F4;
+      if (array != (VisibleClassTy_field_00F4DArray *)0x0) {
         memset(local_28, 0, 0x1c); /* compiler bulk-zero initialization */
         local_28[1] = param_2;
         local_28[0] = param_1;
@@ -45,7 +45,7 @@ VisibleClassTy::VisHoleCreate
         local_10 = param_6;
         local_1c = param_5;
         local_14 = this_00->field_0108;
-        local_8 = Library::DKW::TBL::FUN_006ae1c0(&pVVar1->flags,local_28);
+        local_8 = Library::DKW::TBL::DArrayAppend((DArrayTy *)array,local_28);
         sub_00558DC0(this_00,local_28[0],local_28[1],local_20,local_18,(uint)local_1c,
                      (int *)0xfffffffa,0xffffffff);
       }
@@ -53,12 +53,12 @@ VisibleClassTy::VisHoleCreate
       return local_8;
     }
     g_currentExceptionFrame = local_6c.previous;
-    iVar4 = ReportDebugMessage("E:\\__titans\\grig\\visible.cpp",0x3f0,0,iVar3,"%s",
+    iVar3 = ReportDebugMessage("E:\\__titans\\grig\\visible.cpp",0x3f0,0,iVar2,"%s",
                                "VisibleClassTy::VisHoleCreate error");
-    if (iVar4 != 0) {
+    if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar3,0,"E:\\__titans\\grig\\visible.cpp",0x3f1);
+    RaiseInternalException(iVar2,0,"E:\\__titans\\grig\\visible.cpp",0x3f1);
   }
   return 0xffffffff;
 }

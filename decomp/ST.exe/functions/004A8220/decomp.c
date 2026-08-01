@@ -19,7 +19,7 @@ void __thiscall FUN_004a8220(void *this,char param_1,short param_2,ushort param_
       if ((local_8._2_2_ == param_2) && ((char)local_8 == param_1)) {
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_8 = (void *)CONCAT22(param_3,(undefined2)local_8);
-        Library::DKW::TBL::FUN_006ae140(*(uint **)((int)this + 0xef),uVar2,&local_8);
+        Library::DKW::TBL::DArrayPut(*(DArrayTy **)((int)this + 0xef),uVar2,&local_8);
         break;
       }
       uVar2 = uVar2 + 1;
@@ -39,7 +39,7 @@ void __thiscall FUN_004a8220(void *this,char param_1,short param_2,ushort param_
     }
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     local_8 = (void *)CONCAT22(param_3,(undefined2)local_8);
-    Library::DKW::TBL::FUN_006ae140(*(uint **)((int)this + 0x20e),uVar2,&local_8);
+    Library::DKW::TBL::DArrayPut(*(DArrayTy **)((int)this + 0x20e),uVar2,&local_8);
   }
   return;
 }

@@ -47,7 +47,7 @@ FSGSTy::SetLadder(FSGSTy *this,undefined4 param_1,uint param_2,int param_3,undef
       }
       this_01->field_1EDF = param_2;
       this_01->field_1EE3 = param_3;
-      puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(param_3 * 0x24);
+      puVar3 = Library::DKW::LIB::MemAlloc(param_3 * 0x24);
       uVar5 = this_01->field_1EE3;
       *value = puVar3;
       for (uVar5 = uVar5 * 9 & 0x3fffffff; uVar5 != 0; uVar5 = uVar5 - 1) {

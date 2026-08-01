@@ -1,5 +1,5 @@
-// Record or verify the semantic Program state and proposal/apply artifacts behind an export.
-// Usage: STEvidenceLedger.java record|verify <recovery-root>
+// Record, fingerprint, or verify the semantic Program state and proposal/apply artifacts.
+// Usage: STEvidenceLedger.java record|fingerprint|verify <recovery-root>
 // @author OpenAI
 // @category SubmarineTitans.Recovery
 // @menupath Tools.Submarine Titans.Verify Recovery Evidence
@@ -9,6 +9,7 @@ import java.io.File;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 import java.security.MessageDigest;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -57,7 +58,8 @@ public class STEvidenceLedger extends GhidraScript {
         if (currentProgram == null) { printerr("Open the analyzed ST program first."); return; }
         String[] args = getScriptArgs();
         if (args.length < 2)
-            throw new IllegalArgumentException("Usage: record|verify <recovery-root>");
+            throw new IllegalArgumentException(
+                "Usage: record|fingerprint|verify <recovery-root>");
         String mode = args[0].toLowerCase();
         Path root = Path.of(args[1]).toAbsolutePath().normalize();
         Path directory = root.getFileName() != null &&
@@ -65,8 +67,10 @@ public class STEvidenceLedger extends GhidraScript {
             root : root.resolve(currentProgram.getName());
         Files.createDirectories(directory);
         if ("record".equals(mode)) record(directory);
+        else if ("fingerprint".equals(mode)) fingerprint(directory);
         else if ("verify".equals(mode)) verify(directory);
-        else throw new IllegalArgumentException("Mode must be record or verify");
+        else throw new IllegalArgumentException(
+            "Mode must be record, fingerprint, or verify");
     }
 
     private void record(Path directory) throws Exception {
@@ -74,9 +78,32 @@ public class STEvidenceLedger extends GhidraScript {
         long modification = currentProgram.getModificationNumber();
         println("Computing semantic Program fingerprint...");
         String semanticFingerprint = semanticFingerprint();
+        writeSemanticFingerprint(directory, semanticFingerprint);
         writeLedger(directory, artifacts, modification, semanticFingerprint);
         println("Evidence ledger recorded: program modification=" + modification +
             ", semantic_sha256=" + semanticFingerprint + ", artifacts=" + artifacts.size());
+    }
+
+    private void fingerprint(Path directory) throws Exception {
+        println("Computing semantic Program fingerprint...");
+        String semanticFingerprint = semanticFingerprint();
+        writeSemanticFingerprint(directory, semanticFingerprint);
+        println("Semantic Program fingerprint: " + semanticFingerprint);
+    }
+
+    private void writeSemanticFingerprint(Path directory, String fingerprint)
+            throws Exception {
+        Path path = directory.resolve("program_semantic.sha256");
+        Path temporary = path.resolveSibling(path.getFileName() + ".tmp");
+        Files.writeString(temporary, fingerprint + System.lineSeparator(),
+            StandardCharsets.UTF_8);
+        try {
+            Files.move(temporary, path, StandardCopyOption.REPLACE_EXISTING,
+                StandardCopyOption.ATOMIC_MOVE);
+        }
+        catch (java.nio.file.AtomicMoveNotSupportedException exception) {
+            Files.move(temporary, path, StandardCopyOption.REPLACE_EXISTING);
+        }
     }
 
     private void writeLedger(Path directory, List<Artifact> artifacts, long modification,
@@ -129,6 +156,7 @@ public class STEvidenceLedger extends GhidraScript {
                 expectedSchema + "; rerun full recovery");
         println("Computing semantic Program fingerprint...");
         String currentSemantic = semanticFingerprint();
+        writeSemanticFingerprint(directory, currentSemantic);
         boolean legacy = expectedSemantic.isBlank();
         if (!legacy && !expectedSemantic.equals(currentSemantic))
             throw new IllegalStateException(

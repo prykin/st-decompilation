@@ -61,7 +61,7 @@ CGenerate::sub_0069BDC0
     uVar5 = ((this->field_5833 - param_2) / param_4 + 2) *
             ((this->field_5837 - param_3) / param_4 + 2);
     ExceptionList = &local_14;
-    local_78 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(uVar5 * 0x40);
+    local_78 = Library::DKW::LIB::MemAlloc(uVar5 * 0x40);
     piVar7 = (int *)&stack0xffffff6c;
     puVar8 = local_78;
     for (iVar4 = (uVar5 & 0x3ffffff) << 4; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -178,8 +178,8 @@ LAB_0069c0f3:
             while( true ) {
               if (iVar3 <= local_70) {
                 local_78[local_58[iVar3] * 0x10] = iVar4 << 0x10 | uVar5 & 0xffff;
-                Library::DKW::TBL::FUN_006ae1c0
-                          (param_7->field_0018,local_78 + local_58[iVar3] * 0x10);
+                Library::DKW::TBL::DArrayAppend
+                          ((DArrayTy *)param_7->field_0018,local_78 + local_58[iVar3] * 0x10);
                 iVar4 = piVar7[iVar3];
                 *(short *)(param_6 + iVar3 * 4) =
                      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */

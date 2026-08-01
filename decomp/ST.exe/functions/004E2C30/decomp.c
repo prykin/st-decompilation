@@ -20,7 +20,7 @@ undefined4 __thiscall TLOBaseTy::FUN_004e2c30(TLOBaseTy *this,uint param_1)
   int local_EAX_884;
   TLOBaseTyVTable *pTVar7;
   byte *puVar8;
-  undefined4 *puVar9;
+  byte *puVar9;
   byte *pbVar10;
   int *piVar11;
   int *piVar12;
@@ -48,14 +48,11 @@ undefined4 __thiscall TLOBaseTy::FUN_004e2c30(TLOBaseTy *this,uint param_1)
   }
   local_10 = thunk_FUN_004e60d0((int)this->field_0024,param_1);
   pbVar1 = this->field_0024;
-  puVar8 = (byte *)(&g_playerRuntime[(int)pbVar1].field480_0x2eb);
-  puVar9 = local_2c;
-  for (iVar3 = 5; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar9 = *puVar8;
-    puVar8 = (byte *)(puVar8 + 1);
-    puVar9 = puVar9 + 1;
-  }
-  puVar8 = (byte *)(&g_playerRuntime[(int)pbVar1].field494_0x2ff);
+  puVar8 = (byte *)&g_playerRuntime[(int)pbVar1].field_0x2eb;
+  puVar9 = (byte *)(local_2c);
+  memmove(puVar9, puVar8, 0x14); /* compiler REP MOVS byte copy */
+  iVar3 = 0;
+  puVar8 = (byte *)&g_playerRuntime[(int)pbVar1].field_0x2ff;
   pbVar10 = local_40;
   memmove(pbVar10, puVar8, 0x14); /* compiler REP MOVS byte copy */
   thunk_FUN_004e6310(pbVar1,param_1,local_10 + 1);
@@ -82,11 +79,10 @@ undefined4 __thiscall TLOBaseTy::FUN_004e2c30(TLOBaseTy *this,uint param_1)
       if (((((*(byte *)((int)local_14 + ((int)(local_10 ^ 7) >> 3)) >> ((local_10 ^ 7) & 7) & 1) !=
              0) && (local_18 = local_40,
                    (local_18[(int)(local_10 ^ 7) >> 3] >> ((local_10 ^ 7) & 7) & 1) == 0)) &&
-          (local_18 = (byte *)&g_playerRuntime[(int)this->field_0024].field480_0x2eb,
-          (*(byte *)((int)local_18 + ((int)(local_10 ^ 7) >> 3)) >> ((local_10 ^ 7) & 7) & 1) != 0))
-         && (local_18 = (byte *)&g_playerRuntime[(int)this->field_0024].field494_0x2ff,
-            (*(byte *)((int)local_18 + ((int)(local_10 ^ 7) >> 3)) >> ((local_10 ^ 7) & 7) & 1) != 0
-            )) {
+          (local_18 = &g_playerRuntime[(int)this->field_0024].field_0x2eb,
+          (local_18[(int)(local_10 ^ 7) >> 3] >> ((local_10 ^ 7) & 7) & 1) != 0)) &&
+         (local_18 = &g_playerRuntime[(int)this->field_0024].field_0x2ff,
+         (local_18[(int)(local_10 ^ 7) >> 3] >> ((local_10 ^ 7) & 7) & 1) != 0)) {
         uVar2 = thunk_FUN_004e6140((int)this->field_0024,local_10);
         iVar3 = thunk_FUN_004e60d0((int)this->field_0024,uVar6);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */

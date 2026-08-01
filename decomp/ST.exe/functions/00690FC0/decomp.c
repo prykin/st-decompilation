@@ -67,7 +67,7 @@ undefined4 * __cdecl FUN_00690fc0(undefined4 *param_1)
           else {
             local_c = local_c + -8;
           }
-          Library::DKW::TBL::FUN_006ae1c0(local_8->field_0085,&local_10);
+          Library::DKW::TBL::DArrayAppend((DArrayTy *)local_8->field_0085,&local_10);
           puVar5 = (undefined4 *)((int)puVar5 + puVar5[5]);
           iVar1 = iVar1 + 1;
           pAVar2 = local_8;

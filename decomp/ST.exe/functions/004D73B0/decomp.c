@@ -8,7 +8,7 @@ undefined4 FUN_004d73b0(char param_1)
   DArrayTy *array;
 
   array = (DArrayTy *)&g_playerRuntime[param_1].field_0x7ee;
-  memset(&g_playerRuntime[param_1].field1706_0x7da, 0, 0x198); /* compiler bulk-zero initialization */
+  memset(&g_playerRuntime[param_1].field_0x7da, 0, 0x198); /* compiler bulk-zero initialization */
   iVar1 = 6;
   do {
     array[-1].count = 100;

@@ -74,7 +74,7 @@ void __thiscall HelpPanelTy::HomeBut(HelpPanelTy *this)
           local_f = 0;
           local_e = 0;
           local_d = 0;
-          Library::DKW::TBL::FUN_006ae1c0((uint *)this_00->field_01B3,&local_20);
+          Library::DKW::TBL::DArrayAppend((DArrayTy *)this_00->field_01B3,&local_20);
         }
         local_8 = local_8 + 1;
         iVar3 = iVar3 + 0x11;

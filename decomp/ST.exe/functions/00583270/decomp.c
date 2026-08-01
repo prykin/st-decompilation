@@ -259,7 +259,7 @@ int __thiscall STJellyGunC::GetMessage(STJellyGunC *this,STMessage *message)
           this_00->field_0x250 = local_38->field_0061;
           this_00->field_0251 = local_38->field_0062;
           *(undefined4 *)&this_00->field_0x252 = local_38->field_0063;
-          local_34 = (void *)Library::DKW::LIB::FUN_006aac70(0x44);
+          local_34 = Library::DKW::LIB::MemAlloc(0x44);
           if (local_34 != (void *)0x0) {
             iVar5 = 0;
             do {
@@ -301,8 +301,7 @@ int __thiscall STJellyGunC::GetMessage(STJellyGunC *this,STMessage *message)
     else if (SVar2 == MESS_SHARED_010F) {
       local_14 = (byte *)STT3DSprC::SaveSpr((STT3DSprC *)&this_00->field_01D5,&local_8);
       local_18 = (byte *)STAllPlayersC::SaveGObjData((STAllPlayersC *)this_00,(int *)&local_10);
-      local_c = (AnonShape_00583270_0B8831C2 *)
-                Library::DKW::LIB::FUN_006aac70(local_10 + 0x6f + local_8);
+      local_c = Library::DKW::LIB::MemAlloc(local_10 + 0x6f + local_8);
       if (((local_14 != (byte *)0x0) && (local_18 != (byte *)0x0)) &&
          (local_c != (AnonShape_00583270_0B8831C2 *)0x0)) {
         puVar10 = (byte *)&this_00->field_0x256;
@@ -331,6 +330,7 @@ int __thiscall STJellyGunC::GetMessage(STJellyGunC *this,STMessage *message)
         pbVar11 = local_14;
         pbVar16 = &local_c->field_0x6b;
         memmove(pbVar16, pbVar11, local_8); /* compiler REP MOVS byte copy */
+        uVar7 = 0;
         *(uint *)(&local_c->field_0x6b + local_8) = local_10;
         pbVar11 = local_18;
         pbVar16 = &local_c[1].field_0x3 + local_8;

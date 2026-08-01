@@ -201,7 +201,8 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,undefined1 param_1)
         wsprintfA((LPSTR)&DAT_0080f33a,"%s%s",PTR_DAT_0079c0dc,"%01d%02d");
         iVar3 = Library::MSVCRT::FUN_0072ee80(pcVar12,(byte *)&DAT_0080f33a);
         if (((iVar3 == 2) && (local_10 != 0)) && (local_10 < 4)) {
-          Library::DKW::TBL::FUN_006ae1c0(*(uint **)(&this_01->field_0x343 + local_10 * 4),&local_c);
+          Library::DKW::TBL::DArrayAppend
+                    (*(DArrayTy **)(&this_01->field_0x343 + local_10 * 4),&local_c);
         }
         pcVar12 = (char *)cMf32::RecNameGetNext(pcVar2);
       }

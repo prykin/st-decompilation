@@ -34,7 +34,7 @@ void __thiscall PausePanelTy::InitPausePanel(PausePanelTy *this)
     iVar2 = g_nWidth_00806730 + -0x1c;
     local_8->field_003C = iVar2;
     local_8->field_0174 = (local_8->field_0040 - iVar2) + g_nWidth_00806730;
-    pcVar3 = (ccFntTy *)ccFntTy::operator_new(0x19d,*(int *)&PTR_00802a28->field_0x28);
+    pcVar3 = (ccFntTy *)ccFntTy::operator_new(0x19d,g_interSystem_00802A28->field_0028);
     this_00->field_017C = pcVar3;
     pcVar3->field_0058 = 0;
     pcVar3->field_005C = 0;

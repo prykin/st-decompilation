@@ -201,7 +201,7 @@ LAB_004ae41c:
     }
     if (((int)param_4 < 0x54) || (0x5a < (int)param_4)) {
       if (param_4 == 100) {
-        pDVar11 = g_playerRuntime[param_5].field2166_0x9d6;
+        pDVar11 = *(DArrayTy **)&g_playerRuntime[param_5].field_0x9d6;
         if ((pDVar11 != (DArrayTy *)0x0) && (uVar18 = 0, 0 < (int)pDVar11->count)) {
           do {
             DArrayGetElement(pDVar11,uVar18,&local_10);
@@ -212,15 +212,15 @@ LAB_004ae41c:
                 (int)((uVar9 ^ uVar12) - uVar12) < 0x10)) &&
                (uVar9 = local_6 - param_2 >> 0x1f, (int)((local_6 - param_2 ^ uVar9) - uVar9) < 0x10
                )) goto cf_break_loop_004AEC96;
-            pDVar11 = g_playerRuntime[param_5].field2166_0x9d6;
+            pDVar11 = *(DArrayTy **)&g_playerRuntime[param_5].field_0x9d6;
             uVar18 = uVar18 + 1;
           } while ((int)uVar18 < (int)pDVar11->count);
         }
       }
       else if (param_4 == 0x4d) {
-        pDVar11 = g_playerRuntime[param_5].field2169_0x9e2;
+        pDVar11 = *(DArrayTy **)&g_playerRuntime[param_5].field_0x9e2;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-        param_10 = (int *)&g_playerRuntime[param_5].field2169_0x9e2;
+        param_10 = (int *)&g_playerRuntime[param_5].field_0x9e2;
         if (pDVar11 != (DArrayTy *)0x0) {
           iVar10 = DAT_00795118 / 0xc9;
           uVar18 = 0;
@@ -242,9 +242,9 @@ LAB_004ae41c:
         }
       }
       else if (param_4 == 0x43) {
-        pDVar11 = g_playerRuntime[param_5].field2172_0x9ee;
+        pDVar11 = *(DArrayTy **)&g_playerRuntime[param_5].field_0x9ee;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-        param_10 = (int *)&g_playerRuntime[param_5].field2172_0x9ee;
+        param_10 = (int *)&g_playerRuntime[param_5].field_0x9ee;
         if (pDVar11 != (DArrayTy *)0x0) {
           iVar10 = DAT_007950f0 / 0xc9;
           uVar18 = 0;
@@ -266,9 +266,9 @@ LAB_004ae41c:
         }
       }
       else if (param_4 == 0x73) {
-        pDVar11 = g_playerRuntime[param_5].field2173_0x9f2;
+        pDVar11 = *(DArrayTy **)&g_playerRuntime[param_5].field_0x9f2;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-        param_10 = (int *)&g_playerRuntime[param_5].field2173_0x9f2;
+        param_10 = (int *)&g_playerRuntime[param_5].field_0x9f2;
         if (pDVar11 != (DArrayTy *)0x0) {
           iVar10 = DAT_007951b0 / 0xc9;
           uVar18 = 0;
@@ -290,9 +290,9 @@ LAB_004ae41c:
         }
       }
       else if (param_4 == 0x65) {
-        pDVar11 = g_playerRuntime[param_5].field2170_0x9e6;
+        pDVar11 = *(DArrayTy **)&g_playerRuntime[param_5].field_0x9e6;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-        param_10 = (int *)&g_playerRuntime[param_5].field2170_0x9e6;
+        param_10 = (int *)&g_playerRuntime[param_5].field_0x9e6;
         if (pDVar11 != (DArrayTy *)0x0) {
           iVar10 = DAT_00795178 / 0xc9;
           uVar18 = 0;

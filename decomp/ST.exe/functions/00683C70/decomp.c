@@ -229,7 +229,7 @@ uint * FUN_00683c70(LPCSTR lpFileName,AnonShape_00683C70_22193481 *param_2,undef
       DAT_008489c8 = (AnonShape_0065CD10_BA40DE58 *)0x0;
       PTR_008489cc = (AnonShape_GLOBAL_008489CC_CDF8C3F4 *)0x0;
       g_array_008489D4 = (DArrayTy *)0x0;
-      PTR_008489d8 = (DArrayTy *)0x0;
+      g_dArray_008489D8 = (DArrayTy *)0x0;
       DAT_008489dc = (AnonShape_0065CD10_BA40DE58 *)0x0;
       thunk_FUN_00680530();
       thunk_FUN_00680310();
@@ -557,7 +557,8 @@ LAB_006842d6:
                       local_49 = 1;
                       (&DAT_00814590)[DAT_008488b0 * 0xac5] = iVar10;
                       thunk_FUN_0064a830((int *)(iVar2 + 0x46e),(undefined4 *)&local_4c);
-                      Library::DKW::TBL::FUN_006ae1c0((uint *)PTR_008489cc->field_000F,&local_bc);
+                      Library::DKW::TBL::DArrayAppend
+                                ((DArrayTy *)PTR_008489cc->field_000F,&local_bc);
                     }
                     else if (DAT_007d2d18 == 0x1a) {
                       if (DAT_008488b0 < 2) {
@@ -589,8 +590,8 @@ LAB_006842d6:
                           local_5b = 0x21;
                           local_59 = 1;
                           thunk_FUN_0064a830(piVar20,(undefined4 *)&local_5c);
-                          Library::DKW::TBL::FUN_006ae1c0
-                                    ((uint *)PTR_008489cc->field_000F,&local_c8);
+                          Library::DKW::TBL::DArrayAppend
+                                    ((DArrayTy *)PTR_008489cc->field_000F,&local_c8);
                           pcVar7 = thunk_FUN_0064a910(piVar20,(&DAT_00814590)[DAT_008488b0 * 0xac5]);
                           if (pcVar7 == (char *)0x0) {
                             RaiseInternalException
@@ -619,8 +620,8 @@ LAB_006842d6:
                             local_6b = 0x323;
                             local_69 = 0;
                             thunk_FUN_0064a830((int *)(iVar2 + 0x46e),(undefined4 *)&local_6c);
-                            Library::DKW::TBL::FUN_006ae1c0
-                                      ((uint *)PTR_008489cc->field_000F,&local_c0);
+                            Library::DKW::TBL::DArrayAppend
+                                      ((DArrayTy *)PTR_008489cc->field_000F,&local_c0);
                             pcVar7 = thunk_FUN_0064a910((int *)(iVar2 + 0x46e),
                                                         (&DAT_00814590)[DAT_008488b0 * 0xac5]);
                             if (pcVar7 == (char *)0x0) {
@@ -649,8 +650,8 @@ LAB_00684777:
                             local_7b = 0x322;
                             local_79 = 0;
                             thunk_FUN_0064a830((int *)(iVar2 + 0x46e),(undefined4 *)&local_7c);
-                            Library::DKW::TBL::FUN_006ae1c0
-                                      ((uint *)PTR_008489cc->field_000F,&local_b8);
+                            Library::DKW::TBL::DArrayAppend
+                                      ((DArrayTy *)PTR_008489cc->field_000F,&local_b8);
                             pcVar7 = thunk_FUN_0064a910((int *)(iVar2 + 0x46e),
                                                         (&DAT_00814590)[DAT_008488b0 * 0xac5]);
                             if (pcVar7 == (char *)0x0) {
@@ -681,10 +682,10 @@ LAB_00684777:
                           local_43 = 0x514;
                           local_41 = 0;
                           thunk_FUN_0064a830((int *)(iVar2 + 0x46e),(undefined4 *)&local_44);
-                          Library::DKW::TBL::FUN_006ae1c0
-                                    ((uint *)PTR_008489cc->field_000F,&local_b4);
-                          Library::DKW::TBL::FUN_006ae1c0
-                                    (*(uint **)(iVar2 + 0x462),(undefined4 *)PTR_008489cc);
+                          Library::DKW::TBL::DArrayAppend
+                                    ((DArrayTy *)PTR_008489cc->field_000F,&local_b4);
+                          Library::DKW::TBL::DArrayAppend
+                                    (*(DArrayTy **)(iVar2 + 0x462),PTR_008489cc);
                           FreeAndNull(&PTR_008489cc);
                         }
 LAB_00684989:
@@ -973,6 +974,7 @@ switchD_00684bb9_caseD_3f2:
           pcVar7 = pcVar19 + -uVar8;
           pcVar19 = (char *)(&DAT_00811aa4 + iVar10 * 0xac5);
           memmove(pcVar19, pcVar7, uVar8); /* compiler REP MOVS byte copy */
+          uVar9 = 0;
           (&DAT_00811a9c)[iVar10 * 0xac5] = *(undefined4 *)(iVar12 + 0x80ef88);
           iVar2 = DAT_007d2d18;
           (&DAT_00811aa0)[iVar10 * 0xac5] = *(undefined4 *)(iVar12 + 0x80ef8c);
@@ -1290,7 +1292,7 @@ cf_error_exit_0068A22B:
             thunk_FUN_0064a830(piVar20,(undefined4 *)&local_74);
             puVar6 = &local_d4;
           }
-          Library::DKW::TBL::FUN_006ae1c0((uint *)PTR_008489cc->field_000F,puVar6);
+          Library::DKW::TBL::DArrayAppend((DArrayTy *)PTR_008489cc->field_000F,puVar6);
           DAT_008488b0 = DAT_008488b0 + -2;
           thunk_FUN_0064a800(&g_int_00848A14);
           goto switchD_006841b6_default;
@@ -1471,6 +1473,7 @@ cf_error_exit_0068A22B:
         pcVar7 = pcVar7 + -uVar8;
         pcVar19 = (char *)&DAT_0084790c;
         memmove(pcVar19, pcVar7, uVar8); /* compiler REP MOVS byte copy */
+        uVar9 = 0;
       }
       param_4[1] = (int)&DAT_0084790c;
       uVar8 = 0xffffffff;
@@ -1549,14 +1552,14 @@ switchD_006841b6_caseD_2:
     if (0x4b3 < iVar10) {
       switch(iVar10) {
       case 0x4b4:
-        if (PTR_008489d8 == (DArrayTy *)0x0) {
+        if (g_dArray_008489D8 == (DArrayTy *)0x0) {
           RaiseInternalException
                     (-0x8d,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x83f
                     );
         }
-        pAVar16 = (AnonShape_0065CD10_BA40DE58 *)PTR_008489d8;
+        pAVar16 = (AnonShape_0065CD10_BA40DE58 *)g_dArray_008489D8;
         if (DAT_008489d0 == (undefined4 *)0x0) {
-          PTR_008489d8 = (DArrayTy *)0x0;
+          g_dArray_008489D8 = (DArrayTy *)0x0;
           if (param_3 != (undefined4 *)0x0) {
             *param_3 = 10;
           }
@@ -1571,7 +1574,7 @@ switchD_006841b6_caseD_2:
         if (iVar2 == 0) {
           thunk_FUN_006802a0(-0x7d,(char *)(&DAT_00811aa4 + DAT_008488b0 * 0xac5));
         }
-        if (PTR_008489d8 == (DArrayTy *)0x0) {
+        if (g_dArray_008489D8 == (DArrayTy *)0x0) {
           RaiseInternalException
                     (-0x8e,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x84d
                     );
@@ -1591,7 +1594,7 @@ switchD_006841b6_caseD_2:
         local_5e0 = (&DAT_00811c88)[DAT_008488b0 * 0xac5];
         local_5dc = (&DAT_00811c8c)[DAT_008488b0 * 0xac5];
         local_4d4 = (&DAT_00811c90)[DAT_008488b0 * 0xac5];
-        Library::DKW::TBL::FUN_006ae1c0(&PTR_008489d8->flags,(undefined4 *)local_6ec);
+        Library::DKW::TBL::DArrayAppend(g_dArray_008489D8,local_6ec);
         DAT_008488b0 = DAT_008488b0 + -1;
         goto switchD_006841b6_default;
       default:
@@ -2124,11 +2127,11 @@ cf_common_join_006895D5:
       goto LAB_006896f6;
     }
     if (iVar10 == 0x4b3) {
-      if (PTR_008489d8 != (DArrayTy *)0x0) {
+      if (g_dArray_008489D8 != (DArrayTy *)0x0) {
         RaiseInternalException
                   (-0x8c,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x83a);
       }
-      PTR_008489d8 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,5,0x220,5);
+      g_dArray_008489D8 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,5,0x220,5);
       DAT_008488b0 = DAT_008488b0 + -1;
       goto switchD_006841b6_default;
     }
@@ -2269,8 +2272,8 @@ cf_common_join_006895D5:
             local_53 = *(undefined2 *)(&DAT_00811a94 + iVar2 * 0xac5);
             thunk_FUN_0064a830(piVar20,(undefined4 *)&local_54);
             iVar2 = DAT_008488b0;
-            uVar8 = Library::DKW::TBL::FUN_006ae1c0((uint *)PTR_008489cc->field_000F,&local_c4);
-            (&DAT_00814594)[iVar2 * 0xac5] = uVar8;
+            iVar10 = Library::DKW::TBL::DArrayAppend((DArrayTy *)PTR_008489cc->field_000F,&local_c4);
+            (&DAT_00814594)[iVar2 * 0xac5] = iVar10;
             (&DAT_00811a90)[iVar2 * 0xac5] = 4;
             goto switchD_006841b6_default;
           }
@@ -2523,8 +2526,7 @@ cf_common_join_006895D5:
             local_e0 = 0;
             local_dc = 0;
             local_d8 = *(undefined4 *)&DAT_008489c8->field_0x14;
-            Library::DKW::TBL::FUN_006ae1c0
-                      (&(*(DArrayTy **)&DAT_008489b8->field_0xc2)->flags,&local_e4);
+            Library::DKW::TBL::DArrayAppend(*(DArrayTy **)&DAT_008489b8->field_0xc2,&local_e4);
             DAT_008489c8 = (AnonShape_0065CD10_BA40DE58 *)0x0;
             DAT_008488b0 = DAT_008488b0 + -1;
           }
@@ -2563,7 +2565,7 @@ cf_common_join_006895D5:
           else {
             local_a8 = &PTR_008489c4[-1].field_0x224;
           }
-          Library::DKW::TBL::FUN_006ae1c0(*(uint **)&DAT_008489c8->field_0x85,&local_ac);
+          Library::DKW::TBL::DArrayAppend(*(DArrayTy **)&DAT_008489c8->field_0x85,&local_ac);
           PTR_008489c4 = (AnonShape_GLOBAL_008489C4_F7BABFAC *)0x0;
           DAT_008488b0 = DAT_008488b0 + -1;
         }
@@ -2588,7 +2590,7 @@ cf_common_join_006895D5:
         local_116 = (&DAT_00811c98)[DAT_008488b0 * 0x158a];
         local_114 = (&DAT_00811c9c)[DAT_008488b0 * 0x2b14];
         Library::MSVCRT::_strncpy(local_113,(char *)(&DAT_00811aec)[DAT_008488b0 * 0xac5],0xe);
-        Library::DKW::TBL::FUN_006ae1c0(PTR_008489c4->field_01EB,local_128);
+        Library::DKW::TBL::DArrayAppend((DArrayTy *)PTR_008489c4->field_01EB,local_128);
         DAT_008488b0 = DAT_008488b0 + -1;
         goto switchD_006841b6_default;
       case 0x427:
@@ -2675,7 +2677,7 @@ cf_common_join_006895D5:
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_94 = CONCAT22(*(undefined2 *)(&DAT_00811c9c + DAT_008488b0 * 0x2b14),
                             (&DAT_00811c98)[DAT_008488b0 * 0x158a]);
-        Library::DKW::TBL::FUN_006ae1c0(PTR_008489c4->field_0203,&local_a0);
+        Library::DKW::TBL::DArrayAppend((DArrayTy *)PTR_008489c4->field_0203,&local_a0);
         DAT_008488b0 = DAT_008488b0 + -1;
         goto switchD_006841b6_default;
       case 0x42c:
@@ -2734,7 +2736,7 @@ cf_common_join_006895D5:
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_34 = CONCAT22((&DAT_00811c94)[DAT_008488b0 * 0x158a],
                             *(undefined2 *)(&DAT_00811c90 + DAT_008488b0 * 0xac5));
-        Library::DKW::TBL::FUN_006ae1c0(PTR_008489c4->field_020F,&local_3c);
+        Library::DKW::TBL::DArrayAppend((DArrayTy *)PTR_008489c4->field_020F,&local_3c);
         DAT_008488b0 = DAT_008488b0 + -1;
         goto switchD_006841b6_default;
       case 0x42f:
@@ -2999,7 +3001,7 @@ cf_common_join_006895D5:
         local_1b9 = *(undefined4 *)(&DAT_00811c94 + DAT_008488b0 * 0x158a);
         local_1b5 = *(undefined4 *)(&DAT_00811c98 + DAT_008488b0 * 0x158a);
         local_1b1 = (&DAT_00811c9c)[DAT_008488b0 * 0x2b14];
-        Library::DKW::TBL::FUN_006ae1c0(&g_array_008489D4->flags,(undefined4 *)local_2c8);
+        Library::DKW::TBL::DArrayAppend(g_array_008489D4,local_2c8);
         DAT_008488b0 = DAT_008488b0 + -1;
         goto switchD_006841b6_default;
       }

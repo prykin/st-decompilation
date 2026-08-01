@@ -1,14 +1,17 @@
 
 /* [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
-   and decompilation contains no value return */
+   and decompilation contains no value return
 
-void FUN_006e4c90(int param_1,DArrayTy *param_2)
+   [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 006E4D20 -> 006E4C90 @ 006E4D2B; FUN_006e4d20 parameter param_1 */
+
+void FUN_006e4c90(DebugSystemC *param_1,DArrayTy *param_2)
 
 {
   uint index;
   byte local_10 [4];
-  int local_c;
+  DebugSystemC *local_c;
   DArrayTy *local_8;
 
   param_2->iteratorIndex = 0;

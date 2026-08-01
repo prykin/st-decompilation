@@ -98,8 +98,8 @@ uint __fastcall CGenerate::sub_0069CB50(int *param_1)
   iVar8 = ((int *)param_1[2])[1] * *(int *)param_1[2];
   uVar14 = iVar8 * 4;
   local_d8 = uVar14;
-  local_78 = (void *)Library::DKW::LIB::FUN_006aac70(iVar8 * 0x38);
-  local_c0 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(uVar14);
+  local_78 = Library::DKW::LIB::MemAlloc(iVar8 * 0x38);
+  local_c0 = Library::DKW::LIB::MemAlloc(uVar14);
   local_8 = 0;
   Library::MSVCRT::FUN_0072da40();
   local_16c = &stack0xfffffe68;
@@ -348,8 +348,8 @@ uint __fastcall CGenerate::sub_0069CB50(int *param_1)
                 bVar18 = local_e4 < pDVar3->count;
               } while ((int)local_e4 < (int)pDVar3->count);
             }
-            local_b4 = (void *)Library::DKW::LIB::FUN_006aac70(iVar10 * 8);
-            local_28 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(iVar10 * 4);
+            local_b4 = Library::DKW::LIB::MemAlloc(iVar10 * 8);
+            local_28 = Library::DKW::LIB::MemAlloc(iVar10 * 4);
             local_44 = 0;
             local_b8 = -1;
             local_24 = -1;

@@ -25,8 +25,9 @@ import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import ghidra.app.decompiler.DecompInterface;
 import ghidra.app.decompiler.DecompileResults;
+import ghidra.app.decompiler.parallel.DecompilerCallback;
+import ghidra.app.decompiler.parallel.ParallelDecompiler;
 import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
 import ghidra.program.model.data.AbstractIntegerDataType;
@@ -46,6 +47,7 @@ import ghidra.program.model.listing.Variable;
 import ghidra.program.model.scalar.Scalar;
 import ghidra.program.model.symbol.Reference;
 import ghidra.program.model.symbol.StackReference;
+import ghidra.util.task.TaskMonitor;
 
 public class STDiscriminatedPayloadAnalyzer extends GhidraScript {
     private static final String CATEGORY =
@@ -59,9 +61,7 @@ public class STDiscriminatedPayloadAnalyzer extends GhidraScript {
     private static final Pattern LOOP_COUNT = Pattern.compile(
         "(?s)for\\s*\\([^;]*;\\s*[A-Za-z_][A-Za-z0-9_]*\\s*!=\\s*" +
         "(0[xX][0-9a-fA-F]+|[0-9]+)\\s*;[^)]*\\).*");
-    private static final int MAX_CALL_WINDOW = 48;
 
-    private DecompInterface decompiler;
 
     @Override
     protected void run() throws Exception {
@@ -75,40 +75,27 @@ public class STDiscriminatedPayloadAnalyzer extends GhidraScript {
         Path directory = programDirectory(selected);
         Files.createDirectories(directory);
 
-        decompiler = new DecompInterface();
-        decompiler.toggleCCode(true);
-        decompiler.toggleSyntaxTree(false);
-        decompiler.setSimplificationStyle("decompile");
-        if (!decompiler.openProgram(currentProgram))
-            throw new IllegalStateException(decompiler.getLastMessage());
+        List<Function> candidates = new ArrayList<>();
+        FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
+        while (functions.hasNext()) {
+            monitor.checkCancelled();
+            Function function = functions.next();
+            if (candidate(function)) candidates.add(function);
+        }
 
         List<Family> families = new ArrayList<>();
-        try {
-            FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
-            while (functions.hasNext()) {
-                monitor.checkCancelled();
-                Function function = functions.next();
-                if (function.isExternal() || function.isThunk() ||
-                        (!hasComputedJump(function) &&
-                            messageCarrier(function) == null))
-                    continue;
-                Family family = analyze(function);
-                if (family != null && (family.cases.size() >= 2 ||
-                        family.messageEnvelope && !family.cases.isEmpty()))
-                    families.add(family);
-            }
-        }
-        finally {
-            decompiler.dispose();
+        for (Decompiled unit : parallelDecompile(candidates)) {
+            Family family = analyze(unit.function, unit.c);
+            if (family != null && (family.cases.size() >= 2 ||
+                    family.messageEnvelope && !family.cases.isEmpty()))
+                families.add(family);
         }
         families.sort(Comparator.comparing(family -> family.function.getEntryPoint()));
 
         List<CaseRow> cases = new ArrayList<>();
-        List<StackRow> stacks = new ArrayList<>();
-        for (Family family : families) {
+        for (Family family : families)
             for (CaseLayout layout : family.cases.values()) cases.add(caseRow(family, layout));
-            stacks.addAll(stackRows(family));
-        }
+        List<StackRow> stacks = stackRows(families);
         cases.sort(Comparator.comparing((CaseRow row) -> row.functionAddress)
             .thenComparingLong(row -> row.value));
         stacks.sort(Comparator.comparing((StackRow row) -> row.functionAddress)
@@ -123,10 +110,54 @@ public class STDiscriminatedPayloadAnalyzer extends GhidraScript {
             ", output=" + directory);
     }
 
-    private Family analyze(Function function) {
-        DecompileResults results = decompiler.decompileFunction(function, 90, monitor);
-        if (!results.decompileCompleted() || results.getDecompiledFunction() == null) return null;
-        String c = results.getDecompiledFunction().getC();
+    private boolean candidate(Function function) {
+        if (function == null || function.isExternal() || function.isThunk()) return false;
+        if (messageCarrier(function) != null) return true;
+        if (!hasComputedJump(function)) return false;
+        List<Parameter> explicit = explicitParameters(function);
+        if (explicit.size() < 2) return false;
+        return explicit.stream().anyMatch(parameter ->
+            parameter.getDataType() instanceof AbstractIntegerDataType ||
+                parameter.getDataType() instanceof Enum);
+    }
+
+    private List<Decompiled> parallelDecompile(List<Function> functions)
+            throws Exception {
+        if (functions.isEmpty()) return List.of();
+        DecompilerCallback<Decompiled> callback = new DecompilerCallback<>(
+                currentProgram, dec -> {
+                    dec.toggleCCode(true);
+                    dec.toggleSyntaxTree(false);
+                    dec.setSimplificationStyle("decompile");
+                }) {
+            @Override
+            public Decompiled process(DecompileResults result,
+                    TaskMonitor callbackMonitor) {
+                Function function = result.getFunction();
+                if (!result.decompileCompleted() ||
+                        result.getDecompiledFunction() == null)
+                    return new Decompiled(function, "",
+                        result.getErrorMessage() == null ?
+                            "decompile failed" : result.getErrorMessage());
+                return new Decompiled(function,
+                    result.getDecompiledFunction().getC(), "");
+            }
+        };
+        callback.setTimeout(90);
+        try {
+            List<Decompiled> result = ParallelDecompiler.decompileFunctions(
+                callback, functions, monitor);
+            result.removeIf(value -> value == null || value.function == null ||
+                !value.error.isBlank());
+            result.sort(Comparator.comparing(value -> value.function.getEntryPoint()));
+            return result;
+        }
+        finally {
+            callback.dispose();
+        }
+    }
+
+    private Family analyze(Function function, String c) {
         Family messageFamily = analyzeMessageBranches(function, c);
         if (messageFamily != null) return messageFamily;
         Matcher switchMatcher = SWITCH.matcher(c);
@@ -364,25 +395,26 @@ public class STDiscriminatedPayloadAnalyzer extends GhidraScript {
             layout.conflict ? "review" : "high", evidence);
     }
 
-    private List<StackRow> stackRows(Family family) {
+    private List<StackRow> stackRows(List<Family> families) {
         List<StackRow> result = new ArrayList<>();
-        if (family.messageEnvelope ||
-                family.discriminator.getOrdinal() ==
-                    family.carrier.getOrdinal())
-            return result;
+        Map<Address, Family> targets = new HashMap<>();
+        for (Family family : families) {
+            if (family.messageEnvelope ||
+                    family.discriminator.getOrdinal() == family.carrier.getOrdinal())
+                continue;
+            targets.put(family.function.getEntryPoint(), family);
+        }
+        if (targets.isEmpty()) return result;
         FunctionIterator callers = currentProgram.getFunctionManager().getFunctions(true);
         while (callers.hasNext()) {
             Function caller = callers.next();
             if (caller.isExternal()) continue;
-            List<Instruction> window = new ArrayList<>();
             Map<String, Value> registers = new HashMap<>();
             List<Value> pushes = new ArrayList<>();
             InstructionIterator instructions = currentProgram.getListing()
                 .getInstructions(caller.getBody(), true);
             while (instructions.hasNext()) {
                 Instruction instruction = instructions.next();
-                window.add(instruction);
-                if (window.size() > MAX_CALL_WINDOW) window.remove(0);
                 String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
                 if ("PUSH".equals(mnemonic)) {
                     pushes.add(value(instruction, 0, registers));
@@ -390,8 +422,9 @@ public class STDiscriminatedPayloadAnalyzer extends GhidraScript {
                 }
                 if (instruction.getFlowType().isCall()) {
                     Function called = calledFunction(instruction);
-                    if (called != null && called.getEntryPoint().equals(
-                            family.function.getEntryPoint())) {
+                    Family family = called == null ? null :
+                        targets.get(called.getEntryPoint());
+                    if (family != null) {
                         StackRow row = stackRow(family, caller, instruction, pushes);
                         if (row != null) result.add(row);
                     }
@@ -402,7 +435,8 @@ public class STDiscriminatedPayloadAnalyzer extends GhidraScript {
                     continue;
                 }
                 updateRegister(instruction, registers);
-                if (instruction.getFlowType().isJump() || instruction.getFlowType().isTerminal()) {
+                if (instruction.getFlowType().isJump() ||
+                        instruction.getFlowType().isTerminal()) {
                     pushes.clear();
                     registers.clear();
                 }
@@ -751,6 +785,7 @@ public class STDiscriminatedPayloadAnalyzer extends GhidraScript {
             return String.join(";", values);
         }
     }
+    private record Decompiled(Function function, String c, String error) { }
     private record Field(long offset, int length, String type) { }
     private record TypeWidth(int length, String type) { }
     private record MessageCarrier(Parameter parameter, Structure structure,

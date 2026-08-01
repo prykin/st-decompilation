@@ -41,10 +41,10 @@ VisibleClassTy * __thiscall VisibleClassTy::VisibleClassTy(VisibleClassTy *this)
     *ppbVar3 = (byte *)0x0;
     ppbVar3 = ppbVar3 + 1;
   }
-  this->field_003C[0] = (void *)0x0;
-  this->field_003C[1] = (void *)0x0;
-  this->field_003C[2] = (void *)0x0;
-  this->field_003C[3] = (void *)0x0;
+  this->field_003C[0] = 0;
+  this->field_003C[1] = 0;
+  this->field_003C[2] = 0;
+  this->field_003C[3] = 0;
   this->field_00F4 = (VisibleClassTy_field_00F4DArray *)0x0;
   this->field_0110 = (VisibleClassTy_field_0110DArray *)0x0;
   this->field_0114 = 0;

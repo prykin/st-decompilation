@@ -564,7 +564,7 @@ LAB_005e24c5:
               piVar22 = local_a78;
               piVar19 = local_8f8;
               memmove(piVar19, piVar22, 0x17c); /* compiler REP MOVS byte copy */
-              piVar22 = (int *)((byte *)piVar22 + 0x17c);
+              piVar22 = piVar22 + 0x5f;
               local_764 = *(int *)&this_01->field_0x417;
               local_8f8[2] = local_b24 + 0xf + local_b14;
               local_8e4 = *(int *)&this_01->field_0x2f9;
@@ -849,7 +849,7 @@ LAB_005e24c5:
                 uVar31 = *(uint *)((int)piVar22 + 0xf);
                 pDVar17 = this_01->field_0647;
               }
-              Library::DKW::TBL::FUN_006ae140(&pDVar17->flags,uVar31,&local_13c);
+              Library::DKW::TBL::DArrayPut(pDVar17,uVar31,&local_13c);
               /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
               in_stack_ffffffdc = g_ddxContext_008075A8;
               Library::DKW::DDX::FUN_006b3640
@@ -1046,8 +1046,8 @@ LAB_005e3030:
                         ((uint *)local_1dc.field_0048,local_1dc.field_0004,local_1dc.field_0008,
                          local_1dc.field_001C,local_1dc.field_0020);
             }
-            Library::DKW::TBL::FUN_006ae140
-                      (&this_01->field_064B->flags,*(uint *)((int)ppvVar36 + 0xe),&local_1dc.vtable);
+            Library::DKW::TBL::DArrayPut
+                      (this_01->field_064B,*(uint *)((int)ppvVar36 + 0xe),&local_1dc);
             g_currentExceptionFrame = local_2bc.previous;
           }
           else {

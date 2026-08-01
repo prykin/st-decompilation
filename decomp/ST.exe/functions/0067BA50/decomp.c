@@ -28,7 +28,7 @@ undefined4 __cdecl FUN_0067ba50(AiFltClassTy *param_1,uint *param_2)
     _local_14 = CONCAT22(local_3f,param_1->field_007D);
     local_c = local_39;
     local_8 = 0xffffffff;
-    Library::DKW::TBL::FUN_006ae1c0(param_2,(undefined4 *)&local_14);
+    Library::DKW::TBL::DArrayAppend((DArrayTy *)param_2,&local_14);
   }
   return 0;
 }

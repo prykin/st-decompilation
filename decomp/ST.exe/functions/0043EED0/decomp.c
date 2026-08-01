@@ -85,7 +85,7 @@ switchD_0043efb1_caseD_3a:
 LAB_0043efd8:
         if ((bVar3) &&
            ((param_5 == -1 || (iVar6 = this_01->vfunc_6C(), iVar6 == param_5)))) {
-          Library::DKW::TBL::FUN_006ae1c0(&local_c->flags,&local_8);
+          Library::DKW::TBL::DArrayAppend(local_c,&local_8);
         }
       }
       iVar4 = iVar4 + 1;

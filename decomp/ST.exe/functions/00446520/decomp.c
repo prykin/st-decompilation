@@ -37,7 +37,7 @@ STAllPlayersC::DeleteGuardBoat(STAllPlayersC *this,char param_1,short param_2,in
   short local_8 [2];
 
   local_68.previous = g_currentExceptionFrame;
-  local_18 = g_playerRuntime[param_1].pgPairs;
+  local_18 = (DArrayTy *)g_playerRuntime[param_1].field2377_0x9f6;
   g_currentExceptionFrame = &local_68;
   local_14 = this;
   iVar3 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0);

@@ -1250,7 +1250,7 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 00403076	thunk_FUN_004b71f0	parameter	0	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 0040307B	thunk_FUN_0042aac0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00403080	AiTactClassTy::thunk_FUN_0068e730	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
-00403085	thunk_FUN_00577690	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+00403085	GameSystemC::sub_00577690	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0040308A	thunk_FUN_006a2e50	parameter	4	param_5	/undefined4	Stack[0x14]:4	DEFAULT		0	0	no_evidence		-
 0040308A	thunk_FUN_006a2e50	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 0040308F	thunk_FUN_006823a0	parameter	1	param_2	/undefined2	Stack[0x8]:2	DEFAULT		0	0	no_evidence		-
@@ -4549,7 +4549,7 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 005770D0	GameSystemC::DoneSystem	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00577280	CreateGameSystem	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00577440	FUN_00577440	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-00577690	FUN_00577690	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+00577690	GameSystemC::sub_00577690	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00578200	DebugSystemC::CreateSystemObjects	return		<RETURN>	/undefined4	EAX:4	DEFAULT		0	0	no_evidence		-
 005782D0	FUN_005782d0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 00578370	FUN_00578370	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -6810,25 +6810,25 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 006DB6D0	FUN_006db6d0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT	/int	1	1	width_mismatch	{/int=1}	006DB6D0 returns return of Library::DKW::STR::FUN_006db640 @ 006DB6E0
 006DBAB0	ST3DSMAPContext::sub_006DBAB0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 006DBCA0	FUN_006dbca0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-006DBD20	ST3DSMAPContext::sub_006DBD20	parameter	2	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
-006DBD20	ST3DSMAPContext::sub_006DBD20	parameter	4	param_4	/undefined4	Stack[0x10]:4	DEFAULT		0	0	no_evidence		-
-006DC050	ST3DSMAPContext::sub_006DC050	parameter	2	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
-006DC050	ST3DSMAPContext::sub_006DC050	parameter	4	param_4	/undefined4	Stack[0x10]:4	DEFAULT		0	0	no_evidence		-
-006DC050	ST3DSMAPContext::sub_006DC050	parameter	11	param_11	/undefined8	Stack[0x3c]:8	DEFAULT		0	0	no_evidence		-
-006DC050	ST3DSMAPContext::sub_006DC050	parameter	12	param_12	/undefined8	Stack[0x44]:8	DEFAULT		0	0	no_evidence		-
+006DBD20	ST3DSMAPContext::sub_006DBD20	parameter	1	param_2	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
+006DBD20	ST3DSMAPContext::sub_006DBD20	parameter	3	param_4	/undefined4	Stack[0xc]:4	DEFAULT		0	0	no_evidence		-
+006DC050	ST3DSMAPContext::sub_006DC050	parameter	1	param_2	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
+006DC050	ST3DSMAPContext::sub_006DC050	parameter	3	param_4	/undefined4	Stack[0xc]:4	DEFAULT		0	0	no_evidence		-
+006DC050	ST3DSMAPContext::sub_006DC050	parameter	10	param_11	/undefined8	Stack[0x38]:8	DEFAULT		0	0	no_evidence		-
+006DC050	ST3DSMAPContext::sub_006DC050	parameter	11	param_12	/undefined8	Stack[0x40]:8	DEFAULT		0	0	no_evidence		-
 006DC320	FUN_006dc320	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 006DCD60	FUN_006dcd60	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 006DD050	Library::Ourlib::STREND::FUN_006dd050	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 006DD610	ST3DSMAPContext::sub_006DD610	parameter	3	param_3	/undefined4	Stack[0xc]:4	DEFAULT		0	0	no_evidence		-
 006DD610	ST3DSMAPContext::sub_006DD610	parameter	5	param_5	/undefined4	Stack[0x14]:4	DEFAULT		0	0	no_evidence		-
 006DD660	Library::Ourlib::STREND::FUN_006dd660	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
-006DD6E0	Library::Ourlib::STREND::FUN_006dd6e0	parameter	2	param_2	/undefined4	Stack[0x8]:4	DEFAULT	/double	1	1	width_mismatch	{/double=1}	006DBD20 -> 006DD6E0 @ 006DBE80; ST3DSMAPContext::sub_006DBD20 parameter param_7
-006DD6E0	Library::Ourlib::STREND::FUN_006dd6e0	parameter	3	param_3	/undefined4	Stack[0xc]:4	DEFAULT		0	0	no_evidence		-
-006DD6E0	Library::Ourlib::STREND::FUN_006dd6e0	parameter	4	param_4	/undefined4	Stack[0x10]:4	DEFAULT	/double	1	1	width_mismatch	{/double=1}	006DBD20 -> 006DD6E0 @ 006DBE80; ST3DSMAPContext::sub_006DBD20 parameter param_8
-006DD6E0	Library::Ourlib::STREND::FUN_006dd6e0	parameter	5	param_5	/undefined4	Stack[0x14]:4	DEFAULT		0	0	no_evidence		-
-006DD6E0	Library::Ourlib::STREND::FUN_006dd6e0	parameter	6	param_6	/undefined4	Stack[0x18]:4	DEFAULT	/double	1	1	width_mismatch	{/double=1}	006DBD20 -> 006DD6E0 @ 006DBE80; ST3DSMAPContext::sub_006DBD20 parameter param_9
-006DD6E0	Library::Ourlib::STREND::FUN_006dd6e0	parameter	7	param_7	/undefined4	Stack[0x1c]:4	DEFAULT		0	0	no_evidence		-
-006DD6E0	Library::Ourlib::STREND::FUN_006dd6e0	parameter	8	param_8	/undefined4	Stack[0x20]:4	DEFAULT	/double	1	1	width_mismatch	{/double=1}	006DBD20 -> 006DD6E0 @ 006DBE80; ST3DSMAPContext::sub_006DBD20 parameter param_10
+006DD6E0	Library::Ourlib::STREND::FUN_006dd6e0	parameter	2	param_2	/undefined4	Stack[0x8]:4	DEFAULT		0	0	no_evidence		-
+006DD6E0	Library::Ourlib::STREND::FUN_006dd6e0	parameter	3	param_3	/undefined4	Stack[0xc]:4	DEFAULT	/double	1	1	width_mismatch	{/double=1}	006DBD20 -> 006DD6E0 @ 006DBE80; ST3DSMAPContext::sub_006DBD20 parameter param_8
+006DD6E0	Library::Ourlib::STREND::FUN_006dd6e0	parameter	4	param_4	/undefined4	Stack[0x10]:4	DEFAULT		0	0	no_evidence		-
+006DD6E0	Library::Ourlib::STREND::FUN_006dd6e0	parameter	5	param_5	/undefined4	Stack[0x14]:4	DEFAULT	/double	1	1	width_mismatch	{/double=1}	006DBD20 -> 006DD6E0 @ 006DBE80; ST3DSMAPContext::sub_006DBD20 parameter param_9
+006DD6E0	Library::Ourlib::STREND::FUN_006dd6e0	parameter	6	param_6	/undefined4	Stack[0x18]:4	DEFAULT		0	0	no_evidence		-
+006DD6E0	Library::Ourlib::STREND::FUN_006dd6e0	parameter	7	param_7	/undefined4	Stack[0x1c]:4	DEFAULT	/double	1	1	width_mismatch	{/double=1}	006DBD20 -> 006DD6E0 @ 006DBE80; ST3DSMAPContext::sub_006DBD20 parameter param_10
+006DD6E0	Library::Ourlib::STREND::FUN_006dd6e0	parameter	8	param_8	/undefined4	Stack[0x20]:4	DEFAULT		0	0	no_evidence		-
 006DD6E0	Library::Ourlib::STREND::FUN_006dd6e0	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 006DD800	ST3DSMAPContext::sub_006DD800	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
 006DD870	ST3DSMAPContext::sub_006DD870	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
@@ -7823,8 +7823,7 @@ function_address	function	target_kind	target_ordinal	target_name	current_type	st
 0074C613	FUN_0074c613	parameter	2	param_3	/undefined4	Stack[0xc]:4	DEFAULT		0	0	no_evidence		-
 0074C613	FUN_0074c613	parameter	3	param_4	/undefined4	Stack[0x10]:4	DEFAULT		0	0	no_evidence		-
 0074C613	FUN_0074c613	parameter	4	param_5	/undefined4	Stack[0x14]:4	DEFAULT		0	0	no_evidence		-
-0074C613	FUN_0074c613	parameter	5	param_6	/undefined8	Stack[0x18]:8	DEFAULT		0	0	no_evidence		-
-0074C613	FUN_0074c613	return		<RETURN>	/undefined	<UNASSIGNED>	DEFAULT		0	0	no_evidence		-
+0074C613	FUN_0074c613	return		<RETURN>	/undefined1	AL:1	DEFAULT		0	0	no_evidence		-
 0074C658	FUN_0074c658	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-
 0074C658	FUN_0074c658	parameter	3	param_3	/undefined4	Stack[0xc]:4	DEFAULT		0	0	no_evidence		-
 0074C77C	FUN_0074c77c	parameter	1	param_1	/undefined4	Stack[0x4]:4	DEFAULT		0	0	no_evidence		-

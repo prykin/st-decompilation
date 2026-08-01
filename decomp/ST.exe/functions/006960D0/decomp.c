@@ -1,11 +1,14 @@
+#include "../../pseudocode_runtime.h"
+
 
 uint __thiscall FUN_006960d0(void *this,uint param_1,int param_2)
 
 {
-  uint *puVar1;
+  uint uVar1;
   DArrayTy *pDVar2;
-  uint uVar3;
   uint uVar4;
+  int local_EAX_121;
+  int uVar3;
   int *piVar5;
   int iVar6;
   bool bVar7;
@@ -23,27 +26,29 @@ uint __thiscall FUN_006960d0(void *this,uint param_1,int param_2)
       pDVar2 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,4,10);
       *(DArrayTy **)(iVar6 + 0x19) = pDVar2;
     }
-    puVar1 = *(uint **)(iVar6 + 0x19);
-    if (puVar1 != (uint *)0x0) {
-      uVar4 = puVar1[3];
-      uVar3 = 0;
-      if (0 < (int)uVar4) {
-        bVar7 = uVar4 != 0;
-        while (((!bVar7 || (piVar5 = (int *)(puVar1[2] * uVar3 + puVar1[7]), piVar5 == (int *)0x0))
-               || (*piVar5 != param_2))) {
-          uVar3 = uVar3 + 1;
-          bVar7 = uVar3 < uVar4;
-          if ((int)uVar4 <= (int)uVar3) {
-            uVar4 = Library::DKW::TBL::FUN_006ae1c0(puVar1,&param_2);
-            return uVar4;
+    pDVar2 = *(DArrayTy **)(iVar6 + 0x19);
+    if (pDVar2 != (DArrayTy *)0x0) {
+      uVar1 = pDVar2->count;
+      uVar4 = 0;
+      if (0 < (int)uVar1) {
+        bVar7 = uVar1 != 0;
+        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar2, uVar4) (runtime stride) */
+        while (((!bVar7 ||
+                (piVar5 = (int *)(pDVar2->elementSize * uVar4 + (int)pDVar2->data),
+                piVar5 == (int *)0x0)) || (*piVar5 != param_2))) {
+          uVar4 = uVar4 + 1;
+          bVar7 = uVar4 < uVar1;
+          if ((int)uVar1 <= (int)uVar4) {
+            local_EAX_121 = Library::DKW::TBL::DArrayAppend(pDVar2,&param_2);
+            return local_EAX_121;
           }
         }
-        if (-1 < (int)uVar3) {
-          return uVar3;
+        if (-1 < (int)uVar4) {
+          return uVar4;
         }
       }
-      uVar4 = Library::DKW::TBL::FUN_006ae1c0(puVar1,&param_2);
-      return uVar4;
+      uVar3 = Library::DKW::TBL::DArrayAppend(pDVar2,&param_2);
+      return uVar3;
     }
   }
   return 0xffffffff;

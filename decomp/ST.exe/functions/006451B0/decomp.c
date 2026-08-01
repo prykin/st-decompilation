@@ -29,7 +29,7 @@ undefined4 __thiscall STTorpC::SetDangerous(STTorpC *this,uint param_1,uint *par
     if (*param_2 == 0xffffffff) {
       local_10[0] = param_1;
       local_10[1] = 1;
-      uVar2 = Library::DKW::TBL::FUN_006ae1c0(&local_8->field_0241->flags,local_10);
+      uVar2 = Library::DKW::TBL::DArrayAppend(local_8->field_0241,local_10);
       *param_2 = uVar2;
     }
     g_currentExceptionFrame = local_54.previous;

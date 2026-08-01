@@ -38,7 +38,7 @@ uint * STGroupBoatC::Way3DGrpGetDistrPoint
     local_14 = (short)param_6;
     local_12 = (short)param_7;
     local_10 = (short)param_8;
-    Library::DKW::TBL::FUN_006ae1c0(&array->flags,(undefined4 *)&local_14);
+    Library::DKW::TBL::DArrayAppend(array,&local_14);
     goto LAB_004157f0;
   }
   local_58.previous = g_currentExceptionFrame;
@@ -64,9 +64,8 @@ uint * STGroupBoatC::Way3DGrpGetDistrPoint
           local_14 = *(short *)(iVar5 + 0xc + (int)DAT_007f4d04);
           local_12 = *(short *)(iVar5 + 0x10 + (int)DAT_007f4d04);
           local_10 = *(short *)(iVar5 + 0x14 + (int)DAT_007f4d04);
-          Library::DKW::TBL::FUN_006ae140
-                    (&local_8->flags,*(uint *)(iVar5 + 0x18 + (int)DAT_007f4d04),
-                     (undefined4 *)&local_14);
+          Library::DKW::TBL::DArrayPut
+                    (local_8,*(uint *)(iVar5 + 0x18 + (int)DAT_007f4d04),&local_14);
           iVar4 = iVar4 + 1;
           iVar5 = iVar5 + 0x1c;
         } while (iVar4 < DAT_007f4d40);
@@ -78,9 +77,7 @@ uint * STGroupBoatC::Way3DGrpGetDistrPoint
           local_14 = DAT_007f4d04[iVar5 * 0xe + -8];
           local_12 = DAT_007f4d04[iVar5 * 0xe + -6];
           local_10 = DAT_007f4d04[iVar5 * 0xe + -4];
-          Library::DKW::TBL::FUN_006ae140
-                    (&local_8->flags,*(uint *)(DAT_007f4d04 + iVar5 * 0xe + -2),
-                     (undefined4 *)&local_14);
+          Library::DKW::TBL::DArrayPut(local_8,*(uint *)(DAT_007f4d04 + iVar5 * 0xe + -2),&local_14);
           iVar4 = iVar4 + 1;
         } while (iVar4 < DAT_007f4cf8);
         g_currentExceptionFrame = local_58.previous;
@@ -95,7 +92,7 @@ uint * STGroupBoatC::Way3DGrpGetDistrPoint
       local_12 = (short)param_7;
       if (param_1->field_0027 != 0) {
         do {
-          Library::DKW::TBL::FUN_006ae1c0(&local_8->flags,(undefined4 *)&local_14);
+          Library::DKW::TBL::DArrayAppend(local_8,&local_14);
           iVar4 = iVar4 + 1;
         } while (iVar4 < (int)(uint)param_1->field_0027);
       }

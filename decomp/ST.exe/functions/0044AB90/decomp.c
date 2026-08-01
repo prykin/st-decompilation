@@ -45,7 +45,7 @@ int STAllPlayersC::CheckTmps
   local_10 = (DArrayTy *)0x0;
   local_8 = (DArrayTy *)0x0;
   if (tempGroup == 0) {
-    /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
+    /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
     iVar6 = playerId * 0xa62 + 0x7f4f83;
   }
   else {
@@ -57,7 +57,7 @@ int STAllPlayersC::CheckTmps
       }
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
+    /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
     iVar6 = playerId * 0xa62 + 0x7f4fd3;
   }
   if (0x19a < objectType) {

@@ -59,7 +59,7 @@ STAllPlayersC::_AssignMDPairs
   DArrayTy *local_bc;
   dword local_b8;
   uint local_b4;
-  undefined4 local_b0;
+  undefined1 local_b0 [6];
   short local_aa;
   short local_a2;
   int local_94;
@@ -143,7 +143,7 @@ LAB_00442f1f:
     piVar6 = local_d0;
     do {
       if (param_2 == *piVar6) {
-        /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
+        /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
         local_84 = *(DArrayTy **)(iVar5 * 4 + 0x7f4e2f + param_1 * 0xa62);
         break;
       }
@@ -228,7 +228,7 @@ LAB_00442f1f:
             } while ((int)uVar13 < (int)local_2c);
           }
           if (bVar2) {
-            Library::DKW::TBL::FUN_006ae1c0(&local_34->flags,(undefined4 *)&local_70);
+            Library::DKW::TBL::DArrayAppend(local_34,&local_70);
           }
         }
       }
@@ -248,7 +248,7 @@ LAB_00442f1f:
   }
   local_20 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,local_3c,6,1);
   local_30 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,local_2c,6,1);
-  pDVar8 = g_playerRuntime[param_1].groups;
+  pDVar8 = (DArrayTy *)g_playerRuntime[param_1].field5_0x5;
   local_bc = pDVar8;
   if (pDVar8 == (DArrayTy *)0x0) {
     iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x252c,0,0,"%s",
@@ -390,7 +390,7 @@ LAB_004435f1:
         }
         local_10 = sVar4;
         local_e = 0;
-        Library::DKW::TBL::FUN_006ae1c0(&pDVar8->flags,(undefined4 *)&local_10);
+        Library::DKW::TBL::DArrayAppend(pDVar8,&local_10);
       }
 LAB_00443676:
       local_24 = local_24 + 1;
@@ -419,7 +419,7 @@ LAB_00443676:
         }
         local_10 = sVar4;
         local_e = 0;
-        Library::DKW::TBL::FUN_006ae1c0(&pDVar8->flags,(undefined4 *)&local_10);
+        Library::DKW::TBL::DArrayAppend(pDVar8,&local_10);
       }
 LAB_004436f7:
       local_24 = local_24 + 1;
@@ -476,7 +476,7 @@ LAB_004436f7:
                   (-0x5001fff8,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                    0x25ae);
       }
-      Library::DKW::TBL::FUN_006ae140(&local_34->flags,uVar14,(undefined4 *)&local_70);
+      Library::DKW::TBL::DArrayPut(local_34,uVar14,&local_70);
       uVar14 = uVar14 + 1;
     } while ((int)uVar14 < (int)local_28);
   }
@@ -535,12 +535,12 @@ LAB_004436f7:
       DArrayGetElement(pDVar19,local_b4,&local_70);
       local_54 = local_54 + local_5c;
       local_50 = local_50 + local_58;
-      Library::DKW::TBL::FUN_006ae140(&pDVar19->flags,uVar14,(undefined4 *)&local_70);
-      Library::DKW::TBL::FUN_006ae1c0(&local_20->flags,(undefined4 *)&local_70);
+      Library::DKW::TBL::DArrayPut(pDVar19,uVar14,&local_70);
+      Library::DKW::TBL::DArrayAppend(local_20,&local_70);
       uVar14 = 0;
       if (0 < (int)dVar12) {
         do {
-          DArrayGetElement(pDVar19,uVar14,&local_b0);
+          DArrayGetElement(pDVar19,uVar14,local_b0);
           if (local_aa == local_6a) {
             local_94 = local_54;
           }
@@ -548,7 +548,7 @@ LAB_004436f7:
             local_90 = local_50;
           }
           if (local_a2 == local_62 || local_aa == local_6a) {
-            Library::DKW::TBL::FUN_006ae140(&pDVar19->flags,uVar14,&local_b0);
+            Library::DKW::TBL::DArrayPut(pDVar19,uVar14,local_b0);
           }
           uVar14 = uVar14 + 1;
         } while ((int)uVar14 < (int)dVar12);
@@ -564,7 +564,7 @@ LAB_004436f7:
   if (0 < (int)uVar14) {
     do {
       DArrayGetElement(param_5,uVar13,&local_8);
-      Library::DKW::TBL::FUN_006ae140(&pDVar8->flags,uVar13,&local_8);
+      Library::DKW::TBL::DArrayPut(pDVar8,uVar13,&local_8);
       uVar13 = uVar13 + 1;
     } while ((int)uVar13 < (int)uVar14);
   }
@@ -599,9 +599,9 @@ LAB_004436f7:
       local_7a = local_5c;
       local_7e = local_62;
       local_76 = local_58;
-      Library::DKW::TBL::FUN_006ae1c0(&local_4c->flags,(undefined4 *)&local_80);
+      Library::DKW::TBL::DArrayAppend(local_4c,&local_80);
       local_8 = 0xffff;
-      Library::DKW::TBL::FUN_006ae140(&pDVar8->flags,uVar14,&local_8);
+      Library::DKW::TBL::DArrayPut(pDVar8,uVar14,&local_8);
       local_24 = local_24 + 1;
     } while ((int)local_24 < (int)local_30);
   }
@@ -615,7 +615,7 @@ LAB_0044343c:
     DArrayGetElement(local_20,uVar13,&local_10);
     if (local_10 == (short)local_8) {
       local_e = local_e + iVar5;
-      Library::DKW::TBL::FUN_006ae140(&local_20->flags,uVar13,(undefined4 *)&local_10);
+      Library::DKW::TBL::DArrayPut(local_20,uVar13,&local_10);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       uVar11 = extraout_var_01;
       break;
@@ -626,7 +626,7 @@ LAB_00443473:
     local_10 = (short)local_8;
 LAB_0044349d:
     local_e = iVar5;
-    Library::DKW::TBL::FUN_006ae140(&local_20->flags,uVar13,(undefined4 *)&local_10);
+    Library::DKW::TBL::DArrayPut(local_20,uVar13,&local_10);
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     uVar11 = extraout_var_02;
   }
@@ -681,7 +681,7 @@ LAB_0044355f:
     sVar4 = (short)local_8;
     if (local_10 == sVar4) {
       local_e = local_e + local_13a;
-      Library::DKW::TBL::FUN_006ae140(&pDVar8->flags,uVar13,(undefined4 *)&local_10);
+      Library::DKW::TBL::DArrayPut(pDVar8,uVar13,&local_10);
       sVar4 = (short)local_8;
       break;
     }
@@ -691,7 +691,7 @@ LAB_00443598:
 LAB_004435c8:
     local_10 = sVar4;
     local_e = local_13a;
-    Library::DKW::TBL::FUN_006ae140(&local_30->flags,uVar13,(undefined4 *)&local_10);
+    Library::DKW::TBL::DArrayPut(local_30,uVar13,&local_10);
   }
   goto cf_common_join_004435CD;
 }

@@ -12,7 +12,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -35,12 +34,12 @@ import ghidra.program.model.listing.FunctionTag;
 import ghidra.program.model.listing.Instruction;
 import ghidra.program.model.listing.InstructionIterator;
 import ghidra.program.model.listing.Parameter;
-import ghidra.program.model.symbol.Reference;
 import ghidra.program.model.symbol.SourceType;
 
 public class STTypeBootstrapAnalyzer extends GhidraScript {
     private static final String ROOT = "/SubmarineTitans/Recovered";
     private static final String RECORDS = ROOT + "/GlobalRecords";
+    private static final String LEGACY_CURATED_TAG = "RECOVERED_CURATED_PROPOSAL";
     private static final Pattern OFFSET = Pattern.compile(
         "(?i)\\[[^]]+\\+\\s*(?:0x)?([0-9a-f]+)\\]");
     @Override
@@ -64,22 +63,37 @@ public class STTypeBootstrapAnalyzer extends GhidraScript {
         rows.add(typeRow("ensure_message", ROOT + "/STMessage", "",
             messages.strong(5, 3), messages.domains(), messages.detail()));
 
-        FamilyEvidence controls = namedFamilyEvidence(
-            Set.of("SetCtrlCmd", "CmdToPlsObj"), Set.of("RET", "CALL"));
-        rows.add(typeRow("ensure_control_command", ROOT + "/STControlCommand", "",
-            strongControl(controls), controls.domains(), controls.detail()));
+        DataType legacyControl = currentProgram.getDataTypeManager().getDataType(
+            ROOT + "/STControlCommand");
+        if (legacyControl != null && legacyControl.getDescription() != null &&
+                legacyControl.getDescription().contains("[STTypeBootstrapApplier]")) {
+            rows.add(typeRow("mark_view_only", legacyControl.getPathName(), "", true,
+                "legacy_script_provenance|no_layout_consumer",
+                "obsolete manually named command layout; later access and discriminator " +
+                    "passes recover only fields and payload views they can observe"));
+        }
 
-        FamilyEvidence temporary = namedFamilyEvidence(Set.of(
-            "AddObjToTmp", "AddObjToTmp2", "DelObjFromTmps", "ResetActivityFromTmp",
-            "SaveTmp", "RestoreTmp"), Set.of("CALL", "MOV"));
-        rows.add(typeRow("ensure_player_temp", RECORDS + "/STPlayerTempSlot", "",
-            strongTemporarySlot(temporary), temporary.domains(), temporary.detail()));
+        DataType legacyTemporary = currentProgram.getDataTypeManager().getDataType(
+            RECORDS + "/STPlayerTempSlot");
+        if (legacyTemporary != null && legacyTemporary.getDescription() != null &&
+                legacyTemporary.getDescription().contains("[STTypeBootstrapApplier]")) {
+            rows.add(typeRow("mark_view_only", legacyTemporary.getPathName(), "", true,
+                "legacy_script_provenance|no_independent_consumer",
+                "obsolete manually shaped temporary-player projection; raw fields are now " +
+                    "recovered only from observed accesses"));
+        }
 
-        int grids = spatialDescriptorCandidates();
-        rows.add(typeRow("ensure_spatial_descriptors", RECORDS + "/STSpatialGrid16", "",
-            grids >= 2, "global_writes|repeated_descriptor_geometry",
-            "descriptor_candidates=" + grids +
-                "; required layout is four adjacent 16-bit bounds followed by a pointer"));
+        for (String name : List.of("STWorldCell", "STWorldGrid", "STSpatialGrid16")) {
+            DataType legacySpatial = currentProgram.getDataTypeManager().getDataType(
+                RECORDS + "/" + name);
+            String description = legacySpatial == null ? "" :
+                text(legacySpatial.getDescription());
+            if (description.contains("[STTypeBootstrapApplier]"))
+                rows.add(typeRow("mark_view_only", legacySpatial.getPathName(), "", true,
+                    "legacy_script_provenance|self_confirming_layout",
+                    "retire bootstrap spatial shape: descriptor geometry alone does not " +
+                        "prove cell semantics or a concrete pointee type"));
+        }
 
         int systemMethods = methodFamilyCount("SystemClassTy");
         DataType canonicalSystem = currentProgram.getDataTypeManager().getDataType("/SystemClassTy");
@@ -124,7 +138,10 @@ public class STTypeBootstrapAnalyzer extends GhidraScript {
                 "legacy_script_provenance|semantic_anchor_risk",
                 "legacy projection is retained only as a migratable view"));
         }
+        FamilyEvidence controls = namedFamilyEvidence(
+            Set.of("SetCtrlCmd", "CmdToPlsObj"), Set.of("RET", "CALL"));
         addSignatureProvenance(rows, messages, controls, darray);
+        addCuratedIdentityRetirement(rows);
 
         rows.sort(Comparator.comparing((Row row) -> row.action)
             .thenComparing(row -> row.target));
@@ -245,45 +262,6 @@ public class STTypeBootstrapAnalyzer extends GhidraScript {
             evidence.offsets.stream().mapToInt(Integer::intValue).max().orElse(0) >= 0x18;
     }
 
-    private boolean strongTemporarySlot(FamilyEvidence evidence) {
-        return evidence.functions >= 4 && evidence.offsets.size() >= 3 &&
-            evidence.offsets.stream().mapToInt(Integer::intValue).max().orElse(0) >= 0xa;
-    }
-
-    private int spatialDescriptorCandidates() {
-        Map<Address, Map<Address, Set<Integer>>> writes = new HashMap<>();
-        FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
-        while (functions.hasNext()) {
-            Function function = functions.next();
-            if (function.isExternal() || function.isThunk()) continue;
-            InstructionIterator instructions = currentProgram.getListing()
-                .getInstructions(function.getBody(), true);
-            while (instructions.hasNext()) {
-                Instruction instruction = instructions.next();
-                String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
-                if (!Set.of("MOV", "MOVZX", "MOVSX").contains(mnemonic)) continue;
-                for (Reference reference : instruction.getReferencesFrom()) {
-                    Address target = reference.getToAddress();
-                    if (target == null || !currentProgram.getMemory().contains(target)) continue;
-                    for (int offset : new int[] { 0, 2, 4, 6, 8 }) {
-                        Address base;
-                        try { base = target.subtract(offset); }
-                        catch (Exception ignored) { continue; }
-                        writes.computeIfAbsent(base, unused -> new HashMap<>())
-                            .computeIfAbsent(function.getEntryPoint(), unused -> new TreeSet<>())
-                            .add(offset);
-                    }
-                }
-            }
-        }
-        int result = 0;
-        for (Map<Address, Set<Integer>> byFunction : writes.values()) {
-            boolean complete = byFunction.values().stream()
-                .anyMatch(offsets -> offsets.containsAll(Set.of(0, 2, 4, 6, 8)));
-            if (complete) result++;
-        }
-        return result;
-    }
 
     private int methodFamilyCount(String owner) {
         int result = 0;
@@ -301,18 +279,12 @@ public class STTypeBootstrapAnalyzer extends GhidraScript {
     }
 
     private boolean semanticBootstrapType(DataType type) {
-        return Set.of("DArrayTy", "STMessage", "STMessageId", "STControlCommand",
-            "STPlayerTempSlot", "STWorldCell", "STWorldGrid", "STSpatialGrid16",
-            "SystemClassTy").contains(type.getName());
+        return text(type.getDescription()).contains("[ST_SEMANTIC_ANCHOR]");
     }
 
     private boolean legacyProjection(String description) {
-        if (description == null) return false;
-        String value = description.toLowerCase(Locale.ROOT);
-        return value.contains("[strecoveredtypesapplier]") ||
-            value.contains("discriminator") || value.contains("payload") ||
-            value.contains("packed command") || value.contains("addressable view") ||
-            value.contains("world/grid coordinates");
+        return description != null &&
+            description.toLowerCase(Locale.ROOT).contains("[strecoveredtypesapplier]");
     }
 
     private boolean hasEquivalentSemanticAnchor(DataType type) {
@@ -355,7 +327,9 @@ public class STTypeBootstrapAnalyzer extends GhidraScript {
         while (functions.hasNext()) {
             Function function = functions.next();
             if (function.getSignatureSource() != SourceType.USER_DEFINED ||
-                    hasImportedTag(function)) continue;
+                    hasImportedTag(function) || hasTag(function, LEGACY_CURATED_TAG)) continue;
+            if (!hasTag(function, "RECOVERED_DEBUG_NAME") &&
+                    !hasLegacyScriptType(function)) continue;
             String reason = "";
             String leaf = function.getName();
             if ("GetMessage".equals(leaf) && messages.strong(5, 3))
@@ -374,6 +348,43 @@ public class STTypeBootstrapAnalyzer extends GhidraScript {
                 function.getPrototypeString(true, true), "ANALYSIS",
                 "independent_abi|named_family", "high", reason));
         }
+    }
+
+    private void addCuratedIdentityRetirement(List<Row> rows) {
+        FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
+        while (functions.hasNext()) {
+            Function function = functions.next();
+            if (!hasTag(function, LEGACY_CURATED_TAG) || hasImportedTag(function)) continue;
+            boolean semanticName = List.of("RECOVERED_DEBUG_NAME", "RECOVERED_SOURCE_NAME",
+                "RECOVERED_MESSAGE_HANDLER", "RECOVERED_CONSTRUCTOR",
+                "RECOVERED_DESTRUCTOR").stream().anyMatch(tag -> hasTag(function, tag));
+            String proposedLeaf = semanticName ? function.getName() :
+                "sub_" + addr(function.getEntryPoint());
+            rows.add(new Row(true, "retire_curated_identity",
+                addr(function.getEntryPoint()), "", functionFingerprint(function),
+                proposedLeaf, "legacy_script_provenance|independent_semantic_tags",
+                "high", semanticName ?
+                    "semantic leaf retained by an independent recovery tag" :
+                    "unconfirmed descriptive leaf replaced by a structural address name"));
+        }
+    }
+
+    private String functionFingerprint(Function function) {
+        StringBuilder result = new StringBuilder(function.getName(true))
+            .append("|name_source=").append(function.getSymbol().getSource())
+            .append("|prototype=").append(function.getPrototypeString(true, true))
+            .append("|signature_source=").append(function.getSignatureSource())
+            .append("|return_source=").append(function.getReturn().getSource());
+        for (Parameter parameter : function.getParameters())
+            result.append("|param_").append(parameter.getOrdinal()).append("_source=")
+                .append(parameter.getSource());
+        return result.toString();
+    }
+
+    private boolean hasTag(Function function, String name) {
+        for (FunctionTag tag : function.getTags())
+            if (name.equals(tag.getName())) return true;
+        return false;
     }
 
     private boolean hasComputedJump(Function function) {
@@ -404,7 +415,9 @@ public class STTypeBootstrapAnalyzer extends GhidraScript {
             if (tag.getName().startsWith("LIBRARY")) return true;
         for (Parameter parameter : function.getParameters())
             if (parameter.getSource() == SourceType.IMPORTED) return true;
-        return function.getSymbol().getSource() == SourceType.IMPORTED;
+        return function.getSymbol().getSource() == SourceType.IMPORTED ||
+            function.getSignatureSource() == SourceType.IMPORTED ||
+            function.getReturn().getSource() == SourceType.IMPORTED;
     }
 
     private Row typeRow(String action, String target, String replacement, boolean apply,
@@ -490,6 +503,7 @@ public class STTypeBootstrapAnalyzer extends GhidraScript {
         return address == null ? "" : address.toString().toUpperCase(Locale.ROOT);
     }
     private static String bit(boolean value) { return value ? "1" : "0"; }
+    private static String text(String value) { return value == null ? "" : value; }
     private static String tsv(String value) {
         return value == null ? "" : value.replace("\\", "\\\\").replace("\t", "\\t")
             .replace("\r", "\\r").replace("\n", "\\n");

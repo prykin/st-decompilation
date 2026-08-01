@@ -93,7 +93,7 @@ int __thiscall STDcResourcC::GetMessage(STDcResourcC *this,STMessage *message)
         return 0;
       }
       local_10 = (byte *)STAllPlayersC::SaveGObjData((STAllPlayersC *)this_00,(int *)&local_8);
-      local_c = (STSprGameObjC_field_0231State *)Library::DKW::LIB::FUN_006aac70(local_8 + 0x46);
+      local_c = Library::DKW::LIB::MemAlloc(local_8 + 0x46);
       if (local_10 == (byte *)0x0) {
         g_currentExceptionFrame = local_68.previous;
         return 0;
@@ -420,11 +420,10 @@ LAB_0057e6f0:
         else {
           bVar5 = true;
         }
-        if (((bVar5) && (pVVar6->field_010C < 4)) &&
-           (pVVar6->field_003C[pVVar6->field_010C] != (void *)0x0)) {
-          uVar10 = (uint)*(byte *)((int)local_18 +
-                                  (int)((int)pVVar6->field_003C[pVVar6->field_010C] +
-                                       (g_centeredOffsets5[iVar9] + local_14) * pVVar6->field_0028));
+        if (((bVar5) && (pVVar6->field_010C < 4)) && (pVVar6->field_003C[pVVar6->field_010C] != 0))
+        {
+          uVar10 = (uint)*(byte *)((g_centeredOffsets5[iVar9] + local_14) * pVVar6->field_0028 +
+                                   pVVar6->field_003C[pVVar6->field_010C] + (int)local_18);
         }
         else {
           uVar10 = 0xffffffff;
@@ -489,11 +488,10 @@ LAB_0057e6f0:
         else {
           bVar5 = true;
         }
-        if (((bVar5) && (pVVar6->field_010C < 4)) &&
-           (pVVar6->field_003C[pVVar6->field_010C] != (void *)0x0)) {
-          uVar10 = (uint)*(byte *)((int)pVVar6->field_003C[pVVar6->field_010C] +
-                                  local_1c +
-                                  (g_centeredOffsets5[iVar9] + local_20) * pVVar6->field_0028);
+        if (((bVar5) && (pVVar6->field_010C < 4)) && (pVVar6->field_003C[pVVar6->field_010C] != 0))
+        {
+          uVar10 = (uint)*(byte *)((g_centeredOffsets5[iVar9] + local_20) * pVVar6->field_0028 +
+                                   pVVar6->field_003C[pVVar6->field_010C] + local_1c);
         }
         else {
           uVar10 = 0xffffffff;

@@ -22,8 +22,8 @@ void __thiscall SettMapMTy::SetListCtrls(SettMapMTy *this)
   int iVar8;
   uint uVar9;
   uint uVar10;
-  SettMapMTy_field_1F84Element *pcVar11;
-  bool bVar12;
+  char *pcVar11;
+  bool bVar13;
   InternalExceptionFrame local_14c;
   InternalExceptionFrame local_108;
   InternalExceptionFrame local_c4;
@@ -82,85 +82,81 @@ void __thiscall SettMapMTy::SetListCtrls(SettMapMTy *this)
         pSVar3 = pSVar5->field_1F84;
         if ((pSVar3 == (SettMapMTy_field_1F84DArray *)0x0) ||
            (uVar9 = pSVar5->field_1F88 + local_10, pSVar3->count <= uVar9)) {
-          pcVar11 = (SettMapMTy_field_1F84Element *)0x0;
+          pcVar11 = (char *)0x0;
         }
         else {
           /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
-          pcVar11 = (SettMapMTy_field_1F84Element *)
-                    (&pSVar3->data->field_0000 + pSVar3->elementSize * uVar9);
+          pcVar11 = &pSVar3->data->field_0000 + pSVar3->elementSize * uVar9;
         }
         SVar1 = pSVar5->field_1E26;
         pSVar5->field_0025 = (&pSVar5->field_0000)[uVar10 + local_18];
         pSVar5->field_0031 = 0;
-        if (((SVar1 != CASE_C) && (SVar1 != CASE_10)) &&
-           (pcVar11 != (SettMapMTy_field_1F84Element *)0x0)) {
+        if (((SVar1 != CASE_C) && (SVar1 != CASE_10)) && (pcVar11 != (char *)0x0)) {
           switch(local_18) {
           case 0:
-            if (pcVar11->handle != (DArrayTy *)0x0) {
-              DArrayDestroy(pcVar11->handle);
+            if (*(DArrayTy **)(pcVar11 + 0x50) != (DArrayTy *)0x0) {
+              DArrayDestroy(*(DArrayTy **)(pcVar11 + 0x50));
             }
-            pcVar11->handle = (DArrayTy *)0x0;
+            *(DArrayTy **)(pcVar11 + 0x50) = (DArrayTy *)0x0;
             switch(pSVar5->field_1E26) {
             case CASE_5:
             case CASE_F:
-              pDVar7 = (DArrayTy *)
-                       CreateStrategList((int)local_c,(uint)(byte)pcVar11->state,0xffffffff);
+              pDVar7 = (DArrayTy *)CreateStrategList((int)local_c,(uint)(byte)pcVar11[2],0xffffffff);
               break;
             default:
-              pDVar7 = (DArrayTy *)
-                       CreateOpponentList(local_c,(uint)(byte)pcVar11->field_0003,DAT_0080995c);
+              pDVar7 = (DArrayTy *)CreateOpponentList(local_c,(uint)(byte)pcVar11[3],DAT_0080995c);
               break;
             case CASE_C:
             case CASE_10:
               pDVar7 = (DArrayTy *)
-                       CreateSaveStrategList((int)local_c,(uint)(byte)pcVar11->state,0xffffffff);
+                       CreateSaveStrategList((int)local_c,(uint)(byte)pcVar11[2],0xffffffff);
             }
-            pcVar11->handle = pDVar7;
-            if (pDVar7->count <= (uint)(byte)pcVar11->field_0005) {
-              pcVar11->field_0005 = (char)pDVar7->count;
+            *(DArrayTy **)(pcVar11 + 0x50) = pDVar7;
+            if (pDVar7->count <= (uint)(byte)pcVar11[5]) {
+              pcVar11[5] = (char)pDVar7->count;
             }
-            if ((pcVar11->handle->count == 0) && (pcVar11->field_0004 == '\x04')) {
-              pcVar11->field_0004 = '\x01';
+            if (((*(DArrayTy **)(pcVar11 + 0x50))->count == 0) && (pcVar11[4] == '\x04')) {
+              pcVar11[4] = '\x01';
             }
-            if (((pcVar11->field_0000 != '\0') && (pSVar5->field_1E26 != CASE_5)) &&
-               ((pSVar5->field_1E26 != CASE_F && (pcVar11->field_0004 == '\x02')))) {
-              bVar12 = pcVar11->data == DAT_0080877f;
+            if (((*pcVar11 != '\0') && (pSVar5->field_1E26 != CASE_5)) &&
+               ((pSVar5->field_1E26 != CASE_F && (pcVar11[4] == '\x02')))) {
+              bVar13 = *(int *)(pcVar11 + 6) == DAT_0080877f;
 LAB_005cd119:
-              if (bVar12) goto cf_common_join_005CD142;
+              if (bVar13) goto cf_common_join_005CD142;
             }
             break;
           case 1:
           case 2:
-            if (((SVar1 != CASE_5) && (SVar1 != CASE_F)) && (pcVar11->field_0000 != '\0')) {
+            if (((SVar1 != CASE_5) && (SVar1 != CASE_F)) && (*pcVar11 != '\0')) {
               if (DAT_0080877e != '\0') {
-                if (pcVar11->field_0004 == '\x02') {
+                if (pcVar11[4] == '\x02') {
 LAB_005cd10f:
-                  bVar12 = pcVar11->data == DAT_0080877f;
+                  bVar13 = *(int *)(pcVar11 + 6) == DAT_0080877f;
                   goto LAB_005cd119;
                 }
                 goto cf_common_join_005CD142;
               }
-              if (pcVar11->field_0004 == '\x02') {
-                iVar6 = pcVar11->data;
+              if (pcVar11[4] == '\x02') {
+                iVar6 = *(int *)(pcVar11 + 6);
                 goto joined_r0x005cd0bb;
               }
             }
             break;
           case 3:
-            if (((DAT_0080877e != '\0') || (cVar2 = pcVar11->field_0004, cVar2 == '\x01')) ||
-               ((cVar2 == '\x02' && (pcVar11->data == DAT_0080877f)))) goto cf_common_join_005CD142;
+            if (((DAT_0080877e != '\0') || (cVar2 = pcVar11[4], cVar2 == '\x01')) ||
+               ((cVar2 == '\x02' && (*(int *)(pcVar11 + 6) == DAT_0080877f))))
+            goto cf_common_join_005CD142;
             if (cVar2 == '\x03') {
-              iVar6 = pcVar11->data;
+              iVar6 = *(int *)(pcVar11 + 6);
               goto joined_r0x005cd0bb;
             }
             break;
           case 5:
             if (((((DAT_0080874d != -1) && (SVar1 != CASE_5)) &&
-                 ((SVar1 != CASE_F &&
-                  ((pcVar11->field_0000 != '\0' && (cVar2 = pcVar11->field_0004, cVar2 != '\0'))))))
-                && (cVar2 != '\x01')) && (pcVar11->state != -1)) {
+                 ((SVar1 != CASE_F && ((*pcVar11 != '\0' && (cVar2 = pcVar11[4], cVar2 != '\0'))))))
+                && (cVar2 != '\x01')) && (pcVar11[2] != -1)) {
               if (DAT_00808a8f == '\0') {
-                if ((cVar2 != '\x02') || (pcVar11->data != DAT_0080877f))
+                if ((cVar2 != '\x02') || (*(int *)(pcVar11 + 6) != DAT_0080877f))
                 goto cf_common_join_005CD142;
               }
               else if (DAT_0080877e == '\0') {
@@ -168,7 +164,7 @@ LAB_005cd10f:
               }
               else {
                 if (cVar2 == '\x02') {
-                  iVar6 = pcVar11->data;
+                  iVar6 = *(int *)(pcVar11 + 6);
                   goto joined_r0x005cd0bb;
                 }
 cf_common_join_005CD142:
@@ -177,8 +173,8 @@ cf_common_join_005CD142:
             }
             break;
           case 7:
-            if (pcVar11->field_0004 == '\x02') {
-              iVar6 = pcVar11->data;
+            if (pcVar11[4] == '\x02') {
+              iVar6 = *(int *)(pcVar11 + 6);
 joined_r0x005cd0bb:
               if (iVar6 == DAT_0080877f) goto cf_common_join_005CD142;
             }

@@ -78,7 +78,7 @@ int __thiscall TraksClassTy::GetMessage(TraksClassTy *this,STMessage *message)
   }
   else if (SVar1 == MESS_SHARED_010F) {
     local_c = 0;
-    local_10 = (byte *)PrepareToSave(this_00,&local_c);
+    local_10 = PrepareToSave(this_00,&local_c);
     STPlaySystemC::SaveObjData(g_playSystem_00802A38,PTR_s_TRACKS_0079aebc,local_10,local_c,0xc);
     if (local_10 != (byte *)0x0) {
       FreeAndNull(&local_10);

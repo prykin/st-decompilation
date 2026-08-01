@@ -20,6 +20,8 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
@@ -47,18 +49,10 @@ import ghidra.program.model.symbol.SymbolIterator;
 import ghidra.program.model.symbol.SymbolTable;
 
 public class STGlobalRecordAnalyzer extends GhidraScript {
-    private static final long PLAYER_BASE = 0x007f4e20L;
-    private static final int PLAYER_STRIDE = 0x0a62;
-    private static final int PLAYER_TOTAL_SIZE = 0x5310;
-    private static final int PLAYER_COUNT = PLAYER_TOTAL_SIZE / PLAYER_STRIDE;
     private static final String RECORD_ID = "player_runtime";
     private static final String RECORD_TYPE =
         "/SubmarineTitans/Recovered/GlobalRecords/STPlayerRuntimeRecord";
     private static final String ARRAY_NAME = "g_playerRuntime";
-    private static final String DARRAY_TYPE = "/SubmarineTitans/Recovered/DArrayTy";
-    private static final String TEMP_SLOT_TYPE =
-        "/SubmarineTitans/Recovered/GlobalRecords/STPlayerTempSlot";
-    private static final String AI_PLAYER_TYPE = "/AiPlrClassTy";
     private static final String MARKER = "[STGlobalRecordApplier]";
     private static final String HASH_MARKER = "; generated_layout_sha256=";
 
@@ -68,6 +62,9 @@ public class STGlobalRecordAnalyzer extends GhidraScript {
     private Address base;
     private Address recordEnd;
     private Address arrayEnd;
+    private int stride;
+    private int totalSize;
+    private int count;
 
     @Override
     protected void run() throws Exception {
@@ -85,9 +82,14 @@ public class STGlobalRecordAnalyzer extends GhidraScript {
         listing = currentProgram.getListing();
         symbols = currentProgram.getSymbolTable();
         dataTypes = currentProgram.getDataTypeManager();
-        base = address(PLAYER_BASE);
-        recordEnd = base.add(PLAYER_STRIDE - 1L);
-        arrayEnd = base.add(PLAYER_TOTAL_SIZE - 1L);
+        Geometry geometry = inferRuntimeGeometry();
+        if (geometry == null)
+            throw new IllegalStateException("Player runtime geometry is not uniquely implied " +
+                "by the player-race utility semantic and repeated range/stride evidence");
+        base = geometry.base; stride = geometry.stride; count = geometry.count;
+        totalSize = Math.multiplyExact(stride, count);
+        recordEnd = base.add(stride - 1L);
+        arrayEnd = base.add(totalSize - 1L);
 
         Scan scan = scanStrideUsers();
         LayoutState layout = layoutState();
@@ -95,28 +97,21 @@ public class STGlobalRecordAnalyzer extends GhidraScript {
         boolean evidenceStrong = scan.strideFunctions.size() >= 5 &&
             scan.fieldSites >= 20 && !scan.totalSizeSites.isEmpty() &&
             !scan.boundarySites.isEmpty() && !scan.baseSites.isEmpty();
-        boolean darrayPresent = dataTypes.getDataType(DARRAY_TYPE) instanceof Structure;
-        DataType tempSlotDataType = dataTypes.getDataType(TEMP_SLOT_TYPE);
-        boolean tempSlotPresent = tempSlotDataType instanceof Structure &&
-            tempSlotDataType.getLength() == 0x10;
-        boolean apply = evidenceStrong && darrayPresent && tempSlotPresent &&
-            range.safe && layout.safe;
+        boolean apply = evidenceStrong && range.safe && layout.safe;
 
-        List<FieldProposal> fields = makeFields(scan, layout, apply);
+        List<FieldProposal> fields = makeFields(scan, layout.structure == null, apply);
         long typedFields = fields.stream().filter(field -> field.apply &&
             !field.type.startsWith("/undefined")).count();
         long namedFields = fields.stream().filter(field -> field.apply &&
             !field.name.isBlank()).count();
         List<String> reasons = new ArrayList<>();
-        reasons.add("stride_0x" + Integer.toHexString(PLAYER_STRIDE).toUpperCase(Locale.ROOT) +
+        reasons.add("stride_0x" + Integer.toHexString(stride).toUpperCase(Locale.ROOT) +
             " in " + scan.strideFunctions.size() + " functions");
-        reasons.add("total_0x" + Integer.toHexString(PLAYER_TOTAL_SIZE).toUpperCase(Locale.ROOT) +
-            " / stride = " + PLAYER_COUNT + " records");
+        reasons.add("total_0x" + Integer.toHexString(totalSize).toUpperCase(Locale.ROOT) +
+            " / stride = " + count + " records");
         reasons.add("exact_end=" + addr(arrayEnd.add(1)));
         reasons.add("first_record_fields=" + fields.size());
         if (!evidenceStrong) reasons.add("insufficient_binary_evidence");
-        if (!darrayPresent) reasons.add("missing_type=" + DARRAY_TYPE);
-        if (!tempSlotPresent) reasons.add("missing_or_invalid_16_byte_type=" + TEMP_SLOT_TYPE);
         if (!range.safe) reasons.add(range.reason);
         if (!layout.safe) reasons.add(layout.reason);
 
@@ -127,7 +122,7 @@ public class STGlobalRecordAnalyzer extends GhidraScript {
         writeFields(directory.resolve("global_record_field_proposals.tsv"), fields);
         writeEvidence(directory.resolve("global_record_evidence.tsv"), scan);
         writeSummary(directory.resolve("global_record_summary.txt"), record, scan,
-            layout, range, evidenceStrong, darrayPresent, tempSlotPresent);
+            layout, range, evidenceStrong);
 
         println("Global-record analysis complete: " + directory.toAbsolutePath().normalize());
         println("Records: 1, apply=" + bit(apply) + ", stride functions=" +
@@ -148,15 +143,15 @@ public class STGlobalRecordAnalyzer extends GhidraScript {
             while (iterator.hasNext()) {
                 Instruction instruction = iterator.next();
                 instructions.add(instruction);
-                if (hasScalar(instruction, PLAYER_STRIDE)) hasStride = true;
+                if (hasScalar(instruction, stride)) hasStride = true;
             }
             if (!hasStride) continue;
             String functionSite = addr(function.getEntryPoint()) + " " + function.getName(true);
             result.strideFunctions.add(functionSite);
             for (Instruction instruction : instructions) {
-                if (hasScalar(instruction, PLAYER_TOTAL_SIZE))
+                if (hasScalar(instruction, totalSize))
                     result.totalSizeSites.add(functionSite + " @ " + addr(instruction.getAddress()));
-                if (hasScalar(instruction, PLAYER_COUNT))
+                if (hasScalar(instruction, count))
                     result.countSites.add(functionSite + " @ " + addr(instruction.getAddress()));
                 String[] operands = splitOperands(instruction.toString().toUpperCase(Locale.ROOT));
                 for (Reference reference : instruction.getReferencesFrom()) {
@@ -174,7 +169,7 @@ public class STGlobalRecordAnalyzer extends GhidraScript {
                     int width = accessWidth(operand);
                     if (width < 1 || width > 8) continue;
                     long offset = target.subtract(base);
-                    if (offset < 0 || offset + width > PLAYER_STRIDE) continue;
+                    if (offset < 0 || offset + width > stride) continue;
                     FieldEvidence field = result.fields.computeIfAbsent(offset,
                         FieldEvidence::new);
                     field.sizes.merge(width, 1, Integer::sum);
@@ -193,24 +188,16 @@ public class STGlobalRecordAnalyzer extends GhidraScript {
         return result;
     }
 
-    private List<FieldProposal> makeFields(Scan scan, LayoutState layout, boolean parentApply) {
+    private List<FieldProposal> makeFields(Scan scan, boolean includeListingBaseline,
+            boolean parentApply) {
         List<FieldCandidate> candidates = new ArrayList<>();
-        if (layout.structure != null) {
-            for (DataTypeComponent component : layout.structure.getDefinedComponents()) {
-                String name = component.getFieldName() == null ? "" : component.getFieldName();
-                String reason = generatedFieldReason(component.getComment());
-                candidates.add(new FieldCandidate(component.getOffset(), component.getLength(),
-                    name, typeSpecification(component.getDataType()), 50, 0, 0,
-                    Set.of("existing script-owned record layout"), reason));
-            }
-        }
-        else {
+        if (includeListingBaseline) {
             DataIterator data = listing.getDefinedData(new AddressSet(base, recordEnd), true);
             while (data.hasNext()) {
                 Data item = data.next();
                 if (item.getMinAddress().compareTo(base) < 0 || item.hasStringValue()) continue;
                 long offset = item.getMinAddress().subtract(base);
-                if (offset < 0 || offset + item.getLength() > PLAYER_STRIDE) continue;
+                if (offset < 0 || offset + item.getLength() > stride) continue;
                 candidates.add(new FieldCandidate(offset, item.getLength(), "",
                     typeSpecification(item.getDataType()),
                     Undefined.isUndefined(item.getDataType()) ? 20 : 40, 0, 0,
@@ -229,36 +216,12 @@ public class STGlobalRecordAnalyzer extends GhidraScript {
                     "stride_relative_memory_access"));
         }
 
-        addCurated(candidates, 0x000, 1, "raceId", "/byte",
-            "byte value selects one of three race tables and is compared with 1..3");
-        if (dataTypes.getDataType(AI_PLAYER_TYPE) instanceof Structure) {
-            addCurated(candidates, 0x001, 4, "aiPlayer", "pointer:" + AI_PLAYER_TYPE,
-                "AiPlrClassTy::GetMessage stores this through FUN_004357b0; " +
-                "CmdToPlsObj and FUN_004357f0 read the same packed field");
-        }
-        addCurated(candidates, 0x005, 4, "groups", "pointer:" + DARRAY_TYPE,
-            "DArray used by RegisterGroup/UnRegisterGroup and group iteration");
-        addCurated(candidates, 0x009, 4, "objects", "pointer:" + DARRAY_TYPE,
-            "DArray used by RegisterObject/GetObjPtr/UnRegisterObject");
-        addCurated(candidates, 0x163, 0x0a0, "tempSlots",
-            "array:2:array:5:" + TEMP_SLOT_TYPE,
-            "two adjacent groups of five packed 16-byte temporary-object slots; " +
-            "field meanings are shared by AddObjToTmp/AddObjToTmp2/DelObjFromTmps/" +
-            "ResetActivityFromTmp/SaveTmp/RestoreTmp");
-        for (long offset = 0x9ce; offset <= 0xa06; offset += 4) {
-            String name = offset == 0x9f6 ? "pgPairs" : "";
-            String reason = offset == 0x9f6 ?
-                "DArray of 12-byte triples used by RegisterPGPair" :
-                "value is created, indexed, appended to, or destroyed by recovered DArray helpers";
-            addCurated(candidates, offset, 4, name, "pointer:" + DARRAY_TYPE, reason);
-        }
-
         candidates.sort(Comparator.comparingInt((FieldCandidate item) -> item.priority).reversed()
             .thenComparingLong(item -> item.offset));
         List<FieldCandidate> selected = new ArrayList<>();
         for (FieldCandidate candidate : candidates) {
             if (candidate.offset < 0 || candidate.size < 1 ||
-                    candidate.offset + candidate.size > PLAYER_STRIDE) continue;
+                    candidate.offset + candidate.size > stride) continue;
             boolean overlaps = selected.stream().anyMatch(existing -> overlaps(candidate, existing));
             if (!overlaps) selected.add(candidate);
         }
@@ -275,20 +238,6 @@ public class STGlobalRecordAnalyzer extends GhidraScript {
                 field.sites, field.reason));
         }
         return result;
-    }
-
-    private String generatedFieldReason(String comment) {
-        if (comment == null || !comment.startsWith(MARKER)) return "preserve_generated_field";
-        int first = comment.indexOf("; ");
-        if (first < 0) return "preserve_generated_field";
-        int second = comment.indexOf("; ", first + 2);
-        return second < 0 ? "preserve_generated_field" : comment.substring(second + 2);
-    }
-
-    private void addCurated(List<FieldCandidate> fields, long offset, int size, String name,
-            String type, String reason) {
-        fields.add(new FieldCandidate(offset, size, name, type, 100, 0, 0,
-            Set.of("curated semantic evidence: " + reason), reason));
     }
 
     private boolean overlaps(FieldCandidate left, FieldCandidate right) {
@@ -358,6 +307,165 @@ public class STGlobalRecordAnalyzer extends GhidraScript {
             Scalar scalar = instruction.getScalar(index);
             if (scalar != null && scalar.getUnsignedValue() == expected) return true;
         }
+        return false;
+    }
+
+    private Geometry inferRuntimeGeometry() throws Exception {
+        Function raceLookup = null;
+        FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
+        while (functions.hasNext()) {
+            Function function = functions.next();
+            if (!hasTag(function, "RECOVERED_UTILITY_PLAYER_RACE_ID")) continue;
+            if (raceLookup != null) return null;
+            raceLookup = function;
+        }
+        if (raceLookup == null) return null;
+        BaseStride inferred = inferBaseStride(raceLookup);
+        if (inferred == null || inferred.stride < 16 || inferred.stride > 0x100000)
+            return null;
+        Integer inferredCount = inferRecordCount(inferred.base, inferred.stride);
+        return inferredCount == null ? null :
+            new Geometry(inferred.base, inferred.stride, inferredCount);
+    }
+
+    private BaseStride inferBaseStride(Function function) {
+        Map<String, Long> coefficients = new HashMap<>();
+        Set<BaseStride> matches = new TreeSet<>(Comparator
+            .comparing((BaseStride value) -> value.base)
+            .thenComparingInt(value -> value.stride));
+        InstructionIterator instructions = listing.getInstructions(function.getBody(), true);
+        while (instructions.hasNext()) {
+            Instruction instruction = instructions.next();
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+            String[] operands = splitOperands(instruction.toString().toUpperCase(Locale.ROOT));
+            if (operands.length >= 2 && "MOV".equals(mnemonic) && "AL".equals(operands[0]) &&
+                    operands[1].contains("BYTE PTR [") && operands[1].contains("*")) {
+                Long coefficient = expressionCoefficient(operands[1], coefficients);
+                Address referenced = uniqueMemoryReference(instruction);
+                if (coefficient != null && coefficient > 0 &&
+                        coefficient <= Integer.MAX_VALUE && referenced != null)
+                    matches.add(new BaseStride(referenced, coefficient.intValue()));
+            }
+            updateCoefficients(instruction, mnemonic, operands, coefficients);
+        }
+        return matches.size() == 1 ? matches.iterator().next() : null;
+    }
+
+    private void updateCoefficients(Instruction instruction, String mnemonic,
+            String[] operands, Map<String, Long> coefficients) {
+        if (operands.length == 0 || !operands[0].matches("(?:EAX|EBX|ECX|EDX|ESI|EDI)"))
+            return;
+        if (!Set.of("MOVSX", "MOVZX", "MOV", "LEA", "ADD", "SUB", "SHL")
+                .contains(mnemonic)) return;
+        String destination = operands[0];
+        Long value = null;
+        if (("MOVSX".equals(mnemonic) || "MOVZX".equals(mnemonic)) &&
+                operands.length >= 2 && operands[1].contains("[EBP + 0X8]")) value = 1L;
+        else if ("MOV".equals(mnemonic) && operands.length >= 2)
+            value = coefficients.get(operands[1]);
+        else if ("LEA".equals(mnemonic) && operands.length >= 2)
+            value = expressionCoefficient(operands[1], coefficients);
+        else if ("ADD".equals(mnemonic) && operands.length >= 2 &&
+                coefficients.containsKey(destination) && coefficients.containsKey(operands[1]))
+            value = coefficients.get(destination) + coefficients.get(operands[1]);
+        else if ("SUB".equals(mnemonic) && operands.length >= 2 &&
+                coefficients.containsKey(destination) && coefficients.containsKey(operands[1]))
+            value = coefficients.get(destination) - coefficients.get(operands[1]);
+        else if ("SHL".equals(mnemonic) && operands.length >= 2 &&
+                coefficients.containsKey(destination) && instruction.getScalar(1) != null) {
+            long shift = instruction.getScalar(1).getUnsignedValue();
+            if (shift < 31) value = coefficients.get(destination) << shift;
+        }
+        if (value == null) coefficients.remove(destination);
+        else coefficients.put(destination, value);
+    }
+
+    private Long expressionCoefficient(String expression, Map<String, Long> coefficients) {
+        Matcher matcher = Pattern.compile(
+            "(EAX|EBX|ECX|EDX|ESI|EDI)(?:\\*(0X[0-9A-F]+|[0-9]+))?")
+            .matcher(expression);
+        long result = 0; boolean found = false;
+        while (matcher.find()) {
+            Long coefficient = coefficients.get(matcher.group(1));
+            if (coefficient == null) return null;
+            long scale = 1;
+            if (matcher.group(2) != null) {
+                String text = matcher.group(2);
+                scale = text.startsWith("0X") ?
+                    Long.parseUnsignedLong(text.substring(2), 16) : Long.parseLong(text);
+            }
+            result += coefficient * scale; found = true;
+        }
+        return found ? result : null;
+    }
+
+    private Address uniqueMemoryReference(Instruction instruction) {
+        Address result = null;
+        for (Reference reference : instruction.getReferencesFrom()) {
+            Address target = reference.getToAddress();
+            if (target == null || !target.isMemoryAddress() ||
+                    !currentProgram.getMemory().contains(target)) continue;
+            if (result != null && !result.equals(target)) return null;
+            result = target;
+        }
+        return result;
+    }
+
+    private Integer inferRecordCount(Address inferredBase, int inferredStride) {
+        Map<Integer, Set<String>> boundarySites = new TreeMap<>();
+        Map<Integer, Set<String>> totalSites = new TreeMap<>();
+        FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
+        while (functions.hasNext()) {
+            Function function = functions.next();
+            if (function.isExternal() || function.isThunk() || isLibrary(function)) continue;
+            String site = addr(function.getEntryPoint());
+            InstructionIterator instructions = listing.getInstructions(function.getBody(), true);
+            while (instructions.hasNext()) {
+                Instruction instruction = instructions.next();
+                for (Reference reference : instruction.getReferencesFrom()) {
+                    Address target = reference.getToAddress();
+                    if (target == null || !target.isMemoryAddress()) continue;
+                    long delta;
+                    try { delta = target.subtract(inferredBase); }
+                    catch (Exception ignored) { continue; }
+                    if (delta <= 0 || delta % inferredStride != 0) continue;
+                    long candidate = delta / inferredStride;
+                    if (candidate >= 2 && candidate <= 64)
+                        boundarySites.computeIfAbsent((int)candidate,
+                            unused -> new TreeSet<>()).add(site);
+                }
+                for (int operand = 0; operand < instruction.getNumOperands(); operand++) {
+                    Scalar scalar = instruction.getScalar(operand);
+                    if (scalar == null) continue;
+                    long value = scalar.getUnsignedValue();
+                    if (value <= 0 || value % inferredStride != 0) continue;
+                    long candidate = value / inferredStride;
+                    if (candidate >= 2 && candidate <= 64)
+                        totalSites.computeIfAbsent((int)candidate,
+                            unused -> new TreeSet<>()).add(site);
+                }
+            }
+        }
+        List<Integer> candidates = boundarySites.keySet().stream()
+            .filter(totalSites::containsKey)
+            .sorted((left, right) -> Integer.compare(
+                boundarySites.get(right).size() + totalSites.get(right).size(),
+                boundarySites.get(left).size() + totalSites.get(left).size()))
+            .toList();
+        if (candidates.isEmpty()) return null;
+        if (candidates.size() > 1) {
+            int first = boundarySites.get(candidates.get(0)).size() +
+                totalSites.get(candidates.get(0)).size();
+            int second = boundarySites.get(candidates.get(1)).size() +
+                totalSites.get(candidates.get(1)).size();
+            if (first == second) return null;
+        }
+        return candidates.get(0);
+    }
+
+    private boolean hasTag(Function function, String name) {
+        for (FunctionTag tag : function.getTags())
+            if (name.equals(tag.getName())) return true;
         return false;
     }
 
@@ -471,10 +579,6 @@ public class STGlobalRecordAnalyzer extends GhidraScript {
         }
     }
 
-    private Address address(long value) {
-        return currentProgram.getAddressFactory().getDefaultAddressSpace().getAddress(value);
-    }
-
     private File outputDirectory() throws Exception {
         String[] args = getScriptArgs();
         if (args.length > 0 && !args[0].isBlank()) return new File(args[0]);
@@ -494,8 +598,8 @@ public class STGlobalRecordAnalyzer extends GhidraScript {
                 "type_path\tarray_name\texpected_range_sha256\tobserved_functions\t" +
                 "observed_field_sites\tfields\ttyped_fields\tnamed_fields\tconfidence\treason\n");
             for (RecordProposal row : rows) out.write(bit(row.apply) + "\t" + RECORD_ID +
-                "\t" + addr(base) + "\t" + PLAYER_STRIDE + "\t" + PLAYER_COUNT + "\t" +
-                PLAYER_TOTAL_SIZE + "\t" + addr(arrayEnd.add(1)) + "\t" + RECORD_TYPE +
+                "\t" + addr(base) + "\t" + stride + "\t" + count + "\t" +
+                totalSize + "\t" + addr(arrayEnd.add(1)) + "\t" + RECORD_TYPE +
                 "\t" + ARRAY_NAME + "\t" + row.rangeHash + "\t" + row.functions + "\t" +
                 row.fieldSites + "\t" + row.fields + "\t" + row.typedFields + "\t" +
                 row.namedFields + "\t" + row.confidence + "\t" + tsv(row.reason) + "\n");
@@ -506,7 +610,7 @@ public class STGlobalRecordAnalyzer extends GhidraScript {
         List<String> lines = new ArrayList<>();
         for (RecordProposal row : rows) lines.add("{\"apply\":" + row.apply +
             ",\"record_id\":" + q(RECORD_ID) + ",\"base_address\":" + q(addr(base)) +
-            ",\"stride\":" + PLAYER_STRIDE + ",\"count\":" + PLAYER_COUNT +
+            ",\"stride\":" + stride + ",\"count\":" + count +
             ",\"type_path\":" + q(RECORD_TYPE) + ",\"array_name\":" + q(ARRAY_NAME) +
             ",\"confidence\":" + q(row.confidence) + ",\"reason\":" + q(row.reason) + "}");
         Files.write(path, lines, StandardCharsets.UTF_8);
@@ -547,24 +651,23 @@ public class STGlobalRecordAnalyzer extends GhidraScript {
     }
 
     private void writeSummary(Path path, RecordProposal record, Scan scan,
-            LayoutState layout, RangeSafety range, boolean evidenceStrong,
-            boolean darrayPresent, boolean tempSlotPresent) throws Exception {
+            LayoutState layout, RangeSafety range, boolean evidenceStrong) throws Exception {
         Files.write(path, List.of("program=" + currentProgram.getName(),
             "record_id=" + RECORD_ID, "base=" + addr(base),
-            "stride=0x" + Integer.toHexString(PLAYER_STRIDE).toUpperCase(Locale.ROOT),
-            "total_size=0x" + Integer.toHexString(PLAYER_TOTAL_SIZE).toUpperCase(Locale.ROOT),
-            "count=" + PLAYER_COUNT, "exclusive_end=" + addr(arrayEnd.add(1)),
+            "stride=0x" + Integer.toHexString(stride).toUpperCase(Locale.ROOT),
+            "total_size=0x" + Integer.toHexString(totalSize).toUpperCase(Locale.ROOT),
+            "count=" + count, "exclusive_end=" + addr(arrayEnd.add(1)),
             "stride_functions=" + scan.strideFunctions.size(),
             "field_access_sites=" + scan.fieldSites,
             "total_size_sites=" + scan.totalSizeSites.size(),
             "boundary_sites=" + scan.boundarySites.size(),
             "fields=" + record.fields, "typed_fields=" + record.typedFields,
             "named_fields=" + record.namedFields, "binary_evidence_strong=" + evidenceStrong,
-            "darray_type_present=" + darrayPresent, "range_safe=" + range.safe,
-            "temp_slot_type_present=" + tempSlotPresent,
+            "range_safe=" + range.safe,
             "range_reason=" + range.reason, "layout_safe=" + layout.safe,
             "layout_reason=" + layout.reason, "auto_apply=" + record.apply,
-            "note=The record is packed: stride and structure length are exactly 0xA62."),
+            "note=The record is packed: stride and structure length are inferred from " +
+                "the guarded player lookup and independently repeated range evidence."),
             StandardCharsets.UTF_8);
     }
 
@@ -590,6 +693,8 @@ public class STGlobalRecordAnalyzer extends GhidraScript {
             countSites = new TreeSet<>();
         int fieldSites;
     }
+    private record Geometry(Address base, int stride, int count) { }
+    private record BaseStride(Address base, int stride) { }
     private static class FieldEvidence {
         final long offset; final Map<Integer, Integer> sizes = new TreeMap<>();
         final Map<String, Integer> types = new TreeMap<>();

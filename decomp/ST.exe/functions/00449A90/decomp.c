@@ -16,7 +16,7 @@ uint FUN_00449a90(char param_1,short param_2)
   dword local_c;
   DArrayTy *local_8;
 
-  array = g_playerRuntime[param_1].pgPairs;
+  array = (DArrayTy *)g_playerRuntime[param_1].field2377_0x9f6;
   if (((array != (DArrayTy *)0x0) && (local_c = array->count, local_c != 0)) &&
      (index = 0, local_8 = array, 0 < (int)local_c)) {
     do {

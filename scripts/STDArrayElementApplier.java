@@ -99,6 +99,11 @@ public class STDArrayElementApplier extends GhidraScript {
                 ignored -> new ArrayList<>()).add(row);
 
         dataTypes = currentProgram.getDataTypeManager();
+        String mode = mode();
+        boolean applyLocals = "all".equals(mode);
+        boolean cleanupLegacyLocals = "types-only-cleanup".equals(mode);
+        if (!applyLocals && !cleanupLegacyLocals && !"types-only".equals(mode))
+            throw new IllegalArgumentException("Unknown DArray apply mode: " + mode);
 
         // Install the element and descriptor layouts first.  Dynamic local
         // hashes are derived from the decompiler syntax tree, and that tree can
@@ -120,26 +125,44 @@ public class STDArrayElementApplier extends GhidraScript {
         }
         currentProgram.flushEvents();
 
-        // Re-decompile only after the type transaction is visible.  The local
-        // transaction therefore commits storage/hash identities belonging to
-        // the same tree which the UI will subsequently reconstruct.
-        List<PreparedLocal> preparedLocals = prepareLocals(locals.rows);
-        int localTransaction =
-            currentProgram.startTransaction("Apply recovered DArray element locals");
-        boolean localCommit = false;
-        try {
-            cleanupStaleElementLocals(preparedLocals);
-            for (PreparedLocal local : preparedLocals) {
-                monitor.checkCancelled();
-                applyLocal(local);
+        if (applyLocals) {
+            // Re-decompile only after the type transaction is visible. The local
+            // transaction therefore commits storage/hash identities belonging to
+            // the same tree which the UI will subsequently reconstruct.
+            List<PreparedLocal> preparedLocals = prepareLocals(locals.rows);
+            int localTransaction = currentProgram.startTransaction(
+                "Apply recovered DArray element locals");
+            boolean localCommit = false;
+            try {
+                cleanupStaleElementLocals(preparedLocals);
+                for (PreparedLocal local : preparedLocals) {
+                    monitor.checkCancelled();
+                    applyLocal(local);
+                }
+                localCommit = true;
             }
-            localCommit = true;
+            finally {
+                currentProgram.endTransaction(localTransaction, localCommit);
+            }
+            currentProgram.flushEvents();
+            verifyAppliedLocals();
         }
-        finally {
-            currentProgram.endTransaction(localTransaction, localCommit);
+        else if (cleanupLegacyLocals) {
+            int cleanupTransaction = currentProgram.startTransaction(
+                "Retire recovered DArray element locals");
+            boolean cleanupCommit = false;
+            try {
+                cleanupStaleElementLocals(List.of());
+                cleanupCommit = true;
+            }
+            finally {
+                currentProgram.endTransaction(cleanupTransaction, cleanupCommit);
+            }
+            currentProgram.flushEvents();
+            report.add(new ReportRow("<legacy-locals>", -1,
+                staleLocalsRemoved > 0 ? "updated" : "unchanged",
+                "retired persistent DArray locals=" + staleLocalsRemoved));
         }
-        currentProgram.flushEvents();
-        verifyAppliedLocals();
 
         Path reportPath = directory.toPath().resolve(
             "darray_element_apply_report.tsv");
@@ -651,7 +674,7 @@ public class STDArrayElementApplier extends GhidraScript {
                 if ((!marked && !obsoleteHash) ||
                         variable.getSource() == SourceType.USER_DEFINED ||
                         variable.getSource() == SourceType.IMPORTED ||
-                        !isGeneratedElementPointer(variable.getDataType()))
+                        (!marked && !isGeneratedElementPointer(variable.getDataType())))
                     continue;
                 boolean retained = false;
                 for (Variable candidate : current) {
@@ -1050,6 +1073,8 @@ public class STDArrayElementApplier extends GhidraScript {
                     row.get("evidence_count") + "; " + unt(row.get("reason")));
                 previousEnd = (long)offset + size;
             }
+            if (existing != null)
+                retainProvenGeneratedFields(existing, desired);
             String hash = layoutHash(desired);
             desired.setDescription(MARKER + " Generated DArray element record" +
                 HASH_MARKER + hash);
@@ -1074,6 +1099,83 @@ public class STDArrayElementApplier extends GhidraScript {
         catch (Exception exception) {
             return new Change(false, false, message(exception));
         }
+    }
+
+    /**
+     * Decompiler output can alternate after applying a field: one pass exposes
+     * the raw access, while the next renders only the installed member. Keep the
+     * union of components which were independently selected on at least one pass.
+     * This is mutation state, not analyzer evidence: it cannot make a weak
+     * container eligible, and manual/hash-diverged structures never reach here.
+     */
+    private void retainProvenGeneratedFields(Structure existing,
+            Structure desired) {
+        for (DataTypeComponent old : existing.getDefinedComponents()) {
+            if (old.getOffset() < 0 ||
+                    old.getOffset() + old.getLength() > desired.getLength())
+                continue;
+            DataTypeComponent exact = exactDefinedComponent(desired,
+                old.getOffset());
+            if (exact != null && exact.getLength() == old.getLength()) {
+                int oldStrength = generatedTypeStrength(old.getDataType());
+                int newStrength = generatedTypeStrength(exact.getDataType());
+                boolean currentNameUpgrade =
+                    semanticFieldName(exact.getFieldName()) &&
+                    !semanticFieldName(old.getFieldName());
+                boolean keepOldType = oldStrength >= newStrength &&
+                    !equivalentType(old.getDataType(), exact.getDataType());
+                boolean keepOldPresentation =
+                    equivalentType(old.getDataType(), exact.getDataType()) &&
+                    !currentNameUpgrade;
+                if (keepOldType || keepOldPresentation)
+                    desired.replaceAtOffset(old.getOffset(), old.getDataType(),
+                        old.getLength(), old.getFieldName(), old.getComment());
+                continue;
+            }
+            if (!overlapsDefinedComponent(desired, old.getOffset(),
+                    old.getLength()))
+                desired.replaceAtOffset(old.getOffset(), old.getDataType(),
+                    old.getLength(), old.getFieldName(), old.getComment());
+        }
+    }
+
+    private DataTypeComponent exactDefinedComponent(Structure structure,
+            int offset) {
+        for (DataTypeComponent component : structure.getDefinedComponents())
+            if (component.getOffset() == offset) return component;
+        return null;
+    }
+
+    private boolean overlapsDefinedComponent(Structure structure, int offset,
+            int length) {
+        int end = offset + length;
+        for (DataTypeComponent component : structure.getDefinedComponents()) {
+            int otherStart = component.getOffset();
+            int otherEnd = otherStart + component.getLength();
+            if (offset < otherEnd && otherStart < end) return true;
+        }
+        return false;
+    }
+
+    private boolean semanticFieldName(String name) {
+        return name != null && !name.isBlank() &&
+            !name.matches("(?:field|value)_(?:0[xX])?[0-9A-Fa-f]+");
+    }
+
+    private int generatedTypeStrength(DataType type) {
+        type = untypedef(type);
+        if (type == null || type instanceof Undefined) return 0;
+        if (type instanceof Pointer pointer) {
+            DataType pointed = untypedef(pointer.getDataType());
+            if (pointed == null || pointed instanceof Undefined ||
+                    Set.of("/void", "/byte", "/char").contains(
+                        pointed.getPathName())) return 1;
+            return 3;
+        }
+        String path = type.getPathName();
+        if (path.matches("/(?:bool|byte|char|u?short|u?int|u?long|float|double|" +
+                "dword|word|qword)")) return 1;
+        return 2;
     }
 
     private Change installDescriptor(String path, Structure element) {
@@ -1277,6 +1379,12 @@ public class STDArrayElementApplier extends GhidraScript {
         catch (Exception exception) {
             throw new IllegalStateException(exception);
         }
+    }
+
+    private String mode() {
+        String[] args = getScriptArgs();
+        return args.length > 1 && !args[1].isBlank() ?
+            args[1].trim().toLowerCase(Locale.ROOT) : "all";
     }
 
     private File inputFile() throws Exception {

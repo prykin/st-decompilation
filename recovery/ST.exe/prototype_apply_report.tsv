@@ -9,7 +9,6 @@ function_address	target	status	detail
 00435930	parameter:1	disabled	apply flags are 0
 004407A0	parameter:1	disabled	apply flags are 0
 004407A0	parameter:2	disabled	apply flags are 0
-00443F30	return:	disabled	apply flags are 0
 0044CD20	parameter:1	disabled	repair row; use STPrototypeRepairAnalyzer/Applier first
 004803D0	parameter:1	disabled	apply flags are 0
 004838E0	parameter:1	disabled	apply flags are 0
@@ -34,8 +33,6 @@ function_address	target	status	detail
 004EA460	parameter:2	disabled	apply flags are 0
 005260B0	parameter:1	disabled	apply flags are 0
 0054EEE0	parameter:1	disabled	apply flags are 0
-00555FE0	return:	disabled	apply flags are 0
-005582A0	return:	disabled	apply flags are 0
 00559110	parameter:4	disabled	apply flags are 0
 0055BB00	parameter:7	disabled	apply flags are 0
 00566E70	parameter:1	disabled	apply flags are 0
@@ -87,9 +84,6 @@ function_address	target	status	detail
 00635DA0	parameter:2	disabled	apply flags are 0
 00639500	parameter:1	disabled	apply flags are 0
 0063C030	parameter:1	disabled	apply flags are 0
-00645420	return:	disabled	apply flags are 0
-00647EF0	return:	disabled	apply flags are 0
-0065D4B0	return:	disabled	apply flags are 0
 0065E9A0	parameter:6	disabled	apply flags are 0
 0065EB70	parameter:7	disabled	apply flags are 0
 00660540	parameter:5	disabled	apply flags are 0
@@ -99,10 +93,8 @@ function_address	target	status	detail
 006777D0	parameter:2	disabled	apply flags are 0
 006778C0	parameter:1	disabled	apply flags are 0
 006778C0	parameter:2	disabled	apply flags are 0
-00678BE0	return:	disabled	apply flags are 0
 0067CF30	parameter:1	disabled	apply flags are 0
 00680550	parameter:0	disabled	apply flags are 0
-0068E050	return:	disabled	apply flags are 0
 0068FD00	parameter:1	disabled	apply flags are 0
 00690E90	parameter:1	disabled	apply flags are 0
 00690E90	parameter:2	disabled	apply flags are 0

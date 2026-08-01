@@ -327,7 +327,7 @@ LAB_00565c6c:
                 local_40 = (short)iVar9 + (short)local_30;
                 local_3e = (short)local_10 + (short)local_44;
                 local_3c = (undefined2)local_8;
-                Library::DKW::TBL::FUN_006ae1c0(&pDVar7->flags,(undefined4 *)&local_40);
+                Library::DKW::TBL::DArrayAppend(pDVar7,&local_40);
                 local_94[local_8] = local_94[local_8] + 1;
                 iVar5 = iVar9 - iVar14;
                 pbVar15 = (byte *)((iVar5 - iVar17) + (int)local_20);
@@ -415,7 +415,7 @@ LAB_00565c6c:
           do {
             iVar11 = DArrayGetElement(local_24,iVar5 + dVar3,&local_40);
             if (-1 < iVar11) {
-              Library::DKW::TBL::FUN_006ae1c0(&local_1c->flags,(undefined4 *)&local_40);
+              Library::DKW::TBL::DArrayAppend(local_1c,&local_40);
             }
             iVar5 = iVar5 + 1;
           } while (iVar5 < (int)dVar16);
@@ -432,7 +432,7 @@ LAB_00565c6c:
           iVar11 = iVar11 + (int)((dVar16 + 1) * 0x10000) / iVar5;
           iVar14 = DArrayGetElement(local_24,iVar11 >> 0x10,&local_40);
           if (-1 < iVar14) {
-            Library::DKW::TBL::FUN_006ae1c0(&local_1c->flags,(undefined4 *)&local_40);
+            Library::DKW::TBL::DArrayAppend(local_1c,&local_40);
           }
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           param_7 = param_7 - 1;

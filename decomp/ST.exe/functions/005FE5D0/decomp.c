@@ -36,7 +36,7 @@ int __thiscall FUN_005fe5d0(void *this,int param_1,undefined2 *param_2,int param
   if (*(int *)(psVar1 + 0x27) != 0) {
     FreeAndNull((void **)(psVar1 + 0x27));
   }
-  pvVar2 = (void *)Library::DKW::LIB::FUN_006aac70(600);
+  pvVar2 = Library::DKW::LIB::MemAlloc(600);
   *(void **)(psVar1 + 0x27) = pvVar2;
   psVar1[0x23] = 0;
   psVar1[0x24] = 0;

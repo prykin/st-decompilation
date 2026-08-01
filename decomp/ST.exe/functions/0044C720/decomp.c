@@ -127,7 +127,7 @@ LAB_0044ca10:
                      (iVar6 = (**(code **)(*piVar3 + 0xf4))(DAT_0080874d), iVar6 != 0)) {
                     local_10 = (undefined1)piVar3[9];
                     local_e = *(undefined2 *)((int)piVar3 + 0x32);
-                    Library::DKW::TBL::FUN_006ae1c0(&pDVar7->flags,(undefined4 *)&local_10);
+                    Library::DKW::TBL::DArrayAppend(pDVar7,&local_10);
                     bVar5 = true;
                   }
                 }
@@ -177,7 +177,7 @@ LAB_0044c94c:
           uVar9 = *(uint *)(iVar6 + 0x20);
           if (((uVar9 == 0x14) || ((999 < uVar9 && (uVar9 < 0x3ea)))) &&
              (*(uint *)(iVar6 + 0x24) == (uint)DAT_0080874d)) {
-            Library::DKW::TBL::FUN_006ae1c0(&pDVar7->flags,(undefined4 *)(iVar6 + 0x32));
+            Library::DKW::TBL::DArrayAppend(pDVar7,(void *)(iVar6 + 0x32));
             bVar5 = true;
           }
           local_18 = local_18 + 1;

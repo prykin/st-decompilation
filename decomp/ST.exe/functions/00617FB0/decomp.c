@@ -12,6 +12,7 @@
 byte * __thiscall JumpManagC::sub_00617FB0(JumpManagC *this,int *param_1)
 
 {
+  uint size;
   DArrayTy *pDVar1;
   int iVar2;
   byte *pbVar3;
@@ -47,13 +48,13 @@ byte * __thiscall JumpManagC::sub_00617FB0(JumpManagC *this,int *param_1)
   else {
     iVar2 = pDVar1->count * pDVar1->elementSize + 0x1c;
   }
-  iVar6 = iVar2 + iVar4 + 0x5e + iVar6;
-  pbVar3 = (byte *)Library::DKW::LIB::FUN_006aac70(iVar6);
+  size = iVar2 + iVar4 + 0x5e + iVar6;
+  pbVar3 = Library::DKW::LIB::MemAlloc(size);
   puVar8 = (undefined4 *)&this->field_0x1c;
   pbVar10 = pbVar3;
   memmove(pbVar10, puVar8, 0x50); /* compiler REP MOVS byte copy */
-  pbVar10 = (byte *)((byte *)pbVar10 + 0x50);
-  puVar8 = (undefined4 *)((byte *)puVar8 + 0x50);
+  pbVar10 = pbVar10 + 0x50;
+  puVar8 = puVar8 + 0x14;
   puVar7 = (uint *)(pbVar3 + 0x52);
   *(undefined2 *)pbVar10 = *(undefined2 *)puVar8;
   pbVar3[0xc] = 2;
@@ -67,7 +68,6 @@ byte * __thiscall JumpManagC::sub_00617FB0(JumpManagC *this,int *param_1)
     puVar9 = (uint *)(pbVar3 + 0x56);
     memmove(puVar9, puVar7, local_8); /* compiler REP MOVS byte copy */
     uVar5 = 0;
-    uVar5 = 0;
     puVar7 = (uint *)((int)(pbVar3 + 0x56) + local_8);
     FreeAndNull(&local_c);
   }
@@ -77,7 +77,6 @@ byte * __thiscall JumpManagC::sub_00617FB0(JumpManagC *this,int *param_1)
     puVar9 = local_c;
     puVar11 = puVar7 + 1;
     memmove(puVar11, puVar9, local_8); /* compiler REP MOVS byte copy */
-    uVar5 = 0;
     uVar5 = 0;
     puVar7 = (uint *)((int)(puVar7 + 1) + local_8);
     FreeAndNull(&local_c);
@@ -96,10 +95,10 @@ byte * __thiscall JumpManagC::sub_00617FB0(JumpManagC *this,int *param_1)
       puVar7 = (uint *)((int)puVar7 + 1);
     }
     FreeAndNull(&local_c);
-    *param_1 = iVar6;
+    *param_1 = size;
     return pbVar3;
   }
-  *param_1 = iVar6;
+  *param_1 = size;
   return pbVar3;
 }
 

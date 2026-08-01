@@ -440,12 +440,12 @@ cf_common_exit_00472CB0:
     bVar12 = (uVar9 - 1 | 0xfffffffe) == 0xffffffff;
   }
   if ((bVar12) && (DAT_007fa134 != 0)) {
-    dVar1 = PTR_007fa130->count;
+    dVar1 = g_array_007FA130->count;
     local_34 = (short)dVar1;
     sStack_32 = (short)(dVar1 >> 0x10);
     if ((dVar1 != 0) && (uVar9 = 0, iVar7 = DAT_007fa134, dVar1 != 0)) {
       while (0 < iVar7) {
-        DArrayGetElement(PTR_007fa130,uVar9,&local_20);
+        DArrayGetElement(g_array_007FA130,uVar9,&local_20);
         if (local_20 != (STTorpC *)0x0) {
           iVar7 = iVar7 + -1;
           STFishC::sub_004162B0((STFishC *)local_20,(short *)((int)&local_10 + 2),&local_c,&local_a);

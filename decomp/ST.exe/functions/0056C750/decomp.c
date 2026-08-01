@@ -33,7 +33,7 @@ void __thiscall STAppC::DoneApp(STAppC *this)
       DArrayDestroy(PTR_00806740);
     }
     PTR_00806740 = (DArrayTy *)0x0;
-    thunk_FUN_005711d0(pSVar3,(int *)&PTR_0081163c);
+    thunk_FUN_005711d0(pSVar3,(int *)&g_parentSystem_0081163C);
     thunk_FUN_005711d0(pSVar3,(int *)&g_startSystem_0081176C);
     CloseGameDBs(pSVar3);
     DestroyBaseSystem();

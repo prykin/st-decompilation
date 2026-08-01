@@ -53,7 +53,7 @@ void FUN_0044e260(uint param_1,uint param_2,uint param_3,int *param_4)
             uVar12 = uVar12 - 1;
           }
           else {
-            Library::DKW::TBL::FUN_006ae140(&local_18->flags,uVar12,&local_14);
+            Library::DKW::TBL::DArrayPut(local_18,uVar12,&local_14);
           }
           uVar12 = uVar12 + 1;
         } while ((int)uVar12 < (int)param_2);
@@ -146,8 +146,8 @@ joined_r0x0044e51a:
                           pDVar5 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
                           piVar4[piVar2[9]] = (int)pDVar5;
                         }
-                        Library::DKW::TBL::FUN_006ae1c0
-                                  ((uint *)piVar4[piVar2[9]],(undefined4 *)((int)piVar2 + 0x32));
+                        Library::DKW::TBL::DArrayAppend
+                                  ((DArrayTy *)piVar4[piVar2[9]],(void *)((int)piVar2 + 0x32));
                         break;
                       }
                       if (iVar10 <= iVar3) goto LAB_0044e508;

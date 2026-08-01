@@ -42,7 +42,7 @@ undefined4 __fastcall FUN_004da9c0(undefined4 param_1)
 
   local_28 = 0;
   local_14 = 0;
-  local_1c = &g_playerRuntime[0].field2180_0xa0e;
+  local_1c = &g_playerRuntime[0].field2383_0xa0e;
   local_18 = param_1;
   do {
     uVar7 = local_14;
@@ -254,7 +254,7 @@ LAB_004dad15:
       local_8 = local_8 + 1;
     } while ((int)local_c < 8);
     local_14 = uVar7 + 1;
-    /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
+    /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
     local_1c = (int *)((int)local_1c + 0xa62);
     if (0x7fab3d < (int)local_1c) {
       return 0;

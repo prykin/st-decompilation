@@ -30,10 +30,10 @@ void CreateAi(void)
   int local_14;
   char *local_10;
   cMf32 *local_c;
-  ushort *local_8;
+  AnonShape_00648C10_30A1BBFD *local_8;
 
   local_c = (cMf32 *)0x0;
-  local_8 = (ushort *)0x0;
+  local_8 = (AnonShape_00648C10_30A1BBFD *)0x0;
   local_10 = (char *)0x0;
   local_64.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_64;
@@ -45,7 +45,7 @@ void CreateAi(void)
     if (iVar4 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    if (local_8 != (ushort *)0x0) {
+    if (local_8 != (AnonShape_00648C10_30A1BBFD *)0x0) {
       FreeAndNull(&local_8);
     }
     RaiseInternalException(iVar3,0,"E:\\__titans\\ai\\ai_creat.cpp",0x10c);
@@ -76,23 +76,23 @@ void CreateAi(void)
       else {
         DAT_0080c52a = *DAT_0080ed12;
         piVar9 = DAT_0080ed12 + 0x101;
-        piVar11 = &g_playerRuntime[DAT_0080874d].field480_0x2eb;
+        piVar11 = (int *)&g_playerRuntime[DAT_0080874d].field_0x2eb;
         memmove(piVar11, piVar9, 0x14); /* compiler REP MOVS byte copy */
         iVar3 = 0;
         piVar9 = DAT_0080ed12 + 0x106;
-        piVar11 = &g_playerRuntime[DAT_0080874d].field494_0x2ff;
+        piVar11 = (int *)&g_playerRuntime[DAT_0080874d].field_0x2ff;
         memmove(piVar11, piVar9, 0x14); /* compiler REP MOVS byte copy */
         iVar3 = 0;
         piVar9 = DAT_0080ed12 + 0x10b;
-        piVar11 = &g_playerRuntime[DAT_0080874d].field522_0x327;
+        piVar11 = (int *)&g_playerRuntime[DAT_0080874d].field_0x327;
         memmove(piVar11, piVar9, 0x26c); /* compiler REP MOVS byte copy */
         iVar3 = 0;
         piVar9 = DAT_0080ed12 + 0x1a6;
-        piVar11 = &g_playerRuntime[DAT_0080874d].field1136_0x593;
+        piVar11 = (int *)&g_playerRuntime[DAT_0080874d].field_0x593;
         memmove(piVar11, piVar9, 0x1a8); /* compiler REP MOVS byte copy */
         iVar3 = 0;
         piVar9 = DAT_0080ed12 + 0x210;
-        piVar11 = &g_playerRuntime[DAT_0080874d].field1554_0x73b;
+        piVar11 = (int *)&g_playerRuntime[DAT_0080874d].field_0x73b;
         memmove(piVar11, piVar9, 0x9b); /* compiler REP MOVS byte copy */
         if (DAT_0080ed12 != (int *)0x0) {
           FreeAndNull(&DAT_0080ed12);
@@ -149,7 +149,9 @@ LAB_00649255:
           local_10 = FUN_006f2c00(text,iVar3,uVar6);
         }
         if ((local_10 != (char *)0x0) &&
-           (local_8 = LoadStrategData((int)pcVar8,local_10,(int *)0x0), local_8 != (ushort *)0x0)) {
+           (local_8 = (AnonShape_00648C10_30A1BBFD *)
+                      LoadStrategData((int)pcVar8,local_10,(int *)0x0),
+           local_8 != (AnonShape_00648C10_30A1BBFD *)0x0)) {
           local_14 = 0;
           if (DAT_00808aaf != 0) {
             pcVar7 = &DAT_00808af6;
@@ -157,7 +159,7 @@ LAB_00649255:
               if ((pcVar7[-2] == pcVar10[0x22]) && (*pcVar7 == '\0')) {
                 uVar5 = 0xffffffff;
                 local_20 = pcVar7 + -0x46;
-                pcVar10 = (char *)((int)local_8 + 0x1b);
+                pcVar10 = &local_8->field_0x1b;
                 do {
                   pcVar12 = pcVar10;
                   if (uVar5 == 0) break;

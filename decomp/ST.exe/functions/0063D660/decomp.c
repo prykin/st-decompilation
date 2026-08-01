@@ -215,7 +215,7 @@ undefined4 __thiscall FUN_0063d660(void *this,char param_1)
         iVar1 = local_8 - 0x3b;
         local_8 = local_8 + 1;
       } while (iVar1 < 300);
-      puVar6 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0x1b);
+      puVar6 = Library::DKW::LIB::MemAlloc(0x1b);
       *(undefined4 **)((int)this + 0x37f) = puVar6;
       if (puVar6 != (undefined4 *)0x0) {
         *puVar6 = 0xffffffff;

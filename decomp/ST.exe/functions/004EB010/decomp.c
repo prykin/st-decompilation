@@ -18,9 +18,9 @@ undefined4 __thiscall STAllPlayersC::sub_004EB010(STAllPlayersC *this,int param_
 
   iVar5 = 0;
   local_8 = 0;
-  /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
+  /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
   iVar6 = param_1 * 0xa62;
-  g_playerRuntime[param_1].field2159_0x9c6 = 0;
+  g_playerRuntime[param_1].field2332_0x9c6 = 0;
   local_10 = 0;
   while( true ) {
     do {
@@ -36,7 +36,7 @@ undefined4 __thiscall STAllPlayersC::sub_004EB010(STAllPlayersC *this,int param_
         iVar4 = iVar5 * 8;
         iVar5 = (&DAT_007c15c4)[iVar5 * 2];
         iVar2 = *(int *)(&DAT_007c15c0 +
-                        (local_10 + (local_8 + g_playerRuntime[param_1].field2159_0x9c6 * 2) * 2) *
+                        (local_10 + (local_8 + g_playerRuntime[param_1].field2332_0x9c6 * 2) * 2) *
                         8);
         uVar3 = this->field_001C * 0x41c64e6d + 0x3039;
         this->field_001C = uVar3;
@@ -52,7 +52,7 @@ undefined4 __thiscall STAllPlayersC::sub_004EB010(STAllPlayersC *this,int param_
     local_10 = 0;
     local_8 = iVar5;
   }
-  g_playerRuntime[param_1].field2158_0x9c2 = g_playSystem_00802A38->field_00E4;
+  g_playerRuntime[param_1].field2331_0x9c2 = g_playSystem_00802A38->field_00E4;
   return 0;
 }
 

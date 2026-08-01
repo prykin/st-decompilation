@@ -24,7 +24,7 @@ int __thiscall STAllPlayersC::FUN_005ec850(STAllPlayersC *this,int *param_1)
   this->field_0316 = 0;
   iVar1 = *param_1;
   local_8 = iVar1;
-  local_24 = (void *)Library::DKW::LIB::FUN_006aac70(0x44);
+  local_24 = Library::DKW::LIB::MemAlloc(0x44);
   iVar2 = 0;
   do {
     *(undefined4 *)(iVar2 + (int)local_24) = DAT_00806774;

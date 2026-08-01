@@ -431,7 +431,6 @@ public class STVirtualMethodAnalyzer extends GhidraScript {
         for (FunctionTag tag : function.getTags()) {
             String name = tag.getName();
             if (name.equals("RECOVERED_SWITCH_ENUM") ||
-                    name.equals("RECOVERED_CURATED_PROPOSAL") ||
                     name.equals("RECOVERED_VIRTUAL_METHOD") ||
                     name.equals("RECOVERED_ABI_CONSISTENCY")) return true;
         }
@@ -520,9 +519,6 @@ public class STVirtualMethodAnalyzer extends GhidraScript {
         }
         if (semanticTypes > 0) quality += 2;
         if (meaningfulParameterNames > 0) quality++;
-        for (FunctionTag tag : function.getTags()) {
-            if ("RECOVERED_CURATED_PROPOSAL".equals(tag.getName())) quality += 4;
-        }
         return new SignatureEvidence(signatureShape(function), quality);
     }
 

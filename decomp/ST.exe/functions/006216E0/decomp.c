@@ -20,8 +20,8 @@ uint __thiscall FUN_006216e0(void *this,undefined4 param_1)
     pDVar1 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0xd,10);
     *(DArrayTy **)((int)this + 0x10a) = pDVar1;
   }
-  if (*(uint **)((int)this + 0x10a) != (uint *)0x0) {
-    uVar2 = Library::DKW::TBL::FUN_006ae1c0(*(uint **)((int)this + 0x10a),&local_14);
+  if (*(DArrayTy **)((int)this + 0x10a) != (DArrayTy *)0x0) {
+    uVar2 = Library::DKW::TBL::DArrayAppend(*(DArrayTy **)((int)this + 0x10a),&local_14);
     return uVar2;
   }
   return 0xffffffff;

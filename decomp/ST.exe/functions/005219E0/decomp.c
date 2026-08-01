@@ -29,7 +29,7 @@ void __thiscall IntercomPanelTy::InitIntercomPanel(IntercomPanelTy *this)
   pIVar2 = local_8;
   if (iVar3 == 0) {
     g_intercomPanel_0080169C = local_8;
-    puVar4 = ccFntTy::operator_new(0x19d,*(int *)&PTR_00802a28->field_0x30);
+    puVar4 = ccFntTy::operator_new(0x19d,(ccFntTy *)g_interSystem_00802A28->field_0030);
     pIVar2->field_0180 = puVar4;
     puVar4[0x16] = 0;
     puVar4[0x17] = 0;

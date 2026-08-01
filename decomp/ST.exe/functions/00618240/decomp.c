@@ -237,9 +237,9 @@ LAB_0061856a:
                 pDVar6 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,7,8,10);
                 *(DArrayTy **)((int)this + 0x62) = pDVar6;
               }
-              uVar5 = Library::DKW::TBL::FUN_006ae1c0(*(uint **)((int)this + 0x62),&local_48);
+              iVar4 = Library::DKW::TBL::DArrayAppend(*(DArrayTy **)((int)this + 0x62),&local_48);
               local_58[0] = 0;
-              if (-1 < (int)uVar5) goto LAB_0061871c;
+              if (-1 < iVar4) goto LAB_0061871c;
             }
             else {
 LAB_0061871c:

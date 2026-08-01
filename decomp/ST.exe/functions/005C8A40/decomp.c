@@ -518,8 +518,7 @@ cf_common_join_005C8ECC:
               pcVar23 = &this_00->field_0x1e33;
               memmove(pcVar23, pcVar15, uVar19); /* compiler REP MOVS byte copy */
               uVar20 = 0;
-              Library::DKW::TBL::FUN_006ae1c0
-                        (&this_00->field_1E2F->flags,(undefined4 *)&this_00->field_0x1e33);
+              Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,&this_00->field_0x1e33);
               pDVar21 = local_c;
             }
             local_8 = (DArrayTy *)((int)&local_8->flags + 1);
@@ -558,8 +557,7 @@ cf_common_join_005C8ECC:
       memmove(pcVar23, pcVar15, uVar19); /* compiler REP MOVS byte copy */
       uVar20 = 0;
       this_00->field_1F37 = 0;
-      Library::DKW::TBL::FUN_006ae1c0
-                (&this_00->field_1E2F->flags,(undefined4 *)&this_00->field_0x1e33);
+      Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,&this_00->field_0x1e33);
       pcVar15 = LoadResourceString(0x234c,g_module_00807618);
       uVar19 = 0xffffffff;
       do {
@@ -576,8 +574,7 @@ cf_common_join_005C8ECC:
       memmove(pcVar23, pcVar15, uVar19); /* compiler REP MOVS byte copy */
       uVar20 = 0;
       this_00->field_1F37 = 1;
-      Library::DKW::TBL::FUN_006ae1c0
-                (&this_00->field_1E2F->flags,(undefined4 *)&this_00->field_0x1e33);
+      Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,&this_00->field_0x1e33);
       pcVar15 = LoadResourceString(0x234f,g_module_00807618);
       uVar19 = 0xffffffff;
       do {
@@ -594,8 +591,7 @@ cf_common_join_005C8ECC:
       memmove(pcVar23, pcVar15, uVar19); /* compiler REP MOVS byte copy */
       uVar20 = 0;
       this_00->field_1F37 = 2;
-      Library::DKW::TBL::FUN_006ae1c0
-                (&this_00->field_1E2F->flags,(undefined4 *)&this_00->field_0x1e33);
+      Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,&this_00->field_0x1e33);
       this_00->field_21A9 = this_00->field_1E2F->count;
       switch(this_00->field_2179) {
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -654,13 +650,13 @@ joined_r0x005c964b:
         this_00->field_1E2F->count = 0;
         this_00->field_1F37 = 100;
         wsprintfA(puVar1,"%d",100);
-        Library::DKW::TBL::FUN_006ae1c0(&this_00->field_1E2F->flags,(undefined4 *)puVar1);
+        Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,puVar1);
         this_00->field_1F37 = 0x96;
         wsprintfA(puVar1,"%d",0x96);
-        Library::DKW::TBL::FUN_006ae1c0(&this_00->field_1E2F->flags,(undefined4 *)puVar1);
+        Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,puVar1);
         this_00->field_1F37 = 200;
         wsprintfA(puVar1,"%d",200);
-        Library::DKW::TBL::FUN_006ae1c0(&this_00->field_1E2F->flags,(undefined4 *)puVar1);
+        Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,puVar1);
         this_00->field_1F37 = 0xffffffff;
         pcVar15 = LoadResourceString(0x1f55,g_module_00807618);
         uVar19 = 0xffffffff;
@@ -677,8 +673,7 @@ joined_r0x005c964b:
         pcVar23 = &this_00->field_0x1e33;
         memmove(pcVar23, pcVar15, uVar19); /* compiler REP MOVS byte copy */
         uVar20 = 0;
-        Library::DKW::TBL::FUN_006ae1c0
-                  (&this_00->field_1E2F->flags,(undefined4 *)&this_00->field_0x1e33);
+        Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,&this_00->field_0x1e33);
         this_00->field_21A9 = this_00->field_1E2F->count;
         if (DAT_00808a97 == 0x96) {
           this_00->field_21A1 = 1;
@@ -714,17 +709,17 @@ joined_r0x005c964b:
         this_00->field_1F37 = 0;
         pcVar15 = LoadResourceString(0x1f57,g_module_00807618);
         wsprintfA(puVar1,"%s %d",pcVar15,uVar26);
-        Library::DKW::TBL::FUN_006ae1c0(&this_00->field_1E2F->flags,(undefined4 *)puVar1);
+        Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,puVar1);
         this_00->field_1F37 = 1;
         uVar26 = 2;
         pcVar15 = LoadResourceString(0x1f57,g_module_00807618);
         wsprintfA(puVar1,"%s %d",pcVar15,uVar26);
-        Library::DKW::TBL::FUN_006ae1c0(&this_00->field_1E2F->flags,(undefined4 *)puVar1);
+        Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,puVar1);
         this_00->field_1F37 = 2;
         uVar26 = 3;
         pcVar15 = LoadResourceString(0x1f57,g_module_00807618);
         wsprintfA(puVar1,"%s %d",pcVar15,uVar26);
-        Library::DKW::TBL::FUN_006ae1c0(&this_00->field_1E2F->flags,(undefined4 *)puVar1);
+        Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,puVar1);
         this_00->field_21A9 = this_00->field_1E2F->count;
         this_00->field_21A1 = (uint)DAT_00808a9b;
         this_00->field_21C5 = 0x2bf;
@@ -760,8 +755,7 @@ joined_r0x005c964b:
         memmove(pcVar23, pcVar15, uVar19); /* compiler REP MOVS byte copy */
         uVar20 = 0;
         this_00->field_1F37 = 0;
-        Library::DKW::TBL::FUN_006ae1c0
-                  (&this_00->field_1E2F->flags,(undefined4 *)&this_00->field_0x1e33);
+        Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,&this_00->field_0x1e33);
         pcVar15 = LoadResourceString(0x234c,g_module_00807618);
         uVar19 = 0xffffffff;
         do {
@@ -778,8 +772,7 @@ joined_r0x005c964b:
         memmove(pcVar23, pcVar15, uVar19); /* compiler REP MOVS byte copy */
         uVar20 = 0;
         this_00->field_1F37 = 1;
-        Library::DKW::TBL::FUN_006ae1c0
-                  (&this_00->field_1E2F->flags,(undefined4 *)&this_00->field_0x1e33);
+        Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,&this_00->field_0x1e33);
         if ((DAT_00807dd1 & 0xffff0000) != 0xd0dd0000) {
           pcVar15 = LoadResourceString(0x234d,g_module_00807618);
           uVar19 = 0xffffffff;
@@ -797,8 +790,7 @@ joined_r0x005c964b:
           memmove(pcVar23, pcVar15, uVar19); /* compiler REP MOVS byte copy */
           uVar20 = 0;
           this_00->field_1F37 = 2;
-          Library::DKW::TBL::FUN_006ae1c0
-                    (&this_00->field_1E2F->flags,(undefined4 *)&this_00->field_0x1e33);
+          Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,&this_00->field_0x1e33);
         }
         this_00->field_21A9 = this_00->field_1E2F->count;
         this_00->field_21A1 = (uint)(byte)this_00->field_1F57;
@@ -879,8 +871,7 @@ joined_r0x005c964b:
           pcVar15 = LoadResourceString(0x2354,g_module_00807618);
           wsprintfA(&this_00->field_0x1e33,"%d %s",iVar12,pcVar15);
           this_00->field_1F37 = iVar12;
-          Library::DKW::TBL::FUN_006ae1c0
-                    (&this_00->field_1E2F->flags,(undefined4 *)&this_00->field_0x1e33);
+          Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,&this_00->field_0x1e33);
           iVar17 = iVar12 + -1;
           iVar12 = iVar12 + 1;
         } while (iVar17 < (int)local_8);
@@ -942,8 +933,7 @@ joined_r0x005c996c:
           memmove(pcVar23, pcVar15, uVar19); /* compiler REP MOVS byte copy */
           uVar20 = 0;
           this_00->field_1F37 = local_8;
-          Library::DKW::TBL::FUN_006ae1c0
-                    (&this_00->field_1E2F->flags,(undefined4 *)&this_00->field_0x1e33);
+          Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,&this_00->field_0x1e33);
           local_8 = (DArrayTy *)((int)&local_8->flags + 1);
         } while (local_8 < local_c);
       }
@@ -987,8 +977,7 @@ joined_r0x005c996c:
     memmove(pcVar23, pcVar15, uVar19); /* compiler REP MOVS byte copy */
     uVar20 = 0;
     this_00->field_1F37 = 0;
-    Library::DKW::TBL::FUN_006ae1c0
-              (&this_00->field_1E2F->flags,(undefined4 *)&this_00->field_0x1e33);
+    Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,&this_00->field_0x1e33);
     pcVar15 = LoadResourceString(0x234c,g_module_00807618);
     uVar19 = 0xffffffff;
     do {
@@ -1005,8 +994,7 @@ joined_r0x005c996c:
     memmove(pcVar23, pcVar15, uVar19); /* compiler REP MOVS byte copy */
     uVar20 = 0;
     this_00->field_1F37 = 1;
-    Library::DKW::TBL::FUN_006ae1c0
-              (&this_00->field_1E2F->flags,(undefined4 *)&this_00->field_0x1e33);
+    Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,&this_00->field_0x1e33);
     pcVar15 = LoadResourceString(0x2356,g_module_00807618);
     uVar19 = 0xffffffff;
     do {
@@ -1023,8 +1011,7 @@ joined_r0x005c996c:
     memmove(pcVar23, pcVar15, uVar19); /* compiler REP MOVS byte copy */
     uVar20 = 0;
     this_00->field_1F37 = 2;
-    Library::DKW::TBL::FUN_006ae1c0
-              (&this_00->field_1E2F->flags,(undefined4 *)&this_00->field_0x1e33);
+    Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,&this_00->field_0x1e33);
     this_00->field_21A9 = this_00->field_1E2F->count;
     this_00->field_21A1 = (uint)(byte)this_00->field_1F5F;
     this_00->field_21C5 = 0x1a;
@@ -1056,8 +1043,7 @@ LAB_005c9c8a:
       memmove(pcVar23, pcVar15, uVar19); /* compiler REP MOVS byte copy */
       uVar20 = 0;
       this_00->field_1F37 = 0;
-      Library::DKW::TBL::FUN_006ae1c0
-                (&this_00->field_1E2F->flags,(undefined4 *)&this_00->field_0x1e33);
+      Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,&this_00->field_0x1e33);
       pcVar15 = LoadResourceString(0x234c,g_module_00807618);
       uVar19 = 0xffffffff;
       do {
@@ -1074,8 +1060,7 @@ LAB_005c9c8a:
       memmove(pcVar23, pcVar15, uVar19); /* compiler REP MOVS byte copy */
       uVar20 = 0;
       this_00->field_1F37 = 1;
-      Library::DKW::TBL::FUN_006ae1c0
-                (&this_00->field_1E2F->flags,(undefined4 *)&this_00->field_0x1e33);
+      Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,&this_00->field_0x1e33);
       pcVar15 = LoadResourceString(0x234f,g_module_00807618);
       uVar19 = 0xffffffff;
       do {
@@ -1092,8 +1077,7 @@ LAB_005c9c8a:
       memmove(pcVar23, pcVar15, uVar19); /* compiler REP MOVS byte copy */
       uVar20 = 0;
       this_00->field_1F37 = 2;
-      Library::DKW::TBL::FUN_006ae1c0
-                (&this_00->field_1E2F->flags,(undefined4 *)&this_00->field_0x1e33);
+      Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,&this_00->field_0x1e33);
       this_00->field_21A9 = this_00->field_1E2F->count;
       this_00->field_21A1 = (uint)(byte)this_00->field_1F5D;
       this_00->field_21C5 = 0x1a;
@@ -1124,8 +1108,7 @@ LAB_005c9c8a:
       memmove(pcVar23, pcVar15, uVar19); /* compiler REP MOVS byte copy */
       uVar20 = 0;
       this_00->field_1F37 = 0;
-      Library::DKW::TBL::FUN_006ae1c0
-                (&this_00->field_1E2F->flags,(undefined4 *)&this_00->field_0x1e33);
+      Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,&this_00->field_0x1e33);
       pcVar15 = LoadResourceString(0x234c,g_module_00807618);
       uVar19 = 0xffffffff;
       do {
@@ -1142,8 +1125,7 @@ LAB_005c9c8a:
       memmove(pcVar23, pcVar15, uVar19); /* compiler REP MOVS byte copy */
       uVar20 = 0;
       this_00->field_1F37 = 1;
-      Library::DKW::TBL::FUN_006ae1c0
-                (&this_00->field_1E2F->flags,(undefined4 *)&this_00->field_0x1e33);
+      Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,&this_00->field_0x1e33);
       pcVar15 = LoadResourceString(0x234f,g_module_00807618);
       uVar19 = 0xffffffff;
       do {
@@ -1160,8 +1142,7 @@ LAB_005c9c8a:
       memmove(pcVar23, pcVar15, uVar19); /* compiler REP MOVS byte copy */
       uVar20 = 0;
       this_00->field_1F37 = 2;
-      Library::DKW::TBL::FUN_006ae1c0
-                (&this_00->field_1E2F->flags,(undefined4 *)&this_00->field_0x1e33);
+      Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,&this_00->field_0x1e33);
       this_00->field_21A9 = this_00->field_1E2F->count;
       this_00->field_21A1 = (uint)(byte)this_00->field_1F5E;
       this_00->field_21C5 = 0x1a;

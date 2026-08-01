@@ -32,7 +32,7 @@ VisibleClassTy::sub_00558DC0
   int iVar6;
   VisibleClassTy_sub_00558C00_param_1Enum VVar7;
   int iVar8;
-  void **ppvVar9;
+  uint *puVar9;
   uint uVar10;
   int iVar11;
   byte *local_c;
@@ -78,17 +78,17 @@ VisibleClassTy::sub_00558DC0
       if ((-1 < (int)param_3) && ((int)param_3 < 5)) {
         if ((param_7 & 0x2008) != 0) {
           VVar7 = CASE_0;
-          ppvVar9 = this->field_003C;
+          puVar9 = this->field_003C;
           do {
-            if (*ppvVar9 != (void *)0x0) {
+            if (*puVar9 != 0) {
               sub_00558C00(this,VVar7,param_1,param_2,(int *)&param_6,(int *)&param_4);
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
               param_4 = (int *)((int)param_4 + g_centeredOffsets5[(int)param_3]);
-              thunk_FUN_00553b00((int)param_6,(int)param_4,*ppvVar9,this->field_0028,
+              thunk_FUN_00553b00((int)param_6,(int)param_4,(byte *)*puVar9,this->field_0028,
                                  this->field_002C,(undefined *)param_5);
             }
             VVar7 = VVar7 + CASE_1;
-            ppvVar9 = ppvVar9 + 1;
+            puVar9 = puVar9 + 1;
             uVar10 = param_5;
           } while ((int)VVar7 < 4);
         }

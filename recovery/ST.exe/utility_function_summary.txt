@@ -1,12 +1,13 @@
 ST utility-function semantics
 
-Rules: 13
-Verified: 13
+Rules: 14
+Verified: 14
 
-006AB060 FreeAndNull: apply - body pattern verified
 006AE110 DArrayDestroy: apply - body pattern verified
 006AE290 DArrayCreate: apply - body pattern verified
 006B54F0 SArrayCreate: apply - body pattern verified
+006AE140 DArrayPut: apply - body pattern verified
+006AE1C0 DArrayAppend: apply - body pattern verified
 006B0140 LoadResourceString: apply - body pattern verified
 006ACC70 DArrayGetElement: apply - body pattern verified
 004406C0 GetPlayerRaceId: apply - body pattern verified

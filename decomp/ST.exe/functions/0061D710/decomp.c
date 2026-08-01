@@ -12,6 +12,7 @@
 byte * __thiscall STLightC::sub_0061D710(STLightC *this,int *param_1)
 
 {
+  uint size;
   int iVar1;
   byte *pbVar2;
   byte *pbVar3;
@@ -47,8 +48,8 @@ byte * __thiscall STLightC::sub_0061D710(STLightC *this,int *param_1)
     }
     iVar11 = iVar11 + 0x94 + iVar4;
   }
-  iVar4 = iVar11 + 0x20 + this->field_00A3->count * this->field_00A3->elementSize;
-  pbVar2 = (byte *)Library::DKW::LIB::FUN_006aac70(iVar4);
+  size = iVar11 + 0x20 + this->field_00A3->count * this->field_00A3->elementSize;
+  pbVar2 = Library::DKW::LIB::MemAlloc(size);
   if (this == (STLightC *)0x0) {
     puVar9 = (byte *)0x0;
   }
@@ -57,7 +58,7 @@ byte * __thiscall STLightC::sub_0061D710(STLightC *this,int *param_1)
   }
   pbVar12 = pbVar2;
   memmove(pbVar12, puVar9, 0x90); /* compiler REP MOVS byte copy */
-  iVar8 = 0;
+  iVar4 = 0;
   uVar6 = this->field_0093;
   pbVar12 = this->field_009B;
   pbVar10 = pbVar2 + 0x90;
@@ -67,7 +68,7 @@ byte * __thiscall STLightC::sub_0061D710(STLightC *this,int *param_1)
     pbVar10 = pbVar10 + 4;
   }
   pbVar3 = pbVar2 + 0x90 + uVar6 * 4;
-  for (iVar8 = 0; iVar8 != 0; iVar8 = iVar8 + -1) {
+  for (iVar4 = 0; iVar4 != 0; iVar4 = iVar4 + -1) {
     *pbVar10 = *pbVar12;
     pbVar12 = pbVar12 + 1;
     pbVar10 = pbVar10 + 1;
@@ -75,20 +76,20 @@ byte * __thiscall STLightC::sub_0061D710(STLightC *this,int *param_1)
   local_c = (byte *)0x0;
   if (0 < this->field_0093) {
     do {
-      iVar8 = *(int *)((int)this->field_009B + (int)local_c * 4);
+      iVar4 = *(int *)((int)this->field_009B + (int)local_c * 4);
       pbVar12 = *(byte **)((int)this->field_009F + (int)local_c * 4);
       pbVar10 = pbVar3;
-      for (uVar6 = iVar8 * 5 & 0x3fffffff; uVar6 != 0; uVar6 = uVar6 - 1) {
+      for (uVar6 = iVar4 * 5 & 0x3fffffff; uVar6 != 0; uVar6 = uVar6 - 1) {
         *(undefined4 *)pbVar10 = *(undefined4 *)pbVar12;
         pbVar12 = pbVar12 + 4;
         pbVar10 = pbVar10 + 4;
       }
-      for (iVar11 = 0; iVar11 != 0; iVar11 = iVar11 + -1) {
+      for (iVar8 = 0; iVar8 != 0; iVar8 = iVar8 + -1) {
         *pbVar10 = *pbVar12;
         pbVar12 = pbVar12 + 1;
         pbVar10 = pbVar10 + 1;
       }
-      pbVar3 = pbVar3 + iVar8 * 0x14;
+      pbVar3 = pbVar3 + iVar4 * 0x14;
       local_c = (byte *)((int)local_c + 1);
     } while ((int)local_c < this->field_0093);
   }
@@ -98,12 +99,12 @@ byte * __thiscall STLightC::sub_0061D710(STLightC *this,int *param_1)
   local_c = pbVar3 + 4 + local_8;
   pbVar12 = this->field_0057;
   pbVar10 = pbVar3 + 4;
-  for (iVar8 = (uVar6 & 0xfffffff) << 2; iVar8 != 0; iVar8 = iVar8 + -1) {
+  for (iVar4 = (uVar6 & 0xfffffff) << 2; iVar4 != 0; iVar4 = iVar4 + -1) {
     *(undefined4 *)pbVar10 = *(undefined4 *)pbVar12;
     pbVar12 = pbVar12 + 4;
     pbVar10 = pbVar10 + 4;
   }
-  for (iVar8 = 0; iVar8 != 0; iVar8 = iVar8 + -1) {
+  for (iVar4 = 0; iVar4 != 0; iVar4 = iVar4 + -1) {
     *pbVar10 = *pbVar12;
     pbVar12 = pbVar12 + 1;
     pbVar10 = pbVar10 + 1;
@@ -122,7 +123,7 @@ byte * __thiscall STLightC::sub_0061D710(STLightC *this,int *param_1)
     pbVar12 = pbVar12 + 1;
   }
   FreeAndNull(&local_14);
-  *param_1 = iVar4;
+  *param_1 = size;
   return pbVar2;
 }
 

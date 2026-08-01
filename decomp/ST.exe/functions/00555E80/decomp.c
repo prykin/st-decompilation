@@ -14,9 +14,9 @@ void __thiscall TraksClassTy::TraksExec(TraksClassTy *this)
   TraksClassTy *this_00;
   int iVar4;
   TraksClassTy_field_0024Element *element_0024;
-  int iVar5;
-  RecoveredRecord_TraksClassTy_00555910 *pRVar6;
-  uint uVar7;
+  int iVar6;
+  RecoveredRecord_TraksClassTy_00555910 *pRVar7;
+  uint uVar8;
   InternalExceptionFrame local_4c;
   TraksClassTy *local_8;
 
@@ -28,24 +28,24 @@ void __thiscall TraksClassTy::TraksExec(TraksClassTy *this)
   if (iVar4 == 0) {
     dVar1 = local_8->field_0024->count;
     if (dVar1 == 0) {
-      pRVar6 = (RecoveredRecord_TraksClassTy_00555910 *)0x0;
+      pRVar7 = (RecoveredRecord_TraksClassTy_00555910 *)0x0;
     }
     else {
-      pRVar6 = (RecoveredRecord_TraksClassTy_00555910 *)local_8->field_0024->data;
+      pRVar7 = (RecoveredRecord_TraksClassTy_00555910 *)local_8->field_0024->data;
     }
-    uVar7 = 0;
+    uVar8 = 0;
     if (0 < (int)dVar1) {
       do {
-        if (-1 < (int)pRVar6->field_0032) {
-          if (pRVar6->field_0038 == 0) {
-            DrawTrakSprite(this_00,pRVar6);
+        if (-1 < (int)pRVar7->field_0032) {
+          if (pRVar7->field_0038 == 0) {
+            DrawTrakSprite(this_00,pRVar7);
           }
           else {
-            Library::Ourlib::ST3DSMAP::SprClose(g_sT3DSMAPContext_00807598,pRVar6->field_0032);
-            pRVar6->field_0032 = 0xffffffff;
+            Library::Ourlib::ST3DSMAP::SprClose(g_sT3DSMAPContext_00807598,pRVar7->field_0032);
+            pRVar7->field_0032 = 0xffffffff;
             pTVar2 = this_00->field_0024;
-            if (uVar7 < pTVar2->count) {
-              element_0024 = DArrayAt<TraksClassTy_field_0024Element>(pTVar2, uVar7);
+            if (uVar8 < pTVar2->count) {
+              element_0024 = DArrayAt<TraksClassTy_field_0024Element>(pTVar2, uVar8);
             }
             else {
               element_0024 = (TraksClassTy_field_0024Element *)0x0;
@@ -54,21 +54,21 @@ void __thiscall TraksClassTy::TraksExec(TraksClassTy *this)
             iVar4 = this_00->field_0828;
             if (iVar4 < 0x3ff) {
               this_00->field_0828 = iVar4 + 1;
-              *(short *)(&this_00->field_0x2a + iVar4 * 2) = (short)uVar7;
+              *(short *)(&this_00->field_0x2a + iVar4 * 2) = (short)uVar8;
             }
           }
         }
-        pRVar6 = pRVar6 + 1;
-        uVar7 = uVar7 + 1;
-      } while ((int)uVar7 < (int)this_00->field_0024->count);
+        pRVar7 = pRVar7 + 1;
+        uVar8 = uVar8 + 1;
+      } while ((int)uVar8 < (int)this_00->field_0024->count);
     }
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar5 = ReportDebugMessage("E:\\__titans\\grig\\traks.cpp",200,0,iVar4,"%s",
+  iVar6 = ReportDebugMessage("E:\\__titans\\grig\\traks.cpp",200,0,iVar4,"%s",
                              "TraksClassTy::TraksExec error");
-  if (iVar5 != 0) {
+  if (iVar6 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar4,0,"E:\\__titans\\grig\\traks.cpp",0xc9);

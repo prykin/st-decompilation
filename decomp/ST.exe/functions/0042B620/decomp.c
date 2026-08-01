@@ -81,38 +81,38 @@ STAllPlayersC::GetObjPtr
 
   switch(param_3) {
   case CASE_1:
-    array = g_playerRuntime[objPtr].objects;
+    array = (DArrayTy *)g_playerRuntime[objPtr].field6_0x9;
     if (array == (DArrayTy *)0x0) {
       return (STGameObjC *)0x0;
     }
     break;
   case CASE_2:
-    array = PTR_007fa154;
-    if (PTR_007fa154 == (DArrayTy *)0x0) {
+    array = g_array_007FA154;
+    if (g_array_007FA154 == (DArrayTy *)0x0) {
       return (STGameObjC *)0x0;
     }
     break;
   case CASE_3:
-    array = PTR_007fa158;
-    if (PTR_007fa158 == (DArrayTy *)0x0) {
+    array = g_array_007FA158;
+    if (g_array_007FA158 == (DArrayTy *)0x0) {
       return (STGameObjC *)0x0;
     }
     break;
   case CASE_4:
-    array = PTR_007fa15c;
-    if (PTR_007fa15c == (DArrayTy *)0x0) {
+    array = g_array_007FA15C;
+    if (g_array_007FA15C == (DArrayTy *)0x0) {
       return (STGameObjC *)0x0;
     }
     break;
   case CASE_5:
-    array = PTR_007fa160;
-    if (PTR_007fa160 == (DArrayTy *)0x0) {
+    array = g_array_007FA160;
+    if (g_array_007FA160 == (DArrayTy *)0x0) {
       return (STGameObjC *)0x0;
     }
     break;
   case CASE_6:
-    array = PTR_007fa164;
-    if (PTR_007fa164 == (DArrayTy *)0x0) {
+    array = g_array_007FA164;
+    if (g_array_007FA164 == (DArrayTy *)0x0) {
       return (STGameObjC *)0x0;
     }
     break;

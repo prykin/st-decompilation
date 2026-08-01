@@ -286,7 +286,7 @@ LAB_005e8ee0:
                   (0x1c < (int)local_28)))) {
                 if (this_01->field_1A5B->field_069A == (void *)0x0) {
                   pAVar18 = local_14 + 1;
-                  pvVar10 = (void *)Library::DKW::LIB::FUN_006aac70(*(int *)(local_14 + 1));
+                  pvVar10 = Library::DKW::LIB::MemAlloc(*(uint *)(local_14 + 1));
                   this_01->field_1A5B->field_069A = pvVar10;
                   value = &this_01->field_1A83;
                   this_01->field_1A5B->field_069E = *(uint *)pAVar18;
@@ -376,7 +376,7 @@ LAB_005e91f7:
       if ((((this_01->field_1A76 != '\0') && (3000 < this_01->field_0061 - this_01->field_1A7B)) &&
           (this_01->field_1A7F != 0)) && (this_01->field_1A83 != (byte *)0x0)) {
         uVar15 = this_01->field_1A7F * 4 + 4;
-        local_20 = (uint *)Library::DKW::LIB::FUN_006aac70(uVar15);
+        local_20 = Library::DKW::LIB::MemAlloc(uVar15);
         local_18 = this_01->field_1A83;
         *local_20 = this_01->field_1A7F;
         puVar16 = local_20 + 1;

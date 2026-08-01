@@ -19,12 +19,13 @@ uint * __thiscall STAllPlayersC::GetTOBJList(STAllPlayersC *this,char param_1,by
   bool bVar9;
   InternalExceptionFrame local_64;
   byte local_20 [16];
-  DArrayTy *local_10;
+  int local_10;
   DArrayTy *local_c;
-  dword local_8;
+  int local_8;
 
-  local_10 = g_playerRuntime[param_1].objects;
-  local_8 = local_10->count;
+  local_10 = g_playerRuntime[param_1].field6_0x9;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+  local_8 = *(int *)(local_10 + 0xc);
   local_64.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_64;
   iVar4 = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0);
@@ -40,9 +41,10 @@ uint * __thiscall STAllPlayersC::GetTOBJList(STAllPlayersC *this,char param_1,by
   }
   local_c = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1);
   iVar4 = 0;
-  if (0 < (int)local_8) {
+  if (0 < local_8) {
     do {
-      piVar2 = *(int **)((int)local_10->data + iVar4 * 4);
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+      piVar2 = *(int **)(*(int *)(local_10 + 0x1c) + iVar4 * 4);
       if (piVar2 != (int *)0x0) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*piVar2 + 0x74))(local_20);
@@ -66,11 +68,11 @@ LAB_0043f2ad:
         iVar6 = 0;
 LAB_0043f2b2:
         if (iVar6 == 0) {
-          Library::DKW::TBL::FUN_006ae1c0(&local_c->flags,(undefined4 *)((int)piVar2 + 0x32));
+          Library::DKW::TBL::DArrayAppend(local_c,(void *)((int)piVar2 + 0x32));
         }
       }
       iVar4 = iVar4 + 1;
-    } while (iVar4 < (int)local_8);
+    } while (iVar4 < local_8);
   }
   g_currentExceptionFrame = local_64.previous;
   return &local_c->flags;

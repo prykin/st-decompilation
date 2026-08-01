@@ -28,14 +28,14 @@ STManRub3C::AddNewDock
 
 {
   uint uVar1;
-  uint *puVar2;
-  code *pcVar3;
-  STManRub3C *pSVar4;
-  int iVar5;
-  DArrayTy *pDVar6;
-  int *piVar7;
+  code *pcVar2;
+  STManRub3C *pSVar3;
+  int iVar4;
+  DArrayTy *pDVar5;
+  int *piVar6;
+  int uVar7;
+  int iVar7;
   uint uVar8;
-  int iVar9;
   InternalExceptionFrame local_7c;
   int local_38;
   ushort local_34;
@@ -53,21 +53,21 @@ STManRub3C::AddNewDock
   local_7c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_7c;
   local_8 = this;
-  iVar5 = Library::MSVCRT::__setjmp3(local_7c.jumpBuffer,0);
-  pSVar4 = local_8;
-  if (iVar5 != 0) {
+  iVar4 = Library::MSVCRT::__setjmp3(local_7c.jumpBuffer,0);
+  pSVar3 = local_8;
+  if (iVar4 != 0) {
     g_currentExceptionFrame = local_7c.previous;
-    iVar9 = ReportDebugMessage("E:\\__titans\\nick\\to_rab3m.cpp",0x1c8,0,iVar5,"%s",
+    iVar7 = ReportDebugMessage("E:\\__titans\\nick\\to_rab3m.cpp",0x1c8,0,iVar4,"%s",
                                "STManRub3C::AddNewDock");
-    if (iVar9 != 0) {
+    if (iVar7 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar5,0,"E:\\__titans\\nick\\to_rab3m.cpp",0x1ca);
+    RaiseInternalException(iVar4,0,"E:\\__titans\\nick\\to_rab3m.cpp",0x1ca);
     return 0xffff;
   }
   if (local_8->field_0030[param_1 + 8] == 0) {
-    pDVar6 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x28,10);
-    pSVar4->field_0030[param_1 + 8] = (uint)pDVar6;
+    pDVar5 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x28,10);
+    pSVar3->field_0030[param_1 + 8] = (uint)pDVar5;
   }
   else {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -77,26 +77,26 @@ STManRub3C::AddNewDock
       do {
         uVar1 = local_8->field_0030[param_1 + 8];
         if (uVar8 < *(uint *)(uVar1 + 0xc)) {
-          piVar7 = (int *)(*(int *)(uVar1 + 8) * uVar8 + *(int *)(uVar1 + 0x1c));
+          piVar6 = (int *)(*(int *)(uVar1 + 8) * uVar8 + *(int *)(uVar1 + 0x1c));
         }
         else {
-          piVar7 = (int *)0x0;
+          piVar6 = (int *)0x0;
         }
-        if ((piVar7 != (int *)0x0) && (*piVar7 == param_5)) {
-          piVar7[3] = 0;
-          *(ushort *)(piVar7 + 1) = param_6;
-          *(ushort *)((int)piVar7 + 6) = param_2;
-          *(ushort *)(piVar7 + 2) = param_3;
-          *(ushort *)((int)piVar7 + 10) = param_4;
-          piVar7[8] = 0;
+        if ((piVar6 != (int *)0x0) && (*piVar6 == param_5)) {
+          piVar6[3] = 0;
+          *(ushort *)(piVar6 + 1) = param_6;
+          *(ushort *)((int)piVar6 + 6) = param_2;
+          *(ushort *)(piVar6 + 2) = param_3;
+          *(ushort *)((int)piVar6 + 10) = param_4;
+          piVar6[8] = 0;
           *param_7 = 1;
         }
         uVar8 = uVar8 + 1;
       } while ((int)uVar8 < local_c);
     }
   }
-  puVar2 = (uint *)pSVar4->field_0030[param_1 + 8];
-  if ((puVar2 != (uint *)0x0) && (*param_7 == 0)) {
+  pDVar5 = (DArrayTy *)pSVar3->field_0030[param_1 + 8];
+  if ((pDVar5 != (DArrayTy *)0x0) && (*param_7 == 0)) {
     memset(&local_38, 0, 0x28); /* compiler bulk-zero initialization */
     local_34 = param_6;
     local_38 = param_5;
@@ -105,9 +105,9 @@ STManRub3C::AddNewDock
     local_2e = param_4;
     local_2c = 0;
     local_18 = 0;
-    uVar8 = Library::DKW::TBL::FUN_006ae1c0(puVar2,&local_38);
+    uVar7 = Library::DKW::TBL::DArrayAppend(pDVar5,&local_38);
     g_currentExceptionFrame = local_7c.previous;
-    return uVar8;
+    return uVar7;
   }
   g_currentExceptionFrame = local_7c.previous;
   return local_10;

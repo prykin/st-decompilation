@@ -1,4 +1,4 @@
-// Reset reviewed mixed-lifetime locals so the decompiler can infer each SSA role independently.
+// Reset reviewed stale pointer locals so SSA roles and generated-type lifecycle can converge.
 // @author OpenAI
 // @category SubmarineTitans.Recovery
 // @menupath Tools.Submarine Titans.Apply Pointer Role Repairs
@@ -128,8 +128,7 @@ public class STPointerRoleRepairApplier extends GhidraScript {
         List<String> retained = new ArrayList<>();
         for (String line : old.split("\\R"))
             if (!line.contains(POINTER_MARKER) && !line.isBlank()) retained.add(line);
-        retained.add(MARKER + " Reset persistent pointer type because this stack slot has " +
-            "incompatible scalar and pointer lifetimes. " + reason);
+        retained.add(MARKER + " Reset persistent pointer type. " + reason);
         return String.join("\n", retained);
     }
 

@@ -38,7 +38,7 @@ CGenerate::sub_00695C10
     this->field_5853 = pCVar1;
   }
   if (this->field_5853 != (CGenerate_field_5853DArray *)0x0) {
-    uVar2 = Library::DKW::TBL::FUN_006ae1c0(&this->field_5853->flags,&local_24);
+    uVar2 = Library::DKW::TBL::DArrayAppend((DArrayTy *)this->field_5853,&local_24);
     return uVar2;
   }
   return 0xffffffff;

@@ -10,14 +10,14 @@ void __thiscall STManRuinC::sub_00631220(STManRuinC *this,int *param_1)
 
 {
   STManRuinC_field_0038DArray *pSVar1;
-  undefined4 *puVar2;
-  int iVar3;
+  int iVar2;
+  undefined4 *puVar3;
   uint uVar4;
   byte *puVar6;
   byte *pbVar7;
   byte *puVar8;
   undefined4 *local_14;
-  int local_10;
+  uint local_10;
   byte *local_c;
   uint local_8;
 
@@ -26,18 +26,18 @@ void __thiscall STManRuinC::sub_00631220(STManRuinC *this,int *param_1)
   local_8 = 0;
   local_10 = 0x55;
   if (pSVar1 != (STManRuinC_field_0038DArray *)0x0) {
-    local_10 = pSVar1->count * pSVar1->elementSize;
-    local_8 = local_10 + 0x20;
-    local_10 = local_10 + 0x75;
+    iVar2 = pSVar1->count * pSVar1->elementSize;
+    local_8 = iVar2 + 0x20;
+    local_10 = iVar2 + 0x75;
   }
   if (this->field_0034 != (byte *)0x0) {
     local_10 = local_10 + this->field_0030;
   }
-  iVar3 = local_10;
-  puVar2 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(local_10);
+  uVar4 = local_10;
+  puVar3 = Library::DKW::LIB::MemAlloc(local_10);
   this->field_0065 = this->field_0071;
-  if (puVar2 == (undefined4 *)0x0) {
-    *param_1 = iVar3;
+  if (puVar3 == (undefined4 *)0x0) {
+    *param_1 = uVar4;
     return;
   }
   this->field_0028 = 2;
@@ -47,8 +47,8 @@ void __thiscall STManRuinC::sub_00631220(STManRuinC *this,int *param_1)
   else {
     puVar6 = (byte *)(&this->field_001C);
   }
-  puVar8 = (byte *)(puVar2);
-  for (iVar3 = 0x15; iVar3 != 0; iVar3 = iVar3 + -1) {
+  puVar8 = (byte *)(puVar3);
+  for (iVar2 = 0x15; iVar2 != 0; iVar2 = iVar2 + -1) {
     *puVar8 = *puVar6;
     puVar6 = (byte *)(puVar6 + 1);
     puVar8 = (byte *)(puVar8 + 1);
@@ -57,8 +57,8 @@ void __thiscall STManRuinC::sub_00631220(STManRuinC *this,int *param_1)
   this->field_0061 = 0xffffffff;
   if (this->field_0038 != (STManRuinC_field_0038DArray *)0x0) {
     local_14 = (undefined4 *)FUN_006b0020(&this->field_0038->flags,(int *)&local_8);
-    *(uint *)((int)puVar2 + 0x55) = local_8;
-    local_c = (byte *)((int)puVar2 + 0x59);
+    *(uint *)((int)puVar3 + 0x55) = local_8;
+    local_c = (byte *)((int)puVar3 + 0x59);
     puVar6 = (byte *)(local_14);
     puVar8 = (byte *)local_c;
     memmove(puVar8, puVar6, local_8); /* compiler REP MOVS byte copy */
@@ -68,7 +68,7 @@ void __thiscall STManRuinC::sub_00631220(STManRuinC *this,int *param_1)
   }
   if (this->field_0034 != (byte *)0x0) {
     if (local_8 == 0) {
-      local_c = (byte *)((int)puVar2 + 0x55);
+      local_c = (byte *)((int)puVar3 + 0x55);
     }
     else {
       local_c = (byte *)((int)local_c + local_8);

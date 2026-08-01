@@ -12,6 +12,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Comparator;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -23,8 +24,9 @@ import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import ghidra.app.decompiler.DecompInterface;
 import ghidra.app.decompiler.DecompileResults;
+import ghidra.app.decompiler.parallel.DecompilerCallback;
+import ghidra.app.decompiler.parallel.ParallelDecompiler;
 import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
 import ghidra.program.model.data.AbstractIntegerDataType;
@@ -43,6 +45,7 @@ import ghidra.program.model.listing.Instruction;
 import ghidra.program.model.listing.InstructionIterator;
 import ghidra.program.model.listing.Parameter;
 import ghidra.program.model.symbol.SourceType;
+import ghidra.util.task.TaskMonitor;
 
 public class STSwitchEnumAnalyzer extends GhidraScript {
     private static final String CASE_NAME = "CASE_(?:NEG_)?[0-9A-Fa-f]+";
@@ -76,7 +79,6 @@ public class STSwitchEnumAnalyzer extends GhidraScript {
     private static final String CLASS_MARKER = "[STClassLayoutApplier]";
     private static final String ENUM_MARKER = "[STSwitchEnumApplier]";
 
-    private DecompInterface decompiler;
 
     @Override
     protected void run() throws Exception {
@@ -93,76 +95,48 @@ public class STSwitchEnumAnalyzer extends GhidraScript {
         Path domainStatePath = directory.resolve("switch_enum_domains.tsv");
         Map<String, DomainState> storedDomains = readDomains(domainStatePath);
 
-        decompiler = new DecompInterface();
-        decompiler.toggleCCode(true);
-        decompiler.toggleSyntaxTree(false);
-        decompiler.setSimplificationStyle("decompile");
-        if (!decompiler.openProgram(currentProgram))
-            throw new IllegalStateException("Could not open decompiler: " +
-                decompiler.getLastMessage());
-
         Map<String, Proposal> grouped = new LinkedHashMap<>();
         Map<String, ObservedEnumDomain> observedEnums = new TreeMap<>();
-        int candidateFunctions = 0, decompileRetries = 0, decompileFailures = 0,
-            rawSwitches = 0;
+        List<Function> candidates = new ArrayList<>();
+        FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
+        while (functions.hasNext()) {
+            monitor.checkCancelled();
+            Function function = functions.next();
+            if (isCandidate(function)) candidates.add(function);
+        }
+
         List<DecompileRetry> retries = new ArrayList<>();
         List<DecompileFailure> failures = new ArrayList<>();
-        try {
-            FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
-            while (functions.hasNext()) {
-                monitor.checkCancelled();
-                Function function = functions.next();
-                if (!isCandidate(function)) continue;
-                candidateFunctions++;
-                DecompileResults results = decompiler.decompileFunction(function, 30, monitor);
-                if (!results.decompileCompleted() || results.getDecompiledFunction() == null) {
-                    decompileRetries++;
-                    String initialReason = decompiler.getLastMessage();
-                    results = decompiler.decompileFunction(function, 120, monitor);
-                    if (!results.decompileCompleted() || results.getDecompiledFunction() == null) {
-                        decompileFailures++;
-                        failures.add(new DecompileFailure(function, decompiler.getLastMessage()));
-                        retries.add(new DecompileRetry(function, initialReason, "failed"));
-                        continue;
-                    }
-                    retries.add(new DecompileRetry(function, initialReason, "recovered"));
-                }
-                String decompiled = results.getDecompiledFunction().getC();
-                Map<String, String> pointerOwners = pointerOwners(function, decompiled);
-                observeGeneratedEnumCompositions(function, decompiled, pointerOwners,
-                    observedEnums);
-                List<SwitchBlock> switches = switches(decompiled);
-                rawSwitches += switches.size();
-                for (int index = 0; index < switches.size(); index++) {
-                    SwitchBlock block = switches.get(index);
-                    Target target = target(function, block.expression, index, pointerOwners);
-                    Set<Long> values = block.values(target.type);
-                    // Three arms are still required to create a new enum. Once the
-                    // target is script-owned, even one new exact arm is enough to
-                    // grow its monotonic domain.
-                    if (values.size() < 3 && !isGeneratedEnum(target.type)) continue;
-                    // A reviewed/semantic enum that already covers every observed arm is a
-                    // fixed point, not evidence for another address-derived enum. Generated
-                    // switch enums are deliberately excluded so they can still grow when a
-                    // later decompilation exposes additional cases.
-                    if (semanticEnumCovers(target.type, values)) continue;
-                    String key = target.groupKey(function, index);
-                    Proposal proposal = grouped.get(key);
-                    if (proposal == null) {
-                        proposal = proposal(function, target);
-                        proposal.values.addAll(generatedEnumValues(target.type));
-                        grouped.put(key, proposal);
-                    }
-                    proposal.values.addAll(values);
-                    proposal.expressions.add(block.expression);
-                    proposal.switchSites.add(addr(function.getEntryPoint()) + ":" + index);
-                    proposal.evidenceFunctions.add(addr(function.getEntryPoint()));
-                }
+        Map<Address, Decompiled> completed = new TreeMap<>();
+        Map<Address, String> initialReasons = new TreeMap<>();
+        List<Function> retryFunctions = new ArrayList<>();
+        for (Decompiled unit : parallelDecompile(candidates, 30)) {
+            if (unit.function == null) continue;
+            if (unit.error.isBlank()) completed.put(unit.function.getEntryPoint(), unit);
+            else {
+                retryFunctions.add(unit.function);
+                initialReasons.put(unit.function.getEntryPoint(), unit.error);
             }
         }
-        finally {
-            decompiler.dispose();
+        for (Decompiled unit : parallelDecompile(retryFunctions, 120)) {
+            if (unit.function == null) continue;
+            String initial = initialReasons.getOrDefault(
+                unit.function.getEntryPoint(), "initial decompile failed");
+            if (unit.error.isBlank()) {
+                completed.put(unit.function.getEntryPoint(), unit);
+                retries.add(new DecompileRetry(unit.function, initial, "recovered"));
+            }
+            else {
+                failures.add(new DecompileFailure(unit.function, unit.error));
+                retries.add(new DecompileRetry(unit.function, initial, "failed"));
+            }
         }
+        int candidateFunctions = candidates.size();
+        int decompileRetries = retryFunctions.size();
+        int decompileFailures = failures.size();
+        int rawSwitches = 0;
+        for (Decompiled unit : completed.values())
+            rawSwitches += analyzeDecompiled(unit, grouped, observedEnums);
 
         List<Proposal> proposals = new ArrayList<>();
         for (Proposal proposal : grouped.values())
@@ -193,6 +167,71 @@ public class STSwitchEnumAnalyzer extends GhidraScript {
             ", proposals: " + proposals.size() + ", auto_apply: " + auto +
             ", decompile retries: " + decompileRetries +
             ", failures: " + decompileFailures);
+    }
+
+    private List<Decompiled> parallelDecompile(Collection<Function> functions,
+            int timeout) throws Exception {
+        if (functions.isEmpty()) return List.of();
+        DecompilerCallback<Decompiled> callback = new DecompilerCallback<>(
+                currentProgram, dec -> {
+                    dec.toggleCCode(true);
+                    dec.toggleSyntaxTree(false);
+                    dec.setSimplificationStyle("decompile");
+                }) {
+            @Override
+            public Decompiled process(DecompileResults result,
+                    TaskMonitor callbackMonitor) {
+                Function function = result.getFunction();
+                if (!result.decompileCompleted() ||
+                        result.getDecompiledFunction() == null)
+                    return new Decompiled(function, "",
+                        result.getErrorMessage() == null ?
+                            "decompile failed" : result.getErrorMessage());
+                return new Decompiled(function,
+                    result.getDecompiledFunction().getC(), "");
+            }
+        };
+        callback.setTimeout(timeout);
+        try {
+            List<Decompiled> result = ParallelDecompiler.decompileFunctions(
+                callback, functions, monitor);
+            result.removeIf(unit -> unit == null || unit.function == null);
+            result.sort(Comparator.comparing(unit -> unit.function.getEntryPoint()));
+            return result;
+        }
+        finally {
+            callback.dispose();
+        }
+    }
+
+    private int analyzeDecompiled(Decompiled unit,
+            Map<String, Proposal> grouped,
+            Map<String, ObservedEnumDomain> observedEnums) {
+        Function function = unit.function;
+        String decompiled = unit.c;
+        Map<String, String> pointerOwners = pointerOwners(function, decompiled);
+        observeGeneratedEnumCompositions(function, decompiled, pointerOwners,
+            observedEnums);
+        List<SwitchBlock> switches = switches(decompiled);
+        for (int index = 0; index < switches.size(); index++) {
+            SwitchBlock block = switches.get(index);
+            Target target = target(function, block.expression, index, pointerOwners);
+            Set<Long> values = block.values(target.type);
+            if (values.size() < 3 && !isGeneratedEnum(target.type)) continue;
+            if (semanticEnumCovers(target.type, values)) continue;
+            String key = target.groupKey(function, index);
+            Proposal proposal = grouped.get(key);
+            if (proposal == null) {
+                proposal = proposal(function, target);
+                proposal.values.addAll(generatedEnumValues(target.type));
+                grouped.put(key, proposal);
+            }
+            proposal.values.addAll(values);
+            proposal.expressions.add(block.expression);
+            proposal.switchSites.add(addr(function.getEntryPoint()) + ":" + index);
+            proposal.evidenceFunctions.add(addr(function.getEntryPoint()));
+        }
+        return switches.size();
     }
 
     /**
@@ -953,6 +992,8 @@ public class STSwitchEnumAnalyzer extends GhidraScript {
         return "\"" + value.replace("\\", "\\\\").replace("\"", "\\\"")
             .replace("\r", "\\r").replace("\n", "\\n") + "\"";
     }
+
+    private record Decompiled(Function function, String c, String error) { }
 
     private static class DecompileRetry {
         final Function function;

@@ -30,9 +30,9 @@ int __thiscall STMineSetC::GetMessage(STMineSetC *this,STMessage *message)
   uint uVar11;
   STMineSetC_sub_00626B50_param_1Enum SVar12;
   int iVar13;
-  undefined4 *puVar14;
+  byte *puVar14;
   STWorldObject *pSVar15;
-  undefined4 *puVar16;
+  byte *puVar16;
   InternalExceptionFrame local_60;
   int local_1c;
   int local_18;
@@ -270,8 +270,8 @@ int __thiscall STMineSetC::GetMessage(STMineSetC *this,STMessage *message)
     g_currentExceptionFrame = local_60.previous;
     return 0;
   }
-  puVar14 = (message->arg0).ptr;
-  puVar16 = (undefined4 *)&local_8->field_0x25e;
+  puVar14 = (byte *)((message->arg0).ptr);
+  puVar16 = (byte *)&local_8->field_0x25e;
   memmove(puVar16, puVar14, 0x4f); /* compiler REP MOVS byte copy */
   if (*(int *)(dVar6 + 0xc) == 0) {
     local_8->field_0276 = (int)(short)(*(short *)&local_8->field_0276 * 0xc9 + 100);

@@ -16,7 +16,7 @@ void __thiscall FSGSTy::JoinChannel(FSGSTy *this,void *param_1)
   undefined4 uVar4;
   int iVar5;
   InternalExceptionFrame local_7c;
-  undefined4 local_38 [11];
+  undefined1 local_38 [45];
   undefined1 local_b;
   FSGSTy *local_8;
 
@@ -43,7 +43,7 @@ void __thiscall FSGSTy::JoinChannel(FSGSTy *this,void *param_1)
       PutDDXClip(0x1e9,0x5e,0,0,0x124,(byte *)0xf3,'\x01',local_8->field_1E9A);
       this_01->field_1EA6->count = 0;
       local_b = 1;
-      Library::DKW::TBL::FUN_006ae1c0(&this_01->field_1EA6->flags,local_38);
+      Library::DKW::TBL::DArrayAppend(this_01->field_1EA6,local_38);
       this_01->field_002D = 0x28;
       puVar1 = &this_01->field_0x1d;
       *(dword *)&this_01->field_0x31 = this_01->field_1EA6->count;

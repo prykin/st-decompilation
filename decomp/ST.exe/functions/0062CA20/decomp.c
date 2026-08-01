@@ -14,7 +14,7 @@ int __cdecl FUN_0062ca20(undefined4 *param_1,uint *param_2)
   puVar1 = (undefined4 *)0x0;
   uVar3 = 0x6d;
   if (param_1 != (undefined4 *)0x0) {
-    puVar1 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0x6d);
+    puVar1 = Library::DKW::LIB::MemAlloc(0x6d);
     if (puVar1 == (undefined4 *)0x0) {
       uVar3 = 0;
     }

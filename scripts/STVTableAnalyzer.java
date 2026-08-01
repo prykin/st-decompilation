@@ -49,13 +49,6 @@ public class STVTableAnalyzer extends GhidraScript {
     private static final int MIN_RUN_SLOTS = 3;
     private static final int MIN_STRONG_SLOTS = 1;
     private static final int MAX_SLOTS = 128;
-    private static final Map<String, String> KNOWN_TABLE_OWNERS = Map.of(
-        "007900A0", "STGameObjC",
-        // STGroupBoatC::sub_004232A0 installs this table while constructing its
-        // STGroupC base.  The derived constructor context must not win the owner vote.
-        "00790508", "STGroupC",
-        "0079E188", "SystemClassTy"
-    );
     private static final Pattern RECOVERED_CONSTRUCTOR_TABLE = Pattern.compile(
         "(?m)^VTable:\\s*([0-9A-Fa-f]{6,16})(?:\\s|$)");
     private static final Pattern MEMORY_OPERAND = Pattern.compile(
@@ -222,23 +215,29 @@ public class STVTableAnalyzer extends GhidraScript {
         candidate.slotOwners.addAll(slotVotes.keySet());
         candidate.constructorOwners.addAll(constructorVotes.keySet());
         candidate.vptrWriterOwners.addAll(writerVotes.keySet());
-        String knownOwner = KNOWN_TABLE_OWNERS.get(addr(candidate.address));
         String constructorOwner = uniqueOwner(constructorVotes);
-        if (knownOwner != null) {
-            candidate.owner = knownOwner;
-            candidate.ownerConflict = !constructorVotes.isEmpty() &&
-                (constructorVotes.size() != 1 || !constructorVotes.containsKey(knownOwner));
-            candidate.reason = candidate.ownerConflict ?
-                "confirmed_anchor_conflicts_with_constructor" : "confirmed_recovery_anchor";
-            candidate.confidence = candidate.ownerConflict ? "medium" : "high";
-            candidate.apply = !candidate.ownerConflict;
+        String unanimousSlotOwner = uniqueOwner(slotVotes);
+        boolean strongOwnerDisagreement = !constructorOwner.isEmpty() &&
+            !unanimousSlotOwner.isEmpty() &&
+            !constructorOwner.equals(unanimousSlotOwner) &&
+            slotVotes.getOrDefault(unanimousSlotOwner, 0) >= 2;
+        if (strongOwnerDisagreement) {
+            // A nested base constructor may already have inherited the derived method owner.
+            // Do not let that structural name override several independently named virtual
+            // targets from another class.  The physical table remains safe to recover; its
+            // semantic owner stays unresolved until hierarchy evidence agrees.
+            candidate.owner = "";
+            candidate.reason = "constructor_slot_owner_conflict";
+            candidate.ownerConflict = true;
+            candidate.confidence = "medium";
+            candidate.apply = false;
         }
         else if (!constructorOwner.isEmpty()) {
             candidate.owner = constructorOwner;
             candidate.reason = "unique_constructor_vptr_anchor";
             // A derived table normally contains inherited methods owned by base classes.
-            // Their namespaces support the hierarchy; they do not contradict the exact
-            // table installed by this constructor.
+            // Mixed base/derived slot namespaces do not contradict the exact table installed
+            // by this constructor; only a strong unanimous foreign owner is demoted above.
             candidate.ownerConflict = false;
             candidate.confidence = "high";
             candidate.apply = true;
@@ -385,8 +384,7 @@ public class STVTableAnalyzer extends GhidraScript {
     }
 
     private boolean isReliableBase(Candidate candidate) {
-        return "confirmed_recovery_anchor".equals(candidate.reason) ||
-            "unique_constructor_vptr_anchor".equals(candidate.reason) ||
+        return "unique_constructor_vptr_anchor".equals(candidate.reason) ||
             (candidate.apply && "unique_slot_owner_and_vptr_store".equals(candidate.reason));
     }
 
@@ -510,7 +508,6 @@ public class STVTableAnalyzer extends GhidraScript {
             if (target.getSymbol().getSource() == SourceType.USER_DEFINED ||
                     target.getSignatureSource() == SourceType.USER_DEFINED ||
                     hasTag(target, "RECOVERED_DEBUG_NAME") ||
-                    hasTag(target, "RECOVERED_CURATED_PROPOSAL") ||
                     hasTag(target, "RECOVERED_VIRTUAL_METHOD")) return true;
         }
         return false;

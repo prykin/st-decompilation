@@ -12,32 +12,31 @@ undefined4 __thiscall STManRuinC::sub_00630AC0(STManRuinC *this,uint param_1)
   int iVar1;
   short sVar2;
   STManRuinC_field_0038DArray *array;
-  STManRuinC_field_0038Element *psVar3;
-  int iVar3;
+  short *psVar3;
   int iVar4;
+  int iVar5;
 
   array = this->field_0038;
   /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
   if ((array->count <= param_1) ||
-     (psVar3 = (STManRuinC_field_0038Element *)
-               ((int)&array->data->field_0000 + array->elementSize * param_1),
-     psVar3 == (STManRuinC_field_0038Element *)0x0)) {
+     (psVar3 = (short *)((int)&array->data->field_0000 + array->elementSize * param_1),
+     psVar3 == (short *)0x0)) {
     return 0;
   }
-  sVar2 = psVar3->field_0006;
-  iVar4 = ((int)psVar3->field_0004 * (int)g_worldGrid.sizeX + (int)psVar3->field_0002) *
-          (int)g_worldGrid.sizeY + (int)psVar3->field_0000;
-  iVar1 = g_worldGrid.sizeY + iVar4;
-  iVar3 = DArrayRemoveAt((DArrayTy *)array,param_1);
-  if (iVar3 != 0) {
+  sVar2 = psVar3[3];
+  iVar5 = ((int)psVar3[2] * (int)g_worldGrid.sizeX + (int)psVar3[1]) * (int)g_worldGrid.sizeY +
+          (int)*psVar3;
+  iVar1 = g_worldGrid.sizeY + iVar5;
+  iVar4 = DArrayRemoveAt((DArrayTy *)array,param_1);
+  if (iVar4 != 0) {
     return 0;
   }
   if (sVar2 == 1) {
-    this->field_0034[iVar4] = 0;
+    this->field_0034[iVar5] = 0;
     return 1;
   }
-  this->field_0034[iVar4] = 0;
-  this->field_0034[iVar4 + 1] = 0;
+  this->field_0034[iVar5] = 0;
+  this->field_0034[iVar5 + 1] = 0;
   this->field_0034[iVar1] = 0;
   this->field_0034[iVar1 + 1] = 0;
   return 1;

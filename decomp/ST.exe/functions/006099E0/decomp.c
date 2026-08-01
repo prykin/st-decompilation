@@ -54,7 +54,7 @@ uint __thiscall STFieldC::CreateField(STFieldC *this,uint param_1)
     local_54 = 0xffffffff;
     if (0 < (int)param_1) {
       do {
-        local_8 = Library::DKW::TBL::FUN_006ae1c0(&pSVar2->field_0234->flags,local_90);
+        local_8 = Library::DKW::TBL::DArrayAppend((DArrayTy *)pSVar2->field_0234,local_90);
         param_1 = param_1 - 1;
       } while (param_1 != 0);
     }

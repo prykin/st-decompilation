@@ -18,12 +18,11 @@ FUN_00632650(void *this,uint param_1,int param_2,undefined4 param_3,
             Global_sub_00632650_param_4Enum param_4,uint param_5)
 
 {
-  uint *puVar1;
-  DArrayTy *pDVar2;
-  undefined4 uVar3;
-  int iVar4;
+  DArrayTy *pDVar1;
+  undefined4 uVar2;
+  int iVar3;
+  uint uVar4;
   uint uVar5;
-  uint uVar6;
   undefined4 local_40 [15];
 
   if (*(int *)this != 0) {
@@ -35,39 +34,39 @@ FUN_00632650(void *this,uint param_1,int param_2,undefined4 param_3,
     param_2 = 1;
   }
   memset(local_40, 0, 0x39); /* compiler bulk-zero initialization */
-  uVar6 = 0;
+  uVar5 = 0;
   switch(param_4) {
   case CASE_0:
   case CASE_2:
   case CASE_4:
-    pDVar2 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,param_1 * param_2,0x39,10);
-    *(DArrayTy **)this = pDVar2;
-    uVar6 = param_1 * param_2;
+    pDVar1 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,param_1 * param_2,0x39,10);
+    *(DArrayTy **)this = pDVar1;
+    uVar5 = param_1 * param_2;
     break;
   case CASE_1:
-    pDVar2 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,param_1 + param_2,0x39,10);
-    *(DArrayTy **)this = pDVar2;
-    uVar6 = param_1;
+    pDVar1 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,param_1 + param_2,0x39,10);
+    *(DArrayTy **)this = pDVar1;
+    uVar5 = param_1;
     break;
   case CASE_3:
-    pDVar2 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,(param_1 + 4) * param_2 + 1,0x39,10);
-    *(DArrayTy **)this = pDVar2;
-    uVar6 = param_1 * param_2;
+    pDVar1 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,(param_1 + 4) * param_2 + 1,0x39,10);
+    *(DArrayTy **)this = pDVar1;
+    uVar5 = param_1 * param_2;
   }
-  puVar1 = *(uint **)this;
-  if (puVar1 == (uint *)0x0) {
-    uVar3 = 0;
+  pDVar1 = *(DArrayTy **)this;
+  if (pDVar1 == (DArrayTy *)0x0) {
+    uVar2 = 0;
   }
   else {
     switch(param_4) {
     case CASE_0:
     case CASE_1:
-      uVar6 = (param_1 - 1) + param_2;
+      uVar5 = (param_1 - 1) + param_2;
       if (param_4 != CASE_1) {
-        uVar6 = param_1 - 1;
+        uVar5 = param_1 - 1;
       }
-      Library::DKW::TBL::FUN_006ae140(puVar1,uVar6,local_40);
-      uVar6 = *(uint *)(*(int *)this + 0xc);
+      Library::DKW::TBL::DArrayPut(pDVar1,uVar5,local_40);
+      uVar5 = *(uint *)(*(int *)this + 0xc);
       *(undefined4 *)((int)this + 0xd) = param_3;
       *(undefined1 *)((int)this + 4) = 1;
       *(uint *)((int)this + 0x19) = param_1;
@@ -79,8 +78,8 @@ FUN_00632650(void *this,uint param_1,int param_2,undefined4 param_3,
       *(undefined4 *)((int)this + 0x15) = *(undefined4 *)(param_5 + 0x48);
       break;
     case CASE_2:
-      Library::DKW::TBL::FUN_006ae140(puVar1,param_1 * param_2 - 1,local_40);
-      uVar6 = *(uint *)(*(int *)this + 0xc);
+      Library::DKW::TBL::DArrayPut(pDVar1,param_1 * param_2 - 1,local_40);
+      uVar5 = *(uint *)(*(int *)this + 0xc);
       *(int *)((int)this + 0x1d) = param_2;
       *(undefined1 *)((int)this + 4) = 1;
       *(uint *)((int)this + 0x19) = param_1;
@@ -93,10 +92,10 @@ FUN_00632650(void *this,uint param_1,int param_2,undefined4 param_3,
       *(undefined4 *)((int)this + 0x15) = *(undefined4 *)(param_5 + 0x48);
       break;
     case CASE_3:
-      uVar6 = (param_1 + 4) * param_2 + 1;
-      *(uint *)((int)this + 0x21) = uVar6;
+      uVar5 = (param_1 + 4) * param_2 + 1;
+      *(uint *)((int)this + 0x21) = uVar5;
       *(undefined4 *)((int)this + 0x11) = 3;
-      Library::DKW::TBL::FUN_006ae140(puVar1,uVar6,local_40);
+      Library::DKW::TBL::DArrayPut(pDVar1,uVar5,local_40);
       *(undefined1 *)((int)this + 4) = 1;
       *(undefined4 *)((int)this + 0x19) = *(undefined4 *)param_5;
       *(undefined4 *)((int)this + 0x1d) = *(undefined4 *)(param_5 + 4);
@@ -116,8 +115,8 @@ FUN_00632650(void *this,uint param_1,int param_2,undefined4 param_3,
       *(undefined4 *)((int)this + 0x65) = *(undefined4 *)(param_5 + 0x20);
       break;
     case CASE_4:
-      Library::DKW::TBL::FUN_006ae140(puVar1,param_1 * param_2 - 1,local_40);
-      uVar6 = *(uint *)(*(int *)this + 0xc);
+      Library::DKW::TBL::DArrayPut(pDVar1,param_1 * param_2 - 1,local_40);
+      uVar5 = *(uint *)(*(int *)this + 0xc);
       *(int *)((int)this + 0x1d) = param_2;
       *(undefined1 *)((int)this + 4) = 1;
       *(uint *)((int)this + 0x19) = param_1;
@@ -130,25 +129,25 @@ FUN_00632650(void *this,uint param_1,int param_2,undefined4 param_3,
     }
     thunk_FUN_00632e30(this);
     STTeamLissagC::InitVisibelSystem(this);
-    uVar3 = 1;
+    uVar2 = 1;
     if (*(char *)((int)this + 4) == '\0') {
-      uVar5 = 0;
-      if (0 < (int)uVar6) {
+      uVar4 = 0;
+      if (0 < (int)uVar5) {
         do {
-          iVar4 = *(int *)this;
-          if (uVar5 < *(uint *)(iVar4 + 0xc)) {
-            iVar4 = *(int *)(iVar4 + 8) * uVar5 + *(int *)(iVar4 + 0x1c);
+          iVar3 = *(int *)this;
+          if (uVar4 < *(uint *)(iVar3 + 0xc)) {
+            iVar3 = *(int *)(iVar3 + 8) * uVar4 + *(int *)(iVar3 + 0x1c);
           }
           else {
-            iVar4 = 0;
+            iVar3 = 0;
           }
-          uVar5 = uVar5 + 1;
-          *(undefined4 *)(iVar4 + 4) = 0xffffffff;
-        } while ((int)uVar5 < (int)uVar6);
+          uVar4 = uVar4 + 1;
+          *(undefined4 *)(iVar3 + 4) = 0xffffffff;
+        } while ((int)uVar4 < (int)uVar5);
       }
       return 1;
     }
   }
-  return uVar3;
+  return uVar2;
 }
 

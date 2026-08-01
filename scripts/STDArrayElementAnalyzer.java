@@ -26,8 +26,9 @@ import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import ghidra.app.decompiler.DecompInterface;
 import ghidra.app.decompiler.DecompileResults;
+import ghidra.app.decompiler.parallel.DecompilerCallback;
+import ghidra.app.decompiler.parallel.ParallelDecompiler;
 import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
 import ghidra.program.model.data.DataType;
@@ -40,13 +41,13 @@ import ghidra.program.model.data.Undefined;
 import ghidra.program.model.listing.Function;
 import ghidra.program.model.listing.FunctionIterator;
 import ghidra.program.model.listing.Parameter;
+import ghidra.util.task.TaskMonitor;
 
 public class STDArrayElementAnalyzer extends GhidraScript {
     private static final int DECOMPILE_TIMEOUT = 30;
     private static final int LARGE_DECOMPILE_TIMEOUT = 120;
     private static final long LARGE_FUNCTION_BYTES = 0x4000;
     private static final int MAX_ELEMENT_SIZE = 0x4000;
-    private static final long DARRAY_CREATE_ADDRESS = 0x006AE290L;
     private static final String DARRAY_PATH = "/SubmarineTitans/Recovered/DArrayTy";
     private static final String ELEMENT_ROOT =
         "/SubmarineTitans/Recovered/DArrayElements/";
@@ -87,7 +88,6 @@ public class STDArrayElementAnalyzer extends GhidraScript {
         new LinkedHashMap<>();
     private final List<Failure> failures = new ArrayList<>();
     private DataTypeManager dataTypes;
-    private DecompInterface decompiler;
     private int functionsSeen;
     private int creationSites;
     private int elementAliases;
@@ -110,22 +110,12 @@ public class STDArrayElementAnalyzer extends GhidraScript {
         if (!(dataTypes.getDataType(DARRAY_PATH) instanceof Structure))
             throw new IllegalStateException("Missing recovered " + DARRAY_PATH);
 
-        decompiler = new DecompInterface();
-        decompiler.toggleCCode(true);
-        decompiler.toggleSyntaxTree(true);
-        if (!decompiler.openProgram(currentProgram))
-            throw new IllegalStateException("Decompiler could not open the current program");
-        try {
-            decompileCreationFunctions();
-            collectCreationEvidence();
-            seedOwnedSpecializations();
-            decompileCandidateOwnerFunctions();
-            collectSourceRecordEvidence();
-            collectElementEvidence();
-        }
-        finally {
-            decompiler.dispose();
-        }
+        decompileCreationFunctions();
+        collectCreationEvidence();
+        loadOwnedSpecializationIdentity();
+        decompileCandidateOwnerFunctions();
+        collectSourceRecordEvidence();
+        collectElementEvidence();
 
         Analysis analysis = proposals();
         writeProposals(directory.resolve("darray_element_proposals.tsv"), analysis.rows);
@@ -156,6 +146,7 @@ public class STDArrayElementAnalyzer extends GhidraScript {
     }
 
     private void decompileCreationFunctions() throws Exception {
+        List<Candidate> candidates = new ArrayList<>();
         FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
         while (functions.hasNext()) {
             monitor.checkCancelled();
@@ -163,11 +154,13 @@ public class STDArrayElementAnalyzer extends GhidraScript {
             if (function.isExternal() || function.isThunk() || library(function)) continue;
             Structure owner = ownerStructure(function);
             if (owner == null || !callsDArrayCreate(function)) continue;
-            decompile(function, owner);
+            candidates.add(new Candidate(function, owner));
         }
+        decompile(candidates);
     }
 
     private void decompileCandidateOwnerFunctions() throws Exception {
+        List<Candidate> candidates = new ArrayList<>();
         Set<String> owners = new HashSet<>();
         for (Key key : arrays.keySet()) owners.add(key.ownerPath);
         if (owners.isEmpty()) return;
@@ -179,8 +172,9 @@ public class STDArrayElementAnalyzer extends GhidraScript {
                     decompiled.containsKey(function.getEntryPoint())) continue;
             Structure owner = ownerStructure(function);
             if (owner == null || !owners.contains(owner.getPathName())) continue;
-            decompile(function, owner);
+            candidates.add(new Candidate(function, owner));
         }
+        decompile(candidates);
     }
 
     private int decompileTimeout(Function function) {
@@ -188,18 +182,63 @@ public class STDArrayElementAnalyzer extends GhidraScript {
             LARGE_DECOMPILE_TIMEOUT : DECOMPILE_TIMEOUT;
     }
 
-    private void decompile(Function function, Structure owner) throws Exception {
-        functionsSeen++;
-        DecompileResults result =
-            decompiler.decompileFunction(function, decompileTimeout(function), monitor);
-        if (!result.decompileCompleted() || result.getDecompiledFunction() == null) {
-            failures.add(new Failure(function, result == null ? "no result" :
-                result.getErrorMessage()));
-            return;
+    private void decompile(List<Candidate> candidates) throws Exception {
+        List<Candidate> normal = new ArrayList<>();
+        List<Candidate> large = new ArrayList<>();
+        for (Candidate candidate : candidates)
+            (decompileTimeout(candidate.function) == LARGE_DECOMPILE_TIMEOUT ?
+                large : normal).add(candidate);
+        functionsSeen += candidates.size();
+        decompileBatch(normal, DECOMPILE_TIMEOUT);
+        decompileBatch(large, LARGE_DECOMPILE_TIMEOUT);
+    }
+
+    private void decompileBatch(List<Candidate> candidates, int timeout)
+            throws Exception {
+        if (candidates.isEmpty()) return;
+        Map<Address, Structure> owners = new HashMap<>();
+        List<Function> functions = new ArrayList<>();
+        for (Candidate candidate : candidates) {
+            owners.put(candidate.function.getEntryPoint(), candidate.owner);
+            functions.add(candidate.function);
         }
-        decompiled.put(function.getEntryPoint(),
-            new Decompiled(function, owner, result.getDecompiledFunction().getC(),
-                result));
+        DecompilerCallback<BatchResult> callback = new DecompilerCallback<>(
+                currentProgram, dec -> {
+                    dec.toggleCCode(true);
+                    dec.toggleSyntaxTree(true);
+                }) {
+            @Override
+            public BatchResult process(DecompileResults result,
+                    TaskMonitor callbackMonitor) {
+                Function function = result.getFunction();
+                if (!result.decompileCompleted() ||
+                        result.getDecompiledFunction() == null)
+                    return new BatchResult(function, "",
+                        result.getErrorMessage() == null ?
+                            "decompile failed" : result.getErrorMessage(), result);
+                return new BatchResult(function,
+                    result.getDecompiledFunction().getC(), "", result);
+            }
+        };
+        callback.setTimeout(timeout);
+        try {
+            List<BatchResult> results = ParallelDecompiler.decompileFunctions(
+                callback, functions, monitor);
+            results.removeIf(value -> value == null || value.function == null);
+            results.sort(Comparator.comparing(value -> value.function.getEntryPoint()));
+            for (BatchResult result : results) {
+                if (!result.error.isBlank()) {
+                    failures.add(new Failure(result.function, result.error));
+                    continue;
+                }
+                Structure owner = owners.get(result.function.getEntryPoint());
+                decompiled.put(result.function.getEntryPoint(),
+                    new Decompiled(result.function, owner, result.c, result.results));
+            }
+        }
+        finally {
+            callback.dispose();
+        }
     }
 
     private boolean callsDArrayCreate(Function function) throws Exception {
@@ -211,11 +250,15 @@ public class STDArrayElementAnalyzer extends GhidraScript {
                 if (next == null || next.equals(called)) break;
                 called = next;
             }
-            if (called != null &&
-                    called.getEntryPoint().getOffset() == DARRAY_CREATE_ADDRESS)
+            if (called != null && isDArrayCreate(called))
                 return true;
         }
         return false;
+    }
+
+    private boolean isDArrayCreate(Function function) {
+        return function.getTags().stream()
+            .anyMatch(tag -> "RECOVERED_UTILITY_DARRAY_CREATE".equals(tag.getName()));
     }
 
     private void collectCreationEvidence() throws Exception {
@@ -258,7 +301,13 @@ public class STDArrayElementAnalyzer extends GhidraScript {
         }
     }
 
-    private void seedOwnedSpecializations() {
+    /**
+     * Reuse only the stable generated type identity.  An earlier generated
+     * layout is a baseline for the applier, not fresh field evidence: copying
+     * its components back into the evidence map would let a stale layout
+     * validate itself forever after the original accesses disappear.
+     */
+    private void loadOwnedSpecializationIdentity() {
         for (Evidence evidence : arrays.values()) {
             Structure owner = structure(evidence.key.ownerPath);
             if (owner == null) continue;
@@ -274,15 +323,6 @@ public class STDArrayElementAnalyzer extends GhidraScript {
                     !element.getPathName().startsWith(ELEMENT_ROOT)) continue;
             evidence.existingElementPath = element.getPathName();
             evidence.existingDescriptorPath = descriptor.getPathName();
-            for (DataTypeComponent component : element.getDefinedComponents()) {
-                FieldEvidence value = evidence.fields.computeIfAbsent(
-                    (long)component.getOffset(), FieldEvidence::new);
-                value.widths.merge(component.getLength(), 1, Integer::sum);
-                value.types.merge(typeSpecification(component.getDataType()), 1,
-                    Integer::sum);
-                value.sites.add("existing generated baseline " +
-                    element.getPathName());
-            }
         }
     }
 
@@ -1027,9 +1067,8 @@ public class STDArrayElementAnalyzer extends GhidraScript {
                 owner.getComponentAt((int)evidence.key.offset);
             boolean classSafe = owner != null && classSafe(owner);
             boolean sizeSafe = elementSize >= 8 && elementSize <= MAX_ELEMENT_SIZE;
-            boolean retainedOwnedLayout = !evidence.existingElementPath.isBlank();
             boolean layoutSafe = selected.size() >= 2 &&
-                (evidence.accessCount >= 3 || retainedOwnedLayout) &&
+                evidence.accessCount >= 3 &&
                 selected.stream().allMatch(field ->
                     field.offset + selectedWidth(evidence, field) <= elementSize);
             boolean currentSafe = component != null &&
@@ -1666,6 +1705,9 @@ public class STDArrayElementAnalyzer extends GhidraScript {
         final Set<String> roleSites = new TreeSet<>();
         FieldEvidence(long offset) { this.offset = offset; }
     }
+    private record Candidate(Function function, Structure owner) { }
+    private record BatchResult(Function function, String c, String error,
+        DecompileResults results) { }
     private record Decompiled(Function function, Structure owner, String c,
         DecompileResults results) {}
     private record FieldTarget(long offset) {}

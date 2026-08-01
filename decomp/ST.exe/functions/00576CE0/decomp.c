@@ -18,14 +18,13 @@ void DestroyBaseSystem(void)
   g_currentExceptionFrame = &local_48;
   errorCode = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0);
   if (errorCode == 0) {
-    if (DAT_00811638 != (HoloTy *)0x0) {
-      if (*(int *)((int)&DAT_00811638->field_001F + 1) == 1) {
-        FUN_006e4b80(&DAT_00807620,(int)DAT_00811638);
+    if (g_baseSystem_00811638 != (BaseSystemC *)0x0) {
+      if (g_baseSystem_00811638->field_0020 == 1) {
+        FUN_006e4b80(&DAT_00807620,(int)g_baseSystem_00811638);
       }
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-      (**(code **)(*(int *)DAT_00811638 + 4))();
-      Library::MSVCRT::FUN_0072e2b0(DAT_00811638);
-      DAT_00811638 = (HoloTy *)0x0;
+      g_baseSystem_00811638->vfunc_04();
+      Library::MSVCRT::FUN_0072e2b0((HoloTy *)g_baseSystem_00811638);
+      g_baseSystem_00811638 = (BaseSystemC *)0x0;
     }
     g_currentExceptionFrame = local_48.previous;
     return;

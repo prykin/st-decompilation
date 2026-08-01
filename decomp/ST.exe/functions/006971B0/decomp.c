@@ -12,12 +12,12 @@ int __thiscall CGenerate::sub_006971B0(CGenerate *this)
   dword dVar1;
   CGenerate_field_5853DArray *pCVar2;
   CGenerate_field_5853Element *element_5853;
-  uint uVar3;
-  int iVar4;
+  uint uVar4;
   int iVar5;
-  uint uVar6;
-  int iVar7;
-  undefined4 *puVar8;
+  int iVar6;
+  uint uVar7;
+  int iVar8;
+  undefined4 *puVar9;
   int local_38;
   int local_20;
   void *local_14;
@@ -30,28 +30,28 @@ int __thiscall CGenerate::sub_006971B0(CGenerate *this)
   local_14 = ExceptionList;
   local_20 = 0;
   local_8 = 0;
-  uVar3 = this->field_583B;
+  uVar4 = this->field_583B;
   ExceptionList = &local_14;
   Library::MSVCRT::FUN_0072da40();
   local_8 = 0xffffffff;
   if ((this->field_5853 != (CGenerate_field_5853DArray *)0x0) &&
      (&stack0x00000000 != (undefined1 *)0x50)) {
-    puVar8 = (undefined4 *)&stack0xffffffb0;
-    for (uVar3 = uVar3 & 0x3fffffff; uVar3 != 0; uVar3 = uVar3 - 1) {
-      *puVar8 = 0;
-      puVar8 = puVar8 + 1;
+    puVar9 = (undefined4 *)&stack0xffffffb0;
+    for (uVar4 = uVar4 & 0x3fffffff; uVar4 != 0; uVar4 = uVar4 - 1) {
+      *puVar9 = 0;
+      puVar9 = puVar9 + 1;
     }
-    for (iVar4 = 0; iVar4 != 0; iVar4 = iVar4 + -1) {
-      *(undefined1 *)puVar8 = 0;
-      puVar8 = (undefined4 *)((int)puVar8 + 1);
+    for (iVar5 = 0; iVar5 != 0; iVar5 = iVar5 + -1) {
+      *(undefined1 *)puVar9 = 0;
+      puVar9 = (undefined4 *)((int)puVar9 + 1);
     }
     dVar1 = this->field_5853->count;
-    uVar3 = 0;
+    uVar4 = 0;
     if (0 < (int)dVar1) {
       do {
         pCVar2 = this->field_5853;
-        if (uVar3 < pCVar2->count) {
-          element_5853 = DArrayAt<CGenerate_field_5853Element>(pCVar2, uVar3);
+        if (uVar4 < pCVar2->count) {
+          element_5853 = DArrayAt<CGenerate_field_5853Element>(pCVar2, uVar4);
         }
         else {
           element_5853 = (CGenerate_field_5853Element *)0x0;
@@ -60,37 +60,37 @@ int __thiscall CGenerate::sub_006971B0(CGenerate *this)
           *(int *)(&stack0xffffffb0 + element_5853->field_0000 * 4) =
                *(int *)(&stack0xffffffb0 + element_5853->field_0000 * 4) + element_5853->field_0011;
         }
-        uVar3 = uVar3 + 1;
-      } while ((int)uVar3 < (int)dVar1);
+        uVar4 = uVar4 + 1;
+      } while ((int)uVar4 < (int)dVar1);
     }
     local_38 = -1;
-    iVar5 = 0;
-    iVar7 = 0;
-    iVar4 = -1;
+    iVar6 = 0;
+    iVar8 = 0;
+    iVar5 = -1;
     if (0 < this->field_583B) {
       do {
-        iVar4 = (*(int *)(&stack0xffffffb0 + iVar7 * 4) * 100) / (int)this->field_582F;
-        if (iVar7 == 0) {
-          uVar3 = iVar4 - this->field_5843;
-          uVar6 = (int)uVar3 >> 0x1f;
-          iVar5 = (uVar3 ^ uVar6) - uVar6;
-          local_38 = iVar7;
+        iVar5 = (*(int *)(&stack0xffffffb0 + iVar8 * 4) * 100) / (int)this->field_582F;
+        if (iVar8 == 0) {
+          uVar4 = iVar5 - this->field_5843;
+          uVar7 = (int)uVar4 >> 0x1f;
+          iVar6 = (uVar4 ^ uVar7) - uVar7;
+          local_38 = iVar8;
         }
         else {
-          uVar3 = iVar4 - this->field_5843;
-          uVar6 = (int)uVar3 >> 0x1f;
-          iVar4 = (uVar3 ^ uVar6) - uVar6;
-          if (iVar4 < iVar5) {
-            iVar5 = iVar4;
-            local_38 = iVar7;
+          uVar4 = iVar5 - this->field_5843;
+          uVar7 = (int)uVar4 >> 0x1f;
+          iVar5 = (uVar4 ^ uVar7) - uVar7;
+          if (iVar5 < iVar6) {
+            iVar6 = iVar5;
+            local_38 = iVar8;
           }
         }
-        iVar7 = iVar7 + 1;
-        iVar4 = local_38;
-      } while (iVar7 < this->field_583B);
+        iVar8 = iVar8 + 1;
+        iVar5 = local_38;
+      } while (iVar8 < this->field_583B);
     }
-    if (-1 < iVar4) {
-      local_20 = iVar4;
+    if (-1 < iVar5) {
+      local_20 = iVar5;
     }
   }
   ExceptionList = local_14;

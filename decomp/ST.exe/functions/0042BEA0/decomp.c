@@ -16,10 +16,10 @@ STAllPlayersC::AddObjToTmp2
   undefined4 uVar3;
   STGameObjC *this_00;
   char objPtr;
-  STPlayerTempSlot *pSVar4;
+  int *piVar4;
   Global_sub_0043FC50_param_1Enum GVar5;
   InternalExceptionFrame local_58;
-  STPlayerTempSlot *local_14;
+  int local_14;
   undefined4 local_10;
   STAllPlayersC *local_c;
   STAllPlayersC_GetObjPtr_param_3Enum local_8;
@@ -52,7 +52,8 @@ STAllPlayersC::AddObjToTmp2
     return 0xaffe0001;
   }
   if (param_2 == 0) {
-    local_14 = g_playerRuntime[param_1].tempSlots[0];
+    /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
+    local_14 = param_1 * 0xa62 + 0x7f4f83;
     if (param_3 == 0) {
       thunk_FUN_0043fc50(CASE_1,0);
       GVar5 = CASE_2;
@@ -61,7 +62,8 @@ LAB_0042bf8b:
     }
   }
   else if (param_2 == 1) {
-    local_14 = g_playerRuntime[param_1].tempSlots[1];
+    /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
+    local_14 = param_1 * 0xa62 + 0x7f4fd3;
     if (param_3 == 0) {
       thunk_FUN_0043fc50(CASE_4,0);
       GVar5 = CASE_5;
@@ -78,17 +80,17 @@ LAB_0042bf8b:
               (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0x23c);
   }
-  pSVar4 = local_14 + param_3;
+  piVar4 = (int *)(param_3 * 0x10 + local_14);
   objPtr = (char)param_5;
-  if (((pSVar4->objectType == param_4) && (pSVar4->playerId == (int)objPtr)) &&
-     (pSVar4->objectId == (ushort)param_6)) {
+  if (((*piVar4 == param_4) && (piVar4[1] == (int)objPtr)) &&
+     (*(ushort *)(piVar4 + 2) == (ushort)param_6)) {
     RaiseInternalException
               (-0x5001ffff,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0x23f);
   }
-  pSVar4->objectType = param_4;
-  pSVar4->playerId = (int)objPtr;
-  pSVar4->objectId = (ushort)param_6;
+  *piVar4 = param_4;
+  piVar4[1] = (int)objPtr;
+  *(ushort *)(piVar4 + 2) = (ushort)param_6;
   if (param_4 < 0x1a5) {
     if (param_4 == 0x1a4) {
       local_8 = CASE_5;

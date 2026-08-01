@@ -30,7 +30,7 @@ undefined4 FUN_004b7750(uint param_1)
     iVar3 = thunk_FUN_004b72b0(cVar6);
     iVar4 = thunk_FUN_004b71c0(cVar6);
     if (iVar4 < iVar3) {
-      pDVar7 = g_playerRuntime[iVar2].objects;
+      pDVar7 = (DArrayTy *)g_playerRuntime[iVar2].field6_0x9;
       iVar3 = 0;
       if ((pDVar7 != (DArrayTy *)0x0) && (local_10 = 0, pDVar7->count != 0)) {
 LAB_004b77c4:
@@ -53,7 +53,7 @@ LAB_004b77c4:
             if (pDVar7->count != 0) {
               do {
                 DArrayGetElement(pDVar7,index,local_28);
-                /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
+                /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
                 if (*(int *)(iVar2 * 0xa62 + 0x7f579a + local_24 * 4) <
                     *(int *)(iVar2 * 0xa62 + 0x7f579a + local_18 * 4)) {
                   Library::DKW::TBL::FUN_006b11d0
@@ -69,8 +69,8 @@ LAB_004b77c4:
             }
             iVar4 = thunk_FUN_004b71c0(cVar6);
             if (local_14 + iVar3 <= iVar4) {
-              Library::DKW::TBL::FUN_006ae1c0
-                        (*(uint **)&g_playerRuntime[iVar2].field_0x992,&local_1c);
+              Library::DKW::TBL::DArrayAppend
+                        (*(DArrayTy **)&g_playerRuntime[iVar2].field_0x992,&local_1c);
               iVar3 = iVar3 + local_14;
             }
           }
@@ -92,7 +92,7 @@ LAB_004b78f0:
     if (dVar1 == 0) break;
   }
 cf_continue_loop_004B78A7:
-  pDVar7 = g_playerRuntime[iVar2].objects;
+  pDVar7 = (DArrayTy *)g_playerRuntime[iVar2].field6_0x9;
   local_10 = local_10 + 1;
   if (pDVar7->count <= local_10) {
     return 0;

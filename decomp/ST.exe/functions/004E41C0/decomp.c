@@ -5,6 +5,6 @@
 uint FUN_004e41c0(int param_1)
 
 {
-  return g_playerRuntime[param_1].field2132_0x996;
+  return g_playerRuntime[param_1].field2302_0x996;
 }
 

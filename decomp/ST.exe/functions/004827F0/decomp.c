@@ -57,7 +57,7 @@ void __thiscall STBoatC::ExpIsOver(STBoatC *this,uint param_1)
                0x3d73);
   }
   local_18[0] = 0x7fff;
-  Library::DKW::TBL::FUN_006ae140((uint *)array,uVar5,(undefined4 *)local_18);
+  Library::DKW::TBL::DArrayPut(array,uVar5,local_18);
   uVar5 = 0;
   bVar2 = true;
   if (0 < (int)array->count) {

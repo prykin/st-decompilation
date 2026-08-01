@@ -105,8 +105,9 @@ byte * __cdecl TactDataPack(undefined4 *param_1,uint *param_2)
           }
           if (pAVar4 != (AnonShape_GLOBAL_008489C4_F7BABFAC *)0x0) {
             local_1c = FltDataPack(pAVar4,&local_10);
-            local_8 = (AnonShape_00691190_783A1B6D *)
-                      Library::DKW::LIB::FUN_006acf50((int)local_8,local_8->field_0014 + local_10);
+            local_8 = Library::DKW::LIB::MemRealloc
+                                ((AnonPointee_TLOBaseTy_0607 *)local_8,
+                                 local_8->field_0014 + local_10);
             pbVar5 = local_1c;
             pbVar12 = &local_8[1].field_0x3 + iVar2;
             memmove(pbVar12, pbVar5, local_10); /* compiler REP MOVS byte copy */

@@ -794,8 +794,11 @@ public class STPrototypeAnalyzer extends GhidraScript {
                 ev.strongTypeSites.getOrDefault(proposedType, Set.of()).size();
             boolean enoughTypeEvidence = "return".equals(key.kind) ?
                 strongTypeCount > 0 : strongTypeCount > 0 || typeCount >= 2;
-            boolean typeApply = !manual && !abiMachineTarget && !typeConflict && typeChange &&
+            boolean protectedOverride = legacyDebugGenericReturn(function, target, key,
+                currentType, proposedType, strongTypeCount) && !typeConflict && typeChange &&
                 enoughTypeEvidence;
+            boolean typeApply = (!manual || protectedOverride) && !abiMachineTarget &&
+                !typeConflict && typeChange && enoughTypeEvidence;
             boolean invalidThisName = "parameter".equals(key.kind) &&
                 "this".equals(currentName) && scriptOwned;
             if (invalidThisName && proposedName.isBlank())
@@ -816,6 +819,8 @@ public class STPrototypeAnalyzer extends GhidraScript {
             reasons.add("strong_evidence=" + ev.strongCount);
             if (!compatible && !proposedType.isBlank()) reasons.add("storage_width_mismatch");
             if (manual) reasons.add("manual_target_preserved");
+            if (protectedOverride)
+                reasons.add("legacy_debug_signature_source_override");
             if (abiMachineTarget) reasons.add("machine_abi_target_preserved");
             if (scriptOwned) reasons.add("script_target_repair");
             if (scriptOwned && !safeScriptRepair)
@@ -828,7 +833,7 @@ public class STPrototypeAnalyzer extends GhidraScript {
             if (nameConflict) reasons.add("name_conflict");
             result.add(new Proposal(function, target, key.kind, key.ordinal, currentType,
                 currentName, proposedType, proposedName, typeApply, nameApply, scriptOwned,
-                confidence, String.join("; ", reasons), ev.sites));
+                protectedOverride, confidence, String.join("; ", reasons), ev.sites));
         }
         result.sort(Comparator.comparing((Proposal row) -> row.address)
             .thenComparing(row -> row.kind).thenComparingInt(row -> row.ordinal));
@@ -1677,6 +1682,20 @@ public class STPrototypeAnalyzer extends GhidraScript {
     private boolean protectedSource(SourceType source) {
         return source == SourceType.USER_DEFINED || source == SourceType.IMPORTED;
     }
+    private boolean legacyDebugGenericReturn(Function function, Parameter target,
+            TargetKey key, String currentType, String proposedType, int strongTypeCount) {
+        // Old STDebugSymbolApplier versions marked an inferred __thiscall conversion as
+        // USER_DEFINED.  Release only the narrow, recognizable residue: a generic pointer
+        // return with direct strong callsite evidence.  Names and IMPORTED targets remain
+        // protected, as do all parameters and non-pointer placeholders.
+        return "return".equals(key.kind) && target.getSource() == SourceType.USER_DEFINED &&
+            function.getSignatureSource() == SourceType.USER_DEFINED &&
+            hasTag(function, "RECOVERED_DEBUG_NAME") && strongTypeCount > 0 &&
+            currentType.toLowerCase(Locale.ROOT).matches("pointer:/undefined(?:[1248])?") &&
+            proposedType.startsWith("pointer:") &&
+            !proposedType.toLowerCase(Locale.ROOT).contains("undefined") &&
+            !proposedType.equals("pointer:/void");
+    }
     private File outputDirectory() throws Exception {
         String[] args = getScriptArgs();
         if (args.length > 0 && !args[0].isBlank()) return new File(args[0]);
@@ -1690,12 +1709,13 @@ public class STPrototypeAnalyzer extends GhidraScript {
 
     private void writeTsv(Path path, List<Proposal> rows) throws Exception {
         try (BufferedWriter out = Files.newBufferedWriter(path, StandardCharsets.UTF_8)) {
-            out.write("type_apply\tname_apply\trepair\tfunction_address\texpected_function\t" +
+            out.write("type_apply\tname_apply\trepair\tprotected_override\tfunction_address\texpected_function\t" +
                 "target_kind\ttarget_ordinal\texpected_target_name\texpected_target_type\t" +
                 "expected_target_source\tproposed_name\tproposed_type\tconfidence\t" +
                 "evidence_sites\treason\n");
             for (Proposal p : rows) out.write(bit(p.typeApply) + "\t" + bit(p.nameApply) +
-                "\t" + bit(p.repair) + "\t" + addr(p.address) + "\t" +
+                "\t" + bit(p.repair) + "\t" + bit(p.protectedOverride) + "\t" +
+                addr(p.address) + "\t" +
                 tsv(p.expectedFunction) + "\t" +
                 p.kind + "\t" + (p.ordinal < 0 ? "" : p.ordinal) + "\t" +
                 tsv(p.expectedTargetName) + "\t" + tsv(p.expectedTargetType) + "\t" +
@@ -1708,6 +1728,7 @@ public class STPrototypeAnalyzer extends GhidraScript {
         List<String> lines = new ArrayList<>();
         for (Proposal p : rows) lines.add("{\"type_apply\":" + p.typeApply +
             ",\"name_apply\":" + p.nameApply + ",\"repair\":" + p.repair +
+            ",\"protected_override\":" + p.protectedOverride +
             ",\"function_address\":" +
             q(addr(p.address)) + ",\"target_kind\":" + q(p.kind) +
             ",\"target_ordinal\":" + p.ordinal + ",\"proposed_name\":" +
@@ -1820,6 +1841,8 @@ public class STPrototypeAnalyzer extends GhidraScript {
                 (r.typeApply || r.nameApply)).count(),
             "repair_review_only=" + rows.stream().filter(r -> r.repair &&
                 !r.typeApply && !r.nameApply).count(),
+            "protected_debug_overrides=" + rows.stream()
+                .filter(r -> r.protectedOverride).count(),
             "conflicts=" + rows.stream().filter(r -> r.confidence.equals("conflict")).count(),
             "undefined_boundary_audit=prototype_undefined_boundary_audit.tsv",
             "note=Only exact explicit argument counts propagate types. The audit preserves " +
@@ -1835,7 +1858,9 @@ public class STPrototypeAnalyzer extends GhidraScript {
             "note_narrow_raw=Unobservable signedness on retained 1/2-byte parameters " +
                 "falls back to byte/ushort; undefined4 never receives a raw fallback.",
             "note_returns=Unknown EAX producers are traced into trusted arguments, this receivers, typed stores, and return-forwarding wrappers.",
-            "note_manual=USER_DEFINED targets are never auto-applied.",
+            "note_manual=USER_DEFINED targets are preserved except generic pointer returns " +
+                "created by the legacy debug-symbol convention conversion and independently " +
+                "disproved by strong callsite evidence; IMPORTED targets are never overridden.",
             "note_iteration=Rerun after applying method owners, globals, or class fields to reach a conservative fixed point."),
             StandardCharsets.UTF_8);
     }
@@ -2005,11 +2030,12 @@ public class STPrototypeAnalyzer extends GhidraScript {
             expectedTargetType, expectedTargetSource, proposedName, proposedType,
             confidence, reason; final int ordinal;
         final boolean typeApply, nameApply, repair;
+        final boolean protectedOverride;
         final Set<String> sites;
         Proposal(Function function, Parameter target, String kind, int ordinal,
                 String expectedTargetType, String expectedTargetName, String proposedType,
                 String proposedName, boolean typeApply, boolean nameApply, boolean repair,
-                String confidence, String reason, Set<String> sites) {
+                boolean protectedOverride, String confidence, String reason, Set<String> sites) {
             address = function.getEntryPoint(); expectedFunction = function.getName(true);
             this.kind = kind; this.ordinal = ordinal;
             this.expectedTargetName = expectedTargetName;
@@ -2018,6 +2044,7 @@ public class STPrototypeAnalyzer extends GhidraScript {
             this.proposedName = proposedName; this.proposedType = proposedType;
             this.typeApply = typeApply; this.nameApply = nameApply;
             this.repair = repair;
+            this.protectedOverride = protectedOverride;
             this.confidence = confidence; this.reason = reason;
             this.sites = new TreeSet<>(sites);
         }

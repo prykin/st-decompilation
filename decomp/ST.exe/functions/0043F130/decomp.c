@@ -3,7 +3,7 @@ short FUN_0043f130(char param_1,byte *param_2)
 
 {
   byte bVar1;
-  DArrayTy *pDVar2;
+  int iVar2;
   int *piVar3;
   short sVar4;
   short sVar5;
@@ -13,17 +13,17 @@ short FUN_0043f130(char param_1,byte *param_2)
   int iVar9;
   bool bVar10;
   byte local_18 [16];
-  dword local_8;
+  int local_8;
 
   iVar9 = 0;
   sVar5 = 0;
-  pDVar2 = g_playerRuntime[param_1].objects;
-  local_8 = pDVar2->count;
+  iVar2 = g_playerRuntime[param_1].field6_0x9;
+  local_8 = *(int *)(iVar2 + 0xc);
   sVar4 = 0;
-  if (0 < (int)local_8) {
+  if (0 < local_8) {
     do {
       sVar5 = sVar4;
-      piVar3 = *(int **)((int)pDVar2->data + iVar9 * 4);
+      piVar3 = *(int **)(*(int *)(iVar2 + 0x1c) + iVar9 * 4);
       if (piVar3 != (int *)0x0) {
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(*piVar3 + 0x74))(local_18);
@@ -52,7 +52,7 @@ LAB_0043f1a5:
       }
       iVar9 = iVar9 + 1;
       sVar4 = sVar5;
-    } while (iVar9 < (int)local_8);
+    } while (iVar9 < local_8);
   }
   return sVar5;
 }

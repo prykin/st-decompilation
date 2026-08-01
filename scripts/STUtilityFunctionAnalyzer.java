@@ -30,46 +30,6 @@ import ghidra.program.model.symbol.Reference;
 
 public class STUtilityFunctionAnalyzer extends GhidraScript {
     private static final int TIMEOUT = 60;
-    private final List<Rule> rules = List.of(
-        new Rule(0x006ab060L, "free_and_null", "FreeAndNull", "__stdcall", "/void",
-            new String[] { "pointer:pointer:/void" }, new String[] { "value" },
-            new String[] { "*value = (void *)0x0", "thunk_FUN_006a4950" },
-            "frees a non-null allocation and clears the caller-owned pointer"),
-        new Rule(0x006ae110L, "darray_destroy", "DArrayDestroy", "__stdcall", "/void",
-            new String[] { "pointer:/SubmarineTitans/Recovered/DArrayTy" },
-            new String[] { "array" },
-            new String[] { "array->data", "array->flags", "& 8", "FUN_006a5e90" },
-            "releases DArray storage and the descriptor when the ownership flag is set"),
-        new Rule(0x006ae290L, "darray_create", "DArrayCreate", "__stdcall",
-            "pointer:/SubmarineTitans/Recovered/DArrayTy",
-            new String[] { "pointer:/SubmarineTitans/Recovered/DArrayTy", "/uint", "/uint",
-                "/uint" },
-            new String[] { "array", "initialCapacity", "elementSize", "growCapacity" },
-            new String[] { "darrcrea.c", "FUN_006ae230" },
-            "creates or initializes a generic DArray descriptor"),
-        new Rule(0x006b54f0L, "sarray_create", "SArrayCreate", "__stdcall",
-            "pointer:/SubmarineTitans/Recovered/DArrayTy",
-            new String[] { "pointer:/SubmarineTitans/Recovered/DArrayTy", "/uint", "/uint" },
-            new String[] { "array", "initialCapacity", "growCapacity" },
-            new String[] { "sarrcrea.c", "FUN_006b5480" },
-            "creates or initializes the DKW string-pointer array specialization"),
-        new Rule(0x006b0140L, "load_resource_string", "LoadResourceString", "__stdcall",
-            "pointer:/char", new String[] { "/WinDef.h/UINT", "/WinDef.h/HINSTANCE" },
-            new String[] { "resourceId", "module" },
-            new String[] { "GetModuleHandleA", "LoadStringA", "0x800" },
-            "loads a Win32 string resource into the process ring buffer and returns its address"),
-        new Rule(0x006acc70L, "darray_get_element", "DArrayGetElement", "__fastcall",
-            "/int", new String[] { "pointer:/SubmarineTitans/Recovered/DArrayTy", "/uint",
-                "pointer:/void" }, new String[] { "array", "index", "outElement" },
-            new String[] { "return -4", "array->count", "array->elementSize",
-                "array->data" },
-            "copies the indexed DArray element and returns index or -4"),
-        new Rule(0x004406c0L, "player_race_id", "GetPlayerRaceId", "__stdcall", "/int",
-            new String[] { "/char" }, new String[] { "playerId" },
-            new String[] { "g_playerRuntime", ".raceId", "0xff" },
-            "maps a player id to its race id; the explicit EAX==0xff machine guard " +
-            "clears AL and returns zero")
-    );
 
     @Override
     protected void run() throws Exception {
@@ -84,8 +44,7 @@ public class STUtilityFunctionAnalyzer extends GhidraScript {
             throw new IllegalStateException("Decompiler could not open the current program");
         List<Row> rows = new ArrayList<>();
         try {
-            List<Rule> activeRules = new ArrayList<>(rules);
-            activeRules.addAll(discoveredRules(decompiler));
+            List<Rule> activeRules = discoveredRules(decompiler);
             for (Rule rule : activeRules) {
                 monitor.checkCancelled();
                 Address address = currentProgram.getAddressFactory().getDefaultAddressSpace()
@@ -123,7 +82,54 @@ public class STUtilityFunctionAnalyzer extends GhidraScript {
     private List<Rule> discoveredRules(DecompInterface decompiler) throws Exception {
         List<Rule> result = new ArrayList<>();
         Set<Long> occupied = new HashSet<>();
-        for (Rule rule : rules) occupied.add(rule.address);
+
+        addDiscovered(result, occupied, discoverFreeAndNull(),
+            "free_and_null", "FreeAndNull", "__stdcall", "/void",
+            new String[] { "pointer:pointer:/void" }, new String[] { "value" },
+            "frees a non-null allocation and clears the caller-owned pointer");
+        addDiscovered(result, occupied, discoverDArrayDestroy(),
+            "darray_destroy", "DArrayDestroy", "__stdcall", "/void",
+            new String[] { "pointer:/SubmarineTitans/Recovered/DArrayTy" },
+            new String[] { "array" },
+            "releases DArray storage and the descriptor when the ownership flag is set");
+        addDiscovered(result, occupied, discoverSourceCreate("darrcrea.c", 16),
+            "darray_create", "DArrayCreate", "__stdcall",
+            "pointer:/SubmarineTitans/Recovered/DArrayTy",
+            new String[] { "pointer:/SubmarineTitans/Recovered/DArrayTy", "/uint",
+                "/uint", "/uint" },
+            new String[] { "array", "initialCapacity", "elementSize", "growCapacity" },
+            "creates or initializes a generic DArray descriptor");
+        addDiscovered(result, occupied, discoverSourceCreate("sarrcrea.c", 12),
+            "sarray_create", "SArrayCreate", "__stdcall",
+            "pointer:/SubmarineTitans/Recovered/DArrayTy",
+            new String[] { "pointer:/SubmarineTitans/Recovered/DArrayTy", "/uint", "/uint" },
+            new String[] { "array", "initialCapacity", "growCapacity" },
+            "creates or initializes the DKW string-pointer array specialization");
+        addDiscovered(result, occupied, discoverSourceFunction("darrput.c", 12),
+            "darray_put", "DArrayPut", "__stdcall", "/int",
+            new String[] { "pointer:/SubmarineTitans/Recovered/DArrayTy", "/uint",
+                "pointer:/void" }, new String[] { "array", "index", "element" },
+            "copies one element into an indexed DArray slot");
+        addDiscovered(result, occupied, discoverSourceFunction("darrappe.c", 8),
+            "darray_append", "DArrayAppend", "__stdcall", "/int",
+            new String[] { "pointer:/SubmarineTitans/Recovered/DArrayTy", "pointer:/void" },
+            new String[] { "array", "element" },
+            "appends one element to a DArray and returns its result/index");
+        addDiscovered(result, occupied, discoverLoadResourceString(),
+            "load_resource_string", "LoadResourceString", "__stdcall", "pointer:/char",
+            new String[] { "/WinDef.h/UINT", "/WinDef.h/HINSTANCE" },
+            new String[] { "resourceId", "module" },
+            "loads a Win32 string resource into the process ring buffer and returns its address");
+        addDiscovered(result, occupied, discoverDArrayGetElement(),
+            "darray_get_element", "DArrayGetElement", "__fastcall", "/int",
+            new String[] { "pointer:/SubmarineTitans/Recovered/DArrayTy", "/uint",
+                "pointer:/void" }, new String[] { "array", "index", "outElement" },
+            "copies the indexed DArray element and returns index or -4");
+        addDiscovered(result, occupied, discoverPlayerRaceId(),
+            "player_race_id", "GetPlayerRaceId", "__stdcall", "/int",
+            new String[] { "/char" }, new String[] { "playerId" },
+            "maps a player id to the first byte of a fixed-stride runtime record; " +
+                "the explicit 0xff guard clears AL and returns zero");
 
         Function removeAt = discoverDArrayRemoveAt(decompiler);
         if (removeAt != null && occupied.add(removeAt.getEntryPoint().getOffset()))
@@ -175,6 +181,201 @@ public class STUtilityFunctionAnalyzer extends GhidraScript {
             if (occupied.add(allocator.address)) result.add(allocator);
         }
         return result;
+    }
+
+    private void addDiscovered(List<Rule> result, Set<Long> occupied, Function function,
+            String id, String name, String convention, String returnType,
+            String[] parameterTypes, String[] parameterNames, String semantics) {
+        if (function == null || !occupied.add(function.getEntryPoint().getOffset())) return;
+        result.add(new Rule(function.getEntryPoint().getOffset(), id, name, convention,
+            returnType, parameterTypes, parameterNames, new String[0], semantics));
+    }
+
+    private Function discoverFreeAndNull() throws Exception {
+        List<Function> matches = new ArrayList<>();
+        FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
+        while (functions.hasNext()) {
+            Function function = functions.next();
+            if (!smallInternal(function, 64) || !retCleanup(function, 4) ||
+                    callInstructionCount(function) != 1) continue;
+            String body = machineText(function);
+            if (body.contains("TEST EAX,EAX") && body.contains("MOV EAX,dword ptr [") &&
+                    body.matches("(?s).*MOV dword ptr \\[[A-Z]{2,3}\\],0x0.*"))
+                matches.add(function);
+        }
+        return unique(matches);
+    }
+
+    private Function discoverDArrayDestroy() throws Exception {
+        List<Function> matches = new ArrayList<>();
+        FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
+        while (functions.hasNext()) {
+            Function function = functions.next();
+            if (!smallInternal(function, 72) || !retCleanup(function, 4) ||
+                    callInstructionCount(function) != 2) continue;
+            String body = machineText(function);
+            if (body.contains("+ 0x1c]") && body.contains("TEST byte ptr [") &&
+                    body.contains(",0x8") && callsSameTarget(function))
+                matches.add(function);
+        }
+        return unique(matches);
+    }
+
+    private Function discoverSourceCreate(String sourceLeaf, int cleanup) throws Exception {
+        List<Function> matches = new ArrayList<>();
+        FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
+        while (functions.hasNext()) {
+            Function function = functions.next();
+            if (function.isThunk() || function.isExternal() ||
+                    !retCleanup(function, cleanup) || callInstructionCount(function) < 3)
+                continue;
+            if (evidenceText(function).contains(sourceLeaf)) matches.add(function);
+        }
+        return unique(matches);
+    }
+
+    private Function discoverSourceFunction(String sourceLeaf, int cleanup) {
+        List<Function> matches = new ArrayList<>();
+        FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
+        while (functions.hasNext()) {
+            Function function = functions.next();
+            if (function.isThunk() || function.isExternal() ||
+                    !retCleanup(function, cleanup)) continue;
+            if (evidenceText(function).contains(sourceLeaf)) matches.add(function);
+        }
+        return unique(matches);
+    }
+
+    private Function discoverLoadResourceString() throws Exception {
+        List<Function> matches = new ArrayList<>();
+        FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
+        while (functions.hasNext()) {
+            Function function = functions.next();
+            if (function.isThunk() || function.isExternal() || !retCleanup(function, 8) ||
+                    !callsNamed(function, "GetModuleHandleA") ||
+                    !callsNamed(function, "LoadStringA")) continue;
+            String body = machineText(function);
+            if (body.contains("0x800") && body.contains("MOV byte ptr [") &&
+                    body.contains(",0x0")) matches.add(function);
+        }
+        return unique(matches);
+    }
+
+    private Function discoverDArrayGetElement() throws Exception {
+        List<Function> matches = new ArrayList<>();
+        FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
+        while (functions.hasNext()) {
+            Function function = functions.next();
+            if (!smallInternal(function, 96) || !retCleanup(function, 4) ||
+                    callInstructionCount(function) != 0) continue;
+            String body = machineText(function);
+            if (body.contains("MOV EDI,ECX") && body.contains("MOV EAX,EDX") &&
+                    body.contains("[EDI + 0x8]") && body.contains("[EDI + 0xc]") &&
+                    body.contains("[EDI + 0x1c]") && body.contains("0xfffffffc") &&
+                    body.contains("*0x4]")) matches.add(function);
+        }
+        return unique(matches);
+    }
+
+    private Function discoverPlayerRaceId() throws Exception {
+        List<Function> matches = new ArrayList<>();
+        FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
+        while (functions.hasNext()) {
+            Function function = functions.next();
+            if (!smallInternal(function, 80) || !retCleanup(function, 4) ||
+                    callInstructionCount(function) != 0) continue;
+            String body = machineText(function);
+            if (body.contains("MOVSX EAX,byte ptr [EBP + 0x8]") &&
+                    body.contains("CMP EAX,0xff") && body.contains("XOR AL,AL") &&
+                    body.matches("(?s).*MOV AL,byte ptr \\[[^]]*\\*0x2 \\+ 0x[0-9a-f]+\\].*"))
+                matches.add(function);
+        }
+        return unique(matches);
+    }
+
+    private boolean smallInternal(Function function, long maximumBytes) {
+        return !function.isThunk() && !function.isExternal() &&
+            function.getBody().getNumAddresses() <= maximumBytes;
+    }
+
+    private String machineText(Function function) {
+        StringBuilder result = new StringBuilder();
+        InstructionIterator instructions = currentProgram.getListing()
+            .getInstructions(function.getBody(), true);
+        while (instructions.hasNext())
+            result.append(instructions.next().toString()).append('\n');
+        return result.toString();
+    }
+
+    private boolean retCleanup(Function function, long expected) {
+        boolean seen = false;
+        InstructionIterator instructions = currentProgram.getListing()
+            .getInstructions(function.getBody(), true);
+        while (instructions.hasNext()) {
+            Instruction instruction = instructions.next();
+            if (!instruction.getMnemonicString().toUpperCase(Locale.ROOT).startsWith("RET"))
+                continue;
+            if (instruction.getScalar(0) == null ||
+                    instruction.getScalar(0).getUnsignedValue() != expected) return false;
+            seen = true;
+        }
+        return seen;
+    }
+
+    private int callInstructionCount(Function function) {
+        int result = 0;
+        InstructionIterator instructions = currentProgram.getListing()
+            .getInstructions(function.getBody(), true);
+        while (instructions.hasNext())
+            if (instructions.next().getFlowType().isCall()) result++;
+        return result;
+    }
+
+    private boolean callsSameTarget(Function function) {
+        Address target = null;
+        int calls = 0;
+        InstructionIterator instructions = currentProgram.getListing()
+            .getInstructions(function.getBody(), true);
+        while (instructions.hasNext()) {
+            Instruction instruction = instructions.next();
+            if (!instruction.getFlowType().isCall()) continue;
+            Address[] flows = instruction.getFlows();
+            if (flows.length != 1) return false;
+            if (target == null) target = flows[0];
+            else if (!target.equals(flows[0])) return false;
+            calls++;
+        }
+        return calls == 2;
+    }
+
+    private boolean callsNamed(Function function, String leaf) throws Exception {
+        for (Function called : function.getCalledFunctions(monitor)) {
+            Function target = resolveThunk(called);
+            if (leaf.equals(target.getName()) || target.getName(true).endsWith("::" + leaf))
+                return true;
+        }
+        return false;
+    }
+
+    private Function unique(List<Function> matches) {
+        return matches.size() == 1 ? matches.get(0) : null;
+    }
+
+    private String evidenceText(Function function) {
+        StringBuilder result = new StringBuilder(function.getComment() == null ? "" :
+            function.getComment().toLowerCase(Locale.ROOT));
+        InstructionIterator instructions = currentProgram.getListing()
+            .getInstructions(function.getBody(), true);
+        while (instructions.hasNext()) {
+            Instruction instruction = instructions.next();
+            for (Reference reference : instruction.getReferencesFrom()) {
+                Data data = currentProgram.getListing().getDefinedDataAt(reference.getToAddress());
+                if (data != null && data.hasStringValue() && data.getValue() != null)
+                    result.append('\n').append(data.getValue().toString()
+                        .toLowerCase(Locale.ROOT));
+            }
+        }
+        return result.toString();
     }
 
     /**
@@ -237,19 +438,8 @@ public class STUtilityFunctionAnalyzer extends GhidraScript {
         String comment = function.getComment() == null ? "" :
             function.getComment().toLowerCase(Locale.ROOT);
         if (allocatorSource(comment)) return comment;
-        InstructionIterator instructions =
-            currentProgram.getListing().getInstructions(function.getBody(), true);
-        while (instructions.hasNext()) {
-            Instruction instruction = instructions.next();
-            for (Reference reference : instruction.getReferencesFrom()) {
-                Data data = currentProgram.getListing()
-                    .getDefinedDataAt(reference.getToAddress());
-                if (data == null || !data.hasStringValue() || data.getValue() == null)
-                    continue;
-                String value = data.getValue().toString().toLowerCase(Locale.ROOT);
-                if (allocatorSource(value)) return value;
-            }
-        }
+        String evidence = evidenceText(function);
+        if (allocatorSource(evidence)) return evidence;
         return comment;
     }
 

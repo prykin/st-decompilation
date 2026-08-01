@@ -12,12 +12,13 @@ CGenerate::CteateField
 {
   code *pcVar1;
   CGenerate *pCVar2;
-  int iVar3;
-  byte *pbVar4;
-  ushort *puVar5;
-  CGenerate_field_5853DArray *pCVar6;
-  undefined4 uVar7;
-  int iVar8;
+  int errorCode;
+  byte *pbVar3;
+  ushort *puVar4;
+  CGenerate_field_5853DArray *pCVar5;
+  undefined4 uVar6;
+  int iVar7;
+  uint size;
   InternalExceptionFrame local_50;
   undefined4 local_c;
   CGenerate *local_8;
@@ -26,42 +27,40 @@ CGenerate::CteateField
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_8 = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
+  errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   pCVar2 = local_8;
-  if (iVar3 == 0) {
-    iVar3 = param_1 * param_2;
-    local_8->field_582F = iVar3;
+  if (errorCode == 0) {
+    size = param_1 * param_2;
+    local_8->field_582F = size;
     local_8->field_5833 = param_1;
     local_8->field_583F = 0;
     local_8->field_5843 = param_4;
-    local_8->field_5837 = iVar3 / param_1;
+    local_8->field_5837 = (int)size / param_1;
     local_8->field_583B = param_5;
     local_8->field_5847 = param_3;
-    pbVar4 = (byte *)Library::DKW::LIB::FUN_006aac70(iVar3);
-    pCVar2->field_584B = pbVar4;
-    puVar5 = (ushort *)
-             Library::DKW::LIB::FUN_006aac70
-                       (pCVar2->field_582F * ((-(uint)(param_6 != 0) & 7) + 1) * 2);
-    pCVar2->field_584F = puVar5;
-    pCVar6 = (CGenerate_field_5853DArray *)
+    pbVar3 = Library::DKW::LIB::MemAlloc(size);
+    pCVar2->field_584B = pbVar3;
+    puVar4 = Library::DKW::LIB::MemAlloc(pCVar2->field_582F * ((-(uint)(param_6 != 0) & 7) + 1) * 2);
+    pCVar2->field_584F = puVar4;
+    pCVar5 = (CGenerate_field_5853DArray *)
              Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x1d,10);
-    pCVar2->field_5853 = pCVar6;
+    pCVar2->field_5853 = pCVar5;
     g_currentExceptionFrame = local_50.previous;
     if (((pCVar2->field_584B == (byte *)0x0) || (pCVar2->field_584F == (ushort *)0x0)) ||
-       (uVar7 = 1, pCVar2->field_5853 == (CGenerate_field_5853DArray *)0x0)) {
+       (uVar6 = 1, pCVar2->field_5853 == (CGenerate_field_5853DArray *)0x0)) {
       return local_c;
     }
   }
   else {
     g_currentExceptionFrame = local_50.previous;
-    iVar8 = ReportDebugMessage("E:\\__titans\\Maps\\gen_map.cpp",0x330,0,iVar3,"%s",
-                               "CGenerate::CteateField");
-    if (iVar8 != 0) {
+    iVar7 = ReportDebugMessage("E:\\__titans\\Maps\\gen_map.cpp",0x330,0,errorCode,
+                               "%s","CGenerate::CteateField");
+    if (iVar7 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(iVar3,0,"E:\\__titans\\Maps\\gen_map.cpp",0x332);
-    uVar7 = 0xffff;
+    RaiseInternalException(errorCode,0,"E:\\__titans\\Maps\\gen_map.cpp",0x332);
+    uVar6 = 0xffff;
   }
-  return uVar7;
+  return uVar6;
 }
 

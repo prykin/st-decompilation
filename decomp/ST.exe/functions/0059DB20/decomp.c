@@ -70,7 +70,7 @@ void __thiscall FSGSTy::ChatCtrls(FSGSTy *this)
   undefined4 local_9bc;
   undefined4 local_9b8;
   undefined4 local_9b4;
-  undefined4 local_550 [11];
+  undefined1 local_550 [45];
   undefined1 local_523;
   int local_520 [5];
   undefined4 local_50c;
@@ -151,7 +151,7 @@ void __thiscall FSGSTy::ChatCtrls(FSGSTy *this)
     pDVar8 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0x14,0x2e,10);
     *(DArrayTy **)&this_00[0x22].field_0x80 = pDVar8;
     local_523 = 1;
-    Library::DKW::TBL::FUN_006ae1c0(&pDVar8->flags,local_550);
+    Library::DKW::TBL::DArrayAppend(pDVar8,local_550);
     pDVar8 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0x14,0x68,10);
     *(DArrayTy **)&this_00[0x22].field_0x84 = pDVar8;
     pDVar8 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,1,1);

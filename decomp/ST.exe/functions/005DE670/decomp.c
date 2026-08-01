@@ -25,7 +25,7 @@ void __fastcall FUN_005de670(AnonShape_005DE670_0D4D7A8C *param_1)
   byte local_16c [260];
   InternalExceptionFrame local_68;
   byte *local_24;
-  LPVOID local_20;
+  void *local_20;
   AnonShape_005DE670_7D81EFA7 *local_1c;
   uint local_18;
   HANDLE local_14;
@@ -102,9 +102,8 @@ void __fastcall FUN_005de670(AnonShape_005DE670_0D4D7A8C *param_1)
     RaiseInternalException
               (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Start\\startsys.cpp",0x41c);
   }
-  local_c = (void *)Library::DKW::LIB::FUN_006aac70
-                              (pAVar2->field_06AE + local_18 + pAVar2->field_06B2);
-  if (local_c == (LPVOID)0x0) {
+  local_c = Library::DKW::LIB::MemAlloc(pAVar2->field_06AE + local_18 + pAVar2->field_06B2);
+  if (local_c == (void *)0x0) {
     RaiseInternalException
               (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Start\\startsys.cpp",0x41e);
   }

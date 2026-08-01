@@ -35,7 +35,7 @@ STGroupBoatC::DistributeDock(STGroupBoatC *this,int param_1,DArrayTy *param_2,DA
   undefined2 local_14 [2];
   uint local_10;
   DArrayTy *local_c;
-  undefined4 local_8;
+  undefined1 local_8 [4];
 
   uVar9 = 0;
   local_20 = (DArrayTy *)0x0;
@@ -57,10 +57,12 @@ STGroupBoatC::DistributeDock(STGroupBoatC *this,int param_1,DArrayTy *param_2,DA
     pSVar3 = local_2c;
     if (0 < (int)dVar1) {
       do {
-        DArrayGetElement(param_3,uVar9,&local_8);
-        if ((ushort)local_8 != 0xffff) {
+        DArrayGetElement(param_3,uVar9,local_8);
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+        if (local_8._0_2_ != 0xffff) {
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           pSVar5 = STAllPlayersC::GetObjPtr
-                             (g_allPlayers_007FA174,pSVar3->field_0024,(ushort)local_8,CASE_1);
+                             (g_allPlayers_007FA174,pSVar3->field_0024,local_8._0_2_,CASE_1);
           if (pSVar5 == (STGameObjC *)0x0) {
             iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x1191,0,0,
                                        "%s","STGroupBoatC::DistributeDock NULL value");
@@ -78,7 +80,7 @@ STGroupBoatC::DistributeDock(STGroupBoatC *this,int param_1,DArrayTy *param_2,DA
              (iVar4 = thunk_FUN_00486b40(pSVar5), pDVar7 = local_c, iVar4 != 0)) {
             pDVar7 = local_20;
           }
-          Library::DKW::TBL::FUN_006ae1c0(&pDVar7->flags,&local_8);
+          Library::DKW::TBL::DArrayAppend(pDVar7,local_8);
         }
         uVar9 = uVar9 + 1;
       } while ((int)uVar9 < (int)local_24);
@@ -88,10 +90,11 @@ STGroupBoatC::DistributeDock(STGroupBoatC *this,int param_1,DArrayTy *param_2,DA
       local_24 = dVar1;
       if ((dVar1 != 0) && (uVar9 = 0, 0 < (int)dVar1)) {
         do {
-          DArrayGetElement(local_c,uVar9,&local_8);
+          DArrayGetElement(local_c,uVar9,local_8);
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           pSVar6 = (STBoatC *)
                    STAllPlayersC::GetObjPtr
-                             (g_allPlayers_007FA174,pSVar3->field_0024,(ushort)local_8,CASE_1);
+                             (g_allPlayers_007FA174,pSVar3->field_0024,local_8._0_2_,CASE_1);
           STBoatC::CmdToObj(pSVar6,CASE_3,&local_10);
           uVar9 = uVar9 + 1;
         } while ((int)uVar9 < (int)dVar1);
@@ -153,10 +156,11 @@ STGroupBoatC::DistributeDock(STGroupBoatC *this,int param_1,DArrayTy *param_2,DA
     local_24 = dVar1;
     if ((dVar1 != 0) && (uVar9 = 0, pDVar7 = local_28, 0 < (int)dVar1)) {
       do {
-        DArrayGetElement(local_c,uVar9,&local_8);
+        DArrayGetElement(local_c,uVar9,local_8);
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         pSVar6 = (STBoatC *)
                  STAllPlayersC::GetObjPtr
-                           (g_allPlayers_007FA174,pSVar3->field_0024,(ushort)local_8,CASE_1);
+                           (g_allPlayers_007FA174,pSVar3->field_0024,local_8._0_2_,CASE_1);
         STBoatC::CmdToObj(pSVar6,CASE_3,&local_10);
         uVar9 = uVar9 + 1;
         pDVar7 = local_28;

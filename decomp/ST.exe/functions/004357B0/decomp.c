@@ -2,7 +2,7 @@
 int FUN_004357b0(char playerId,AiPlrClassTy *aiPlayer)
 
 {
-  g_playerRuntime[playerId].aiPlayer = aiPlayer;
+  *(AiPlrClassTy **)&g_playerRuntime[playerId].field_0x1 = aiPlayer;
   return 0;
 }
 

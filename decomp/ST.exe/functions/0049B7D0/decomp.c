@@ -320,7 +320,7 @@ joined_r0x0049bc58:
   if (0 < (int)pDVar7->count) {
     do {
       DArrayGetElement(pDVar7,uVar11,&local_3c);
-      Library::DKW::TBL::FUN_006ae140(&this->field_0226->flags,uVar11,(undefined4 *)&local_3c);
+      Library::DKW::TBL::DArrayPut(this->field_0226,uVar11,&local_3c);
       pDVar7 = this->field_0103;
       uVar11 = uVar11 + 1;
     } while ((int)uVar11 < (int)pDVar7->count);
@@ -340,7 +340,7 @@ joined_r0x0049bc58:
       if ((short)local_18 != -1) {
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         local_68[0] = CONCAT22(local_68[0]._2_2_,(short)local_18);
-        Library::DKW::TBL::FUN_006ae1c0(&this->field_022E->flags,&local_6c);
+        Library::DKW::TBL::DArrayAppend(this->field_022E,&local_6c);
       }
       uVar11 = uVar11 + 1;
     } while ((int)uVar11 < local_1c);
@@ -368,7 +368,7 @@ joined_r0x0049bc58:
                     (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp"
                      ,0x7ee);
         }
-        Library::DKW::TBL::FUN_006ae1c0(&local_30->flags,local_68);
+        Library::DKW::TBL::DArrayAppend(local_30,local_68);
         local_40 = uVar11;
         STBoatC::CmdToObj(this_00,CASE_6,&local_44);
       }

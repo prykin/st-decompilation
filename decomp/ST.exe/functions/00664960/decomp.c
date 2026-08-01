@@ -171,7 +171,7 @@ void __fastcall AiFltClassTy::sub_00664960(AiFltClassTy *param_1)
       param_1->field_015F = CONCAT13(uStack_2c,CONCAT12(uStack_2d,CONCAT11(uStack_2e,uStack_2f)));
       break;
     case 4:
-      Library::DKW::TBL::FUN_006ae1c0(&param_1->field_020B->flags,&local_3c);
+      Library::DKW::TBL::DArrayAppend(param_1->field_020B,&local_3c);
       thunk_FUN_00676c40(param_1->field_020B,thunk_FUN_00660d10);
       goto cf_common_join_00665024;
     case 5:
@@ -244,7 +244,7 @@ void __fastcall AiFltClassTy::sub_00664960(AiFltClassTy *param_1)
               ((iVar16 <= (int)local_48 &&
                ((((iVar11 <= local_50 && (local_50 <= iVar1)) && (iVar18 <= local_54)) &&
                 (local_54 <= (int)local_48)))))))) {
-            Library::DKW::TBL::FUN_006ae140((uint *)param_1->field_022F,local_c,&local_3c);
+            Library::DKW::TBL::DArrayPut((DArrayTy *)param_1->field_022F,local_c,&local_3c);
             goto cf_common_join_00665024;
           }
           local_c = local_c + 1;
@@ -422,6 +422,7 @@ void __fastcall AiFltClassTy::sub_00664960(AiFltClassTy *param_1)
       puVar19 = local_44;
       puVar20 = (uint *)&param_1->field_0xb7;
       memmove(puVar20, puVar19, 0x34); /* compiler REP MOVS byte copy */
+      iVar11 = 0;
       if (param_1->field_00B3 != 0) {
         sub_0065F980(param_1);
       }
@@ -431,6 +432,7 @@ void __fastcall AiFltClassTy::sub_00664960(AiFltClassTy *param_1)
       puVar19 = local_44;
       puVar20 = (uint *)&param_1->field_0xb7;
       memmove(puVar20, puVar19, 0x34); /* compiler REP MOVS byte copy */
+      iVar11 = 0;
       if (param_1->field_00B3 != 0) {
         sub_0065F980(param_1);
       }
@@ -440,6 +442,7 @@ void __fastcall AiFltClassTy::sub_00664960(AiFltClassTy *param_1)
       puVar19 = local_44;
       puVar20 = (uint *)&param_1->field_0xb7;
       memmove(puVar20, puVar19, 0x34); /* compiler REP MOVS byte copy */
+      iVar11 = 0;
       if (param_1->field_00B3 != 0) {
         sub_0065F980(param_1);
       }

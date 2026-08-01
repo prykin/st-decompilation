@@ -12,7 +12,7 @@ void __thiscall STVolcanoC::sub_00646D40(STVolcanoC *this,undefined4 *param_1)
   byte *puVar1;
   byte *puVar3;
 
-  puVar1 = (byte *)Library::DKW::LIB::FUN_006aac70(0x95);
+  puVar1 = (byte *)(Library::DKW::LIB::MemAlloc(0x95));
   this->field_0028 = 2;
   this->field_00AD = this->field_00B1;
   if (this == (STVolcanoC *)0x0) {

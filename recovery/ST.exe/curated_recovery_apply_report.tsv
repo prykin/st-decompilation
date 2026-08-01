@@ -1,2 +1,0 @@
-id	address	status	detail
-ai_event_get_message_v1	00652810	unchanged	void __thiscall GetMessage(AiEventClassTy * this, STMessage * message)

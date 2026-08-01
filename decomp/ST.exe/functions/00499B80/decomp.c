@@ -61,7 +61,7 @@ undefined4 __thiscall STGroupBoatC::MakePVec(STGroupBoatC *this)
         pSVar6 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,local_14,uStack_12,(int)cStack_13);
         if (pSVar6 == (STGameObjC *)0x0) {
           uStack_12 = 0xffff;
-          Library::DKW::TBL::FUN_006ae140(&pSVar3->field_020E->flags,uVar9,(undefined4 *)&local_14);
+          Library::DKW::TBL::DArrayPut(pSVar3->field_020E,uVar9,&local_14);
           puVar5 = pSVar3->field_021E;
           (puVar5 + uVar9 * 4)[0] = 0xffff;
           (puVar5 + uVar9 * 4)[1] = 0xffff;

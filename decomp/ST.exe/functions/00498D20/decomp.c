@@ -77,10 +77,88 @@
 
    [STDiscriminatedPayloadApplier] Case-local payload view: orderType == 101 uses
    /SubmarineTitans/Recovered/DiscriminatedPayloads/STGroupBoatC_SetOrderData_00498D20_Case_65. The
-   carrier ABI remains pointer:/void. */
+   carrier ABI remains pointer:/void.
+
+   [STDiscriminatedPayloadApplier] Case-local payload view: orderType == 2 uses
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/STGroupBoatC_sub_00498D20_00498D20_Case_2. The
+   carrier ABI remains pointer:/void.
+
+   [STDiscriminatedPayloadApplier] Case-local payload view: orderType == 4 uses
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/STGroupBoatC_sub_00498D20_00498D20_Case_4. The
+   carrier ABI remains pointer:/void.
+
+   [STDiscriminatedPayloadApplier] Case-local payload view: orderType == 5 uses
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/STGroupBoatC_sub_00498D20_00498D20_Case_5. The
+   carrier ABI remains pointer:/void.
+
+   [STDiscriminatedPayloadApplier] Case-local payload view: orderType == 6 uses
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/STGroupBoatC_sub_00498D20_00498D20_Case_6. The
+   carrier ABI remains pointer:/void.
+
+   [STDiscriminatedPayloadApplier] Case-local payload view: orderType == 7 uses
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/STGroupBoatC_sub_00498D20_00498D20_Case_7. The
+   carrier ABI remains pointer:/void.
+
+   [STDiscriminatedPayloadApplier] Case-local payload view: orderType == 8 uses
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/STGroupBoatC_sub_00498D20_00498D20_Case_8. The
+   carrier ABI remains pointer:/void.
+
+   [STDiscriminatedPayloadApplier] Case-local payload view: orderType == 10 uses
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/STGroupBoatC_sub_00498D20_00498D20_Case_A. The
+   carrier ABI remains pointer:/void.
+
+   [STDiscriminatedPayloadApplier] Case-local payload view: orderType == 11 uses
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/STGroupBoatC_sub_00498D20_00498D20_Case_B. The
+   carrier ABI remains pointer:/void.
+
+   [STDiscriminatedPayloadApplier] Case-local payload view: orderType == 12 uses
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/STGroupBoatC_sub_00498D20_00498D20_Case_C. The
+   carrier ABI remains pointer:/void.
+
+   [STDiscriminatedPayloadApplier] Case-local payload view: orderType == 13 uses
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/STGroupBoatC_sub_00498D20_00498D20_Case_D. The
+   carrier ABI remains pointer:/void.
+
+   [STDiscriminatedPayloadApplier] Case-local payload view: orderType == 14 uses
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/STGroupBoatC_sub_00498D20_00498D20_Case_E. The
+   carrier ABI remains pointer:/void.
+
+   [STDiscriminatedPayloadApplier] Case-local payload view: orderType == 15 uses
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/STGroupBoatC_sub_00498D20_00498D20_Case_F. The
+   carrier ABI remains pointer:/void.
+
+   [STDiscriminatedPayloadApplier] Case-local payload view: orderType == 16 uses
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/STGroupBoatC_sub_00498D20_00498D20_Case_10. The
+   carrier ABI remains pointer:/void.
+
+   [STDiscriminatedPayloadApplier] Case-local payload view: orderType == 17 uses
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/STGroupBoatC_sub_00498D20_00498D20_Case_11. The
+   carrier ABI remains pointer:/void.
+
+   [STDiscriminatedPayloadApplier] Case-local payload view: orderType == 18 uses
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/STGroupBoatC_sub_00498D20_00498D20_Case_12. The
+   carrier ABI remains pointer:/void.
+
+   [STDiscriminatedPayloadApplier] Case-local payload view: orderType == 19 uses
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/STGroupBoatC_sub_00498D20_00498D20_Case_13. The
+   carrier ABI remains pointer:/void.
+
+   [STDiscriminatedPayloadApplier] Case-local payload view: orderType == 20 uses
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/STGroupBoatC_sub_00498D20_00498D20_Case_14. The
+   carrier ABI remains pointer:/void.
+
+   [STDiscriminatedPayloadApplier] Case-local payload view: orderType == 21 uses
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/STGroupBoatC_sub_00498D20_00498D20_Case_15. The
+   carrier ABI remains pointer:/void.
+
+   [STDiscriminatedPayloadApplier] Case-local payload view: orderType == 101 uses
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/STGroupBoatC_sub_00498D20_00498D20_Case_65. The
+   carrier ABI remains pointer:/void.
+   [STTypeBootstrapApplier] Retired legacy curated identity; name=STGroupBoatC::sub_00498D20.
+   Evidence: unconfirmed descriptive leaf replaced by a structural address name */
 
 void __thiscall
-STGroupBoatC::SetOrderData(STGroupBoatC *this,Global_sub_00498D20_param_1Enum orderType,void *data)
+STGroupBoatC::sub_00498D20(STGroupBoatC *this,Global_sub_00498D20_param_1Enum orderType,void *data)
 
 {
   DArrayTy *pDVar1;
@@ -92,7 +170,7 @@ STGroupBoatC::SetOrderData(STGroupBoatC *this,Global_sub_00498D20_param_1Enum or
   uint uVar7;
   undefined4 local_10;
   undefined2 local_c;
-  undefined4 local_8;
+  undefined1 local_8 [4];
 
   switch(orderType) {
   case CASE_1:
@@ -117,8 +195,8 @@ STGroupBoatC::SetOrderData(STGroupBoatC *this,Global_sub_00498D20_param_1Enum or
       this->field_00EF = pDVar3;
       if (0 < (int)uVar6) {
         do {
-          DArrayGetElement(data,uVar7,&local_8);
-          Library::DKW::TBL::FUN_006ae140(&this->field_00EF->flags,uVar7,&local_8);
+          DArrayGetElement(data,uVar7,local_8);
+          Library::DKW::TBL::DArrayPut(this->field_00EF,uVar7,local_8);
           uVar7 = uVar7 + 1;
         } while ((int)uVar7 < (int)uVar6);
         return;
@@ -143,8 +221,7 @@ STGroupBoatC::SetOrderData(STGroupBoatC *this,Global_sub_00498D20_param_1Enum or
       if (0 < (int)uVar6) {
         do {
           DArrayGetElement(data,uVar7,(byte *)((int)&orderType + 2));
-          Library::DKW::TBL::FUN_006ae140
-                    (&this->field_0160->flags,uVar7,(undefined4 *)((int)&orderType + 2));
+          Library::DKW::TBL::DArrayPut(this->field_0160,uVar7,(byte *)((int)&orderType + 2));
           uVar7 = uVar7 + 1;
         } while ((int)uVar7 < (int)uVar6);
         return;
@@ -169,8 +246,7 @@ STGroupBoatC::SetOrderData(STGroupBoatC *this,Global_sub_00498D20_param_1Enum or
       if (0 < (int)uVar6) {
         do {
           DArrayGetElement(data,uVar7,(byte *)((int)&orderType + 2));
-          Library::DKW::TBL::FUN_006ae140
-                    (&this->field_0168->flags,uVar7,(undefined4 *)((int)&orderType + 2));
+          Library::DKW::TBL::DArrayPut(this->field_0168,uVar7,(byte *)((int)&orderType + 2));
           uVar7 = uVar7 + 1;
         } while ((int)uVar7 < (int)uVar6);
         return;
@@ -199,7 +275,7 @@ STGroupBoatC::SetOrderData(STGroupBoatC *this,Global_sub_00498D20_param_1Enum or
         }
         local_10 = *puVar2;
         local_c = *(undefined2 *)(puVar2 + 1);
-        Library::DKW::TBL::FUN_006ae140(&(*ppDVar5)->flags,uVar6,&local_10);
+        Library::DKW::TBL::DArrayPut(*ppDVar5,uVar6,&local_10);
         uVar6 = uVar6 + 1;
       } while ((int)uVar6 < (int)data);
       return;
@@ -228,8 +304,7 @@ STGroupBoatC::SetOrderData(STGroupBoatC *this,Global_sub_00498D20_param_1Enum or
       if (0 < (int)uVar6) {
         do {
           DArrayGetElement(data,uVar7,(byte *)((int)&orderType + 2));
-          Library::DKW::TBL::FUN_006ae140
-                    (&this->field_010F->flags,uVar7,(undefined4 *)((int)&orderType + 2));
+          Library::DKW::TBL::DArrayPut(this->field_010F,uVar7,(byte *)((int)&orderType + 2));
           uVar7 = uVar7 + 1;
         } while ((int)uVar7 < (int)uVar6);
       }
@@ -243,8 +318,7 @@ STGroupBoatC::SetOrderData(STGroupBoatC *this,Global_sub_00498D20_param_1Enum or
       if (0 < (int)uVar6) {
         do {
           DArrayGetElement(data,uVar7,(byte *)((int)&orderType + 2));
-          Library::DKW::TBL::FUN_006ae140
-                    (&this->field_0127->flags,uVar7,(undefined4 *)((int)&orderType + 2));
+          Library::DKW::TBL::DArrayPut(this->field_0127,uVar7,(byte *)((int)&orderType + 2));
           uVar7 = uVar7 + 1;
         } while ((int)uVar7 < (int)uVar6);
         return;
@@ -352,7 +426,7 @@ LAB_00499129:
       pDVar3 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
       this->field_01CA = pDVar3;
     }
-    Library::DKW::TBL::FUN_006ae1c0(&this->field_01CA->flags,data);
+    Library::DKW::TBL::DArrayAppend(this->field_01CA,data);
     return;
   case CASE_67:
     this->field_0061 = 1;
@@ -361,7 +435,7 @@ LAB_00499129:
       pDVar3 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,4,1);
       this->field_01CE = pDVar3;
     }
-    Library::DKW::TBL::FUN_006ae1c0(&this->field_01CE->flags,data);
+    Library::DKW::TBL::DArrayAppend(this->field_01CE,data);
     return;
   case CASE_68:
     this->field_0061 = 1;
@@ -370,7 +444,7 @@ LAB_00499129:
       pDVar3 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
       *(DArrayTy **)&this->field_0x1d2 = pDVar3;
     }
-    Library::DKW::TBL::FUN_006ae1c0(*(uint **)&this->field_0x1d2,data);
+    Library::DKW::TBL::DArrayAppend(*(DArrayTy **)&this->field_0x1d2,data);
     return;
   case CASE_69:
     this->field_0061 = 1;
@@ -379,7 +453,7 @@ LAB_00499129:
       pDVar3 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
       this->field_01D6 = pDVar3;
     }
-    Library::DKW::TBL::FUN_006ae1c0(&this->field_01D6->flags,data);
+    Library::DKW::TBL::DArrayAppend(this->field_01D6,data);
     return;
   case CASE_6A:
     this->field_0061 = 1;
@@ -388,7 +462,7 @@ LAB_00499129:
       pDVar3 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
       this->field_01DA = pDVar3;
     }
-    Library::DKW::TBL::FUN_006ae1c0(&this->field_01DA->flags,data);
+    Library::DKW::TBL::DArrayAppend(this->field_01DA,data);
   }
   return;
 }

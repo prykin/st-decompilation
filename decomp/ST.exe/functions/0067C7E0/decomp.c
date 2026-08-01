@@ -74,7 +74,7 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
     else if (SVar2 < MESS_TORPHIT) {
       if (SVar2 == MESS_SHARED_010F) {
         local_14 = 0;
-        pbVar6 = (byte *)PrepareToSave(local_10,&local_14);
+        pbVar6 = PrepareToSave(local_10,&local_14);
         bVar17 = 0xc;
         uVar10 = local_14;
         local_18 = pbVar6;

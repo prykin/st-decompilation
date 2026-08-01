@@ -48,8 +48,7 @@ FUN_007521b0(int *param_1,AnonShape_006B4B20_3D4F4412 *param_2,uint param_3,int 
   pAVar2 = (AnonShape_006B4B20_3D4F4412 *)param_2->field_0004;
   uVar3 = param_2->field_0008;
   uVar12 = (uint)param_2->field_000E * (int)pAVar2 + 0x1f >> 3 & 0x1ffffffc;
-  puVar5 = (uint *)Library::DKW::LIB::FUN_006aac70
-                             ((int)((int)&pAVar2->field_0x1 * uVar3 * 3) / 2 + 0x16);
+  puVar5 = Library::DKW::LIB::MemAlloc((int)((int)&pAVar2->field_0x1 * uVar3 * 3) / 2 + 0x16);
   if (puVar5 == (uint *)0x0) {
     return 0xfffffffe;
   }
@@ -244,11 +243,14 @@ LAB_007522a2:
                   *pbVar11 = 0xbf;
                   pbVar6 = local_18;
                   pbVar16 = pbVar11 + 1;
-                  memmove(pbVar16, pbVar6, 0x3f); /* compiler REP MOVS byte copy */
+                  memmove(pbVar16, pbVar6, 0x3e); /* compiler REP MOVS byte copy */
+                  pbVar16 = pbVar16 + 0x3c;
+                  pbVar6 = pbVar6 + 0x3c;
                   iVar8 = 0;
                   pbVar11 = pbVar11 + 0x40;
                   local_18 = local_18 + 0x3f;
                   uVar7 = uVar7 - 1;
+                  pbVar16[2] = pbVar6[2];
                 } while (uVar7 != 0);
               }
               pbVar6 = pbVar14;
@@ -282,10 +284,13 @@ LAB_007522a2:
                 *pbVar11 = 0xbf;
                 pbVar14 = local_18;
                 pbVar16 = pbVar11 + 1;
-                memmove(pbVar16, pbVar14, 0x3f); /* compiler REP MOVS byte copy */
+                memmove(pbVar16, pbVar14, 0x3e); /* compiler REP MOVS byte copy */
+                pbVar16 = pbVar16 + 0x3c;
+                pbVar14 = pbVar14 + 0x3c;
                 pbVar11 = pbVar11 + 0x40;
                 local_18 = local_18 + 0x3f;
                 uVar7 = uVar7 - 1;
+                pbVar16[2] = pbVar14[2];
               } while (uVar7 != 0);
             }
             if (0 < (int)param_3) {

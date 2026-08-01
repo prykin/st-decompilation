@@ -66,7 +66,7 @@ void CreatePlaySystem(void)
       }
     }
     AppClassTy::AddChildSystem
-              ((AppClassTy *)&DAT_00807620,(SystemClassTy *)PTR_0081163c,
+              ((AppClassTy *)&DAT_00807620,(SystemClassTy *)g_parentSystem_0081163C,
                (SystemClassTy *)g_playSystem_00802A38,0);
     g_playSystem_00802A38->field_00E0 = 1;
     if (DAT_008067a0 != '\0') {

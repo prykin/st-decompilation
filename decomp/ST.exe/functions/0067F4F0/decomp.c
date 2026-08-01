@@ -45,11 +45,11 @@ LAB_0067f544:
         if ((int)uVar6 < 0) {
           return 0;
         }
-        if (PTR_00848a28->count <= uVar6) {
+        if (g_array_00848A28->count <= uVar6) {
           return 0;
         }
-        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(PTR_00848a28, uVar6) (runtime stride) */
-        return (int)(PTR_00848a28->elementSize * uVar6 + (int)PTR_00848a28->data);
+        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(g_array_00848A28, uVar6) (runtime stride) */
+        return (int)(g_array_00848A28->elementSize * uVar6 + (int)g_array_00848A28->data);
       }
       uVar6 = uVar6 + 1;
     } while ((int)uVar6 < iVar2);

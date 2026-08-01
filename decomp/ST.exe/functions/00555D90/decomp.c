@@ -10,56 +10,57 @@ uint __thiscall TraksClassTy::sub_00555D90(TraksClassTy *this,undefined4 *param_
 
 {
   TraksClassTy_field_0024DArray *pTVar1;
-  uint uVar2;
-  short *psVar3;
+  uint uVar3;
+  short *psVar4;
   TraksClassTy_field_0024Element *element_0024;
   TraksClassTy_field_0024Element *element_0024_2;
-  int iVar4;
-  uint uVar5;
-  byte *puVar6;
-  bool bVar7;
+  int uVar2;
+  int iVar5;
+  uint uVar6;
+  byte *puVar7;
+  bool bVar8;
 
-  iVar4 = this->field_0828;
-  if (-1 < iVar4) {
-    uVar2 = (uint)*(short *)(&this->field_0x28 + iVar4 * 2);
-    this->field_0828 = iVar4 + -1;
-    if (-1 < (int)uVar2) {
+  iVar5 = this->field_0828;
+  if (-1 < iVar5) {
+    uVar3 = (uint)*(short *)(&this->field_0x28 + iVar5 * 2);
+    this->field_0828 = iVar5 + -1;
+    if (-1 < (int)uVar3) {
       pTVar1 = this->field_0024;
-      if (uVar2 < pTVar1->count) {
-        element_0024 = DArrayAt<TraksClassTy_field_0024Element>(pTVar1, uVar2);
-        for (iVar4 = 0xf; iVar4 != 0; iVar4 = iVar4 + -1) {
-          *(undefined4 *)psVar3 = *param_1;
+      if (uVar3 < pTVar1->count) {
+        element_0024 = DArrayAt<TraksClassTy_field_0024Element>(pTVar1, uVar3);
+        for (iVar5 = 0xf; iVar5 != 0; iVar5 = iVar5 + -1) {
+          *(undefined4 *)psVar4 = *param_1;
           param_1 = param_1 + 1;
-          psVar3 = psVar3 + 2;
+          psVar4 = psVar4 + 2;
         }
         return 0;
       }
 LAB_00555e34:
-      puVar6 = (byte *)0x0;
-      memmove(puVar6, param_1, 0x3c); /* compiler REP MOVS byte copy */
+      puVar7 = (byte *)0x0;
+      memmove(puVar7, param_1, 0x3c); /* compiler REP MOVS byte copy */
       return 0;
     }
   }
   pTVar1 = this->field_0024;
-  uVar5 = 0;
-  uVar2 = pTVar1->count;
-  if (0 < (int)uVar2) {
-    bVar7 = uVar2 != 0;
+  uVar6 = 0;
+  uVar3 = pTVar1->count;
+  if (0 < (int)uVar3) {
+    bVar8 = uVar3 != 0;
     do {
-      if (bVar7) {
-        element_0024_2 = DArrayAt<TraksClassTy_field_0024Element>(pTVar1, uVar5);
+      if (bVar8) {
+        element_0024_2 = DArrayAt<TraksClassTy_field_0024Element>(pTVar1, uVar6);
       }
       else {
         element_0024_2 = (TraksClassTy_field_0024Element *)0x0;
       }
       if ((int)element_0024_2->spriteHandle < 0) {
-        if (-1 < (int)uVar5) {
-          if (uVar5 < uVar2) {
-            element_0024_2 = DArrayAt<TraksClassTy_field_0024Element>(pTVar1, uVar5);
-            for (iVar4 = 0xf; iVar4 != 0; iVar4 = iVar4 + -1) {
-              *(undefined4 *)psVar3 = *param_1;
+        if (-1 < (int)uVar6) {
+          if (uVar6 < uVar3) {
+            element_0024_2 = DArrayAt<TraksClassTy_field_0024Element>(pTVar1, uVar6);
+            for (iVar5 = 0xf; iVar5 != 0; iVar5 = iVar5 + -1) {
+              *(undefined4 *)psVar4 = *param_1;
               param_1 = param_1 + 1;
-              psVar3 = psVar3 + 2;
+              psVar4 = psVar4 + 2;
             }
             return 0;
           }
@@ -67,11 +68,11 @@ LAB_00555e34:
         }
         break;
       }
-      uVar5 = uVar5 + 1;
-      bVar7 = uVar5 < uVar2;
-    } while ((int)uVar5 < (int)uVar2);
+      uVar6 = uVar6 + 1;
+      bVar8 = uVar6 < uVar3;
+    } while ((int)uVar6 < (int)uVar3);
   }
-  uVar2 = Library::DKW::TBL::FUN_006ae1c0(&pTVar1->flags,param_1);
+  uVar2 = Library::DKW::TBL::DArrayAppend((DArrayTy *)pTVar1,param_1);
   return uVar2;
 }
 

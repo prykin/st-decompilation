@@ -32,14 +32,14 @@ int __thiscall FUN_004de4f0(void *this,int param_1)
   local_10 = 0;
   local_c = 0;
   local_18 = 0;
-  /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
+  /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
   local_14 = param_1 * 0xa62;
-  pDVar4 = g_playerRuntime[param_1].objects;
+  pDVar4 = (DArrayTy *)g_playerRuntime[param_1].field6_0x9;
   iVar2 = 0;
   if (pDVar4 != (DArrayTy *)0x0) {
     memset(local_18c, 0, 0xb4); /* compiler bulk-zero initialization */
     uVar5 = 0;
-    /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
+    /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
     iVar2 = param_1 * 0xa62;
     if (pDVar4->count != 0) {
       do {
@@ -91,12 +91,12 @@ LAB_004de602:
           }
         }
         uVar5 = uVar5 + 1;
-        pDVar4 = *(DArrayTy **)((int)&g_playerRuntime[0].objects + local_14);
+        pDVar4 = *(DArrayTy **)((int)&g_playerRuntime[0].field6_0x9 + local_14);
         iVar2 = local_14;
       } while (uVar5 < pDVar4->count);
     }
     memset(local_d8, 0, 0xb4); /* compiler bulk-zero initialization */
-    pDVar4 = *(DArrayTy **)((int)&g_playerRuntime[0].field2164_0x9ce + iVar2);
+    pDVar4 = *(DArrayTy **)(&g_playerRuntime[0].field_0x9ce + iVar2);
     if (pDVar4 != (DArrayTy *)0x0) {
       uVar5 = 0;
       if (pDVar4->count != 0) {
@@ -113,7 +113,7 @@ LAB_004de602:
             param_1 = param_1 + 1;
           } while (param_1 < 0xc3);
           uVar5 = uVar5 + 1;
-          pDVar4 = *(DArrayTy **)((int)&g_playerRuntime[0].field2164_0x9ce + local_14);
+          pDVar4 = *(DArrayTy **)(&g_playerRuntime[0].field_0x9ce + local_14);
         } while (uVar5 < pDVar4->count);
       }
       iVar3 = 0;

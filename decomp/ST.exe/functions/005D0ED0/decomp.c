@@ -19,10 +19,9 @@ SettMapMTy::ChangePlayerList
   code *pcVar3;
   SettMapMTy *pSVar4;
   int errorCode;
-  SettMapMTy_field_1F84Element *element_1f84;
   int iVar5;
   uint uVar6;
-  SettMapMTy_field_1F84Element *element_1f84_2;
+  SettMapMTy_field_1F84Element *element_1f84;
   char *pcVar9;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   void *unaff_EDI;
@@ -50,17 +49,17 @@ SettMapMTy::ChangePlayerList
         }
         pSVar2 = pSVar4->field_1F84;
         if (param_2 < pSVar2->count) {
-          element_1f84_2 = DArrayAt<SettMapMTy_field_1F84Element>(pSVar2, param_2);
+          element_1f84 = DArrayAt<SettMapMTy_field_1F84Element>(pSVar2, param_2);
         }
         else {
-          element_1f84_2 = (SettMapMTy_field_1F84Element *)0x0;
+          element_1f84 = (SettMapMTy_field_1F84Element *)0x0;
         }
-        element_1f84_2->field_0004 = (char)param_3;
-        element_1f84_2->field_0005 = param_4;
+        element_1f84->field_0004 = (char)param_3;
+        element_1f84->field_0005 = param_4;
         if ((param_3 != 2) && (param_3 != 3)) {
           param_1 = 0;
         }
-        element_1f84_2->data = param_1;
+        element_1f84->element = param_1;
         if (param_5 == (char *)0x0) {
           param_5 = &DAT_008016a0;
         }
@@ -75,23 +74,23 @@ SettMapMTy::ChangePlayerList
         } while (cVar1 != '\0');
         uVar6 = ~uVar6;
         pcVar9 = pcVar9 + -uVar6;
-        pcVar10 = &element_1f84_2->field_0xa;
+        pcVar10 = element_1f84 + 10;
         memmove(pcVar10, pcVar9, uVar6); /* compiler REP MOVS byte copy */
-        if (element_1f84_2->field_0004 == '\0') {
-          if (element_1f84_2->state != 0xff) {
-            thunk_FUN_0056a840(&DAT_00807620,element_1f84_2->state);
+        if (element_1f84->field_0004 == '\0') {
+          if (element_1f84->state != 0xff) {
+            thunk_FUN_0056a840(&DAT_00807620,element_1f84->state);
           }
-          element_1f84_2->state = -1;
+          element_1f84->state = -1;
         }
         pSVar4 = local_8;
-        if (element_1f84_2->state == -1) {
-          element_1f84_2->field_004F = '\0';
+        if (element_1f84->state == -1) {
+          element_1f84->field_004F = '\0';
         }
         else {
-          element_1f84_2->field_004F = '\x01';
+          element_1f84->field_004F = '\x01';
         }
-        if ((element_1f84_2->field_0000 != '\0') && (element_1f84_2->field_0004 != '\x02')) {
-          element_1f84_2->field_0001 = '\x01';
+        if ((element_1f84->field_0000 != '\0') && (element_1f84->field_0004 != '\x02')) {
+          element_1f84->field_0001 = '\x01';
         }
         /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
         CheckPlList(local_8,unaff_EDI);

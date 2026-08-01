@@ -66,7 +66,7 @@ void __thiscall AiFltClassTy::_AddObjFlt(AiFltClassTy *this,uint objPtr,int para
                 (-100,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_flt.cpp",0x9b);
     }
     array = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
-    Library::DKW::TBL::FUN_006ae1c0(&array->flags,(undefined4 *)(objPtr + 0x32));
+    Library::DKW::TBL::DArrayAppend(array,(void *)(objPtr + 0x32));
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     iVar5 = (**(code **)(*(int *)objPtr + 0x2c))();
     if ((iVar5 < 1) || (0x28 < iVar5)) {

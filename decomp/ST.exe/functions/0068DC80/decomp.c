@@ -14,11 +14,10 @@ int __thiscall AiTactClassTy::InitData(AiTactClassTy *this,undefined4 *param_1)
   AiTactClassTy_field_00A5DArray *pAVar4;
   DArrayTy *pDVar5;
   AiTactClassTy_field_00BDDArray *pAVar6;
-  uint uVar7;
-  byte *puVar8;
-  AiTactClassTy_field_00A5DArray **ppAVar9;
-  int iVar10;
-  byte *puVar11;
+  byte *puVar7;
+  AiTactClassTy_field_00A5DArray **ppAVar8;
+  int iVar9;
+  byte *puVar10;
   InternalExceptionFrame local_64;
   undefined4 local_20;
   AnonShape_0068DC80_4419198B *local_1c;
@@ -28,7 +27,7 @@ int __thiscall AiTactClassTy::InitData(AiTactClassTy *this,undefined4 *param_1)
   AnonShape_0068DC80_4419198B *local_c;
   byte *local_8;
 
-  puVar11 = (byte *)0x0;
+  puVar10 = (byte *)0x0;
   local_c = (AnonShape_0068DC80_4419198B *)0x0;
   local_10 = (AnonShape_GLOBAL_008489C4_F7BABFAC *)0x0;
   local_8 = (byte *)0x0;
@@ -39,21 +38,21 @@ int __thiscall AiTactClassTy::InitData(AiTactClassTy *this,undefined4 *param_1)
   pAVar2 = local_18;
   if (iVar3 == 0) {
     if (local_18 != (AiTactClassTy *)0x0) {
-      puVar11 = (byte *)(&local_18->field_0020);
+      puVar10 = (byte *)(&local_18->field_0020);
     }
-    puVar8 = (byte *)(param_1);
-    memmove(puVar11, puVar8, 0x10c); /* compiler REP MOVS byte copy */
+    puVar7 = (byte *)(param_1);
+    memmove(puVar10, puVar7, 0x10c); /* compiler REP MOVS byte copy */
     local_18->field_0020 = 0x38e;
     local_18->field_0038 = 1;
-    ppAVar9 = &local_18->field_00A5;
+    ppAVar8 = &local_18->field_00A5;
     iVar3 = 8;
     do {
-      if (*ppAVar9 != (AiTactClassTy_field_00A5DArray *)0x0) {
+      if (*ppAVar8 != (AiTactClassTy_field_00A5DArray *)0x0) {
         pAVar4 = (AiTactClassTy_field_00A5DArray *)
-                 FUN_006b0060((uint *)0x0,(uint *)((int)ppAVar9[1] + 0x10b + (int)param_1));
-        *ppAVar9 = pAVar4;
+                 FUN_006b0060((uint *)0x0,(uint *)((int)ppAVar8[1] + 0x10b + (int)param_1));
+        *ppAVar8 = pAVar4;
       }
-      ppAVar9 = ppAVar9 + 3;
+      ppAVar8 = ppAVar8 + 3;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
     if (pAVar2->field_00A5 == (AiTactClassTy_field_00A5DArray *)0x0) {
@@ -78,18 +77,18 @@ int __thiscall AiTactClassTy::InitData(AiTactClassTy *this,undefined4 *param_1)
     if (0 < pAVar2->field_0125) {
       pAVar2->field_00A5->count = 0;
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      iVar10 = *(int *)((int)param_1 + 0x107) + 0x10b + (int)param_1;
+      iVar9 = *(int *)((int)param_1 + 0x107) + 0x10b + (int)param_1;
       if (0 < pAVar2->field_0125) {
         do {
-          *(undefined4 *)(iVar10 + 4) = pAVar2->field_0024;
-          *(undefined4 *)(iVar10 + 0x77) = pAVar2->field_009D;
-          *(undefined1 *)(iVar10 + 0x6a) = pAVar2->field_0088;
-          STPlaySystemC::CreateGameObject(g_playSystem_00802A38,900,&local_14,&local_c,iVar10,0);
+          *(undefined4 *)(iVar9 + 4) = pAVar2->field_0024;
+          *(undefined4 *)(iVar9 + 0x77) = pAVar2->field_009D;
+          *(undefined1 *)(iVar9 + 0x6a) = pAVar2->field_0088;
+          STPlaySystemC::CreateGameObject(g_playSystem_00802A38,900,&local_14,&local_c,iVar9,0);
           local_1c = local_c;
           local_20 = local_c->field_0018;
-          Library::DKW::TBL::FUN_006ae1c0(&pAVar2->field_00A5->flags,&local_20);
+          Library::DKW::TBL::DArrayAppend((DArrayTy *)pAVar2->field_00A5,&local_20);
           local_c->field_0284 = pAVar2;
-          iVar10 = iVar10 + *(int *)(iVar10 + 0x14);
+          iVar9 = iVar9 + *(int *)(iVar9 + 0x14);
           iVar3 = iVar3 + 1;
         } while (iVar3 < pAVar2->field_0125);
       }
@@ -104,8 +103,8 @@ int __thiscall AiTactClassTy::InitData(AiTactClassTy *this,undefined4 *param_1)
       thunk_FUN_006686c0((int *)&local_8);
       local_1c = local_c;
       local_20 = local_c->field_0018;
-      uVar7 = Library::DKW::TBL::FUN_006ae1c0(&pAVar2->field_00A5->flags,&local_20);
-      pAVar2->field_00A1 = uVar7;
+      iVar3 = Library::DKW::TBL::DArrayAppend((DArrayTy *)pAVar2->field_00A5,&local_20);
+      pAVar2->field_00A1 = iVar3;
       local_c->field_0284 = pAVar2;
     }
     g_currentExceptionFrame = local_64.previous;
@@ -115,9 +114,9 @@ int __thiscall AiTactClassTy::InitData(AiTactClassTy *this,undefined4 *param_1)
   sub_0068E010(local_18);
   thunk_FUN_006686c0((int *)&local_8);
   thunk_FUN_006686c0((int *)&local_10);
-  iVar10 = ReportDebugMessage("E:\\__titans\\ai\\ai_tact.cpp",0x61,0,iVar3,"%s",
-                              "AiTactClassTy::InitData");
-  if (iVar10 != 0) {
+  iVar9 = ReportDebugMessage("E:\\__titans\\ai\\ai_tact.cpp",0x61,0,iVar3,"%s",
+                             "AiTactClassTy::InitData");
+  if (iVar9 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar3,0,"E:\\__titans\\ai\\ai_tact.cpp",0x62);

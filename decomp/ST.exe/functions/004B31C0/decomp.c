@@ -36,7 +36,7 @@ undefined4 __cdecl FUN_004b31c0(int *param_1,int param_2)
       return 0;
     }
   }
-  array = g_playerRuntime[(int)piVar1].objects;
+  array = (DArrayTy *)g_playerRuntime[(int)piVar1].field6_0x9;
   if (array != (DArrayTy *)0x0) {
     index = 0;
     if (array->count != 0) {
@@ -52,7 +52,7 @@ undefined4 __cdecl FUN_004b31c0(int *param_1,int param_2)
               (iVar2 != 1)))))) && (iVar2 != 2)) {
           iVar4 = iVar4 + 1;
         }
-        array = g_playerRuntime[(int)piVar1].objects;
+        array = (DArrayTy *)g_playerRuntime[(int)piVar1].field6_0x9;
         index = index + 1;
       } while (index < array->count);
     }

@@ -81,7 +81,7 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,char param_
     return local_10;
   }
   if (0 < local_4c) {
-    piVar10 = &g_playerRuntime[param_1].field6_0xf;
+    piVar10 = &g_playerRuntime[param_1].field9_0xf;
     iVar4 = local_4c;
     do {
       if (*piVar10 == 0) {
@@ -121,7 +121,7 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,char param_
         local_c = (DArrayTy *)GetTOBJList(pSVar2,param_1,local_6c[local_14],0,-1);
         local_48 = local_c->count;
         if (local_48 != 0) {
-          /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
+          /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
           local_8 = *(DArrayTy **)(iVar6 + 0x7f4e2f + param_1 * 0xa62);
           local_18 = 0;
           if (0 < (int)local_48) {
@@ -154,7 +154,7 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,char param_
                   do {
                     DArrayGetElement(local_8,uVar9,local_90);
                     if ((local_8a == -1) && (local_82 == -1)) {
-                      Library::DKW::TBL::FUN_006ae140(&local_8->flags,uVar9,(undefined4 *)&local_40);
+                      Library::DKW::TBL::DArrayPut(local_8,uVar9,&local_40);
                       local_10 = 1;
                       break;
                     }
@@ -162,7 +162,7 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,char param_
                   } while ((int)uVar9 < (int)uVar8);
                 }
                 if (uVar9 == uVar8) {
-                  Library::DKW::TBL::FUN_006ae1c0(&local_8->flags,(undefined4 *)&local_40);
+                  Library::DKW::TBL::DArrayAppend(local_8,&local_40);
                   local_10 = 1;
                 }
               }
@@ -212,7 +212,7 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,char param_
                          (int)g_pathingGrid.sizeY,(int)g_pathingGrid.sizeZ,(int)local_40,
                          (int)local_3e,(int)local_3c,-1,-1,-1);
             local_18 = 0;
-            /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
+            /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
             local_8 = *(DArrayTy **)(local_14 * 4 + 0x7f4e2f + param_1 * 0xa62);
             iVar6 = local_14;
             SVar13 = local_58;
@@ -244,7 +244,7 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,char param_
                   do {
                     DArrayGetElement(local_8,uVar9,local_90);
                     if ((local_8a == -1) && (local_82 == -1)) {
-                      Library::DKW::TBL::FUN_006ae140(&local_8->flags,uVar9,(undefined4 *)&local_40);
+                      Library::DKW::TBL::DArrayPut(local_8,uVar9,&local_40);
                       local_10 = 1;
                       break;
                     }
@@ -252,7 +252,7 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,char param_
                   } while ((int)uVar9 < (int)uVar8);
                 }
                 if (uVar9 == uVar8) {
-                  Library::DKW::TBL::FUN_006ae1c0(&local_8->flags,(undefined4 *)&local_40);
+                  Library::DKW::TBL::DArrayAppend(local_8,&local_40);
                   local_10 = 1;
                 }
                 local_18 = local_18 + 1;

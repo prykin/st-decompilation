@@ -17,8 +17,8 @@ void __thiscall FUN_004e3200(void *this,int *param_1)
   undefined3 extraout_var_01;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined3 extraout_var_02;
-  uint *puVar6;
-  undefined1 *puVar7;
+  undefined1 *puVar6;
+  uint *puVar7;
   int *piVar8;
   uint index_00;
   uint *puVar9;
@@ -38,7 +38,7 @@ void __thiscall FUN_004e3200(void *this,int *param_1)
   undefined4 local_c;
   undefined4 local_8;
 
-  puVar7 = (undefined1 *)0x0;
+  puVar6 = (undefined1 *)0x0;
   local_8 = 0;
   local_c = 0;
   local_10 = 0;
@@ -57,35 +57,35 @@ void __thiscall FUN_004e3200(void *this,int *param_1)
   iVar4 = *(int *)((int)this + 0x5ac);
   if (iVar4 == 0x35) {
     do {
-      if (puVar7[(int)(&PTR_DAT_007bfc04)[*(int *)((int)this + 0x239)]] == '\0') {
-        iVar4 = thunk_FUN_004e60d0(*(int *)((int)this + 0x24),(int)puVar7);
-        iVar4 = thunk_FUN_004e7f20(*(int *)((int)this + 0x24),(int)puVar7,iVar4 + 1);
+      if (puVar6[(int)(&PTR_DAT_007bfc04)[*(int *)((int)this + 0x239)]] == '\0') {
+        iVar4 = thunk_FUN_004e60d0(*(int *)((int)this + 0x24),(int)puVar6);
+        iVar4 = thunk_FUN_004e7f20(*(int *)((int)this + 0x24),(int)puVar6,iVar4 + 1);
       }
       else {
-        iVar4 = thunk_FUN_004e5910(*(int *)((int)this + 0x24),(uint)puVar7);
+        iVar4 = thunk_FUN_004e5910(*(int *)((int)this + 0x24),(uint)puVar6);
       }
       if (iVar4 != 0) {
-        uVar1 = thunk_FUN_004e6140(*(int *)((int)this + 0x24),(int)puVar7);
-        iVar4 = thunk_FUN_004e60d0(*(int *)((int)this + 0x24),(int)puVar7);
+        uVar1 = thunk_FUN_004e6140(*(int *)((int)this + 0x24),(int)puVar6);
+        iVar4 = thunk_FUN_004e60d0(*(int *)((int)this + 0x24),(int)puVar6);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         if ((iVar4 < CONCAT31(extraout_var_01,uVar1)) &&
-           (((*(int *)((int)this + 0x361) != 2 || (*(undefined1 **)((int)this + 0x369) != puVar7))
-            && (iVar4 = thunk_FUN_004e5f90(*(int *)((int)this + 0x24),(uint)puVar7), iVar4 == 0))))
+           (((*(int *)((int)this + 0x361) != 2 || (*(undefined1 **)((int)this + 0x369) != puVar6))
+            && (iVar4 = thunk_FUN_004e5f90(*(int *)((int)this + 0x24),(uint)puVar6), iVar4 == 0))))
         {
           memset(local_48, 0, 0x30); /* compiler bulk-zero initialization */
-          iVar4 = thunk_FUN_004e60d0(*(int *)((int)this + 0x24),(int)puVar7);
-          local_48[0] = (iVar4 + 1) * 0x10000 | (uint)puVar7 & 0xffff;
-          if (puVar7[(int)(&PTR_DAT_007bfc04)[*(int *)((int)this + 0x239)]] == '\0') {
+          iVar4 = thunk_FUN_004e60d0(*(int *)((int)this + 0x24),(int)puVar6);
+          local_48[0] = (iVar4 + 1) * 0x10000 | (uint)puVar6 & 0xffff;
+          if (puVar6[(int)(&PTR_DAT_007bfc04)[*(int *)((int)this + 0x239)]] == '\0') {
 LAB_004e3526:
             local_40 = '\x01';
           }
           else {
-            bVar2 = thunk_FUN_004e5c40(*(byte **)((int)this + 0x24),(uint)puVar7);
+            bVar2 = thunk_FUN_004e5c40(*(byte **)((int)this + 0x24),(uint)puVar6);
             local_40 = '\0';
             /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
             if (CONCAT31(extraout_var_02,bVar2) != 0) goto LAB_004e3526;
           }
-          thunk_FUN_004c7260(this,CASE_2,(int)puVar7,&local_8,&local_c,&local_10,&local_14);
+          thunk_FUN_004c7260(this,CASE_2,(int)puVar6,&local_8,&local_c,&local_10,&local_14);
           local_3a = (undefined2)local_8;
           local_3e = (undefined2)local_c;
           iVar4 = GetPlayerRaceId(*(char *)((int)this + 0x24));
@@ -98,48 +98,48 @@ LAB_004e3526:
           iVar4 = GetPlayerRaceId(*(char *)((int)this + 0x24));
           puVar10 = local_36;
           local_3f = (undefined1)iVar4;
-          iVar4 = thunk_FUN_004e60d0(*(int *)((int)this + 0x24),(int)puVar7);
-          thunk_FUN_004e68a0(*(byte **)((int)this + 0x24),puVar7,iVar4 + 1,puVar10);
-          if (puVar7[(int)(&PTR_DAT_007bfc04)[*(int *)((int)this + 0x239)]] == '\0') {
-            puVar6 = (uint *)param_1[1];
+          iVar4 = thunk_FUN_004e60d0(*(int *)((int)this + 0x24),(int)puVar6);
+          thunk_FUN_004e68a0(*(byte **)((int)this + 0x24),puVar6,iVar4 + 1,puVar10);
+          if (puVar6[(int)(&PTR_DAT_007bfc04)[*(int *)((int)this + 0x239)]] == '\0') {
+            pDVar3 = (DArrayTy *)param_1[1];
           }
           else {
-            puVar6 = (uint *)*param_1;
+            pDVar3 = (DArrayTy *)*param_1;
           }
-          Library::DKW::TBL::FUN_006ae1c0(puVar6,local_48);
+          Library::DKW::TBL::DArrayAppend(pDVar3,local_48);
         }
       }
-      puVar7 = puVar7 + 1;
-    } while ((int)puVar7 < 0x9b);
+      puVar6 = puVar6 + 1;
+    } while ((int)puVar6 < 0x9b);
   }
   else if (((0x53 < iVar4) && (iVar4 < 0x5b)) &&
           (local_18 = 0, (&DAT_0079a3fc)[(iVar4 * 3 + -0xfc) * 5] != 0)) {
-    puVar6 = &DAT_0079a3fc + (iVar4 * 3 + -0xfc) * 5;
+    puVar7 = &DAT_0079a3fc + (iVar4 * 3 + -0xfc) * 5;
     do {
       if (0xe < local_18) break;
-      iVar4 = thunk_FUN_004e5910(*(int *)((int)this + 0x24),*puVar6);
+      iVar4 = thunk_FUN_004e5910(*(int *)((int)this + 0x24),*puVar7);
       if (iVar4 != 0) {
-        uVar1 = thunk_FUN_004e6140(*(int *)((int)this + 0x24),*puVar6);
-        iVar4 = thunk_FUN_004e60d0(*(int *)((int)this + 0x24),*puVar6);
+        uVar1 = thunk_FUN_004e6140(*(int *)((int)this + 0x24),*puVar7);
+        iVar4 = thunk_FUN_004e60d0(*(int *)((int)this + 0x24),*puVar7);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         if (((iVar4 < CONCAT31(extraout_var,uVar1)) &&
-            ((*(int *)((int)this + 0x361) != 2 || (*(uint *)((int)this + 0x369) != *puVar6)))) &&
-           (iVar4 = thunk_FUN_004e5f90(*(int *)((int)this + 0x24),*puVar6), iVar4 == 0)) {
+            ((*(int *)((int)this + 0x361) != 2 || (*(uint *)((int)this + 0x369) != *puVar7)))) &&
+           (iVar4 = thunk_FUN_004e5f90(*(int *)((int)this + 0x24),*puVar7), iVar4 == 0)) {
           iVar4 = *(int *)((int)this + 0x24);
           memset(local_48, 0, 0x30); /* compiler bulk-zero initialization */
-          iVar4 = thunk_FUN_004e60d0(iVar4,*puVar6);
-          local_48[0] = (iVar4 + 1) * 0x10000 | (uint)(ushort)*puVar6;
+          iVar4 = thunk_FUN_004e60d0(iVar4,*puVar7);
+          local_48[0] = (iVar4 + 1) * 0x10000 | (uint)(ushort)*puVar7;
           if (*(int *)((int)this + 0x4d4) == 0) {
 LAB_004e336e:
             local_40 = '\0';
           }
           else {
-            bVar2 = thunk_FUN_004e5c40(*(byte **)((int)this + 0x24),*puVar6);
+            bVar2 = thunk_FUN_004e5c40(*(byte **)((int)this + 0x24),*puVar7);
             local_40 = '\x01';
             /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
             if (CONCAT31(extraout_var_00,bVar2) == 0) goto LAB_004e336e;
           }
-          thunk_FUN_004c7260(this,CASE_2,*puVar6,&local_8,&local_c,&local_10,&local_14);
+          thunk_FUN_004c7260(this,CASE_2,*puVar7,&local_8,&local_c,&local_10,&local_14);
           local_3e = (undefined2)local_c;
           local_3a = (undefined2)local_8;
           iVar4 = GetPlayerRaceId(*(char *)((int)this + 0x24));
@@ -152,13 +152,13 @@ LAB_004e336e:
           iVar4 = GetPlayerRaceId(*(char *)((int)this + 0x24));
           local_3f = (undefined1)iVar4;
           puVar10 = local_36;
-          iVar4 = thunk_FUN_004e60d0(*(int *)((int)this + 0x24),*puVar6);
-          thunk_FUN_004e68a0(*(byte **)((int)this + 0x24),(undefined1 *)*puVar6,iVar4 + 1,puVar10);
-          Library::DKW::TBL::FUN_006ae1c0((uint *)*param_1,local_48);
+          iVar4 = thunk_FUN_004e60d0(*(int *)((int)this + 0x24),*puVar7);
+          thunk_FUN_004e68a0(*(byte **)((int)this + 0x24),(undefined1 *)*puVar7,iVar4 + 1,puVar10);
+          Library::DKW::TBL::DArrayAppend((DArrayTy *)*param_1,local_48);
         }
       }
-      puVar9 = puVar6 + 1;
-      puVar6 = puVar6 + 1;
+      puVar9 = puVar7 + 1;
+      puVar7 = puVar7 + 1;
       local_18 = local_18 + 1;
     } while (*puVar9 != 0);
   }

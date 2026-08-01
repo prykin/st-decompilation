@@ -16,7 +16,7 @@ uint __thiscall STGroupC::AddObj(STGroupC *this,uint param_1,int param_2)
   uint uVar4;
   int iVar5;
   uint uVar6;
-  uint uVar7;
+  uint index;
   InternalExceptionFrame local_80;
   undefined1 local_3c [16];
   undefined4 local_2c;
@@ -40,13 +40,13 @@ uint __thiscall STGroupC::AddObj(STGroupC *this,uint param_1,int param_2)
   local_14 = local_18;
   errorCode = Library::MSVCRT::__setjmp3(local_80.jumpBuffer,0);
   pSVar2 = local_1c;
-  uVar7 = local_14;
+  index = local_14;
   uVar6 = local_18;
   if (errorCode == 0) {
     while (uVar6 = uVar6 - 1, -1 < (int)uVar6) {
       DArrayGetElement((DArrayTy *)pSVar2->field_0029,uVar6,&local_8);
       if (local_8 == -1) {
-        uVar7 = uVar6;
+        index = uVar6;
         local_14 = uVar6;
       }
       if (local_8 == (short)param_1) {
@@ -55,7 +55,7 @@ uint __thiscall STGroupC::AddObj(STGroupC *this,uint param_1,int param_2)
                    0xb1);
       }
     }
-    Library::DKW::TBL::FUN_006ae140(pSVar2->field_0029,uVar7,&param_1);
+    Library::DKW::TBL::DArrayPut((DArrayTy *)pSVar2->field_0029,index,&param_1);
     this_00 = STAllPlayersC::GetObjPtr
                         (g_allPlayers_007FA174,pSVar2->field_0024,(ushort)param_1,CASE_1);
     thunk_FUN_00419c30(this_00,pSVar2->field_0025);
@@ -65,7 +65,7 @@ uint __thiscall STGroupC::AddObj(STGroupC *this,uint param_1,int param_2)
         pDVar3 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,5,2,5);
         pSVar2->field_002D = &pDVar3->flags;
       }
-      Library::DKW::TBL::FUN_006ae1c0(pSVar2->field_002D,&param_1);
+      Library::DKW::TBL::DArrayAppend((DArrayTy *)pSVar2->field_002D,&param_1);
       local_5 = 0xff;
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(pSVar2->vtable + 8))(0x65,&local_5);
@@ -130,7 +130,7 @@ uint __thiscall STGroupC::AddObj(STGroupC *this,uint param_1,int param_2)
       (*(code *)**(undefined4 **)pSVar2->field_001C)(local_3c);
     }
     g_currentExceptionFrame = local_80.previous;
-    return uVar7;
+    return index;
   }
   g_currentExceptionFrame = local_80.previous;
   if (errorCode != -0x5001ffff) {

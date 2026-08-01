@@ -15,11 +15,11 @@ STAllPlayersC::SelectObjects
           uint param_3)
 
 {
-  DArrayTy *pDVar1;
-  dword dVar2;
-  code *pcVar3;
+  int iVar1;
+  code *pcVar2;
   byte objPtr;
-  uint uVar4;
+  uint uVar3;
+  int iVar4;
   int *piVar5;
   STAllPlayersC_GetTOBJListFromDArr_param_3Enum SVar6;
   STGroupBoatC *this_00;
@@ -35,7 +35,7 @@ STAllPlayersC::SelectObjects
   DArrayTy *local_8;
 
   objPtr = DAT_0080874d;
-  uVar4 = (uint)DAT_0080874d;
+  uVar3 = (uint)DAT_0080874d;
   local_8 = (DArrayTy *)0x0;
   local_10 = (DArrayTy *)0x0;
   local_c = (DArrayTy *)0x0;
@@ -44,20 +44,20 @@ STAllPlayersC::SelectObjects
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   case CASE_0:
     param_3 = 0;
-    pDVar1 = g_playerRuntime[uVar4].objects;
-    dVar2 = pDVar1->count;
-    if (0 < (int)dVar2) {
+    iVar8 = g_playerRuntime[uVar3].field6_0x9;
+    iVar1 = *(int *)(iVar8 + 0xc);
+    if (0 < iVar1) {
       do {
-        piVar5 = *(int **)((int)pDVar1->data + param_3 * 4);
+        piVar5 = *(int **)(*(int *)(iVar8 + 0x1c) + param_3 * 4);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         if (((piVar5 != (int *)0x0) && (piVar5[8] == 0x14)) &&
-           ((iVar8 = (**(code **)(*piVar5 + 0xf8))(), iVar8 == 1 &&
-            (iVar8 = (**(code **)(*piVar5 + 0xec))(), iVar8 == 1)))) {
-          Library::DKW::TBL::FUN_006ae1c0(&local_8->flags,(undefined4 *)((int)piVar5 + 0x32));
+           ((iVar4 = (**(code **)(*piVar5 + 0xf8))(), iVar4 == 1 &&
+            (iVar4 = (**(code **)(*piVar5 + 0xec))(), iVar4 == 1)))) {
+          Library::DKW::TBL::DArrayAppend(local_8,(void *)((int)piVar5 + 0x32));
         }
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_3 = param_3 + 1;
-      } while ((int)param_3 < (int)dVar2);
+      } while ((int)param_3 < iVar1);
     }
     break;
   case CASE_1:
@@ -87,93 +87,93 @@ STAllPlayersC::SelectObjects
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   case CASE_2:
     param_3 = 0;
-    pDVar1 = g_playerRuntime[uVar4].objects;
-    dVar2 = pDVar1->count;
-    if (0 < (int)dVar2) {
+    iVar8 = g_playerRuntime[uVar3].field6_0x9;
+    iVar1 = *(int *)(iVar8 + 0xc);
+    if (0 < iVar1) {
       do {
-        piVar5 = *(int **)((int)pDVar1->data + param_3 * 4);
+        piVar5 = *(int **)(*(int *)(iVar8 + 0x1c) + param_3 * 4);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         if (((piVar5 != (int *)0x0) && (piVar5[8] == 0x14)) &&
-           (((iVar8 = (**(code **)(*piVar5 + 0x2c))(),
-             (*(uint *)(&DAT_00800f10 + (iVar8 + 0x41U >> 5) * 4) &
-             1 << ((byte)(iVar8 + 0x41U) & 0x1f)) != 0 ||
-             (iVar8 = (**(code **)(*piVar5 + 0x2c))(),
-             ((&DAT_00800f00)[iVar8 + 0x41U >> 5] & 1 << ((byte)(iVar8 + 0x41U) & 0x1f)) != 0)) &&
-            ((iVar8 = (**(code **)(*piVar5 + 0xf8))(), iVar8 == 1 &&
-             (iVar8 = (**(code **)(*piVar5 + 0xec))(), iVar8 == 1)))))) {
-          Library::DKW::TBL::FUN_006ae1c0(&local_8->flags,(undefined4 *)((int)piVar5 + 0x32));
+           (((iVar4 = (**(code **)(*piVar5 + 0x2c))(),
+             (*(uint *)(&DAT_00800f10 + (iVar4 + 0x41U >> 5) * 4) &
+             1 << ((byte)(iVar4 + 0x41U) & 0x1f)) != 0 ||
+             (iVar4 = (**(code **)(*piVar5 + 0x2c))(),
+             ((&DAT_00800f00)[iVar4 + 0x41U >> 5] & 1 << ((byte)(iVar4 + 0x41U) & 0x1f)) != 0)) &&
+            ((iVar4 = (**(code **)(*piVar5 + 0xf8))(), iVar4 == 1 &&
+             (iVar4 = (**(code **)(*piVar5 + 0xec))(), iVar4 == 1)))))) {
+          Library::DKW::TBL::DArrayAppend(local_8,(void *)((int)piVar5 + 0x32));
         }
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_3 = param_3 + 1;
-      } while ((int)param_3 < (int)dVar2);
+      } while ((int)param_3 < iVar1);
     }
     break;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   case CASE_3:
     param_3 = 0;
-    pDVar1 = g_playerRuntime[uVar4].objects;
-    dVar2 = pDVar1->count;
-    if (0 < (int)dVar2) {
+    iVar8 = g_playerRuntime[uVar3].field6_0x9;
+    iVar1 = *(int *)(iVar8 + 0xc);
+    if (0 < iVar1) {
       do {
-        piVar5 = *(int **)((int)pDVar1->data + param_3 * 4);
+        piVar5 = *(int **)(*(int *)(iVar8 + 0x1c) + param_3 * 4);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         if (((piVar5 != (int *)0x0) && (piVar5[8] == 0x14)) &&
-           ((iVar8 = (**(code **)(*piVar5 + 0x2c))(),
-            ((&DAT_00801000)[iVar8 + 0x41U >> 5] & 1 << ((byte)(iVar8 + 0x41U) & 0x1f)) != 0 &&
-            ((iVar8 = (**(code **)(*piVar5 + 0xf8))(), iVar8 == 1 &&
-             (iVar8 = (**(code **)(*piVar5 + 0xec))(), iVar8 == 1)))))) {
-          Library::DKW::TBL::FUN_006ae1c0(&local_8->flags,(undefined4 *)((int)piVar5 + 0x32));
+           ((iVar4 = (**(code **)(*piVar5 + 0x2c))(),
+            ((&DAT_00801000)[iVar4 + 0x41U >> 5] & 1 << ((byte)(iVar4 + 0x41U) & 0x1f)) != 0 &&
+            ((iVar4 = (**(code **)(*piVar5 + 0xf8))(), iVar4 == 1 &&
+             (iVar4 = (**(code **)(*piVar5 + 0xec))(), iVar4 == 1)))))) {
+          Library::DKW::TBL::DArrayAppend(local_8,(void *)((int)piVar5 + 0x32));
         }
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_3 = param_3 + 1;
-      } while ((int)param_3 < (int)dVar2);
+      } while ((int)param_3 < iVar1);
     }
     break;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   case CASE_4:
     param_3 = 0;
-    pDVar1 = g_playerRuntime[uVar4].objects;
-    dVar2 = pDVar1->count;
-    if (0 < (int)dVar2) {
+    iVar8 = g_playerRuntime[uVar3].field6_0x9;
+    iVar1 = *(int *)(iVar8 + 0xc);
+    if (0 < iVar1) {
       do {
-        piVar5 = *(int **)((int)pDVar1->data + param_3 * 4);
+        piVar5 = *(int **)(*(int *)(iVar8 + 0x1c) + param_3 * 4);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         if ((((piVar5 != (int *)0x0) && (piVar5[8] == 0x14)) &&
-            (iVar8 = (**(code **)(*piVar5 + 0x2c))(),
-            ((&DAT_00800fa0)[iVar8 + 0x41U >> 5] & 1 << ((byte)(iVar8 + 0x41U) & 0x1f)) != 0)) &&
-           ((iVar8 = (**(code **)(*piVar5 + 0xf8))(), iVar8 == 1 &&
-            (iVar8 = (**(code **)(*piVar5 + 0xec))(), iVar8 == 1)))) {
-          Library::DKW::TBL::FUN_006ae1c0(&local_8->flags,(undefined4 *)((int)piVar5 + 0x32));
+            (iVar4 = (**(code **)(*piVar5 + 0x2c))(),
+            ((&DAT_00800fa0)[iVar4 + 0x41U >> 5] & 1 << ((byte)(iVar4 + 0x41U) & 0x1f)) != 0)) &&
+           ((iVar4 = (**(code **)(*piVar5 + 0xf8))(), iVar4 == 1 &&
+            (iVar4 = (**(code **)(*piVar5 + 0xec))(), iVar4 == 1)))) {
+          Library::DKW::TBL::DArrayAppend(local_8,(void *)((int)piVar5 + 0x32));
         }
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_3 = param_3 + 1;
-      } while ((int)param_3 < (int)dVar2);
+      } while ((int)param_3 < iVar1);
     }
     break;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   case CASE_5:
     param_3 = 0;
-    pDVar1 = g_playerRuntime[uVar4].objects;
-    dVar2 = pDVar1->count;
-    if (0 < (int)dVar2) {
+    iVar8 = g_playerRuntime[uVar3].field6_0x9;
+    iVar1 = *(int *)(iVar8 + 0xc);
+    if (0 < iVar1) {
       do {
-        piVar5 = *(int **)((int)pDVar1->data + param_3 * 4);
+        piVar5 = *(int **)(*(int *)(iVar8 + 0x1c) + param_3 * 4);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         if (((piVar5 != (int *)0x0) && (piVar5[8] == 0x14)) &&
-           ((iVar8 = (**(code **)(*piVar5 + 0x2c))(),
-            ((&DAT_00801010)[iVar8 + 0x41U >> 5] & 1 << ((byte)(iVar8 + 0x41U) & 0x1f)) != 0 &&
-            ((iVar8 = (**(code **)(*piVar5 + 0xf8))(), iVar8 == 1 &&
-             (iVar8 = (**(code **)(*piVar5 + 0xec))(), iVar8 == 1)))))) {
-          Library::DKW::TBL::FUN_006ae1c0(&local_8->flags,(undefined4 *)((int)piVar5 + 0x32));
+           ((iVar4 = (**(code **)(*piVar5 + 0x2c))(),
+            ((&DAT_00801010)[iVar4 + 0x41U >> 5] & 1 << ((byte)(iVar4 + 0x41U) & 0x1f)) != 0 &&
+            ((iVar4 = (**(code **)(*piVar5 + 0xf8))(), iVar4 == 1 &&
+             (iVar4 = (**(code **)(*piVar5 + 0xec))(), iVar4 == 1)))))) {
+          Library::DKW::TBL::DArrayAppend(local_8,(void *)((int)piVar5 + 0x32));
         }
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_3 = param_3 + 1;
-      } while ((int)param_3 < (int)dVar2);
+      } while ((int)param_3 < iVar1);
     }
     break;
   case CASE_6:
     piVar5 = (int *)ST3DSMAPContext::sub_006EB350(g_sT3DSMAPContext_00807598,param_2,param_3,0xe,1);
-    if (((piVar5 != (int *)0x0) && (piVar5[9] == uVar4)) && (piVar5[8] == 0x14)) {
+    if (((piVar5 != (int *)0x0) && (piVar5[9] == uVar3)) && (piVar5[8] == 0x14)) {
       DArrayDestroy(local_8);
       GetGObjFromZone(this,objPtr,DAT_00807410,DAT_00807414,DAT_00807418,DAT_0080741c,
                       (int *)&local_c,(int *)0x0);
@@ -182,7 +182,7 @@ STAllPlayersC::SelectObjects
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       SVar6 = (**(code **)(*piVar5 + 0x2c))();
       local_8 = (DArrayTy *)
-                GetTOBJListFromDArr(this,uVar4,(AnonShape_0043EED0_93C25F9A *)local_c,SVar6,iVar8,
+                GetTOBJListFromDArr(this,uVar3,(AnonShape_0043EED0_93C25F9A *)local_c,SVar6,iVar8,
                                     cVar9);
       DArrayDestroy(local_c);
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -209,7 +209,7 @@ STAllPlayersC::SelectObjects
     break;
   case CASE_7:
     iVar8 = ST3DSMAPContext::sub_006EB350(g_sT3DSMAPContext_00807598,param_2,param_3,0xe,1);
-    if ((((iVar8 != 0) && (*(uint *)(iVar8 + 0x24) == uVar4)) && (*(int *)(iVar8 + 0x20) == 0x14))
+    if ((((iVar8 != 0) && (*(uint *)(iVar8 + 0x24) == uVar3)) && (*(int *)(iVar8 + 0x20) == 0x14))
        && ((*(ushort *)(iVar8 + 0x30) != 0xffff &&
            (this_00 = thunk_FUN_0042b760(objPtr,*(ushort *)(iVar8 + 0x30)),
            this_00 != (STGroupBoatC *)0x0)))) {
@@ -247,8 +247,8 @@ STAllPlayersC::SelectObjects
     DArrayDestroy(local_8);
     return;
   }
-  if (g_playerRuntime[uVar4].field324_0x203 == 0) {
-    iVar8 = g_playerRuntime[uVar4].tempSlots[0][0].objectType;
+  if (g_playerRuntime[uVar3].field448_0x203 == 0) {
+    iVar8 = g_playerRuntime[uVar3].field332_0x163;
     if (iVar8 != 0) {
       if (iVar8 == 0x3c) {
         iVar8 = CheckTmps(objPtr,0,0x3c,objPtr,local_8,0);
@@ -258,9 +258,9 @@ STAllPlayersC::SelectObjects
         }
         if (-1 < iVar8) goto cf_common_exit_0044BD53;
         PushTV(objPtr,0);
-        if (g_playerRuntime[uVar4].tempSlots[0][1].playerId == uVar4) {
+        if (g_playerRuntime[uVar3].field338_0x177 == uVar3) {
           CalibrateTmp(this,objPtr,0,1,&local_8->flags,(int *)&local_10,(int *)0x0,(int *)0x0);
-          ResetActivityFromObjs(this,uVar4,0x3c,local_10,0,0);
+          ResetActivityFromObjs(this,uVar3,0x3c,local_10,0,0);
           DArrayDestroy(local_10);
         }
         else {
@@ -291,7 +291,7 @@ STAllPlayersC::SelectObjects
     ActivateTV(this,objPtr,0,iVar8);
   }
   else {
-    if (g_playerRuntime[uVar4].field324_0x203 != 1) {
+    if (g_playerRuntime[uVar3].field448_0x203 != 1) {
       iVar8 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x317d,0,0,"%s",
                                  "STAllPlayersC::SelectObjects GAMETYPE_BOAT wrong panel number");
       if (iVar8 != 0) {
@@ -299,9 +299,9 @@ STAllPlayersC::SelectObjects
       }
       goto cf_common_exit_0044BD53;
     }
-    g_playerRuntime[uVar4].field324_0x203 = 0;
+    g_playerRuntime[uVar3].field448_0x203 = 0;
     ResetActivityFromTmp(this,objPtr,1,0,0);
-    iVar8 = g_playerRuntime[uVar4].tempSlots[0][0].objectType;
+    iVar8 = g_playerRuntime[uVar3].field332_0x163;
     if (iVar8 == 0) {
       iVar8 = CheckTmps(objPtr,0,0x3c,objPtr,local_8,0);
       if (0 < iVar8) {
@@ -334,10 +334,10 @@ STAllPlayersC::SelectObjects
       PushTV(objPtr,0);
     }
 cf_common_exit_0044BD3D:
-    AddObjsToTmp(this,uVar4,0,0,local_8);
+    AddObjsToTmp(this,uVar3,0,0,local_8);
   }
 LAB_0044bd49:
-  g_playerRuntime[uVar4].tempSlots[0][0].objectType = 0x3c;
+  g_playerRuntime[uVar3].field332_0x163 = 0x3c;
 cf_common_exit_0044BD53:
   DArrayDestroy(local_8);
   SelfCheckObjControl(this);

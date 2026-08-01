@@ -19,7 +19,7 @@ int __cdecl FUN_00552f50(int param_1)
   iVar1 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   if (iVar1 == 0) {
     iVar1 = param_1 * 2 + 1;
-    local_8 = (void *)Library::DKW::LIB::FUN_006aac70(iVar1 * iVar1);
+    local_8 = Library::DKW::LIB::MemAlloc(iVar1 * iVar1);
     local_10 = 0;
     local_c = 0;
     if (0 < iVar1) {

@@ -24,12 +24,13 @@ STAllPlayersC::GetTOBJList
   uint *puVar7;
   InternalExceptionFrame local_58;
   undefined1 local_14 [4];
-  DArrayTy *local_10;
-  dword local_c;
+  int local_10;
+  int local_c;
   DArrayTy *local_8;
 
-  local_10 = g_playerRuntime[param_1].objects;
-  local_c = local_10->count;
+  local_10 = g_playerRuntime[param_1].field6_0x9;
+  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+  local_c = *(int *)(local_10 + 0xc);
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   iVar4 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
@@ -45,9 +46,10 @@ STAllPlayersC::GetTOBJList
   }
   local_8 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1);
   iVar4 = 0;
-  if (0 < (int)local_c) {
+  if (0 < local_c) {
     do {
-      piVar1 = *(int **)((int)local_10->data + iVar4 * 4);
+      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+      piVar1 = *(int **)(*(int *)(local_10 + 0x1c) + iVar4 * 4);
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       if (((piVar1 == (int *)0x0) || (SVar5 = (**(code **)(*piVar1 + 0x2c))(), SVar5 != param_2)) ||
          (iVar6 = (**(code **)(*piVar1 + 0xf8))(), iVar6 == 0)) {
@@ -75,10 +77,10 @@ switchD_0043e836_caseD_3a:
 LAB_0043e85d:
       if ((bVar3) &&
          ((param_4 == -1 || (iVar6 = (**(code **)(*piVar1 + 0x6c))(), iVar6 == param_4)))) {
-        Library::DKW::TBL::FUN_006ae1c0(&local_8->flags,(undefined4 *)((int)piVar1 + 0x32));
+        Library::DKW::TBL::DArrayAppend(local_8,(void *)((int)piVar1 + 0x32));
       }
       iVar4 = iVar4 + 1;
-    } while (iVar4 < (int)local_c);
+    } while (iVar4 < local_c);
   }
   g_currentExceptionFrame = local_58.previous;
   return &local_8->flags;

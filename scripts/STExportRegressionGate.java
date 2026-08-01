@@ -36,6 +36,8 @@ public class STExportRegressionGate extends GhidraScript {
     private static final Pattern TYPE_PATH = Pattern.compile(
         Pattern.quote(JSON_QUOTE + "path" + JSON_QUOTE + ":" + JSON_QUOTE) +
         "([^" + JSON_QUOTE + "]+)" + Pattern.quote(JSON_QUOTE));
+    private static final Pattern VTABLE_SOURCE = Pattern.compile(
+        "\\[STVTableApplier\\] Generated from ([0-9A-Fa-f]{8})");
     private static final Pattern VTABLE_COMPONENT = Pattern.compile(
         Pattern.quote("{" + JSON_QUOTE + "ordinal" + JSON_QUOTE + ":") +
         "[0-9]+," + Pattern.quote(JSON_QUOTE + "offset" + JSON_QUOTE + ":") +
@@ -197,7 +199,12 @@ public class STExportRegressionGate extends GhidraScript {
         Set<String> downgraded = new TreeSet<>();
         for (Map.Entry<String, String> entry : before.names.entrySet()) {
             String currentName = now.names.get(entry.getKey());
-            if (currentName != null && !defaultName(entry.getValue()) && defaultName(currentName))
+            String terminal = terminalTarget(entry.getKey(), now);
+            boolean intentionalRetirement =
+                now.retiredHeuristicIdentities.contains(entry.getKey()) ||
+                now.retiredHeuristicIdentities.contains(terminal);
+            if (currentName != null && !defaultName(entry.getValue()) &&
+                    defaultName(currentName) && !intentionalRetirement)
                 downgraded.add(entry.getKey() + " " + entry.getValue() + " -> " + currentName);
         }
         add(downgraded.isEmpty() ? "info" : "error", "semantic_name_downgrades", 0,
@@ -355,6 +362,9 @@ public class STExportRegressionGate extends GhidraScript {
                 }
                 if (line.contains("\"library\":true"))
                     result.libraryFunctions.add(functionAddress);
+                if (line.contains("\"RECOVERED_HEURISTIC_IDENTITY\"") ||
+                        line.contains("Retired legacy curated identity"))
+                    result.retiredHeuristicIdentities.add(functionAddress);
             }
         }
     }
@@ -367,16 +377,36 @@ public class STExportRegressionGate extends GhidraScript {
                 Matcher pathMatcher = TYPE_PATH.matcher(line);
                 if (!pathMatcher.find()) continue;
                 String typePath = unescape(pathMatcher.group(1));
-                if (typePath.endsWith("DispatchVTable")) result.dispatchVtables++;
+                Matcher sourceMatcher = VTABLE_SOURCE.matcher(line);
+                String tableIdentity = sourceMatcher.find() ?
+                    "table:" + sourceMatcher.group(1).toUpperCase(Locale.ROOT) :
+                    "path:" + typePath;
+                if (typePath.endsWith("DispatchVTable") &&
+                        result.dispatchVtableIdentities.add(tableIdentity))
+                    result.dispatchVtables++;
                 Matcher component = VTABLE_COMPONENT.matcher(line);
                 while (component.find()) {
                     String type = unescape(component.group(3));
-                    String key = typePath + "@" + component.group(1) + ":" +
-                        unescape(component.group(2));
-                    result.vtableSlots.put(key, type);
-                    if (isRecoveredFunctionPointer(type))
+                    // Physical table address + byte offset is stable across deterministic
+                    // generated type/field renames; those names are presentation, not identity.
+                    String key = tableIdentity + "@" + component.group(1);
+                    String previous = result.vtableSlots.put(key, type);
+                    if (previous == null) {
+                        if (isRecoveredFunctionPointer(type)) result.typedVtableSlots++;
+                        else if ("/void *32".equals(type)) result.voidVtableSlots++;
+                    }
+                    else if (!isRecoveredFunctionPointer(previous) &&
+                            isRecoveredFunctionPointer(type)) {
                         result.typedVtableSlots++;
-                    else if ("/void *32".equals(type)) result.voidVtableSlots++;
+                        if ("/void *32".equals(previous)) result.voidVtableSlots--;
+                    }
+                    else if (isRecoveredFunctionPointer(previous) &&
+                            !isRecoveredFunctionPointer(type)) {
+                        // Multiple stale generated names can describe one physical table.
+                        // Keep the strongest exact slot type until lifecycle cleanup removes
+                        // the orphan presentation alias.
+                        result.vtableSlots.put(key, previous);
+                    }
                 }
                 Matcher message = VTABLE_TARGET_COMPONENT.matcher(line);
                 while (message.find()) {
@@ -565,6 +595,8 @@ public class STExportRegressionGate extends GhidraScript {
         final Map<String, String> thunkTargets = new HashMap<>();
         final Set<String> taggedMessageHandlers = new TreeSet<>();
         final Set<String> untypedTaggedMessageSlots = new TreeSet<>();
+        final Set<String> retiredHeuristicIdentities = new TreeSet<>();
+        final Set<String> dispatchVtableIdentities = new TreeSet<>();
         final Set<String> bodyFunctions = new TreeSet<>();
         final Set<String> libraryFunctions = new TreeSet<>();
         long failedBodies;

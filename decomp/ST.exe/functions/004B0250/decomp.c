@@ -149,7 +149,7 @@ LAB_004b04c9:
                      ((dVar5 = local_c->slot_2C(), dVar5 == 0x78 &&
                       ((&STGroupBoatCVTable.vfunc_04)[*(int *)&local_c->field_0x259] ==
                        (icall_004A0EE0_FUN_004a0ee0_for_STGroupBoatC *)0x2)))) {
-                    Library::DKW::TBL::FUN_006ae1c0(&local_2c->flags,&local_c);
+                    Library::DKW::TBL::DArrayAppend(local_2c,&local_c);
                   }
                   goto LAB_004b057d;
                 }
@@ -161,7 +161,7 @@ LAB_004b04c9:
                   ((&STGroupBoatCVTable.vfunc_04)[*(int *)&local_c->field_0x259] ==
                    (icall_004A0EE0_FUN_004a0ee0_for_STGroupBoatC *)0x2)))) {
                 *(undefined1 *)((int)psVar11 + iVar15 + (int)local_10) = 6;
-                Library::DKW::TBL::FUN_006ae1c0(&local_2c->flags,&local_c);
+                Library::DKW::TBL::DArrayAppend(local_2c,&local_c);
               }
               else {
                 *(undefined1 *)((int)psVar11 + iVar15 + (int)local_10) = 5;

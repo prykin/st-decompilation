@@ -137,40 +137,43 @@ retain	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_WaitTy_1AEC	disabled
 retain	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_WaitTy_1AF0	disabled	apply=0
 retain	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_cLoadingTy_0000	disabled	apply=0
 retain	/SubmarineTitans/Recovered/ClassPointees/AnonPointee_cLoadingTy_0004	disabled	apply=0
-retain	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00416270	disabled	apply=0
+retain	/SubmarineTitans/Recovered/GlobalRecords/STWorldCell	disabled	apply=0
+retain	/SubmarineTitans/Recovered/GlobalRecords/STWorldCell *	disabled	apply=0
+retain	/SubmarineTitans/Recovered/GlobalRecords/STWorldGrid	disabled	apply=0
+remove	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00416270	preserved	stale baseline or semantic anchor
 retain	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_004167A0	disabled	apply=0
 retain	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_004248D0	disabled	apply=0
-retain	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_004603B0	disabled	apply=0
+remove	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_004603B0	preserved	stale baseline or semantic anchor
 retain	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_004603B0VTable	disabled	apply=0
-retain	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00493610	disabled	apply=0
-retain	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_004EEFB0	disabled	apply=0
+remove	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00493610	preserved	stale baseline or semantic anchor
+remove	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_004EEFB0	preserved	stale baseline or semantic anchor
 retain	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_004EEFB0VTable	disabled	apply=0
-retain	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0054A9B0	disabled	apply=0
-retain	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00573260	disabled	apply=0
+remove	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0054A9B0	preserved	stale baseline or semantic anchor
+remove	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00573260	preserved	stale baseline or semantic anchor
 retain	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_005B6730VTable	disabled	apply=0
 retain	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_005F35F0	disabled	apply=0
-retain	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_005FDB50	disabled	apply=0
-retain	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00601500	disabled	apply=0
+remove	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_005FDB50	preserved	stale baseline or semantic anchor
+remove	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00601500	preserved	stale baseline or semantic anchor
 retain	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0060EF40	disabled	apply=0
-retain	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00636260	disabled	apply=0
-retain	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00644410	disabled	apply=0
-retain	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0064A970	disabled	apply=0
+remove	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00636260	preserved	stale baseline or semantic anchor
+remove	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00644410	preserved	stale baseline or semantic anchor
+remove	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0064A970	preserved	stale baseline or semantic anchor
 retain	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0064A970VTable	disabled	apply=0
-retain	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0065DA50	disabled	apply=0
+remove	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0065DA50	preserved	stale baseline or semantic anchor
 retain	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0065ED90	disabled	apply=0
-retain	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00660180	disabled	apply=0
-retain	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00664540	disabled	apply=0
-retain	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00678E00	disabled	apply=0
+remove	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00660180	preserved	stale baseline or semantic anchor
+remove	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00664540	preserved	stale baseline or semantic anchor
+remove	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00678E00	preserved	stale baseline or semantic anchor
 retain	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_006799B0	disabled	apply=0
-retain	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00693D00	disabled	apply=0
+remove	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00693D00	preserved	stale baseline or semantic anchor
 retain	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_006CEC40	disabled	apply=0
-retain	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_006E1EE0	disabled	apply=0
+remove	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_006E1EE0	preserved	stale baseline or semantic anchor
 retain	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_006EA050	disabled	apply=0
-retain	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_006F31D0	disabled	apply=0
-retain	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00702510	disabled	apply=0
-retain	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00714CE0	disabled	apply=0
-retain	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00727C80	disabled	apply=0
-retain	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00728640	disabled	apply=0
+remove	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_006F31D0	preserved	stale baseline or semantic anchor
+remove	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00702510	preserved	stale baseline or semantic anchor
+remove	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00714CE0	preserved	stale baseline or semantic anchor
+remove	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00727C80	preserved	stale baseline or semantic anchor
+remove	/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00728640	preserved	stale baseline or semantic anchor
 retain	/SubmarineTitans/Recovered/PointerShapes/AnonNested_0040D540_0029_4E1A5CA3	disabled	apply=0
 retain	/SubmarineTitans/Recovered/PointerShapes/AnonNested_00443F30_0839_FB957E77	disabled	apply=0
 retain	/SubmarineTitans/Recovered/PointerShapes/AnonNested_00491600_05A6_E75AEFE8	disabled	apply=0
@@ -596,6 +599,7 @@ retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_005557B0_28260162	disa
 retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00555880_021D11E5	disabled	apply=0
 retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00555910_7455F960	disabled	apply=0
 retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00558140_7CF35A3F	disabled	apply=0
+retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_005582A0_F54946B9	disabled	apply=0
 retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_0055B9F0_A6E61FFF	disabled	apply=0
 retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_0055C320_953077EC	disabled	apply=0
 retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00566600_1A7DDCB2	disabled	apply=0
@@ -614,6 +618,8 @@ retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00572510_F06DC155	disa
 retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_005738D0_F693E267	disabled	apply=0
 retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_005739A0_A4724D00	disabled	apply=0
 retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_005745E0_AF52CC75	disabled	apply=0
+retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00574920_7507981E	disabled	apply=0
+retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_005751F0_0FFC949A	disabled	apply=0
 retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00575460_06C413C6	disabled	apply=0
 retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00575CB0_0408A0C4	disabled	apply=0
 retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00575CB0_065D0A66	disabled	apply=0
@@ -872,9 +878,34 @@ retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_006472B0_8CB9F6B2	disa
 retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00647370_C4EFCC30	disabled	apply=0
 retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00648400_5C076F88	disabled	apply=0
 retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00648530_D39EB612	disabled	apply=0
+retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00648C10_30A1BBFD	disabled	apply=0
 retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_0064EC80_53C284F2	disabled	apply=0
 retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_0064EF90_4909407D	disabled	apply=0
+retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_0064F1B0_7494B956	disabled	apply=0
+retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_0064F500_A59E916F	disabled	apply=0
+retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_0064F780_BB085AB5	disabled	apply=0
+retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_0064F950_8D921461	disabled	apply=0
+retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_0064FB80_C24FD84C	disabled	apply=0
+retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_0064FD80_D0EF9E6E	disabled	apply=0
+retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_0064FF70_ABF5F4C4	disabled	apply=0
+retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00650090_96AA9A18	disabled	apply=0
+retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_006501A0_62625B3D	disabled	apply=0
+retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00650240_0B686EC9	disabled	apply=0
+retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00650480_02BC599C	disabled	apply=0
+retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00650600_34B54EB0	disabled	apply=0
+retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00650A20_4A198923	disabled	apply=0
+retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00650B10_EE623C41	disabled	apply=0
+retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00650BD0_75D71395	disabled	apply=0
+retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00650CF0_62453E33	disabled	apply=0
+retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00650E10_EFFBA4CA	disabled	apply=0
+retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_006515B0_C597180E	disabled	apply=0
 retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00651770_8F77396F	disabled	apply=0
+retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00651ED0_D900F83D	disabled	apply=0
+retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00652300_CCF8F417	disabled	apply=0
+retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00652460_1222B12A	disabled	apply=0
+retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_006525E0_52237033	disabled	apply=0
+retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00652670_DFEA616F	disabled	apply=0
+retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00652700_9F96C451	disabled	apply=0
 retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00652810_4F58F813	disabled	apply=0
 retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_0065C9E0_147DDF60	disabled	apply=0
 retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_0065CB00_C527AFF0	disabled	apply=0
@@ -1315,6 +1346,27 @@ retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_00848A34_1A834A
 retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_00848A38_AD917B6C	disabled	apply=0
 retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_00854EE8_A19F58CE	disabled	apply=0
 retain	/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_00857168_D75747E9	disabled	apply=0
+retain	/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_AiEventClassTy_0064F1B0	disabled	apply=0
+retain	/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_AiEventClassTy_0064F500	disabled	apply=0
+retain	/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_AiEventClassTy_0064F780	disabled	apply=0
+retain	/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_AiEventClassTy_0064F950	disabled	apply=0
+retain	/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_AiEventClassTy_0064FB80	disabled	apply=0
+retain	/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_AiEventClassTy_0064FD80	disabled	apply=0
+retain	/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_AiEventClassTy_0064FF70	disabled	apply=0
+retain	/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_AiEventClassTy_00650090	disabled	apply=0
+retain	/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_AiEventClassTy_006501A0	disabled	apply=0
+retain	/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_AiEventClassTy_00650240	disabled	apply=0
+retain	/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_AiEventClassTy_00650480	disabled	apply=0
+retain	/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_AiEventClassTy_00650600	disabled	apply=0
+retain	/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_AiEventClassTy_00650B10	disabled	apply=0
+retain	/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_AiEventClassTy_00650BD0	disabled	apply=0
+retain	/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_AiEventClassTy_00650CF0	disabled	apply=0
+retain	/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_AiEventClassTy_00650E10	disabled	apply=0
+retain	/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_AiEventClassTy_006515B0	disabled	apply=0
+retain	/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_AiEventClassTy_00651ED0	disabled	apply=0
+retain	/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_AiEventClassTy_00652300	disabled	apply=0
+retain	/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_AiEventClassTy_00652460	disabled	apply=0
+retain	/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_AiEventClassTy_00652700	disabled	apply=0
 retain	/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_CGenerate_00695180	disabled	apply=0
 retain	/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_CGenerate_0069BDC0	disabled	apply=0
 retain	/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_CPanelTy_00501D00	disabled	apply=0
@@ -1331,7 +1383,10 @@ retain	/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_TLOEmbryoTy_004D
 retain	/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_TraksClassTy_00555880	disabled	apply=0
 retain	/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_TraksClassTy_00555910	disabled	apply=0
 retain	/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_VisibleClassTy_0055B9F0	disabled	apply=0
+retain	/SubmarineTitans/Recovered/STControlCommand	disabled	apply=0
+retain	/SubmarineTitans/Recovered/STControlCommand *	disabled	apply=0
 retain	/SubmarineTitans/Recovered/STControlCommandPayload	disabled	apply=0
+retain	/SubmarineTitans/Recovered/STControlCommandPayload *	disabled	apply=0
 retain	/SubmarineTitans/Recovered/STControlCommandPayloadView	disabled	apply=0
 retain	/SubmarineTitans/Recovered/STGroupBoatOrderData1	disabled	apply=0
 retain	/SubmarineTitans/Recovered/STGroupBoatOrderData10	disabled	apply=0

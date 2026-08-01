@@ -10,7 +10,9 @@
 
    [STMessageHandlerApplier] Recovered common GetMessage envelope/signature.
    Evidence: family_entries=00401BE0|00652810; family_names=AiEventClassTy::GetMessage; ret4=2;
-   direct_offsets={10:0,14:0,18:100,1c:5} */
+   direct_offsets={10:0,14:0,18:100,1c:5}
+   [STTypeBootstrapApplier] Retired legacy curated identity; name=AiEventClassTy::GetMessage.
+   Evidence: semantic leaf retained by an independent recovery tag */
 
 void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *message)
 
@@ -803,7 +805,9 @@ LAB_006578fe:
                                     }
                                     break;
                                   case 0x5e7:
-                                    iVar36 = thunk_FUN_006515b0((short *)&local_16c);
+                                    iVar36 = thunk_FUN_006515b0((
+                                                  RecoveredRecord_AiEventClassTy_006515B0 *)
+                                                  &local_16c);
                                     if (iVar36 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                       iVar36 = (*(code *)this_00->field_0000->field_0018)();
@@ -1284,7 +1288,9 @@ LAB_00658b70:
                                     }
                                     break;
                                   case 0x5ee:
-                                    iVar36 = thunk_FUN_00651ed0((short *)&local_16c);
+                                    iVar36 = thunk_FUN_00651ed0((
+                                                  RecoveredRecord_AiEventClassTy_00651ED0 *)
+                                                  &local_16c);
                                     if (iVar36 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                       iVar36 = (*(code *)this_00->field_0000->field_0018)();
@@ -2096,7 +2102,9 @@ LAB_00659143:
                                     }
                                     break;
                                   case 0x5f9:
-                                    iVar36 = thunk_FUN_00652460((short *)&local_16c);
+                                    iVar36 = thunk_FUN_00652460((
+                                                  RecoveredRecord_AiEventClassTy_00652460 *)
+                                                  &local_16c);
                                     if (iVar36 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                       iVar36 = (*(code *)this_00->field_0000->field_0018)();
@@ -2249,7 +2257,8 @@ LAB_00659640:
                                     }
                                     break;
                                   case 0x5fb:
-                                    iVar36 = thunk_FUN_006525e0((short *)&local_16c);
+                                    iVar36 = thunk_FUN_006525e0((AnonShape_006525E0_52237033 *)
+                                                                &local_16c);
                                     if (iVar36 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                       iVar36 = (*(code *)this_00->field_0000->field_0018)();
@@ -2322,7 +2331,8 @@ LAB_00659785:
                                     }
                                     break;
                                   case 0x5fc:
-                                    iVar36 = thunk_FUN_00652670((short *)&local_16c);
+                                    iVar36 = thunk_FUN_00652670((AnonShape_00652670_DFEA616F *)
+                                                                &local_16c);
                                     if (iVar36 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                       iVar36 = (*(code *)this_00->field_0000->field_0018)();
@@ -2395,7 +2405,9 @@ LAB_006598ca:
                                     }
                                     break;
                                   case 0x5fd:
-                                    iVar36 = thunk_FUN_00652300((short *)&local_16c);
+                                    iVar36 = thunk_FUN_00652300((
+                                                  RecoveredRecord_AiEventClassTy_00652300 *)
+                                                  &local_16c);
                                     if (iVar36 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                       iVar36 = (*(code *)this_00->field_0000->field_0018)();
@@ -2502,7 +2514,9 @@ LAB_0065937a:
                                     }
                                     break;
                                   case 0x5fe:
-                                    iVar36 = thunk_FUN_00652700((short *)&local_16c);
+                                    iVar36 = thunk_FUN_00652700((
+                                                  RecoveredRecord_AiEventClassTy_00652700 *)
+                                                  &local_16c);
                                     if (iVar36 != 0) {
                                       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                       iVar36 = (*(code *)this_00->field_0000->field_0018)();
@@ -2690,7 +2704,8 @@ LAB_00659a1c:
                               }
                               goto cf_common_join_00659A73;
                             case 0x596:
-                              iVar36 = thunk_FUN_0064ff70((short *)&local_16c);
+                              iVar36 = thunk_FUN_0064ff70((RecoveredRecord_AiEventClassTy_0064FF70 *
+                                                          )&local_16c);
                               if (iVar36 == 0) break;
                               DAT_008118fc = 0;
                               _EnumRCField((short)pDStack_164,(short)local_160,(short)local_15c,
@@ -2698,7 +2713,8 @@ LAB_00659a1c:
                                            (short)local_14c,thunk_FUN_0064e260,&local_148);
                               goto cf_common_join_00659A73;
                             case 0x597:
-                              iVar36 = thunk_FUN_00650090((short *)&local_16c);
+                              iVar36 = thunk_FUN_00650090((RecoveredRecord_AiEventClassTy_00650090 *
+                                                          )&local_16c);
                               if (iVar36 == 0) break;
                               _EnumRCField((short)local_15c,(short)local_158,(short)local_154,
                                            (short)local_150,(short)local_14c,(short)local_148,
@@ -2706,7 +2722,8 @@ LAB_00659a1c:
                                            (int)local_160 << 0x10 | (uint)pDStack_164 & 0xffff);
                               goto cf_common_join_00659A73;
                             case 0x598:
-                              iVar36 = thunk_FUN_006501a0((short *)&local_16c);
+                              iVar36 = thunk_FUN_006501a0((RecoveredRecord_AiEventClassTy_006501A0 *
+                                                          )&local_16c);
                               if (iVar36 != 0) {
                                 iVar36 = _CreateDest(this_00,(short)pDStack_164,(short)local_160,
                                                      (short)local_15c,(short)local_158,
@@ -2716,7 +2733,8 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x599:
-                              iVar36 = thunk_FUN_00650240((short *)&local_16c);
+                              iVar36 = thunk_FUN_00650240((RecoveredRecord_AiEventClassTy_00650240 *
+                                                          )&local_16c);
                               if (iVar36 == 0) break;
                               DAT_008118fc = 0;
                               _EnumDest((byte *)local_160,(char)pDStack_164,(short)local_15c,
@@ -2769,7 +2787,8 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x59c:
-                              iVar36 = thunk_FUN_00650480((short *)&local_16c);
+                              iVar36 = thunk_FUN_00650480((RecoveredRecord_AiEventClassTy_00650480 *
+                                                          )&local_16c);
                               if (iVar36 != 0) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                 iVar36 = (*(code *)this_00->field_0000->field_0018)();
@@ -2798,7 +2817,8 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x59d:
-                              iVar36 = thunk_FUN_00650600((short *)&local_16c);
+                              iVar36 = thunk_FUN_00650600((RecoveredRecord_AiEventClassTy_00650600 *
+                                                          )&local_16c);
                               if (iVar36 != 0) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                 iVar36 = (*(code *)this_00->field_0000->field_0018)();
@@ -2969,7 +2989,7 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5af:
-                              iVar36 = thunk_FUN_00650a20((short *)&local_16c);
+                              iVar36 = thunk_FUN_00650a20((AnonShape_00650A20_4A198923 *)&local_16c);
                               if (iVar36 != 0) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                 iVar36 = (*(code *)this_00->field_0000->field_0018)();
@@ -3115,7 +3135,8 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5b4:
-                              iVar36 = thunk_FUN_00650b10((short *)&local_16c);
+                              iVar36 = thunk_FUN_00650b10((RecoveredRecord_AiEventClassTy_00650B10 *
+                                                          )&local_16c);
                               if (iVar36 != 0) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                 iVar36 = (*(code *)this_00->field_0000->field_0018)();
@@ -3245,7 +3266,8 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5b7:
-                              iVar36 = thunk_FUN_00650bd0((short *)&local_16c);
+                              iVar36 = thunk_FUN_00650bd0((RecoveredRecord_AiEventClassTy_00650BD0 *
+                                                          )&local_16c);
                               if (iVar36 != 0) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                 iVar36 = (*(code *)this_00->field_0000->field_0018)();
@@ -3287,7 +3309,8 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5b8:
-                              iVar36 = thunk_FUN_00650cf0((short *)&local_16c);
+                              iVar36 = thunk_FUN_00650cf0((RecoveredRecord_AiEventClassTy_00650CF0 *
+                                                          )&local_16c);
                               if (iVar36 != 0) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                 iVar36 = (*(code *)this_00->field_0000->field_0018)();
@@ -3329,7 +3352,8 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5b9:
-                              iVar36 = thunk_FUN_00650e10((short *)&local_16c);
+                              iVar36 = thunk_FUN_00650e10((RecoveredRecord_AiEventClassTy_00650E10 *
+                                                          )&local_16c);
                               if (iVar36 != 0) {
                                 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                                 iVar36 = (*(code *)this_00->field_0000->field_0018)();
@@ -3374,7 +3398,8 @@ LAB_00659a1c:
                             goto cf_common_join_00652A99;
                           }
                           if (iVar7 == 0x593) {
-                            iVar7 = thunk_FUN_0064fd80((short *)&local_16c);
+                            iVar7 = thunk_FUN_0064fd80((RecoveredRecord_AiEventClassTy_0064FD80 *)
+                                                       &local_16c);
                             if (iVar7 == 0) {
                               iVar7 = -1;
                               uVar17 = uVar32;
@@ -4487,7 +4512,8 @@ LAB_006540b9:
                             }
                             break;
                           case 0x55e:
-                            iVar36 = thunk_FUN_0064f1b0((short *)&local_16c);
+                            iVar36 = thunk_FUN_0064f1b0((RecoveredRecord_AiEventClassTy_0064F1B0 *)
+                                                        &local_16c);
                             if (iVar36 != 0) {
                               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                               iVar36 = (*(code *)this_00->field_0000->field_0018)();
@@ -4930,7 +4956,8 @@ LAB_00654386:
                             thunk_FUN_004d8760((int)pDVar12);
                             goto cf_common_join_00659A73;
                           case 0x57b:
-                            iVar36 = thunk_FUN_0064f500((short *)&local_16c);
+                            iVar36 = thunk_FUN_0064f500((RecoveredRecord_AiEventClassTy_0064F500 *)
+                                                        &local_16c);
                             if (iVar36 != 0) {
                               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                               iVar36 = (*(code *)this_00->field_0000->field_0018)();
@@ -5449,7 +5476,8 @@ LAB_00655871:
                             }
                             goto cf_common_join_00659A73;
                           case 0x58d:
-                            iVar36 = thunk_FUN_0064f780((short *)&local_16c);
+                            iVar36 = thunk_FUN_0064f780((RecoveredRecord_AiEventClassTy_0064F780 *)
+                                                        &local_16c);
                             if (iVar36 != 0) {
                               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                               iVar36 = (*(code *)this_00->field_0000->field_0018)();
@@ -5577,7 +5605,8 @@ LAB_006559e3:
                             }
                             break;
                           case 0x58f:
-                            iVar36 = thunk_FUN_0064f950((short *)&local_16c);
+                            iVar36 = thunk_FUN_0064f950((RecoveredRecord_AiEventClassTy_0064F950 *)
+                                                        &local_16c);
                             if (iVar36 != 0) {
                               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                               iVar36 = (*(code *)this_00->field_0000->field_0018)();
@@ -5682,7 +5711,8 @@ LAB_006559e3:
                             }
                             break;
                           case 0x591:
-                            iVar36 = thunk_FUN_0064fb80((short *)&local_16c);
+                            iVar36 = thunk_FUN_0064fb80((RecoveredRecord_AiEventClassTy_0064FB80 *)
+                                                        &local_16c);
                             if (iVar36 != 0) {
                               /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
                               iVar36 = (*(code *)this_00->field_0000->field_0018)();

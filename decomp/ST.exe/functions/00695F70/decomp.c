@@ -32,7 +32,7 @@ LAB_00696007:
     }
     local_c = 0;
     iStack_a = param_2;
-    uVar3 = Library::DKW::TBL::FUN_006ae1c0(*(uint **)((int)piVar4 + 0x15),(undefined4 *)&local_c);
+    uVar3 = Library::DKW::TBL::DArrayAppend(*(DArrayTy **)((int)piVar4 + 0x15),&local_c);
     if (-1 < (int)uVar3) {
       *(uint *)((int)piVar4 + 0x11) = uVar3 + 1;
       if (this->field_584F != (ushort *)0x0) {

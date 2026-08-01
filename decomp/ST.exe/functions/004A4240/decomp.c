@@ -76,7 +76,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
             uVar8 = uVar8 + 1;
           } while ((int)uVar8 < (int)dVar1);
         }
-        Library::DKW::TBL::FUN_006ae140(&this_00->field_0266->flags,uVar8,&param_2);
+        Library::DKW::TBL::DArrayPut(this_00->field_0266,uVar8,&param_2);
         DistributeMD(this_00,0,this_00->field_024E,this_00->field_0266,
                      (DArrayTy *)this_00->field_0029);
         this_01 = local_18;
@@ -203,7 +203,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
       }
       pDVar6 = this_00->field_024E;
     }
-    Library::DKW::TBL::FUN_006ae140(&pDVar6->flags,uVar8,&param_2);
+    Library::DKW::TBL::DArrayPut(pDVar6,uVar8,&param_2);
     pDVar6 = (DArrayTy *)this_00->field_0029;
     pDVar11 = this_00->field_0266;
     pDVar10 = this_00->field_024E;
@@ -225,7 +225,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
           DArrayGetElement(this_00->field_0266,uVar8,&local_10);
           if ((short)local_10 == (short)param_2) {
             local_10 = 0xffff;
-            Library::DKW::TBL::FUN_006ae140(&this_00->field_0266->flags,uVar8,&local_10);
+            Library::DKW::TBL::DArrayPut(this_00->field_0266,uVar8,&local_10);
             break;
           }
           uVar8 = uVar8 + 1;
@@ -276,7 +276,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
         DArrayGetElement(this_00->field_0266,uVar9,&local_10);
         if ((short)local_10 == (short)param_2) {
           local_10 = 0xffff;
-          Library::DKW::TBL::FUN_006ae140(&this_00->field_0266->flags,uVar9,&local_10);
+          Library::DKW::TBL::DArrayPut(this_00->field_0266,uVar9,&local_10);
           break;
         }
         uVar9 = uVar9 + 1;
@@ -326,7 +326,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
           DArrayGetElement(this_00->field_024E,uVar8,&local_10);
           if ((short)local_10 == (short)param_2) {
             local_10 = 0xffff;
-            Library::DKW::TBL::FUN_006ae140(&this_00->field_024E->flags,uVar8,&local_10);
+            Library::DKW::TBL::DArrayPut(this_00->field_024E,uVar8,&local_10);
             break;
           }
           uVar8 = uVar8 + 1;
@@ -376,7 +376,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
         DArrayGetElement(this_00->field_024E,uVar9,&local_10);
         if ((short)local_10 == (short)param_2) {
           local_10 = 0xffff;
-          Library::DKW::TBL::FUN_006ae140(&this_00->field_024E->flags,uVar9,&local_10);
+          Library::DKW::TBL::DArrayPut(this_00->field_024E,uVar9,&local_10);
           break;
         }
         uVar9 = uVar9 + 1;

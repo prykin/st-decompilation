@@ -21,7 +21,7 @@ void __thiscall STBoatC::_CheckDefenceShots(STBoatC *this,int param_1)
   int iVar6;
   uint index;
   InternalExceptionFrame local_68;
-  undefined4 local_24;
+  undefined1 local_24 [4];
   ushort local_20;
   undefined2 uStack_1e;
   int local_1a;
@@ -50,7 +50,7 @@ void __thiscall STBoatC::_CheckDefenceShots(STBoatC *this,int param_1)
   pDVar4 = local_10->field_047B;
   if ((pDVar4 != (DArrayTy *)0x0) && (index = 0, 0 < (int)pDVar4->count)) {
     do {
-      DArrayGetElement(pDVar4,index,&local_24);
+      DArrayGetElement(pDVar4,index,local_24);
       if (local_20 != 0xffff) {
         local_1a = local_1a - param_1;
         if (local_1a < 1) {
@@ -59,7 +59,7 @@ void __thiscall STBoatC::_CheckDefenceShots(STBoatC *this,int param_1)
           _local_20 = CONCAT22(uStack_1e,0xffff);
         }
         else {
-          this_00 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,(char)local_24,local_20,CASE_1);
+          this_00 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,local_24[0],local_20,CASE_1);
           if (this_00 != (STGameObjC *)0x0) {
             iVar3 = this_00->vfunc_F8();
             if (iVar3 == 1) {
@@ -86,7 +86,7 @@ void __thiscall STBoatC::_CheckDefenceShots(STBoatC *this,int param_1)
           _local_20 = CONCAT22(uStack_1e,0xffff);
         }
 LAB_0048d016:
-        Library::DKW::TBL::FUN_006ae140(&pDVar4->flags,index,&local_24);
+        Library::DKW::TBL::DArrayPut(pDVar4,index,local_24);
       }
       pDVar4 = pSVar2->field_047B;
       index = index + 1;

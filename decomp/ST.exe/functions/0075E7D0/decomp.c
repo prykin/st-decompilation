@@ -32,7 +32,8 @@ void FUN_0075e7d0(AnonShape_0075E7D0_08EF6D02 *param_1,int param_2,int *param_3,
         iVar11 = (uint)(*pbVar1 >> 2) * 0x20 + (uint)(*pbVar9 >> 3);
         pbVar10 = pbVar10 + 3;
         if (*(short *)(iVar5 + iVar11 * 2) == 0) {
-          FUN_0075e890((int)param_1,(uint)(bVar2 >> 3),(uint)(*pbVar1 >> 2),(uint)(*pbVar9 >> 3));
+          FUN_0075e890((AnonShape_0075E890_C23EB446 *)param_1,(uint)(bVar2 >> 3),
+                       (uint)(*pbVar1 >> 2),(uint)(*pbVar9 >> 3));
         }
         *pcVar6 = *(char *)(iVar5 + iVar11 * 2) + -1;
         pcVar6 = pcVar6 + 1;

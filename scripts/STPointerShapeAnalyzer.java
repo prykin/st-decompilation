@@ -11,6 +11,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.security.MessageDigest;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -25,8 +26,9 @@ import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import ghidra.app.decompiler.DecompInterface;
 import ghidra.app.decompiler.DecompileResults;
+import ghidra.app.decompiler.parallel.DecompilerCallback;
+import ghidra.app.decompiler.parallel.ParallelDecompiler;
 import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
 import ghidra.program.model.data.DataType;
@@ -42,10 +44,14 @@ import ghidra.program.model.listing.Data;
 import ghidra.program.model.listing.Function;
 import ghidra.program.model.listing.FunctionIterator;
 import ghidra.program.model.listing.FunctionTag;
+import ghidra.program.model.listing.Instruction;
+import ghidra.program.model.listing.InstructionIterator;
 import ghidra.program.model.listing.Parameter;
 import ghidra.program.model.listing.Variable;
 import ghidra.program.model.symbol.SourceType;
 import ghidra.program.model.symbol.Symbol;
+import ghidra.program.model.pcode.PcodeOp;
+import ghidra.util.task.TaskMonitor;
 
 public class STPointerShapeAnalyzer extends GhidraScript {
     private static final int DECOMPILE_TIMEOUT = 30;
@@ -53,29 +59,14 @@ public class STPointerShapeAnalyzer extends GhidraScript {
     private static final long LARGE_FUNCTION_BYTES = 0x4000;
     private static final int MAX_SHAPE_SIZE = 0x4000;
     private static final String DARRAY_PATH = "/SubmarineTitans/Recovered/DArrayTy";
-    private static final String PLAYER_TEMP_SLOT_PATH =
-        "/SubmarineTitans/Recovered/GlobalRecords/STPlayerTempSlot";
-    private static final long PLAYER_RUNTIME_BASE = 0x007f4e20L;
-    private static final int TEMP_GROUP_0_OFFSET = 0x0163;
-    private static final int TEMP_GROUP_1_OFFSET = 0x01b3;
-    private static final int TEMP_GROUP_LENGTH = 0x50;
-    private static final int TEMP_SLOT_LENGTH = 0x10;
-    private static final int TEMP_OBJECT_IDS_OFFSET = 0x0a;
     private static final String ANON_ROOT = "/SubmarineTitans/Recovered/PointerShapes/";
     private static final String APPLIER_MARKER = "[STPointerShapeApplier]";
     private static final Set<String> POINTER_OWNER_MARKERS = Set.of(
         APPLIER_MARKER, "[STTypeFamilyApplier]", "[STGlobalDataApplier]");
-    private static final Set<Long> DARRAY_FIRST_ARGUMENT = Set.of(
-        0x006acc70L, // indexed get
-        0x006ae110L, // destroy
-        0x006ae140L, // put
-        0x006ae1c0L, // append
-        0x006b0c70L  // erase
-    );
 
     // Examples covered:
     //   *(uint *)(local_20 + 0xc)
-    //   *(undefined4 *)((int)DAT_00802a38 + 0xe4)
+    //   *(undefined4 *)((int)DAT_global + 0xe4)
     // The first group is the loaded/stored value type, not the base-pointer type.
     private static final Pattern RAW_ACCESS = Pattern.compile(
         "\\*\\s*\\(\\s*([^()\\r\\n]{1,80}?)\\s*\\*\\s*\\)\\s*" +
@@ -142,9 +133,6 @@ public class STPointerShapeAnalyzer extends GhidraScript {
     private static final Pattern TYPED_DARRAY_BASE = Pattern.compile(
         "(?<![A-Za-z0-9_$:])([A-Za-z_$][A-Za-z0-9_$:]*)\\s*->\\s*" +
         "field_(?:0[xX])?0*8\\b");
-    private static final Pattern HEX_CONSTANT = Pattern.compile("0[xX]([0-9A-Fa-f]+)");
-    private static final Pattern PLAYER_STRIDE_TERM = Pattern.compile(
-        "(?i)(?:0x0*a62|2658)\\b");
     private static final Pattern SIMPLE_IDENTIFIER = Pattern.compile(
         "[A-Za-z_$][A-Za-z0-9_$]*");
     private static final Pattern LOCAL_STRUCTURE_DECLARATION = Pattern.compile(
@@ -165,7 +153,6 @@ public class STPointerShapeAnalyzer extends GhidraScript {
     private final List<Failure> failures = new ArrayList<>();
     private final List<Structure> structures = new ArrayList<>();
     private final Set<Address> unsettledFunctions = new HashSet<>();
-    private DecompInterface decompiler;
     private DataTypeManager dataTypes;
     private int functionsSeen;
     private int functionsWithRawAccess;
@@ -173,7 +160,6 @@ public class STPointerShapeAnalyzer extends GhidraScript {
     private int nestedPointerAccesses;
     private int pointerFieldAliases;
     private int redirectedAliasAccesses;
-    private int globalRecordTypeHints;
     private int ownerThisSpillRepairs;
     private int typedFieldConsumerHints;
 
@@ -193,31 +179,31 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         dataTypes = currentProgram.getDataTypeManager();
         Iterator<Structure> allStructures = dataTypes.getAllStructures();
         while (allStructures.hasNext()) structures.add(allStructures.next());
-        decompiler = new DecompInterface();
-        decompiler.toggleCCode(true);
-        decompiler.toggleSyntaxTree(true);
-        if (!decompiler.openProgram(currentProgram))
-            throw new IllegalStateException("Decompiler could not open the current program");
-
+        List<Function> normal = new ArrayList<>();
+        List<Function> large = new ArrayList<>();
         Address only = onlyFunction();
-        try {
-            if (only != null) {
-                Function function = currentProgram.getFunctionManager().getFunctionAt(only);
-                if (function == null) throw new IllegalArgumentException(
-                    "No function at " + addr(only));
-                analyzeFunction(function);
-            }
-            else {
-                FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
-                while (functions.hasNext()) {
-                    monitor.checkCancelled();
-                    analyzeFunction(functions.next());
-                }
+        if (only != null) {
+            Function function = currentProgram.getFunctionManager().getFunctionAt(only);
+            if (function == null) throw new IllegalArgumentException(
+                "No function at " + addr(only));
+            if (candidate(function) && hasPointerMemoryAccess(function)) {
+                if (decompileTimeout(function) == LARGE_DECOMPILE_TIMEOUT)
+                    large.add(function);
+                else normal.add(function);
             }
         }
-        finally {
-            decompiler.dispose();
+        else {
+            FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
+            while (functions.hasNext()) {
+                monitor.checkCancelled();
+                Function function = functions.next();
+                if (!candidate(function) || !hasPointerMemoryAccess(function)) continue;
+                (decompileTimeout(function) == LARGE_DECOMPILE_TIMEOUT ?
+                    large : normal).add(function);
+            }
         }
+        analyzeParallel(normal, DECOMPILE_TIMEOUT);
+        analyzeParallel(large, LARGE_DECOMPILE_TIMEOUT);
 
         Analysis analysis = makeProposals();
         writeTypes(directory.resolve("pointer_shape_type_proposals.tsv"), analysis.types);
@@ -230,8 +216,7 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         println("Functions=" + functionsSeen + ", raw functions=" + functionsWithRawAccess +
             ", raw accesses=" + rawAccesses + ", nested=" + nestedPointerAccesses +
             ", pointer aliases=" + pointerFieldAliases + ", alias accesses=" +
-            redirectedAliasAccesses + ", global-record hints=" +
-            globalRecordTypeHints + ", owner-this spill repairs=" +
+            redirectedAliasAccesses + ", owner-this spill repairs=" +
             ownerThisSpillRepairs + ", typed-field consumers=" +
             typedFieldConsumerHints + ", targets=" + analysis.targets.size() +
             ", target_apply=" + analysis.targets.stream().filter(row -> row.apply).count() +
@@ -244,18 +229,77 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             LARGE_DECOMPILE_TIMEOUT : DECOMPILE_TIMEOUT;
     }
 
-    private void analyzeFunction(Function function) throws Exception {
-        if (function == null || function.isExternal() || function.isThunk() || isLibrary(function))
-            return;
+    private boolean candidate(Function function) {
+        return function != null && !function.isExternal() && !function.isThunk() &&
+            !isLibrary(function);
+    }
+
+    /**
+     * Every shape accepted below originates in a machine LOAD/STORE: raw or nested
+     * dereferences, pointer-field aliases, DArray access, and owner-this spills all
+     * require one.  Rejecting functions without either p-code operation is therefore
+     * a lossless prefilter and avoids invoking the decompiler for pure register/control
+     * helpers.  Unknown/empty p-code stays eligible rather than becoming a false negative.
+     */
+    private boolean hasPointerMemoryAccess(Function function) {
+        boolean sawPcode = false;
+        InstructionIterator instructions = currentProgram.getListing()
+            .getInstructions(function.getBody(), true);
+        while (instructions.hasNext()) {
+            Instruction instruction = instructions.next();
+            PcodeOp[] operations = instruction.getPcode();
+            if (operations == null || operations.length == 0) continue;
+            sawPcode = true;
+            for (PcodeOp operation : operations)
+                if (operation.getOpcode() == PcodeOp.LOAD ||
+                        operation.getOpcode() == PcodeOp.STORE) return true;
+        }
+        return !sawPcode;
+    }
+
+    private void analyzeParallel(Collection<Function> functions, int timeout)
+            throws Exception {
+        if (functions.isEmpty()) return;
+        DecompilerCallback<Decompiled> callback = new DecompilerCallback<>(
+                currentProgram, dec -> {
+                    dec.toggleCCode(true);
+                    dec.toggleSyntaxTree(true);
+                }) {
+            @Override
+            public Decompiled process(DecompileResults result,
+                    TaskMonitor callbackMonitor) {
+                Function function = result.getFunction();
+                if (!result.decompileCompleted() ||
+                        result.getDecompiledFunction() == null)
+                    return new Decompiled(function, "",
+                        result.getErrorMessage() == null ?
+                            "decompile failed" : result.getErrorMessage());
+                return new Decompiled(function,
+                    result.getDecompiledFunction().getC(), "");
+            }
+        };
+        callback.setTimeout(timeout);
+        try {
+            List<Decompiled> units = ParallelDecompiler.decompileFunctions(
+                callback, functions, monitor);
+            units.removeIf(unit -> unit == null || unit.function == null);
+            units.sort(Comparator.comparing(unit -> unit.function.getEntryPoint()));
+            for (Decompiled unit : units) analyzeFunction(unit);
+        }
+        finally {
+            callback.dispose();
+        }
+    }
+
+    private void analyzeFunction(Decompiled unit) throws Exception {
+        Function function = unit.function;
+        if (!candidate(function)) return;
         functionsSeen++;
-        DecompileResults result = decompiler.decompileFunction(function,
-            decompileTimeout(function), monitor);
-        if (!result.decompileCompleted() || result.getDecompiledFunction() == null) {
-            failures.add(new Failure(function, result == null ? "no result" :
-                result.getErrorMessage()));
+        if (!unit.error.isBlank()) {
+            failures.add(new Failure(function, unit.error));
             return;
         }
-        String c = result.getDecompiledFunction().getC();
+        String c = unit.c;
         if (c.contains("Type propagation algorithm not settling"))
             unsettledFunctions.add(function.getEntryPoint());
         Map<String, Variable> locals = localVariables(function);
@@ -307,10 +351,7 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         collectDArrayEvidence(c, functionTargets, aliases);
         boolean hasRawAccess = rawAccesses != before;
         if (hasRawAccess) functionsWithRawAccess++;
-        int recordHints = collectGlobalRecordTypeEvidence(function, c, locals,
-            stableStorages, functionTargets);
-        globalRecordTypeHints += recordHints;
-        if (!hasRawAccess && recordHints == 0 && ownerSpillHints == 0) return;
+        if (!hasRawAccess && ownerSpillHints == 0) return;
         // A typed helper call can identify sibling locals that are not themselves
         // dereferenced in this particular function (for example, three DArray
         // pointers unpacked from one 12-byte element). Keep them ephemeral until
@@ -888,56 +929,6 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             Pattern.quote(name) + "\\b").matcher(expression).find();
     }
 
-    private int collectGlobalRecordTypeEvidence(Function function, String c,
-            Map<String, Variable> locals, Set<String> stableStorages,
-            Map<String, TargetEvidence> functionTargets) {
-        if (!(dataTypes.getDataType(PLAYER_TEMP_SLOT_PATH) instanceof Structure) ||
-                !(dataTypes.getDataType(DARRAY_PATH) instanceof Structure)) return 0;
-        int count = 0;
-        Matcher assignment = ASSIGNMENT.matcher(c);
-        while (assignment.find()) {
-            String name = assignment.group(1);
-            Variable variable = locals.get(name);
-            if (variable == null || variable instanceof Parameter) continue;
-            String expression = assignment.group(2).trim();
-            String proposed = globalRecordDerivedPointer(expression);
-            if (proposed.isBlank()) continue;
-            String site = addr(function.getEntryPoint()) + " C assignment " + name +
-                " from STPlayerRuntimeRecord.tempSlots";
-            addTypeEvidence(name, function, locals, stableStorages, functionTargets,
-                proposed, 4, site);
-            count++;
-        }
-        return count;
-    }
-
-    private String globalRecordDerivedPointer(String expression) {
-        if (!PLAYER_STRIDE_TERM.matcher(expression).find()) return "";
-        boolean dereference = expression.stripLeading().startsWith("*");
-        Matcher constants = HEX_CONSTANT.matcher(expression);
-        while (constants.find()) {
-            long absolute;
-            try { absolute = Long.parseUnsignedLong(constants.group(1), 16); }
-            catch (NumberFormatException exception) { continue; }
-            long offset = absolute - PLAYER_RUNTIME_BASE;
-            int withinGroup;
-            if (offset >= TEMP_GROUP_0_OFFSET &&
-                    offset < TEMP_GROUP_0_OFFSET + TEMP_GROUP_LENGTH)
-                withinGroup = (int)(offset - TEMP_GROUP_0_OFFSET);
-            else if (offset >= TEMP_GROUP_1_OFFSET &&
-                    offset < TEMP_GROUP_1_OFFSET + TEMP_GROUP_LENGTH)
-                withinGroup = (int)(offset - TEMP_GROUP_1_OFFSET);
-            else continue;
-
-            int withinSlot = withinGroup % TEMP_SLOT_LENGTH;
-            if (!dereference && withinGroup == 0)
-                return "pointer:" + PLAYER_TEMP_SLOT_PATH;
-            if (dereference && withinSlot == TEMP_OBJECT_IDS_OFFSET)
-                return "pointer:" + DARRAY_PATH;
-        }
-        return "";
-    }
-
     private Map<String, Variable> localVariables(Function function) {
         Map<String, Variable> result = new LinkedHashMap<>();
         Set<String> ambiguous = new HashSet<>();
@@ -1010,8 +1001,7 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             String site = addr(containing.getEntryPoint()) + " C call -> " +
                 called.getName(true);
 
-            long calledAddress = called.getEntryPoint().getOffset();
-            if (DARRAY_FIRST_ARGUMENT.contains(calledAddress) &&
+            if (isDArrayHelper(called) &&
                     dataTypes.getDataType(DARRAY_PATH) instanceof Structure)
                 addTypeEvidence(arguments.get(0), containing, locals, stableStorages,
                     functionTargets,
@@ -1041,6 +1031,16 @@ public class STPointerShapeAnalyzer extends GhidraScript {
                     site + " typed this receiver");
             }
         }
+    }
+
+    private boolean isDArrayHelper(Function function) {
+        if (!hasTag(function, "RECOVERED_UTILITY_SEMANTICS")) return false;
+        for (Parameter parameter : function.getParameters()) {
+            if (parameter.isAutoParameter()) continue;
+            return typeSpecification(parameter.getFormalDataType()).equals(
+                "pointer:" + DARRAY_PATH);
+        }
+        return false;
     }
 
     /**
@@ -2575,6 +2575,12 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         return false;
     }
 
+    private boolean hasTag(Function function, String name) {
+        for (FunctionTag tag : function.getTags())
+            if (name.equals(tag.getName())) return true;
+        return false;
+    }
+
     private File outputDirectory() throws Exception {
         String[] args = getScriptArgs();
         if (args.length > 0 && !args[0].isBlank()) return new File(args[0]);
@@ -2662,7 +2668,6 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             "nested_pointer_accesses=" + nestedPointerAccesses,
             "pointer_field_aliases=" + pointerFieldAliases,
             "redirected_alias_accesses=" + redirectedAliasAccesses,
-            "global_record_type_hints=" + globalRecordTypeHints,
             "owner_this_spill_repairs=" + ownerThisSpillRepairs,
             "typed_field_consumer_hints=" + typedFieldConsumerHints,
             "targets=" + analysis.targets.size(),
@@ -2830,6 +2835,7 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             this.function = function; this.reason = reason == null ? "" : reason;
         }
     }
+    private record Decompiled(Function function, String c, String error) { }
     private record Analysis(List<TypeProposal> types, List<FieldProposal> fields,
         List<TargetProposal> targets) {}
 }

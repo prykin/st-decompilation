@@ -8,18 +8,17 @@
 void STAllPlayersC::RemoveActiveTV(char param_1)
 
 {
-  DArrayTy *array;
   code *pcVar1;
   int iVar2;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   STAllPlayersC *in_ECX;
   int iVar3;
-  STPlayerTempSlot (*paSVar4) [5];
+  undefined4 *puVar4;
 
   iVar3 = (int)param_1;
-  iVar2 = g_playerRuntime[iVar3].field324_0x203;
+  iVar2 = g_playerRuntime[iVar3].field448_0x203;
   if (iVar2 == 0) {
-    paSVar4 = g_playerRuntime[iVar3].tempSlots;
+    puVar4 = &g_playerRuntime[iVar3].field332_0x163;
   }
   else {
     if (iVar2 != 1) {
@@ -30,16 +29,15 @@ void STAllPlayersC::RemoveActiveTV(char param_1)
       }
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    paSVar4 = g_playerRuntime[iVar3].tempSlots + 1;
+    puVar4 = &g_playerRuntime[iVar3].field390_0x1b3;
   }
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   ResetActivityFromTmp(in_ECX,param_1,iVar2,0,1);
-  array = (*paSVar4)[0].objectIds;
-  if (array != (DArrayTy *)0x0) {
-    DArrayDestroy(array);
-    (*paSVar4)[0].objectIds = (DArrayTy *)0x0;
+  if (*(DArrayTy **)((int)puVar4 + 10) != (DArrayTy *)0x0) {
+    DArrayDestroy(*(DArrayTy **)((int)puVar4 + 10));
+    *(undefined4 *)((int)puVar4 + 10) = 0;
   }
-  (*paSVar4)[0].objectType = 0;
+  *puVar4 = 0;
   return;
 }
 

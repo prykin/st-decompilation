@@ -62,7 +62,7 @@ FUN_00614c80(void *this,int param_1,int param_2,int param_3,int param_4,int para
     param_9 = uVar4;
     local_10 = local_20;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_1 = Library::DKW::LIB::FUN_006aac70(uVar4 * 4);
+    param_1 = (int)Library::DKW::LIB::MemAlloc(uVar4 * 4);
     iVar5 = thunk_FUN_0060e210(&local_24,&local_14,4,param_1,uVar4);
     if (iVar5 == 0) {
       if (*(undefined4 **)((int)this + 0x2e5) == (undefined4 *)0x0) {

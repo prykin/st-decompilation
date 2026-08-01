@@ -154,7 +154,7 @@ void __thiscall HelpPanelTy::RCProc(HelpPanelTy *this,int param_1,uint param_2,c
       local_2c = 2;
       local_2b = pAVar12->field_0009;
       local_27 = param_2;
-      Library::DKW::TBL::FUN_006ae1c0((uint *)this_00->field_01D7,&local_3c);
+      Library::DKW::TBL::DArrayAppend((DArrayTy *)this_00->field_01D7,&local_3c);
       local_8 = local_8 + *(int *)(pbVar8 + 8);
       ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,200,0xf);
       uVar18 = 3;
@@ -214,7 +214,7 @@ void __thiscall HelpPanelTy::RCProc(HelpPanelTy *this,int param_1,uint param_2,c
         local_2c = 3;
         local_2b = pAVar12->field_000D;
         local_27 = (uint)*(byte *)pAVar12;
-        Library::DKW::TBL::FUN_006ae1c0((uint *)this_00->field_01D7,&local_3c);
+        Library::DKW::TBL::DArrayAppend((DArrayTy *)this_00->field_01D7,&local_3c);
         local_8 = local_8 + *(int *)(pbVar8 + 8);
       }
       ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,200,0xf);
@@ -268,7 +268,7 @@ void __thiscall HelpPanelTy::RCProc(HelpPanelTy *this,int param_1,uint param_2,c
           local_2c = 2;
           local_2b = *pGVar13;
           local_27 = (uint)*(byte *)local_c;
-          Library::DKW::TBL::FUN_006ae1c0((uint *)this_00->field_01D7,&local_3c);
+          Library::DKW::TBL::DArrayAppend((DArrayTy *)this_00->field_01D7,&local_3c);
           local_8 = local_8 + *(int *)(pbVar8 + 8);
           ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,200,0xf);
           pIVar20 = (InternalExceptionFrame *)0x3;
@@ -362,6 +362,7 @@ void __thiscall HelpPanelTy::RCProc(HelpPanelTy *this,int param_1,uint param_2,c
         pcVar7 = pcVar14 + -uVar18;
         pcVar14 = (char *)&DAT_0080f33a;
         memmove(pcVar14, pcVar7, uVar18); /* compiler REP MOVS byte copy */
+        uVar10 = 0;
         for (puVar6 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar6 != (uint *)0x0;
             puVar6 = Library::MSVCRT::FUN_0072e560(puVar6,'\n')) {
           *(undefined1 *)puVar6 = 0x20;
@@ -383,7 +384,7 @@ void __thiscall HelpPanelTy::RCProc(HelpPanelTy *this,int param_1,uint param_2,c
         local_2c = 0xb;
         local_2b = pAVar12->field_001F;
         local_27 = (uint)*(byte *)pAVar12;
-        Library::DKW::TBL::FUN_006ae1c0((uint *)this_00->field_01D7,&local_3c);
+        Library::DKW::TBL::DArrayAppend((DArrayTy *)this_00->field_01D7,&local_3c);
         local_8 = local_8 + *(int *)(pbVar8 + 8);
       }
       if (pAVar12->field_0023 != 0) {
@@ -433,7 +434,7 @@ void __thiscall HelpPanelTy::RCProc(HelpPanelTy *this,int param_1,uint param_2,c
         local_2c = 2;
         local_2b = pAVar12->field_0023;
         local_27 = (uint)*(byte *)pAVar12;
-        Library::DKW::TBL::FUN_006ae1c0((uint *)this_00->field_01D7,&local_3c);
+        Library::DKW::TBL::DArrayAppend((DArrayTy *)this_00->field_01D7,&local_3c);
         local_8 = local_8 + *(int *)(pbVar8 + 8);
       }
       AddLinks(this_00,(int *)&local_8,'\x01',param_1,param_2);

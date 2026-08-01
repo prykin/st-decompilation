@@ -13,7 +13,7 @@ FUN_0058d5e0(int param_1,int param_2,int param_3,int param_4,undefined4 param_5,
     return 0;
   }
   do {
-    puVar1 = *(undefined4 **)(DAT_0081171c + iVar2 * 4);
+    puVar1 = (undefined4 *)(&PTR_0081171c->field_0000)[iVar2];
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if ((((param_1 * 0xc9 <= (int)*(short *)((int)puVar1 + 0x41)) &&
          ((int)*(short *)((int)puVar1 + 0x41) <= param_3 * 0xc9)) &&

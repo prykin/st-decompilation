@@ -20,12 +20,12 @@ STAllPlayersC::AddObjToTmp
   STGameObjC *this_00;
   undefined4 uVar4;
   int iVar5;
-  STPlayerTempSlot *pSVar6;
+  int *piVar6;
   Global_sub_0043FC50_param_1Enum GVar7;
   InternalExceptionFrame local_5c;
   undefined4 local_18;
   uint local_14;
-  STPlayerTempSlot *local_10;
+  int local_10;
   STAllPlayersC *local_c;
   short local_6;
 
@@ -61,7 +61,8 @@ STAllPlayersC::AddObjToTmp
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if (param_2 == 0) {
-    local_10 = g_playerRuntime[param_1].tempSlots[0];
+    /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
+    local_10 = param_1 * 0xa62 + 0x7f4f83;
     if (param_3 != 0) goto LAB_0042bc00;
     thunk_FUN_0043fc50(CASE_1,0);
     GVar7 = CASE_2;
@@ -73,27 +74,28 @@ STAllPlayersC::AddObjToTmp
                  0x1f8);
       goto LAB_0042bc00;
     }
-    local_10 = g_playerRuntime[param_1].tempSlots[1];
+    /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
+    local_10 = param_1 * 0xa62 + 0x7f4fd3;
     if (param_3 != 0) goto LAB_0042bc00;
     thunk_FUN_0043fc50(CASE_4,0);
     GVar7 = CASE_5;
   }
   thunk_FUN_0043fc50(GVar7,param_3);
 LAB_0042bc00:
-  pSVar6 = local_10 + param_3;
-  if (pSVar6->objectType == 0) {
+  piVar6 = (int *)(param_3 * 0x10 + local_10);
+  if (*piVar6 == 0) {
     pDVar3 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1);
-    pSVar6->objectIds = pDVar3;
-    pSVar6->activityCount = 0;
-    pSVar6->playerId = (int)param_4;
+    *(DArrayTy **)((int)piVar6 + 10) = pDVar3;
+    *(undefined2 *)((int)piVar6 + 0xe) = 0;
+    piVar6[1] = (int)param_4;
     if (param_2 == 0) {
-      pSVar6->objectType = 0x3c;
+      *piVar6 = 0x3c;
     }
     else if (param_2 == 1) {
-      pSVar6->objectType = 0x19a;
+      *piVar6 = 0x19a;
     }
   }
-  if (pSVar6->playerId != (int)param_4) {
+  if (piVar6[1] != (int)param_4) {
     iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x210,0,0,"%s",
                                "STAllPlayersC::AddObjToTmp something wrong...");
     if (iVar2 == 0) {
@@ -102,7 +104,7 @@ LAB_0042bc00:
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  pDVar3 = pSVar6->objectIds;
+  pDVar3 = *(DArrayTy **)((int)piVar6 + 10);
   local_14 = pDVar3->count;
   index = local_14;
   while (index = index - 1, -1 < (int)index) {
@@ -116,8 +118,8 @@ LAB_0042bc00:
                  0x209);
     }
   }
-  Library::DKW::TBL::FUN_006ae140(&pDVar3->flags,local_14,&param_5);
-  pSVar6->activityCount = pSVar6->activityCount + 1;
+  Library::DKW::TBL::DArrayPut(pDVar3,local_14,&param_5);
+  *(short *)((int)piVar6 + 0xe) = *(short *)((int)piVar6 + 0xe) + 1;
   this_00 = GetObjPtr(local_c,param_4,(ushort)param_5,CASE_1);
   this_00->vfunc_E8(1);
   g_currentExceptionFrame = local_5c.previous;

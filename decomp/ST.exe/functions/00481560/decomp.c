@@ -455,8 +455,8 @@ FUN_00481560(void *this,short param_1,short param_2,short param_3,short param_4,
           if (pDVar8 == (DArrayTy *)0x0) {
             pDVar8 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,6,1);
             *(DArrayTy **)((int)pvVar1 + uVar4 * 4 + 0x282) = pDVar8;
-            uVar3 = Library::DKW::TBL::FUN_006ae1c0(&pDVar8->flags,&local_c);
-            return uVar3 << 0x10 | uVar4 & 0xffff;
+            iVar10 = Library::DKW::TBL::DArrayAppend(pDVar8,&local_c);
+            return iVar10 << 0x10 | uVar4 & 0xffff;
           }
           /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
           _param_1 = 0xffffffff;
@@ -471,12 +471,12 @@ FUN_00481560(void *this,short param_1,short param_2,short param_3,short param_4,
               uVar3 = uVar3 - 1;
             } while (-1 < (int)uVar3);
             if (_param_1 != 0xffffffff) {
-              Library::DKW::TBL::FUN_006ae140(&pDVar8->flags,_param_1,&local_c);
+              Library::DKW::TBL::DArrayPut(pDVar8,_param_1,&local_c);
               return _param_1 << 0x10 | uVar4 & 0xffff;
             }
           }
-          uVar3 = Library::DKW::TBL::FUN_006ae1c0(&pDVar8->flags,&local_c);
-          return uVar3 << 0x10 | uVar4 & 0xffff;
+          iVar10 = Library::DKW::TBL::DArrayAppend(pDVar8,&local_c);
+          return iVar10 << 0x10 | uVar4 & 0xffff;
         }
       }
     }

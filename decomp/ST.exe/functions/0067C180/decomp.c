@@ -145,7 +145,7 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this,void *param_1)
                     local_28 = thunk_FUN_00674fb0((int)local_3c._2_2_);
                     uVar11 = thunk_FUN_00675430((Global_sub_00675430_param_1Enum)local_28);
                     local_24 = (undefined2)uVar11;
-                    Library::DKW::TBL::FUN_006ae1c0(&this_00->field_06AD->flags,&local_3c);
+                    Library::DKW::TBL::DArrayAppend(this_00->field_06AD,&local_3c);
                     iVar4 = local_18;
                   }
                   local_8 = local_8 + 1;
@@ -221,7 +221,7 @@ LAB_0067c61b:
                         local_28 = thunk_FUN_00674fb0((int)local_3c._2_2_);
                         uVar11 = thunk_FUN_00675430((Global_sub_00675430_param_1Enum)local_28);
                         local_24 = (undefined2)uVar11;
-                        Library::DKW::TBL::FUN_006ae1c0(&this_00->field_06AD->flags,&local_3c);
+                        Library::DKW::TBL::DArrayAppend(this_00->field_06AD,&local_3c);
                         iVar4 = local_18;
                         uVar11 = local_8;
                       }

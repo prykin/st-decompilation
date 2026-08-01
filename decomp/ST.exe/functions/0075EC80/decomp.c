@@ -93,7 +93,7 @@ void FUN_0075ec80(AnonShape_0075EC80_53406127 *param_1,int param_2,int *param_3,
         iVar12 = iVar16 * 0x20 + iVar15;
         iVar18 = *(int *)(iVar3 + iVar19 * 4);
         if (*(short *)(iVar18 + iVar12 * 2) == 0) {
-          FUN_0075e890((int)param_1,iVar19,iVar16,iVar15);
+          FUN_0075e890((AnonShape_0075E890_C23EB446 *)param_1,iVar19,iVar16,iVar15);
         }
         iVar18 = *(ushort *)(iVar18 + iVar12 * 2) - 1;
         *local_c = (char)iVar18;

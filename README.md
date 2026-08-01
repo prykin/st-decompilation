@@ -27,22 +27,9 @@ Both are 32-bit Intel 80386 PE files. A different regional release or patch may
 have different addresses and must not be assumed compatible with the checked-in
 proposals.
 
-The checked-in corpus is generated with Ghidra 12.1.2 from `ST.exe`:
-
-| Item | Count |
-| --- | ---: |
-| Program functions, including externals | 10,673 |
-| Exported internal functions | 10,392 |
-| Functions with exported bodies | 5,712 |
-| Recognized library functions | 854 |
-| Thunks | 3,826 |
-| Source-file evidence records | 1,149 |
-| Candidate vtables | 180 |
-| Classes with recovered layout evidence | 145 |
-| Recovered message IDs | 260 |
-
-The live values are recorded in
-[`decomp/ST.exe/manifest.json`](decomp/ST.exe/manifest.json) and the summary
+The checked-in corpus is generated with Ghidra 12.1.2 from `ST.exe`. Current
+coverage and recovery statistics are generated rather than duplicated here;
+see [`decomp/ST.exe/manifest.json`](decomp/ST.exe/manifest.json) and the summary
 files under [`recovery/ST.exe/`](recovery/ST.exe/).
 
 ## Repository layout
@@ -91,6 +78,9 @@ decomp/ST.exe/functions/005B3C30/
 callees, strings, globals, tags, source evidence, and other context. Library and
 thunk implementations are represented without duplicating unnecessary bodies.
 Per-function fingerprints allow unchanged bodies to be reused on later exports.
+A single fingerprinted shard cache also reuses per-function pseudocode and
+quality catalogues, avoiding thousands of redundant body reads on network
+filesystems.
 `call_relations.jsonl` records each call's direct entry address, complete thunk
 chain, resolved implementation, and final prototype, so overloaded methods are
 never joined merely because their names match.
@@ -176,14 +166,17 @@ enables review-only rows and fails rather than exporting when a mutating loop
 has not reached a fixed point. Each loop continues from the current
 proposal/apply state only while an enabled row both reports a mutation and
 changes the Ghidra Program; review, conflict, error, preserved, and unchanged
-rows are terminal for that automatic pass. The 24-pass structural and 12-pass
-deep bounds are emergency cycle guards. `automation_state.tsv` binds an export
-to a deterministic semantic Program fingerprint, monotonic enum-domain state,
-and proposal/apply hashes. Ghidra's
-volatile modification number is retained only as a diagnostic. Each run is staged
-in `recovery/ST.exe/runs/.current` and finalized as
-`runs/<overall-sha256>/`; directory names contain no timestamp. Only the three most
-recent hashes are retained. `build_manifest.tsv`, per-script provider load logs,
+rows are terminal for that automatic pass. Structural and deep loops have
+bounded emergency cycle guards. `automation_state.tsv` binds an export to a
+deterministic semantic Program fingerprint, monotonic enum-domain state, and
+proposal/apply hashes. Ghidra's volatile modification number is retained only as
+a diagnostic. Each run is staged in `recovery/ST.exe/runs/.current` and finalized
+as `runs/<overall-sha256>/`; directory names contain no timestamp and only a
+small bounded recent history is retained. Expensive whole-program analyzers
+reuse artifacts only when the Program semantic fingerprint, analyzer source,
+declared inputs, and outputs all match; within one run, clean analyzer nodes are
+not recomputed after an unrelated fixed-point check. `build_manifest.tsv`,
+per-script provider load logs,
 per-step stdout/stderr and exceptions, `pipeline.log`, `events.tsv`, per-pass TSV
 snapshots, and the export receipt make failures inspectable, while
 `pipeline_report.tsv` remains the latest-run compatibility view. Export mode first
@@ -253,19 +246,12 @@ services. Rendering and SDL3 considerations are recorded separately in
 [`docs/porting-sdl3.md`](docs/porting-sdl3.md); implementation of that port is
 currently deferred.
 
-## Contributing
+## License
 
-Useful contributions are evidence-backed and address-stable. When changing the
-analysis:
-
-1. preserve manual Ghidra work and review disabled proposals individually;
-2. keep addresses in comments or metadata even after assigning semantic names;
-3. rerun the affected analyzer before its applier rather than applying stale TSV
-   rows;
-4. regenerate the corpus after database changes;
-5. commit the Ghidra database rotation, recovery reports, scripts, and resulting
-   text export together when they describe one recovery step;
-6. never add original game binaries or generated `.class` files.
+The recovery scripts, documentation, and original project material in this
+repository are licensed under the [GNU General Public License v3.0](LICENSE). This license
+does not
+cover the original game binaries, data, names, or assets.
 
 ## Disclaimer
 

@@ -13,7 +13,7 @@ undefined4 __thiscall STTmMineC::LoadImagSpr(STTmMineC *this,uint param_1,int pa
   uint uVar2;
   code *pcVar3;
   STTmMineC *pSVar4;
-  STTmMineC_field_0336Element *pSVar5;
+  char *pcVar5;
   int errorCode;
   ushort *puVar6;
   int iVar7;
@@ -44,7 +44,7 @@ undefined4 __thiscall STTmMineC::LoadImagSpr(STTmMineC *this,uint param_1,int pa
     g_currentExceptionFrame = &local_58;
     local_10 = this;
     errorCode = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
-    pSVar5 = element_0336;
+    pcVar5 = element_0336;
     if (errorCode != 0) {
       g_currentExceptionFrame = local_58.previous;
       iVar7 = ReportDebugMessage("E:\\__titans\\nick\\to_TmMin.cpp",0x603,0,errorCode,
@@ -56,10 +56,10 @@ undefined4 __thiscall STTmMineC::LoadImagSpr(STTmMineC *this,uint param_1,int pa
       return 0xffff;
     }
     puVar6 = Library::Ourlib::MFRLOAD::mfRLoad
-                       (DAT_00806764,CASE_1D,(&PTR_s_blast_p_007d1f68)[(int)element_0336->field_0000],
-                        0xffffffff,0,1,0,(undefined4 *)0x0);
+                       (DAT_00806764,CASE_1D,(&PTR_s_blast_p_007d1f68)[*(int *)element_0336],0xffffffff
+                        ,0,1,0,(undefined4 *)0x0);
     pSVar4 = local_10;
-    uVar2 = pSVar5->field_0038;
+    uVar2 = *(uint *)(pcVar5 + 0x38);
     if ((int)uVar2 < 0) {
       ST3DSMAPContext::sub_006E8660
                 (local_10->field_0211,(int *)&local_8,1,0,*(uint *)((int)puVar6 + 9),
@@ -74,17 +74,17 @@ undefined4 __thiscall STTmMineC::LoadImagSpr(STTmMineC *this,uint param_1,int pa
     }
     ppSVar9 = &pSVar4->field_0211;
     ST3DSMAPContext::sub_006E98E0(*ppSVar9,local_8,0,*(int *)puVar6,*(int *)((int)puVar6 + 0x21),1);
-    ST3DSMAPContext::sub_006EA270(*ppSVar9,local_8,0,*(uint *)&pSVar5->field_0x20);
+    ST3DSMAPContext::sub_006EA270(*ppSVar9,local_8,0,*(uint *)(pcVar5 + 0x20));
     ST3DSMAPContext::sub_006EA5E0(*ppSVar9,local_8,0,0);
     Library::Ourlib::ST3DSMAP::SprMove
-              (*ppSVar9,local_8,(float)*(int *)&pSVar5->field_0x8 * _DAT_007904f8 * _DAT_007904f0,
-               (float)*(int *)&pSVar5->field_0xc * _DAT_007904f8 * _DAT_007904f0,
-               *(float *)&pSVar5->field_0x10 + _DAT_007904fc);
+              (*ppSVar9,local_8,(float)*(int *)(pcVar5 + 8) * _DAT_007904f8 * _DAT_007904f0,
+               (float)*(int *)(pcVar5 + 0xc) * _DAT_007904f8 * _DAT_007904f0,
+               *(float *)(pcVar5 + 0x10) + _DAT_007904fc);
     Library::Ourlib::ST3DSMAP::SprShow(*ppSVar9,local_8,0);
-    if (*(int *)&pSVar5->field_0x4 != 0) {
+    if (*(int *)(pcVar5 + 4) != 0) {
       Library::Ourlib::ST3DSMAP::SprHide(*ppSVar9,local_8);
     }
-    pSVar5->field_0038 = local_8;
+    *(uint *)(pcVar5 + 0x38) = local_8;
     g_currentExceptionFrame = local_58.previous;
   }
   return local_14;

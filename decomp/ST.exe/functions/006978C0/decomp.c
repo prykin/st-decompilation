@@ -18,9 +18,9 @@ uint __thiscall CGenerate::sub_006978C0(CGenerate *this)
   CGenerate_field_5853DArray *pCVar7;
   CGenerate_field_5853DArray *pCVar8;
   CGenerate_field_5853Element *element_5853;
-  uint uVar9;
-  int iVar10;
-  bool bVar11;
+  uint uVar10;
+  int iVar11;
+  bool bVar12;
   uint local_18;
   uint local_10;
   CGenerate_field_5853Element *element_5853_2;
@@ -41,27 +41,27 @@ uint __thiscall CGenerate::sub_006978C0(CGenerate *this)
         pCVar2 = (CGenerate_field_5853DArray *)element_5853_2->field_0000;
         pCVar7 = pCVar2;
         if ((((0 < (int)pCVar2) && ((int)pCVar2 <= this->field_5847 + -1)) &&
-            (*(int *)&element_5853_2->field_0x9 == 4)) && (0xb < element_5853_2->field_0011)) {
+            (element_5853_2->field_0009 == 4)) && (0xb < element_5853_2->field_0011)) {
           iVar3 = element_5853_2->field_0015;
-          iVar10 = 0;
+          iVar11 = 0;
           if (iVar3 != 0) {
             uVar6 = *(uint *)(iVar3 + 0xc);
-            uVar9 = 0;
+            uVar10 = 0;
             if (0 < (int)uVar6) {
-              bVar11 = uVar6 != 0;
+              bVar12 = uVar6 != 0;
               do {
-                if (bVar11) {
-                  pbVar5 = (byte *)(*(int *)(iVar3 + 8) * uVar9 + *(int *)(iVar3 + 0x1c));
+                if (bVar12) {
+                  pbVar5 = (byte *)(*(int *)(iVar3 + 8) * uVar10 + *(int *)(iVar3 + 0x1c));
                 }
                 else {
                   pbVar5 = (byte *)0x0;
                 }
                 if ((pbVar5[1] == 0) && ((*pbVar5 & 1) != 0)) {
-                  iVar10 = iVar10 + 1;
+                  iVar11 = iVar11 + 1;
                 }
-                uVar9 = uVar9 + 1;
-                bVar11 = uVar9 < uVar6;
-              } while ((int)uVar9 < (int)uVar6);
+                uVar10 = uVar10 + 1;
+                bVar12 = uVar10 < uVar6;
+              } while ((int)uVar10 < (int)uVar6);
             }
           }
           uVar6 = Library::MSVCRT::FUN_0072e6c0();
@@ -75,34 +75,34 @@ uint __thiscall CGenerate::sub_006978C0(CGenerate *this)
             pCVar8 = pCVar7;
           }
           pCVar7 = pCVar8;
-          if ((pCVar8 != (CGenerate_field_5853DArray *)0x0) && (0 < iVar10)) {
+          if ((pCVar8 != (CGenerate_field_5853DArray *)0x0) && (0 < iVar11)) {
             uVar6 = Library::MSVCRT::FUN_0072e6c0();
-            pCVar7 = (CGenerate_field_5853DArray *)((int)uVar6 / (iVar10 + 1));
-            if (-1 < (int)uVar6 % (iVar10 + 1)) {
-              pCVar7 = (CGenerate_field_5853DArray *)element_5853_2->field_0015;
+            pCVar7 = (CGenerate_field_5853DArray *)((int)uVar6 / (iVar11 + 1));
+            if (-1 < (int)uVar6 % (iVar11 + 1)) {
+              pCVar7 = element_5853_2->field_0015;
               local_10 = 0;
               if (0 < (int)pCVar7->count) {
-                bVar11 = pCVar7->count != 0;
+                bVar12 = pCVar7->count != 0;
                 do {
-                  if (bVar11) {
+                  if (bVar12) {
                     element_5853 = DArrayAt<CGenerate_field_5853Element>(pCVar7, local_10);
                   }
                   else {
                     element_5853 = (CGenerate_field_5853Element *)0x0;
                   }
-                  if (*(char *)((int)&element_5853->field_0000 + 1) == '\0') {
-                    iVar3 = *(int *)((int)&element_5853->field_0000 + 2);
+                  if (*(byte *)((int)element_5853 + 1) == 0) {
+                    iVar3 = *(int *)((int)element_5853 + 2);
                     iVar4 = this->field_5833;
                     if (((element_5853->field_0000 & 2) != 0) &&
                        (uVar6 = Library::MSVCRT::FUN_0072e6c0(),
-                       (int)uVar6 % (int)(((iVar10 < 3) - 1 & 2) + 2) == 1)) {
+                       (int)uVar6 % (int)(((iVar11 < 3) - 1 & 2) + 2) == 1)) {
                       thunk_FUN_006a0c90(iVar3 % iVar4,iVar3 / iVar4,(int)((int)&pCVar2->flags + 1),
                                          (uint)pCVar8,0xff,1,1);
                     }
                   }
-                  pCVar7 = (CGenerate_field_5853DArray *)element_5853_2->field_0015;
+                  pCVar7 = element_5853_2->field_0015;
                   local_10 = local_10 + 1;
-                  bVar11 = local_10 < pCVar7->count;
+                  bVar12 = local_10 < pCVar7->count;
                 } while ((int)local_10 < (int)pCVar7->count);
               }
             }

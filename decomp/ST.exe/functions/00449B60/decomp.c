@@ -42,22 +42,22 @@ STAllPlayersC::DestroyObjectMsg
   uVar2 = param_2;
   switch(param_3) {
   case CASE_1:
-    array = g_playerRuntime[param_1].objects;
+    array = (DArrayTy *)g_playerRuntime[param_1].field6_0x9;
     break;
   case CASE_2:
-    array = PTR_007fa154;
+    array = g_array_007FA154;
     break;
   case CASE_3:
-    array = PTR_007fa158;
+    array = g_array_007FA158;
     break;
   case CASE_4:
-    array = PTR_007fa15c;
+    array = g_array_007FA15C;
     break;
   case CASE_5:
-    array = PTR_007fa160;
+    array = g_array_007FA160;
     break;
   case CASE_6:
-    array = PTR_007fa164;
+    array = g_array_007FA164;
     break;
   default:
     iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2eb1,0,0,"%s",

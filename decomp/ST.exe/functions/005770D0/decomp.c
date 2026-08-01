@@ -27,8 +27,8 @@ void __thiscall GameSystemC::DoneSystem(GameSystemC *this,int param_1)
       FUN_00725680((int *)&local_8->field_0431);
     }
     FUN_0070b1d0((int *)&PTR_00806724);
-    if (PTR_00802a28 != (ccFntTy *)0x0) {
-      thunk_FUN_005711d0(&DAT_00807620,(int *)&PTR_00802a28);
+    if (g_interSystem_00802A28 != (InterSystemC *)0x0) {
+      thunk_FUN_005711d0(&DAT_00807620,(int *)&g_interSystem_00802A28);
     }
     if (g_playSystem_00802A38 != (STPlaySystemC *)0x0) {
       thunk_FUN_005711d0(&DAT_00807620,(int *)&g_playSystem_00802A38);

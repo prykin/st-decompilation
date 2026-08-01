@@ -29,19 +29,22 @@ import ghidra.program.util.DefinedStringIterator;
 
 public class STLibraryAnalyzer extends GhidraScript {
     private static final Pattern CRT_NAME = Pattern.compile(
-        "(?i)^(?:_*Crt.*|_*(?:setjmp3|longjmp|exit|ftol|purecall|amsg_exit|initterm|except_handler3)|" +
+        "(?i)^(?:_*Crt.*|_*(?:setjmp3|longjmp|exit|ftol|purecall|amsg_exit|initterm|except_handler3|" +
+        "XcptFilter|xcptlookup|ioterm|FF_MSGBANNER|GET_RTERRMSG|rt_probe_read4@4|" +
+        "cintrindisp[12]|ctrandisp[12]|fload|trandisp[12]|controlfp|IncMan|CopyMan|" +
+        "FillZeroMan|IsZeroMan|ShrMan|fptrap|matherr|dosmaperr|set_osfhnd|isatty|" +
+        "allshl|ismbbkana|mbsnbicoll|findenv|copy_environ|__addl|__add_12|__shl_12|__shr_12)|" +
         "_*(?:malloc|calloc|realloc|free|memcpy|memmove|memset|memcmp|strlen|strcpy|strncpy|" +
         "strcmp|strncmp|strcat|strchr|strrchr|sprintf|vsprintf|printf|fprintf|fopen|fclose))$");
+    private static final long MAX_CRT_ANCHOR_GAP = 0x4000;
+    private static final long MAX_CRT_TAIL_DISTANCE = 0x1000;
+    private static final int MIN_CRT_ANCHORS = 8;
     private static final Pattern DKW_PATH = Pattern.compile(
         "(?i)(?:[A-Z]:\\\\)?D?KW\\\\([A-Z0-9_]+)\\\\");
     private static final Pattern OURLIB_PATH = Pattern.compile(
         "(?i)(?:[A-Z]:\\\\)?OURLIB\\\\([^\\\\]+?)\\.(?:C|CC|CPP|CXX)(?:$|[^A-Z0-9_])");
     private static final Pattern RECOVERED_SOURCE_COMMENT = Pattern.compile(
         "(?m)^Recovered source file:\\s*([^\\r\\n]+)$");
-    // Confirmed contiguous VC6 CRT block in this ST.exe image; end is exclusive.
-    private static final String CRT_START = "0072D7F0";
-    private static final String CRT_END = "00746BAB";
-
     @Override
     protected void run() throws Exception {
         // Read-only script: do not leave GhidraScript's implicit transaction around runScript().
@@ -54,6 +57,7 @@ public class STLibraryAnalyzer extends GhidraScript {
         if (root == null) return;
 
         Map<Address, Evidence> found = new LinkedHashMap<>();
+        Set<Address> inferredCrt = inferCrtCluster();
         for (Data data : DefinedStringIterator.forProgram(currentProgram)) {
             monitor.checkCancelled();
             String value = stringValue(data);
@@ -70,7 +74,9 @@ public class STLibraryAnalyzer extends GhidraScript {
             }
         }
 
-        // The linked VC6 runtime is contiguous. Names outside it are only hints.
+        // The linked VC6 runtime is emitted as a dense function cluster.  Its bounds are
+        // inferred from compiler-runtime names, never from an image address. Names outside
+        // the inferred cluster remain hints only.
         for (Function function : currentProgram.getFunctionManager().getFunctions(true)) {
             monitor.checkCancelled();
             if (function.isExternal()) continue;
@@ -89,14 +95,13 @@ public class STLibraryAnalyzer extends GhidraScript {
                         function.getEntryPoint(), true);
                 }
             }
-            String address = addr(function.getEntryPoint());
-            boolean inCrtBlock = address.compareTo(CRT_START) >= 0 && address.compareTo(CRT_END) < 0;
+            boolean inCrtBlock = inferredCrt.contains(function.getEntryPoint());
             boolean knownCrtName = CRT_NAME.matcher(function.getName()).matches();
             if (inCrtBlock || knownCrtName) {
                 Evidence evidence = found.computeIfAbsent(function.getEntryPoint(),
                     ignored -> new Evidence(function));
                 evidence.add(new Classification("MSVCRT", "Library::MSVCRT"),
-                    inCrtBlock ? "confirmed contiguous ST.exe VC6 CRT block " + CRT_START + ".." + CRT_END :
+                    inCrtBlock ? "inferred dense VC6 CRT cluster from named runtime anchors" :
                         "known CRT symbol: " + function.getName(), function.getEntryPoint(), true);
             }
             else if (function.getParentNamespace().isGlobal() && function.getName().startsWith("_") &&
@@ -157,6 +162,50 @@ public class STLibraryAnalyzer extends GhidraScript {
                     "Library::Ourlib::" + module);
         }
         return null;
+    }
+
+    private Set<Address> inferCrtCluster() throws Exception {
+        List<Function> functions = new ArrayList<>();
+        for (Function function : currentProgram.getFunctionManager().getFunctions(true))
+            if (!function.isExternal()) functions.add(function);
+        functions.sort(Comparator.comparing(Function::getEntryPoint));
+        List<List<Function>> groups = new ArrayList<>();
+        for (Function function : functions) {
+            if (!CRT_NAME.matcher(function.getName()).matches()) continue;
+            if (groups.isEmpty() || function.getEntryPoint().subtract(
+                    groups.get(groups.size() - 1).get(groups.get(groups.size() - 1).size() - 1)
+                        .getEntryPoint()) > MAX_CRT_ANCHOR_GAP)
+                groups.add(new ArrayList<>());
+            groups.get(groups.size() - 1).add(function);
+        }
+        List<Function> anchors = groups.stream()
+            .max(Comparator.comparingInt((List<Function> group) -> group.size()))
+            .orElse(List.of());
+        Set<Address> result = new TreeSet<>();
+        if (anchors.size() < MIN_CRT_ANCHORS) return result;
+        Address first = anchors.get(0).getEntryPoint();
+        Address last = anchors.get(anchors.size() - 1).getEntryPoint();
+        for (Function function : functions)
+            if (function.getEntryPoint().compareTo(first) >= 0 &&
+                    function.getEntryPoint().compareTo(last) <= 0)
+                result.add(function.getEntryPoint());
+
+        // Include only a short anonymous tail which is actually called by the inferred
+        // cluster. This rejects adjacent code even when it begins at the very next byte.
+        boolean changed;
+        do {
+            changed = false;
+            for (Function function : functions) {
+                Address entry = function.getEntryPoint();
+                if (result.contains(entry) || entry.compareTo(last) <= 0 ||
+                        entry.subtract(last) > MAX_CRT_TAIL_DISTANCE) continue;
+                for (Function caller : function.getCallingFunctions(monitor)) {
+                    if (!result.contains(caller.getEntryPoint())) continue;
+                    result.add(entry); changed = true; break;
+                }
+            }
+        } while (changed);
+        return result;
     }
 
     private String moduleName(String value) {

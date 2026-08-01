@@ -17,8 +17,6 @@ import java.util.Map;
 
 import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
-import ghidra.program.model.data.ArrayDataType;
-import ghidra.program.model.data.ByteDataType;
 import ghidra.program.model.data.CategoryPath;
 import ghidra.program.model.data.DataType;
 import ghidra.program.model.data.DataTypeConflictHandler;
@@ -28,7 +26,6 @@ import ghidra.program.model.data.EnumDataType;
 import ghidra.program.model.data.Enum;
 import ghidra.program.model.data.IntegerDataType;
 import ghidra.program.model.data.PointerDataType;
-import ghidra.program.model.data.ShortDataType;
 import ghidra.program.model.data.Structure;
 import ghidra.program.model.data.StructureDataType;
 import ghidra.program.model.data.Union;
@@ -41,8 +38,6 @@ import ghidra.program.model.symbol.SourceType;
 
 public class STTypeBootstrapApplier extends GhidraScript {
     private static final CategoryPath ROOT = new CategoryPath("/SubmarineTitans/Recovered");
-    private static final CategoryPath RECORDS =
-        new CategoryPath("/SubmarineTitans/Recovered/GlobalRecords");
     private static final String MARKER = "[STTypeBootstrapApplier]";
     private static final String ANCHOR = "[ST_SEMANTIC_ANCHOR]";
     private static final String VIEW = "[ST_VIEW_ONLY]";
@@ -104,15 +99,15 @@ public class STTypeBootstrapApplier extends GhidraScript {
             String status = switch (action) {
                 case "ensure_darray" -> ensureDArray();
                 case "ensure_message" -> ensureMessage();
-                case "ensure_control_command" -> ensureControlCommand();
-                case "ensure_player_temp" -> ensurePlayerTemp();
-                case "ensure_spatial_descriptors" -> ensureSpatialDescriptors();
                 case "canonical_system" -> canonicalSystem();
                 case "replace_duplicate" -> replaceDuplicate(target,
                     unt(row.get("replacement")));
                 case "mark_view_only" -> markViewOnly(target);
                 case "demote_signature" -> demoteSignature(target,
                     unt(row.get("expected")), unt(row.get("evidence")));
+                case "retire_curated_identity" -> retireCuratedIdentity(target,
+                    unt(row.get("expected")), unt(row.get("proposed")),
+                    unt(row.get("evidence")));
                 default -> throw new IllegalArgumentException("Unknown action " + action);
             };
             report.add(new Report(action, target, status, unt(row.get("evidence"))));
@@ -198,100 +193,6 @@ public class STTypeBootstrapApplier extends GhidraScript {
         return "applied";
     }
 
-    private String ensureControlCommand() {
-        DataType existing = dataTypes.getDataType(ROOT, "STControlCommand");
-        if (existing instanceof Structure structure && structure.getLength() >= 0x1b) {
-            return ensureDescription(structure, MARKER + " " + ANCHOR +
-                " producer/consumer command header; payload remains discriminator-dependent.") ?
-                "applied" : "unchanged";
-        }
-        if (existing != null) return "preserved";
-        StructureDataType command = new StructureDataType(ROOT, "STControlCommand", 0, dataTypes);
-        command.setDescription(MARKER + " " + ANCHOR +
-            " packed producer/consumer command header; payload facets are synthesized by " +
-            "STDiscriminatedPayloadAnalyzer.");
-        add(command, DWordDataType.dataType, "unknown_00");
-        add(command, DWordDataType.dataType, "senderId");
-        add(command, ByteDataType.dataType, "playerId");
-        add(command, ByteDataType.dataType, "sourcePlayerId");
-        add(command, ShortDataType.dataType, "objectId");
-        add(command, ShortDataType.dataType, "targetKind");
-        add(command, ByteDataType.dataType, "commandType");
-        add(command, DWordDataType.dataType, "primaryPayloadSize");
-        add(command, DWordDataType.dataType, "secondaryPayloadSize");
-        add(command, pointer(VoidDataType.dataType), "payload");
-        dataTypes.resolve(command, DataTypeConflictHandler.KEEP_HANDLER);
-        return "applied";
-    }
-
-    private String ensurePlayerTemp() {
-        DataType existing = dataTypes.getDataType(RECORDS, "STPlayerTempSlot");
-        if (existing instanceof Structure structure && structure.getLength() == 0x10) {
-            return ensureDescription(structure, MARKER + " " + ANCHOR +
-                " inferred from the Add/Del/Save/Restore temporary-object family.") ?
-                "applied" : "unchanged";
-        }
-        if (existing != null) return "preserved";
-        DataType darray = dataTypes.getDataType(ROOT, "DArrayTy");
-        if (!(darray instanceof Structure)) return "preserved";
-        StructureDataType slot = new StructureDataType(RECORDS, "STPlayerTempSlot", 0, dataTypes);
-        slot.setDescription(MARKER + " " + ANCHOR +
-            " packed 16-byte record inferred from the temporary-object helper family.");
-        add(slot, IntegerDataType.dataType, "objectType");
-        add(slot, IntegerDataType.dataType, "playerId");
-        add(slot, ShortDataType.dataType, "objectId");
-        add(slot, pointer(darray), "objectIds");
-        add(slot, ShortDataType.dataType, "activityCount");
-        dataTypes.resolve(slot, DataTypeConflictHandler.KEEP_HANDLER);
-        return "applied";
-    }
-
-    private String ensureSpatialDescriptors() {
-        boolean changed = false;
-        DataType gameObject = dataTypes.getDataType("/STGameObjC");
-        DataType objectPointer = pointer(gameObject == null ? VoidDataType.dataType : gameObject);
-        DataType cell = dataTypes.getDataType(RECORDS, "STWorldCell");
-        if (cell == null) {
-            StructureDataType desired = new StructureDataType(RECORDS, "STWorldCell", 0, dataTypes);
-            desired.setDescription(MARKER + " " + ANCHOR +
-                " repeated two-pointer spatial cell inferred from indexed cell accesses.");
-            desired.add(new ArrayDataType(objectPointer, 2, pointerSize), 2 * pointerSize,
-                "objects", null);
-            cell = dataTypes.resolve(desired, DataTypeConflictHandler.KEEP_HANDLER);
-            changed = true;
-        }
-        else changed |= ensureDescription(cell, MARKER + " " + ANCHOR +
-            " repeated two-pointer spatial cell inferred from indexed cell accesses.");
-        if (dataTypes.getDataType(RECORDS, "STSpatialGrid16") == null) {
-            createGrid("STSpatialGrid16", pointer(ShortDataType.dataType),
-                "16-bit cell grid inferred from repeated descriptor geometry.");
-            changed = true;
-        }
-        else changed |= ensureDescription(dataTypes.getDataType(RECORDS, "STSpatialGrid16"),
-            MARKER + " " + ANCHOR +
-                " 16-bit cell grid inferred from repeated descriptor geometry.");
-        if (dataTypes.getDataType(RECORDS, "STWorldGrid") == null) {
-            createGrid("STWorldGrid", pointer(cell),
-                "two-object-pointer cell grid inferred from repeated descriptor geometry.");
-            changed = true;
-        }
-        else changed |= ensureDescription(dataTypes.getDataType(RECORDS, "STWorldGrid"),
-            MARKER + " " + ANCHOR +
-                " world-cell grid inferred from repeated descriptor geometry.");
-        return changed ? "applied" : "unchanged";
-    }
-
-    private void createGrid(String name, DataType cells, String detail) {
-        StructureDataType grid = new StructureDataType(RECORDS, name, 0, dataTypes);
-        grid.setDescription(MARKER + " " + ANCHOR + " " + detail +
-            " Index is x + sizeX*y + planeStride*z.");
-        add(grid, ShortDataType.dataType, "sizeX");
-        add(grid, ShortDataType.dataType, "sizeY");
-        add(grid, ShortDataType.dataType, "sizeZ");
-        add(grid, ShortDataType.dataType, "planeStride");
-        add(grid, cells, "cells");
-        dataTypes.resolve(grid, DataTypeConflictHandler.KEEP_HANDLER);
-    }
 
     private String canonicalSystem() {
         DataType type = dataTypes.getDataType("/SystemClassTy");
@@ -329,10 +230,20 @@ public class STTypeBootstrapApplier extends GhidraScript {
     private String markViewOnly(String path) {
         DataType type = dataTypes.getDataType(path);
         if (type == null) return "unchanged";
-        String description = type.getDescription();
-        if (description != null && description.contains(VIEW)) return "unchanged";
-        type.setDescription((description == null || description.isBlank() ? "" :
-            description + " ") + VIEW + " Noncanonical storage view; excluded from semantic matching.");
+        String description = type.getDescription() == null ? "" : type.getDescription();
+        String retired = description.replace(ANCHOR, "").replaceAll("\\s+", " ").trim();
+        boolean changed = !retired.equals(description.trim());
+        if (!retired.contains(MARKER)) {
+            retired = MARKER + (retired.isBlank() ? "" : " " + retired);
+            changed = true;
+        }
+        if (!retired.contains(VIEW)) {
+            retired = (retired.isBlank() ? "" : retired + " ") + VIEW +
+                " Noncanonical storage view; excluded from semantic matching.";
+            changed = true;
+        }
+        if (!changed) return "unchanged";
+        type.setDescription(retired);
         return "applied";
     }
 
@@ -352,7 +263,8 @@ public class STTypeBootstrapApplier extends GhidraScript {
             return "preserved";
         function.setReturnType(function.getReturnType(), SourceType.ANALYSIS);
         for (Parameter parameter : function.getParameters())
-            parameter.setDataType(parameter.getDataType(), SourceType.ANALYSIS);
+            if (!parameter.isAutoParameter())
+                parameter.setDataType(parameter.getDataType(), SourceType.ANALYSIS);
         function.setSignatureSource(SourceType.ANALYSIS);
         if (function.getSignatureSource() != SourceType.ANALYSIS)
             return "preserved";
@@ -363,6 +275,58 @@ public class STTypeBootstrapApplier extends GhidraScript {
         if (old == null || old.isBlank()) function.setComment(line);
         else if (!old.contains(line)) function.setComment(old + "\n" + line);
         return "applied";
+    }
+
+    private String retireCuratedIdentity(String addressText, String expected,
+            String proposedLeaf, String evidence) throws Exception {
+        Address address = currentProgram.getAddressFactory().getAddress(addressText);
+        Function function = address == null ? null :
+            currentProgram.getFunctionManager().getFunctionAt(address);
+        if (function == null) return "conflict";
+        if (!hasTag(function, "RECOVERED_CURATED_PROPOSAL")) return "unchanged";
+        if (!functionFingerprint(function).equals(expected)) return "preserved";
+        if (function.getSymbol().getSource() == SourceType.IMPORTED ||
+                function.getSignatureSource() == SourceType.IMPORTED ||
+                function.getReturn().getSource() == SourceType.IMPORTED)
+            return "preserved";
+        for (Parameter parameter : function.getParameters())
+            if (parameter.getSource() == SourceType.IMPORTED) return "preserved";
+        if (proposedLeaf.isBlank() || proposedLeaf.contains("::")) return "conflict";
+
+        function.setReturnType(function.getReturnType(), SourceType.ANALYSIS);
+        for (Parameter parameter : function.getParameters())
+            if (!parameter.isAutoParameter())
+                parameter.setDataType(parameter.getDataType(), SourceType.ANALYSIS);
+        function.setSignatureSource(SourceType.ANALYSIS);
+        // Rename last so a rejected signature provenance update cannot leave a half-retired
+        // identity behind while the legacy tag remains installed.
+        function.setName(proposedLeaf, SourceType.ANALYSIS);
+        function.removeTag("RECOVERED_CURATED_PROPOSAL");
+        function.addTag("RECOVERED_HEURISTIC_IDENTITY");
+        String line = MARKER + " Retired legacy curated identity; name=" +
+            function.getName(true) + ". Evidence: " + evidence;
+        String old = function.getComment();
+        if (old == null || old.isBlank()) function.setComment(line);
+        else if (!old.contains(line)) function.setComment(old + "\n" + line);
+        return "applied";
+    }
+
+    private String functionFingerprint(Function function) {
+        StringBuilder result = new StringBuilder(function.getName(true))
+            .append("|name_source=").append(function.getSymbol().getSource())
+            .append("|prototype=").append(function.getPrototypeString(true, true))
+            .append("|signature_source=").append(function.getSignatureSource())
+            .append("|return_source=").append(function.getReturn().getSource());
+        for (Parameter parameter : function.getParameters())
+            result.append("|param_").append(parameter.getOrdinal()).append("_source=")
+                .append(parameter.getSource());
+        return result.toString();
+    }
+
+    private boolean hasTag(Function function, String name) {
+        for (var tag : function.getTags())
+            if (name.equals(tag.getName())) return true;
+        return false;
     }
 
     private boolean ensureDescription(DataType type, String marker) {

@@ -22,7 +22,7 @@ ST3DSMAPContext::sub_006E88C0
   iVar1 = sub_006E8660(this,param_1,0,0,0,0,0,0,0);
   if (iVar1 == 0) {
     iVar1 = *(int *)&this->field_0x31c + *param_1 * 0x114;
-    puVar2 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0x49);
+    puVar2 = Library::DKW::LIB::MemAlloc(0x49);
     *(undefined4 **)(iVar1 + 0xa0) = puVar2;
     if (puVar2 == (undefined4 *)0x0) {
       return -2;

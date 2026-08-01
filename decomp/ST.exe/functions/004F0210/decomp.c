@@ -74,7 +74,7 @@ int __thiscall BldLabPanelTy::GetMessage(BldLabPanelTy *this,STMessage *message)
       g_currentExceptionFrame = local_4c.previous;
       return 0;
     }
-    if ((char)element_027a->field_0008 == '\0') {
+    if (*(char *)(element_027a + 2) == '\0') {
       g_currentExceptionFrame = local_4c.previous;
       return 0;
     }

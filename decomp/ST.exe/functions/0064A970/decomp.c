@@ -58,7 +58,7 @@ float * FUN_0064a970(char *param_1,int param_2,int *param_3)
   char *local_28;
   float local_24;
   float local_20;
-  undefined4 *local_1c;
+  AnonPointee_TLOBaseTy_0607 *local_1c;
   byte *local_18;
   float local_14;
   char *local_10;
@@ -66,13 +66,13 @@ float * FUN_0064a970(char *param_1,int param_2,int *param_3)
   float *local_8;
 
   local_8 = (float *)0x0;
-  local_1c = (undefined4 *)0x0;
+  local_1c = (AnonPointee_TLOBaseTy_0607 *)0x0;
   local_c0.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_c0;
   iVar5 = Library::MSVCRT::__setjmp3(local_c0.jumpBuffer,0);
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_c0.previous;
-    if (local_1c != (undefined4 *)0x0) {
+    if (local_1c != (AnonPointee_TLOBaseTy_0607 *)0x0) {
       FreeAndNull(&local_1c);
     }
     if (local_8 != (float *)0x0) {
@@ -1054,7 +1054,7 @@ LAB_0064bd33:
     local_20 = (float)(~uVar13 + 1);
     local_14 = 0.0;
     local_28 = (char *)0x200;
-    local_1c = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0x200);
+    local_1c = Library::DKW::LIB::MemAlloc(0x200);
     if (1 < param_2) {
       local_c = (int *)(param_1 + 5);
       local_30 = param_2 + -1;
@@ -1073,9 +1073,9 @@ LAB_0064bd33:
           }
           if ((int)pcVar12 <= local_2c) {
             local_28 = (char *)((int)pcVar12 + 0x200);
-            local_1c = (undefined4 *)Library::DKW::LIB::FUN_006acf50((int)local_1c,(uint)local_28);
+            local_1c = Library::DKW::LIB::MemRealloc(local_1c,(uint)local_28);
           }
-          puVar1 = (undefined4 *)((int)local_14 + (int)local_1c);
+          puVar1 = (undefined4 *)((int)&local_1c->field_0000 + (int)local_14);
           local_14 = (float)((int)local_14 + 4);
           local_2c = local_2c + 4;
           local_24 = (float)((int)local_24 + 4);
@@ -1097,9 +1097,9 @@ LAB_0064bd33:
           if ((int)pcVar12 <= local_2c) {
             pcVar12 = (char *)((int)pcVar12 + 0x200);
             local_28 = pcVar12;
-            local_1c = (undefined4 *)Library::DKW::LIB::FUN_006acf50((int)local_1c,(uint)pcVar12);
+            local_1c = Library::DKW::LIB::MemRealloc(local_1c,(uint)pcVar12);
           }
-          puVar1 = (undefined4 *)((int)local_14 + (int)local_1c);
+          puVar1 = (undefined4 *)((int)&local_1c->field_0000 + (int)local_14);
           local_14 = (float)((int)local_14 + 4);
           *puVar1 = uVar11;
           local_24 = (float)((int)local_24 + 4);
@@ -1113,9 +1113,9 @@ LAB_0064bd33:
           if ((int)pcVar12 <= (int)local_24) {
             pcVar12 = (char *)((int)pcVar12 + 0x200);
             local_28 = pcVar12;
-            local_1c = (undefined4 *)Library::DKW::LIB::FUN_006acf50((int)local_1c,(uint)pcVar12);
+            local_1c = Library::DKW::LIB::MemRealloc(local_1c,(uint)pcVar12);
           }
-          *(double *)((int)local_14 + (int)local_1c) = (double)local_34;
+          *(double *)((int)&local_1c->field_0000 + (int)local_14) = (double)local_34;
           local_14 = (float)((int)local_14 + 8);
           local_24 = (float)((int)local_24 + 8);
           local_2c = local_2c + 8;
@@ -1135,11 +1135,11 @@ LAB_0064bd33:
     }
     fVar9 = local_20;
     local_8 = (float *)Library::DKW::LIB::FUN_006aac10((uint)local_20);
-    Library::MSVCRT::FUN_007300e0((undefined1 *)local_8,(int)fVar9,local_18,local_1c);
+    Library::MSVCRT::FUN_007300e0((undefined1 *)local_8,(int)fVar9,local_18,&local_1c->field_0000);
     if (param_3 != (int *)0x0) {
       *param_3 = 3;
     }
-    if (local_1c == (undefined4 *)0x0) {
+    if (local_1c == (AnonPointee_TLOBaseTy_0607 *)0x0) {
       g_currentExceptionFrame = local_c0.previous;
       return local_8;
     }

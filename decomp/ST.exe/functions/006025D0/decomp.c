@@ -17,7 +17,7 @@ byte * __thiscall STDestC::sub_006025D0(STDestC *this,undefined4 *param_1)
   byte *pbVar4;
 
   if (this->field_036E != 3) {
-    pbVar1 = (byte *)Library::DKW::LIB::FUN_006aac70(0x17e);
+    pbVar1 = Library::DKW::LIB::MemAlloc(0x17e);
     if (this->field_036E == 2) {
       this->field_036E = (uint)(this->field_039F < '\x01');
     }

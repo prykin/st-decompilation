@@ -8,13 +8,13 @@ byte * FUN_00717680(int param_1,byte *param_2,int param_3,int param_4,byte param
   byte *pbVar2;
   byte *pbVar4;
   byte bVar5;
-  uint uVar6;
+  uint size;
 
-  uVar6 = param_3 * param_4;
-  pbVar2 = (byte *)Library::DKW::LIB::FUN_006aac70(uVar6);
+  size = param_3 * param_4;
+  pbVar2 = Library::DKW::LIB::MemAlloc(size);
   pbVar4 = pbVar2;
-  memmove(pbVar4, param_2, uVar6); /* compiler REP MOVS byte copy */
-  if (-1 < (int)(uVar6 - 1)) {
+  memmove(pbVar4, param_2, size); /* compiler REP MOVS byte copy */
+  if (-1 < (int)(size - 1)) {
     pbVar4 = pbVar2;
     do {
       bVar1 = pbVar4[param_1 - (int)pbVar2];
@@ -32,8 +32,8 @@ byte * FUN_00717680(int param_1,byte *param_2,int param_3,int param_4,byte param
         }
       }
       pbVar4 = pbVar4 + 1;
-      uVar6 = uVar6 - 1;
-    } while (uVar6 != 0);
+      size = size - 1;
+    } while (size != 0);
   }
   return pbVar2;
 }

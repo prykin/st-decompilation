@@ -1,11 +1,12 @@
 ST x86 ABI consistency
 
 Functions scanned: 5712
-Proposals: 1
-Automatic: 1
+Proposals: 0
+Automatic: 0
 known_setjmp3: 0
 known_load_resource_string: 0
-x87_double_parameter_slots: 1
+x87_double_parameter_slots: 0
+x87_stack_storage_migration: 0
 full_eax_return: 0
 stack_parameter_width: 0
 stack_parameter_scalar_role: 0

@@ -1729,7 +1729,7 @@ LAB_004bc4c0:
         }
         if ((TVar7 == CASE_3C) || (TVar7 == CASE_53)) {
           if (*pcVar13 == '\f') {
-            if (g_playerRuntime[(int)this_00->field_0024].field2180_0xa0e != 0) {
+            if (g_playerRuntime[(int)this_00->field_0024].field2383_0xa0e != 0) {
               g_currentExceptionFrame = local_c4.previous;
               return 0;
             }

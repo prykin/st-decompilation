@@ -16,9 +16,8 @@
 void __thiscall
 ST3DSMAPContext::sub_006DC050
           (ST3DSMAPContext *param_1,undefined4 param_2,uint param_3,undefined4 param_4,int param_5,
-          int param_6,undefined4 param_7,undefined4 param_8,undefined4 param_9,undefined4 param_10,
-          undefined4 param_11,undefined4 param_12,undefined4 param_13,undefined4 param_14,
-          undefined8 param_15,undefined8 param_16,int param_17)
+          int param_6,double param_7,double param_8,double param_9,double param_10,
+          undefined8 param_11,undefined8 param_12,int param_13)
 
 {
   double dVar1;
@@ -30,53 +29,43 @@ ST3DSMAPContext::sub_006DC050
   float10 extraout_ST0;
   longlong lVar6;
 
-  puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006acf50(*(int *)&param_1->field_0x350,0x658);
+  puVar3 = Library::DKW::LIB::MemRealloc
+                     (*(AnonPointee_TLOBaseTy_0607 **)&param_1->field_0x350,0x658);
   iVar5 = 0;
   *(undefined4 **)&param_1->field_0x350 = puVar3;
   *puVar3 = 0;
   *(undefined4 *)(*(int *)&param_1->field_0x350 + 4) = 0;
-  puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006acf50(*(int *)&param_1->field_0x354,0x658);
+  puVar3 = Library::DKW::LIB::MemRealloc
+                     (*(AnonPointee_TLOBaseTy_0607 **)&param_1->field_0x354,0x658);
   *(undefined4 **)&param_1->field_0x354 = puVar3;
   *puVar3 = 0;
   *(undefined4 *)(*(int *)&param_1->field_0x354 + 4) = 0;
-  *(undefined8 *)&param_1->field_0xc8 = param_15;
-  *(undefined8 *)&param_1->field_0xd0 = param_16;
+  *(undefined8 *)&param_1->field_0xc8 = param_11;
+  *(undefined8 *)&param_1->field_0xd0 = param_12;
   *(undefined4 *)&param_1->field_0x128 = 0;
   *(undefined4 *)&param_1->field_0x41c = 0;
   *(undefined4 *)&param_1->field_0x124 = 0;
-  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-  sub_006DBD20(param_1,param_2,param_3,param_4,param_5,param_6,param_7,param_8,param_9,param_10,
-               (double)CONCAT44(param_12,param_11),(double)CONCAT44(param_14,param_13));
-  if (0 < param_17) {
+  sub_006DBD20(param_1,param_2,param_3,param_4,param_5,param_6,param_7,param_8,param_9,param_10);
+  if (0 < param_13) {
     pAVar4 = (AnonShape_006DBCA0_EF06575F *)FUN_006b04d0(0x4f2);
     if (pAVar4 != (AnonShape_006DBCA0_EF06575F *)0x0) {
       iVar5 = FUN_006dbca0(pAVar4);
     }
     *(int *)&param_1->field_0x358 = iVar5;
-    param_1->field_0380 = param_17;
-    *(double *)&param_1->field_0x368 = *(double *)&param_1->field_0xc8 / (double)param_17;
+    param_1->field_0380 = param_13;
+    *(double *)&param_1->field_0x368 = *(double *)&param_1->field_0xc8 / (double)param_13;
     lVar6 = Library::MSVCRT::__ftol();
     *(int *)&param_1->field_0x370 = (int)lVar6;
     *(double *)&param_1->field_0x360 = (double)((float10)(int)lVar6 * extraout_ST0);
-    *(undefined8 *)(iVar5 + 200) = param_15;
-    *(undefined8 *)(*(int *)&param_1->field_0x358 + 0xd0) = param_16;
+    *(undefined8 *)(iVar5 + 200) = param_11;
+    *(undefined8 *)(*(int *)&param_1->field_0x358 + 0xd0) = param_12;
     *(undefined4 *)(*(int *)&param_1->field_0x358 + 0x128) = 0;
     *(undefined4 *)(*(int *)&param_1->field_0x358 + 0x41c) = 0;
     *(undefined4 *)(*(int *)&param_1->field_0x358 + 0x124) = 1;
     dVar1 = *(double *)&param_1->field_0x360 * _DAT_007901c0;
     dVar2 = *(double *)&param_1->field_0x360 * _DAT_0079df58;
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    param_16._4_4_ = (undefined4)((ulonglong)dVar1 >> 0x20);
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    param_16._0_4_ = SUB84(dVar1,0);
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    param_15._4_4_ = (undefined4)((ulonglong)dVar2 >> 0x20);
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    param_15._0_4_ = SUB84(dVar2,0);
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     sub_006DBD20(*(ST3DSMAPContext **)&param_1->field_0x358,0,0,0,*(int *)&param_1->field_0x370,
-                 *(int *)&param_1->field_0x370,(undefined4)param_15,param_15._4_4_,
-                 (undefined4)param_16,param_16._4_4_,dVar2,dVar1);
+                 *(int *)&param_1->field_0x370,dVar2,dVar1,dVar2,dVar1);
     sub_006DD790(*(ST3DSMAPContext **)&param_1->field_0x358,
                  (float)((float10)_DAT_0079df88 -
                         (float10)*(double *)&param_1->field_0xd0 * (float10)_DAT_0079df90));
@@ -84,7 +73,7 @@ ST3DSMAPContext::sub_006DC050
                  (float)((float10)*(double *)&param_1->field_0xd0 +
                          (float10)*(double *)&param_1->field_0xd0 + (float10)_DAT_0079df88));
     *(undefined4 *)(*(int *)&param_1->field_0x358 + 0x128) = 0x70;
-    *(int *)(*(int *)&param_1->field_0x358 + 0x380) = param_17;
+    *(int *)(*(int *)&param_1->field_0x358 + 0x380) = param_13;
     *(undefined4 *)(*(int *)&param_1->field_0x358 + 0x370) = *(undefined4 *)&param_1->field_0x370;
     dVar1 = *(double *)&param_1->field_0xd0 * _DAT_0079df80;
     param_1->field_0384 = 0x20;

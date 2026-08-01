@@ -45,7 +45,7 @@ STAllPlayersC::AddObjsToGroup
   uVar7 = groupContent[3];
   uVar6 = 0;
   local_20 = 0;
-  local_14 = g_playerRuntime[param_1].groups;
+  local_14 = (DArrayTy *)g_playerRuntime[param_1].field5_0x5;
   if (0 < (int)uVar7) {
     do {
       DArrayGetElement((DArrayTy *)groupContent,uVar6,local_18);
@@ -98,7 +98,7 @@ STAllPlayersC::AddObjsToGroup
       local_40 = 1;
       local_38 = uVar6 & 0xffff;
       g_playSystem_00802A38->vfunc_08(0x10ff,local_1c,&local_10,local_4c,0);
-      Library::DKW::TBL::FUN_006ae140(&array->flags,uVar6 & 0xffff,&local_10);
+      Library::DKW::TBL::DArrayPut(array,uVar6 & 0xffff,&local_10);
       STGroupC::AddObjs(local_10,(DArrayTy *)groupContent,0);
       local_5 = 2;
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -124,7 +124,7 @@ STAllPlayersC::AddObjsToGroup
            (iVar3 = thunk_FUN_004233a0((int)local_c), iVar3 == 0)) {
           thunk_FUN_0054cf70(g_playSystem_00802A38,*(uint *)&local_c->field_0x8);
           local_c = (STGroupC *)0x0;
-          Library::DKW::TBL::FUN_006ae140(&array->flags,uVar7,&local_c);
+          Library::DKW::TBL::DArrayPut(array,uVar7,&local_c);
         }
         uVar7 = uVar7 + 1;
       } while ((int)uVar7 < (int)dVar1);

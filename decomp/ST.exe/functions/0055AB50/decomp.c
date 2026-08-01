@@ -38,8 +38,8 @@ void __thiscall VisibleClassTy::VisHoleExec(VisibleClassTy *this,void *param_1)
         }
         if (((uint)(element_00f4->field_0014 + element_00f4->field_0018) <= this_00->field_0108) &&
            (((this_00->field_0108 - element_00f4->field_0014) - element_00f4->field_0018) % 7 == 0)) {
-          sub_00559110(this_00,element_00f4->field_0000,(undefined *)element_00f4->field_0004,element_00f4->index,
-                       element_00f4->field_0010,element_00f4->field_000C,-6,0xffffffff);
+          sub_00559110(this_00,element_00f4->field_0000,(undefined *)element_00f4->field_0004,element_00f4->index,element_00f4->field_0010,element_00f4->field_000C,-6,
+                       0xffffffff);
           uVar3 = local_8;
           uVar4 = element_00f4->field_000C - 1;
           element_00f4->field_000C = uVar4;
@@ -48,8 +48,8 @@ void __thiscall VisibleClassTy::VisHoleExec(VisibleClassTy *this,void *param_1)
             local_8 = uVar3;
           }
           else {
-            sub_00558DC0(this_00,element_00f4->field_0000,element_00f4->field_0004,(undefined *)element_00f4->index,
-                         (int *)element_00f4->field_0010,uVar4,(int *)0xfffffffa,0xffffffff);
+            sub_00558DC0(this_00,element_00f4->field_0000,element_00f4->field_0004,(undefined *)element_00f4->index,(int *)element_00f4->field_0010,uVar4,
+                         (int *)0xfffffffa,0xffffffff);
           }
         }
       }

@@ -64,7 +64,7 @@ VisibleClassTy::sub_0055BB00
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     _local_c = CONCAT13(param_6,CONCAT12(param_4,param_3));
     local_8 = param_7;
-    Library::DKW::TBL::FUN_006ae1c0(&this->field_0110->flags,&local_10);
+    Library::DKW::TBL::DArrayAppend((DArrayTy *)this->field_0110,&local_10);
   }
   return;
 }

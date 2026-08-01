@@ -56,7 +56,7 @@ FUN_0065eb70(void *this,uint param_1,int param_2,uint *param_3,uint param_4,uint
                 param_2._0_2_ = CONCAT11(1,cVar5);
                 /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
                 param_2 = CONCAT22((short)local_c[iVar2 * 0xb + 4],(undefined2)param_2);
-                Library::DKW::TBL::FUN_006ae1c0(param_3,&param_2);
+                Library::DKW::TBL::DArrayAppend((DArrayTy *)param_3,&param_2);
                 local_8 = local_8 + 1;
               }
               iVar4 = iVar4 + -1;
@@ -73,7 +73,7 @@ FUN_0065eb70(void *this,uint param_1,int param_2,uint *param_3,uint param_4,uint
                 param_2._0_2_ = CONCAT11(1,cVar5);
                 /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
                 param_2 = CONCAT22(*(undefined2 *)(iVar2 + 0x10 + (int)local_c),(undefined2)param_2);
-                Library::DKW::TBL::FUN_006ae1c0(param_3,&param_2);
+                Library::DKW::TBL::DArrayAppend((DArrayTy *)param_3,&param_2);
                 local_8 = local_8 + 1;
                 iVar4 = DAT_00811900;
               }

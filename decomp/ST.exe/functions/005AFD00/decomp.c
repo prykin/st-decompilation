@@ -555,8 +555,7 @@ LAB_005b01f3:
             local_14 = &local_24;
             puVar10 = cMf32::RecGet(pcVar9,0x80,PTR_s_SAVE_DESC_0079c070,(int *)&local_14,0);
             if ((puVar10 != (ushort *)0x0) && (local_c == local_24)) {
-              Library::DKW::TBL::FUN_006ae1c0
-                        (&this_00->field_1C9B->flags,&local_26c.ftLastWriteTime.dwLowDateTime);
+              Library::DKW::TBL::DArrayAppend(this_00->field_1C9B,&local_26c.ftLastWriteTime);
               uVar20 = 0xffffffff;
               pcVar18 = PTR_DAT_0079c06c;
               do {

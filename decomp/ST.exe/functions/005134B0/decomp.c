@@ -13,7 +13,7 @@ void __thiscall HelpPanelTy::PutToSHlp(HelpPanelTy *this,int param_1)
   HelpPanelTy *pHVar3;
   int iVar4;
   int iVar5;
-  uint uVar6;
+  uint index;
   InternalExceptionFrame local_58;
   HelpPanelTy_field_01A1State local_14;
   undefined4 local_13;
@@ -37,9 +37,9 @@ void __thiscall HelpPanelTy::PutToSHlp(HelpPanelTy *this,int param_1)
         DArrayRemoveAt(pHVar3->field_01CB,dVar1 - 1);
         iVar4 = pHVar3->field_01CF;
       }
-      uVar6 = pHVar3->field_01CF + 1;
-      pHVar3->field_01CF = uVar6;
-      Library::DKW::TBL::FUN_006ae140(&pHVar3->field_01CB->flags,uVar6,(undefined4 *)&local_14);
+      index = pHVar3->field_01CF + 1;
+      pHVar3->field_01CF = index;
+      Library::DKW::TBL::DArrayPut(pHVar3->field_01CB,index,&local_14);
       g_currentExceptionFrame = local_58.previous;
       return;
     }

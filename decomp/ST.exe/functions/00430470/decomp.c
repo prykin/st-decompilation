@@ -29,11 +29,11 @@ undefined4 __thiscall STAllPlayersC::RegisterTorpedo(STAllPlayersC *this,int par
                   (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                    0x7e2);
       }
-      index_00 = PTR_007fa130->count;
+      index_00 = g_array_007FA130->count;
       index = index_00;
       if (index_00 != 0) {
         while (index = index - 1, -1 < (int)index) {
-          DArrayGetElement(PTR_007fa130,index,&local_8);
+          DArrayGetElement(g_array_007FA130,index,&local_8);
           if (local_8 == 0) {
             index_00 = index;
           }
@@ -42,14 +42,14 @@ undefined4 __thiscall STAllPlayersC::RegisterTorpedo(STAllPlayersC *this,int par
     }
     else {
       index_00 = (uint)param_2;
-      if ((index_00 < PTR_007fa130->count) &&
-         (DArrayGetElement(PTR_007fa130,index_00,&local_8), local_8 != 0)) {
+      if ((index_00 < g_array_007FA130->count) &&
+         (DArrayGetElement(g_array_007FA130,index_00,&local_8), local_8 != 0)) {
         RaiseInternalException
                   (-0x5001fffa,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                    0x7f0);
       }
     }
-    Library::DKW::TBL::FUN_006ae140(&PTR_007fa130->flags,index_00,&param_1);
+    Library::DKW::TBL::DArrayPut(g_array_007FA130,index_00,&param_1);
     DAT_007fa134 = DAT_007fa134 + 1;
     g_currentExceptionFrame = local_4c.previous;
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */

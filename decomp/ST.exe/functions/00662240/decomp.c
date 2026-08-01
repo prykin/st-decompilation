@@ -101,7 +101,7 @@ int __thiscall AiFltClassTy::GetAiMess(AiFltClassTy *this,uint *param_1)
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if (*param_1 < 100) {
-    Library::DKW::TBL::FUN_006ae1c0(&local_c->field_0217->flags,param_1);
+    Library::DKW::TBL::DArrayAppend(local_c->field_0217,param_1);
     g_currentExceptionFrame = local_74.previous;
     return 0;
   }
@@ -1448,9 +1448,9 @@ LAB_0066380d:
                  )) {
                 *(short *)((int)param_1 + 0xf) = *(short *)((int)param_1 + 0xf) + 1;
                 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                if (*(uint **)((int)param_1 + 0x11) != (uint *)0x0) {
+                if (*(DArrayTy **)((int)param_1 + 0x11) != (DArrayTy *)0x0) {
                   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                  Library::DKW::TBL::FUN_006ae1c0(*(uint **)((int)param_1 + 0x11),&local_28);
+                  Library::DKW::TBL::DArrayAppend(*(DArrayTy **)((int)param_1 + 0x11),&local_28);
                 }
               }
             }

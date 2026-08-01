@@ -42,7 +42,7 @@ FUN_00617b10(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   local_1c = local_28._2_2_;
   local_1a = local_24;
-  uVar2 = Library::DKW::TBL::FUN_006ae1c0(*(uint **)((int)this + 0x5e),&local_28);
+  uVar2 = Library::DKW::TBL::DArrayAppend(*(DArrayTy **)((int)this + 0x5e),&local_28);
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   thunk_FUN_0061d0c0(param_1,param_2,param_3,param_4,param_5,param_6,
                      *(undefined4 *)((int)this + 0x20),*(undefined4 *)((int)this + 0x54),

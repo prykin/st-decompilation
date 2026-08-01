@@ -16,6 +16,7 @@ import java.security.MessageDigest;
 import java.time.Instant;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Comparator;
@@ -83,6 +84,7 @@ public class STDecompExport extends GhidraScript {
     private static final int MAX_FILENAME_COMPONENT = 96;
     private static final int COVERAGE_PADDING_RUN = 16;
     private static final int COVERAGE_MAX_RANGE = 0x10000;
+    private static final String FUNCTION_ANALYSIS_CACHE_SCHEMA = "1";
     private static final Pattern INT3_ASSIGNMENT = Pattern.compile(
         "^(\\s*)([A-Za-z_][A-Za-z0-9_]*)\\s*=\\s*\\(code \\*\\)swi\\(3\\);\\s*$");
     private static final Pattern ASSIGNED_INDIRECT_CALL = Pattern.compile(
@@ -164,6 +166,8 @@ public class STDecompExport extends GhidraScript {
         "(?m)^(?<indent>[ \\t]*)return\\s+\\(uint\\)\\(uint3\\)" +
         "\\([^;\\r\\n]+>>\\s*(?:7|0x7)\\s*\\)\\s*<<\\s*(?:8|0x8)\\s*;[ \\t]*$");
     private static final Pattern HEX_ADDRESS = Pattern.compile("0x([0-9A-Fa-f]{6,8})");
+    private static final Pattern INTEGER_LITERAL = Pattern.compile(
+        "(?i)(?<![A-Za-z0-9_])(?:0x([0-9a-f]+)|(\\d+))(?![A-Za-z0-9_])");
     private static final Pattern RAW_INDIRECT_CALL = Pattern.compile(
         "\\(\\*\\*?\\(code \\*\\*?\\)|\\(\\*\\(code \\*\\)");
     private static final Pattern RAW_OFFSET_DEREFERENCE = Pattern.compile(
@@ -263,6 +267,8 @@ public class STDecompExport extends GhidraScript {
     private final Set<String> qualityIssueFunctions = new HashSet<>();
     private final Map<String, QualityAggregate> qualityAggregates = new TreeMap<>();
     private Map<String, DArrayDescriptor> darrayDescriptors = Map.of();
+    private Set<Long> globalRecordStrides = Set.of();
+    private String functionAnalysisSourceHash = "";
 
     @Override
     protected void run() throws Exception {
@@ -288,7 +294,10 @@ public class STDecompExport extends GhidraScript {
         listing = currentProgram.getListing();
         references = currentProgram.getReferenceManager();
         symbols = currentProgram.getSymbolTable();
+        functionAnalysisSourceHash = fileSha256(Path.of(
+            getSourceFile().getAbsolutePath()).toAbsolutePath().normalize());
         darrayDescriptors = recoveredDArrayDescriptors();
+        globalRecordStrides = recoveredGlobalRecordStrides();
         Path outputDirectory = outputRoot.toPath().toAbsolutePath().normalize();
         Path finalProgramRoot =
             outputDirectory.resolve(safeFileName(currentProgram.getName()));
@@ -633,6 +642,13 @@ public class STDecompExport extends GhidraScript {
         pseudocodeIdiomRows.clear();
         pseudocodeIdiomFunctions.clear();
         Set<String> liveFunctionIds = new TreeSet<>();
+        qualityIssueRows.clear();
+        qualityIssueFunctions.clear();
+        qualityAggregates.clear();
+        Map<String, CachedFunctionAnalysis> cachedFunctionAnalysis =
+            readFunctionAnalysisCache();
+        Map<String, CachedFunctionAnalysis> currentFunctionAnalysis = new TreeMap<>();
+        int analysisCacheHits = 0;
 
         while (iterator.hasNext()) {
             checkCancelled();
@@ -683,7 +699,16 @@ public class STDecompExport extends GhidraScript {
                     (Files.exists(dir.resolve("decomp.c")) && Files.exists(dir.resolve("listing.asm"))));
 
             if (reusable) {
-                if (bodyExported) normalizeAndCatalog(function, dir.resolve("decomp.c"));
+                if (bodyExported) {
+                    CachedFunctionAnalysis cached = cachedFunctionAnalysis.get(id);
+                    if (cached != null && cached.fingerprint.equals(fingerprint)) {
+                        replayFunctionAnalysis(function, cached);
+                        currentFunctionAnalysis.put(id, cached);
+                        analysisCacheHits++;
+                    }
+                    else normalizeAndCatalog(function, dir.resolve("decomp.c"), fingerprint,
+                        currentFunctionAnalysis);
+                }
                 String meta = Files.readString(metaPath, StandardCharsets.UTF_8).trim();
                 indexRows.add(meta);
                 if (library) libraryRows.add(meta);
@@ -721,8 +746,7 @@ public class STDecompExport extends GhidraScript {
                     normalizeKnownEnumCompositions(function, machineNormalized.code);
                 cCode = annotatePseudocode(function, enumNormalized.code);
                 writeText(dir.resolve("decomp.c"), cCode);
-                catalogPseudocodeIdioms(function, cCode);
-                catalogQualityIssues(function, cCode);
+                catalogAndCache(function, cCode, fingerprint, currentFunctionAnalysis);
                 writeFunctionListing(function, dir.resolve("listing.asm"));
             }
 
@@ -783,14 +807,18 @@ public class STDecompExport extends GhidraScript {
             }
         });
         writePseudocodeArtifacts();
+        writeFunctionAnalysisCache(currentFunctionAnalysis);
         pruneStaleFunctionDirectories(liveFunctionIds);
         println("Functions reused without decompilation: " + reused + "/" + total);
+        println("Function quality/idiom analyses reused: " + analysisCacheHits + "/" +
+            bodyFunctionCount);
         if (fingerprintCfgFallbackCount > 0)
             println("Fingerprint CFG fallbacks: " + fingerprintCfgFallbackCount +
                 " (first: " + String.join(", ", fingerprintCfgFallbackFunctions) + ")");
     }
 
-    private void normalizeAndCatalog(Function function, Path path) throws IOException {
+    private void normalizeAndCatalog(Function function, Path path, String fingerprint,
+            Map<String, CachedFunctionAnalysis> cache) throws IOException {
         String original = Files.readString(path, StandardCharsets.UTF_8);
         String literalized = literalizeReferencedStrings(function, original);
         NormalizedCode normalized = normalizePseudocode(literalized);
@@ -800,8 +828,163 @@ public class STDecompExport extends GhidraScript {
             normalizeKnownEnumCompositions(function, machineNormalized.code);
         String annotated = annotatePseudocode(function, enumNormalized.code);
         if (!annotated.equals(original)) writeText(path, annotated);
-        catalogPseudocodeIdioms(function, annotated);
-        catalogQualityIssues(function, annotated);
+        catalogAndCache(function, annotated, fingerprint, cache);
+    }
+
+    private void catalogAndCache(Function function, String code, String fingerprint,
+            Map<String, CachedFunctionAnalysis> cache) {
+        int pseudocodeStart = pseudocodeIdiomRows.size();
+        int qualityStart = qualityIssueRows.size();
+        int normalizationStart = pseudocodeNormalizationCount;
+        catalogPseudocodeIdioms(function, code);
+        catalogQualityIssues(function, code);
+        List<String> pseudocodeRows = List.copyOf(
+            pseudocodeIdiomRows.subList(pseudocodeStart, pseudocodeIdiomRows.size()));
+        List<String> qualityRows = List.copyOf(
+            qualityIssueRows.subList(qualityStart, qualityIssueRows.size()));
+        cache.put(addr(function.getEntryPoint()), new CachedFunctionAnalysis(
+            fingerprint, pseudocodeNormalizationCount - normalizationStart,
+            pseudocodeRows, qualityRows, cachedQualityAggregates(qualityRows)));
+    }
+
+    private void replayFunctionAnalysis(Function function, CachedFunctionAnalysis cached) {
+        String functionAddress = addr(function.getEntryPoint());
+        pseudocodeNormalizationCount += cached.normalizationCount;
+        pseudocodeIdiomRows.addAll(cached.pseudocodeRows);
+        qualityIssueRows.addAll(cached.qualityRows);
+        if (!cached.pseudocodeRows.isEmpty()) pseudocodeIdiomFunctions.add(functionAddress);
+        if (!cached.qualityRows.isEmpty()) qualityIssueFunctions.add(functionAddress);
+        for (Map.Entry<String, Integer> item : cached.qualityOccurrences.entrySet()) {
+            QualityAggregate aggregate = qualityAggregates.computeIfAbsent(item.getKey(),
+                ignored -> new QualityAggregate());
+            aggregate.functions++;
+            aggregate.occurrences += item.getValue();
+        }
+    }
+
+    private Map<String, Integer> cachedQualityAggregates(List<String> rows) {
+        Map<String, Integer> result = new TreeMap<>();
+        for (String row : rows) {
+            String kind = jsonStringMember(row, "kind");
+            int occurrences = jsonIntegerMember(row, "occurrences");
+            if (!kind.isBlank() && occurrences >= 0)
+                result.merge(kind, occurrences, Integer::sum);
+        }
+        return result;
+    }
+
+    private String jsonStringMember(String json, String name) {
+        String prefix = "\"" + name + "\":\"";
+        int start = json.indexOf(prefix);
+        if (start < 0) return "";
+        start += prefix.length();
+        int end = json.indexOf('"', start);
+        return end < 0 ? "" : json.substring(start, end);
+    }
+
+    private int jsonIntegerMember(String json, String name) {
+        String prefix = "\"" + name + "\":";
+        int start = json.indexOf(prefix);
+        if (start < 0) return -1;
+        start += prefix.length();
+        int end = start;
+        while (end < json.length() && Character.isDigit(json.charAt(end))) end++;
+        try { return Integer.parseInt(json.substring(start, end)); }
+        catch (RuntimeException exception) { return -1; }
+    }
+
+    private Map<String, CachedFunctionAnalysis> readFunctionAnalysisCache()
+            throws IOException {
+        Map<String, CachedFunctionAnalysis> result = new HashMap<>();
+        Path path = programRoot.resolve(".function_analysis_cache.tsv");
+        if (!Files.isRegularFile(path)) return result;
+        List<String> lines = Files.readAllLines(path, StandardCharsets.UTF_8);
+        String header = "schema_version\tfunction_address\tfingerprint\t" +
+            "analysis_source_sha256\tnormalization_count\t" +
+            "pseudocode_rows_b64\tquality_rows_b64\tquality_aggregates_b64";
+        if (lines.isEmpty() || !header.equals(lines.get(0))) return result;
+        int rejected = 0;
+        for (int line = 1; line < lines.size(); line++) {
+            if (lines.get(line).isBlank()) continue;
+            try {
+                String[] fields = lines.get(line).split("\t", -1);
+                if (fields.length != 8 ||
+                        !FUNCTION_ANALYSIS_CACHE_SCHEMA.equals(fields[0]) ||
+                        !fields[1].matches("[0-9A-Fa-f]{8,16}") ||
+                        !fields[2].matches("[0-9a-f]{64}") ||
+                        !functionAnalysisSourceHash.equals(fields[3])) {
+                    rejected++;
+                    continue;
+                }
+                int normalizationCount = Integer.parseInt(fields[4]);
+                if (normalizationCount < 0) throw new IllegalArgumentException(
+                    "negative normalization count");
+                List<String> pseudocodeRows = decodeCacheRows(fields[5]);
+                List<String> qualityRows = decodeCacheRows(fields[6]);
+                Map<String, Integer> aggregates = decodeCacheAggregates(fields[7]);
+                if (!aggregates.equals(cachedQualityAggregates(qualityRows))) {
+                    rejected++;
+                    continue;
+                }
+                result.put(fields[1].toUpperCase(Locale.ROOT),
+                    new CachedFunctionAnalysis(fields[2], normalizationCount,
+                        pseudocodeRows, qualityRows, aggregates));
+            }
+            catch (RuntimeException exception) { rejected++; }
+        }
+        if (rejected > 0)
+            println("Ignored malformed function-analysis cache rows: " + rejected);
+        return result;
+    }
+
+    private void writeFunctionAnalysisCache(Map<String, CachedFunctionAnalysis> cache)
+            throws IOException {
+        Path path = programRoot.resolve(".function_analysis_cache.tsv");
+        atomicWrite(path, writer -> {
+            writer.write("schema_version\tfunction_address\tfingerprint\t" +
+                "analysis_source_sha256\tnormalization_count\t" +
+                "pseudocode_rows_b64\tquality_rows_b64\tquality_aggregates_b64\n");
+            for (Map.Entry<String, CachedFunctionAnalysis> item : cache.entrySet()) {
+                CachedFunctionAnalysis value = item.getValue();
+                writer.write(FUNCTION_ANALYSIS_CACHE_SCHEMA + "\t" + item.getKey() +
+                    "\t" + value.fingerprint + "\t" + functionAnalysisSourceHash +
+                    "\t" + value.normalizationCount + "\t" +
+                    encodeCacheRows(value.pseudocodeRows) + "\t" +
+                    encodeCacheRows(value.qualityRows) + "\t" +
+                    encodeCacheAggregates(value.qualityOccurrences) + "\n");
+            }
+        });
+    }
+
+    private String encodeCacheRows(List<String> rows) {
+        return Base64.getEncoder().encodeToString(
+            String.join("\n", rows).getBytes(StandardCharsets.UTF_8));
+    }
+
+    private List<String> decodeCacheRows(String encoded) {
+        if (encoded.isBlank()) return List.of();
+        String decoded = new String(Base64.getDecoder().decode(encoded),
+            StandardCharsets.UTF_8);
+        return decoded.isEmpty() ? List.of() : List.of(decoded.split("\n", -1));
+    }
+
+    private String encodeCacheAggregates(Map<String, Integer> values) {
+        List<String> rows = new ArrayList<>();
+        for (Map.Entry<String, Integer> item : values.entrySet())
+            rows.add(item.getKey() + "=" + item.getValue());
+        return Base64.getEncoder().encodeToString(
+            String.join("\n", rows).getBytes(StandardCharsets.UTF_8));
+    }
+
+    private Map<String, Integer> decodeCacheAggregates(String encoded) {
+        Map<String, Integer> result = new TreeMap<>();
+        for (String row : decodeCacheRows(encoded)) {
+            int separator = row.lastIndexOf('=');
+            if (separator <= 0) throw new IllegalArgumentException("invalid aggregate");
+            result.put(row.substring(0, separator),
+                Integer.parseInt(row.substring(separator + 1)));
+        }
+        return result;
     }
 
     /**
@@ -1526,6 +1709,39 @@ public class STDecompExport extends GhidraScript {
         }
         for (String name : ambiguous) result.remove(name);
         return result;
+    }
+
+    private Set<Long> recoveredGlobalRecordStrides() {
+        Set<Long> result = new TreeSet<>();
+        Iterator<DataType> iterator =
+            currentProgram.getDataTypeManager().getAllDataTypes();
+        while (iterator.hasNext()) {
+            DataType type = iterator.next();
+            String description = nullToEmpty(type.getDescription());
+            if (!(type instanceof Structure structure) ||
+                    !description.contains(
+                        "[STGlobalRecordApplier] Generated packed global record"))
+                continue;
+            int length = structure.getLength();
+            if (length >= 0x40) result.add((long)length);
+        }
+        return Set.copyOf(result);
+    }
+
+    private boolean containsRecoveredGlobalRecordStride(String line) {
+        if (line == null || globalRecordStrides.isEmpty()) return false;
+        Matcher matcher = INTEGER_LITERAL.matcher(line);
+        while (matcher.find()) {
+            try {
+                String hex = matcher.group(1);
+                long value = hex == null ?
+                    Long.parseLong(matcher.group(2)) :
+                    Long.parseUnsignedLong(hex, 16);
+                if (globalRecordStrides.contains(value)) return true;
+            }
+            catch (NumberFormatException ignored) { }
+        }
+        return false;
     }
 
     /**
@@ -2721,7 +2937,7 @@ public class STDecompExport extends GhidraScript {
      * analysis.  For the text corpus, inline every referenced, NUL-terminated string
      * which has no write reference.  Address-stable metadata retains the symbol.
      *
-     * Very short printf formats (notably "%s" at 007A4CCC) are accepted before the
+     * Very short printf formats are accepted before the
      * debug-string applier has retyped them.  Replacements are lexical: comments,
      * existing string/character literals, and larger identifiers are untouched.
      */
@@ -3065,7 +3281,7 @@ public class STDecompExport extends GhidraScript {
             if ((line.contains("->elementSize") || line.contains(".elementSize")) &&
                     (line.contains("->data") || line.contains(".data")))
                 addQuality(evidence, "dynamic_array_indexing", 1, index + 1, line);
-            if (line.toLowerCase(Locale.ROOT).contains("0xa62"))
+            if (containsRecoveredGlobalRecordStride(line))
                 addQuality(evidence, "flattened_global_record_array", 1, index + 1, line);
             Matcher assignment = PARAMETER_ASSIGNMENT.matcher(line);
             while (assignment.find()) {
@@ -3202,7 +3418,7 @@ public class STDecompExport extends GhidraScript {
             case "dynamic_array_indexing" ->
                 "recover element type or render DArrayAt<T>; runtime elementSize is not a native C array stride";
             case "flattened_global_record_array" ->
-                "apply STPlayerRuntimeRecord and its nested arrays after base/stride proof";
+                "apply the inferred packed record and its nested arrays after base/stride proof";
             case "stack_slot_reuse" ->
                 "retain the ABI parameter type, but split the post-overwrite stack-slot lifetime into a source-level local";
             default -> "review machine-code evidence before changing the Ghidra database";
@@ -3221,7 +3437,7 @@ public class STDecompExport extends GhidraScript {
         if ((line.contains("->elementSize") || line.contains(".elementSize")) &&
                 (line.contains("->data") || line.contains(".data")))
             kinds.add("dynamic_array_indexing");
-        if (line.toLowerCase(Locale.ROOT).contains("0xa62"))
+        if (containsRecoveredGlobalRecordStride(line))
             kinds.add("flattened_global_record_array");
         if (RAW_INDIRECT_CALL.matcher(line).find()) kinds.add("raw_indirect_call");
         Matcher parameterAssignment = PARAMETER_ASSIGNMENT.matcher(line);
@@ -3390,9 +3606,7 @@ public class STDecompExport extends GhidraScript {
                 "candidate call-output artifact: verify return width, clobbers, or x87 state";
             case "dynamic_array_indexing" -> darrayInlineTransform(line);
             case "flattened_global_record_array" ->
-                line.toLowerCase(Locale.ROOT).contains("0x7f4fdd") ?
-                    "expected g_playerRuntime[(char)param_1].tempSlots[param_2][param_3].objectIds" :
-                    "expected g_playerRuntime[player].field[index...] after base/stride proof";
+                "expected typedRecordArray[index].field after inferred base/stride proof";
             case "raw_indirect_call" ->
                 "expected typed vtable/callback call with explicit __thiscall receiver";
             case "packed_or_unaligned_piece" -> packedInlineTransform(line);
@@ -3484,7 +3698,7 @@ public class STDecompExport extends GhidraScript {
             case "dynamic_array_indexing" ->
                 "render DArrayGet(array, index) or typed array->data[index]; runtime elementSize prevents a static C array type";
             case "flattened_global_record_array" ->
-                "recompose as g_playerRuntime[player].field[index...] using the 0xA62 record stride and data-component metadata";
+                "recompose as typedRecordArray[index].field using the inferred record stride and component metadata";
             case "raw_indirect_call" ->
                 "apply a function-pointer or vtable-slot prototype, including explicit __thiscall receiver";
             case "packed_or_unaligned_piece" ->
@@ -3508,7 +3722,7 @@ public class STDecompExport extends GhidraScript {
             case "return_width_artifact" ->
                 "extraout_* high variable, possibly consumed by CONCAT*";
             case "dynamic_array_indexing" -> "same expression uses DArrayTy.elementSize and .data";
-            case "flattened_global_record_array" -> "literal 0xA62 STPlayerRuntimeRecord stride";
+            case "flattened_global_record_array" -> "literal matching an inferred packed-record stride";
             case "raw_indirect_call" -> "cast to code* or code** at call site";
             case "packed_or_unaligned_piece" ->
                 "Ghidra piece/CONCAT syntax or packed member arithmetic";
@@ -5221,6 +5435,24 @@ public class STDecompExport extends GhidraScript {
             Files.move(temporary, path, StandardCopyOption.REPLACE_EXISTING);
         }
     }
+
+    private String fileSha256(Path path) throws Exception {
+        MessageDigest digest = MessageDigest.getInstance("SHA-256");
+        try (java.io.InputStream input = Files.newInputStream(path)) {
+            byte[] buffer = new byte[65536];
+            int count;
+            while ((count = input.read(buffer)) >= 0)
+                if (count > 0) digest.update(buffer, 0, count);
+        }
+        StringBuilder result = new StringBuilder();
+        for (byte value : digest.digest())
+            result.append(String.format("%02x", value & 0xff));
+        return result.toString();
+    }
+
+    private record CachedFunctionAnalysis(String fingerprint, int normalizationCount,
+        List<String> pseudocodeRows, List<String> qualityRows,
+        Map<String, Integer> qualityOccurrences) { }
 
     private static class StackSlotLifetime {
         final String parameterName;

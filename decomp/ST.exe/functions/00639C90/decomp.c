@@ -16,25 +16,23 @@ undefined4 __thiscall FUN_00639c90(void *this,STMessage *param_1)
   int iVar8;
   int iVar9;
   uint uVar10;
-  byte *puVar11;
-  VisibleClassTy *pVVar12;
-  uint uVar13;
-  byte *pbVar14;
-  byte *puVar15;
-  byte *pbVar16;
-  longlong lVar17;
+  VisibleClassTy *pVVar11;
+  uint uVar12;
+  byte *puVar13;
+  byte *puVar14;
+  longlong lVar15;
+  undefined4 uVar16;
+  undefined4 uVar17;
   undefined4 uVar18;
-  undefined4 uVar19;
-  undefined4 uVar20;
+  float fVar19;
+  float fVar20;
   float fVar21;
-  float fVar22;
-  float fVar23;
   int local_1c;
   int local_18;
-  byte *local_14;
+  undefined4 *local_14;
   int local_10;
   uint local_c;
-  byte *local_8;
+  AnonPointee_TLOBaseTy_0607 *local_8;
 
   pSVar7 = param_1;
   iVar8 = STSprGameObjC::GetMessage(this,param_1);
@@ -44,26 +42,25 @@ undefined4 __thiscall FUN_00639c90(void *this,STMessage *param_1)
   SVar4 = pSVar7->id;
   if (MESS_SHARED_0003 < SVar4) {
     if (SVar4 == MESS_SHARED_010F) {
-      local_8 = (byte *)thunk_FUN_0063cff0(this,&local_10);
-      local_14 = (byte *)STT3DSprC::SaveSpr((STT3DSprC *)((int)this + 0x1d5),(uint *)&param_1);
+      local_8 = (AnonPointee_TLOBaseTy_0607 *)thunk_FUN_0063cff0(this,&local_10);
+      local_14 = STT3DSprC::SaveSpr((STT3DSprC *)((int)this + 0x1d5),(uint *)&param_1);
       if (param_1 != (STMessage *)0x0) {
-        local_8 = (byte *)Library::DKW::LIB::FUN_006acf50
-                                    ((int)local_8,(int)&param_1->unknown_00 + local_10);
-        pbVar14 = local_14;
-        pbVar16 = local_8 + local_10;
+        local_8 = Library::DKW::LIB::MemRealloc(local_8,(int)&param_1->unknown_00 + local_10);
+        puVar13 = (byte *)(local_14);
+        puVar14 = (byte *)((int)&local_8->field_0000 + local_10);
         for (uVar10 = (uint)param_1 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
-          *(undefined4 *)pbVar16 = *(undefined4 *)pbVar14;
-          pbVar14 = pbVar14 + 4;
-          pbVar16 = pbVar16 + 4;
+          *puVar14 = *puVar13;
+          puVar13 = (byte *)(puVar13 + 1);
+          puVar14 = (byte *)(puVar14 + 1);
         }
         for (uVar10 = (uint)param_1 & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
-          *pbVar16 = *pbVar14;
-          pbVar14 = pbVar14 + 1;
-          pbVar16 = pbVar16 + 1;
+          *(undefined1 *)puVar14 = *(undefined1 *)puVar13;
+          puVar13 = (byte *)((int)puVar13 + 1);
+          puVar14 = (byte *)((int)puVar14 + 1);
         }
       }
       STPlaySystemC::SaveObjData
-                (g_playSystem_00802A38,*(int **)((int)this + 0x18),local_8,
+                (g_playSystem_00802A38,*(int **)((int)this + 0x18),(byte *)local_8,
                  (AnonShape_0060EA30_DCEB68AD *)((int)&param_1->unknown_00 + local_10));
       FreeAndNull(&local_8);
       FreeAndNull(&local_14);
@@ -97,14 +94,14 @@ switchD_00639e3d_caseD_d:
     if (SVar4 != MESS_ID_CREATE) {
       return 0;
     }
-    puVar11 = (byte *)((pSVar7->arg0).ptr);
-    if (puVar11[3] == 2) {
-      thunk_FUN_0063d100(this,puVar11);
+    puVar13 = (byte *)((pSVar7->arg0).ptr);
+    if (puVar13[3] == 2) {
+      thunk_FUN_0063d100(this,puVar13);
       memset((void *)((int)this + 899), 0, 0x2d); /* compiler bulk-zero initialization */
       return 0;
     }
-    puVar15 = (byte *)((int)this + 0x231);
-    memmove(puVar15, puVar11, 0x34); /* compiler REP MOVS byte copy */
+    puVar14 = (byte *)((int)this + 0x231);
+    memmove(puVar14, puVar13, 0x34); /* compiler REP MOVS byte copy */
     thunk_FUN_0063c030(this,g_playSystem_00802A38->field_00E4);
     if (*(uint *)((int)this + 0x245) < 2) {
       iVar8 = STT3DSprC::LoadSequence
@@ -182,7 +179,7 @@ LAB_00639dab:
                *(int *)((int)this + 0x26a),*(int *)((int)this + 0x26e) - iVar8,0,0,0,0,0,0,-1,0,0);
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*(int *)this + 0xd8))();
-    pVVar12 = g_visibleClass_00802A88;
+    pVVar11 = g_visibleClass_00802A88;
     if (g_visibleClass_00802A88 == (VisibleClassTy *)0x0) {
       return 0;
     }
@@ -221,10 +218,10 @@ LAB_00639dab:
                    (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar9,iVar8,
                     &local_18,&local_1c), -1 < (int)local_c)) &&
        (((((int)local_c < 5 && (-1 < local_18)) &&
-         ((local_18 < pVVar12->field_0030 &&
+         ((local_18 < pVVar11->field_0030 &&
           ((local_1c = local_1c + g_centeredOffsets5[local_c], -1 < local_1c &&
-           (local_1c < pVVar12->field_0034)))))) && (pVVar12->field_004C != (byte *)0x0)))) {
-      bVar2 = pVVar12->field_004C[local_18 + local_1c * pVVar12->field_0030];
+           (local_1c < pVVar11->field_0034)))))) && (pVVar11->field_004C != (byte *)0x0)))) {
+      bVar2 = pVVar11->field_004C[local_18 + local_1c * pVVar11->field_0030];
 joined_r0x0063a754:
       if (bVar2 == 0) {
         if (*(char *)((int)this + 0x29f) == '\0') {
@@ -287,7 +284,7 @@ LAB_0063a27d:
                  *(ushort *)((int)this + 0x26e));
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*(int *)this + 0xd8))();
-    pVVar12 = g_visibleClass_00802A88;
+    pVVar11 = g_visibleClass_00802A88;
     if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
       iVar8 = *(int *)((int)this + 0x26e);
       sVar3 = (short)(iVar8 >> 0x1f);
@@ -324,11 +321,11 @@ LAB_0063a27d:
                       (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar9,iVar8,
                        &local_1c,&local_18), (int)local_c < 0)) ||
           (((4 < (int)local_c || (local_1c < 0)) ||
-           ((pVVar12->field_0030 <= local_1c ||
+           ((pVVar11->field_0030 <= local_1c ||
             ((local_18 = local_18 + g_centeredOffsets5[local_c], local_18 < 0 ||
-             (pVVar12->field_0034 <= local_18)))))))) ||
-         ((pVVar12->field_004C == (byte *)0x0 ||
-          (pVVar12->field_004C[local_1c + local_18 * pVVar12->field_0030] != 0)))) {
+             (pVVar11->field_0034 <= local_18)))))))) ||
+         ((pVVar11->field_004C == (byte *)0x0 ||
+          (pVVar11->field_004C[local_1c + local_18 * pVVar11->field_0030] != 0)))) {
         if (*(char *)((int)this + 0x29f) == '\0') {
           thunk_FUN_004ad460((void *)((int)this + 0x1d5),0);
           *(undefined1 *)((int)this + 0x29f) = 1;
@@ -401,7 +398,7 @@ LAB_0063a27d:
                  *(ushort *)((int)this + 0x26e));
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*(int *)this + 0xd8))();
-    pVVar12 = g_visibleClass_00802A88;
+    pVVar11 = g_visibleClass_00802A88;
     if (g_visibleClass_00802A88 == (VisibleClassTy *)0x0) {
       return 0;
     }
@@ -439,13 +436,13 @@ LAB_0063a27d:
          (VisibleClassTy::sub_00558C00
                     (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar9,iVar8,
                      &local_1c,&local_18), -1 < (int)local_c)) &&
-        (((int)local_c < 5 && (-1 < local_1c)))) && (iVar8 = pVVar12->field_0030, local_1c < iVar8))
+        (((int)local_c < 5 && (-1 < local_1c)))) && (iVar8 = pVVar11->field_0030, local_1c < iVar8))
     {
       iVar9 = g_centeredOffsets5[local_c];
 LAB_0063a728:
       iVar9 = iVar9 + local_18;
-      if (((-1 < iVar9) && (iVar9 < pVVar12->field_0034)) && (pVVar12->field_004C != (byte *)0x0)) {
-        bVar2 = pVVar12->field_004C[iVar9 * iVar8 + local_1c];
+      if (((-1 < iVar9) && (iVar9 < pVVar11->field_0034)) && (pVVar11->field_004C != (byte *)0x0)) {
+        bVar2 = pVVar11->field_004C[iVar9 * iVar8 + local_1c];
         goto joined_r0x0063a754;
       }
     }
@@ -472,7 +469,7 @@ LAB_0063a728:
     }
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*(int *)this + 0xd8))();
-    pVVar12 = g_visibleClass_00802A88;
+    pVVar11 = g_visibleClass_00802A88;
     if (g_visibleClass_00802A88 == (VisibleClassTy *)0x0) {
       return 0;
     }
@@ -510,7 +507,7 @@ LAB_0063a728:
         (VisibleClassTy::sub_00558C00
                    (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar9,iVar8,
                     &local_1c,&local_18), -1 < (int)local_c)) &&
-       ((((int)local_c < 5 && (-1 < local_1c)) && (iVar8 = pVVar12->field_0030, local_1c < iVar8))))
+       ((((int)local_c < 5 && (-1 < local_1c)) && (iVar8 = pVVar11->field_0030, local_1c < iVar8))))
     {
       iVar9 = g_centeredOffsets5[local_c];
       goto LAB_0063a728;
@@ -523,7 +520,7 @@ LAB_0063a728:
                    *(ushort *)((int)this + 0x26e));
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(*(int *)this + 0xd8))();
-      pVVar12 = g_visibleClass_00802A88;
+      pVVar11 = g_visibleClass_00802A88;
       if (g_visibleClass_00802A88 != (VisibleClassTy *)0x0) {
         iVar8 = *(int *)((int)this + 0x26e);
         sVar3 = (short)(iVar8 >> 0x1f);
@@ -559,11 +556,11 @@ LAB_0063a728:
             ((VisibleClassTy::sub_00558C00
                         (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar9,iVar8,
                          &local_1c,&local_18), (int)local_c < 0 ||
-             (((4 < (int)local_c || (local_1c < 0)) || (pVVar12->field_0030 <= local_1c)))))) ||
+             (((4 < (int)local_c || (local_1c < 0)) || (pVVar11->field_0030 <= local_1c)))))) ||
            (((local_18 = g_centeredOffsets5[local_c] + local_18, local_18 < 0 ||
-             (pVVar12->field_0034 <= local_18)) ||
-            ((pVVar12->field_004C == (byte *)0x0 ||
-             (pVVar12->field_004C[local_18 * pVVar12->field_0030 + local_1c] != 0)))))) {
+             (pVVar11->field_0034 <= local_18)) ||
+            ((pVVar11->field_004C == (byte *)0x0 ||
+             (pVVar11->field_004C[local_18 * pVVar11->field_0030 + local_1c] != 0)))))) {
           if (*(char *)((int)this + 0x29f) == '\0') {
             thunk_FUN_004ad460((void *)((int)this + 0x1d5),0);
             *(undefined1 *)((int)this + 0x29f) = 1;
@@ -648,7 +645,7 @@ LAB_0063a728:
                  *(ushort *)((int)this + 0x26e));
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
     (**(code **)(*(int *)this + 0xd8))();
-    pVVar12 = g_visibleClass_00802A88;
+    pVVar11 = g_visibleClass_00802A88;
     if (g_visibleClass_00802A88 == (VisibleClassTy *)0x0) {
       return 0;
     }
@@ -686,7 +683,7 @@ LAB_0063a728:
          (VisibleClassTy::sub_00558C00
                     (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar9,iVar8,
                      &local_1c,&local_18), -1 < (int)local_c)) &&
-        (((int)local_c < 5 && (-1 < local_1c)))) && (iVar8 = pVVar12->field_0030, local_1c < iVar8))
+        (((int)local_c < 5 && (-1 < local_1c)))) && (iVar8 = pVVar11->field_0030, local_1c < iVar8))
     {
       iVar9 = g_centeredOffsets5[local_c];
       goto LAB_0063a728;
@@ -738,24 +735,24 @@ LAB_0063a728:
       iVar8 = *(int *)((int)this + 0x34f);
       if (iVar8 < 2) {
         iVar8 = *(int *)(&DAT_007d1fd4 + iVar8 * 4);
-        fVar23 = (float)*(int *)((int)this + 0x26e) * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc;
-        fVar22 = (float)*(int *)((int)this + 0x26a) * _DAT_007904f8 * _DAT_007904f0;
-        uVar18 = **(undefined4 **)(*(int *)((int)this + 0x34b) + 0x21);
-        fVar21 = (float)*(int *)((int)this + 0x266) * _DAT_007904f8 * _DAT_007904f0;
-        uVar20 = 0xf7;
-        uVar19 = 0x108;
+        fVar21 = (float)*(int *)((int)this + 0x26e) * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc;
+        fVar20 = (float)*(int *)((int)this + 0x26a) * _DAT_007904f8 * _DAT_007904f0;
+        uVar16 = **(undefined4 **)(*(int *)((int)this + 0x34b) + 0x21);
+        fVar19 = (float)*(int *)((int)this + 0x266) * _DAT_007904f8 * _DAT_007904f0;
+        uVar18 = 0xf7;
+        uVar17 = 0x108;
       }
       else {
         iVar8 = *(int *)(&DAT_007d1fd4 + iVar8 * 4);
-        fVar23 = 0.0;
-        fVar22 = 0.0;
         fVar21 = 0.0;
-        uVar20 = 0;
-        uVar19 = 0;
+        fVar20 = 0.0;
+        fVar19 = 0.0;
         uVar18 = 0;
+        uVar17 = 0;
+        uVar16 = 0;
       }
-      FUN_006ead40(*(void **)((int)this + 0x211),iVar8 * 0x100 + DAT_008032cc,uVar18,uVar19,uVar20,
-                   fVar21,fVar22,fVar23);
+      FUN_006ead40(*(void **)((int)this + 0x211),iVar8 * 0x100 + DAT_008032cc,uVar16,uVar17,uVar18,
+                   fVar19,fVar20,fVar21);
       if (*(int *)((int)this + 0x34f) == 2) {
         iVar8 = *(int *)((int)this + 0x26a);
         sVar3 = (short)(iVar8 >> 0x1f);
@@ -803,10 +800,10 @@ LAB_0063a728:
     }
     uVar10 = *(uint *)((int)this + 0x33a);
     if ((-1 < (int)uVar10) && ((g_playSystem_00802A38->field_00E4 & 1) == 0)) {
-      uVar13 = *(int *)((int)this + 0x33e) + 1;
-      *(uint *)((int)this + 0x33e) = uVar13;
-      if ((int)uVar13 < *(int *)((int)this + 0x342)) {
-        ST3DSMAPContext::sub_006EA270(*(ST3DSMAPContext **)((int)this + 0x211),uVar10,0,uVar13);
+      uVar12 = *(int *)((int)this + 0x33e) + 1;
+      *(uint *)((int)this + 0x33e) = uVar12;
+      if ((int)uVar12 < *(int *)((int)this + 0x342)) {
+        ST3DSMAPContext::sub_006EA270(*(ST3DSMAPContext **)((int)this + 0x211),uVar10,0,uVar12);
       }
       else {
         Library::Ourlib::ST3DSMAP::SprClose(*(void **)((int)this + 0x211),uVar10);
@@ -815,10 +812,10 @@ LAB_0063a728:
     }
     uVar10 = *(uint *)((int)this + 0x353);
     if ((-1 < (int)uVar10) && ((g_playSystem_00802A38->field_00E4 & 1) == 0)) {
-      uVar13 = *(int *)((int)this + 0x357) + 1;
-      *(uint *)((int)this + 0x357) = uVar13;
-      if ((int)uVar13 < *(int *)((int)this + 0x35b)) {
-        ST3DSMAPContext::sub_006EA270(*(ST3DSMAPContext **)((int)this + 0x211),uVar10,0,uVar13);
+      uVar12 = *(int *)((int)this + 0x357) + 1;
+      *(uint *)((int)this + 0x357) = uVar12;
+      if ((int)uVar12 < *(int *)((int)this + 0x35b)) {
+        ST3DSMAPContext::sub_006EA270(*(ST3DSMAPContext **)((int)this + 0x211),uVar10,0,uVar12);
       }
       else {
         Library::Ourlib::ST3DSMAP::SprClose(*(void **)((int)this + 0x211),uVar10);
@@ -852,9 +849,9 @@ LAB_0063a728:
                   (*(ST3DSMAPContext **)((int)this + 0x211),
                    (*(int *)((int)this + 0x2a4) * iVar8) / 0xc9,
                    (*(int *)((int)this + 0x2a8) * iVar8) / 0xc9);
-        lVar17 = Library::MSVCRT::__ftol();
+        lVar15 = Library::MSVCRT::__ftol();
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-        param_1 = (STMessage *)((short)lVar17 + 0x2d);
+        param_1 = (STMessage *)((short)lVar15 + 0x2d);
       }
       uVar10 = *(int *)((int)this + 0x367) + 1;
       *(uint *)((int)this + 0x367) = uVar10;
@@ -894,14 +891,14 @@ LAB_0063a728:
           }
         }
         if (*(int *)((int)this + 0x34b) != 0) {
-          fVar23 = *(float *)((int)this + 0x332) + _DAT_007904fc;
+          fVar21 = *(float *)((int)this + 0x332) + _DAT_007904fc;
           iVar8 = *(int *)((int)this + 0x34f) + 1;
           *(int *)((int)this + 0x34f) = iVar8;
           FUN_006ead40(*(void **)((int)this + 0x211),
                        *(int *)(&DAT_007d1fd4 + iVar8 * 4) * 0x100 + DAT_008032cc,
                        **(undefined4 **)(*(int *)((int)this + 0x34b) + 0x21),0x108,0xf7,
                        (float)*(int *)((int)this + 0x2a4) * _DAT_007904f8 * _DAT_007904f0,
-                       (float)*(int *)((int)this + 0x2a8) * _DAT_007904f8 * _DAT_007904f0,fVar23);
+                       (float)*(int *)((int)this + 0x2a8) * _DAT_007904f8 * _DAT_007904f0,fVar21);
           *(int *)((int)this + 0x34f) = *(int *)((int)this + 0x34f) + 1;
         }
         *(undefined1 *)((int)this + 0x265) = 0xb;
@@ -919,25 +916,25 @@ LAB_0063a728:
     if (*(int *)((int)this + 0x34b) != 0) {
       iVar8 = *(int *)((int)this + 0x34f);
       if (iVar8 < 2) {
-        fVar23 = *(float *)((int)this + 0x332) + _DAT_007904fc;
-        fVar22 = (float)*(int *)((int)this + 0x2a8) * _DAT_007904f8 * _DAT_007904f0;
-        uVar18 = **(undefined4 **)(*(int *)((int)this + 0x34b) + 0x21);
+        fVar21 = *(float *)((int)this + 0x332) + _DAT_007904fc;
+        fVar20 = (float)*(int *)((int)this + 0x2a8) * _DAT_007904f8 * _DAT_007904f0;
+        uVar16 = **(undefined4 **)(*(int *)((int)this + 0x34b) + 0x21);
         iVar8 = *(int *)(&DAT_007d1fd4 + iVar8 * 4);
-        fVar21 = (float)*(int *)((int)this + 0x2a4) * _DAT_007904f8 * _DAT_007904f0;
-        uVar20 = 0xf7;
-        uVar19 = 0x108;
+        fVar19 = (float)*(int *)((int)this + 0x2a4) * _DAT_007904f8 * _DAT_007904f0;
+        uVar18 = 0xf7;
+        uVar17 = 0x108;
       }
       else {
         iVar8 = *(int *)(&DAT_007d1fd4 + iVar8 * 4);
-        fVar23 = 0.0;
-        fVar22 = 0.0;
         fVar21 = 0.0;
-        uVar20 = 0;
-        uVar19 = 0;
+        fVar20 = 0.0;
+        fVar19 = 0.0;
         uVar18 = 0;
+        uVar17 = 0;
+        uVar16 = 0;
       }
-      FUN_006ead40(*(void **)((int)this + 0x211),iVar8 * 0x100 + DAT_008032cc,uVar18,uVar19,uVar20,
-                   fVar21,fVar22,fVar23);
+      FUN_006ead40(*(void **)((int)this + 0x211),iVar8 * 0x100 + DAT_008032cc,uVar16,uVar17,uVar18,
+                   fVar19,fVar20,fVar21);
       iVar8 = *(int *)((int)this + 0x34f) + 1;
       *(int *)((int)this + 0x34f) = iVar8;
       if (iVar8 == 7) {

@@ -91,8 +91,7 @@ LAB_0043f6e3:
                 iVar5 = 0;
 LAB_0043f6e8:
                 if (iVar5 == 0) {
-                  Library::DKW::TBL::FUN_006ae1c0
-                            (&local_c->flags,(undefined4 *)((int)piVar2 + 0x32));
+                  Library::DKW::TBL::DArrayAppend(local_c,(void *)((int)piVar2 + 0x32));
                 }
               }
               /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */

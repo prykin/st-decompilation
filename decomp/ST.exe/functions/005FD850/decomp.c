@@ -17,7 +17,7 @@ int __fastcall FUN_005fd850(AnonShape_005FD850_1F07DA54 *param_1)
   iVar4 = -1;
   local_8 = -1;
   if (param_1->field_0226 != 0) {
-    puVar1 = (byte *)Library::DKW::LIB::FUN_006aac70(param_1->field_0226 * 0x52);
+    puVar1 = (byte *)(Library::DKW::LIB::MemAlloc(param_1->field_0226 * 0x52));
     param_1->field_0233 = puVar1;
     local_8 = 0;
     uVar5 = param_1->field_0226 * 0x52;

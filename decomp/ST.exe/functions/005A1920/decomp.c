@@ -103,7 +103,7 @@ FSGSTy::SetBanner(FSGSTy *this,char *param_1,undefined4 param_2,int param_3,uint
         iVar4 = Library::MSVCRT::__setjmp3(local_e0.jumpBuffer,0);
         pFVar13 = local_c;
         if (iVar4 == 0) {
-          puVar5 = (byte *)Library::DKW::LIB::FUN_006aac70(param_4);
+          puVar5 = (byte *)(Library::DKW::LIB::MemAlloc(param_4));
           pFVar13 = local_c;
           local_c->field_1A9B = puVar5;
           if (puVar5 != (undefined4 *)0x0) {
@@ -178,7 +178,7 @@ LAB_005a1cfd:
           cVar2 = *pcVar9;
           pcVar9 = pcVar9 + 1;
         } while (cVar2 != '\0');
-        pcVar9 = (char *)Library::DKW::LIB::FUN_006aac70(~uVar11);
+        pcVar9 = Library::DKW::LIB::MemAlloc(~uVar11);
         pFVar13->field_1AAB = pcVar9;
         if (pcVar9 != (char *)0x0) {
           uVar11 = 0xffffffff;

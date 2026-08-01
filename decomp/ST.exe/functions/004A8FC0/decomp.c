@@ -15,8 +15,6 @@ void __thiscall OpticClassC::InitOptic(OpticClassC *this)
   char *pcVar4;
   int iVar5;
   ushort *puVar6;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  int unaff_EDI;
   ushort *puVar7;
   float10 fVar8;
   longlong lVar9;
@@ -33,7 +31,8 @@ void __thiscall OpticClassC::InitOptic(OpticClassC *this)
   iVar3 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_5c.previous;
-    iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\To_optic.cpp",0x107,0,iVar3,"%s");
+    iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\To_optic.cpp",0x107,0,iVar3,"%s",
+                               "OpticClassC::InitOptic");
     if (iVar5 == 0) {
       RaiseInternalException(iVar3,0,"E:\\__titans\\wlad\\To_optic.cpp",0x108);
       return;
@@ -47,7 +46,7 @@ void __thiscall OpticClassC::InitOptic(OpticClassC *this)
     DAT_00807400 = DAT_00807568;
     DAT_00807404 = DAT_0080756c;
     DAT_00807408 = DAT_00807570;
-    DAT_00807420 = ((float)DAT_00807568 * _DAT_007ac580) / (float)DAT_00807568;
+    DAT_00807420 = ((float)(int)DAT_00807568 * _DAT_007ac580) / (float)(int)DAT_00807568;
     DAT_0080740c = DAT_00807574;
     DAT_00807410 = DAT_00807568;
     DAT_00807414 = DAT_0080756c;
@@ -79,19 +78,12 @@ void __thiscall OpticClassC::InitOptic(OpticClassC *this)
     _DAT_0080742c = (float)fVar8;
     Library::MSVCRT::FUN_0072e150(0xc0000000,0x403ccccc);
     lVar9 = Library::MSVCRT::__ftol();
-    /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
     ST3DSMAPContext::sub_006DC050
-              (g_sT3DSMAPContext_00807598,(ST3DSMAPContext *)g_dDXContext_0080759C,DAT_00807568,
-               DAT_0080756c,DAT_00807570,DAT_00807574,
-               SUB84((double)(_DAT_00807428 * _DAT_00790780),0),
-               (double)CONCAT44(SUB84((double)(_DAT_00807428 * _DAT_00790784),0),
-                                (int)((ulonglong)(double)(_DAT_00807428 * _DAT_00790780) >> 0x20)),
-               (double)CONCAT44(SUB84((double)(_DAT_0080742c * _DAT_00790780),0),
-                                (int)((ulonglong)(double)(_DAT_00807428 * _DAT_00790784) >> 0x20)),
-               (double)CONCAT44(SUB84((double)(_DAT_0080742c * _DAT_00790784),0),
-                                (int)((ulonglong)(double)(_DAT_0080742c * _DAT_00790780) >> 0x20)),
-               (double)((ulonglong)(double)(_DAT_0080742c * _DAT_00790784) >> 0x20),
-               0x865e354040240000,CONCAT44((int)lVar9,0x4023ee97),unaff_EDI);
+              (g_sT3DSMAPContext_00807598,g_dDXContext_0080759C,DAT_00807568,DAT_0080756c,
+               DAT_00807570,DAT_00807574,(double)(_DAT_00807428 * _DAT_00790780),
+               (double)(_DAT_00807428 * _DAT_00790784),(double)(_DAT_0080742c * _DAT_00790780),
+               (double)(_DAT_0080742c * _DAT_00790784),0x4024000000000000,0x4023ee97865e3540,
+               (int)lVar9);
     ST3DSMAPContext::sub_006DD530(g_sT3DSMAPContext_00807598,&local_18,&local_14,&local_8);
     ST3DSMAPContext::sub_006DD790
               (g_sT3DSMAPContext_00807598,
@@ -127,18 +119,12 @@ void __thiscall OpticClassC::InitOptic(OpticClassC *this)
   *(char *)(puVar7 + 1) = (char)puVar6[1];
   Library::MSVCRT::FUN_0072e150(0xc0000000,0x403ccccc);
   lVar9 = Library::MSVCRT::__ftol();
-  /* ST_PSEUDO[unresolved_register_input,packed_or_unaligned_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; expected named packed member, bit extract/compose, or unaligned load */
   ST3DSMAPContext::sub_006DC050
-            (g_sT3DSMAPContext_00807598,(ST3DSMAPContext *)g_dDXContext_0080759C,DAT_00807568,
-             DAT_0080756c,DAT_00807570,DAT_00807574,SUB84((double)(DAT_00807420 * _DAT_00790780),0),
-             (double)CONCAT44(SUB84((double)(DAT_00807420 * _DAT_00790784),0),
-                              (int)((ulonglong)(double)(DAT_00807420 * _DAT_00790780) >> 0x20)),
-             (double)CONCAT44(SUB84((double)(DAT_00807424 * _DAT_00790780),0),
-                              (int)((ulonglong)(double)(DAT_00807420 * _DAT_00790784) >> 0x20)),
-             (double)CONCAT44(SUB84((double)(DAT_00807424 * _DAT_00790784),0),
-                              (int)((ulonglong)(double)(DAT_00807424 * _DAT_00790780) >> 0x20)),
-             (double)((ulonglong)(double)(DAT_00807424 * _DAT_00790784) >> 0x20),0x865e354040240000,
-             CONCAT44((int)lVar9,0x4023ee97),unaff_EDI);
+            (g_sT3DSMAPContext_00807598,g_dDXContext_0080759C,DAT_00807568,DAT_0080756c,DAT_00807570
+             ,DAT_00807574,(double)(DAT_00807420 * _DAT_00790780),
+             (double)(DAT_00807420 * _DAT_00790784),(double)(DAT_00807424 * _DAT_00790780),
+             (double)(DAT_00807424 * _DAT_00790784),0x4024000000000000,0x4023ee97865e3540,(int)lVar9
+            );
   thunk_FUN_004a9b60(DAT_00807410,DAT_00807414,DAT_00807418,DAT_0080741c);
   thunk_FUN_004a8f20(1);
   DAT_0080674c = 2;

@@ -102,7 +102,7 @@ LAB_0055cf74:
         pbVar8 = pbVar8 + 1;
       } while (bVar1 != 0);
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_2 = (byte *)Library::DKW::LIB::FUN_006aac70(~uVar6 + ~uVar7 + 4);
+      param_2 = Library::DKW::LIB::MemAlloc(~uVar6 + ~uVar7 + 4);
       if (param_2 != (byte *)0x0) {
         wsprintfA((LPSTR)param_2,"%s %s",pcVar3,param_4);
         if (*(char *)((int)this + 9) != '\0') {
@@ -184,7 +184,7 @@ LAB_0055c9c5:
         pbVar9 = pbVar9 + 1;
       } while (bVar1 != 0);
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_2 = (byte *)Library::DKW::LIB::FUN_006aac70(~uVar6 + ~uVar7 + 4);
+      param_2 = Library::DKW::LIB::MemAlloc(~uVar6 + ~uVar7 + 4);
       if (param_2 != (byte *)0x0) {
         pcVar4 = LoadResourceString(0x2576,g_module_00807618);
         wsprintfA((LPSTR)param_2,"%s %s",pcVar4,pbVar8);

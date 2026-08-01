@@ -10,13 +10,13 @@ void __thiscall STAllPlayersC::SaveTmp(STAllPlayersC *this,int param_1)
 {
   int *piVar1;
   code *pcVar2;
-  STPlayerTempSlot (*paSVar3) [5];
+  int *piVar3;
   int iVar4;
   uint uVar5;
   int iVar6;
   InternalExceptionFrame local_50;
   undefined4 *local_c;
-  STPlayerTempSlot (*local_8) [5];
+  int *local_8;
 
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
@@ -39,13 +39,13 @@ void __thiscall STAllPlayersC::SaveTmp(STAllPlayersC *this,int param_1)
                0x16d8);
   }
   uVar5 = (uint)DAT_0080874d;
-  /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
+  /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
   iVar4 = uVar5 * 0xa62;
-  if (g_playerRuntime[uVar5].field324_0x203 == 0) {
-    local_8 = g_playerRuntime[uVar5].tempSlots;
+  if (g_playerRuntime[uVar5].field448_0x203 == 0) {
+    local_8 = &g_playerRuntime[uVar5].field332_0x163;
   }
-  else if (g_playerRuntime[uVar5].field324_0x203 == 1) {
-    local_8 = g_playerRuntime[uVar5].tempSlots + 1;
+  else if (g_playerRuntime[uVar5].field448_0x203 == 1) {
+    local_8 = &g_playerRuntime[uVar5].field390_0x1b3;
   }
   else {
     iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x16dd,0,0,"%s",
@@ -57,8 +57,8 @@ void __thiscall STAllPlayersC::SaveTmp(STAllPlayersC *this,int param_1)
               (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0x16de);
   }
-  paSVar3 = local_8;
-  if ((*local_8)[0].objectType != 0) {
+  piVar3 = local_8;
+  if (*local_8 != 0) {
     local_c = (undefined4 *)(param_1 * 0x10 + 0x7f5027 + iVar4);
     if (*(DArrayTy **)((int)local_c + 10) != (DArrayTy *)0x0) {
       DArrayDestroy(*(DArrayTy **)((int)local_c + 10));
@@ -66,7 +66,7 @@ void __thiscall STAllPlayersC::SaveTmp(STAllPlayersC *this,int param_1)
       *local_c = 0;
     }
   }
-  iVar6 = (*paSVar3)[0].objectType;
+  iVar6 = *piVar3;
   if (0x19a < iVar6) {
     if (((iVar6 == 0x1a4) || (iVar6 == 0x1ae)) || (iVar6 == 0x1b8)) goto cf_common_exit_00438FE7;
     goto LAB_00438fb0;
@@ -75,9 +75,9 @@ void __thiscall STAllPlayersC::SaveTmp(STAllPlayersC *this,int param_1)
 LAB_00438f65:
     piVar1 = (int *)(param_1 * 0x10 + 0x7f5027 + iVar4);
     *piVar1 = iVar6;
-    piVar1[1] = (*paSVar3)[0].playerId;
-    *(short *)((int)piVar1 + 0xe) = (*paSVar3)[0].activityCount;
-    Library::DKW::TBL::FUN_006afe40((int *)((int)piVar1 + 10),&((*paSVar3)[0].objectIds)->flags);
+    piVar1[1] = piVar3[1];
+    *(undefined2 *)((int)piVar1 + 0xe) = *(undefined2 *)((int)piVar3 + 0xe);
+    Library::DKW::TBL::FUN_006afe40((int *)((int)piVar1 + 10),*(uint **)((int)piVar3 + 10));
     g_currentExceptionFrame = local_50.previous;
     return;
   }
@@ -86,8 +86,8 @@ LAB_00438f65:
 cf_common_exit_00438FE7:
       piVar1 = (int *)(param_1 * 0x10 + 0x7f5027 + iVar4);
       *piVar1 = iVar6;
-      piVar1[1] = (*paSVar3)[0].playerId;
-      *(short *)(piVar1 + 2) = (*paSVar3)[0].objectId;
+      piVar1[1] = piVar3[1];
+      *(short *)(piVar1 + 2) = (short)piVar3[2];
       g_currentExceptionFrame = local_50.previous;
       return;
     }

@@ -68,8 +68,7 @@ int __thiscall STLBombC::GetMessage(STLBombC *this,STMessage *message)
     if (SVar1 == MESS_SHARED_010F) {
       local_18 = (byte *)STT3DSprC::SaveSpr((STT3DSprC *)&this_00->field_01D5,&local_8);
       local_14 = (byte *)STAllPlayersC::SaveGObjData((STAllPlayersC *)this_00,(int *)&local_10);
-      local_c = (AnonShape_005859A0_2F00015D *)
-                Library::DKW::LIB::FUN_006aac70(local_10 + 0x67 + local_8);
+      local_c = Library::DKW::LIB::MemAlloc(local_10 + 0x67 + local_8);
       if (((local_18 != (byte *)0x0) && (local_14 != (byte *)0x0)) &&
          (local_c != (AnonShape_005859A0_2F00015D *)0x0)) {
         puVar11 = (byte *)&this_00->field_0x258;
@@ -104,6 +103,7 @@ int __thiscall STLBombC::GetMessage(STLBombC *this,STMessage *message)
         pbVar12 = local_18;
         pbVar15 = &local_c->field_0x63;
         memmove(pbVar15, pbVar12, local_8); /* compiler REP MOVS byte copy */
+        uVar8 = 0;
         *(uint *)(&local_c->field_0x63 + local_8) = local_10;
         pbVar12 = local_14;
         pbVar15 = &local_c[1].field_0x3 + local_8;
@@ -181,7 +181,7 @@ int __thiscall STLBombC::GetMessage(STLBombC *this,STMessage *message)
           *(undefined2 *)&this_00->field_0x41 = local_20->field_0052;
           *(undefined2 *)&this_00->field_0x43 = *(undefined2 *)&local_20->field_0x54;
           *(undefined2 *)&this_00->field_0x45 = local_20->field_0056;
-          local_3c = (void *)Library::DKW::LIB::FUN_006aac70(0x44);
+          local_3c = Library::DKW::LIB::MemAlloc(0x44);
           if (local_3c != (void *)0x0) {
             iVar6 = 0;
             do {

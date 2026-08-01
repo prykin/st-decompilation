@@ -124,7 +124,10 @@ public class STDebugSymbolApplier extends GhidraScript {
                             }
                             else {
                                 function.setCallingConvention(callingConvention);
-                                function.setSignatureSource(SourceType.USER_DEFINED);
+                                // The debug text proves the semantic name.  The calling
+                                // convention is still an inference and must not masquerade as
+                                // a protected manual signature.
+                                function.setSignatureSource(SourceType.ANALYSIS);
                             }
                             if ("__thiscall".equals(callingConvention)) thiscalls++;
                         }
@@ -257,16 +260,16 @@ public class STDebugSymbolApplier extends GhidraScript {
         for (Parameter parameter : function.getParameters()) {
             if (parameter.isAutoParameter() || parameter.equals(receiver)) continue;
             arguments.add(new ParameterImpl(parameter.getName(), parameter.getFormalDataType(),
-                currentProgram, SourceType.USER_DEFINED));
+                currentProgram, SourceType.ANALYSIS));
         }
         boolean varargs = function.hasVarArgs();
         boolean noreturn = function.hasNoReturn();
         function.updateFunction("__thiscall",
             new ReturnParameterImpl(function.getReturnType(), currentProgram), arguments,
-            FunctionUpdateType.DYNAMIC_STORAGE_FORMAL_PARAMS, true, SourceType.USER_DEFINED);
+            FunctionUpdateType.DYNAMIC_STORAGE_FORMAL_PARAMS, true, SourceType.ANALYSIS);
         function.setVarArgs(varargs);
         function.setNoReturn(noreturn);
-        function.setSignatureSource(SourceType.USER_DEFINED);
+        function.setSignatureSource(SourceType.ANALYSIS);
     }
 
     private void convertStaticOperatorToCdecl(Function function) throws Exception {

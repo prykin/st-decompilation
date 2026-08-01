@@ -287,7 +287,7 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
                   pDVar15 = local_30;
                 }
               }
-              Library::DKW::TBL::FUN_006ae1c0(&pDVar15->flags,&local_c);
+              Library::DKW::TBL::DArrayAppend(pDVar15,&local_c);
             }
           }
           local_24 = local_24 + 1;

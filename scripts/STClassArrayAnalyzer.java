@@ -293,7 +293,8 @@ public class STClassArrayAnalyzer extends GhidraScript {
                 Function called = resolveThunk(directCalledFunction(instruction));
                 if ("PUSH".equalsIgnoreCase(prior.getMnemonicString()) &&
                         !pushed.isEmpty() && cursor.equals(fullRegister(pushed.get(0))) &&
-                        called != null && "FreeAndNull".equals(called.getName()))
+                        called != null && called.getTags().stream().anyMatch(tag ->
+                            "RECOVERED_UTILITY_FREE_AND_NULL".equals(tag.getName())))
                     freesPointer = true;
             }
             if (instruction.getFlowType().isJump()) {

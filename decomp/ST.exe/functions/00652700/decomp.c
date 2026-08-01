@@ -1,5 +1,5 @@
 
-undefined4 __cdecl FUN_00652700(short *param_1)
+undefined4 __cdecl FUN_00652700(RecoveredRecord_AiEventClassTy_00652700 *param_1)
 
 {
   short sVar1;
@@ -7,48 +7,38 @@ undefined4 __cdecl FUN_00652700(short *param_1)
 
   iVar2 = 0;
   do {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if (*(char *)((int)param_1 + iVar2 + 0xd0) != '\b') {
+    if ((&param_1->field_0xd0)[iVar2] != '\b') {
       return 0;
     }
     iVar2 = iVar2 + 1;
   } while (iVar2 < 7);
-  sVar1 = *param_1;
+  sVar1 = *(short *)param_1;
   if (sVar1 < 8) {
-    param_1[0x12] = 100;
-    param_1[0x13] = 0;
+    *(undefined4 *)&param_1->field_0x24 = 100;
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  else if (*(char *)((int)param_1 + 0xd7) != '\b') {
+  else if (param_1->field_00D7 != '\b') {
     return 0;
   }
   if (sVar1 < 9) {
-    param_1[0x14] = 0;
-    param_1[0x15] = 0;
+    *(undefined4 *)&param_1->field_0x28 = 0;
   }
-  else if ((char)param_1[0x6c] != '\b') {
+  else if (param_1->field_0xd8 != '\b') {
     return 0;
   }
   if (sVar1 < 10) {
-    param_1[0x16] = 0;
-    param_1[0x17] = 0;
+    *(undefined4 *)&param_1->field_0x2c = 0;
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  else if (*(char *)((int)param_1 + 0xd9) != '\b') {
+  else if (param_1->field_00D9 != '\b') {
     return 0;
   }
-  if (*(int *)(param_1 + 8) < 0) {
+  if (*(int *)&param_1->field_0x10 < 0) {
     return 0;
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (*(int *)(param_1 + 0x12) < 0) {
-    param_1[0x12] = 0;
-    param_1[0x13] = 0;
+  if (*(int *)&param_1->field_0x24 < 0) {
+    *(undefined4 *)&param_1->field_0x24 = 0;
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (100 < *(int *)(param_1 + 0x12)) {
-    param_1[0x12] = 100;
-    param_1[0x13] = 0;
+  if (100 < *(int *)&param_1->field_0x24) {
+    *(undefined4 *)&param_1->field_0x24 = 100;
   }
   return 1;
 }

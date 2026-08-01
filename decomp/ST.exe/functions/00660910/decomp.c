@@ -28,7 +28,7 @@ undefined4 __thiscall FUN_00660910(void *this,short param_1,short param_2,short 
          (g_allPlayers_007FA174 != (STAllPlayersC *)0x0)) {
         this_00 = thunk_FUN_0042b760(*(char *)((int)this + 0x24),*(ushort *)((int)this + 0x7d));
         if (this_00 != (STGroupBoatC *)0x0) {
-          this_00->SetOrderData(CASE_F,&local_c);
+          this_00->sub_00498D20(0xf,&local_c);
           return 0;
         }
       }

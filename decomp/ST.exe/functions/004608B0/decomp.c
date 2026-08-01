@@ -445,13 +445,13 @@ switchD_0046166b_caseD_2:
     bVar12 = (uVar10 - 1 | 0xfffffffe) == 0xffffffff;
   }
   if ((bVar12) && (DAT_007fa134 != 0)) {
-    dVar2 = PTR_007fa130->count;
+    dVar2 = g_array_007FA130->count;
     local_34 = (short)dVar2;
     sStack_32 = (short)(dVar2 >> 0x10);
     if ((dVar2 != 0) && (uVar10 = 0, iVar9 = DAT_007fa134, dVar2 != 0)) {
       do {
         if (iVar9 < 1) break;
-        DArrayGetElement(PTR_007fa130,uVar10,&local_20);
+        DArrayGetElement(g_array_007FA130,uVar10,&local_20);
         if (local_20 != (STTorpC *)0x0) {
           iVar9 = iVar9 + -1;
           STFishC::sub_004162B0((STFishC *)local_20,(short *)((int)&local_10 + 2),&local_c,&local_a);

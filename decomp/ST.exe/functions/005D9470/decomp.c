@@ -164,7 +164,7 @@ LAB_005d97ca:
             local_8 = puVar15;
             DAT_00807340 = 1;
             if ((int)local_8 < 0) {
-              thunk_FUN_005738d0(&g_sound);
+              thunk_FUN_005738d0((AnonShape_005738D0_F693E267 *)&g_sound);
             }
             else {
               thunk_FUN_00572510((AnonShape_00572510_F06DC155 *)&g_sound);

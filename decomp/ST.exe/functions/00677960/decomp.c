@@ -40,16 +40,16 @@ _EnumRCField(short param_1,short param_2,short param_3,short param_4,short param
     RaiseInternalException(iVar2,0,"E:\\__titans\\ai\\ai_mdef.cpp",0x380);
     return iVar2;
   }
-  if (PTR_007fa15c == (DArrayTy *)0x0) {
+  if (g_array_007FA15C == (DArrayTy *)0x0) {
     RaiseInternalException
               (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_mdef.cpp",0x36b);
   }
-  uVar6 = PTR_007fa15c->count - 1;
+  uVar6 = g_array_007FA15C->count - 1;
   if (-1 < (int)uVar6) {
     do {
-      if (uVar6 < PTR_007fa15c->count) {
-        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(PTR_007fa15c, uVar6) (runtime stride) */
-        puVar3 = (undefined4 *)(PTR_007fa15c->elementSize * uVar6 + (int)PTR_007fa15c->data);
+      if (uVar6 < g_array_007FA15C->count) {
+        /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(g_array_007FA15C, uVar6) (runtime stride) */
+        puVar3 = (undefined4 *)(g_array_007FA15C->elementSize * uVar6 + (int)g_array_007FA15C->data);
       }
       else {
         puVar3 = (undefined4 *)0x0;

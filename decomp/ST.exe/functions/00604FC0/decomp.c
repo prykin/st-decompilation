@@ -56,7 +56,7 @@ undefined4 __thiscall FUN_00604fc0(void *this,AnonShape_00604A90_035626E6 *param
         iVar3 = iVar3 + -1;
       } while (iVar3 != 0);
       if (uVar7 != 0) {
-        piVar2 = (int *)Library::DKW::LIB::FUN_006aac70(uVar7);
+        piVar2 = Library::DKW::LIB::MemAlloc(uVar7);
         *(int **)((int)this + 0x2b3) = piVar2;
         memmove(piVar2, piVar9, uVar7); /* compiler REP MOVS byte copy */
       }

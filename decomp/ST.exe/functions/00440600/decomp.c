@@ -13,7 +13,7 @@ uint STAllPlayersC::GetNInTmp(int param_1,int param_2)
   uint uVar3;
 
   if (param_1 == 0) {
-    /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
+    /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
     return (uint)*(ushort *)(param_2 * 0x10 + 0x7f4f91 + (uint)DAT_0080874d * 0xa62);
   }
   if (param_1 != 1) {
@@ -24,7 +24,7 @@ uint STAllPlayersC::GetNInTmp(int param_1,int param_2)
     }
     return 0;
   }
-  /* ST_PSEUDO[flattened_global_record_array]: expected g_playerRuntime[player].field[index...] after base/stride proof */
+  /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
   return (uint)*(ushort *)(param_2 * 0x10 + 0x7f4fe1 + (uint)DAT_0080874d * 0xa62);
 }
 

@@ -23,10 +23,10 @@ void __thiscall AiPlrClassTy::ExecTech(AiPlrClassTy *this,void *param_1)
   int iVar7;
   DArrayTy *pDVar8;
   uint uVar9;
-  AiPlrClassTy_field_06A1Element *pvVar10;
-  STGameObjC *pSVar10;
-  AnonShape_0068FD00_A5257008 *pAVar11;
-  bool bVar12;
+  void *pvVar10;
+  STGameObjC *pSVar11;
+  AnonShape_0068FD00_A5257008 *pAVar12;
+  bool bVar13;
   int local_c8 [7];
   int local_ac [7];
   InternalExceptionFrame local_90;
@@ -49,48 +49,47 @@ void __thiscall AiPlrClassTy::ExecTech(AiPlrClassTy *this,void *param_1)
       local_10 = 0;
       array = local_18->field_06A1;
       if (0 < (int)array->count) {
-        bVar12 = array->count != 0;
+        bVar13 = array->count != 0;
         do {
           uVar5 = local_10;
-          if (bVar12) {
+          if (bVar13) {
             /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
-            pvVar10 = (AiPlrClassTy_field_06A1Element *)
-                      ((int)&array->data->field_0000 + array->elementSize * local_10);
+            pvVar10 = (void *)((int)&array->data->field_0000 + array->elementSize * local_10);
           }
           else {
-            pvVar10 = (AiPlrClassTy_field_06A1Element *)0x0;
+            pvVar10 = (void *)0x0;
           }
-          switch(pvVar10->state) {
+          switch(*(undefined1 *)((int)pvVar10 + 7)) {
           case 0:
-            sVar1 = pvVar10->field_0003;
-            iVar4 = thunk_FUN_004e60d0(this_00->field_05D7,(int)pvVar10->field_0001);
+            sVar1 = *(short *)((int)pvVar10 + 3);
+            iVar4 = thunk_FUN_004e60d0(this_00->field_05D7,(int)*(short *)((int)pvVar10 + 1));
             if (iVar4 < sVar1) {
-              iVar4 = thunk_FUN_004e5f90(this_00->field_05D7,(int)pvVar10->field_0001);
+              iVar4 = thunk_FUN_004e5f90(this_00->field_05D7,(int)*(short *)((int)pvVar10 + 1));
               if (iVar4 == 0) {
-                pSVar10 = (STGameObjC *)(int)pvVar10->field_0001;
-                local_14 = (int)pvVar10->field_0003;
-                local_8 = pSVar10;
-                iVar4 = thunk_FUN_004e5910(this_00->field_05D7,(uint)pSVar10);
+                pSVar11 = (STGameObjC *)(int)*(short *)((int)pvVar10 + 1);
+                local_14 = (int)*(short *)((int)pvVar10 + 3);
+                local_8 = pSVar11;
+                iVar4 = thunk_FUN_004e5910(this_00->field_05D7,(uint)pSVar11);
                 /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
                 if ((iVar4 == 0) ||
-                   (bVar12 = thunk_FUN_004e5c40((byte *)this_00->field_05D7,(uint)pSVar10),
-                   CONCAT31(extraout_var,bVar12) == 0)) {
+                   (bVar13 = thunk_FUN_004e5c40((byte *)this_00->field_05D7,(uint)pSVar11),
+                   CONCAT31(extraout_var,bVar13) == 0)) {
 LAB_0067b6db:
-                  bVar12 = false;
+                  bVar13 = false;
                 }
                 else {
-                  uVar3 = thunk_FUN_004e6140(this_00->field_05D7,(int)pSVar10);
+                  uVar3 = thunk_FUN_004e6140(this_00->field_05D7,(int)pSVar11);
                   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
                   local_c = CONCAT31(extraout_var_00,uVar3);
-                  iVar4 = thunk_FUN_004e60d0(this_00->field_05D7,(int)pSVar10);
+                  iVar4 = thunk_FUN_004e60d0(this_00->field_05D7,(int)pSVar11);
                   if (((int)local_c <= iVar4) ||
-                     ((iVar4 = thunk_FUN_004e60d0(this_00->field_05D7,(int)pSVar10),
+                     ((iVar4 = thunk_FUN_004e60d0(this_00->field_05D7,(int)pSVar11),
                       iVar4 != local_14 + -1 ||
-                      (iVar4 = thunk_FUN_004e5f90(this_00->field_05D7,(uint)pSVar10), iVar4 != 0))))
+                      (iVar4 = thunk_FUN_004e5f90(this_00->field_05D7,(uint)pSVar11), iVar4 != 0))))
                   goto LAB_0067b6db;
-                  bVar12 = true;
+                  bVar13 = true;
                 }
-                if (bVar12) {
+                if (bVar13) {
                   pDVar8 = this_00->field_0695;
                   local_c = 0;
                   uVar5 = pDVar8->count;
@@ -114,10 +113,10 @@ LAB_0067b724:
                         local_8 = (STGameObjC *)*puVar6;
                       }
                       if (local_8 != (STGameObjC *)0x0) {
-                        pAVar11 = local_4c;
+                        pAVar12 = local_4c;
                         for (iVar4 = 0xd; iVar4 != 0; iVar4 = iVar4 + -1) {
-                          *(undefined4 *)pAVar11 = 0;
-                          pAVar11 = (AnonShape_0068FD00_A5257008 *)&pAVar11->field_0x4;
+                          *(undefined4 *)pAVar12 = 0;
+                          pAVar12 = (AnonShape_0068FD00_A5257008 *)&pAVar12->field_0x4;
                         }
                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                         local_4c[0]._4_4_ = this_00->field_06FE;
@@ -131,9 +130,8 @@ LAB_0067b724:
                         }
                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                         if ('\0' < (char)local_4c[0]._8_1_) {
-                          pvVar10->state = 1;
-                          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                          pvVar10->field_0008 = local_4c[0]._14_2_;
+                          *(undefined1 *)((int)pvVar10 + 7) = 1;
+                          *(undefined2 *)((int)pvVar10 + 8) = local_4c[0]._14_2_;
                           break;
                         }
                       }
@@ -146,7 +144,7 @@ LAB_0067b724:
               }
             }
             else {
-              pvVar10->state = 2;
+              *(undefined1 *)((int)pvVar10 + 7) = 2;
             }
             break;
           case 1:
@@ -156,25 +154,25 @@ LAB_0067b724:
             else {
               local_8 = STAllPlayersC::GetObjPtr
                                   (g_allPlayers_007FA174,*(char *)&this_00->field_05D7,
-                                   pvVar10->field_0008,CASE_1);
+                                   *(ushort *)((int)pvVar10 + 8),CASE_1);
             }
             if (local_8 == (STGameObjC *)0x0) {
-              pvVar10->state = 0;
-              pvVar10->field_0008 = 0;
+              *(undefined1 *)((int)pvVar10 + 7) = 0;
+              *(undefined2 *)((int)pvVar10 + 8) = 0;
             }
             else {
-              sVar1 = pvVar10->field_0003;
-              iVar4 = thunk_FUN_004e60d0(this_00->field_05D7,(int)pvVar10->field_0001);
+              sVar1 = *(short *)((int)pvVar10 + 3);
+              iVar4 = thunk_FUN_004e60d0(this_00->field_05D7,(int)*(short *)((int)pvVar10 + 1));
               if (iVar4 < sVar1) {
-                iVar4 = thunk_FUN_004e3800(local_8,(int)pvVar10->field_0001,(int)pvVar10->field_0003
-                                          );
+                iVar4 = thunk_FUN_004e3800(local_8,(int)*(short *)((int)pvVar10 + 1),
+                                           (int)*(short *)((int)pvVar10 + 3));
                 if (iVar4 == 0) {
-                  pvVar10->state = 0;
-                  pvVar10->field_0008 = 0;
+                  *(undefined1 *)((int)pvVar10 + 7) = 0;
+                  *(undefined2 *)((int)pvVar10 + 8) = 0;
                 }
               }
               else {
-                pvVar10->state = 2;
+                *(undefined1 *)((int)pvVar10 + 7) = 2;
               }
             }
             break;
@@ -185,7 +183,7 @@ LAB_0067b724:
           }
           array = this_00->field_06A1;
           local_10 = local_10 + 1;
-          bVar12 = local_10 < array->count;
+          bVar13 = local_10 < array->count;
         } while ((int)local_10 < (int)array->count);
       }
       if (((g_allPlayers_007FA174 != (STAllPlayersC *)0x0) && (this_00->field_0662 == '\x01')) &&

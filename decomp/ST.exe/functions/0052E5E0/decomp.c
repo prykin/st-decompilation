@@ -39,11 +39,11 @@ void __thiscall OptPanelTy::InitOptPanel(OptPanelTy *this)
   this_00 = local_8;
   if (iVar2 == 0) {
     g_optPanel_008016DC = local_8;
-    pcVar3 = (ccFntTy *)ccFntTy::operator_new(0x19d,*(int *)&PTR_00802a28->field_0x28);
+    pcVar3 = (ccFntTy *)ccFntTy::operator_new(0x19d,g_interSystem_00802A28->field_0028);
     this_00->field_017C = pcVar3;
     pcVar3->field_0058 = 0;
     pcVar3->field_005C = 0;
-    pcVar3 = (ccFntTy *)ccFntTy::operator_new(0x19d,*(int *)&PTR_00802a28->field_0x2c);
+    pcVar3 = (ccFntTy *)ccFntTy::operator_new(0x19d,(ccFntTy *)g_interSystem_00802A28->field_002C);
     this_00->field_0180 = pcVar3;
     pcVar3->field_0058 = 1;
     pcVar3->field_005C = 0;

@@ -6,13 +6,13 @@
 void __thiscall InterSystemC::DoneSystem(InterSystemC *this)
 
 {
-  if ((uint *)this->field_0024 != (uint *)0x0) {
+  if (this->field_0024 != (ccFntTy *)0x0) {
     ccFntTy::operator_delete((uint *)this->field_0024);
-    this->field_0024 = 0;
+    this->field_0024 = (ccFntTy *)0x0;
   }
-  if ((uint *)this->field_0028 != (uint *)0x0) {
+  if (this->field_0028 != (ccFntTy *)0x0) {
     ccFntTy::operator_delete((uint *)this->field_0028);
-    this->field_0028 = 0;
+    this->field_0028 = (ccFntTy *)0x0;
   }
   if ((uint *)this->field_002C != (uint *)0x0) {
     ccFntTy::operator_delete((uint *)this->field_002C);

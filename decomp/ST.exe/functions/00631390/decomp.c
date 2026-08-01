@@ -33,7 +33,7 @@ uint __thiscall STManRuinC::sub_00631390(STManRuinC *this,undefined4 *param_1)
     pbVar7 = (byte *)((int)param_1 + 0x59 + *(int *)pbVar7);
   }
   if (this->field_0034 != (byte *)0x0) {
-    pbVar2 = (byte *)Library::DKW::LIB::FUN_006aac70(this->field_0030);
+    pbVar2 = Library::DKW::LIB::MemAlloc(this->field_0030);
     this->field_0034 = pbVar2;
   }
   if (this->field_0034 != (byte *)0x0) {

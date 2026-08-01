@@ -91,8 +91,8 @@ cf_common_join_004F3D83:
       DibPut((AnonShape_006B5B10_E0D06CF1 *)local_14->field_0148[uVar2 + 0xe],local_10,local_c,
              param_3,(byte *)local_8);
       cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);
-      ccFntTy::SetSurf(*(ccFntTy **)&PTR_00802a28->field_0x24,(int)pCVar3->field_0148[uVar2 + 0xe],0
-                       ,local_10,local_c,local_18[2],local_18[3]);
+      ccFntTy::SetSurf(g_interSystem_00802A28->field_0024,(int)pCVar3->field_0148[uVar2 + 0xe],0,
+                       local_10,local_c,local_18[2],local_18[3]);
       iVar9 = -1;
       iVar7 = -1;
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -100,8 +100,8 @@ cf_common_join_004F3D83:
       iVar6 = -1;
       iVar8 = -2;
       resourceString = (uint *)LoadResourceString(param_5,g_module_00807618);
-      ccFntTy::WrTxt(*(ccFntTy **)&PTR_00802a28->field_0x24,resourceString,iVar8,iVar6,uVar5,iVar7,
-                     iVar9);
+      ccFntTy::WrTxt(g_interSystem_00802A28->field_0024,resourceString,iVar8,iVar6,uVar5,iVar7,iVar9
+                    );
       if ((param_1 < 0xb) && (-1 < (int)pCVar3->field_0148[uVar2])) {
         Library::DKW::DDX::FUN_006b3640
                   ((int *)g_ddxContext_008075A8,(uint)pCVar3->field_0148[uVar2],0xffffffff,

@@ -182,7 +182,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
         local_50 = 5;
         local_4b = 0;
         local_4f = *(undefined4 *)((int)&DAT_007bf67c + (int)local_14);
-        Library::DKW::TBL::FUN_006ae1c0((uint *)this_00->field_01D7,&local_60);
+        Library::DKW::TBL::DArrayAppend((DArrayTy *)this_00->field_01D7,&local_60);
         local_8 = local_8 + 5 + *(int *)(pbVar7 + 8);
       }
       iVar4 = (&DAT_007e6024)[param_1 * 5 + -0x2ee];
@@ -205,7 +205,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
         local_24 = 1;
         local_23 = 0xdd;
         local_1f = param_2;
-        Library::DKW::TBL::FUN_006ae1c0((uint *)this_00->field_01D7,&local_34);
+        Library::DKW::TBL::DArrayAppend((DArrayTy *)this_00->field_01D7,&local_34);
         local_8 = local_8 + 0x14;
       }
       ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
@@ -331,7 +331,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
         local_24 = 2;
         local_23 = GVar12;
         local_1f = param_2;
-        Library::DKW::TBL::FUN_006ae1c0((uint *)this_00->field_01D7,&local_34);
+        Library::DKW::TBL::DArrayAppend((DArrayTy *)this_00->field_01D7,&local_34);
         local_8 = local_8 + *(int *)(pbVar7 + 8);
       }
       local_d = '\0';
@@ -385,7 +385,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
           local_24 = 3;
           local_23 = GVar12;
           local_1f = param_2;
-          Library::DKW::TBL::FUN_006ae1c0((uint *)this_00->field_01D7,&local_34);
+          Library::DKW::TBL::DArrayAppend((DArrayTy *)this_00->field_01D7,&local_34);
           local_8 = local_8 + *(int *)(pbVar7 + 8);
           local_d = '\x01';
         }
@@ -414,6 +414,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
           pcVar9 = pcVar10 + -uVar6;
           pcVar10 = (char *)&DAT_0080f33a;
           memmove(pcVar10, pcVar9, uVar6); /* compiler REP MOVS byte copy */
+          uVar11 = 0;
           for (puVar8 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar8 != (uint *)0x0;
               puVar8 = Library::MSVCRT::FUN_0072e560(puVar8,'\n')) {
             *(undefined1 *)puVar8 = 0x20;
@@ -435,7 +436,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
           local_24 = 3;
           local_23 = GVar12;
           local_1f = param_2;
-          Library::DKW::TBL::FUN_006ae1c0((uint *)this_00->field_01D7,&local_34);
+          Library::DKW::TBL::DArrayAppend((DArrayTy *)this_00->field_01D7,&local_34);
           local_8 = local_8 + *(int *)(pbVar7 + 8);
           local_d = '\x01';
         }
@@ -491,7 +492,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
                 local_24 = 2;
                 local_23 = GVar12;
                 local_1f = param_2;
-                Library::DKW::TBL::FUN_006ae1c0((uint *)this_00->field_01D7,&local_34);
+                Library::DKW::TBL::DArrayAppend((DArrayTy *)this_00->field_01D7,&local_34);
                 local_8 = local_8 + *(int *)(pbVar7 + 8);
                 local_d = '\x01';
                 GVar12 = local_c;

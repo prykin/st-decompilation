@@ -20,13 +20,14 @@ int __thiscall STJellyManC::GetMessage(STJellyManC *this,STMessage *message)
   undefined1 uVar6;
   STGameObjC *pSVar7;
   int iVar8;
-  int *piVar9;
-  int iVar10;
-  uint uVar11;
-  byte *puVar12;
+  void *pvVar9;
+  int *piVar10;
+  int iVar11;
+  uint uVar12;
   byte *puVar13;
   byte *puVar14;
-  byte *pbVar15;
+  byte *puVar15;
+  byte *pbVar16;
   InternalExceptionFrame local_54;
   STGameObjC *local_10;
   int local_c;
@@ -39,9 +40,9 @@ int __thiscall STJellyManC::GetMessage(STJellyManC *this,STMessage *message)
   pSVar7 = local_10;
   if (iVar8 != 0) {
     g_currentExceptionFrame = local_54.previous;
-    iVar10 = ReportDebugMessage("E:\\__titans\\Igor\\to_jell_m.cpp",0x191,0,iVar8,
+    iVar11 = ReportDebugMessage("E:\\__titans\\Igor\\to_jell_m.cpp",0x191,0,iVar8,
                                 "%s","STJellyManC::GetMessage");
-    if (iVar10 != 0) {
+    if (iVar11 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     RaiseInternalException(iVar8,0,"E:\\__titans\\Igor\\to_jell_m.cpp",0x192);
@@ -56,12 +57,12 @@ int __thiscall STJellyManC::GetMessage(STJellyManC *this,STMessage *message)
         g_currentExceptionFrame = local_54.previous;
         return 0;
       }
-      while ((iVar10 = *(int *)(*(int *)&pSVar7->field_0x207 + iVar8 * 4), iVar10 == 0 ||
-             (*(dword *)(iVar10 + 8) != (message->arg0).u32))) {
+      while ((iVar11 = *(int *)(*(int *)&pSVar7->field_0x207 + iVar8 * 4), iVar11 == 0 ||
+             (*(dword *)(iVar11 + 8) != (message->arg0).u32))) {
         if ((iVar8 < 0) &&
-           (iVar10 = ReportDebugMessage("E:\\__titans\\Igor\\to_jell_m.cpp",0x128,0,0,
+           (iVar11 = ReportDebugMessage("E:\\__titans\\Igor\\to_jell_m.cpp",0x128,0,0,
                                         "%s","Jell_m:Small finding jelly"),
-           iVar10 != 0)) {
+           iVar11 != 0)) {
           STDebugBreak(); /* noreturn in standalone pseudocode */
         }
         iVar8 = iVar8 + -1;
@@ -86,32 +87,32 @@ int __thiscall STJellyManC::GetMessage(STJellyManC *this,STMessage *message)
       if (SVar1 == MESS_STJELLYMANC_0125) {
         iVar8 = *(int *)&pSVar7->field_0x1fd + -1;
         if (-1 < iVar8) {
-          piVar9 = (int *)(*(int *)&pSVar7->field_0x207 + iVar8 * 4);
+          piVar10 = (int *)(*(int *)&pSVar7->field_0x207 + iVar8 * 4);
           do {
-            if (*piVar9 == 0) break;
+            if (*piVar10 == 0) break;
             iVar8 = iVar8 + -1;
-            piVar9 = piVar9 + -1;
+            piVar10 = piVar10 + -1;
           } while (-1 < iVar8);
         }
         if (iVar8 < 0) {
           g_currentExceptionFrame = local_54.previous;
           return 0;
         }
-        iVar10 = FUN_006e5380(g_playSystem_00802A38,(message->arg0).i32,&local_c);
-        if (iVar10 != 0) {
+        iVar11 = FUN_006e5380(g_playSystem_00802A38,(message->arg0).i32,&local_c);
+        if (iVar11 != 0) {
           g_currentExceptionFrame = local_54.previous;
           return 0;
         }
-        iVar10 = *(int *)&pSVar7->field_0x1fd + -1;
-        if (-1 < iVar10) {
-          piVar9 = (int *)(*(int *)&pSVar7->field_0x207 + iVar10 * 4);
+        iVar11 = *(int *)&pSVar7->field_0x1fd + -1;
+        if (-1 < iVar11) {
+          piVar10 = (int *)(*(int *)&pSVar7->field_0x207 + iVar11 * 4);
           do {
-            if (*piVar9 == local_c) break;
-            iVar10 = iVar10 + -1;
-            piVar9 = piVar9 + -1;
-          } while (-1 < iVar10);
+            if (*piVar10 == local_c) break;
+            iVar11 = iVar11 + -1;
+            piVar10 = piVar10 + -1;
+          } while (-1 < iVar11);
         }
-        if (iVar10 < 0) {
+        if (iVar11 < 0) {
           *(int *)(*(int *)&pSVar7->field_0x207 + iVar8 * 4) = local_c;
           *(int *)&pSVar7->field_0x20f = *(int *)&pSVar7->field_0x20f + 1;
           g_currentExceptionFrame = local_54.previous;
@@ -135,19 +136,14 @@ int __thiscall STJellyManC::GetMessage(STJellyManC *this,STMessage *message)
     return 0;
   }
   if (SVar1 == MESS_SHARED_010F) {
-    local_8 = (byte *)Library::DKW::LIB::FUN_006aac70(0x3a);
+    local_8 = Library::DKW::LIB::MemAlloc(0x3a);
     if (local_8 == (byte *)0x0) {
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }
-    puVar13 = (byte *)&pSVar7->field_0x1d9;
-    pbVar15 = local_8;
-    for (iVar8 = 0xb; iVar8 != 0; iVar8 = iVar8 + -1) {
-      *(undefined4 *)pbVar15 = *puVar13;
-      puVar13 = (byte *)(puVar13 + 1);
-      pbVar15 = pbVar15 + 4;
-    }
-    *(undefined2 *)pbVar15 = *(undefined2 *)puVar13;
+    puVar14 = (byte *)&pSVar7->field_0x1d9;
+    pbVar16 = local_8;
+    memmove(pbVar16, puVar14, 0x2e); /* compiler REP MOVS byte copy */
     local_8[0xc] = 2;
     local_8[0xd] = 0;
     local_8[0xe] = 0;
@@ -201,13 +197,13 @@ int __thiscall STJellyManC::GetMessage(STJellyManC *this,STMessage *message)
   dVar2 = (message->arg0).u32;
   *(undefined4 *)&pSVar7->field_0x207 = 0;
   *(undefined4 *)&pSVar7->field_0x20b = 0;
-  uVar11 = *(uint *)(dVar2 + 0xc);
-  if (uVar11 < 2) {
+  uVar12 = *(uint *)(dVar2 + 0xc);
+  if (uVar12 < 2) {
     *(undefined4 *)&pSVar7->field_0x1d5 = 0;
     *(undefined4 *)&pSVar7->field_0x20f = 0;
-    puVar13 = (byte *)((message->arg0).ptr);
-    puVar12 = (byte *)&pSVar7->field_0x1d9;
-    memmove(puVar12, puVar13, 0x2e); /* compiler REP MOVS byte copy */
+    puVar14 = (byte *)((message->arg0).ptr);
+    puVar13 = (byte *)&pSVar7->field_0x1d9;
+    memmove(puVar13, puVar14, 0x2e); /* compiler REP MOVS byte copy */
     if (((((int)pSVar7->field_01ED < 0) || (*(int *)&pSVar7->field_0x1f1 < 0)) ||
         ((int)g_worldGrid.sizeX < *(int *)&pSVar7->field_0x1f5)) ||
        ((int)g_worldGrid.sizeY < *(int *)&pSVar7->field_0x1f9)) {
@@ -219,11 +215,12 @@ int __thiscall STJellyManC::GetMessage(STJellyManC *this,STMessage *message)
       RaiseInternalException
                 (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\to_jell_m.cpp",0x13e);
     }
-    iVar8 = Library::DKW::LIB::FUN_006aac70(*(int *)&pSVar7->field_0x1fd << 2);
-    *(int *)&pSVar7->field_0x207 = iVar8;
-    iVar8 = Library::DKW::LIB::FUN_006aac70(*(int *)&pSVar7->field_0x1fd << 2);
-    *(int *)&pSVar7->field_0x20b = iVar8;
-    if ((*(int *)&pSVar7->field_0x207 != 0) && (iVar8 != 0)) goto cf_common_exit_00581D62;
+    pvVar9 = Library::DKW::LIB::MemAlloc(*(int *)&pSVar7->field_0x1fd << 2);
+    *(void **)&pSVar7->field_0x207 = pvVar9;
+    pvVar9 = Library::DKW::LIB::MemAlloc(*(int *)&pSVar7->field_0x1fd << 2);
+    *(void **)&pSVar7->field_0x20b = pvVar9;
+    if ((*(int *)&pSVar7->field_0x207 != 0) && (pvVar9 != (void *)0x0))
+    goto cf_common_exit_00581D62;
     iVar8 = ReportDebugMessage("E:\\__titans\\Igor\\to_jell_m.cpp",0x143,0,0,"%s",
                                "Not enough memory");
     if (iVar8 != 0) {
@@ -232,21 +229,22 @@ int __thiscall STJellyManC::GetMessage(STJellyManC *this,STMessage *message)
     iVar8 = 0x144;
   }
   else {
-    if (uVar11 != 2) {
+    if (uVar12 != 2) {
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }
-    puVar13 = (byte *)((message->arg0).ptr);
-    puVar12 = (byte *)(puVar13);
-    puVar14 = (byte *)&pSVar7->field_0x1d9;
-    memmove(puVar14, puVar12, 0x2e); /* compiler REP MOVS byte copy */
-    *(undefined4 *)&pSVar7->field_0x1d5 = *(undefined4 *)((int)puVar13 + 0x2e);
+    puVar14 = (byte *)((message->arg0).ptr);
+    puVar13 = (byte *)(puVar14);
+    puVar15 = (byte *)&pSVar7->field_0x1d9;
+    memmove(puVar15, puVar13, 0x2e); /* compiler REP MOVS byte copy */
+    *(undefined4 *)&pSVar7->field_0x1d5 = *(undefined4 *)((int)puVar14 + 0x2e);
     *(undefined4 *)&pSVar7->field_0x20f = 0;
-    iVar8 = Library::DKW::LIB::FUN_006aac70(*(int *)&pSVar7->field_0x1fd << 2);
-    *(int *)&pSVar7->field_0x207 = iVar8;
-    iVar8 = Library::DKW::LIB::FUN_006aac70(*(int *)&pSVar7->field_0x1fd << 2);
-    *(int *)&pSVar7->field_0x20b = iVar8;
-    if ((*(int *)&pSVar7->field_0x207 != 0) && (iVar8 != 0)) goto cf_common_exit_00581D62;
+    pvVar9 = Library::DKW::LIB::MemAlloc(*(int *)&pSVar7->field_0x1fd << 2);
+    *(void **)&pSVar7->field_0x207 = pvVar9;
+    pvVar9 = Library::DKW::LIB::MemAlloc(*(int *)&pSVar7->field_0x1fd << 2);
+    *(void **)&pSVar7->field_0x20b = pvVar9;
+    if ((*(int *)&pSVar7->field_0x207 != 0) && (pvVar9 != (void *)0x0))
+    goto cf_common_exit_00581D62;
     iVar8 = ReportDebugMessage("E:\\__titans\\Igor\\to_jell_m.cpp",0x15a,0,0,"%s",
                                "Not enough memory");
     if (iVar8 != 0) {
@@ -257,23 +255,23 @@ int __thiscall STJellyManC::GetMessage(STJellyManC *this,STMessage *message)
   RaiseInternalException
             (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\to_jell_m.cpp",iVar8);
 cf_common_exit_00581D62:
-  puVar13 = (byte *)(*(undefined4 **)&pSVar7->field_0x207);
-  for (uVar11 = *(uint *)&pSVar7->field_0x1fd & 0x3fffffff; uVar11 != 0; uVar11 = uVar11 - 1) {
-    *puVar13 = 0;
-    puVar13 = (byte *)(puVar13 + 1);
+  puVar14 = (byte *)(*(undefined4 **)&pSVar7->field_0x207);
+  for (uVar12 = *(uint *)&pSVar7->field_0x1fd & 0x3fffffff; uVar12 != 0; uVar12 = uVar12 - 1) {
+    *puVar14 = 0;
+    puVar14 = (byte *)(puVar14 + 1);
   }
   for (iVar8 = 0; iVar8 != 0; iVar8 = iVar8 + -1) {
-    *(undefined1 *)puVar13 = 0;
-    puVar13 = (byte *)((int)puVar13 + 1);
+    *(undefined1 *)puVar14 = 0;
+    puVar14 = (byte *)((int)puVar14 + 1);
   }
-  puVar13 = (byte *)(*(undefined4 **)&pSVar7->field_0x20b);
-  for (uVar11 = *(uint *)&pSVar7->field_0x1fd & 0x3fffffff; uVar11 != 0; uVar11 = uVar11 - 1) {
-    *puVar13 = 0;
-    puVar13 = (byte *)(puVar13 + 1);
+  puVar14 = (byte *)(*(undefined4 **)&pSVar7->field_0x20b);
+  for (uVar12 = *(uint *)&pSVar7->field_0x1fd & 0x3fffffff; uVar12 != 0; uVar12 = uVar12 - 1) {
+    *puVar14 = 0;
+    puVar14 = (byte *)(puVar14 + 1);
   }
   for (iVar8 = 0; iVar8 != 0; iVar8 = iVar8 + -1) {
-    *(undefined1 *)puVar13 = 0;
-    puVar13 = (byte *)((int)puVar13 + 1);
+    *(undefined1 *)puVar14 = 0;
+    puVar14 = (byte *)((int)puVar14 + 1);
   }
   g_currentExceptionFrame = local_54.previous;
   return 0;

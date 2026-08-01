@@ -39,7 +39,8 @@ int __thiscall STAllPlayersC::_ChangeMD(STAllPlayersC *this,int param_1,int *par
   else {
     iVar4 = _SubMDObject(piVar3,uVar6);
   }
-  if ((((iVar4 == 1) && (array = g_playerRuntime[(int)piVar3].groups, array != (DArrayTy *)0x0)) &&
+  if ((((iVar4 == 1) &&
+       (array = (DArrayTy *)g_playerRuntime[(int)piVar3].field5_0x5, array != (DArrayTy *)0x0)) &&
       (dVar1 = array->count, dVar1 != 0)) && (uVar6 = 0, 0 < (int)dVar1)) {
     do {
       DArrayGetElement(array,uVar6,&param_2);

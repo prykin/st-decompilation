@@ -19,7 +19,7 @@ uint * __thiscall STGroupC::GetTOBJList(STGroupC *this,int param_1)
   uint local_14;
   STGroupC *local_10;
   DArrayTy *local_c;
-  undefined4 local_8;
+  undefined1 local_8 [4];
 
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
@@ -32,10 +32,12 @@ uint * __thiscall STGroupC::GetTOBJList(STGroupC *this,int param_1)
     local_14 = local_10->field_0029[3];
     if (0 < (int)local_14) {
       do {
-        DArrayGetElement((DArrayTy *)pSVar2->field_0029,index,&local_8);
-        if ((ushort)local_8 != 0xffff) {
+        DArrayGetElement((DArrayTy *)pSVar2->field_0029,index,local_8);
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+        if (local_8._0_2_ != 0xffff) {
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           pSVar4 = STAllPlayersC::GetObjPtr
-                             (g_allPlayers_007FA174,pSVar2->field_0024,(ushort)local_8,CASE_1);
+                             (g_allPlayers_007FA174,pSVar2->field_0024,local_8._0_2_,CASE_1);
           if (pSVar4 == (STGameObjC *)0x0) {
             RaiseInternalException
                       (-0x5001fffc,g_overwriteContext_007ED77C,
@@ -43,7 +45,7 @@ uint * __thiscall STGroupC::GetTOBJList(STGroupC *this,int param_1)
           }
           iVar3 = (*pSVar4->vtable->vfunc_2C)();
           if (iVar3 == param_1) {
-            Library::DKW::TBL::FUN_006ae1c0(&local_c->flags,&local_8);
+            Library::DKW::TBL::DArrayAppend(local_c,local_8);
           }
         }
         index = index + 1;

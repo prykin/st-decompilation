@@ -32,7 +32,7 @@ void __cdecl FUN_00575460(AnonShape_00575460_06C413C6 *param_1)
       *(uint *)(iVar1 + 4) = uVar2 + 1;
       if (iVar5 == 0) break;
       puVar6 = (undefined4 *)(iVar5 + 8);
-      Library::DKW::TBL::FUN_006ae1c0(&array->flags,puVar6);
+      Library::DKW::TBL::DArrayAppend(array,puVar6);
       FUN_006a5e90((short *)*puVar6);
     }
     DArrayDestroy((DArrayTy *)param_1->field_0451);
@@ -55,7 +55,7 @@ void __cdecl FUN_00575460(AnonShape_00575460_06C413C6 *param_1)
           } while (*value != (void *)*puVar6);
           if (puVar6 == (undefined4 *)0x0) {
 LAB_0057554f:
-            Library::DKW::TBL::FUN_006ae1c0(&array->flags,value);
+            Library::DKW::TBL::DArrayAppend(array,value);
             FreeAndNull(value);
           }
           *value = (void *)0x0;

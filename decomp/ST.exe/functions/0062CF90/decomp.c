@@ -13,8 +13,9 @@ uint __thiscall STManRub3C::AddNewRub3(STManRub3C *this,int *param_1)
   int *piVar3;
   int iVar4;
   DArrayTy *pDVar5;
-  uint uVar6;
-  int iVar7;
+  int uVar6;
+  int iVar6;
+  uint uVar7;
   InternalExceptionFrame local_74;
   int local_30 [4];
   int local_20;
@@ -48,7 +49,7 @@ uint __thiscall STManRub3C::AddNewRub3(STManRub3C *this,int *param_1)
       local_30[1] = piVar3[1];
       local_30[2] = piVar3[2];
       local_30[3] = piVar3[3];
-      uVar6 = Library::DKW::TBL::FUN_006ae1c0((uint *)pSVar2->field_0030[*piVar3],local_30);
+      uVar6 = Library::DKW::TBL::DArrayAppend((DArrayTy *)pSVar2->field_0030[*piVar3],local_30);
       g_currentExceptionFrame = local_74.previous;
       return uVar6;
     }
@@ -56,9 +57,9 @@ uint __thiscall STManRub3C::AddNewRub3(STManRub3C *this,int *param_1)
     return local_10;
   }
   g_currentExceptionFrame = local_74.previous;
-  iVar7 = ReportDebugMessage("E:\\__titans\\nick\\to_rab3m.cpp",0x86,0,iVar4,"%s",
+  iVar6 = ReportDebugMessage("E:\\__titans\\nick\\to_rab3m.cpp",0x86,0,iVar4,"%s",
                              "STManRub3C::AddNewRub3");
-  if (iVar7 != 0) {
+  if (iVar6 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar4,0,"E:\\__titans\\nick\\to_rab3m.cpp",0x88);

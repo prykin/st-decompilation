@@ -92,7 +92,7 @@ cf_common_exit_0065F468:
         bVar4 = true;
       }
       if (bVar4) {
-        Library::DKW::TBL::FUN_006ae140((uint *)local_28,local_c,(undefined4 *)param_1);
+        Library::DKW::TBL::DArrayPut(local_28,local_c,param_1);
         goto cf_common_exit_0065F468;
       }
       if ((int)local_1c->field_0170 <= (int)local_c) {
@@ -145,7 +145,7 @@ LAB_0065f3c9:
     } while ((int)local_c < (int)local_24);
   }
   if (local_18 != 0) {
-    Library::DKW::TBL::FUN_006ae1c0((uint *)local_1c->field_022F,(undefined4 *)param_1);
+    Library::DKW::TBL::DArrayAppend((DArrayTy *)local_1c->field_022F,param_1);
   }
   g_currentExceptionFrame = local_74.previous;
   return 0;

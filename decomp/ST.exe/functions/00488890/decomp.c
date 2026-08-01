@@ -109,7 +109,7 @@ void __thiscall FUN_00488890(void *this,int param_1)
         iVar6 = GetPlayerRaceId(*(char *)((int)this + 0x24));
         local_43 = (undefined1)iVar6;
         thunk_FUN_004e6d00(*(byte **)((int)this + 0x24),local_4c[0],local_3a);
-        Library::DKW::TBL::FUN_006ae1c0(*(uint **)(param_1 + iVar7 * 4),local_4c);
+        Library::DKW::TBL::DArrayAppend(*(DArrayTy **)(param_1 + iVar7 * 4),local_4c);
         iVar6 = local_c;
       }
       local_c = iVar6 + 1;

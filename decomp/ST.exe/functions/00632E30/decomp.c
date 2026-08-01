@@ -8,14 +8,15 @@ undefined4 __fastcall FUN_00632e30(AnonShape_00632E30_A9A0278F *param_1)
   float fVar2;
   float fVar3;
   bool bVar4;
-  undefined4 *puVar5;
-  int iVar6;
-  float *pfVar7;
-  undefined4 uVar8;
-  uint uVar9;
+  void *pvVar5;
+  undefined4 *puVar6;
+  int iVar7;
+  float *pfVar8;
+  undefined4 uVar9;
   uint uVar10;
-  int iVar11;
-  longlong lVar12;
+  uint uVar11;
+  int iVar12;
+  longlong lVar13;
   int local_14;
   float local_10;
   undefined4 local_c;
@@ -71,87 +72,87 @@ LAB_00632f7e:
     param_1->field_0089 = DAT_007d1b18;
     if (*(int *)param_1 != 0) {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      iVar6 = *(int *)(*(int *)param_1 + 0xc);
-      uVar10 = 0;
-      if (0 < iVar6) {
+      iVar7 = *(int *)(*(int *)param_1 + 0xc);
+      uVar11 = 0;
+      if (0 < iVar7) {
         do {
-          iVar11 = *(int *)param_1;
-          if (uVar10 < *(uint *)(iVar11 + 0xc)) {
-            iVar11 = *(int *)(iVar11 + 8) * uVar10 + *(int *)(iVar11 + 0x1c);
+          iVar12 = *(int *)param_1;
+          if (uVar11 < *(uint *)(iVar12 + 0xc)) {
+            iVar12 = *(int *)(iVar12 + 8) * uVar11 + *(int *)(iVar12 + 0x1c);
           }
           else {
-            iVar11 = 0;
+            iVar12 = 0;
           }
-          if ((0 < (int)uVar10) && ((int)uVar10 % param_1->field_0019 == 0)) {
+          if ((0 < (int)uVar11) && ((int)uVar11 % param_1->field_0019 == 0)) {
             fVar1 = _DAT_0079034c;
           }
-          if (iVar11 != 0) {
-            *(float *)(iVar11 + 0x21) = fVar1;
+          if (iVar12 != 0) {
+            *(float *)(iVar12 + 0x21) = fVar1;
             fVar1 = fVar1 + local_8;
           }
-          uVar10 = uVar10 + 1;
-        } while ((int)uVar10 < iVar6);
+          uVar11 = uVar11 + 1;
+        } while ((int)uVar11 < iVar7);
       }
     }
     local_10 = 0.0;
     if (0 < param_1->field_001D) {
-      pfVar7 = (float *)&param_1->field_0x21;
+      pfVar8 = (float *)&param_1->field_0x21;
       do {
         fVar1 = (float)param_1->field_0091 - (float)(int)local_10 * param_1->field_007D;
         if (fVar1 < _DAT_0079034c) {
-          if (_DAT_0079034c < *pfVar7) {
-            uVar10 = param_1->field_0019 * (int)local_10;
-            iVar6 = param_1->field_0019 + uVar10;
+          if (_DAT_0079034c < *pfVar8) {
+            uVar11 = param_1->field_0019 * (int)local_10;
+            iVar7 = param_1->field_0019 + uVar11;
             if (*(int *)param_1 != 0) {
-              for (; (int)uVar10 < iVar6; uVar10 = uVar10 + 1) {
-                iVar11 = *(int *)param_1;
-                if ((uVar10 < *(uint *)(iVar11 + 0xc)) &&
-                   (iVar11 = *(int *)(iVar11 + 8) * uVar10 + *(int *)(iVar11 + 0x1c), iVar11 != 0))
+              for (; (int)uVar11 < iVar7; uVar11 = uVar11 + 1) {
+                iVar12 = *(int *)param_1;
+                if ((uVar11 < *(uint *)(iVar12 + 0xc)) &&
+                   (iVar12 = *(int *)(iVar12 + 8) * uVar11 + *(int *)(iVar12 + 0x1c), iVar12 != 0))
                 {
-                  *(undefined4 *)(iVar11 + 8) = 0;
+                  *(undefined4 *)(iVar12 + 8) = 0;
                 }
               }
             }
           }
         }
-        else if (*pfVar7 <= _DAT_0079034c) {
-          uVar10 = param_1->field_0019 * (int)local_10;
-          iVar6 = param_1->field_0019 + uVar10;
+        else if (*pfVar8 <= _DAT_0079034c) {
+          uVar11 = param_1->field_0019 * (int)local_10;
+          iVar7 = param_1->field_0019 + uVar11;
           if (*(int *)param_1 != 0) {
-            for (; (int)uVar10 < iVar6; uVar10 = uVar10 + 1) {
-              iVar11 = *(int *)param_1;
-              if ((uVar10 < *(uint *)(iVar11 + 0xc)) &&
-                 (iVar11 = *(int *)(iVar11 + 8) * uVar10 + *(int *)(iVar11 + 0x1c), iVar11 != 0)) {
-                *(undefined4 *)(iVar11 + 8) = 1;
+            for (; (int)uVar11 < iVar7; uVar11 = uVar11 + 1) {
+              iVar12 = *(int *)param_1;
+              if ((uVar11 < *(uint *)(iVar12 + 0xc)) &&
+                 (iVar12 = *(int *)(iVar12 + 8) * uVar11 + *(int *)(iVar12 + 0x1c), iVar12 != 0)) {
+                *(undefined4 *)(iVar12 + 8) = 1;
               }
             }
           }
         }
         local_10 = (float)((int)local_10 + 1);
-        *pfVar7 = fVar1;
-        pfVar7 = pfVar7 + 1;
+        *pfVar8 = fVar1;
+        pfVar8 = pfVar8 + 1;
       } while ((int)local_10 < param_1->field_001D);
     }
     break;
   case 3:
-    iVar6 = Library::DKW::LIB::FUN_006aac70(param_1->field_0019 << 3);
+    pvVar5 = Library::DKW::LIB::MemAlloc(param_1->field_0019 << 3);
     fVar1 = (float)param_1->field_006D - param_1->field_0069;
-    param_1->field_0039 = iVar6;
+    param_1->field_0039 = (int)pvVar5;
     param_1->field_0031 = 0;
     bVar4 = fVar1 != _DAT_0079034c;
     param_1->field_0035 = 0;
     if (bVar4) {
-      iVar11 = param_1->field_0019;
+      iVar7 = param_1->field_0019;
       local_10 = 0.0;
       fVar2 = (float)param_1->field_0089;
-      if (0 < iVar11) {
+      if (0 < iVar7) {
         do {
-          *(float *)(iVar6 + (int)local_10 * 4) =
-               (float)(int)local_10 * (fVar1 / (float)(iVar11 + -1)) + param_1->field_0069;
+          *(float *)((int)pvVar5 + (int)local_10 * 4) =
+               (float)(int)local_10 * (fVar1 / (float)(iVar7 + -1)) + param_1->field_0069;
           *(float *)(param_1->field_0039 + ((int)local_10 + param_1->field_0019) * 4) =
-               (float)(int)local_10 * (fVar2 / (float)iVar11);
-          iVar6 = param_1->field_0039;
-          if (param_1->field_0045 < *(float *)(iVar6 + (int)local_10 * 4)) {
+               (float)(int)local_10 * (fVar2 / (float)iVar7);
+          pvVar5 = (void *)param_1->field_0039;
+          if (param_1->field_0045 < *(float *)((int)pvVar5 + (int)local_10 * 4)) {
             param_1->field_0035 = param_1->field_0035 + 1;
           }
           else {
@@ -164,51 +165,51 @@ LAB_00632f7e:
     bVar4 = param_1->field_0081 != _DAT_0079034c;
     param_1->field_0071 = 0x40490fdb;
     if (bVar4) {
-      lVar12 = Library::MSVCRT::__ftol();
-      local_14 = (int)lVar12;
+      lVar13 = Library::MSVCRT::__ftol();
+      local_14 = (int)lVar13;
       if (local_14 < 1) {
         local_14 = 1;
       }
       param_1->field_0081 = _DAT_0079d1a4 / (float)local_14;
     }
-    iVar6 = param_1->field_001D;
+    iVar7 = param_1->field_001D;
     param_1->field_0079 = 0;
-    fVar1 = _DAT_0079d1a4 / (float)iVar6;
-    param_1->field_0099 = iVar6 * 4;
+    fVar1 = _DAT_0079d1a4 / (float)iVar7;
+    param_1->field_0099 = iVar7 * 4;
     param_1->field_007D = fVar1;
-    param_1->field_0075 = _DAT_0079c5a4 / (float)(iVar6 * 3);
+    param_1->field_0075 = _DAT_0079c5a4 / (float)(iVar7 * 3);
     if (*(int *)param_1 != 0) {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      iVar6 = *(int *)(*(int *)param_1 + 0xc);
-      uVar10 = 0;
-      if (0 < iVar6) {
+      iVar7 = *(int *)(*(int *)param_1 + 0xc);
+      uVar11 = 0;
+      if (0 < iVar7) {
         do {
-          iVar11 = *(int *)param_1;
-          if (uVar10 < *(uint *)(iVar11 + 0xc)) {
-            puVar5 = (undefined4 *)(*(int *)(iVar11 + 8) * uVar10 + *(int *)(iVar11 + 0x1c));
+          iVar12 = *(int *)param_1;
+          if (uVar11 < *(uint *)(iVar12 + 0xc)) {
+            puVar6 = (undefined4 *)(*(int *)(iVar12 + 8) * uVar11 + *(int *)(iVar12 + 0x1c));
           }
           else {
-            puVar5 = (undefined4 *)0x0;
+            puVar6 = (undefined4 *)0x0;
           }
-          *(undefined1 *)(puVar5 + 3) = 0;
-          *(undefined4 *)((int)puVar5 + 0x21) = 0;
-          if ((int)uVar10 < param_1->field_001D * 2) {
-            uVar8 = param_1->field_0025;
+          *(undefined1 *)(puVar6 + 3) = 0;
+          *(undefined4 *)((int)puVar6 + 0x21) = 0;
+          if ((int)uVar11 < param_1->field_001D * 2) {
+            uVar9 = param_1->field_0025;
           }
           else {
-            uVar8 = param_1->field_0029;
+            uVar9 = param_1->field_0029;
           }
-          *puVar5 = uVar8;
-          if (uVar10 == iVar6 - 1U) {
-            *puVar5 = param_1->field_0025;
+          *puVar6 = uVar9;
+          if (uVar11 == iVar7 - 1U) {
+            *puVar6 = param_1->field_0025;
           }
-          uVar10 = uVar10 + 1;
-        } while ((int)uVar10 < iVar6);
+          uVar11 = uVar11 + 1;
+        } while ((int)uVar11 < iVar7);
       }
     }
-    uVar10 = g_playSystem_00802A38->field_00E4;
+    uVar11 = g_playSystem_00802A38->field_00E4;
     param_1->field_002D = 0;
-    param_1->field_0005 = uVar10;
+    param_1->field_0005 = uVar11;
     break;
   case 4:
     param_1->field_005D = DAT_007d1b7c;
@@ -223,100 +224,100 @@ LAB_00632f7e:
     param_1->field_0085 = DAT_007d1b9c;
     param_1->field_0089 = DAT_007d1ba0;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if ((*(int *)param_1 != 0) && (iVar6 = *(int *)(*(int *)param_1 + 0xc), iVar6 != 0)) {
-      uVar10 = 0;
+    if ((*(int *)param_1 != 0) && (iVar7 = *(int *)(*(int *)param_1 + 0xc), iVar7 != 0)) {
+      uVar11 = 0;
       local_10 = 0.0;
       local_8 = _DAT_0079c5a4 / (float)param_1->field_001D;
       if (0 < param_1->field_001D) {
         do {
-          iVar11 = *(int *)param_1;
-          if ((uVar10 < *(uint *)(iVar11 + 0xc)) &&
-             (iVar11 = *(int *)(iVar11 + 8) * uVar10 + *(int *)(iVar11 + 0x1c), iVar11 != 0)) {
-            *(float *)(iVar11 + 0x21) = local_10;
-            *(undefined4 *)(iVar11 + 0x25) = param_1->field_006D;
-            *(undefined4 *)(iVar11 + 8) = 1;
+          iVar12 = *(int *)param_1;
+          if ((uVar11 < *(uint *)(iVar12 + 0xc)) &&
+             (iVar12 = *(int *)(iVar12 + 8) * uVar11 + *(int *)(iVar12 + 0x1c), iVar12 != 0)) {
+            *(float *)(iVar12 + 0x21) = local_10;
+            *(undefined4 *)(iVar12 + 0x25) = param_1->field_006D;
+            *(undefined4 *)(iVar12 + 8) = 1;
           }
-          uVar9 = param_1->field_001D + uVar10;
-          iVar11 = *(int *)param_1;
-          if ((uVar9 < *(uint *)(iVar11 + 0xc)) &&
-             (iVar11 = *(int *)(iVar11 + 8) * uVar9 + *(int *)(iVar11 + 0x1c), iVar11 != 0)) {
-            *(float *)(iVar11 + 0x21) = local_10;
-            *(undefined4 *)(iVar11 + 0x25) = param_1->field_006D;
+          uVar10 = param_1->field_001D + uVar11;
+          iVar12 = *(int *)param_1;
+          if ((uVar10 < *(uint *)(iVar12 + 0xc)) &&
+             (iVar12 = *(int *)(iVar12 + 8) * uVar10 + *(int *)(iVar12 + 0x1c), iVar12 != 0)) {
+            *(float *)(iVar12 + 0x21) = local_10;
+            *(undefined4 *)(iVar12 + 0x25) = param_1->field_006D;
             param_1->field_0071 = param_1->field_006D;
-            uVar9 = Library::MSVCRT::FUN_0072e6c0();
-            *(undefined4 *)(iVar11 + 8) = 1;
-            *(undefined4 *)(iVar11 + 0x1d) = 7;
-            *(int *)(iVar11 + 0x19) = (int)uVar9 % 7;
+            uVar10 = Library::MSVCRT::FUN_0072e6c0();
+            *(undefined4 *)(iVar12 + 8) = 1;
+            *(undefined4 *)(iVar12 + 0x1d) = 7;
+            *(int *)(iVar12 + 0x19) = (int)uVar10 % 7;
           }
           local_10 = local_10 + local_8;
-          uVar10 = uVar10 + 1;
-        } while ((int)uVar10 < param_1->field_001D);
+          uVar11 = uVar11 + 1;
+        } while ((int)uVar11 < param_1->field_001D);
       }
-      for (uVar10 = param_1->field_001D * 2; (int)uVar10 < iVar6; uVar10 = uVar10 + 1) {
-        iVar11 = *(int *)param_1;
-        if (uVar10 < *(uint *)(iVar11 + 0xc)) {
-          iVar11 = *(int *)(iVar11 + 8) * uVar10 + *(int *)(iVar11 + 0x1c);
+      for (uVar11 = param_1->field_001D * 2; (int)uVar11 < iVar7; uVar11 = uVar11 + 1) {
+        iVar12 = *(int *)param_1;
+        if (uVar11 < *(uint *)(iVar12 + 0xc)) {
+          iVar12 = *(int *)(iVar12 + 8) * uVar11 + *(int *)(iVar12 + 0x1c);
         }
         else {
-          iVar11 = 0;
+          iVar12 = 0;
         }
-        uVar9 = Library::MSVCRT::FUN_0072e6c0();
-        local_8 = (float)((int)uVar9 % 0x168) * _DAT_0079d1a8;
-        if (iVar11 != 0) {
-          *(float *)(iVar11 + 0x21) = local_8;
-          uVar9 = Library::MSVCRT::FUN_0072e6c0();
+        uVar10 = Library::MSVCRT::FUN_0072e6c0();
+        local_8 = (float)((int)uVar10 % 0x168) * _DAT_0079d1a8;
+        if (iVar12 != 0) {
+          *(float *)(iVar12 + 0x21) = local_8;
+          uVar10 = Library::MSVCRT::FUN_0072e6c0();
           fVar1 = (float)param_1->field_0079;
           fVar2 = (float)param_1->field_006D;
           fVar3 = (float)param_1->field_006D;
-          *(undefined4 *)(iVar11 + 0x19) = 0;
-          *(float *)(iVar11 + 0x25) =
-               ((fVar1 - fVar2) * (float)((int)uVar9 % (iVar6 + 1))) / (float)iVar6 + fVar3;
-          uVar9 = g_playSystem_00802A38->field_00E4;
-          *(undefined4 *)(iVar11 + 8) = 1;
-          *(uint *)(iVar11 + 0x35) = uVar9;
+          *(undefined4 *)(iVar12 + 0x19) = 0;
+          *(float *)(iVar12 + 0x25) =
+               ((fVar1 - fVar2) * (float)((int)uVar10 % (iVar7 + 1))) / (float)iVar7 + fVar3;
+          uVar10 = g_playSystem_00802A38->field_00E4;
+          *(undefined4 *)(iVar12 + 8) = 1;
+          *(uint *)(iVar12 + 0x35) = uVar10;
         }
       }
     }
   }
-  iVar6 = param_1->field_0011;
-  if (((iVar6 == 0) || (iVar6 == 1)) && (*(int *)param_1 != 0)) {
+  iVar7 = param_1->field_0011;
+  if (((iVar7 == 0) || (iVar7 == 1)) && (*(int *)param_1 != 0)) {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    uVar10 = *(uint *)(*(int *)param_1 + 0xc);
-    if (iVar6 == 1) {
-      iVar6 = param_1->field_001D;
-      iVar11 = 0;
-      uVar10 = uVar10 - iVar6;
-      fVar1 = _DAT_0079c5a4 / (float)iVar6;
+    uVar11 = *(uint *)(*(int *)param_1 + 0xc);
+    if (iVar7 == 1) {
+      iVar7 = param_1->field_001D;
+      iVar12 = 0;
+      uVar11 = uVar11 - iVar7;
+      fVar1 = _DAT_0079c5a4 / (float)iVar7;
       fVar2 = fVar1 * _DAT_00790784;
-      uVar9 = uVar10;
-      if (0 < iVar6) {
+      uVar10 = uVar11;
+      if (0 < iVar7) {
         do {
-          iVar6 = *(int *)param_1;
-          if ((uVar9 < *(uint *)(iVar6 + 0xc)) &&
-             (iVar6 = *(int *)(iVar6 + 8) * uVar9 + *(int *)(iVar6 + 0x1c), iVar6 != 0)) {
-            *(float *)(iVar6 + 0x21) = fVar2;
+          iVar7 = *(int *)param_1;
+          if ((uVar10 < *(uint *)(iVar7 + 0xc)) &&
+             (iVar7 = *(int *)(iVar7 + 8) * uVar10 + *(int *)(iVar7 + 0x1c), iVar7 != 0)) {
+            *(float *)(iVar7 + 0x21) = fVar2;
             fVar2 = fVar2 + fVar1;
-            *(undefined4 *)(iVar6 + 8) = 1;
-            *(undefined4 *)(iVar6 + 0x19) = 3;
+            *(undefined4 *)(iVar7 + 8) = 1;
+            *(undefined4 *)(iVar7 + 0x19) = 3;
           }
-          iVar11 = iVar11 + 1;
-          uVar9 = uVar9 + 1;
-        } while (iVar11 < param_1->field_001D);
+          iVar12 = iVar12 + 1;
+          uVar10 = uVar10 + 1;
+        } while (iVar12 < param_1->field_001D);
       }
     }
-    uVar9 = 0;
+    uVar10 = 0;
     fVar1 = _DAT_0079034c;
-    if (0 < (int)uVar10) {
+    if (0 < (int)uVar11) {
       do {
-        iVar6 = *(int *)param_1;
-        if ((uVar9 < *(uint *)(iVar6 + 0xc)) &&
-           (iVar6 = *(int *)(iVar6 + 8) * uVar9 + *(int *)(iVar6 + 0x1c), iVar6 != 0)) {
-          *(float *)(iVar6 + 0x21) = fVar1;
+        iVar7 = *(int *)param_1;
+        if ((uVar10 < *(uint *)(iVar7 + 0xc)) &&
+           (iVar7 = *(int *)(iVar7 + 8) * uVar10 + *(int *)(iVar7 + 0x1c), iVar7 != 0)) {
+          *(float *)(iVar7 + 0x21) = fVar1;
           fVar1 = fVar1 + local_8;
-          *(undefined4 *)(iVar6 + 8) = 1;
+          *(undefined4 *)(iVar7 + 8) = 1;
         }
-        uVar9 = uVar9 + 1;
-      } while ((int)uVar9 < (int)uVar10);
+        uVar10 = uVar10 + 1;
+      } while ((int)uVar10 < (int)uVar11);
     }
   }
   return local_c;

@@ -27,7 +27,7 @@ STAllPlayersC::DelObjFromSaveTmps(STAllPlayersC *this,int param_1,char param_2,s
       if ((param_1 == 0x1b8) || (param_1 == 0x1ae)) goto LAB_0042d011;
     }
     else if ((999 < param_1) && (param_1 < 0x3ea)) {
-      piVar4 = &g_playerRuntime[uVar5].field328_0x211;
+      piVar4 = &g_playerRuntime[uVar5].field452_0x211;
       local_8 = 10;
       do {
         if ((*(int *)((int)piVar4 + -10) == 0x19a) && (*(int *)((int)piVar4 + -6) == (int)param_2))
@@ -41,7 +41,7 @@ STAllPlayersC::DelObjFromSaveTmps(STAllPlayersC *this,int param_1,char param_2,s
               if ((short)param_1 == param_3) {
                 /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                 param_1 = 0xffff;
-                Library::DKW::TBL::FUN_006ae140((uint *)*piVar4,uVar5,&param_1);
+                Library::DKW::TBL::DArrayPut((DArrayTy *)*piVar4,uVar5,&param_1);
                 *(short *)(piVar4 + 1) = (short)piVar4[1] + -1;
                 if ((short)piVar4[1] == 0) {
                   DArrayDestroy((DArrayTy *)*piVar4);
@@ -72,7 +72,7 @@ LAB_0042cf42:
   if (param_1 != 0x1a4) {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_1 == 0x14) {
-      piVar4 = &g_playerRuntime[uVar5].field328_0x211;
+      piVar4 = &g_playerRuntime[uVar5].field452_0x211;
       local_8 = 10;
       do {
         if ((*(int *)((int)piVar4 + -10) == 0x3c) && (*(int *)((int)piVar4 + -6) == (int)param_2)) {
@@ -85,7 +85,7 @@ LAB_0042cf42:
               if ((short)param_1 == param_3) {
                 /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                 param_1 = 0xffff;
-                Library::DKW::TBL::FUN_006ae140((uint *)*piVar4,uVar5,&param_1);
+                Library::DKW::TBL::DArrayPut((DArrayTy *)*piVar4,uVar5,&param_1);
                 *(short *)(piVar4 + 1) = (short)piVar4[1] + -1;
                 if ((short)piVar4[1] == 0) {
                   DArrayDestroy((DArrayTy *)*piVar4);
@@ -109,7 +109,7 @@ LAB_0042cf42:
   }
 LAB_0042d011:
   iVar2 = 0;
-  psVar3 = &g_playerRuntime[uVar5].field327_0x20f;
+  psVar3 = &g_playerRuntime[uVar5].field451_0x20f;
   while (((*(int *)(psVar3 + -4) != param_1 || (*(int *)(psVar3 + -2) != (int)param_2)) ||
          (*psVar3 != param_3))) {
     iVar2 = iVar2 + 1;

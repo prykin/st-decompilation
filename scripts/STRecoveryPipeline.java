@@ -43,6 +43,32 @@ public class STRecoveryPipeline extends GhidraScript {
     private static final int MAX_STRUCTURAL_PASSES = 24;
     private static final int MAX_DEEP_PASSES = 12;
     private static final int MAX_RUN_HISTORY = 3;
+    private static final String ANALYZER_CACHE_SCHEMA = "1";
+    private static final Map<String, List<String>> CACHEABLE_ANALYZER_OUTPUTS = Map.of(
+        "STDArrayElementAnalyzer.java", List.of(
+            "darray_element_proposals.tsv", "darray_element_field_proposals.tsv",
+            "darray_element_local_proposals.tsv", "darray_element_decompile_failures.tsv",
+            "darray_element_summary.txt"),
+        "STPointerShapeAnalyzer.java", List.of(
+            "pointer_shape_type_proposals.tsv", "pointer_shape_field_proposals.tsv",
+            "pointer_shape_target_proposals.tsv", "pointer_shape_decompile_failures.tsv",
+            "pointer_shape_summary.txt"),
+        "STSwitchEnumAnalyzer.java", List.of(
+            "switch_enum_proposals.tsv", "switch_enum_decompile_retries.tsv",
+            "switch_enum_decompile_failures.tsv", "switch_enum_domains.tsv",
+            "switch_enum_summary.txt"),
+        "STLocalLifetimeAnalyzer.java", List.of(
+            "local_lifetime_proposals.tsv", "local_lifetime_failures.tsv",
+            "local_lifetime_summary.txt"),
+        "STControlFlowLabelAnalyzer.java", List.of(
+            "control_flow_label_proposals.tsv", "control_flow_label_unresolved.tsv",
+            "control_flow_label_summary.txt"));
+    private static final Map<String, List<String>> CACHEABLE_ANALYZER_INPUTS = Map.of(
+        "STDArrayElementAnalyzer.java", List.of(),
+        "STPointerShapeAnalyzer.java", List.of(),
+        "STSwitchEnumAnalyzer.java", List.of("switch_enum_domains.tsv"),
+        "STLocalLifetimeAnalyzer.java", List.of(),
+        "STControlFlowLabelAnalyzer.java", List.of());
     private static final Set<String> MUTATING_STATUSES = Set.of(
         "applied", "created", "converted", "updated", "partial", "renamed", "repaired");
     private static final Set<String> UNCHANGED_STATUSES = Set.of(
@@ -71,6 +97,16 @@ public class STRecoveryPipeline extends GhidraScript {
     private long runModificationBefore;
     private final List<BuildRow> builds = new ArrayList<>();
     private int buildFailures;
+    private boolean darrayLegacyLocalsCleaned;
+    private final Map<String, AnalyzerStamp> analyzerStamps = new LinkedHashMap<>();
+    private final Map<String, AnalyzerCacheEntry> persistentAnalyzerCache =
+        new LinkedHashMap<>();
+    private final Map<Long, String> semanticFingerprintByModification =
+        new LinkedHashMap<>();
+    private String startupSemanticFingerprint = "";
+    private long startupFingerprintModification = -1;
+    private int analyzerEpochCacheHits;
+    private int analyzerPersistentCacheHits;
 
     @Override
     protected void run() throws Exception {
@@ -102,6 +138,7 @@ public class STRecoveryPipeline extends GhidraScript {
         startRun(options.mode, started);
         try {
             preflightScripts();
+            if (!options.mode.equals("export")) initializeAnalyzerCache();
             switch (options.mode) {
                 case "core" -> { runCore(); recordEvidence(); }
                 case "deep" -> { runDeep(); recordEvidence(); }
@@ -152,7 +189,6 @@ public class STRecoveryPipeline extends GhidraScript {
 
         analyzer("STDebugSymbolAnalyzer.java");
         applier("STDebugSymbolApplier.java", "proposals.tsv");
-        optionalApplier("STCuratedRecoveryApplier.java", "curated_recovery.tsv");
         runOptionalCallsiteFixpoint();
 
         pair("STMessageIdAnalyzer.java", "STMessageIdApplier.java",
@@ -183,6 +219,7 @@ public class STRecoveryPipeline extends GhidraScript {
             "utility_function_proposals.tsv", "utility_function_apply_report.tsv");
 
         boolean converged = false;
+        Map<String, Integer> seenDeepStates = new LinkedHashMap<>();
         for (int pass = 1; pass <= MAX_DEEP_PASSES; pass++) {
             section("deep propagation pass " + pass + "/" + MAX_DEEP_PASSES);
             int changed = 0;
@@ -197,8 +234,6 @@ public class STRecoveryPipeline extends GhidraScript {
                 "STDiscriminatedPayloadApplier.java",
                 "discriminated_payload_proposals.tsv",
                 "discriminated_payload_apply_report.tsv");
-            changed += pair("STSpatialGridAnalyzer.java", "STSpatialGridApplier.java",
-                "spatial_grid_proposals.tsv", "spatial_grid_apply_report.tsv");
             changed += pair("STGlobalAggregateAnalyzer.java", "STGlobalAggregateApplier.java",
                 "global_aggregate_proposals.tsv", "global_aggregate_apply_report.tsv");
             changed += pair("STGlobalDataAnalyzer.java", "STGlobalDataApplier.java",
@@ -221,14 +256,19 @@ public class STRecoveryPipeline extends GhidraScript {
             analyzer("STClassArrayAnalyzer.java");
             changed += pair("STClassLayoutAnalyzer.java", "STClassLayoutApplier.java",
                 "class_layout_proposals.tsv", "class_layout_apply_report.tsv");
-            changed += pair("STDArrayElementAnalyzer.java", "STDArrayElementApplier.java",
-                "darray_element_proposals.tsv", "darray_element_apply_report.tsv");
+            changed += runDArrayTypes();
             changed += pair("STSwitchEnumAnalyzer.java", "STSwitchEnumApplier.java",
                 "switch_enum_proposals.tsv", "switch_enum_apply_report.tsv");
             changed += pair("STObjectFactoryAnalyzer.java", "STObjectFactoryApplier.java",
                 "object_factory_proposals.tsv", "object_factory_apply_report.tsv");
             println("Deep propagation pass " + pass + ": mutating report rows=" + changed);
             if (changed == 0) { converged = true; break; }
+            String fingerprint = deepStateFingerprint();
+            Integer previous = seenDeepStates.putIfAbsent(fingerprint, pass);
+            if (previous != null)
+                throw new IllegalStateException(
+                    "Deep propagation entered a repeated state at passes " + previous +
+                    " and " + pass + "; export is unsafe");
         }
         if (!converged)
             throw new IllegalStateException("Deep propagation did not reach a fixed point in " +
@@ -301,11 +341,28 @@ public class STRecoveryPipeline extends GhidraScript {
     /**
      * Short fixed-point repair for ABI layers whose mistakes directly create blocking
      * decompiler artifacts.  This is part of the ordinary export contract, not a one-off
-     * migration mode: return semantics and indirect/vtable call types must agree before the
-     * evidence checkpoint and corpus fingerprint are recorded.
+     * migration mode: parameter storage, return semantics, and indirect/vtable call types
+     * must agree before the evidence checkpoint, corpus fingerprint, and decompilation.
      */
     private void runExportAbiRepair() throws Exception {
         section("critical export ABI stabilization");
+        boolean abiConverged = false;
+        for (int pass = 1; pass <= MAX_DEEP_PASSES; pass++) {
+            int changed = pair("STAbiConsistencyAnalyzer.java",
+                "STAbiConsistencyApplier.java", "abi_consistency_proposals.tsv",
+                "abi_consistency_apply_report.tsv");
+            println("Export ABI consistency pass " + pass +
+                ": mutating rows=" + changed);
+            if (changed == 0) {
+                abiConverged = true;
+                break;
+            }
+        }
+        if (!abiConverged)
+            throw new IllegalStateException("Export ABI consistency did not reach a " +
+                "fixed point in " + MAX_DEEP_PASSES + " passes; inspect " +
+                recoveryProgram.resolve("abi_consistency_apply_report.tsv"));
+
         step("STReturnSemanticsAnalyzer.java", recoveryRoot.toString(), "repair-only");
         Path returnProposals = requireFile("return_semantics_proposals.tsv", null);
         step("STReturnSemanticsApplier.java", returnProposals.toString());
@@ -330,6 +387,7 @@ public class STRecoveryPipeline extends GhidraScript {
     private void recordEvidence() throws Exception {
         section("evidence checkpoint");
         step("STEvidenceLedger.java", "record", recoveryRoot.toString());
+        writeAnalyzerCache();
     }
 
     private void runBootstrapFixpoint() throws Exception {
@@ -386,6 +444,7 @@ public class STRecoveryPipeline extends GhidraScript {
 
     private void runStructuralFixpoint() throws Exception {
         section("factory/vtable/constructor/class fixpoint");
+        Map<String, Integer> seenStructuralStates = new LinkedHashMap<>();
         for (int pass = 1; pass <= MAX_STRUCTURAL_PASSES; pass++) {
             int changed = 0;
             changed += pair("STMessageHandlerAnalyzer.java", "STMessageHandlerApplier.java",
@@ -403,10 +462,15 @@ public class STRecoveryPipeline extends GhidraScript {
             analyzer("STClassArrayAnalyzer.java");
             changed += pair("STClassLayoutAnalyzer.java", "STClassLayoutApplier.java",
                 "class_layout_proposals.tsv", "class_layout_apply_report.tsv");
-            changed += pair("STDArrayElementAnalyzer.java", "STDArrayElementApplier.java",
-                "darray_element_proposals.tsv", "darray_element_apply_report.tsv");
+            changed += runDArrayTypes();
             println("Structural pass " + pass + ": mutating report rows=" + changed);
             if (changed == 0) return;
+            String fingerprint = deepStateFingerprint();
+            Integer previous = seenStructuralStates.putIfAbsent(fingerprint, pass);
+            if (previous != null)
+                throw new IllegalStateException(
+                    "Structural recovery entered a repeated state at passes " +
+                    previous + " and " + pass + "; inspect pass snapshots");
         }
         throw new IllegalStateException("Structural recovery did not reach a fixed point in " +
             MAX_STRUCTURAL_PASSES + " passes");
@@ -425,6 +489,26 @@ public class STRecoveryPipeline extends GhidraScript {
             MAX_STRUCTURAL_PASSES + " passes");
     }
 
+    private int runDArrayTypes() throws Exception {
+        analyzer("STDArrayElementAnalyzer.java");
+        Path proposals = requireFile("darray_element_proposals.tsv", null);
+        String mode = darrayLegacyLocalsCleaned ?
+            "types-only" : "types-only-cleanup";
+        step("STDArrayElementApplier.java", proposals.toString(), mode);
+        darrayLegacyLocalsCleaned = true;
+        Path applyReport = recoveryProgram.resolve(
+            "darray_element_apply_report.tsv");
+        int changed = convergenceMutationCount(
+            "STDArrayElementApplier.java", proposals, applyReport,
+            MUTATING_STATUSES);
+        snapshotPassArtifacts("STDArrayElementApplier.java", proposals,
+            applyReport,
+            recoveryProgram.resolve("darray_element_field_proposals.tsv"),
+            recoveryProgram.resolve("darray_element_local_proposals.tsv"),
+            recoveryProgram.resolve("darray_element_decompile_failures.tsv"));
+        return changed;
+    }
+
     private int runPrototypeCycle() throws Exception {
         analyzer("STPrototypeAnalyzer.java");
         Path proposals = requireFile("prototype_proposals.tsv", null);
@@ -435,8 +519,10 @@ public class STRecoveryPipeline extends GhidraScript {
             "STPrototypeRepairApplier.java", repairs,
             recoveryProgram.resolve("prototype_repair_apply_report.tsv"),
             MUTATING_STATUSES);
-        analyzer("STPrototypeAnalyzer.java");
-        proposals = requireFile("prototype_proposals.tsv", null);
+        if (changed > 0) {
+            analyzer("STPrototypeAnalyzer.java");
+            proposals = requireFile("prototype_proposals.tsv", null);
+        }
         step("STPrototypeApplier.java", proposals.toString());
         return changed + convergenceMutationCount(
             "STPrototypeApplier.java", proposals,
@@ -468,7 +554,199 @@ public class STRecoveryPipeline extends GhidraScript {
     }
 
     private void analyzer(String script) throws Exception {
+        List<String> outputs = CACHEABLE_ANALYZER_OUTPUTS.get(script);
+        if (outputs == null) {
+            step(script, recoveryRoot.toString());
+            return;
+        }
+        String sourceHash = analyzerSourceHash(script);
+        long modification = currentProgram.getModificationNumber();
+        String dependencies = analyzerDependencyToken(script);
+        String artifacts = analyzerArtifactToken(script);
+        AnalyzerStamp current = analyzerStamps.get(script);
+        if (current != null && current.programModification == modification &&
+                current.sourceHash.equals(sourceHash) &&
+                current.dependencyToken.equals(dependencies) &&
+                current.artifactToken.equals(artifacts) && cacheArtifactsPresent(script)) {
+            analyzerEpochCacheHits++;
+            skipped(script, recoveryRoot.toString(),
+                "clean analyzer node at the current Program epoch; reusing verified artifacts");
+            return;
+        }
+        AnalyzerCacheEntry persistent = persistentAnalyzerCache.get(script);
+        String currentSemantic = "";
+        if (persistent != null && persistent.sourceHash.equals(sourceHash) &&
+                persistent.dependencyToken.equals(dependencies) &&
+                persistent.artifactToken.equals(artifacts) && cacheArtifactsPresent(script)) {
+            currentSemantic = semanticFingerprintForCurrentModification();
+            if (persistent.programSemantic.equals(currentSemantic)) {
+                analyzerStamps.put(script, new AnalyzerStamp(modification, currentSemantic,
+                    sourceHash, dependencies, artifacts));
+                analyzerPersistentCacheHits++;
+                skipped(script, recoveryRoot.toString(),
+                    "semantic/source/dependency cache hit; reusing verified analyzer artifacts");
+                return;
+            }
+        }
         step(script, recoveryRoot.toString());
+        if (!cacheArtifactsPresent(script))
+            throw new IllegalStateException(script +
+                " completed without its declared cache artifacts");
+        analyzerStamps.put(script, new AnalyzerStamp(
+            currentProgram.getModificationNumber(), currentSemantic, sourceHash,
+            analyzerDependencyToken(script), analyzerArtifactToken(script)));
+    }
+
+    private void initializeAnalyzerCache() throws Exception {
+        section("semantic analyzer cache");
+        step("STEvidenceLedger.java", "fingerprint", recoveryRoot.toString());
+        Path fingerprint = recoveryProgram.resolve("program_semantic.sha256");
+        startupSemanticFingerprint = Files.readString(fingerprint,
+            StandardCharsets.UTF_8).trim();
+        if (!startupSemanticFingerprint.matches("[0-9a-f]{64}"))
+            throw new IllegalStateException("Invalid semantic fingerprint in " + fingerprint);
+        startupFingerprintModification = currentProgram.getModificationNumber();
+        semanticFingerprintByModification.put(startupFingerprintModification,
+            startupSemanticFingerprint);
+        Path cache = recoveryProgram.resolve("analyzer_cache.tsv");
+        if (!Files.isRegularFile(cache)) return;
+        List<String> lines = Files.readAllLines(cache, StandardCharsets.UTF_8);
+        String header = "schema_version\tscript\tsource_sha256\t" +
+            "program_semantic_sha256\tdependency_sha256\tartifacts";
+        if (lines.isEmpty() || !header.equals(lines.get(0))) {
+            println("Ignoring incompatible analyzer cache: " + cache);
+            return;
+        }
+        for (int line = 1; line < lines.size(); line++) {
+            if (lines.get(line).isBlank()) continue;
+            String[] fields = lines.get(line).split("\t", -1);
+            if (fields.length != 6 || !ANALYZER_CACHE_SCHEMA.equals(fields[0]) ||
+                    !CACHEABLE_ANALYZER_OUTPUTS.containsKey(fields[1])) continue;
+            persistentAnalyzerCache.put(fields[1], new AnalyzerCacheEntry(
+                fields[2], fields[3], fields[4], fields[5]));
+        }
+        println("Loaded reusable analyzer cache entries: " +
+            persistentAnalyzerCache.size());
+    }
+
+    private String semanticFingerprintForCurrentModification() throws Exception {
+        long modification = currentProgram.getModificationNumber();
+        String cached = semanticFingerprintByModification.get(modification);
+        if (cached != null) return cached;
+        step("STEvidenceLedger.java", "fingerprint", recoveryRoot.toString());
+        Path fingerprint = recoveryProgram.resolve("program_semantic.sha256");
+        String semantic = Files.readString(fingerprint, StandardCharsets.UTF_8).trim();
+        if (!semantic.matches("[0-9a-f]{64}"))
+            throw new IllegalStateException("Invalid semantic fingerprint in " + fingerprint);
+        semanticFingerprintByModification.put(modification, semantic);
+        return semantic;
+    }
+
+    private void writeAnalyzerCache() throws Exception {
+        // Export-only mode does not initialize or execute the expensive analyzers.  Keep
+        // their previous semantic-keyed cache: if ABI finalization changed the Program,
+        // its recorded semantic will simply fail validation on the next recovery run.
+        if (runMode.equals("export") && analyzerStamps.isEmpty()) {
+            logLine("analyzer_cache_preserved export_only=true");
+            return;
+        }
+        String semantic = evidenceSemanticFingerprint();
+        Path cache = recoveryProgram.resolve("analyzer_cache.tsv");
+        Path temporary = cache.resolveSibling(cache.getFileName() + ".tmp");
+        List<String> rows = new ArrayList<>();
+        long modification = currentProgram.getModificationNumber();
+        for (String script : new TreeMap<>(CACHEABLE_ANALYZER_OUTPUTS).keySet()) {
+            if (!cacheArtifactsPresent(script)) continue;
+            String source = analyzerSourceHash(script);
+            String dependencies = analyzerDependencyToken(script);
+            String artifacts = analyzerArtifactToken(script);
+            AnalyzerStamp stamp = analyzerStamps.get(script);
+            boolean stableSemanticRun = semantic.equals(startupSemanticFingerprint);
+            boolean currentStamp = stamp != null &&
+                (stamp.programModification == modification ||
+                    stamp.programSemantic.equals(semantic) || stableSemanticRun) &&
+                stamp.sourceHash.equals(source) &&
+                stamp.dependencyToken.equals(dependencies) &&
+                stamp.artifactToken.equals(artifacts);
+            AnalyzerCacheEntry prior = persistentAnalyzerCache.get(script);
+            boolean unchangedPrior = semantic.equals(startupSemanticFingerprint) &&
+                prior != null && prior.programSemantic.equals(semantic) &&
+                prior.sourceHash.equals(source) &&
+                prior.dependencyToken.equals(dependencies) &&
+                prior.artifactToken.equals(artifacts);
+            if (!currentStamp && !unchangedPrior) continue;
+            rows.add(ANALYZER_CACHE_SCHEMA + "\t" + script + "\t" + source +
+                "\t" + semantic + "\t" + dependencies + "\t" + artifacts);
+        }
+        Files.writeString(temporary,
+            "schema_version\tscript\tsource_sha256\t" +
+            "program_semantic_sha256\tdependency_sha256\tartifacts\n" +
+            String.join("\n", rows) + (rows.isEmpty() ? "" : "\n"),
+            StandardCharsets.UTF_8);
+        try {
+            Files.move(temporary, cache, StandardCopyOption.REPLACE_EXISTING,
+                StandardCopyOption.ATOMIC_MOVE);
+        }
+        catch (java.nio.file.AtomicMoveNotSupportedException exception) {
+            Files.move(temporary, cache, StandardCopyOption.REPLACE_EXISTING);
+        }
+        println("Persisted analyzer cache entries: " + rows.size());
+        logLine("analyzer_cache_written entries=" + rows.size());
+    }
+
+    private String evidenceSemanticFingerprint() throws Exception {
+        Path state = recoveryProgram.resolve("automation_state.tsv");
+        for (String line : Files.readAllLines(state, StandardCharsets.UTF_8)) {
+            String[] fields = line.split("\t", -1);
+            if (fields.length == 4 && "program".equals(fields[0]) &&
+                    "semantic_sha256".equals(fields[1]) &&
+                    fields[2].matches("[0-9a-f]{64}")) return fields[2];
+        }
+        throw new IllegalStateException("Evidence ledger has no semantic_sha256: " + state);
+    }
+
+    private String analyzerSourceHash(String script) throws Exception {
+        for (BuildRow build : builds)
+            if (build.script.equals(script)) return build.sourceHash;
+        return sha256(repository.resolve("scripts").resolve(script));
+    }
+
+    private String analyzerDependencyToken(String script) throws Exception {
+        return analyzerFileToken(CACHEABLE_ANALYZER_INPUTS.getOrDefault(script, List.of()));
+    }
+
+    private String analyzerArtifactToken(String script) throws Exception {
+        return analyzerFileToken(CACHEABLE_ANALYZER_OUTPUTS.getOrDefault(script, List.of()));
+    }
+
+    private boolean cacheArtifactsPresent(String script) {
+        for (String name : CACHEABLE_ANALYZER_OUTPUTS.getOrDefault(script, List.of()))
+            if (!Files.isRegularFile(recoveryProgram.resolve(name))) return false;
+        return true;
+    }
+
+    private String analyzerFileToken(List<String> names) throws Exception {
+        MessageDigest digest = MessageDigest.getInstance("SHA-256");
+        digest.update(ANALYZER_CACHE_SCHEMA.getBytes(StandardCharsets.UTF_8));
+        for (String name : names.stream().sorted().toList()) {
+            Path path = recoveryProgram.resolve(name);
+            cacheDigestValue(digest, name);
+            if (!Files.isRegularFile(path)) cacheDigestValue(digest, "missing");
+            else {
+                cacheDigestValue(digest, Long.toString(Files.size(path)));
+                cacheDigestValue(digest, sha256(path));
+            }
+        }
+        return hex(digest.digest());
+    }
+
+    private void cacheDigestValue(MessageDigest digest, String value) {
+        byte[] bytes = value.getBytes(StandardCharsets.UTF_8);
+        digest.update((byte)(bytes.length >>> 24));
+        digest.update((byte)(bytes.length >>> 16));
+        digest.update((byte)(bytes.length >>> 8));
+        digest.update((byte)bytes.length);
+        digest.update(bytes);
     }
 
     private void applier(String script, String proposal) throws Exception {
@@ -1064,9 +1342,9 @@ public class STRecoveryPipeline extends GhidraScript {
             runModificationBefore, currentProgram.getModificationNumber(),
             failure == null ? "" : message(failure));
         snapshotRunArtifact(reportPath, "pipeline_report.tsv");
-        for (String name : List.of("automation_state.tsv",
-                "switch_enum_domains.tsv", "export_regression_report.tsv",
-                "export_receipt.json"))
+        for (String name : List.of("automation_state.tsv", "analyzer_cache.tsv",
+                "program_semantic.sha256", "switch_enum_domains.tsv",
+                "export_regression_report.tsv", "export_receipt.json"))
             snapshotRunArtifact(recoveryProgram.resolve(name), name);
         if (failure != null)
             Files.writeString(activeRun.resolve("exception.txt"), stackTrace(failure),
@@ -1086,6 +1364,9 @@ public class STRecoveryPipeline extends GhidraScript {
             "\"program_modification_after\":" + currentProgram.getModificationNumber() + "," +
             "\"build_script_count\":" + builds.size() + "," +
             "\"build_failure_count\":" + buildFailures + "," +
+            "\"analyzer_epoch_cache_hit_count\":" + analyzerEpochCacheHits + "," +
+            "\"analyzer_persistent_cache_hit_count\":" +
+                analyzerPersistentCacheHits + "," +
             "\"pipeline_row_count\":" + report.size() +
             "}";
         Files.writeString(activeRun.resolve("run.json"), metadata + "\n",
@@ -1299,8 +1580,8 @@ public class STRecoveryPipeline extends GhidraScript {
         return end < 0 ? "" : json.substring(start, end);
     }
 
-    private void snapshotPassArtifacts(String script, Path proposals, Path applyReport)
-            throws Exception {
+    private void snapshotPassArtifacts(String script, Path proposals, Path applyReport,
+            Path... additionalArtifacts) throws Exception {
         if (activeRun == null) return;
         Path directory = activeRun.resolve("passes").resolve(
             String.format(Locale.ROOT, "%03d-%s", sequence,
@@ -1312,6 +1593,11 @@ public class STRecoveryPipeline extends GhidraScript {
         if (applyReport != null && Files.isRegularFile(applyReport))
             Files.copy(applyReport, directory.resolve(applyReport.getFileName()),
                 StandardCopyOption.REPLACE_EXISTING);
+        for (Path additional : additionalArtifacts)
+            if (additional != null && Files.isRegularFile(additional))
+                Files.copy(additional,
+                    directory.resolve(additional.getFileName()),
+                    StandardCopyOption.REPLACE_EXISTING);
     }
 
     private void snapshotRunArtifact(Path source, String name) throws Exception {
@@ -1342,6 +1628,21 @@ public class STRecoveryPipeline extends GhidraScript {
 
     private long elapsedMilliseconds() {
         return runStarted == null ? 0 : Duration.between(runStarted, Instant.now()).toMillis();
+    }
+
+    private String deepStateFingerprint() throws Exception {
+        StringBuilder state = new StringBuilder();
+        try (java.util.stream.Stream<Path> stream = Files.list(recoveryProgram)) {
+            for (Path path : stream.filter(Files::isRegularFile)
+                    .filter(value -> {
+                        String name = value.getFileName().toString();
+                        return name.endsWith("_proposals.tsv") ||
+                            name.endsWith("_apply_report.tsv");
+                    }).sorted().toList())
+                state.append(path.getFileName()).append('|')
+                    .append(sha256(path)).append('\n');
+        }
+        return sha256(state.toString());
     }
 
     private String semanticHash() throws Exception {
@@ -1580,4 +1881,8 @@ public class STRecoveryPipeline extends GhidraScript {
         long durationMilliseconds, String argument, String detail) { }
     private record BuildRow(String script, String sourceHash, String status,
         long durationMilliseconds, String log) { }
+    private record AnalyzerStamp(long programModification, String programSemantic,
+        String sourceHash, String dependencyToken, String artifactToken) { }
+    private record AnalyzerCacheEntry(String sourceHash, String programSemantic,
+        String dependencyToken, String artifactToken) { }
 }

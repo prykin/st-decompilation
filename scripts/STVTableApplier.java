@@ -432,6 +432,10 @@ public class STVTableApplier extends GhidraScript {
                 }
                 installTableLabel(tableAddress, proposedName);
                 addTableComment(tableAddress, effectiveProposal);
+                // Migrate the live owner field before considering retirement of the old table
+                // type.  Removing it first leaves a /-BAD-/ component and makes the owner hash
+                // look manually edited, permanently blocking the repair.
+                if (semanticApply) typeOwnerVptr(row, structure);
                 boolean retainedPriorType = false;
                 if (replacedOwnedType != null &&
                         !replacedOwnedType.getPathName().equals(structure.getPathName())) {
@@ -444,8 +448,7 @@ public class STVTableApplier extends GhidraScript {
                 report.add(new ReportRow("table", addressText, status, proposedName,
                     typeResolution.detail + " " + structure.getPathName() + "; " +
                     slotCount + " slots" + (retainedPriorType ?
-                    "; retained prior type because its generated baseline is unknown/modified" : "")));
-                if (semanticApply) typeOwnerVptr(row, structure);
+                    "; retained prior type because it is referenced, modified, or lacks a baseline" : "")));
             }
             catch (Exception exception) {
                 report.add(new ReportRow("table", addressText, "failed", proposedName,
@@ -500,12 +503,14 @@ public class STVTableApplier extends GhidraScript {
                     "owner already points to " + vtable.getPathName()));
                 continue;
             }
-            if (!generatedUnchanged) {
+            boolean brokenGeneratedVptr = brokenGeneratedVptr(component, offset);
+            if (!generatedUnchanged && !brokenGeneratedVptr) {
                 report.add(new ReportRow("owner_vptr", reportAddress, "skipped", ownerName,
                     "manual or modified owner layout preserved"));
                 continue;
             }
-            if (!replaceableGeneratedVptr(owner, component, offset)) {
+            if (!brokenGeneratedVptr &&
+                    !replaceableGeneratedVptr(owner, component, offset)) {
                 report.add(new ReportRow("owner_vptr", reportAddress, "skipped", ownerName,
                     "offset is not a generated generic vptr field"));
                 continue;
@@ -555,6 +560,19 @@ public class STVTableApplier extends GhidraScript {
                     !structure.getPathName().startsWith(VTABLES.getPath())) return structure;
         }
         return null;
+    }
+
+    private boolean brokenGeneratedVptr(DataTypeComponent component, int baseOffset) {
+        if (component == null || component.getOffset() != baseOffset ||
+                component.getLength() != pointerSize) return false;
+        DataType type = component.getDataType();
+        String path = text(type.getPathName());
+        String name = text(type.getName()).toLowerCase(Locale.ROOT);
+        if (!"/-BAD-".equals(path) && !name.contains("bad")) return false;
+        String comment = text(component.getComment());
+        return comment.contains("was deleted") &&
+            (comment.contains("owner_vtable_pointer") ||
+                comment.contains(COMMENT_MARKER) || comment.contains("VTable"));
     }
 
     private boolean replaceableGeneratedVptr(Structure owner, DataTypeComponent component,
@@ -948,7 +966,8 @@ public class STVTableApplier extends GhidraScript {
         String description = structure.getDescription();
         if (description == null || !description.contains(COMMENT_MARKER)) return false;
         String storedHash = storedLayoutHash(description);
-        return storedHash != null && storedHash.equals(structureLayoutHash(structure));
+        return storedHash != null && storedHash.equals(structureLayoutHash(structure)) &&
+            type.getParents().isEmpty();
     }
 
     private boolean safeToRename(Function function, String expected, String proposed) {

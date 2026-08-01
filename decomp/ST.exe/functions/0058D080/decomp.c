@@ -12,22 +12,22 @@ undefined4 __cdecl FUN_0058d080(int param_1)
 
   iVar5 = DAT_00811720 + -1;
   if (-1 < iVar5) {
-    piVar2 = (int *)(DAT_00811718 + iVar5 * 4);
+    piVar2 = (int *)((int)PTR_00811718 + iVar5 * 4);
     iVar1 = iVar5;
     do {
       if (param_1 == *piVar2) {
         iVar3 = iVar5 - iVar1;
         DAT_00811720 = iVar5;
         if (0 < iVar3) {
-          puVar6 = (undefined4 *)(DAT_00811718 + 4 + iVar1 * 4);
-          puVar7 = (undefined4 *)(DAT_00811718 + iVar1 * 4);
+          puVar6 = &PTR_00811718->field_0004 + iVar1;
+          puVar7 = &PTR_00811718->field_0000 + iVar1;
           for (; iVar3 != 0; iVar3 = iVar3 + -1) {
             *puVar7 = *puVar6;
             puVar6 = puVar6 + 1;
             puVar7 = puVar7 + 1;
           }
-          puVar6 = (undefined4 *)(DAT_0081171c + 4 + iVar1 * 4);
-          puVar7 = (undefined4 *)(DAT_0081171c + iVar1 * 4);
+          puVar6 = &PTR_0081171c->field_0004 + iVar1;
+          puVar7 = &PTR_0081171c->field_0000 + iVar1;
           for (uVar4 = DAT_00811720 - iVar1 & 0x3fffffff; uVar4 != 0; uVar4 = uVar4 - 1) {
             *puVar7 = *puVar6;
             puVar6 = puVar6 + 1;
@@ -40,10 +40,10 @@ undefined4 __cdecl FUN_0058d080(int param_1)
           }
         }
         if (DAT_00811720 == 0) {
-          FreeAndNull((void **)&DAT_00811718);
-          DAT_00811718 = 0;
-          FreeAndNull((void **)&DAT_0081171c);
-          DAT_0081171c = 0;
+          FreeAndNull(&PTR_00811718);
+          PTR_00811718 = (AnonPointee_TLOBaseTy_0607 *)0x0;
+          FreeAndNull(&PTR_0081171c);
+          PTR_0081171c = (AnonPointee_TLOBaseTy_0607 *)0x0;
         }
         return 1;
       }

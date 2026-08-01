@@ -54,12 +54,12 @@ _EnumMines(int param_1,short param_2,char param_3,byte *param_4,short param_5,sh
     RaiseInternalException(iVar3,0,"E:\\__titans\\ai\\ai_mdef.cpp",0x43a);
     return iVar3;
   }
-  if (PTR_007fa158 == (DArrayTy *)0x0) {
+  if (g_array_007FA158 == (DArrayTy *)0x0) {
     RaiseInternalException
               (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_mdef.cpp",0x41f);
   }
-  uVar9 = PTR_007fa158->count - 1;
-  pDVar8 = PTR_007fa158;
+  uVar9 = g_array_007FA158->count - 1;
+  pDVar8 = g_array_007FA158;
   if ((int)uVar9 < 0) {
     g_currentExceptionFrame = local_6c.previous;
     return local_18;
@@ -75,7 +75,7 @@ _EnumMines(int param_1,short param_2,char param_3,byte *param_4,short param_5,sh
     this = (STFishC *)*puVar4;
     if (((this != (STFishC *)0x0) && (this->field_0024 == param_1)) &&
        ((local_10 = uVar9, dVar5 = this->slot_2C(), param_2 == 0 ||
-        (pDVar8 = PTR_007fa158, (int)param_2 == dVar5)))) {
+        (pDVar8 = g_array_007FA158, (int)param_2 == dVar5)))) {
       iVar3 = 1;
       local_14 = 1;
       if ((param_4 != (byte *)0x0) && (*param_4 != 0)) {
@@ -104,11 +104,11 @@ LAB_00678362:
           local_14 = 0;
         }
       }
-      pDVar8 = PTR_007fa158;
+      pDVar8 = g_array_007FA158;
       uVar9 = local_10;
       if ((iVar3 != 0) &&
          ((local_5 == -1 ||
-          (iVar7 = this->vfunc_6C(), pDVar8 = PTR_007fa158, uVar9 = local_10,
+          (iVar7 = this->vfunc_6C(), pDVar8 = g_array_007FA158, uVar9 = local_10,
           local_5 == iVar7)))) {
         if ((0 < param_8) &&
            (((0 < param_9 && (0 < param_10)) &&
@@ -119,11 +119,11 @@ LAB_00678362:
                (iVar3 = local_14, (int)param_7 + (int)param_10 <= (int)local_c)))))))))) {
           iVar3 = 0;
         }
-        pDVar8 = PTR_007fa158;
+        pDVar8 = g_array_007FA158;
         uVar9 = local_10;
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         if (((iVar3 != 0) && (param_11 != (undefined *)0x0)) &&
-           (iVar3 = (*(code *)param_11)(param_1,local_10,this,param_12), pDVar8 = PTR_007fa158,
+           (iVar3 = (*(code *)param_11)(param_1,local_10,this,param_12), pDVar8 = g_array_007FA158,
            uVar9 = local_10, iVar3 != 0)) {
           g_currentExceptionFrame = local_6c.previous;
           return -1;

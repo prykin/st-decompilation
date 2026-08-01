@@ -10,14 +10,14 @@ undefined4 * __thiscall FUN_0063cff0(void *this,int *param_1)
   byte *puVar5;
   undefined4 *local_10;
   uint local_c;
-  int local_8;
+  uint local_8;
 
   iVar2 = *(int *)((int)this + 0x336);
   local_8 = 0x152;
   if (iVar2 != 0) {
     local_8 = *(int *)(iVar2 + 0xc) * *(int *)(iVar2 + 8) + 0x172;
   }
-  puVar1 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(local_8);
+  puVar1 = Library::DKW::LIB::MemAlloc(local_8);
   *(undefined4 *)((int)this + 0x249) = 1;
   *(undefined4 *)((int)this + 0x23d) = 2;
   if (this == (void *)0x0) {

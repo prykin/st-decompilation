@@ -43,19 +43,20 @@ _EnumArt(short param_1,byte *param_2,short param_3,short param_4,short param_5,s
     RaiseInternalException(iVar3,0,"E:\\__titans\\ai\\ai_mdef.cpp",0x3fd);
     return iVar3;
   }
-  if (PTR_007fa154 == (DArrayTy *)0x0) {
+  if (g_array_007FA154 == (DArrayTy *)0x0) {
     RaiseInternalException
               (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_mdef.cpp",0x3e1);
   }
-  local_10 = PTR_007fa154->count - 1;
+  local_10 = g_array_007FA154->count - 1;
   if ((int)local_10 < 0) {
     g_currentExceptionFrame = local_6c.previous;
     return local_18;
   }
   do {
-    if (local_10 < PTR_007fa154->count) {
-      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(PTR_007fa154, local_10) (runtime stride) */
-      puVar4 = (undefined4 *)(PTR_007fa154->elementSize * local_10 + (int)PTR_007fa154->data);
+    if (local_10 < g_array_007FA154->count) {
+      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(g_array_007FA154, local_10) (runtime stride) */
+      puVar4 = (undefined4 *)
+               (g_array_007FA154->elementSize * local_10 + (int)g_array_007FA154->data);
     }
     else {
       puVar4 = (undefined4 *)0x0;

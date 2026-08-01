@@ -112,7 +112,7 @@ int __thiscall AiFltClassTy::GetMessage(AiFltClassTy *this,STMessage *message)
     }
     else if (SVar1 == MESS_SHARED_010F) {
       local_8 = (AnonShape_0060EA30_DCEB68AD *)0x0;
-      local_c = (byte *)PrepareToSave(local_10,(uint *)&local_8);
+      local_c = PrepareToSave(local_10,(uint *)&local_8);
       STPlaySystemC::SaveObjData(g_playSystem_00802A38,this_00->field_0018,local_c,local_8);
       if (local_c != (byte *)0x0) {
         FreeAndNull(&local_c);

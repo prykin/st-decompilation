@@ -41,7 +41,7 @@ byte * __cdecl BossDataPack(uint *param_1,undefined4 *param_2,int param_3,uint *
     uVar7 = *(uint *)((int)puVar3 + 0x4a);
     puVar8 = puVar3 + 0x21;
     memmove(puVar8, param_2, uVar7); /* compiler REP MOVS byte copy */
-    *(byte **)((int)puVar3 + 0x46) = (byte *)((int)(puVar3 + 0x21) + (-0x84 - (int)puVar3));
+    *(byte **)((int)puVar3 + 0x46) = (byte *)0x0;
     g_currentExceptionFrame = local_4c.previous;
     return (byte *)puVar3;
   }

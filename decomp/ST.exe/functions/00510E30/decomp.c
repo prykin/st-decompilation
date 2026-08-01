@@ -144,7 +144,7 @@ LAB_00510fa9:
           local_17 = 0;
           local_16 = 0;
           local_15 = 0;
-          Library::DKW::TBL::FUN_006ae1c0(&pDVar5->flags,&local_28);
+          Library::DKW::TBL::DArrayAppend(pDVar5,&local_28);
         }
       }
       local_8 = local_8 + 1;
@@ -200,11 +200,11 @@ LAB_00510fa9:
   pCVar8 = thunk_FUN_00571240("BUT_HLPLINK",0);
   puVar9 = cMf32::RecGet(g_cMf32_00806790,1,pCVar8,piVar13,iVar4);
   this_00->field_024C = puVar9;
-  pcVar10 = (ccFntTy *)ccFntTy::operator_new(0x19d,*(int *)&PTR_00802a28->field_0x28);
+  pcVar10 = (ccFntTy *)ccFntTy::operator_new(0x19d,g_interSystem_00802A28->field_0028);
   this_00->field_01E0 = pcVar10;
   pcVar10->field_0058 = 0;
   pcVar10->field_005C = 0;
-  pcVar10 = (ccFntTy *)ccFntTy::operator_new(0x19d,*(int *)&PTR_00802a28->field_0x2c);
+  pcVar10 = (ccFntTy *)ccFntTy::operator_new(0x19d,(ccFntTy *)g_interSystem_00802A28->field_002C);
   this_00->field_01E4 = pcVar10;
   pcVar10->field_0058 = 1;
   pcVar10->field_005C = 0;

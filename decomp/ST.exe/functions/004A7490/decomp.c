@@ -65,7 +65,7 @@ void __thiscall STGroupBoatC::ReMakePatrolPoints(STGroupBoatC *this,int param_1)
       local_22 = 0;
       local_26 = 0;
       local_28 = local_18;
-      Library::DKW::TBL::FUN_006ae140(&array->flags,uVar7,(undefined4 *)&local_2c);
+      Library::DKW::TBL::DArrayPut(array,uVar7,&local_2c);
       pDVar4 = this->field_0226;
       uVar7 = uVar7 + 1;
     } while ((int)uVar7 < (int)pDVar4->count);
@@ -120,8 +120,8 @@ void __thiscall STGroupBoatC::ReMakePatrolPoints(STGroupBoatC *this,int param_1)
         else {
           local_32 = iVar6;
           local_26 = iVar6;
-          Library::DKW::TBL::FUN_006ae140(&array->flags,local_8,(undefined4 *)&local_2c);
-          Library::DKW::TBL::FUN_006ae140(&array->flags,local_c,(undefined4 *)&local_3c);
+          Library::DKW::TBL::DArrayPut(array,local_8,&local_2c);
+          Library::DKW::TBL::DArrayPut(array,local_c,&local_3c);
         }
         local_8 = local_8 + 1;
         local_c = local_c + 1;
@@ -216,7 +216,7 @@ LAB_004a792e:
   if (0 < (int)array->count) {
     do {
       DArrayGetElement(array,uVar7,&local_2c);
-      Library::DKW::TBL::FUN_006ae140(&this->field_022A->flags,uVar7,(undefined4 *)&local_2c);
+      Library::DKW::TBL::DArrayPut(this->field_022A,uVar7,&local_2c);
       uVar7 = uVar7 + 1;
     } while ((int)uVar7 < (int)array->count);
   }

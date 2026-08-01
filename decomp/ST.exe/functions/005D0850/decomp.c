@@ -42,7 +42,7 @@ void __thiscall SettMapMTy::ChangePlayerColor(SettMapMTy *this,uint param_1,char
           thunk_FUN_0056a840(&DAT_00807620,element_1f84->state);
         }
         element_1f84->state = param_2;
-        if ((element_1f84->field_0004 == '\x02') && (element_1f84->data == DAT_0080877f)) {
+        if ((element_1f84->field_0004 == '\x02') && (element_1f84->element == DAT_0080877f)) {
           DAT_0080874d = param_2;
         }
         pSVar4 = this_00->field_1F84;
@@ -58,7 +58,7 @@ void __thiscall SettMapMTy::ChangePlayerColor(SettMapMTy *this,uint param_1,char
             }
             if ((element_1f84 == (SettMapMTy_field_1F84Element *)0x0) || (element_1f84->field_0000 != '\0')) break;
             element_1f84->state = param_2;
-            if (element_1f84->data == DAT_0080877f) {
+            if (element_1f84->element == DAT_0080877f) {
               DAT_0080874d = param_2;
             }
             pSVar4 = this_00->field_1F84;

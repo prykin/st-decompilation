@@ -1548,7 +1548,7 @@ thunk_address	status	proposed_qualified_name	details
 00403076	disabled	FUN_004b71f0	apply=0
 0040307B	disabled	FUN_0042aac0	apply=0
 00403080	disabled	AiTactClassTy::FUN_0068e730	apply=0
-00403085	disabled	FUN_00577690	apply=0
+00403085	disabled	GameSystemC::sub_00577690	apply=0
 0040308A	disabled	FUN_006a2e50	apply=0
 0040308F	disabled	FUN_006823a0	apply=0
 00403094	disabled	FUN_004e40c0	apply=0
@@ -2923,7 +2923,7 @@ thunk_address	status	proposed_qualified_name	details
 00404CE1	disabled	CampaignTy::sub_005925A0	apply=0
 00404CEB	disabled	FUN_004aaf60	apply=0
 00404CF5	disabled	FUN_006a1620	apply=0
-00404CFA	disabled	STGroupBoatC::SetOrderData	apply=0
+00404CFA	disabled	STGroupBoatC::sub_00498D20	apply=0
 00404CFF	disabled	STBoatC::Scout	apply=0
 00404D04	disabled	FUN_004d8530	apply=0
 00404D09	disabled	JumpManagC::sub_006179D0	apply=0

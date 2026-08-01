@@ -16,7 +16,7 @@ void __thiscall CGenerate::sub_006A0470(CGenerate *this)
   uint uVar7;
   uint uVar8;
   int iVar9;
-  int iVar10;
+  void *pvVar10;
   undefined4 uVar11;
   byte local_14;
   int local_10;
@@ -27,7 +27,7 @@ void __thiscall CGenerate::sub_006A0470(CGenerate *this)
   this->field_5703 = iVar6;
   iVar2 = this->field_0008[1] * 0x28;
   this->field_5707 = iVar2;
-  puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(iVar6 * iVar2);
+  puVar3 = Library::DKW::LIB::MemAlloc(iVar6 * iVar2);
   uVar7 = this->field_5703 * this->field_5707;
   this->field_56FF = puVar3;
   for (uVar8 = uVar7 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
@@ -64,9 +64,9 @@ void __thiscall CGenerate::sub_006A0470(CGenerate *this)
                 if (pcVar5 != (char *)0x0) {
                   uVar11 = this->field_5707;
                   iVar9 = this->field_5703;
-                  iVar10 = this->field_56FF;
+                  pvVar10 = this->field_56FF;
 LAB_006a05f8:
-                  thunk_FUN_006a2e50(iVar10,local_8,iVar2,iVar9,uVar11,pcVar5,0x28,0x28);
+                  thunk_FUN_006a2e50((int)pvVar10,local_8,iVar2,iVar9,uVar11,pcVar5,0x28,0x28);
                 }
               }
               else {
@@ -76,7 +76,7 @@ LAB_006a05f8:
                 if (pcVar5 != (char *)0x0) {
                   iVar9 = this->field_5703;
                   uVar11 = this->field_5707;
-                  iVar10 = this->field_56FF;
+                  pvVar10 = this->field_56FF;
                   goto LAB_006a05f8;
                 }
               }

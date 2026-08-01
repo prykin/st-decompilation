@@ -12,15 +12,15 @@
 byte * __thiscall STManBasisC::sub_005F1FA0(STManBasisC *this,int *param_1)
 
 {
-  int iVar1;
-  undefined4 uVar2;
-  byte *pbVar3;
-  uint uVar5;
-  uint *puVar6;
-  ushort **ppuVar7;
-  byte *pbVar8;
-  uint *puVar9;
-  byte *pbVar10;
+  uint size;
+  undefined4 uVar1;
+  byte *pbVar2;
+  uint uVar4;
+  uint *puVar5;
+  ushort **ppuVar6;
+  byte *pbVar7;
+  uint *puVar8;
+  byte *pbVar9;
   uint *local_14;
   byte *local_10;
   uint local_c;
@@ -44,42 +44,41 @@ byte * __thiscall STManBasisC::sub_005F1FA0(STManBasisC *this,int *param_1)
       this->field_003C = (DArrayTy *)0x0;
     }
   }
-  iVar1 = local_c + 0x30 + local_8;
-  pbVar3 = (byte *)Library::DKW::LIB::FUN_006aac70(iVar1);
-  uVar2 = DAT_00811788;
+  size = local_c + 0x30 + local_8;
+  pbVar2 = Library::DKW::LIB::MemAlloc(size);
+  uVar1 = DAT_00811788;
   this->field_002C = 2;
-  this->field_0034 = uVar2;
-  ppuVar7 = &this->field_0020;
-  pbVar8 = pbVar3;
-  memmove(pbVar8, ppuVar7, 0x28); /* compiler REP MOVS byte copy */
-  puVar6 = (uint *)(pbVar3 + 0x28);
+  this->field_0034 = uVar1;
+  ppuVar6 = &this->field_0020;
+  pbVar7 = pbVar2;
+  memmove(pbVar7, ppuVar6, 0x28); /* compiler REP MOVS byte copy */
+  puVar5 = (uint *)(pbVar2 + 0x28);
   if (local_8 != 0) {
-    *puVar6 = local_8;
-    pbVar8 = local_10;
-    pbVar10 = pbVar3 + 0x2c;
-    memmove(pbVar10, pbVar8, local_8); /* compiler REP MOVS byte copy */
-    uVar5 = 0;
-    uVar5 = 0;
+    *puVar5 = local_8;
+    pbVar7 = local_10;
+    pbVar9 = pbVar2 + 0x2c;
+    memmove(pbVar9, pbVar7, local_8); /* compiler REP MOVS byte copy */
+    uVar4 = 0;
     FreeAndNull(&local_10);
-    puVar6 = (uint *)(pbVar3 + 0x2c + local_8);
+    puVar5 = (uint *)(pbVar2 + 0x2c + local_8);
   }
   if (local_c != 0) {
-    *puVar6 = local_c;
-    puVar9 = local_14;
-    for (uVar5 = local_c >> 2; puVar6 = puVar6 + 1, uVar5 != 0; uVar5 = uVar5 - 1) {
-      *puVar6 = *puVar9;
-      puVar9 = puVar9 + 1;
+    *puVar5 = local_c;
+    puVar8 = local_14;
+    for (uVar4 = local_c >> 2; puVar5 = puVar5 + 1, uVar4 != 0; uVar4 = uVar4 - 1) {
+      *puVar5 = *puVar8;
+      puVar8 = puVar8 + 1;
     }
-    for (uVar5 = local_c & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-      *(byte *)puVar6 = (byte)*puVar9;
-      puVar9 = (uint *)((int)puVar9 + 1);
-      puVar6 = (uint *)((int)puVar6 + 1);
+    for (uVar4 = local_c & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
+      *(byte *)puVar5 = (byte)*puVar8;
+      puVar8 = (uint *)((int)puVar8 + 1);
+      puVar5 = (uint *)((int)puVar5 + 1);
     }
     FreeAndNull(&local_14);
-    *param_1 = iVar1;
-    return pbVar3;
+    *param_1 = size;
+    return pbVar2;
   }
-  *param_1 = iVar1;
-  return pbVar3;
+  *param_1 = size;
+  return pbVar2;
 }
 

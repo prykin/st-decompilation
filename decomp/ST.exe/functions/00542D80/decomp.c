@@ -23,22 +23,20 @@ void CreateInterSystem(void)
   if (errorCode == 0) {
     this = (InterSystemC *)Library::MSVCRT::FUN_0072e530(0x34);
     if (this == (InterSystemC *)0x0) {
-      PTR_00802a28 = (ccFntTy *)0x0;
+      g_interSystem_00802A28 = (InterSystemC *)0x0;
     }
     else {
-      PTR_00802a28 = (ccFntTy *)InterSystemC::InterSystemC(this,g_appClass_00806728);
+      g_interSystem_00802A28 = InterSystemC::InterSystemC(this,g_appClass_00806728);
     }
-    *(undefined4 *)&PTR_00802a28->field_0x20 = 0;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (*(code *)**(undefined4 **)PTR_00802a28)();
+    g_interSystem_00802A28->field_0020 = 0;
+    (*g_interSystem_00802A28->vtable->InitSystem)((SystemClassTy *)g_interSystem_00802A28);
     AppClassTy::AddChildSystem
-              ((AppClassTy *)&DAT_00807620,(SystemClassTy *)PTR_0081163c,
-               (SystemClassTy *)PTR_00802a28,0);
-    InterSystemC::CreateInterfObjects((InterSystemC *)PTR_00802a28);
+              ((AppClassTy *)&DAT_00807620,(SystemClassTy *)g_parentSystem_0081163C,
+               (SystemClassTy *)g_interSystem_00802A28,0);
+    InterSystemC::CreateInterfObjects(g_interSystem_00802A28);
     local_14 = 5;
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
-    (**(code **)(*(int *)PTR_00802a28 + 0x20))(local_24);
-    *(undefined4 *)&PTR_00802a28->field_0x20 = 1;
+    g_interSystem_00802A28->GetMessage((int)local_24);
+    g_interSystem_00802A28->field_0020 = 1;
     g_currentExceptionFrame = local_68.previous;
     return;
   }

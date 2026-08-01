@@ -49,7 +49,7 @@ STGroupBoatC::ReMakePVecAndTgtListExt(STGroupBoatC *this,char param_1,short para
           array = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,4,1);
           local_c = 0xffff;
           local_a = (undefined2)index;
-          Library::DKW::TBL::FUN_006ae1c0(&array->flags,(undefined4 *)&local_c);
+          Library::DKW::TBL::DArrayAppend(array,&local_c);
           ReMakePVecAndTgtList(this_00,array);
           DArrayDestroy(array);
           break;

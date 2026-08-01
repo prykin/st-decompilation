@@ -130,16 +130,16 @@ STAllPlayersC::GetGObjFromBox
                 if (iVar7 == 0x14) {
                   piVar3 = param_10;
                   if (param_8 != (int *)0x0) {
-                    Library::DKW::TBL::FUN_006ae1c0
-                              ((uint *)*param_8,(undefined4 *)((int)piVar1 + 0x32));
+                    Library::DKW::TBL::DArrayAppend
+                              ((DArrayTy *)*param_8,(void *)((int)piVar1 + 0x32));
                   }
                 }
                 else {
                   if ((iVar7 != 1000) && (iVar7 != 0x3e9)) goto LAB_0042b469;
                   piVar3 = param_11;
                   if (param_9 != (int *)0x0) {
-                    Library::DKW::TBL::FUN_006ae1c0
-                              ((uint *)*param_9,(undefined4 *)((int)piVar1 + 0x32));
+                    Library::DKW::TBL::DArrayAppend
+                              ((DArrayTy *)*param_9,(void *)((int)piVar1 + 0x32));
                   }
                 }
                 if (piVar3 != (int *)0x0) {

@@ -131,7 +131,7 @@ void __thiscall HelpPanelTy::SpecProc(HelpPanelTy *this,int param_1,int param_2,
         local_20 = 2;
         local_1f = GVar4;
         local_1b = param_2;
-        Library::DKW::TBL::FUN_006ae1c0((uint *)this_00->field_01D7,&local_30);
+        Library::DKW::TBL::DArrayAppend((DArrayTy *)this_00->field_01D7,&local_30);
         local_8 = local_8 + *(int *)(pbVar9 + 8);
       }
       ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
@@ -156,6 +156,7 @@ void __thiscall HelpPanelTy::SpecProc(HelpPanelTy *this,int param_1,int param_2,
       pcVar8 = pcVar11 + -uVar15;
       pcVar11 = (char *)&DAT_0080f33a;
       memmove(pcVar11, pcVar8, uVar15); /* compiler REP MOVS byte copy */
+      uVar10 = 0;
       ccFntTy::FormText(this_00->field_01E0,(char *)&DAT_0080f33a,&DAT_0080f33a,
                         " ,.;:!?/\\()[]{}",0x106,1);
       uVar14 = FUN_007113e0(this_00->field_01E0,&DAT_0080f33a);
@@ -218,7 +219,7 @@ void __thiscall HelpPanelTy::SpecProc(HelpPanelTy *this,int param_1,int param_2,
       local_20 = 3;
       local_1f = local_c;
       local_1b = param_2;
-      Library::DKW::TBL::FUN_006ae1c0((uint *)this_00->field_01D7,&local_30);
+      Library::DKW::TBL::DArrayAppend((DArrayTy *)this_00->field_01D7,&local_30);
       local_8 = local_8 + *(int *)(pbVar9 + 8);
       ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
       uVar15 = 3;

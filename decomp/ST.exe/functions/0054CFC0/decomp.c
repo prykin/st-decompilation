@@ -32,10 +32,10 @@ undefined4 __thiscall STPlaySystemC::InitSystem(STPlaySystemC *this,int param_1)
     SystemClassTy::InitSystem((SystemClassTy *)local_8);
     pSVar3->field_0039 = (AnonPointee_STPlaySystemC_0039 *)0x0;
     pSVar3->field_0045 = 7;
-    pAVar4 = (AnonPointee_STPlaySystemC_003D *)Library::DKW::LIB::FUN_006aac70(7);
+    pAVar4 = Library::DKW::LIB::MemAlloc(7);
     pSVar3->field_003D = pAVar4;
     pSVar3->field_0053 = 0x1400;
-    pvVar5 = (void *)Library::DKW::LIB::FUN_006aac70(0x1400);
+    pvVar5 = Library::DKW::LIB::MemAlloc(0x1400);
     pSVar3->field_004F = pvVar5;
     pSVar3->field_0041 = 0;
     pSVar3->field_0049 = 0;

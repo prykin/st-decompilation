@@ -16,7 +16,7 @@ void __thiscall FUN_004a0ee0(void *this,ushort param_1)
       if (local_18 == param_1) {
         local_18 = 0xffff;
         local_1c = 0;
-        Library::DKW::TBL::FUN_006ae140(*(uint **)((int)this + 0x22e),index,&local_1c);
+        Library::DKW::TBL::DArrayPut(*(DArrayTy **)((int)this + 0x22e),index,&local_1c);
       }
       array = *(DArrayTy **)((int)this + 0x22e);
       index = index + 1;

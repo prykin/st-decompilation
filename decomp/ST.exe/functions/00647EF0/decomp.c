@@ -3,16 +3,19 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\ai\ai_boss.cpp
-   AiBossClassTy::PrepareToSave */
+   AiBossClassTy::PrepareToSave
 
-undefined4 * __thiscall AiBossClassTy::PrepareToSave(AiBossClassTy *this,uint *param_1)
+   [STPrototypeApplier] Propagated return.
+   Evidence: 00647EF0 returns used as parameter 2 of STPlaySystemC::SaveObjData @ 0064811E */
+
+byte * __thiscall AiBossClassTy::PrepareToSave(AiBossClassTy *this,uint *param_1)
 
 {
   code *pcVar1;
   AiBossClassTy *pAVar2;
   int errorCode;
   int iVar3;
-  undefined4 *puVar4;
+  byte *pbVar4;
   uint *puVar5;
   InternalExceptionFrame local_58;
   AiBossClassTy *local_14;
@@ -41,7 +44,7 @@ undefined4 * __thiscall AiBossClassTy::PrepareToSave(AiBossClassTy *this,uint *p
       FreeAndNull(&local_8);
     }
     g_currentExceptionFrame = local_58.previous;
-    return (undefined4 *)local_c;
+    return local_c;
   }
   g_currentExceptionFrame = local_58.previous;
   if (local_8 != (undefined4 *)0x0) {
@@ -56,6 +59,6 @@ undefined4 * __thiscall AiBossClassTy::PrepareToSave(AiBossClassTy *this,uint *p
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(errorCode,0,"E:\\__titans\\ai\\ai_boss.cpp",0x4d);
-  return (undefined4 *)0x0;
+  return (byte *)0x0;
 }
 

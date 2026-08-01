@@ -21,13 +21,13 @@ int __thiscall STGroupC::GetMessage(STGroupC *this,STMessage *message)
   int iVar2;
   uint *puVar3;
   int iVar4;
-  uint uVar5;
-  undefined4 *puVar6;
+  uint index;
+  void *element;
   InternalExceptionFrame local_50;
   int local_c;
   STGroupC *local_8;
 
-  uVar5 = 0;
+  index = 0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_8 = this;
@@ -55,12 +55,12 @@ int __thiscall STGroupC::GetMessage(STGroupC *this,STMessage *message)
       this_00->field_0029 = puVar3;
       local_c = *(int *)(iVar2 + 0x1c);
       if (0 < local_c) {
-        puVar6 = (undefined4 *)(iVar2 + 0x24);
+        element = (void *)(iVar2 + 0x24);
         do {
-          Library::DKW::TBL::FUN_006ae140(this_00->field_0029,uVar5,puVar6);
-          uVar5 = uVar5 + 1;
-          puVar6 = puVar6 + 1;
-        } while ((int)uVar5 < local_c);
+          Library::DKW::TBL::DArrayPut((DArrayTy *)this_00->field_0029,index,element);
+          index = index + 1;
+          element = (void *)((int)element + 4);
+        } while ((int)index < local_c);
       }
       STAllPlayersC::RegisterGroup
                 (g_allPlayers_007FA174,this_00->field_0024,this_00->field_0025,(int)this_00);

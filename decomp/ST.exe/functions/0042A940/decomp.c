@@ -15,11 +15,11 @@ STAllPlayersC * __thiscall STAllPlayersC::STAllPlayersC(STAllPlayersC *this)
   pSVar1 = g_playerRuntime;
   for (iVar2 = 0x14d5; iVar2 != 0; iVar2 = iVar2 + -1) {
     *(undefined4 *)pSVar1 = 0;
-    pSVar1 = (STPlayerRuntimeRecord *)((int)&pSVar1->aiPlayer + 3);
+    pSVar1 = (STPlayerRuntimeRecord *)&pSVar1->field_0x4;
   }
   pSVar1 = g_playerRuntime;
   do {
-    pSVar1->raceId = 0;
+    pSVar1->field0_0x0 = 0;
     pSVar1 = pSVar1 + 1;
   } while ((int)pSVar1 < 0x7fa130);
   return this;

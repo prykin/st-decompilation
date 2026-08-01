@@ -31,7 +31,7 @@ undefined4 __thiscall FUN_00423c70(void *this,short param_1)
                         (g_allPlayers_007FA174,*(char *)((int)this + 0x24),(ushort)local_8,CASE_1);
     thunk_FUN_00419c30(this_00,0xffff);
     local_8 = 0xffff;
-    Library::DKW::TBL::FUN_006ae140(*(uint **)((int)this + 0x29),uVar3 & 0xffff,&local_8);
+    Library::DKW::TBL::DArrayPut(*(DArrayTy **)((int)this + 0x29),uVar3 & 0xffff,&local_8);
     *(short *)((int)this + 0x27) = *(short *)((int)this + 0x27) + -1;
     if (*(undefined4 **)((int)this + 0x1c) != (undefined4 *)0x0) {
       local_18 = 0x5d96;

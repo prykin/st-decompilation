@@ -17,6 +17,7 @@ import java.util.Map;
 import ghidra.app.script.GhidraScript;
 import ghidra.program.model.data.DataType;
 import ghidra.program.model.data.DataTypeManager;
+import ghidra.program.model.data.Array;
 import ghidra.program.model.data.Pointer;
 import ghidra.program.model.data.Structure;
 import ghidra.program.model.listing.Data;
@@ -77,12 +78,13 @@ public class STTypeLifecycleApplier extends GhidraScript {
             }
             int parents = type.getParents().size();
             int functionUses = functionUses(type), listingUses = listingUses(type);
+            boolean derivedView = derivedFromView(type);
             boolean baseline = type.getLength() == Integer.parseInt(row.get("expected_length")) &&
                 parents == Integer.parseInt(row.get("expected_parents")) &&
                 functionUses == Integer.parseInt(row.get("expected_function_uses")) &&
                 listingUses == Integer.parseInt(row.get("expected_listing_uses")) &&
                 clean(type.getDescription()).equals(row.get("expected_description"));
-            if (!baseline || text(type.getDescription()).contains(ANCHOR)) {
+            if (!baseline || text(type.getDescription()).contains(ANCHOR) && !derivedView) {
                 report.add(new Report(row.get("action"), path, "preserved",
                     "stale baseline or semantic anchor"));
                 return;
@@ -111,9 +113,9 @@ public class STTypeLifecycleApplier extends GhidraScript {
             else if ("remove".equals(row.get("action"))) {
                 String description = text(type.getDescription());
                 boolean anonymous = disposableAnonymous(type, description);
-                if (!(description.contains(VIEW) || anonymous) ||
+                if (!(description.contains(VIEW) || derivedView || anonymous) ||
                         parents != 0 ||
-                        !removalProvenance(text(type.getDescription())) ||
+                        !(removalProvenance(text(type.getDescription())) || derivedView) ||
                         functionUses != 0 || listingUses != 0) {
                     report.add(new Report("remove", path, "preserved",
                         "type is no longer an unreferenced view"));
@@ -123,6 +125,8 @@ public class STTypeLifecycleApplier extends GhidraScript {
                 report.add(new Report("remove", path, "removed",
                     anonymous ?
                         "unreferenced hash/script-owned anonymous type" :
+                    derivedView ?
+                        "unreferenced Pointer/Array derivative of view type" :
                         "unreferenced script-owned view"));
             }
             else report.add(new Report(row.get("action"), path, "preserved",
@@ -161,6 +165,17 @@ public class STTypeLifecycleApplier extends GhidraScript {
         if (actual instanceof Pointer pointer && pointer.getDataType() != null)
             return uses(pointer.getDataType(), wanted);
         return actual.dependsOn(wanted);
+    }
+    private boolean derivedFromView(DataType type) {
+        if (type instanceof Array array)
+            return viewOrDerivative(array.getDataType());
+        if (type instanceof Pointer pointer && pointer.getDataType() != null)
+            return viewOrDerivative(pointer.getDataType());
+        return false;
+    }
+    private boolean viewOrDerivative(DataType type) {
+        if (text(type.getDescription()).contains(VIEW)) return true;
+        return derivedFromView(type);
     }
     private boolean hiddenThis(DataType type) {
         return type instanceof Structure &&

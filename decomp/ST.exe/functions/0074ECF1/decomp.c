@@ -1,5 +1,13 @@
 
-int FUN_0074ecf1(int *param_1,undefined8 param_2)
+/* [STAbiConsistencyApplier] x87_double_parameter_slots target=function:-1: prototype=int __stdcall
+   FUN_0074ecf1(int * param_1, double param_2) Evidence: x87 double-width accesses or exact split
+   stores into an independently typed double field prove physical EBP slot boundaries;
+   merged_slots={1=1}; sites=0074ED0B FLD double ptr [EBP + 0xc]
+   [STAbiConsistencyApplier] x87_stack_storage_migration target=function:-1: prototype=int __stdcall
+   FUN_0074ecf1(int * param_1, double param_2) Evidence: retire script-owned dynamic x87 storage;
+   observed_ebp_offsets=[12]; custom_storage=[Stack[0x4]:4, Stack[0x8]:8] */
+
+int FUN_0074ecf1(int *param_1,double param_2)
 
 {
   int iVar1;

@@ -272,6 +272,7 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
           pcVar8 = pcVar16 + -uVar12;
           pcVar16 = &local_10->field_006C;
           memmove(pcVar16, pcVar8, uVar12); /* compiler REP MOVS byte copy */
+          uVar13 = 0;
           uVar12 = 0xffffffff;
           pbVar14 = local_2f8;
           do {
@@ -316,8 +317,7 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
               bVar18 = local_14 == local_8;
             }
             if (bVar18) {
-              Library::DKW::TBL::FUN_006ae1c0
-                        (&this_01->field_01ED->flags,&local_1f4.ftLastWriteTime.dwLowDateTime);
+              Library::DKW::TBL::DArrayAppend(this_01->field_01ED,&local_1f4.ftLastWriteTime);
               uVar12 = 0xffffffff;
               pcVar8 = PTR_DAT_0079ad00;
               do {

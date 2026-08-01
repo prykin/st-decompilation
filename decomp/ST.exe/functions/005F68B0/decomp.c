@@ -10,13 +10,14 @@ int __thiscall STColl3C::sub_005F68B0(STColl3C *this,undefined4 *param_1)
 
 {
   ushort *puVar1;
-  int iVar2;
+  void *pvVar2;
   int iVar3;
-  uint uVar4;
-  byte *puVar5;
-  int *piVar6;
-  byte *puVar7;
-  int iVar8;
+  int iVar4;
+  uint uVar5;
+  byte *puVar6;
+  int *piVar7;
+  byte *puVar8;
+  uint size;
   void *local_28;
   undefined4 local_24;
   undefined4 local_20;
@@ -24,24 +25,24 @@ int __thiscall STColl3C::sub_005F68B0(STColl3C *this,undefined4 *param_1)
   undefined4 local_18;
   undefined4 local_14;
   undefined4 local_10;
-  int local_c;
+  uint local_c;
   undefined4 *local_8;
 
   if (this == (STColl3C *)0x0) {
-    puVar7 = (byte *)0x0;
+    puVar8 = (byte *)0x0;
   }
   else {
-    puVar7 = (byte *)&this->field_0x231;
+    puVar8 = (byte *)&this->field_0x231;
   }
-  puVar5 = (byte *)(param_1);
-  memmove(puVar7, puVar5, 0xc2); /* compiler REP MOVS byte copy */
+  puVar6 = (byte *)(param_1);
+  memmove(puVar8, puVar6, 0xc2); /* compiler REP MOVS byte copy */
   this->field_02B7 = -1;
-  local_28 = (void *)Library::DKW::LIB::FUN_006aac70(0x44);
-  iVar2 = 0;
+  local_28 = Library::DKW::LIB::MemAlloc(0x44);
+  iVar3 = 0;
   do {
-    *(undefined4 *)(iVar2 + (int)local_28) = DAT_00806774;
-    iVar2 = iVar2 + 4;
-  } while (iVar2 < 0x44);
+    *(undefined4 *)(iVar3 + (int)local_28) = DAT_00806774;
+    iVar3 = iVar3 + 4;
+  } while (iVar3 < 0x44);
   local_24 = 0;
   local_20 = 0;
   local_1c = 0;
@@ -55,24 +56,24 @@ int __thiscall STColl3C::sub_005F68B0(STColl3C *this,undefined4 *param_1)
                *(ushort *)&this->field_02C9);
   FreeAndNull(&local_28);
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  iVar2 = *(int *)((int)param_1 + 0xc2);
-  piVar6 = (int *)(&((AnonShape_004AD790_77673787 *)((int)param_1 + 0xc6))->field_0x0 + iVar2);
-  STAllPlayersC::RestoreGObjData((STAllPlayersC *)this,piVar6 + 1);
-  puVar7 = (byte *)((int)(piVar6 + 1) + *piVar6);
-  iVar2 = iVar2 + 0xca + *piVar6;
+  iVar3 = *(int *)((int)param_1 + 0xc2);
+  piVar7 = (int *)(&((AnonShape_004AD790_77673787 *)((int)param_1 + 0xc6))->field_0x0 + iVar3);
+  STAllPlayersC::RestoreGObjData((STAllPlayersC *)this,piVar7 + 1);
+  puVar8 = (byte *)((int)(piVar7 + 1) + *piVar7);
+  iVar3 = iVar3 + 0xca + *piVar7;
   if (this->field_02E6 == (ushort *)0x0) {
-    return iVar2;
+    return iVar3;
   }
-  local_8 = puVar7;
-  puVar1 = (ushort *)Library::DKW::LIB::FUN_006aac70(0x6c);
+  local_8 = puVar8;
+  puVar1 = Library::DKW::LIB::MemAlloc(0x6c);
   this->field_02E6 = puVar1;
-  for (iVar3 = 0x1b; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *(undefined4 *)puVar1 = *puVar7;
-    puVar7 = (byte *)(puVar7 + 1);
+  for (iVar4 = 0x1b; iVar4 != 0; iVar4 = iVar4 + -1) {
+    *(undefined4 *)puVar1 = *puVar8;
+    puVar8 = (byte *)(puVar8 + 1);
     puVar1 = puVar1 + 2;
   }
   puVar1 = this->field_02E6;
-  iVar2 = iVar2 + 0x6c;
+  iVar3 = iVar3 + 0x6c;
   puVar1[0] = 0;
   puVar1[1] = 0;
   puVar1 = this->field_02E6;
@@ -81,25 +82,25 @@ int __thiscall STColl3C::sub_005F68B0(STColl3C *this,undefined4 *param_1)
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (*(int *)(this->field_02E6 + 0x2c) != 0) {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    uVar4 = *(uint *)(this->field_02E6 + 0x2e);
-    iVar8 = uVar4 * 4;
-    local_c = iVar8;
-    iVar3 = Library::DKW::LIB::FUN_006aac70(iVar8);
-    *(int *)(this->field_02E6 + 0x2c) = iVar3;
+    uVar5 = *(uint *)(this->field_02E6 + 0x2e);
+    size = uVar5 * 4;
+    local_c = size;
+    pvVar2 = Library::DKW::LIB::MemAlloc(size);
+    *(void **)(this->field_02E6 + 0x2c) = pvVar2;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    puVar7 = (byte *)(*(undefined4 **)(this->field_02E6 + 0x2c));
-    for (uVar4 = uVar4 & 0x3fffffff; uVar4 != 0; uVar4 = uVar4 - 1) {
-      *puVar7 = *local_8;
+    puVar8 = (byte *)(*(undefined4 **)(this->field_02E6 + 0x2c));
+    for (uVar5 = uVar5 & 0x3fffffff; uVar5 != 0; uVar5 = uVar5 - 1) {
+      *puVar8 = *local_8;
       local_8 = local_8 + 1;
-      puVar7 = (byte *)(puVar7 + 1);
+      puVar8 = (byte *)(puVar8 + 1);
     }
-    for (iVar3 = 0; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *(undefined1 *)puVar7 = *(undefined1 *)local_8;
+    for (iVar4 = 0; iVar4 != 0; iVar4 = iVar4 + -1) {
+      *(undefined1 *)puVar8 = *(undefined1 *)local_8;
       local_8 = (undefined4 *)((int)local_8 + 1);
-      puVar7 = (byte *)((int)puVar7 + 1);
+      puVar8 = (byte *)((int)puVar8 + 1);
     }
-    return iVar2 + iVar8;
+    return iVar3 + size;
   }
-  return iVar2;
+  return iVar3;
 }
 

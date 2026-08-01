@@ -84,8 +84,7 @@ int __thiscall STMBombC::GetMessage(STMBombC *this,STMessage *message)
   if (SVar2 == MESS_SHARED_010F) {
     local_20 = (byte *)STT3DSprC::SaveSpr((STT3DSprC *)&this_00->field_01D5,&local_10);
     local_1c = (byte *)STAllPlayersC::SaveGObjData((STAllPlayersC *)this_00,(int *)&local_18);
-    local_14 = (AnonShape_00588BC0_84BDD66C *)
-               Library::DKW::LIB::FUN_006aac70(local_18 + 0x87 + local_10);
+    local_14 = Library::DKW::LIB::MemAlloc(local_18 + 0x87 + local_10);
     if (local_20 == (byte *)0x0) {
       g_currentExceptionFrame = local_8c.previous;
       return 0;
@@ -143,6 +142,7 @@ int __thiscall STMBombC::GetMessage(STMBombC *this,STMessage *message)
     pbVar11 = local_20;
     pbVar14 = &local_14->field_0x83;
     memmove(pbVar14, pbVar11, local_10); /* compiler REP MOVS byte copy */
+    uVar8 = 0;
     *(uint *)(&local_14->field_0x83 + local_10) = local_18;
     pbVar11 = local_1c;
     pbVar14 = &local_14[1].field_0x3 + local_10;
@@ -172,12 +172,8 @@ int __thiscall STMBombC::GetMessage(STMBombC *this,STMessage *message)
       *(undefined4 *)&this_00->field_0x26f = 0xff;
       puVar10 = (byte *)((message->arg0).ptr);
       puVar12 = (byte *)&this_00->field_0x27c;
-      for (iVar6 = 10; iVar6 != 0; iVar6 = iVar6 + -1) {
-        *puVar12 = *puVar10;
-        puVar10 = (byte *)(puVar10 + 1);
-        puVar12 = (byte *)(puVar12 + 1);
-      }
-      *(undefined2 *)puVar12 = *(undefined2 *)puVar10;
+      memmove(puVar12, puVar10, 0x2a); /* compiler REP MOVS byte copy */
+      iVar6 = 0;
       uVar8 = *(int *)&this_00->field_0x1c * 0x41c64e6d + 0x3039;
       *(uint *)&this_00->field_0x1c = uVar8;
       *(uint *)((int)&this_00->field_0259 + 2) = (uVar8 >> 0x10) % 0x19 - 0xc;
@@ -330,7 +326,7 @@ int __thiscall STMBombC::GetMessage(STMBombC *this,STMessage *message)
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     this_00->field_0x277 = *(undefined1 *)((int)local_48 + 0x7a);
     *(undefined4 *)&this_00->field_0x278 = *(undefined4 *)((int)local_48 + 0x7b);
-    local_40 = (void *)Library::DKW::LIB::FUN_006aac70(0x44);
+    local_40 = Library::DKW::LIB::MemAlloc(0x44);
     if (local_40 == (void *)0x0) {
       g_currentExceptionFrame = local_8c.previous;
       return 0;

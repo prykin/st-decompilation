@@ -12,8 +12,9 @@ ST3DSMAPContext::sub_006E8660
           uint param_6,uint param_7,uint param_8)
 
 {
-  int iVar1;
+  void *pvVar1;
   undefined4 *puVar2;
+  int iVar3;
   AnonShape_006E8840_CF3FA5BA *pAVar4;
   AnonShape_006E8840_CF3FA5BA *pAVar5;
   int local_8;
@@ -35,20 +36,21 @@ ST3DSMAPContext::sub_006E8660
   }
   if (local_8 < *(int *)&this->field_0x314) {
     pAVar5 = pAVar4;
-    for (iVar1 = 0x45; iVar1 != 0; iVar1 = iVar1 + -1) {
+    for (iVar3 = 0x45; iVar3 != 0; iVar3 = iVar3 + -1) {
       *(undefined4 *)pAVar5 = 0;
       pAVar5 = (AnonShape_006E8840_CF3FA5BA *)&pAVar5->field_0x4;
     }
   }
   else {
     if (*(int *)&this->field_0x318 <= *(int *)&this->field_0x314) {
-      iVar1 = Library::DKW::LIB::FUN_006acf50
-                        (*(int *)&this->field_0x31c,(*(int *)&this->field_0x318 + 10) * 0x114);
-      if (iVar1 == 0) {
+      pvVar1 = Library::DKW::LIB::MemRealloc
+                         (*(AnonPointee_TLOBaseTy_0607 **)&this->field_0x31c,
+                          (*(int *)&this->field_0x318 + 10) * 0x114);
+      if (pvVar1 == (void *)0x0) {
         return 0xfffffffe;
       }
-      *(int *)&this->field_0x31c = iVar1;
-      memset((void *)(iVar1 + *(int *)&this->field_0x314 * 0x114), 0, 0xac8); /* compiler bulk-zero initialization */
+      *(void **)&this->field_0x31c = pvVar1;
+      memset((void *)((int)pvVar1 + *(int *)&this->field_0x314 * 0x114), 0, 0xac8); /* compiler bulk-zero initialization */
       *(int *)&this->field_0x318 = *(int *)&this->field_0x318 + 10;
     }
     local_8 = *(int *)&this->field_0x314;

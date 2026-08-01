@@ -6,8 +6,8 @@ uint * FUN_0062d550(int *param_1,int *param_2)
   int *piVar2;
   int iVar3;
   uint *puVar4;
-  uint uVar5;
-  int iVar6;
+  int iVar5;
+  uint uVar6;
   int *piVar7;
   uint *puVar8;
   uint *puVar9;
@@ -16,7 +16,7 @@ uint * FUN_0062d550(int *param_1,int *param_2)
   uint *local_8;
 
   piVar2 = param_2;
-  iVar6 = 0;
+  iVar5 = 0;
   iVar3 = 0;
   *param_2 = 0;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -26,16 +26,16 @@ uint * FUN_0062d550(int *param_1,int *param_2)
     iVar1 = *piVar7;
     if (iVar1 != 0) {
       iVar3 = iVar3 + 1;
-      iVar6 = iVar6 + 0x1c + *(int *)(iVar1 + 0xc) * *(int *)(iVar1 + 8);
+      iVar5 = iVar5 + 0x1c + *(int *)(iVar1 + 0xc) * *(int *)(iVar1 + 8);
     }
     piVar7 = piVar7 + 1;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = (int *)((int)param_2 + -1);
   } while (param_2 != (int *)0x0);
-  if (iVar6 != 0) {
-    iVar6 = *piVar2 + iVar6 + iVar3 * 4;
-    *piVar2 = iVar6;
-    puVar4 = (uint *)Library::DKW::LIB::FUN_006aac70(iVar6);
+  if (iVar5 != 0) {
+    uVar6 = *piVar2 + iVar5 + iVar3 * 4;
+    *piVar2 = uVar6;
+    puVar4 = Library::DKW::LIB::MemAlloc(uVar6);
     local_c = 8;
     puVar8 = puVar4;
     do {
@@ -45,12 +45,12 @@ uint * FUN_0062d550(int *param_1,int *param_2)
           *puVar8 = (uint)param_2;
           puVar9 = local_8;
           puVar10 = puVar8 + 1;
-          for (uVar5 = (uint)param_2 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
+          for (uVar6 = (uint)param_2 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
             *puVar10 = *puVar9;
             puVar9 = puVar9 + 1;
             puVar10 = puVar10 + 1;
           }
-          for (uVar5 = (uint)param_2 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
+          for (uVar6 = (uint)param_2 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
             *(char *)puVar10 = (char)*puVar9;
             puVar9 = (uint *)((int)puVar9 + 1);
             puVar10 = (uint *)((int)puVar10 + 1);

@@ -76,8 +76,7 @@ uint * FUN_0043ec20(char param_1,Global_sub_0043EC20_param_2Enum param_2,short p
 LAB_0043eda0:
                   if ((param_10 == -1) ||
                      (iVar4 = (**(code **)(*piVar1 + 0x6c))(), iVar4 == param_10)) {
-                    Library::DKW::TBL::FUN_006ae1c0
-                              (&array->flags,(undefined4 *)((int)piVar1 + 0x32));
+                    Library::DKW::TBL::DArrayAppend(array,(void *)((int)piVar1 + 0x32));
                   }
                 }
                 else {

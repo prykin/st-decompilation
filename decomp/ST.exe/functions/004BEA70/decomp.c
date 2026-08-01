@@ -319,7 +319,7 @@ LAB_004bef54:
         if ((&DAT_007e1984)[(local_EAX_3325 & 0xffU) + ((local_EAX_3286 & 0xffU) + iVar8 * 3) * 3]
             == '\0') goto LAB_004bf7a5;
       }
-      if (g_playerRuntime[(int)this->field_0024].field2180_0xa0e != 0) goto LAB_004bf7a5;
+      if (g_playerRuntime[(int)this->field_0024].field2383_0xa0e != 0) goto LAB_004bf7a5;
       uVar6 = 1;
     }
     else {
@@ -682,7 +682,7 @@ LAB_004bf965:
     if (this->field_0024 == (byte *)this->field_023D) {
 LAB_004bf9c0:
       if (((this->field_0245 != CASE_0) || (*(int *)&this->field_0x361 != 0)) ||
-         (g_playerRuntime[(int)this->field_0024].field2180_0xa0e != 0)) goto LAB_004bf9f7;
+         (g_playerRuntime[(int)this->field_0024].field2383_0xa0e != 0)) goto LAB_004bf9f7;
       uVar6 = 1;
     }
     else {
@@ -1267,9 +1267,9 @@ cf_common_join_004C01F3:
     break;
   case CASE_3C:
   case CASE_53:
-    switch(g_playerRuntime[(int)this->field_0024].field2180_0xa0e) {
+    switch(g_playerRuntime[(int)this->field_0024].field2383_0xa0e) {
     case 0:
-      if (g_playerRuntime[(int)this->field_0024].field2182_0xa16 == 0)
+      if (g_playerRuntime[(int)this->field_0024].field2385_0xa16 == 0)
       goto switchD_004bef7c_caseD_52;
       *(undefined1 *)((int)param_1 + 0x47) = 3;
       break;
@@ -1291,7 +1291,7 @@ cf_common_join_004C01F3:
       *(undefined1 *)((int)param_1 + 0x47) = 1;
       iVar8 = thunk_FUN_004e60d0((int)this->field_0024,iVar8);
       uVar12 = (g_playSystem_00802A38->field_00E4 * 100 +
-               g_playerRuntime[(int)this->field_0024].field2183_0xa1a * -100) /
+               g_playerRuntime[(int)this->field_0024].field2386_0xa1a * -100) /
                *(uint *)(&DAT_00798f6c + iVar8 * 4);
       param_1[0x12] = uVar12;
       if (100 < uVar12) {
@@ -1302,7 +1302,7 @@ cf_common_join_004C01F3:
     case 2:
     case 3:
       *(undefined1 *)((int)param_1 + 0x47) = 2;
-      param_1[0x12] = (uint)g_playerRuntime[(int)this->field_0024].field2184_0xa1e / 0x19;
+      param_1[0x12] = (uint)g_playerRuntime[(int)this->field_0024].field2387_0xa1e / 0x19;
     }
     break;
   case CASE_41:
@@ -1364,10 +1364,8 @@ LAB_004c0f8e:
             (char)((longlong)iVar8 * 0x51eb851f >> 0x3f);
     goto LAB_004c0fcc;
   case CASE_50:
-    *(undefined1 *)(param_1 + 7) =
-         *(undefined1 *)&g_playerRuntime[(int)this->field_0024].field2110_0x97a;
-    *(undefined1 *)((int)param_1 + 0x1d) =
-         *(undefined1 *)&g_playerRuntime[(int)this->field_0024].field2111_0x97e;
+    *(undefined1 *)(param_1 + 7) = g_playerRuntime[(int)this->field_0024].field_0x97a;
+    *(undefined1 *)((int)param_1 + 0x1d) = g_playerRuntime[(int)this->field_0024].field_0x97e;
     *(undefined1 *)((int)param_1 + 0x1e) = g_playerRuntime[(int)this->field_0024].field_0x982;
     *(undefined1 *)((int)param_1 + 0x1f) = g_playerRuntime[(int)this->field_0024].field_0x986;
     *(undefined1 *)(param_1 + 8) = g_playerRuntime[(int)this->field_0024].field_0x98a;

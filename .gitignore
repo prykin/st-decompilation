@@ -32,10 +32,15 @@
 recovery/*/runs/
 recovery/*/latest_run.txt
 
+# Derived acceleration caches are local and can always be rebuilt.
+recovery/*/analyzer_cache.tsv
+recovery/*/program_semantic.sha256
+
 # Transactional corpus-exporter staging/rollback directories. They normally
 # exist only during STDecompExport, but may survive a killed Ghidra process.
 decomp/.*.export-*/
 decomp/.*.previous-*/
+decomp/*/.function_analysis_cache.tsv
 
 # Local Java/Ghidra script compilation output.
 *.class

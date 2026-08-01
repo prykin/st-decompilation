@@ -28,7 +28,7 @@ undefined4 __thiscall STGroupBoatC::GrpGuard(STGroupBoatC *this,int param_1)
   int local_18;
   int local_14;
   DArrayTy *local_10;
-  undefined4 local_c;
+  undefined1 local_c [4];
   DArrayTy *local_8;
 
   local_8 = (DArrayTy *)0x0;
@@ -77,8 +77,8 @@ undefined4 __thiscall STGroupBoatC::GrpGuard(STGroupBoatC *this,int param_1)
           uVar8 = 0;
           if (0 < local_18) {
             do {
-              DArrayGetElement(local_10,uVar8,&local_c);
-              Library::DKW::TBL::FUN_006ae1c0(&local_8->flags,&local_c);
+              DArrayGetElement(local_10,uVar8,local_c);
+              Library::DKW::TBL::DArrayAppend(local_8,local_c);
               uVar8 = uVar8 + 1;
             } while ((int)uVar8 < local_18);
           }
@@ -89,11 +89,13 @@ undefined4 __thiscall STGroupBoatC::GrpGuard(STGroupBoatC *this,int param_1)
     array = local_28;
     if (0 < (int)local_20) {
       do {
-        DArrayGetElement((DArrayTy *)pSVar2->field_0029,local_2c,&local_c);
-        if ((ushort)local_c != 0xffff) {
+        DArrayGetElement((DArrayTy *)pSVar2->field_0029,local_2c,local_c);
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+        if (local_c._0_2_ != 0xffff) {
+          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           pSVar4 = (STBoatC *)
                    STAllPlayersC::GetObjPtr
-                             (g_allPlayers_007FA174,pSVar2->field_0024,(ushort)local_c,CASE_1);
+                             (g_allPlayers_007FA174,pSVar2->field_0024,local_c._0_2_,CASE_1);
           if (pSVar4 == (STBoatC *)0x0) {
             RaiseInternalException
                       (-0x5001fffc,g_overwriteContext_007ED77C,
@@ -109,7 +111,7 @@ undefined4 __thiscall STGroupBoatC::GrpGuard(STGroupBoatC *this,int param_1)
               array = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
               local_28 = array;
             }
-            Library::DKW::TBL::FUN_006ae1c0(&array->flags,&local_c);
+            Library::DKW::TBL::DArrayAppend(array,local_c);
           }
         }
         local_2c = local_2c + 1;
@@ -135,11 +137,13 @@ undefined4 __thiscall STGroupBoatC::GrpGuard(STGroupBoatC *this,int param_1)
   uVar8 = 0;
   if (0 < (int)local_20) {
     do {
-      DArrayGetElement((DArrayTy *)pSVar2->field_0029,uVar8,&local_c);
-      if ((ushort)local_c != 0xffff) {
+      DArrayGetElement((DArrayTy *)pSVar2->field_0029,uVar8,local_c);
+      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+      if (local_c._0_2_ != 0xffff) {
+        /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
         pSVar4 = (STBoatC *)
                  STAllPlayersC::GetObjPtr
-                           (g_allPlayers_007FA174,pSVar2->field_0024,(ushort)local_c,CASE_1);
+                           (g_allPlayers_007FA174,pSVar2->field_0024,local_c._0_2_,CASE_1);
         if (pSVar4 == (STBoatC *)0x0) {
           iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0xa34,0,0,"%s"
                                      ,"STGroupBoatC::GrpGuard NULL");

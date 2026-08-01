@@ -49,7 +49,7 @@ undefined4 * __thiscall STExplosionC::SaveObj(STExplosionC *this,uint *param_1)
   if (iVar3 == 0) {
     *param_1 = 0;
     local_1c = &stack0xffffff40;
-    local_48 = (AnonShape_00604A90_035626E6 *)Library::DKW::LIB::FUN_006aac70(0xe2);
+    local_48 = Library::DKW::LIB::MemAlloc(0xe2);
     *param_1 = 0xe2;
     this->field_01E1 = 1;
     puVar7 = (byte *)&this->field_0x1d5;
@@ -76,7 +76,7 @@ undefined4 * __thiscall STExplosionC::SaveObj(STExplosionC *this,uint *param_1)
       local_3c[0] = (uint *)FUN_006b0020((uint *)this->field_0215,(int *)&local_20);
       uVar9 = *param_1 + local_20 + 4;
       *param_1 = uVar9;
-      local_48 = (AnonShape_00604A90_035626E6 *)Library::DKW::LIB::FUN_006acf50((int)local_48,uVar9);
+      local_48 = Library::DKW::LIB::MemRealloc((AnonPointee_TLOBaseTy_0607 *)local_48,uVar9);
       *(uint *)((*param_1 - local_20) + -4 + (int)local_48) = local_20;
       puVar5 = local_3c[0];
       puVar11 = (uint *)((*param_1 - local_20) + (int)local_48);
@@ -111,8 +111,7 @@ undefined4 * __thiscall STExplosionC::SaveObj(STExplosionC *this,uint *param_1)
       }
       uVar9 = *param_1;
       *param_1 = uVar9 + iVar3;
-      local_48 = (AnonShape_00604A90_035626E6 *)
-                 Library::DKW::LIB::FUN_006acf50((int)local_48,uVar9 + iVar3);
+      local_48 = Library::DKW::LIB::MemRealloc((AnonPointee_TLOBaseTy_0607 *)local_48,uVar9 + iVar3);
       local_44 = (uint *)((*param_1 - iVar3) + (int)local_48);
       local_30 = 0;
       if (0 < this->field_0269) {

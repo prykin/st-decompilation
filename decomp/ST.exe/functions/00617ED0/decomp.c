@@ -31,7 +31,7 @@ void __thiscall FUN_00617ed0(void *this,int param_1,int *param_2)
           STFishC::sub_004162B0(local_10,&local_a,&local_8,&local_6);
           local_18 = pSVar1->field_0018;
           local_14 = (uint)*(ushort *)&pSVar1->field_0x32;
-          Library::DKW::TBL::FUN_006ae1c0(*(uint **)((int)this + 0x66),&local_18);
+          Library::DKW::TBL::DArrayAppend(*(DArrayTy **)((int)this + 0x66),&local_18);
         }
         param_2 = param_2 + 1;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */

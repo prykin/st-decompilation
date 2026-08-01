@@ -11,6 +11,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Comparator;
 import java.util.Deque;
 import java.util.HashMap;
@@ -25,8 +26,9 @@ import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import ghidra.app.decompiler.DecompInterface;
 import ghidra.app.decompiler.DecompileResults;
+import ghidra.app.decompiler.parallel.DecompilerCallback;
+import ghidra.app.decompiler.parallel.ParallelDecompiler;
 import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
 import ghidra.program.model.block.BasicBlockModel;
@@ -45,6 +47,7 @@ import ghidra.program.model.symbol.Symbol;
 import ghidra.program.model.symbol.SymbolIterator;
 import ghidra.program.model.symbol.SymbolTable;
 import ghidra.program.model.symbol.SymbolType;
+import ghidra.util.task.TaskMonitor;
 
 public class STControlFlowLabelAnalyzer extends GhidraScript {
     private static final Pattern GOTO = Pattern.compile(
@@ -60,7 +63,6 @@ public class STControlFlowLabelAnalyzer extends GhidraScript {
 
     private BasicBlockModel blockModel;
     private SymbolTable symbols;
-    private DecompInterface decompiler;
 
     @Override
     protected void run() throws Exception {
@@ -77,79 +79,72 @@ public class STControlFlowLabelAnalyzer extends GhidraScript {
 
         blockModel = new BasicBlockModel(currentProgram);
         symbols = currentProgram.getSymbolTable();
-        decompiler = new DecompInterface();
-        decompiler.toggleCCode(true);
-        decompiler.toggleSyntaxTree(false);
-        decompiler.setSimplificationStyle("decompile");
-        if (!decompiler.openProgram(currentProgram))
-            throw new IllegalStateException("Could not open decompiler: " +
-                decompiler.getLastMessage());
-
         List<Proposal> proposals = new ArrayList<>();
         List<Unresolved> unresolved = new ArrayList<>();
-        int functionsSeen = 0, candidates = 0, withGotos = 0, failures = 0;
-        long gotoStatements = 0;
-        try {
-            FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
-            while (functions.hasNext()) {
-                monitor.checkCancelled();
-                Function function = functions.next();
-                if (function.isExternal() || function.isThunk() || isLibrary(function)) continue;
-                functionsSeen++;
-                Graph graph = buildGraph(function);
-                if (!graph.hasJoinCandidate()) continue;
-                candidates++;
+        Map<Address, Candidate> work = new TreeMap<>();
+        int functionsSeen = 0;
+        FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
+        while (functions.hasNext()) {
+            monitor.checkCancelled();
+            Function function = functions.next();
+            if (function.isExternal() || function.isThunk() || isLibrary(function)) continue;
+            functionsSeen++;
+            Graph graph = buildGraph(function);
+            if (graph.hasJoinCandidate())
+                work.put(function.getEntryPoint(), new Candidate(function, graph));
+        }
 
-                DecompileResults results = decompiler.decompileFunction(function,
-                    DECOMPILE_TIMEOUT_SECONDS, monitor);
-                if (!results.decompileCompleted() || results.getDecompiledFunction() == null) {
-                    failures++;
-                    unresolved.add(new Unresolved(function, "", 0,
-                        "decompile_failed: " + decompiler.getLastMessage()));
+        int candidates = work.size(), withGotos = 0, failures = 0;
+        long gotoStatements = 0;
+        for (Decompiled unit : parallelDecompile(work.values())) {
+            Candidate candidate = unit.function == null ? null :
+                work.get(unit.function.getEntryPoint());
+            if (candidate == null) continue;
+            Function function = candidate.function;
+            Graph graph = candidate.graph;
+            if (!unit.error.isBlank()) {
+                failures++;
+                unresolved.add(new Unresolved(function, "", 0,
+                    "decompile_failed: " + unit.error));
+                continue;
+            }
+            Map<String, Integer> gotos = gotoCounts(unit.c);
+            if (gotos.isEmpty()) continue;
+            withGotos++;
+            gotoStatements += gotos.values().stream().mapToInt(Integer::intValue).sum();
+            Map<String, Set<Address>> labelAddresses = labelAddresses(function);
+
+            for (Map.Entry<String, Integer> entry : gotos.entrySet()) {
+                monitor.checkCancelled();
+                String decompilerLabel = entry.getKey();
+                int gotoCount = entry.getValue();
+                Address target = resolveLabel(function, decompilerLabel, labelAddresses);
+                if (target == null) {
+                    unresolved.add(new Unresolved(function, decompilerLabel, gotoCount,
+                        "could_not_resolve_decompiler_label"));
                     continue;
                 }
-                Map<String, Integer> gotos = gotoCounts(
-                    results.getDecompiledFunction().getC());
-                if (gotos.isEmpty()) continue;
-                withGotos++;
-                gotoStatements += gotos.values().stream().mapToInt(Integer::intValue).sum();
-                Map<String, Set<Address>> labelAddresses = labelAddresses(function);
-
-                for (Map.Entry<String, Integer> entry : gotos.entrySet()) {
-                    monitor.checkCancelled();
-                    String decompilerLabel = entry.getKey();
-                    int gotoCount = entry.getValue();
-                    Address target = resolveLabel(function, decompilerLabel, labelAddresses);
-                    if (target == null) {
-                        unresolved.add(new Unresolved(function, decompilerLabel, gotoCount,
-                            "could_not_resolve_decompiler_label"));
-                        continue;
-                    }
-                    Node node = graph.nodeContaining(target);
-                    if (node == null) {
-                        unresolved.add(new Unresolved(function, decompilerLabel, gotoCount,
-                            "resolved_address_is_not_a_basic_block"));
-                        continue;
-                    }
-                    Classification classification = classify(graph, node, decompilerLabel,
-                        gotoCount);
-                    Symbol primary = symbols.getPrimarySymbol(target);
-                    boolean safe = safePrimary(target, primary);
-                    boolean apply = classification.autoApply && safe && gotoCount >= 2;
-                    String reason = classification.reason;
-                    if (!safe) reason += "; manual_or_non_generated_label_preserved";
-                    String proposedName = "cf_" + classification.kind + "_" + addr(target);
-                    proposals.add(new Proposal(function, target, decompilerLabel,
-                        primary == null ? "" : primary.getName(true),
-                        primary == null ? "" : primary.getSource().toString(),
-                        proposedName, classification.kind, gotoCount, node.in.size(),
-                        graph.backEdgesInto(node), graph.backEdgesFrom(node),
-                        apply, classification.confidence, reason, preview(node)));
+                Node node = graph.nodeContaining(target);
+                if (node == null) {
+                    unresolved.add(new Unresolved(function, decompilerLabel, gotoCount,
+                        "resolved_address_is_not_a_basic_block"));
+                    continue;
                 }
+                Classification classification = classify(graph, node, decompilerLabel,
+                    gotoCount);
+                Symbol primary = symbols.getPrimarySymbol(target);
+                boolean safe = safePrimary(target, primary);
+                boolean apply = classification.autoApply && safe && gotoCount >= 2;
+                String reason = classification.reason;
+                if (!safe) reason += "; manual_or_non_generated_label_preserved";
+                String proposedName = "cf_" + classification.kind + "_" + addr(target);
+                proposals.add(new Proposal(function, target, decompilerLabel,
+                    primary == null ? "" : primary.getName(true),
+                    primary == null ? "" : primary.getSource().toString(),
+                    proposedName, classification.kind, gotoCount, node.in.size(),
+                    graph.backEdgesInto(node), graph.backEdgesFrom(node),
+                    apply, classification.confidence, reason, preview(node)));
             }
-        }
-        finally {
-            decompiler.dispose();
         }
 
         proposals.sort(Comparator.comparing((Proposal p) -> p.function.getEntryPoint())
@@ -167,6 +162,43 @@ public class STControlFlowLabelAnalyzer extends GhidraScript {
         println("Functions with gotos: " + withGotos + ", targets: " + proposals.size() +
             ", auto_apply: " + auto + ", unresolved: " + unresolved.size() +
             ", decompile failures: " + failures);
+    }
+
+    private List<Decompiled> parallelDecompile(Collection<Candidate> candidates)
+            throws Exception {
+        if (candidates.isEmpty()) return List.of();
+        List<Function> functions = new ArrayList<>();
+        for (Candidate candidate : candidates) functions.add(candidate.function);
+        DecompilerCallback<Decompiled> callback = new DecompilerCallback<>(
+                currentProgram, dec -> {
+                    dec.toggleCCode(true);
+                    dec.toggleSyntaxTree(false);
+                    dec.setSimplificationStyle("decompile");
+                }) {
+            @Override
+            public Decompiled process(DecompileResults result,
+                    TaskMonitor callbackMonitor) {
+                Function function = result.getFunction();
+                if (!result.decompileCompleted() ||
+                        result.getDecompiledFunction() == null)
+                    return new Decompiled(function, "",
+                        result.getErrorMessage() == null ?
+                            "decompile failed" : result.getErrorMessage());
+                return new Decompiled(function,
+                    result.getDecompiledFunction().getC(), "");
+            }
+        };
+        callback.setTimeout(DECOMPILE_TIMEOUT_SECONDS);
+        try {
+            List<Decompiled> result = ParallelDecompiler.decompileFunctions(
+                callback, functions, monitor);
+            result.removeIf(unit -> unit == null || unit.function == null);
+            result.sort(Comparator.comparing(value -> value.function.getEntryPoint()));
+            return result;
+        }
+        finally {
+            callback.dispose();
+        }
     }
 
     private Graph buildGraph(Function function) throws Exception {
@@ -602,6 +634,8 @@ public class STControlFlowLabelAnalyzer extends GhidraScript {
             return counts.values().stream().mapToInt(Integer::intValue).max().orElse(0);
         }
     }
+    private record Candidate(Function function, Graph graph) { }
+    private record Decompiled(Function function, String c, String error) { }
     private static class DfsFrame {
         final Node node;
         int nextEdge;

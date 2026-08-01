@@ -88,8 +88,7 @@ int __thiscall STSharkC::GetMessage(STSharkC *this,STMessage *message)
       }
       local_18 = (byte *)STT3DSprC::SaveSpr((STT3DSprC *)&this_00->field_01D5,&local_8);
       local_14 = (byte *)STAllPlayersC::SaveGObjData((STAllPlayersC *)this_00,(int *)&local_10);
-      local_c = (AnonShape_0058D7C0_99A937C6 *)
-                Library::DKW::LIB::FUN_006aac70(local_10 + 0x66 + local_8);
+      local_c = Library::DKW::LIB::MemAlloc(local_10 + 0x66 + local_8);
       if (local_18 == (byte *)0x0) {
         g_currentExceptionFrame = local_80.previous;
         return 0;
@@ -129,6 +128,7 @@ int __thiscall STSharkC::GetMessage(STSharkC *this,STMessage *message)
       pbVar11 = local_18;
       pbVar13 = &local_c->field_0x62;
       memmove(pbVar13, pbVar11, local_8); /* compiler REP MOVS byte copy */
+      uVar7 = 0;
       *(uint *)(&local_c->field_0x62 + local_8) = local_10;
       pbVar11 = local_14;
       pbVar13 = &local_c[1].field_0x2 + local_8;
@@ -282,7 +282,7 @@ LAB_0058dc72:
       *(undefined4 *)&this_00->field_0x257 = *(undefined4 *)((int)local_1c + 0x4e);
       *(undefined4 *)((int)&this_00->field_023E + 3) = *(undefined4 *)((int)local_1c + 0x52);
       *(undefined4 *)&this_00->field_0x245 = *(undefined4 *)((int)local_1c + 0x56);
-      local_3c = (void *)Library::DKW::LIB::FUN_006aac70(0x44);
+      local_3c = Library::DKW::LIB::MemAlloc(0x44);
       if (local_3c != (void *)0x0) {
         iVar5 = 0;
         do {

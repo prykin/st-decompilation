@@ -37,8 +37,8 @@ void __thiscall SettMapMTy::ChangePlayerState(SettMapMTy *this,uint param_1)
       else {
         element_1f84_2 = (SettMapMTy_field_1F84Element *)0x0;
       }
-      if (element_1f84_2->field_0000 != '\0') {
-        if (element_1f84_2->field_0001 == '\0') {
+      if (element_1f84_2->field_0x0 != '\0') {
+        if (element_1f84_2->field_0x1 == '\0') {
           index = param_1 + 1;
           while( true ) {
             pSVar1 = pSVar3->field_1F84;
@@ -54,11 +54,11 @@ void __thiscall SettMapMTy::ChangePlayerState(SettMapMTy *this,uint param_1)
             }
             DArrayRemoveAt((DArrayTy *)pSVar3->field_1F84,index);
           }
-          element_1f84_2->field_0001 = '\x01';
+          element_1f84_2->field_0x1 = 1;
         }
         else if (pSVar1->count < 0x18) {
-          element_1f84_2->field_0001 = '\0';
-          sub_005D00B0(local_8,(AnonShape_005D00B0_9E7CC102 *)element_1f84_2,param_1 + 1);
+          element_1f84_2->field_0x1 = 0;
+          sub_005D00B0(local_8,element_1f84_2,param_1 + 1);
         }
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (*(code *)pSVar3->field_0000->field_002C)();

@@ -17,7 +17,7 @@ InterSystemC * __thiscall InterSystemC::InterSystemC(InterSystemC *this,AppClass
   this->vtable = &InterSystemCVTable;
   this->field_0030 = 0;
   this->field_002C = 0;
-  this->field_0028 = 0;
+  this->field_0028 = (ccFntTy *)0x0;
   return this;
 }
 

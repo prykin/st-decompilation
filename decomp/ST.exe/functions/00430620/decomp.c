@@ -32,7 +32,7 @@ undefined4 __thiscall STAllPlayersC::IsTorpLive(STAllPlayersC *this,short param_
     }
     return local_c;
   }
-  iVar2 = DArrayGetElement(PTR_007fa130,(int)param_1,&local_8);
+  iVar2 = DArrayGetElement(g_array_007FA130,(int)param_1,&local_8);
   if (iVar2 != -4) {
     if (local_8 == 0) {
       RaiseInternalException
