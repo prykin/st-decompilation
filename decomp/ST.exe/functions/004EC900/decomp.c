@@ -20,7 +20,7 @@ FUN_004ec900(void *this,Global_sub_004EC900_param_1Enum param_1,int param_2,uint
   int uVar3;
   int iVar5;
 
-  uVar3 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
+  uVar3 = LookupRecordByte(*(char *)((int)this + 0x23d));
   iVar1 = *(int *)((int)this + 0x245);
   iVar5 = (uVar3 & 0xffU) - 1;
   switch(param_1) {

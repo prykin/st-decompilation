@@ -532,7 +532,7 @@ cf_common_exit_00477B2E:
       (*pSVar7->vtable->vfunc_110)(this->field_0024,(int)this->field_06CB[5]);
     }
     else if (iVar6 != 2) goto cf_common_exit_0047746B;
-    uVar8 = GetPlayerRaceId(*(char *)&pSVar7->field_0024);
+    uVar8 = LookupRecordByte(*(char *)&pSVar7->field_0024);
     iVar6 = (*pSVar7->vtable->vfunc_2C)();
     local_64.arg0.ptr = &local_40;
     local_40 = *(undefined4 *)(&DAT_007e1374 + ((uVar8 & 0xffU) + iVar6 * 3) * 4);

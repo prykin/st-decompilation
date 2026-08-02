@@ -9,7 +9,7 @@ uint FUN_004d7430(char param_1)
   int iVar1;
 
   iVar1 = 6;
-  array = (DArrayTy *)&g_playerRuntime[param_1].field_0x7ee;
+  array = (DArrayTy *)&g_packedRecords_A62x8[param_1].field_0x7ee;
   do {
     DArrayDestroy(array);
     array = (DArrayTy *)&array[2].iteratorIndex;

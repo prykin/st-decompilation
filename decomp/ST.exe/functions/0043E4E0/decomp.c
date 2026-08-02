@@ -23,7 +23,7 @@ uint * STAllPlayersC::GetObjsList(char param_1)
   uint local_c;
   int local_8;
 
-  local_14 = g_playerRuntime[param_1].field6_0x9;
+  local_14 = g_packedRecords_A62x8[param_1].field6_0x9;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   local_10 = *(int *)(local_14 + 0xc);
   uVar4 = thunk_FUN_0043e460(param_1);

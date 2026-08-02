@@ -119,7 +119,7 @@ public class STLocalLifetimeApplier extends GhidraScript {
         if (byFunction.isEmpty()) return result;
 
         DecompInterface decompiler = new DecompInterface();
-        decompiler.toggleCCode(true);
+        decompiler.toggleCCode(false);
         decompiler.toggleSyntaxTree(true);
         if (!decompiler.openProgram(currentProgram))
             throw new IllegalStateException("Decompiler could not open current program");
@@ -561,7 +561,7 @@ public class STLocalLifetimeApplier extends GhidraScript {
                 unt(value.prepared.row.get("function_address")),
                 ignored -> new ArrayList<>()).add(value);
         DecompInterface decompiler = new DecompInterface();
-        decompiler.toggleCCode(true);
+        decompiler.toggleCCode(false);
         decompiler.toggleSyntaxTree(true);
         if (!decompiler.openProgram(currentProgram))
             throw new IllegalStateException(

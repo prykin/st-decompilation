@@ -41,11 +41,11 @@ void __thiscall STAllPlayersC::SaveTmp(STAllPlayersC *this,int param_1)
   uVar5 = (uint)DAT_0080874d;
   /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
   iVar4 = uVar5 * 0xa62;
-  if (g_playerRuntime[uVar5].field448_0x203 == 0) {
-    local_8 = &g_playerRuntime[uVar5].field332_0x163;
+  if (g_packedRecords_A62x8[uVar5].field448_0x203 == 0) {
+    local_8 = &g_packedRecords_A62x8[uVar5].field332_0x163;
   }
-  else if (g_playerRuntime[uVar5].field448_0x203 == 1) {
-    local_8 = &g_playerRuntime[uVar5].field390_0x1b3;
+  else if (g_packedRecords_A62x8[uVar5].field448_0x203 == 1) {
+    local_8 = &g_packedRecords_A62x8[uVar5].field390_0x1b3;
   }
   else {
     iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x16dd,0,0,"%s",

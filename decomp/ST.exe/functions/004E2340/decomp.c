@@ -120,7 +120,7 @@ int __thiscall FUN_004e2340(void *this,uint param_1,int param_2,undefined4 *para
       *(uint *)((int)this + uVar3 * 0x28 + 0x4e8) = g_playSystem_00802A38->field_00E4;
       if (*(int *)((int)this + 0x524) + 0x19U < g_playSystem_00802A38->field_00E4) {
         *(uint *)((int)this + 0x524) = g_playSystem_00802A38->field_00E4;
-        iVar4 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
+        iVar4 = LookupRecordByte(*(char *)((int)this + 0x23d));
         if ((char)iVar4 == '\x02') {
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
           (**(code **)(*(int *)this + 0x90))(3,0x2c8);

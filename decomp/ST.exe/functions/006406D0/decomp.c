@@ -363,7 +363,7 @@ LAB_00642c6e:
         bVar7 = thunk_FUN_00430750(SVar4);
       }
       thunk_FUN_00417ff0(this_00,bVar7);
-      uVar16 = GetPlayerRaceId((char)this_00->field_0024);
+      uVar16 = LookupRecordByte((char)this_00->field_0024);
       if ((uVar16 & 0xffU) == 1) {
         iVar10 = thunk_FUN_004e60d0(this_00->field_0024,0x99);
         if (iVar10 != 0) {

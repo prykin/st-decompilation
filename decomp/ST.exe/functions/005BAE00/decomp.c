@@ -284,7 +284,7 @@ LAB_005bb532:
                   ((uint *)this_01->field_1BE1,this_01->field_1B9D,0xfffffffe,this_01->field_1BB5,
                    this_01->field_1BB9);
       }
-      puVar10 = &this_01->field_1C2A;
+      puVar10 = this_01->field_1C2A;
       iVar8 = 0x16;
       do {
         Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,*puVar10);

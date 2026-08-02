@@ -110,10 +110,10 @@ cf_error_exit_004CC50A:
     (**(code **)(*(int *)param_1 + 0x90))(3,0x363);
   }
   if (*(int *)&param_1->field_0x43c == 2) {
-    local_EAX_774 = GetPlayerRaceId(param_1->field_023D);
+    local_EAX_774 = LookupRecordByte(param_1->field_023D);
     if (*(int *)(&DAT_00795f18 + ((local_EAX_774 & 0xffU) + param_1->field_0235 * 3) * 4) != 0) {
       iVar4 = *(int *)param_1;
-      local_EAX_824 = GetPlayerRaceId(param_1->field_023D);
+      local_EAX_824 = LookupRecordByte(param_1->field_023D);
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(iVar4 + 0x90))
                 (3,*(undefined4 *)

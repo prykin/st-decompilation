@@ -1,5 +1,5 @@
 program=ST.exe
-record_id=player_runtime
+record_id=record_a62x8
 base=007F4E20
 stride=0xA62
 total_size=0x5310
@@ -14,8 +14,8 @@ typed_fields=0
 named_fields=0
 binary_evidence_strong=true
 range_safe=true
-range_reason=existing script-owned record array
+range_reason=existing unchanged script-owned record array
 layout_safe=true
 layout_reason=unchanged script-owned record structure
 auto_apply=true
-note=The record is packed: stride and structure length are inferred from the guarded player lookup and independently repeated range evidence.
+note=The record is packed: stride and structure length are inferred from the guarded indexed-record lookup and independently repeated range evidence.

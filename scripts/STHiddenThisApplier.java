@@ -439,8 +439,9 @@ public class STHiddenThisApplier extends GhidraScript {
                     detail.add("receiver_type=conflict(no auto this parameter)");
                     conflict = true;
                 }
-                else if (receiverPointerPath(receiverParameter).equals(receiver.getPathName())) {
-                    detail.add("receiver_type=unchanged");
+                else if (receiverPointerType(receiverParameter, receiver)) {
+                    detail.add("receiver_type=applied(" + receiver.getPathName() + ")");
+                    changed = true;
                 }
                 else if (protectedSource(function.getSignatureSource()) && !scriptOwned) {
                     detail.add("receiver_type=preserved(manual signature)");
@@ -581,11 +582,15 @@ public class STHiddenThisApplier extends GhidraScript {
         return null;
     }
 
-    private String receiverPointerPath(Parameter parameter) {
+    private boolean receiverPointerType(Parameter parameter, DataType expected) {
         DataType type = parameter.getDataType();
-        if (!(type instanceof Pointer)) return "";
+        if (!(type instanceof Pointer)) return false;
         DataType pointed = ((Pointer)type).getDataType();
-        return pointed == null ? "" : pointed.getPathName();
+        // Identity is intentional. A manager-removed receiver can remain attached to
+        // a signature as a detached object which renders the same path.
+        return pointed == expected || pointed != null &&
+            pointed.getUniversalID() != null &&
+            pointed.getUniversalID().equals(expected.getUniversalID());
     }
 
     private boolean generated(DataType type) {

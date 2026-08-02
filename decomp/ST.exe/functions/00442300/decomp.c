@@ -81,7 +81,7 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,char param_
     return local_10;
   }
   if (0 < local_4c) {
-    piVar10 = &g_playerRuntime[param_1].field9_0xf;
+    piVar10 = &g_packedRecords_A62x8[param_1].field9_0xf;
     iVar4 = local_4c;
     do {
       if (*piVar10 == 0) {
@@ -182,7 +182,7 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,char param_
       do {
         iVar6 = local_14;
         if (SVar13 == local_6c[local_14]) {
-          iVar4 = GetPlayerRaceId(param_1);
+          iVar4 = LookupRecordByte(param_1);
           if ((char)iVar4 == '\x03') {
             SVar14 = 0x60;
           }

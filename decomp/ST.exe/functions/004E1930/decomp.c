@@ -47,7 +47,7 @@ int __thiscall FUN_004e1930(void *this,int *param_1,int param_2)
       if (*(uint *)((int)this + 0x24) == (uint)*(byte *)(*(int *)((int)this + 0x10) + 0x112d)) {
         iVar1 = *(int *)((int)this + 0x5ac);
         if ((iVar1 == 0x39) || (iVar1 == 0x5e)) {
-          uVar3 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
+          uVar3 = LookupRecordByte(*(char *)((int)this + 0x23d));
           uVar4 = uVar3 & 0xff;
           if (uVar4 == 1) {
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -66,7 +66,7 @@ int __thiscall FUN_004e1930(void *this,int *param_1,int param_2)
           }
         }
         else if (iVar1 == 0x4f) {
-          local_EAX_269 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
+          local_EAX_269 = LookupRecordByte(*(char *)((int)this + 0x23d));
           if ((local_EAX_269 & 0xffU) == 1) {
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (**(code **)(*(int *)this + 0x90))(4,0x27c);
@@ -84,25 +84,25 @@ int __thiscall FUN_004e1930(void *this,int *param_1,int param_2)
       switch(*(undefined4 *)((int)this + 0x5ac)) {
       case 0x39:
         iVar1 = *(int *)this;
-        iVar5 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
+        iVar5 = LookupRecordByte(*(char *)((int)this + 0x23d));
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(iVar1 + 0x90))(3,(-(uint)((char)iVar5 != '\x02') & 0xffffff3a) + 0x2ea);
         return param_2;
       case 0x3b:
         iVar1 = *(int *)this;
-        iVar5 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
+        iVar5 = LookupRecordByte(*(char *)((int)this + 0x23d));
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(iVar1 + 0x90))(3,(-(uint)((char)iVar5 != '\x02') & 0xffffff3a) + 0x2f7);
         return param_2;
       case 0x4f:
         iVar1 = *(int *)this;
-        iVar5 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
+        iVar5 = LookupRecordByte(*(char *)((int)this + 0x23d));
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(iVar1 + 0x90))(3,(-(uint)((char)iVar5 != '\x02') & 0xffffff32) + 0x350);
         return param_2;
       case 0x52:
         iVar1 = *(int *)this;
-        iVar5 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
+        iVar5 = LookupRecordByte(*(char *)((int)this + 0x23d));
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         (**(code **)(iVar1 + 0x90))(3,(-(uint)((char)iVar5 != '\x02') & 0xffffff3b) + 0x35d);
         return param_2;

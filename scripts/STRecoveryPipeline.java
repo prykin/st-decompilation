@@ -57,6 +57,17 @@ public class STRecoveryPipeline extends GhidraScript {
             "switch_enum_proposals.tsv", "switch_enum_decompile_retries.tsv",
             "switch_enum_decompile_failures.tsv", "switch_enum_domains.tsv",
             "switch_enum_summary.txt"),
+        "STDiscriminatedPayloadAnalyzer.java", List.of(
+            "discriminated_payload_proposals.tsv",
+            "discriminated_stack_proposals.tsv",
+            "discriminated_payload_summary.txt"),
+        "STPointerRoleRepairAnalyzer.java", List.of(
+            "pointer_role_repair_proposals.tsv",
+            "pointer_role_repair_failures.tsv",
+            "pointer_role_repair_summary.txt"),
+        "STPrototypeAnalyzer.java", List.of(
+            "prototype_proposals.tsv", "prototype_callsite_audit.tsv",
+            "prototype_undefined_boundary_audit.tsv", "prototype_summary.txt"),
         "STLocalLifetimeAnalyzer.java", List.of(
             "local_lifetime_proposals.tsv", "local_lifetime_failures.tsv",
             "local_lifetime_summary.txt"),
@@ -67,6 +78,9 @@ public class STRecoveryPipeline extends GhidraScript {
         "STDArrayElementAnalyzer.java", List.of(),
         "STPointerShapeAnalyzer.java", List.of(),
         "STSwitchEnumAnalyzer.java", List.of("switch_enum_domains.tsv"),
+        "STDiscriminatedPayloadAnalyzer.java", List.of(),
+        "STPointerRoleRepairAnalyzer.java", List.of(),
+        "STPrototypeAnalyzer.java", List.of(),
         "STLocalLifetimeAnalyzer.java", List.of(),
         "STControlFlowLabelAnalyzer.java", List.of());
     private static final Set<String> MUTATING_STATUSES = Set.of(
@@ -290,7 +304,6 @@ public class STRecoveryPipeline extends GhidraScript {
             "source_provenance_proposals.tsv", "source_provenance_apply_report.tsv");
         pair("STThunkPropagationAnalyzer.java", "STThunkPropagationApplier.java",
             "thunk_proposals.tsv", "thunk_apply_report.tsv");
-        analyzer("STManualTypeAuditAnalyzer.java");
         pair("STControlFlowLabelAnalyzer.java", "STControlFlowLabelApplier.java",
             "control_flow_label_proposals.tsv", "control_flow_label_apply_report.tsv");
         pair("STLibraryAnalyzer.java", "STLibraryApplier.java",
@@ -302,6 +315,10 @@ public class STRecoveryPipeline extends GhidraScript {
             "global_data_proposals.tsv", "global_data_apply_report.tsv");
         pair("STPointerShapeAnalyzer.java", "STPointerShapeApplier.java",
             "pointer_shape_target_proposals.tsv", "pointer_shape_apply_report.tsv");
+        // Recover case-specific stack aggregates only after the last global/pointer
+        // shape mutations. The analyzer discovers the discriminator family, vtable
+        // slot, constant case and stack carrier from the current Program.
+        runFinalStackAggregates();
         // Compiler register/stack reuse can leave several independently typed
         // SSA merge groups under one rendered local. Run this once after the
         // structural/type fixed points, when exact call/copy anchors are strongest.
@@ -385,6 +402,8 @@ public class STRecoveryPipeline extends GhidraScript {
     }
 
     private void recordEvidence() throws Exception {
+        section("final read-only audits");
+        analyzer("STManualTypeAuditAnalyzer.java");
         section("evidence checkpoint");
         step("STEvidenceLedger.java", "record", recoveryRoot.toString());
         writeAnalyzerCache();
@@ -487,6 +506,29 @@ public class STRecoveryPipeline extends GhidraScript {
         }
         throw new IllegalStateException("Type lifecycle did not reach a fixed point in " +
             MAX_STRUCTURAL_PASSES + " passes");
+    }
+
+    private int runFinalStackAggregates() throws Exception {
+        section("final discriminated stack aggregates");
+        // Validate or refresh the ordinary family proposals at this exact Program
+        // epoch. final-stacks then rehydrates those checked families and decompiles
+        // only callers which pass the machine-level slot/case/stack prefilter.
+        analyzer("STDiscriminatedPayloadAnalyzer.java");
+        step("STDiscriminatedPayloadAnalyzer.java", recoveryRoot.toString(),
+            "final-stacks");
+        stampAnalyzerArtifacts("STDiscriminatedPayloadAnalyzer.java");
+        Path proposals = requireFile("discriminated_payload_proposals.tsv", null);
+        step("STDiscriminatedPayloadApplier.java", proposals.toString());
+        Path applyReport = recoveryProgram.resolve(
+            "discriminated_payload_apply_report.tsv");
+        int changed = convergenceMutationCount(
+            "STDiscriminatedPayloadApplier.java", proposals, applyReport,
+            MUTATING_STATUSES);
+        snapshotPassArtifacts("STDiscriminatedPayloadApplier.java", proposals,
+            applyReport,
+            recoveryProgram.resolve("discriminated_stack_proposals.tsv"));
+        println("Final discriminated stack aggregates: mutating rows=" + changed);
+        return changed;
     }
 
     private int runDArrayTypes() throws Exception {
@@ -594,6 +636,15 @@ public class STRecoveryPipeline extends GhidraScript {
                 " completed without its declared cache artifacts");
         analyzerStamps.put(script, new AnalyzerStamp(
             currentProgram.getModificationNumber(), currentSemantic, sourceHash,
+            analyzerDependencyToken(script), analyzerArtifactToken(script)));
+    }
+
+    private void stampAnalyzerArtifacts(String script) throws Exception {
+        if (!cacheArtifactsPresent(script))
+            throw new IllegalStateException(script +
+                " completed without its declared cache artifacts");
+        analyzerStamps.put(script, new AnalyzerStamp(
+            currentProgram.getModificationNumber(), "", analyzerSourceHash(script),
             analyzerDependencyToken(script), analyzerArtifactToken(script)));
     }
 

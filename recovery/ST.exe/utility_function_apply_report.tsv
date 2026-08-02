@@ -4,9 +4,9 @@ function_address	semantic_id	status	detail
 006B54F0	sarray_create	unchanged	desired name and prototype already present
 006AE140	darray_put	unchanged	desired name and prototype already present
 006AE1C0	darray_append	unchanged	desired name and prototype already present
-006B0140	load_resource_string	unchanged	desired name and prototype already present
 006ACC70	darray_get_element	unchanged	desired name and prototype already present
-004406C0	player_race_id	unchanged	desired name and prototype already present
+006B0140	load_resource_string	unchanged	desired name and prototype already present
+004406C0	indexed_record_byte_lookup	unchanged	desired name and prototype already present
 006B0C70	darray_remove_at	unchanged	desired name and prototype already present
 006B1190	darray_get_next	unchanged	desired name and prototype already present
 006CEA60	copy_rows	unchanged	desired name and prototype already present

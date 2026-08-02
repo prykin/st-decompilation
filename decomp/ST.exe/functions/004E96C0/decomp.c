@@ -32,7 +32,7 @@ undefined4 __thiscall FUN_004e96c0(void *this,int *param_1)
         iVar1 = 100;
       }
       else {
-        uVar2 = GetPlayerRaceId((char)param_1[9]);
+        uVar2 = LookupRecordByte((char)param_1[9]);
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
         iVar1 = (**(code **)(*param_1 + 0x2c))();
         iVar1 = *(int *)(&DAT_007e37b0 + ((uVar2 & 0xffU) + iVar1 * 3) * 4);
@@ -52,7 +52,7 @@ undefined4 __thiscall FUN_004e96c0(void *this,int *param_1)
   if (*(int *)((int)this + 0x4f0) != 0) {
     if (DAT_00811798 == (void *)0x0) {
       if (*(uint *)((int)this + 0x24) == (uint)*(byte *)(*(int *)((int)this + 0x10) + 0x112d)) {
-        local_EAX_378 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
+        local_EAX_378 = LookupRecordByte(*(char *)((int)this + 0x23d));
         uVar3 = local_EAX_378 & 0xff;
         if (uVar3 == 1) {
           iVar1 = *(int *)this;

@@ -21,8 +21,8 @@ undefined4 __thiscall STBoatC::CheckForReplenisher(STBoatC *this,int param_1)
   short local_8;
   short local_6;
 
-  array = (DArrayTy *)g_playerRuntime[this->field_0024].field603_0x2e7;
-  array_00 = (DArrayTy *)g_playerRuntime[this->field_0024].field6_0x9;
+  array = (DArrayTy *)g_packedRecords_A62x8[this->field_0024].field603_0x2e7;
+  array_00 = (DArrayTy *)g_packedRecords_A62x8[this->field_0024].field6_0x9;
   if (array != (DArrayTy *)0x0) {
     dVar1 = array->count;
     index = 0;

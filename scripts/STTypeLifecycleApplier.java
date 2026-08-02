@@ -9,17 +9,25 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.IdentityHashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
+import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import ghidra.app.script.GhidraScript;
 import ghidra.program.model.data.DataType;
 import ghidra.program.model.data.DataTypeManager;
 import ghidra.program.model.data.Array;
+import ghidra.program.model.data.FunctionDefinition;
 import ghidra.program.model.data.Pointer;
 import ghidra.program.model.data.Structure;
+import ghidra.program.model.data.TypeDef;
 import ghidra.program.model.listing.Data;
 import ghidra.program.model.listing.DataIterator;
 import ghidra.program.model.listing.Function;
@@ -30,8 +38,13 @@ import ghidra.program.model.listing.Variable;
 public class STTypeLifecycleApplier extends GhidraScript {
     private static final String VIEW = "[ST_VIEW_ONLY]";
     private static final String ANCHOR = "[ST_SEMANTIC_ANCHOR]";
+    private static final Pattern EMBEDDED_ADDRESS = Pattern.compile(
+        "(?i)(?:^|_)([0-9a-f]{8})(?:_|$)");
     private final List<Report> report = new ArrayList<>();
+    private final Map<String, Baseline> baselines = new HashMap<>();
     private DataTypeManager manager;
+    private UsageIndex usage;
+    private UsageIndex removalUsage;
     private Map<String, Integer> receiverOwnerCounts;
 
     @Override
@@ -41,15 +54,42 @@ public class STTypeLifecycleApplier extends GhidraScript {
         File file = inputFile(); if (file == null) return;
         Tsv input = read(file.toPath());
         require(input, "apply", "action", "type_path", "replacement_path",
-            "expected_length", "expected_parents", "expected_function_uses",
+            "expected_replacement", "expected_length", "expected_parents",
+            "expected_function_uses",
             "expected_listing_uses", "expected_description", "reason");
         manager = currentProgram.getDataTypeManager();
+        List<DataType> observed = new ArrayList<>();
+        for (Map<String, String> row : input.rows) {
+            if (!enabled(row.get("apply"))) continue;
+            DataType target = manager.getDataType(row.get("type_path"));
+            DataType replacement = manager.getDataType(row.get("replacement_path"));
+            if (target != null && !observed.contains(target)) observed.add(target);
+            if (replacement != null && !observed.contains(replacement))
+                observed.add(replacement);
+        }
+        usage = usageIndex(observed);
+        for (DataType type : observed)
+            baselines.put(type.getPathName(), baseline(type));
         int transaction = currentProgram.startTransaction("Apply type lifecycle");
         boolean commit = false;
         try {
             for (Map<String, String> row : input.rows) {
                 monitor.checkCancelled();
-                apply(row);
+                if (enabled(row.get("apply")) &&
+                        "replace".equals(row.get("action"))) apply(row);
+            }
+            List<DataType> removals = new ArrayList<>();
+            for (Map<String, String> row : input.rows) {
+                if (!enabled(row.get("apply")) ||
+                        !"remove".equals(row.get("action"))) continue;
+                DataType type = manager.getDataType(row.get("type_path"));
+                if (type != null && !removals.contains(type)) removals.add(type);
+            }
+            removalUsage = usageIndex(removals);
+            for (Map<String, String> row : input.rows) {
+                monitor.checkCancelled();
+                if (!(enabled(row.get("apply")) &&
+                        "replace".equals(row.get("action")))) apply(row);
             }
             commit = true;
         }
@@ -76,32 +116,51 @@ public class STTypeLifecycleApplier extends GhidraScript {
                     "type already absent"));
                 return;
             }
-            int parents = type.getParents().size();
-            int functionUses = functionUses(type), listingUses = listingUses(type);
+            Baseline observed = baselines.get(path);
             boolean derivedView = derivedFromView(type);
-            boolean baseline = type.getLength() == Integer.parseInt(row.get("expected_length")) &&
-                parents == Integer.parseInt(row.get("expected_parents")) &&
-                functionUses == Integer.parseInt(row.get("expected_function_uses")) &&
-                listingUses == Integer.parseInt(row.get("expected_listing_uses")) &&
-                clean(type.getDescription()).equals(row.get("expected_description"));
-            if (!baseline || text(type.getDescription()).contains(ANCHOR) && !derivedView) {
+            if (observed == null || !observed.matches(row)) {
                 report.add(new Report(row.get("action"), path, "preserved",
-                    "stale baseline or semantic anchor"));
+                    "stale baseline: " + baselineDifference(row, observed)));
                 return;
             }
+            String currentDescription = text(type.getDescription());
+            if (currentDescription.contains(ANCHOR) &&
+                    !currentDescription.contains(VIEW) && !derivedView) {
+                report.add(new Report(row.get("action"), path, "preserved",
+                    "current type is a semantic anchor"));
+                return;
+            }
+            int functionUses = observed.functionUses;
+            int listingUses = observed.listingUses;
+            int liveFunctionUses = removalUsage == null ? functionUses :
+                functionUses(removalUsage, type);
+            int liveListingUses = removalUsage == null ? listingUses :
+                removalUsage.listingUses.getOrDefault(type, 0);
             if ("replace".equals(row.get("action"))) {
                 DataType replacement = manager.getDataType(row.get("replacement_path"));
+                if (replacement == null || !row.get("expected_replacement").equals(
+                        replacementBaseline(replacement))) {
+                    report.add(new Report("replace", path, "preserved",
+                        "stale replacement baseline"));
+                    return;
+                }
                 boolean hiddenReceiverFamily =
                     row.get("reason").equals(
                         "unique namespace-backed HiddenThis receiver family") &&
                     hiddenThis(type) && hiddenThis(replacement) &&
-                    replacement != null && type.isEquivalent(replacement) &&
+                    type.isEquivalent(replacement) &&
                     ownedReceiverFunctions(type) == 0 &&
                     ownedReceiverFunctions(replacement) >= 2;
+                String replacementDescription = replacement == null ? "" :
+                    text(replacement.getDescription());
+                boolean replacementAnchor = replacementDescription.contains(ANCHOR) &&
+                    !replacementDescription.contains(VIEW);
                 if (replacement == null ||
-                        !hiddenReceiverFamily &&
-                        !text(replacement.getDescription()).contains(ANCHOR) ||
-                        !type.isEquivalent(replacement)) {
+                        (!hiddenReceiverFamily && !replacementAnchor) ||
+                        !type.isEquivalent(replacement) ||
+                        !hiddenReceiverFamily && !replacementCompatible(type,
+                            currentDescription, replacement,
+                            replacementDescription)) {
                     report.add(new Report("replace", path, "preserved",
                         "replacement is missing, changed, or not an anchor"));
                     return;
@@ -114,14 +173,18 @@ public class STTypeLifecycleApplier extends GhidraScript {
                 String description = text(type.getDescription());
                 boolean anonymous = disposableAnonymous(type, description);
                 if (!(description.contains(VIEW) || derivedView || anonymous) ||
-                        parents != 0 ||
+                        type.getParents().size() != 0 ||
                         !(removalProvenance(text(type.getDescription())) || derivedView) ||
-                        functionUses != 0 || listingUses != 0) {
+                        liveFunctionUses != 0 || liveListingUses != 0 ||
+                        hiddenThis(type) && ownedReceiverFunctions(type) != 0) {
                     report.add(new Report("remove", path, "preserved",
-                        "type is no longer an unreferenced view"));
+                        "type is no longer an unreferenced view; live function/listing uses=" +
+                            liveFunctionUses + "/" + liveListingUses));
                     return;
                 }
-                manager.remove(type);
+                if (!manager.remove(type))
+                    throw new IllegalStateException(
+                        "datatype manager refused removal");
                 report.add(new Report("remove", path, "removed",
                     anonymous ?
                         "unreferenced hash/script-owned anonymous type" :
@@ -137,34 +200,138 @@ public class STTypeLifecycleApplier extends GhidraScript {
         }
     }
 
-    private int functionUses(DataType wanted) {
-        int result = 0;
+    /** Same path-based wrapper walk as the analyzer; one whole-program scan. */
+    private UsageIndex usageIndex(List<DataType> candidates) throws Exception {
+        Map<String, DataType> wantedByPath = new HashMap<>();
+        for (DataType wanted : candidates)
+            wantedByPath.put(wanted.getPathName(), wanted);
+        Map<DataType, Integer> functionUses = new HashMap<>();
         FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
         while (functions.hasNext()) {
+            monitor.checkCancelled();
             Function function = functions.next();
-            if (uses(function.getReturnType(), wanted)) result++;
+            addUses(functionUses, wantedByPath, function.getReturnType());
             for (Parameter parameter : function.getParameters())
-                if (uses(parameter.getDataType(), wanted)) result++;
+                addUses(functionUses, wantedByPath, parameter.getDataType());
             for (Variable variable : function.getLocalVariables())
-                if (uses(variable.getDataType(), wanted)) result++;
+                addUses(functionUses, wantedByPath, variable.getDataType());
         }
-        return result;
-    }
-    private int listingUses(DataType wanted) {
-        int result = 0;
+        Map<DataType, Integer> listingUses = new HashMap<>();
         DataIterator data = currentProgram.getListing().getDefinedData(true);
         while (data.hasNext()) {
-            Data item = data.next();
-            if (uses(item.getDataType(), wanted)) result++;
+            monitor.checkCancelled();
+            addUses(listingUses, wantedByPath, data.next().getDataType());
         }
-        return result;
+        return new UsageIndex(functionUses, listingUses);
     }
-    private boolean uses(DataType actual, DataType wanted) {
-        if (actual == null) return false;
-        if (actual.equals(wanted)) return true;
-        if (actual instanceof Pointer pointer && pointer.getDataType() != null)
-            return uses(pointer.getDataType(), wanted);
-        return actual.dependsOn(wanted);
+
+    private void addUses(Map<DataType, Integer> counts,
+            Map<String, DataType> wantedByPath, DataType actual) {
+        if (actual == null) return;
+        Set<DataType> seen = Collections.newSetFromMap(new IdentityHashMap<>());
+        Set<DataType> matched = Collections.newSetFromMap(new IdentityHashMap<>());
+        List<DataType> pending = new ArrayList<>();
+        pending.add(actual);
+        for (int index = 0; index < pending.size(); index++) {
+            DataType current = pending.get(index);
+            if (current == null || !seen.add(current)) continue;
+            DataType wanted = wantedByPath.get(current.getPathName());
+            if (wanted != null) matched.add(wanted);
+            if (current instanceof Pointer pointer)
+                pending.add(pointer.getDataType());
+            else if (current instanceof Array array)
+                pending.add(array.getDataType());
+            else if (current instanceof TypeDef typeDef)
+                pending.add(typeDef.getBaseDataType());
+            else if (current instanceof FunctionDefinition definition) {
+                pending.add(definition.getReturnType());
+                for (var parameter : definition.getArguments())
+                    pending.add(parameter.getDataType());
+            }
+        }
+        for (DataType type : matched) counts.merge(type, 1, Integer::sum);
+    }
+
+    private String replacementBaseline(DataType type) {
+        return type == null ? "missing" : type.getLength() + "|" +
+            clean(type.getDescription());
+    }
+
+    private Baseline baseline(DataType type) {
+        return new Baseline(type.getLength(), type.getParents().size(),
+            functionUses(usage, type),
+            usage.listingUses.getOrDefault(type, 0), clean(type.getDescription()));
+    }
+
+    private int functionUses(UsageIndex index, DataType type) {
+        int direct = index.functionUses.getOrDefault(type, 0);
+        return hiddenThis(type) ? Math.max(direct, ownedReceiverFunctions(type)) : direct;
+    }
+
+    /** Equal storage is insufficient: require one address/provenance identity. */
+    private boolean replacementCompatible(DataType source, String sourceDescription,
+            DataType replacement, String replacementDescription) {
+        String sourceDiscriminator = discriminatorIdentity(sourceDescription);
+        if (!sourceDiscriminator.isBlank())
+            return sourceDiscriminator.equals(
+                discriminatorIdentity(replacementDescription));
+        if (source.getName().contains(".conflict") &&
+                parentPath(source).equals(parentPath(replacement)) &&
+                conflictBase(source.getName()).equals(replacement.getName())) return true;
+        String sourceHash = attribute(sourceDescription, "generated_layout_sha256");
+        return !sourceHash.isBlank() &&
+            sourceHash.equals(attribute(replacementDescription,
+                "generated_layout_sha256")) &&
+            parentPath(source).equals(parentPath(replacement));
+    }
+
+    private String discriminatorIdentity(String description) {
+        String family = attribute(description, "discriminator_family");
+        String value = attribute(description, "case_value");
+        if (family.isBlank() || value.isBlank()) return "";
+        Matcher matcher = EMBEDDED_ADDRESS.matcher(family);
+        String address = "";
+        while (matcher.find()) address = matcher.group(1).toUpperCase(Locale.ROOT);
+        return address.isBlank() ? "" : address + ":" + value;
+    }
+
+    private String attribute(String description, String name) {
+        String marker = name + "=";
+        int start = description.indexOf(marker);
+        if (start < 0) return "";
+        start += marker.length();
+        int end = description.indexOf(';', start);
+        return description.substring(start, end < 0 ? description.length() : end).trim();
+    }
+
+    private String parentPath(DataType type) {
+        String path = type.getPathName();
+        int separator = path.lastIndexOf('/');
+        return separator < 0 ? "" : path.substring(0, separator);
+    }
+
+    private String conflictBase(String name) {
+        return name.replaceFirst("\\.conflict[0-9]*$", "");
+    }
+
+    private String baselineDifference(Map<String, String> row, Baseline actual) {
+        if (actual == null) return "type was not present in the pre-transaction snapshot";
+        List<String> differences = new ArrayList<>();
+        difference(differences, "length", row.get("expected_length"), actual.length);
+        difference(differences, "parents", row.get("expected_parents"), actual.parents);
+        difference(differences, "function_uses", row.get("expected_function_uses"),
+            actual.functionUses);
+        difference(differences, "listing_uses", row.get("expected_listing_uses"),
+            actual.listingUses);
+        if (!row.get("expected_description").equals(actual.description))
+            differences.add("description_changed");
+        return differences.isEmpty() ? "unknown snapshot mismatch" :
+            String.join(", ", differences);
+    }
+
+    private void difference(List<String> output, String name, String expected, int actual) {
+        if (!expected.equals(Integer.toString(actual)))
+            output.add(name + " expected=" + expected + " current=" + actual);
     }
     private boolean derivedFromView(DataType type) {
         if (type instanceof Array array)
@@ -202,7 +369,8 @@ public class STTypeLifecycleApplier extends GhidraScript {
         return receiverOwnerCounts.getOrDefault(type.getName(), 0);
     }
     private boolean removalProvenance(String description) {
-        return description.contains("[STRecoveredTypesApplier]") ||
+        return description.contains(VIEW) ||
+            description.contains("[STRecoveredTypesApplier]") ||
             description.contains("[STTypeBootstrapApplier]") ||
             description.contains("[STDiscriminatedPayloadApplier]") ||
             description.contains("[STPointerShapeApplier]") ||
@@ -270,6 +438,18 @@ public class STTypeLifecycleApplier extends GhidraScript {
     private static String message(Exception exception) {
         String value = exception.getMessage();
         return value == null || value.isBlank() ? exception.getClass().getSimpleName() : value;
+    }
+    private record UsageIndex(Map<DataType, Integer> functionUses,
+        Map<DataType, Integer> listingUses) { }
+    private record Baseline(int length, int parents, int functionUses, int listingUses,
+            String description) {
+        boolean matches(Map<String, String> row) {
+            return row.get("expected_length").equals(Integer.toString(length)) &&
+                row.get("expected_parents").equals(Integer.toString(parents)) &&
+                row.get("expected_function_uses").equals(Integer.toString(functionUses)) &&
+                row.get("expected_listing_uses").equals(Integer.toString(listingUses)) &&
+                row.get("expected_description").equals(description);
+        }
     }
     private record Tsv(List<String> header, List<Map<String, String>> rows) { }
     private record Report(String kind, String target, String status, String detail) { }

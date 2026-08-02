@@ -42,7 +42,7 @@ void __thiscall FUN_00488890(void *this,int param_1)
   do {
     iVar7 = local_18;
     local_8 = (undefined4 *)0x0;
-    local_EAX_38 = GetPlayerRaceId(*(char *)((int)this + 0x24));
+    local_EAX_38 = LookupRecordByte(*(char *)((int)this + 0x24));
     local_1c = &DAT_00800fa0 + (local_EAX_38 & 0xffU) * 4;
     switch(iVar7) {
     case 0:
@@ -59,7 +59,7 @@ void __thiscall FUN_00488890(void *this,int param_1)
       break;
     case 4:
       local_1c = (undefined4 *)0x0;
-      uVar4 = GetPlayerRaceId(*(char *)((int)this + 0x24));
+      uVar4 = LookupRecordByte(*(char *)((int)this + 0x24));
       local_8 = &DAT_00801370 + (uVar4 & 0xffU) * 4;
     }
     if (*(int *)(param_1 + iVar7 * 4) == 0) {
@@ -83,30 +83,30 @@ void __thiscall FUN_00488890(void *this,int param_1)
         local_4c[1] = 0;
         iVar6 = thunk_FUN_004e6c20(*(int *)((int)this + 0x24),local_c);
         if ((iVar6 == 0) ||
-           (((iVar6 = GetPlayerRaceId(*(char *)((int)this + 0x24)), (char)iVar6 == '\x03' &&
+           (((iVar6 = LookupRecordByte(*(char *)((int)this + 0x24)), (char)iVar6 == '\x03' &&
              (iVar5 != 0x5c)) &&
-            (*(int *)&g_playerRuntime[*(int *)((int)this + 0x24)].field_0x9ca == 0)))) {
+            (*(int *)&g_packedRecords_A62x8[*(int *)((int)this + 0x24)].field_0x9ca == 0)))) {
           local_44 = '\0';
         }
         else {
           local_44 = '\x01';
         }
-        local_EAX_393 = GetPlayerRaceId(*(char *)((int)this + 0x24));
+        local_EAX_393 = LookupRecordByte(*(char *)((int)this + 0x24));
         iVar6 = local_10;
         local_3e = *(undefined2 *)(&DAT_008545a8 + ((local_EAX_393 & 0xffU) + local_10) * 4);
-        local_EAX_430 = GetPlayerRaceId(*(char *)((int)this + 0x24));
+        local_EAX_430 = LookupRecordByte(*(char *)((int)this + 0x24));
         local_42 = *(undefined2 *)(&DAT_007e1c4c + ((local_EAX_430 & 0xffU) + iVar6) * 4);
-        iVar5 = GetPlayerRaceId(*(char *)((int)this + 0x24));
+        iVar5 = LookupRecordByte(*(char *)((int)this + 0x24));
         if ((char)iVar5 == '\x03') {
-          local_EAX_483 = GetPlayerRaceId(*(char *)((int)this + 0x24));
+          local_EAX_483 = LookupRecordByte(*(char *)((int)this + 0x24));
           local_40 = *(undefined2 *)(&DAT_007e315c + ((local_EAX_483 & 0xffU) + iVar6) * 4);
         }
         else {
-          local_EAX_519 = GetPlayerRaceId(*(char *)((int)this + 0x24));
+          local_EAX_519 = LookupRecordByte(*(char *)((int)this + 0x24));
           local_40 = *(undefined2 *)(&DAT_007e24f8 + ((local_EAX_519 & 0xffU) + iVar6) * 4);
         }
         local_3c = 0xffff;
-        iVar6 = GetPlayerRaceId(*(char *)((int)this + 0x24));
+        iVar6 = LookupRecordByte(*(char *)((int)this + 0x24));
         local_43 = (undefined1)iVar6;
         thunk_FUN_004e6d00(*(byte **)((int)this + 0x24),local_4c[0],local_3a);
         Library::DKW::TBL::DArrayAppend(*(DArrayTy **)(param_1 + iVar7 * 4),local_4c);
@@ -131,9 +131,9 @@ void __thiscall FUN_00488890(void *this,int param_1)
           if (local_74 == '\0') {
 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
 LAB_00488b5f:
-            local_EAX_732 = GetPlayerRaceId(*(char *)((int)local_14 + 0x24));
+            local_EAX_732 = LookupRecordByte(*(char *)((int)local_14 + 0x24));
             local_10 = (local_EAX_732 & 0xffU) + local_7c[0] * 3;
-            uVar7 = GetPlayerRaceId(*(char *)((int)pvVar3 + 0x24));
+            uVar7 = LookupRecordByte(*(char *)((int)pvVar3 + 0x24));
             iVar7 = local_18;
             if (*(int *)(&DAT_007e1dac + local_10 * 4) <=
                 *(int *)(&DAT_007e1dac + ((uVar7 & 0xffU) + local_4c[0] * 3) * 4))

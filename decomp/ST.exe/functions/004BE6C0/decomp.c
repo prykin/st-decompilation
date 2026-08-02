@@ -15,7 +15,7 @@ void __thiscall FUN_004be6c0(void *this,undefined4 *param_1)
   memset(param_1, 0, 0x36); /* compiler bulk-zero initialization */
   *(undefined1 *)param_1 = 1;
   *(undefined1 *)((int)param_1 + 1) = *(undefined1 *)((int)this + 0x21d);
-  iVar4 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
+  iVar4 = LookupRecordByte(*(char *)((int)this + 0x23d));
   *(char *)((int)param_1 + 7) = (char)iVar4;
   if (((*(byte *)((int)this + 0x1d1) & 4) == 0) && (*(int *)((int)this + 0x420) == 0)) {
     uVar2 = 1;
@@ -58,7 +58,7 @@ void __thiscall FUN_004be6c0(void *this,undefined4 *param_1)
   }
   iVar4 = (&DAT_00792ca0)[*(int *)((int)this + 0x235) * 6];
   if (((iVar4 == 0x96) || (iVar4 == 0x97)) || (iVar4 == 0x98)) {
-    uVar4 = GetPlayerRaceId(*(char *)((int)this + 0x24));
+    uVar4 = LookupRecordByte(*(char *)((int)this + 0x24));
     if ((uVar4 & 0xffU) == 1) {
       iVar4 = 6;
       goto LAB_004be7f7;
@@ -107,7 +107,7 @@ LAB_004be80a:
   }
   iVar4 = (&DAT_00792cac)[*(int *)((int)this + 0x235) * 6];
   if (((iVar4 == 0x96) || (iVar4 == 0x97)) || (iVar4 == 0x98)) {
-    local_EAX_571 = GetPlayerRaceId(*(char *)((int)this + 0x24));
+    local_EAX_571 = LookupRecordByte(*(char *)((int)this + 0x24));
     if ((local_EAX_571 & 0xffU) == 1) {
       iVar4 = 6;
       goto LAB_004be918;

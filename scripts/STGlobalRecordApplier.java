@@ -203,16 +203,23 @@ public class STGlobalRecordApplier extends GhidraScript {
 
         ArrayDataType arrayType = new ArrayDataType(installed, count, stride, dataTypes);
         Data root = listing.getDefinedDataAt(base);
-        boolean dataChanged = root == null || !root.getDataType().isEquivalent(arrayType) ||
-            root.getLength() != totalSize;
+        boolean identityMigrated = migrateScriptOwnedArrayIdentity(root, installed,
+            count, stride, totalSize, desiredHash, range.scriptOwnedArray);
+        if (identityMigrated) root = listing.getDefinedDataAt(base);
+        // Layout equivalence is deliberately not enough here. When a former
+        // generated identity is superseded by one inferred from current geometry,
+        // the Listing must refer to the exact current element path.
+        boolean dataChanged = !hasExactArrayIdentity(root, installed, count, stride,
+            totalSize);
         if (dataChanged) {
             DataUtilities.ClearDataMode mode = range.scriptOwnedArray ?
                 DataUtilities.ClearDataMode.CLEAR_ALL_CONFLICT_DATA :
                 DataUtilities.ClearDataMode.CLEAR_ALL_UNDEFINED_CONFLICT_DATA;
             DataUtilities.createData(currentProgram, base, arrayType, totalSize, mode);
             root = listing.getDefinedDataAt(base);
-            if (root == null || root.getLength() != totalSize)
-                throw new IllegalStateException("record array was not created at " + addr(base));
+            if (!hasExactArrayIdentity(root, installed, count, stride, totalSize))
+                throw new IllegalStateException("record array did not acquire exact current " +
+                    "element identity at " + addr(base));
         }
 
         boolean nameChanged = false, namePreserved = false;
@@ -227,15 +234,42 @@ public class STGlobalRecordApplier extends GhidraScript {
             else namePreserved = true;
         }
         addComment(base, id, typePath, stride, count, row);
-
-        boolean changed = structureChanged || dataChanged || nameChanged;
+        boolean changed = structureChanged || identityMigrated || dataChanged || nameChanged;
         String status = changed ? namePreserved ? "partial" :
             existing == null ? "applied" : "updated" : "unchanged";
         String detail = "record=" + typePath + "; array=" + arrayName + "[" + count +
             "]; stride=0x" + Integer.toHexString(stride).toUpperCase(Locale.ROOT) +
             "; fields=" + selected.size() + "; " + safety.reason + "; " + range.reason;
+        if (identityMigrated)
+            detail += "; migrated obsolete generated element identity";
         if (namePreserved) detail += "; manual/analysis primary symbol preserved";
         return new ReportRow(id, addr(base), status, typed, named, detail);
+    }
+
+    private boolean migrateScriptOwnedArrayIdentity(Data root, Structure installed,
+            int count, int stride, int totalSize, String desiredHash, boolean allowed) throws Exception {
+        if (!allowed || root == null || root.getLength() != totalSize ||
+                !(root.getDataType() instanceof Array array) ||
+                array.getNumElements() != count || array.getElementLength() != stride ||
+                !(array.getDataType() instanceof Structure legacy) ||
+                legacy.getPathName().equals(installed.getPathName()) ||
+                !legacy.isEquivalent(installed)) return false;
+        String legacyDescription = text(legacy.getDescription());
+        String legacyHash = storedHash(legacyDescription);
+        if (!legacyDescription.contains(MARKER) || legacyHash == null ||
+                !legacyHash.equals(desiredHash)) return false;
+        dataTypes.replaceDataType(legacy, installed, false);
+        return true;
+    }
+
+    private boolean hasExactArrayIdentity(Data root, Structure element, int count,
+            int stride, int totalSize) {
+        if (root == null || root.getLength() != totalSize ||
+                !(root.getDataType() instanceof Array array)) return false;
+        DataType currentElement = array.getDataType();
+        return array.getNumElements() == count && array.getElementLength() == stride &&
+            currentElement != null &&
+            currentElement.getPathName().equals(element.getPathName());
     }
 
     private Structure existingStructure(String path) {
@@ -265,9 +299,16 @@ public class STGlobalRecordApplier extends GhidraScript {
             return new RangeSafety(false, false, "record range contains instructions");
         Data root = listing.getDefinedDataAt(base);
         if (root != null && root.getDataType() instanceof Array array &&
-                array.getDataType() instanceof Structure structure &&
-                structure.getPathName().equals(typePath) && owned(base))
-            return new RangeSafety(true, true, "existing script-owned record array");
+                array.getDataType() instanceof Structure structure && owned(base)) {
+            Safety installed = structureSafety(structure);
+            if (installed.safe)
+                return new RangeSafety(true, true,
+                    structure.getPathName().equals(typePath) ?
+                        "existing script-owned record array" :
+                        "script-owned record array eligible for inferred-identity migration");
+            return new RangeSafety(false, false,
+                "existing record array element is not safely migratable: " + installed.reason);
+        }
         DataIterator data = listing.getDefinedData(new AddressSet(base, end), true);
         while (data.hasNext()) {
             Data item = data.next();

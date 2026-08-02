@@ -1,17 +1,17 @@
 
-void __thiscall FUN_005501d0(void *this,STControlCommand *command)
+void __thiscall FUN_005501d0(void *this,void *command)
 
 {
   undefined1 local_24 [16];
   undefined4 local_14;
-  STControlCommand *local_10;
+  void *local_10;
 
-  command->payload = (STControlCommandPayload *)(command + 1);
-  if (command->commandType == 5) {
+  *(int *)((int)command + 0x17) = (int)command + 0x1b;
+  if (*(char *)((int)command + 0xe) == '\x05') {
     local_14 = 0x43ff;
   }
   else {
-    if (command->commandType != 0x32) {
+    if (*(char *)((int)command + 0xe) != '2') {
       STAllPlayersC::CmdToPlsObj(g_allPlayers_007FA174,command);
       return;
     }

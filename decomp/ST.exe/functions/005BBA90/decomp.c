@@ -20,7 +20,7 @@ void __thiscall PrividerTy::CreateCtrls(PrividerTy *this,char param_1)
   uint *puVar5;
   ccFntTy **ppcVar6;
   ccFntTy *local_dd0 [8];
-  uint *local_db0;
+  DArrayTy *local_db0;
   undefined4 local_d84;
   undefined4 local_d80;
   undefined4 local_d7c;

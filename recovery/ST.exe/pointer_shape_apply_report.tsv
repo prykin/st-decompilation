@@ -27,6 +27,7 @@ type	AnonNested_0069F160_0008_DA6B40D5	/SubmarineTitans/Recovered/PointerShapes/
 type	AnonNested_006D5260_0284_3CE350C5	/SubmarineTitans/Recovered/PointerShapes/AnonNested_006D5260_0284_3CE350C5	disabled	apply=0
 type	AnonNested_006D6A10_0288_213244E3	/SubmarineTitans/Recovered/PointerShapes/AnonNested_006D6A10_0288_213244E3	disabled	apply=0
 type	AnonNested_006D7000_00E0_8CA18F81	/SubmarineTitans/Recovered/PointerShapes/AnonNested_006D7000_00E0_8CA18F81	disabled	apply=0
+type	AnonNested_006E1DD0_0280_387F2D84	/SubmarineTitans/Recovered/PointerShapes/AnonNested_006E1DD0_0280_387F2D84	disabled	apply=0
 type	AnonNested_006E67C0_0452_59995E3E	/SubmarineTitans/Recovered/PointerShapes/AnonNested_006E67C0_0452_59995E3E	disabled	apply=0
 type	AnonNested_006E6830_0452_DAA077C9	/SubmarineTitans/Recovered/PointerShapes/AnonNested_006E6830_0452_DAA077C9	disabled	apply=0
 type	AnonNested_006E9490_0310_0881F4E4	/SubmarineTitans/Recovered/PointerShapes/AnonNested_006E9490_0310_0881F4E4	disabled	apply=0
@@ -189,7 +190,6 @@ type	AnonShape_00512BE0_263FD6FB	/SubmarineTitans/Recovered/PointerShapes/AnonSh
 type	AnonShape_00516A40_F58EF8B3	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00516A40_F58EF8B3	disabled	apply=0
 type	AnonShape_00517A50_9A50D2E0	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00517A50_9A50D2E0	disabled	apply=0
 type	AnonShape_0051DDD0_03A7BCA6	/SubmarineTitans/Recovered/PointerShapes/AnonShape_0051DDD0_03A7BCA6	disabled	apply=0
-type	AnonShape_0051DDD0_1EB2896E	/SubmarineTitans/Recovered/PointerShapes/AnonShape_0051DDD0_1EB2896E	disabled	apply=0
 type	AnonShape_00526100_020D84E3	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00526100_020D84E3	disabled	apply=0
 type	AnonShape_00529F90_28CA9BE3	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00529F90_28CA9BE3	disabled	apply=0
 type	AnonShape_00529FE0_85E582CB	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00529FE0_85E582CB	disabled	apply=0
@@ -224,6 +224,7 @@ type	AnonShape_00548B90_C039E281	/SubmarineTitans/Recovered/PointerShapes/AnonSh
 type	AnonShape_00548BC0_697C8B62	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00548BC0_697C8B62	disabled	apply=0
 type	AnonShape_0054EAB0_2FB6FE19	/SubmarineTitans/Recovered/PointerShapes/AnonShape_0054EAB0_2FB6FE19	disabled	apply=0
 type	AnonShape_0054EB20_9F64C55E	/SubmarineTitans/Recovered/PointerShapes/AnonShape_0054EB20_9F64C55E	disabled	apply=0
+type	AnonShape_005501D0_5C2AA8CA	/SubmarineTitans/Recovered/PointerShapes/AnonShape_005501D0_5C2AA8CA	unchanged	length=27; fields=2
 type	AnonShape_005501D0_83B30032	/SubmarineTitans/Recovered/PointerShapes/AnonShape_005501D0_83B30032	disabled	apply=0
 type	AnonShape_00550830_31BFDEFC	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00550830_31BFDEFC	disabled	apply=0
 type	AnonShape_00550BB0_E751EA74	/SubmarineTitans/Recovered/PointerShapes/AnonShape_00550BB0_E751EA74	disabled	apply=0
@@ -926,7 +927,16 @@ target	00430A90	Stack[-0x14]:4	disabled	apply=0
 target	00430A90	Stack[-0x18]:4	disabled	apply=0
 target	00430A90	Stack[-0x8]:4	disabled	apply=0
 target	00430A90	Stack[0x4]:4	disabled	apply=0
+target	00436F20	Stack[-0x134]:4	disabled	apply=0
+target	00436F20	Stack[-0x148]:4	disabled	apply=0
+target	00436F20	Stack[-0x1f6]:4	disabled	apply=0
 target	00436F20	Stack[-0x20]:4	disabled	apply=0
+target	00436F20	Stack[-0x2c]:4	disabled	apply=0
+target	00436F20	Stack[-0x30]:4	disabled	apply=0
+target	00436F20	Stack[-0x34]:4	disabled	apply=0
+target	00436F20	Stack[-0x6c]:4	disabled	apply=0
+target	00436F20	Stack[-0xc]:4	disabled	apply=0
+target	00436F20	Stack[0x4]:4	disabled	apply=0
 target	00438E30	Stack[-0xc]:4	disabled	apply=0
 target	00439100	Stack[-0x2c]:4	disabled	apply=0
 target	0043BEB0	Stack[-0x10]:4	disabled	apply=0
@@ -1058,7 +1068,6 @@ target	00497CD0	Stack[-0xc]:4	disabled	apply=0
 target	00497E00	Stack[-0x20]:4	disabled	apply=0
 target	00497E00	Stack[-0x8]:4	disabled	apply=0
 target	00497E00	Stack[0x4]:4	disabled	apply=0
-target	00498D20	Stack[0x8]:4	disabled	apply=0
 target	00499750	Stack[-0x10]:4	disabled	apply=0
 target	004999C0	Stack[-0x10]:4	disabled	apply=0
 target	00499B80	Stack[-0x8]:4	disabled	apply=0
@@ -1862,7 +1871,6 @@ target	005B8F40	Stack[0x4]:4	disabled	apply=0
 target	005B9010	Stack[-0xc]:4	disabled	apply=0
 target	005B9170	Stack[-0x10]:4	disabled	apply=0
 target	005B9330	Stack[-0x8]:4	disabled	apply=0
-target	005B9730	Stack[-0xc]:4	disabled	apply=0
 target	005B9860	Stack[-0x8]:4	disabled	apply=0
 target	005B9860	Stack[0x4]:4	disabled	apply=0
 target	005B9860	Stack[0x8]:4	disabled	apply=0
@@ -2822,4 +2830,5 @@ target	00761550	Stack[0x4]:4	disabled	apply=0
 target	00761550	Stack[0x8]:4	disabled	apply=0
 target	00761770	Stack[0x4]:4	disabled	apply=0
 target	00761770	Stack[0x8]:4	disabled	apply=0
+target	005501D0:command	Stack[0x4]:4	preserved	manual/imported variable type
 target	00710FB0:this	ECX:4 (auto)	conflict	anonymous auto-this ownership must be handled by STHiddenThisAnalyzer

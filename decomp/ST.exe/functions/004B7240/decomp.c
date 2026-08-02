@@ -5,8 +5,8 @@ int FUN_004b7240(uint param_1,int param_2)
   undefined4 *puVar1;
   int iVar2;
 
-  puVar1 = &g_playerRuntime[(char)param_1].field2273_0x976;
-  iVar2 = g_playerRuntime[(char)param_1].field2273_0x976 - param_2;
+  puVar1 = &g_packedRecords_A62x8[(char)param_1].field2273_0x976;
+  iVar2 = g_packedRecords_A62x8[(char)param_1].field2273_0x976 - param_2;
   *puVar1 = iVar2;
   if (iVar2 < 0) {
     *puVar1 = 0;

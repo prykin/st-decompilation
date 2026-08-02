@@ -6,8 +6,8 @@
    006B0C70 @ 004D2C21 | 004D8530 -> 006B0C70 @ 004D8583 | 004D9700 -> 006B0C70 @ 004D9741 |
    0054D640 -> 006B0C70 @ 0054D803
 
-   [STUtilityFunctionApplier] darray_remove_at: removes one indexed DArray element, shifts the byte
-   tail, updates count/iterator state, and returns zero or -4
+   [STUtilityFunctionApplier] darray_remove_at: removes one indexed dynamic-array element, shifts
+   the byte tail, updates count/iterator state, and returns zero or -4
    Evidence: body pattern verified */
 
 int DArrayRemoveAt(DArrayTy *array,uint index)

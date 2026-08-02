@@ -40,8 +40,8 @@ int __thiscall STAllPlayersC::_ChangeMD(STAllPlayersC *this,int param_1,int *par
     iVar4 = _SubMDObject(piVar3,uVar6);
   }
   if ((((iVar4 == 1) &&
-       (array = (DArrayTy *)g_playerRuntime[(int)piVar3].field5_0x5, array != (DArrayTy *)0x0)) &&
-      (dVar1 = array->count, dVar1 != 0)) && (uVar6 = 0, 0 < (int)dVar1)) {
+       (array = (DArrayTy *)g_packedRecords_A62x8[(int)piVar3].field5_0x5, array != (DArrayTy *)0x0)
+       ) && (dVar1 = array->count, dVar1 != 0)) && (uVar6 = 0, 0 < (int)dVar1)) {
     do {
       DArrayGetElement(array,uVar6,&param_2);
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */

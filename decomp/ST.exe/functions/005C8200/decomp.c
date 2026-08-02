@@ -75,11 +75,8 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004EEFB0::FUN_005c8200
   local_84 = DAT_0080995c;
   puVar8 = (byte *)(&DAT_00809960);
   puVar11 = (byte *)(local_c8);
-  for (iVar2 = 8; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *puVar11 = *puVar8;
-    puVar8 = (byte *)(puVar8 + 1);
-    puVar11 = (byte *)(puVar11 + 1);
-  }
+  memmove(puVar11, puVar8, 0x20); /* compiler REP MOVS byte copy */
+  iVar2 = 0;
   local_8 = &DAT_008087b6;
   puVar4 = cMf32::RecGet(this_00->field_1F3F,0,PTR_s_DESCRIPTOR_0079c110,(int *)&local_8,0);
   if (puVar4 == (ushort *)0x0) {

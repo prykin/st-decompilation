@@ -119,7 +119,10 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
         if (functions.isEmpty()) return;
         DecompilerCallback<DecompileResults> callback = new DecompilerCallback<>(
                 currentProgram, dec -> {
-                    dec.toggleCCode(true);
+                    // Only the HighFunction/local symbol map is consumed below.
+                    // Rendering C roughly doubles work for large functions and adds no
+                    // evidence to merge-group recovery.
+                    dec.toggleCCode(false);
                     dec.toggleSyntaxTree(true);
                 }) {
             @Override
@@ -240,11 +243,11 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
             if (anchor == null) continue;
             boolean different = !selected.specification.equals(
                 currentSpecification);
-            // Single-group locals are an undefined-type recovery pass, not an
-            // inventory of already typed SSA values. The older multi-group
-            // rows remain complete because they document every independent
-            // lifetime sharing one Listing local.
-            if (!merged && !different) continue;
+            // Proposal TSVs are an apply/review queue, not an inventory of every
+            // already-correct HighVariable. Keep conflicts above and every differing
+            // type, but do not send tens of thousands of settled merge groups through
+            // the applier and SMB reports.
+            if (!different) continue;
             boolean manual = symbolSource == SourceType.USER_DEFINED ||
                 symbolSource == SourceType.IMPORTED;
             boolean apply = different && !manual &&
@@ -813,7 +816,8 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
                 "the same exact typed return/copy evidence or two agreeing typed " +
                 "call arguments. Script-owned scalar splits are revisited so an " +
                 "exact nominal copy can restore an enum, typedef, or pointer. " +
-                "Competing exact types are review-only.",
+                "Competing exact types are review-only. Already-correct groups are " +
+                "counted in the summary but omitted from the proposal/apply queue.",
             "manual_safety=USER_DEFINED and IMPORTED HighSymbols are never enabled."
         ), StandardCharsets.UTF_8);
     }

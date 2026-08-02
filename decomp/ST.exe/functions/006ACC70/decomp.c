@@ -1,6 +1,6 @@
 
-/* [STUtilityFunctionApplier] darray_get_element: copies the indexed DArray element and returns
-   index or -4
+/* [STUtilityFunctionApplier] darray_get_element: copies the indexed dynamic-array element and
+   returns index or -4
    Evidence: body pattern verified */
 
 int __fastcall DArrayGetElement(DArrayTy *array,uint index,void *outElement)

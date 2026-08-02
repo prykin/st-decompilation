@@ -9,14 +9,16 @@ script.
 
 ## Environment
 
-- Repository: `<local-home>/st` on the local filesystem. Do not use SMB.
-- Ghidra: 12.1.2
-- Java: Homebrew OpenJDK 21
-- Project: `<local-home>/st/proj/st.gpr`
-- Scripts: `<local-home>/st/scripts`
-- Recovery output: `<local-home>/st/recovery/ST.exe`
-- LLM corpus: `<local-home>/st/decomp/ST.exe`
-- Original executable: `<local-home>/st/bin/ST.exe` (ignored; never commit)
+- Inspection/editing workstation: use the authoritative SMB volume directly at
+  `<local-volume>/st`. Do not create a local checkout or symbolic link.
+- Ghidra host repository path: `<local-home>/st`. Paths recorded in build/run
+  manifests are host paths, not evidence of a second repository.
+- Ghidra host: Ghidra 12.1.2 with Homebrew OpenJDK 21.
+- Project on the Ghidra host: `<local-home>/st/proj/st.gpr`.
+- Scripts on the Ghidra host: `<local-home>/st/scripts`.
+- Recovery output on this workstation: `<local-volume>/st/recovery/ST.exe`.
+- LLM corpus on this workstation: `<local-volume>/st/decomp/ST.exe`.
+- Original executable: `bin/ST.exe` (ignored; never commit).
 
 The scripts are ordinary Ghidra Java scripts compiled on demand, not a Gradle
 extension. `STRecoveryLauncher` infers repository paths and orchestrates the
@@ -35,48 +37,52 @@ corpus and reports, not one convenient `decomp.c`. Do not claim a source change
 affected Ghidra until the user has run the pipeline and the generated reports
 have been checked.
 
-## Latest run and exact failure
+## Latest accepted run
 
-The latest `full-export` completed all recovery and fixed-point stages, recorded
-semantic Program hash
-`4a7d56045dae0f7f5bee2cddf2ce091846906b0ffde853a91e74f17d6617746d`,
-then failed at step 250 in `STDecompExport`:
+The authoritative latest `full-export` is run
+`32fdd23154133857c39966429e56ee51c0f828b65a8388f57b1bb0e69f47e88f`
+under `recovery/ST.exe/runs/`. It completed on 2026-08-02 in 2,314.892 seconds
+(38m34.892s), with Program modification `379 -> 1176` and semantic hash
+`092a55e1aa7e5136813b1bd4600a741d22895c40f4281c890b03470a02d089b3`.
 
-```text
-NullPointerException: Cannot invoke "java.lang.Long.longValue()"
-STDecompExport.unsignedLiteral
-STDecompExport.pointerAdvance
-STDecompExport.normalizeBulkCopyLoops
-```
+Ghidra's load preflight accepted all 77 Java scripts: 76 were freshly loaded
+and the already-running `STRecoveryPipeline` was recorded as
+`already_loaded`; `build_failure_count=0`. The export receipt is `passed` and
+the regression gate reports zero hard regressions and zero warnings. It
+exported 10,392 internal functions and 5,712 bodies with zero decompilation
+failures. Every physical vtable slot retained its type. Against the accepted
+baseline, `raw_indirect_call` improved `2102 -> 2100` and `undefined_type`
+improved `17791 -> 17777`; all other guarded quality counters were stable.
 
-The cause was Java conditional-expression unboxing: a non-literal symbolic
-byte-count expression selected a `null` `Long` branch and was implicitly
-unboxed. `unsignedLiteral` now uses explicit branches and returns `null`
-normally for identifiers/arithmetic expressions.
+The repaired lifecycle behavior was exercised, not merely compiled:
 
-This run used the old direct-to-destination exporter. Consequently,
-`decomp/ST.exe/functions/` is partly refreshed while the root `manifest.json`,
-indexes, receipt, and regression report still describe the preceding completed
-export. In particular, the currently visible old `passed` receipt is not
-evidence that the latest attempt passed. `pipeline_bootstrap.log` is the
-authority for this interrupted run.
+- `STHiddenThisApplier` restored 24 receiver signatures, including two live
+  consumers of `AnonReceiver_0064A970`;
+- the final lifecycle proposal retains `AnonReceiver_0064A970` with six
+  signature uses, and also retains its referenced vtable;
+- the first lifecycle apply replaced 15 stale discriminator-case views only
+  with views carrying the same discriminator address/case identity, and removed
+  four unreferenced script-owned views (two stale case views and two anonymous
+  pointer shapes);
+- the immediately repeated lifecycle pass made zero changes, proving that the
+  resulting lifecycle state is stable within the run.
 
-The last completed central snapshot contains:
+The final discriminator stack phase now costs 6.034 seconds instead of
+re-decompiling all families for roughly two minutes. Local-lifetime analysis
+cost 180.125 seconds and emitted only 618 actionable/review proposals rather
+than the 22,917-row queue from the rejected run. The whole run was 21m41.643s
+faster than the preceding 60m16.535s rejected run (about 36% wall-clock
+reduction).
 
-- 10,673 Program functions, including externals;
-- 10,392 exported internal functions;
-- 5,712 bodies;
-- 854 library functions;
-- 3,826 thunks;
-- 1,149 source-provenance functions;
-- 180 candidate vtables;
-- 145 recovered class layouts;
-- 260 message IDs.
+The run recorded six same-epoch analyzer cache hits. The persistent analyzer
+cache remains empty after this Program-changing repair run, so
+a second unchanged full run has not yet measured persistent-cache savings.
+That is an optimization/measurement follow-up, not a correctness blocker for
+committing this accepted snapshot. Exactly three archived runs are retained.
 
-Its broad quality audit reports 5,070 functions with 14,059 issue records,
-including 3,031 raw pointer offsets in 1,167 functions, 2,103 raw indirect calls
-in 835, 1,078 return-width artifacts in 147, and 18,054 `undefined*`
-occurrences in 3,647. These are overlapping presentation/type-debt measures.
+The following sections are a chronological implementation/failure log. Any
+future-tense rerun checklist in that history has been superseded by the latest
+accepted run above unless a later section explicitly reopens it.
 
 ## Source fixes made after the failed run
 
@@ -370,6 +376,50 @@ per-consumer and HighFunction-lifetime anchored.
 
 ## Suggested commit title
 
-After the rerun and a passing regression gate:
+`fix(recovery): stabilize type lifecycle and accelerate final passes`
 
-`refactor(recovery): remove seeded heuristics and parallelize fixed points`
+## Lifecycle regression and final-pass speed fix
+
+Full-export run `78663d1d21cd...` completed all analysis/export work in
+60m16.535s, then the regression gate correctly rejected one hard row:
+`raw_indirect_call 2102 -> 2379 (+277)`. Function `0066ACC0` contributed
+`+269`, `00668F50` contributed `+7`, `00672440` contributed `+3`, and
+`00660180` improved by `-2`.
+
+The cause was the first type-lifecycle apply pass. Its usage index keyed
+signature datatypes by Java object identity and failed to recognize a managed
+receiver nested under a distinct Pointer instance. It consequently removed 22
+live `HiddenThis/AnonReceiver_*` structures, including
+`AnonReceiver_0064A970`, even though their class namespaces and exported
+function signatures still used them. The same pass also replaced six unrelated
+one-byte linked-library discriminator cases with an STGroupBoat case solely
+because `DataType.isEquivalent()` reported equal storage.
+
+The source now:
+
+- indexes live uses by managed datatype path while recursively unwrapping
+  Pointer, Array, TypeDef and FunctionDefinition containers;
+- treats functions owned by a HiddenThis namespace as live uses and repeats
+  that check immediately before deletion;
+- permits layout-equivalent replacement only with an equal discriminator
+  function-address/case key, an exact same-category conflict identity, or an
+  equal same-category generated-layout provenance hash;
+- detects detached receiver types left behind by Ghidra datatype removal,
+  recreates them through `STHiddenThisApplier`, and rebuilds the dynamic
+  auto-this signature against the newly managed datatype;
+- caches DiscriminatedPayload, PointerRoleRepair and Prototype analyzer
+  artifacts by source/dependency/Program semantic state;
+- validates/reuses current-epoch discriminator case proposals for final stack
+  recovery, so that phase decompiles only machine-prefiltered callers instead
+  of all discriminator families again;
+- disables C rendering in LocalLifetime analysis/application because only the
+  HighFunction is consumed, and omits already-correct merge groups from its
+  proposal/apply queue. The rejected run carried 22,312 such settled rows in a
+  5.9 MiB proposal file.
+
+The rejected run's final DiscriminatedPayload analysis cost 128.668s despite
+finding zero stack targets; that repeated family decompilation is removed. The
+replacement sources subsequently passed Ghidra's on-demand compilation and the
+runtime `full-export` recorded under **Latest accepted run**. Its final stack
+phase took 6.034s, the lifecycle confirmation pass made zero changes, and the
+export gate passed without regressions or warnings.

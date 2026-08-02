@@ -16,9 +16,9 @@ undefined4 __fastcall FUN_004e4d60(AnonShape_004E4D60_C16F78E8 *param_1)
       *(undefined4 *)&param_1[2].field_0x4a = 0;
     }
     if (*(int *)&param_1->field_0x24 != param_1->field_023D) {
-      uVar1 = GetPlayerRaceId((char)param_1->field_023D);
+      uVar1 = LookupRecordByte((char)param_1->field_023D);
       iVar3 = param_1->field_0235;
-      uVar2 = GetPlayerRaceId(param_1->field_0x24);
+      uVar2 = LookupRecordByte(param_1->field_0x24);
       if ((&DAT_007e1984)[(uVar2 & 0xff) + ((uVar1 & 0xff) + iVar3 * 3) * 3] == '\0') {
         return 0;
       }

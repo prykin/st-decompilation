@@ -431,12 +431,18 @@ public class STHiddenThisAnalyzer extends GhidraScript {
     }
 
     private boolean receiverTypeMatches(Function function, String path) {
+        DataType managed = currentProgram.getDataTypeManager().getDataType(path);
+        if (!(managed instanceof Structure)) return false;
         for (Parameter parameter : function.getParameters()) {
             if (!parameter.isAutoParameter() ||
                     parameter.getAutoParameterType() != AutoParameterType.THIS ||
                     !(parameter.getDataType() instanceof Pointer pointer)) continue;
             DataType pointed = pointer.getDataType();
-            return pointed != null && path.equals(pointed.getPathName());
+            // A removed datatype can survive as a detached pointer target with the
+            // same rendered path. It is not a live managed receiver and must be rebuilt.
+            return pointed == managed || pointed != null &&
+                pointed.getUniversalID() != null &&
+                pointed.getUniversalID().equals(managed.getUniversalID());
         }
         return false;
     }

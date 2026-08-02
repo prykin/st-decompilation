@@ -108,7 +108,7 @@ void __thiscall PrividerTy::DeleteCtrls(PrividerTy *this,char param_1)
     if (pPVar3->field_1B9D != 0xffffffff) {
       FUN_006b3af0((int *)pPVar3->field_1BE1,pPVar3->field_1B9D);
     }
-    puVar7 = &pPVar3->field_1C2A;
+    puVar7 = pPVar3->field_1C2A;
     local_8 = 0x16;
     do {
       FUN_006b3af0((int *)g_ddxContext_008075A8,*puVar7);

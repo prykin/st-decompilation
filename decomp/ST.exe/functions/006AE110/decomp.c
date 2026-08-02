@@ -6,8 +6,8 @@
    00450668 | 004899A0 -> 006AE110 @ 0048A2F6 | 00490F60 -> 006AE110 @ 00491007 | 004999C0 ->
    006AE110 @ 00499AAE | 0049A620 -> 006AE110 @ 0049A6D3 | 00675EA0 -> 006AE110 @ 00675F3D
 
-   [STUtilityFunctionApplier] darray_destroy: releases DArray storage and the descriptor when the
-   ownership flag is set
+   [STUtilityFunctionApplier] darray_destroy: releases dynamic-array storage and the descriptor when
+   the ownership flag is set
    Evidence: body pattern verified */
 
 void DArrayDestroy(DArrayTy *array)

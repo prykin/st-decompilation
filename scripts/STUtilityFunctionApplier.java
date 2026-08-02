@@ -87,8 +87,7 @@ public class STUtilityFunctionApplier extends GhidraScript {
                 // prototype.  Refresh our owned block even when no type/name
                 // mutation is necessary so stale claims do not survive forever.
                 replaceComment(function, row);
-                function.addTag(TAG);
-                function.addTag(semanticTag(row));
+                refreshSemanticTags(function, row);
                 report.add(new Report(addressText, row.get("semantic_id"), "unchanged",
                     "desired name and prototype already present")); return;
             }
@@ -123,8 +122,7 @@ public class STUtilityFunctionApplier extends GhidraScript {
                 parameter.setName(names[index], SourceType.ANALYSIS);
             }
             function.getSymbol().setName(row.get("proposed_name"), SourceType.ANALYSIS);
-            function.addTag(TAG);
-            function.addTag(semanticTag(row));
+            refreshSemanticTags(function, row);
             replaceComment(function, row);
             report.add(new Report(addressText, row.get("semantic_id"), "applied",
                 row.get("proposed_name") + " " + row.get("proposed_convention")));
@@ -151,6 +149,17 @@ public class STUtilityFunctionApplier extends GhidraScript {
         if (old != null) for (String item : old.split("\\n\\s*\\n"))
             if (!item.trim().startsWith(MARKER) && !item.isBlank()) kept.add(item.trim());
         kept.add(block); function.setComment(String.join("\n\n", kept));
+    }
+
+    private void refreshSemanticTags(Function function, Map<String, String> row) {
+        String desired = semanticTag(row);
+        List<String> obsolete = new ArrayList<>();
+        for (var tag : function.getTags())
+            if (tag.getName().startsWith(TAG_PREFIX) && !tag.getName().equals(desired))
+                obsolete.add(tag.getName());
+        for (String name : obsolete) function.removeTag(name);
+        function.addTag(TAG);
+        function.addTag(desired);
     }
 
     private String semanticTag(Map<String, String> row) {

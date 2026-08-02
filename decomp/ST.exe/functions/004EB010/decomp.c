@@ -20,11 +20,11 @@ undefined4 __thiscall STAllPlayersC::sub_004EB010(STAllPlayersC *this,int param_
   local_8 = 0;
   /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
   iVar6 = param_1 * 0xa62;
-  g_playerRuntime[param_1].field2332_0x9c6 = 0;
+  g_packedRecords_A62x8[param_1].field2332_0x9c6 = 0;
   local_10 = 0;
   while( true ) {
     do {
-      iVar2 = GetPlayerRaceId((char)param_1);
+      iVar2 = LookupRecordByte((char)param_1);
       if ((char)iVar2 == '\x03') {
         iVar2 = local_10 + iVar5 * 2;
         uVar1 = (&DAT_007c1620)[iVar2];
@@ -36,8 +36,8 @@ undefined4 __thiscall STAllPlayersC::sub_004EB010(STAllPlayersC *this,int param_
         iVar4 = iVar5 * 8;
         iVar5 = (&DAT_007c15c4)[iVar5 * 2];
         iVar2 = *(int *)(&DAT_007c15c0 +
-                        (local_10 + (local_8 + g_playerRuntime[param_1].field2332_0x9c6 * 2) * 2) *
-                        8);
+                        (local_10 +
+                        (local_8 + g_packedRecords_A62x8[param_1].field2332_0x9c6 * 2) * 2) * 8);
         uVar3 = this->field_001C * 0x41c64e6d + 0x3039;
         this->field_001C = uVar3;
         iVar2 = iVar2 + (uVar3 >> 0x10) % ((iVar5 - iVar2) + 1U);
@@ -52,7 +52,7 @@ undefined4 __thiscall STAllPlayersC::sub_004EB010(STAllPlayersC *this,int param_
     local_10 = 0;
     local_8 = iVar5;
   }
-  g_playerRuntime[param_1].field2331_0x9c2 = g_playSystem_00802A38->field_00E4;
+  g_packedRecords_A62x8[param_1].field2331_0x9c2 = g_playSystem_00802A38->field_00E4;
   return 0;
 }
 

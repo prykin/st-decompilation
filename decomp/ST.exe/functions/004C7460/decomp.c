@@ -73,7 +73,7 @@ undefined4 __thiscall TLOBaseTy::sub_004C7460(TLOBaseTy *this)
       iVar4 = this->field_0607->field_0000;
     }
     if (*(int *)(&DAT_00794d70 + iVar4 * 4) != -1) {
-      iVar1 = GetPlayerRaceId(*(char *)&this->field_0024);
+      iVar1 = LookupRecordByte(*(char *)&this->field_0024);
       iVar3 = local_8;
       if ((char)iVar1 == '\x03') {
         iVar3 = 0;

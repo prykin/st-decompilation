@@ -49,10 +49,8 @@ import ghidra.program.model.symbol.SymbolIterator;
 import ghidra.program.model.symbol.SymbolTable;
 
 public class STGlobalRecordAnalyzer extends GhidraScript {
-    private static final String RECORD_ID = "player_runtime";
-    private static final String RECORD_TYPE =
-        "/SubmarineTitans/Recovered/GlobalRecords/STPlayerRuntimeRecord";
-    private static final String ARRAY_NAME = "g_playerRuntime";
+    private static final String RECORD_ROOT =
+        "/SubmarineTitans/Recovered/GlobalRecords";
     private static final String MARKER = "[STGlobalRecordApplier]";
     private static final String HASH_MARKER = "; generated_layout_sha256=";
 
@@ -65,6 +63,9 @@ public class STGlobalRecordAnalyzer extends GhidraScript {
     private int stride;
     private int totalSize;
     private int count;
+    private String recordId;
+    private String recordType;
+    private String arrayName;
 
     @Override
     protected void run() throws Exception {
@@ -84,10 +85,15 @@ public class STGlobalRecordAnalyzer extends GhidraScript {
         dataTypes = currentProgram.getDataTypeManager();
         Geometry geometry = inferRuntimeGeometry();
         if (geometry == null)
-            throw new IllegalStateException("Player runtime geometry is not uniquely implied " +
-                "by the player-race utility semantic and repeated range/stride evidence");
+            throw new IllegalStateException("Packed-record geometry is not uniquely implied " +
+                "by the indexed-record utility semantic and repeated range/stride evidence");
         base = geometry.base; stride = geometry.stride; count = geometry.count;
         totalSize = Math.multiplyExact(stride, count);
+        String geometryId = Integer.toHexString(stride).toUpperCase(Locale.ROOT) +
+            "x" + count;
+        recordId = "record_" + geometryId.toLowerCase(Locale.ROOT);
+        recordType = RECORD_ROOT + "/PackedRecord_" + geometryId;
+        arrayName = "g_packedRecords_" + geometryId;
         recordEnd = base.add(stride - 1L);
         arrayEnd = base.add(totalSize - 1L);
 
@@ -245,10 +251,18 @@ public class STGlobalRecordAnalyzer extends GhidraScript {
     }
 
     private LayoutState layoutState() {
-        DataType type = dataTypes.getDataType(RECORD_TYPE);
-        if (type == null) return new LayoutState(true, "record type does not exist yet", null);
-        if (!(type instanceof Structure structure))
+        DataType target = dataTypes.getDataType(recordType);
+        Structure structure = null;
+        boolean migratingOwnedIdentity = false;
+        if (target instanceof Structure candidate) structure = candidate;
+        else if (target != null)
             return new LayoutState(false, "target record path is not a structure", null);
+        else {
+            structure = installedRecordStructure();
+            migratingOwnedIdentity = structure != null;
+        }
+        if (structure == null)
+            return new LayoutState(true, "record type does not exist yet", null);
         String description = structure.getDescription();
         if (description == null || !description.contains(MARKER))
             return new LayoutState(false, "existing manual/unowned record structure preserved",
@@ -259,17 +273,31 @@ public class STGlobalRecordAnalyzer extends GhidraScript {
         String current = layoutHash(structure);
         if (!stored.equals(current))
             return new LayoutState(false, "manual record-layout changes detected", structure);
-        return new LayoutState(true, "unchanged script-owned record structure", structure);
+        return new LayoutState(true, migratingOwnedIdentity ?
+            "unchanged script-owned record will migrate to inferred geometry identity" :
+            "unchanged script-owned record structure", structure);
+    }
+
+    private Structure installedRecordStructure() {
+        Data root = listing.getDefinedDataAt(base);
+        if (root == null || !owned(base) || !(root.getDataType() instanceof Array array) ||
+                !(array.getDataType() instanceof Structure structure)) return null;
+        return structure;
     }
 
     private RangeSafety rangeSafety() {
         if (listing.getInstructions(new AddressSet(base, arrayEnd), true).hasNext())
             return new RangeSafety(false, "record range contains instructions");
-        Data root = listing.getDefinedDataAt(base);
-        if (root != null && root.getDataType() instanceof Array array &&
-                array.getDataType() instanceof Structure structure &&
-                structure.getPathName().equals(RECORD_TYPE) && owned(base))
-            return new RangeSafety(true, "existing script-owned record array");
+        Structure installed = installedRecordStructure();
+        if (installed != null) {
+            String description = installed.getDescription();
+            String stored = description == null ? null : storedHash(description);
+            if (description == null || !description.contains(MARKER) || stored == null ||
+                    !stored.equals(layoutHash(installed)))
+                return new RangeSafety(false,
+                    "existing record array has unowned or edited element layout");
+            return new RangeSafety(true, "existing unchanged script-owned record array");
+        }
         DataIterator data = listing.getDefinedData(new AddressSet(base, arrayEnd), true);
         while (data.hasNext()) {
             Data item = data.next();
@@ -311,16 +339,16 @@ public class STGlobalRecordAnalyzer extends GhidraScript {
     }
 
     private Geometry inferRuntimeGeometry() throws Exception {
-        Function raceLookup = null;
+        Function recordLookup = null;
         FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
         while (functions.hasNext()) {
             Function function = functions.next();
-            if (!hasTag(function, "RECOVERED_UTILITY_PLAYER_RACE_ID")) continue;
-            if (raceLookup != null) return null;
-            raceLookup = function;
+            if (!hasTag(function, "RECOVERED_UTILITY_INDEXED_RECORD_BYTE_LOOKUP")) continue;
+            if (recordLookup != null) return null;
+            recordLookup = function;
         }
-        if (raceLookup == null) return null;
-        BaseStride inferred = inferBaseStride(raceLookup);
+        if (recordLookup == null) return null;
+        BaseStride inferred = inferBaseStride(recordLookup);
         if (inferred == null || inferred.stride < 16 || inferred.stride > 0x100000)
             return null;
         Integer inferredCount = inferRecordCount(inferred.base, inferred.stride);
@@ -597,10 +625,10 @@ public class STGlobalRecordAnalyzer extends GhidraScript {
             out.write("apply\trecord_id\tbase_address\tstride\tcount\ttotal_size\tend_address\t" +
                 "type_path\tarray_name\texpected_range_sha256\tobserved_functions\t" +
                 "observed_field_sites\tfields\ttyped_fields\tnamed_fields\tconfidence\treason\n");
-            for (RecordProposal row : rows) out.write(bit(row.apply) + "\t" + RECORD_ID +
+            for (RecordProposal row : rows) out.write(bit(row.apply) + "\t" + recordId +
                 "\t" + addr(base) + "\t" + stride + "\t" + count + "\t" +
-                totalSize + "\t" + addr(arrayEnd.add(1)) + "\t" + RECORD_TYPE +
-                "\t" + ARRAY_NAME + "\t" + row.rangeHash + "\t" + row.functions + "\t" +
+                totalSize + "\t" + addr(arrayEnd.add(1)) + "\t" + recordType +
+                "\t" + arrayName + "\t" + row.rangeHash + "\t" + row.functions + "\t" +
                 row.fieldSites + "\t" + row.fields + "\t" + row.typedFields + "\t" +
                 row.namedFields + "\t" + row.confidence + "\t" + tsv(row.reason) + "\n");
         }
@@ -609,9 +637,9 @@ public class STGlobalRecordAnalyzer extends GhidraScript {
     private void writeRecordJson(Path path, List<RecordProposal> rows) throws Exception {
         List<String> lines = new ArrayList<>();
         for (RecordProposal row : rows) lines.add("{\"apply\":" + row.apply +
-            ",\"record_id\":" + q(RECORD_ID) + ",\"base_address\":" + q(addr(base)) +
+            ",\"record_id\":" + q(recordId) + ",\"base_address\":" + q(addr(base)) +
             ",\"stride\":" + stride + ",\"count\":" + count +
-            ",\"type_path\":" + q(RECORD_TYPE) + ",\"array_name\":" + q(ARRAY_NAME) +
+            ",\"type_path\":" + q(recordType) + ",\"array_name\":" + q(arrayName) +
             ",\"confidence\":" + q(row.confidence) + ",\"reason\":" + q(row.reason) + "}");
         Files.write(path, lines, StandardCharsets.UTF_8);
     }
@@ -620,7 +648,7 @@ public class STGlobalRecordAnalyzer extends GhidraScript {
         try (BufferedWriter out = Files.newBufferedWriter(path, StandardCharsets.UTF_8)) {
             out.write("apply\trecord_id\toffset\toffset_hex\tsize\tproposed_name\t" +
                 "proposed_type\ttype_confidence\tname_confidence\treads\twrites\tevidence\treason\n");
-            for (FieldProposal row : rows) out.write(bit(row.apply) + "\t" + RECORD_ID +
+            for (FieldProposal row : rows) out.write(bit(row.apply) + "\t" + recordId +
                 "\t" + row.offset + "\t0x" + Long.toHexString(row.offset).toUpperCase(Locale.ROOT) +
                 "\t" + row.size + "\t" + tsv(row.name) + "\t" + tsv(row.type) + "\t" +
                 row.typeConfidence + "\t" + row.nameConfidence + "\t" + row.reads + "\t" +
@@ -632,7 +660,7 @@ public class STGlobalRecordAnalyzer extends GhidraScript {
     private void writeFieldJson(Path path, List<FieldProposal> rows) throws Exception {
         List<String> lines = new ArrayList<>();
         for (FieldProposal row : rows) lines.add("{\"apply\":" + row.apply +
-            ",\"record_id\":" + q(RECORD_ID) + ",\"offset\":" + row.offset +
+            ",\"record_id\":" + q(recordId) + ",\"offset\":" + row.offset +
             ",\"size\":" + row.size + ",\"proposed_name\":" + q(row.name) +
             ",\"proposed_type\":" + q(row.type) + ",\"type_confidence\":" +
             q(row.typeConfidence) + ",\"reason\":" + q(row.reason) + "}");
@@ -653,7 +681,7 @@ public class STGlobalRecordAnalyzer extends GhidraScript {
     private void writeSummary(Path path, RecordProposal record, Scan scan,
             LayoutState layout, RangeSafety range, boolean evidenceStrong) throws Exception {
         Files.write(path, List.of("program=" + currentProgram.getName(),
-            "record_id=" + RECORD_ID, "base=" + addr(base),
+            "record_id=" + recordId, "base=" + addr(base),
             "stride=0x" + Integer.toHexString(stride).toUpperCase(Locale.ROOT),
             "total_size=0x" + Integer.toHexString(totalSize).toUpperCase(Locale.ROOT),
             "count=" + count, "exclusive_end=" + addr(arrayEnd.add(1)),
@@ -667,7 +695,7 @@ public class STGlobalRecordAnalyzer extends GhidraScript {
             "range_reason=" + range.reason, "layout_safe=" + layout.safe,
             "layout_reason=" + layout.reason, "auto_apply=" + record.apply,
             "note=The record is packed: stride and structure length are inferred from " +
-                "the guarded player lookup and independently repeated range evidence."),
+                "the guarded indexed-record lookup and independently repeated range evidence."),
             StandardCharsets.UTF_8);
     }
 

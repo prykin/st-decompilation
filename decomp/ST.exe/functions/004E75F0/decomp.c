@@ -14,7 +14,7 @@ void FUN_004e75f0(int param_1)
 
   iVar2 = param_1;
   if ((-1 < param_1) && (param_1 < 8)) {
-    uVar3 = GetPlayerRaceId((char)param_1);
+    uVar3 = LookupRecordByte((char)param_1);
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_1 = 0;
     iVar4 = (uVar3 & 0xff) - 1;

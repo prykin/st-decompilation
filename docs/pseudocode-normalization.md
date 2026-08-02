@@ -212,27 +212,27 @@ current expression. Repeated exports therefore do not duplicate or preserve
 stale hints. JSONL line numbers refer to the raw expression in the final
 annotated `decomp.c`.
 
-### Flattened player-runtime records
+### Flattened fixed-stride records
 
 An optimized interior-pointer expression can remain flat even though the global
-range is already typed as `STPlayerRuntimeRecord[8]`:
+range is already typed as a geometry-derived `PackedRecord_A62x8[8]`:
 
 ```c
 *(DArrayTy **)(param_3 * 0x10 + 0x7f4fdd + param_1 * 0xa62)
 ```
 
-With the surrounding index setup, its intended structured form is:
+The recovery pass can safely name the containing array from that geometry:
 
 ```c
-g_playerRuntime[(char)param_1]
-    .tempSlots[param_2][param_3]
-    .objectIds
+g_packedRecords_A62x8[(char)param_1]
 ```
 
-The `0xA62` stride, absolute address hint, referenced global component, and
-function location are catalogued as `flattened_global_record_array`. A future
-rewriter must prove the base and all index terms; matching the literal stride
-alone is not sufficient.
+It must not invent semantic members such as player slots or object IDs. A later
+rewriter may introduce a field/element expression only after proving the base,
+component offset, and every index term from the installed generated layout.
+The inferred stride, referenced global component, and function location are
+catalogued as `flattened_global_record_array`; matching a literal stride or
+absolute address alone is never sufficient.
 
 ### Runtime-stride dynamic arrays
 

@@ -2765,7 +2765,7 @@ thunk_address	status	proposed_qualified_name	details
 004049A8	disabled	FUN_00676c40	apply=0
 004049AD	disabled	FUN_004d8f80	apply=0
 004049B2	disabled	FUN_00651900	apply=0
-004049B7	disabled	GetPlayerRaceId	apply=0
+004049B7	disabled	LookupRecordByte	apply=0
 004049BC	disabled	STManBasisC::sub_005F2330	apply=0
 004049C1	disabled	FUN_006829b0	apply=0
 004049C6	disabled	FUN_004d7bd0	apply=0
@@ -3230,7 +3230,7 @@ thunk_address	status	proposed_qualified_name	details
 00405344	disabled	FUN_00522810	apply=0
 00405349	disabled	FUN_004e7d70	apply=0
 0040534E	disabled	FUN_004e7980	apply=0
-00405353	disabled	FUN_00543450	apply=0
+00405353	disabled	CreateCursor	apply=0
 00405358	disabled	FUN_00618b40	apply=0
 0040535D	disabled	FUN_0052a970	apply=0
 00405362	disabled	HelpPanelTy::ChangeTree	apply=0

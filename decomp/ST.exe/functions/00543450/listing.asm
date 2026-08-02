@@ -1,4 +1,4 @@
-FUN_00543450:
+CreateCursor:
 00543450  53                        PUSH EBX
 00543451  56                        PUSH ESI
 00543452  68 FB 04 00 00            PUSH 0x4fb

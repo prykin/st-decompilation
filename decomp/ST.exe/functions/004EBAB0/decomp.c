@@ -25,7 +25,7 @@ undefined4 __thiscall FUN_004ebab0(void *this,int param_1,int param_2)
       if (param_1 != 0xde) {
         return 0;
       }
-      iVar1 = GetPlayerRaceId(*(char *)((int)this + 0x24));
+      iVar1 = LookupRecordByte(*(char *)((int)this + 0x24));
       if ((char)iVar1 == '\x03') {
         iVar1 = thunk_FUN_004e4410(*(byte **)((int)this + 0x24));
         if (iVar1 < param_2) {
@@ -49,7 +49,7 @@ undefined4 __thiscall FUN_004ebab0(void *this,int param_1,int param_2)
     *(int *)((int)this + 0x4dc) = param_1;
     *(int *)((int)this + 0x4e0) = param_2;
     *(undefined4 *)((int)this + 0x4ec) = 0;
-    uVar2 = GetPlayerRaceId(*(char *)((int)this + 0x24));
+    uVar2 = LookupRecordByte(*(char *)((int)this + 0x24));
     *(uint *)((int)this + 0x50c) = uVar2 & 0xff;
     TLOBaseTy::RotateSpr(this,0);
   }

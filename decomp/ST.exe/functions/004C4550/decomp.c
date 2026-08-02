@@ -244,7 +244,7 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
       thunk_FUN_00584a30(this->field_04E0[0],this->field_04E0[1],this->field_04E0[2],
                          *param_1 * 0xc9 + 100,(&this->field_02A9)[iVar3] * 0xc9 + 100,
                          this->field_0024,local_1c,this->field_0018,this->field_0032);
-      local_EAX_1394 = GetPlayerRaceId(DAT_0080874d);
+      local_EAX_1394 = LookupRecordByte(DAT_0080874d);
       uVar5 = local_EAX_1394 & 0xff;
       if (uVar5 == 1) {
         this->vfunc_90(6,0x9e);
@@ -273,7 +273,7 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
                          (ushort)this->field_04E0[0],(ushort)this->field_04E0[1],
                          (ushort)this->field_04E0[2],(short)*param_1 * 0xc9 + 100,
                          (short)(&this->field_02A9)[iVar3] * 0xc9 + 100,(ushort)local_1c);
-      uVar4 = GetPlayerRaceId(DAT_0080874d);
+      uVar4 = LookupRecordByte(DAT_0080874d);
       uVar5 = uVar4 & 0xff;
       if (uVar5 == 1) {
         this->vfunc_90(6,0x98);
@@ -316,7 +316,7 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
                          (ushort)this->field_04E0[0],(ushort)this->field_04E0[1],
                          (ushort)this->field_04E0[2],(short)*param_1 * 0xc9 + 100,
                          (short)(&this->field_02A9)[iVar3] * 0xc9 + 100,(ushort)local_1c);
-      local_EAX_1150 = GetPlayerRaceId(DAT_0080874d);
+      local_EAX_1150 = LookupRecordByte(DAT_0080874d);
       uVar5 = local_EAX_1150 & 0xff;
       if (uVar5 == 1) {
         this->vfunc_90(6,0x9b);

@@ -17,7 +17,7 @@ undefined4 __fastcall FUN_004da9c0(undefined4 param_1)
   int uVar6;
   int local_EAX_1149;
   undefined4 uVar8;
-  byte playerId;
+  byte recordIndex;
   byte *pbVar9;
   int *piVar11;
   bool bVar12;
@@ -42,14 +42,14 @@ undefined4 __fastcall FUN_004da9c0(undefined4 param_1)
 
   local_28 = 0;
   local_14 = 0;
-  local_1c = &g_playerRuntime[0].field2383_0xa0e;
+  local_1c = &g_packedRecords_A62x8[0].field2383_0xa0e;
   local_18 = param_1;
   do {
     uVar7 = local_14;
     piVar11 = local_1c;
-    playerId = (byte)local_14;
+    recordIndex = (byte)local_14;
     if (*local_1c == 1) {
-      local_EAX_54 = GetPlayerRaceId(playerId);
+      local_EAX_54 = LookupRecordByte(recordIndex);
       uVar4 = local_EAX_54 & 0xff;
       if (uVar4 == 1) {
         iVar5 = 0x3d;
@@ -76,7 +76,7 @@ undefined4 __fastcall FUN_004da9c0(undefined4 param_1)
           *piVar11 = 2;
           piVar11[4] = iVar5;
           if (uVar7 == uVar4) {
-            local_EAX_206 = GetPlayerRaceId(playerId);
+            local_EAX_206 = LookupRecordByte(recordIndex);
             uVar4 = local_EAX_206 & 0xff;
             if (uVar4 == 1) {
               SoundClassTy::PlaySound
@@ -102,7 +102,7 @@ undefined4 __fastcall FUN_004da9c0(undefined4 param_1)
       local_10 = (int *)0x0;
       local_8 = (int *)0x0;
       do {
-        uVar3 = GetPlayerRaceId(playerId);
+        uVar3 = LookupRecordByte(recordIndex);
         uVar4 = uVar3 & 0xff;
         if (uVar4 == 1) {
           iVar5 = 0x3f;
@@ -121,7 +121,7 @@ undefined4 __fastcall FUN_004da9c0(undefined4 param_1)
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           _local_2c = CONCAT31(uStack_2b,bVar1);
           if (DAT_00808a8f == '\0') {
-            if (bVar1 == playerId) {
+            if (bVar1 == recordIndex) {
 LAB_004dabff:
               iVar6 = 0;
             }
@@ -173,7 +173,7 @@ LAB_004dabff:
          (*local_8 == 0)) {
         if (uVar7 == DAT_0080874d) {
           *local_8 = 1;
-          local_EAX_798 = GetPlayerRaceId((char)uVar7);
+          local_EAX_798 = LookupRecordByte((char)uVar7);
           uVar7 = local_EAX_798 & 0xff;
           if (uVar7 == 1) {
             iVar5 = 0x77;
@@ -197,7 +197,7 @@ LAB_004dad15:
           piVar11 = piVar11 + 1;
         }
         do {
-          uVar6 = GetPlayerRaceId((char)local_14);
+          uVar6 = LookupRecordByte((char)local_14);
           if ((*(char *)(*(int *)(&DAT_007bfc00 + (uVar6 & 0xffU) * 4) + iVar5) == '\0') &&
              ((&DAT_007e53bc)[iVar5] != '\0')) {
             uVar7 = 0;
@@ -235,7 +235,7 @@ LAB_004dad15:
           iVar5 = 0;
           piVar11 = local_2bc;
           do {
-            local_EAX_1149 = GetPlayerRaceId((char)local_c);
+            local_EAX_1149 = LookupRecordByte((char)local_c);
             if ((*(char *)(*(int *)(&DAT_007bfc00 + (local_EAX_1149 & 0xffU) * 4) + iVar5) == '\0')
                && (*piVar11 == 0)) {
               local_38 = (undefined2)iVar5;

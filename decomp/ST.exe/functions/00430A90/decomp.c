@@ -23,7 +23,7 @@ int __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,STMessage *message)
   undefined1 *puVar6;
   uint *puVar7;
   int iVar8;
-  STPlayerRuntimeRecord *pSVar9;
+  PackedRecord_A62x8 *pPVar9;
   uint uVar10;
   uint uVar11;
   char *pcVar12;
@@ -63,7 +63,7 @@ int __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,STMessage *message)
     if (SVar2 == MESS_SHARED_0003) {
       thunk_FUN_00446a70();
       local_20 = 0;
-      local_14 = (char *)&g_playerRuntime[0].field6_0x9;
+      local_14 = (char *)&g_packedRecords_A62x8[0].field6_0x9;
       do {
         uVar11 = 0;
         array = *(DArrayTy **)((int)local_14 + -4);
@@ -167,7 +167,7 @@ int __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,STMessage *message)
           uVar11 = uVar11 + 1;
         } while ((int)uVar11 < (int)dVar3);
       }
-      local_14 = (char *)&g_playerRuntime[0].field5_0x5;
+      local_14 = (char *)&g_packedRecords_A62x8[0].field5_0x5;
       do {
         pcVar12 = local_14;
         DArrayDestroy(*(DArrayTy **)((int)local_14 + 4));
@@ -237,7 +237,7 @@ int __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,STMessage *message)
     if (SVar2 == MESS_ID_NONE) {
       iVar5 = 0;
       local_14 = &DAT_008087e9;
-      piVar14 = &g_playerRuntime[0].field2382_0xa0a;
+      piVar14 = &g_packedRecords_A62x8[0].field2382_0xa0a;
       do {
         cVar15 = (char)iVar5;
         if (0x18 < g_playSystem_00802A38->field_00E4 - *piVar14) {
@@ -259,13 +259,13 @@ int __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,STMessage *message)
       return 0;
     }
     if (SVar2 == MESS_ID_CREATE) {
-      pSVar9 = g_playerRuntime;
+      pPVar9 = g_packedRecords_A62x8;
       puVar6 = &DAT_008087e8;
       do {
         uVar1 = *puVar6;
         puVar6 = puVar6 + 0x51;
-        pSVar9->field0_0x0 = uVar1;
-        pSVar9 = pSVar9 + 1;
+        pPVar9->field0_0x0 = uVar1;
+        pPVar9 = pPVar9 + 1;
       } while ((int)puVar6 < 0x808a70);
       g_array_007FA154 = (DArrayTy *)Library::DKW::TBL::FUN_006ae310((uint *)0x0,0,4,1,0x40307b);
       g_array_007FA158 = (DArrayTy *)Library::DKW::TBL::FUN_006ae310((uint *)0x0,0,4,1,0x40307b);
@@ -280,7 +280,7 @@ int __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,STMessage *message)
       if (local_c == (ushort *)0x0) {
         piVar14 = (int *)0x0;
         pcVar12 = &DAT_008087e9;
-        puVar13 = &g_playerRuntime[0].field5_0x5;
+        puVar13 = &g_packedRecords_A62x8[0].field5_0x5;
         do {
           puVar7 = Library::DKW::TBL::FUN_006ae310((uint *)0x0,0xf,4,5,0x40307b);
           puVar13[1] = puVar7;
@@ -319,7 +319,7 @@ int __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,STMessage *message)
         return 0;
       }
       cVar15 = '\0';
-      puVar13 = &g_playerRuntime[0].field5_0x5;
+      puVar13 = &g_packedRecords_A62x8[0].field5_0x5;
       do {
         puVar7 = Library::DKW::TBL::FUN_006ae310((uint *)0x0,0xf,4,5,0x40307b);
         puVar13[1] = puVar7;

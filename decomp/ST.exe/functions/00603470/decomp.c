@@ -9,7 +9,7 @@ void __thiscall FUN_00603470(void *this,AnonShape_00603470_D413D02D *param_1)
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   uVar2 = (**(code **)(*(int *)this + 0x2c))();
   *(undefined4 *)param_1 = uVar2;
-  iVar3 = GetPlayerRaceId(*(char *)((int)this + 0x24));
+  iVar3 = LookupRecordByte(*(char *)((int)this + 0x24));
   param_1->field_0x4 = (char)iVar3;
   param_1->field_0005 = 4;
   uVar1 = *(undefined1 *)((int)this + 0x21d);

@@ -12,13 +12,11 @@
 void __thiscall STPlaySystemC::SendMail(STPlaySystemC *this,void *param_1)
 
 {
-  dword dVar1;
-  dword dVar2;
-  code *pcVar3;
+  code *pcVar1;
   STPlaySystemC *this_00;
-  int errorCode;
-  int iVar4;
-  STControlCommand *command;
+  int iVar2;
+  int iVar3;
+  void *command;
   InternalExceptionFrame local_50;
   STPlaySystemC *local_c;
   uint local_8;
@@ -28,18 +26,18 @@ void __thiscall STPlaySystemC::SendMail(STPlaySystemC *this,void *param_1)
     local_50.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_50;
     local_c = this;
-    errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
+    iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
     this_00 = local_c;
-    if (errorCode == 0) {
+    if (iVar2 == 0) {
       local_8 = 0;
-      command = (STControlCommand *)&local_c->field_003D->field_0x7;
+      command = &local_c->field_003D->field_0x7;
       if (local_c->field_003D->field_0005 != 0) {
         do {
-          dVar1 = command->secondaryPayloadSize;
-          dVar2 = command->primaryPayloadSize;
+          iVar2 = *(int *)((int)command + 0x13);
+          iVar3 = *(int *)((int)command + 0xf);
           thunk_FUN_005501d0(this_00,command);
           local_8 = local_8 + 1;
-          command = (STControlCommand *)((int)&command[1].unknown_00 + dVar1 + dVar2);
+          command = (void *)((int)command + iVar2 + iVar3 + 0x1b);
         } while (local_8 < (ushort)this_00->field_003D->field_0005);
       }
       this_00->field_003D->field_0005 = 0;
@@ -47,12 +45,12 @@ void __thiscall STPlaySystemC::SendMail(STPlaySystemC *this,void *param_1)
       return;
     }
     g_currentExceptionFrame = local_50.previous;
-    iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\tplaysys.cpp",0x819,0,errorCode,
+    iVar3 = ReportDebugMessage("E:\\__titans\\Andrey\\tplaysys.cpp",0x819,0,iVar2,
                                "%s","STPlaySystemC::SendMail");
-    if (iVar4 != 0) {
+    if (iVar3 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    RaiseInternalException(errorCode,0,"E:\\__titans\\Andrey\\tplaysys.cpp",0x81a);
+    RaiseInternalException(iVar2,0,"E:\\__titans\\Andrey\\tplaysys.cpp",0x81a);
   }
   return;
 }

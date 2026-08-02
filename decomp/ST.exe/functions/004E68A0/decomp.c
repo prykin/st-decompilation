@@ -28,7 +28,7 @@ void FUN_004e68a0(byte *param_1,undefined1 *param_2,uint param_3,undefined4 *par
   int *piVar11;
 
   memset(param_4, 0, 0x1e); /* compiler bulk-zero initialization */
-  uVar6 = GetPlayerRaceId((char)param_1);
+  uVar6 = LookupRecordByte((char)param_1);
   iVar9 = (uVar6 & 0xff) - 1;
   bVar4 = thunk_FUN_004e5c40(param_1,(uint)param_2);
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -61,7 +61,7 @@ void FUN_004e68a0(byte *param_1,undefined1 *param_2,uint param_3,undefined4 *par
           iVar8 = thunk_FUN_004e60d0((int)param_1,*(int *)(puVar3 + iVar7));
           if (iVar8 < (int)(uint)bVar1) {
             *(uint *)(param_2 + -5) = (uint)CONCAT12(bVar1,*(undefined2 *)(puVar3 + iVar7));
-            iVar8 = GetPlayerRaceId((char)param_1);
+            iVar8 = LookupRecordByte((char)param_1);
             param_2[-1] = (char)iVar8;
             bVar4 = thunk_FUN_004e5c40(param_1,*(uint *)((&PTR_DAT_007c0dc8)[iVar9] + iVar7));
             /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */

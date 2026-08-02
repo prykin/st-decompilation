@@ -42,7 +42,7 @@ undefined4 __thiscall FUN_004b6e30(void *this,int param_1,Global_sub_004B6E30_pa
   iVar3 = *(int *)((int)this + 0x24) * 0xa62;
   if (*(int *)(iVar4 + 0x7f579a + iVar3) == 0) {
     iVar2 = 0;
-    piVar5 = (int *)&g_playerRuntime[*(int *)((int)this + 0x24)].field_0x97a;
+    piVar5 = (int *)&g_packedRecords_A62x8[*(int *)((int)this + 0x24)].field_0x97a;
     iVar1 = 6;
     do {
       if (iVar2 < *piVar5) {

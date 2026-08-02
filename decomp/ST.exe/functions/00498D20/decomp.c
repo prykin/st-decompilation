@@ -1,5 +1,3 @@
-#include "../../pseudocode_runtime.h"
-
 
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_00498D20_param_1Enum. Cases:
@@ -155,10 +153,42 @@
    /SubmarineTitans/Recovered/DiscriminatedPayloads/STGroupBoatC_sub_00498D20_00498D20_Case_65. The
    carrier ABI remains pointer:/void.
    [STTypeBootstrapApplier] Retired legacy curated identity; name=STGroupBoatC::sub_00498D20.
-   Evidence: unconfirmed descriptive leaf replaced by a structural address name */
+   Evidence: unconfirmed descriptive leaf replaced by a structural address name
+   [STTypeBootstrapApplier] Normalized signature, return, and explicit parameter provenance to
+   ANALYSIS after heuristic identity retirement. Evidence: legacy signature/parameter source
+   priority survived curated identity retirement
+
+   [STSwitchEnumApplier] Switch target orderType uses
+   /SubmarineTitans/Recovered/Enums/STGroupBoatC_sub_00498D20_orderTypeEnum. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_D=13;CASE_E=14;CASE_F=15;CASE_10=16;CASE_11=17;CASE_12=18;CASE_13=19;CASE_14=20;CASE_15=21;CASE_65=101;CASE_66=102;CASE_67=103;CASE_68=104;CASE_69=105;CASE_6A=106
+
+   [STPrototypeApplier] Propagated parameter 2.
+   Evidence: 00498D20 -> 006ACC70 @ 00498DD3 | 00498D20 -> 006ACC70 @ 00498EF0 | 00498D20 ->
+   006ACC70 @ 00498F4A | 00498D20 -> 006ACC70 @ 00499021 | 00498D20 -> 006ACC70 @ 0049909E
+
+   [STDiscriminatedPayloadApplier] Case-local payload view: orderType == 102 uses
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/STGroupBoatC_sub_00498D20_00498D20_Case_66. The
+   carrier ABI remains pointer:/SubmarineTitans/Recovered/DArrayTy.
+
+   [STDiscriminatedPayloadApplier] Case-local payload view: orderType == 103 uses
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/STGroupBoatC_sub_00498D20_00498D20_Case_67. The
+   carrier ABI remains pointer:/SubmarineTitans/Recovered/DArrayTy.
+
+   [STDiscriminatedPayloadApplier] Case-local payload view: orderType == 104 uses
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/STGroupBoatC_sub_00498D20_00498D20_Case_68. The
+   carrier ABI remains pointer:/SubmarineTitans/Recovered/DArrayTy.
+
+   [STDiscriminatedPayloadApplier] Case-local payload view: orderType == 105 uses
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/STGroupBoatC_sub_00498D20_00498D20_Case_69. The
+   carrier ABI remains pointer:/SubmarineTitans/Recovered/DArrayTy.
+
+   [STDiscriminatedPayloadApplier] Case-local payload view: orderType == 106 uses
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/STGroupBoatC_sub_00498D20_00498D20_Case_6A. The
+   carrier ABI remains pointer:/SubmarineTitans/Recovered/DArrayTy. */
 
 void __thiscall
-STGroupBoatC::sub_00498D20(STGroupBoatC *this,Global_sub_00498D20_param_1Enum orderType,void *data)
+STGroupBoatC::sub_00498D20
+          (STGroupBoatC *this,STGroupBoatC_sub_00498D20_orderTypeEnum orderType,DArrayTy *data)
 
 {
   DArrayTy *pDVar1;
@@ -166,8 +196,9 @@ STGroupBoatC::sub_00498D20(STGroupBoatC *this,Global_sub_00498D20_param_1Enum or
   DArrayTy *pDVar3;
   int iVar4;
   DArrayTy **ppDVar5;
-  uint uVar6;
+  dword *pdVar6;
   uint uVar7;
+  uint uVar8;
   undefined4 local_10;
   undefined2 local_c;
   undefined1 local_8 [4];
@@ -176,29 +207,29 @@ STGroupBoatC::sub_00498D20(STGroupBoatC *this,Global_sub_00498D20_param_1Enum or
   case CASE_1:
     this->field_0065 = 1;
     this->field_0089 = 1;
-    puVar2 = (undefined4 *)&this->field_0xdd;
+    pdVar6 = (dword *)&this->field_0xdd;
     goto LAB_00499129;
   case CASE_2:
     this->field_0065 = 1;
     this->field_008D = 1;
-    puVar2 = &this->field_00E7;
+    pdVar6 = &this->field_00E7;
     for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
-      *puVar2 = *(undefined4 *)data;
-      data = (undefined4 *)((int)data + 4);
-      puVar2 = puVar2 + 1;
+      *pdVar6 = data->flags;
+      data = (DArrayTy *)&data->iteratorIndex;
+      pdVar6 = pdVar6 + 1;
     }
     if (this->field_00E7 == 0) {
       data = this->field_00EF;
-      uVar6 = ((DArrayTy *)data)->count;
-      pDVar3 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,uVar6,4,1);
-      uVar7 = 0;
+      uVar7 = data->count;
+      pDVar3 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,uVar7,4,1);
+      uVar8 = 0;
       this->field_00EF = pDVar3;
-      if (0 < (int)uVar6) {
+      if (0 < (int)uVar7) {
         do {
-          DArrayGetElement(data,uVar7,local_8);
-          Library::DKW::TBL::DArrayPut(this->field_00EF,uVar7,local_8);
-          uVar7 = uVar7 + 1;
-        } while ((int)uVar7 < (int)uVar6);
+          DArrayGetElement(data,uVar8,local_8);
+          Library::DKW::TBL::DArrayPut(this->field_00EF,uVar8,local_8);
+          uVar8 = uVar8 + 1;
+        } while ((int)uVar8 < (int)uVar7);
         return;
       }
     }
@@ -210,20 +241,20 @@ STGroupBoatC::sub_00498D20(STGroupBoatC *this,Global_sub_00498D20_param_1Enum or
   case CASE_4:
     this->field_0065 = 1;
     this->field_0095 = 1;
-    this->field_015C = *(undefined4 *)data;
-    this->field_0160 = *(DArrayTy **)((int)data + 4);
+    this->field_015C = data->flags;
+    this->field_0160 = (DArrayTy *)data->iteratorIndex;
     if (this->field_015C == 0) {
       data = this->field_0160;
-      uVar6 = ((DArrayTy *)data)->count;
-      pDVar3 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,uVar6,2,1);
-      uVar7 = 0;
+      uVar7 = data->count;
+      pDVar3 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,uVar7,2,1);
+      uVar8 = 0;
       this->field_0160 = pDVar3;
-      if (0 < (int)uVar6) {
+      if (0 < (int)uVar7) {
         do {
-          DArrayGetElement(data,uVar7,(byte *)((int)&orderType + 2));
-          Library::DKW::TBL::DArrayPut(this->field_0160,uVar7,(byte *)((int)&orderType + 2));
-          uVar7 = uVar7 + 1;
-        } while ((int)uVar7 < (int)uVar6);
+          DArrayGetElement(data,uVar8,(byte *)((int)&orderType + 2));
+          Library::DKW::TBL::DArrayPut(this->field_0160,uVar8,(byte *)((int)&orderType + 2));
+          uVar8 = uVar8 + 1;
+        } while ((int)uVar8 < (int)uVar7);
         return;
       }
     }
@@ -231,24 +262,24 @@ STGroupBoatC::sub_00498D20(STGroupBoatC *this,Global_sub_00498D20_param_1Enum or
   case CASE_5:
     this->field_0065 = 1;
     this->field_0099 = 1;
-    puVar2 = &this->field_0164;
+    pdVar6 = &this->field_0164;
     for (iVar4 = 5; iVar4 != 0; iVar4 = iVar4 + -1) {
-      *puVar2 = *(undefined4 *)data;
-      data = (undefined4 *)((int)data + 4);
-      puVar2 = puVar2 + 1;
+      *pdVar6 = data->flags;
+      data = (DArrayTy *)&data->iteratorIndex;
+      pdVar6 = pdVar6 + 1;
     }
     if (this->field_0164 == 0) {
       data = this->field_0168;
-      uVar6 = ((DArrayTy *)data)->count;
-      pDVar3 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,uVar6,2,1);
-      uVar7 = 0;
+      uVar7 = data->count;
+      pDVar3 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,uVar7,2,1);
+      uVar8 = 0;
       this->field_0168 = pDVar3;
-      if (0 < (int)uVar6) {
+      if (0 < (int)uVar7) {
         do {
-          DArrayGetElement(data,uVar7,(byte *)((int)&orderType + 2));
-          Library::DKW::TBL::DArrayPut(this->field_0168,uVar7,(byte *)((int)&orderType + 2));
-          uVar7 = uVar7 + 1;
-        } while ((int)uVar7 < (int)uVar6);
+          DArrayGetElement(data,uVar8,(byte *)((int)&orderType + 2));
+          Library::DKW::TBL::DArrayPut(this->field_0168,uVar8,(byte *)((int)&orderType + 2));
+          uVar8 = uVar8 + 1;
+        } while ((int)uVar8 < (int)uVar7);
         return;
       }
     }
@@ -257,70 +288,70 @@ STGroupBoatC::sub_00498D20(STGroupBoatC *this,Global_sub_00498D20_param_1Enum or
     this->field_0065 = 1;
     this->field_009D = 1;
     ppDVar5 = &this->field_0103;
-    *ppDVar5 = *(DArrayTy **)data;
-    this->field_0107 = *(undefined4 *)((int)data + 4);
+    *ppDVar5 = (DArrayTy *)data->flags;
+    this->field_0107 = data->iteratorIndex;
     pDVar3 = *ppDVar5;
-    data = (void *)pDVar3->count;
+    data = (DArrayTy *)pDVar3->count;
     pDVar1 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,6,1);
     *ppDVar5 = pDVar1;
-    uVar6 = 0;
+    uVar7 = 0;
     if (0 < (int)data) {
       do {
-        if (uVar6 < pDVar3->count) {
-          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar3, uVar6) (runtime stride) */
-          puVar2 = (undefined4 *)(pDVar3->elementSize * uVar6 + (int)pDVar3->data);
+        if (uVar7 < pDVar3->count) {
+          /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar3, uVar7) (runtime stride) */
+          puVar2 = (undefined4 *)(pDVar3->elementSize * uVar7 + (int)pDVar3->data);
         }
         else {
           puVar2 = (undefined4 *)0x0;
         }
         local_10 = *puVar2;
         local_c = *(undefined2 *)(puVar2 + 1);
-        Library::DKW::TBL::DArrayPut(*ppDVar5,uVar6,&local_10);
-        uVar6 = uVar6 + 1;
-      } while ((int)uVar6 < (int)data);
+        Library::DKW::TBL::DArrayPut(*ppDVar5,uVar7,&local_10);
+        uVar7 = uVar7 + 1;
+      } while ((int)uVar7 < (int)data);
       return;
     }
     break;
   case CASE_7:
     this->field_0065 = 1;
     this->field_00A1 = 1;
-    this->field_00FF = *(undefined4 *)data;
+    this->field_00FF = data->flags;
     return;
   case CASE_8:
     this->field_0065 = 1;
     this->field_00A5 = 1;
-    puVar2 = &this->field_010B;
+    pdVar6 = &this->field_010B;
     for (iVar4 = 0xb; iVar4 != 0; iVar4 = iVar4 + -1) {
-      *puVar2 = *(undefined4 *)data;
-      data = (undefined4 *)((int)data + 4);
-      puVar2 = puVar2 + 1;
+      *pdVar6 = data->flags;
+      data = (DArrayTy *)&data->iteratorIndex;
+      pdVar6 = pdVar6 + 1;
     }
     if (this->field_010B == 0) {
       data = this->field_010F;
-      uVar6 = ((DArrayTy *)data)->count;
-      pDVar3 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,uVar6,2,1);
-      uVar7 = 0;
+      uVar7 = data->count;
+      pDVar3 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,uVar7,2,1);
+      uVar8 = 0;
       this->field_010F = pDVar3;
-      if (0 < (int)uVar6) {
+      if (0 < (int)uVar7) {
         do {
-          DArrayGetElement(data,uVar7,(byte *)((int)&orderType + 2));
-          Library::DKW::TBL::DArrayPut(this->field_010F,uVar7,(byte *)((int)&orderType + 2));
-          uVar7 = uVar7 + 1;
-        } while ((int)uVar7 < (int)uVar6);
+          DArrayGetElement(data,uVar8,(byte *)((int)&orderType + 2));
+          Library::DKW::TBL::DArrayPut(this->field_010F,uVar8,(byte *)((int)&orderType + 2));
+          uVar8 = uVar8 + 1;
+        } while ((int)uVar8 < (int)uVar7);
       }
     }
     if (this->field_0123 == 0) {
       data = this->field_0127;
-      uVar6 = ((DArrayTy *)data)->count;
-      pDVar3 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,uVar6,2,1);
-      uVar7 = 0;
+      uVar7 = data->count;
+      pDVar3 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,uVar7,2,1);
+      uVar8 = 0;
       this->field_0127 = pDVar3;
-      if (0 < (int)uVar6) {
+      if (0 < (int)uVar7) {
         do {
-          DArrayGetElement(data,uVar7,(byte *)((int)&orderType + 2));
-          Library::DKW::TBL::DArrayPut(this->field_0127,uVar7,(byte *)((int)&orderType + 2));
-          uVar7 = uVar7 + 1;
-        } while ((int)uVar7 < (int)uVar6);
+          DArrayGetElement(data,uVar8,(byte *)((int)&orderType + 2));
+          Library::DKW::TBL::DArrayPut(this->field_0127,uVar8,(byte *)((int)&orderType + 2));
+          uVar8 = uVar8 + 1;
+        } while ((int)uVar8 < (int)uVar7);
         return;
       }
     }
@@ -328,96 +359,96 @@ STGroupBoatC::sub_00498D20(STGroupBoatC *this,Global_sub_00498D20_param_1Enum or
   case CASE_9:
     this->field_0065 = 1;
     this->field_00A9 = 1;
-    puVar2 = (undefined4 *)&this->field_0137;
+    pdVar6 = (dword *)&this->field_0137;
     for (iVar4 = 7; iVar4 != 0; iVar4 = iVar4 + -1) {
-      *puVar2 = *(undefined4 *)data;
-      data = (undefined4 *)((int)data + 4);
-      puVar2 = puVar2 + 1;
+      *pdVar6 = data->flags;
+      data = (DArrayTy *)&data->iteratorIndex;
+      pdVar6 = pdVar6 + 1;
     }
-    *(undefined2 *)puVar2 = *(undefined2 *)data;
-    *(undefined1 *)((int)puVar2 + 2) = *(undefined1 *)((int)data + 2);
+    *(short *)pdVar6 = (short)data->flags;
+    *(undefined1 *)((int)pdVar6 + 2) = *(undefined1 *)((int)&data->flags + 2);
     return;
   case CASE_A:
     this->field_0065 = 1;
     this->field_00AD = 1;
-    *(undefined4 *)&this->field_0x156 = *(undefined4 *)data;
-    this->field_015A = *(undefined2 *)((int)data + 4);
+    *(dword *)&this->field_0x156 = data->flags;
+    this->field_015A = (short)data->iteratorIndex;
     return;
   case CASE_B:
     this->field_0065 = 1;
     this->field_00B1 = 1;
-    this->field_0178 = *(AnonShape_005EFAE0_B406B78B **)data;
+    this->field_0178 = (AnonShape_005EFAE0_B406B78B *)data->flags;
     return;
   case CASE_C:
     this->field_0065 = 1;
     this->field_00B5 = 1;
-    *(undefined4 *)&this->field_0x17c = *(undefined4 *)data;
-    this->field_0180 = *(undefined2 *)((int)data + 4);
+    *(dword *)&this->field_0x17c = data->flags;
+    this->field_0180 = (short)data->iteratorIndex;
     return;
   case CASE_D:
     this->field_0065 = 1;
     this->field_00B9 = 1;
-    puVar2 = &this->field_0182;
+    pdVar6 = &this->field_0182;
 LAB_00499129:
-    *puVar2 = *(undefined4 *)data;
-    puVar2[1] = *(undefined4 *)((int)data + 4);
-    *(undefined2 *)(puVar2 + 2) = *(undefined2 *)((int)data + 8);
+    *pdVar6 = data->flags;
+    pdVar6[1] = data->iteratorIndex;
+    *(short *)(pdVar6 + 2) = (short)data->elementSize;
     return;
   case CASE_E:
     this->field_0065 = 1;
     this->field_00BD = 1;
-    this->field_018C = *(undefined4 *)data;
-    this->field_0190 = *(undefined2 *)((int)data + 4);
+    this->field_018C = data->flags;
+    this->field_0190 = (short)data->iteratorIndex;
     return;
   case CASE_F:
     this->field_0065 = 1;
     this->field_00C1 = 1;
-    *(undefined4 *)&this->field_0x192 = *(undefined4 *)data;
-    this->field_0196 = *(undefined2 *)((int)data + 4);
-    this->field_0198 = *(undefined1 *)((int)data + 6);
+    *(dword *)&this->field_0x192 = data->flags;
+    this->field_0196 = (short)data->iteratorIndex;
+    this->field_0198 = *(undefined1 *)((int)&data->iteratorIndex + 2);
     return;
   case CASE_10:
     this->field_0065 = 1;
     this->field_00C5 = 1;
-    this->field_01A3 = *(undefined4 *)data;
-    this->field_01A7 = *(undefined4 *)((int)data + 4);
-    this->field_01AB = *(undefined4 *)((int)data + 8);
-    this->field_01AF = *(undefined4 *)((int)data + 0xc);
+    this->field_01A3 = data->flags;
+    this->field_01A7 = data->iteratorIndex;
+    this->field_01AB = data->elementSize;
+    this->field_01AF = data->count;
     return;
   case CASE_11:
     this->field_0065 = 1;
     this->field_00C9 = 1;
-    this->field_0199 = *(undefined4 *)data;
-    this->field_019D = *(undefined4 *)((int)data + 4);
-    this->field_01A1 = *(undefined2 *)((int)data + 8);
+    this->field_0199 = data->flags;
+    this->field_019D = data->iteratorIndex;
+    this->field_01A1 = (short)data->elementSize;
     return;
   case CASE_12:
     this->field_0065 = 1;
     this->field_00CD = 1;
-    this->field_01B3 = *(undefined4 *)data;
-    this->field_01B7 = *(undefined2 *)((int)data + 4);
+    this->field_01B3 = data->flags;
+    this->field_01B7 = (short)data->iteratorIndex;
     return;
   case CASE_13:
     this->field_0065 = 1;
     this->field_00D1 = 1;
-    *(undefined4 *)&this->field_0x1b9 = *(undefined4 *)data;
-    this->field_01BD = *(undefined2 *)((int)data + 4);
+    *(dword *)&this->field_0x1b9 = data->flags;
+    this->field_01BD = (short)data->iteratorIndex;
     return;
   case CASE_14:
     this->field_0065 = 1;
     this->field_00D5 = 1;
-    *(undefined4 *)&this->field_0x1bf = *(undefined4 *)data;
-    this->field_01C3 = *(undefined2 *)((int)data + 4);
+    *(dword *)&this->field_0x1bf = data->flags;
+    this->field_01C3 = (short)data->iteratorIndex;
     return;
   case CASE_15:
     this->field_0065 = 1;
     this->field_00D9 = 1;
-    this->field_01C5 = *(AnonShape_005EFAE0_B406B78B **)data;
+    this->field_01C5 = (AnonShape_005EFAE0_B406B78B *)data->flags;
     return;
   case CASE_65:
     this->field_0061 = 1;
     this->field_006D = 1;
-    this->field_01C9 = *(undefined1 *)data;
+    this->field_01C9 = (char)data->flags;
     return;
   case CASE_66:
     this->field_0061 = 1;

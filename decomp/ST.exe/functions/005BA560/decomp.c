@@ -51,7 +51,7 @@ void __thiscall PrividerTy::DonePrivider(PrividerTy *this)
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pPVar2->field_1A77);
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pPVar2->field_1B08);
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pPVar2->field_1B99);
-    puVar5 = &pPVar2->field_1C2A;
+    puVar5 = pPVar2->field_1C2A;
     iVar3 = 0x16;
     do {
       if (*puVar5 != 0xffffffff) {
@@ -90,10 +90,10 @@ void __thiscall PrividerTy::DonePrivider(PrividerTy *this)
       AppClassTy::PostNextMessage((AppClassTy *)&DAT_00807620,(undefined4 *)&pPVar2->field_0x3d);
     }
     StartSystemTy::sub_005DAB30(g_startSystem_0081176C);
-    if ((DArrayTy *)pPVar2->field_1C92 != (DArrayTy *)0x0) {
-      FUN_006b5570((DArrayTy *)pPVar2->field_1C92);
+    if (pPVar2->field_1C92 != (DArrayTy *)0x0) {
+      FUN_006b5570(pPVar2->field_1C92);
     }
-    pPVar2->field_1C92 = (uint *)0x0;
+    pPVar2->field_1C92 = (DArrayTy *)0x0;
     g_currentExceptionFrame = local_4c.previous;
     return;
   }

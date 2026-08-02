@@ -32,11 +32,11 @@ undefined4 __cdecl FUN_004b31c0(int *param_1,int param_2)
       iVar3 = DArrayGetNext(g_array_007FA170,(byte *)&local_c);
       iVar4 = local_8;
     }
-    if (DAT_00808a97 <= (uint)*(ushort *)&g_playerRuntime[(int)piVar1].field_0xd + iVar4) {
+    if (DAT_00808a97 <= (uint)*(ushort *)&g_packedRecords_A62x8[(int)piVar1].field_0xd + iVar4) {
       return 0;
     }
   }
-  array = (DArrayTy *)g_playerRuntime[(int)piVar1].field6_0x9;
+  array = (DArrayTy *)g_packedRecords_A62x8[(int)piVar1].field6_0x9;
   if (array != (DArrayTy *)0x0) {
     index = 0;
     if (array->count != 0) {
@@ -52,11 +52,11 @@ undefined4 __cdecl FUN_004b31c0(int *param_1,int param_2)
               (iVar2 != 1)))))) && (iVar2 != 2)) {
           iVar4 = iVar4 + 1;
         }
-        array = (DArrayTy *)g_playerRuntime[(int)piVar1].field6_0x9;
+        array = (DArrayTy *)g_packedRecords_A62x8[(int)piVar1].field6_0x9;
         index = index + 1;
       } while (index < array->count);
     }
-    if (DAT_00808a97 <= (uint)*(ushort *)&g_playerRuntime[(int)piVar1].field_0xd + iVar4) {
+    if (DAT_00808a97 <= (uint)*(ushort *)&g_packedRecords_A62x8[(int)piVar1].field_0xd + iVar4) {
       return 0;
     }
   }

@@ -23,9 +23,10 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
   HoloTy *pHVar8;
   uint uVar9;
   uint uVar10;
-  byte bVar11;
-  char cVar12;
-  int iVar13;
+  uint *puVar11;
+  byte bVar12;
+  char cVar13;
+  int iVar14;
   undefined4 local_454 [256];
   InternalExceptionFrame local_54;
   PrividerTy *local_10;
@@ -45,7 +46,7 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
     }
     pDVar3 = Library::DKW::TBL::SArrayCreate((DArrayTy *)0x0,1,10);
     this_02 = local_10;
-    local_10->field_1C92 = &pDVar3->flags;
+    local_10->field_1C92 = pDVar3;
     Library::DKW::TBL::FUN_006b5aa0(&pDVar3->flags,(char *)&DAT_00807ddd);
     if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
       if (g_cursorClass_00802A30->field_00A9 == 0) {
@@ -119,7 +120,7 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
       *puVar5 = 0;
       puVar5 = puVar5 + 1;
     }
-    puVar7 = &this_02->field_1C2A;
+    puVar7 = this_02->field_1C2A;
     for (uVar10 = uVar10 & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
       *(undefined1 *)puVar5 = 0;
       puVar5 = (undefined4 *)((int)puVar5 + 1);
@@ -154,15 +155,15 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
     }
     ccFntTy::SetSurf(g_startSystem_0081176C->field_0034,(int)this_02->field_1C8E,0,3,1,0x22c,0x14);
     uVar10 = 2;
-    iVar13 = -1;
+    iVar14 = -1;
     iVar2 = -2;
     puVar7 = (uint *)LoadResourceString(0x26b5,g_module_00807618);
-    ccFntTy::WrStr(g_startSystem_0081176C->field_0034,puVar7,iVar2,iVar13,uVar10);
+    ccFntTy::WrStr(g_startSystem_0081176C->field_0034,puVar7,iVar2,iVar14,uVar10);
     pAVar6 = this_02->field_1C8E;
-    puVar5 = &this_02->field_1C8A;
-    FUN_006b2330(g_ddxContext_008075A8,puVar5,0x31,0x4023f6,pAVar6->field_0004,pAVar6->field_0008,
+    puVar7 = &this_02->field_1C8A;
+    FUN_006b2330(g_ddxContext_008075A8,puVar7,0x31,0x4023f6,pAVar6->field_0004,pAVar6->field_0008,
                  (ushort *)pAVar6);
-    Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,*puVar5,0xffffffff,0x79,0x197);
+    Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,*puVar7,0xffffffff,0x79,0x197);
     CreateCtrls(this_02,'\x01');
     FUN_006b2330(g_ddxContext_008075A8,&local_8,0x32,0x403c74,0x22e,0x145,(ushort *)this_02);
     Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,local_8,0xffffffff,0x79,0x51);
@@ -189,11 +190,11 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
     this_02->field_1C96 = pHVar8;
     if (pHVar8 != (HoloTy *)0x0) {
       uVar10 = 0;
-      cVar12 = '\x01';
-      bVar11 = 0x10;
-      iVar13 = 1;
+      cVar13 = '\x01';
+      bVar12 = 0x10;
+      iVar14 = 1;
       iVar2 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,0x79,0x51,0x22e,0x145);
-      uVar10 = HoloTy::Init(this_02->field_1C96,CASE_2,0x79,0x51,iVar2,iVar13,bVar11,cVar12,uVar10);
+      uVar10 = HoloTy::Init(this_02->field_1C96,CASE_2,0x79,0x51,iVar2,iVar14,bVar12,cVar13,uVar10);
       if (uVar10 != 0) {
         pHVar8 = this_02->field_1C96;
         pHVar8->field_0002 = 1;
@@ -211,11 +212,11 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
         if (this_02->field_1B9D != 0xffffffff) {
           FUN_006b3af0((int *)this_02->field_1BE1,this_02->field_1B9D);
         }
-        puVar7 = &this_02->field_1C2A;
+        puVar11 = this_02->field_1C2A;
         local_c = 0x16;
         do {
-          FUN_006b3af0((int *)g_ddxContext_008075A8,*puVar7);
-          puVar7 = puVar7 + 1;
+          FUN_006b3af0((int *)g_ddxContext_008075A8,*puVar11);
+          puVar11 = puVar11 + 1;
           local_c = local_c + -1;
         } while (local_c != 0);
         local_c = 0;
@@ -252,11 +253,11 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
       this_02->field_1C9A = pHVar8;
       if (pHVar8 != (HoloTy *)0x0) {
         uVar10 = 0;
-        cVar12 = '\x01';
-        bVar11 = 0x10;
-        iVar13 = 1;
+        cVar13 = '\x01';
+        bVar12 = 0x10;
+        iVar14 = 1;
         iVar2 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,0x79,0x197,0x22e,0x2e);
-        uVar10 = HoloTy::Init(this_02->field_1C9A,CASE_1,0x79,0x197,iVar2,iVar13,bVar11,cVar12,
+        uVar10 = HoloTy::Init(this_02->field_1C9A,CASE_1,0x79,0x197,iVar2,iVar14,bVar12,cVar13,
                               uVar10);
         if (uVar10 != 0) {
           pHVar8 = this_02->field_1C9A;
@@ -266,7 +267,7 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
           if (-1 < (int)uVar10) {
             FUN_006b3af0((int *)g_ddxContext_008075A8,uVar10);
           }
-          FUN_006b3af0((int *)g_ddxContext_008075A8,*puVar5);
+          FUN_006b3af0((int *)g_ddxContext_008075A8,*puVar7);
         }
       }
       if (local_8 != 0xffffffff) {
@@ -275,15 +276,15 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
       }
     }
     else {
-      FUN_006b3af0((int *)g_ddxContext_008075A8,*puVar5);
+      FUN_006b3af0((int *)g_ddxContext_008075A8,*puVar7);
     }
     this_01 = g_cursorClass_00802A30;
     if (g_cursorClass_00802A30 != (CursorClassTy *)0x0) {
       iVar2 = g_cursorClass_00802A30->field_00C9;
-      iVar13 = g_cursorClass_00802A30->field_00C5;
+      iVar14 = g_cursorClass_00802A30->field_00C5;
       g_cursorClass_00802A30->field_0493 = CASE_1;
       this_01->field_0494 = 0xffff;
-      CursorClassTy::SetGCType(this_01,CASE_0,iVar13,iVar2);
+      CursorClassTy::SetGCType(this_01,CASE_0,iVar14,iVar2);
       CursorClassTy::DrawSprite(this_01,this_01->field_00C5,this_01->field_00C9);
       this_01->field_00D2 = 0;
       this_01->field_04DF = -1;
@@ -306,9 +307,9 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
     return;
   }
   g_currentExceptionFrame = local_54.previous;
-  iVar13 = ReportDebugMessage("E:\\__titans\\Start\\prov_obj.cpp",0xac,0,iVar2,"%s",
+  iVar14 = ReportDebugMessage("E:\\__titans\\Start\\prov_obj.cpp",0xac,0,iVar2,"%s",
                               "PrividerTy::InitPrivider");
-  if (iVar13 == 0) {
+  if (iVar14 == 0) {
     RaiseInternalException(iVar2,0,"E:\\__titans\\Start\\prov_obj.cpp",0xac);
     return;
   }

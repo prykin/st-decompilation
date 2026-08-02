@@ -151,7 +151,7 @@ bool __thiscall TLOBaseTy::FUN_004bea70(TLOBaseTy *this,int *param_1)
   *param_1 = this->field_05AC;
   *(byte *)((int)param_1 + 5) =
        ((this->field_0024 != (byte *)(uint)(byte)this->field_0010->field_112D) - 1U & 0xfe) + 3;
-  iVar8 = GetPlayerRaceId(*(char *)&this->field_023D);
+  iVar8 = LookupRecordByte(*(char *)&this->field_023D);
   *(char *)(param_1 + 1) = (char)iVar8;
   if (((this->field_01D1 & 4) == 0) && (this->field_0420 == 0)) {
     uVar6 = 1;
@@ -180,7 +180,7 @@ bool __thiscall TLOBaseTy::FUN_004bea70(TLOBaseTy *this,int *param_1)
   memset(param_1 + 7, 0, 0x3c); /* compiler bulk-zero initialization */
   iVar8 = thunk_FUN_004e8030(this->field_05AC);
   if (iVar8 == 3) {
-    iVar9 = GetPlayerRaceId(*(char *)&this->field_0024);
+    iVar9 = LookupRecordByte(*(char *)&this->field_0024);
     if ((char)iVar9 != '\x03') {
 LAB_004beb5f:
       *(undefined1 *)((int)param_1 + 5) = 3;
@@ -201,7 +201,7 @@ LAB_004bebef:
     *(undefined1 *)((int)param_1 + 0xf) = uVar6;
   }
   else {
-    iVar9 = GetPlayerRaceId(*(char *)&this->field_0024);
+    iVar9 = LookupRecordByte(*(char *)&this->field_0024);
     if ((char)iVar9 == '\x03') goto LAB_004beb5f;
 LAB_004beb63:
     if ((iVar8 != 1) && (iVar8 != 2)) goto LAB_004beb6d;
@@ -239,9 +239,9 @@ LAB_004bf427:
       uVar6 = 1;
     }
     else {
-      local_EAX_2427 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_2427 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      local_EAX_2466 = GetPlayerRaceId(*(char *)&this->field_0024);
+      local_EAX_2466 = LookupRecordByte(*(char *)&this->field_0024);
       if ((&DAT_007e1984)[(local_EAX_2466 & 0xffU) + ((local_EAX_2427 & 0xffU) + iVar8 * 3) * 3] !=
           '\0') goto LAB_004bf427;
 LAB_004bf438:
@@ -250,9 +250,9 @@ LAB_004bf438:
     *(undefined1 *)(param_1 + 4) = uVar6;
     *(undefined1 *)((int)param_1 + 0xb) = 0x26;
     if (this->field_0024 != (byte *)this->field_023D) {
-      local_EAX_2535 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_2535 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      local_EAX_2574 = GetPlayerRaceId(*(char *)&this->field_0024);
+      local_EAX_2574 = LookupRecordByte(*(char *)&this->field_0024);
       if ((&DAT_007e1984)[(local_EAX_2574 & 0xffU) + ((local_EAX_2535 & 0xffU) + iVar8 * 3) * 3] ==
           '\0') goto cf_common_join_004C01F3;
     }
@@ -262,9 +262,9 @@ LAB_004bf438:
   case CASE_33:
     *(undefined1 *)((int)param_1 + 10) = 0x26;
     if (this->field_0024 != (byte *)this->field_023D) {
-      local_EAX_2318 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_2318 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      local_EAX_2357 = GetPlayerRaceId(*(char *)&this->field_0024);
+      local_EAX_2357 = LookupRecordByte(*(char *)&this->field_0024);
       if ((&DAT_007e1984)[(local_EAX_2357 & 0xffU) + ((local_EAX_2318 & 0xffU) + iVar8 * 3) * 3] ==
           '\0') goto cf_common_join_004C0278;
     }
@@ -273,9 +273,9 @@ LAB_004bf438:
   case CASE_35:
     *(undefined1 *)((int)param_1 + 10) = 0x21;
     if (this->field_0024 != (byte *)this->field_023D) {
-      local_EAX_1613 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_1613 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      local_EAX_1652 = GetPlayerRaceId(*(char *)&this->field_0024);
+      local_EAX_1652 = LookupRecordByte(*(char *)&this->field_0024);
       if ((&DAT_007e1984)[(local_EAX_1652 & 0xffU) + ((local_EAX_1613 & 0xffU) + iVar8 * 3) * 3] ==
           '\0') goto cf_common_join_004C0278;
     }
@@ -290,9 +290,9 @@ LAB_004bef54:
   case CASE_37:
     *(undefined1 *)((int)param_1 + 10) = 0x26;
     if (this->field_0024 != (byte *)this->field_023D) {
-      local_EAX_2207 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_2207 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      local_EAX_2246 = GetPlayerRaceId(*(char *)&this->field_0024);
+      local_EAX_2246 = LookupRecordByte(*(char *)&this->field_0024);
       if ((&DAT_007e1984)[(local_EAX_2246 & 0xffU) + ((local_EAX_2207 & 0xffU) + iVar8 * 3) * 3] ==
           '\0') goto cf_common_join_004C0278;
     }
@@ -301,9 +301,9 @@ LAB_004bef54:
   case CASE_3A:
     *(undefined1 *)((int)param_1 + 10) = 0x22;
     if (this->field_0024 != (byte *)this->field_023D) {
-      local_EAX_2098 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_2098 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      local_EAX_2137 = GetPlayerRaceId(*(char *)&this->field_0024);
+      local_EAX_2137 = LookupRecordByte(*(char *)&this->field_0024);
       if ((&DAT_007e1984)[(local_EAX_2137 & 0xffU) + ((local_EAX_2098 & 0xffU) + iVar8 * 3) * 3] ==
           '\0') goto cf_common_join_004C0278;
     }
@@ -313,13 +313,13 @@ LAB_004bef54:
     *(undefined1 *)((int)param_1 + 10) = 0x28;
     if (this->field_0245 == CASE_0) {
       if (this->field_0024 != (byte *)this->field_023D) {
-        local_EAX_3286 = GetPlayerRaceId((char)(byte *)this->field_023D);
+        local_EAX_3286 = LookupRecordByte((char)(byte *)this->field_023D);
         iVar8 = this->field_0235;
-        local_EAX_3325 = GetPlayerRaceId(*(char *)&this->field_0024);
+        local_EAX_3325 = LookupRecordByte(*(char *)&this->field_0024);
         if ((&DAT_007e1984)[(local_EAX_3325 & 0xffU) + ((local_EAX_3286 & 0xffU) + iVar8 * 3) * 3]
             == '\0') goto LAB_004bf7a5;
       }
-      if (g_playerRuntime[(int)this->field_0024].field2383_0xa0e != 0) goto LAB_004bf7a5;
+      if (g_packedRecords_A62x8[(int)this->field_0024].field2383_0xa0e != 0) goto LAB_004bf7a5;
       uVar6 = 1;
     }
     else {
@@ -330,9 +330,9 @@ LAB_004bf7a5:
     *(undefined1 *)((int)param_1 + 0xb) = 0x29;
     if (this->field_0245 != CASE_0) goto cf_common_join_004C01F3;
     if (this->field_0024 != (byte *)this->field_023D) {
-      local_EAX_3424 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_3424 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      local_EAX_3463 = GetPlayerRaceId(*(char *)&this->field_0024);
+      local_EAX_3463 = LookupRecordByte(*(char *)&this->field_0024);
       if ((&DAT_007e1984)[(local_EAX_3463 & 0xffU) + ((local_EAX_3424 & 0xffU) + iVar8 * 3) * 3] ==
           '\0') goto cf_common_join_004C01F3;
     }
@@ -376,7 +376,7 @@ LAB_004becaa:
     }
     *(undefined1 *)(param_1 + 4) = uVar6;
 switchD_004bec4d_caseD_36:
-    local_EAX_607 = GetPlayerRaceId(*(char *)&this->field_0024);
+    local_EAX_607 = LookupRecordByte(*(char *)&this->field_0024);
     uVar12 = local_EAX_607 & 0xff;
     if (uVar12 == 1) {
       iVar8 = 0x1d;
@@ -401,7 +401,7 @@ switchD_004bec4d_caseD_36:
       }
       *(undefined1 *)(param_1 + 4) = uVar6;
     }
-    local_EAX_725 = GetPlayerRaceId(*(char *)&this->field_0024);
+    local_EAX_725 = LookupRecordByte(*(char *)&this->field_0024);
     if ((local_EAX_725 & 0xffU) == 1) {
       iVar8 = 0x10;
     }
@@ -411,7 +411,7 @@ switchD_004bec4d_caseD_36:
     else {
       iVar8 = 0;
     }
-    local_EAX_770 = GetPlayerRaceId(*(char *)&this->field_023D);
+    local_EAX_770 = LookupRecordByte(*(char *)&this->field_023D);
     if (*(int *)(&DAT_00791b14 + ((local_EAX_770 & 0xffU) + this->field_0235 * 3) * 4) != 0) {
       if (((iVar8 == 0) || (iVar9 = thunk_FUN_004e60d0((int)this->field_0024,iVar8), iVar9 == 0)) ||
          (this->field_0245 != CASE_4)) {
@@ -484,9 +484,9 @@ LAB_004bf5fe:
       uVar6 = 1;
     }
     else {
-      local_EAX_2898 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_2898 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      local_EAX_2937 = GetPlayerRaceId(*(char *)&this->field_0024);
+      local_EAX_2937 = LookupRecordByte(*(char *)&this->field_0024);
       if ((&DAT_007e1984)[(local_EAX_2937 & 0xffU) + ((local_EAX_2898 & 0xffU) + iVar8 * 3) * 3] !=
           '\0') goto LAB_004bf5fe;
 LAB_004bf624:
@@ -495,9 +495,9 @@ LAB_004bf624:
     *(undefined1 *)(param_1 + 4) = uVar6;
     *(undefined1 *)((int)param_1 + 0xb) = 0x26;
     if (this->field_0024 != (byte *)this->field_023D) {
-      local_EAX_3027 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_3027 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      local_EAX_3066 = GetPlayerRaceId(*(char *)&this->field_0024);
+      local_EAX_3066 = LookupRecordByte(*(char *)&this->field_0024);
       if ((&DAT_007e1984)[(local_EAX_3066 & 0xffU) + ((local_EAX_3027 & 0xffU) + iVar8 * 3) * 3] ==
           '\0') goto cf_common_join_004C01F3;
     }
@@ -507,9 +507,9 @@ LAB_004bf624:
   case CASE_43:
     *(undefined1 *)((int)param_1 + 10) = 0x23;
     if (this->field_0024 != (byte *)this->field_023D) {
-      local_EAX_1973 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_1973 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      local_EAX_2012 = GetPlayerRaceId(*(char *)&this->field_0024);
+      local_EAX_2012 = LookupRecordByte(*(char *)&this->field_0024);
       if ((&DAT_007e1984)[(local_EAX_2012 & 0xffU) + ((local_EAX_1973 & 0xffU) + iVar8 * 3) * 3] ==
           '\0') goto cf_common_join_004C0278;
     }
@@ -522,9 +522,9 @@ joined_r0x004bf200:
   case CASE_44:
     *(undefined1 *)((int)param_1 + 10) = 0x1b;
     if (this->field_0024 != (byte *)this->field_023D) {
-      local_EAX_3144 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_3144 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      local_EAX_3183 = GetPlayerRaceId(*(char *)&this->field_0024);
+      local_EAX_3183 = LookupRecordByte(*(char *)&this->field_0024);
       if ((&DAT_007e1984)[(local_EAX_3183 & 0xffU) + ((local_EAX_3144 & 0xffU) + iVar8 * 3) * 3] ==
           '\0') goto cf_common_join_004C0278;
     }
@@ -538,9 +538,9 @@ LAB_004bf708:
   case CASE_45:
     *(undefined1 *)((int)param_1 + 10) = 0x1a;
     if (this->field_0024 != (byte *)this->field_023D) {
-      local_EAX_1167 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_1167 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      local_EAX_1206 = GetPlayerRaceId(*(char *)&this->field_0024);
+      local_EAX_1206 = LookupRecordByte(*(char *)&this->field_0024);
       if ((&DAT_007e1984)[(local_EAX_1206 & 0xffU) + ((local_EAX_1167 & 0xffU) + iVar8 * 3) * 3] ==
           '\0') goto cf_common_join_004C0278;
     }
@@ -558,9 +558,9 @@ LAB_004bf508:
       uVar6 = 1;
     }
     else {
-      local_EAX_2652 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_2652 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      local_EAX_2691 = GetPlayerRaceId(*(char *)&this->field_0024);
+      local_EAX_2691 = LookupRecordByte(*(char *)&this->field_0024);
       if ((&DAT_007e1984)[(local_EAX_2691 & 0xffU) + ((local_EAX_2652 & 0xffU) + iVar8 * 3) * 3] !=
           '\0') goto LAB_004bf508;
 LAB_004bf52e:
@@ -569,9 +569,9 @@ LAB_004bf52e:
     *(undefined1 *)(param_1 + 4) = uVar6;
     *(undefined1 *)((int)param_1 + 0xb) = 0x26;
     if (this->field_0024 != (byte *)this->field_023D) {
-      local_EAX_2781 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_2781 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      local_EAX_2820 = GetPlayerRaceId(*(char *)&this->field_0024);
+      local_EAX_2820 = LookupRecordByte(*(char *)&this->field_0024);
       if ((&DAT_007e1984)[(local_EAX_2820 & 0xffU) + ((local_EAX_2781 & 0xffU) + iVar8 * 3) * 3] ==
           '\0') goto cf_common_join_004C01F3;
     }
@@ -582,9 +582,9 @@ LAB_004bf52e:
     if (this->field_04D0 != CASE_1) {
       *(undefined1 *)((int)param_1 + 10) = 0x24;
       if (this->field_0024 != (byte *)this->field_023D) {
-        local_EAX_1848 = GetPlayerRaceId((char)(byte *)this->field_023D);
+        local_EAX_1848 = LookupRecordByte((char)(byte *)this->field_023D);
         iVar8 = this->field_0235;
-        local_EAX_1887 = GetPlayerRaceId(*(char *)&this->field_0024);
+        local_EAX_1887 = LookupRecordByte(*(char *)&this->field_0024);
         if ((&DAT_007e1984)[(local_EAX_1887 & 0xffU) + ((local_EAX_1848 & 0xffU) + iVar8 * 3) * 3]
             == '\0') goto cf_common_join_004C0278;
       }
@@ -594,9 +594,9 @@ LAB_004bf52e:
     }
     *(undefined1 *)((int)param_1 + 10) = 0x25;
     if (this->field_0024 != (byte *)this->field_023D) {
-      local_EAX_1739 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_1739 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      local_EAX_1778 = GetPlayerRaceId(*(char *)&this->field_0024);
+      local_EAX_1778 = LookupRecordByte(*(char *)&this->field_0024);
       if ((&DAT_007e1984)[(local_EAX_1778 & 0xffU) + ((local_EAX_1739 & 0xffU) + iVar8 * 3) * 3] ==
           '\0') goto cf_common_join_004C0278;
     }
@@ -613,9 +613,9 @@ LAB_004beff1:
       uVar6 = 1;
     }
     else {
-      local_EAX_1349 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_1349 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      local_EAX_1388 = GetPlayerRaceId(*(char *)&this->field_0024);
+      local_EAX_1388 = LookupRecordByte(*(char *)&this->field_0024);
       if ((&DAT_007e1984)[(local_EAX_1388 & 0xffU) + ((local_EAX_1349 & 0xffU) + iVar8 * 3) * 3] !=
           '\0') goto LAB_004beff1;
 LAB_004bf02b:
@@ -624,9 +624,9 @@ LAB_004bf02b:
     *(undefined1 *)(param_1 + 4) = uVar6;
     *(undefined1 *)((int)param_1 + 0xb) = 0x19;
     if (this->field_0024 != (byte *)this->field_023D) {
-      local_EAX_1496 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_1496 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      local_EAX_1535 = GetPlayerRaceId(*(char *)&this->field_0024);
+      local_EAX_1535 = LookupRecordByte(*(char *)&this->field_0024);
       if ((&DAT_007e1984)[(local_EAX_1535 & 0xffU) + ((local_EAX_1496 & 0xffU) + iVar8 * 3) * 3] ==
           '\0') goto cf_common_join_004C01F3;
     }
@@ -641,9 +641,9 @@ LAB_004bf873:
       uVar6 = 1;
     }
     else {
-      local_EAX_3527 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_3527 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      local_EAX_3566 = GetPlayerRaceId(*(char *)&this->field_0024);
+      local_EAX_3566 = LookupRecordByte(*(char *)&this->field_0024);
       if ((&DAT_007e1984)[(local_EAX_3566 & 0xffU) + ((local_EAX_3527 & 0xffU) + iVar8 * 3) * 3] !=
           '\0') goto LAB_004bf873;
 LAB_004bf884:
@@ -652,9 +652,9 @@ LAB_004bf884:
     *(undefined1 *)(param_1 + 4) = uVar6;
     *(undefined1 *)((int)param_1 + 0xb) = 0x31;
     if (this->field_0024 != (byte *)this->field_023D) {
-      local_EAX_3635 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_3635 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      local_EAX_3674 = GetPlayerRaceId(*(char *)&this->field_0024);
+      local_EAX_3674 = LookupRecordByte(*(char *)&this->field_0024);
       if ((&DAT_007e1984)[(local_EAX_3674 & 0xffU) + ((local_EAX_3635 & 0xffU) + iVar8 * 3) * 3] ==
           '\0') goto cf_common_join_004C01F3;
     }
@@ -669,9 +669,9 @@ LAB_004bf954:
       uVar6 = 1;
     }
     else {
-      local_EAX_3752 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_3752 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      local_EAX_3791 = GetPlayerRaceId(*(char *)&this->field_0024);
+      local_EAX_3791 = LookupRecordByte(*(char *)&this->field_0024);
       if ((&DAT_007e1984)[(local_EAX_3791 & 0xffU) + ((local_EAX_3752 & 0xffU) + iVar8 * 3) * 3] !=
           '\0') goto LAB_004bf954;
 LAB_004bf965:
@@ -682,13 +682,13 @@ LAB_004bf965:
     if (this->field_0024 == (byte *)this->field_023D) {
 LAB_004bf9c0:
       if (((this->field_0245 != CASE_0) || (*(int *)&this->field_0x361 != 0)) ||
-         (g_playerRuntime[(int)this->field_0024].field2383_0xa0e != 0)) goto LAB_004bf9f7;
+         (g_packedRecords_A62x8[(int)this->field_0024].field2383_0xa0e != 0)) goto LAB_004bf9f7;
       uVar6 = 1;
     }
     else {
-      local_EAX_3860 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_3860 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      local_EAX_3899 = GetPlayerRaceId(*(char *)&this->field_0024);
+      local_EAX_3899 = LookupRecordByte(*(char *)&this->field_0024);
       if ((&DAT_007e1984)[(local_EAX_3899 & 0xffU) + ((local_EAX_3860 & 0xffU) + iVar8 * 3) * 3] !=
           '\0') goto LAB_004bf9c0;
 LAB_004bf9f7:
@@ -697,9 +697,9 @@ LAB_004bf9f7:
     *(undefined1 *)((int)param_1 + 0x11) = uVar6;
     *(undefined1 *)(param_1 + 3) = 0x46;
     if (this->field_0024 != (byte *)this->field_023D) {
-      local_EAX_4004 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_4004 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      local_EAX_4043 = GetPlayerRaceId(*(char *)&this->field_0024);
+      local_EAX_4043 = LookupRecordByte(*(char *)&this->field_0024);
       if ((&DAT_007e1984)[(local_EAX_4043 & 0xffU) + ((local_EAX_4004 & 0xffU) + iVar8 * 3) * 3] ==
           '\0') goto LAB_004bfffc;
     }
@@ -715,9 +715,9 @@ LAB_004bf9f7:
   case CASE_5A:
     *(undefined1 *)((int)param_1 + 10) = 0x41;
     if (this->field_0024 != (byte *)this->field_023D) {
-      local_EAX_4947 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_4947 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      local_EAX_4986 = GetPlayerRaceId(*(char *)&this->field_0024);
+      local_EAX_4986 = LookupRecordByte(*(char *)&this->field_0024);
       if ((&DAT_007e1984)[(local_EAX_4986 & 0xffU) + ((local_EAX_4947 & 0xffU) + iVar8 * 3) * 3] ==
           '\0') goto cf_common_join_004C0278;
     }
@@ -734,9 +734,9 @@ LAB_004bfbca:
       uVar6 = 1;
     }
     else {
-      local_EAX_4382 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_4382 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      local_EAX_4421 = GetPlayerRaceId(*(char *)&this->field_0024);
+      local_EAX_4421 = LookupRecordByte(*(char *)&this->field_0024);
       if ((&DAT_007e1984)[(local_EAX_4421 & 0xffU) + ((local_EAX_4382 & 0xffU) + iVar8 * 3) * 3] !=
           '\0') goto LAB_004bfbca;
 LAB_004bfbdb:
@@ -745,9 +745,9 @@ LAB_004bfbdb:
     *(undefined1 *)(param_1 + 4) = uVar6;
     *(undefined1 *)((int)param_1 + 0xb) = 0x37;
     if (this->field_0024 != (byte *)this->field_023D) {
-      local_EAX_4490 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_4490 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      local_EAX_4529 = GetPlayerRaceId(*(char *)&this->field_0024);
+      local_EAX_4529 = LookupRecordByte(*(char *)&this->field_0024);
       if ((&DAT_007e1984)[(local_EAX_4529 & 0xffU) + ((local_EAX_4490 & 0xffU) + iVar8 * 3) * 3] ==
           '\0') goto cf_common_join_004C01F3;
     }
@@ -757,9 +757,9 @@ LAB_004bfbdb:
   case CASE_5D:
     *(undefined1 *)((int)param_1 + 10) = 0x43;
     if (this->field_0024 != (byte *)this->field_023D) {
-      local_EAX_4716 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_4716 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      local_EAX_4755 = GetPlayerRaceId(*(char *)&this->field_0024);
+      local_EAX_4755 = LookupRecordByte(*(char *)&this->field_0024);
       if ((&DAT_007e1984)[(local_EAX_4755 & 0xffU) + ((local_EAX_4716 & 0xffU) + iVar8 * 3) * 3] ==
           '\0') goto cf_common_join_004C0278;
     }
@@ -776,9 +776,9 @@ LAB_004c0170:
       uVar6 = 1;
     }
     else {
-      local_EAX_5828 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_5828 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      local_EAX_5867 = GetPlayerRaceId(*(char *)&this->field_0024);
+      local_EAX_5867 = LookupRecordByte(*(char *)&this->field_0024);
       if ((&DAT_007e1984)[(local_EAX_5867 & 0xffU) + ((local_EAX_5828 & 0xffU) + iVar8 * 3) * 3] !=
           '\0') goto LAB_004c0170;
 LAB_004c0181:
@@ -787,9 +787,9 @@ LAB_004c0181:
     *(undefined1 *)(param_1 + 4) = uVar6;
     *(undefined1 *)((int)param_1 + 0xb) = 0x31;
     if (this->field_0024 != (byte *)this->field_023D) {
-      local_EAX_5936 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_5936 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      local_EAX_5975 = GetPlayerRaceId(*(char *)&this->field_0024);
+      local_EAX_5975 = LookupRecordByte(*(char *)&this->field_0024);
       if ((&DAT_007e1984)[(local_EAX_5975 & 0xffU) + ((local_EAX_5936 & 0xffU) + iVar8 * 3) * 3] ==
           '\0') goto cf_common_join_004C01F3;
     }
@@ -799,9 +799,9 @@ LAB_004c0181:
   case CASE_61:
     *(undefined1 *)((int)param_1 + 10) = 0x3b;
     if (this->field_0024 != (byte *)this->field_023D) {
-      local_EAX_4838 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_4838 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      local_EAX_4877 = GetPlayerRaceId(*(char *)&this->field_0024);
+      local_EAX_4877 = LookupRecordByte(*(char *)&this->field_0024);
       if ((&DAT_007e1984)[(local_EAX_4877 & 0xffU) + ((local_EAX_4838 & 0xffU) + iVar8 * 3) * 3] ==
           '\0') goto cf_common_join_004C0278;
     }
@@ -810,9 +810,9 @@ LAB_004c0181:
   case CASE_64:
     *(undefined1 *)((int)param_1 + 10) = 0x40;
     if (this->field_0024 != (byte *)this->field_023D) {
-      local_EAX_4607 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_4607 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      local_EAX_4646 = GetPlayerRaceId(*(char *)&this->field_0024);
+      local_EAX_4646 = LookupRecordByte(*(char *)&this->field_0024);
       if ((&DAT_007e1984)[(local_EAX_4646 & 0xffU) + ((local_EAX_4607 & 0xffU) + iVar8 * 3) * 3] ==
           '\0') goto cf_common_join_004C0278;
     }
@@ -851,9 +851,9 @@ LAB_004c0261:
   case CASE_6C:
     *(undefined1 *)((int)param_1 + 10) = 0x3e;
     if (this->field_0024 != (byte *)this->field_023D) {
-      local_EAX_5062 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_5062 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      local_EAX_5101 = GetPlayerRaceId(*(char *)&this->field_0024);
+      local_EAX_5101 = LookupRecordByte(*(char *)&this->field_0024);
       if ((&DAT_007e1984)[(local_EAX_5101 & 0xffU) + ((local_EAX_5062 & 0xffU) + iVar8 * 3) * 3] ==
           '\0') goto cf_common_join_004C0278;
     }
@@ -871,9 +871,9 @@ LAB_004bfee5:
       uVar6 = 1;
     }
     else {
-      local_EAX_5177 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_5177 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      local_EAX_5216 = GetPlayerRaceId(*(char *)&this->field_0024);
+      local_EAX_5216 = LookupRecordByte(*(char *)&this->field_0024);
       if ((&DAT_007e1984)[(local_EAX_5216 & 0xffU) + ((local_EAX_5177 & 0xffU) + iVar8 * 3) * 3] !=
           '\0') goto LAB_004bfee5;
 LAB_004bff0a:
@@ -887,9 +887,9 @@ LAB_004bff65:
       uVar6 = 1;
     }
     else {
-      local_EAX_5305 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_5305 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      local_EAX_5344 = GetPlayerRaceId(*(char *)&this->field_0024);
+      local_EAX_5344 = LookupRecordByte(*(char *)&this->field_0024);
       if ((&DAT_007e1984)[(local_EAX_5344 & 0xffU) + ((local_EAX_5305 & 0xffU) + iVar8 * 3) * 3] !=
           '\0') goto LAB_004bff65;
 LAB_004bff80:
@@ -905,9 +905,9 @@ LAB_004bffdb:
       }
     }
     else {
-      local_EAX_5423 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_5423 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      local_EAX_5462 = GetPlayerRaceId(*(char *)&this->field_0024);
+      local_EAX_5462 = LookupRecordByte(*(char *)&this->field_0024);
       if ((&DAT_007e1984)[(local_EAX_5462 & 0xffU) + ((local_EAX_5423 & 0xffU) + iVar8 * 3) * 3] !=
           '\0') goto LAB_004bffdb;
     }
@@ -919,9 +919,9 @@ LAB_004bfffc:
     if (this->field_04E0[4] == 0) {
       *(undefined1 *)((int)param_1 + 10) = 0x36;
       if (this->field_0024 != (byte *)this->field_023D) {
-        local_EAX_4267 = GetPlayerRaceId((char)(byte *)this->field_023D);
+        local_EAX_4267 = LookupRecordByte((char)(byte *)this->field_023D);
         iVar8 = this->field_0235;
-        local_EAX_4306 = GetPlayerRaceId(*(char *)&this->field_0024);
+        local_EAX_4306 = LookupRecordByte(*(char *)&this->field_0024);
         if ((&DAT_007e1984)[(local_EAX_4306 & 0xffU) + ((local_EAX_4267 & 0xffU) + iVar8 * 3) * 3]
             == '\0') goto cf_common_join_004C0278;
       }
@@ -931,9 +931,9 @@ LAB_004bfffc:
     else {
       *(undefined1 *)((int)param_1 + 10) = 0x34;
       if (this->field_0024 != (byte *)this->field_023D) {
-        local_EAX_4145 = GetPlayerRaceId((char)(byte *)this->field_023D);
+        local_EAX_4145 = LookupRecordByte((char)(byte *)this->field_023D);
         iVar8 = this->field_0235;
-        local_EAX_4184 = GetPlayerRaceId(*(char *)&this->field_0024);
+        local_EAX_4184 = LookupRecordByte(*(char *)&this->field_0024);
         if ((&DAT_007e1984)[(local_EAX_4184 & 0xffU) + ((local_EAX_4145 & 0xffU) + iVar8 * 3) * 3]
             == '\0') goto cf_common_join_004C0278;
       }
@@ -953,9 +953,9 @@ LAB_004c005c:
       uVar6 = 1;
     }
     else {
-      local_EAX_5552 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      local_EAX_5552 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      local_EAX_5591 = GetPlayerRaceId(*(char *)&this->field_0024);
+      local_EAX_5591 = LookupRecordByte(*(char *)&this->field_0024);
       if ((&DAT_007e1984)[(local_EAX_5591 & 0xffU) + ((local_EAX_5552 & 0xffU) + iVar8 * 3) * 3] !=
           '\0') goto LAB_004c005c;
 LAB_004c006d:
@@ -973,9 +973,9 @@ LAB_004c00cc:
       }
     }
     else {
-      uVar13 = GetPlayerRaceId((char)(byte *)this->field_023D);
+      uVar13 = LookupRecordByte((char)(byte *)this->field_023D);
       iVar8 = this->field_0235;
-      uVar14 = GetPlayerRaceId(*(char *)&this->field_0024);
+      uVar14 = LookupRecordByte(*(char *)&this->field_0024);
       if ((&DAT_007e1984)[(uVar14 & 0xffU) + ((uVar13 & 0xffU) + iVar8 * 3) * 3] != '\0')
       goto LAB_004c00cc;
     }
@@ -990,7 +990,7 @@ cf_common_join_004C01F3:
   case CASE_5C:
     if (*(int *)&this->field_0x361 == 1) {
       *(undefined4 *)((int)param_1 + 0x1d) = *(undefined4 *)&this->field_0x369;
-      iVar8 = GetPlayerRaceId(*(char *)&this->field_0024);
+      iVar8 = LookupRecordByte(*(char *)&this->field_0024);
       if ((char)iVar8 == '\x03') {
         sVar7 = (short)this->field_03A4;
         sVar18 = (short)this->field_03B4;
@@ -1002,7 +1002,7 @@ cf_common_join_004C01F3:
       *(short *)((int)param_1 + 0x27) = sVar7 - sVar18;
       *(short *)((int)param_1 + 0x2b) = (short)((this->field_039C * (100 - this->field_0394)) / 100);
       *(char *)((int)param_1 + 0x2f) = (char)this->field_0394;
-      iVar8 = GetPlayerRaceId(*(char *)&this->field_0024);
+      iVar8 = LookupRecordByte(*(char *)&this->field_0024);
       *(char *)((int)param_1 + 0x25) = (char)iVar8;
       if (this->field_05AC == CASE_40) {
         iVar8 = sub_004C9370(this,1,9,-1);
@@ -1049,7 +1049,7 @@ cf_common_join_004C01F3:
                              piVar22[3]);
         *puVar19 = 0xffff;
         *(char *)((int)param_1 + 0x2f + (int)piVar4) = (char)((piVar22[2] * 100) / piVar22[3]);
-        iVar8 = GetPlayerRaceId(*(char *)&this->field_0024);
+        iVar8 = LookupRecordByte(*(char *)&this->field_0024);
         *(char *)((int)param_1 + 0x25 + (int)piVar4) = (char)iVar8;
       }
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -1267,14 +1267,14 @@ cf_common_join_004C01F3:
     break;
   case CASE_3C:
   case CASE_53:
-    switch(g_playerRuntime[(int)this->field_0024].field2383_0xa0e) {
+    switch(g_packedRecords_A62x8[(int)this->field_0024].field2383_0xa0e) {
     case 0:
-      if (g_playerRuntime[(int)this->field_0024].field2385_0xa16 == 0)
+      if (g_packedRecords_A62x8[(int)this->field_0024].field2385_0xa16 == 0)
       goto switchD_004bef7c_caseD_52;
       *(undefined1 *)((int)param_1 + 0x47) = 3;
       break;
     case 1:
-      local_EAX_8404 = GetPlayerRaceId(*(char *)&this->field_0024);
+      local_EAX_8404 = LookupRecordByte(*(char *)&this->field_0024);
       uVar12 = local_EAX_8404 & 0xff;
       if (uVar12 == 1) {
         iVar8 = 0x3d;
@@ -1291,7 +1291,7 @@ cf_common_join_004C01F3:
       *(undefined1 *)((int)param_1 + 0x47) = 1;
       iVar8 = thunk_FUN_004e60d0((int)this->field_0024,iVar8);
       uVar12 = (g_playSystem_00802A38->field_00E4 * 100 +
-               g_playerRuntime[(int)this->field_0024].field2386_0xa1a * -100) /
+               g_packedRecords_A62x8[(int)this->field_0024].field2386_0xa1a * -100) /
                *(uint *)(&DAT_00798f6c + iVar8 * 4);
       param_1[0x12] = uVar12;
       if (100 < uVar12) {
@@ -1302,7 +1302,7 @@ cf_common_join_004C01F3:
     case 2:
     case 3:
       *(undefined1 *)((int)param_1 + 0x47) = 2;
-      param_1[0x12] = (uint)g_playerRuntime[(int)this->field_0024].field2387_0xa1e / 0x19;
+      param_1[0x12] = (uint)g_packedRecords_A62x8[(int)this->field_0024].field2387_0xa1e / 0x19;
     }
     break;
   case CASE_41:
@@ -1320,7 +1320,7 @@ cf_common_join_004C01F3:
       *(char *)((int)param_1 + 0x2f) = (char)this->field_0394;
       *(short *)((int)param_1 + 0x27) = (short)this->field_03A0 - *(short *)&this->field_03B0;
       *(short *)((int)param_1 + 0x2b) = (short)this->field_039C - *(short *)&this->field_03AC;
-      iVar8 = GetPlayerRaceId(*(char *)&this->field_0024);
+      iVar8 = LookupRecordByte(*(char *)&this->field_0024);
       *(char *)((int)param_1 + 0x25) = (char)iVar8;
       *(short *)((int)param_1 + 0x3f) = (short)this->field_04D0;
     }
@@ -1364,12 +1364,12 @@ LAB_004c0f8e:
             (char)((longlong)iVar8 * 0x51eb851f >> 0x3f);
     goto LAB_004c0fcc;
   case CASE_50:
-    *(undefined1 *)(param_1 + 7) = g_playerRuntime[(int)this->field_0024].field_0x97a;
-    *(undefined1 *)((int)param_1 + 0x1d) = g_playerRuntime[(int)this->field_0024].field_0x97e;
-    *(undefined1 *)((int)param_1 + 0x1e) = g_playerRuntime[(int)this->field_0024].field_0x982;
-    *(undefined1 *)((int)param_1 + 0x1f) = g_playerRuntime[(int)this->field_0024].field_0x986;
-    *(undefined1 *)(param_1 + 8) = g_playerRuntime[(int)this->field_0024].field_0x98a;
-    *(undefined1 *)((int)param_1 + 0x21) = g_playerRuntime[(int)this->field_0024].field_0x98e;
+    *(undefined1 *)(param_1 + 7) = g_packedRecords_A62x8[(int)this->field_0024].field_0x97a;
+    *(undefined1 *)((int)param_1 + 0x1d) = g_packedRecords_A62x8[(int)this->field_0024].field_0x97e;
+    *(undefined1 *)((int)param_1 + 0x1e) = g_packedRecords_A62x8[(int)this->field_0024].field_0x982;
+    *(undefined1 *)((int)param_1 + 0x1f) = g_packedRecords_A62x8[(int)this->field_0024].field_0x986;
+    *(undefined1 *)(param_1 + 8) = g_packedRecords_A62x8[(int)this->field_0024].field_0x98a;
+    *(undefined1 *)((int)param_1 + 0x21) = g_packedRecords_A62x8[(int)this->field_0024].field_0x98e;
     break;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   case CASE_52:
@@ -1485,7 +1485,7 @@ switchD_004bef7c_caseD_52:
     do {
       if (param_1[-2] != 0) {
         *local_c = *param_1;
-        iVar9 = GetPlayerRaceId(*(char *)&this->field_0024);
+        iVar9 = LookupRecordByte(*(char *)&this->field_0024);
         *(char *)(iVar8 + 0x25 + (int)piVar4) = (char)iVar9;
         *(char *)(iVar8 + 0x2f + (int)piVar4) = (char)param_1[2];
       }
@@ -1575,7 +1575,7 @@ LAB_004c0fcc:
       return bVar23;
     }
     if (this->field_03C8 != 0) {
-      iVar8 = GetPlayerRaceId(*(char *)&this->field_0024);
+      iVar8 = LookupRecordByte(*(char *)&this->field_0024);
       iVar8 = (-(uint)((char)iVar8 != '\x03') & 0xffffffe1) + 0xbdb;
       piVar4[0x16] = iVar8;
       return SUB41(iVar8,0);

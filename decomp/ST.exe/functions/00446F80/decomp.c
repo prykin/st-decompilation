@@ -70,10 +70,10 @@ void __thiscall STAllPlayersC::DistributeGuardBoats(STAllPlayersC *this,char par
   uint local_8;
 
   iVar5 = (int)param_1;
-  local_7c = (DArrayTy *)g_playerRuntime[iVar5].field2377_0x9f6;
-  local_48 = (DArrayTy *)g_playerRuntime[iVar5].field2379_0x9fe;
-  local_60 = (DArrayTy *)g_playerRuntime[iVar5].field2378_0x9fa;
-  local_64 = (DArrayTy *)g_playerRuntime[iVar5].field2380_0xa02;
+  local_7c = (DArrayTy *)g_packedRecords_A62x8[iVar5].field2377_0x9f6;
+  local_48 = (DArrayTy *)g_packedRecords_A62x8[iVar5].field2379_0x9fe;
+  local_60 = (DArrayTy *)g_packedRecords_A62x8[iVar5].field2378_0x9fa;
+  local_64 = (DArrayTy *)g_packedRecords_A62x8[iVar5].field2380_0xa02;
   if (local_60 != (DArrayTy *)0x0) {
     local_e4.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_e4;
@@ -97,7 +97,7 @@ void __thiscall STAllPlayersC::DistributeGuardBoats(STAllPlayersC *this,char par
       local_a0 = (int)param_1;
       /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
       iVar5 = local_a0 * 0xa62;
-      g_playerRuntime[local_a0].field2379_0x9fe = local_48;
+      g_packedRecords_A62x8[local_a0].field2379_0x9fe = local_48;
       pDVar3 = (DArrayTy *)local_60->count;
       local_5c = iVar5;
       local_30 = pDVar3;
@@ -140,13 +140,13 @@ LAB_0044738a:
           } while ((int)local_8 < (int)dVar8);
         }
         DArrayDestroy(pDVar3);
-        *(undefined4 *)((int)&g_playerRuntime[0].field2380_0xa02 + iVar5) = 0;
+        *(undefined4 *)((int)&g_packedRecords_A62x8[0].field2380_0xa02 + iVar5) = 0;
       }
       uVar7 = local_48->count;
       local_3c = uVar7;
       pDVar3 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,uVar7,4,1);
       local_8 = 0;
-      *(DArrayTy **)((int)&g_playerRuntime[0].field2380_0xa02 + iVar5) = pDVar3;
+      *(DArrayTy **)((int)&g_packedRecords_A62x8[0].field2380_0xa02 + iVar5) = pDVar3;
       local_64 = pDVar3;
       if (0 < (int)uVar7) {
         do {
@@ -197,7 +197,7 @@ LAB_0044738a:
       }
       uVar7 = local_3c;
       pDVar3 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,local_3c,4,1);
-      *(DArrayTy **)((int)&g_playerRuntime[0].field2381_0xa06 + local_5c) = pDVar3;
+      *(DArrayTy **)((int)&g_packedRecords_A62x8[0].field2381_0xa06 + local_5c) = pDVar3;
       local_8 = 0;
       local_40 = pDVar3;
       if (0 < (int)uVar7) {
@@ -395,7 +395,7 @@ LAB_0044738a:
         } while ((int)local_8 < (int)local_3c);
       }
       pDVar3 = local_7c;
-      *(uint *)((int)&g_playerRuntime[0].field2382_0xa0a + local_5c) =
+      *(uint *)((int)&g_packedRecords_A62x8[0].field2382_0xa0a + local_5c) =
            g_playSystem_00802A38->field_00E4;
       if (local_7c != (DArrayTy *)0x0) {
         dVar8 = local_7c->count;
@@ -429,7 +429,7 @@ LAB_0044738a:
         }
         DArrayDestroy(pDVar3);
         local_60 = (DArrayTy *)0x0;
-        *(undefined4 *)((int)&g_playerRuntime[0].field2378_0x9fa + local_5c) = 0;
+        *(undefined4 *)((int)&g_packedRecords_A62x8[0].field2378_0x9fa + local_5c) = 0;
       }
       uVar7 = local_3c;
       pDVar3 = local_48;
@@ -446,7 +446,7 @@ LAB_0044738a:
         }
         DArrayDestroy(pDVar3);
         local_48 = (DArrayTy *)0x0;
-        *(undefined4 *)((int)&g_playerRuntime[0].field2379_0x9fe + local_5c) = 0;
+        *(undefined4 *)((int)&g_packedRecords_A62x8[0].field2379_0x9fe + local_5c) = 0;
       }
       uVar7 = local_3c;
       pDVar3 = local_64;
@@ -463,7 +463,7 @@ LAB_0044738a:
         }
         DArrayDestroy(pDVar3);
         local_64 = (DArrayTy *)0x0;
-        *(undefined4 *)((int)&g_playerRuntime[0].field2380_0xa02 + local_5c) = 0;
+        *(undefined4 *)((int)&g_packedRecords_A62x8[0].field2380_0xa02 + local_5c) = 0;
       }
       if (local_40 != (DArrayTy *)0x0) {
         local_8 = 0;
@@ -489,7 +489,7 @@ LAB_0044738a:
           } while ((int)local_8 < (int)local_3c);
         }
         DArrayDestroy(pDVar3);
-        *(undefined4 *)((int)&g_playerRuntime[0].field2381_0xa06 + local_5c) = 0;
+        *(undefined4 *)((int)&g_packedRecords_A62x8[0].field2381_0xa06 + local_5c) = 0;
       }
       g_currentExceptionFrame = local_e4.previous;
       return;

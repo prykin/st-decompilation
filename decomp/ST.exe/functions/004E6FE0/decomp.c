@@ -15,7 +15,7 @@ int FUN_004e6fe0(int param_1)
   local_c = 0;
   local_8 = 0;
   if ((-1 < param_1) && (param_1 < 8)) {
-    uVar1 = GetPlayerRaceId((char)param_1);
+    uVar1 = LookupRecordByte((char)param_1);
     uVar3 = 0;
     do {
       if ((&PTR_DAT_007bfc04)[(uVar1 & 0xff) - 1] + uVar3 != (undefined *)0x0) {

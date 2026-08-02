@@ -99,7 +99,7 @@ undefined4 __fastcall FUN_004d32c0(TLOBaseTy *param_1)
             piVar6 = piVar6 + 4;
           } while (iVar10 != 0);
           if (g_manBasis_00811784 != (STManBasisC *)0x0) {
-            local_EAX_406 = GetPlayerRaceId(*(char *)&param_1->field_0024);
+            local_EAX_406 = LookupRecordByte(*(char *)&param_1->field_0024);
             /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
             thunk_FUN_005f23d0(g_manBasis_00811784,param_1->field_025D,param_1->field_0261,
                                param_1->field_0265,
@@ -584,16 +584,16 @@ LAB_004d43f5:
           if (iVar10 != 0) goto LAB_004d43f5;
         }
         *(undefined4 *)&param_1->field_0x2b8 = uVar4;
-        uVar2 = GetPlayerRaceId(*(char *)&param_1->field_0024);
+        uVar2 = LookupRecordByte(*(char *)&param_1->field_0024);
         local_14 = *(uint *)(&DAT_007e3dc0 +
                             ((uVar2 & 0xffU) + *(int *)&param_1->field_0x368 * 3) * 4);
         if (DAT_0080c51e != 0) {
           uVar12 = 0;
           iVar10 = 0;
           do {
-            uVar6 = GetPlayerRaceId(*(char *)&param_1->field_0024);
+            uVar6 = LookupRecordByte(*(char *)&param_1->field_0024);
             if (uVar12 < *(uint *)(&DAT_007e3dc0 + ((uVar6 & 0xffU) + iVar10) * 4)) {
-              local_EAX_4514 = GetPlayerRaceId(*(char *)&param_1->field_0024);
+              local_EAX_4514 = LookupRecordByte(*(char *)&param_1->field_0024);
               uVar12 = *(uint *)(&DAT_007e3dc0 + ((local_EAX_4514 & 0xffU) + iVar10) * 4);
             }
             iVar10 = iVar10 + 3;
@@ -731,7 +731,7 @@ LAB_004d43f5:
               thunk_FUN_004d7570(*(char *)&param_1->field_0024,0,param_1->field_0018);
               if (param_1->field_0024 == (byte *)(uint)(byte)param_1->field_0010->field_112D) {
                 thunk_FUN_0052af50(0,(float)param_1->field_01F9,(float)param_1->field_01FD);
-                local_EAX_5536 = GetPlayerRaceId(*(char *)&param_1->field_0024);
+                local_EAX_5536 = LookupRecordByte(*(char *)&param_1->field_0024);
                 uVar12 = local_EAX_5536 & 0xff;
                 if (uVar12 == 1) {
                   param_1->vfunc_90(6,0x62);
@@ -854,7 +854,7 @@ LAB_004d43f5:
         } while (iVar10 != 0);
       }
       iVar10 = 0;
-      local_EAX_6643 = GetPlayerRaceId(*(char *)&param_1->field_0024);
+      local_EAX_6643 = LookupRecordByte(*(char *)&param_1->field_0024);
       thunk_FUN_0062b830((int)param_1->field_0041,(int)param_1->field_0043,(int)param_1->field_0045,
                          param_1->field_0259,(int *)param_1,0xffffffff,0xffffffff,
                          local_EAX_6643 & 0xff,iVar10);

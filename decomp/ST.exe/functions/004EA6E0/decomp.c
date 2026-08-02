@@ -6,7 +6,7 @@ void FUN_004ea6e0(uint param_1,int param_2,int param_3,undefined4 param_4)
   uint uVar2;
   int iVar3;
 
-  uVar1 = GetPlayerRaceId(DAT_0080874d);
+  uVar1 = LookupRecordByte(DAT_0080874d);
   uVar2 = uVar1 & 0xff;
   if (uVar2 == 1) {
     iVar3 = thunk_FUN_004e60d0((uint)DAT_0080874d,0x40);

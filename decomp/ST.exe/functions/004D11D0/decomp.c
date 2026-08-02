@@ -91,9 +91,9 @@ int __thiscall TLOEmbryoTy::Create(TLOEmbryoTy *this,RecoveredRecord_TLOEmbryoTy
   *(undefined2 *)puVar14 = *(undefined2 *)pRVar11;
   *(undefined1 *)((int)puVar14 + 2) = pRVar11->field_0x2;
   local_3c->field_0368 = local_3c->field_0259 + -0x32;
-  local_EAX_120 = GetPlayerRaceId(*(char *)&local_3c->field_0024);
+  local_EAX_120 = LookupRecordByte(*(char *)&local_3c->field_0024);
   this_00->field_036C = (local_EAX_120 & 0xffU) - 1;
-  iVar3 = GetPlayerRaceId(*(char *)&this_00->field_0024);
+  iVar3 = LookupRecordByte(*(char *)&this_00->field_0024);
   uVar7 = (uint)((char)iVar3 == '\x03');
   this_00->field_0370 = uVar7;
   if (uVar7 == 0) {
@@ -168,7 +168,7 @@ int __thiscall TLOEmbryoTy::Create(TLOEmbryoTy *this,RecoveredRecord_TLOEmbryoTy
     this_00->field_0304 = 0x56;
   }
   if (this_00->field_0259 == 0x5c) {
-    *(undefined4 *)&g_playerRuntime[this_00->field_0024].field_0x9ca = 1;
+    *(undefined4 *)&g_packedRecords_A62x8[this_00->field_0024].field_0x9ca = 1;
   }
   if (g_array_007FA170 == (DArrayTy *)0x0) {
     g_array_007FA170 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,4,10);
@@ -177,45 +177,45 @@ int __thiscall TLOEmbryoTy::Create(TLOEmbryoTy *this,RecoveredRecord_TLOEmbryoTy
   Library::DKW::TBL::DArrayAppend(g_array_007FA170,&local_2c);
   iVar3 = this_00->field_0259;
   if (iVar3 == 100) {
-    if (*(int *)&g_playerRuntime[this_00->field_0024].field_0x9d6 == 0) {
+    if (*(int *)&g_packedRecords_A62x8[this_00->field_0024].field_0x9d6 == 0) {
       pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,4,10);
-      *(DArrayTy **)&g_playerRuntime[this_00->field_0024].field_0x9d6 = pDVar4;
+      *(DArrayTy **)&g_packedRecords_A62x8[this_00->field_0024].field_0x9d6 = pDVar4;
     }
     element = &local_8;
     local_8 = this_00;
-    pDVar4 = *(DArrayTy **)&g_playerRuntime[this_00->field_0024].field_0x9d6;
+    pDVar4 = *(DArrayTy **)&g_packedRecords_A62x8[this_00->field_0024].field_0x9d6;
 cf_common_join_004D1763:
     Library::DKW::TBL::DArrayAppend(pDVar4,element);
   }
   else {
     if (iVar3 == 0x4d) {
-      if (*(int *)&g_playerRuntime[this_00->field_0024].field_0x9e2 == 0) {
+      if (*(int *)&g_packedRecords_A62x8[this_00->field_0024].field_0x9e2 == 0) {
         pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,4,10);
-        *(DArrayTy **)&g_playerRuntime[this_00->field_0024].field_0x9e2 = pDVar4;
+        *(DArrayTy **)&g_packedRecords_A62x8[this_00->field_0024].field_0x9e2 = pDVar4;
       }
       element = &local_40;
       local_40 = this_00;
-      pDVar4 = *(DArrayTy **)&g_playerRuntime[this_00->field_0024].field_0x9e2;
+      pDVar4 = *(DArrayTy **)&g_packedRecords_A62x8[this_00->field_0024].field_0x9e2;
       goto cf_common_join_004D1763;
     }
     if (iVar3 == 0x43) {
-      if (*(int *)&g_playerRuntime[this_00->field_0024].field_0x9ee == 0) {
+      if (*(int *)&g_packedRecords_A62x8[this_00->field_0024].field_0x9ee == 0) {
         pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,4,10);
-        *(DArrayTy **)&g_playerRuntime[this_00->field_0024].field_0x9ee = pDVar4;
+        *(DArrayTy **)&g_packedRecords_A62x8[this_00->field_0024].field_0x9ee = pDVar4;
       }
       element = &local_44;
       local_44 = this_00;
-      pDVar4 = *(DArrayTy **)&g_playerRuntime[this_00->field_0024].field_0x9ee;
+      pDVar4 = *(DArrayTy **)&g_packedRecords_A62x8[this_00->field_0024].field_0x9ee;
       goto cf_common_join_004D1763;
     }
     if (iVar3 == 0x73) {
-      if (*(int *)&g_playerRuntime[this_00->field_0024].field_0x9f2 == 0) {
+      if (*(int *)&g_packedRecords_A62x8[this_00->field_0024].field_0x9f2 == 0) {
         pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,4,10);
-        *(DArrayTy **)&g_playerRuntime[this_00->field_0024].field_0x9f2 = pDVar4;
+        *(DArrayTy **)&g_packedRecords_A62x8[this_00->field_0024].field_0x9f2 = pDVar4;
       }
       element = &local_30;
       local_30 = this_00;
-      pDVar4 = *(DArrayTy **)&g_playerRuntime[this_00->field_0024].field_0x9f2;
+      pDVar4 = *(DArrayTy **)&g_packedRecords_A62x8[this_00->field_0024].field_0x9f2;
       goto cf_common_join_004D1763;
     }
     if (iVar3 == 0x3a) {
@@ -228,23 +228,23 @@ cf_common_join_004D1763:
       goto cf_common_join_004D1763;
     }
     if (iVar3 == 0x65) {
-      if (*(int *)&g_playerRuntime[this_00->field_0024].field_0x9e6 == 0) {
+      if (*(int *)&g_packedRecords_A62x8[this_00->field_0024].field_0x9e6 == 0) {
         pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,4,10);
-        *(DArrayTy **)&g_playerRuntime[this_00->field_0024].field_0x9e6 = pDVar4;
+        *(DArrayTy **)&g_packedRecords_A62x8[this_00->field_0024].field_0x9e6 = pDVar4;
       }
       element = &local_34;
       local_34 = this_00;
-      pDVar4 = *(DArrayTy **)&g_playerRuntime[this_00->field_0024].field_0x9e6;
+      pDVar4 = *(DArrayTy **)&g_packedRecords_A62x8[this_00->field_0024].field_0x9e6;
       goto cf_common_join_004D1763;
     }
     if (iVar3 == 0x3b) {
-      if (*(int *)&g_playerRuntime[this_00->field_0024].field_0x9ea == 0) {
+      if (*(int *)&g_packedRecords_A62x8[this_00->field_0024].field_0x9ea == 0) {
         pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,4,10);
-        *(DArrayTy **)&g_playerRuntime[this_00->field_0024].field_0x9ea = pDVar4;
+        *(DArrayTy **)&g_packedRecords_A62x8[this_00->field_0024].field_0x9ea = pDVar4;
       }
       element = &local_38;
       local_38 = this_00;
-      pDVar4 = *(DArrayTy **)&g_playerRuntime[this_00->field_0024].field_0x9ea;
+      pDVar4 = *(DArrayTy **)&g_packedRecords_A62x8[this_00->field_0024].field_0x9ea;
       goto cf_common_join_004D1763;
     }
   }

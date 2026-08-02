@@ -11,7 +11,15 @@
 
    [STPrototypeApplier] Propagated parameter 2.
    Evidence: 0046B100 -> 0045EF00 @ 0046B5C6; address of STBoatC::Build parameter param_1 | 004A3430
-   -> 0045EF00 @ 004A3965; address of /STPlaySystemC+0xe4 */
+   -> 0045EF00 @ 004A3965; address of /STPlaySystemC+0xe4
+
+   [STDiscriminatedPayloadApplier] Case-local payload view: param_1 == 9 uses
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/STBoatC_CmdToObj_0045EF00_Case_9. The carrier
+   ABI remains pointer:/uint.
+
+   [STDiscriminatedPayloadApplier] Case-local payload view: param_1 == 17 uses
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/STBoatC_CmdToObj_0045EF00_Case_11. The carrier
+   ABI remains pointer:/uint. */
 
 void __thiscall STBoatC::CmdToObj(STBoatC *this,STBoatC_CmdToObj_param_1Enum param_1,uint *param_2)
 

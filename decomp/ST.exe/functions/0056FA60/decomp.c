@@ -173,23 +173,23 @@ switchD_0056fad2_caseD_6105:
         puVar24 = (byte *)&pSVar11->field_0x44cc;
         memmove(puVar24, puVar16, 0x400); /* compiler REP MOVS byte copy */
         iVar12 = 0;
-        puVar16 = (byte *)&g_playerRuntime[DAT_0080874d].field_0x2eb;
+        puVar16 = (byte *)&g_packedRecords_A62x8[DAT_0080874d].field_0x2eb;
         puVar24 = (byte *)&pSVar11->field_0x48cc;
         memmove(puVar24, puVar16, 0x14); /* compiler REP MOVS byte copy */
         iVar12 = 0;
-        puVar16 = (byte *)&g_playerRuntime[DAT_0080874d].field_0x2ff;
+        puVar16 = (byte *)&g_packedRecords_A62x8[DAT_0080874d].field_0x2ff;
         puVar24 = (byte *)&pSVar11->field_0x48e0;
         memmove(puVar24, puVar16, 0x14); /* compiler REP MOVS byte copy */
         iVar12 = 0;
-        puVar16 = (byte *)&g_playerRuntime[DAT_0080874d].field_0x327;
+        puVar16 = (byte *)&g_packedRecords_A62x8[DAT_0080874d].field_0x327;
         puVar24 = (byte *)&pSVar11->field_0x48f4;
         memmove(puVar24, puVar16, 0x26c); /* compiler REP MOVS byte copy */
         iVar12 = 0;
-        puVar16 = (byte *)&g_playerRuntime[DAT_0080874d].field_0x593;
+        puVar16 = (byte *)&g_packedRecords_A62x8[DAT_0080874d].field_0x593;
         puVar24 = (byte *)&pSVar11->field_0x4b60;
         memmove(puVar24, puVar16, 0x1a8); /* compiler REP MOVS byte copy */
         iVar12 = 0;
-        puVar16 = (byte *)&g_playerRuntime[DAT_0080874d].field_0x73b;
+        puVar16 = (byte *)&g_packedRecords_A62x8[DAT_0080874d].field_0x73b;
         puVar24 = (byte *)&pSVar11->field_0x4d08;
         memmove(puVar24, puVar16, 0x9b); /* compiler REP MOVS byte copy */
         g_currentExceptionFrame = local_a4.previous;

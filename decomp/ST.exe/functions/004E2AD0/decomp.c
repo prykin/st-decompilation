@@ -29,7 +29,7 @@ undefined4 __thiscall TLOBaseTy::sub_004E2AD0(TLOBaseTy *this,int param_1,uint p
   thunk_FUN_004e5eb0(this->field_0024,param_2);
   if (this->field_0024 != (byte *)(uint)(byte)this->field_0010->field_112D)
   goto cf_common_exit_004E2B69;
-  uVar2 = GetPlayerRaceId(*(char *)&this->field_023D);
+  uVar2 = LookupRecordByte(*(char *)&this->field_023D);
   uVar3 = uVar2 & 0xff;
   if (uVar3 == 1) {
     pTVar5 = this->vtable;

@@ -25,12 +25,12 @@ undefined4 FUN_004b7750(uint param_1)
 
   cVar6 = (char)param_1;
   iVar2 = (int)cVar6;
-  if (*(int *)&g_playerRuntime[iVar2].field_0x992 != 0) {
-    *(undefined4 *)(*(int *)&g_playerRuntime[iVar2].field_0x992 + 0xc) = 0;
+  if (*(int *)&g_packedRecords_A62x8[iVar2].field_0x992 != 0) {
+    *(undefined4 *)(*(int *)&g_packedRecords_A62x8[iVar2].field_0x992 + 0xc) = 0;
     iVar3 = thunk_FUN_004b72b0(cVar6);
     iVar4 = thunk_FUN_004b71c0(cVar6);
     if (iVar4 < iVar3) {
-      pDVar7 = (DArrayTy *)g_playerRuntime[iVar2].field6_0x9;
+      pDVar7 = (DArrayTy *)g_packedRecords_A62x8[iVar2].field6_0x9;
       iVar3 = 0;
       if ((pDVar7 != (DArrayTy *)0x0) && (local_10 = 0, pDVar7->count != 0)) {
 LAB_004b77c4:
@@ -48,7 +48,7 @@ LAB_004b77c4:
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             GVar5 = (**(code **)(*local_c[0] + 0x2c))();
             local_18 = thunk_FUN_004b7350(param_1,GVar5);
-            pDVar7 = *(DArrayTy **)&g_playerRuntime[iVar2].field_0x992;
+            pDVar7 = *(DArrayTy **)&g_packedRecords_A62x8[iVar2].field_0x992;
             index = 0;
             if (pDVar7->count != 0) {
               do {
@@ -57,20 +57,20 @@ LAB_004b77c4:
                 if (*(int *)(iVar2 * 0xa62 + 0x7f579a + local_24 * 4) <
                     *(int *)(iVar2 * 0xa62 + 0x7f579a + local_18 * 4)) {
                   Library::DKW::TBL::FUN_006b11d0
-                            (*(uint **)&g_playerRuntime[iVar2].field_0x992,index,&local_1c);
+                            (*(uint **)&g_packedRecords_A62x8[iVar2].field_0x992,index,&local_1c);
                   iVar3 = iVar3 + local_14;
                   iVar4 = thunk_FUN_004b71c0(cVar6);
                   if (iVar4 < iVar3) goto LAB_004b78f0;
                   goto cf_continue_loop_004B78A7;
                 }
-                pDVar7 = *(DArrayTy **)&g_playerRuntime[iVar2].field_0x992;
+                pDVar7 = *(DArrayTy **)&g_packedRecords_A62x8[iVar2].field_0x992;
                 index = index + 1;
               } while (index < pDVar7->count);
             }
             iVar4 = thunk_FUN_004b71c0(cVar6);
             if (local_14 + iVar3 <= iVar4) {
               Library::DKW::TBL::DArrayAppend
-                        (*(DArrayTy **)&g_playerRuntime[iVar2].field_0x992,&local_1c);
+                        (*(DArrayTy **)&g_packedRecords_A62x8[iVar2].field_0x992,&local_1c);
               iVar3 = iVar3 + local_14;
             }
           }
@@ -81,18 +81,18 @@ LAB_004b77c4:
   }
   return 0;
   while( true ) {
-    DArrayGetElement(*(DArrayTy **)&g_playerRuntime[iVar2].field_0x992,dVar1 - 1,local_28);
+    DArrayGetElement(*(DArrayTy **)&g_packedRecords_A62x8[iVar2].field_0x992,dVar1 - 1,local_28);
     iVar3 = iVar3 - local_20;
-    DArrayRemoveAt(*(DArrayTy **)&g_playerRuntime[iVar2].field_0x992,
-                   (*(DArrayTy **)&g_playerRuntime[iVar2].field_0x992)->count - 1);
+    DArrayRemoveAt(*(DArrayTy **)&g_packedRecords_A62x8[iVar2].field_0x992,
+                   (*(DArrayTy **)&g_packedRecords_A62x8[iVar2].field_0x992)->count - 1);
     iVar4 = thunk_FUN_004b71c0(cVar6);
     if (iVar3 <= iVar4) break;
 LAB_004b78f0:
-    dVar1 = (*(DArrayTy **)&g_playerRuntime[iVar2].field_0x992)->count;
+    dVar1 = (*(DArrayTy **)&g_packedRecords_A62x8[iVar2].field_0x992)->count;
     if (dVar1 == 0) break;
   }
 cf_continue_loop_004B78A7:
-  pDVar7 = (DArrayTy *)g_playerRuntime[iVar2].field6_0x9;
+  pDVar7 = (DArrayTy *)g_packedRecords_A62x8[iVar2].field6_0x9;
   local_10 = local_10 + 1;
   if (pDVar7->count <= local_10) {
     return 0;

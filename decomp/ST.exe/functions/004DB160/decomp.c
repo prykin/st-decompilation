@@ -50,7 +50,7 @@ STAllPlayersC::sub_004DB160
         (this_00[1].vtable != (STWorldObjectVTable *)param_1)))))) &&
      ((iVar3 = this_00->GetObjectTypeId(), iVar3 == 0x3c ||
       (iVar3 = this_00->GetObjectTypeId(), iVar3 == 0x53)))) {
-    local_EAX_191 = GetPlayerRaceId(*(char *)&this_00[1].vtable);
+    local_EAX_191 = LookupRecordByte(*(char *)&this_00[1].vtable);
     uVar5 = local_EAX_191 & 0xff;
     if (uVar5 == 1) {
       iVar3 = thunk_FUN_004e60d0((int)this_00[1].vtable,0x42);
@@ -174,7 +174,7 @@ LAB_004db257:
                   ((this_00[1].vtable != (STWorldObjectVTable *)param_1 &&
                    ((iVar3 = this_00->GetObjectTypeId(), iVar3 == 0x3c ||
                     (iVar3 = this_00->GetObjectTypeId(), iVar3 == 0x53)))))))) {
-                uVar4 = GetPlayerRaceId(*(char *)&this_00[1].vtable);
+                uVar4 = LookupRecordByte(*(char *)&this_00[1].vtable);
                 uVar5 = uVar4 & 0xff;
                 if (uVar5 == 1) {
                   iVar6 = thunk_FUN_004e60d0((int)this_00[1].vtable,0x42);
@@ -205,7 +205,7 @@ LAB_004db3e4:
                  ((this_00[1].vtable != (STWorldObjectVTable *)param_1 &&
                   ((iVar3 = this_00->GetObjectTypeId(), iVar3 == 0x3c ||
                    (iVar3 = this_00->GetObjectTypeId(), iVar3 == 0x53)))))) {
-                local_EAX_744 = GetPlayerRaceId(*(char *)&this_00[1].vtable);
+                local_EAX_744 = LookupRecordByte(*(char *)&this_00[1].vtable);
                 uVar5 = local_EAX_744 & 0xff;
                 if (uVar5 == 1) {
                   iVar6 = thunk_FUN_004e60d0((int)this_00[1].vtable,0x42);
@@ -245,7 +245,7 @@ LAB_004db497:
                    (this_00[1].vtable != (STWorldObjectVTable *)param_1)) &&
                   ((iVar3 = this_00->GetObjectTypeId(), iVar3 == 0x3c ||
                    (iVar3 = this_00->GetObjectTypeId(), iVar3 == 0x53)))))) {
-                local_EAX_990 = GetPlayerRaceId(*(char *)&this_00[1].vtable);
+                local_EAX_990 = LookupRecordByte(*(char *)&this_00[1].vtable);
                 uVar5 = local_EAX_990 & 0xff;
                 if (uVar5 == 1) {
                   iVar6 = thunk_FUN_004e60d0((int)this_00[1].vtable,0x42);
@@ -276,7 +276,7 @@ LAB_004db58d:
                    (this_00[1].vtable != (STWorldObjectVTable *)param_1)))) &&
                  ((iVar3 = this_00->GetObjectTypeId(), iVar3 == 0x3c ||
                   (iVar3 = this_00->GetObjectTypeId(), iVar3 == 0x53)))) {
-                local_EAX_1169 = GetPlayerRaceId(*(char *)&this_00[1].vtable);
+                local_EAX_1169 = LookupRecordByte(*(char *)&this_00[1].vtable);
                 uVar5 = local_EAX_1169 & 0xff;
                 if (uVar5 == 1) {
                   iVar6 = thunk_FUN_004e60d0((int)this_00[1].vtable,0x42);

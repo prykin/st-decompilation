@@ -29,7 +29,7 @@ undefined4 FUN_004e7980(uint *param_1,int param_2,byte param_3)
   if (((int)param_1 < 0) || (7 < (int)param_1)) {
     return 0;
   }
-  uVar6 = GetPlayerRaceId((char)param_1);
+  uVar6 = LookupRecordByte((char)param_1);
   iVar7 = (uVar6 & 0xff) - 1;
   memset(&DAT_00801020, 0, 0x30c); /* compiler bulk-zero initialization */
   iVar10 = 0;

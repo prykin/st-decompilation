@@ -368,7 +368,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410::FUN_00644410
                         if (((((iVar5 == 0x9c) || (iVar5 == 0x9d)) || (iVar5 == 0x9e)) ||
                             (iVar5 == 0x9b)) &&
                            (((local_10->field_0285 == '\0' &&
-                             (iVar5 = GetPlayerRaceId(*(char *)&this_00[1].vtable),
+                             (iVar5 = LookupRecordByte(*(char *)&this_00[1].vtable),
                              (char)iVar5 != '\x03')) &&
                             (iVar5 = thunk_FUN_004e60d0((int)this_00[1].vtable,0x1b), iVar5 != 0))))
                         {

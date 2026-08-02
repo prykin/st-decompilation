@@ -1,5 +1,3 @@
-#include "../../pseudocode_runtime.h"
-
 
 /* [STSwitchEnumApplier] Switch target param_3 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_0065E450_param_3Enum. Cases:
@@ -79,9 +77,9 @@ LAB_0065e58d:
           bVar1 = 1;
         }
         else {
-          uVar6 = GetPlayerRaceId((char)this->field_023D);
+          uVar6 = LookupRecordByte((char)this->field_023D);
           iVar3 = this->field_0235;
-          uVar7 = GetPlayerRaceId(*(char *)&this->field_0024);
+          uVar7 = LookupRecordByte(*(char *)&this->field_0024);
           if ((&DAT_007e1984)[(uVar7 & 0xffU) + ((uVar6 & 0xffU) + iVar3 * 3) * 3] != '\0')
           goto LAB_0065e58d;
 LAB_0065e5a7:

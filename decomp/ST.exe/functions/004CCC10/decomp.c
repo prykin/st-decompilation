@@ -32,7 +32,7 @@ void __thiscall FUN_004ccc10(void *this,int *param_1,int *param_2)
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined4 extraout_EDX_02;
   undefined4 *puVar7;
-  char playerId;
+  char recordIndex;
   undefined4 uVar8;
   int local_294 [155];
   undefined4 local_28 [4];
@@ -45,7 +45,7 @@ void __thiscall FUN_004ccc10(void *this,int *param_1,int *param_2)
   piVar1 = param_1;
   local_8 = *(int *)((int)this + 0x24);
   thunk_FUN_00423180();
-  playerId = (char)param_1;
+  recordIndex = (char)param_1;
   if ((*(int *)((int)this + 0x24) == *(int *)((int)this + 0x23d)) &&
      (*(int *)(&DAT_007e1218 + (*(int *)((int)this + 0x235) * 3 + *(int *)((int)this + 0x239)) * 4)
       != 0)) {
@@ -54,7 +54,7 @@ void __thiscall FUN_004ccc10(void *this,int *param_1,int *param_2)
     param_1 = local_294;
     iVar5 = 0;
     do {
-      local_EAX_120 = GetPlayerRaceId(*(char *)((int)this + 0x24));
+      local_EAX_120 = LookupRecordByte(*(char *)((int)this + 0x24));
       if (*(char *)(*(int *)(&DAT_007bfc00 + (local_EAX_120 & 0xffU) * 4) + iVar5) == '\0') {
         iVar2 = thunk_FUN_004e60d0((int)piVar1,iVar5);
         iVar2 = thunk_FUN_004e7f20((int)piVar1,iVar5,iVar2 + 1);
@@ -70,7 +70,7 @@ void __thiscall FUN_004ccc10(void *this,int *param_1,int *param_2)
                        *(int *)(&DAT_007e1218 +
                                (*(int *)((int)this + 0x235) * 3 + *(int *)((int)this + 0x239)) * 4));
     if (piVar1 == (int *)(uint)DAT_0080874d) {
-      uVar2 = GetPlayerRaceId(playerId);
+      uVar2 = LookupRecordByte(recordIndex);
       uVar3 = uVar2 & 0xff;
       if (uVar3 == 1) {
         iVar5 = *(int *)this;
@@ -97,7 +97,7 @@ LAB_004ccd43:
       local_14 = SUB42(piVar1,0);
       iVar5 = 0;
       do {
-        local_EAX_374 = GetPlayerRaceId(*(char *)((int)this + 0x24));
+        local_EAX_374 = LookupRecordByte(*(char *)((int)this + 0x24));
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         if ((*(char *)(*(int *)(&DAT_007bfc00 + (local_EAX_374 & 0xffU) * 4) + iVar5) == '\0') &&
            (*param_1 == 0)) {
@@ -119,7 +119,7 @@ LAB_004ccd43:
   }
   *(int **)((int)this + 0x24) = piVar1;
   *(int **)((int)this + 0x5c0) = param_2;
-  local_EAX_512 = GetPlayerRaceId(playerId);
+  local_EAX_512 = LookupRecordByte(recordIndex);
   *(uint *)((int)this + 0x239) = (local_EAX_512 & 0xffU) - 1;
   thunk_FUN_004b9920(this);
   iVar5 = 0;
@@ -165,9 +165,9 @@ LAB_004ccedc:
     }
   }
   else {
-    local_EAX_654 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
+    local_EAX_654 = LookupRecordByte((char)*(int *)((int)this + 0x23d));
     iVar2 = *(int *)((int)this + 0x235);
-    local_EAX_691 = GetPlayerRaceId(*(char *)((int)this + 0x24));
+    local_EAX_691 = LookupRecordByte(*(char *)((int)this + 0x24));
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     uVar8 = extraout_EDX_02;
     if ((&DAT_007e1984)[(local_EAX_691 & 0xffU) + (iVar2 * 3 + (local_EAX_654 & 0xffU)) * 3] != '\0'
@@ -182,9 +182,9 @@ LAB_004ccedc:
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = (int *)0x0;
     if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-      local_EAX_948 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
+      local_EAX_948 = LookupRecordByte((char)*(int *)((int)this + 0x23d));
       iVar2 = *(int *)((int)this + 0x235);
-      uVar5 = GetPlayerRaceId(*(char *)((int)this + 0x24));
+      uVar5 = LookupRecordByte(*(char *)((int)this + 0x24));
       if ((&DAT_007e1984)[(uVar5 & 0xffU) + ((local_EAX_948 & 0xffU) + iVar2 * 3) * 3] == '\0') {
         thunk_FUN_004c2d40(this);
         goto LAB_004cd038;
@@ -234,9 +234,9 @@ LAB_004cd038:
     thunk_FUN_0058cf90(param_2,*(undefined4 *)((int)this + 0x24),*(undefined2 *)((int)this + 0x32));
   }
   if (*(int *)((int)this + 0x24) != *(int *)((int)this + 0x23d)) {
-    local_EAX_1346 = GetPlayerRaceId((char)*(int *)((int)this + 0x23d));
+    local_EAX_1346 = LookupRecordByte((char)*(int *)((int)this + 0x23d));
     iVar5 = *(int *)((int)this + 0x235);
-    local_EAX_1385 = GetPlayerRaceId(*(char *)((int)this + 0x24));
+    local_EAX_1385 = LookupRecordByte(*(char *)((int)this + 0x24));
     if ((&DAT_007e1984)[(local_EAX_1385 & 0xffU) + ((local_EAX_1346 & 0xffU) + iVar5 * 3) * 3] ==
         '\0') goto LAB_004cd1d7;
   }

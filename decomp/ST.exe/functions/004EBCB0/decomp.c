@@ -16,7 +16,7 @@ void __thiscall FUN_004ebcb0(void *this,int param_1,int param_2)
     TLOBaseTy::RotateSpr(this,0);
     if (*(int *)((int)this + 0x5ac) == 0x52) {
       iVar1 = *(int *)this;
-      iVar2 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
+      iVar2 = LookupRecordByte(*(char *)((int)this + 0x23d));
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
       (**(code **)(iVar1 + 0x90))(3,(-(uint)((char)iVar2 != '\x02') & 0xffffff3b) + 0x35e);
       return;

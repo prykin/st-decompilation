@@ -147,7 +147,7 @@ void __cdecl FUN_00645880(AnonShape_00645880_0D5933D4 *param_1)
     g_playSystem_00802A38->vfunc_08(0x150,0,0,local_98,0);
     return;
   }
-  local_EAX_69 = GetPlayerRaceId(*(char *)param_1);
+  local_EAX_69 = LookupRecordByte(*(char *)param_1);
   uVar3 = local_EAX_69 & 0xff;
   if (uVar3 == 1) {
     iVar4 = thunk_FUN_004e60d0(*(int *)param_1,0x3c);
@@ -191,7 +191,7 @@ cf_common_exit_00645953:
   local_5c[0] = 0x28;
   local_5c[3] = 1;
   local_5c[2] = 1;
-  uVar2 = GetPlayerRaceId((char)local_5c[1]);
+  uVar2 = LookupRecordByte((char)local_5c[1]);
   if ((uVar2 & 0xffU) == 1) {
     GVar8 = *(Global_sub_00645D30_param_2Enum *)&param_1->field_0x4;
     iVar4 = *(int *)param_1;

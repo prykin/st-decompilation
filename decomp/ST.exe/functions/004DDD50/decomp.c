@@ -17,7 +17,7 @@ undefined4 __fastcall FUN_004ddd50(int *param_1)
 
   bVar3 = false;
   bVar2 = false;
-  uVar4 = GetPlayerRaceId((char)param_1[9]);
+  uVar4 = LookupRecordByte((char)param_1[9]);
   uVar5 = uVar4 & 0xff;
   if (uVar5 == 1) {
     local_8 = 0x17;

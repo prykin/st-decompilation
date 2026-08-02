@@ -23,7 +23,7 @@ uint * __thiscall STAllPlayersC::GetTOBJList(STAllPlayersC *this,char param_1,by
   DArrayTy *local_c;
   int local_8;
 
-  local_10 = g_playerRuntime[param_1].field6_0x9;
+  local_10 = g_packedRecords_A62x8[param_1].field6_0x9;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   local_8 = *(int *)(local_10 + 0xc);
   local_64.previous = g_currentExceptionFrame;

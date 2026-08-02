@@ -15,7 +15,7 @@ void __thiscall TLOBaseTy::sub_004C96E0(TLOBaseTy *this)
   uint uVar2;
   int iVar3;
 
-  uVar2 = GetPlayerRaceId(*(char *)&this->field_023D);
+  uVar2 = LookupRecordByte(*(char *)&this->field_023D);
   TVar1 = this->field_0245;
   iVar3 = (((uVar2 & 0xff) - 1) + this->field_0235 * 3) * 0xc;
   this->field_05EF = *(char **)((&PTR_PTR_007bb198)[TVar1] + iVar3);

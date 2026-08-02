@@ -11,7 +11,7 @@ void FUN_004407a0(char param_1,undefined4 param_2,undefined4 param_3)
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined3 in_stack_00000005;
 
-  array = (DArrayTy *)g_playerRuntime[param_1].field5_0x5;
+  array = (DArrayTy *)g_packedRecords_A62x8[param_1].field5_0x5;
   if (((array != (DArrayTy *)0x0) && (dVar1 = array->count, dVar1 != 0)) &&
      (index = 0, 0 < (int)dVar1)) {
     do {

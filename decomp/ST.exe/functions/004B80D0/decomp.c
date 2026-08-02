@@ -96,11 +96,11 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
     if (param_2 != 0) {
       TVar3 = this_01->field_0245;
       if (TVar3 == CASE_1) {
-        local_EAX_497 = GetPlayerRaceId(*(char *)&this_01->field_023D);
+        local_EAX_497 = LookupRecordByte(*(char *)&this_01->field_023D);
         if (*(int *)(&DAT_007955d0 + ((local_EAX_497 & 0xffU) + this_01->field_0235 * 3) * 4) != 0)
         {
           pTVar4 = this_01->vtable;
-          uVar10 = GetPlayerRaceId(*(char *)&this_01->field_023D);
+          uVar10 = LookupRecordByte(*(char *)&this_01->field_023D);
           (*pTVar4->vfunc_90)(this_01,3,
                               *(undefined4 *)
                                (&DAT_007955d0 + ((uVar10 & 0xffU) + this_01->field_0235 * 3) * 4));

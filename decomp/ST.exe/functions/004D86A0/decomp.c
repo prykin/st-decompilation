@@ -4,15 +4,15 @@ undefined4 FUN_004d86a0(uint param_1,int param_2)
 {
   undefined4 uVar1;
 
-  g_playerRuntime[param_1].field19_0x1f = *(undefined4 *)(&DAT_007bf558 + param_2 * 4);
-  g_playerRuntime[param_1].field20_0x23 = *(undefined4 *)(&DAT_007bf570 + param_2 * 4);
-  if (g_playerRuntime[param_1].field0_0x0 == '\x03') {
+  g_packedRecords_A62x8[param_1].field19_0x1f = *(undefined4 *)(&DAT_007bf558 + param_2 * 4);
+  g_packedRecords_A62x8[param_1].field20_0x23 = *(undefined4 *)(&DAT_007bf570 + param_2 * 4);
+  if (g_packedRecords_A62x8[param_1].field0_0x0 == '\x03') {
     uVar1 = *(undefined4 *)(&DAT_007bf564 + param_2 * 4);
-    g_playerRuntime[param_1].field2304_0x99e = *(undefined4 *)(&DAT_007bf588 + param_2 * 4);
-    g_playerRuntime[param_1].field2302_0x996 = uVar1;
+    g_packedRecords_A62x8[param_1].field2304_0x99e = *(undefined4 *)(&DAT_007bf588 + param_2 * 4);
+    g_packedRecords_A62x8[param_1].field2302_0x996 = uVar1;
   }
   else {
-    g_playerRuntime[param_1].field21_0x27 = *(undefined4 *)(&DAT_007bf57c + param_2 * 4);
+    g_packedRecords_A62x8[param_1].field21_0x27 = *(undefined4 *)(&DAT_007bf57c + param_2 * 4);
   }
   if (param_1 == DAT_0080874d) {
     thunk_FUN_004d8b70((char)param_1);

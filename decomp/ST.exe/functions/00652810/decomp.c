@@ -12,7 +12,10 @@
    Evidence: family_entries=00401BE0|00652810; family_names=AiEventClassTy::GetMessage; ret4=2;
    direct_offsets={10:0,14:0,18:100,1c:5}
    [STTypeBootstrapApplier] Retired legacy curated identity; name=AiEventClassTy::GetMessage.
-   Evidence: semantic leaf retained by an independent recovery tag */
+   Evidence: semantic leaf retained by an independent recovery tag
+   [STTypeBootstrapApplier] Normalized signature, return, and explicit parameter provenance to
+   ANALYSIS after heuristic identity retirement. Evidence: legacy signature/parameter source
+   priority survived curated identity retirement */
 
 void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *message)
 

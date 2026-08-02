@@ -473,7 +473,7 @@ int __thiscall TLOBaseTy::GetMessage(TLOBaseTy *this,STMessage *message)
         memmove(pTVar37, pTVar32, 0x43); /* compiler REP MOVS byte copy */
         this_00->field_0231 = *(TLOBaseTy_field_0231State *)(dVar23 + 0xc);
         this_00->field_0235 = this_00->field_05AC - CASE_32;
-        local_EAX_394 = GetPlayerRaceId(*(char *)&this_00->field_0024);
+        local_EAX_394 = LookupRecordByte(*(char *)&this_00->field_0024);
         this_00->field_0239 = (local_EAX_394 & 0xffU) - 1;
         this_00->field_023D = this_00->field_0024;
         if (*(int *)(&DAT_00791f38 + this_00->field_0235 * 4) == 2) {
@@ -528,7 +528,7 @@ int __thiscall TLOBaseTy::GetMessage(TLOBaseTy *this,STMessage *message)
           if ((100 < this_00->field_05D7) || (this_00->field_05D7 < 0)) {
             this_00->field_05D7 = 100;
           }
-          local_EAX_833 = GetPlayerRaceId(*(char *)&this_00->field_023D);
+          local_EAX_833 = LookupRecordByte(*(char *)&this_00->field_023D);
           this_00->field_0241 =
                (*(int *)(&DAT_007e4178 + ((local_EAX_833 & 0xffU) + this_00->field_0235 * 3) * 4) *
                this_00->field_05D7) / 100;
@@ -710,7 +710,7 @@ int __thiscall TLOBaseTy::GetMessage(TLOBaseTy *this,STMessage *message)
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
             (**(code **)*DAT_008117bc)(local_7c);
           }
-          local_EAX_1723 = GetPlayerRaceId(*(char *)&this_00->field_023D);
+          local_EAX_1723 = LookupRecordByte(*(char *)&this_00->field_023D);
           if (this_00->field_0241 !=
               *(int *)(&DAT_007e4178 + ((local_EAX_1723 & 0xffU) + this_00->field_0235 * 3) * 4)) {
             thunk_FUN_004cc840((int *)this_00);
@@ -720,11 +720,11 @@ int __thiscall TLOBaseTy::GetMessage(TLOBaseTy *this,STMessage *message)
           }
           if (((this_00->field_0231 == CASE_1) &&
               (this_00->field_0024 == (byte *)(uint)(byte)this_00->field_0010->field_112D)) &&
-             (local_EAX_1838 = GetPlayerRaceId(*(char *)&this_00->field_023D),
+             (local_EAX_1838 = LookupRecordByte(*(char *)&this_00->field_023D),
              *(int *)(&DAT_007952b8 + ((local_EAX_1838 & 0xffU) + this_00->field_0235 * 3) * 4) != 0
              )) {
             pTVar28 = this_00->vtable;
-            local_EAX_1886 = GetPlayerRaceId(*(char *)&this_00->field_023D);
+            local_EAX_1886 = LookupRecordByte(*(char *)&this_00->field_023D);
             (*pTVar28->vfunc_90)
                       (this_00,4,
                        *(undefined4 *)
@@ -732,7 +732,7 @@ int __thiscall TLOBaseTy::GetMessage(TLOBaseTy *this,STMessage *message)
           }
           if (((this_00->field_0231 == CASE_0) || (this_00->field_0231 == CASE_3)) &&
              (g_manBasis_00811784 != (STManBasisC *)0x0)) {
-            local_EAX_1961 = GetPlayerRaceId(*(char *)&this_00->field_0024);
+            local_EAX_1961 = LookupRecordByte(*(char *)&this_00->field_0024);
             /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
             thunk_FUN_005f23d0(g_manBasis_00811784,this_00->field_05B0,this_00->field_05B4,
                                this_00->field_05B8,
@@ -1184,7 +1184,7 @@ LAB_004bb547:
         local_5c[0] = local_5c[0] - iVar17;
         local_c = pAVar26;
       }
-      local_EAX_5569 = GetPlayerRaceId(*(char *)&this_00->field_0024);
+      local_EAX_5569 = LookupRecordByte(*(char *)&this_00->field_0024);
       uVar27 = local_EAX_5569 & 0xff;
       if (uVar27 == 1) {
         pbVar36 = this_00->field_0024;
@@ -1219,7 +1219,7 @@ LAB_004bb58d:
       iVar17 = local_5c[0] - iVar17 / 10;
       goto LAB_004bb5dd;
     }
-    local_EAX_5336 = GetPlayerRaceId(*(char *)&this_00->field_0024);
+    local_EAX_5336 = LookupRecordByte(*(char *)&this_00->field_0024);
     uVar27 = local_EAX_5336 & 0xff;
     if (uVar27 == 1) {
       pbVar36 = this_00->field_0024;
@@ -1298,7 +1298,7 @@ LAB_004bb5dd:
         SetState(this_00,1,iVar17);
         if ((this_00->field_05DF == 0) || (this_00->field_05DF == 4)) {
           uVar27 = (uint)(this_00->field_024D == 4);
-          local_EAX_7611 = GetPlayerRaceId(*(char *)&this_00->field_0024);
+          local_EAX_7611 = LookupRecordByte(*(char *)&this_00->field_0024);
           thunk_FUN_0062b830((int)this_00->field_0041,(int)this_00->field_0043,
                              (int)this_00->field_0045,this_00->field_05AC,(int *)this_00,0xffffffff,
                              0xffffffff,local_EAX_7611 & 0xff,uVar27);
@@ -1495,9 +1495,9 @@ LAB_004bc117:
       bVar43 = true;
     }
     else {
-      local_EAX_8505 = GetPlayerRaceId((char)(byte *)this_00->field_023D);
+      local_EAX_8505 = LookupRecordByte((char)(byte *)this_00->field_023D);
       iVar17 = this_00->field_0235;
-      uVar29 = GetPlayerRaceId(*(char *)&this_00->field_0024);
+      uVar29 = LookupRecordByte(*(char *)&this_00->field_0024);
       if ((&DAT_007e1984)[(uVar29 & 0xffU) + (iVar17 * 3 + (local_EAX_8505 & 0xffU)) * 3] != '\0')
       goto LAB_004bc117;
       bVar43 = false;
@@ -1707,7 +1707,7 @@ LAB_004bc4c0:
             g_currentExceptionFrame = local_c4.previous;
             return 0;
           }
-          local_EAX_11034 = GetPlayerRaceId(*(char *)&this_00->field_023D);
+          local_EAX_11034 = LookupRecordByte(*(char *)&this_00->field_023D);
           uVar27 = local_EAX_11034 & 0xff;
           if (uVar27 == 1) {
             this_00->vfunc_90(4,0x210);
@@ -1729,7 +1729,7 @@ LAB_004bc4c0:
         }
         if ((TVar7 == CASE_3C) || (TVar7 == CASE_53)) {
           if (*pcVar13 == '\f') {
-            if (g_playerRuntime[(int)this_00->field_0024].field2383_0xa0e != 0) {
+            if (g_packedRecords_A62x8[(int)this_00->field_0024].field2383_0xa0e != 0) {
               g_currentExceptionFrame = local_c4.previous;
               return 0;
             }
@@ -1874,7 +1874,7 @@ LAB_004bc4c0:
     if ((this_00->field_0024 == (byte *)(uint)(byte)this_00->field_0010->field_112D) &&
        ((TVar7 = this_00->field_05AC, TVar7 == CASE_35 ||
         ((0x53 < (int)TVar7 && ((int)TVar7 < 0x5b)))))) {
-      local_EAX_8211 = GetPlayerRaceId(*(char *)&this_00->field_023D);
+      local_EAX_8211 = LookupRecordByte(*(char *)&this_00->field_023D);
       uVar27 = local_EAX_8211 & 0xff;
       if (uVar27 == 1) {
         pTVar28 = this_00->vtable;

@@ -217,7 +217,7 @@ undefined4 __thiscall STGroupBoatC::GrpLoadRC(STGroupBoatC *this,int param_1)
       }
     }
     if (this_00->field_0262 == 2) {
-      iVar2 = GetPlayerRaceId(this_00->field_0024);
+      iVar2 = LookupRecordByte(this_00->field_0024);
       if ((char)iVar2 == '\x03') {
         sVar23 = this_00->field_0274;
         sVar22 = this_00->field_0272;
@@ -266,7 +266,7 @@ undefined4 __thiscall STGroupBoatC::GrpLoadRC(STGroupBoatC *this,int param_1)
       }
     }
     if (this_00->field_0262 == 1) {
-      iVar2 = GetPlayerRaceId(this_00->field_0024);
+      iVar2 = LookupRecordByte(this_00->field_0024);
       if ((char)iVar2 == '\x03') {
         cVar16 = this_00->field_0024;
         SVar24 = 0x60;

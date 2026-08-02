@@ -759,8 +759,8 @@ public class STVTableApplier extends GhidraScript {
         int index = text.indexOf(marker);
         if (index < 0) return null;
         String value = text.substring(index + marker.length()).trim();
-        int end = value.indexOf(';');
-        if (end >= 0) value = value.substring(0, end);
+        if (value.length() < 64) return null;
+        value = value.substring(0, 64);
         return value.matches("[0-9a-fA-F]{64}") ? value.toLowerCase(Locale.ROOT) : null;
     }
 

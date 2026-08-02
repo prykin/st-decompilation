@@ -32,7 +32,7 @@ undefined4 __cdecl FUN_004b2d10(byte param_1,int param_2,int param_3,int param_4
     local_24 = *(int *)(&DAT_007dfbac + param_2 * 4);
   }
   else {
-    uVar4 = GetPlayerRaceId(param_1);
+    uVar4 = LookupRecordByte(param_1);
     local_24 = *(int *)(&DAT_007e3f20 + ((uVar4 & 0xffU) + param_2 * 3) * 4);
   }
   local_34 = 0;

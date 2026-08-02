@@ -7,21 +7,21 @@
 STAllPlayersC * __thiscall STAllPlayersC::STAllPlayersC(STAllPlayersC *this)
 
 {
-  STPlayerRuntimeRecord *pSVar1;
+  PackedRecord_A62x8 *pPVar1;
   int iVar2;
 
   sub_006E60E0(this);
   this->vtable = &STAllPlayersCVTable;
-  pSVar1 = g_playerRuntime;
+  pPVar1 = g_packedRecords_A62x8;
   for (iVar2 = 0x14d5; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *(undefined4 *)pSVar1 = 0;
-    pSVar1 = (STPlayerRuntimeRecord *)&pSVar1->field_0x4;
+    *(undefined4 *)pPVar1 = 0;
+    pPVar1 = (PackedRecord_A62x8 *)&pPVar1->field_0x4;
   }
-  pSVar1 = g_playerRuntime;
+  pPVar1 = g_packedRecords_A62x8;
   do {
-    pSVar1->field0_0x0 = 0;
-    pSVar1 = pSVar1 + 1;
-  } while ((int)pSVar1 < 0x7fa130);
+    pPVar1->field0_0x0 = 0;
+    pPVar1 = pPVar1 + 1;
+  } while ((int)pPVar1 < 0x7fa130);
   return this;
 }
 

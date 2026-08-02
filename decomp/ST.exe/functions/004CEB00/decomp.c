@@ -134,7 +134,7 @@ switchD_004ceb68_caseD_32:
               return local_10;
             }
             if (TVar2 == CASE_32) {
-              iVar5 = GetPlayerRaceId(*(char *)&this->field_023D);
+              iVar5 = LookupRecordByte(*(char *)&this->field_023D);
               if ((char)iVar5 != '\x02') {
                 this->vfunc_90(3,0x1f9);
                 return local_10;
@@ -237,7 +237,7 @@ switchD_004ceb68_caseD_32:
     if (this->field_0024 != (byte *)(uint)(byte)this->field_0010->field_112D)
     goto cf_common_exit_004CF029;
     thunk_FUN_0052af50(0,(float)this->field_01F9,(float)this->field_01FD);
-    uVar7 = GetPlayerRaceId(*(char *)&this->field_0024);
+    uVar7 = LookupRecordByte(*(char *)&this->field_0024);
     uVar8 = uVar7 & 0xff;
     if (uVar8 == 1) {
       pTVar11 = this->vtable;
@@ -273,7 +273,7 @@ cf_common_exit_004CF029:
         this->vfunc_90(3,0x39c);
       }
       else if (TVar2 == CASE_32) {
-        iVar5 = GetPlayerRaceId(*(char *)&this->field_023D);
+        iVar5 = LookupRecordByte(*(char *)&this->field_023D);
         if ((char)iVar5 == '\x02') {
           this->vfunc_90(3,0x2c2);
         }

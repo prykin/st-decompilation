@@ -9,7 +9,7 @@ undefined4 __fastcall FUN_004e9050(TLOBaseTy *param_1)
   byte *pbVar4;
 
   if (param_1->field_05AC != CASE_37) goto LAB_004e914a;
-  uVar2 = GetPlayerRaceId(*(char *)&param_1->field_0024);
+  uVar2 = LookupRecordByte(*(char *)&param_1->field_0024);
   if ((uVar2 & 0xffU) == 1) {
     pbVar4 = param_1->field_0024;
     iVar2 = 0x21;

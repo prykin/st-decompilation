@@ -17,7 +17,7 @@ short FUN_0043f130(char param_1,byte *param_2)
 
   iVar9 = 0;
   sVar5 = 0;
-  iVar2 = g_playerRuntime[param_1].field6_0x9;
+  iVar2 = g_packedRecords_A62x8[param_1].field6_0x9;
   local_8 = *(int *)(iVar2 + 0xc);
   sVar4 = 0;
   if (0 < local_8) {

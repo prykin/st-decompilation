@@ -49,7 +49,7 @@ byte * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *param_1)
   iVar2 = Library::MSVCRT::__setjmp3(local_88.jumpBuffer,0);
   if (iVar2 == 0) {
     iVar2 = 0x5590;
-    local_14 = (AnonShape_00443F30_5DF553AC *)&g_playerRuntime[0].field393_0x1bd;
+    local_14 = (AnonShape_00443F30_5DF553AC *)&g_packedRecords_A62x8[0].field393_0x1bd;
     local_28 = 0x5590;
     do {
       if (0 < (int)local_34) {
@@ -146,7 +146,7 @@ byte * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *param_1)
     pbVar3 = Library::DKW::LIB::MemAlloc(local_28);
     pbVar4 = pbVar3 + 8;
     *(undefined4 *)pbVar3 = local_44->field_001C;
-    piVar8 = &g_playerRuntime[0].field6_0x9;
+    piVar8 = &g_packedRecords_A62x8[0].field6_0x9;
     do {
       local_10 = (AnonShape_00443F30_9F0248D4 *)0x5;
       *(undefined4 *)(pbVar4 + -4) = *(undefined4 *)(piVar8[-1] + 0xc);
@@ -360,7 +360,7 @@ byte * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *param_1)
       memmove(pbVar9, puVar6, 0x20); /* compiler REP MOVS byte copy */
       iVar2 = 0;
     } while ((int)piVar8 < 0x7fa139);
-    local_24 = (AnonShape_00443F30_5DF553AC *)&g_playerRuntime[0].field9_0xf;
+    local_24 = (AnonShape_00443F30_5DF553AC *)&g_packedRecords_A62x8[0].field9_0xf;
     pbVar4 = pbVar3 + 0x5590;
     puVar6 = (byte *)(&DAT_007fa138);
     pbVar9 = pbVar3 + 0x555c;
@@ -425,7 +425,7 @@ byte * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *param_1)
       local_20 = (DArrayTy *)((int)&pDVar10[0x55].elementSize + 3);
     } while ((int)local_24 < 0x7fa13f);
     local_14 = (AnonShape_00443F30_5DF553AC *)0x0;
-    local_10 = (AnonShape_00443F30_9F0248D4 *)&g_playerRuntime[0].field393_0x1bd;
+    local_10 = (AnonShape_00443F30_9F0248D4 *)&g_packedRecords_A62x8[0].field393_0x1bd;
     do {
       local_24 = (AnonShape_00443F30_5DF553AC *)0x0;
       local_18 = (DArrayTy *)local_10;
@@ -496,7 +496,7 @@ byte * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *param_1)
       local_14 = (AnonShape_00443F30_5DF553AC *)&local_14[1].field_0x26e;
     } while ((int)local_10 < 0x7fa2ed);
     local_18 = (DArrayTy *)0x0;
-    local_10 = (AnonShape_00443F30_9F0248D4 *)&g_playerRuntime[0].field452_0x211;
+    local_10 = (AnonShape_00443F30_9F0248D4 *)&g_packedRecords_A62x8[0].field452_0x211;
     do {
       local_24 = (AnonShape_00443F30_5DF553AC *)0x0;
       local_20 = (DArrayTy *)local_10;
@@ -542,7 +542,7 @@ byte * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *param_1)
       local_18 = (DArrayTy *)((int)local_18 + 0xaab);
     } while ((int)local_10 < 0x7fa341);
     local_24 = (AnonShape_00443F30_5DF553AC *)(pbVar3 + 0xa83);
-    local_18 = (DArrayTy *)&g_playerRuntime[0].field_0x7ee;
+    local_18 = (DArrayTy *)&g_packedRecords_A62x8[0].field_0x7ee;
     do {
       local_10 = (AnonShape_00443F30_9F0248D4 *)local_24;
       local_30 = (int *)0x6;
@@ -574,7 +574,7 @@ byte * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *param_1)
       local_24 = (AnonShape_00443F30_5DF553AC *)
                  ((int)&((AnonShape_00443F30_9F0248D4 *)((int)local_24 + 0xaa4))->field_0004 + 3);
     } while ((int)local_18 < 0x7fa91e);
-    local_30 = &g_playerRuntime[0].field2377_0x9f6;
+    local_30 = &g_packedRecords_A62x8[0].field2377_0x9f6;
     local_10 = (AnonShape_00443F30_9F0248D4 *)(local_2c + 0xa73);
     do {
       local_10->field_0008 = (DArrayTy *)local_30[5];

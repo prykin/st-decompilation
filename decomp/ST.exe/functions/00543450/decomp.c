@@ -6,7 +6,7 @@
    Evidence: registry[11] at 007CA778 stores type 0x0101 and executable pointer 00405353; allocation
    size 1275 has no unique current class-layout match */
 
-void * __cdecl FUN_00543450(void)
+CursorClassTy * __cdecl CreateCursor(void)
 
 {
   CursorClassTy *this;
@@ -23,7 +23,7 @@ void * __cdecl FUN_00543450(void)
     this->field_0000 = &UNK_0079ae04;
     this->field_0018 = &UNK_0079adf4;
     this->field_00AD = 0;
-    this->field_00CD = 0;
+    this->field_00CD = CASE_0;
     this->field_00D2 = 0;
     *(undefined4 *)&this->field_0xd3 = 0;
     this->field_00D7 = 0;
@@ -59,7 +59,7 @@ void * __cdecl FUN_00543450(void)
       puVar1[4] = 2;
       puVar1 = puVar1 + 7;
     } while (iVar3 < 0x20);
-    this->field_04D6 = -1;
+    this->field_04D6 = 0xffffffff;
     this->field_04CE = 0;
     this->field_04CA = 0;
     this->field_04C6 = 0;
@@ -76,6 +76,6 @@ void * __cdecl FUN_00543450(void)
     return this;
   }
   g_cursorClass_00802A30 = (CursorClassTy *)0x0;
-  return (void *)0x0;
+  return (CursorClassTy *)0x0;
 }
 

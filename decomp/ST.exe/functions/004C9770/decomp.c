@@ -28,7 +28,7 @@ int __thiscall TLOBaseTy::LoadImages(TLOBaseTy *this,void *param_1)
   int local_8;
 
   local_10 = this;
-  local_EAX_28 = GetPlayerRaceId(*(char *)&this->field_023D);
+  local_EAX_28 = LookupRecordByte(*(char *)&this->field_023D);
   local_8 = (local_EAX_28 & 0xffU) - 1;
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
@@ -134,7 +134,7 @@ int __thiscall TLOBaseTy::LoadImages(TLOBaseTy *this,void *param_1)
       }
     }
     if (this_00->field_05AC == CASE_52) {
-      iVar2 = GetPlayerRaceId(*(char *)&this_00->field_0024);
+      iVar2 = LookupRecordByte(*(char *)&this_00->field_0024);
       if ((char)iVar2 == '\x01') {
         text = "traws_ani";
       }
@@ -266,7 +266,7 @@ LAB_004c9eda:
     uVar7 = g_playSystem_00802A38->field_00E4;
   }
   else {
-    iVar3 = GetPlayerRaceId(*(char *)&this_00->field_023D);
+    iVar3 = LookupRecordByte(*(char *)&this_00->field_023D);
     iVar2 = this_00->field_002C;
     if ((char)iVar3 == '\x03') {
       if (iVar2 == 0) {

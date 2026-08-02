@@ -77,7 +77,8 @@ public class STManualTypeAuditAnalyzer extends GhidraScript {
             // installed field was manually protected or stale.  Class-layout owns that
             // review queue; this audit reports only a concrete installed type which
             // rejected one unambiguous inference.
-            if (!reason.contains("existing_concrete_type_preserved")) continue;
+            if (!reason.contains("existing_concrete_type_preserved") ||
+                    reason.contains("generated_switch_enum_preserved")) continue;
             String current = value(row, "proposed_type");
             String candidate = value(row, "inferred_type");
             if (candidate.isBlank() || sameType(current, candidate)) continue;

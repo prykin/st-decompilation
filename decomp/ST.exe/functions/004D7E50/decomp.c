@@ -11,28 +11,28 @@ undefined4 FUN_004d7e50(char param_1,int param_2,int param_3,int param_4)
   iVar2 = (int)param_1;
   uVar4 = 0;
   iVar3 = param_2 * 0x44;
-  if (param_4 <= *(int *)(&g_playerRuntime[iVar2].field_0x7e6 + iVar3)) {
-    *(undefined4 *)(&g_playerRuntime[iVar2].field_0x7f2 + iVar3) = 0;
+  if (param_4 <= *(int *)(&g_packedRecords_A62x8[iVar2].field_0x7e6 + iVar3)) {
+    *(undefined4 *)(&g_packedRecords_A62x8[iVar2].field_0x7f2 + iVar3) = 0;
     do {
-      uVar1 = *(uint *)(&g_playerRuntime[iVar2].field_0x7f2 + iVar3);
-      if (*(uint *)(&g_playerRuntime[iVar2].field_0x7fa + iVar3) <= uVar1) {
+      uVar1 = *(uint *)(&g_packedRecords_A62x8[iVar2].field_0x7f2 + iVar3);
+      if (*(uint *)(&g_packedRecords_A62x8[iVar2].field_0x7fa + iVar3) <= uVar1) {
         return 0;
       }
-      piVar5 = (int *)(*(int *)(&g_playerRuntime[iVar2].field_0x7f6 + iVar3) * uVar1 +
-                      *(int *)(&g_playerRuntime[iVar2].field_0x80a + iVar3));
-      *(uint *)(&g_playerRuntime[iVar2].field_0x7f2 + iVar3) = uVar1 + 1;
+      piVar5 = (int *)(*(int *)(&g_packedRecords_A62x8[iVar2].field_0x7f6 + iVar3) * uVar1 +
+                      *(int *)(&g_packedRecords_A62x8[iVar2].field_0x80a + iVar3));
+      *(uint *)(&g_packedRecords_A62x8[iVar2].field_0x7f2 + iVar3) = uVar1 + 1;
       if (piVar5 == (int *)0x0) {
         return 0;
       }
     } while (*piVar5 != param_3);
     thunk_FUN_004d8a80(param_1,param_4);
-    *(int *)(&g_playerRuntime[iVar2].field_0x7e6 + iVar3) =
-         *(int *)(&g_playerRuntime[iVar2].field_0x7e6 + iVar3) - param_4;
-    *(int *)(&g_playerRuntime[iVar2].field_0x816 + iVar3) =
-         *(int *)(&g_playerRuntime[iVar2].field_0x816 + iVar3) - param_4;
+    *(int *)(&g_packedRecords_A62x8[iVar2].field_0x7e6 + iVar3) =
+         *(int *)(&g_packedRecords_A62x8[iVar2].field_0x7e6 + iVar3) - param_4;
+    *(int *)(&g_packedRecords_A62x8[iVar2].field_0x816 + iVar3) =
+         *(int *)(&g_packedRecords_A62x8[iVar2].field_0x816 + iVar3) - param_4;
     piVar5[3] = piVar5[3] - param_4;
     uVar4 = 1;
-    if (*(int *)(&g_playerRuntime[iVar2].field_0x7e6 + iVar3) == 0) {
+    if (*(int *)(&g_packedRecords_A62x8[iVar2].field_0x7e6 + iVar3) == 0) {
       thunk_FUN_004d78e0(param_1);
     }
   }

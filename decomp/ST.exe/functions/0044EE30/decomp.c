@@ -590,7 +590,7 @@ LAB_00459e30:
         }
         *(int *)pSVar19 = *(int *)pSVar19 - iVar12;
       }
-      uVar15 = GetPlayerRaceId(*(char *)&this_00->field_0024);
+      uVar15 = LookupRecordByte(*(char *)&this_00->field_0024);
       uVar14 = uVar15 & 0xff;
       if (uVar14 == 1) {
         iVar12 = this_00->field_0024;
@@ -669,7 +669,7 @@ LAB_00459eaa:
       g_currentExceptionFrame = local_184.previous;
       return 0;
     }
-    local_EAX_44850 = GetPlayerRaceId(*(char *)&this_00->field_0024);
+    local_EAX_44850 = LookupRecordByte(*(char *)&this_00->field_0024);
     uVar14 = local_EAX_44850 & 0xff;
     if (uVar14 == 1) {
       iVar12 = this_00->field_0024;
@@ -1079,7 +1079,7 @@ LAB_0045048a:
       if (iVar12 == 3) {
         if (((this_00->field_045D != CASE_16) &&
             (uVar14 = CheckPBoxCmd(this_00,CASE_16), uVar14 == 0)) &&
-           (g_playerRuntime[*(char *)&this_00->field_0024].field329_0x15f != 0)) {
+           (g_packedRecords_A62x8[*(char *)&this_00->field_0024].field329_0x15f != 0)) {
           pDVar18 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
           Library::DKW::TBL::DArrayAppend(pDVar18,&this_00->field_0032);
           STAllPlayersC::AddObjsToGroup
@@ -1096,7 +1096,7 @@ LAB_0045048a:
       }
       else if (((this_00->field_045D != CASE_4) &&
                (uVar14 = CheckPBoxCmd(this_00,CASE_4), uVar14 == 0)) &&
-              (g_playerRuntime[*(char *)&this_00->field_0024].field326_0x15b != 0)) {
+              (g_packedRecords_A62x8[*(char *)&this_00->field_0024].field326_0x15b != 0)) {
         pDVar18 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,1,2,1);
         Library::DKW::TBL::DArrayAppend(pDVar18,&this_00->field_0032);
         STAllPlayersC::AddObjsToGroup

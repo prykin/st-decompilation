@@ -85,7 +85,7 @@ LAB_004c7d8c:
           *(undefined4 *)&this->field_0x36d = 1;
         }
         else {
-          iVar5 = GetPlayerRaceId(*(char *)&this->field_0024);
+          iVar5 = LookupRecordByte(*(char *)&this->field_0024);
           if (((char)iVar5 != '\x03') && (this->field_03A8 != 0)) {
             thunk_FUN_004d87b0(*(char *)&this->field_0024,this->field_03A8);
           }
@@ -204,10 +204,10 @@ LAB_004c7d8c:
         }
         if (*(int *)&this->field_0x361 == 5) {
           sub_004CC880(this,3);
-          uVar9 = GetPlayerRaceId(*(char *)&this->field_023D);
+          uVar9 = LookupRecordByte(*(char *)&this->field_023D);
           if (*(int *)(&DAT_00796230 + ((uVar9 & 0xffU) + this->field_0235 * 3) * 4) != 0) {
             pTVar3 = this->vtable;
-            local_EAX_1031 = GetPlayerRaceId(*(char *)&this->field_023D);
+            local_EAX_1031 = LookupRecordByte(*(char *)&this->field_023D);
             (*pTVar3->vfunc_90)(this,3,*(undefined4 *)
                                         (&DAT_00796230 +
                                         ((local_EAX_1031 & 0xffU) + this->field_0235 * 3) * 4));

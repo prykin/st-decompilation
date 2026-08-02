@@ -38,8 +38,8 @@ void STAllPlayersC::_ChangeDock(undefined4 param_1,int *param_2,uint param_3)
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
   iVar4 = (**(code **)(*param_2 + 0x2c))();
   if ((((iVar4 == 0x33) &&
-       (array = (DArrayTy *)g_playerRuntime[(int)piVar3].field5_0x5, array != (DArrayTy *)0x0)) &&
-      (dVar1 = array->count, dVar1 != 0)) && (index = 0, 0 < (int)dVar1)) {
+       (array = (DArrayTy *)g_packedRecords_A62x8[(int)piVar3].field5_0x5, array != (DArrayTy *)0x0)
+       ) && (dVar1 = array->count, dVar1 != 0)) && (index = 0, 0 < (int)dVar1)) {
     do {
       DArrayGetElement(array,index,&param_2);
       if (param_2 != (int *)0x0) {

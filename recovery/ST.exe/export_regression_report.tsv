@@ -15,11 +15,11 @@ info	semantic_name_downgrades	0	0	0	ok	-
 info	quality:dynamic_array_indexing	316	316	0	ok	policy=nonincreasing; blocking=false
 info	quality:flattened_global_record_array	92	92	0	ok	policy=nonincreasing; blocking=false
 info	quality:generic_global_aggregate	164	164	0	ok	policy=nonincreasing; blocking=false
-info	quality:packed_or_unaligned_piece	1562	1562	0	ok	policy=nonincreasing; blocking=false
-info	quality:raw_indirect_call	2103	2103	0	ok	policy=nonincreasing; blocking=true
-info	quality:raw_pointer_offset	2893	2893	0	ok	policy=nonincreasing; blocking=false
+info	quality:packed_or_unaligned_piece	1506	1506	0	ok	policy=nonincreasing; blocking=false
+info	quality:raw_indirect_call	2102	2100	-2	improved	policy=nonincreasing; blocking=true
+info	quality:raw_pointer_offset	2890	2890	0	ok	policy=nonincreasing; blocking=false
 info	quality:return_width_artifact	1078	1078	0	ok	policy=nonincreasing; blocking=true
 info	quality:stack_slot_reuse	4297	4297	0	ok	policy=nonincreasing; blocking=false
 info	quality:string_based_aggregate_address	7	7	0	ok	policy=nonincreasing; blocking=false
-info	quality:undefined_type	17698	17698	0	ok	policy=nonincreasing; blocking=false
+info	quality:undefined_type	17791	17777	-14	improved	policy=nonincreasing; blocking=false
 info	quality:unresolved_register_input	766	766	0	ok	policy=nonincreasing; blocking=true

@@ -82,77 +82,77 @@ public class STUtilityFunctionAnalyzer extends GhidraScript {
     private List<Rule> discoveredRules(DecompInterface decompiler) throws Exception {
         List<Rule> result = new ArrayList<>();
         Set<Long> occupied = new HashSet<>();
+        String darrayPointer = darrayPointerSpecification();
 
         addDiscovered(result, occupied, discoverFreeAndNull(),
             "free_and_null", "FreeAndNull", "__stdcall", "/void",
             new String[] { "pointer:pointer:/void" }, new String[] { "value" },
             "frees a non-null allocation and clears the caller-owned pointer");
-        addDiscovered(result, occupied, discoverDArrayDestroy(),
-            "darray_destroy", "DArrayDestroy", "__stdcall", "/void",
-            new String[] { "pointer:/SubmarineTitans/Recovered/DArrayTy" },
-            new String[] { "array" },
-            "releases DArray storage and the descriptor when the ownership flag is set");
-        addDiscovered(result, occupied, discoverSourceCreate("darrcrea.c", 16),
-            "darray_create", "DArrayCreate", "__stdcall",
-            "pointer:/SubmarineTitans/Recovered/DArrayTy",
-            new String[] { "pointer:/SubmarineTitans/Recovered/DArrayTy", "/uint",
-                "/uint", "/uint" },
-            new String[] { "array", "initialCapacity", "elementSize", "growCapacity" },
-            "creates or initializes a generic DArray descriptor");
-        addDiscovered(result, occupied, discoverSourceCreate("sarrcrea.c", 12),
-            "sarray_create", "SArrayCreate", "__stdcall",
-            "pointer:/SubmarineTitans/Recovered/DArrayTy",
-            new String[] { "pointer:/SubmarineTitans/Recovered/DArrayTy", "/uint", "/uint" },
-            new String[] { "array", "initialCapacity", "growCapacity" },
-            "creates or initializes the DKW string-pointer array specialization");
-        addDiscovered(result, occupied, discoverSourceFunction("darrput.c", 12),
-            "darray_put", "DArrayPut", "__stdcall", "/int",
-            new String[] { "pointer:/SubmarineTitans/Recovered/DArrayTy", "/uint",
-                "pointer:/void" }, new String[] { "array", "index", "element" },
-            "copies one element into an indexed DArray slot");
-        addDiscovered(result, occupied, discoverSourceFunction("darrappe.c", 8),
-            "darray_append", "DArrayAppend", "__stdcall", "/int",
-            new String[] { "pointer:/SubmarineTitans/Recovered/DArrayTy", "pointer:/void" },
-            new String[] { "array", "element" },
-            "appends one element to a DArray and returns its result/index");
+        if (!darrayPointer.isBlank()) {
+            addDiscovered(result, occupied, discoverDArrayDestroy(),
+                "darray_destroy", "DArrayDestroy", "__stdcall", "/void",
+                new String[] { darrayPointer }, new String[] { "array" },
+                "releases dynamic-array storage and the descriptor when the ownership flag is set");
+            addDiscovered(result, occupied, discoverSourceCreate("darrcrea.c", 16),
+                "darray_create", "DArrayCreate", "__stdcall", darrayPointer,
+                new String[] { darrayPointer, "/uint", "/uint", "/uint" },
+                new String[] { "array", "initialCapacity", "elementSize", "growCapacity" },
+                "creates or initializes a generic dynamic-array descriptor");
+            addDiscovered(result, occupied, discoverSourceCreate("sarrcrea.c", 12),
+                "sarray_create", "SArrayCreate", "__stdcall", darrayPointer,
+                new String[] { darrayPointer, "/uint", "/uint" },
+                new String[] { "array", "initialCapacity", "growCapacity" },
+                "creates or initializes the string-pointer array specialization");
+            addDiscovered(result, occupied, discoverSourceFunction("darrput.c", 12),
+                "darray_put", "DArrayPut", "__stdcall", "/int",
+                new String[] { darrayPointer, "/uint", "pointer:/void" },
+                new String[] { "array", "index", "element" },
+                "copies one element into an indexed dynamic-array slot");
+            addDiscovered(result, occupied, discoverSourceFunction("darrappe.c", 8),
+                "darray_append", "DArrayAppend", "__stdcall", "/int",
+                new String[] { darrayPointer, "pointer:/void" },
+                new String[] { "array", "element" },
+                "appends one element to a dynamic array and returns its result/index");
+            addDiscovered(result, occupied, discoverDArrayGetElement(),
+                "darray_get_element", "DArrayGetElement", "__fastcall", "/int",
+                new String[] { darrayPointer, "/uint", "pointer:/void" },
+                new String[] { "array", "index", "outElement" },
+                "copies the indexed dynamic-array element and returns index or -4");
+        }
         addDiscovered(result, occupied, discoverLoadResourceString(),
             "load_resource_string", "LoadResourceString", "__stdcall", "pointer:/char",
             new String[] { "/WinDef.h/UINT", "/WinDef.h/HINSTANCE" },
             new String[] { "resourceId", "module" },
             "loads a Win32 string resource into the process ring buffer and returns its address");
-        addDiscovered(result, occupied, discoverDArrayGetElement(),
-            "darray_get_element", "DArrayGetElement", "__fastcall", "/int",
-            new String[] { "pointer:/SubmarineTitans/Recovered/DArrayTy", "/uint",
-                "pointer:/void" }, new String[] { "array", "index", "outElement" },
-            "copies the indexed DArray element and returns index or -4");
-        addDiscovered(result, occupied, discoverPlayerRaceId(),
-            "player_race_id", "GetPlayerRaceId", "__stdcall", "/int",
-            new String[] { "/char" }, new String[] { "playerId" },
-            "maps a player id to the first byte of a fixed-stride runtime record; " +
+        addDiscovered(result, occupied, discoverIndexedRecordByteLookup(),
+            "indexed_record_byte_lookup", "LookupRecordByte", "__stdcall", "/int",
+            new String[] { "/char" }, new String[] { "recordIndex" },
+            "maps a guarded byte-sized index to the first byte of a fixed-stride record; " +
                 "the explicit 0xff guard clears AL and returns zero");
 
-        Function removeAt = discoverDArrayRemoveAt(decompiler);
-        if (removeAt != null && occupied.add(removeAt.getEntryPoint().getOffset()))
-            result.add(new Rule(removeAt.getEntryPoint().getOffset(),
-                "darray_remove_at", "DArrayRemoveAt", "__stdcall", "/int",
-                new String[] { "pointer:/SubmarineTitans/Recovered/DArrayTy", "/uint" },
-                new String[] { "array", "index" },
-                new String[] { "->count", "->elementSize", "->data",
-                    "->iteratorIndex" },
-                "removes one indexed DArray element, shifts the byte tail, " +
-                    "updates count/iterator state, and returns zero or -4"));
+        if (!darrayPointer.isBlank()) {
+            Function removeAt = discoverDArrayRemoveAt(decompiler);
+            if (removeAt != null && occupied.add(removeAt.getEntryPoint().getOffset()))
+                result.add(new Rule(removeAt.getEntryPoint().getOffset(),
+                    "darray_remove_at", "DArrayRemoveAt", "__stdcall", "/int",
+                    new String[] { darrayPointer, "/uint" },
+                    new String[] { "array", "index" },
+                    new String[] { "->count", "->elementSize", "->data",
+                        "->iteratorIndex" },
+                    "removes one indexed dynamic-array element, shifts the byte tail, " +
+                        "updates count/iterator state, and returns zero or -4"));
 
-        Function getNext = discoverDArrayGetNext(decompiler);
-        if (getNext != null && occupied.add(getNext.getEntryPoint().getOffset()))
-            result.add(new Rule(getNext.getEntryPoint().getOffset(),
-                "darray_get_next", "DArrayGetNext", "__fastcall", "/int",
-                new String[] { "pointer:/SubmarineTitans/Recovered/DArrayTy",
-                    "pointer:/byte" },
-                new String[] { "array", "outElement" },
-                new String[] { "->count", "->elementSize", "->data",
-                    "->iteratorIndex" },
-                "copies the element at iteratorIndex to caller storage, advances " +
-                    "the iterator, and returns the previous index or -4"));
+            Function getNext = discoverDArrayGetNext(decompiler);
+            if (getNext != null && occupied.add(getNext.getEntryPoint().getOffset()))
+                result.add(new Rule(getNext.getEntryPoint().getOffset(),
+                    "darray_get_next", "DArrayGetNext", "__fastcall", "/int",
+                    new String[] { darrayPointer, "pointer:/byte" },
+                    new String[] { "array", "outElement" },
+                    new String[] { "->count", "->elementSize", "->data",
+                        "->iteratorIndex" },
+                    "copies the element at iteratorIndex to caller storage, advances " +
+                        "the iterator, and returns the previous index or -4"));
+        }
 
         Function copyRows = discoverCopyRows(decompiler);
         if (copyRows != null && occupied.add(copyRows.getEntryPoint().getOffset()))
@@ -277,7 +277,7 @@ public class STUtilityFunctionAnalyzer extends GhidraScript {
         return unique(matches);
     }
 
-    private Function discoverPlayerRaceId() throws Exception {
+    private Function discoverIndexedRecordByteLookup() throws Exception {
         List<Function> matches = new ArrayList<>();
         FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
         while (functions.hasNext()) {
@@ -560,12 +560,33 @@ public class STUtilityFunctionAnalyzer extends GhidraScript {
         return matches.size() == 1 ? matches.get(0) : null;
     }
 
+    private String darrayPointerSpecification() {
+        List<ghidra.program.model.data.Structure> matches = new ArrayList<>();
+        java.util.Iterator<ghidra.program.model.data.DataType> types =
+            currentProgram.getDataTypeManager().getAllDataTypes();
+        while (types.hasNext()) {
+            ghidra.program.model.data.DataType type = types.next();
+            if (type instanceof ghidra.program.model.data.Structure structure &&
+                    recoveredDArrayStructure(structure))
+                matches.add(structure);
+        }
+        return matches.size() == 1 ? "pointer:" + matches.get(0).getPathName() : "";
+    }
+
     private boolean darrayPointer(Parameter parameter) {
-        String specification = typeSpec(parameter.getDataType());
-        return specification.equals(
-                "pointer:/SubmarineTitans/Recovered/DArrayTy") ||
-            specification.equals("pointer:/DArrayTy") ||
-            specification.endsWith("/DArrayTy");
+        if (!(parameter.getDataType() instanceof ghidra.program.model.data.Pointer pointer) ||
+                !(pointer.getDataType() instanceof ghidra.program.model.data.Structure structure))
+            return false;
+        return recoveredDArrayStructure(structure);
+    }
+
+    private boolean recoveredDArrayStructure(
+            ghidra.program.model.data.Structure structure) {
+        String description = structure.getDescription();
+        return structure.getLength() == 0x20 && description != null &&
+            description.contains("[STTypeBootstrapApplier]") &&
+            description.contains("[ST_SEMANTIC_ANCHOR]") &&
+            description.toLowerCase(Locale.ROOT).contains("darray");
     }
 
     private boolean hasRepMovePair(Function function) {

@@ -53,7 +53,7 @@ STExplosion::sub_00606050
 
   iVar5 = 0;
   local_5 = '\0';
-  local_EAX_29 = GetPlayerRaceId((char)param_8);
+  local_EAX_29 = LookupRecordByte((char)param_8);
   local_18 = local_EAX_29 & 0xff;
   if (param_4 == 0x21) {
     this->field_02B7 = param_7;

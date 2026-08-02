@@ -20,9 +20,9 @@ undefined4 __fastcall FUN_004e4f30(STMineSetC *param_1)
     param_1->field_04E0 = 0;
   }
   if (param_1->field_0024 != param_1->field_023D) {
-    local_EAX_85 = GetPlayerRaceId((char)param_1->field_023D);
+    local_EAX_85 = LookupRecordByte((char)param_1->field_023D);
     iVar2 = param_1->field_0235;
-    local_EAX_124 = GetPlayerRaceId(*(char *)&param_1->field_0024);
+    local_EAX_124 = LookupRecordByte(*(char *)&param_1->field_0024);
     if ((&DAT_007e1984)[(local_EAX_124 & 0xffU) + ((local_EAX_85 & 0xffU) + iVar2 * 3) * 3] == '\0')
     goto LAB_004e4ffe;
   }
@@ -36,7 +36,7 @@ LAB_004e4ffe:
     iVar2 = 0x4a;
   }
   else if ((param_1->field_05AC == 0x3d) &&
-          (iVar2 = GetPlayerRaceId(*(char *)&param_1->field_0024), (char)iVar2 == '\x01')) {
+          (iVar2 = LookupRecordByte(*(char *)&param_1->field_0024), (char)iVar2 == '\x01')) {
     iVar2 = 0x12;
   }
   else {
@@ -47,9 +47,9 @@ LAB_004e4ffe:
     param_1->field_04E4 = 0;
   }
   if (param_1->field_0024 != param_1->field_023D) {
-    uVar2 = GetPlayerRaceId((char)param_1->field_023D);
+    uVar2 = LookupRecordByte((char)param_1->field_023D);
     iVar1 = param_1->field_0235;
-    uVar3 = GetPlayerRaceId(*(char *)&param_1->field_0024);
+    uVar3 = LookupRecordByte(*(char *)&param_1->field_0024);
     if ((&DAT_007e1984)[(uVar3 & 0xffU) + ((uVar2 & 0xffU) + iVar1 * 3) * 3] == '\0') {
       return 0;
     }

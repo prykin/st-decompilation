@@ -8,9 +8,9 @@ Verified: 14
 006B54F0 SArrayCreate: apply - body pattern verified
 006AE140 DArrayPut: apply - body pattern verified
 006AE1C0 DArrayAppend: apply - body pattern verified
-006B0140 LoadResourceString: apply - body pattern verified
 006ACC70 DArrayGetElement: apply - body pattern verified
-004406C0 GetPlayerRaceId: apply - body pattern verified
+006B0140 LoadResourceString: apply - body pattern verified
+004406C0 LookupRecordByte: apply - body pattern verified
 006B0C70 DArrayRemoveAt: apply - body pattern verified
 006B1190 DArrayGetNext: apply - body pattern verified
 006CEA60 CopyRows: apply - body pattern verified

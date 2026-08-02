@@ -1647,6 +1647,7 @@ public class STClassLayoutAnalyzer extends GhidraScript {
                 structure.getComponentAt((int)field.offset) : null;
             boolean existingConcreteType = false;
             boolean generatedTypeRevision = false;
+            boolean generatedSwitchEnumPreserved = false;
             String retiredDeprecatedInference = "";
             if (ownerVtable && existing != null && existing.getOffset() == field.offset &&
                     existing.getLength() == size) {
@@ -1668,6 +1669,7 @@ public class STClassLayoutAnalyzer extends GhidraScript {
                 type = existing.getDataType().getPathName();
                 if (existing.getFieldName() != null) name = existing.getFieldName();
                 existingConcreteType = true;
+                generatedSwitchEnumPreserved = true;
                 typeApply = false;
             }
             else if (existing != null && existing.getOffset() == field.offset &&
@@ -1721,6 +1723,8 @@ public class STClassLayoutAnalyzer extends GhidraScript {
             else if (!retiredDeprecatedInference.isBlank())
                 reason += "; deprecated_generated_type_reverted=" + type +
                     "; deprecated_source=" + retiredDeprecatedInference;
+            else if (generatedSwitchEnumPreserved)
+                reason += "; generated_switch_enum_preserved_over_pointer_like_use";
             else if (field.inferredTypes.size() > 1)
                 reason += "; inferred_type_conflict=" + String.join("|", field.inferredTypes.keySet());
             else if (existingConcreteType && !inferredType.isBlank() &&
@@ -2006,8 +2010,12 @@ public class STClassLayoutAnalyzer extends GhidraScript {
         int index = description.indexOf(HASH_MARKER);
         if (index < 0) return null;
         String value = description.substring(index + HASH_MARKER.length()).trim();
-        int end = value.indexOf(';');
-        if (end >= 0) value = value.substring(0, end);
+        // Constructor/base evidence is appended on a new line after the generated
+        // layout hash. Parse the fixed-width digest instead of requiring it to be
+        // the last description token; otherwise generated classes with base
+        // evidence are incorrectly treated as manually edited and cannot evolve.
+        if (value.length() < 64) return null;
+        value = value.substring(0, 64);
         return value.matches("[0-9a-fA-F]{64}") ? value.toLowerCase(Locale.ROOT) : null;
     }
 

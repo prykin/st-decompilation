@@ -33,7 +33,11 @@ import ghidra.program.model.data.UnionDataType;
 import ghidra.program.model.data.VoidDataType;
 import ghidra.program.model.data.WordDataType;
 import ghidra.program.model.listing.Function;
+import ghidra.program.model.listing.Function.FunctionUpdateType;
 import ghidra.program.model.listing.Parameter;
+import ghidra.program.model.listing.ParameterImpl;
+import ghidra.program.model.listing.ReturnParameterImpl;
+import ghidra.program.model.listing.Variable;
 import ghidra.program.model.symbol.SourceType;
 
 public class STTypeBootstrapApplier extends GhidraScript {
@@ -105,9 +109,18 @@ public class STTypeBootstrapApplier extends GhidraScript {
                 case "mark_view_only" -> markViewOnly(target);
                 case "demote_signature" -> demoteSignature(target,
                     unt(row.get("expected")), unt(row.get("evidence")));
+                case "retire_legacy_view_local" -> retireLegacyViewLocal(target,
+                    unt(row.get("replacement")), unt(row.get("expected")),
+                    unt(row.get("proposed")), unt(row.get("evidence")));
+                case "retire_legacy_view_parameters" -> retireLegacyViewParameters(target,
+                    unt(row.get("expected")), unt(row.get("proposed")),
+                    unt(row.get("evidence")));
                 case "retire_curated_identity" -> retireCuratedIdentity(target,
                     unt(row.get("expected")), unt(row.get("proposed")),
                     unt(row.get("evidence")));
+                case "normalize_heuristic_provenance" ->
+                    normalizeHeuristicProvenance(target, unt(row.get("expected")),
+                        unt(row.get("evidence")));
                 default -> throw new IllegalArgumentException("Unknown action " + action);
             };
             report.add(new Report(action, target, status, unt(row.get("evidence"))));
@@ -255,19 +268,12 @@ public class STTypeBootstrapApplier extends GhidraScript {
         if (function == null) return "conflict";
         if (!function.getPrototypeString(true, true).equals(expected)) return "preserved";
         if (function.getSignatureSource() == SourceType.ANALYSIS) return "unchanged";
-        if (function.getSignatureSource() == SourceType.IMPORTED) return "preserved";
+        if (function.getSignatureSource() == SourceType.IMPORTED ||
+                function.getReturn().getSource() == SourceType.IMPORTED)
+            return "preserved";
         for (Parameter parameter : function.getParameters())
             if (parameter.getSource() == SourceType.IMPORTED) return "preserved";
-        function.setSignatureSource(SourceType.ANALYSIS);
-        if (function.getSignatureSource() != SourceType.ANALYSIS)
-            return "preserved";
-        function.setReturnType(function.getReturnType(), SourceType.ANALYSIS);
-        for (Parameter parameter : function.getParameters())
-            if (!parameter.isAutoParameter())
-                parameter.setDataType(parameter.getDataType(), SourceType.ANALYSIS);
-        function.setSignatureSource(SourceType.ANALYSIS);
-        if (function.getSignatureSource() != SourceType.ANALYSIS)
-            return "preserved";
+        rebuildAnalysisSignature(function, Map.of());
         function.addTag("RECOVERED_HEURISTIC_SIGNATURE");
         String line = MARKER + " Signature provenance changed from legacy USER_DEFINED to " +
             "ANALYSIS. Evidence: " + evidence;
@@ -275,6 +281,104 @@ public class STTypeBootstrapApplier extends GhidraScript {
         if (old == null || old.isBlank()) function.setComment(line);
         else if (!old.contains(line)) function.setComment(old + "\n" + line);
         return "applied";
+    }
+
+    private String retireLegacyViewLocal(String addressText, String expectedName,
+            String expected, String locator, String evidence) throws Exception {
+        Address address = currentProgram.getAddressFactory().getAddress(addressText);
+        Function function = address == null ? null :
+            currentProgram.getFunctionManager().getFunctionAt(address);
+        if (function == null) return "conflict";
+        Variable target = null;
+        List<Variable> storageMatches = new ArrayList<>();
+        for (Variable variable : function.getLocalVariables()) {
+            if (!variable.isValid() || variable.getVariableStorage() == null ||
+                    !variable.getVariableStorage().toString().equals(locator)) continue;
+            if (variable.getName().equals(expectedName)) target = variable;
+            storageMatches.add(variable);
+        }
+        if (target == null && storageMatches.size() == 1) target = storageMatches.get(0);
+        if (target == null) return "preserved";
+        String comment = target.getComment() == null ? "" : target.getComment();
+        if (!localFingerprint(target).equals(expected) || !target.isStackVariable() ||
+                target.getSource() == SourceType.USER_DEFINED ||
+                target.getSource() == SourceType.IMPORTED ||
+                !comment.contains("[STRecoveredTypesApplier]") ||
+                !viewOnlyType(target.getDataType())) return "preserved";
+
+        function.removeVariable(target);
+        function.addTag("RECOVERED_LEGACY_VIEW_LOCAL_RETIRED");
+        String line = MARKER + " Removed legacy noncanonical stack view at " + locator +
+            " so SSA can recover independent lifetimes. Evidence: " + evidence;
+        String old = function.getComment();
+        if (old == null || old.isBlank()) function.setComment(line);
+        else if (!old.contains(line)) function.setComment(old + "\n" + line);
+        return "applied";
+    }
+
+    private String localFingerprint(Variable variable) {
+        return variable.getName() + "|storage=" + variable.getVariableStorage() +
+            "|type=" + variable.getDataType().getPathName() +
+            "|source=" + variable.getSource() +
+            "|comment=" + (variable.getComment() == null ? "" : variable.getComment());
+    }
+
+    private String retireLegacyViewParameters(String addressText, String expected,
+            String ordinalText, String evidence) throws Exception {
+        Address address = currentProgram.getAddressFactory().getAddress(addressText);
+        Function function = address == null ? null :
+            currentProgram.getFunctionManager().getFunctionAt(address);
+        if (function == null) return "conflict";
+        if (!functionFingerprint(function).equals(expected)) return "preserved";
+        if (function.getSymbol().getSource() == SourceType.IMPORTED ||
+                function.getSignatureSource() == SourceType.IMPORTED ||
+                function.getReturn().getSource() == SourceType.IMPORTED)
+            return "preserved";
+        for (Parameter parameter : function.getParameters())
+            if (parameter.getSource() == SourceType.IMPORTED) return "preserved";
+
+        List<Parameter> targets = new ArrayList<>();
+        for (String token : ordinalText.split(",")) {
+            if (token.isBlank()) continue;
+            int ordinal = Integer.parseInt(token.trim());
+            Parameter target = null;
+            for (Parameter parameter : function.getParameters())
+                if (parameter.getOrdinal() == ordinal) {
+                    target = parameter;
+                    break;
+                }
+            if (target == null || target.isAutoParameter() ||
+                    target.getSource() != SourceType.USER_DEFINED ||
+                    !(target.getDataType() instanceof ghidra.program.model.data.Pointer pointer) ||
+                    !legacyScriptView(pointer.getDataType())) return "preserved";
+            if (!targets.contains(target)) targets.add(target);
+        }
+        if (targets.isEmpty()) return "conflict";
+
+        Map<Integer, DataType> replacements = new LinkedHashMap<>();
+        for (Parameter parameter : targets)
+            replacements.put(parameter.getOrdinal(), pointer(VoidDataType.dataType));
+        rebuildAnalysisSignature(function, replacements);
+        function.addTag("RECOVERED_LEGACY_VIEW_RETIRED");
+        String line = MARKER + " Replaced legacy noncanonical view parameters with " +
+            "neutral pointers for shape recovery. Evidence: " + evidence;
+        String old = function.getComment();
+        if (old == null || old.isBlank()) function.setComment(line);
+        else if (!old.contains(line)) function.setComment(old + "\n" + line);
+        return "applied";
+    }
+
+    private boolean viewOnlyType(DataType type) {
+        if (type == null) return false;
+        String description = type.getDescription() == null ? "" : type.getDescription();
+        return description.contains(VIEW) && !description.contains(ANCHOR);
+    }
+
+    private boolean legacyScriptView(DataType type) {
+        if (!viewOnlyType(type)) return false;
+        String description = type.getDescription() == null ? "" : type.getDescription();
+        return description.contains("[STTypeBootstrapApplier]") ||
+            description.contains("[STRecoveredTypesApplier]");
     }
 
     private String retireCuratedIdentity(String addressText, String expected,
@@ -293,11 +397,7 @@ public class STTypeBootstrapApplier extends GhidraScript {
             if (parameter.getSource() == SourceType.IMPORTED) return "preserved";
         if (proposedLeaf.isBlank() || proposedLeaf.contains("::")) return "conflict";
 
-        function.setReturnType(function.getReturnType(), SourceType.ANALYSIS);
-        for (Parameter parameter : function.getParameters())
-            if (!parameter.isAutoParameter())
-                parameter.setDataType(parameter.getDataType(), SourceType.ANALYSIS);
-        function.setSignatureSource(SourceType.ANALYSIS);
+        rebuildAnalysisSignature(function, Map.of());
         // Rename last so a rejected signature provenance update cannot leave a half-retired
         // identity behind while the legacy tag remains installed.
         function.setName(proposedLeaf, SourceType.ANALYSIS);
@@ -309,6 +409,84 @@ public class STTypeBootstrapApplier extends GhidraScript {
         if (old == null || old.isBlank()) function.setComment(line);
         else if (!old.contains(line)) function.setComment(old + "\n" + line);
         return "applied";
+    }
+
+    private String normalizeHeuristicProvenance(String addressText, String expected,
+            String evidence) throws Exception {
+        Address address = currentProgram.getAddressFactory().getAddress(addressText);
+        Function function = address == null ? null :
+            currentProgram.getFunctionManager().getFunctionAt(address);
+        if (function == null) return "conflict";
+        if (!hasTag(function, "RECOVERED_HEURISTIC_IDENTITY") ||
+                !functionFingerprint(function).equals(expected)) return "preserved";
+        if (function.getSymbol().getSource() == SourceType.IMPORTED ||
+                function.getSignatureSource() == SourceType.IMPORTED ||
+                function.getReturn().getSource() == SourceType.IMPORTED)
+            return "preserved";
+        for (Parameter parameter : function.getParameters())
+            if (parameter.getSource() == SourceType.IMPORTED) return "preserved";
+        boolean current = function.getSignatureSource() == SourceType.ANALYSIS &&
+            function.getReturn().getSource() == SourceType.ANALYSIS;
+        for (Parameter parameter : function.getParameters())
+            if (!parameter.isAutoParameter() &&
+                    parameter.getSource() != SourceType.ANALYSIS) current = false;
+        if (current) return "unchanged";
+        rebuildAnalysisSignature(function, Map.of());
+        String line = MARKER + " Normalized signature, return, and explicit parameter " +
+            "provenance to ANALYSIS after heuristic identity retirement. Evidence: " + evidence;
+        String old = function.getComment();
+        if (old == null || old.isBlank()) function.setComment(line);
+        else if (!old.contains(line)) function.setComment(old + "\n" + line);
+        return "applied";
+    }
+
+    /** Rebuild the whole formal signature so Ghidra cannot retain USER_DEFINED
+     * source priority on individual parameters after a legacy-view migration. */
+    private void rebuildAnalysisSignature(Function function,
+            Map<Integer, DataType> replacements) throws Exception {
+        boolean custom = function.hasCustomVariableStorage();
+        boolean varargs = function.hasVarArgs();
+        boolean noreturn = function.hasNoReturn();
+        List<Variable> rebuilt = new ArrayList<>();
+        List<String> comments = new ArrayList<>();
+        for (Parameter parameter : function.getParameters()) {
+            if (parameter.isAutoParameter()) continue;
+            DataType type = replacements.getOrDefault(parameter.getOrdinal(),
+                parameter.getFormalDataType());
+            rebuilt.add(custom ?
+                new ParameterImpl(parameter.getName(), type,
+                    parameter.getVariableStorage(), currentProgram, SourceType.ANALYSIS) :
+                new ParameterImpl(parameter.getName(), type,
+                    currentProgram, SourceType.ANALYSIS));
+            comments.add(parameter.getComment());
+        }
+        ReturnParameterImpl returned = custom ?
+            new ReturnParameterImpl(function.getReturnType(),
+                function.getReturn().getVariableStorage(), true, currentProgram) :
+            new ReturnParameterImpl(function.getReturnType(), currentProgram);
+        function.updateFunction(function.getCallingConventionName(), returned, rebuilt,
+            custom ? FunctionUpdateType.CUSTOM_STORAGE :
+                FunctionUpdateType.DYNAMIC_STORAGE_FORMAL_PARAMS,
+            true, SourceType.ANALYSIS);
+        function.setVarArgs(varargs);
+        function.setNoReturn(noreturn);
+        function.setSignatureSource(SourceType.ANALYSIS);
+
+        int index = 0;
+        for (Parameter parameter : function.getParameters()) {
+            if (parameter.isAutoParameter()) continue;
+            String comment = comments.get(index++);
+            if (comment != null && !comment.isBlank()) parameter.setComment(comment);
+            if (parameter.getSource() != SourceType.ANALYSIS)
+                throw new IllegalStateException("parameter provenance remained " +
+                    parameter.getSource() + " for " + parameter.getName());
+        }
+        if (function.getReturn().getSource() != SourceType.ANALYSIS)
+            throw new IllegalStateException("return provenance remained " +
+                function.getReturn().getSource());
+        if (function.getSignatureSource() != SourceType.ANALYSIS)
+            throw new IllegalStateException("signature provenance remained " +
+                function.getSignatureSource());
     }
 
     private String functionFingerprint(Function function) {

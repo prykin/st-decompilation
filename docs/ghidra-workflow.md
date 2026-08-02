@@ -89,7 +89,9 @@ bypass any analyzer/applier validation. In particular, it never changes an
 `apply=0` flag, and every child applier still checks manual sources, generated
 hashes, stale baselines, and transaction boundaries. Optional curated/audit
 inputs are skipped when absent. A failing step stops the sequence before any
-downstream applier can consume stale output.
+downstream applier can consume stale output. All mutating finalization and the
+export-only ABI repair finish before `STManualTypeAuditAnalyzer`; that read-only
+audit is the last Program consumer before the evidence ledger is recorded.
 
 The regression gate compares exported bodies by function address. A body may
 leave the corpus only when that same function is now explicitly classified as
@@ -318,14 +320,18 @@ appliers.
 ### 1. Baseline types and embedded debug symbols
 
 1. Run `STTypeBootstrapAnalyzer`, then `STTypeBootstrapApplier`.
-   - The analyzer discovers DArray, message, spatial-descriptor, and system-class
-     families from method sets, field accesses, reference geometry, and existing
-     class/vtable evidence. Legacy manually shaped control-command and temporary
-     projections are retired as views; later passes recover only observed fields.
-   - The scripts contain no program address or enum-value seed. Legacy packed
-     projections are marked `ST_VIEW_ONLY`, never semantic anchors. A
-     `USER_DEFINED` signature is demoted only with explicit legacy script/debug
-     provenance; a matching function name alone is insufficient.
+   - The analyzer discovers only the DArray, message, and system-class anchors
+     from method sets, field accesses, reference geometry, and existing
+     class/vtable evidence. Spatial and packed command layouts are not bootstrap
+     types; later passes recover only observed fields.
+   - The scripts contain no program-address or enum-value seed. Legacy packed
+     projections are marked `ST_VIEW_ONLY`, never semantic anchors. Exact old
+     applier-owned view parameters are neutralized to `void *`, and exact old
+     applier-owned view stack locals are removed so SSA can infer independent
+     lifetimes. Imported/manual locals and types without both provenance markers
+     are preserved. A `USER_DEFINED` signature is otherwise demoted only with
+     explicit legacy script/debug provenance; a matching function name alone is
+     insufficient.
 2. Run `STDebugSymbolAnalyzer`.
    - Directory: `<repo>/recovery`
    - Output: `proposals.tsv`, `debug_string_proposals.tsv`,
@@ -1010,7 +1016,7 @@ migration instead of happening as a side effect of one decompiler run.
 The utility pass is intentionally small and strict. It verifies body shapes before
 assigning the semantics and prototypes of `FreeAndNull`, `DArrayDestroy`,
 `DArrayCreate`, `SArrayCreate`, `LoadResourceString`, `DArrayGetElement`, and
-`GetPlayerRaceId`. It also discovers the unique generic `DArrayRemoveAt` helper
+the behavior-derived `LookupRecordByte`. It also discovers the unique generic `DArrayRemoveAt` helper
 and the iterator-style `DArrayGetNext` helper from their descriptor accesses
 plus exact `REP MOVSD`/`REP MOVSB` bodies, rather than from ST-specific
 addresses. The optimized six-argument pitched-buffer primitive is similarly
@@ -1260,18 +1266,19 @@ spelling. This prevents prototype repair and pointer-shape recovery from
 oscillating forever over the same target.
 
 The global-record pair handles a layer that scalar global propagation cannot:
-one packed structure repeated at a fixed byte stride. For the player runtime
-block, the base and stride are symbolically recovered from the guarded
-`GetPlayerRaceId` lookup; the record count is then selected only when independent
-exclusive-boundary and total-size evidence agree. It creates the packed
-`STPlayerRuntimeRecord` and types the complete inferred range as
-`g_playerRuntime[count]`. No field offset or nested player layout is seeded.
-Observed first-record accesses become width-correct fields; signed/unsigned
-extension or x87 operations may refine scalar types, while other offsets stay
-`undefinedN` until semantic evidence appears. Legacy named fields and the old
-`STPlayerTempSlot[2][5]` projection are deliberately not carried forward. An
-existing script-owned record supplies only a stale-checked mutation baseline;
-its installed fields are never recycled as evidence for the next proposal.
+one packed structure repeated at a fixed byte stride. It first identifies the
+unique guarded byte-index lookup by machine behavior, then symbolically recovers
+the referenced base and stride. The record count is accepted only when
+independent exclusive-boundary and total-size evidence agree. Record IDs, type
+paths, and global names are derived from the observed geometry, for example
+`PackedRecord_A62x8` and `g_packedRecords_A62x8`; no game-specific record name is
+seeded. Observed first-record accesses become width-correct fields;
+signed/unsigned extension or x87 operations may refine scalar types, while
+other offsets stay `undefinedN` until semantic evidence appears. Legacy named
+fields and old manually shaped projections are deliberately not carried
+forward. An existing script-owned record is migrated to the neutral identity
+only when its marker and safety hash prove it unchanged; its installed fields
+are never recycled as evidence for the next proposal.
 
 Run global records before ordinary global data. The record applier intentionally
 refuses to clear concrete unowned data, so first applying a scalar type inside
@@ -1545,7 +1552,7 @@ a new conflict is what requires another iteration.
 | --- | --- |
 | `STRecoveryLauncher` | Capture provider/loading/runtime diagnostics for the pipeline itself in `pipeline_bootstrap.log`, then invoke the normal pipeline. |
 | `STRecoveryPipeline` | Infer repository paths, run dependency-ordered fixed-point workflows, retain the three newest hash-addressed run logs, and refuse stale/unconverged/regressed exports. |
-| `STTypeBootstrapAnalyzer/Applier` | Infer the minimum semantic type anchors from method/access/reference families; migrate legacy duplicate/view types without embedded addresses or enum values. |
+| `STTypeBootstrapAnalyzer/Applier` | Infer the minimum semantic type anchors from method/access/reference families; migrate exact provenance-owned legacy view parameters and stack locals without embedded addresses, type-name deletion lists, or enum values; atomically normalize signature, return, and explicit-parameter provenance after a tagged heuristic identity retirement. |
 | `STDebugSymbolAnalyzer/Applier` | Recover C++ owners, method names, calling conventions, source evidence, and short diagnostic printf strings. |
 | `STCallsiteConventionAnalyzer/Applier` | Audit direct and thunk-mediated callers and apply only unanimous high-confidence static `__cdecl` corrections. |
 | `STMessageIdAnalyzer/Applier` | Recover the `MESS_*`/`STMessageId` domain. |
@@ -1569,15 +1576,15 @@ a new conflict is what requires another iteration.
 | `STPrototypeAnalyzer/Applier` | Propagate compatible parameter/return types and reviewed parameter names across direct calls, including externally anchored SCCs of unchanged wrapper boundaries. |
 | `STPrototypeRepairAnalyzer/Applier` | Isolate and safely correct stale types/names previously written by prototype propagation. |
 | `STManualTypeAuditAnalyzer` | Consolidate strong evidence that a protected/manual prototype or field type is stale; read-only by design. |
-| `STGlobalRecordAnalyzer/Applier` | Recover packed arrays of repeated global records from a symbolically inferred base/stride plus independent extent evidence; create fields only from observed accesses and retire legacy seeded nested layouts. |
-| `STDiscriminatedPayloadAnalyzer/Applier` | Infer per-case payload layouts and caller stack aggregates from switch discriminators, plus equality-guarded per-message-ID views of a common envelope without changing its ABI. |
+| `STGlobalRecordAnalyzer/Applier` | Recover packed arrays of repeated global records from a symbolically inferred base/stride plus independent extent evidence; create fields only from observed accesses, retire legacy seeded nested layouts, and migrate an obsolete generated Listing element identity only when its producer marker and stored/current layout hashes agree. |
+| `STDiscriminatedPayloadAnalyzer/Applier` | Infer per-case payload layouts from direct reads, fixed pointer-advance copy loops, shared goto tails, and single-element DArray appends. The final pass recovers caller stack aggregates only when thunk-resolved vtable-slot machine evidence and the typed decompiler call agree on the exact case/stack pair; obsolete hash-intact generated family identities migrate by function-address/case provenance, never by layout similarity. Imported/library families are excluded, and any intact generated false-positive left by an earlier pre-library pass is retired through the ordinary type lifecycle. |
 | `STGlobalAggregateAnalyzer/Applier` | Audit indexed global ranges and install only bounded arrays/matrices with a proven extent/indexing formula, including transpose-proven binary relation matrices and behavior-proven Win32 resource-string scratch arenas. |
 | `STGlobalDataAnalyzer/Applier` | Type generic globals from receiver/argument use and named-constructor stores, follow the constructor-result edge through MSVC new/null join blocks, accept ordinary `T **` address-taking when an unambiguous named-constructor store proves the singleton's `T *` value, promote script-owned anonymous singleton pointers to named classes or dominant statically linked library contexts, name literal-backed module handles, assign address-stable structural names, and audit every `PTR_*` symbol by pointer role. |
 | `STIndirectCallAnalyzer/Applier` | Audit raw indirect calls; refine trusted slots, install machine-proven neutral thiscall/stdcall definitions, and propagate an ABI only across unanimous typed vtable occurrences of the same resolved target. |
 | `STPointerRoleRepairAnalyzer/Applier` | Remove prior script-owned pointer constraints from stack slots with proven scalar lifetimes in unsettled functions, and retire locals pointing to generated view-only types. |
 | `STPointerShapeAnalyzer/Applier` | Recover and fixed-point-refine known or anonymous pointer-backed structures from fixed, nested, alias-mediated dereferences, typed calls, and field-by-field stack aggregate construction; analyzer and applier both treat weak scalar pointers such as default `short *`, `ushort *`, and `word *` as replaceable only after the normal multi-field/typed-call thresholds pass; grant very large functions the same 120-second decompiler budget as the exporter while retaining 30 seconds for ordinary bodies; merge non-conflicting generated partial views only when identity is proven; materialize a target-local exact-call superset instead of widening helper-local views; apply auto-`this` types through the owning class namespace. |
 | `STTypeFamilyAnalyzer/Applier` | Promote anonymous layouts to an explicit semantic anchor, propagate named aggregate returns, and give complete one-owner records deterministic generated names. Anonymous consolidation requires a semantic/HiddenThis anchor or exact direct-call pointer dataflow plus complete-layout, one-owner, no-alias agreement; geometry alone never merges types. |
-| `STTypeLifecycleAnalyzer/Applier` | Replace legacy views with one equivalent semantic anchor, consolidate an exact orphan HiddenThis duplicate into its unique namespace-backed receiver family, and remove unreferenced views, their direct Pointer/Array derivative chains, and hash-owned anonymous PointerShape/ClassPointee/HiddenThis types after zero-parent/signature/Listing-use revalidation. |
+| `STTypeLifecycleAnalyzer/Applier` | Replace legacy views with one equivalent semantic anchor, consolidate an exact orphan HiddenThis duplicate into its unique namespace-backed receiver family, and remove unreferenced views, their direct Pointer/Array derivative chains, and hash-owned anonymous PointerShape/ClassPointee/HiddenThis types after zero-parent/signature/Listing-use revalidation. Analyzer and applier use whole-program usage indexes; the applier validates immutable target and replacement baselines, performs replacements first, then rebuilds one live removal index so a newly referenced type cannot be deleted. `ST_VIEW_ONLY` is an explicit pipeline-owned retirement opt-in which takes precedence over a stale coexisting anchor marker, including the oldest views that predate applier descriptions. |
 | `STEvidenceLedger` | Record/verify a deterministic semantic Program fingerprint and hashes of every proposal/apply artifact plus monotonic enum state before export; retain the volatile modification counter for diagnostics only. |
 | `STSourceProvenanceAnalyzer/Applier` | Attach original source files and strict free-function names, including unique identifiers passed to repeated machine-verified diagnostic sinks and bounded source-string clusters. |
 | `STThunkPropagationAnalyzer/Applier` | Audit transparent direct-JMP thunks, preserve normal Ghidra target forwarding, and release only exact redundant manual `TargetName_thunk` symbols after full ABI and stale-baseline validation; delegated target signatures are never mutated. |

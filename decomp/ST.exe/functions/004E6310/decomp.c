@@ -29,7 +29,7 @@ void FUN_004e6310(byte *param_1,uint param_2,uint param_3)
     pbVar2 = (byte *)(iVar11 + 0x7f511f + ((int)(param_2 ^ 7) >> 3));
     *pbVar2 = *pbVar2 & ~('\x01' << ((param_2 ^ 7) & 7));
     if (*(int *)(iVar11 + 0x7f5147 + param_2 * 4) != 0) {
-      iVar3 = (byte)g_playerRuntime[(int)param_1].field0_0x0 - 1;
+      iVar3 = (byte)g_packedRecords_A62x8[(int)param_1].field0_0x0 - 1;
       piVar4 = (int *)(&PTR_DAT_007c0dc8)[iVar3];
       if (*piVar4 != 0) {
         iVar9 = 0;
@@ -54,20 +54,20 @@ LAB_004e63ab:
         goto cf_continue_loop_004E643C;
       }
 LAB_004e645f:
-      if (*(int *)&g_playerRuntime[(int)param_1].field_0x9ce != 0) {
-        *(undefined4 *)(*(int *)&g_playerRuntime[(int)param_1].field_0x9ce + 4) = 0;
-        iVar11 = DArrayGetNext(*(DArrayTy **)&g_playerRuntime[(int)param_1].field_0x9ce,
+      if (*(int *)&g_packedRecords_A62x8[(int)param_1].field_0x9ce != 0) {
+        *(undefined4 *)(*(int *)&g_packedRecords_A62x8[(int)param_1].field_0x9ce + 4) = 0;
+        iVar11 = DArrayGetNext(*(DArrayTy **)&g_packedRecords_A62x8[(int)param_1].field_0x9ce,
                                (byte *)&local_c);
         while (-1 < iVar11) {
           thunk_FUN_004dd880(local_c);
-          iVar11 = DArrayGetNext(*(DArrayTy **)&g_playerRuntime[(int)param_1].field_0x9ce,
+          iVar11 = DArrayGetNext(*(DArrayTy **)&g_packedRecords_A62x8[(int)param_1].field_0x9ce,
                                  (byte *)&local_c);
         }
       }
       if (((((param_2 == 0x1d) || (param_2 == 0x89)) || (param_2 == 0x46)) ||
           ((param_2 == 0x4a || (param_2 == 0x12)))) &&
-         ((pDVar7 = (DArrayTy *)g_playerRuntime[(int)param_1].field6_0x9, pDVar7 != (DArrayTy *)0x0
-          && (uVar10 = 0, pDVar7->count != 0)))) {
+         ((pDVar7 = (DArrayTy *)g_packedRecords_A62x8[(int)param_1].field6_0x9,
+          pDVar7 != (DArrayTy *)0x0 && (uVar10 = 0, pDVar7->count != 0)))) {
         do {
           DArrayGetElement(pDVar7,uVar10,&local_8);
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -78,14 +78,14 @@ LAB_004e645f:
             thunk_FUN_004e4d60((AnonShape_004E4D60_C16F78E8 *)local_8);
             thunk_FUN_004e4f30((STMineSetC *)local_8);
           }
-          pDVar7 = (DArrayTy *)g_playerRuntime[(int)param_1].field6_0x9;
+          pDVar7 = (DArrayTy *)g_packedRecords_A62x8[(int)param_1].field6_0x9;
           uVar10 = uVar10 + 1;
         } while (uVar10 < pDVar7->count);
       }
       if ((((((param_2 == 0x3c) || (param_2 == 0x91)) || (param_2 == 0x9a)) ||
            ((param_2 == 0x4b || (param_2 == 0x4c)))) || (param_2 == 0x41)) &&
-         ((pDVar7 = (DArrayTy *)g_playerRuntime[(int)param_1].field6_0x9, pDVar7 != (DArrayTy *)0x0
-          && (uVar10 = 0, pDVar7->count != 0)))) {
+         ((pDVar7 = (DArrayTy *)g_packedRecords_A62x8[(int)param_1].field6_0x9,
+          pDVar7 != (DArrayTy *)0x0 && (uVar10 = 0, pDVar7->count != 0)))) {
         do {
           DArrayGetElement(pDVar7,uVar10,&local_8);
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable/callback call with explicit __thiscall receiver */
@@ -95,7 +95,7 @@ LAB_004e645f:
               (iVar11 = (**(code **)(*(int *)local_8 + 0x2c))(), iVar11 == 0x11)))) {
             thunk_FUN_00494ae0(local_8);
           }
-          pDVar7 = (DArrayTy *)g_playerRuntime[(int)param_1].field6_0x9;
+          pDVar7 = (DArrayTy *)g_packedRecords_A62x8[(int)param_1].field6_0x9;
           uVar10 = uVar10 + 1;
         } while (uVar10 < pDVar7->count);
       }

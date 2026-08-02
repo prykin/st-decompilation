@@ -8,6 +8,6 @@
 AiPlrClassTy * FUN_004357f0(char playerId)
 
 {
-  return *(AiPlrClassTy **)&g_playerRuntime[playerId].field_0x1;
+  return *(AiPlrClassTy **)&g_packedRecords_A62x8[playerId].field_0x1;
 }
 

@@ -11,7 +11,23 @@
    pointer_dereferences=0, slot_reused=false; sites=00632685 incoming load: MOV EAX,dword ptr [EBP +
    0x14] | 00632699 scalar operation: LEA EAX,[EDI + EDX*0x1] | 006326E9 incoming load: MOV
    ECX,dword ptr [EBP + 0x14] | 006326FF scalar operation: LEA ECX,[EBP + -0x3c] | 00632718 incoming
-   load: MOV EDX,dword ptr [EBP + 0x14] */
+   load: MOV EDX,dword ptr [EBP + 0x14]
+
+   [STDiscriminatedPayloadApplier] Case-local payload view: param_4 == 1 uses
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/Global_FUN_00632650_00632650_Case_1. The carrier
+   ABI remains /uint.
+
+   [STDiscriminatedPayloadApplier] Case-local payload view: param_4 == 2 uses
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/Global_FUN_00632650_00632650_Case_2. The carrier
+   ABI remains /uint.
+
+   [STDiscriminatedPayloadApplier] Case-local payload view: param_4 == 3 uses
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/Global_FUN_00632650_00632650_Case_3. The carrier
+   ABI remains /uint.
+
+   [STDiscriminatedPayloadApplier] Case-local payload view: param_4 == 4 uses
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/Global_FUN_00632650_00632650_Case_4. The carrier
+   ABI remains /uint. */
 
 undefined4 __thiscall
 FUN_00632650(void *this,uint param_1,int param_2,undefined4 param_3,

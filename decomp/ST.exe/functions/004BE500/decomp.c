@@ -31,11 +31,11 @@ void __thiscall TLOBaseTy::SetActivity(TLOBaseTy *this,int param_1)
     iVar4 = local_8->field_021D;
     thunk_FUN_0041dd00(local_8,param_1);
     if ((((this_00->field_021D != 0) && (iVar4 == 0)) &&
-        (local_EAX_123 = GetPlayerRaceId(*(char *)&this_00->field_023D),
+        (local_EAX_123 = LookupRecordByte(*(char *)&this_00->field_023D),
         *(int *)(&DAT_00795c00 + ((local_EAX_123 & 0xffU) + this_00->field_0235 * 3) * 4) != 0)) &&
        (this_00->field_0024 == (byte *)(uint)(byte)this_00->field_0010->field_112D)) {
       pTVar1 = this_00->vtable;
-      uVar5 = GetPlayerRaceId(*(char *)&this_00->field_023D);
+      uVar5 = LookupRecordByte(*(char *)&this_00->field_023D);
       (*pTVar1->vfunc_90)(this_00,4,
                           *(undefined4 *)
                            (&DAT_00795c00 + ((uVar5 & 0xffU) + this_00->field_0235 * 3) * 4));

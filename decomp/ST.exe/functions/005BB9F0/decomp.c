@@ -7,11 +7,11 @@
 void __thiscall PrividerTy::sub_005BB9F0(PrividerTy *this)
 
 {
-  *(undefined4 *)&this->field_0x1a65 = 1;
-  *(undefined4 *)&this->field_0x29 = 2;
+  this->field_1A65 = 1;
+  this->field_0029 = 2;
   this->field_002D = 0x20;
   if (this->field_1A73 != 0) {
-    *(undefined4 *)&this->field_0x25 = this->field_1A73;
+    this->field_0025 = this->field_1A73;
     this->field_0031 = 1;
     (*this->field_000C->vtable->vfunc_18)(&this->field_0x1d);
   }

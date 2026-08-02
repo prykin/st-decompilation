@@ -30,7 +30,7 @@ TLOBaseTy::sub_004CAFC0
   TLOBaseTy_field_05ACState TVar5;
   TLOBaseTy_field_0245State TVar6;
 
-  uVar1 = GetPlayerRaceId(*(char *)&this->field_023D);
+  uVar1 = LookupRecordByte(*(char *)&this->field_023D);
   iVar3 = (uVar1 & 0xffU) - 1;
   TVar5 = this->field_05AC;
   if (TVar5 == CASE_32) {
@@ -249,14 +249,14 @@ switchD_004cb5c6_caseD_5:
     goto switchD_004cb1d7_caseD_e;
   }
   if ((TVar5 == CASE_4F) &&
-     (iVar4 = GetPlayerRaceId(*(char *)&this->field_023D), (char)iVar4 == '\x02')) {
+     (iVar4 = LookupRecordByte(*(char *)&this->field_023D), (char)iVar4 == '\x02')) {
     *param_4 = 0;
     *param_3 = 0;
     return;
   }
 switchD_004cb1d7_caseD_e:
   if ((this->field_05AC == CASE_4F) &&
-     (iVar4 = GetPlayerRaceId(*(char *)&this->field_023D), (char)iVar4 == '\x02')) {
+     (iVar4 = LookupRecordByte(*(char *)&this->field_023D), (char)iVar4 == '\x02')) {
     if (this->field_04D0 != CASE_1) {
       uVar2 = *(uint *)((&PTR_DAT_007b5170)[TVar6] +
                        (param_2 + (iVar3 + this->field_0235 * 3) * 4) * 8);

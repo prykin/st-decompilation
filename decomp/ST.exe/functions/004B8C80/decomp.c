@@ -76,7 +76,7 @@ undefined4 __fastcall FUN_004b8c80(TLOBaseTy *param_1)
           thunk_FUN_004cbf70(param_1);
         }
         uVar5 = (uint)(param_1->field_024D == 4);
-        uVar4 = GetPlayerRaceId(*(char *)&param_1->field_0024);
+        uVar4 = LookupRecordByte(*(char *)&param_1->field_0024);
         thunk_FUN_0062b830((int)param_1->field_0041,(int)param_1->field_0043,
                            (int)param_1->field_0045,param_1->field_05AC,(int *)param_1,0xffffffff,
                            0xffffffff,uVar4 & 0xff,uVar5);
@@ -106,9 +106,9 @@ undefined4 __fastcall FUN_004b8c80(TLOBaseTy *param_1)
   }
   else if (TVar2 == CASE_6) {
     if (param_1->field_04BC != 4) {
-      iVar4 = GetPlayerRaceId(*(char *)&param_1->field_023D);
+      iVar4 = LookupRecordByte(*(char *)&param_1->field_023D);
       if ((char)iVar4 == '\x03') {
-        local_EAX_852 = GetPlayerRaceId(*(char *)&param_1->field_023D);
+        local_EAX_852 = LookupRecordByte(*(char *)&param_1->field_023D);
         if (g_playSystem_00802A38->field_00E4 <
             *(int *)(&DAT_007e3dc0 + ((local_EAX_852 & 0xffU) + param_1->field_0235 * 3) * 4) / 3 +
             param_1->field_04B8) goto cf_common_exit_004B9130;
@@ -125,7 +125,7 @@ undefined4 __fastcall FUN_004b8c80(TLOBaseTy *param_1)
           return 0;
         }
         if (iVar4 == 2) {
-          local_EAX_1028 = GetPlayerRaceId(*(char *)&param_1->field_023D);
+          local_EAX_1028 = LookupRecordByte(*(char *)&param_1->field_023D);
           if (*(int *)(&DAT_007e3dc0 + ((local_EAX_1028 & 0xffU) + param_1->field_0235 * 3) * 4) / 3
               + param_1->field_04B8 <= g_playSystem_00802A38->field_00E4) {
             param_1->vfunc_90(3,0x361);
@@ -208,7 +208,7 @@ cf_common_exit_004B9130:
     if (param_1->field_0024 != (byte *)(uint)(byte)param_1->field_0010->field_112D)
     goto cf_common_exit_004B8F5A;
     thunk_FUN_0052af50(0,(float)param_1->field_01F9,(float)param_1->field_01FD);
-    local_EAX_675 = GetPlayerRaceId(*(char *)&param_1->field_0024);
+    local_EAX_675 = LookupRecordByte(*(char *)&param_1->field_0024);
     uVar5 = local_EAX_675 & 0xff;
     if (uVar5 == 1) {
       pTVar7 = param_1->vtable;

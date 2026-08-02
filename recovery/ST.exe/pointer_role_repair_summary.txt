@@ -1,5 +1,5 @@
 program=ST.exe
-candidate_functions=282
+candidate_functions=283
 unsettled_type_propagation_functions=3
 proposals=1
 auto_apply=0

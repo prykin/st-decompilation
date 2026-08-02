@@ -13,7 +13,7 @@ FUN_004cfde0(void *this,TLOBaseTy_sub_004CAFC0_param_1Enum param_1,uint param_2,
   int iVar3;
   uint uVar4;
 
-  uVar3 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
+  uVar3 = LookupRecordByte(*(char *)((int)this + 0x23d));
   iVar1 = *(int *)((int)this + 0x245);
   iVar3 = (uVar3 & 0xffU) - 1;
   if (param_1 == CASE_9) {

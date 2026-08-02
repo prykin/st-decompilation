@@ -45,7 +45,7 @@ int FUN_004b33d0(uint param_1,int *param_2)
   int iVar26;
   undefined1 *puVar27;
   bool bVar28;
-  byte playerId;
+  byte recordIndex;
   int local_35c;
   int local_358;
   int local_354;
@@ -220,7 +220,7 @@ int FUN_004b33d0(uint param_1,int *param_2)
       pDVar10 = (DArrayTy *)param_2[5];
     } while ((int)uVar21 < (int)pDVar10->count);
   }
-  playerId = (byte)param_1;
+  recordIndex = (byte)param_1;
   if (((local_4c[0] != 0) || (local_4c[1] != 0)) && (g_array_007FA150 != (DArrayTy *)0x0)) {
     pDVar10 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0x1d,10);
     g_array_007FA150->iteratorIndex = 0;
@@ -356,7 +356,7 @@ switchD_004b38f0_caseD_3a:
         iVar9 = DArrayGetNext((DArrayTy *)param_2[3],(byte *)local_108);
       }
     }
-    puVar27 = &g_playerRuntime[param_1].field_0x9ea;
+    puVar27 = &g_packedRecords_A62x8[param_1].field_0x9ea;
     if (*(int *)puVar27 != 0) {
       *(undefined4 *)(*(int *)puVar27 + 4) = 0;
       iVar9 = DArrayGetNext(*(DArrayTy **)puVar27,(byte *)&local_58);
@@ -447,7 +447,7 @@ switchD_004b38f0_caseD_3a:
         } while (local_50 != 0);
       }
       pDVar10->iteratorIndex = 0;
-      iVar9 = GetPlayerRaceId(playerId);
+      iVar9 = LookupRecordByte(recordIndex);
       local_134 = (-(uint)((char)iVar9 != '\x03') & 0xffffffdb) + 0x60;
       *(undefined4 *)(param_2[3] + 4) = 0;
       iVar9 = DArrayGetNext((DArrayTy *)param_2[3],(byte *)local_108);
@@ -589,7 +589,7 @@ cf_break_loop_004B60CD:
   iVar20 = local_13c;
   if (local_4c[3] != 0) {
     local_184 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,10,0xc,10);
-    pDVar10 = *(DArrayTy **)&g_playerRuntime[param_1].field_0x9d6;
+    pDVar10 = *(DArrayTy **)&g_packedRecords_A62x8[param_1].field_0x9d6;
     if ((pDVar10 != (DArrayTy *)0x0) && (uVar21 = 0, 0 < (int)pDVar10->count)) {
       do {
         DArrayGetElement(pDVar10,uVar21,&local_58);
@@ -599,7 +599,7 @@ cf_break_loop_004B60CD:
         local_13c = (int)local_a8[0];
         Library::DKW::TBL::DArrayAppend(local_184,&local_144);
         uVar21 = uVar21 + 1;
-        pDVar10 = *(DArrayTy **)&g_playerRuntime[param_1].field_0x9d6;
+        pDVar10 = *(DArrayTy **)&g_packedRecords_A62x8[param_1].field_0x9d6;
       } while ((int)uVar21 < (int)pDVar10->count);
     }
     iVar12 = param_2[5];
@@ -831,7 +831,7 @@ LAB_004b49b4:
                     bVar28 = true;
 LAB_004b4bd1:
                     if (bVar28) {
-                      iVar26 = GetPlayerRaceId(playerId);
+                      iVar26 = LookupRecordByte(recordIndex);
                       pDVar22 = local_184;
                       pDVar10 = local_22c;
                       local_270 = 0;
@@ -880,7 +880,7 @@ LAB_004b4bd1:
                       }
 LAB_004b4c78:
                       if (((local_270 == 0) ||
-                          (iVar26 = GetPlayerRaceId(playerId), (char)iVar26 == '\x03')) &&
+                          (iVar26 = LookupRecordByte(recordIndex), (char)iVar26 == '\x03')) &&
                          (local_10c != 0)) {
                         if (local_124 != 0) {
                           uVar21 = 0;
@@ -988,14 +988,14 @@ LAB_004b4f35:
                           if (local_4c[4] != 0) goto cf_common_join_004B5648;
                           if (((iVar26 == 1) || (iVar26 == 6)) || ((iVar26 == 2 || (iVar26 == 3))))
                           {
-                            iVar26 = GetPlayerRaceId(playerId);
+                            iVar26 = LookupRecordByte(recordIndex);
                             GVar15 = (-(uint)((char)iVar26 != '\x03') & 0xffffffd6) + 100;
                             if (local_270 == 0) {
                               if (local_108[0] == GVar15) goto cf_common_join_004B5648;
 LAB_004b5614:
                               if (((local_270 != 0) &&
-                                  (iVar26 = GetPlayerRaceId(playerId), (char)iVar26 != '\x03')) ||
-                                 (*(int *)(&DAT_00791d68 + local_108[0] * 4) == iVar9)) {
+                                  (iVar26 = LookupRecordByte(recordIndex), (char)iVar26 != '\x03'))
+                                 || (*(int *)(&DAT_00791d68 + local_108[0] * 4) == iVar9)) {
                                 local_a0 = local_108[0];
                                 local_90 = local_f8;
                                 local_9c = local_11c;
@@ -1576,7 +1576,7 @@ LAB_004b432d:
                     ((byte)(&DAT_008087e9)[uVar21 * 0x51] < 8)))) {
                   bVar2 = *(byte *)&local_58->field_0024;
                   if (g_appClass_00806728->field_146F == '\0') {
-                    if (bVar2 == playerId) {
+                    if (bVar2 == recordIndex) {
                       iVar26 = 0;
                     }
                     else {

@@ -47,7 +47,7 @@ FUN_00607200(void *this,int param_1,int param_2,int param_3,Global_sub_00606CD0_
   int local_8;
 
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  local_EAX_23 = GetPlayerRaceId(in_stack_00000020);
+  local_EAX_23 = LookupRecordByte(in_stack_00000020);
   local_10 = local_EAX_23 & 0xff;
   local_14 = thunk_FUN_00606cd0(param_4,&local_6c,&local_78,&local_1c,&local_7c);
   uVar1 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;

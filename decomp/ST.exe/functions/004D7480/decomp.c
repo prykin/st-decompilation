@@ -20,15 +20,15 @@ FUN_004d7480(char param_1,int param_2,undefined4 param_3,int param_4,int param_5
   local_14 = param_4;
   iVar2 = param_2 * 0x44;
   Library::DKW::TBL::DArrayAppend
-            ((DArrayTy *)(&g_playerRuntime[iVar1].field_0x7ee + iVar2),&local_18);
-  *(int *)(&g_playerRuntime[iVar1].field_0x80e + iVar2) =
-       *(int *)(&g_playerRuntime[iVar1].field_0x80e + iVar2) + param_4;
-  *(int *)(&g_playerRuntime[iVar1].field_0x812 + iVar2) =
-       *(int *)(&g_playerRuntime[iVar1].field_0x812 + iVar2) + param_5;
-  *(int *)(&g_playerRuntime[iVar1].field_0x816 + iVar2) =
-       *(int *)(&g_playerRuntime[iVar1].field_0x816 + iVar2) + param_6;
-  *(int *)(&g_playerRuntime[iVar1].field_0x81a + iVar2) =
-       *(int *)(&g_playerRuntime[iVar1].field_0x81a + iVar2) + param_7;
+            ((DArrayTy *)(&g_packedRecords_A62x8[iVar1].field_0x7ee + iVar2),&local_18);
+  *(int *)(&g_packedRecords_A62x8[iVar1].field_0x80e + iVar2) =
+       *(int *)(&g_packedRecords_A62x8[iVar1].field_0x80e + iVar2) + param_4;
+  *(int *)(&g_packedRecords_A62x8[iVar1].field_0x812 + iVar2) =
+       *(int *)(&g_packedRecords_A62x8[iVar1].field_0x812 + iVar2) + param_5;
+  *(int *)(&g_packedRecords_A62x8[iVar1].field_0x816 + iVar2) =
+       *(int *)(&g_packedRecords_A62x8[iVar1].field_0x816 + iVar2) + param_6;
+  *(int *)(&g_packedRecords_A62x8[iVar1].field_0x81a + iVar2) =
+       *(int *)(&g_packedRecords_A62x8[iVar1].field_0x81a + iVar2) + param_7;
   thunk_FUN_004d78e0(param_1);
   return 0;
 }

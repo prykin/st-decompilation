@@ -50,7 +50,7 @@ int __thiscall PrividerTy::GetMessage(PrividerTy *this,STMessage *message)
   uint local_8;
 
   local_c = this;
-  DVar9 = STAppC::sub_006E51B0((STAppC *)this->field_0010);
+  DVar9 = STAppC::sub_006E51B0(this->field_0010);
   this->field_0061 = DVar9;
   local_8c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_8c;
@@ -212,7 +212,7 @@ LAB_005bccb9:
       }
       uVar18 = (uint)(message->arg1).words.high;
       Library::DKW::DDX::FUN_006b3640
-                ((int *)g_ddxContext_008075A8,(&this_00->field_1C2A)[uVar18 / 0x13],0xfffffffe,0x7a,
+                ((int *)g_ddxContext_008075A8,this_00->field_1C2A[uVar18 / 0x13],0xfffffffe,0x7a,
                  uVar18 + 0x67);
       break;
     case MESS_SIDTY_8163:
@@ -266,11 +266,11 @@ switchD_005bc9da_caseD_6949:
     if (CONCAT31(extraout_var_00,uVar8) != 0) goto LAB_005bccb9;
     iVar10 = thunk_FUN_005da980(this_00->field_1A61);
     if (iVar10 != 0) break;
-    if ((int)this_00->field_1C92[2] < 1) {
+    if ((int)this_00->field_1C92->elementSize < 1) {
       uVar12 = 0;
     }
     else {
-      uVar12 = *(undefined4 *)this_00->field_1C92[5];
+      uVar12 = *(undefined4 *)this_00->field_1C92->growCapacity;
     }
     iVar10 = thunk_FUN_005dab70(0,uVar12);
     if (iVar10 != 0) {

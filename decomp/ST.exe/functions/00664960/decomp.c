@@ -1152,9 +1152,9 @@ joined_r0x00666ceb:
                 break;
               case 0xb2:
                 if (this_00->field_0024 != this_00->field_023D) {
-                  uVar12 = GetPlayerRaceId((char)this_00->field_023D);
+                  uVar12 = LookupRecordByte((char)this_00->field_023D);
                   local_4c = ((uVar12 & 0xffU) + this_00->field_0235 * 3) * 3;
-                  local_EAX_9844 = GetPlayerRaceId(*(char *)&this_00->field_0024);
+                  local_EAX_9844 = LookupRecordByte(*(char *)&this_00->field_0024);
                   if ((&DAT_007e1984)[(local_EAX_9844 & 0xffU) + local_4c] == '\0') break;
                 }
                 if ((local_48->field_0245 == 0) && (99 < local_48->field_04EC)) {

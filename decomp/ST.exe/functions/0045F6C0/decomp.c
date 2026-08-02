@@ -25,7 +25,7 @@ undefined4 __thiscall STBoatC::sub_0045F6C0(STBoatC *this)
   int iVar12;
 
   iVar11 = 0;
-  uVar6 = GetPlayerRaceId(*(char *)&this->field_0024);
+  uVar6 = LookupRecordByte(*(char *)&this->field_0024);
   uVar7 = uVar6 & 0xff;
   if (uVar7 == 1) {
     iVar11 = this->field_0024;

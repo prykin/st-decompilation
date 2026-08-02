@@ -24,9 +24,9 @@ TLOBaseTy::sub_004CFA00
   uint uVar4;
   int iVar5;
 
-  iVar3 = GetPlayerRaceId(*(char *)&this->field_023D);
+  iVar3 = LookupRecordByte(*(char *)&this->field_023D);
   iVar3 = (-(uint)((char)iVar3 != '\x01') & 0xfffffffd) + 0x13;
-  uVar4 = GetPlayerRaceId(*(char *)&this->field_023D);
+  uVar4 = LookupRecordByte(*(char *)&this->field_023D);
   TVar1 = this->field_0245;
   iVar5 = (uVar4 & 0xff) - 1;
   switch(param_1) {

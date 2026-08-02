@@ -15,7 +15,6 @@ function_address	target	status	detail
 00483E30	parameter:1	disabled	apply flags are 0
 00490B30	parameter:1	disabled	apply flags are 0
 00497370	parameter:4	disabled	apply flags are 0
-00498D20	parameter:2	disabled	apply flags are 0
 004AF080	parameter:7	disabled	apply flags are 0
 004B2520	parameter:7	disabled	apply flags are 0
 004B7140	parameter:0	disabled	apply flags are 0

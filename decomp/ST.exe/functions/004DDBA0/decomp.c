@@ -6,7 +6,7 @@ undefined4 __thiscall FUN_004ddba0(void *this,int param_1)
   uint uVar2;
   int iVar3;
 
-  uVar1 = GetPlayerRaceId(*(char *)((int)this + 0x24));
+  uVar1 = LookupRecordByte(*(char *)((int)this + 0x24));
   uVar2 = uVar1 & 0xff;
   if (uVar2 == 1) {
     iVar3 = 0x17;

@@ -28,7 +28,7 @@ uint FUN_0042d770(char param_1,int *param_2)
   short local_6;
 
   local_18 = 0xffff;
-  array = (DArrayTy *)g_playerRuntime[param_1].field335_0x16d;
+  array = (DArrayTy *)g_packedRecords_A62x8[param_1].field335_0x16d;
   local_1c = 1;
   local_20 = 1;
   pDVar4 = Library::DKW::TBL::DArrayCreate((DArrayTy *)0x0,0,2,1);

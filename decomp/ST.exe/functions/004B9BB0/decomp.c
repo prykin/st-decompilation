@@ -17,7 +17,7 @@ undefined4 __thiscall FUN_004b9bb0(void *this,int param_1,ushort param_2,undefin
 
   iVar2 = *(int *)((int)this + 0x241) - param_1;
   *(int *)((int)this + 0x241) = iVar2;
-  uVar1 = GetPlayerRaceId(*(char *)((int)this + 0x23d));
+  uVar1 = LookupRecordByte(*(char *)((int)this + 0x23d));
   *(int *)((int)this + 0x5d7) =
        (iVar2 * 100) /
        *(int *)(&DAT_007e4178 + ((uVar1 & 0xff) + *(int *)((int)this + 0x235) * 3) * 4);

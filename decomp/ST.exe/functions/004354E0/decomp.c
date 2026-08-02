@@ -48,9 +48,10 @@ STAllPlayersC::ReplaceObject(STAllPlayersC *this,char param_1,undefined4 param_2
   local_10 = (DArrayTy *)0x0;
   do {
     uVar6 = (uint)DAT_0080874d;
-    if ((*(int *)((int)&g_playerRuntime[uVar6].field449_0x207 + (int)local_10) == 0x19a) &&
-       (*(int *)((int)&g_playerRuntime[uVar6].field450_0x20b + (int)local_10) == (int)param_1)) {
-      pDVar1 = *(DArrayTy **)((int)&g_playerRuntime[uVar6].field452_0x211 + (int)local_10);
+    if ((*(int *)((int)&g_packedRecords_A62x8[uVar6].field449_0x207 + (int)local_10) == 0x19a) &&
+       (*(int *)((int)&g_packedRecords_A62x8[uVar6].field450_0x20b + (int)local_10) == (int)param_1)
+       ) {
+      pDVar1 = *(DArrayTy **)((int)&g_packedRecords_A62x8[uVar6].field452_0x211 + (int)local_10);
       uVar6 = 0;
       dVar2 = pDVar1->count;
       if (0 < (int)dVar2) {
@@ -67,7 +68,7 @@ STAllPlayersC::ReplaceObject(STAllPlayersC *this,char param_1,undefined4 param_2
     }
     local_10 = (DArrayTy *)((int)local_10 + 0x10);
   } while ((int)local_10 < 0x91);
-  local_10 = (DArrayTy *)g_playerRuntime[param_1].field2377_0x9f6;
+  local_10 = (DArrayTy *)g_packedRecords_A62x8[param_1].field2377_0x9f6;
   if (((local_10 != (DArrayTy *)0x0) && (local_14 = local_10->count, local_14 != 0)) &&
      (uVar6 = 0, 0 < (int)local_14)) {
     do {
@@ -89,7 +90,7 @@ STAllPlayersC::ReplaceObject(STAllPlayersC *this,char param_1,undefined4 param_2
       uVar6 = uVar6 + 1;
     } while ((int)uVar6 < (int)local_14);
   }
-  local_10 = (DArrayTy *)&g_playerRuntime[0].field5_0x5;
+  local_10 = (DArrayTy *)&g_packedRecords_A62x8[0].field5_0x5;
   do {
     pDVar1 = *(DArrayTy **)local_10;
     uVar6 = 0;
@@ -106,7 +107,7 @@ STAllPlayersC::ReplaceObject(STAllPlayersC *this,char param_1,undefined4 param_2
     /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
     local_10 = (DArrayTy *)((int)local_10 + 0xa62);
   } while ((int)local_10 < 0x7fa135);
-  piVar5 = &g_playerRuntime[0].field6_0x9;
+  piVar5 = &g_packedRecords_A62x8[0].field6_0x9;
   do {
     iVar4 = *piVar5;
     if (((iVar4 != 0) && (iVar8 = *(int *)(iVar4 + 0xc), iVar8 != 0)) &&

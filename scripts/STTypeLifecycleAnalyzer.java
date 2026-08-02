@@ -10,21 +10,26 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.HashMap;
+import java.util.IdentityHashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import ghidra.app.script.GhidraScript;
 import ghidra.program.model.data.DataType;
 import ghidra.program.model.data.DataTypeManager;
 import ghidra.program.model.data.Array;
+import ghidra.program.model.data.FunctionDefinition;
 import ghidra.program.model.data.Pointer;
 import ghidra.program.model.data.Structure;
+import ghidra.program.model.data.TypeDef;
 import ghidra.program.model.listing.Data;
 import ghidra.program.model.listing.DataIterator;
 import ghidra.program.model.listing.Function;
@@ -36,6 +41,8 @@ public class STTypeLifecycleAnalyzer extends GhidraScript {
     private static final String ROOT = "/SubmarineTitans/Recovered";
     private static final String VIEW = "[ST_VIEW_ONLY]";
     private static final String ANCHOR = "[ST_SEMANTIC_ANCHOR]";
+    private static final Pattern EMBEDDED_ADDRESS = Pattern.compile(
+        "(?i)(?:^|_)([0-9a-f]{8})(?:_|$)");
     private Map<String, Integer> receiverOwnerCounts;
 
     @Override
@@ -55,11 +62,12 @@ public class STTypeLifecycleAnalyzer extends GhidraScript {
         for (DataType type : types) {
             String description = text(type.getDescription());
             boolean derivedView = derivedFromView(type);
-            if (description.contains(ANCHOR)) semanticAnchors.add(type);
+            boolean semanticAnchor = description.contains(ANCHOR) &&
+                !description.contains(VIEW) && !derivedView;
+            if (semanticAnchor) semanticAnchors.add(type);
             if (hiddenThis(type, description) && ownedReceiverFunctions(type) >= 2)
                 receiverAnchors.add(type);
-            if (type.getPathName().startsWith(ROOT) &&
-                    !(description.contains(ANCHOR) && !derivedView) &&
+            if (type.getPathName().startsWith(ROOT) && !semanticAnchor &&
                     (scriptOwned(description) || derivedView))
                 candidates.add(type);
         }
@@ -71,14 +79,19 @@ public class STTypeLifecycleAnalyzer extends GhidraScript {
             boolean derivedView = derivedFromView(type);
             List<DataType> anchors = new ArrayList<>();
             for (DataType candidate : semanticAnchors) {
-                if (candidate == type || !candidate.isEquivalent(type)) continue;
+                if (candidate == type || !candidate.isEquivalent(type) ||
+                        !replacementCompatible(type, description, candidate,
+                            text(candidate.getDescription()))) continue;
                 anchors.add(candidate);
             }
-            int functionUses = usage.functionUses.getOrDefault(type, 0);
+            int ownerUses = hiddenThis(type, description) ?
+                ownedReceiverFunctions(type) : 0;
+            int functionUses = Math.max(
+                usage.functionUses.getOrDefault(type, 0), ownerUses);
             int listingUses = usage.listingUses.getOrDefault(type, 0);
             int parents = type.getParents().size();
             List<DataType> matchingReceivers = new ArrayList<>();
-            if (hiddenThis(type, description) && ownedReceiverFunctions(type) == 0) {
+            if (hiddenThis(type, description) && ownerUses == 0) {
                 for (DataType candidate : receiverAnchors)
                     if (candidate != type && candidate.isEquivalent(type) &&
                             hiddenThis(candidate, text(candidate.getDescription())))
@@ -87,7 +100,8 @@ public class STTypeLifecycleAnalyzer extends GhidraScript {
             if (matchingReceivers.size() == 1) {
                 DataType replacement = matchingReceivers.get(0);
                 rows.add(new Row(true, "replace", type.getPathName(),
-                    replacement.getPathName(), type.getLength(), parents, functionUses,
+                    replacement.getPathName(), replacementBaseline(replacement),
+                    type.getLength(), parents, functionUses,
                     listingUses, description,
                     "unique namespace-backed HiddenThis receiver family"));
             }
@@ -95,7 +109,8 @@ public class STTypeLifecycleAnalyzer extends GhidraScript {
                     type.getName().contains(".conflict"))) {
                 DataType replacement = anchors.get(0);
                 rows.add(new Row(true, "replace", type.getPathName(),
-                    replacement.getPathName(), type.getLength(), parents, functionUses,
+                    replacement.getPathName(), replacementBaseline(replacement),
+                    type.getLength(), parents, functionUses,
                     listingUses, description, "unique equivalent semantic anchor"));
             }
             else if (anchors.isEmpty() &&
@@ -103,7 +118,8 @@ public class STTypeLifecycleAnalyzer extends GhidraScript {
                         disposableAnonymous(type, description)) &&
                     (removalProvenance(description) || derivedView) && parents == 0 &&
                     functionUses == 0 && listingUses == 0) {
-                rows.add(new Row(true, "remove", type.getPathName(), "", type.getLength(),
+                rows.add(new Row(true, "remove", type.getPathName(), "", "",
+                    type.getLength(),
                     parents, functionUses, listingUses, description,
                     disposableAnonymous(type, description) ?
                         "unreferenced hash/script-owned anonymous type" :
@@ -112,7 +128,8 @@ public class STTypeLifecycleAnalyzer extends GhidraScript {
             }
             else if (description.contains(VIEW) || derivedView ||
                     disposableAnonymous(type, description)) {
-                rows.add(new Row(false, "retain", type.getPathName(), "", type.getLength(),
+                rows.add(new Row(false, "retain", type.getPathName(), "", "",
+                    type.getLength(),
                     parents, functionUses, listingUses, description,
                     anchors.size() > 1 ? "ambiguous equivalent anchors=" + anchors.size() :
                         "still referenced"));
@@ -128,58 +145,125 @@ public class STTypeLifecycleAnalyzer extends GhidraScript {
             "automatic_removals=" + rows.stream()
                 .filter(row -> row.apply && row.action.equals("remove")).count(),
             "retained_review=" + rows.stream().filter(row -> !row.apply).count(),
-            "note=Deletion requires an original script-owner marker and zero " +
-                "parents/signature/Listing uses. Direct Pointer/Array chains inherit " +
+            "note=Deletion requires script provenance or the pipeline-owned VIEW_ONLY " +
+                "opt-in marker, plus zero parents/signature/Listing uses. Direct " +
+                "Pointer/Array chains inherit " +
                 "view-only retirement without crossing through an owning structure. " +
                 "Non-view deletion is limited to generated anonymous PointerShapes/" +
-                "ClassPointees/HiddenThis types. Equivalent types migrate only to one " +
-                "semantic anchor or one exact namespace-backed HiddenThis receiver family."),
+                "ClassPointees/HiddenThis types. Equivalent types migrate only when one " +
+                "semantic anchor also shares the discriminator address/case, exact conflict " +
+                "identity, or same-category generated-layout provenance; equal geometry alone " +
+                "never merges semantic identities."),
             StandardCharsets.UTF_8);
         println("Type lifecycle: candidates=" + rows.size() + ", automatic=" +
             rows.stream().filter(row -> row.apply).count() + ", output=" + directory);
     }
 
-    /** Index all live uses in two whole-program scans instead of two scans per type. */
+    /**
+     * Index all live uses in two whole-program scans instead of two scans per type.
+     *
+     * Ghidra does not guarantee that a Pointer/Array object returned by a Function
+     * signature is the same Java object as the corresponding datatype-manager entry.
+     * Keying this index by DataType identity therefore made live receiver pointers look
+     * unused. Walk the actual wrapper chain and match only its stable managed path; do
+     * not use isEquivalent(), because equal geometry is not semantic identity.
+     */
     private UsageIndex usageIndex(List<DataType> candidates) throws Exception {
-        Map<DataType, Set<DataType>> wantedByActual = new HashMap<>();
-        for (DataType wanted : candidates) {
-            monitor.checkCancelled();
-            Set<DataType> seen = new HashSet<>();
-            List<DataType> pending = new ArrayList<>();
-            pending.add(wanted);
-            for (int index = 0; index < pending.size(); index++) {
-                DataType actual = pending.get(index);
-                if (actual == null || !seen.add(actual)) continue;
-                wantedByActual.computeIfAbsent(actual, unused -> new HashSet<>()).add(wanted);
-                pending.addAll(actual.getParents());
-            }
-        }
+        Map<String, DataType> wantedByPath = new HashMap<>();
+        for (DataType wanted : candidates)
+            wantedByPath.put(wanted.getPathName(), wanted);
         Map<DataType, Integer> functionUses = new HashMap<>();
         FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
         while (functions.hasNext()) {
             monitor.checkCancelled();
             Function function = functions.next();
-            addUses(functionUses, wantedByActual, function.getReturnType());
+            addUses(functionUses, wantedByPath, function.getReturnType());
             for (Parameter parameter : function.getParameters())
-                addUses(functionUses, wantedByActual, parameter.getDataType());
+                addUses(functionUses, wantedByPath, parameter.getDataType());
             for (Variable variable : function.getLocalVariables())
-                addUses(functionUses, wantedByActual, variable.getDataType());
+                addUses(functionUses, wantedByPath, variable.getDataType());
         }
         Map<DataType, Integer> listingUses = new HashMap<>();
         DataIterator data = currentProgram.getListing().getDefinedData(true);
         while (data.hasNext()) {
             monitor.checkCancelled();
             Data item = data.next();
-            addUses(listingUses, wantedByActual, item.getDataType());
+            addUses(listingUses, wantedByPath, item.getDataType());
         }
         return new UsageIndex(functionUses, listingUses);
     }
 
     private void addUses(Map<DataType, Integer> counts,
-            Map<DataType, Set<DataType>> wantedByActual, DataType actual) {
-        Set<DataType> wanted = wantedByActual.get(actual);
-        if (wanted == null) return;
-        for (DataType type : wanted) counts.merge(type, 1, Integer::sum);
+            Map<String, DataType> wantedByPath, DataType actual) {
+        if (actual == null) return;
+        Set<DataType> seen = Collections.newSetFromMap(new IdentityHashMap<>());
+        Set<DataType> matched = Collections.newSetFromMap(new IdentityHashMap<>());
+        List<DataType> pending = new ArrayList<>();
+        pending.add(actual);
+        for (int index = 0; index < pending.size(); index++) {
+            DataType current = pending.get(index);
+            if (current == null || !seen.add(current)) continue;
+            DataType wanted = wantedByPath.get(current.getPathName());
+            if (wanted != null) matched.add(wanted);
+            if (current instanceof Pointer pointer)
+                pending.add(pointer.getDataType());
+            else if (current instanceof Array array)
+                pending.add(array.getDataType());
+            else if (current instanceof TypeDef typeDef)
+                pending.add(typeDef.getBaseDataType());
+            else if (current instanceof FunctionDefinition definition) {
+                pending.add(definition.getReturnType());
+                for (var parameter : definition.getArguments())
+                    pending.add(parameter.getDataType());
+            }
+        }
+        for (DataType type : matched) counts.merge(type, 1, Integer::sum);
+    }
+
+    /** Equal storage is insufficient: require one address/provenance identity. */
+    private boolean replacementCompatible(DataType source, String sourceDescription,
+            DataType replacement, String replacementDescription) {
+        String sourceDiscriminator = discriminatorIdentity(sourceDescription);
+        if (!sourceDiscriminator.isBlank())
+            return sourceDiscriminator.equals(
+                discriminatorIdentity(replacementDescription));
+        if (source.getName().contains(".conflict") &&
+                parentPath(source).equals(parentPath(replacement)) &&
+                conflictBase(source.getName()).equals(replacement.getName())) return true;
+        String sourceHash = attribute(sourceDescription, "generated_layout_sha256");
+        return !sourceHash.isBlank() &&
+            sourceHash.equals(attribute(replacementDescription,
+                "generated_layout_sha256")) &&
+            parentPath(source).equals(parentPath(replacement));
+    }
+
+    private String discriminatorIdentity(String description) {
+        String family = attribute(description, "discriminator_family");
+        String value = attribute(description, "case_value");
+        if (family.isBlank() || value.isBlank()) return "";
+        Matcher matcher = EMBEDDED_ADDRESS.matcher(family);
+        String address = "";
+        while (matcher.find()) address = matcher.group(1).toUpperCase(Locale.ROOT);
+        return address.isBlank() ? "" : address + ":" + value;
+    }
+
+    private String attribute(String description, String name) {
+        String marker = name + "=";
+        int start = description.indexOf(marker);
+        if (start < 0) return "";
+        start += marker.length();
+        int end = description.indexOf(';', start);
+        return description.substring(start, end < 0 ? description.length() : end).trim();
+    }
+
+    private String parentPath(DataType type) {
+        String path = type.getPathName();
+        int separator = path.lastIndexOf('/');
+        return separator < 0 ? "" : path.substring(0, separator);
+    }
+
+    private String conflictBase(String name) {
+        return name.replaceFirst("\\.conflict[0-9]*$", "");
     }
 
     private boolean derivedFromView(DataType type) {
@@ -226,7 +310,8 @@ public class STTypeLifecycleAnalyzer extends GhidraScript {
             description.contains(VIEW);
     }
     private boolean removalProvenance(String description) {
-        return description.contains("[STRecoveredTypesApplier]") ||
+        return description.contains(VIEW) ||
+            description.contains("[STRecoveredTypesApplier]") ||
             description.contains("[STTypeBootstrapApplier]") ||
             description.contains("[STDiscriminatedPayloadApplier]") ||
             description.contains("[STPointerShapeApplier]") ||
@@ -245,13 +330,20 @@ public class STTypeLifecycleAnalyzer extends GhidraScript {
             path.startsWith("/SubmarineTitans/Recovered/HiddenThis/") &&
                 description.contains("[STHiddenThisApplier generated]");
     }
+    private String replacementBaseline(DataType type) {
+        return type == null ? "missing" : type.getLength() + "|" +
+            clean(type.getDescription());
+    }
+
     private void write(Path path, List<Row> rows) throws Exception {
         try (BufferedWriter out = Files.newBufferedWriter(path, StandardCharsets.UTF_8)) {
-            out.write("apply\taction\ttype_path\treplacement_path\texpected_length\t" +
+            out.write("apply\taction\ttype_path\treplacement_path\t" +
+                "expected_replacement\texpected_length\t" +
                 "expected_parents\texpected_function_uses\texpected_listing_uses\t" +
                 "expected_description\treason\n");
             for (Row row : rows) out.write(bit(row.apply) + "\t" + row.action + "\t" +
-                row.typePath + "\t" + row.replacementPath + "\t" + row.length + "\t" +
+                row.typePath + "\t" + row.replacementPath + "\t" +
+                clean(row.replacementBaseline) + "\t" + row.length + "\t" +
                 row.parents + "\t" + row.functionUses + "\t" + row.listingUses + "\t" +
                 clean(row.description) + "\t" + clean(row.reason) + "\n");
         }
@@ -275,7 +367,8 @@ public class STTypeLifecycleAnalyzer extends GhidraScript {
     }
     private static String bit(boolean value) { return value ? "1" : "0"; }
     private record Row(boolean apply, String action, String typePath, String replacementPath,
-        int length, int parents, int functionUses, int listingUses, String description,
+        String replacementBaseline, int length, int parents, int functionUses,
+        int listingUses, String description,
         String reason) { }
     private record UsageIndex(Map<DataType, Integer> functionUses,
         Map<DataType, Integer> listingUses) { }

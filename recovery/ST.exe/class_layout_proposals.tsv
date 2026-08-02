@@ -31,7 +31,7 @@ apply	owner	type_path	existing_length	observed_min_size	exact_allocation_size	pr
 1	JumpManagC	/JumpManagC	106	106		106	5	5	high	observed_this_access_extent	00617640 | 00617840 | 006178C0 | 006179D0 | 00617FB0 | 00618170 | 00618AD0
 1	MAdvTy	/MAdvTy	98	98		98	13	13	high	observed_this_access_extent	00590170 | 00590410 | 00590580 | 00590860 | 005908B0
 0	MMMObjTy	/MMMObjTy	1	746		746	1	1	manual	insufficient_layout_anchors	005C4930 | 005C6030 | 005C8A40
-0	MMObjTy	/MMObjTy	227	227		227	5	5	manual	existing_manual_or_unowned_structure_preserved	005B5510 | 005B6220 | 005B6480
+1	MMObjTy	/MMObjTy	227	227		227	5	5	high	observed_this_access_extent	005B5510 | 005B6220 | 005B6480
 1	MMsgTy	/MMsgTy	7636	7636		7636	62	62	high	observed_this_access_extent	00591BF0 | 00595E40 | 005967F0 | 00597120 | 005AB300 | 005ACB30 | 005AD390 | 005B3430 | 005B6B20 | 005B6FF0 | 005B7210 | 005B7340 | 005B7540 | 005B7EF0 | 005B87D0 | 005B8C70 | 005B8F40 | 005B9010 | 005B9170 | 005B9330 | 005B9B10 | 005BA560 | 005BAE00 | 005C29B0 | 005C5130 | 005E6770 | 005E7570 | 005E84D0
 1	MReportTy	/MReportTy	1115	1115		1115	104	102	high	observed_this_access_extent	005BD7A0 | 005BE310 | 005BE5B0 | 005BF860 | 005BFD30 | 005BFF00 | 005C00D0 | 005C0190 | 005C0230 | 005C05F0 | 005C0980 | 005C0B00 | 005C0E00 | 005C1340 | 005C1610 | 005C1A90
 1	MTaskTy	/MTaskTy	1751	1751		1751	84	84	high	observed_this_access_extent	005B66E0 | 005DFA30 | 005E0470 | 005E09E0 | 005E0AC0 | 005E4180 | 005E4300 | 005E4570
@@ -45,7 +45,7 @@ apply	owner	type_path	existing_length	observed_min_size	exact_allocation_size	pr
 1	PlayPanelTy	/PlayPanelTy	481	481		481	27	25	high	observed_this_access_extent	00539B90 | 0053A380 | 0053A540 | 0053A6B0 | 0053A820 | 0053AA50 | 0053AC00 | 0053AFB0 | 0054AEE0 | 005776D0 | 00652810
 1	PlaySystemTy	/PlaySystemTy	87	87		87	3	3	high	observed_this_access_extent	0054EC20
 1	PopUpTy	/PopUpTy	161	161		161	7	7	high	observed_this_access_extent	0052D200 | 0052D370 | 0052D690 | 0052D980 | 0052DB90 | 0052DD20 | 0054D640
-0	PrividerTy	/PrividerTy	7326	7326	7326	7326	58	58	manual	existing_manual_or_unowned_structure_preserved	005B9B10 | 005BA560 | 005BA8B0 | 005BAAC0 | 005BAE00 | 005BB910 | 005BB9F0 | 005BBA90 | 005BC050 | 005BC5E0
+1	PrividerTy	/PrividerTy	7326	7326	7326	7326	58	58	high	unique_allocation_size_and_this_accesses	005B9B10 | 005BA560 | 005BA8B0 | 005BAAC0 | 005BAE00 | 005BB910 | 005BB9F0 | 005BBA90 | 005BC050 | 005BC5E0
 1	ProdPanelTy	/ProdPanelTy	421	421		421	24	24	high	observed_this_access_extent	004FA870 | 004FAB10 | 004FB060 | 00503BB0 | 0050F430 | 0053EE30 | 0053EF20 | 0053F220 | 0053F3A0 | 0053F650 | 0053F780 | 0053F940 | 0053FCD0 | 0053FEE0 | 005400F0 | 005449B0
 1	ResearchPanelTy	/ResearchPanelTy	646	646		646	25	25	high	observed_this_access_extent	0053C120 | 0053C500 | 0053C620 | 0053C820 | 0053CA80
 1	SAMPanelTy	/SAMPanelTy	465	465		465	18	18	high	observed_this_access_extent	004F9ED0 | 004FA870 | 004FAB10 | 004FB060 | 004FF380 | 00503BB0 | 0050F430 | 00511FA0 | 0052F2B0 | 0053A820 | 0053CEF0 | 0053D1A0 | 0053D290 | 0053D3B0 | 0053D4D0 | 005449B0

@@ -716,8 +716,10 @@ public class STObjectFactoryApplier extends GhidraScript {
         int index = value.indexOf(marker);
         if (index < 0) return null;
         String hash = value.substring(index + marker.length()).trim();
-        int end = hash.indexOf(' ');
-        return end < 0 ? hash : hash.substring(0, end);
+        if (hash.length() < 64) return null;
+        hash = hash.substring(0, 64);
+        return hash.matches("[0-9a-fA-F]{64}") ?
+            hash.toLowerCase(Locale.ROOT) : null;
     }
 
     private File inputFile() throws Exception {

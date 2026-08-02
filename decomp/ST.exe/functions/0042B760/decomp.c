@@ -65,9 +65,9 @@ STGroupBoatC * FUN_0042b760(char param_1,ushort param_2)
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined2 in_stack_0000000a;
 
-  uVar1 = ((DArrayTy *)g_playerRuntime[param_1].field5_0x5)->count;
+  uVar1 = ((DArrayTy *)g_packedRecords_A62x8[param_1].field5_0x5)->count;
   if ((uVar1 != 0) && (param_2 < uVar1)) {
-    DArrayGetElement((DArrayTy *)g_playerRuntime[param_1].field5_0x5,(uint)param_2,&param_1);
+    DArrayGetElement((DArrayTy *)g_packedRecords_A62x8[param_1].field5_0x5,(uint)param_2,&param_1);
     return _param_1;
   }
   return (STGroupBoatC *)0x0;

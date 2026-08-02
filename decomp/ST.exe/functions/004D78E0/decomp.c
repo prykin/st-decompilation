@@ -25,7 +25,7 @@ undefined4 FUN_004d78e0(char param_1)
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   _param_1 = 0;
   iVar3 = 6;
-  piVar2 = (int *)&g_playerRuntime[iVar1].field_0x7da;
+  piVar2 = (int *)&g_packedRecords_A62x8[iVar1].field_0x7da;
   do {
     if (piVar2[8] != 0) {
       iVar4 = iVar4 + *piVar2;
@@ -38,11 +38,11 @@ undefined4 FUN_004d78e0(char param_1)
     piVar2 = piVar2 + 0x11;
     iVar3 = iVar3 + -1;
   } while (iVar3 != 0);
-  local_10 = g_playerRuntime[iVar1].field21_0x27;
-  local_14 = g_playerRuntime[iVar1].field2304_0x99e;
-  iVar3 = g_playerRuntime[iVar1].field20_0x23;
-  iVar6 = g_playerRuntime[iVar1].field19_0x1f;
-  piVar2 = (int *)&g_playerRuntime[iVar1].field_0x80e;
+  local_10 = g_packedRecords_A62x8[iVar1].field21_0x27;
+  local_14 = g_packedRecords_A62x8[iVar1].field2304_0x99e;
+  iVar3 = g_packedRecords_A62x8[iVar1].field20_0x23;
+  iVar6 = g_packedRecords_A62x8[iVar1].field19_0x1f;
+  piVar2 = (int *)&g_packedRecords_A62x8[iVar1].field_0x80e;
   local_1c = 6;
   do {
     if (piVar2[-5] != 0) {

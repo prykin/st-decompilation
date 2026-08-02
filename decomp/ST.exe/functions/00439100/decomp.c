@@ -127,10 +127,10 @@ void __thiscall STAllPlayersC::RestoreTmp(STAllPlayersC *this,int param_1)
   local_20 = pSVar4;
   if (iVar3 < 0x19b) {
     if (iVar3 == 0x19a) {
-      if (g_playerRuntime[(int)pSVar4].field448_0x203 == 0) {
-        g_playerRuntime[(int)pSVar4].field448_0x203 = 1;
+      if (g_packedRecords_A62x8[(int)pSVar4].field448_0x203 == 0) {
+        g_packedRecords_A62x8[(int)pSVar4].field448_0x203 = 1;
         ResetActivityFromTmp(local_2c,(char)local_8,0,0,0);
-        iVar3 = g_playerRuntime[(int)pSVar4].field390_0x1b3;
+        iVar3 = g_packedRecords_A62x8[(int)pSVar4].field390_0x1b3;
         cVar12 = (char)local_8;
         if (iVar3 < 0x19b) {
           if (iVar3 == 0x19a) {
@@ -157,7 +157,7 @@ LAB_00439c32:
             uVar11 = extraout_var_10;
             if (0 < iVar3) {
               ActivateTV(this_00,(char)local_8,1,iVar3);
-              g_playerRuntime[(int)pSVar4].field390_0x1b3 = 0x19a;
+              g_packedRecords_A62x8[(int)pSVar4].field390_0x1b3 = 0x19a;
               goto cf_common_exit_0043A47C;
             }
 LAB_00439aaa:
@@ -191,10 +191,10 @@ LAB_00439cc7:
           uVar5 = CONCAT22(uVar11,*(undefined2 *)pAVar1->field_000A->data);
         }
         AddObjToTmp(this_00,(char)local_8,1,0,cVar12,uVar5);
-        g_playerRuntime[(int)pSVar4].field390_0x1b3 = 0x19a;
+        g_packedRecords_A62x8[(int)pSVar4].field390_0x1b3 = 0x19a;
         goto cf_common_exit_0043A47C;
       }
-      if (g_playerRuntime[(int)pSVar4].field448_0x203 != 1) {
+      if (g_packedRecords_A62x8[(int)pSVar4].field448_0x203 != 1) {
         iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x17d7,0,0,"%s"
                                    ,"STAllPlayersC::RestoreTmp GAMETYPE_OBJECT wrong panel number");
         if (iVar3 != 0) {
@@ -202,7 +202,7 @@ LAB_00439cc7:
         }
         goto cf_common_exit_0043A47C;
       }
-      iVar3 = g_playerRuntime[(int)pSVar4].field390_0x1b3;
+      iVar3 = g_packedRecords_A62x8[(int)pSVar4].field390_0x1b3;
       if (iVar3 < 0x19b) {
         if (iVar3 == 0x19a) {
           iVar3 = CheckTmps((char)local_8,1,0x19a,pAVar1->field_0x4,pAVar1->field_000A,0);
@@ -225,7 +225,7 @@ cf_common_join_0043A107:
           iVar3 = CheckTmps((char)local_8,1,0x19a,pAVar1->field_0x4,pAVar1->field_000A,0);
           if (0 < iVar3) {
             ActivateTV(this_00,(char)local_8,1,iVar3);
-            g_playerRuntime[(int)pSVar4].field390_0x1b3 = 0x19a;
+            g_packedRecords_A62x8[(int)pSVar4].field390_0x1b3 = 0x19a;
             goto cf_common_exit_0043A47C;
           }
           goto LAB_00439c32;
@@ -257,8 +257,8 @@ LAB_00439b10:
         pSVar6 = GetObjPtr(local_2c,-1,*(ushort *)&pAVar1->field_0x8,CASE_2);
         uVar5 = local_8;
         cVar12 = (char)local_8;
-        if (g_playerRuntime[(int)pSVar4].field448_0x203 != 0) {
-          if (g_playerRuntime[(int)pSVar4].field448_0x203 != 1) {
+        if (g_packedRecords_A62x8[(int)pSVar4].field448_0x203 != 0) {
+          if (g_packedRecords_A62x8[(int)pSVar4].field448_0x203 != 1) {
             iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x18df,0,0,
                                        "%s","STAllPlayersC::RestoreTmp GAMETYPE_ARTEFACT wrong panel number");
             if (iVar3 != 0) {
@@ -266,7 +266,7 @@ LAB_00439b10:
             }
             goto cf_common_exit_0043A47C;
           }
-          iVar3 = g_playerRuntime[(int)pSVar4].field390_0x1b3;
+          iVar3 = g_packedRecords_A62x8[(int)pSVar4].field390_0x1b3;
           if (iVar3 < 0x19b) {
             if (iVar3 == 0x19a) goto LAB_004397fb;
             if (iVar3 == 0) goto LAB_0043a394;
@@ -290,10 +290,10 @@ LAB_0043986a:
           }
           goto cf_common_exit_0043A47C;
         }
-        g_playerRuntime[(int)pSVar4].field448_0x203 = 1;
+        g_packedRecords_A62x8[(int)pSVar4].field448_0x203 = 1;
         ResetActivityFromTmp(this_00,cVar12,0,0,0);
         uVar5 = local_8;
-        iVar3 = g_playerRuntime[(int)pSVar4].field390_0x1b3;
+        iVar3 = g_packedRecords_A62x8[(int)pSVar4].field390_0x1b3;
         if (iVar3 < 0x19b) {
           if (iVar3 == 0x19a) goto LAB_004396d1;
           if (iVar3 == 0) goto LAB_004398e7;
@@ -336,21 +336,21 @@ LAB_00439cfb:
       }
       else if (iVar3 != 0x3c) goto LAB_00439cfb;
       cVar12 = (char)local_8;
-      if (g_playerRuntime[(int)pSVar4].field448_0x203 == 0) {
-        iVar3 = g_playerRuntime[(int)pSVar4].field332_0x163;
+      if (g_packedRecords_A62x8[(int)pSVar4].field448_0x203 == 0) {
+        iVar3 = g_packedRecords_A62x8[(int)pSVar4].field332_0x163;
         if (iVar3 == 0) {
 LAB_00439369:
           iVar3 = CheckTmps((char)local_8,0,0x3c,pAVar1->field_0x4,pAVar1->field_000A,0);
           if (0 < iVar3) {
             ActivateTV(this_00,(char)local_8,0,iVar3);
-            g_playerRuntime[(int)pSVar4].field332_0x163 = 0x3c;
+            g_packedRecords_A62x8[(int)pSVar4].field332_0x163 = 0x3c;
             goto cf_common_exit_0043A47C;
           }
 LAB_0043953a:
           pSVar6 = *(STGameObjC **)&pAVar1->field_0x4;
           if (pSVar6 == local_20) {
             AddObjsToTmp(this_00,local_8,0,0,pAVar1->field_000A);
-            g_playerRuntime[(int)pSVar4].field332_0x163 = 0x3c;
+            g_packedRecords_A62x8[(int)pSVar4].field332_0x163 = 0x3c;
             goto cf_common_exit_0043A47C;
           }
           goto LAB_00439566;
@@ -363,7 +363,7 @@ LAB_0043953a:
           }
           if (-1 < iVar3) goto cf_common_join_0043A107;
           PushTV((char)local_8,0);
-          if (((STGameObjC *)g_playerRuntime[(int)pSVar4].field338_0x177 == local_20) &&
+          if (((STGameObjC *)g_packedRecords_A62x8[(int)pSVar4].field338_0x177 == local_20) &&
              (*(STGameObjC **)&pAVar1->field_0x4 == local_20)) {
             CalibrateTmp(this_00,(char)local_8,0,1,&pAVar1->field_000A->flags,(int *)&local_c,
                          (int *)0x0,(int *)0x0);
@@ -394,7 +394,7 @@ LAB_0043953a:
         uVar11 = extraout_var_07;
         if (*(STGameObjC **)&pAVar1->field_0x4 == local_20) {
           AddObjsToTmp(this_00,local_8,0,0,pAVar1->field_000A);
-          g_playerRuntime[(int)pSVar4].field332_0x163 = 0x3c;
+          g_packedRecords_A62x8[(int)pSVar4].field332_0x163 = 0x3c;
           goto cf_common_exit_0043A47C;
         }
 LAB_00439469:
@@ -403,7 +403,7 @@ LAB_00439469:
         uVar5 = CONCAT22(uVar11,*(undefined2 *)pAVar1->field_000A->data);
       }
       else {
-        if (g_playerRuntime[(int)pSVar4].field448_0x203 != 1) {
+        if (g_packedRecords_A62x8[(int)pSVar4].field448_0x203 != 1) {
           iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1778,0,0,
                                      "%s","STAllPlayersC::RestoreTmp GAMETYPE_BOAT wrong panel number");
           if (iVar3 != 0) {
@@ -411,9 +411,9 @@ LAB_00439469:
           }
           goto cf_common_exit_0043A47C;
         }
-        g_playerRuntime[(int)pSVar4].field448_0x203 = 0;
+        g_packedRecords_A62x8[(int)pSVar4].field448_0x203 = 0;
         ResetActivityFromTmp(this_00,cVar12,1,0,0);
-        iVar3 = g_playerRuntime[(int)pSVar4].field332_0x163;
+        iVar3 = g_packedRecords_A62x8[(int)pSVar4].field332_0x163;
         if (iVar3 == 0) goto LAB_00439369;
         if (iVar3 != 0x3c) {
           if (iVar3 != 0x1ae) {
@@ -434,7 +434,7 @@ LAB_00439469:
           uVar11 = extraout_var_06;
           if (*(STGameObjC **)&pAVar1->field_0x4 == local_20) {
             AddObjsToTmp(this_00,local_8,0,0,pAVar1->field_000A);
-            g_playerRuntime[(int)pSVar4].field332_0x163 = 0x3c;
+            g_packedRecords_A62x8[(int)pSVar4].field332_0x163 = 0x3c;
             goto cf_common_exit_0043A47C;
           }
           goto LAB_00439469;
@@ -448,7 +448,7 @@ LAB_00439469:
         pSVar6 = *(STGameObjC **)&pAVar1->field_0x4;
         if (pSVar6 == local_20) {
           AddObjsToTmp(this_00,local_8,0,0,pAVar1->field_000A);
-          g_playerRuntime[(int)pSVar4].field332_0x163 = 0x3c;
+          g_packedRecords_A62x8[(int)pSVar4].field332_0x163 = 0x3c;
           goto cf_common_exit_0043A47C;
         }
 LAB_00439566:
@@ -457,14 +457,14 @@ LAB_00439566:
         uVar5 = CONCAT22((short)((uint)pSVar6 >> 0x10),*(undefined2 *)pAVar1->field_000A->data);
       }
       AddObjToTmp(this_00,(char)local_8,0,0,cVar12,uVar5);
-      g_playerRuntime[(int)pSVar4].field332_0x163 = 0x3c;
+      g_packedRecords_A62x8[(int)pSVar4].field332_0x163 = 0x3c;
       goto cf_common_exit_0043A47C;
     }
     pSVar6 = GetObjPtr(local_2c,-1,*(ushort *)&pAVar1->field_0x8,CASE_4);
     uVar5 = local_8;
     cVar12 = (char)local_8;
-    if (g_playerRuntime[(int)pSVar4].field448_0x203 != 0) {
-      if (g_playerRuntime[(int)pSVar4].field448_0x203 != 1) {
+    if (g_packedRecords_A62x8[(int)pSVar4].field448_0x203 != 0) {
+      if (g_packedRecords_A62x8[(int)pSVar4].field448_0x203 != 1) {
         iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1885,0,0,"%s"
                                    ,"STAllPlayersC::RestoreTmp GAMETYPE_RESOURCE wrong panel number");
         if (iVar3 != 0) {
@@ -472,7 +472,7 @@ LAB_00439566:
         }
         goto cf_common_exit_0043A47C;
       }
-      iVar3 = g_playerRuntime[(int)pSVar4].field390_0x1b3;
+      iVar3 = g_packedRecords_A62x8[(int)pSVar4].field390_0x1b3;
       if (iVar3 < 0x19b) {
         if (iVar3 == 0x19a) {
 LAB_004397fb:
@@ -514,10 +514,10 @@ LAB_0043963c:
       }
       goto cf_common_exit_0043A47C;
     }
-    g_playerRuntime[(int)pSVar4].field448_0x203 = 1;
+    g_packedRecords_A62x8[(int)pSVar4].field448_0x203 = 1;
     ResetActivityFromTmp(this_00,cVar12,0,0,0);
     uVar5 = local_8;
-    iVar3 = g_playerRuntime[(int)pSVar4].field390_0x1b3;
+    iVar3 = g_packedRecords_A62x8[(int)pSVar4].field390_0x1b3;
     if (iVar3 < 0x19b) {
       if (iVar3 == 0x19a) {
 LAB_004396d1:
@@ -585,8 +585,8 @@ LAB_0043a470:
       pSVar6 = GetObjPtr(local_2c,-1,*(ushort *)&pAVar1->field_0x8,CASE_5);
       uVar5 = local_8;
       cVar12 = (char)local_8;
-      if (g_playerRuntime[(int)pSVar4].field448_0x203 != 0) {
-        if (g_playerRuntime[(int)pSVar4].field448_0x203 != 1) {
+      if (g_packedRecords_A62x8[(int)pSVar4].field448_0x203 != 0) {
+        if (g_packedRecords_A62x8[(int)pSVar4].field448_0x203 != 1) {
           iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1939,0,0,
                                      "%s","STAllPlayersC::RestoreTmp GAMETYPE_CONTAINER wrong panel number");
           if (iVar3 != 0) {
@@ -594,7 +594,7 @@ LAB_0043a470:
           }
           goto cf_common_exit_0043A47C;
         }
-        iVar3 = g_playerRuntime[(int)pSVar4].field390_0x1b3;
+        iVar3 = g_packedRecords_A62x8[(int)pSVar4].field390_0x1b3;
         if (iVar3 < 0x19b) {
           if (iVar3 == 0x19a) {
 LAB_0043a27b:
@@ -660,10 +660,10 @@ LAB_0043a320:
         uVar13 = pSVar6->field_0020;
         goto LAB_0043a470;
       }
-      g_playerRuntime[(int)pSVar4].field448_0x203 = 1;
+      g_packedRecords_A62x8[(int)pSVar4].field448_0x203 = 1;
       ResetActivityFromTmp(this_00,cVar12,0,0,0);
       uVar5 = local_8;
-      iVar3 = g_playerRuntime[(int)pSVar4].field390_0x1b3;
+      iVar3 = g_packedRecords_A62x8[(int)pSVar4].field390_0x1b3;
       if (iVar3 < 0x19b) {
         if (iVar3 == 0x19a) {
 LAB_0043a3c8:
@@ -731,11 +731,11 @@ LAB_0043a463:
       pSVar6 = GetObjPtr(local_2c,-1,*(ushort *)&pAVar1->field_0x8,CASE_6);
       uVar5 = local_8;
       cVar12 = (char)local_8;
-      if (g_playerRuntime[(int)pSVar4].field448_0x203 == 0) {
-        g_playerRuntime[(int)pSVar4].field448_0x203 = 1;
+      if (g_packedRecords_A62x8[(int)pSVar4].field448_0x203 == 0) {
+        g_packedRecords_A62x8[(int)pSVar4].field448_0x203 = 1;
         ResetActivityFromTmp(this_00,cVar12,0,0,0);
         uVar5 = local_8;
-        iVar3 = g_playerRuntime[(int)pSVar4].field390_0x1b3;
+        iVar3 = g_packedRecords_A62x8[(int)pSVar4].field390_0x1b3;
         if (iVar3 < 0x19b) {
           if (iVar3 == 0x19a) goto LAB_0043a3c8;
           if (iVar3 == 0) goto LAB_0043a394;
@@ -759,7 +759,7 @@ LAB_00439eb7:
         }
         goto cf_common_exit_0043A47C;
       }
-      if (g_playerRuntime[(int)pSVar4].field448_0x203 != 1) {
+      if (g_packedRecords_A62x8[(int)pSVar4].field448_0x203 != 1) {
         iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1993,0,0,"%s"
                                    ,"STAllPlayersC::RestoreTmp GAMETYPE_CONTAINER wrong panel number");
         if (iVar3 != 0) {
@@ -767,7 +767,7 @@ LAB_00439eb7:
         }
         goto cf_common_exit_0043A47C;
       }
-      iVar3 = g_playerRuntime[(int)pSVar4].field390_0x1b3;
+      iVar3 = g_packedRecords_A62x8[(int)pSVar4].field390_0x1b3;
       if (iVar3 < 0x19b) {
         if (iVar3 == 0x19a) goto LAB_0043a27b;
         if (iVar3 == 0) goto LAB_0043a247;
@@ -793,8 +793,8 @@ LAB_00439dfb:
     local_20 = GetObjPtr(local_2c,pAVar1->field_0x4,*(ushort *)&pAVar1->field_0x8,CASE_3);
     uVar5 = local_8;
     cVar12 = (char)local_8;
-    if (g_playerRuntime[(int)pSVar4].field448_0x203 == 0) {
-      iVar3 = g_playerRuntime[(int)pSVar4].field332_0x163;
+    if (g_packedRecords_A62x8[(int)pSVar4].field448_0x203 == 0) {
+      iVar3 = g_packedRecords_A62x8[(int)pSVar4].field332_0x163;
       if (iVar3 == 0) {
 LAB_0043a177:
         uVar5 = local_8;
@@ -855,7 +855,7 @@ LAB_0043a177:
       }
     }
     else {
-      if (g_playerRuntime[(int)pSVar4].field448_0x203 != 1) {
+      if (g_packedRecords_A62x8[(int)pSVar4].field448_0x203 != 1) {
         iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x182b,0,0,"%s"
                                    ,"STAllPlayersC::RestoreTmp GAMETYPE_MINESET wrong panel number");
         if (iVar3 != 0) {
@@ -863,10 +863,10 @@ LAB_0043a177:
         }
         goto cf_common_exit_0043A47C;
       }
-      g_playerRuntime[(int)pSVar4].field448_0x203 = 0;
+      g_packedRecords_A62x8[(int)pSVar4].field448_0x203 = 0;
       ResetActivityFromTmp(this_00,cVar12,1,0,0);
       uVar5 = local_8;
-      iVar3 = g_playerRuntime[(int)pSVar4].field332_0x163;
+      iVar3 = g_packedRecords_A62x8[(int)pSVar4].field332_0x163;
       if (iVar3 == 0) goto LAB_0043a177;
       cVar12 = (char)local_8;
       if (iVar3 == 0x3c) {

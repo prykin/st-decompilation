@@ -49,7 +49,7 @@ undefined4 __thiscall TLOBaseTy::procResult(TLOBaseTy *this)
       return uVar5;
     case 5:
       local_8 = 1;
-      uVar2 = GetPlayerRaceId(*(char *)&local_c->field_023D);
+      uVar2 = LookupRecordByte(*(char *)&local_c->field_023D);
       this_00->field_0241 =
            *(int *)(&DAT_007e4178 + ((uVar2 & 0xffU) + this_00->field_0235 * 3) * 4);
       sub_004CC900(this_00);

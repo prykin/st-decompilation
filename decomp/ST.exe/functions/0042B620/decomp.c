@@ -81,7 +81,7 @@ STAllPlayersC::GetObjPtr
 
   switch(param_3) {
   case CASE_1:
-    array = (DArrayTy *)g_playerRuntime[objPtr].field6_0x9;
+    array = (DArrayTy *)g_packedRecords_A62x8[objPtr].field6_0x9;
     if (array == (DArrayTy *)0x0) {
       return (STGameObjC *)0x0;
     }

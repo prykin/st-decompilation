@@ -76,23 +76,23 @@ void CreateAi(void)
       else {
         DAT_0080c52a = *DAT_0080ed12;
         piVar9 = DAT_0080ed12 + 0x101;
-        piVar11 = (int *)&g_playerRuntime[DAT_0080874d].field_0x2eb;
+        piVar11 = (int *)&g_packedRecords_A62x8[DAT_0080874d].field_0x2eb;
         memmove(piVar11, piVar9, 0x14); /* compiler REP MOVS byte copy */
         iVar3 = 0;
         piVar9 = DAT_0080ed12 + 0x106;
-        piVar11 = (int *)&g_playerRuntime[DAT_0080874d].field_0x2ff;
+        piVar11 = (int *)&g_packedRecords_A62x8[DAT_0080874d].field_0x2ff;
         memmove(piVar11, piVar9, 0x14); /* compiler REP MOVS byte copy */
         iVar3 = 0;
         piVar9 = DAT_0080ed12 + 0x10b;
-        piVar11 = (int *)&g_playerRuntime[DAT_0080874d].field_0x327;
+        piVar11 = (int *)&g_packedRecords_A62x8[DAT_0080874d].field_0x327;
         memmove(piVar11, piVar9, 0x26c); /* compiler REP MOVS byte copy */
         iVar3 = 0;
         piVar9 = DAT_0080ed12 + 0x1a6;
-        piVar11 = (int *)&g_playerRuntime[DAT_0080874d].field_0x593;
+        piVar11 = (int *)&g_packedRecords_A62x8[DAT_0080874d].field_0x593;
         memmove(piVar11, piVar9, 0x1a8); /* compiler REP MOVS byte copy */
         iVar3 = 0;
         piVar9 = DAT_0080ed12 + 0x210;
-        piVar11 = (int *)&g_playerRuntime[DAT_0080874d].field_0x73b;
+        piVar11 = (int *)&g_packedRecords_A62x8[DAT_0080874d].field_0x73b;
         memmove(piVar11, piVar9, 0x9b); /* compiler REP MOVS byte copy */
         if (DAT_0080ed12 != (int *)0x0) {
           FreeAndNull(&DAT_0080ed12);

@@ -12,7 +12,7 @@ undefined4 __thiscall TLOBaseTy::sub_004CC880(TLOBaseTy *this,undefined4 param_1
   iVar1 = this->field_0440;
   if ((((iVar1 != 2) && (iVar1 != 3)) && (iVar1 != 4)) &&
      (this->field_0440 = param_1, this->field_0444 != 0)) {
-    iVar1 = GetPlayerRaceId(*(char *)&this->field_0024);
+    iVar1 = LookupRecordByte(*(char *)&this->field_0024);
     if (((char)iVar1 != '\x03') || (this->field_043C == 2)) {
       this->field_0448 = 1;
     }

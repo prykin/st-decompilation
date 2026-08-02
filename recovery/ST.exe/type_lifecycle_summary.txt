@@ -1,6 +1,6 @@
 program=ST.exe
-candidates=1405
+candidates=1392
 automatic_replacements=0
-automatic_removals=22
-retained_review=1383
-note=Deletion requires an original script-owner marker and zero parents/signature/Listing uses. Direct Pointer/Array chains inherit view-only retirement without crossing through an owning structure. Non-view deletion is limited to generated anonymous PointerShapes/ClassPointees/HiddenThis types. Equivalent types migrate only to one semantic anchor or one exact namespace-backed HiddenThis receiver family.
+automatic_removals=0
+retained_review=1392
+note=Deletion requires script provenance or the pipeline-owned VIEW_ONLY opt-in marker, plus zero parents/signature/Listing uses. Direct Pointer/Array chains inherit view-only retirement without crossing through an owning structure. Non-view deletion is limited to generated anonymous PointerShapes/ClassPointees/HiddenThis types. Equivalent types migrate only when one semantic anchor also shares the discriminator address/case, exact conflict identity, or same-category generated-layout provenance; equal geometry alone never merges semantic identities.

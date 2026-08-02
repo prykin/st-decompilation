@@ -24,13 +24,15 @@ void __thiscall FUN_004eb600(void *this,short *param_1)
       iVar2 = iVar1;
       psVar4 = psVar3;
       do {
-        iVar1 = *(int *)((int)&g_playerRuntime[*(int *)((int)this + 0x24)].field2305_0x9a2 + iVar2);
-        if (iVar1 == *(int *)(&g_playerRuntime[*(int *)((int)this + 0x24)].field_0x9a6 + iVar2)) {
+        iVar1 = *(int *)((int)&g_packedRecords_A62x8[*(int *)((int)this + 0x24)].field2305_0x9a2 +
+                        iVar2);
+        if (iVar1 == *(int *)(&g_packedRecords_A62x8[*(int *)((int)this + 0x24)].field_0x9a6 + iVar2
+                             )) {
           *psVar4 = 0;
         }
         else {
-          *psVar4 = (iVar1 <= *(int *)(&g_playerRuntime[*(int *)((int)this + 0x24)].field_0x9a6 +
-                                      iVar2)) + 1;
+          *psVar4 = (iVar1 <= *(int *)(&g_packedRecords_A62x8[*(int *)((int)this + 0x24)].
+                                        field_0x9a6 + iVar2)) + 1;
         }
         iVar1 = iVar2 + 8;
         psVar3 = psVar4 + 2;

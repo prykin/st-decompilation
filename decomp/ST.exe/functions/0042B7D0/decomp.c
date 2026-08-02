@@ -45,7 +45,7 @@ STAllPlayersC::AddObjsToGroup
   uVar7 = groupContent[3];
   uVar6 = 0;
   local_20 = 0;
-  local_14 = (DArrayTy *)g_playerRuntime[param_1].field5_0x5;
+  local_14 = (DArrayTy *)g_packedRecords_A62x8[param_1].field5_0x5;
   if (0 < (int)uVar7) {
     do {
       DArrayGetElement((DArrayTy *)groupContent,uVar6,local_18);

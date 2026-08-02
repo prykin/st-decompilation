@@ -42,7 +42,7 @@ STAllPlayersC::DestroyObjectMsg
   uVar2 = param_2;
   switch(param_3) {
   case CASE_1:
-    array = (DArrayTy *)g_playerRuntime[param_1].field6_0x9;
+    array = (DArrayTy *)g_packedRecords_A62x8[param_1].field6_0x9;
     break;
   case CASE_2:
     array = g_array_007FA154;

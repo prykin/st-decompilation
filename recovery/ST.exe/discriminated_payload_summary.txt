@@ -1,7 +1,7 @@
 program=ST.exe
 families=7
-case_layouts=32
-automatic_case_layouts=31
+case_layouts=29
+automatic_case_layouts=28
 stack_targets=0
 automatic_stack_targets=0
 note=each case type is scoped to one discriminator family; equal geometry never merges semantic identities

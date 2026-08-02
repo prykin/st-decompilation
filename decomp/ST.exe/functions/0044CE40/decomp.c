@@ -15,7 +15,7 @@ uint __fastcall FUN_0044ce40(STAllPlayersC *param_1)
 
   uVar5 = 0;
   index = 0;
-  array = (DArrayTy *)g_playerRuntime[DAT_0080874d].field335_0x16d;
+  array = (DArrayTy *)g_packedRecords_A62x8[DAT_0080874d].field335_0x16d;
   dVar1 = array->count;
   local_8 = param_1;
   if (0 < (int)dVar1) {
@@ -121,18 +121,19 @@ uint __fastcall FUN_0044ce40(STAllPlayersC *param_1)
     if (uVar5 != 0) {
       sVar6 = (short)(uVar5 >> 0x10);
       if (sVar6 == 0) {
-        if (((short)uVar5 != 0) && (iVar4 = GetPlayerRaceId(DAT_0080874d), (char)iVar4 == '\x03')) {
+        if (((short)uVar5 != 0) && (iVar4 = LookupRecordByte(DAT_0080874d), (char)iVar4 == '\x03'))
+        {
           return 0x2000000;
         }
       }
       else if ((short)uVar5 != 0) {
-        iVar4 = GetPlayerRaceId(DAT_0080874d);
+        iVar4 = LookupRecordByte(DAT_0080874d);
         return (-(uint)((char)iVar4 != '\x03') & 0xfe002000) + 0x2000000;
       }
-      if ((sVar6 != 0) && (iVar4 = GetPlayerRaceId(DAT_0080874d), (char)iVar4 != '\x03')) {
+      if ((sVar6 != 0) && (iVar4 = LookupRecordByte(DAT_0080874d), (char)iVar4 != '\x03')) {
         return 0x2000;
       }
-      iVar4 = GetPlayerRaceId(DAT_0080874d);
+      iVar4 = LookupRecordByte(DAT_0080874d);
       if ((char)iVar4 == '\x03') {
         if (uVar5 < 0x100001) {
           if (uVar5 != 0x100000) {

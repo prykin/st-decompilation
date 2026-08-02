@@ -88,14 +88,14 @@ LAB_004e3526:
           thunk_FUN_004c7260(this,CASE_2,(int)puVar6,&local_8,&local_c,&local_10,&local_14);
           local_3a = (undefined2)local_8;
           local_3e = (undefined2)local_c;
-          iVar4 = GetPlayerRaceId(*(char *)((int)this + 0x24));
+          iVar4 = LookupRecordByte(*(char *)((int)this + 0x24));
           if ((char)iVar4 == '\x03') {
             local_3c = (undefined2)local_14;
           }
           else {
             local_3c = (undefined2)local_10;
           }
-          iVar4 = GetPlayerRaceId(*(char *)((int)this + 0x24));
+          iVar4 = LookupRecordByte(*(char *)((int)this + 0x24));
           puVar10 = local_36;
           local_3f = (undefined1)iVar4;
           iVar4 = thunk_FUN_004e60d0(*(int *)((int)this + 0x24),(int)puVar6);
@@ -142,14 +142,14 @@ LAB_004e336e:
           thunk_FUN_004c7260(this,CASE_2,*puVar7,&local_8,&local_c,&local_10,&local_14);
           local_3e = (undefined2)local_c;
           local_3a = (undefined2)local_8;
-          iVar4 = GetPlayerRaceId(*(char *)((int)this + 0x24));
+          iVar4 = LookupRecordByte(*(char *)((int)this + 0x24));
           if ((char)iVar4 == '\x03') {
             local_3c = (undefined2)local_14;
           }
           else {
             local_3c = (undefined2)local_10;
           }
-          iVar4 = GetPlayerRaceId(*(char *)((int)this + 0x24));
+          iVar4 = LookupRecordByte(*(char *)((int)this + 0x24));
           local_3f = (undefined1)iVar4;
           puVar10 = local_36;
           iVar4 = thunk_FUN_004e60d0(*(int *)((int)this + 0x24),*puVar7);

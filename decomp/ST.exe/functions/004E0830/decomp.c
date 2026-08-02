@@ -52,8 +52,8 @@ undefined4 __fastcall FUN_004e0830(TLOBaseTy *param_1)
   ushort uVar18;
   uint uVar19;
   char *pcVar20;
-  char cVar21;
-  undefined4 uVar22;
+  int *piVar21;
+  char cVar22;
   undefined4 uVar23;
 
   if (param_1->field_04D0 == CASE_1) {
@@ -67,19 +67,19 @@ undefined4 __fastcall FUN_004e0830(TLOBaseTy *param_1)
           case CASE_39:
 switchD_004e08b2_caseD_39:
             pTVar9 = param_1->vtable;
-            iVar5 = GetPlayerRaceId(*(char *)&param_1->field_023D);
+            iVar5 = LookupRecordByte(*(char *)&param_1->field_023D);
             (*pTVar9->vfunc_90)(param_1,3,(-(uint)((char)iVar5 != '\x02') & 0xffffff3a) + 0x2e9);
             break;
           case CASE_3B:
 switchD_004e08b2_caseD_3b:
             pTVar9 = param_1->vtable;
-            iVar5 = GetPlayerRaceId(*(char *)&param_1->field_023D);
+            iVar5 = LookupRecordByte(*(char *)&param_1->field_023D);
             (*pTVar9->vfunc_90)(param_1,3,(-(uint)((char)iVar5 != '\x02') & 0xffffff3a) + 0x2f6);
             break;
           case CASE_4F:
 switchD_004e08b2_caseD_4f:
             pTVar9 = param_1->vtable;
-            iVar5 = GetPlayerRaceId(*(char *)&param_1->field_023D);
+            iVar5 = LookupRecordByte(*(char *)&param_1->field_023D);
             (*pTVar9->vfunc_90)(param_1,3,(-(uint)((char)iVar5 != '\x02') & 0xffffff32) + 0x34f);
             break;
           case CASE_5E:
@@ -109,7 +109,7 @@ LAB_004e0a1f:
             goto switchD_004e08b2_caseD_4f;
           case CASE_52:
             pTVar9 = param_1->vtable;
-            iVar5 = GetPlayerRaceId(*(char *)&param_1->field_023D);
+            iVar5 = LookupRecordByte(*(char *)&param_1->field_023D);
             (*pTVar9->vfunc_90)(param_1,3,(-(uint)((char)iVar5 != '\x02') & 0xffffff3b) + 0x35c);
             break;
           case CASE_5E:
@@ -130,7 +130,7 @@ LAB_004e0a1f:
     }
     if (param_1->field_04E0[1] == 0) {
       if (param_1->field_05AC == CASE_4F) {
-        iVar5 = GetPlayerRaceId(*(char *)&param_1->field_0024);
+        iVar5 = LookupRecordByte(*(char *)&param_1->field_0024);
         iVar6 = 0xe;
         if ((char)iVar5 != '\x02') goto LAB_004e0a4f;
       }
@@ -187,7 +187,7 @@ LAB_004e0a4f:
               TLOBaseTy::RotateSpr(param_1,0);
               if (param_1->field_05AC == CASE_52) {
                 pTVar9 = param_1->vtable;
-                iVar5 = GetPlayerRaceId(*(char *)&param_1->field_023D);
+                iVar5 = LookupRecordByte(*(char *)&param_1->field_023D);
                 (*pTVar9->vfunc_90)(param_1,3,(-(uint)((char)iVar5 != '\x02') & 0xffffff3b) + 0x35e);
                 goto switchD_004e0aad_default;
               }
@@ -222,10 +222,10 @@ LAB_004e0a4f:
     if ((int)param_1->field_04E0[0xc] < 0x1e) break;
     thunk_FUN_004d0a80(DAT_00800bcc,param_1->field_04E0[4],param_1->field_04E0[5],
                        param_1->field_04E0[6]);
-    uVar23 = param_1->field_0018;
+    piVar21 = param_1->field_0018;
     uVar11 = param_1->field_04E0[6];
     uVar19 = param_1->field_04E0[5];
-    uVar22 = 0x5a;
+    uVar23 = 0x5a;
     uVar7 = param_1->field_04E0[4];
     pcVar20 = (char *)0x0;
     uVar18 = (ushort)param_1->field_04E0[9];
@@ -233,14 +233,14 @@ LAB_004e0a4f:
     uVar16 = (ushort)param_1->field_04E0[7];
     uVar15 = param_1->field_04E0[0];
     uVar14 = param_1->field_04DC;
-    cVar21 = *(char *)&param_1->field_0024;
+    cVar22 = *(char *)&param_1->field_0024;
     param_1->field_04E0[3] = 0;
-    uVar8 = GetPlayerRaceId(cVar21);
+    uVar8 = LookupRecordByte(cVar22);
     thunk_FUN_005fd1b0(param_1->field_0024,uVar8 & 0xff,uVar14,uVar15,uVar16,uVar17,uVar18,uVar7,
-                       uVar19,uVar11,pcVar20,uVar23,uVar22);
+                       uVar19,uVar11,pcVar20,piVar21,uVar23);
     if (param_1->field_0024 == (byte *)(uint)(byte)param_1->field_0010->field_112D) {
       thunk_FUN_0052af50(0,(float)param_1->field_01F9,(float)param_1->field_01FD);
-      uVar10 = GetPlayerRaceId(*(char *)&param_1->field_0024);
+      uVar10 = LookupRecordByte(*(char *)&param_1->field_0024);
       uVar11 = uVar10 & 0xff;
       if (uVar11 == 1) {
         pTVar9 = param_1->vtable;
@@ -271,7 +271,7 @@ LAB_004e0f14:
       }
       break;
     }
-    cVar21 = *(char *)&param_1->field_023D;
+    cVar22 = *(char *)&param_1->field_023D;
     pTVar9 = param_1->vtable;
     goto LAB_004e0e15;
   case CASE_5:
@@ -292,10 +292,10 @@ LAB_004e0f14:
     TLOBaseTy::RotateSpr(param_1,0);
     TVar1 = param_1->field_05AC;
     if (TVar1 != CASE_52) goto joined_r0x004e0f0b;
-    cVar21 = *(char *)&param_1->field_023D;
+    cVar22 = *(char *)&param_1->field_023D;
     pTVar9 = param_1->vtable;
 LAB_004e0e15:
-    iVar5 = GetPlayerRaceId(cVar21);
+    iVar5 = LookupRecordByte(cVar22);
     (*pTVar9->vfunc_90)(param_1,3,(-(uint)((char)iVar5 != '\x02') & 0xffffff3b) + 0x35f);
   }
 switchD_004e0aad_default:
